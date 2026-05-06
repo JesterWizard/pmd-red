@@ -187,12 +187,12 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
     }
     if (!r6) {
         if (gDungeon->unk644.missionKind == DUNGEON_MISSION_OUTONRESCUE) {
-            gDungeon->unk644.unk38 = setupPtr->info.dungeonSeed.seed;
+            gDungeon->unk644.prngPreseed23Bit = setupPtr->info.dungeonSeed.seed;
         }
         else {
-            gDungeon->unk644.unk38 = Rand32Bit() & 0xFFFFFF;
+            gDungeon->unk644.prngPreseed23Bit = Rand32Bit() & 0xFFFFFF;
         }
-        sub_808408C(gDungeon->unk644.unk38);
+        SetDungeonRNGPreseed23Bit(gDungeon->unk644.prngPreseed23Bit);
     }
     if (!r6) {
         if (!sub_80980A4() && gDungeon->unk644.dungeonLocation.id == DUNGEON_TINY_WOODS) {
@@ -248,7 +248,7 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
         gLeaderPointer = NULL;
         gDungeon->unk0 = 0;
         if (!r6) {
-            gDungeon->unk644.unk3C = YetAnotherRandom24();
+            gDungeon->unk644.unk3C = GenerateDungeonRNGSeed();
             gDungeon->unk644.unk24 = 10;
             InitDungeonRNG(gDungeon->unk644.unk3C);
         }
@@ -620,7 +620,7 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
                 memset(&setupPtr->info.unk84, 0, sizeof(setupPtr->info.unk84));
                 setupPtr->info.unk80 = gDungeon->unk644.dungeonLocation;
                 setupPtr->info.unk84.location = gDungeon->unk644.dungeonLocation;
-                setupPtr->info.unk84.seed = gDungeon->unk644.unk38;
+                setupPtr->info.unk84.seed = gDungeon->unk644.prngPreseed23Bit;
 
             }
             else {

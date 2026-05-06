@@ -3,8 +3,8 @@
 
 #include "structs/dungeon_entity.h"
 
-void sub_808408C(u32 param_1);
-u32 YetAnotherRandom24(void);
+void SetDungeonRNGPreseed23Bit(u32 preseed23);
+u32 GenerateDungeonRNGSeed(void);
 void InitDungeonRNG(u32 value);
 s32 DungeonRand16Bit(void);
 s32 DungeonRandInt(s32 cap);
