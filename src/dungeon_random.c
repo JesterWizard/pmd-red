@@ -9,24 +9,24 @@
 #include "dungeon_util.h"
 
 EWRAM_INIT u32 gDungeonRngState = {1};
-EWRAM_INIT u32 gUnknown_203B458 = {1};
+EWRAM_INIT u32 gDungeonRngPreseedState = {1};
 
-void sub_808408C(u32 param_1)
+void SetDungeonRNGPreseed23Bit(u32 preseed23)
 {
-    gUnknown_203B458 = (1 | param_1) & 0xffffff;
+    gDungeonRngPreseedState = (1 | preseed23) & 0xffffff;
 }
 
-u32 YetAnotherRandom24(void)
+u32 GenerateDungeonRNGSeed(void)
 {
     u32 r0;
     u32 r1;
 
-    r1 = gUnknown_203B458 * 0x5d588b65;
+    r1 = gDungeonRngPreseedState * 0x5d588b65;
     r1++;
     r0 = r1 >> 16;
     r1 *= 0x5d588b65;
     r1++;
-    gUnknown_203B458 = r1;
+    gDungeonRngPreseedState = r1;
     r1 &= 0xffff0000;
     r0 |= r1;
     r0 &= 0x0ffffff;

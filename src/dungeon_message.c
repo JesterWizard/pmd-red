@@ -589,7 +589,7 @@ static bool8 sub_8052DC0(Entity *entity)
     return ShouldDisplayEntity(entity);
 }
 
-static inline bool32 DislayTutorialMsg(Entity *leader, const TutorialFlagMsg *tutorial, bool32 unkFunctionCall)
+static inline bool32 DisplayTutorialMsg(Entity *leader, const TutorialFlagMsg *tutorial, bool32 unkFunctionCall)
 {
     const u8 *str;
     s32 flag = tutorial->flagId;
@@ -612,14 +612,14 @@ void TryDisplayGeneralTutorialMessage(void)
 {
     Entity *leader = GetLeader();
 
-    if (DislayTutorialMsg(leader, &gUnknown_80FF020, TRUE)) return;
-    if (DislayTutorialMsg(leader, &gUnknown_80FF080, TRUE)) return;
-    if (DislayTutorialMsg(leader, &gUnknown_80FF0D8, TRUE)) return;
+    if (DisplayTutorialMsg(leader, &gUnknown_80FF020, TRUE)) return;
+    if (DisplayTutorialMsg(leader, &gUnknown_80FF080, TRUE)) return;
+    if (DisplayTutorialMsg(leader, &gUnknown_80FF0D8, TRUE)) return;
     if (gDungeon->unk644.dungeonLocation.id == DUNGEON_THUNDERWAVE_CAVE) {
-        if (DislayTutorialMsg(leader, &gUnknown_80FF13C, TRUE)) return;
-        if (DislayTutorialMsg(leader, &gUnknown_80FF1B4, TRUE)) return;
-        if (DislayTutorialMsg(leader, &gMovementTutorial, TRUE)) return;
-        if (DislayTutorialMsg(leader, &gHungerTutorial, TRUE)) return;
+        if (DisplayTutorialMsg(leader, &gUnknown_80FF13C, TRUE)) return;
+        if (DisplayTutorialMsg(leader, &gUnknown_80FF1B4, TRUE)) return;
+        if (DisplayTutorialMsg(leader, &gMovementTutorial, TRUE)) return;
+        if (DisplayTutorialMsg(leader, &gHungerTutorial, TRUE)) return;
     }
 }
 
@@ -628,28 +628,28 @@ void DisplayItemTip(u8 itemId)
     u32 itemCategory = GetItemCategory(itemId);
 
     if (itemCategory == CATEGORY_FOOD_GUMMIES) {
-        DislayTutorialMsg(NULL, &gFoodTutorial, FALSE);
+        DisplayTutorialMsg(NULL, &gFoodTutorial, FALSE);
     }
     else if (itemId == ITEM_ORAN_BERRY) {
-        DislayTutorialMsg(NULL, &gOranTutorial, FALSE);
+        DisplayTutorialMsg(NULL, &gOranTutorial, FALSE);
     }
     else if (itemId == ITEM_CHERI_BERRY) {
-        DislayTutorialMsg(NULL, &gCheriTutorial, FALSE);
+        DisplayTutorialMsg(NULL, &gCheriTutorial, FALSE);
     }
     else if (itemId == ITEM_BLAST_SEED) {
-        DislayTutorialMsg(NULL, &gBlastSeedTutorial, FALSE);
+        DisplayTutorialMsg(NULL, &gBlastSeedTutorial, FALSE);
     }
     else if (itemId == ITEM_GRAVELEROCK) {
-        DislayTutorialMsg(NULL, &gUnknown_80FF4A0, FALSE);
+        DisplayTutorialMsg(NULL, &gUnknown_80FF4A0, FALSE);
     }
     else if (itemId == ITEM_PECHA_BERRY) {
-        DislayTutorialMsg(NULL, &gPechaTutorial, FALSE);
+        DisplayTutorialMsg(NULL, &gPechaTutorial, FALSE);
     }
     else if (itemId == ITEM_SLEEP_SEED) {
-        DislayTutorialMsg(NULL, &gSleepSeedTutorial, FALSE);
+        DisplayTutorialMsg(NULL, &gSleepSeedTutorial, FALSE);
     }
     else if (itemId == ITEM_POKE) {
-        DislayTutorialMsg(NULL, &gMoneyTutorial, FALSE);
+        DisplayTutorialMsg(NULL, &gMoneyTutorial, FALSE);
     }
 }
 

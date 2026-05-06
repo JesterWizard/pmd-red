@@ -284,7 +284,7 @@ typedef struct unkDungeon644
     /* 0x35 */ u8 emptyBellyAlert; // which alert message to show when belly gets empty.
     /* 0x36 */ u8 windPhase;
     /* 0x37 */ s8 unk37;
-    /* 0x38 */ u32 unk38;
+    /* 0x38 */ u32 prngPreseed23Bit;
     /* 0x3C */ u32 unk3C;
     /* 0x40 */ s16 unk40;
     /* 0x42 */ s16 unk42;
