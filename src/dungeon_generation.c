@@ -1934,7 +1934,9 @@ static void AssignGridCellConnections(struct GridCell grid[GRID_CELL_LEN][GRID_C
                         if (!ok)
                             continue;
 
-                        // This section retains the original functionality
+                        // BUG: the wrong grid index is used for the validity check for CARDINAL_DIR_UP, CARDINAL_DIR_LEFT, and CARDINAL_DIR_DOWN
+                        // This can potentially read out-of-bounds grid data, which contains uninitialized garbage.
+                        // This makes the dungeon gen occasionally inconsistent even when using the same seed.
                         switch (cardinalDirection & CARDINAL_DIRECTION_MASK) {
                             case CARDINAL_DIR_RIGHT:
                                 if (!grid[x + 1][y].isInvalid) {
@@ -1944,7 +1946,6 @@ static void AssignGridCellConnections(struct GridCell grid[GRID_CELL_LEN][GRID_C
                                     more = TRUE;
                                 }
                                 break;
-                            // BUG: the wrong grid index is used for the validity check
                             case CARDINAL_DIR_UP:
                                 if (!grid[x + 1][y].isInvalid) {
                                     grid[x][y].connectedToTop = TRUE;
@@ -1953,7 +1954,6 @@ static void AssignGridCellConnections(struct GridCell grid[GRID_CELL_LEN][GRID_C
                                     more = TRUE;
                                 }
                                 break;
-                            // BUG: the wrong grid index is used for the validity check
                             case CARDINAL_DIR_LEFT:
                                 if (!grid[x + 1][y].isInvalid) {
                                     grid[x][y].connectedToLeft = TRUE;
@@ -1962,7 +1962,6 @@ static void AssignGridCellConnections(struct GridCell grid[GRID_CELL_LEN][GRID_C
                                     more = TRUE;
                                 }
                                 break;
-                            // BUG: the wrong grid index is used for the validity check
                             case CARDINAL_DIR_DOWN:
                                 if (!grid[x + 1][y].isInvalid) {
                                     grid[x][y].connectedToBottom = TRUE;
