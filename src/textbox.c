@@ -1043,7 +1043,7 @@ void sub_809B57C_Async(void)
         CopyWindowBgBuffer(0, COPY_WINDOW_BG_BUFFER_WIN0);
     }
     else {
-        CopyWindowBgBuffer(0, 5);
+        CopyWindowBgBuffer(0, COPY_WINDOW_BG_BUFFER_UNK5);
     }
 }
 
