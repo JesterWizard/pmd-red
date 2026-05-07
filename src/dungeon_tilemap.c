@@ -317,7 +317,7 @@ static void sub_803F7BC(void)
         sp[1] = room->unk10 - strPtr->cameraPixelPos.y;
         sp[2] = room->unk14 - strPtr->cameraPixelPos.x;
         sp[3] = room->unk18 - strPtr->cameraPixelPos.y;
-        CopyWindowBgBuffer(sp, 3);
+        CopyWindowBgBuffer(sp, COPY_WINDOW_BG_BUFFER_ROOM_DIM);
     }
 }
 
