@@ -2,4 +2,4 @@
     
 .align 2
 
-.incbin "baserom.gba", 0x1E7EB08, 0x14F8
+.incbin "data/unknown_unused/unk_9E7EB08.bin"

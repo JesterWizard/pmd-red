@@ -2,62 +2,62 @@
 gKaoTorchic:
 kao_siro sPortraitsTorchic
 sTorchicNormalPal:
-.incbin "baserom.gba", 0x16ABC24, 0x40
+.incbin "graphics/kao/torchic_16ABC24_40.bin"
 sTorchicNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16ABC69, 0x287
+.incbin "graphics/kao/torchic_16ABC69_287.bin"
 sTorchicHappyPal:
-.incbin "baserom.gba", 0x16ABEF0, 0x40
+.incbin "graphics/kao/torchic_16ABEF0_40.bin"
 sTorchicHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16ABF35, 0x2A3
+.incbin "graphics/kao/torchic_16ABF35_2A3.bin"
 sTorchicPainedPal:
-.incbin "baserom.gba", 0x16AC1D8, 0x40
+.incbin "graphics/kao/torchic_16AC1D8_40.bin"
 sTorchicPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AC21D, 0x2B3
+.incbin "graphics/kao/torchic_16AC21D_2B3.bin"
 sTorchicAngryPal:
-.incbin "baserom.gba", 0x16AC4D0, 0x40
+.incbin "graphics/kao/torchic_16AC4D0_40.bin"
 sTorchicAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AC515, 0x293
+.incbin "graphics/kao/torchic_16AC515_293.bin"
 sTorchicWorriedPal:
-.incbin "baserom.gba", 0x16AC7A8, 0x40
+.incbin "graphics/kao/torchic_16AC7A8_40.bin"
 sTorchicWorriedGfx:
-.incbin "baserom.gba", 0x16AC7E8, 0x260
+.incbin "graphics/kao/torchic_16AC7E8_260.bin"
 sTorchicSadPal:
-.incbin "baserom.gba", 0x16ACA48, 0x40
+.incbin "graphics/kao/torchic_16ACA48_40.bin"
 sTorchicSadGfx:
-.incbin "baserom.gba", 0x16ACA88, 0x290
+.incbin "graphics/kao/torchic_16ACA88_290.bin"
 sTorchicCryingPal:
-.incbin "baserom.gba", 0x16ACD18, 0x40
+.incbin "graphics/kao/torchic_16ACD18_40.bin"
 sTorchicCryingGfx:
-.incbin "baserom.gba", 0x16ACD58, 0x28C
+.incbin "graphics/kao/torchic_16ACD58_28C.bin"
 sTorchicShoutingPal:
-.incbin "baserom.gba", 0x16ACFE4, 0x40
+.incbin "graphics/kao/torchic_16ACFE4_40.bin"
 sTorchicShoutingGfx:
-.incbin "baserom.gba", 0x16AD024, 0x2D4
+.incbin "graphics/kao/torchic_16AD024_2D4.bin"
 sTorchicTearyEyePal:
-.incbin "baserom.gba", 0x16AD2F8, 0x40
+.incbin "graphics/kao/torchic_16AD2F8_40.bin"
 sTorchicTearyEyeGfx:
-.incbin "baserom.gba", 0x16AD338, 0x29C
+.incbin "graphics/kao/torchic_16AD338_29C.bin"
 sTorchicDeterminedPal:
-.incbin "baserom.gba", 0x16AD5D4, 0x40
+.incbin "graphics/kao/torchic_16AD5D4_40.bin"
 sTorchicDeterminedGfx:
-.incbin "baserom.gba", 0x16AD614, 0x29C
+.incbin "graphics/kao/torchic_16AD614_29C.bin"
 sTorchicJoyousPal:
-.incbin "baserom.gba", 0x16AD8B0, 0x40
+.incbin "graphics/kao/torchic_16AD8B0_40.bin"
 sTorchicJoyousGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AD8F5, 0x29F
+.incbin "graphics/kao/torchic_16AD8F5_29F.bin"
 sTorchicInspiredPal:
-.incbin "baserom.gba", 0x16ADB94, 0x40
+.incbin "graphics/kao/torchic_16ADB94_40.bin"
 sTorchicInspiredGfx:
-.incbin "baserom.gba", 0x16ADBD4, 0x288
+.incbin "graphics/kao/torchic_16ADBD4_288.bin"
 sTorchicSurprisedPal:
-.incbin "baserom.gba", 0x16ADE5C, 0x40
+.incbin "graphics/kao/torchic_16ADE5C_40.bin"
 sTorchicSurprisedGfx:
-.incbin "baserom.gba", 0x16ADE9C, 0x2C0
+.incbin "graphics/kao/torchic_16ADE9C_2C0.bin"
 sPortraitsTorchic:
 kao_portrait sTorchicNormalPal, sTorchicNormalGfx
 kao_portrait sTorchicHappyPal, sTorchicHappyGfx

@@ -2,60 +2,60 @@
 gKaoCyndaquil:
 kao_siro sPortraitsCyndaquil
 sCyndaquilNormalPal:
-.incbin "baserom.gba", 0x16A0AA8, 0x40
+.incbin "graphics/kao/cyndaquil_16A0AA8_40.bin"
 sCyndaquilNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A0AED, 0x26B
+.incbin "graphics/kao/cyndaquil_16A0AED_26B.bin"
 sCyndaquilHappyPal:
-.incbin "baserom.gba", 0x16A0D58, 0x40
+.incbin "graphics/kao/cyndaquil_16A0D58_40.bin"
 sCyndaquilHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A0D9D, 0x257
+.incbin "graphics/kao/cyndaquil_16A0D9D_257.bin"
 sCyndaquilPainedPal:
-.incbin "baserom.gba", 0x16A0FF4, 0x40
+.incbin "graphics/kao/cyndaquil_16A0FF4_40.bin"
 sCyndaquilPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A1039, 0x2A3
+.incbin "graphics/kao/cyndaquil_16A1039_2A3.bin"
 sCyndaquilAngryPal:
-.incbin "baserom.gba", 0x16A12DC, 0x40
+.incbin "graphics/kao/cyndaquil_16A12DC_40.bin"
 sCyndaquilAngryGfx:
-.incbin "baserom.gba", 0x16A131C, 0x2D8
+.incbin "graphics/kao/cyndaquil_16A131C_2D8.bin"
 sCyndaquilWorriedPal:
-.incbin "baserom.gba", 0x16A15F4, 0x40
+.incbin "graphics/kao/cyndaquil_16A15F4_40.bin"
 sCyndaquilWorriedGfx:
-.incbin "baserom.gba", 0x16A1634, 0x258
+.incbin "graphics/kao/cyndaquil_16A1634_258.bin"
 sCyndaquilSadPal:
-.incbin "baserom.gba", 0x16A188C, 0x40
+.incbin "graphics/kao/cyndaquil_16A188C_40.bin"
 sCyndaquilSadGfx:
-.incbin "baserom.gba", 0x16A18CC, 0x288
+.incbin "graphics/kao/cyndaquil_16A18CC_288.bin"
 sCyndaquilCryingPal:
-.incbin "baserom.gba", 0x16A1B54, 0x40
+.incbin "graphics/kao/cyndaquil_16A1B54_40.bin"
 sCyndaquilCryingGfx:
-.incbin "baserom.gba", 0x16A1B94, 0x270
+.incbin "graphics/kao/cyndaquil_16A1B94_270.bin"
 sCyndaquilShoutingPal:
-.incbin "baserom.gba", 0x16A1E04, 0x40
+.incbin "graphics/kao/cyndaquil_16A1E04_40.bin"
 sCyndaquilShoutingGfx:
-.incbin "baserom.gba", 0x16A1E44, 0x2C4
+.incbin "graphics/kao/cyndaquil_16A1E44_2C4.bin"
 sCyndaquilTearyEyePal:
-.incbin "baserom.gba", 0x16A2108, 0x40
+.incbin "graphics/kao/cyndaquil_16A2108_40.bin"
 sCyndaquilTearyEyeGfx:
-.incbin "baserom.gba", 0x16A2148, 0x28C
+.incbin "graphics/kao/cyndaquil_16A2148_28C.bin"
 sCyndaquilDeterminedPal:
-.incbin "baserom.gba", 0x16A23D4, 0x40
+.incbin "graphics/kao/cyndaquil_16A23D4_40.bin"
 sCyndaquilDeterminedGfx:
-.incbin "baserom.gba", 0x16A2414, 0x270
+.incbin "graphics/kao/cyndaquil_16A2414_270.bin"
 sCyndaquilJoyousPal:
-.incbin "baserom.gba", 0x16A2684, 0x40
+.incbin "graphics/kao/cyndaquil_16A2684_40.bin"
 sCyndaquilJoyousGfx:
-.incbin "baserom.gba", 0x16A26C4, 0x2A4
+.incbin "graphics/kao/cyndaquil_16A26C4_2A4.bin"
 sCyndaquilInspiredPal:
-.incbin "baserom.gba", 0x16A2968, 0x40
+.incbin "graphics/kao/cyndaquil_16A2968_40.bin"
 sCyndaquilInspiredGfx:
-.incbin "baserom.gba", 0x16A29A8, 0x29C
+.incbin "graphics/kao/cyndaquil_16A29A8_29C.bin"
 sCyndaquilSurprisedPal:
-.incbin "baserom.gba", 0x16A2C44, 0x40
+.incbin "graphics/kao/cyndaquil_16A2C44_40.bin"
 sCyndaquilSurprisedGfx:
-.incbin "baserom.gba", 0x16A2C84, 0x270
+.incbin "graphics/kao/cyndaquil_16A2C84_270.bin"
 sPortraitsCyndaquil:
 kao_portrait sCyndaquilNormalPal, sCyndaquilNormalGfx
 kao_portrait sCyndaquilHappyPal, sCyndaquilHappyGfx

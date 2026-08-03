@@ -2,10 +2,10 @@
 gKaoEntei:
 kao_siro sPortraitsEntei
 sEnteiNormalPal:
-.incbin "baserom.gba", 0x16A81F0, 0x40
+.incbin "graphics/kao/entei_16A81F0_40.bin"
 sEnteiNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A8235, 0x2B7
+.incbin "graphics/kao/entei_16A8235_2B7.bin"
 sPortraitsEntei:
 kao_portrait sEnteiNormalPal, sEnteiNormalGfx
 kao_portrait 0, 0

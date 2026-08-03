@@ -2,10 +2,10 @@
 gKaoGranbull:
 kao_siro sPortraitsGranbull
 sGranbullNormalPal:
-.incbin "baserom.gba", 0x16A6F18, 0x40
+.incbin "graphics/kao/granbull_16A6F18_40.bin"
 sGranbullNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A6F5D, 0x2F7
+.incbin "graphics/kao/granbull_16A6F5D_2F7.bin"
 sPortraitsGranbull:
 kao_portrait sGranbullNormalPal, sGranbullNormalGfx
 kao_portrait 0, 0

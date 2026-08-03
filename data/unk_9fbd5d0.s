@@ -1,3 +1,3 @@
 	.section .rodata
 
-.incbin "baserom.gba", 0x1FBD5D0, 0x42A30
+.incbin "data/unknown_unused/unk_9fbd5d0.bin"

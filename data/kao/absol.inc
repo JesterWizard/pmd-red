@@ -2,15 +2,15 @@
 gKaoAbsol:
 kao_siro sPortraitsAbsol
 sAbsolNormalPal:
-.incbin "baserom.gba", 0x16B9668, 0x40
+.incbin "graphics/kao/absol_16B9668_40.bin"
 sAbsolNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B96AD, 0x29B
+.incbin "graphics/kao/absol_16B96AD_29B.bin"
 sAbsolHappyPal:
-.incbin "baserom.gba", 0x16B9948, 0x40
+.incbin "graphics/kao/absol_16B9948_40.bin"
 sAbsolHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B998D, 0x287
+.incbin "graphics/kao/absol_16B998D_287.bin"
 sPortraitsAbsol:
 kao_portrait sAbsolNormalPal, sAbsolNormalGfx
 kao_portrait sAbsolHappyPal, sAbsolHappyGfx

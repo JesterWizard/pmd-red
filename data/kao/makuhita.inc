@@ -2,9 +2,9 @@
 gKaoMakuhita:
 kao_siro sPortraitsMakuhita
 sMakuhitaNormalPal:
-.incbin "baserom.gba", 0x16B362C, 0x40
+.incbin "graphics/kao/makuhita_16B362C_40.bin"
 sMakuhitaNormalGfx:
-.incbin "baserom.gba", 0x16B366C, 0x29C
+.incbin "graphics/kao/makuhita_16B366C_29C.bin"
 sPortraitsMakuhita:
 kao_portrait sMakuhitaNormalPal, sMakuhitaNormalGfx
 kao_portrait 0, 0

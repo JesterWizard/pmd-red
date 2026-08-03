@@ -2,14 +2,14 @@
 gKaoMankey:
 kao_siro sPortraitsMankey
 sMankeyNormalPal:
-.incbin "baserom.gba", 0x169271C, 0x40
+.incbin "graphics/kao/mankey_169271C_40.bin"
 sMankeyNormalGfx:
-.incbin "baserom.gba", 0x169275C, 0x2CC
+.incbin "graphics/kao/mankey_169275C_2CC.bin"
 sMankeyAngryPal:
-.incbin "baserom.gba", 0x1692A28, 0x40
+.incbin "graphics/kao/mankey_1692A28_40.bin"
 sMankeyAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1692A6D, 0x2EB
+.incbin "graphics/kao/mankey_1692A6D_2EB.bin"
 sPortraitsMankey:
 kao_portrait sMankeyNormalPal, sMankeyNormalGfx
 kao_portrait sMankeyAngryPal, sMankeyAngryGfx

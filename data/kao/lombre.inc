@@ -2,42 +2,42 @@
 gKaoLombre:
 kao_siro sPortraitsLombre
 sLombreNormalPal:
-.incbin "baserom.gba", 0x16B06C4, 0x40
+.incbin "graphics/kao/lombre_16B06C4_40.bin"
 sLombreNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B0709, 0x297
+.incbin "graphics/kao/lombre_16B0709_297.bin"
 sLombreAngryPal:
-.incbin "baserom.gba", 0x16B09A0, 0x40
+.incbin "graphics/kao/lombre_16B09A0_40.bin"
 sLombreAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B09E5, 0x26B
+.incbin "graphics/kao/lombre_16B09E5_26B.bin"
 sLombreOpenMouthPal:
-.incbin "baserom.gba", 0x16B0C50, 0x40
+.incbin "graphics/kao/lombre_16B0C50_40.bin"
 sLombreOpenMouthGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B0C95, 0x29F
+.incbin "graphics/kao/lombre_16B0C95_29F.bin"
 sLombreSadPal:
-.incbin "baserom.gba", 0x16B0F34, 0x40
+.incbin "graphics/kao/lombre_16B0F34_40.bin"
 sLombreSadGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B0F79, 0x26B
+.incbin "graphics/kao/lombre_16B0F79_26B.bin"
 sLombreNormalFlipPal:
-.incbin "baserom.gba", 0x16B11E4, 0x40
+.incbin "graphics/kao/lombre_16B11E4_40.bin"
 sLombreNormalFlipGfx:
-.incbin "baserom.gba", 0x16B1224, 0x298
+.incbin "graphics/kao/lombre_16B1224_298.bin"
 sLombreAngryFlipPal:
-.incbin "baserom.gba", 0x16B14BC, 0x40
+.incbin "graphics/kao/lombre_16B14BC_40.bin"
 sLombreAngryFlipGfx:
-.incbin "baserom.gba", 0x16B14FC, 0x260
+.incbin "graphics/kao/lombre_16B14FC_260.bin"
 sLombreOpenMouthFlipPal:
-.incbin "baserom.gba", 0x16B175C, 0x40
+.incbin "graphics/kao/lombre_16B175C_40.bin"
 sLombreOpenMouthFlipGfx:
-.incbin "baserom.gba", 0x16B179C, 0x2A4
+.incbin "graphics/kao/lombre_16B179C_2A4.bin"
 sLombreSadFlipPal:
-.incbin "baserom.gba", 0x16B1A40, 0x40
+.incbin "graphics/kao/lombre_16B1A40_40.bin"
 sLombreSadFlipGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B1A85, 0x267
+.incbin "graphics/kao/lombre_16B1A85_267.bin"
 sPortraitsLombre:
 kao_portrait sLombreNormalPal, sLombreNormalGfx
 kao_portrait sLombreAngryPal, sLombreAngryGfx

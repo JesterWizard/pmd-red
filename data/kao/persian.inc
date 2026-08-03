@@ -2,9 +2,9 @@
 gKaoPersian:
 kao_siro sPortraitsPersian
 sPersianNormalPal:
-.incbin "baserom.gba", 0x168FEC8, 0x40
+.incbin "graphics/kao/persian_168FEC8_40.bin"
 sPersianNormalGfx:
-.incbin "baserom.gba", 0x168FF08, 0x2B4
+.incbin "graphics/kao/persian_168FF08_2B4.bin"
 sPortraitsPersian:
 kao_portrait sPersianNormalPal, sPersianNormalGfx
 kao_portrait 0, 0

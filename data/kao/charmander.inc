@@ -2,63 +2,63 @@
 gKaoCharmander:
 kao_siro sPortraitsCharmander
 sCharmanderNormalPal:
-.incbin "baserom.gba", 0x1682600, 0x40
+.incbin "graphics/kao/charmander_1682600_40.bin"
 sCharmanderNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1682645, 0x247
+.incbin "graphics/kao/charmander_1682645_247.bin"
 sCharmanderHappyPal:
-.incbin "baserom.gba", 0x168288C, 0x40
+.incbin "graphics/kao/charmander_168288C_40.bin"
 sCharmanderHappyGfx:
-.incbin "baserom.gba", 0x16828CC, 0x234
+.incbin "graphics/kao/charmander_16828CC_234.bin"
 sCharmanderPainedPal:
-.incbin "baserom.gba", 0x1682B00, 0x40
+.incbin "graphics/kao/charmander_1682B00_40.bin"
 sCharmanderPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1682B45, 0x253
+.incbin "graphics/kao/charmander_1682B45_253.bin"
 sCharmanderAngryPal:
-.incbin "baserom.gba", 0x1682D98, 0x40
+.incbin "graphics/kao/charmander_1682D98_40.bin"
 sCharmanderAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1682DDD, 0x27B
+.incbin "graphics/kao/charmander_1682DDD_27B.bin"
 sCharmanderWorriedPal:
-.incbin "baserom.gba", 0x1683058, 0x40
+.incbin "graphics/kao/charmander_1683058_40.bin"
 sCharmanderWorriedGfx:
-.incbin "baserom.gba", 0x1683098, 0x254
+.incbin "graphics/kao/charmander_1683098_254.bin"
 sCharmanderSadPal:
-.incbin "baserom.gba", 0x16832EC, 0x40
+.incbin "graphics/kao/charmander_16832EC_40.bin"
 sCharmanderSadGfx:
-.incbin "baserom.gba", 0x168332C, 0x254
+.incbin "graphics/kao/charmander_168332C_254.bin"
 sCharmanderCryingPal:
-.incbin "baserom.gba", 0x1683580, 0x40
+.incbin "graphics/kao/charmander_1683580_40.bin"
 sCharmanderCryingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16835C5, 0x263
+.incbin "graphics/kao/charmander_16835C5_263.bin"
 sCharmanderShoutingPal:
-.incbin "baserom.gba", 0x1683828, 0x40
+.incbin "graphics/kao/charmander_1683828_40.bin"
 sCharmanderShoutingGfx:
-.incbin "baserom.gba", 0x1683868, 0x2A8
+.incbin "graphics/kao/charmander_1683868_2A8.bin"
 sCharmanderTearyEyePal:
-.incbin "baserom.gba", 0x1683B10, 0x40
+.incbin "graphics/kao/charmander_1683B10_40.bin"
 sCharmanderTearyEyeGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1683B55, 0x25B
+.incbin "graphics/kao/charmander_1683B55_25B.bin"
 sCharmanderDeterminedPal:
-.incbin "baserom.gba", 0x1683DB0, 0x40
+.incbin "graphics/kao/charmander_1683DB0_40.bin"
 sCharmanderDeterminedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1683DF5, 0x247
+.incbin "graphics/kao/charmander_1683DF5_247.bin"
 sCharmanderJoyousPal:
-.incbin "baserom.gba", 0x168403C, 0x40
+.incbin "graphics/kao/charmander_168403C_40.bin"
 sCharmanderJoyousGfx:
-.incbin "baserom.gba", 0x168407C, 0x2E0
+.incbin "graphics/kao/charmander_168407C_2E0.bin"
 sCharmanderInspiredPal:
-.incbin "baserom.gba", 0x168435C, 0x40
+.incbin "graphics/kao/charmander_168435C_40.bin"
 sCharmanderInspiredGfx:
-.incbin "baserom.gba", 0x168439C, 0x248
+.incbin "graphics/kao/charmander_168439C_248.bin"
 sCharmanderSurprisedPal:
-.incbin "baserom.gba", 0x16845E4, 0x40
+.incbin "graphics/kao/charmander_16845E4_40.bin"
 sCharmanderSurprisedGfx:
-.incbin "baserom.gba", 0x1684624, 0x2A4
+.incbin "graphics/kao/charmander_1684624_2A4.bin"
 sPortraitsCharmander:
 kao_portrait sCharmanderNormalPal, sCharmanderNormalGfx
 kao_portrait sCharmanderHappyPal, sCharmanderHappyGfx

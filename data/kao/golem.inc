@@ -2,10 +2,10 @@
 gKaoGolem:
 kao_siro sPortraitsGolem
 sGolemNormalPal:
-.incbin "baserom.gba", 0x1696374, 0x40
+.incbin "graphics/kao/golem_1696374_40.bin"
 sGolemNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16963B9, 0x2AB
+.incbin "graphics/kao/golem_16963B9_2AB.bin"
 sPortraitsGolem:
 kao_portrait sGolemNormalPal, sGolemNormalGfx
 kao_portrait 0, 0

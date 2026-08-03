@@ -2,13 +2,13 @@
 gKaoLatios:
 kao_siro sPortraitsLatios
 sLatiosNormalPal:
-.incbin "baserom.gba", 0x16BA58C, 0x40
+.incbin "graphics/kao/latios_16BA58C_40.bin"
 sLatiosNormalGfx:
-.incbin "baserom.gba", 0x16BA5CC, 0x290
+.incbin "graphics/kao/latios_16BA5CC_290.bin"
 sLatiosHappyPal:
-.incbin "baserom.gba", 0x16BA85C, 0x40
+.incbin "graphics/kao/latios_16BA85C_40.bin"
 sLatiosHappyGfx:
-.incbin "baserom.gba", 0x16BA89C, 0x29C
+.incbin "graphics/kao/latios_16BA89C_29C.bin"
 sPortraitsLatios:
 kao_portrait sLatiosNormalPal, sLatiosNormalGfx
 kao_portrait sLatiosHappyPal, sLatiosHappyGfx

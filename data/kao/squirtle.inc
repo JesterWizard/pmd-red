@@ -2,62 +2,62 @@
 gKaoSquirtle:
 kao_siro sPortraitsSquirtle
 sSquirtleNormalPal:
-.incbin "baserom.gba", 0x16857F8, 0x40
+.incbin "graphics/kao/squirtle_16857F8_40.bin"
 sSquirtleNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x168583D, 0x28F
+.incbin "graphics/kao/squirtle_168583D_28F.bin"
 sSquirtleHappyPal:
-.incbin "baserom.gba", 0x1685ACC, 0x40
+.incbin "graphics/kao/squirtle_1685ACC_40.bin"
 sSquirtleHappyGfx:
-.incbin "baserom.gba", 0x1685B0C, 0x2A4
+.incbin "graphics/kao/squirtle_1685B0C_2A4.bin"
 sSquirtlePainedPal:
-.incbin "baserom.gba", 0x1685DB0, 0x40
+.incbin "graphics/kao/squirtle_1685DB0_40.bin"
 sSquirtlePainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1685DF5, 0x2A3
+.incbin "graphics/kao/squirtle_1685DF5_2A3.bin"
 sSquirtleAngryPal:
-.incbin "baserom.gba", 0x1686098, 0x40
+.incbin "graphics/kao/squirtle_1686098_40.bin"
 sSquirtleAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16860DD, 0x2C7
+.incbin "graphics/kao/squirtle_16860DD_2C7.bin"
 sSquirtleWorriedPal:
-.incbin "baserom.gba", 0x16863A4, 0x40
+.incbin "graphics/kao/squirtle_16863A4_40.bin"
 sSquirtleWorriedGfx:
-.incbin "baserom.gba", 0x16863E4, 0x2B4
+.incbin "graphics/kao/squirtle_16863E4_2B4.bin"
 sSquirtleSadPal:
-.incbin "baserom.gba", 0x1686698, 0x40
+.incbin "graphics/kao/squirtle_1686698_40.bin"
 sSquirtleSadGfx:
-.incbin "baserom.gba", 0x16866D8, 0x29C
+.incbin "graphics/kao/squirtle_16866D8_29C.bin"
 sSquirtleCryingPal:
-.incbin "baserom.gba", 0x1686974, 0x40
+.incbin "graphics/kao/squirtle_1686974_40.bin"
 sSquirtleCryingGfx:
-.incbin "baserom.gba", 0x16869B4, 0x2AC
+.incbin "graphics/kao/squirtle_16869B4_2AC.bin"
 sSquirtleShoutingPal:
-.incbin "baserom.gba", 0x1686C60, 0x40
+.incbin "graphics/kao/squirtle_1686C60_40.bin"
 sSquirtleShoutingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1686CA5, 0x2A7
+.incbin "graphics/kao/squirtle_1686CA5_2A7.bin"
 sSquirtleTearyEyePal:
-.incbin "baserom.gba", 0x1686F4C, 0x40
+.incbin "graphics/kao/squirtle_1686F4C_40.bin"
 sSquirtleTearyEyeGfx:
-.incbin "baserom.gba", 0x1686F8C, 0x2A0
+.incbin "graphics/kao/squirtle_1686F8C_2A0.bin"
 sSquirtleDeterminedPal:
-.incbin "baserom.gba", 0x168722C, 0x40
+.incbin "graphics/kao/squirtle_168722C_40.bin"
 sSquirtleDeterminedGfx:
-.incbin "baserom.gba", 0x168726C, 0x298
+.incbin "graphics/kao/squirtle_168726C_298.bin"
 sSquirtleJoyousPal:
-.incbin "baserom.gba", 0x1687504, 0x40
+.incbin "graphics/kao/squirtle_1687504_40.bin"
 sSquirtleJoyousGfx:
-.incbin "baserom.gba", 0x1687544, 0x2E4
+.incbin "graphics/kao/squirtle_1687544_2E4.bin"
 sSquirtleInspiredPal:
-.incbin "baserom.gba", 0x1687828, 0x40
+.incbin "graphics/kao/squirtle_1687828_40.bin"
 sSquirtleInspiredGfx:
-.incbin "baserom.gba", 0x1687868, 0x298
+.incbin "graphics/kao/squirtle_1687868_298.bin"
 sSquirtleSurprisedPal:
-.incbin "baserom.gba", 0x1687B00, 0x40
+.incbin "graphics/kao/squirtle_1687B00_40.bin"
 sSquirtleSurprisedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1687B45, 0x2CB
+.incbin "graphics/kao/squirtle_1687B45_2CB.bin"
 sPortraitsSquirtle:
 kao_portrait sSquirtleNormalPal, sSquirtleNormalGfx
 kao_portrait sSquirtleHappyPal, sSquirtleHappyGfx

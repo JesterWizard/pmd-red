@@ -2,23 +2,23 @@
 gKaoKecleon:
 kao_siro sPortraitsKecleon
 sKecleonNormalPal:
-.incbin "baserom.gba", 0x16B8960, 0x40
+.incbin "graphics/kao/kecleon_16B8960_40.bin"
 sKecleonNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B89A5, 0x2DF
+.incbin "graphics/kao/kecleon_16B89A5_2DF.bin"
 sKecleon1Pal:
-.incbin "baserom.gba", 0x16B8C84, 0x40
+.incbin "graphics/kao/kecleon_16B8C84_40.bin"
 sKecleon1Gfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B8CC9, 0x2E3
+.incbin "graphics/kao/kecleon_16B8CC9_2E3.bin"
 gUnknown_96B8FAC:
-.incbin "baserom.gba", 0x16B8FAC, 0x40
+.incbin "graphics/kao/kecleon_16B8FAC_40.bin"
 gUnknown_96B8FEC:
-.incbin "baserom.gba", 0x16B8FEC, 0x2DC
+.incbin "graphics/kao/kecleon_16B8FEC_2DC.bin"
 gUnknown_96B92C8:
-.incbin "baserom.gba", 0x16B92C8, 0x40
+.incbin "graphics/kao/kecleon_16B92C8_40.bin"
 gUnknown_96B9308:
-.incbin "baserom.gba", 0x16B9308, 0x2E8
+.incbin "graphics/kao/kecleon_16B9308_2E8.bin"
 sPortraitsKecleon:
 kao_portrait sKecleonNormalPal, sKecleonNormalGfx
 kao_portrait sKecleon1Pal, sKecleon1Gfx

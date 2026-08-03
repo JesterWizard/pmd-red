@@ -2,9 +2,9 @@
 gKaoOctillery:
 kao_siro sPortraitsOctillery
 sOctilleryNormalPal:
-.incbin "baserom.gba", 0x16A72CC, 0x40
+.incbin "graphics/kao/octillery_16A72CC_40.bin"
 sOctilleryNormalGfx:
-.incbin "baserom.gba", 0x16A730C, 0x2C4
+.incbin "graphics/kao/octillery_16A730C_2C4.bin"
 sPortraitsOctillery:
 kao_portrait sOctilleryNormalPal, sOctilleryNormalGfx
 kao_portrait 0, 0

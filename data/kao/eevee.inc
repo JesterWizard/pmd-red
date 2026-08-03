@@ -2,63 +2,63 @@
 gKaoEevee:
 kao_siro sPortraitsEevee
 sEeveeNormalPal:
-.incbin "baserom.gba", 0x169B114, 0x40
+.incbin "graphics/kao/eevee_169B114_40.bin"
 sEeveeNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169B159, 0x2B7
+.incbin "graphics/kao/eevee_169B159_2B7.bin"
 sEeveeHappyPal:
-.incbin "baserom.gba", 0x169B410, 0x40
+.incbin "graphics/kao/eevee_169B410_40.bin"
 sEeveeHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169B455, 0x29F
+.incbin "graphics/kao/eevee_169B455_29F.bin"
 sEeveePainedPal:
-.incbin "baserom.gba", 0x169B6F4, 0x40
+.incbin "graphics/kao/eevee_169B6F4_40.bin"
 sEeveePainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169B739, 0x267
+.incbin "graphics/kao/eevee_169B739_267.bin"
 sEeveeAngryPal:
-.incbin "baserom.gba", 0x169B9A0, 0x40
+.incbin "graphics/kao/eevee_169B9A0_40.bin"
 sEeveeAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169B9E5, 0x2BB
+.incbin "graphics/kao/eevee_169B9E5_2BB.bin"
 sEeveeWorriedPal:
-.incbin "baserom.gba", 0x169BCA0, 0x40
+.incbin "graphics/kao/eevee_169BCA0_40.bin"
 sEeveeWorriedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169BCE5, 0x28F
+.incbin "graphics/kao/eevee_169BCE5_28F.bin"
 sEeveeSadPal:
-.incbin "baserom.gba", 0x169BF74, 0x40
+.incbin "graphics/kao/eevee_169BF74_40.bin"
 sEeveeSadGfx:
-.incbin "baserom.gba", 0x169BFB4, 0x288
+.incbin "graphics/kao/eevee_169BFB4_288.bin"
 sEeveeCryingPal:
-.incbin "baserom.gba", 0x169C23C, 0x40
+.incbin "graphics/kao/eevee_169C23C_40.bin"
 sEeveeCryingGfx:
-.incbin "baserom.gba", 0x169C27C, 0x278
+.incbin "graphics/kao/eevee_169C27C_278.bin"
 sEeveeShoutingPal:
-.incbin "baserom.gba", 0x169C4F4, 0x40
+.incbin "graphics/kao/eevee_169C4F4_40.bin"
 sEeveeShoutingGfx:
-.incbin "baserom.gba", 0x169C534, 0x2A0
+.incbin "graphics/kao/eevee_169C534_2A0.bin"
 sEeveeTearyEyePal:
-.incbin "baserom.gba", 0x169C7D4, 0x40
+.incbin "graphics/kao/eevee_169C7D4_40.bin"
 sEeveeTearyEyeGfx:
-.incbin "baserom.gba", 0x169C814, 0x2B4
+.incbin "graphics/kao/eevee_169C814_2B4.bin"
 sEeveeDeterminedPal:
-.incbin "baserom.gba", 0x169CAC8, 0x40
+.incbin "graphics/kao/eevee_169CAC8_40.bin"
 sEeveeDeterminedGfx:
-.incbin "baserom.gba", 0x169CB08, 0x2A4
+.incbin "graphics/kao/eevee_169CB08_2A4.bin"
 sEeveeJoyousPal:
-.incbin "baserom.gba", 0x169CDAC, 0x40
+.incbin "graphics/kao/eevee_169CDAC_40.bin"
 sEeveeJoyousGfx:
-.incbin "baserom.gba", 0x169CDEC, 0x2D4
+.incbin "graphics/kao/eevee_169CDEC_2D4.bin"
 sEeveeInspiredPal:
-.incbin "baserom.gba", 0x169D0C0, 0x40
+.incbin "graphics/kao/eevee_169D0C0_40.bin"
 sEeveeInspiredGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169D105, 0x2BF
+.incbin "graphics/kao/eevee_169D105_2BF.bin"
 sEeveeSurprisedPal:
-.incbin "baserom.gba", 0x169D3C4, 0x40
+.incbin "graphics/kao/eevee_169D3C4_40.bin"
 sEeveeSurprisedGfx:
-.incbin "baserom.gba", 0x169D404, 0x2C4
+.incbin "graphics/kao/eevee_169D404_2C4.bin"
 sPortraitsEevee:
 kao_portrait sEeveeNormalPal, sEeveeNormalGfx
 kao_portrait sEeveeHappyPal, sEeveeHappyGfx

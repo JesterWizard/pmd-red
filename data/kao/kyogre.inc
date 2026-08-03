@@ -2,10 +2,10 @@
 gKaoKyogre:
 kao_siro sPortraitsKyogre
 sKyogreNormalPal:
-.incbin "baserom.gba", 0x16BABB0, 0x40
+.incbin "graphics/kao/kyogre_16BABB0_40.bin"
 sKyogreNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BABF5, 0x257
+.incbin "graphics/kao/kyogre_16BABF5_257.bin"
 sPortraitsKyogre:
 kao_portrait sKyogreNormalPal, sKyogreNormalGfx
 kao_portrait 0, 0

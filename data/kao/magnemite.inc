@@ -2,14 +2,14 @@
 gKaoMagnemite:
 kao_siro sPortraitsMagnemite
 sMagnemiteNormalPal:
-.incbin "baserom.gba", 0x16966DC, 0x40
+.incbin "graphics/kao/magnemite_16966DC_40.bin"
 sMagnemiteNormalGfx:
-.incbin "baserom.gba", 0x169671C, 0x2B8
+.incbin "graphics/kao/magnemite_169671C_2B8.bin"
 sMagnemiteHappyPal:
-.incbin "baserom.gba", 0x16969D4, 0x40
+.incbin "graphics/kao/magnemite_16969D4_40.bin"
 sMagnemiteHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1696A19, 0x2B7
+.incbin "graphics/kao/magnemite_1696A19_2B7.bin"
 sPortraitsMagnemite:
 kao_portrait sMagnemiteNormalPal, sMagnemiteNormalGfx
 kao_portrait sMagnemiteHappyPal, sMagnemiteHappyGfx

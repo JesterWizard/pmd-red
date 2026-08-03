@@ -2,63 +2,63 @@
 gKaoTreecko:
 kao_siro sPortraitsTreecko
 sTreeckoNormalPal:
-.incbin "baserom.gba", 0x16A9614, 0x40
+.incbin "graphics/kao/treecko_16A9614_40.bin"
 sTreeckoNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A9659, 0x28F
+.incbin "graphics/kao/treecko_16A9659_28F.bin"
 sTreeckoHappyPal:
-.incbin "baserom.gba", 0x16A98E8, 0x40
+.incbin "graphics/kao/treecko_16A98E8_40.bin"
 sTreeckoHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A992D, 0x27F
+.incbin "graphics/kao/treecko_16A992D_27F.bin"
 sTreeckoPainedPal:
-.incbin "baserom.gba", 0x16A9BAC, 0x40
+.incbin "graphics/kao/treecko_16A9BAC_40.bin"
 sTreeckoPainedGfx:
-.incbin "baserom.gba", 0x16A9BEC, 0x2A4
+.incbin "graphics/kao/treecko_16A9BEC_2A4.bin"
 sTreeckoAngryPal:
-.incbin "baserom.gba", 0x16A9E90, 0x40
+.incbin "graphics/kao/treecko_16A9E90_40.bin"
 sTreeckoAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A9ED5, 0x2A3
+.incbin "graphics/kao/treecko_16A9ED5_2A3.bin"
 sTreeckoWorriedPal:
-.incbin "baserom.gba", 0x16AA178, 0x40
+.incbin "graphics/kao/treecko_16AA178_40.bin"
 sTreeckoWorriedGfx:
-.incbin "baserom.gba", 0x16AA1B8, 0x298
+.incbin "graphics/kao/treecko_16AA1B8_298.bin"
 sTreeckoSadPal:
-.incbin "baserom.gba", 0x16AA450, 0x40
+.incbin "graphics/kao/treecko_16AA450_40.bin"
 sTreeckoSadGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AA495, 0x28B
+.incbin "graphics/kao/treecko_16AA495_28B.bin"
 sTreeckoCryingPal:
-.incbin "baserom.gba", 0x16AA720, 0x40
+.incbin "graphics/kao/treecko_16AA720_40.bin"
 sTreeckoCryingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AA765, 0x287
+.incbin "graphics/kao/treecko_16AA765_287.bin"
 sTreeckoShoutingPal:
-.incbin "baserom.gba", 0x16AA9EC, 0x40
+.incbin "graphics/kao/treecko_16AA9EC_40.bin"
 sTreeckoShoutingGfx:
-.incbin "baserom.gba", 0x16AAA2C, 0x2BC
+.incbin "graphics/kao/treecko_16AAA2C_2BC.bin"
 sTreeckoTearyEyePal:
-.incbin "baserom.gba", 0x16AACE8, 0x40
+.incbin "graphics/kao/treecko_16AACE8_40.bin"
 sTreeckoTearyEyeGfx:
-.incbin "baserom.gba", 0x16AAD28, 0x29C
+.incbin "graphics/kao/treecko_16AAD28_29C.bin"
 sTreeckoDeterminedPal:
-.incbin "baserom.gba", 0x16AAFC4, 0x40
+.incbin "graphics/kao/treecko_16AAFC4_40.bin"
 sTreeckoDeterminedGfx:
-.incbin "baserom.gba", 0x16AB004, 0x27C
+.incbin "graphics/kao/treecko_16AB004_27C.bin"
 sTreeckoJoyousPal:
-.incbin "baserom.gba", 0x16AB280, 0x40
+.incbin "graphics/kao/treecko_16AB280_40.bin"
 sTreeckoJoyousGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AB2C5, 0x2EF
+.incbin "graphics/kao/treecko_16AB2C5_2EF.bin"
 sTreeckoInspiredPal:
-.incbin "baserom.gba", 0x16AB5B4, 0x40
+.incbin "graphics/kao/treecko_16AB5B4_40.bin"
 sTreeckoInspiredGfx:
-.incbin "baserom.gba", 0x16AB5F4, 0x2A4
+.incbin "graphics/kao/treecko_16AB5F4_2A4.bin"
 sTreeckoSurprisedPal:
-.incbin "baserom.gba", 0x16AB898, 0x40
+.incbin "graphics/kao/treecko_16AB898_40.bin"
 sTreeckoSurprisedGfx:
-.incbin "baserom.gba", 0x16AB8D8, 0x2D4
+.incbin "graphics/kao/treecko_16AB8D8_2D4.bin"
 sPortraitsTreecko:
 kao_portrait sTreeckoNormalPal, sTreeckoNormalGfx
 kao_portrait sTreeckoHappyPal, sTreeckoHappyGfx

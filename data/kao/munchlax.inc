@@ -2,34 +2,34 @@
 gKaoMunchlax:
 kao_siro sPortraitsMunchlax
 sMunchlaxNormalPal:
-.incbin "baserom.gba", 0x16BBEF8, 0x40
+.incbin "graphics/kao/munchlax_16BBEF8_40.bin"
 sMunchlaxNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BBF3D, 0x293
+.incbin "graphics/kao/munchlax_16BBF3D_293.bin"
 sMunchlax1Pal:
-.incbin "baserom.gba", 0x16BC1D0, 0x40
+.incbin "graphics/kao/munchlax_16BC1D0_40.bin"
 sMunchlax1Gfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BC215, 0x2A3
+.incbin "graphics/kao/munchlax_16BC215_2A3.bin"
 sMunchlax2Pal:
-.incbin "baserom.gba", 0x16BC4B8, 0x40
+.incbin "graphics/kao/munchlax_16BC4B8_40.bin"
 sMunchlax2Gfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BC4FD, 0x2BF
+.incbin "graphics/kao/munchlax_16BC4FD_2BF.bin"
 sMunchlax3Pal:
-.incbin "baserom.gba", 0x16BC7BC, 0x40
+.incbin "graphics/kao/munchlax_16BC7BC_40.bin"
 sMunchlax3Gfx:
-.incbin "baserom.gba", 0x16BC7FC, 0x284
+.incbin "graphics/kao/munchlax_16BC7FC_284.bin"
 sMunchlax4Pal:
-.incbin "baserom.gba", 0x16BCA80, 0x40
+.incbin "graphics/kao/munchlax_16BCA80_40.bin"
 sMunchlax4Gfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BCAC5, 0x2AB
+.incbin "graphics/kao/munchlax_16BCAC5_2AB.bin"
 sMunchlax5Pal:
-.incbin "baserom.gba", 0x16BCD70, 0x40
+.incbin "graphics/kao/munchlax_16BCD70_40.bin"
 sMunchlax5Gfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BCDB5, 0x287
+.incbin "graphics/kao/munchlax_16BCDB5_287.bin"
 sPortraitsMunchlax:
 kao_portrait sMunchlaxNormalPal, sMunchlaxNormalGfx
 kao_portrait sMunchlax1Pal, sMunchlax1Gfx

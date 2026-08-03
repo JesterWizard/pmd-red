@@ -2,15 +2,15 @@
 gKaoSkarmory:
 kao_siro sPortraitsSkarmory
 sSkarmoryNormalPal:
-.incbin "baserom.gba", 0x16A7648, 0x40
+.incbin "graphics/kao/skarmory_16A7648_40.bin"
 sSkarmoryNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A768D, 0x26B
+.incbin "graphics/kao/skarmory_16A768D_26B.bin"
 sSkarmoryPlaceholderPal:
-.incbin "baserom.gba", 0x16A78F8, 0x40
+.incbin "graphics/kao/skarmory_16A78F8_40.bin"
 sSkarmoryPlaceholderGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A793D, 0x127
+.incbin "graphics/kao/skarmory_16A793D_127.bin"
 sPortraitsSkarmory:
 kao_portrait sSkarmoryNormalPal, sSkarmoryNormalGfx
 kao_portrait sSkarmoryPlaceholderPal, sSkarmoryPlaceholderGfx

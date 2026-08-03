@@ -2,37 +2,37 @@
 gKaoGengar:
 kao_siro sPortraitsGengar
 sGengarNormalPal:
-.incbin "baserom.gba", 0x1696D48, 0x40
+.incbin "graphics/kao/gengar_1696D48_40.bin"
 sGengarNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1696D8D, 0x2C3
+.incbin "graphics/kao/gengar_1696D8D_2C3.bin"
 sGengarHappyPal:
-.incbin "baserom.gba", 0x1697050, 0x40
+.incbin "graphics/kao/gengar_1697050_40.bin"
 sGengarHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1697095, 0x2A3
+.incbin "graphics/kao/gengar_1697095_2A3.bin"
 sGengarAngryPal:
-.incbin "baserom.gba", 0x1697338, 0x40
+.incbin "graphics/kao/gengar_1697338_40.bin"
 sGengarAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169737D, 0x2BF
+.incbin "graphics/kao/gengar_169737D_2BF.bin"
 sGengarWorriedPal:
-.incbin "baserom.gba", 0x169763C, 0x40
+.incbin "graphics/kao/gengar_169763C_40.bin"
 sGengarWorriedGfx:
-.incbin "baserom.gba", 0x169767C, 0x29C
+.incbin "graphics/kao/gengar_169767C_29C.bin"
 sGengarDejectedPal:
-.incbin "baserom.gba", 0x1697918, 0x40
+.incbin "graphics/kao/gengar_1697918_40.bin"
 sGengarDejectedGfx:
-.incbin "baserom.gba", 0x1697958, 0x2A4
+.incbin "graphics/kao/gengar_1697958_2A4.bin"
 sGengarSadPal:
-.incbin "baserom.gba", 0x1697BFC, 0x40
+.incbin "graphics/kao/gengar_1697BFC_40.bin"
 sGengarSadGfx:
-.incbin "baserom.gba", 0x1697C3C, 0x2B4
+.incbin "graphics/kao/gengar_1697C3C_2B4.bin"
 sGengarSurprisedPal:
-.incbin "baserom.gba", 0x1697EF0, 0x40
+.incbin "graphics/kao/gengar_1697EF0_40.bin"
 sGengarSurprisedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1697F35, 0x2C7
+.incbin "graphics/kao/gengar_1697F35_2C7.bin"
 sPortraitsGengar:
 kao_portrait sGengarNormalPal, sGengarNormalGfx
 kao_portrait sGengarHappyPal, sGengarHappyGfx

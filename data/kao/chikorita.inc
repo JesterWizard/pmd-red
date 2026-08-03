@@ -2,59 +2,59 @@
 gKaoChikorita:
 kao_siro sPortraitsChikorita
 sChikoritaNormalPal:
-.incbin "baserom.gba", 0x169E534, 0x40
+.incbin "graphics/kao/chikorita_169E534_40.bin"
 sChikoritaNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169E579, 0x29F
+.incbin "graphics/kao/chikorita_169E579_29F.bin"
 sChikoritaHappyPal:
-.incbin "baserom.gba", 0x169E818, 0x40
+.incbin "graphics/kao/chikorita_169E818_40.bin"
 sChikoritaHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169E85D, 0x27F
+.incbin "graphics/kao/chikorita_169E85D_27F.bin"
 sChikoritaPainedPal:
-.incbin "baserom.gba", 0x169EADC, 0x40
+.incbin "graphics/kao/chikorita_169EADC_40.bin"
 sChikoritaPainedGfx:
-.incbin "baserom.gba", 0x169EB1C, 0x290
+.incbin "graphics/kao/chikorita_169EB1C_290.bin"
 sChikoritaAngryPal:
-.incbin "baserom.gba", 0x169EDAC, 0x40
+.incbin "graphics/kao/chikorita_169EDAC_40.bin"
 sChikoritaAngryGfx:
-.incbin "baserom.gba", 0x169EDEC, 0x27C
+.incbin "graphics/kao/chikorita_169EDEC_27C.bin"
 sChikoritaWorriedPal:
-.incbin "baserom.gba", 0x169F068, 0x40
+.incbin "graphics/kao/chikorita_169F068_40.bin"
 sChikoritaWorriedGfx:
-.incbin "baserom.gba", 0x169F0A8, 0x294
+.incbin "graphics/kao/chikorita_169F0A8_294.bin"
 sChikoritaSadPal:
-.incbin "baserom.gba", 0x169F33C, 0x40
+.incbin "graphics/kao/chikorita_169F33C_40.bin"
 sChikoritaSadGfx:
-.incbin "baserom.gba", 0x169F37C, 0x2A0
+.incbin "graphics/kao/chikorita_169F37C_2A0.bin"
 sChikoritaCryingPal:
-.incbin "baserom.gba", 0x169F61C, 0x40
+.incbin "graphics/kao/chikorita_169F61C_40.bin"
 sChikoritaCryingGfx:
-.incbin "baserom.gba", 0x169F65C, 0x2A8
+.incbin "graphics/kao/chikorita_169F65C_2A8.bin"
 sChikoritaShoutingPal:
-.incbin "baserom.gba", 0x169F904, 0x40
+.incbin "graphics/kao/chikorita_169F904_40.bin"
 sChikoritaShoutingGfx:
-.incbin "baserom.gba", 0x169F944, 0x290
+.incbin "graphics/kao/chikorita_169F944_290.bin"
 sChikoritaTearyEyePal:
-.incbin "baserom.gba", 0x169FBD4, 0x40
+.incbin "graphics/kao/chikorita_169FBD4_40.bin"
 sChikoritaTearyEyeGfx:
-.incbin "baserom.gba", 0x169FC14, 0x2A4
+.incbin "graphics/kao/chikorita_169FC14_2A4.bin"
 sChikoritaDeterminedPal:
-.incbin "baserom.gba", 0x169FEB8, 0x40
+.incbin "graphics/kao/chikorita_169FEB8_40.bin"
 sChikoritaDeterminedGfx:
-.incbin "baserom.gba", 0x169FEF8, 0x270
+.incbin "graphics/kao/chikorita_169FEF8_270.bin"
 sChikoritaJoyousPal:
-.incbin "baserom.gba", 0x16A0168, 0x40
+.incbin "graphics/kao/chikorita_16A0168_40.bin"
 sChikoritaJoyousGfx:
-.incbin "baserom.gba", 0x16A01A8, 0x2C0
+.incbin "graphics/kao/chikorita_16A01A8_2C0.bin"
 sChikoritaInspiredPal:
-.incbin "baserom.gba", 0x16A0468, 0x40
+.incbin "graphics/kao/chikorita_16A0468_40.bin"
 sChikoritaInspiredGfx:
-.incbin "baserom.gba", 0x16A04A8, 0x29C
+.incbin "graphics/kao/chikorita_16A04A8_29C.bin"
 sChikoritaSurprisedPal:
-.incbin "baserom.gba", 0x16A0744, 0x40
+.incbin "graphics/kao/chikorita_16A0744_40.bin"
 sChikoritaSurprisedGfx:
-.incbin "baserom.gba", 0x16A0784, 0x2AC
+.incbin "graphics/kao/chikorita_16A0784_2AC.bin"
 sPortraitsChikorita:
 kao_portrait sChikoritaNormalPal, sChikoritaNormalGfx
 kao_portrait sChikoritaHappyPal, sChikoritaHappyGfx

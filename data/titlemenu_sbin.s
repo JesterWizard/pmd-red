@@ -4,61 +4,61 @@
 gUnknown_83801A0:
 .string "SIRO"
 .4byte gUnknown_8380AB0
-.incbin "baserom.gba", 0x3801A8, 0x8
+.incbin "graphics/titlemenu/titlemenu_sbin_3801A8_8.bin"
 .global gUnknown_83801B0
 gUnknown_83801B0:
-.incbin "baserom.gba", 0x3801B0, 0x800
+.incbin "graphics/titlemenu/titlemenu_sbin_3801B0_800.bin"
 .global gUnknown_83809B0
 gUnknown_83809B0:
-.incbin "baserom.gba", 0x3809B0, 0x100
+.incbin "graphics/titlemenu/titlemenu_sbin_3809B0_100.bin"
 .global gUnknown_8380AB0
 gUnknown_8380AB0:
 .4byte gUnknown_83801B0
 .4byte gUnknown_83809B0
 .global gUnknown_8380AB8
 gUnknown_8380AB8:
-.incbin "baserom.gba", 0x380AB8, 0x1DCC
+.incbin "graphics/titlemenu/titlemenu_sbin_380AB8_1DCC.bin"
 .global gUnknown_8382884
 gUnknown_8382884:
-.incbin "baserom.gba", 0x382884, 0x380
+.incbin "graphics/titlemenu/titlemenu_sbin_382884_380.bin"
 .global gUnknown_8382C04
 gUnknown_8382C04:
-.incbin "baserom.gba", 0x382C04, 0x1D10
+.incbin "graphics/titlemenu/titlemenu_sbin_382C04_1D10.bin"
 .global gUnknown_8384914
 gUnknown_8384914:
-.incbin "baserom.gba", 0x384914, 0x380
+.incbin "graphics/titlemenu/titlemenu_sbin_384914_380.bin"
 .string "pksdir0\0"
 .global gUnknown_8384C9C
 gUnknown_8384C9C:
-.incbin "baserom.gba", 0x384C9C, 0x3E34
+.incbin "graphics/titlemenu/titlemenu_sbin_384C9C_3E34.bin"
 .global gUnknown_8388AD0
 gUnknown_8388AD0:
-.incbin "baserom.gba", 0x388AD0, 0x380
+.incbin "graphics/titlemenu/titlemenu_sbin_388AD0_380.bin"
 .global gUnknown_8388E50
 gUnknown_8388E50:
 .string "AT4PX"
-.incbin "baserom.gba", 0x388E55, 0x4143
+.incbin "graphics/titlemenu/titlemenu_sbin_388E55_4143.bin"
 .global gUnknown_838CF98
 gUnknown_838CF98:
-.incbin "baserom.gba", 0x38CF98, 0x380
+.incbin "graphics/titlemenu/titlemenu_sbin_38CF98_380.bin"
 .global gUnknown_838D318
 gUnknown_838D318:
-.incbin "baserom.gba", 0x38D318, 0x4928
+.incbin "graphics/titlemenu/titlemenu_sbin_38D318_4928.bin"
 .string "pksdir0\0"
 .global gUnknown_8391C48
 gUnknown_8391C48:
-.incbin "baserom.gba", 0x391C48, 0x380
+.incbin "graphics/titlemenu/titlemenu_sbin_391C48_380.bin"
 .global gUnknown_8391FC8
 gUnknown_8391FC8:
 .string "SIRO"
 .4byte gUnknown_8392398
-.incbin "baserom.gba", 0x391FD0, 0x8
+.incbin "graphics/titlemenu/titlemenu_sbin_391FD0_8.bin"
 .global gUnknown_8391FD8
 gUnknown_8391FD8:
-.incbin "baserom.gba", 0x391FD8, 0x380
+.incbin "graphics/titlemenu/titlemenu_sbin_391FD8_380.bin"
 .global gUnknown_8392358
 gUnknown_8392358:
-.incbin "baserom.gba", 0x392358, 0x40
+.incbin "graphics/titlemenu/titlemenu_sbin_392358_40.bin"
 .global gUnknown_8392398
 gUnknown_8392398:
 .4byte gUnknown_8391FD8
@@ -67,13 +67,13 @@ gUnknown_8392398:
 gUnknown_83923A0:
 .string "SIRO"
 .4byte gUnknown_8392630
-.incbin "baserom.gba", 0x3923A8, 0x8
+.incbin "graphics/titlemenu/titlemenu_sbin_3923A8_8.bin"
 .global gUnknown_83923B0
 gUnknown_83923B0:
-.incbin "baserom.gba", 0x3923B0, 0x80
+.incbin "graphics/titlemenu/titlemenu_sbin_3923B0_80.bin"
 .global gUnknown_8392430
 gUnknown_8392430:
-.incbin "baserom.gba", 0x392430, 0x200
+.incbin "graphics/titlemenu/titlemenu_sbin_392430_200.bin"
 .global gUnknown_8392630
 gUnknown_8392630:
 .4byte gUnknown_83923B0
@@ -82,31 +82,55 @@ gUnknown_8392630:
 gUnknown_8392638:
 .string "SIRO"
 .4byte gUnknown_8392B48
-.incbin "baserom.gba", 0x392640, 0x8
+.incbin "graphics/titlemenu/titlemenu_sbin_392640_8.bin"
 .global gUnknown_8392648
 gUnknown_8392648:
-.incbin "baserom.gba", 0x392648, 0x50
+.incbin "graphics/titlemenu/titlemenu_sbin_392648_50.bin"
 .global gUnknown_8392698
 gUnknown_8392698:
-.incbin "baserom.gba", 0x392698, 0x50
+.incbin "graphics/titlemenu/titlemenu_sbin_392698_50.bin"
 .global gUnknown_83926E8
 gUnknown_83926E8:
-.incbin "baserom.gba", 0x3926E8, 0x50
+.incbin "graphics/titlemenu/titlemenu_sbin_3926E8_50.bin"
 .global gUnknown_8392738
 gUnknown_8392738:
-.incbin "baserom.gba", 0x392738, 0x50
+.incbin "graphics/titlemenu/titlemenu_sbin_392738_50.bin"
 .global gUnknown_8392788
 gUnknown_8392788:
-.incbin "baserom.gba", 0x392788, 0x50
+.incbin "graphics/titlemenu/titlemenu_sbin_392788_50.bin"
 .global gUnknown_83927D8
 gUnknown_83927D8:
-.incbin "baserom.gba", 0x3927D8, 0x50
+.incbin "graphics/titlemenu/titlemenu_sbin_3927D8_50.bin"
 .global gUnknown_8392828
 gUnknown_8392828:
-.incbin "baserom.gba", 0x392828, 0x50
+.incbin "graphics/titlemenu/titlemenu_sbin_392828_50.bin"
 .global gUnknown_8392878
 gUnknown_8392878:
-.incbin "baserom.gba", 0x392878, 0x2D0
+.incbin "graphics/titlemenu/titlemenu_sbin_392878_50.bin"
+.global gUnknown_83928C8
+gUnknown_83928C8:
+.incbin "graphics/titlemenu/titlemenu_sbin_3928C8_50.bin"
+.global gUnknown_8392918
+gUnknown_8392918:
+.incbin "graphics/titlemenu/titlemenu_sbin_392918_50.bin"
+.global gUnknown_8392968
+gUnknown_8392968:
+.incbin "graphics/titlemenu/titlemenu_sbin_392968_50.bin"
+.global gUnknown_83929B8
+gUnknown_83929B8:
+.incbin "graphics/titlemenu/titlemenu_sbin_3929B8_50.bin"
+.global gUnknown_8392A08
+gUnknown_8392A08:
+.incbin "graphics/titlemenu/titlemenu_sbin_392A08_50.bin"
+.global gUnknown_8392A58
+gUnknown_8392A58:
+.incbin "graphics/titlemenu/titlemenu_sbin_392A58_50.bin"
+.global gUnknown_8392AA8
+gUnknown_8392AA8:
+.incbin "graphics/titlemenu/titlemenu_sbin_392AA8_50.bin"
+.global gUnknown_8392AF8
+gUnknown_8392AF8:
+.incbin "graphics/titlemenu/titlemenu_sbin_392AF8_50.bin"
 .global gUnknown_8392B48
 gUnknown_8392B48:
 .4byte gUnknown_8392648
@@ -117,117 +141,124 @@ gUnknown_8392B48:
 .4byte gUnknown_83927D8
 .4byte gUnknown_8392828
 .4byte gUnknown_8392878
-.incbin "baserom.gba", 0x392B68, 0x20
+.4byte gUnknown_83928C8
+.4byte gUnknown_8392918
+.4byte gUnknown_8392968
+.4byte gUnknown_83929B8
+.4byte gUnknown_8392A08
+.4byte gUnknown_8392A58
+.4byte gUnknown_8392AA8
+.4byte gUnknown_8392AF8
 .global gUnknown_8392B88
 gUnknown_8392B88:
-.incbin "baserom.gba", 0x392B88, 0x5F0C
+.incbin "graphics/titlemenu/titlemenu_sbin_392B88_5F0C.bin"
 .string "pksdir0\0"
 .global gUnknown_8398A9C
 gUnknown_8398A9C:
-.incbin "baserom.gba", 0x398A9C, 0x4
+.incbin "graphics/titlemenu/titlemenu_sbin_398A9C_4.bin"
 .4byte gUnknown_8398AAC
-.incbin "baserom.gba", 0x398AA4, 0x8
+.incbin "graphics/titlemenu/titlemenu_sbin_398AA4_8.bin"
 .global gUnknown_8398AAC
 gUnknown_8398AAC:
-.incbin "baserom.gba", 0x398AAC, 0x14D8
+.incbin "graphics/titlemenu/titlemenu_sbin_398AAC_14D8.bin"
 .global gUnknown_8399F84
 gUnknown_8399F84:
-.incbin "baserom.gba", 0x399F84, 0x380
+.incbin "graphics/titlemenu/titlemenu_sbin_399F84_380.bin"
 .global gUnknown_839A304
 gUnknown_839A304:
 .string "SIRO"
 .4byte gUnknown_839B564
-.incbin "baserom.gba", 0x39A30C, 0x8
+.incbin "graphics/titlemenu/titlemenu_sbin_39A30C_8.bin"
 .global gUnknown_839A314
 gUnknown_839A314:
-.incbin "baserom.gba", 0x39A314, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A314_14.bin"
 .global gUnknown_839A328
 gUnknown_839A328:
-.incbin "baserom.gba", 0x39A328, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A328_14.bin"
 .global gUnknown_839A33C
 gUnknown_839A33C:
-.incbin "baserom.gba", 0x39A33C, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A33C_14.bin"
 .global gUnknown_839A350
 gUnknown_839A350:
-.incbin "baserom.gba", 0x39A350, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A350_14.bin"
 .global gUnknown_839A364
 gUnknown_839A364:
-.incbin "baserom.gba", 0x39A364, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A364_14.bin"
 .global gUnknown_839A378
 gUnknown_839A378:
-.incbin "baserom.gba", 0x39A378, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A378_14.bin"
 .global gUnknown_839A38C
 gUnknown_839A38C:
-.incbin "baserom.gba", 0x39A38C, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A38C_14.bin"
 .global gUnknown_839A3A0
 gUnknown_839A3A0:
-.incbin "baserom.gba", 0x39A3A0, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A3A0_14.bin"
 .global gUnknown_839A3B4
 gUnknown_839A3B4:
-.incbin "baserom.gba", 0x39A3B4, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A3B4_14.bin"
 .global gUnknown_839A3C8
 gUnknown_839A3C8:
-.incbin "baserom.gba", 0x39A3C8, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A3C8_14.bin"
 .global gUnknown_839A3DC
 gUnknown_839A3DC:
-.incbin "baserom.gba", 0x39A3DC, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A3DC_14.bin"
 .global gUnknown_839A3F0
 gUnknown_839A3F0:
-.incbin "baserom.gba", 0x39A3F0, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A3F0_14.bin"
 .global gUnknown_839A404
 gUnknown_839A404:
-.incbin "baserom.gba", 0x39A404, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A404_14.bin"
 .global gUnknown_839A418
 gUnknown_839A418:
-.incbin "baserom.gba", 0x39A418, 0x14
+.incbin "graphics/titlemenu/titlemenu_sbin_39A418_14.bin"
 .global gUnknown_839A42C
 gUnknown_839A42C:
-.incbin "baserom.gba", 0x39A42C, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A42C_18.bin"
 .global gUnknown_839A444
 gUnknown_839A444:
-.incbin "baserom.gba", 0x39A444, 0x30
+.incbin "graphics/titlemenu/titlemenu_sbin_39A444_30.bin"
 .global gUnknown_839A474
 gUnknown_839A474:
-.incbin "baserom.gba", 0x39A474, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A474_18.bin"
 .global gUnknown_839A48C
 gUnknown_839A48C:
-.incbin "baserom.gba", 0x39A48C, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A48C_18.bin"
 .global gUnknown_839A4A4
 gUnknown_839A4A4:
-.incbin "baserom.gba", 0x39A4A4, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A4A4_18.bin"
 .global gUnknown_839A4BC
 gUnknown_839A4BC:
-.incbin "baserom.gba", 0x39A4BC, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A4BC_18.bin"
 .global gUnknown_839A4D4
 gUnknown_839A4D4:
-.incbin "baserom.gba", 0x39A4D4, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A4D4_18.bin"
 .global gUnknown_839A4EC
 gUnknown_839A4EC:
-.incbin "baserom.gba", 0x39A4EC, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A4EC_18.bin"
 .global gUnknown_839A504
 gUnknown_839A504:
-.incbin "baserom.gba", 0x39A504, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A504_18.bin"
 .global gUnknown_839A51C
 gUnknown_839A51C:
-.incbin "baserom.gba", 0x39A51C, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A51C_18.bin"
 .global gUnknown_839A534
 gUnknown_839A534:
-.incbin "baserom.gba", 0x39A534, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A534_18.bin"
 .global gUnknown_839A54C
 gUnknown_839A54C:
-.incbin "baserom.gba", 0x39A54C, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A54C_18.bin"
 .global gUnknown_839A564
 gUnknown_839A564:
-.incbin "baserom.gba", 0x39A564, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A564_18.bin"
 .global gUnknown_839A57C
 gUnknown_839A57C:
-.incbin "baserom.gba", 0x39A57C, 0x18
+.incbin "graphics/titlemenu/titlemenu_sbin_39A57C_18.bin"
 .global gUnknown_839A594
 gUnknown_839A594:
-.incbin "baserom.gba", 0x39A594, 0xD80
+.incbin "graphics/titlemenu/titlemenu_sbin_39A594_D80.bin"
 .global gUnknown_839B314
 gUnknown_839B314:
-.incbin "baserom.gba", 0x39B314, 0x40
+.incbin "graphics/titlemenu/titlemenu_sbin_39B314_40.bin"
 .global gUnknown_839B354
 gUnknown_839B354:
 .4byte gUnknown_839A314
@@ -394,39 +425,63 @@ gUnknown_839B530:
 gUnknown_839B564:
 .4byte gUnknown_839B354
 .4byte gUnknown_839B530
-.incbin "baserom.gba", 0x39B56C, 0xC
+.incbin "graphics/titlemenu/titlemenu_sbin_39B56C_C.bin"
 .4byte gUnknown_839A594
 .4byte gUnknown_839B314
-.incbin "baserom.gba", 0x39B580, 0x4
+.incbin "graphics/titlemenu/titlemenu_sbin_39B580_4.bin"
 .global gUnknown_839B584
 gUnknown_839B584:
 .string "SIRO"
 .4byte gUnknown_839B7D4
-.incbin "baserom.gba", 0x39B58C, 0x8
+.incbin "graphics/titlemenu/titlemenu_sbin_39B58C_8.bin"
 .global gUnknown_839B594
 gUnknown_839B594:
-.incbin "baserom.gba", 0x39B594, 0x24
+.incbin "graphics/titlemenu/titlemenu_sbin_39B594_24.bin"
 .global gUnknown_839B5B8
 gUnknown_839B5B8:
-.incbin "baserom.gba", 0x39B5B8, 0x24
+.incbin "graphics/titlemenu/titlemenu_sbin_39B5B8_24.bin"
 .global gUnknown_839B5DC
 gUnknown_839B5DC:
-.incbin "baserom.gba", 0x39B5DC, 0x24
+.incbin "graphics/titlemenu/titlemenu_sbin_39B5DC_24.bin"
 .global gUnknown_839B600
 gUnknown_839B600:
-.incbin "baserom.gba", 0x39B600, 0x24
+.incbin "graphics/titlemenu/titlemenu_sbin_39B600_24.bin"
 .global gUnknown_839B624
 gUnknown_839B624:
-.incbin "baserom.gba", 0x39B624, 0x24
+.incbin "graphics/titlemenu/titlemenu_sbin_39B624_24.bin"
 .global gUnknown_839B648
 gUnknown_839B648:
-.incbin "baserom.gba", 0x39B648, 0x24
+.incbin "graphics/titlemenu/titlemenu_sbin_39B648_24.bin"
 .global gUnknown_839B66C
 gUnknown_839B66C:
-.incbin "baserom.gba", 0x39B66C, 0x24
+.incbin "graphics/titlemenu/titlemenu_sbin_39B66C_24.bin"
 .global gUnknown_839B690
 gUnknown_839B690:
-.incbin "baserom.gba", 0x39B690, 0x144
+.incbin "graphics/titlemenu/titlemenu_sbin_39B690_24.bin"
+.global gUnknown_839B6B4
+gUnknown_839B6B4:
+.incbin "graphics/titlemenu/titlemenu_sbin_39B6B4_24.bin"
+.global gUnknown_839B6D8
+gUnknown_839B6D8:
+.incbin "graphics/titlemenu/titlemenu_sbin_39B6D8_24.bin"
+.global gUnknown_839B6FC
+gUnknown_839B6FC:
+.incbin "graphics/titlemenu/titlemenu_sbin_39B6FC_24.bin"
+.global gUnknown_839B720
+gUnknown_839B720:
+.incbin "graphics/titlemenu/titlemenu_sbin_39B720_24.bin"
+.global gUnknown_839B744
+gUnknown_839B744:
+.incbin "graphics/titlemenu/titlemenu_sbin_39B744_24.bin"
+.global gUnknown_839B768
+gUnknown_839B768:
+.incbin "graphics/titlemenu/titlemenu_sbin_39B768_24.bin"
+.global gUnknown_839B78C
+gUnknown_839B78C:
+.incbin "graphics/titlemenu/titlemenu_sbin_39B78C_24.bin"
+.global gUnknown_839B7B0
+gUnknown_839B7B0:
+.incbin "graphics/titlemenu/titlemenu_sbin_39B7B0_24.bin"
 .global gUnknown_839B7D4
 gUnknown_839B7D4:
 .4byte gUnknown_839B594
@@ -437,19 +492,26 @@ gUnknown_839B7D4:
 .4byte gUnknown_839B648
 .4byte gUnknown_839B66C
 .4byte gUnknown_839B690
-.incbin "baserom.gba", 0x39B7F4, 0x20
+.4byte gUnknown_839B6B4
+.4byte gUnknown_839B6D8
+.4byte gUnknown_839B6FC
+.4byte gUnknown_839B720
+.4byte gUnknown_839B744
+.4byte gUnknown_839B768
+.4byte gUnknown_839B78C
+.4byte gUnknown_839B7B0
 .global gUnknown_839B814
 gUnknown_839B814:
-.incbin "baserom.gba", 0x39B814, 0x5D58
+.incbin "graphics/titlemenu/titlemenu_sbin_39B814_5D58.bin"
 .string "pksdir0\0"
 .global gUnknown_83A1574
 gUnknown_83A1574:
 .string "SIRO"
 .4byte gUnknown_83A1584
-.incbin "baserom.gba", 0x3A157C, 0x8
+.incbin "graphics/titlemenu/titlemenu_sbin_3A157C_8.bin"
 .global gUnknown_83A1584
 gUnknown_83A1584:
-.incbin "baserom.gba", 0x3A1584, 0x1570
+.incbin "graphics/titlemenu/titlemenu_sbin_3A1584_1570.bin"
 .global gUnknown_83A2AF4
 gUnknown_83A2AF4:
-.incbin "baserom.gba", 0x3A2AF4, 0x380
+.incbin "graphics/titlemenu/titlemenu_sbin_3A2AF4_380.bin"

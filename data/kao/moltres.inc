@@ -2,10 +2,10 @@
 gKaoMoltres:
 kao_siro sPortraitsMoltres
 sMoltresNormalPal:
-.incbin "baserom.gba", 0x169DE14, 0x40
+.incbin "graphics/kao/moltres_169DE14_40.bin"
 sMoltresNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169DE59, 0x2F7
+.incbin "graphics/kao/moltres_169DE59_2F7.bin"
 sPortraitsMoltres:
 kao_portrait sMoltresNormalPal, sMoltresNormalGfx
 kao_portrait 0, 0

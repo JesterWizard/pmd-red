@@ -2,10 +2,10 @@
 gKaoHoOh:
 kao_siro sPortraitsHoOh
 sHoOhNormalPal:
-.incbin "baserom.gba", 0x16A9284, 0x40
+.incbin "graphics/kao/hooh_16A9284_40.bin"
 sHoOhNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A92C9, 0x2D3
+.incbin "graphics/kao/hooh_16A92C9_2D3.bin"
 sPortraitsHoOh:
 kao_portrait sHoOhNormalPal, sHoOhNormalGfx
 kao_portrait 0, 0

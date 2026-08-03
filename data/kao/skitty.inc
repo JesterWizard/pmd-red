@@ -2,66 +2,66 @@
 gKaoSkitty:
 kao_siro sPortraitsSkitty
 sSkittyNormalPal:
-.incbin "baserom.gba", 0x16B3980, 0x40
+.incbin "graphics/kao/skitty_16B3980_40.bin"
 sSkittyNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B39C5, 0x28B
+.incbin "graphics/kao/skitty_16B39C5_28B.bin"
 sSkittyHappyPal:
-.incbin "baserom.gba", 0x16B3C50, 0x40
+.incbin "graphics/kao/skitty_16B3C50_40.bin"
 sSkittyHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B3C95, 0x2A3
+.incbin "graphics/kao/skitty_16B3C95_2A3.bin"
 sSkittyPainedPal:
-.incbin "baserom.gba", 0x16B3F38, 0x40
+.incbin "graphics/kao/skitty_16B3F38_40.bin"
 sSkittyPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B3F7D, 0x29B
+.incbin "graphics/kao/skitty_16B3F7D_29B.bin"
 sSkittyAngryPal:
-.incbin "baserom.gba", 0x16B4218, 0x40
+.incbin "graphics/kao/skitty_16B4218_40.bin"
 sSkittyAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B425D, 0x2A3
+.incbin "graphics/kao/skitty_16B425D_2A3.bin"
 sSkittyWorriedPal:
-.incbin "baserom.gba", 0x16B4500, 0x40
+.incbin "graphics/kao/skitty_16B4500_40.bin"
 sSkittyWorriedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B4545, 0x29F
+.incbin "graphics/kao/skitty_16B4545_29F.bin"
 sSkittySadPal:
-.incbin "baserom.gba", 0x16B47E4, 0x40
+.incbin "graphics/kao/skitty_16B47E4_40.bin"
 sSkittySadGfx:
-.incbin "baserom.gba", 0x16B4824, 0x2AC
+.incbin "graphics/kao/skitty_16B4824_2AC.bin"
 sSkittyCryingPal:
-.incbin "baserom.gba", 0x16B4AD0, 0x40
+.incbin "graphics/kao/skitty_16B4AD0_40.bin"
 sSkittyCryingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B4B15, 0x29B
+.incbin "graphics/kao/skitty_16B4B15_29B.bin"
 sSkittyShoutingPal:
-.incbin "baserom.gba", 0x16B4DB0, 0x40
+.incbin "graphics/kao/skitty_16B4DB0_40.bin"
 sSkittyShoutingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B4DF5, 0x2E3
+.incbin "graphics/kao/skitty_16B4DF5_2E3.bin"
 sSkittyTearyEyePal:
-.incbin "baserom.gba", 0x16B50D8, 0x40
+.incbin "graphics/kao/skitty_16B50D8_40.bin"
 sSkittyTearyEyeGfx:
-.incbin "baserom.gba", 0x16B5118, 0x298
+.incbin "graphics/kao/skitty_16B5118_298.bin"
 sSkittyDeterminedPal:
-.incbin "baserom.gba", 0x16B53B0, 0x40
+.incbin "graphics/kao/skitty_16B53B0_40.bin"
 sSkittyDeterminedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B53F5, 0x2A7
+.incbin "graphics/kao/skitty_16B53F5_2A7.bin"
 sSkittyJoyousPal:
-.incbin "baserom.gba", 0x16B569C, 0x40
+.incbin "graphics/kao/skitty_16B569C_40.bin"
 sSkittyJoyousGfx:
-.incbin "baserom.gba", 0x16B56DC, 0x2B4
+.incbin "graphics/kao/skitty_16B56DC_2B4.bin"
 sSkittyInspiredPal:
-.incbin "baserom.gba", 0x16B5990, 0x40
+.incbin "graphics/kao/skitty_16B5990_40.bin"
 sSkittyInspiredGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B59D5, 0x297
+.incbin "graphics/kao/skitty_16B59D5_297.bin"
 sSkittySurprisedPal:
-.incbin "baserom.gba", 0x16B5C6C, 0x40
+.incbin "graphics/kao/skitty_16B5C6C_40.bin"
 sSkittySurprisedGfx:
-.incbin "baserom.gba", 0x16B5CAC, 0x2D4
+.incbin "graphics/kao/skitty_16B5CAC_2D4.bin"
 sPortraitsSkitty:
 kao_portrait sSkittyNormalPal, sSkittyNormalGfx
 kao_portrait sSkittyHappyPal, sSkittyHappyGfx
@@ -76,4 +76,4 @@ kao_portrait sSkittyDeterminedPal, sSkittyDeterminedGfx
 kao_portrait sSkittyJoyousPal, sSkittyJoyousGfx
 kao_portrait sSkittyInspiredPal, sSkittyInspiredGfx
 kao_portrait sSkittySurprisedPal, sSkittySurprisedGfx
-.incbin "baserom.gba", 0x16B5FE8, 0x8
+.incbin "graphics/kao/skitty_16B5FE8_8.bin"

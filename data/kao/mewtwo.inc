@@ -2,10 +2,10 @@
 gKaoMewtwo:
 kao_siro sPortraitsMewtwo
 sMewtwoNormalPal:
-.incbin "baserom.gba", 0x169E1C8, 0x40
+.incbin "graphics/kao/mewtwo_169E1C8_40.bin"
 sMewtwoNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169E20D, 0x2AF
+.incbin "graphics/kao/mewtwo_169E20D_2AF.bin"
 sPortraitsMewtwo:
 kao_portrait sMewtwoNormalPal, sMewtwoNormalGfx
 kao_portrait 0, 0

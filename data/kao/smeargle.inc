@@ -2,9 +2,9 @@
 gKaoSmeargle:
 kao_siro sPortraitsSmeargle
 sSmeargleNormalPal:
-.incbin "baserom.gba", 0x16A7ADC, 0x40
+.incbin "graphics/kao/smeargle_16A7ADC_40.bin"
 sSmeargleNormalGfx:
-.incbin "baserom.gba", 0x16A7B1C, 0x2C8
+.incbin "graphics/kao/smeargle_16A7B1C_2C8.bin"
 sPortraitsSmeargle:
 kao_portrait sSmeargleNormalPal, sSmeargleNormalGfx
 kao_portrait 0, 0

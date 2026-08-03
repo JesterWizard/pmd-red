@@ -2,9 +2,9 @@
 gKaoWynaut:
 kao_siro sPortraitsWynaut
 sWynautNormalPal:
-.incbin "baserom.gba", 0x16B9C8C, 0x40
+.incbin "graphics/kao/wynaut_16B9C8C_40.bin"
 sWynautNormalGfx:
-.incbin "baserom.gba", 0x16B9CCC, 0x2BC
+.incbin "graphics/kao/wynaut_16B9CCC_2BC.bin"
 sPortraitsWynaut:
 kao_portrait sWynautNormalPal, sWynautNormalGfx
 kao_portrait 0, 0

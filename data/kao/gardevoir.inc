@@ -2,20 +2,20 @@
 gKaoGardevoir:
 kao_siro sPortraitsGardevoir
 sGardevoirNormalPal:
-.incbin "baserom.gba", 0x16B2D34, 0x40
+.incbin "graphics/kao/gardevoir_16B2D34_40.bin"
 sGardevoirNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B2D79, 0x29F
+.incbin "graphics/kao/gardevoir_16B2D79_29F.bin"
 sGardevoirHappyPal:
-.incbin "baserom.gba", 0x16B3018, 0x40
+.incbin "graphics/kao/gardevoir_16B3018_40.bin"
 sGardevoirHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B305D, 0x293
+.incbin "graphics/kao/gardevoir_16B305D_293.bin"
 sGardevoirSadPal:
-.incbin "baserom.gba", 0x16B32F0, 0x40
+.incbin "graphics/kao/gardevoir_16B32F0_40.bin"
 sGardevoirSadGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B3335, 0x27F
+.incbin "graphics/kao/gardevoir_16B3335_27F.bin"
 sPortraitsGardevoir:
 kao_portrait sGardevoirNormalPal, sGardevoirNormalGfx
 kao_portrait sGardevoirHappyPal, sGardevoirHappyGfx

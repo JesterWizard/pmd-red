@@ -2,19 +2,19 @@
 gKaoAlakazam:
 kao_siro sPortraitsAlakazam
 sAlakazamNormalPal:
-.incbin "baserom.gba", 0x1692DD0, 0x40
+.incbin "graphics/kao/alakazam_1692DD0_40.bin"
 sAlakazamNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1692E15, 0x2DB
+.incbin "graphics/kao/alakazam_1692E15_2DB.bin"
 sAlakazamSurprisedPal:
-.incbin "baserom.gba", 0x16930F0, 0x40
+.incbin "graphics/kao/alakazam_16930F0_40.bin"
 sAlakazamSurprisedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1693135, 0x2F7
+.incbin "graphics/kao/alakazam_1693135_2F7.bin"
 sAlakazamHappyPal:
-.incbin "baserom.gba", 0x169342C, 0x40
+.incbin "graphics/kao/alakazam_169342C_40.bin"
 sAlakazamHappyGfx:
-.incbin "baserom.gba", 0x169346C, 0x2D8
+.incbin "graphics/kao/alakazam_169346C_2D8.bin"
 sPortraitsAlakazam:
 kao_portrait sAlakazamNormalPal, sAlakazamNormalGfx
 kao_portrait sAlakazamSurprisedPal, sAlakazamSurprisedGfx

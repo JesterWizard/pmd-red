@@ -2,15 +2,15 @@
 gKaoLatias:
 kao_siro sPortraitsLatias
 sLatiasNormalPal:
-.incbin "baserom.gba", 0x16BA000, 0x40
+.incbin "graphics/kao/latias_16BA000_40.bin"
 sLatiasNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BA045, 0x24B
+.incbin "graphics/kao/latias_16BA045_24B.bin"
 sLatiasHappyPal:
-.incbin "baserom.gba", 0x16BA290, 0x40
+.incbin "graphics/kao/latias_16BA290_40.bin"
 sLatiasHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BA2D5, 0x23F
+.incbin "graphics/kao/latias_16BA2D5_23F.bin"
 sPortraitsLatias:
 kao_portrait sLatiasNormalPal, sLatiasNormalGfx
 kao_portrait sLatiasHappyPal, sLatiasHappyGfx

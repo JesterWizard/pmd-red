@@ -2,15 +2,15 @@
 gKaoBellsprout:
 kao_siro sPortraitsBellsprout
 sBellsproutNormalPal:
-.incbin "baserom.gba", 0x1695DC4, 0x40
+.incbin "graphics/kao/bellsprout_1695DC4_40.bin"
 sBellsproutNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1695E09, 0x26B
+.incbin "graphics/kao/bellsprout_1695E09_26B.bin"
 sBellsproutWorriedPal:
-.incbin "baserom.gba", 0x1696074, 0x40
+.incbin "graphics/kao/bellsprout_1696074_40.bin"
 sBellsproutWorriedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16960B9, 0x243
+.incbin "graphics/kao/bellsprout_16960B9_243.bin"
 sPortraitsBellsprout:
 kao_portrait sBellsproutNormalPal, sBellsproutNormalGfx
 kao_portrait sBellsproutWorriedPal, sBellsproutWorriedGfx

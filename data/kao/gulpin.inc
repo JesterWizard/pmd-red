@@ -2,10 +2,10 @@
 gKaoGulpin:
 kao_siro sPortraitsGulpin
 sGulpinNormalPal:
-.incbin "baserom.gba", 0x16B7474, 0x40
+.incbin "graphics/kao/gulpin_16B7474_40.bin"
 sGulpinNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B74B9, 0x213
+.incbin "graphics/kao/gulpin_16B74B9_213.bin"
 sPortraitsGulpin:
 kao_portrait sGulpinNormalPal, sGulpinNormalGfx
 kao_portrait 0, 0

@@ -2,62 +2,62 @@
 gKaoTotodile:
 kao_siro sPortraitsTotodile
 sTotodileNormalPal:
-.incbin "baserom.gba", 0x16A2F6C, 0x40
+.incbin "graphics/kao/totodile_16A2F6C_40.bin"
 sTotodileNormalGfx:
-.incbin "baserom.gba", 0x16A2FAC, 0x2A0
+.incbin "graphics/kao/totodile_16A2FAC_2A0.bin"
 sTotodileHappyPal:
-.incbin "baserom.gba", 0x16A324C, 0x40
+.incbin "graphics/kao/totodile_16A324C_40.bin"
 sTotodileHappyGfx:
-.incbin "baserom.gba", 0x16A328C, 0x29C
+.incbin "graphics/kao/totodile_16A328C_29C.bin"
 sTotodilePainedPal:
-.incbin "baserom.gba", 0x16A3528, 0x40
+.incbin "graphics/kao/totodile_16A3528_40.bin"
 sTotodilePainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A356D, 0x2A7
+.incbin "graphics/kao/totodile_16A356D_2A7.bin"
 sTotodileAngryPal:
-.incbin "baserom.gba", 0x16A3814, 0x40
+.incbin "graphics/kao/totodile_16A3814_40.bin"
 sTotodileAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A3859, 0x2A7
+.incbin "graphics/kao/totodile_16A3859_2A7.bin"
 sTotodileWorriedPal:
-.incbin "baserom.gba", 0x16A3B00, 0x40
+.incbin "graphics/kao/totodile_16A3B00_40.bin"
 sTotodileWorriedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A3B45, 0x293
+.incbin "graphics/kao/totodile_16A3B45_293.bin"
 sTotodileSadPal:
-.incbin "baserom.gba", 0x16A3DD8, 0x40
+.incbin "graphics/kao/totodile_16A3DD8_40.bin"
 sTotodileSadGfx:
-.incbin "baserom.gba", 0x16A3E18, 0x2AC
+.incbin "graphics/kao/totodile_16A3E18_2AC.bin"
 sTotodileCryingPal:
-.incbin "baserom.gba", 0x16A40C4, 0x40
+.incbin "graphics/kao/totodile_16A40C4_40.bin"
 sTotodileCryingGfx:
-.incbin "baserom.gba", 0x16A4104, 0x2DC
+.incbin "graphics/kao/totodile_16A4104_2DC.bin"
 sTotodileShoutingPal:
-.incbin "baserom.gba", 0x16A43E0, 0x40
+.incbin "graphics/kao/totodile_16A43E0_40.bin"
 sTotodileShoutingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A4425, 0x2D3
+.incbin "graphics/kao/totodile_16A4425_2D3.bin"
 sTotodileTearyEyePal:
-.incbin "baserom.gba", 0x16A46F8, 0x40
+.incbin "graphics/kao/totodile_16A46F8_40.bin"
 sTotodileTearyEyeGfx:
-.incbin "baserom.gba", 0x16A4738, 0x2A8
+.incbin "graphics/kao/totodile_16A4738_2A8.bin"
 sTotodileDeterminedPal:
-.incbin "baserom.gba", 0x16A49E0, 0x40
+.incbin "graphics/kao/totodile_16A49E0_40.bin"
 sTotodileDeterminedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A4A25, 0x2A3
+.incbin "graphics/kao/totodile_16A4A25_2A3.bin"
 sTotodileJoyousPal:
-.incbin "baserom.gba", 0x16A4CC8, 0x40
+.incbin "graphics/kao/totodile_16A4CC8_40.bin"
 sTotodileJoyousGfx:
-.incbin "baserom.gba", 0x16A4D08, 0x2F0
+.incbin "graphics/kao/totodile_16A4D08_2F0.bin"
 sTotodileInspiredPal:
-.incbin "baserom.gba", 0x16A4FF8, 0x40
+.incbin "graphics/kao/totodile_16A4FF8_40.bin"
 sTotodileInspiredGfx:
-.incbin "baserom.gba", 0x16A5038, 0x29C
+.incbin "graphics/kao/totodile_16A5038_29C.bin"
 sTotodileSurprisedPal:
-.incbin "baserom.gba", 0x16A52D4, 0x40
+.incbin "graphics/kao/totodile_16A52D4_40.bin"
 sTotodileSurprisedGfx:
-.incbin "baserom.gba", 0x16A5314, 0x2D8
+.incbin "graphics/kao/totodile_16A5314_2D8.bin"
 sPortraitsTotodile:
 kao_portrait sTotodileNormalPal, sTotodileNormalGfx
 kao_portrait sTotodileHappyPal, sTotodileHappyGfx

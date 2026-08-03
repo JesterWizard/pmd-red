@@ -2,62 +2,62 @@
 gKaoBulbasaur:
 kao_siro sPortraitsBulbasaur
 sBulbasaurNormalPal:
-.incbin "baserom.gba", 0x167FE88, 0x40
+.incbin "graphics/kao/bulbasaur_167FE88_40.bin"
 sBulbasaurNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x167FECD, 0x2BF
+.incbin "graphics/kao/bulbasaur_167FECD_2BF.bin"
 sBulbasaurHappyPal:
-.incbin "baserom.gba", 0x168018C, 0x40
+.incbin "graphics/kao/bulbasaur_168018C_40.bin"
 sBulbasaurHappyGfx:
-.incbin "baserom.gba", 0x16801CC, 0x2AC
+.incbin "graphics/kao/bulbasaur_16801CC_2AC.bin"
 sBulbasaurPainedPal:
-.incbin "baserom.gba", 0x1680478, 0x40
+.incbin "graphics/kao/bulbasaur_1680478_40.bin"
 sBulbasaurPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16804BD, 0x2C3
+.incbin "graphics/kao/bulbasaur_16804BD_2C3.bin"
 sBulbasaurAngryPal:
-.incbin "baserom.gba", 0x1680780, 0x40
+.incbin "graphics/kao/bulbasaur_1680780_40.bin"
 sBulbasaurAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16807C5, 0x2DF
+.incbin "graphics/kao/bulbasaur_16807C5_2DF.bin"
 sBulbasaurWorriedPal:
-.incbin "baserom.gba", 0x1680AA4, 0x40
+.incbin "graphics/kao/bulbasaur_1680AA4_40.bin"
 sBulbasaurWorriedGfx:
-.incbin "baserom.gba", 0x1680AE4, 0x2CC
+.incbin "graphics/kao/bulbasaur_1680AE4_2CC.bin"
 sBulbasaurSadPal:
-.incbin "baserom.gba", 0x1680DB0, 0x40
+.incbin "graphics/kao/bulbasaur_1680DB0_40.bin"
 sBulbasaurSadGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1680DF5, 0x2A7
+.incbin "graphics/kao/bulbasaur_1680DF5_2A7.bin"
 sBulbasaurCryingPal:
-.incbin "baserom.gba", 0x168109C, 0x40
+.incbin "graphics/kao/bulbasaur_168109C_40.bin"
 sBulbasaurCryingGfx:
-.incbin "baserom.gba", 0x16810DC, 0x2BC
+.incbin "graphics/kao/bulbasaur_16810DC_2BC.bin"
 sBulbasaurShoutingPal:
-.incbin "baserom.gba", 0x1681398, 0x40
+.incbin "graphics/kao/bulbasaur_1681398_40.bin"
 sBulbasaurShoutingGfx:
-.incbin "baserom.gba", 0x16813D8, 0x2C8
+.incbin "graphics/kao/bulbasaur_16813D8_2C8.bin"
 sBulbasaurTearyEyePal:
-.incbin "baserom.gba", 0x16816A0, 0x40
+.incbin "graphics/kao/bulbasaur_16816A0_40.bin"
 sBulbasaurTearyEyeGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16816E5, 0x2A7
+.incbin "graphics/kao/bulbasaur_16816E5_2A7.bin"
 sBulbasaurDeterminedPal:
-.incbin "baserom.gba", 0x168198C, 0x40
+.incbin "graphics/kao/bulbasaur_168198C_40.bin"
 sBulbasaurDeterminedGfx:
-.incbin "baserom.gba", 0x16819CC, 0x2B0
+.incbin "graphics/kao/bulbasaur_16819CC_2B0.bin"
 sBulbasaurJoyousPal:
-.incbin "baserom.gba", 0x1681C7C, 0x40
+.incbin "graphics/kao/bulbasaur_1681C7C_40.bin"
 sBulbasaurJoyousGfx:
-.incbin "baserom.gba", 0x1681CBC, 0x2C0
+.incbin "graphics/kao/bulbasaur_1681CBC_2C0.bin"
 sBulbasaurInspiredPal:
-.incbin "baserom.gba", 0x1681F7C, 0x40
+.incbin "graphics/kao/bulbasaur_1681F7C_40.bin"
 sBulbasaurInspiredGfx:
-.incbin "baserom.gba", 0x1681FBC, 0x2BC
+.incbin "graphics/kao/bulbasaur_1681FBC_2BC.bin"
 sBulbasaurSurprisedPal:
-.incbin "baserom.gba", 0x1682278, 0x40
+.incbin "graphics/kao/bulbasaur_1682278_40.bin"
 sBulbasaurSurprisedGfx:
-.incbin "baserom.gba", 0x16822B8, 0x2D0
+.incbin "graphics/kao/bulbasaur_16822B8_2D0.bin"
 sPortraitsBulbasaur:
 kao_portrait sBulbasaurNormalPal, sBulbasaurNormalGfx
 kao_portrait sBulbasaurHappyPal, sBulbasaurHappyGfx

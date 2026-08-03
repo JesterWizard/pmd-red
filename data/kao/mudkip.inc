@@ -2,64 +2,64 @@
 gKaoMudkip:
 kao_siro sPortraitsMudkip
 sMudkipNormalPal:
-.incbin "baserom.gba", 0x16AE1D4, 0x40
+.incbin "graphics/kao/mudkip_16AE1D4_40.bin"
 sMudkipNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AE219, 0x27B
+.incbin "graphics/kao/mudkip_16AE219_27B.bin"
 sMudkipHappyPal:
-.incbin "baserom.gba", 0x16AE494, 0x40
+.incbin "graphics/kao/mudkip_16AE494_40.bin"
 sMudkipHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AE4D9, 0x25B
+.incbin "graphics/kao/mudkip_16AE4D9_25B.bin"
 sMudkipPainedPal:
-.incbin "baserom.gba", 0x16AE734, 0x40
+.incbin "graphics/kao/mudkip_16AE734_40.bin"
 sMudkipPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AE779, 0x287
+.incbin "graphics/kao/mudkip_16AE779_287.bin"
 sMudkipAngryPal:
-.incbin "baserom.gba", 0x16AEA00, 0x40
+.incbin "graphics/kao/mudkip_16AEA00_40.bin"
 sMudkipAngryGfx:
-.incbin "baserom.gba", 0x16AEA40, 0x2B8
+.incbin "graphics/kao/mudkip_16AEA40_2B8.bin"
 sMudkipWorriedPal:
-.incbin "baserom.gba", 0x16AECF8, 0x40
+.incbin "graphics/kao/mudkip_16AECF8_40.bin"
 sMudkipWorriedGfx:
-.incbin "baserom.gba", 0x16AED38, 0x2A0
+.incbin "graphics/kao/mudkip_16AED38_2A0.bin"
 sMudkipSadPal:
-.incbin "baserom.gba", 0x16AEFD8, 0x40
+.incbin "graphics/kao/mudkip_16AEFD8_40.bin"
 sMudkipSadGfx:
-.incbin "baserom.gba", 0x16AF018, 0x278
+.incbin "graphics/kao/mudkip_16AF018_278.bin"
 sMudkipCryingPal:
-.incbin "baserom.gba", 0x16AF290, 0x40
+.incbin "graphics/kao/mudkip_16AF290_40.bin"
 sMudkipCryingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AF2D5, 0x27B
+.incbin "graphics/kao/mudkip_16AF2D5_27B.bin"
 sMudkipShoutingPal:
-.incbin "baserom.gba", 0x16AF550, 0x40
+.incbin "graphics/kao/mudkip_16AF550_40.bin"
 sMudkipShoutingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AF595, 0x2BB
+.incbin "graphics/kao/mudkip_16AF595_2BB.bin"
 sMudkipTearyEyePal:
-.incbin "baserom.gba", 0x16AF850, 0x40
+.incbin "graphics/kao/mudkip_16AF850_40.bin"
 sMudkipTearyEyeGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16AF895, 0x27F
+.incbin "graphics/kao/mudkip_16AF895_27F.bin"
 sMudkipDeterminedPal:
-.incbin "baserom.gba", 0x16AFB14, 0x40
+.incbin "graphics/kao/mudkip_16AFB14_40.bin"
 sMudkipDeterminedGfx:
-.incbin "baserom.gba", 0x16AFB54, 0x254
+.incbin "graphics/kao/mudkip_16AFB54_254.bin"
 sMudkipJoyousPal:
-.incbin "baserom.gba", 0x16AFDA8, 0x40
+.incbin "graphics/kao/mudkip_16AFDA8_40.bin"
 sMudkipJoyousGfx:
-.incbin "baserom.gba", 0x16AFDE8, 0x2C8
+.incbin "graphics/kao/mudkip_16AFDE8_2C8.bin"
 sMudkipInspiredPal:
-.incbin "baserom.gba", 0x16B00B0, 0x40
+.incbin "graphics/kao/mudkip_16B00B0_40.bin"
 sMudkipInspiredGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B00F5, 0x267
+.incbin "graphics/kao/mudkip_16B00F5_267.bin"
 sMudkipSurprisedPal:
-.incbin "baserom.gba", 0x16B035C, 0x40
+.incbin "graphics/kao/mudkip_16B035C_40.bin"
 sMudkipSurprisedGfx:
-.incbin "baserom.gba", 0x16B039C, 0x2B0
+.incbin "graphics/kao/mudkip_16B039C_2B0.bin"
 sPortraitsMudkip:
 kao_portrait sMudkipNormalPal, sMudkipNormalGfx
 kao_portrait sMudkipHappyPal, sMudkipHappyGfx

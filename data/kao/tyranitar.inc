@@ -2,15 +2,15 @@
 gKaoTyranitar:
 kao_siro sPortraitsTyranitar
 sTyranitarNormalPal:
-.incbin "baserom.gba", 0x16A8918, 0x40
+.incbin "graphics/kao/tyranitar_16A8918_40.bin"
 sTyranitarNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A895D, 0x263
+.incbin "graphics/kao/tyranitar_16A895D_263.bin"
 sTyranitarSurprisedPal:
-.incbin "baserom.gba", 0x16A8BC0, 0x40
+.incbin "graphics/kao/tyranitar_16A8BC0_40.bin"
 sTyranitarSurprisedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16A8C05, 0x2C7
+.incbin "graphics/kao/tyranitar_16A8C05_2C7.bin"
 sPortraitsTyranitar:
 kao_portrait sTyranitarNormalPal, sTyranitarNormalGfx
 kao_portrait sTyranitarSurprisedPal, sTyranitarSurprisedGfx

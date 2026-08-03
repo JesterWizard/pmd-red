@@ -2,14 +2,14 @@
 gKaoWhiscash:
 kao_siro sPortraitsWhiscash
 sWhiscashNormalPal:
-.incbin "baserom.gba", 0x16B838C, 0x40
+.incbin "graphics/kao/whiscash_16B838C_40.bin"
 sWhiscashNormalGfx:
-.incbin "baserom.gba", 0x16B83CC, 0x27C
+.incbin "graphics/kao/whiscash_16B83CC_27C.bin"
 sWhiscashHappyPal:
-.incbin "baserom.gba", 0x16B8648, 0x40
+.incbin "graphics/kao/whiscash_16B8648_40.bin"
 sWhiscashHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B868D, 0x25B
+.incbin "graphics/kao/whiscash_16B868D_25B.bin"
 sPortraitsWhiscash:
 kao_portrait sWhiscashNormalPal, sWhiscashNormalGfx
 kao_portrait sWhiscashHappyPal, sWhiscashHappyGfx

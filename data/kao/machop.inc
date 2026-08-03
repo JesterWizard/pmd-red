@@ -2,63 +2,63 @@
 gKaoMachop:
 kao_siro sPortraitsMachop
 sMachopNormalPal:
-.incbin "baserom.gba", 0x16937BC, 0x40
+.incbin "graphics/kao/machop_16937BC_40.bin"
 sMachopNormalGfx:
-.incbin "baserom.gba", 0x16937FC, 0x284
+.incbin "graphics/kao/machop_16937FC_284.bin"
 sMachopHappyPal:
-.incbin "baserom.gba", 0x1693A80, 0x40
+.incbin "graphics/kao/machop_1693A80_40.bin"
 sMachopHappyGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1693AC5, 0x25B
+.incbin "graphics/kao/machop_1693AC5_25B.bin"
 sMachopPainedPal:
-.incbin "baserom.gba", 0x1693D20, 0x40
+.incbin "graphics/kao/machop_1693D20_40.bin"
 sMachopPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1693D65, 0x2B3
+.incbin "graphics/kao/machop_1693D65_2B3.bin"
 sMachopAngryPal:
-.incbin "baserom.gba", 0x1694018, 0x40
+.incbin "graphics/kao/machop_1694018_40.bin"
 sMachopAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x169405D, 0x2B7
+.incbin "graphics/kao/machop_169405D_2B7.bin"
 sMachopWorriedPal:
-.incbin "baserom.gba", 0x1694314, 0x40
+.incbin "graphics/kao/machop_1694314_40.bin"
 sMachopWorriedGfx:
-.incbin "baserom.gba", 0x1694354, 0x2B4
+.incbin "graphics/kao/machop_1694354_2B4.bin"
 sMachopSadPal:
-.incbin "baserom.gba", 0x1694608, 0x40
+.incbin "graphics/kao/machop_1694608_40.bin"
 sMachopSadGfx:
-.incbin "baserom.gba", 0x1694648, 0x2A4
+.incbin "graphics/kao/machop_1694648_2A4.bin"
 sMachopCryingPal:
-.incbin "baserom.gba", 0x16948EC, 0x40
+.incbin "graphics/kao/machop_16948EC_40.bin"
 sMachopCryingGfx:
-.incbin "baserom.gba", 0x169492C, 0x2AC
+.incbin "graphics/kao/machop_169492C_2AC.bin"
 sMachopShoutingPal:
-.incbin "baserom.gba", 0x1694BD8, 0x40
+.incbin "graphics/kao/machop_1694BD8_40.bin"
 sMachopShoutingGfx:
-.incbin "baserom.gba", 0x1694C18, 0x2B8
+.incbin "graphics/kao/machop_1694C18_2B8.bin"
 sMachopTearyEyePal:
-.incbin "baserom.gba", 0x1694ED0, 0x40
+.incbin "graphics/kao/machop_1694ED0_40.bin"
 sMachopTearyEyeGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1694F15, 0x283
+.incbin "graphics/kao/machop_1694F15_283.bin"
 sMachopDeterminedPal:
-.incbin "baserom.gba", 0x1695198, 0x40
+.incbin "graphics/kao/machop_1695198_40.bin"
 sMachopDeterminedGfx:
-.incbin "baserom.gba", 0x16951D8, 0x274
+.incbin "graphics/kao/machop_16951D8_274.bin"
 sMachopJoyousPal:
-.incbin "baserom.gba", 0x169544C, 0x40
+.incbin "graphics/kao/machop_169544C_40.bin"
 sMachopJoyousGfx:
-.incbin "baserom.gba", 0x169548C, 0x2D4
+.incbin "graphics/kao/machop_169548C_2D4.bin"
 sMachopInspiredPal:
-.incbin "baserom.gba", 0x1695760, 0x40
+.incbin "graphics/kao/machop_1695760_40.bin"
 sMachopInspiredGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16957A5, 0x28B
+.incbin "graphics/kao/machop_16957A5_28B.bin"
 sMachopSurprisedPal:
-.incbin "baserom.gba", 0x1695A30, 0x40
+.incbin "graphics/kao/machop_1695A30_40.bin"
 sMachopSurprisedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1695A75, 0x2D7
+.incbin "graphics/kao/machop_1695A75_2D7.bin"
 sPortraitsMachop:
 kao_portrait sMachopNormalPal, sMachopNormalGfx
 kao_portrait sMachopHappyPal, sMachopHappyGfx

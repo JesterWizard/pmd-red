@@ -2,10 +2,10 @@
 gKaoDeoxysNormal:
 kao_siro sPortraitsDeoxysNormal
 sDeoxysNormalNormalPal:
-.incbin "baserom.gba", 0x16BBBC4, 0x40
+.incbin "graphics/kao/deoxysnormal_16BBBC4_40.bin"
 sDeoxysNormalNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16BBC09, 0x277
+.incbin "graphics/kao/deoxysnormal_16BBC09_277.bin"
 sPortraitsDeoxysNormal:
 kao_portrait sDeoxysNormalNormalPal, sDeoxysNormalNormalGfx
 kao_portrait 0, 0

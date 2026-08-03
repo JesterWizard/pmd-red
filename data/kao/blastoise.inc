@@ -2,25 +2,25 @@
 gKaoBlastoise:
 kao_siro sPortraitsBlastoise
 sBlastoiseNormalPal:
-.incbin "baserom.gba", 0x1687E88, 0x40
+.incbin "graphics/kao/blastoise_1687E88_40.bin"
 sBlastoiseNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1687ECD, 0x2AB
+.incbin "graphics/kao/blastoise_1687ECD_2AB.bin"
 sBlastoiseSurprisedPal:
-.incbin "baserom.gba", 0x1688178, 0x40
+.incbin "graphics/kao/blastoise_1688178_40.bin"
 sBlastoiseSurprisedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16881BD, 0x2A3
+.incbin "graphics/kao/blastoise_16881BD_2A3.bin"
 sBlastoiseAngryPal:
-.incbin "baserom.gba", 0x1688460, 0x40
+.incbin "graphics/kao/blastoise_1688460_40.bin"
 sBlastoiseAngryGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16884A5, 0x2B3
+.incbin "graphics/kao/blastoise_16884A5_2B3.bin"
 sBlastoisePainedPal:
-.incbin "baserom.gba", 0x1688758, 0x40
+.incbin "graphics/kao/blastoise_1688758_40.bin"
 sBlastoisePainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x168879D, 0x2A3
+.incbin "graphics/kao/blastoise_168879D_2A3.bin"
 sPortraitsBlastoise:
 kao_portrait sBlastoiseNormalPal, sBlastoiseNormalGfx
 kao_portrait sBlastoiseSurprisedPal, sBlastoiseSurprisedGfx

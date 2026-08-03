@@ -2,28 +2,28 @@
 gKaoCharizard:
 kao_siro sPortraitsCharizard
 sCharizardNormalPal:
-.incbin "baserom.gba", 0x1684940, 0x40
+.incbin "graphics/kao/charizard_1684940_40.bin"
 sCharizardNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1684985, 0x267
+.incbin "graphics/kao/charizard_1684985_267.bin"
 sCharizardSurprisedPal:
-.incbin "baserom.gba", 0x1684BEC, 0x40
+.incbin "graphics/kao/charizard_1684BEC_40.bin"
 sCharizardSurprisedGfx:
-.incbin "baserom.gba", 0x1684C2C, 0x2B4
+.incbin "graphics/kao/charizard_1684C2C_2B4.bin"
 sCharizardLaughingPal:
-.incbin "baserom.gba", 0x1684EE0, 0x40
+.incbin "graphics/kao/charizard_1684EE0_40.bin"
 sCharizardLaughingGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x1684F25, 0x28F
+.incbin "graphics/kao/charizard_1684F25_28F.bin"
 sCharizardPainedPal:
-.incbin "baserom.gba", 0x16851B4, 0x40
+.incbin "graphics/kao/charizard_16851B4_40.bin"
 sCharizardPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16851F9, 0x2BF
+.incbin "graphics/kao/charizard_16851F9_2BF.bin"
 sCharizardSadPal:
-.incbin "baserom.gba", 0x16854B8, 0x40
+.incbin "graphics/kao/charizard_16854B8_40.bin"
 sCharizardSadGfx:
-.incbin "baserom.gba", 0x16854F8, 0x288
+.incbin "graphics/kao/charizard_16854F8_288.bin"
 sPortraitsCharizard:
 kao_portrait sCharizardNormalPal, sCharizardNormalGfx
 kao_portrait sCharizardSurprisedPal, sCharizardSurprisedGfx

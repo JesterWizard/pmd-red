@@ -2,35 +2,35 @@
 gKaoMedicham:
 kao_siro sPortraitsMedicham
 sMedichamNormalPal:
-.incbin "baserom.gba", 0x16B6000, 0x40
+.incbin "graphics/kao/medicham_16B6000_40.bin"
 sMedichamNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B6045, 0x297
+.incbin "graphics/kao/medicham_16B6045_297.bin"
 sMedichamHappyPal:
-.incbin "baserom.gba", 0x16B62DC, 0x40
+.incbin "graphics/kao/medicham_16B62DC_40.bin"
 sMedichamHappyGfx:
-.incbin "baserom.gba", 0x16B631C, 0x2A8
+.incbin "graphics/kao/medicham_16B631C_2A8.bin"
 sMedichamPainedPal:
-.incbin "baserom.gba", 0x16B65C4, 0x40
+.incbin "graphics/kao/medicham_16B65C4_40.bin"
 sMedichamPainedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x16B6609, 0x2C3
+.incbin "graphics/kao/medicham_16B6609_2C3.bin"
 sMedichamAngryPal:
-.incbin "baserom.gba", 0x16B68CC, 0x40
+.incbin "graphics/kao/medicham_16B68CC_40.bin"
 sMedichamAngryGfx:
-.incbin "baserom.gba", 0x16B690C, 0x290
+.incbin "graphics/kao/medicham_16B690C_290.bin"
 sMedichamWorriedPal:
-.incbin "baserom.gba", 0x16B6B9C, 0x40
+.incbin "graphics/kao/medicham_16B6B9C_40.bin"
 sMedichamWorriedGfx:
-.incbin "baserom.gba", 0x16B6BDC, 0x290
+.incbin "graphics/kao/medicham_16B6BDC_290.bin"
 sMedichamSadPal:
-.incbin "baserom.gba", 0x16B6E6C, 0x40
+.incbin "graphics/kao/medicham_16B6E6C_40.bin"
 sMedichamSadGfx:
-.incbin "baserom.gba", 0x16B6EAC, 0x28C
+.incbin "graphics/kao/medicham_16B6EAC_28C.bin"
 sMedichamCryingPal:
-.incbin "baserom.gba", 0x16B7138, 0x40
+.incbin "graphics/kao/medicham_16B7138_40.bin"
 sMedichamCryingGfx:
-.incbin "baserom.gba", 0x16B7178, 0x284
+.incbin "graphics/kao/medicham_16B7178_284.bin"
 sPortraitsMedicham:
 kao_portrait sMedichamNormalPal, sMedichamNormalGfx
 kao_portrait sMedichamHappyPal, sMedichamHappyGfx

@@ -2,15 +2,15 @@
 gKaoDiglett:
 kao_siro sPortraitsDiglett
 sDiglettNormalPal:
-.incbin "baserom.gba", 0x168CE18, 0x40
+.incbin "graphics/kao/diglett_168CE18_40.bin"
 sDiglettNormalGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x168CE5D, 0x1FB
+.incbin "graphics/kao/diglett_168CE5D_1FB.bin"
 sDiglettSurprisedPal:
-.incbin "baserom.gba", 0x168D058, 0x40
+.incbin "graphics/kao/diglett_168D058_40.bin"
 sDiglettSurprisedGfx:
 .string "AT4PX"
-.incbin "baserom.gba", 0x168D09D, 0x1F7
+.incbin "graphics/kao/diglett_168D09D_1F7.bin"
 sPortraitsDiglett:
 kao_portrait sDiglettNormalPal, sDiglettNormalGfx
 kao_portrait sDiglettSurprisedPal, sDiglettSurprisedGfx
