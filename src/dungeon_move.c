@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_move.h"
 #include "dungeon_move_util.h"
 #include "constants/ability.h"
@@ -154,7 +155,8 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
                                     sub_806CE68(currTarget, direction1);
                                     DungeonWaitFrames_Async(2, 0x43);
                                 }
-                                targetInfo->belly = FixedPoint_Subtract(targetInfo->belly, IntToFixedPoint(gPassScarfBellyDownValue));
+                                if (!gRuntimeConfig.infinite_belly)
+                                    targetInfo->belly = FixedPoint_Subtract(targetInfo->belly, IntToFixedPoint(gPassScarfBellyDownValue));
                                 if (move->id == MOVE_REGULAR_ATTACK) {
                                     TryDisplayDungeonLoggableMessage3_Async(attacker, currTarget, gUnknown_80FDDA8); // Attack was passed off
                                 }

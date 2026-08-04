@@ -98,6 +98,13 @@ SECTIONS {
         sound/songs/*.o(.rodata);
     } > ROM =0
 
+    /* Build-time hack toggles (see configs/runtime.c, include/runtime.h). */
+    .runtime_config :
+    ALIGN(4)
+    {
+        configs/runtime.o(.runtime_config);
+    } > ROM =0
+
     /* DWARF 2 sections */
     .debug_aranges  0 : { *(.debug_aranges) }
     .debug_pubnames 0 : { *(.debug_pubnames) }

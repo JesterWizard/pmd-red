@@ -125,6 +125,33 @@ BIOS LZ77).
 
 ---
 
+## 2026-08-04 — Runtime config (build-time settings)
+
+### What changed
+- `include/runtime.h` — `RuntimeConfig` struct + `gRuntimeConfig` alias.
+- `configs/runtime.c` — editable defaults in `.runtime_config` ROM section
+  (same pattern as [sigma_star_saga](https://github.com/JesterWizard/sigma_star_saga/blob/master/configs/runtime.c)).
+- Modern Makefile links `configs/runtime.o`; `ld_script_modern.ld` keeps the
+  section (would otherwise hit `/DISCARD/`).
+- Matching (`MODERN=0`) does not link the config object.
+
+### Hooked toggles
+| Field | Hook site(s) |
+| --- | --- |
+| `always_run` | `DungeonHandlePlayerInput` / `sub_805EC4C` (`dungeon_main.c`); `sub_809CDC8` (`ground_lives_helper.c`) |
+| `infinite_belly` | `DoEndOfTurnEffects_Async`; wall −5 / ally ribbons (`dungeon_misc.c`); Pass Scarf drain (`dungeon_move.c`) |
+| `exp_multiplier` | `AddExpPoints` (`dungeon_leveling.c`) |
+| `recruit_rate_boost` | `TryRecruitMonster` (+ Friend Bow amount) |
+| `all_friend_areas` | `LoadFriendAreas` / `InitializeFriendAreas` / `GetFriendAreaStatus` / `HasAllFriendAreas` |
+| `debug_menu` | `SetMainMenuItems` appends **Debug** → existing `MENU_DEBUG` path |
+
+### Reverse
+1. Drop `configs/`, `include/runtime.h`, Makefile `CONFIG_*` bits, and the
+   `.runtime_config` block in `ld_script_modern.ld`.
+2. Revert the `gRuntimeConfig` checks in the files listed above.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -135,5 +162,6 @@ BIOS LZ77).
 | Ground BPL/BPA LZ | Off |
 | Monster AX tile LZ | On (`GMLZ` → `LZ77UnCompVram`) |
 | Unused unk blobs in modern ROM | Stripped |
+| Runtime config | On (modern; edit `configs/runtime.c`) |
 | Matching `make compare` | Not expected to match once assets diverge |
 | Approx `pmd_red.gba` size | **24.76 MiB** |

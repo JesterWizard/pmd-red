@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "code_800D090.h"
 #include "data_serializer.h"
 #include "constants/dungeon.h"
@@ -17,6 +18,12 @@ EWRAM_INIT bool8 *gFriendAreas = {NULL};
 void LoadFriendAreas(void)
 {
     gFriendAreas = sBoughtFriendAreas;
+    if (gRuntimeConfig.all_friend_areas) {
+        s32 i;
+
+        for (i = 0; i < FRIEND_AREA_COUNT; i++)
+            gFriendAreas[i] = TRUE;
+    }
 }
 
 bool8 *GetBoughtFriendAreas(void)
@@ -29,7 +36,7 @@ void InitializeFriendAreas(void)
     s32 i;
 
     for (i = 0; i < FRIEND_AREA_COUNT; i++)
-        gFriendAreas[i] = FALSE;
+        gFriendAreas[i] = gRuntimeConfig.all_friend_areas ? TRUE : FALSE;
 }
 
 u8 sub_80923D4(s32 target)
@@ -135,12 +142,17 @@ void UnlockFriendArea(u8 index)
 
 bool8 GetFriendAreaStatus(u8 index)
 {
+    if (gRuntimeConfig.all_friend_areas)
+        return TRUE;
     return gFriendAreas[index];
 }
 
 bool8 HasAllFriendAreas(void)
 {
     s32 i;
+
+    if (gRuntimeConfig.all_friend_areas)
+        return TRUE;
 
     for (i = 1; i < FRIEND_AREA_COUNT; i++) {
         if (!gFriendAreas[i])

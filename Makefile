@@ -131,6 +131,7 @@ MAP := pmd_red.map
 SYM := pmd_red.sym
 
 C_SUBDIR = src
+CONFIG_SUBDIR = configs
 ASM_SUBDIR = asm
 DATA_SRC_SUBDIR = src/data
 DATA_ASM_SUBDIR = data
@@ -139,6 +140,7 @@ MID_SUBDIR = sound/songs/midi
 SAMPLE_SUBDIR = sound/direct_sound_samples
 
 C_BUILDDIR = $(BUILD_DIR)/$(C_SUBDIR)
+CONFIG_BUILDDIR = $(BUILD_DIR)/$(CONFIG_SUBDIR)
 ASM_BUILDDIR = $(BUILD_DIR)/$(ASM_SUBDIR)
 DATA_ASM_BUILDDIR = $(BUILD_DIR)/$(DATA_ASM_SUBDIR)
 SONG_BUILDDIR = $(BUILD_DIR)/$(SONG_SUBDIR)
@@ -146,6 +148,8 @@ MID_BUILDDIR = $(BUILD_DIR)/$(MID_SUBDIR)
 
 C_SRCS_IN := $(wildcard $(C_SUBDIR)/*.c $(C_SUBDIR)/*/*.c $(C_SUBDIR)/*/*/*.c)
 C_SOURCES := $(foreach src,$(C_SRCS_IN),$(if $(findstring .inc.c,$(src)),,$(src)))
+# Designated-initializer settings blob (modern/hack builds only).
+CONFIG_SRCS := $(CONFIG_SUBDIR)/runtime.c
 ASM_SOURCES := $(wildcard asm/*.s data/*.s)
 C_ASM_SOURCES := $(wildcard src/*.s)
 SONG_SRCS := $(wildcard sound/songs/*.s)
@@ -174,11 +178,15 @@ else
 endif
 
 C_OBJECTS := $(patsubst $(C_SUBDIR)/%.c,$(C_BUILDDIR)/%.o,$(C_SOURCES))
+CONFIG_OBJECTS := $(patsubst $(CONFIG_SUBDIR)/%.c,$(CONFIG_BUILDDIR)/%.o,$(CONFIG_SRCS))
 ASM_OBJECTS  := $(addprefix $(BUILD_DIR)/, $(ASM_SOURCES:%.s=%.o))
 C_ASM_OBJECTS := $(addprefix $(BUILD_DIR)/, $(C_ASM_SOURCES:%.s=%.o))
 SONG_OBJS := $(addprefix $(BUILD_DIR)/, $(SONG_SRCS:%.s=%.o))
 
 ALL_OBJECTS := $(C_OBJECTS) $(ASM_OBJECTS) $(C_ASM_OBJECTS) $(SONG_OBJS)
+ifeq ($(MODERN),1)
+  ALL_OBJECTS += $(CONFIG_OBJECTS)
+endif
 OBJS_REL := $(patsubst $(BUILD_DIR)/%,%,$(ALL_OBJECTS))
 
 GROUND_MAP_RAW_ASSETS := $(wildcard data/map_bg/*)
@@ -310,6 +318,13 @@ $(C_BUILDDIR)/%.o: $(C_SUBDIR)/%.c
 
 $(C_BUILDDIR)/%.d: $(C_SUBDIR)/%.c
 	@$(call scaninc,$(INCLUDE_PATHS))
+
+# runtime.c uses C99 designated initializers; compile with modern gcc.
+$(CONFIG_BUILDDIR)/%.o: $(CONFIG_SUBDIR)/%.c
+	@mkdir -p $(dir $@)
+	$(PREFIX)gcc -c -mcpu=arm7tdmi -mthumb -mthumb-interwork -O2 \
+		-fno-toplevel-reorder -iquote include -I include \
+		-o $@ $<
 
 $(DATA_ASM_BUILDDIR)/%.o: $(DATA_ASM_SUBDIR)/%.s dungeon_pokemon dungeon_floor dungeon_trap dungeon_item data_monster data_item data_move data_learnset data_learnset_ptrs data_dungeon
 	@$(CPP) -x assembler-with-cpp $(CPPFLAGS) $< -o $(DATA_ASM_BUILDDIR)/$*.i.s

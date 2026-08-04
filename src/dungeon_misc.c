@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_misc.h"
 #include "dungeon_music.h"
 #include "structs/str_dungeon.h"
@@ -1447,7 +1448,7 @@ void sub_806A5B8(Entity *entity)
         const u8 *str;
         EntityInfo *info = GetEntInfo(entity);
 
-        if (info->isTeamLeader) {
+        if (info->isTeamLeader && !gRuntimeConfig.infinite_belly) {
             FixedPoint bellyBefore = info->belly;
             info->belly = FixedPoint_Subtract(bellyBefore, IntToFixedPointMacro(5));
             str = NULL;
@@ -1471,11 +1472,13 @@ void sub_806A6E8(Entity *entity)
 
     if (info->unk64 != info->heldItem.id) {
         if (!info->isTeamLeader) {
-            if (info->heldItem.id == ITEM_HEAL_RIBBON || info->heldItem.id == ITEM_MUNCH_BELT) {
-                info->belly = FixedPoint_Subtract(info->belly, IntToFixedPoint(10));
-            }
-            else if (info->heldItem.id == ITEM_DIET_RIBBON) {
-                info->belly = IntToFixedPoint(0);
+            if (!gRuntimeConfig.infinite_belly) {
+                if (info->heldItem.id == ITEM_HEAL_RIBBON || info->heldItem.id == ITEM_MUNCH_BELT) {
+                    info->belly = FixedPoint_Subtract(info->belly, IntToFixedPoint(10));
+                }
+                else if (info->heldItem.id == ITEM_DIET_RIBBON) {
+                    info->belly = IntToFixedPoint(0);
+                }
             }
 
             if (gDungeon->unk644.itemHoldersIdentified) {

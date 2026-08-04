@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_mon_recruit.h"
 #include "constants/dungeon_exit.h"
 #include "constants/fixed_rooms.h"
@@ -108,6 +109,8 @@ bool8 TryRecruitMonster(Entity *attacker, Entity *target)
         recruitRate += gFriendBowRecruitRateUpValue;
 
     recruitRate += gRecruitRateByLevel[attackerInfo->level];
+    if (gRuntimeConfig.recruit_rate_boost)
+        recruitRate += gFriendBowRecruitRateUpValue;
     if (rand >= recruitRate)
         return FALSE;
 

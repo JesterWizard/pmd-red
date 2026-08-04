@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "constants/main_menu.h"
 #include "constants/wonder_mail.h"
 #include "code_803D0D8.h"
@@ -19,8 +20,36 @@ static EWRAM_INIT u32 sUnknown_203B354 = {MENU_SEND_ITEMS};
 
 static void SetMainMenuItems(void);
 static bool8 SetMainMenuText(void);
+static const MenuItem *MaybeAppendDebugItem(const MenuItem *items, const WindowTemplate *win, const WindowTemplate **winOut);
 
 static void sub_803623C(void);
+
+static EWRAM_DATA MenuItem sMainMenuItemsWithDebug[8] = {0};
+static EWRAM_DATA WindowTemplate sMainMenuWindowWithDebug = {0};
+
+static const MenuItem *MaybeAppendDebugItem(const MenuItem *items, const WindowTemplate *win, const WindowTemplate **winOut)
+{
+    s32 i;
+
+    *winOut = win;
+    if (!gRuntimeConfig.debug_menu)
+        return items;
+
+    for (i = 0; items[i].text != NULL; i++)
+        sMainMenuItemsWithDebug[i] = items[i];
+
+    sMainMenuItemsWithDebug[i].text = _("Debug");
+    sMainMenuItemsWithDebug[i].menuAction = MENU_DEBUG;
+    i++;
+    sMainMenuItemsWithDebug[i].text = NULL;
+    sMainMenuItemsWithDebug[i].menuAction = 0xFFDD;
+
+    sMainMenuWindowWithDebug = *win;
+    sMainMenuWindowWithDebug.height += 1;
+    sMainMenuWindowWithDebug.totalHeight += 1;
+    *winOut = &sMainMenuWindowWithDebug;
+    return sMainMenuItemsWithDebug;
+}
 
 void DrawMainMenu(void)
 {
@@ -220,6 +249,10 @@ static void sub_803623C(void)
 
 static void SetMainMenuItems(void)
 {
+    const MenuItem *items;
+    const WindowTemplate *win;
+    const WindowTemplate *winOut;
+
     if (sub_8011C34() != -1) {
         if (CountMailType(WONDER_MAIL_TYPE_SOS) == 0) {
             if (CountMailType(WONDER_MAIL_TYPE_OKD) != 0) {
@@ -230,7 +263,8 @@ static void SetMainMenuItems(void)
                     // Friend Rescue
                     // Trade Items
                     // Wonder Mail
-                    SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, &sUnknown_80E5A78, sUnknown_80E5C18, TRUE, sUnknown_203B350, TRUE);
+                    items = sUnknown_80E5C18;
+                    win = &sUnknown_80E5A78;
                 }
                 else {
                     // Revive Team
@@ -238,7 +272,8 @@ static void SetMainMenuItems(void)
                     // Adventure Log
                     // Friend Rescue
                     // Trade Items
-                    SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, &sUnknown_80E5BC4, sUnknown_80E5BDC, TRUE, sUnknown_203B350, TRUE);
+                    items = sUnknown_80E5BDC;
+                    win = &sUnknown_80E5BC4;
                 }
             }
             else {
@@ -249,7 +284,8 @@ static void SetMainMenuItems(void)
                     // Friend Rescue
                     // Trade Items
                     // Wonder Mail
-                    SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, &sUnknown_80E5A78, sUnknown_80E5AFC, TRUE, sUnknown_203B350, TRUE);
+                    items = sUnknown_80E5AFC;
+                    win = &sUnknown_80E5A78;
                 }
                 else {
                     // Continue
@@ -257,7 +293,8 @@ static void SetMainMenuItems(void)
                     // Adventure Log
                     // Friend Rescue
                     // Trade Items
-                    SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, &sUnknown_80E5A60, sUnknown_80E5A90, TRUE, sUnknown_203B350, TRUE);
+                    items = sUnknown_80E5A90;
+                    win = &sUnknown_80E5A60;
                 }
             }
         }
@@ -269,7 +306,8 @@ static void SetMainMenuItems(void)
                     // Friend Rescue
                     // Trade Items
                     // Wonder Mail
-                SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, &sUnknown_80E5A78, sUnknown_80E5B8C, TRUE, sUnknown_203B350, TRUE);
+                items = sUnknown_80E5B8C;
+                win = &sUnknown_80E5A78;
             }
             else {
                     // Awaiting Rescue
@@ -277,15 +315,20 @@ static void SetMainMenuItems(void)
                     // Adventure Log
                     // Friend Rescue
                     // Trade Items
-                SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, &sUnknown_80E5B34, sUnknown_80E5B4C, TRUE, sUnknown_203B350, TRUE);
+                items = sUnknown_80E5B4C;
+                win = &sUnknown_80E5B34;
             }
         }
     }
     else {
         // New Game
         // Adventure Log
-        SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, &sUnknown_80E59E0, sUnknown_80E59F8, TRUE, sUnknown_203B350, TRUE);
+        items = sUnknown_80E59F8;
+        win = &sUnknown_80E59E0;
     }
+
+    items = MaybeAppendDebugItem(items, win, &winOut);
+    SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, winOut, items, TRUE, sUnknown_203B350, TRUE);
 }
 
 bool8 sub_80363E0(void)

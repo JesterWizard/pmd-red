@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_turn_effects.h"
 #include "dungeon_util.h"
 #include "items.h"
@@ -76,7 +77,7 @@ void DoEndOfTurnEffects_Async(Entity *entity)
     }
 
     // handle belly decrease
-    if (entityInfo->isTeamLeader) {
+    if (entityInfo->isTeamLeader && !gRuntimeConfig.infinite_belly) {
         s48_16 baseBellyDecrementValue, modifiedBellyDecrementValue;
         FixedPoint bellyBefore;
         bool8 sound;
@@ -159,6 +160,10 @@ void DoEndOfTurnEffects_Async(Entity *entity)
             LogMessageByIdWithPopupCheckUser_Async(entity, str);
             DungeonWaitFrames_Async(30, 0x32);
         }
+    }
+    else if (entityInfo->isTeamLeader) {
+        entityInfo->usedLinkedMovesCounter = 0;
+        gDungeon->unk644.emptyBellyAlert = 0;
     }
 
     if (!EntityIsValid(entity) || IsFloorOver())

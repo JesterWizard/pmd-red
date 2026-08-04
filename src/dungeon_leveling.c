@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_leveling.h"
 #include "constants/tactic.h"
 #include "dungeon_config.h"
@@ -50,6 +51,9 @@ void AddExpPoints(Entity *pokemon, Entity *target, s32 exp)
 {
   s32 newExp;
   s32 expDiff;
+
+  if (gRuntimeConfig.exp_multiplier != 1)
+    exp *= gRuntimeConfig.exp_multiplier;
 
   EntityInfo *info = GetEntInfo(target);
   if (info->level != 100) {

@@ -1,0 +1,27 @@
+#ifndef GUARD_RUNTIME_CONFIG_H
+#define GUARD_RUNTIME_CONFIG_H
+
+#include "gba/types.h"
+
+#ifndef TRUE
+#define TRUE 1
+#define FALSE 0
+#endif
+
+/*
+ * Build-time hack toggles (ROM const copy).
+ * Edit configs/runtime.c, then rebuild.
+ */
+typedef struct {
+    u8 always_run;            /* Run without holding B (overworld + dungeon) */
+    u8 infinite_belly;        /* Skip hunger / wall / Pass Scarf belly drain */
+    u8 exp_multiplier;        /* Scale AddExpPoints (1 = vanilla) */
+    u8 recruit_rate_boost;    /* +Friend Bow bonus to recruit rate */
+    u8 all_friend_areas;      /* Own every Friend Area on load / new save */
+    u8 debug_menu;            /* Add Debug to the title main menu */
+} RuntimeConfig;
+
+extern const RuntimeConfig gRuntimeConfigRom;
+#define gRuntimeConfig gRuntimeConfigRom
+
+#endif /* GUARD_RUNTIME_CONFIG_H */

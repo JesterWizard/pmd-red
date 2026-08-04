@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "constants/dungeon.h"
 #include "constants/dungeon_action.h"
 #include "constants/iq_skill.h"
@@ -463,7 +464,7 @@ void DungeonHandlePlayerInput(void)
                         }
                         else {
                             SetLeaderActionFields(ACTION_WALK);
-                            if ((gRealInputs.held & B_BUTTON || bPress) && FixedPointToInt(leaderInfo->belly) != 0) {
+                            if ((gRealInputs.held & B_BUTTON || bPress || gRuntimeConfig.always_run) && FixedPointToInt(leaderInfo->belly) != 0) {
                                 if (GetEntInfo(leader)->cringeClassStatus.status != STATUS_CONFUSED) {
                                     gDungeon->unk644.unk28 = 1;
                                 }
@@ -907,7 +908,7 @@ static bool8 sub_805EC4C(Entity *a0, u8 a1)
     if (a1 != 0 && sub_807049C(tileMonster, &a0->pos) && !DisplayDungeonYesNoMessage_Async(0, gUnknown_8100208, 0)) return FALSE;
 
     SetMonsterActionFields(&entityInfo->action, ACTION_WALK);
-    if (gRealInputs.held & B_BUTTON) {
+    if ((gRealInputs.held & B_BUTTON) || gRuntimeConfig.always_run) {
         entityInfo->action.actionParameters[0].actionUseIndex = 0;
     }
     else {

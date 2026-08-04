@@ -3,6 +3,7 @@
 #include "constants/direction.h"
 #include "ground_lives_helper.h"
 #include "game_options.h"
+#include "runtime.h"
 #include "ground_main.h"
 #include "ground_map.h"
 #include "ground_script.h"
@@ -93,7 +94,7 @@ u32 sub_809CDC8(struct GroundLives_Sub120 *strPtr, u32 *r6, s8 *direction, s32 *
             u16 held = gRealInputs.held;
             u16 pressed = gRealInputs.pressed;
             if (held & DPAD_ANY) {
-                if (held & B_BUTTON) {
+                if ((held & B_BUTTON) || gRuntimeConfig.always_run) {
                     strPtr->unk10 = 0;
                 }
                 else {
