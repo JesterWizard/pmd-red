@@ -750,6 +750,18 @@
 #define GENDER_A0 (_("Boy."))
 #define GENDER_A1 (_("Girl."))
 
+#define STARTER_CHOICE_Q (_( \
+    "Do you want to choose your Pokémon,\n" \
+    "or take the Personality Test?"))
+
+#define STARTER_CHOICE_A0 (_("Choose a Pokémon."))
+#define STARTER_CHOICE_A1 (_("Take the quiz."))
+
+#define STARTER_PROMPT (_( \
+    "{CENTER_ALIGN}Who would you like to be?{EXTRA_MSG}" \
+    "{CENTER_ALIGN}Choose the Pokémon you want\n" \
+    "{CENTER_ALIGN}to become from this group."))
+
 #define STARTER_REVEAL (_( \
     "\n" \
     "{CENTER_ALIGN}The Pokémon {POKEMON_0}!"))

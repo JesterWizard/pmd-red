@@ -49,6 +49,8 @@ typedef struct {
     u8 custom_title_backgrounds;
     /* Random floor modifiers (Poisonous Air / Darkness / Electric Terrain / Treasure Rich) */
     u8 dungeon_modifiers;
+    /* Prompt to choose starter directly or take the personality quiz (else quiz only) */
+    u8 starter_choice_prompt;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

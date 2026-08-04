@@ -752,6 +752,16 @@ static const MenuItem gGenderMenu[] = {
     { NULL, -1 },
 };
 
+ALIGNED(4) static const u8 sStarterChoicePrompt[] = STARTER_CHOICE_Q;
+
+static const MenuItem gStarterChoiceMenu[] = {
+    { STARTER_CHOICE_A0, STARTER_CHOICE_PICK },
+    { STARTER_CHOICE_A1, STARTER_CHOICE_QUIZ },
+    { NULL, -1 },
+};
+
+ALIGNED(4) static const u8 gStarterPrompt[] = STARTER_PROMPT;
+
 
 
 UNUSED static const u8 sUnusedLUT[NUM_PERSONALITIES] = {

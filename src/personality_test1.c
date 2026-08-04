@@ -10,21 +10,30 @@
 #include "main_loops.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "palette_fade_util.h"
 #include "personality_test1.h"
 #include "personality_test2.h"
 #include "random.h"
+#include "runtime.h"
 #include "save.h"
 #include "string_format.h"
+#include "structs/rgb.h"
 #include "text_1.h"
 #include "text_2.h"
 #include "text_util.h"
 
 enum
 {
+    PERSONALITY_CHOICE_PROMPT,
+    PERSONALITY_CHOICE_WAIT,
     PERSONALITY_GENERATE_NEW_QUESTION,
     PERSONALITY_ASK_QUESTION,
     PERSONALITY_UPDATE_TOTALS,
     PERSONALITY_PLAYER_GENDER,
+    PERSONALITY_STARTER_PROMPT,
+    PERSONALITY_ADVANCE_TO_STARTER_SELECTION,
+    PERSONALITY_STARTER_SELECTION,
+    PERSONALITY_HANDLE_STARTER_SELECTION,
     PERSONALITY_REVEAL,
     PERSONALITY_STARTER_REVEAL,
     PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_1,
@@ -46,10 +55,14 @@ static EWRAM_INIT PersonalityTestTracker *sPersonalityTestTracker = {NULL};
 static void AdvanceToPartnerNicknameScreen(void);
 static void AdvanceToPartnerSelection(void);
 static void AdvanceToPickPartnerPrompt(void);
+static void AdvanceToStarterSelection(void);
 static void AdvanceToTestEnd(void);
 static void CallCreatePartnerSelectionMenu(void);
+static void CallCreateStarterSelectionMenu(void);
 static void CallPromptNewQuestion(void);
 static void GenerateNewQuestionOrGender(void);
+static void HandleStarterChoice(void);
+static void HandleStarterSelection(void);
 static void InitializeTestStats(void);
 static void NicknamePartner(void);
 static void PersonalityTest_DisplayStarterSprite(void);
@@ -58,6 +71,8 @@ static void PrintPersonalityTypeDescription(void);
 static void PromptForPartnerNickname(void);
 static void PromptNewQuestion(void);
 static void PromptPickPartner(void);
+static void PromptStarterChoice(void);
+static void PromptStarterSelect(void);
 static void RevealPersonality(void);
 static void RevealStarter(void);
 static void SetPlayerGender(void);
@@ -78,8 +93,8 @@ static void InitializeTestStats(void)
 
     ReadTeamBasicInfo(&sPersonalityTestTracker->TeamBasicInfo);
     sPersonalityTestTracker->FrameCounter = 0;
-    sPersonalityTestTracker->TestState = 0;
     sPersonalityTestTracker->QuestionCounter = 0;
+    sPersonalityTestTracker->directStarterSelect = FALSE;
 
     for (i = 0; i < NUM_PERSONALITIES; i++)
         sPersonalityTestTracker->NatureTotals[i] = 0;
@@ -91,6 +106,11 @@ static void InitializeTestStats(void)
 
     sPersonalityTestTracker->playerNature = 0;
     sPersonalityTestTracker->playerGender = 0;
+
+    if (gRuntimeConfig.starter_choice_prompt)
+        sPersonalityTestTracker->TestState = PERSONALITY_CHOICE_PROMPT;
+    else
+        sPersonalityTestTracker->TestState = PERSONALITY_GENERATE_NEW_QUESTION;
 }
 
 u32 HandleTestTrackerState(void)
@@ -101,6 +121,12 @@ u32 HandleTestTrackerState(void)
     sPersonalityTestTracker->FrameCounter++;
 
     switch (sPersonalityTestTracker->TestState) {
+        case PERSONALITY_CHOICE_PROMPT:
+            PromptStarterChoice();
+            break;
+        case PERSONALITY_CHOICE_WAIT:
+            HandleStarterChoice();
+            break;
         case PERSONALITY_GENERATE_NEW_QUESTION:
             GenerateNewQuestionOrGender();
             break;
@@ -112,6 +138,18 @@ u32 HandleTestTrackerState(void)
             break;
         case PERSONALITY_PLAYER_GENDER:
             SetPlayerGender();
+            break;
+        case PERSONALITY_STARTER_PROMPT:
+            PromptStarterSelect();
+            break;
+        case PERSONALITY_ADVANCE_TO_STARTER_SELECTION:
+            AdvanceToStarterSelection();
+            break;
+        case PERSONALITY_STARTER_SELECTION:
+            CallCreateStarterSelectionMenu();
+            break;
+        case PERSONALITY_HANDLE_STARTER_SELECTION:
+            HandleStarterSelection();
             break;
         case PERSONALITY_REVEAL:
             RevealPersonality();
@@ -251,7 +289,71 @@ static void SetPlayerGender(void)
     }
 
     sub_8099690(0);
-    sPersonalityTestTracker->TestState = PERSONALITY_REVEAL;
+
+    if (sPersonalityTestTracker->directStarterSelect)
+        sPersonalityTestTracker->TestState = PERSONALITY_STARTER_PROMPT;
+    else
+        sPersonalityTestTracker->TestState = PERSONALITY_REVEAL;
+}
+
+static void PromptStarterChoice(void)
+{
+    CreateMenuDialogueBoxAndPortrait(sStarterChoicePrompt, 0, 0, gStarterChoiceMenu, 0, 3, 0, 0, 0x101);
+    sPersonalityTestTracker->TestState = PERSONALITY_CHOICE_WAIT;
+}
+
+static void HandleStarterChoice(void)
+{
+    s32 choice;
+
+    if (sub_80144A4(&choice) != 0)
+        return;
+
+    if (choice == STARTER_CHOICE_PICK) {
+        sPersonalityTestTracker->directStarterSelect = TRUE;
+        CreateMenuDialogueBoxAndPortrait(sGender0, 0, 0, gGenderMenu, 0, 3, 0, 0, 257);
+        sPersonalityTestTracker->TestState = PERSONALITY_PLAYER_GENDER;
+    }
+    else {
+        sPersonalityTestTracker->directStarterSelect = FALSE;
+        sPersonalityTestTracker->TestState = PERSONALITY_GENERATE_NEW_QUESTION;
+    }
+}
+
+static void PromptStarterSelect(void)
+{
+    CreateDialogueBoxAndPortrait(gStarterPrompt, 0, 0, 0x301);
+    sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_STARTER_SELECTION;
+}
+
+static void AdvanceToStarterSelection(void)
+{
+    s32 temp;
+
+    if (sub_80144A4(&temp) == 0)
+        sPersonalityTestTracker->TestState = PERSONALITY_STARTER_SELECTION;
+}
+
+static void CallCreateStarterSelectionMenu(void)
+{
+    CreateStarterSelectionMenu();
+    sPersonalityTestTracker->TestState = PERSONALITY_HANDLE_STARTER_SELECTION;
+}
+
+static void HandleStarterSelection(void)
+{
+    u16 selectedStarter;
+
+    selectedStarter = HandlePartnerSelectionInput();
+
+    if (selectedStarter != 0xFFFF) {
+        if (selectedStarter != 0xFFFE) {
+            sub_803CE6C();
+            sPersonalityTestTracker->TeamBasicInfo.StarterID = selectedStarter;
+            CreateDialogueBoxAndPortrait(gPartnerPrompt, 0, 0, 0x301);
+            sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_3;
+        }
+    }
 }
 
 static void RevealPersonality(void)
@@ -402,6 +504,7 @@ static void PersonalityTest_DisplayStarterSprite(void)
     for (paletteIndex = 0; paletteIndex < 0x10; paletteIndex++) {
         SetBGPaletteBufferColorArray(paletteIndex + 0xE0, &((PortraitGfx *)(faceFile->data))->sprites[emotionId].pal[paletteIndex]);
     }
+    sub_800388C(0xE0, (const RGB_Union *)((PortraitGfx *)(faceFile->data))->sprites[emotionId].pal, 16);
 
     DisplayMonPortraitSpriteFlipped(1, gfx, 14);
     CloseFile(faceFile);

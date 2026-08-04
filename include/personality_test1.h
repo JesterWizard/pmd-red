@@ -33,6 +33,7 @@ typedef struct PersonalityTestTracker
     /* 0x38 */ s32 QuestionCounter;
     /* 0x3C */ u32 currQuestionIndex;
     /* 0x40 */ u8 playerNature;
+    /* 0x41 */ u8 directStarterSelect; /* 1 = skip quiz, pick starter from menu */
     /* 0x44 */ s32 NatureTotals[NUM_PERSONALITIES];
     /* 0x78 */ u8 QuestionTracker[NUM_QUIZ_QUESTIONS];
     /* 0xB0 */ u32 playerGender; // 0 = Male, 1 = Female

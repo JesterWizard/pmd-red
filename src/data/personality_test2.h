@@ -12,6 +12,27 @@ const s16 gPartners[NUM_PARTNERS] =
     MONSTER_MUDKIP
 };
 
+/* All unique personality-test starters (same set as GroundLives sStarterMons). */
+const s16 gStarterSelectionList[NUM_STARTERS] =
+{
+    MONSTER_BULBASAUR,
+    MONSTER_CHARMANDER,
+    MONSTER_SQUIRTLE,
+    MONSTER_PIKACHU,
+    MONSTER_MEOWTH,
+    MONSTER_PSYDUCK,
+    MONSTER_MACHOP,
+    MONSTER_CUBONE,
+    MONSTER_EEVEE,
+    MONSTER_CHIKORITA,
+    MONSTER_CYNDAQUIL,
+    MONSTER_TOTODILE,
+    MONSTER_TREECKO,
+    MONSTER_TORCHIC,
+    MONSTER_MUDKIP,
+    MONSTER_SKITTY,
+};
+
 const WindowTemplate gUnknown_80F4278 =
 {
     0,

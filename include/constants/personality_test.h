@@ -20,11 +20,16 @@ enum NaturePersonalities
 };
 
 #define NUM_PARTNERS 10
+#define NUM_STARTERS 16
 #define NUM_QUIZ_QUESTIONS 55
 #define MAX_ASKED_QUESTIONS 8
 #define NUM_PERSONALITIES MISC
 #define NUM_PERSONALITY_TEST_EFFECTS (NUM_PERSONALITIES + 3)
 
 #define BRAVE_2B_TRIGGER 99
+
+/* Menu actions for starter_choice_prompt */
+#define STARTER_CHOICE_PICK 0
+#define STARTER_CHOICE_QUIZ 1
 
 #endif // GUARD_CONSTANTS_PERSONALITY_TEST_H

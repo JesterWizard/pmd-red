@@ -3,11 +3,13 @@
 #include "bg_palette_buffer.h"
 #include "constants/emotions.h"
 #include "constants/input.h"
+#include "constants/monster.h"
 #include "constants/type.h"
+#include "menu_input.h"
 #include "music_util.h"
 #include "input.h"
 #include "memory.h"
-#include "menu_input.h"
+#include "palette_fade_util.h"
 #include "personality_test2.h"
 #include "pokemon.h"
 #include "string_format.h"
@@ -19,20 +21,17 @@ EWRAM_INIT struct PersonalityStruct_203B404 *gUnknown_203B404 = {NULL};
 #include "data/personality_test2.h"
 
 static s32 GetValidPartners(void);
+static s32 GetAllStarters(void);
 static void nullsub_135(void);
 static void PersonalityTest_DisplayPartnerSprite(void);
 static void RedrawPartnerSelectionMenu(void);
+static void SetupSelectionMenuWindows(void);
 
 static void sub_803CEAC(void);
 static void sub_803CECC(void);
 
-void CreatePartnerSelectionMenu(s16 starterID)
+static void SetupSelectionMenuWindows(void)
 {
-    s32 starterID_s32;
-    starterID_s32 = starterID; // force an asr shift.. does lsr without it
-
-    sub_803CEAC();
-    gUnknown_203B404->StarterID = starterID_s32;
     gUnknown_203B404->s18.m.menuWinId = 0;
     gUnknown_203B404->s18.m.menuWindow = &gUnknown_203B404->s18.m.windows.id[0];
 
@@ -49,7 +48,27 @@ void CreatePartnerSelectionMenu(s16 starterID)
     gUnknown_203B404->s18.header.f3 = 0;
     ResetUnusedInputStruct();
     ShowWindows(&gUnknown_203B404->s18.m.windows, TRUE, TRUE);
+}
+
+void CreatePartnerSelectionMenu(s16 starterID)
+{
+    s32 starterID_s32;
+    starterID_s32 = starterID; // force an asr shift.. does lsr without it
+
+    sub_803CEAC();
+    gUnknown_203B404->StarterID = starterID_s32;
+    SetupSelectionMenuWindows();
     CreateMenuOnWindow(&gUnknown_203B404->s18.m.input, GetValidPartners(), 10, gUnknown_203B404->s18.m.menuWinId);
+    RedrawPartnerSelectionMenu();
+    PersonalityTest_DisplayPartnerSprite();
+}
+
+void CreateStarterSelectionMenu(void)
+{
+    sub_803CEAC();
+    gUnknown_203B404->StarterID = MONSTER_NONE;
+    SetupSelectionMenuWindows();
+    CreateMenuOnWindow(&gUnknown_203B404->s18.m.input, GetAllStarters(), 10, gUnknown_203B404->s18.m.menuWinId);
     RedrawPartnerSelectionMenu();
     PersonalityTest_DisplayPartnerSprite();
 }
@@ -57,19 +76,22 @@ void CreatePartnerSelectionMenu(s16 starterID)
 u16 HandlePartnerSelectionInput(void)
 {
     s32 partnerID;
+    bool8 pageChanged;
 
     partnerID = gUnknown_203B404->s18.m.input.menuIndex;
     gUnknown_203B404->unk16 = 0;
 
     if (GetKeyPress(&gUnknown_203B404->s18.m.input) == INPUT_A_BUTTON) {
         PlayMenuSoundEffect(MENU_SFX_ACCEPT);
-        return gUnknown_203B404->PartnerArray[gUnknown_203B404->s18.m.input.menuIndex];
+        return gUnknown_203B404->PartnerArray[GET_CURRENT_MENU_ENTRY(gUnknown_203B404->s18.m.input)];
     }
 
-    if (MenuCursorUpdate(&gUnknown_203B404->s18.m.input, TRUE))
+    pageChanged = MenuCursorUpdate(&gUnknown_203B404->s18.m.input, TRUE);
+    if (pageChanged)
         RedrawPartnerSelectionMenu();
 
-    if (partnerID != gUnknown_203B404->s18.m.input.menuIndex)
+    /* Page changes recreate windows (palette 15 fills); always restore the portrait. */
+    if (pageChanged || partnerID != gUnknown_203B404->s18.m.input.menuIndex)
         PersonalityTest_DisplayPartnerSprite();
 
     if (gUnknown_203B404->unk16 != 0) {
@@ -121,6 +143,7 @@ static void RedrawPartnerSelectionMenu(void)
     u32 yCoord;
     const u8 *monName;
     s32 monCounter;
+    s32 pageBase;
 
     UPDATE_MENU_WINDOW_HEIGHT(gUnknown_203B404->s18.m);
 
@@ -128,10 +151,11 @@ static void RedrawPartnerSelectionMenu(void)
     sub_80073B8(gUnknown_203B404->s18.m.menuWinId);
     PrintStringOnWindow(12, 0, gPartnerSelectionHeaderText, gUnknown_203B404->s18.m.menuWinId, 0);
 
+    pageBase = gUnknown_203B404->s18.m.input.currPage * gUnknown_203B404->s18.m.input.entriesPerPage;
     monCounter = 0;
     while (monCounter < gUnknown_203B404->s18.m.input.currPageEntries) {
         yCoord = GetMenuEntryYCoord(&gUnknown_203B404->s18.m.input, monCounter);
-        monName = GetMonSpecies(gUnknown_203B404->PartnerArray[monCounter]);
+        monName = GetMonSpecies(gUnknown_203B404->PartnerArray[pageBase + monCounter]);
         PrintStringOnWindow(8, yCoord, monName, gUnknown_203B404->s18.m.menuWinId, 0);
         monCounter++;
     }
@@ -144,10 +168,10 @@ static void PersonalityTest_DisplayPartnerSprite(void)
     s32 partnerID;
     struct OpenedFile *faceFile;
     const u8 *gfx;
-    s32 emotionId;
+    const RGB_Struct *pal;
     s32 i;
 
-    partnerID = gUnknown_203B404->PartnerArray[gUnknown_203B404->s18.m.input.menuIndex];
+    partnerID = gUnknown_203B404->PartnerArray[GET_CURRENT_MENU_ENTRY(gUnknown_203B404->s18.m.input)];
 
     CallPrepareTextbox_8008C54(1);
     sub_80073B8(1);
@@ -155,12 +179,14 @@ static void PersonalityTest_DisplayPartnerSprite(void)
     faceFile = GetDialogueSpriteDataPtr(partnerID);
 #define FACE_DATA ((PortraitGfx *)faceFile->data)
 
+    /* Sync both the immediate BG palette buffer and the fade source buffer —
+     * ground UI brightness updates call sub_8099E58 on palette 14 and would
+     * otherwise restore stale colors. */
     gfx = FACE_DATA->sprites[EMOTION_NORMAL].gfx;
-    emotionId = EMOTION_NORMAL;
-
-    for (i = 0; i < 16; i++) {
-        SetBGPaletteBufferColorArray(i + 0xE0, &FACE_DATA->sprites[emotionId].pal[i]);
-    }
+    pal = FACE_DATA->sprites[EMOTION_NORMAL].pal;
+    for (i = 0; i < 16; i++)
+        SetBGPaletteBufferColorArray(i + 0xE0, &pal[i]);
+    sub_800388C(0xE0, (const RGB_Union *)pal, 16);
 
     DisplayMonPortraitSpriteFlipped(1, gfx, 14);
 
@@ -196,4 +222,14 @@ static s32 GetValidPartners(void)
     }
 
     return ValidPartnerCounter;
+}
+
+static s32 GetAllStarters(void)
+{
+    s32 i;
+
+    for (i = 0; i < NUM_STARTERS; i++)
+        gUnknown_203B404->PartnerArray[i] = gStarterSelectionList[i];
+
+    return NUM_STARTERS;
 }

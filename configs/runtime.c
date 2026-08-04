@@ -21,4 +21,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .compact_kangaskhan_storage = TRUE, /* TRUE = max 99/item (u8); FALSE = max 255 */
     .custom_title_backgrounds = TRUE, /* TRUE = custom title BGs; FALSE = vanilla titlen0–2 */
     .dungeon_modifiers = TRUE, /* TRUE = 20% chance of a floor modifier; FALSE = off */
+    .starter_choice_prompt = TRUE, /* TRUE = choose starter or take quiz; FALSE = quiz only */
 };
