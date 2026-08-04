@@ -250,12 +250,19 @@ static void sub_807218C(Entity *pokemon)
     s32 r1;
     s32 r6;
     s32 r3;
+    struct MonDialogueSpriteInfo dialogueInfo;
+    struct MonDialogueSpriteInfo *dialogueInfoPtr = NULL;
 
     r6 = 0;
     info = GetEntInfo(pokemon);
 
     TryPointCameraToMonster(pokemon, 0);
     SetMessageArgument_2(gFormatBuffer_Monsters[0], info, 0);
+    if (gRuntimeConfig.show_dungeon_portraits) {
+        dialogueInfo.species = info->apparentID;
+        dialogueInfo.spriteId = 0;
+        dialogueInfoPtr = &dialogueInfo;
+    }
     if(sub_8070BC0(pokemon))
     {
         r3 = 0;
@@ -279,13 +286,15 @@ static void sub_807218C(Entity *pokemon)
     {
         strcpy(buffer, gUnknown_80FCF18);
     }
-    DisplayDungeonMessage_Async(0, buffer, 1);
+    DisplayDungeonMessage_Async(dialogueInfoPtr, buffer, 1);
     buffer[0] = 0;
 
 
     if(gFormatArgs[0]> 0)
     {
-        strcat(buffer, gUnknown_80F9ACC);
+        strcat(buffer, gRuntimeConfig.pmd2_battle_info_colors
+                   ? gText_Pokemon0HpWentUpCyan
+                   : gUnknown_80F9ACC);
         r6++;
     }
 
@@ -293,32 +302,40 @@ static void sub_807218C(Entity *pokemon)
     {
         if(gUnknown_8107010[r6] != 0)
             strcat(buffer, gUnknown_8107018[gUnknown_8107010[r6]]);
-        strcat(buffer, gUnknown_80F9AEC);
+        strcat(buffer, gRuntimeConfig.pmd2_battle_info_colors
+                   ? gText_Pokemon0AttackWentUpCyan
+                   : gUnknown_80F9AEC);
         r6++;
     }
     if(gFormatArgs[2]> 0)
     {
         if(gUnknown_8107010[r6] != 0)
             strcat(buffer, gUnknown_8107018[gUnknown_8107010[r6]]);
-        strcat(buffer, gUnknown_80F9B10);
+        strcat(buffer, gRuntimeConfig.pmd2_battle_info_colors
+                   ? gText_Pokemon0DefenseWentUpCyan
+                   : gUnknown_80F9B10);
         r6++;
     }
     if(gFormatArgs[3]> 0)
     {
         if(gUnknown_8107010[r6] != 0)
             strcat(buffer, gUnknown_8107018[gUnknown_8107010[r6]]);
-        strcat(buffer, gUnknown_80F9B34);
+        strcat(buffer, gRuntimeConfig.pmd2_battle_info_colors
+                   ? gText_Pokemon0SpAtkWentUpCyan
+                   : gUnknown_80F9B34);
         r6++;
     }
     if(gFormatArgs[4]> 0)
     {
         if(gUnknown_8107010[r6] != 0)
             strcat(buffer, gUnknown_8107018[gUnknown_8107010[r6]]);
-        strcat(buffer, gUnknown_80F9B58);
+        strcat(buffer, gRuntimeConfig.pmd2_battle_info_colors
+                   ? gText_Pokemon0SpDefWentUpCyan
+                   : gUnknown_80F9B58);
     }
 
     if(buffer[0])
-        DisplayDungeonMessage_Async(0, buffer, 1);
+        DisplayDungeonMessage_Async(NULL, buffer, 1);
 
     TryPointCameraToMonster(GetLeader(), 0);
 }

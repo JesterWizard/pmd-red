@@ -190,26 +190,26 @@ void DoScheduledMemCopies(void)
     sNumMemCopies = 0;
     if (sTilemapCopyScheduled[0]) {
         sTilemapCopyScheduled[0] = FALSE;
-        CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(4) : BG_SCREEN_ADDR(12), gBgTilemaps[0], BG_SCREEN_SIZE);
+        CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(6) : BG_SCREEN_ADDR(12), gBgTilemaps[0], BG_SCREEN_SIZE);
     }
     if (sTilemapCopyScheduled[1]) {
         sTilemapCopyScheduled[1] = FALSE;
-        CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(5) : BG_SCREEN_ADDR(13), gBgTilemaps[1], BG_SCREEN_SIZE);
+        CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(7) : BG_SCREEN_ADDR(13), gBgTilemaps[1], BG_SCREEN_SIZE);
     }
     if (sTilemapCopyScheduled[2]) {
         sTilemapCopyScheduled[2] = FALSE;
-        CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(6) : BG_SCREEN_ADDR(14), gBgTilemaps[2], BG_SCREEN_SIZE);
+        CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(8) : BG_SCREEN_ADDR(14), gBgTilemaps[2], BG_SCREEN_SIZE);
     }
     if (sTilemapCopyScheduled[3]) {
         sTilemapCopyScheduled[3] = FALSE;
-        CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(7) : BG_SCREEN_ADDR(15), gBgTilemaps[3], BG_SCREEN_SIZE);
+        CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(31) : BG_SCREEN_ADDR(15), gBgTilemaps[3], BG_SCREEN_SIZE);
     }
 }
 
 void CopyBgTilemaps0And1(void)
 {
-    CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(4) : BG_SCREEN_ADDR(12), gBgTilemaps[0], BG_SCREEN_SIZE);
-    CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(5) : BG_SCREEN_ADDR(13), gBgTilemaps[1], BG_SCREEN_SIZE);
+    CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(6) : BG_SCREEN_ADDR(12), gBgTilemaps[0], BG_SCREEN_SIZE);
+    CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(7) : BG_SCREEN_ADDR(13), gBgTilemaps[1], BG_SCREEN_SIZE);
 }
 
 void SetFontsBaseColor(RGB_Struct a0)

@@ -204,19 +204,29 @@ Docs: [`documentation/Features/CustomTitleBackgrounds.md`](documentation/Feature
 Docs: [`documentation/Features/CustomTitleBackgrounds.md`](documentation/Features/CustomTitleBackgrounds.md).
 
 ### What changed
-- Converter emits **8bpp** tiles + up to **239** colors (index 0 reserved).
-- Title-only BG3: `BGCNT_256COLOR | CHARBASE(1) | SCREENBASE(7)` via
-  `gTitleBg8bpp`; BG0–2 screenbases move to **4–7** (`0x2000–0x3FFF`) so
-  maps are not overwritten.
-- 8bpp tiles load at **`VRAM+0x6000`** (tile index base **128**) so font/UI
-  chrome at `0x4F00` (tiles `0x278+`) stays intact.
-- Max **640** tiles; extras nearest-merged (current art fits, ~562–601).
+- Converter emits **8bpp** tiles + up to **239** art colors (index 0 reserved).
+  Continue `clmkpat` icons use the **OBJ palette** (sprites) when title 8bpp
+  is on, so they no longer steal BG colors 176–239.
+- Title-only BG3: `BGCNT_256COLOR | CHARBASE(1) | SCREENBASE(31)` via
+  `gTitleBg8bpp`; BG0–2 maps at screenbases **6–8** (`0x3000–0x47FF`) so
+  Continue window tiles (~`0x2D00`) do not smash maps; BG3 map at **31**
+  (`0xF800`) after the tile blob.
+- 8bpp tiles load at **`VRAM+0x6000`** (tile index base **128**, max **600**)
+  through `0xF5FF`.
 - Left text gutter (column 0) cleared while title 8bpp so art is full-bleed.
 - `LoadTitleScreen` clears flag on title exit.
 - Vanilla `titlen*` path unchanged (4bpp @ CHARBASE 2).
 
 ### Reverse
 Restore 4bpp converter + always-vanilla BG3CNT / screenbases 12–15.
+
+---
+
+## 2026-08-04 — Fix Continue glitch with custom title BGs
+
+Continue’s load-screen windows overwrote title-mode tilemaps when maps lived
+at `0x2000+`. Maps relocated above window GFX / after the tile blob; tile cap
+**600**, art colors **200**.
 
 ---
 
@@ -231,5 +241,5 @@ Restore 4bpp converter + always-vanilla BG3CNT / screenbases 12–15.
 | Monster AX tile LZ | On (`GMLZ` → `LZ77UnCompVram`) |
 | Unused unk blobs in modern ROM | Stripped |
 | Runtime config | On (modern; edit `configs/runtime.c`) |
-| Custom title backgrounds | On (8bpp ≤640 tiles @ +128; `custom_title_backgrounds`) |
+| Custom title backgrounds | On (8bpp ≤600 tiles @ +128; maps SB 6–8/31; `custom_title_backgrounds`) |
 | Matching `make compare` | Not expected to match once assets diverge |

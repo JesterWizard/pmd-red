@@ -26,8 +26,8 @@ extern u16 gBldAlpha;
 extern u16 gBldCnt;
 extern bool8 gUnknown_202D7FE;
 /* Title screen: BG3 8bpp custom background (CHARBASE1 + 256COLOR).
- * Screenbases move to 4–7 (maps at 0x2000–0x3FFF). 8bpp tiles load at
- * VRAM+0x6000 (CHARBASE1 tile index +128) so font/UI chrome at 0x4F00 stays. */
+ * BG0–2 maps at screenbases 6–8 (0x3000–0x47FF); BG3 map at 31 (0xF800).
+ * 8bpp tiles at VRAM+0x6000 (CHARBASE1 index +128, max 600 → 0xF600). */
 extern bool8 gTitleBg8bpp;
 
 void SetBG2RegOffsets(s32, s32);

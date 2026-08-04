@@ -22,7 +22,8 @@ typedef struct {
     u8 disable_something_approaches; /* Skip dungeon wind timer / blow-out */
     u8 l_to_use_move;         /* Use set move with L alone (vs vanilla L+A) */
     /* PMD2-style dungeon battle log colors:
-     * leader = light blue, allies = yellow, enemies = cyan, exp numbers = cyan */
+     * leader = light blue, allies = yellow, enemies = cyan,
+     * exp / level-up stat gain numbers = cyan */
     u8 pmd2_battle_info_colors;
     /* PMD2 Poké coin glyph + cyan money amount in dungeon HUD */
     u8 custom_graphics;
@@ -30,8 +31,8 @@ typedef struct {
     u8 pmd2_font;
     /* Dungeon Make Leader anytime; temporary until exit unless postgame */
     u8 party_leader_switch;
-    /* Show ally default portrait when talking in dungeon (if available) */
-    u8 ally_talk_portrait;
+    /* Show neutral portraits in dungeon (ally talk + level-up) if available */
+    u8 show_dungeon_portraits;
     /* PMD2-style Makuhita Dojo: 5 playable floors + auto-exit (no boss),
      * with enemy levels/EXP scaling per floor (1/10/20/25/35) */
     u8 pmd2_training_grounds;

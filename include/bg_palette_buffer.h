@@ -9,6 +9,7 @@ void nullsub_5(s32 index, const RGB_Struct *color);
 void SetBGPaletteBufferColorArray(s32 index, const RGB_Struct *color);
 void SetBGPaletteBufferColorRGB(s32 index, const RGB_Struct *color, s32 brightness, const RGB_Struct *ramp);
 void SetBGPaletteBufferColor(s32 index, u16 *color);
+u16 GetBGPaletteBufferColor(s32 index);
 void TransferBGPaletteBuffer(void);
 
 #endif // GUARD_BG_PALETTE_BUFFER_H

@@ -14,7 +14,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .pmd2_training_grounds = TRUE, /* TRUE = 5 floors + exit, no boss, scaling levels; FALSE = vanilla 3F+boss */
     .custom_graphics = TRUE, /* TRUE = PMD2 Poké coin + cyan money; FALSE = vanilla */
     .party_leader_switch = TRUE, /* TRUE = dungeon Make Leader anytime (temp until postgame); FALSE = vanilla */
-    .ally_talk_portrait = TRUE, /* TRUE = show ally deHfault portrait when talking; FALSE = vanilla */
+    .show_dungeon_portraits = TRUE, /* TRUE = portraits on ally talk + level-up; FALSE = vanilla */
     .bank_interest_percent = 5, /* Percent interest on savings per dungeon clear; 0 = disabled */
     .rank_rewards = TRUE, /* TRUE = bag pages + storage by rank; FALSE = vanilla bag 20/10 */
     .achievements = TRUE, /* TRUE = parallel achievements menu + tracking; FALSE = off */

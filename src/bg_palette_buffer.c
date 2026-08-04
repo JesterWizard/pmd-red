@@ -60,6 +60,11 @@ void SetBGPaletteBufferColor(s32 index, u16 *color)
     sBGPaletteBuffer[index] = *color;
 }
 
+u16 GetBGPaletteBufferColor(s32 index)
+{
+    return sBGPaletteBuffer[index];
+}
+
 // arm9.bin::02000FC8
 void nullsub_4(s32 index, const RGB_Struct *colorArray, s32 brightness, const RGB_Struct *ramp)
 {

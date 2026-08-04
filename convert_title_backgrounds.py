@@ -6,8 +6,9 @@ Output (next to each PNG):
   title_XX.pal    — 240 RGBX colors (index 0 reserved transparent), unk4=0x80
 
 Custom title uses BG3 in 256-color text mode at CHARBASE 1 (VRAM+0x4000).
-Tiles are loaded at VRAM+0x6000 (tile index base 128) so font/UI chrome at
-0x4F00 stays intact — up to 640 unique tiles. Extras merge to nearest neighbors.
+Tiles load at VRAM+0x6000 (tile index base 128) through 0xF5FF (600 tiles).
+UI maps use screenbases 6–8; BG3 map at screenbase 31 (0xF800) so Continue
+window tiles (~0x2D00) never smash maps. Extras merge to nearest tiles.
 BG2 tilemap stays empty.
 """
 
@@ -23,8 +24,10 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent
 SRC_DIR = ROOT / "graphics" / "title_screen_backgrounds"
 
-MAX_COLORS = 239  # reserve palette index 0 (GBA transparent)
-MAX_TILES = 640  # CHARBASE1 from tile 128 @ 0x6000 → 0x10000
+# Index 0 = transparent; 1–239 = art. Continue icons use OBJ palette (256+)
+# when custom title 8bpp is active, so they no longer reserve BG colors.
+MAX_COLORS = 239
+MAX_TILES = 600  # CHARBASE1 tile 128 @ 0x6000 → 0xF600; BG3 map at 0xF800
 PAL_ENTRIES = 240
 SCREEN_W, SCREEN_H = 240, 160
 TILES_X, TILES_Y = SCREEN_W // 8, SCREEN_H // 8

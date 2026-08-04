@@ -674,7 +674,7 @@ static void sub_8067558(Entity *entity, Entity *targetEntity, s32 a2)
             }
 
             sub_806A3D4(txt, speciesId,  r2, r6);
-            if (gRuntimeConfig.ally_talk_portrait) {
+            if (gRuntimeConfig.show_dungeon_portraits) {
                 dialogueInfo.species = info2->apparentID;
                 dialogueInfo.spriteId = 0;
                 dialogueInfoPtr = &dialogueInfo;

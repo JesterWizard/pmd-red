@@ -3,10 +3,13 @@
 #include "constants/main_menu.h"
 #include "constants/wonder_mail.h"
 #include "structs/menu.h"
+#include "structs/sprite_oam.h"
+#include "bg_control.h"
 #include "bg_palette_buffer.h"
 #include "code_800D090.h"
 #include "code_8094F88.h"
 #include "adventure_info.h"
+#include "cpu.h"
 #include "def_filearchives.h"
 #include "dungeon_info.h"
 #include "event_flag.h"
@@ -20,6 +23,7 @@
 #include "pokemon.h"
 #include "rescue_team_info.h"
 #include "save.h"
+#include "sprite.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -29,6 +33,16 @@
 #define LEGEND_ICON_W 16
 #define LEGEND_ICON_H 16
 #define LEGEND_ICON_4BPP_LEN (LEGEND_ICON_W * LEGEND_ICON_H / 8)
+#define LEGEND_ICON_BYTES (LEGEND_ICON_4BPP_LEN * 4)
+/* Vanilla: 4×16 colors at BG index 0xB0. Custom title: same 64 colors in OBJ palette. */
+#define CLMK_BG_PAL_BASE 0xB0
+#define CLMK_OBJ_PAL_BASE 256
+#define CLMK_PAL_COUNT (16 * 4)
+/* Window gUnknown_80E7610 is at tile (2,2); icons at window-local (8,73). */
+#define CLMK_ICON_SCREEN_X0 (2 * 8 + 8)
+#define CLMK_ICON_SCREEN_Y (2 * 8 + 73)
+#define CLMK_OBJ_TILE_BASE 0x200
+#define CLMK_OBJ_TILES_PER_ICON 4
 
 // Size: 0x8
 typedef struct ClmkFileData
@@ -69,6 +83,9 @@ struct LoadScreen
 };
 
 EWRAM_INIT struct LoadScreen *gLoadScreen = { NULL };
+
+static EWRAM_DATA SpriteOAM sClmkIconSprites[NUM_LEGEND_ICONS] = {0};
+static EWRAM_DATA u8 sClmkIconCount = 0;
 
 extern unkStruct_203B484 *gUnknown_203B484;
 
@@ -230,6 +247,7 @@ void CreateLoadScreen(u32 currMenu)
 
 void CleanLoadScreen(void)
 {
+    sClmkIconCount = 0;
     ResetUnusedInputStruct();
     ShowWindows(NULL, TRUE, TRUE);
 
@@ -243,9 +261,14 @@ u32 UpdateLoadScreenMenu(void)
 {
     u32 nextMenu;
     u32 menuAction;
+    s32 i;
 
     nextMenu = MENU_NO_SCREEN_CHANGE;
     menuAction = 4;
+
+    for (i = 0; i < sClmkIconCount; i++)
+        AddSprite(&sClmkIconSprites[i], 0x100, NULL, NULL);
+
     sub_8012FD8(&gLoadScreen->unk4[1]);
 
     if (!sub_8012FD8(&gLoadScreen->unk4[2]))
@@ -412,22 +435,75 @@ static void DrawQuestIcons(void)
     s32 i;
     s32 x;
     s32 y;
+    s32 slot;
+    bool8 anyIcon = FALSE;
+
+    sClmkIconCount = 0;
+
+    for (i = 0; i < NUM_LEGEND_ICONS; i++) {
+        if (CheckQuest(sLegendaryQuestIDs[i])) {
+            anyIcon = TRUE;
+            break;
+        }
+    }
+    if (!anyIcon)
+        return;
 
     clmkFile = OpenFileAndGetFileDataPtr("clmkpat", &gTitleMenuFileArchive);
 #define CLMKPAT_DATA ((ClmkFileData *)clmkFile->data)
 
-    // Load all 4 palettes
-    for (i = 0; i < 16 * 4; i++)
-        SetBGPaletteBufferColorArray(i + 0xB0, &(*CLMKPAT_DATA->palette)[i]);
+    if (gTitleBg8bpp) {
+        /* OBJ palette — unused by 8bpp title art / font on BG. */
+        for (i = 0; i < CLMK_PAL_COUNT; i++)
+            SetBGPaletteBufferColorArray(i + CLMK_OBJ_PAL_BASE, &(*CLMKPAT_DATA->palette)[i]);
 
-    x = 8;
-    y = 73; // Shouldn't this be 72?
+        slot = 0;
+        x = CLMK_ICON_SCREEN_X0;
+        for (i = 0; i < NUM_LEGEND_ICONS; i++) {
+            SpriteOAM *spr;
+            u32 tileNum;
+            u32 objPal;
 
-    // Draw the legendary icons
-    for (i = 0; i < NUM_LEGEND_ICONS; i++) {
-        if (CheckQuest(sLegendaryQuestIDs[i])) {
-            WriteGFXToBG0Window(0, x, y, LEGEND_ICON_W, LEGEND_ICON_H, CLMKPAT_DATA->packedGFX[i], sLegendaryQuestIconPalNums[i]);
-            x += 16;
+            if (!CheckQuest(sLegendaryQuestIDs[i]))
+                continue;
+
+            tileNum = CLMK_OBJ_TILE_BASE + slot * CLMK_OBJ_TILES_PER_ICON;
+            CpuCopy((u8 *)OBJ_VRAM0 + tileNum * 32, CLMKPAT_DATA->packedGFX[i], LEGEND_ICON_BYTES);
+
+            /* BG banks 11–14 → OBJ banks 0–3 */
+            objPal = sLegendaryQuestIconPalNums[i] - 11;
+
+            spr = &sClmkIconSprites[slot];
+            SpriteSetAffine1(spr, 0);
+            SpriteSetAffine2(spr, 0);
+            SpriteSetObjMode(spr, 0);
+            SpriteSetMosaic(spr, 0);
+            SpriteSetBpp(spr, 0);
+            SpriteSetShape(spr, 0); /* square */
+            SpriteSetSize(spr, 1);  /* 16×16 */
+            SpriteSetTileNum(spr, tileNum);
+            SpriteSetPriority(spr, 0);
+            SpriteSetPalNum(spr, objPal);
+            SpriteSetMatrixNum(spr, 0);
+            SpriteSetX(spr, x);
+            SpriteSetY(spr, CLMK_ICON_SCREEN_Y);
+            slot++;
+            x += LEGEND_ICON_W;
+        }
+        sClmkIconCount = slot;
+    }
+    else {
+        for (i = 0; i < CLMK_PAL_COUNT; i++)
+            SetBGPaletteBufferColorArray(i + CLMK_BG_PAL_BASE, &(*CLMKPAT_DATA->palette)[i]);
+
+        x = 8;
+        y = 73; // Shouldn't this be 72?
+
+        for (i = 0; i < NUM_LEGEND_ICONS; i++) {
+            if (CheckQuest(sLegendaryQuestIDs[i])) {
+                WriteGFXToBG0Window(0, x, y, LEGEND_ICON_W, LEGEND_ICON_H, CLMKPAT_DATA->packedGFX[i], sLegendaryQuestIconPalNums[i]);
+                x += 16;
+            }
         }
     }
 
