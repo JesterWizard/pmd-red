@@ -2962,153 +2962,153 @@ static const ax_anim sWeezingAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWeezingGfx1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_1.4bpp");
+static const u8 sWeezingGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_1.4bpp.lz");
 static const ax_sprite sWeezingSprites1[] = {
 	{sWeezingGfx1, ARRAY_COUNT(sWeezingGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx2[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_2.4bpp");
+static const u8 sWeezingGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_2.4bpp.lz");
 static const ax_sprite sWeezingSprites2[] = {
 	{sWeezingGfx2, ARRAY_COUNT(sWeezingGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx3[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_3.4bpp");
+static const u8 sWeezingGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_3.4bpp.lz");
 static const ax_sprite sWeezingSprites3[] = {
 	{sWeezingGfx3, ARRAY_COUNT(sWeezingGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx4[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_4.4bpp");
+static const u8 sWeezingGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_4.4bpp.lz");
 static const ax_sprite sWeezingSprites4[] = {
 	{sWeezingGfx4, ARRAY_COUNT(sWeezingGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx5[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_5.4bpp");
+static const u8 sWeezingGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_5.4bpp.lz");
 static const ax_sprite sWeezingSprites5[] = {
 	{sWeezingGfx5, ARRAY_COUNT(sWeezingGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx6[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_6.4bpp");
+static const u8 sWeezingGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_6.4bpp.lz");
 static const ax_sprite sWeezingSprites6[] = {
 	{sWeezingGfx6, ARRAY_COUNT(sWeezingGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx7[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_7.4bpp");
+static const u8 sWeezingGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_7.4bpp.lz");
 static const ax_sprite sWeezingSprites7[] = {
 	{sWeezingGfx7, ARRAY_COUNT(sWeezingGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx8[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_8.4bpp");
+static const u8 sWeezingGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_8.4bpp.lz");
 static const ax_sprite sWeezingSprites8[] = {
 	{sWeezingGfx8, ARRAY_COUNT(sWeezingGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx9[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_9.4bpp");
+static const u8 sWeezingGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_9.4bpp.lz");
 static const ax_sprite sWeezingSprites9[] = {
 	{sWeezingGfx9, ARRAY_COUNT(sWeezingGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx10[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_10.4bpp");
+static const u8 sWeezingGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_10.4bpp.lz");
 static const ax_sprite sWeezingSprites10[] = {
 	{sWeezingGfx10, ARRAY_COUNT(sWeezingGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx11[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_11.4bpp");
+static const u8 sWeezingGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_11.4bpp.lz");
 static const ax_sprite sWeezingSprites11[] = {
 	{sWeezingGfx11, ARRAY_COUNT(sWeezingGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx12[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_12.4bpp");
+static const u8 sWeezingGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_12.4bpp.lz");
 static const ax_sprite sWeezingSprites12[] = {
 	{sWeezingGfx12, ARRAY_COUNT(sWeezingGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx13[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_13.4bpp");
+static const u8 sWeezingGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_13.4bpp.lz");
 static const ax_sprite sWeezingSprites13[] = {
 	{sWeezingGfx13, ARRAY_COUNT(sWeezingGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx14[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_14.4bpp");
+static const u8 sWeezingGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_14.4bpp.lz");
 static const ax_sprite sWeezingSprites14[] = {
 	{sWeezingGfx14, ARRAY_COUNT(sWeezingGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx15[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_15.4bpp");
+static const u8 sWeezingGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_15.4bpp.lz");
 static const ax_sprite sWeezingSprites15[] = {
 	{sWeezingGfx15, ARRAY_COUNT(sWeezingGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx16[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_16.4bpp");
+static const u8 sWeezingGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_16.4bpp.lz");
 static const ax_sprite sWeezingSprites16[] = {
 	{sWeezingGfx16, ARRAY_COUNT(sWeezingGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx17[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_17.4bpp");
+static const u8 sWeezingGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_17.4bpp.lz");
 static const ax_sprite sWeezingSprites17[] = {
 	{sWeezingGfx17, ARRAY_COUNT(sWeezingGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx18[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_18.4bpp");
+static const u8 sWeezingGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_18.4bpp.lz");
 static const ax_sprite sWeezingSprites18[] = {
 	{sWeezingGfx18, ARRAY_COUNT(sWeezingGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx19[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_19.4bpp");
+static const u8 sWeezingGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_19.4bpp.lz");
 static const ax_sprite sWeezingSprites19[] = {
 	{sWeezingGfx19, ARRAY_COUNT(sWeezingGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx20[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_20.4bpp");
+static const u8 sWeezingGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_20.4bpp.lz");
 static const ax_sprite sWeezingSprites20[] = {
 	{sWeezingGfx20, ARRAY_COUNT(sWeezingGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx21[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_21.4bpp");
+static const u8 sWeezingGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_21.4bpp.lz");
 static const ax_sprite sWeezingSprites21[] = {
 	{sWeezingGfx21, ARRAY_COUNT(sWeezingGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx22[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_22.4bpp");
+static const u8 sWeezingGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_22.4bpp.lz");
 static const ax_sprite sWeezingSprites22[] = {
 	{sWeezingGfx22, ARRAY_COUNT(sWeezingGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx23[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_23.4bpp");
+static const u8 sWeezingGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_23.4bpp.lz");
 static const ax_sprite sWeezingSprites23[] = {
 	{sWeezingGfx23, ARRAY_COUNT(sWeezingGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx24[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_24.4bpp");
+static const u8 sWeezingGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_24.4bpp.lz");
 static const ax_sprite sWeezingSprites24[] = {
 	{sWeezingGfx24, ARRAY_COUNT(sWeezingGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx25[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_25.4bpp");
+static const u8 sWeezingGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_25.4bpp.lz");
 static const ax_sprite sWeezingSprites25[] = {
 	{sWeezingGfx25, ARRAY_COUNT(sWeezingGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx26[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_26.4bpp");
+static const u8 sWeezingGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_26.4bpp.lz");
 static const ax_sprite sWeezingSprites26[] = {
 	{sWeezingGfx26, ARRAY_COUNT(sWeezingGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx27[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_27.4bpp");
+static const u8 sWeezingGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_27.4bpp.lz");
 static const ax_sprite sWeezingSprites27[] = {
 	{sWeezingGfx27, ARRAY_COUNT(sWeezingGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx28[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_28.4bpp");
+static const u8 sWeezingGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_28.4bpp.lz");
 static const ax_sprite sWeezingSprites28[] = {
 	{sWeezingGfx28, ARRAY_COUNT(sWeezingGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx29[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_29.4bpp");
+static const u8 sWeezingGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_29.4bpp.lz");
 static const ax_sprite sWeezingSprites29[] = {
 	{sWeezingGfx29, ARRAY_COUNT(sWeezingGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx30[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_30.4bpp");
-static const u8 sWeezingGfx30_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_30_1.4bpp");
+static const u8 sWeezingGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_30.4bpp.lz");
+static const u8 sWeezingGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_30_1.4bpp.lz");
 static const ax_sprite sWeezingSprites30[] = {
 	{NULL, 32}, 
 	{sWeezingGfx30, ARRAY_COUNT(sWeezingGfx30)}, 
@@ -3116,25 +3116,25 @@ static const ax_sprite sWeezingSprites30[] = {
 	{sWeezingGfx30_1, ARRAY_COUNT(sWeezingGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx31[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_31.4bpp");
+static const u8 sWeezingGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_31.4bpp.lz");
 static const ax_sprite sWeezingSprites31[] = {
 	{sWeezingGfx31, ARRAY_COUNT(sWeezingGfx31)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx32[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_32.4bpp");
+static const u8 sWeezingGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_32.4bpp.lz");
 static const ax_sprite sWeezingSprites32[] = {
 	{sWeezingGfx32, ARRAY_COUNT(sWeezingGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx33[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_33.4bpp");
+static const u8 sWeezingGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_33.4bpp.lz");
 static const ax_sprite sWeezingSprites33[] = {
 	{sWeezingGfx33, ARRAY_COUNT(sWeezingGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx34[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_34.4bpp");
-static const u8 sWeezingGfx34_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_34_1.4bpp");
+static const u8 sWeezingGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_34.4bpp.lz");
+static const u8 sWeezingGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_34_1.4bpp.lz");
 static const ax_sprite sWeezingSprites34[] = {
 	{NULL, 32}, 
 	{sWeezingGfx34, ARRAY_COUNT(sWeezingGfx34)}, 
@@ -3142,43 +3142,43 @@ static const ax_sprite sWeezingSprites34[] = {
 	{sWeezingGfx34_1, ARRAY_COUNT(sWeezingGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx35[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_35.4bpp");
+static const u8 sWeezingGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_35.4bpp.lz");
 static const ax_sprite sWeezingSprites35[] = {
 	{sWeezingGfx35, ARRAY_COUNT(sWeezingGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx36[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_36.4bpp");
+static const u8 sWeezingGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_36.4bpp.lz");
 static const ax_sprite sWeezingSprites36[] = {
 	{NULL, 32}, 
 	{sWeezingGfx36, ARRAY_COUNT(sWeezingGfx36)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx37[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_37.4bpp");
+static const u8 sWeezingGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_37.4bpp.lz");
 static const ax_sprite sWeezingSprites37[] = {
 	{NULL, 64}, 
 	{sWeezingGfx37, ARRAY_COUNT(sWeezingGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx38[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_38.4bpp");
+static const u8 sWeezingGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_38.4bpp.lz");
 static const ax_sprite sWeezingSprites38[] = {
 	{NULL, 64}, 
 	{sWeezingGfx38, ARRAY_COUNT(sWeezingGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx39[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_39.4bpp");
+static const u8 sWeezingGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_39.4bpp.lz");
 static const ax_sprite sWeezingSprites39[] = {
 	{sWeezingGfx39, ARRAY_COUNT(sWeezingGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx40[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_40.4bpp");
+static const u8 sWeezingGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_40.4bpp.lz");
 static const ax_sprite sWeezingSprites40[] = {
 	{NULL, 32}, 
 	{sWeezingGfx40, ARRAY_COUNT(sWeezingGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx41[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_41.4bpp");
-static const u8 sWeezingGfx41_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_41_1.4bpp");
+static const u8 sWeezingGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_41.4bpp.lz");
+static const u8 sWeezingGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_41_1.4bpp.lz");
 static const ax_sprite sWeezingSprites41[] = {
 	{NULL, 32}, 
 	{sWeezingGfx41, ARRAY_COUNT(sWeezingGfx41)}, 
@@ -3187,8 +3187,8 @@ static const ax_sprite sWeezingSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx42[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_42.4bpp");
-static const u8 sWeezingGfx42_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_42_1.4bpp");
+static const u8 sWeezingGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_42.4bpp.lz");
+static const u8 sWeezingGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_42_1.4bpp.lz");
 static const ax_sprite sWeezingSprites42[] = {
 	{NULL, 32}, 
 	{sWeezingGfx42, ARRAY_COUNT(sWeezingGfx42)}, 
@@ -3196,24 +3196,24 @@ static const ax_sprite sWeezingSprites42[] = {
 	{sWeezingGfx42_1, ARRAY_COUNT(sWeezingGfx42_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx43[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_43.4bpp");
-static const u8 sWeezingGfx43_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_43_1.4bpp");
+static const u8 sWeezingGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_43.4bpp.lz");
+static const u8 sWeezingGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_43_1.4bpp.lz");
 static const ax_sprite sWeezingSprites43[] = {
 	{sWeezingGfx43, ARRAY_COUNT(sWeezingGfx43)}, 
 	{NULL, 32}, 
 	{sWeezingGfx43_1, ARRAY_COUNT(sWeezingGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx44[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_44.4bpp");
+static const u8 sWeezingGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_44.4bpp.lz");
 static const ax_sprite sWeezingSprites44[] = {
 	{NULL, 32}, 
 	{sWeezingGfx44, ARRAY_COUNT(sWeezingGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx45[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_45.4bpp");
-static const u8 sWeezingGfx45_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_45_1.4bpp");
-static const u8 sWeezingGfx45_2[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_45_2.4bpp");
-static const u8 sWeezingGfx45_3[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_45_3.4bpp");
+static const u8 sWeezingGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_45.4bpp.lz");
+static const u8 sWeezingGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_45_1.4bpp.lz");
+static const u8 sWeezingGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_45_2.4bpp.lz");
+static const u8 sWeezingGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_45_3.4bpp.lz");
 static const ax_sprite sWeezingSprites45[] = {
 	{NULL, 32}, 
 	{sWeezingGfx45, ARRAY_COUNT(sWeezingGfx45)}, 
@@ -3225,9 +3225,9 @@ static const ax_sprite sWeezingSprites45[] = {
 	{sWeezingGfx45_3, ARRAY_COUNT(sWeezingGfx45_3)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx46[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_46.4bpp");
-static const u8 sWeezingGfx46_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_46_1.4bpp");
-static const u8 sWeezingGfx46_2[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_46_2.4bpp");
+static const u8 sWeezingGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_46.4bpp.lz");
+static const u8 sWeezingGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_46_1.4bpp.lz");
+static const u8 sWeezingGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_46_2.4bpp.lz");
 static const ax_sprite sWeezingSprites46[] = {
 	{sWeezingGfx46, ARRAY_COUNT(sWeezingGfx46)}, 
 	{NULL, 64}, 
@@ -3236,28 +3236,28 @@ static const ax_sprite sWeezingSprites46[] = {
 	{sWeezingGfx46_2, ARRAY_COUNT(sWeezingGfx46_2)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx47[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_47.4bpp");
-static const u8 sWeezingGfx47_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_47_1.4bpp");
+static const u8 sWeezingGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_47.4bpp.lz");
+static const u8 sWeezingGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_47_1.4bpp.lz");
 static const ax_sprite sWeezingSprites47[] = {
 	{sWeezingGfx47, ARRAY_COUNT(sWeezingGfx47)}, 
 	{NULL, 64}, 
 	{sWeezingGfx47_1, ARRAY_COUNT(sWeezingGfx47_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx48[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_48.4bpp");
+static const u8 sWeezingGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_48.4bpp.lz");
 static const ax_sprite sWeezingSprites48[] = {
 	{sWeezingGfx48, ARRAY_COUNT(sWeezingGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx49[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_49.4bpp");
+static const u8 sWeezingGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_49.4bpp.lz");
 static const ax_sprite sWeezingSprites49[] = {
 	{sWeezingGfx49, ARRAY_COUNT(sWeezingGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx50[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_50.4bpp");
-static const u8 sWeezingGfx50_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_50_1.4bpp");
-static const u8 sWeezingGfx50_2[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_50_2.4bpp");
-static const u8 sWeezingGfx50_3[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_50_3.4bpp");
+static const u8 sWeezingGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_50.4bpp.lz");
+static const u8 sWeezingGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_50_1.4bpp.lz");
+static const u8 sWeezingGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_50_2.4bpp.lz");
+static const u8 sWeezingGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_50_3.4bpp.lz");
 static const ax_sprite sWeezingSprites50[] = {
 	{NULL, 32}, 
 	{sWeezingGfx50, ARRAY_COUNT(sWeezingGfx50)}, 
@@ -3269,35 +3269,35 @@ static const ax_sprite sWeezingSprites50[] = {
 	{sWeezingGfx50_3, ARRAY_COUNT(sWeezingGfx50_3)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx51[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_51.4bpp");
+static const u8 sWeezingGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_51.4bpp.lz");
 static const ax_sprite sWeezingSprites51[] = {
 	{sWeezingGfx51, ARRAY_COUNT(sWeezingGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx52[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_52.4bpp");
+static const u8 sWeezingGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_52.4bpp.lz");
 static const ax_sprite sWeezingSprites52[] = {
 	{NULL, 32}, 
 	{sWeezingGfx52, ARRAY_COUNT(sWeezingGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx53[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_53.4bpp");
+static const u8 sWeezingGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_53.4bpp.lz");
 static const ax_sprite sWeezingSprites53[] = {
 	{sWeezingGfx53, ARRAY_COUNT(sWeezingGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx54[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_54.4bpp");
+static const u8 sWeezingGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_54.4bpp.lz");
 static const ax_sprite sWeezingSprites54[] = {
 	{sWeezingGfx54, ARRAY_COUNT(sWeezingGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx55[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_55.4bpp");
+static const u8 sWeezingGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_55.4bpp.lz");
 static const ax_sprite sWeezingSprites55[] = {
 	{sWeezingGfx55, ARRAY_COUNT(sWeezingGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx56[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_56.4bpp");
-static const u8 sWeezingGfx56_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_56_1.4bpp");
-static const u8 sWeezingGfx56_2[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_56_2.4bpp");
+static const u8 sWeezingGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_56.4bpp.lz");
+static const u8 sWeezingGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_56_1.4bpp.lz");
+static const u8 sWeezingGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_56_2.4bpp.lz");
 static const ax_sprite sWeezingSprites56[] = {
 	{sWeezingGfx56, ARRAY_COUNT(sWeezingGfx56)}, 
 	{NULL, 32}, 
@@ -3306,15 +3306,15 @@ static const ax_sprite sWeezingSprites56[] = {
 	{sWeezingGfx56_2, ARRAY_COUNT(sWeezingGfx56_2)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx57[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_57.4bpp");
+static const u8 sWeezingGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_57.4bpp.lz");
 static const ax_sprite sWeezingSprites57[] = {
 	{NULL, 32}, 
 	{sWeezingGfx57, ARRAY_COUNT(sWeezingGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx58[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_58.4bpp");
-static const u8 sWeezingGfx58_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_58_1.4bpp");
-static const u8 sWeezingGfx58_2[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_58_2.4bpp");
+static const u8 sWeezingGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_58.4bpp.lz");
+static const u8 sWeezingGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_58_1.4bpp.lz");
+static const u8 sWeezingGfx58_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_58_2.4bpp.lz");
 static const ax_sprite sWeezingSprites58[] = {
 	{sWeezingGfx58, ARRAY_COUNT(sWeezingGfx58)}, 
 	{NULL, 64}, 
@@ -3324,8 +3324,8 @@ static const ax_sprite sWeezingSprites58[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx59[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_59.4bpp");
-static const u8 sWeezingGfx59_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_59_1.4bpp");
+static const u8 sWeezingGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_59.4bpp.lz");
+static const u8 sWeezingGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_59_1.4bpp.lz");
 static const ax_sprite sWeezingSprites59[] = {
 	{NULL, 32}, 
 	{sWeezingGfx59, ARRAY_COUNT(sWeezingGfx59)}, 
@@ -3333,14 +3333,14 @@ static const ax_sprite sWeezingSprites59[] = {
 	{sWeezingGfx59_1, ARRAY_COUNT(sWeezingGfx59_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx60[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_60.4bpp");
+static const u8 sWeezingGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_60.4bpp.lz");
 static const ax_sprite sWeezingSprites60[] = {
 	{NULL, 32}, 
 	{sWeezingGfx60, ARRAY_COUNT(sWeezingGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx61[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_61.4bpp");
-static const u8 sWeezingGfx61_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_61_1.4bpp");
+static const u8 sWeezingGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_61.4bpp.lz");
+static const u8 sWeezingGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_61_1.4bpp.lz");
 static const ax_sprite sWeezingSprites61[] = {
 	{NULL, 128}, 
 	{sWeezingGfx61, ARRAY_COUNT(sWeezingGfx61)}, 
@@ -3349,40 +3349,40 @@ static const ax_sprite sWeezingSprites61[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx62[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_62.4bpp");
+static const u8 sWeezingGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_62.4bpp.lz");
 static const ax_sprite sWeezingSprites62[] = {
 	{NULL, 128}, 
 	{sWeezingGfx62, ARRAY_COUNT(sWeezingGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx63[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_63.4bpp");
+static const u8 sWeezingGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_63.4bpp.lz");
 static const ax_sprite sWeezingSprites63[] = {
 	{sWeezingGfx63, ARRAY_COUNT(sWeezingGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx64[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_64.4bpp");
+static const u8 sWeezingGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_64.4bpp.lz");
 static const ax_sprite sWeezingSprites64[] = {
 	{sWeezingGfx64, ARRAY_COUNT(sWeezingGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx65[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_65.4bpp");
+static const u8 sWeezingGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_65.4bpp.lz");
 static const ax_sprite sWeezingSprites65[] = {
 	{sWeezingGfx65, ARRAY_COUNT(sWeezingGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx66[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_66.4bpp");
+static const u8 sWeezingGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_66.4bpp.lz");
 static const ax_sprite sWeezingSprites66[] = {
 	{sWeezingGfx66, ARRAY_COUNT(sWeezingGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx67[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_67.4bpp");
+static const u8 sWeezingGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_67.4bpp.lz");
 static const ax_sprite sWeezingSprites67[] = {
 	{sWeezingGfx67, ARRAY_COUNT(sWeezingGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx68[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_68.4bpp");
-static const u8 sWeezingGfx68_1[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_68_1.4bpp");
-static const u8 sWeezingGfx68_2[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_68_2.4bpp");
+static const u8 sWeezingGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_68.4bpp.lz");
+static const u8 sWeezingGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_68_1.4bpp.lz");
+static const u8 sWeezingGfx68_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_68_2.4bpp.lz");
 static const ax_sprite sWeezingSprites68[] = {
 	{NULL, 160}, 
 	{sWeezingGfx68, ARRAY_COUNT(sWeezingGfx68)}, 
@@ -3392,131 +3392,131 @@ static const ax_sprite sWeezingSprites68[] = {
 	{sWeezingGfx68_2, ARRAY_COUNT(sWeezingGfx68_2)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx69[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_69.4bpp");
+static const u8 sWeezingGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_69.4bpp.lz");
 static const ax_sprite sWeezingSprites69[] = {
 	{sWeezingGfx69, ARRAY_COUNT(sWeezingGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx70[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_70.4bpp");
+static const u8 sWeezingGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_70.4bpp.lz");
 static const ax_sprite sWeezingSprites70[] = {
 	{sWeezingGfx70, ARRAY_COUNT(sWeezingGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx71[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_71.4bpp");
+static const u8 sWeezingGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_71.4bpp.lz");
 static const ax_sprite sWeezingSprites71[] = {
 	{sWeezingGfx71, ARRAY_COUNT(sWeezingGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx72[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_72.4bpp");
+static const u8 sWeezingGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_72.4bpp.lz");
 static const ax_sprite sWeezingSprites72[] = {
 	{sWeezingGfx72, ARRAY_COUNT(sWeezingGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx73[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_73.4bpp");
+static const u8 sWeezingGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_73.4bpp.lz");
 static const ax_sprite sWeezingSprites73[] = {
 	{sWeezingGfx73, ARRAY_COUNT(sWeezingGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx74[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_74.4bpp");
+static const u8 sWeezingGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_74.4bpp.lz");
 static const ax_sprite sWeezingSprites74[] = {
 	{sWeezingGfx74, ARRAY_COUNT(sWeezingGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx75[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_75.4bpp");
+static const u8 sWeezingGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_75.4bpp.lz");
 static const ax_sprite sWeezingSprites75[] = {
 	{NULL, 32}, 
 	{sWeezingGfx75, ARRAY_COUNT(sWeezingGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx76[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_76.4bpp");
+static const u8 sWeezingGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_76.4bpp.lz");
 static const ax_sprite sWeezingSprites76[] = {
 	{sWeezingGfx76, ARRAY_COUNT(sWeezingGfx76)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx77[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_77.4bpp");
+static const u8 sWeezingGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_77.4bpp.lz");
 static const ax_sprite sWeezingSprites77[] = {
 	{NULL, 128}, 
 	{sWeezingGfx77, ARRAY_COUNT(sWeezingGfx77)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx78[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_78.4bpp");
+static const u8 sWeezingGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_78.4bpp.lz");
 static const ax_sprite sWeezingSprites78[] = {
 	{sWeezingGfx78, ARRAY_COUNT(sWeezingGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx79[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_79.4bpp");
+static const u8 sWeezingGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_79.4bpp.lz");
 static const ax_sprite sWeezingSprites79[] = {
 	{sWeezingGfx79, ARRAY_COUNT(sWeezingGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx80[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_80.4bpp");
+static const u8 sWeezingGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_80.4bpp.lz");
 static const ax_sprite sWeezingSprites80[] = {
 	{sWeezingGfx80, ARRAY_COUNT(sWeezingGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx81[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_81.4bpp");
+static const u8 sWeezingGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_81.4bpp.lz");
 static const ax_sprite sWeezingSprites81[] = {
 	{sWeezingGfx81, ARRAY_COUNT(sWeezingGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx82[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_82.4bpp");
+static const u8 sWeezingGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_82.4bpp.lz");
 static const ax_sprite sWeezingSprites82[] = {
 	{sWeezingGfx82, ARRAY_COUNT(sWeezingGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx83[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_83.4bpp");
+static const u8 sWeezingGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_83.4bpp.lz");
 static const ax_sprite sWeezingSprites83[] = {
 	{sWeezingGfx83, ARRAY_COUNT(sWeezingGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx84[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_84.4bpp");
+static const u8 sWeezingGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_84.4bpp.lz");
 static const ax_sprite sWeezingSprites84[] = {
 	{sWeezingGfx84, ARRAY_COUNT(sWeezingGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx85[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_85.4bpp");
+static const u8 sWeezingGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_85.4bpp.lz");
 static const ax_sprite sWeezingSprites85[] = {
 	{sWeezingGfx85, ARRAY_COUNT(sWeezingGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx86[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_86.4bpp");
+static const u8 sWeezingGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_86.4bpp.lz");
 static const ax_sprite sWeezingSprites86[] = {
 	{sWeezingGfx86, ARRAY_COUNT(sWeezingGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx87[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_87.4bpp");
+static const u8 sWeezingGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_87.4bpp.lz");
 static const ax_sprite sWeezingSprites87[] = {
 	{sWeezingGfx87, ARRAY_COUNT(sWeezingGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx88[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_88.4bpp");
+static const u8 sWeezingGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_88.4bpp.lz");
 static const ax_sprite sWeezingSprites88[] = {
 	{sWeezingGfx88, ARRAY_COUNT(sWeezingGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx89[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_89.4bpp");
+static const u8 sWeezingGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_89.4bpp.lz");
 static const ax_sprite sWeezingSprites89[] = {
 	{sWeezingGfx89, ARRAY_COUNT(sWeezingGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx90[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_90.4bpp");
+static const u8 sWeezingGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_90.4bpp.lz");
 static const ax_sprite sWeezingSprites90[] = {
 	{sWeezingGfx90, ARRAY_COUNT(sWeezingGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx91[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_91.4bpp");
+static const u8 sWeezingGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_91.4bpp.lz");
 static const ax_sprite sWeezingSprites91[] = {
 	{sWeezingGfx91, ARRAY_COUNT(sWeezingGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx92[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_92.4bpp");
+static const u8 sWeezingGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_92.4bpp.lz");
 static const ax_sprite sWeezingSprites92[] = {
 	{sWeezingGfx92, ARRAY_COUNT(sWeezingGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sWeezingGfx93[] = INCBIN_U8("graphics/ax/mon/weezing/sprite_93.4bpp");
+static const u8 sWeezingGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weezing/sprite_93.4bpp.lz");
 static const ax_sprite sWeezingSprites93[] = {
 	{sWeezingGfx93, ARRAY_COUNT(sWeezingGfx93)}, 
 	{NULL, 0}

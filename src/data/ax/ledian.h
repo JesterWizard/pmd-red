@@ -2191,59 +2191,59 @@ static const ax_anim sLedianAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLedianGfx1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_1.4bpp");
+static const u8 sLedianGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_1.4bpp.lz");
 static const ax_sprite sLedianSprites1[] = {
 	{sLedianGfx1, ARRAY_COUNT(sLedianGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_2.4bpp");
+static const u8 sLedianGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_2.4bpp.lz");
 static const ax_sprite sLedianSprites2[] = {
 	{sLedianGfx2, ARRAY_COUNT(sLedianGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_3.4bpp");
+static const u8 sLedianGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_3.4bpp.lz");
 static const ax_sprite sLedianSprites3[] = {
 	{sLedianGfx3, ARRAY_COUNT(sLedianGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx4[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_4.4bpp");
+static const u8 sLedianGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_4.4bpp.lz");
 static const ax_sprite sLedianSprites4[] = {
 	{sLedianGfx4, ARRAY_COUNT(sLedianGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx5[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_5.4bpp");
+static const u8 sLedianGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_5.4bpp.lz");
 static const ax_sprite sLedianSprites5[] = {
 	{sLedianGfx5, ARRAY_COUNT(sLedianGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx6[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_6.4bpp");
+static const u8 sLedianGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_6.4bpp.lz");
 static const ax_sprite sLedianSprites6[] = {
 	{sLedianGfx6, ARRAY_COUNT(sLedianGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx7[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_7.4bpp");
+static const u8 sLedianGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_7.4bpp.lz");
 static const ax_sprite sLedianSprites7[] = {
 	{sLedianGfx7, ARRAY_COUNT(sLedianGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx8[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_8.4bpp");
+static const u8 sLedianGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_8.4bpp.lz");
 static const ax_sprite sLedianSprites8[] = {
 	{sLedianGfx8, ARRAY_COUNT(sLedianGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx9[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_9.4bpp");
+static const u8 sLedianGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_9.4bpp.lz");
 static const ax_sprite sLedianSprites9[] = {
 	{sLedianGfx9, ARRAY_COUNT(sLedianGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx10[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_10.4bpp");
+static const u8 sLedianGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_10.4bpp.lz");
 static const ax_sprite sLedianSprites10[] = {
 	{sLedianGfx10, ARRAY_COUNT(sLedianGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx11[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_11.4bpp");
-static const u8 sLedianGfx11_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_11_1.4bpp");
-static const u8 sLedianGfx11_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_11_2.4bpp");
+static const u8 sLedianGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_11.4bpp.lz");
+static const u8 sLedianGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_11_1.4bpp.lz");
+static const u8 sLedianGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_11_2.4bpp.lz");
 static const ax_sprite sLedianSprites11[] = {
 	{NULL, 32}, 
 	{sLedianGfx11, ARRAY_COUNT(sLedianGfx11)}, 
@@ -2254,9 +2254,9 @@ static const ax_sprite sLedianSprites11[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx12[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_12.4bpp");
-static const u8 sLedianGfx12_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_12_1.4bpp");
-static const u8 sLedianGfx12_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_12_2.4bpp");
+static const u8 sLedianGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_12.4bpp.lz");
+static const u8 sLedianGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_12_1.4bpp.lz");
+static const u8 sLedianGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_12_2.4bpp.lz");
 static const ax_sprite sLedianSprites12[] = {
 	{NULL, 32}, 
 	{sLedianGfx12, ARRAY_COUNT(sLedianGfx12)}, 
@@ -2266,9 +2266,9 @@ static const ax_sprite sLedianSprites12[] = {
 	{sLedianGfx12_2, ARRAY_COUNT(sLedianGfx12_2)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx13[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_13.4bpp");
-static const u8 sLedianGfx13_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_13_1.4bpp");
-static const u8 sLedianGfx13_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_13_2.4bpp");
+static const u8 sLedianGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_13.4bpp.lz");
+static const u8 sLedianGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_13_1.4bpp.lz");
+static const u8 sLedianGfx13_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_13_2.4bpp.lz");
 static const ax_sprite sLedianSprites13[] = {
 	{sLedianGfx13, ARRAY_COUNT(sLedianGfx13)}, 
 	{NULL, 64}, 
@@ -2278,10 +2278,10 @@ static const ax_sprite sLedianSprites13[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx14[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_14.4bpp");
-static const u8 sLedianGfx14_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_14_1.4bpp");
-static const u8 sLedianGfx14_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_14_2.4bpp");
-static const u8 sLedianGfx14_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_14_3.4bpp");
+static const u8 sLedianGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_14.4bpp.lz");
+static const u8 sLedianGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_14_1.4bpp.lz");
+static const u8 sLedianGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_14_2.4bpp.lz");
+static const u8 sLedianGfx14_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_14_3.4bpp.lz");
 static const ax_sprite sLedianSprites14[] = {
 	{sLedianGfx14, ARRAY_COUNT(sLedianGfx14)}, 
 	{NULL, 64}, 
@@ -2293,10 +2293,10 @@ static const ax_sprite sLedianSprites14[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx15[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_15.4bpp");
-static const u8 sLedianGfx15_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_15_1.4bpp");
-static const u8 sLedianGfx15_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_15_2.4bpp");
-static const u8 sLedianGfx15_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_15_3.4bpp");
+static const u8 sLedianGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_15.4bpp.lz");
+static const u8 sLedianGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_15_1.4bpp.lz");
+static const u8 sLedianGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_15_2.4bpp.lz");
+static const u8 sLedianGfx15_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_15_3.4bpp.lz");
 static const ax_sprite sLedianSprites15[] = {
 	{sLedianGfx15, ARRAY_COUNT(sLedianGfx15)}, 
 	{NULL, 64}, 
@@ -2308,10 +2308,10 @@ static const ax_sprite sLedianSprites15[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx16[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_16.4bpp");
-static const u8 sLedianGfx16_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_16_1.4bpp");
-static const u8 sLedianGfx16_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_16_2.4bpp");
-static const u8 sLedianGfx16_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_16_3.4bpp");
+static const u8 sLedianGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_16.4bpp.lz");
+static const u8 sLedianGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_16_1.4bpp.lz");
+static const u8 sLedianGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_16_2.4bpp.lz");
+static const u8 sLedianGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_16_3.4bpp.lz");
 static const ax_sprite sLedianSprites16[] = {
 	{sLedianGfx16, ARRAY_COUNT(sLedianGfx16)}, 
 	{NULL, 64}, 
@@ -2323,10 +2323,10 @@ static const ax_sprite sLedianSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx17[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_17.4bpp");
-static const u8 sLedianGfx17_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_17_1.4bpp");
-static const u8 sLedianGfx17_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_17_2.4bpp");
-static const u8 sLedianGfx17_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_17_3.4bpp");
+static const u8 sLedianGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_17.4bpp.lz");
+static const u8 sLedianGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_17_1.4bpp.lz");
+static const u8 sLedianGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_17_2.4bpp.lz");
+static const u8 sLedianGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_17_3.4bpp.lz");
 static const ax_sprite sLedianSprites17[] = {
 	{sLedianGfx17, ARRAY_COUNT(sLedianGfx17)}, 
 	{NULL, 64}, 
@@ -2338,10 +2338,10 @@ static const ax_sprite sLedianSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx18[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_18.4bpp");
-static const u8 sLedianGfx18_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_18_1.4bpp");
-static const u8 sLedianGfx18_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_18_2.4bpp");
-static const u8 sLedianGfx18_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_18_3.4bpp");
+static const u8 sLedianGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_18.4bpp.lz");
+static const u8 sLedianGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_18_1.4bpp.lz");
+static const u8 sLedianGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_18_2.4bpp.lz");
+static const u8 sLedianGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_18_3.4bpp.lz");
 static const ax_sprite sLedianSprites18[] = {
 	{sLedianGfx18, ARRAY_COUNT(sLedianGfx18)}, 
 	{NULL, 64}, 
@@ -2353,8 +2353,8 @@ static const ax_sprite sLedianSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx19[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_19.4bpp");
-static const u8 sLedianGfx19_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_19_1.4bpp");
+static const u8 sLedianGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_19.4bpp.lz");
+static const u8 sLedianGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_19_1.4bpp.lz");
 static const ax_sprite sLedianSprites19[] = {
 	{NULL, 32}, 
 	{sLedianGfx19, ARRAY_COUNT(sLedianGfx19)}, 
@@ -2362,8 +2362,8 @@ static const ax_sprite sLedianSprites19[] = {
 	{sLedianGfx19_1, ARRAY_COUNT(sLedianGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx20[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_20.4bpp");
-static const u8 sLedianGfx20_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_20_1.4bpp");
+static const u8 sLedianGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_20.4bpp.lz");
+static const u8 sLedianGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_20_1.4bpp.lz");
 static const ax_sprite sLedianSprites20[] = {
 	{NULL, 32}, 
 	{sLedianGfx20, ARRAY_COUNT(sLedianGfx20)}, 
@@ -2371,10 +2371,10 @@ static const ax_sprite sLedianSprites20[] = {
 	{sLedianGfx20_1, ARRAY_COUNT(sLedianGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx21[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_21.4bpp");
-static const u8 sLedianGfx21_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_21_1.4bpp");
-static const u8 sLedianGfx21_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_21_2.4bpp");
-static const u8 sLedianGfx21_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_21_3.4bpp");
+static const u8 sLedianGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_21.4bpp.lz");
+static const u8 sLedianGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_21_1.4bpp.lz");
+static const u8 sLedianGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_21_2.4bpp.lz");
+static const u8 sLedianGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_21_3.4bpp.lz");
 static const ax_sprite sLedianSprites21[] = {
 	{sLedianGfx21, ARRAY_COUNT(sLedianGfx21)}, 
 	{NULL, 96}, 
@@ -2386,9 +2386,9 @@ static const ax_sprite sLedianSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx22[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_22.4bpp");
-static const u8 sLedianGfx22_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_22_1.4bpp");
-static const u8 sLedianGfx22_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_22_2.4bpp");
+static const u8 sLedianGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_22.4bpp.lz");
+static const u8 sLedianGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_22_1.4bpp.lz");
+static const u8 sLedianGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_22_2.4bpp.lz");
 static const ax_sprite sLedianSprites22[] = {
 	{NULL, 32}, 
 	{sLedianGfx22, ARRAY_COUNT(sLedianGfx22)}, 
@@ -2399,10 +2399,10 @@ static const ax_sprite sLedianSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx23[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_23.4bpp");
-static const u8 sLedianGfx23_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_23_1.4bpp");
-static const u8 sLedianGfx23_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_23_2.4bpp");
-static const u8 sLedianGfx23_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_23_3.4bpp");
+static const u8 sLedianGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_23.4bpp.lz");
+static const u8 sLedianGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_23_1.4bpp.lz");
+static const u8 sLedianGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_23_2.4bpp.lz");
+static const u8 sLedianGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_23_3.4bpp.lz");
 static const ax_sprite sLedianSprites23[] = {
 	{NULL, 32}, 
 	{sLedianGfx23, ARRAY_COUNT(sLedianGfx23)}, 
@@ -2415,8 +2415,8 @@ static const ax_sprite sLedianSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx24[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_24.4bpp");
-static const u8 sLedianGfx24_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_24_1.4bpp");
+static const u8 sLedianGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_24.4bpp.lz");
+static const u8 sLedianGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_24_1.4bpp.lz");
 static const ax_sprite sLedianSprites24[] = {
 	{NULL, 32}, 
 	{sLedianGfx24, ARRAY_COUNT(sLedianGfx24)}, 
@@ -2424,9 +2424,9 @@ static const ax_sprite sLedianSprites24[] = {
 	{sLedianGfx24_1, ARRAY_COUNT(sLedianGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx25[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_25.4bpp");
-static const u8 sLedianGfx25_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_25_1.4bpp");
-static const u8 sLedianGfx25_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_25_2.4bpp");
+static const u8 sLedianGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_25.4bpp.lz");
+static const u8 sLedianGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_25_1.4bpp.lz");
+static const u8 sLedianGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_25_2.4bpp.lz");
 static const ax_sprite sLedianSprites25[] = {
 	{NULL, 128}, 
 	{sLedianGfx25, ARRAY_COUNT(sLedianGfx25)}, 
@@ -2437,10 +2437,10 @@ static const ax_sprite sLedianSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx26[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_26.4bpp");
-static const u8 sLedianGfx26_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_26_1.4bpp");
-static const u8 sLedianGfx26_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_26_2.4bpp");
-static const u8 sLedianGfx26_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_26_3.4bpp");
+static const u8 sLedianGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_26.4bpp.lz");
+static const u8 sLedianGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_26_1.4bpp.lz");
+static const u8 sLedianGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_26_2.4bpp.lz");
+static const u8 sLedianGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_26_3.4bpp.lz");
 static const ax_sprite sLedianSprites26[] = {
 	{NULL, 32}, 
 	{sLedianGfx26, ARRAY_COUNT(sLedianGfx26)}, 
@@ -2453,10 +2453,10 @@ static const ax_sprite sLedianSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx27[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_27.4bpp");
-static const u8 sLedianGfx27_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_27_1.4bpp");
-static const u8 sLedianGfx27_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_27_2.4bpp");
-static const u8 sLedianGfx27_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_27_3.4bpp");
+static const u8 sLedianGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_27.4bpp.lz");
+static const u8 sLedianGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_27_1.4bpp.lz");
+static const u8 sLedianGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_27_2.4bpp.lz");
+static const u8 sLedianGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_27_3.4bpp.lz");
 static const ax_sprite sLedianSprites27[] = {
 	{NULL, 64}, 
 	{sLedianGfx27, ARRAY_COUNT(sLedianGfx27)}, 
@@ -2469,10 +2469,10 @@ static const ax_sprite sLedianSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx28[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_28.4bpp");
-static const u8 sLedianGfx28_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_28_1.4bpp");
-static const u8 sLedianGfx28_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_28_2.4bpp");
-static const u8 sLedianGfx28_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_28_3.4bpp");
+static const u8 sLedianGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_28.4bpp.lz");
+static const u8 sLedianGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_28_1.4bpp.lz");
+static const u8 sLedianGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_28_2.4bpp.lz");
+static const u8 sLedianGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_28_3.4bpp.lz");
 static const ax_sprite sLedianSprites28[] = {
 	{sLedianGfx28, ARRAY_COUNT(sLedianGfx28)}, 
 	{NULL, 64}, 
@@ -2483,8 +2483,8 @@ static const ax_sprite sLedianSprites28[] = {
 	{sLedianGfx28_3, ARRAY_COUNT(sLedianGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx29[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_29.4bpp");
-static const u8 sLedianGfx29_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_29_1.4bpp");
+static const u8 sLedianGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_29.4bpp.lz");
+static const u8 sLedianGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_29_1.4bpp.lz");
 static const ax_sprite sLedianSprites29[] = {
 	{NULL, 128}, 
 	{sLedianGfx29, ARRAY_COUNT(sLedianGfx29)}, 
@@ -2492,9 +2492,9 @@ static const ax_sprite sLedianSprites29[] = {
 	{sLedianGfx29_1, ARRAY_COUNT(sLedianGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx30[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_30.4bpp");
-static const u8 sLedianGfx30_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_30_1.4bpp");
-static const u8 sLedianGfx30_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_30_2.4bpp");
+static const u8 sLedianGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_30.4bpp.lz");
+static const u8 sLedianGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_30_1.4bpp.lz");
+static const u8 sLedianGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_30_2.4bpp.lz");
 static const ax_sprite sLedianSprites30[] = {
 	{sLedianGfx30, ARRAY_COUNT(sLedianGfx30)}, 
 	{NULL, 64}, 
@@ -2504,9 +2504,9 @@ static const ax_sprite sLedianSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx31[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_31.4bpp");
-static const u8 sLedianGfx31_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_31_1.4bpp");
-static const u8 sLedianGfx31_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_31_2.4bpp");
+static const u8 sLedianGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_31.4bpp.lz");
+static const u8 sLedianGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_31_1.4bpp.lz");
+static const u8 sLedianGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_31_2.4bpp.lz");
 static const ax_sprite sLedianSprites31[] = {
 	{sLedianGfx31, ARRAY_COUNT(sLedianGfx31)}, 
 	{NULL, 32}, 
@@ -2516,10 +2516,10 @@ static const ax_sprite sLedianSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx32[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_32.4bpp");
-static const u8 sLedianGfx32_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_32_1.4bpp");
-static const u8 sLedianGfx32_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_32_2.4bpp");
-static const u8 sLedianGfx32_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_32_3.4bpp");
+static const u8 sLedianGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_32.4bpp.lz");
+static const u8 sLedianGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_32_1.4bpp.lz");
+static const u8 sLedianGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_32_2.4bpp.lz");
+static const u8 sLedianGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_32_3.4bpp.lz");
 static const ax_sprite sLedianSprites32[] = {
 	{sLedianGfx32, ARRAY_COUNT(sLedianGfx32)}, 
 	{NULL, 64}, 
@@ -2531,10 +2531,10 @@ static const ax_sprite sLedianSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx33[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_33.4bpp");
-static const u8 sLedianGfx33_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_33_1.4bpp");
-static const u8 sLedianGfx33_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_33_2.4bpp");
-static const u8 sLedianGfx33_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_33_3.4bpp");
+static const u8 sLedianGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_33.4bpp.lz");
+static const u8 sLedianGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_33_1.4bpp.lz");
+static const u8 sLedianGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_33_2.4bpp.lz");
+static const u8 sLedianGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_33_3.4bpp.lz");
 static const ax_sprite sLedianSprites33[] = {
 	{sLedianGfx33, ARRAY_COUNT(sLedianGfx33)}, 
 	{NULL, 32}, 
@@ -2546,9 +2546,9 @@ static const ax_sprite sLedianSprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx34[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_34.4bpp");
-static const u8 sLedianGfx34_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_34_1.4bpp");
-static const u8 sLedianGfx34_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_34_2.4bpp");
+static const u8 sLedianGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_34.4bpp.lz");
+static const u8 sLedianGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_34_1.4bpp.lz");
+static const u8 sLedianGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_34_2.4bpp.lz");
 static const ax_sprite sLedianSprites34[] = {
 	{sLedianGfx34, ARRAY_COUNT(sLedianGfx34)}, 
 	{NULL, 64}, 
@@ -2558,8 +2558,8 @@ static const ax_sprite sLedianSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx35[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_35.4bpp");
-static const u8 sLedianGfx35_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_35_1.4bpp");
+static const u8 sLedianGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_35.4bpp.lz");
+static const u8 sLedianGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_35_1.4bpp.lz");
 static const ax_sprite sLedianSprites35[] = {
 	{sLedianGfx35, ARRAY_COUNT(sLedianGfx35)}, 
 	{NULL, 64}, 
@@ -2567,9 +2567,9 @@ static const ax_sprite sLedianSprites35[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx36[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_36.4bpp");
-static const u8 sLedianGfx36_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_36_1.4bpp");
-static const u8 sLedianGfx36_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_36_2.4bpp");
+static const u8 sLedianGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_36.4bpp.lz");
+static const u8 sLedianGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_36_1.4bpp.lz");
+static const u8 sLedianGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_36_2.4bpp.lz");
 static const ax_sprite sLedianSprites36[] = {
 	{NULL, 32}, 
 	{sLedianGfx36, ARRAY_COUNT(sLedianGfx36)}, 
@@ -2580,8 +2580,8 @@ static const ax_sprite sLedianSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx37[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_37.4bpp");
-static const u8 sLedianGfx37_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_37_1.4bpp");
+static const u8 sLedianGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_37.4bpp.lz");
+static const u8 sLedianGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_37_1.4bpp.lz");
 static const ax_sprite sLedianSprites37[] = {
 	{NULL, 32}, 
 	{sLedianGfx37, ARRAY_COUNT(sLedianGfx37)}, 
@@ -2590,10 +2590,10 @@ static const ax_sprite sLedianSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx38[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_38.4bpp");
-static const u8 sLedianGfx38_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_38_1.4bpp");
-static const u8 sLedianGfx38_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_38_2.4bpp");
-static const u8 sLedianGfx38_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_38_3.4bpp");
+static const u8 sLedianGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_38.4bpp.lz");
+static const u8 sLedianGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_38_1.4bpp.lz");
+static const u8 sLedianGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_38_2.4bpp.lz");
+static const u8 sLedianGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_38_3.4bpp.lz");
 static const ax_sprite sLedianSprites38[] = {
 	{sLedianGfx38, ARRAY_COUNT(sLedianGfx38)}, 
 	{NULL, 32}, 
@@ -2605,10 +2605,10 @@ static const ax_sprite sLedianSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx39[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_39.4bpp");
-static const u8 sLedianGfx39_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_39_1.4bpp");
-static const u8 sLedianGfx39_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_39_2.4bpp");
-static const u8 sLedianGfx39_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_39_3.4bpp");
+static const u8 sLedianGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_39.4bpp.lz");
+static const u8 sLedianGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_39_1.4bpp.lz");
+static const u8 sLedianGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_39_2.4bpp.lz");
+static const u8 sLedianGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_39_3.4bpp.lz");
 static const ax_sprite sLedianSprites39[] = {
 	{sLedianGfx39, ARRAY_COUNT(sLedianGfx39)}, 
 	{NULL, 32}, 
@@ -2620,10 +2620,10 @@ static const ax_sprite sLedianSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx40[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_40.4bpp");
-static const u8 sLedianGfx40_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_40_1.4bpp");
-static const u8 sLedianGfx40_2[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_40_2.4bpp");
-static const u8 sLedianGfx40_3[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_40_3.4bpp");
+static const u8 sLedianGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_40.4bpp.lz");
+static const u8 sLedianGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_40_1.4bpp.lz");
+static const u8 sLedianGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_40_2.4bpp.lz");
+static const u8 sLedianGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_40_3.4bpp.lz");
 static const ax_sprite sLedianSprites40[] = {
 	{sLedianGfx40, ARRAY_COUNT(sLedianGfx40)}, 
 	{NULL, 32}, 
@@ -2635,8 +2635,8 @@ static const ax_sprite sLedianSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx41[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_41.4bpp");
-static const u8 sLedianGfx41_1[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_41_1.4bpp");
+static const u8 sLedianGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_41.4bpp.lz");
+static const u8 sLedianGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_41_1.4bpp.lz");
 static const ax_sprite sLedianSprites41[] = {
 	{NULL, 32}, 
 	{sLedianGfx41, ARRAY_COUNT(sLedianGfx41)}, 
@@ -2644,62 +2644,62 @@ static const ax_sprite sLedianSprites41[] = {
 	{sLedianGfx41_1, ARRAY_COUNT(sLedianGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx42[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_42.4bpp");
+static const u8 sLedianGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_42.4bpp.lz");
 static const ax_sprite sLedianSprites42[] = {
 	{sLedianGfx42, ARRAY_COUNT(sLedianGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx43[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_43.4bpp");
+static const u8 sLedianGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_43.4bpp.lz");
 static const ax_sprite sLedianSprites43[] = {
 	{sLedianGfx43, ARRAY_COUNT(sLedianGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx44[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_44.4bpp");
+static const u8 sLedianGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_44.4bpp.lz");
 static const ax_sprite sLedianSprites44[] = {
 	{sLedianGfx44, ARRAY_COUNT(sLedianGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx45[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_45.4bpp");
+static const u8 sLedianGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_45.4bpp.lz");
 static const ax_sprite sLedianSprites45[] = {
 	{sLedianGfx45, ARRAY_COUNT(sLedianGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx46[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_46.4bpp");
+static const u8 sLedianGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_46.4bpp.lz");
 static const ax_sprite sLedianSprites46[] = {
 	{sLedianGfx46, ARRAY_COUNT(sLedianGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx47[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_47.4bpp");
+static const u8 sLedianGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_47.4bpp.lz");
 static const ax_sprite sLedianSprites47[] = {
 	{sLedianGfx47, ARRAY_COUNT(sLedianGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx48[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_48.4bpp");
+static const u8 sLedianGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_48.4bpp.lz");
 static const ax_sprite sLedianSprites48[] = {
 	{sLedianGfx48, ARRAY_COUNT(sLedianGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx49[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_49.4bpp");
+static const u8 sLedianGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_49.4bpp.lz");
 static const ax_sprite sLedianSprites49[] = {
 	{sLedianGfx49, ARRAY_COUNT(sLedianGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx50[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_50.4bpp");
+static const u8 sLedianGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_50.4bpp.lz");
 static const ax_sprite sLedianSprites50[] = {
 	{sLedianGfx50, ARRAY_COUNT(sLedianGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx51[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_51.4bpp");
+static const u8 sLedianGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_51.4bpp.lz");
 static const ax_sprite sLedianSprites51[] = {
 	{sLedianGfx51, ARRAY_COUNT(sLedianGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx52[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_52.4bpp");
+static const u8 sLedianGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_52.4bpp.lz");
 static const ax_sprite sLedianSprites52[] = {
 	{sLedianGfx52, ARRAY_COUNT(sLedianGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sLedianGfx53[] = INCBIN_U8("graphics/ax/mon/ledian/sprite_53.4bpp");
+static const u8 sLedianGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledian/sprite_53.4bpp.lz");
 static const ax_sprite sLedianSprites53[] = {
 	{sLedianGfx53, ARRAY_COUNT(sLedianGfx53)}, 
 	{NULL, 0}

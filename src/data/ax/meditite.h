@@ -2321,83 +2321,83 @@ static const ax_anim sMedititeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMedititeGfx1[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_1.4bpp");
+static const u8 sMedititeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_1.4bpp.lz");
 static const ax_sprite sMedititeSprites1[] = {
 	{sMedititeGfx1, ARRAY_COUNT(sMedititeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx2[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_2.4bpp");
+static const u8 sMedititeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_2.4bpp.lz");
 static const ax_sprite sMedititeSprites2[] = {
 	{sMedititeGfx2, ARRAY_COUNT(sMedititeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx3[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_3.4bpp");
+static const u8 sMedititeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_3.4bpp.lz");
 static const ax_sprite sMedititeSprites3[] = {
 	{sMedititeGfx3, ARRAY_COUNT(sMedititeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx4[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_4.4bpp");
+static const u8 sMedititeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_4.4bpp.lz");
 static const ax_sprite sMedititeSprites4[] = {
 	{sMedititeGfx4, ARRAY_COUNT(sMedititeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx5[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_5.4bpp");
+static const u8 sMedititeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_5.4bpp.lz");
 static const ax_sprite sMedititeSprites5[] = {
 	{sMedititeGfx5, ARRAY_COUNT(sMedititeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx6[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_6.4bpp");
+static const u8 sMedititeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_6.4bpp.lz");
 static const ax_sprite sMedititeSprites6[] = {
 	{sMedititeGfx6, ARRAY_COUNT(sMedititeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx7[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_7.4bpp");
+static const u8 sMedititeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_7.4bpp.lz");
 static const ax_sprite sMedititeSprites7[] = {
 	{sMedititeGfx7, ARRAY_COUNT(sMedititeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx8[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_8.4bpp");
+static const u8 sMedititeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_8.4bpp.lz");
 static const ax_sprite sMedititeSprites8[] = {
 	{sMedititeGfx8, ARRAY_COUNT(sMedititeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx9[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_9.4bpp");
+static const u8 sMedititeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_9.4bpp.lz");
 static const ax_sprite sMedititeSprites9[] = {
 	{sMedititeGfx9, ARRAY_COUNT(sMedititeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx10[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_10.4bpp");
+static const u8 sMedititeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_10.4bpp.lz");
 static const ax_sprite sMedititeSprites10[] = {
 	{sMedititeGfx10, ARRAY_COUNT(sMedititeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx11[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_11.4bpp");
+static const u8 sMedititeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_11.4bpp.lz");
 static const ax_sprite sMedititeSprites11[] = {
 	{sMedititeGfx11, ARRAY_COUNT(sMedititeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx12[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_12.4bpp");
+static const u8 sMedititeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_12.4bpp.lz");
 static const ax_sprite sMedititeSprites12[] = {
 	{sMedititeGfx12, ARRAY_COUNT(sMedititeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx13[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_13.4bpp");
+static const u8 sMedititeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_13.4bpp.lz");
 static const ax_sprite sMedititeSprites13[] = {
 	{sMedititeGfx13, ARRAY_COUNT(sMedititeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx14[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_14.4bpp");
+static const u8 sMedititeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_14.4bpp.lz");
 static const ax_sprite sMedititeSprites14[] = {
 	{sMedititeGfx14, ARRAY_COUNT(sMedititeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx15[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_15.4bpp");
+static const u8 sMedititeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_15.4bpp.lz");
 static const ax_sprite sMedititeSprites15[] = {
 	{sMedititeGfx15, ARRAY_COUNT(sMedititeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx16[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_16.4bpp");
-static const u8 sMedititeGfx16_1[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_16_1.4bpp");
+static const u8 sMedititeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_16.4bpp.lz");
+static const u8 sMedititeGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_16_1.4bpp.lz");
 static const ax_sprite sMedititeSprites16[] = {
 	{sMedititeGfx16, ARRAY_COUNT(sMedititeGfx16)}, 
 	{NULL, 32}, 
@@ -2405,59 +2405,59 @@ static const ax_sprite sMedititeSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx17[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_17.4bpp");
+static const u8 sMedititeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_17.4bpp.lz");
 static const ax_sprite sMedititeSprites17[] = {
 	{sMedititeGfx17, ARRAY_COUNT(sMedititeGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx18[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_18.4bpp");
+static const u8 sMedititeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_18.4bpp.lz");
 static const ax_sprite sMedititeSprites18[] = {
 	{sMedititeGfx18, ARRAY_COUNT(sMedititeGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx19[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_19.4bpp");
+static const u8 sMedititeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_19.4bpp.lz");
 static const ax_sprite sMedititeSprites19[] = {
 	{sMedititeGfx19, ARRAY_COUNT(sMedititeGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx20[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_20.4bpp");
+static const u8 sMedititeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_20.4bpp.lz");
 static const ax_sprite sMedititeSprites20[] = {
 	{sMedititeGfx20, ARRAY_COUNT(sMedititeGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx21[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_21.4bpp");
+static const u8 sMedititeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_21.4bpp.lz");
 static const ax_sprite sMedititeSprites21[] = {
 	{sMedititeGfx21, ARRAY_COUNT(sMedititeGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx22[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_22.4bpp");
+static const u8 sMedititeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_22.4bpp.lz");
 static const ax_sprite sMedititeSprites22[] = {
 	{sMedititeGfx22, ARRAY_COUNT(sMedititeGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx23[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_23.4bpp");
+static const u8 sMedititeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_23.4bpp.lz");
 static const ax_sprite sMedititeSprites23[] = {
 	{sMedititeGfx23, ARRAY_COUNT(sMedititeGfx23)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx24[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_24.4bpp");
+static const u8 sMedititeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_24.4bpp.lz");
 static const ax_sprite sMedititeSprites24[] = {
 	{sMedititeGfx24, ARRAY_COUNT(sMedititeGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx25[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_25.4bpp");
+static const u8 sMedititeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_25.4bpp.lz");
 static const ax_sprite sMedititeSprites25[] = {
 	{sMedititeGfx25, ARRAY_COUNT(sMedititeGfx25)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx26[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_26.4bpp");
-static const u8 sMedititeGfx26_1[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_26_1.4bpp");
+static const u8 sMedititeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_26.4bpp.lz");
+static const u8 sMedititeGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_26_1.4bpp.lz");
 static const ax_sprite sMedititeSprites26[] = {
 	{NULL, 32}, 
 	{sMedititeGfx26, ARRAY_COUNT(sMedititeGfx26)}, 
@@ -2465,30 +2465,30 @@ static const ax_sprite sMedititeSprites26[] = {
 	{sMedititeGfx26_1, ARRAY_COUNT(sMedititeGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx27[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_27.4bpp");
+static const u8 sMedititeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_27.4bpp.lz");
 static const ax_sprite sMedititeSprites27[] = {
 	{sMedititeGfx27, ARRAY_COUNT(sMedititeGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx28[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_28.4bpp");
+static const u8 sMedititeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_28.4bpp.lz");
 static const ax_sprite sMedititeSprites28[] = {
 	{sMedititeGfx28, ARRAY_COUNT(sMedititeGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx29[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_29.4bpp");
+static const u8 sMedititeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_29.4bpp.lz");
 static const ax_sprite sMedititeSprites29[] = {
 	{sMedititeGfx29, ARRAY_COUNT(sMedititeGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx30[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_30.4bpp");
+static const u8 sMedititeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_30.4bpp.lz");
 static const ax_sprite sMedititeSprites30[] = {
 	{sMedititeGfx30, ARRAY_COUNT(sMedititeGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx31[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_31.4bpp");
-static const u8 sMedititeGfx31_1[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_31_1.4bpp");
+static const u8 sMedititeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_31.4bpp.lz");
+static const u8 sMedititeGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_31_1.4bpp.lz");
 static const ax_sprite sMedititeSprites31[] = {
 	{sMedititeGfx31, ARRAY_COUNT(sMedititeGfx31)}, 
 	{NULL, 32}, 
@@ -2496,74 +2496,74 @@ static const ax_sprite sMedititeSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx32[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_32.4bpp");
+static const u8 sMedititeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_32.4bpp.lz");
 static const ax_sprite sMedititeSprites32[] = {
 	{sMedititeGfx32, ARRAY_COUNT(sMedititeGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx33[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_33.4bpp");
+static const u8 sMedititeGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_33.4bpp.lz");
 static const ax_sprite sMedititeSprites33[] = {
 	{sMedititeGfx33, ARRAY_COUNT(sMedititeGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx34[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_34.4bpp");
+static const u8 sMedititeGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_34.4bpp.lz");
 static const ax_sprite sMedititeSprites34[] = {
 	{sMedititeGfx34, ARRAY_COUNT(sMedititeGfx34)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx35[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_35.4bpp");
+static const u8 sMedititeGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_35.4bpp.lz");
 static const ax_sprite sMedititeSprites35[] = {
 	{sMedititeGfx35, ARRAY_COUNT(sMedititeGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx36[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_36.4bpp");
+static const u8 sMedititeGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_36.4bpp.lz");
 static const ax_sprite sMedititeSprites36[] = {
 	{sMedititeGfx36, ARRAY_COUNT(sMedititeGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx37[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_37.4bpp");
+static const u8 sMedititeGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_37.4bpp.lz");
 static const ax_sprite sMedititeSprites37[] = {
 	{sMedititeGfx37, ARRAY_COUNT(sMedititeGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx38[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_38.4bpp");
+static const u8 sMedititeGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_38.4bpp.lz");
 static const ax_sprite sMedititeSprites38[] = {
 	{sMedititeGfx38, ARRAY_COUNT(sMedititeGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx39[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_39.4bpp");
+static const u8 sMedititeGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_39.4bpp.lz");
 static const ax_sprite sMedititeSprites39[] = {
 	{sMedititeGfx39, ARRAY_COUNT(sMedititeGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx40[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_40.4bpp");
+static const u8 sMedititeGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_40.4bpp.lz");
 static const ax_sprite sMedititeSprites40[] = {
 	{sMedititeGfx40, ARRAY_COUNT(sMedititeGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx41[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_41.4bpp");
+static const u8 sMedititeGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_41.4bpp.lz");
 static const ax_sprite sMedititeSprites41[] = {
 	{sMedititeGfx41, ARRAY_COUNT(sMedititeGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx42[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_42.4bpp");
+static const u8 sMedititeGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_42.4bpp.lz");
 static const ax_sprite sMedititeSprites42[] = {
 	{sMedititeGfx42, ARRAY_COUNT(sMedititeGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx43[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_43.4bpp");
+static const u8 sMedititeGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_43.4bpp.lz");
 static const ax_sprite sMedititeSprites43[] = {
 	{sMedititeGfx43, ARRAY_COUNT(sMedititeGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx44[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_44.4bpp");
+static const u8 sMedititeGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_44.4bpp.lz");
 static const ax_sprite sMedititeSprites44[] = {
 	{sMedititeGfx44, ARRAY_COUNT(sMedititeGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMedititeGfx45[] = INCBIN_U8("graphics/ax/mon/meditite/sprite_45.4bpp");
+static const u8 sMedititeGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meditite/sprite_45.4bpp.lz");
 static const ax_sprite sMedititeSprites45[] = {
 	{sMedititeGfx45, ARRAY_COUNT(sMedititeGfx45)}, 
 	{NULL, 0}

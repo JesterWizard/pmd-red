@@ -2175,90 +2175,90 @@ static const ax_anim sMetangAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMetangGfx1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_1.4bpp");
+static const u8 sMetangGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_1.4bpp.lz");
 static const ax_sprite sMetangSprites1[] = {
 	{sMetangGfx1, ARRAY_COUNT(sMetangGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_2.4bpp");
+static const u8 sMetangGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_2.4bpp.lz");
 static const ax_sprite sMetangSprites2[] = {
 	{sMetangGfx2, ARRAY_COUNT(sMetangGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx3[] = INCBIN_U8("graphics/ax/mon/metang/sprite_3.4bpp");
+static const u8 sMetangGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_3.4bpp.lz");
 static const ax_sprite sMetangSprites3[] = {
 	{sMetangGfx3, ARRAY_COUNT(sMetangGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx4[] = INCBIN_U8("graphics/ax/mon/metang/sprite_4.4bpp");
+static const u8 sMetangGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_4.4bpp.lz");
 static const ax_sprite sMetangSprites4[] = {
 	{sMetangGfx4, ARRAY_COUNT(sMetangGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx5[] = INCBIN_U8("graphics/ax/mon/metang/sprite_5.4bpp");
+static const u8 sMetangGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_5.4bpp.lz");
 static const ax_sprite sMetangSprites5[] = {
 	{sMetangGfx5, ARRAY_COUNT(sMetangGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx6[] = INCBIN_U8("graphics/ax/mon/metang/sprite_6.4bpp");
+static const u8 sMetangGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_6.4bpp.lz");
 static const ax_sprite sMetangSprites6[] = {
 	{sMetangGfx6, ARRAY_COUNT(sMetangGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx7[] = INCBIN_U8("graphics/ax/mon/metang/sprite_7.4bpp");
+static const u8 sMetangGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_7.4bpp.lz");
 static const ax_sprite sMetangSprites7[] = {
 	{sMetangGfx7, ARRAY_COUNT(sMetangGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx8[] = INCBIN_U8("graphics/ax/mon/metang/sprite_8.4bpp");
+static const u8 sMetangGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_8.4bpp.lz");
 static const ax_sprite sMetangSprites8[] = {
 	{sMetangGfx8, ARRAY_COUNT(sMetangGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx9[] = INCBIN_U8("graphics/ax/mon/metang/sprite_9.4bpp");
+static const u8 sMetangGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_9.4bpp.lz");
 static const ax_sprite sMetangSprites9[] = {
 	{sMetangGfx9, ARRAY_COUNT(sMetangGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx10[] = INCBIN_U8("graphics/ax/mon/metang/sprite_10.4bpp");
+static const u8 sMetangGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_10.4bpp.lz");
 static const ax_sprite sMetangSprites10[] = {
 	{sMetangGfx10, ARRAY_COUNT(sMetangGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx11[] = INCBIN_U8("graphics/ax/mon/metang/sprite_11.4bpp");
+static const u8 sMetangGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_11.4bpp.lz");
 static const ax_sprite sMetangSprites11[] = {
 	{sMetangGfx11, ARRAY_COUNT(sMetangGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx12[] = INCBIN_U8("graphics/ax/mon/metang/sprite_12.4bpp");
+static const u8 sMetangGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_12.4bpp.lz");
 static const ax_sprite sMetangSprites12[] = {
 	{sMetangGfx12, ARRAY_COUNT(sMetangGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx13[] = INCBIN_U8("graphics/ax/mon/metang/sprite_13.4bpp");
+static const u8 sMetangGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_13.4bpp.lz");
 static const ax_sprite sMetangSprites13[] = {
 	{sMetangGfx13, ARRAY_COUNT(sMetangGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx14[] = INCBIN_U8("graphics/ax/mon/metang/sprite_14.4bpp");
+static const u8 sMetangGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_14.4bpp.lz");
 static const ax_sprite sMetangSprites14[] = {
 	{sMetangGfx14, ARRAY_COUNT(sMetangGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx15[] = INCBIN_U8("graphics/ax/mon/metang/sprite_15.4bpp");
+static const u8 sMetangGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_15.4bpp.lz");
 static const ax_sprite sMetangSprites15[] = {
 	{sMetangGfx15, ARRAY_COUNT(sMetangGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx16[] = INCBIN_U8("graphics/ax/mon/metang/sprite_16.4bpp");
+static const u8 sMetangGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_16.4bpp.lz");
 static const ax_sprite sMetangSprites16[] = {
 	{sMetangGfx16, ARRAY_COUNT(sMetangGfx16)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx17[] = INCBIN_U8("graphics/ax/mon/metang/sprite_17.4bpp");
-static const u8 sMetangGfx17_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_17_1.4bpp");
-static const u8 sMetangGfx17_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_17_2.4bpp");
+static const u8 sMetangGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_17.4bpp.lz");
+static const u8 sMetangGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_17_1.4bpp.lz");
+static const u8 sMetangGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_17_2.4bpp.lz");
 static const ax_sprite sMetangSprites17[] = {
 	{sMetangGfx17, ARRAY_COUNT(sMetangGfx17)}, 
 	{NULL, 32}, 
@@ -2268,9 +2268,9 @@ static const ax_sprite sMetangSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx18[] = INCBIN_U8("graphics/ax/mon/metang/sprite_18.4bpp");
-static const u8 sMetangGfx18_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_18_1.4bpp");
-static const u8 sMetangGfx18_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_18_2.4bpp");
+static const u8 sMetangGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_18.4bpp.lz");
+static const u8 sMetangGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_18_1.4bpp.lz");
+static const u8 sMetangGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_18_2.4bpp.lz");
 static const ax_sprite sMetangSprites18[] = {
 	{NULL, 32}, 
 	{sMetangGfx18, ARRAY_COUNT(sMetangGfx18)}, 
@@ -2280,14 +2280,14 @@ static const ax_sprite sMetangSprites18[] = {
 	{sMetangGfx18_2, ARRAY_COUNT(sMetangGfx18_2)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx19[] = INCBIN_U8("graphics/ax/mon/metang/sprite_19.4bpp");
+static const u8 sMetangGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_19.4bpp.lz");
 static const ax_sprite sMetangSprites19[] = {
 	{sMetangGfx19, ARRAY_COUNT(sMetangGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx20[] = INCBIN_U8("graphics/ax/mon/metang/sprite_20.4bpp");
-static const u8 sMetangGfx20_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_20_1.4bpp");
+static const u8 sMetangGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_20.4bpp.lz");
+static const u8 sMetangGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_20_1.4bpp.lz");
 static const ax_sprite sMetangSprites20[] = {
 	{NULL, 32}, 
 	{sMetangGfx20, ARRAY_COUNT(sMetangGfx20)}, 
@@ -2295,8 +2295,8 @@ static const ax_sprite sMetangSprites20[] = {
 	{sMetangGfx20_1, ARRAY_COUNT(sMetangGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx21[] = INCBIN_U8("graphics/ax/mon/metang/sprite_21.4bpp");
-static const u8 sMetangGfx21_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_21_1.4bpp");
+static const u8 sMetangGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_21.4bpp.lz");
+static const u8 sMetangGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_21_1.4bpp.lz");
 static const ax_sprite sMetangSprites21[] = {
 	{NULL, 128}, 
 	{sMetangGfx21, ARRAY_COUNT(sMetangGfx21)}, 
@@ -2304,9 +2304,9 @@ static const ax_sprite sMetangSprites21[] = {
 	{sMetangGfx21_1, ARRAY_COUNT(sMetangGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx22[] = INCBIN_U8("graphics/ax/mon/metang/sprite_22.4bpp");
-static const u8 sMetangGfx22_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_22_1.4bpp");
-static const u8 sMetangGfx22_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_22_2.4bpp");
+static const u8 sMetangGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_22.4bpp.lz");
+static const u8 sMetangGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_22_1.4bpp.lz");
+static const u8 sMetangGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_22_2.4bpp.lz");
 static const ax_sprite sMetangSprites22[] = {
 	{NULL, 32}, 
 	{sMetangGfx22, ARRAY_COUNT(sMetangGfx22)}, 
@@ -2316,8 +2316,8 @@ static const ax_sprite sMetangSprites22[] = {
 	{sMetangGfx22_2, ARRAY_COUNT(sMetangGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx23[] = INCBIN_U8("graphics/ax/mon/metang/sprite_23.4bpp");
-static const u8 sMetangGfx23_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_23_1.4bpp");
+static const u8 sMetangGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_23.4bpp.lz");
+static const u8 sMetangGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_23_1.4bpp.lz");
 static const ax_sprite sMetangSprites23[] = {
 	{NULL, 32}, 
 	{sMetangGfx23, ARRAY_COUNT(sMetangGfx23)}, 
@@ -2326,9 +2326,9 @@ static const ax_sprite sMetangSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx24[] = INCBIN_U8("graphics/ax/mon/metang/sprite_24.4bpp");
-static const u8 sMetangGfx24_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_24_1.4bpp");
-static const u8 sMetangGfx24_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_24_2.4bpp");
+static const u8 sMetangGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_24.4bpp.lz");
+static const u8 sMetangGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_24_1.4bpp.lz");
+static const u8 sMetangGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_24_2.4bpp.lz");
 static const ax_sprite sMetangSprites24[] = {
 	{sMetangGfx24, ARRAY_COUNT(sMetangGfx24)}, 
 	{NULL, 32}, 
@@ -2337,8 +2337,8 @@ static const ax_sprite sMetangSprites24[] = {
 	{sMetangGfx24_2, ARRAY_COUNT(sMetangGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx25[] = INCBIN_U8("graphics/ax/mon/metang/sprite_25.4bpp");
-static const u8 sMetangGfx25_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_25_1.4bpp");
+static const u8 sMetangGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_25.4bpp.lz");
+static const u8 sMetangGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_25_1.4bpp.lz");
 static const ax_sprite sMetangSprites25[] = {
 	{sMetangGfx25, ARRAY_COUNT(sMetangGfx25)}, 
 	{NULL, 32}, 
@@ -2346,25 +2346,25 @@ static const ax_sprite sMetangSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx26[] = INCBIN_U8("graphics/ax/mon/metang/sprite_26.4bpp");
-static const u8 sMetangGfx26_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_26_1.4bpp");
+static const u8 sMetangGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_26.4bpp.lz");
+static const u8 sMetangGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_26_1.4bpp.lz");
 static const ax_sprite sMetangSprites26[] = {
 	{sMetangGfx26, ARRAY_COUNT(sMetangGfx26)}, 
 	{NULL, 32}, 
 	{sMetangGfx26_1, ARRAY_COUNT(sMetangGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx27[] = INCBIN_U8("graphics/ax/mon/metang/sprite_27.4bpp");
+static const u8 sMetangGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_27.4bpp.lz");
 static const ax_sprite sMetangSprites27[] = {
 	{NULL, 32}, 
 	{sMetangGfx27, ARRAY_COUNT(sMetangGfx27)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx28[] = INCBIN_U8("graphics/ax/mon/metang/sprite_28.4bpp");
-static const u8 sMetangGfx28_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_28_1.4bpp");
-static const u8 sMetangGfx28_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_28_2.4bpp");
-static const u8 sMetangGfx28_3[] = INCBIN_U8("graphics/ax/mon/metang/sprite_28_3.4bpp");
+static const u8 sMetangGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_28.4bpp.lz");
+static const u8 sMetangGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_28_1.4bpp.lz");
+static const u8 sMetangGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_28_2.4bpp.lz");
+static const u8 sMetangGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_28_3.4bpp.lz");
 static const ax_sprite sMetangSprites28[] = {
 	{sMetangGfx28, ARRAY_COUNT(sMetangGfx28)}, 
 	{NULL, 32}, 
@@ -2376,30 +2376,30 @@ static const ax_sprite sMetangSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx29[] = INCBIN_U8("graphics/ax/mon/metang/sprite_29.4bpp");
+static const u8 sMetangGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_29.4bpp.lz");
 static const ax_sprite sMetangSprites29[] = {
 	{NULL, 32}, 
 	{sMetangGfx29, ARRAY_COUNT(sMetangGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx30[] = INCBIN_U8("graphics/ax/mon/metang/sprite_30.4bpp");
+static const u8 sMetangGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_30.4bpp.lz");
 static const ax_sprite sMetangSprites30[] = {
 	{sMetangGfx30, ARRAY_COUNT(sMetangGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx31[] = INCBIN_U8("graphics/ax/mon/metang/sprite_31.4bpp");
+static const u8 sMetangGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_31.4bpp.lz");
 static const ax_sprite sMetangSprites31[] = {
 	{sMetangGfx31, ARRAY_COUNT(sMetangGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx32[] = INCBIN_U8("graphics/ax/mon/metang/sprite_32.4bpp");
+static const u8 sMetangGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_32.4bpp.lz");
 static const ax_sprite sMetangSprites32[] = {
 	{sMetangGfx32, ARRAY_COUNT(sMetangGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx33[] = INCBIN_U8("graphics/ax/mon/metang/sprite_33.4bpp");
-static const u8 sMetangGfx33_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_33_1.4bpp");
-static const u8 sMetangGfx33_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_33_2.4bpp");
+static const u8 sMetangGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_33.4bpp.lz");
+static const u8 sMetangGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_33_1.4bpp.lz");
+static const u8 sMetangGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_33_2.4bpp.lz");
 static const ax_sprite sMetangSprites33[] = {
 	{sMetangGfx33, ARRAY_COUNT(sMetangGfx33)}, 
 	{NULL, 64}, 
@@ -2409,35 +2409,35 @@ static const ax_sprite sMetangSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx34[] = INCBIN_U8("graphics/ax/mon/metang/sprite_34.4bpp");
+static const u8 sMetangGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_34.4bpp.lz");
 static const ax_sprite sMetangSprites34[] = {
 	{sMetangGfx34, ARRAY_COUNT(sMetangGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx35[] = INCBIN_U8("graphics/ax/mon/metang/sprite_35.4bpp");
+static const u8 sMetangGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_35.4bpp.lz");
 static const ax_sprite sMetangSprites35[] = {
 	{sMetangGfx35, ARRAY_COUNT(sMetangGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx36[] = INCBIN_U8("graphics/ax/mon/metang/sprite_36.4bpp");
+static const u8 sMetangGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_36.4bpp.lz");
 static const ax_sprite sMetangSprites36[] = {
 	{sMetangGfx36, ARRAY_COUNT(sMetangGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx37[] = INCBIN_U8("graphics/ax/mon/metang/sprite_37.4bpp");
+static const u8 sMetangGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_37.4bpp.lz");
 static const ax_sprite sMetangSprites37[] = {
 	{sMetangGfx37, ARRAY_COUNT(sMetangGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx38[] = INCBIN_U8("graphics/ax/mon/metang/sprite_38.4bpp");
+static const u8 sMetangGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_38.4bpp.lz");
 static const ax_sprite sMetangSprites38[] = {
 	{sMetangGfx38, ARRAY_COUNT(sMetangGfx38)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx39[] = INCBIN_U8("graphics/ax/mon/metang/sprite_39.4bpp");
-static const u8 sMetangGfx39_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_39_1.4bpp");
-static const u8 sMetangGfx39_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_39_2.4bpp");
+static const u8 sMetangGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_39.4bpp.lz");
+static const u8 sMetangGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_39_1.4bpp.lz");
+static const u8 sMetangGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_39_2.4bpp.lz");
 static const ax_sprite sMetangSprites39[] = {
 	{sMetangGfx39, ARRAY_COUNT(sMetangGfx39)}, 
 	{NULL, 32}, 
@@ -2446,17 +2446,17 @@ static const ax_sprite sMetangSprites39[] = {
 	{sMetangGfx39_2, ARRAY_COUNT(sMetangGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx40[] = INCBIN_U8("graphics/ax/mon/metang/sprite_40.4bpp");
-static const u8 sMetangGfx40_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_40_1.4bpp");
+static const u8 sMetangGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_40.4bpp.lz");
+static const u8 sMetangGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_40_1.4bpp.lz");
 static const ax_sprite sMetangSprites40[] = {
 	{sMetangGfx40, ARRAY_COUNT(sMetangGfx40)}, 
 	{NULL, 32}, 
 	{sMetangGfx40_1, ARRAY_COUNT(sMetangGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx41[] = INCBIN_U8("graphics/ax/mon/metang/sprite_41.4bpp");
-static const u8 sMetangGfx41_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_41_1.4bpp");
-static const u8 sMetangGfx41_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_41_2.4bpp");
+static const u8 sMetangGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_41.4bpp.lz");
+static const u8 sMetangGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_41_1.4bpp.lz");
+static const u8 sMetangGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_41_2.4bpp.lz");
 static const ax_sprite sMetangSprites41[] = {
 	{sMetangGfx41, ARRAY_COUNT(sMetangGfx41)}, 
 	{NULL, 32}, 
@@ -2466,9 +2466,9 @@ static const ax_sprite sMetangSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx42[] = INCBIN_U8("graphics/ax/mon/metang/sprite_42.4bpp");
-static const u8 sMetangGfx42_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_42_1.4bpp");
-static const u8 sMetangGfx42_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_42_2.4bpp");
+static const u8 sMetangGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_42.4bpp.lz");
+static const u8 sMetangGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_42_1.4bpp.lz");
+static const u8 sMetangGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_42_2.4bpp.lz");
 static const ax_sprite sMetangSprites42[] = {
 	{sMetangGfx42, ARRAY_COUNT(sMetangGfx42)}, 
 	{NULL, 32}, 
@@ -2478,8 +2478,8 @@ static const ax_sprite sMetangSprites42[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx43[] = INCBIN_U8("graphics/ax/mon/metang/sprite_43.4bpp");
-static const u8 sMetangGfx43_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_43_1.4bpp");
+static const u8 sMetangGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_43.4bpp.lz");
+static const u8 sMetangGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_43_1.4bpp.lz");
 static const ax_sprite sMetangSprites43[] = {
 	{sMetangGfx43, ARRAY_COUNT(sMetangGfx43)}, 
 	{NULL, 32}, 
@@ -2487,8 +2487,8 @@ static const ax_sprite sMetangSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx44[] = INCBIN_U8("graphics/ax/mon/metang/sprite_44.4bpp");
-static const u8 sMetangGfx44_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_44_1.4bpp");
+static const u8 sMetangGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_44.4bpp.lz");
+static const u8 sMetangGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_44_1.4bpp.lz");
 static const ax_sprite sMetangSprites44[] = {
 	{NULL, 32}, 
 	{sMetangGfx44, ARRAY_COUNT(sMetangGfx44)}, 
@@ -2496,15 +2496,15 @@ static const ax_sprite sMetangSprites44[] = {
 	{sMetangGfx44_1, ARRAY_COUNT(sMetangGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx45[] = INCBIN_U8("graphics/ax/mon/metang/sprite_45.4bpp");
+static const u8 sMetangGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_45.4bpp.lz");
 static const ax_sprite sMetangSprites45[] = {
 	{sMetangGfx45, ARRAY_COUNT(sMetangGfx45)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx46[] = INCBIN_U8("graphics/ax/mon/metang/sprite_46.4bpp");
-static const u8 sMetangGfx46_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_46_1.4bpp");
-static const u8 sMetangGfx46_2[] = INCBIN_U8("graphics/ax/mon/metang/sprite_46_2.4bpp");
+static const u8 sMetangGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_46.4bpp.lz");
+static const u8 sMetangGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_46_1.4bpp.lz");
+static const u8 sMetangGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_46_2.4bpp.lz");
 static const ax_sprite sMetangSprites46[] = {
 	{sMetangGfx46, ARRAY_COUNT(sMetangGfx46)}, 
 	{NULL, 32}, 
@@ -2514,8 +2514,8 @@ static const ax_sprite sMetangSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx47[] = INCBIN_U8("graphics/ax/mon/metang/sprite_47.4bpp");
-static const u8 sMetangGfx47_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_47_1.4bpp");
+static const u8 sMetangGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_47.4bpp.lz");
+static const u8 sMetangGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_47_1.4bpp.lz");
 static const ax_sprite sMetangSprites47[] = {
 	{sMetangGfx47, ARRAY_COUNT(sMetangGfx47)}, 
 	{NULL, 32}, 
@@ -2523,8 +2523,8 @@ static const ax_sprite sMetangSprites47[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx48[] = INCBIN_U8("graphics/ax/mon/metang/sprite_48.4bpp");
-static const u8 sMetangGfx48_1[] = INCBIN_U8("graphics/ax/mon/metang/sprite_48_1.4bpp");
+static const u8 sMetangGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_48.4bpp.lz");
+static const u8 sMetangGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_48_1.4bpp.lz");
 static const ax_sprite sMetangSprites48[] = {
 	{sMetangGfx48, ARRAY_COUNT(sMetangGfx48)}, 
 	{NULL, 32}, 
@@ -2532,73 +2532,73 @@ static const ax_sprite sMetangSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx49[] = INCBIN_U8("graphics/ax/mon/metang/sprite_49.4bpp");
+static const u8 sMetangGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_49.4bpp.lz");
 static const ax_sprite sMetangSprites49[] = {
 	{sMetangGfx49, ARRAY_COUNT(sMetangGfx49)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx50[] = INCBIN_U8("graphics/ax/mon/metang/sprite_50.4bpp");
+static const u8 sMetangGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_50.4bpp.lz");
 static const ax_sprite sMetangSprites50[] = {
 	{sMetangGfx50, ARRAY_COUNT(sMetangGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx51[] = INCBIN_U8("graphics/ax/mon/metang/sprite_51.4bpp");
+static const u8 sMetangGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_51.4bpp.lz");
 static const ax_sprite sMetangSprites51[] = {
 	{sMetangGfx51, ARRAY_COUNT(sMetangGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx52[] = INCBIN_U8("graphics/ax/mon/metang/sprite_52.4bpp");
+static const u8 sMetangGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_52.4bpp.lz");
 static const ax_sprite sMetangSprites52[] = {
 	{sMetangGfx52, ARRAY_COUNT(sMetangGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx53[] = INCBIN_U8("graphics/ax/mon/metang/sprite_53.4bpp");
+static const u8 sMetangGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_53.4bpp.lz");
 static const ax_sprite sMetangSprites53[] = {
 	{sMetangGfx53, ARRAY_COUNT(sMetangGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx54[] = INCBIN_U8("graphics/ax/mon/metang/sprite_54.4bpp");
+static const u8 sMetangGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_54.4bpp.lz");
 static const ax_sprite sMetangSprites54[] = {
 	{sMetangGfx54, ARRAY_COUNT(sMetangGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx55[] = INCBIN_U8("graphics/ax/mon/metang/sprite_55.4bpp");
+static const u8 sMetangGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_55.4bpp.lz");
 static const ax_sprite sMetangSprites55[] = {
 	{sMetangGfx55, ARRAY_COUNT(sMetangGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx56[] = INCBIN_U8("graphics/ax/mon/metang/sprite_56.4bpp");
+static const u8 sMetangGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_56.4bpp.lz");
 static const ax_sprite sMetangSprites56[] = {
 	{sMetangGfx56, ARRAY_COUNT(sMetangGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx57[] = INCBIN_U8("graphics/ax/mon/metang/sprite_57.4bpp");
+static const u8 sMetangGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_57.4bpp.lz");
 static const ax_sprite sMetangSprites57[] = {
 	{sMetangGfx57, ARRAY_COUNT(sMetangGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx58[] = INCBIN_U8("graphics/ax/mon/metang/sprite_58.4bpp");
+static const u8 sMetangGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_58.4bpp.lz");
 static const ax_sprite sMetangSprites58[] = {
 	{sMetangGfx58, ARRAY_COUNT(sMetangGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx59[] = INCBIN_U8("graphics/ax/mon/metang/sprite_59.4bpp");
+static const u8 sMetangGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_59.4bpp.lz");
 static const ax_sprite sMetangSprites59[] = {
 	{sMetangGfx59, ARRAY_COUNT(sMetangGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx60[] = INCBIN_U8("graphics/ax/mon/metang/sprite_60.4bpp");
+static const u8 sMetangGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_60.4bpp.lz");
 static const ax_sprite sMetangSprites60[] = {
 	{sMetangGfx60, ARRAY_COUNT(sMetangGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx61[] = INCBIN_U8("graphics/ax/mon/metang/sprite_61.4bpp");
+static const u8 sMetangGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_61.4bpp.lz");
 static const ax_sprite sMetangSprites61[] = {
 	{sMetangGfx61, ARRAY_COUNT(sMetangGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sMetangGfx62[] = INCBIN_U8("graphics/ax/mon/metang/sprite_62.4bpp");
+static const u8 sMetangGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metang/sprite_62.4bpp.lz");
 static const ax_sprite sMetangSprites62[] = {
 	{sMetangGfx62, ARRAY_COUNT(sMetangGfx62)}, 
 	{NULL, 0}

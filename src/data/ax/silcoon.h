@@ -1655,48 +1655,48 @@ static const ax_anim sSilcoonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSilcoonGfx1[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_1.4bpp");
+static const u8 sSilcoonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_1.4bpp.lz");
 static const ax_sprite sSilcoonSprites1[] = {
 	{sSilcoonGfx1, ARRAY_COUNT(sSilcoonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx2[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_2.4bpp");
+static const u8 sSilcoonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_2.4bpp.lz");
 static const ax_sprite sSilcoonSprites2[] = {
 	{sSilcoonGfx2, ARRAY_COUNT(sSilcoonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx3[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_3.4bpp");
+static const u8 sSilcoonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_3.4bpp.lz");
 static const ax_sprite sSilcoonSprites3[] = {
 	{sSilcoonGfx3, ARRAY_COUNT(sSilcoonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx4[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_4.4bpp");
+static const u8 sSilcoonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_4.4bpp.lz");
 static const ax_sprite sSilcoonSprites4[] = {
 	{sSilcoonGfx4, ARRAY_COUNT(sSilcoonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx5[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_5.4bpp");
+static const u8 sSilcoonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_5.4bpp.lz");
 static const ax_sprite sSilcoonSprites5[] = {
 	{sSilcoonGfx5, ARRAY_COUNT(sSilcoonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx6[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_6.4bpp");
+static const u8 sSilcoonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_6.4bpp.lz");
 static const ax_sprite sSilcoonSprites6[] = {
 	{sSilcoonGfx6, ARRAY_COUNT(sSilcoonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx7[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_7.4bpp");
+static const u8 sSilcoonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_7.4bpp.lz");
 static const ax_sprite sSilcoonSprites7[] = {
 	{sSilcoonGfx7, ARRAY_COUNT(sSilcoonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx8[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_8.4bpp");
+static const u8 sSilcoonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_8.4bpp.lz");
 static const ax_sprite sSilcoonSprites8[] = {
 	{sSilcoonGfx8, ARRAY_COUNT(sSilcoonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx9[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_9.4bpp");
-static const u8 sSilcoonGfx9_1[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_9_1.4bpp");
+static const u8 sSilcoonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_9.4bpp.lz");
+static const u8 sSilcoonGfx9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_9_1.4bpp.lz");
 static const ax_sprite sSilcoonSprites9[] = {
 	{sSilcoonGfx9, ARRAY_COUNT(sSilcoonGfx9)}, 
 	{NULL, 64}, 
@@ -1704,10 +1704,10 @@ static const ax_sprite sSilcoonSprites9[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx10[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_10.4bpp");
-static const u8 sSilcoonGfx10_1[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_10_1.4bpp");
-static const u8 sSilcoonGfx10_2[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_10_2.4bpp");
-static const u8 sSilcoonGfx10_3[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_10_3.4bpp");
+static const u8 sSilcoonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_10.4bpp.lz");
+static const u8 sSilcoonGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_10_1.4bpp.lz");
+static const u8 sSilcoonGfx10_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_10_2.4bpp.lz");
+static const u8 sSilcoonGfx10_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_10_3.4bpp.lz");
 static const ax_sprite sSilcoonSprites10[] = {
 	{sSilcoonGfx10, ARRAY_COUNT(sSilcoonGfx10)}, 
 	{NULL, 32}, 
@@ -1719,16 +1719,16 @@ static const ax_sprite sSilcoonSprites10[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx11[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_11.4bpp");
+static const u8 sSilcoonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_11.4bpp.lz");
 static const ax_sprite sSilcoonSprites11[] = {
 	{sSilcoonGfx11, ARRAY_COUNT(sSilcoonGfx11)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx12[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_12.4bpp");
-static const u8 sSilcoonGfx12_1[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_12_1.4bpp");
-static const u8 sSilcoonGfx12_2[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_12_2.4bpp");
-static const u8 sSilcoonGfx12_3[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_12_3.4bpp");
+static const u8 sSilcoonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_12.4bpp.lz");
+static const u8 sSilcoonGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_12_1.4bpp.lz");
+static const u8 sSilcoonGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_12_2.4bpp.lz");
+static const u8 sSilcoonGfx12_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_12_3.4bpp.lz");
 static const ax_sprite sSilcoonSprites12[] = {
 	{sSilcoonGfx12, ARRAY_COUNT(sSilcoonGfx12)}, 
 	{NULL, 32}, 
@@ -1740,18 +1740,18 @@ static const ax_sprite sSilcoonSprites12[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx13[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_13.4bpp");
-static const u8 sSilcoonGfx13_1[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_13_1.4bpp");
+static const u8 sSilcoonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_13.4bpp.lz");
+static const u8 sSilcoonGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_13_1.4bpp.lz");
 static const ax_sprite sSilcoonSprites13[] = {
 	{sSilcoonGfx13, ARRAY_COUNT(sSilcoonGfx13)}, 
 	{NULL, 32}, 
 	{sSilcoonGfx13_1, ARRAY_COUNT(sSilcoonGfx13_1)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx14[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_14.4bpp");
-static const u8 sSilcoonGfx14_1[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_14_1.4bpp");
-static const u8 sSilcoonGfx14_2[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_14_2.4bpp");
-static const u8 sSilcoonGfx14_3[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_14_3.4bpp");
+static const u8 sSilcoonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_14.4bpp.lz");
+static const u8 sSilcoonGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_14_1.4bpp.lz");
+static const u8 sSilcoonGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_14_2.4bpp.lz");
+static const u8 sSilcoonGfx14_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_14_3.4bpp.lz");
 static const ax_sprite sSilcoonSprites14[] = {
 	{sSilcoonGfx14, ARRAY_COUNT(sSilcoonGfx14)}, 
 	{NULL, 32}, 
@@ -1763,8 +1763,8 @@ static const ax_sprite sSilcoonSprites14[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx15[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_15.4bpp");
-static const u8 sSilcoonGfx15_1[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_15_1.4bpp");
+static const u8 sSilcoonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_15.4bpp.lz");
+static const u8 sSilcoonGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_15_1.4bpp.lz");
 static const ax_sprite sSilcoonSprites15[] = {
 	{sSilcoonGfx15, ARRAY_COUNT(sSilcoonGfx15)}, 
 	{NULL, 32}, 
@@ -1772,9 +1772,9 @@ static const ax_sprite sSilcoonSprites15[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx16[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_16.4bpp");
-static const u8 sSilcoonGfx16_1[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_16_1.4bpp");
-static const u8 sSilcoonGfx16_2[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_16_2.4bpp");
+static const u8 sSilcoonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_16.4bpp.lz");
+static const u8 sSilcoonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_16_1.4bpp.lz");
+static const u8 sSilcoonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_16_2.4bpp.lz");
 static const ax_sprite sSilcoonSprites16[] = {
 	{sSilcoonGfx16, ARRAY_COUNT(sSilcoonGfx16)}, 
 	{NULL, 32}, 
@@ -1784,37 +1784,37 @@ static const ax_sprite sSilcoonSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx17[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_17.4bpp");
+static const u8 sSilcoonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_17.4bpp.lz");
 static const ax_sprite sSilcoonSprites17[] = {
 	{sSilcoonGfx17, ARRAY_COUNT(sSilcoonGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx18[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_18.4bpp");
+static const u8 sSilcoonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_18.4bpp.lz");
 static const ax_sprite sSilcoonSprites18[] = {
 	{sSilcoonGfx18, ARRAY_COUNT(sSilcoonGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx19[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_19.4bpp");
+static const u8 sSilcoonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_19.4bpp.lz");
 static const ax_sprite sSilcoonSprites19[] = {
 	{sSilcoonGfx19, ARRAY_COUNT(sSilcoonGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx20[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_20.4bpp");
+static const u8 sSilcoonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_20.4bpp.lz");
 static const ax_sprite sSilcoonSprites20[] = {
 	{sSilcoonGfx20, ARRAY_COUNT(sSilcoonGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx21[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_21.4bpp");
+static const u8 sSilcoonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_21.4bpp.lz");
 static const ax_sprite sSilcoonSprites21[] = {
 	{sSilcoonGfx21, ARRAY_COUNT(sSilcoonGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx22[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_22.4bpp");
+static const u8 sSilcoonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_22.4bpp.lz");
 static const ax_sprite sSilcoonSprites22[] = {
 	{sSilcoonGfx22, ARRAY_COUNT(sSilcoonGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSilcoonGfx23[] = INCBIN_U8("graphics/ax/mon/silcoon/sprite_23.4bpp");
+static const u8 sSilcoonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/silcoon/sprite_23.4bpp.lz");
 static const ax_sprite sSilcoonSprites23[] = {
 	{sSilcoonGfx23, ARRAY_COUNT(sSilcoonGfx23)}, 
 	{NULL, 0}

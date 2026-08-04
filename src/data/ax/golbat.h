@@ -2095,112 +2095,112 @@ static const ax_anim sGolbatAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGolbatGfx1[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_1.4bpp");
+static const u8 sGolbatGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_1.4bpp.lz");
 static const ax_sprite sGolbatSprites1[] = {
 	{sGolbatGfx1, ARRAY_COUNT(sGolbatGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx2[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_2.4bpp");
+static const u8 sGolbatGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_2.4bpp.lz");
 static const ax_sprite sGolbatSprites2[] = {
 	{sGolbatGfx2, ARRAY_COUNT(sGolbatGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx3[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_3.4bpp");
+static const u8 sGolbatGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_3.4bpp.lz");
 static const ax_sprite sGolbatSprites3[] = {
 	{sGolbatGfx3, ARRAY_COUNT(sGolbatGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx4[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_4.4bpp");
+static const u8 sGolbatGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_4.4bpp.lz");
 static const ax_sprite sGolbatSprites4[] = {
 	{sGolbatGfx4, ARRAY_COUNT(sGolbatGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx5[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_5.4bpp");
+static const u8 sGolbatGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_5.4bpp.lz");
 static const ax_sprite sGolbatSprites5[] = {
 	{sGolbatGfx5, ARRAY_COUNT(sGolbatGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx6[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_6.4bpp");
+static const u8 sGolbatGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_6.4bpp.lz");
 static const ax_sprite sGolbatSprites6[] = {
 	{sGolbatGfx6, ARRAY_COUNT(sGolbatGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx7[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_7.4bpp");
+static const u8 sGolbatGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_7.4bpp.lz");
 static const ax_sprite sGolbatSprites7[] = {
 	{sGolbatGfx7, ARRAY_COUNT(sGolbatGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx8[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_8.4bpp");
+static const u8 sGolbatGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_8.4bpp.lz");
 static const ax_sprite sGolbatSprites8[] = {
 	{sGolbatGfx8, ARRAY_COUNT(sGolbatGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx9[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_9.4bpp");
+static const u8 sGolbatGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_9.4bpp.lz");
 static const ax_sprite sGolbatSprites9[] = {
 	{sGolbatGfx9, ARRAY_COUNT(sGolbatGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx10[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_10.4bpp");
+static const u8 sGolbatGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_10.4bpp.lz");
 static const ax_sprite sGolbatSprites10[] = {
 	{sGolbatGfx10, ARRAY_COUNT(sGolbatGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx11[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_11.4bpp");
+static const u8 sGolbatGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_11.4bpp.lz");
 static const ax_sprite sGolbatSprites11[] = {
 	{sGolbatGfx11, ARRAY_COUNT(sGolbatGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx12[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_12.4bpp");
+static const u8 sGolbatGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_12.4bpp.lz");
 static const ax_sprite sGolbatSprites12[] = {
 	{sGolbatGfx12, ARRAY_COUNT(sGolbatGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx13[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_13.4bpp");
+static const u8 sGolbatGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_13.4bpp.lz");
 static const ax_sprite sGolbatSprites13[] = {
 	{sGolbatGfx13, ARRAY_COUNT(sGolbatGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx14[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_14.4bpp");
+static const u8 sGolbatGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_14.4bpp.lz");
 static const ax_sprite sGolbatSprites14[] = {
 	{sGolbatGfx14, ARRAY_COUNT(sGolbatGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx15[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_15.4bpp");
+static const u8 sGolbatGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_15.4bpp.lz");
 static const ax_sprite sGolbatSprites15[] = {
 	{sGolbatGfx15, ARRAY_COUNT(sGolbatGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx16[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_16.4bpp");
+static const u8 sGolbatGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_16.4bpp.lz");
 static const ax_sprite sGolbatSprites16[] = {
 	{sGolbatGfx16, ARRAY_COUNT(sGolbatGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx17[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_17.4bpp");
+static const u8 sGolbatGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_17.4bpp.lz");
 static const ax_sprite sGolbatSprites17[] = {
 	{sGolbatGfx17, ARRAY_COUNT(sGolbatGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx18[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_18.4bpp");
+static const u8 sGolbatGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_18.4bpp.lz");
 static const ax_sprite sGolbatSprites18[] = {
 	{sGolbatGfx18, ARRAY_COUNT(sGolbatGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx19[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_19.4bpp");
+static const u8 sGolbatGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_19.4bpp.lz");
 static const ax_sprite sGolbatSprites19[] = {
 	{sGolbatGfx19, ARRAY_COUNT(sGolbatGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx20[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_20.4bpp");
+static const u8 sGolbatGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_20.4bpp.lz");
 static const ax_sprite sGolbatSprites20[] = {
 	{sGolbatGfx20, ARRAY_COUNT(sGolbatGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx21[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_21.4bpp");
+static const u8 sGolbatGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_21.4bpp.lz");
 static const ax_sprite sGolbatSprites21[] = {
 	{sGolbatGfx21, ARRAY_COUNT(sGolbatGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sGolbatGfx22[] = INCBIN_U8("graphics/ax/mon/golbat/sprite_22.4bpp");
+static const u8 sGolbatGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golbat/sprite_22.4bpp.lz");
 static const ax_sprite sGolbatSprites22[] = {
 	{sGolbatGfx22, ARRAY_COUNT(sGolbatGfx22)}, 
 	{NULL, 0}

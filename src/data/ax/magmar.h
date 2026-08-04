@@ -1975,84 +1975,84 @@ static const ax_anim sMagmarAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMagmarGfx1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_1.4bpp");
+static const u8 sMagmarGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_1.4bpp.lz");
 static const ax_sprite sMagmarSprites1[] = {
 	{sMagmarGfx1, ARRAY_COUNT(sMagmarGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_2.4bpp");
+static const u8 sMagmarGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_2.4bpp.lz");
 static const ax_sprite sMagmarSprites2[] = {
 	{sMagmarGfx2, ARRAY_COUNT(sMagmarGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx3[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_3.4bpp");
+static const u8 sMagmarGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_3.4bpp.lz");
 static const ax_sprite sMagmarSprites3[] = {
 	{sMagmarGfx3, ARRAY_COUNT(sMagmarGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx4[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_4.4bpp");
+static const u8 sMagmarGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_4.4bpp.lz");
 static const ax_sprite sMagmarSprites4[] = {
 	{sMagmarGfx4, ARRAY_COUNT(sMagmarGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx5[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_5.4bpp");
+static const u8 sMagmarGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_5.4bpp.lz");
 static const ax_sprite sMagmarSprites5[] = {
 	{sMagmarGfx5, ARRAY_COUNT(sMagmarGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx6[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_6.4bpp");
+static const u8 sMagmarGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_6.4bpp.lz");
 static const ax_sprite sMagmarSprites6[] = {
 	{sMagmarGfx6, ARRAY_COUNT(sMagmarGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx7[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_7.4bpp");
+static const u8 sMagmarGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_7.4bpp.lz");
 static const ax_sprite sMagmarSprites7[] = {
 	{sMagmarGfx7, ARRAY_COUNT(sMagmarGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx8[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_8.4bpp");
+static const u8 sMagmarGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_8.4bpp.lz");
 static const ax_sprite sMagmarSprites8[] = {
 	{sMagmarGfx8, ARRAY_COUNT(sMagmarGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx9[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_9.4bpp");
+static const u8 sMagmarGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_9.4bpp.lz");
 static const ax_sprite sMagmarSprites9[] = {
 	{sMagmarGfx9, ARRAY_COUNT(sMagmarGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx10[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_10.4bpp");
+static const u8 sMagmarGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_10.4bpp.lz");
 static const ax_sprite sMagmarSprites10[] = {
 	{sMagmarGfx10, ARRAY_COUNT(sMagmarGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx11[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_11.4bpp");
+static const u8 sMagmarGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_11.4bpp.lz");
 static const ax_sprite sMagmarSprites11[] = {
 	{sMagmarGfx11, ARRAY_COUNT(sMagmarGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx12[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_12.4bpp");
+static const u8 sMagmarGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_12.4bpp.lz");
 static const ax_sprite sMagmarSprites12[] = {
 	{sMagmarGfx12, ARRAY_COUNT(sMagmarGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx13[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_13.4bpp");
+static const u8 sMagmarGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_13.4bpp.lz");
 static const ax_sprite sMagmarSprites13[] = {
 	{sMagmarGfx13, ARRAY_COUNT(sMagmarGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx14[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_14.4bpp");
+static const u8 sMagmarGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_14.4bpp.lz");
 static const ax_sprite sMagmarSprites14[] = {
 	{sMagmarGfx14, ARRAY_COUNT(sMagmarGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx15[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_15.4bpp");
+static const u8 sMagmarGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_15.4bpp.lz");
 static const ax_sprite sMagmarSprites15[] = {
 	{sMagmarGfx15, ARRAY_COUNT(sMagmarGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx16[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_16.4bpp");
-static const u8 sMagmarGfx16_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_16_1.4bpp");
-static const u8 sMagmarGfx16_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_16_2.4bpp");
+static const u8 sMagmarGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_16.4bpp.lz");
+static const u8 sMagmarGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_16_1.4bpp.lz");
+static const u8 sMagmarGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_16_2.4bpp.lz");
 static const ax_sprite sMagmarSprites16[] = {
 	{NULL, 32}, 
 	{sMagmarGfx16, ARRAY_COUNT(sMagmarGfx16)}, 
@@ -2062,9 +2062,9 @@ static const ax_sprite sMagmarSprites16[] = {
 	{sMagmarGfx16_2, ARRAY_COUNT(sMagmarGfx16_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx17[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_17.4bpp");
-static const u8 sMagmarGfx17_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_17_1.4bpp");
-static const u8 sMagmarGfx17_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_17_2.4bpp");
+static const u8 sMagmarGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_17.4bpp.lz");
+static const u8 sMagmarGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_17_1.4bpp.lz");
+static const u8 sMagmarGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_17_2.4bpp.lz");
 static const ax_sprite sMagmarSprites17[] = {
 	{sMagmarGfx17, ARRAY_COUNT(sMagmarGfx17)}, 
 	{NULL, 32}, 
@@ -2073,8 +2073,8 @@ static const ax_sprite sMagmarSprites17[] = {
 	{sMagmarGfx17_2, ARRAY_COUNT(sMagmarGfx17_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx18[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_18.4bpp");
-static const u8 sMagmarGfx18_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_18_1.4bpp");
+static const u8 sMagmarGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_18.4bpp.lz");
+static const u8 sMagmarGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_18_1.4bpp.lz");
 static const ax_sprite sMagmarSprites18[] = {
 	{NULL, 32}, 
 	{sMagmarGfx18, ARRAY_COUNT(sMagmarGfx18)}, 
@@ -2083,8 +2083,8 @@ static const ax_sprite sMagmarSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx19[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_19.4bpp");
-static const u8 sMagmarGfx19_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_19_1.4bpp");
+static const u8 sMagmarGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_19.4bpp.lz");
+static const u8 sMagmarGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_19_1.4bpp.lz");
 static const ax_sprite sMagmarSprites19[] = {
 	{NULL, 32}, 
 	{sMagmarGfx19, ARRAY_COUNT(sMagmarGfx19)}, 
@@ -2093,8 +2093,8 @@ static const ax_sprite sMagmarSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx20[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_20.4bpp");
-static const u8 sMagmarGfx20_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_20_1.4bpp");
+static const u8 sMagmarGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_20.4bpp.lz");
+static const u8 sMagmarGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_20_1.4bpp.lz");
 static const ax_sprite sMagmarSprites20[] = {
 	{NULL, 32}, 
 	{sMagmarGfx20, ARRAY_COUNT(sMagmarGfx20)}, 
@@ -2103,8 +2103,8 @@ static const ax_sprite sMagmarSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx21[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_21.4bpp");
-static const u8 sMagmarGfx21_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_21_1.4bpp");
+static const u8 sMagmarGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_21.4bpp.lz");
+static const u8 sMagmarGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_21_1.4bpp.lz");
 static const ax_sprite sMagmarSprites21[] = {
 	{NULL, 32}, 
 	{sMagmarGfx21, ARRAY_COUNT(sMagmarGfx21)}, 
@@ -2113,9 +2113,9 @@ static const ax_sprite sMagmarSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx22[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_22.4bpp");
-static const u8 sMagmarGfx22_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_22_1.4bpp");
-static const u8 sMagmarGfx22_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_22_2.4bpp");
+static const u8 sMagmarGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_22.4bpp.lz");
+static const u8 sMagmarGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_22_1.4bpp.lz");
+static const u8 sMagmarGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_22_2.4bpp.lz");
 static const ax_sprite sMagmarSprites22[] = {
 	{NULL, 32}, 
 	{sMagmarGfx22, ARRAY_COUNT(sMagmarGfx22)}, 
@@ -2125,8 +2125,8 @@ static const ax_sprite sMagmarSprites22[] = {
 	{sMagmarGfx22_2, ARRAY_COUNT(sMagmarGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx23[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_23.4bpp");
-static const u8 sMagmarGfx23_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_23_1.4bpp");
+static const u8 sMagmarGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_23.4bpp.lz");
+static const u8 sMagmarGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_23_1.4bpp.lz");
 static const ax_sprite sMagmarSprites23[] = {
 	{sMagmarGfx23, ARRAY_COUNT(sMagmarGfx23)}, 
 	{NULL, 32}, 
@@ -2134,9 +2134,9 @@ static const ax_sprite sMagmarSprites23[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx24[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_24.4bpp");
-static const u8 sMagmarGfx24_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_24_1.4bpp");
-static const u8 sMagmarGfx24_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_24_2.4bpp");
+static const u8 sMagmarGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_24.4bpp.lz");
+static const u8 sMagmarGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_24_1.4bpp.lz");
+static const u8 sMagmarGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_24_2.4bpp.lz");
 static const ax_sprite sMagmarSprites24[] = {
 	{NULL, 32}, 
 	{sMagmarGfx24, ARRAY_COUNT(sMagmarGfx24)}, 
@@ -2146,10 +2146,10 @@ static const ax_sprite sMagmarSprites24[] = {
 	{sMagmarGfx24_2, ARRAY_COUNT(sMagmarGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx25[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_25.4bpp");
-static const u8 sMagmarGfx25_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_25_1.4bpp");
-static const u8 sMagmarGfx25_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_25_2.4bpp");
-static const u8 sMagmarGfx25_3[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_25_3.4bpp");
+static const u8 sMagmarGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_25.4bpp.lz");
+static const u8 sMagmarGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_25_1.4bpp.lz");
+static const u8 sMagmarGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_25_2.4bpp.lz");
+static const u8 sMagmarGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_25_3.4bpp.lz");
 static const ax_sprite sMagmarSprites25[] = {
 	{sMagmarGfx25, ARRAY_COUNT(sMagmarGfx25)}, 
 	{NULL, 32}, 
@@ -2161,9 +2161,9 @@ static const ax_sprite sMagmarSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx26[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_26.4bpp");
-static const u8 sMagmarGfx26_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_26_1.4bpp");
-static const u8 sMagmarGfx26_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_26_2.4bpp");
+static const u8 sMagmarGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_26.4bpp.lz");
+static const u8 sMagmarGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_26_1.4bpp.lz");
+static const u8 sMagmarGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_26_2.4bpp.lz");
 static const ax_sprite sMagmarSprites26[] = {
 	{sMagmarGfx26, ARRAY_COUNT(sMagmarGfx26)}, 
 	{NULL, 32}, 
@@ -2172,8 +2172,8 @@ static const ax_sprite sMagmarSprites26[] = {
 	{sMagmarGfx26_2, ARRAY_COUNT(sMagmarGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx27[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_27.4bpp");
-static const u8 sMagmarGfx27_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_27_1.4bpp");
+static const u8 sMagmarGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_27.4bpp.lz");
+static const u8 sMagmarGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_27_1.4bpp.lz");
 static const ax_sprite sMagmarSprites27[] = {
 	{sMagmarGfx27, ARRAY_COUNT(sMagmarGfx27)}, 
 	{NULL, 32}, 
@@ -2181,8 +2181,8 @@ static const ax_sprite sMagmarSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx28[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_28.4bpp");
-static const u8 sMagmarGfx28_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_28_1.4bpp");
+static const u8 sMagmarGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_28.4bpp.lz");
+static const u8 sMagmarGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_28_1.4bpp.lz");
 static const ax_sprite sMagmarSprites28[] = {
 	{NULL, 32}, 
 	{sMagmarGfx28, ARRAY_COUNT(sMagmarGfx28)}, 
@@ -2191,9 +2191,9 @@ static const ax_sprite sMagmarSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx29[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_29.4bpp");
-static const u8 sMagmarGfx29_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_29_1.4bpp");
-static const u8 sMagmarGfx29_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_29_2.4bpp");
+static const u8 sMagmarGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_29.4bpp.lz");
+static const u8 sMagmarGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_29_1.4bpp.lz");
+static const u8 sMagmarGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_29_2.4bpp.lz");
 static const ax_sprite sMagmarSprites29[] = {
 	{sMagmarGfx29, ARRAY_COUNT(sMagmarGfx29)}, 
 	{NULL, 32}, 
@@ -2202,10 +2202,10 @@ static const ax_sprite sMagmarSprites29[] = {
 	{sMagmarGfx29_2, ARRAY_COUNT(sMagmarGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx30[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_30.4bpp");
-static const u8 sMagmarGfx30_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_30_1.4bpp");
-static const u8 sMagmarGfx30_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_30_2.4bpp");
-static const u8 sMagmarGfx30_3[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_30_3.4bpp");
+static const u8 sMagmarGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_30.4bpp.lz");
+static const u8 sMagmarGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_30_1.4bpp.lz");
+static const u8 sMagmarGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_30_2.4bpp.lz");
+static const u8 sMagmarGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_30_3.4bpp.lz");
 static const ax_sprite sMagmarSprites30[] = {
 	{NULL, 32}, 
 	{sMagmarGfx30, ARRAY_COUNT(sMagmarGfx30)}, 
@@ -2218,8 +2218,8 @@ static const ax_sprite sMagmarSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx31[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_31.4bpp");
-static const u8 sMagmarGfx31_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_31_1.4bpp");
+static const u8 sMagmarGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_31.4bpp.lz");
+static const u8 sMagmarGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_31_1.4bpp.lz");
 static const ax_sprite sMagmarSprites31[] = {
 	{NULL, 32}, 
 	{sMagmarGfx31, ARRAY_COUNT(sMagmarGfx31)}, 
@@ -2228,8 +2228,8 @@ static const ax_sprite sMagmarSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx32[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_32.4bpp");
-static const u8 sMagmarGfx32_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_32_1.4bpp");
+static const u8 sMagmarGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_32.4bpp.lz");
+static const u8 sMagmarGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_32_1.4bpp.lz");
 static const ax_sprite sMagmarSprites32[] = {
 	{sMagmarGfx32, ARRAY_COUNT(sMagmarGfx32)}, 
 	{NULL, 32}, 
@@ -2237,9 +2237,9 @@ static const ax_sprite sMagmarSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx33[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_33.4bpp");
-static const u8 sMagmarGfx33_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_33_1.4bpp");
-static const u8 sMagmarGfx33_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_33_2.4bpp");
+static const u8 sMagmarGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_33.4bpp.lz");
+static const u8 sMagmarGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_33_1.4bpp.lz");
+static const u8 sMagmarGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_33_2.4bpp.lz");
 static const ax_sprite sMagmarSprites33[] = {
 	{NULL, 32}, 
 	{sMagmarGfx33, ARRAY_COUNT(sMagmarGfx33)}, 
@@ -2249,10 +2249,10 @@ static const ax_sprite sMagmarSprites33[] = {
 	{sMagmarGfx33_2, ARRAY_COUNT(sMagmarGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx34[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_34.4bpp");
-static const u8 sMagmarGfx34_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_34_1.4bpp");
-static const u8 sMagmarGfx34_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_34_2.4bpp");
-static const u8 sMagmarGfx34_3[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_34_3.4bpp");
+static const u8 sMagmarGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_34.4bpp.lz");
+static const u8 sMagmarGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_34_1.4bpp.lz");
+static const u8 sMagmarGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_34_2.4bpp.lz");
+static const u8 sMagmarGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_34_3.4bpp.lz");
 static const ax_sprite sMagmarSprites34[] = {
 	{sMagmarGfx34, ARRAY_COUNT(sMagmarGfx34)}, 
 	{NULL, 64}, 
@@ -2263,9 +2263,9 @@ static const ax_sprite sMagmarSprites34[] = {
 	{sMagmarGfx34_3, ARRAY_COUNT(sMagmarGfx34_3)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx35[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_35.4bpp");
-static const u8 sMagmarGfx35_1[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_35_1.4bpp");
-static const u8 sMagmarGfx35_2[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_35_2.4bpp");
+static const u8 sMagmarGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_35.4bpp.lz");
+static const u8 sMagmarGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_35_1.4bpp.lz");
+static const u8 sMagmarGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_35_2.4bpp.lz");
 static const ax_sprite sMagmarSprites35[] = {
 	{NULL, 32}, 
 	{sMagmarGfx35, ARRAY_COUNT(sMagmarGfx35)}, 
@@ -2275,37 +2275,37 @@ static const ax_sprite sMagmarSprites35[] = {
 	{sMagmarGfx35_2, ARRAY_COUNT(sMagmarGfx35_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx36[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_36.4bpp");
+static const u8 sMagmarGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_36.4bpp.lz");
 static const ax_sprite sMagmarSprites36[] = {
 	{sMagmarGfx36, ARRAY_COUNT(sMagmarGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx37[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_37.4bpp");
+static const u8 sMagmarGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_37.4bpp.lz");
 static const ax_sprite sMagmarSprites37[] = {
 	{sMagmarGfx37, ARRAY_COUNT(sMagmarGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx38[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_38.4bpp");
+static const u8 sMagmarGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_38.4bpp.lz");
 static const ax_sprite sMagmarSprites38[] = {
 	{sMagmarGfx38, ARRAY_COUNT(sMagmarGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx39[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_39.4bpp");
+static const u8 sMagmarGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_39.4bpp.lz");
 static const ax_sprite sMagmarSprites39[] = {
 	{sMagmarGfx39, ARRAY_COUNT(sMagmarGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx40[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_40.4bpp");
+static const u8 sMagmarGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_40.4bpp.lz");
 static const ax_sprite sMagmarSprites40[] = {
 	{sMagmarGfx40, ARRAY_COUNT(sMagmarGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx41[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_41.4bpp");
+static const u8 sMagmarGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_41.4bpp.lz");
 static const ax_sprite sMagmarSprites41[] = {
 	{sMagmarGfx41, ARRAY_COUNT(sMagmarGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMagmarGfx42[] = INCBIN_U8("graphics/ax/mon/magmar/sprite_42.4bpp");
+static const u8 sMagmarGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magmar/sprite_42.4bpp.lz");
 static const ax_sprite sMagmarSprites42[] = {
 	{sMagmarGfx42, ARRAY_COUNT(sMagmarGfx42)}, 
 	{NULL, 0}

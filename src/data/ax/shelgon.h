@@ -2135,85 +2135,85 @@ static const ax_anim sShelgonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sShelgonGfx1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_1.4bpp");
+static const u8 sShelgonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_1.4bpp.lz");
 static const ax_sprite sShelgonSprites1[] = {
 	{sShelgonGfx1, ARRAY_COUNT(sShelgonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_2.4bpp");
+static const u8 sShelgonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_2.4bpp.lz");
 static const ax_sprite sShelgonSprites2[] = {
 	{sShelgonGfx2, ARRAY_COUNT(sShelgonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx3[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_3.4bpp");
+static const u8 sShelgonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_3.4bpp.lz");
 static const ax_sprite sShelgonSprites3[] = {
 	{sShelgonGfx3, ARRAY_COUNT(sShelgonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx4[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_4.4bpp");
+static const u8 sShelgonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_4.4bpp.lz");
 static const ax_sprite sShelgonSprites4[] = {
 	{sShelgonGfx4, ARRAY_COUNT(sShelgonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx5[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_5.4bpp");
+static const u8 sShelgonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_5.4bpp.lz");
 static const ax_sprite sShelgonSprites5[] = {
 	{sShelgonGfx5, ARRAY_COUNT(sShelgonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx6[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_6.4bpp");
+static const u8 sShelgonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_6.4bpp.lz");
 static const ax_sprite sShelgonSprites6[] = {
 	{sShelgonGfx6, ARRAY_COUNT(sShelgonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx7[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_7.4bpp");
+static const u8 sShelgonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_7.4bpp.lz");
 static const ax_sprite sShelgonSprites7[] = {
 	{sShelgonGfx7, ARRAY_COUNT(sShelgonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx8[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_8.4bpp");
+static const u8 sShelgonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_8.4bpp.lz");
 static const ax_sprite sShelgonSprites8[] = {
 	{sShelgonGfx8, ARRAY_COUNT(sShelgonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx9[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_9.4bpp");
+static const u8 sShelgonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_9.4bpp.lz");
 static const ax_sprite sShelgonSprites9[] = {
 	{sShelgonGfx9, ARRAY_COUNT(sShelgonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx10[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_10.4bpp");
+static const u8 sShelgonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_10.4bpp.lz");
 static const ax_sprite sShelgonSprites10[] = {
 	{sShelgonGfx10, ARRAY_COUNT(sShelgonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx11[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_11.4bpp");
+static const u8 sShelgonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_11.4bpp.lz");
 static const ax_sprite sShelgonSprites11[] = {
 	{sShelgonGfx11, ARRAY_COUNT(sShelgonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx12[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_12.4bpp");
+static const u8 sShelgonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_12.4bpp.lz");
 static const ax_sprite sShelgonSprites12[] = {
 	{sShelgonGfx12, ARRAY_COUNT(sShelgonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx13[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_13.4bpp");
+static const u8 sShelgonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_13.4bpp.lz");
 static const ax_sprite sShelgonSprites13[] = {
 	{sShelgonGfx13, ARRAY_COUNT(sShelgonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx14[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_14.4bpp");
+static const u8 sShelgonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_14.4bpp.lz");
 static const ax_sprite sShelgonSprites14[] = {
 	{sShelgonGfx14, ARRAY_COUNT(sShelgonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx15[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_15.4bpp");
+static const u8 sShelgonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_15.4bpp.lz");
 static const ax_sprite sShelgonSprites15[] = {
 	{sShelgonGfx15, ARRAY_COUNT(sShelgonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx16[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_16.4bpp");
-static const u8 sShelgonGfx16_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_16_1.4bpp");
-static const u8 sShelgonGfx16_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_16_2.4bpp");
-static const u8 sShelgonGfx16_3[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_16_3.4bpp");
+static const u8 sShelgonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_16.4bpp.lz");
+static const u8 sShelgonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_16_1.4bpp.lz");
+static const u8 sShelgonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_16_2.4bpp.lz");
+static const u8 sShelgonGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_16_3.4bpp.lz");
 static const ax_sprite sShelgonSprites16[] = {
 	{sShelgonGfx16, ARRAY_COUNT(sShelgonGfx16)}, 
 	{NULL, 32}, 
@@ -2225,9 +2225,9 @@ static const ax_sprite sShelgonSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx17[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_17.4bpp");
-static const u8 sShelgonGfx17_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_17_1.4bpp");
-static const u8 sShelgonGfx17_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_17_2.4bpp");
+static const u8 sShelgonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_17.4bpp.lz");
+static const u8 sShelgonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_17_1.4bpp.lz");
+static const u8 sShelgonGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_17_2.4bpp.lz");
 static const ax_sprite sShelgonSprites17[] = {
 	{sShelgonGfx17, ARRAY_COUNT(sShelgonGfx17)}, 
 	{NULL, 32}, 
@@ -2237,10 +2237,10 @@ static const ax_sprite sShelgonSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx18[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_18.4bpp");
-static const u8 sShelgonGfx18_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_18_1.4bpp");
-static const u8 sShelgonGfx18_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_18_2.4bpp");
-static const u8 sShelgonGfx18_3[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_18_3.4bpp");
+static const u8 sShelgonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_18.4bpp.lz");
+static const u8 sShelgonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_18_1.4bpp.lz");
+static const u8 sShelgonGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_18_2.4bpp.lz");
+static const u8 sShelgonGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_18_3.4bpp.lz");
 static const ax_sprite sShelgonSprites18[] = {
 	{sShelgonGfx18, ARRAY_COUNT(sShelgonGfx18)}, 
 	{NULL, 32}, 
@@ -2252,9 +2252,9 @@ static const ax_sprite sShelgonSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx19[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_19.4bpp");
-static const u8 sShelgonGfx19_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_19_1.4bpp");
-static const u8 sShelgonGfx19_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_19_2.4bpp");
+static const u8 sShelgonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_19.4bpp.lz");
+static const u8 sShelgonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_19_1.4bpp.lz");
+static const u8 sShelgonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_19_2.4bpp.lz");
 static const ax_sprite sShelgonSprites19[] = {
 	{sShelgonGfx19, ARRAY_COUNT(sShelgonGfx19)}, 
 	{NULL, 32}, 
@@ -2264,9 +2264,9 @@ static const ax_sprite sShelgonSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx20[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_20.4bpp");
-static const u8 sShelgonGfx20_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_20_1.4bpp");
-static const u8 sShelgonGfx20_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_20_2.4bpp");
+static const u8 sShelgonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_20.4bpp.lz");
+static const u8 sShelgonGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_20_1.4bpp.lz");
+static const u8 sShelgonGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_20_2.4bpp.lz");
 static const ax_sprite sShelgonSprites20[] = {
 	{sShelgonGfx20, ARRAY_COUNT(sShelgonGfx20)}, 
 	{NULL, 32}, 
@@ -2276,9 +2276,9 @@ static const ax_sprite sShelgonSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx21[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_21.4bpp");
-static const u8 sShelgonGfx21_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_21_1.4bpp");
-static const u8 sShelgonGfx21_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_21_2.4bpp");
+static const u8 sShelgonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_21.4bpp.lz");
+static const u8 sShelgonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_21_1.4bpp.lz");
+static const u8 sShelgonGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_21_2.4bpp.lz");
 static const ax_sprite sShelgonSprites21[] = {
 	{sShelgonGfx21, ARRAY_COUNT(sShelgonGfx21)}, 
 	{NULL, 32}, 
@@ -2288,10 +2288,10 @@ static const ax_sprite sShelgonSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx22[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_22.4bpp");
-static const u8 sShelgonGfx22_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_22_1.4bpp");
-static const u8 sShelgonGfx22_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_22_2.4bpp");
-static const u8 sShelgonGfx22_3[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_22_3.4bpp");
+static const u8 sShelgonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_22.4bpp.lz");
+static const u8 sShelgonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_22_1.4bpp.lz");
+static const u8 sShelgonGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_22_2.4bpp.lz");
+static const u8 sShelgonGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_22_3.4bpp.lz");
 static const ax_sprite sShelgonSprites22[] = {
 	{sShelgonGfx22, ARRAY_COUNT(sShelgonGfx22)}, 
 	{NULL, 32}, 
@@ -2303,9 +2303,9 @@ static const ax_sprite sShelgonSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx23[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_23.4bpp");
-static const u8 sShelgonGfx23_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_23_1.4bpp");
-static const u8 sShelgonGfx23_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_23_2.4bpp");
+static const u8 sShelgonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_23.4bpp.lz");
+static const u8 sShelgonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_23_1.4bpp.lz");
+static const u8 sShelgonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_23_2.4bpp.lz");
 static const ax_sprite sShelgonSprites23[] = {
 	{sShelgonGfx23, ARRAY_COUNT(sShelgonGfx23)}, 
 	{NULL, 32}, 
@@ -2315,10 +2315,10 @@ static const ax_sprite sShelgonSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx24[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_24.4bpp");
-static const u8 sShelgonGfx24_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_24_1.4bpp");
-static const u8 sShelgonGfx24_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_24_2.4bpp");
-static const u8 sShelgonGfx24_3[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_24_3.4bpp");
+static const u8 sShelgonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_24.4bpp.lz");
+static const u8 sShelgonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_24_1.4bpp.lz");
+static const u8 sShelgonGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_24_2.4bpp.lz");
+static const u8 sShelgonGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_24_3.4bpp.lz");
 static const ax_sprite sShelgonSprites24[] = {
 	{sShelgonGfx24, ARRAY_COUNT(sShelgonGfx24)}, 
 	{NULL, 32}, 
@@ -2330,10 +2330,10 @@ static const ax_sprite sShelgonSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx25[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_25.4bpp");
-static const u8 sShelgonGfx25_1[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_25_1.4bpp");
-static const u8 sShelgonGfx25_2[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_25_2.4bpp");
-static const u8 sShelgonGfx25_3[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_25_3.4bpp");
+static const u8 sShelgonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_25.4bpp.lz");
+static const u8 sShelgonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_25_1.4bpp.lz");
+static const u8 sShelgonGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_25_2.4bpp.lz");
+static const u8 sShelgonGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_25_3.4bpp.lz");
 static const ax_sprite sShelgonSprites25[] = {
 	{sShelgonGfx25, ARRAY_COUNT(sShelgonGfx25)}, 
 	{NULL, 32}, 
@@ -2345,37 +2345,37 @@ static const ax_sprite sShelgonSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx26[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_26.4bpp");
+static const u8 sShelgonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_26.4bpp.lz");
 static const ax_sprite sShelgonSprites26[] = {
 	{sShelgonGfx26, ARRAY_COUNT(sShelgonGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx27[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_27.4bpp");
+static const u8 sShelgonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_27.4bpp.lz");
 static const ax_sprite sShelgonSprites27[] = {
 	{sShelgonGfx27, ARRAY_COUNT(sShelgonGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx28[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_28.4bpp");
+static const u8 sShelgonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_28.4bpp.lz");
 static const ax_sprite sShelgonSprites28[] = {
 	{sShelgonGfx28, ARRAY_COUNT(sShelgonGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx29[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_29.4bpp");
+static const u8 sShelgonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_29.4bpp.lz");
 static const ax_sprite sShelgonSprites29[] = {
 	{sShelgonGfx29, ARRAY_COUNT(sShelgonGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx30[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_30.4bpp");
+static const u8 sShelgonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_30.4bpp.lz");
 static const ax_sprite sShelgonSprites30[] = {
 	{sShelgonGfx30, ARRAY_COUNT(sShelgonGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx31[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_31.4bpp");
+static const u8 sShelgonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_31.4bpp.lz");
 static const ax_sprite sShelgonSprites31[] = {
 	{sShelgonGfx31, ARRAY_COUNT(sShelgonGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sShelgonGfx32[] = INCBIN_U8("graphics/ax/mon/shelgon/sprite_32.4bpp");
+static const u8 sShelgonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shelgon/sprite_32.4bpp.lz");
 static const ax_sprite sShelgonSprites32[] = {
 	{sShelgonGfx32, ARRAY_COUNT(sShelgonGfx32)}, 
 	{NULL, 0}

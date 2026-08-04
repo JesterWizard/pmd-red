@@ -2251,83 +2251,83 @@ static const ax_anim sBlisseyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBlisseyGfx1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_1.4bpp");
+static const u8 sBlisseyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_1.4bpp.lz");
 static const ax_sprite sBlisseySprites1[] = {
 	{sBlisseyGfx1, ARRAY_COUNT(sBlisseyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx2[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_2.4bpp");
+static const u8 sBlisseyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_2.4bpp.lz");
 static const ax_sprite sBlisseySprites2[] = {
 	{sBlisseyGfx2, ARRAY_COUNT(sBlisseyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx3[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_3.4bpp");
+static const u8 sBlisseyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_3.4bpp.lz");
 static const ax_sprite sBlisseySprites3[] = {
 	{sBlisseyGfx3, ARRAY_COUNT(sBlisseyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx4[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_4.4bpp");
+static const u8 sBlisseyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_4.4bpp.lz");
 static const ax_sprite sBlisseySprites4[] = {
 	{sBlisseyGfx4, ARRAY_COUNT(sBlisseyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx5[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_5.4bpp");
+static const u8 sBlisseyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_5.4bpp.lz");
 static const ax_sprite sBlisseySprites5[] = {
 	{sBlisseyGfx5, ARRAY_COUNT(sBlisseyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx6[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_6.4bpp");
+static const u8 sBlisseyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_6.4bpp.lz");
 static const ax_sprite sBlisseySprites6[] = {
 	{sBlisseyGfx6, ARRAY_COUNT(sBlisseyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx7[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_7.4bpp");
+static const u8 sBlisseyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_7.4bpp.lz");
 static const ax_sprite sBlisseySprites7[] = {
 	{sBlisseyGfx7, ARRAY_COUNT(sBlisseyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx8[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_8.4bpp");
+static const u8 sBlisseyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_8.4bpp.lz");
 static const ax_sprite sBlisseySprites8[] = {
 	{sBlisseyGfx8, ARRAY_COUNT(sBlisseyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx9[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_9.4bpp");
+static const u8 sBlisseyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_9.4bpp.lz");
 static const ax_sprite sBlisseySprites9[] = {
 	{sBlisseyGfx9, ARRAY_COUNT(sBlisseyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx10[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_10.4bpp");
+static const u8 sBlisseyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_10.4bpp.lz");
 static const ax_sprite sBlisseySprites10[] = {
 	{sBlisseyGfx10, ARRAY_COUNT(sBlisseyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx11[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_11.4bpp");
+static const u8 sBlisseyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_11.4bpp.lz");
 static const ax_sprite sBlisseySprites11[] = {
 	{sBlisseyGfx11, ARRAY_COUNT(sBlisseyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx12[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_12.4bpp");
+static const u8 sBlisseyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_12.4bpp.lz");
 static const ax_sprite sBlisseySprites12[] = {
 	{sBlisseyGfx12, ARRAY_COUNT(sBlisseyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx13[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_13.4bpp");
+static const u8 sBlisseyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_13.4bpp.lz");
 static const ax_sprite sBlisseySprites13[] = {
 	{sBlisseyGfx13, ARRAY_COUNT(sBlisseyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx14[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_14.4bpp");
+static const u8 sBlisseyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_14.4bpp.lz");
 static const ax_sprite sBlisseySprites14[] = {
 	{sBlisseyGfx14, ARRAY_COUNT(sBlisseyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx15[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_15.4bpp");
+static const u8 sBlisseyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_15.4bpp.lz");
 static const ax_sprite sBlisseySprites15[] = {
 	{sBlisseyGfx15, ARRAY_COUNT(sBlisseyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx16[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_16.4bpp");
-static const u8 sBlisseyGfx16_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_16_1.4bpp");
+static const u8 sBlisseyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_16.4bpp.lz");
+static const u8 sBlisseyGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_16_1.4bpp.lz");
 static const ax_sprite sBlisseySprites16[] = {
 	{NULL, 32}, 
 	{sBlisseyGfx16, ARRAY_COUNT(sBlisseyGfx16)}, 
@@ -2335,8 +2335,8 @@ static const ax_sprite sBlisseySprites16[] = {
 	{sBlisseyGfx16_1, ARRAY_COUNT(sBlisseyGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx17[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_17.4bpp");
-static const u8 sBlisseyGfx17_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_17_1.4bpp");
+static const u8 sBlisseyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_17.4bpp.lz");
+static const u8 sBlisseyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_17_1.4bpp.lz");
 static const ax_sprite sBlisseySprites17[] = {
 	{sBlisseyGfx17, ARRAY_COUNT(sBlisseyGfx17)}, 
 	{NULL, 32}, 
@@ -2344,8 +2344,8 @@ static const ax_sprite sBlisseySprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx18[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_18.4bpp");
-static const u8 sBlisseyGfx18_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_18_1.4bpp");
+static const u8 sBlisseyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_18.4bpp.lz");
+static const u8 sBlisseyGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_18_1.4bpp.lz");
 static const ax_sprite sBlisseySprites18[] = {
 	{sBlisseyGfx18, ARRAY_COUNT(sBlisseyGfx18)}, 
 	{NULL, 64}, 
@@ -2353,8 +2353,8 @@ static const ax_sprite sBlisseySprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx19[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_19.4bpp");
-static const u8 sBlisseyGfx19_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_19_1.4bpp");
+static const u8 sBlisseyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_19.4bpp.lz");
+static const u8 sBlisseyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_19_1.4bpp.lz");
 static const ax_sprite sBlisseySprites19[] = {
 	{sBlisseyGfx19, ARRAY_COUNT(sBlisseyGfx19)}, 
 	{NULL, 32}, 
@@ -2362,8 +2362,8 @@ static const ax_sprite sBlisseySprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx20[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_20.4bpp");
-static const u8 sBlisseyGfx20_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_20_1.4bpp");
+static const u8 sBlisseyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_20.4bpp.lz");
+static const u8 sBlisseyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_20_1.4bpp.lz");
 static const ax_sprite sBlisseySprites20[] = {
 	{sBlisseyGfx20, ARRAY_COUNT(sBlisseyGfx20)}, 
 	{NULL, 64}, 
@@ -2371,9 +2371,9 @@ static const ax_sprite sBlisseySprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx21[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_21.4bpp");
-static const u8 sBlisseyGfx21_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_21_1.4bpp");
-static const u8 sBlisseyGfx21_2[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_21_2.4bpp");
+static const u8 sBlisseyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_21.4bpp.lz");
+static const u8 sBlisseyGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_21_1.4bpp.lz");
+static const u8 sBlisseyGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_21_2.4bpp.lz");
 static const ax_sprite sBlisseySprites21[] = {
 	{sBlisseyGfx21, ARRAY_COUNT(sBlisseyGfx21)}, 
 	{NULL, 32}, 
@@ -2383,10 +2383,10 @@ static const ax_sprite sBlisseySprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx22[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_22.4bpp");
-static const u8 sBlisseyGfx22_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_22_1.4bpp");
-static const u8 sBlisseyGfx22_2[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_22_2.4bpp");
-static const u8 sBlisseyGfx22_3[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_22_3.4bpp");
+static const u8 sBlisseyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_22.4bpp.lz");
+static const u8 sBlisseyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_22_1.4bpp.lz");
+static const u8 sBlisseyGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_22_2.4bpp.lz");
+static const u8 sBlisseyGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_22_3.4bpp.lz");
 static const ax_sprite sBlisseySprites22[] = {
 	{sBlisseyGfx22, ARRAY_COUNT(sBlisseyGfx22)}, 
 	{NULL, 32}, 
@@ -2398,9 +2398,9 @@ static const ax_sprite sBlisseySprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx23[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_23.4bpp");
-static const u8 sBlisseyGfx23_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_23_1.4bpp");
-static const u8 sBlisseyGfx23_2[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_23_2.4bpp");
+static const u8 sBlisseyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_23.4bpp.lz");
+static const u8 sBlisseyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_23_1.4bpp.lz");
+static const u8 sBlisseyGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_23_2.4bpp.lz");
 static const ax_sprite sBlisseySprites23[] = {
 	{sBlisseyGfx23, ARRAY_COUNT(sBlisseyGfx23)}, 
 	{NULL, 32}, 
@@ -2410,13 +2410,13 @@ static const ax_sprite sBlisseySprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx24[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_24.4bpp");
+static const u8 sBlisseyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_24.4bpp.lz");
 static const ax_sprite sBlisseySprites24[] = {
 	{sBlisseyGfx24, ARRAY_COUNT(sBlisseyGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx25[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_25.4bpp");
-static const u8 sBlisseyGfx25_1[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_25_1.4bpp");
+static const u8 sBlisseyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_25.4bpp.lz");
+static const u8 sBlisseyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_25_1.4bpp.lz");
 static const ax_sprite sBlisseySprites25[] = {
 	{sBlisseyGfx25, ARRAY_COUNT(sBlisseyGfx25)}, 
 	{NULL, 32}, 
@@ -2424,138 +2424,138 @@ static const ax_sprite sBlisseySprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx26[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_26.4bpp");
+static const u8 sBlisseyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_26.4bpp.lz");
 static const ax_sprite sBlisseySprites26[] = {
 	{sBlisseyGfx26, ARRAY_COUNT(sBlisseyGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx27[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_27.4bpp");
+static const u8 sBlisseyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_27.4bpp.lz");
 static const ax_sprite sBlisseySprites27[] = {
 	{sBlisseyGfx27, ARRAY_COUNT(sBlisseyGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx28[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_28.4bpp");
+static const u8 sBlisseyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_28.4bpp.lz");
 static const ax_sprite sBlisseySprites28[] = {
 	{sBlisseyGfx28, ARRAY_COUNT(sBlisseyGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx29[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_29.4bpp");
+static const u8 sBlisseyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_29.4bpp.lz");
 static const ax_sprite sBlisseySprites29[] = {
 	{sBlisseyGfx29, ARRAY_COUNT(sBlisseyGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx30[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_30.4bpp");
+static const u8 sBlisseyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_30.4bpp.lz");
 static const ax_sprite sBlisseySprites30[] = {
 	{sBlisseyGfx30, ARRAY_COUNT(sBlisseyGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx31[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_31.4bpp");
+static const u8 sBlisseyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_31.4bpp.lz");
 static const ax_sprite sBlisseySprites31[] = {
 	{sBlisseyGfx31, ARRAY_COUNT(sBlisseyGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx32[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_32.4bpp");
+static const u8 sBlisseyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_32.4bpp.lz");
 static const ax_sprite sBlisseySprites32[] = {
 	{sBlisseyGfx32, ARRAY_COUNT(sBlisseyGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx33[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_33.4bpp");
+static const u8 sBlisseyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_33.4bpp.lz");
 static const ax_sprite sBlisseySprites33[] = {
 	{sBlisseyGfx33, ARRAY_COUNT(sBlisseyGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx34[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_34.4bpp");
+static const u8 sBlisseyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_34.4bpp.lz");
 static const ax_sprite sBlisseySprites34[] = {
 	{sBlisseyGfx34, ARRAY_COUNT(sBlisseyGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx35[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_35.4bpp");
+static const u8 sBlisseyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_35.4bpp.lz");
 static const ax_sprite sBlisseySprites35[] = {
 	{sBlisseyGfx35, ARRAY_COUNT(sBlisseyGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx36[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_36.4bpp");
+static const u8 sBlisseyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_36.4bpp.lz");
 static const ax_sprite sBlisseySprites36[] = {
 	{sBlisseyGfx36, ARRAY_COUNT(sBlisseyGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx37[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_37.4bpp");
+static const u8 sBlisseyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_37.4bpp.lz");
 static const ax_sprite sBlisseySprites37[] = {
 	{sBlisseyGfx37, ARRAY_COUNT(sBlisseyGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx38[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_38.4bpp");
+static const u8 sBlisseyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_38.4bpp.lz");
 static const ax_sprite sBlisseySprites38[] = {
 	{sBlisseyGfx38, ARRAY_COUNT(sBlisseyGfx38)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx39[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_39.4bpp");
+static const u8 sBlisseyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_39.4bpp.lz");
 static const ax_sprite sBlisseySprites39[] = {
 	{sBlisseyGfx39, ARRAY_COUNT(sBlisseyGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx40[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_40.4bpp");
+static const u8 sBlisseyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_40.4bpp.lz");
 static const ax_sprite sBlisseySprites40[] = {
 	{sBlisseyGfx40, ARRAY_COUNT(sBlisseyGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx41[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_41.4bpp");
+static const u8 sBlisseyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_41.4bpp.lz");
 static const ax_sprite sBlisseySprites41[] = {
 	{sBlisseyGfx41, ARRAY_COUNT(sBlisseyGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx42[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_42.4bpp");
+static const u8 sBlisseyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_42.4bpp.lz");
 static const ax_sprite sBlisseySprites42[] = {
 	{sBlisseyGfx42, ARRAY_COUNT(sBlisseyGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx43[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_43.4bpp");
+static const u8 sBlisseyGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_43.4bpp.lz");
 static const ax_sprite sBlisseySprites43[] = {
 	{sBlisseyGfx43, ARRAY_COUNT(sBlisseyGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx44[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_44.4bpp");
+static const u8 sBlisseyGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_44.4bpp.lz");
 static const ax_sprite sBlisseySprites44[] = {
 	{sBlisseyGfx44, ARRAY_COUNT(sBlisseyGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx45[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_45.4bpp");
+static const u8 sBlisseyGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_45.4bpp.lz");
 static const ax_sprite sBlisseySprites45[] = {
 	{sBlisseyGfx45, ARRAY_COUNT(sBlisseyGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx46[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_46.4bpp");
+static const u8 sBlisseyGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_46.4bpp.lz");
 static const ax_sprite sBlisseySprites46[] = {
 	{sBlisseyGfx46, ARRAY_COUNT(sBlisseyGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx47[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_47.4bpp");
+static const u8 sBlisseyGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_47.4bpp.lz");
 static const ax_sprite sBlisseySprites47[] = {
 	{sBlisseyGfx47, ARRAY_COUNT(sBlisseyGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx48[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_48.4bpp");
+static const u8 sBlisseyGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_48.4bpp.lz");
 static const ax_sprite sBlisseySprites48[] = {
 	{sBlisseyGfx48, ARRAY_COUNT(sBlisseyGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx49[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_49.4bpp");
+static const u8 sBlisseyGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_49.4bpp.lz");
 static const ax_sprite sBlisseySprites49[] = {
 	{sBlisseyGfx49, ARRAY_COUNT(sBlisseyGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx50[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_50.4bpp");
+static const u8 sBlisseyGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_50.4bpp.lz");
 static const ax_sprite sBlisseySprites50[] = {
 	{sBlisseyGfx50, ARRAY_COUNT(sBlisseyGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx51[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_51.4bpp");
+static const u8 sBlisseyGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_51.4bpp.lz");
 static const ax_sprite sBlisseySprites51[] = {
 	{sBlisseyGfx51, ARRAY_COUNT(sBlisseyGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sBlisseyGfx52[] = INCBIN_U8("graphics/ax/mon/blissey/sprite_52.4bpp");
+static const u8 sBlisseyGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/blissey/sprite_52.4bpp.lz");
 static const ax_sprite sBlisseySprites52[] = {
 	{sBlisseyGfx52, ARRAY_COUNT(sBlisseyGfx52)}, 
 	{NULL, 0}

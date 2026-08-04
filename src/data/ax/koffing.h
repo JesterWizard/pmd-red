@@ -2955,83 +2955,83 @@ static const ax_anim sKoffingAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKoffingGfx1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_1.4bpp");
+static const u8 sKoffingGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_1.4bpp.lz");
 static const ax_sprite sKoffingSprites1[] = {
 	{sKoffingGfx1, ARRAY_COUNT(sKoffingGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_2.4bpp");
+static const u8 sKoffingGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_2.4bpp.lz");
 static const ax_sprite sKoffingSprites2[] = {
 	{sKoffingGfx2, ARRAY_COUNT(sKoffingGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx3[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_3.4bpp");
+static const u8 sKoffingGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_3.4bpp.lz");
 static const ax_sprite sKoffingSprites3[] = {
 	{sKoffingGfx3, ARRAY_COUNT(sKoffingGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx4[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_4.4bpp");
+static const u8 sKoffingGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_4.4bpp.lz");
 static const ax_sprite sKoffingSprites4[] = {
 	{sKoffingGfx4, ARRAY_COUNT(sKoffingGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx5[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_5.4bpp");
+static const u8 sKoffingGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_5.4bpp.lz");
 static const ax_sprite sKoffingSprites5[] = {
 	{sKoffingGfx5, ARRAY_COUNT(sKoffingGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx6[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_6.4bpp");
+static const u8 sKoffingGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_6.4bpp.lz");
 static const ax_sprite sKoffingSprites6[] = {
 	{sKoffingGfx6, ARRAY_COUNT(sKoffingGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx7[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_7.4bpp");
+static const u8 sKoffingGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_7.4bpp.lz");
 static const ax_sprite sKoffingSprites7[] = {
 	{sKoffingGfx7, ARRAY_COUNT(sKoffingGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx8[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_8.4bpp");
+static const u8 sKoffingGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_8.4bpp.lz");
 static const ax_sprite sKoffingSprites8[] = {
 	{sKoffingGfx8, ARRAY_COUNT(sKoffingGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx9[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_9.4bpp");
+static const u8 sKoffingGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_9.4bpp.lz");
 static const ax_sprite sKoffingSprites9[] = {
 	{sKoffingGfx9, ARRAY_COUNT(sKoffingGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx10[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_10.4bpp");
+static const u8 sKoffingGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_10.4bpp.lz");
 static const ax_sprite sKoffingSprites10[] = {
 	{sKoffingGfx10, ARRAY_COUNT(sKoffingGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx11[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_11.4bpp");
+static const u8 sKoffingGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_11.4bpp.lz");
 static const ax_sprite sKoffingSprites11[] = {
 	{sKoffingGfx11, ARRAY_COUNT(sKoffingGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx12[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_12.4bpp");
+static const u8 sKoffingGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_12.4bpp.lz");
 static const ax_sprite sKoffingSprites12[] = {
 	{sKoffingGfx12, ARRAY_COUNT(sKoffingGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx13[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_13.4bpp");
+static const u8 sKoffingGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_13.4bpp.lz");
 static const ax_sprite sKoffingSprites13[] = {
 	{sKoffingGfx13, ARRAY_COUNT(sKoffingGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx14[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_14.4bpp");
+static const u8 sKoffingGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_14.4bpp.lz");
 static const ax_sprite sKoffingSprites14[] = {
 	{sKoffingGfx14, ARRAY_COUNT(sKoffingGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx15[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_15.4bpp");
+static const u8 sKoffingGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_15.4bpp.lz");
 static const ax_sprite sKoffingSprites15[] = {
 	{sKoffingGfx15, ARRAY_COUNT(sKoffingGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx16[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_16.4bpp");
-static const u8 sKoffingGfx16_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_16_1.4bpp");
+static const u8 sKoffingGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_16.4bpp.lz");
+static const u8 sKoffingGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_16_1.4bpp.lz");
 static const ax_sprite sKoffingSprites16[] = {
 	{NULL, 128}, 
 	{sKoffingGfx16, ARRAY_COUNT(sKoffingGfx16)}, 
@@ -3040,8 +3040,8 @@ static const ax_sprite sKoffingSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx17[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_17.4bpp");
-static const u8 sKoffingGfx17_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_17_1.4bpp");
+static const u8 sKoffingGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_17.4bpp.lz");
+static const u8 sKoffingGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_17_1.4bpp.lz");
 static const ax_sprite sKoffingSprites17[] = {
 	{NULL, 32}, 
 	{sKoffingGfx17, ARRAY_COUNT(sKoffingGfx17)}, 
@@ -3049,13 +3049,13 @@ static const ax_sprite sKoffingSprites17[] = {
 	{sKoffingGfx17_1, ARRAY_COUNT(sKoffingGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx18[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_18.4bpp");
+static const u8 sKoffingGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_18.4bpp.lz");
 static const ax_sprite sKoffingSprites18[] = {
 	{sKoffingGfx18, ARRAY_COUNT(sKoffingGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx19[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_19.4bpp");
-static const u8 sKoffingGfx19_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_19_1.4bpp");
+static const u8 sKoffingGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_19.4bpp.lz");
+static const u8 sKoffingGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_19_1.4bpp.lz");
 static const ax_sprite sKoffingSprites19[] = {
 	{NULL, 160}, 
 	{sKoffingGfx19, ARRAY_COUNT(sKoffingGfx19)}, 
@@ -3063,39 +3063,39 @@ static const ax_sprite sKoffingSprites19[] = {
 	{sKoffingGfx19_1, ARRAY_COUNT(sKoffingGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx20[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_20.4bpp");
+static const u8 sKoffingGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_20.4bpp.lz");
 static const ax_sprite sKoffingSprites20[] = {
 	{sKoffingGfx20, ARRAY_COUNT(sKoffingGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx21[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_21.4bpp");
+static const u8 sKoffingGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_21.4bpp.lz");
 static const ax_sprite sKoffingSprites21[] = {
 	{sKoffingGfx21, ARRAY_COUNT(sKoffingGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx22[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_22.4bpp");
+static const u8 sKoffingGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_22.4bpp.lz");
 static const ax_sprite sKoffingSprites22[] = {
 	{sKoffingGfx22, ARRAY_COUNT(sKoffingGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx23[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_23.4bpp");
+static const u8 sKoffingGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_23.4bpp.lz");
 static const ax_sprite sKoffingSprites23[] = {
 	{sKoffingGfx23, ARRAY_COUNT(sKoffingGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx24[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_24.4bpp");
+static const u8 sKoffingGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_24.4bpp.lz");
 static const ax_sprite sKoffingSprites24[] = {
 	{sKoffingGfx24, ARRAY_COUNT(sKoffingGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx25[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_25.4bpp");
+static const u8 sKoffingGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_25.4bpp.lz");
 static const ax_sprite sKoffingSprites25[] = {
 	{sKoffingGfx25, ARRAY_COUNT(sKoffingGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx26[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_26.4bpp");
-static const u8 sKoffingGfx26_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_26_1.4bpp");
-static const u8 sKoffingGfx26_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_26_2.4bpp");
+static const u8 sKoffingGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_26.4bpp.lz");
+static const u8 sKoffingGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_26_1.4bpp.lz");
+static const u8 sKoffingGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_26_2.4bpp.lz");
 static const ax_sprite sKoffingSprites26[] = {
 	{NULL, 64}, 
 	{sKoffingGfx26, ARRAY_COUNT(sKoffingGfx26)}, 
@@ -3106,8 +3106,8 @@ static const ax_sprite sKoffingSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx27[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_27.4bpp");
-static const u8 sKoffingGfx27_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_27_1.4bpp");
+static const u8 sKoffingGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_27.4bpp.lz");
+static const u8 sKoffingGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_27_1.4bpp.lz");
 static const ax_sprite sKoffingSprites27[] = {
 	{NULL, 32}, 
 	{sKoffingGfx27, ARRAY_COUNT(sKoffingGfx27)}, 
@@ -3115,8 +3115,8 @@ static const ax_sprite sKoffingSprites27[] = {
 	{sKoffingGfx27_1, ARRAY_COUNT(sKoffingGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx28[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_28.4bpp");
-static const u8 sKoffingGfx28_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_28_1.4bpp");
+static const u8 sKoffingGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_28.4bpp.lz");
+static const u8 sKoffingGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_28_1.4bpp.lz");
 static const ax_sprite sKoffingSprites28[] = {
 	{sKoffingGfx28, ARRAY_COUNT(sKoffingGfx28)}, 
 	{NULL, 32}, 
@@ -3124,8 +3124,8 @@ static const ax_sprite sKoffingSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx29[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_29.4bpp");
-static const u8 sKoffingGfx29_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_29_1.4bpp");
+static const u8 sKoffingGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_29.4bpp.lz");
+static const u8 sKoffingGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_29_1.4bpp.lz");
 static const ax_sprite sKoffingSprites29[] = {
 	{NULL, 128}, 
 	{sKoffingGfx29, ARRAY_COUNT(sKoffingGfx29)}, 
@@ -3134,9 +3134,9 @@ static const ax_sprite sKoffingSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx30[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_30.4bpp");
-static const u8 sKoffingGfx30_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_30_1.4bpp");
-static const u8 sKoffingGfx30_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_30_2.4bpp");
+static const u8 sKoffingGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_30.4bpp.lz");
+static const u8 sKoffingGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_30_1.4bpp.lz");
+static const u8 sKoffingGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_30_2.4bpp.lz");
 static const ax_sprite sKoffingSprites30[] = {
 	{NULL, 64}, 
 	{sKoffingGfx30, ARRAY_COUNT(sKoffingGfx30)}, 
@@ -3147,8 +3147,8 @@ static const ax_sprite sKoffingSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx31[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_31.4bpp");
-static const u8 sKoffingGfx31_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_31_1.4bpp");
+static const u8 sKoffingGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_31.4bpp.lz");
+static const u8 sKoffingGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_31_1.4bpp.lz");
 static const ax_sprite sKoffingSprites31[] = {
 	{NULL, 32}, 
 	{sKoffingGfx31, ARRAY_COUNT(sKoffingGfx31)}, 
@@ -3156,8 +3156,8 @@ static const ax_sprite sKoffingSprites31[] = {
 	{sKoffingGfx31_1, ARRAY_COUNT(sKoffingGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx32[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_32.4bpp");
-static const u8 sKoffingGfx32_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_32_1.4bpp");
+static const u8 sKoffingGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_32.4bpp.lz");
+static const u8 sKoffingGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_32_1.4bpp.lz");
 static const ax_sprite sKoffingSprites32[] = {
 	{sKoffingGfx32, ARRAY_COUNT(sKoffingGfx32)}, 
 	{NULL, 32}, 
@@ -3165,9 +3165,9 @@ static const ax_sprite sKoffingSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx33[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_33.4bpp");
-static const u8 sKoffingGfx33_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_33_1.4bpp");
-static const u8 sKoffingGfx33_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_33_2.4bpp");
+static const u8 sKoffingGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_33.4bpp.lz");
+static const u8 sKoffingGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_33_1.4bpp.lz");
+static const u8 sKoffingGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_33_2.4bpp.lz");
 static const ax_sprite sKoffingSprites33[] = {
 	{NULL, 128}, 
 	{sKoffingGfx33, ARRAY_COUNT(sKoffingGfx33)}, 
@@ -3178,9 +3178,9 @@ static const ax_sprite sKoffingSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx34[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_34.4bpp");
-static const u8 sKoffingGfx34_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_34_1.4bpp");
-static const u8 sKoffingGfx34_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_34_2.4bpp");
+static const u8 sKoffingGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_34.4bpp.lz");
+static const u8 sKoffingGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_34_1.4bpp.lz");
+static const u8 sKoffingGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_34_2.4bpp.lz");
 static const ax_sprite sKoffingSprites34[] = {
 	{NULL, 32}, 
 	{sKoffingGfx34, ARRAY_COUNT(sKoffingGfx34)}, 
@@ -3191,8 +3191,8 @@ static const ax_sprite sKoffingSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx35[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_35.4bpp");
-static const u8 sKoffingGfx35_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_35_1.4bpp");
+static const u8 sKoffingGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_35.4bpp.lz");
+static const u8 sKoffingGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_35_1.4bpp.lz");
 static const ax_sprite sKoffingSprites35[] = {
 	{NULL, 32}, 
 	{sKoffingGfx35, ARRAY_COUNT(sKoffingGfx35)}, 
@@ -3200,8 +3200,8 @@ static const ax_sprite sKoffingSprites35[] = {
 	{sKoffingGfx35_1, ARRAY_COUNT(sKoffingGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx36[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_36.4bpp");
-static const u8 sKoffingGfx36_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_36_1.4bpp");
+static const u8 sKoffingGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_36.4bpp.lz");
+static const u8 sKoffingGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_36_1.4bpp.lz");
 static const ax_sprite sKoffingSprites36[] = {
 	{NULL, 32}, 
 	{sKoffingGfx36, ARRAY_COUNT(sKoffingGfx36)}, 
@@ -3209,8 +3209,8 @@ static const ax_sprite sKoffingSprites36[] = {
 	{sKoffingGfx36_1, ARRAY_COUNT(sKoffingGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx37[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_37.4bpp");
-static const u8 sKoffingGfx37_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_37_1.4bpp");
+static const u8 sKoffingGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_37.4bpp.lz");
+static const u8 sKoffingGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_37_1.4bpp.lz");
 static const ax_sprite sKoffingSprites37[] = {
 	{NULL, 128}, 
 	{sKoffingGfx37, ARRAY_COUNT(sKoffingGfx37)}, 
@@ -3219,9 +3219,9 @@ static const ax_sprite sKoffingSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx38[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_38.4bpp");
-static const u8 sKoffingGfx38_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_38_1.4bpp");
-static const u8 sKoffingGfx38_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_38_2.4bpp");
+static const u8 sKoffingGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_38.4bpp.lz");
+static const u8 sKoffingGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_38_1.4bpp.lz");
+static const u8 sKoffingGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_38_2.4bpp.lz");
 static const ax_sprite sKoffingSprites38[] = {
 	{NULL, 32}, 
 	{sKoffingGfx38, ARRAY_COUNT(sKoffingGfx38)}, 
@@ -3232,8 +3232,8 @@ static const ax_sprite sKoffingSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx39[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_39.4bpp");
-static const u8 sKoffingGfx39_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_39_1.4bpp");
+static const u8 sKoffingGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_39.4bpp.lz");
+static const u8 sKoffingGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_39_1.4bpp.lz");
 static const ax_sprite sKoffingSprites39[] = {
 	{NULL, 32}, 
 	{sKoffingGfx39, ARRAY_COUNT(sKoffingGfx39)}, 
@@ -3241,14 +3241,14 @@ static const ax_sprite sKoffingSprites39[] = {
 	{sKoffingGfx39_1, ARRAY_COUNT(sKoffingGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx40[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_40.4bpp");
+static const u8 sKoffingGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_40.4bpp.lz");
 static const ax_sprite sKoffingSprites40[] = {
 	{sKoffingGfx40, ARRAY_COUNT(sKoffingGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx41[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_41.4bpp");
-static const u8 sKoffingGfx41_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_41_1.4bpp");
-static const u8 sKoffingGfx41_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_41_2.4bpp");
+static const u8 sKoffingGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_41.4bpp.lz");
+static const u8 sKoffingGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_41_1.4bpp.lz");
+static const u8 sKoffingGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_41_2.4bpp.lz");
 static const ax_sprite sKoffingSprites41[] = {
 	{NULL, 128}, 
 	{sKoffingGfx41, ARRAY_COUNT(sKoffingGfx41)}, 
@@ -3259,9 +3259,9 @@ static const ax_sprite sKoffingSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx42[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_42.4bpp");
-static const u8 sKoffingGfx42_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_42_1.4bpp");
-static const u8 sKoffingGfx42_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_42_2.4bpp");
+static const u8 sKoffingGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_42.4bpp.lz");
+static const u8 sKoffingGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_42_1.4bpp.lz");
+static const u8 sKoffingGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_42_2.4bpp.lz");
 static const ax_sprite sKoffingSprites42[] = {
 	{NULL, 160}, 
 	{sKoffingGfx42, ARRAY_COUNT(sKoffingGfx42)}, 
@@ -3272,9 +3272,9 @@ static const ax_sprite sKoffingSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx43[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_43.4bpp");
-static const u8 sKoffingGfx43_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_43_1.4bpp");
-static const u8 sKoffingGfx43_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_43_2.4bpp");
+static const u8 sKoffingGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_43.4bpp.lz");
+static const u8 sKoffingGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_43_1.4bpp.lz");
+static const u8 sKoffingGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_43_2.4bpp.lz");
 static const ax_sprite sKoffingSprites43[] = {
 	{NULL, 128}, 
 	{sKoffingGfx43, ARRAY_COUNT(sKoffingGfx43)}, 
@@ -3285,8 +3285,8 @@ static const ax_sprite sKoffingSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx44[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_44.4bpp");
-static const u8 sKoffingGfx44_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_44_1.4bpp");
+static const u8 sKoffingGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_44.4bpp.lz");
+static const u8 sKoffingGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_44_1.4bpp.lz");
 static const ax_sprite sKoffingSprites44[] = {
 	{NULL, 128}, 
 	{sKoffingGfx44, ARRAY_COUNT(sKoffingGfx44)}, 
@@ -3295,8 +3295,8 @@ static const ax_sprite sKoffingSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx45[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_45.4bpp");
-static const u8 sKoffingGfx45_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_45_1.4bpp");
+static const u8 sKoffingGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_45.4bpp.lz");
+static const u8 sKoffingGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_45_1.4bpp.lz");
 static const ax_sprite sKoffingSprites45[] = {
 	{NULL, 128}, 
 	{sKoffingGfx45, ARRAY_COUNT(sKoffingGfx45)}, 
@@ -3305,10 +3305,10 @@ static const ax_sprite sKoffingSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx46[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_46.4bpp");
-static const u8 sKoffingGfx46_1[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_46_1.4bpp");
-static const u8 sKoffingGfx46_2[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_46_2.4bpp");
-static const u8 sKoffingGfx46_3[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_46_3.4bpp");
+static const u8 sKoffingGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_46.4bpp.lz");
+static const u8 sKoffingGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_46_1.4bpp.lz");
+static const u8 sKoffingGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_46_2.4bpp.lz");
+static const u8 sKoffingGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_46_3.4bpp.lz");
 static const ax_sprite sKoffingSprites46[] = {
 	{NULL, 32}, 
 	{sKoffingGfx46, ARRAY_COUNT(sKoffingGfx46)}, 
@@ -3321,37 +3321,37 @@ static const ax_sprite sKoffingSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx47[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_47.4bpp");
+static const u8 sKoffingGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_47.4bpp.lz");
 static const ax_sprite sKoffingSprites47[] = {
 	{sKoffingGfx47, ARRAY_COUNT(sKoffingGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx48[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_48.4bpp");
+static const u8 sKoffingGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_48.4bpp.lz");
 static const ax_sprite sKoffingSprites48[] = {
 	{sKoffingGfx48, ARRAY_COUNT(sKoffingGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx49[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_49.4bpp");
+static const u8 sKoffingGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_49.4bpp.lz");
 static const ax_sprite sKoffingSprites49[] = {
 	{sKoffingGfx49, ARRAY_COUNT(sKoffingGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx50[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_50.4bpp");
+static const u8 sKoffingGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_50.4bpp.lz");
 static const ax_sprite sKoffingSprites50[] = {
 	{sKoffingGfx50, ARRAY_COUNT(sKoffingGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx51[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_51.4bpp");
+static const u8 sKoffingGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_51.4bpp.lz");
 static const ax_sprite sKoffingSprites51[] = {
 	{sKoffingGfx51, ARRAY_COUNT(sKoffingGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx52[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_52.4bpp");
+static const u8 sKoffingGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_52.4bpp.lz");
 static const ax_sprite sKoffingSprites52[] = {
 	{sKoffingGfx52, ARRAY_COUNT(sKoffingGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sKoffingGfx53[] = INCBIN_U8("graphics/ax/mon/koffing/sprite_53.4bpp");
+static const u8 sKoffingGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/koffing/sprite_53.4bpp.lz");
 static const ax_sprite sKoffingSprites53[] = {
 	{sKoffingGfx53, ARRAY_COUNT(sKoffingGfx53)}, 
 	{NULL, 0}

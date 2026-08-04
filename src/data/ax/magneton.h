@@ -1987,84 +1987,84 @@ static const ax_anim sMagnetonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMagnetonGfx1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_1.4bpp");
+static const u8 sMagnetonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_1.4bpp.lz");
 static const ax_sprite sMagnetonSprites1[] = {
 	{sMagnetonGfx1, ARRAY_COUNT(sMagnetonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx2[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_2.4bpp");
+static const u8 sMagnetonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_2.4bpp.lz");
 static const ax_sprite sMagnetonSprites2[] = {
 	{sMagnetonGfx2, ARRAY_COUNT(sMagnetonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx3[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_3.4bpp");
+static const u8 sMagnetonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_3.4bpp.lz");
 static const ax_sprite sMagnetonSprites3[] = {
 	{sMagnetonGfx3, ARRAY_COUNT(sMagnetonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx4[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_4.4bpp");
+static const u8 sMagnetonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_4.4bpp.lz");
 static const ax_sprite sMagnetonSprites4[] = {
 	{sMagnetonGfx4, ARRAY_COUNT(sMagnetonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx5[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_5.4bpp");
+static const u8 sMagnetonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_5.4bpp.lz");
 static const ax_sprite sMagnetonSprites5[] = {
 	{sMagnetonGfx5, ARRAY_COUNT(sMagnetonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx6[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_6.4bpp");
+static const u8 sMagnetonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_6.4bpp.lz");
 static const ax_sprite sMagnetonSprites6[] = {
 	{sMagnetonGfx6, ARRAY_COUNT(sMagnetonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx7[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_7.4bpp");
+static const u8 sMagnetonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_7.4bpp.lz");
 static const ax_sprite sMagnetonSprites7[] = {
 	{sMagnetonGfx7, ARRAY_COUNT(sMagnetonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx8[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_8.4bpp");
+static const u8 sMagnetonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_8.4bpp.lz");
 static const ax_sprite sMagnetonSprites8[] = {
 	{sMagnetonGfx8, ARRAY_COUNT(sMagnetonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx9[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_9.4bpp");
+static const u8 sMagnetonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_9.4bpp.lz");
 static const ax_sprite sMagnetonSprites9[] = {
 	{sMagnetonGfx9, ARRAY_COUNT(sMagnetonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx10[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_10.4bpp");
+static const u8 sMagnetonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_10.4bpp.lz");
 static const ax_sprite sMagnetonSprites10[] = {
 	{sMagnetonGfx10, ARRAY_COUNT(sMagnetonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx11[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_11.4bpp");
+static const u8 sMagnetonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_11.4bpp.lz");
 static const ax_sprite sMagnetonSprites11[] = {
 	{sMagnetonGfx11, ARRAY_COUNT(sMagnetonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx12[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_12.4bpp");
+static const u8 sMagnetonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_12.4bpp.lz");
 static const ax_sprite sMagnetonSprites12[] = {
 	{sMagnetonGfx12, ARRAY_COUNT(sMagnetonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx13[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_13.4bpp");
+static const u8 sMagnetonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_13.4bpp.lz");
 static const ax_sprite sMagnetonSprites13[] = {
 	{sMagnetonGfx13, ARRAY_COUNT(sMagnetonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx14[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_14.4bpp");
+static const u8 sMagnetonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_14.4bpp.lz");
 static const ax_sprite sMagnetonSprites14[] = {
 	{sMagnetonGfx14, ARRAY_COUNT(sMagnetonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx15[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_15.4bpp");
+static const u8 sMagnetonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_15.4bpp.lz");
 static const ax_sprite sMagnetonSprites15[] = {
 	{sMagnetonGfx15, ARRAY_COUNT(sMagnetonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx16[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_16.4bpp");
-static const u8 sMagnetonGfx16_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_16_1.4bpp");
-static const u8 sMagnetonGfx16_2[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_16_2.4bpp");
+static const u8 sMagnetonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_16.4bpp.lz");
+static const u8 sMagnetonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_16_1.4bpp.lz");
+static const u8 sMagnetonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_16_2.4bpp.lz");
 static const ax_sprite sMagnetonSprites16[] = {
 	{NULL, 32}, 
 	{sMagnetonGfx16, ARRAY_COUNT(sMagnetonGfx16)}, 
@@ -2075,8 +2075,8 @@ static const ax_sprite sMagnetonSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx17[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_17.4bpp");
-static const u8 sMagnetonGfx17_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_17_1.4bpp");
+static const u8 sMagnetonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_17.4bpp.lz");
+static const u8 sMagnetonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_17_1.4bpp.lz");
 static const ax_sprite sMagnetonSprites17[] = {
 	{NULL, 32}, 
 	{sMagnetonGfx17, ARRAY_COUNT(sMagnetonGfx17)}, 
@@ -2085,9 +2085,9 @@ static const ax_sprite sMagnetonSprites17[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx18[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_18.4bpp");
-static const u8 sMagnetonGfx18_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_18_1.4bpp");
-static const u8 sMagnetonGfx18_2[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_18_2.4bpp");
+static const u8 sMagnetonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_18.4bpp.lz");
+static const u8 sMagnetonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_18_1.4bpp.lz");
+static const u8 sMagnetonGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_18_2.4bpp.lz");
 static const ax_sprite sMagnetonSprites18[] = {
 	{sMagnetonGfx18, ARRAY_COUNT(sMagnetonGfx18)}, 
 	{NULL, 32}, 
@@ -2097,9 +2097,9 @@ static const ax_sprite sMagnetonSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx19[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_19.4bpp");
-static const u8 sMagnetonGfx19_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_19_1.4bpp");
-static const u8 sMagnetonGfx19_2[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_19_2.4bpp");
+static const u8 sMagnetonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_19.4bpp.lz");
+static const u8 sMagnetonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_19_1.4bpp.lz");
+static const u8 sMagnetonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_19_2.4bpp.lz");
 static const ax_sprite sMagnetonSprites19[] = {
 	{sMagnetonGfx19, ARRAY_COUNT(sMagnetonGfx19)}, 
 	{NULL, 32}, 
@@ -2109,10 +2109,10 @@ static const ax_sprite sMagnetonSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx20[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_20.4bpp");
-static const u8 sMagnetonGfx20_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_20_1.4bpp");
-static const u8 sMagnetonGfx20_2[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_20_2.4bpp");
-static const u8 sMagnetonGfx20_3[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_20_3.4bpp");
+static const u8 sMagnetonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_20.4bpp.lz");
+static const u8 sMagnetonGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_20_1.4bpp.lz");
+static const u8 sMagnetonGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_20_2.4bpp.lz");
+static const u8 sMagnetonGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_20_3.4bpp.lz");
 static const ax_sprite sMagnetonSprites20[] = {
 	{sMagnetonGfx20, ARRAY_COUNT(sMagnetonGfx20)}, 
 	{NULL, 64}, 
@@ -2124,10 +2124,10 @@ static const ax_sprite sMagnetonSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx21[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_21.4bpp");
-static const u8 sMagnetonGfx21_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_21_1.4bpp");
-static const u8 sMagnetonGfx21_2[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_21_2.4bpp");
-static const u8 sMagnetonGfx21_3[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_21_3.4bpp");
+static const u8 sMagnetonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_21.4bpp.lz");
+static const u8 sMagnetonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_21_1.4bpp.lz");
+static const u8 sMagnetonGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_21_2.4bpp.lz");
+static const u8 sMagnetonGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_21_3.4bpp.lz");
 static const ax_sprite sMagnetonSprites21[] = {
 	{sMagnetonGfx21, ARRAY_COUNT(sMagnetonGfx21)}, 
 	{NULL, 64}, 
@@ -2139,9 +2139,9 @@ static const ax_sprite sMagnetonSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx22[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_22.4bpp");
-static const u8 sMagnetonGfx22_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_22_1.4bpp");
-static const u8 sMagnetonGfx22_2[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_22_2.4bpp");
+static const u8 sMagnetonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_22.4bpp.lz");
+static const u8 sMagnetonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_22_1.4bpp.lz");
+static const u8 sMagnetonGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_22_2.4bpp.lz");
 static const ax_sprite sMagnetonSprites22[] = {
 	{sMagnetonGfx22, ARRAY_COUNT(sMagnetonGfx22)}, 
 	{NULL, 32}, 
@@ -2151,9 +2151,9 @@ static const ax_sprite sMagnetonSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx23[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_23.4bpp");
-static const u8 sMagnetonGfx23_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_23_1.4bpp");
-static const u8 sMagnetonGfx23_2[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_23_2.4bpp");
+static const u8 sMagnetonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_23.4bpp.lz");
+static const u8 sMagnetonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_23_1.4bpp.lz");
+static const u8 sMagnetonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_23_2.4bpp.lz");
 static const ax_sprite sMagnetonSprites23[] = {
 	{NULL, 32}, 
 	{sMagnetonGfx23, ARRAY_COUNT(sMagnetonGfx23)}, 
@@ -2164,8 +2164,8 @@ static const ax_sprite sMagnetonSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx24[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_24.4bpp");
-static const u8 sMagnetonGfx24_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_24_1.4bpp");
+static const u8 sMagnetonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_24.4bpp.lz");
+static const u8 sMagnetonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_24_1.4bpp.lz");
 static const ax_sprite sMagnetonSprites24[] = {
 	{NULL, 32}, 
 	{sMagnetonGfx24, ARRAY_COUNT(sMagnetonGfx24)}, 
@@ -2174,8 +2174,8 @@ static const ax_sprite sMagnetonSprites24[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx25[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_25.4bpp");
-static const u8 sMagnetonGfx25_1[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_25_1.4bpp");
+static const u8 sMagnetonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_25.4bpp.lz");
+static const u8 sMagnetonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_25_1.4bpp.lz");
 static const ax_sprite sMagnetonSprites25[] = {
 	{NULL, 32}, 
 	{sMagnetonGfx25, ARRAY_COUNT(sMagnetonGfx25)}, 
@@ -2184,37 +2184,37 @@ static const ax_sprite sMagnetonSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx26[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_26.4bpp");
+static const u8 sMagnetonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_26.4bpp.lz");
 static const ax_sprite sMagnetonSprites26[] = {
 	{sMagnetonGfx26, ARRAY_COUNT(sMagnetonGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx27[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_27.4bpp");
+static const u8 sMagnetonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_27.4bpp.lz");
 static const ax_sprite sMagnetonSprites27[] = {
 	{sMagnetonGfx27, ARRAY_COUNT(sMagnetonGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx28[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_28.4bpp");
+static const u8 sMagnetonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_28.4bpp.lz");
 static const ax_sprite sMagnetonSprites28[] = {
 	{sMagnetonGfx28, ARRAY_COUNT(sMagnetonGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx29[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_29.4bpp");
+static const u8 sMagnetonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_29.4bpp.lz");
 static const ax_sprite sMagnetonSprites29[] = {
 	{sMagnetonGfx29, ARRAY_COUNT(sMagnetonGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx30[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_30.4bpp");
+static const u8 sMagnetonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_30.4bpp.lz");
 static const ax_sprite sMagnetonSprites30[] = {
 	{sMagnetonGfx30, ARRAY_COUNT(sMagnetonGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx31[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_31.4bpp");
+static const u8 sMagnetonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_31.4bpp.lz");
 static const ax_sprite sMagnetonSprites31[] = {
 	{sMagnetonGfx31, ARRAY_COUNT(sMagnetonGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMagnetonGfx32[] = INCBIN_U8("graphics/ax/mon/magneton/sprite_32.4bpp");
+static const u8 sMagnetonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magneton/sprite_32.4bpp.lz");
 static const ax_sprite sMagnetonSprites32[] = {
 	{sMagnetonGfx32, ARRAY_COUNT(sMagnetonGfx32)}, 
 	{NULL, 0}

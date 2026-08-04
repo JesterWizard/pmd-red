@@ -2199,84 +2199,84 @@ static const ax_anim sNuzleafAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sNuzleafGfx1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_1.4bpp");
+static const u8 sNuzleafGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_1.4bpp.lz");
 static const ax_sprite sNuzleafSprites1[] = {
 	{sNuzleafGfx1, ARRAY_COUNT(sNuzleafGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_2.4bpp");
+static const u8 sNuzleafGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites2[] = {
 	{sNuzleafGfx2, ARRAY_COUNT(sNuzleafGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_3.4bpp");
+static const u8 sNuzleafGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites3[] = {
 	{sNuzleafGfx3, ARRAY_COUNT(sNuzleafGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx4[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_4.4bpp");
+static const u8 sNuzleafGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_4.4bpp.lz");
 static const ax_sprite sNuzleafSprites4[] = {
 	{sNuzleafGfx4, ARRAY_COUNT(sNuzleafGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx5[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_5.4bpp");
+static const u8 sNuzleafGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_5.4bpp.lz");
 static const ax_sprite sNuzleafSprites5[] = {
 	{sNuzleafGfx5, ARRAY_COUNT(sNuzleafGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx6[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_6.4bpp");
+static const u8 sNuzleafGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_6.4bpp.lz");
 static const ax_sprite sNuzleafSprites6[] = {
 	{sNuzleafGfx6, ARRAY_COUNT(sNuzleafGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx7[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_7.4bpp");
+static const u8 sNuzleafGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_7.4bpp.lz");
 static const ax_sprite sNuzleafSprites7[] = {
 	{sNuzleafGfx7, ARRAY_COUNT(sNuzleafGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx8[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_8.4bpp");
+static const u8 sNuzleafGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_8.4bpp.lz");
 static const ax_sprite sNuzleafSprites8[] = {
 	{sNuzleafGfx8, ARRAY_COUNT(sNuzleafGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx9[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_9.4bpp");
+static const u8 sNuzleafGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_9.4bpp.lz");
 static const ax_sprite sNuzleafSprites9[] = {
 	{sNuzleafGfx9, ARRAY_COUNT(sNuzleafGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx10[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_10.4bpp");
+static const u8 sNuzleafGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_10.4bpp.lz");
 static const ax_sprite sNuzleafSprites10[] = {
 	{sNuzleafGfx10, ARRAY_COUNT(sNuzleafGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx11[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_11.4bpp");
+static const u8 sNuzleafGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_11.4bpp.lz");
 static const ax_sprite sNuzleafSprites11[] = {
 	{sNuzleafGfx11, ARRAY_COUNT(sNuzleafGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx12[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_12.4bpp");
+static const u8 sNuzleafGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_12.4bpp.lz");
 static const ax_sprite sNuzleafSprites12[] = {
 	{sNuzleafGfx12, ARRAY_COUNT(sNuzleafGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx13[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_13.4bpp");
+static const u8 sNuzleafGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_13.4bpp.lz");
 static const ax_sprite sNuzleafSprites13[] = {
 	{sNuzleafGfx13, ARRAY_COUNT(sNuzleafGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx14[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_14.4bpp");
+static const u8 sNuzleafGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_14.4bpp.lz");
 static const ax_sprite sNuzleafSprites14[] = {
 	{sNuzleafGfx14, ARRAY_COUNT(sNuzleafGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx15[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_15.4bpp");
+static const u8 sNuzleafGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_15.4bpp.lz");
 static const ax_sprite sNuzleafSprites15[] = {
 	{sNuzleafGfx15, ARRAY_COUNT(sNuzleafGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx16[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_16.4bpp");
-static const u8 sNuzleafGfx16_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_16_1.4bpp");
-static const u8 sNuzleafGfx16_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_16_2.4bpp");
+static const u8 sNuzleafGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_16.4bpp.lz");
+static const u8 sNuzleafGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_16_1.4bpp.lz");
+static const u8 sNuzleafGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_16_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites16[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx16, ARRAY_COUNT(sNuzleafGfx16)}, 
@@ -2286,10 +2286,10 @@ static const ax_sprite sNuzleafSprites16[] = {
 	{sNuzleafGfx16_2, ARRAY_COUNT(sNuzleafGfx16_2)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx17[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_17.4bpp");
-static const u8 sNuzleafGfx17_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_17_1.4bpp");
-static const u8 sNuzleafGfx17_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_17_2.4bpp");
-static const u8 sNuzleafGfx17_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_17_3.4bpp");
+static const u8 sNuzleafGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_17.4bpp.lz");
+static const u8 sNuzleafGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_17_1.4bpp.lz");
+static const u8 sNuzleafGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_17_2.4bpp.lz");
+static const u8 sNuzleafGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_17_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites17[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx17, ARRAY_COUNT(sNuzleafGfx17)}, 
@@ -2302,8 +2302,8 @@ static const ax_sprite sNuzleafSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx18[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_18.4bpp");
-static const u8 sNuzleafGfx18_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_18_1.4bpp");
+static const u8 sNuzleafGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_18.4bpp.lz");
+static const u8 sNuzleafGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_18_1.4bpp.lz");
 static const ax_sprite sNuzleafSprites18[] = {
 	{NULL, 160}, 
 	{sNuzleafGfx18, ARRAY_COUNT(sNuzleafGfx18)}, 
@@ -2311,9 +2311,9 @@ static const ax_sprite sNuzleafSprites18[] = {
 	{sNuzleafGfx18_1, ARRAY_COUNT(sNuzleafGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx19[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_19.4bpp");
-static const u8 sNuzleafGfx19_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_19_1.4bpp");
-static const u8 sNuzleafGfx19_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_19_2.4bpp");
+static const u8 sNuzleafGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_19.4bpp.lz");
+static const u8 sNuzleafGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_19_1.4bpp.lz");
+static const u8 sNuzleafGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_19_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites19[] = {
 	{NULL, 64}, 
 	{sNuzleafGfx19, ARRAY_COUNT(sNuzleafGfx19)}, 
@@ -2323,10 +2323,10 @@ static const ax_sprite sNuzleafSprites19[] = {
 	{sNuzleafGfx19_2, ARRAY_COUNT(sNuzleafGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx20[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_20.4bpp");
-static const u8 sNuzleafGfx20_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_20_1.4bpp");
-static const u8 sNuzleafGfx20_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_20_2.4bpp");
-static const u8 sNuzleafGfx20_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_20_3.4bpp");
+static const u8 sNuzleafGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_20.4bpp.lz");
+static const u8 sNuzleafGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_20_1.4bpp.lz");
+static const u8 sNuzleafGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_20_2.4bpp.lz");
+static const u8 sNuzleafGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_20_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites20[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx20, ARRAY_COUNT(sNuzleafGfx20)}, 
@@ -2338,9 +2338,9 @@ static const ax_sprite sNuzleafSprites20[] = {
 	{sNuzleafGfx20_3, ARRAY_COUNT(sNuzleafGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx21[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_21.4bpp");
-static const u8 sNuzleafGfx21_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_21_1.4bpp");
-static const u8 sNuzleafGfx21_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_21_2.4bpp");
+static const u8 sNuzleafGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_21.4bpp.lz");
+static const u8 sNuzleafGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_21_1.4bpp.lz");
+static const u8 sNuzleafGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_21_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites21[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx21, ARRAY_COUNT(sNuzleafGfx21)}, 
@@ -2350,8 +2350,8 @@ static const ax_sprite sNuzleafSprites21[] = {
 	{sNuzleafGfx21_2, ARRAY_COUNT(sNuzleafGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx22[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_22.4bpp");
-static const u8 sNuzleafGfx22_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_22_1.4bpp");
+static const u8 sNuzleafGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_22.4bpp.lz");
+static const u8 sNuzleafGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_22_1.4bpp.lz");
 static const ax_sprite sNuzleafSprites22[] = {
 	{NULL, 128}, 
 	{sNuzleafGfx22, ARRAY_COUNT(sNuzleafGfx22)}, 
@@ -2360,9 +2360,9 @@ static const ax_sprite sNuzleafSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx23[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_23.4bpp");
-static const u8 sNuzleafGfx23_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_23_1.4bpp");
-static const u8 sNuzleafGfx23_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_23_2.4bpp");
+static const u8 sNuzleafGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_23.4bpp.lz");
+static const u8 sNuzleafGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_23_1.4bpp.lz");
+static const u8 sNuzleafGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_23_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites23[] = {
 	{NULL, 64}, 
 	{sNuzleafGfx23, ARRAY_COUNT(sNuzleafGfx23)}, 
@@ -2373,10 +2373,10 @@ static const ax_sprite sNuzleafSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx24[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_24.4bpp");
-static const u8 sNuzleafGfx24_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_24_1.4bpp");
-static const u8 sNuzleafGfx24_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_24_2.4bpp");
-static const u8 sNuzleafGfx24_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_24_3.4bpp");
+static const u8 sNuzleafGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_24.4bpp.lz");
+static const u8 sNuzleafGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_24_1.4bpp.lz");
+static const u8 sNuzleafGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_24_2.4bpp.lz");
+static const u8 sNuzleafGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_24_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites24[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx24, ARRAY_COUNT(sNuzleafGfx24)}, 
@@ -2388,9 +2388,9 @@ static const ax_sprite sNuzleafSprites24[] = {
 	{sNuzleafGfx24_3, ARRAY_COUNT(sNuzleafGfx24_3)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx25[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_25.4bpp");
-static const u8 sNuzleafGfx25_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_25_1.4bpp");
-static const u8 sNuzleafGfx25_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_25_2.4bpp");
+static const u8 sNuzleafGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_25.4bpp.lz");
+static const u8 sNuzleafGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_25_1.4bpp.lz");
+static const u8 sNuzleafGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_25_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites25[] = {
 	{sNuzleafGfx25, ARRAY_COUNT(sNuzleafGfx25)}, 
 	{NULL, 32}, 
@@ -2399,9 +2399,9 @@ static const ax_sprite sNuzleafSprites25[] = {
 	{sNuzleafGfx25_2, ARRAY_COUNT(sNuzleafGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx26[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_26.4bpp");
-static const u8 sNuzleafGfx26_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_26_1.4bpp");
-static const u8 sNuzleafGfx26_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_26_2.4bpp");
+static const u8 sNuzleafGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_26.4bpp.lz");
+static const u8 sNuzleafGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_26_1.4bpp.lz");
+static const u8 sNuzleafGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_26_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites26[] = {
 	{NULL, 128}, 
 	{sNuzleafGfx26, ARRAY_COUNT(sNuzleafGfx26)}, 
@@ -2412,9 +2412,9 @@ static const ax_sprite sNuzleafSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx27[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_27.4bpp");
-static const u8 sNuzleafGfx27_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_27_1.4bpp");
-static const u8 sNuzleafGfx27_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_27_2.4bpp");
+static const u8 sNuzleafGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_27.4bpp.lz");
+static const u8 sNuzleafGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_27_1.4bpp.lz");
+static const u8 sNuzleafGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_27_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites27[] = {
 	{NULL, 128}, 
 	{sNuzleafGfx27, ARRAY_COUNT(sNuzleafGfx27)}, 
@@ -2425,10 +2425,10 @@ static const ax_sprite sNuzleafSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx28[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_28.4bpp");
-static const u8 sNuzleafGfx28_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_28_1.4bpp");
-static const u8 sNuzleafGfx28_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_28_2.4bpp");
-static const u8 sNuzleafGfx28_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_28_3.4bpp");
+static const u8 sNuzleafGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_28.4bpp.lz");
+static const u8 sNuzleafGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_28_1.4bpp.lz");
+static const u8 sNuzleafGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_28_2.4bpp.lz");
+static const u8 sNuzleafGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_28_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites28[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx28, ARRAY_COUNT(sNuzleafGfx28)}, 
@@ -2440,10 +2440,10 @@ static const ax_sprite sNuzleafSprites28[] = {
 	{sNuzleafGfx28_3, ARRAY_COUNT(sNuzleafGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx29[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_29.4bpp");
-static const u8 sNuzleafGfx29_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_29_1.4bpp");
-static const u8 sNuzleafGfx29_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_29_2.4bpp");
-static const u8 sNuzleafGfx29_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_29_3.4bpp");
+static const u8 sNuzleafGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_29.4bpp.lz");
+static const u8 sNuzleafGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_29_1.4bpp.lz");
+static const u8 sNuzleafGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_29_2.4bpp.lz");
+static const u8 sNuzleafGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_29_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites29[] = {
 	{sNuzleafGfx29, ARRAY_COUNT(sNuzleafGfx29)}, 
 	{NULL, 32}, 
@@ -2455,10 +2455,10 @@ static const ax_sprite sNuzleafSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx30[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_30.4bpp");
-static const u8 sNuzleafGfx30_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_30_1.4bpp");
-static const u8 sNuzleafGfx30_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_30_2.4bpp");
-static const u8 sNuzleafGfx30_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_30_3.4bpp");
+static const u8 sNuzleafGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_30.4bpp.lz");
+static const u8 sNuzleafGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_30_1.4bpp.lz");
+static const u8 sNuzleafGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_30_2.4bpp.lz");
+static const u8 sNuzleafGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_30_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites30[] = {
 	{sNuzleafGfx30, ARRAY_COUNT(sNuzleafGfx30)}, 
 	{NULL, 32}, 
@@ -2470,10 +2470,10 @@ static const ax_sprite sNuzleafSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx31[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_31.4bpp");
-static const u8 sNuzleafGfx31_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_31_1.4bpp");
-static const u8 sNuzleafGfx31_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_31_2.4bpp");
-static const u8 sNuzleafGfx31_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_31_3.4bpp");
+static const u8 sNuzleafGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_31.4bpp.lz");
+static const u8 sNuzleafGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_31_1.4bpp.lz");
+static const u8 sNuzleafGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_31_2.4bpp.lz");
+static const u8 sNuzleafGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_31_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites31[] = {
 	{sNuzleafGfx31, ARRAY_COUNT(sNuzleafGfx31)}, 
 	{NULL, 32}, 
@@ -2485,10 +2485,10 @@ static const ax_sprite sNuzleafSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx32[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_32.4bpp");
-static const u8 sNuzleafGfx32_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_32_1.4bpp");
-static const u8 sNuzleafGfx32_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_32_2.4bpp");
-static const u8 sNuzleafGfx32_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_32_3.4bpp");
+static const u8 sNuzleafGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_32.4bpp.lz");
+static const u8 sNuzleafGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_32_1.4bpp.lz");
+static const u8 sNuzleafGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_32_2.4bpp.lz");
+static const u8 sNuzleafGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_32_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites32[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx32, ARRAY_COUNT(sNuzleafGfx32)}, 
@@ -2501,10 +2501,10 @@ static const ax_sprite sNuzleafSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx33[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_33.4bpp");
-static const u8 sNuzleafGfx33_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_33_1.4bpp");
-static const u8 sNuzleafGfx33_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_33_2.4bpp");
-static const u8 sNuzleafGfx33_3[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_33_3.4bpp");
+static const u8 sNuzleafGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_33.4bpp.lz");
+static const u8 sNuzleafGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_33_1.4bpp.lz");
+static const u8 sNuzleafGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_33_2.4bpp.lz");
+static const u8 sNuzleafGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_33_3.4bpp.lz");
 static const ax_sprite sNuzleafSprites33[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx33, ARRAY_COUNT(sNuzleafGfx33)}, 
@@ -2517,9 +2517,9 @@ static const ax_sprite sNuzleafSprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx34[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_34.4bpp");
-static const u8 sNuzleafGfx34_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_34_1.4bpp");
-static const u8 sNuzleafGfx34_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_34_2.4bpp");
+static const u8 sNuzleafGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_34.4bpp.lz");
+static const u8 sNuzleafGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_34_1.4bpp.lz");
+static const u8 sNuzleafGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_34_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites34[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx34, ARRAY_COUNT(sNuzleafGfx34)}, 
@@ -2530,9 +2530,9 @@ static const ax_sprite sNuzleafSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx35[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_35.4bpp");
-static const u8 sNuzleafGfx35_1[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_35_1.4bpp");
-static const u8 sNuzleafGfx35_2[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_35_2.4bpp");
+static const u8 sNuzleafGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_35.4bpp.lz");
+static const u8 sNuzleafGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_35_1.4bpp.lz");
+static const u8 sNuzleafGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_35_2.4bpp.lz");
 static const ax_sprite sNuzleafSprites35[] = {
 	{NULL, 32}, 
 	{sNuzleafGfx35, ARRAY_COUNT(sNuzleafGfx35)}, 
@@ -2543,37 +2543,37 @@ static const ax_sprite sNuzleafSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx36[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_36.4bpp");
+static const u8 sNuzleafGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_36.4bpp.lz");
 static const ax_sprite sNuzleafSprites36[] = {
 	{sNuzleafGfx36, ARRAY_COUNT(sNuzleafGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx37[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_37.4bpp");
+static const u8 sNuzleafGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_37.4bpp.lz");
 static const ax_sprite sNuzleafSprites37[] = {
 	{sNuzleafGfx37, ARRAY_COUNT(sNuzleafGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx38[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_38.4bpp");
+static const u8 sNuzleafGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_38.4bpp.lz");
 static const ax_sprite sNuzleafSprites38[] = {
 	{sNuzleafGfx38, ARRAY_COUNT(sNuzleafGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx39[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_39.4bpp");
+static const u8 sNuzleafGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_39.4bpp.lz");
 static const ax_sprite sNuzleafSprites39[] = {
 	{sNuzleafGfx39, ARRAY_COUNT(sNuzleafGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx40[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_40.4bpp");
+static const u8 sNuzleafGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_40.4bpp.lz");
 static const ax_sprite sNuzleafSprites40[] = {
 	{sNuzleafGfx40, ARRAY_COUNT(sNuzleafGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx41[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_41.4bpp");
+static const u8 sNuzleafGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_41.4bpp.lz");
 static const ax_sprite sNuzleafSprites41[] = {
 	{sNuzleafGfx41, ARRAY_COUNT(sNuzleafGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sNuzleafGfx42[] = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_42.4bpp");
+static const u8 sNuzleafGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nuzleaf/sprite_42.4bpp.lz");
 static const ax_sprite sNuzleafSprites42[] = {
 	{sNuzleafGfx42, ARRAY_COUNT(sNuzleafGfx42)}, 
 	{NULL, 0}

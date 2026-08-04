@@ -2159,104 +2159,104 @@ static const ax_anim sSudowoodoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSudowoodoGfx1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_1.4bpp");
+static const u8 sSudowoodoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_1.4bpp.lz");
 static const ax_sprite sSudowoodoSprites1[] = {
 	{sSudowoodoGfx1, ARRAY_COUNT(sSudowoodoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_2.4bpp");
+static const u8 sSudowoodoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites2[] = {
 	{sSudowoodoGfx2, ARRAY_COUNT(sSudowoodoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_3.4bpp");
+static const u8 sSudowoodoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites3[] = {
 	{sSudowoodoGfx3, ARRAY_COUNT(sSudowoodoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx4[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_4.4bpp");
+static const u8 sSudowoodoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_4.4bpp.lz");
 static const ax_sprite sSudowoodoSprites4[] = {
 	{sSudowoodoGfx4, ARRAY_COUNT(sSudowoodoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx5[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_5.4bpp");
+static const u8 sSudowoodoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_5.4bpp.lz");
 static const ax_sprite sSudowoodoSprites5[] = {
 	{sSudowoodoGfx5, ARRAY_COUNT(sSudowoodoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx6[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_6.4bpp");
+static const u8 sSudowoodoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_6.4bpp.lz");
 static const ax_sprite sSudowoodoSprites6[] = {
 	{sSudowoodoGfx6, ARRAY_COUNT(sSudowoodoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx7[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_7.4bpp");
+static const u8 sSudowoodoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_7.4bpp.lz");
 static const ax_sprite sSudowoodoSprites7[] = {
 	{sSudowoodoGfx7, ARRAY_COUNT(sSudowoodoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx8[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_8.4bpp");
+static const u8 sSudowoodoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_8.4bpp.lz");
 static const ax_sprite sSudowoodoSprites8[] = {
 	{sSudowoodoGfx8, ARRAY_COUNT(sSudowoodoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx9[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_9.4bpp");
+static const u8 sSudowoodoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_9.4bpp.lz");
 static const ax_sprite sSudowoodoSprites9[] = {
 	{sSudowoodoGfx9, ARRAY_COUNT(sSudowoodoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx10[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_10.4bpp");
+static const u8 sSudowoodoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_10.4bpp.lz");
 static const ax_sprite sSudowoodoSprites10[] = {
 	{sSudowoodoGfx10, ARRAY_COUNT(sSudowoodoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx11[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_11.4bpp");
+static const u8 sSudowoodoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_11.4bpp.lz");
 static const ax_sprite sSudowoodoSprites11[] = {
 	{sSudowoodoGfx11, ARRAY_COUNT(sSudowoodoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx12[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_12.4bpp");
+static const u8 sSudowoodoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_12.4bpp.lz");
 static const ax_sprite sSudowoodoSprites12[] = {
 	{sSudowoodoGfx12, ARRAY_COUNT(sSudowoodoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx13[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_13.4bpp");
+static const u8 sSudowoodoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_13.4bpp.lz");
 static const ax_sprite sSudowoodoSprites13[] = {
 	{sSudowoodoGfx13, ARRAY_COUNT(sSudowoodoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx14[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_14.4bpp");
+static const u8 sSudowoodoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_14.4bpp.lz");
 static const ax_sprite sSudowoodoSprites14[] = {
 	{sSudowoodoGfx14, ARRAY_COUNT(sSudowoodoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx15[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_15.4bpp");
+static const u8 sSudowoodoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_15.4bpp.lz");
 static const ax_sprite sSudowoodoSprites15[] = {
 	{sSudowoodoGfx15, ARRAY_COUNT(sSudowoodoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx16[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_16.4bpp");
+static const u8 sSudowoodoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_16.4bpp.lz");
 static const ax_sprite sSudowoodoSprites16[] = {
 	{sSudowoodoGfx16, ARRAY_COUNT(sSudowoodoGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx17[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_17.4bpp");
+static const u8 sSudowoodoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_17.4bpp.lz");
 static const ax_sprite sSudowoodoSprites17[] = {
 	{sSudowoodoGfx17, ARRAY_COUNT(sSudowoodoGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx18[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_18.4bpp");
+static const u8 sSudowoodoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_18.4bpp.lz");
 static const ax_sprite sSudowoodoSprites18[] = {
 	{sSudowoodoGfx18, ARRAY_COUNT(sSudowoodoGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx19[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_19.4bpp");
+static const u8 sSudowoodoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_19.4bpp.lz");
 static const ax_sprite sSudowoodoSprites19[] = {
 	{sSudowoodoGfx19, ARRAY_COUNT(sSudowoodoGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx20[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_20.4bpp");
-static const u8 sSudowoodoGfx20_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_20_1.4bpp");
-static const u8 sSudowoodoGfx20_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_20_2.4bpp");
+static const u8 sSudowoodoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_20.4bpp.lz");
+static const u8 sSudowoodoGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_20_1.4bpp.lz");
+static const u8 sSudowoodoGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_20_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites20[] = {
 	{sSudowoodoGfx20, ARRAY_COUNT(sSudowoodoGfx20)}, 
 	{NULL, 32}, 
@@ -2266,10 +2266,10 @@ static const ax_sprite sSudowoodoSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx21[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_21.4bpp");
-static const u8 sSudowoodoGfx21_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_21_1.4bpp");
-static const u8 sSudowoodoGfx21_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_21_2.4bpp");
-static const u8 sSudowoodoGfx21_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_21_3.4bpp");
+static const u8 sSudowoodoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_21.4bpp.lz");
+static const u8 sSudowoodoGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_21_1.4bpp.lz");
+static const u8 sSudowoodoGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_21_2.4bpp.lz");
+static const u8 sSudowoodoGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_21_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites21[] = {
 	{sSudowoodoGfx21, ARRAY_COUNT(sSudowoodoGfx21)}, 
 	{NULL, 32}, 
@@ -2281,10 +2281,10 @@ static const ax_sprite sSudowoodoSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx22[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_22.4bpp");
-static const u8 sSudowoodoGfx22_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_22_1.4bpp");
-static const u8 sSudowoodoGfx22_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_22_2.4bpp");
-static const u8 sSudowoodoGfx22_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_22_3.4bpp");
+static const u8 sSudowoodoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_22.4bpp.lz");
+static const u8 sSudowoodoGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_22_1.4bpp.lz");
+static const u8 sSudowoodoGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_22_2.4bpp.lz");
+static const u8 sSudowoodoGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_22_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites22[] = {
 	{sSudowoodoGfx22, ARRAY_COUNT(sSudowoodoGfx22)}, 
 	{NULL, 64}, 
@@ -2296,10 +2296,10 @@ static const ax_sprite sSudowoodoSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx23[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_23.4bpp");
-static const u8 sSudowoodoGfx23_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_23_1.4bpp");
-static const u8 sSudowoodoGfx23_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_23_2.4bpp");
-static const u8 sSudowoodoGfx23_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_23_3.4bpp");
+static const u8 sSudowoodoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_23.4bpp.lz");
+static const u8 sSudowoodoGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_23_1.4bpp.lz");
+static const u8 sSudowoodoGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_23_2.4bpp.lz");
+static const u8 sSudowoodoGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_23_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites23[] = {
 	{sSudowoodoGfx23, ARRAY_COUNT(sSudowoodoGfx23)}, 
 	{NULL, 64}, 
@@ -2311,9 +2311,9 @@ static const ax_sprite sSudowoodoSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx24[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_24.4bpp");
-static const u8 sSudowoodoGfx24_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_24_1.4bpp");
-static const u8 sSudowoodoGfx24_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_24_2.4bpp");
+static const u8 sSudowoodoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_24.4bpp.lz");
+static const u8 sSudowoodoGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_24_1.4bpp.lz");
+static const u8 sSudowoodoGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_24_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites24[] = {
 	{sSudowoodoGfx24, ARRAY_COUNT(sSudowoodoGfx24)}, 
 	{NULL, 32}, 
@@ -2323,10 +2323,10 @@ static const ax_sprite sSudowoodoSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx25[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_25.4bpp");
-static const u8 sSudowoodoGfx25_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_25_1.4bpp");
-static const u8 sSudowoodoGfx25_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_25_2.4bpp");
-static const u8 sSudowoodoGfx25_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_25_3.4bpp");
+static const u8 sSudowoodoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_25.4bpp.lz");
+static const u8 sSudowoodoGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_25_1.4bpp.lz");
+static const u8 sSudowoodoGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_25_2.4bpp.lz");
+static const u8 sSudowoodoGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_25_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites25[] = {
 	{NULL, 64}, 
 	{sSudowoodoGfx25, ARRAY_COUNT(sSudowoodoGfx25)}, 
@@ -2339,10 +2339,10 @@ static const ax_sprite sSudowoodoSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx26[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_26.4bpp");
-static const u8 sSudowoodoGfx26_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_26_1.4bpp");
-static const u8 sSudowoodoGfx26_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_26_2.4bpp");
-static const u8 sSudowoodoGfx26_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_26_3.4bpp");
+static const u8 sSudowoodoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_26.4bpp.lz");
+static const u8 sSudowoodoGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_26_1.4bpp.lz");
+static const u8 sSudowoodoGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_26_2.4bpp.lz");
+static const u8 sSudowoodoGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_26_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites26[] = {
 	{NULL, 32}, 
 	{sSudowoodoGfx26, ARRAY_COUNT(sSudowoodoGfx26)}, 
@@ -2355,10 +2355,10 @@ static const ax_sprite sSudowoodoSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx27[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_27.4bpp");
-static const u8 sSudowoodoGfx27_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_27_1.4bpp");
-static const u8 sSudowoodoGfx27_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_27_2.4bpp");
-static const u8 sSudowoodoGfx27_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_27_3.4bpp");
+static const u8 sSudowoodoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_27.4bpp.lz");
+static const u8 sSudowoodoGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_27_1.4bpp.lz");
+static const u8 sSudowoodoGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_27_2.4bpp.lz");
+static const u8 sSudowoodoGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_27_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites27[] = {
 	{NULL, 32}, 
 	{sSudowoodoGfx27, ARRAY_COUNT(sSudowoodoGfx27)}, 
@@ -2371,17 +2371,17 @@ static const ax_sprite sSudowoodoSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx28[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_28.4bpp");
-static const u8 sSudowoodoGfx28_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_28_1.4bpp");
+static const u8 sSudowoodoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_28.4bpp.lz");
+static const u8 sSudowoodoGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_28_1.4bpp.lz");
 static const ax_sprite sSudowoodoSprites28[] = {
 	{sSudowoodoGfx28, ARRAY_COUNT(sSudowoodoGfx28)}, 
 	{NULL, 64}, 
 	{sSudowoodoGfx28_1, ARRAY_COUNT(sSudowoodoGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx29[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_29.4bpp");
-static const u8 sSudowoodoGfx29_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_29_1.4bpp");
-static const u8 sSudowoodoGfx29_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_29_2.4bpp");
+static const u8 sSudowoodoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_29.4bpp.lz");
+static const u8 sSudowoodoGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_29_1.4bpp.lz");
+static const u8 sSudowoodoGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_29_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites29[] = {
 	{NULL, 160}, 
 	{sSudowoodoGfx29, ARRAY_COUNT(sSudowoodoGfx29)}, 
@@ -2391,9 +2391,9 @@ static const ax_sprite sSudowoodoSprites29[] = {
 	{sSudowoodoGfx29_2, ARRAY_COUNT(sSudowoodoGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx30[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_30.4bpp");
-static const u8 sSudowoodoGfx30_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_30_1.4bpp");
-static const u8 sSudowoodoGfx30_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_30_2.4bpp");
+static const u8 sSudowoodoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_30.4bpp.lz");
+static const u8 sSudowoodoGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_30_1.4bpp.lz");
+static const u8 sSudowoodoGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_30_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites30[] = {
 	{sSudowoodoGfx30, ARRAY_COUNT(sSudowoodoGfx30)}, 
 	{NULL, 32}, 
@@ -2403,9 +2403,9 @@ static const ax_sprite sSudowoodoSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx31[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_31.4bpp");
-static const u8 sSudowoodoGfx31_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_31_1.4bpp");
-static const u8 sSudowoodoGfx31_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_31_2.4bpp");
+static const u8 sSudowoodoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_31.4bpp.lz");
+static const u8 sSudowoodoGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_31_1.4bpp.lz");
+static const u8 sSudowoodoGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_31_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites31[] = {
 	{NULL, 160}, 
 	{sSudowoodoGfx31, ARRAY_COUNT(sSudowoodoGfx31)}, 
@@ -2415,10 +2415,10 @@ static const ax_sprite sSudowoodoSprites31[] = {
 	{sSudowoodoGfx31_2, ARRAY_COUNT(sSudowoodoGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx32[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_32.4bpp");
-static const u8 sSudowoodoGfx32_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_32_1.4bpp");
-static const u8 sSudowoodoGfx32_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_32_2.4bpp");
-static const u8 sSudowoodoGfx32_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_32_3.4bpp");
+static const u8 sSudowoodoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_32.4bpp.lz");
+static const u8 sSudowoodoGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_32_1.4bpp.lz");
+static const u8 sSudowoodoGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_32_2.4bpp.lz");
+static const u8 sSudowoodoGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_32_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites32[] = {
 	{sSudowoodoGfx32, ARRAY_COUNT(sSudowoodoGfx32)}, 
 	{NULL, 32}, 
@@ -2430,13 +2430,13 @@ static const ax_sprite sSudowoodoSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx33[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_33.4bpp");
+static const u8 sSudowoodoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_33.4bpp.lz");
 static const ax_sprite sSudowoodoSprites33[] = {
 	{sSudowoodoGfx33, ARRAY_COUNT(sSudowoodoGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx34[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_34.4bpp");
-static const u8 sSudowoodoGfx34_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_34_1.4bpp");
+static const u8 sSudowoodoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_34.4bpp.lz");
+static const u8 sSudowoodoGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_34_1.4bpp.lz");
 static const ax_sprite sSudowoodoSprites34[] = {
 	{sSudowoodoGfx34, ARRAY_COUNT(sSudowoodoGfx34)}, 
 	{NULL, 32}, 
@@ -2444,9 +2444,9 @@ static const ax_sprite sSudowoodoSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx35[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_35.4bpp");
-static const u8 sSudowoodoGfx35_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_35_1.4bpp");
-static const u8 sSudowoodoGfx35_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_35_2.4bpp");
+static const u8 sSudowoodoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_35.4bpp.lz");
+static const u8 sSudowoodoGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_35_1.4bpp.lz");
+static const u8 sSudowoodoGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_35_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites35[] = {
 	{NULL, 160}, 
 	{sSudowoodoGfx35, ARRAY_COUNT(sSudowoodoGfx35)}, 
@@ -2457,8 +2457,8 @@ static const ax_sprite sSudowoodoSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx36[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_36.4bpp");
-static const u8 sSudowoodoGfx36_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_36_1.4bpp");
+static const u8 sSudowoodoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_36.4bpp.lz");
+static const u8 sSudowoodoGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_36_1.4bpp.lz");
 static const ax_sprite sSudowoodoSprites36[] = {
 	{NULL, 160}, 
 	{sSudowoodoGfx36, ARRAY_COUNT(sSudowoodoGfx36)}, 
@@ -2467,8 +2467,8 @@ static const ax_sprite sSudowoodoSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx37[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_37.4bpp");
-static const u8 sSudowoodoGfx37_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_37_1.4bpp");
+static const u8 sSudowoodoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_37.4bpp.lz");
+static const u8 sSudowoodoGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_37_1.4bpp.lz");
 static const ax_sprite sSudowoodoSprites37[] = {
 	{sSudowoodoGfx37, ARRAY_COUNT(sSudowoodoGfx37)}, 
 	{NULL, 64}, 
@@ -2476,9 +2476,9 @@ static const ax_sprite sSudowoodoSprites37[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx38[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_38.4bpp");
-static const u8 sSudowoodoGfx38_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_38_1.4bpp");
-static const u8 sSudowoodoGfx38_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_38_2.4bpp");
+static const u8 sSudowoodoGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_38.4bpp.lz");
+static const u8 sSudowoodoGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_38_1.4bpp.lz");
+static const u8 sSudowoodoGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_38_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites38[] = {
 	{NULL, 128}, 
 	{sSudowoodoGfx38, ARRAY_COUNT(sSudowoodoGfx38)}, 
@@ -2489,17 +2489,17 @@ static const ax_sprite sSudowoodoSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx39[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_39.4bpp");
-static const u8 sSudowoodoGfx39_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_39_1.4bpp");
+static const u8 sSudowoodoGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_39.4bpp.lz");
+static const u8 sSudowoodoGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_39_1.4bpp.lz");
 static const ax_sprite sSudowoodoSprites39[] = {
 	{sSudowoodoGfx39, ARRAY_COUNT(sSudowoodoGfx39)}, 
 	{NULL, 32}, 
 	{sSudowoodoGfx39_1, ARRAY_COUNT(sSudowoodoGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx40[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_40.4bpp");
-static const u8 sSudowoodoGfx40_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_40_1.4bpp");
-static const u8 sSudowoodoGfx40_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_40_2.4bpp");
+static const u8 sSudowoodoGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_40.4bpp.lz");
+static const u8 sSudowoodoGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_40_1.4bpp.lz");
+static const u8 sSudowoodoGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_40_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites40[] = {
 	{NULL, 160}, 
 	{sSudowoodoGfx40, ARRAY_COUNT(sSudowoodoGfx40)}, 
@@ -2510,10 +2510,10 @@ static const ax_sprite sSudowoodoSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx41[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_41.4bpp");
-static const u8 sSudowoodoGfx41_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_41_1.4bpp");
-static const u8 sSudowoodoGfx41_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_41_2.4bpp");
-static const u8 sSudowoodoGfx41_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_41_3.4bpp");
+static const u8 sSudowoodoGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_41.4bpp.lz");
+static const u8 sSudowoodoGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_41_1.4bpp.lz");
+static const u8 sSudowoodoGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_41_2.4bpp.lz");
+static const u8 sSudowoodoGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_41_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites41[] = {
 	{sSudowoodoGfx41, ARRAY_COUNT(sSudowoodoGfx41)}, 
 	{NULL, 64}, 
@@ -2525,15 +2525,15 @@ static const ax_sprite sSudowoodoSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx42[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_42.4bpp");
+static const u8 sSudowoodoGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_42.4bpp.lz");
 static const ax_sprite sSudowoodoSprites42[] = {
 	{sSudowoodoGfx42, ARRAY_COUNT(sSudowoodoGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx43[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_43.4bpp");
-static const u8 sSudowoodoGfx43_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_43_1.4bpp");
-static const u8 sSudowoodoGfx43_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_43_2.4bpp");
-static const u8 sSudowoodoGfx43_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_43_3.4bpp");
+static const u8 sSudowoodoGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_43.4bpp.lz");
+static const u8 sSudowoodoGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_43_1.4bpp.lz");
+static const u8 sSudowoodoGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_43_2.4bpp.lz");
+static const u8 sSudowoodoGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_43_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites43[] = {
 	{sSudowoodoGfx43, ARRAY_COUNT(sSudowoodoGfx43)}, 
 	{NULL, 64}, 
@@ -2545,9 +2545,9 @@ static const ax_sprite sSudowoodoSprites43[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx44[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_44.4bpp");
-static const u8 sSudowoodoGfx44_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_44_1.4bpp");
-static const u8 sSudowoodoGfx44_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_44_2.4bpp");
+static const u8 sSudowoodoGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_44.4bpp.lz");
+static const u8 sSudowoodoGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_44_1.4bpp.lz");
+static const u8 sSudowoodoGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_44_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites44[] = {
 	{NULL, 32}, 
 	{sSudowoodoGfx44, ARRAY_COUNT(sSudowoodoGfx44)}, 
@@ -2558,10 +2558,10 @@ static const ax_sprite sSudowoodoSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx45[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_45.4bpp");
-static const u8 sSudowoodoGfx45_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_45_1.4bpp");
-static const u8 sSudowoodoGfx45_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_45_2.4bpp");
-static const u8 sSudowoodoGfx45_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_45_3.4bpp");
+static const u8 sSudowoodoGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_45.4bpp.lz");
+static const u8 sSudowoodoGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_45_1.4bpp.lz");
+static const u8 sSudowoodoGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_45_2.4bpp.lz");
+static const u8 sSudowoodoGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_45_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites45[] = {
 	{sSudowoodoGfx45, ARRAY_COUNT(sSudowoodoGfx45)}, 
 	{NULL, 32}, 
@@ -2573,9 +2573,9 @@ static const ax_sprite sSudowoodoSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx46[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_46.4bpp");
-static const u8 sSudowoodoGfx46_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_46_1.4bpp");
-static const u8 sSudowoodoGfx46_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_46_2.4bpp");
+static const u8 sSudowoodoGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_46.4bpp.lz");
+static const u8 sSudowoodoGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_46_1.4bpp.lz");
+static const u8 sSudowoodoGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_46_2.4bpp.lz");
 static const ax_sprite sSudowoodoSprites46[] = {
 	{NULL, 32}, 
 	{sSudowoodoGfx46, ARRAY_COUNT(sSudowoodoGfx46)}, 
@@ -2586,10 +2586,10 @@ static const ax_sprite sSudowoodoSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx47[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_47.4bpp");
-static const u8 sSudowoodoGfx47_1[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_47_1.4bpp");
-static const u8 sSudowoodoGfx47_2[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_47_2.4bpp");
-static const u8 sSudowoodoGfx47_3[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_47_3.4bpp");
+static const u8 sSudowoodoGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_47.4bpp.lz");
+static const u8 sSudowoodoGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_47_1.4bpp.lz");
+static const u8 sSudowoodoGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_47_2.4bpp.lz");
+static const u8 sSudowoodoGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_47_3.4bpp.lz");
 static const ax_sprite sSudowoodoSprites47[] = {
 	{sSudowoodoGfx47, ARRAY_COUNT(sSudowoodoGfx47)}, 
 	{NULL, 32}, 
@@ -2601,42 +2601,42 @@ static const ax_sprite sSudowoodoSprites47[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx48[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_48.4bpp");
+static const u8 sSudowoodoGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_48.4bpp.lz");
 static const ax_sprite sSudowoodoSprites48[] = {
 	{sSudowoodoGfx48, ARRAY_COUNT(sSudowoodoGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx49[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_49.4bpp");
+static const u8 sSudowoodoGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_49.4bpp.lz");
 static const ax_sprite sSudowoodoSprites49[] = {
 	{sSudowoodoGfx49, ARRAY_COUNT(sSudowoodoGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx50[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_50.4bpp");
+static const u8 sSudowoodoGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_50.4bpp.lz");
 static const ax_sprite sSudowoodoSprites50[] = {
 	{sSudowoodoGfx50, ARRAY_COUNT(sSudowoodoGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx51[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_51.4bpp");
+static const u8 sSudowoodoGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_51.4bpp.lz");
 static const ax_sprite sSudowoodoSprites51[] = {
 	{sSudowoodoGfx51, ARRAY_COUNT(sSudowoodoGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx52[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_52.4bpp");
+static const u8 sSudowoodoGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_52.4bpp.lz");
 static const ax_sprite sSudowoodoSprites52[] = {
 	{sSudowoodoGfx52, ARRAY_COUNT(sSudowoodoGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx53[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_53.4bpp");
+static const u8 sSudowoodoGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_53.4bpp.lz");
 static const ax_sprite sSudowoodoSprites53[] = {
 	{sSudowoodoGfx53, ARRAY_COUNT(sSudowoodoGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx54[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_54.4bpp");
+static const u8 sSudowoodoGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_54.4bpp.lz");
 static const ax_sprite sSudowoodoSprites54[] = {
 	{sSudowoodoGfx54, ARRAY_COUNT(sSudowoodoGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSudowoodoGfx55[] = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_55.4bpp");
+static const u8 sSudowoodoGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sudowoodo/sprite_55.4bpp.lz");
 static const ax_sprite sSudowoodoSprites55[] = {
 	{sSudowoodoGfx55, ARRAY_COUNT(sSudowoodoGfx55)}, 
 	{NULL, 0}

@@ -2127,84 +2127,84 @@ static const ax_anim sShuckleAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sShuckleGfx1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_1.4bpp");
+static const u8 sShuckleGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_1.4bpp.lz");
 static const ax_sprite sShuckleSprites1[] = {
 	{sShuckleGfx1, ARRAY_COUNT(sShuckleGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_2.4bpp");
+static const u8 sShuckleGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_2.4bpp.lz");
 static const ax_sprite sShuckleSprites2[] = {
 	{sShuckleGfx2, ARRAY_COUNT(sShuckleGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx3[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_3.4bpp");
+static const u8 sShuckleGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_3.4bpp.lz");
 static const ax_sprite sShuckleSprites3[] = {
 	{sShuckleGfx3, ARRAY_COUNT(sShuckleGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx4[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_4.4bpp");
+static const u8 sShuckleGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_4.4bpp.lz");
 static const ax_sprite sShuckleSprites4[] = {
 	{sShuckleGfx4, ARRAY_COUNT(sShuckleGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx5[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_5.4bpp");
+static const u8 sShuckleGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_5.4bpp.lz");
 static const ax_sprite sShuckleSprites5[] = {
 	{sShuckleGfx5, ARRAY_COUNT(sShuckleGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx6[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_6.4bpp");
+static const u8 sShuckleGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_6.4bpp.lz");
 static const ax_sprite sShuckleSprites6[] = {
 	{sShuckleGfx6, ARRAY_COUNT(sShuckleGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx7[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_7.4bpp");
+static const u8 sShuckleGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_7.4bpp.lz");
 static const ax_sprite sShuckleSprites7[] = {
 	{sShuckleGfx7, ARRAY_COUNT(sShuckleGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx8[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_8.4bpp");
+static const u8 sShuckleGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_8.4bpp.lz");
 static const ax_sprite sShuckleSprites8[] = {
 	{sShuckleGfx8, ARRAY_COUNT(sShuckleGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx9[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_9.4bpp");
+static const u8 sShuckleGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_9.4bpp.lz");
 static const ax_sprite sShuckleSprites9[] = {
 	{sShuckleGfx9, ARRAY_COUNT(sShuckleGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx10[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_10.4bpp");
+static const u8 sShuckleGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_10.4bpp.lz");
 static const ax_sprite sShuckleSprites10[] = {
 	{sShuckleGfx10, ARRAY_COUNT(sShuckleGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx11[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_11.4bpp");
+static const u8 sShuckleGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_11.4bpp.lz");
 static const ax_sprite sShuckleSprites11[] = {
 	{sShuckleGfx11, ARRAY_COUNT(sShuckleGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx12[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_12.4bpp");
+static const u8 sShuckleGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_12.4bpp.lz");
 static const ax_sprite sShuckleSprites12[] = {
 	{sShuckleGfx12, ARRAY_COUNT(sShuckleGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx13[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_13.4bpp");
+static const u8 sShuckleGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_13.4bpp.lz");
 static const ax_sprite sShuckleSprites13[] = {
 	{sShuckleGfx13, ARRAY_COUNT(sShuckleGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx14[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_14.4bpp");
+static const u8 sShuckleGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_14.4bpp.lz");
 static const ax_sprite sShuckleSprites14[] = {
 	{sShuckleGfx14, ARRAY_COUNT(sShuckleGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx15[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_15.4bpp");
+static const u8 sShuckleGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_15.4bpp.lz");
 static const ax_sprite sShuckleSprites15[] = {
 	{sShuckleGfx15, ARRAY_COUNT(sShuckleGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx16[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_16.4bpp");
-static const u8 sShuckleGfx16_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_16_1.4bpp");
-static const u8 sShuckleGfx16_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_16_2.4bpp");
+static const u8 sShuckleGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_16.4bpp.lz");
+static const u8 sShuckleGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_16_1.4bpp.lz");
+static const u8 sShuckleGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_16_2.4bpp.lz");
 static const ax_sprite sShuckleSprites16[] = {
 	{sShuckleGfx16, ARRAY_COUNT(sShuckleGfx16)}, 
 	{NULL, 32}, 
@@ -2214,9 +2214,9 @@ static const ax_sprite sShuckleSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx17[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_17.4bpp");
-static const u8 sShuckleGfx17_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_17_1.4bpp");
-static const u8 sShuckleGfx17_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_17_2.4bpp");
+static const u8 sShuckleGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_17.4bpp.lz");
+static const u8 sShuckleGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_17_1.4bpp.lz");
+static const u8 sShuckleGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_17_2.4bpp.lz");
 static const ax_sprite sShuckleSprites17[] = {
 	{sShuckleGfx17, ARRAY_COUNT(sShuckleGfx17)}, 
 	{NULL, 32}, 
@@ -2226,9 +2226,9 @@ static const ax_sprite sShuckleSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx18[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_18.4bpp");
-static const u8 sShuckleGfx18_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_18_1.4bpp");
-static const u8 sShuckleGfx18_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_18_2.4bpp");
+static const u8 sShuckleGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_18.4bpp.lz");
+static const u8 sShuckleGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_18_1.4bpp.lz");
+static const u8 sShuckleGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_18_2.4bpp.lz");
 static const ax_sprite sShuckleSprites18[] = {
 	{sShuckleGfx18, ARRAY_COUNT(sShuckleGfx18)}, 
 	{NULL, 32}, 
@@ -2238,9 +2238,9 @@ static const ax_sprite sShuckleSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx19[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_19.4bpp");
-static const u8 sShuckleGfx19_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_19_1.4bpp");
-static const u8 sShuckleGfx19_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_19_2.4bpp");
+static const u8 sShuckleGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_19.4bpp.lz");
+static const u8 sShuckleGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_19_1.4bpp.lz");
+static const u8 sShuckleGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_19_2.4bpp.lz");
 static const ax_sprite sShuckleSprites19[] = {
 	{NULL, 32}, 
 	{sShuckleGfx19, ARRAY_COUNT(sShuckleGfx19)}, 
@@ -2251,8 +2251,8 @@ static const ax_sprite sShuckleSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx20[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_20.4bpp");
-static const u8 sShuckleGfx20_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_20_1.4bpp");
+static const u8 sShuckleGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_20.4bpp.lz");
+static const u8 sShuckleGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_20_1.4bpp.lz");
 static const ax_sprite sShuckleSprites20[] = {
 	{sShuckleGfx20, ARRAY_COUNT(sShuckleGfx20)}, 
 	{NULL, 32}, 
@@ -2260,8 +2260,8 @@ static const ax_sprite sShuckleSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx21[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_21.4bpp");
-static const u8 sShuckleGfx21_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_21_1.4bpp");
+static const u8 sShuckleGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_21.4bpp.lz");
+static const u8 sShuckleGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_21_1.4bpp.lz");
 static const ax_sprite sShuckleSprites21[] = {
 	{sShuckleGfx21, ARRAY_COUNT(sShuckleGfx21)}, 
 	{NULL, 32}, 
@@ -2269,10 +2269,10 @@ static const ax_sprite sShuckleSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx22[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_22.4bpp");
-static const u8 sShuckleGfx22_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_22_1.4bpp");
-static const u8 sShuckleGfx22_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_22_2.4bpp");
-static const u8 sShuckleGfx22_3[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_22_3.4bpp");
+static const u8 sShuckleGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_22.4bpp.lz");
+static const u8 sShuckleGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_22_1.4bpp.lz");
+static const u8 sShuckleGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_22_2.4bpp.lz");
+static const u8 sShuckleGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_22_3.4bpp.lz");
 static const ax_sprite sShuckleSprites22[] = {
 	{sShuckleGfx22, ARRAY_COUNT(sShuckleGfx22)}, 
 	{NULL, 64}, 
@@ -2284,9 +2284,9 @@ static const ax_sprite sShuckleSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx23[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_23.4bpp");
-static const u8 sShuckleGfx23_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_23_1.4bpp");
-static const u8 sShuckleGfx23_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_23_2.4bpp");
+static const u8 sShuckleGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_23.4bpp.lz");
+static const u8 sShuckleGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_23_1.4bpp.lz");
+static const u8 sShuckleGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_23_2.4bpp.lz");
 static const ax_sprite sShuckleSprites23[] = {
 	{sShuckleGfx23, ARRAY_COUNT(sShuckleGfx23)}, 
 	{NULL, 32}, 
@@ -2296,8 +2296,8 @@ static const ax_sprite sShuckleSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx24[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_24.4bpp");
-static const u8 sShuckleGfx24_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_24_1.4bpp");
+static const u8 sShuckleGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_24.4bpp.lz");
+static const u8 sShuckleGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_24_1.4bpp.lz");
 static const ax_sprite sShuckleSprites24[] = {
 	{sShuckleGfx24, ARRAY_COUNT(sShuckleGfx24)}, 
 	{NULL, 32}, 
@@ -2305,9 +2305,9 @@ static const ax_sprite sShuckleSprites24[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx25[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_25.4bpp");
-static const u8 sShuckleGfx25_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_25_1.4bpp");
-static const u8 sShuckleGfx25_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_25_2.4bpp");
+static const u8 sShuckleGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_25.4bpp.lz");
+static const u8 sShuckleGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_25_1.4bpp.lz");
+static const u8 sShuckleGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_25_2.4bpp.lz");
 static const ax_sprite sShuckleSprites25[] = {
 	{NULL, 32}, 
 	{sShuckleGfx25, ARRAY_COUNT(sShuckleGfx25)}, 
@@ -2318,8 +2318,8 @@ static const ax_sprite sShuckleSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx26[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_26.4bpp");
-static const u8 sShuckleGfx26_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_26_1.4bpp");
+static const u8 sShuckleGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_26.4bpp.lz");
+static const u8 sShuckleGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_26_1.4bpp.lz");
 static const ax_sprite sShuckleSprites26[] = {
 	{sShuckleGfx26, ARRAY_COUNT(sShuckleGfx26)}, 
 	{NULL, 32}, 
@@ -2327,9 +2327,9 @@ static const ax_sprite sShuckleSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx27[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_27.4bpp");
-static const u8 sShuckleGfx27_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_27_1.4bpp");
-static const u8 sShuckleGfx27_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_27_2.4bpp");
+static const u8 sShuckleGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_27.4bpp.lz");
+static const u8 sShuckleGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_27_1.4bpp.lz");
+static const u8 sShuckleGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_27_2.4bpp.lz");
 static const ax_sprite sShuckleSprites27[] = {
 	{sShuckleGfx27, ARRAY_COUNT(sShuckleGfx27)}, 
 	{NULL, 64}, 
@@ -2339,10 +2339,10 @@ static const ax_sprite sShuckleSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx28[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_28.4bpp");
-static const u8 sShuckleGfx28_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_28_1.4bpp");
-static const u8 sShuckleGfx28_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_28_2.4bpp");
-static const u8 sShuckleGfx28_3[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_28_3.4bpp");
+static const u8 sShuckleGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_28.4bpp.lz");
+static const u8 sShuckleGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_28_1.4bpp.lz");
+static const u8 sShuckleGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_28_2.4bpp.lz");
+static const u8 sShuckleGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_28_3.4bpp.lz");
 static const ax_sprite sShuckleSprites28[] = {
 	{NULL, 32}, 
 	{sShuckleGfx28, ARRAY_COUNT(sShuckleGfx28)}, 
@@ -2355,9 +2355,9 @@ static const ax_sprite sShuckleSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx29[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_29.4bpp");
-static const u8 sShuckleGfx29_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_29_1.4bpp");
-static const u8 sShuckleGfx29_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_29_2.4bpp");
+static const u8 sShuckleGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_29.4bpp.lz");
+static const u8 sShuckleGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_29_1.4bpp.lz");
+static const u8 sShuckleGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_29_2.4bpp.lz");
 static const ax_sprite sShuckleSprites29[] = {
 	{NULL, 32}, 
 	{sShuckleGfx29, ARRAY_COUNT(sShuckleGfx29)}, 
@@ -2368,10 +2368,10 @@ static const ax_sprite sShuckleSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx30[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_30.4bpp");
-static const u8 sShuckleGfx30_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_30_1.4bpp");
-static const u8 sShuckleGfx30_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_30_2.4bpp");
-static const u8 sShuckleGfx30_3[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_30_3.4bpp");
+static const u8 sShuckleGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_30.4bpp.lz");
+static const u8 sShuckleGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_30_1.4bpp.lz");
+static const u8 sShuckleGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_30_2.4bpp.lz");
+static const u8 sShuckleGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_30_3.4bpp.lz");
 static const ax_sprite sShuckleSprites30[] = {
 	{NULL, 32}, 
 	{sShuckleGfx30, ARRAY_COUNT(sShuckleGfx30)}, 
@@ -2384,9 +2384,9 @@ static const ax_sprite sShuckleSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx31[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_31.4bpp");
-static const u8 sShuckleGfx31_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_31_1.4bpp");
-static const u8 sShuckleGfx31_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_31_2.4bpp");
+static const u8 sShuckleGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_31.4bpp.lz");
+static const u8 sShuckleGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_31_1.4bpp.lz");
+static const u8 sShuckleGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_31_2.4bpp.lz");
 static const ax_sprite sShuckleSprites31[] = {
 	{sShuckleGfx31, ARRAY_COUNT(sShuckleGfx31)}, 
 	{NULL, 32}, 
@@ -2396,9 +2396,9 @@ static const ax_sprite sShuckleSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx32[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_32.4bpp");
-static const u8 sShuckleGfx32_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_32_1.4bpp");
-static const u8 sShuckleGfx32_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_32_2.4bpp");
+static const u8 sShuckleGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_32.4bpp.lz");
+static const u8 sShuckleGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_32_1.4bpp.lz");
+static const u8 sShuckleGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_32_2.4bpp.lz");
 static const ax_sprite sShuckleSprites32[] = {
 	{NULL, 32}, 
 	{sShuckleGfx32, ARRAY_COUNT(sShuckleGfx32)}, 
@@ -2409,9 +2409,9 @@ static const ax_sprite sShuckleSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx33[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_33.4bpp");
-static const u8 sShuckleGfx33_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_33_1.4bpp");
-static const u8 sShuckleGfx33_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_33_2.4bpp");
+static const u8 sShuckleGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_33.4bpp.lz");
+static const u8 sShuckleGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_33_1.4bpp.lz");
+static const u8 sShuckleGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_33_2.4bpp.lz");
 static const ax_sprite sShuckleSprites33[] = {
 	{NULL, 64}, 
 	{sShuckleGfx33, ARRAY_COUNT(sShuckleGfx33)}, 
@@ -2422,9 +2422,9 @@ static const ax_sprite sShuckleSprites33[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx34[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_34.4bpp");
-static const u8 sShuckleGfx34_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_34_1.4bpp");
-static const u8 sShuckleGfx34_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_34_2.4bpp");
+static const u8 sShuckleGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_34.4bpp.lz");
+static const u8 sShuckleGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_34_1.4bpp.lz");
+static const u8 sShuckleGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_34_2.4bpp.lz");
 static const ax_sprite sShuckleSprites34[] = {
 	{NULL, 160}, 
 	{sShuckleGfx34, ARRAY_COUNT(sShuckleGfx34)}, 
@@ -2435,9 +2435,9 @@ static const ax_sprite sShuckleSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx35[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_35.4bpp");
-static const u8 sShuckleGfx35_1[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_35_1.4bpp");
-static const u8 sShuckleGfx35_2[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_35_2.4bpp");
+static const u8 sShuckleGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_35.4bpp.lz");
+static const u8 sShuckleGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_35_1.4bpp.lz");
+static const u8 sShuckleGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_35_2.4bpp.lz");
 static const ax_sprite sShuckleSprites35[] = {
 	{NULL, 128}, 
 	{sShuckleGfx35, ARRAY_COUNT(sShuckleGfx35)}, 
@@ -2448,37 +2448,37 @@ static const ax_sprite sShuckleSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx36[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_36.4bpp");
+static const u8 sShuckleGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_36.4bpp.lz");
 static const ax_sprite sShuckleSprites36[] = {
 	{sShuckleGfx36, ARRAY_COUNT(sShuckleGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx37[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_37.4bpp");
+static const u8 sShuckleGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_37.4bpp.lz");
 static const ax_sprite sShuckleSprites37[] = {
 	{sShuckleGfx37, ARRAY_COUNT(sShuckleGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx38[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_38.4bpp");
+static const u8 sShuckleGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_38.4bpp.lz");
 static const ax_sprite sShuckleSprites38[] = {
 	{sShuckleGfx38, ARRAY_COUNT(sShuckleGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx39[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_39.4bpp");
+static const u8 sShuckleGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_39.4bpp.lz");
 static const ax_sprite sShuckleSprites39[] = {
 	{sShuckleGfx39, ARRAY_COUNT(sShuckleGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx40[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_40.4bpp");
+static const u8 sShuckleGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_40.4bpp.lz");
 static const ax_sprite sShuckleSprites40[] = {
 	{sShuckleGfx40, ARRAY_COUNT(sShuckleGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx41[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_41.4bpp");
+static const u8 sShuckleGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_41.4bpp.lz");
 static const ax_sprite sShuckleSprites41[] = {
 	{sShuckleGfx41, ARRAY_COUNT(sShuckleGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sShuckleGfx42[] = INCBIN_U8("graphics/ax/mon/shuckle/sprite_42.4bpp");
+static const u8 sShuckleGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shuckle/sprite_42.4bpp.lz");
 static const ax_sprite sShuckleSprites42[] = {
 	{sShuckleGfx42, ARRAY_COUNT(sShuckleGfx42)}, 
 	{NULL, 0}

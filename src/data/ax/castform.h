@@ -2439,124 +2439,124 @@ static const ax_anim sCastformAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCastformGfx1[] = INCBIN_U8("graphics/ax/mon/castform/sprite_1.4bpp");
+static const u8 sCastformGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_1.4bpp.lz");
 static const ax_sprite sCastformSprites1[] = {
 	{sCastformGfx1, ARRAY_COUNT(sCastformGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx2[] = INCBIN_U8("graphics/ax/mon/castform/sprite_2.4bpp");
+static const u8 sCastformGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_2.4bpp.lz");
 static const ax_sprite sCastformSprites2[] = {
 	{sCastformGfx2, ARRAY_COUNT(sCastformGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx3[] = INCBIN_U8("graphics/ax/mon/castform/sprite_3.4bpp");
+static const u8 sCastformGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_3.4bpp.lz");
 static const ax_sprite sCastformSprites3[] = {
 	{sCastformGfx3, ARRAY_COUNT(sCastformGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx4[] = INCBIN_U8("graphics/ax/mon/castform/sprite_4.4bpp");
+static const u8 sCastformGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_4.4bpp.lz");
 static const ax_sprite sCastformSprites4[] = {
 	{sCastformGfx4, ARRAY_COUNT(sCastformGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx5[] = INCBIN_U8("graphics/ax/mon/castform/sprite_5.4bpp");
+static const u8 sCastformGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_5.4bpp.lz");
 static const ax_sprite sCastformSprites5[] = {
 	{sCastformGfx5, ARRAY_COUNT(sCastformGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx6[] = INCBIN_U8("graphics/ax/mon/castform/sprite_6.4bpp");
+static const u8 sCastformGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_6.4bpp.lz");
 static const ax_sprite sCastformSprites6[] = {
 	{sCastformGfx6, ARRAY_COUNT(sCastformGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx7[] = INCBIN_U8("graphics/ax/mon/castform/sprite_7.4bpp");
+static const u8 sCastformGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_7.4bpp.lz");
 static const ax_sprite sCastformSprites7[] = {
 	{sCastformGfx7, ARRAY_COUNT(sCastformGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx8[] = INCBIN_U8("graphics/ax/mon/castform/sprite_8.4bpp");
+static const u8 sCastformGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_8.4bpp.lz");
 static const ax_sprite sCastformSprites8[] = {
 	{sCastformGfx8, ARRAY_COUNT(sCastformGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx9[] = INCBIN_U8("graphics/ax/mon/castform/sprite_9.4bpp");
+static const u8 sCastformGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_9.4bpp.lz");
 static const ax_sprite sCastformSprites9[] = {
 	{sCastformGfx9, ARRAY_COUNT(sCastformGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx10[] = INCBIN_U8("graphics/ax/mon/castform/sprite_10.4bpp");
+static const u8 sCastformGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_10.4bpp.lz");
 static const ax_sprite sCastformSprites10[] = {
 	{sCastformGfx10, ARRAY_COUNT(sCastformGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx11[] = INCBIN_U8("graphics/ax/mon/castform/sprite_11.4bpp");
+static const u8 sCastformGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_11.4bpp.lz");
 static const ax_sprite sCastformSprites11[] = {
 	{sCastformGfx11, ARRAY_COUNT(sCastformGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx12[] = INCBIN_U8("graphics/ax/mon/castform/sprite_12.4bpp");
+static const u8 sCastformGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_12.4bpp.lz");
 static const ax_sprite sCastformSprites12[] = {
 	{sCastformGfx12, ARRAY_COUNT(sCastformGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx13[] = INCBIN_U8("graphics/ax/mon/castform/sprite_13.4bpp");
+static const u8 sCastformGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_13.4bpp.lz");
 static const ax_sprite sCastformSprites13[] = {
 	{sCastformGfx13, ARRAY_COUNT(sCastformGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx14[] = INCBIN_U8("graphics/ax/mon/castform/sprite_14.4bpp");
+static const u8 sCastformGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_14.4bpp.lz");
 static const ax_sprite sCastformSprites14[] = {
 	{sCastformGfx14, ARRAY_COUNT(sCastformGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx15[] = INCBIN_U8("graphics/ax/mon/castform/sprite_15.4bpp");
+static const u8 sCastformGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_15.4bpp.lz");
 static const ax_sprite sCastformSprites15[] = {
 	{sCastformGfx15, ARRAY_COUNT(sCastformGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx16[] = INCBIN_U8("graphics/ax/mon/castform/sprite_16.4bpp");
+static const u8 sCastformGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_16.4bpp.lz");
 static const ax_sprite sCastformSprites16[] = {
 	{sCastformGfx16, ARRAY_COUNT(sCastformGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx17[] = INCBIN_U8("graphics/ax/mon/castform/sprite_17.4bpp");
+static const u8 sCastformGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_17.4bpp.lz");
 static const ax_sprite sCastformSprites17[] = {
 	{sCastformGfx17, ARRAY_COUNT(sCastformGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx18[] = INCBIN_U8("graphics/ax/mon/castform/sprite_18.4bpp");
+static const u8 sCastformGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_18.4bpp.lz");
 static const ax_sprite sCastformSprites18[] = {
 	{sCastformGfx18, ARRAY_COUNT(sCastformGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx19[] = INCBIN_U8("graphics/ax/mon/castform/sprite_19.4bpp");
+static const u8 sCastformGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_19.4bpp.lz");
 static const ax_sprite sCastformSprites19[] = {
 	{sCastformGfx19, ARRAY_COUNT(sCastformGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx20[] = INCBIN_U8("graphics/ax/mon/castform/sprite_20.4bpp");
+static const u8 sCastformGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_20.4bpp.lz");
 static const ax_sprite sCastformSprites20[] = {
 	{NULL, 32}, 
 	{sCastformGfx20, ARRAY_COUNT(sCastformGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx21[] = INCBIN_U8("graphics/ax/mon/castform/sprite_21.4bpp");
+static const u8 sCastformGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_21.4bpp.lz");
 static const ax_sprite sCastformSprites21[] = {
 	{sCastformGfx21, ARRAY_COUNT(sCastformGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx22[] = INCBIN_U8("graphics/ax/mon/castform/sprite_22.4bpp");
+static const u8 sCastformGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_22.4bpp.lz");
 static const ax_sprite sCastformSprites22[] = {
 	{NULL, 32}, 
 	{sCastformGfx22, ARRAY_COUNT(sCastformGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx23[] = INCBIN_U8("graphics/ax/mon/castform/sprite_23.4bpp");
-static const u8 sCastformGfx23_1[] = INCBIN_U8("graphics/ax/mon/castform/sprite_23_1.4bpp");
+static const u8 sCastformGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_23.4bpp.lz");
+static const u8 sCastformGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_23_1.4bpp.lz");
 static const ax_sprite sCastformSprites23[] = {
 	{sCastformGfx23, ARRAY_COUNT(sCastformGfx23)}, 
 	{NULL, 32}, 
@@ -2564,48 +2564,48 @@ static const ax_sprite sCastformSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx24[] = INCBIN_U8("graphics/ax/mon/castform/sprite_24.4bpp");
+static const u8 sCastformGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_24.4bpp.lz");
 static const ax_sprite sCastformSprites24[] = {
 	{sCastformGfx24, ARRAY_COUNT(sCastformGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx25[] = INCBIN_U8("graphics/ax/mon/castform/sprite_25.4bpp");
+static const u8 sCastformGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_25.4bpp.lz");
 static const ax_sprite sCastformSprites25[] = {
 	{sCastformGfx25, ARRAY_COUNT(sCastformGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx26[] = INCBIN_U8("graphics/ax/mon/castform/sprite_26.4bpp");
+static const u8 sCastformGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_26.4bpp.lz");
 static const ax_sprite sCastformSprites26[] = {
 	{sCastformGfx26, ARRAY_COUNT(sCastformGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx27[] = INCBIN_U8("graphics/ax/mon/castform/sprite_27.4bpp");
+static const u8 sCastformGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_27.4bpp.lz");
 static const ax_sprite sCastformSprites27[] = {
 	{sCastformGfx27, ARRAY_COUNT(sCastformGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx28[] = INCBIN_U8("graphics/ax/mon/castform/sprite_28.4bpp");
+static const u8 sCastformGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_28.4bpp.lz");
 static const ax_sprite sCastformSprites28[] = {
 	{sCastformGfx28, ARRAY_COUNT(sCastformGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx29[] = INCBIN_U8("graphics/ax/mon/castform/sprite_29.4bpp");
+static const u8 sCastformGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_29.4bpp.lz");
 static const ax_sprite sCastformSprites29[] = {
 	{sCastformGfx29, ARRAY_COUNT(sCastformGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx30[] = INCBIN_U8("graphics/ax/mon/castform/sprite_30.4bpp");
+static const u8 sCastformGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_30.4bpp.lz");
 static const ax_sprite sCastformSprites30[] = {
 	{sCastformGfx30, ARRAY_COUNT(sCastformGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx31[] = INCBIN_U8("graphics/ax/mon/castform/sprite_31.4bpp");
+static const u8 sCastformGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_31.4bpp.lz");
 static const ax_sprite sCastformSprites31[] = {
 	{sCastformGfx31, ARRAY_COUNT(sCastformGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCastformGfx32[] = INCBIN_U8("graphics/ax/mon/castform/sprite_32.4bpp");
+static const u8 sCastformGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/castform/sprite_32.4bpp.lz");
 static const ax_sprite sCastformSprites32[] = {
 	{sCastformGfx32, ARRAY_COUNT(sCastformGfx32)}, 
 	{NULL, 0}

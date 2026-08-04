@@ -2114,83 +2114,83 @@ static const ax_anim sCrobatAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCrobatGfx1[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_1.4bpp");
+static const u8 sCrobatGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_1.4bpp.lz");
 static const ax_sprite sCrobatSprites1[] = {
 	{sCrobatGfx1, ARRAY_COUNT(sCrobatGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx2[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_2.4bpp");
+static const u8 sCrobatGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_2.4bpp.lz");
 static const ax_sprite sCrobatSprites2[] = {
 	{sCrobatGfx2, ARRAY_COUNT(sCrobatGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx3[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_3.4bpp");
+static const u8 sCrobatGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_3.4bpp.lz");
 static const ax_sprite sCrobatSprites3[] = {
 	{sCrobatGfx3, ARRAY_COUNT(sCrobatGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx4[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_4.4bpp");
+static const u8 sCrobatGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_4.4bpp.lz");
 static const ax_sprite sCrobatSprites4[] = {
 	{sCrobatGfx4, ARRAY_COUNT(sCrobatGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx5[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_5.4bpp");
+static const u8 sCrobatGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_5.4bpp.lz");
 static const ax_sprite sCrobatSprites5[] = {
 	{sCrobatGfx5, ARRAY_COUNT(sCrobatGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx6[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_6.4bpp");
+static const u8 sCrobatGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_6.4bpp.lz");
 static const ax_sprite sCrobatSprites6[] = {
 	{sCrobatGfx6, ARRAY_COUNT(sCrobatGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx7[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_7.4bpp");
+static const u8 sCrobatGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_7.4bpp.lz");
 static const ax_sprite sCrobatSprites7[] = {
 	{sCrobatGfx7, ARRAY_COUNT(sCrobatGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx8[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_8.4bpp");
+static const u8 sCrobatGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_8.4bpp.lz");
 static const ax_sprite sCrobatSprites8[] = {
 	{sCrobatGfx8, ARRAY_COUNT(sCrobatGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx9[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_9.4bpp");
+static const u8 sCrobatGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_9.4bpp.lz");
 static const ax_sprite sCrobatSprites9[] = {
 	{sCrobatGfx9, ARRAY_COUNT(sCrobatGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx10[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_10.4bpp");
+static const u8 sCrobatGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_10.4bpp.lz");
 static const ax_sprite sCrobatSprites10[] = {
 	{sCrobatGfx10, ARRAY_COUNT(sCrobatGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx11[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_11.4bpp");
+static const u8 sCrobatGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_11.4bpp.lz");
 static const ax_sprite sCrobatSprites11[] = {
 	{sCrobatGfx11, ARRAY_COUNT(sCrobatGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx12[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_12.4bpp");
+static const u8 sCrobatGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_12.4bpp.lz");
 static const ax_sprite sCrobatSprites12[] = {
 	{sCrobatGfx12, ARRAY_COUNT(sCrobatGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx13[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_13.4bpp");
+static const u8 sCrobatGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_13.4bpp.lz");
 static const ax_sprite sCrobatSprites13[] = {
 	{sCrobatGfx13, ARRAY_COUNT(sCrobatGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx14[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_14.4bpp");
+static const u8 sCrobatGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_14.4bpp.lz");
 static const ax_sprite sCrobatSprites14[] = {
 	{sCrobatGfx14, ARRAY_COUNT(sCrobatGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx15[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_15.4bpp");
+static const u8 sCrobatGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_15.4bpp.lz");
 static const ax_sprite sCrobatSprites15[] = {
 	{sCrobatGfx15, ARRAY_COUNT(sCrobatGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx16[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_16.4bpp");
-static const u8 sCrobatGfx16_1[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_16_1.4bpp");
+static const u8 sCrobatGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_16.4bpp.lz");
+static const u8 sCrobatGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_16_1.4bpp.lz");
 static const ax_sprite sCrobatSprites16[] = {
 	{sCrobatGfx16, ARRAY_COUNT(sCrobatGfx16)}, 
 	{NULL, 32}, 
@@ -2198,40 +2198,40 @@ static const ax_sprite sCrobatSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx17[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_17.4bpp");
+static const u8 sCrobatGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_17.4bpp.lz");
 static const ax_sprite sCrobatSprites17[] = {
 	{sCrobatGfx17, ARRAY_COUNT(sCrobatGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx18[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_18.4bpp");
+static const u8 sCrobatGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_18.4bpp.lz");
 static const ax_sprite sCrobatSprites18[] = {
 	{sCrobatGfx18, ARRAY_COUNT(sCrobatGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx19[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_19.4bpp");
+static const u8 sCrobatGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_19.4bpp.lz");
 static const ax_sprite sCrobatSprites19[] = {
 	{sCrobatGfx19, ARRAY_COUNT(sCrobatGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx20[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_20.4bpp");
+static const u8 sCrobatGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_20.4bpp.lz");
 static const ax_sprite sCrobatSprites20[] = {
 	{sCrobatGfx20, ARRAY_COUNT(sCrobatGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx21[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_21.4bpp");
+static const u8 sCrobatGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_21.4bpp.lz");
 static const ax_sprite sCrobatSprites21[] = {
 	{sCrobatGfx21, ARRAY_COUNT(sCrobatGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx22[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_22.4bpp");
+static const u8 sCrobatGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_22.4bpp.lz");
 static const ax_sprite sCrobatSprites22[] = {
 	{sCrobatGfx22, ARRAY_COUNT(sCrobatGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx23[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_23.4bpp");
-static const u8 sCrobatGfx23_1[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_23_1.4bpp");
-static const u8 sCrobatGfx23_2[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_23_2.4bpp");
+static const u8 sCrobatGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_23.4bpp.lz");
+static const u8 sCrobatGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_23_1.4bpp.lz");
+static const u8 sCrobatGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_23_2.4bpp.lz");
 static const ax_sprite sCrobatSprites23[] = {
 	{sCrobatGfx23, ARRAY_COUNT(sCrobatGfx23)}, 
 	{NULL, 96}, 
@@ -2241,24 +2241,24 @@ static const ax_sprite sCrobatSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx24[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_24.4bpp");
+static const u8 sCrobatGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_24.4bpp.lz");
 static const ax_sprite sCrobatSprites24[] = {
 	{NULL, 32}, 
 	{sCrobatGfx24, ARRAY_COUNT(sCrobatGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx25[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_25.4bpp");
+static const u8 sCrobatGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_25.4bpp.lz");
 static const ax_sprite sCrobatSprites25[] = {
 	{sCrobatGfx25, ARRAY_COUNT(sCrobatGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx26[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_26.4bpp");
+static const u8 sCrobatGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_26.4bpp.lz");
 static const ax_sprite sCrobatSprites26[] = {
 	{sCrobatGfx26, ARRAY_COUNT(sCrobatGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx27[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_27.4bpp");
-static const u8 sCrobatGfx27_1[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_27_1.4bpp");
+static const u8 sCrobatGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_27.4bpp.lz");
+static const u8 sCrobatGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_27_1.4bpp.lz");
 static const ax_sprite sCrobatSprites27[] = {
 	{NULL, 64}, 
 	{sCrobatGfx27, ARRAY_COUNT(sCrobatGfx27)}, 
@@ -2266,70 +2266,70 @@ static const ax_sprite sCrobatSprites27[] = {
 	{sCrobatGfx27_1, ARRAY_COUNT(sCrobatGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx28[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_28.4bpp");
+static const u8 sCrobatGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_28.4bpp.lz");
 static const ax_sprite sCrobatSprites28[] = {
 	{NULL, 32}, 
 	{sCrobatGfx28, ARRAY_COUNT(sCrobatGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx29[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_29.4bpp");
+static const u8 sCrobatGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_29.4bpp.lz");
 static const ax_sprite sCrobatSprites29[] = {
 	{NULL, 64}, 
 	{sCrobatGfx29, ARRAY_COUNT(sCrobatGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx30[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_30.4bpp");
+static const u8 sCrobatGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_30.4bpp.lz");
 static const ax_sprite sCrobatSprites30[] = {
 	{sCrobatGfx30, ARRAY_COUNT(sCrobatGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx31[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_31.4bpp");
+static const u8 sCrobatGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_31.4bpp.lz");
 static const ax_sprite sCrobatSprites31[] = {
 	{sCrobatGfx31, ARRAY_COUNT(sCrobatGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx32[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_32.4bpp");
+static const u8 sCrobatGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_32.4bpp.lz");
 static const ax_sprite sCrobatSprites32[] = {
 	{sCrobatGfx32, ARRAY_COUNT(sCrobatGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx33[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_33.4bpp");
+static const u8 sCrobatGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_33.4bpp.lz");
 static const ax_sprite sCrobatSprites33[] = {
 	{sCrobatGfx33, ARRAY_COUNT(sCrobatGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx34[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_34.4bpp");
+static const u8 sCrobatGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_34.4bpp.lz");
 static const ax_sprite sCrobatSprites34[] = {
 	{sCrobatGfx34, ARRAY_COUNT(sCrobatGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx35[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_35.4bpp");
+static const u8 sCrobatGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_35.4bpp.lz");
 static const ax_sprite sCrobatSprites35[] = {
 	{sCrobatGfx35, ARRAY_COUNT(sCrobatGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx36[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_36.4bpp");
+static const u8 sCrobatGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_36.4bpp.lz");
 static const ax_sprite sCrobatSprites36[] = {
 	{sCrobatGfx36, ARRAY_COUNT(sCrobatGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx37[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_37.4bpp");
+static const u8 sCrobatGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_37.4bpp.lz");
 static const ax_sprite sCrobatSprites37[] = {
 	{sCrobatGfx37, ARRAY_COUNT(sCrobatGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx38[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_38.4bpp");
+static const u8 sCrobatGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_38.4bpp.lz");
 static const ax_sprite sCrobatSprites38[] = {
 	{sCrobatGfx38, ARRAY_COUNT(sCrobatGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx39[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_39.4bpp");
+static const u8 sCrobatGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_39.4bpp.lz");
 static const ax_sprite sCrobatSprites39[] = {
 	{sCrobatGfx39, ARRAY_COUNT(sCrobatGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sCrobatGfx40[] = INCBIN_U8("graphics/ax/mon/crobat/sprite_40.4bpp");
+static const u8 sCrobatGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crobat/sprite_40.4bpp.lz");
 static const ax_sprite sCrobatSprites40[] = {
 	{sCrobatGfx40, ARRAY_COUNT(sCrobatGfx40)}, 
 	{NULL, 0}

@@ -2151,157 +2151,157 @@ static const ax_anim sMagikarpAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMagikarpGfx1[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_1.4bpp");
+static const u8 sMagikarpGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_1.4bpp.lz");
 static const ax_sprite sMagikarpSprites1[] = {
 	{sMagikarpGfx1, ARRAY_COUNT(sMagikarpGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx2[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_2.4bpp");
+static const u8 sMagikarpGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_2.4bpp.lz");
 static const ax_sprite sMagikarpSprites2[] = {
 	{sMagikarpGfx2, ARRAY_COUNT(sMagikarpGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx3[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_3.4bpp");
+static const u8 sMagikarpGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_3.4bpp.lz");
 static const ax_sprite sMagikarpSprites3[] = {
 	{sMagikarpGfx3, ARRAY_COUNT(sMagikarpGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx4[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_4.4bpp");
+static const u8 sMagikarpGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_4.4bpp.lz");
 static const ax_sprite sMagikarpSprites4[] = {
 	{sMagikarpGfx4, ARRAY_COUNT(sMagikarpGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx5[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_5.4bpp");
+static const u8 sMagikarpGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_5.4bpp.lz");
 static const ax_sprite sMagikarpSprites5[] = {
 	{sMagikarpGfx5, ARRAY_COUNT(sMagikarpGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx6[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_6.4bpp");
+static const u8 sMagikarpGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_6.4bpp.lz");
 static const ax_sprite sMagikarpSprites6[] = {
 	{sMagikarpGfx6, ARRAY_COUNT(sMagikarpGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx7[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_7.4bpp");
+static const u8 sMagikarpGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_7.4bpp.lz");
 static const ax_sprite sMagikarpSprites7[] = {
 	{sMagikarpGfx7, ARRAY_COUNT(sMagikarpGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx8[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_8.4bpp");
+static const u8 sMagikarpGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_8.4bpp.lz");
 static const ax_sprite sMagikarpSprites8[] = {
 	{sMagikarpGfx8, ARRAY_COUNT(sMagikarpGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx9[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_9.4bpp");
+static const u8 sMagikarpGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_9.4bpp.lz");
 static const ax_sprite sMagikarpSprites9[] = {
 	{sMagikarpGfx9, ARRAY_COUNT(sMagikarpGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx10[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_10.4bpp");
+static const u8 sMagikarpGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_10.4bpp.lz");
 static const ax_sprite sMagikarpSprites10[] = {
 	{sMagikarpGfx10, ARRAY_COUNT(sMagikarpGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx11[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_11.4bpp");
+static const u8 sMagikarpGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_11.4bpp.lz");
 static const ax_sprite sMagikarpSprites11[] = {
 	{sMagikarpGfx11, ARRAY_COUNT(sMagikarpGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx12[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_12.4bpp");
+static const u8 sMagikarpGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_12.4bpp.lz");
 static const ax_sprite sMagikarpSprites12[] = {
 	{sMagikarpGfx12, ARRAY_COUNT(sMagikarpGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx13[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_13.4bpp");
+static const u8 sMagikarpGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_13.4bpp.lz");
 static const ax_sprite sMagikarpSprites13[] = {
 	{sMagikarpGfx13, ARRAY_COUNT(sMagikarpGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx14[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_14.4bpp");
+static const u8 sMagikarpGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_14.4bpp.lz");
 static const ax_sprite sMagikarpSprites14[] = {
 	{sMagikarpGfx14, ARRAY_COUNT(sMagikarpGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx15[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_15.4bpp");
+static const u8 sMagikarpGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_15.4bpp.lz");
 static const ax_sprite sMagikarpSprites15[] = {
 	{sMagikarpGfx15, ARRAY_COUNT(sMagikarpGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx16[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_16.4bpp");
+static const u8 sMagikarpGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_16.4bpp.lz");
 static const ax_sprite sMagikarpSprites16[] = {
 	{sMagikarpGfx16, ARRAY_COUNT(sMagikarpGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx17[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_17.4bpp");
+static const u8 sMagikarpGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_17.4bpp.lz");
 static const ax_sprite sMagikarpSprites17[] = {
 	{sMagikarpGfx17, ARRAY_COUNT(sMagikarpGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx18[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_18.4bpp");
+static const u8 sMagikarpGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_18.4bpp.lz");
 static const ax_sprite sMagikarpSprites18[] = {
 	{sMagikarpGfx18, ARRAY_COUNT(sMagikarpGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx19[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_19.4bpp");
+static const u8 sMagikarpGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_19.4bpp.lz");
 static const ax_sprite sMagikarpSprites19[] = {
 	{sMagikarpGfx19, ARRAY_COUNT(sMagikarpGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx20[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_20.4bpp");
+static const u8 sMagikarpGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_20.4bpp.lz");
 static const ax_sprite sMagikarpSprites20[] = {
 	{sMagikarpGfx20, ARRAY_COUNT(sMagikarpGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx21[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_21.4bpp");
+static const u8 sMagikarpGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_21.4bpp.lz");
 static const ax_sprite sMagikarpSprites21[] = {
 	{sMagikarpGfx21, ARRAY_COUNT(sMagikarpGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx22[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_22.4bpp");
+static const u8 sMagikarpGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_22.4bpp.lz");
 static const ax_sprite sMagikarpSprites22[] = {
 	{sMagikarpGfx22, ARRAY_COUNT(sMagikarpGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx23[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_23.4bpp");
+static const u8 sMagikarpGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_23.4bpp.lz");
 static const ax_sprite sMagikarpSprites23[] = {
 	{sMagikarpGfx23, ARRAY_COUNT(sMagikarpGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx24[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_24.4bpp");
+static const u8 sMagikarpGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_24.4bpp.lz");
 static const ax_sprite sMagikarpSprites24[] = {
 	{sMagikarpGfx24, ARRAY_COUNT(sMagikarpGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx25[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_25.4bpp");
+static const u8 sMagikarpGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_25.4bpp.lz");
 static const ax_sprite sMagikarpSprites25[] = {
 	{sMagikarpGfx25, ARRAY_COUNT(sMagikarpGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx26[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_26.4bpp");
+static const u8 sMagikarpGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_26.4bpp.lz");
 static const ax_sprite sMagikarpSprites26[] = {
 	{sMagikarpGfx26, ARRAY_COUNT(sMagikarpGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx27[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_27.4bpp");
+static const u8 sMagikarpGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_27.4bpp.lz");
 static const ax_sprite sMagikarpSprites27[] = {
 	{sMagikarpGfx27, ARRAY_COUNT(sMagikarpGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx28[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_28.4bpp");
+static const u8 sMagikarpGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_28.4bpp.lz");
 static const ax_sprite sMagikarpSprites28[] = {
 	{sMagikarpGfx28, ARRAY_COUNT(sMagikarpGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx29[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_29.4bpp");
+static const u8 sMagikarpGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_29.4bpp.lz");
 static const ax_sprite sMagikarpSprites29[] = {
 	{sMagikarpGfx29, ARRAY_COUNT(sMagikarpGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx30[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_30.4bpp");
+static const u8 sMagikarpGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_30.4bpp.lz");
 static const ax_sprite sMagikarpSprites30[] = {
 	{sMagikarpGfx30, ARRAY_COUNT(sMagikarpGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMagikarpGfx31[] = INCBIN_U8("graphics/ax/mon/magikarp/sprite_31.4bpp");
+static const u8 sMagikarpGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magikarp/sprite_31.4bpp.lz");
 static const ax_sprite sMagikarpSprites31[] = {
 	{sMagikarpGfx31, ARRAY_COUNT(sMagikarpGfx31)}, 
 	{NULL, 0}

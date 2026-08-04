@@ -3000,525 +3000,525 @@ static const ax_anim sDragonairAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDragonairGfx1[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_1.4bpp");
+static const u8 sDragonairGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_1.4bpp.lz");
 static const ax_sprite sDragonairSprites1[] = {
 	{sDragonairGfx1, ARRAY_COUNT(sDragonairGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx2[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_2.4bpp");
+static const u8 sDragonairGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_2.4bpp.lz");
 static const ax_sprite sDragonairSprites2[] = {
 	{sDragonairGfx2, ARRAY_COUNT(sDragonairGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx3[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_3.4bpp");
+static const u8 sDragonairGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_3.4bpp.lz");
 static const ax_sprite sDragonairSprites3[] = {
 	{sDragonairGfx3, ARRAY_COUNT(sDragonairGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx4[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_4.4bpp");
+static const u8 sDragonairGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_4.4bpp.lz");
 static const ax_sprite sDragonairSprites4[] = {
 	{sDragonairGfx4, ARRAY_COUNT(sDragonairGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx5[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_5.4bpp");
+static const u8 sDragonairGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_5.4bpp.lz");
 static const ax_sprite sDragonairSprites5[] = {
 	{sDragonairGfx5, ARRAY_COUNT(sDragonairGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx6[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_6.4bpp");
+static const u8 sDragonairGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_6.4bpp.lz");
 static const ax_sprite sDragonairSprites6[] = {
 	{sDragonairGfx6, ARRAY_COUNT(sDragonairGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx7[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_7.4bpp");
+static const u8 sDragonairGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_7.4bpp.lz");
 static const ax_sprite sDragonairSprites7[] = {
 	{sDragonairGfx7, ARRAY_COUNT(sDragonairGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx8[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_8.4bpp");
+static const u8 sDragonairGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_8.4bpp.lz");
 static const ax_sprite sDragonairSprites8[] = {
 	{sDragonairGfx8, ARRAY_COUNT(sDragonairGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx9[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_9.4bpp");
+static const u8 sDragonairGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_9.4bpp.lz");
 static const ax_sprite sDragonairSprites9[] = {
 	{sDragonairGfx9, ARRAY_COUNT(sDragonairGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx10[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_10.4bpp");
+static const u8 sDragonairGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_10.4bpp.lz");
 static const ax_sprite sDragonairSprites10[] = {
 	{sDragonairGfx10, ARRAY_COUNT(sDragonairGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx11[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_11.4bpp");
+static const u8 sDragonairGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_11.4bpp.lz");
 static const ax_sprite sDragonairSprites11[] = {
 	{sDragonairGfx11, ARRAY_COUNT(sDragonairGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx12[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_12.4bpp");
+static const u8 sDragonairGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_12.4bpp.lz");
 static const ax_sprite sDragonairSprites12[] = {
 	{sDragonairGfx12, ARRAY_COUNT(sDragonairGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx13[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_13.4bpp");
+static const u8 sDragonairGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_13.4bpp.lz");
 static const ax_sprite sDragonairSprites13[] = {
 	{sDragonairGfx13, ARRAY_COUNT(sDragonairGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx14[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_14.4bpp");
+static const u8 sDragonairGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_14.4bpp.lz");
 static const ax_sprite sDragonairSprites14[] = {
 	{sDragonairGfx14, ARRAY_COUNT(sDragonairGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx15[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_15.4bpp");
+static const u8 sDragonairGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_15.4bpp.lz");
 static const ax_sprite sDragonairSprites15[] = {
 	{sDragonairGfx15, ARRAY_COUNT(sDragonairGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx16[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_16.4bpp");
+static const u8 sDragonairGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_16.4bpp.lz");
 static const ax_sprite sDragonairSprites16[] = {
 	{sDragonairGfx16, ARRAY_COUNT(sDragonairGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx17[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_17.4bpp");
+static const u8 sDragonairGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_17.4bpp.lz");
 static const ax_sprite sDragonairSprites17[] = {
 	{sDragonairGfx17, ARRAY_COUNT(sDragonairGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx18[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_18.4bpp");
+static const u8 sDragonairGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_18.4bpp.lz");
 static const ax_sprite sDragonairSprites18[] = {
 	{sDragonairGfx18, ARRAY_COUNT(sDragonairGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx19[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_19.4bpp");
+static const u8 sDragonairGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_19.4bpp.lz");
 static const ax_sprite sDragonairSprites19[] = {
 	{sDragonairGfx19, ARRAY_COUNT(sDragonairGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx20[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_20.4bpp");
+static const u8 sDragonairGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_20.4bpp.lz");
 static const ax_sprite sDragonairSprites20[] = {
 	{sDragonairGfx20, ARRAY_COUNT(sDragonairGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx21[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_21.4bpp");
+static const u8 sDragonairGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_21.4bpp.lz");
 static const ax_sprite sDragonairSprites21[] = {
 	{sDragonairGfx21, ARRAY_COUNT(sDragonairGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx22[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_22.4bpp");
+static const u8 sDragonairGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_22.4bpp.lz");
 static const ax_sprite sDragonairSprites22[] = {
 	{sDragonairGfx22, ARRAY_COUNT(sDragonairGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx23[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_23.4bpp");
+static const u8 sDragonairGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_23.4bpp.lz");
 static const ax_sprite sDragonairSprites23[] = {
 	{sDragonairGfx23, ARRAY_COUNT(sDragonairGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx24[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_24.4bpp");
+static const u8 sDragonairGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_24.4bpp.lz");
 static const ax_sprite sDragonairSprites24[] = {
 	{sDragonairGfx24, ARRAY_COUNT(sDragonairGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx25[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_25.4bpp");
+static const u8 sDragonairGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_25.4bpp.lz");
 static const ax_sprite sDragonairSprites25[] = {
 	{sDragonairGfx25, ARRAY_COUNT(sDragonairGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx26[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_26.4bpp");
+static const u8 sDragonairGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_26.4bpp.lz");
 static const ax_sprite sDragonairSprites26[] = {
 	{sDragonairGfx26, ARRAY_COUNT(sDragonairGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx27[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_27.4bpp");
+static const u8 sDragonairGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_27.4bpp.lz");
 static const ax_sprite sDragonairSprites27[] = {
 	{sDragonairGfx27, ARRAY_COUNT(sDragonairGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx28[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_28.4bpp");
+static const u8 sDragonairGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_28.4bpp.lz");
 static const ax_sprite sDragonairSprites28[] = {
 	{sDragonairGfx28, ARRAY_COUNT(sDragonairGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx29[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_29.4bpp");
+static const u8 sDragonairGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_29.4bpp.lz");
 static const ax_sprite sDragonairSprites29[] = {
 	{sDragonairGfx29, ARRAY_COUNT(sDragonairGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx30[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_30.4bpp");
+static const u8 sDragonairGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_30.4bpp.lz");
 static const ax_sprite sDragonairSprites30[] = {
 	{sDragonairGfx30, ARRAY_COUNT(sDragonairGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx31[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_31.4bpp");
+static const u8 sDragonairGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_31.4bpp.lz");
 static const ax_sprite sDragonairSprites31[] = {
 	{sDragonairGfx31, ARRAY_COUNT(sDragonairGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx32[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_32.4bpp");
+static const u8 sDragonairGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_32.4bpp.lz");
 static const ax_sprite sDragonairSprites32[] = {
 	{sDragonairGfx32, ARRAY_COUNT(sDragonairGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx33[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_33.4bpp");
+static const u8 sDragonairGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_33.4bpp.lz");
 static const ax_sprite sDragonairSprites33[] = {
 	{sDragonairGfx33, ARRAY_COUNT(sDragonairGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx34[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_34.4bpp");
+static const u8 sDragonairGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_34.4bpp.lz");
 static const ax_sprite sDragonairSprites34[] = {
 	{sDragonairGfx34, ARRAY_COUNT(sDragonairGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx35[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_35.4bpp");
+static const u8 sDragonairGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_35.4bpp.lz");
 static const ax_sprite sDragonairSprites35[] = {
 	{sDragonairGfx35, ARRAY_COUNT(sDragonairGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx36[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_36.4bpp");
+static const u8 sDragonairGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_36.4bpp.lz");
 static const ax_sprite sDragonairSprites36[] = {
 	{sDragonairGfx36, ARRAY_COUNT(sDragonairGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx37[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_37.4bpp");
+static const u8 sDragonairGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_37.4bpp.lz");
 static const ax_sprite sDragonairSprites37[] = {
 	{sDragonairGfx37, ARRAY_COUNT(sDragonairGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx38[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_38.4bpp");
+static const u8 sDragonairGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_38.4bpp.lz");
 static const ax_sprite sDragonairSprites38[] = {
 	{sDragonairGfx38, ARRAY_COUNT(sDragonairGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx39[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_39.4bpp");
+static const u8 sDragonairGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_39.4bpp.lz");
 static const ax_sprite sDragonairSprites39[] = {
 	{sDragonairGfx39, ARRAY_COUNT(sDragonairGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx40[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_40.4bpp");
+static const u8 sDragonairGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_40.4bpp.lz");
 static const ax_sprite sDragonairSprites40[] = {
 	{sDragonairGfx40, ARRAY_COUNT(sDragonairGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx41[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_41.4bpp");
+static const u8 sDragonairGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_41.4bpp.lz");
 static const ax_sprite sDragonairSprites41[] = {
 	{sDragonairGfx41, ARRAY_COUNT(sDragonairGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx42[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_42.4bpp");
+static const u8 sDragonairGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_42.4bpp.lz");
 static const ax_sprite sDragonairSprites42[] = {
 	{sDragonairGfx42, ARRAY_COUNT(sDragonairGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx43[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_43.4bpp");
+static const u8 sDragonairGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_43.4bpp.lz");
 static const ax_sprite sDragonairSprites43[] = {
 	{sDragonairGfx43, ARRAY_COUNT(sDragonairGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx44[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_44.4bpp");
+static const u8 sDragonairGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_44.4bpp.lz");
 static const ax_sprite sDragonairSprites44[] = {
 	{sDragonairGfx44, ARRAY_COUNT(sDragonairGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx45[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_45.4bpp");
+static const u8 sDragonairGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_45.4bpp.lz");
 static const ax_sprite sDragonairSprites45[] = {
 	{sDragonairGfx45, ARRAY_COUNT(sDragonairGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx46[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_46.4bpp");
+static const u8 sDragonairGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_46.4bpp.lz");
 static const ax_sprite sDragonairSprites46[] = {
 	{sDragonairGfx46, ARRAY_COUNT(sDragonairGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx47[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_47.4bpp");
+static const u8 sDragonairGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_47.4bpp.lz");
 static const ax_sprite sDragonairSprites47[] = {
 	{sDragonairGfx47, ARRAY_COUNT(sDragonairGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx48[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_48.4bpp");
+static const u8 sDragonairGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_48.4bpp.lz");
 static const ax_sprite sDragonairSprites48[] = {
 	{sDragonairGfx48, ARRAY_COUNT(sDragonairGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx49[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_49.4bpp");
+static const u8 sDragonairGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_49.4bpp.lz");
 static const ax_sprite sDragonairSprites49[] = {
 	{sDragonairGfx49, ARRAY_COUNT(sDragonairGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx50[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_50.4bpp");
+static const u8 sDragonairGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_50.4bpp.lz");
 static const ax_sprite sDragonairSprites50[] = {
 	{sDragonairGfx50, ARRAY_COUNT(sDragonairGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx51[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_51.4bpp");
+static const u8 sDragonairGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_51.4bpp.lz");
 static const ax_sprite sDragonairSprites51[] = {
 	{sDragonairGfx51, ARRAY_COUNT(sDragonairGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx52[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_52.4bpp");
+static const u8 sDragonairGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_52.4bpp.lz");
 static const ax_sprite sDragonairSprites52[] = {
 	{sDragonairGfx52, ARRAY_COUNT(sDragonairGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx53[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_53.4bpp");
+static const u8 sDragonairGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_53.4bpp.lz");
 static const ax_sprite sDragonairSprites53[] = {
 	{sDragonairGfx53, ARRAY_COUNT(sDragonairGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx54[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_54.4bpp");
+static const u8 sDragonairGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_54.4bpp.lz");
 static const ax_sprite sDragonairSprites54[] = {
 	{sDragonairGfx54, ARRAY_COUNT(sDragonairGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx55[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_55.4bpp");
+static const u8 sDragonairGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_55.4bpp.lz");
 static const ax_sprite sDragonairSprites55[] = {
 	{sDragonairGfx55, ARRAY_COUNT(sDragonairGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx56[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_56.4bpp");
+static const u8 sDragonairGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_56.4bpp.lz");
 static const ax_sprite sDragonairSprites56[] = {
 	{sDragonairGfx56, ARRAY_COUNT(sDragonairGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx57[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_57.4bpp");
+static const u8 sDragonairGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_57.4bpp.lz");
 static const ax_sprite sDragonairSprites57[] = {
 	{sDragonairGfx57, ARRAY_COUNT(sDragonairGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx58[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_58.4bpp");
+static const u8 sDragonairGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_58.4bpp.lz");
 static const ax_sprite sDragonairSprites58[] = {
 	{sDragonairGfx58, ARRAY_COUNT(sDragonairGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx59[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_59.4bpp");
+static const u8 sDragonairGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_59.4bpp.lz");
 static const ax_sprite sDragonairSprites59[] = {
 	{sDragonairGfx59, ARRAY_COUNT(sDragonairGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx60[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_60.4bpp");
+static const u8 sDragonairGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_60.4bpp.lz");
 static const ax_sprite sDragonairSprites60[] = {
 	{sDragonairGfx60, ARRAY_COUNT(sDragonairGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx61[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_61.4bpp");
+static const u8 sDragonairGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_61.4bpp.lz");
 static const ax_sprite sDragonairSprites61[] = {
 	{sDragonairGfx61, ARRAY_COUNT(sDragonairGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx62[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_62.4bpp");
+static const u8 sDragonairGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_62.4bpp.lz");
 static const ax_sprite sDragonairSprites62[] = {
 	{sDragonairGfx62, ARRAY_COUNT(sDragonairGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx63[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_63.4bpp");
+static const u8 sDragonairGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_63.4bpp.lz");
 static const ax_sprite sDragonairSprites63[] = {
 	{sDragonairGfx63, ARRAY_COUNT(sDragonairGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx64[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_64.4bpp");
+static const u8 sDragonairGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_64.4bpp.lz");
 static const ax_sprite sDragonairSprites64[] = {
 	{sDragonairGfx64, ARRAY_COUNT(sDragonairGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx65[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_65.4bpp");
+static const u8 sDragonairGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_65.4bpp.lz");
 static const ax_sprite sDragonairSprites65[] = {
 	{sDragonairGfx65, ARRAY_COUNT(sDragonairGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx66[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_66.4bpp");
+static const u8 sDragonairGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_66.4bpp.lz");
 static const ax_sprite sDragonairSprites66[] = {
 	{sDragonairGfx66, ARRAY_COUNT(sDragonairGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx67[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_67.4bpp");
+static const u8 sDragonairGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_67.4bpp.lz");
 static const ax_sprite sDragonairSprites67[] = {
 	{NULL, 32}, 
 	{sDragonairGfx67, ARRAY_COUNT(sDragonairGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx68[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_68.4bpp");
+static const u8 sDragonairGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_68.4bpp.lz");
 static const ax_sprite sDragonairSprites68[] = {
 	{sDragonairGfx68, ARRAY_COUNT(sDragonairGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx69[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_69.4bpp");
+static const u8 sDragonairGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_69.4bpp.lz");
 static const ax_sprite sDragonairSprites69[] = {
 	{sDragonairGfx69, ARRAY_COUNT(sDragonairGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx70[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_70.4bpp");
+static const u8 sDragonairGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_70.4bpp.lz");
 static const ax_sprite sDragonairSprites70[] = {
 	{sDragonairGfx70, ARRAY_COUNT(sDragonairGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx71[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_71.4bpp");
-static const u8 sDragonairGfx71_1[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_71_1.4bpp");
+static const u8 sDragonairGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_71.4bpp.lz");
+static const u8 sDragonairGfx71_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_71_1.4bpp.lz");
 static const ax_sprite sDragonairSprites71[] = {
 	{sDragonairGfx71, ARRAY_COUNT(sDragonairGfx71)}, 
 	{NULL, 32}, 
 	{sDragonairGfx71_1, ARRAY_COUNT(sDragonairGfx71_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx72[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_72.4bpp");
+static const u8 sDragonairGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_72.4bpp.lz");
 static const ax_sprite sDragonairSprites72[] = {
 	{sDragonairGfx72, ARRAY_COUNT(sDragonairGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx73[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_73.4bpp");
+static const u8 sDragonairGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_73.4bpp.lz");
 static const ax_sprite sDragonairSprites73[] = {
 	{sDragonairGfx73, ARRAY_COUNT(sDragonairGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx74[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_74.4bpp");
+static const u8 sDragonairGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_74.4bpp.lz");
 static const ax_sprite sDragonairSprites74[] = {
 	{sDragonairGfx74, ARRAY_COUNT(sDragonairGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx75[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_75.4bpp");
+static const u8 sDragonairGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_75.4bpp.lz");
 static const ax_sprite sDragonairSprites75[] = {
 	{sDragonairGfx75, ARRAY_COUNT(sDragonairGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx76[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_76.4bpp");
+static const u8 sDragonairGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_76.4bpp.lz");
 static const ax_sprite sDragonairSprites76[] = {
 	{sDragonairGfx76, ARRAY_COUNT(sDragonairGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx77[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_77.4bpp");
+static const u8 sDragonairGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_77.4bpp.lz");
 static const ax_sprite sDragonairSprites77[] = {
 	{sDragonairGfx77, ARRAY_COUNT(sDragonairGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx78[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_78.4bpp");
+static const u8 sDragonairGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_78.4bpp.lz");
 static const ax_sprite sDragonairSprites78[] = {
 	{sDragonairGfx78, ARRAY_COUNT(sDragonairGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx79[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_79.4bpp");
+static const u8 sDragonairGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_79.4bpp.lz");
 static const ax_sprite sDragonairSprites79[] = {
 	{sDragonairGfx79, ARRAY_COUNT(sDragonairGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx80[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_80.4bpp");
+static const u8 sDragonairGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_80.4bpp.lz");
 static const ax_sprite sDragonairSprites80[] = {
 	{sDragonairGfx80, ARRAY_COUNT(sDragonairGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx81[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_81.4bpp");
+static const u8 sDragonairGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_81.4bpp.lz");
 static const ax_sprite sDragonairSprites81[] = {
 	{sDragonairGfx81, ARRAY_COUNT(sDragonairGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx82[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_82.4bpp");
+static const u8 sDragonairGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_82.4bpp.lz");
 static const ax_sprite sDragonairSprites82[] = {
 	{sDragonairGfx82, ARRAY_COUNT(sDragonairGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx83[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_83.4bpp");
+static const u8 sDragonairGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_83.4bpp.lz");
 static const ax_sprite sDragonairSprites83[] = {
 	{sDragonairGfx83, ARRAY_COUNT(sDragonairGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx84[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_84.4bpp");
+static const u8 sDragonairGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_84.4bpp.lz");
 static const ax_sprite sDragonairSprites84[] = {
 	{sDragonairGfx84, ARRAY_COUNT(sDragonairGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx85[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_85.4bpp");
-static const u8 sDragonairGfx85_1[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_85_1.4bpp");
+static const u8 sDragonairGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_85.4bpp.lz");
+static const u8 sDragonairGfx85_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_85_1.4bpp.lz");
 static const ax_sprite sDragonairSprites85[] = {
 	{sDragonairGfx85, ARRAY_COUNT(sDragonairGfx85)}, 
 	{NULL, 32}, 
 	{sDragonairGfx85_1, ARRAY_COUNT(sDragonairGfx85_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx86[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_86.4bpp");
+static const u8 sDragonairGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_86.4bpp.lz");
 static const ax_sprite sDragonairSprites86[] = {
 	{sDragonairGfx86, ARRAY_COUNT(sDragonairGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx87[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_87.4bpp");
+static const u8 sDragonairGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_87.4bpp.lz");
 static const ax_sprite sDragonairSprites87[] = {
 	{sDragonairGfx87, ARRAY_COUNT(sDragonairGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx88[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_88.4bpp");
+static const u8 sDragonairGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_88.4bpp.lz");
 static const ax_sprite sDragonairSprites88[] = {
 	{sDragonairGfx88, ARRAY_COUNT(sDragonairGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx89[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_89.4bpp");
+static const u8 sDragonairGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_89.4bpp.lz");
 static const ax_sprite sDragonairSprites89[] = {
 	{sDragonairGfx89, ARRAY_COUNT(sDragonairGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx90[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_90.4bpp");
-static const u8 sDragonairGfx90_1[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_90_1.4bpp");
+static const u8 sDragonairGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_90.4bpp.lz");
+static const u8 sDragonairGfx90_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_90_1.4bpp.lz");
 static const ax_sprite sDragonairSprites90[] = {
 	{sDragonairGfx90, ARRAY_COUNT(sDragonairGfx90)}, 
 	{NULL, 32}, 
 	{sDragonairGfx90_1, ARRAY_COUNT(sDragonairGfx90_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx91[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_91.4bpp");
-static const u8 sDragonairGfx91_1[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_91_1.4bpp");
+static const u8 sDragonairGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_91.4bpp.lz");
+static const u8 sDragonairGfx91_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_91_1.4bpp.lz");
 static const ax_sprite sDragonairSprites91[] = {
 	{sDragonairGfx91, ARRAY_COUNT(sDragonairGfx91)}, 
 	{NULL, 32}, 
 	{sDragonairGfx91_1, ARRAY_COUNT(sDragonairGfx91_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx92[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_92.4bpp");
+static const u8 sDragonairGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_92.4bpp.lz");
 static const ax_sprite sDragonairSprites92[] = {
 	{sDragonairGfx92, ARRAY_COUNT(sDragonairGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx93[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_93.4bpp");
+static const u8 sDragonairGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_93.4bpp.lz");
 static const ax_sprite sDragonairSprites93[] = {
 	{sDragonairGfx93, ARRAY_COUNT(sDragonairGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx94[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_94.4bpp");
+static const u8 sDragonairGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_94.4bpp.lz");
 static const ax_sprite sDragonairSprites94[] = {
 	{sDragonairGfx94, ARRAY_COUNT(sDragonairGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx95[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_95.4bpp");
-static const u8 sDragonairGfx95_1[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_95_1.4bpp");
+static const u8 sDragonairGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_95.4bpp.lz");
+static const u8 sDragonairGfx95_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_95_1.4bpp.lz");
 static const ax_sprite sDragonairSprites95[] = {
 	{sDragonairGfx95, ARRAY_COUNT(sDragonairGfx95)}, 
 	{NULL, 32}, 
 	{sDragonairGfx95_1, ARRAY_COUNT(sDragonairGfx95_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx96[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_96.4bpp");
+static const u8 sDragonairGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_96.4bpp.lz");
 static const ax_sprite sDragonairSprites96[] = {
 	{sDragonairGfx96, ARRAY_COUNT(sDragonairGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx97[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_97.4bpp");
+static const u8 sDragonairGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_97.4bpp.lz");
 static const ax_sprite sDragonairSprites97[] = {
 	{sDragonairGfx97, ARRAY_COUNT(sDragonairGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx98[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_98.4bpp");
+static const u8 sDragonairGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_98.4bpp.lz");
 static const ax_sprite sDragonairSprites98[] = {
 	{sDragonairGfx98, ARRAY_COUNT(sDragonairGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx99[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_99.4bpp");
+static const u8 sDragonairGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_99.4bpp.lz");
 static const ax_sprite sDragonairSprites99[] = {
 	{sDragonairGfx99, ARRAY_COUNT(sDragonairGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx100[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_100.4bpp");
+static const u8 sDragonairGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_100.4bpp.lz");
 static const ax_sprite sDragonairSprites100[] = {
 	{sDragonairGfx100, ARRAY_COUNT(sDragonairGfx100)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx101[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_101.4bpp");
-static const u8 sDragonairGfx101_1[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_101_1.4bpp");
+static const u8 sDragonairGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_101.4bpp.lz");
+static const u8 sDragonairGfx101_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_101_1.4bpp.lz");
 static const ax_sprite sDragonairSprites101[] = {
 	{NULL, 64}, 
 	{sDragonairGfx101, ARRAY_COUNT(sDragonairGfx101)}, 
@@ -3527,190 +3527,190 @@ static const ax_sprite sDragonairSprites101[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx102[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_102.4bpp");
+static const u8 sDragonairGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_102.4bpp.lz");
 static const ax_sprite sDragonairSprites102[] = {
 	{sDragonairGfx102, ARRAY_COUNT(sDragonairGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx103[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_103.4bpp");
+static const u8 sDragonairGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_103.4bpp.lz");
 static const ax_sprite sDragonairSprites103[] = {
 	{sDragonairGfx103, ARRAY_COUNT(sDragonairGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx104[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_104.4bpp");
+static const u8 sDragonairGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_104.4bpp.lz");
 static const ax_sprite sDragonairSprites104[] = {
 	{sDragonairGfx104, ARRAY_COUNT(sDragonairGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx105[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_105.4bpp");
+static const u8 sDragonairGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_105.4bpp.lz");
 static const ax_sprite sDragonairSprites105[] = {
 	{sDragonairGfx105, ARRAY_COUNT(sDragonairGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx106[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_106.4bpp");
+static const u8 sDragonairGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_106.4bpp.lz");
 static const ax_sprite sDragonairSprites106[] = {
 	{sDragonairGfx106, ARRAY_COUNT(sDragonairGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx107[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_107.4bpp");
+static const u8 sDragonairGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_107.4bpp.lz");
 static const ax_sprite sDragonairSprites107[] = {
 	{sDragonairGfx107, ARRAY_COUNT(sDragonairGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx108[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_108.4bpp");
+static const u8 sDragonairGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_108.4bpp.lz");
 static const ax_sprite sDragonairSprites108[] = {
 	{sDragonairGfx108, ARRAY_COUNT(sDragonairGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx109[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_109.4bpp");
+static const u8 sDragonairGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_109.4bpp.lz");
 static const ax_sprite sDragonairSprites109[] = {
 	{sDragonairGfx109, ARRAY_COUNT(sDragonairGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx110[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_110.4bpp");
+static const u8 sDragonairGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_110.4bpp.lz");
 static const ax_sprite sDragonairSprites110[] = {
 	{sDragonairGfx110, ARRAY_COUNT(sDragonairGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx111[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_111.4bpp");
+static const u8 sDragonairGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_111.4bpp.lz");
 static const ax_sprite sDragonairSprites111[] = {
 	{sDragonairGfx111, ARRAY_COUNT(sDragonairGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx112[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_112.4bpp");
+static const u8 sDragonairGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_112.4bpp.lz");
 static const ax_sprite sDragonairSprites112[] = {
 	{sDragonairGfx112, ARRAY_COUNT(sDragonairGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx113[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_113.4bpp");
+static const u8 sDragonairGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_113.4bpp.lz");
 static const ax_sprite sDragonairSprites113[] = {
 	{sDragonairGfx113, ARRAY_COUNT(sDragonairGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx114[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_114.4bpp");
+static const u8 sDragonairGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_114.4bpp.lz");
 static const ax_sprite sDragonairSprites114[] = {
 	{sDragonairGfx114, ARRAY_COUNT(sDragonairGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx115[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_115.4bpp");
+static const u8 sDragonairGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_115.4bpp.lz");
 static const ax_sprite sDragonairSprites115[] = {
 	{sDragonairGfx115, ARRAY_COUNT(sDragonairGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx116[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_116.4bpp");
+static const u8 sDragonairGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_116.4bpp.lz");
 static const ax_sprite sDragonairSprites116[] = {
 	{sDragonairGfx116, ARRAY_COUNT(sDragonairGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx117[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_117.4bpp");
+static const u8 sDragonairGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_117.4bpp.lz");
 static const ax_sprite sDragonairSprites117[] = {
 	{sDragonairGfx117, ARRAY_COUNT(sDragonairGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx118[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_118.4bpp");
+static const u8 sDragonairGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_118.4bpp.lz");
 static const ax_sprite sDragonairSprites118[] = {
 	{sDragonairGfx118, ARRAY_COUNT(sDragonairGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx119[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_119.4bpp");
-static const u8 sDragonairGfx119_1[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_119_1.4bpp");
+static const u8 sDragonairGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_119.4bpp.lz");
+static const u8 sDragonairGfx119_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_119_1.4bpp.lz");
 static const ax_sprite sDragonairSprites119[] = {
 	{sDragonairGfx119, ARRAY_COUNT(sDragonairGfx119)}, 
 	{NULL, 32}, 
 	{sDragonairGfx119_1, ARRAY_COUNT(sDragonairGfx119_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx120[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_120.4bpp");
+static const u8 sDragonairGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_120.4bpp.lz");
 static const ax_sprite sDragonairSprites120[] = {
 	{sDragonairGfx120, ARRAY_COUNT(sDragonairGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx121[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_121.4bpp");
+static const u8 sDragonairGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_121.4bpp.lz");
 static const ax_sprite sDragonairSprites121[] = {
 	{sDragonairGfx121, ARRAY_COUNT(sDragonairGfx121)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx122[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_122.4bpp");
+static const u8 sDragonairGfx122[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_122.4bpp.lz");
 static const ax_sprite sDragonairSprites122[] = {
 	{sDragonairGfx122, ARRAY_COUNT(sDragonairGfx122)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx123[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_123.4bpp");
+static const u8 sDragonairGfx123[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_123.4bpp.lz");
 static const ax_sprite sDragonairSprites123[] = {
 	{sDragonairGfx123, ARRAY_COUNT(sDragonairGfx123)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx124[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_124.4bpp");
+static const u8 sDragonairGfx124[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_124.4bpp.lz");
 static const ax_sprite sDragonairSprites124[] = {
 	{sDragonairGfx124, ARRAY_COUNT(sDragonairGfx124)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx125[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_125.4bpp");
+static const u8 sDragonairGfx125[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_125.4bpp.lz");
 static const ax_sprite sDragonairSprites125[] = {
 	{sDragonairGfx125, ARRAY_COUNT(sDragonairGfx125)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx126[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_126.4bpp");
+static const u8 sDragonairGfx126[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_126.4bpp.lz");
 static const ax_sprite sDragonairSprites126[] = {
 	{sDragonairGfx126, ARRAY_COUNT(sDragonairGfx126)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx127[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_127.4bpp");
+static const u8 sDragonairGfx127[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_127.4bpp.lz");
 static const ax_sprite sDragonairSprites127[] = {
 	{sDragonairGfx127, ARRAY_COUNT(sDragonairGfx127)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx128[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_128.4bpp");
+static const u8 sDragonairGfx128[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_128.4bpp.lz");
 static const ax_sprite sDragonairSprites128[] = {
 	{sDragonairGfx128, ARRAY_COUNT(sDragonairGfx128)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx129[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_129.4bpp");
+static const u8 sDragonairGfx129[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_129.4bpp.lz");
 static const ax_sprite sDragonairSprites129[] = {
 	{sDragonairGfx129, ARRAY_COUNT(sDragonairGfx129)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx130[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_130.4bpp");
+static const u8 sDragonairGfx130[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_130.4bpp.lz");
 static const ax_sprite sDragonairSprites130[] = {
 	{sDragonairGfx130, ARRAY_COUNT(sDragonairGfx130)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx131[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_131.4bpp");
+static const u8 sDragonairGfx131[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_131.4bpp.lz");
 static const ax_sprite sDragonairSprites131[] = {
 	{sDragonairGfx131, ARRAY_COUNT(sDragonairGfx131)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx132[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_132.4bpp");
+static const u8 sDragonairGfx132[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_132.4bpp.lz");
 static const ax_sprite sDragonairSprites132[] = {
 	{sDragonairGfx132, ARRAY_COUNT(sDragonairGfx132)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx133[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_133.4bpp");
+static const u8 sDragonairGfx133[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_133.4bpp.lz");
 static const ax_sprite sDragonairSprites133[] = {
 	{sDragonairGfx133, ARRAY_COUNT(sDragonairGfx133)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx134[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_134.4bpp");
+static const u8 sDragonairGfx134[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_134.4bpp.lz");
 static const ax_sprite sDragonairSprites134[] = {
 	{sDragonairGfx134, ARRAY_COUNT(sDragonairGfx134)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx135[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_135.4bpp");
+static const u8 sDragonairGfx135[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_135.4bpp.lz");
 static const ax_sprite sDragonairSprites135[] = {
 	{sDragonairGfx135, ARRAY_COUNT(sDragonairGfx135)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx136[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_136.4bpp");
+static const u8 sDragonairGfx136[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_136.4bpp.lz");
 static const ax_sprite sDragonairSprites136[] = {
 	{sDragonairGfx136, ARRAY_COUNT(sDragonairGfx136)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx137[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_137.4bpp");
+static const u8 sDragonairGfx137[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_137.4bpp.lz");
 static const ax_sprite sDragonairSprites137[] = {
 	{sDragonairGfx137, ARRAY_COUNT(sDragonairGfx137)}, 
 	{NULL, 0}
 };
-static const u8 sDragonairGfx138[] = INCBIN_U8("graphics/ax/mon/dragonair/sprite_138.4bpp");
+static const u8 sDragonairGfx138[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonair/sprite_138.4bpp.lz");
 static const ax_sprite sDragonairSprites138[] = {
 	{sDragonairGfx138, ARRAY_COUNT(sDragonairGfx138)}, 
 	{NULL, 0}

@@ -2442,10 +2442,10 @@ static const ax_anim sLugiaAnims_14_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLugiaGfx1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_1.4bpp");
-static const u8 sLugiaGfx1_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_1_1.4bpp");
-static const u8 sLugiaGfx1_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_1_2.4bpp");
-static const u8 sLugiaGfx1_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_1_3.4bpp");
+static const u8 sLugiaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_1.4bpp.lz");
+static const u8 sLugiaGfx1_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_1_1.4bpp.lz");
+static const u8 sLugiaGfx1_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_1_2.4bpp.lz");
+static const u8 sLugiaGfx1_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_1_3.4bpp.lz");
 static const ax_sprite sLugiaSprites1[] = {
 	{sLugiaGfx1, ARRAY_COUNT(sLugiaGfx1)}, 
 	{NULL, 64}, 
@@ -2457,19 +2457,19 @@ static const ax_sprite sLugiaSprites1[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_2.4bpp");
+static const u8 sLugiaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_2.4bpp.lz");
 static const ax_sprite sLugiaSprites2[] = {
 	{sLugiaGfx2, ARRAY_COUNT(sLugiaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_3.4bpp");
+static const u8 sLugiaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_3.4bpp.lz");
 static const ax_sprite sLugiaSprites3[] = {
 	{sLugiaGfx3, ARRAY_COUNT(sLugiaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_4.4bpp");
-static const u8 sLugiaGfx4_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_4_1.4bpp");
-static const u8 sLugiaGfx4_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_4_2.4bpp");
+static const u8 sLugiaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_4.4bpp.lz");
+static const u8 sLugiaGfx4_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_4_1.4bpp.lz");
+static const u8 sLugiaGfx4_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_4_2.4bpp.lz");
 static const ax_sprite sLugiaSprites4[] = {
 	{NULL, 96}, 
 	{sLugiaGfx4, ARRAY_COUNT(sLugiaGfx4)}, 
@@ -2480,20 +2480,20 @@ static const ax_sprite sLugiaSprites4[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_5.4bpp");
+static const u8 sLugiaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_5.4bpp.lz");
 static const ax_sprite sLugiaSprites5[] = {
 	{sLugiaGfx5, ARRAY_COUNT(sLugiaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_6.4bpp");
+static const u8 sLugiaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_6.4bpp.lz");
 static const ax_sprite sLugiaSprites6[] = {
 	{sLugiaGfx6, ARRAY_COUNT(sLugiaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_7.4bpp");
-static const u8 sLugiaGfx7_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_7_1.4bpp");
-static const u8 sLugiaGfx7_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_7_2.4bpp");
-static const u8 sLugiaGfx7_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_7_3.4bpp");
+static const u8 sLugiaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_7.4bpp.lz");
+static const u8 sLugiaGfx7_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_7_1.4bpp.lz");
+static const u8 sLugiaGfx7_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_7_2.4bpp.lz");
+static const u8 sLugiaGfx7_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_7_3.4bpp.lz");
 static const ax_sprite sLugiaSprites7[] = {
 	{sLugiaGfx7, ARRAY_COUNT(sLugiaGfx7)}, 
 	{NULL, 32}, 
@@ -2505,16 +2505,16 @@ static const ax_sprite sLugiaSprites7[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx8[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_8.4bpp");
+static const u8 sLugiaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_8.4bpp.lz");
 static const ax_sprite sLugiaSprites8[] = {
 	{sLugiaGfx8, ARRAY_COUNT(sLugiaGfx8)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx9[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_9.4bpp");
-static const u8 sLugiaGfx9_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_9_1.4bpp");
-static const u8 sLugiaGfx9_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_9_2.4bpp");
-static const u8 sLugiaGfx9_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_9_3.4bpp");
+static const u8 sLugiaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_9.4bpp.lz");
+static const u8 sLugiaGfx9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_9_1.4bpp.lz");
+static const u8 sLugiaGfx9_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_9_2.4bpp.lz");
+static const u8 sLugiaGfx9_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_9_3.4bpp.lz");
 static const ax_sprite sLugiaSprites9[] = {
 	{sLugiaGfx9, ARRAY_COUNT(sLugiaGfx9)}, 
 	{NULL, 32}, 
@@ -2526,17 +2526,17 @@ static const ax_sprite sLugiaSprites9[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx10[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_10.4bpp");
+static const u8 sLugiaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_10.4bpp.lz");
 static const ax_sprite sLugiaSprites10[] = {
 	{sLugiaGfx10, ARRAY_COUNT(sLugiaGfx10)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx11[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_11.4bpp");
-static const u8 sLugiaGfx11_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_11_1.4bpp");
-static const u8 sLugiaGfx11_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_11_2.4bpp");
-static const u8 sLugiaGfx11_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_11_3.4bpp");
-static const u8 sLugiaGfx11_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_11_4.4bpp");
+static const u8 sLugiaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_11.4bpp.lz");
+static const u8 sLugiaGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_11_1.4bpp.lz");
+static const u8 sLugiaGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_11_2.4bpp.lz");
+static const u8 sLugiaGfx11_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_11_3.4bpp.lz");
+static const u8 sLugiaGfx11_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_11_4.4bpp.lz");
 static const ax_sprite sLugiaSprites11[] = {
 	{sLugiaGfx11, ARRAY_COUNT(sLugiaGfx11)}, 
 	{NULL, 128}, 
@@ -2549,28 +2549,28 @@ static const ax_sprite sLugiaSprites11[] = {
 	{sLugiaGfx11_4, ARRAY_COUNT(sLugiaGfx11_4)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx12[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_12.4bpp");
+static const u8 sLugiaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_12.4bpp.lz");
 static const ax_sprite sLugiaSprites12[] = {
 	{sLugiaGfx12, ARRAY_COUNT(sLugiaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx13[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_13.4bpp");
+static const u8 sLugiaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_13.4bpp.lz");
 static const ax_sprite sLugiaSprites13[] = {
 	{sLugiaGfx13, ARRAY_COUNT(sLugiaGfx13)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx14[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_14.4bpp");
+static const u8 sLugiaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_14.4bpp.lz");
 static const ax_sprite sLugiaSprites14[] = {
 	{sLugiaGfx14, ARRAY_COUNT(sLugiaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx15[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_15.4bpp");
-static const u8 sLugiaGfx15_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_1.4bpp");
-static const u8 sLugiaGfx15_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_2.4bpp");
-static const u8 sLugiaGfx15_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_3.4bpp");
-static const u8 sLugiaGfx15_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_4.4bpp");
-static const u8 sLugiaGfx15_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_5.4bpp");
+static const u8 sLugiaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_15.4bpp.lz");
+static const u8 sLugiaGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_1.4bpp.lz");
+static const u8 sLugiaGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_2.4bpp.lz");
+static const u8 sLugiaGfx15_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_3.4bpp.lz");
+static const u8 sLugiaGfx15_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_4.4bpp.lz");
+static const u8 sLugiaGfx15_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_15_5.4bpp.lz");
 static const ax_sprite sLugiaSprites15[] = {
 	{sLugiaGfx15, ARRAY_COUNT(sLugiaGfx15)}, 
 	{NULL, 32}, 
@@ -2585,26 +2585,26 @@ static const ax_sprite sLugiaSprites15[] = {
 	{sLugiaGfx15_5, ARRAY_COUNT(sLugiaGfx15_5)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx16[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_16.4bpp");
+static const u8 sLugiaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_16.4bpp.lz");
 static const ax_sprite sLugiaSprites16[] = {
 	{sLugiaGfx16, ARRAY_COUNT(sLugiaGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx17[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_17.4bpp");
+static const u8 sLugiaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_17.4bpp.lz");
 static const ax_sprite sLugiaSprites17[] = {
 	{sLugiaGfx17, ARRAY_COUNT(sLugiaGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx18[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_18.4bpp");
+static const u8 sLugiaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_18.4bpp.lz");
 static const ax_sprite sLugiaSprites18[] = {
 	{sLugiaGfx18, ARRAY_COUNT(sLugiaGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx19[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_19.4bpp");
-static const u8 sLugiaGfx19_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_19_1.4bpp");
-static const u8 sLugiaGfx19_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_19_2.4bpp");
-static const u8 sLugiaGfx19_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_19_3.4bpp");
+static const u8 sLugiaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_19.4bpp.lz");
+static const u8 sLugiaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_19_1.4bpp.lz");
+static const u8 sLugiaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_19_2.4bpp.lz");
+static const u8 sLugiaGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_19_3.4bpp.lz");
 static const ax_sprite sLugiaSprites19[] = {
 	{NULL, 64}, 
 	{sLugiaGfx19, ARRAY_COUNT(sLugiaGfx19)}, 
@@ -2617,8 +2617,8 @@ static const ax_sprite sLugiaSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx20[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_20.4bpp");
-static const u8 sLugiaGfx20_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_20_1.4bpp");
+static const u8 sLugiaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_20.4bpp.lz");
+static const u8 sLugiaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_20_1.4bpp.lz");
 static const ax_sprite sLugiaSprites20[] = {
 	{sLugiaGfx20, ARRAY_COUNT(sLugiaGfx20)}, 
 	{NULL, 32}, 
@@ -2626,23 +2626,23 @@ static const ax_sprite sLugiaSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx21[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_21.4bpp");
-static const u8 sLugiaGfx21_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_21_1.4bpp");
+static const u8 sLugiaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_21.4bpp.lz");
+static const u8 sLugiaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_21_1.4bpp.lz");
 static const ax_sprite sLugiaSprites21[] = {
 	{sLugiaGfx21, ARRAY_COUNT(sLugiaGfx21)}, 
 	{NULL, 96}, 
 	{sLugiaGfx21_1, ARRAY_COUNT(sLugiaGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx22[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_22.4bpp");
+static const u8 sLugiaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_22.4bpp.lz");
 static const ax_sprite sLugiaSprites22[] = {
 	{sLugiaGfx22, ARRAY_COUNT(sLugiaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx23[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_23.4bpp");
-static const u8 sLugiaGfx23_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_23_1.4bpp");
-static const u8 sLugiaGfx23_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_23_2.4bpp");
-static const u8 sLugiaGfx23_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_23_3.4bpp");
+static const u8 sLugiaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_23.4bpp.lz");
+static const u8 sLugiaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_23_1.4bpp.lz");
+static const u8 sLugiaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_23_2.4bpp.lz");
+static const u8 sLugiaGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_23_3.4bpp.lz");
 static const ax_sprite sLugiaSprites23[] = {
 	{NULL, 64}, 
 	{sLugiaGfx23, ARRAY_COUNT(sLugiaGfx23)}, 
@@ -2655,9 +2655,9 @@ static const ax_sprite sLugiaSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx24[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_24.4bpp");
-static const u8 sLugiaGfx24_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_24_1.4bpp");
-static const u8 sLugiaGfx24_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_24_2.4bpp");
+static const u8 sLugiaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_24.4bpp.lz");
+static const u8 sLugiaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_24_1.4bpp.lz");
+static const u8 sLugiaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_24_2.4bpp.lz");
 static const ax_sprite sLugiaSprites24[] = {
 	{sLugiaGfx24, ARRAY_COUNT(sLugiaGfx24)}, 
 	{NULL, 32}, 
@@ -2667,24 +2667,24 @@ static const ax_sprite sLugiaSprites24[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx25[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_25.4bpp");
-static const u8 sLugiaGfx25_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_25_1.4bpp");
+static const u8 sLugiaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_25.4bpp.lz");
+static const u8 sLugiaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_25_1.4bpp.lz");
 static const ax_sprite sLugiaSprites25[] = {
 	{sLugiaGfx25, ARRAY_COUNT(sLugiaGfx25)}, 
 	{NULL, 96}, 
 	{sLugiaGfx25_1, ARRAY_COUNT(sLugiaGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx26[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_26.4bpp");
+static const u8 sLugiaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_26.4bpp.lz");
 static const ax_sprite sLugiaSprites26[] = {
 	{sLugiaGfx26, ARRAY_COUNT(sLugiaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx27[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_27.4bpp");
-static const u8 sLugiaGfx27_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_27_1.4bpp");
-static const u8 sLugiaGfx27_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_27_2.4bpp");
-static const u8 sLugiaGfx27_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_27_3.4bpp");
-static const u8 sLugiaGfx27_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_27_4.4bpp");
+static const u8 sLugiaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_27.4bpp.lz");
+static const u8 sLugiaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_27_1.4bpp.lz");
+static const u8 sLugiaGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_27_2.4bpp.lz");
+static const u8 sLugiaGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_27_3.4bpp.lz");
+static const u8 sLugiaGfx27_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_27_4.4bpp.lz");
 static const ax_sprite sLugiaSprites27[] = {
 	{NULL, 96}, 
 	{sLugiaGfx27, ARRAY_COUNT(sLugiaGfx27)}, 
@@ -2698,26 +2698,26 @@ static const ax_sprite sLugiaSprites27[] = {
 	{sLugiaGfx27_4, ARRAY_COUNT(sLugiaGfx27_4)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx28[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_28.4bpp");
+static const u8 sLugiaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_28.4bpp.lz");
 static const ax_sprite sLugiaSprites28[] = {
 	{sLugiaGfx28, ARRAY_COUNT(sLugiaGfx28)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx29[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_29.4bpp");
+static const u8 sLugiaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_29.4bpp.lz");
 static const ax_sprite sLugiaSprites29[] = {
 	{sLugiaGfx29, ARRAY_COUNT(sLugiaGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx30[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_30.4bpp");
+static const u8 sLugiaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_30.4bpp.lz");
 static const ax_sprite sLugiaSprites30[] = {
 	{sLugiaGfx30, ARRAY_COUNT(sLugiaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx31[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_31.4bpp");
-static const u8 sLugiaGfx31_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_31_1.4bpp");
-static const u8 sLugiaGfx31_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_31_2.4bpp");
-static const u8 sLugiaGfx31_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_31_3.4bpp");
+static const u8 sLugiaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_31.4bpp.lz");
+static const u8 sLugiaGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_31_1.4bpp.lz");
+static const u8 sLugiaGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_31_2.4bpp.lz");
+static const u8 sLugiaGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_31_3.4bpp.lz");
 static const ax_sprite sLugiaSprites31[] = {
 	{NULL, 96}, 
 	{sLugiaGfx31, ARRAY_COUNT(sLugiaGfx31)}, 
@@ -2729,8 +2729,8 @@ static const ax_sprite sLugiaSprites31[] = {
 	{sLugiaGfx31_3, ARRAY_COUNT(sLugiaGfx31_3)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx32[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_32.4bpp");
-static const u8 sLugiaGfx32_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_32_1.4bpp");
+static const u8 sLugiaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_32.4bpp.lz");
+static const u8 sLugiaGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_32_1.4bpp.lz");
 static const ax_sprite sLugiaSprites32[] = {
 	{sLugiaGfx32, ARRAY_COUNT(sLugiaGfx32)}, 
 	{NULL, 32}, 
@@ -2738,21 +2738,21 @@ static const ax_sprite sLugiaSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx33[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_33.4bpp");
+static const u8 sLugiaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_33.4bpp.lz");
 static const ax_sprite sLugiaSprites33[] = {
 	{sLugiaGfx33, ARRAY_COUNT(sLugiaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx34[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_34.4bpp");
+static const u8 sLugiaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_34.4bpp.lz");
 static const ax_sprite sLugiaSprites34[] = {
 	{sLugiaGfx34, ARRAY_COUNT(sLugiaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx35[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_35.4bpp");
-static const u8 sLugiaGfx35_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_35_1.4bpp");
-static const u8 sLugiaGfx35_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_35_2.4bpp");
-static const u8 sLugiaGfx35_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_35_3.4bpp");
-static const u8 sLugiaGfx35_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_35_4.4bpp");
+static const u8 sLugiaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_35.4bpp.lz");
+static const u8 sLugiaGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_35_1.4bpp.lz");
+static const u8 sLugiaGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_35_2.4bpp.lz");
+static const u8 sLugiaGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_35_3.4bpp.lz");
+static const u8 sLugiaGfx35_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_35_4.4bpp.lz");
 static const ax_sprite sLugiaSprites35[] = {
 	{sLugiaGfx35, ARRAY_COUNT(sLugiaGfx35)}, 
 	{NULL, 32}, 
@@ -2766,20 +2766,20 @@ static const ax_sprite sLugiaSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx36[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_36.4bpp");
+static const u8 sLugiaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_36.4bpp.lz");
 static const ax_sprite sLugiaSprites36[] = {
 	{sLugiaGfx36, ARRAY_COUNT(sLugiaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx37[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_37.4bpp");
+static const u8 sLugiaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_37.4bpp.lz");
 static const ax_sprite sLugiaSprites37[] = {
 	{sLugiaGfx37, ARRAY_COUNT(sLugiaGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx38[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_38.4bpp");
-static const u8 sLugiaGfx38_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_38_1.4bpp");
-static const u8 sLugiaGfx38_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_38_2.4bpp");
-static const u8 sLugiaGfx38_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_38_3.4bpp");
+static const u8 sLugiaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_38.4bpp.lz");
+static const u8 sLugiaGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_38_1.4bpp.lz");
+static const u8 sLugiaGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_38_2.4bpp.lz");
+static const u8 sLugiaGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_38_3.4bpp.lz");
 static const ax_sprite sLugiaSprites38[] = {
 	{NULL, 96}, 
 	{sLugiaGfx38, ARRAY_COUNT(sLugiaGfx38)}, 
@@ -2791,8 +2791,8 @@ static const ax_sprite sLugiaSprites38[] = {
 	{sLugiaGfx38_3, ARRAY_COUNT(sLugiaGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx39[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_39.4bpp");
-static const u8 sLugiaGfx39_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_39_1.4bpp");
+static const u8 sLugiaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_39.4bpp.lz");
+static const u8 sLugiaGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_39_1.4bpp.lz");
 static const ax_sprite sLugiaSprites39[] = {
 	{NULL, 32}, 
 	{sLugiaGfx39, ARRAY_COUNT(sLugiaGfx39)}, 
@@ -2800,18 +2800,18 @@ static const ax_sprite sLugiaSprites39[] = {
 	{sLugiaGfx39_1, ARRAY_COUNT(sLugiaGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx40[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_40.4bpp");
-static const u8 sLugiaGfx40_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_40_1.4bpp");
+static const u8 sLugiaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_40.4bpp.lz");
+static const u8 sLugiaGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_40_1.4bpp.lz");
 static const ax_sprite sLugiaSprites40[] = {
 	{sLugiaGfx40, ARRAY_COUNT(sLugiaGfx40)}, 
 	{NULL, 32}, 
 	{sLugiaGfx40_1, ARRAY_COUNT(sLugiaGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx41[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_41.4bpp");
-static const u8 sLugiaGfx41_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_41_1.4bpp");
-static const u8 sLugiaGfx41_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_41_2.4bpp");
-static const u8 sLugiaGfx41_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_41_3.4bpp");
+static const u8 sLugiaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_41.4bpp.lz");
+static const u8 sLugiaGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_41_1.4bpp.lz");
+static const u8 sLugiaGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_41_2.4bpp.lz");
+static const u8 sLugiaGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_41_3.4bpp.lz");
 static const ax_sprite sLugiaSprites41[] = {
 	{sLugiaGfx41, ARRAY_COUNT(sLugiaGfx41)}, 
 	{NULL, 64}, 
@@ -2823,18 +2823,18 @@ static const ax_sprite sLugiaSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx42[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_42.4bpp");
-static const u8 sLugiaGfx42_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_42_1.4bpp");
+static const u8 sLugiaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_42.4bpp.lz");
+static const u8 sLugiaGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_42_1.4bpp.lz");
 static const ax_sprite sLugiaSprites42[] = {
 	{sLugiaGfx42, ARRAY_COUNT(sLugiaGfx42)}, 
 	{NULL, 32}, 
 	{sLugiaGfx42_1, ARRAY_COUNT(sLugiaGfx42_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx43[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_43.4bpp");
-static const u8 sLugiaGfx43_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_43_1.4bpp");
-static const u8 sLugiaGfx43_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_43_2.4bpp");
-static const u8 sLugiaGfx43_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_43_3.4bpp");
+static const u8 sLugiaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_43.4bpp.lz");
+static const u8 sLugiaGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_43_1.4bpp.lz");
+static const u8 sLugiaGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_43_2.4bpp.lz");
+static const u8 sLugiaGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_43_3.4bpp.lz");
 static const ax_sprite sLugiaSprites43[] = {
 	{NULL, 32}, 
 	{sLugiaGfx43, ARRAY_COUNT(sLugiaGfx43)}, 
@@ -2846,8 +2846,8 @@ static const ax_sprite sLugiaSprites43[] = {
 	{sLugiaGfx43_3, ARRAY_COUNT(sLugiaGfx43_3)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx44[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_44.4bpp");
-static const u8 sLugiaGfx44_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_44_1.4bpp");
+static const u8 sLugiaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_44.4bpp.lz");
+static const u8 sLugiaGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_44_1.4bpp.lz");
 static const ax_sprite sLugiaSprites44[] = {
 	{sLugiaGfx44, ARRAY_COUNT(sLugiaGfx44)}, 
 	{NULL, 32}, 
@@ -2855,8 +2855,8 @@ static const ax_sprite sLugiaSprites44[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx45[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_45.4bpp");
-static const u8 sLugiaGfx45_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_45_1.4bpp");
+static const u8 sLugiaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_45.4bpp.lz");
+static const u8 sLugiaGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_45_1.4bpp.lz");
 static const ax_sprite sLugiaSprites45[] = {
 	{sLugiaGfx45, ARRAY_COUNT(sLugiaGfx45)}, 
 	{NULL, 32}, 
@@ -2864,9 +2864,9 @@ static const ax_sprite sLugiaSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx46[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_46.4bpp");
-static const u8 sLugiaGfx46_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_46_1.4bpp");
-static const u8 sLugiaGfx46_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_46_2.4bpp");
+static const u8 sLugiaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_46.4bpp.lz");
+static const u8 sLugiaGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_46_1.4bpp.lz");
+static const u8 sLugiaGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_46_2.4bpp.lz");
 static const ax_sprite sLugiaSprites46[] = {
 	{NULL, 32}, 
 	{sLugiaGfx46, ARRAY_COUNT(sLugiaGfx46)}, 
@@ -2876,26 +2876,26 @@ static const ax_sprite sLugiaSprites46[] = {
 	{sLugiaGfx46_2, ARRAY_COUNT(sLugiaGfx46_2)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx47[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_47.4bpp");
+static const u8 sLugiaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_47.4bpp.lz");
 static const ax_sprite sLugiaSprites47[] = {
 	{sLugiaGfx47, ARRAY_COUNT(sLugiaGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx48[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_48.4bpp");
+static const u8 sLugiaGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_48.4bpp.lz");
 static const ax_sprite sLugiaSprites48[] = {
 	{sLugiaGfx48, ARRAY_COUNT(sLugiaGfx48)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx49[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_49.4bpp");
+static const u8 sLugiaGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_49.4bpp.lz");
 static const ax_sprite sLugiaSprites49[] = {
 	{sLugiaGfx49, ARRAY_COUNT(sLugiaGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx50[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_50.4bpp");
-static const u8 sLugiaGfx50_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_50_1.4bpp");
-static const u8 sLugiaGfx50_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_50_2.4bpp");
-static const u8 sLugiaGfx50_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_50_3.4bpp");
+static const u8 sLugiaGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_50.4bpp.lz");
+static const u8 sLugiaGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_50_1.4bpp.lz");
+static const u8 sLugiaGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_50_2.4bpp.lz");
+static const u8 sLugiaGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_50_3.4bpp.lz");
 static const ax_sprite sLugiaSprites50[] = {
 	{sLugiaGfx50, ARRAY_COUNT(sLugiaGfx50)}, 
 	{NULL, 160}, 
@@ -2906,13 +2906,13 @@ static const ax_sprite sLugiaSprites50[] = {
 	{sLugiaGfx50_3, ARRAY_COUNT(sLugiaGfx50_3)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx51[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_51.4bpp");
+static const u8 sLugiaGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_51.4bpp.lz");
 static const ax_sprite sLugiaSprites51[] = {
 	{sLugiaGfx51, ARRAY_COUNT(sLugiaGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx52[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_52.4bpp");
-static const u8 sLugiaGfx52_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_52_1.4bpp");
+static const u8 sLugiaGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_52.4bpp.lz");
+static const u8 sLugiaGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_52_1.4bpp.lz");
 static const ax_sprite sLugiaSprites52[] = {
 	{sLugiaGfx52, ARRAY_COUNT(sLugiaGfx52)}, 
 	{NULL, 32}, 
@@ -2920,26 +2920,26 @@ static const ax_sprite sLugiaSprites52[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx53[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_53.4bpp");
+static const u8 sLugiaGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_53.4bpp.lz");
 static const ax_sprite sLugiaSprites53[] = {
 	{sLugiaGfx53, ARRAY_COUNT(sLugiaGfx53)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx54[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_54.4bpp");
+static const u8 sLugiaGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_54.4bpp.lz");
 static const ax_sprite sLugiaSprites54[] = {
 	{sLugiaGfx54, ARRAY_COUNT(sLugiaGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx55[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_55.4bpp");
+static const u8 sLugiaGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_55.4bpp.lz");
 static const ax_sprite sLugiaSprites55[] = {
 	{sLugiaGfx55, ARRAY_COUNT(sLugiaGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx56[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_56.4bpp");
-static const u8 sLugiaGfx56_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_56_1.4bpp");
-static const u8 sLugiaGfx56_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_56_2.4bpp");
-static const u8 sLugiaGfx56_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_56_3.4bpp");
+static const u8 sLugiaGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_56.4bpp.lz");
+static const u8 sLugiaGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_56_1.4bpp.lz");
+static const u8 sLugiaGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_56_2.4bpp.lz");
+static const u8 sLugiaGfx56_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_56_3.4bpp.lz");
 static const ax_sprite sLugiaSprites56[] = {
 	{NULL, 64}, 
 	{sLugiaGfx56, ARRAY_COUNT(sLugiaGfx56)}, 
@@ -2952,14 +2952,14 @@ static const ax_sprite sLugiaSprites56[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx57[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_57.4bpp");
+static const u8 sLugiaGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_57.4bpp.lz");
 static const ax_sprite sLugiaSprites57[] = {
 	{sLugiaGfx57, ARRAY_COUNT(sLugiaGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx58[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_58.4bpp");
-static const u8 sLugiaGfx58_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_58_1.4bpp");
-static const u8 sLugiaGfx58_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_58_2.4bpp");
+static const u8 sLugiaGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_58.4bpp.lz");
+static const u8 sLugiaGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_58_1.4bpp.lz");
+static const u8 sLugiaGfx58_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_58_2.4bpp.lz");
 static const ax_sprite sLugiaSprites58[] = {
 	{sLugiaGfx58, ARRAY_COUNT(sLugiaGfx58)}, 
 	{NULL, 32}, 
@@ -2969,20 +2969,20 @@ static const ax_sprite sLugiaSprites58[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx59[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_59.4bpp");
+static const u8 sLugiaGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_59.4bpp.lz");
 static const ax_sprite sLugiaSprites59[] = {
 	{NULL, 32}, 
 	{sLugiaGfx59, ARRAY_COUNT(sLugiaGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx60[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_60.4bpp");
-static const u8 sLugiaGfx60_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_1.4bpp");
-static const u8 sLugiaGfx60_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_2.4bpp");
-static const u8 sLugiaGfx60_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_3.4bpp");
-static const u8 sLugiaGfx60_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_4.4bpp");
-static const u8 sLugiaGfx60_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_5.4bpp");
-static const u8 sLugiaGfx60_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_6.4bpp");
-static const u8 sLugiaGfx60_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_7.4bpp");
+static const u8 sLugiaGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_60.4bpp.lz");
+static const u8 sLugiaGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_1.4bpp.lz");
+static const u8 sLugiaGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_2.4bpp.lz");
+static const u8 sLugiaGfx60_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_3.4bpp.lz");
+static const u8 sLugiaGfx60_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_4.4bpp.lz");
+static const u8 sLugiaGfx60_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_5.4bpp.lz");
+static const u8 sLugiaGfx60_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_6.4bpp.lz");
+static const u8 sLugiaGfx60_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_60_7.4bpp.lz");
 static const ax_sprite sLugiaSprites60[] = {
 	{NULL, 32}, 
 	{sLugiaGfx60, ARRAY_COUNT(sLugiaGfx60)}, 
@@ -3003,10 +3003,10 @@ static const ax_sprite sLugiaSprites60[] = {
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx61[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_61.4bpp");
-static const u8 sLugiaGfx61_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_61_1.4bpp");
-static const u8 sLugiaGfx61_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_61_2.4bpp");
-static const u8 sLugiaGfx61_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_61_3.4bpp");
+static const u8 sLugiaGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_61.4bpp.lz");
+static const u8 sLugiaGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_61_1.4bpp.lz");
+static const u8 sLugiaGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_61_2.4bpp.lz");
+static const u8 sLugiaGfx61_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_61_3.4bpp.lz");
 static const ax_sprite sLugiaSprites61[] = {
 	{NULL, 32}, 
 	{sLugiaGfx61, ARRAY_COUNT(sLugiaGfx61)}, 
@@ -3019,8 +3019,8 @@ static const ax_sprite sLugiaSprites61[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx62[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_62.4bpp");
-static const u8 sLugiaGfx62_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_62_1.4bpp");
+static const u8 sLugiaGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_62.4bpp.lz");
+static const u8 sLugiaGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_62_1.4bpp.lz");
 static const ax_sprite sLugiaSprites62[] = {
 	{NULL, 32}, 
 	{sLugiaGfx62, ARRAY_COUNT(sLugiaGfx62)}, 
@@ -3029,10 +3029,10 @@ static const ax_sprite sLugiaSprites62[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx63[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_63.4bpp");
-static const u8 sLugiaGfx63_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_63_1.4bpp");
-static const u8 sLugiaGfx63_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_63_2.4bpp");
-static const u8 sLugiaGfx63_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_63_3.4bpp");
+static const u8 sLugiaGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_63.4bpp.lz");
+static const u8 sLugiaGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_63_1.4bpp.lz");
+static const u8 sLugiaGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_63_2.4bpp.lz");
+static const u8 sLugiaGfx63_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_63_3.4bpp.lz");
 static const ax_sprite sLugiaSprites63[] = {
 	{sLugiaGfx63, ARRAY_COUNT(sLugiaGfx63)}, 
 	{NULL, 32}, 
@@ -3044,15 +3044,15 @@ static const ax_sprite sLugiaSprites63[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx64[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_64.4bpp");
+static const u8 sLugiaGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_64.4bpp.lz");
 static const ax_sprite sLugiaSprites64[] = {
 	{sLugiaGfx64, ARRAY_COUNT(sLugiaGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx65[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_65.4bpp");
-static const u8 sLugiaGfx65_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_65_1.4bpp");
-static const u8 sLugiaGfx65_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_65_2.4bpp");
-static const u8 sLugiaGfx65_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_65_3.4bpp");
+static const u8 sLugiaGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_65.4bpp.lz");
+static const u8 sLugiaGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_65_1.4bpp.lz");
+static const u8 sLugiaGfx65_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_65_2.4bpp.lz");
+static const u8 sLugiaGfx65_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_65_3.4bpp.lz");
 static const ax_sprite sLugiaSprites65[] = {
 	{NULL, 96}, 
 	{sLugiaGfx65, ARRAY_COUNT(sLugiaGfx65)}, 
@@ -3064,21 +3064,21 @@ static const ax_sprite sLugiaSprites65[] = {
 	{sLugiaGfx65_3, ARRAY_COUNT(sLugiaGfx65_3)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx66[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_66.4bpp");
+static const u8 sLugiaGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_66.4bpp.lz");
 static const ax_sprite sLugiaSprites66[] = {
 	{sLugiaGfx66, ARRAY_COUNT(sLugiaGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx67[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_67.4bpp");
-static const u8 sLugiaGfx67_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_67_1.4bpp");
+static const u8 sLugiaGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_67.4bpp.lz");
+static const u8 sLugiaGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_67_1.4bpp.lz");
 static const ax_sprite sLugiaSprites67[] = {
 	{sLugiaGfx67, ARRAY_COUNT(sLugiaGfx67)}, 
 	{NULL, 32}, 
 	{sLugiaGfx67_1, ARRAY_COUNT(sLugiaGfx67_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx68[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_68.4bpp");
-static const u8 sLugiaGfx68_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_68_1.4bpp");
+static const u8 sLugiaGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_68.4bpp.lz");
+static const u8 sLugiaGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_68_1.4bpp.lz");
 static const ax_sprite sLugiaSprites68[] = {
 	{sLugiaGfx68, ARRAY_COUNT(sLugiaGfx68)}, 
 	{NULL, 32}, 
@@ -3086,19 +3086,19 @@ static const ax_sprite sLugiaSprites68[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx69[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_69.4bpp");
+static const u8 sLugiaGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_69.4bpp.lz");
 static const ax_sprite sLugiaSprites69[] = {
 	{sLugiaGfx69, ARRAY_COUNT(sLugiaGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx70[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_70.4bpp");
-static const u8 sLugiaGfx70_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_1.4bpp");
-static const u8 sLugiaGfx70_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_2.4bpp");
-static const u8 sLugiaGfx70_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_3.4bpp");
-static const u8 sLugiaGfx70_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_4.4bpp");
-static const u8 sLugiaGfx70_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_5.4bpp");
-static const u8 sLugiaGfx70_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_6.4bpp");
-static const u8 sLugiaGfx70_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_7.4bpp");
+static const u8 sLugiaGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_70.4bpp.lz");
+static const u8 sLugiaGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_1.4bpp.lz");
+static const u8 sLugiaGfx70_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_2.4bpp.lz");
+static const u8 sLugiaGfx70_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_3.4bpp.lz");
+static const u8 sLugiaGfx70_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_4.4bpp.lz");
+static const u8 sLugiaGfx70_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_5.4bpp.lz");
+static const u8 sLugiaGfx70_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_6.4bpp.lz");
+static const u8 sLugiaGfx70_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_70_7.4bpp.lz");
 static const ax_sprite sLugiaSprites70[] = {
 	{NULL, 64}, 
 	{sLugiaGfx70, ARRAY_COUNT(sLugiaGfx70)}, 
@@ -3119,9 +3119,9 @@ static const ax_sprite sLugiaSprites70[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx71[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_71.4bpp");
-static const u8 sLugiaGfx71_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_71_1.4bpp");
-static const u8 sLugiaGfx71_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_71_2.4bpp");
+static const u8 sLugiaGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_71.4bpp.lz");
+static const u8 sLugiaGfx71_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_71_1.4bpp.lz");
+static const u8 sLugiaGfx71_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_71_2.4bpp.lz");
 static const ax_sprite sLugiaSprites71[] = {
 	{NULL, 96}, 
 	{sLugiaGfx71, ARRAY_COUNT(sLugiaGfx71)}, 
@@ -3132,8 +3132,8 @@ static const ax_sprite sLugiaSprites71[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx72[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_72.4bpp");
-static const u8 sLugiaGfx72_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_72_1.4bpp");
+static const u8 sLugiaGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_72.4bpp.lz");
+static const u8 sLugiaGfx72_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_72_1.4bpp.lz");
 static const ax_sprite sLugiaSprites72[] = {
 	{sLugiaGfx72, ARRAY_COUNT(sLugiaGfx72)}, 
 	{NULL, 64}, 
@@ -3141,24 +3141,24 @@ static const ax_sprite sLugiaSprites72[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx73[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_73.4bpp");
+static const u8 sLugiaGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_73.4bpp.lz");
 static const ax_sprite sLugiaSprites73[] = {
 	{sLugiaGfx73, ARRAY_COUNT(sLugiaGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx74[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_74.4bpp");
+static const u8 sLugiaGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_74.4bpp.lz");
 static const ax_sprite sLugiaSprites74[] = {
 	{sLugiaGfx74, ARRAY_COUNT(sLugiaGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx75[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_75.4bpp");
-static const u8 sLugiaGfx75_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_1.4bpp");
-static const u8 sLugiaGfx75_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_2.4bpp");
-static const u8 sLugiaGfx75_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_3.4bpp");
-static const u8 sLugiaGfx75_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_4.4bpp");
-static const u8 sLugiaGfx75_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_5.4bpp");
-static const u8 sLugiaGfx75_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_6.4bpp");
-static const u8 sLugiaGfx75_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_7.4bpp");
+static const u8 sLugiaGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_75.4bpp.lz");
+static const u8 sLugiaGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_1.4bpp.lz");
+static const u8 sLugiaGfx75_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_2.4bpp.lz");
+static const u8 sLugiaGfx75_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_3.4bpp.lz");
+static const u8 sLugiaGfx75_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_4.4bpp.lz");
+static const u8 sLugiaGfx75_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_5.4bpp.lz");
+static const u8 sLugiaGfx75_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_6.4bpp.lz");
+static const u8 sLugiaGfx75_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_75_7.4bpp.lz");
 static const ax_sprite sLugiaSprites75[] = {
 	{NULL, 96}, 
 	{sLugiaGfx75, ARRAY_COUNT(sLugiaGfx75)}, 
@@ -3179,14 +3179,14 @@ static const ax_sprite sLugiaSprites75[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx76[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_76.4bpp");
-static const u8 sLugiaGfx76_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_1.4bpp");
-static const u8 sLugiaGfx76_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_2.4bpp");
-static const u8 sLugiaGfx76_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_3.4bpp");
-static const u8 sLugiaGfx76_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_4.4bpp");
-static const u8 sLugiaGfx76_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_5.4bpp");
-static const u8 sLugiaGfx76_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_6.4bpp");
-static const u8 sLugiaGfx76_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_7.4bpp");
+static const u8 sLugiaGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_76.4bpp.lz");
+static const u8 sLugiaGfx76_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_1.4bpp.lz");
+static const u8 sLugiaGfx76_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_2.4bpp.lz");
+static const u8 sLugiaGfx76_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_3.4bpp.lz");
+static const u8 sLugiaGfx76_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_4.4bpp.lz");
+static const u8 sLugiaGfx76_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_5.4bpp.lz");
+static const u8 sLugiaGfx76_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_6.4bpp.lz");
+static const u8 sLugiaGfx76_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_76_7.4bpp.lz");
 static const ax_sprite sLugiaSprites76[] = {
 	{NULL, 256}, 
 	{sLugiaGfx76, ARRAY_COUNT(sLugiaGfx76)}, 
@@ -3207,14 +3207,14 @@ static const ax_sprite sLugiaSprites76[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx77[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_77.4bpp");
-static const u8 sLugiaGfx77_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_1.4bpp");
-static const u8 sLugiaGfx77_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_2.4bpp");
-static const u8 sLugiaGfx77_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_3.4bpp");
-static const u8 sLugiaGfx77_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_4.4bpp");
-static const u8 sLugiaGfx77_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_5.4bpp");
-static const u8 sLugiaGfx77_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_6.4bpp");
-static const u8 sLugiaGfx77_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_7.4bpp");
+static const u8 sLugiaGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_77.4bpp.lz");
+static const u8 sLugiaGfx77_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_1.4bpp.lz");
+static const u8 sLugiaGfx77_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_2.4bpp.lz");
+static const u8 sLugiaGfx77_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_3.4bpp.lz");
+static const u8 sLugiaGfx77_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_4.4bpp.lz");
+static const u8 sLugiaGfx77_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_5.4bpp.lz");
+static const u8 sLugiaGfx77_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_6.4bpp.lz");
+static const u8 sLugiaGfx77_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_77_7.4bpp.lz");
 static const ax_sprite sLugiaSprites77[] = {
 	{NULL, 128}, 
 	{sLugiaGfx77, ARRAY_COUNT(sLugiaGfx77)}, 
@@ -3235,9 +3235,9 @@ static const ax_sprite sLugiaSprites77[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx78[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_78.4bpp");
-static const u8 sLugiaGfx78_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_78_1.4bpp");
-static const u8 sLugiaGfx78_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_78_2.4bpp");
+static const u8 sLugiaGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_78.4bpp.lz");
+static const u8 sLugiaGfx78_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_78_1.4bpp.lz");
+static const u8 sLugiaGfx78_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_78_2.4bpp.lz");
 static const ax_sprite sLugiaSprites78[] = {
 	{NULL, 320}, 
 	{sLugiaGfx78, ARRAY_COUNT(sLugiaGfx78)}, 
@@ -3247,8 +3247,8 @@ static const ax_sprite sLugiaSprites78[] = {
 	{sLugiaGfx78_2, ARRAY_COUNT(sLugiaGfx78_2)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx79[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_79.4bpp");
-static const u8 sLugiaGfx79_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_79_1.4bpp");
+static const u8 sLugiaGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_79.4bpp.lz");
+static const u8 sLugiaGfx79_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_79_1.4bpp.lz");
 static const ax_sprite sLugiaSprites79[] = {
 	{sLugiaGfx79, ARRAY_COUNT(sLugiaGfx79)}, 
 	{NULL, 32}, 
@@ -3256,29 +3256,29 @@ static const ax_sprite sLugiaSprites79[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx80[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_80.4bpp");
-static const u8 sLugiaGfx80_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_80_1.4bpp");
+static const u8 sLugiaGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_80.4bpp.lz");
+static const u8 sLugiaGfx80_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_80_1.4bpp.lz");
 static const ax_sprite sLugiaSprites80[] = {
 	{sLugiaGfx80, ARRAY_COUNT(sLugiaGfx80)}, 
 	{NULL, 32}, 
 	{sLugiaGfx80_1, ARRAY_COUNT(sLugiaGfx80_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx81[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_81.4bpp");
+static const u8 sLugiaGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_81.4bpp.lz");
 static const ax_sprite sLugiaSprites81[] = {
 	{NULL, 32}, 
 	{sLugiaGfx81, ARRAY_COUNT(sLugiaGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx82[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82.4bpp");
-static const u8 sLugiaGfx82_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_1.4bpp");
-static const u8 sLugiaGfx82_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_2.4bpp");
-static const u8 sLugiaGfx82_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_3.4bpp");
-static const u8 sLugiaGfx82_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_4.4bpp");
-static const u8 sLugiaGfx82_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_5.4bpp");
-static const u8 sLugiaGfx82_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_6.4bpp");
-static const u8 sLugiaGfx82_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_7.4bpp");
-static const u8 sLugiaGfx82_8[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_8.4bpp");
+static const u8 sLugiaGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82.4bpp.lz");
+static const u8 sLugiaGfx82_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_1.4bpp.lz");
+static const u8 sLugiaGfx82_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_2.4bpp.lz");
+static const u8 sLugiaGfx82_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_3.4bpp.lz");
+static const u8 sLugiaGfx82_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_4.4bpp.lz");
+static const u8 sLugiaGfx82_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_5.4bpp.lz");
+static const u8 sLugiaGfx82_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_6.4bpp.lz");
+static const u8 sLugiaGfx82_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_7.4bpp.lz");
+static const u8 sLugiaGfx82_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_82_8.4bpp.lz");
 static const ax_sprite sLugiaSprites82[] = {
 	{NULL, 128}, 
 	{sLugiaGfx82, ARRAY_COUNT(sLugiaGfx82)}, 
@@ -3301,10 +3301,10 @@ static const ax_sprite sLugiaSprites82[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx83[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_83.4bpp");
-static const u8 sLugiaGfx83_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_83_1.4bpp");
-static const u8 sLugiaGfx83_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_83_2.4bpp");
-static const u8 sLugiaGfx83_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_83_3.4bpp");
+static const u8 sLugiaGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_83.4bpp.lz");
+static const u8 sLugiaGfx83_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_83_1.4bpp.lz");
+static const u8 sLugiaGfx83_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_83_2.4bpp.lz");
+static const u8 sLugiaGfx83_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_83_3.4bpp.lz");
 static const ax_sprite sLugiaSprites83[] = {
 	{NULL, 192}, 
 	{sLugiaGfx83, ARRAY_COUNT(sLugiaGfx83)}, 
@@ -3317,13 +3317,13 @@ static const ax_sprite sLugiaSprites83[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx84[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_84.4bpp");
+static const u8 sLugiaGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_84.4bpp.lz");
 static const ax_sprite sLugiaSprites84[] = {
 	{sLugiaGfx84, ARRAY_COUNT(sLugiaGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx85[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_85.4bpp");
-static const u8 sLugiaGfx85_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_85_1.4bpp");
+static const u8 sLugiaGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_85.4bpp.lz");
+static const u8 sLugiaGfx85_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_85_1.4bpp.lz");
 static const ax_sprite sLugiaSprites85[] = {
 	{sLugiaGfx85, ARRAY_COUNT(sLugiaGfx85)}, 
 	{NULL, 32}, 
@@ -3331,24 +3331,24 @@ static const ax_sprite sLugiaSprites85[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx86[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_86.4bpp");
+static const u8 sLugiaGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_86.4bpp.lz");
 static const ax_sprite sLugiaSprites86[] = {
 	{sLugiaGfx86, ARRAY_COUNT(sLugiaGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx87[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_87.4bpp");
+static const u8 sLugiaGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_87.4bpp.lz");
 static const ax_sprite sLugiaSprites87[] = {
 	{sLugiaGfx87, ARRAY_COUNT(sLugiaGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx88[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_88.4bpp");
-static const u8 sLugiaGfx88_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_1.4bpp");
-static const u8 sLugiaGfx88_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_2.4bpp");
-static const u8 sLugiaGfx88_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_3.4bpp");
-static const u8 sLugiaGfx88_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_4.4bpp");
-static const u8 sLugiaGfx88_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_5.4bpp");
-static const u8 sLugiaGfx88_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_6.4bpp");
-static const u8 sLugiaGfx88_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_7.4bpp");
+static const u8 sLugiaGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_88.4bpp.lz");
+static const u8 sLugiaGfx88_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_1.4bpp.lz");
+static const u8 sLugiaGfx88_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_2.4bpp.lz");
+static const u8 sLugiaGfx88_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_3.4bpp.lz");
+static const u8 sLugiaGfx88_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_4.4bpp.lz");
+static const u8 sLugiaGfx88_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_5.4bpp.lz");
+static const u8 sLugiaGfx88_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_6.4bpp.lz");
+static const u8 sLugiaGfx88_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_88_7.4bpp.lz");
 static const ax_sprite sLugiaSprites88[] = {
 	{NULL, 64}, 
 	{sLugiaGfx88, ARRAY_COUNT(sLugiaGfx88)}, 
@@ -3369,10 +3369,10 @@ static const ax_sprite sLugiaSprites88[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx89[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_89.4bpp");
-static const u8 sLugiaGfx89_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_89_1.4bpp");
-static const u8 sLugiaGfx89_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_89_2.4bpp");
-static const u8 sLugiaGfx89_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_89_3.4bpp");
+static const u8 sLugiaGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_89.4bpp.lz");
+static const u8 sLugiaGfx89_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_89_1.4bpp.lz");
+static const u8 sLugiaGfx89_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_89_2.4bpp.lz");
+static const u8 sLugiaGfx89_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_89_3.4bpp.lz");
 static const ax_sprite sLugiaSprites89[] = {
 	{sLugiaGfx89, ARRAY_COUNT(sLugiaGfx89)}, 
 	{NULL, 32}, 
@@ -3384,9 +3384,9 @@ static const ax_sprite sLugiaSprites89[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx90[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_90.4bpp");
-static const u8 sLugiaGfx90_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_90_1.4bpp");
-static const u8 sLugiaGfx90_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_90_2.4bpp");
+static const u8 sLugiaGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_90.4bpp.lz");
+static const u8 sLugiaGfx90_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_90_1.4bpp.lz");
+static const u8 sLugiaGfx90_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_90_2.4bpp.lz");
 static const ax_sprite sLugiaSprites90[] = {
 	{sLugiaGfx90, ARRAY_COUNT(sLugiaGfx90)}, 
 	{NULL, 32}, 
@@ -3396,8 +3396,8 @@ static const ax_sprite sLugiaSprites90[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx91[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_91.4bpp");
-static const u8 sLugiaGfx91_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_91_1.4bpp");
+static const u8 sLugiaGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_91.4bpp.lz");
+static const u8 sLugiaGfx91_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_91_1.4bpp.lz");
 static const ax_sprite sLugiaSprites91[] = {
 	{sLugiaGfx91, ARRAY_COUNT(sLugiaGfx91)}, 
 	{NULL, 32}, 
@@ -3405,23 +3405,23 @@ static const ax_sprite sLugiaSprites91[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx92[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_92.4bpp");
+static const u8 sLugiaGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_92.4bpp.lz");
 static const ax_sprite sLugiaSprites92[] = {
 	{sLugiaGfx92, ARRAY_COUNT(sLugiaGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx93[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_93.4bpp");
+static const u8 sLugiaGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_93.4bpp.lz");
 static const ax_sprite sLugiaSprites93[] = {
 	{sLugiaGfx93, ARRAY_COUNT(sLugiaGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx94[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_94.4bpp");
-static const u8 sLugiaGfx94_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_1.4bpp");
-static const u8 sLugiaGfx94_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_2.4bpp");
-static const u8 sLugiaGfx94_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_3.4bpp");
-static const u8 sLugiaGfx94_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_4.4bpp");
-static const u8 sLugiaGfx94_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_5.4bpp");
-static const u8 sLugiaGfx94_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_6.4bpp");
+static const u8 sLugiaGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_94.4bpp.lz");
+static const u8 sLugiaGfx94_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_1.4bpp.lz");
+static const u8 sLugiaGfx94_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_2.4bpp.lz");
+static const u8 sLugiaGfx94_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_3.4bpp.lz");
+static const u8 sLugiaGfx94_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_4.4bpp.lz");
+static const u8 sLugiaGfx94_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_5.4bpp.lz");
+static const u8 sLugiaGfx94_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_94_6.4bpp.lz");
 static const ax_sprite sLugiaSprites94[] = {
 	{NULL, 64}, 
 	{sLugiaGfx94, ARRAY_COUNT(sLugiaGfx94)}, 
@@ -3440,13 +3440,13 @@ static const ax_sprite sLugiaSprites94[] = {
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx95[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_95.4bpp");
-static const u8 sLugiaGfx95_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_1.4bpp");
-static const u8 sLugiaGfx95_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_2.4bpp");
-static const u8 sLugiaGfx95_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_3.4bpp");
-static const u8 sLugiaGfx95_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_4.4bpp");
-static const u8 sLugiaGfx95_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_5.4bpp");
-static const u8 sLugiaGfx95_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_6.4bpp");
+static const u8 sLugiaGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_95.4bpp.lz");
+static const u8 sLugiaGfx95_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_1.4bpp.lz");
+static const u8 sLugiaGfx95_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_2.4bpp.lz");
+static const u8 sLugiaGfx95_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_3.4bpp.lz");
+static const u8 sLugiaGfx95_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_4.4bpp.lz");
+static const u8 sLugiaGfx95_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_5.4bpp.lz");
+static const u8 sLugiaGfx95_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_95_6.4bpp.lz");
 static const ax_sprite sLugiaSprites95[] = {
 	{NULL, 64}, 
 	{sLugiaGfx95, ARRAY_COUNT(sLugiaGfx95)}, 
@@ -3465,18 +3465,18 @@ static const ax_sprite sLugiaSprites95[] = {
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx96[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_96.4bpp");
+static const u8 sLugiaGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_96.4bpp.lz");
 static const ax_sprite sLugiaSprites96[] = {
 	{sLugiaGfx96, ARRAY_COUNT(sLugiaGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx97[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_97.4bpp");
+static const u8 sLugiaGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_97.4bpp.lz");
 static const ax_sprite sLugiaSprites97[] = {
 	{sLugiaGfx97, ARRAY_COUNT(sLugiaGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx98[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_98.4bpp");
-static const u8 sLugiaGfx98_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_98_1.4bpp");
+static const u8 sLugiaGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_98.4bpp.lz");
+static const u8 sLugiaGfx98_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_98_1.4bpp.lz");
 static const ax_sprite sLugiaSprites98[] = {
 	{sLugiaGfx98, ARRAY_COUNT(sLugiaGfx98)}, 
 	{NULL, 32}, 
@@ -3484,8 +3484,8 @@ static const ax_sprite sLugiaSprites98[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx99[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_99.4bpp");
-static const u8 sLugiaGfx99_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_99_1.4bpp");
+static const u8 sLugiaGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_99.4bpp.lz");
+static const u8 sLugiaGfx99_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_99_1.4bpp.lz");
 static const ax_sprite sLugiaSprites99[] = {
 	{NULL, 96}, 
 	{sLugiaGfx99, ARRAY_COUNT(sLugiaGfx99)}, 
@@ -3493,11 +3493,11 @@ static const ax_sprite sLugiaSprites99[] = {
 	{sLugiaGfx99_1, ARRAY_COUNT(sLugiaGfx99_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx100[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_100.4bpp");
-static const u8 sLugiaGfx100_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_100_1.4bpp");
-static const u8 sLugiaGfx100_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_100_2.4bpp");
-static const u8 sLugiaGfx100_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_100_3.4bpp");
-static const u8 sLugiaGfx100_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_100_4.4bpp");
+static const u8 sLugiaGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_100.4bpp.lz");
+static const u8 sLugiaGfx100_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_100_1.4bpp.lz");
+static const u8 sLugiaGfx100_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_100_2.4bpp.lz");
+static const u8 sLugiaGfx100_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_100_3.4bpp.lz");
+static const u8 sLugiaGfx100_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_100_4.4bpp.lz");
 static const ax_sprite sLugiaSprites100[] = {
 	{sLugiaGfx100, ARRAY_COUNT(sLugiaGfx100)}, 
 	{NULL, 64}, 
@@ -3510,25 +3510,25 @@ static const ax_sprite sLugiaSprites100[] = {
 	{sLugiaGfx100_4, ARRAY_COUNT(sLugiaGfx100_4)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx101[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_101.4bpp");
+static const u8 sLugiaGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_101.4bpp.lz");
 static const ax_sprite sLugiaSprites101[] = {
 	{sLugiaGfx101, ARRAY_COUNT(sLugiaGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx102[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_102.4bpp");
+static const u8 sLugiaGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_102.4bpp.lz");
 static const ax_sprite sLugiaSprites102[] = {
 	{sLugiaGfx102, ARRAY_COUNT(sLugiaGfx102)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx103[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_103.4bpp");
+static const u8 sLugiaGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_103.4bpp.lz");
 static const ax_sprite sLugiaSprites103[] = {
 	{sLugiaGfx103, ARRAY_COUNT(sLugiaGfx103)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx104[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_104.4bpp");
-static const u8 sLugiaGfx104_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_104_1.4bpp");
+static const u8 sLugiaGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_104.4bpp.lz");
+static const u8 sLugiaGfx104_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_104_1.4bpp.lz");
 static const ax_sprite sLugiaSprites104[] = {
 	{NULL, 128}, 
 	{sLugiaGfx104, ARRAY_COUNT(sLugiaGfx104)}, 
@@ -3536,13 +3536,13 @@ static const ax_sprite sLugiaSprites104[] = {
 	{sLugiaGfx104_1, ARRAY_COUNT(sLugiaGfx104_1)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx105[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_105.4bpp");
-static const u8 sLugiaGfx105_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_1.4bpp");
-static const u8 sLugiaGfx105_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_2.4bpp");
-static const u8 sLugiaGfx105_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_3.4bpp");
-static const u8 sLugiaGfx105_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_4.4bpp");
-static const u8 sLugiaGfx105_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_5.4bpp");
-static const u8 sLugiaGfx105_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_6.4bpp");
+static const u8 sLugiaGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_105.4bpp.lz");
+static const u8 sLugiaGfx105_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_1.4bpp.lz");
+static const u8 sLugiaGfx105_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_2.4bpp.lz");
+static const u8 sLugiaGfx105_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_3.4bpp.lz");
+static const u8 sLugiaGfx105_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_4.4bpp.lz");
+static const u8 sLugiaGfx105_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_5.4bpp.lz");
+static const u8 sLugiaGfx105_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_105_6.4bpp.lz");
 static const ax_sprite sLugiaSprites105[] = {
 	{NULL, 64}, 
 	{sLugiaGfx105, ARRAY_COUNT(sLugiaGfx105)}, 
@@ -3561,11 +3561,11 @@ static const ax_sprite sLugiaSprites105[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx106[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_106.4bpp");
-static const u8 sLugiaGfx106_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_106_1.4bpp");
-static const u8 sLugiaGfx106_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_106_2.4bpp");
-static const u8 sLugiaGfx106_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_106_3.4bpp");
-static const u8 sLugiaGfx106_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_106_4.4bpp");
+static const u8 sLugiaGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_106.4bpp.lz");
+static const u8 sLugiaGfx106_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_106_1.4bpp.lz");
+static const u8 sLugiaGfx106_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_106_2.4bpp.lz");
+static const u8 sLugiaGfx106_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_106_3.4bpp.lz");
+static const u8 sLugiaGfx106_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_106_4.4bpp.lz");
 static const ax_sprite sLugiaSprites106[] = {
 	{NULL, 96}, 
 	{sLugiaGfx106, ARRAY_COUNT(sLugiaGfx106)}, 
@@ -3580,10 +3580,10 @@ static const ax_sprite sLugiaSprites106[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx107[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_107.4bpp");
-static const u8 sLugiaGfx107_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_107_1.4bpp");
-static const u8 sLugiaGfx107_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_107_2.4bpp");
-static const u8 sLugiaGfx107_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_107_3.4bpp");
+static const u8 sLugiaGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_107.4bpp.lz");
+static const u8 sLugiaGfx107_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_107_1.4bpp.lz");
+static const u8 sLugiaGfx107_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_107_2.4bpp.lz");
+static const u8 sLugiaGfx107_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_107_3.4bpp.lz");
 static const ax_sprite sLugiaSprites107[] = {
 	{sLugiaGfx107, ARRAY_COUNT(sLugiaGfx107)}, 
 	{NULL, 32}, 
@@ -3595,14 +3595,14 @@ static const ax_sprite sLugiaSprites107[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx108[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_108.4bpp");
+static const u8 sLugiaGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_108.4bpp.lz");
 static const ax_sprite sLugiaSprites108[] = {
 	{sLugiaGfx108, ARRAY_COUNT(sLugiaGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx109[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_109.4bpp");
-static const u8 sLugiaGfx109_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_109_1.4bpp");
-static const u8 sLugiaGfx109_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_109_2.4bpp");
+static const u8 sLugiaGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_109.4bpp.lz");
+static const u8 sLugiaGfx109_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_109_1.4bpp.lz");
+static const u8 sLugiaGfx109_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_109_2.4bpp.lz");
 static const ax_sprite sLugiaSprites109[] = {
 	{sLugiaGfx109, ARRAY_COUNT(sLugiaGfx109)}, 
 	{NULL, 32}, 
@@ -3612,15 +3612,15 @@ static const ax_sprite sLugiaSprites109[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx110[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110.4bpp");
-static const u8 sLugiaGfx110_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_1.4bpp");
-static const u8 sLugiaGfx110_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_2.4bpp");
-static const u8 sLugiaGfx110_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_3.4bpp");
-static const u8 sLugiaGfx110_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_4.4bpp");
-static const u8 sLugiaGfx110_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_5.4bpp");
-static const u8 sLugiaGfx110_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_6.4bpp");
-static const u8 sLugiaGfx110_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_7.4bpp");
-static const u8 sLugiaGfx110_8[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_8.4bpp");
+static const u8 sLugiaGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110.4bpp.lz");
+static const u8 sLugiaGfx110_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_1.4bpp.lz");
+static const u8 sLugiaGfx110_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_2.4bpp.lz");
+static const u8 sLugiaGfx110_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_3.4bpp.lz");
+static const u8 sLugiaGfx110_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_4.4bpp.lz");
+static const u8 sLugiaGfx110_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_5.4bpp.lz");
+static const u8 sLugiaGfx110_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_6.4bpp.lz");
+static const u8 sLugiaGfx110_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_7.4bpp.lz");
+static const u8 sLugiaGfx110_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_110_8.4bpp.lz");
 static const ax_sprite sLugiaSprites110[] = {
 	{NULL, 64}, 
 	{sLugiaGfx110, ARRAY_COUNT(sLugiaGfx110)}, 
@@ -3643,14 +3643,14 @@ static const ax_sprite sLugiaSprites110[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx111[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_111.4bpp");
-static const u8 sLugiaGfx111_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_1.4bpp");
-static const u8 sLugiaGfx111_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_2.4bpp");
-static const u8 sLugiaGfx111_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_3.4bpp");
-static const u8 sLugiaGfx111_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_4.4bpp");
-static const u8 sLugiaGfx111_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_5.4bpp");
-static const u8 sLugiaGfx111_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_6.4bpp");
-static const u8 sLugiaGfx111_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_7.4bpp");
+static const u8 sLugiaGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_111.4bpp.lz");
+static const u8 sLugiaGfx111_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_1.4bpp.lz");
+static const u8 sLugiaGfx111_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_2.4bpp.lz");
+static const u8 sLugiaGfx111_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_3.4bpp.lz");
+static const u8 sLugiaGfx111_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_4.4bpp.lz");
+static const u8 sLugiaGfx111_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_5.4bpp.lz");
+static const u8 sLugiaGfx111_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_6.4bpp.lz");
+static const u8 sLugiaGfx111_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_111_7.4bpp.lz");
 static const ax_sprite sLugiaSprites111[] = {
 	{NULL, 64}, 
 	{sLugiaGfx111, ARRAY_COUNT(sLugiaGfx111)}, 
@@ -3671,14 +3671,14 @@ static const ax_sprite sLugiaSprites111[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx112[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_112.4bpp");
-static const u8 sLugiaGfx112_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_1.4bpp");
-static const u8 sLugiaGfx112_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_2.4bpp");
-static const u8 sLugiaGfx112_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_3.4bpp");
-static const u8 sLugiaGfx112_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_4.4bpp");
-static const u8 sLugiaGfx112_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_5.4bpp");
-static const u8 sLugiaGfx112_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_6.4bpp");
-static const u8 sLugiaGfx112_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_7.4bpp");
+static const u8 sLugiaGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_112.4bpp.lz");
+static const u8 sLugiaGfx112_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_1.4bpp.lz");
+static const u8 sLugiaGfx112_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_2.4bpp.lz");
+static const u8 sLugiaGfx112_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_3.4bpp.lz");
+static const u8 sLugiaGfx112_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_4.4bpp.lz");
+static const u8 sLugiaGfx112_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_5.4bpp.lz");
+static const u8 sLugiaGfx112_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_6.4bpp.lz");
+static const u8 sLugiaGfx112_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_112_7.4bpp.lz");
 static const ax_sprite sLugiaSprites112[] = {
 	{NULL, 64}, 
 	{sLugiaGfx112, ARRAY_COUNT(sLugiaGfx112)}, 
@@ -3699,15 +3699,15 @@ static const ax_sprite sLugiaSprites112[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx113[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113.4bpp");
-static const u8 sLugiaGfx113_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_1.4bpp");
-static const u8 sLugiaGfx113_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_2.4bpp");
-static const u8 sLugiaGfx113_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_3.4bpp");
-static const u8 sLugiaGfx113_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_4.4bpp");
-static const u8 sLugiaGfx113_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_5.4bpp");
-static const u8 sLugiaGfx113_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_6.4bpp");
-static const u8 sLugiaGfx113_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_7.4bpp");
-static const u8 sLugiaGfx113_8[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_8.4bpp");
+static const u8 sLugiaGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113.4bpp.lz");
+static const u8 sLugiaGfx113_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_1.4bpp.lz");
+static const u8 sLugiaGfx113_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_2.4bpp.lz");
+static const u8 sLugiaGfx113_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_3.4bpp.lz");
+static const u8 sLugiaGfx113_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_4.4bpp.lz");
+static const u8 sLugiaGfx113_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_5.4bpp.lz");
+static const u8 sLugiaGfx113_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_6.4bpp.lz");
+static const u8 sLugiaGfx113_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_7.4bpp.lz");
+static const u8 sLugiaGfx113_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_113_8.4bpp.lz");
 static const ax_sprite sLugiaSprites113[] = {
 	{NULL, 64}, 
 	{sLugiaGfx113, ARRAY_COUNT(sLugiaGfx113)}, 
@@ -3730,13 +3730,13 @@ static const ax_sprite sLugiaSprites113[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx114[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_114.4bpp");
-static const u8 sLugiaGfx114_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_1.4bpp");
-static const u8 sLugiaGfx114_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_2.4bpp");
-static const u8 sLugiaGfx114_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_3.4bpp");
-static const u8 sLugiaGfx114_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_4.4bpp");
-static const u8 sLugiaGfx114_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_5.4bpp");
-static const u8 sLugiaGfx114_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_6.4bpp");
+static const u8 sLugiaGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_114.4bpp.lz");
+static const u8 sLugiaGfx114_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_1.4bpp.lz");
+static const u8 sLugiaGfx114_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_2.4bpp.lz");
+static const u8 sLugiaGfx114_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_3.4bpp.lz");
+static const u8 sLugiaGfx114_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_4.4bpp.lz");
+static const u8 sLugiaGfx114_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_5.4bpp.lz");
+static const u8 sLugiaGfx114_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_114_6.4bpp.lz");
 static const ax_sprite sLugiaSprites114[] = {
 	{NULL, 64}, 
 	{sLugiaGfx114, ARRAY_COUNT(sLugiaGfx114)}, 
@@ -3755,12 +3755,12 @@ static const ax_sprite sLugiaSprites114[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx115[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_115.4bpp");
-static const u8 sLugiaGfx115_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_1.4bpp");
-static const u8 sLugiaGfx115_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_2.4bpp");
-static const u8 sLugiaGfx115_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_3.4bpp");
-static const u8 sLugiaGfx115_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_4.4bpp");
-static const u8 sLugiaGfx115_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_5.4bpp");
+static const u8 sLugiaGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_115.4bpp.lz");
+static const u8 sLugiaGfx115_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_1.4bpp.lz");
+static const u8 sLugiaGfx115_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_2.4bpp.lz");
+static const u8 sLugiaGfx115_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_3.4bpp.lz");
+static const u8 sLugiaGfx115_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_4.4bpp.lz");
+static const u8 sLugiaGfx115_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_115_5.4bpp.lz");
 static const ax_sprite sLugiaSprites115[] = {
 	{NULL, 64}, 
 	{sLugiaGfx115, ARRAY_COUNT(sLugiaGfx115)}, 
@@ -3777,14 +3777,14 @@ static const ax_sprite sLugiaSprites115[] = {
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx116[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_116.4bpp");
-static const u8 sLugiaGfx116_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_1.4bpp");
-static const u8 sLugiaGfx116_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_2.4bpp");
-static const u8 sLugiaGfx116_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_3.4bpp");
-static const u8 sLugiaGfx116_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_4.4bpp");
-static const u8 sLugiaGfx116_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_5.4bpp");
-static const u8 sLugiaGfx116_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_6.4bpp");
-static const u8 sLugiaGfx116_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_7.4bpp");
+static const u8 sLugiaGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_116.4bpp.lz");
+static const u8 sLugiaGfx116_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_1.4bpp.lz");
+static const u8 sLugiaGfx116_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_2.4bpp.lz");
+static const u8 sLugiaGfx116_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_3.4bpp.lz");
+static const u8 sLugiaGfx116_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_4.4bpp.lz");
+static const u8 sLugiaGfx116_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_5.4bpp.lz");
+static const u8 sLugiaGfx116_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_6.4bpp.lz");
+static const u8 sLugiaGfx116_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_116_7.4bpp.lz");
 static const ax_sprite sLugiaSprites116[] = {
 	{NULL, 64}, 
 	{sLugiaGfx116, ARRAY_COUNT(sLugiaGfx116)}, 
@@ -3805,14 +3805,14 @@ static const ax_sprite sLugiaSprites116[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx117[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_117.4bpp");
-static const u8 sLugiaGfx117_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_1.4bpp");
-static const u8 sLugiaGfx117_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_2.4bpp");
-static const u8 sLugiaGfx117_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_3.4bpp");
-static const u8 sLugiaGfx117_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_4.4bpp");
-static const u8 sLugiaGfx117_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_5.4bpp");
-static const u8 sLugiaGfx117_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_6.4bpp");
-static const u8 sLugiaGfx117_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_7.4bpp");
+static const u8 sLugiaGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_117.4bpp.lz");
+static const u8 sLugiaGfx117_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_1.4bpp.lz");
+static const u8 sLugiaGfx117_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_2.4bpp.lz");
+static const u8 sLugiaGfx117_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_3.4bpp.lz");
+static const u8 sLugiaGfx117_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_4.4bpp.lz");
+static const u8 sLugiaGfx117_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_5.4bpp.lz");
+static const u8 sLugiaGfx117_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_6.4bpp.lz");
+static const u8 sLugiaGfx117_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_117_7.4bpp.lz");
 static const ax_sprite sLugiaSprites117[] = {
 	{NULL, 32}, 
 	{sLugiaGfx117, ARRAY_COUNT(sLugiaGfx117)}, 
@@ -3833,15 +3833,15 @@ static const ax_sprite sLugiaSprites117[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx118[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118.4bpp");
-static const u8 sLugiaGfx118_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_1.4bpp");
-static const u8 sLugiaGfx118_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_2.4bpp");
-static const u8 sLugiaGfx118_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_3.4bpp");
-static const u8 sLugiaGfx118_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_4.4bpp");
-static const u8 sLugiaGfx118_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_5.4bpp");
-static const u8 sLugiaGfx118_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_6.4bpp");
-static const u8 sLugiaGfx118_7[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_7.4bpp");
-static const u8 sLugiaGfx118_8[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_8.4bpp");
+static const u8 sLugiaGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118.4bpp.lz");
+static const u8 sLugiaGfx118_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_1.4bpp.lz");
+static const u8 sLugiaGfx118_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_2.4bpp.lz");
+static const u8 sLugiaGfx118_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_3.4bpp.lz");
+static const u8 sLugiaGfx118_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_4.4bpp.lz");
+static const u8 sLugiaGfx118_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_5.4bpp.lz");
+static const u8 sLugiaGfx118_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_6.4bpp.lz");
+static const u8 sLugiaGfx118_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_7.4bpp.lz");
+static const u8 sLugiaGfx118_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_118_8.4bpp.lz");
 static const ax_sprite sLugiaSprites118[] = {
 	{NULL, 32}, 
 	{sLugiaGfx118, ARRAY_COUNT(sLugiaGfx118)}, 
@@ -3864,13 +3864,13 @@ static const ax_sprite sLugiaSprites118[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLugiaGfx119[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_119.4bpp");
-static const u8 sLugiaGfx119_1[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_1.4bpp");
-static const u8 sLugiaGfx119_2[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_2.4bpp");
-static const u8 sLugiaGfx119_3[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_3.4bpp");
-static const u8 sLugiaGfx119_4[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_4.4bpp");
-static const u8 sLugiaGfx119_5[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_5.4bpp");
-static const u8 sLugiaGfx119_6[] = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_6.4bpp");
+static const u8 sLugiaGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_119.4bpp.lz");
+static const u8 sLugiaGfx119_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_1.4bpp.lz");
+static const u8 sLugiaGfx119_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_2.4bpp.lz");
+static const u8 sLugiaGfx119_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_3.4bpp.lz");
+static const u8 sLugiaGfx119_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_4.4bpp.lz");
+static const u8 sLugiaGfx119_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_5.4bpp.lz");
+static const u8 sLugiaGfx119_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lugia/sprite_119_6.4bpp.lz");
 static const ax_sprite sLugiaSprites119[] = {
 	{NULL, 64}, 
 	{sLugiaGfx119, ARRAY_COUNT(sLugiaGfx119)}, 

@@ -2247,89 +2247,89 @@ static const ax_anim sWailordAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWailordGfx1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_1.4bpp");
+static const u8 sWailordGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_1.4bpp.lz");
 static const ax_sprite sWailordSprites1[] = {
 	{sWailordGfx1, ARRAY_COUNT(sWailordGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_2.4bpp");
+static const u8 sWailordGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_2.4bpp.lz");
 static const ax_sprite sWailordSprites2[] = {
 	{sWailordGfx2, ARRAY_COUNT(sWailordGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_3.4bpp");
+static const u8 sWailordGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_3.4bpp.lz");
 static const ax_sprite sWailordSprites3[] = {
 	{sWailordGfx3, ARRAY_COUNT(sWailordGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_4.4bpp");
+static const u8 sWailordGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_4.4bpp.lz");
 static const ax_sprite sWailordSprites4[] = {
 	{sWailordGfx4, ARRAY_COUNT(sWailordGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx5[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_5.4bpp");
+static const u8 sWailordGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_5.4bpp.lz");
 static const ax_sprite sWailordSprites5[] = {
 	{sWailordGfx5, ARRAY_COUNT(sWailordGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx6[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_6.4bpp");
+static const u8 sWailordGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_6.4bpp.lz");
 static const ax_sprite sWailordSprites6[] = {
 	{sWailordGfx6, ARRAY_COUNT(sWailordGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx7[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_7.4bpp");
+static const u8 sWailordGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_7.4bpp.lz");
 static const ax_sprite sWailordSprites7[] = {
 	{sWailordGfx7, ARRAY_COUNT(sWailordGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx8[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_8.4bpp");
+static const u8 sWailordGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_8.4bpp.lz");
 static const ax_sprite sWailordSprites8[] = {
 	{sWailordGfx8, ARRAY_COUNT(sWailordGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx9[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_9.4bpp");
+static const u8 sWailordGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_9.4bpp.lz");
 static const ax_sprite sWailordSprites9[] = {
 	{sWailordGfx9, ARRAY_COUNT(sWailordGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx10[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_10.4bpp");
+static const u8 sWailordGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_10.4bpp.lz");
 static const ax_sprite sWailordSprites10[] = {
 	{sWailordGfx10, ARRAY_COUNT(sWailordGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx11[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_11.4bpp");
+static const u8 sWailordGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_11.4bpp.lz");
 static const ax_sprite sWailordSprites11[] = {
 	{sWailordGfx11, ARRAY_COUNT(sWailordGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx12[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_12.4bpp");
+static const u8 sWailordGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_12.4bpp.lz");
 static const ax_sprite sWailordSprites12[] = {
 	{sWailordGfx12, ARRAY_COUNT(sWailordGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx13[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_13.4bpp");
+static const u8 sWailordGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_13.4bpp.lz");
 static const ax_sprite sWailordSprites13[] = {
 	{sWailordGfx13, ARRAY_COUNT(sWailordGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx14[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_14.4bpp");
+static const u8 sWailordGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_14.4bpp.lz");
 static const ax_sprite sWailordSprites14[] = {
 	{sWailordGfx14, ARRAY_COUNT(sWailordGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx15[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_15.4bpp");
+static const u8 sWailordGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_15.4bpp.lz");
 static const ax_sprite sWailordSprites15[] = {
 	{sWailordGfx15, ARRAY_COUNT(sWailordGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx16[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_16.4bpp");
-static const u8 sWailordGfx16_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_1.4bpp");
-static const u8 sWailordGfx16_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_2.4bpp");
-static const u8 sWailordGfx16_3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_3.4bpp");
-static const u8 sWailordGfx16_4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_4.4bpp");
-static const u8 sWailordGfx16_5[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_5.4bpp");
-static const u8 sWailordGfx16_6[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_6.4bpp");
-static const u8 sWailordGfx16_7[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_7.4bpp");
+static const u8 sWailordGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_16.4bpp.lz");
+static const u8 sWailordGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_1.4bpp.lz");
+static const u8 sWailordGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_2.4bpp.lz");
+static const u8 sWailordGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_3.4bpp.lz");
+static const u8 sWailordGfx16_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_4.4bpp.lz");
+static const u8 sWailordGfx16_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_5.4bpp.lz");
+static const u8 sWailordGfx16_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_6.4bpp.lz");
+static const u8 sWailordGfx16_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_16_7.4bpp.lz");
 static const ax_sprite sWailordSprites16[] = {
 	{NULL, 32}, 
 	{sWailordGfx16, ARRAY_COUNT(sWailordGfx16)}, 
@@ -2350,14 +2350,14 @@ static const ax_sprite sWailordSprites16[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx17[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_17.4bpp");
-static const u8 sWailordGfx17_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_1.4bpp");
-static const u8 sWailordGfx17_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_2.4bpp");
-static const u8 sWailordGfx17_3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_3.4bpp");
-static const u8 sWailordGfx17_4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_4.4bpp");
-static const u8 sWailordGfx17_5[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_5.4bpp");
-static const u8 sWailordGfx17_6[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_6.4bpp");
-static const u8 sWailordGfx17_7[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_7.4bpp");
+static const u8 sWailordGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_17.4bpp.lz");
+static const u8 sWailordGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_1.4bpp.lz");
+static const u8 sWailordGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_2.4bpp.lz");
+static const u8 sWailordGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_3.4bpp.lz");
+static const u8 sWailordGfx17_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_4.4bpp.lz");
+static const u8 sWailordGfx17_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_5.4bpp.lz");
+static const u8 sWailordGfx17_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_6.4bpp.lz");
+static const u8 sWailordGfx17_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_17_7.4bpp.lz");
 static const ax_sprite sWailordSprites17[] = {
 	{NULL, 128}, 
 	{sWailordGfx17, ARRAY_COUNT(sWailordGfx17)}, 
@@ -2378,9 +2378,9 @@ static const ax_sprite sWailordSprites17[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx18[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_18.4bpp");
-static const u8 sWailordGfx18_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_18_1.4bpp");
-static const u8 sWailordGfx18_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_18_2.4bpp");
+static const u8 sWailordGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_18.4bpp.lz");
+static const u8 sWailordGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_18_1.4bpp.lz");
+static const u8 sWailordGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_18_2.4bpp.lz");
 static const ax_sprite sWailordSprites18[] = {
 	{NULL, 32}, 
 	{sWailordGfx18, ARRAY_COUNT(sWailordGfx18)}, 
@@ -2391,13 +2391,13 @@ static const ax_sprite sWailordSprites18[] = {
 	{NULL, 800}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx19[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_19.4bpp");
-static const u8 sWailordGfx19_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_1.4bpp");
-static const u8 sWailordGfx19_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_2.4bpp");
-static const u8 sWailordGfx19_3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_3.4bpp");
-static const u8 sWailordGfx19_4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_4.4bpp");
-static const u8 sWailordGfx19_5[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_5.4bpp");
-static const u8 sWailordGfx19_6[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_6.4bpp");
+static const u8 sWailordGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_19.4bpp.lz");
+static const u8 sWailordGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_1.4bpp.lz");
+static const u8 sWailordGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_2.4bpp.lz");
+static const u8 sWailordGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_3.4bpp.lz");
+static const u8 sWailordGfx19_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_4.4bpp.lz");
+static const u8 sWailordGfx19_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_5.4bpp.lz");
+static const u8 sWailordGfx19_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_19_6.4bpp.lz");
 static const ax_sprite sWailordSprites19[] = {
 	{NULL, 32}, 
 	{sWailordGfx19, ARRAY_COUNT(sWailordGfx19)}, 
@@ -2416,13 +2416,13 @@ static const ax_sprite sWailordSprites19[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx20[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_20.4bpp");
-static const u8 sWailordGfx20_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_1.4bpp");
-static const u8 sWailordGfx20_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_2.4bpp");
-static const u8 sWailordGfx20_3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_3.4bpp");
-static const u8 sWailordGfx20_4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_4.4bpp");
-static const u8 sWailordGfx20_5[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_5.4bpp");
-static const u8 sWailordGfx20_6[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_6.4bpp");
+static const u8 sWailordGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_20.4bpp.lz");
+static const u8 sWailordGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_1.4bpp.lz");
+static const u8 sWailordGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_2.4bpp.lz");
+static const u8 sWailordGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_3.4bpp.lz");
+static const u8 sWailordGfx20_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_4.4bpp.lz");
+static const u8 sWailordGfx20_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_5.4bpp.lz");
+static const u8 sWailordGfx20_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_20_6.4bpp.lz");
 static const ax_sprite sWailordSprites20[] = {
 	{NULL, 288}, 
 	{sWailordGfx20, ARRAY_COUNT(sWailordGfx20)}, 
@@ -2441,14 +2441,14 @@ static const ax_sprite sWailordSprites20[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx21[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_21.4bpp");
-static const u8 sWailordGfx21_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_1.4bpp");
-static const u8 sWailordGfx21_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_2.4bpp");
-static const u8 sWailordGfx21_3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_3.4bpp");
-static const u8 sWailordGfx21_4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_4.4bpp");
-static const u8 sWailordGfx21_5[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_5.4bpp");
-static const u8 sWailordGfx21_6[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_6.4bpp");
-static const u8 sWailordGfx21_7[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_7.4bpp");
+static const u8 sWailordGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_21.4bpp.lz");
+static const u8 sWailordGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_1.4bpp.lz");
+static const u8 sWailordGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_2.4bpp.lz");
+static const u8 sWailordGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_3.4bpp.lz");
+static const u8 sWailordGfx21_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_4.4bpp.lz");
+static const u8 sWailordGfx21_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_5.4bpp.lz");
+static const u8 sWailordGfx21_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_6.4bpp.lz");
+static const u8 sWailordGfx21_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_21_7.4bpp.lz");
 static const ax_sprite sWailordSprites21[] = {
 	{NULL, 32}, 
 	{sWailordGfx21, ARRAY_COUNT(sWailordGfx21)}, 
@@ -2469,14 +2469,14 @@ static const ax_sprite sWailordSprites21[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx22[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_22.4bpp");
-static const u8 sWailordGfx22_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_1.4bpp");
-static const u8 sWailordGfx22_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_2.4bpp");
-static const u8 sWailordGfx22_3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_3.4bpp");
-static const u8 sWailordGfx22_4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_4.4bpp");
-static const u8 sWailordGfx22_5[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_5.4bpp");
-static const u8 sWailordGfx22_6[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_6.4bpp");
-static const u8 sWailordGfx22_7[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_7.4bpp");
+static const u8 sWailordGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_22.4bpp.lz");
+static const u8 sWailordGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_1.4bpp.lz");
+static const u8 sWailordGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_2.4bpp.lz");
+static const u8 sWailordGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_3.4bpp.lz");
+static const u8 sWailordGfx22_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_4.4bpp.lz");
+static const u8 sWailordGfx22_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_5.4bpp.lz");
+static const u8 sWailordGfx22_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_6.4bpp.lz");
+static const u8 sWailordGfx22_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_22_7.4bpp.lz");
 static const ax_sprite sWailordSprites22[] = {
 	{NULL, 128}, 
 	{sWailordGfx22, ARRAY_COUNT(sWailordGfx22)}, 
@@ -2497,8 +2497,8 @@ static const ax_sprite sWailordSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx23[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_23.4bpp");
-static const u8 sWailordGfx23_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_23_1.4bpp");
+static const u8 sWailordGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_23.4bpp.lz");
+static const u8 sWailordGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_23_1.4bpp.lz");
 static const ax_sprite sWailordSprites23[] = {
 	{sWailordGfx23, ARRAY_COUNT(sWailordGfx23)}, 
 	{NULL, 32}, 
@@ -2506,11 +2506,11 @@ static const ax_sprite sWailordSprites23[] = {
 	{NULL, 832}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx24[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_24.4bpp");
-static const u8 sWailordGfx24_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_24_1.4bpp");
-static const u8 sWailordGfx24_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_24_2.4bpp");
-static const u8 sWailordGfx24_3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_24_3.4bpp");
-static const u8 sWailordGfx24_4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_24_4.4bpp");
+static const u8 sWailordGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_24.4bpp.lz");
+static const u8 sWailordGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_24_1.4bpp.lz");
+static const u8 sWailordGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_24_2.4bpp.lz");
+static const u8 sWailordGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_24_3.4bpp.lz");
+static const u8 sWailordGfx24_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_24_4.4bpp.lz");
 static const ax_sprite sWailordSprites24[] = {
 	{sWailordGfx24, ARRAY_COUNT(sWailordGfx24)}, 
 	{NULL, 128}, 
@@ -2524,13 +2524,13 @@ static const ax_sprite sWailordSprites24[] = {
 	{NULL, 544}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx25[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_25.4bpp");
-static const u8 sWailordGfx25_1[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_1.4bpp");
-static const u8 sWailordGfx25_2[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_2.4bpp");
-static const u8 sWailordGfx25_3[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_3.4bpp");
-static const u8 sWailordGfx25_4[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_4.4bpp");
-static const u8 sWailordGfx25_5[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_5.4bpp");
-static const u8 sWailordGfx25_6[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_6.4bpp");
+static const u8 sWailordGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_25.4bpp.lz");
+static const u8 sWailordGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_1.4bpp.lz");
+static const u8 sWailordGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_2.4bpp.lz");
+static const u8 sWailordGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_3.4bpp.lz");
+static const u8 sWailordGfx25_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_4.4bpp.lz");
+static const u8 sWailordGfx25_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_5.4bpp.lz");
+static const u8 sWailordGfx25_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_25_6.4bpp.lz");
 static const ax_sprite sWailordSprites25[] = {
 	{NULL, 32}, 
 	{sWailordGfx25, ARRAY_COUNT(sWailordGfx25)}, 
@@ -2549,57 +2549,57 @@ static const ax_sprite sWailordSprites25[] = {
 	{NULL, 352}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx26[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_26.4bpp");
+static const u8 sWailordGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_26.4bpp.lz");
 static const ax_sprite sWailordSprites26[] = {
 	{sWailordGfx26, ARRAY_COUNT(sWailordGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx27[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_27.4bpp");
+static const u8 sWailordGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_27.4bpp.lz");
 static const ax_sprite sWailordSprites27[] = {
 	{sWailordGfx27, ARRAY_COUNT(sWailordGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx28[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_28.4bpp");
+static const u8 sWailordGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_28.4bpp.lz");
 static const ax_sprite sWailordSprites28[] = {
 	{sWailordGfx28, ARRAY_COUNT(sWailordGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx29[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_29.4bpp");
+static const u8 sWailordGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_29.4bpp.lz");
 static const ax_sprite sWailordSprites29[] = {
 	{sWailordGfx29, ARRAY_COUNT(sWailordGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx30[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_30.4bpp");
+static const u8 sWailordGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_30.4bpp.lz");
 static const ax_sprite sWailordSprites30[] = {
 	{sWailordGfx30, ARRAY_COUNT(sWailordGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx31[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_31.4bpp");
+static const u8 sWailordGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_31.4bpp.lz");
 static const ax_sprite sWailordSprites31[] = {
 	{sWailordGfx31, ARRAY_COUNT(sWailordGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx32[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_32.4bpp");
+static const u8 sWailordGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_32.4bpp.lz");
 static const ax_sprite sWailordSprites32[] = {
 	{sWailordGfx32, ARRAY_COUNT(sWailordGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx33[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_33.4bpp");
+static const u8 sWailordGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_33.4bpp.lz");
 static const ax_sprite sWailordSprites33[] = {
 	{sWailordGfx33, ARRAY_COUNT(sWailordGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx34[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_34.4bpp");
+static const u8 sWailordGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_34.4bpp.lz");
 static const ax_sprite sWailordSprites34[] = {
 	{sWailordGfx34, ARRAY_COUNT(sWailordGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx35[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_35.4bpp");
+static const u8 sWailordGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_35.4bpp.lz");
 static const ax_sprite sWailordSprites35[] = {
 	{sWailordGfx35, ARRAY_COUNT(sWailordGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sWailordGfx36[] = INCBIN_U8("graphics/ax/mon/wailord/sprite_36.4bpp");
+static const u8 sWailordGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wailord/sprite_36.4bpp.lz");
 static const ax_sprite sWailordSprites36[] = {
 	{sWailordGfx36, ARRAY_COUNT(sWailordGfx36)}, 
 	{NULL, 0}

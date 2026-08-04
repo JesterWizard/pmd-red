@@ -2287,84 +2287,84 @@ static const ax_anim sLinooneAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLinooneGfx1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_1.4bpp");
+static const u8 sLinooneGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_1.4bpp.lz");
 static const ax_sprite sLinooneSprites1[] = {
 	{sLinooneGfx1, ARRAY_COUNT(sLinooneGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_2.4bpp");
+static const u8 sLinooneGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_2.4bpp.lz");
 static const ax_sprite sLinooneSprites2[] = {
 	{sLinooneGfx2, ARRAY_COUNT(sLinooneGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_3.4bpp");
+static const u8 sLinooneGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_3.4bpp.lz");
 static const ax_sprite sLinooneSprites3[] = {
 	{sLinooneGfx3, ARRAY_COUNT(sLinooneGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx4[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_4.4bpp");
+static const u8 sLinooneGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_4.4bpp.lz");
 static const ax_sprite sLinooneSprites4[] = {
 	{sLinooneGfx4, ARRAY_COUNT(sLinooneGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx5[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_5.4bpp");
+static const u8 sLinooneGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_5.4bpp.lz");
 static const ax_sprite sLinooneSprites5[] = {
 	{sLinooneGfx5, ARRAY_COUNT(sLinooneGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx6[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_6.4bpp");
+static const u8 sLinooneGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_6.4bpp.lz");
 static const ax_sprite sLinooneSprites6[] = {
 	{sLinooneGfx6, ARRAY_COUNT(sLinooneGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx7[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_7.4bpp");
+static const u8 sLinooneGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_7.4bpp.lz");
 static const ax_sprite sLinooneSprites7[] = {
 	{sLinooneGfx7, ARRAY_COUNT(sLinooneGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx8[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_8.4bpp");
+static const u8 sLinooneGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_8.4bpp.lz");
 static const ax_sprite sLinooneSprites8[] = {
 	{sLinooneGfx8, ARRAY_COUNT(sLinooneGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx9[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_9.4bpp");
+static const u8 sLinooneGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_9.4bpp.lz");
 static const ax_sprite sLinooneSprites9[] = {
 	{sLinooneGfx9, ARRAY_COUNT(sLinooneGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx10[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_10.4bpp");
+static const u8 sLinooneGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_10.4bpp.lz");
 static const ax_sprite sLinooneSprites10[] = {
 	{sLinooneGfx10, ARRAY_COUNT(sLinooneGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx11[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_11.4bpp");
+static const u8 sLinooneGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_11.4bpp.lz");
 static const ax_sprite sLinooneSprites11[] = {
 	{sLinooneGfx11, ARRAY_COUNT(sLinooneGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx12[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_12.4bpp");
+static const u8 sLinooneGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_12.4bpp.lz");
 static const ax_sprite sLinooneSprites12[] = {
 	{sLinooneGfx12, ARRAY_COUNT(sLinooneGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx13[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_13.4bpp");
+static const u8 sLinooneGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_13.4bpp.lz");
 static const ax_sprite sLinooneSprites13[] = {
 	{sLinooneGfx13, ARRAY_COUNT(sLinooneGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx14[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_14.4bpp");
+static const u8 sLinooneGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_14.4bpp.lz");
 static const ax_sprite sLinooneSprites14[] = {
 	{sLinooneGfx14, ARRAY_COUNT(sLinooneGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx15[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_15.4bpp");
+static const u8 sLinooneGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_15.4bpp.lz");
 static const ax_sprite sLinooneSprites15[] = {
 	{sLinooneGfx15, ARRAY_COUNT(sLinooneGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx16[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_16.4bpp");
-static const u8 sLinooneGfx16_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_16_1.4bpp");
-static const u8 sLinooneGfx16_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_16_2.4bpp");
+static const u8 sLinooneGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_16.4bpp.lz");
+static const u8 sLinooneGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_16_1.4bpp.lz");
+static const u8 sLinooneGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_16_2.4bpp.lz");
 static const ax_sprite sLinooneSprites16[] = {
 	{NULL, 128}, 
 	{sLinooneGfx16, ARRAY_COUNT(sLinooneGfx16)}, 
@@ -2375,8 +2375,8 @@ static const ax_sprite sLinooneSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx17[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_17.4bpp");
-static const u8 sLinooneGfx17_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_17_1.4bpp");
+static const u8 sLinooneGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_17.4bpp.lz");
+static const u8 sLinooneGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_17_1.4bpp.lz");
 static const ax_sprite sLinooneSprites17[] = {
 	{NULL, 128}, 
 	{sLinooneGfx17, ARRAY_COUNT(sLinooneGfx17)}, 
@@ -2385,8 +2385,8 @@ static const ax_sprite sLinooneSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx18[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_18.4bpp");
-static const u8 sLinooneGfx18_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_18_1.4bpp");
+static const u8 sLinooneGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_18.4bpp.lz");
+static const u8 sLinooneGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_18_1.4bpp.lz");
 static const ax_sprite sLinooneSprites18[] = {
 	{NULL, 128}, 
 	{sLinooneGfx18, ARRAY_COUNT(sLinooneGfx18)}, 
@@ -2394,9 +2394,9 @@ static const ax_sprite sLinooneSprites18[] = {
 	{sLinooneGfx18_1, ARRAY_COUNT(sLinooneGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx19[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_19.4bpp");
-static const u8 sLinooneGfx19_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_19_1.4bpp");
-static const u8 sLinooneGfx19_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_19_2.4bpp");
+static const u8 sLinooneGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_19.4bpp.lz");
+static const u8 sLinooneGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_19_1.4bpp.lz");
+static const u8 sLinooneGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_19_2.4bpp.lz");
 static const ax_sprite sLinooneSprites19[] = {
 	{NULL, 160}, 
 	{sLinooneGfx19, ARRAY_COUNT(sLinooneGfx19)}, 
@@ -2406,9 +2406,9 @@ static const ax_sprite sLinooneSprites19[] = {
 	{sLinooneGfx19_2, ARRAY_COUNT(sLinooneGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx20[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_20.4bpp");
-static const u8 sLinooneGfx20_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_20_1.4bpp");
-static const u8 sLinooneGfx20_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_20_2.4bpp");
+static const u8 sLinooneGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_20.4bpp.lz");
+static const u8 sLinooneGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_20_1.4bpp.lz");
+static const u8 sLinooneGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_20_2.4bpp.lz");
 static const ax_sprite sLinooneSprites20[] = {
 	{NULL, 128}, 
 	{sLinooneGfx20, ARRAY_COUNT(sLinooneGfx20)}, 
@@ -2419,10 +2419,10 @@ static const ax_sprite sLinooneSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx21[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_21.4bpp");
-static const u8 sLinooneGfx21_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_21_1.4bpp");
-static const u8 sLinooneGfx21_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_21_2.4bpp");
-static const u8 sLinooneGfx21_3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_21_3.4bpp");
+static const u8 sLinooneGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_21.4bpp.lz");
+static const u8 sLinooneGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_21_1.4bpp.lz");
+static const u8 sLinooneGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_21_2.4bpp.lz");
+static const u8 sLinooneGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_21_3.4bpp.lz");
 static const ax_sprite sLinooneSprites21[] = {
 	{sLinooneGfx21, ARRAY_COUNT(sLinooneGfx21)}, 
 	{NULL, 64}, 
@@ -2434,9 +2434,9 @@ static const ax_sprite sLinooneSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx22[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_22.4bpp");
-static const u8 sLinooneGfx22_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_22_1.4bpp");
-static const u8 sLinooneGfx22_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_22_2.4bpp");
+static const u8 sLinooneGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_22.4bpp.lz");
+static const u8 sLinooneGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_22_1.4bpp.lz");
+static const u8 sLinooneGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_22_2.4bpp.lz");
 static const ax_sprite sLinooneSprites22[] = {
 	{NULL, 32}, 
 	{sLinooneGfx22, ARRAY_COUNT(sLinooneGfx22)}, 
@@ -2447,16 +2447,16 @@ static const ax_sprite sLinooneSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx23[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_23.4bpp");
+static const u8 sLinooneGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_23.4bpp.lz");
 static const ax_sprite sLinooneSprites23[] = {
 	{NULL, 64}, 
 	{sLinooneGfx23, ARRAY_COUNT(sLinooneGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx24[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_24.4bpp");
-static const u8 sLinooneGfx24_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_24_1.4bpp");
-static const u8 sLinooneGfx24_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_24_2.4bpp");
-static const u8 sLinooneGfx24_3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_24_3.4bpp");
+static const u8 sLinooneGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_24.4bpp.lz");
+static const u8 sLinooneGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_24_1.4bpp.lz");
+static const u8 sLinooneGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_24_2.4bpp.lz");
+static const u8 sLinooneGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_24_3.4bpp.lz");
 static const ax_sprite sLinooneSprites24[] = {
 	{sLinooneGfx24, ARRAY_COUNT(sLinooneGfx24)}, 
 	{NULL, 64}, 
@@ -2467,10 +2467,10 @@ static const ax_sprite sLinooneSprites24[] = {
 	{sLinooneGfx24_3, ARRAY_COUNT(sLinooneGfx24_3)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx25[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_25.4bpp");
-static const u8 sLinooneGfx25_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_25_1.4bpp");
-static const u8 sLinooneGfx25_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_25_2.4bpp");
-static const u8 sLinooneGfx25_3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_25_3.4bpp");
+static const u8 sLinooneGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_25.4bpp.lz");
+static const u8 sLinooneGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_25_1.4bpp.lz");
+static const u8 sLinooneGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_25_2.4bpp.lz");
+static const u8 sLinooneGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_25_3.4bpp.lz");
 static const ax_sprite sLinooneSprites25[] = {
 	{sLinooneGfx25, ARRAY_COUNT(sLinooneGfx25)}, 
 	{NULL, 64}, 
@@ -2482,10 +2482,10 @@ static const ax_sprite sLinooneSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx26[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_26.4bpp");
-static const u8 sLinooneGfx26_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_26_1.4bpp");
-static const u8 sLinooneGfx26_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_26_2.4bpp");
-static const u8 sLinooneGfx26_3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_26_3.4bpp");
+static const u8 sLinooneGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_26.4bpp.lz");
+static const u8 sLinooneGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_26_1.4bpp.lz");
+static const u8 sLinooneGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_26_2.4bpp.lz");
+static const u8 sLinooneGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_26_3.4bpp.lz");
 static const ax_sprite sLinooneSprites26[] = {
 	{sLinooneGfx26, ARRAY_COUNT(sLinooneGfx26)}, 
 	{NULL, 64}, 
@@ -2497,10 +2497,10 @@ static const ax_sprite sLinooneSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx27[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_27.4bpp");
-static const u8 sLinooneGfx27_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_27_1.4bpp");
-static const u8 sLinooneGfx27_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_27_2.4bpp");
-static const u8 sLinooneGfx27_3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_27_3.4bpp");
+static const u8 sLinooneGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_27.4bpp.lz");
+static const u8 sLinooneGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_27_1.4bpp.lz");
+static const u8 sLinooneGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_27_2.4bpp.lz");
+static const u8 sLinooneGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_27_3.4bpp.lz");
 static const ax_sprite sLinooneSprites27[] = {
 	{NULL, 32}, 
 	{sLinooneGfx27, ARRAY_COUNT(sLinooneGfx27)}, 
@@ -2513,10 +2513,10 @@ static const ax_sprite sLinooneSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx28[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_28.4bpp");
-static const u8 sLinooneGfx28_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_28_1.4bpp");
-static const u8 sLinooneGfx28_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_28_2.4bpp");
-static const u8 sLinooneGfx28_3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_28_3.4bpp");
+static const u8 sLinooneGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_28.4bpp.lz");
+static const u8 sLinooneGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_28_1.4bpp.lz");
+static const u8 sLinooneGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_28_2.4bpp.lz");
+static const u8 sLinooneGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_28_3.4bpp.lz");
 static const ax_sprite sLinooneSprites28[] = {
 	{NULL, 64}, 
 	{sLinooneGfx28, ARRAY_COUNT(sLinooneGfx28)}, 
@@ -2528,10 +2528,10 @@ static const ax_sprite sLinooneSprites28[] = {
 	{sLinooneGfx28_3, ARRAY_COUNT(sLinooneGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx29[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_29.4bpp");
-static const u8 sLinooneGfx29_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_29_1.4bpp");
-static const u8 sLinooneGfx29_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_29_2.4bpp");
-static const u8 sLinooneGfx29_3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_29_3.4bpp");
+static const u8 sLinooneGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_29.4bpp.lz");
+static const u8 sLinooneGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_29_1.4bpp.lz");
+static const u8 sLinooneGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_29_2.4bpp.lz");
+static const u8 sLinooneGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_29_3.4bpp.lz");
 static const ax_sprite sLinooneSprites29[] = {
 	{NULL, 32}, 
 	{sLinooneGfx29, ARRAY_COUNT(sLinooneGfx29)}, 
@@ -2543,10 +2543,10 @@ static const ax_sprite sLinooneSprites29[] = {
 	{sLinooneGfx29_3, ARRAY_COUNT(sLinooneGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx30[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_30.4bpp");
-static const u8 sLinooneGfx30_1[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_30_1.4bpp");
-static const u8 sLinooneGfx30_2[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_30_2.4bpp");
-static const u8 sLinooneGfx30_3[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_30_3.4bpp");
+static const u8 sLinooneGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_30.4bpp.lz");
+static const u8 sLinooneGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_30_1.4bpp.lz");
+static const u8 sLinooneGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_30_2.4bpp.lz");
+static const u8 sLinooneGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_30_3.4bpp.lz");
 static const ax_sprite sLinooneSprites30[] = {
 	{sLinooneGfx30, ARRAY_COUNT(sLinooneGfx30)}, 
 	{NULL, 64}, 
@@ -2558,37 +2558,37 @@ static const ax_sprite sLinooneSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx31[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_31.4bpp");
+static const u8 sLinooneGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_31.4bpp.lz");
 static const ax_sprite sLinooneSprites31[] = {
 	{sLinooneGfx31, ARRAY_COUNT(sLinooneGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx32[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_32.4bpp");
+static const u8 sLinooneGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_32.4bpp.lz");
 static const ax_sprite sLinooneSprites32[] = {
 	{sLinooneGfx32, ARRAY_COUNT(sLinooneGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx33[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_33.4bpp");
+static const u8 sLinooneGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_33.4bpp.lz");
 static const ax_sprite sLinooneSprites33[] = {
 	{sLinooneGfx33, ARRAY_COUNT(sLinooneGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx34[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_34.4bpp");
+static const u8 sLinooneGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_34.4bpp.lz");
 static const ax_sprite sLinooneSprites34[] = {
 	{sLinooneGfx34, ARRAY_COUNT(sLinooneGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx35[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_35.4bpp");
+static const u8 sLinooneGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_35.4bpp.lz");
 static const ax_sprite sLinooneSprites35[] = {
 	{sLinooneGfx35, ARRAY_COUNT(sLinooneGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx36[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_36.4bpp");
+static const u8 sLinooneGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_36.4bpp.lz");
 static const ax_sprite sLinooneSprites36[] = {
 	{sLinooneGfx36, ARRAY_COUNT(sLinooneGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sLinooneGfx37[] = INCBIN_U8("graphics/ax/mon/linoone/sprite_37.4bpp");
+static const u8 sLinooneGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/linoone/sprite_37.4bpp.lz");
 static const ax_sprite sLinooneSprites37[] = {
 	{sLinooneGfx37, ARRAY_COUNT(sLinooneGfx37)}, 
 	{NULL, 0}

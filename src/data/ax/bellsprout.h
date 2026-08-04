@@ -1991,84 +1991,84 @@ static const ax_anim sBellsproutAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBellsproutGfx1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_1.4bpp");
+static const u8 sBellsproutGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_1.4bpp.lz");
 static const ax_sprite sBellsproutSprites1[] = {
 	{sBellsproutGfx1, ARRAY_COUNT(sBellsproutGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_2.4bpp");
+static const u8 sBellsproutGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites2[] = {
 	{sBellsproutGfx2, ARRAY_COUNT(sBellsproutGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx3[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_3.4bpp");
+static const u8 sBellsproutGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_3.4bpp.lz");
 static const ax_sprite sBellsproutSprites3[] = {
 	{sBellsproutGfx3, ARRAY_COUNT(sBellsproutGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx4[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_4.4bpp");
+static const u8 sBellsproutGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_4.4bpp.lz");
 static const ax_sprite sBellsproutSprites4[] = {
 	{sBellsproutGfx4, ARRAY_COUNT(sBellsproutGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx5[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_5.4bpp");
+static const u8 sBellsproutGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_5.4bpp.lz");
 static const ax_sprite sBellsproutSprites5[] = {
 	{sBellsproutGfx5, ARRAY_COUNT(sBellsproutGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx6[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_6.4bpp");
+static const u8 sBellsproutGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_6.4bpp.lz");
 static const ax_sprite sBellsproutSprites6[] = {
 	{sBellsproutGfx6, ARRAY_COUNT(sBellsproutGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx7[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_7.4bpp");
+static const u8 sBellsproutGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_7.4bpp.lz");
 static const ax_sprite sBellsproutSprites7[] = {
 	{sBellsproutGfx7, ARRAY_COUNT(sBellsproutGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx8[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_8.4bpp");
+static const u8 sBellsproutGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_8.4bpp.lz");
 static const ax_sprite sBellsproutSprites8[] = {
 	{sBellsproutGfx8, ARRAY_COUNT(sBellsproutGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx9[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_9.4bpp");
+static const u8 sBellsproutGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_9.4bpp.lz");
 static const ax_sprite sBellsproutSprites9[] = {
 	{sBellsproutGfx9, ARRAY_COUNT(sBellsproutGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx10[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_10.4bpp");
+static const u8 sBellsproutGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_10.4bpp.lz");
 static const ax_sprite sBellsproutSprites10[] = {
 	{sBellsproutGfx10, ARRAY_COUNT(sBellsproutGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx11[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_11.4bpp");
+static const u8 sBellsproutGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_11.4bpp.lz");
 static const ax_sprite sBellsproutSprites11[] = {
 	{sBellsproutGfx11, ARRAY_COUNT(sBellsproutGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx12[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_12.4bpp");
+static const u8 sBellsproutGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_12.4bpp.lz");
 static const ax_sprite sBellsproutSprites12[] = {
 	{sBellsproutGfx12, ARRAY_COUNT(sBellsproutGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx13[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_13.4bpp");
+static const u8 sBellsproutGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_13.4bpp.lz");
 static const ax_sprite sBellsproutSprites13[] = {
 	{sBellsproutGfx13, ARRAY_COUNT(sBellsproutGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx14[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_14.4bpp");
+static const u8 sBellsproutGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_14.4bpp.lz");
 static const ax_sprite sBellsproutSprites14[] = {
 	{sBellsproutGfx14, ARRAY_COUNT(sBellsproutGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx15[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_15.4bpp");
+static const u8 sBellsproutGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_15.4bpp.lz");
 static const ax_sprite sBellsproutSprites15[] = {
 	{sBellsproutGfx15, ARRAY_COUNT(sBellsproutGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx16[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_16.4bpp");
-static const u8 sBellsproutGfx16_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_16_1.4bpp");
-static const u8 sBellsproutGfx16_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_16_2.4bpp");
+static const u8 sBellsproutGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_16.4bpp.lz");
+static const u8 sBellsproutGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_16_1.4bpp.lz");
+static const u8 sBellsproutGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_16_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites16[] = {
 	{sBellsproutGfx16, ARRAY_COUNT(sBellsproutGfx16)}, 
 	{NULL, 64}, 
@@ -2078,9 +2078,9 @@ static const ax_sprite sBellsproutSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx17[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_17.4bpp");
-static const u8 sBellsproutGfx17_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_17_1.4bpp");
-static const u8 sBellsproutGfx17_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_17_2.4bpp");
+static const u8 sBellsproutGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_17.4bpp.lz");
+static const u8 sBellsproutGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_17_1.4bpp.lz");
+static const u8 sBellsproutGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_17_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites17[] = {
 	{sBellsproutGfx17, ARRAY_COUNT(sBellsproutGfx17)}, 
 	{NULL, 32}, 
@@ -2090,9 +2090,9 @@ static const ax_sprite sBellsproutSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx18[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_18.4bpp");
-static const u8 sBellsproutGfx18_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_18_1.4bpp");
-static const u8 sBellsproutGfx18_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_18_2.4bpp");
+static const u8 sBellsproutGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_18.4bpp.lz");
+static const u8 sBellsproutGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_18_1.4bpp.lz");
+static const u8 sBellsproutGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_18_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites18[] = {
 	{NULL, 32}, 
 	{sBellsproutGfx18, ARRAY_COUNT(sBellsproutGfx18)}, 
@@ -2103,9 +2103,9 @@ static const ax_sprite sBellsproutSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx19[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_19.4bpp");
-static const u8 sBellsproutGfx19_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_19_1.4bpp");
-static const u8 sBellsproutGfx19_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_19_2.4bpp");
+static const u8 sBellsproutGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_19.4bpp.lz");
+static const u8 sBellsproutGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_19_1.4bpp.lz");
+static const u8 sBellsproutGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_19_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites19[] = {
 	{sBellsproutGfx19, ARRAY_COUNT(sBellsproutGfx19)}, 
 	{NULL, 32}, 
@@ -2115,8 +2115,8 @@ static const ax_sprite sBellsproutSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx20[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_20.4bpp");
-static const u8 sBellsproutGfx20_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_20_1.4bpp");
+static const u8 sBellsproutGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_20.4bpp.lz");
+static const u8 sBellsproutGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_20_1.4bpp.lz");
 static const ax_sprite sBellsproutSprites20[] = {
 	{NULL, 128}, 
 	{sBellsproutGfx20, ARRAY_COUNT(sBellsproutGfx20)}, 
@@ -2125,8 +2125,8 @@ static const ax_sprite sBellsproutSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx21[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_21.4bpp");
-static const u8 sBellsproutGfx21_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_21_1.4bpp");
+static const u8 sBellsproutGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_21.4bpp.lz");
+static const u8 sBellsproutGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_21_1.4bpp.lz");
 static const ax_sprite sBellsproutSprites21[] = {
 	{sBellsproutGfx21, ARRAY_COUNT(sBellsproutGfx21)}, 
 	{NULL, 32}, 
@@ -2134,10 +2134,10 @@ static const ax_sprite sBellsproutSprites21[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx22[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_22.4bpp");
-static const u8 sBellsproutGfx22_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_22_1.4bpp");
-static const u8 sBellsproutGfx22_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_22_2.4bpp");
-static const u8 sBellsproutGfx22_3[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_22_3.4bpp");
+static const u8 sBellsproutGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_22.4bpp.lz");
+static const u8 sBellsproutGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_22_1.4bpp.lz");
+static const u8 sBellsproutGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_22_2.4bpp.lz");
+static const u8 sBellsproutGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_22_3.4bpp.lz");
 static const ax_sprite sBellsproutSprites22[] = {
 	{NULL, 32}, 
 	{sBellsproutGfx22, ARRAY_COUNT(sBellsproutGfx22)}, 
@@ -2150,9 +2150,9 @@ static const ax_sprite sBellsproutSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx23[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_23.4bpp");
-static const u8 sBellsproutGfx23_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_23_1.4bpp");
-static const u8 sBellsproutGfx23_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_23_2.4bpp");
+static const u8 sBellsproutGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_23.4bpp.lz");
+static const u8 sBellsproutGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_23_1.4bpp.lz");
+static const u8 sBellsproutGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_23_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites23[] = {
 	{NULL, 128}, 
 	{sBellsproutGfx23, ARRAY_COUNT(sBellsproutGfx23)}, 
@@ -2163,9 +2163,9 @@ static const ax_sprite sBellsproutSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx24[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_24.4bpp");
-static const u8 sBellsproutGfx24_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_24_1.4bpp");
-static const u8 sBellsproutGfx24_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_24_2.4bpp");
+static const u8 sBellsproutGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_24.4bpp.lz");
+static const u8 sBellsproutGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_24_1.4bpp.lz");
+static const u8 sBellsproutGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_24_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites24[] = {
 	{sBellsproutGfx24, ARRAY_COUNT(sBellsproutGfx24)}, 
 	{NULL, 32}, 
@@ -2175,9 +2175,9 @@ static const ax_sprite sBellsproutSprites24[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx25[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_25.4bpp");
-static const u8 sBellsproutGfx25_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_25_1.4bpp");
-static const u8 sBellsproutGfx25_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_25_2.4bpp");
+static const u8 sBellsproutGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_25.4bpp.lz");
+static const u8 sBellsproutGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_25_1.4bpp.lz");
+static const u8 sBellsproutGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_25_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites25[] = {
 	{NULL, 32}, 
 	{sBellsproutGfx25, ARRAY_COUNT(sBellsproutGfx25)}, 
@@ -2188,9 +2188,9 @@ static const ax_sprite sBellsproutSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx26[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_26.4bpp");
-static const u8 sBellsproutGfx26_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_26_1.4bpp");
-static const u8 sBellsproutGfx26_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_26_2.4bpp");
+static const u8 sBellsproutGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_26.4bpp.lz");
+static const u8 sBellsproutGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_26_1.4bpp.lz");
+static const u8 sBellsproutGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_26_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites26[] = {
 	{sBellsproutGfx26, ARRAY_COUNT(sBellsproutGfx26)}, 
 	{NULL, 64}, 
@@ -2200,8 +2200,8 @@ static const ax_sprite sBellsproutSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx27[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_27.4bpp");
-static const u8 sBellsproutGfx27_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_27_1.4bpp");
+static const u8 sBellsproutGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_27.4bpp.lz");
+static const u8 sBellsproutGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_27_1.4bpp.lz");
 static const ax_sprite sBellsproutSprites27[] = {
 	{sBellsproutGfx27, ARRAY_COUNT(sBellsproutGfx27)}, 
 	{NULL, 32}, 
@@ -2209,9 +2209,9 @@ static const ax_sprite sBellsproutSprites27[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx28[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_28.4bpp");
-static const u8 sBellsproutGfx28_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_28_1.4bpp");
-static const u8 sBellsproutGfx28_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_28_2.4bpp");
+static const u8 sBellsproutGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_28.4bpp.lz");
+static const u8 sBellsproutGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_28_1.4bpp.lz");
+static const u8 sBellsproutGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_28_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites28[] = {
 	{sBellsproutGfx28, ARRAY_COUNT(sBellsproutGfx28)}, 
 	{NULL, 64}, 
@@ -2221,9 +2221,9 @@ static const ax_sprite sBellsproutSprites28[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx29[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_29.4bpp");
-static const u8 sBellsproutGfx29_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_29_1.4bpp");
-static const u8 sBellsproutGfx29_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_29_2.4bpp");
+static const u8 sBellsproutGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_29.4bpp.lz");
+static const u8 sBellsproutGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_29_1.4bpp.lz");
+static const u8 sBellsproutGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_29_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites29[] = {
 	{sBellsproutGfx29, ARRAY_COUNT(sBellsproutGfx29)}, 
 	{NULL, 64}, 
@@ -2233,15 +2233,15 @@ static const ax_sprite sBellsproutSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx30[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_30.4bpp");
+static const u8 sBellsproutGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_30.4bpp.lz");
 static const ax_sprite sBellsproutSprites30[] = {
 	{sBellsproutGfx30, ARRAY_COUNT(sBellsproutGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx31[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_31.4bpp");
-static const u8 sBellsproutGfx31_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_31_1.4bpp");
-static const u8 sBellsproutGfx31_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_31_2.4bpp");
+static const u8 sBellsproutGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_31.4bpp.lz");
+static const u8 sBellsproutGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_31_1.4bpp.lz");
+static const u8 sBellsproutGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_31_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites31[] = {
 	{sBellsproutGfx31, ARRAY_COUNT(sBellsproutGfx31)}, 
 	{NULL, 64}, 
@@ -2251,9 +2251,9 @@ static const ax_sprite sBellsproutSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx32[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_32.4bpp");
-static const u8 sBellsproutGfx32_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_32_1.4bpp");
-static const u8 sBellsproutGfx32_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_32_2.4bpp");
+static const u8 sBellsproutGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_32.4bpp.lz");
+static const u8 sBellsproutGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_32_1.4bpp.lz");
+static const u8 sBellsproutGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_32_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites32[] = {
 	{sBellsproutGfx32, ARRAY_COUNT(sBellsproutGfx32)}, 
 	{NULL, 64}, 
@@ -2263,9 +2263,9 @@ static const ax_sprite sBellsproutSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx33[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_33.4bpp");
-static const u8 sBellsproutGfx33_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_33_1.4bpp");
-static const u8 sBellsproutGfx33_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_33_2.4bpp");
+static const u8 sBellsproutGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_33.4bpp.lz");
+static const u8 sBellsproutGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_33_1.4bpp.lz");
+static const u8 sBellsproutGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_33_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites33[] = {
 	{sBellsproutGfx33, ARRAY_COUNT(sBellsproutGfx33)}, 
 	{NULL, 64}, 
@@ -2275,9 +2275,9 @@ static const ax_sprite sBellsproutSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx34[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_34.4bpp");
-static const u8 sBellsproutGfx34_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_34_1.4bpp");
-static const u8 sBellsproutGfx34_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_34_2.4bpp");
+static const u8 sBellsproutGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_34.4bpp.lz");
+static const u8 sBellsproutGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_34_1.4bpp.lz");
+static const u8 sBellsproutGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_34_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites34[] = {
 	{sBellsproutGfx34, ARRAY_COUNT(sBellsproutGfx34)}, 
 	{NULL, 64}, 
@@ -2287,9 +2287,9 @@ static const ax_sprite sBellsproutSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx35[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_35.4bpp");
-static const u8 sBellsproutGfx35_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_35_1.4bpp");
-static const u8 sBellsproutGfx35_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_35_2.4bpp");
+static const u8 sBellsproutGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_35.4bpp.lz");
+static const u8 sBellsproutGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_35_1.4bpp.lz");
+static const u8 sBellsproutGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_35_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites35[] = {
 	{sBellsproutGfx35, ARRAY_COUNT(sBellsproutGfx35)}, 
 	{NULL, 64}, 
@@ -2299,9 +2299,9 @@ static const ax_sprite sBellsproutSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx36[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_36.4bpp");
-static const u8 sBellsproutGfx36_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_36_1.4bpp");
-static const u8 sBellsproutGfx36_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_36_2.4bpp");
+static const u8 sBellsproutGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_36.4bpp.lz");
+static const u8 sBellsproutGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_36_1.4bpp.lz");
+static const u8 sBellsproutGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_36_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites36[] = {
 	{sBellsproutGfx36, ARRAY_COUNT(sBellsproutGfx36)}, 
 	{NULL, 64}, 
@@ -2311,9 +2311,9 @@ static const ax_sprite sBellsproutSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx37[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_37.4bpp");
-static const u8 sBellsproutGfx37_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_37_1.4bpp");
-static const u8 sBellsproutGfx37_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_37_2.4bpp");
+static const u8 sBellsproutGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_37.4bpp.lz");
+static const u8 sBellsproutGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_37_1.4bpp.lz");
+static const u8 sBellsproutGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_37_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites37[] = {
 	{sBellsproutGfx37, ARRAY_COUNT(sBellsproutGfx37)}, 
 	{NULL, 64}, 
@@ -2323,9 +2323,9 @@ static const ax_sprite sBellsproutSprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx38[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_38.4bpp");
-static const u8 sBellsproutGfx38_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_38_1.4bpp");
-static const u8 sBellsproutGfx38_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_38_2.4bpp");
+static const u8 sBellsproutGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_38.4bpp.lz");
+static const u8 sBellsproutGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_38_1.4bpp.lz");
+static const u8 sBellsproutGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_38_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites38[] = {
 	{sBellsproutGfx38, ARRAY_COUNT(sBellsproutGfx38)}, 
 	{NULL, 64}, 
@@ -2335,9 +2335,9 @@ static const ax_sprite sBellsproutSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx39[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_39.4bpp");
-static const u8 sBellsproutGfx39_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_39_1.4bpp");
-static const u8 sBellsproutGfx39_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_39_2.4bpp");
+static const u8 sBellsproutGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_39.4bpp.lz");
+static const u8 sBellsproutGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_39_1.4bpp.lz");
+static const u8 sBellsproutGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_39_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites39[] = {
 	{sBellsproutGfx39, ARRAY_COUNT(sBellsproutGfx39)}, 
 	{NULL, 64}, 
@@ -2347,9 +2347,9 @@ static const ax_sprite sBellsproutSprites39[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx40[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_40.4bpp");
-static const u8 sBellsproutGfx40_1[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_40_1.4bpp");
-static const u8 sBellsproutGfx40_2[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_40_2.4bpp");
+static const u8 sBellsproutGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_40.4bpp.lz");
+static const u8 sBellsproutGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_40_1.4bpp.lz");
+static const u8 sBellsproutGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_40_2.4bpp.lz");
 static const ax_sprite sBellsproutSprites40[] = {
 	{sBellsproutGfx40, ARRAY_COUNT(sBellsproutGfx40)}, 
 	{NULL, 64}, 
@@ -2359,37 +2359,37 @@ static const ax_sprite sBellsproutSprites40[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx41[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_41.4bpp");
+static const u8 sBellsproutGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_41.4bpp.lz");
 static const ax_sprite sBellsproutSprites41[] = {
 	{sBellsproutGfx41, ARRAY_COUNT(sBellsproutGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx42[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_42.4bpp");
+static const u8 sBellsproutGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_42.4bpp.lz");
 static const ax_sprite sBellsproutSprites42[] = {
 	{sBellsproutGfx42, ARRAY_COUNT(sBellsproutGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx43[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_43.4bpp");
+static const u8 sBellsproutGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_43.4bpp.lz");
 static const ax_sprite sBellsproutSprites43[] = {
 	{sBellsproutGfx43, ARRAY_COUNT(sBellsproutGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx44[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_44.4bpp");
+static const u8 sBellsproutGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_44.4bpp.lz");
 static const ax_sprite sBellsproutSprites44[] = {
 	{sBellsproutGfx44, ARRAY_COUNT(sBellsproutGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx45[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_45.4bpp");
+static const u8 sBellsproutGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_45.4bpp.lz");
 static const ax_sprite sBellsproutSprites45[] = {
 	{sBellsproutGfx45, ARRAY_COUNT(sBellsproutGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx46[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_46.4bpp");
+static const u8 sBellsproutGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_46.4bpp.lz");
 static const ax_sprite sBellsproutSprites46[] = {
 	{sBellsproutGfx46, ARRAY_COUNT(sBellsproutGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sBellsproutGfx47[] = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_47.4bpp");
+static const u8 sBellsproutGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellsprout/sprite_47.4bpp.lz");
 static const ax_sprite sBellsproutSprites47[] = {
 	{sBellsproutGfx47, ARRAY_COUNT(sBellsproutGfx47)}, 
 	{NULL, 0}

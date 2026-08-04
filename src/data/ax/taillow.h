@@ -2347,83 +2347,83 @@ static const ax_anim sTaillowAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTaillowGfx1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_1.4bpp");
+static const u8 sTaillowGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_1.4bpp.lz");
 static const ax_sprite sTaillowSprites1[] = {
 	{sTaillowGfx1, ARRAY_COUNT(sTaillowGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_2.4bpp");
+static const u8 sTaillowGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_2.4bpp.lz");
 static const ax_sprite sTaillowSprites2[] = {
 	{sTaillowGfx2, ARRAY_COUNT(sTaillowGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx3[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_3.4bpp");
+static const u8 sTaillowGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_3.4bpp.lz");
 static const ax_sprite sTaillowSprites3[] = {
 	{sTaillowGfx3, ARRAY_COUNT(sTaillowGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx4[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_4.4bpp");
+static const u8 sTaillowGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_4.4bpp.lz");
 static const ax_sprite sTaillowSprites4[] = {
 	{sTaillowGfx4, ARRAY_COUNT(sTaillowGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx5[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_5.4bpp");
+static const u8 sTaillowGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_5.4bpp.lz");
 static const ax_sprite sTaillowSprites5[] = {
 	{sTaillowGfx5, ARRAY_COUNT(sTaillowGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx6[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_6.4bpp");
+static const u8 sTaillowGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_6.4bpp.lz");
 static const ax_sprite sTaillowSprites6[] = {
 	{sTaillowGfx6, ARRAY_COUNT(sTaillowGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx7[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_7.4bpp");
+static const u8 sTaillowGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_7.4bpp.lz");
 static const ax_sprite sTaillowSprites7[] = {
 	{sTaillowGfx7, ARRAY_COUNT(sTaillowGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx8[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_8.4bpp");
+static const u8 sTaillowGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_8.4bpp.lz");
 static const ax_sprite sTaillowSprites8[] = {
 	{sTaillowGfx8, ARRAY_COUNT(sTaillowGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx9[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_9.4bpp");
+static const u8 sTaillowGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_9.4bpp.lz");
 static const ax_sprite sTaillowSprites9[] = {
 	{sTaillowGfx9, ARRAY_COUNT(sTaillowGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx10[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_10.4bpp");
+static const u8 sTaillowGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_10.4bpp.lz");
 static const ax_sprite sTaillowSprites10[] = {
 	{sTaillowGfx10, ARRAY_COUNT(sTaillowGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx11[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_11.4bpp");
+static const u8 sTaillowGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_11.4bpp.lz");
 static const ax_sprite sTaillowSprites11[] = {
 	{sTaillowGfx11, ARRAY_COUNT(sTaillowGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx12[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_12.4bpp");
+static const u8 sTaillowGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_12.4bpp.lz");
 static const ax_sprite sTaillowSprites12[] = {
 	{sTaillowGfx12, ARRAY_COUNT(sTaillowGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx13[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_13.4bpp");
+static const u8 sTaillowGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_13.4bpp.lz");
 static const ax_sprite sTaillowSprites13[] = {
 	{sTaillowGfx13, ARRAY_COUNT(sTaillowGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx14[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_14.4bpp");
+static const u8 sTaillowGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_14.4bpp.lz");
 static const ax_sprite sTaillowSprites14[] = {
 	{sTaillowGfx14, ARRAY_COUNT(sTaillowGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx15[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_15.4bpp");
+static const u8 sTaillowGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_15.4bpp.lz");
 static const ax_sprite sTaillowSprites15[] = {
 	{sTaillowGfx15, ARRAY_COUNT(sTaillowGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx16[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_16.4bpp");
-static const u8 sTaillowGfx16_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_16_1.4bpp");
+static const u8 sTaillowGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_16.4bpp.lz");
+static const u8 sTaillowGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_16_1.4bpp.lz");
 static const ax_sprite sTaillowSprites16[] = {
 	{NULL, 128}, 
 	{sTaillowGfx16, ARRAY_COUNT(sTaillowGfx16)}, 
@@ -2432,9 +2432,9 @@ static const ax_sprite sTaillowSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx17[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_17.4bpp");
-static const u8 sTaillowGfx17_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_17_1.4bpp");
-static const u8 sTaillowGfx17_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_17_2.4bpp");
+static const u8 sTaillowGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_17.4bpp.lz");
+static const u8 sTaillowGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_17_1.4bpp.lz");
+static const u8 sTaillowGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_17_2.4bpp.lz");
 static const ax_sprite sTaillowSprites17[] = {
 	{NULL, 160}, 
 	{sTaillowGfx17, ARRAY_COUNT(sTaillowGfx17)}, 
@@ -2445,8 +2445,8 @@ static const ax_sprite sTaillowSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx18[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_18.4bpp");
-static const u8 sTaillowGfx18_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_18_1.4bpp");
+static const u8 sTaillowGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_18.4bpp.lz");
+static const u8 sTaillowGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_18_1.4bpp.lz");
 static const ax_sprite sTaillowSprites18[] = {
 	{NULL, 128}, 
 	{sTaillowGfx18, ARRAY_COUNT(sTaillowGfx18)}, 
@@ -2455,8 +2455,8 @@ static const ax_sprite sTaillowSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx19[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_19.4bpp");
-static const u8 sTaillowGfx19_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_19_1.4bpp");
+static const u8 sTaillowGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_19.4bpp.lz");
+static const u8 sTaillowGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_19_1.4bpp.lz");
 static const ax_sprite sTaillowSprites19[] = {
 	{NULL, 128}, 
 	{sTaillowGfx19, ARRAY_COUNT(sTaillowGfx19)}, 
@@ -2465,9 +2465,9 @@ static const ax_sprite sTaillowSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx20[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_20.4bpp");
-static const u8 sTaillowGfx20_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_20_1.4bpp");
-static const u8 sTaillowGfx20_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_20_2.4bpp");
+static const u8 sTaillowGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_20.4bpp.lz");
+static const u8 sTaillowGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_20_1.4bpp.lz");
+static const u8 sTaillowGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_20_2.4bpp.lz");
 static const ax_sprite sTaillowSprites20[] = {
 	{NULL, 128}, 
 	{sTaillowGfx20, ARRAY_COUNT(sTaillowGfx20)}, 
@@ -2478,9 +2478,9 @@ static const ax_sprite sTaillowSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx21[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_21.4bpp");
-static const u8 sTaillowGfx21_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_21_1.4bpp");
-static const u8 sTaillowGfx21_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_21_2.4bpp");
+static const u8 sTaillowGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_21.4bpp.lz");
+static const u8 sTaillowGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_21_1.4bpp.lz");
+static const u8 sTaillowGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_21_2.4bpp.lz");
 static const ax_sprite sTaillowSprites21[] = {
 	{sTaillowGfx21, ARRAY_COUNT(sTaillowGfx21)}, 
 	{NULL, 96}, 
@@ -2490,8 +2490,8 @@ static const ax_sprite sTaillowSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx22[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_22.4bpp");
-static const u8 sTaillowGfx22_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_22_1.4bpp");
+static const u8 sTaillowGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_22.4bpp.lz");
+static const u8 sTaillowGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_22_1.4bpp.lz");
 static const ax_sprite sTaillowSprites22[] = {
 	{NULL, 128}, 
 	{sTaillowGfx22, ARRAY_COUNT(sTaillowGfx22)}, 
@@ -2500,9 +2500,9 @@ static const ax_sprite sTaillowSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx23[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_23.4bpp");
-static const u8 sTaillowGfx23_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_23_1.4bpp");
-static const u8 sTaillowGfx23_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_23_2.4bpp");
+static const u8 sTaillowGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_23.4bpp.lz");
+static const u8 sTaillowGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_23_1.4bpp.lz");
+static const u8 sTaillowGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_23_2.4bpp.lz");
 static const ax_sprite sTaillowSprites23[] = {
 	{NULL, 128}, 
 	{sTaillowGfx23, ARRAY_COUNT(sTaillowGfx23)}, 
@@ -2513,9 +2513,9 @@ static const ax_sprite sTaillowSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx24[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_24.4bpp");
-static const u8 sTaillowGfx24_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_24_1.4bpp");
-static const u8 sTaillowGfx24_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_24_2.4bpp");
+static const u8 sTaillowGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_24.4bpp.lz");
+static const u8 sTaillowGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_24_1.4bpp.lz");
+static const u8 sTaillowGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_24_2.4bpp.lz");
 static const ax_sprite sTaillowSprites24[] = {
 	{NULL, 128}, 
 	{sTaillowGfx24, ARRAY_COUNT(sTaillowGfx24)}, 
@@ -2526,16 +2526,16 @@ static const ax_sprite sTaillowSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx25[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_25.4bpp");
+static const u8 sTaillowGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_25.4bpp.lz");
 static const ax_sprite sTaillowSprites25[] = {
 	{NULL, 128}, 
 	{sTaillowGfx25, ARRAY_COUNT(sTaillowGfx25)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx26[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_26.4bpp");
-static const u8 sTaillowGfx26_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_26_1.4bpp");
-static const u8 sTaillowGfx26_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_26_2.4bpp");
+static const u8 sTaillowGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_26.4bpp.lz");
+static const u8 sTaillowGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_26_1.4bpp.lz");
+static const u8 sTaillowGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_26_2.4bpp.lz");
 static const ax_sprite sTaillowSprites26[] = {
 	{NULL, 128}, 
 	{sTaillowGfx26, ARRAY_COUNT(sTaillowGfx26)}, 
@@ -2546,9 +2546,9 @@ static const ax_sprite sTaillowSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx27[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_27.4bpp");
-static const u8 sTaillowGfx27_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_27_1.4bpp");
-static const u8 sTaillowGfx27_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_27_2.4bpp");
+static const u8 sTaillowGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_27.4bpp.lz");
+static const u8 sTaillowGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_27_1.4bpp.lz");
+static const u8 sTaillowGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_27_2.4bpp.lz");
 static const ax_sprite sTaillowSprites27[] = {
 	{NULL, 128}, 
 	{sTaillowGfx27, ARRAY_COUNT(sTaillowGfx27)}, 
@@ -2559,9 +2559,9 @@ static const ax_sprite sTaillowSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx28[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_28.4bpp");
-static const u8 sTaillowGfx28_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_28_1.4bpp");
-static const u8 sTaillowGfx28_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_28_2.4bpp");
+static const u8 sTaillowGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_28.4bpp.lz");
+static const u8 sTaillowGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_28_1.4bpp.lz");
+static const u8 sTaillowGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_28_2.4bpp.lz");
 static const ax_sprite sTaillowSprites28[] = {
 	{NULL, 160}, 
 	{sTaillowGfx28, ARRAY_COUNT(sTaillowGfx28)}, 
@@ -2572,9 +2572,9 @@ static const ax_sprite sTaillowSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx29[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_29.4bpp");
-static const u8 sTaillowGfx29_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_29_1.4bpp");
-static const u8 sTaillowGfx29_2[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_29_2.4bpp");
+static const u8 sTaillowGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_29.4bpp.lz");
+static const u8 sTaillowGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_29_1.4bpp.lz");
+static const u8 sTaillowGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_29_2.4bpp.lz");
 static const ax_sprite sTaillowSprites29[] = {
 	{NULL, 160}, 
 	{sTaillowGfx29, ARRAY_COUNT(sTaillowGfx29)}, 
@@ -2585,8 +2585,8 @@ static const ax_sprite sTaillowSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx30[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_30.4bpp");
-static const u8 sTaillowGfx30_1[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_30_1.4bpp");
+static const u8 sTaillowGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_30.4bpp.lz");
+static const u8 sTaillowGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_30_1.4bpp.lz");
 static const ax_sprite sTaillowSprites30[] = {
 	{NULL, 128}, 
 	{sTaillowGfx30, ARRAY_COUNT(sTaillowGfx30)}, 
@@ -2595,37 +2595,37 @@ static const ax_sprite sTaillowSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx31[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_31.4bpp");
+static const u8 sTaillowGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_31.4bpp.lz");
 static const ax_sprite sTaillowSprites31[] = {
 	{sTaillowGfx31, ARRAY_COUNT(sTaillowGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx32[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_32.4bpp");
+static const u8 sTaillowGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_32.4bpp.lz");
 static const ax_sprite sTaillowSprites32[] = {
 	{sTaillowGfx32, ARRAY_COUNT(sTaillowGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx33[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_33.4bpp");
+static const u8 sTaillowGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_33.4bpp.lz");
 static const ax_sprite sTaillowSprites33[] = {
 	{sTaillowGfx33, ARRAY_COUNT(sTaillowGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx34[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_34.4bpp");
+static const u8 sTaillowGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_34.4bpp.lz");
 static const ax_sprite sTaillowSprites34[] = {
 	{sTaillowGfx34, ARRAY_COUNT(sTaillowGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx35[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_35.4bpp");
+static const u8 sTaillowGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_35.4bpp.lz");
 static const ax_sprite sTaillowSprites35[] = {
 	{sTaillowGfx35, ARRAY_COUNT(sTaillowGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx36[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_36.4bpp");
+static const u8 sTaillowGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_36.4bpp.lz");
 static const ax_sprite sTaillowSprites36[] = {
 	{sTaillowGfx36, ARRAY_COUNT(sTaillowGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sTaillowGfx37[] = INCBIN_U8("graphics/ax/mon/taillow/sprite_37.4bpp");
+static const u8 sTaillowGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/taillow/sprite_37.4bpp.lz");
 static const ax_sprite sTaillowSprites37[] = {
 	{sTaillowGfx37, ARRAY_COUNT(sTaillowGfx37)}, 
 	{NULL, 0}

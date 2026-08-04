@@ -2095,84 +2095,84 @@ static const ax_anim sTentacruelAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTentacruelGfx1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_1.4bpp");
+static const u8 sTentacruelGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_1.4bpp.lz");
 static const ax_sprite sTentacruelSprites1[] = {
 	{sTentacruelGfx1, ARRAY_COUNT(sTentacruelGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_2.4bpp");
+static const u8 sTentacruelGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites2[] = {
 	{sTentacruelGfx2, ARRAY_COUNT(sTentacruelGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx3[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_3.4bpp");
+static const u8 sTentacruelGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_3.4bpp.lz");
 static const ax_sprite sTentacruelSprites3[] = {
 	{sTentacruelGfx3, ARRAY_COUNT(sTentacruelGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx4[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_4.4bpp");
+static const u8 sTentacruelGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_4.4bpp.lz");
 static const ax_sprite sTentacruelSprites4[] = {
 	{sTentacruelGfx4, ARRAY_COUNT(sTentacruelGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx5[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_5.4bpp");
+static const u8 sTentacruelGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_5.4bpp.lz");
 static const ax_sprite sTentacruelSprites5[] = {
 	{sTentacruelGfx5, ARRAY_COUNT(sTentacruelGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx6[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_6.4bpp");
+static const u8 sTentacruelGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_6.4bpp.lz");
 static const ax_sprite sTentacruelSprites6[] = {
 	{sTentacruelGfx6, ARRAY_COUNT(sTentacruelGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx7[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_7.4bpp");
+static const u8 sTentacruelGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_7.4bpp.lz");
 static const ax_sprite sTentacruelSprites7[] = {
 	{sTentacruelGfx7, ARRAY_COUNT(sTentacruelGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx8[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_8.4bpp");
+static const u8 sTentacruelGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_8.4bpp.lz");
 static const ax_sprite sTentacruelSprites8[] = {
 	{sTentacruelGfx8, ARRAY_COUNT(sTentacruelGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx9[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_9.4bpp");
+static const u8 sTentacruelGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_9.4bpp.lz");
 static const ax_sprite sTentacruelSprites9[] = {
 	{sTentacruelGfx9, ARRAY_COUNT(sTentacruelGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx10[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_10.4bpp");
+static const u8 sTentacruelGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_10.4bpp.lz");
 static const ax_sprite sTentacruelSprites10[] = {
 	{sTentacruelGfx10, ARRAY_COUNT(sTentacruelGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx11[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_11.4bpp");
+static const u8 sTentacruelGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_11.4bpp.lz");
 static const ax_sprite sTentacruelSprites11[] = {
 	{sTentacruelGfx11, ARRAY_COUNT(sTentacruelGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx12[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_12.4bpp");
+static const u8 sTentacruelGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_12.4bpp.lz");
 static const ax_sprite sTentacruelSprites12[] = {
 	{sTentacruelGfx12, ARRAY_COUNT(sTentacruelGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx13[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_13.4bpp");
+static const u8 sTentacruelGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_13.4bpp.lz");
 static const ax_sprite sTentacruelSprites13[] = {
 	{sTentacruelGfx13, ARRAY_COUNT(sTentacruelGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx14[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_14.4bpp");
+static const u8 sTentacruelGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_14.4bpp.lz");
 static const ax_sprite sTentacruelSprites14[] = {
 	{sTentacruelGfx14, ARRAY_COUNT(sTentacruelGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx15[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_15.4bpp");
+static const u8 sTentacruelGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_15.4bpp.lz");
 static const ax_sprite sTentacruelSprites15[] = {
 	{sTentacruelGfx15, ARRAY_COUNT(sTentacruelGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx16[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_16.4bpp");
-static const u8 sTentacruelGfx16_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_16_1.4bpp");
-static const u8 sTentacruelGfx16_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_16_2.4bpp");
+static const u8 sTentacruelGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_16.4bpp.lz");
+static const u8 sTentacruelGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_16_1.4bpp.lz");
+static const u8 sTentacruelGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_16_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites16[] = {
 	{sTentacruelGfx16, ARRAY_COUNT(sTentacruelGfx16)}, 
 	{NULL, 32}, 
@@ -2182,9 +2182,9 @@ static const ax_sprite sTentacruelSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx17[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_17.4bpp");
-static const u8 sTentacruelGfx17_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_17_1.4bpp");
-static const u8 sTentacruelGfx17_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_17_2.4bpp");
+static const u8 sTentacruelGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_17.4bpp.lz");
+static const u8 sTentacruelGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_17_1.4bpp.lz");
+static const u8 sTentacruelGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_17_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites17[] = {
 	{sTentacruelGfx17, ARRAY_COUNT(sTentacruelGfx17)}, 
 	{NULL, 32}, 
@@ -2194,10 +2194,10 @@ static const ax_sprite sTentacruelSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx18[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_18.4bpp");
-static const u8 sTentacruelGfx18_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_18_1.4bpp");
-static const u8 sTentacruelGfx18_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_18_2.4bpp");
-static const u8 sTentacruelGfx18_3[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_18_3.4bpp");
+static const u8 sTentacruelGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_18.4bpp.lz");
+static const u8 sTentacruelGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_18_1.4bpp.lz");
+static const u8 sTentacruelGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_18_2.4bpp.lz");
+static const u8 sTentacruelGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_18_3.4bpp.lz");
 static const ax_sprite sTentacruelSprites18[] = {
 	{sTentacruelGfx18, ARRAY_COUNT(sTentacruelGfx18)}, 
 	{NULL, 64}, 
@@ -2209,10 +2209,10 @@ static const ax_sprite sTentacruelSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx19[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_19.4bpp");
-static const u8 sTentacruelGfx19_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_19_1.4bpp");
-static const u8 sTentacruelGfx19_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_19_2.4bpp");
-static const u8 sTentacruelGfx19_3[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_19_3.4bpp");
+static const u8 sTentacruelGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_19.4bpp.lz");
+static const u8 sTentacruelGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_19_1.4bpp.lz");
+static const u8 sTentacruelGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_19_2.4bpp.lz");
+static const u8 sTentacruelGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_19_3.4bpp.lz");
 static const ax_sprite sTentacruelSprites19[] = {
 	{sTentacruelGfx19, ARRAY_COUNT(sTentacruelGfx19)}, 
 	{NULL, 32}, 
@@ -2224,11 +2224,11 @@ static const ax_sprite sTentacruelSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx20[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20.4bpp");
-static const u8 sTentacruelGfx20_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20_1.4bpp");
-static const u8 sTentacruelGfx20_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20_2.4bpp");
-static const u8 sTentacruelGfx20_3[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20_3.4bpp");
-static const u8 sTentacruelGfx20_4[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20_4.4bpp");
+static const u8 sTentacruelGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20.4bpp.lz");
+static const u8 sTentacruelGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20_1.4bpp.lz");
+static const u8 sTentacruelGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20_2.4bpp.lz");
+static const u8 sTentacruelGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20_3.4bpp.lz");
+static const u8 sTentacruelGfx20_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_20_4.4bpp.lz");
 static const ax_sprite sTentacruelSprites20[] = {
 	{sTentacruelGfx20, ARRAY_COUNT(sTentacruelGfx20)}, 
 	{NULL, 32}, 
@@ -2242,15 +2242,15 @@ static const ax_sprite sTentacruelSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx21[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_21.4bpp");
+static const u8 sTentacruelGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_21.4bpp.lz");
 static const ax_sprite sTentacruelSprites21[] = {
 	{sTentacruelGfx21, ARRAY_COUNT(sTentacruelGfx21)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx22[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_22.4bpp");
-static const u8 sTentacruelGfx22_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_22_1.4bpp");
-static const u8 sTentacruelGfx22_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_22_2.4bpp");
+static const u8 sTentacruelGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_22.4bpp.lz");
+static const u8 sTentacruelGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_22_1.4bpp.lz");
+static const u8 sTentacruelGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_22_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites22[] = {
 	{sTentacruelGfx22, ARRAY_COUNT(sTentacruelGfx22)}, 
 	{NULL, 64}, 
@@ -2259,8 +2259,8 @@ static const ax_sprite sTentacruelSprites22[] = {
 	{sTentacruelGfx22_2, ARRAY_COUNT(sTentacruelGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx23[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_23.4bpp");
-static const u8 sTentacruelGfx23_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_23_1.4bpp");
+static const u8 sTentacruelGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_23.4bpp.lz");
+static const u8 sTentacruelGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_23_1.4bpp.lz");
 static const ax_sprite sTentacruelSprites23[] = {
 	{sTentacruelGfx23, ARRAY_COUNT(sTentacruelGfx23)}, 
 	{NULL, 32}, 
@@ -2268,9 +2268,9 @@ static const ax_sprite sTentacruelSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx24[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_24.4bpp");
-static const u8 sTentacruelGfx24_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_24_1.4bpp");
-static const u8 sTentacruelGfx24_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_24_2.4bpp");
+static const u8 sTentacruelGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_24.4bpp.lz");
+static const u8 sTentacruelGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_24_1.4bpp.lz");
+static const u8 sTentacruelGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_24_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites24[] = {
 	{sTentacruelGfx24, ARRAY_COUNT(sTentacruelGfx24)}, 
 	{NULL, 32}, 
@@ -2280,9 +2280,9 @@ static const ax_sprite sTentacruelSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx25[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_25.4bpp");
-static const u8 sTentacruelGfx25_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_25_1.4bpp");
-static const u8 sTentacruelGfx25_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_25_2.4bpp");
+static const u8 sTentacruelGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_25.4bpp.lz");
+static const u8 sTentacruelGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_25_1.4bpp.lz");
+static const u8 sTentacruelGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_25_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites25[] = {
 	{sTentacruelGfx25, ARRAY_COUNT(sTentacruelGfx25)}, 
 	{NULL, 32}, 
@@ -2292,9 +2292,9 @@ static const ax_sprite sTentacruelSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx26[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_26.4bpp");
-static const u8 sTentacruelGfx26_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_26_1.4bpp");
-static const u8 sTentacruelGfx26_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_26_2.4bpp");
+static const u8 sTentacruelGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_26.4bpp.lz");
+static const u8 sTentacruelGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_26_1.4bpp.lz");
+static const u8 sTentacruelGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_26_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites26[] = {
 	{sTentacruelGfx26, ARRAY_COUNT(sTentacruelGfx26)}, 
 	{NULL, 32}, 
@@ -2304,9 +2304,9 @@ static const ax_sprite sTentacruelSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx27[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_27.4bpp");
-static const u8 sTentacruelGfx27_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_27_1.4bpp");
-static const u8 sTentacruelGfx27_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_27_2.4bpp");
+static const u8 sTentacruelGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_27.4bpp.lz");
+static const u8 sTentacruelGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_27_1.4bpp.lz");
+static const u8 sTentacruelGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_27_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites27[] = {
 	{sTentacruelGfx27, ARRAY_COUNT(sTentacruelGfx27)}, 
 	{NULL, 32}, 
@@ -2316,9 +2316,9 @@ static const ax_sprite sTentacruelSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx28[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_28.4bpp");
-static const u8 sTentacruelGfx28_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_28_1.4bpp");
-static const u8 sTentacruelGfx28_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_28_2.4bpp");
+static const u8 sTentacruelGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_28.4bpp.lz");
+static const u8 sTentacruelGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_28_1.4bpp.lz");
+static const u8 sTentacruelGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_28_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites28[] = {
 	{sTentacruelGfx28, ARRAY_COUNT(sTentacruelGfx28)}, 
 	{NULL, 32}, 
@@ -2328,8 +2328,8 @@ static const ax_sprite sTentacruelSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx29[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_29.4bpp");
-static const u8 sTentacruelGfx29_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_29_1.4bpp");
+static const u8 sTentacruelGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_29.4bpp.lz");
+static const u8 sTentacruelGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_29_1.4bpp.lz");
 static const ax_sprite sTentacruelSprites29[] = {
 	{NULL, 32}, 
 	{sTentacruelGfx29, ARRAY_COUNT(sTentacruelGfx29)}, 
@@ -2338,9 +2338,9 @@ static const ax_sprite sTentacruelSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx30[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_30.4bpp");
-static const u8 sTentacruelGfx30_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_30_1.4bpp");
-static const u8 sTentacruelGfx30_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_30_2.4bpp");
+static const u8 sTentacruelGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_30.4bpp.lz");
+static const u8 sTentacruelGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_30_1.4bpp.lz");
+static const u8 sTentacruelGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_30_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites30[] = {
 	{sTentacruelGfx30, ARRAY_COUNT(sTentacruelGfx30)}, 
 	{NULL, 32}, 
@@ -2350,8 +2350,8 @@ static const ax_sprite sTentacruelSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx31[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_31.4bpp");
-static const u8 sTentacruelGfx31_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_31_1.4bpp");
+static const u8 sTentacruelGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_31.4bpp.lz");
+static const u8 sTentacruelGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_31_1.4bpp.lz");
 static const ax_sprite sTentacruelSprites31[] = {
 	{sTentacruelGfx31, ARRAY_COUNT(sTentacruelGfx31)}, 
 	{NULL, 32}, 
@@ -2359,9 +2359,9 @@ static const ax_sprite sTentacruelSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx32[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_32.4bpp");
-static const u8 sTentacruelGfx32_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_32_1.4bpp");
-static const u8 sTentacruelGfx32_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_32_2.4bpp");
+static const u8 sTentacruelGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_32.4bpp.lz");
+static const u8 sTentacruelGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_32_1.4bpp.lz");
+static const u8 sTentacruelGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_32_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites32[] = {
 	{NULL, 32}, 
 	{sTentacruelGfx32, ARRAY_COUNT(sTentacruelGfx32)}, 
@@ -2372,8 +2372,8 @@ static const ax_sprite sTentacruelSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx33[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_33.4bpp");
-static const u8 sTentacruelGfx33_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_33_1.4bpp");
+static const u8 sTentacruelGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_33.4bpp.lz");
+static const u8 sTentacruelGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_33_1.4bpp.lz");
 static const ax_sprite sTentacruelSprites33[] = {
 	{sTentacruelGfx33, ARRAY_COUNT(sTentacruelGfx33)}, 
 	{NULL, 32}, 
@@ -2381,9 +2381,9 @@ static const ax_sprite sTentacruelSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx34[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_34.4bpp");
-static const u8 sTentacruelGfx34_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_34_1.4bpp");
-static const u8 sTentacruelGfx34_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_34_2.4bpp");
+static const u8 sTentacruelGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_34.4bpp.lz");
+static const u8 sTentacruelGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_34_1.4bpp.lz");
+static const u8 sTentacruelGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_34_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites34[] = {
 	{sTentacruelGfx34, ARRAY_COUNT(sTentacruelGfx34)}, 
 	{NULL, 32}, 
@@ -2393,9 +2393,9 @@ static const ax_sprite sTentacruelSprites34[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx35[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_35.4bpp");
-static const u8 sTentacruelGfx35_1[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_35_1.4bpp");
-static const u8 sTentacruelGfx35_2[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_35_2.4bpp");
+static const u8 sTentacruelGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_35.4bpp.lz");
+static const u8 sTentacruelGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_35_1.4bpp.lz");
+static const u8 sTentacruelGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_35_2.4bpp.lz");
 static const ax_sprite sTentacruelSprites35[] = {
 	{sTentacruelGfx35, ARRAY_COUNT(sTentacruelGfx35)}, 
 	{NULL, 32}, 
@@ -2405,37 +2405,37 @@ static const ax_sprite sTentacruelSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx36[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_36.4bpp");
+static const u8 sTentacruelGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_36.4bpp.lz");
 static const ax_sprite sTentacruelSprites36[] = {
 	{sTentacruelGfx36, ARRAY_COUNT(sTentacruelGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx37[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_37.4bpp");
+static const u8 sTentacruelGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_37.4bpp.lz");
 static const ax_sprite sTentacruelSprites37[] = {
 	{sTentacruelGfx37, ARRAY_COUNT(sTentacruelGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx38[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_38.4bpp");
+static const u8 sTentacruelGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_38.4bpp.lz");
 static const ax_sprite sTentacruelSprites38[] = {
 	{sTentacruelGfx38, ARRAY_COUNT(sTentacruelGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx39[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_39.4bpp");
+static const u8 sTentacruelGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_39.4bpp.lz");
 static const ax_sprite sTentacruelSprites39[] = {
 	{sTentacruelGfx39, ARRAY_COUNT(sTentacruelGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx40[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_40.4bpp");
+static const u8 sTentacruelGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_40.4bpp.lz");
 static const ax_sprite sTentacruelSprites40[] = {
 	{sTentacruelGfx40, ARRAY_COUNT(sTentacruelGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx41[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_41.4bpp");
+static const u8 sTentacruelGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_41.4bpp.lz");
 static const ax_sprite sTentacruelSprites41[] = {
 	{sTentacruelGfx41, ARRAY_COUNT(sTentacruelGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTentacruelGfx42[] = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_42.4bpp");
+static const u8 sTentacruelGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacruel/sprite_42.4bpp.lz");
 static const ax_sprite sTentacruelSprites42[] = {
 	{sTentacruelGfx42, ARRAY_COUNT(sTentacruelGfx42)}, 
 	{NULL, 0}

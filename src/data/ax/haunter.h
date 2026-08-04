@@ -2307,100 +2307,100 @@ static const ax_anim sHaunterAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHaunterGfx1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_1.4bpp");
+static const u8 sHaunterGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_1.4bpp.lz");
 static const ax_sprite sHaunterSprites1[] = {
 	{sHaunterGfx1, ARRAY_COUNT(sHaunterGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_2.4bpp");
+static const u8 sHaunterGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_2.4bpp.lz");
 static const ax_sprite sHaunterSprites2[] = {
 	{sHaunterGfx2, ARRAY_COUNT(sHaunterGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx3[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_3.4bpp");
+static const u8 sHaunterGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_3.4bpp.lz");
 static const ax_sprite sHaunterSprites3[] = {
 	{sHaunterGfx3, ARRAY_COUNT(sHaunterGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx4[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_4.4bpp");
+static const u8 sHaunterGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_4.4bpp.lz");
 static const ax_sprite sHaunterSprites4[] = {
 	{sHaunterGfx4, ARRAY_COUNT(sHaunterGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx5[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_5.4bpp");
+static const u8 sHaunterGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_5.4bpp.lz");
 static const ax_sprite sHaunterSprites5[] = {
 	{sHaunterGfx5, ARRAY_COUNT(sHaunterGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx6[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_6.4bpp");
+static const u8 sHaunterGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_6.4bpp.lz");
 static const ax_sprite sHaunterSprites6[] = {
 	{sHaunterGfx6, ARRAY_COUNT(sHaunterGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx7[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_7.4bpp");
+static const u8 sHaunterGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_7.4bpp.lz");
 static const ax_sprite sHaunterSprites7[] = {
 	{sHaunterGfx7, ARRAY_COUNT(sHaunterGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx8[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_8.4bpp");
+static const u8 sHaunterGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_8.4bpp.lz");
 static const ax_sprite sHaunterSprites8[] = {
 	{sHaunterGfx8, ARRAY_COUNT(sHaunterGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx9[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_9.4bpp");
+static const u8 sHaunterGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_9.4bpp.lz");
 static const ax_sprite sHaunterSprites9[] = {
 	{sHaunterGfx9, ARRAY_COUNT(sHaunterGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx10[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_10.4bpp");
+static const u8 sHaunterGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_10.4bpp.lz");
 static const ax_sprite sHaunterSprites10[] = {
 	{sHaunterGfx10, ARRAY_COUNT(sHaunterGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx11[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_11.4bpp");
+static const u8 sHaunterGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_11.4bpp.lz");
 static const ax_sprite sHaunterSprites11[] = {
 	{sHaunterGfx11, ARRAY_COUNT(sHaunterGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx12[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_12.4bpp");
+static const u8 sHaunterGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_12.4bpp.lz");
 static const ax_sprite sHaunterSprites12[] = {
 	{sHaunterGfx12, ARRAY_COUNT(sHaunterGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx13[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_13.4bpp");
+static const u8 sHaunterGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_13.4bpp.lz");
 static const ax_sprite sHaunterSprites13[] = {
 	{sHaunterGfx13, ARRAY_COUNT(sHaunterGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx14[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_14.4bpp");
+static const u8 sHaunterGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_14.4bpp.lz");
 static const ax_sprite sHaunterSprites14[] = {
 	{sHaunterGfx14, ARRAY_COUNT(sHaunterGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx15[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_15.4bpp");
+static const u8 sHaunterGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_15.4bpp.lz");
 static const ax_sprite sHaunterSprites15[] = {
 	{sHaunterGfx15, ARRAY_COUNT(sHaunterGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx16[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_16.4bpp");
+static const u8 sHaunterGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_16.4bpp.lz");
 static const ax_sprite sHaunterSprites16[] = {
 	{sHaunterGfx16, ARRAY_COUNT(sHaunterGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx17[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_17.4bpp");
+static const u8 sHaunterGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_17.4bpp.lz");
 static const ax_sprite sHaunterSprites17[] = {
 	{sHaunterGfx17, ARRAY_COUNT(sHaunterGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx18[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_18.4bpp");
+static const u8 sHaunterGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_18.4bpp.lz");
 static const ax_sprite sHaunterSprites18[] = {
 	{sHaunterGfx18, ARRAY_COUNT(sHaunterGfx18)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx19[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_19.4bpp");
-static const u8 sHaunterGfx19_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_19_1.4bpp");
-static const u8 sHaunterGfx19_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_19_2.4bpp");
+static const u8 sHaunterGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_19.4bpp.lz");
+static const u8 sHaunterGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_19_1.4bpp.lz");
+static const u8 sHaunterGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_19_2.4bpp.lz");
 static const ax_sprite sHaunterSprites19[] = {
 	{sHaunterGfx19, ARRAY_COUNT(sHaunterGfx19)}, 
 	{NULL, 32}, 
@@ -2409,14 +2409,14 @@ static const ax_sprite sHaunterSprites19[] = {
 	{sHaunterGfx19_2, ARRAY_COUNT(sHaunterGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx20[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_20.4bpp");
+static const u8 sHaunterGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_20.4bpp.lz");
 static const ax_sprite sHaunterSprites20[] = {
 	{sHaunterGfx20, ARRAY_COUNT(sHaunterGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx21[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_21.4bpp");
-static const u8 sHaunterGfx21_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_21_1.4bpp");
-static const u8 sHaunterGfx21_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_21_2.4bpp");
+static const u8 sHaunterGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_21.4bpp.lz");
+static const u8 sHaunterGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_21_1.4bpp.lz");
+static const u8 sHaunterGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_21_2.4bpp.lz");
 static const ax_sprite sHaunterSprites21[] = {
 	{sHaunterGfx21, ARRAY_COUNT(sHaunterGfx21)}, 
 	{NULL, 32}, 
@@ -2426,13 +2426,13 @@ static const ax_sprite sHaunterSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx22[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_22.4bpp");
+static const u8 sHaunterGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_22.4bpp.lz");
 static const ax_sprite sHaunterSprites22[] = {
 	{sHaunterGfx22, ARRAY_COUNT(sHaunterGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx23[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_23.4bpp");
-static const u8 sHaunterGfx23_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_23_1.4bpp");
+static const u8 sHaunterGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_23.4bpp.lz");
+static const u8 sHaunterGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_23_1.4bpp.lz");
 static const ax_sprite sHaunterSprites23[] = {
 	{NULL, 224}, 
 	{sHaunterGfx23, ARRAY_COUNT(sHaunterGfx23)}, 
@@ -2441,10 +2441,10 @@ static const ax_sprite sHaunterSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx24[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_24.4bpp");
-static const u8 sHaunterGfx24_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_24_1.4bpp");
-static const u8 sHaunterGfx24_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_24_2.4bpp");
-static const u8 sHaunterGfx24_3[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_24_3.4bpp");
+static const u8 sHaunterGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_24.4bpp.lz");
+static const u8 sHaunterGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_24_1.4bpp.lz");
+static const u8 sHaunterGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_24_2.4bpp.lz");
+static const u8 sHaunterGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_24_3.4bpp.lz");
 static const ax_sprite sHaunterSprites24[] = {
 	{NULL, 32}, 
 	{sHaunterGfx24, ARRAY_COUNT(sHaunterGfx24)}, 
@@ -2457,14 +2457,14 @@ static const ax_sprite sHaunterSprites24[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx25[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_25.4bpp");
+static const u8 sHaunterGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_25.4bpp.lz");
 static const ax_sprite sHaunterSprites25[] = {
 	{sHaunterGfx25, ARRAY_COUNT(sHaunterGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx26[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_26.4bpp");
-static const u8 sHaunterGfx26_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_26_1.4bpp");
-static const u8 sHaunterGfx26_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_26_2.4bpp");
+static const u8 sHaunterGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_26.4bpp.lz");
+static const u8 sHaunterGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_26_1.4bpp.lz");
+static const u8 sHaunterGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_26_2.4bpp.lz");
 static const ax_sprite sHaunterSprites26[] = {
 	{sHaunterGfx26, ARRAY_COUNT(sHaunterGfx26)}, 
 	{NULL, 64}, 
@@ -2474,21 +2474,21 @@ static const ax_sprite sHaunterSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx27[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_27.4bpp");
+static const u8 sHaunterGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_27.4bpp.lz");
 static const ax_sprite sHaunterSprites27[] = {
 	{NULL, 64}, 
 	{sHaunterGfx27, ARRAY_COUNT(sHaunterGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx28[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_28.4bpp");
+static const u8 sHaunterGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_28.4bpp.lz");
 static const ax_sprite sHaunterSprites28[] = {
 	{sHaunterGfx28, ARRAY_COUNT(sHaunterGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx29[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_29.4bpp");
-static const u8 sHaunterGfx29_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_29_1.4bpp");
-static const u8 sHaunterGfx29_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_29_2.4bpp");
+static const u8 sHaunterGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_29.4bpp.lz");
+static const u8 sHaunterGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_29_1.4bpp.lz");
+static const u8 sHaunterGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_29_2.4bpp.lz");
 static const ax_sprite sHaunterSprites29[] = {
 	{sHaunterGfx29, ARRAY_COUNT(sHaunterGfx29)}, 
 	{NULL, 32}, 
@@ -2498,20 +2498,20 @@ static const ax_sprite sHaunterSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx30[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_30.4bpp");
+static const u8 sHaunterGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_30.4bpp.lz");
 static const ax_sprite sHaunterSprites30[] = {
 	{sHaunterGfx30, ARRAY_COUNT(sHaunterGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx31[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_31.4bpp");
+static const u8 sHaunterGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_31.4bpp.lz");
 static const ax_sprite sHaunterSprites31[] = {
 	{sHaunterGfx31, ARRAY_COUNT(sHaunterGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx32[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_32.4bpp");
-static const u8 sHaunterGfx32_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_32_1.4bpp");
-static const u8 sHaunterGfx32_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_32_2.4bpp");
-static const u8 sHaunterGfx32_3[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_32_3.4bpp");
+static const u8 sHaunterGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_32.4bpp.lz");
+static const u8 sHaunterGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_32_1.4bpp.lz");
+static const u8 sHaunterGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_32_2.4bpp.lz");
+static const u8 sHaunterGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_32_3.4bpp.lz");
 static const ax_sprite sHaunterSprites32[] = {
 	{sHaunterGfx32, ARRAY_COUNT(sHaunterGfx32)}, 
 	{NULL, 96}, 
@@ -2523,9 +2523,9 @@ static const ax_sprite sHaunterSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx33[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_33.4bpp");
-static const u8 sHaunterGfx33_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_33_1.4bpp");
-static const u8 sHaunterGfx33_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_33_2.4bpp");
+static const u8 sHaunterGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_33.4bpp.lz");
+static const u8 sHaunterGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_33_1.4bpp.lz");
+static const u8 sHaunterGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_33_2.4bpp.lz");
 static const ax_sprite sHaunterSprites33[] = {
 	{sHaunterGfx33, ARRAY_COUNT(sHaunterGfx33)}, 
 	{NULL, 32}, 
@@ -2535,8 +2535,8 @@ static const ax_sprite sHaunterSprites33[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx34[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_34.4bpp");
-static const u8 sHaunterGfx34_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_34_1.4bpp");
+static const u8 sHaunterGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_34.4bpp.lz");
+static const u8 sHaunterGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_34_1.4bpp.lz");
 static const ax_sprite sHaunterSprites34[] = {
 	{sHaunterGfx34, ARRAY_COUNT(sHaunterGfx34)}, 
 	{NULL, 32}, 
@@ -2544,18 +2544,18 @@ static const ax_sprite sHaunterSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx35[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_35.4bpp");
+static const u8 sHaunterGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_35.4bpp.lz");
 static const ax_sprite sHaunterSprites35[] = {
 	{sHaunterGfx35, ARRAY_COUNT(sHaunterGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx36[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_36.4bpp");
+static const u8 sHaunterGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_36.4bpp.lz");
 static const ax_sprite sHaunterSprites36[] = {
 	{sHaunterGfx36, ARRAY_COUNT(sHaunterGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx37[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_37.4bpp");
-static const u8 sHaunterGfx37_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_37_1.4bpp");
+static const u8 sHaunterGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_37.4bpp.lz");
+static const u8 sHaunterGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_37_1.4bpp.lz");
 static const ax_sprite sHaunterSprites37[] = {
 	{sHaunterGfx37, ARRAY_COUNT(sHaunterGfx37)}, 
 	{NULL, 32}, 
@@ -2563,30 +2563,30 @@ static const ax_sprite sHaunterSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx38[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_38.4bpp");
+static const u8 sHaunterGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_38.4bpp.lz");
 static const ax_sprite sHaunterSprites38[] = {
 	{sHaunterGfx38, ARRAY_COUNT(sHaunterGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx39[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_39.4bpp");
+static const u8 sHaunterGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_39.4bpp.lz");
 static const ax_sprite sHaunterSprites39[] = {
 	{sHaunterGfx39, ARRAY_COUNT(sHaunterGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx40[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_40.4bpp");
+static const u8 sHaunterGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_40.4bpp.lz");
 static const ax_sprite sHaunterSprites40[] = {
 	{NULL, 32}, 
 	{sHaunterGfx40, ARRAY_COUNT(sHaunterGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx41[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_41.4bpp");
+static const u8 sHaunterGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_41.4bpp.lz");
 static const ax_sprite sHaunterSprites41[] = {
 	{NULL, 32}, 
 	{sHaunterGfx41, ARRAY_COUNT(sHaunterGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx42[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_42.4bpp");
-static const u8 sHaunterGfx42_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_42_1.4bpp");
+static const u8 sHaunterGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_42.4bpp.lz");
+static const u8 sHaunterGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_42_1.4bpp.lz");
 static const ax_sprite sHaunterSprites42[] = {
 	{NULL, 32}, 
 	{sHaunterGfx42, ARRAY_COUNT(sHaunterGfx42)}, 
@@ -2594,9 +2594,9 @@ static const ax_sprite sHaunterSprites42[] = {
 	{sHaunterGfx42_1, ARRAY_COUNT(sHaunterGfx42_1)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx43[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_43.4bpp");
-static const u8 sHaunterGfx43_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_43_1.4bpp");
-static const u8 sHaunterGfx43_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_43_2.4bpp");
+static const u8 sHaunterGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_43.4bpp.lz");
+static const u8 sHaunterGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_43_1.4bpp.lz");
+static const u8 sHaunterGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_43_2.4bpp.lz");
 static const ax_sprite sHaunterSprites43[] = {
 	{NULL, 32}, 
 	{sHaunterGfx43, ARRAY_COUNT(sHaunterGfx43)}, 
@@ -2606,21 +2606,21 @@ static const ax_sprite sHaunterSprites43[] = {
 	{sHaunterGfx43_2, ARRAY_COUNT(sHaunterGfx43_2)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx44[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_44.4bpp");
+static const u8 sHaunterGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_44.4bpp.lz");
 static const ax_sprite sHaunterSprites44[] = {
 	{NULL, 32}, 
 	{sHaunterGfx44, ARRAY_COUNT(sHaunterGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx45[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_45.4bpp");
+static const u8 sHaunterGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_45.4bpp.lz");
 static const ax_sprite sHaunterSprites45[] = {
 	{NULL, 32}, 
 	{sHaunterGfx45, ARRAY_COUNT(sHaunterGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx46[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_46.4bpp");
-static const u8 sHaunterGfx46_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_46_1.4bpp");
-static const u8 sHaunterGfx46_2[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_46_2.4bpp");
+static const u8 sHaunterGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_46.4bpp.lz");
+static const u8 sHaunterGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_46_1.4bpp.lz");
+static const u8 sHaunterGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_46_2.4bpp.lz");
 static const ax_sprite sHaunterSprites46[] = {
 	{NULL, 32}, 
 	{sHaunterGfx46, ARRAY_COUNT(sHaunterGfx46)}, 
@@ -2631,8 +2631,8 @@ static const ax_sprite sHaunterSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx47[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_47.4bpp");
-static const u8 sHaunterGfx47_1[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_47_1.4bpp");
+static const u8 sHaunterGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_47.4bpp.lz");
+static const u8 sHaunterGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_47_1.4bpp.lz");
 static const ax_sprite sHaunterSprites47[] = {
 	{sHaunterGfx47, ARRAY_COUNT(sHaunterGfx47)}, 
 	{NULL, 32}, 
@@ -2640,37 +2640,37 @@ static const ax_sprite sHaunterSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx48[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_48.4bpp");
+static const u8 sHaunterGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_48.4bpp.lz");
 static const ax_sprite sHaunterSprites48[] = {
 	{sHaunterGfx48, ARRAY_COUNT(sHaunterGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx49[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_49.4bpp");
+static const u8 sHaunterGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_49.4bpp.lz");
 static const ax_sprite sHaunterSprites49[] = {
 	{sHaunterGfx49, ARRAY_COUNT(sHaunterGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx50[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_50.4bpp");
+static const u8 sHaunterGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_50.4bpp.lz");
 static const ax_sprite sHaunterSprites50[] = {
 	{sHaunterGfx50, ARRAY_COUNT(sHaunterGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx51[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_51.4bpp");
+static const u8 sHaunterGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_51.4bpp.lz");
 static const ax_sprite sHaunterSprites51[] = {
 	{sHaunterGfx51, ARRAY_COUNT(sHaunterGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx52[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_52.4bpp");
+static const u8 sHaunterGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_52.4bpp.lz");
 static const ax_sprite sHaunterSprites52[] = {
 	{sHaunterGfx52, ARRAY_COUNT(sHaunterGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx53[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_53.4bpp");
+static const u8 sHaunterGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_53.4bpp.lz");
 static const ax_sprite sHaunterSprites53[] = {
 	{sHaunterGfx53, ARRAY_COUNT(sHaunterGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sHaunterGfx54[] = INCBIN_U8("graphics/ax/mon/haunter/sprite_54.4bpp");
+static const u8 sHaunterGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/haunter/sprite_54.4bpp.lz");
 static const ax_sprite sHaunterSprites54[] = {
 	{sHaunterGfx54, ARRAY_COUNT(sHaunterGfx54)}, 
 	{NULL, 0}

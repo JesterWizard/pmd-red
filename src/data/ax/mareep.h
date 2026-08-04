@@ -2191,84 +2191,84 @@ static const ax_anim sMareepAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMareepGfx1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_1.4bpp");
+static const u8 sMareepGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_1.4bpp.lz");
 static const ax_sprite sMareepSprites1[] = {
 	{sMareepGfx1, ARRAY_COUNT(sMareepGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_2.4bpp");
+static const u8 sMareepGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_2.4bpp.lz");
 static const ax_sprite sMareepSprites2[] = {
 	{sMareepGfx2, ARRAY_COUNT(sMareepGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx3[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_3.4bpp");
+static const u8 sMareepGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_3.4bpp.lz");
 static const ax_sprite sMareepSprites3[] = {
 	{sMareepGfx3, ARRAY_COUNT(sMareepGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx4[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_4.4bpp");
+static const u8 sMareepGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_4.4bpp.lz");
 static const ax_sprite sMareepSprites4[] = {
 	{sMareepGfx4, ARRAY_COUNT(sMareepGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx5[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_5.4bpp");
+static const u8 sMareepGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_5.4bpp.lz");
 static const ax_sprite sMareepSprites5[] = {
 	{sMareepGfx5, ARRAY_COUNT(sMareepGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx6[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_6.4bpp");
+static const u8 sMareepGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_6.4bpp.lz");
 static const ax_sprite sMareepSprites6[] = {
 	{sMareepGfx6, ARRAY_COUNT(sMareepGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx7[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_7.4bpp");
+static const u8 sMareepGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_7.4bpp.lz");
 static const ax_sprite sMareepSprites7[] = {
 	{sMareepGfx7, ARRAY_COUNT(sMareepGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx8[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_8.4bpp");
+static const u8 sMareepGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_8.4bpp.lz");
 static const ax_sprite sMareepSprites8[] = {
 	{sMareepGfx8, ARRAY_COUNT(sMareepGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx9[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_9.4bpp");
+static const u8 sMareepGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_9.4bpp.lz");
 static const ax_sprite sMareepSprites9[] = {
 	{sMareepGfx9, ARRAY_COUNT(sMareepGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx10[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_10.4bpp");
+static const u8 sMareepGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_10.4bpp.lz");
 static const ax_sprite sMareepSprites10[] = {
 	{sMareepGfx10, ARRAY_COUNT(sMareepGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx11[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_11.4bpp");
+static const u8 sMareepGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_11.4bpp.lz");
 static const ax_sprite sMareepSprites11[] = {
 	{sMareepGfx11, ARRAY_COUNT(sMareepGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx12[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_12.4bpp");
+static const u8 sMareepGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_12.4bpp.lz");
 static const ax_sprite sMareepSprites12[] = {
 	{sMareepGfx12, ARRAY_COUNT(sMareepGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx13[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_13.4bpp");
+static const u8 sMareepGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_13.4bpp.lz");
 static const ax_sprite sMareepSprites13[] = {
 	{sMareepGfx13, ARRAY_COUNT(sMareepGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx14[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_14.4bpp");
+static const u8 sMareepGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_14.4bpp.lz");
 static const ax_sprite sMareepSprites14[] = {
 	{sMareepGfx14, ARRAY_COUNT(sMareepGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx15[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_15.4bpp");
+static const u8 sMareepGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_15.4bpp.lz");
 static const ax_sprite sMareepSprites15[] = {
 	{sMareepGfx15, ARRAY_COUNT(sMareepGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx16[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_16.4bpp");
-static const u8 sMareepGfx16_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_16_1.4bpp");
-static const u8 sMareepGfx16_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_16_2.4bpp");
+static const u8 sMareepGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_16.4bpp.lz");
+static const u8 sMareepGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_16_1.4bpp.lz");
+static const u8 sMareepGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_16_2.4bpp.lz");
 static const ax_sprite sMareepSprites16[] = {
 	{sMareepGfx16, ARRAY_COUNT(sMareepGfx16)}, 
 	{NULL, 32}, 
@@ -2278,10 +2278,10 @@ static const ax_sprite sMareepSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx17[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_17.4bpp");
-static const u8 sMareepGfx17_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_17_1.4bpp");
-static const u8 sMareepGfx17_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_17_2.4bpp");
-static const u8 sMareepGfx17_3[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_17_3.4bpp");
+static const u8 sMareepGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_17.4bpp.lz");
+static const u8 sMareepGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_17_1.4bpp.lz");
+static const u8 sMareepGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_17_2.4bpp.lz");
+static const u8 sMareepGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_17_3.4bpp.lz");
 static const ax_sprite sMareepSprites17[] = {
 	{NULL, 32}, 
 	{sMareepGfx17, ARRAY_COUNT(sMareepGfx17)}, 
@@ -2294,9 +2294,9 @@ static const ax_sprite sMareepSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx18[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_18.4bpp");
-static const u8 sMareepGfx18_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_18_1.4bpp");
-static const u8 sMareepGfx18_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_18_2.4bpp");
+static const u8 sMareepGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_18.4bpp.lz");
+static const u8 sMareepGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_18_1.4bpp.lz");
+static const u8 sMareepGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_18_2.4bpp.lz");
 static const ax_sprite sMareepSprites18[] = {
 	{sMareepGfx18, ARRAY_COUNT(sMareepGfx18)}, 
 	{NULL, 32}, 
@@ -2306,10 +2306,10 @@ static const ax_sprite sMareepSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx19[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_19.4bpp");
-static const u8 sMareepGfx19_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_19_1.4bpp");
-static const u8 sMareepGfx19_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_19_2.4bpp");
-static const u8 sMareepGfx19_3[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_19_3.4bpp");
+static const u8 sMareepGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_19.4bpp.lz");
+static const u8 sMareepGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_19_1.4bpp.lz");
+static const u8 sMareepGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_19_2.4bpp.lz");
+static const u8 sMareepGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_19_3.4bpp.lz");
 static const ax_sprite sMareepSprites19[] = {
 	{NULL, 32}, 
 	{sMareepGfx19, ARRAY_COUNT(sMareepGfx19)}, 
@@ -2322,8 +2322,8 @@ static const ax_sprite sMareepSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx20[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_20.4bpp");
-static const u8 sMareepGfx20_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_20_1.4bpp");
+static const u8 sMareepGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_20.4bpp.lz");
+static const u8 sMareepGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_20_1.4bpp.lz");
 static const ax_sprite sMareepSprites20[] = {
 	{sMareepGfx20, ARRAY_COUNT(sMareepGfx20)}, 
 	{NULL, 32}, 
@@ -2331,8 +2331,8 @@ static const ax_sprite sMareepSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx21[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_21.4bpp");
-static const u8 sMareepGfx21_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_21_1.4bpp");
+static const u8 sMareepGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_21.4bpp.lz");
+static const u8 sMareepGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_21_1.4bpp.lz");
 static const ax_sprite sMareepSprites21[] = {
 	{sMareepGfx21, ARRAY_COUNT(sMareepGfx21)}, 
 	{NULL, 32}, 
@@ -2340,9 +2340,9 @@ static const ax_sprite sMareepSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx22[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_22.4bpp");
-static const u8 sMareepGfx22_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_22_1.4bpp");
-static const u8 sMareepGfx22_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_22_2.4bpp");
+static const u8 sMareepGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_22.4bpp.lz");
+static const u8 sMareepGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_22_1.4bpp.lz");
+static const u8 sMareepGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_22_2.4bpp.lz");
 static const ax_sprite sMareepSprites22[] = {
 	{sMareepGfx22, ARRAY_COUNT(sMareepGfx22)}, 
 	{NULL, 32}, 
@@ -2352,9 +2352,9 @@ static const ax_sprite sMareepSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx23[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_23.4bpp");
-static const u8 sMareepGfx23_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_23_1.4bpp");
-static const u8 sMareepGfx23_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_23_2.4bpp");
+static const u8 sMareepGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_23.4bpp.lz");
+static const u8 sMareepGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_23_1.4bpp.lz");
+static const u8 sMareepGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_23_2.4bpp.lz");
 static const ax_sprite sMareepSprites23[] = {
 	{sMareepGfx23, ARRAY_COUNT(sMareepGfx23)}, 
 	{NULL, 32}, 
@@ -2364,9 +2364,9 @@ static const ax_sprite sMareepSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx24[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_24.4bpp");
-static const u8 sMareepGfx24_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_24_1.4bpp");
-static const u8 sMareepGfx24_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_24_2.4bpp");
+static const u8 sMareepGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_24.4bpp.lz");
+static const u8 sMareepGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_24_1.4bpp.lz");
+static const u8 sMareepGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_24_2.4bpp.lz");
 static const ax_sprite sMareepSprites24[] = {
 	{NULL, 32}, 
 	{sMareepGfx24, ARRAY_COUNT(sMareepGfx24)}, 
@@ -2377,10 +2377,10 @@ static const ax_sprite sMareepSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx25[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_25.4bpp");
-static const u8 sMareepGfx25_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_25_1.4bpp");
-static const u8 sMareepGfx25_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_25_2.4bpp");
-static const u8 sMareepGfx25_3[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_25_3.4bpp");
+static const u8 sMareepGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_25.4bpp.lz");
+static const u8 sMareepGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_25_1.4bpp.lz");
+static const u8 sMareepGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_25_2.4bpp.lz");
+static const u8 sMareepGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_25_3.4bpp.lz");
 static const ax_sprite sMareepSprites25[] = {
 	{NULL, 32}, 
 	{sMareepGfx25, ARRAY_COUNT(sMareepGfx25)}, 
@@ -2393,10 +2393,10 @@ static const ax_sprite sMareepSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx26[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_26.4bpp");
-static const u8 sMareepGfx26_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_26_1.4bpp");
-static const u8 sMareepGfx26_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_26_2.4bpp");
-static const u8 sMareepGfx26_3[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_26_3.4bpp");
+static const u8 sMareepGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_26.4bpp.lz");
+static const u8 sMareepGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_26_1.4bpp.lz");
+static const u8 sMareepGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_26_2.4bpp.lz");
+static const u8 sMareepGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_26_3.4bpp.lz");
 static const ax_sprite sMareepSprites26[] = {
 	{NULL, 32}, 
 	{sMareepGfx26, ARRAY_COUNT(sMareepGfx26)}, 
@@ -2409,10 +2409,10 @@ static const ax_sprite sMareepSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx27[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_27.4bpp");
-static const u8 sMareepGfx27_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_27_1.4bpp");
-static const u8 sMareepGfx27_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_27_2.4bpp");
-static const u8 sMareepGfx27_3[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_27_3.4bpp");
+static const u8 sMareepGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_27.4bpp.lz");
+static const u8 sMareepGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_27_1.4bpp.lz");
+static const u8 sMareepGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_27_2.4bpp.lz");
+static const u8 sMareepGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_27_3.4bpp.lz");
 static const ax_sprite sMareepSprites27[] = {
 	{NULL, 32}, 
 	{sMareepGfx27, ARRAY_COUNT(sMareepGfx27)}, 
@@ -2425,15 +2425,15 @@ static const ax_sprite sMareepSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx28[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_28.4bpp");
+static const u8 sMareepGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_28.4bpp.lz");
 static const ax_sprite sMareepSprites28[] = {
 	{sMareepGfx28, ARRAY_COUNT(sMareepGfx28)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx29[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_29.4bpp");
-static const u8 sMareepGfx29_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_29_1.4bpp");
-static const u8 sMareepGfx29_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_29_2.4bpp");
+static const u8 sMareepGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_29.4bpp.lz");
+static const u8 sMareepGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_29_1.4bpp.lz");
+static const u8 sMareepGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_29_2.4bpp.lz");
 static const ax_sprite sMareepSprites29[] = {
 	{sMareepGfx29, ARRAY_COUNT(sMareepGfx29)}, 
 	{NULL, 32}, 
@@ -2443,9 +2443,9 @@ static const ax_sprite sMareepSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx30[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_30.4bpp");
-static const u8 sMareepGfx30_1[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_30_1.4bpp");
-static const u8 sMareepGfx30_2[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_30_2.4bpp");
+static const u8 sMareepGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_30.4bpp.lz");
+static const u8 sMareepGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_30_1.4bpp.lz");
+static const u8 sMareepGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_30_2.4bpp.lz");
 static const ax_sprite sMareepSprites30[] = {
 	{NULL, 32}, 
 	{sMareepGfx30, ARRAY_COUNT(sMareepGfx30)}, 
@@ -2456,37 +2456,37 @@ static const ax_sprite sMareepSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx31[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_31.4bpp");
+static const u8 sMareepGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_31.4bpp.lz");
 static const ax_sprite sMareepSprites31[] = {
 	{sMareepGfx31, ARRAY_COUNT(sMareepGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx32[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_32.4bpp");
+static const u8 sMareepGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_32.4bpp.lz");
 static const ax_sprite sMareepSprites32[] = {
 	{sMareepGfx32, ARRAY_COUNT(sMareepGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx33[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_33.4bpp");
+static const u8 sMareepGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_33.4bpp.lz");
 static const ax_sprite sMareepSprites33[] = {
 	{sMareepGfx33, ARRAY_COUNT(sMareepGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx34[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_34.4bpp");
+static const u8 sMareepGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_34.4bpp.lz");
 static const ax_sprite sMareepSprites34[] = {
 	{sMareepGfx34, ARRAY_COUNT(sMareepGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx35[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_35.4bpp");
+static const u8 sMareepGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_35.4bpp.lz");
 static const ax_sprite sMareepSprites35[] = {
 	{sMareepGfx35, ARRAY_COUNT(sMareepGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx36[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_36.4bpp");
+static const u8 sMareepGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_36.4bpp.lz");
 static const ax_sprite sMareepSprites36[] = {
 	{sMareepGfx36, ARRAY_COUNT(sMareepGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMareepGfx37[] = INCBIN_U8("graphics/ax/mon/mareep/sprite_37.4bpp");
+static const u8 sMareepGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mareep/sprite_37.4bpp.lz");
 static const ax_sprite sMareepSprites37[] = {
 	{sMareepGfx37, ARRAY_COUNT(sMareepGfx37)}, 
 	{NULL, 0}

@@ -3157,130 +3157,130 @@ static const ax_anim sZapdosAnims_15_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sZapdosGfx1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_1.4bpp");
-static const u8 sZapdosGfx1_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_1_1.4bpp");
+static const u8 sZapdosGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_1.4bpp.lz");
+static const u8 sZapdosGfx1_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_1_1.4bpp.lz");
 static const ax_sprite sZapdosSprites1[] = {
 	{sZapdosGfx1, ARRAY_COUNT(sZapdosGfx1)}, 
 	{NULL, 64}, 
 	{sZapdosGfx1_1, ARRAY_COUNT(sZapdosGfx1_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx2[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_2.4bpp");
+static const u8 sZapdosGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_2.4bpp.lz");
 static const ax_sprite sZapdosSprites2[] = {
 	{sZapdosGfx2, ARRAY_COUNT(sZapdosGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx3[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_3.4bpp");
+static const u8 sZapdosGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_3.4bpp.lz");
 static const ax_sprite sZapdosSprites3[] = {
 	{sZapdosGfx3, ARRAY_COUNT(sZapdosGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx4[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_4.4bpp");
-static const u8 sZapdosGfx4_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_4_1.4bpp");
+static const u8 sZapdosGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_4.4bpp.lz");
+static const u8 sZapdosGfx4_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_4_1.4bpp.lz");
 static const ax_sprite sZapdosSprites4[] = {
 	{sZapdosGfx4, ARRAY_COUNT(sZapdosGfx4)}, 
 	{NULL, 32}, 
 	{sZapdosGfx4_1, ARRAY_COUNT(sZapdosGfx4_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx5[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_5.4bpp");
+static const u8 sZapdosGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_5.4bpp.lz");
 static const ax_sprite sZapdosSprites5[] = {
 	{sZapdosGfx5, ARRAY_COUNT(sZapdosGfx5)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx6[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_6.4bpp");
+static const u8 sZapdosGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_6.4bpp.lz");
 static const ax_sprite sZapdosSprites6[] = {
 	{sZapdosGfx6, ARRAY_COUNT(sZapdosGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx7[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_7.4bpp");
-static const u8 sZapdosGfx7_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_7_1.4bpp");
+static const u8 sZapdosGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_7.4bpp.lz");
+static const u8 sZapdosGfx7_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_7_1.4bpp.lz");
 static const ax_sprite sZapdosSprites7[] = {
 	{sZapdosGfx7, ARRAY_COUNT(sZapdosGfx7)}, 
 	{NULL, 32}, 
 	{sZapdosGfx7_1, ARRAY_COUNT(sZapdosGfx7_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx8[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_8.4bpp");
+static const u8 sZapdosGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_8.4bpp.lz");
 static const ax_sprite sZapdosSprites8[] = {
 	{sZapdosGfx8, ARRAY_COUNT(sZapdosGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx9[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_9.4bpp");
+static const u8 sZapdosGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_9.4bpp.lz");
 static const ax_sprite sZapdosSprites9[] = {
 	{sZapdosGfx9, ARRAY_COUNT(sZapdosGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx10[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_10.4bpp");
-static const u8 sZapdosGfx10_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_10_1.4bpp");
+static const u8 sZapdosGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_10.4bpp.lz");
+static const u8 sZapdosGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_10_1.4bpp.lz");
 static const ax_sprite sZapdosSprites10[] = {
 	{sZapdosGfx10, ARRAY_COUNT(sZapdosGfx10)}, 
 	{NULL, 32}, 
 	{sZapdosGfx10_1, ARRAY_COUNT(sZapdosGfx10_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx11[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_11.4bpp");
+static const u8 sZapdosGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_11.4bpp.lz");
 static const ax_sprite sZapdosSprites11[] = {
 	{sZapdosGfx11, ARRAY_COUNT(sZapdosGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx12[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_12.4bpp");
+static const u8 sZapdosGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_12.4bpp.lz");
 static const ax_sprite sZapdosSprites12[] = {
 	{sZapdosGfx12, ARRAY_COUNT(sZapdosGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx13[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_13.4bpp");
+static const u8 sZapdosGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_13.4bpp.lz");
 static const ax_sprite sZapdosSprites13[] = {
 	{sZapdosGfx13, ARRAY_COUNT(sZapdosGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx14[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_14.4bpp");
+static const u8 sZapdosGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_14.4bpp.lz");
 static const ax_sprite sZapdosSprites14[] = {
 	{sZapdosGfx14, ARRAY_COUNT(sZapdosGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx15[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_15.4bpp");
+static const u8 sZapdosGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_15.4bpp.lz");
 static const ax_sprite sZapdosSprites15[] = {
 	{sZapdosGfx15, ARRAY_COUNT(sZapdosGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx16[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_16.4bpp");
+static const u8 sZapdosGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_16.4bpp.lz");
 static const ax_sprite sZapdosSprites16[] = {
 	{sZapdosGfx16, ARRAY_COUNT(sZapdosGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx17[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_17.4bpp");
+static const u8 sZapdosGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_17.4bpp.lz");
 static const ax_sprite sZapdosSprites17[] = {
 	{sZapdosGfx17, ARRAY_COUNT(sZapdosGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx18[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_18.4bpp");
+static const u8 sZapdosGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_18.4bpp.lz");
 static const ax_sprite sZapdosSprites18[] = {
 	{sZapdosGfx18, ARRAY_COUNT(sZapdosGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx19[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_19.4bpp");
-static const u8 sZapdosGfx19_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_19_1.4bpp");
+static const u8 sZapdosGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_19.4bpp.lz");
+static const u8 sZapdosGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_19_1.4bpp.lz");
 static const ax_sprite sZapdosSprites19[] = {
 	{sZapdosGfx19, ARRAY_COUNT(sZapdosGfx19)}, 
 	{NULL, 32}, 
 	{sZapdosGfx19_1, ARRAY_COUNT(sZapdosGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx20[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_20.4bpp");
+static const u8 sZapdosGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_20.4bpp.lz");
 static const ax_sprite sZapdosSprites20[] = {
 	{sZapdosGfx20, ARRAY_COUNT(sZapdosGfx20)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx21[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_21.4bpp");
+static const u8 sZapdosGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_21.4bpp.lz");
 static const ax_sprite sZapdosSprites21[] = {
 	{sZapdosGfx21, ARRAY_COUNT(sZapdosGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx22[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_22.4bpp");
-static const u8 sZapdosGfx22_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_22_1.4bpp");
+static const u8 sZapdosGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_22.4bpp.lz");
+static const u8 sZapdosGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_22_1.4bpp.lz");
 static const ax_sprite sZapdosSprites22[] = {
 	{NULL, 32}, 
 	{sZapdosGfx22, ARRAY_COUNT(sZapdosGfx22)}, 
@@ -3288,23 +3288,23 @@ static const ax_sprite sZapdosSprites22[] = {
 	{sZapdosGfx22_1, ARRAY_COUNT(sZapdosGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx23[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_23.4bpp");
+static const u8 sZapdosGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_23.4bpp.lz");
 static const ax_sprite sZapdosSprites23[] = {
 	{sZapdosGfx23, ARRAY_COUNT(sZapdosGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx24[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_24.4bpp");
+static const u8 sZapdosGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_24.4bpp.lz");
 static const ax_sprite sZapdosSprites24[] = {
 	{sZapdosGfx24, ARRAY_COUNT(sZapdosGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx25[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_25.4bpp");
+static const u8 sZapdosGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_25.4bpp.lz");
 static const ax_sprite sZapdosSprites25[] = {
 	{sZapdosGfx25, ARRAY_COUNT(sZapdosGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx26[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_26.4bpp");
-static const u8 sZapdosGfx26_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_26_1.4bpp");
+static const u8 sZapdosGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_26.4bpp.lz");
+static const u8 sZapdosGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_26_1.4bpp.lz");
 static const ax_sprite sZapdosSprites26[] = {
 	{NULL, 32}, 
 	{sZapdosGfx26, ARRAY_COUNT(sZapdosGfx26)}, 
@@ -3312,46 +3312,46 @@ static const ax_sprite sZapdosSprites26[] = {
 	{sZapdosGfx26_1, ARRAY_COUNT(sZapdosGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx27[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_27.4bpp");
-static const u8 sZapdosGfx27_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_27_1.4bpp");
+static const u8 sZapdosGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_27.4bpp.lz");
+static const u8 sZapdosGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_27_1.4bpp.lz");
 static const ax_sprite sZapdosSprites27[] = {
 	{sZapdosGfx27, ARRAY_COUNT(sZapdosGfx27)}, 
 	{NULL, 32}, 
 	{sZapdosGfx27_1, ARRAY_COUNT(sZapdosGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx28[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_28.4bpp");
+static const u8 sZapdosGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_28.4bpp.lz");
 static const ax_sprite sZapdosSprites28[] = {
 	{sZapdosGfx28, ARRAY_COUNT(sZapdosGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx29[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_29.4bpp");
+static const u8 sZapdosGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_29.4bpp.lz");
 static const ax_sprite sZapdosSprites29[] = {
 	{NULL, 64}, 
 	{sZapdosGfx29, ARRAY_COUNT(sZapdosGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx30[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_30.4bpp");
-static const u8 sZapdosGfx30_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_30_1.4bpp");
+static const u8 sZapdosGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_30.4bpp.lz");
+static const u8 sZapdosGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_30_1.4bpp.lz");
 static const ax_sprite sZapdosSprites30[] = {
 	{sZapdosGfx30, ARRAY_COUNT(sZapdosGfx30)}, 
 	{NULL, 64}, 
 	{sZapdosGfx30_1, ARRAY_COUNT(sZapdosGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx31[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_31.4bpp");
+static const u8 sZapdosGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_31.4bpp.lz");
 static const ax_sprite sZapdosSprites31[] = {
 	{sZapdosGfx31, ARRAY_COUNT(sZapdosGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx32[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_32.4bpp");
+static const u8 sZapdosGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_32.4bpp.lz");
 static const ax_sprite sZapdosSprites32[] = {
 	{sZapdosGfx32, ARRAY_COUNT(sZapdosGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx33[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_33.4bpp");
-static const u8 sZapdosGfx33_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_33_1.4bpp");
-static const u8 sZapdosGfx33_2[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_33_2.4bpp");
+static const u8 sZapdosGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_33.4bpp.lz");
+static const u8 sZapdosGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_33_1.4bpp.lz");
+static const u8 sZapdosGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_33_2.4bpp.lz");
 static const ax_sprite sZapdosSprites33[] = {
 	{sZapdosGfx33, ARRAY_COUNT(sZapdosGfx33)}, 
 	{NULL, 32}, 
@@ -3360,123 +3360,123 @@ static const ax_sprite sZapdosSprites33[] = {
 	{sZapdosGfx33_2, ARRAY_COUNT(sZapdosGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx34[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_34.4bpp");
+static const u8 sZapdosGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_34.4bpp.lz");
 static const ax_sprite sZapdosSprites34[] = {
 	{sZapdosGfx34, ARRAY_COUNT(sZapdosGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx35[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_35.4bpp");
+static const u8 sZapdosGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_35.4bpp.lz");
 static const ax_sprite sZapdosSprites35[] = {
 	{sZapdosGfx35, ARRAY_COUNT(sZapdosGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx36[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_36.4bpp");
+static const u8 sZapdosGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_36.4bpp.lz");
 static const ax_sprite sZapdosSprites36[] = {
 	{sZapdosGfx36, ARRAY_COUNT(sZapdosGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx37[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_37.4bpp");
+static const u8 sZapdosGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_37.4bpp.lz");
 static const ax_sprite sZapdosSprites37[] = {
 	{sZapdosGfx37, ARRAY_COUNT(sZapdosGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx38[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_38.4bpp");
+static const u8 sZapdosGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_38.4bpp.lz");
 static const ax_sprite sZapdosSprites38[] = {
 	{sZapdosGfx38, ARRAY_COUNT(sZapdosGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx39[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_39.4bpp");
+static const u8 sZapdosGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_39.4bpp.lz");
 static const ax_sprite sZapdosSprites39[] = {
 	{sZapdosGfx39, ARRAY_COUNT(sZapdosGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx40[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_40.4bpp");
+static const u8 sZapdosGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_40.4bpp.lz");
 static const ax_sprite sZapdosSprites40[] = {
 	{sZapdosGfx40, ARRAY_COUNT(sZapdosGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx41[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_41.4bpp");
+static const u8 sZapdosGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_41.4bpp.lz");
 static const ax_sprite sZapdosSprites41[] = {
 	{sZapdosGfx41, ARRAY_COUNT(sZapdosGfx41)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx42[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_42.4bpp");
+static const u8 sZapdosGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_42.4bpp.lz");
 static const ax_sprite sZapdosSprites42[] = {
 	{sZapdosGfx42, ARRAY_COUNT(sZapdosGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx43[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_43.4bpp");
+static const u8 sZapdosGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_43.4bpp.lz");
 static const ax_sprite sZapdosSprites43[] = {
 	{NULL, 32}, 
 	{sZapdosGfx43, ARRAY_COUNT(sZapdosGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx44[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_44.4bpp");
+static const u8 sZapdosGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_44.4bpp.lz");
 static const ax_sprite sZapdosSprites44[] = {
 	{sZapdosGfx44, ARRAY_COUNT(sZapdosGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx45[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_45.4bpp");
+static const u8 sZapdosGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_45.4bpp.lz");
 static const ax_sprite sZapdosSprites45[] = {
 	{sZapdosGfx45, ARRAY_COUNT(sZapdosGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx46[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_46.4bpp");
+static const u8 sZapdosGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_46.4bpp.lz");
 static const ax_sprite sZapdosSprites46[] = {
 	{sZapdosGfx46, ARRAY_COUNT(sZapdosGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx47[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_47.4bpp");
+static const u8 sZapdosGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_47.4bpp.lz");
 static const ax_sprite sZapdosSprites47[] = {
 	{sZapdosGfx47, ARRAY_COUNT(sZapdosGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx48[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_48.4bpp");
+static const u8 sZapdosGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_48.4bpp.lz");
 static const ax_sprite sZapdosSprites48[] = {
 	{sZapdosGfx48, ARRAY_COUNT(sZapdosGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx49[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_49.4bpp");
-static const u8 sZapdosGfx49_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_49_1.4bpp");
+static const u8 sZapdosGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_49.4bpp.lz");
+static const u8 sZapdosGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_49_1.4bpp.lz");
 static const ax_sprite sZapdosSprites49[] = {
 	{sZapdosGfx49, ARRAY_COUNT(sZapdosGfx49)}, 
 	{NULL, 32}, 
 	{sZapdosGfx49_1, ARRAY_COUNT(sZapdosGfx49_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx50[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_50.4bpp");
+static const u8 sZapdosGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_50.4bpp.lz");
 static const ax_sprite sZapdosSprites50[] = {
 	{sZapdosGfx50, ARRAY_COUNT(sZapdosGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx51[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_51.4bpp");
+static const u8 sZapdosGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_51.4bpp.lz");
 static const ax_sprite sZapdosSprites51[] = {
 	{sZapdosGfx51, ARRAY_COUNT(sZapdosGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx52[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_52.4bpp");
+static const u8 sZapdosGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_52.4bpp.lz");
 static const ax_sprite sZapdosSprites52[] = {
 	{sZapdosGfx52, ARRAY_COUNT(sZapdosGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx53[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_53.4bpp");
+static const u8 sZapdosGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_53.4bpp.lz");
 static const ax_sprite sZapdosSprites53[] = {
 	{sZapdosGfx53, ARRAY_COUNT(sZapdosGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx54[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_54.4bpp");
+static const u8 sZapdosGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_54.4bpp.lz");
 static const ax_sprite sZapdosSprites54[] = {
 	{sZapdosGfx54, ARRAY_COUNT(sZapdosGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx55[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_55.4bpp");
+static const u8 sZapdosGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_55.4bpp.lz");
 static const ax_sprite sZapdosSprites55[] = {
 	{sZapdosGfx55, ARRAY_COUNT(sZapdosGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx56[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_56.4bpp");
-static const u8 sZapdosGfx56_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_56_1.4bpp");
+static const u8 sZapdosGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_56.4bpp.lz");
+static const u8 sZapdosGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_56_1.4bpp.lz");
 static const ax_sprite sZapdosSprites56[] = {
 	{NULL, 32}, 
 	{sZapdosGfx56, ARRAY_COUNT(sZapdosGfx56)}, 
@@ -3484,8 +3484,8 @@ static const ax_sprite sZapdosSprites56[] = {
 	{sZapdosGfx56_1, ARRAY_COUNT(sZapdosGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx57[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_57.4bpp");
-static const u8 sZapdosGfx57_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_57_1.4bpp");
+static const u8 sZapdosGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_57.4bpp.lz");
+static const u8 sZapdosGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_57_1.4bpp.lz");
 static const ax_sprite sZapdosSprites57[] = {
 	{sZapdosGfx57, ARRAY_COUNT(sZapdosGfx57)}, 
 	{NULL, 32}, 
@@ -3493,29 +3493,29 @@ static const ax_sprite sZapdosSprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx58[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_58.4bpp");
+static const u8 sZapdosGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_58.4bpp.lz");
 static const ax_sprite sZapdosSprites58[] = {
 	{sZapdosGfx58, ARRAY_COUNT(sZapdosGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx59[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_59.4bpp");
-static const u8 sZapdosGfx59_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_59_1.4bpp");
+static const u8 sZapdosGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_59.4bpp.lz");
+static const u8 sZapdosGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_59_1.4bpp.lz");
 static const ax_sprite sZapdosSprites59[] = {
 	{sZapdosGfx59, ARRAY_COUNT(sZapdosGfx59)}, 
 	{NULL, 32}, 
 	{sZapdosGfx59_1, ARRAY_COUNT(sZapdosGfx59_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx60[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_60.4bpp");
-static const u8 sZapdosGfx60_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_60_1.4bpp");
+static const u8 sZapdosGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_60.4bpp.lz");
+static const u8 sZapdosGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_60_1.4bpp.lz");
 static const ax_sprite sZapdosSprites60[] = {
 	{sZapdosGfx60, ARRAY_COUNT(sZapdosGfx60)}, 
 	{NULL, 32}, 
 	{sZapdosGfx60_1, ARRAY_COUNT(sZapdosGfx60_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx61[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_61.4bpp");
-static const u8 sZapdosGfx61_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_61_1.4bpp");
+static const u8 sZapdosGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_61.4bpp.lz");
+static const u8 sZapdosGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_61_1.4bpp.lz");
 static const ax_sprite sZapdosSprites61[] = {
 	{NULL, 32}, 
 	{sZapdosGfx61, ARRAY_COUNT(sZapdosGfx61)}, 
@@ -3523,8 +3523,8 @@ static const ax_sprite sZapdosSprites61[] = {
 	{sZapdosGfx61_1, ARRAY_COUNT(sZapdosGfx61_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx62[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_62.4bpp");
-static const u8 sZapdosGfx62_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_62_1.4bpp");
+static const u8 sZapdosGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_62.4bpp.lz");
+static const u8 sZapdosGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_62_1.4bpp.lz");
 static const ax_sprite sZapdosSprites62[] = {
 	{sZapdosGfx62, ARRAY_COUNT(sZapdosGfx62)}, 
 	{NULL, 32}, 
@@ -3532,24 +3532,24 @@ static const ax_sprite sZapdosSprites62[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx63[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_63.4bpp");
+static const u8 sZapdosGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_63.4bpp.lz");
 static const ax_sprite sZapdosSprites63[] = {
 	{sZapdosGfx63, ARRAY_COUNT(sZapdosGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx64[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_64.4bpp");
+static const u8 sZapdosGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_64.4bpp.lz");
 static const ax_sprite sZapdosSprites64[] = {
 	{NULL, 32}, 
 	{sZapdosGfx64, ARRAY_COUNT(sZapdosGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx65[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_65.4bpp");
+static const u8 sZapdosGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_65.4bpp.lz");
 static const ax_sprite sZapdosSprites65[] = {
 	{sZapdosGfx65, ARRAY_COUNT(sZapdosGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx66[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_66.4bpp");
-static const u8 sZapdosGfx66_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_66_1.4bpp");
+static const u8 sZapdosGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_66.4bpp.lz");
+static const u8 sZapdosGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_66_1.4bpp.lz");
 static const ax_sprite sZapdosSprites66[] = {
 	{NULL, 64}, 
 	{sZapdosGfx66, ARRAY_COUNT(sZapdosGfx66)}, 
@@ -3557,46 +3557,46 @@ static const ax_sprite sZapdosSprites66[] = {
 	{sZapdosGfx66_1, ARRAY_COUNT(sZapdosGfx66_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx67[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_67.4bpp");
-static const u8 sZapdosGfx67_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_67_1.4bpp");
+static const u8 sZapdosGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_67.4bpp.lz");
+static const u8 sZapdosGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_67_1.4bpp.lz");
 static const ax_sprite sZapdosSprites67[] = {
 	{sZapdosGfx67, ARRAY_COUNT(sZapdosGfx67)}, 
 	{NULL, 32}, 
 	{sZapdosGfx67_1, ARRAY_COUNT(sZapdosGfx67_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx68[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_68.4bpp");
+static const u8 sZapdosGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_68.4bpp.lz");
 static const ax_sprite sZapdosSprites68[] = {
 	{sZapdosGfx68, ARRAY_COUNT(sZapdosGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx69[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_69.4bpp");
+static const u8 sZapdosGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_69.4bpp.lz");
 static const ax_sprite sZapdosSprites69[] = {
 	{sZapdosGfx69, ARRAY_COUNT(sZapdosGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx70[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_70.4bpp");
+static const u8 sZapdosGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_70.4bpp.lz");
 static const ax_sprite sZapdosSprites70[] = {
 	{sZapdosGfx70, ARRAY_COUNT(sZapdosGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx71[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_71.4bpp");
+static const u8 sZapdosGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_71.4bpp.lz");
 static const ax_sprite sZapdosSprites71[] = {
 	{sZapdosGfx71, ARRAY_COUNT(sZapdosGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx72[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_72.4bpp");
+static const u8 sZapdosGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_72.4bpp.lz");
 static const ax_sprite sZapdosSprites72[] = {
 	{sZapdosGfx72, ARRAY_COUNT(sZapdosGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx73[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_73.4bpp");
+static const u8 sZapdosGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_73.4bpp.lz");
 static const ax_sprite sZapdosSprites73[] = {
 	{sZapdosGfx73, ARRAY_COUNT(sZapdosGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx74[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_74.4bpp");
-static const u8 sZapdosGfx74_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_74_1.4bpp");
+static const u8 sZapdosGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_74.4bpp.lz");
+static const u8 sZapdosGfx74_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_74_1.4bpp.lz");
 static const ax_sprite sZapdosSprites74[] = {
 	{NULL, 32}, 
 	{sZapdosGfx74, ARRAY_COUNT(sZapdosGfx74)}, 
@@ -3604,27 +3604,27 @@ static const ax_sprite sZapdosSprites74[] = {
 	{sZapdosGfx74_1, ARRAY_COUNT(sZapdosGfx74_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx75[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_75.4bpp");
+static const u8 sZapdosGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_75.4bpp.lz");
 static const ax_sprite sZapdosSprites75[] = {
 	{sZapdosGfx75, ARRAY_COUNT(sZapdosGfx75)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx76[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_76.4bpp");
+static const u8 sZapdosGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_76.4bpp.lz");
 static const ax_sprite sZapdosSprites76[] = {
 	{sZapdosGfx76, ARRAY_COUNT(sZapdosGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx77[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_77.4bpp");
-static const u8 sZapdosGfx77_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_77_1.4bpp");
+static const u8 sZapdosGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_77.4bpp.lz");
+static const u8 sZapdosGfx77_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_77_1.4bpp.lz");
 static const ax_sprite sZapdosSprites77[] = {
 	{sZapdosGfx77, ARRAY_COUNT(sZapdosGfx77)}, 
 	{NULL, 32}, 
 	{sZapdosGfx77_1, ARRAY_COUNT(sZapdosGfx77_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx78[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_78.4bpp");
-static const u8 sZapdosGfx78_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_78_1.4bpp");
+static const u8 sZapdosGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_78.4bpp.lz");
+static const u8 sZapdosGfx78_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_78_1.4bpp.lz");
 static const ax_sprite sZapdosSprites78[] = {
 	{sZapdosGfx78, ARRAY_COUNT(sZapdosGfx78)}, 
 	{NULL, 32}, 
@@ -3632,82 +3632,82 @@ static const ax_sprite sZapdosSprites78[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx79[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_79.4bpp");
+static const u8 sZapdosGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_79.4bpp.lz");
 static const ax_sprite sZapdosSprites79[] = {
 	{sZapdosGfx79, ARRAY_COUNT(sZapdosGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx80[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_80.4bpp");
+static const u8 sZapdosGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_80.4bpp.lz");
 static const ax_sprite sZapdosSprites80[] = {
 	{sZapdosGfx80, ARRAY_COUNT(sZapdosGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx81[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_81.4bpp");
+static const u8 sZapdosGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_81.4bpp.lz");
 static const ax_sprite sZapdosSprites81[] = {
 	{sZapdosGfx81, ARRAY_COUNT(sZapdosGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx82[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_82.4bpp");
-static const u8 sZapdosGfx82_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_82_1.4bpp");
+static const u8 sZapdosGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_82.4bpp.lz");
+static const u8 sZapdosGfx82_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_82_1.4bpp.lz");
 static const ax_sprite sZapdosSprites82[] = {
 	{sZapdosGfx82, ARRAY_COUNT(sZapdosGfx82)}, 
 	{NULL, 32}, 
 	{sZapdosGfx82_1, ARRAY_COUNT(sZapdosGfx82_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx83[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_83.4bpp");
+static const u8 sZapdosGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_83.4bpp.lz");
 static const ax_sprite sZapdosSprites83[] = {
 	{sZapdosGfx83, ARRAY_COUNT(sZapdosGfx83)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx84[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_84.4bpp");
+static const u8 sZapdosGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_84.4bpp.lz");
 static const ax_sprite sZapdosSprites84[] = {
 	{sZapdosGfx84, ARRAY_COUNT(sZapdosGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx85[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_85.4bpp");
-static const u8 sZapdosGfx85_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_85_1.4bpp");
+static const u8 sZapdosGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_85.4bpp.lz");
+static const u8 sZapdosGfx85_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_85_1.4bpp.lz");
 static const ax_sprite sZapdosSprites85[] = {
 	{sZapdosGfx85, ARRAY_COUNT(sZapdosGfx85)}, 
 	{NULL, 32}, 
 	{sZapdosGfx85_1, ARRAY_COUNT(sZapdosGfx85_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx86[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_86.4bpp");
+static const u8 sZapdosGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_86.4bpp.lz");
 static const ax_sprite sZapdosSprites86[] = {
 	{NULL, 32}, 
 	{sZapdosGfx86, ARRAY_COUNT(sZapdosGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx87[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_87.4bpp");
+static const u8 sZapdosGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_87.4bpp.lz");
 static const ax_sprite sZapdosSprites87[] = {
 	{sZapdosGfx87, ARRAY_COUNT(sZapdosGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx88[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_88.4bpp");
+static const u8 sZapdosGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_88.4bpp.lz");
 static const ax_sprite sZapdosSprites88[] = {
 	{sZapdosGfx88, ARRAY_COUNT(sZapdosGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx89[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_89.4bpp");
+static const u8 sZapdosGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_89.4bpp.lz");
 static const ax_sprite sZapdosSprites89[] = {
 	{NULL, 32}, 
 	{sZapdosGfx89, ARRAY_COUNT(sZapdosGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx90[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_90.4bpp");
+static const u8 sZapdosGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_90.4bpp.lz");
 static const ax_sprite sZapdosSprites90[] = {
 	{sZapdosGfx90, ARRAY_COUNT(sZapdosGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx91[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_91.4bpp");
+static const u8 sZapdosGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_91.4bpp.lz");
 static const ax_sprite sZapdosSprites91[] = {
 	{sZapdosGfx91, ARRAY_COUNT(sZapdosGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx92[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_92.4bpp");
-static const u8 sZapdosGfx92_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_92_1.4bpp");
+static const u8 sZapdosGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_92.4bpp.lz");
+static const u8 sZapdosGfx92_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_92_1.4bpp.lz");
 static const ax_sprite sZapdosSprites92[] = {
 	{NULL, 32}, 
 	{sZapdosGfx92, ARRAY_COUNT(sZapdosGfx92)}, 
@@ -3715,102 +3715,102 @@ static const ax_sprite sZapdosSprites92[] = {
 	{sZapdosGfx92_1, ARRAY_COUNT(sZapdosGfx92_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx93[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_93.4bpp");
+static const u8 sZapdosGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_93.4bpp.lz");
 static const ax_sprite sZapdosSprites93[] = {
 	{sZapdosGfx93, ARRAY_COUNT(sZapdosGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx94[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_94.4bpp");
+static const u8 sZapdosGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_94.4bpp.lz");
 static const ax_sprite sZapdosSprites94[] = {
 	{sZapdosGfx94, ARRAY_COUNT(sZapdosGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx95[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_95.4bpp");
+static const u8 sZapdosGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_95.4bpp.lz");
 static const ax_sprite sZapdosSprites95[] = {
 	{sZapdosGfx95, ARRAY_COUNT(sZapdosGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx96[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_96.4bpp");
-static const u8 sZapdosGfx96_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_96_1.4bpp");
+static const u8 sZapdosGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_96.4bpp.lz");
+static const u8 sZapdosGfx96_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_96_1.4bpp.lz");
 static const ax_sprite sZapdosSprites96[] = {
 	{sZapdosGfx96, ARRAY_COUNT(sZapdosGfx96)}, 
 	{NULL, 64}, 
 	{sZapdosGfx96_1, ARRAY_COUNT(sZapdosGfx96_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx97[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_97.4bpp");
+static const u8 sZapdosGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_97.4bpp.lz");
 static const ax_sprite sZapdosSprites97[] = {
 	{sZapdosGfx97, ARRAY_COUNT(sZapdosGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx98[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_98.4bpp");
+static const u8 sZapdosGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_98.4bpp.lz");
 static const ax_sprite sZapdosSprites98[] = {
 	{sZapdosGfx98, ARRAY_COUNT(sZapdosGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx99[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_99.4bpp");
-static const u8 sZapdosGfx99_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_99_1.4bpp");
+static const u8 sZapdosGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_99.4bpp.lz");
+static const u8 sZapdosGfx99_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_99_1.4bpp.lz");
 static const ax_sprite sZapdosSprites99[] = {
 	{sZapdosGfx99, ARRAY_COUNT(sZapdosGfx99)}, 
 	{NULL, 32}, 
 	{sZapdosGfx99_1, ARRAY_COUNT(sZapdosGfx99_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx100[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_100.4bpp");
+static const u8 sZapdosGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_100.4bpp.lz");
 static const ax_sprite sZapdosSprites100[] = {
 	{sZapdosGfx100, ARRAY_COUNT(sZapdosGfx100)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx101[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_101.4bpp");
+static const u8 sZapdosGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_101.4bpp.lz");
 static const ax_sprite sZapdosSprites101[] = {
 	{sZapdosGfx101, ARRAY_COUNT(sZapdosGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx102[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_102.4bpp");
+static const u8 sZapdosGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_102.4bpp.lz");
 static const ax_sprite sZapdosSprites102[] = {
 	{sZapdosGfx102, ARRAY_COUNT(sZapdosGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx103[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_103.4bpp");
-static const u8 sZapdosGfx103_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_103_1.4bpp");
+static const u8 sZapdosGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_103.4bpp.lz");
+static const u8 sZapdosGfx103_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_103_1.4bpp.lz");
 static const ax_sprite sZapdosSprites103[] = {
 	{sZapdosGfx103, ARRAY_COUNT(sZapdosGfx103)}, 
 	{NULL, 32}, 
 	{sZapdosGfx103_1, ARRAY_COUNT(sZapdosGfx103_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx104[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_104.4bpp");
+static const u8 sZapdosGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_104.4bpp.lz");
 static const ax_sprite sZapdosSprites104[] = {
 	{sZapdosGfx104, ARRAY_COUNT(sZapdosGfx104)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx105[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_105.4bpp");
+static const u8 sZapdosGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_105.4bpp.lz");
 static const ax_sprite sZapdosSprites105[] = {
 	{sZapdosGfx105, ARRAY_COUNT(sZapdosGfx105)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx106[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_106.4bpp");
+static const u8 sZapdosGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_106.4bpp.lz");
 static const ax_sprite sZapdosSprites106[] = {
 	{sZapdosGfx106, ARRAY_COUNT(sZapdosGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx107[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_107.4bpp");
+static const u8 sZapdosGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_107.4bpp.lz");
 static const ax_sprite sZapdosSprites107[] = {
 	{sZapdosGfx107, ARRAY_COUNT(sZapdosGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx108[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_108.4bpp");
+static const u8 sZapdosGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_108.4bpp.lz");
 static const ax_sprite sZapdosSprites108[] = {
 	{sZapdosGfx108, ARRAY_COUNT(sZapdosGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx109[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_109.4bpp");
-static const u8 sZapdosGfx109_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_109_1.4bpp");
-static const u8 sZapdosGfx109_2[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_109_2.4bpp");
-static const u8 sZapdosGfx109_3[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_109_3.4bpp");
+static const u8 sZapdosGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_109.4bpp.lz");
+static const u8 sZapdosGfx109_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_109_1.4bpp.lz");
+static const u8 sZapdosGfx109_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_109_2.4bpp.lz");
+static const u8 sZapdosGfx109_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_109_3.4bpp.lz");
 static const ax_sprite sZapdosSprites109[] = {
 	{NULL, 32}, 
 	{sZapdosGfx109, ARRAY_COUNT(sZapdosGfx109)}, 
@@ -3822,45 +3822,45 @@ static const ax_sprite sZapdosSprites109[] = {
 	{sZapdosGfx109_3, ARRAY_COUNT(sZapdosGfx109_3)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx110[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_110.4bpp");
+static const u8 sZapdosGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_110.4bpp.lz");
 static const ax_sprite sZapdosSprites110[] = {
 	{sZapdosGfx110, ARRAY_COUNT(sZapdosGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx111[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_111.4bpp");
+static const u8 sZapdosGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_111.4bpp.lz");
 static const ax_sprite sZapdosSprites111[] = {
 	{sZapdosGfx111, ARRAY_COUNT(sZapdosGfx111)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx112[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_112.4bpp");
+static const u8 sZapdosGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_112.4bpp.lz");
 static const ax_sprite sZapdosSprites112[] = {
 	{sZapdosGfx112, ARRAY_COUNT(sZapdosGfx112)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx113[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_113.4bpp");
+static const u8 sZapdosGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_113.4bpp.lz");
 static const ax_sprite sZapdosSprites113[] = {
 	{sZapdosGfx113, ARRAY_COUNT(sZapdosGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx114[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_114.4bpp");
-static const u8 sZapdosGfx114_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_114_1.4bpp");
+static const u8 sZapdosGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_114.4bpp.lz");
+static const u8 sZapdosGfx114_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_114_1.4bpp.lz");
 static const ax_sprite sZapdosSprites114[] = {
 	{sZapdosGfx114, ARRAY_COUNT(sZapdosGfx114)}, 
 	{NULL, 32}, 
 	{sZapdosGfx114_1, ARRAY_COUNT(sZapdosGfx114_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx115[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_115.4bpp");
+static const u8 sZapdosGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_115.4bpp.lz");
 static const ax_sprite sZapdosSprites115[] = {
 	{sZapdosGfx115, ARRAY_COUNT(sZapdosGfx115)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx116[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_116.4bpp");
-static const u8 sZapdosGfx116_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_116_1.4bpp");
-static const u8 sZapdosGfx116_2[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_116_2.4bpp");
+static const u8 sZapdosGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_116.4bpp.lz");
+static const u8 sZapdosGfx116_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_116_1.4bpp.lz");
+static const u8 sZapdosGfx116_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_116_2.4bpp.lz");
 static const ax_sprite sZapdosSprites116[] = {
 	{sZapdosGfx116, ARRAY_COUNT(sZapdosGfx116)}, 
 	{NULL, 32}, 
@@ -3869,54 +3869,54 @@ static const ax_sprite sZapdosSprites116[] = {
 	{sZapdosGfx116_2, ARRAY_COUNT(sZapdosGfx116_2)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx117[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_117.4bpp");
+static const u8 sZapdosGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_117.4bpp.lz");
 static const ax_sprite sZapdosSprites117[] = {
 	{sZapdosGfx117, ARRAY_COUNT(sZapdosGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx118[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_118.4bpp");
+static const u8 sZapdosGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_118.4bpp.lz");
 static const ax_sprite sZapdosSprites118[] = {
 	{sZapdosGfx118, ARRAY_COUNT(sZapdosGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx119[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_119.4bpp");
+static const u8 sZapdosGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_119.4bpp.lz");
 static const ax_sprite sZapdosSprites119[] = {
 	{sZapdosGfx119, ARRAY_COUNT(sZapdosGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx120[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_120.4bpp");
+static const u8 sZapdosGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_120.4bpp.lz");
 static const ax_sprite sZapdosSprites120[] = {
 	{sZapdosGfx120, ARRAY_COUNT(sZapdosGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx121[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_121.4bpp");
+static const u8 sZapdosGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_121.4bpp.lz");
 static const ax_sprite sZapdosSprites121[] = {
 	{sZapdosGfx121, ARRAY_COUNT(sZapdosGfx121)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx122[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_122.4bpp");
+static const u8 sZapdosGfx122[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_122.4bpp.lz");
 static const ax_sprite sZapdosSprites122[] = {
 	{sZapdosGfx122, ARRAY_COUNT(sZapdosGfx122)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx123[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_123.4bpp");
+static const u8 sZapdosGfx123[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_123.4bpp.lz");
 static const ax_sprite sZapdosSprites123[] = {
 	{sZapdosGfx123, ARRAY_COUNT(sZapdosGfx123)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx124[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_124.4bpp");
+static const u8 sZapdosGfx124[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_124.4bpp.lz");
 static const ax_sprite sZapdosSprites124[] = {
 	{sZapdosGfx124, ARRAY_COUNT(sZapdosGfx124)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx125[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_125.4bpp");
+static const u8 sZapdosGfx125[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_125.4bpp.lz");
 static const ax_sprite sZapdosSprites125[] = {
 	{sZapdosGfx125, ARRAY_COUNT(sZapdosGfx125)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx126[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_126.4bpp");
-static const u8 sZapdosGfx126_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_126_1.4bpp");
-static const u8 sZapdosGfx126_2[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_126_2.4bpp");
+static const u8 sZapdosGfx126[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_126.4bpp.lz");
+static const u8 sZapdosGfx126_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_126_1.4bpp.lz");
+static const u8 sZapdosGfx126_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_126_2.4bpp.lz");
 static const ax_sprite sZapdosSprites126[] = {
 	{sZapdosGfx126, ARRAY_COUNT(sZapdosGfx126)}, 
 	{NULL, 32}, 
@@ -3925,126 +3925,126 @@ static const ax_sprite sZapdosSprites126[] = {
 	{sZapdosGfx126_2, ARRAY_COUNT(sZapdosGfx126_2)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx127[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_127.4bpp");
+static const u8 sZapdosGfx127[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_127.4bpp.lz");
 static const ax_sprite sZapdosSprites127[] = {
 	{sZapdosGfx127, ARRAY_COUNT(sZapdosGfx127)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx128[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_128.4bpp");
+static const u8 sZapdosGfx128[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_128.4bpp.lz");
 static const ax_sprite sZapdosSprites128[] = {
 	{sZapdosGfx128, ARRAY_COUNT(sZapdosGfx128)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx129[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_129.4bpp");
-static const u8 sZapdosGfx129_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_129_1.4bpp");
+static const u8 sZapdosGfx129[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_129.4bpp.lz");
+static const u8 sZapdosGfx129_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_129_1.4bpp.lz");
 static const ax_sprite sZapdosSprites129[] = {
 	{sZapdosGfx129, ARRAY_COUNT(sZapdosGfx129)}, 
 	{NULL, 32}, 
 	{sZapdosGfx129_1, ARRAY_COUNT(sZapdosGfx129_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx130[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_130.4bpp");
+static const u8 sZapdosGfx130[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_130.4bpp.lz");
 static const ax_sprite sZapdosSprites130[] = {
 	{sZapdosGfx130, ARRAY_COUNT(sZapdosGfx130)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx131[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_131.4bpp");
+static const u8 sZapdosGfx131[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_131.4bpp.lz");
 static const ax_sprite sZapdosSprites131[] = {
 	{sZapdosGfx131, ARRAY_COUNT(sZapdosGfx131)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx132[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_132.4bpp");
+static const u8 sZapdosGfx132[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_132.4bpp.lz");
 static const ax_sprite sZapdosSprites132[] = {
 	{sZapdosGfx132, ARRAY_COUNT(sZapdosGfx132)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx133[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_133.4bpp");
+static const u8 sZapdosGfx133[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_133.4bpp.lz");
 static const ax_sprite sZapdosSprites133[] = {
 	{sZapdosGfx133, ARRAY_COUNT(sZapdosGfx133)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx134[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_134.4bpp");
+static const u8 sZapdosGfx134[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_134.4bpp.lz");
 static const ax_sprite sZapdosSprites134[] = {
 	{sZapdosGfx134, ARRAY_COUNT(sZapdosGfx134)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx135[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_135.4bpp");
+static const u8 sZapdosGfx135[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_135.4bpp.lz");
 static const ax_sprite sZapdosSprites135[] = {
 	{sZapdosGfx135, ARRAY_COUNT(sZapdosGfx135)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx136[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_136.4bpp");
+static const u8 sZapdosGfx136[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_136.4bpp.lz");
 static const ax_sprite sZapdosSprites136[] = {
 	{sZapdosGfx136, ARRAY_COUNT(sZapdosGfx136)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx137[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_137.4bpp");
+static const u8 sZapdosGfx137[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_137.4bpp.lz");
 static const ax_sprite sZapdosSprites137[] = {
 	{sZapdosGfx137, ARRAY_COUNT(sZapdosGfx137)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx138[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_138.4bpp");
+static const u8 sZapdosGfx138[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_138.4bpp.lz");
 static const ax_sprite sZapdosSprites138[] = {
 	{sZapdosGfx138, ARRAY_COUNT(sZapdosGfx138)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx139[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_139.4bpp");
+static const u8 sZapdosGfx139[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_139.4bpp.lz");
 static const ax_sprite sZapdosSprites139[] = {
 	{sZapdosGfx139, ARRAY_COUNT(sZapdosGfx139)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx140[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_140.4bpp");
+static const u8 sZapdosGfx140[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_140.4bpp.lz");
 static const ax_sprite sZapdosSprites140[] = {
 	{sZapdosGfx140, ARRAY_COUNT(sZapdosGfx140)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx141[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_141.4bpp");
+static const u8 sZapdosGfx141[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_141.4bpp.lz");
 static const ax_sprite sZapdosSprites141[] = {
 	{sZapdosGfx141, ARRAY_COUNT(sZapdosGfx141)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx142[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_142.4bpp");
+static const u8 sZapdosGfx142[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_142.4bpp.lz");
 static const ax_sprite sZapdosSprites142[] = {
 	{sZapdosGfx142, ARRAY_COUNT(sZapdosGfx142)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx143[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_143.4bpp");
-static const u8 sZapdosGfx143_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_143_1.4bpp");
+static const u8 sZapdosGfx143[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_143.4bpp.lz");
+static const u8 sZapdosGfx143_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_143_1.4bpp.lz");
 static const ax_sprite sZapdosSprites143[] = {
 	{sZapdosGfx143, ARRAY_COUNT(sZapdosGfx143)}, 
 	{NULL, 32}, 
 	{sZapdosGfx143_1, ARRAY_COUNT(sZapdosGfx143_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx144[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_144.4bpp");
+static const u8 sZapdosGfx144[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_144.4bpp.lz");
 static const ax_sprite sZapdosSprites144[] = {
 	{sZapdosGfx144, ARRAY_COUNT(sZapdosGfx144)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx145[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_145.4bpp");
+static const u8 sZapdosGfx145[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_145.4bpp.lz");
 static const ax_sprite sZapdosSprites145[] = {
 	{sZapdosGfx145, ARRAY_COUNT(sZapdosGfx145)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx146[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_146.4bpp");
+static const u8 sZapdosGfx146[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_146.4bpp.lz");
 static const ax_sprite sZapdosSprites146[] = {
 	{sZapdosGfx146, ARRAY_COUNT(sZapdosGfx146)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx147[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_147.4bpp");
+static const u8 sZapdosGfx147[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_147.4bpp.lz");
 static const ax_sprite sZapdosSprites147[] = {
 	{sZapdosGfx147, ARRAY_COUNT(sZapdosGfx147)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx148[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_148.4bpp");
+static const u8 sZapdosGfx148[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_148.4bpp.lz");
 static const ax_sprite sZapdosSprites148[] = {
 	{sZapdosGfx148, ARRAY_COUNT(sZapdosGfx148)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx149[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_149.4bpp");
-static const u8 sZapdosGfx149_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_149_1.4bpp");
-static const u8 sZapdosGfx149_2[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_149_2.4bpp");
+static const u8 sZapdosGfx149[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_149.4bpp.lz");
+static const u8 sZapdosGfx149_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_149_1.4bpp.lz");
+static const u8 sZapdosGfx149_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_149_2.4bpp.lz");
 static const ax_sprite sZapdosSprites149[] = {
 	{NULL, 32}, 
 	{sZapdosGfx149, ARRAY_COUNT(sZapdosGfx149)}, 
@@ -4054,17 +4054,17 @@ static const ax_sprite sZapdosSprites149[] = {
 	{sZapdosGfx149_2, ARRAY_COUNT(sZapdosGfx149_2)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx150[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_150.4bpp");
-static const u8 sZapdosGfx150_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_150_1.4bpp");
+static const u8 sZapdosGfx150[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_150.4bpp.lz");
+static const u8 sZapdosGfx150_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_150_1.4bpp.lz");
 static const ax_sprite sZapdosSprites150[] = {
 	{sZapdosGfx150, ARRAY_COUNT(sZapdosGfx150)}, 
 	{NULL, 32}, 
 	{sZapdosGfx150_1, ARRAY_COUNT(sZapdosGfx150_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx151[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_151.4bpp");
-static const u8 sZapdosGfx151_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_151_1.4bpp");
-static const u8 sZapdosGfx151_2[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_151_2.4bpp");
+static const u8 sZapdosGfx151[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_151.4bpp.lz");
+static const u8 sZapdosGfx151_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_151_1.4bpp.lz");
+static const u8 sZapdosGfx151_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_151_2.4bpp.lz");
 static const ax_sprite sZapdosSprites151[] = {
 	{sZapdosGfx151, ARRAY_COUNT(sZapdosGfx151)}, 
 	{NULL, 32}, 
@@ -4074,299 +4074,299 @@ static const ax_sprite sZapdosSprites151[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx152[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_152.4bpp");
+static const u8 sZapdosGfx152[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_152.4bpp.lz");
 static const ax_sprite sZapdosSprites152[] = {
 	{NULL, 32}, 
 	{sZapdosGfx152, ARRAY_COUNT(sZapdosGfx152)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx153[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_153.4bpp");
+static const u8 sZapdosGfx153[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_153.4bpp.lz");
 static const ax_sprite sZapdosSprites153[] = {
 	{sZapdosGfx153, ARRAY_COUNT(sZapdosGfx153)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx154[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_154.4bpp");
+static const u8 sZapdosGfx154[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_154.4bpp.lz");
 static const ax_sprite sZapdosSprites154[] = {
 	{sZapdosGfx154, ARRAY_COUNT(sZapdosGfx154)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx155[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_155.4bpp");
+static const u8 sZapdosGfx155[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_155.4bpp.lz");
 static const ax_sprite sZapdosSprites155[] = {
 	{sZapdosGfx155, ARRAY_COUNT(sZapdosGfx155)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx156[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_156.4bpp");
+static const u8 sZapdosGfx156[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_156.4bpp.lz");
 static const ax_sprite sZapdosSprites156[] = {
 	{sZapdosGfx156, ARRAY_COUNT(sZapdosGfx156)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx157[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_157.4bpp");
+static const u8 sZapdosGfx157[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_157.4bpp.lz");
 static const ax_sprite sZapdosSprites157[] = {
 	{NULL, 32}, 
 	{sZapdosGfx157, ARRAY_COUNT(sZapdosGfx157)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx158[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_158.4bpp");
+static const u8 sZapdosGfx158[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_158.4bpp.lz");
 static const ax_sprite sZapdosSprites158[] = {
 	{sZapdosGfx158, ARRAY_COUNT(sZapdosGfx158)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx159[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_159.4bpp");
+static const u8 sZapdosGfx159[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_159.4bpp.lz");
 static const ax_sprite sZapdosSprites159[] = {
 	{sZapdosGfx159, ARRAY_COUNT(sZapdosGfx159)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx160[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_160.4bpp");
+static const u8 sZapdosGfx160[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_160.4bpp.lz");
 static const ax_sprite sZapdosSprites160[] = {
 	{sZapdosGfx160, ARRAY_COUNT(sZapdosGfx160)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx161[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_161.4bpp");
+static const u8 sZapdosGfx161[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_161.4bpp.lz");
 static const ax_sprite sZapdosSprites161[] = {
 	{sZapdosGfx161, ARRAY_COUNT(sZapdosGfx161)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx162[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_162.4bpp");
+static const u8 sZapdosGfx162[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_162.4bpp.lz");
 static const ax_sprite sZapdosSprites162[] = {
 	{sZapdosGfx162, ARRAY_COUNT(sZapdosGfx162)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx163[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_163.4bpp");
+static const u8 sZapdosGfx163[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_163.4bpp.lz");
 static const ax_sprite sZapdosSprites163[] = {
 	{sZapdosGfx163, ARRAY_COUNT(sZapdosGfx163)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx164[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_164.4bpp");
+static const u8 sZapdosGfx164[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_164.4bpp.lz");
 static const ax_sprite sZapdosSprites164[] = {
 	{sZapdosGfx164, ARRAY_COUNT(sZapdosGfx164)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx165[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_165.4bpp");
+static const u8 sZapdosGfx165[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_165.4bpp.lz");
 static const ax_sprite sZapdosSprites165[] = {
 	{sZapdosGfx165, ARRAY_COUNT(sZapdosGfx165)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx166[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_166.4bpp");
+static const u8 sZapdosGfx166[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_166.4bpp.lz");
 static const ax_sprite sZapdosSprites166[] = {
 	{sZapdosGfx166, ARRAY_COUNT(sZapdosGfx166)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx167[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_167.4bpp");
+static const u8 sZapdosGfx167[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_167.4bpp.lz");
 static const ax_sprite sZapdosSprites167[] = {
 	{sZapdosGfx167, ARRAY_COUNT(sZapdosGfx167)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx168[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_168.4bpp");
+static const u8 sZapdosGfx168[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_168.4bpp.lz");
 static const ax_sprite sZapdosSprites168[] = {
 	{sZapdosGfx168, ARRAY_COUNT(sZapdosGfx168)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx169[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_169.4bpp");
+static const u8 sZapdosGfx169[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_169.4bpp.lz");
 static const ax_sprite sZapdosSprites169[] = {
 	{sZapdosGfx169, ARRAY_COUNT(sZapdosGfx169)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx170[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_170.4bpp");
+static const u8 sZapdosGfx170[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_170.4bpp.lz");
 static const ax_sprite sZapdosSprites170[] = {
 	{sZapdosGfx170, ARRAY_COUNT(sZapdosGfx170)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx171[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_171.4bpp");
+static const u8 sZapdosGfx171[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_171.4bpp.lz");
 static const ax_sprite sZapdosSprites171[] = {
 	{sZapdosGfx171, ARRAY_COUNT(sZapdosGfx171)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx172[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_172.4bpp");
-static const u8 sZapdosGfx172_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_172_1.4bpp");
+static const u8 sZapdosGfx172[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_172.4bpp.lz");
+static const u8 sZapdosGfx172_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_172_1.4bpp.lz");
 static const ax_sprite sZapdosSprites172[] = {
 	{sZapdosGfx172, ARRAY_COUNT(sZapdosGfx172)}, 
 	{NULL, 32}, 
 	{sZapdosGfx172_1, ARRAY_COUNT(sZapdosGfx172_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx173[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_173.4bpp");
+static const u8 sZapdosGfx173[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_173.4bpp.lz");
 static const ax_sprite sZapdosSprites173[] = {
 	{sZapdosGfx173, ARRAY_COUNT(sZapdosGfx173)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx174[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_174.4bpp");
+static const u8 sZapdosGfx174[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_174.4bpp.lz");
 static const ax_sprite sZapdosSprites174[] = {
 	{sZapdosGfx174, ARRAY_COUNT(sZapdosGfx174)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx175[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_175.4bpp");
+static const u8 sZapdosGfx175[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_175.4bpp.lz");
 static const ax_sprite sZapdosSprites175[] = {
 	{sZapdosGfx175, ARRAY_COUNT(sZapdosGfx175)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx176[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_176.4bpp");
+static const u8 sZapdosGfx176[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_176.4bpp.lz");
 static const ax_sprite sZapdosSprites176[] = {
 	{NULL, 32}, 
 	{sZapdosGfx176, ARRAY_COUNT(sZapdosGfx176)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx177[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_177.4bpp");
+static const u8 sZapdosGfx177[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_177.4bpp.lz");
 static const ax_sprite sZapdosSprites177[] = {
 	{sZapdosGfx177, ARRAY_COUNT(sZapdosGfx177)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx178[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_178.4bpp");
+static const u8 sZapdosGfx178[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_178.4bpp.lz");
 static const ax_sprite sZapdosSprites178[] = {
 	{sZapdosGfx178, ARRAY_COUNT(sZapdosGfx178)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx179[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_179.4bpp");
+static const u8 sZapdosGfx179[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_179.4bpp.lz");
 static const ax_sprite sZapdosSprites179[] = {
 	{NULL, 64}, 
 	{sZapdosGfx179, ARRAY_COUNT(sZapdosGfx179)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx180[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_180.4bpp");
+static const u8 sZapdosGfx180[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_180.4bpp.lz");
 static const ax_sprite sZapdosSprites180[] = {
 	{NULL, 32}, 
 	{sZapdosGfx180, ARRAY_COUNT(sZapdosGfx180)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx181[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_181.4bpp");
+static const u8 sZapdosGfx181[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_181.4bpp.lz");
 static const ax_sprite sZapdosSprites181[] = {
 	{sZapdosGfx181, ARRAY_COUNT(sZapdosGfx181)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx182[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_182.4bpp");
+static const u8 sZapdosGfx182[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_182.4bpp.lz");
 static const ax_sprite sZapdosSprites182[] = {
 	{sZapdosGfx182, ARRAY_COUNT(sZapdosGfx182)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx183[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_183.4bpp");
+static const u8 sZapdosGfx183[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_183.4bpp.lz");
 static const ax_sprite sZapdosSprites183[] = {
 	{sZapdosGfx183, ARRAY_COUNT(sZapdosGfx183)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx184[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_184.4bpp");
+static const u8 sZapdosGfx184[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_184.4bpp.lz");
 static const ax_sprite sZapdosSprites184[] = {
 	{sZapdosGfx184, ARRAY_COUNT(sZapdosGfx184)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx185[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_185.4bpp");
+static const u8 sZapdosGfx185[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_185.4bpp.lz");
 static const ax_sprite sZapdosSprites185[] = {
 	{sZapdosGfx185, ARRAY_COUNT(sZapdosGfx185)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx186[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_186.4bpp");
+static const u8 sZapdosGfx186[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_186.4bpp.lz");
 static const ax_sprite sZapdosSprites186[] = {
 	{sZapdosGfx186, ARRAY_COUNT(sZapdosGfx186)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx187[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_187.4bpp");
+static const u8 sZapdosGfx187[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_187.4bpp.lz");
 static const ax_sprite sZapdosSprites187[] = {
 	{sZapdosGfx187, ARRAY_COUNT(sZapdosGfx187)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx188[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_188.4bpp");
+static const u8 sZapdosGfx188[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_188.4bpp.lz");
 static const ax_sprite sZapdosSprites188[] = {
 	{sZapdosGfx188, ARRAY_COUNT(sZapdosGfx188)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx189[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_189.4bpp");
+static const u8 sZapdosGfx189[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_189.4bpp.lz");
 static const ax_sprite sZapdosSprites189[] = {
 	{sZapdosGfx189, ARRAY_COUNT(sZapdosGfx189)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx190[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_190.4bpp");
+static const u8 sZapdosGfx190[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_190.4bpp.lz");
 static const ax_sprite sZapdosSprites190[] = {
 	{sZapdosGfx190, ARRAY_COUNT(sZapdosGfx190)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx191[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_191.4bpp");
+static const u8 sZapdosGfx191[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_191.4bpp.lz");
 static const ax_sprite sZapdosSprites191[] = {
 	{sZapdosGfx191, ARRAY_COUNT(sZapdosGfx191)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx192[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_192.4bpp");
+static const u8 sZapdosGfx192[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_192.4bpp.lz");
 static const ax_sprite sZapdosSprites192[] = {
 	{NULL, 32}, 
 	{sZapdosGfx192, ARRAY_COUNT(sZapdosGfx192)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx193[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_193.4bpp");
+static const u8 sZapdosGfx193[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_193.4bpp.lz");
 static const ax_sprite sZapdosSprites193[] = {
 	{NULL, 32}, 
 	{sZapdosGfx193, ARRAY_COUNT(sZapdosGfx193)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx194[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_194.4bpp");
+static const u8 sZapdosGfx194[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_194.4bpp.lz");
 static const ax_sprite sZapdosSprites194[] = {
 	{sZapdosGfx194, ARRAY_COUNT(sZapdosGfx194)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx195[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_195.4bpp");
-static const u8 sZapdosGfx195_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_195_1.4bpp");
+static const u8 sZapdosGfx195[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_195.4bpp.lz");
+static const u8 sZapdosGfx195_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_195_1.4bpp.lz");
 static const ax_sprite sZapdosSprites195[] = {
 	{sZapdosGfx195, ARRAY_COUNT(sZapdosGfx195)}, 
 	{NULL, 64}, 
 	{sZapdosGfx195_1, ARRAY_COUNT(sZapdosGfx195_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx196[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_196.4bpp");
+static const u8 sZapdosGfx196[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_196.4bpp.lz");
 static const ax_sprite sZapdosSprites196[] = {
 	{sZapdosGfx196, ARRAY_COUNT(sZapdosGfx196)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx197[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_197.4bpp");
+static const u8 sZapdosGfx197[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_197.4bpp.lz");
 static const ax_sprite sZapdosSprites197[] = {
 	{sZapdosGfx197, ARRAY_COUNT(sZapdosGfx197)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx198[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_198.4bpp");
+static const u8 sZapdosGfx198[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_198.4bpp.lz");
 static const ax_sprite sZapdosSprites198[] = {
 	{sZapdosGfx198, ARRAY_COUNT(sZapdosGfx198)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx199[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_199.4bpp");
-static const u8 sZapdosGfx199_1[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_199_1.4bpp");
+static const u8 sZapdosGfx199[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_199.4bpp.lz");
+static const u8 sZapdosGfx199_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_199_1.4bpp.lz");
 static const ax_sprite sZapdosSprites199[] = {
 	{sZapdosGfx199, ARRAY_COUNT(sZapdosGfx199)}, 
 	{NULL, 32}, 
 	{sZapdosGfx199_1, ARRAY_COUNT(sZapdosGfx199_1)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx200[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_200.4bpp");
+static const u8 sZapdosGfx200[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_200.4bpp.lz");
 static const ax_sprite sZapdosSprites200[] = {
 	{sZapdosGfx200, ARRAY_COUNT(sZapdosGfx200)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx201[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_201.4bpp");
+static const u8 sZapdosGfx201[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_201.4bpp.lz");
 static const ax_sprite sZapdosSprites201[] = {
 	{sZapdosGfx201, ARRAY_COUNT(sZapdosGfx201)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx202[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_202.4bpp");
+static const u8 sZapdosGfx202[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_202.4bpp.lz");
 static const ax_sprite sZapdosSprites202[] = {
 	{sZapdosGfx202, ARRAY_COUNT(sZapdosGfx202)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx203[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_203.4bpp");
+static const u8 sZapdosGfx203[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_203.4bpp.lz");
 static const ax_sprite sZapdosSprites203[] = {
 	{sZapdosGfx203, ARRAY_COUNT(sZapdosGfx203)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx204[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_204.4bpp");
+static const u8 sZapdosGfx204[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_204.4bpp.lz");
 static const ax_sprite sZapdosSprites204[] = {
 	{sZapdosGfx204, ARRAY_COUNT(sZapdosGfx204)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx205[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_205.4bpp");
+static const u8 sZapdosGfx205[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_205.4bpp.lz");
 static const ax_sprite sZapdosSprites205[] = {
 	{sZapdosGfx205, ARRAY_COUNT(sZapdosGfx205)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx206[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_206.4bpp");
+static const u8 sZapdosGfx206[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_206.4bpp.lz");
 static const ax_sprite sZapdosSprites206[] = {
 	{sZapdosGfx206, ARRAY_COUNT(sZapdosGfx206)}, 
 	{NULL, 0}
 };
-static const u8 sZapdosGfx207[] = INCBIN_U8("graphics/ax/mon/zapdos/sprite_207.4bpp");
+static const u8 sZapdosGfx207[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zapdos/sprite_207.4bpp.lz");
 static const ax_sprite sZapdosSprites207[] = {
 	{NULL, 32}, 
 	{sZapdosGfx207, ARRAY_COUNT(sZapdosGfx207)}, 

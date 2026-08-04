@@ -2219,97 +2219,97 @@ static const ax_anim sRemoraidAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRemoraidGfx1[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_1.4bpp");
+static const u8 sRemoraidGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_1.4bpp.lz");
 static const ax_sprite sRemoraidSprites1[] = {
 	{sRemoraidGfx1, ARRAY_COUNT(sRemoraidGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx2[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_2.4bpp");
+static const u8 sRemoraidGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_2.4bpp.lz");
 static const ax_sprite sRemoraidSprites2[] = {
 	{sRemoraidGfx2, ARRAY_COUNT(sRemoraidGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx3[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_3.4bpp");
+static const u8 sRemoraidGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_3.4bpp.lz");
 static const ax_sprite sRemoraidSprites3[] = {
 	{sRemoraidGfx3, ARRAY_COUNT(sRemoraidGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx4[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_4.4bpp");
+static const u8 sRemoraidGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_4.4bpp.lz");
 static const ax_sprite sRemoraidSprites4[] = {
 	{sRemoraidGfx4, ARRAY_COUNT(sRemoraidGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx5[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_5.4bpp");
+static const u8 sRemoraidGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_5.4bpp.lz");
 static const ax_sprite sRemoraidSprites5[] = {
 	{sRemoraidGfx5, ARRAY_COUNT(sRemoraidGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx6[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_6.4bpp");
+static const u8 sRemoraidGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_6.4bpp.lz");
 static const ax_sprite sRemoraidSprites6[] = {
 	{sRemoraidGfx6, ARRAY_COUNT(sRemoraidGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx7[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_7.4bpp");
+static const u8 sRemoraidGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_7.4bpp.lz");
 static const ax_sprite sRemoraidSprites7[] = {
 	{sRemoraidGfx7, ARRAY_COUNT(sRemoraidGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx8[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_8.4bpp");
+static const u8 sRemoraidGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_8.4bpp.lz");
 static const ax_sprite sRemoraidSprites8[] = {
 	{sRemoraidGfx8, ARRAY_COUNT(sRemoraidGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx9[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_9.4bpp");
+static const u8 sRemoraidGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_9.4bpp.lz");
 static const ax_sprite sRemoraidSprites9[] = {
 	{sRemoraidGfx9, ARRAY_COUNT(sRemoraidGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx10[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_10.4bpp");
+static const u8 sRemoraidGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_10.4bpp.lz");
 static const ax_sprite sRemoraidSprites10[] = {
 	{sRemoraidGfx10, ARRAY_COUNT(sRemoraidGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx11[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_11.4bpp");
+static const u8 sRemoraidGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_11.4bpp.lz");
 static const ax_sprite sRemoraidSprites11[] = {
 	{sRemoraidGfx11, ARRAY_COUNT(sRemoraidGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx12[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_12.4bpp");
+static const u8 sRemoraidGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_12.4bpp.lz");
 static const ax_sprite sRemoraidSprites12[] = {
 	{sRemoraidGfx12, ARRAY_COUNT(sRemoraidGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx13[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_13.4bpp");
+static const u8 sRemoraidGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_13.4bpp.lz");
 static const ax_sprite sRemoraidSprites13[] = {
 	{sRemoraidGfx13, ARRAY_COUNT(sRemoraidGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx14[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_14.4bpp");
+static const u8 sRemoraidGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_14.4bpp.lz");
 static const ax_sprite sRemoraidSprites14[] = {
 	{sRemoraidGfx14, ARRAY_COUNT(sRemoraidGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx15[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_15.4bpp");
+static const u8 sRemoraidGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_15.4bpp.lz");
 static const ax_sprite sRemoraidSprites15[] = {
 	{sRemoraidGfx15, ARRAY_COUNT(sRemoraidGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx16[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_16.4bpp");
+static const u8 sRemoraidGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_16.4bpp.lz");
 static const ax_sprite sRemoraidSprites16[] = {
 	{sRemoraidGfx16, ARRAY_COUNT(sRemoraidGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx17[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_17.4bpp");
-static const u8 sRemoraidGfx17_1[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_17_1.4bpp");
+static const u8 sRemoraidGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_17.4bpp.lz");
+static const u8 sRemoraidGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_17_1.4bpp.lz");
 static const ax_sprite sRemoraidSprites17[] = {
 	{sRemoraidGfx17, ARRAY_COUNT(sRemoraidGfx17)}, 
 	{NULL, 32}, 
 	{sRemoraidGfx17_1, ARRAY_COUNT(sRemoraidGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx18[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_18.4bpp");
-static const u8 sRemoraidGfx18_1[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_18_1.4bpp");
-static const u8 sRemoraidGfx18_2[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_18_2.4bpp");
+static const u8 sRemoraidGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_18.4bpp.lz");
+static const u8 sRemoraidGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_18_1.4bpp.lz");
+static const u8 sRemoraidGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_18_2.4bpp.lz");
 static const ax_sprite sRemoraidSprites18[] = {
 	{sRemoraidGfx18, ARRAY_COUNT(sRemoraidGfx18)}, 
 	{NULL, 64}, 
@@ -2319,26 +2319,26 @@ static const ax_sprite sRemoraidSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx19[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_19.4bpp");
+static const u8 sRemoraidGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_19.4bpp.lz");
 static const ax_sprite sRemoraidSprites19[] = {
 	{sRemoraidGfx19, ARRAY_COUNT(sRemoraidGfx19)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx20[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_20.4bpp");
+static const u8 sRemoraidGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_20.4bpp.lz");
 static const ax_sprite sRemoraidSprites20[] = {
 	{sRemoraidGfx20, ARRAY_COUNT(sRemoraidGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx21[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_21.4bpp");
+static const u8 sRemoraidGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_21.4bpp.lz");
 static const ax_sprite sRemoraidSprites21[] = {
 	{sRemoraidGfx21, ARRAY_COUNT(sRemoraidGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx22[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_22.4bpp");
-static const u8 sRemoraidGfx22_1[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_22_1.4bpp");
-static const u8 sRemoraidGfx22_2[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_22_2.4bpp");
+static const u8 sRemoraidGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_22.4bpp.lz");
+static const u8 sRemoraidGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_22_1.4bpp.lz");
+static const u8 sRemoraidGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_22_2.4bpp.lz");
 static const ax_sprite sRemoraidSprites22[] = {
 	{NULL, 32}, 
 	{sRemoraidGfx22, ARRAY_COUNT(sRemoraidGfx22)}, 
@@ -2349,10 +2349,10 @@ static const ax_sprite sRemoraidSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx23[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_23.4bpp");
-static const u8 sRemoraidGfx23_1[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_23_1.4bpp");
-static const u8 sRemoraidGfx23_2[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_23_2.4bpp");
-static const u8 sRemoraidGfx23_3[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_23_3.4bpp");
+static const u8 sRemoraidGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_23.4bpp.lz");
+static const u8 sRemoraidGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_23_1.4bpp.lz");
+static const u8 sRemoraidGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_23_2.4bpp.lz");
+static const u8 sRemoraidGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_23_3.4bpp.lz");
 static const ax_sprite sRemoraidSprites23[] = {
 	{sRemoraidGfx23, ARRAY_COUNT(sRemoraidGfx23)}, 
 	{NULL, 32}, 
@@ -2364,9 +2364,9 @@ static const ax_sprite sRemoraidSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx24[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_24.4bpp");
-static const u8 sRemoraidGfx24_1[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_24_1.4bpp");
-static const u8 sRemoraidGfx24_2[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_24_2.4bpp");
+static const u8 sRemoraidGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_24.4bpp.lz");
+static const u8 sRemoraidGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_24_1.4bpp.lz");
+static const u8 sRemoraidGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_24_2.4bpp.lz");
 static const ax_sprite sRemoraidSprites24[] = {
 	{sRemoraidGfx24, ARRAY_COUNT(sRemoraidGfx24)}, 
 	{NULL, 32}, 
@@ -2376,51 +2376,51 @@ static const ax_sprite sRemoraidSprites24[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx25[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_25.4bpp");
+static const u8 sRemoraidGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_25.4bpp.lz");
 static const ax_sprite sRemoraidSprites25[] = {
 	{sRemoraidGfx25, ARRAY_COUNT(sRemoraidGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx26[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_26.4bpp");
+static const u8 sRemoraidGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_26.4bpp.lz");
 static const ax_sprite sRemoraidSprites26[] = {
 	{sRemoraidGfx26, ARRAY_COUNT(sRemoraidGfx26)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx27[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_27.4bpp");
+static const u8 sRemoraidGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_27.4bpp.lz");
 static const ax_sprite sRemoraidSprites27[] = {
 	{sRemoraidGfx27, ARRAY_COUNT(sRemoraidGfx27)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx28[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_28.4bpp");
+static const u8 sRemoraidGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_28.4bpp.lz");
 static const ax_sprite sRemoraidSprites28[] = {
 	{sRemoraidGfx28, ARRAY_COUNT(sRemoraidGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx29[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_29.4bpp");
+static const u8 sRemoraidGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_29.4bpp.lz");
 static const ax_sprite sRemoraidSprites29[] = {
 	{sRemoraidGfx29, ARRAY_COUNT(sRemoraidGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx30[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_30.4bpp");
+static const u8 sRemoraidGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_30.4bpp.lz");
 static const ax_sprite sRemoraidSprites30[] = {
 	{sRemoraidGfx30, ARRAY_COUNT(sRemoraidGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx31[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_31.4bpp");
+static const u8 sRemoraidGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_31.4bpp.lz");
 static const ax_sprite sRemoraidSprites31[] = {
 	{sRemoraidGfx31, ARRAY_COUNT(sRemoraidGfx31)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx32[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_32.4bpp");
-static const u8 sRemoraidGfx32_1[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_32_1.4bpp");
-static const u8 sRemoraidGfx32_2[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_32_2.4bpp");
+static const u8 sRemoraidGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_32.4bpp.lz");
+static const u8 sRemoraidGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_32_1.4bpp.lz");
+static const u8 sRemoraidGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_32_2.4bpp.lz");
 static const ax_sprite sRemoraidSprites32[] = {
 	{sRemoraidGfx32, ARRAY_COUNT(sRemoraidGfx32)}, 
 	{NULL, 64}, 
@@ -2430,84 +2430,84 @@ static const ax_sprite sRemoraidSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx33[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_33.4bpp");
+static const u8 sRemoraidGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_33.4bpp.lz");
 static const ax_sprite sRemoraidSprites33[] = {
 	{sRemoraidGfx33, ARRAY_COUNT(sRemoraidGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx34[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_34.4bpp");
+static const u8 sRemoraidGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_34.4bpp.lz");
 static const ax_sprite sRemoraidSprites34[] = {
 	{sRemoraidGfx34, ARRAY_COUNT(sRemoraidGfx34)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx35[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_35.4bpp");
+static const u8 sRemoraidGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_35.4bpp.lz");
 static const ax_sprite sRemoraidSprites35[] = {
 	{sRemoraidGfx35, ARRAY_COUNT(sRemoraidGfx35)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx36[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_36.4bpp");
+static const u8 sRemoraidGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_36.4bpp.lz");
 static const ax_sprite sRemoraidSprites36[] = {
 	{sRemoraidGfx36, ARRAY_COUNT(sRemoraidGfx36)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx37[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_37.4bpp");
+static const u8 sRemoraidGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_37.4bpp.lz");
 static const ax_sprite sRemoraidSprites37[] = {
 	{sRemoraidGfx37, ARRAY_COUNT(sRemoraidGfx37)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx38[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_38.4bpp");
+static const u8 sRemoraidGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_38.4bpp.lz");
 static const ax_sprite sRemoraidSprites38[] = {
 	{sRemoraidGfx38, ARRAY_COUNT(sRemoraidGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx39[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_39.4bpp");
+static const u8 sRemoraidGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_39.4bpp.lz");
 static const ax_sprite sRemoraidSprites39[] = {
 	{sRemoraidGfx39, ARRAY_COUNT(sRemoraidGfx39)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx40[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_40.4bpp");
+static const u8 sRemoraidGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_40.4bpp.lz");
 static const ax_sprite sRemoraidSprites40[] = {
 	{sRemoraidGfx40, ARRAY_COUNT(sRemoraidGfx40)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx41[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_41.4bpp");
+static const u8 sRemoraidGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_41.4bpp.lz");
 static const ax_sprite sRemoraidSprites41[] = {
 	{sRemoraidGfx41, ARRAY_COUNT(sRemoraidGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx42[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_42.4bpp");
+static const u8 sRemoraidGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_42.4bpp.lz");
 static const ax_sprite sRemoraidSprites42[] = {
 	{sRemoraidGfx42, ARRAY_COUNT(sRemoraidGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx43[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_43.4bpp");
+static const u8 sRemoraidGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_43.4bpp.lz");
 static const ax_sprite sRemoraidSprites43[] = {
 	{sRemoraidGfx43, ARRAY_COUNT(sRemoraidGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx44[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_44.4bpp");
+static const u8 sRemoraidGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_44.4bpp.lz");
 static const ax_sprite sRemoraidSprites44[] = {
 	{sRemoraidGfx44, ARRAY_COUNT(sRemoraidGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx45[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_45.4bpp");
+static const u8 sRemoraidGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_45.4bpp.lz");
 static const ax_sprite sRemoraidSprites45[] = {
 	{sRemoraidGfx45, ARRAY_COUNT(sRemoraidGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx46[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_46.4bpp");
+static const u8 sRemoraidGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_46.4bpp.lz");
 static const ax_sprite sRemoraidSprites46[] = {
 	{sRemoraidGfx46, ARRAY_COUNT(sRemoraidGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sRemoraidGfx47[] = INCBIN_U8("graphics/ax/mon/remoraid/sprite_47.4bpp");
+static const u8 sRemoraidGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/remoraid/sprite_47.4bpp.lz");
 static const ax_sprite sRemoraidSprites47[] = {
 	{sRemoraidGfx47, ARRAY_COUNT(sRemoraidGfx47)}, 
 	{NULL, 0}

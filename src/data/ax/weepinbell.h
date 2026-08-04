@@ -2115,129 +2115,129 @@ static const ax_anim sWeepinbellAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWeepinbellGfx1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_1.4bpp");
+static const u8 sWeepinbellGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_1.4bpp.lz");
 static const ax_sprite sWeepinbellSprites1[] = {
 	{sWeepinbellGfx1, ARRAY_COUNT(sWeepinbellGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_2.4bpp");
+static const u8 sWeepinbellGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites2[] = {
 	{sWeepinbellGfx2, ARRAY_COUNT(sWeepinbellGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx3[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_3.4bpp");
+static const u8 sWeepinbellGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_3.4bpp.lz");
 static const ax_sprite sWeepinbellSprites3[] = {
 	{sWeepinbellGfx3, ARRAY_COUNT(sWeepinbellGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx4[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_4.4bpp");
+static const u8 sWeepinbellGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_4.4bpp.lz");
 static const ax_sprite sWeepinbellSprites4[] = {
 	{sWeepinbellGfx4, ARRAY_COUNT(sWeepinbellGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx5[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_5.4bpp");
+static const u8 sWeepinbellGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_5.4bpp.lz");
 static const ax_sprite sWeepinbellSprites5[] = {
 	{sWeepinbellGfx5, ARRAY_COUNT(sWeepinbellGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx6[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_6.4bpp");
+static const u8 sWeepinbellGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_6.4bpp.lz");
 static const ax_sprite sWeepinbellSprites6[] = {
 	{sWeepinbellGfx6, ARRAY_COUNT(sWeepinbellGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx7[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_7.4bpp");
+static const u8 sWeepinbellGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_7.4bpp.lz");
 static const ax_sprite sWeepinbellSprites7[] = {
 	{sWeepinbellGfx7, ARRAY_COUNT(sWeepinbellGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx8[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_8.4bpp");
+static const u8 sWeepinbellGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_8.4bpp.lz");
 static const ax_sprite sWeepinbellSprites8[] = {
 	{sWeepinbellGfx8, ARRAY_COUNT(sWeepinbellGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx9[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_9.4bpp");
+static const u8 sWeepinbellGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_9.4bpp.lz");
 static const ax_sprite sWeepinbellSprites9[] = {
 	{sWeepinbellGfx9, ARRAY_COUNT(sWeepinbellGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx10[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_10.4bpp");
+static const u8 sWeepinbellGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_10.4bpp.lz");
 static const ax_sprite sWeepinbellSprites10[] = {
 	{sWeepinbellGfx10, ARRAY_COUNT(sWeepinbellGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx11[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_11.4bpp");
+static const u8 sWeepinbellGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_11.4bpp.lz");
 static const ax_sprite sWeepinbellSprites11[] = {
 	{sWeepinbellGfx11, ARRAY_COUNT(sWeepinbellGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx12[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_12.4bpp");
+static const u8 sWeepinbellGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_12.4bpp.lz");
 static const ax_sprite sWeepinbellSprites12[] = {
 	{sWeepinbellGfx12, ARRAY_COUNT(sWeepinbellGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx13[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_13.4bpp");
+static const u8 sWeepinbellGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_13.4bpp.lz");
 static const ax_sprite sWeepinbellSprites13[] = {
 	{sWeepinbellGfx13, ARRAY_COUNT(sWeepinbellGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx14[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_14.4bpp");
+static const u8 sWeepinbellGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_14.4bpp.lz");
 static const ax_sprite sWeepinbellSprites14[] = {
 	{sWeepinbellGfx14, ARRAY_COUNT(sWeepinbellGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx15[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_15.4bpp");
+static const u8 sWeepinbellGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_15.4bpp.lz");
 static const ax_sprite sWeepinbellSprites15[] = {
 	{sWeepinbellGfx15, ARRAY_COUNT(sWeepinbellGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx16[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_16.4bpp");
+static const u8 sWeepinbellGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_16.4bpp.lz");
 static const ax_sprite sWeepinbellSprites16[] = {
 	{sWeepinbellGfx16, ARRAY_COUNT(sWeepinbellGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx17[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_17.4bpp");
+static const u8 sWeepinbellGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_17.4bpp.lz");
 static const ax_sprite sWeepinbellSprites17[] = {
 	{sWeepinbellGfx17, ARRAY_COUNT(sWeepinbellGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx18[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_18.4bpp");
+static const u8 sWeepinbellGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_18.4bpp.lz");
 static const ax_sprite sWeepinbellSprites18[] = {
 	{sWeepinbellGfx18, ARRAY_COUNT(sWeepinbellGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx19[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_19.4bpp");
+static const u8 sWeepinbellGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_19.4bpp.lz");
 static const ax_sprite sWeepinbellSprites19[] = {
 	{sWeepinbellGfx19, ARRAY_COUNT(sWeepinbellGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx20[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_20.4bpp");
+static const u8 sWeepinbellGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_20.4bpp.lz");
 static const ax_sprite sWeepinbellSprites20[] = {
 	{sWeepinbellGfx20, ARRAY_COUNT(sWeepinbellGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx21[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_21.4bpp");
+static const u8 sWeepinbellGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_21.4bpp.lz");
 static const ax_sprite sWeepinbellSprites21[] = {
 	{sWeepinbellGfx21, ARRAY_COUNT(sWeepinbellGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx22[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_22.4bpp");
+static const u8 sWeepinbellGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_22.4bpp.lz");
 static const ax_sprite sWeepinbellSprites22[] = {
 	{sWeepinbellGfx22, ARRAY_COUNT(sWeepinbellGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx23[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_23.4bpp");
+static const u8 sWeepinbellGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_23.4bpp.lz");
 static const ax_sprite sWeepinbellSprites23[] = {
 	{sWeepinbellGfx23, ARRAY_COUNT(sWeepinbellGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx24[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_24.4bpp");
+static const u8 sWeepinbellGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_24.4bpp.lz");
 static const ax_sprite sWeepinbellSprites24[] = {
 	{sWeepinbellGfx24, ARRAY_COUNT(sWeepinbellGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx25[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_25.4bpp");
-static const u8 sWeepinbellGfx25_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_25_1.4bpp");
-static const u8 sWeepinbellGfx25_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_25_2.4bpp");
+static const u8 sWeepinbellGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_25.4bpp.lz");
+static const u8 sWeepinbellGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_25_1.4bpp.lz");
+static const u8 sWeepinbellGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_25_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites25[] = {
 	{NULL, 64}, 
 	{sWeepinbellGfx25, ARRAY_COUNT(sWeepinbellGfx25)}, 
@@ -2248,9 +2248,9 @@ static const ax_sprite sWeepinbellSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx26[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_26.4bpp");
-static const u8 sWeepinbellGfx26_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_26_1.4bpp");
-static const u8 sWeepinbellGfx26_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_26_2.4bpp");
+static const u8 sWeepinbellGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_26.4bpp.lz");
+static const u8 sWeepinbellGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_26_1.4bpp.lz");
+static const u8 sWeepinbellGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_26_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites26[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx26, ARRAY_COUNT(sWeepinbellGfx26)}, 
@@ -2261,8 +2261,8 @@ static const ax_sprite sWeepinbellSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx27[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_27.4bpp");
-static const u8 sWeepinbellGfx27_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_27_1.4bpp");
+static const u8 sWeepinbellGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_27.4bpp.lz");
+static const u8 sWeepinbellGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_27_1.4bpp.lz");
 static const ax_sprite sWeepinbellSprites27[] = {
 	{NULL, 192}, 
 	{sWeepinbellGfx27, ARRAY_COUNT(sWeepinbellGfx27)}, 
@@ -2271,9 +2271,9 @@ static const ax_sprite sWeepinbellSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx28[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_28.4bpp");
-static const u8 sWeepinbellGfx28_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_28_1.4bpp");
-static const u8 sWeepinbellGfx28_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_28_2.4bpp");
+static const u8 sWeepinbellGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_28.4bpp.lz");
+static const u8 sWeepinbellGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_28_1.4bpp.lz");
+static const u8 sWeepinbellGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_28_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites28[] = {
 	{sWeepinbellGfx28, ARRAY_COUNT(sWeepinbellGfx28)}, 
 	{NULL, 96}, 
@@ -2283,16 +2283,16 @@ static const ax_sprite sWeepinbellSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx29[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_29.4bpp");
+static const u8 sWeepinbellGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_29.4bpp.lz");
 static const ax_sprite sWeepinbellSprites29[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx29, ARRAY_COUNT(sWeepinbellGfx29)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx30[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_30.4bpp");
-static const u8 sWeepinbellGfx30_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_30_1.4bpp");
-static const u8 sWeepinbellGfx30_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_30_2.4bpp");
+static const u8 sWeepinbellGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_30.4bpp.lz");
+static const u8 sWeepinbellGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_30_1.4bpp.lz");
+static const u8 sWeepinbellGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_30_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites30[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx30, ARRAY_COUNT(sWeepinbellGfx30)}, 
@@ -2303,15 +2303,15 @@ static const ax_sprite sWeepinbellSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx31[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_31.4bpp");
+static const u8 sWeepinbellGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_31.4bpp.lz");
 static const ax_sprite sWeepinbellSprites31[] = {
 	{sWeepinbellGfx31, ARRAY_COUNT(sWeepinbellGfx31)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx32[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_32.4bpp");
-static const u8 sWeepinbellGfx32_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_32_1.4bpp");
-static const u8 sWeepinbellGfx32_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_32_2.4bpp");
+static const u8 sWeepinbellGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_32.4bpp.lz");
+static const u8 sWeepinbellGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_32_1.4bpp.lz");
+static const u8 sWeepinbellGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_32_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites32[] = {
 	{sWeepinbellGfx32, ARRAY_COUNT(sWeepinbellGfx32)}, 
 	{NULL, 32}, 
@@ -2321,8 +2321,8 @@ static const ax_sprite sWeepinbellSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx33[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_33.4bpp");
-static const u8 sWeepinbellGfx33_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_33_1.4bpp");
+static const u8 sWeepinbellGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_33.4bpp.lz");
+static const u8 sWeepinbellGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_33_1.4bpp.lz");
 static const ax_sprite sWeepinbellSprites33[] = {
 	{sWeepinbellGfx33, ARRAY_COUNT(sWeepinbellGfx33)}, 
 	{NULL, 64}, 
@@ -2330,8 +2330,8 @@ static const ax_sprite sWeepinbellSprites33[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx34[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_34.4bpp");
-static const u8 sWeepinbellGfx34_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_34_1.4bpp");
+static const u8 sWeepinbellGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_34.4bpp.lz");
+static const u8 sWeepinbellGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_34_1.4bpp.lz");
 static const ax_sprite sWeepinbellSprites34[] = {
 	{sWeepinbellGfx34, ARRAY_COUNT(sWeepinbellGfx34)}, 
 	{NULL, 32}, 
@@ -2339,17 +2339,17 @@ static const ax_sprite sWeepinbellSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx35[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_35.4bpp");
-static const u8 sWeepinbellGfx35_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_35_1.4bpp");
+static const u8 sWeepinbellGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_35.4bpp.lz");
+static const u8 sWeepinbellGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_35_1.4bpp.lz");
 static const ax_sprite sWeepinbellSprites35[] = {
 	{sWeepinbellGfx35, ARRAY_COUNT(sWeepinbellGfx35)}, 
 	{NULL, 64}, 
 	{sWeepinbellGfx35_1, ARRAY_COUNT(sWeepinbellGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx36[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_36.4bpp");
-static const u8 sWeepinbellGfx36_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_36_1.4bpp");
-static const u8 sWeepinbellGfx36_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_36_2.4bpp");
+static const u8 sWeepinbellGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_36.4bpp.lz");
+static const u8 sWeepinbellGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_36_1.4bpp.lz");
+static const u8 sWeepinbellGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_36_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites36[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx36, ARRAY_COUNT(sWeepinbellGfx36)}, 
@@ -2360,9 +2360,9 @@ static const ax_sprite sWeepinbellSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx37[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_37.4bpp");
-static const u8 sWeepinbellGfx37_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_37_1.4bpp");
-static const u8 sWeepinbellGfx37_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_37_2.4bpp");
+static const u8 sWeepinbellGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_37.4bpp.lz");
+static const u8 sWeepinbellGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_37_1.4bpp.lz");
+static const u8 sWeepinbellGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_37_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites37[] = {
 	{sWeepinbellGfx37, ARRAY_COUNT(sWeepinbellGfx37)}, 
 	{NULL, 128}, 
@@ -2372,9 +2372,9 @@ static const ax_sprite sWeepinbellSprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx38[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_38.4bpp");
-static const u8 sWeepinbellGfx38_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_38_1.4bpp");
-static const u8 sWeepinbellGfx38_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_38_2.4bpp");
+static const u8 sWeepinbellGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_38.4bpp.lz");
+static const u8 sWeepinbellGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_38_1.4bpp.lz");
+static const u8 sWeepinbellGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_38_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites38[] = {
 	{sWeepinbellGfx38, ARRAY_COUNT(sWeepinbellGfx38)}, 
 	{NULL, 64}, 
@@ -2384,17 +2384,17 @@ static const ax_sprite sWeepinbellSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx39[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_39.4bpp");
-static const u8 sWeepinbellGfx39_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_39_1.4bpp");
+static const u8 sWeepinbellGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_39.4bpp.lz");
+static const u8 sWeepinbellGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_39_1.4bpp.lz");
 static const ax_sprite sWeepinbellSprites39[] = {
 	{sWeepinbellGfx39, ARRAY_COUNT(sWeepinbellGfx39)}, 
 	{NULL, 32}, 
 	{sWeepinbellGfx39_1, ARRAY_COUNT(sWeepinbellGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx40[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_40.4bpp");
-static const u8 sWeepinbellGfx40_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_40_1.4bpp");
-static const u8 sWeepinbellGfx40_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_40_2.4bpp");
+static const u8 sWeepinbellGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_40.4bpp.lz");
+static const u8 sWeepinbellGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_40_1.4bpp.lz");
+static const u8 sWeepinbellGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_40_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites40[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx40, ARRAY_COUNT(sWeepinbellGfx40)}, 
@@ -2405,9 +2405,9 @@ static const ax_sprite sWeepinbellSprites40[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx41[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_41.4bpp");
-static const u8 sWeepinbellGfx41_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_41_1.4bpp");
-static const u8 sWeepinbellGfx41_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_41_2.4bpp");
+static const u8 sWeepinbellGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_41.4bpp.lz");
+static const u8 sWeepinbellGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_41_1.4bpp.lz");
+static const u8 sWeepinbellGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_41_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites41[] = {
 	{sWeepinbellGfx41, ARRAY_COUNT(sWeepinbellGfx41)}, 
 	{NULL, 32}, 
@@ -2417,9 +2417,9 @@ static const ax_sprite sWeepinbellSprites41[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx42[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_42.4bpp");
-static const u8 sWeepinbellGfx42_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_42_1.4bpp");
-static const u8 sWeepinbellGfx42_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_42_2.4bpp");
+static const u8 sWeepinbellGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_42.4bpp.lz");
+static const u8 sWeepinbellGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_42_1.4bpp.lz");
+static const u8 sWeepinbellGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_42_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites42[] = {
 	{sWeepinbellGfx42, ARRAY_COUNT(sWeepinbellGfx42)}, 
 	{NULL, 32}, 
@@ -2429,9 +2429,9 @@ static const ax_sprite sWeepinbellSprites42[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx43[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_43.4bpp");
-static const u8 sWeepinbellGfx43_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_43_1.4bpp");
-static const u8 sWeepinbellGfx43_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_43_2.4bpp");
+static const u8 sWeepinbellGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_43.4bpp.lz");
+static const u8 sWeepinbellGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_43_1.4bpp.lz");
+static const u8 sWeepinbellGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_43_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites43[] = {
 	{sWeepinbellGfx43, ARRAY_COUNT(sWeepinbellGfx43)}, 
 	{NULL, 32}, 
@@ -2441,9 +2441,9 @@ static const ax_sprite sWeepinbellSprites43[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx44[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_44.4bpp");
-static const u8 sWeepinbellGfx44_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_44_1.4bpp");
-static const u8 sWeepinbellGfx44_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_44_2.4bpp");
+static const u8 sWeepinbellGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_44.4bpp.lz");
+static const u8 sWeepinbellGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_44_1.4bpp.lz");
+static const u8 sWeepinbellGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_44_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites44[] = {
 	{NULL, 64}, 
 	{sWeepinbellGfx44, ARRAY_COUNT(sWeepinbellGfx44)}, 
@@ -2454,10 +2454,10 @@ static const ax_sprite sWeepinbellSprites44[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx45[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_45.4bpp");
-static const u8 sWeepinbellGfx45_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_45_1.4bpp");
-static const u8 sWeepinbellGfx45_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_45_2.4bpp");
-static const u8 sWeepinbellGfx45_3[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_45_3.4bpp");
+static const u8 sWeepinbellGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_45.4bpp.lz");
+static const u8 sWeepinbellGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_45_1.4bpp.lz");
+static const u8 sWeepinbellGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_45_2.4bpp.lz");
+static const u8 sWeepinbellGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_45_3.4bpp.lz");
 static const ax_sprite sWeepinbellSprites45[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx45, ARRAY_COUNT(sWeepinbellGfx45)}, 
@@ -2470,9 +2470,9 @@ static const ax_sprite sWeepinbellSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx46[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_46.4bpp");
-static const u8 sWeepinbellGfx46_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_46_1.4bpp");
-static const u8 sWeepinbellGfx46_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_46_2.4bpp");
+static const u8 sWeepinbellGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_46.4bpp.lz");
+static const u8 sWeepinbellGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_46_1.4bpp.lz");
+static const u8 sWeepinbellGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_46_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites46[] = {
 	{sWeepinbellGfx46, ARRAY_COUNT(sWeepinbellGfx46)}, 
 	{NULL, 64}, 
@@ -2482,16 +2482,16 @@ static const ax_sprite sWeepinbellSprites46[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx47[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_47.4bpp");
+static const u8 sWeepinbellGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_47.4bpp.lz");
 static const ax_sprite sWeepinbellSprites47[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx47, ARRAY_COUNT(sWeepinbellGfx47)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx48[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_48.4bpp");
-static const u8 sWeepinbellGfx48_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_48_1.4bpp");
-static const u8 sWeepinbellGfx48_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_48_2.4bpp");
+static const u8 sWeepinbellGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_48.4bpp.lz");
+static const u8 sWeepinbellGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_48_1.4bpp.lz");
+static const u8 sWeepinbellGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_48_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites48[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx48, ARRAY_COUNT(sWeepinbellGfx48)}, 
@@ -2502,9 +2502,9 @@ static const ax_sprite sWeepinbellSprites48[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx49[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_49.4bpp");
-static const u8 sWeepinbellGfx49_1[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_49_1.4bpp");
-static const u8 sWeepinbellGfx49_2[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_49_2.4bpp");
+static const u8 sWeepinbellGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_49.4bpp.lz");
+static const u8 sWeepinbellGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_49_1.4bpp.lz");
+static const u8 sWeepinbellGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_49_2.4bpp.lz");
 static const ax_sprite sWeepinbellSprites49[] = {
 	{NULL, 32}, 
 	{sWeepinbellGfx49, ARRAY_COUNT(sWeepinbellGfx49)}, 
@@ -2515,37 +2515,37 @@ static const ax_sprite sWeepinbellSprites49[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx50[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_50.4bpp");
+static const u8 sWeepinbellGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_50.4bpp.lz");
 static const ax_sprite sWeepinbellSprites50[] = {
 	{sWeepinbellGfx50, ARRAY_COUNT(sWeepinbellGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx51[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_51.4bpp");
+static const u8 sWeepinbellGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_51.4bpp.lz");
 static const ax_sprite sWeepinbellSprites51[] = {
 	{sWeepinbellGfx51, ARRAY_COUNT(sWeepinbellGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx52[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_52.4bpp");
+static const u8 sWeepinbellGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_52.4bpp.lz");
 static const ax_sprite sWeepinbellSprites52[] = {
 	{sWeepinbellGfx52, ARRAY_COUNT(sWeepinbellGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx53[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_53.4bpp");
+static const u8 sWeepinbellGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_53.4bpp.lz");
 static const ax_sprite sWeepinbellSprites53[] = {
 	{sWeepinbellGfx53, ARRAY_COUNT(sWeepinbellGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx54[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_54.4bpp");
+static const u8 sWeepinbellGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_54.4bpp.lz");
 static const ax_sprite sWeepinbellSprites54[] = {
 	{sWeepinbellGfx54, ARRAY_COUNT(sWeepinbellGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx55[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_55.4bpp");
+static const u8 sWeepinbellGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_55.4bpp.lz");
 static const ax_sprite sWeepinbellSprites55[] = {
 	{sWeepinbellGfx55, ARRAY_COUNT(sWeepinbellGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sWeepinbellGfx56[] = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_56.4bpp");
+static const u8 sWeepinbellGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weepinbell/sprite_56.4bpp.lz");
 static const ax_sprite sWeepinbellSprites56[] = {
 	{sWeepinbellGfx56, ARRAY_COUNT(sWeepinbellGfx56)}, 
 	{NULL, 0}

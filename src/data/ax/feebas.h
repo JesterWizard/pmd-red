@@ -2155,85 +2155,85 @@ static const ax_anim sFeebasAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sFeebasGfx1[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_1.4bpp");
+static const u8 sFeebasGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_1.4bpp.lz");
 static const ax_sprite sFeebasSprites1[] = {
 	{sFeebasGfx1, ARRAY_COUNT(sFeebasGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx2[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_2.4bpp");
+static const u8 sFeebasGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_2.4bpp.lz");
 static const ax_sprite sFeebasSprites2[] = {
 	{sFeebasGfx2, ARRAY_COUNT(sFeebasGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx3[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_3.4bpp");
+static const u8 sFeebasGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_3.4bpp.lz");
 static const ax_sprite sFeebasSprites3[] = {
 	{sFeebasGfx3, ARRAY_COUNT(sFeebasGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx4[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_4.4bpp");
+static const u8 sFeebasGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_4.4bpp.lz");
 static const ax_sprite sFeebasSprites4[] = {
 	{sFeebasGfx4, ARRAY_COUNT(sFeebasGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx5[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_5.4bpp");
+static const u8 sFeebasGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_5.4bpp.lz");
 static const ax_sprite sFeebasSprites5[] = {
 	{sFeebasGfx5, ARRAY_COUNT(sFeebasGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx6[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_6.4bpp");
+static const u8 sFeebasGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_6.4bpp.lz");
 static const ax_sprite sFeebasSprites6[] = {
 	{sFeebasGfx6, ARRAY_COUNT(sFeebasGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx7[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_7.4bpp");
+static const u8 sFeebasGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_7.4bpp.lz");
 static const ax_sprite sFeebasSprites7[] = {
 	{sFeebasGfx7, ARRAY_COUNT(sFeebasGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx8[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_8.4bpp");
+static const u8 sFeebasGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_8.4bpp.lz");
 static const ax_sprite sFeebasSprites8[] = {
 	{sFeebasGfx8, ARRAY_COUNT(sFeebasGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx9[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_9.4bpp");
+static const u8 sFeebasGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_9.4bpp.lz");
 static const ax_sprite sFeebasSprites9[] = {
 	{sFeebasGfx9, ARRAY_COUNT(sFeebasGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx10[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_10.4bpp");
+static const u8 sFeebasGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_10.4bpp.lz");
 static const ax_sprite sFeebasSprites10[] = {
 	{sFeebasGfx10, ARRAY_COUNT(sFeebasGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx11[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_11.4bpp");
+static const u8 sFeebasGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_11.4bpp.lz");
 static const ax_sprite sFeebasSprites11[] = {
 	{sFeebasGfx11, ARRAY_COUNT(sFeebasGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx12[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_12.4bpp");
+static const u8 sFeebasGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_12.4bpp.lz");
 static const ax_sprite sFeebasSprites12[] = {
 	{sFeebasGfx12, ARRAY_COUNT(sFeebasGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx13[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_13.4bpp");
+static const u8 sFeebasGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_13.4bpp.lz");
 static const ax_sprite sFeebasSprites13[] = {
 	{sFeebasGfx13, ARRAY_COUNT(sFeebasGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx14[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_14.4bpp");
+static const u8 sFeebasGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_14.4bpp.lz");
 static const ax_sprite sFeebasSprites14[] = {
 	{sFeebasGfx14, ARRAY_COUNT(sFeebasGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx15[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_15.4bpp");
+static const u8 sFeebasGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_15.4bpp.lz");
 static const ax_sprite sFeebasSprites15[] = {
 	{sFeebasGfx15, ARRAY_COUNT(sFeebasGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx16[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_16.4bpp");
-static const u8 sFeebasGfx16_1[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_16_1.4bpp");
-static const u8 sFeebasGfx16_2[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_16_2.4bpp");
-static const u8 sFeebasGfx16_3[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_16_3.4bpp");
+static const u8 sFeebasGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_16.4bpp.lz");
+static const u8 sFeebasGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_16_1.4bpp.lz");
+static const u8 sFeebasGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_16_2.4bpp.lz");
+static const u8 sFeebasGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_16_3.4bpp.lz");
 static const ax_sprite sFeebasSprites16[] = {
 	{NULL, 32}, 
 	{sFeebasGfx16, ARRAY_COUNT(sFeebasGfx16)}, 
@@ -2246,9 +2246,9 @@ static const ax_sprite sFeebasSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx17[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_17.4bpp");
-static const u8 sFeebasGfx17_1[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_17_1.4bpp");
-static const u8 sFeebasGfx17_2[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_17_2.4bpp");
+static const u8 sFeebasGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_17.4bpp.lz");
+static const u8 sFeebasGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_17_1.4bpp.lz");
+static const u8 sFeebasGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_17_2.4bpp.lz");
 static const ax_sprite sFeebasSprites17[] = {
 	{NULL, 32}, 
 	{sFeebasGfx17, ARRAY_COUNT(sFeebasGfx17)}, 
@@ -2259,18 +2259,18 @@ static const ax_sprite sFeebasSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx18[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_18.4bpp");
+static const u8 sFeebasGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_18.4bpp.lz");
 static const ax_sprite sFeebasSprites18[] = {
 	{NULL, 32}, 
 	{sFeebasGfx18, ARRAY_COUNT(sFeebasGfx18)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx19[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_19.4bpp");
-static const u8 sFeebasGfx19_1[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_19_1.4bpp");
-static const u8 sFeebasGfx19_2[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_19_2.4bpp");
-static const u8 sFeebasGfx19_3[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_19_3.4bpp");
-static const u8 sFeebasGfx19_4[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_19_4.4bpp");
+static const u8 sFeebasGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_19.4bpp.lz");
+static const u8 sFeebasGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_19_1.4bpp.lz");
+static const u8 sFeebasGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_19_2.4bpp.lz");
+static const u8 sFeebasGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_19_3.4bpp.lz");
+static const u8 sFeebasGfx19_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_19_4.4bpp.lz");
 static const ax_sprite sFeebasSprites19[] = {
 	{NULL, 32}, 
 	{sFeebasGfx19, ARRAY_COUNT(sFeebasGfx19)}, 
@@ -2285,10 +2285,10 @@ static const ax_sprite sFeebasSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx20[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_20.4bpp");
-static const u8 sFeebasGfx20_1[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_20_1.4bpp");
-static const u8 sFeebasGfx20_2[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_20_2.4bpp");
-static const u8 sFeebasGfx20_3[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_20_3.4bpp");
+static const u8 sFeebasGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_20.4bpp.lz");
+static const u8 sFeebasGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_20_1.4bpp.lz");
+static const u8 sFeebasGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_20_2.4bpp.lz");
+static const u8 sFeebasGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_20_3.4bpp.lz");
 static const ax_sprite sFeebasSprites20[] = {
 	{NULL, 32}, 
 	{sFeebasGfx20, ARRAY_COUNT(sFeebasGfx20)}, 
@@ -2301,37 +2301,37 @@ static const ax_sprite sFeebasSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx21[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_21.4bpp");
+static const u8 sFeebasGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_21.4bpp.lz");
 static const ax_sprite sFeebasSprites21[] = {
 	{sFeebasGfx21, ARRAY_COUNT(sFeebasGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx22[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_22.4bpp");
+static const u8 sFeebasGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_22.4bpp.lz");
 static const ax_sprite sFeebasSprites22[] = {
 	{sFeebasGfx22, ARRAY_COUNT(sFeebasGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx23[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_23.4bpp");
+static const u8 sFeebasGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_23.4bpp.lz");
 static const ax_sprite sFeebasSprites23[] = {
 	{sFeebasGfx23, ARRAY_COUNT(sFeebasGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx24[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_24.4bpp");
+static const u8 sFeebasGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_24.4bpp.lz");
 static const ax_sprite sFeebasSprites24[] = {
 	{sFeebasGfx24, ARRAY_COUNT(sFeebasGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx25[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_25.4bpp");
+static const u8 sFeebasGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_25.4bpp.lz");
 static const ax_sprite sFeebasSprites25[] = {
 	{sFeebasGfx25, ARRAY_COUNT(sFeebasGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx26[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_26.4bpp");
+static const u8 sFeebasGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_26.4bpp.lz");
 static const ax_sprite sFeebasSprites26[] = {
 	{sFeebasGfx26, ARRAY_COUNT(sFeebasGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sFeebasGfx27[] = INCBIN_U8("graphics/ax/mon/feebas/sprite_27.4bpp");
+static const u8 sFeebasGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feebas/sprite_27.4bpp.lz");
 static const ax_sprite sFeebasSprites27[] = {
 	{sFeebasGfx27, ARRAY_COUNT(sFeebasGfx27)}, 
 	{NULL, 0}

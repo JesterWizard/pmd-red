@@ -2088,83 +2088,83 @@ static const ax_anim sTyranitarAnims_15_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTyranitarGfx1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_1.4bpp");
+static const u8 sTyranitarGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites1[] = {
 	{sTyranitarGfx1, ARRAY_COUNT(sTyranitarGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_2.4bpp");
+static const u8 sTyranitarGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites2[] = {
 	{sTyranitarGfx2, ARRAY_COUNT(sTyranitarGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx3[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_3.4bpp");
+static const u8 sTyranitarGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_3.4bpp.lz");
 static const ax_sprite sTyranitarSprites3[] = {
 	{sTyranitarGfx3, ARRAY_COUNT(sTyranitarGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx4[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_4.4bpp");
+static const u8 sTyranitarGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_4.4bpp.lz");
 static const ax_sprite sTyranitarSprites4[] = {
 	{sTyranitarGfx4, ARRAY_COUNT(sTyranitarGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx5[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_5.4bpp");
+static const u8 sTyranitarGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_5.4bpp.lz");
 static const ax_sprite sTyranitarSprites5[] = {
 	{sTyranitarGfx5, ARRAY_COUNT(sTyranitarGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx6[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_6.4bpp");
+static const u8 sTyranitarGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_6.4bpp.lz");
 static const ax_sprite sTyranitarSprites6[] = {
 	{sTyranitarGfx6, ARRAY_COUNT(sTyranitarGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx7[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_7.4bpp");
+static const u8 sTyranitarGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_7.4bpp.lz");
 static const ax_sprite sTyranitarSprites7[] = {
 	{sTyranitarGfx7, ARRAY_COUNT(sTyranitarGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx8[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_8.4bpp");
+static const u8 sTyranitarGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_8.4bpp.lz");
 static const ax_sprite sTyranitarSprites8[] = {
 	{sTyranitarGfx8, ARRAY_COUNT(sTyranitarGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx9[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_9.4bpp");
+static const u8 sTyranitarGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_9.4bpp.lz");
 static const ax_sprite sTyranitarSprites9[] = {
 	{sTyranitarGfx9, ARRAY_COUNT(sTyranitarGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx10[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_10.4bpp");
+static const u8 sTyranitarGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_10.4bpp.lz");
 static const ax_sprite sTyranitarSprites10[] = {
 	{sTyranitarGfx10, ARRAY_COUNT(sTyranitarGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx11[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_11.4bpp");
+static const u8 sTyranitarGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_11.4bpp.lz");
 static const ax_sprite sTyranitarSprites11[] = {
 	{sTyranitarGfx11, ARRAY_COUNT(sTyranitarGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx12[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_12.4bpp");
+static const u8 sTyranitarGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_12.4bpp.lz");
 static const ax_sprite sTyranitarSprites12[] = {
 	{sTyranitarGfx12, ARRAY_COUNT(sTyranitarGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx13[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_13.4bpp");
+static const u8 sTyranitarGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_13.4bpp.lz");
 static const ax_sprite sTyranitarSprites13[] = {
 	{sTyranitarGfx13, ARRAY_COUNT(sTyranitarGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx14[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_14.4bpp");
+static const u8 sTyranitarGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_14.4bpp.lz");
 static const ax_sprite sTyranitarSprites14[] = {
 	{sTyranitarGfx14, ARRAY_COUNT(sTyranitarGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx15[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_15.4bpp");
+static const u8 sTyranitarGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_15.4bpp.lz");
 static const ax_sprite sTyranitarSprites15[] = {
 	{sTyranitarGfx15, ARRAY_COUNT(sTyranitarGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx16[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_16.4bpp");
-static const u8 sTyranitarGfx16_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_16_1.4bpp");
+static const u8 sTyranitarGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_16.4bpp.lz");
+static const u8 sTyranitarGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_16_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites16[] = {
 	{NULL, 128}, 
 	{sTyranitarGfx16, ARRAY_COUNT(sTyranitarGfx16)}, 
@@ -2172,8 +2172,8 @@ static const ax_sprite sTyranitarSprites16[] = {
 	{sTyranitarGfx16_1, ARRAY_COUNT(sTyranitarGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx17[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_17.4bpp");
-static const u8 sTyranitarGfx17_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_17_1.4bpp");
+static const u8 sTyranitarGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_17.4bpp.lz");
+static const u8 sTyranitarGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_17_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites17[] = {
 	{NULL, 128}, 
 	{sTyranitarGfx17, ARRAY_COUNT(sTyranitarGfx17)}, 
@@ -2182,9 +2182,9 @@ static const ax_sprite sTyranitarSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx18[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_18.4bpp");
-static const u8 sTyranitarGfx18_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_18_1.4bpp");
-static const u8 sTyranitarGfx18_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_18_2.4bpp");
+static const u8 sTyranitarGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_18.4bpp.lz");
+static const u8 sTyranitarGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_18_1.4bpp.lz");
+static const u8 sTyranitarGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_18_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites18[] = {
 	{sTyranitarGfx18, ARRAY_COUNT(sTyranitarGfx18)}, 
 	{NULL, 64}, 
@@ -2194,9 +2194,9 @@ static const ax_sprite sTyranitarSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx19[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_19.4bpp");
-static const u8 sTyranitarGfx19_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_19_1.4bpp");
-static const u8 sTyranitarGfx19_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_19_2.4bpp");
+static const u8 sTyranitarGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_19.4bpp.lz");
+static const u8 sTyranitarGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_19_1.4bpp.lz");
+static const u8 sTyranitarGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_19_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites19[] = {
 	{sTyranitarGfx19, ARRAY_COUNT(sTyranitarGfx19)}, 
 	{NULL, 32}, 
@@ -2206,9 +2206,9 @@ static const ax_sprite sTyranitarSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx20[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_20.4bpp");
-static const u8 sTyranitarGfx20_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_20_1.4bpp");
-static const u8 sTyranitarGfx20_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_20_2.4bpp");
+static const u8 sTyranitarGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_20.4bpp.lz");
+static const u8 sTyranitarGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_20_1.4bpp.lz");
+static const u8 sTyranitarGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_20_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites20[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx20, ARRAY_COUNT(sTyranitarGfx20)}, 
@@ -2218,9 +2218,9 @@ static const ax_sprite sTyranitarSprites20[] = {
 	{sTyranitarGfx20_2, ARRAY_COUNT(sTyranitarGfx20_2)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx21[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_21.4bpp");
-static const u8 sTyranitarGfx21_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_21_1.4bpp");
-static const u8 sTyranitarGfx21_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_21_2.4bpp");
+static const u8 sTyranitarGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_21.4bpp.lz");
+static const u8 sTyranitarGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_21_1.4bpp.lz");
+static const u8 sTyranitarGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_21_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites21[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx21, ARRAY_COUNT(sTyranitarGfx21)}, 
@@ -2230,10 +2230,10 @@ static const ax_sprite sTyranitarSprites21[] = {
 	{sTyranitarGfx21_2, ARRAY_COUNT(sTyranitarGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx22[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_22.4bpp");
-static const u8 sTyranitarGfx22_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_22_1.4bpp");
-static const u8 sTyranitarGfx22_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_22_2.4bpp");
-static const u8 sTyranitarGfx22_3[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_22_3.4bpp");
+static const u8 sTyranitarGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_22.4bpp.lz");
+static const u8 sTyranitarGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_22_1.4bpp.lz");
+static const u8 sTyranitarGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_22_2.4bpp.lz");
+static const u8 sTyranitarGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_22_3.4bpp.lz");
 static const ax_sprite sTyranitarSprites22[] = {
 	{NULL, 64}, 
 	{sTyranitarGfx22, ARRAY_COUNT(sTyranitarGfx22)}, 
@@ -2245,8 +2245,8 @@ static const ax_sprite sTyranitarSprites22[] = {
 	{sTyranitarGfx22_3, ARRAY_COUNT(sTyranitarGfx22_3)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx23[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_23.4bpp");
-static const u8 sTyranitarGfx23_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_23_1.4bpp");
+static const u8 sTyranitarGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_23.4bpp.lz");
+static const u8 sTyranitarGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_23_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites23[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx23, ARRAY_COUNT(sTyranitarGfx23)}, 
@@ -2254,9 +2254,9 @@ static const ax_sprite sTyranitarSprites23[] = {
 	{sTyranitarGfx23_1, ARRAY_COUNT(sTyranitarGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx24[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_24.4bpp");
-static const u8 sTyranitarGfx24_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_24_1.4bpp");
-static const u8 sTyranitarGfx24_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_24_2.4bpp");
+static const u8 sTyranitarGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_24.4bpp.lz");
+static const u8 sTyranitarGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_24_1.4bpp.lz");
+static const u8 sTyranitarGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_24_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites24[] = {
 	{NULL, 96}, 
 	{sTyranitarGfx24, ARRAY_COUNT(sTyranitarGfx24)}, 
@@ -2267,9 +2267,9 @@ static const ax_sprite sTyranitarSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx25[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_25.4bpp");
-static const u8 sTyranitarGfx25_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_25_1.4bpp");
-static const u8 sTyranitarGfx25_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_25_2.4bpp");
+static const u8 sTyranitarGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_25.4bpp.lz");
+static const u8 sTyranitarGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_25_1.4bpp.lz");
+static const u8 sTyranitarGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_25_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites25[] = {
 	{sTyranitarGfx25, ARRAY_COUNT(sTyranitarGfx25)}, 
 	{NULL, 64}, 
@@ -2279,8 +2279,8 @@ static const ax_sprite sTyranitarSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx26[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_26.4bpp");
-static const u8 sTyranitarGfx26_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_26_1.4bpp");
+static const u8 sTyranitarGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_26.4bpp.lz");
+static const u8 sTyranitarGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_26_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites26[] = {
 	{NULL, 128}, 
 	{sTyranitarGfx26, ARRAY_COUNT(sTyranitarGfx26)}, 
@@ -2289,10 +2289,10 @@ static const ax_sprite sTyranitarSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx27[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_27.4bpp");
-static const u8 sTyranitarGfx27_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_27_1.4bpp");
-static const u8 sTyranitarGfx27_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_27_2.4bpp");
-static const u8 sTyranitarGfx27_3[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_27_3.4bpp");
+static const u8 sTyranitarGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_27.4bpp.lz");
+static const u8 sTyranitarGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_27_1.4bpp.lz");
+static const u8 sTyranitarGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_27_2.4bpp.lz");
+static const u8 sTyranitarGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_27_3.4bpp.lz");
 static const ax_sprite sTyranitarSprites27[] = {
 	{sTyranitarGfx27, ARRAY_COUNT(sTyranitarGfx27)}, 
 	{NULL, 64}, 
@@ -2303,9 +2303,9 @@ static const ax_sprite sTyranitarSprites27[] = {
 	{sTyranitarGfx27_3, ARRAY_COUNT(sTyranitarGfx27_3)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx28[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_28.4bpp");
-static const u8 sTyranitarGfx28_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_28_1.4bpp");
-static const u8 sTyranitarGfx28_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_28_2.4bpp");
+static const u8 sTyranitarGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_28.4bpp.lz");
+static const u8 sTyranitarGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_28_1.4bpp.lz");
+static const u8 sTyranitarGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_28_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites28[] = {
 	{sTyranitarGfx28, ARRAY_COUNT(sTyranitarGfx28)}, 
 	{NULL, 96}, 
@@ -2315,10 +2315,10 @@ static const ax_sprite sTyranitarSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx29[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_29.4bpp");
-static const u8 sTyranitarGfx29_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_29_1.4bpp");
-static const u8 sTyranitarGfx29_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_29_2.4bpp");
-static const u8 sTyranitarGfx29_3[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_29_3.4bpp");
+static const u8 sTyranitarGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_29.4bpp.lz");
+static const u8 sTyranitarGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_29_1.4bpp.lz");
+static const u8 sTyranitarGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_29_2.4bpp.lz");
+static const u8 sTyranitarGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_29_3.4bpp.lz");
 static const ax_sprite sTyranitarSprites29[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx29, ARRAY_COUNT(sTyranitarGfx29)}, 
@@ -2330,8 +2330,8 @@ static const ax_sprite sTyranitarSprites29[] = {
 	{sTyranitarGfx29_3, ARRAY_COUNT(sTyranitarGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx30[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_30.4bpp");
-static const u8 sTyranitarGfx30_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_30_1.4bpp");
+static const u8 sTyranitarGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_30.4bpp.lz");
+static const u8 sTyranitarGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_30_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites30[] = {
 	{sTyranitarGfx30, ARRAY_COUNT(sTyranitarGfx30)}, 
 	{NULL, 32}, 
@@ -2339,9 +2339,9 @@ static const ax_sprite sTyranitarSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx31[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_31.4bpp");
-static const u8 sTyranitarGfx31_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_31_1.4bpp");
-static const u8 sTyranitarGfx31_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_31_2.4bpp");
+static const u8 sTyranitarGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_31.4bpp.lz");
+static const u8 sTyranitarGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_31_1.4bpp.lz");
+static const u8 sTyranitarGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_31_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites31[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx31, ARRAY_COUNT(sTyranitarGfx31)}, 
@@ -2351,8 +2351,8 @@ static const ax_sprite sTyranitarSprites31[] = {
 	{sTyranitarGfx31_2, ARRAY_COUNT(sTyranitarGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx32[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_32.4bpp");
-static const u8 sTyranitarGfx32_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_32_1.4bpp");
+static const u8 sTyranitarGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_32.4bpp.lz");
+static const u8 sTyranitarGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_32_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites32[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx32, ARRAY_COUNT(sTyranitarGfx32)}, 
@@ -2360,8 +2360,8 @@ static const ax_sprite sTyranitarSprites32[] = {
 	{sTyranitarGfx32_1, ARRAY_COUNT(sTyranitarGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx33[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_33.4bpp");
-static const u8 sTyranitarGfx33_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_33_1.4bpp");
+static const u8 sTyranitarGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_33.4bpp.lz");
+static const u8 sTyranitarGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_33_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites33[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx33, ARRAY_COUNT(sTyranitarGfx33)}, 
@@ -2370,8 +2370,8 @@ static const ax_sprite sTyranitarSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx34[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_34.4bpp");
-static const u8 sTyranitarGfx34_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_34_1.4bpp");
+static const u8 sTyranitarGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_34.4bpp.lz");
+static const u8 sTyranitarGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_34_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites34[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx34, ARRAY_COUNT(sTyranitarGfx34)}, 
@@ -2380,9 +2380,9 @@ static const ax_sprite sTyranitarSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx35[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_35.4bpp");
-static const u8 sTyranitarGfx35_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_35_1.4bpp");
-static const u8 sTyranitarGfx35_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_35_2.4bpp");
+static const u8 sTyranitarGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_35.4bpp.lz");
+static const u8 sTyranitarGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_35_1.4bpp.lz");
+static const u8 sTyranitarGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_35_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites35[] = {
 	{sTyranitarGfx35, ARRAY_COUNT(sTyranitarGfx35)}, 
 	{NULL, 32}, 
@@ -2392,16 +2392,16 @@ static const ax_sprite sTyranitarSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx36[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_36.4bpp");
+static const u8 sTyranitarGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_36.4bpp.lz");
 static const ax_sprite sTyranitarSprites36[] = {
 	{NULL, 128}, 
 	{sTyranitarGfx36, ARRAY_COUNT(sTyranitarGfx36)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx37[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_37.4bpp");
-static const u8 sTyranitarGfx37_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_37_1.4bpp");
-static const u8 sTyranitarGfx37_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_37_2.4bpp");
+static const u8 sTyranitarGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_37.4bpp.lz");
+static const u8 sTyranitarGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_37_1.4bpp.lz");
+static const u8 sTyranitarGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_37_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites37[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx37, ARRAY_COUNT(sTyranitarGfx37)}, 
@@ -2411,8 +2411,8 @@ static const ax_sprite sTyranitarSprites37[] = {
 	{sTyranitarGfx37_2, ARRAY_COUNT(sTyranitarGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx38[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_38.4bpp");
-static const u8 sTyranitarGfx38_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_38_1.4bpp");
+static const u8 sTyranitarGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_38.4bpp.lz");
+static const u8 sTyranitarGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_38_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites38[] = {
 	{sTyranitarGfx38, ARRAY_COUNT(sTyranitarGfx38)}, 
 	{NULL, 64}, 
@@ -2420,9 +2420,9 @@ static const ax_sprite sTyranitarSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx39[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_39.4bpp");
-static const u8 sTyranitarGfx39_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_39_1.4bpp");
-static const u8 sTyranitarGfx39_2[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_39_2.4bpp");
+static const u8 sTyranitarGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_39.4bpp.lz");
+static const u8 sTyranitarGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_39_1.4bpp.lz");
+static const u8 sTyranitarGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_39_2.4bpp.lz");
 static const ax_sprite sTyranitarSprites39[] = {
 	{sTyranitarGfx39, ARRAY_COUNT(sTyranitarGfx39)}, 
 	{NULL, 32}, 
@@ -2431,8 +2431,8 @@ static const ax_sprite sTyranitarSprites39[] = {
 	{sTyranitarGfx39_2, ARRAY_COUNT(sTyranitarGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx40[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_40.4bpp");
-static const u8 sTyranitarGfx40_1[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_40_1.4bpp");
+static const u8 sTyranitarGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_40.4bpp.lz");
+static const u8 sTyranitarGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_40_1.4bpp.lz");
 static const ax_sprite sTyranitarSprites40[] = {
 	{NULL, 32}, 
 	{sTyranitarGfx40, ARRAY_COUNT(sTyranitarGfx40)}, 
@@ -2440,87 +2440,87 @@ static const ax_sprite sTyranitarSprites40[] = {
 	{sTyranitarGfx40_1, ARRAY_COUNT(sTyranitarGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx41[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_41.4bpp");
+static const u8 sTyranitarGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_41.4bpp.lz");
 static const ax_sprite sTyranitarSprites41[] = {
 	{sTyranitarGfx41, ARRAY_COUNT(sTyranitarGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx42[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_42.4bpp");
+static const u8 sTyranitarGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_42.4bpp.lz");
 static const ax_sprite sTyranitarSprites42[] = {
 	{sTyranitarGfx42, ARRAY_COUNT(sTyranitarGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx43[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_43.4bpp");
+static const u8 sTyranitarGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_43.4bpp.lz");
 static const ax_sprite sTyranitarSprites43[] = {
 	{sTyranitarGfx43, ARRAY_COUNT(sTyranitarGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx44[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_44.4bpp");
+static const u8 sTyranitarGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_44.4bpp.lz");
 static const ax_sprite sTyranitarSprites44[] = {
 	{sTyranitarGfx44, ARRAY_COUNT(sTyranitarGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx45[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_45.4bpp");
+static const u8 sTyranitarGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_45.4bpp.lz");
 static const ax_sprite sTyranitarSprites45[] = {
 	{sTyranitarGfx45, ARRAY_COUNT(sTyranitarGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx46[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_46.4bpp");
+static const u8 sTyranitarGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_46.4bpp.lz");
 static const ax_sprite sTyranitarSprites46[] = {
 	{sTyranitarGfx46, ARRAY_COUNT(sTyranitarGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx47[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_47.4bpp");
+static const u8 sTyranitarGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_47.4bpp.lz");
 static const ax_sprite sTyranitarSprites47[] = {
 	{sTyranitarGfx47, ARRAY_COUNT(sTyranitarGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx48[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_48.4bpp");
+static const u8 sTyranitarGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_48.4bpp.lz");
 static const ax_sprite sTyranitarSprites48[] = {
 	{sTyranitarGfx48, ARRAY_COUNT(sTyranitarGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx49[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_49.4bpp");
+static const u8 sTyranitarGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_49.4bpp.lz");
 static const ax_sprite sTyranitarSprites49[] = {
 	{sTyranitarGfx49, ARRAY_COUNT(sTyranitarGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx50[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_50.4bpp");
+static const u8 sTyranitarGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_50.4bpp.lz");
 static const ax_sprite sTyranitarSprites50[] = {
 	{sTyranitarGfx50, ARRAY_COUNT(sTyranitarGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx51[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_51.4bpp");
+static const u8 sTyranitarGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_51.4bpp.lz");
 static const ax_sprite sTyranitarSprites51[] = {
 	{sTyranitarGfx51, ARRAY_COUNT(sTyranitarGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx52[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_52.4bpp");
+static const u8 sTyranitarGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_52.4bpp.lz");
 static const ax_sprite sTyranitarSprites52[] = {
 	{sTyranitarGfx52, ARRAY_COUNT(sTyranitarGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx53[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_53.4bpp");
+static const u8 sTyranitarGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_53.4bpp.lz");
 static const ax_sprite sTyranitarSprites53[] = {
 	{sTyranitarGfx53, ARRAY_COUNT(sTyranitarGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx54[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_54.4bpp");
+static const u8 sTyranitarGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_54.4bpp.lz");
 static const ax_sprite sTyranitarSprites54[] = {
 	{sTyranitarGfx54, ARRAY_COUNT(sTyranitarGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx55[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_55.4bpp");
+static const u8 sTyranitarGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_55.4bpp.lz");
 static const ax_sprite sTyranitarSprites55[] = {
 	{sTyranitarGfx55, ARRAY_COUNT(sTyranitarGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx56[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_56.4bpp");
+static const u8 sTyranitarGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_56.4bpp.lz");
 static const ax_sprite sTyranitarSprites56[] = {
 	{sTyranitarGfx56, ARRAY_COUNT(sTyranitarGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sTyranitarGfx57[] = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_57.4bpp");
+static const u8 sTyranitarGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyranitar/sprite_57.4bpp.lz");
 static const ax_sprite sTyranitarSprites57[] = {
 	{sTyranitarGfx57, ARRAY_COUNT(sTyranitarGfx57)}, 
 	{NULL, 0}

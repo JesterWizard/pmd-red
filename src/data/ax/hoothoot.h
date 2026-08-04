@@ -1839,112 +1839,112 @@ static const ax_anim sHoothootAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHoothootGfx1[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_1.4bpp");
+static const u8 sHoothootGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_1.4bpp.lz");
 static const ax_sprite sHoothootSprites1[] = {
 	{sHoothootGfx1, ARRAY_COUNT(sHoothootGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx2[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_2.4bpp");
+static const u8 sHoothootGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_2.4bpp.lz");
 static const ax_sprite sHoothootSprites2[] = {
 	{sHoothootGfx2, ARRAY_COUNT(sHoothootGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx3[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_3.4bpp");
+static const u8 sHoothootGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_3.4bpp.lz");
 static const ax_sprite sHoothootSprites3[] = {
 	{sHoothootGfx3, ARRAY_COUNT(sHoothootGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx4[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_4.4bpp");
+static const u8 sHoothootGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_4.4bpp.lz");
 static const ax_sprite sHoothootSprites4[] = {
 	{sHoothootGfx4, ARRAY_COUNT(sHoothootGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx5[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_5.4bpp");
+static const u8 sHoothootGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_5.4bpp.lz");
 static const ax_sprite sHoothootSprites5[] = {
 	{sHoothootGfx5, ARRAY_COUNT(sHoothootGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx6[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_6.4bpp");
+static const u8 sHoothootGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_6.4bpp.lz");
 static const ax_sprite sHoothootSprites6[] = {
 	{sHoothootGfx6, ARRAY_COUNT(sHoothootGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx7[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_7.4bpp");
+static const u8 sHoothootGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_7.4bpp.lz");
 static const ax_sprite sHoothootSprites7[] = {
 	{sHoothootGfx7, ARRAY_COUNT(sHoothootGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx8[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_8.4bpp");
+static const u8 sHoothootGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_8.4bpp.lz");
 static const ax_sprite sHoothootSprites8[] = {
 	{sHoothootGfx8, ARRAY_COUNT(sHoothootGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx9[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_9.4bpp");
+static const u8 sHoothootGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_9.4bpp.lz");
 static const ax_sprite sHoothootSprites9[] = {
 	{sHoothootGfx9, ARRAY_COUNT(sHoothootGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx10[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_10.4bpp");
+static const u8 sHoothootGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_10.4bpp.lz");
 static const ax_sprite sHoothootSprites10[] = {
 	{sHoothootGfx10, ARRAY_COUNT(sHoothootGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx11[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_11.4bpp");
+static const u8 sHoothootGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_11.4bpp.lz");
 static const ax_sprite sHoothootSprites11[] = {
 	{sHoothootGfx11, ARRAY_COUNT(sHoothootGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx12[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_12.4bpp");
+static const u8 sHoothootGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_12.4bpp.lz");
 static const ax_sprite sHoothootSprites12[] = {
 	{sHoothootGfx12, ARRAY_COUNT(sHoothootGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx13[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_13.4bpp");
+static const u8 sHoothootGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_13.4bpp.lz");
 static const ax_sprite sHoothootSprites13[] = {
 	{sHoothootGfx13, ARRAY_COUNT(sHoothootGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx14[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_14.4bpp");
+static const u8 sHoothootGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_14.4bpp.lz");
 static const ax_sprite sHoothootSprites14[] = {
 	{sHoothootGfx14, ARRAY_COUNT(sHoothootGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx15[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_15.4bpp");
+static const u8 sHoothootGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_15.4bpp.lz");
 static const ax_sprite sHoothootSprites15[] = {
 	{sHoothootGfx15, ARRAY_COUNT(sHoothootGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx16[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_16.4bpp");
+static const u8 sHoothootGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_16.4bpp.lz");
 static const ax_sprite sHoothootSprites16[] = {
 	{sHoothootGfx16, ARRAY_COUNT(sHoothootGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx17[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_17.4bpp");
+static const u8 sHoothootGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_17.4bpp.lz");
 static const ax_sprite sHoothootSprites17[] = {
 	{sHoothootGfx17, ARRAY_COUNT(sHoothootGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx18[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_18.4bpp");
+static const u8 sHoothootGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_18.4bpp.lz");
 static const ax_sprite sHoothootSprites18[] = {
 	{sHoothootGfx18, ARRAY_COUNT(sHoothootGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx19[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_19.4bpp");
+static const u8 sHoothootGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_19.4bpp.lz");
 static const ax_sprite sHoothootSprites19[] = {
 	{sHoothootGfx19, ARRAY_COUNT(sHoothootGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx20[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_20.4bpp");
+static const u8 sHoothootGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_20.4bpp.lz");
 static const ax_sprite sHoothootSprites20[] = {
 	{sHoothootGfx20, ARRAY_COUNT(sHoothootGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx21[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_21.4bpp");
+static const u8 sHoothootGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_21.4bpp.lz");
 static const ax_sprite sHoothootSprites21[] = {
 	{sHoothootGfx21, ARRAY_COUNT(sHoothootGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sHoothootGfx22[] = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_22.4bpp");
+static const u8 sHoothootGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoothoot/sprite_22.4bpp.lz");
 static const ax_sprite sHoothootSprites22[] = {
 	{sHoothootGfx22, ARRAY_COUNT(sHoothootGfx22)}, 
 	{NULL, 0}

@@ -2159,128 +2159,128 @@ static const ax_anim sWartortleAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWartortleGfx1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_1.4bpp");
+static const u8 sWartortleGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_1.4bpp.lz");
 static const ax_sprite sWartortleSprites1[] = {
 	{sWartortleGfx1, ARRAY_COUNT(sWartortleGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_2.4bpp");
+static const u8 sWartortleGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_2.4bpp.lz");
 static const ax_sprite sWartortleSprites2[] = {
 	{sWartortleGfx2, ARRAY_COUNT(sWartortleGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx3[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_3.4bpp");
+static const u8 sWartortleGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_3.4bpp.lz");
 static const ax_sprite sWartortleSprites3[] = {
 	{sWartortleGfx3, ARRAY_COUNT(sWartortleGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx4[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_4.4bpp");
+static const u8 sWartortleGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_4.4bpp.lz");
 static const ax_sprite sWartortleSprites4[] = {
 	{sWartortleGfx4, ARRAY_COUNT(sWartortleGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx5[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_5.4bpp");
+static const u8 sWartortleGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_5.4bpp.lz");
 static const ax_sprite sWartortleSprites5[] = {
 	{sWartortleGfx5, ARRAY_COUNT(sWartortleGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx6[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_6.4bpp");
+static const u8 sWartortleGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_6.4bpp.lz");
 static const ax_sprite sWartortleSprites6[] = {
 	{sWartortleGfx6, ARRAY_COUNT(sWartortleGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx7[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_7.4bpp");
+static const u8 sWartortleGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_7.4bpp.lz");
 static const ax_sprite sWartortleSprites7[] = {
 	{sWartortleGfx7, ARRAY_COUNT(sWartortleGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx8[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_8.4bpp");
+static const u8 sWartortleGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_8.4bpp.lz");
 static const ax_sprite sWartortleSprites8[] = {
 	{sWartortleGfx8, ARRAY_COUNT(sWartortleGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx9[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_9.4bpp");
+static const u8 sWartortleGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_9.4bpp.lz");
 static const ax_sprite sWartortleSprites9[] = {
 	{sWartortleGfx9, ARRAY_COUNT(sWartortleGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx10[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_10.4bpp");
+static const u8 sWartortleGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_10.4bpp.lz");
 static const ax_sprite sWartortleSprites10[] = {
 	{sWartortleGfx10, ARRAY_COUNT(sWartortleGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx11[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_11.4bpp");
+static const u8 sWartortleGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_11.4bpp.lz");
 static const ax_sprite sWartortleSprites11[] = {
 	{sWartortleGfx11, ARRAY_COUNT(sWartortleGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx12[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_12.4bpp");
+static const u8 sWartortleGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_12.4bpp.lz");
 static const ax_sprite sWartortleSprites12[] = {
 	{sWartortleGfx12, ARRAY_COUNT(sWartortleGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx13[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_13.4bpp");
+static const u8 sWartortleGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_13.4bpp.lz");
 static const ax_sprite sWartortleSprites13[] = {
 	{sWartortleGfx13, ARRAY_COUNT(sWartortleGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx14[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_14.4bpp");
+static const u8 sWartortleGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_14.4bpp.lz");
 static const ax_sprite sWartortleSprites14[] = {
 	{sWartortleGfx14, ARRAY_COUNT(sWartortleGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx15[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_15.4bpp");
+static const u8 sWartortleGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_15.4bpp.lz");
 static const ax_sprite sWartortleSprites15[] = {
 	{sWartortleGfx15, ARRAY_COUNT(sWartortleGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx16[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_16.4bpp");
+static const u8 sWartortleGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_16.4bpp.lz");
 static const ax_sprite sWartortleSprites16[] = {
 	{sWartortleGfx16, ARRAY_COUNT(sWartortleGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx17[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_17.4bpp");
+static const u8 sWartortleGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_17.4bpp.lz");
 static const ax_sprite sWartortleSprites17[] = {
 	{sWartortleGfx17, ARRAY_COUNT(sWartortleGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx18[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_18.4bpp");
+static const u8 sWartortleGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_18.4bpp.lz");
 static const ax_sprite sWartortleSprites18[] = {
 	{sWartortleGfx18, ARRAY_COUNT(sWartortleGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx19[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_19.4bpp");
+static const u8 sWartortleGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_19.4bpp.lz");
 static const ax_sprite sWartortleSprites19[] = {
 	{sWartortleGfx19, ARRAY_COUNT(sWartortleGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx20[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_20.4bpp");
+static const u8 sWartortleGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_20.4bpp.lz");
 static const ax_sprite sWartortleSprites20[] = {
 	{sWartortleGfx20, ARRAY_COUNT(sWartortleGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx21[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_21.4bpp");
+static const u8 sWartortleGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_21.4bpp.lz");
 static const ax_sprite sWartortleSprites21[] = {
 	{sWartortleGfx21, ARRAY_COUNT(sWartortleGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx22[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_22.4bpp");
+static const u8 sWartortleGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_22.4bpp.lz");
 static const ax_sprite sWartortleSprites22[] = {
 	{sWartortleGfx22, ARRAY_COUNT(sWartortleGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx23[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_23.4bpp");
+static const u8 sWartortleGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_23.4bpp.lz");
 static const ax_sprite sWartortleSprites23[] = {
 	{sWartortleGfx23, ARRAY_COUNT(sWartortleGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx24[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_24.4bpp");
+static const u8 sWartortleGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_24.4bpp.lz");
 static const ax_sprite sWartortleSprites24[] = {
 	{sWartortleGfx24, ARRAY_COUNT(sWartortleGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx25[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_25.4bpp");
-static const u8 sWartortleGfx25_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_25_1.4bpp");
+static const u8 sWartortleGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_25.4bpp.lz");
+static const u8 sWartortleGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_25_1.4bpp.lz");
 static const ax_sprite sWartortleSprites25[] = {
 	{sWartortleGfx25, ARRAY_COUNT(sWartortleGfx25)}, 
 	{NULL, 32}, 
@@ -2288,8 +2288,8 @@ static const ax_sprite sWartortleSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx26[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_26.4bpp");
-static const u8 sWartortleGfx26_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_26_1.4bpp");
+static const u8 sWartortleGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_26.4bpp.lz");
+static const u8 sWartortleGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_26_1.4bpp.lz");
 static const ax_sprite sWartortleSprites26[] = {
 	{sWartortleGfx26, ARRAY_COUNT(sWartortleGfx26)}, 
 	{NULL, 32}, 
@@ -2297,8 +2297,8 @@ static const ax_sprite sWartortleSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx27[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_27.4bpp");
-static const u8 sWartortleGfx27_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_27_1.4bpp");
+static const u8 sWartortleGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_27.4bpp.lz");
+static const u8 sWartortleGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_27_1.4bpp.lz");
 static const ax_sprite sWartortleSprites27[] = {
 	{sWartortleGfx27, ARRAY_COUNT(sWartortleGfx27)}, 
 	{NULL, 32}, 
@@ -2306,8 +2306,8 @@ static const ax_sprite sWartortleSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx28[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_28.4bpp");
-static const u8 sWartortleGfx28_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_28_1.4bpp");
+static const u8 sWartortleGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_28.4bpp.lz");
+static const u8 sWartortleGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_28_1.4bpp.lz");
 static const ax_sprite sWartortleSprites28[] = {
 	{sWartortleGfx28, ARRAY_COUNT(sWartortleGfx28)}, 
 	{NULL, 32}, 
@@ -2315,8 +2315,8 @@ static const ax_sprite sWartortleSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx29[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_29.4bpp");
-static const u8 sWartortleGfx29_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_29_1.4bpp");
+static const u8 sWartortleGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_29.4bpp.lz");
+static const u8 sWartortleGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_29_1.4bpp.lz");
 static const ax_sprite sWartortleSprites29[] = {
 	{sWartortleGfx29, ARRAY_COUNT(sWartortleGfx29)}, 
 	{NULL, 32}, 
@@ -2324,9 +2324,9 @@ static const ax_sprite sWartortleSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx30[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_30.4bpp");
-static const u8 sWartortleGfx30_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_30_1.4bpp");
-static const u8 sWartortleGfx30_2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_30_2.4bpp");
+static const u8 sWartortleGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_30.4bpp.lz");
+static const u8 sWartortleGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_30_1.4bpp.lz");
+static const u8 sWartortleGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_30_2.4bpp.lz");
 static const ax_sprite sWartortleSprites30[] = {
 	{sWartortleGfx30, ARRAY_COUNT(sWartortleGfx30)}, 
 	{NULL, 32}, 
@@ -2336,9 +2336,9 @@ static const ax_sprite sWartortleSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx31[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_31.4bpp");
-static const u8 sWartortleGfx31_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_31_1.4bpp");
-static const u8 sWartortleGfx31_2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_31_2.4bpp");
+static const u8 sWartortleGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_31.4bpp.lz");
+static const u8 sWartortleGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_31_1.4bpp.lz");
+static const u8 sWartortleGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_31_2.4bpp.lz");
 static const ax_sprite sWartortleSprites31[] = {
 	{sWartortleGfx31, ARRAY_COUNT(sWartortleGfx31)}, 
 	{NULL, 32}, 
@@ -2348,8 +2348,8 @@ static const ax_sprite sWartortleSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx32[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_32.4bpp");
-static const u8 sWartortleGfx32_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_32_1.4bpp");
+static const u8 sWartortleGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_32.4bpp.lz");
+static const u8 sWartortleGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_32_1.4bpp.lz");
 static const ax_sprite sWartortleSprites32[] = {
 	{sWartortleGfx32, ARRAY_COUNT(sWartortleGfx32)}, 
 	{NULL, 64}, 
@@ -2357,9 +2357,9 @@ static const ax_sprite sWartortleSprites32[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx33[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_33.4bpp");
-static const u8 sWartortleGfx33_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_33_1.4bpp");
-static const u8 sWartortleGfx33_2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_33_2.4bpp");
+static const u8 sWartortleGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_33.4bpp.lz");
+static const u8 sWartortleGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_33_1.4bpp.lz");
+static const u8 sWartortleGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_33_2.4bpp.lz");
 static const ax_sprite sWartortleSprites33[] = {
 	{sWartortleGfx33, ARRAY_COUNT(sWartortleGfx33)}, 
 	{NULL, 64}, 
@@ -2369,10 +2369,10 @@ static const ax_sprite sWartortleSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx34[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_34.4bpp");
-static const u8 sWartortleGfx34_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_34_1.4bpp");
-static const u8 sWartortleGfx34_2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_34_2.4bpp");
-static const u8 sWartortleGfx34_3[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_34_3.4bpp");
+static const u8 sWartortleGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_34.4bpp.lz");
+static const u8 sWartortleGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_34_1.4bpp.lz");
+static const u8 sWartortleGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_34_2.4bpp.lz");
+static const u8 sWartortleGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_34_3.4bpp.lz");
 static const ax_sprite sWartortleSprites34[] = {
 	{sWartortleGfx34, ARRAY_COUNT(sWartortleGfx34)}, 
 	{NULL, 32}, 
@@ -2384,9 +2384,9 @@ static const ax_sprite sWartortleSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx35[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_35.4bpp");
-static const u8 sWartortleGfx35_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_35_1.4bpp");
-static const u8 sWartortleGfx35_2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_35_2.4bpp");
+static const u8 sWartortleGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_35.4bpp.lz");
+static const u8 sWartortleGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_35_1.4bpp.lz");
+static const u8 sWartortleGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_35_2.4bpp.lz");
 static const ax_sprite sWartortleSprites35[] = {
 	{sWartortleGfx35, ARRAY_COUNT(sWartortleGfx35)}, 
 	{NULL, 32}, 
@@ -2396,9 +2396,9 @@ static const ax_sprite sWartortleSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx36[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_36.4bpp");
-static const u8 sWartortleGfx36_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_36_1.4bpp");
-static const u8 sWartortleGfx36_2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_36_2.4bpp");
+static const u8 sWartortleGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_36.4bpp.lz");
+static const u8 sWartortleGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_36_1.4bpp.lz");
+static const u8 sWartortleGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_36_2.4bpp.lz");
 static const ax_sprite sWartortleSprites36[] = {
 	{sWartortleGfx36, ARRAY_COUNT(sWartortleGfx36)}, 
 	{NULL, 32}, 
@@ -2408,8 +2408,8 @@ static const ax_sprite sWartortleSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx37[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_37.4bpp");
-static const u8 sWartortleGfx37_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_37_1.4bpp");
+static const u8 sWartortleGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_37.4bpp.lz");
+static const u8 sWartortleGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_37_1.4bpp.lz");
 static const ax_sprite sWartortleSprites37[] = {
 	{sWartortleGfx37, ARRAY_COUNT(sWartortleGfx37)}, 
 	{NULL, 64}, 
@@ -2417,9 +2417,9 @@ static const ax_sprite sWartortleSprites37[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx38[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_38.4bpp");
-static const u8 sWartortleGfx38_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_38_1.4bpp");
-static const u8 sWartortleGfx38_2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_38_2.4bpp");
+static const u8 sWartortleGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_38.4bpp.lz");
+static const u8 sWartortleGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_38_1.4bpp.lz");
+static const u8 sWartortleGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_38_2.4bpp.lz");
 static const ax_sprite sWartortleSprites38[] = {
 	{sWartortleGfx38, ARRAY_COUNT(sWartortleGfx38)}, 
 	{NULL, 32}, 
@@ -2429,10 +2429,10 @@ static const ax_sprite sWartortleSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx39[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_39.4bpp");
-static const u8 sWartortleGfx39_1[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_39_1.4bpp");
-static const u8 sWartortleGfx39_2[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_39_2.4bpp");
-static const u8 sWartortleGfx39_3[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_39_3.4bpp");
+static const u8 sWartortleGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_39.4bpp.lz");
+static const u8 sWartortleGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_39_1.4bpp.lz");
+static const u8 sWartortleGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_39_2.4bpp.lz");
+static const u8 sWartortleGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_39_3.4bpp.lz");
 static const ax_sprite sWartortleSprites39[] = {
 	{sWartortleGfx39, ARRAY_COUNT(sWartortleGfx39)}, 
 	{NULL, 32}, 
@@ -2444,37 +2444,37 @@ static const ax_sprite sWartortleSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx40[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_40.4bpp");
+static const u8 sWartortleGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_40.4bpp.lz");
 static const ax_sprite sWartortleSprites40[] = {
 	{sWartortleGfx40, ARRAY_COUNT(sWartortleGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx41[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_41.4bpp");
+static const u8 sWartortleGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_41.4bpp.lz");
 static const ax_sprite sWartortleSprites41[] = {
 	{sWartortleGfx41, ARRAY_COUNT(sWartortleGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx42[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_42.4bpp");
+static const u8 sWartortleGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_42.4bpp.lz");
 static const ax_sprite sWartortleSprites42[] = {
 	{sWartortleGfx42, ARRAY_COUNT(sWartortleGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx43[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_43.4bpp");
+static const u8 sWartortleGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_43.4bpp.lz");
 static const ax_sprite sWartortleSprites43[] = {
 	{sWartortleGfx43, ARRAY_COUNT(sWartortleGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx44[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_44.4bpp");
+static const u8 sWartortleGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_44.4bpp.lz");
 static const ax_sprite sWartortleSprites44[] = {
 	{sWartortleGfx44, ARRAY_COUNT(sWartortleGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx45[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_45.4bpp");
+static const u8 sWartortleGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_45.4bpp.lz");
 static const ax_sprite sWartortleSprites45[] = {
 	{sWartortleGfx45, ARRAY_COUNT(sWartortleGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sWartortleGfx46[] = INCBIN_U8("graphics/ax/mon/wartortle/sprite_46.4bpp");
+static const u8 sWartortleGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wartortle/sprite_46.4bpp.lz");
 static const ax_sprite sWartortleSprites46[] = {
 	{sWartortleGfx46, ARRAY_COUNT(sWartortleGfx46)}, 
 	{NULL, 0}

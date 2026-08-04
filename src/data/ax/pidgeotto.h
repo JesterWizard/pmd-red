@@ -2071,84 +2071,84 @@ static const ax_anim sPidgeottoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPidgeottoGfx1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_1.4bpp");
+static const u8 sPidgeottoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_1.4bpp.lz");
 static const ax_sprite sPidgeottoSprites1[] = {
 	{sPidgeottoGfx1, ARRAY_COUNT(sPidgeottoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_2.4bpp");
+static const u8 sPidgeottoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites2[] = {
 	{sPidgeottoGfx2, ARRAY_COUNT(sPidgeottoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx3[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_3.4bpp");
+static const u8 sPidgeottoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_3.4bpp.lz");
 static const ax_sprite sPidgeottoSprites3[] = {
 	{sPidgeottoGfx3, ARRAY_COUNT(sPidgeottoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx4[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_4.4bpp");
+static const u8 sPidgeottoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_4.4bpp.lz");
 static const ax_sprite sPidgeottoSprites4[] = {
 	{sPidgeottoGfx4, ARRAY_COUNT(sPidgeottoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx5[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_5.4bpp");
+static const u8 sPidgeottoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_5.4bpp.lz");
 static const ax_sprite sPidgeottoSprites5[] = {
 	{sPidgeottoGfx5, ARRAY_COUNT(sPidgeottoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx6[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_6.4bpp");
+static const u8 sPidgeottoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_6.4bpp.lz");
 static const ax_sprite sPidgeottoSprites6[] = {
 	{sPidgeottoGfx6, ARRAY_COUNT(sPidgeottoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx7[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_7.4bpp");
+static const u8 sPidgeottoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_7.4bpp.lz");
 static const ax_sprite sPidgeottoSprites7[] = {
 	{sPidgeottoGfx7, ARRAY_COUNT(sPidgeottoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx8[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_8.4bpp");
+static const u8 sPidgeottoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_8.4bpp.lz");
 static const ax_sprite sPidgeottoSprites8[] = {
 	{sPidgeottoGfx8, ARRAY_COUNT(sPidgeottoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx9[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_9.4bpp");
+static const u8 sPidgeottoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_9.4bpp.lz");
 static const ax_sprite sPidgeottoSprites9[] = {
 	{sPidgeottoGfx9, ARRAY_COUNT(sPidgeottoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx10[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_10.4bpp");
+static const u8 sPidgeottoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_10.4bpp.lz");
 static const ax_sprite sPidgeottoSprites10[] = {
 	{sPidgeottoGfx10, ARRAY_COUNT(sPidgeottoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx11[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_11.4bpp");
+static const u8 sPidgeottoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_11.4bpp.lz");
 static const ax_sprite sPidgeottoSprites11[] = {
 	{sPidgeottoGfx11, ARRAY_COUNT(sPidgeottoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx12[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_12.4bpp");
+static const u8 sPidgeottoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_12.4bpp.lz");
 static const ax_sprite sPidgeottoSprites12[] = {
 	{sPidgeottoGfx12, ARRAY_COUNT(sPidgeottoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx13[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_13.4bpp");
+static const u8 sPidgeottoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_13.4bpp.lz");
 static const ax_sprite sPidgeottoSprites13[] = {
 	{sPidgeottoGfx13, ARRAY_COUNT(sPidgeottoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx14[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_14.4bpp");
+static const u8 sPidgeottoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_14.4bpp.lz");
 static const ax_sprite sPidgeottoSprites14[] = {
 	{sPidgeottoGfx14, ARRAY_COUNT(sPidgeottoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx15[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_15.4bpp");
+static const u8 sPidgeottoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_15.4bpp.lz");
 static const ax_sprite sPidgeottoSprites15[] = {
 	{sPidgeottoGfx15, ARRAY_COUNT(sPidgeottoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx16[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_16.4bpp");
-static const u8 sPidgeottoGfx16_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_16_1.4bpp");
-static const u8 sPidgeottoGfx16_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_16_2.4bpp");
+static const u8 sPidgeottoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_16.4bpp.lz");
+static const u8 sPidgeottoGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_16_1.4bpp.lz");
+static const u8 sPidgeottoGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_16_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites16[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx16, ARRAY_COUNT(sPidgeottoGfx16)}, 
@@ -2159,9 +2159,9 @@ static const ax_sprite sPidgeottoSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx17[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_17.4bpp");
-static const u8 sPidgeottoGfx17_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_17_1.4bpp");
-static const u8 sPidgeottoGfx17_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_17_2.4bpp");
+static const u8 sPidgeottoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_17.4bpp.lz");
+static const u8 sPidgeottoGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_17_1.4bpp.lz");
+static const u8 sPidgeottoGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_17_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites17[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx17, ARRAY_COUNT(sPidgeottoGfx17)}, 
@@ -2171,8 +2171,8 @@ static const ax_sprite sPidgeottoSprites17[] = {
 	{sPidgeottoGfx17_2, ARRAY_COUNT(sPidgeottoGfx17_2)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx18[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_18.4bpp");
-static const u8 sPidgeottoGfx18_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_18_1.4bpp");
+static const u8 sPidgeottoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_18.4bpp.lz");
+static const u8 sPidgeottoGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_18_1.4bpp.lz");
 static const ax_sprite sPidgeottoSprites18[] = {
 	{sPidgeottoGfx18, ARRAY_COUNT(sPidgeottoGfx18)}, 
 	{NULL, 32}, 
@@ -2180,9 +2180,9 @@ static const ax_sprite sPidgeottoSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx19[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_19.4bpp");
-static const u8 sPidgeottoGfx19_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_19_1.4bpp");
-static const u8 sPidgeottoGfx19_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_19_2.4bpp");
+static const u8 sPidgeottoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_19.4bpp.lz");
+static const u8 sPidgeottoGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_19_1.4bpp.lz");
+static const u8 sPidgeottoGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_19_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites19[] = {
 	{NULL, 64}, 
 	{sPidgeottoGfx19, ARRAY_COUNT(sPidgeottoGfx19)}, 
@@ -2193,8 +2193,8 @@ static const ax_sprite sPidgeottoSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx20[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_20.4bpp");
-static const u8 sPidgeottoGfx20_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_20_1.4bpp");
+static const u8 sPidgeottoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_20.4bpp.lz");
+static const u8 sPidgeottoGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_20_1.4bpp.lz");
 static const ax_sprite sPidgeottoSprites20[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx20, ARRAY_COUNT(sPidgeottoGfx20)}, 
@@ -2203,9 +2203,9 @@ static const ax_sprite sPidgeottoSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx21[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_21.4bpp");
-static const u8 sPidgeottoGfx21_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_21_1.4bpp");
-static const u8 sPidgeottoGfx21_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_21_2.4bpp");
+static const u8 sPidgeottoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_21.4bpp.lz");
+static const u8 sPidgeottoGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_21_1.4bpp.lz");
+static const u8 sPidgeottoGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_21_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites21[] = {
 	{sPidgeottoGfx21, ARRAY_COUNT(sPidgeottoGfx21)}, 
 	{NULL, 32}, 
@@ -2215,8 +2215,8 @@ static const ax_sprite sPidgeottoSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx22[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_22.4bpp");
-static const u8 sPidgeottoGfx22_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_22_1.4bpp");
+static const u8 sPidgeottoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_22.4bpp.lz");
+static const u8 sPidgeottoGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_22_1.4bpp.lz");
 static const ax_sprite sPidgeottoSprites22[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx22, ARRAY_COUNT(sPidgeottoGfx22)}, 
@@ -2225,10 +2225,10 @@ static const ax_sprite sPidgeottoSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx23[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_23.4bpp");
-static const u8 sPidgeottoGfx23_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_23_1.4bpp");
-static const u8 sPidgeottoGfx23_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_23_2.4bpp");
-static const u8 sPidgeottoGfx23_3[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_23_3.4bpp");
+static const u8 sPidgeottoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_23.4bpp.lz");
+static const u8 sPidgeottoGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_23_1.4bpp.lz");
+static const u8 sPidgeottoGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_23_2.4bpp.lz");
+static const u8 sPidgeottoGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_23_3.4bpp.lz");
 static const ax_sprite sPidgeottoSprites23[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx23, ARRAY_COUNT(sPidgeottoGfx23)}, 
@@ -2240,10 +2240,10 @@ static const ax_sprite sPidgeottoSprites23[] = {
 	{sPidgeottoGfx23_3, ARRAY_COUNT(sPidgeottoGfx23_3)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx24[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_24.4bpp");
-static const u8 sPidgeottoGfx24_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_24_1.4bpp");
-static const u8 sPidgeottoGfx24_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_24_2.4bpp");
-static const u8 sPidgeottoGfx24_3[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_24_3.4bpp");
+static const u8 sPidgeottoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_24.4bpp.lz");
+static const u8 sPidgeottoGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_24_1.4bpp.lz");
+static const u8 sPidgeottoGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_24_2.4bpp.lz");
+static const u8 sPidgeottoGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_24_3.4bpp.lz");
 static const ax_sprite sPidgeottoSprites24[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx24, ARRAY_COUNT(sPidgeottoGfx24)}, 
@@ -2256,9 +2256,9 @@ static const ax_sprite sPidgeottoSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx25[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_25.4bpp");
-static const u8 sPidgeottoGfx25_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_25_1.4bpp");
-static const u8 sPidgeottoGfx25_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_25_2.4bpp");
+static const u8 sPidgeottoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_25.4bpp.lz");
+static const u8 sPidgeottoGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_25_1.4bpp.lz");
+static const u8 sPidgeottoGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_25_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites25[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx25, ARRAY_COUNT(sPidgeottoGfx25)}, 
@@ -2269,9 +2269,9 @@ static const ax_sprite sPidgeottoSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx26[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_26.4bpp");
-static const u8 sPidgeottoGfx26_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_26_1.4bpp");
-static const u8 sPidgeottoGfx26_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_26_2.4bpp");
+static const u8 sPidgeottoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_26.4bpp.lz");
+static const u8 sPidgeottoGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_26_1.4bpp.lz");
+static const u8 sPidgeottoGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_26_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites26[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx26, ARRAY_COUNT(sPidgeottoGfx26)}, 
@@ -2282,8 +2282,8 @@ static const ax_sprite sPidgeottoSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx27[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_27.4bpp");
-static const u8 sPidgeottoGfx27_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_27_1.4bpp");
+static const u8 sPidgeottoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_27.4bpp.lz");
+static const u8 sPidgeottoGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_27_1.4bpp.lz");
 static const ax_sprite sPidgeottoSprites27[] = {
 	{sPidgeottoGfx27, ARRAY_COUNT(sPidgeottoGfx27)}, 
 	{NULL, 32}, 
@@ -2291,9 +2291,9 @@ static const ax_sprite sPidgeottoSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx28[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_28.4bpp");
-static const u8 sPidgeottoGfx28_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_28_1.4bpp");
-static const u8 sPidgeottoGfx28_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_28_2.4bpp");
+static const u8 sPidgeottoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_28.4bpp.lz");
+static const u8 sPidgeottoGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_28_1.4bpp.lz");
+static const u8 sPidgeottoGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_28_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites28[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx28, ARRAY_COUNT(sPidgeottoGfx28)}, 
@@ -2304,9 +2304,9 @@ static const ax_sprite sPidgeottoSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx29[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_29.4bpp");
-static const u8 sPidgeottoGfx29_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_29_1.4bpp");
-static const u8 sPidgeottoGfx29_2[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_29_2.4bpp");
+static const u8 sPidgeottoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_29.4bpp.lz");
+static const u8 sPidgeottoGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_29_1.4bpp.lz");
+static const u8 sPidgeottoGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_29_2.4bpp.lz");
 static const ax_sprite sPidgeottoSprites29[] = {
 	{NULL, 32}, 
 	{sPidgeottoGfx29, ARRAY_COUNT(sPidgeottoGfx29)}, 
@@ -2316,8 +2316,8 @@ static const ax_sprite sPidgeottoSprites29[] = {
 	{sPidgeottoGfx29_2, ARRAY_COUNT(sPidgeottoGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx30[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_30.4bpp");
-static const u8 sPidgeottoGfx30_1[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_30_1.4bpp");
+static const u8 sPidgeottoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_30.4bpp.lz");
+static const u8 sPidgeottoGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_30_1.4bpp.lz");
 static const ax_sprite sPidgeottoSprites30[] = {
 	{sPidgeottoGfx30, ARRAY_COUNT(sPidgeottoGfx30)}, 
 	{NULL, 32}, 
@@ -2325,37 +2325,37 @@ static const ax_sprite sPidgeottoSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx31[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_31.4bpp");
+static const u8 sPidgeottoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_31.4bpp.lz");
 static const ax_sprite sPidgeottoSprites31[] = {
 	{sPidgeottoGfx31, ARRAY_COUNT(sPidgeottoGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx32[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_32.4bpp");
+static const u8 sPidgeottoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_32.4bpp.lz");
 static const ax_sprite sPidgeottoSprites32[] = {
 	{sPidgeottoGfx32, ARRAY_COUNT(sPidgeottoGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx33[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_33.4bpp");
+static const u8 sPidgeottoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_33.4bpp.lz");
 static const ax_sprite sPidgeottoSprites33[] = {
 	{sPidgeottoGfx33, ARRAY_COUNT(sPidgeottoGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx34[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_34.4bpp");
+static const u8 sPidgeottoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_34.4bpp.lz");
 static const ax_sprite sPidgeottoSprites34[] = {
 	{sPidgeottoGfx34, ARRAY_COUNT(sPidgeottoGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx35[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_35.4bpp");
+static const u8 sPidgeottoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_35.4bpp.lz");
 static const ax_sprite sPidgeottoSprites35[] = {
 	{sPidgeottoGfx35, ARRAY_COUNT(sPidgeottoGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx36[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_36.4bpp");
+static const u8 sPidgeottoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_36.4bpp.lz");
 static const ax_sprite sPidgeottoSprites36[] = {
 	{sPidgeottoGfx36, ARRAY_COUNT(sPidgeottoGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeottoGfx37[] = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_37.4bpp");
+static const u8 sPidgeottoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgeotto/sprite_37.4bpp.lz");
 static const ax_sprite sPidgeottoSprites37[] = {
 	{sPidgeottoGfx37, ARRAY_COUNT(sPidgeottoGfx37)}, 
 	{NULL, 0}

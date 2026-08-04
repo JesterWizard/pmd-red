@@ -2319,84 +2319,84 @@ static const ax_anim sDustoxAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDustoxGfx1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_1.4bpp");
+static const u8 sDustoxGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_1.4bpp.lz");
 static const ax_sprite sDustoxSprites1[] = {
 	{sDustoxGfx1, ARRAY_COUNT(sDustoxGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx2[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_2.4bpp");
+static const u8 sDustoxGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_2.4bpp.lz");
 static const ax_sprite sDustoxSprites2[] = {
 	{sDustoxGfx2, ARRAY_COUNT(sDustoxGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx3[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_3.4bpp");
+static const u8 sDustoxGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_3.4bpp.lz");
 static const ax_sprite sDustoxSprites3[] = {
 	{sDustoxGfx3, ARRAY_COUNT(sDustoxGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx4[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_4.4bpp");
+static const u8 sDustoxGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_4.4bpp.lz");
 static const ax_sprite sDustoxSprites4[] = {
 	{sDustoxGfx4, ARRAY_COUNT(sDustoxGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx5[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_5.4bpp");
+static const u8 sDustoxGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_5.4bpp.lz");
 static const ax_sprite sDustoxSprites5[] = {
 	{sDustoxGfx5, ARRAY_COUNT(sDustoxGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx6[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_6.4bpp");
+static const u8 sDustoxGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_6.4bpp.lz");
 static const ax_sprite sDustoxSprites6[] = {
 	{sDustoxGfx6, ARRAY_COUNT(sDustoxGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx7[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_7.4bpp");
+static const u8 sDustoxGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_7.4bpp.lz");
 static const ax_sprite sDustoxSprites7[] = {
 	{sDustoxGfx7, ARRAY_COUNT(sDustoxGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx8[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_8.4bpp");
+static const u8 sDustoxGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_8.4bpp.lz");
 static const ax_sprite sDustoxSprites8[] = {
 	{sDustoxGfx8, ARRAY_COUNT(sDustoxGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx9[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_9.4bpp");
+static const u8 sDustoxGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_9.4bpp.lz");
 static const ax_sprite sDustoxSprites9[] = {
 	{sDustoxGfx9, ARRAY_COUNT(sDustoxGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx10[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_10.4bpp");
+static const u8 sDustoxGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_10.4bpp.lz");
 static const ax_sprite sDustoxSprites10[] = {
 	{sDustoxGfx10, ARRAY_COUNT(sDustoxGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx11[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_11.4bpp");
+static const u8 sDustoxGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_11.4bpp.lz");
 static const ax_sprite sDustoxSprites11[] = {
 	{sDustoxGfx11, ARRAY_COUNT(sDustoxGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx12[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_12.4bpp");
+static const u8 sDustoxGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_12.4bpp.lz");
 static const ax_sprite sDustoxSprites12[] = {
 	{sDustoxGfx12, ARRAY_COUNT(sDustoxGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx13[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_13.4bpp");
+static const u8 sDustoxGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_13.4bpp.lz");
 static const ax_sprite sDustoxSprites13[] = {
 	{sDustoxGfx13, ARRAY_COUNT(sDustoxGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx14[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_14.4bpp");
+static const u8 sDustoxGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_14.4bpp.lz");
 static const ax_sprite sDustoxSprites14[] = {
 	{sDustoxGfx14, ARRAY_COUNT(sDustoxGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx15[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_15.4bpp");
+static const u8 sDustoxGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_15.4bpp.lz");
 static const ax_sprite sDustoxSprites15[] = {
 	{sDustoxGfx15, ARRAY_COUNT(sDustoxGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx16[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_16.4bpp");
-static const u8 sDustoxGfx16_1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_16_1.4bpp");
-static const u8 sDustoxGfx16_2[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_16_2.4bpp");
+static const u8 sDustoxGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_16.4bpp.lz");
+static const u8 sDustoxGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_16_1.4bpp.lz");
+static const u8 sDustoxGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_16_2.4bpp.lz");
 static const ax_sprite sDustoxSprites16[] = {
 	{NULL, 32}, 
 	{sDustoxGfx16, ARRAY_COUNT(sDustoxGfx16)}, 
@@ -2407,15 +2407,15 @@ static const ax_sprite sDustoxSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx17[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_17.4bpp");
+static const u8 sDustoxGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_17.4bpp.lz");
 static const ax_sprite sDustoxSprites17[] = {
 	{NULL, 128}, 
 	{sDustoxGfx17, ARRAY_COUNT(sDustoxGfx17)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx18[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_18.4bpp");
-static const u8 sDustoxGfx18_1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_18_1.4bpp");
+static const u8 sDustoxGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_18.4bpp.lz");
+static const u8 sDustoxGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_18_1.4bpp.lz");
 static const ax_sprite sDustoxSprites18[] = {
 	{NULL, 32}, 
 	{sDustoxGfx18, ARRAY_COUNT(sDustoxGfx18)}, 
@@ -2424,8 +2424,8 @@ static const ax_sprite sDustoxSprites18[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx19[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_19.4bpp");
-static const u8 sDustoxGfx19_1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_19_1.4bpp");
+static const u8 sDustoxGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_19.4bpp.lz");
+static const u8 sDustoxGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_19_1.4bpp.lz");
 static const ax_sprite sDustoxSprites19[] = {
 	{sDustoxGfx19, ARRAY_COUNT(sDustoxGfx19)}, 
 	{NULL, 32}, 
@@ -2433,14 +2433,14 @@ static const ax_sprite sDustoxSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx20[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_20.4bpp");
+static const u8 sDustoxGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_20.4bpp.lz");
 static const ax_sprite sDustoxSprites20[] = {
 	{sDustoxGfx20, ARRAY_COUNT(sDustoxGfx20)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx21[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_21.4bpp");
-static const u8 sDustoxGfx21_1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_21_1.4bpp");
+static const u8 sDustoxGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_21.4bpp.lz");
+static const u8 sDustoxGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_21_1.4bpp.lz");
 static const ax_sprite sDustoxSprites21[] = {
 	{NULL, 32}, 
 	{sDustoxGfx21, ARRAY_COUNT(sDustoxGfx21)}, 
@@ -2449,10 +2449,10 @@ static const ax_sprite sDustoxSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx22[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_22.4bpp");
-static const u8 sDustoxGfx22_1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_22_1.4bpp");
-static const u8 sDustoxGfx22_2[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_22_2.4bpp");
-static const u8 sDustoxGfx22_3[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_22_3.4bpp");
+static const u8 sDustoxGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_22.4bpp.lz");
+static const u8 sDustoxGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_22_1.4bpp.lz");
+static const u8 sDustoxGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_22_2.4bpp.lz");
+static const u8 sDustoxGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_22_3.4bpp.lz");
 static const ax_sprite sDustoxSprites22[] = {
 	{sDustoxGfx22, ARRAY_COUNT(sDustoxGfx22)}, 
 	{NULL, 32}, 
@@ -2464,10 +2464,10 @@ static const ax_sprite sDustoxSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx23[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_23.4bpp");
-static const u8 sDustoxGfx23_1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_23_1.4bpp");
-static const u8 sDustoxGfx23_2[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_23_2.4bpp");
-static const u8 sDustoxGfx23_3[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_23_3.4bpp");
+static const u8 sDustoxGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_23.4bpp.lz");
+static const u8 sDustoxGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_23_1.4bpp.lz");
+static const u8 sDustoxGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_23_2.4bpp.lz");
+static const u8 sDustoxGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_23_3.4bpp.lz");
 static const ax_sprite sDustoxSprites23[] = {
 	{sDustoxGfx23, ARRAY_COUNT(sDustoxGfx23)}, 
 	{NULL, 64}, 
@@ -2479,9 +2479,9 @@ static const ax_sprite sDustoxSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx24[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_24.4bpp");
-static const u8 sDustoxGfx24_1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_24_1.4bpp");
-static const u8 sDustoxGfx24_2[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_24_2.4bpp");
+static const u8 sDustoxGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_24.4bpp.lz");
+static const u8 sDustoxGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_24_1.4bpp.lz");
+static const u8 sDustoxGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_24_2.4bpp.lz");
 static const ax_sprite sDustoxSprites24[] = {
 	{sDustoxGfx24, ARRAY_COUNT(sDustoxGfx24)}, 
 	{NULL, 32}, 
@@ -2491,8 +2491,8 @@ static const ax_sprite sDustoxSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx25[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_25.4bpp");
-static const u8 sDustoxGfx25_1[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_25_1.4bpp");
+static const u8 sDustoxGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_25.4bpp.lz");
+static const u8 sDustoxGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_25_1.4bpp.lz");
 static const ax_sprite sDustoxSprites25[] = {
 	{sDustoxGfx25, ARRAY_COUNT(sDustoxGfx25)}, 
 	{NULL, 32}, 
@@ -2500,37 +2500,37 @@ static const ax_sprite sDustoxSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx26[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_26.4bpp");
+static const u8 sDustoxGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_26.4bpp.lz");
 static const ax_sprite sDustoxSprites26[] = {
 	{sDustoxGfx26, ARRAY_COUNT(sDustoxGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx27[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_27.4bpp");
+static const u8 sDustoxGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_27.4bpp.lz");
 static const ax_sprite sDustoxSprites27[] = {
 	{sDustoxGfx27, ARRAY_COUNT(sDustoxGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx28[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_28.4bpp");
+static const u8 sDustoxGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_28.4bpp.lz");
 static const ax_sprite sDustoxSprites28[] = {
 	{sDustoxGfx28, ARRAY_COUNT(sDustoxGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx29[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_29.4bpp");
+static const u8 sDustoxGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_29.4bpp.lz");
 static const ax_sprite sDustoxSprites29[] = {
 	{sDustoxGfx29, ARRAY_COUNT(sDustoxGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx30[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_30.4bpp");
+static const u8 sDustoxGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_30.4bpp.lz");
 static const ax_sprite sDustoxSprites30[] = {
 	{sDustoxGfx30, ARRAY_COUNT(sDustoxGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx31[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_31.4bpp");
+static const u8 sDustoxGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_31.4bpp.lz");
 static const ax_sprite sDustoxSprites31[] = {
 	{sDustoxGfx31, ARRAY_COUNT(sDustoxGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sDustoxGfx32[] = INCBIN_U8("graphics/ax/mon/dustox/sprite_32.4bpp");
+static const u8 sDustoxGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dustox/sprite_32.4bpp.lz");
 static const ax_sprite sDustoxSprites32[] = {
 	{sDustoxGfx32, ARRAY_COUNT(sDustoxGfx32)}, 
 	{NULL, 0}

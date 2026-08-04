@@ -2495,83 +2495,83 @@ static const ax_anim sGligarAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGligarGfx1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_1.4bpp");
+static const u8 sGligarGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_1.4bpp.lz");
 static const ax_sprite sGligarSprites1[] = {
 	{sGligarGfx1, ARRAY_COUNT(sGligarGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_2.4bpp");
+static const u8 sGligarGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_2.4bpp.lz");
 static const ax_sprite sGligarSprites2[] = {
 	{sGligarGfx2, ARRAY_COUNT(sGligarGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx3[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_3.4bpp");
+static const u8 sGligarGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_3.4bpp.lz");
 static const ax_sprite sGligarSprites3[] = {
 	{sGligarGfx3, ARRAY_COUNT(sGligarGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx4[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_4.4bpp");
+static const u8 sGligarGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_4.4bpp.lz");
 static const ax_sprite sGligarSprites4[] = {
 	{sGligarGfx4, ARRAY_COUNT(sGligarGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx5[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_5.4bpp");
+static const u8 sGligarGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_5.4bpp.lz");
 static const ax_sprite sGligarSprites5[] = {
 	{sGligarGfx5, ARRAY_COUNT(sGligarGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx6[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_6.4bpp");
+static const u8 sGligarGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_6.4bpp.lz");
 static const ax_sprite sGligarSprites6[] = {
 	{sGligarGfx6, ARRAY_COUNT(sGligarGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx7[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_7.4bpp");
+static const u8 sGligarGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_7.4bpp.lz");
 static const ax_sprite sGligarSprites7[] = {
 	{sGligarGfx7, ARRAY_COUNT(sGligarGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx8[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_8.4bpp");
+static const u8 sGligarGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_8.4bpp.lz");
 static const ax_sprite sGligarSprites8[] = {
 	{sGligarGfx8, ARRAY_COUNT(sGligarGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx9[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_9.4bpp");
+static const u8 sGligarGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_9.4bpp.lz");
 static const ax_sprite sGligarSprites9[] = {
 	{sGligarGfx9, ARRAY_COUNT(sGligarGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx10[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_10.4bpp");
+static const u8 sGligarGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_10.4bpp.lz");
 static const ax_sprite sGligarSprites10[] = {
 	{sGligarGfx10, ARRAY_COUNT(sGligarGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx11[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_11.4bpp");
+static const u8 sGligarGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_11.4bpp.lz");
 static const ax_sprite sGligarSprites11[] = {
 	{sGligarGfx11, ARRAY_COUNT(sGligarGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx12[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_12.4bpp");
+static const u8 sGligarGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_12.4bpp.lz");
 static const ax_sprite sGligarSprites12[] = {
 	{sGligarGfx12, ARRAY_COUNT(sGligarGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx13[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_13.4bpp");
+static const u8 sGligarGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_13.4bpp.lz");
 static const ax_sprite sGligarSprites13[] = {
 	{sGligarGfx13, ARRAY_COUNT(sGligarGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx14[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_14.4bpp");
+static const u8 sGligarGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_14.4bpp.lz");
 static const ax_sprite sGligarSprites14[] = {
 	{sGligarGfx14, ARRAY_COUNT(sGligarGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx15[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_15.4bpp");
+static const u8 sGligarGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_15.4bpp.lz");
 static const ax_sprite sGligarSprites15[] = {
 	{sGligarGfx15, ARRAY_COUNT(sGligarGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx16[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_16.4bpp");
-static const u8 sGligarGfx16_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_16_1.4bpp");
+static const u8 sGligarGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_16.4bpp.lz");
+static const u8 sGligarGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_16_1.4bpp.lz");
 static const ax_sprite sGligarSprites16[] = {
 	{NULL, 32}, 
 	{sGligarGfx16, ARRAY_COUNT(sGligarGfx16)}, 
@@ -2579,8 +2579,8 @@ static const ax_sprite sGligarSprites16[] = {
 	{sGligarGfx16_1, ARRAY_COUNT(sGligarGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx17[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_17.4bpp");
-static const u8 sGligarGfx17_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_17_1.4bpp");
+static const u8 sGligarGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_17.4bpp.lz");
+static const u8 sGligarGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_17_1.4bpp.lz");
 static const ax_sprite sGligarSprites17[] = {
 	{NULL, 32}, 
 	{sGligarGfx17, ARRAY_COUNT(sGligarGfx17)}, 
@@ -2589,40 +2589,40 @@ static const ax_sprite sGligarSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx18[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_18.4bpp");
+static const u8 sGligarGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_18.4bpp.lz");
 static const ax_sprite sGligarSprites18[] = {
 	{sGligarGfx18, ARRAY_COUNT(sGligarGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx19[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_19.4bpp");
+static const u8 sGligarGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_19.4bpp.lz");
 static const ax_sprite sGligarSprites19[] = {
 	{sGligarGfx19, ARRAY_COUNT(sGligarGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx20[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_20.4bpp");
+static const u8 sGligarGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_20.4bpp.lz");
 static const ax_sprite sGligarSprites20[] = {
 	{sGligarGfx20, ARRAY_COUNT(sGligarGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx21[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_21.4bpp");
+static const u8 sGligarGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_21.4bpp.lz");
 static const ax_sprite sGligarSprites21[] = {
 	{sGligarGfx21, ARRAY_COUNT(sGligarGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx22[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_22.4bpp");
+static const u8 sGligarGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_22.4bpp.lz");
 static const ax_sprite sGligarSprites22[] = {
 	{sGligarGfx22, ARRAY_COUNT(sGligarGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx23[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_23.4bpp");
+static const u8 sGligarGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_23.4bpp.lz");
 static const ax_sprite sGligarSprites23[] = {
 	{sGligarGfx23, ARRAY_COUNT(sGligarGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx24[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_24.4bpp");
-static const u8 sGligarGfx24_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_24_1.4bpp");
-static const u8 sGligarGfx24_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_24_2.4bpp");
-static const u8 sGligarGfx24_3[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_24_3.4bpp");
+static const u8 sGligarGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_24.4bpp.lz");
+static const u8 sGligarGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_24_1.4bpp.lz");
+static const u8 sGligarGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_24_2.4bpp.lz");
+static const u8 sGligarGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_24_3.4bpp.lz");
 static const ax_sprite sGligarSprites24[] = {
 	{sGligarGfx24, ARRAY_COUNT(sGligarGfx24)}, 
 	{NULL, 96}, 
@@ -2634,10 +2634,10 @@ static const ax_sprite sGligarSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx25[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_25.4bpp");
-static const u8 sGligarGfx25_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_25_1.4bpp");
-static const u8 sGligarGfx25_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_25_2.4bpp");
-static const u8 sGligarGfx25_3[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_25_3.4bpp");
+static const u8 sGligarGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_25.4bpp.lz");
+static const u8 sGligarGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_25_1.4bpp.lz");
+static const u8 sGligarGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_25_2.4bpp.lz");
+static const u8 sGligarGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_25_3.4bpp.lz");
 static const ax_sprite sGligarSprites25[] = {
 	{sGligarGfx25, ARRAY_COUNT(sGligarGfx25)}, 
 	{NULL, 32}, 
@@ -2649,9 +2649,9 @@ static const ax_sprite sGligarSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx26[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_26.4bpp");
-static const u8 sGligarGfx26_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_26_1.4bpp");
-static const u8 sGligarGfx26_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_26_2.4bpp");
+static const u8 sGligarGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_26.4bpp.lz");
+static const u8 sGligarGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_26_1.4bpp.lz");
+static const u8 sGligarGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_26_2.4bpp.lz");
 static const ax_sprite sGligarSprites26[] = {
 	{NULL, 96}, 
 	{sGligarGfx26, ARRAY_COUNT(sGligarGfx26)}, 
@@ -2661,13 +2661,13 @@ static const ax_sprite sGligarSprites26[] = {
 	{sGligarGfx26_2, ARRAY_COUNT(sGligarGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx27[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_27.4bpp");
+static const u8 sGligarGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_27.4bpp.lz");
 static const ax_sprite sGligarSprites27[] = {
 	{NULL, 32}, 
 	{sGligarGfx27, ARRAY_COUNT(sGligarGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx28[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_28.4bpp");
+static const u8 sGligarGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_28.4bpp.lz");
 static const ax_sprite sGligarSprites28[] = {
 	{sGligarGfx28, ARRAY_COUNT(sGligarGfx28)}, 
 	{NULL, 0}
@@ -2676,10 +2676,10 @@ static const ax_sprite sGligarSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx30[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_30.4bpp");
-static const u8 sGligarGfx30_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_30_1.4bpp");
-static const u8 sGligarGfx30_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_30_2.4bpp");
-static const u8 sGligarGfx30_3[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_30_3.4bpp");
+static const u8 sGligarGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_30.4bpp.lz");
+static const u8 sGligarGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_30_1.4bpp.lz");
+static const u8 sGligarGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_30_2.4bpp.lz");
+static const u8 sGligarGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_30_3.4bpp.lz");
 static const ax_sprite sGligarSprites30[] = {
 	{sGligarGfx30, ARRAY_COUNT(sGligarGfx30)}, 
 	{NULL, 32}, 
@@ -2691,8 +2691,8 @@ static const ax_sprite sGligarSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx31[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_31.4bpp");
-static const u8 sGligarGfx31_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_31_1.4bpp");
+static const u8 sGligarGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_31.4bpp.lz");
+static const u8 sGligarGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_31_1.4bpp.lz");
 static const ax_sprite sGligarSprites31[] = {
 	{sGligarGfx31, ARRAY_COUNT(sGligarGfx31)}, 
 	{NULL, 32}, 
@@ -2700,9 +2700,9 @@ static const ax_sprite sGligarSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx32[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_32.4bpp");
-static const u8 sGligarGfx32_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_32_1.4bpp");
-static const u8 sGligarGfx32_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_32_2.4bpp");
+static const u8 sGligarGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_32.4bpp.lz");
+static const u8 sGligarGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_32_1.4bpp.lz");
+static const u8 sGligarGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_32_2.4bpp.lz");
 static const ax_sprite sGligarSprites32[] = {
 	{NULL, 32}, 
 	{sGligarGfx32, ARRAY_COUNT(sGligarGfx32)}, 
@@ -2713,8 +2713,8 @@ static const ax_sprite sGligarSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx33[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_33.4bpp");
-static const u8 sGligarGfx33_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_33_1.4bpp");
+static const u8 sGligarGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_33.4bpp.lz");
+static const u8 sGligarGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_33_1.4bpp.lz");
 static const ax_sprite sGligarSprites33[] = {
 	{NULL, 32}, 
 	{sGligarGfx33, ARRAY_COUNT(sGligarGfx33)}, 
@@ -2723,9 +2723,9 @@ static const ax_sprite sGligarSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx34[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_34.4bpp");
-static const u8 sGligarGfx34_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_34_1.4bpp");
-static const u8 sGligarGfx34_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_34_2.4bpp");
+static const u8 sGligarGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_34.4bpp.lz");
+static const u8 sGligarGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_34_1.4bpp.lz");
+static const u8 sGligarGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_34_2.4bpp.lz");
 static const ax_sprite sGligarSprites34[] = {
 	{sGligarGfx34, ARRAY_COUNT(sGligarGfx34)}, 
 	{NULL, 64}, 
@@ -2735,8 +2735,8 @@ static const ax_sprite sGligarSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx35[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_35.4bpp");
-static const u8 sGligarGfx35_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_35_1.4bpp");
+static const u8 sGligarGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_35.4bpp.lz");
+static const u8 sGligarGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_35_1.4bpp.lz");
 static const ax_sprite sGligarSprites35[] = {
 	{sGligarGfx35, ARRAY_COUNT(sGligarGfx35)}, 
 	{NULL, 32}, 
@@ -2744,9 +2744,9 @@ static const ax_sprite sGligarSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx36[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_36.4bpp");
-static const u8 sGligarGfx36_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_36_1.4bpp");
-static const u8 sGligarGfx36_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_36_2.4bpp");
+static const u8 sGligarGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_36.4bpp.lz");
+static const u8 sGligarGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_36_1.4bpp.lz");
+static const u8 sGligarGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_36_2.4bpp.lz");
 static const ax_sprite sGligarSprites36[] = {
 	{sGligarGfx36, ARRAY_COUNT(sGligarGfx36)}, 
 	{NULL, 32}, 
@@ -2756,10 +2756,10 @@ static const ax_sprite sGligarSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx37[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_37.4bpp");
-static const u8 sGligarGfx37_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_37_1.4bpp");
-static const u8 sGligarGfx37_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_37_2.4bpp");
-static const u8 sGligarGfx37_3[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_37_3.4bpp");
+static const u8 sGligarGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_37.4bpp.lz");
+static const u8 sGligarGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_37_1.4bpp.lz");
+static const u8 sGligarGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_37_2.4bpp.lz");
+static const u8 sGligarGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_37_3.4bpp.lz");
 static const ax_sprite sGligarSprites37[] = {
 	{sGligarGfx37, ARRAY_COUNT(sGligarGfx37)}, 
 	{NULL, 32}, 
@@ -2771,10 +2771,10 @@ static const ax_sprite sGligarSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx38[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_38.4bpp");
-static const u8 sGligarGfx38_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_38_1.4bpp");
-static const u8 sGligarGfx38_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_38_2.4bpp");
-static const u8 sGligarGfx38_3[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_38_3.4bpp");
+static const u8 sGligarGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_38.4bpp.lz");
+static const u8 sGligarGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_38_1.4bpp.lz");
+static const u8 sGligarGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_38_2.4bpp.lz");
+static const u8 sGligarGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_38_3.4bpp.lz");
 static const ax_sprite sGligarSprites38[] = {
 	{sGligarGfx38, ARRAY_COUNT(sGligarGfx38)}, 
 	{NULL, 32}, 
@@ -2786,8 +2786,8 @@ static const ax_sprite sGligarSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx39[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_39.4bpp");
-static const u8 sGligarGfx39_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_39_1.4bpp");
+static const u8 sGligarGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_39.4bpp.lz");
+static const u8 sGligarGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_39_1.4bpp.lz");
 static const ax_sprite sGligarSprites39[] = {
 	{sGligarGfx39, ARRAY_COUNT(sGligarGfx39)}, 
 	{NULL, 64}, 
@@ -2795,9 +2795,9 @@ static const ax_sprite sGligarSprites39[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx40[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_40.4bpp");
-static const u8 sGligarGfx40_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_40_1.4bpp");
-static const u8 sGligarGfx40_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_40_2.4bpp");
+static const u8 sGligarGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_40.4bpp.lz");
+static const u8 sGligarGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_40_1.4bpp.lz");
+static const u8 sGligarGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_40_2.4bpp.lz");
 static const ax_sprite sGligarSprites40[] = {
 	{sGligarGfx40, ARRAY_COUNT(sGligarGfx40)}, 
 	{NULL, 32}, 
@@ -2807,10 +2807,10 @@ static const ax_sprite sGligarSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx41[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_41.4bpp");
-static const u8 sGligarGfx41_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_41_1.4bpp");
-static const u8 sGligarGfx41_2[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_41_2.4bpp");
-static const u8 sGligarGfx41_3[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_41_3.4bpp");
+static const u8 sGligarGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_41.4bpp.lz");
+static const u8 sGligarGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_41_1.4bpp.lz");
+static const u8 sGligarGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_41_2.4bpp.lz");
+static const u8 sGligarGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_41_3.4bpp.lz");
 static const ax_sprite sGligarSprites41[] = {
 	{NULL, 32}, 
 	{sGligarGfx41, ARRAY_COUNT(sGligarGfx41)}, 
@@ -2822,8 +2822,8 @@ static const ax_sprite sGligarSprites41[] = {
 	{sGligarGfx41_3, ARRAY_COUNT(sGligarGfx41_3)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx42[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_42.4bpp");
-static const u8 sGligarGfx42_1[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_42_1.4bpp");
+static const u8 sGligarGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_42.4bpp.lz");
+static const u8 sGligarGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_42_1.4bpp.lz");
 static const ax_sprite sGligarSprites42[] = {
 	{NULL, 32}, 
 	{sGligarGfx42, ARRAY_COUNT(sGligarGfx42)}, 
@@ -2832,37 +2832,37 @@ static const ax_sprite sGligarSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx43[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_43.4bpp");
+static const u8 sGligarGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_43.4bpp.lz");
 static const ax_sprite sGligarSprites43[] = {
 	{sGligarGfx43, ARRAY_COUNT(sGligarGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx44[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_44.4bpp");
+static const u8 sGligarGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_44.4bpp.lz");
 static const ax_sprite sGligarSprites44[] = {
 	{sGligarGfx44, ARRAY_COUNT(sGligarGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx45[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_45.4bpp");
+static const u8 sGligarGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_45.4bpp.lz");
 static const ax_sprite sGligarSprites45[] = {
 	{sGligarGfx45, ARRAY_COUNT(sGligarGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx46[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_46.4bpp");
+static const u8 sGligarGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_46.4bpp.lz");
 static const ax_sprite sGligarSprites46[] = {
 	{sGligarGfx46, ARRAY_COUNT(sGligarGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx47[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_47.4bpp");
+static const u8 sGligarGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_47.4bpp.lz");
 static const ax_sprite sGligarSprites47[] = {
 	{sGligarGfx47, ARRAY_COUNT(sGligarGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx48[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_48.4bpp");
+static const u8 sGligarGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_48.4bpp.lz");
 static const ax_sprite sGligarSprites48[] = {
 	{sGligarGfx48, ARRAY_COUNT(sGligarGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sGligarGfx49[] = INCBIN_U8("graphics/ax/mon/gligar/sprite_49.4bpp");
+static const u8 sGligarGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gligar/sprite_49.4bpp.lz");
 static const ax_sprite sGligarSprites49[] = {
 	{sGligarGfx49, ARRAY_COUNT(sGligarGfx49)}, 
 	{NULL, 0}

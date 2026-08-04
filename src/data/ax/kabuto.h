@@ -2231,83 +2231,83 @@ static const ax_anim sKabutoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKabutoGfx1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_1.4bpp");
+static const u8 sKabutoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_1.4bpp.lz");
 static const ax_sprite sKabutoSprites1[] = {
 	{sKabutoGfx1, ARRAY_COUNT(sKabutoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_2.4bpp");
+static const u8 sKabutoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_2.4bpp.lz");
 static const ax_sprite sKabutoSprites2[] = {
 	{sKabutoGfx2, ARRAY_COUNT(sKabutoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx3[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_3.4bpp");
+static const u8 sKabutoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_3.4bpp.lz");
 static const ax_sprite sKabutoSprites3[] = {
 	{sKabutoGfx3, ARRAY_COUNT(sKabutoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx4[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_4.4bpp");
+static const u8 sKabutoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_4.4bpp.lz");
 static const ax_sprite sKabutoSprites4[] = {
 	{sKabutoGfx4, ARRAY_COUNT(sKabutoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx5[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_5.4bpp");
+static const u8 sKabutoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_5.4bpp.lz");
 static const ax_sprite sKabutoSprites5[] = {
 	{sKabutoGfx5, ARRAY_COUNT(sKabutoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx6[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_6.4bpp");
+static const u8 sKabutoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_6.4bpp.lz");
 static const ax_sprite sKabutoSprites6[] = {
 	{sKabutoGfx6, ARRAY_COUNT(sKabutoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx7[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_7.4bpp");
+static const u8 sKabutoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_7.4bpp.lz");
 static const ax_sprite sKabutoSprites7[] = {
 	{sKabutoGfx7, ARRAY_COUNT(sKabutoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx8[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_8.4bpp");
+static const u8 sKabutoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_8.4bpp.lz");
 static const ax_sprite sKabutoSprites8[] = {
 	{sKabutoGfx8, ARRAY_COUNT(sKabutoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx9[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_9.4bpp");
+static const u8 sKabutoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_9.4bpp.lz");
 static const ax_sprite sKabutoSprites9[] = {
 	{sKabutoGfx9, ARRAY_COUNT(sKabutoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx10[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_10.4bpp");
+static const u8 sKabutoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_10.4bpp.lz");
 static const ax_sprite sKabutoSprites10[] = {
 	{sKabutoGfx10, ARRAY_COUNT(sKabutoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx11[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_11.4bpp");
+static const u8 sKabutoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_11.4bpp.lz");
 static const ax_sprite sKabutoSprites11[] = {
 	{sKabutoGfx11, ARRAY_COUNT(sKabutoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx12[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_12.4bpp");
+static const u8 sKabutoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_12.4bpp.lz");
 static const ax_sprite sKabutoSprites12[] = {
 	{sKabutoGfx12, ARRAY_COUNT(sKabutoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx13[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_13.4bpp");
+static const u8 sKabutoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_13.4bpp.lz");
 static const ax_sprite sKabutoSprites13[] = {
 	{sKabutoGfx13, ARRAY_COUNT(sKabutoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx14[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_14.4bpp");
+static const u8 sKabutoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_14.4bpp.lz");
 static const ax_sprite sKabutoSprites14[] = {
 	{sKabutoGfx14, ARRAY_COUNT(sKabutoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx15[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_15.4bpp");
+static const u8 sKabutoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_15.4bpp.lz");
 static const ax_sprite sKabutoSprites15[] = {
 	{sKabutoGfx15, ARRAY_COUNT(sKabutoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx16[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_16.4bpp");
-static const u8 sKabutoGfx16_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_16_1.4bpp");
+static const u8 sKabutoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_16.4bpp.lz");
+static const u8 sKabutoGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_16_1.4bpp.lz");
 static const ax_sprite sKabutoSprites16[] = {
 	{sKabutoGfx16, ARRAY_COUNT(sKabutoGfx16)}, 
 	{NULL, 32}, 
@@ -2315,8 +2315,8 @@ static const ax_sprite sKabutoSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx17[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_17.4bpp");
-static const u8 sKabutoGfx17_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_17_1.4bpp");
+static const u8 sKabutoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_17.4bpp.lz");
+static const u8 sKabutoGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_17_1.4bpp.lz");
 static const ax_sprite sKabutoSprites17[] = {
 	{sKabutoGfx17, ARRAY_COUNT(sKabutoGfx17)}, 
 	{NULL, 32}, 
@@ -2324,8 +2324,8 @@ static const ax_sprite sKabutoSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx18[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_18.4bpp");
-static const u8 sKabutoGfx18_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_18_1.4bpp");
+static const u8 sKabutoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_18.4bpp.lz");
+static const u8 sKabutoGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_18_1.4bpp.lz");
 static const ax_sprite sKabutoSprites18[] = {
 	{sKabutoGfx18, ARRAY_COUNT(sKabutoGfx18)}, 
 	{NULL, 32}, 
@@ -2333,9 +2333,9 @@ static const ax_sprite sKabutoSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx19[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_19.4bpp");
-static const u8 sKabutoGfx19_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_19_1.4bpp");
-static const u8 sKabutoGfx19_2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_19_2.4bpp");
+static const u8 sKabutoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_19.4bpp.lz");
+static const u8 sKabutoGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_19_1.4bpp.lz");
+static const u8 sKabutoGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_19_2.4bpp.lz");
 static const ax_sprite sKabutoSprites19[] = {
 	{sKabutoGfx19, ARRAY_COUNT(sKabutoGfx19)}, 
 	{NULL, 32}, 
@@ -2345,9 +2345,9 @@ static const ax_sprite sKabutoSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx20[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_20.4bpp");
-static const u8 sKabutoGfx20_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_20_1.4bpp");
-static const u8 sKabutoGfx20_2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_20_2.4bpp");
+static const u8 sKabutoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_20.4bpp.lz");
+static const u8 sKabutoGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_20_1.4bpp.lz");
+static const u8 sKabutoGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_20_2.4bpp.lz");
 static const ax_sprite sKabutoSprites20[] = {
 	{sKabutoGfx20, ARRAY_COUNT(sKabutoGfx20)}, 
 	{NULL, 64}, 
@@ -2357,15 +2357,15 @@ static const ax_sprite sKabutoSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx21[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_21.4bpp");
+static const u8 sKabutoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_21.4bpp.lz");
 static const ax_sprite sKabutoSprites21[] = {
 	{sKabutoGfx21, ARRAY_COUNT(sKabutoGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx22[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_22.4bpp");
-static const u8 sKabutoGfx22_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_22_1.4bpp");
-static const u8 sKabutoGfx22_2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_22_2.4bpp");
+static const u8 sKabutoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_22.4bpp.lz");
+static const u8 sKabutoGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_22_1.4bpp.lz");
+static const u8 sKabutoGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_22_2.4bpp.lz");
 static const ax_sprite sKabutoSprites22[] = {
 	{NULL, 32}, 
 	{sKabutoGfx22, ARRAY_COUNT(sKabutoGfx22)}, 
@@ -2376,9 +2376,9 @@ static const ax_sprite sKabutoSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx23[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_23.4bpp");
-static const u8 sKabutoGfx23_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_23_1.4bpp");
-static const u8 sKabutoGfx23_2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_23_2.4bpp");
+static const u8 sKabutoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_23.4bpp.lz");
+static const u8 sKabutoGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_23_1.4bpp.lz");
+static const u8 sKabutoGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_23_2.4bpp.lz");
 static const ax_sprite sKabutoSprites23[] = {
 	{NULL, 32}, 
 	{sKabutoGfx23, ARRAY_COUNT(sKabutoGfx23)}, 
@@ -2389,9 +2389,9 @@ static const ax_sprite sKabutoSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx24[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_24.4bpp");
-static const u8 sKabutoGfx24_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_24_1.4bpp");
-static const u8 sKabutoGfx24_2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_24_2.4bpp");
+static const u8 sKabutoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_24.4bpp.lz");
+static const u8 sKabutoGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_24_1.4bpp.lz");
+static const u8 sKabutoGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_24_2.4bpp.lz");
 static const ax_sprite sKabutoSprites24[] = {
 	{sKabutoGfx24, ARRAY_COUNT(sKabutoGfx24)}, 
 	{NULL, 32}, 
@@ -2401,9 +2401,9 @@ static const ax_sprite sKabutoSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx25[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_25.4bpp");
-static const u8 sKabutoGfx25_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_25_1.4bpp");
-static const u8 sKabutoGfx25_2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_25_2.4bpp");
+static const u8 sKabutoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_25.4bpp.lz");
+static const u8 sKabutoGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_25_1.4bpp.lz");
+static const u8 sKabutoGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_25_2.4bpp.lz");
 static const ax_sprite sKabutoSprites25[] = {
 	{sKabutoGfx25, ARRAY_COUNT(sKabutoGfx25)}, 
 	{NULL, 32}, 
@@ -2413,8 +2413,8 @@ static const ax_sprite sKabutoSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx26[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_26.4bpp");
-static const u8 sKabutoGfx26_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_26_1.4bpp");
+static const u8 sKabutoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_26.4bpp.lz");
+static const u8 sKabutoGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_26_1.4bpp.lz");
 static const ax_sprite sKabutoSprites26[] = {
 	{sKabutoGfx26, ARRAY_COUNT(sKabutoGfx26)}, 
 	{NULL, 32}, 
@@ -2422,8 +2422,8 @@ static const ax_sprite sKabutoSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx27[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_27.4bpp");
-static const u8 sKabutoGfx27_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_27_1.4bpp");
+static const u8 sKabutoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_27.4bpp.lz");
+static const u8 sKabutoGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_27_1.4bpp.lz");
 static const ax_sprite sKabutoSprites27[] = {
 	{sKabutoGfx27, ARRAY_COUNT(sKabutoGfx27)}, 
 	{NULL, 32}, 
@@ -2431,15 +2431,15 @@ static const ax_sprite sKabutoSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx28[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_28.4bpp");
+static const u8 sKabutoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_28.4bpp.lz");
 static const ax_sprite sKabutoSprites28[] = {
 	{sKabutoGfx28, ARRAY_COUNT(sKabutoGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx29[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_29.4bpp");
-static const u8 sKabutoGfx29_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_29_1.4bpp");
-static const u8 sKabutoGfx29_2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_29_2.4bpp");
+static const u8 sKabutoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_29.4bpp.lz");
+static const u8 sKabutoGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_29_1.4bpp.lz");
+static const u8 sKabutoGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_29_2.4bpp.lz");
 static const ax_sprite sKabutoSprites29[] = {
 	{sKabutoGfx29, ARRAY_COUNT(sKabutoGfx29)}, 
 	{NULL, 32}, 
@@ -2449,9 +2449,9 @@ static const ax_sprite sKabutoSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx30[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_30.4bpp");
-static const u8 sKabutoGfx30_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_30_1.4bpp");
-static const u8 sKabutoGfx30_2[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_30_2.4bpp");
+static const u8 sKabutoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_30.4bpp.lz");
+static const u8 sKabutoGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_30_1.4bpp.lz");
+static const u8 sKabutoGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_30_2.4bpp.lz");
 static const ax_sprite sKabutoSprites30[] = {
 	{sKabutoGfx30, ARRAY_COUNT(sKabutoGfx30)}, 
 	{NULL, 32}, 
@@ -2461,8 +2461,8 @@ static const ax_sprite sKabutoSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx31[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_31.4bpp");
-static const u8 sKabutoGfx31_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_31_1.4bpp");
+static const u8 sKabutoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_31.4bpp.lz");
+static const u8 sKabutoGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_31_1.4bpp.lz");
 static const ax_sprite sKabutoSprites31[] = {
 	{sKabutoGfx31, ARRAY_COUNT(sKabutoGfx31)}, 
 	{NULL, 32}, 
@@ -2470,8 +2470,8 @@ static const ax_sprite sKabutoSprites31[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx32[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_32.4bpp");
-static const u8 sKabutoGfx32_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_32_1.4bpp");
+static const u8 sKabutoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_32.4bpp.lz");
+static const u8 sKabutoGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_32_1.4bpp.lz");
 static const ax_sprite sKabutoSprites32[] = {
 	{sKabutoGfx32, ARRAY_COUNT(sKabutoGfx32)}, 
 	{NULL, 32}, 
@@ -2479,8 +2479,8 @@ static const ax_sprite sKabutoSprites32[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx33[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_33.4bpp");
-static const u8 sKabutoGfx33_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_33_1.4bpp");
+static const u8 sKabutoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_33.4bpp.lz");
+static const u8 sKabutoGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_33_1.4bpp.lz");
 static const ax_sprite sKabutoSprites33[] = {
 	{sKabutoGfx33, ARRAY_COUNT(sKabutoGfx33)}, 
 	{NULL, 32}, 
@@ -2488,8 +2488,8 @@ static const ax_sprite sKabutoSprites33[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx34[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_34.4bpp");
-static const u8 sKabutoGfx34_1[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_34_1.4bpp");
+static const u8 sKabutoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_34.4bpp.lz");
+static const u8 sKabutoGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_34_1.4bpp.lz");
 static const ax_sprite sKabutoSprites34[] = {
 	{sKabutoGfx34, ARRAY_COUNT(sKabutoGfx34)}, 
 	{NULL, 32}, 
@@ -2497,37 +2497,37 @@ static const ax_sprite sKabutoSprites34[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx35[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_35.4bpp");
+static const u8 sKabutoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_35.4bpp.lz");
 static const ax_sprite sKabutoSprites35[] = {
 	{sKabutoGfx35, ARRAY_COUNT(sKabutoGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx36[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_36.4bpp");
+static const u8 sKabutoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_36.4bpp.lz");
 static const ax_sprite sKabutoSprites36[] = {
 	{sKabutoGfx36, ARRAY_COUNT(sKabutoGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx37[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_37.4bpp");
+static const u8 sKabutoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_37.4bpp.lz");
 static const ax_sprite sKabutoSprites37[] = {
 	{sKabutoGfx37, ARRAY_COUNT(sKabutoGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx38[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_38.4bpp");
+static const u8 sKabutoGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_38.4bpp.lz");
 static const ax_sprite sKabutoSprites38[] = {
 	{sKabutoGfx38, ARRAY_COUNT(sKabutoGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx39[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_39.4bpp");
+static const u8 sKabutoGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_39.4bpp.lz");
 static const ax_sprite sKabutoSprites39[] = {
 	{sKabutoGfx39, ARRAY_COUNT(sKabutoGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx40[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_40.4bpp");
+static const u8 sKabutoGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_40.4bpp.lz");
 static const ax_sprite sKabutoSprites40[] = {
 	{sKabutoGfx40, ARRAY_COUNT(sKabutoGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sKabutoGfx41[] = INCBIN_U8("graphics/ax/mon/kabuto/sprite_41.4bpp");
+static const u8 sKabutoGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kabuto/sprite_41.4bpp.lz");
 static const ax_sprite sKabutoSprites41[] = {
 	{sKabutoGfx41, ARRAY_COUNT(sKabutoGfx41)}, 
 	{NULL, 0}

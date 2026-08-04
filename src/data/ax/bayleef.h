@@ -1995,113 +1995,113 @@ static const ax_anim sBayleefAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBayleefGfx1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_1.4bpp");
+static const u8 sBayleefGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_1.4bpp.lz");
 static const ax_sprite sBayleefSprites1[] = {
 	{sBayleefGfx1, ARRAY_COUNT(sBayleefGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx2[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_2.4bpp");
+static const u8 sBayleefGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_2.4bpp.lz");
 static const ax_sprite sBayleefSprites2[] = {
 	{sBayleefGfx2, ARRAY_COUNT(sBayleefGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx3[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_3.4bpp");
+static const u8 sBayleefGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_3.4bpp.lz");
 static const ax_sprite sBayleefSprites3[] = {
 	{sBayleefGfx3, ARRAY_COUNT(sBayleefGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx4[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_4.4bpp");
+static const u8 sBayleefGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_4.4bpp.lz");
 static const ax_sprite sBayleefSprites4[] = {
 	{sBayleefGfx4, ARRAY_COUNT(sBayleefGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx5[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_5.4bpp");
+static const u8 sBayleefGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_5.4bpp.lz");
 static const ax_sprite sBayleefSprites5[] = {
 	{sBayleefGfx5, ARRAY_COUNT(sBayleefGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx6[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_6.4bpp");
+static const u8 sBayleefGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_6.4bpp.lz");
 static const ax_sprite sBayleefSprites6[] = {
 	{sBayleefGfx6, ARRAY_COUNT(sBayleefGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx7[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_7.4bpp");
+static const u8 sBayleefGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_7.4bpp.lz");
 static const ax_sprite sBayleefSprites7[] = {
 	{sBayleefGfx7, ARRAY_COUNT(sBayleefGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx8[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_8.4bpp");
+static const u8 sBayleefGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_8.4bpp.lz");
 static const ax_sprite sBayleefSprites8[] = {
 	{sBayleefGfx8, ARRAY_COUNT(sBayleefGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx9[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_9.4bpp");
+static const u8 sBayleefGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_9.4bpp.lz");
 static const ax_sprite sBayleefSprites9[] = {
 	{sBayleefGfx9, ARRAY_COUNT(sBayleefGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx10[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_10.4bpp");
+static const u8 sBayleefGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_10.4bpp.lz");
 static const ax_sprite sBayleefSprites10[] = {
 	{sBayleefGfx10, ARRAY_COUNT(sBayleefGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx11[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_11.4bpp");
+static const u8 sBayleefGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_11.4bpp.lz");
 static const ax_sprite sBayleefSprites11[] = {
 	{sBayleefGfx11, ARRAY_COUNT(sBayleefGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx12[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_12.4bpp");
+static const u8 sBayleefGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_12.4bpp.lz");
 static const ax_sprite sBayleefSprites12[] = {
 	{sBayleefGfx12, ARRAY_COUNT(sBayleefGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx13[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_13.4bpp");
+static const u8 sBayleefGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_13.4bpp.lz");
 static const ax_sprite sBayleefSprites13[] = {
 	{sBayleefGfx13, ARRAY_COUNT(sBayleefGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx14[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_14.4bpp");
+static const u8 sBayleefGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_14.4bpp.lz");
 static const ax_sprite sBayleefSprites14[] = {
 	{sBayleefGfx14, ARRAY_COUNT(sBayleefGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx15[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_15.4bpp");
+static const u8 sBayleefGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_15.4bpp.lz");
 static const ax_sprite sBayleefSprites15[] = {
 	{sBayleefGfx15, ARRAY_COUNT(sBayleefGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx16[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_16.4bpp");
+static const u8 sBayleefGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_16.4bpp.lz");
 static const ax_sprite sBayleefSprites16[] = {
 	{sBayleefGfx16, ARRAY_COUNT(sBayleefGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx17[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_17.4bpp");
+static const u8 sBayleefGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_17.4bpp.lz");
 static const ax_sprite sBayleefSprites17[] = {
 	{sBayleefGfx17, ARRAY_COUNT(sBayleefGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx18[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_18.4bpp");
+static const u8 sBayleefGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_18.4bpp.lz");
 static const ax_sprite sBayleefSprites18[] = {
 	{sBayleefGfx18, ARRAY_COUNT(sBayleefGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx19[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_19.4bpp");
+static const u8 sBayleefGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_19.4bpp.lz");
 static const ax_sprite sBayleefSprites19[] = {
 	{sBayleefGfx19, ARRAY_COUNT(sBayleefGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx20[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_20.4bpp");
+static const u8 sBayleefGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_20.4bpp.lz");
 static const ax_sprite sBayleefSprites20[] = {
 	{sBayleefGfx20, ARRAY_COUNT(sBayleefGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx21[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_21.4bpp");
+static const u8 sBayleefGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_21.4bpp.lz");
 static const ax_sprite sBayleefSprites21[] = {
 	{sBayleefGfx21, ARRAY_COUNT(sBayleefGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx22[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_22.4bpp");
-static const u8 sBayleefGfx22_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_22_1.4bpp");
+static const u8 sBayleefGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_22.4bpp.lz");
+static const u8 sBayleefGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_22_1.4bpp.lz");
 static const ax_sprite sBayleefSprites22[] = {
 	{sBayleefGfx22, ARRAY_COUNT(sBayleefGfx22)}, 
 	{NULL, 32}, 
@@ -2109,9 +2109,9 @@ static const ax_sprite sBayleefSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx23[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_23.4bpp");
-static const u8 sBayleefGfx23_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_23_1.4bpp");
-static const u8 sBayleefGfx23_2[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_23_2.4bpp");
+static const u8 sBayleefGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_23.4bpp.lz");
+static const u8 sBayleefGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_23_1.4bpp.lz");
+static const u8 sBayleefGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_23_2.4bpp.lz");
 static const ax_sprite sBayleefSprites23[] = {
 	{NULL, 32}, 
 	{sBayleefGfx23, ARRAY_COUNT(sBayleefGfx23)}, 
@@ -2122,8 +2122,8 @@ static const ax_sprite sBayleefSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx24[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_24.4bpp");
-static const u8 sBayleefGfx24_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_24_1.4bpp");
+static const u8 sBayleefGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_24.4bpp.lz");
+static const u8 sBayleefGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_24_1.4bpp.lz");
 static const ax_sprite sBayleefSprites24[] = {
 	{NULL, 32}, 
 	{sBayleefGfx24, ARRAY_COUNT(sBayleefGfx24)}, 
@@ -2131,8 +2131,8 @@ static const ax_sprite sBayleefSprites24[] = {
 	{sBayleefGfx24_1, ARRAY_COUNT(sBayleefGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx25[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_25.4bpp");
-static const u8 sBayleefGfx25_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_25_1.4bpp");
+static const u8 sBayleefGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_25.4bpp.lz");
+static const u8 sBayleefGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_25_1.4bpp.lz");
 static const ax_sprite sBayleefSprites25[] = {
 	{sBayleefGfx25, ARRAY_COUNT(sBayleefGfx25)}, 
 	{NULL, 64}, 
@@ -2140,32 +2140,32 @@ static const ax_sprite sBayleefSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx26[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_26.4bpp");
-static const u8 sBayleefGfx26_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_26_1.4bpp");
+static const u8 sBayleefGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_26.4bpp.lz");
+static const u8 sBayleefGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_26_1.4bpp.lz");
 static const ax_sprite sBayleefSprites26[] = {
 	{sBayleefGfx26, ARRAY_COUNT(sBayleefGfx26)}, 
 	{NULL, 32}, 
 	{sBayleefGfx26_1, ARRAY_COUNT(sBayleefGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx27[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_27.4bpp");
+static const u8 sBayleefGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_27.4bpp.lz");
 static const ax_sprite sBayleefSprites27[] = {
 	{sBayleefGfx27, ARRAY_COUNT(sBayleefGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx28[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_28.4bpp");
+static const u8 sBayleefGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_28.4bpp.lz");
 static const ax_sprite sBayleefSprites28[] = {
 	{sBayleefGfx28, ARRAY_COUNT(sBayleefGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx29[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_29.4bpp");
+static const u8 sBayleefGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_29.4bpp.lz");
 static const ax_sprite sBayleefSprites29[] = {
 	{sBayleefGfx29, ARRAY_COUNT(sBayleefGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx30[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_30.4bpp");
-static const u8 sBayleefGfx30_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_30_1.4bpp");
-static const u8 sBayleefGfx30_2[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_30_2.4bpp");
+static const u8 sBayleefGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_30.4bpp.lz");
+static const u8 sBayleefGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_30_1.4bpp.lz");
+static const u8 sBayleefGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_30_2.4bpp.lz");
 static const ax_sprite sBayleefSprites30[] = {
 	{NULL, 32}, 
 	{sBayleefGfx30, ARRAY_COUNT(sBayleefGfx30)}, 
@@ -2176,9 +2176,9 @@ static const ax_sprite sBayleefSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx31[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_31.4bpp");
-static const u8 sBayleefGfx31_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_31_1.4bpp");
-static const u8 sBayleefGfx31_2[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_31_2.4bpp");
+static const u8 sBayleefGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_31.4bpp.lz");
+static const u8 sBayleefGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_31_1.4bpp.lz");
+static const u8 sBayleefGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_31_2.4bpp.lz");
 static const ax_sprite sBayleefSprites31[] = {
 	{sBayleefGfx31, ARRAY_COUNT(sBayleefGfx31)}, 
 	{NULL, 64}, 
@@ -2187,10 +2187,10 @@ static const ax_sprite sBayleefSprites31[] = {
 	{sBayleefGfx31_2, ARRAY_COUNT(sBayleefGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx32[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_32.4bpp");
-static const u8 sBayleefGfx32_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_32_1.4bpp");
-static const u8 sBayleefGfx32_2[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_32_2.4bpp");
-static const u8 sBayleefGfx32_3[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_32_3.4bpp");
+static const u8 sBayleefGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_32.4bpp.lz");
+static const u8 sBayleefGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_32_1.4bpp.lz");
+static const u8 sBayleefGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_32_2.4bpp.lz");
+static const u8 sBayleefGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_32_3.4bpp.lz");
 static const ax_sprite sBayleefSprites32[] = {
 	{sBayleefGfx32, ARRAY_COUNT(sBayleefGfx32)}, 
 	{NULL, 32}, 
@@ -2201,9 +2201,9 @@ static const ax_sprite sBayleefSprites32[] = {
 	{sBayleefGfx32_3, ARRAY_COUNT(sBayleefGfx32_3)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx33[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_33.4bpp");
-static const u8 sBayleefGfx33_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_33_1.4bpp");
-static const u8 sBayleefGfx33_2[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_33_2.4bpp");
+static const u8 sBayleefGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_33.4bpp.lz");
+static const u8 sBayleefGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_33_1.4bpp.lz");
+static const u8 sBayleefGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_33_2.4bpp.lz");
 static const ax_sprite sBayleefSprites33[] = {
 	{sBayleefGfx33, ARRAY_COUNT(sBayleefGfx33)}, 
 	{NULL, 64}, 
@@ -2212,10 +2212,10 @@ static const ax_sprite sBayleefSprites33[] = {
 	{sBayleefGfx33_2, ARRAY_COUNT(sBayleefGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx34[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_34.4bpp");
-static const u8 sBayleefGfx34_1[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_34_1.4bpp");
-static const u8 sBayleefGfx34_2[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_34_2.4bpp");
-static const u8 sBayleefGfx34_3[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_34_3.4bpp");
+static const u8 sBayleefGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_34.4bpp.lz");
+static const u8 sBayleefGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_34_1.4bpp.lz");
+static const u8 sBayleefGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_34_2.4bpp.lz");
+static const u8 sBayleefGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_34_3.4bpp.lz");
 static const ax_sprite sBayleefSprites34[] = {
 	{NULL, 32}, 
 	{sBayleefGfx34, ARRAY_COUNT(sBayleefGfx34)}, 
@@ -2228,37 +2228,37 @@ static const ax_sprite sBayleefSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx35[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_35.4bpp");
+static const u8 sBayleefGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_35.4bpp.lz");
 static const ax_sprite sBayleefSprites35[] = {
 	{sBayleefGfx35, ARRAY_COUNT(sBayleefGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx36[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_36.4bpp");
+static const u8 sBayleefGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_36.4bpp.lz");
 static const ax_sprite sBayleefSprites36[] = {
 	{sBayleefGfx36, ARRAY_COUNT(sBayleefGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx37[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_37.4bpp");
+static const u8 sBayleefGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_37.4bpp.lz");
 static const ax_sprite sBayleefSprites37[] = {
 	{sBayleefGfx37, ARRAY_COUNT(sBayleefGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx38[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_38.4bpp");
+static const u8 sBayleefGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_38.4bpp.lz");
 static const ax_sprite sBayleefSprites38[] = {
 	{sBayleefGfx38, ARRAY_COUNT(sBayleefGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx39[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_39.4bpp");
+static const u8 sBayleefGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_39.4bpp.lz");
 static const ax_sprite sBayleefSprites39[] = {
 	{sBayleefGfx39, ARRAY_COUNT(sBayleefGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx40[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_40.4bpp");
+static const u8 sBayleefGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_40.4bpp.lz");
 static const ax_sprite sBayleefSprites40[] = {
 	{sBayleefGfx40, ARRAY_COUNT(sBayleefGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sBayleefGfx41[] = INCBIN_U8("graphics/ax/mon/bayleef/sprite_41.4bpp");
+static const u8 sBayleefGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bayleef/sprite_41.4bpp.lz");
 static const ax_sprite sBayleefSprites41[] = {
 	{sBayleefGfx41, ARRAY_COUNT(sBayleefGfx41)}, 
 	{NULL, 0}

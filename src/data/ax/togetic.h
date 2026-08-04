@@ -2193,213 +2193,213 @@ static const ax_anim sTogeticAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTogeticGfx1[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_1.4bpp");
+static const u8 sTogeticGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_1.4bpp.lz");
 static const ax_sprite sTogeticSprites1[] = {
 	{sTogeticGfx1, ARRAY_COUNT(sTogeticGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx2[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_2.4bpp");
+static const u8 sTogeticGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_2.4bpp.lz");
 static const ax_sprite sTogeticSprites2[] = {
 	{sTogeticGfx2, ARRAY_COUNT(sTogeticGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx3[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_3.4bpp");
+static const u8 sTogeticGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_3.4bpp.lz");
 static const ax_sprite sTogeticSprites3[] = {
 	{sTogeticGfx3, ARRAY_COUNT(sTogeticGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx4[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_4.4bpp");
+static const u8 sTogeticGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_4.4bpp.lz");
 static const ax_sprite sTogeticSprites4[] = {
 	{sTogeticGfx4, ARRAY_COUNT(sTogeticGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx5[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_5.4bpp");
+static const u8 sTogeticGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_5.4bpp.lz");
 static const ax_sprite sTogeticSprites5[] = {
 	{sTogeticGfx5, ARRAY_COUNT(sTogeticGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx6[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_6.4bpp");
+static const u8 sTogeticGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_6.4bpp.lz");
 static const ax_sprite sTogeticSprites6[] = {
 	{sTogeticGfx6, ARRAY_COUNT(sTogeticGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx7[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_7.4bpp");
+static const u8 sTogeticGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_7.4bpp.lz");
 static const ax_sprite sTogeticSprites7[] = {
 	{sTogeticGfx7, ARRAY_COUNT(sTogeticGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx8[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_8.4bpp");
+static const u8 sTogeticGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_8.4bpp.lz");
 static const ax_sprite sTogeticSprites8[] = {
 	{sTogeticGfx8, ARRAY_COUNT(sTogeticGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx9[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_9.4bpp");
+static const u8 sTogeticGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_9.4bpp.lz");
 static const ax_sprite sTogeticSprites9[] = {
 	{sTogeticGfx9, ARRAY_COUNT(sTogeticGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx10[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_10.4bpp");
+static const u8 sTogeticGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_10.4bpp.lz");
 static const ax_sprite sTogeticSprites10[] = {
 	{sTogeticGfx10, ARRAY_COUNT(sTogeticGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx11[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_11.4bpp");
+static const u8 sTogeticGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_11.4bpp.lz");
 static const ax_sprite sTogeticSprites11[] = {
 	{sTogeticGfx11, ARRAY_COUNT(sTogeticGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx12[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_12.4bpp");
+static const u8 sTogeticGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_12.4bpp.lz");
 static const ax_sprite sTogeticSprites12[] = {
 	{sTogeticGfx12, ARRAY_COUNT(sTogeticGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx13[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_13.4bpp");
+static const u8 sTogeticGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_13.4bpp.lz");
 static const ax_sprite sTogeticSprites13[] = {
 	{sTogeticGfx13, ARRAY_COUNT(sTogeticGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx14[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_14.4bpp");
+static const u8 sTogeticGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_14.4bpp.lz");
 static const ax_sprite sTogeticSprites14[] = {
 	{sTogeticGfx14, ARRAY_COUNT(sTogeticGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx15[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_15.4bpp");
+static const u8 sTogeticGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_15.4bpp.lz");
 static const ax_sprite sTogeticSprites15[] = {
 	{sTogeticGfx15, ARRAY_COUNT(sTogeticGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx16[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_16.4bpp");
+static const u8 sTogeticGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_16.4bpp.lz");
 static const ax_sprite sTogeticSprites16[] = {
 	{sTogeticGfx16, ARRAY_COUNT(sTogeticGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx17[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_17.4bpp");
+static const u8 sTogeticGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_17.4bpp.lz");
 static const ax_sprite sTogeticSprites17[] = {
 	{sTogeticGfx17, ARRAY_COUNT(sTogeticGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx18[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_18.4bpp");
+static const u8 sTogeticGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_18.4bpp.lz");
 static const ax_sprite sTogeticSprites18[] = {
 	{sTogeticGfx18, ARRAY_COUNT(sTogeticGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx19[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_19.4bpp");
+static const u8 sTogeticGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_19.4bpp.lz");
 static const ax_sprite sTogeticSprites19[] = {
 	{sTogeticGfx19, ARRAY_COUNT(sTogeticGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx20[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_20.4bpp");
+static const u8 sTogeticGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_20.4bpp.lz");
 static const ax_sprite sTogeticSprites20[] = {
 	{sTogeticGfx20, ARRAY_COUNT(sTogeticGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx21[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_21.4bpp");
+static const u8 sTogeticGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_21.4bpp.lz");
 static const ax_sprite sTogeticSprites21[] = {
 	{sTogeticGfx21, ARRAY_COUNT(sTogeticGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx22[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_22.4bpp");
+static const u8 sTogeticGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_22.4bpp.lz");
 static const ax_sprite sTogeticSprites22[] = {
 	{sTogeticGfx22, ARRAY_COUNT(sTogeticGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx23[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_23.4bpp");
+static const u8 sTogeticGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_23.4bpp.lz");
 static const ax_sprite sTogeticSprites23[] = {
 	{sTogeticGfx23, ARRAY_COUNT(sTogeticGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx24[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_24.4bpp");
+static const u8 sTogeticGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_24.4bpp.lz");
 static const ax_sprite sTogeticSprites24[] = {
 	{sTogeticGfx24, ARRAY_COUNT(sTogeticGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx25[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_25.4bpp");
+static const u8 sTogeticGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_25.4bpp.lz");
 static const ax_sprite sTogeticSprites25[] = {
 	{sTogeticGfx25, ARRAY_COUNT(sTogeticGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx26[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_26.4bpp");
+static const u8 sTogeticGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_26.4bpp.lz");
 static const ax_sprite sTogeticSprites26[] = {
 	{sTogeticGfx26, ARRAY_COUNT(sTogeticGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx27[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_27.4bpp");
+static const u8 sTogeticGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_27.4bpp.lz");
 static const ax_sprite sTogeticSprites27[] = {
 	{sTogeticGfx27, ARRAY_COUNT(sTogeticGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx28[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_28.4bpp");
+static const u8 sTogeticGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_28.4bpp.lz");
 static const ax_sprite sTogeticSprites28[] = {
 	{sTogeticGfx28, ARRAY_COUNT(sTogeticGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx29[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_29.4bpp");
+static const u8 sTogeticGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_29.4bpp.lz");
 static const ax_sprite sTogeticSprites29[] = {
 	{sTogeticGfx29, ARRAY_COUNT(sTogeticGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx30[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_30.4bpp");
+static const u8 sTogeticGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_30.4bpp.lz");
 static const ax_sprite sTogeticSprites30[] = {
 	{sTogeticGfx30, ARRAY_COUNT(sTogeticGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx31[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_31.4bpp");
+static const u8 sTogeticGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_31.4bpp.lz");
 static const ax_sprite sTogeticSprites31[] = {
 	{sTogeticGfx31, ARRAY_COUNT(sTogeticGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx32[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_32.4bpp");
+static const u8 sTogeticGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_32.4bpp.lz");
 static const ax_sprite sTogeticSprites32[] = {
 	{sTogeticGfx32, ARRAY_COUNT(sTogeticGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx33[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_33.4bpp");
+static const u8 sTogeticGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_33.4bpp.lz");
 static const ax_sprite sTogeticSprites33[] = {
 	{sTogeticGfx33, ARRAY_COUNT(sTogeticGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx34[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_34.4bpp");
+static const u8 sTogeticGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_34.4bpp.lz");
 static const ax_sprite sTogeticSprites34[] = {
 	{sTogeticGfx34, ARRAY_COUNT(sTogeticGfx34)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx35[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_35.4bpp");
+static const u8 sTogeticGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_35.4bpp.lz");
 static const ax_sprite sTogeticSprites35[] = {
 	{sTogeticGfx35, ARRAY_COUNT(sTogeticGfx35)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx36[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_36.4bpp");
+static const u8 sTogeticGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_36.4bpp.lz");
 static const ax_sprite sTogeticSprites36[] = {
 	{sTogeticGfx36, ARRAY_COUNT(sTogeticGfx36)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx37[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_37.4bpp");
+static const u8 sTogeticGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_37.4bpp.lz");
 static const ax_sprite sTogeticSprites37[] = {
 	{sTogeticGfx37, ARRAY_COUNT(sTogeticGfx37)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx38[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_38.4bpp");
+static const u8 sTogeticGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_38.4bpp.lz");
 static const ax_sprite sTogeticSprites38[] = {
 	{sTogeticGfx38, ARRAY_COUNT(sTogeticGfx38)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx39[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_39.4bpp");
-static const u8 sTogeticGfx39_1[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_39_1.4bpp");
-static const u8 sTogeticGfx39_2[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_39_2.4bpp");
+static const u8 sTogeticGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_39.4bpp.lz");
+static const u8 sTogeticGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_39_1.4bpp.lz");
+static const u8 sTogeticGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_39_2.4bpp.lz");
 static const ax_sprite sTogeticSprites39[] = {
 	{sTogeticGfx39, ARRAY_COUNT(sTogeticGfx39)}, 
 	{NULL, 64}, 
@@ -2409,9 +2409,9 @@ static const ax_sprite sTogeticSprites39[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx40[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_40.4bpp");
-static const u8 sTogeticGfx40_1[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_40_1.4bpp");
-static const u8 sTogeticGfx40_2[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_40_2.4bpp");
+static const u8 sTogeticGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_40.4bpp.lz");
+static const u8 sTogeticGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_40_1.4bpp.lz");
+static const u8 sTogeticGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_40_2.4bpp.lz");
 static const ax_sprite sTogeticSprites40[] = {
 	{sTogeticGfx40, ARRAY_COUNT(sTogeticGfx40)}, 
 	{NULL, 64}, 
@@ -2421,66 +2421,66 @@ static const ax_sprite sTogeticSprites40[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx41[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_41.4bpp");
+static const u8 sTogeticGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_41.4bpp.lz");
 static const ax_sprite sTogeticSprites41[] = {
 	{sTogeticGfx41, ARRAY_COUNT(sTogeticGfx41)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx42[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_42.4bpp");
+static const u8 sTogeticGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_42.4bpp.lz");
 static const ax_sprite sTogeticSprites42[] = {
 	{sTogeticGfx42, ARRAY_COUNT(sTogeticGfx42)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx43[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_43.4bpp");
+static const u8 sTogeticGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_43.4bpp.lz");
 static const ax_sprite sTogeticSprites43[] = {
 	{sTogeticGfx43, ARRAY_COUNT(sTogeticGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx44[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_44.4bpp");
+static const u8 sTogeticGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_44.4bpp.lz");
 static const ax_sprite sTogeticSprites44[] = {
 	{sTogeticGfx44, ARRAY_COUNT(sTogeticGfx44)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx45[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_45.4bpp");
+static const u8 sTogeticGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_45.4bpp.lz");
 static const ax_sprite sTogeticSprites45[] = {
 	{sTogeticGfx45, ARRAY_COUNT(sTogeticGfx45)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx46[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_46.4bpp");
+static const u8 sTogeticGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_46.4bpp.lz");
 static const ax_sprite sTogeticSprites46[] = {
 	{sTogeticGfx46, ARRAY_COUNT(sTogeticGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx47[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_47.4bpp");
+static const u8 sTogeticGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_47.4bpp.lz");
 static const ax_sprite sTogeticSprites47[] = {
 	{sTogeticGfx47, ARRAY_COUNT(sTogeticGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx48[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_48.4bpp");
+static const u8 sTogeticGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_48.4bpp.lz");
 static const ax_sprite sTogeticSprites48[] = {
 	{sTogeticGfx48, ARRAY_COUNT(sTogeticGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx49[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_49.4bpp");
+static const u8 sTogeticGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_49.4bpp.lz");
 static const ax_sprite sTogeticSprites49[] = {
 	{sTogeticGfx49, ARRAY_COUNT(sTogeticGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx50[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_50.4bpp");
+static const u8 sTogeticGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_50.4bpp.lz");
 static const ax_sprite sTogeticSprites50[] = {
 	{sTogeticGfx50, ARRAY_COUNT(sTogeticGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx51[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_51.4bpp");
+static const u8 sTogeticGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_51.4bpp.lz");
 static const ax_sprite sTogeticSprites51[] = {
 	{sTogeticGfx51, ARRAY_COUNT(sTogeticGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sTogeticGfx52[] = INCBIN_U8("graphics/ax/mon/togetic/sprite_52.4bpp");
+static const u8 sTogeticGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togetic/sprite_52.4bpp.lz");
 static const ax_sprite sTogeticSprites52[] = {
 	{sTogeticGfx52, ARRAY_COUNT(sTogeticGfx52)}, 
 	{NULL, 0}

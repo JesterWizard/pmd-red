@@ -2111,95 +2111,95 @@ static const ax_anim sLudicoloAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLudicoloGfx1[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_1.4bpp");
+static const u8 sLudicoloGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_1.4bpp.lz");
 static const ax_sprite sLudicoloSprites1[] = {
 	{sLudicoloGfx1, ARRAY_COUNT(sLudicoloGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx2[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_2.4bpp");
+static const u8 sLudicoloGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_2.4bpp.lz");
 static const ax_sprite sLudicoloSprites2[] = {
 	{sLudicoloGfx2, ARRAY_COUNT(sLudicoloGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx3[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_3.4bpp");
+static const u8 sLudicoloGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_3.4bpp.lz");
 static const ax_sprite sLudicoloSprites3[] = {
 	{sLudicoloGfx3, ARRAY_COUNT(sLudicoloGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx4[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_4.4bpp");
+static const u8 sLudicoloGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_4.4bpp.lz");
 static const ax_sprite sLudicoloSprites4[] = {
 	{sLudicoloGfx4, ARRAY_COUNT(sLudicoloGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx5[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_5.4bpp");
+static const u8 sLudicoloGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_5.4bpp.lz");
 static const ax_sprite sLudicoloSprites5[] = {
 	{sLudicoloGfx5, ARRAY_COUNT(sLudicoloGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx6[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_6.4bpp");
+static const u8 sLudicoloGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_6.4bpp.lz");
 static const ax_sprite sLudicoloSprites6[] = {
 	{sLudicoloGfx6, ARRAY_COUNT(sLudicoloGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx7[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_7.4bpp");
+static const u8 sLudicoloGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_7.4bpp.lz");
 static const ax_sprite sLudicoloSprites7[] = {
 	{sLudicoloGfx7, ARRAY_COUNT(sLudicoloGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx8[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_8.4bpp");
+static const u8 sLudicoloGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_8.4bpp.lz");
 static const ax_sprite sLudicoloSprites8[] = {
 	{sLudicoloGfx8, ARRAY_COUNT(sLudicoloGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx9[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_9.4bpp");
+static const u8 sLudicoloGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_9.4bpp.lz");
 static const ax_sprite sLudicoloSprites9[] = {
 	{sLudicoloGfx9, ARRAY_COUNT(sLudicoloGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx10[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_10.4bpp");
+static const u8 sLudicoloGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_10.4bpp.lz");
 static const ax_sprite sLudicoloSprites10[] = {
 	{sLudicoloGfx10, ARRAY_COUNT(sLudicoloGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx11[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_11.4bpp");
+static const u8 sLudicoloGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_11.4bpp.lz");
 static const ax_sprite sLudicoloSprites11[] = {
 	{sLudicoloGfx11, ARRAY_COUNT(sLudicoloGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx12[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_12.4bpp");
+static const u8 sLudicoloGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_12.4bpp.lz");
 static const ax_sprite sLudicoloSprites12[] = {
 	{sLudicoloGfx12, ARRAY_COUNT(sLudicoloGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx13[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_13.4bpp");
+static const u8 sLudicoloGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_13.4bpp.lz");
 static const ax_sprite sLudicoloSprites13[] = {
 	{sLudicoloGfx13, ARRAY_COUNT(sLudicoloGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx14[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_14.4bpp");
+static const u8 sLudicoloGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_14.4bpp.lz");
 static const ax_sprite sLudicoloSprites14[] = {
 	{sLudicoloGfx14, ARRAY_COUNT(sLudicoloGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx15[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_15.4bpp");
+static const u8 sLudicoloGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_15.4bpp.lz");
 static const ax_sprite sLudicoloSprites15[] = {
 	{sLudicoloGfx15, ARRAY_COUNT(sLudicoloGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx16[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_16.4bpp");
+static const u8 sLudicoloGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_16.4bpp.lz");
 static const ax_sprite sLudicoloSprites16[] = {
 	{sLudicoloGfx16, ARRAY_COUNT(sLudicoloGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx17[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_17.4bpp");
+static const u8 sLudicoloGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_17.4bpp.lz");
 static const ax_sprite sLudicoloSprites17[] = {
 	{sLudicoloGfx17, ARRAY_COUNT(sLudicoloGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx18[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_18.4bpp");
-static const u8 sLudicoloGfx18_1[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_18_1.4bpp");
-static const u8 sLudicoloGfx18_2[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_18_2.4bpp");
+static const u8 sLudicoloGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_18.4bpp.lz");
+static const u8 sLudicoloGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_18_1.4bpp.lz");
+static const u8 sLudicoloGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_18_2.4bpp.lz");
 static const ax_sprite sLudicoloSprites18[] = {
 	{sLudicoloGfx18, ARRAY_COUNT(sLudicoloGfx18)}, 
 	{NULL, 32}, 
@@ -2209,8 +2209,8 @@ static const ax_sprite sLudicoloSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx19[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_19.4bpp");
-static const u8 sLudicoloGfx19_1[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_19_1.4bpp");
+static const u8 sLudicoloGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_19.4bpp.lz");
+static const u8 sLudicoloGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_19_1.4bpp.lz");
 static const ax_sprite sLudicoloSprites19[] = {
 	{sLudicoloGfx19, ARRAY_COUNT(sLudicoloGfx19)}, 
 	{NULL, 32}, 
@@ -2218,25 +2218,25 @@ static const ax_sprite sLudicoloSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx20[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_20.4bpp");
+static const u8 sLudicoloGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_20.4bpp.lz");
 static const ax_sprite sLudicoloSprites20[] = {
 	{sLudicoloGfx20, ARRAY_COUNT(sLudicoloGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx21[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_21.4bpp");
+static const u8 sLudicoloGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_21.4bpp.lz");
 static const ax_sprite sLudicoloSprites21[] = {
 	{NULL, 32}, 
 	{sLudicoloGfx21, ARRAY_COUNT(sLudicoloGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx22[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_22.4bpp");
+static const u8 sLudicoloGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_22.4bpp.lz");
 static const ax_sprite sLudicoloSprites22[] = {
 	{sLudicoloGfx22, ARRAY_COUNT(sLudicoloGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx23[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_23.4bpp");
-static const u8 sLudicoloGfx23_1[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_23_1.4bpp");
-static const u8 sLudicoloGfx23_2[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_23_2.4bpp");
+static const u8 sLudicoloGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_23.4bpp.lz");
+static const u8 sLudicoloGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_23_1.4bpp.lz");
+static const u8 sLudicoloGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_23_2.4bpp.lz");
 static const ax_sprite sLudicoloSprites23[] = {
 	{sLudicoloGfx23, ARRAY_COUNT(sLudicoloGfx23)}, 
 	{NULL, 32}, 
@@ -2246,8 +2246,8 @@ static const ax_sprite sLudicoloSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx24[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_24.4bpp");
-static const u8 sLudicoloGfx24_1[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_24_1.4bpp");
+static const u8 sLudicoloGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_24.4bpp.lz");
+static const u8 sLudicoloGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_24_1.4bpp.lz");
 static const ax_sprite sLudicoloSprites24[] = {
 	{sLudicoloGfx24, ARRAY_COUNT(sLudicoloGfx24)}, 
 	{NULL, 32}, 
@@ -2255,19 +2255,19 @@ static const ax_sprite sLudicoloSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx25[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_25.4bpp");
+static const u8 sLudicoloGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_25.4bpp.lz");
 static const ax_sprite sLudicoloSprites25[] = {
 	{sLudicoloGfx25, ARRAY_COUNT(sLudicoloGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx26[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_26.4bpp");
+static const u8 sLudicoloGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_26.4bpp.lz");
 static const ax_sprite sLudicoloSprites26[] = {
 	{sLudicoloGfx26, ARRAY_COUNT(sLudicoloGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx27[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_27.4bpp");
-static const u8 sLudicoloGfx27_1[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_27_1.4bpp");
-static const u8 sLudicoloGfx27_2[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_27_2.4bpp");
+static const u8 sLudicoloGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_27.4bpp.lz");
+static const u8 sLudicoloGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_27_1.4bpp.lz");
+static const u8 sLudicoloGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_27_2.4bpp.lz");
 static const ax_sprite sLudicoloSprites27[] = {
 	{sLudicoloGfx27, ARRAY_COUNT(sLudicoloGfx27)}, 
 	{NULL, 32}, 
@@ -2276,8 +2276,8 @@ static const ax_sprite sLudicoloSprites27[] = {
 	{sLudicoloGfx27_2, ARRAY_COUNT(sLudicoloGfx27_2)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx28[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_28.4bpp");
-static const u8 sLudicoloGfx28_1[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_28_1.4bpp");
+static const u8 sLudicoloGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_28.4bpp.lz");
+static const u8 sLudicoloGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_28_1.4bpp.lz");
 static const ax_sprite sLudicoloSprites28[] = {
 	{sLudicoloGfx28, ARRAY_COUNT(sLudicoloGfx28)}, 
 	{NULL, 32}, 
@@ -2285,50 +2285,50 @@ static const ax_sprite sLudicoloSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx29[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_29.4bpp");
-static const u8 sLudicoloGfx29_1[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_29_1.4bpp");
+static const u8 sLudicoloGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_29.4bpp.lz");
+static const u8 sLudicoloGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_29_1.4bpp.lz");
 static const ax_sprite sLudicoloSprites29[] = {
 	{sLudicoloGfx29, ARRAY_COUNT(sLudicoloGfx29)}, 
 	{NULL, 32}, 
 	{sLudicoloGfx29_1, ARRAY_COUNT(sLudicoloGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx30[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_30.4bpp");
+static const u8 sLudicoloGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_30.4bpp.lz");
 static const ax_sprite sLudicoloSprites30[] = {
 	{sLudicoloGfx30, ARRAY_COUNT(sLudicoloGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx31[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_31.4bpp");
+static const u8 sLudicoloGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_31.4bpp.lz");
 static const ax_sprite sLudicoloSprites31[] = {
 	{sLudicoloGfx31, ARRAY_COUNT(sLudicoloGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx32[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_32.4bpp");
+static const u8 sLudicoloGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_32.4bpp.lz");
 static const ax_sprite sLudicoloSprites32[] = {
 	{sLudicoloGfx32, ARRAY_COUNT(sLudicoloGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx33[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_33.4bpp");
+static const u8 sLudicoloGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_33.4bpp.lz");
 static const ax_sprite sLudicoloSprites33[] = {
 	{sLudicoloGfx33, ARRAY_COUNT(sLudicoloGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx34[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_34.4bpp");
+static const u8 sLudicoloGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_34.4bpp.lz");
 static const ax_sprite sLudicoloSprites34[] = {
 	{sLudicoloGfx34, ARRAY_COUNT(sLudicoloGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx35[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_35.4bpp");
+static const u8 sLudicoloGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_35.4bpp.lz");
 static const ax_sprite sLudicoloSprites35[] = {
 	{sLudicoloGfx35, ARRAY_COUNT(sLudicoloGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx36[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_36.4bpp");
+static const u8 sLudicoloGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_36.4bpp.lz");
 static const ax_sprite sLudicoloSprites36[] = {
 	{sLudicoloGfx36, ARRAY_COUNT(sLudicoloGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sLudicoloGfx37[] = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_37.4bpp");
+static const u8 sLudicoloGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ludicolo/sprite_37.4bpp.lz");
 static const ax_sprite sLudicoloSprites37[] = {
 	{sLudicoloGfx37, ARRAY_COUNT(sLudicoloGfx37)}, 
 	{NULL, 0}

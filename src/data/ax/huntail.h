@@ -2335,525 +2335,525 @@ static const ax_anim sHuntailAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHuntailGfx1[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_1.4bpp");
+static const u8 sHuntailGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_1.4bpp.lz");
 static const ax_sprite sHuntailSprites1[] = {
 	{sHuntailGfx1, ARRAY_COUNT(sHuntailGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx2[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_2.4bpp");
+static const u8 sHuntailGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_2.4bpp.lz");
 static const ax_sprite sHuntailSprites2[] = {
 	{sHuntailGfx2, ARRAY_COUNT(sHuntailGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx3[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_3.4bpp");
+static const u8 sHuntailGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_3.4bpp.lz");
 static const ax_sprite sHuntailSprites3[] = {
 	{sHuntailGfx3, ARRAY_COUNT(sHuntailGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx4[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_4.4bpp");
+static const u8 sHuntailGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_4.4bpp.lz");
 static const ax_sprite sHuntailSprites4[] = {
 	{sHuntailGfx4, ARRAY_COUNT(sHuntailGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx5[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_5.4bpp");
+static const u8 sHuntailGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_5.4bpp.lz");
 static const ax_sprite sHuntailSprites5[] = {
 	{sHuntailGfx5, ARRAY_COUNT(sHuntailGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx6[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_6.4bpp");
+static const u8 sHuntailGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_6.4bpp.lz");
 static const ax_sprite sHuntailSprites6[] = {
 	{sHuntailGfx6, ARRAY_COUNT(sHuntailGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx7[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_7.4bpp");
+static const u8 sHuntailGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_7.4bpp.lz");
 static const ax_sprite sHuntailSprites7[] = {
 	{sHuntailGfx7, ARRAY_COUNT(sHuntailGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx8[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_8.4bpp");
+static const u8 sHuntailGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_8.4bpp.lz");
 static const ax_sprite sHuntailSprites8[] = {
 	{sHuntailGfx8, ARRAY_COUNT(sHuntailGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx9[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_9.4bpp");
+static const u8 sHuntailGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_9.4bpp.lz");
 static const ax_sprite sHuntailSprites9[] = {
 	{sHuntailGfx9, ARRAY_COUNT(sHuntailGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx10[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_10.4bpp");
+static const u8 sHuntailGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_10.4bpp.lz");
 static const ax_sprite sHuntailSprites10[] = {
 	{sHuntailGfx10, ARRAY_COUNT(sHuntailGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx11[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_11.4bpp");
+static const u8 sHuntailGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_11.4bpp.lz");
 static const ax_sprite sHuntailSprites11[] = {
 	{sHuntailGfx11, ARRAY_COUNT(sHuntailGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx12[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_12.4bpp");
+static const u8 sHuntailGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_12.4bpp.lz");
 static const ax_sprite sHuntailSprites12[] = {
 	{sHuntailGfx12, ARRAY_COUNT(sHuntailGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx13[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_13.4bpp");
+static const u8 sHuntailGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_13.4bpp.lz");
 static const ax_sprite sHuntailSprites13[] = {
 	{sHuntailGfx13, ARRAY_COUNT(sHuntailGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx14[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_14.4bpp");
+static const u8 sHuntailGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_14.4bpp.lz");
 static const ax_sprite sHuntailSprites14[] = {
 	{sHuntailGfx14, ARRAY_COUNT(sHuntailGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx15[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_15.4bpp");
+static const u8 sHuntailGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_15.4bpp.lz");
 static const ax_sprite sHuntailSprites15[] = {
 	{sHuntailGfx15, ARRAY_COUNT(sHuntailGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx16[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_16.4bpp");
+static const u8 sHuntailGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_16.4bpp.lz");
 static const ax_sprite sHuntailSprites16[] = {
 	{sHuntailGfx16, ARRAY_COUNT(sHuntailGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx17[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_17.4bpp");
+static const u8 sHuntailGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_17.4bpp.lz");
 static const ax_sprite sHuntailSprites17[] = {
 	{sHuntailGfx17, ARRAY_COUNT(sHuntailGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx18[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_18.4bpp");
+static const u8 sHuntailGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_18.4bpp.lz");
 static const ax_sprite sHuntailSprites18[] = {
 	{sHuntailGfx18, ARRAY_COUNT(sHuntailGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx19[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_19.4bpp");
+static const u8 sHuntailGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_19.4bpp.lz");
 static const ax_sprite sHuntailSprites19[] = {
 	{sHuntailGfx19, ARRAY_COUNT(sHuntailGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx20[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_20.4bpp");
+static const u8 sHuntailGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_20.4bpp.lz");
 static const ax_sprite sHuntailSprites20[] = {
 	{sHuntailGfx20, ARRAY_COUNT(sHuntailGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx21[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_21.4bpp");
+static const u8 sHuntailGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_21.4bpp.lz");
 static const ax_sprite sHuntailSprites21[] = {
 	{sHuntailGfx21, ARRAY_COUNT(sHuntailGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx22[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_22.4bpp");
+static const u8 sHuntailGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_22.4bpp.lz");
 static const ax_sprite sHuntailSprites22[] = {
 	{sHuntailGfx22, ARRAY_COUNT(sHuntailGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx23[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_23.4bpp");
+static const u8 sHuntailGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_23.4bpp.lz");
 static const ax_sprite sHuntailSprites23[] = {
 	{sHuntailGfx23, ARRAY_COUNT(sHuntailGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx24[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_24.4bpp");
+static const u8 sHuntailGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_24.4bpp.lz");
 static const ax_sprite sHuntailSprites24[] = {
 	{sHuntailGfx24, ARRAY_COUNT(sHuntailGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx25[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_25.4bpp");
+static const u8 sHuntailGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_25.4bpp.lz");
 static const ax_sprite sHuntailSprites25[] = {
 	{sHuntailGfx25, ARRAY_COUNT(sHuntailGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx26[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_26.4bpp");
+static const u8 sHuntailGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_26.4bpp.lz");
 static const ax_sprite sHuntailSprites26[] = {
 	{sHuntailGfx26, ARRAY_COUNT(sHuntailGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx27[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_27.4bpp");
+static const u8 sHuntailGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_27.4bpp.lz");
 static const ax_sprite sHuntailSprites27[] = {
 	{sHuntailGfx27, ARRAY_COUNT(sHuntailGfx27)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx28[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_28.4bpp");
+static const u8 sHuntailGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_28.4bpp.lz");
 static const ax_sprite sHuntailSprites28[] = {
 	{sHuntailGfx28, ARRAY_COUNT(sHuntailGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx29[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_29.4bpp");
+static const u8 sHuntailGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_29.4bpp.lz");
 static const ax_sprite sHuntailSprites29[] = {
 	{sHuntailGfx29, ARRAY_COUNT(sHuntailGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx30[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_30.4bpp");
+static const u8 sHuntailGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_30.4bpp.lz");
 static const ax_sprite sHuntailSprites30[] = {
 	{sHuntailGfx30, ARRAY_COUNT(sHuntailGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx31[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_31.4bpp");
+static const u8 sHuntailGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_31.4bpp.lz");
 static const ax_sprite sHuntailSprites31[] = {
 	{sHuntailGfx31, ARRAY_COUNT(sHuntailGfx31)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx32[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_32.4bpp");
+static const u8 sHuntailGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_32.4bpp.lz");
 static const ax_sprite sHuntailSprites32[] = {
 	{sHuntailGfx32, ARRAY_COUNT(sHuntailGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx33[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_33.4bpp");
+static const u8 sHuntailGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_33.4bpp.lz");
 static const ax_sprite sHuntailSprites33[] = {
 	{sHuntailGfx33, ARRAY_COUNT(sHuntailGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx34[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_34.4bpp");
+static const u8 sHuntailGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_34.4bpp.lz");
 static const ax_sprite sHuntailSprites34[] = {
 	{sHuntailGfx34, ARRAY_COUNT(sHuntailGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx35[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_35.4bpp");
-static const u8 sHuntailGfx35_1[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_35_1.4bpp");
+static const u8 sHuntailGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_35.4bpp.lz");
+static const u8 sHuntailGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_35_1.4bpp.lz");
 static const ax_sprite sHuntailSprites35[] = {
 	{sHuntailGfx35, ARRAY_COUNT(sHuntailGfx35)}, 
 	{NULL, 32}, 
 	{sHuntailGfx35_1, ARRAY_COUNT(sHuntailGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx36[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_36.4bpp");
+static const u8 sHuntailGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_36.4bpp.lz");
 static const ax_sprite sHuntailSprites36[] = {
 	{sHuntailGfx36, ARRAY_COUNT(sHuntailGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx37[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_37.4bpp");
+static const u8 sHuntailGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_37.4bpp.lz");
 static const ax_sprite sHuntailSprites37[] = {
 	{sHuntailGfx37, ARRAY_COUNT(sHuntailGfx37)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx38[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_38.4bpp");
+static const u8 sHuntailGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_38.4bpp.lz");
 static const ax_sprite sHuntailSprites38[] = {
 	{NULL, 64}, 
 	{sHuntailGfx38, ARRAY_COUNT(sHuntailGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx39[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_39.4bpp");
+static const u8 sHuntailGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_39.4bpp.lz");
 static const ax_sprite sHuntailSprites39[] = {
 	{sHuntailGfx39, ARRAY_COUNT(sHuntailGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx40[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_40.4bpp");
+static const u8 sHuntailGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_40.4bpp.lz");
 static const ax_sprite sHuntailSprites40[] = {
 	{sHuntailGfx40, ARRAY_COUNT(sHuntailGfx40)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx41[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_41.4bpp");
-static const u8 sHuntailGfx41_1[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_41_1.4bpp");
+static const u8 sHuntailGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_41.4bpp.lz");
+static const u8 sHuntailGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_41_1.4bpp.lz");
 static const ax_sprite sHuntailSprites41[] = {
 	{sHuntailGfx41, ARRAY_COUNT(sHuntailGfx41)}, 
 	{NULL, 32}, 
 	{sHuntailGfx41_1, ARRAY_COUNT(sHuntailGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx42[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_42.4bpp");
+static const u8 sHuntailGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_42.4bpp.lz");
 static const ax_sprite sHuntailSprites42[] = {
 	{sHuntailGfx42, ARRAY_COUNT(sHuntailGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx43[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_43.4bpp");
+static const u8 sHuntailGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_43.4bpp.lz");
 static const ax_sprite sHuntailSprites43[] = {
 	{sHuntailGfx43, ARRAY_COUNT(sHuntailGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx44[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_44.4bpp");
+static const u8 sHuntailGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_44.4bpp.lz");
 static const ax_sprite sHuntailSprites44[] = {
 	{sHuntailGfx44, ARRAY_COUNT(sHuntailGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx45[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_45.4bpp");
+static const u8 sHuntailGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_45.4bpp.lz");
 static const ax_sprite sHuntailSprites45[] = {
 	{sHuntailGfx45, ARRAY_COUNT(sHuntailGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx46[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_46.4bpp");
-static const u8 sHuntailGfx46_1[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_46_1.4bpp");
+static const u8 sHuntailGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_46.4bpp.lz");
+static const u8 sHuntailGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_46_1.4bpp.lz");
 static const ax_sprite sHuntailSprites46[] = {
 	{sHuntailGfx46, ARRAY_COUNT(sHuntailGfx46)}, 
 	{NULL, 32}, 
 	{sHuntailGfx46_1, ARRAY_COUNT(sHuntailGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx47[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_47.4bpp");
+static const u8 sHuntailGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_47.4bpp.lz");
 static const ax_sprite sHuntailSprites47[] = {
 	{sHuntailGfx47, ARRAY_COUNT(sHuntailGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx48[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_48.4bpp");
+static const u8 sHuntailGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_48.4bpp.lz");
 static const ax_sprite sHuntailSprites48[] = {
 	{sHuntailGfx48, ARRAY_COUNT(sHuntailGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx49[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_49.4bpp");
+static const u8 sHuntailGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_49.4bpp.lz");
 static const ax_sprite sHuntailSprites49[] = {
 	{sHuntailGfx49, ARRAY_COUNT(sHuntailGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx50[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_50.4bpp");
+static const u8 sHuntailGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_50.4bpp.lz");
 static const ax_sprite sHuntailSprites50[] = {
 	{sHuntailGfx50, ARRAY_COUNT(sHuntailGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx51[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_51.4bpp");
+static const u8 sHuntailGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_51.4bpp.lz");
 static const ax_sprite sHuntailSprites51[] = {
 	{sHuntailGfx51, ARRAY_COUNT(sHuntailGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx52[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_52.4bpp");
+static const u8 sHuntailGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_52.4bpp.lz");
 static const ax_sprite sHuntailSprites52[] = {
 	{sHuntailGfx52, ARRAY_COUNT(sHuntailGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx53[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_53.4bpp");
+static const u8 sHuntailGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_53.4bpp.lz");
 static const ax_sprite sHuntailSprites53[] = {
 	{sHuntailGfx53, ARRAY_COUNT(sHuntailGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx54[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_54.4bpp");
+static const u8 sHuntailGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_54.4bpp.lz");
 static const ax_sprite sHuntailSprites54[] = {
 	{sHuntailGfx54, ARRAY_COUNT(sHuntailGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx55[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_55.4bpp");
+static const u8 sHuntailGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_55.4bpp.lz");
 static const ax_sprite sHuntailSprites55[] = {
 	{sHuntailGfx55, ARRAY_COUNT(sHuntailGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx56[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_56.4bpp");
+static const u8 sHuntailGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_56.4bpp.lz");
 static const ax_sprite sHuntailSprites56[] = {
 	{sHuntailGfx56, ARRAY_COUNT(sHuntailGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx57[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_57.4bpp");
+static const u8 sHuntailGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_57.4bpp.lz");
 static const ax_sprite sHuntailSprites57[] = {
 	{sHuntailGfx57, ARRAY_COUNT(sHuntailGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx58[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_58.4bpp");
+static const u8 sHuntailGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_58.4bpp.lz");
 static const ax_sprite sHuntailSprites58[] = {
 	{sHuntailGfx58, ARRAY_COUNT(sHuntailGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx59[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_59.4bpp");
+static const u8 sHuntailGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_59.4bpp.lz");
 static const ax_sprite sHuntailSprites59[] = {
 	{sHuntailGfx59, ARRAY_COUNT(sHuntailGfx59)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx60[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_60.4bpp");
+static const u8 sHuntailGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_60.4bpp.lz");
 static const ax_sprite sHuntailSprites60[] = {
 	{sHuntailGfx60, ARRAY_COUNT(sHuntailGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx61[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_61.4bpp");
+static const u8 sHuntailGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_61.4bpp.lz");
 static const ax_sprite sHuntailSprites61[] = {
 	{sHuntailGfx61, ARRAY_COUNT(sHuntailGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx62[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_62.4bpp");
+static const u8 sHuntailGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_62.4bpp.lz");
 static const ax_sprite sHuntailSprites62[] = {
 	{NULL, 64}, 
 	{sHuntailGfx62, ARRAY_COUNT(sHuntailGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx63[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_63.4bpp");
+static const u8 sHuntailGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_63.4bpp.lz");
 static const ax_sprite sHuntailSprites63[] = {
 	{sHuntailGfx63, ARRAY_COUNT(sHuntailGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx64[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_64.4bpp");
+static const u8 sHuntailGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_64.4bpp.lz");
 static const ax_sprite sHuntailSprites64[] = {
 	{sHuntailGfx64, ARRAY_COUNT(sHuntailGfx64)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx65[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_65.4bpp");
+static const u8 sHuntailGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_65.4bpp.lz");
 static const ax_sprite sHuntailSprites65[] = {
 	{sHuntailGfx65, ARRAY_COUNT(sHuntailGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx66[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_66.4bpp");
+static const u8 sHuntailGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_66.4bpp.lz");
 static const ax_sprite sHuntailSprites66[] = {
 	{sHuntailGfx66, ARRAY_COUNT(sHuntailGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx67[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_67.4bpp");
+static const u8 sHuntailGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_67.4bpp.lz");
 static const ax_sprite sHuntailSprites67[] = {
 	{sHuntailGfx67, ARRAY_COUNT(sHuntailGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx68[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_68.4bpp");
+static const u8 sHuntailGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_68.4bpp.lz");
 static const ax_sprite sHuntailSprites68[] = {
 	{sHuntailGfx68, ARRAY_COUNT(sHuntailGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx69[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_69.4bpp");
+static const u8 sHuntailGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_69.4bpp.lz");
 static const ax_sprite sHuntailSprites69[] = {
 	{sHuntailGfx69, ARRAY_COUNT(sHuntailGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx70[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_70.4bpp");
+static const u8 sHuntailGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_70.4bpp.lz");
 static const ax_sprite sHuntailSprites70[] = {
 	{sHuntailGfx70, ARRAY_COUNT(sHuntailGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx71[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_71.4bpp");
+static const u8 sHuntailGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_71.4bpp.lz");
 static const ax_sprite sHuntailSprites71[] = {
 	{sHuntailGfx71, ARRAY_COUNT(sHuntailGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx72[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_72.4bpp");
+static const u8 sHuntailGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_72.4bpp.lz");
 static const ax_sprite sHuntailSprites72[] = {
 	{sHuntailGfx72, ARRAY_COUNT(sHuntailGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx73[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_73.4bpp");
-static const u8 sHuntailGfx73_1[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_73_1.4bpp");
+static const u8 sHuntailGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_73.4bpp.lz");
+static const u8 sHuntailGfx73_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_73_1.4bpp.lz");
 static const ax_sprite sHuntailSprites73[] = {
 	{sHuntailGfx73, ARRAY_COUNT(sHuntailGfx73)}, 
 	{NULL, 32}, 
 	{sHuntailGfx73_1, ARRAY_COUNT(sHuntailGfx73_1)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx74[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_74.4bpp");
+static const u8 sHuntailGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_74.4bpp.lz");
 static const ax_sprite sHuntailSprites74[] = {
 	{sHuntailGfx74, ARRAY_COUNT(sHuntailGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx75[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_75.4bpp");
-static const u8 sHuntailGfx75_1[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_75_1.4bpp");
+static const u8 sHuntailGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_75.4bpp.lz");
+static const u8 sHuntailGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_75_1.4bpp.lz");
 static const ax_sprite sHuntailSprites75[] = {
 	{sHuntailGfx75, ARRAY_COUNT(sHuntailGfx75)}, 
 	{NULL, 32}, 
 	{sHuntailGfx75_1, ARRAY_COUNT(sHuntailGfx75_1)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx76[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_76.4bpp");
+static const u8 sHuntailGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_76.4bpp.lz");
 static const ax_sprite sHuntailSprites76[] = {
 	{sHuntailGfx76, ARRAY_COUNT(sHuntailGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx77[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_77.4bpp");
+static const u8 sHuntailGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_77.4bpp.lz");
 static const ax_sprite sHuntailSprites77[] = {
 	{sHuntailGfx77, ARRAY_COUNT(sHuntailGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx78[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_78.4bpp");
+static const u8 sHuntailGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_78.4bpp.lz");
 static const ax_sprite sHuntailSprites78[] = {
 	{sHuntailGfx78, ARRAY_COUNT(sHuntailGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx79[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_79.4bpp");
+static const u8 sHuntailGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_79.4bpp.lz");
 static const ax_sprite sHuntailSprites79[] = {
 	{sHuntailGfx79, ARRAY_COUNT(sHuntailGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx80[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_80.4bpp");
+static const u8 sHuntailGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_80.4bpp.lz");
 static const ax_sprite sHuntailSprites80[] = {
 	{sHuntailGfx80, ARRAY_COUNT(sHuntailGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx81[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_81.4bpp");
+static const u8 sHuntailGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_81.4bpp.lz");
 static const ax_sprite sHuntailSprites81[] = {
 	{sHuntailGfx81, ARRAY_COUNT(sHuntailGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx82[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_82.4bpp");
+static const u8 sHuntailGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_82.4bpp.lz");
 static const ax_sprite sHuntailSprites82[] = {
 	{sHuntailGfx82, ARRAY_COUNT(sHuntailGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx83[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_83.4bpp");
+static const u8 sHuntailGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_83.4bpp.lz");
 static const ax_sprite sHuntailSprites83[] = {
 	{sHuntailGfx83, ARRAY_COUNT(sHuntailGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx84[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_84.4bpp");
+static const u8 sHuntailGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_84.4bpp.lz");
 static const ax_sprite sHuntailSprites84[] = {
 	{sHuntailGfx84, ARRAY_COUNT(sHuntailGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx85[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_85.4bpp");
+static const u8 sHuntailGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_85.4bpp.lz");
 static const ax_sprite sHuntailSprites85[] = {
 	{sHuntailGfx85, ARRAY_COUNT(sHuntailGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx86[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_86.4bpp");
+static const u8 sHuntailGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_86.4bpp.lz");
 static const ax_sprite sHuntailSprites86[] = {
 	{sHuntailGfx86, ARRAY_COUNT(sHuntailGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx87[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_87.4bpp");
+static const u8 sHuntailGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_87.4bpp.lz");
 static const ax_sprite sHuntailSprites87[] = {
 	{sHuntailGfx87, ARRAY_COUNT(sHuntailGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx88[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_88.4bpp");
+static const u8 sHuntailGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_88.4bpp.lz");
 static const ax_sprite sHuntailSprites88[] = {
 	{sHuntailGfx88, ARRAY_COUNT(sHuntailGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx89[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_89.4bpp");
+static const u8 sHuntailGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_89.4bpp.lz");
 static const ax_sprite sHuntailSprites89[] = {
 	{sHuntailGfx89, ARRAY_COUNT(sHuntailGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx90[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_90.4bpp");
+static const u8 sHuntailGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_90.4bpp.lz");
 static const ax_sprite sHuntailSprites90[] = {
 	{sHuntailGfx90, ARRAY_COUNT(sHuntailGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx91[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_91.4bpp");
+static const u8 sHuntailGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_91.4bpp.lz");
 static const ax_sprite sHuntailSprites91[] = {
 	{sHuntailGfx91, ARRAY_COUNT(sHuntailGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx92[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_92.4bpp");
+static const u8 sHuntailGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_92.4bpp.lz");
 static const ax_sprite sHuntailSprites92[] = {
 	{sHuntailGfx92, ARRAY_COUNT(sHuntailGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx93[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_93.4bpp");
+static const u8 sHuntailGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_93.4bpp.lz");
 static const ax_sprite sHuntailSprites93[] = {
 	{sHuntailGfx93, ARRAY_COUNT(sHuntailGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx94[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_94.4bpp");
+static const u8 sHuntailGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_94.4bpp.lz");
 static const ax_sprite sHuntailSprites94[] = {
 	{sHuntailGfx94, ARRAY_COUNT(sHuntailGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx95[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_95.4bpp");
+static const u8 sHuntailGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_95.4bpp.lz");
 static const ax_sprite sHuntailSprites95[] = {
 	{sHuntailGfx95, ARRAY_COUNT(sHuntailGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx96[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_96.4bpp");
+static const u8 sHuntailGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_96.4bpp.lz");
 static const ax_sprite sHuntailSprites96[] = {
 	{sHuntailGfx96, ARRAY_COUNT(sHuntailGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx97[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_97.4bpp");
+static const u8 sHuntailGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_97.4bpp.lz");
 static const ax_sprite sHuntailSprites97[] = {
 	{sHuntailGfx97, ARRAY_COUNT(sHuntailGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx98[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_98.4bpp");
+static const u8 sHuntailGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_98.4bpp.lz");
 static const ax_sprite sHuntailSprites98[] = {
 	{sHuntailGfx98, ARRAY_COUNT(sHuntailGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx99[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_99.4bpp");
+static const u8 sHuntailGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_99.4bpp.lz");
 static const ax_sprite sHuntailSprites99[] = {
 	{sHuntailGfx99, ARRAY_COUNT(sHuntailGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sHuntailGfx100[] = INCBIN_U8("graphics/ax/mon/huntail/sprite_100.4bpp");
+static const u8 sHuntailGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/huntail/sprite_100.4bpp.lz");
 static const ax_sprite sHuntailSprites100[] = {
 	{sHuntailGfx100, ARRAY_COUNT(sHuntailGfx100)}, 
 	{NULL, 0}

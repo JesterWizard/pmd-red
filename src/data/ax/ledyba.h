@@ -2102,90 +2102,90 @@ static const ax_anim sLedybaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLedybaGfx1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_1.4bpp");
+static const u8 sLedybaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_1.4bpp.lz");
 static const ax_sprite sLedybaSprites1[] = {
 	{sLedybaGfx1, ARRAY_COUNT(sLedybaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_2.4bpp");
+static const u8 sLedybaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_2.4bpp.lz");
 static const ax_sprite sLedybaSprites2[] = {
 	{sLedybaGfx2, ARRAY_COUNT(sLedybaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx3[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_3.4bpp");
+static const u8 sLedybaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_3.4bpp.lz");
 static const ax_sprite sLedybaSprites3[] = {
 	{sLedybaGfx3, ARRAY_COUNT(sLedybaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx4[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_4.4bpp");
+static const u8 sLedybaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_4.4bpp.lz");
 static const ax_sprite sLedybaSprites4[] = {
 	{sLedybaGfx4, ARRAY_COUNT(sLedybaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx5[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_5.4bpp");
+static const u8 sLedybaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_5.4bpp.lz");
 static const ax_sprite sLedybaSprites5[] = {
 	{sLedybaGfx5, ARRAY_COUNT(sLedybaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx6[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_6.4bpp");
+static const u8 sLedybaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_6.4bpp.lz");
 static const ax_sprite sLedybaSprites6[] = {
 	{sLedybaGfx6, ARRAY_COUNT(sLedybaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx7[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_7.4bpp");
+static const u8 sLedybaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_7.4bpp.lz");
 static const ax_sprite sLedybaSprites7[] = {
 	{sLedybaGfx7, ARRAY_COUNT(sLedybaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx8[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_8.4bpp");
+static const u8 sLedybaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_8.4bpp.lz");
 static const ax_sprite sLedybaSprites8[] = {
 	{sLedybaGfx8, ARRAY_COUNT(sLedybaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx9[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_9.4bpp");
+static const u8 sLedybaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_9.4bpp.lz");
 static const ax_sprite sLedybaSprites9[] = {
 	{sLedybaGfx9, ARRAY_COUNT(sLedybaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx10[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_10.4bpp");
+static const u8 sLedybaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_10.4bpp.lz");
 static const ax_sprite sLedybaSprites10[] = {
 	{sLedybaGfx10, ARRAY_COUNT(sLedybaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx11[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_11.4bpp");
+static const u8 sLedybaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_11.4bpp.lz");
 static const ax_sprite sLedybaSprites11[] = {
 	{sLedybaGfx11, ARRAY_COUNT(sLedybaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx12[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_12.4bpp");
+static const u8 sLedybaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_12.4bpp.lz");
 static const ax_sprite sLedybaSprites12[] = {
 	{sLedybaGfx12, ARRAY_COUNT(sLedybaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx13[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_13.4bpp");
+static const u8 sLedybaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_13.4bpp.lz");
 static const ax_sprite sLedybaSprites13[] = {
 	{sLedybaGfx13, ARRAY_COUNT(sLedybaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx14[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_14.4bpp");
+static const u8 sLedybaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_14.4bpp.lz");
 static const ax_sprite sLedybaSprites14[] = {
 	{sLedybaGfx14, ARRAY_COUNT(sLedybaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx15[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_15.4bpp");
+static const u8 sLedybaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_15.4bpp.lz");
 static const ax_sprite sLedybaSprites15[] = {
 	{sLedybaGfx15, ARRAY_COUNT(sLedybaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx16[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_16.4bpp");
+static const u8 sLedybaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_16.4bpp.lz");
 static const ax_sprite sLedybaSprites16[] = {
 	{sLedybaGfx16, ARRAY_COUNT(sLedybaGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx17[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_17.4bpp");
-static const u8 sLedybaGfx17_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_17_1.4bpp");
-static const u8 sLedybaGfx17_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_17_2.4bpp");
-static const u8 sLedybaGfx17_3[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_17_3.4bpp");
+static const u8 sLedybaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_17.4bpp.lz");
+static const u8 sLedybaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_17_1.4bpp.lz");
+static const u8 sLedybaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_17_2.4bpp.lz");
+static const u8 sLedybaGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_17_3.4bpp.lz");
 static const ax_sprite sLedybaSprites17[] = {
 	{sLedybaGfx17, ARRAY_COUNT(sLedybaGfx17)}, 
 	{NULL, 96}, 
@@ -2196,8 +2196,8 @@ static const ax_sprite sLedybaSprites17[] = {
 	{sLedybaGfx17_3, ARRAY_COUNT(sLedybaGfx17_3)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx18[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_18.4bpp");
-static const u8 sLedybaGfx18_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_18_1.4bpp");
+static const u8 sLedybaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_18.4bpp.lz");
+static const u8 sLedybaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_18_1.4bpp.lz");
 static const ax_sprite sLedybaSprites18[] = {
 	{NULL, 32}, 
 	{sLedybaGfx18, ARRAY_COUNT(sLedybaGfx18)}, 
@@ -2205,10 +2205,10 @@ static const ax_sprite sLedybaSprites18[] = {
 	{sLedybaGfx18_1, ARRAY_COUNT(sLedybaGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx19[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_19.4bpp");
-static const u8 sLedybaGfx19_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_19_1.4bpp");
-static const u8 sLedybaGfx19_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_19_2.4bpp");
-static const u8 sLedybaGfx19_3[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_19_3.4bpp");
+static const u8 sLedybaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_19.4bpp.lz");
+static const u8 sLedybaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_19_1.4bpp.lz");
+static const u8 sLedybaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_19_2.4bpp.lz");
+static const u8 sLedybaGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_19_3.4bpp.lz");
 static const ax_sprite sLedybaSprites19[] = {
 	{NULL, 32}, 
 	{sLedybaGfx19, ARRAY_COUNT(sLedybaGfx19)}, 
@@ -2221,16 +2221,16 @@ static const ax_sprite sLedybaSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx20[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_20.4bpp");
-static const u8 sLedybaGfx20_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_20_1.4bpp");
+static const u8 sLedybaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_20.4bpp.lz");
+static const u8 sLedybaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_20_1.4bpp.lz");
 static const ax_sprite sLedybaSprites20[] = {
 	{sLedybaGfx20, ARRAY_COUNT(sLedybaGfx20)}, 
 	{NULL, 32}, 
 	{sLedybaGfx20_1, ARRAY_COUNT(sLedybaGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx21[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_21.4bpp");
-static const u8 sLedybaGfx21_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_21_1.4bpp");
+static const u8 sLedybaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_21.4bpp.lz");
+static const u8 sLedybaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_21_1.4bpp.lz");
 static const ax_sprite sLedybaSprites21[] = {
 	{NULL, 128}, 
 	{sLedybaGfx21, ARRAY_COUNT(sLedybaGfx21)}, 
@@ -2238,18 +2238,18 @@ static const ax_sprite sLedybaSprites21[] = {
 	{sLedybaGfx21_1, ARRAY_COUNT(sLedybaGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx22[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_22.4bpp");
-static const u8 sLedybaGfx22_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_22_1.4bpp");
+static const u8 sLedybaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_22.4bpp.lz");
+static const u8 sLedybaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_22_1.4bpp.lz");
 static const ax_sprite sLedybaSprites22[] = {
 	{sLedybaGfx22, ARRAY_COUNT(sLedybaGfx22)}, 
 	{NULL, 32}, 
 	{sLedybaGfx22_1, ARRAY_COUNT(sLedybaGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx23[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_23.4bpp");
-static const u8 sLedybaGfx23_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_23_1.4bpp");
-static const u8 sLedybaGfx23_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_23_2.4bpp");
-static const u8 sLedybaGfx23_3[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_23_3.4bpp");
+static const u8 sLedybaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_23.4bpp.lz");
+static const u8 sLedybaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_23_1.4bpp.lz");
+static const u8 sLedybaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_23_2.4bpp.lz");
+static const u8 sLedybaGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_23_3.4bpp.lz");
 static const ax_sprite sLedybaSprites23[] = {
 	{sLedybaGfx23, ARRAY_COUNT(sLedybaGfx23)}, 
 	{NULL, 32}, 
@@ -2261,14 +2261,14 @@ static const ax_sprite sLedybaSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx24[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_24.4bpp");
+static const u8 sLedybaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_24.4bpp.lz");
 static const ax_sprite sLedybaSprites24[] = {
 	{sLedybaGfx24, ARRAY_COUNT(sLedybaGfx24)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx25[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_25.4bpp");
-static const u8 sLedybaGfx25_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_25_1.4bpp");
+static const u8 sLedybaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_25.4bpp.lz");
+static const u8 sLedybaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_25_1.4bpp.lz");
 static const ax_sprite sLedybaSprites25[] = {
 	{NULL, 128}, 
 	{sLedybaGfx25, ARRAY_COUNT(sLedybaGfx25)}, 
@@ -2277,9 +2277,9 @@ static const ax_sprite sLedybaSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx26[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_26.4bpp");
-static const u8 sLedybaGfx26_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_26_1.4bpp");
-static const u8 sLedybaGfx26_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_26_2.4bpp");
+static const u8 sLedybaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_26.4bpp.lz");
+static const u8 sLedybaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_26_1.4bpp.lz");
+static const u8 sLedybaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_26_2.4bpp.lz");
 static const ax_sprite sLedybaSprites26[] = {
 	{NULL, 32}, 
 	{sLedybaGfx26, ARRAY_COUNT(sLedybaGfx26)}, 
@@ -2290,15 +2290,15 @@ static const ax_sprite sLedybaSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx27[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_27.4bpp");
+static const u8 sLedybaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_27.4bpp.lz");
 static const ax_sprite sLedybaSprites27[] = {
 	{sLedybaGfx27, ARRAY_COUNT(sLedybaGfx27)}, 
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx28[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_28.4bpp");
-static const u8 sLedybaGfx28_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_28_1.4bpp");
-static const u8 sLedybaGfx28_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_28_2.4bpp");
+static const u8 sLedybaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_28.4bpp.lz");
+static const u8 sLedybaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_28_1.4bpp.lz");
+static const u8 sLedybaGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_28_2.4bpp.lz");
 static const ax_sprite sLedybaSprites28[] = {
 	{NULL, 32}, 
 	{sLedybaGfx28, ARRAY_COUNT(sLedybaGfx28)}, 
@@ -2309,10 +2309,10 @@ static const ax_sprite sLedybaSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx29[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_29.4bpp");
-static const u8 sLedybaGfx29_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_29_1.4bpp");
-static const u8 sLedybaGfx29_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_29_2.4bpp");
-static const u8 sLedybaGfx29_3[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_29_3.4bpp");
+static const u8 sLedybaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_29.4bpp.lz");
+static const u8 sLedybaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_29_1.4bpp.lz");
+static const u8 sLedybaGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_29_2.4bpp.lz");
+static const u8 sLedybaGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_29_3.4bpp.lz");
 static const ax_sprite sLedybaSprites29[] = {
 	{sLedybaGfx29, ARRAY_COUNT(sLedybaGfx29)}, 
 	{NULL, 64}, 
@@ -2324,13 +2324,13 @@ static const ax_sprite sLedybaSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx30[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_30.4bpp");
+static const u8 sLedybaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_30.4bpp.lz");
 static const ax_sprite sLedybaSprites30[] = {
 	{sLedybaGfx30, ARRAY_COUNT(sLedybaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx31[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_31.4bpp");
-static const u8 sLedybaGfx31_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_31_1.4bpp");
+static const u8 sLedybaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_31.4bpp.lz");
+static const u8 sLedybaGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_31_1.4bpp.lz");
 static const ax_sprite sLedybaSprites31[] = {
 	{sLedybaGfx31, ARRAY_COUNT(sLedybaGfx31)}, 
 	{NULL, 96}, 
@@ -2338,8 +2338,8 @@ static const ax_sprite sLedybaSprites31[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx32[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_32.4bpp");
-static const u8 sLedybaGfx32_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_32_1.4bpp");
+static const u8 sLedybaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_32.4bpp.lz");
+static const u8 sLedybaGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_32_1.4bpp.lz");
 static const ax_sprite sLedybaSprites32[] = {
 	{NULL, 32}, 
 	{sLedybaGfx32, ARRAY_COUNT(sLedybaGfx32)}, 
@@ -2348,16 +2348,16 @@ static const ax_sprite sLedybaSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx33[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_33.4bpp");
+static const u8 sLedybaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_33.4bpp.lz");
 static const ax_sprite sLedybaSprites33[] = {
 	{sLedybaGfx33, ARRAY_COUNT(sLedybaGfx33)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx34[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_34.4bpp");
-static const u8 sLedybaGfx34_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_34_1.4bpp");
-static const u8 sLedybaGfx34_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_34_2.4bpp");
-static const u8 sLedybaGfx34_3[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_34_3.4bpp");
+static const u8 sLedybaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_34.4bpp.lz");
+static const u8 sLedybaGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_34_1.4bpp.lz");
+static const u8 sLedybaGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_34_2.4bpp.lz");
+static const u8 sLedybaGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_34_3.4bpp.lz");
 static const ax_sprite sLedybaSprites34[] = {
 	{sLedybaGfx34, ARRAY_COUNT(sLedybaGfx34)}, 
 	{NULL, 32}, 
@@ -2369,10 +2369,10 @@ static const ax_sprite sLedybaSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx35[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_35.4bpp");
-static const u8 sLedybaGfx35_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_35_1.4bpp");
-static const u8 sLedybaGfx35_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_35_2.4bpp");
-static const u8 sLedybaGfx35_3[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_35_3.4bpp");
+static const u8 sLedybaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_35.4bpp.lz");
+static const u8 sLedybaGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_35_1.4bpp.lz");
+static const u8 sLedybaGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_35_2.4bpp.lz");
+static const u8 sLedybaGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_35_3.4bpp.lz");
 static const ax_sprite sLedybaSprites35[] = {
 	{sLedybaGfx35, ARRAY_COUNT(sLedybaGfx35)}, 
 	{NULL, 32}, 
@@ -2384,9 +2384,9 @@ static const ax_sprite sLedybaSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx36[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_36.4bpp");
-static const u8 sLedybaGfx36_1[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_36_1.4bpp");
-static const u8 sLedybaGfx36_2[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_36_2.4bpp");
+static const u8 sLedybaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_36.4bpp.lz");
+static const u8 sLedybaGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_36_1.4bpp.lz");
+static const u8 sLedybaGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_36_2.4bpp.lz");
 static const ax_sprite sLedybaSprites36[] = {
 	{NULL, 32}, 
 	{sLedybaGfx36, ARRAY_COUNT(sLedybaGfx36)}, 
@@ -2397,68 +2397,68 @@ static const ax_sprite sLedybaSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx37[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_37.4bpp");
+static const u8 sLedybaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_37.4bpp.lz");
 static const ax_sprite sLedybaSprites37[] = {
 	{sLedybaGfx37, ARRAY_COUNT(sLedybaGfx37)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx38[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_38.4bpp");
+static const u8 sLedybaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_38.4bpp.lz");
 static const ax_sprite sLedybaSprites38[] = {
 	{sLedybaGfx38, ARRAY_COUNT(sLedybaGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx39[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_39.4bpp");
+static const u8 sLedybaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_39.4bpp.lz");
 static const ax_sprite sLedybaSprites39[] = {
 	{sLedybaGfx39, ARRAY_COUNT(sLedybaGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx40[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_40.4bpp");
+static const u8 sLedybaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_40.4bpp.lz");
 static const ax_sprite sLedybaSprites40[] = {
 	{sLedybaGfx40, ARRAY_COUNT(sLedybaGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx41[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_41.4bpp");
+static const u8 sLedybaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_41.4bpp.lz");
 static const ax_sprite sLedybaSprites41[] = {
 	{sLedybaGfx41, ARRAY_COUNT(sLedybaGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx42[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_42.4bpp");
+static const u8 sLedybaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_42.4bpp.lz");
 static const ax_sprite sLedybaSprites42[] = {
 	{sLedybaGfx42, ARRAY_COUNT(sLedybaGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx43[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_43.4bpp");
+static const u8 sLedybaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_43.4bpp.lz");
 static const ax_sprite sLedybaSprites43[] = {
 	{sLedybaGfx43, ARRAY_COUNT(sLedybaGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx44[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_44.4bpp");
+static const u8 sLedybaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_44.4bpp.lz");
 static const ax_sprite sLedybaSprites44[] = {
 	{sLedybaGfx44, ARRAY_COUNT(sLedybaGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx45[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_45.4bpp");
+static const u8 sLedybaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_45.4bpp.lz");
 static const ax_sprite sLedybaSprites45[] = {
 	{sLedybaGfx45, ARRAY_COUNT(sLedybaGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx46[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_46.4bpp");
+static const u8 sLedybaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_46.4bpp.lz");
 static const ax_sprite sLedybaSprites46[] = {
 	{sLedybaGfx46, ARRAY_COUNT(sLedybaGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx47[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_47.4bpp");
+static const u8 sLedybaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_47.4bpp.lz");
 static const ax_sprite sLedybaSprites47[] = {
 	{sLedybaGfx47, ARRAY_COUNT(sLedybaGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx48[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_48.4bpp");
+static const u8 sLedybaGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_48.4bpp.lz");
 static const ax_sprite sLedybaSprites48[] = {
 	{sLedybaGfx48, ARRAY_COUNT(sLedybaGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sLedybaGfx49[] = INCBIN_U8("graphics/ax/mon/ledyba/sprite_49.4bpp");
+static const u8 sLedybaGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ledyba/sprite_49.4bpp.lz");
 static const ax_sprite sLedybaSprites49[] = {
 	{sLedybaGfx49, ARRAY_COUNT(sLedybaGfx49)}, 
 	{NULL, 0}

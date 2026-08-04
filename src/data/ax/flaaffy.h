@@ -2079,84 +2079,84 @@ static const ax_anim sFlaaffyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sFlaaffyGfx1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_1.4bpp");
+static const u8 sFlaaffyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_1.4bpp.lz");
 static const ax_sprite sFlaaffySprites1[] = {
 	{sFlaaffyGfx1, ARRAY_COUNT(sFlaaffyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_2.4bpp");
+static const u8 sFlaaffyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites2[] = {
 	{sFlaaffyGfx2, ARRAY_COUNT(sFlaaffyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx3[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_3.4bpp");
+static const u8 sFlaaffyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_3.4bpp.lz");
 static const ax_sprite sFlaaffySprites3[] = {
 	{sFlaaffyGfx3, ARRAY_COUNT(sFlaaffyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx4[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_4.4bpp");
+static const u8 sFlaaffyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_4.4bpp.lz");
 static const ax_sprite sFlaaffySprites4[] = {
 	{sFlaaffyGfx4, ARRAY_COUNT(sFlaaffyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx5[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_5.4bpp");
+static const u8 sFlaaffyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_5.4bpp.lz");
 static const ax_sprite sFlaaffySprites5[] = {
 	{sFlaaffyGfx5, ARRAY_COUNT(sFlaaffyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx6[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_6.4bpp");
+static const u8 sFlaaffyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_6.4bpp.lz");
 static const ax_sprite sFlaaffySprites6[] = {
 	{sFlaaffyGfx6, ARRAY_COUNT(sFlaaffyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx7[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_7.4bpp");
+static const u8 sFlaaffyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_7.4bpp.lz");
 static const ax_sprite sFlaaffySprites7[] = {
 	{sFlaaffyGfx7, ARRAY_COUNT(sFlaaffyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx8[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_8.4bpp");
+static const u8 sFlaaffyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_8.4bpp.lz");
 static const ax_sprite sFlaaffySprites8[] = {
 	{sFlaaffyGfx8, ARRAY_COUNT(sFlaaffyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx9[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_9.4bpp");
+static const u8 sFlaaffyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_9.4bpp.lz");
 static const ax_sprite sFlaaffySprites9[] = {
 	{sFlaaffyGfx9, ARRAY_COUNT(sFlaaffyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx10[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_10.4bpp");
+static const u8 sFlaaffyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_10.4bpp.lz");
 static const ax_sprite sFlaaffySprites10[] = {
 	{sFlaaffyGfx10, ARRAY_COUNT(sFlaaffyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx11[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_11.4bpp");
+static const u8 sFlaaffyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_11.4bpp.lz");
 static const ax_sprite sFlaaffySprites11[] = {
 	{sFlaaffyGfx11, ARRAY_COUNT(sFlaaffyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx12[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_12.4bpp");
+static const u8 sFlaaffyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_12.4bpp.lz");
 static const ax_sprite sFlaaffySprites12[] = {
 	{sFlaaffyGfx12, ARRAY_COUNT(sFlaaffyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx13[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_13.4bpp");
+static const u8 sFlaaffyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_13.4bpp.lz");
 static const ax_sprite sFlaaffySprites13[] = {
 	{sFlaaffyGfx13, ARRAY_COUNT(sFlaaffyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx14[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_14.4bpp");
+static const u8 sFlaaffyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_14.4bpp.lz");
 static const ax_sprite sFlaaffySprites14[] = {
 	{sFlaaffyGfx14, ARRAY_COUNT(sFlaaffyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx15[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_15.4bpp");
+static const u8 sFlaaffyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_15.4bpp.lz");
 static const ax_sprite sFlaaffySprites15[] = {
 	{sFlaaffyGfx15, ARRAY_COUNT(sFlaaffyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx16[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_16.4bpp");
-static const u8 sFlaaffyGfx16_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_16_1.4bpp");
-static const u8 sFlaaffyGfx16_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_16_2.4bpp");
+static const u8 sFlaaffyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_16.4bpp.lz");
+static const u8 sFlaaffyGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_16_1.4bpp.lz");
+static const u8 sFlaaffyGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_16_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites16[] = {
 	{NULL, 32}, 
 	{sFlaaffyGfx16, ARRAY_COUNT(sFlaaffyGfx16)}, 
@@ -2167,9 +2167,9 @@ static const ax_sprite sFlaaffySprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx17[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_17.4bpp");
-static const u8 sFlaaffyGfx17_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_17_1.4bpp");
-static const u8 sFlaaffyGfx17_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_17_2.4bpp");
+static const u8 sFlaaffyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_17.4bpp.lz");
+static const u8 sFlaaffyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_17_1.4bpp.lz");
+static const u8 sFlaaffyGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_17_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites17[] = {
 	{sFlaaffyGfx17, ARRAY_COUNT(sFlaaffyGfx17)}, 
 	{NULL, 32}, 
@@ -2179,9 +2179,9 @@ static const ax_sprite sFlaaffySprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx18[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_18.4bpp");
-static const u8 sFlaaffyGfx18_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_18_1.4bpp");
-static const u8 sFlaaffyGfx18_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_18_2.4bpp");
+static const u8 sFlaaffyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_18.4bpp.lz");
+static const u8 sFlaaffyGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_18_1.4bpp.lz");
+static const u8 sFlaaffyGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_18_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites18[] = {
 	{sFlaaffyGfx18, ARRAY_COUNT(sFlaaffyGfx18)}, 
 	{NULL, 32}, 
@@ -2191,9 +2191,9 @@ static const ax_sprite sFlaaffySprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx19[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_19.4bpp");
-static const u8 sFlaaffyGfx19_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_19_1.4bpp");
-static const u8 sFlaaffyGfx19_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_19_2.4bpp");
+static const u8 sFlaaffyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_19.4bpp.lz");
+static const u8 sFlaaffyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_19_1.4bpp.lz");
+static const u8 sFlaaffyGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_19_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites19[] = {
 	{sFlaaffyGfx19, ARRAY_COUNT(sFlaaffyGfx19)}, 
 	{NULL, 32}, 
@@ -2203,9 +2203,9 @@ static const ax_sprite sFlaaffySprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx20[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_20.4bpp");
-static const u8 sFlaaffyGfx20_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_20_1.4bpp");
-static const u8 sFlaaffyGfx20_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_20_2.4bpp");
+static const u8 sFlaaffyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_20.4bpp.lz");
+static const u8 sFlaaffyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_20_1.4bpp.lz");
+static const u8 sFlaaffyGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_20_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites20[] = {
 	{sFlaaffyGfx20, ARRAY_COUNT(sFlaaffyGfx20)}, 
 	{NULL, 32}, 
@@ -2215,9 +2215,9 @@ static const ax_sprite sFlaaffySprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx21[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_21.4bpp");
-static const u8 sFlaaffyGfx21_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_21_1.4bpp");
-static const u8 sFlaaffyGfx21_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_21_2.4bpp");
+static const u8 sFlaaffyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_21.4bpp.lz");
+static const u8 sFlaaffyGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_21_1.4bpp.lz");
+static const u8 sFlaaffyGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_21_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites21[] = {
 	{sFlaaffyGfx21, ARRAY_COUNT(sFlaaffyGfx21)}, 
 	{NULL, 32}, 
@@ -2227,10 +2227,10 @@ static const ax_sprite sFlaaffySprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx22[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_22.4bpp");
-static const u8 sFlaaffyGfx22_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_22_1.4bpp");
-static const u8 sFlaaffyGfx22_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_22_2.4bpp");
-static const u8 sFlaaffyGfx22_3[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_22_3.4bpp");
+static const u8 sFlaaffyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_22.4bpp.lz");
+static const u8 sFlaaffyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_22_1.4bpp.lz");
+static const u8 sFlaaffyGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_22_2.4bpp.lz");
+static const u8 sFlaaffyGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_22_3.4bpp.lz");
 static const ax_sprite sFlaaffySprites22[] = {
 	{sFlaaffyGfx22, ARRAY_COUNT(sFlaaffyGfx22)}, 
 	{NULL, 32}, 
@@ -2242,9 +2242,9 @@ static const ax_sprite sFlaaffySprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx23[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_23.4bpp");
-static const u8 sFlaaffyGfx23_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_23_1.4bpp");
-static const u8 sFlaaffyGfx23_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_23_2.4bpp");
+static const u8 sFlaaffyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_23.4bpp.lz");
+static const u8 sFlaaffyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_23_1.4bpp.lz");
+static const u8 sFlaaffyGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_23_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites23[] = {
 	{sFlaaffyGfx23, ARRAY_COUNT(sFlaaffyGfx23)}, 
 	{NULL, 32}, 
@@ -2254,9 +2254,9 @@ static const ax_sprite sFlaaffySprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx24[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_24.4bpp");
-static const u8 sFlaaffyGfx24_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_24_1.4bpp");
-static const u8 sFlaaffyGfx24_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_24_2.4bpp");
+static const u8 sFlaaffyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_24.4bpp.lz");
+static const u8 sFlaaffyGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_24_1.4bpp.lz");
+static const u8 sFlaaffyGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_24_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites24[] = {
 	{sFlaaffyGfx24, ARRAY_COUNT(sFlaaffyGfx24)}, 
 	{NULL, 32}, 
@@ -2266,9 +2266,9 @@ static const ax_sprite sFlaaffySprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx25[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_25.4bpp");
-static const u8 sFlaaffyGfx25_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_25_1.4bpp");
-static const u8 sFlaaffyGfx25_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_25_2.4bpp");
+static const u8 sFlaaffyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_25.4bpp.lz");
+static const u8 sFlaaffyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_25_1.4bpp.lz");
+static const u8 sFlaaffyGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_25_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites25[] = {
 	{sFlaaffyGfx25, ARRAY_COUNT(sFlaaffyGfx25)}, 
 	{NULL, 32}, 
@@ -2278,10 +2278,10 @@ static const ax_sprite sFlaaffySprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx26[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_26.4bpp");
-static const u8 sFlaaffyGfx26_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_26_1.4bpp");
-static const u8 sFlaaffyGfx26_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_26_2.4bpp");
-static const u8 sFlaaffyGfx26_3[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_26_3.4bpp");
+static const u8 sFlaaffyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_26.4bpp.lz");
+static const u8 sFlaaffyGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_26_1.4bpp.lz");
+static const u8 sFlaaffyGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_26_2.4bpp.lz");
+static const u8 sFlaaffyGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_26_3.4bpp.lz");
 static const ax_sprite sFlaaffySprites26[] = {
 	{NULL, 32}, 
 	{sFlaaffyGfx26, ARRAY_COUNT(sFlaaffyGfx26)}, 
@@ -2294,10 +2294,10 @@ static const ax_sprite sFlaaffySprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx27[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_27.4bpp");
-static const u8 sFlaaffyGfx27_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_27_1.4bpp");
-static const u8 sFlaaffyGfx27_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_27_2.4bpp");
-static const u8 sFlaaffyGfx27_3[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_27_3.4bpp");
+static const u8 sFlaaffyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_27.4bpp.lz");
+static const u8 sFlaaffyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_27_1.4bpp.lz");
+static const u8 sFlaaffyGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_27_2.4bpp.lz");
+static const u8 sFlaaffyGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_27_3.4bpp.lz");
 static const ax_sprite sFlaaffySprites27[] = {
 	{NULL, 32}, 
 	{sFlaaffyGfx27, ARRAY_COUNT(sFlaaffyGfx27)}, 
@@ -2310,10 +2310,10 @@ static const ax_sprite sFlaaffySprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx28[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_28.4bpp");
-static const u8 sFlaaffyGfx28_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_28_1.4bpp");
-static const u8 sFlaaffyGfx28_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_28_2.4bpp");
-static const u8 sFlaaffyGfx28_3[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_28_3.4bpp");
+static const u8 sFlaaffyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_28.4bpp.lz");
+static const u8 sFlaaffyGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_28_1.4bpp.lz");
+static const u8 sFlaaffyGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_28_2.4bpp.lz");
+static const u8 sFlaaffyGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_28_3.4bpp.lz");
 static const ax_sprite sFlaaffySprites28[] = {
 	{sFlaaffyGfx28, ARRAY_COUNT(sFlaaffyGfx28)}, 
 	{NULL, 32}, 
@@ -2325,10 +2325,10 @@ static const ax_sprite sFlaaffySprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx29[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_29.4bpp");
-static const u8 sFlaaffyGfx29_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_29_1.4bpp");
-static const u8 sFlaaffyGfx29_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_29_2.4bpp");
-static const u8 sFlaaffyGfx29_3[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_29_3.4bpp");
+static const u8 sFlaaffyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_29.4bpp.lz");
+static const u8 sFlaaffyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_29_1.4bpp.lz");
+static const u8 sFlaaffyGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_29_2.4bpp.lz");
+static const u8 sFlaaffyGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_29_3.4bpp.lz");
 static const ax_sprite sFlaaffySprites29[] = {
 	{sFlaaffyGfx29, ARRAY_COUNT(sFlaaffyGfx29)}, 
 	{NULL, 32}, 
@@ -2340,9 +2340,9 @@ static const ax_sprite sFlaaffySprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx30[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_30.4bpp");
-static const u8 sFlaaffyGfx30_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_30_1.4bpp");
-static const u8 sFlaaffyGfx30_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_30_2.4bpp");
+static const u8 sFlaaffyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_30.4bpp.lz");
+static const u8 sFlaaffyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_30_1.4bpp.lz");
+static const u8 sFlaaffyGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_30_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites30[] = {
 	{NULL, 32}, 
 	{sFlaaffyGfx30, ARRAY_COUNT(sFlaaffyGfx30)}, 
@@ -2353,9 +2353,9 @@ static const ax_sprite sFlaaffySprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx31[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_31.4bpp");
-static const u8 sFlaaffyGfx31_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_31_1.4bpp");
-static const u8 sFlaaffyGfx31_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_31_2.4bpp");
+static const u8 sFlaaffyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_31.4bpp.lz");
+static const u8 sFlaaffyGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_31_1.4bpp.lz");
+static const u8 sFlaaffyGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_31_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites31[] = {
 	{NULL, 32}, 
 	{sFlaaffyGfx31, ARRAY_COUNT(sFlaaffyGfx31)}, 
@@ -2366,9 +2366,9 @@ static const ax_sprite sFlaaffySprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx32[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_32.4bpp");
-static const u8 sFlaaffyGfx32_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_32_1.4bpp");
-static const u8 sFlaaffyGfx32_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_32_2.4bpp");
+static const u8 sFlaaffyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_32.4bpp.lz");
+static const u8 sFlaaffyGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_32_1.4bpp.lz");
+static const u8 sFlaaffyGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_32_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites32[] = {
 	{NULL, 32}, 
 	{sFlaaffyGfx32, ARRAY_COUNT(sFlaaffyGfx32)}, 
@@ -2379,9 +2379,9 @@ static const ax_sprite sFlaaffySprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx33[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_33.4bpp");
-static const u8 sFlaaffyGfx33_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_33_1.4bpp");
-static const u8 sFlaaffyGfx33_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_33_2.4bpp");
+static const u8 sFlaaffyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_33.4bpp.lz");
+static const u8 sFlaaffyGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_33_1.4bpp.lz");
+static const u8 sFlaaffyGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_33_2.4bpp.lz");
 static const ax_sprite sFlaaffySprites33[] = {
 	{NULL, 32}, 
 	{sFlaaffyGfx33, ARRAY_COUNT(sFlaaffyGfx33)}, 
@@ -2392,10 +2392,10 @@ static const ax_sprite sFlaaffySprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx34[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_34.4bpp");
-static const u8 sFlaaffyGfx34_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_34_1.4bpp");
-static const u8 sFlaaffyGfx34_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_34_2.4bpp");
-static const u8 sFlaaffyGfx34_3[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_34_3.4bpp");
+static const u8 sFlaaffyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_34.4bpp.lz");
+static const u8 sFlaaffyGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_34_1.4bpp.lz");
+static const u8 sFlaaffyGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_34_2.4bpp.lz");
+static const u8 sFlaaffyGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_34_3.4bpp.lz");
 static const ax_sprite sFlaaffySprites34[] = {
 	{sFlaaffyGfx34, ARRAY_COUNT(sFlaaffyGfx34)}, 
 	{NULL, 32}, 
@@ -2407,10 +2407,10 @@ static const ax_sprite sFlaaffySprites34[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx35[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_35.4bpp");
-static const u8 sFlaaffyGfx35_1[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_35_1.4bpp");
-static const u8 sFlaaffyGfx35_2[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_35_2.4bpp");
-static const u8 sFlaaffyGfx35_3[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_35_3.4bpp");
+static const u8 sFlaaffyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_35.4bpp.lz");
+static const u8 sFlaaffyGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_35_1.4bpp.lz");
+static const u8 sFlaaffyGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_35_2.4bpp.lz");
+static const u8 sFlaaffyGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_35_3.4bpp.lz");
 static const ax_sprite sFlaaffySprites35[] = {
 	{sFlaaffyGfx35, ARRAY_COUNT(sFlaaffyGfx35)}, 
 	{NULL, 32}, 
@@ -2422,37 +2422,37 @@ static const ax_sprite sFlaaffySprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx36[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_36.4bpp");
+static const u8 sFlaaffyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_36.4bpp.lz");
 static const ax_sprite sFlaaffySprites36[] = {
 	{sFlaaffyGfx36, ARRAY_COUNT(sFlaaffyGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx37[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_37.4bpp");
+static const u8 sFlaaffyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_37.4bpp.lz");
 static const ax_sprite sFlaaffySprites37[] = {
 	{sFlaaffyGfx37, ARRAY_COUNT(sFlaaffyGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx38[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_38.4bpp");
+static const u8 sFlaaffyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_38.4bpp.lz");
 static const ax_sprite sFlaaffySprites38[] = {
 	{sFlaaffyGfx38, ARRAY_COUNT(sFlaaffyGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx39[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_39.4bpp");
+static const u8 sFlaaffyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_39.4bpp.lz");
 static const ax_sprite sFlaaffySprites39[] = {
 	{sFlaaffyGfx39, ARRAY_COUNT(sFlaaffyGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx40[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_40.4bpp");
+static const u8 sFlaaffyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_40.4bpp.lz");
 static const ax_sprite sFlaaffySprites40[] = {
 	{sFlaaffyGfx40, ARRAY_COUNT(sFlaaffyGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx41[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_41.4bpp");
+static const u8 sFlaaffyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_41.4bpp.lz");
 static const ax_sprite sFlaaffySprites41[] = {
 	{sFlaaffyGfx41, ARRAY_COUNT(sFlaaffyGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sFlaaffyGfx42[] = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_42.4bpp");
+static const u8 sFlaaffyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flaaffy/sprite_42.4bpp.lz");
 static const ax_sprite sFlaaffySprites42[] = {
 	{sFlaaffyGfx42, ARRAY_COUNT(sFlaaffyGfx42)}, 
 	{NULL, 0}

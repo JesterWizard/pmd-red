@@ -2511,108 +2511,108 @@ static const ax_anim sPelipperAnims_15_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPelipperGfx1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_1.4bpp");
+static const u8 sPelipperGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_1.4bpp.lz");
 static const ax_sprite sPelipperSprites1[] = {
 	{sPelipperGfx1, ARRAY_COUNT(sPelipperGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx2[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_2.4bpp");
+static const u8 sPelipperGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_2.4bpp.lz");
 static const ax_sprite sPelipperSprites2[] = {
 	{sPelipperGfx2, ARRAY_COUNT(sPelipperGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx3[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_3.4bpp");
+static const u8 sPelipperGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_3.4bpp.lz");
 static const ax_sprite sPelipperSprites3[] = {
 	{sPelipperGfx3, ARRAY_COUNT(sPelipperGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx4[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_4.4bpp");
+static const u8 sPelipperGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_4.4bpp.lz");
 static const ax_sprite sPelipperSprites4[] = {
 	{sPelipperGfx4, ARRAY_COUNT(sPelipperGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx5[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_5.4bpp");
+static const u8 sPelipperGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_5.4bpp.lz");
 static const ax_sprite sPelipperSprites5[] = {
 	{sPelipperGfx5, ARRAY_COUNT(sPelipperGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx6[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_6.4bpp");
+static const u8 sPelipperGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_6.4bpp.lz");
 static const ax_sprite sPelipperSprites6[] = {
 	{sPelipperGfx6, ARRAY_COUNT(sPelipperGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx7[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_7.4bpp");
+static const u8 sPelipperGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_7.4bpp.lz");
 static const ax_sprite sPelipperSprites7[] = {
 	{sPelipperGfx7, ARRAY_COUNT(sPelipperGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx8[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_8.4bpp");
+static const u8 sPelipperGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_8.4bpp.lz");
 static const ax_sprite sPelipperSprites8[] = {
 	{sPelipperGfx8, ARRAY_COUNT(sPelipperGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx9[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_9.4bpp");
+static const u8 sPelipperGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_9.4bpp.lz");
 static const ax_sprite sPelipperSprites9[] = {
 	{sPelipperGfx9, ARRAY_COUNT(sPelipperGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx10[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_10.4bpp");
+static const u8 sPelipperGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_10.4bpp.lz");
 static const ax_sprite sPelipperSprites10[] = {
 	{sPelipperGfx10, ARRAY_COUNT(sPelipperGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx11[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_11.4bpp");
+static const u8 sPelipperGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_11.4bpp.lz");
 static const ax_sprite sPelipperSprites11[] = {
 	{sPelipperGfx11, ARRAY_COUNT(sPelipperGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx12[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_12.4bpp");
+static const u8 sPelipperGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_12.4bpp.lz");
 static const ax_sprite sPelipperSprites12[] = {
 	{sPelipperGfx12, ARRAY_COUNT(sPelipperGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx13[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_13.4bpp");
+static const u8 sPelipperGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_13.4bpp.lz");
 static const ax_sprite sPelipperSprites13[] = {
 	{sPelipperGfx13, ARRAY_COUNT(sPelipperGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx14[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_14.4bpp");
+static const u8 sPelipperGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_14.4bpp.lz");
 static const ax_sprite sPelipperSprites14[] = {
 	{sPelipperGfx14, ARRAY_COUNT(sPelipperGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx15[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_15.4bpp");
+static const u8 sPelipperGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_15.4bpp.lz");
 static const ax_sprite sPelipperSprites15[] = {
 	{sPelipperGfx15, ARRAY_COUNT(sPelipperGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx16[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_16.4bpp");
+static const u8 sPelipperGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_16.4bpp.lz");
 static const ax_sprite sPelipperSprites16[] = {
 	{sPelipperGfx16, ARRAY_COUNT(sPelipperGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx17[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_17.4bpp");
+static const u8 sPelipperGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_17.4bpp.lz");
 static const ax_sprite sPelipperSprites17[] = {
 	{sPelipperGfx17, ARRAY_COUNT(sPelipperGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx18[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_18.4bpp");
+static const u8 sPelipperGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_18.4bpp.lz");
 static const ax_sprite sPelipperSprites18[] = {
 	{sPelipperGfx18, ARRAY_COUNT(sPelipperGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx19[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_19.4bpp");
+static const u8 sPelipperGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_19.4bpp.lz");
 static const ax_sprite sPelipperSprites19[] = {
 	{sPelipperGfx19, ARRAY_COUNT(sPelipperGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx20[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_20.4bpp");
+static const u8 sPelipperGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_20.4bpp.lz");
 static const ax_sprite sPelipperSprites20[] = {
 	{sPelipperGfx20, ARRAY_COUNT(sPelipperGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx21[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_21.4bpp");
-static const u8 sPelipperGfx21_1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_21_1.4bpp");
+static const u8 sPelipperGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_21.4bpp.lz");
+static const u8 sPelipperGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_21_1.4bpp.lz");
 static const ax_sprite sPelipperSprites21[] = {
 	{NULL, 32}, 
 	{sPelipperGfx21, ARRAY_COUNT(sPelipperGfx21)}, 
@@ -2620,23 +2620,23 @@ static const ax_sprite sPelipperSprites21[] = {
 	{sPelipperGfx21_1, ARRAY_COUNT(sPelipperGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx22[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_22.4bpp");
+static const u8 sPelipperGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_22.4bpp.lz");
 static const ax_sprite sPelipperSprites22[] = {
 	{sPelipperGfx22, ARRAY_COUNT(sPelipperGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx23[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_23.4bpp");
+static const u8 sPelipperGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_23.4bpp.lz");
 static const ax_sprite sPelipperSprites23[] = {
 	{sPelipperGfx23, ARRAY_COUNT(sPelipperGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx24[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_24.4bpp");
+static const u8 sPelipperGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_24.4bpp.lz");
 static const ax_sprite sPelipperSprites24[] = {
 	{sPelipperGfx24, ARRAY_COUNT(sPelipperGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx25[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_25.4bpp");
-static const u8 sPelipperGfx25_1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_25_1.4bpp");
+static const u8 sPelipperGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_25.4bpp.lz");
+static const u8 sPelipperGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_25_1.4bpp.lz");
 static const ax_sprite sPelipperSprites25[] = {
 	{NULL, 32}, 
 	{sPelipperGfx25, ARRAY_COUNT(sPelipperGfx25)}, 
@@ -2645,9 +2645,9 @@ static const ax_sprite sPelipperSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx26[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_26.4bpp");
-static const u8 sPelipperGfx26_1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_26_1.4bpp");
-static const u8 sPelipperGfx26_2[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_26_2.4bpp");
+static const u8 sPelipperGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_26.4bpp.lz");
+static const u8 sPelipperGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_26_1.4bpp.lz");
+static const u8 sPelipperGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_26_2.4bpp.lz");
 static const ax_sprite sPelipperSprites26[] = {
 	{NULL, 32}, 
 	{sPelipperGfx26, ARRAY_COUNT(sPelipperGfx26)}, 
@@ -2657,14 +2657,14 @@ static const ax_sprite sPelipperSprites26[] = {
 	{sPelipperGfx26_2, ARRAY_COUNT(sPelipperGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx27[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_27.4bpp");
+static const u8 sPelipperGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_27.4bpp.lz");
 static const ax_sprite sPelipperSprites27[] = {
 	{NULL, 32}, 
 	{sPelipperGfx27, ARRAY_COUNT(sPelipperGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx28[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_28.4bpp");
-static const u8 sPelipperGfx28_1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_28_1.4bpp");
+static const u8 sPelipperGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_28.4bpp.lz");
+static const u8 sPelipperGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_28_1.4bpp.lz");
 static const ax_sprite sPelipperSprites28[] = {
 	{NULL, 32}, 
 	{sPelipperGfx28, ARRAY_COUNT(sPelipperGfx28)}, 
@@ -2672,8 +2672,8 @@ static const ax_sprite sPelipperSprites28[] = {
 	{sPelipperGfx28_1, ARRAY_COUNT(sPelipperGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx29[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_29.4bpp");
-static const u8 sPelipperGfx29_1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_29_1.4bpp");
+static const u8 sPelipperGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_29.4bpp.lz");
+static const u8 sPelipperGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_29_1.4bpp.lz");
 static const ax_sprite sPelipperSprites29[] = {
 	{sPelipperGfx29, ARRAY_COUNT(sPelipperGfx29)}, 
 	{NULL, 64}, 
@@ -2681,9 +2681,9 @@ static const ax_sprite sPelipperSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx30[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_30.4bpp");
-static const u8 sPelipperGfx30_1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_30_1.4bpp");
-static const u8 sPelipperGfx30_2[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_30_2.4bpp");
+static const u8 sPelipperGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_30.4bpp.lz");
+static const u8 sPelipperGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_30_1.4bpp.lz");
+static const u8 sPelipperGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_30_2.4bpp.lz");
 static const ax_sprite sPelipperSprites30[] = {
 	{sPelipperGfx30, ARRAY_COUNT(sPelipperGfx30)}, 
 	{NULL, 32}, 
@@ -2693,36 +2693,36 @@ static const ax_sprite sPelipperSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx31[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_31.4bpp");
-static const u8 sPelipperGfx31_1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_31_1.4bpp");
+static const u8 sPelipperGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_31.4bpp.lz");
+static const u8 sPelipperGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_31_1.4bpp.lz");
 static const ax_sprite sPelipperSprites31[] = {
 	{sPelipperGfx31, ARRAY_COUNT(sPelipperGfx31)}, 
 	{NULL, 32}, 
 	{sPelipperGfx31_1, ARRAY_COUNT(sPelipperGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx32[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_32.4bpp");
+static const u8 sPelipperGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_32.4bpp.lz");
 static const ax_sprite sPelipperSprites32[] = {
 	{sPelipperGfx32, ARRAY_COUNT(sPelipperGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx33[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_33.4bpp");
+static const u8 sPelipperGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_33.4bpp.lz");
 static const ax_sprite sPelipperSprites33[] = {
 	{sPelipperGfx33, ARRAY_COUNT(sPelipperGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx34[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_34.4bpp");
+static const u8 sPelipperGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_34.4bpp.lz");
 static const ax_sprite sPelipperSprites34[] = {
 	{sPelipperGfx34, ARRAY_COUNT(sPelipperGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx35[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_35.4bpp");
+static const u8 sPelipperGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_35.4bpp.lz");
 static const ax_sprite sPelipperSprites35[] = {
 	{sPelipperGfx35, ARRAY_COUNT(sPelipperGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx36[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_36.4bpp");
-static const u8 sPelipperGfx36_1[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_36_1.4bpp");
+static const u8 sPelipperGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_36.4bpp.lz");
+static const u8 sPelipperGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_36_1.4bpp.lz");
 static const ax_sprite sPelipperSprites36[] = {
 	{NULL, 32}, 
 	{sPelipperGfx36, ARRAY_COUNT(sPelipperGfx36)}, 
@@ -2730,112 +2730,112 @@ static const ax_sprite sPelipperSprites36[] = {
 	{sPelipperGfx36_1, ARRAY_COUNT(sPelipperGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx37[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_37.4bpp");
+static const u8 sPelipperGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_37.4bpp.lz");
 static const ax_sprite sPelipperSprites37[] = {
 	{sPelipperGfx37, ARRAY_COUNT(sPelipperGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx38[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_38.4bpp");
+static const u8 sPelipperGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_38.4bpp.lz");
 static const ax_sprite sPelipperSprites38[] = {
 	{sPelipperGfx38, ARRAY_COUNT(sPelipperGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx39[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_39.4bpp");
+static const u8 sPelipperGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_39.4bpp.lz");
 static const ax_sprite sPelipperSprites39[] = {
 	{sPelipperGfx39, ARRAY_COUNT(sPelipperGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx40[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_40.4bpp");
+static const u8 sPelipperGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_40.4bpp.lz");
 static const ax_sprite sPelipperSprites40[] = {
 	{sPelipperGfx40, ARRAY_COUNT(sPelipperGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx41[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_41.4bpp");
+static const u8 sPelipperGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_41.4bpp.lz");
 static const ax_sprite sPelipperSprites41[] = {
 	{sPelipperGfx41, ARRAY_COUNT(sPelipperGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx42[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_42.4bpp");
+static const u8 sPelipperGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_42.4bpp.lz");
 static const ax_sprite sPelipperSprites42[] = {
 	{sPelipperGfx42, ARRAY_COUNT(sPelipperGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx43[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_43.4bpp");
+static const u8 sPelipperGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_43.4bpp.lz");
 static const ax_sprite sPelipperSprites43[] = {
 	{sPelipperGfx43, ARRAY_COUNT(sPelipperGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx44[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_44.4bpp");
+static const u8 sPelipperGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_44.4bpp.lz");
 static const ax_sprite sPelipperSprites44[] = {
 	{sPelipperGfx44, ARRAY_COUNT(sPelipperGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx45[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_45.4bpp");
+static const u8 sPelipperGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_45.4bpp.lz");
 static const ax_sprite sPelipperSprites45[] = {
 	{sPelipperGfx45, ARRAY_COUNT(sPelipperGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx46[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_46.4bpp");
+static const u8 sPelipperGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_46.4bpp.lz");
 static const ax_sprite sPelipperSprites46[] = {
 	{sPelipperGfx46, ARRAY_COUNT(sPelipperGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx47[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_47.4bpp");
+static const u8 sPelipperGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_47.4bpp.lz");
 static const ax_sprite sPelipperSprites47[] = {
 	{sPelipperGfx47, ARRAY_COUNT(sPelipperGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx48[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_48.4bpp");
+static const u8 sPelipperGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_48.4bpp.lz");
 static const ax_sprite sPelipperSprites48[] = {
 	{sPelipperGfx48, ARRAY_COUNT(sPelipperGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx49[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_49.4bpp");
+static const u8 sPelipperGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_49.4bpp.lz");
 static const ax_sprite sPelipperSprites49[] = {
 	{sPelipperGfx49, ARRAY_COUNT(sPelipperGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx50[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_50.4bpp");
+static const u8 sPelipperGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_50.4bpp.lz");
 static const ax_sprite sPelipperSprites50[] = {
 	{sPelipperGfx50, ARRAY_COUNT(sPelipperGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx51[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_51.4bpp");
+static const u8 sPelipperGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_51.4bpp.lz");
 static const ax_sprite sPelipperSprites51[] = {
 	{sPelipperGfx51, ARRAY_COUNT(sPelipperGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx52[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_52.4bpp");
+static const u8 sPelipperGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_52.4bpp.lz");
 static const ax_sprite sPelipperSprites52[] = {
 	{sPelipperGfx52, ARRAY_COUNT(sPelipperGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx53[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_53.4bpp");
+static const u8 sPelipperGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_53.4bpp.lz");
 static const ax_sprite sPelipperSprites53[] = {
 	{sPelipperGfx53, ARRAY_COUNT(sPelipperGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx54[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_54.4bpp");
+static const u8 sPelipperGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_54.4bpp.lz");
 static const ax_sprite sPelipperSprites54[] = {
 	{sPelipperGfx54, ARRAY_COUNT(sPelipperGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx55[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_55.4bpp");
+static const u8 sPelipperGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_55.4bpp.lz");
 static const ax_sprite sPelipperSprites55[] = {
 	{sPelipperGfx55, ARRAY_COUNT(sPelipperGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx56[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_56.4bpp");
+static const u8 sPelipperGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_56.4bpp.lz");
 static const ax_sprite sPelipperSprites56[] = {
 	{sPelipperGfx56, ARRAY_COUNT(sPelipperGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx57[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_57.4bpp");
+static const u8 sPelipperGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_57.4bpp.lz");
 static const ax_sprite sPelipperSprites57[] = {
 	{sPelipperGfx57, ARRAY_COUNT(sPelipperGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sPelipperGfx58[] = INCBIN_U8("graphics/ax/mon/pelipper/sprite_58.4bpp");
+static const u8 sPelipperGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pelipper/sprite_58.4bpp.lz");
 static const ax_sprite sPelipperSprites58[] = {
 	{sPelipperGfx58, ARRAY_COUNT(sPelipperGfx58)}, 
 	{NULL, 0}

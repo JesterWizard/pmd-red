@@ -2272,130 +2272,130 @@ static const ax_anim sPrimeapeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPrimeapeGfx1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_1.4bpp");
+static const u8 sPrimeapeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_1.4bpp.lz");
 static const ax_sprite sPrimeapeSprites1[] = {
 	{sPrimeapeGfx1, ARRAY_COUNT(sPrimeapeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_2.4bpp");
+static const u8 sPrimeapeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites2[] = {
 	{sPrimeapeGfx2, ARRAY_COUNT(sPrimeapeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_3.4bpp");
+static const u8 sPrimeapeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites3[] = {
 	{sPrimeapeGfx3, ARRAY_COUNT(sPrimeapeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx4[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_4.4bpp");
+static const u8 sPrimeapeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_4.4bpp.lz");
 static const ax_sprite sPrimeapeSprites4[] = {
 	{sPrimeapeGfx4, ARRAY_COUNT(sPrimeapeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx5[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_5.4bpp");
+static const u8 sPrimeapeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_5.4bpp.lz");
 static const ax_sprite sPrimeapeSprites5[] = {
 	{sPrimeapeGfx5, ARRAY_COUNT(sPrimeapeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx6[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_6.4bpp");
+static const u8 sPrimeapeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_6.4bpp.lz");
 static const ax_sprite sPrimeapeSprites6[] = {
 	{sPrimeapeGfx6, ARRAY_COUNT(sPrimeapeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx7[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_7.4bpp");
+static const u8 sPrimeapeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_7.4bpp.lz");
 static const ax_sprite sPrimeapeSprites7[] = {
 	{sPrimeapeGfx7, ARRAY_COUNT(sPrimeapeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx8[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_8.4bpp");
+static const u8 sPrimeapeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_8.4bpp.lz");
 static const ax_sprite sPrimeapeSprites8[] = {
 	{sPrimeapeGfx8, ARRAY_COUNT(sPrimeapeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx9[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_9.4bpp");
+static const u8 sPrimeapeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_9.4bpp.lz");
 static const ax_sprite sPrimeapeSprites9[] = {
 	{sPrimeapeGfx9, ARRAY_COUNT(sPrimeapeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx10[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_10.4bpp");
+static const u8 sPrimeapeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_10.4bpp.lz");
 static const ax_sprite sPrimeapeSprites10[] = {
 	{sPrimeapeGfx10, ARRAY_COUNT(sPrimeapeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx11[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_11.4bpp");
+static const u8 sPrimeapeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_11.4bpp.lz");
 static const ax_sprite sPrimeapeSprites11[] = {
 	{sPrimeapeGfx11, ARRAY_COUNT(sPrimeapeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx12[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_12.4bpp");
+static const u8 sPrimeapeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_12.4bpp.lz");
 static const ax_sprite sPrimeapeSprites12[] = {
 	{sPrimeapeGfx12, ARRAY_COUNT(sPrimeapeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx13[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_13.4bpp");
+static const u8 sPrimeapeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_13.4bpp.lz");
 static const ax_sprite sPrimeapeSprites13[] = {
 	{sPrimeapeGfx13, ARRAY_COUNT(sPrimeapeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx14[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_14.4bpp");
+static const u8 sPrimeapeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_14.4bpp.lz");
 static const ax_sprite sPrimeapeSprites14[] = {
 	{sPrimeapeGfx14, ARRAY_COUNT(sPrimeapeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx15[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_15.4bpp");
+static const u8 sPrimeapeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_15.4bpp.lz");
 static const ax_sprite sPrimeapeSprites15[] = {
 	{sPrimeapeGfx15, ARRAY_COUNT(sPrimeapeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx16[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_16.4bpp");
+static const u8 sPrimeapeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_16.4bpp.lz");
 static const ax_sprite sPrimeapeSprites16[] = {
 	{sPrimeapeGfx16, ARRAY_COUNT(sPrimeapeGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx17[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_17.4bpp");
+static const u8 sPrimeapeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_17.4bpp.lz");
 static const ax_sprite sPrimeapeSprites17[] = {
 	{sPrimeapeGfx17, ARRAY_COUNT(sPrimeapeGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx18[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_18.4bpp");
+static const u8 sPrimeapeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_18.4bpp.lz");
 static const ax_sprite sPrimeapeSprites18[] = {
 	{sPrimeapeGfx18, ARRAY_COUNT(sPrimeapeGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx19[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_19.4bpp");
+static const u8 sPrimeapeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_19.4bpp.lz");
 static const ax_sprite sPrimeapeSprites19[] = {
 	{sPrimeapeGfx19, ARRAY_COUNT(sPrimeapeGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx20[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_20.4bpp");
+static const u8 sPrimeapeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_20.4bpp.lz");
 static const ax_sprite sPrimeapeSprites20[] = {
 	{sPrimeapeGfx20, ARRAY_COUNT(sPrimeapeGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx21[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_21.4bpp");
+static const u8 sPrimeapeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_21.4bpp.lz");
 static const ax_sprite sPrimeapeSprites21[] = {
 	{sPrimeapeGfx21, ARRAY_COUNT(sPrimeapeGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx22[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_22.4bpp");
+static const u8 sPrimeapeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_22.4bpp.lz");
 static const ax_sprite sPrimeapeSprites22[] = {
 	{sPrimeapeGfx22, ARRAY_COUNT(sPrimeapeGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx23[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_23.4bpp");
+static const u8 sPrimeapeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_23.4bpp.lz");
 static const ax_sprite sPrimeapeSprites23[] = {
 	{sPrimeapeGfx23, ARRAY_COUNT(sPrimeapeGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx24[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_24.4bpp");
+static const u8 sPrimeapeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_24.4bpp.lz");
 static const ax_sprite sPrimeapeSprites24[] = {
 	{sPrimeapeGfx24, ARRAY_COUNT(sPrimeapeGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx25[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_25.4bpp");
-static const u8 sPrimeapeGfx25_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_25_1.4bpp");
-static const u8 sPrimeapeGfx25_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_25_2.4bpp");
-static const u8 sPrimeapeGfx25_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_25_3.4bpp");
+static const u8 sPrimeapeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_25.4bpp.lz");
+static const u8 sPrimeapeGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_25_1.4bpp.lz");
+static const u8 sPrimeapeGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_25_2.4bpp.lz");
+static const u8 sPrimeapeGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_25_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites25[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx25, ARRAY_COUNT(sPrimeapeGfx25)}, 
@@ -2408,9 +2408,9 @@ static const ax_sprite sPrimeapeSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx26[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_26.4bpp");
-static const u8 sPrimeapeGfx26_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_26_1.4bpp");
-static const u8 sPrimeapeGfx26_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_26_2.4bpp");
+static const u8 sPrimeapeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_26.4bpp.lz");
+static const u8 sPrimeapeGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_26_1.4bpp.lz");
+static const u8 sPrimeapeGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_26_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites26[] = {
 	{NULL, 128}, 
 	{sPrimeapeGfx26, ARRAY_COUNT(sPrimeapeGfx26)}, 
@@ -2421,9 +2421,9 @@ static const ax_sprite sPrimeapeSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx27[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_27.4bpp");
-static const u8 sPrimeapeGfx27_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_27_1.4bpp");
-static const u8 sPrimeapeGfx27_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_27_2.4bpp");
+static const u8 sPrimeapeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_27.4bpp.lz");
+static const u8 sPrimeapeGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_27_1.4bpp.lz");
+static const u8 sPrimeapeGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_27_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites27[] = {
 	{NULL, 128}, 
 	{sPrimeapeGfx27, ARRAY_COUNT(sPrimeapeGfx27)}, 
@@ -2434,14 +2434,14 @@ static const ax_sprite sPrimeapeSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx28[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_28.4bpp");
+static const u8 sPrimeapeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_28.4bpp.lz");
 static const ax_sprite sPrimeapeSprites28[] = {
 	{sPrimeapeGfx28, ARRAY_COUNT(sPrimeapeGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx29[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_29.4bpp");
-static const u8 sPrimeapeGfx29_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_29_1.4bpp");
-static const u8 sPrimeapeGfx29_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_29_2.4bpp");
+static const u8 sPrimeapeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_29.4bpp.lz");
+static const u8 sPrimeapeGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_29_1.4bpp.lz");
+static const u8 sPrimeapeGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_29_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites29[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx29, ARRAY_COUNT(sPrimeapeGfx29)}, 
@@ -2452,9 +2452,9 @@ static const ax_sprite sPrimeapeSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx30[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_30.4bpp");
-static const u8 sPrimeapeGfx30_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_30_1.4bpp");
-static const u8 sPrimeapeGfx30_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_30_2.4bpp");
+static const u8 sPrimeapeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_30.4bpp.lz");
+static const u8 sPrimeapeGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_30_1.4bpp.lz");
+static const u8 sPrimeapeGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_30_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites30[] = {
 	{sPrimeapeGfx30, ARRAY_COUNT(sPrimeapeGfx30)}, 
 	{NULL, 32}, 
@@ -2464,10 +2464,10 @@ static const ax_sprite sPrimeapeSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx31[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_31.4bpp");
-static const u8 sPrimeapeGfx31_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_31_1.4bpp");
-static const u8 sPrimeapeGfx31_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_31_2.4bpp");
-static const u8 sPrimeapeGfx31_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_31_3.4bpp");
+static const u8 sPrimeapeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_31.4bpp.lz");
+static const u8 sPrimeapeGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_31_1.4bpp.lz");
+static const u8 sPrimeapeGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_31_2.4bpp.lz");
+static const u8 sPrimeapeGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_31_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites31[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx31, ARRAY_COUNT(sPrimeapeGfx31)}, 
@@ -2480,10 +2480,10 @@ static const ax_sprite sPrimeapeSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx32[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_32.4bpp");
-static const u8 sPrimeapeGfx32_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_32_1.4bpp");
-static const u8 sPrimeapeGfx32_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_32_2.4bpp");
-static const u8 sPrimeapeGfx32_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_32_3.4bpp");
+static const u8 sPrimeapeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_32.4bpp.lz");
+static const u8 sPrimeapeGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_32_1.4bpp.lz");
+static const u8 sPrimeapeGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_32_2.4bpp.lz");
+static const u8 sPrimeapeGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_32_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites32[] = {
 	{sPrimeapeGfx32, ARRAY_COUNT(sPrimeapeGfx32)}, 
 	{NULL, 64}, 
@@ -2495,10 +2495,10 @@ static const ax_sprite sPrimeapeSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx33[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_33.4bpp");
-static const u8 sPrimeapeGfx33_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_33_1.4bpp");
-static const u8 sPrimeapeGfx33_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_33_2.4bpp");
-static const u8 sPrimeapeGfx33_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_33_3.4bpp");
+static const u8 sPrimeapeGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_33.4bpp.lz");
+static const u8 sPrimeapeGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_33_1.4bpp.lz");
+static const u8 sPrimeapeGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_33_2.4bpp.lz");
+static const u8 sPrimeapeGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_33_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites33[] = {
 	{sPrimeapeGfx33, ARRAY_COUNT(sPrimeapeGfx33)}, 
 	{NULL, 32}, 
@@ -2510,10 +2510,10 @@ static const ax_sprite sPrimeapeSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx34[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_34.4bpp");
-static const u8 sPrimeapeGfx34_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_34_1.4bpp");
-static const u8 sPrimeapeGfx34_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_34_2.4bpp");
-static const u8 sPrimeapeGfx34_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_34_3.4bpp");
+static const u8 sPrimeapeGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_34.4bpp.lz");
+static const u8 sPrimeapeGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_34_1.4bpp.lz");
+static const u8 sPrimeapeGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_34_2.4bpp.lz");
+static const u8 sPrimeapeGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_34_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites34[] = {
 	{sPrimeapeGfx34, ARRAY_COUNT(sPrimeapeGfx34)}, 
 	{NULL, 64}, 
@@ -2525,10 +2525,10 @@ static const ax_sprite sPrimeapeSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx35[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_35.4bpp");
-static const u8 sPrimeapeGfx35_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_35_1.4bpp");
-static const u8 sPrimeapeGfx35_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_35_2.4bpp");
-static const u8 sPrimeapeGfx35_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_35_3.4bpp");
+static const u8 sPrimeapeGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_35.4bpp.lz");
+static const u8 sPrimeapeGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_35_1.4bpp.lz");
+static const u8 sPrimeapeGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_35_2.4bpp.lz");
+static const u8 sPrimeapeGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_35_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites35[] = {
 	{sPrimeapeGfx35, ARRAY_COUNT(sPrimeapeGfx35)}, 
 	{NULL, 32}, 
@@ -2540,16 +2540,16 @@ static const ax_sprite sPrimeapeSprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx36[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_36.4bpp");
+static const u8 sPrimeapeGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_36.4bpp.lz");
 static const ax_sprite sPrimeapeSprites36[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx36, ARRAY_COUNT(sPrimeapeGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx37[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_37.4bpp");
-static const u8 sPrimeapeGfx37_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_37_1.4bpp");
-static const u8 sPrimeapeGfx37_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_37_2.4bpp");
-static const u8 sPrimeapeGfx37_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_37_3.4bpp");
+static const u8 sPrimeapeGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_37.4bpp.lz");
+static const u8 sPrimeapeGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_37_1.4bpp.lz");
+static const u8 sPrimeapeGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_37_2.4bpp.lz");
+static const u8 sPrimeapeGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_37_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites37[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx37, ARRAY_COUNT(sPrimeapeGfx37)}, 
@@ -2562,9 +2562,9 @@ static const ax_sprite sPrimeapeSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx38[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_38.4bpp");
-static const u8 sPrimeapeGfx38_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_38_1.4bpp");
-static const u8 sPrimeapeGfx38_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_38_2.4bpp");
+static const u8 sPrimeapeGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_38.4bpp.lz");
+static const u8 sPrimeapeGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_38_1.4bpp.lz");
+static const u8 sPrimeapeGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_38_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites38[] = {
 	{sPrimeapeGfx38, ARRAY_COUNT(sPrimeapeGfx38)}, 
 	{NULL, 64}, 
@@ -2574,8 +2574,8 @@ static const ax_sprite sPrimeapeSprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx39[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_39.4bpp");
-static const u8 sPrimeapeGfx39_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_39_1.4bpp");
+static const u8 sPrimeapeGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_39.4bpp.lz");
+static const u8 sPrimeapeGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_39_1.4bpp.lz");
 static const ax_sprite sPrimeapeSprites39[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx39, ARRAY_COUNT(sPrimeapeGfx39)}, 
@@ -2584,8 +2584,8 @@ static const ax_sprite sPrimeapeSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx40[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_40.4bpp");
-static const u8 sPrimeapeGfx40_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_40_1.4bpp");
+static const u8 sPrimeapeGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_40.4bpp.lz");
+static const u8 sPrimeapeGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_40_1.4bpp.lz");
 static const ax_sprite sPrimeapeSprites40[] = {
 	{sPrimeapeGfx40, ARRAY_COUNT(sPrimeapeGfx40)}, 
 	{NULL, 32}, 
@@ -2593,10 +2593,10 @@ static const ax_sprite sPrimeapeSprites40[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx41[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_41.4bpp");
-static const u8 sPrimeapeGfx41_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_41_1.4bpp");
-static const u8 sPrimeapeGfx41_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_41_2.4bpp");
-static const u8 sPrimeapeGfx41_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_41_3.4bpp");
+static const u8 sPrimeapeGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_41.4bpp.lz");
+static const u8 sPrimeapeGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_41_1.4bpp.lz");
+static const u8 sPrimeapeGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_41_2.4bpp.lz");
+static const u8 sPrimeapeGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_41_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites41[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx41, ARRAY_COUNT(sPrimeapeGfx41)}, 
@@ -2609,8 +2609,8 @@ static const ax_sprite sPrimeapeSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx42[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_42.4bpp");
-static const u8 sPrimeapeGfx42_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_42_1.4bpp");
+static const u8 sPrimeapeGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_42.4bpp.lz");
+static const u8 sPrimeapeGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_42_1.4bpp.lz");
 static const ax_sprite sPrimeapeSprites42[] = {
 	{sPrimeapeGfx42, ARRAY_COUNT(sPrimeapeGfx42)}, 
 	{NULL, 96}, 
@@ -2618,10 +2618,10 @@ static const ax_sprite sPrimeapeSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx43[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_43.4bpp");
-static const u8 sPrimeapeGfx43_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_43_1.4bpp");
-static const u8 sPrimeapeGfx43_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_43_2.4bpp");
-static const u8 sPrimeapeGfx43_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_43_3.4bpp");
+static const u8 sPrimeapeGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_43.4bpp.lz");
+static const u8 sPrimeapeGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_43_1.4bpp.lz");
+static const u8 sPrimeapeGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_43_2.4bpp.lz");
+static const u8 sPrimeapeGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_43_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites43[] = {
 	{sPrimeapeGfx43, ARRAY_COUNT(sPrimeapeGfx43)}, 
 	{NULL, 32}, 
@@ -2632,9 +2632,9 @@ static const ax_sprite sPrimeapeSprites43[] = {
 	{sPrimeapeGfx43_3, ARRAY_COUNT(sPrimeapeGfx43_3)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx44[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_44.4bpp");
-static const u8 sPrimeapeGfx44_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_44_1.4bpp");
-static const u8 sPrimeapeGfx44_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_44_2.4bpp");
+static const u8 sPrimeapeGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_44.4bpp.lz");
+static const u8 sPrimeapeGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_44_1.4bpp.lz");
+static const u8 sPrimeapeGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_44_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites44[] = {
 	{sPrimeapeGfx44, ARRAY_COUNT(sPrimeapeGfx44)}, 
 	{NULL, 32}, 
@@ -2643,10 +2643,10 @@ static const ax_sprite sPrimeapeSprites44[] = {
 	{sPrimeapeGfx44_2, ARRAY_COUNT(sPrimeapeGfx44_2)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx45[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_45.4bpp");
-static const u8 sPrimeapeGfx45_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_45_1.4bpp");
-static const u8 sPrimeapeGfx45_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_45_2.4bpp");
-static const u8 sPrimeapeGfx45_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_45_3.4bpp");
+static const u8 sPrimeapeGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_45.4bpp.lz");
+static const u8 sPrimeapeGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_45_1.4bpp.lz");
+static const u8 sPrimeapeGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_45_2.4bpp.lz");
+static const u8 sPrimeapeGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_45_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites45[] = {
 	{sPrimeapeGfx45, ARRAY_COUNT(sPrimeapeGfx45)}, 
 	{NULL, 32}, 
@@ -2657,8 +2657,8 @@ static const ax_sprite sPrimeapeSprites45[] = {
 	{sPrimeapeGfx45_3, ARRAY_COUNT(sPrimeapeGfx45_3)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx46[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_46.4bpp");
-static const u8 sPrimeapeGfx46_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_46_1.4bpp");
+static const u8 sPrimeapeGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_46.4bpp.lz");
+static const u8 sPrimeapeGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_46_1.4bpp.lz");
 static const ax_sprite sPrimeapeSprites46[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx46, ARRAY_COUNT(sPrimeapeGfx46)}, 
@@ -2666,9 +2666,9 @@ static const ax_sprite sPrimeapeSprites46[] = {
 	{sPrimeapeGfx46_1, ARRAY_COUNT(sPrimeapeGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx47[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_47.4bpp");
-static const u8 sPrimeapeGfx47_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_47_1.4bpp");
-static const u8 sPrimeapeGfx47_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_47_2.4bpp");
+static const u8 sPrimeapeGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_47.4bpp.lz");
+static const u8 sPrimeapeGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_47_1.4bpp.lz");
+static const u8 sPrimeapeGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_47_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites47[] = {
 	{NULL, 192}, 
 	{sPrimeapeGfx47, ARRAY_COUNT(sPrimeapeGfx47)}, 
@@ -2679,10 +2679,10 @@ static const ax_sprite sPrimeapeSprites47[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx48[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_48.4bpp");
-static const u8 sPrimeapeGfx48_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_48_1.4bpp");
-static const u8 sPrimeapeGfx48_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_48_2.4bpp");
-static const u8 sPrimeapeGfx48_3[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_48_3.4bpp");
+static const u8 sPrimeapeGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_48.4bpp.lz");
+static const u8 sPrimeapeGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_48_1.4bpp.lz");
+static const u8 sPrimeapeGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_48_2.4bpp.lz");
+static const u8 sPrimeapeGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_48_3.4bpp.lz");
 static const ax_sprite sPrimeapeSprites48[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx48, ARRAY_COUNT(sPrimeapeGfx48)}, 
@@ -2695,14 +2695,14 @@ static const ax_sprite sPrimeapeSprites48[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx49[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_49.4bpp");
+static const u8 sPrimeapeGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_49.4bpp.lz");
 static const ax_sprite sPrimeapeSprites49[] = {
 	{sPrimeapeGfx49, ARRAY_COUNT(sPrimeapeGfx49)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx50[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_50.4bpp");
-static const u8 sPrimeapeGfx50_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_50_1.4bpp");
+static const u8 sPrimeapeGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_50.4bpp.lz");
+static const u8 sPrimeapeGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_50_1.4bpp.lz");
 static const ax_sprite sPrimeapeSprites50[] = {
 	{sPrimeapeGfx50, ARRAY_COUNT(sPrimeapeGfx50)}, 
 	{NULL, 32}, 
@@ -2710,15 +2710,15 @@ static const ax_sprite sPrimeapeSprites50[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx51[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_51.4bpp");
+static const u8 sPrimeapeGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_51.4bpp.lz");
 static const ax_sprite sPrimeapeSprites51[] = {
 	{sPrimeapeGfx51, ARRAY_COUNT(sPrimeapeGfx51)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx52[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_52.4bpp");
-static const u8 sPrimeapeGfx52_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_52_1.4bpp");
-static const u8 sPrimeapeGfx52_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_52_2.4bpp");
+static const u8 sPrimeapeGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_52.4bpp.lz");
+static const u8 sPrimeapeGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_52_1.4bpp.lz");
+static const u8 sPrimeapeGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_52_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites52[] = {
 	{sPrimeapeGfx52, ARRAY_COUNT(sPrimeapeGfx52)}, 
 	{NULL, 32}, 
@@ -2728,9 +2728,9 @@ static const ax_sprite sPrimeapeSprites52[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx53[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_53.4bpp");
-static const u8 sPrimeapeGfx53_1[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_53_1.4bpp");
-static const u8 sPrimeapeGfx53_2[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_53_2.4bpp");
+static const u8 sPrimeapeGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_53.4bpp.lz");
+static const u8 sPrimeapeGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_53_1.4bpp.lz");
+static const u8 sPrimeapeGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_53_2.4bpp.lz");
 static const ax_sprite sPrimeapeSprites53[] = {
 	{NULL, 32}, 
 	{sPrimeapeGfx53, ARRAY_COUNT(sPrimeapeGfx53)}, 
@@ -2741,37 +2741,37 @@ static const ax_sprite sPrimeapeSprites53[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx54[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_54.4bpp");
+static const u8 sPrimeapeGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_54.4bpp.lz");
 static const ax_sprite sPrimeapeSprites54[] = {
 	{sPrimeapeGfx54, ARRAY_COUNT(sPrimeapeGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx55[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_55.4bpp");
+static const u8 sPrimeapeGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_55.4bpp.lz");
 static const ax_sprite sPrimeapeSprites55[] = {
 	{sPrimeapeGfx55, ARRAY_COUNT(sPrimeapeGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx56[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_56.4bpp");
+static const u8 sPrimeapeGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_56.4bpp.lz");
 static const ax_sprite sPrimeapeSprites56[] = {
 	{sPrimeapeGfx56, ARRAY_COUNT(sPrimeapeGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx57[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_57.4bpp");
+static const u8 sPrimeapeGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_57.4bpp.lz");
 static const ax_sprite sPrimeapeSprites57[] = {
 	{sPrimeapeGfx57, ARRAY_COUNT(sPrimeapeGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx58[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_58.4bpp");
+static const u8 sPrimeapeGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_58.4bpp.lz");
 static const ax_sprite sPrimeapeSprites58[] = {
 	{sPrimeapeGfx58, ARRAY_COUNT(sPrimeapeGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx59[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_59.4bpp");
+static const u8 sPrimeapeGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_59.4bpp.lz");
 static const ax_sprite sPrimeapeSprites59[] = {
 	{sPrimeapeGfx59, ARRAY_COUNT(sPrimeapeGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sPrimeapeGfx60[] = INCBIN_U8("graphics/ax/mon/primeape/sprite_60.4bpp");
+static const u8 sPrimeapeGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/primeape/sprite_60.4bpp.lz");
 static const ax_sprite sPrimeapeSprites60[] = {
 	{sPrimeapeGfx60, ARRAY_COUNT(sPrimeapeGfx60)}, 
 	{NULL, 0}

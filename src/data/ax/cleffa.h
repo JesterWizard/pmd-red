@@ -1911,84 +1911,84 @@ static const ax_anim sCleffaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCleffaGfx1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_1.4bpp");
+static const u8 sCleffaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_1.4bpp.lz");
 static const ax_sprite sCleffaSprites1[] = {
 	{sCleffaGfx1, ARRAY_COUNT(sCleffaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_2.4bpp");
+static const u8 sCleffaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_2.4bpp.lz");
 static const ax_sprite sCleffaSprites2[] = {
 	{sCleffaGfx2, ARRAY_COUNT(sCleffaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx3[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_3.4bpp");
+static const u8 sCleffaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_3.4bpp.lz");
 static const ax_sprite sCleffaSprites3[] = {
 	{sCleffaGfx3, ARRAY_COUNT(sCleffaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx4[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_4.4bpp");
+static const u8 sCleffaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_4.4bpp.lz");
 static const ax_sprite sCleffaSprites4[] = {
 	{sCleffaGfx4, ARRAY_COUNT(sCleffaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx5[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_5.4bpp");
+static const u8 sCleffaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_5.4bpp.lz");
 static const ax_sprite sCleffaSprites5[] = {
 	{sCleffaGfx5, ARRAY_COUNT(sCleffaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx6[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_6.4bpp");
+static const u8 sCleffaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_6.4bpp.lz");
 static const ax_sprite sCleffaSprites6[] = {
 	{sCleffaGfx6, ARRAY_COUNT(sCleffaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx7[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_7.4bpp");
+static const u8 sCleffaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_7.4bpp.lz");
 static const ax_sprite sCleffaSprites7[] = {
 	{sCleffaGfx7, ARRAY_COUNT(sCleffaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx8[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_8.4bpp");
+static const u8 sCleffaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_8.4bpp.lz");
 static const ax_sprite sCleffaSprites8[] = {
 	{sCleffaGfx8, ARRAY_COUNT(sCleffaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx9[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_9.4bpp");
+static const u8 sCleffaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_9.4bpp.lz");
 static const ax_sprite sCleffaSprites9[] = {
 	{sCleffaGfx9, ARRAY_COUNT(sCleffaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx10[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_10.4bpp");
+static const u8 sCleffaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_10.4bpp.lz");
 static const ax_sprite sCleffaSprites10[] = {
 	{sCleffaGfx10, ARRAY_COUNT(sCleffaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx11[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_11.4bpp");
+static const u8 sCleffaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_11.4bpp.lz");
 static const ax_sprite sCleffaSprites11[] = {
 	{sCleffaGfx11, ARRAY_COUNT(sCleffaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx12[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_12.4bpp");
+static const u8 sCleffaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_12.4bpp.lz");
 static const ax_sprite sCleffaSprites12[] = {
 	{sCleffaGfx12, ARRAY_COUNT(sCleffaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx13[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_13.4bpp");
+static const u8 sCleffaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_13.4bpp.lz");
 static const ax_sprite sCleffaSprites13[] = {
 	{sCleffaGfx13, ARRAY_COUNT(sCleffaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx14[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_14.4bpp");
+static const u8 sCleffaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_14.4bpp.lz");
 static const ax_sprite sCleffaSprites14[] = {
 	{sCleffaGfx14, ARRAY_COUNT(sCleffaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx15[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_15.4bpp");
+static const u8 sCleffaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_15.4bpp.lz");
 static const ax_sprite sCleffaSprites15[] = {
 	{sCleffaGfx15, ARRAY_COUNT(sCleffaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx16[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_16.4bpp");
-static const u8 sCleffaGfx16_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_16_1.4bpp");
-static const u8 sCleffaGfx16_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_16_2.4bpp");
+static const u8 sCleffaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_16.4bpp.lz");
+static const u8 sCleffaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_16_1.4bpp.lz");
+static const u8 sCleffaGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_16_2.4bpp.lz");
 static const ax_sprite sCleffaSprites16[] = {
 	{sCleffaGfx16, ARRAY_COUNT(sCleffaGfx16)}, 
 	{NULL, 32}, 
@@ -1998,9 +1998,9 @@ static const ax_sprite sCleffaSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx17[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_17.4bpp");
-static const u8 sCleffaGfx17_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_17_1.4bpp");
-static const u8 sCleffaGfx17_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_17_2.4bpp");
+static const u8 sCleffaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_17.4bpp.lz");
+static const u8 sCleffaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_17_1.4bpp.lz");
+static const u8 sCleffaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_17_2.4bpp.lz");
 static const ax_sprite sCleffaSprites17[] = {
 	{sCleffaGfx17, ARRAY_COUNT(sCleffaGfx17)}, 
 	{NULL, 32}, 
@@ -2010,9 +2010,9 @@ static const ax_sprite sCleffaSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx18[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_18.4bpp");
-static const u8 sCleffaGfx18_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_18_1.4bpp");
-static const u8 sCleffaGfx18_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_18_2.4bpp");
+static const u8 sCleffaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_18.4bpp.lz");
+static const u8 sCleffaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_18_1.4bpp.lz");
+static const u8 sCleffaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_18_2.4bpp.lz");
 static const ax_sprite sCleffaSprites18[] = {
 	{sCleffaGfx18, ARRAY_COUNT(sCleffaGfx18)}, 
 	{NULL, 32}, 
@@ -2022,9 +2022,9 @@ static const ax_sprite sCleffaSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx19[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_19.4bpp");
-static const u8 sCleffaGfx19_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_19_1.4bpp");
-static const u8 sCleffaGfx19_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_19_2.4bpp");
+static const u8 sCleffaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_19.4bpp.lz");
+static const u8 sCleffaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_19_1.4bpp.lz");
+static const u8 sCleffaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_19_2.4bpp.lz");
 static const ax_sprite sCleffaSprites19[] = {
 	{sCleffaGfx19, ARRAY_COUNT(sCleffaGfx19)}, 
 	{NULL, 64}, 
@@ -2034,9 +2034,9 @@ static const ax_sprite sCleffaSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx20[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_20.4bpp");
-static const u8 sCleffaGfx20_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_20_1.4bpp");
-static const u8 sCleffaGfx20_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_20_2.4bpp");
+static const u8 sCleffaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_20.4bpp.lz");
+static const u8 sCleffaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_20_1.4bpp.lz");
+static const u8 sCleffaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_20_2.4bpp.lz");
 static const ax_sprite sCleffaSprites20[] = {
 	{sCleffaGfx20, ARRAY_COUNT(sCleffaGfx20)}, 
 	{NULL, 32}, 
@@ -2046,9 +2046,9 @@ static const ax_sprite sCleffaSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx21[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_21.4bpp");
-static const u8 sCleffaGfx21_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_21_1.4bpp");
-static const u8 sCleffaGfx21_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_21_2.4bpp");
+static const u8 sCleffaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_21.4bpp.lz");
+static const u8 sCleffaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_21_1.4bpp.lz");
+static const u8 sCleffaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_21_2.4bpp.lz");
 static const ax_sprite sCleffaSprites21[] = {
 	{sCleffaGfx21, ARRAY_COUNT(sCleffaGfx21)}, 
 	{NULL, 64}, 
@@ -2058,9 +2058,9 @@ static const ax_sprite sCleffaSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx22[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_22.4bpp");
-static const u8 sCleffaGfx22_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_22_1.4bpp");
-static const u8 sCleffaGfx22_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_22_2.4bpp");
+static const u8 sCleffaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_22.4bpp.lz");
+static const u8 sCleffaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_22_1.4bpp.lz");
+static const u8 sCleffaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_22_2.4bpp.lz");
 static const ax_sprite sCleffaSprites22[] = {
 	{sCleffaGfx22, ARRAY_COUNT(sCleffaGfx22)}, 
 	{NULL, 32}, 
@@ -2070,9 +2070,9 @@ static const ax_sprite sCleffaSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx23[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_23.4bpp");
-static const u8 sCleffaGfx23_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_23_1.4bpp");
-static const u8 sCleffaGfx23_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_23_2.4bpp");
+static const u8 sCleffaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_23.4bpp.lz");
+static const u8 sCleffaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_23_1.4bpp.lz");
+static const u8 sCleffaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_23_2.4bpp.lz");
 static const ax_sprite sCleffaSprites23[] = {
 	{sCleffaGfx23, ARRAY_COUNT(sCleffaGfx23)}, 
 	{NULL, 32}, 
@@ -2082,9 +2082,9 @@ static const ax_sprite sCleffaSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx24[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_24.4bpp");
-static const u8 sCleffaGfx24_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_24_1.4bpp");
-static const u8 sCleffaGfx24_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_24_2.4bpp");
+static const u8 sCleffaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_24.4bpp.lz");
+static const u8 sCleffaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_24_1.4bpp.lz");
+static const u8 sCleffaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_24_2.4bpp.lz");
 static const ax_sprite sCleffaSprites24[] = {
 	{sCleffaGfx24, ARRAY_COUNT(sCleffaGfx24)}, 
 	{NULL, 32}, 
@@ -2094,9 +2094,9 @@ static const ax_sprite sCleffaSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx25[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_25.4bpp");
-static const u8 sCleffaGfx25_1[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_25_1.4bpp");
-static const u8 sCleffaGfx25_2[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_25_2.4bpp");
+static const u8 sCleffaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_25.4bpp.lz");
+static const u8 sCleffaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_25_1.4bpp.lz");
+static const u8 sCleffaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_25_2.4bpp.lz");
 static const ax_sprite sCleffaSprites25[] = {
 	{sCleffaGfx25, ARRAY_COUNT(sCleffaGfx25)}, 
 	{NULL, 32}, 
@@ -2106,37 +2106,37 @@ static const ax_sprite sCleffaSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx26[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_26.4bpp");
+static const u8 sCleffaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_26.4bpp.lz");
 static const ax_sprite sCleffaSprites26[] = {
 	{sCleffaGfx26, ARRAY_COUNT(sCleffaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx27[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_27.4bpp");
+static const u8 sCleffaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_27.4bpp.lz");
 static const ax_sprite sCleffaSprites27[] = {
 	{sCleffaGfx27, ARRAY_COUNT(sCleffaGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx28[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_28.4bpp");
+static const u8 sCleffaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_28.4bpp.lz");
 static const ax_sprite sCleffaSprites28[] = {
 	{sCleffaGfx28, ARRAY_COUNT(sCleffaGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx29[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_29.4bpp");
+static const u8 sCleffaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_29.4bpp.lz");
 static const ax_sprite sCleffaSprites29[] = {
 	{sCleffaGfx29, ARRAY_COUNT(sCleffaGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx30[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_30.4bpp");
+static const u8 sCleffaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_30.4bpp.lz");
 static const ax_sprite sCleffaSprites30[] = {
 	{sCleffaGfx30, ARRAY_COUNT(sCleffaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx31[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_31.4bpp");
+static const u8 sCleffaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_31.4bpp.lz");
 static const ax_sprite sCleffaSprites31[] = {
 	{sCleffaGfx31, ARRAY_COUNT(sCleffaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCleffaGfx32[] = INCBIN_U8("graphics/ax/mon/cleffa/sprite_32.4bpp");
+static const u8 sCleffaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cleffa/sprite_32.4bpp.lz");
 static const ax_sprite sCleffaSprites32[] = {
 	{sCleffaGfx32, ARRAY_COUNT(sCleffaGfx32)}, 
 	{NULL, 0}

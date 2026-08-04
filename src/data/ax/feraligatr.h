@@ -2289,119 +2289,119 @@ static const ax_anim sFeraligatrAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sFeraligatrGfx1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_1.4bpp");
+static const u8 sFeraligatrGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites1[] = {
 	{sFeraligatrGfx1, ARRAY_COUNT(sFeraligatrGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx2[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_2.4bpp");
+static const u8 sFeraligatrGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_2.4bpp.lz");
 static const ax_sprite sFeraligatrSprites2[] = {
 	{sFeraligatrGfx2, ARRAY_COUNT(sFeraligatrGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx3[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_3.4bpp");
+static const u8 sFeraligatrGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_3.4bpp.lz");
 static const ax_sprite sFeraligatrSprites3[] = {
 	{sFeraligatrGfx3, ARRAY_COUNT(sFeraligatrGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx4[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_4.4bpp");
+static const u8 sFeraligatrGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_4.4bpp.lz");
 static const ax_sprite sFeraligatrSprites4[] = {
 	{sFeraligatrGfx4, ARRAY_COUNT(sFeraligatrGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx5[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_5.4bpp");
+static const u8 sFeraligatrGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_5.4bpp.lz");
 static const ax_sprite sFeraligatrSprites5[] = {
 	{sFeraligatrGfx5, ARRAY_COUNT(sFeraligatrGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx6[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_6.4bpp");
+static const u8 sFeraligatrGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_6.4bpp.lz");
 static const ax_sprite sFeraligatrSprites6[] = {
 	{sFeraligatrGfx6, ARRAY_COUNT(sFeraligatrGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx7[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_7.4bpp");
+static const u8 sFeraligatrGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_7.4bpp.lz");
 static const ax_sprite sFeraligatrSprites7[] = {
 	{sFeraligatrGfx7, ARRAY_COUNT(sFeraligatrGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx8[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_8.4bpp");
+static const u8 sFeraligatrGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_8.4bpp.lz");
 static const ax_sprite sFeraligatrSprites8[] = {
 	{sFeraligatrGfx8, ARRAY_COUNT(sFeraligatrGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx9[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_9.4bpp");
+static const u8 sFeraligatrGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_9.4bpp.lz");
 static const ax_sprite sFeraligatrSprites9[] = {
 	{sFeraligatrGfx9, ARRAY_COUNT(sFeraligatrGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx10[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_10.4bpp");
+static const u8 sFeraligatrGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_10.4bpp.lz");
 static const ax_sprite sFeraligatrSprites10[] = {
 	{sFeraligatrGfx10, ARRAY_COUNT(sFeraligatrGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx11[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_11.4bpp");
+static const u8 sFeraligatrGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_11.4bpp.lz");
 static const ax_sprite sFeraligatrSprites11[] = {
 	{sFeraligatrGfx11, ARRAY_COUNT(sFeraligatrGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx12[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_12.4bpp");
+static const u8 sFeraligatrGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_12.4bpp.lz");
 static const ax_sprite sFeraligatrSprites12[] = {
 	{sFeraligatrGfx12, ARRAY_COUNT(sFeraligatrGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx13[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_13.4bpp");
+static const u8 sFeraligatrGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_13.4bpp.lz");
 static const ax_sprite sFeraligatrSprites13[] = {
 	{sFeraligatrGfx13, ARRAY_COUNT(sFeraligatrGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx14[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_14.4bpp");
+static const u8 sFeraligatrGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_14.4bpp.lz");
 static const ax_sprite sFeraligatrSprites14[] = {
 	{sFeraligatrGfx14, ARRAY_COUNT(sFeraligatrGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx15[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_15.4bpp");
+static const u8 sFeraligatrGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_15.4bpp.lz");
 static const ax_sprite sFeraligatrSprites15[] = {
 	{sFeraligatrGfx15, ARRAY_COUNT(sFeraligatrGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx16[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_16.4bpp");
+static const u8 sFeraligatrGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_16.4bpp.lz");
 static const ax_sprite sFeraligatrSprites16[] = {
 	{sFeraligatrGfx16, ARRAY_COUNT(sFeraligatrGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx17[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_17.4bpp");
+static const u8 sFeraligatrGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_17.4bpp.lz");
 static const ax_sprite sFeraligatrSprites17[] = {
 	{NULL, 128}, 
 	{sFeraligatrGfx17, ARRAY_COUNT(sFeraligatrGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx18[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_18.4bpp");
+static const u8 sFeraligatrGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_18.4bpp.lz");
 static const ax_sprite sFeraligatrSprites18[] = {
 	{sFeraligatrGfx18, ARRAY_COUNT(sFeraligatrGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx19[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_19.4bpp");
+static const u8 sFeraligatrGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_19.4bpp.lz");
 static const ax_sprite sFeraligatrSprites19[] = {
 	{sFeraligatrGfx19, ARRAY_COUNT(sFeraligatrGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx20[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_20.4bpp");
+static const u8 sFeraligatrGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_20.4bpp.lz");
 static const ax_sprite sFeraligatrSprites20[] = {
 	{sFeraligatrGfx20, ARRAY_COUNT(sFeraligatrGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx21[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_21.4bpp");
+static const u8 sFeraligatrGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_21.4bpp.lz");
 static const ax_sprite sFeraligatrSprites21[] = {
 	{sFeraligatrGfx21, ARRAY_COUNT(sFeraligatrGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx22[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_22.4bpp");
+static const u8 sFeraligatrGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_22.4bpp.lz");
 static const ax_sprite sFeraligatrSprites22[] = {
 	{sFeraligatrGfx22, ARRAY_COUNT(sFeraligatrGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx23[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_23.4bpp");
-static const u8 sFeraligatrGfx23_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_23_1.4bpp");
+static const u8 sFeraligatrGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_23.4bpp.lz");
+static const u8 sFeraligatrGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_23_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites23[] = {
 	{NULL, 32}, 
 	{sFeraligatrGfx23, ARRAY_COUNT(sFeraligatrGfx23)}, 
@@ -2409,77 +2409,77 @@ static const ax_sprite sFeraligatrSprites23[] = {
 	{sFeraligatrGfx23_1, ARRAY_COUNT(sFeraligatrGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx24[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_24.4bpp");
+static const u8 sFeraligatrGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_24.4bpp.lz");
 static const ax_sprite sFeraligatrSprites24[] = {
 	{sFeraligatrGfx24, ARRAY_COUNT(sFeraligatrGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx25[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_25.4bpp");
+static const u8 sFeraligatrGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_25.4bpp.lz");
 static const ax_sprite sFeraligatrSprites25[] = {
 	{sFeraligatrGfx25, ARRAY_COUNT(sFeraligatrGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx26[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_26.4bpp");
+static const u8 sFeraligatrGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_26.4bpp.lz");
 static const ax_sprite sFeraligatrSprites26[] = {
 	{sFeraligatrGfx26, ARRAY_COUNT(sFeraligatrGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx27[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_27.4bpp");
+static const u8 sFeraligatrGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_27.4bpp.lz");
 static const ax_sprite sFeraligatrSprites27[] = {
 	{sFeraligatrGfx27, ARRAY_COUNT(sFeraligatrGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx28[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_28.4bpp");
-static const u8 sFeraligatrGfx28_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_28_1.4bpp");
+static const u8 sFeraligatrGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_28.4bpp.lz");
+static const u8 sFeraligatrGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_28_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites28[] = {
 	{sFeraligatrGfx28, ARRAY_COUNT(sFeraligatrGfx28)}, 
 	{NULL, 32}, 
 	{sFeraligatrGfx28_1, ARRAY_COUNT(sFeraligatrGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx29[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_29.4bpp");
+static const u8 sFeraligatrGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_29.4bpp.lz");
 static const ax_sprite sFeraligatrSprites29[] = {
 	{sFeraligatrGfx29, ARRAY_COUNT(sFeraligatrGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx30[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_30.4bpp");
+static const u8 sFeraligatrGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_30.4bpp.lz");
 static const ax_sprite sFeraligatrSprites30[] = {
 	{sFeraligatrGfx30, ARRAY_COUNT(sFeraligatrGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx31[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_31.4bpp");
+static const u8 sFeraligatrGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_31.4bpp.lz");
 static const ax_sprite sFeraligatrSprites31[] = {
 	{sFeraligatrGfx31, ARRAY_COUNT(sFeraligatrGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx32[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_32.4bpp");
+static const u8 sFeraligatrGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_32.4bpp.lz");
 static const ax_sprite sFeraligatrSprites32[] = {
 	{sFeraligatrGfx32, ARRAY_COUNT(sFeraligatrGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx33[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_33.4bpp");
+static const u8 sFeraligatrGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_33.4bpp.lz");
 static const ax_sprite sFeraligatrSprites33[] = {
 	{sFeraligatrGfx33, ARRAY_COUNT(sFeraligatrGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx34[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_34.4bpp");
+static const u8 sFeraligatrGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_34.4bpp.lz");
 static const ax_sprite sFeraligatrSprites34[] = {
 	{sFeraligatrGfx34, ARRAY_COUNT(sFeraligatrGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx35[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_35.4bpp");
+static const u8 sFeraligatrGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_35.4bpp.lz");
 static const ax_sprite sFeraligatrSprites35[] = {
 	{sFeraligatrGfx35, ARRAY_COUNT(sFeraligatrGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx36[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_36.4bpp");
+static const u8 sFeraligatrGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_36.4bpp.lz");
 static const ax_sprite sFeraligatrSprites36[] = {
 	{sFeraligatrGfx36, ARRAY_COUNT(sFeraligatrGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx37[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_37.4bpp");
-static const u8 sFeraligatrGfx37_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_37_1.4bpp");
-static const u8 sFeraligatrGfx37_2[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_37_2.4bpp");
+static const u8 sFeraligatrGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_37.4bpp.lz");
+static const u8 sFeraligatrGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_37_1.4bpp.lz");
+static const u8 sFeraligatrGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_37_2.4bpp.lz");
 static const ax_sprite sFeraligatrSprites37[] = {
 	{sFeraligatrGfx37, ARRAY_COUNT(sFeraligatrGfx37)}, 
 	{NULL, 32}, 
@@ -2488,29 +2488,29 @@ static const ax_sprite sFeraligatrSprites37[] = {
 	{sFeraligatrGfx37_2, ARRAY_COUNT(sFeraligatrGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx38[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_38.4bpp");
+static const u8 sFeraligatrGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_38.4bpp.lz");
 static const ax_sprite sFeraligatrSprites38[] = {
 	{sFeraligatrGfx38, ARRAY_COUNT(sFeraligatrGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx39[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_39.4bpp");
+static const u8 sFeraligatrGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_39.4bpp.lz");
 static const ax_sprite sFeraligatrSprites39[] = {
 	{sFeraligatrGfx39, ARRAY_COUNT(sFeraligatrGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx40[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_40.4bpp");
+static const u8 sFeraligatrGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_40.4bpp.lz");
 static const ax_sprite sFeraligatrSprites40[] = {
 	{sFeraligatrGfx40, ARRAY_COUNT(sFeraligatrGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx41[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_41.4bpp");
+static const u8 sFeraligatrGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_41.4bpp.lz");
 static const ax_sprite sFeraligatrSprites41[] = {
 	{sFeraligatrGfx41, ARRAY_COUNT(sFeraligatrGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx42[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_42.4bpp");
-static const u8 sFeraligatrGfx42_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_42_1.4bpp");
-static const u8 sFeraligatrGfx42_2[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_42_2.4bpp");
+static const u8 sFeraligatrGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_42.4bpp.lz");
+static const u8 sFeraligatrGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_42_1.4bpp.lz");
+static const u8 sFeraligatrGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_42_2.4bpp.lz");
 static const ax_sprite sFeraligatrSprites42[] = {
 	{NULL, 32}, 
 	{sFeraligatrGfx42, ARRAY_COUNT(sFeraligatrGfx42)}, 
@@ -2520,18 +2520,18 @@ static const ax_sprite sFeraligatrSprites42[] = {
 	{sFeraligatrGfx42_2, ARRAY_COUNT(sFeraligatrGfx42_2)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx43[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_43.4bpp");
-static const u8 sFeraligatrGfx43_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_43_1.4bpp");
+static const u8 sFeraligatrGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_43.4bpp.lz");
+static const u8 sFeraligatrGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_43_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites43[] = {
 	{sFeraligatrGfx43, ARRAY_COUNT(sFeraligatrGfx43)}, 
 	{NULL, 32}, 
 	{sFeraligatrGfx43_1, ARRAY_COUNT(sFeraligatrGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx44[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_44.4bpp");
-static const u8 sFeraligatrGfx44_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_44_1.4bpp");
-static const u8 sFeraligatrGfx44_2[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_44_2.4bpp");
-static const u8 sFeraligatrGfx44_3[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_44_3.4bpp");
+static const u8 sFeraligatrGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_44.4bpp.lz");
+static const u8 sFeraligatrGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_44_1.4bpp.lz");
+static const u8 sFeraligatrGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_44_2.4bpp.lz");
+static const u8 sFeraligatrGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_44_3.4bpp.lz");
 static const ax_sprite sFeraligatrSprites44[] = {
 	{NULL, 32}, 
 	{sFeraligatrGfx44, ARRAY_COUNT(sFeraligatrGfx44)}, 
@@ -2543,9 +2543,9 @@ static const ax_sprite sFeraligatrSprites44[] = {
 	{sFeraligatrGfx44_3, ARRAY_COUNT(sFeraligatrGfx44_3)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx45[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_45.4bpp");
-static const u8 sFeraligatrGfx45_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_45_1.4bpp");
-static const u8 sFeraligatrGfx45_2[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_45_2.4bpp");
+static const u8 sFeraligatrGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_45.4bpp.lz");
+static const u8 sFeraligatrGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_45_1.4bpp.lz");
+static const u8 sFeraligatrGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_45_2.4bpp.lz");
 static const ax_sprite sFeraligatrSprites45[] = {
 	{sFeraligatrGfx45, ARRAY_COUNT(sFeraligatrGfx45)}, 
 	{NULL, 32}, 
@@ -2554,40 +2554,40 @@ static const ax_sprite sFeraligatrSprites45[] = {
 	{sFeraligatrGfx45_2, ARRAY_COUNT(sFeraligatrGfx45_2)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx46[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_46.4bpp");
-static const u8 sFeraligatrGfx46_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_46_1.4bpp");
+static const u8 sFeraligatrGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_46.4bpp.lz");
+static const u8 sFeraligatrGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_46_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites46[] = {
 	{sFeraligatrGfx46, ARRAY_COUNT(sFeraligatrGfx46)}, 
 	{NULL, 32}, 
 	{sFeraligatrGfx46_1, ARRAY_COUNT(sFeraligatrGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx47[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_47.4bpp");
-static const u8 sFeraligatrGfx47_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_47_1.4bpp");
+static const u8 sFeraligatrGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_47.4bpp.lz");
+static const u8 sFeraligatrGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_47_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites47[] = {
 	{sFeraligatrGfx47, ARRAY_COUNT(sFeraligatrGfx47)}, 
 	{NULL, 32}, 
 	{sFeraligatrGfx47_1, ARRAY_COUNT(sFeraligatrGfx47_1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx48[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_48.4bpp");
+static const u8 sFeraligatrGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_48.4bpp.lz");
 static const ax_sprite sFeraligatrSprites48[] = {
 	{sFeraligatrGfx48, ARRAY_COUNT(sFeraligatrGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx49[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_49.4bpp");
+static const u8 sFeraligatrGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_49.4bpp.lz");
 static const ax_sprite sFeraligatrSprites49[] = {
 	{sFeraligatrGfx49, ARRAY_COUNT(sFeraligatrGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx50[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_50.4bpp");
+static const u8 sFeraligatrGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_50.4bpp.lz");
 static const ax_sprite sFeraligatrSprites50[] = {
 	{sFeraligatrGfx50, ARRAY_COUNT(sFeraligatrGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx51[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_51.4bpp");
-static const u8 sFeraligatrGfx51_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_51_1.4bpp");
-static const u8 sFeraligatrGfx51_2[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_51_2.4bpp");
+static const u8 sFeraligatrGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_51.4bpp.lz");
+static const u8 sFeraligatrGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_51_1.4bpp.lz");
+static const u8 sFeraligatrGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_51_2.4bpp.lz");
 static const ax_sprite sFeraligatrSprites51[] = {
 	{NULL, 32}, 
 	{sFeraligatrGfx51, ARRAY_COUNT(sFeraligatrGfx51)}, 
@@ -2598,14 +2598,14 @@ static const ax_sprite sFeraligatrSprites51[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx52[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_52.4bpp");
+static const u8 sFeraligatrGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_52.4bpp.lz");
 static const ax_sprite sFeraligatrSprites52[] = {
 	{sFeraligatrGfx52, ARRAY_COUNT(sFeraligatrGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx53[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_53.4bpp");
-static const u8 sFeraligatrGfx53_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_53_1.4bpp");
-static const u8 sFeraligatrGfx53_2[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_53_2.4bpp");
+static const u8 sFeraligatrGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_53.4bpp.lz");
+static const u8 sFeraligatrGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_53_1.4bpp.lz");
+static const u8 sFeraligatrGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_53_2.4bpp.lz");
 static const ax_sprite sFeraligatrSprites53[] = {
 	{sFeraligatrGfx53, ARRAY_COUNT(sFeraligatrGfx53)}, 
 	{NULL, 32}, 
@@ -2615,14 +2615,14 @@ static const ax_sprite sFeraligatrSprites53[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx54[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_54.4bpp");
+static const u8 sFeraligatrGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_54.4bpp.lz");
 static const ax_sprite sFeraligatrSprites54[] = {
 	{sFeraligatrGfx54, ARRAY_COUNT(sFeraligatrGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx55[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_55.4bpp");
-static const u8 sFeraligatrGfx55_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_55_1.4bpp");
-static const u8 sFeraligatrGfx55_2[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_55_2.4bpp");
+static const u8 sFeraligatrGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_55.4bpp.lz");
+static const u8 sFeraligatrGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_55_1.4bpp.lz");
+static const u8 sFeraligatrGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_55_2.4bpp.lz");
 static const ax_sprite sFeraligatrSprites55[] = {
 	{sFeraligatrGfx55, ARRAY_COUNT(sFeraligatrGfx55)}, 
 	{NULL, 32}, 
@@ -2632,8 +2632,8 @@ static const ax_sprite sFeraligatrSprites55[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx56[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_56.4bpp");
-static const u8 sFeraligatrGfx56_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_56_1.4bpp");
+static const u8 sFeraligatrGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_56.4bpp.lz");
+static const u8 sFeraligatrGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_56_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites56[] = {
 	{NULL, 32}, 
 	{sFeraligatrGfx56, ARRAY_COUNT(sFeraligatrGfx56)}, 
@@ -2641,61 +2641,61 @@ static const ax_sprite sFeraligatrSprites56[] = {
 	{sFeraligatrGfx56_1, ARRAY_COUNT(sFeraligatrGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx57[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_57.4bpp");
+static const u8 sFeraligatrGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_57.4bpp.lz");
 static const ax_sprite sFeraligatrSprites57[] = {
 	{sFeraligatrGfx57, ARRAY_COUNT(sFeraligatrGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx58[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_58.4bpp");
+static const u8 sFeraligatrGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_58.4bpp.lz");
 static const ax_sprite sFeraligatrSprites58[] = {
 	{sFeraligatrGfx58, ARRAY_COUNT(sFeraligatrGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx59[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_59.4bpp");
+static const u8 sFeraligatrGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_59.4bpp.lz");
 static const ax_sprite sFeraligatrSprites59[] = {
 	{sFeraligatrGfx59, ARRAY_COUNT(sFeraligatrGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx60[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_60.4bpp");
+static const u8 sFeraligatrGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_60.4bpp.lz");
 static const ax_sprite sFeraligatrSprites60[] = {
 	{sFeraligatrGfx60, ARRAY_COUNT(sFeraligatrGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx61[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_61.4bpp");
+static const u8 sFeraligatrGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_61.4bpp.lz");
 static const ax_sprite sFeraligatrSprites61[] = {
 	{sFeraligatrGfx61, ARRAY_COUNT(sFeraligatrGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx62[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_62.4bpp");
+static const u8 sFeraligatrGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_62.4bpp.lz");
 static const ax_sprite sFeraligatrSprites62[] = {
 	{sFeraligatrGfx62, ARRAY_COUNT(sFeraligatrGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx63[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_63.4bpp");
+static const u8 sFeraligatrGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_63.4bpp.lz");
 static const ax_sprite sFeraligatrSprites63[] = {
 	{sFeraligatrGfx63, ARRAY_COUNT(sFeraligatrGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx64[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_64.4bpp");
+static const u8 sFeraligatrGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_64.4bpp.lz");
 static const ax_sprite sFeraligatrSprites64[] = {
 	{sFeraligatrGfx64, ARRAY_COUNT(sFeraligatrGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx65[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_65.4bpp");
+static const u8 sFeraligatrGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_65.4bpp.lz");
 static const ax_sprite sFeraligatrSprites65[] = {
 	{sFeraligatrGfx65, ARRAY_COUNT(sFeraligatrGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx66[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_66.4bpp");
-static const u8 sFeraligatrGfx66_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_66_1.4bpp");
+static const u8 sFeraligatrGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_66.4bpp.lz");
+static const u8 sFeraligatrGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_66_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites66[] = {
 	{sFeraligatrGfx66, ARRAY_COUNT(sFeraligatrGfx66)}, 
 	{NULL, 32}, 
 	{sFeraligatrGfx66_1, ARRAY_COUNT(sFeraligatrGfx66_1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx67[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_67.4bpp");
-static const u8 sFeraligatrGfx67_1[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_67_1.4bpp");
+static const u8 sFeraligatrGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_67.4bpp.lz");
+static const u8 sFeraligatrGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_67_1.4bpp.lz");
 static const ax_sprite sFeraligatrSprites67[] = {
 	{NULL, 32}, 
 	{sFeraligatrGfx67, ARRAY_COUNT(sFeraligatrGfx67)}, 
@@ -2703,107 +2703,107 @@ static const ax_sprite sFeraligatrSprites67[] = {
 	{sFeraligatrGfx67_1, ARRAY_COUNT(sFeraligatrGfx67_1)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx68[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_68.4bpp");
+static const u8 sFeraligatrGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_68.4bpp.lz");
 static const ax_sprite sFeraligatrSprites68[] = {
 	{sFeraligatrGfx68, ARRAY_COUNT(sFeraligatrGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx69[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_69.4bpp");
+static const u8 sFeraligatrGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_69.4bpp.lz");
 static const ax_sprite sFeraligatrSprites69[] = {
 	{sFeraligatrGfx69, ARRAY_COUNT(sFeraligatrGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx70[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_70.4bpp");
+static const u8 sFeraligatrGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_70.4bpp.lz");
 static const ax_sprite sFeraligatrSprites70[] = {
 	{sFeraligatrGfx70, ARRAY_COUNT(sFeraligatrGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx71[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_71.4bpp");
+static const u8 sFeraligatrGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_71.4bpp.lz");
 static const ax_sprite sFeraligatrSprites71[] = {
 	{sFeraligatrGfx71, ARRAY_COUNT(sFeraligatrGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx72[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_72.4bpp");
+static const u8 sFeraligatrGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_72.4bpp.lz");
 static const ax_sprite sFeraligatrSprites72[] = {
 	{sFeraligatrGfx72, ARRAY_COUNT(sFeraligatrGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx73[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_73.4bpp");
+static const u8 sFeraligatrGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_73.4bpp.lz");
 static const ax_sprite sFeraligatrSprites73[] = {
 	{sFeraligatrGfx73, ARRAY_COUNT(sFeraligatrGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx74[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_74.4bpp");
+static const u8 sFeraligatrGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_74.4bpp.lz");
 static const ax_sprite sFeraligatrSprites74[] = {
 	{sFeraligatrGfx74, ARRAY_COUNT(sFeraligatrGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx75[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_75.4bpp");
+static const u8 sFeraligatrGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_75.4bpp.lz");
 static const ax_sprite sFeraligatrSprites75[] = {
 	{sFeraligatrGfx75, ARRAY_COUNT(sFeraligatrGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx76[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_76.4bpp");
+static const u8 sFeraligatrGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_76.4bpp.lz");
 static const ax_sprite sFeraligatrSprites76[] = {
 	{sFeraligatrGfx76, ARRAY_COUNT(sFeraligatrGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx77[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_77.4bpp");
+static const u8 sFeraligatrGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_77.4bpp.lz");
 static const ax_sprite sFeraligatrSprites77[] = {
 	{sFeraligatrGfx77, ARRAY_COUNT(sFeraligatrGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx78[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_78.4bpp");
+static const u8 sFeraligatrGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_78.4bpp.lz");
 static const ax_sprite sFeraligatrSprites78[] = {
 	{sFeraligatrGfx78, ARRAY_COUNT(sFeraligatrGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx79[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_79.4bpp");
+static const u8 sFeraligatrGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_79.4bpp.lz");
 static const ax_sprite sFeraligatrSprites79[] = {
 	{sFeraligatrGfx79, ARRAY_COUNT(sFeraligatrGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx80[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_80.4bpp");
+static const u8 sFeraligatrGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_80.4bpp.lz");
 static const ax_sprite sFeraligatrSprites80[] = {
 	{sFeraligatrGfx80, ARRAY_COUNT(sFeraligatrGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx81[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_81.4bpp");
+static const u8 sFeraligatrGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_81.4bpp.lz");
 static const ax_sprite sFeraligatrSprites81[] = {
 	{sFeraligatrGfx81, ARRAY_COUNT(sFeraligatrGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx82[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_82.4bpp");
+static const u8 sFeraligatrGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_82.4bpp.lz");
 static const ax_sprite sFeraligatrSprites82[] = {
 	{sFeraligatrGfx82, ARRAY_COUNT(sFeraligatrGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx83[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_83.4bpp");
+static const u8 sFeraligatrGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_83.4bpp.lz");
 static const ax_sprite sFeraligatrSprites83[] = {
 	{sFeraligatrGfx83, ARRAY_COUNT(sFeraligatrGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx84[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_84.4bpp");
+static const u8 sFeraligatrGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_84.4bpp.lz");
 static const ax_sprite sFeraligatrSprites84[] = {
 	{sFeraligatrGfx84, ARRAY_COUNT(sFeraligatrGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx85[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_85.4bpp");
+static const u8 sFeraligatrGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_85.4bpp.lz");
 static const ax_sprite sFeraligatrSprites85[] = {
 	{sFeraligatrGfx85, ARRAY_COUNT(sFeraligatrGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx86[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_86.4bpp");
+static const u8 sFeraligatrGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_86.4bpp.lz");
 static const ax_sprite sFeraligatrSprites86[] = {
 	{sFeraligatrGfx86, ARRAY_COUNT(sFeraligatrGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx87[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_87.4bpp");
+static const u8 sFeraligatrGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_87.4bpp.lz");
 static const ax_sprite sFeraligatrSprites87[] = {
 	{sFeraligatrGfx87, ARRAY_COUNT(sFeraligatrGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sFeraligatrGfx88[] = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_88.4bpp");
+static const u8 sFeraligatrGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/feraligatr/sprite_88.4bpp.lz");
 static const ax_sprite sFeraligatrSprites88[] = {
 	{sFeraligatrGfx88, ARRAY_COUNT(sFeraligatrGfx88)}, 
 	{NULL, 0}

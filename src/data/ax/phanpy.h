@@ -2103,84 +2103,84 @@ static const ax_anim sPhanpyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPhanpyGfx1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_1.4bpp");
+static const u8 sPhanpyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_1.4bpp.lz");
 static const ax_sprite sPhanpySprites1[] = {
 	{sPhanpyGfx1, ARRAY_COUNT(sPhanpyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_2.4bpp");
+static const u8 sPhanpyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_2.4bpp.lz");
 static const ax_sprite sPhanpySprites2[] = {
 	{sPhanpyGfx2, ARRAY_COUNT(sPhanpyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx3[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_3.4bpp");
+static const u8 sPhanpyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_3.4bpp.lz");
 static const ax_sprite sPhanpySprites3[] = {
 	{sPhanpyGfx3, ARRAY_COUNT(sPhanpyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx4[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_4.4bpp");
+static const u8 sPhanpyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_4.4bpp.lz");
 static const ax_sprite sPhanpySprites4[] = {
 	{sPhanpyGfx4, ARRAY_COUNT(sPhanpyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx5[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_5.4bpp");
+static const u8 sPhanpyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_5.4bpp.lz");
 static const ax_sprite sPhanpySprites5[] = {
 	{sPhanpyGfx5, ARRAY_COUNT(sPhanpyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx6[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_6.4bpp");
+static const u8 sPhanpyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_6.4bpp.lz");
 static const ax_sprite sPhanpySprites6[] = {
 	{sPhanpyGfx6, ARRAY_COUNT(sPhanpyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx7[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_7.4bpp");
+static const u8 sPhanpyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_7.4bpp.lz");
 static const ax_sprite sPhanpySprites7[] = {
 	{sPhanpyGfx7, ARRAY_COUNT(sPhanpyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx8[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_8.4bpp");
+static const u8 sPhanpyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_8.4bpp.lz");
 static const ax_sprite sPhanpySprites8[] = {
 	{sPhanpyGfx8, ARRAY_COUNT(sPhanpyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx9[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_9.4bpp");
+static const u8 sPhanpyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_9.4bpp.lz");
 static const ax_sprite sPhanpySprites9[] = {
 	{sPhanpyGfx9, ARRAY_COUNT(sPhanpyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx10[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_10.4bpp");
+static const u8 sPhanpyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_10.4bpp.lz");
 static const ax_sprite sPhanpySprites10[] = {
 	{sPhanpyGfx10, ARRAY_COUNT(sPhanpyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx11[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_11.4bpp");
+static const u8 sPhanpyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_11.4bpp.lz");
 static const ax_sprite sPhanpySprites11[] = {
 	{sPhanpyGfx11, ARRAY_COUNT(sPhanpyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx12[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_12.4bpp");
+static const u8 sPhanpyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_12.4bpp.lz");
 static const ax_sprite sPhanpySprites12[] = {
 	{sPhanpyGfx12, ARRAY_COUNT(sPhanpyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx13[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_13.4bpp");
+static const u8 sPhanpyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_13.4bpp.lz");
 static const ax_sprite sPhanpySprites13[] = {
 	{sPhanpyGfx13, ARRAY_COUNT(sPhanpyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx14[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_14.4bpp");
+static const u8 sPhanpyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_14.4bpp.lz");
 static const ax_sprite sPhanpySprites14[] = {
 	{sPhanpyGfx14, ARRAY_COUNT(sPhanpyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx15[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_15.4bpp");
+static const u8 sPhanpyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_15.4bpp.lz");
 static const ax_sprite sPhanpySprites15[] = {
 	{sPhanpyGfx15, ARRAY_COUNT(sPhanpyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx16[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_16.4bpp");
-static const u8 sPhanpyGfx16_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_16_1.4bpp");
-static const u8 sPhanpyGfx16_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_16_2.4bpp");
+static const u8 sPhanpyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_16.4bpp.lz");
+static const u8 sPhanpyGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_16_1.4bpp.lz");
+static const u8 sPhanpyGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_16_2.4bpp.lz");
 static const ax_sprite sPhanpySprites16[] = {
 	{sPhanpyGfx16, ARRAY_COUNT(sPhanpyGfx16)}, 
 	{NULL, 32}, 
@@ -2190,9 +2190,9 @@ static const ax_sprite sPhanpySprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx17[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_17.4bpp");
-static const u8 sPhanpyGfx17_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_17_1.4bpp");
-static const u8 sPhanpyGfx17_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_17_2.4bpp");
+static const u8 sPhanpyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_17.4bpp.lz");
+static const u8 sPhanpyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_17_1.4bpp.lz");
+static const u8 sPhanpyGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_17_2.4bpp.lz");
 static const ax_sprite sPhanpySprites17[] = {
 	{sPhanpyGfx17, ARRAY_COUNT(sPhanpyGfx17)}, 
 	{NULL, 32}, 
@@ -2202,9 +2202,9 @@ static const ax_sprite sPhanpySprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx18[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_18.4bpp");
-static const u8 sPhanpyGfx18_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_18_1.4bpp");
-static const u8 sPhanpyGfx18_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_18_2.4bpp");
+static const u8 sPhanpyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_18.4bpp.lz");
+static const u8 sPhanpyGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_18_1.4bpp.lz");
+static const u8 sPhanpyGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_18_2.4bpp.lz");
 static const ax_sprite sPhanpySprites18[] = {
 	{sPhanpyGfx18, ARRAY_COUNT(sPhanpyGfx18)}, 
 	{NULL, 32}, 
@@ -2214,10 +2214,10 @@ static const ax_sprite sPhanpySprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx19[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_19.4bpp");
-static const u8 sPhanpyGfx19_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_19_1.4bpp");
-static const u8 sPhanpyGfx19_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_19_2.4bpp");
-static const u8 sPhanpyGfx19_3[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_19_3.4bpp");
+static const u8 sPhanpyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_19.4bpp.lz");
+static const u8 sPhanpyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_19_1.4bpp.lz");
+static const u8 sPhanpyGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_19_2.4bpp.lz");
+static const u8 sPhanpyGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_19_3.4bpp.lz");
 static const ax_sprite sPhanpySprites19[] = {
 	{sPhanpyGfx19, ARRAY_COUNT(sPhanpyGfx19)}, 
 	{NULL, 32}, 
@@ -2229,9 +2229,9 @@ static const ax_sprite sPhanpySprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx20[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_20.4bpp");
-static const u8 sPhanpyGfx20_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_20_1.4bpp");
-static const u8 sPhanpyGfx20_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_20_2.4bpp");
+static const u8 sPhanpyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_20.4bpp.lz");
+static const u8 sPhanpyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_20_1.4bpp.lz");
+static const u8 sPhanpyGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_20_2.4bpp.lz");
 static const ax_sprite sPhanpySprites20[] = {
 	{sPhanpyGfx20, ARRAY_COUNT(sPhanpyGfx20)}, 
 	{NULL, 32}, 
@@ -2241,9 +2241,9 @@ static const ax_sprite sPhanpySprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx21[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_21.4bpp");
-static const u8 sPhanpyGfx21_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_21_1.4bpp");
-static const u8 sPhanpyGfx21_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_21_2.4bpp");
+static const u8 sPhanpyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_21.4bpp.lz");
+static const u8 sPhanpyGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_21_1.4bpp.lz");
+static const u8 sPhanpyGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_21_2.4bpp.lz");
 static const ax_sprite sPhanpySprites21[] = {
 	{NULL, 32}, 
 	{sPhanpyGfx21, ARRAY_COUNT(sPhanpyGfx21)}, 
@@ -2254,9 +2254,9 @@ static const ax_sprite sPhanpySprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx22[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_22.4bpp");
-static const u8 sPhanpyGfx22_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_22_1.4bpp");
-static const u8 sPhanpyGfx22_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_22_2.4bpp");
+static const u8 sPhanpyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_22.4bpp.lz");
+static const u8 sPhanpyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_22_1.4bpp.lz");
+static const u8 sPhanpyGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_22_2.4bpp.lz");
 static const ax_sprite sPhanpySprites22[] = {
 	{sPhanpyGfx22, ARRAY_COUNT(sPhanpyGfx22)}, 
 	{NULL, 32}, 
@@ -2266,8 +2266,8 @@ static const ax_sprite sPhanpySprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx23[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_23.4bpp");
-static const u8 sPhanpyGfx23_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_23_1.4bpp");
+static const u8 sPhanpyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_23.4bpp.lz");
+static const u8 sPhanpyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_23_1.4bpp.lz");
 static const ax_sprite sPhanpySprites23[] = {
 	{NULL, 32}, 
 	{sPhanpyGfx23, ARRAY_COUNT(sPhanpyGfx23)}, 
@@ -2276,9 +2276,9 @@ static const ax_sprite sPhanpySprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx24[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_24.4bpp");
-static const u8 sPhanpyGfx24_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_24_1.4bpp");
-static const u8 sPhanpyGfx24_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_24_2.4bpp");
+static const u8 sPhanpyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_24.4bpp.lz");
+static const u8 sPhanpyGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_24_1.4bpp.lz");
+static const u8 sPhanpyGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_24_2.4bpp.lz");
 static const ax_sprite sPhanpySprites24[] = {
 	{NULL, 128}, 
 	{sPhanpyGfx24, ARRAY_COUNT(sPhanpyGfx24)}, 
@@ -2289,9 +2289,9 @@ static const ax_sprite sPhanpySprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx25[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_25.4bpp");
-static const u8 sPhanpyGfx25_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_25_1.4bpp");
-static const u8 sPhanpyGfx25_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_25_2.4bpp");
+static const u8 sPhanpyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_25.4bpp.lz");
+static const u8 sPhanpyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_25_1.4bpp.lz");
+static const u8 sPhanpyGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_25_2.4bpp.lz");
 static const ax_sprite sPhanpySprites25[] = {
 	{NULL, 32}, 
 	{sPhanpyGfx25, ARRAY_COUNT(sPhanpyGfx25)}, 
@@ -2302,8 +2302,8 @@ static const ax_sprite sPhanpySprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx26[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_26.4bpp");
-static const u8 sPhanpyGfx26_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_26_1.4bpp");
+static const u8 sPhanpyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_26.4bpp.lz");
+static const u8 sPhanpyGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_26_1.4bpp.lz");
 static const ax_sprite sPhanpySprites26[] = {
 	{sPhanpyGfx26, ARRAY_COUNT(sPhanpyGfx26)}, 
 	{NULL, 32}, 
@@ -2311,8 +2311,8 @@ static const ax_sprite sPhanpySprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx27[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_27.4bpp");
-static const u8 sPhanpyGfx27_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_27_1.4bpp");
+static const u8 sPhanpyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_27.4bpp.lz");
+static const u8 sPhanpyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_27_1.4bpp.lz");
 static const ax_sprite sPhanpySprites27[] = {
 	{sPhanpyGfx27, ARRAY_COUNT(sPhanpyGfx27)}, 
 	{NULL, 32}, 
@@ -2320,14 +2320,14 @@ static const ax_sprite sPhanpySprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx28[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_28.4bpp");
+static const u8 sPhanpyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_28.4bpp.lz");
 static const ax_sprite sPhanpySprites28[] = {
 	{sPhanpyGfx28, ARRAY_COUNT(sPhanpyGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx29[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_29.4bpp");
-static const u8 sPhanpyGfx29_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_29_1.4bpp");
-static const u8 sPhanpyGfx29_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_29_2.4bpp");
+static const u8 sPhanpyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_29.4bpp.lz");
+static const u8 sPhanpyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_29_1.4bpp.lz");
+static const u8 sPhanpyGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_29_2.4bpp.lz");
 static const ax_sprite sPhanpySprites29[] = {
 	{NULL, 32}, 
 	{sPhanpyGfx29, ARRAY_COUNT(sPhanpyGfx29)}, 
@@ -2338,9 +2338,9 @@ static const ax_sprite sPhanpySprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx30[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_30.4bpp");
-static const u8 sPhanpyGfx30_1[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_30_1.4bpp");
-static const u8 sPhanpyGfx30_2[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_30_2.4bpp");
+static const u8 sPhanpyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_30.4bpp.lz");
+static const u8 sPhanpyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_30_1.4bpp.lz");
+static const u8 sPhanpyGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_30_2.4bpp.lz");
 static const ax_sprite sPhanpySprites30[] = {
 	{NULL, 32}, 
 	{sPhanpyGfx30, ARRAY_COUNT(sPhanpyGfx30)}, 
@@ -2351,37 +2351,37 @@ static const ax_sprite sPhanpySprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx31[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_31.4bpp");
+static const u8 sPhanpyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_31.4bpp.lz");
 static const ax_sprite sPhanpySprites31[] = {
 	{sPhanpyGfx31, ARRAY_COUNT(sPhanpyGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx32[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_32.4bpp");
+static const u8 sPhanpyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_32.4bpp.lz");
 static const ax_sprite sPhanpySprites32[] = {
 	{sPhanpyGfx32, ARRAY_COUNT(sPhanpyGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx33[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_33.4bpp");
+static const u8 sPhanpyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_33.4bpp.lz");
 static const ax_sprite sPhanpySprites33[] = {
 	{sPhanpyGfx33, ARRAY_COUNT(sPhanpyGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx34[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_34.4bpp");
+static const u8 sPhanpyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_34.4bpp.lz");
 static const ax_sprite sPhanpySprites34[] = {
 	{sPhanpyGfx34, ARRAY_COUNT(sPhanpyGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx35[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_35.4bpp");
+static const u8 sPhanpyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_35.4bpp.lz");
 static const ax_sprite sPhanpySprites35[] = {
 	{sPhanpyGfx35, ARRAY_COUNT(sPhanpyGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx36[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_36.4bpp");
+static const u8 sPhanpyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_36.4bpp.lz");
 static const ax_sprite sPhanpySprites36[] = {
 	{sPhanpyGfx36, ARRAY_COUNT(sPhanpyGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sPhanpyGfx37[] = INCBIN_U8("graphics/ax/mon/phanpy/sprite_37.4bpp");
+static const u8 sPhanpyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/phanpy/sprite_37.4bpp.lz");
 static const ax_sprite sPhanpySprites37[] = {
 	{sPhanpyGfx37, ARRAY_COUNT(sPhanpyGfx37)}, 
 	{NULL, 0}

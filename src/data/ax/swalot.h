@@ -2119,97 +2119,97 @@ static const ax_anim sSwalotAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSwalotGfx1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_1.4bpp");
+static const u8 sSwalotGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_1.4bpp.lz");
 static const ax_sprite sSwalotSprites1[] = {
 	{sSwalotGfx1, ARRAY_COUNT(sSwalotGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_2.4bpp");
+static const u8 sSwalotGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_2.4bpp.lz");
 static const ax_sprite sSwalotSprites2[] = {
 	{sSwalotGfx2, ARRAY_COUNT(sSwalotGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx3[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_3.4bpp");
+static const u8 sSwalotGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_3.4bpp.lz");
 static const ax_sprite sSwalotSprites3[] = {
 	{sSwalotGfx3, ARRAY_COUNT(sSwalotGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx4[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_4.4bpp");
+static const u8 sSwalotGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_4.4bpp.lz");
 static const ax_sprite sSwalotSprites4[] = {
 	{sSwalotGfx4, ARRAY_COUNT(sSwalotGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx5[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_5.4bpp");
+static const u8 sSwalotGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_5.4bpp.lz");
 static const ax_sprite sSwalotSprites5[] = {
 	{sSwalotGfx5, ARRAY_COUNT(sSwalotGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx6[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_6.4bpp");
+static const u8 sSwalotGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_6.4bpp.lz");
 static const ax_sprite sSwalotSprites6[] = {
 	{sSwalotGfx6, ARRAY_COUNT(sSwalotGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx7[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_7.4bpp");
+static const u8 sSwalotGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_7.4bpp.lz");
 static const ax_sprite sSwalotSprites7[] = {
 	{sSwalotGfx7, ARRAY_COUNT(sSwalotGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx8[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_8.4bpp");
+static const u8 sSwalotGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_8.4bpp.lz");
 static const ax_sprite sSwalotSprites8[] = {
 	{sSwalotGfx8, ARRAY_COUNT(sSwalotGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx9[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_9.4bpp");
+static const u8 sSwalotGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_9.4bpp.lz");
 static const ax_sprite sSwalotSprites9[] = {
 	{sSwalotGfx9, ARRAY_COUNT(sSwalotGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx10[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_10.4bpp");
+static const u8 sSwalotGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_10.4bpp.lz");
 static const ax_sprite sSwalotSprites10[] = {
 	{sSwalotGfx10, ARRAY_COUNT(sSwalotGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx11[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_11.4bpp");
+static const u8 sSwalotGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_11.4bpp.lz");
 static const ax_sprite sSwalotSprites11[] = {
 	{sSwalotGfx11, ARRAY_COUNT(sSwalotGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx12[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_12.4bpp");
+static const u8 sSwalotGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_12.4bpp.lz");
 static const ax_sprite sSwalotSprites12[] = {
 	{sSwalotGfx12, ARRAY_COUNT(sSwalotGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx13[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_13.4bpp");
+static const u8 sSwalotGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_13.4bpp.lz");
 static const ax_sprite sSwalotSprites13[] = {
 	{sSwalotGfx13, ARRAY_COUNT(sSwalotGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx14[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_14.4bpp");
+static const u8 sSwalotGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_14.4bpp.lz");
 static const ax_sprite sSwalotSprites14[] = {
 	{sSwalotGfx14, ARRAY_COUNT(sSwalotGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx15[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_15.4bpp");
+static const u8 sSwalotGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_15.4bpp.lz");
 static const ax_sprite sSwalotSprites15[] = {
 	{sSwalotGfx15, ARRAY_COUNT(sSwalotGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx16[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_16.4bpp");
+static const u8 sSwalotGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_16.4bpp.lz");
 static const ax_sprite sSwalotSprites16[] = {
 	{NULL, 32}, 
 	{sSwalotGfx16, ARRAY_COUNT(sSwalotGfx16)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx17[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_17.4bpp");
+static const u8 sSwalotGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_17.4bpp.lz");
 static const ax_sprite sSwalotSprites17[] = {
 	{sSwalotGfx17, ARRAY_COUNT(sSwalotGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx18[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_18.4bpp");
-static const u8 sSwalotGfx18_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_18_1.4bpp");
-static const u8 sSwalotGfx18_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_18_2.4bpp");
+static const u8 sSwalotGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_18.4bpp.lz");
+static const u8 sSwalotGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_18_1.4bpp.lz");
+static const u8 sSwalotGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_18_2.4bpp.lz");
 static const ax_sprite sSwalotSprites18[] = {
 	{sSwalotGfx18, ARRAY_COUNT(sSwalotGfx18)}, 
 	{NULL, 32}, 
@@ -2219,8 +2219,8 @@ static const ax_sprite sSwalotSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx19[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_19.4bpp");
-static const u8 sSwalotGfx19_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_19_1.4bpp");
+static const u8 sSwalotGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_19.4bpp.lz");
+static const u8 sSwalotGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_19_1.4bpp.lz");
 static const ax_sprite sSwalotSprites19[] = {
 	{sSwalotGfx19, ARRAY_COUNT(sSwalotGfx19)}, 
 	{NULL, 32}, 
@@ -2228,8 +2228,8 @@ static const ax_sprite sSwalotSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx20[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_20.4bpp");
-static const u8 sSwalotGfx20_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_20_1.4bpp");
+static const u8 sSwalotGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_20.4bpp.lz");
+static const u8 sSwalotGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_20_1.4bpp.lz");
 static const ax_sprite sSwalotSprites20[] = {
 	{sSwalotGfx20, ARRAY_COUNT(sSwalotGfx20)}, 
 	{NULL, 32}, 
@@ -2237,9 +2237,9 @@ static const ax_sprite sSwalotSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx21[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_21.4bpp");
-static const u8 sSwalotGfx21_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_21_1.4bpp");
-static const u8 sSwalotGfx21_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_21_2.4bpp");
+static const u8 sSwalotGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_21.4bpp.lz");
+static const u8 sSwalotGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_21_1.4bpp.lz");
+static const u8 sSwalotGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_21_2.4bpp.lz");
 static const ax_sprite sSwalotSprites21[] = {
 	{sSwalotGfx21, ARRAY_COUNT(sSwalotGfx21)}, 
 	{NULL, 32}, 
@@ -2249,9 +2249,9 @@ static const ax_sprite sSwalotSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx22[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_22.4bpp");
-static const u8 sSwalotGfx22_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_22_1.4bpp");
-static const u8 sSwalotGfx22_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_22_2.4bpp");
+static const u8 sSwalotGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_22.4bpp.lz");
+static const u8 sSwalotGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_22_1.4bpp.lz");
+static const u8 sSwalotGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_22_2.4bpp.lz");
 static const ax_sprite sSwalotSprites22[] = {
 	{sSwalotGfx22, ARRAY_COUNT(sSwalotGfx22)}, 
 	{NULL, 32}, 
@@ -2261,9 +2261,9 @@ static const ax_sprite sSwalotSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx23[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_23.4bpp");
-static const u8 sSwalotGfx23_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_23_1.4bpp");
-static const u8 sSwalotGfx23_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_23_2.4bpp");
+static const u8 sSwalotGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_23.4bpp.lz");
+static const u8 sSwalotGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_23_1.4bpp.lz");
+static const u8 sSwalotGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_23_2.4bpp.lz");
 static const ax_sprite sSwalotSprites23[] = {
 	{sSwalotGfx23, ARRAY_COUNT(sSwalotGfx23)}, 
 	{NULL, 32}, 
@@ -2272,9 +2272,9 @@ static const ax_sprite sSwalotSprites23[] = {
 	{sSwalotGfx23_2, ARRAY_COUNT(sSwalotGfx23_2)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx24[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_24.4bpp");
-static const u8 sSwalotGfx24_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_24_1.4bpp");
-static const u8 sSwalotGfx24_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_24_2.4bpp");
+static const u8 sSwalotGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_24.4bpp.lz");
+static const u8 sSwalotGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_24_1.4bpp.lz");
+static const u8 sSwalotGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_24_2.4bpp.lz");
 static const ax_sprite sSwalotSprites24[] = {
 	{NULL, 32}, 
 	{sSwalotGfx24, ARRAY_COUNT(sSwalotGfx24)}, 
@@ -2284,16 +2284,16 @@ static const ax_sprite sSwalotSprites24[] = {
 	{sSwalotGfx24_2, ARRAY_COUNT(sSwalotGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx25[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_25.4bpp");
-static const u8 sSwalotGfx25_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_25_1.4bpp");
+static const u8 sSwalotGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_25.4bpp.lz");
+static const u8 sSwalotGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_25_1.4bpp.lz");
 static const ax_sprite sSwalotSprites25[] = {
 	{sSwalotGfx25, ARRAY_COUNT(sSwalotGfx25)}, 
 	{NULL, 32}, 
 	{sSwalotGfx25_1, ARRAY_COUNT(sSwalotGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx26[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_26.4bpp");
-static const u8 sSwalotGfx26_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_26_1.4bpp");
+static const u8 sSwalotGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_26.4bpp.lz");
+static const u8 sSwalotGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_26_1.4bpp.lz");
 static const ax_sprite sSwalotSprites26[] = {
 	{sSwalotGfx26, ARRAY_COUNT(sSwalotGfx26)}, 
 	{NULL, 32}, 
@@ -2301,8 +2301,8 @@ static const ax_sprite sSwalotSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx27[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_27.4bpp");
-static const u8 sSwalotGfx27_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_27_1.4bpp");
+static const u8 sSwalotGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_27.4bpp.lz");
+static const u8 sSwalotGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_27_1.4bpp.lz");
 static const ax_sprite sSwalotSprites27[] = {
 	{sSwalotGfx27, ARRAY_COUNT(sSwalotGfx27)}, 
 	{NULL, 32}, 
@@ -2310,16 +2310,16 @@ static const ax_sprite sSwalotSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx28[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_28.4bpp");
+static const u8 sSwalotGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_28.4bpp.lz");
 static const ax_sprite sSwalotSprites28[] = {
 	{sSwalotGfx28, ARRAY_COUNT(sSwalotGfx28)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx29[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_29.4bpp");
-static const u8 sSwalotGfx29_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_29_1.4bpp");
-static const u8 sSwalotGfx29_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_29_2.4bpp");
-static const u8 sSwalotGfx29_3[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_29_3.4bpp");
+static const u8 sSwalotGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_29.4bpp.lz");
+static const u8 sSwalotGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_29_1.4bpp.lz");
+static const u8 sSwalotGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_29_2.4bpp.lz");
+static const u8 sSwalotGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_29_3.4bpp.lz");
 static const ax_sprite sSwalotSprites29[] = {
 	{sSwalotGfx29, ARRAY_COUNT(sSwalotGfx29)}, 
 	{NULL, 32}, 
@@ -2331,8 +2331,8 @@ static const ax_sprite sSwalotSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx30[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_30.4bpp");
-static const u8 sSwalotGfx30_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_30_1.4bpp");
+static const u8 sSwalotGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_30.4bpp.lz");
+static const u8 sSwalotGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_30_1.4bpp.lz");
 static const ax_sprite sSwalotSprites30[] = {
 	{NULL, 32}, 
 	{sSwalotGfx30, ARRAY_COUNT(sSwalotGfx30)}, 
@@ -2340,9 +2340,9 @@ static const ax_sprite sSwalotSprites30[] = {
 	{sSwalotGfx30_1, ARRAY_COUNT(sSwalotGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx31[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_31.4bpp");
-static const u8 sSwalotGfx31_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_31_1.4bpp");
-static const u8 sSwalotGfx31_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_31_2.4bpp");
+static const u8 sSwalotGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_31.4bpp.lz");
+static const u8 sSwalotGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_31_1.4bpp.lz");
+static const u8 sSwalotGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_31_2.4bpp.lz");
 static const ax_sprite sSwalotSprites31[] = {
 	{sSwalotGfx31, ARRAY_COUNT(sSwalotGfx31)}, 
 	{NULL, 32}, 
@@ -2351,15 +2351,15 @@ static const ax_sprite sSwalotSprites31[] = {
 	{sSwalotGfx31_2, ARRAY_COUNT(sSwalotGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx32[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_32.4bpp");
+static const u8 sSwalotGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_32.4bpp.lz");
 static const ax_sprite sSwalotSprites32[] = {
 	{NULL, 32}, 
 	{sSwalotGfx32, ARRAY_COUNT(sSwalotGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx33[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_33.4bpp");
-static const u8 sSwalotGfx33_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_33_1.4bpp");
-static const u8 sSwalotGfx33_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_33_2.4bpp");
+static const u8 sSwalotGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_33.4bpp.lz");
+static const u8 sSwalotGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_33_1.4bpp.lz");
+static const u8 sSwalotGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_33_2.4bpp.lz");
 static const ax_sprite sSwalotSprites33[] = {
 	{sSwalotGfx33, ARRAY_COUNT(sSwalotGfx33)}, 
 	{NULL, 32}, 
@@ -2368,24 +2368,24 @@ static const ax_sprite sSwalotSprites33[] = {
 	{sSwalotGfx33_2, ARRAY_COUNT(sSwalotGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx34[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_34.4bpp");
-static const u8 sSwalotGfx34_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_34_1.4bpp");
+static const u8 sSwalotGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_34.4bpp.lz");
+static const u8 sSwalotGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_34_1.4bpp.lz");
 static const ax_sprite sSwalotSprites34[] = {
 	{sSwalotGfx34, ARRAY_COUNT(sSwalotGfx34)}, 
 	{NULL, 32}, 
 	{sSwalotGfx34_1, ARRAY_COUNT(sSwalotGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx35[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_35.4bpp");
-static const u8 sSwalotGfx35_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_35_1.4bpp");
+static const u8 sSwalotGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_35.4bpp.lz");
+static const u8 sSwalotGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_35_1.4bpp.lz");
 static const ax_sprite sSwalotSprites35[] = {
 	{sSwalotGfx35, ARRAY_COUNT(sSwalotGfx35)}, 
 	{NULL, 32}, 
 	{sSwalotGfx35_1, ARRAY_COUNT(sSwalotGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx36[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_36.4bpp");
-static const u8 sSwalotGfx36_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_36_1.4bpp");
+static const u8 sSwalotGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_36.4bpp.lz");
+static const u8 sSwalotGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_36_1.4bpp.lz");
 static const ax_sprite sSwalotSprites36[] = {
 	{sSwalotGfx36, ARRAY_COUNT(sSwalotGfx36)}, 
 	{NULL, 32}, 
@@ -2393,9 +2393,9 @@ static const ax_sprite sSwalotSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx37[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_37.4bpp");
-static const u8 sSwalotGfx37_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_37_1.4bpp");
-static const u8 sSwalotGfx37_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_37_2.4bpp");
+static const u8 sSwalotGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_37.4bpp.lz");
+static const u8 sSwalotGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_37_1.4bpp.lz");
+static const u8 sSwalotGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_37_2.4bpp.lz");
 static const ax_sprite sSwalotSprites37[] = {
 	{sSwalotGfx37, ARRAY_COUNT(sSwalotGfx37)}, 
 	{NULL, 32}, 
@@ -2405,9 +2405,9 @@ static const ax_sprite sSwalotSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx38[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_38.4bpp");
-static const u8 sSwalotGfx38_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_38_1.4bpp");
-static const u8 sSwalotGfx38_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_38_2.4bpp");
+static const u8 sSwalotGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_38.4bpp.lz");
+static const u8 sSwalotGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_38_1.4bpp.lz");
+static const u8 sSwalotGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_38_2.4bpp.lz");
 static const ax_sprite sSwalotSprites38[] = {
 	{NULL, 32}, 
 	{sSwalotGfx38, ARRAY_COUNT(sSwalotGfx38)}, 
@@ -2417,9 +2417,9 @@ static const ax_sprite sSwalotSprites38[] = {
 	{sSwalotGfx38_2, ARRAY_COUNT(sSwalotGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx39[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_39.4bpp");
-static const u8 sSwalotGfx39_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_39_1.4bpp");
-static const u8 sSwalotGfx39_2[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_39_2.4bpp");
+static const u8 sSwalotGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_39.4bpp.lz");
+static const u8 sSwalotGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_39_1.4bpp.lz");
+static const u8 sSwalotGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_39_2.4bpp.lz");
 static const ax_sprite sSwalotSprites39[] = {
 	{sSwalotGfx39, ARRAY_COUNT(sSwalotGfx39)}, 
 	{NULL, 32}, 
@@ -2428,105 +2428,105 @@ static const ax_sprite sSwalotSprites39[] = {
 	{sSwalotGfx39_2, ARRAY_COUNT(sSwalotGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx40[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_40.4bpp");
-static const u8 sSwalotGfx40_1[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_40_1.4bpp");
+static const u8 sSwalotGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_40.4bpp.lz");
+static const u8 sSwalotGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_40_1.4bpp.lz");
 static const ax_sprite sSwalotSprites40[] = {
 	{sSwalotGfx40, ARRAY_COUNT(sSwalotGfx40)}, 
 	{NULL, 32}, 
 	{sSwalotGfx40_1, ARRAY_COUNT(sSwalotGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx41[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_41.4bpp");
+static const u8 sSwalotGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_41.4bpp.lz");
 static const ax_sprite sSwalotSprites41[] = {
 	{sSwalotGfx41, ARRAY_COUNT(sSwalotGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx42[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_42.4bpp");
+static const u8 sSwalotGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_42.4bpp.lz");
 static const ax_sprite sSwalotSprites42[] = {
 	{sSwalotGfx42, ARRAY_COUNT(sSwalotGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx43[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_43.4bpp");
+static const u8 sSwalotGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_43.4bpp.lz");
 static const ax_sprite sSwalotSprites43[] = {
 	{sSwalotGfx43, ARRAY_COUNT(sSwalotGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx44[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_44.4bpp");
+static const u8 sSwalotGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_44.4bpp.lz");
 static const ax_sprite sSwalotSprites44[] = {
 	{sSwalotGfx44, ARRAY_COUNT(sSwalotGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx45[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_45.4bpp");
+static const u8 sSwalotGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_45.4bpp.lz");
 static const ax_sprite sSwalotSprites45[] = {
 	{sSwalotGfx45, ARRAY_COUNT(sSwalotGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx46[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_46.4bpp");
+static const u8 sSwalotGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_46.4bpp.lz");
 static const ax_sprite sSwalotSprites46[] = {
 	{sSwalotGfx46, ARRAY_COUNT(sSwalotGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx47[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_47.4bpp");
+static const u8 sSwalotGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_47.4bpp.lz");
 static const ax_sprite sSwalotSprites47[] = {
 	{sSwalotGfx47, ARRAY_COUNT(sSwalotGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx48[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_48.4bpp");
+static const u8 sSwalotGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_48.4bpp.lz");
 static const ax_sprite sSwalotSprites48[] = {
 	{sSwalotGfx48, ARRAY_COUNT(sSwalotGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx49[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_49.4bpp");
+static const u8 sSwalotGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_49.4bpp.lz");
 static const ax_sprite sSwalotSprites49[] = {
 	{sSwalotGfx49, ARRAY_COUNT(sSwalotGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx50[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_50.4bpp");
+static const u8 sSwalotGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_50.4bpp.lz");
 static const ax_sprite sSwalotSprites50[] = {
 	{sSwalotGfx50, ARRAY_COUNT(sSwalotGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx51[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_51.4bpp");
+static const u8 sSwalotGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_51.4bpp.lz");
 static const ax_sprite sSwalotSprites51[] = {
 	{sSwalotGfx51, ARRAY_COUNT(sSwalotGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx52[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_52.4bpp");
+static const u8 sSwalotGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_52.4bpp.lz");
 static const ax_sprite sSwalotSprites52[] = {
 	{sSwalotGfx52, ARRAY_COUNT(sSwalotGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx53[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_53.4bpp");
+static const u8 sSwalotGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_53.4bpp.lz");
 static const ax_sprite sSwalotSprites53[] = {
 	{sSwalotGfx53, ARRAY_COUNT(sSwalotGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx54[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_54.4bpp");
+static const u8 sSwalotGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_54.4bpp.lz");
 static const ax_sprite sSwalotSprites54[] = {
 	{sSwalotGfx54, ARRAY_COUNT(sSwalotGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx55[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_55.4bpp");
+static const u8 sSwalotGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_55.4bpp.lz");
 static const ax_sprite sSwalotSprites55[] = {
 	{sSwalotGfx55, ARRAY_COUNT(sSwalotGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx56[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_56.4bpp");
+static const u8 sSwalotGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_56.4bpp.lz");
 static const ax_sprite sSwalotSprites56[] = {
 	{sSwalotGfx56, ARRAY_COUNT(sSwalotGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx57[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_57.4bpp");
+static const u8 sSwalotGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_57.4bpp.lz");
 static const ax_sprite sSwalotSprites57[] = {
 	{sSwalotGfx57, ARRAY_COUNT(sSwalotGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx58[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_58.4bpp");
+static const u8 sSwalotGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_58.4bpp.lz");
 static const ax_sprite sSwalotSprites58[] = {
 	{sSwalotGfx58, ARRAY_COUNT(sSwalotGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sSwalotGfx59[] = INCBIN_U8("graphics/ax/mon/swalot/sprite_59.4bpp");
+static const u8 sSwalotGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/swalot/sprite_59.4bpp.lz");
 static const ax_sprite sSwalotSprites59[] = {
 	{sSwalotGfx59, ARRAY_COUNT(sSwalotGfx59)}, 
 	{NULL, 0}

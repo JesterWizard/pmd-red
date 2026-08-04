@@ -2015,134 +2015,134 @@ static const ax_anim sHariyamaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHariyamaGfx1[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_1.4bpp");
+static const u8 sHariyamaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_1.4bpp.lz");
 static const ax_sprite sHariyamaSprites1[] = {
 	{sHariyamaGfx1, ARRAY_COUNT(sHariyamaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx2[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_2.4bpp");
+static const u8 sHariyamaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_2.4bpp.lz");
 static const ax_sprite sHariyamaSprites2[] = {
 	{sHariyamaGfx2, ARRAY_COUNT(sHariyamaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx3[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_3.4bpp");
+static const u8 sHariyamaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_3.4bpp.lz");
 static const ax_sprite sHariyamaSprites3[] = {
 	{sHariyamaGfx3, ARRAY_COUNT(sHariyamaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx4[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_4.4bpp");
+static const u8 sHariyamaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_4.4bpp.lz");
 static const ax_sprite sHariyamaSprites4[] = {
 	{sHariyamaGfx4, ARRAY_COUNT(sHariyamaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx5[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_5.4bpp");
+static const u8 sHariyamaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_5.4bpp.lz");
 static const ax_sprite sHariyamaSprites5[] = {
 	{sHariyamaGfx5, ARRAY_COUNT(sHariyamaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx6[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_6.4bpp");
+static const u8 sHariyamaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_6.4bpp.lz");
 static const ax_sprite sHariyamaSprites6[] = {
 	{sHariyamaGfx6, ARRAY_COUNT(sHariyamaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx7[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_7.4bpp");
+static const u8 sHariyamaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_7.4bpp.lz");
 static const ax_sprite sHariyamaSprites7[] = {
 	{sHariyamaGfx7, ARRAY_COUNT(sHariyamaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx8[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_8.4bpp");
+static const u8 sHariyamaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_8.4bpp.lz");
 static const ax_sprite sHariyamaSprites8[] = {
 	{sHariyamaGfx8, ARRAY_COUNT(sHariyamaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx9[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_9.4bpp");
+static const u8 sHariyamaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_9.4bpp.lz");
 static const ax_sprite sHariyamaSprites9[] = {
 	{sHariyamaGfx9, ARRAY_COUNT(sHariyamaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx10[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_10.4bpp");
+static const u8 sHariyamaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_10.4bpp.lz");
 static const ax_sprite sHariyamaSprites10[] = {
 	{sHariyamaGfx10, ARRAY_COUNT(sHariyamaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx11[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_11.4bpp");
+static const u8 sHariyamaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_11.4bpp.lz");
 static const ax_sprite sHariyamaSprites11[] = {
 	{sHariyamaGfx11, ARRAY_COUNT(sHariyamaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx12[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_12.4bpp");
+static const u8 sHariyamaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_12.4bpp.lz");
 static const ax_sprite sHariyamaSprites12[] = {
 	{sHariyamaGfx12, ARRAY_COUNT(sHariyamaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx13[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_13.4bpp");
+static const u8 sHariyamaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_13.4bpp.lz");
 static const ax_sprite sHariyamaSprites13[] = {
 	{sHariyamaGfx13, ARRAY_COUNT(sHariyamaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx14[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_14.4bpp");
+static const u8 sHariyamaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_14.4bpp.lz");
 static const ax_sprite sHariyamaSprites14[] = {
 	{sHariyamaGfx14, ARRAY_COUNT(sHariyamaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx15[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_15.4bpp");
+static const u8 sHariyamaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_15.4bpp.lz");
 static const ax_sprite sHariyamaSprites15[] = {
 	{sHariyamaGfx15, ARRAY_COUNT(sHariyamaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx16[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_16.4bpp");
+static const u8 sHariyamaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_16.4bpp.lz");
 static const ax_sprite sHariyamaSprites16[] = {
 	{sHariyamaGfx16, ARRAY_COUNT(sHariyamaGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx17[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_17.4bpp");
+static const u8 sHariyamaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_17.4bpp.lz");
 static const ax_sprite sHariyamaSprites17[] = {
 	{sHariyamaGfx17, ARRAY_COUNT(sHariyamaGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx18[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_18.4bpp");
+static const u8 sHariyamaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_18.4bpp.lz");
 static const ax_sprite sHariyamaSprites18[] = {
 	{sHariyamaGfx18, ARRAY_COUNT(sHariyamaGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx19[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_19.4bpp");
+static const u8 sHariyamaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_19.4bpp.lz");
 static const ax_sprite sHariyamaSprites19[] = {
 	{sHariyamaGfx19, ARRAY_COUNT(sHariyamaGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx20[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_20.4bpp");
+static const u8 sHariyamaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_20.4bpp.lz");
 static const ax_sprite sHariyamaSprites20[] = {
 	{sHariyamaGfx20, ARRAY_COUNT(sHariyamaGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx21[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_21.4bpp");
+static const u8 sHariyamaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_21.4bpp.lz");
 static const ax_sprite sHariyamaSprites21[] = {
 	{sHariyamaGfx21, ARRAY_COUNT(sHariyamaGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx22[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_22.4bpp");
+static const u8 sHariyamaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_22.4bpp.lz");
 static const ax_sprite sHariyamaSprites22[] = {
 	{sHariyamaGfx22, ARRAY_COUNT(sHariyamaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx23[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_23.4bpp");
+static const u8 sHariyamaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_23.4bpp.lz");
 static const ax_sprite sHariyamaSprites23[] = {
 	{sHariyamaGfx23, ARRAY_COUNT(sHariyamaGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx24[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_24.4bpp");
+static const u8 sHariyamaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_24.4bpp.lz");
 static const ax_sprite sHariyamaSprites24[] = {
 	{sHariyamaGfx24, ARRAY_COUNT(sHariyamaGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx25[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_25.4bpp");
+static const u8 sHariyamaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_25.4bpp.lz");
 static const ax_sprite sHariyamaSprites25[] = {
 	{NULL, 128}, 
 	{sHariyamaGfx25, ARRAY_COUNT(sHariyamaGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx26[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_26.4bpp");
-static const u8 sHariyamaGfx26_1[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_26_1.4bpp");
+static const u8 sHariyamaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_26.4bpp.lz");
+static const u8 sHariyamaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_26_1.4bpp.lz");
 static const ax_sprite sHariyamaSprites26[] = {
 	{NULL, 32}, 
 	{sHariyamaGfx26, ARRAY_COUNT(sHariyamaGfx26)}, 
@@ -2150,8 +2150,8 @@ static const ax_sprite sHariyamaSprites26[] = {
 	{sHariyamaGfx26_1, ARRAY_COUNT(sHariyamaGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx27[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_27.4bpp");
-static const u8 sHariyamaGfx27_1[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_27_1.4bpp");
+static const u8 sHariyamaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_27.4bpp.lz");
+static const u8 sHariyamaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_27_1.4bpp.lz");
 static const ax_sprite sHariyamaSprites27[] = {
 	{NULL, 32}, 
 	{sHariyamaGfx27, ARRAY_COUNT(sHariyamaGfx27)}, 
@@ -2159,8 +2159,8 @@ static const ax_sprite sHariyamaSprites27[] = {
 	{sHariyamaGfx27_1, ARRAY_COUNT(sHariyamaGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx28[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_28.4bpp");
-static const u8 sHariyamaGfx28_1[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_28_1.4bpp");
+static const u8 sHariyamaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_28.4bpp.lz");
+static const u8 sHariyamaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_28_1.4bpp.lz");
 static const ax_sprite sHariyamaSprites28[] = {
 	{NULL, 32}, 
 	{sHariyamaGfx28, ARRAY_COUNT(sHariyamaGfx28)}, 
@@ -2168,8 +2168,8 @@ static const ax_sprite sHariyamaSprites28[] = {
 	{sHariyamaGfx28_1, ARRAY_COUNT(sHariyamaGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx29[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_29.4bpp");
-static const u8 sHariyamaGfx29_1[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_29_1.4bpp");
+static const u8 sHariyamaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_29.4bpp.lz");
+static const u8 sHariyamaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_29_1.4bpp.lz");
 static const ax_sprite sHariyamaSprites29[] = {
 	{NULL, 32}, 
 	{sHariyamaGfx29, ARRAY_COUNT(sHariyamaGfx29)}, 
@@ -2177,37 +2177,37 @@ static const ax_sprite sHariyamaSprites29[] = {
 	{sHariyamaGfx29_1, ARRAY_COUNT(sHariyamaGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx30[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_30.4bpp");
+static const u8 sHariyamaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_30.4bpp.lz");
 static const ax_sprite sHariyamaSprites30[] = {
 	{sHariyamaGfx30, ARRAY_COUNT(sHariyamaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx31[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_31.4bpp");
+static const u8 sHariyamaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_31.4bpp.lz");
 static const ax_sprite sHariyamaSprites31[] = {
 	{sHariyamaGfx31, ARRAY_COUNT(sHariyamaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx32[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_32.4bpp");
+static const u8 sHariyamaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_32.4bpp.lz");
 static const ax_sprite sHariyamaSprites32[] = {
 	{sHariyamaGfx32, ARRAY_COUNT(sHariyamaGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx33[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_33.4bpp");
+static const u8 sHariyamaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_33.4bpp.lz");
 static const ax_sprite sHariyamaSprites33[] = {
 	{sHariyamaGfx33, ARRAY_COUNT(sHariyamaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx34[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_34.4bpp");
+static const u8 sHariyamaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_34.4bpp.lz");
 static const ax_sprite sHariyamaSprites34[] = {
 	{sHariyamaGfx34, ARRAY_COUNT(sHariyamaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx35[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_35.4bpp");
+static const u8 sHariyamaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_35.4bpp.lz");
 static const ax_sprite sHariyamaSprites35[] = {
 	{sHariyamaGfx35, ARRAY_COUNT(sHariyamaGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sHariyamaGfx36[] = INCBIN_U8("graphics/ax/mon/hariyama/sprite_36.4bpp");
+static const u8 sHariyamaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hariyama/sprite_36.4bpp.lz");
 static const ax_sprite sHariyamaSprites36[] = {
 	{sHariyamaGfx36, ARRAY_COUNT(sHariyamaGfx36)}, 
 	{NULL, 0}

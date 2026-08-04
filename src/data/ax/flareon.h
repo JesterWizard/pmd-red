@@ -1935,84 +1935,84 @@ static const ax_anim sFlareonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sFlareonGfx1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_1.4bpp");
+static const u8 sFlareonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_1.4bpp.lz");
 static const ax_sprite sFlareonSprites1[] = {
 	{sFlareonGfx1, ARRAY_COUNT(sFlareonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_2.4bpp");
+static const u8 sFlareonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_2.4bpp.lz");
 static const ax_sprite sFlareonSprites2[] = {
 	{sFlareonGfx2, ARRAY_COUNT(sFlareonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx3[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_3.4bpp");
+static const u8 sFlareonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_3.4bpp.lz");
 static const ax_sprite sFlareonSprites3[] = {
 	{sFlareonGfx3, ARRAY_COUNT(sFlareonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx4[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_4.4bpp");
+static const u8 sFlareonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_4.4bpp.lz");
 static const ax_sprite sFlareonSprites4[] = {
 	{sFlareonGfx4, ARRAY_COUNT(sFlareonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx5[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_5.4bpp");
+static const u8 sFlareonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_5.4bpp.lz");
 static const ax_sprite sFlareonSprites5[] = {
 	{sFlareonGfx5, ARRAY_COUNT(sFlareonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx6[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_6.4bpp");
+static const u8 sFlareonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_6.4bpp.lz");
 static const ax_sprite sFlareonSprites6[] = {
 	{sFlareonGfx6, ARRAY_COUNT(sFlareonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx7[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_7.4bpp");
+static const u8 sFlareonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_7.4bpp.lz");
 static const ax_sprite sFlareonSprites7[] = {
 	{sFlareonGfx7, ARRAY_COUNT(sFlareonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx8[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_8.4bpp");
+static const u8 sFlareonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_8.4bpp.lz");
 static const ax_sprite sFlareonSprites8[] = {
 	{sFlareonGfx8, ARRAY_COUNT(sFlareonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx9[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_9.4bpp");
+static const u8 sFlareonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_9.4bpp.lz");
 static const ax_sprite sFlareonSprites9[] = {
 	{sFlareonGfx9, ARRAY_COUNT(sFlareonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx10[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_10.4bpp");
+static const u8 sFlareonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_10.4bpp.lz");
 static const ax_sprite sFlareonSprites10[] = {
 	{sFlareonGfx10, ARRAY_COUNT(sFlareonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx11[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_11.4bpp");
+static const u8 sFlareonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_11.4bpp.lz");
 static const ax_sprite sFlareonSprites11[] = {
 	{sFlareonGfx11, ARRAY_COUNT(sFlareonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx12[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_12.4bpp");
+static const u8 sFlareonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_12.4bpp.lz");
 static const ax_sprite sFlareonSprites12[] = {
 	{sFlareonGfx12, ARRAY_COUNT(sFlareonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx13[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_13.4bpp");
+static const u8 sFlareonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_13.4bpp.lz");
 static const ax_sprite sFlareonSprites13[] = {
 	{sFlareonGfx13, ARRAY_COUNT(sFlareonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx14[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_14.4bpp");
+static const u8 sFlareonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_14.4bpp.lz");
 static const ax_sprite sFlareonSprites14[] = {
 	{sFlareonGfx14, ARRAY_COUNT(sFlareonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx15[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_15.4bpp");
+static const u8 sFlareonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_15.4bpp.lz");
 static const ax_sprite sFlareonSprites15[] = {
 	{sFlareonGfx15, ARRAY_COUNT(sFlareonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx16[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_16.4bpp");
-static const u8 sFlareonGfx16_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_16_1.4bpp");
-static const u8 sFlareonGfx16_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_16_2.4bpp");
+static const u8 sFlareonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_16.4bpp.lz");
+static const u8 sFlareonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_16_1.4bpp.lz");
+static const u8 sFlareonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_16_2.4bpp.lz");
 static const ax_sprite sFlareonSprites16[] = {
 	{sFlareonGfx16, ARRAY_COUNT(sFlareonGfx16)}, 
 	{NULL, 32}, 
@@ -2022,9 +2022,9 @@ static const ax_sprite sFlareonSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx17[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_17.4bpp");
-static const u8 sFlareonGfx17_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_17_1.4bpp");
-static const u8 sFlareonGfx17_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_17_2.4bpp");
+static const u8 sFlareonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_17.4bpp.lz");
+static const u8 sFlareonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_17_1.4bpp.lz");
+static const u8 sFlareonGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_17_2.4bpp.lz");
 static const ax_sprite sFlareonSprites17[] = {
 	{sFlareonGfx17, ARRAY_COUNT(sFlareonGfx17)}, 
 	{NULL, 32}, 
@@ -2034,16 +2034,16 @@ static const ax_sprite sFlareonSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx18[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_18.4bpp");
+static const u8 sFlareonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_18.4bpp.lz");
 static const ax_sprite sFlareonSprites18[] = {
 	{sFlareonGfx18, ARRAY_COUNT(sFlareonGfx18)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx19[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_19.4bpp");
-static const u8 sFlareonGfx19_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_19_1.4bpp");
-static const u8 sFlareonGfx19_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_19_2.4bpp");
-static const u8 sFlareonGfx19_3[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_19_3.4bpp");
+static const u8 sFlareonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_19.4bpp.lz");
+static const u8 sFlareonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_19_1.4bpp.lz");
+static const u8 sFlareonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_19_2.4bpp.lz");
+static const u8 sFlareonGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_19_3.4bpp.lz");
 static const ax_sprite sFlareonSprites19[] = {
 	{sFlareonGfx19, ARRAY_COUNT(sFlareonGfx19)}, 
 	{NULL, 64}, 
@@ -2055,9 +2055,9 @@ static const ax_sprite sFlareonSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx20[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_20.4bpp");
-static const u8 sFlareonGfx20_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_20_1.4bpp");
-static const u8 sFlareonGfx20_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_20_2.4bpp");
+static const u8 sFlareonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_20.4bpp.lz");
+static const u8 sFlareonGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_20_1.4bpp.lz");
+static const u8 sFlareonGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_20_2.4bpp.lz");
 static const ax_sprite sFlareonSprites20[] = {
 	{sFlareonGfx20, ARRAY_COUNT(sFlareonGfx20)}, 
 	{NULL, 32}, 
@@ -2067,9 +2067,9 @@ static const ax_sprite sFlareonSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx21[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_21.4bpp");
-static const u8 sFlareonGfx21_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_21_1.4bpp");
-static const u8 sFlareonGfx21_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_21_2.4bpp");
+static const u8 sFlareonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_21.4bpp.lz");
+static const u8 sFlareonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_21_1.4bpp.lz");
+static const u8 sFlareonGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_21_2.4bpp.lz");
 static const ax_sprite sFlareonSprites21[] = {
 	{sFlareonGfx21, ARRAY_COUNT(sFlareonGfx21)}, 
 	{NULL, 32}, 
@@ -2079,9 +2079,9 @@ static const ax_sprite sFlareonSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx22[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_22.4bpp");
-static const u8 sFlareonGfx22_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_22_1.4bpp");
-static const u8 sFlareonGfx22_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_22_2.4bpp");
+static const u8 sFlareonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_22.4bpp.lz");
+static const u8 sFlareonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_22_1.4bpp.lz");
+static const u8 sFlareonGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_22_2.4bpp.lz");
 static const ax_sprite sFlareonSprites22[] = {
 	{sFlareonGfx22, ARRAY_COUNT(sFlareonGfx22)}, 
 	{NULL, 32}, 
@@ -2091,9 +2091,9 @@ static const ax_sprite sFlareonSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx23[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_23.4bpp");
-static const u8 sFlareonGfx23_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_23_1.4bpp");
-static const u8 sFlareonGfx23_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_23_2.4bpp");
+static const u8 sFlareonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_23.4bpp.lz");
+static const u8 sFlareonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_23_1.4bpp.lz");
+static const u8 sFlareonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_23_2.4bpp.lz");
 static const ax_sprite sFlareonSprites23[] = {
 	{sFlareonGfx23, ARRAY_COUNT(sFlareonGfx23)}, 
 	{NULL, 32}, 
@@ -2103,9 +2103,9 @@ static const ax_sprite sFlareonSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx24[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_24.4bpp");
-static const u8 sFlareonGfx24_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_24_1.4bpp");
-static const u8 sFlareonGfx24_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_24_2.4bpp");
+static const u8 sFlareonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_24.4bpp.lz");
+static const u8 sFlareonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_24_1.4bpp.lz");
+static const u8 sFlareonGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_24_2.4bpp.lz");
 static const ax_sprite sFlareonSprites24[] = {
 	{sFlareonGfx24, ARRAY_COUNT(sFlareonGfx24)}, 
 	{NULL, 32}, 
@@ -2115,8 +2115,8 @@ static const ax_sprite sFlareonSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx25[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_25.4bpp");
-static const u8 sFlareonGfx25_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_25_1.4bpp");
+static const u8 sFlareonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_25.4bpp.lz");
+static const u8 sFlareonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_25_1.4bpp.lz");
 static const ax_sprite sFlareonSprites25[] = {
 	{sFlareonGfx25, ARRAY_COUNT(sFlareonGfx25)}, 
 	{NULL, 32}, 
@@ -2124,8 +2124,8 @@ static const ax_sprite sFlareonSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx26[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_26.4bpp");
-static const u8 sFlareonGfx26_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_26_1.4bpp");
+static const u8 sFlareonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_26.4bpp.lz");
+static const u8 sFlareonGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_26_1.4bpp.lz");
 static const ax_sprite sFlareonSprites26[] = {
 	{sFlareonGfx26, ARRAY_COUNT(sFlareonGfx26)}, 
 	{NULL, 32}, 
@@ -2133,9 +2133,9 @@ static const ax_sprite sFlareonSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx27[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_27.4bpp");
-static const u8 sFlareonGfx27_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_27_1.4bpp");
-static const u8 sFlareonGfx27_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_27_2.4bpp");
+static const u8 sFlareonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_27.4bpp.lz");
+static const u8 sFlareonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_27_1.4bpp.lz");
+static const u8 sFlareonGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_27_2.4bpp.lz");
 static const ax_sprite sFlareonSprites27[] = {
 	{sFlareonGfx27, ARRAY_COUNT(sFlareonGfx27)}, 
 	{NULL, 64}, 
@@ -2145,9 +2145,9 @@ static const ax_sprite sFlareonSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx28[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_28.4bpp");
-static const u8 sFlareonGfx28_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_28_1.4bpp");
-static const u8 sFlareonGfx28_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_28_2.4bpp");
+static const u8 sFlareonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_28.4bpp.lz");
+static const u8 sFlareonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_28_1.4bpp.lz");
+static const u8 sFlareonGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_28_2.4bpp.lz");
 static const ax_sprite sFlareonSprites28[] = {
 	{sFlareonGfx28, ARRAY_COUNT(sFlareonGfx28)}, 
 	{NULL, 32}, 
@@ -2157,9 +2157,9 @@ static const ax_sprite sFlareonSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx29[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_29.4bpp");
-static const u8 sFlareonGfx29_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_29_1.4bpp");
-static const u8 sFlareonGfx29_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_29_2.4bpp");
+static const u8 sFlareonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_29.4bpp.lz");
+static const u8 sFlareonGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_29_1.4bpp.lz");
+static const u8 sFlareonGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_29_2.4bpp.lz");
 static const ax_sprite sFlareonSprites29[] = {
 	{sFlareonGfx29, ARRAY_COUNT(sFlareonGfx29)}, 
 	{NULL, 32}, 
@@ -2169,9 +2169,9 @@ static const ax_sprite sFlareonSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx30[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_30.4bpp");
-static const u8 sFlareonGfx30_1[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_30_1.4bpp");
-static const u8 sFlareonGfx30_2[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_30_2.4bpp");
+static const u8 sFlareonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_30.4bpp.lz");
+static const u8 sFlareonGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_30_1.4bpp.lz");
+static const u8 sFlareonGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_30_2.4bpp.lz");
 static const ax_sprite sFlareonSprites30[] = {
 	{sFlareonGfx30, ARRAY_COUNT(sFlareonGfx30)}, 
 	{NULL, 32}, 
@@ -2181,37 +2181,37 @@ static const ax_sprite sFlareonSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx31[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_31.4bpp");
+static const u8 sFlareonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_31.4bpp.lz");
 static const ax_sprite sFlareonSprites31[] = {
 	{sFlareonGfx31, ARRAY_COUNT(sFlareonGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx32[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_32.4bpp");
+static const u8 sFlareonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_32.4bpp.lz");
 static const ax_sprite sFlareonSprites32[] = {
 	{sFlareonGfx32, ARRAY_COUNT(sFlareonGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx33[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_33.4bpp");
+static const u8 sFlareonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_33.4bpp.lz");
 static const ax_sprite sFlareonSprites33[] = {
 	{sFlareonGfx33, ARRAY_COUNT(sFlareonGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx34[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_34.4bpp");
+static const u8 sFlareonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_34.4bpp.lz");
 static const ax_sprite sFlareonSprites34[] = {
 	{sFlareonGfx34, ARRAY_COUNT(sFlareonGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx35[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_35.4bpp");
+static const u8 sFlareonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_35.4bpp.lz");
 static const ax_sprite sFlareonSprites35[] = {
 	{sFlareonGfx35, ARRAY_COUNT(sFlareonGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx36[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_36.4bpp");
+static const u8 sFlareonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_36.4bpp.lz");
 static const ax_sprite sFlareonSprites36[] = {
 	{sFlareonGfx36, ARRAY_COUNT(sFlareonGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sFlareonGfx37[] = INCBIN_U8("graphics/ax/mon/flareon/sprite_37.4bpp");
+static const u8 sFlareonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flareon/sprite_37.4bpp.lz");
 static const ax_sprite sFlareonSprites37[] = {
 	{sFlareonGfx37, ARRAY_COUNT(sFlareonGfx37)}, 
 	{NULL, 0}

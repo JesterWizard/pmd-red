@@ -2086,69 +2086,69 @@ static const ax_anim sClaydolAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sClaydolGfx1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_1.4bpp");
+static const u8 sClaydolGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_1.4bpp.lz");
 static const ax_sprite sClaydolSprites1[] = {
 	{sClaydolGfx1, ARRAY_COUNT(sClaydolGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_2.4bpp");
+static const u8 sClaydolGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_2.4bpp.lz");
 static const ax_sprite sClaydolSprites2[] = {
 	{sClaydolGfx2, ARRAY_COUNT(sClaydolGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx3[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_3.4bpp");
+static const u8 sClaydolGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_3.4bpp.lz");
 static const ax_sprite sClaydolSprites3[] = {
 	{sClaydolGfx3, ARRAY_COUNT(sClaydolGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx4[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_4.4bpp");
+static const u8 sClaydolGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_4.4bpp.lz");
 static const ax_sprite sClaydolSprites4[] = {
 	{sClaydolGfx4, ARRAY_COUNT(sClaydolGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx5[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_5.4bpp");
+static const u8 sClaydolGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_5.4bpp.lz");
 static const ax_sprite sClaydolSprites5[] = {
 	{sClaydolGfx5, ARRAY_COUNT(sClaydolGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx6[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_6.4bpp");
+static const u8 sClaydolGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_6.4bpp.lz");
 static const ax_sprite sClaydolSprites6[] = {
 	{sClaydolGfx6, ARRAY_COUNT(sClaydolGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx7[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_7.4bpp");
+static const u8 sClaydolGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_7.4bpp.lz");
 static const ax_sprite sClaydolSprites7[] = {
 	{sClaydolGfx7, ARRAY_COUNT(sClaydolGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx8[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_8.4bpp");
+static const u8 sClaydolGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_8.4bpp.lz");
 static const ax_sprite sClaydolSprites8[] = {
 	{sClaydolGfx8, ARRAY_COUNT(sClaydolGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx9[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_9.4bpp");
+static const u8 sClaydolGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_9.4bpp.lz");
 static const ax_sprite sClaydolSprites9[] = {
 	{sClaydolGfx9, ARRAY_COUNT(sClaydolGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx10[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_10.4bpp");
+static const u8 sClaydolGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_10.4bpp.lz");
 static const ax_sprite sClaydolSprites10[] = {
 	{sClaydolGfx10, ARRAY_COUNT(sClaydolGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx11[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_11.4bpp");
+static const u8 sClaydolGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_11.4bpp.lz");
 static const ax_sprite sClaydolSprites11[] = {
 	{sClaydolGfx11, ARRAY_COUNT(sClaydolGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx12[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_12.4bpp");
+static const u8 sClaydolGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_12.4bpp.lz");
 static const ax_sprite sClaydolSprites12[] = {
 	{sClaydolGfx12, ARRAY_COUNT(sClaydolGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx13[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_13.4bpp");
-static const u8 sClaydolGfx13_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_13_1.4bpp");
-static const u8 sClaydolGfx13_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_13_2.4bpp");
+static const u8 sClaydolGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_13.4bpp.lz");
+static const u8 sClaydolGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_13_1.4bpp.lz");
+static const u8 sClaydolGfx13_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_13_2.4bpp.lz");
 static const ax_sprite sClaydolSprites13[] = {
 	{sClaydolGfx13, ARRAY_COUNT(sClaydolGfx13)}, 
 	{NULL, 32}, 
@@ -2158,14 +2158,14 @@ static const ax_sprite sClaydolSprites13[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx14[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_14.4bpp");
+static const u8 sClaydolGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_14.4bpp.lz");
 static const ax_sprite sClaydolSprites14[] = {
 	{sClaydolGfx14, ARRAY_COUNT(sClaydolGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx15[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_15.4bpp");
-static const u8 sClaydolGfx15_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_15_1.4bpp");
-static const u8 sClaydolGfx15_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_15_2.4bpp");
+static const u8 sClaydolGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_15.4bpp.lz");
+static const u8 sClaydolGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_15_1.4bpp.lz");
+static const u8 sClaydolGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_15_2.4bpp.lz");
 static const ax_sprite sClaydolSprites15[] = {
 	{sClaydolGfx15, ARRAY_COUNT(sClaydolGfx15)}, 
 	{NULL, 32}, 
@@ -2175,19 +2175,19 @@ static const ax_sprite sClaydolSprites15[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx16[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_16.4bpp");
+static const u8 sClaydolGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_16.4bpp.lz");
 static const ax_sprite sClaydolSprites16[] = {
 	{sClaydolGfx16, ARRAY_COUNT(sClaydolGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx17[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_17.4bpp");
+static const u8 sClaydolGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_17.4bpp.lz");
 static const ax_sprite sClaydolSprites17[] = {
 	{sClaydolGfx17, ARRAY_COUNT(sClaydolGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx18[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_18.4bpp");
-static const u8 sClaydolGfx18_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_18_1.4bpp");
-static const u8 sClaydolGfx18_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_18_2.4bpp");
+static const u8 sClaydolGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_18.4bpp.lz");
+static const u8 sClaydolGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_18_1.4bpp.lz");
+static const u8 sClaydolGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_18_2.4bpp.lz");
 static const ax_sprite sClaydolSprites18[] = {
 	{sClaydolGfx18, ARRAY_COUNT(sClaydolGfx18)}, 
 	{NULL, 32}, 
@@ -2197,19 +2197,19 @@ static const ax_sprite sClaydolSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx19[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_19.4bpp");
+static const u8 sClaydolGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_19.4bpp.lz");
 static const ax_sprite sClaydolSprites19[] = {
 	{sClaydolGfx19, ARRAY_COUNT(sClaydolGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx20[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_20.4bpp");
+static const u8 sClaydolGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_20.4bpp.lz");
 static const ax_sprite sClaydolSprites20[] = {
 	{sClaydolGfx20, ARRAY_COUNT(sClaydolGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx21[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_21.4bpp");
-static const u8 sClaydolGfx21_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_21_1.4bpp");
-static const u8 sClaydolGfx21_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_21_2.4bpp");
+static const u8 sClaydolGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_21.4bpp.lz");
+static const u8 sClaydolGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_21_1.4bpp.lz");
+static const u8 sClaydolGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_21_2.4bpp.lz");
 static const ax_sprite sClaydolSprites21[] = {
 	{sClaydolGfx21, ARRAY_COUNT(sClaydolGfx21)}, 
 	{NULL, 32}, 
@@ -2219,24 +2219,24 @@ static const ax_sprite sClaydolSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx22[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_22.4bpp");
+static const u8 sClaydolGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_22.4bpp.lz");
 static const ax_sprite sClaydolSprites22[] = {
 	{sClaydolGfx22, ARRAY_COUNT(sClaydolGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx23[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_23.4bpp");
+static const u8 sClaydolGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_23.4bpp.lz");
 static const ax_sprite sClaydolSprites23[] = {
 	{sClaydolGfx23, ARRAY_COUNT(sClaydolGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx24[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_24.4bpp");
+static const u8 sClaydolGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_24.4bpp.lz");
 static const ax_sprite sClaydolSprites24[] = {
 	{sClaydolGfx24, ARRAY_COUNT(sClaydolGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx25[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_25.4bpp");
-static const u8 sClaydolGfx25_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_25_1.4bpp");
-static const u8 sClaydolGfx25_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_25_2.4bpp");
+static const u8 sClaydolGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_25.4bpp.lz");
+static const u8 sClaydolGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_25_1.4bpp.lz");
+static const u8 sClaydolGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_25_2.4bpp.lz");
 static const ax_sprite sClaydolSprites25[] = {
 	{sClaydolGfx25, ARRAY_COUNT(sClaydolGfx25)}, 
 	{NULL, 32}, 
@@ -2246,9 +2246,9 @@ static const ax_sprite sClaydolSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx26[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_26.4bpp");
-static const u8 sClaydolGfx26_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_26_1.4bpp");
-static const u8 sClaydolGfx26_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_26_2.4bpp");
+static const u8 sClaydolGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_26.4bpp.lz");
+static const u8 sClaydolGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_26_1.4bpp.lz");
+static const u8 sClaydolGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_26_2.4bpp.lz");
 static const ax_sprite sClaydolSprites26[] = {
 	{sClaydolGfx26, ARRAY_COUNT(sClaydolGfx26)}, 
 	{NULL, 32}, 
@@ -2258,9 +2258,9 @@ static const ax_sprite sClaydolSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx27[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_27.4bpp");
-static const u8 sClaydolGfx27_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_27_1.4bpp");
-static const u8 sClaydolGfx27_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_27_2.4bpp");
+static const u8 sClaydolGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_27.4bpp.lz");
+static const u8 sClaydolGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_27_1.4bpp.lz");
+static const u8 sClaydolGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_27_2.4bpp.lz");
 static const ax_sprite sClaydolSprites27[] = {
 	{sClaydolGfx27, ARRAY_COUNT(sClaydolGfx27)}, 
 	{NULL, 32}, 
@@ -2270,9 +2270,9 @@ static const ax_sprite sClaydolSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx28[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_28.4bpp");
-static const u8 sClaydolGfx28_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_28_1.4bpp");
-static const u8 sClaydolGfx28_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_28_2.4bpp");
+static const u8 sClaydolGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_28.4bpp.lz");
+static const u8 sClaydolGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_28_1.4bpp.lz");
+static const u8 sClaydolGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_28_2.4bpp.lz");
 static const ax_sprite sClaydolSprites28[] = {
 	{sClaydolGfx28, ARRAY_COUNT(sClaydolGfx28)}, 
 	{NULL, 32}, 
@@ -2282,9 +2282,9 @@ static const ax_sprite sClaydolSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx29[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_29.4bpp");
-static const u8 sClaydolGfx29_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_29_1.4bpp");
-static const u8 sClaydolGfx29_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_29_2.4bpp");
+static const u8 sClaydolGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_29.4bpp.lz");
+static const u8 sClaydolGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_29_1.4bpp.lz");
+static const u8 sClaydolGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_29_2.4bpp.lz");
 static const ax_sprite sClaydolSprites29[] = {
 	{sClaydolGfx29, ARRAY_COUNT(sClaydolGfx29)}, 
 	{NULL, 32}, 
@@ -2294,9 +2294,9 @@ static const ax_sprite sClaydolSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx30[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_30.4bpp");
-static const u8 sClaydolGfx30_1[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_30_1.4bpp");
-static const u8 sClaydolGfx30_2[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_30_2.4bpp");
+static const u8 sClaydolGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_30.4bpp.lz");
+static const u8 sClaydolGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_30_1.4bpp.lz");
+static const u8 sClaydolGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_30_2.4bpp.lz");
 static const ax_sprite sClaydolSprites30[] = {
 	{sClaydolGfx30, ARRAY_COUNT(sClaydolGfx30)}, 
 	{NULL, 32}, 
@@ -2306,52 +2306,52 @@ static const ax_sprite sClaydolSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx31[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_31.4bpp");
+static const u8 sClaydolGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_31.4bpp.lz");
 static const ax_sprite sClaydolSprites31[] = {
 	{sClaydolGfx31, ARRAY_COUNT(sClaydolGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx32[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_32.4bpp");
+static const u8 sClaydolGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_32.4bpp.lz");
 static const ax_sprite sClaydolSprites32[] = {
 	{sClaydolGfx32, ARRAY_COUNT(sClaydolGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx33[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_33.4bpp");
+static const u8 sClaydolGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_33.4bpp.lz");
 static const ax_sprite sClaydolSprites33[] = {
 	{sClaydolGfx33, ARRAY_COUNT(sClaydolGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx34[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_34.4bpp");
+static const u8 sClaydolGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_34.4bpp.lz");
 static const ax_sprite sClaydolSprites34[] = {
 	{sClaydolGfx34, ARRAY_COUNT(sClaydolGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx35[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_35.4bpp");
+static const u8 sClaydolGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_35.4bpp.lz");
 static const ax_sprite sClaydolSprites35[] = {
 	{sClaydolGfx35, ARRAY_COUNT(sClaydolGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx36[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_36.4bpp");
+static const u8 sClaydolGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_36.4bpp.lz");
 static const ax_sprite sClaydolSprites36[] = {
 	{sClaydolGfx36, ARRAY_COUNT(sClaydolGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx37[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_37.4bpp");
+static const u8 sClaydolGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_37.4bpp.lz");
 static const ax_sprite sClaydolSprites37[] = {
 	{sClaydolGfx37, ARRAY_COUNT(sClaydolGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx38[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_38.4bpp");
+static const u8 sClaydolGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_38.4bpp.lz");
 static const ax_sprite sClaydolSprites38[] = {
 	{sClaydolGfx38, ARRAY_COUNT(sClaydolGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx39[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_39.4bpp");
+static const u8 sClaydolGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_39.4bpp.lz");
 static const ax_sprite sClaydolSprites39[] = {
 	{sClaydolGfx39, ARRAY_COUNT(sClaydolGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sClaydolGfx40[] = INCBIN_U8("graphics/ax/mon/claydol/sprite_40.4bpp");
+static const u8 sClaydolGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/claydol/sprite_40.4bpp.lz");
 static const ax_sprite sClaydolSprites40[] = {
 	{sClaydolGfx40, ARRAY_COUNT(sClaydolGfx40)}, 
 	{NULL, 0}

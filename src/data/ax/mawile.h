@@ -2311,85 +2311,85 @@ static const ax_anim sMawileAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMawileGfx1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_1.4bpp");
+static const u8 sMawileGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_1.4bpp.lz");
 static const ax_sprite sMawileSprites1[] = {
 	{sMawileGfx1, ARRAY_COUNT(sMawileGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx2[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_2.4bpp");
+static const u8 sMawileGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_2.4bpp.lz");
 static const ax_sprite sMawileSprites2[] = {
 	{sMawileGfx2, ARRAY_COUNT(sMawileGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx3[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_3.4bpp");
+static const u8 sMawileGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_3.4bpp.lz");
 static const ax_sprite sMawileSprites3[] = {
 	{sMawileGfx3, ARRAY_COUNT(sMawileGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx4[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_4.4bpp");
+static const u8 sMawileGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_4.4bpp.lz");
 static const ax_sprite sMawileSprites4[] = {
 	{sMawileGfx4, ARRAY_COUNT(sMawileGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx5[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_5.4bpp");
+static const u8 sMawileGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_5.4bpp.lz");
 static const ax_sprite sMawileSprites5[] = {
 	{sMawileGfx5, ARRAY_COUNT(sMawileGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx6[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_6.4bpp");
+static const u8 sMawileGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_6.4bpp.lz");
 static const ax_sprite sMawileSprites6[] = {
 	{sMawileGfx6, ARRAY_COUNT(sMawileGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx7[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_7.4bpp");
+static const u8 sMawileGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_7.4bpp.lz");
 static const ax_sprite sMawileSprites7[] = {
 	{sMawileGfx7, ARRAY_COUNT(sMawileGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx8[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_8.4bpp");
+static const u8 sMawileGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_8.4bpp.lz");
 static const ax_sprite sMawileSprites8[] = {
 	{sMawileGfx8, ARRAY_COUNT(sMawileGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx9[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_9.4bpp");
+static const u8 sMawileGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_9.4bpp.lz");
 static const ax_sprite sMawileSprites9[] = {
 	{sMawileGfx9, ARRAY_COUNT(sMawileGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx10[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_10.4bpp");
+static const u8 sMawileGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_10.4bpp.lz");
 static const ax_sprite sMawileSprites10[] = {
 	{sMawileGfx10, ARRAY_COUNT(sMawileGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx11[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_11.4bpp");
+static const u8 sMawileGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_11.4bpp.lz");
 static const ax_sprite sMawileSprites11[] = {
 	{sMawileGfx11, ARRAY_COUNT(sMawileGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx12[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_12.4bpp");
+static const u8 sMawileGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_12.4bpp.lz");
 static const ax_sprite sMawileSprites12[] = {
 	{sMawileGfx12, ARRAY_COUNT(sMawileGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx13[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_13.4bpp");
+static const u8 sMawileGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_13.4bpp.lz");
 static const ax_sprite sMawileSprites13[] = {
 	{sMawileGfx13, ARRAY_COUNT(sMawileGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx14[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_14.4bpp");
+static const u8 sMawileGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_14.4bpp.lz");
 static const ax_sprite sMawileSprites14[] = {
 	{sMawileGfx14, ARRAY_COUNT(sMawileGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx15[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_15.4bpp");
+static const u8 sMawileGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_15.4bpp.lz");
 static const ax_sprite sMawileSprites15[] = {
 	{sMawileGfx15, ARRAY_COUNT(sMawileGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx16[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_16.4bpp");
-static const u8 sMawileGfx16_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_16_1.4bpp");
-static const u8 sMawileGfx16_2[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_16_2.4bpp");
-static const u8 sMawileGfx16_3[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_16_3.4bpp");
+static const u8 sMawileGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_16.4bpp.lz");
+static const u8 sMawileGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_16_1.4bpp.lz");
+static const u8 sMawileGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_16_2.4bpp.lz");
+static const u8 sMawileGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_16_3.4bpp.lz");
 static const ax_sprite sMawileSprites16[] = {
 	{sMawileGfx16, ARRAY_COUNT(sMawileGfx16)}, 
 	{NULL, 32}, 
@@ -2401,31 +2401,31 @@ static const ax_sprite sMawileSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx17[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_17.4bpp");
+static const u8 sMawileGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_17.4bpp.lz");
 static const ax_sprite sMawileSprites17[] = {
 	{NULL, 32}, 
 	{sMawileGfx17, ARRAY_COUNT(sMawileGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx18[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_18.4bpp");
+static const u8 sMawileGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_18.4bpp.lz");
 static const ax_sprite sMawileSprites18[] = {
 	{sMawileGfx18, ARRAY_COUNT(sMawileGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx19[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_19.4bpp");
+static const u8 sMawileGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_19.4bpp.lz");
 static const ax_sprite sMawileSprites19[] = {
 	{sMawileGfx19, ARRAY_COUNT(sMawileGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx20[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_20.4bpp");
+static const u8 sMawileGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_20.4bpp.lz");
 static const ax_sprite sMawileSprites20[] = {
 	{sMawileGfx20, ARRAY_COUNT(sMawileGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx21[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_21.4bpp");
-static const u8 sMawileGfx21_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_21_1.4bpp");
-static const u8 sMawileGfx21_2[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_21_2.4bpp");
+static const u8 sMawileGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_21.4bpp.lz");
+static const u8 sMawileGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_21_1.4bpp.lz");
+static const u8 sMawileGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_21_2.4bpp.lz");
 static const ax_sprite sMawileSprites21[] = {
 	{NULL, 32}, 
 	{sMawileGfx21, ARRAY_COUNT(sMawileGfx21)}, 
@@ -2435,10 +2435,10 @@ static const ax_sprite sMawileSprites21[] = {
 	{sMawileGfx21_2, ARRAY_COUNT(sMawileGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx22[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_22.4bpp");
-static const u8 sMawileGfx22_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_22_1.4bpp");
-static const u8 sMawileGfx22_2[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_22_2.4bpp");
-static const u8 sMawileGfx22_3[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_22_3.4bpp");
+static const u8 sMawileGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_22.4bpp.lz");
+static const u8 sMawileGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_22_1.4bpp.lz");
+static const u8 sMawileGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_22_2.4bpp.lz");
+static const u8 sMawileGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_22_3.4bpp.lz");
 static const ax_sprite sMawileSprites22[] = {
 	{NULL, 32}, 
 	{sMawileGfx22, ARRAY_COUNT(sMawileGfx22)}, 
@@ -2451,8 +2451,8 @@ static const ax_sprite sMawileSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx23[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_23.4bpp");
-static const u8 sMawileGfx23_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_23_1.4bpp");
+static const u8 sMawileGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_23.4bpp.lz");
+static const u8 sMawileGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_23_1.4bpp.lz");
 static const ax_sprite sMawileSprites23[] = {
 	{sMawileGfx23, ARRAY_COUNT(sMawileGfx23)}, 
 	{NULL, 32}, 
@@ -2460,8 +2460,8 @@ static const ax_sprite sMawileSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx24[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_24.4bpp");
-static const u8 sMawileGfx24_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_24_1.4bpp");
+static const u8 sMawileGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_24.4bpp.lz");
+static const u8 sMawileGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_24_1.4bpp.lz");
 static const ax_sprite sMawileSprites24[] = {
 	{NULL, 32}, 
 	{sMawileGfx24, ARRAY_COUNT(sMawileGfx24)}, 
@@ -2469,24 +2469,24 @@ static const ax_sprite sMawileSprites24[] = {
 	{sMawileGfx24_1, ARRAY_COUNT(sMawileGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx25[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_25.4bpp");
+static const u8 sMawileGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_25.4bpp.lz");
 static const ax_sprite sMawileSprites25[] = {
 	{sMawileGfx25, ARRAY_COUNT(sMawileGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx26[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_26.4bpp");
+static const u8 sMawileGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_26.4bpp.lz");
 static const ax_sprite sMawileSprites26[] = {
 	{sMawileGfx26, ARRAY_COUNT(sMawileGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx27[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_27.4bpp");
+static const u8 sMawileGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_27.4bpp.lz");
 static const ax_sprite sMawileSprites27[] = {
 	{sMawileGfx27, ARRAY_COUNT(sMawileGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx28[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_28.4bpp");
-static const u8 sMawileGfx28_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_28_1.4bpp");
-static const u8 sMawileGfx28_2[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_28_2.4bpp");
+static const u8 sMawileGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_28.4bpp.lz");
+static const u8 sMawileGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_28_1.4bpp.lz");
+static const u8 sMawileGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_28_2.4bpp.lz");
 static const ax_sprite sMawileSprites28[] = {
 	{NULL, 160}, 
 	{sMawileGfx28, ARRAY_COUNT(sMawileGfx28)}, 
@@ -2497,158 +2497,158 @@ static const ax_sprite sMawileSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx29[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_29.4bpp");
+static const u8 sMawileGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_29.4bpp.lz");
 static const ax_sprite sMawileSprites29[] = {
 	{sMawileGfx29, ARRAY_COUNT(sMawileGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx30[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_30.4bpp");
+static const u8 sMawileGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_30.4bpp.lz");
 static const ax_sprite sMawileSprites30[] = {
 	{sMawileGfx30, ARRAY_COUNT(sMawileGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx31[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_31.4bpp");
+static const u8 sMawileGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_31.4bpp.lz");
 static const ax_sprite sMawileSprites31[] = {
 	{sMawileGfx31, ARRAY_COUNT(sMawileGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx32[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_32.4bpp");
+static const u8 sMawileGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_32.4bpp.lz");
 static const ax_sprite sMawileSprites32[] = {
 	{sMawileGfx32, ARRAY_COUNT(sMawileGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx33[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_33.4bpp");
+static const u8 sMawileGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_33.4bpp.lz");
 static const ax_sprite sMawileSprites33[] = {
 	{sMawileGfx33, ARRAY_COUNT(sMawileGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx34[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_34.4bpp");
+static const u8 sMawileGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_34.4bpp.lz");
 static const ax_sprite sMawileSprites34[] = {
 	{sMawileGfx34, ARRAY_COUNT(sMawileGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx35[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_35.4bpp");
+static const u8 sMawileGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_35.4bpp.lz");
 static const ax_sprite sMawileSprites35[] = {
 	{sMawileGfx35, ARRAY_COUNT(sMawileGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx36[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_36.4bpp");
-static const u8 sMawileGfx36_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_36_1.4bpp");
+static const u8 sMawileGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_36.4bpp.lz");
+static const u8 sMawileGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_36_1.4bpp.lz");
 static const ax_sprite sMawileSprites36[] = {
 	{sMawileGfx36, ARRAY_COUNT(sMawileGfx36)}, 
 	{NULL, 64}, 
 	{sMawileGfx36_1, ARRAY_COUNT(sMawileGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx37[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_37.4bpp");
+static const u8 sMawileGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_37.4bpp.lz");
 static const ax_sprite sMawileSprites37[] = {
 	{sMawileGfx37, ARRAY_COUNT(sMawileGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx38[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_38.4bpp");
+static const u8 sMawileGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_38.4bpp.lz");
 static const ax_sprite sMawileSprites38[] = {
 	{sMawileGfx38, ARRAY_COUNT(sMawileGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx39[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_39.4bpp");
+static const u8 sMawileGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_39.4bpp.lz");
 static const ax_sprite sMawileSprites39[] = {
 	{sMawileGfx39, ARRAY_COUNT(sMawileGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx40[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_40.4bpp");
+static const u8 sMawileGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_40.4bpp.lz");
 static const ax_sprite sMawileSprites40[] = {
 	{sMawileGfx40, ARRAY_COUNT(sMawileGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx41[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_41.4bpp");
+static const u8 sMawileGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_41.4bpp.lz");
 static const ax_sprite sMawileSprites41[] = {
 	{sMawileGfx41, ARRAY_COUNT(sMawileGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx42[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_42.4bpp");
+static const u8 sMawileGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_42.4bpp.lz");
 static const ax_sprite sMawileSprites42[] = {
 	{sMawileGfx42, ARRAY_COUNT(sMawileGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx43[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_43.4bpp");
+static const u8 sMawileGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_43.4bpp.lz");
 static const ax_sprite sMawileSprites43[] = {
 	{sMawileGfx43, ARRAY_COUNT(sMawileGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx44[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_44.4bpp");
+static const u8 sMawileGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_44.4bpp.lz");
 static const ax_sprite sMawileSprites44[] = {
 	{sMawileGfx44, ARRAY_COUNT(sMawileGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx45[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_45.4bpp");
+static const u8 sMawileGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_45.4bpp.lz");
 static const ax_sprite sMawileSprites45[] = {
 	{sMawileGfx45, ARRAY_COUNT(sMawileGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx46[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_46.4bpp");
+static const u8 sMawileGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_46.4bpp.lz");
 static const ax_sprite sMawileSprites46[] = {
 	{sMawileGfx46, ARRAY_COUNT(sMawileGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx47[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_47.4bpp");
+static const u8 sMawileGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_47.4bpp.lz");
 static const ax_sprite sMawileSprites47[] = {
 	{sMawileGfx47, ARRAY_COUNT(sMawileGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx48[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_48.4bpp");
+static const u8 sMawileGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_48.4bpp.lz");
 static const ax_sprite sMawileSprites48[] = {
 	{sMawileGfx48, ARRAY_COUNT(sMawileGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx49[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_49.4bpp");
+static const u8 sMawileGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_49.4bpp.lz");
 static const ax_sprite sMawileSprites49[] = {
 	{sMawileGfx49, ARRAY_COUNT(sMawileGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx50[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_50.4bpp");
+static const u8 sMawileGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_50.4bpp.lz");
 static const ax_sprite sMawileSprites50[] = {
 	{sMawileGfx50, ARRAY_COUNT(sMawileGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx51[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_51.4bpp");
+static const u8 sMawileGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_51.4bpp.lz");
 static const ax_sprite sMawileSprites51[] = {
 	{sMawileGfx51, ARRAY_COUNT(sMawileGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx52[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_52.4bpp");
+static const u8 sMawileGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_52.4bpp.lz");
 static const ax_sprite sMawileSprites52[] = {
 	{sMawileGfx52, ARRAY_COUNT(sMawileGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx53[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_53.4bpp");
+static const u8 sMawileGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_53.4bpp.lz");
 static const ax_sprite sMawileSprites53[] = {
 	{sMawileGfx53, ARRAY_COUNT(sMawileGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx54[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_54.4bpp");
+static const u8 sMawileGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_54.4bpp.lz");
 static const ax_sprite sMawileSprites54[] = {
 	{sMawileGfx54, ARRAY_COUNT(sMawileGfx54)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx55[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_55.4bpp");
+static const u8 sMawileGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_55.4bpp.lz");
 static const ax_sprite sMawileSprites55[] = {
 	{NULL, 32}, 
 	{sMawileGfx55, ARRAY_COUNT(sMawileGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx56[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_56.4bpp");
+static const u8 sMawileGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_56.4bpp.lz");
 static const ax_sprite sMawileSprites56[] = {
 	{sMawileGfx56, ARRAY_COUNT(sMawileGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx57[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_57.4bpp");
+static const u8 sMawileGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_57.4bpp.lz");
 static const ax_sprite sMawileSprites57[] = {
 	{sMawileGfx57, ARRAY_COUNT(sMawileGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx58[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_58.4bpp");
-static const u8 sMawileGfx58_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_58_1.4bpp");
+static const u8 sMawileGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_58.4bpp.lz");
+static const u8 sMawileGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_58_1.4bpp.lz");
 static const ax_sprite sMawileSprites58[] = {
 	{NULL, 32}, 
 	{sMawileGfx58, ARRAY_COUNT(sMawileGfx58)}, 
@@ -2656,30 +2656,30 @@ static const ax_sprite sMawileSprites58[] = {
 	{sMawileGfx58_1, ARRAY_COUNT(sMawileGfx58_1)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx59[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_59.4bpp");
+static const u8 sMawileGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_59.4bpp.lz");
 static const ax_sprite sMawileSprites59[] = {
 	{sMawileGfx59, ARRAY_COUNT(sMawileGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx60[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_60.4bpp");
+static const u8 sMawileGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_60.4bpp.lz");
 static const ax_sprite sMawileSprites60[] = {
 	{NULL, 32}, 
 	{sMawileGfx60, ARRAY_COUNT(sMawileGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx61[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_61.4bpp");
+static const u8 sMawileGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_61.4bpp.lz");
 static const ax_sprite sMawileSprites61[] = {
 	{sMawileGfx61, ARRAY_COUNT(sMawileGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx62[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_62.4bpp");
+static const u8 sMawileGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_62.4bpp.lz");
 static const ax_sprite sMawileSprites62[] = {
 	{sMawileGfx62, ARRAY_COUNT(sMawileGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx63[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_63.4bpp");
-static const u8 sMawileGfx63_1[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_63_1.4bpp");
-static const u8 sMawileGfx63_2[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_63_2.4bpp");
+static const u8 sMawileGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_63.4bpp.lz");
+static const u8 sMawileGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_63_1.4bpp.lz");
+static const u8 sMawileGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_63_2.4bpp.lz");
 static const ax_sprite sMawileSprites63[] = {
 	{NULL, 192}, 
 	{sMawileGfx63, ARRAY_COUNT(sMawileGfx63)}, 
@@ -2689,62 +2689,62 @@ static const ax_sprite sMawileSprites63[] = {
 	{sMawileGfx63_2, ARRAY_COUNT(sMawileGfx63_2)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx64[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_64.4bpp");
+static const u8 sMawileGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_64.4bpp.lz");
 static const ax_sprite sMawileSprites64[] = {
 	{sMawileGfx64, ARRAY_COUNT(sMawileGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx65[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_65.4bpp");
+static const u8 sMawileGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_65.4bpp.lz");
 static const ax_sprite sMawileSprites65[] = {
 	{sMawileGfx65, ARRAY_COUNT(sMawileGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx66[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_66.4bpp");
+static const u8 sMawileGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_66.4bpp.lz");
 static const ax_sprite sMawileSprites66[] = {
 	{sMawileGfx66, ARRAY_COUNT(sMawileGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx67[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_67.4bpp");
+static const u8 sMawileGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_67.4bpp.lz");
 static const ax_sprite sMawileSprites67[] = {
 	{sMawileGfx67, ARRAY_COUNT(sMawileGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx68[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_68.4bpp");
+static const u8 sMawileGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_68.4bpp.lz");
 static const ax_sprite sMawileSprites68[] = {
 	{sMawileGfx68, ARRAY_COUNT(sMawileGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx69[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_69.4bpp");
+static const u8 sMawileGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_69.4bpp.lz");
 static const ax_sprite sMawileSprites69[] = {
 	{sMawileGfx69, ARRAY_COUNT(sMawileGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx70[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_70.4bpp");
+static const u8 sMawileGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_70.4bpp.lz");
 static const ax_sprite sMawileSprites70[] = {
 	{sMawileGfx70, ARRAY_COUNT(sMawileGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx71[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_71.4bpp");
+static const u8 sMawileGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_71.4bpp.lz");
 static const ax_sprite sMawileSprites71[] = {
 	{sMawileGfx71, ARRAY_COUNT(sMawileGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx72[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_72.4bpp");
+static const u8 sMawileGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_72.4bpp.lz");
 static const ax_sprite sMawileSprites72[] = {
 	{sMawileGfx72, ARRAY_COUNT(sMawileGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx73[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_73.4bpp");
+static const u8 sMawileGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_73.4bpp.lz");
 static const ax_sprite sMawileSprites73[] = {
 	{sMawileGfx73, ARRAY_COUNT(sMawileGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx74[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_74.4bpp");
+static const u8 sMawileGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_74.4bpp.lz");
 static const ax_sprite sMawileSprites74[] = {
 	{sMawileGfx74, ARRAY_COUNT(sMawileGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sMawileGfx75[] = INCBIN_U8("graphics/ax/mon/mawile/sprite_75.4bpp");
+static const u8 sMawileGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mawile/sprite_75.4bpp.lz");
 static const ax_sprite sMawileSprites75[] = {
 	{sMawileGfx75, ARRAY_COUNT(sMawileGfx75)}, 
 	{NULL, 0}

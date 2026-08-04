@@ -3013,84 +3013,84 @@ static const ax_anim sSquirtleAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSquirtleGfx1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_1.4bpp");
+static const u8 sSquirtleGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_1.4bpp.lz");
 static const ax_sprite sSquirtleSprites1[] = {
 	{sSquirtleGfx1, ARRAY_COUNT(sSquirtleGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_2.4bpp");
+static const u8 sSquirtleGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites2[] = {
 	{sSquirtleGfx2, ARRAY_COUNT(sSquirtleGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx3[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_3.4bpp");
+static const u8 sSquirtleGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_3.4bpp.lz");
 static const ax_sprite sSquirtleSprites3[] = {
 	{sSquirtleGfx3, ARRAY_COUNT(sSquirtleGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx4[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_4.4bpp");
+static const u8 sSquirtleGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_4.4bpp.lz");
 static const ax_sprite sSquirtleSprites4[] = {
 	{sSquirtleGfx4, ARRAY_COUNT(sSquirtleGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx5[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_5.4bpp");
+static const u8 sSquirtleGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_5.4bpp.lz");
 static const ax_sprite sSquirtleSprites5[] = {
 	{sSquirtleGfx5, ARRAY_COUNT(sSquirtleGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx6[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_6.4bpp");
+static const u8 sSquirtleGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_6.4bpp.lz");
 static const ax_sprite sSquirtleSprites6[] = {
 	{sSquirtleGfx6, ARRAY_COUNT(sSquirtleGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx7[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_7.4bpp");
+static const u8 sSquirtleGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_7.4bpp.lz");
 static const ax_sprite sSquirtleSprites7[] = {
 	{sSquirtleGfx7, ARRAY_COUNT(sSquirtleGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx8[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_8.4bpp");
+static const u8 sSquirtleGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_8.4bpp.lz");
 static const ax_sprite sSquirtleSprites8[] = {
 	{sSquirtleGfx8, ARRAY_COUNT(sSquirtleGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx9[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_9.4bpp");
+static const u8 sSquirtleGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_9.4bpp.lz");
 static const ax_sprite sSquirtleSprites9[] = {
 	{sSquirtleGfx9, ARRAY_COUNT(sSquirtleGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx10[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_10.4bpp");
+static const u8 sSquirtleGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_10.4bpp.lz");
 static const ax_sprite sSquirtleSprites10[] = {
 	{sSquirtleGfx10, ARRAY_COUNT(sSquirtleGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx11[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_11.4bpp");
+static const u8 sSquirtleGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_11.4bpp.lz");
 static const ax_sprite sSquirtleSprites11[] = {
 	{sSquirtleGfx11, ARRAY_COUNT(sSquirtleGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx12[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_12.4bpp");
+static const u8 sSquirtleGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_12.4bpp.lz");
 static const ax_sprite sSquirtleSprites12[] = {
 	{sSquirtleGfx12, ARRAY_COUNT(sSquirtleGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx13[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_13.4bpp");
+static const u8 sSquirtleGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_13.4bpp.lz");
 static const ax_sprite sSquirtleSprites13[] = {
 	{sSquirtleGfx13, ARRAY_COUNT(sSquirtleGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx14[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_14.4bpp");
+static const u8 sSquirtleGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_14.4bpp.lz");
 static const ax_sprite sSquirtleSprites14[] = {
 	{sSquirtleGfx14, ARRAY_COUNT(sSquirtleGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx15[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_15.4bpp");
+static const u8 sSquirtleGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_15.4bpp.lz");
 static const ax_sprite sSquirtleSprites15[] = {
 	{sSquirtleGfx15, ARRAY_COUNT(sSquirtleGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx16[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_16.4bpp");
-static const u8 sSquirtleGfx16_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_16_1.4bpp");
-static const u8 sSquirtleGfx16_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_16_2.4bpp");
+static const u8 sSquirtleGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_16.4bpp.lz");
+static const u8 sSquirtleGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_16_1.4bpp.lz");
+static const u8 sSquirtleGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_16_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites16[] = {
 	{NULL, 32}, 
 	{sSquirtleGfx16, ARRAY_COUNT(sSquirtleGfx16)}, 
@@ -3101,9 +3101,9 @@ static const ax_sprite sSquirtleSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx17[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_17.4bpp");
-static const u8 sSquirtleGfx17_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_17_1.4bpp");
-static const u8 sSquirtleGfx17_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_17_2.4bpp");
+static const u8 sSquirtleGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_17.4bpp.lz");
+static const u8 sSquirtleGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_17_1.4bpp.lz");
+static const u8 sSquirtleGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_17_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites17[] = {
 	{sSquirtleGfx17, ARRAY_COUNT(sSquirtleGfx17)}, 
 	{NULL, 96}, 
@@ -3113,9 +3113,9 @@ static const ax_sprite sSquirtleSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx18[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_18.4bpp");
-static const u8 sSquirtleGfx18_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_18_1.4bpp");
-static const u8 sSquirtleGfx18_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_18_2.4bpp");
+static const u8 sSquirtleGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_18.4bpp.lz");
+static const u8 sSquirtleGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_18_1.4bpp.lz");
+static const u8 sSquirtleGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_18_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites18[] = {
 	{NULL, 32}, 
 	{sSquirtleGfx18, ARRAY_COUNT(sSquirtleGfx18)}, 
@@ -3126,8 +3126,8 @@ static const ax_sprite sSquirtleSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx19[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_19.4bpp");
-static const u8 sSquirtleGfx19_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_19_1.4bpp");
+static const u8 sSquirtleGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_19.4bpp.lz");
+static const u8 sSquirtleGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_19_1.4bpp.lz");
 static const ax_sprite sSquirtleSprites19[] = {
 	{sSquirtleGfx19, ARRAY_COUNT(sSquirtleGfx19)}, 
 	{NULL, 64}, 
@@ -3135,9 +3135,9 @@ static const ax_sprite sSquirtleSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx20[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_20.4bpp");
-static const u8 sSquirtleGfx20_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_20_1.4bpp");
-static const u8 sSquirtleGfx20_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_20_2.4bpp");
+static const u8 sSquirtleGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_20.4bpp.lz");
+static const u8 sSquirtleGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_20_1.4bpp.lz");
+static const u8 sSquirtleGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_20_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites20[] = {
 	{sSquirtleGfx20, ARRAY_COUNT(sSquirtleGfx20)}, 
 	{NULL, 32}, 
@@ -3147,9 +3147,9 @@ static const ax_sprite sSquirtleSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx21[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_21.4bpp");
-static const u8 sSquirtleGfx21_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_21_1.4bpp");
-static const u8 sSquirtleGfx21_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_21_2.4bpp");
+static const u8 sSquirtleGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_21.4bpp.lz");
+static const u8 sSquirtleGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_21_1.4bpp.lz");
+static const u8 sSquirtleGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_21_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites21[] = {
 	{sSquirtleGfx21, ARRAY_COUNT(sSquirtleGfx21)}, 
 	{NULL, 32}, 
@@ -3159,9 +3159,9 @@ static const ax_sprite sSquirtleSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx22[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_22.4bpp");
-static const u8 sSquirtleGfx22_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_22_1.4bpp");
-static const u8 sSquirtleGfx22_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_22_2.4bpp");
+static const u8 sSquirtleGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_22.4bpp.lz");
+static const u8 sSquirtleGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_22_1.4bpp.lz");
+static const u8 sSquirtleGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_22_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites22[] = {
 	{sSquirtleGfx22, ARRAY_COUNT(sSquirtleGfx22)}, 
 	{NULL, 64}, 
@@ -3171,8 +3171,8 @@ static const ax_sprite sSquirtleSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx23[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_23.4bpp");
-static const u8 sSquirtleGfx23_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_23_1.4bpp");
+static const u8 sSquirtleGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_23.4bpp.lz");
+static const u8 sSquirtleGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_23_1.4bpp.lz");
 static const ax_sprite sSquirtleSprites23[] = {
 	{sSquirtleGfx23, ARRAY_COUNT(sSquirtleGfx23)}, 
 	{NULL, 64}, 
@@ -3180,8 +3180,8 @@ static const ax_sprite sSquirtleSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx24[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_24.4bpp");
-static const u8 sSquirtleGfx24_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_24_1.4bpp");
+static const u8 sSquirtleGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_24.4bpp.lz");
+static const u8 sSquirtleGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_24_1.4bpp.lz");
 static const ax_sprite sSquirtleSprites24[] = {
 	{sSquirtleGfx24, ARRAY_COUNT(sSquirtleGfx24)}, 
 	{NULL, 64}, 
@@ -3189,9 +3189,9 @@ static const ax_sprite sSquirtleSprites24[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx25[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_25.4bpp");
-static const u8 sSquirtleGfx25_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_25_1.4bpp");
-static const u8 sSquirtleGfx25_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_25_2.4bpp");
+static const u8 sSquirtleGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_25.4bpp.lz");
+static const u8 sSquirtleGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_25_1.4bpp.lz");
+static const u8 sSquirtleGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_25_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites25[] = {
 	{sSquirtleGfx25, ARRAY_COUNT(sSquirtleGfx25)}, 
 	{NULL, 64}, 
@@ -3201,9 +3201,9 @@ static const ax_sprite sSquirtleSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx26[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_26.4bpp");
-static const u8 sSquirtleGfx26_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_26_1.4bpp");
-static const u8 sSquirtleGfx26_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_26_2.4bpp");
+static const u8 sSquirtleGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_26.4bpp.lz");
+static const u8 sSquirtleGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_26_1.4bpp.lz");
+static const u8 sSquirtleGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_26_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites26[] = {
 	{sSquirtleGfx26, ARRAY_COUNT(sSquirtleGfx26)}, 
 	{NULL, 64}, 
@@ -3213,9 +3213,9 @@ static const ax_sprite sSquirtleSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx27[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_27.4bpp");
-static const u8 sSquirtleGfx27_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_27_1.4bpp");
-static const u8 sSquirtleGfx27_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_27_2.4bpp");
+static const u8 sSquirtleGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_27.4bpp.lz");
+static const u8 sSquirtleGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_27_1.4bpp.lz");
+static const u8 sSquirtleGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_27_2.4bpp.lz");
 static const ax_sprite sSquirtleSprites27[] = {
 	{sSquirtleGfx27, ARRAY_COUNT(sSquirtleGfx27)}, 
 	{NULL, 64}, 
@@ -3225,10 +3225,10 @@ static const ax_sprite sSquirtleSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx28[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_28.4bpp");
-static const u8 sSquirtleGfx28_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_28_1.4bpp");
-static const u8 sSquirtleGfx28_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_28_2.4bpp");
-static const u8 sSquirtleGfx28_3[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_28_3.4bpp");
+static const u8 sSquirtleGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_28.4bpp.lz");
+static const u8 sSquirtleGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_28_1.4bpp.lz");
+static const u8 sSquirtleGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_28_2.4bpp.lz");
+static const u8 sSquirtleGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_28_3.4bpp.lz");
 static const ax_sprite sSquirtleSprites28[] = {
 	{sSquirtleGfx28, ARRAY_COUNT(sSquirtleGfx28)}, 
 	{NULL, 64}, 
@@ -3240,10 +3240,10 @@ static const ax_sprite sSquirtleSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx29[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_29.4bpp");
-static const u8 sSquirtleGfx29_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_29_1.4bpp");
-static const u8 sSquirtleGfx29_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_29_2.4bpp");
-static const u8 sSquirtleGfx29_3[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_29_3.4bpp");
+static const u8 sSquirtleGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_29.4bpp.lz");
+static const u8 sSquirtleGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_29_1.4bpp.lz");
+static const u8 sSquirtleGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_29_2.4bpp.lz");
+static const u8 sSquirtleGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_29_3.4bpp.lz");
 static const ax_sprite sSquirtleSprites29[] = {
 	{sSquirtleGfx29, ARRAY_COUNT(sSquirtleGfx29)}, 
 	{NULL, 64}, 
@@ -3255,10 +3255,10 @@ static const ax_sprite sSquirtleSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx30[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_30.4bpp");
-static const u8 sSquirtleGfx30_1[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_30_1.4bpp");
-static const u8 sSquirtleGfx30_2[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_30_2.4bpp");
-static const u8 sSquirtleGfx30_3[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_30_3.4bpp");
+static const u8 sSquirtleGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_30.4bpp.lz");
+static const u8 sSquirtleGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_30_1.4bpp.lz");
+static const u8 sSquirtleGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_30_2.4bpp.lz");
+static const u8 sSquirtleGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_30_3.4bpp.lz");
 static const ax_sprite sSquirtleSprites30[] = {
 	{sSquirtleGfx30, ARRAY_COUNT(sSquirtleGfx30)}, 
 	{NULL, 64}, 
@@ -3270,217 +3270,217 @@ static const ax_sprite sSquirtleSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx31[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_31.4bpp");
+static const u8 sSquirtleGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_31.4bpp.lz");
 static const ax_sprite sSquirtleSprites31[] = {
 	{sSquirtleGfx31, ARRAY_COUNT(sSquirtleGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx32[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_32.4bpp");
+static const u8 sSquirtleGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_32.4bpp.lz");
 static const ax_sprite sSquirtleSprites32[] = {
 	{sSquirtleGfx32, ARRAY_COUNT(sSquirtleGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx33[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_33.4bpp");
+static const u8 sSquirtleGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_33.4bpp.lz");
 static const ax_sprite sSquirtleSprites33[] = {
 	{sSquirtleGfx33, ARRAY_COUNT(sSquirtleGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx34[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_34.4bpp");
+static const u8 sSquirtleGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_34.4bpp.lz");
 static const ax_sprite sSquirtleSprites34[] = {
 	{sSquirtleGfx34, ARRAY_COUNT(sSquirtleGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx35[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_35.4bpp");
+static const u8 sSquirtleGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_35.4bpp.lz");
 static const ax_sprite sSquirtleSprites35[] = {
 	{sSquirtleGfx35, ARRAY_COUNT(sSquirtleGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx36[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_36.4bpp");
+static const u8 sSquirtleGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_36.4bpp.lz");
 static const ax_sprite sSquirtleSprites36[] = {
 	{sSquirtleGfx36, ARRAY_COUNT(sSquirtleGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx37[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_37.4bpp");
+static const u8 sSquirtleGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_37.4bpp.lz");
 static const ax_sprite sSquirtleSprites37[] = {
 	{sSquirtleGfx37, ARRAY_COUNT(sSquirtleGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx38[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_38.4bpp");
+static const u8 sSquirtleGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_38.4bpp.lz");
 static const ax_sprite sSquirtleSprites38[] = {
 	{sSquirtleGfx38, ARRAY_COUNT(sSquirtleGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx39[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_39.4bpp");
+static const u8 sSquirtleGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_39.4bpp.lz");
 static const ax_sprite sSquirtleSprites39[] = {
 	{sSquirtleGfx39, ARRAY_COUNT(sSquirtleGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx40[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_40.4bpp");
+static const u8 sSquirtleGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_40.4bpp.lz");
 static const ax_sprite sSquirtleSprites40[] = {
 	{sSquirtleGfx40, ARRAY_COUNT(sSquirtleGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx41[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_41.4bpp");
+static const u8 sSquirtleGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_41.4bpp.lz");
 static const ax_sprite sSquirtleSprites41[] = {
 	{sSquirtleGfx41, ARRAY_COUNT(sSquirtleGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx42[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_42.4bpp");
+static const u8 sSquirtleGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_42.4bpp.lz");
 static const ax_sprite sSquirtleSprites42[] = {
 	{sSquirtleGfx42, ARRAY_COUNT(sSquirtleGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx43[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_43.4bpp");
+static const u8 sSquirtleGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_43.4bpp.lz");
 static const ax_sprite sSquirtleSprites43[] = {
 	{sSquirtleGfx43, ARRAY_COUNT(sSquirtleGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx44[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_44.4bpp");
+static const u8 sSquirtleGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_44.4bpp.lz");
 static const ax_sprite sSquirtleSprites44[] = {
 	{sSquirtleGfx44, ARRAY_COUNT(sSquirtleGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx45[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_45.4bpp");
+static const u8 sSquirtleGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_45.4bpp.lz");
 static const ax_sprite sSquirtleSprites45[] = {
 	{sSquirtleGfx45, ARRAY_COUNT(sSquirtleGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx46[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_46.4bpp");
+static const u8 sSquirtleGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_46.4bpp.lz");
 static const ax_sprite sSquirtleSprites46[] = {
 	{sSquirtleGfx46, ARRAY_COUNT(sSquirtleGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx47[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_47.4bpp");
+static const u8 sSquirtleGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_47.4bpp.lz");
 static const ax_sprite sSquirtleSprites47[] = {
 	{sSquirtleGfx47, ARRAY_COUNT(sSquirtleGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx48[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_48.4bpp");
+static const u8 sSquirtleGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_48.4bpp.lz");
 static const ax_sprite sSquirtleSprites48[] = {
 	{sSquirtleGfx48, ARRAY_COUNT(sSquirtleGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx49[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_49.4bpp");
+static const u8 sSquirtleGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_49.4bpp.lz");
 static const ax_sprite sSquirtleSprites49[] = {
 	{sSquirtleGfx49, ARRAY_COUNT(sSquirtleGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx50[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_50.4bpp");
+static const u8 sSquirtleGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_50.4bpp.lz");
 static const ax_sprite sSquirtleSprites50[] = {
 	{sSquirtleGfx50, ARRAY_COUNT(sSquirtleGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx51[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_51.4bpp");
+static const u8 sSquirtleGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_51.4bpp.lz");
 static const ax_sprite sSquirtleSprites51[] = {
 	{sSquirtleGfx51, ARRAY_COUNT(sSquirtleGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx52[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_52.4bpp");
+static const u8 sSquirtleGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_52.4bpp.lz");
 static const ax_sprite sSquirtleSprites52[] = {
 	{sSquirtleGfx52, ARRAY_COUNT(sSquirtleGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx53[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_53.4bpp");
+static const u8 sSquirtleGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_53.4bpp.lz");
 static const ax_sprite sSquirtleSprites53[] = {
 	{sSquirtleGfx53, ARRAY_COUNT(sSquirtleGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx54[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_54.4bpp");
+static const u8 sSquirtleGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_54.4bpp.lz");
 static const ax_sprite sSquirtleSprites54[] = {
 	{sSquirtleGfx54, ARRAY_COUNT(sSquirtleGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx55[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_55.4bpp");
+static const u8 sSquirtleGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_55.4bpp.lz");
 static const ax_sprite sSquirtleSprites55[] = {
 	{sSquirtleGfx55, ARRAY_COUNT(sSquirtleGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx56[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_56.4bpp");
+static const u8 sSquirtleGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_56.4bpp.lz");
 static const ax_sprite sSquirtleSprites56[] = {
 	{sSquirtleGfx56, ARRAY_COUNT(sSquirtleGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx57[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_57.4bpp");
+static const u8 sSquirtleGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_57.4bpp.lz");
 static const ax_sprite sSquirtleSprites57[] = {
 	{sSquirtleGfx57, ARRAY_COUNT(sSquirtleGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx58[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_58.4bpp");
+static const u8 sSquirtleGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_58.4bpp.lz");
 static const ax_sprite sSquirtleSprites58[] = {
 	{sSquirtleGfx58, ARRAY_COUNT(sSquirtleGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx59[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_59.4bpp");
+static const u8 sSquirtleGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_59.4bpp.lz");
 static const ax_sprite sSquirtleSprites59[] = {
 	{sSquirtleGfx59, ARRAY_COUNT(sSquirtleGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx60[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_60.4bpp");
+static const u8 sSquirtleGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_60.4bpp.lz");
 static const ax_sprite sSquirtleSprites60[] = {
 	{sSquirtleGfx60, ARRAY_COUNT(sSquirtleGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx61[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_61.4bpp");
+static const u8 sSquirtleGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_61.4bpp.lz");
 static const ax_sprite sSquirtleSprites61[] = {
 	{sSquirtleGfx61, ARRAY_COUNT(sSquirtleGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx62[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_62.4bpp");
+static const u8 sSquirtleGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_62.4bpp.lz");
 static const ax_sprite sSquirtleSprites62[] = {
 	{sSquirtleGfx62, ARRAY_COUNT(sSquirtleGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx63[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_63.4bpp");
+static const u8 sSquirtleGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_63.4bpp.lz");
 static const ax_sprite sSquirtleSprites63[] = {
 	{sSquirtleGfx63, ARRAY_COUNT(sSquirtleGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx64[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_64.4bpp");
+static const u8 sSquirtleGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_64.4bpp.lz");
 static const ax_sprite sSquirtleSprites64[] = {
 	{sSquirtleGfx64, ARRAY_COUNT(sSquirtleGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx65[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_65.4bpp");
+static const u8 sSquirtleGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_65.4bpp.lz");
 static const ax_sprite sSquirtleSprites65[] = {
 	{sSquirtleGfx65, ARRAY_COUNT(sSquirtleGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx66[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_66.4bpp");
+static const u8 sSquirtleGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_66.4bpp.lz");
 static const ax_sprite sSquirtleSprites66[] = {
 	{sSquirtleGfx66, ARRAY_COUNT(sSquirtleGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx67[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_67.4bpp");
+static const u8 sSquirtleGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_67.4bpp.lz");
 static const ax_sprite sSquirtleSprites67[] = {
 	{sSquirtleGfx67, ARRAY_COUNT(sSquirtleGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx68[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_68.4bpp");
+static const u8 sSquirtleGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_68.4bpp.lz");
 static const ax_sprite sSquirtleSprites68[] = {
 	{sSquirtleGfx68, ARRAY_COUNT(sSquirtleGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx69[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_69.4bpp");
+static const u8 sSquirtleGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_69.4bpp.lz");
 static const ax_sprite sSquirtleSprites69[] = {
 	{sSquirtleGfx69, ARRAY_COUNT(sSquirtleGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx70[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_70.4bpp");
+static const u8 sSquirtleGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_70.4bpp.lz");
 static const ax_sprite sSquirtleSprites70[] = {
 	{sSquirtleGfx70, ARRAY_COUNT(sSquirtleGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx71[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_71.4bpp");
+static const u8 sSquirtleGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_71.4bpp.lz");
 static const ax_sprite sSquirtleSprites71[] = {
 	{sSquirtleGfx71, ARRAY_COUNT(sSquirtleGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx72[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_72.4bpp");
+static const u8 sSquirtleGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_72.4bpp.lz");
 static const ax_sprite sSquirtleSprites72[] = {
 	{sSquirtleGfx72, ARRAY_COUNT(sSquirtleGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sSquirtleGfx73[] = INCBIN_U8("graphics/ax/mon/squirtle/sprite_73.4bpp");
+static const u8 sSquirtleGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/squirtle/sprite_73.4bpp.lz");
 static const ax_sprite sSquirtleSprites73[] = {
 	{sSquirtleGfx73, ARRAY_COUNT(sSquirtleGfx73)}, 
 	{NULL, 0}

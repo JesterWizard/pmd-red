@@ -2095,108 +2095,108 @@ static const ax_anim sCaterpieAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCaterpieGfx1[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_1.4bpp");
+static const u8 sCaterpieGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_1.4bpp.lz");
 static const ax_sprite sCaterpieSprites1[] = {
 	{sCaterpieGfx1, ARRAY_COUNT(sCaterpieGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx2[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_2.4bpp");
+static const u8 sCaterpieGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_2.4bpp.lz");
 static const ax_sprite sCaterpieSprites2[] = {
 	{sCaterpieGfx2, ARRAY_COUNT(sCaterpieGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx3[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_3.4bpp");
+static const u8 sCaterpieGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_3.4bpp.lz");
 static const ax_sprite sCaterpieSprites3[] = {
 	{sCaterpieGfx3, ARRAY_COUNT(sCaterpieGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx4[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_4.4bpp");
+static const u8 sCaterpieGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_4.4bpp.lz");
 static const ax_sprite sCaterpieSprites4[] = {
 	{sCaterpieGfx4, ARRAY_COUNT(sCaterpieGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx5[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_5.4bpp");
+static const u8 sCaterpieGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_5.4bpp.lz");
 static const ax_sprite sCaterpieSprites5[] = {
 	{sCaterpieGfx5, ARRAY_COUNT(sCaterpieGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx6[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_6.4bpp");
+static const u8 sCaterpieGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_6.4bpp.lz");
 static const ax_sprite sCaterpieSprites6[] = {
 	{sCaterpieGfx6, ARRAY_COUNT(sCaterpieGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx7[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_7.4bpp");
+static const u8 sCaterpieGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_7.4bpp.lz");
 static const ax_sprite sCaterpieSprites7[] = {
 	{sCaterpieGfx7, ARRAY_COUNT(sCaterpieGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx8[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_8.4bpp");
+static const u8 sCaterpieGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_8.4bpp.lz");
 static const ax_sprite sCaterpieSprites8[] = {
 	{sCaterpieGfx8, ARRAY_COUNT(sCaterpieGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx9[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_9.4bpp");
+static const u8 sCaterpieGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_9.4bpp.lz");
 static const ax_sprite sCaterpieSprites9[] = {
 	{sCaterpieGfx9, ARRAY_COUNT(sCaterpieGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx10[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_10.4bpp");
+static const u8 sCaterpieGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_10.4bpp.lz");
 static const ax_sprite sCaterpieSprites10[] = {
 	{sCaterpieGfx10, ARRAY_COUNT(sCaterpieGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx11[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_11.4bpp");
+static const u8 sCaterpieGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_11.4bpp.lz");
 static const ax_sprite sCaterpieSprites11[] = {
 	{sCaterpieGfx11, ARRAY_COUNT(sCaterpieGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx12[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_12.4bpp");
+static const u8 sCaterpieGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_12.4bpp.lz");
 static const ax_sprite sCaterpieSprites12[] = {
 	{sCaterpieGfx12, ARRAY_COUNT(sCaterpieGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx13[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_13.4bpp");
+static const u8 sCaterpieGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_13.4bpp.lz");
 static const ax_sprite sCaterpieSprites13[] = {
 	{sCaterpieGfx13, ARRAY_COUNT(sCaterpieGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx14[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_14.4bpp");
+static const u8 sCaterpieGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_14.4bpp.lz");
 static const ax_sprite sCaterpieSprites14[] = {
 	{sCaterpieGfx14, ARRAY_COUNT(sCaterpieGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx15[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_15.4bpp");
+static const u8 sCaterpieGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_15.4bpp.lz");
 static const ax_sprite sCaterpieSprites15[] = {
 	{sCaterpieGfx15, ARRAY_COUNT(sCaterpieGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx16[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_16.4bpp");
+static const u8 sCaterpieGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_16.4bpp.lz");
 static const ax_sprite sCaterpieSprites16[] = {
 	{sCaterpieGfx16, ARRAY_COUNT(sCaterpieGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx17[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_17.4bpp");
+static const u8 sCaterpieGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_17.4bpp.lz");
 static const ax_sprite sCaterpieSprites17[] = {
 	{sCaterpieGfx17, ARRAY_COUNT(sCaterpieGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx18[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_18.4bpp");
+static const u8 sCaterpieGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_18.4bpp.lz");
 static const ax_sprite sCaterpieSprites18[] = {
 	{sCaterpieGfx18, ARRAY_COUNT(sCaterpieGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx19[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_19.4bpp");
+static const u8 sCaterpieGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_19.4bpp.lz");
 static const ax_sprite sCaterpieSprites19[] = {
 	{sCaterpieGfx19, ARRAY_COUNT(sCaterpieGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx20[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_20.4bpp");
-static const u8 sCaterpieGfx20_1[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_20_1.4bpp");
-static const u8 sCaterpieGfx20_2[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_20_2.4bpp");
+static const u8 sCaterpieGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_20.4bpp.lz");
+static const u8 sCaterpieGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_20_1.4bpp.lz");
+static const u8 sCaterpieGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_20_2.4bpp.lz");
 static const ax_sprite sCaterpieSprites20[] = {
 	{sCaterpieGfx20, ARRAY_COUNT(sCaterpieGfx20)}, 
 	{NULL, 96}, 
@@ -2206,43 +2206,43 @@ static const ax_sprite sCaterpieSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx21[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_21.4bpp");
+static const u8 sCaterpieGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_21.4bpp.lz");
 static const ax_sprite sCaterpieSprites21[] = {
 	{sCaterpieGfx21, ARRAY_COUNT(sCaterpieGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx22[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_22.4bpp");
+static const u8 sCaterpieGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_22.4bpp.lz");
 static const ax_sprite sCaterpieSprites22[] = {
 	{sCaterpieGfx22, ARRAY_COUNT(sCaterpieGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx23[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_23.4bpp");
+static const u8 sCaterpieGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_23.4bpp.lz");
 static const ax_sprite sCaterpieSprites23[] = {
 	{sCaterpieGfx23, ARRAY_COUNT(sCaterpieGfx23)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx24[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_24.4bpp");
+static const u8 sCaterpieGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_24.4bpp.lz");
 static const ax_sprite sCaterpieSprites24[] = {
 	{sCaterpieGfx24, ARRAY_COUNT(sCaterpieGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx25[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_25.4bpp");
+static const u8 sCaterpieGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_25.4bpp.lz");
 static const ax_sprite sCaterpieSprites25[] = {
 	{sCaterpieGfx25, ARRAY_COUNT(sCaterpieGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx26[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_26.4bpp");
+static const u8 sCaterpieGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_26.4bpp.lz");
 static const ax_sprite sCaterpieSprites26[] = {
 	{sCaterpieGfx26, ARRAY_COUNT(sCaterpieGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx27[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_27.4bpp");
-static const u8 sCaterpieGfx27_1[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_27_1.4bpp");
+static const u8 sCaterpieGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_27.4bpp.lz");
+static const u8 sCaterpieGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_27_1.4bpp.lz");
 static const ax_sprite sCaterpieSprites27[] = {
 	{sCaterpieGfx27, ARRAY_COUNT(sCaterpieGfx27)}, 
 	{NULL, 32}, 
@@ -2250,8 +2250,8 @@ static const ax_sprite sCaterpieSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx28[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_28.4bpp");
-static const u8 sCaterpieGfx28_1[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_28_1.4bpp");
+static const u8 sCaterpieGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_28.4bpp.lz");
+static const u8 sCaterpieGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_28_1.4bpp.lz");
 static const ax_sprite sCaterpieSprites28[] = {
 	{sCaterpieGfx28, ARRAY_COUNT(sCaterpieGfx28)}, 
 	{NULL, 32}, 
@@ -2259,8 +2259,8 @@ static const ax_sprite sCaterpieSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx29[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_29.4bpp");
-static const u8 sCaterpieGfx29_1[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_29_1.4bpp");
+static const u8 sCaterpieGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_29.4bpp.lz");
+static const u8 sCaterpieGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_29_1.4bpp.lz");
 static const ax_sprite sCaterpieSprites29[] = {
 	{sCaterpieGfx29, ARRAY_COUNT(sCaterpieGfx29)}, 
 	{NULL, 32}, 
@@ -2268,43 +2268,43 @@ static const ax_sprite sCaterpieSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx30[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_30.4bpp");
+static const u8 sCaterpieGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_30.4bpp.lz");
 static const ax_sprite sCaterpieSprites30[] = {
 	{sCaterpieGfx30, ARRAY_COUNT(sCaterpieGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx31[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_31.4bpp");
+static const u8 sCaterpieGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_31.4bpp.lz");
 static const ax_sprite sCaterpieSprites31[] = {
 	{sCaterpieGfx31, ARRAY_COUNT(sCaterpieGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx32[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_32.4bpp");
+static const u8 sCaterpieGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_32.4bpp.lz");
 static const ax_sprite sCaterpieSprites32[] = {
 	{sCaterpieGfx32, ARRAY_COUNT(sCaterpieGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx33[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_33.4bpp");
+static const u8 sCaterpieGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_33.4bpp.lz");
 static const ax_sprite sCaterpieSprites33[] = {
 	{sCaterpieGfx33, ARRAY_COUNT(sCaterpieGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx34[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_34.4bpp");
+static const u8 sCaterpieGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_34.4bpp.lz");
 static const ax_sprite sCaterpieSprites34[] = {
 	{sCaterpieGfx34, ARRAY_COUNT(sCaterpieGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx35[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_35.4bpp");
+static const u8 sCaterpieGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_35.4bpp.lz");
 static const ax_sprite sCaterpieSprites35[] = {
 	{sCaterpieGfx35, ARRAY_COUNT(sCaterpieGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx36[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_36.4bpp");
+static const u8 sCaterpieGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_36.4bpp.lz");
 static const ax_sprite sCaterpieSprites36[] = {
 	{sCaterpieGfx36, ARRAY_COUNT(sCaterpieGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCaterpieGfx37[] = INCBIN_U8("graphics/ax/mon/caterpie/sprite_37.4bpp");
+static const u8 sCaterpieGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/caterpie/sprite_37.4bpp.lz");
 static const ax_sprite sCaterpieSprites37[] = {
 	{sCaterpieGfx37, ARRAY_COUNT(sCaterpieGfx37)}, 
 	{NULL, 0}

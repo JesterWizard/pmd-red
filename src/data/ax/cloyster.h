@@ -2083,84 +2083,84 @@ static const ax_anim sCloysterAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCloysterGfx1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_1.4bpp");
+static const u8 sCloysterGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_1.4bpp.lz");
 static const ax_sprite sCloysterSprites1[] = {
 	{sCloysterGfx1, ARRAY_COUNT(sCloysterGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx2[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_2.4bpp");
+static const u8 sCloysterGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_2.4bpp.lz");
 static const ax_sprite sCloysterSprites2[] = {
 	{sCloysterGfx2, ARRAY_COUNT(sCloysterGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx3[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_3.4bpp");
+static const u8 sCloysterGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_3.4bpp.lz");
 static const ax_sprite sCloysterSprites3[] = {
 	{sCloysterGfx3, ARRAY_COUNT(sCloysterGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx4[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_4.4bpp");
+static const u8 sCloysterGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_4.4bpp.lz");
 static const ax_sprite sCloysterSprites4[] = {
 	{sCloysterGfx4, ARRAY_COUNT(sCloysterGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx5[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_5.4bpp");
+static const u8 sCloysterGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_5.4bpp.lz");
 static const ax_sprite sCloysterSprites5[] = {
 	{sCloysterGfx5, ARRAY_COUNT(sCloysterGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx6[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_6.4bpp");
+static const u8 sCloysterGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_6.4bpp.lz");
 static const ax_sprite sCloysterSprites6[] = {
 	{sCloysterGfx6, ARRAY_COUNT(sCloysterGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx7[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_7.4bpp");
+static const u8 sCloysterGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_7.4bpp.lz");
 static const ax_sprite sCloysterSprites7[] = {
 	{sCloysterGfx7, ARRAY_COUNT(sCloysterGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx8[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_8.4bpp");
+static const u8 sCloysterGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_8.4bpp.lz");
 static const ax_sprite sCloysterSprites8[] = {
 	{sCloysterGfx8, ARRAY_COUNT(sCloysterGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx9[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_9.4bpp");
+static const u8 sCloysterGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_9.4bpp.lz");
 static const ax_sprite sCloysterSprites9[] = {
 	{sCloysterGfx9, ARRAY_COUNT(sCloysterGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx10[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_10.4bpp");
+static const u8 sCloysterGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_10.4bpp.lz");
 static const ax_sprite sCloysterSprites10[] = {
 	{sCloysterGfx10, ARRAY_COUNT(sCloysterGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx11[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_11.4bpp");
+static const u8 sCloysterGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_11.4bpp.lz");
 static const ax_sprite sCloysterSprites11[] = {
 	{sCloysterGfx11, ARRAY_COUNT(sCloysterGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx12[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_12.4bpp");
+static const u8 sCloysterGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_12.4bpp.lz");
 static const ax_sprite sCloysterSprites12[] = {
 	{sCloysterGfx12, ARRAY_COUNT(sCloysterGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx13[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_13.4bpp");
+static const u8 sCloysterGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_13.4bpp.lz");
 static const ax_sprite sCloysterSprites13[] = {
 	{sCloysterGfx13, ARRAY_COUNT(sCloysterGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx14[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_14.4bpp");
+static const u8 sCloysterGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_14.4bpp.lz");
 static const ax_sprite sCloysterSprites14[] = {
 	{sCloysterGfx14, ARRAY_COUNT(sCloysterGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx15[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_15.4bpp");
+static const u8 sCloysterGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_15.4bpp.lz");
 static const ax_sprite sCloysterSprites15[] = {
 	{sCloysterGfx15, ARRAY_COUNT(sCloysterGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx16[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_16.4bpp");
-static const u8 sCloysterGfx16_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_16_1.4bpp");
-static const u8 sCloysterGfx16_2[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_16_2.4bpp");
+static const u8 sCloysterGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_16.4bpp.lz");
+static const u8 sCloysterGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_16_1.4bpp.lz");
+static const u8 sCloysterGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_16_2.4bpp.lz");
 static const ax_sprite sCloysterSprites16[] = {
 	{NULL, 32}, 
 	{sCloysterGfx16, ARRAY_COUNT(sCloysterGfx16)}, 
@@ -2171,9 +2171,9 @@ static const ax_sprite sCloysterSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx17[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_17.4bpp");
-static const u8 sCloysterGfx17_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_17_1.4bpp");
-static const u8 sCloysterGfx17_2[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_17_2.4bpp");
+static const u8 sCloysterGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_17.4bpp.lz");
+static const u8 sCloysterGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_17_1.4bpp.lz");
+static const u8 sCloysterGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_17_2.4bpp.lz");
 static const ax_sprite sCloysterSprites17[] = {
 	{NULL, 64}, 
 	{sCloysterGfx17, ARRAY_COUNT(sCloysterGfx17)}, 
@@ -2184,9 +2184,9 @@ static const ax_sprite sCloysterSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx18[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_18.4bpp");
-static const u8 sCloysterGfx18_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_18_1.4bpp");
-static const u8 sCloysterGfx18_2[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_18_2.4bpp");
+static const u8 sCloysterGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_18.4bpp.lz");
+static const u8 sCloysterGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_18_1.4bpp.lz");
+static const u8 sCloysterGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_18_2.4bpp.lz");
 static const ax_sprite sCloysterSprites18[] = {
 	{sCloysterGfx18, ARRAY_COUNT(sCloysterGfx18)}, 
 	{NULL, 64}, 
@@ -2195,16 +2195,16 @@ static const ax_sprite sCloysterSprites18[] = {
 	{sCloysterGfx18_2, ARRAY_COUNT(sCloysterGfx18_2)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx19[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_19.4bpp");
-static const u8 sCloysterGfx19_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_19_1.4bpp");
+static const u8 sCloysterGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_19.4bpp.lz");
+static const u8 sCloysterGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_19_1.4bpp.lz");
 static const ax_sprite sCloysterSprites19[] = {
 	{sCloysterGfx19, ARRAY_COUNT(sCloysterGfx19)}, 
 	{NULL, 32}, 
 	{sCloysterGfx19_1, ARRAY_COUNT(sCloysterGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx20[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_20.4bpp");
-static const u8 sCloysterGfx20_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_20_1.4bpp");
+static const u8 sCloysterGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_20.4bpp.lz");
+static const u8 sCloysterGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_20_1.4bpp.lz");
 static const ax_sprite sCloysterSprites20[] = {
 	{sCloysterGfx20, ARRAY_COUNT(sCloysterGfx20)}, 
 	{NULL, 32}, 
@@ -2212,14 +2212,14 @@ static const ax_sprite sCloysterSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx21[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_21.4bpp");
+static const u8 sCloysterGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_21.4bpp.lz");
 static const ax_sprite sCloysterSprites21[] = {
 	{sCloysterGfx21, ARRAY_COUNT(sCloysterGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx22[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_22.4bpp");
-static const u8 sCloysterGfx22_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_22_1.4bpp");
-static const u8 sCloysterGfx22_2[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_22_2.4bpp");
+static const u8 sCloysterGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_22.4bpp.lz");
+static const u8 sCloysterGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_22_1.4bpp.lz");
+static const u8 sCloysterGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_22_2.4bpp.lz");
 static const ax_sprite sCloysterSprites22[] = {
 	{sCloysterGfx22, ARRAY_COUNT(sCloysterGfx22)}, 
 	{NULL, 32}, 
@@ -2229,8 +2229,8 @@ static const ax_sprite sCloysterSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx23[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_23.4bpp");
-static const u8 sCloysterGfx23_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_23_1.4bpp");
+static const u8 sCloysterGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_23.4bpp.lz");
+static const u8 sCloysterGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_23_1.4bpp.lz");
 static const ax_sprite sCloysterSprites23[] = {
 	{NULL, 32}, 
 	{sCloysterGfx23, ARRAY_COUNT(sCloysterGfx23)}, 
@@ -2238,10 +2238,10 @@ static const ax_sprite sCloysterSprites23[] = {
 	{sCloysterGfx23_1, ARRAY_COUNT(sCloysterGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx24[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_24.4bpp");
-static const u8 sCloysterGfx24_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_24_1.4bpp");
-static const u8 sCloysterGfx24_2[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_24_2.4bpp");
-static const u8 sCloysterGfx24_3[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_24_3.4bpp");
+static const u8 sCloysterGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_24.4bpp.lz");
+static const u8 sCloysterGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_24_1.4bpp.lz");
+static const u8 sCloysterGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_24_2.4bpp.lz");
+static const u8 sCloysterGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_24_3.4bpp.lz");
 static const ax_sprite sCloysterSprites24[] = {
 	{sCloysterGfx24, ARRAY_COUNT(sCloysterGfx24)}, 
 	{NULL, 32}, 
@@ -2253,9 +2253,9 @@ static const ax_sprite sCloysterSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx25[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_25.4bpp");
-static const u8 sCloysterGfx25_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_25_1.4bpp");
-static const u8 sCloysterGfx25_2[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_25_2.4bpp");
+static const u8 sCloysterGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_25.4bpp.lz");
+static const u8 sCloysterGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_25_1.4bpp.lz");
+static const u8 sCloysterGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_25_2.4bpp.lz");
 static const ax_sprite sCloysterSprites25[] = {
 	{NULL, 32}, 
 	{sCloysterGfx25, ARRAY_COUNT(sCloysterGfx25)}, 
@@ -2266,8 +2266,8 @@ static const ax_sprite sCloysterSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx26[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_26.4bpp");
-static const u8 sCloysterGfx26_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_26_1.4bpp");
+static const u8 sCloysterGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_26.4bpp.lz");
+static const u8 sCloysterGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_26_1.4bpp.lz");
 static const ax_sprite sCloysterSprites26[] = {
 	{NULL, 32}, 
 	{sCloysterGfx26, ARRAY_COUNT(sCloysterGfx26)}, 
@@ -2275,8 +2275,8 @@ static const ax_sprite sCloysterSprites26[] = {
 	{sCloysterGfx26_1, ARRAY_COUNT(sCloysterGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx27[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_27.4bpp");
-static const u8 sCloysterGfx27_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_27_1.4bpp");
+static const u8 sCloysterGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_27.4bpp.lz");
+static const u8 sCloysterGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_27_1.4bpp.lz");
 static const ax_sprite sCloysterSprites27[] = {
 	{sCloysterGfx27, ARRAY_COUNT(sCloysterGfx27)}, 
 	{NULL, 32}, 
@@ -2284,8 +2284,8 @@ static const ax_sprite sCloysterSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx28[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_28.4bpp");
-static const u8 sCloysterGfx28_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_28_1.4bpp");
+static const u8 sCloysterGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_28.4bpp.lz");
+static const u8 sCloysterGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_28_1.4bpp.lz");
 static const ax_sprite sCloysterSprites28[] = {
 	{NULL, 32}, 
 	{sCloysterGfx28, ARRAY_COUNT(sCloysterGfx28)}, 
@@ -2293,16 +2293,16 @@ static const ax_sprite sCloysterSprites28[] = {
 	{sCloysterGfx28_1, ARRAY_COUNT(sCloysterGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx29[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_29.4bpp");
-static const u8 sCloysterGfx29_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_29_1.4bpp");
+static const u8 sCloysterGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_29.4bpp.lz");
+static const u8 sCloysterGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_29_1.4bpp.lz");
 static const ax_sprite sCloysterSprites29[] = {
 	{sCloysterGfx29, ARRAY_COUNT(sCloysterGfx29)}, 
 	{NULL, 32}, 
 	{sCloysterGfx29_1, ARRAY_COUNT(sCloysterGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx30[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_30.4bpp");
-static const u8 sCloysterGfx30_1[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_30_1.4bpp");
+static const u8 sCloysterGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_30.4bpp.lz");
+static const u8 sCloysterGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_30_1.4bpp.lz");
 static const ax_sprite sCloysterSprites30[] = {
 	{sCloysterGfx30, ARRAY_COUNT(sCloysterGfx30)}, 
 	{NULL, 32}, 
@@ -2310,37 +2310,37 @@ static const ax_sprite sCloysterSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx31[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_31.4bpp");
+static const u8 sCloysterGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_31.4bpp.lz");
 static const ax_sprite sCloysterSprites31[] = {
 	{sCloysterGfx31, ARRAY_COUNT(sCloysterGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx32[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_32.4bpp");
+static const u8 sCloysterGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_32.4bpp.lz");
 static const ax_sprite sCloysterSprites32[] = {
 	{sCloysterGfx32, ARRAY_COUNT(sCloysterGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx33[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_33.4bpp");
+static const u8 sCloysterGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_33.4bpp.lz");
 static const ax_sprite sCloysterSprites33[] = {
 	{sCloysterGfx33, ARRAY_COUNT(sCloysterGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx34[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_34.4bpp");
+static const u8 sCloysterGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_34.4bpp.lz");
 static const ax_sprite sCloysterSprites34[] = {
 	{sCloysterGfx34, ARRAY_COUNT(sCloysterGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx35[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_35.4bpp");
+static const u8 sCloysterGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_35.4bpp.lz");
 static const ax_sprite sCloysterSprites35[] = {
 	{sCloysterGfx35, ARRAY_COUNT(sCloysterGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx36[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_36.4bpp");
+static const u8 sCloysterGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_36.4bpp.lz");
 static const ax_sprite sCloysterSprites36[] = {
 	{sCloysterGfx36, ARRAY_COUNT(sCloysterGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCloysterGfx37[] = INCBIN_U8("graphics/ax/mon/cloyster/sprite_37.4bpp");
+static const u8 sCloysterGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cloyster/sprite_37.4bpp.lz");
 static const ax_sprite sCloysterSprites37[] = {
 	{sCloysterGfx37, ARRAY_COUNT(sCloysterGfx37)}, 
 	{NULL, 0}

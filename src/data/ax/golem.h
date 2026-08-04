@@ -2127,83 +2127,83 @@ static const ax_anim sGolemAnims_15_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGolemGfx1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_1.4bpp");
+static const u8 sGolemGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_1.4bpp.lz");
 static const ax_sprite sGolemSprites1[] = {
 	{sGolemGfx1, ARRAY_COUNT(sGolemGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx2[] = INCBIN_U8("graphics/ax/mon/golem/sprite_2.4bpp");
+static const u8 sGolemGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_2.4bpp.lz");
 static const ax_sprite sGolemSprites2[] = {
 	{sGolemGfx2, ARRAY_COUNT(sGolemGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx3[] = INCBIN_U8("graphics/ax/mon/golem/sprite_3.4bpp");
+static const u8 sGolemGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_3.4bpp.lz");
 static const ax_sprite sGolemSprites3[] = {
 	{sGolemGfx3, ARRAY_COUNT(sGolemGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx4[] = INCBIN_U8("graphics/ax/mon/golem/sprite_4.4bpp");
+static const u8 sGolemGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_4.4bpp.lz");
 static const ax_sprite sGolemSprites4[] = {
 	{sGolemGfx4, ARRAY_COUNT(sGolemGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx5[] = INCBIN_U8("graphics/ax/mon/golem/sprite_5.4bpp");
+static const u8 sGolemGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_5.4bpp.lz");
 static const ax_sprite sGolemSprites5[] = {
 	{sGolemGfx5, ARRAY_COUNT(sGolemGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx6[] = INCBIN_U8("graphics/ax/mon/golem/sprite_6.4bpp");
+static const u8 sGolemGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_6.4bpp.lz");
 static const ax_sprite sGolemSprites6[] = {
 	{sGolemGfx6, ARRAY_COUNT(sGolemGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx7[] = INCBIN_U8("graphics/ax/mon/golem/sprite_7.4bpp");
+static const u8 sGolemGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_7.4bpp.lz");
 static const ax_sprite sGolemSprites7[] = {
 	{sGolemGfx7, ARRAY_COUNT(sGolemGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx8[] = INCBIN_U8("graphics/ax/mon/golem/sprite_8.4bpp");
+static const u8 sGolemGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_8.4bpp.lz");
 static const ax_sprite sGolemSprites8[] = {
 	{sGolemGfx8, ARRAY_COUNT(sGolemGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx9[] = INCBIN_U8("graphics/ax/mon/golem/sprite_9.4bpp");
+static const u8 sGolemGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_9.4bpp.lz");
 static const ax_sprite sGolemSprites9[] = {
 	{sGolemGfx9, ARRAY_COUNT(sGolemGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx10[] = INCBIN_U8("graphics/ax/mon/golem/sprite_10.4bpp");
+static const u8 sGolemGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_10.4bpp.lz");
 static const ax_sprite sGolemSprites10[] = {
 	{sGolemGfx10, ARRAY_COUNT(sGolemGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx11[] = INCBIN_U8("graphics/ax/mon/golem/sprite_11.4bpp");
+static const u8 sGolemGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_11.4bpp.lz");
 static const ax_sprite sGolemSprites11[] = {
 	{sGolemGfx11, ARRAY_COUNT(sGolemGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx12[] = INCBIN_U8("graphics/ax/mon/golem/sprite_12.4bpp");
+static const u8 sGolemGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_12.4bpp.lz");
 static const ax_sprite sGolemSprites12[] = {
 	{sGolemGfx12, ARRAY_COUNT(sGolemGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx13[] = INCBIN_U8("graphics/ax/mon/golem/sprite_13.4bpp");
+static const u8 sGolemGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_13.4bpp.lz");
 static const ax_sprite sGolemSprites13[] = {
 	{sGolemGfx13, ARRAY_COUNT(sGolemGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx14[] = INCBIN_U8("graphics/ax/mon/golem/sprite_14.4bpp");
+static const u8 sGolemGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_14.4bpp.lz");
 static const ax_sprite sGolemSprites14[] = {
 	{sGolemGfx14, ARRAY_COUNT(sGolemGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx15[] = INCBIN_U8("graphics/ax/mon/golem/sprite_15.4bpp");
+static const u8 sGolemGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_15.4bpp.lz");
 static const ax_sprite sGolemSprites15[] = {
 	{sGolemGfx15, ARRAY_COUNT(sGolemGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx16[] = INCBIN_U8("graphics/ax/mon/golem/sprite_16.4bpp");
-static const u8 sGolemGfx16_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_16_1.4bpp");
+static const u8 sGolemGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_16.4bpp.lz");
+static const u8 sGolemGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_16_1.4bpp.lz");
 static const ax_sprite sGolemSprites16[] = {
 	{NULL, 32}, 
 	{sGolemGfx16, ARRAY_COUNT(sGolemGfx16)}, 
@@ -2212,14 +2212,14 @@ static const ax_sprite sGolemSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx17[] = INCBIN_U8("graphics/ax/mon/golem/sprite_17.4bpp");
+static const u8 sGolemGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_17.4bpp.lz");
 static const ax_sprite sGolemSprites17[] = {
 	{sGolemGfx17, ARRAY_COUNT(sGolemGfx17)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx18[] = INCBIN_U8("graphics/ax/mon/golem/sprite_18.4bpp");
-static const u8 sGolemGfx18_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_18_1.4bpp");
+static const u8 sGolemGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_18.4bpp.lz");
+static const u8 sGolemGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_18_1.4bpp.lz");
 static const ax_sprite sGolemSprites18[] = {
 	{sGolemGfx18, ARRAY_COUNT(sGolemGfx18)}, 
 	{NULL, 32}, 
@@ -2227,8 +2227,8 @@ static const ax_sprite sGolemSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx19[] = INCBIN_U8("graphics/ax/mon/golem/sprite_19.4bpp");
-static const u8 sGolemGfx19_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_19_1.4bpp");
+static const u8 sGolemGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_19.4bpp.lz");
+static const u8 sGolemGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_19_1.4bpp.lz");
 static const ax_sprite sGolemSprites19[] = {
 	{sGolemGfx19, ARRAY_COUNT(sGolemGfx19)}, 
 	{NULL, 32}, 
@@ -2236,14 +2236,14 @@ static const ax_sprite sGolemSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx20[] = INCBIN_U8("graphics/ax/mon/golem/sprite_20.4bpp");
+static const u8 sGolemGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_20.4bpp.lz");
 static const ax_sprite sGolemSprites20[] = {
 	{sGolemGfx20, ARRAY_COUNT(sGolemGfx20)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx21[] = INCBIN_U8("graphics/ax/mon/golem/sprite_21.4bpp");
-static const u8 sGolemGfx21_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_21_1.4bpp");
+static const u8 sGolemGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_21.4bpp.lz");
+static const u8 sGolemGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_21_1.4bpp.lz");
 static const ax_sprite sGolemSprites21[] = {
 	{sGolemGfx21, ARRAY_COUNT(sGolemGfx21)}, 
 	{NULL, 32}, 
@@ -2251,10 +2251,10 @@ static const ax_sprite sGolemSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx22[] = INCBIN_U8("graphics/ax/mon/golem/sprite_22.4bpp");
-static const u8 sGolemGfx22_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_22_1.4bpp");
-static const u8 sGolemGfx22_2[] = INCBIN_U8("graphics/ax/mon/golem/sprite_22_2.4bpp");
-static const u8 sGolemGfx22_3[] = INCBIN_U8("graphics/ax/mon/golem/sprite_22_3.4bpp");
+static const u8 sGolemGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_22.4bpp.lz");
+static const u8 sGolemGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_22_1.4bpp.lz");
+static const u8 sGolemGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_22_2.4bpp.lz");
+static const u8 sGolemGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_22_3.4bpp.lz");
 static const ax_sprite sGolemSprites22[] = {
 	{sGolemGfx22, ARRAY_COUNT(sGolemGfx22)}, 
 	{NULL, 32}, 
@@ -2266,10 +2266,10 @@ static const ax_sprite sGolemSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx23[] = INCBIN_U8("graphics/ax/mon/golem/sprite_23.4bpp");
-static const u8 sGolemGfx23_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_23_1.4bpp");
-static const u8 sGolemGfx23_2[] = INCBIN_U8("graphics/ax/mon/golem/sprite_23_2.4bpp");
-static const u8 sGolemGfx23_3[] = INCBIN_U8("graphics/ax/mon/golem/sprite_23_3.4bpp");
+static const u8 sGolemGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_23.4bpp.lz");
+static const u8 sGolemGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_23_1.4bpp.lz");
+static const u8 sGolemGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_23_2.4bpp.lz");
+static const u8 sGolemGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_23_3.4bpp.lz");
 static const ax_sprite sGolemSprites23[] = {
 	{sGolemGfx23, ARRAY_COUNT(sGolemGfx23)}, 
 	{NULL, 32}, 
@@ -2281,9 +2281,9 @@ static const ax_sprite sGolemSprites23[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx24[] = INCBIN_U8("graphics/ax/mon/golem/sprite_24.4bpp");
-static const u8 sGolemGfx24_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_24_1.4bpp");
-static const u8 sGolemGfx24_2[] = INCBIN_U8("graphics/ax/mon/golem/sprite_24_2.4bpp");
+static const u8 sGolemGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_24.4bpp.lz");
+static const u8 sGolemGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_24_1.4bpp.lz");
+static const u8 sGolemGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_24_2.4bpp.lz");
 static const ax_sprite sGolemSprites24[] = {
 	{sGolemGfx24, ARRAY_COUNT(sGolemGfx24)}, 
 	{NULL, 32}, 
@@ -2293,8 +2293,8 @@ static const ax_sprite sGolemSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx25[] = INCBIN_U8("graphics/ax/mon/golem/sprite_25.4bpp");
-static const u8 sGolemGfx25_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_25_1.4bpp");
+static const u8 sGolemGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_25.4bpp.lz");
+static const u8 sGolemGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_25_1.4bpp.lz");
 static const ax_sprite sGolemSprites25[] = {
 	{sGolemGfx25, ARRAY_COUNT(sGolemGfx25)}, 
 	{NULL, 32}, 
@@ -2302,8 +2302,8 @@ static const ax_sprite sGolemSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx26[] = INCBIN_U8("graphics/ax/mon/golem/sprite_26.4bpp");
-static const u8 sGolemGfx26_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_26_1.4bpp");
+static const u8 sGolemGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_26.4bpp.lz");
+static const u8 sGolemGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_26_1.4bpp.lz");
 static const ax_sprite sGolemSprites26[] = {
 	{sGolemGfx26, ARRAY_COUNT(sGolemGfx26)}, 
 	{NULL, 32}, 
@@ -2311,8 +2311,8 @@ static const ax_sprite sGolemSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx27[] = INCBIN_U8("graphics/ax/mon/golem/sprite_27.4bpp");
-static const u8 sGolemGfx27_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_27_1.4bpp");
+static const u8 sGolemGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_27.4bpp.lz");
+static const u8 sGolemGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_27_1.4bpp.lz");
 static const ax_sprite sGolemSprites27[] = {
 	{sGolemGfx27, ARRAY_COUNT(sGolemGfx27)}, 
 	{NULL, 32}, 
@@ -2320,8 +2320,8 @@ static const ax_sprite sGolemSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx28[] = INCBIN_U8("graphics/ax/mon/golem/sprite_28.4bpp");
-static const u8 sGolemGfx28_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_28_1.4bpp");
+static const u8 sGolemGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_28.4bpp.lz");
+static const u8 sGolemGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_28_1.4bpp.lz");
 static const ax_sprite sGolemSprites28[] = {
 	{NULL, 32}, 
 	{sGolemGfx28, ARRAY_COUNT(sGolemGfx28)}, 
@@ -2330,14 +2330,14 @@ static const ax_sprite sGolemSprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx29[] = INCBIN_U8("graphics/ax/mon/golem/sprite_29.4bpp");
+static const u8 sGolemGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_29.4bpp.lz");
 static const ax_sprite sGolemSprites29[] = {
 	{sGolemGfx29, ARRAY_COUNT(sGolemGfx29)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx30[] = INCBIN_U8("graphics/ax/mon/golem/sprite_30.4bpp");
-static const u8 sGolemGfx30_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_30_1.4bpp");
+static const u8 sGolemGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_30.4bpp.lz");
+static const u8 sGolemGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_30_1.4bpp.lz");
 static const ax_sprite sGolemSprites30[] = {
 	{sGolemGfx30, ARRAY_COUNT(sGolemGfx30)}, 
 	{NULL, 32}, 
@@ -2345,14 +2345,14 @@ static const ax_sprite sGolemSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx31[] = INCBIN_U8("graphics/ax/mon/golem/sprite_31.4bpp");
+static const u8 sGolemGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_31.4bpp.lz");
 static const ax_sprite sGolemSprites31[] = {
 	{sGolemGfx31, ARRAY_COUNT(sGolemGfx31)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx32[] = INCBIN_U8("graphics/ax/mon/golem/sprite_32.4bpp");
-static const u8 sGolemGfx32_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_32_1.4bpp");
+static const u8 sGolemGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_32.4bpp.lz");
+static const u8 sGolemGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_32_1.4bpp.lz");
 static const ax_sprite sGolemSprites32[] = {
 	{sGolemGfx32, ARRAY_COUNT(sGolemGfx32)}, 
 	{NULL, 32}, 
@@ -2360,9 +2360,9 @@ static const ax_sprite sGolemSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx33[] = INCBIN_U8("graphics/ax/mon/golem/sprite_33.4bpp");
-static const u8 sGolemGfx33_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_33_1.4bpp");
-static const u8 sGolemGfx33_2[] = INCBIN_U8("graphics/ax/mon/golem/sprite_33_2.4bpp");
+static const u8 sGolemGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_33.4bpp.lz");
+static const u8 sGolemGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_33_1.4bpp.lz");
+static const u8 sGolemGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_33_2.4bpp.lz");
 static const ax_sprite sGolemSprites33[] = {
 	{sGolemGfx33, ARRAY_COUNT(sGolemGfx33)}, 
 	{NULL, 32}, 
@@ -2372,8 +2372,8 @@ static const ax_sprite sGolemSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx34[] = INCBIN_U8("graphics/ax/mon/golem/sprite_34.4bpp");
-static const u8 sGolemGfx34_1[] = INCBIN_U8("graphics/ax/mon/golem/sprite_34_1.4bpp");
+static const u8 sGolemGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_34.4bpp.lz");
+static const u8 sGolemGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_34_1.4bpp.lz");
 static const ax_sprite sGolemSprites34[] = {
 	{sGolemGfx34, ARRAY_COUNT(sGolemGfx34)}, 
 	{NULL, 32}, 
@@ -2381,63 +2381,63 @@ static const ax_sprite sGolemSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx35[] = INCBIN_U8("graphics/ax/mon/golem/sprite_35.4bpp");
+static const u8 sGolemGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_35.4bpp.lz");
 static const ax_sprite sGolemSprites35[] = {
 	{sGolemGfx35, ARRAY_COUNT(sGolemGfx35)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx36[] = INCBIN_U8("graphics/ax/mon/golem/sprite_36.4bpp");
+static const u8 sGolemGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_36.4bpp.lz");
 static const ax_sprite sGolemSprites36[] = {
 	{sGolemGfx36, ARRAY_COUNT(sGolemGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx37[] = INCBIN_U8("graphics/ax/mon/golem/sprite_37.4bpp");
+static const u8 sGolemGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_37.4bpp.lz");
 static const ax_sprite sGolemSprites37[] = {
 	{sGolemGfx37, ARRAY_COUNT(sGolemGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx38[] = INCBIN_U8("graphics/ax/mon/golem/sprite_38.4bpp");
+static const u8 sGolemGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_38.4bpp.lz");
 static const ax_sprite sGolemSprites38[] = {
 	{sGolemGfx38, ARRAY_COUNT(sGolemGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx39[] = INCBIN_U8("graphics/ax/mon/golem/sprite_39.4bpp");
+static const u8 sGolemGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_39.4bpp.lz");
 static const ax_sprite sGolemSprites39[] = {
 	{sGolemGfx39, ARRAY_COUNT(sGolemGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx40[] = INCBIN_U8("graphics/ax/mon/golem/sprite_40.4bpp");
+static const u8 sGolemGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_40.4bpp.lz");
 static const ax_sprite sGolemSprites40[] = {
 	{sGolemGfx40, ARRAY_COUNT(sGolemGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx41[] = INCBIN_U8("graphics/ax/mon/golem/sprite_41.4bpp");
+static const u8 sGolemGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_41.4bpp.lz");
 static const ax_sprite sGolemSprites41[] = {
 	{sGolemGfx41, ARRAY_COUNT(sGolemGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx42[] = INCBIN_U8("graphics/ax/mon/golem/sprite_42.4bpp");
+static const u8 sGolemGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_42.4bpp.lz");
 static const ax_sprite sGolemSprites42[] = {
 	{sGolemGfx42, ARRAY_COUNT(sGolemGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx43[] = INCBIN_U8("graphics/ax/mon/golem/sprite_43.4bpp");
+static const u8 sGolemGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_43.4bpp.lz");
 static const ax_sprite sGolemSprites43[] = {
 	{sGolemGfx43, ARRAY_COUNT(sGolemGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx44[] = INCBIN_U8("graphics/ax/mon/golem/sprite_44.4bpp");
+static const u8 sGolemGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_44.4bpp.lz");
 static const ax_sprite sGolemSprites44[] = {
 	{sGolemGfx44, ARRAY_COUNT(sGolemGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx45[] = INCBIN_U8("graphics/ax/mon/golem/sprite_45.4bpp");
+static const u8 sGolemGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_45.4bpp.lz");
 static const ax_sprite sGolemSprites45[] = {
 	{sGolemGfx45, ARRAY_COUNT(sGolemGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sGolemGfx46[] = INCBIN_U8("graphics/ax/mon/golem/sprite_46.4bpp");
+static const u8 sGolemGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golem/sprite_46.4bpp.lz");
 static const ax_sprite sGolemSprites46[] = {
 	{sGolemGfx46, ARRAY_COUNT(sGolemGfx46)}, 
 	{NULL, 0}

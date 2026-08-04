@@ -3220,83 +3220,83 @@ static const ax_anim sPsyduckAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPsyduckGfx1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_1.4bpp");
+static const u8 sPsyduckGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_1.4bpp.lz");
 static const ax_sprite sPsyduckSprites1[] = {
 	{sPsyduckGfx1, ARRAY_COUNT(sPsyduckGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_2.4bpp");
+static const u8 sPsyduckGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites2[] = {
 	{sPsyduckGfx2, ARRAY_COUNT(sPsyduckGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx3[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_3.4bpp");
+static const u8 sPsyduckGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_3.4bpp.lz");
 static const ax_sprite sPsyduckSprites3[] = {
 	{sPsyduckGfx3, ARRAY_COUNT(sPsyduckGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx4[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_4.4bpp");
+static const u8 sPsyduckGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_4.4bpp.lz");
 static const ax_sprite sPsyduckSprites4[] = {
 	{sPsyduckGfx4, ARRAY_COUNT(sPsyduckGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx5[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_5.4bpp");
+static const u8 sPsyduckGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_5.4bpp.lz");
 static const ax_sprite sPsyduckSprites5[] = {
 	{sPsyduckGfx5, ARRAY_COUNT(sPsyduckGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx6[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_6.4bpp");
+static const u8 sPsyduckGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_6.4bpp.lz");
 static const ax_sprite sPsyduckSprites6[] = {
 	{sPsyduckGfx6, ARRAY_COUNT(sPsyduckGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx7[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_7.4bpp");
+static const u8 sPsyduckGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_7.4bpp.lz");
 static const ax_sprite sPsyduckSprites7[] = {
 	{sPsyduckGfx7, ARRAY_COUNT(sPsyduckGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx8[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_8.4bpp");
+static const u8 sPsyduckGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_8.4bpp.lz");
 static const ax_sprite sPsyduckSprites8[] = {
 	{sPsyduckGfx8, ARRAY_COUNT(sPsyduckGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx9[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_9.4bpp");
+static const u8 sPsyduckGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_9.4bpp.lz");
 static const ax_sprite sPsyduckSprites9[] = {
 	{sPsyduckGfx9, ARRAY_COUNT(sPsyduckGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx10[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_10.4bpp");
+static const u8 sPsyduckGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_10.4bpp.lz");
 static const ax_sprite sPsyduckSprites10[] = {
 	{sPsyduckGfx10, ARRAY_COUNT(sPsyduckGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx11[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_11.4bpp");
+static const u8 sPsyduckGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_11.4bpp.lz");
 static const ax_sprite sPsyduckSprites11[] = {
 	{sPsyduckGfx11, ARRAY_COUNT(sPsyduckGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx12[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_12.4bpp");
+static const u8 sPsyduckGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_12.4bpp.lz");
 static const ax_sprite sPsyduckSprites12[] = {
 	{sPsyduckGfx12, ARRAY_COUNT(sPsyduckGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx13[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_13.4bpp");
+static const u8 sPsyduckGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_13.4bpp.lz");
 static const ax_sprite sPsyduckSprites13[] = {
 	{sPsyduckGfx13, ARRAY_COUNT(sPsyduckGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx14[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_14.4bpp");
+static const u8 sPsyduckGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_14.4bpp.lz");
 static const ax_sprite sPsyduckSprites14[] = {
 	{sPsyduckGfx14, ARRAY_COUNT(sPsyduckGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx15[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_15.4bpp");
+static const u8 sPsyduckGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_15.4bpp.lz");
 static const ax_sprite sPsyduckSprites15[] = {
 	{sPsyduckGfx15, ARRAY_COUNT(sPsyduckGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx16[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_16.4bpp");
-static const u8 sPsyduckGfx16_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_16_1.4bpp");
+static const u8 sPsyduckGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_16.4bpp.lz");
+static const u8 sPsyduckGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_16_1.4bpp.lz");
 static const ax_sprite sPsyduckSprites16[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx16, ARRAY_COUNT(sPsyduckGfx16)}, 
@@ -3305,9 +3305,9 @@ static const ax_sprite sPsyduckSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx17[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_17.4bpp");
-static const u8 sPsyduckGfx17_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_17_1.4bpp");
-static const u8 sPsyduckGfx17_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_17_2.4bpp");
+static const u8 sPsyduckGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_17.4bpp.lz");
+static const u8 sPsyduckGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_17_1.4bpp.lz");
+static const u8 sPsyduckGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_17_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites17[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx17, ARRAY_COUNT(sPsyduckGfx17)}, 
@@ -3318,9 +3318,9 @@ static const ax_sprite sPsyduckSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx18[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_18.4bpp");
-static const u8 sPsyduckGfx18_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_18_1.4bpp");
-static const u8 sPsyduckGfx18_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_18_2.4bpp");
+static const u8 sPsyduckGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_18.4bpp.lz");
+static const u8 sPsyduckGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_18_1.4bpp.lz");
+static const u8 sPsyduckGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_18_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites18[] = {
 	{NULL, 64}, 
 	{sPsyduckGfx18, ARRAY_COUNT(sPsyduckGfx18)}, 
@@ -3330,14 +3330,14 @@ static const ax_sprite sPsyduckSprites18[] = {
 	{sPsyduckGfx18_2, ARRAY_COUNT(sPsyduckGfx18_2)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx19[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_19.4bpp");
+static const u8 sPsyduckGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_19.4bpp.lz");
 static const ax_sprite sPsyduckSprites19[] = {
 	{NULL, 128}, 
 	{sPsyduckGfx19, ARRAY_COUNT(sPsyduckGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx20[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_20.4bpp");
-static const u8 sPsyduckGfx20_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_20_1.4bpp");
+static const u8 sPsyduckGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_20.4bpp.lz");
+static const u8 sPsyduckGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_20_1.4bpp.lz");
 static const ax_sprite sPsyduckSprites20[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx20, ARRAY_COUNT(sPsyduckGfx20)}, 
@@ -3346,8 +3346,8 @@ static const ax_sprite sPsyduckSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx21[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_21.4bpp");
-static const u8 sPsyduckGfx21_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_21_1.4bpp");
+static const u8 sPsyduckGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_21.4bpp.lz");
+static const u8 sPsyduckGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_21_1.4bpp.lz");
 static const ax_sprite sPsyduckSprites21[] = {
 	{sPsyduckGfx21, ARRAY_COUNT(sPsyduckGfx21)}, 
 	{NULL, 32}, 
@@ -3355,9 +3355,9 @@ static const ax_sprite sPsyduckSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx22[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_22.4bpp");
-static const u8 sPsyduckGfx22_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_22_1.4bpp");
-static const u8 sPsyduckGfx22_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_22_2.4bpp");
+static const u8 sPsyduckGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_22.4bpp.lz");
+static const u8 sPsyduckGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_22_1.4bpp.lz");
+static const u8 sPsyduckGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_22_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites22[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx22, ARRAY_COUNT(sPsyduckGfx22)}, 
@@ -3368,8 +3368,8 @@ static const ax_sprite sPsyduckSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx23[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_23.4bpp");
-static const u8 sPsyduckGfx23_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_23_1.4bpp");
+static const u8 sPsyduckGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_23.4bpp.lz");
+static const u8 sPsyduckGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_23_1.4bpp.lz");
 static const ax_sprite sPsyduckSprites23[] = {
 	{sPsyduckGfx23, ARRAY_COUNT(sPsyduckGfx23)}, 
 	{NULL, 32}, 
@@ -3377,9 +3377,9 @@ static const ax_sprite sPsyduckSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx24[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_24.4bpp");
-static const u8 sPsyduckGfx24_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_24_1.4bpp");
-static const u8 sPsyduckGfx24_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_24_2.4bpp");
+static const u8 sPsyduckGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_24.4bpp.lz");
+static const u8 sPsyduckGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_24_1.4bpp.lz");
+static const u8 sPsyduckGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_24_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites24[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx24, ARRAY_COUNT(sPsyduckGfx24)}, 
@@ -3390,9 +3390,9 @@ static const ax_sprite sPsyduckSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx25[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_25.4bpp");
-static const u8 sPsyduckGfx25_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_25_1.4bpp");
-static const u8 sPsyduckGfx25_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_25_2.4bpp");
+static const u8 sPsyduckGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_25.4bpp.lz");
+static const u8 sPsyduckGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_25_1.4bpp.lz");
+static const u8 sPsyduckGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_25_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites25[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx25, ARRAY_COUNT(sPsyduckGfx25)}, 
@@ -3403,8 +3403,8 @@ static const ax_sprite sPsyduckSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx26[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_26.4bpp");
-static const u8 sPsyduckGfx26_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_26_1.4bpp");
+static const u8 sPsyduckGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_26.4bpp.lz");
+static const u8 sPsyduckGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_26_1.4bpp.lz");
 static const ax_sprite sPsyduckSprites26[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx26, ARRAY_COUNT(sPsyduckGfx26)}, 
@@ -3413,9 +3413,9 @@ static const ax_sprite sPsyduckSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx27[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_27.4bpp");
-static const u8 sPsyduckGfx27_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_27_1.4bpp");
-static const u8 sPsyduckGfx27_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_27_2.4bpp");
+static const u8 sPsyduckGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_27.4bpp.lz");
+static const u8 sPsyduckGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_27_1.4bpp.lz");
+static const u8 sPsyduckGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_27_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites27[] = {
 	{sPsyduckGfx27, ARRAY_COUNT(sPsyduckGfx27)}, 
 	{NULL, 32}, 
@@ -3425,9 +3425,9 @@ static const ax_sprite sPsyduckSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx28[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_28.4bpp");
-static const u8 sPsyduckGfx28_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_28_1.4bpp");
-static const u8 sPsyduckGfx28_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_28_2.4bpp");
+static const u8 sPsyduckGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_28.4bpp.lz");
+static const u8 sPsyduckGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_28_1.4bpp.lz");
+static const u8 sPsyduckGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_28_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites28[] = {
 	{sPsyduckGfx28, ARRAY_COUNT(sPsyduckGfx28)}, 
 	{NULL, 32}, 
@@ -3437,16 +3437,16 @@ static const ax_sprite sPsyduckSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx29[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_29.4bpp");
+static const u8 sPsyduckGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_29.4bpp.lz");
 static const ax_sprite sPsyduckSprites29[] = {
 	{NULL, 96}, 
 	{sPsyduckGfx29, ARRAY_COUNT(sPsyduckGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx30[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_30.4bpp");
-static const u8 sPsyduckGfx30_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_30_1.4bpp");
-static const u8 sPsyduckGfx30_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_30_2.4bpp");
-static const u8 sPsyduckGfx30_3[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_30_3.4bpp");
+static const u8 sPsyduckGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_30.4bpp.lz");
+static const u8 sPsyduckGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_30_1.4bpp.lz");
+static const u8 sPsyduckGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_30_2.4bpp.lz");
+static const u8 sPsyduckGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_30_3.4bpp.lz");
 static const ax_sprite sPsyduckSprites30[] = {
 	{sPsyduckGfx30, ARRAY_COUNT(sPsyduckGfx30)}, 
 	{NULL, 64}, 
@@ -3458,16 +3458,16 @@ static const ax_sprite sPsyduckSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx31[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_31.4bpp");
+static const u8 sPsyduckGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_31.4bpp.lz");
 static const ax_sprite sPsyduckSprites31[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx31, ARRAY_COUNT(sPsyduckGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx32[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_32.4bpp");
-static const u8 sPsyduckGfx32_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_32_1.4bpp");
-static const u8 sPsyduckGfx32_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_32_2.4bpp");
-static const u8 sPsyduckGfx32_3[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_32_3.4bpp");
+static const u8 sPsyduckGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_32.4bpp.lz");
+static const u8 sPsyduckGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_32_1.4bpp.lz");
+static const u8 sPsyduckGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_32_2.4bpp.lz");
+static const u8 sPsyduckGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_32_3.4bpp.lz");
 static const ax_sprite sPsyduckSprites32[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx32, ARRAY_COUNT(sPsyduckGfx32)}, 
@@ -3480,8 +3480,8 @@ static const ax_sprite sPsyduckSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx33[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_33.4bpp");
-static const u8 sPsyduckGfx33_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_33_1.4bpp");
+static const u8 sPsyduckGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_33.4bpp.lz");
+static const u8 sPsyduckGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_33_1.4bpp.lz");
 static const ax_sprite sPsyduckSprites33[] = {
 	{NULL, 160}, 
 	{sPsyduckGfx33, ARRAY_COUNT(sPsyduckGfx33)}, 
@@ -3490,9 +3490,9 @@ static const ax_sprite sPsyduckSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx34[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_34.4bpp");
-static const u8 sPsyduckGfx34_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_34_1.4bpp");
-static const u8 sPsyduckGfx34_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_34_2.4bpp");
+static const u8 sPsyduckGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_34.4bpp.lz");
+static const u8 sPsyduckGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_34_1.4bpp.lz");
+static const u8 sPsyduckGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_34_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites34[] = {
 	{sPsyduckGfx34, ARRAY_COUNT(sPsyduckGfx34)}, 
 	{NULL, 32}, 
@@ -3502,15 +3502,15 @@ static const ax_sprite sPsyduckSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx35[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_35.4bpp");
+static const u8 sPsyduckGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_35.4bpp.lz");
 static const ax_sprite sPsyduckSprites35[] = {
 	{sPsyduckGfx35, ARRAY_COUNT(sPsyduckGfx35)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx36[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_36.4bpp");
-static const u8 sPsyduckGfx36_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_36_1.4bpp");
-static const u8 sPsyduckGfx36_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_36_2.4bpp");
+static const u8 sPsyduckGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_36.4bpp.lz");
+static const u8 sPsyduckGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_36_1.4bpp.lz");
+static const u8 sPsyduckGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_36_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites36[] = {
 	{sPsyduckGfx36, ARRAY_COUNT(sPsyduckGfx36)}, 
 	{NULL, 32}, 
@@ -3520,16 +3520,16 @@ static const ax_sprite sPsyduckSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx37[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_37.4bpp");
+static const u8 sPsyduckGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_37.4bpp.lz");
 static const ax_sprite sPsyduckSprites37[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx37, ARRAY_COUNT(sPsyduckGfx37)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx38[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_38.4bpp");
-static const u8 sPsyduckGfx38_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_38_1.4bpp");
-static const u8 sPsyduckGfx38_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_38_2.4bpp");
+static const u8 sPsyduckGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_38.4bpp.lz");
+static const u8 sPsyduckGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_38_1.4bpp.lz");
+static const u8 sPsyduckGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_38_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites38[] = {
 	{sPsyduckGfx38, ARRAY_COUNT(sPsyduckGfx38)}, 
 	{NULL, 32}, 
@@ -3539,9 +3539,9 @@ static const ax_sprite sPsyduckSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx39[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_39.4bpp");
-static const u8 sPsyduckGfx39_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_39_1.4bpp");
-static const u8 sPsyduckGfx39_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_39_2.4bpp");
+static const u8 sPsyduckGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_39.4bpp.lz");
+static const u8 sPsyduckGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_39_1.4bpp.lz");
+static const u8 sPsyduckGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_39_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites39[] = {
 	{NULL, 64}, 
 	{sPsyduckGfx39, ARRAY_COUNT(sPsyduckGfx39)}, 
@@ -3552,9 +3552,9 @@ static const ax_sprite sPsyduckSprites39[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx40[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_40.4bpp");
-static const u8 sPsyduckGfx40_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_40_1.4bpp");
-static const u8 sPsyduckGfx40_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_40_2.4bpp");
+static const u8 sPsyduckGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_40.4bpp.lz");
+static const u8 sPsyduckGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_40_1.4bpp.lz");
+static const u8 sPsyduckGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_40_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites40[] = {
 	{sPsyduckGfx40, ARRAY_COUNT(sPsyduckGfx40)}, 
 	{NULL, 32}, 
@@ -3564,14 +3564,14 @@ static const ax_sprite sPsyduckSprites40[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx41[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_41.4bpp");
+static const u8 sPsyduckGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_41.4bpp.lz");
 static const ax_sprite sPsyduckSprites41[] = {
 	{sPsyduckGfx41, ARRAY_COUNT(sPsyduckGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx42[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_42.4bpp");
-static const u8 sPsyduckGfx42_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_42_1.4bpp");
-static const u8 sPsyduckGfx42_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_42_2.4bpp");
+static const u8 sPsyduckGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_42.4bpp.lz");
+static const u8 sPsyduckGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_42_1.4bpp.lz");
+static const u8 sPsyduckGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_42_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites42[] = {
 	{sPsyduckGfx42, ARRAY_COUNT(sPsyduckGfx42)}, 
 	{NULL, 32}, 
@@ -3581,9 +3581,9 @@ static const ax_sprite sPsyduckSprites42[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx43[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_43.4bpp");
-static const u8 sPsyduckGfx43_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_43_1.4bpp");
-static const u8 sPsyduckGfx43_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_43_2.4bpp");
+static const u8 sPsyduckGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_43.4bpp.lz");
+static const u8 sPsyduckGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_43_1.4bpp.lz");
+static const u8 sPsyduckGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_43_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites43[] = {
 	{sPsyduckGfx43, ARRAY_COUNT(sPsyduckGfx43)}, 
 	{NULL, 32}, 
@@ -3593,10 +3593,10 @@ static const ax_sprite sPsyduckSprites43[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx44[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_44.4bpp");
-static const u8 sPsyduckGfx44_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_44_1.4bpp");
-static const u8 sPsyduckGfx44_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_44_2.4bpp");
-static const u8 sPsyduckGfx44_3[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_44_3.4bpp");
+static const u8 sPsyduckGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_44.4bpp.lz");
+static const u8 sPsyduckGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_44_1.4bpp.lz");
+static const u8 sPsyduckGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_44_2.4bpp.lz");
+static const u8 sPsyduckGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_44_3.4bpp.lz");
 static const ax_sprite sPsyduckSprites44[] = {
 	{sPsyduckGfx44, ARRAY_COUNT(sPsyduckGfx44)}, 
 	{NULL, 32}, 
@@ -3608,10 +3608,10 @@ static const ax_sprite sPsyduckSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx45[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_45.4bpp");
-static const u8 sPsyduckGfx45_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_45_1.4bpp");
-static const u8 sPsyduckGfx45_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_45_2.4bpp");
-static const u8 sPsyduckGfx45_3[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_45_3.4bpp");
+static const u8 sPsyduckGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_45.4bpp.lz");
+static const u8 sPsyduckGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_45_1.4bpp.lz");
+static const u8 sPsyduckGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_45_2.4bpp.lz");
+static const u8 sPsyduckGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_45_3.4bpp.lz");
 static const ax_sprite sPsyduckSprites45[] = {
 	{NULL, 32}, 
 	{sPsyduckGfx45, ARRAY_COUNT(sPsyduckGfx45)}, 
@@ -3624,9 +3624,9 @@ static const ax_sprite sPsyduckSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx46[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_46.4bpp");
-static const u8 sPsyduckGfx46_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_46_1.4bpp");
-static const u8 sPsyduckGfx46_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_46_2.4bpp");
+static const u8 sPsyduckGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_46.4bpp.lz");
+static const u8 sPsyduckGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_46_1.4bpp.lz");
+static const u8 sPsyduckGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_46_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites46[] = {
 	{sPsyduckGfx46, ARRAY_COUNT(sPsyduckGfx46)}, 
 	{NULL, 32}, 
@@ -3636,9 +3636,9 @@ static const ax_sprite sPsyduckSprites46[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx47[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_47.4bpp");
-static const u8 sPsyduckGfx47_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_47_1.4bpp");
-static const u8 sPsyduckGfx47_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_47_2.4bpp");
+static const u8 sPsyduckGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_47.4bpp.lz");
+static const u8 sPsyduckGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_47_1.4bpp.lz");
+static const u8 sPsyduckGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_47_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites47[] = {
 	{sPsyduckGfx47, ARRAY_COUNT(sPsyduckGfx47)}, 
 	{NULL, 32}, 
@@ -3648,9 +3648,9 @@ static const ax_sprite sPsyduckSprites47[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx48[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_48.4bpp");
-static const u8 sPsyduckGfx48_1[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_48_1.4bpp");
-static const u8 sPsyduckGfx48_2[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_48_2.4bpp");
+static const u8 sPsyduckGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_48.4bpp.lz");
+static const u8 sPsyduckGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_48_1.4bpp.lz");
+static const u8 sPsyduckGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_48_2.4bpp.lz");
 static const ax_sprite sPsyduckSprites48[] = {
 	{sPsyduckGfx48, ARRAY_COUNT(sPsyduckGfx48)}, 
 	{NULL, 32}, 
@@ -3660,187 +3660,187 @@ static const ax_sprite sPsyduckSprites48[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx49[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_49.4bpp");
+static const u8 sPsyduckGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_49.4bpp.lz");
 static const ax_sprite sPsyduckSprites49[] = {
 	{sPsyduckGfx49, ARRAY_COUNT(sPsyduckGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx50[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_50.4bpp");
+static const u8 sPsyduckGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_50.4bpp.lz");
 static const ax_sprite sPsyduckSprites50[] = {
 	{sPsyduckGfx50, ARRAY_COUNT(sPsyduckGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx51[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_51.4bpp");
+static const u8 sPsyduckGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_51.4bpp.lz");
 static const ax_sprite sPsyduckSprites51[] = {
 	{sPsyduckGfx51, ARRAY_COUNT(sPsyduckGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx52[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_52.4bpp");
+static const u8 sPsyduckGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_52.4bpp.lz");
 static const ax_sprite sPsyduckSprites52[] = {
 	{sPsyduckGfx52, ARRAY_COUNT(sPsyduckGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx53[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_53.4bpp");
+static const u8 sPsyduckGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_53.4bpp.lz");
 static const ax_sprite sPsyduckSprites53[] = {
 	{sPsyduckGfx53, ARRAY_COUNT(sPsyduckGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx54[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_54.4bpp");
+static const u8 sPsyduckGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_54.4bpp.lz");
 static const ax_sprite sPsyduckSprites54[] = {
 	{sPsyduckGfx54, ARRAY_COUNT(sPsyduckGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx55[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_55.4bpp");
+static const u8 sPsyduckGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_55.4bpp.lz");
 static const ax_sprite sPsyduckSprites55[] = {
 	{sPsyduckGfx55, ARRAY_COUNT(sPsyduckGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx56[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_56.4bpp");
+static const u8 sPsyduckGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_56.4bpp.lz");
 static const ax_sprite sPsyduckSprites56[] = {
 	{sPsyduckGfx56, ARRAY_COUNT(sPsyduckGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx57[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_57.4bpp");
+static const u8 sPsyduckGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_57.4bpp.lz");
 static const ax_sprite sPsyduckSprites57[] = {
 	{sPsyduckGfx57, ARRAY_COUNT(sPsyduckGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx58[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_58.4bpp");
+static const u8 sPsyduckGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_58.4bpp.lz");
 static const ax_sprite sPsyduckSprites58[] = {
 	{sPsyduckGfx58, ARRAY_COUNT(sPsyduckGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx59[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_59.4bpp");
+static const u8 sPsyduckGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_59.4bpp.lz");
 static const ax_sprite sPsyduckSprites59[] = {
 	{sPsyduckGfx59, ARRAY_COUNT(sPsyduckGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx60[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_60.4bpp");
+static const u8 sPsyduckGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_60.4bpp.lz");
 static const ax_sprite sPsyduckSprites60[] = {
 	{sPsyduckGfx60, ARRAY_COUNT(sPsyduckGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx61[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_61.4bpp");
+static const u8 sPsyduckGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_61.4bpp.lz");
 static const ax_sprite sPsyduckSprites61[] = {
 	{sPsyduckGfx61, ARRAY_COUNT(sPsyduckGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx62[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_62.4bpp");
+static const u8 sPsyduckGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_62.4bpp.lz");
 static const ax_sprite sPsyduckSprites62[] = {
 	{sPsyduckGfx62, ARRAY_COUNT(sPsyduckGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx63[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_63.4bpp");
+static const u8 sPsyduckGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_63.4bpp.lz");
 static const ax_sprite sPsyduckSprites63[] = {
 	{sPsyduckGfx63, ARRAY_COUNT(sPsyduckGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx64[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_64.4bpp");
+static const u8 sPsyduckGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_64.4bpp.lz");
 static const ax_sprite sPsyduckSprites64[] = {
 	{sPsyduckGfx64, ARRAY_COUNT(sPsyduckGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx65[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_65.4bpp");
+static const u8 sPsyduckGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_65.4bpp.lz");
 static const ax_sprite sPsyduckSprites65[] = {
 	{sPsyduckGfx65, ARRAY_COUNT(sPsyduckGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx66[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_66.4bpp");
+static const u8 sPsyduckGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_66.4bpp.lz");
 static const ax_sprite sPsyduckSprites66[] = {
 	{sPsyduckGfx66, ARRAY_COUNT(sPsyduckGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx67[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_67.4bpp");
+static const u8 sPsyduckGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_67.4bpp.lz");
 static const ax_sprite sPsyduckSprites67[] = {
 	{sPsyduckGfx67, ARRAY_COUNT(sPsyduckGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx68[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_68.4bpp");
+static const u8 sPsyduckGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_68.4bpp.lz");
 static const ax_sprite sPsyduckSprites68[] = {
 	{sPsyduckGfx68, ARRAY_COUNT(sPsyduckGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx69[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_69.4bpp");
+static const u8 sPsyduckGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_69.4bpp.lz");
 static const ax_sprite sPsyduckSprites69[] = {
 	{sPsyduckGfx69, ARRAY_COUNT(sPsyduckGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx70[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_70.4bpp");
+static const u8 sPsyduckGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_70.4bpp.lz");
 static const ax_sprite sPsyduckSprites70[] = {
 	{sPsyduckGfx70, ARRAY_COUNT(sPsyduckGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx71[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_71.4bpp");
+static const u8 sPsyduckGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_71.4bpp.lz");
 static const ax_sprite sPsyduckSprites71[] = {
 	{sPsyduckGfx71, ARRAY_COUNT(sPsyduckGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx72[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_72.4bpp");
+static const u8 sPsyduckGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_72.4bpp.lz");
 static const ax_sprite sPsyduckSprites72[] = {
 	{sPsyduckGfx72, ARRAY_COUNT(sPsyduckGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx73[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_73.4bpp");
+static const u8 sPsyduckGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_73.4bpp.lz");
 static const ax_sprite sPsyduckSprites73[] = {
 	{sPsyduckGfx73, ARRAY_COUNT(sPsyduckGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx74[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_74.4bpp");
+static const u8 sPsyduckGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_74.4bpp.lz");
 static const ax_sprite sPsyduckSprites74[] = {
 	{sPsyduckGfx74, ARRAY_COUNT(sPsyduckGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx75[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_75.4bpp");
+static const u8 sPsyduckGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_75.4bpp.lz");
 static const ax_sprite sPsyduckSprites75[] = {
 	{sPsyduckGfx75, ARRAY_COUNT(sPsyduckGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx76[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_76.4bpp");
+static const u8 sPsyduckGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_76.4bpp.lz");
 static const ax_sprite sPsyduckSprites76[] = {
 	{sPsyduckGfx76, ARRAY_COUNT(sPsyduckGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx77[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_77.4bpp");
+static const u8 sPsyduckGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_77.4bpp.lz");
 static const ax_sprite sPsyduckSprites77[] = {
 	{sPsyduckGfx77, ARRAY_COUNT(sPsyduckGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx78[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_78.4bpp");
+static const u8 sPsyduckGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_78.4bpp.lz");
 static const ax_sprite sPsyduckSprites78[] = {
 	{sPsyduckGfx78, ARRAY_COUNT(sPsyduckGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx79[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_79.4bpp");
+static const u8 sPsyduckGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_79.4bpp.lz");
 static const ax_sprite sPsyduckSprites79[] = {
 	{sPsyduckGfx79, ARRAY_COUNT(sPsyduckGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx80[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_80.4bpp");
+static const u8 sPsyduckGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_80.4bpp.lz");
 static const ax_sprite sPsyduckSprites80[] = {
 	{sPsyduckGfx80, ARRAY_COUNT(sPsyduckGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx81[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_81.4bpp");
+static const u8 sPsyduckGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_81.4bpp.lz");
 static const ax_sprite sPsyduckSprites81[] = {
 	{sPsyduckGfx81, ARRAY_COUNT(sPsyduckGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx82[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_82.4bpp");
+static const u8 sPsyduckGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_82.4bpp.lz");
 static const ax_sprite sPsyduckSprites82[] = {
 	{sPsyduckGfx82, ARRAY_COUNT(sPsyduckGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx83[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_83.4bpp");
+static const u8 sPsyduckGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_83.4bpp.lz");
 static const ax_sprite sPsyduckSprites83[] = {
 	{sPsyduckGfx83, ARRAY_COUNT(sPsyduckGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx84[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_84.4bpp");
+static const u8 sPsyduckGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_84.4bpp.lz");
 static const ax_sprite sPsyduckSprites84[] = {
 	{sPsyduckGfx84, ARRAY_COUNT(sPsyduckGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sPsyduckGfx85[] = INCBIN_U8("graphics/ax/mon/psyduck/sprite_85.4bpp");
+static const u8 sPsyduckGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/psyduck/sprite_85.4bpp.lz");
 static const ax_sprite sPsyduckSprites85[] = {
 	{sPsyduckGfx85, ARRAY_COUNT(sPsyduckGfx85)}, 
 	{NULL, 0}

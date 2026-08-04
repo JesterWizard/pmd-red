@@ -2103,85 +2103,85 @@ static const ax_anim sSharpedoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSharpedoGfx1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_1.4bpp");
+static const u8 sSharpedoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_1.4bpp.lz");
 static const ax_sprite sSharpedoSprites1[] = {
 	{sSharpedoGfx1, ARRAY_COUNT(sSharpedoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx2[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_2.4bpp");
+static const u8 sSharpedoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_2.4bpp.lz");
 static const ax_sprite sSharpedoSprites2[] = {
 	{sSharpedoGfx2, ARRAY_COUNT(sSharpedoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx3[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_3.4bpp");
+static const u8 sSharpedoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_3.4bpp.lz");
 static const ax_sprite sSharpedoSprites3[] = {
 	{sSharpedoGfx3, ARRAY_COUNT(sSharpedoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx4[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_4.4bpp");
+static const u8 sSharpedoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_4.4bpp.lz");
 static const ax_sprite sSharpedoSprites4[] = {
 	{sSharpedoGfx4, ARRAY_COUNT(sSharpedoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx5[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_5.4bpp");
+static const u8 sSharpedoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_5.4bpp.lz");
 static const ax_sprite sSharpedoSprites5[] = {
 	{sSharpedoGfx5, ARRAY_COUNT(sSharpedoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx6[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_6.4bpp");
+static const u8 sSharpedoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_6.4bpp.lz");
 static const ax_sprite sSharpedoSprites6[] = {
 	{sSharpedoGfx6, ARRAY_COUNT(sSharpedoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx7[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_7.4bpp");
+static const u8 sSharpedoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_7.4bpp.lz");
 static const ax_sprite sSharpedoSprites7[] = {
 	{sSharpedoGfx7, ARRAY_COUNT(sSharpedoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx8[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_8.4bpp");
+static const u8 sSharpedoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_8.4bpp.lz");
 static const ax_sprite sSharpedoSprites8[] = {
 	{sSharpedoGfx8, ARRAY_COUNT(sSharpedoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx9[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_9.4bpp");
+static const u8 sSharpedoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_9.4bpp.lz");
 static const ax_sprite sSharpedoSprites9[] = {
 	{sSharpedoGfx9, ARRAY_COUNT(sSharpedoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx10[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_10.4bpp");
+static const u8 sSharpedoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_10.4bpp.lz");
 static const ax_sprite sSharpedoSprites10[] = {
 	{sSharpedoGfx10, ARRAY_COUNT(sSharpedoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx11[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_11.4bpp");
+static const u8 sSharpedoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_11.4bpp.lz");
 static const ax_sprite sSharpedoSprites11[] = {
 	{sSharpedoGfx11, ARRAY_COUNT(sSharpedoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx12[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_12.4bpp");
+static const u8 sSharpedoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_12.4bpp.lz");
 static const ax_sprite sSharpedoSprites12[] = {
 	{sSharpedoGfx12, ARRAY_COUNT(sSharpedoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx13[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_13.4bpp");
+static const u8 sSharpedoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_13.4bpp.lz");
 static const ax_sprite sSharpedoSprites13[] = {
 	{sSharpedoGfx13, ARRAY_COUNT(sSharpedoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx14[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_14.4bpp");
+static const u8 sSharpedoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_14.4bpp.lz");
 static const ax_sprite sSharpedoSprites14[] = {
 	{sSharpedoGfx14, ARRAY_COUNT(sSharpedoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx15[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_15.4bpp");
+static const u8 sSharpedoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_15.4bpp.lz");
 static const ax_sprite sSharpedoSprites15[] = {
 	{sSharpedoGfx15, ARRAY_COUNT(sSharpedoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx16[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_16.4bpp");
-static const u8 sSharpedoGfx16_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_16_1.4bpp");
-static const u8 sSharpedoGfx16_2[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_16_2.4bpp");
-static const u8 sSharpedoGfx16_3[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_16_3.4bpp");
+static const u8 sSharpedoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_16.4bpp.lz");
+static const u8 sSharpedoGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_16_1.4bpp.lz");
+static const u8 sSharpedoGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_16_2.4bpp.lz");
+static const u8 sSharpedoGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_16_3.4bpp.lz");
 static const ax_sprite sSharpedoSprites16[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx16, ARRAY_COUNT(sSharpedoGfx16)}, 
@@ -2194,10 +2194,10 @@ static const ax_sprite sSharpedoSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx17[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_17.4bpp");
-static const u8 sSharpedoGfx17_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_17_1.4bpp");
-static const u8 sSharpedoGfx17_2[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_17_2.4bpp");
-static const u8 sSharpedoGfx17_3[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_17_3.4bpp");
+static const u8 sSharpedoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_17.4bpp.lz");
+static const u8 sSharpedoGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_17_1.4bpp.lz");
+static const u8 sSharpedoGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_17_2.4bpp.lz");
+static const u8 sSharpedoGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_17_3.4bpp.lz");
 static const ax_sprite sSharpedoSprites17[] = {
 	{NULL, 64}, 
 	{sSharpedoGfx17, ARRAY_COUNT(sSharpedoGfx17)}, 
@@ -2209,10 +2209,10 @@ static const ax_sprite sSharpedoSprites17[] = {
 	{sSharpedoGfx17_3, ARRAY_COUNT(sSharpedoGfx17_3)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx18[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_18.4bpp");
-static const u8 sSharpedoGfx18_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_18_1.4bpp");
-static const u8 sSharpedoGfx18_2[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_18_2.4bpp");
-static const u8 sSharpedoGfx18_3[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_18_3.4bpp");
+static const u8 sSharpedoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_18.4bpp.lz");
+static const u8 sSharpedoGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_18_1.4bpp.lz");
+static const u8 sSharpedoGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_18_2.4bpp.lz");
+static const u8 sSharpedoGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_18_3.4bpp.lz");
 static const ax_sprite sSharpedoSprites18[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx18, ARRAY_COUNT(sSharpedoGfx18)}, 
@@ -2225,8 +2225,8 @@ static const ax_sprite sSharpedoSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx19[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_19.4bpp");
-static const u8 sSharpedoGfx19_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_19_1.4bpp");
+static const u8 sSharpedoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_19.4bpp.lz");
+static const u8 sSharpedoGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_19_1.4bpp.lz");
 static const ax_sprite sSharpedoSprites19[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx19, ARRAY_COUNT(sSharpedoGfx19)}, 
@@ -2235,10 +2235,10 @@ static const ax_sprite sSharpedoSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx20[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_20.4bpp");
-static const u8 sSharpedoGfx20_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_20_1.4bpp");
-static const u8 sSharpedoGfx20_2[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_20_2.4bpp");
-static const u8 sSharpedoGfx20_3[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_20_3.4bpp");
+static const u8 sSharpedoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_20.4bpp.lz");
+static const u8 sSharpedoGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_20_1.4bpp.lz");
+static const u8 sSharpedoGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_20_2.4bpp.lz");
+static const u8 sSharpedoGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_20_3.4bpp.lz");
 static const ax_sprite sSharpedoSprites20[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx20, ARRAY_COUNT(sSharpedoGfx20)}, 
@@ -2251,9 +2251,9 @@ static const ax_sprite sSharpedoSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx21[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_21.4bpp");
-static const u8 sSharpedoGfx21_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_21_1.4bpp");
-static const u8 sSharpedoGfx21_2[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_21_2.4bpp");
+static const u8 sSharpedoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_21.4bpp.lz");
+static const u8 sSharpedoGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_21_1.4bpp.lz");
+static const u8 sSharpedoGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_21_2.4bpp.lz");
 static const ax_sprite sSharpedoSprites21[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx21, ARRAY_COUNT(sSharpedoGfx21)}, 
@@ -2264,8 +2264,8 @@ static const ax_sprite sSharpedoSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx22[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_22.4bpp");
-static const u8 sSharpedoGfx22_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_22_1.4bpp");
+static const u8 sSharpedoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_22.4bpp.lz");
+static const u8 sSharpedoGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_22_1.4bpp.lz");
 static const ax_sprite sSharpedoSprites22[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx22, ARRAY_COUNT(sSharpedoGfx22)}, 
@@ -2274,10 +2274,10 @@ static const ax_sprite sSharpedoSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx23[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_23.4bpp");
-static const u8 sSharpedoGfx23_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_23_1.4bpp");
-static const u8 sSharpedoGfx23_2[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_23_2.4bpp");
-static const u8 sSharpedoGfx23_3[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_23_3.4bpp");
+static const u8 sSharpedoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_23.4bpp.lz");
+static const u8 sSharpedoGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_23_1.4bpp.lz");
+static const u8 sSharpedoGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_23_2.4bpp.lz");
+static const u8 sSharpedoGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_23_3.4bpp.lz");
 static const ax_sprite sSharpedoSprites23[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx23, ARRAY_COUNT(sSharpedoGfx23)}, 
@@ -2290,8 +2290,8 @@ static const ax_sprite sSharpedoSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx24[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_24.4bpp");
-static const u8 sSharpedoGfx24_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_24_1.4bpp");
+static const u8 sSharpedoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_24.4bpp.lz");
+static const u8 sSharpedoGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_24_1.4bpp.lz");
 static const ax_sprite sSharpedoSprites24[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx24, ARRAY_COUNT(sSharpedoGfx24)}, 
@@ -2300,10 +2300,10 @@ static const ax_sprite sSharpedoSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx25[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_25.4bpp");
-static const u8 sSharpedoGfx25_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_25_1.4bpp");
-static const u8 sSharpedoGfx25_2[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_25_2.4bpp");
-static const u8 sSharpedoGfx25_3[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_25_3.4bpp");
+static const u8 sSharpedoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_25.4bpp.lz");
+static const u8 sSharpedoGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_25_1.4bpp.lz");
+static const u8 sSharpedoGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_25_2.4bpp.lz");
+static const u8 sSharpedoGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_25_3.4bpp.lz");
 static const ax_sprite sSharpedoSprites25[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx25, ARRAY_COUNT(sSharpedoGfx25)}, 
@@ -2316,180 +2316,180 @@ static const ax_sprite sSharpedoSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx26[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_26.4bpp");
-static const u8 sSharpedoGfx26_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_26_1.4bpp");
+static const u8 sSharpedoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_26.4bpp.lz");
+static const u8 sSharpedoGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_26_1.4bpp.lz");
 static const ax_sprite sSharpedoSprites26[] = {
 	{sSharpedoGfx26, ARRAY_COUNT(sSharpedoGfx26)}, 
 	{NULL, 32}, 
 	{sSharpedoGfx26_1, ARRAY_COUNT(sSharpedoGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx27[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_27.4bpp");
+static const u8 sSharpedoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_27.4bpp.lz");
 static const ax_sprite sSharpedoSprites27[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx27, ARRAY_COUNT(sSharpedoGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx28[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_28.4bpp");
+static const u8 sSharpedoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_28.4bpp.lz");
 static const ax_sprite sSharpedoSprites28[] = {
 	{sSharpedoGfx28, ARRAY_COUNT(sSharpedoGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx29[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_29.4bpp");
+static const u8 sSharpedoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_29.4bpp.lz");
 static const ax_sprite sSharpedoSprites29[] = {
 	{sSharpedoGfx29, ARRAY_COUNT(sSharpedoGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx30[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_30.4bpp");
+static const u8 sSharpedoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_30.4bpp.lz");
 static const ax_sprite sSharpedoSprites30[] = {
 	{sSharpedoGfx30, ARRAY_COUNT(sSharpedoGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx31[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_31.4bpp");
+static const u8 sSharpedoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_31.4bpp.lz");
 static const ax_sprite sSharpedoSprites31[] = {
 	{sSharpedoGfx31, ARRAY_COUNT(sSharpedoGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx32[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_32.4bpp");
+static const u8 sSharpedoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_32.4bpp.lz");
 static const ax_sprite sSharpedoSprites32[] = {
 	{sSharpedoGfx32, ARRAY_COUNT(sSharpedoGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx33[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_33.4bpp");
+static const u8 sSharpedoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_33.4bpp.lz");
 static const ax_sprite sSharpedoSprites33[] = {
 	{sSharpedoGfx33, ARRAY_COUNT(sSharpedoGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx34[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_34.4bpp");
+static const u8 sSharpedoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_34.4bpp.lz");
 static const ax_sprite sSharpedoSprites34[] = {
 	{sSharpedoGfx34, ARRAY_COUNT(sSharpedoGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx35[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_35.4bpp");
+static const u8 sSharpedoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_35.4bpp.lz");
 static const ax_sprite sSharpedoSprites35[] = {
 	{sSharpedoGfx35, ARRAY_COUNT(sSharpedoGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx36[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_36.4bpp");
+static const u8 sSharpedoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_36.4bpp.lz");
 static const ax_sprite sSharpedoSprites36[] = {
 	{sSharpedoGfx36, ARRAY_COUNT(sSharpedoGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx37[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_37.4bpp");
+static const u8 sSharpedoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_37.4bpp.lz");
 static const ax_sprite sSharpedoSprites37[] = {
 	{sSharpedoGfx37, ARRAY_COUNT(sSharpedoGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx38[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_38.4bpp");
-static const u8 sSharpedoGfx38_1[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_38_1.4bpp");
+static const u8 sSharpedoGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_38.4bpp.lz");
+static const u8 sSharpedoGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_38_1.4bpp.lz");
 static const ax_sprite sSharpedoSprites38[] = {
 	{sSharpedoGfx38, ARRAY_COUNT(sSharpedoGfx38)}, 
 	{NULL, 32}, 
 	{sSharpedoGfx38_1, ARRAY_COUNT(sSharpedoGfx38_1)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx39[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_39.4bpp");
+static const u8 sSharpedoGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_39.4bpp.lz");
 static const ax_sprite sSharpedoSprites39[] = {
 	{sSharpedoGfx39, ARRAY_COUNT(sSharpedoGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx40[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_40.4bpp");
+static const u8 sSharpedoGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_40.4bpp.lz");
 static const ax_sprite sSharpedoSprites40[] = {
 	{sSharpedoGfx40, ARRAY_COUNT(sSharpedoGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx41[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_41.4bpp");
+static const u8 sSharpedoGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_41.4bpp.lz");
 static const ax_sprite sSharpedoSprites41[] = {
 	{sSharpedoGfx41, ARRAY_COUNT(sSharpedoGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx42[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_42.4bpp");
+static const u8 sSharpedoGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_42.4bpp.lz");
 static const ax_sprite sSharpedoSprites42[] = {
 	{sSharpedoGfx42, ARRAY_COUNT(sSharpedoGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx43[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_43.4bpp");
+static const u8 sSharpedoGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_43.4bpp.lz");
 static const ax_sprite sSharpedoSprites43[] = {
 	{sSharpedoGfx43, ARRAY_COUNT(sSharpedoGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx44[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_44.4bpp");
+static const u8 sSharpedoGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_44.4bpp.lz");
 static const ax_sprite sSharpedoSprites44[] = {
 	{sSharpedoGfx44, ARRAY_COUNT(sSharpedoGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx45[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_45.4bpp");
+static const u8 sSharpedoGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_45.4bpp.lz");
 static const ax_sprite sSharpedoSprites45[] = {
 	{sSharpedoGfx45, ARRAY_COUNT(sSharpedoGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx46[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_46.4bpp");
+static const u8 sSharpedoGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_46.4bpp.lz");
 static const ax_sprite sSharpedoSprites46[] = {
 	{sSharpedoGfx46, ARRAY_COUNT(sSharpedoGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx47[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_47.4bpp");
+static const u8 sSharpedoGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_47.4bpp.lz");
 static const ax_sprite sSharpedoSprites47[] = {
 	{sSharpedoGfx47, ARRAY_COUNT(sSharpedoGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx48[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_48.4bpp");
+static const u8 sSharpedoGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_48.4bpp.lz");
 static const ax_sprite sSharpedoSprites48[] = {
 	{NULL, 32}, 
 	{sSharpedoGfx48, ARRAY_COUNT(sSharpedoGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx49[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_49.4bpp");
+static const u8 sSharpedoGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_49.4bpp.lz");
 static const ax_sprite sSharpedoSprites49[] = {
 	{sSharpedoGfx49, ARRAY_COUNT(sSharpedoGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx50[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_50.4bpp");
+static const u8 sSharpedoGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_50.4bpp.lz");
 static const ax_sprite sSharpedoSprites50[] = {
 	{sSharpedoGfx50, ARRAY_COUNT(sSharpedoGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx51[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_51.4bpp");
+static const u8 sSharpedoGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_51.4bpp.lz");
 static const ax_sprite sSharpedoSprites51[] = {
 	{sSharpedoGfx51, ARRAY_COUNT(sSharpedoGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx52[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_52.4bpp");
+static const u8 sSharpedoGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_52.4bpp.lz");
 static const ax_sprite sSharpedoSprites52[] = {
 	{sSharpedoGfx52, ARRAY_COUNT(sSharpedoGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx53[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_53.4bpp");
+static const u8 sSharpedoGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_53.4bpp.lz");
 static const ax_sprite sSharpedoSprites53[] = {
 	{sSharpedoGfx53, ARRAY_COUNT(sSharpedoGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx54[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_54.4bpp");
+static const u8 sSharpedoGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_54.4bpp.lz");
 static const ax_sprite sSharpedoSprites54[] = {
 	{sSharpedoGfx54, ARRAY_COUNT(sSharpedoGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx55[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_55.4bpp");
+static const u8 sSharpedoGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_55.4bpp.lz");
 static const ax_sprite sSharpedoSprites55[] = {
 	{sSharpedoGfx55, ARRAY_COUNT(sSharpedoGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx56[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_56.4bpp");
+static const u8 sSharpedoGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_56.4bpp.lz");
 static const ax_sprite sSharpedoSprites56[] = {
 	{sSharpedoGfx56, ARRAY_COUNT(sSharpedoGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx57[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_57.4bpp");
+static const u8 sSharpedoGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_57.4bpp.lz");
 static const ax_sprite sSharpedoSprites57[] = {
 	{sSharpedoGfx57, ARRAY_COUNT(sSharpedoGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx58[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_58.4bpp");
+static const u8 sSharpedoGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_58.4bpp.lz");
 static const ax_sprite sSharpedoSprites58[] = {
 	{sSharpedoGfx58, ARRAY_COUNT(sSharpedoGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sSharpedoGfx59[] = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_59.4bpp");
+static const u8 sSharpedoGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sharpedo/sprite_59.4bpp.lz");
 static const ax_sprite sSharpedoSprites59[] = {
 	{sSharpedoGfx59, ARRAY_COUNT(sSharpedoGfx59)}, 
 	{NULL, 0}

@@ -2336,95 +2336,95 @@ static const ax_anim sShiftryAnims_15_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sShiftryGfx1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_1.4bpp");
+static const u8 sShiftryGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_1.4bpp.lz");
 static const ax_sprite sShiftrySprites1[] = {
 	{sShiftryGfx1, ARRAY_COUNT(sShiftryGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_2.4bpp");
+static const u8 sShiftryGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_2.4bpp.lz");
 static const ax_sprite sShiftrySprites2[] = {
 	{sShiftryGfx2, ARRAY_COUNT(sShiftryGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx3[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_3.4bpp");
+static const u8 sShiftryGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_3.4bpp.lz");
 static const ax_sprite sShiftrySprites3[] = {
 	{sShiftryGfx3, ARRAY_COUNT(sShiftryGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx4[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_4.4bpp");
+static const u8 sShiftryGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_4.4bpp.lz");
 static const ax_sprite sShiftrySprites4[] = {
 	{sShiftryGfx4, ARRAY_COUNT(sShiftryGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx5[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_5.4bpp");
+static const u8 sShiftryGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_5.4bpp.lz");
 static const ax_sprite sShiftrySprites5[] = {
 	{sShiftryGfx5, ARRAY_COUNT(sShiftryGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx6[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_6.4bpp");
+static const u8 sShiftryGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_6.4bpp.lz");
 static const ax_sprite sShiftrySprites6[] = {
 	{sShiftryGfx6, ARRAY_COUNT(sShiftryGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx7[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_7.4bpp");
+static const u8 sShiftryGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_7.4bpp.lz");
 static const ax_sprite sShiftrySprites7[] = {
 	{sShiftryGfx7, ARRAY_COUNT(sShiftryGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx8[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_8.4bpp");
+static const u8 sShiftryGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_8.4bpp.lz");
 static const ax_sprite sShiftrySprites8[] = {
 	{sShiftryGfx8, ARRAY_COUNT(sShiftryGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx9[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_9.4bpp");
+static const u8 sShiftryGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_9.4bpp.lz");
 static const ax_sprite sShiftrySprites9[] = {
 	{sShiftryGfx9, ARRAY_COUNT(sShiftryGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx10[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_10.4bpp");
+static const u8 sShiftryGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_10.4bpp.lz");
 static const ax_sprite sShiftrySprites10[] = {
 	{sShiftryGfx10, ARRAY_COUNT(sShiftryGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx11[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_11.4bpp");
+static const u8 sShiftryGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_11.4bpp.lz");
 static const ax_sprite sShiftrySprites11[] = {
 	{sShiftryGfx11, ARRAY_COUNT(sShiftryGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx12[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_12.4bpp");
+static const u8 sShiftryGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_12.4bpp.lz");
 static const ax_sprite sShiftrySprites12[] = {
 	{sShiftryGfx12, ARRAY_COUNT(sShiftryGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx13[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_13.4bpp");
+static const u8 sShiftryGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_13.4bpp.lz");
 static const ax_sprite sShiftrySprites13[] = {
 	{sShiftryGfx13, ARRAY_COUNT(sShiftryGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx14[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_14.4bpp");
+static const u8 sShiftryGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_14.4bpp.lz");
 static const ax_sprite sShiftrySprites14[] = {
 	{sShiftryGfx14, ARRAY_COUNT(sShiftryGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx15[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_15.4bpp");
+static const u8 sShiftryGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_15.4bpp.lz");
 static const ax_sprite sShiftrySprites15[] = {
 	{sShiftryGfx15, ARRAY_COUNT(sShiftryGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx16[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_16.4bpp");
+static const u8 sShiftryGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_16.4bpp.lz");
 static const ax_sprite sShiftrySprites16[] = {
 	{NULL, 128}, 
 	{sShiftryGfx16, ARRAY_COUNT(sShiftryGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx17[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_17.4bpp");
+static const u8 sShiftryGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_17.4bpp.lz");
 static const ax_sprite sShiftrySprites17[] = {
 	{NULL, 128}, 
 	{sShiftryGfx17, ARRAY_COUNT(sShiftryGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx18[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_18.4bpp");
-static const u8 sShiftryGfx18_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_18_1.4bpp");
+static const u8 sShiftryGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_18.4bpp.lz");
+static const u8 sShiftryGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_18_1.4bpp.lz");
 static const ax_sprite sShiftrySprites18[] = {
 	{sShiftryGfx18, ARRAY_COUNT(sShiftryGfx18)}, 
 	{NULL, 64}, 
@@ -2432,8 +2432,8 @@ static const ax_sprite sShiftrySprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx19[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_19.4bpp");
-static const u8 sShiftryGfx19_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_19_1.4bpp");
+static const u8 sShiftryGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_19.4bpp.lz");
+static const u8 sShiftryGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_19_1.4bpp.lz");
 static const ax_sprite sShiftrySprites19[] = {
 	{sShiftryGfx19, ARRAY_COUNT(sShiftryGfx19)}, 
 	{NULL, 32}, 
@@ -2441,8 +2441,8 @@ static const ax_sprite sShiftrySprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx20[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_20.4bpp");
-static const u8 sShiftryGfx20_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_20_1.4bpp");
+static const u8 sShiftryGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_20.4bpp.lz");
+static const u8 sShiftryGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_20_1.4bpp.lz");
 static const ax_sprite sShiftrySprites20[] = {
 	{NULL, 32}, 
 	{sShiftryGfx20, ARRAY_COUNT(sShiftryGfx20)}, 
@@ -2450,8 +2450,8 @@ static const ax_sprite sShiftrySprites20[] = {
 	{sShiftryGfx20_1, ARRAY_COUNT(sShiftryGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx21[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_21.4bpp");
-static const u8 sShiftryGfx21_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_21_1.4bpp");
+static const u8 sShiftryGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_21.4bpp.lz");
+static const u8 sShiftryGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_21_1.4bpp.lz");
 static const ax_sprite sShiftrySprites21[] = {
 	{NULL, 32}, 
 	{sShiftryGfx21, ARRAY_COUNT(sShiftryGfx21)}, 
@@ -2459,10 +2459,10 @@ static const ax_sprite sShiftrySprites21[] = {
 	{sShiftryGfx21_1, ARRAY_COUNT(sShiftryGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx22[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_22.4bpp");
-static const u8 sShiftryGfx22_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_22_1.4bpp");
-static const u8 sShiftryGfx22_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_22_2.4bpp");
-static const u8 sShiftryGfx22_3[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_22_3.4bpp");
+static const u8 sShiftryGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_22.4bpp.lz");
+static const u8 sShiftryGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_22_1.4bpp.lz");
+static const u8 sShiftryGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_22_2.4bpp.lz");
+static const u8 sShiftryGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_22_3.4bpp.lz");
 static const ax_sprite sShiftrySprites22[] = {
 	{NULL, 64}, 
 	{sShiftryGfx22, ARRAY_COUNT(sShiftryGfx22)}, 
@@ -2474,10 +2474,10 @@ static const ax_sprite sShiftrySprites22[] = {
 	{sShiftryGfx22_3, ARRAY_COUNT(sShiftryGfx22_3)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx23[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_23.4bpp");
-static const u8 sShiftryGfx23_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_23_1.4bpp");
-static const u8 sShiftryGfx23_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_23_2.4bpp");
-static const u8 sShiftryGfx23_3[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_23_3.4bpp");
+static const u8 sShiftryGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_23.4bpp.lz");
+static const u8 sShiftryGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_23_1.4bpp.lz");
+static const u8 sShiftryGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_23_2.4bpp.lz");
+static const u8 sShiftryGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_23_3.4bpp.lz");
 static const ax_sprite sShiftrySprites23[] = {
 	{NULL, 32}, 
 	{sShiftryGfx23, ARRAY_COUNT(sShiftryGfx23)}, 
@@ -2489,9 +2489,9 @@ static const ax_sprite sShiftrySprites23[] = {
 	{sShiftryGfx23_3, ARRAY_COUNT(sShiftryGfx23_3)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx24[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_24.4bpp");
-static const u8 sShiftryGfx24_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_24_1.4bpp");
-static const u8 sShiftryGfx24_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_24_2.4bpp");
+static const u8 sShiftryGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_24.4bpp.lz");
+static const u8 sShiftryGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_24_1.4bpp.lz");
+static const u8 sShiftryGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_24_2.4bpp.lz");
 static const ax_sprite sShiftrySprites24[] = {
 	{NULL, 32}, 
 	{sShiftryGfx24, ARRAY_COUNT(sShiftryGfx24)}, 
@@ -2501,9 +2501,9 @@ static const ax_sprite sShiftrySprites24[] = {
 	{sShiftryGfx24_2, ARRAY_COUNT(sShiftryGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx25[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_25.4bpp");
-static const u8 sShiftryGfx25_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_25_1.4bpp");
-static const u8 sShiftryGfx25_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_25_2.4bpp");
+static const u8 sShiftryGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_25.4bpp.lz");
+static const u8 sShiftryGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_25_1.4bpp.lz");
+static const u8 sShiftryGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_25_2.4bpp.lz");
 static const ax_sprite sShiftrySprites25[] = {
 	{NULL, 32}, 
 	{sShiftryGfx25, ARRAY_COUNT(sShiftryGfx25)}, 
@@ -2513,10 +2513,10 @@ static const ax_sprite sShiftrySprites25[] = {
 	{sShiftryGfx25_2, ARRAY_COUNT(sShiftryGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx26[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_26.4bpp");
-static const u8 sShiftryGfx26_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_26_1.4bpp");
-static const u8 sShiftryGfx26_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_26_2.4bpp");
-static const u8 sShiftryGfx26_3[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_26_3.4bpp");
+static const u8 sShiftryGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_26.4bpp.lz");
+static const u8 sShiftryGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_26_1.4bpp.lz");
+static const u8 sShiftryGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_26_2.4bpp.lz");
+static const u8 sShiftryGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_26_3.4bpp.lz");
 static const ax_sprite sShiftrySprites26[] = {
 	{sShiftryGfx26, ARRAY_COUNT(sShiftryGfx26)}, 
 	{NULL, 96}, 
@@ -2528,8 +2528,8 @@ static const ax_sprite sShiftrySprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx27[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_27.4bpp");
-static const u8 sShiftryGfx27_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_27_1.4bpp");
+static const u8 sShiftryGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_27.4bpp.lz");
+static const u8 sShiftryGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_27_1.4bpp.lz");
 static const ax_sprite sShiftrySprites27[] = {
 	{NULL, 32}, 
 	{sShiftryGfx27, ARRAY_COUNT(sShiftryGfx27)}, 
@@ -2538,9 +2538,9 @@ static const ax_sprite sShiftrySprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx28[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_28.4bpp");
-static const u8 sShiftryGfx28_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_28_1.4bpp");
-static const u8 sShiftryGfx28_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_28_2.4bpp");
+static const u8 sShiftryGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_28.4bpp.lz");
+static const u8 sShiftryGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_28_1.4bpp.lz");
+static const u8 sShiftryGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_28_2.4bpp.lz");
 static const ax_sprite sShiftrySprites28[] = {
 	{sShiftryGfx28, ARRAY_COUNT(sShiftryGfx28)}, 
 	{NULL, 32}, 
@@ -2549,23 +2549,23 @@ static const ax_sprite sShiftrySprites28[] = {
 	{sShiftryGfx28_2, ARRAY_COUNT(sShiftryGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx29[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_29.4bpp");
-static const u8 sShiftryGfx29_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_29_1.4bpp");
+static const u8 sShiftryGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_29.4bpp.lz");
+static const u8 sShiftryGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_29_1.4bpp.lz");
 static const ax_sprite sShiftrySprites29[] = {
 	{sShiftryGfx29, ARRAY_COUNT(sShiftryGfx29)}, 
 	{NULL, 32}, 
 	{sShiftryGfx29_1, ARRAY_COUNT(sShiftryGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx30[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_30.4bpp");
+static const u8 sShiftryGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_30.4bpp.lz");
 static const ax_sprite sShiftrySprites30[] = {
 	{sShiftryGfx30, ARRAY_COUNT(sShiftryGfx30)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx31[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_31.4bpp");
-static const u8 sShiftryGfx31_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_31_1.4bpp");
-static const u8 sShiftryGfx31_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_31_2.4bpp");
+static const u8 sShiftryGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_31.4bpp.lz");
+static const u8 sShiftryGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_31_1.4bpp.lz");
+static const u8 sShiftryGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_31_2.4bpp.lz");
 static const ax_sprite sShiftrySprites31[] = {
 	{NULL, 32}, 
 	{sShiftryGfx31, ARRAY_COUNT(sShiftryGfx31)}, 
@@ -2576,9 +2576,9 @@ static const ax_sprite sShiftrySprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx32[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_32.4bpp");
-static const u8 sShiftryGfx32_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_32_1.4bpp");
-static const u8 sShiftryGfx32_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_32_2.4bpp");
+static const u8 sShiftryGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_32.4bpp.lz");
+static const u8 sShiftryGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_32_1.4bpp.lz");
+static const u8 sShiftryGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_32_2.4bpp.lz");
 static const ax_sprite sShiftrySprites32[] = {
 	{sShiftryGfx32, ARRAY_COUNT(sShiftryGfx32)}, 
 	{NULL, 32}, 
@@ -2587,10 +2587,10 @@ static const ax_sprite sShiftrySprites32[] = {
 	{sShiftryGfx32_2, ARRAY_COUNT(sShiftryGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx33[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_33.4bpp");
-static const u8 sShiftryGfx33_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_33_1.4bpp");
-static const u8 sShiftryGfx33_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_33_2.4bpp");
-static const u8 sShiftryGfx33_3[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_33_3.4bpp");
+static const u8 sShiftryGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_33.4bpp.lz");
+static const u8 sShiftryGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_33_1.4bpp.lz");
+static const u8 sShiftryGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_33_2.4bpp.lz");
+static const u8 sShiftryGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_33_3.4bpp.lz");
 static const ax_sprite sShiftrySprites33[] = {
 	{sShiftryGfx33, ARRAY_COUNT(sShiftryGfx33)}, 
 	{NULL, 32}, 
@@ -2602,8 +2602,8 @@ static const ax_sprite sShiftrySprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx34[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_34.4bpp");
-static const u8 sShiftryGfx34_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_34_1.4bpp");
+static const u8 sShiftryGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_34.4bpp.lz");
+static const u8 sShiftryGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_34_1.4bpp.lz");
 static const ax_sprite sShiftrySprites34[] = {
 	{NULL, 32}, 
 	{sShiftryGfx34, ARRAY_COUNT(sShiftryGfx34)}, 
@@ -2611,10 +2611,10 @@ static const ax_sprite sShiftrySprites34[] = {
 	{sShiftryGfx34_1, ARRAY_COUNT(sShiftryGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx35[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_35.4bpp");
-static const u8 sShiftryGfx35_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_35_1.4bpp");
-static const u8 sShiftryGfx35_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_35_2.4bpp");
-static const u8 sShiftryGfx35_3[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_35_3.4bpp");
+static const u8 sShiftryGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_35.4bpp.lz");
+static const u8 sShiftryGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_35_1.4bpp.lz");
+static const u8 sShiftryGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_35_2.4bpp.lz");
+static const u8 sShiftryGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_35_3.4bpp.lz");
 static const ax_sprite sShiftrySprites35[] = {
 	{sShiftryGfx35, ARRAY_COUNT(sShiftryGfx35)}, 
 	{NULL, 32}, 
@@ -2626,10 +2626,10 @@ static const ax_sprite sShiftrySprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx36[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_36.4bpp");
-static const u8 sShiftryGfx36_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_36_1.4bpp");
-static const u8 sShiftryGfx36_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_36_2.4bpp");
-static const u8 sShiftryGfx36_3[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_36_3.4bpp");
+static const u8 sShiftryGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_36.4bpp.lz");
+static const u8 sShiftryGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_36_1.4bpp.lz");
+static const u8 sShiftryGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_36_2.4bpp.lz");
+static const u8 sShiftryGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_36_3.4bpp.lz");
 static const ax_sprite sShiftrySprites36[] = {
 	{NULL, 32}, 
 	{sShiftryGfx36, ARRAY_COUNT(sShiftryGfx36)}, 
@@ -2641,10 +2641,10 @@ static const ax_sprite sShiftrySprites36[] = {
 	{sShiftryGfx36_3, ARRAY_COUNT(sShiftryGfx36_3)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx37[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_37.4bpp");
-static const u8 sShiftryGfx37_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_37_1.4bpp");
-static const u8 sShiftryGfx37_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_37_2.4bpp");
-static const u8 sShiftryGfx37_3[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_37_3.4bpp");
+static const u8 sShiftryGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_37.4bpp.lz");
+static const u8 sShiftryGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_37_1.4bpp.lz");
+static const u8 sShiftryGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_37_2.4bpp.lz");
+static const u8 sShiftryGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_37_3.4bpp.lz");
 static const ax_sprite sShiftrySprites37[] = {
 	{sShiftryGfx37, ARRAY_COUNT(sShiftryGfx37)}, 
 	{NULL, 32}, 
@@ -2655,9 +2655,9 @@ static const ax_sprite sShiftrySprites37[] = {
 	{sShiftryGfx37_3, ARRAY_COUNT(sShiftryGfx37_3)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx38[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_38.4bpp");
-static const u8 sShiftryGfx38_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_38_1.4bpp");
-static const u8 sShiftryGfx38_2[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_38_2.4bpp");
+static const u8 sShiftryGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_38.4bpp.lz");
+static const u8 sShiftryGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_38_1.4bpp.lz");
+static const u8 sShiftryGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_38_2.4bpp.lz");
 static const ax_sprite sShiftrySprites38[] = {
 	{NULL, 32}, 
 	{sShiftryGfx38, ARRAY_COUNT(sShiftryGfx38)}, 
@@ -2668,8 +2668,8 @@ static const ax_sprite sShiftrySprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx39[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_39.4bpp");
-static const u8 sShiftryGfx39_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_39_1.4bpp");
+static const u8 sShiftryGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_39.4bpp.lz");
+static const u8 sShiftryGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_39_1.4bpp.lz");
 static const ax_sprite sShiftrySprites39[] = {
 	{NULL, 32}, 
 	{sShiftryGfx39, ARRAY_COUNT(sShiftryGfx39)}, 
@@ -2677,21 +2677,21 @@ static const ax_sprite sShiftrySprites39[] = {
 	{sShiftryGfx39_1, ARRAY_COUNT(sShiftryGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx40[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_40.4bpp");
+static const u8 sShiftryGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_40.4bpp.lz");
 static const ax_sprite sShiftrySprites40[] = {
 	{sShiftryGfx40, ARRAY_COUNT(sShiftryGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx41[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_41.4bpp");
-static const u8 sShiftryGfx41_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_41_1.4bpp");
+static const u8 sShiftryGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_41.4bpp.lz");
+static const u8 sShiftryGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_41_1.4bpp.lz");
 static const ax_sprite sShiftrySprites41[] = {
 	{sShiftryGfx41, ARRAY_COUNT(sShiftryGfx41)}, 
 	{NULL, 32}, 
 	{sShiftryGfx41_1, ARRAY_COUNT(sShiftryGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx42[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_42.4bpp");
-static const u8 sShiftryGfx42_1[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_42_1.4bpp");
+static const u8 sShiftryGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_42.4bpp.lz");
+static const u8 sShiftryGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_42_1.4bpp.lz");
 static const ax_sprite sShiftrySprites42[] = {
 	{NULL, 64}, 
 	{sShiftryGfx42, ARRAY_COUNT(sShiftryGfx42)}, 
@@ -2700,129 +2700,129 @@ static const ax_sprite sShiftrySprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx43[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_43.4bpp");
+static const u8 sShiftryGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_43.4bpp.lz");
 static const ax_sprite sShiftrySprites43[] = {
 	{NULL, 32}, 
 	{sShiftryGfx43, ARRAY_COUNT(sShiftryGfx43)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx44[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_44.4bpp");
+static const u8 sShiftryGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_44.4bpp.lz");
 static const ax_sprite sShiftrySprites44[] = {
 	{sShiftryGfx44, ARRAY_COUNT(sShiftryGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx45[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_45.4bpp");
+static const u8 sShiftryGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_45.4bpp.lz");
 static const ax_sprite sShiftrySprites45[] = {
 	{sShiftryGfx45, ARRAY_COUNT(sShiftryGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx46[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_46.4bpp");
+static const u8 sShiftryGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_46.4bpp.lz");
 static const ax_sprite sShiftrySprites46[] = {
 	{sShiftryGfx46, ARRAY_COUNT(sShiftryGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx47[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_47.4bpp");
+static const u8 sShiftryGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_47.4bpp.lz");
 static const ax_sprite sShiftrySprites47[] = {
 	{sShiftryGfx47, ARRAY_COUNT(sShiftryGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx48[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_48.4bpp");
+static const u8 sShiftryGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_48.4bpp.lz");
 static const ax_sprite sShiftrySprites48[] = {
 	{sShiftryGfx48, ARRAY_COUNT(sShiftryGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx49[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_49.4bpp");
+static const u8 sShiftryGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_49.4bpp.lz");
 static const ax_sprite sShiftrySprites49[] = {
 	{sShiftryGfx49, ARRAY_COUNT(sShiftryGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx50[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_50.4bpp");
+static const u8 sShiftryGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_50.4bpp.lz");
 static const ax_sprite sShiftrySprites50[] = {
 	{sShiftryGfx50, ARRAY_COUNT(sShiftryGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx51[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_51.4bpp");
+static const u8 sShiftryGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_51.4bpp.lz");
 static const ax_sprite sShiftrySprites51[] = {
 	{sShiftryGfx51, ARRAY_COUNT(sShiftryGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx52[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_52.4bpp");
+static const u8 sShiftryGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_52.4bpp.lz");
 static const ax_sprite sShiftrySprites52[] = {
 	{sShiftryGfx52, ARRAY_COUNT(sShiftryGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx53[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_53.4bpp");
+static const u8 sShiftryGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_53.4bpp.lz");
 static const ax_sprite sShiftrySprites53[] = {
 	{sShiftryGfx53, ARRAY_COUNT(sShiftryGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx54[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_54.4bpp");
+static const u8 sShiftryGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_54.4bpp.lz");
 static const ax_sprite sShiftrySprites54[] = {
 	{sShiftryGfx54, ARRAY_COUNT(sShiftryGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx55[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_55.4bpp");
+static const u8 sShiftryGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_55.4bpp.lz");
 static const ax_sprite sShiftrySprites55[] = {
 	{sShiftryGfx55, ARRAY_COUNT(sShiftryGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx56[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_56.4bpp");
+static const u8 sShiftryGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_56.4bpp.lz");
 static const ax_sprite sShiftrySprites56[] = {
 	{sShiftryGfx56, ARRAY_COUNT(sShiftryGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx57[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_57.4bpp");
+static const u8 sShiftryGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_57.4bpp.lz");
 static const ax_sprite sShiftrySprites57[] = {
 	{sShiftryGfx57, ARRAY_COUNT(sShiftryGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx58[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_58.4bpp");
+static const u8 sShiftryGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_58.4bpp.lz");
 static const ax_sprite sShiftrySprites58[] = {
 	{sShiftryGfx58, ARRAY_COUNT(sShiftryGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx59[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_59.4bpp");
+static const u8 sShiftryGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_59.4bpp.lz");
 static const ax_sprite sShiftrySprites59[] = {
 	{sShiftryGfx59, ARRAY_COUNT(sShiftryGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx60[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_60.4bpp");
+static const u8 sShiftryGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_60.4bpp.lz");
 static const ax_sprite sShiftrySprites60[] = {
 	{sShiftryGfx60, ARRAY_COUNT(sShiftryGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx61[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_61.4bpp");
+static const u8 sShiftryGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_61.4bpp.lz");
 static const ax_sprite sShiftrySprites61[] = {
 	{sShiftryGfx61, ARRAY_COUNT(sShiftryGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx62[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_62.4bpp");
+static const u8 sShiftryGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_62.4bpp.lz");
 static const ax_sprite sShiftrySprites62[] = {
 	{sShiftryGfx62, ARRAY_COUNT(sShiftryGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx63[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_63.4bpp");
+static const u8 sShiftryGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_63.4bpp.lz");
 static const ax_sprite sShiftrySprites63[] = {
 	{sShiftryGfx63, ARRAY_COUNT(sShiftryGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx64[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_64.4bpp");
+static const u8 sShiftryGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_64.4bpp.lz");
 static const ax_sprite sShiftrySprites64[] = {
 	{sShiftryGfx64, ARRAY_COUNT(sShiftryGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx65[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_65.4bpp");
+static const u8 sShiftryGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_65.4bpp.lz");
 static const ax_sprite sShiftrySprites65[] = {
 	{sShiftryGfx65, ARRAY_COUNT(sShiftryGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx66[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_66.4bpp");
+static const u8 sShiftryGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_66.4bpp.lz");
 static const ax_sprite sShiftrySprites66[] = {
 	{sShiftryGfx66, ARRAY_COUNT(sShiftryGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sShiftryGfx67[] = INCBIN_U8("graphics/ax/mon/shiftry/sprite_67.4bpp");
+static const u8 sShiftryGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shiftry/sprite_67.4bpp.lz");
 static const ax_sprite sShiftrySprites67[] = {
 	{sShiftryGfx67, ARRAY_COUNT(sShiftryGfx67)}, 
 	{NULL, 0}

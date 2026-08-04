@@ -2183,97 +2183,97 @@ static const ax_anim sPoochyenaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPoochyenaGfx1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_1.4bpp");
+static const u8 sPoochyenaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_1.4bpp.lz");
 static const ax_sprite sPoochyenaSprites1[] = {
 	{sPoochyenaGfx1, ARRAY_COUNT(sPoochyenaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_2.4bpp");
+static const u8 sPoochyenaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_2.4bpp.lz");
 static const ax_sprite sPoochyenaSprites2[] = {
 	{sPoochyenaGfx2, ARRAY_COUNT(sPoochyenaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_3.4bpp");
+static const u8 sPoochyenaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites3[] = {
 	{sPoochyenaGfx3, ARRAY_COUNT(sPoochyenaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx4[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_4.4bpp");
+static const u8 sPoochyenaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_4.4bpp.lz");
 static const ax_sprite sPoochyenaSprites4[] = {
 	{sPoochyenaGfx4, ARRAY_COUNT(sPoochyenaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx5[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_5.4bpp");
+static const u8 sPoochyenaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_5.4bpp.lz");
 static const ax_sprite sPoochyenaSprites5[] = {
 	{sPoochyenaGfx5, ARRAY_COUNT(sPoochyenaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx6[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_6.4bpp");
+static const u8 sPoochyenaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_6.4bpp.lz");
 static const ax_sprite sPoochyenaSprites6[] = {
 	{sPoochyenaGfx6, ARRAY_COUNT(sPoochyenaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx7[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_7.4bpp");
+static const u8 sPoochyenaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_7.4bpp.lz");
 static const ax_sprite sPoochyenaSprites7[] = {
 	{sPoochyenaGfx7, ARRAY_COUNT(sPoochyenaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx8[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_8.4bpp");
+static const u8 sPoochyenaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_8.4bpp.lz");
 static const ax_sprite sPoochyenaSprites8[] = {
 	{sPoochyenaGfx8, ARRAY_COUNT(sPoochyenaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx9[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_9.4bpp");
+static const u8 sPoochyenaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_9.4bpp.lz");
 static const ax_sprite sPoochyenaSprites9[] = {
 	{sPoochyenaGfx9, ARRAY_COUNT(sPoochyenaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx10[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_10.4bpp");
+static const u8 sPoochyenaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_10.4bpp.lz");
 static const ax_sprite sPoochyenaSprites10[] = {
 	{sPoochyenaGfx10, ARRAY_COUNT(sPoochyenaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx11[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_11.4bpp");
+static const u8 sPoochyenaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_11.4bpp.lz");
 static const ax_sprite sPoochyenaSprites11[] = {
 	{sPoochyenaGfx11, ARRAY_COUNT(sPoochyenaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx12[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_12.4bpp");
+static const u8 sPoochyenaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_12.4bpp.lz");
 static const ax_sprite sPoochyenaSprites12[] = {
 	{sPoochyenaGfx12, ARRAY_COUNT(sPoochyenaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx13[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_13.4bpp");
+static const u8 sPoochyenaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_13.4bpp.lz");
 static const ax_sprite sPoochyenaSprites13[] = {
 	{sPoochyenaGfx13, ARRAY_COUNT(sPoochyenaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx14[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_14.4bpp");
+static const u8 sPoochyenaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_14.4bpp.lz");
 static const ax_sprite sPoochyenaSprites14[] = {
 	{sPoochyenaGfx14, ARRAY_COUNT(sPoochyenaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx15[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_15.4bpp");
+static const u8 sPoochyenaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_15.4bpp.lz");
 static const ax_sprite sPoochyenaSprites15[] = {
 	{sPoochyenaGfx15, ARRAY_COUNT(sPoochyenaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx16[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_16.4bpp");
+static const u8 sPoochyenaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_16.4bpp.lz");
 static const ax_sprite sPoochyenaSprites16[] = {
 	{sPoochyenaGfx16, ARRAY_COUNT(sPoochyenaGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx17[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_17.4bpp");
+static const u8 sPoochyenaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_17.4bpp.lz");
 static const ax_sprite sPoochyenaSprites17[] = {
 	{NULL, 32}, 
 	{sPoochyenaGfx17, ARRAY_COUNT(sPoochyenaGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx18[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_18.4bpp");
-static const u8 sPoochyenaGfx18_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_18_1.4bpp");
-static const u8 sPoochyenaGfx18_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_18_2.4bpp");
-static const u8 sPoochyenaGfx18_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_18_3.4bpp");
+static const u8 sPoochyenaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_18.4bpp.lz");
+static const u8 sPoochyenaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_18_1.4bpp.lz");
+static const u8 sPoochyenaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_18_2.4bpp.lz");
+static const u8 sPoochyenaGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_18_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites18[] = {
 	{sPoochyenaGfx18, ARRAY_COUNT(sPoochyenaGfx18)}, 
 	{NULL, 32}, 
@@ -2285,9 +2285,9 @@ static const ax_sprite sPoochyenaSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx19[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_19.4bpp");
-static const u8 sPoochyenaGfx19_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_19_1.4bpp");
-static const u8 sPoochyenaGfx19_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_19_2.4bpp");
+static const u8 sPoochyenaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_19.4bpp.lz");
+static const u8 sPoochyenaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_19_1.4bpp.lz");
+static const u8 sPoochyenaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_19_2.4bpp.lz");
 static const ax_sprite sPoochyenaSprites19[] = {
 	{NULL, 128}, 
 	{sPoochyenaGfx19, ARRAY_COUNT(sPoochyenaGfx19)}, 
@@ -2298,8 +2298,8 @@ static const ax_sprite sPoochyenaSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx20[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_20.4bpp");
-static const u8 sPoochyenaGfx20_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_20_1.4bpp");
+static const u8 sPoochyenaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_20.4bpp.lz");
+static const u8 sPoochyenaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_20_1.4bpp.lz");
 static const ax_sprite sPoochyenaSprites20[] = {
 	{NULL, 32}, 
 	{sPoochyenaGfx20, ARRAY_COUNT(sPoochyenaGfx20)}, 
@@ -2308,9 +2308,9 @@ static const ax_sprite sPoochyenaSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx21[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_21.4bpp");
-static const u8 sPoochyenaGfx21_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_21_1.4bpp");
-static const u8 sPoochyenaGfx21_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_21_2.4bpp");
+static const u8 sPoochyenaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_21.4bpp.lz");
+static const u8 sPoochyenaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_21_1.4bpp.lz");
+static const u8 sPoochyenaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_21_2.4bpp.lz");
 static const ax_sprite sPoochyenaSprites21[] = {
 	{sPoochyenaGfx21, ARRAY_COUNT(sPoochyenaGfx21)}, 
 	{NULL, 64}, 
@@ -2320,10 +2320,10 @@ static const ax_sprite sPoochyenaSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx22[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_22.4bpp");
-static const u8 sPoochyenaGfx22_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_22_1.4bpp");
-static const u8 sPoochyenaGfx22_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_22_2.4bpp");
-static const u8 sPoochyenaGfx22_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_22_3.4bpp");
+static const u8 sPoochyenaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_22.4bpp.lz");
+static const u8 sPoochyenaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_22_1.4bpp.lz");
+static const u8 sPoochyenaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_22_2.4bpp.lz");
+static const u8 sPoochyenaGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_22_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites22[] = {
 	{sPoochyenaGfx22, ARRAY_COUNT(sPoochyenaGfx22)}, 
 	{NULL, 64}, 
@@ -2335,10 +2335,10 @@ static const ax_sprite sPoochyenaSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx23[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_23.4bpp");
-static const u8 sPoochyenaGfx23_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_23_1.4bpp");
-static const u8 sPoochyenaGfx23_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_23_2.4bpp");
-static const u8 sPoochyenaGfx23_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_23_3.4bpp");
+static const u8 sPoochyenaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_23.4bpp.lz");
+static const u8 sPoochyenaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_23_1.4bpp.lz");
+static const u8 sPoochyenaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_23_2.4bpp.lz");
+static const u8 sPoochyenaGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_23_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites23[] = {
 	{sPoochyenaGfx23, ARRAY_COUNT(sPoochyenaGfx23)}, 
 	{NULL, 64}, 
@@ -2350,37 +2350,37 @@ static const ax_sprite sPoochyenaSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx24[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_24.4bpp");
+static const u8 sPoochyenaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_24.4bpp.lz");
 static const ax_sprite sPoochyenaSprites24[] = {
 	{sPoochyenaGfx24, ARRAY_COUNT(sPoochyenaGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx25[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_25.4bpp");
+static const u8 sPoochyenaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_25.4bpp.lz");
 static const ax_sprite sPoochyenaSprites25[] = {
 	{sPoochyenaGfx25, ARRAY_COUNT(sPoochyenaGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx26[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_26.4bpp");
+static const u8 sPoochyenaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_26.4bpp.lz");
 static const ax_sprite sPoochyenaSprites26[] = {
 	{NULL, 64}, 
 	{sPoochyenaGfx26, ARRAY_COUNT(sPoochyenaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx27[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_27.4bpp");
+static const u8 sPoochyenaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_27.4bpp.lz");
 static const ax_sprite sPoochyenaSprites27[] = {
 	{NULL, 64}, 
 	{sPoochyenaGfx27, ARRAY_COUNT(sPoochyenaGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx28[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_28.4bpp");
+static const u8 sPoochyenaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_28.4bpp.lz");
 static const ax_sprite sPoochyenaSprites28[] = {
 	{sPoochyenaGfx28, ARRAY_COUNT(sPoochyenaGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx29[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_29.4bpp");
-static const u8 sPoochyenaGfx29_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_29_1.4bpp");
-static const u8 sPoochyenaGfx29_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_29_2.4bpp");
-static const u8 sPoochyenaGfx29_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_29_3.4bpp");
+static const u8 sPoochyenaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_29.4bpp.lz");
+static const u8 sPoochyenaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_29_1.4bpp.lz");
+static const u8 sPoochyenaGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_29_2.4bpp.lz");
+static const u8 sPoochyenaGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_29_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites29[] = {
 	{sPoochyenaGfx29, ARRAY_COUNT(sPoochyenaGfx29)}, 
 	{NULL, 64}, 
@@ -2392,10 +2392,10 @@ static const ax_sprite sPoochyenaSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx30[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_30.4bpp");
-static const u8 sPoochyenaGfx30_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_30_1.4bpp");
-static const u8 sPoochyenaGfx30_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_30_2.4bpp");
-static const u8 sPoochyenaGfx30_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_30_3.4bpp");
+static const u8 sPoochyenaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_30.4bpp.lz");
+static const u8 sPoochyenaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_30_1.4bpp.lz");
+static const u8 sPoochyenaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_30_2.4bpp.lz");
+static const u8 sPoochyenaGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_30_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites30[] = {
 	{sPoochyenaGfx30, ARRAY_COUNT(sPoochyenaGfx30)}, 
 	{NULL, 64}, 
@@ -2407,10 +2407,10 @@ static const ax_sprite sPoochyenaSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx31[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_31.4bpp");
-static const u8 sPoochyenaGfx31_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_31_1.4bpp");
-static const u8 sPoochyenaGfx31_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_31_2.4bpp");
-static const u8 sPoochyenaGfx31_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_31_3.4bpp");
+static const u8 sPoochyenaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_31.4bpp.lz");
+static const u8 sPoochyenaGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_31_1.4bpp.lz");
+static const u8 sPoochyenaGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_31_2.4bpp.lz");
+static const u8 sPoochyenaGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_31_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites31[] = {
 	{sPoochyenaGfx31, ARRAY_COUNT(sPoochyenaGfx31)}, 
 	{NULL, 64}, 
@@ -2422,10 +2422,10 @@ static const ax_sprite sPoochyenaSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx32[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_32.4bpp");
-static const u8 sPoochyenaGfx32_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_32_1.4bpp");
-static const u8 sPoochyenaGfx32_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_32_2.4bpp");
-static const u8 sPoochyenaGfx32_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_32_3.4bpp");
+static const u8 sPoochyenaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_32.4bpp.lz");
+static const u8 sPoochyenaGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_32_1.4bpp.lz");
+static const u8 sPoochyenaGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_32_2.4bpp.lz");
+static const u8 sPoochyenaGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_32_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites32[] = {
 	{NULL, 32}, 
 	{sPoochyenaGfx32, ARRAY_COUNT(sPoochyenaGfx32)}, 
@@ -2437,10 +2437,10 @@ static const ax_sprite sPoochyenaSprites32[] = {
 	{sPoochyenaGfx32_3, ARRAY_COUNT(sPoochyenaGfx32_3)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx33[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_33.4bpp");
-static const u8 sPoochyenaGfx33_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_33_1.4bpp");
-static const u8 sPoochyenaGfx33_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_33_2.4bpp");
-static const u8 sPoochyenaGfx33_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_33_3.4bpp");
+static const u8 sPoochyenaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_33.4bpp.lz");
+static const u8 sPoochyenaGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_33_1.4bpp.lz");
+static const u8 sPoochyenaGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_33_2.4bpp.lz");
+static const u8 sPoochyenaGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_33_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites33[] = {
 	{NULL, 32}, 
 	{sPoochyenaGfx33, ARRAY_COUNT(sPoochyenaGfx33)}, 
@@ -2452,10 +2452,10 @@ static const ax_sprite sPoochyenaSprites33[] = {
 	{sPoochyenaGfx33_3, ARRAY_COUNT(sPoochyenaGfx33_3)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx34[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_34.4bpp");
-static const u8 sPoochyenaGfx34_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_34_1.4bpp");
-static const u8 sPoochyenaGfx34_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_34_2.4bpp");
-static const u8 sPoochyenaGfx34_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_34_3.4bpp");
+static const u8 sPoochyenaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_34.4bpp.lz");
+static const u8 sPoochyenaGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_34_1.4bpp.lz");
+static const u8 sPoochyenaGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_34_2.4bpp.lz");
+static const u8 sPoochyenaGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_34_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites34[] = {
 	{NULL, 32}, 
 	{sPoochyenaGfx34, ARRAY_COUNT(sPoochyenaGfx34)}, 
@@ -2467,10 +2467,10 @@ static const ax_sprite sPoochyenaSprites34[] = {
 	{sPoochyenaGfx34_3, ARRAY_COUNT(sPoochyenaGfx34_3)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx35[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_35.4bpp");
-static const u8 sPoochyenaGfx35_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_35_1.4bpp");
-static const u8 sPoochyenaGfx35_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_35_2.4bpp");
-static const u8 sPoochyenaGfx35_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_35_3.4bpp");
+static const u8 sPoochyenaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_35.4bpp.lz");
+static const u8 sPoochyenaGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_35_1.4bpp.lz");
+static const u8 sPoochyenaGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_35_2.4bpp.lz");
+static const u8 sPoochyenaGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_35_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites35[] = {
 	{sPoochyenaGfx35, ARRAY_COUNT(sPoochyenaGfx35)}, 
 	{NULL, 32}, 
@@ -2482,10 +2482,10 @@ static const ax_sprite sPoochyenaSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx36[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_36.4bpp");
-static const u8 sPoochyenaGfx36_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_36_1.4bpp");
-static const u8 sPoochyenaGfx36_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_36_2.4bpp");
-static const u8 sPoochyenaGfx36_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_36_3.4bpp");
+static const u8 sPoochyenaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_36.4bpp.lz");
+static const u8 sPoochyenaGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_36_1.4bpp.lz");
+static const u8 sPoochyenaGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_36_2.4bpp.lz");
+static const u8 sPoochyenaGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_36_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites36[] = {
 	{sPoochyenaGfx36, ARRAY_COUNT(sPoochyenaGfx36)}, 
 	{NULL, 64}, 
@@ -2497,10 +2497,10 @@ static const ax_sprite sPoochyenaSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx37[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_37.4bpp");
-static const u8 sPoochyenaGfx37_1[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_37_1.4bpp");
-static const u8 sPoochyenaGfx37_2[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_37_2.4bpp");
-static const u8 sPoochyenaGfx37_3[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_37_3.4bpp");
+static const u8 sPoochyenaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_37.4bpp.lz");
+static const u8 sPoochyenaGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_37_1.4bpp.lz");
+static const u8 sPoochyenaGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_37_2.4bpp.lz");
+static const u8 sPoochyenaGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_37_3.4bpp.lz");
 static const ax_sprite sPoochyenaSprites37[] = {
 	{sPoochyenaGfx37, ARRAY_COUNT(sPoochyenaGfx37)}, 
 	{NULL, 64}, 
@@ -2512,52 +2512,52 @@ static const ax_sprite sPoochyenaSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx38[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_38.4bpp");
+static const u8 sPoochyenaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_38.4bpp.lz");
 static const ax_sprite sPoochyenaSprites38[] = {
 	{sPoochyenaGfx38, ARRAY_COUNT(sPoochyenaGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx39[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_39.4bpp");
+static const u8 sPoochyenaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_39.4bpp.lz");
 static const ax_sprite sPoochyenaSprites39[] = {
 	{sPoochyenaGfx39, ARRAY_COUNT(sPoochyenaGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx40[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_40.4bpp");
+static const u8 sPoochyenaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_40.4bpp.lz");
 static const ax_sprite sPoochyenaSprites40[] = {
 	{sPoochyenaGfx40, ARRAY_COUNT(sPoochyenaGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx41[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_41.4bpp");
+static const u8 sPoochyenaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_41.4bpp.lz");
 static const ax_sprite sPoochyenaSprites41[] = {
 	{sPoochyenaGfx41, ARRAY_COUNT(sPoochyenaGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx42[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_42.4bpp");
+static const u8 sPoochyenaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_42.4bpp.lz");
 static const ax_sprite sPoochyenaSprites42[] = {
 	{sPoochyenaGfx42, ARRAY_COUNT(sPoochyenaGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx43[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_43.4bpp");
+static const u8 sPoochyenaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_43.4bpp.lz");
 static const ax_sprite sPoochyenaSprites43[] = {
 	{sPoochyenaGfx43, ARRAY_COUNT(sPoochyenaGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx44[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_44.4bpp");
+static const u8 sPoochyenaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_44.4bpp.lz");
 static const ax_sprite sPoochyenaSprites44[] = {
 	{sPoochyenaGfx44, ARRAY_COUNT(sPoochyenaGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx45[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_45.4bpp");
+static const u8 sPoochyenaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_45.4bpp.lz");
 static const ax_sprite sPoochyenaSprites45[] = {
 	{sPoochyenaGfx45, ARRAY_COUNT(sPoochyenaGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx46[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_46.4bpp");
+static const u8 sPoochyenaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_46.4bpp.lz");
 static const ax_sprite sPoochyenaSprites46[] = {
 	{sPoochyenaGfx46, ARRAY_COUNT(sPoochyenaGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sPoochyenaGfx47[] = INCBIN_U8("graphics/ax/mon/poochyena/sprite_47.4bpp");
+static const u8 sPoochyenaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poochyena/sprite_47.4bpp.lz");
 static const ax_sprite sPoochyenaSprites47[] = {
 	{sPoochyenaGfx47, ARRAY_COUNT(sPoochyenaGfx47)}, 
 	{NULL, 0}

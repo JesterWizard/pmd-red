@@ -2635,136 +2635,136 @@ static const ax_anim sKinglerAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKinglerGfx1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_1.4bpp");
+static const u8 sKinglerGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_1.4bpp.lz");
 static const ax_sprite sKinglerSprites1[] = {
 	{sKinglerGfx1, ARRAY_COUNT(sKinglerGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx2[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_2.4bpp");
+static const u8 sKinglerGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_2.4bpp.lz");
 static const ax_sprite sKinglerSprites2[] = {
 	{sKinglerGfx2, ARRAY_COUNT(sKinglerGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx3[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_3.4bpp");
+static const u8 sKinglerGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_3.4bpp.lz");
 static const ax_sprite sKinglerSprites3[] = {
 	{sKinglerGfx3, ARRAY_COUNT(sKinglerGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx4[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_4.4bpp");
+static const u8 sKinglerGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_4.4bpp.lz");
 static const ax_sprite sKinglerSprites4[] = {
 	{sKinglerGfx4, ARRAY_COUNT(sKinglerGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx5[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_5.4bpp");
+static const u8 sKinglerGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_5.4bpp.lz");
 static const ax_sprite sKinglerSprites5[] = {
 	{sKinglerGfx5, ARRAY_COUNT(sKinglerGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx6[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_6.4bpp");
+static const u8 sKinglerGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_6.4bpp.lz");
 static const ax_sprite sKinglerSprites6[] = {
 	{sKinglerGfx6, ARRAY_COUNT(sKinglerGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx7[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_7.4bpp");
+static const u8 sKinglerGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_7.4bpp.lz");
 static const ax_sprite sKinglerSprites7[] = {
 	{sKinglerGfx7, ARRAY_COUNT(sKinglerGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx8[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_8.4bpp");
+static const u8 sKinglerGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_8.4bpp.lz");
 static const ax_sprite sKinglerSprites8[] = {
 	{sKinglerGfx8, ARRAY_COUNT(sKinglerGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx9[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_9.4bpp");
+static const u8 sKinglerGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_9.4bpp.lz");
 static const ax_sprite sKinglerSprites9[] = {
 	{sKinglerGfx9, ARRAY_COUNT(sKinglerGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx10[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_10.4bpp");
+static const u8 sKinglerGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_10.4bpp.lz");
 static const ax_sprite sKinglerSprites10[] = {
 	{sKinglerGfx10, ARRAY_COUNT(sKinglerGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx11[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_11.4bpp");
+static const u8 sKinglerGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_11.4bpp.lz");
 static const ax_sprite sKinglerSprites11[] = {
 	{sKinglerGfx11, ARRAY_COUNT(sKinglerGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx12[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_12.4bpp");
+static const u8 sKinglerGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_12.4bpp.lz");
 static const ax_sprite sKinglerSprites12[] = {
 	{sKinglerGfx12, ARRAY_COUNT(sKinglerGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx13[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_13.4bpp");
+static const u8 sKinglerGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_13.4bpp.lz");
 static const ax_sprite sKinglerSprites13[] = {
 	{sKinglerGfx13, ARRAY_COUNT(sKinglerGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx14[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_14.4bpp");
+static const u8 sKinglerGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_14.4bpp.lz");
 static const ax_sprite sKinglerSprites14[] = {
 	{sKinglerGfx14, ARRAY_COUNT(sKinglerGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx15[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_15.4bpp");
+static const u8 sKinglerGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_15.4bpp.lz");
 static const ax_sprite sKinglerSprites15[] = {
 	{sKinglerGfx15, ARRAY_COUNT(sKinglerGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx16[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_16.4bpp");
+static const u8 sKinglerGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_16.4bpp.lz");
 static const ax_sprite sKinglerSprites16[] = {
 	{sKinglerGfx16, ARRAY_COUNT(sKinglerGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx17[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_17.4bpp");
+static const u8 sKinglerGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_17.4bpp.lz");
 static const ax_sprite sKinglerSprites17[] = {
 	{sKinglerGfx17, ARRAY_COUNT(sKinglerGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx18[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_18.4bpp");
+static const u8 sKinglerGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_18.4bpp.lz");
 static const ax_sprite sKinglerSprites18[] = {
 	{sKinglerGfx18, ARRAY_COUNT(sKinglerGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx19[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_19.4bpp");
+static const u8 sKinglerGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_19.4bpp.lz");
 static const ax_sprite sKinglerSprites19[] = {
 	{sKinglerGfx19, ARRAY_COUNT(sKinglerGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx20[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_20.4bpp");
+static const u8 sKinglerGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_20.4bpp.lz");
 static const ax_sprite sKinglerSprites20[] = {
 	{sKinglerGfx20, ARRAY_COUNT(sKinglerGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx21[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_21.4bpp");
+static const u8 sKinglerGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_21.4bpp.lz");
 static const ax_sprite sKinglerSprites21[] = {
 	{sKinglerGfx21, ARRAY_COUNT(sKinglerGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx22[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_22.4bpp");
+static const u8 sKinglerGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_22.4bpp.lz");
 static const ax_sprite sKinglerSprites22[] = {
 	{sKinglerGfx22, ARRAY_COUNT(sKinglerGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx23[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_23.4bpp");
+static const u8 sKinglerGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_23.4bpp.lz");
 static const ax_sprite sKinglerSprites23[] = {
 	{sKinglerGfx23, ARRAY_COUNT(sKinglerGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx24[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_24.4bpp");
+static const u8 sKinglerGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_24.4bpp.lz");
 static const ax_sprite sKinglerSprites24[] = {
 	{sKinglerGfx24, ARRAY_COUNT(sKinglerGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx25[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_25.4bpp");
+static const u8 sKinglerGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_25.4bpp.lz");
 static const ax_sprite sKinglerSprites25[] = {
 	{sKinglerGfx25, ARRAY_COUNT(sKinglerGfx25)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx26[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_26.4bpp");
-static const u8 sKinglerGfx26_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_26_1.4bpp");
-static const u8 sKinglerGfx26_2[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_26_2.4bpp");
-static const u8 sKinglerGfx26_3[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_26_3.4bpp");
+static const u8 sKinglerGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_26.4bpp.lz");
+static const u8 sKinglerGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_26_1.4bpp.lz");
+static const u8 sKinglerGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_26_2.4bpp.lz");
+static const u8 sKinglerGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_26_3.4bpp.lz");
 static const ax_sprite sKinglerSprites26[] = {
 	{sKinglerGfx26, ARRAY_COUNT(sKinglerGfx26)}, 
 	{NULL, 32}, 
@@ -2775,10 +2775,10 @@ static const ax_sprite sKinglerSprites26[] = {
 	{sKinglerGfx26_3, ARRAY_COUNT(sKinglerGfx26_3)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx27[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_27.4bpp");
-static const u8 sKinglerGfx27_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_27_1.4bpp");
-static const u8 sKinglerGfx27_2[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_27_2.4bpp");
-static const u8 sKinglerGfx27_3[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_27_3.4bpp");
+static const u8 sKinglerGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_27.4bpp.lz");
+static const u8 sKinglerGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_27_1.4bpp.lz");
+static const u8 sKinglerGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_27_2.4bpp.lz");
+static const u8 sKinglerGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_27_3.4bpp.lz");
 static const ax_sprite sKinglerSprites27[] = {
 	{sKinglerGfx27, ARRAY_COUNT(sKinglerGfx27)}, 
 	{NULL, 32}, 
@@ -2789,9 +2789,9 @@ static const ax_sprite sKinglerSprites27[] = {
 	{sKinglerGfx27_3, ARRAY_COUNT(sKinglerGfx27_3)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx28[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_28.4bpp");
-static const u8 sKinglerGfx28_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_28_1.4bpp");
-static const u8 sKinglerGfx28_2[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_28_2.4bpp");
+static const u8 sKinglerGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_28.4bpp.lz");
+static const u8 sKinglerGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_28_1.4bpp.lz");
+static const u8 sKinglerGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_28_2.4bpp.lz");
 static const ax_sprite sKinglerSprites28[] = {
 	{sKinglerGfx28, ARRAY_COUNT(sKinglerGfx28)}, 
 	{NULL, 32}, 
@@ -2801,14 +2801,14 @@ static const ax_sprite sKinglerSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx29[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_29.4bpp");
+static const u8 sKinglerGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_29.4bpp.lz");
 static const ax_sprite sKinglerSprites29[] = {
 	{sKinglerGfx29, ARRAY_COUNT(sKinglerGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx30[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_30.4bpp");
-static const u8 sKinglerGfx30_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_30_1.4bpp");
-static const u8 sKinglerGfx30_2[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_30_2.4bpp");
+static const u8 sKinglerGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_30.4bpp.lz");
+static const u8 sKinglerGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_30_1.4bpp.lz");
+static const u8 sKinglerGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_30_2.4bpp.lz");
 static const ax_sprite sKinglerSprites30[] = {
 	{NULL, 32}, 
 	{sKinglerGfx30, ARRAY_COUNT(sKinglerGfx30)}, 
@@ -2818,10 +2818,10 @@ static const ax_sprite sKinglerSprites30[] = {
 	{sKinglerGfx30_2, ARRAY_COUNT(sKinglerGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx31[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_31.4bpp");
-static const u8 sKinglerGfx31_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_31_1.4bpp");
-static const u8 sKinglerGfx31_2[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_31_2.4bpp");
-static const u8 sKinglerGfx31_3[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_31_3.4bpp");
+static const u8 sKinglerGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_31.4bpp.lz");
+static const u8 sKinglerGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_31_1.4bpp.lz");
+static const u8 sKinglerGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_31_2.4bpp.lz");
+static const u8 sKinglerGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_31_3.4bpp.lz");
 static const ax_sprite sKinglerSprites31[] = {
 	{NULL, 32}, 
 	{sKinglerGfx31, ARRAY_COUNT(sKinglerGfx31)}, 
@@ -2834,8 +2834,8 @@ static const ax_sprite sKinglerSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx32[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_32.4bpp");
-static const u8 sKinglerGfx32_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_32_1.4bpp");
+static const u8 sKinglerGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_32.4bpp.lz");
+static const u8 sKinglerGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_32_1.4bpp.lz");
 static const ax_sprite sKinglerSprites32[] = {
 	{NULL, 32}, 
 	{sKinglerGfx32, ARRAY_COUNT(sKinglerGfx32)}, 
@@ -2844,242 +2844,242 @@ static const ax_sprite sKinglerSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx33[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_33.4bpp");
+static const u8 sKinglerGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_33.4bpp.lz");
 static const ax_sprite sKinglerSprites33[] = {
 	{sKinglerGfx33, ARRAY_COUNT(sKinglerGfx33)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx34[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_34.4bpp");
+static const u8 sKinglerGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_34.4bpp.lz");
 static const ax_sprite sKinglerSprites34[] = {
 	{sKinglerGfx34, ARRAY_COUNT(sKinglerGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx35[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_35.4bpp");
+static const u8 sKinglerGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_35.4bpp.lz");
 static const ax_sprite sKinglerSprites35[] = {
 	{sKinglerGfx35, ARRAY_COUNT(sKinglerGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx36[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_36.4bpp");
+static const u8 sKinglerGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_36.4bpp.lz");
 static const ax_sprite sKinglerSprites36[] = {
 	{sKinglerGfx36, ARRAY_COUNT(sKinglerGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx37[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_37.4bpp");
-static const u8 sKinglerGfx37_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_37_1.4bpp");
+static const u8 sKinglerGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_37.4bpp.lz");
+static const u8 sKinglerGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_37_1.4bpp.lz");
 static const ax_sprite sKinglerSprites37[] = {
 	{sKinglerGfx37, ARRAY_COUNT(sKinglerGfx37)}, 
 	{NULL, 32}, 
 	{sKinglerGfx37_1, ARRAY_COUNT(sKinglerGfx37_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx38[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_38.4bpp");
+static const u8 sKinglerGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_38.4bpp.lz");
 static const ax_sprite sKinglerSprites38[] = {
 	{sKinglerGfx38, ARRAY_COUNT(sKinglerGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx39[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_39.4bpp");
+static const u8 sKinglerGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_39.4bpp.lz");
 static const ax_sprite sKinglerSprites39[] = {
 	{sKinglerGfx39, ARRAY_COUNT(sKinglerGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx40[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_40.4bpp");
+static const u8 sKinglerGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_40.4bpp.lz");
 static const ax_sprite sKinglerSprites40[] = {
 	{sKinglerGfx40, ARRAY_COUNT(sKinglerGfx40)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx41[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_41.4bpp");
+static const u8 sKinglerGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_41.4bpp.lz");
 static const ax_sprite sKinglerSprites41[] = {
 	{sKinglerGfx41, ARRAY_COUNT(sKinglerGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx42[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_42.4bpp");
+static const u8 sKinglerGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_42.4bpp.lz");
 static const ax_sprite sKinglerSprites42[] = {
 	{sKinglerGfx42, ARRAY_COUNT(sKinglerGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx43[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_43.4bpp");
+static const u8 sKinglerGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_43.4bpp.lz");
 static const ax_sprite sKinglerSprites43[] = {
 	{sKinglerGfx43, ARRAY_COUNT(sKinglerGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx44[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_44.4bpp");
+static const u8 sKinglerGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_44.4bpp.lz");
 static const ax_sprite sKinglerSprites44[] = {
 	{sKinglerGfx44, ARRAY_COUNT(sKinglerGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx45[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_45.4bpp");
+static const u8 sKinglerGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_45.4bpp.lz");
 static const ax_sprite sKinglerSprites45[] = {
 	{sKinglerGfx45, ARRAY_COUNT(sKinglerGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx46[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_46.4bpp");
+static const u8 sKinglerGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_46.4bpp.lz");
 static const ax_sprite sKinglerSprites46[] = {
 	{sKinglerGfx46, ARRAY_COUNT(sKinglerGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx47[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_47.4bpp");
+static const u8 sKinglerGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_47.4bpp.lz");
 static const ax_sprite sKinglerSprites47[] = {
 	{sKinglerGfx47, ARRAY_COUNT(sKinglerGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx48[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_48.4bpp");
+static const u8 sKinglerGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_48.4bpp.lz");
 static const ax_sprite sKinglerSprites48[] = {
 	{sKinglerGfx48, ARRAY_COUNT(sKinglerGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx49[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_49.4bpp");
+static const u8 sKinglerGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_49.4bpp.lz");
 static const ax_sprite sKinglerSprites49[] = {
 	{sKinglerGfx49, ARRAY_COUNT(sKinglerGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx50[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_50.4bpp");
-static const u8 sKinglerGfx50_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_50_1.4bpp");
+static const u8 sKinglerGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_50.4bpp.lz");
+static const u8 sKinglerGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_50_1.4bpp.lz");
 static const ax_sprite sKinglerSprites50[] = {
 	{sKinglerGfx50, ARRAY_COUNT(sKinglerGfx50)}, 
 	{NULL, 32}, 
 	{sKinglerGfx50_1, ARRAY_COUNT(sKinglerGfx50_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx51[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_51.4bpp");
+static const u8 sKinglerGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_51.4bpp.lz");
 static const ax_sprite sKinglerSprites51[] = {
 	{sKinglerGfx51, ARRAY_COUNT(sKinglerGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx52[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_52.4bpp");
+static const u8 sKinglerGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_52.4bpp.lz");
 static const ax_sprite sKinglerSprites52[] = {
 	{sKinglerGfx52, ARRAY_COUNT(sKinglerGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx53[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_53.4bpp");
+static const u8 sKinglerGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_53.4bpp.lz");
 static const ax_sprite sKinglerSprites53[] = {
 	{sKinglerGfx53, ARRAY_COUNT(sKinglerGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx54[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_54.4bpp");
+static const u8 sKinglerGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_54.4bpp.lz");
 static const ax_sprite sKinglerSprites54[] = {
 	{NULL, 32}, 
 	{sKinglerGfx54, ARRAY_COUNT(sKinglerGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx55[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_55.4bpp");
+static const u8 sKinglerGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_55.4bpp.lz");
 static const ax_sprite sKinglerSprites55[] = {
 	{sKinglerGfx55, ARRAY_COUNT(sKinglerGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx56[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_56.4bpp");
+static const u8 sKinglerGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_56.4bpp.lz");
 static const ax_sprite sKinglerSprites56[] = {
 	{sKinglerGfx56, ARRAY_COUNT(sKinglerGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx57[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_57.4bpp");
+static const u8 sKinglerGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_57.4bpp.lz");
 static const ax_sprite sKinglerSprites57[] = {
 	{sKinglerGfx57, ARRAY_COUNT(sKinglerGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx58[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_58.4bpp");
+static const u8 sKinglerGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_58.4bpp.lz");
 static const ax_sprite sKinglerSprites58[] = {
 	{sKinglerGfx58, ARRAY_COUNT(sKinglerGfx58)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx59[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_59.4bpp");
+static const u8 sKinglerGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_59.4bpp.lz");
 static const ax_sprite sKinglerSprites59[] = {
 	{sKinglerGfx59, ARRAY_COUNT(sKinglerGfx59)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx60[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_60.4bpp");
+static const u8 sKinglerGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_60.4bpp.lz");
 static const ax_sprite sKinglerSprites60[] = {
 	{sKinglerGfx60, ARRAY_COUNT(sKinglerGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx61[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_61.4bpp");
+static const u8 sKinglerGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_61.4bpp.lz");
 static const ax_sprite sKinglerSprites61[] = {
 	{NULL, 32}, 
 	{sKinglerGfx61, ARRAY_COUNT(sKinglerGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx62[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_62.4bpp");
+static const u8 sKinglerGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_62.4bpp.lz");
 static const ax_sprite sKinglerSprites62[] = {
 	{sKinglerGfx62, ARRAY_COUNT(sKinglerGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx63[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_63.4bpp");
+static const u8 sKinglerGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_63.4bpp.lz");
 static const ax_sprite sKinglerSprites63[] = {
 	{sKinglerGfx63, ARRAY_COUNT(sKinglerGfx63)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx64[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_64.4bpp");
+static const u8 sKinglerGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_64.4bpp.lz");
 static const ax_sprite sKinglerSprites64[] = {
 	{sKinglerGfx64, ARRAY_COUNT(sKinglerGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx65[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_65.4bpp");
-static const u8 sKinglerGfx65_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_65_1.4bpp");
+static const u8 sKinglerGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_65.4bpp.lz");
+static const u8 sKinglerGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_65_1.4bpp.lz");
 static const ax_sprite sKinglerSprites65[] = {
 	{sKinglerGfx65, ARRAY_COUNT(sKinglerGfx65)}, 
 	{NULL, 32}, 
 	{sKinglerGfx65_1, ARRAY_COUNT(sKinglerGfx65_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx66[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_66.4bpp");
+static const u8 sKinglerGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_66.4bpp.lz");
 static const ax_sprite sKinglerSprites66[] = {
 	{sKinglerGfx66, ARRAY_COUNT(sKinglerGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx67[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_67.4bpp");
+static const u8 sKinglerGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_67.4bpp.lz");
 static const ax_sprite sKinglerSprites67[] = {
 	{sKinglerGfx67, ARRAY_COUNT(sKinglerGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx68[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_68.4bpp");
+static const u8 sKinglerGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_68.4bpp.lz");
 static const ax_sprite sKinglerSprites68[] = {
 	{sKinglerGfx68, ARRAY_COUNT(sKinglerGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx69[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_69.4bpp");
+static const u8 sKinglerGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_69.4bpp.lz");
 static const ax_sprite sKinglerSprites69[] = {
 	{sKinglerGfx69, ARRAY_COUNT(sKinglerGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx70[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_70.4bpp");
-static const u8 sKinglerGfx70_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_70_1.4bpp");
+static const u8 sKinglerGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_70.4bpp.lz");
+static const u8 sKinglerGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_70_1.4bpp.lz");
 static const ax_sprite sKinglerSprites70[] = {
 	{sKinglerGfx70, ARRAY_COUNT(sKinglerGfx70)}, 
 	{NULL, 32}, 
 	{sKinglerGfx70_1, ARRAY_COUNT(sKinglerGfx70_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx71[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_71.4bpp");
+static const u8 sKinglerGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_71.4bpp.lz");
 static const ax_sprite sKinglerSprites71[] = {
 	{sKinglerGfx71, ARRAY_COUNT(sKinglerGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx72[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_72.4bpp");
+static const u8 sKinglerGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_72.4bpp.lz");
 static const ax_sprite sKinglerSprites72[] = {
 	{sKinglerGfx72, ARRAY_COUNT(sKinglerGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx73[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_73.4bpp");
+static const u8 sKinglerGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_73.4bpp.lz");
 static const ax_sprite sKinglerSprites73[] = {
 	{sKinglerGfx73, ARRAY_COUNT(sKinglerGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx74[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_74.4bpp");
+static const u8 sKinglerGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_74.4bpp.lz");
 static const ax_sprite sKinglerSprites74[] = {
 	{sKinglerGfx74, ARRAY_COUNT(sKinglerGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx75[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_75.4bpp");
+static const u8 sKinglerGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_75.4bpp.lz");
 static const ax_sprite sKinglerSprites75[] = {
 	{sKinglerGfx75, ARRAY_COUNT(sKinglerGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx76[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_76.4bpp");
-static const u8 sKinglerGfx76_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_76_1.4bpp");
+static const u8 sKinglerGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_76.4bpp.lz");
+static const u8 sKinglerGfx76_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_76_1.4bpp.lz");
 static const ax_sprite sKinglerSprites76[] = {
 	{NULL, 160}, 
 	{sKinglerGfx76, ARRAY_COUNT(sKinglerGfx76)}, 
@@ -3087,8 +3087,8 @@ static const ax_sprite sKinglerSprites76[] = {
 	{sKinglerGfx76_1, ARRAY_COUNT(sKinglerGfx76_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx77[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_77.4bpp");
-static const u8 sKinglerGfx77_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_77_1.4bpp");
+static const u8 sKinglerGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_77.4bpp.lz");
+static const u8 sKinglerGfx77_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_77_1.4bpp.lz");
 static const ax_sprite sKinglerSprites77[] = {
 	{NULL, 128}, 
 	{sKinglerGfx77, ARRAY_COUNT(sKinglerGfx77)}, 
@@ -3096,8 +3096,8 @@ static const ax_sprite sKinglerSprites77[] = {
 	{sKinglerGfx77_1, ARRAY_COUNT(sKinglerGfx77_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx78[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_78.4bpp");
-static const u8 sKinglerGfx78_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_78_1.4bpp");
+static const u8 sKinglerGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_78.4bpp.lz");
+static const u8 sKinglerGfx78_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_78_1.4bpp.lz");
 static const ax_sprite sKinglerSprites78[] = {
 	{NULL, 128}, 
 	{sKinglerGfx78, ARRAY_COUNT(sKinglerGfx78)}, 
@@ -3105,9 +3105,9 @@ static const ax_sprite sKinglerSprites78[] = {
 	{sKinglerGfx78_1, ARRAY_COUNT(sKinglerGfx78_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx79[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_79.4bpp");
-static const u8 sKinglerGfx79_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_79_1.4bpp");
-static const u8 sKinglerGfx79_2[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_79_2.4bpp");
+static const u8 sKinglerGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_79.4bpp.lz");
+static const u8 sKinglerGfx79_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_79_1.4bpp.lz");
+static const u8 sKinglerGfx79_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_79_2.4bpp.lz");
 static const ax_sprite sKinglerSprites79[] = {
 	{NULL, 32}, 
 	{sKinglerGfx79, ARRAY_COUNT(sKinglerGfx79)}, 
@@ -3117,17 +3117,17 @@ static const ax_sprite sKinglerSprites79[] = {
 	{sKinglerGfx79_2, ARRAY_COUNT(sKinglerGfx79_2)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx80[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_80.4bpp");
-static const u8 sKinglerGfx80_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_80_1.4bpp");
+static const u8 sKinglerGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_80.4bpp.lz");
+static const u8 sKinglerGfx80_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_80_1.4bpp.lz");
 static const ax_sprite sKinglerSprites80[] = {
 	{sKinglerGfx80, ARRAY_COUNT(sKinglerGfx80)}, 
 	{NULL, 96}, 
 	{sKinglerGfx80_1, ARRAY_COUNT(sKinglerGfx80_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx81[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_81.4bpp");
-static const u8 sKinglerGfx81_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_81_1.4bpp");
-static const u8 sKinglerGfx81_2[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_81_2.4bpp");
+static const u8 sKinglerGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_81.4bpp.lz");
+static const u8 sKinglerGfx81_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_81_1.4bpp.lz");
+static const u8 sKinglerGfx81_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_81_2.4bpp.lz");
 static const ax_sprite sKinglerSprites81[] = {
 	{NULL, 64}, 
 	{sKinglerGfx81, ARRAY_COUNT(sKinglerGfx81)}, 
@@ -3138,14 +3138,14 @@ static const ax_sprite sKinglerSprites81[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx82[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_82.4bpp");
+static const u8 sKinglerGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_82.4bpp.lz");
 static const ax_sprite sKinglerSprites82[] = {
 	{NULL, 128}, 
 	{sKinglerGfx82, ARRAY_COUNT(sKinglerGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx83[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_83.4bpp");
-static const u8 sKinglerGfx83_1[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_83_1.4bpp");
+static const u8 sKinglerGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_83.4bpp.lz");
+static const u8 sKinglerGfx83_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_83_1.4bpp.lz");
 static const ax_sprite sKinglerSprites83[] = {
 	{NULL, 128}, 
 	{sKinglerGfx83, ARRAY_COUNT(sKinglerGfx83)}, 
@@ -3153,52 +3153,52 @@ static const ax_sprite sKinglerSprites83[] = {
 	{sKinglerGfx83_1, ARRAY_COUNT(sKinglerGfx83_1)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx84[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_84.4bpp");
+static const u8 sKinglerGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_84.4bpp.lz");
 static const ax_sprite sKinglerSprites84[] = {
 	{sKinglerGfx84, ARRAY_COUNT(sKinglerGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx85[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_85.4bpp");
+static const u8 sKinglerGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_85.4bpp.lz");
 static const ax_sprite sKinglerSprites85[] = {
 	{sKinglerGfx85, ARRAY_COUNT(sKinglerGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx86[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_86.4bpp");
+static const u8 sKinglerGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_86.4bpp.lz");
 static const ax_sprite sKinglerSprites86[] = {
 	{sKinglerGfx86, ARRAY_COUNT(sKinglerGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx87[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_87.4bpp");
+static const u8 sKinglerGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_87.4bpp.lz");
 static const ax_sprite sKinglerSprites87[] = {
 	{sKinglerGfx87, ARRAY_COUNT(sKinglerGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx88[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_88.4bpp");
+static const u8 sKinglerGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_88.4bpp.lz");
 static const ax_sprite sKinglerSprites88[] = {
 	{sKinglerGfx88, ARRAY_COUNT(sKinglerGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx89[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_89.4bpp");
+static const u8 sKinglerGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_89.4bpp.lz");
 static const ax_sprite sKinglerSprites89[] = {
 	{sKinglerGfx89, ARRAY_COUNT(sKinglerGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx90[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_90.4bpp");
+static const u8 sKinglerGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_90.4bpp.lz");
 static const ax_sprite sKinglerSprites90[] = {
 	{sKinglerGfx90, ARRAY_COUNT(sKinglerGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx91[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_91.4bpp");
+static const u8 sKinglerGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_91.4bpp.lz");
 static const ax_sprite sKinglerSprites91[] = {
 	{sKinglerGfx91, ARRAY_COUNT(sKinglerGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx92[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_92.4bpp");
+static const u8 sKinglerGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_92.4bpp.lz");
 static const ax_sprite sKinglerSprites92[] = {
 	{sKinglerGfx92, ARRAY_COUNT(sKinglerGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sKinglerGfx93[] = INCBIN_U8("graphics/ax/mon/kingler/sprite_93.4bpp");
+static const u8 sKinglerGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingler/sprite_93.4bpp.lz");
 static const ax_sprite sKinglerSprites93[] = {
 	{sKinglerGfx93, ARRAY_COUNT(sKinglerGfx93)}, 
 	{NULL, 0}

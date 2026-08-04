@@ -2077,83 +2077,83 @@ static const ax_anim sDonphanAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDonphanGfx1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_1.4bpp");
+static const u8 sDonphanGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_1.4bpp.lz");
 static const ax_sprite sDonphanSprites1[] = {
 	{sDonphanGfx1, ARRAY_COUNT(sDonphanGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx2[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_2.4bpp");
+static const u8 sDonphanGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_2.4bpp.lz");
 static const ax_sprite sDonphanSprites2[] = {
 	{sDonphanGfx2, ARRAY_COUNT(sDonphanGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx3[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_3.4bpp");
+static const u8 sDonphanGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_3.4bpp.lz");
 static const ax_sprite sDonphanSprites3[] = {
 	{sDonphanGfx3, ARRAY_COUNT(sDonphanGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx4[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_4.4bpp");
+static const u8 sDonphanGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_4.4bpp.lz");
 static const ax_sprite sDonphanSprites4[] = {
 	{sDonphanGfx4, ARRAY_COUNT(sDonphanGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx5[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_5.4bpp");
+static const u8 sDonphanGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_5.4bpp.lz");
 static const ax_sprite sDonphanSprites5[] = {
 	{sDonphanGfx5, ARRAY_COUNT(sDonphanGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx6[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_6.4bpp");
+static const u8 sDonphanGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_6.4bpp.lz");
 static const ax_sprite sDonphanSprites6[] = {
 	{sDonphanGfx6, ARRAY_COUNT(sDonphanGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx7[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_7.4bpp");
+static const u8 sDonphanGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_7.4bpp.lz");
 static const ax_sprite sDonphanSprites7[] = {
 	{sDonphanGfx7, ARRAY_COUNT(sDonphanGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx8[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_8.4bpp");
+static const u8 sDonphanGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_8.4bpp.lz");
 static const ax_sprite sDonphanSprites8[] = {
 	{sDonphanGfx8, ARRAY_COUNT(sDonphanGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx9[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_9.4bpp");
+static const u8 sDonphanGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_9.4bpp.lz");
 static const ax_sprite sDonphanSprites9[] = {
 	{sDonphanGfx9, ARRAY_COUNT(sDonphanGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx10[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_10.4bpp");
+static const u8 sDonphanGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_10.4bpp.lz");
 static const ax_sprite sDonphanSprites10[] = {
 	{sDonphanGfx10, ARRAY_COUNT(sDonphanGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx11[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_11.4bpp");
+static const u8 sDonphanGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_11.4bpp.lz");
 static const ax_sprite sDonphanSprites11[] = {
 	{sDonphanGfx11, ARRAY_COUNT(sDonphanGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx12[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_12.4bpp");
+static const u8 sDonphanGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_12.4bpp.lz");
 static const ax_sprite sDonphanSprites12[] = {
 	{sDonphanGfx12, ARRAY_COUNT(sDonphanGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx13[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_13.4bpp");
+static const u8 sDonphanGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_13.4bpp.lz");
 static const ax_sprite sDonphanSprites13[] = {
 	{sDonphanGfx13, ARRAY_COUNT(sDonphanGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx14[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_14.4bpp");
+static const u8 sDonphanGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_14.4bpp.lz");
 static const ax_sprite sDonphanSprites14[] = {
 	{sDonphanGfx14, ARRAY_COUNT(sDonphanGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx15[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_15.4bpp");
+static const u8 sDonphanGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_15.4bpp.lz");
 static const ax_sprite sDonphanSprites15[] = {
 	{sDonphanGfx15, ARRAY_COUNT(sDonphanGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx16[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_16.4bpp");
-static const u8 sDonphanGfx16_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_16_1.4bpp");
+static const u8 sDonphanGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_16.4bpp.lz");
+static const u8 sDonphanGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_16_1.4bpp.lz");
 static const ax_sprite sDonphanSprites16[] = {
 	{NULL, 32}, 
 	{sDonphanGfx16, ARRAY_COUNT(sDonphanGfx16)}, 
@@ -2162,9 +2162,9 @@ static const ax_sprite sDonphanSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx17[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_17.4bpp");
-static const u8 sDonphanGfx17_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_17_1.4bpp");
-static const u8 sDonphanGfx17_2[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_17_2.4bpp");
+static const u8 sDonphanGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_17.4bpp.lz");
+static const u8 sDonphanGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_17_1.4bpp.lz");
+static const u8 sDonphanGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_17_2.4bpp.lz");
 static const ax_sprite sDonphanSprites17[] = {
 	{NULL, 32}, 
 	{sDonphanGfx17, ARRAY_COUNT(sDonphanGfx17)}, 
@@ -2175,14 +2175,14 @@ static const ax_sprite sDonphanSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx18[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_18.4bpp");
+static const u8 sDonphanGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_18.4bpp.lz");
 static const ax_sprite sDonphanSprites18[] = {
 	{NULL, 32}, 
 	{sDonphanGfx18, ARRAY_COUNT(sDonphanGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx19[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_19.4bpp");
-static const u8 sDonphanGfx19_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_19_1.4bpp");
+static const u8 sDonphanGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_19.4bpp.lz");
+static const u8 sDonphanGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_19_1.4bpp.lz");
 static const ax_sprite sDonphanSprites19[] = {
 	{NULL, 32}, 
 	{sDonphanGfx19, ARRAY_COUNT(sDonphanGfx19)}, 
@@ -2191,14 +2191,14 @@ static const ax_sprite sDonphanSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx20[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_20.4bpp");
+static const u8 sDonphanGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_20.4bpp.lz");
 static const ax_sprite sDonphanSprites20[] = {
 	{sDonphanGfx20, ARRAY_COUNT(sDonphanGfx20)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx21[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_21.4bpp");
-static const u8 sDonphanGfx21_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_21_1.4bpp");
+static const u8 sDonphanGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_21.4bpp.lz");
+static const u8 sDonphanGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_21_1.4bpp.lz");
 static const ax_sprite sDonphanSprites21[] = {
 	{NULL, 32}, 
 	{sDonphanGfx21, ARRAY_COUNT(sDonphanGfx21)}, 
@@ -2206,48 +2206,48 @@ static const ax_sprite sDonphanSprites21[] = {
 	{sDonphanGfx21_1, ARRAY_COUNT(sDonphanGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx22[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_22.4bpp");
-static const u8 sDonphanGfx22_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_22_1.4bpp");
+static const u8 sDonphanGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_22.4bpp.lz");
+static const u8 sDonphanGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_22_1.4bpp.lz");
 static const ax_sprite sDonphanSprites22[] = {
 	{sDonphanGfx22, ARRAY_COUNT(sDonphanGfx22)}, 
 	{NULL, 64}, 
 	{sDonphanGfx22_1, ARRAY_COUNT(sDonphanGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx23[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_23.4bpp");
-static const u8 sDonphanGfx23_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_23_1.4bpp");
+static const u8 sDonphanGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_23.4bpp.lz");
+static const u8 sDonphanGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_23_1.4bpp.lz");
 static const ax_sprite sDonphanSprites23[] = {
 	{sDonphanGfx23, ARRAY_COUNT(sDonphanGfx23)}, 
 	{NULL, 64}, 
 	{sDonphanGfx23_1, ARRAY_COUNT(sDonphanGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx24[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_24.4bpp");
-static const u8 sDonphanGfx24_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_24_1.4bpp");
+static const u8 sDonphanGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_24.4bpp.lz");
+static const u8 sDonphanGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_24_1.4bpp.lz");
 static const ax_sprite sDonphanSprites24[] = {
 	{sDonphanGfx24, ARRAY_COUNT(sDonphanGfx24)}, 
 	{NULL, 32}, 
 	{sDonphanGfx24_1, ARRAY_COUNT(sDonphanGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx25[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_25.4bpp");
+static const u8 sDonphanGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_25.4bpp.lz");
 static const ax_sprite sDonphanSprites25[] = {
 	{sDonphanGfx25, ARRAY_COUNT(sDonphanGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx26[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_26.4bpp");
+static const u8 sDonphanGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_26.4bpp.lz");
 static const ax_sprite sDonphanSprites26[] = {
 	{sDonphanGfx26, ARRAY_COUNT(sDonphanGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx27[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_27.4bpp");
+static const u8 sDonphanGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_27.4bpp.lz");
 static const ax_sprite sDonphanSprites27[] = {
 	{sDonphanGfx27, ARRAY_COUNT(sDonphanGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx28[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_28.4bpp");
-static const u8 sDonphanGfx28_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_28_1.4bpp");
-static const u8 sDonphanGfx28_2[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_28_2.4bpp");
+static const u8 sDonphanGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_28.4bpp.lz");
+static const u8 sDonphanGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_28_1.4bpp.lz");
+static const u8 sDonphanGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_28_2.4bpp.lz");
 static const ax_sprite sDonphanSprites28[] = {
 	{NULL, 32}, 
 	{sDonphanGfx28, ARRAY_COUNT(sDonphanGfx28)}, 
@@ -2257,8 +2257,8 @@ static const ax_sprite sDonphanSprites28[] = {
 	{sDonphanGfx28_2, ARRAY_COUNT(sDonphanGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx29[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_29.4bpp");
-static const u8 sDonphanGfx29_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_29_1.4bpp");
+static const u8 sDonphanGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_29.4bpp.lz");
+static const u8 sDonphanGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_29_1.4bpp.lz");
 static const ax_sprite sDonphanSprites29[] = {
 	{NULL, 32}, 
 	{sDonphanGfx29, ARRAY_COUNT(sDonphanGfx29)}, 
@@ -2267,8 +2267,8 @@ static const ax_sprite sDonphanSprites29[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx30[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_30.4bpp");
-static const u8 sDonphanGfx30_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_30_1.4bpp");
+static const u8 sDonphanGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_30.4bpp.lz");
+static const u8 sDonphanGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_30_1.4bpp.lz");
 static const ax_sprite sDonphanSprites30[] = {
 	{NULL, 32}, 
 	{sDonphanGfx30, ARRAY_COUNT(sDonphanGfx30)}, 
@@ -2277,8 +2277,8 @@ static const ax_sprite sDonphanSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx31[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_31.4bpp");
-static const u8 sDonphanGfx31_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_31_1.4bpp");
+static const u8 sDonphanGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_31.4bpp.lz");
+static const u8 sDonphanGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_31_1.4bpp.lz");
 static const ax_sprite sDonphanSprites31[] = {
 	{NULL, 32}, 
 	{sDonphanGfx31, ARRAY_COUNT(sDonphanGfx31)}, 
@@ -2287,9 +2287,9 @@ static const ax_sprite sDonphanSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx32[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_32.4bpp");
-static const u8 sDonphanGfx32_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_32_1.4bpp");
-static const u8 sDonphanGfx32_2[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_32_2.4bpp");
+static const u8 sDonphanGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_32.4bpp.lz");
+static const u8 sDonphanGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_32_1.4bpp.lz");
+static const u8 sDonphanGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_32_2.4bpp.lz");
 static const ax_sprite sDonphanSprites32[] = {
 	{sDonphanGfx32, ARRAY_COUNT(sDonphanGfx32)}, 
 	{NULL, 32}, 
@@ -2299,8 +2299,8 @@ static const ax_sprite sDonphanSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx33[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_33.4bpp");
-static const u8 sDonphanGfx33_1[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_33_1.4bpp");
+static const u8 sDonphanGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_33.4bpp.lz");
+static const u8 sDonphanGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_33_1.4bpp.lz");
 static const ax_sprite sDonphanSprites33[] = {
 	{NULL, 32}, 
 	{sDonphanGfx33, ARRAY_COUNT(sDonphanGfx33)}, 
@@ -2309,37 +2309,37 @@ static const ax_sprite sDonphanSprites33[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx34[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_34.4bpp");
+static const u8 sDonphanGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_34.4bpp.lz");
 static const ax_sprite sDonphanSprites34[] = {
 	{sDonphanGfx34, ARRAY_COUNT(sDonphanGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx35[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_35.4bpp");
+static const u8 sDonphanGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_35.4bpp.lz");
 static const ax_sprite sDonphanSprites35[] = {
 	{sDonphanGfx35, ARRAY_COUNT(sDonphanGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx36[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_36.4bpp");
+static const u8 sDonphanGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_36.4bpp.lz");
 static const ax_sprite sDonphanSprites36[] = {
 	{sDonphanGfx36, ARRAY_COUNT(sDonphanGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx37[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_37.4bpp");
+static const u8 sDonphanGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_37.4bpp.lz");
 static const ax_sprite sDonphanSprites37[] = {
 	{sDonphanGfx37, ARRAY_COUNT(sDonphanGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx38[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_38.4bpp");
+static const u8 sDonphanGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_38.4bpp.lz");
 static const ax_sprite sDonphanSprites38[] = {
 	{sDonphanGfx38, ARRAY_COUNT(sDonphanGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx39[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_39.4bpp");
+static const u8 sDonphanGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_39.4bpp.lz");
 static const ax_sprite sDonphanSprites39[] = {
 	{sDonphanGfx39, ARRAY_COUNT(sDonphanGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sDonphanGfx40[] = INCBIN_U8("graphics/ax/mon/donphan/sprite_40.4bpp");
+static const u8 sDonphanGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/donphan/sprite_40.4bpp.lz");
 static const ax_sprite sDonphanSprites40[] = {
 	{sDonphanGfx40, ARRAY_COUNT(sDonphanGfx40)}, 
 	{NULL, 0}

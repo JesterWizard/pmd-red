@@ -3087,85 +3087,85 @@ static const ax_anim sCyndaquilAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCyndaquilGfx1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_1.4bpp");
+static const u8 sCyndaquilGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_1.4bpp.lz");
 static const ax_sprite sCyndaquilSprites1[] = {
 	{sCyndaquilGfx1, ARRAY_COUNT(sCyndaquilGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_2.4bpp");
+static const u8 sCyndaquilGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites2[] = {
 	{sCyndaquilGfx2, ARRAY_COUNT(sCyndaquilGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx3[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_3.4bpp");
+static const u8 sCyndaquilGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_3.4bpp.lz");
 static const ax_sprite sCyndaquilSprites3[] = {
 	{sCyndaquilGfx3, ARRAY_COUNT(sCyndaquilGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx4[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_4.4bpp");
+static const u8 sCyndaquilGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_4.4bpp.lz");
 static const ax_sprite sCyndaquilSprites4[] = {
 	{sCyndaquilGfx4, ARRAY_COUNT(sCyndaquilGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx5[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_5.4bpp");
+static const u8 sCyndaquilGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_5.4bpp.lz");
 static const ax_sprite sCyndaquilSprites5[] = {
 	{sCyndaquilGfx5, ARRAY_COUNT(sCyndaquilGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx6[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_6.4bpp");
+static const u8 sCyndaquilGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_6.4bpp.lz");
 static const ax_sprite sCyndaquilSprites6[] = {
 	{sCyndaquilGfx6, ARRAY_COUNT(sCyndaquilGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx7[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_7.4bpp");
+static const u8 sCyndaquilGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_7.4bpp.lz");
 static const ax_sprite sCyndaquilSprites7[] = {
 	{sCyndaquilGfx7, ARRAY_COUNT(sCyndaquilGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx8[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_8.4bpp");
+static const u8 sCyndaquilGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_8.4bpp.lz");
 static const ax_sprite sCyndaquilSprites8[] = {
 	{sCyndaquilGfx8, ARRAY_COUNT(sCyndaquilGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx9[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_9.4bpp");
+static const u8 sCyndaquilGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_9.4bpp.lz");
 static const ax_sprite sCyndaquilSprites9[] = {
 	{sCyndaquilGfx9, ARRAY_COUNT(sCyndaquilGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx10[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_10.4bpp");
+static const u8 sCyndaquilGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_10.4bpp.lz");
 static const ax_sprite sCyndaquilSprites10[] = {
 	{sCyndaquilGfx10, ARRAY_COUNT(sCyndaquilGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx11[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_11.4bpp");
+static const u8 sCyndaquilGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_11.4bpp.lz");
 static const ax_sprite sCyndaquilSprites11[] = {
 	{sCyndaquilGfx11, ARRAY_COUNT(sCyndaquilGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx12[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_12.4bpp");
+static const u8 sCyndaquilGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_12.4bpp.lz");
 static const ax_sprite sCyndaquilSprites12[] = {
 	{sCyndaquilGfx12, ARRAY_COUNT(sCyndaquilGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx13[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_13.4bpp");
+static const u8 sCyndaquilGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_13.4bpp.lz");
 static const ax_sprite sCyndaquilSprites13[] = {
 	{sCyndaquilGfx13, ARRAY_COUNT(sCyndaquilGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx14[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_14.4bpp");
+static const u8 sCyndaquilGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_14.4bpp.lz");
 static const ax_sprite sCyndaquilSprites14[] = {
 	{sCyndaquilGfx14, ARRAY_COUNT(sCyndaquilGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx15[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_15.4bpp");
+static const u8 sCyndaquilGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_15.4bpp.lz");
 static const ax_sprite sCyndaquilSprites15[] = {
 	{sCyndaquilGfx15, ARRAY_COUNT(sCyndaquilGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx16[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_16.4bpp");
-static const u8 sCyndaquilGfx16_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_16_1.4bpp");
-static const u8 sCyndaquilGfx16_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_16_2.4bpp");
-static const u8 sCyndaquilGfx16_3[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_16_3.4bpp");
+static const u8 sCyndaquilGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_16.4bpp.lz");
+static const u8 sCyndaquilGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_16_1.4bpp.lz");
+static const u8 sCyndaquilGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_16_2.4bpp.lz");
+static const u8 sCyndaquilGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_16_3.4bpp.lz");
 static const ax_sprite sCyndaquilSprites16[] = {
 	{sCyndaquilGfx16, ARRAY_COUNT(sCyndaquilGfx16)}, 
 	{NULL, 32}, 
@@ -3177,9 +3177,9 @@ static const ax_sprite sCyndaquilSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx17[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_17.4bpp");
-static const u8 sCyndaquilGfx17_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_17_1.4bpp");
-static const u8 sCyndaquilGfx17_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_17_2.4bpp");
+static const u8 sCyndaquilGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_17.4bpp.lz");
+static const u8 sCyndaquilGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_17_1.4bpp.lz");
+static const u8 sCyndaquilGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_17_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites17[] = {
 	{sCyndaquilGfx17, ARRAY_COUNT(sCyndaquilGfx17)}, 
 	{NULL, 64}, 
@@ -3189,9 +3189,9 @@ static const ax_sprite sCyndaquilSprites17[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx18[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_18.4bpp");
-static const u8 sCyndaquilGfx18_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_18_1.4bpp");
-static const u8 sCyndaquilGfx18_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_18_2.4bpp");
+static const u8 sCyndaquilGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_18.4bpp.lz");
+static const u8 sCyndaquilGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_18_1.4bpp.lz");
+static const u8 sCyndaquilGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_18_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites18[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx18, ARRAY_COUNT(sCyndaquilGfx18)}, 
@@ -3202,9 +3202,9 @@ static const ax_sprite sCyndaquilSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx19[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_19.4bpp");
-static const u8 sCyndaquilGfx19_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_19_1.4bpp");
-static const u8 sCyndaquilGfx19_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_19_2.4bpp");
+static const u8 sCyndaquilGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_19.4bpp.lz");
+static const u8 sCyndaquilGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_19_1.4bpp.lz");
+static const u8 sCyndaquilGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_19_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites19[] = {
 	{NULL, 64}, 
 	{sCyndaquilGfx19, ARRAY_COUNT(sCyndaquilGfx19)}, 
@@ -3215,9 +3215,9 @@ static const ax_sprite sCyndaquilSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx20[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_20.4bpp");
-static const u8 sCyndaquilGfx20_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_20_1.4bpp");
-static const u8 sCyndaquilGfx20_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_20_2.4bpp");
+static const u8 sCyndaquilGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_20.4bpp.lz");
+static const u8 sCyndaquilGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_20_1.4bpp.lz");
+static const u8 sCyndaquilGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_20_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites20[] = {
 	{NULL, 64}, 
 	{sCyndaquilGfx20, ARRAY_COUNT(sCyndaquilGfx20)}, 
@@ -3228,8 +3228,8 @@ static const ax_sprite sCyndaquilSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx21[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_21.4bpp");
-static const u8 sCyndaquilGfx21_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_21_1.4bpp");
+static const u8 sCyndaquilGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_21.4bpp.lz");
+static const u8 sCyndaquilGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_21_1.4bpp.lz");
 static const ax_sprite sCyndaquilSprites21[] = {
 	{NULL, 160}, 
 	{sCyndaquilGfx21, ARRAY_COUNT(sCyndaquilGfx21)}, 
@@ -3238,8 +3238,8 @@ static const ax_sprite sCyndaquilSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx22[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_22.4bpp");
-static const u8 sCyndaquilGfx22_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_22_1.4bpp");
+static const u8 sCyndaquilGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_22.4bpp.lz");
+static const u8 sCyndaquilGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_22_1.4bpp.lz");
 static const ax_sprite sCyndaquilSprites22[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx22, ARRAY_COUNT(sCyndaquilGfx22)}, 
@@ -3248,8 +3248,8 @@ static const ax_sprite sCyndaquilSprites22[] = {
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx23[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_23.4bpp");
-static const u8 sCyndaquilGfx23_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_23_1.4bpp");
+static const u8 sCyndaquilGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_23.4bpp.lz");
+static const u8 sCyndaquilGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_23_1.4bpp.lz");
 static const ax_sprite sCyndaquilSprites23[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx23, ARRAY_COUNT(sCyndaquilGfx23)}, 
@@ -3258,9 +3258,9 @@ static const ax_sprite sCyndaquilSprites23[] = {
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx24[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_24.4bpp");
-static const u8 sCyndaquilGfx24_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_24_1.4bpp");
-static const u8 sCyndaquilGfx24_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_24_2.4bpp");
+static const u8 sCyndaquilGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_24.4bpp.lz");
+static const u8 sCyndaquilGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_24_1.4bpp.lz");
+static const u8 sCyndaquilGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_24_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites24[] = {
 	{NULL, 64}, 
 	{sCyndaquilGfx24, ARRAY_COUNT(sCyndaquilGfx24)}, 
@@ -3271,9 +3271,9 @@ static const ax_sprite sCyndaquilSprites24[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx25[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_25.4bpp");
-static const u8 sCyndaquilGfx25_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_25_1.4bpp");
-static const u8 sCyndaquilGfx25_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_25_2.4bpp");
+static const u8 sCyndaquilGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_25.4bpp.lz");
+static const u8 sCyndaquilGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_25_1.4bpp.lz");
+static const u8 sCyndaquilGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_25_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites25[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx25, ARRAY_COUNT(sCyndaquilGfx25)}, 
@@ -3284,9 +3284,9 @@ static const ax_sprite sCyndaquilSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx26[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_26.4bpp");
-static const u8 sCyndaquilGfx26_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_26_1.4bpp");
-static const u8 sCyndaquilGfx26_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_26_2.4bpp");
+static const u8 sCyndaquilGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_26.4bpp.lz");
+static const u8 sCyndaquilGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_26_1.4bpp.lz");
+static const u8 sCyndaquilGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_26_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites26[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx26, ARRAY_COUNT(sCyndaquilGfx26)}, 
@@ -3297,9 +3297,9 @@ static const ax_sprite sCyndaquilSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx27[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_27.4bpp");
-static const u8 sCyndaquilGfx27_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_27_1.4bpp");
-static const u8 sCyndaquilGfx27_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_27_2.4bpp");
+static const u8 sCyndaquilGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_27.4bpp.lz");
+static const u8 sCyndaquilGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_27_1.4bpp.lz");
+static const u8 sCyndaquilGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_27_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites27[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx27, ARRAY_COUNT(sCyndaquilGfx27)}, 
@@ -3310,15 +3310,15 @@ static const ax_sprite sCyndaquilSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx28[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_28.4bpp");
+static const u8 sCyndaquilGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_28.4bpp.lz");
 static const ax_sprite sCyndaquilSprites28[] = {
 	{sCyndaquilGfx28, ARRAY_COUNT(sCyndaquilGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx29[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_29.4bpp");
-static const u8 sCyndaquilGfx29_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_29_1.4bpp");
-static const u8 sCyndaquilGfx29_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_29_2.4bpp");
+static const u8 sCyndaquilGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_29.4bpp.lz");
+static const u8 sCyndaquilGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_29_1.4bpp.lz");
+static const u8 sCyndaquilGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_29_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites29[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx29, ARRAY_COUNT(sCyndaquilGfx29)}, 
@@ -3329,8 +3329,8 @@ static const ax_sprite sCyndaquilSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx30[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_30.4bpp");
-static const u8 sCyndaquilGfx30_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_30_1.4bpp");
+static const u8 sCyndaquilGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_30.4bpp.lz");
+static const u8 sCyndaquilGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_30_1.4bpp.lz");
 static const ax_sprite sCyndaquilSprites30[] = {
 	{sCyndaquilGfx30, ARRAY_COUNT(sCyndaquilGfx30)}, 
 	{NULL, 32}, 
@@ -3338,9 +3338,9 @@ static const ax_sprite sCyndaquilSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx31[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_31.4bpp");
-static const u8 sCyndaquilGfx31_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_31_1.4bpp");
-static const u8 sCyndaquilGfx31_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_31_2.4bpp");
+static const u8 sCyndaquilGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_31.4bpp.lz");
+static const u8 sCyndaquilGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_31_1.4bpp.lz");
+static const u8 sCyndaquilGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_31_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites31[] = {
 	{sCyndaquilGfx31, ARRAY_COUNT(sCyndaquilGfx31)}, 
 	{NULL, 64}, 
@@ -3350,15 +3350,15 @@ static const ax_sprite sCyndaquilSprites31[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx32[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_32.4bpp");
+static const u8 sCyndaquilGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_32.4bpp.lz");
 static const ax_sprite sCyndaquilSprites32[] = {
 	{sCyndaquilGfx32, ARRAY_COUNT(sCyndaquilGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx33[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_33.4bpp");
-static const u8 sCyndaquilGfx33_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_33_1.4bpp");
-static const u8 sCyndaquilGfx33_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_33_2.4bpp");
+static const u8 sCyndaquilGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_33.4bpp.lz");
+static const u8 sCyndaquilGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_33_1.4bpp.lz");
+static const u8 sCyndaquilGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_33_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites33[] = {
 	{sCyndaquilGfx33, ARRAY_COUNT(sCyndaquilGfx33)}, 
 	{NULL, 32}, 
@@ -3368,9 +3368,9 @@ static const ax_sprite sCyndaquilSprites33[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx34[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_34.4bpp");
-static const u8 sCyndaquilGfx34_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_34_1.4bpp");
-static const u8 sCyndaquilGfx34_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_34_2.4bpp");
+static const u8 sCyndaquilGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_34.4bpp.lz");
+static const u8 sCyndaquilGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_34_1.4bpp.lz");
+static const u8 sCyndaquilGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_34_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites34[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx34, ARRAY_COUNT(sCyndaquilGfx34)}, 
@@ -3381,9 +3381,9 @@ static const ax_sprite sCyndaquilSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx35[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_35.4bpp");
-static const u8 sCyndaquilGfx35_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_35_1.4bpp");
-static const u8 sCyndaquilGfx35_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_35_2.4bpp");
+static const u8 sCyndaquilGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_35.4bpp.lz");
+static const u8 sCyndaquilGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_35_1.4bpp.lz");
+static const u8 sCyndaquilGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_35_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites35[] = {
 	{sCyndaquilGfx35, ARRAY_COUNT(sCyndaquilGfx35)}, 
 	{NULL, 64}, 
@@ -3393,9 +3393,9 @@ static const ax_sprite sCyndaquilSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx36[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_36.4bpp");
-static const u8 sCyndaquilGfx36_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_36_1.4bpp");
-static const u8 sCyndaquilGfx36_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_36_2.4bpp");
+static const u8 sCyndaquilGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_36.4bpp.lz");
+static const u8 sCyndaquilGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_36_1.4bpp.lz");
+static const u8 sCyndaquilGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_36_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites36[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx36, ARRAY_COUNT(sCyndaquilGfx36)}, 
@@ -3406,9 +3406,9 @@ static const ax_sprite sCyndaquilSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx37[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_37.4bpp");
-static const u8 sCyndaquilGfx37_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_37_1.4bpp");
-static const u8 sCyndaquilGfx37_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_37_2.4bpp");
+static const u8 sCyndaquilGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_37.4bpp.lz");
+static const u8 sCyndaquilGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_37_1.4bpp.lz");
+static const u8 sCyndaquilGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_37_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites37[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx37, ARRAY_COUNT(sCyndaquilGfx37)}, 
@@ -3419,9 +3419,9 @@ static const ax_sprite sCyndaquilSprites37[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx38[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_38.4bpp");
-static const u8 sCyndaquilGfx38_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_38_1.4bpp");
-static const u8 sCyndaquilGfx38_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_38_2.4bpp");
+static const u8 sCyndaquilGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_38.4bpp.lz");
+static const u8 sCyndaquilGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_38_1.4bpp.lz");
+static const u8 sCyndaquilGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_38_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites38[] = {
 	{sCyndaquilGfx38, ARRAY_COUNT(sCyndaquilGfx38)}, 
 	{NULL, 64}, 
@@ -3431,9 +3431,9 @@ static const ax_sprite sCyndaquilSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx39[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_39.4bpp");
-static const u8 sCyndaquilGfx39_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_39_1.4bpp");
-static const u8 sCyndaquilGfx39_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_39_2.4bpp");
+static const u8 sCyndaquilGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_39.4bpp.lz");
+static const u8 sCyndaquilGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_39_1.4bpp.lz");
+static const u8 sCyndaquilGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_39_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites39[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx39, ARRAY_COUNT(sCyndaquilGfx39)}, 
@@ -3444,9 +3444,9 @@ static const ax_sprite sCyndaquilSprites39[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx40[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_40.4bpp");
-static const u8 sCyndaquilGfx40_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_40_1.4bpp");
-static const u8 sCyndaquilGfx40_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_40_2.4bpp");
+static const u8 sCyndaquilGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_40.4bpp.lz");
+static const u8 sCyndaquilGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_40_1.4bpp.lz");
+static const u8 sCyndaquilGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_40_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites40[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx40, ARRAY_COUNT(sCyndaquilGfx40)}, 
@@ -3457,9 +3457,9 @@ static const ax_sprite sCyndaquilSprites40[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx41[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_41.4bpp");
-static const u8 sCyndaquilGfx41_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_41_1.4bpp");
-static const u8 sCyndaquilGfx41_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_41_2.4bpp");
+static const u8 sCyndaquilGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_41.4bpp.lz");
+static const u8 sCyndaquilGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_41_1.4bpp.lz");
+static const u8 sCyndaquilGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_41_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites41[] = {
 	{sCyndaquilGfx41, ARRAY_COUNT(sCyndaquilGfx41)}, 
 	{NULL, 64}, 
@@ -3469,9 +3469,9 @@ static const ax_sprite sCyndaquilSprites41[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx42[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_42.4bpp");
-static const u8 sCyndaquilGfx42_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_42_1.4bpp");
-static const u8 sCyndaquilGfx42_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_42_2.4bpp");
+static const u8 sCyndaquilGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_42.4bpp.lz");
+static const u8 sCyndaquilGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_42_1.4bpp.lz");
+static const u8 sCyndaquilGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_42_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites42[] = {
 	{NULL, 32}, 
 	{sCyndaquilGfx42, ARRAY_COUNT(sCyndaquilGfx42)}, 
@@ -3482,9 +3482,9 @@ static const ax_sprite sCyndaquilSprites42[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx43[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_43.4bpp");
-static const u8 sCyndaquilGfx43_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_43_1.4bpp");
-static const u8 sCyndaquilGfx43_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_43_2.4bpp");
+static const u8 sCyndaquilGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_43.4bpp.lz");
+static const u8 sCyndaquilGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_43_1.4bpp.lz");
+static const u8 sCyndaquilGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_43_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites43[] = {
 	{sCyndaquilGfx43, ARRAY_COUNT(sCyndaquilGfx43)}, 
 	{NULL, 64}, 
@@ -3494,15 +3494,15 @@ static const ax_sprite sCyndaquilSprites43[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx44[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_44.4bpp");
+static const u8 sCyndaquilGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_44.4bpp.lz");
 static const ax_sprite sCyndaquilSprites44[] = {
 	{sCyndaquilGfx44, ARRAY_COUNT(sCyndaquilGfx44)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx45[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_45.4bpp");
-static const u8 sCyndaquilGfx45_1[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_45_1.4bpp");
-static const u8 sCyndaquilGfx45_2[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_45_2.4bpp");
+static const u8 sCyndaquilGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_45.4bpp.lz");
+static const u8 sCyndaquilGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_45_1.4bpp.lz");
+static const u8 sCyndaquilGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_45_2.4bpp.lz");
 static const ax_sprite sCyndaquilSprites45[] = {
 	{sCyndaquilGfx45, ARRAY_COUNT(sCyndaquilGfx45)}, 
 	{NULL, 64}, 
@@ -3512,202 +3512,202 @@ static const ax_sprite sCyndaquilSprites45[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx46[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_46.4bpp");
+static const u8 sCyndaquilGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_46.4bpp.lz");
 static const ax_sprite sCyndaquilSprites46[] = {
 	{sCyndaquilGfx46, ARRAY_COUNT(sCyndaquilGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx47[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_47.4bpp");
+static const u8 sCyndaquilGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_47.4bpp.lz");
 static const ax_sprite sCyndaquilSprites47[] = {
 	{sCyndaquilGfx47, ARRAY_COUNT(sCyndaquilGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx48[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_48.4bpp");
+static const u8 sCyndaquilGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_48.4bpp.lz");
 static const ax_sprite sCyndaquilSprites48[] = {
 	{sCyndaquilGfx48, ARRAY_COUNT(sCyndaquilGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx49[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_49.4bpp");
+static const u8 sCyndaquilGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_49.4bpp.lz");
 static const ax_sprite sCyndaquilSprites49[] = {
 	{sCyndaquilGfx49, ARRAY_COUNT(sCyndaquilGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx50[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_50.4bpp");
+static const u8 sCyndaquilGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_50.4bpp.lz");
 static const ax_sprite sCyndaquilSprites50[] = {
 	{sCyndaquilGfx50, ARRAY_COUNT(sCyndaquilGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx51[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_51.4bpp");
+static const u8 sCyndaquilGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_51.4bpp.lz");
 static const ax_sprite sCyndaquilSprites51[] = {
 	{sCyndaquilGfx51, ARRAY_COUNT(sCyndaquilGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx52[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_52.4bpp");
+static const u8 sCyndaquilGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_52.4bpp.lz");
 static const ax_sprite sCyndaquilSprites52[] = {
 	{sCyndaquilGfx52, ARRAY_COUNT(sCyndaquilGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx53[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_53.4bpp");
+static const u8 sCyndaquilGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_53.4bpp.lz");
 static const ax_sprite sCyndaquilSprites53[] = {
 	{sCyndaquilGfx53, ARRAY_COUNT(sCyndaquilGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx54[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_54.4bpp");
+static const u8 sCyndaquilGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_54.4bpp.lz");
 static const ax_sprite sCyndaquilSprites54[] = {
 	{sCyndaquilGfx54, ARRAY_COUNT(sCyndaquilGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx55[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_55.4bpp");
+static const u8 sCyndaquilGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_55.4bpp.lz");
 static const ax_sprite sCyndaquilSprites55[] = {
 	{sCyndaquilGfx55, ARRAY_COUNT(sCyndaquilGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx56[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_56.4bpp");
+static const u8 sCyndaquilGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_56.4bpp.lz");
 static const ax_sprite sCyndaquilSprites56[] = {
 	{sCyndaquilGfx56, ARRAY_COUNT(sCyndaquilGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx57[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_57.4bpp");
+static const u8 sCyndaquilGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_57.4bpp.lz");
 static const ax_sprite sCyndaquilSprites57[] = {
 	{sCyndaquilGfx57, ARRAY_COUNT(sCyndaquilGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx58[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_58.4bpp");
+static const u8 sCyndaquilGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_58.4bpp.lz");
 static const ax_sprite sCyndaquilSprites58[] = {
 	{sCyndaquilGfx58, ARRAY_COUNT(sCyndaquilGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx59[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_59.4bpp");
+static const u8 sCyndaquilGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_59.4bpp.lz");
 static const ax_sprite sCyndaquilSprites59[] = {
 	{sCyndaquilGfx59, ARRAY_COUNT(sCyndaquilGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx60[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_60.4bpp");
+static const u8 sCyndaquilGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_60.4bpp.lz");
 static const ax_sprite sCyndaquilSprites60[] = {
 	{sCyndaquilGfx60, ARRAY_COUNT(sCyndaquilGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx61[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_61.4bpp");
+static const u8 sCyndaquilGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_61.4bpp.lz");
 static const ax_sprite sCyndaquilSprites61[] = {
 	{sCyndaquilGfx61, ARRAY_COUNT(sCyndaquilGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx62[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_62.4bpp");
+static const u8 sCyndaquilGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_62.4bpp.lz");
 static const ax_sprite sCyndaquilSprites62[] = {
 	{sCyndaquilGfx62, ARRAY_COUNT(sCyndaquilGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx63[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_63.4bpp");
+static const u8 sCyndaquilGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_63.4bpp.lz");
 static const ax_sprite sCyndaquilSprites63[] = {
 	{sCyndaquilGfx63, ARRAY_COUNT(sCyndaquilGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx64[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_64.4bpp");
+static const u8 sCyndaquilGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_64.4bpp.lz");
 static const ax_sprite sCyndaquilSprites64[] = {
 	{sCyndaquilGfx64, ARRAY_COUNT(sCyndaquilGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx65[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_65.4bpp");
+static const u8 sCyndaquilGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_65.4bpp.lz");
 static const ax_sprite sCyndaquilSprites65[] = {
 	{sCyndaquilGfx65, ARRAY_COUNT(sCyndaquilGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx66[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_66.4bpp");
+static const u8 sCyndaquilGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_66.4bpp.lz");
 static const ax_sprite sCyndaquilSprites66[] = {
 	{sCyndaquilGfx66, ARRAY_COUNT(sCyndaquilGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx67[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_67.4bpp");
+static const u8 sCyndaquilGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_67.4bpp.lz");
 static const ax_sprite sCyndaquilSprites67[] = {
 	{sCyndaquilGfx67, ARRAY_COUNT(sCyndaquilGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx68[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_68.4bpp");
+static const u8 sCyndaquilGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_68.4bpp.lz");
 static const ax_sprite sCyndaquilSprites68[] = {
 	{sCyndaquilGfx68, ARRAY_COUNT(sCyndaquilGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx69[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_69.4bpp");
+static const u8 sCyndaquilGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_69.4bpp.lz");
 static const ax_sprite sCyndaquilSprites69[] = {
 	{sCyndaquilGfx69, ARRAY_COUNT(sCyndaquilGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx70[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_70.4bpp");
+static const u8 sCyndaquilGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_70.4bpp.lz");
 static const ax_sprite sCyndaquilSprites70[] = {
 	{sCyndaquilGfx70, ARRAY_COUNT(sCyndaquilGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx71[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_71.4bpp");
+static const u8 sCyndaquilGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_71.4bpp.lz");
 static const ax_sprite sCyndaquilSprites71[] = {
 	{sCyndaquilGfx71, ARRAY_COUNT(sCyndaquilGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx72[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_72.4bpp");
+static const u8 sCyndaquilGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_72.4bpp.lz");
 static const ax_sprite sCyndaquilSprites72[] = {
 	{sCyndaquilGfx72, ARRAY_COUNT(sCyndaquilGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx73[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_73.4bpp");
+static const u8 sCyndaquilGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_73.4bpp.lz");
 static const ax_sprite sCyndaquilSprites73[] = {
 	{sCyndaquilGfx73, ARRAY_COUNT(sCyndaquilGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx74[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_74.4bpp");
+static const u8 sCyndaquilGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_74.4bpp.lz");
 static const ax_sprite sCyndaquilSprites74[] = {
 	{sCyndaquilGfx74, ARRAY_COUNT(sCyndaquilGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx75[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_75.4bpp");
+static const u8 sCyndaquilGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_75.4bpp.lz");
 static const ax_sprite sCyndaquilSprites75[] = {
 	{sCyndaquilGfx75, ARRAY_COUNT(sCyndaquilGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx76[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_76.4bpp");
+static const u8 sCyndaquilGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_76.4bpp.lz");
 static const ax_sprite sCyndaquilSprites76[] = {
 	{sCyndaquilGfx76, ARRAY_COUNT(sCyndaquilGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx77[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_77.4bpp");
+static const u8 sCyndaquilGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_77.4bpp.lz");
 static const ax_sprite sCyndaquilSprites77[] = {
 	{sCyndaquilGfx77, ARRAY_COUNT(sCyndaquilGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx78[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_78.4bpp");
+static const u8 sCyndaquilGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_78.4bpp.lz");
 static const ax_sprite sCyndaquilSprites78[] = {
 	{sCyndaquilGfx78, ARRAY_COUNT(sCyndaquilGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx79[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_79.4bpp");
+static const u8 sCyndaquilGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_79.4bpp.lz");
 static const ax_sprite sCyndaquilSprites79[] = {
 	{sCyndaquilGfx79, ARRAY_COUNT(sCyndaquilGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx80[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_80.4bpp");
+static const u8 sCyndaquilGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_80.4bpp.lz");
 static const ax_sprite sCyndaquilSprites80[] = {
 	{sCyndaquilGfx80, ARRAY_COUNT(sCyndaquilGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx81[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_81.4bpp");
+static const u8 sCyndaquilGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_81.4bpp.lz");
 static const ax_sprite sCyndaquilSprites81[] = {
 	{sCyndaquilGfx81, ARRAY_COUNT(sCyndaquilGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx82[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_82.4bpp");
+static const u8 sCyndaquilGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_82.4bpp.lz");
 static const ax_sprite sCyndaquilSprites82[] = {
 	{sCyndaquilGfx82, ARRAY_COUNT(sCyndaquilGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx83[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_83.4bpp");
+static const u8 sCyndaquilGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_83.4bpp.lz");
 static const ax_sprite sCyndaquilSprites83[] = {
 	{sCyndaquilGfx83, ARRAY_COUNT(sCyndaquilGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx84[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_84.4bpp");
+static const u8 sCyndaquilGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_84.4bpp.lz");
 static const ax_sprite sCyndaquilSprites84[] = {
 	{sCyndaquilGfx84, ARRAY_COUNT(sCyndaquilGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sCyndaquilGfx85[] = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_85.4bpp");
+static const u8 sCyndaquilGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cyndaquil/sprite_85.4bpp.lz");
 static const ax_sprite sCyndaquilSprites85[] = {
 	{sCyndaquilGfx85, ARRAY_COUNT(sCyndaquilGfx85)}, 
 	{NULL, 0}

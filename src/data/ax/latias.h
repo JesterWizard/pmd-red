@@ -3505,1171 +3505,1171 @@ static const ax_anim sLatiasAnims_16_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLatiasGfx1[] = INCBIN_U8("graphics/ax/mon/latias/sprite_1.4bpp");
+static const u8 sLatiasGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_1.4bpp.lz");
 static const ax_sprite sLatiasSprites1[] = {
 	{sLatiasGfx1, ARRAY_COUNT(sLatiasGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx2[] = INCBIN_U8("graphics/ax/mon/latias/sprite_2.4bpp");
+static const u8 sLatiasGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_2.4bpp.lz");
 static const ax_sprite sLatiasSprites2[] = {
 	{sLatiasGfx2, ARRAY_COUNT(sLatiasGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx3[] = INCBIN_U8("graphics/ax/mon/latias/sprite_3.4bpp");
+static const u8 sLatiasGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_3.4bpp.lz");
 static const ax_sprite sLatiasSprites3[] = {
 	{sLatiasGfx3, ARRAY_COUNT(sLatiasGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx4[] = INCBIN_U8("graphics/ax/mon/latias/sprite_4.4bpp");
+static const u8 sLatiasGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_4.4bpp.lz");
 static const ax_sprite sLatiasSprites4[] = {
 	{sLatiasGfx4, ARRAY_COUNT(sLatiasGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx5[] = INCBIN_U8("graphics/ax/mon/latias/sprite_5.4bpp");
+static const u8 sLatiasGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_5.4bpp.lz");
 static const ax_sprite sLatiasSprites5[] = {
 	{sLatiasGfx5, ARRAY_COUNT(sLatiasGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx6[] = INCBIN_U8("graphics/ax/mon/latias/sprite_6.4bpp");
+static const u8 sLatiasGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_6.4bpp.lz");
 static const ax_sprite sLatiasSprites6[] = {
 	{sLatiasGfx6, ARRAY_COUNT(sLatiasGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx7[] = INCBIN_U8("graphics/ax/mon/latias/sprite_7.4bpp");
+static const u8 sLatiasGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_7.4bpp.lz");
 static const ax_sprite sLatiasSprites7[] = {
 	{sLatiasGfx7, ARRAY_COUNT(sLatiasGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx8[] = INCBIN_U8("graphics/ax/mon/latias/sprite_8.4bpp");
+static const u8 sLatiasGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_8.4bpp.lz");
 static const ax_sprite sLatiasSprites8[] = {
 	{sLatiasGfx8, ARRAY_COUNT(sLatiasGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx9[] = INCBIN_U8("graphics/ax/mon/latias/sprite_9.4bpp");
+static const u8 sLatiasGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_9.4bpp.lz");
 static const ax_sprite sLatiasSprites9[] = {
 	{sLatiasGfx9, ARRAY_COUNT(sLatiasGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx10[] = INCBIN_U8("graphics/ax/mon/latias/sprite_10.4bpp");
+static const u8 sLatiasGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_10.4bpp.lz");
 static const ax_sprite sLatiasSprites10[] = {
 	{sLatiasGfx10, ARRAY_COUNT(sLatiasGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx11[] = INCBIN_U8("graphics/ax/mon/latias/sprite_11.4bpp");
+static const u8 sLatiasGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_11.4bpp.lz");
 static const ax_sprite sLatiasSprites11[] = {
 	{sLatiasGfx11, ARRAY_COUNT(sLatiasGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx12[] = INCBIN_U8("graphics/ax/mon/latias/sprite_12.4bpp");
+static const u8 sLatiasGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_12.4bpp.lz");
 static const ax_sprite sLatiasSprites12[] = {
 	{sLatiasGfx12, ARRAY_COUNT(sLatiasGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx13[] = INCBIN_U8("graphics/ax/mon/latias/sprite_13.4bpp");
+static const u8 sLatiasGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_13.4bpp.lz");
 static const ax_sprite sLatiasSprites13[] = {
 	{sLatiasGfx13, ARRAY_COUNT(sLatiasGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx14[] = INCBIN_U8("graphics/ax/mon/latias/sprite_14.4bpp");
+static const u8 sLatiasGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_14.4bpp.lz");
 static const ax_sprite sLatiasSprites14[] = {
 	{sLatiasGfx14, ARRAY_COUNT(sLatiasGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx15[] = INCBIN_U8("graphics/ax/mon/latias/sprite_15.4bpp");
+static const u8 sLatiasGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_15.4bpp.lz");
 static const ax_sprite sLatiasSprites15[] = {
 	{sLatiasGfx15, ARRAY_COUNT(sLatiasGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx16[] = INCBIN_U8("graphics/ax/mon/latias/sprite_16.4bpp");
+static const u8 sLatiasGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_16.4bpp.lz");
 static const ax_sprite sLatiasSprites16[] = {
 	{sLatiasGfx16, ARRAY_COUNT(sLatiasGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx17[] = INCBIN_U8("graphics/ax/mon/latias/sprite_17.4bpp");
+static const u8 sLatiasGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_17.4bpp.lz");
 static const ax_sprite sLatiasSprites17[] = {
 	{sLatiasGfx17, ARRAY_COUNT(sLatiasGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx18[] = INCBIN_U8("graphics/ax/mon/latias/sprite_18.4bpp");
+static const u8 sLatiasGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_18.4bpp.lz");
 static const ax_sprite sLatiasSprites18[] = {
 	{sLatiasGfx18, ARRAY_COUNT(sLatiasGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx19[] = INCBIN_U8("graphics/ax/mon/latias/sprite_19.4bpp");
+static const u8 sLatiasGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_19.4bpp.lz");
 static const ax_sprite sLatiasSprites19[] = {
 	{sLatiasGfx19, ARRAY_COUNT(sLatiasGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx20[] = INCBIN_U8("graphics/ax/mon/latias/sprite_20.4bpp");
+static const u8 sLatiasGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_20.4bpp.lz");
 static const ax_sprite sLatiasSprites20[] = {
 	{sLatiasGfx20, ARRAY_COUNT(sLatiasGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx21[] = INCBIN_U8("graphics/ax/mon/latias/sprite_21.4bpp");
+static const u8 sLatiasGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_21.4bpp.lz");
 static const ax_sprite sLatiasSprites21[] = {
 	{sLatiasGfx21, ARRAY_COUNT(sLatiasGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx22[] = INCBIN_U8("graphics/ax/mon/latias/sprite_22.4bpp");
+static const u8 sLatiasGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_22.4bpp.lz");
 static const ax_sprite sLatiasSprites22[] = {
 	{sLatiasGfx22, ARRAY_COUNT(sLatiasGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx23[] = INCBIN_U8("graphics/ax/mon/latias/sprite_23.4bpp");
+static const u8 sLatiasGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_23.4bpp.lz");
 static const ax_sprite sLatiasSprites23[] = {
 	{sLatiasGfx23, ARRAY_COUNT(sLatiasGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx24[] = INCBIN_U8("graphics/ax/mon/latias/sprite_24.4bpp");
+static const u8 sLatiasGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_24.4bpp.lz");
 static const ax_sprite sLatiasSprites24[] = {
 	{sLatiasGfx24, ARRAY_COUNT(sLatiasGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx25[] = INCBIN_U8("graphics/ax/mon/latias/sprite_25.4bpp");
+static const u8 sLatiasGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_25.4bpp.lz");
 static const ax_sprite sLatiasSprites25[] = {
 	{sLatiasGfx25, ARRAY_COUNT(sLatiasGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx26[] = INCBIN_U8("graphics/ax/mon/latias/sprite_26.4bpp");
+static const u8 sLatiasGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_26.4bpp.lz");
 static const ax_sprite sLatiasSprites26[] = {
 	{sLatiasGfx26, ARRAY_COUNT(sLatiasGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx27[] = INCBIN_U8("graphics/ax/mon/latias/sprite_27.4bpp");
+static const u8 sLatiasGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_27.4bpp.lz");
 static const ax_sprite sLatiasSprites27[] = {
 	{sLatiasGfx27, ARRAY_COUNT(sLatiasGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx28[] = INCBIN_U8("graphics/ax/mon/latias/sprite_28.4bpp");
+static const u8 sLatiasGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_28.4bpp.lz");
 static const ax_sprite sLatiasSprites28[] = {
 	{sLatiasGfx28, ARRAY_COUNT(sLatiasGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx29[] = INCBIN_U8("graphics/ax/mon/latias/sprite_29.4bpp");
+static const u8 sLatiasGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_29.4bpp.lz");
 static const ax_sprite sLatiasSprites29[] = {
 	{sLatiasGfx29, ARRAY_COUNT(sLatiasGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx30[] = INCBIN_U8("graphics/ax/mon/latias/sprite_30.4bpp");
+static const u8 sLatiasGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_30.4bpp.lz");
 static const ax_sprite sLatiasSprites30[] = {
 	{sLatiasGfx30, ARRAY_COUNT(sLatiasGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx31[] = INCBIN_U8("graphics/ax/mon/latias/sprite_31.4bpp");
+static const u8 sLatiasGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_31.4bpp.lz");
 static const ax_sprite sLatiasSprites31[] = {
 	{sLatiasGfx31, ARRAY_COUNT(sLatiasGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx32[] = INCBIN_U8("graphics/ax/mon/latias/sprite_32.4bpp");
+static const u8 sLatiasGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_32.4bpp.lz");
 static const ax_sprite sLatiasSprites32[] = {
 	{sLatiasGfx32, ARRAY_COUNT(sLatiasGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx33[] = INCBIN_U8("graphics/ax/mon/latias/sprite_33.4bpp");
+static const u8 sLatiasGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_33.4bpp.lz");
 static const ax_sprite sLatiasSprites33[] = {
 	{sLatiasGfx33, ARRAY_COUNT(sLatiasGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx34[] = INCBIN_U8("graphics/ax/mon/latias/sprite_34.4bpp");
+static const u8 sLatiasGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_34.4bpp.lz");
 static const ax_sprite sLatiasSprites34[] = {
 	{sLatiasGfx34, ARRAY_COUNT(sLatiasGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx35[] = INCBIN_U8("graphics/ax/mon/latias/sprite_35.4bpp");
+static const u8 sLatiasGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_35.4bpp.lz");
 static const ax_sprite sLatiasSprites35[] = {
 	{sLatiasGfx35, ARRAY_COUNT(sLatiasGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx36[] = INCBIN_U8("graphics/ax/mon/latias/sprite_36.4bpp");
+static const u8 sLatiasGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_36.4bpp.lz");
 static const ax_sprite sLatiasSprites36[] = {
 	{sLatiasGfx36, ARRAY_COUNT(sLatiasGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx37[] = INCBIN_U8("graphics/ax/mon/latias/sprite_37.4bpp");
+static const u8 sLatiasGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_37.4bpp.lz");
 static const ax_sprite sLatiasSprites37[] = {
 	{sLatiasGfx37, ARRAY_COUNT(sLatiasGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx38[] = INCBIN_U8("graphics/ax/mon/latias/sprite_38.4bpp");
+static const u8 sLatiasGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_38.4bpp.lz");
 static const ax_sprite sLatiasSprites38[] = {
 	{sLatiasGfx38, ARRAY_COUNT(sLatiasGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx39[] = INCBIN_U8("graphics/ax/mon/latias/sprite_39.4bpp");
+static const u8 sLatiasGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_39.4bpp.lz");
 static const ax_sprite sLatiasSprites39[] = {
 	{sLatiasGfx39, ARRAY_COUNT(sLatiasGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx40[] = INCBIN_U8("graphics/ax/mon/latias/sprite_40.4bpp");
+static const u8 sLatiasGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_40.4bpp.lz");
 static const ax_sprite sLatiasSprites40[] = {
 	{sLatiasGfx40, ARRAY_COUNT(sLatiasGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx41[] = INCBIN_U8("graphics/ax/mon/latias/sprite_41.4bpp");
+static const u8 sLatiasGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_41.4bpp.lz");
 static const ax_sprite sLatiasSprites41[] = {
 	{sLatiasGfx41, ARRAY_COUNT(sLatiasGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx42[] = INCBIN_U8("graphics/ax/mon/latias/sprite_42.4bpp");
+static const u8 sLatiasGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_42.4bpp.lz");
 static const ax_sprite sLatiasSprites42[] = {
 	{sLatiasGfx42, ARRAY_COUNT(sLatiasGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx43[] = INCBIN_U8("graphics/ax/mon/latias/sprite_43.4bpp");
+static const u8 sLatiasGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_43.4bpp.lz");
 static const ax_sprite sLatiasSprites43[] = {
 	{sLatiasGfx43, ARRAY_COUNT(sLatiasGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx44[] = INCBIN_U8("graphics/ax/mon/latias/sprite_44.4bpp");
+static const u8 sLatiasGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_44.4bpp.lz");
 static const ax_sprite sLatiasSprites44[] = {
 	{sLatiasGfx44, ARRAY_COUNT(sLatiasGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx45[] = INCBIN_U8("graphics/ax/mon/latias/sprite_45.4bpp");
+static const u8 sLatiasGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_45.4bpp.lz");
 static const ax_sprite sLatiasSprites45[] = {
 	{sLatiasGfx45, ARRAY_COUNT(sLatiasGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx46[] = INCBIN_U8("graphics/ax/mon/latias/sprite_46.4bpp");
+static const u8 sLatiasGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_46.4bpp.lz");
 static const ax_sprite sLatiasSprites46[] = {
 	{sLatiasGfx46, ARRAY_COUNT(sLatiasGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx47[] = INCBIN_U8("graphics/ax/mon/latias/sprite_47.4bpp");
+static const u8 sLatiasGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_47.4bpp.lz");
 static const ax_sprite sLatiasSprites47[] = {
 	{sLatiasGfx47, ARRAY_COUNT(sLatiasGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx48[] = INCBIN_U8("graphics/ax/mon/latias/sprite_48.4bpp");
+static const u8 sLatiasGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_48.4bpp.lz");
 static const ax_sprite sLatiasSprites48[] = {
 	{sLatiasGfx48, ARRAY_COUNT(sLatiasGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx49[] = INCBIN_U8("graphics/ax/mon/latias/sprite_49.4bpp");
+static const u8 sLatiasGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_49.4bpp.lz");
 static const ax_sprite sLatiasSprites49[] = {
 	{sLatiasGfx49, ARRAY_COUNT(sLatiasGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx50[] = INCBIN_U8("graphics/ax/mon/latias/sprite_50.4bpp");
+static const u8 sLatiasGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_50.4bpp.lz");
 static const ax_sprite sLatiasSprites50[] = {
 	{sLatiasGfx50, ARRAY_COUNT(sLatiasGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx51[] = INCBIN_U8("graphics/ax/mon/latias/sprite_51.4bpp");
+static const u8 sLatiasGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_51.4bpp.lz");
 static const ax_sprite sLatiasSprites51[] = {
 	{sLatiasGfx51, ARRAY_COUNT(sLatiasGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx52[] = INCBIN_U8("graphics/ax/mon/latias/sprite_52.4bpp");
+static const u8 sLatiasGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_52.4bpp.lz");
 static const ax_sprite sLatiasSprites52[] = {
 	{sLatiasGfx52, ARRAY_COUNT(sLatiasGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx53[] = INCBIN_U8("graphics/ax/mon/latias/sprite_53.4bpp");
+static const u8 sLatiasGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_53.4bpp.lz");
 static const ax_sprite sLatiasSprites53[] = {
 	{sLatiasGfx53, ARRAY_COUNT(sLatiasGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx54[] = INCBIN_U8("graphics/ax/mon/latias/sprite_54.4bpp");
+static const u8 sLatiasGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_54.4bpp.lz");
 static const ax_sprite sLatiasSprites54[] = {
 	{sLatiasGfx54, ARRAY_COUNT(sLatiasGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx55[] = INCBIN_U8("graphics/ax/mon/latias/sprite_55.4bpp");
+static const u8 sLatiasGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_55.4bpp.lz");
 static const ax_sprite sLatiasSprites55[] = {
 	{sLatiasGfx55, ARRAY_COUNT(sLatiasGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx56[] = INCBIN_U8("graphics/ax/mon/latias/sprite_56.4bpp");
+static const u8 sLatiasGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_56.4bpp.lz");
 static const ax_sprite sLatiasSprites56[] = {
 	{sLatiasGfx56, ARRAY_COUNT(sLatiasGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx57[] = INCBIN_U8("graphics/ax/mon/latias/sprite_57.4bpp");
+static const u8 sLatiasGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_57.4bpp.lz");
 static const ax_sprite sLatiasSprites57[] = {
 	{sLatiasGfx57, ARRAY_COUNT(sLatiasGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx58[] = INCBIN_U8("graphics/ax/mon/latias/sprite_58.4bpp");
+static const u8 sLatiasGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_58.4bpp.lz");
 static const ax_sprite sLatiasSprites58[] = {
 	{sLatiasGfx58, ARRAY_COUNT(sLatiasGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx59[] = INCBIN_U8("graphics/ax/mon/latias/sprite_59.4bpp");
+static const u8 sLatiasGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_59.4bpp.lz");
 static const ax_sprite sLatiasSprites59[] = {
 	{sLatiasGfx59, ARRAY_COUNT(sLatiasGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx60[] = INCBIN_U8("graphics/ax/mon/latias/sprite_60.4bpp");
+static const u8 sLatiasGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_60.4bpp.lz");
 static const ax_sprite sLatiasSprites60[] = {
 	{sLatiasGfx60, ARRAY_COUNT(sLatiasGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx61[] = INCBIN_U8("graphics/ax/mon/latias/sprite_61.4bpp");
+static const u8 sLatiasGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_61.4bpp.lz");
 static const ax_sprite sLatiasSprites61[] = {
 	{sLatiasGfx61, ARRAY_COUNT(sLatiasGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx62[] = INCBIN_U8("graphics/ax/mon/latias/sprite_62.4bpp");
+static const u8 sLatiasGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_62.4bpp.lz");
 static const ax_sprite sLatiasSprites62[] = {
 	{sLatiasGfx62, ARRAY_COUNT(sLatiasGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx63[] = INCBIN_U8("graphics/ax/mon/latias/sprite_63.4bpp");
+static const u8 sLatiasGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_63.4bpp.lz");
 static const ax_sprite sLatiasSprites63[] = {
 	{sLatiasGfx63, ARRAY_COUNT(sLatiasGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx64[] = INCBIN_U8("graphics/ax/mon/latias/sprite_64.4bpp");
+static const u8 sLatiasGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_64.4bpp.lz");
 static const ax_sprite sLatiasSprites64[] = {
 	{sLatiasGfx64, ARRAY_COUNT(sLatiasGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx65[] = INCBIN_U8("graphics/ax/mon/latias/sprite_65.4bpp");
+static const u8 sLatiasGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_65.4bpp.lz");
 static const ax_sprite sLatiasSprites65[] = {
 	{sLatiasGfx65, ARRAY_COUNT(sLatiasGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx66[] = INCBIN_U8("graphics/ax/mon/latias/sprite_66.4bpp");
+static const u8 sLatiasGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_66.4bpp.lz");
 static const ax_sprite sLatiasSprites66[] = {
 	{sLatiasGfx66, ARRAY_COUNT(sLatiasGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx67[] = INCBIN_U8("graphics/ax/mon/latias/sprite_67.4bpp");
+static const u8 sLatiasGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_67.4bpp.lz");
 static const ax_sprite sLatiasSprites67[] = {
 	{sLatiasGfx67, ARRAY_COUNT(sLatiasGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx68[] = INCBIN_U8("graphics/ax/mon/latias/sprite_68.4bpp");
+static const u8 sLatiasGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_68.4bpp.lz");
 static const ax_sprite sLatiasSprites68[] = {
 	{sLatiasGfx68, ARRAY_COUNT(sLatiasGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx69[] = INCBIN_U8("graphics/ax/mon/latias/sprite_69.4bpp");
+static const u8 sLatiasGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_69.4bpp.lz");
 static const ax_sprite sLatiasSprites69[] = {
 	{sLatiasGfx69, ARRAY_COUNT(sLatiasGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx70[] = INCBIN_U8("graphics/ax/mon/latias/sprite_70.4bpp");
+static const u8 sLatiasGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_70.4bpp.lz");
 static const ax_sprite sLatiasSprites70[] = {
 	{sLatiasGfx70, ARRAY_COUNT(sLatiasGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx71[] = INCBIN_U8("graphics/ax/mon/latias/sprite_71.4bpp");
+static const u8 sLatiasGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_71.4bpp.lz");
 static const ax_sprite sLatiasSprites71[] = {
 	{sLatiasGfx71, ARRAY_COUNT(sLatiasGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx72[] = INCBIN_U8("graphics/ax/mon/latias/sprite_72.4bpp");
+static const u8 sLatiasGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_72.4bpp.lz");
 static const ax_sprite sLatiasSprites72[] = {
 	{sLatiasGfx72, ARRAY_COUNT(sLatiasGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx73[] = INCBIN_U8("graphics/ax/mon/latias/sprite_73.4bpp");
+static const u8 sLatiasGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_73.4bpp.lz");
 static const ax_sprite sLatiasSprites73[] = {
 	{sLatiasGfx73, ARRAY_COUNT(sLatiasGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx74[] = INCBIN_U8("graphics/ax/mon/latias/sprite_74.4bpp");
+static const u8 sLatiasGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_74.4bpp.lz");
 static const ax_sprite sLatiasSprites74[] = {
 	{sLatiasGfx74, ARRAY_COUNT(sLatiasGfx74)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx75[] = INCBIN_U8("graphics/ax/mon/latias/sprite_75.4bpp");
+static const u8 sLatiasGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_75.4bpp.lz");
 static const ax_sprite sLatiasSprites75[] = {
 	{sLatiasGfx75, ARRAY_COUNT(sLatiasGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx76[] = INCBIN_U8("graphics/ax/mon/latias/sprite_76.4bpp");
+static const u8 sLatiasGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_76.4bpp.lz");
 static const ax_sprite sLatiasSprites76[] = {
 	{sLatiasGfx76, ARRAY_COUNT(sLatiasGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx77[] = INCBIN_U8("graphics/ax/mon/latias/sprite_77.4bpp");
+static const u8 sLatiasGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_77.4bpp.lz");
 static const ax_sprite sLatiasSprites77[] = {
 	{sLatiasGfx77, ARRAY_COUNT(sLatiasGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx78[] = INCBIN_U8("graphics/ax/mon/latias/sprite_78.4bpp");
+static const u8 sLatiasGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_78.4bpp.lz");
 static const ax_sprite sLatiasSprites78[] = {
 	{sLatiasGfx78, ARRAY_COUNT(sLatiasGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx79[] = INCBIN_U8("graphics/ax/mon/latias/sprite_79.4bpp");
+static const u8 sLatiasGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_79.4bpp.lz");
 static const ax_sprite sLatiasSprites79[] = {
 	{sLatiasGfx79, ARRAY_COUNT(sLatiasGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx80[] = INCBIN_U8("graphics/ax/mon/latias/sprite_80.4bpp");
+static const u8 sLatiasGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_80.4bpp.lz");
 static const ax_sprite sLatiasSprites80[] = {
 	{sLatiasGfx80, ARRAY_COUNT(sLatiasGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx81[] = INCBIN_U8("graphics/ax/mon/latias/sprite_81.4bpp");
+static const u8 sLatiasGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_81.4bpp.lz");
 static const ax_sprite sLatiasSprites81[] = {
 	{sLatiasGfx81, ARRAY_COUNT(sLatiasGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx82[] = INCBIN_U8("graphics/ax/mon/latias/sprite_82.4bpp");
+static const u8 sLatiasGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_82.4bpp.lz");
 static const ax_sprite sLatiasSprites82[] = {
 	{sLatiasGfx82, ARRAY_COUNT(sLatiasGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx83[] = INCBIN_U8("graphics/ax/mon/latias/sprite_83.4bpp");
+static const u8 sLatiasGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_83.4bpp.lz");
 static const ax_sprite sLatiasSprites83[] = {
 	{sLatiasGfx83, ARRAY_COUNT(sLatiasGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx84[] = INCBIN_U8("graphics/ax/mon/latias/sprite_84.4bpp");
+static const u8 sLatiasGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_84.4bpp.lz");
 static const ax_sprite sLatiasSprites84[] = {
 	{sLatiasGfx84, ARRAY_COUNT(sLatiasGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx85[] = INCBIN_U8("graphics/ax/mon/latias/sprite_85.4bpp");
+static const u8 sLatiasGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_85.4bpp.lz");
 static const ax_sprite sLatiasSprites85[] = {
 	{sLatiasGfx85, ARRAY_COUNT(sLatiasGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx86[] = INCBIN_U8("graphics/ax/mon/latias/sprite_86.4bpp");
+static const u8 sLatiasGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_86.4bpp.lz");
 static const ax_sprite sLatiasSprites86[] = {
 	{sLatiasGfx86, ARRAY_COUNT(sLatiasGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx87[] = INCBIN_U8("graphics/ax/mon/latias/sprite_87.4bpp");
+static const u8 sLatiasGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_87.4bpp.lz");
 static const ax_sprite sLatiasSprites87[] = {
 	{sLatiasGfx87, ARRAY_COUNT(sLatiasGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx88[] = INCBIN_U8("graphics/ax/mon/latias/sprite_88.4bpp");
+static const u8 sLatiasGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_88.4bpp.lz");
 static const ax_sprite sLatiasSprites88[] = {
 	{sLatiasGfx88, ARRAY_COUNT(sLatiasGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx89[] = INCBIN_U8("graphics/ax/mon/latias/sprite_89.4bpp");
+static const u8 sLatiasGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_89.4bpp.lz");
 static const ax_sprite sLatiasSprites89[] = {
 	{sLatiasGfx89, ARRAY_COUNT(sLatiasGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx90[] = INCBIN_U8("graphics/ax/mon/latias/sprite_90.4bpp");
+static const u8 sLatiasGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_90.4bpp.lz");
 static const ax_sprite sLatiasSprites90[] = {
 	{sLatiasGfx90, ARRAY_COUNT(sLatiasGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx91[] = INCBIN_U8("graphics/ax/mon/latias/sprite_91.4bpp");
+static const u8 sLatiasGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_91.4bpp.lz");
 static const ax_sprite sLatiasSprites91[] = {
 	{sLatiasGfx91, ARRAY_COUNT(sLatiasGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx92[] = INCBIN_U8("graphics/ax/mon/latias/sprite_92.4bpp");
+static const u8 sLatiasGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_92.4bpp.lz");
 static const ax_sprite sLatiasSprites92[] = {
 	{sLatiasGfx92, ARRAY_COUNT(sLatiasGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx93[] = INCBIN_U8("graphics/ax/mon/latias/sprite_93.4bpp");
+static const u8 sLatiasGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_93.4bpp.lz");
 static const ax_sprite sLatiasSprites93[] = {
 	{sLatiasGfx93, ARRAY_COUNT(sLatiasGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx94[] = INCBIN_U8("graphics/ax/mon/latias/sprite_94.4bpp");
+static const u8 sLatiasGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_94.4bpp.lz");
 static const ax_sprite sLatiasSprites94[] = {
 	{sLatiasGfx94, ARRAY_COUNT(sLatiasGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx95[] = INCBIN_U8("graphics/ax/mon/latias/sprite_95.4bpp");
+static const u8 sLatiasGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_95.4bpp.lz");
 static const ax_sprite sLatiasSprites95[] = {
 	{sLatiasGfx95, ARRAY_COUNT(sLatiasGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx96[] = INCBIN_U8("graphics/ax/mon/latias/sprite_96.4bpp");
+static const u8 sLatiasGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_96.4bpp.lz");
 static const ax_sprite sLatiasSprites96[] = {
 	{sLatiasGfx96, ARRAY_COUNT(sLatiasGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx97[] = INCBIN_U8("graphics/ax/mon/latias/sprite_97.4bpp");
+static const u8 sLatiasGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_97.4bpp.lz");
 static const ax_sprite sLatiasSprites97[] = {
 	{sLatiasGfx97, ARRAY_COUNT(sLatiasGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx98[] = INCBIN_U8("graphics/ax/mon/latias/sprite_98.4bpp");
+static const u8 sLatiasGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_98.4bpp.lz");
 static const ax_sprite sLatiasSprites98[] = {
 	{sLatiasGfx98, ARRAY_COUNT(sLatiasGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx99[] = INCBIN_U8("graphics/ax/mon/latias/sprite_99.4bpp");
+static const u8 sLatiasGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_99.4bpp.lz");
 static const ax_sprite sLatiasSprites99[] = {
 	{sLatiasGfx99, ARRAY_COUNT(sLatiasGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx100[] = INCBIN_U8("graphics/ax/mon/latias/sprite_100.4bpp");
+static const u8 sLatiasGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_100.4bpp.lz");
 static const ax_sprite sLatiasSprites100[] = {
 	{sLatiasGfx100, ARRAY_COUNT(sLatiasGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx101[] = INCBIN_U8("graphics/ax/mon/latias/sprite_101.4bpp");
+static const u8 sLatiasGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_101.4bpp.lz");
 static const ax_sprite sLatiasSprites101[] = {
 	{sLatiasGfx101, ARRAY_COUNT(sLatiasGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx102[] = INCBIN_U8("graphics/ax/mon/latias/sprite_102.4bpp");
+static const u8 sLatiasGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_102.4bpp.lz");
 static const ax_sprite sLatiasSprites102[] = {
 	{sLatiasGfx102, ARRAY_COUNT(sLatiasGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx103[] = INCBIN_U8("graphics/ax/mon/latias/sprite_103.4bpp");
+static const u8 sLatiasGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_103.4bpp.lz");
 static const ax_sprite sLatiasSprites103[] = {
 	{sLatiasGfx103, ARRAY_COUNT(sLatiasGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx104[] = INCBIN_U8("graphics/ax/mon/latias/sprite_104.4bpp");
+static const u8 sLatiasGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_104.4bpp.lz");
 static const ax_sprite sLatiasSprites104[] = {
 	{sLatiasGfx104, ARRAY_COUNT(sLatiasGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx105[] = INCBIN_U8("graphics/ax/mon/latias/sprite_105.4bpp");
+static const u8 sLatiasGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_105.4bpp.lz");
 static const ax_sprite sLatiasSprites105[] = {
 	{sLatiasGfx105, ARRAY_COUNT(sLatiasGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx106[] = INCBIN_U8("graphics/ax/mon/latias/sprite_106.4bpp");
+static const u8 sLatiasGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_106.4bpp.lz");
 static const ax_sprite sLatiasSprites106[] = {
 	{sLatiasGfx106, ARRAY_COUNT(sLatiasGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx107[] = INCBIN_U8("graphics/ax/mon/latias/sprite_107.4bpp");
+static const u8 sLatiasGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_107.4bpp.lz");
 static const ax_sprite sLatiasSprites107[] = {
 	{sLatiasGfx107, ARRAY_COUNT(sLatiasGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx108[] = INCBIN_U8("graphics/ax/mon/latias/sprite_108.4bpp");
+static const u8 sLatiasGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_108.4bpp.lz");
 static const ax_sprite sLatiasSprites108[] = {
 	{sLatiasGfx108, ARRAY_COUNT(sLatiasGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx109[] = INCBIN_U8("graphics/ax/mon/latias/sprite_109.4bpp");
+static const u8 sLatiasGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_109.4bpp.lz");
 static const ax_sprite sLatiasSprites109[] = {
 	{sLatiasGfx109, ARRAY_COUNT(sLatiasGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx110[] = INCBIN_U8("graphics/ax/mon/latias/sprite_110.4bpp");
+static const u8 sLatiasGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_110.4bpp.lz");
 static const ax_sprite sLatiasSprites110[] = {
 	{sLatiasGfx110, ARRAY_COUNT(sLatiasGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx111[] = INCBIN_U8("graphics/ax/mon/latias/sprite_111.4bpp");
+static const u8 sLatiasGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_111.4bpp.lz");
 static const ax_sprite sLatiasSprites111[] = {
 	{sLatiasGfx111, ARRAY_COUNT(sLatiasGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx112[] = INCBIN_U8("graphics/ax/mon/latias/sprite_112.4bpp");
+static const u8 sLatiasGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_112.4bpp.lz");
 static const ax_sprite sLatiasSprites112[] = {
 	{sLatiasGfx112, ARRAY_COUNT(sLatiasGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx113[] = INCBIN_U8("graphics/ax/mon/latias/sprite_113.4bpp");
+static const u8 sLatiasGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_113.4bpp.lz");
 static const ax_sprite sLatiasSprites113[] = {
 	{sLatiasGfx113, ARRAY_COUNT(sLatiasGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx114[] = INCBIN_U8("graphics/ax/mon/latias/sprite_114.4bpp");
+static const u8 sLatiasGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_114.4bpp.lz");
 static const ax_sprite sLatiasSprites114[] = {
 	{sLatiasGfx114, ARRAY_COUNT(sLatiasGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx115[] = INCBIN_U8("graphics/ax/mon/latias/sprite_115.4bpp");
+static const u8 sLatiasGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_115.4bpp.lz");
 static const ax_sprite sLatiasSprites115[] = {
 	{sLatiasGfx115, ARRAY_COUNT(sLatiasGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx116[] = INCBIN_U8("graphics/ax/mon/latias/sprite_116.4bpp");
+static const u8 sLatiasGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_116.4bpp.lz");
 static const ax_sprite sLatiasSprites116[] = {
 	{sLatiasGfx116, ARRAY_COUNT(sLatiasGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx117[] = INCBIN_U8("graphics/ax/mon/latias/sprite_117.4bpp");
+static const u8 sLatiasGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_117.4bpp.lz");
 static const ax_sprite sLatiasSprites117[] = {
 	{sLatiasGfx117, ARRAY_COUNT(sLatiasGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx118[] = INCBIN_U8("graphics/ax/mon/latias/sprite_118.4bpp");
+static const u8 sLatiasGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_118.4bpp.lz");
 static const ax_sprite sLatiasSprites118[] = {
 	{sLatiasGfx118, ARRAY_COUNT(sLatiasGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx119[] = INCBIN_U8("graphics/ax/mon/latias/sprite_119.4bpp");
+static const u8 sLatiasGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_119.4bpp.lz");
 static const ax_sprite sLatiasSprites119[] = {
 	{sLatiasGfx119, ARRAY_COUNT(sLatiasGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx120[] = INCBIN_U8("graphics/ax/mon/latias/sprite_120.4bpp");
+static const u8 sLatiasGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_120.4bpp.lz");
 static const ax_sprite sLatiasSprites120[] = {
 	{sLatiasGfx120, ARRAY_COUNT(sLatiasGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx121[] = INCBIN_U8("graphics/ax/mon/latias/sprite_121.4bpp");
+static const u8 sLatiasGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_121.4bpp.lz");
 static const ax_sprite sLatiasSprites121[] = {
 	{sLatiasGfx121, ARRAY_COUNT(sLatiasGfx121)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx122[] = INCBIN_U8("graphics/ax/mon/latias/sprite_122.4bpp");
+static const u8 sLatiasGfx122[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_122.4bpp.lz");
 static const ax_sprite sLatiasSprites122[] = {
 	{sLatiasGfx122, ARRAY_COUNT(sLatiasGfx122)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx123[] = INCBIN_U8("graphics/ax/mon/latias/sprite_123.4bpp");
+static const u8 sLatiasGfx123[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_123.4bpp.lz");
 static const ax_sprite sLatiasSprites123[] = {
 	{sLatiasGfx123, ARRAY_COUNT(sLatiasGfx123)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx124[] = INCBIN_U8("graphics/ax/mon/latias/sprite_124.4bpp");
+static const u8 sLatiasGfx124[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_124.4bpp.lz");
 static const ax_sprite sLatiasSprites124[] = {
 	{sLatiasGfx124, ARRAY_COUNT(sLatiasGfx124)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx125[] = INCBIN_U8("graphics/ax/mon/latias/sprite_125.4bpp");
+static const u8 sLatiasGfx125[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_125.4bpp.lz");
 static const ax_sprite sLatiasSprites125[] = {
 	{sLatiasGfx125, ARRAY_COUNT(sLatiasGfx125)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx126[] = INCBIN_U8("graphics/ax/mon/latias/sprite_126.4bpp");
+static const u8 sLatiasGfx126[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_126.4bpp.lz");
 static const ax_sprite sLatiasSprites126[] = {
 	{sLatiasGfx126, ARRAY_COUNT(sLatiasGfx126)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx127[] = INCBIN_U8("graphics/ax/mon/latias/sprite_127.4bpp");
+static const u8 sLatiasGfx127[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_127.4bpp.lz");
 static const ax_sprite sLatiasSprites127[] = {
 	{sLatiasGfx127, ARRAY_COUNT(sLatiasGfx127)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx128[] = INCBIN_U8("graphics/ax/mon/latias/sprite_128.4bpp");
+static const u8 sLatiasGfx128[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_128.4bpp.lz");
 static const ax_sprite sLatiasSprites128[] = {
 	{sLatiasGfx128, ARRAY_COUNT(sLatiasGfx128)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx129[] = INCBIN_U8("graphics/ax/mon/latias/sprite_129.4bpp");
+static const u8 sLatiasGfx129[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_129.4bpp.lz");
 static const ax_sprite sLatiasSprites129[] = {
 	{sLatiasGfx129, ARRAY_COUNT(sLatiasGfx129)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx130[] = INCBIN_U8("graphics/ax/mon/latias/sprite_130.4bpp");
+static const u8 sLatiasGfx130[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_130.4bpp.lz");
 static const ax_sprite sLatiasSprites130[] = {
 	{sLatiasGfx130, ARRAY_COUNT(sLatiasGfx130)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx131[] = INCBIN_U8("graphics/ax/mon/latias/sprite_131.4bpp");
+static const u8 sLatiasGfx131[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_131.4bpp.lz");
 static const ax_sprite sLatiasSprites131[] = {
 	{sLatiasGfx131, ARRAY_COUNT(sLatiasGfx131)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx132[] = INCBIN_U8("graphics/ax/mon/latias/sprite_132.4bpp");
+static const u8 sLatiasGfx132[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_132.4bpp.lz");
 static const ax_sprite sLatiasSprites132[] = {
 	{sLatiasGfx132, ARRAY_COUNT(sLatiasGfx132)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx133[] = INCBIN_U8("graphics/ax/mon/latias/sprite_133.4bpp");
+static const u8 sLatiasGfx133[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_133.4bpp.lz");
 static const ax_sprite sLatiasSprites133[] = {
 	{sLatiasGfx133, ARRAY_COUNT(sLatiasGfx133)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx134[] = INCBIN_U8("graphics/ax/mon/latias/sprite_134.4bpp");
+static const u8 sLatiasGfx134[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_134.4bpp.lz");
 static const ax_sprite sLatiasSprites134[] = {
 	{sLatiasGfx134, ARRAY_COUNT(sLatiasGfx134)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx135[] = INCBIN_U8("graphics/ax/mon/latias/sprite_135.4bpp");
+static const u8 sLatiasGfx135[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_135.4bpp.lz");
 static const ax_sprite sLatiasSprites135[] = {
 	{sLatiasGfx135, ARRAY_COUNT(sLatiasGfx135)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx136[] = INCBIN_U8("graphics/ax/mon/latias/sprite_136.4bpp");
+static const u8 sLatiasGfx136[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_136.4bpp.lz");
 static const ax_sprite sLatiasSprites136[] = {
 	{sLatiasGfx136, ARRAY_COUNT(sLatiasGfx136)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx137[] = INCBIN_U8("graphics/ax/mon/latias/sprite_137.4bpp");
+static const u8 sLatiasGfx137[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_137.4bpp.lz");
 static const ax_sprite sLatiasSprites137[] = {
 	{sLatiasGfx137, ARRAY_COUNT(sLatiasGfx137)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx138[] = INCBIN_U8("graphics/ax/mon/latias/sprite_138.4bpp");
+static const u8 sLatiasGfx138[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_138.4bpp.lz");
 static const ax_sprite sLatiasSprites138[] = {
 	{sLatiasGfx138, ARRAY_COUNT(sLatiasGfx138)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx139[] = INCBIN_U8("graphics/ax/mon/latias/sprite_139.4bpp");
+static const u8 sLatiasGfx139[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_139.4bpp.lz");
 static const ax_sprite sLatiasSprites139[] = {
 	{sLatiasGfx139, ARRAY_COUNT(sLatiasGfx139)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx140[] = INCBIN_U8("graphics/ax/mon/latias/sprite_140.4bpp");
+static const u8 sLatiasGfx140[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_140.4bpp.lz");
 static const ax_sprite sLatiasSprites140[] = {
 	{sLatiasGfx140, ARRAY_COUNT(sLatiasGfx140)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx141[] = INCBIN_U8("graphics/ax/mon/latias/sprite_141.4bpp");
+static const u8 sLatiasGfx141[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_141.4bpp.lz");
 static const ax_sprite sLatiasSprites141[] = {
 	{sLatiasGfx141, ARRAY_COUNT(sLatiasGfx141)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx142[] = INCBIN_U8("graphics/ax/mon/latias/sprite_142.4bpp");
+static const u8 sLatiasGfx142[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_142.4bpp.lz");
 static const ax_sprite sLatiasSprites142[] = {
 	{sLatiasGfx142, ARRAY_COUNT(sLatiasGfx142)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx143[] = INCBIN_U8("graphics/ax/mon/latias/sprite_143.4bpp");
+static const u8 sLatiasGfx143[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_143.4bpp.lz");
 static const ax_sprite sLatiasSprites143[] = {
 	{sLatiasGfx143, ARRAY_COUNT(sLatiasGfx143)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx144[] = INCBIN_U8("graphics/ax/mon/latias/sprite_144.4bpp");
+static const u8 sLatiasGfx144[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_144.4bpp.lz");
 static const ax_sprite sLatiasSprites144[] = {
 	{sLatiasGfx144, ARRAY_COUNT(sLatiasGfx144)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx145[] = INCBIN_U8("graphics/ax/mon/latias/sprite_145.4bpp");
+static const u8 sLatiasGfx145[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_145.4bpp.lz");
 static const ax_sprite sLatiasSprites145[] = {
 	{sLatiasGfx145, ARRAY_COUNT(sLatiasGfx145)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx146[] = INCBIN_U8("graphics/ax/mon/latias/sprite_146.4bpp");
+static const u8 sLatiasGfx146[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_146.4bpp.lz");
 static const ax_sprite sLatiasSprites146[] = {
 	{sLatiasGfx146, ARRAY_COUNT(sLatiasGfx146)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx147[] = INCBIN_U8("graphics/ax/mon/latias/sprite_147.4bpp");
+static const u8 sLatiasGfx147[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_147.4bpp.lz");
 static const ax_sprite sLatiasSprites147[] = {
 	{sLatiasGfx147, ARRAY_COUNT(sLatiasGfx147)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx148[] = INCBIN_U8("graphics/ax/mon/latias/sprite_148.4bpp");
+static const u8 sLatiasGfx148[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_148.4bpp.lz");
 static const ax_sprite sLatiasSprites148[] = {
 	{sLatiasGfx148, ARRAY_COUNT(sLatiasGfx148)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx149[] = INCBIN_U8("graphics/ax/mon/latias/sprite_149.4bpp");
+static const u8 sLatiasGfx149[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_149.4bpp.lz");
 static const ax_sprite sLatiasSprites149[] = {
 	{sLatiasGfx149, ARRAY_COUNT(sLatiasGfx149)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx150[] = INCBIN_U8("graphics/ax/mon/latias/sprite_150.4bpp");
+static const u8 sLatiasGfx150[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_150.4bpp.lz");
 static const ax_sprite sLatiasSprites150[] = {
 	{sLatiasGfx150, ARRAY_COUNT(sLatiasGfx150)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx151[] = INCBIN_U8("graphics/ax/mon/latias/sprite_151.4bpp");
+static const u8 sLatiasGfx151[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_151.4bpp.lz");
 static const ax_sprite sLatiasSprites151[] = {
 	{sLatiasGfx151, ARRAY_COUNT(sLatiasGfx151)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx152[] = INCBIN_U8("graphics/ax/mon/latias/sprite_152.4bpp");
+static const u8 sLatiasGfx152[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_152.4bpp.lz");
 static const ax_sprite sLatiasSprites152[] = {
 	{sLatiasGfx152, ARRAY_COUNT(sLatiasGfx152)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx153[] = INCBIN_U8("graphics/ax/mon/latias/sprite_153.4bpp");
+static const u8 sLatiasGfx153[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_153.4bpp.lz");
 static const ax_sprite sLatiasSprites153[] = {
 	{sLatiasGfx153, ARRAY_COUNT(sLatiasGfx153)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx154[] = INCBIN_U8("graphics/ax/mon/latias/sprite_154.4bpp");
+static const u8 sLatiasGfx154[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_154.4bpp.lz");
 static const ax_sprite sLatiasSprites154[] = {
 	{sLatiasGfx154, ARRAY_COUNT(sLatiasGfx154)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx155[] = INCBIN_U8("graphics/ax/mon/latias/sprite_155.4bpp");
+static const u8 sLatiasGfx155[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_155.4bpp.lz");
 static const ax_sprite sLatiasSprites155[] = {
 	{sLatiasGfx155, ARRAY_COUNT(sLatiasGfx155)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx156[] = INCBIN_U8("graphics/ax/mon/latias/sprite_156.4bpp");
+static const u8 sLatiasGfx156[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_156.4bpp.lz");
 static const ax_sprite sLatiasSprites156[] = {
 	{sLatiasGfx156, ARRAY_COUNT(sLatiasGfx156)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx157[] = INCBIN_U8("graphics/ax/mon/latias/sprite_157.4bpp");
+static const u8 sLatiasGfx157[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_157.4bpp.lz");
 static const ax_sprite sLatiasSprites157[] = {
 	{sLatiasGfx157, ARRAY_COUNT(sLatiasGfx157)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx158[] = INCBIN_U8("graphics/ax/mon/latias/sprite_158.4bpp");
+static const u8 sLatiasGfx158[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_158.4bpp.lz");
 static const ax_sprite sLatiasSprites158[] = {
 	{sLatiasGfx158, ARRAY_COUNT(sLatiasGfx158)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx159[] = INCBIN_U8("graphics/ax/mon/latias/sprite_159.4bpp");
+static const u8 sLatiasGfx159[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_159.4bpp.lz");
 static const ax_sprite sLatiasSprites159[] = {
 	{sLatiasGfx159, ARRAY_COUNT(sLatiasGfx159)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx160[] = INCBIN_U8("graphics/ax/mon/latias/sprite_160.4bpp");
+static const u8 sLatiasGfx160[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_160.4bpp.lz");
 static const ax_sprite sLatiasSprites160[] = {
 	{sLatiasGfx160, ARRAY_COUNT(sLatiasGfx160)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx161[] = INCBIN_U8("graphics/ax/mon/latias/sprite_161.4bpp");
+static const u8 sLatiasGfx161[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_161.4bpp.lz");
 static const ax_sprite sLatiasSprites161[] = {
 	{sLatiasGfx161, ARRAY_COUNT(sLatiasGfx161)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx162[] = INCBIN_U8("graphics/ax/mon/latias/sprite_162.4bpp");
+static const u8 sLatiasGfx162[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_162.4bpp.lz");
 static const ax_sprite sLatiasSprites162[] = {
 	{sLatiasGfx162, ARRAY_COUNT(sLatiasGfx162)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx163[] = INCBIN_U8("graphics/ax/mon/latias/sprite_163.4bpp");
+static const u8 sLatiasGfx163[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_163.4bpp.lz");
 static const ax_sprite sLatiasSprites163[] = {
 	{sLatiasGfx163, ARRAY_COUNT(sLatiasGfx163)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx164[] = INCBIN_U8("graphics/ax/mon/latias/sprite_164.4bpp");
+static const u8 sLatiasGfx164[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_164.4bpp.lz");
 static const ax_sprite sLatiasSprites164[] = {
 	{sLatiasGfx164, ARRAY_COUNT(sLatiasGfx164)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx165[] = INCBIN_U8("graphics/ax/mon/latias/sprite_165.4bpp");
+static const u8 sLatiasGfx165[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_165.4bpp.lz");
 static const ax_sprite sLatiasSprites165[] = {
 	{sLatiasGfx165, ARRAY_COUNT(sLatiasGfx165)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx166[] = INCBIN_U8("graphics/ax/mon/latias/sprite_166.4bpp");
+static const u8 sLatiasGfx166[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_166.4bpp.lz");
 static const ax_sprite sLatiasSprites166[] = {
 	{sLatiasGfx166, ARRAY_COUNT(sLatiasGfx166)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx167[] = INCBIN_U8("graphics/ax/mon/latias/sprite_167.4bpp");
+static const u8 sLatiasGfx167[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_167.4bpp.lz");
 static const ax_sprite sLatiasSprites167[] = {
 	{sLatiasGfx167, ARRAY_COUNT(sLatiasGfx167)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx168[] = INCBIN_U8("graphics/ax/mon/latias/sprite_168.4bpp");
+static const u8 sLatiasGfx168[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_168.4bpp.lz");
 static const ax_sprite sLatiasSprites168[] = {
 	{sLatiasGfx168, ARRAY_COUNT(sLatiasGfx168)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx169[] = INCBIN_U8("graphics/ax/mon/latias/sprite_169.4bpp");
+static const u8 sLatiasGfx169[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_169.4bpp.lz");
 static const ax_sprite sLatiasSprites169[] = {
 	{sLatiasGfx169, ARRAY_COUNT(sLatiasGfx169)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx170[] = INCBIN_U8("graphics/ax/mon/latias/sprite_170.4bpp");
+static const u8 sLatiasGfx170[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_170.4bpp.lz");
 static const ax_sprite sLatiasSprites170[] = {
 	{sLatiasGfx170, ARRAY_COUNT(sLatiasGfx170)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx171[] = INCBIN_U8("graphics/ax/mon/latias/sprite_171.4bpp");
+static const u8 sLatiasGfx171[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_171.4bpp.lz");
 static const ax_sprite sLatiasSprites171[] = {
 	{sLatiasGfx171, ARRAY_COUNT(sLatiasGfx171)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx172[] = INCBIN_U8("graphics/ax/mon/latias/sprite_172.4bpp");
+static const u8 sLatiasGfx172[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_172.4bpp.lz");
 static const ax_sprite sLatiasSprites172[] = {
 	{sLatiasGfx172, ARRAY_COUNT(sLatiasGfx172)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx173[] = INCBIN_U8("graphics/ax/mon/latias/sprite_173.4bpp");
+static const u8 sLatiasGfx173[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_173.4bpp.lz");
 static const ax_sprite sLatiasSprites173[] = {
 	{sLatiasGfx173, ARRAY_COUNT(sLatiasGfx173)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx174[] = INCBIN_U8("graphics/ax/mon/latias/sprite_174.4bpp");
+static const u8 sLatiasGfx174[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_174.4bpp.lz");
 static const ax_sprite sLatiasSprites174[] = {
 	{sLatiasGfx174, ARRAY_COUNT(sLatiasGfx174)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx175[] = INCBIN_U8("graphics/ax/mon/latias/sprite_175.4bpp");
+static const u8 sLatiasGfx175[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_175.4bpp.lz");
 static const ax_sprite sLatiasSprites175[] = {
 	{sLatiasGfx175, ARRAY_COUNT(sLatiasGfx175)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx176[] = INCBIN_U8("graphics/ax/mon/latias/sprite_176.4bpp");
+static const u8 sLatiasGfx176[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_176.4bpp.lz");
 static const ax_sprite sLatiasSprites176[] = {
 	{sLatiasGfx176, ARRAY_COUNT(sLatiasGfx176)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx177[] = INCBIN_U8("graphics/ax/mon/latias/sprite_177.4bpp");
+static const u8 sLatiasGfx177[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_177.4bpp.lz");
 static const ax_sprite sLatiasSprites177[] = {
 	{sLatiasGfx177, ARRAY_COUNT(sLatiasGfx177)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx178[] = INCBIN_U8("graphics/ax/mon/latias/sprite_178.4bpp");
+static const u8 sLatiasGfx178[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_178.4bpp.lz");
 static const ax_sprite sLatiasSprites178[] = {
 	{sLatiasGfx178, ARRAY_COUNT(sLatiasGfx178)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx179[] = INCBIN_U8("graphics/ax/mon/latias/sprite_179.4bpp");
+static const u8 sLatiasGfx179[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_179.4bpp.lz");
 static const ax_sprite sLatiasSprites179[] = {
 	{sLatiasGfx179, ARRAY_COUNT(sLatiasGfx179)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx180[] = INCBIN_U8("graphics/ax/mon/latias/sprite_180.4bpp");
+static const u8 sLatiasGfx180[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_180.4bpp.lz");
 static const ax_sprite sLatiasSprites180[] = {
 	{sLatiasGfx180, ARRAY_COUNT(sLatiasGfx180)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx181[] = INCBIN_U8("graphics/ax/mon/latias/sprite_181.4bpp");
+static const u8 sLatiasGfx181[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_181.4bpp.lz");
 static const ax_sprite sLatiasSprites181[] = {
 	{sLatiasGfx181, ARRAY_COUNT(sLatiasGfx181)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx182[] = INCBIN_U8("graphics/ax/mon/latias/sprite_182.4bpp");
+static const u8 sLatiasGfx182[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_182.4bpp.lz");
 static const ax_sprite sLatiasSprites182[] = {
 	{sLatiasGfx182, ARRAY_COUNT(sLatiasGfx182)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx183[] = INCBIN_U8("graphics/ax/mon/latias/sprite_183.4bpp");
+static const u8 sLatiasGfx183[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_183.4bpp.lz");
 static const ax_sprite sLatiasSprites183[] = {
 	{sLatiasGfx183, ARRAY_COUNT(sLatiasGfx183)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx184[] = INCBIN_U8("graphics/ax/mon/latias/sprite_184.4bpp");
+static const u8 sLatiasGfx184[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_184.4bpp.lz");
 static const ax_sprite sLatiasSprites184[] = {
 	{sLatiasGfx184, ARRAY_COUNT(sLatiasGfx184)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx185[] = INCBIN_U8("graphics/ax/mon/latias/sprite_185.4bpp");
+static const u8 sLatiasGfx185[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_185.4bpp.lz");
 static const ax_sprite sLatiasSprites185[] = {
 	{NULL, 32}, 
 	{sLatiasGfx185, ARRAY_COUNT(sLatiasGfx185)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx186[] = INCBIN_U8("graphics/ax/mon/latias/sprite_186.4bpp");
+static const u8 sLatiasGfx186[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_186.4bpp.lz");
 static const ax_sprite sLatiasSprites186[] = {
 	{sLatiasGfx186, ARRAY_COUNT(sLatiasGfx186)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx187[] = INCBIN_U8("graphics/ax/mon/latias/sprite_187.4bpp");
+static const u8 sLatiasGfx187[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_187.4bpp.lz");
 static const ax_sprite sLatiasSprites187[] = {
 	{sLatiasGfx187, ARRAY_COUNT(sLatiasGfx187)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx188[] = INCBIN_U8("graphics/ax/mon/latias/sprite_188.4bpp");
+static const u8 sLatiasGfx188[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_188.4bpp.lz");
 static const ax_sprite sLatiasSprites188[] = {
 	{sLatiasGfx188, ARRAY_COUNT(sLatiasGfx188)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx189[] = INCBIN_U8("graphics/ax/mon/latias/sprite_189.4bpp");
+static const u8 sLatiasGfx189[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_189.4bpp.lz");
 static const ax_sprite sLatiasSprites189[] = {
 	{sLatiasGfx189, ARRAY_COUNT(sLatiasGfx189)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx190[] = INCBIN_U8("graphics/ax/mon/latias/sprite_190.4bpp");
+static const u8 sLatiasGfx190[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_190.4bpp.lz");
 static const ax_sprite sLatiasSprites190[] = {
 	{sLatiasGfx190, ARRAY_COUNT(sLatiasGfx190)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx191[] = INCBIN_U8("graphics/ax/mon/latias/sprite_191.4bpp");
+static const u8 sLatiasGfx191[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_191.4bpp.lz");
 static const ax_sprite sLatiasSprites191[] = {
 	{sLatiasGfx191, ARRAY_COUNT(sLatiasGfx191)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx192[] = INCBIN_U8("graphics/ax/mon/latias/sprite_192.4bpp");
+static const u8 sLatiasGfx192[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_192.4bpp.lz");
 static const ax_sprite sLatiasSprites192[] = {
 	{sLatiasGfx192, ARRAY_COUNT(sLatiasGfx192)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx193[] = INCBIN_U8("graphics/ax/mon/latias/sprite_193.4bpp");
+static const u8 sLatiasGfx193[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_193.4bpp.lz");
 static const ax_sprite sLatiasSprites193[] = {
 	{sLatiasGfx193, ARRAY_COUNT(sLatiasGfx193)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx194[] = INCBIN_U8("graphics/ax/mon/latias/sprite_194.4bpp");
+static const u8 sLatiasGfx194[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_194.4bpp.lz");
 static const ax_sprite sLatiasSprites194[] = {
 	{sLatiasGfx194, ARRAY_COUNT(sLatiasGfx194)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx195[] = INCBIN_U8("graphics/ax/mon/latias/sprite_195.4bpp");
+static const u8 sLatiasGfx195[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_195.4bpp.lz");
 static const ax_sprite sLatiasSprites195[] = {
 	{sLatiasGfx195, ARRAY_COUNT(sLatiasGfx195)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx196[] = INCBIN_U8("graphics/ax/mon/latias/sprite_196.4bpp");
+static const u8 sLatiasGfx196[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_196.4bpp.lz");
 static const ax_sprite sLatiasSprites196[] = {
 	{sLatiasGfx196, ARRAY_COUNT(sLatiasGfx196)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx197[] = INCBIN_U8("graphics/ax/mon/latias/sprite_197.4bpp");
+static const u8 sLatiasGfx197[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_197.4bpp.lz");
 static const ax_sprite sLatiasSprites197[] = {
 	{sLatiasGfx197, ARRAY_COUNT(sLatiasGfx197)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx198[] = INCBIN_U8("graphics/ax/mon/latias/sprite_198.4bpp");
+static const u8 sLatiasGfx198[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_198.4bpp.lz");
 static const ax_sprite sLatiasSprites198[] = {
 	{sLatiasGfx198, ARRAY_COUNT(sLatiasGfx198)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx199[] = INCBIN_U8("graphics/ax/mon/latias/sprite_199.4bpp");
+static const u8 sLatiasGfx199[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_199.4bpp.lz");
 static const ax_sprite sLatiasSprites199[] = {
 	{sLatiasGfx199, ARRAY_COUNT(sLatiasGfx199)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx200[] = INCBIN_U8("graphics/ax/mon/latias/sprite_200.4bpp");
+static const u8 sLatiasGfx200[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_200.4bpp.lz");
 static const ax_sprite sLatiasSprites200[] = {
 	{sLatiasGfx200, ARRAY_COUNT(sLatiasGfx200)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx201[] = INCBIN_U8("graphics/ax/mon/latias/sprite_201.4bpp");
+static const u8 sLatiasGfx201[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_201.4bpp.lz");
 static const ax_sprite sLatiasSprites201[] = {
 	{sLatiasGfx201, ARRAY_COUNT(sLatiasGfx201)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx202[] = INCBIN_U8("graphics/ax/mon/latias/sprite_202.4bpp");
+static const u8 sLatiasGfx202[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_202.4bpp.lz");
 static const ax_sprite sLatiasSprites202[] = {
 	{sLatiasGfx202, ARRAY_COUNT(sLatiasGfx202)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx203[] = INCBIN_U8("graphics/ax/mon/latias/sprite_203.4bpp");
+static const u8 sLatiasGfx203[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_203.4bpp.lz");
 static const ax_sprite sLatiasSprites203[] = {
 	{sLatiasGfx203, ARRAY_COUNT(sLatiasGfx203)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx204[] = INCBIN_U8("graphics/ax/mon/latias/sprite_204.4bpp");
+static const u8 sLatiasGfx204[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_204.4bpp.lz");
 static const ax_sprite sLatiasSprites204[] = {
 	{sLatiasGfx204, ARRAY_COUNT(sLatiasGfx204)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx205[] = INCBIN_U8("graphics/ax/mon/latias/sprite_205.4bpp");
+static const u8 sLatiasGfx205[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_205.4bpp.lz");
 static const ax_sprite sLatiasSprites205[] = {
 	{sLatiasGfx205, ARRAY_COUNT(sLatiasGfx205)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx206[] = INCBIN_U8("graphics/ax/mon/latias/sprite_206.4bpp");
+static const u8 sLatiasGfx206[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_206.4bpp.lz");
 static const ax_sprite sLatiasSprites206[] = {
 	{sLatiasGfx206, ARRAY_COUNT(sLatiasGfx206)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx207[] = INCBIN_U8("graphics/ax/mon/latias/sprite_207.4bpp");
+static const u8 sLatiasGfx207[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_207.4bpp.lz");
 static const ax_sprite sLatiasSprites207[] = {
 	{sLatiasGfx207, ARRAY_COUNT(sLatiasGfx207)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx208[] = INCBIN_U8("graphics/ax/mon/latias/sprite_208.4bpp");
+static const u8 sLatiasGfx208[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_208.4bpp.lz");
 static const ax_sprite sLatiasSprites208[] = {
 	{sLatiasGfx208, ARRAY_COUNT(sLatiasGfx208)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx209[] = INCBIN_U8("graphics/ax/mon/latias/sprite_209.4bpp");
+static const u8 sLatiasGfx209[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_209.4bpp.lz");
 static const ax_sprite sLatiasSprites209[] = {
 	{sLatiasGfx209, ARRAY_COUNT(sLatiasGfx209)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx210[] = INCBIN_U8("graphics/ax/mon/latias/sprite_210.4bpp");
+static const u8 sLatiasGfx210[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_210.4bpp.lz");
 static const ax_sprite sLatiasSprites210[] = {
 	{sLatiasGfx210, ARRAY_COUNT(sLatiasGfx210)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx211[] = INCBIN_U8("graphics/ax/mon/latias/sprite_211.4bpp");
+static const u8 sLatiasGfx211[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_211.4bpp.lz");
 static const ax_sprite sLatiasSprites211[] = {
 	{sLatiasGfx211, ARRAY_COUNT(sLatiasGfx211)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx212[] = INCBIN_U8("graphics/ax/mon/latias/sprite_212.4bpp");
+static const u8 sLatiasGfx212[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_212.4bpp.lz");
 static const ax_sprite sLatiasSprites212[] = {
 	{sLatiasGfx212, ARRAY_COUNT(sLatiasGfx212)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx213[] = INCBIN_U8("graphics/ax/mon/latias/sprite_213.4bpp");
+static const u8 sLatiasGfx213[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_213.4bpp.lz");
 static const ax_sprite sLatiasSprites213[] = {
 	{sLatiasGfx213, ARRAY_COUNT(sLatiasGfx213)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx214[] = INCBIN_U8("graphics/ax/mon/latias/sprite_214.4bpp");
+static const u8 sLatiasGfx214[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_214.4bpp.lz");
 static const ax_sprite sLatiasSprites214[] = {
 	{sLatiasGfx214, ARRAY_COUNT(sLatiasGfx214)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx215[] = INCBIN_U8("graphics/ax/mon/latias/sprite_215.4bpp");
+static const u8 sLatiasGfx215[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_215.4bpp.lz");
 static const ax_sprite sLatiasSprites215[] = {
 	{sLatiasGfx215, ARRAY_COUNT(sLatiasGfx215)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx216[] = INCBIN_U8("graphics/ax/mon/latias/sprite_216.4bpp");
+static const u8 sLatiasGfx216[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_216.4bpp.lz");
 static const ax_sprite sLatiasSprites216[] = {
 	{sLatiasGfx216, ARRAY_COUNT(sLatiasGfx216)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx217[] = INCBIN_U8("graphics/ax/mon/latias/sprite_217.4bpp");
+static const u8 sLatiasGfx217[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_217.4bpp.lz");
 static const ax_sprite sLatiasSprites217[] = {
 	{sLatiasGfx217, ARRAY_COUNT(sLatiasGfx217)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx218[] = INCBIN_U8("graphics/ax/mon/latias/sprite_218.4bpp");
+static const u8 sLatiasGfx218[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_218.4bpp.lz");
 static const ax_sprite sLatiasSprites218[] = {
 	{sLatiasGfx218, ARRAY_COUNT(sLatiasGfx218)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx219[] = INCBIN_U8("graphics/ax/mon/latias/sprite_219.4bpp");
+static const u8 sLatiasGfx219[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_219.4bpp.lz");
 static const ax_sprite sLatiasSprites219[] = {
 	{sLatiasGfx219, ARRAY_COUNT(sLatiasGfx219)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx220[] = INCBIN_U8("graphics/ax/mon/latias/sprite_220.4bpp");
+static const u8 sLatiasGfx220[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_220.4bpp.lz");
 static const ax_sprite sLatiasSprites220[] = {
 	{sLatiasGfx220, ARRAY_COUNT(sLatiasGfx220)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx221[] = INCBIN_U8("graphics/ax/mon/latias/sprite_221.4bpp");
+static const u8 sLatiasGfx221[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_221.4bpp.lz");
 static const ax_sprite sLatiasSprites221[] = {
 	{sLatiasGfx221, ARRAY_COUNT(sLatiasGfx221)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx222[] = INCBIN_U8("graphics/ax/mon/latias/sprite_222.4bpp");
+static const u8 sLatiasGfx222[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_222.4bpp.lz");
 static const ax_sprite sLatiasSprites222[] = {
 	{sLatiasGfx222, ARRAY_COUNT(sLatiasGfx222)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx223[] = INCBIN_U8("graphics/ax/mon/latias/sprite_223.4bpp");
+static const u8 sLatiasGfx223[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_223.4bpp.lz");
 static const ax_sprite sLatiasSprites223[] = {
 	{sLatiasGfx223, ARRAY_COUNT(sLatiasGfx223)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx224[] = INCBIN_U8("graphics/ax/mon/latias/sprite_224.4bpp");
+static const u8 sLatiasGfx224[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_224.4bpp.lz");
 static const ax_sprite sLatiasSprites224[] = {
 	{sLatiasGfx224, ARRAY_COUNT(sLatiasGfx224)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx225[] = INCBIN_U8("graphics/ax/mon/latias/sprite_225.4bpp");
+static const u8 sLatiasGfx225[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_225.4bpp.lz");
 static const ax_sprite sLatiasSprites225[] = {
 	{sLatiasGfx225, ARRAY_COUNT(sLatiasGfx225)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx226[] = INCBIN_U8("graphics/ax/mon/latias/sprite_226.4bpp");
+static const u8 sLatiasGfx226[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_226.4bpp.lz");
 static const ax_sprite sLatiasSprites226[] = {
 	{sLatiasGfx226, ARRAY_COUNT(sLatiasGfx226)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx227[] = INCBIN_U8("graphics/ax/mon/latias/sprite_227.4bpp");
+static const u8 sLatiasGfx227[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_227.4bpp.lz");
 static const ax_sprite sLatiasSprites227[] = {
 	{sLatiasGfx227, ARRAY_COUNT(sLatiasGfx227)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx228[] = INCBIN_U8("graphics/ax/mon/latias/sprite_228.4bpp");
+static const u8 sLatiasGfx228[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_228.4bpp.lz");
 static const ax_sprite sLatiasSprites228[] = {
 	{sLatiasGfx228, ARRAY_COUNT(sLatiasGfx228)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx229[] = INCBIN_U8("graphics/ax/mon/latias/sprite_229.4bpp");
+static const u8 sLatiasGfx229[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_229.4bpp.lz");
 static const ax_sprite sLatiasSprites229[] = {
 	{sLatiasGfx229, ARRAY_COUNT(sLatiasGfx229)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx230[] = INCBIN_U8("graphics/ax/mon/latias/sprite_230.4bpp");
+static const u8 sLatiasGfx230[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_230.4bpp.lz");
 static const ax_sprite sLatiasSprites230[] = {
 	{sLatiasGfx230, ARRAY_COUNT(sLatiasGfx230)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx231[] = INCBIN_U8("graphics/ax/mon/latias/sprite_231.4bpp");
+static const u8 sLatiasGfx231[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_231.4bpp.lz");
 static const ax_sprite sLatiasSprites231[] = {
 	{sLatiasGfx231, ARRAY_COUNT(sLatiasGfx231)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx232[] = INCBIN_U8("graphics/ax/mon/latias/sprite_232.4bpp");
+static const u8 sLatiasGfx232[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_232.4bpp.lz");
 static const ax_sprite sLatiasSprites232[] = {
 	{sLatiasGfx232, ARRAY_COUNT(sLatiasGfx232)}, 
 	{NULL, 0}
 };
-static const u8 sLatiasGfx233[] = INCBIN_U8("graphics/ax/mon/latias/sprite_233.4bpp");
+static const u8 sLatiasGfx233[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/latias/sprite_233.4bpp.lz");
 static const ax_sprite sLatiasSprites233[] = {
 	{sLatiasGfx233, ARRAY_COUNT(sLatiasGfx233)}, 
 	{NULL, 0}

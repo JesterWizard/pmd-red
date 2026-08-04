@@ -2453,135 +2453,135 @@ static const ax_anim sManectricAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sManectricGfx1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_1.4bpp");
+static const u8 sManectricGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_1.4bpp.lz");
 static const ax_sprite sManectricSprites1[] = {
 	{sManectricGfx1, ARRAY_COUNT(sManectricGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_2.4bpp");
+static const u8 sManectricGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_2.4bpp.lz");
 static const ax_sprite sManectricSprites2[] = {
 	{sManectricGfx2, ARRAY_COUNT(sManectricGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_3.4bpp");
+static const u8 sManectricGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_3.4bpp.lz");
 static const ax_sprite sManectricSprites3[] = {
 	{sManectricGfx3, ARRAY_COUNT(sManectricGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx4[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_4.4bpp");
+static const u8 sManectricGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_4.4bpp.lz");
 static const ax_sprite sManectricSprites4[] = {
 	{sManectricGfx4, ARRAY_COUNT(sManectricGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx5[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_5.4bpp");
+static const u8 sManectricGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_5.4bpp.lz");
 static const ax_sprite sManectricSprites5[] = {
 	{sManectricGfx5, ARRAY_COUNT(sManectricGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx6[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_6.4bpp");
+static const u8 sManectricGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_6.4bpp.lz");
 static const ax_sprite sManectricSprites6[] = {
 	{sManectricGfx6, ARRAY_COUNT(sManectricGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx7[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_7.4bpp");
+static const u8 sManectricGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_7.4bpp.lz");
 static const ax_sprite sManectricSprites7[] = {
 	{sManectricGfx7, ARRAY_COUNT(sManectricGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx8[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_8.4bpp");
+static const u8 sManectricGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_8.4bpp.lz");
 static const ax_sprite sManectricSprites8[] = {
 	{sManectricGfx8, ARRAY_COUNT(sManectricGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx9[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_9.4bpp");
+static const u8 sManectricGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_9.4bpp.lz");
 static const ax_sprite sManectricSprites9[] = {
 	{sManectricGfx9, ARRAY_COUNT(sManectricGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx10[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_10.4bpp");
+static const u8 sManectricGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_10.4bpp.lz");
 static const ax_sprite sManectricSprites10[] = {
 	{sManectricGfx10, ARRAY_COUNT(sManectricGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx11[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_11.4bpp");
+static const u8 sManectricGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_11.4bpp.lz");
 static const ax_sprite sManectricSprites11[] = {
 	{sManectricGfx11, ARRAY_COUNT(sManectricGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx12[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_12.4bpp");
+static const u8 sManectricGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_12.4bpp.lz");
 static const ax_sprite sManectricSprites12[] = {
 	{sManectricGfx12, ARRAY_COUNT(sManectricGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx13[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_13.4bpp");
+static const u8 sManectricGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_13.4bpp.lz");
 static const ax_sprite sManectricSprites13[] = {
 	{sManectricGfx13, ARRAY_COUNT(sManectricGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx14[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_14.4bpp");
+static const u8 sManectricGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_14.4bpp.lz");
 static const ax_sprite sManectricSprites14[] = {
 	{sManectricGfx14, ARRAY_COUNT(sManectricGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx15[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_15.4bpp");
+static const u8 sManectricGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_15.4bpp.lz");
 static const ax_sprite sManectricSprites15[] = {
 	{sManectricGfx15, ARRAY_COUNT(sManectricGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx16[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_16.4bpp");
+static const u8 sManectricGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_16.4bpp.lz");
 static const ax_sprite sManectricSprites16[] = {
 	{sManectricGfx16, ARRAY_COUNT(sManectricGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx17[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_17.4bpp");
+static const u8 sManectricGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_17.4bpp.lz");
 static const ax_sprite sManectricSprites17[] = {
 	{sManectricGfx17, ARRAY_COUNT(sManectricGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx18[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_18.4bpp");
+static const u8 sManectricGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_18.4bpp.lz");
 static const ax_sprite sManectricSprites18[] = {
 	{sManectricGfx18, ARRAY_COUNT(sManectricGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx19[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_19.4bpp");
+static const u8 sManectricGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_19.4bpp.lz");
 static const ax_sprite sManectricSprites19[] = {
 	{sManectricGfx19, ARRAY_COUNT(sManectricGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx20[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_20.4bpp");
+static const u8 sManectricGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_20.4bpp.lz");
 static const ax_sprite sManectricSprites20[] = {
 	{sManectricGfx20, ARRAY_COUNT(sManectricGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx21[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_21.4bpp");
+static const u8 sManectricGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_21.4bpp.lz");
 static const ax_sprite sManectricSprites21[] = {
 	{sManectricGfx21, ARRAY_COUNT(sManectricGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx22[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_22.4bpp");
+static const u8 sManectricGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_22.4bpp.lz");
 static const ax_sprite sManectricSprites22[] = {
 	{sManectricGfx22, ARRAY_COUNT(sManectricGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx23[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_23.4bpp");
+static const u8 sManectricGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_23.4bpp.lz");
 static const ax_sprite sManectricSprites23[] = {
 	{NULL, 32}, 
 	{sManectricGfx23, ARRAY_COUNT(sManectricGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx24[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_24.4bpp");
+static const u8 sManectricGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_24.4bpp.lz");
 static const ax_sprite sManectricSprites24[] = {
 	{NULL, 32}, 
 	{sManectricGfx24, ARRAY_COUNT(sManectricGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx25[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_25.4bpp");
+static const u8 sManectricGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_25.4bpp.lz");
 static const ax_sprite sManectricSprites25[] = {
 	{sManectricGfx25, ARRAY_COUNT(sManectricGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx26[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_26.4bpp");
-static const u8 sManectricGfx26_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_26_1.4bpp");
+static const u8 sManectricGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_26.4bpp.lz");
+static const u8 sManectricGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_26_1.4bpp.lz");
 static const ax_sprite sManectricSprites26[] = {
 	{sManectricGfx26, ARRAY_COUNT(sManectricGfx26)}, 
 	{NULL, 32}, 
@@ -2589,8 +2589,8 @@ static const ax_sprite sManectricSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx27[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_27.4bpp");
-static const u8 sManectricGfx27_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_27_1.4bpp");
+static const u8 sManectricGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_27.4bpp.lz");
+static const u8 sManectricGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_27_1.4bpp.lz");
 static const ax_sprite sManectricSprites27[] = {
 	{NULL, 32}, 
 	{sManectricGfx27, ARRAY_COUNT(sManectricGfx27)}, 
@@ -2599,9 +2599,9 @@ static const ax_sprite sManectricSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx28[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_28.4bpp");
-static const u8 sManectricGfx28_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_28_1.4bpp");
-static const u8 sManectricGfx28_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_28_2.4bpp");
+static const u8 sManectricGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_28.4bpp.lz");
+static const u8 sManectricGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_28_1.4bpp.lz");
+static const u8 sManectricGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_28_2.4bpp.lz");
 static const ax_sprite sManectricSprites28[] = {
 	{sManectricGfx28, ARRAY_COUNT(sManectricGfx28)}, 
 	{NULL, 32}, 
@@ -2610,9 +2610,9 @@ static const ax_sprite sManectricSprites28[] = {
 	{sManectricGfx28_2, ARRAY_COUNT(sManectricGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx29[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_29.4bpp");
-static const u8 sManectricGfx29_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_29_1.4bpp");
-static const u8 sManectricGfx29_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_29_2.4bpp");
+static const u8 sManectricGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_29.4bpp.lz");
+static const u8 sManectricGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_29_1.4bpp.lz");
+static const u8 sManectricGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_29_2.4bpp.lz");
 static const ax_sprite sManectricSprites29[] = {
 	{sManectricGfx29, ARRAY_COUNT(sManectricGfx29)}, 
 	{NULL, 64}, 
@@ -2621,17 +2621,17 @@ static const ax_sprite sManectricSprites29[] = {
 	{sManectricGfx29_2, ARRAY_COUNT(sManectricGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx30[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_30.4bpp");
-static const u8 sManectricGfx30_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_30_1.4bpp");
+static const u8 sManectricGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_30.4bpp.lz");
+static const u8 sManectricGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_30_1.4bpp.lz");
 static const ax_sprite sManectricSprites30[] = {
 	{sManectricGfx30, ARRAY_COUNT(sManectricGfx30)}, 
 	{NULL, 32}, 
 	{sManectricGfx30_1, ARRAY_COUNT(sManectricGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx31[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_31.4bpp");
-static const u8 sManectricGfx31_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_31_1.4bpp");
-static const u8 sManectricGfx31_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_31_2.4bpp");
+static const u8 sManectricGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_31.4bpp.lz");
+static const u8 sManectricGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_31_1.4bpp.lz");
+static const u8 sManectricGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_31_2.4bpp.lz");
 static const ax_sprite sManectricSprites31[] = {
 	{sManectricGfx31, ARRAY_COUNT(sManectricGfx31)}, 
 	{NULL, 64}, 
@@ -2640,10 +2640,10 @@ static const ax_sprite sManectricSprites31[] = {
 	{sManectricGfx31_2, ARRAY_COUNT(sManectricGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx32[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_32.4bpp");
-static const u8 sManectricGfx32_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_32_1.4bpp");
-static const u8 sManectricGfx32_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_32_2.4bpp");
-static const u8 sManectricGfx32_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_32_3.4bpp");
+static const u8 sManectricGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_32.4bpp.lz");
+static const u8 sManectricGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_32_1.4bpp.lz");
+static const u8 sManectricGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_32_2.4bpp.lz");
+static const u8 sManectricGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_32_3.4bpp.lz");
 static const ax_sprite sManectricSprites32[] = {
 	{sManectricGfx32, ARRAY_COUNT(sManectricGfx32)}, 
 	{NULL, 32}, 
@@ -2655,10 +2655,10 @@ static const ax_sprite sManectricSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx33[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_33.4bpp");
-static const u8 sManectricGfx33_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_33_1.4bpp");
-static const u8 sManectricGfx33_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_33_2.4bpp");
-static const u8 sManectricGfx33_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_33_3.4bpp");
+static const u8 sManectricGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_33.4bpp.lz");
+static const u8 sManectricGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_33_1.4bpp.lz");
+static const u8 sManectricGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_33_2.4bpp.lz");
+static const u8 sManectricGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_33_3.4bpp.lz");
 static const ax_sprite sManectricSprites33[] = {
 	{sManectricGfx33, ARRAY_COUNT(sManectricGfx33)}, 
 	{NULL, 32}, 
@@ -2670,10 +2670,10 @@ static const ax_sprite sManectricSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx34[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_34.4bpp");
-static const u8 sManectricGfx34_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_34_1.4bpp");
-static const u8 sManectricGfx34_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_34_2.4bpp");
-static const u8 sManectricGfx34_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_34_3.4bpp");
+static const u8 sManectricGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_34.4bpp.lz");
+static const u8 sManectricGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_34_1.4bpp.lz");
+static const u8 sManectricGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_34_2.4bpp.lz");
+static const u8 sManectricGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_34_3.4bpp.lz");
 static const ax_sprite sManectricSprites34[] = {
 	{sManectricGfx34, ARRAY_COUNT(sManectricGfx34)}, 
 	{NULL, 32}, 
@@ -2685,10 +2685,10 @@ static const ax_sprite sManectricSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx35[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_35.4bpp");
-static const u8 sManectricGfx35_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_35_1.4bpp");
-static const u8 sManectricGfx35_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_35_2.4bpp");
-static const u8 sManectricGfx35_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_35_3.4bpp");
+static const u8 sManectricGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_35.4bpp.lz");
+static const u8 sManectricGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_35_1.4bpp.lz");
+static const u8 sManectricGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_35_2.4bpp.lz");
+static const u8 sManectricGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_35_3.4bpp.lz");
 static const ax_sprite sManectricSprites35[] = {
 	{NULL, 32}, 
 	{sManectricGfx35, ARRAY_COUNT(sManectricGfx35)}, 
@@ -2701,9 +2701,9 @@ static const ax_sprite sManectricSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx36[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_36.4bpp");
-static const u8 sManectricGfx36_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_36_1.4bpp");
-static const u8 sManectricGfx36_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_36_2.4bpp");
+static const u8 sManectricGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_36.4bpp.lz");
+static const u8 sManectricGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_36_1.4bpp.lz");
+static const u8 sManectricGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_36_2.4bpp.lz");
 static const ax_sprite sManectricSprites36[] = {
 	{NULL, 32}, 
 	{sManectricGfx36, ARRAY_COUNT(sManectricGfx36)}, 
@@ -2714,8 +2714,8 @@ static const ax_sprite sManectricSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx37[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_37.4bpp");
-static const u8 sManectricGfx37_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_37_1.4bpp");
+static const u8 sManectricGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_37.4bpp.lz");
+static const u8 sManectricGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_37_1.4bpp.lz");
 static const ax_sprite sManectricSprites37[] = {
 	{NULL, 32}, 
 	{sManectricGfx37, ARRAY_COUNT(sManectricGfx37)}, 
@@ -2724,9 +2724,9 @@ static const ax_sprite sManectricSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx38[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_38.4bpp");
-static const u8 sManectricGfx38_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_38_1.4bpp");
-static const u8 sManectricGfx38_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_38_2.4bpp");
+static const u8 sManectricGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_38.4bpp.lz");
+static const u8 sManectricGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_38_1.4bpp.lz");
+static const u8 sManectricGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_38_2.4bpp.lz");
 static const ax_sprite sManectricSprites38[] = {
 	{sManectricGfx38, ARRAY_COUNT(sManectricGfx38)}, 
 	{NULL, 32}, 
@@ -2735,17 +2735,17 @@ static const ax_sprite sManectricSprites38[] = {
 	{sManectricGfx38_2, ARRAY_COUNT(sManectricGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx39[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_39.4bpp");
-static const u8 sManectricGfx39_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_39_1.4bpp");
+static const u8 sManectricGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_39.4bpp.lz");
+static const u8 sManectricGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_39_1.4bpp.lz");
 static const ax_sprite sManectricSprites39[] = {
 	{sManectricGfx39, ARRAY_COUNT(sManectricGfx39)}, 
 	{NULL, 64}, 
 	{sManectricGfx39_1, ARRAY_COUNT(sManectricGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx40[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_40.4bpp");
-static const u8 sManectricGfx40_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_40_1.4bpp");
-static const u8 sManectricGfx40_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_40_2.4bpp");
+static const u8 sManectricGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_40.4bpp.lz");
+static const u8 sManectricGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_40_1.4bpp.lz");
+static const u8 sManectricGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_40_2.4bpp.lz");
 static const ax_sprite sManectricSprites40[] = {
 	{NULL, 32}, 
 	{sManectricGfx40, ARRAY_COUNT(sManectricGfx40)}, 
@@ -2755,18 +2755,18 @@ static const ax_sprite sManectricSprites40[] = {
 	{sManectricGfx40_2, ARRAY_COUNT(sManectricGfx40_2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx41[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_41.4bpp");
-static const u8 sManectricGfx41_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_41_1.4bpp");
+static const u8 sManectricGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_41.4bpp.lz");
+static const u8 sManectricGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_41_1.4bpp.lz");
 static const ax_sprite sManectricSprites41[] = {
 	{sManectricGfx41, ARRAY_COUNT(sManectricGfx41)}, 
 	{NULL, 64}, 
 	{sManectricGfx41_1, ARRAY_COUNT(sManectricGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx42[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_42.4bpp");
-static const u8 sManectricGfx42_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_42_1.4bpp");
-static const u8 sManectricGfx42_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_42_2.4bpp");
-static const u8 sManectricGfx42_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_42_3.4bpp");
+static const u8 sManectricGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_42.4bpp.lz");
+static const u8 sManectricGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_42_1.4bpp.lz");
+static const u8 sManectricGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_42_2.4bpp.lz");
+static const u8 sManectricGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_42_3.4bpp.lz");
 static const ax_sprite sManectricSprites42[] = {
 	{NULL, 32}, 
 	{sManectricGfx42, ARRAY_COUNT(sManectricGfx42)}, 
@@ -2779,10 +2779,10 @@ static const ax_sprite sManectricSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx43[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_43.4bpp");
-static const u8 sManectricGfx43_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_43_1.4bpp");
-static const u8 sManectricGfx43_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_43_2.4bpp");
-static const u8 sManectricGfx43_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_43_3.4bpp");
+static const u8 sManectricGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_43.4bpp.lz");
+static const u8 sManectricGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_43_1.4bpp.lz");
+static const u8 sManectricGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_43_2.4bpp.lz");
+static const u8 sManectricGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_43_3.4bpp.lz");
 static const ax_sprite sManectricSprites43[] = {
 	{sManectricGfx43, ARRAY_COUNT(sManectricGfx43)}, 
 	{NULL, 32}, 
@@ -2794,34 +2794,34 @@ static const ax_sprite sManectricSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx44[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_44.4bpp");
+static const u8 sManectricGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_44.4bpp.lz");
 static const ax_sprite sManectricSprites44[] = {
 	{sManectricGfx44, ARRAY_COUNT(sManectricGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx45[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_45.4bpp");
-static const u8 sManectricGfx45_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_45_1.4bpp");
+static const u8 sManectricGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_45.4bpp.lz");
+static const u8 sManectricGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_45_1.4bpp.lz");
 static const ax_sprite sManectricSprites45[] = {
 	{sManectricGfx45, ARRAY_COUNT(sManectricGfx45)}, 
 	{NULL, 32}, 
 	{sManectricGfx45_1, ARRAY_COUNT(sManectricGfx45_1)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx46[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_46.4bpp");
+static const u8 sManectricGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_46.4bpp.lz");
 static const ax_sprite sManectricSprites46[] = {
 	{NULL, 32}, 
 	{sManectricGfx46, ARRAY_COUNT(sManectricGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx47[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_47.4bpp");
+static const u8 sManectricGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_47.4bpp.lz");
 static const ax_sprite sManectricSprites47[] = {
 	{sManectricGfx47, ARRAY_COUNT(sManectricGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx48[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_48.4bpp");
-static const u8 sManectricGfx48_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_48_1.4bpp");
-static const u8 sManectricGfx48_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_48_2.4bpp");
-static const u8 sManectricGfx48_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_48_3.4bpp");
+static const u8 sManectricGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_48.4bpp.lz");
+static const u8 sManectricGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_48_1.4bpp.lz");
+static const u8 sManectricGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_48_2.4bpp.lz");
+static const u8 sManectricGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_48_3.4bpp.lz");
 static const ax_sprite sManectricSprites48[] = {
 	{sManectricGfx48, ARRAY_COUNT(sManectricGfx48)}, 
 	{NULL, 32}, 
@@ -2833,41 +2833,41 @@ static const ax_sprite sManectricSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx49[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_49.4bpp");
+static const u8 sManectricGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_49.4bpp.lz");
 static const ax_sprite sManectricSprites49[] = {
 	{NULL, 32}, 
 	{sManectricGfx49, ARRAY_COUNT(sManectricGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx50[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_50.4bpp");
+static const u8 sManectricGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_50.4bpp.lz");
 static const ax_sprite sManectricSprites50[] = {
 	{sManectricGfx50, ARRAY_COUNT(sManectricGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx51[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_51.4bpp");
+static const u8 sManectricGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_51.4bpp.lz");
 static const ax_sprite sManectricSprites51[] = {
 	{sManectricGfx51, ARRAY_COUNT(sManectricGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx52[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_52.4bpp");
+static const u8 sManectricGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_52.4bpp.lz");
 static const ax_sprite sManectricSprites52[] = {
 	{sManectricGfx52, ARRAY_COUNT(sManectricGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx53[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_53.4bpp");
+static const u8 sManectricGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_53.4bpp.lz");
 static const ax_sprite sManectricSprites53[] = {
 	{sManectricGfx53, ARRAY_COUNT(sManectricGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx54[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_54.4bpp");
+static const u8 sManectricGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_54.4bpp.lz");
 static const ax_sprite sManectricSprites54[] = {
 	{sManectricGfx54, ARRAY_COUNT(sManectricGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx55[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_55.4bpp");
-static const u8 sManectricGfx55_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_55_1.4bpp");
-static const u8 sManectricGfx55_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_55_2.4bpp");
-static const u8 sManectricGfx55_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_55_3.4bpp");
+static const u8 sManectricGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_55.4bpp.lz");
+static const u8 sManectricGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_55_1.4bpp.lz");
+static const u8 sManectricGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_55_2.4bpp.lz");
+static const u8 sManectricGfx55_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_55_3.4bpp.lz");
 static const ax_sprite sManectricSprites55[] = {
 	{sManectricGfx55, ARRAY_COUNT(sManectricGfx55)}, 
 	{NULL, 32}, 
@@ -2879,34 +2879,34 @@ static const ax_sprite sManectricSprites55[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx56[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_56.4bpp");
+static const u8 sManectricGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_56.4bpp.lz");
 static const ax_sprite sManectricSprites56[] = {
 	{sManectricGfx56, ARRAY_COUNT(sManectricGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx57[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_57.4bpp");
+static const u8 sManectricGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_57.4bpp.lz");
 static const ax_sprite sManectricSprites57[] = {
 	{sManectricGfx57, ARRAY_COUNT(sManectricGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx58[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_58.4bpp");
+static const u8 sManectricGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_58.4bpp.lz");
 static const ax_sprite sManectricSprites58[] = {
 	{sManectricGfx58, ARRAY_COUNT(sManectricGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx59[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_59.4bpp");
+static const u8 sManectricGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_59.4bpp.lz");
 static const ax_sprite sManectricSprites59[] = {
 	{sManectricGfx59, ARRAY_COUNT(sManectricGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx60[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_60.4bpp");
+static const u8 sManectricGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_60.4bpp.lz");
 static const ax_sprite sManectricSprites60[] = {
 	{sManectricGfx60, ARRAY_COUNT(sManectricGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx61[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_61.4bpp");
-static const u8 sManectricGfx61_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_61_1.4bpp");
-static const u8 sManectricGfx61_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_61_2.4bpp");
+static const u8 sManectricGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_61.4bpp.lz");
+static const u8 sManectricGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_61_1.4bpp.lz");
+static const u8 sManectricGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_61_2.4bpp.lz");
 static const ax_sprite sManectricSprites61[] = {
 	{NULL, 32}, 
 	{sManectricGfx61, ARRAY_COUNT(sManectricGfx61)}, 
@@ -2917,20 +2917,20 @@ static const ax_sprite sManectricSprites61[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx62[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_62.4bpp");
+static const u8 sManectricGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_62.4bpp.lz");
 static const ax_sprite sManectricSprites62[] = {
 	{NULL, 32}, 
 	{sManectricGfx62, ARRAY_COUNT(sManectricGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx63[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_63.4bpp");
+static const u8 sManectricGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_63.4bpp.lz");
 static const ax_sprite sManectricSprites63[] = {
 	{sManectricGfx63, ARRAY_COUNT(sManectricGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx64[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_64.4bpp");
-static const u8 sManectricGfx64_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_64_1.4bpp");
-static const u8 sManectricGfx64_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_64_2.4bpp");
+static const u8 sManectricGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_64.4bpp.lz");
+static const u8 sManectricGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_64_1.4bpp.lz");
+static const u8 sManectricGfx64_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_64_2.4bpp.lz");
 static const ax_sprite sManectricSprites64[] = {
 	{sManectricGfx64, ARRAY_COUNT(sManectricGfx64)}, 
 	{NULL, 32}, 
@@ -2939,19 +2939,19 @@ static const ax_sprite sManectricSprites64[] = {
 	{sManectricGfx64_2, ARRAY_COUNT(sManectricGfx64_2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx65[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_65.4bpp");
+static const u8 sManectricGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_65.4bpp.lz");
 static const ax_sprite sManectricSprites65[] = {
 	{sManectricGfx65, ARRAY_COUNT(sManectricGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx66[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_66.4bpp");
+static const u8 sManectricGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_66.4bpp.lz");
 static const ax_sprite sManectricSprites66[] = {
 	{sManectricGfx66, ARRAY_COUNT(sManectricGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx67[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_67.4bpp");
-static const u8 sManectricGfx67_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_67_1.4bpp");
-static const u8 sManectricGfx67_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_67_2.4bpp");
+static const u8 sManectricGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_67.4bpp.lz");
+static const u8 sManectricGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_67_1.4bpp.lz");
+static const u8 sManectricGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_67_2.4bpp.lz");
 static const ax_sprite sManectricSprites67[] = {
 	{NULL, 32}, 
 	{sManectricGfx67, ARRAY_COUNT(sManectricGfx67)}, 
@@ -2962,9 +2962,9 @@ static const ax_sprite sManectricSprites67[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx68[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_68.4bpp");
-static const u8 sManectricGfx68_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_68_1.4bpp");
-static const u8 sManectricGfx68_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_68_2.4bpp");
+static const u8 sManectricGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_68.4bpp.lz");
+static const u8 sManectricGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_68_1.4bpp.lz");
+static const u8 sManectricGfx68_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_68_2.4bpp.lz");
 static const ax_sprite sManectricSprites68[] = {
 	{sManectricGfx68, ARRAY_COUNT(sManectricGfx68)}, 
 	{NULL, 32}, 
@@ -2973,9 +2973,9 @@ static const ax_sprite sManectricSprites68[] = {
 	{sManectricGfx68_2, ARRAY_COUNT(sManectricGfx68_2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx69[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_69.4bpp");
-static const u8 sManectricGfx69_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_69_1.4bpp");
-static const u8 sManectricGfx69_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_69_2.4bpp");
+static const u8 sManectricGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_69.4bpp.lz");
+static const u8 sManectricGfx69_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_69_1.4bpp.lz");
+static const u8 sManectricGfx69_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_69_2.4bpp.lz");
 static const ax_sprite sManectricSprites69[] = {
 	{sManectricGfx69, ARRAY_COUNT(sManectricGfx69)}, 
 	{NULL, 32}, 
@@ -2984,8 +2984,8 @@ static const ax_sprite sManectricSprites69[] = {
 	{sManectricGfx69_2, ARRAY_COUNT(sManectricGfx69_2)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx70[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_70.4bpp");
-static const u8 sManectricGfx70_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_70_1.4bpp");
+static const u8 sManectricGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_70.4bpp.lz");
+static const u8 sManectricGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_70_1.4bpp.lz");
 static const ax_sprite sManectricSprites70[] = {
 	{NULL, 32}, 
 	{sManectricGfx70, ARRAY_COUNT(sManectricGfx70)}, 
@@ -2993,8 +2993,8 @@ static const ax_sprite sManectricSprites70[] = {
 	{sManectricGfx70_1, ARRAY_COUNT(sManectricGfx70_1)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx71[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_71.4bpp");
-static const u8 sManectricGfx71_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_71_1.4bpp");
+static const u8 sManectricGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_71.4bpp.lz");
+static const u8 sManectricGfx71_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_71_1.4bpp.lz");
 static const ax_sprite sManectricSprites71[] = {
 	{NULL, 32}, 
 	{sManectricGfx71, ARRAY_COUNT(sManectricGfx71)}, 
@@ -3002,10 +3002,10 @@ static const ax_sprite sManectricSprites71[] = {
 	{sManectricGfx71_1, ARRAY_COUNT(sManectricGfx71_1)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx72[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_72.4bpp");
-static const u8 sManectricGfx72_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_72_1.4bpp");
-static const u8 sManectricGfx72_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_72_2.4bpp");
-static const u8 sManectricGfx72_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_72_3.4bpp");
+static const u8 sManectricGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_72.4bpp.lz");
+static const u8 sManectricGfx72_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_72_1.4bpp.lz");
+static const u8 sManectricGfx72_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_72_2.4bpp.lz");
+static const u8 sManectricGfx72_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_72_3.4bpp.lz");
 static const ax_sprite sManectricSprites72[] = {
 	{NULL, 32}, 
 	{sManectricGfx72, ARRAY_COUNT(sManectricGfx72)}, 
@@ -3018,10 +3018,10 @@ static const ax_sprite sManectricSprites72[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx73[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_73.4bpp");
-static const u8 sManectricGfx73_1[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_73_1.4bpp");
-static const u8 sManectricGfx73_2[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_73_2.4bpp");
-static const u8 sManectricGfx73_3[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_73_3.4bpp");
+static const u8 sManectricGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_73.4bpp.lz");
+static const u8 sManectricGfx73_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_73_1.4bpp.lz");
+static const u8 sManectricGfx73_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_73_2.4bpp.lz");
+static const u8 sManectricGfx73_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_73_3.4bpp.lz");
 static const ax_sprite sManectricSprites73[] = {
 	{NULL, 32}, 
 	{sManectricGfx73, ARRAY_COUNT(sManectricGfx73)}, 
@@ -3034,47 +3034,47 @@ static const ax_sprite sManectricSprites73[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx74[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_74.4bpp");
+static const u8 sManectricGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_74.4bpp.lz");
 static const ax_sprite sManectricSprites74[] = {
 	{sManectricGfx74, ARRAY_COUNT(sManectricGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx75[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_75.4bpp");
+static const u8 sManectricGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_75.4bpp.lz");
 static const ax_sprite sManectricSprites75[] = {
 	{sManectricGfx75, ARRAY_COUNT(sManectricGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx76[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_76.4bpp");
+static const u8 sManectricGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_76.4bpp.lz");
 static const ax_sprite sManectricSprites76[] = {
 	{sManectricGfx76, ARRAY_COUNT(sManectricGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx77[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_77.4bpp");
+static const u8 sManectricGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_77.4bpp.lz");
 static const ax_sprite sManectricSprites77[] = {
 	{sManectricGfx77, ARRAY_COUNT(sManectricGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx78[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_78.4bpp");
+static const u8 sManectricGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_78.4bpp.lz");
 static const ax_sprite sManectricSprites78[] = {
 	{sManectricGfx78, ARRAY_COUNT(sManectricGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx79[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_79.4bpp");
+static const u8 sManectricGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_79.4bpp.lz");
 static const ax_sprite sManectricSprites79[] = {
 	{sManectricGfx79, ARRAY_COUNT(sManectricGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx80[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_80.4bpp");
+static const u8 sManectricGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_80.4bpp.lz");
 static const ax_sprite sManectricSprites80[] = {
 	{sManectricGfx80, ARRAY_COUNT(sManectricGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx81[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_81.4bpp");
+static const u8 sManectricGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_81.4bpp.lz");
 static const ax_sprite sManectricSprites81[] = {
 	{sManectricGfx81, ARRAY_COUNT(sManectricGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sManectricGfx82[] = INCBIN_U8("graphics/ax/mon/manectric/sprite_82.4bpp");
+static const u8 sManectricGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/manectric/sprite_82.4bpp.lz");
 static const ax_sprite sManectricSprites82[] = {
 	{sManectricGfx82, ARRAY_COUNT(sManectricGfx82)}, 
 	{NULL, 0}

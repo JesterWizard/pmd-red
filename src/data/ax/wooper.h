@@ -2047,129 +2047,129 @@ static const ax_anim sWooperAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWooperGfx1[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_1.4bpp");
+static const u8 sWooperGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_1.4bpp.lz");
 static const ax_sprite sWooperSprites1[] = {
 	{sWooperGfx1, ARRAY_COUNT(sWooperGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx2[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_2.4bpp");
+static const u8 sWooperGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_2.4bpp.lz");
 static const ax_sprite sWooperSprites2[] = {
 	{sWooperGfx2, ARRAY_COUNT(sWooperGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx3[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_3.4bpp");
+static const u8 sWooperGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_3.4bpp.lz");
 static const ax_sprite sWooperSprites3[] = {
 	{sWooperGfx3, ARRAY_COUNT(sWooperGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx4[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_4.4bpp");
+static const u8 sWooperGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_4.4bpp.lz");
 static const ax_sprite sWooperSprites4[] = {
 	{sWooperGfx4, ARRAY_COUNT(sWooperGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx5[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_5.4bpp");
+static const u8 sWooperGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_5.4bpp.lz");
 static const ax_sprite sWooperSprites5[] = {
 	{sWooperGfx5, ARRAY_COUNT(sWooperGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx6[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_6.4bpp");
+static const u8 sWooperGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_6.4bpp.lz");
 static const ax_sprite sWooperSprites6[] = {
 	{sWooperGfx6, ARRAY_COUNT(sWooperGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx7[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_7.4bpp");
+static const u8 sWooperGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_7.4bpp.lz");
 static const ax_sprite sWooperSprites7[] = {
 	{sWooperGfx7, ARRAY_COUNT(sWooperGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx8[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_8.4bpp");
+static const u8 sWooperGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_8.4bpp.lz");
 static const ax_sprite sWooperSprites8[] = {
 	{sWooperGfx8, ARRAY_COUNT(sWooperGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx9[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_9.4bpp");
+static const u8 sWooperGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_9.4bpp.lz");
 static const ax_sprite sWooperSprites9[] = {
 	{sWooperGfx9, ARRAY_COUNT(sWooperGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx10[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_10.4bpp");
+static const u8 sWooperGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_10.4bpp.lz");
 static const ax_sprite sWooperSprites10[] = {
 	{sWooperGfx10, ARRAY_COUNT(sWooperGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx11[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_11.4bpp");
+static const u8 sWooperGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_11.4bpp.lz");
 static const ax_sprite sWooperSprites11[] = {
 	{sWooperGfx11, ARRAY_COUNT(sWooperGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx12[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_12.4bpp");
+static const u8 sWooperGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_12.4bpp.lz");
 static const ax_sprite sWooperSprites12[] = {
 	{sWooperGfx12, ARRAY_COUNT(sWooperGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx13[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_13.4bpp");
+static const u8 sWooperGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_13.4bpp.lz");
 static const ax_sprite sWooperSprites13[] = {
 	{sWooperGfx13, ARRAY_COUNT(sWooperGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx14[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_14.4bpp");
+static const u8 sWooperGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_14.4bpp.lz");
 static const ax_sprite sWooperSprites14[] = {
 	{sWooperGfx14, ARRAY_COUNT(sWooperGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx15[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_15.4bpp");
+static const u8 sWooperGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_15.4bpp.lz");
 static const ax_sprite sWooperSprites15[] = {
 	{sWooperGfx15, ARRAY_COUNT(sWooperGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx16[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_16.4bpp");
+static const u8 sWooperGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_16.4bpp.lz");
 static const ax_sprite sWooperSprites16[] = {
 	{sWooperGfx16, ARRAY_COUNT(sWooperGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx17[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_17.4bpp");
+static const u8 sWooperGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_17.4bpp.lz");
 static const ax_sprite sWooperSprites17[] = {
 	{sWooperGfx17, ARRAY_COUNT(sWooperGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx18[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_18.4bpp");
+static const u8 sWooperGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_18.4bpp.lz");
 static const ax_sprite sWooperSprites18[] = {
 	{sWooperGfx18, ARRAY_COUNT(sWooperGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx19[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_19.4bpp");
+static const u8 sWooperGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_19.4bpp.lz");
 static const ax_sprite sWooperSprites19[] = {
 	{sWooperGfx19, ARRAY_COUNT(sWooperGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx20[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_20.4bpp");
+static const u8 sWooperGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_20.4bpp.lz");
 static const ax_sprite sWooperSprites20[] = {
 	{sWooperGfx20, ARRAY_COUNT(sWooperGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx21[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_21.4bpp");
+static const u8 sWooperGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_21.4bpp.lz");
 static const ax_sprite sWooperSprites21[] = {
 	{sWooperGfx21, ARRAY_COUNT(sWooperGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx22[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_22.4bpp");
+static const u8 sWooperGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_22.4bpp.lz");
 static const ax_sprite sWooperSprites22[] = {
 	{sWooperGfx22, ARRAY_COUNT(sWooperGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx23[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_23.4bpp");
+static const u8 sWooperGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_23.4bpp.lz");
 static const ax_sprite sWooperSprites23[] = {
 	{sWooperGfx23, ARRAY_COUNT(sWooperGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx24[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_24.4bpp");
+static const u8 sWooperGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_24.4bpp.lz");
 static const ax_sprite sWooperSprites24[] = {
 	{sWooperGfx24, ARRAY_COUNT(sWooperGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx25[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_25.4bpp");
-static const u8 sWooperGfx25_1[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_25_1.4bpp");
-static const u8 sWooperGfx25_2[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_25_2.4bpp");
+static const u8 sWooperGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_25.4bpp.lz");
+static const u8 sWooperGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_25_1.4bpp.lz");
+static const u8 sWooperGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_25_2.4bpp.lz");
 static const ax_sprite sWooperSprites25[] = {
 	{sWooperGfx25, ARRAY_COUNT(sWooperGfx25)}, 
 	{NULL, 32}, 
@@ -2179,9 +2179,9 @@ static const ax_sprite sWooperSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx26[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_26.4bpp");
-static const u8 sWooperGfx26_1[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_26_1.4bpp");
-static const u8 sWooperGfx26_2[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_26_2.4bpp");
+static const u8 sWooperGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_26.4bpp.lz");
+static const u8 sWooperGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_26_1.4bpp.lz");
+static const u8 sWooperGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_26_2.4bpp.lz");
 static const ax_sprite sWooperSprites26[] = {
 	{sWooperGfx26, ARRAY_COUNT(sWooperGfx26)}, 
 	{NULL, 32}, 
@@ -2191,20 +2191,20 @@ static const ax_sprite sWooperSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx27[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_27.4bpp");
+static const u8 sWooperGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_27.4bpp.lz");
 static const ax_sprite sWooperSprites27[] = {
 	{sWooperGfx27, ARRAY_COUNT(sWooperGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx28[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_28.4bpp");
+static const u8 sWooperGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_28.4bpp.lz");
 static const ax_sprite sWooperSprites28[] = {
 	{sWooperGfx28, ARRAY_COUNT(sWooperGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx29[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_29.4bpp");
-static const u8 sWooperGfx29_1[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_29_1.4bpp");
-static const u8 sWooperGfx29_2[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_29_2.4bpp");
-static const u8 sWooperGfx29_3[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_29_3.4bpp");
+static const u8 sWooperGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_29.4bpp.lz");
+static const u8 sWooperGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_29_1.4bpp.lz");
+static const u8 sWooperGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_29_2.4bpp.lz");
+static const u8 sWooperGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_29_3.4bpp.lz");
 static const ax_sprite sWooperSprites29[] = {
 	{NULL, 32}, 
 	{sWooperGfx29, ARRAY_COUNT(sWooperGfx29)}, 
@@ -2217,9 +2217,9 @@ static const ax_sprite sWooperSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx30[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_30.4bpp");
-static const u8 sWooperGfx30_1[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_30_1.4bpp");
-static const u8 sWooperGfx30_2[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_30_2.4bpp");
+static const u8 sWooperGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_30.4bpp.lz");
+static const u8 sWooperGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_30_1.4bpp.lz");
+static const u8 sWooperGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_30_2.4bpp.lz");
 static const ax_sprite sWooperSprites30[] = {
 	{NULL, 32}, 
 	{sWooperGfx30, ARRAY_COUNT(sWooperGfx30)}, 
@@ -2230,9 +2230,9 @@ static const ax_sprite sWooperSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx31[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_31.4bpp");
-static const u8 sWooperGfx31_1[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_31_1.4bpp");
-static const u8 sWooperGfx31_2[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_31_2.4bpp");
+static const u8 sWooperGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_31.4bpp.lz");
+static const u8 sWooperGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_31_1.4bpp.lz");
+static const u8 sWooperGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_31_2.4bpp.lz");
 static const ax_sprite sWooperSprites31[] = {
 	{sWooperGfx31, ARRAY_COUNT(sWooperGfx31)}, 
 	{NULL, 64}, 
@@ -2242,9 +2242,9 @@ static const ax_sprite sWooperSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx32[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_32.4bpp");
-static const u8 sWooperGfx32_1[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_32_1.4bpp");
-static const u8 sWooperGfx32_2[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_32_2.4bpp");
+static const u8 sWooperGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_32.4bpp.lz");
+static const u8 sWooperGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_32_1.4bpp.lz");
+static const u8 sWooperGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_32_2.4bpp.lz");
 static const ax_sprite sWooperSprites32[] = {
 	{sWooperGfx32, ARRAY_COUNT(sWooperGfx32)}, 
 	{NULL, 64}, 
@@ -2254,15 +2254,15 @@ static const ax_sprite sWooperSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx33[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_33.4bpp");
+static const u8 sWooperGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_33.4bpp.lz");
 static const ax_sprite sWooperSprites33[] = {
 	{sWooperGfx33, ARRAY_COUNT(sWooperGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx34[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_34.4bpp");
-static const u8 sWooperGfx34_1[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_34_1.4bpp");
-static const u8 sWooperGfx34_2[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_34_2.4bpp");
+static const u8 sWooperGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_34.4bpp.lz");
+static const u8 sWooperGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_34_1.4bpp.lz");
+static const u8 sWooperGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_34_2.4bpp.lz");
 static const ax_sprite sWooperSprites34[] = {
 	{NULL, 32}, 
 	{sWooperGfx34, ARRAY_COUNT(sWooperGfx34)}, 
@@ -2273,37 +2273,37 @@ static const ax_sprite sWooperSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx35[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_35.4bpp");
+static const u8 sWooperGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_35.4bpp.lz");
 static const ax_sprite sWooperSprites35[] = {
 	{sWooperGfx35, ARRAY_COUNT(sWooperGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx36[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_36.4bpp");
+static const u8 sWooperGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_36.4bpp.lz");
 static const ax_sprite sWooperSprites36[] = {
 	{sWooperGfx36, ARRAY_COUNT(sWooperGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx37[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_37.4bpp");
+static const u8 sWooperGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_37.4bpp.lz");
 static const ax_sprite sWooperSprites37[] = {
 	{sWooperGfx37, ARRAY_COUNT(sWooperGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx38[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_38.4bpp");
+static const u8 sWooperGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_38.4bpp.lz");
 static const ax_sprite sWooperSprites38[] = {
 	{sWooperGfx38, ARRAY_COUNT(sWooperGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx39[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_39.4bpp");
+static const u8 sWooperGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_39.4bpp.lz");
 static const ax_sprite sWooperSprites39[] = {
 	{sWooperGfx39, ARRAY_COUNT(sWooperGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx40[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_40.4bpp");
+static const u8 sWooperGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_40.4bpp.lz");
 static const ax_sprite sWooperSprites40[] = {
 	{sWooperGfx40, ARRAY_COUNT(sWooperGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sWooperGfx41[] = INCBIN_U8("graphics/ax/mon/wooper/sprite_41.4bpp");
+static const u8 sWooperGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wooper/sprite_41.4bpp.lz");
 static const ax_sprite sWooperSprites41[] = {
 	{sWooperGfx41, ARRAY_COUNT(sWooperGfx41)}, 
 	{NULL, 0}

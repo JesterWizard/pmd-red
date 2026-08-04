@@ -2055,83 +2055,83 @@ static const ax_anim sLaironAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLaironGfx1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_1.4bpp");
+static const u8 sLaironGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_1.4bpp.lz");
 static const ax_sprite sLaironSprites1[] = {
 	{sLaironGfx1, ARRAY_COUNT(sLaironGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx2[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_2.4bpp");
+static const u8 sLaironGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_2.4bpp.lz");
 static const ax_sprite sLaironSprites2[] = {
 	{sLaironGfx2, ARRAY_COUNT(sLaironGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx3[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_3.4bpp");
+static const u8 sLaironGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_3.4bpp.lz");
 static const ax_sprite sLaironSprites3[] = {
 	{sLaironGfx3, ARRAY_COUNT(sLaironGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx4[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_4.4bpp");
+static const u8 sLaironGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_4.4bpp.lz");
 static const ax_sprite sLaironSprites4[] = {
 	{sLaironGfx4, ARRAY_COUNT(sLaironGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx5[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_5.4bpp");
+static const u8 sLaironGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_5.4bpp.lz");
 static const ax_sprite sLaironSprites5[] = {
 	{sLaironGfx5, ARRAY_COUNT(sLaironGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx6[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_6.4bpp");
+static const u8 sLaironGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_6.4bpp.lz");
 static const ax_sprite sLaironSprites6[] = {
 	{sLaironGfx6, ARRAY_COUNT(sLaironGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx7[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_7.4bpp");
+static const u8 sLaironGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_7.4bpp.lz");
 static const ax_sprite sLaironSprites7[] = {
 	{sLaironGfx7, ARRAY_COUNT(sLaironGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx8[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_8.4bpp");
+static const u8 sLaironGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_8.4bpp.lz");
 static const ax_sprite sLaironSprites8[] = {
 	{sLaironGfx8, ARRAY_COUNT(sLaironGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx9[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_9.4bpp");
+static const u8 sLaironGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_9.4bpp.lz");
 static const ax_sprite sLaironSprites9[] = {
 	{sLaironGfx9, ARRAY_COUNT(sLaironGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx10[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_10.4bpp");
+static const u8 sLaironGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_10.4bpp.lz");
 static const ax_sprite sLaironSprites10[] = {
 	{sLaironGfx10, ARRAY_COUNT(sLaironGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx11[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_11.4bpp");
+static const u8 sLaironGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_11.4bpp.lz");
 static const ax_sprite sLaironSprites11[] = {
 	{sLaironGfx11, ARRAY_COUNT(sLaironGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx12[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_12.4bpp");
+static const u8 sLaironGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_12.4bpp.lz");
 static const ax_sprite sLaironSprites12[] = {
 	{sLaironGfx12, ARRAY_COUNT(sLaironGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx13[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_13.4bpp");
+static const u8 sLaironGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_13.4bpp.lz");
 static const ax_sprite sLaironSprites13[] = {
 	{sLaironGfx13, ARRAY_COUNT(sLaironGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx14[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_14.4bpp");
+static const u8 sLaironGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_14.4bpp.lz");
 static const ax_sprite sLaironSprites14[] = {
 	{sLaironGfx14, ARRAY_COUNT(sLaironGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx15[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_15.4bpp");
+static const u8 sLaironGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_15.4bpp.lz");
 static const ax_sprite sLaironSprites15[] = {
 	{sLaironGfx15, ARRAY_COUNT(sLaironGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx16[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_16.4bpp");
-static const u8 sLaironGfx16_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_16_1.4bpp");
+static const u8 sLaironGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_16.4bpp.lz");
+static const u8 sLaironGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_16_1.4bpp.lz");
 static const ax_sprite sLaironSprites16[] = {
 	{NULL, 32}, 
 	{sLaironGfx16, ARRAY_COUNT(sLaironGfx16)}, 
@@ -2140,20 +2140,20 @@ static const ax_sprite sLaironSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx17[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_17.4bpp");
+static const u8 sLaironGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_17.4bpp.lz");
 static const ax_sprite sLaironSprites17[] = {
 	{sLaironGfx17, ARRAY_COUNT(sLaironGfx17)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx18[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_18.4bpp");
+static const u8 sLaironGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_18.4bpp.lz");
 static const ax_sprite sLaironSprites18[] = {
 	{sLaironGfx18, ARRAY_COUNT(sLaironGfx18)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx19[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_19.4bpp");
-static const u8 sLaironGfx19_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_19_1.4bpp");
+static const u8 sLaironGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_19.4bpp.lz");
+static const u8 sLaironGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_19_1.4bpp.lz");
 static const ax_sprite sLaironSprites19[] = {
 	{sLaironGfx19, ARRAY_COUNT(sLaironGfx19)}, 
 	{NULL, 32}, 
@@ -2161,9 +2161,9 @@ static const ax_sprite sLaironSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx20[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_20.4bpp");
-static const u8 sLaironGfx20_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_20_1.4bpp");
-static const u8 sLaironGfx20_2[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_20_2.4bpp");
+static const u8 sLaironGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_20.4bpp.lz");
+static const u8 sLaironGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_20_1.4bpp.lz");
+static const u8 sLaironGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_20_2.4bpp.lz");
 static const ax_sprite sLaironSprites20[] = {
 	{NULL, 32}, 
 	{sLaironGfx20, ARRAY_COUNT(sLaironGfx20)}, 
@@ -2174,8 +2174,8 @@ static const ax_sprite sLaironSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx21[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_21.4bpp");
-static const u8 sLaironGfx21_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_21_1.4bpp");
+static const u8 sLaironGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_21.4bpp.lz");
+static const u8 sLaironGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_21_1.4bpp.lz");
 static const ax_sprite sLaironSprites21[] = {
 	{NULL, 32}, 
 	{sLaironGfx21, ARRAY_COUNT(sLaironGfx21)}, 
@@ -2184,8 +2184,8 @@ static const ax_sprite sLaironSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx22[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_22.4bpp");
-static const u8 sLaironGfx22_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_22_1.4bpp");
+static const u8 sLaironGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_22.4bpp.lz");
+static const u8 sLaironGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_22_1.4bpp.lz");
 static const ax_sprite sLaironSprites22[] = {
 	{NULL, 32}, 
 	{sLaironGfx22, ARRAY_COUNT(sLaironGfx22)}, 
@@ -2194,8 +2194,8 @@ static const ax_sprite sLaironSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx23[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_23.4bpp");
-static const u8 sLaironGfx23_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_23_1.4bpp");
+static const u8 sLaironGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_23.4bpp.lz");
+static const u8 sLaironGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_23_1.4bpp.lz");
 static const ax_sprite sLaironSprites23[] = {
 	{sLaironGfx23, ARRAY_COUNT(sLaironGfx23)}, 
 	{NULL, 32}, 
@@ -2203,21 +2203,21 @@ static const ax_sprite sLaironSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx24[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_24.4bpp");
+static const u8 sLaironGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_24.4bpp.lz");
 static const ax_sprite sLaironSprites24[] = {
 	{NULL, 32}, 
 	{sLaironGfx24, ARRAY_COUNT(sLaironGfx24)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx25[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_25.4bpp");
+static const u8 sLaironGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_25.4bpp.lz");
 static const ax_sprite sLaironSprites25[] = {
 	{sLaironGfx25, ARRAY_COUNT(sLaironGfx25)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx26[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_26.4bpp");
-static const u8 sLaironGfx26_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_26_1.4bpp");
+static const u8 sLaironGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_26.4bpp.lz");
+static const u8 sLaironGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_26_1.4bpp.lz");
 static const ax_sprite sLaironSprites26[] = {
 	{sLaironGfx26, ARRAY_COUNT(sLaironGfx26)}, 
 	{NULL, 32}, 
@@ -2225,15 +2225,15 @@ static const ax_sprite sLaironSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx27[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_27.4bpp");
+static const u8 sLaironGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_27.4bpp.lz");
 static const ax_sprite sLaironSprites27[] = {
 	{NULL, 32}, 
 	{sLaironGfx27, ARRAY_COUNT(sLaironGfx27)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx28[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_28.4bpp");
-static const u8 sLaironGfx28_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_28_1.4bpp");
+static const u8 sLaironGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_28.4bpp.lz");
+static const u8 sLaironGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_28_1.4bpp.lz");
 static const ax_sprite sLaironSprites28[] = {
 	{sLaironGfx28, ARRAY_COUNT(sLaironGfx28)}, 
 	{NULL, 32}, 
@@ -2241,15 +2241,15 @@ static const ax_sprite sLaironSprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx29[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_29.4bpp");
+static const u8 sLaironGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_29.4bpp.lz");
 static const ax_sprite sLaironSprites29[] = {
 	{NULL, 32}, 
 	{sLaironGfx29, ARRAY_COUNT(sLaironGfx29)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx30[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_30.4bpp");
-static const u8 sLaironGfx30_1[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_30_1.4bpp");
+static const u8 sLaironGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_30.4bpp.lz");
+static const u8 sLaironGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_30_1.4bpp.lz");
 static const ax_sprite sLaironSprites30[] = {
 	{sLaironGfx30, ARRAY_COUNT(sLaironGfx30)}, 
 	{NULL, 32}, 
@@ -2257,37 +2257,37 @@ static const ax_sprite sLaironSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx31[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_31.4bpp");
+static const u8 sLaironGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_31.4bpp.lz");
 static const ax_sprite sLaironSprites31[] = {
 	{sLaironGfx31, ARRAY_COUNT(sLaironGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx32[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_32.4bpp");
+static const u8 sLaironGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_32.4bpp.lz");
 static const ax_sprite sLaironSprites32[] = {
 	{sLaironGfx32, ARRAY_COUNT(sLaironGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx33[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_33.4bpp");
+static const u8 sLaironGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_33.4bpp.lz");
 static const ax_sprite sLaironSprites33[] = {
 	{sLaironGfx33, ARRAY_COUNT(sLaironGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx34[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_34.4bpp");
+static const u8 sLaironGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_34.4bpp.lz");
 static const ax_sprite sLaironSprites34[] = {
 	{sLaironGfx34, ARRAY_COUNT(sLaironGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx35[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_35.4bpp");
+static const u8 sLaironGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_35.4bpp.lz");
 static const ax_sprite sLaironSprites35[] = {
 	{sLaironGfx35, ARRAY_COUNT(sLaironGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx36[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_36.4bpp");
+static const u8 sLaironGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_36.4bpp.lz");
 static const ax_sprite sLaironSprites36[] = {
 	{sLaironGfx36, ARRAY_COUNT(sLaironGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sLaironGfx37[] = INCBIN_U8("graphics/ax/mon/lairon/sprite_37.4bpp");
+static const u8 sLaironGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lairon/sprite_37.4bpp.lz");
 static const ax_sprite sLaironSprites37[] = {
 	{sLaironGfx37, ARRAY_COUNT(sLaironGfx37)}, 
 	{NULL, 0}

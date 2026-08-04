@@ -1933,165 +1933,165 @@ static const ax_anim sWhismurAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWhismurGfx1[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_1.4bpp");
+static const u8 sWhismurGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_1.4bpp.lz");
 static const ax_sprite sWhismurSprites1[] = {
 	{sWhismurGfx1, ARRAY_COUNT(sWhismurGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx2[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_2.4bpp");
+static const u8 sWhismurGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_2.4bpp.lz");
 static const ax_sprite sWhismurSprites2[] = {
 	{sWhismurGfx2, ARRAY_COUNT(sWhismurGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx3[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_3.4bpp");
+static const u8 sWhismurGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_3.4bpp.lz");
 static const ax_sprite sWhismurSprites3[] = {
 	{sWhismurGfx3, ARRAY_COUNT(sWhismurGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx4[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_4.4bpp");
+static const u8 sWhismurGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_4.4bpp.lz");
 static const ax_sprite sWhismurSprites4[] = {
 	{sWhismurGfx4, ARRAY_COUNT(sWhismurGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx5[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_5.4bpp");
+static const u8 sWhismurGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_5.4bpp.lz");
 static const ax_sprite sWhismurSprites5[] = {
 	{sWhismurGfx5, ARRAY_COUNT(sWhismurGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx6[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_6.4bpp");
+static const u8 sWhismurGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_6.4bpp.lz");
 static const ax_sprite sWhismurSprites6[] = {
 	{sWhismurGfx6, ARRAY_COUNT(sWhismurGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx7[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_7.4bpp");
+static const u8 sWhismurGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_7.4bpp.lz");
 static const ax_sprite sWhismurSprites7[] = {
 	{sWhismurGfx7, ARRAY_COUNT(sWhismurGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx8[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_8.4bpp");
+static const u8 sWhismurGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_8.4bpp.lz");
 static const ax_sprite sWhismurSprites8[] = {
 	{sWhismurGfx8, ARRAY_COUNT(sWhismurGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx9[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_9.4bpp");
+static const u8 sWhismurGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_9.4bpp.lz");
 static const ax_sprite sWhismurSprites9[] = {
 	{sWhismurGfx9, ARRAY_COUNT(sWhismurGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx10[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_10.4bpp");
+static const u8 sWhismurGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_10.4bpp.lz");
 static const ax_sprite sWhismurSprites10[] = {
 	{sWhismurGfx10, ARRAY_COUNT(sWhismurGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx11[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_11.4bpp");
+static const u8 sWhismurGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_11.4bpp.lz");
 static const ax_sprite sWhismurSprites11[] = {
 	{sWhismurGfx11, ARRAY_COUNT(sWhismurGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx12[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_12.4bpp");
+static const u8 sWhismurGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_12.4bpp.lz");
 static const ax_sprite sWhismurSprites12[] = {
 	{sWhismurGfx12, ARRAY_COUNT(sWhismurGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx13[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_13.4bpp");
+static const u8 sWhismurGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_13.4bpp.lz");
 static const ax_sprite sWhismurSprites13[] = {
 	{sWhismurGfx13, ARRAY_COUNT(sWhismurGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx14[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_14.4bpp");
+static const u8 sWhismurGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_14.4bpp.lz");
 static const ax_sprite sWhismurSprites14[] = {
 	{sWhismurGfx14, ARRAY_COUNT(sWhismurGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx15[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_15.4bpp");
+static const u8 sWhismurGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_15.4bpp.lz");
 static const ax_sprite sWhismurSprites15[] = {
 	{sWhismurGfx15, ARRAY_COUNT(sWhismurGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx16[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_16.4bpp");
+static const u8 sWhismurGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_16.4bpp.lz");
 static const ax_sprite sWhismurSprites16[] = {
 	{sWhismurGfx16, ARRAY_COUNT(sWhismurGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx17[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_17.4bpp");
+static const u8 sWhismurGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_17.4bpp.lz");
 static const ax_sprite sWhismurSprites17[] = {
 	{sWhismurGfx17, ARRAY_COUNT(sWhismurGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx18[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_18.4bpp");
+static const u8 sWhismurGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_18.4bpp.lz");
 static const ax_sprite sWhismurSprites18[] = {
 	{sWhismurGfx18, ARRAY_COUNT(sWhismurGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx19[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_19.4bpp");
+static const u8 sWhismurGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_19.4bpp.lz");
 static const ax_sprite sWhismurSprites19[] = {
 	{sWhismurGfx19, ARRAY_COUNT(sWhismurGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx20[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_20.4bpp");
+static const u8 sWhismurGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_20.4bpp.lz");
 static const ax_sprite sWhismurSprites20[] = {
 	{sWhismurGfx20, ARRAY_COUNT(sWhismurGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx21[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_21.4bpp");
+static const u8 sWhismurGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_21.4bpp.lz");
 static const ax_sprite sWhismurSprites21[] = {
 	{sWhismurGfx21, ARRAY_COUNT(sWhismurGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx22[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_22.4bpp");
+static const u8 sWhismurGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_22.4bpp.lz");
 static const ax_sprite sWhismurSprites22[] = {
 	{sWhismurGfx22, ARRAY_COUNT(sWhismurGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx23[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_23.4bpp");
+static const u8 sWhismurGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_23.4bpp.lz");
 static const ax_sprite sWhismurSprites23[] = {
 	{sWhismurGfx23, ARRAY_COUNT(sWhismurGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx24[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_24.4bpp");
+static const u8 sWhismurGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_24.4bpp.lz");
 static const ax_sprite sWhismurSprites24[] = {
 	{sWhismurGfx24, ARRAY_COUNT(sWhismurGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx25[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_25.4bpp");
+static const u8 sWhismurGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_25.4bpp.lz");
 static const ax_sprite sWhismurSprites25[] = {
 	{sWhismurGfx25, ARRAY_COUNT(sWhismurGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx26[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_26.4bpp");
+static const u8 sWhismurGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_26.4bpp.lz");
 static const ax_sprite sWhismurSprites26[] = {
 	{sWhismurGfx26, ARRAY_COUNT(sWhismurGfx26)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx27[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_27.4bpp");
+static const u8 sWhismurGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_27.4bpp.lz");
 static const ax_sprite sWhismurSprites27[] = {
 	{sWhismurGfx27, ARRAY_COUNT(sWhismurGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx28[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_28.4bpp");
+static const u8 sWhismurGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_28.4bpp.lz");
 static const ax_sprite sWhismurSprites28[] = {
 	{sWhismurGfx28, ARRAY_COUNT(sWhismurGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx29[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_29.4bpp");
+static const u8 sWhismurGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_29.4bpp.lz");
 static const ax_sprite sWhismurSprites29[] = {
 	{sWhismurGfx29, ARRAY_COUNT(sWhismurGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx30[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_30.4bpp");
+static const u8 sWhismurGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_30.4bpp.lz");
 static const ax_sprite sWhismurSprites30[] = {
 	{sWhismurGfx30, ARRAY_COUNT(sWhismurGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx31[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_31.4bpp");
+static const u8 sWhismurGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_31.4bpp.lz");
 static const ax_sprite sWhismurSprites31[] = {
 	{sWhismurGfx31, ARRAY_COUNT(sWhismurGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx32[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_32.4bpp");
-static const u8 sWhismurGfx32_1[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_32_1.4bpp");
+static const u8 sWhismurGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_32.4bpp.lz");
+static const u8 sWhismurGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_32_1.4bpp.lz");
 static const ax_sprite sWhismurSprites32[] = {
 	{sWhismurGfx32, ARRAY_COUNT(sWhismurGfx32)}, 
 	{NULL, 32}, 
@@ -2099,42 +2099,42 @@ static const ax_sprite sWhismurSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx33[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_33.4bpp");
+static const u8 sWhismurGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_33.4bpp.lz");
 static const ax_sprite sWhismurSprites33[] = {
 	{sWhismurGfx33, ARRAY_COUNT(sWhismurGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx34[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_34.4bpp");
+static const u8 sWhismurGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_34.4bpp.lz");
 static const ax_sprite sWhismurSprites34[] = {
 	{sWhismurGfx34, ARRAY_COUNT(sWhismurGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx35[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_35.4bpp");
+static const u8 sWhismurGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_35.4bpp.lz");
 static const ax_sprite sWhismurSprites35[] = {
 	{sWhismurGfx35, ARRAY_COUNT(sWhismurGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx36[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_36.4bpp");
+static const u8 sWhismurGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_36.4bpp.lz");
 static const ax_sprite sWhismurSprites36[] = {
 	{sWhismurGfx36, ARRAY_COUNT(sWhismurGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx37[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_37.4bpp");
+static const u8 sWhismurGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_37.4bpp.lz");
 static const ax_sprite sWhismurSprites37[] = {
 	{sWhismurGfx37, ARRAY_COUNT(sWhismurGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx38[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_38.4bpp");
+static const u8 sWhismurGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_38.4bpp.lz");
 static const ax_sprite sWhismurSprites38[] = {
 	{sWhismurGfx38, ARRAY_COUNT(sWhismurGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx39[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_39.4bpp");
+static const u8 sWhismurGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_39.4bpp.lz");
 static const ax_sprite sWhismurSprites39[] = {
 	{sWhismurGfx39, ARRAY_COUNT(sWhismurGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sWhismurGfx40[] = INCBIN_U8("graphics/ax/mon/whismur/sprite_40.4bpp");
+static const u8 sWhismurGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/whismur/sprite_40.4bpp.lz");
 static const ax_sprite sWhismurSprites40[] = {
 	{sWhismurGfx40, ARRAY_COUNT(sWhismurGfx40)}, 
 	{NULL, 0}

@@ -2211,83 +2211,83 @@ static const ax_anim sSkiploomAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSkiploomGfx1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_1.4bpp");
+static const u8 sSkiploomGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_1.4bpp.lz");
 static const ax_sprite sSkiploomSprites1[] = {
 	{sSkiploomGfx1, ARRAY_COUNT(sSkiploomGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx2[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_2.4bpp");
+static const u8 sSkiploomGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_2.4bpp.lz");
 static const ax_sprite sSkiploomSprites2[] = {
 	{sSkiploomGfx2, ARRAY_COUNT(sSkiploomGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx3[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_3.4bpp");
+static const u8 sSkiploomGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_3.4bpp.lz");
 static const ax_sprite sSkiploomSprites3[] = {
 	{sSkiploomGfx3, ARRAY_COUNT(sSkiploomGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx4[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_4.4bpp");
+static const u8 sSkiploomGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_4.4bpp.lz");
 static const ax_sprite sSkiploomSprites4[] = {
 	{sSkiploomGfx4, ARRAY_COUNT(sSkiploomGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx5[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_5.4bpp");
+static const u8 sSkiploomGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_5.4bpp.lz");
 static const ax_sprite sSkiploomSprites5[] = {
 	{sSkiploomGfx5, ARRAY_COUNT(sSkiploomGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx6[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_6.4bpp");
+static const u8 sSkiploomGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_6.4bpp.lz");
 static const ax_sprite sSkiploomSprites6[] = {
 	{sSkiploomGfx6, ARRAY_COUNT(sSkiploomGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx7[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_7.4bpp");
+static const u8 sSkiploomGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_7.4bpp.lz");
 static const ax_sprite sSkiploomSprites7[] = {
 	{sSkiploomGfx7, ARRAY_COUNT(sSkiploomGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx8[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_8.4bpp");
+static const u8 sSkiploomGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_8.4bpp.lz");
 static const ax_sprite sSkiploomSprites8[] = {
 	{sSkiploomGfx8, ARRAY_COUNT(sSkiploomGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx9[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_9.4bpp");
+static const u8 sSkiploomGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_9.4bpp.lz");
 static const ax_sprite sSkiploomSprites9[] = {
 	{sSkiploomGfx9, ARRAY_COUNT(sSkiploomGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx10[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_10.4bpp");
+static const u8 sSkiploomGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_10.4bpp.lz");
 static const ax_sprite sSkiploomSprites10[] = {
 	{sSkiploomGfx10, ARRAY_COUNT(sSkiploomGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx11[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_11.4bpp");
+static const u8 sSkiploomGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_11.4bpp.lz");
 static const ax_sprite sSkiploomSprites11[] = {
 	{sSkiploomGfx11, ARRAY_COUNT(sSkiploomGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx12[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_12.4bpp");
+static const u8 sSkiploomGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_12.4bpp.lz");
 static const ax_sprite sSkiploomSprites12[] = {
 	{sSkiploomGfx12, ARRAY_COUNT(sSkiploomGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx13[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_13.4bpp");
+static const u8 sSkiploomGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_13.4bpp.lz");
 static const ax_sprite sSkiploomSprites13[] = {
 	{sSkiploomGfx13, ARRAY_COUNT(sSkiploomGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx14[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_14.4bpp");
+static const u8 sSkiploomGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_14.4bpp.lz");
 static const ax_sprite sSkiploomSprites14[] = {
 	{sSkiploomGfx14, ARRAY_COUNT(sSkiploomGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx15[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_15.4bpp");
+static const u8 sSkiploomGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_15.4bpp.lz");
 static const ax_sprite sSkiploomSprites15[] = {
 	{sSkiploomGfx15, ARRAY_COUNT(sSkiploomGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx16[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_16.4bpp");
-static const u8 sSkiploomGfx16_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_16_1.4bpp");
+static const u8 sSkiploomGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_16.4bpp.lz");
+static const u8 sSkiploomGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_16_1.4bpp.lz");
 static const ax_sprite sSkiploomSprites16[] = {
 	{sSkiploomGfx16, ARRAY_COUNT(sSkiploomGfx16)}, 
 	{NULL, 32}, 
@@ -2295,8 +2295,8 @@ static const ax_sprite sSkiploomSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx17[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_17.4bpp");
-static const u8 sSkiploomGfx17_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_17_1.4bpp");
+static const u8 sSkiploomGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_17.4bpp.lz");
+static const u8 sSkiploomGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_17_1.4bpp.lz");
 static const ax_sprite sSkiploomSprites17[] = {
 	{sSkiploomGfx17, ARRAY_COUNT(sSkiploomGfx17)}, 
 	{NULL, 32}, 
@@ -2304,9 +2304,9 @@ static const ax_sprite sSkiploomSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx18[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_18.4bpp");
-static const u8 sSkiploomGfx18_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_18_1.4bpp");
-static const u8 sSkiploomGfx18_2[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_18_2.4bpp");
+static const u8 sSkiploomGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_18.4bpp.lz");
+static const u8 sSkiploomGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_18_1.4bpp.lz");
+static const u8 sSkiploomGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_18_2.4bpp.lz");
 static const ax_sprite sSkiploomSprites18[] = {
 	{sSkiploomGfx18, ARRAY_COUNT(sSkiploomGfx18)}, 
 	{NULL, 32}, 
@@ -2316,9 +2316,9 @@ static const ax_sprite sSkiploomSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx19[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_19.4bpp");
-static const u8 sSkiploomGfx19_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_19_1.4bpp");
-static const u8 sSkiploomGfx19_2[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_19_2.4bpp");
+static const u8 sSkiploomGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_19.4bpp.lz");
+static const u8 sSkiploomGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_19_1.4bpp.lz");
+static const u8 sSkiploomGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_19_2.4bpp.lz");
 static const ax_sprite sSkiploomSprites19[] = {
 	{sSkiploomGfx19, ARRAY_COUNT(sSkiploomGfx19)}, 
 	{NULL, 32}, 
@@ -2328,8 +2328,8 @@ static const ax_sprite sSkiploomSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx20[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_20.4bpp");
-static const u8 sSkiploomGfx20_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_20_1.4bpp");
+static const u8 sSkiploomGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_20.4bpp.lz");
+static const u8 sSkiploomGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_20_1.4bpp.lz");
 static const ax_sprite sSkiploomSprites20[] = {
 	{sSkiploomGfx20, ARRAY_COUNT(sSkiploomGfx20)}, 
 	{NULL, 32}, 
@@ -2337,8 +2337,8 @@ static const ax_sprite sSkiploomSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx21[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_21.4bpp");
-static const u8 sSkiploomGfx21_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_21_1.4bpp");
+static const u8 sSkiploomGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_21.4bpp.lz");
+static const u8 sSkiploomGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_21_1.4bpp.lz");
 static const ax_sprite sSkiploomSprites21[] = {
 	{sSkiploomGfx21, ARRAY_COUNT(sSkiploomGfx21)}, 
 	{NULL, 32}, 
@@ -2346,8 +2346,8 @@ static const ax_sprite sSkiploomSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx22[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_22.4bpp");
-static const u8 sSkiploomGfx22_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_22_1.4bpp");
+static const u8 sSkiploomGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_22.4bpp.lz");
+static const u8 sSkiploomGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_22_1.4bpp.lz");
 static const ax_sprite sSkiploomSprites22[] = {
 	{NULL, 32}, 
 	{sSkiploomGfx22, ARRAY_COUNT(sSkiploomGfx22)}, 
@@ -2356,9 +2356,9 @@ static const ax_sprite sSkiploomSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx23[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_23.4bpp");
-static const u8 sSkiploomGfx23_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_23_1.4bpp");
-static const u8 sSkiploomGfx23_2[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_23_2.4bpp");
+static const u8 sSkiploomGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_23.4bpp.lz");
+static const u8 sSkiploomGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_23_1.4bpp.lz");
+static const u8 sSkiploomGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_23_2.4bpp.lz");
 static const ax_sprite sSkiploomSprites23[] = {
 	{NULL, 32}, 
 	{sSkiploomGfx23, ARRAY_COUNT(sSkiploomGfx23)}, 
@@ -2369,8 +2369,8 @@ static const ax_sprite sSkiploomSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx24[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_24.4bpp");
-static const u8 sSkiploomGfx24_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_24_1.4bpp");
+static const u8 sSkiploomGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_24.4bpp.lz");
+static const u8 sSkiploomGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_24_1.4bpp.lz");
 static const ax_sprite sSkiploomSprites24[] = {
 	{sSkiploomGfx24, ARRAY_COUNT(sSkiploomGfx24)}, 
 	{NULL, 32}, 
@@ -2378,8 +2378,8 @@ static const ax_sprite sSkiploomSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx25[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_25.4bpp");
-static const u8 sSkiploomGfx25_1[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_25_1.4bpp");
+static const u8 sSkiploomGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_25.4bpp.lz");
+static const u8 sSkiploomGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_25_1.4bpp.lz");
 static const ax_sprite sSkiploomSprites25[] = {
 	{sSkiploomGfx25, ARRAY_COUNT(sSkiploomGfx25)}, 
 	{NULL, 32}, 
@@ -2387,37 +2387,37 @@ static const ax_sprite sSkiploomSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx26[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_26.4bpp");
+static const u8 sSkiploomGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_26.4bpp.lz");
 static const ax_sprite sSkiploomSprites26[] = {
 	{sSkiploomGfx26, ARRAY_COUNT(sSkiploomGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx27[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_27.4bpp");
+static const u8 sSkiploomGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_27.4bpp.lz");
 static const ax_sprite sSkiploomSprites27[] = {
 	{sSkiploomGfx27, ARRAY_COUNT(sSkiploomGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx28[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_28.4bpp");
+static const u8 sSkiploomGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_28.4bpp.lz");
 static const ax_sprite sSkiploomSprites28[] = {
 	{sSkiploomGfx28, ARRAY_COUNT(sSkiploomGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx29[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_29.4bpp");
+static const u8 sSkiploomGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_29.4bpp.lz");
 static const ax_sprite sSkiploomSprites29[] = {
 	{sSkiploomGfx29, ARRAY_COUNT(sSkiploomGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx30[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_30.4bpp");
+static const u8 sSkiploomGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_30.4bpp.lz");
 static const ax_sprite sSkiploomSprites30[] = {
 	{sSkiploomGfx30, ARRAY_COUNT(sSkiploomGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx31[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_31.4bpp");
+static const u8 sSkiploomGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_31.4bpp.lz");
 static const ax_sprite sSkiploomSprites31[] = {
 	{sSkiploomGfx31, ARRAY_COUNT(sSkiploomGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSkiploomGfx32[] = INCBIN_U8("graphics/ax/mon/skiploom/sprite_32.4bpp");
+static const u8 sSkiploomGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skiploom/sprite_32.4bpp.lz");
 static const ax_sprite sSkiploomSprites32[] = {
 	{sSkiploomGfx32, ARRAY_COUNT(sSkiploomGfx32)}, 
 	{NULL, 0}

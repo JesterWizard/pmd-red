@@ -2135,129 +2135,129 @@ static const ax_anim sVictreebelAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVictreebelGfx1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_1.4bpp");
+static const u8 sVictreebelGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_1.4bpp.lz");
 static const ax_sprite sVictreebelSprites1[] = {
 	{sVictreebelGfx1, ARRAY_COUNT(sVictreebelGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_2.4bpp");
+static const u8 sVictreebelGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_2.4bpp.lz");
 static const ax_sprite sVictreebelSprites2[] = {
 	{sVictreebelGfx2, ARRAY_COUNT(sVictreebelGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_3.4bpp");
+static const u8 sVictreebelGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites3[] = {
 	{sVictreebelGfx3, ARRAY_COUNT(sVictreebelGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx4[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_4.4bpp");
+static const u8 sVictreebelGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_4.4bpp.lz");
 static const ax_sprite sVictreebelSprites4[] = {
 	{sVictreebelGfx4, ARRAY_COUNT(sVictreebelGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx5[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_5.4bpp");
+static const u8 sVictreebelGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_5.4bpp.lz");
 static const ax_sprite sVictreebelSprites5[] = {
 	{sVictreebelGfx5, ARRAY_COUNT(sVictreebelGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx6[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_6.4bpp");
+static const u8 sVictreebelGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_6.4bpp.lz");
 static const ax_sprite sVictreebelSprites6[] = {
 	{sVictreebelGfx6, ARRAY_COUNT(sVictreebelGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx7[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_7.4bpp");
+static const u8 sVictreebelGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_7.4bpp.lz");
 static const ax_sprite sVictreebelSprites7[] = {
 	{sVictreebelGfx7, ARRAY_COUNT(sVictreebelGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx8[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_8.4bpp");
+static const u8 sVictreebelGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_8.4bpp.lz");
 static const ax_sprite sVictreebelSprites8[] = {
 	{sVictreebelGfx8, ARRAY_COUNT(sVictreebelGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx9[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_9.4bpp");
+static const u8 sVictreebelGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_9.4bpp.lz");
 static const ax_sprite sVictreebelSprites9[] = {
 	{sVictreebelGfx9, ARRAY_COUNT(sVictreebelGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx10[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_10.4bpp");
+static const u8 sVictreebelGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_10.4bpp.lz");
 static const ax_sprite sVictreebelSprites10[] = {
 	{sVictreebelGfx10, ARRAY_COUNT(sVictreebelGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx11[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_11.4bpp");
+static const u8 sVictreebelGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_11.4bpp.lz");
 static const ax_sprite sVictreebelSprites11[] = {
 	{sVictreebelGfx11, ARRAY_COUNT(sVictreebelGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx12[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_12.4bpp");
+static const u8 sVictreebelGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_12.4bpp.lz");
 static const ax_sprite sVictreebelSprites12[] = {
 	{sVictreebelGfx12, ARRAY_COUNT(sVictreebelGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx13[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_13.4bpp");
+static const u8 sVictreebelGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_13.4bpp.lz");
 static const ax_sprite sVictreebelSprites13[] = {
 	{sVictreebelGfx13, ARRAY_COUNT(sVictreebelGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx14[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_14.4bpp");
+static const u8 sVictreebelGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_14.4bpp.lz");
 static const ax_sprite sVictreebelSprites14[] = {
 	{sVictreebelGfx14, ARRAY_COUNT(sVictreebelGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx15[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_15.4bpp");
+static const u8 sVictreebelGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_15.4bpp.lz");
 static const ax_sprite sVictreebelSprites15[] = {
 	{sVictreebelGfx15, ARRAY_COUNT(sVictreebelGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx16[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_16.4bpp");
+static const u8 sVictreebelGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_16.4bpp.lz");
 static const ax_sprite sVictreebelSprites16[] = {
 	{sVictreebelGfx16, ARRAY_COUNT(sVictreebelGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx17[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_17.4bpp");
+static const u8 sVictreebelGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_17.4bpp.lz");
 static const ax_sprite sVictreebelSprites17[] = {
 	{sVictreebelGfx17, ARRAY_COUNT(sVictreebelGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx18[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_18.4bpp");
+static const u8 sVictreebelGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_18.4bpp.lz");
 static const ax_sprite sVictreebelSprites18[] = {
 	{sVictreebelGfx18, ARRAY_COUNT(sVictreebelGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx19[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_19.4bpp");
+static const u8 sVictreebelGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_19.4bpp.lz");
 static const ax_sprite sVictreebelSprites19[] = {
 	{sVictreebelGfx19, ARRAY_COUNT(sVictreebelGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx20[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_20.4bpp");
+static const u8 sVictreebelGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_20.4bpp.lz");
 static const ax_sprite sVictreebelSprites20[] = {
 	{sVictreebelGfx20, ARRAY_COUNT(sVictreebelGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx21[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_21.4bpp");
+static const u8 sVictreebelGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_21.4bpp.lz");
 static const ax_sprite sVictreebelSprites21[] = {
 	{sVictreebelGfx21, ARRAY_COUNT(sVictreebelGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx22[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_22.4bpp");
+static const u8 sVictreebelGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_22.4bpp.lz");
 static const ax_sprite sVictreebelSprites22[] = {
 	{sVictreebelGfx22, ARRAY_COUNT(sVictreebelGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx23[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_23.4bpp");
+static const u8 sVictreebelGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_23.4bpp.lz");
 static const ax_sprite sVictreebelSprites23[] = {
 	{sVictreebelGfx23, ARRAY_COUNT(sVictreebelGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx24[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_24.4bpp");
+static const u8 sVictreebelGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_24.4bpp.lz");
 static const ax_sprite sVictreebelSprites24[] = {
 	{sVictreebelGfx24, ARRAY_COUNT(sVictreebelGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx25[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_25.4bpp");
-static const u8 sVictreebelGfx25_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_25_1.4bpp");
-static const u8 sVictreebelGfx25_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_25_2.4bpp");
+static const u8 sVictreebelGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_25.4bpp.lz");
+static const u8 sVictreebelGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_25_1.4bpp.lz");
+static const u8 sVictreebelGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_25_2.4bpp.lz");
 static const ax_sprite sVictreebelSprites25[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx25, ARRAY_COUNT(sVictreebelGfx25)}, 
@@ -2268,10 +2268,10 @@ static const ax_sprite sVictreebelSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx26[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_26.4bpp");
-static const u8 sVictreebelGfx26_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_26_1.4bpp");
-static const u8 sVictreebelGfx26_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_26_2.4bpp");
-static const u8 sVictreebelGfx26_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_26_3.4bpp");
+static const u8 sVictreebelGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_26.4bpp.lz");
+static const u8 sVictreebelGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_26_1.4bpp.lz");
+static const u8 sVictreebelGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_26_2.4bpp.lz");
+static const u8 sVictreebelGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_26_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites26[] = {
 	{NULL, 128}, 
 	{sVictreebelGfx26, ARRAY_COUNT(sVictreebelGfx26)}, 
@@ -2284,10 +2284,10 @@ static const ax_sprite sVictreebelSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx27[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_27.4bpp");
-static const u8 sVictreebelGfx27_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_27_1.4bpp");
-static const u8 sVictreebelGfx27_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_27_2.4bpp");
-static const u8 sVictreebelGfx27_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_27_3.4bpp");
+static const u8 sVictreebelGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_27.4bpp.lz");
+static const u8 sVictreebelGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_27_1.4bpp.lz");
+static const u8 sVictreebelGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_27_2.4bpp.lz");
+static const u8 sVictreebelGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_27_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites27[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx27, ARRAY_COUNT(sVictreebelGfx27)}, 
@@ -2300,8 +2300,8 @@ static const ax_sprite sVictreebelSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx28[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_28.4bpp");
-static const u8 sVictreebelGfx28_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_28_1.4bpp");
+static const u8 sVictreebelGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_28.4bpp.lz");
+static const u8 sVictreebelGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_28_1.4bpp.lz");
 static const ax_sprite sVictreebelSprites28[] = {
 	{sVictreebelGfx28, ARRAY_COUNT(sVictreebelGfx28)}, 
 	{NULL, 32}, 
@@ -2309,15 +2309,15 @@ static const ax_sprite sVictreebelSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx29[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_29.4bpp");
+static const u8 sVictreebelGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_29.4bpp.lz");
 static const ax_sprite sVictreebelSprites29[] = {
 	{NULL, 64}, 
 	{sVictreebelGfx29, ARRAY_COUNT(sVictreebelGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx30[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_30.4bpp");
-static const u8 sVictreebelGfx30_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_30_1.4bpp");
-static const u8 sVictreebelGfx30_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_30_2.4bpp");
+static const u8 sVictreebelGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_30.4bpp.lz");
+static const u8 sVictreebelGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_30_1.4bpp.lz");
+static const u8 sVictreebelGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_30_2.4bpp.lz");
 static const ax_sprite sVictreebelSprites30[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx30, ARRAY_COUNT(sVictreebelGfx30)}, 
@@ -2328,10 +2328,10 @@ static const ax_sprite sVictreebelSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx31[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_31.4bpp");
-static const u8 sVictreebelGfx31_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_31_1.4bpp");
-static const u8 sVictreebelGfx31_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_31_2.4bpp");
-static const u8 sVictreebelGfx31_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_31_3.4bpp");
+static const u8 sVictreebelGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_31.4bpp.lz");
+static const u8 sVictreebelGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_31_1.4bpp.lz");
+static const u8 sVictreebelGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_31_2.4bpp.lz");
+static const u8 sVictreebelGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_31_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites31[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx31, ARRAY_COUNT(sVictreebelGfx31)}, 
@@ -2344,10 +2344,10 @@ static const ax_sprite sVictreebelSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx32[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_32.4bpp");
-static const u8 sVictreebelGfx32_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_32_1.4bpp");
-static const u8 sVictreebelGfx32_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_32_2.4bpp");
-static const u8 sVictreebelGfx32_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_32_3.4bpp");
+static const u8 sVictreebelGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_32.4bpp.lz");
+static const u8 sVictreebelGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_32_1.4bpp.lz");
+static const u8 sVictreebelGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_32_2.4bpp.lz");
+static const u8 sVictreebelGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_32_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites32[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx32, ARRAY_COUNT(sVictreebelGfx32)}, 
@@ -2360,8 +2360,8 @@ static const ax_sprite sVictreebelSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx33[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_33.4bpp");
-static const u8 sVictreebelGfx33_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_33_1.4bpp");
+static const u8 sVictreebelGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_33.4bpp.lz");
+static const u8 sVictreebelGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_33_1.4bpp.lz");
 static const ax_sprite sVictreebelSprites33[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx33, ARRAY_COUNT(sVictreebelGfx33)}, 
@@ -2369,10 +2369,10 @@ static const ax_sprite sVictreebelSprites33[] = {
 	{sVictreebelGfx33_1, ARRAY_COUNT(sVictreebelGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx34[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_34.4bpp");
-static const u8 sVictreebelGfx34_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_34_1.4bpp");
-static const u8 sVictreebelGfx34_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_34_2.4bpp");
-static const u8 sVictreebelGfx34_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_34_3.4bpp");
+static const u8 sVictreebelGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_34.4bpp.lz");
+static const u8 sVictreebelGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_34_1.4bpp.lz");
+static const u8 sVictreebelGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_34_2.4bpp.lz");
+static const u8 sVictreebelGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_34_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites34[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx34, ARRAY_COUNT(sVictreebelGfx34)}, 
@@ -2385,10 +2385,10 @@ static const ax_sprite sVictreebelSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx35[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_35.4bpp");
-static const u8 sVictreebelGfx35_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_35_1.4bpp");
-static const u8 sVictreebelGfx35_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_35_2.4bpp");
-static const u8 sVictreebelGfx35_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_35_3.4bpp");
+static const u8 sVictreebelGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_35.4bpp.lz");
+static const u8 sVictreebelGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_35_1.4bpp.lz");
+static const u8 sVictreebelGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_35_2.4bpp.lz");
+static const u8 sVictreebelGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_35_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites35[] = {
 	{sVictreebelGfx35, ARRAY_COUNT(sVictreebelGfx35)}, 
 	{NULL, 32}, 
@@ -2399,10 +2399,10 @@ static const ax_sprite sVictreebelSprites35[] = {
 	{sVictreebelGfx35_3, ARRAY_COUNT(sVictreebelGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx36[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_36.4bpp");
-static const u8 sVictreebelGfx36_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_36_1.4bpp");
-static const u8 sVictreebelGfx36_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_36_2.4bpp");
-static const u8 sVictreebelGfx36_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_36_3.4bpp");
+static const u8 sVictreebelGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_36.4bpp.lz");
+static const u8 sVictreebelGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_36_1.4bpp.lz");
+static const u8 sVictreebelGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_36_2.4bpp.lz");
+static const u8 sVictreebelGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_36_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites36[] = {
 	{sVictreebelGfx36, ARRAY_COUNT(sVictreebelGfx36)}, 
 	{NULL, 32}, 
@@ -2414,8 +2414,8 @@ static const ax_sprite sVictreebelSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx37[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_37.4bpp");
-static const u8 sVictreebelGfx37_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_37_1.4bpp");
+static const u8 sVictreebelGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_37.4bpp.lz");
+static const u8 sVictreebelGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_37_1.4bpp.lz");
 static const ax_sprite sVictreebelSprites37[] = {
 	{NULL, 64}, 
 	{sVictreebelGfx37, ARRAY_COUNT(sVictreebelGfx37)}, 
@@ -2424,10 +2424,10 @@ static const ax_sprite sVictreebelSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx38[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_38.4bpp");
-static const u8 sVictreebelGfx38_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_38_1.4bpp");
-static const u8 sVictreebelGfx38_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_38_2.4bpp");
-static const u8 sVictreebelGfx38_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_38_3.4bpp");
+static const u8 sVictreebelGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_38.4bpp.lz");
+static const u8 sVictreebelGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_38_1.4bpp.lz");
+static const u8 sVictreebelGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_38_2.4bpp.lz");
+static const u8 sVictreebelGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_38_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites38[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx38, ARRAY_COUNT(sVictreebelGfx38)}, 
@@ -2439,10 +2439,10 @@ static const ax_sprite sVictreebelSprites38[] = {
 	{sVictreebelGfx38_3, ARRAY_COUNT(sVictreebelGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx39[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_39.4bpp");
-static const u8 sVictreebelGfx39_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_39_1.4bpp");
-static const u8 sVictreebelGfx39_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_39_2.4bpp");
-static const u8 sVictreebelGfx39_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_39_3.4bpp");
+static const u8 sVictreebelGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_39.4bpp.lz");
+static const u8 sVictreebelGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_39_1.4bpp.lz");
+static const u8 sVictreebelGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_39_2.4bpp.lz");
+static const u8 sVictreebelGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_39_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites39[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx39, ARRAY_COUNT(sVictreebelGfx39)}, 
@@ -2455,8 +2455,8 @@ static const ax_sprite sVictreebelSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx40[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_40.4bpp");
-static const u8 sVictreebelGfx40_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_40_1.4bpp");
+static const u8 sVictreebelGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_40.4bpp.lz");
+static const u8 sVictreebelGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_40_1.4bpp.lz");
 static const ax_sprite sVictreebelSprites40[] = {
 	{NULL, 128}, 
 	{sVictreebelGfx40, ARRAY_COUNT(sVictreebelGfx40)}, 
@@ -2465,8 +2465,8 @@ static const ax_sprite sVictreebelSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx41[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_41.4bpp");
-static const u8 sVictreebelGfx41_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_41_1.4bpp");
+static const u8 sVictreebelGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_41.4bpp.lz");
+static const u8 sVictreebelGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_41_1.4bpp.lz");
 static const ax_sprite sVictreebelSprites41[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx41, ARRAY_COUNT(sVictreebelGfx41)}, 
@@ -2475,10 +2475,10 @@ static const ax_sprite sVictreebelSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx42[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_42.4bpp");
-static const u8 sVictreebelGfx42_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_42_1.4bpp");
-static const u8 sVictreebelGfx42_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_42_2.4bpp");
-static const u8 sVictreebelGfx42_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_42_3.4bpp");
+static const u8 sVictreebelGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_42.4bpp.lz");
+static const u8 sVictreebelGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_42_1.4bpp.lz");
+static const u8 sVictreebelGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_42_2.4bpp.lz");
+static const u8 sVictreebelGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_42_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites42[] = {
 	{sVictreebelGfx42, ARRAY_COUNT(sVictreebelGfx42)}, 
 	{NULL, 32}, 
@@ -2490,9 +2490,9 @@ static const ax_sprite sVictreebelSprites42[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx43[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_43.4bpp");
-static const u8 sVictreebelGfx43_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_43_1.4bpp");
-static const u8 sVictreebelGfx43_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_43_2.4bpp");
+static const u8 sVictreebelGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_43.4bpp.lz");
+static const u8 sVictreebelGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_43_1.4bpp.lz");
+static const u8 sVictreebelGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_43_2.4bpp.lz");
 static const ax_sprite sVictreebelSprites43[] = {
 	{sVictreebelGfx43, ARRAY_COUNT(sVictreebelGfx43)}, 
 	{NULL, 32}, 
@@ -2502,9 +2502,9 @@ static const ax_sprite sVictreebelSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx44[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_44.4bpp");
-static const u8 sVictreebelGfx44_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_44_1.4bpp");
-static const u8 sVictreebelGfx44_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_44_2.4bpp");
+static const u8 sVictreebelGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_44.4bpp.lz");
+static const u8 sVictreebelGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_44_1.4bpp.lz");
+static const u8 sVictreebelGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_44_2.4bpp.lz");
 static const ax_sprite sVictreebelSprites44[] = {
 	{NULL, 32}, 
 	{sVictreebelGfx44, ARRAY_COUNT(sVictreebelGfx44)}, 
@@ -2515,10 +2515,10 @@ static const ax_sprite sVictreebelSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx45[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_45.4bpp");
-static const u8 sVictreebelGfx45_1[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_45_1.4bpp");
-static const u8 sVictreebelGfx45_2[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_45_2.4bpp");
-static const u8 sVictreebelGfx45_3[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_45_3.4bpp");
+static const u8 sVictreebelGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_45.4bpp.lz");
+static const u8 sVictreebelGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_45_1.4bpp.lz");
+static const u8 sVictreebelGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_45_2.4bpp.lz");
+static const u8 sVictreebelGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_45_3.4bpp.lz");
 static const ax_sprite sVictreebelSprites45[] = {
 	{sVictreebelGfx45, ARRAY_COUNT(sVictreebelGfx45)}, 
 	{NULL, 64}, 
@@ -2530,37 +2530,37 @@ static const ax_sprite sVictreebelSprites45[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx46[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_46.4bpp");
+static const u8 sVictreebelGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_46.4bpp.lz");
 static const ax_sprite sVictreebelSprites46[] = {
 	{sVictreebelGfx46, ARRAY_COUNT(sVictreebelGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx47[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_47.4bpp");
+static const u8 sVictreebelGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_47.4bpp.lz");
 static const ax_sprite sVictreebelSprites47[] = {
 	{sVictreebelGfx47, ARRAY_COUNT(sVictreebelGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx48[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_48.4bpp");
+static const u8 sVictreebelGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_48.4bpp.lz");
 static const ax_sprite sVictreebelSprites48[] = {
 	{sVictreebelGfx48, ARRAY_COUNT(sVictreebelGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx49[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_49.4bpp");
+static const u8 sVictreebelGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_49.4bpp.lz");
 static const ax_sprite sVictreebelSprites49[] = {
 	{sVictreebelGfx49, ARRAY_COUNT(sVictreebelGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx50[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_50.4bpp");
+static const u8 sVictreebelGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_50.4bpp.lz");
 static const ax_sprite sVictreebelSprites50[] = {
 	{sVictreebelGfx50, ARRAY_COUNT(sVictreebelGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx51[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_51.4bpp");
+static const u8 sVictreebelGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_51.4bpp.lz");
 static const ax_sprite sVictreebelSprites51[] = {
 	{sVictreebelGfx51, ARRAY_COUNT(sVictreebelGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sVictreebelGfx52[] = INCBIN_U8("graphics/ax/mon/victreebel/sprite_52.4bpp");
+static const u8 sVictreebelGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/victreebel/sprite_52.4bpp.lz");
 static const ax_sprite sVictreebelSprites52[] = {
 	{sVictreebelGfx52, ARRAY_COUNT(sVictreebelGfx52)}, 
 	{NULL, 0}

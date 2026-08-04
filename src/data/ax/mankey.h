@@ -2175,89 +2175,89 @@ static const ax_anim sMankeyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMankeyGfx1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_1.4bpp");
+static const u8 sMankeyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_1.4bpp.lz");
 static const ax_sprite sMankeySprites1[] = {
 	{sMankeyGfx1, ARRAY_COUNT(sMankeyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_2.4bpp");
+static const u8 sMankeyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_2.4bpp.lz");
 static const ax_sprite sMankeySprites2[] = {
 	{sMankeyGfx2, ARRAY_COUNT(sMankeyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx3[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_3.4bpp");
+static const u8 sMankeyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_3.4bpp.lz");
 static const ax_sprite sMankeySprites3[] = {
 	{sMankeyGfx3, ARRAY_COUNT(sMankeyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx4[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_4.4bpp");
+static const u8 sMankeyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_4.4bpp.lz");
 static const ax_sprite sMankeySprites4[] = {
 	{sMankeyGfx4, ARRAY_COUNT(sMankeyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx5[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_5.4bpp");
+static const u8 sMankeyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_5.4bpp.lz");
 static const ax_sprite sMankeySprites5[] = {
 	{sMankeyGfx5, ARRAY_COUNT(sMankeyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx6[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_6.4bpp");
+static const u8 sMankeyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_6.4bpp.lz");
 static const ax_sprite sMankeySprites6[] = {
 	{sMankeyGfx6, ARRAY_COUNT(sMankeyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx7[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_7.4bpp");
+static const u8 sMankeyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_7.4bpp.lz");
 static const ax_sprite sMankeySprites7[] = {
 	{sMankeyGfx7, ARRAY_COUNT(sMankeyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx8[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_8.4bpp");
+static const u8 sMankeyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_8.4bpp.lz");
 static const ax_sprite sMankeySprites8[] = {
 	{sMankeyGfx8, ARRAY_COUNT(sMankeyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx9[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_9.4bpp");
+static const u8 sMankeyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_9.4bpp.lz");
 static const ax_sprite sMankeySprites9[] = {
 	{sMankeyGfx9, ARRAY_COUNT(sMankeyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx10[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_10.4bpp");
+static const u8 sMankeyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_10.4bpp.lz");
 static const ax_sprite sMankeySprites10[] = {
 	{sMankeyGfx10, ARRAY_COUNT(sMankeyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx11[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_11.4bpp");
+static const u8 sMankeyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_11.4bpp.lz");
 static const ax_sprite sMankeySprites11[] = {
 	{sMankeyGfx11, ARRAY_COUNT(sMankeyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx12[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_12.4bpp");
+static const u8 sMankeyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_12.4bpp.lz");
 static const ax_sprite sMankeySprites12[] = {
 	{sMankeyGfx12, ARRAY_COUNT(sMankeyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx13[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_13.4bpp");
+static const u8 sMankeyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_13.4bpp.lz");
 static const ax_sprite sMankeySprites13[] = {
 	{sMankeyGfx13, ARRAY_COUNT(sMankeyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx14[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_14.4bpp");
+static const u8 sMankeyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_14.4bpp.lz");
 static const ax_sprite sMankeySprites14[] = {
 	{sMankeyGfx14, ARRAY_COUNT(sMankeyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx15[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_15.4bpp");
+static const u8 sMankeyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_15.4bpp.lz");
 static const ax_sprite sMankeySprites15[] = {
 	{sMankeyGfx15, ARRAY_COUNT(sMankeyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx16[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_16.4bpp");
+static const u8 sMankeyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_16.4bpp.lz");
 static const ax_sprite sMankeySprites16[] = {
 	{NULL, 32}, 
 	{sMankeyGfx16, ARRAY_COUNT(sMankeyGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx17[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_17.4bpp");
-static const u8 sMankeyGfx17_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_17_1.4bpp");
+static const u8 sMankeyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_17.4bpp.lz");
+static const u8 sMankeyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_17_1.4bpp.lz");
 static const ax_sprite sMankeySprites17[] = {
 	{NULL, 64}, 
 	{sMankeyGfx17, ARRAY_COUNT(sMankeyGfx17)}, 
@@ -2265,17 +2265,17 @@ static const ax_sprite sMankeySprites17[] = {
 	{sMankeyGfx17_1, ARRAY_COUNT(sMankeyGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx18[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_18.4bpp");
-static const u8 sMankeyGfx18_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_18_1.4bpp");
+static const u8 sMankeyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_18.4bpp.lz");
+static const u8 sMankeyGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_18_1.4bpp.lz");
 static const ax_sprite sMankeySprites18[] = {
 	{sMankeyGfx18, ARRAY_COUNT(sMankeyGfx18)}, 
 	{NULL, 32}, 
 	{sMankeyGfx18_1, ARRAY_COUNT(sMankeyGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx19[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_19.4bpp");
-static const u8 sMankeyGfx19_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_19_1.4bpp");
-static const u8 sMankeyGfx19_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_19_2.4bpp");
+static const u8 sMankeyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_19.4bpp.lz");
+static const u8 sMankeyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_19_1.4bpp.lz");
+static const u8 sMankeyGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_19_2.4bpp.lz");
 static const ax_sprite sMankeySprites19[] = {
 	{sMankeyGfx19, ARRAY_COUNT(sMankeyGfx19)}, 
 	{NULL, 64}, 
@@ -2284,8 +2284,8 @@ static const ax_sprite sMankeySprites19[] = {
 	{sMankeyGfx19_2, ARRAY_COUNT(sMankeyGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx20[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_20.4bpp");
-static const u8 sMankeyGfx20_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_20_1.4bpp");
+static const u8 sMankeyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_20.4bpp.lz");
+static const u8 sMankeyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_20_1.4bpp.lz");
 static const ax_sprite sMankeySprites20[] = {
 	{sMankeyGfx20, ARRAY_COUNT(sMankeyGfx20)}, 
 	{NULL, 32}, 
@@ -2293,8 +2293,8 @@ static const ax_sprite sMankeySprites20[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx21[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_21.4bpp");
-static const u8 sMankeyGfx21_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_21_1.4bpp");
+static const u8 sMankeyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_21.4bpp.lz");
+static const u8 sMankeyGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_21_1.4bpp.lz");
 static const ax_sprite sMankeySprites21[] = {
 	{NULL, 64}, 
 	{sMankeyGfx21, ARRAY_COUNT(sMankeyGfx21)}, 
@@ -2303,8 +2303,8 @@ static const ax_sprite sMankeySprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx22[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_22.4bpp");
-static const u8 sMankeyGfx22_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_22_1.4bpp");
+static const u8 sMankeyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_22.4bpp.lz");
+static const u8 sMankeyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_22_1.4bpp.lz");
 static const ax_sprite sMankeySprites22[] = {
 	{NULL, 32}, 
 	{sMankeyGfx22, ARRAY_COUNT(sMankeyGfx22)}, 
@@ -2312,8 +2312,8 @@ static const ax_sprite sMankeySprites22[] = {
 	{sMankeyGfx22_1, ARRAY_COUNT(sMankeyGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx23[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_23.4bpp");
-static const u8 sMankeyGfx23_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_23_1.4bpp");
+static const u8 sMankeyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_23.4bpp.lz");
+static const u8 sMankeyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_23_1.4bpp.lz");
 static const ax_sprite sMankeySprites23[] = {
 	{sMankeyGfx23, ARRAY_COUNT(sMankeyGfx23)}, 
 	{NULL, 64}, 
@@ -2321,8 +2321,8 @@ static const ax_sprite sMankeySprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx24[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_24.4bpp");
-static const u8 sMankeyGfx24_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_24_1.4bpp");
+static const u8 sMankeyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_24.4bpp.lz");
+static const u8 sMankeyGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_24_1.4bpp.lz");
 static const ax_sprite sMankeySprites24[] = {
 	{sMankeyGfx24, ARRAY_COUNT(sMankeyGfx24)}, 
 	{NULL, 32}, 
@@ -2330,9 +2330,9 @@ static const ax_sprite sMankeySprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx25[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_25.4bpp");
-static const u8 sMankeyGfx25_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_25_1.4bpp");
-static const u8 sMankeyGfx25_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_25_2.4bpp");
+static const u8 sMankeyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_25.4bpp.lz");
+static const u8 sMankeyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_25_1.4bpp.lz");
+static const u8 sMankeyGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_25_2.4bpp.lz");
 static const ax_sprite sMankeySprites25[] = {
 	{NULL, 64}, 
 	{sMankeyGfx25, ARRAY_COUNT(sMankeyGfx25)}, 
@@ -2343,8 +2343,8 @@ static const ax_sprite sMankeySprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx26[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_26.4bpp");
-static const u8 sMankeyGfx26_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_26_1.4bpp");
+static const u8 sMankeyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_26.4bpp.lz");
+static const u8 sMankeyGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_26_1.4bpp.lz");
 static const ax_sprite sMankeySprites26[] = {
 	{NULL, 32}, 
 	{sMankeyGfx26, ARRAY_COUNT(sMankeyGfx26)}, 
@@ -2353,9 +2353,9 @@ static const ax_sprite sMankeySprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx27[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_27.4bpp");
-static const u8 sMankeyGfx27_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_27_1.4bpp");
-static const u8 sMankeyGfx27_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_27_2.4bpp");
+static const u8 sMankeyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_27.4bpp.lz");
+static const u8 sMankeyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_27_1.4bpp.lz");
+static const u8 sMankeyGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_27_2.4bpp.lz");
 static const ax_sprite sMankeySprites27[] = {
 	{NULL, 32}, 
 	{sMankeyGfx27, ARRAY_COUNT(sMankeyGfx27)}, 
@@ -2366,15 +2366,15 @@ static const ax_sprite sMankeySprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx28[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_28.4bpp");
+static const u8 sMankeyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_28.4bpp.lz");
 static const ax_sprite sMankeySprites28[] = {
 	{sMankeyGfx28, ARRAY_COUNT(sMankeyGfx28)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx29[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_29.4bpp");
-static const u8 sMankeyGfx29_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_29_1.4bpp");
-static const u8 sMankeyGfx29_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_29_2.4bpp");
+static const u8 sMankeyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_29.4bpp.lz");
+static const u8 sMankeyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_29_1.4bpp.lz");
+static const u8 sMankeyGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_29_2.4bpp.lz");
 static const ax_sprite sMankeySprites29[] = {
 	{NULL, 160}, 
 	{sMankeyGfx29, ARRAY_COUNT(sMankeyGfx29)}, 
@@ -2385,8 +2385,8 @@ static const ax_sprite sMankeySprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx30[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_30.4bpp");
-static const u8 sMankeyGfx30_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_30_1.4bpp");
+static const u8 sMankeyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_30.4bpp.lz");
+static const u8 sMankeyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_30_1.4bpp.lz");
 static const ax_sprite sMankeySprites30[] = {
 	{NULL, 64}, 
 	{sMankeyGfx30, ARRAY_COUNT(sMankeyGfx30)}, 
@@ -2395,9 +2395,9 @@ static const ax_sprite sMankeySprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx31[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_31.4bpp");
-static const u8 sMankeyGfx31_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_31_1.4bpp");
-static const u8 sMankeyGfx31_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_31_2.4bpp");
+static const u8 sMankeyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_31.4bpp.lz");
+static const u8 sMankeyGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_31_1.4bpp.lz");
+static const u8 sMankeyGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_31_2.4bpp.lz");
 static const ax_sprite sMankeySprites31[] = {
 	{NULL, 64}, 
 	{sMankeyGfx31, ARRAY_COUNT(sMankeyGfx31)}, 
@@ -2408,9 +2408,9 @@ static const ax_sprite sMankeySprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx32[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_32.4bpp");
-static const u8 sMankeyGfx32_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_32_1.4bpp");
-static const u8 sMankeyGfx32_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_32_2.4bpp");
+static const u8 sMankeyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_32.4bpp.lz");
+static const u8 sMankeyGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_32_1.4bpp.lz");
+static const u8 sMankeyGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_32_2.4bpp.lz");
 static const ax_sprite sMankeySprites32[] = {
 	{sMankeyGfx32, ARRAY_COUNT(sMankeyGfx32)}, 
 	{NULL, 64}, 
@@ -2420,13 +2420,13 @@ static const ax_sprite sMankeySprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx33[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_33.4bpp");
+static const u8 sMankeyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_33.4bpp.lz");
 static const ax_sprite sMankeySprites33[] = {
 	{sMankeyGfx33, ARRAY_COUNT(sMankeyGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx34[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_34.4bpp");
-static const u8 sMankeyGfx34_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_34_1.4bpp");
+static const u8 sMankeyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_34.4bpp.lz");
+static const u8 sMankeyGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_34_1.4bpp.lz");
 static const ax_sprite sMankeySprites34[] = {
 	{NULL, 64}, 
 	{sMankeyGfx34, ARRAY_COUNT(sMankeyGfx34)}, 
@@ -2435,21 +2435,21 @@ static const ax_sprite sMankeySprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx35[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_35.4bpp");
+static const u8 sMankeyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_35.4bpp.lz");
 static const ax_sprite sMankeySprites35[] = {
 	{NULL, 160}, 
 	{sMankeyGfx35, ARRAY_COUNT(sMankeyGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx36[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_36.4bpp");
+static const u8 sMankeyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_36.4bpp.lz");
 static const ax_sprite sMankeySprites36[] = {
 	{NULL, 128}, 
 	{sMankeyGfx36, ARRAY_COUNT(sMankeyGfx36)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx37[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_37.4bpp");
-static const u8 sMankeyGfx37_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_37_1.4bpp");
+static const u8 sMankeyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_37.4bpp.lz");
+static const u8 sMankeyGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_37_1.4bpp.lz");
 static const ax_sprite sMankeySprites37[] = {
 	{NULL, 128}, 
 	{sMankeyGfx37, ARRAY_COUNT(sMankeyGfx37)}, 
@@ -2458,9 +2458,9 @@ static const ax_sprite sMankeySprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx38[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_38.4bpp");
-static const u8 sMankeyGfx38_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_38_1.4bpp");
-static const u8 sMankeyGfx38_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_38_2.4bpp");
+static const u8 sMankeyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_38.4bpp.lz");
+static const u8 sMankeyGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_38_1.4bpp.lz");
+static const u8 sMankeyGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_38_2.4bpp.lz");
 static const ax_sprite sMankeySprites38[] = {
 	{NULL, 160}, 
 	{sMankeyGfx38, ARRAY_COUNT(sMankeyGfx38)}, 
@@ -2471,8 +2471,8 @@ static const ax_sprite sMankeySprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx39[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_39.4bpp");
-static const u8 sMankeyGfx39_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_39_1.4bpp");
+static const u8 sMankeyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_39.4bpp.lz");
+static const u8 sMankeyGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_39_1.4bpp.lz");
 static const ax_sprite sMankeySprites39[] = {
 	{NULL, 128}, 
 	{sMankeyGfx39, ARRAY_COUNT(sMankeyGfx39)}, 
@@ -2481,9 +2481,9 @@ static const ax_sprite sMankeySprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx40[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_40.4bpp");
-static const u8 sMankeyGfx40_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_40_1.4bpp");
-static const u8 sMankeyGfx40_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_40_2.4bpp");
+static const u8 sMankeyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_40.4bpp.lz");
+static const u8 sMankeyGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_40_1.4bpp.lz");
+static const u8 sMankeyGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_40_2.4bpp.lz");
 static const ax_sprite sMankeySprites40[] = {
 	{NULL, 32}, 
 	{sMankeyGfx40, ARRAY_COUNT(sMankeyGfx40)}, 
@@ -2494,10 +2494,10 @@ static const ax_sprite sMankeySprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx41[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_41.4bpp");
-static const u8 sMankeyGfx41_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_41_1.4bpp");
-static const u8 sMankeyGfx41_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_41_2.4bpp");
-static const u8 sMankeyGfx41_3[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_41_3.4bpp");
+static const u8 sMankeyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_41.4bpp.lz");
+static const u8 sMankeyGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_41_1.4bpp.lz");
+static const u8 sMankeyGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_41_2.4bpp.lz");
+static const u8 sMankeyGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_41_3.4bpp.lz");
 static const ax_sprite sMankeySprites41[] = {
 	{NULL, 64}, 
 	{sMankeyGfx41, ARRAY_COUNT(sMankeyGfx41)}, 
@@ -2510,8 +2510,8 @@ static const ax_sprite sMankeySprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx42[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_42.4bpp");
-static const u8 sMankeyGfx42_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_42_1.4bpp");
+static const u8 sMankeyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_42.4bpp.lz");
+static const u8 sMankeyGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_42_1.4bpp.lz");
 static const ax_sprite sMankeySprites42[] = {
 	{NULL, 128}, 
 	{sMankeyGfx42, ARRAY_COUNT(sMankeyGfx42)}, 
@@ -2520,9 +2520,9 @@ static const ax_sprite sMankeySprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx43[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_43.4bpp");
-static const u8 sMankeyGfx43_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_43_1.4bpp");
-static const u8 sMankeyGfx43_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_43_2.4bpp");
+static const u8 sMankeyGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_43.4bpp.lz");
+static const u8 sMankeyGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_43_1.4bpp.lz");
+static const u8 sMankeyGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_43_2.4bpp.lz");
 static const ax_sprite sMankeySprites43[] = {
 	{NULL, 32}, 
 	{sMankeyGfx43, ARRAY_COUNT(sMankeyGfx43)}, 
@@ -2533,9 +2533,9 @@ static const ax_sprite sMankeySprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx44[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_44.4bpp");
-static const u8 sMankeyGfx44_1[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_44_1.4bpp");
-static const u8 sMankeyGfx44_2[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_44_2.4bpp");
+static const u8 sMankeyGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_44.4bpp.lz");
+static const u8 sMankeyGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_44_1.4bpp.lz");
+static const u8 sMankeyGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_44_2.4bpp.lz");
 static const ax_sprite sMankeySprites44[] = {
 	{NULL, 32}, 
 	{sMankeyGfx44, ARRAY_COUNT(sMankeyGfx44)}, 
@@ -2545,37 +2545,37 @@ static const ax_sprite sMankeySprites44[] = {
 	{sMankeyGfx44_2, ARRAY_COUNT(sMankeyGfx44_2)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx45[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_45.4bpp");
+static const u8 sMankeyGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_45.4bpp.lz");
 static const ax_sprite sMankeySprites45[] = {
 	{sMankeyGfx45, ARRAY_COUNT(sMankeyGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx46[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_46.4bpp");
+static const u8 sMankeyGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_46.4bpp.lz");
 static const ax_sprite sMankeySprites46[] = {
 	{sMankeyGfx46, ARRAY_COUNT(sMankeyGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx47[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_47.4bpp");
+static const u8 sMankeyGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_47.4bpp.lz");
 static const ax_sprite sMankeySprites47[] = {
 	{sMankeyGfx47, ARRAY_COUNT(sMankeyGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx48[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_48.4bpp");
+static const u8 sMankeyGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_48.4bpp.lz");
 static const ax_sprite sMankeySprites48[] = {
 	{sMankeyGfx48, ARRAY_COUNT(sMankeyGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx49[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_49.4bpp");
+static const u8 sMankeyGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_49.4bpp.lz");
 static const ax_sprite sMankeySprites49[] = {
 	{sMankeyGfx49, ARRAY_COUNT(sMankeyGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx50[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_50.4bpp");
+static const u8 sMankeyGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_50.4bpp.lz");
 static const ax_sprite sMankeySprites50[] = {
 	{sMankeyGfx50, ARRAY_COUNT(sMankeyGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMankeyGfx51[] = INCBIN_U8("graphics/ax/mon/mankey/sprite_51.4bpp");
+static const u8 sMankeyGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mankey/sprite_51.4bpp.lz");
 static const ax_sprite sMankeySprites51[] = {
 	{sMankeyGfx51, ARRAY_COUNT(sMankeyGfx51)}, 
 	{NULL, 0}

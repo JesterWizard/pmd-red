@@ -2063,85 +2063,85 @@ static const ax_anim sMarillAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMarillGfx1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_1.4bpp");
+static const u8 sMarillGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_1.4bpp.lz");
 static const ax_sprite sMarillSprites1[] = {
 	{sMarillGfx1, ARRAY_COUNT(sMarillGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx2[] = INCBIN_U8("graphics/ax/mon/marill/sprite_2.4bpp");
+static const u8 sMarillGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_2.4bpp.lz");
 static const ax_sprite sMarillSprites2[] = {
 	{sMarillGfx2, ARRAY_COUNT(sMarillGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx3[] = INCBIN_U8("graphics/ax/mon/marill/sprite_3.4bpp");
+static const u8 sMarillGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_3.4bpp.lz");
 static const ax_sprite sMarillSprites3[] = {
 	{sMarillGfx3, ARRAY_COUNT(sMarillGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx4[] = INCBIN_U8("graphics/ax/mon/marill/sprite_4.4bpp");
+static const u8 sMarillGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_4.4bpp.lz");
 static const ax_sprite sMarillSprites4[] = {
 	{sMarillGfx4, ARRAY_COUNT(sMarillGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx5[] = INCBIN_U8("graphics/ax/mon/marill/sprite_5.4bpp");
+static const u8 sMarillGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_5.4bpp.lz");
 static const ax_sprite sMarillSprites5[] = {
 	{sMarillGfx5, ARRAY_COUNT(sMarillGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx6[] = INCBIN_U8("graphics/ax/mon/marill/sprite_6.4bpp");
+static const u8 sMarillGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_6.4bpp.lz");
 static const ax_sprite sMarillSprites6[] = {
 	{sMarillGfx6, ARRAY_COUNT(sMarillGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx7[] = INCBIN_U8("graphics/ax/mon/marill/sprite_7.4bpp");
+static const u8 sMarillGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_7.4bpp.lz");
 static const ax_sprite sMarillSprites7[] = {
 	{sMarillGfx7, ARRAY_COUNT(sMarillGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx8[] = INCBIN_U8("graphics/ax/mon/marill/sprite_8.4bpp");
+static const u8 sMarillGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_8.4bpp.lz");
 static const ax_sprite sMarillSprites8[] = {
 	{sMarillGfx8, ARRAY_COUNT(sMarillGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx9[] = INCBIN_U8("graphics/ax/mon/marill/sprite_9.4bpp");
+static const u8 sMarillGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_9.4bpp.lz");
 static const ax_sprite sMarillSprites9[] = {
 	{sMarillGfx9, ARRAY_COUNT(sMarillGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx10[] = INCBIN_U8("graphics/ax/mon/marill/sprite_10.4bpp");
+static const u8 sMarillGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_10.4bpp.lz");
 static const ax_sprite sMarillSprites10[] = {
 	{sMarillGfx10, ARRAY_COUNT(sMarillGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx11[] = INCBIN_U8("graphics/ax/mon/marill/sprite_11.4bpp");
+static const u8 sMarillGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_11.4bpp.lz");
 static const ax_sprite sMarillSprites11[] = {
 	{sMarillGfx11, ARRAY_COUNT(sMarillGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx12[] = INCBIN_U8("graphics/ax/mon/marill/sprite_12.4bpp");
+static const u8 sMarillGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_12.4bpp.lz");
 static const ax_sprite sMarillSprites12[] = {
 	{sMarillGfx12, ARRAY_COUNT(sMarillGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx13[] = INCBIN_U8("graphics/ax/mon/marill/sprite_13.4bpp");
+static const u8 sMarillGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_13.4bpp.lz");
 static const ax_sprite sMarillSprites13[] = {
 	{sMarillGfx13, ARRAY_COUNT(sMarillGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx14[] = INCBIN_U8("graphics/ax/mon/marill/sprite_14.4bpp");
+static const u8 sMarillGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_14.4bpp.lz");
 static const ax_sprite sMarillSprites14[] = {
 	{sMarillGfx14, ARRAY_COUNT(sMarillGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx15[] = INCBIN_U8("graphics/ax/mon/marill/sprite_15.4bpp");
+static const u8 sMarillGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_15.4bpp.lz");
 static const ax_sprite sMarillSprites15[] = {
 	{sMarillGfx15, ARRAY_COUNT(sMarillGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx16[] = INCBIN_U8("graphics/ax/mon/marill/sprite_16.4bpp");
-static const u8 sMarillGfx16_1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_16_1.4bpp");
-static const u8 sMarillGfx16_2[] = INCBIN_U8("graphics/ax/mon/marill/sprite_16_2.4bpp");
-static const u8 sMarillGfx16_3[] = INCBIN_U8("graphics/ax/mon/marill/sprite_16_3.4bpp");
+static const u8 sMarillGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_16.4bpp.lz");
+static const u8 sMarillGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_16_1.4bpp.lz");
+static const u8 sMarillGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_16_2.4bpp.lz");
+static const u8 sMarillGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_16_3.4bpp.lz");
 static const ax_sprite sMarillSprites16[] = {
 	{NULL, 32}, 
 	{sMarillGfx16, ARRAY_COUNT(sMarillGfx16)}, 
@@ -2154,10 +2154,10 @@ static const ax_sprite sMarillSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx17[] = INCBIN_U8("graphics/ax/mon/marill/sprite_17.4bpp");
-static const u8 sMarillGfx17_1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_17_1.4bpp");
-static const u8 sMarillGfx17_2[] = INCBIN_U8("graphics/ax/mon/marill/sprite_17_2.4bpp");
-static const u8 sMarillGfx17_3[] = INCBIN_U8("graphics/ax/mon/marill/sprite_17_3.4bpp");
+static const u8 sMarillGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_17.4bpp.lz");
+static const u8 sMarillGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_17_1.4bpp.lz");
+static const u8 sMarillGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_17_2.4bpp.lz");
+static const u8 sMarillGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_17_3.4bpp.lz");
 static const ax_sprite sMarillSprites17[] = {
 	{NULL, 32}, 
 	{sMarillGfx17, ARRAY_COUNT(sMarillGfx17)}, 
@@ -2170,16 +2170,16 @@ static const ax_sprite sMarillSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx18[] = INCBIN_U8("graphics/ax/mon/marill/sprite_18.4bpp");
+static const u8 sMarillGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_18.4bpp.lz");
 static const ax_sprite sMarillSprites18[] = {
 	{NULL, 32}, 
 	{sMarillGfx18, ARRAY_COUNT(sMarillGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx19[] = INCBIN_U8("graphics/ax/mon/marill/sprite_19.4bpp");
-static const u8 sMarillGfx19_1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_19_1.4bpp");
-static const u8 sMarillGfx19_2[] = INCBIN_U8("graphics/ax/mon/marill/sprite_19_2.4bpp");
-static const u8 sMarillGfx19_3[] = INCBIN_U8("graphics/ax/mon/marill/sprite_19_3.4bpp");
+static const u8 sMarillGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_19.4bpp.lz");
+static const u8 sMarillGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_19_1.4bpp.lz");
+static const u8 sMarillGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_19_2.4bpp.lz");
+static const u8 sMarillGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_19_3.4bpp.lz");
 static const ax_sprite sMarillSprites19[] = {
 	{NULL, 32}, 
 	{sMarillGfx19, ARRAY_COUNT(sMarillGfx19)}, 
@@ -2192,10 +2192,10 @@ static const ax_sprite sMarillSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx20[] = INCBIN_U8("graphics/ax/mon/marill/sprite_20.4bpp");
-static const u8 sMarillGfx20_1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_20_1.4bpp");
-static const u8 sMarillGfx20_2[] = INCBIN_U8("graphics/ax/mon/marill/sprite_20_2.4bpp");
-static const u8 sMarillGfx20_3[] = INCBIN_U8("graphics/ax/mon/marill/sprite_20_3.4bpp");
+static const u8 sMarillGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_20.4bpp.lz");
+static const u8 sMarillGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_20_1.4bpp.lz");
+static const u8 sMarillGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_20_2.4bpp.lz");
+static const u8 sMarillGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_20_3.4bpp.lz");
 static const ax_sprite sMarillSprites20[] = {
 	{NULL, 32}, 
 	{sMarillGfx20, ARRAY_COUNT(sMarillGfx20)}, 
@@ -2208,10 +2208,10 @@ static const ax_sprite sMarillSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx21[] = INCBIN_U8("graphics/ax/mon/marill/sprite_21.4bpp");
-static const u8 sMarillGfx21_1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_21_1.4bpp");
-static const u8 sMarillGfx21_2[] = INCBIN_U8("graphics/ax/mon/marill/sprite_21_2.4bpp");
-static const u8 sMarillGfx21_3[] = INCBIN_U8("graphics/ax/mon/marill/sprite_21_3.4bpp");
+static const u8 sMarillGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_21.4bpp.lz");
+static const u8 sMarillGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_21_1.4bpp.lz");
+static const u8 sMarillGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_21_2.4bpp.lz");
+static const u8 sMarillGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_21_3.4bpp.lz");
 static const ax_sprite sMarillSprites21[] = {
 	{NULL, 32}, 
 	{sMarillGfx21, ARRAY_COUNT(sMarillGfx21)}, 
@@ -2224,8 +2224,8 @@ static const ax_sprite sMarillSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx22[] = INCBIN_U8("graphics/ax/mon/marill/sprite_22.4bpp");
-static const u8 sMarillGfx22_1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_22_1.4bpp");
+static const u8 sMarillGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_22.4bpp.lz");
+static const u8 sMarillGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_22_1.4bpp.lz");
 static const ax_sprite sMarillSprites22[] = {
 	{sMarillGfx22, ARRAY_COUNT(sMarillGfx22)}, 
 	{NULL, 32}, 
@@ -2233,14 +2233,14 @@ static const ax_sprite sMarillSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx23[] = INCBIN_U8("graphics/ax/mon/marill/sprite_23.4bpp");
+static const u8 sMarillGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_23.4bpp.lz");
 static const ax_sprite sMarillSprites23[] = {
 	{sMarillGfx23, ARRAY_COUNT(sMarillGfx23)}, 
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx24[] = INCBIN_U8("graphics/ax/mon/marill/sprite_24.4bpp");
-static const u8 sMarillGfx24_1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_24_1.4bpp");
+static const u8 sMarillGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_24.4bpp.lz");
+static const u8 sMarillGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_24_1.4bpp.lz");
 static const ax_sprite sMarillSprites24[] = {
 	{sMarillGfx24, ARRAY_COUNT(sMarillGfx24)}, 
 	{NULL, 64}, 
@@ -2248,9 +2248,9 @@ static const ax_sprite sMarillSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx25[] = INCBIN_U8("graphics/ax/mon/marill/sprite_25.4bpp");
-static const u8 sMarillGfx25_1[] = INCBIN_U8("graphics/ax/mon/marill/sprite_25_1.4bpp");
-static const u8 sMarillGfx25_2[] = INCBIN_U8("graphics/ax/mon/marill/sprite_25_2.4bpp");
+static const u8 sMarillGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_25.4bpp.lz");
+static const u8 sMarillGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_25_1.4bpp.lz");
+static const u8 sMarillGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_25_2.4bpp.lz");
 static const ax_sprite sMarillSprites25[] = {
 	{sMarillGfx25, ARRAY_COUNT(sMarillGfx25)}, 
 	{NULL, 32}, 
@@ -2260,37 +2260,37 @@ static const ax_sprite sMarillSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx26[] = INCBIN_U8("graphics/ax/mon/marill/sprite_26.4bpp");
+static const u8 sMarillGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_26.4bpp.lz");
 static const ax_sprite sMarillSprites26[] = {
 	{sMarillGfx26, ARRAY_COUNT(sMarillGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx27[] = INCBIN_U8("graphics/ax/mon/marill/sprite_27.4bpp");
+static const u8 sMarillGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_27.4bpp.lz");
 static const ax_sprite sMarillSprites27[] = {
 	{sMarillGfx27, ARRAY_COUNT(sMarillGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx28[] = INCBIN_U8("graphics/ax/mon/marill/sprite_28.4bpp");
+static const u8 sMarillGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_28.4bpp.lz");
 static const ax_sprite sMarillSprites28[] = {
 	{sMarillGfx28, ARRAY_COUNT(sMarillGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx29[] = INCBIN_U8("graphics/ax/mon/marill/sprite_29.4bpp");
+static const u8 sMarillGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_29.4bpp.lz");
 static const ax_sprite sMarillSprites29[] = {
 	{sMarillGfx29, ARRAY_COUNT(sMarillGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx30[] = INCBIN_U8("graphics/ax/mon/marill/sprite_30.4bpp");
+static const u8 sMarillGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_30.4bpp.lz");
 static const ax_sprite sMarillSprites30[] = {
 	{sMarillGfx30, ARRAY_COUNT(sMarillGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx31[] = INCBIN_U8("graphics/ax/mon/marill/sprite_31.4bpp");
+static const u8 sMarillGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_31.4bpp.lz");
 static const ax_sprite sMarillSprites31[] = {
 	{sMarillGfx31, ARRAY_COUNT(sMarillGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMarillGfx32[] = INCBIN_U8("graphics/ax/mon/marill/sprite_32.4bpp");
+static const u8 sMarillGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marill/sprite_32.4bpp.lz");
 static const ax_sprite sMarillSprites32[] = {
 	{sMarillGfx32, ARRAY_COUNT(sMarillGfx32)}, 
 	{NULL, 0}

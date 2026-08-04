@@ -2071,85 +2071,85 @@ static const ax_anim sUmbreonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sUmbreonGfx1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_1.4bpp");
+static const u8 sUmbreonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_1.4bpp.lz");
 static const ax_sprite sUmbreonSprites1[] = {
 	{sUmbreonGfx1, ARRAY_COUNT(sUmbreonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_2.4bpp");
+static const u8 sUmbreonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_2.4bpp.lz");
 static const ax_sprite sUmbreonSprites2[] = {
 	{sUmbreonGfx2, ARRAY_COUNT(sUmbreonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_3.4bpp");
+static const u8 sUmbreonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_3.4bpp.lz");
 static const ax_sprite sUmbreonSprites3[] = {
 	{sUmbreonGfx3, ARRAY_COUNT(sUmbreonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx4[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_4.4bpp");
+static const u8 sUmbreonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_4.4bpp.lz");
 static const ax_sprite sUmbreonSprites4[] = {
 	{sUmbreonGfx4, ARRAY_COUNT(sUmbreonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx5[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_5.4bpp");
+static const u8 sUmbreonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_5.4bpp.lz");
 static const ax_sprite sUmbreonSprites5[] = {
 	{sUmbreonGfx5, ARRAY_COUNT(sUmbreonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx6[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_6.4bpp");
+static const u8 sUmbreonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_6.4bpp.lz");
 static const ax_sprite sUmbreonSprites6[] = {
 	{sUmbreonGfx6, ARRAY_COUNT(sUmbreonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx7[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_7.4bpp");
+static const u8 sUmbreonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_7.4bpp.lz");
 static const ax_sprite sUmbreonSprites7[] = {
 	{sUmbreonGfx7, ARRAY_COUNT(sUmbreonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx8[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_8.4bpp");
+static const u8 sUmbreonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_8.4bpp.lz");
 static const ax_sprite sUmbreonSprites8[] = {
 	{sUmbreonGfx8, ARRAY_COUNT(sUmbreonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx9[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_9.4bpp");
+static const u8 sUmbreonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_9.4bpp.lz");
 static const ax_sprite sUmbreonSprites9[] = {
 	{sUmbreonGfx9, ARRAY_COUNT(sUmbreonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx10[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_10.4bpp");
+static const u8 sUmbreonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_10.4bpp.lz");
 static const ax_sprite sUmbreonSprites10[] = {
 	{sUmbreonGfx10, ARRAY_COUNT(sUmbreonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx11[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_11.4bpp");
+static const u8 sUmbreonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_11.4bpp.lz");
 static const ax_sprite sUmbreonSprites11[] = {
 	{sUmbreonGfx11, ARRAY_COUNT(sUmbreonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx12[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_12.4bpp");
+static const u8 sUmbreonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_12.4bpp.lz");
 static const ax_sprite sUmbreonSprites12[] = {
 	{sUmbreonGfx12, ARRAY_COUNT(sUmbreonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx13[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_13.4bpp");
+static const u8 sUmbreonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_13.4bpp.lz");
 static const ax_sprite sUmbreonSprites13[] = {
 	{sUmbreonGfx13, ARRAY_COUNT(sUmbreonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx14[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_14.4bpp");
+static const u8 sUmbreonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_14.4bpp.lz");
 static const ax_sprite sUmbreonSprites14[] = {
 	{sUmbreonGfx14, ARRAY_COUNT(sUmbreonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx15[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_15.4bpp");
+static const u8 sUmbreonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_15.4bpp.lz");
 static const ax_sprite sUmbreonSprites15[] = {
 	{sUmbreonGfx15, ARRAY_COUNT(sUmbreonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx16[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_16.4bpp");
-static const u8 sUmbreonGfx16_1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_16_1.4bpp");
-static const u8 sUmbreonGfx16_2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_16_2.4bpp");
-static const u8 sUmbreonGfx16_3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_16_3.4bpp");
+static const u8 sUmbreonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_16.4bpp.lz");
+static const u8 sUmbreonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_16_1.4bpp.lz");
+static const u8 sUmbreonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_16_2.4bpp.lz");
+static const u8 sUmbreonGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_16_3.4bpp.lz");
 static const ax_sprite sUmbreonSprites16[] = {
 	{NULL, 32}, 
 	{sUmbreonGfx16, ARRAY_COUNT(sUmbreonGfx16)}, 
@@ -2162,10 +2162,10 @@ static const ax_sprite sUmbreonSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx17[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_17.4bpp");
-static const u8 sUmbreonGfx17_1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_17_1.4bpp");
-static const u8 sUmbreonGfx17_2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_17_2.4bpp");
-static const u8 sUmbreonGfx17_3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_17_3.4bpp");
+static const u8 sUmbreonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_17.4bpp.lz");
+static const u8 sUmbreonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_17_1.4bpp.lz");
+static const u8 sUmbreonGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_17_2.4bpp.lz");
+static const u8 sUmbreonGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_17_3.4bpp.lz");
 static const ax_sprite sUmbreonSprites17[] = {
 	{NULL, 64}, 
 	{sUmbreonGfx17, ARRAY_COUNT(sUmbreonGfx17)}, 
@@ -2178,10 +2178,10 @@ static const ax_sprite sUmbreonSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx18[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_18.4bpp");
-static const u8 sUmbreonGfx18_1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_18_1.4bpp");
-static const u8 sUmbreonGfx18_2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_18_2.4bpp");
-static const u8 sUmbreonGfx18_3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_18_3.4bpp");
+static const u8 sUmbreonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_18.4bpp.lz");
+static const u8 sUmbreonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_18_1.4bpp.lz");
+static const u8 sUmbreonGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_18_2.4bpp.lz");
+static const u8 sUmbreonGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_18_3.4bpp.lz");
 static const ax_sprite sUmbreonSprites18[] = {
 	{NULL, 64}, 
 	{sUmbreonGfx18, ARRAY_COUNT(sUmbreonGfx18)}, 
@@ -2194,10 +2194,10 @@ static const ax_sprite sUmbreonSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx19[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_19.4bpp");
-static const u8 sUmbreonGfx19_1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_19_1.4bpp");
-static const u8 sUmbreonGfx19_2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_19_2.4bpp");
-static const u8 sUmbreonGfx19_3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_19_3.4bpp");
+static const u8 sUmbreonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_19.4bpp.lz");
+static const u8 sUmbreonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_19_1.4bpp.lz");
+static const u8 sUmbreonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_19_2.4bpp.lz");
+static const u8 sUmbreonGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_19_3.4bpp.lz");
 static const ax_sprite sUmbreonSprites19[] = {
 	{NULL, 32}, 
 	{sUmbreonGfx19, ARRAY_COUNT(sUmbreonGfx19)}, 
@@ -2210,16 +2210,16 @@ static const ax_sprite sUmbreonSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx20[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_20.4bpp");
+static const u8 sUmbreonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_20.4bpp.lz");
 static const ax_sprite sUmbreonSprites20[] = {
 	{NULL, 64}, 
 	{sUmbreonGfx20, ARRAY_COUNT(sUmbreonGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx21[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_21.4bpp");
-static const u8 sUmbreonGfx21_1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_21_1.4bpp");
-static const u8 sUmbreonGfx21_2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_21_2.4bpp");
-static const u8 sUmbreonGfx21_3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_21_3.4bpp");
+static const u8 sUmbreonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_21.4bpp.lz");
+static const u8 sUmbreonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_21_1.4bpp.lz");
+static const u8 sUmbreonGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_21_2.4bpp.lz");
+static const u8 sUmbreonGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_21_3.4bpp.lz");
 static const ax_sprite sUmbreonSprites21[] = {
 	{NULL, 32}, 
 	{sUmbreonGfx21, ARRAY_COUNT(sUmbreonGfx21)}, 
@@ -2232,10 +2232,10 @@ static const ax_sprite sUmbreonSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx22[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_22.4bpp");
-static const u8 sUmbreonGfx22_1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_22_1.4bpp");
-static const u8 sUmbreonGfx22_2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_22_2.4bpp");
-static const u8 sUmbreonGfx22_3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_22_3.4bpp");
+static const u8 sUmbreonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_22.4bpp.lz");
+static const u8 sUmbreonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_22_1.4bpp.lz");
+static const u8 sUmbreonGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_22_2.4bpp.lz");
+static const u8 sUmbreonGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_22_3.4bpp.lz");
 static const ax_sprite sUmbreonSprites22[] = {
 	{NULL, 32}, 
 	{sUmbreonGfx22, ARRAY_COUNT(sUmbreonGfx22)}, 
@@ -2248,11 +2248,11 @@ static const ax_sprite sUmbreonSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx23[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23.4bpp");
-static const u8 sUmbreonGfx23_1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23_1.4bpp");
-static const u8 sUmbreonGfx23_2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23_2.4bpp");
-static const u8 sUmbreonGfx23_3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23_3.4bpp");
-static const u8 sUmbreonGfx23_4[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23_4.4bpp");
+static const u8 sUmbreonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23.4bpp.lz");
+static const u8 sUmbreonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23_1.4bpp.lz");
+static const u8 sUmbreonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23_2.4bpp.lz");
+static const u8 sUmbreonGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23_3.4bpp.lz");
+static const u8 sUmbreonGfx23_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_23_4.4bpp.lz");
 static const ax_sprite sUmbreonSprites23[] = {
 	{sUmbreonGfx23, ARRAY_COUNT(sUmbreonGfx23)}, 
 	{NULL, 32}, 
@@ -2266,10 +2266,10 @@ static const ax_sprite sUmbreonSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx24[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_24.4bpp");
-static const u8 sUmbreonGfx24_1[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_24_1.4bpp");
-static const u8 sUmbreonGfx24_2[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_24_2.4bpp");
-static const u8 sUmbreonGfx24_3[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_24_3.4bpp");
+static const u8 sUmbreonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_24.4bpp.lz");
+static const u8 sUmbreonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_24_1.4bpp.lz");
+static const u8 sUmbreonGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_24_2.4bpp.lz");
+static const u8 sUmbreonGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_24_3.4bpp.lz");
 static const ax_sprite sUmbreonSprites24[] = {
 	{sUmbreonGfx24, ARRAY_COUNT(sUmbreonGfx24)}, 
 	{NULL, 64}, 
@@ -2281,42 +2281,42 @@ static const ax_sprite sUmbreonSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx25[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_25.4bpp");
+static const u8 sUmbreonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_25.4bpp.lz");
 static const ax_sprite sUmbreonSprites25[] = {
 	{sUmbreonGfx25, ARRAY_COUNT(sUmbreonGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx26[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_26.4bpp");
+static const u8 sUmbreonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_26.4bpp.lz");
 static const ax_sprite sUmbreonSprites26[] = {
 	{sUmbreonGfx26, ARRAY_COUNT(sUmbreonGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx27[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_27.4bpp");
+static const u8 sUmbreonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_27.4bpp.lz");
 static const ax_sprite sUmbreonSprites27[] = {
 	{sUmbreonGfx27, ARRAY_COUNT(sUmbreonGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx28[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_28.4bpp");
+static const u8 sUmbreonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_28.4bpp.lz");
 static const ax_sprite sUmbreonSprites28[] = {
 	{sUmbreonGfx28, ARRAY_COUNT(sUmbreonGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx29[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_29.4bpp");
+static const u8 sUmbreonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_29.4bpp.lz");
 static const ax_sprite sUmbreonSprites29[] = {
 	{sUmbreonGfx29, ARRAY_COUNT(sUmbreonGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx30[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_30.4bpp");
+static const u8 sUmbreonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_30.4bpp.lz");
 static const ax_sprite sUmbreonSprites30[] = {
 	{sUmbreonGfx30, ARRAY_COUNT(sUmbreonGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx31[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_31.4bpp");
+static const u8 sUmbreonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_31.4bpp.lz");
 static const ax_sprite sUmbreonSprites31[] = {
 	{sUmbreonGfx31, ARRAY_COUNT(sUmbreonGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sUmbreonGfx32[] = INCBIN_U8("graphics/ax/mon/umbreon/sprite_32.4bpp");
+static const u8 sUmbreonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/umbreon/sprite_32.4bpp.lz");
 static const ax_sprite sUmbreonSprites32[] = {
 	{sUmbreonGfx32, ARRAY_COUNT(sUmbreonGfx32)}, 
 	{NULL, 0}

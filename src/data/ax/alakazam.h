@@ -2553,83 +2553,83 @@ static const ax_anim sAlakazamAnims_18_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sAlakazamGfx1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_1.4bpp");
+static const u8 sAlakazamGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_1.4bpp.lz");
 static const ax_sprite sAlakazamSprites1[] = {
 	{sAlakazamGfx1, ARRAY_COUNT(sAlakazamGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_2.4bpp");
+static const u8 sAlakazamGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites2[] = {
 	{sAlakazamGfx2, ARRAY_COUNT(sAlakazamGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx3[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_3.4bpp");
+static const u8 sAlakazamGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_3.4bpp.lz");
 static const ax_sprite sAlakazamSprites3[] = {
 	{sAlakazamGfx3, ARRAY_COUNT(sAlakazamGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx4[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_4.4bpp");
+static const u8 sAlakazamGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_4.4bpp.lz");
 static const ax_sprite sAlakazamSprites4[] = {
 	{sAlakazamGfx4, ARRAY_COUNT(sAlakazamGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx5[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_5.4bpp");
+static const u8 sAlakazamGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_5.4bpp.lz");
 static const ax_sprite sAlakazamSprites5[] = {
 	{sAlakazamGfx5, ARRAY_COUNT(sAlakazamGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx6[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_6.4bpp");
+static const u8 sAlakazamGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_6.4bpp.lz");
 static const ax_sprite sAlakazamSprites6[] = {
 	{sAlakazamGfx6, ARRAY_COUNT(sAlakazamGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx7[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_7.4bpp");
+static const u8 sAlakazamGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_7.4bpp.lz");
 static const ax_sprite sAlakazamSprites7[] = {
 	{sAlakazamGfx7, ARRAY_COUNT(sAlakazamGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx8[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_8.4bpp");
+static const u8 sAlakazamGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_8.4bpp.lz");
 static const ax_sprite sAlakazamSprites8[] = {
 	{sAlakazamGfx8, ARRAY_COUNT(sAlakazamGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx9[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_9.4bpp");
+static const u8 sAlakazamGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_9.4bpp.lz");
 static const ax_sprite sAlakazamSprites9[] = {
 	{sAlakazamGfx9, ARRAY_COUNT(sAlakazamGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx10[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_10.4bpp");
+static const u8 sAlakazamGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_10.4bpp.lz");
 static const ax_sprite sAlakazamSprites10[] = {
 	{sAlakazamGfx10, ARRAY_COUNT(sAlakazamGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx11[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_11.4bpp");
+static const u8 sAlakazamGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_11.4bpp.lz");
 static const ax_sprite sAlakazamSprites11[] = {
 	{sAlakazamGfx11, ARRAY_COUNT(sAlakazamGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx12[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_12.4bpp");
+static const u8 sAlakazamGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_12.4bpp.lz");
 static const ax_sprite sAlakazamSprites12[] = {
 	{sAlakazamGfx12, ARRAY_COUNT(sAlakazamGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx13[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_13.4bpp");
+static const u8 sAlakazamGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_13.4bpp.lz");
 static const ax_sprite sAlakazamSprites13[] = {
 	{sAlakazamGfx13, ARRAY_COUNT(sAlakazamGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx14[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_14.4bpp");
+static const u8 sAlakazamGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_14.4bpp.lz");
 static const ax_sprite sAlakazamSprites14[] = {
 	{sAlakazamGfx14, ARRAY_COUNT(sAlakazamGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx15[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_15.4bpp");
+static const u8 sAlakazamGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_15.4bpp.lz");
 static const ax_sprite sAlakazamSprites15[] = {
 	{sAlakazamGfx15, ARRAY_COUNT(sAlakazamGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx16[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_16.4bpp");
-static const u8 sAlakazamGfx16_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_16_1.4bpp");
+static const u8 sAlakazamGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_16.4bpp.lz");
+static const u8 sAlakazamGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_16_1.4bpp.lz");
 static const ax_sprite sAlakazamSprites16[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx16, ARRAY_COUNT(sAlakazamGfx16)}, 
@@ -2638,9 +2638,9 @@ static const ax_sprite sAlakazamSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx17[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_17.4bpp");
-static const u8 sAlakazamGfx17_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_17_1.4bpp");
-static const u8 sAlakazamGfx17_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_17_2.4bpp");
+static const u8 sAlakazamGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_17.4bpp.lz");
+static const u8 sAlakazamGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_17_1.4bpp.lz");
+static const u8 sAlakazamGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_17_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites17[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx17, ARRAY_COUNT(sAlakazamGfx17)}, 
@@ -2651,9 +2651,9 @@ static const ax_sprite sAlakazamSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx18[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_18.4bpp");
-static const u8 sAlakazamGfx18_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_18_1.4bpp");
-static const u8 sAlakazamGfx18_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_18_2.4bpp");
+static const u8 sAlakazamGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_18.4bpp.lz");
+static const u8 sAlakazamGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_18_1.4bpp.lz");
+static const u8 sAlakazamGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_18_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites18[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx18, ARRAY_COUNT(sAlakazamGfx18)}, 
@@ -2664,9 +2664,9 @@ static const ax_sprite sAlakazamSprites18[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx19[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_19.4bpp");
-static const u8 sAlakazamGfx19_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_19_1.4bpp");
-static const u8 sAlakazamGfx19_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_19_2.4bpp");
+static const u8 sAlakazamGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_19.4bpp.lz");
+static const u8 sAlakazamGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_19_1.4bpp.lz");
+static const u8 sAlakazamGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_19_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites19[] = {
 	{sAlakazamGfx19, ARRAY_COUNT(sAlakazamGfx19)}, 
 	{NULL, 32}, 
@@ -2676,10 +2676,10 @@ static const ax_sprite sAlakazamSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx20[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_20.4bpp");
-static const u8 sAlakazamGfx20_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_20_1.4bpp");
-static const u8 sAlakazamGfx20_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_20_2.4bpp");
-static const u8 sAlakazamGfx20_3[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_20_3.4bpp");
+static const u8 sAlakazamGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_20.4bpp.lz");
+static const u8 sAlakazamGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_20_1.4bpp.lz");
+static const u8 sAlakazamGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_20_2.4bpp.lz");
+static const u8 sAlakazamGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_20_3.4bpp.lz");
 static const ax_sprite sAlakazamSprites20[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx20, ARRAY_COUNT(sAlakazamGfx20)}, 
@@ -2692,9 +2692,9 @@ static const ax_sprite sAlakazamSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx21[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_21.4bpp");
-static const u8 sAlakazamGfx21_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_21_1.4bpp");
-static const u8 sAlakazamGfx21_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_21_2.4bpp");
+static const u8 sAlakazamGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_21.4bpp.lz");
+static const u8 sAlakazamGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_21_1.4bpp.lz");
+static const u8 sAlakazamGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_21_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites21[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx21, ARRAY_COUNT(sAlakazamGfx21)}, 
@@ -2705,8 +2705,8 @@ static const ax_sprite sAlakazamSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx22[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_22.4bpp");
-static const u8 sAlakazamGfx22_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_22_1.4bpp");
+static const u8 sAlakazamGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_22.4bpp.lz");
+static const u8 sAlakazamGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_22_1.4bpp.lz");
 static const ax_sprite sAlakazamSprites22[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx22, ARRAY_COUNT(sAlakazamGfx22)}, 
@@ -2715,9 +2715,9 @@ static const ax_sprite sAlakazamSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx23[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_23.4bpp");
-static const u8 sAlakazamGfx23_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_23_1.4bpp");
-static const u8 sAlakazamGfx23_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_23_2.4bpp");
+static const u8 sAlakazamGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_23.4bpp.lz");
+static const u8 sAlakazamGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_23_1.4bpp.lz");
+static const u8 sAlakazamGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_23_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites23[] = {
 	{sAlakazamGfx23, ARRAY_COUNT(sAlakazamGfx23)}, 
 	{NULL, 32}, 
@@ -2727,9 +2727,9 @@ static const ax_sprite sAlakazamSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx24[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_24.4bpp");
-static const u8 sAlakazamGfx24_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_24_1.4bpp");
-static const u8 sAlakazamGfx24_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_24_2.4bpp");
+static const u8 sAlakazamGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_24.4bpp.lz");
+static const u8 sAlakazamGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_24_1.4bpp.lz");
+static const u8 sAlakazamGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_24_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites24[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx24, ARRAY_COUNT(sAlakazamGfx24)}, 
@@ -2740,9 +2740,9 @@ static const ax_sprite sAlakazamSprites24[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx25[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_25.4bpp");
-static const u8 sAlakazamGfx25_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_25_1.4bpp");
-static const u8 sAlakazamGfx25_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_25_2.4bpp");
+static const u8 sAlakazamGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_25.4bpp.lz");
+static const u8 sAlakazamGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_25_1.4bpp.lz");
+static const u8 sAlakazamGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_25_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites25[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx25, ARRAY_COUNT(sAlakazamGfx25)}, 
@@ -2753,44 +2753,44 @@ static const ax_sprite sAlakazamSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx26[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_26.4bpp");
+static const u8 sAlakazamGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_26.4bpp.lz");
 static const ax_sprite sAlakazamSprites26[] = {
 	{sAlakazamGfx26, ARRAY_COUNT(sAlakazamGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx27[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_27.4bpp");
+static const u8 sAlakazamGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_27.4bpp.lz");
 static const ax_sprite sAlakazamSprites27[] = {
 	{sAlakazamGfx27, ARRAY_COUNT(sAlakazamGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx28[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_28.4bpp");
+static const u8 sAlakazamGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_28.4bpp.lz");
 static const ax_sprite sAlakazamSprites28[] = {
 	{sAlakazamGfx28, ARRAY_COUNT(sAlakazamGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx29[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_29.4bpp");
+static const u8 sAlakazamGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_29.4bpp.lz");
 static const ax_sprite sAlakazamSprites29[] = {
 	{sAlakazamGfx29, ARRAY_COUNT(sAlakazamGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx30[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_30.4bpp");
+static const u8 sAlakazamGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_30.4bpp.lz");
 static const ax_sprite sAlakazamSprites30[] = {
 	{sAlakazamGfx30, ARRAY_COUNT(sAlakazamGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx31[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_31.4bpp");
+static const u8 sAlakazamGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_31.4bpp.lz");
 static const ax_sprite sAlakazamSprites31[] = {
 	{sAlakazamGfx31, ARRAY_COUNT(sAlakazamGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx32[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_32.4bpp");
+static const u8 sAlakazamGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_32.4bpp.lz");
 static const ax_sprite sAlakazamSprites32[] = {
 	{sAlakazamGfx32, ARRAY_COUNT(sAlakazamGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx33[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_33.4bpp");
-static const u8 sAlakazamGfx33_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_33_1.4bpp");
-static const u8 sAlakazamGfx33_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_33_2.4bpp");
+static const u8 sAlakazamGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_33.4bpp.lz");
+static const u8 sAlakazamGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_33_1.4bpp.lz");
+static const u8 sAlakazamGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_33_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites33[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx33, ARRAY_COUNT(sAlakazamGfx33)}, 
@@ -2801,9 +2801,9 @@ static const ax_sprite sAlakazamSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx34[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_34.4bpp");
-static const u8 sAlakazamGfx34_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_34_1.4bpp");
-static const u8 sAlakazamGfx34_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_34_2.4bpp");
+static const u8 sAlakazamGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_34.4bpp.lz");
+static const u8 sAlakazamGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_34_1.4bpp.lz");
+static const u8 sAlakazamGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_34_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites34[] = {
 	{sAlakazamGfx34, ARRAY_COUNT(sAlakazamGfx34)}, 
 	{NULL, 64}, 
@@ -2813,9 +2813,9 @@ static const ax_sprite sAlakazamSprites34[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx35[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_35.4bpp");
-static const u8 sAlakazamGfx35_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_35_1.4bpp");
-static const u8 sAlakazamGfx35_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_35_2.4bpp");
+static const u8 sAlakazamGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_35.4bpp.lz");
+static const u8 sAlakazamGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_35_1.4bpp.lz");
+static const u8 sAlakazamGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_35_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites35[] = {
 	{sAlakazamGfx35, ARRAY_COUNT(sAlakazamGfx35)}, 
 	{NULL, 32}, 
@@ -2824,8 +2824,8 @@ static const ax_sprite sAlakazamSprites35[] = {
 	{sAlakazamGfx35_2, ARRAY_COUNT(sAlakazamGfx35_2)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx36[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_36.4bpp");
-static const u8 sAlakazamGfx36_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_36_1.4bpp");
+static const u8 sAlakazamGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_36.4bpp.lz");
+static const u8 sAlakazamGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_36_1.4bpp.lz");
 static const ax_sprite sAlakazamSprites36[] = {
 	{sAlakazamGfx36, ARRAY_COUNT(sAlakazamGfx36)}, 
 	{NULL, 32}, 
@@ -2833,9 +2833,9 @@ static const ax_sprite sAlakazamSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx37[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_37.4bpp");
-static const u8 sAlakazamGfx37_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_37_1.4bpp");
-static const u8 sAlakazamGfx37_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_37_2.4bpp");
+static const u8 sAlakazamGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_37.4bpp.lz");
+static const u8 sAlakazamGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_37_1.4bpp.lz");
+static const u8 sAlakazamGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_37_2.4bpp.lz");
 static const ax_sprite sAlakazamSprites37[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx37, ARRAY_COUNT(sAlakazamGfx37)}, 
@@ -2845,16 +2845,16 @@ static const ax_sprite sAlakazamSprites37[] = {
 	{sAlakazamGfx37_2, ARRAY_COUNT(sAlakazamGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx38[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_38.4bpp");
+static const u8 sAlakazamGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_38.4bpp.lz");
 static const ax_sprite sAlakazamSprites38[] = {
 	{sAlakazamGfx38, ARRAY_COUNT(sAlakazamGfx38)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx39[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_39.4bpp");
-static const u8 sAlakazamGfx39_1[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_39_1.4bpp");
-static const u8 sAlakazamGfx39_2[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_39_2.4bpp");
-static const u8 sAlakazamGfx39_3[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_39_3.4bpp");
+static const u8 sAlakazamGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_39.4bpp.lz");
+static const u8 sAlakazamGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_39_1.4bpp.lz");
+static const u8 sAlakazamGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_39_2.4bpp.lz");
+static const u8 sAlakazamGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_39_3.4bpp.lz");
 static const ax_sprite sAlakazamSprites39[] = {
 	{NULL, 32}, 
 	{sAlakazamGfx39, ARRAY_COUNT(sAlakazamGfx39)}, 
@@ -2867,32 +2867,32 @@ static const ax_sprite sAlakazamSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx40[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_40.4bpp");
+static const u8 sAlakazamGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_40.4bpp.lz");
 static const ax_sprite sAlakazamSprites40[] = {
 	{sAlakazamGfx40, ARRAY_COUNT(sAlakazamGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx41[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_41.4bpp");
+static const u8 sAlakazamGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_41.4bpp.lz");
 static const ax_sprite sAlakazamSprites41[] = {
 	{sAlakazamGfx41, ARRAY_COUNT(sAlakazamGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx42[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_42.4bpp");
+static const u8 sAlakazamGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_42.4bpp.lz");
 static const ax_sprite sAlakazamSprites42[] = {
 	{sAlakazamGfx42, ARRAY_COUNT(sAlakazamGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx43[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_43.4bpp");
+static const u8 sAlakazamGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_43.4bpp.lz");
 static const ax_sprite sAlakazamSprites43[] = {
 	{sAlakazamGfx43, ARRAY_COUNT(sAlakazamGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx44[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_44.4bpp");
+static const u8 sAlakazamGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_44.4bpp.lz");
 static const ax_sprite sAlakazamSprites44[] = {
 	{sAlakazamGfx44, ARRAY_COUNT(sAlakazamGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sAlakazamGfx45[] = INCBIN_U8("graphics/ax/mon/alakazam/sprite_45.4bpp");
+static const u8 sAlakazamGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/alakazam/sprite_45.4bpp.lz");
 static const ax_sprite sAlakazamSprites45[] = {
 	{sAlakazamGfx45, ARRAY_COUNT(sAlakazamGfx45)}, 
 	{NULL, 0}

@@ -2103,90 +2103,90 @@ static const ax_anim sBreloomAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBreloomGfx1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_1.4bpp");
+static const u8 sBreloomGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_1.4bpp.lz");
 static const ax_sprite sBreloomSprites1[] = {
 	{sBreloomGfx1, ARRAY_COUNT(sBreloomGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_2.4bpp");
+static const u8 sBreloomGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_2.4bpp.lz");
 static const ax_sprite sBreloomSprites2[] = {
 	{sBreloomGfx2, ARRAY_COUNT(sBreloomGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx3[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_3.4bpp");
+static const u8 sBreloomGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_3.4bpp.lz");
 static const ax_sprite sBreloomSprites3[] = {
 	{sBreloomGfx3, ARRAY_COUNT(sBreloomGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx4[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_4.4bpp");
+static const u8 sBreloomGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_4.4bpp.lz");
 static const ax_sprite sBreloomSprites4[] = {
 	{sBreloomGfx4, ARRAY_COUNT(sBreloomGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx5[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_5.4bpp");
+static const u8 sBreloomGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_5.4bpp.lz");
 static const ax_sprite sBreloomSprites5[] = {
 	{sBreloomGfx5, ARRAY_COUNT(sBreloomGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx6[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_6.4bpp");
+static const u8 sBreloomGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_6.4bpp.lz");
 static const ax_sprite sBreloomSprites6[] = {
 	{sBreloomGfx6, ARRAY_COUNT(sBreloomGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx7[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_7.4bpp");
+static const u8 sBreloomGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_7.4bpp.lz");
 static const ax_sprite sBreloomSprites7[] = {
 	{sBreloomGfx7, ARRAY_COUNT(sBreloomGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx8[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_8.4bpp");
+static const u8 sBreloomGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_8.4bpp.lz");
 static const ax_sprite sBreloomSprites8[] = {
 	{sBreloomGfx8, ARRAY_COUNT(sBreloomGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx9[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_9.4bpp");
+static const u8 sBreloomGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_9.4bpp.lz");
 static const ax_sprite sBreloomSprites9[] = {
 	{sBreloomGfx9, ARRAY_COUNT(sBreloomGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx10[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_10.4bpp");
+static const u8 sBreloomGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_10.4bpp.lz");
 static const ax_sprite sBreloomSprites10[] = {
 	{sBreloomGfx10, ARRAY_COUNT(sBreloomGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx11[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_11.4bpp");
+static const u8 sBreloomGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_11.4bpp.lz");
 static const ax_sprite sBreloomSprites11[] = {
 	{sBreloomGfx11, ARRAY_COUNT(sBreloomGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx12[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_12.4bpp");
+static const u8 sBreloomGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_12.4bpp.lz");
 static const ax_sprite sBreloomSprites12[] = {
 	{sBreloomGfx12, ARRAY_COUNT(sBreloomGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx13[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_13.4bpp");
+static const u8 sBreloomGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_13.4bpp.lz");
 static const ax_sprite sBreloomSprites13[] = {
 	{sBreloomGfx13, ARRAY_COUNT(sBreloomGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx14[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_14.4bpp");
+static const u8 sBreloomGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_14.4bpp.lz");
 static const ax_sprite sBreloomSprites14[] = {
 	{sBreloomGfx14, ARRAY_COUNT(sBreloomGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx15[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_15.4bpp");
+static const u8 sBreloomGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_15.4bpp.lz");
 static const ax_sprite sBreloomSprites15[] = {
 	{sBreloomGfx15, ARRAY_COUNT(sBreloomGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx16[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_16.4bpp");
+static const u8 sBreloomGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_16.4bpp.lz");
 static const ax_sprite sBreloomSprites16[] = {
 	{sBreloomGfx16, ARRAY_COUNT(sBreloomGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx17[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_17.4bpp");
-static const u8 sBreloomGfx17_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_17_1.4bpp");
-static const u8 sBreloomGfx17_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_17_2.4bpp");
-static const u8 sBreloomGfx17_3[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_17_3.4bpp");
+static const u8 sBreloomGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_17.4bpp.lz");
+static const u8 sBreloomGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_17_1.4bpp.lz");
+static const u8 sBreloomGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_17_2.4bpp.lz");
+static const u8 sBreloomGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_17_3.4bpp.lz");
 static const ax_sprite sBreloomSprites17[] = {
 	{NULL, 32}, 
 	{sBreloomGfx17, ARRAY_COUNT(sBreloomGfx17)}, 
@@ -2199,15 +2199,15 @@ static const ax_sprite sBreloomSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx18[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_18.4bpp");
+static const u8 sBreloomGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_18.4bpp.lz");
 static const ax_sprite sBreloomSprites18[] = {
 	{sBreloomGfx18, ARRAY_COUNT(sBreloomGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx19[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_19.4bpp");
-static const u8 sBreloomGfx19_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_19_1.4bpp");
-static const u8 sBreloomGfx19_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_19_2.4bpp");
-static const u8 sBreloomGfx19_3[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_19_3.4bpp");
+static const u8 sBreloomGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_19.4bpp.lz");
+static const u8 sBreloomGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_19_1.4bpp.lz");
+static const u8 sBreloomGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_19_2.4bpp.lz");
+static const u8 sBreloomGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_19_3.4bpp.lz");
 static const ax_sprite sBreloomSprites19[] = {
 	{NULL, 32}, 
 	{sBreloomGfx19, ARRAY_COUNT(sBreloomGfx19)}, 
@@ -2220,31 +2220,31 @@ static const ax_sprite sBreloomSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx20[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_20.4bpp");
+static const u8 sBreloomGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_20.4bpp.lz");
 static const ax_sprite sBreloomSprites20[] = {
 	{NULL, 32}, 
 	{sBreloomGfx20, ARRAY_COUNT(sBreloomGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx21[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_21.4bpp");
+static const u8 sBreloomGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_21.4bpp.lz");
 static const ax_sprite sBreloomSprites21[] = {
 	{sBreloomGfx21, ARRAY_COUNT(sBreloomGfx21)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx22[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_22.4bpp");
+static const u8 sBreloomGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_22.4bpp.lz");
 static const ax_sprite sBreloomSprites22[] = {
 	{sBreloomGfx22, ARRAY_COUNT(sBreloomGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx23[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_23.4bpp");
+static const u8 sBreloomGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_23.4bpp.lz");
 static const ax_sprite sBreloomSprites23[] = {
 	{sBreloomGfx23, ARRAY_COUNT(sBreloomGfx23)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx24[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_24.4bpp");
-static const u8 sBreloomGfx24_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_24_1.4bpp");
+static const u8 sBreloomGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_24.4bpp.lz");
+static const u8 sBreloomGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_24_1.4bpp.lz");
 static const ax_sprite sBreloomSprites24[] = {
 	{sBreloomGfx24, ARRAY_COUNT(sBreloomGfx24)}, 
 	{NULL, 32}, 
@@ -2252,37 +2252,37 @@ static const ax_sprite sBreloomSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx25[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_25.4bpp");
+static const u8 sBreloomGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_25.4bpp.lz");
 static const ax_sprite sBreloomSprites25[] = {
 	{sBreloomGfx25, ARRAY_COUNT(sBreloomGfx25)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx26[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_26.4bpp");
-static const u8 sBreloomGfx26_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_26_1.4bpp");
+static const u8 sBreloomGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_26.4bpp.lz");
+static const u8 sBreloomGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_26_1.4bpp.lz");
 static const ax_sprite sBreloomSprites26[] = {
 	{sBreloomGfx26, ARRAY_COUNT(sBreloomGfx26)}, 
 	{NULL, 32}, 
 	{sBreloomGfx26_1, ARRAY_COUNT(sBreloomGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx27[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_27.4bpp");
+static const u8 sBreloomGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_27.4bpp.lz");
 static const ax_sprite sBreloomSprites27[] = {
 	{sBreloomGfx27, ARRAY_COUNT(sBreloomGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx28[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_28.4bpp");
+static const u8 sBreloomGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_28.4bpp.lz");
 static const ax_sprite sBreloomSprites28[] = {
 	{sBreloomGfx28, ARRAY_COUNT(sBreloomGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx29[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_29.4bpp");
+static const u8 sBreloomGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_29.4bpp.lz");
 static const ax_sprite sBreloomSprites29[] = {
 	{sBreloomGfx29, ARRAY_COUNT(sBreloomGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx30[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_30.4bpp");
-static const u8 sBreloomGfx30_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_30_1.4bpp");
+static const u8 sBreloomGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_30.4bpp.lz");
+static const u8 sBreloomGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_30_1.4bpp.lz");
 static const ax_sprite sBreloomSprites30[] = {
 	{sBreloomGfx30, ARRAY_COUNT(sBreloomGfx30)}, 
 	{NULL, 64}, 
@@ -2290,9 +2290,9 @@ static const ax_sprite sBreloomSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx31[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_31.4bpp");
-static const u8 sBreloomGfx31_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_31_1.4bpp");
-static const u8 sBreloomGfx31_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_31_2.4bpp");
+static const u8 sBreloomGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_31.4bpp.lz");
+static const u8 sBreloomGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_31_1.4bpp.lz");
+static const u8 sBreloomGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_31_2.4bpp.lz");
 static const ax_sprite sBreloomSprites31[] = {
 	{NULL, 32}, 
 	{sBreloomGfx31, ARRAY_COUNT(sBreloomGfx31)}, 
@@ -2303,18 +2303,18 @@ static const ax_sprite sBreloomSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx32[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_32.4bpp");
-static const u8 sBreloomGfx32_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_32_1.4bpp");
+static const u8 sBreloomGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_32.4bpp.lz");
+static const u8 sBreloomGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_32_1.4bpp.lz");
 static const ax_sprite sBreloomSprites32[] = {
 	{sBreloomGfx32, ARRAY_COUNT(sBreloomGfx32)}, 
 	{NULL, 96}, 
 	{sBreloomGfx32_1, ARRAY_COUNT(sBreloomGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx33[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_33.4bpp");
-static const u8 sBreloomGfx33_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_33_1.4bpp");
-static const u8 sBreloomGfx33_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_33_2.4bpp");
-static const u8 sBreloomGfx33_3[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_33_3.4bpp");
+static const u8 sBreloomGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_33.4bpp.lz");
+static const u8 sBreloomGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_33_1.4bpp.lz");
+static const u8 sBreloomGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_33_2.4bpp.lz");
+static const u8 sBreloomGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_33_3.4bpp.lz");
 static const ax_sprite sBreloomSprites33[] = {
 	{sBreloomGfx33, ARRAY_COUNT(sBreloomGfx33)}, 
 	{NULL, 32}, 
@@ -2326,18 +2326,18 @@ static const ax_sprite sBreloomSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx34[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_34.4bpp");
-static const u8 sBreloomGfx34_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_34_1.4bpp");
+static const u8 sBreloomGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_34.4bpp.lz");
+static const u8 sBreloomGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_34_1.4bpp.lz");
 static const ax_sprite sBreloomSprites34[] = {
 	{sBreloomGfx34, ARRAY_COUNT(sBreloomGfx34)}, 
 	{NULL, 32}, 
 	{sBreloomGfx34_1, ARRAY_COUNT(sBreloomGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx35[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_35.4bpp");
-static const u8 sBreloomGfx35_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_35_1.4bpp");
-static const u8 sBreloomGfx35_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_35_2.4bpp");
-static const u8 sBreloomGfx35_3[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_35_3.4bpp");
+static const u8 sBreloomGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_35.4bpp.lz");
+static const u8 sBreloomGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_35_1.4bpp.lz");
+static const u8 sBreloomGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_35_2.4bpp.lz");
+static const u8 sBreloomGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_35_3.4bpp.lz");
 static const ax_sprite sBreloomSprites35[] = {
 	{sBreloomGfx35, ARRAY_COUNT(sBreloomGfx35)}, 
 	{NULL, 32}, 
@@ -2349,15 +2349,15 @@ static const ax_sprite sBreloomSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx36[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_36.4bpp");
+static const u8 sBreloomGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_36.4bpp.lz");
 static const ax_sprite sBreloomSprites36[] = {
 	{sBreloomGfx36, ARRAY_COUNT(sBreloomGfx36)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx37[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_37.4bpp");
-static const u8 sBreloomGfx37_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_37_1.4bpp");
-static const u8 sBreloomGfx37_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_37_2.4bpp");
+static const u8 sBreloomGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_37.4bpp.lz");
+static const u8 sBreloomGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_37_1.4bpp.lz");
+static const u8 sBreloomGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_37_2.4bpp.lz");
 static const ax_sprite sBreloomSprites37[] = {
 	{NULL, 32}, 
 	{sBreloomGfx37, ARRAY_COUNT(sBreloomGfx37)}, 
@@ -2368,9 +2368,9 @@ static const ax_sprite sBreloomSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx38[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_38.4bpp");
-static const u8 sBreloomGfx38_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_38_1.4bpp");
-static const u8 sBreloomGfx38_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_38_2.4bpp");
+static const u8 sBreloomGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_38.4bpp.lz");
+static const u8 sBreloomGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_38_1.4bpp.lz");
+static const u8 sBreloomGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_38_2.4bpp.lz");
 static const ax_sprite sBreloomSprites38[] = {
 	{sBreloomGfx38, ARRAY_COUNT(sBreloomGfx38)}, 
 	{NULL, 32}, 
@@ -2380,10 +2380,10 @@ static const ax_sprite sBreloomSprites38[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx39[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_39.4bpp");
-static const u8 sBreloomGfx39_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_39_1.4bpp");
-static const u8 sBreloomGfx39_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_39_2.4bpp");
-static const u8 sBreloomGfx39_3[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_39_3.4bpp");
+static const u8 sBreloomGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_39.4bpp.lz");
+static const u8 sBreloomGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_39_1.4bpp.lz");
+static const u8 sBreloomGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_39_2.4bpp.lz");
+static const u8 sBreloomGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_39_3.4bpp.lz");
 static const ax_sprite sBreloomSprites39[] = {
 	{sBreloomGfx39, ARRAY_COUNT(sBreloomGfx39)}, 
 	{NULL, 32}, 
@@ -2395,8 +2395,8 @@ static const ax_sprite sBreloomSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx40[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_40.4bpp");
-static const u8 sBreloomGfx40_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_40_1.4bpp");
+static const u8 sBreloomGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_40.4bpp.lz");
+static const u8 sBreloomGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_40_1.4bpp.lz");
 static const ax_sprite sBreloomSprites40[] = {
 	{NULL, 32}, 
 	{sBreloomGfx40, ARRAY_COUNT(sBreloomGfx40)}, 
@@ -2404,15 +2404,15 @@ static const ax_sprite sBreloomSprites40[] = {
 	{sBreloomGfx40_1, ARRAY_COUNT(sBreloomGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx41[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_41.4bpp");
+static const u8 sBreloomGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_41.4bpp.lz");
 static const ax_sprite sBreloomSprites41[] = {
 	{sBreloomGfx41, ARRAY_COUNT(sBreloomGfx41)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx42[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_42.4bpp");
-static const u8 sBreloomGfx42_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_42_1.4bpp");
-static const u8 sBreloomGfx42_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_42_2.4bpp");
+static const u8 sBreloomGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_42.4bpp.lz");
+static const u8 sBreloomGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_42_1.4bpp.lz");
+static const u8 sBreloomGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_42_2.4bpp.lz");
 static const ax_sprite sBreloomSprites42[] = {
 	{sBreloomGfx42, ARRAY_COUNT(sBreloomGfx42)}, 
 	{NULL, 32}, 
@@ -2422,9 +2422,9 @@ static const ax_sprite sBreloomSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx43[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_43.4bpp");
-static const u8 sBreloomGfx43_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_43_1.4bpp");
-static const u8 sBreloomGfx43_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_43_2.4bpp");
+static const u8 sBreloomGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_43.4bpp.lz");
+static const u8 sBreloomGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_43_1.4bpp.lz");
+static const u8 sBreloomGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_43_2.4bpp.lz");
 static const ax_sprite sBreloomSprites43[] = {
 	{sBreloomGfx43, ARRAY_COUNT(sBreloomGfx43)}, 
 	{NULL, 32}, 
@@ -2433,10 +2433,10 @@ static const ax_sprite sBreloomSprites43[] = {
 	{sBreloomGfx43_2, ARRAY_COUNT(sBreloomGfx43_2)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx44[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_44.4bpp");
-static const u8 sBreloomGfx44_1[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_44_1.4bpp");
-static const u8 sBreloomGfx44_2[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_44_2.4bpp");
-static const u8 sBreloomGfx44_3[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_44_3.4bpp");
+static const u8 sBreloomGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_44.4bpp.lz");
+static const u8 sBreloomGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_44_1.4bpp.lz");
+static const u8 sBreloomGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_44_2.4bpp.lz");
+static const u8 sBreloomGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_44_3.4bpp.lz");
 static const ax_sprite sBreloomSprites44[] = {
 	{sBreloomGfx44, ARRAY_COUNT(sBreloomGfx44)}, 
 	{NULL, 32}, 
@@ -2448,47 +2448,47 @@ static const ax_sprite sBreloomSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx45[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_45.4bpp");
+static const u8 sBreloomGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_45.4bpp.lz");
 static const ax_sprite sBreloomSprites45[] = {
 	{sBreloomGfx45, ARRAY_COUNT(sBreloomGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx46[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_46.4bpp");
+static const u8 sBreloomGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_46.4bpp.lz");
 static const ax_sprite sBreloomSprites46[] = {
 	{sBreloomGfx46, ARRAY_COUNT(sBreloomGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx47[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_47.4bpp");
+static const u8 sBreloomGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_47.4bpp.lz");
 static const ax_sprite sBreloomSprites47[] = {
 	{sBreloomGfx47, ARRAY_COUNT(sBreloomGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx48[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_48.4bpp");
+static const u8 sBreloomGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_48.4bpp.lz");
 static const ax_sprite sBreloomSprites48[] = {
 	{sBreloomGfx48, ARRAY_COUNT(sBreloomGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx49[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_49.4bpp");
+static const u8 sBreloomGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_49.4bpp.lz");
 static const ax_sprite sBreloomSprites49[] = {
 	{sBreloomGfx49, ARRAY_COUNT(sBreloomGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx50[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_50.4bpp");
+static const u8 sBreloomGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_50.4bpp.lz");
 static const ax_sprite sBreloomSprites50[] = {
 	{sBreloomGfx50, ARRAY_COUNT(sBreloomGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx51[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_51.4bpp");
+static const u8 sBreloomGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_51.4bpp.lz");
 static const ax_sprite sBreloomSprites51[] = {
 	{sBreloomGfx51, ARRAY_COUNT(sBreloomGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx52[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_52.4bpp");
+static const u8 sBreloomGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_52.4bpp.lz");
 static const ax_sprite sBreloomSprites52[] = {
 	{sBreloomGfx52, ARRAY_COUNT(sBreloomGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sBreloomGfx53[] = INCBIN_U8("graphics/ax/mon/breloom/sprite_53.4bpp");
+static const u8 sBreloomGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/breloom/sprite_53.4bpp.lz");
 static const ax_sprite sBreloomSprites53[] = {
 	{sBreloomGfx53, ARRAY_COUNT(sBreloomGfx53)}, 
 	{NULL, 0}

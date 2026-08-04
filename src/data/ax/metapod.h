@@ -2271,85 +2271,85 @@ static const ax_anim sMetapodAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMetapodGfx1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_1.4bpp");
+static const u8 sMetapodGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_1.4bpp.lz");
 static const ax_sprite sMetapodSprites1[] = {
 	{sMetapodGfx1, ARRAY_COUNT(sMetapodGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_2.4bpp");
+static const u8 sMetapodGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_2.4bpp.lz");
 static const ax_sprite sMetapodSprites2[] = {
 	{sMetapodGfx2, ARRAY_COUNT(sMetapodGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx3[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_3.4bpp");
+static const u8 sMetapodGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_3.4bpp.lz");
 static const ax_sprite sMetapodSprites3[] = {
 	{sMetapodGfx3, ARRAY_COUNT(sMetapodGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx4[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_4.4bpp");
+static const u8 sMetapodGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_4.4bpp.lz");
 static const ax_sprite sMetapodSprites4[] = {
 	{sMetapodGfx4, ARRAY_COUNT(sMetapodGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx5[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_5.4bpp");
+static const u8 sMetapodGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_5.4bpp.lz");
 static const ax_sprite sMetapodSprites5[] = {
 	{sMetapodGfx5, ARRAY_COUNT(sMetapodGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx6[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_6.4bpp");
+static const u8 sMetapodGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_6.4bpp.lz");
 static const ax_sprite sMetapodSprites6[] = {
 	{sMetapodGfx6, ARRAY_COUNT(sMetapodGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx7[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_7.4bpp");
+static const u8 sMetapodGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_7.4bpp.lz");
 static const ax_sprite sMetapodSprites7[] = {
 	{sMetapodGfx7, ARRAY_COUNT(sMetapodGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx8[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_8.4bpp");
+static const u8 sMetapodGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_8.4bpp.lz");
 static const ax_sprite sMetapodSprites8[] = {
 	{sMetapodGfx8, ARRAY_COUNT(sMetapodGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx9[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_9.4bpp");
+static const u8 sMetapodGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_9.4bpp.lz");
 static const ax_sprite sMetapodSprites9[] = {
 	{sMetapodGfx9, ARRAY_COUNT(sMetapodGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx10[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_10.4bpp");
+static const u8 sMetapodGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_10.4bpp.lz");
 static const ax_sprite sMetapodSprites10[] = {
 	{sMetapodGfx10, ARRAY_COUNT(sMetapodGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx11[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_11.4bpp");
+static const u8 sMetapodGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_11.4bpp.lz");
 static const ax_sprite sMetapodSprites11[] = {
 	{sMetapodGfx11, ARRAY_COUNT(sMetapodGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx12[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_12.4bpp");
+static const u8 sMetapodGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_12.4bpp.lz");
 static const ax_sprite sMetapodSprites12[] = {
 	{sMetapodGfx12, ARRAY_COUNT(sMetapodGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx13[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_13.4bpp");
+static const u8 sMetapodGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_13.4bpp.lz");
 static const ax_sprite sMetapodSprites13[] = {
 	{sMetapodGfx13, ARRAY_COUNT(sMetapodGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx14[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_14.4bpp");
+static const u8 sMetapodGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_14.4bpp.lz");
 static const ax_sprite sMetapodSprites14[] = {
 	{sMetapodGfx14, ARRAY_COUNT(sMetapodGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx15[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_15.4bpp");
+static const u8 sMetapodGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_15.4bpp.lz");
 static const ax_sprite sMetapodSprites15[] = {
 	{sMetapodGfx15, ARRAY_COUNT(sMetapodGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx16[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_16.4bpp");
-static const u8 sMetapodGfx16_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_16_1.4bpp");
-static const u8 sMetapodGfx16_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_16_2.4bpp");
-static const u8 sMetapodGfx16_3[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_16_3.4bpp");
+static const u8 sMetapodGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_16.4bpp.lz");
+static const u8 sMetapodGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_16_1.4bpp.lz");
+static const u8 sMetapodGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_16_2.4bpp.lz");
+static const u8 sMetapodGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_16_3.4bpp.lz");
 static const ax_sprite sMetapodSprites16[] = {
 	{NULL, 32}, 
 	{sMetapodGfx16, ARRAY_COUNT(sMetapodGfx16)}, 
@@ -2362,10 +2362,10 @@ static const ax_sprite sMetapodSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx17[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_17.4bpp");
-static const u8 sMetapodGfx17_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_17_1.4bpp");
-static const u8 sMetapodGfx17_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_17_2.4bpp");
-static const u8 sMetapodGfx17_3[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_17_3.4bpp");
+static const u8 sMetapodGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_17.4bpp.lz");
+static const u8 sMetapodGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_17_1.4bpp.lz");
+static const u8 sMetapodGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_17_2.4bpp.lz");
+static const u8 sMetapodGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_17_3.4bpp.lz");
 static const ax_sprite sMetapodSprites17[] = {
 	{NULL, 32}, 
 	{sMetapodGfx17, ARRAY_COUNT(sMetapodGfx17)}, 
@@ -2378,10 +2378,10 @@ static const ax_sprite sMetapodSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx18[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_18.4bpp");
-static const u8 sMetapodGfx18_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_18_1.4bpp");
-static const u8 sMetapodGfx18_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_18_2.4bpp");
-static const u8 sMetapodGfx18_3[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_18_3.4bpp");
+static const u8 sMetapodGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_18.4bpp.lz");
+static const u8 sMetapodGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_18_1.4bpp.lz");
+static const u8 sMetapodGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_18_2.4bpp.lz");
+static const u8 sMetapodGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_18_3.4bpp.lz");
 static const ax_sprite sMetapodSprites18[] = {
 	{sMetapodGfx18, ARRAY_COUNT(sMetapodGfx18)}, 
 	{NULL, 64}, 
@@ -2393,9 +2393,9 @@ static const ax_sprite sMetapodSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx19[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_19.4bpp");
-static const u8 sMetapodGfx19_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_19_1.4bpp");
-static const u8 sMetapodGfx19_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_19_2.4bpp");
+static const u8 sMetapodGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_19.4bpp.lz");
+static const u8 sMetapodGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_19_1.4bpp.lz");
+static const u8 sMetapodGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_19_2.4bpp.lz");
 static const ax_sprite sMetapodSprites19[] = {
 	{NULL, 64}, 
 	{sMetapodGfx19, ARRAY_COUNT(sMetapodGfx19)}, 
@@ -2406,10 +2406,10 @@ static const ax_sprite sMetapodSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx20[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_20.4bpp");
-static const u8 sMetapodGfx20_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_20_1.4bpp");
-static const u8 sMetapodGfx20_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_20_2.4bpp");
-static const u8 sMetapodGfx20_3[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_20_3.4bpp");
+static const u8 sMetapodGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_20.4bpp.lz");
+static const u8 sMetapodGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_20_1.4bpp.lz");
+static const u8 sMetapodGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_20_2.4bpp.lz");
+static const u8 sMetapodGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_20_3.4bpp.lz");
 static const ax_sprite sMetapodSprites20[] = {
 	{NULL, 32}, 
 	{sMetapodGfx20, ARRAY_COUNT(sMetapodGfx20)}, 
@@ -2422,16 +2422,16 @@ static const ax_sprite sMetapodSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx21[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_21.4bpp");
+static const u8 sMetapodGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_21.4bpp.lz");
 static const ax_sprite sMetapodSprites21[] = {
 	{NULL, 128}, 
 	{sMetapodGfx21, ARRAY_COUNT(sMetapodGfx21)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx22[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_22.4bpp");
-static const u8 sMetapodGfx22_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_22_1.4bpp");
-static const u8 sMetapodGfx22_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_22_2.4bpp");
+static const u8 sMetapodGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_22.4bpp.lz");
+static const u8 sMetapodGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_22_1.4bpp.lz");
+static const u8 sMetapodGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_22_2.4bpp.lz");
 static const ax_sprite sMetapodSprites22[] = {
 	{sMetapodGfx22, ARRAY_COUNT(sMetapodGfx22)}, 
 	{NULL, 32}, 
@@ -2441,9 +2441,9 @@ static const ax_sprite sMetapodSprites22[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx23[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_23.4bpp");
-static const u8 sMetapodGfx23_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_23_1.4bpp");
-static const u8 sMetapodGfx23_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_23_2.4bpp");
+static const u8 sMetapodGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_23.4bpp.lz");
+static const u8 sMetapodGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_23_1.4bpp.lz");
+static const u8 sMetapodGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_23_2.4bpp.lz");
 static const ax_sprite sMetapodSprites23[] = {
 	{sMetapodGfx23, ARRAY_COUNT(sMetapodGfx23)}, 
 	{NULL, 64}, 
@@ -2453,10 +2453,10 @@ static const ax_sprite sMetapodSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx24[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_24.4bpp");
-static const u8 sMetapodGfx24_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_24_1.4bpp");
-static const u8 sMetapodGfx24_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_24_2.4bpp");
-static const u8 sMetapodGfx24_3[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_24_3.4bpp");
+static const u8 sMetapodGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_24.4bpp.lz");
+static const u8 sMetapodGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_24_1.4bpp.lz");
+static const u8 sMetapodGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_24_2.4bpp.lz");
+static const u8 sMetapodGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_24_3.4bpp.lz");
 static const ax_sprite sMetapodSprites24[] = {
 	{sMetapodGfx24, ARRAY_COUNT(sMetapodGfx24)}, 
 	{NULL, 32}, 
@@ -2468,9 +2468,9 @@ static const ax_sprite sMetapodSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx25[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_25.4bpp");
-static const u8 sMetapodGfx25_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_25_1.4bpp");
-static const u8 sMetapodGfx25_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_25_2.4bpp");
+static const u8 sMetapodGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_25.4bpp.lz");
+static const u8 sMetapodGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_25_1.4bpp.lz");
+static const u8 sMetapodGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_25_2.4bpp.lz");
 static const ax_sprite sMetapodSprites25[] = {
 	{sMetapodGfx25, ARRAY_COUNT(sMetapodGfx25)}, 
 	{NULL, 32}, 
@@ -2480,9 +2480,9 @@ static const ax_sprite sMetapodSprites25[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx26[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_26.4bpp");
-static const u8 sMetapodGfx26_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_26_1.4bpp");
-static const u8 sMetapodGfx26_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_26_2.4bpp");
+static const u8 sMetapodGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_26.4bpp.lz");
+static const u8 sMetapodGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_26_1.4bpp.lz");
+static const u8 sMetapodGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_26_2.4bpp.lz");
 static const ax_sprite sMetapodSprites26[] = {
 	{sMetapodGfx26, ARRAY_COUNT(sMetapodGfx26)}, 
 	{NULL, 32}, 
@@ -2492,9 +2492,9 @@ static const ax_sprite sMetapodSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx27[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_27.4bpp");
-static const u8 sMetapodGfx27_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_27_1.4bpp");
-static const u8 sMetapodGfx27_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_27_2.4bpp");
+static const u8 sMetapodGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_27.4bpp.lz");
+static const u8 sMetapodGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_27_1.4bpp.lz");
+static const u8 sMetapodGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_27_2.4bpp.lz");
 static const ax_sprite sMetapodSprites27[] = {
 	{sMetapodGfx27, ARRAY_COUNT(sMetapodGfx27)}, 
 	{NULL, 32}, 
@@ -2504,9 +2504,9 @@ static const ax_sprite sMetapodSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx28[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_28.4bpp");
-static const u8 sMetapodGfx28_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_28_1.4bpp");
-static const u8 sMetapodGfx28_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_28_2.4bpp");
+static const u8 sMetapodGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_28.4bpp.lz");
+static const u8 sMetapodGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_28_1.4bpp.lz");
+static const u8 sMetapodGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_28_2.4bpp.lz");
 static const ax_sprite sMetapodSprites28[] = {
 	{NULL, 32}, 
 	{sMetapodGfx28, ARRAY_COUNT(sMetapodGfx28)}, 
@@ -2517,10 +2517,10 @@ static const ax_sprite sMetapodSprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx29[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_29.4bpp");
-static const u8 sMetapodGfx29_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_29_1.4bpp");
-static const u8 sMetapodGfx29_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_29_2.4bpp");
-static const u8 sMetapodGfx29_3[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_29_3.4bpp");
+static const u8 sMetapodGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_29.4bpp.lz");
+static const u8 sMetapodGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_29_1.4bpp.lz");
+static const u8 sMetapodGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_29_2.4bpp.lz");
+static const u8 sMetapodGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_29_3.4bpp.lz");
 static const ax_sprite sMetapodSprites29[] = {
 	{sMetapodGfx29, ARRAY_COUNT(sMetapodGfx29)}, 
 	{NULL, 32}, 
@@ -2532,10 +2532,10 @@ static const ax_sprite sMetapodSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx30[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_30.4bpp");
-static const u8 sMetapodGfx30_1[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_30_1.4bpp");
-static const u8 sMetapodGfx30_2[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_30_2.4bpp");
-static const u8 sMetapodGfx30_3[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_30_3.4bpp");
+static const u8 sMetapodGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_30.4bpp.lz");
+static const u8 sMetapodGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_30_1.4bpp.lz");
+static const u8 sMetapodGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_30_2.4bpp.lz");
+static const u8 sMetapodGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_30_3.4bpp.lz");
 static const ax_sprite sMetapodSprites30[] = {
 	{NULL, 32}, 
 	{sMetapodGfx30, ARRAY_COUNT(sMetapodGfx30)}, 
@@ -2548,37 +2548,37 @@ static const ax_sprite sMetapodSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx31[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_31.4bpp");
+static const u8 sMetapodGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_31.4bpp.lz");
 static const ax_sprite sMetapodSprites31[] = {
 	{sMetapodGfx31, ARRAY_COUNT(sMetapodGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx32[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_32.4bpp");
+static const u8 sMetapodGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_32.4bpp.lz");
 static const ax_sprite sMetapodSprites32[] = {
 	{sMetapodGfx32, ARRAY_COUNT(sMetapodGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx33[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_33.4bpp");
+static const u8 sMetapodGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_33.4bpp.lz");
 static const ax_sprite sMetapodSprites33[] = {
 	{sMetapodGfx33, ARRAY_COUNT(sMetapodGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx34[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_34.4bpp");
+static const u8 sMetapodGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_34.4bpp.lz");
 static const ax_sprite sMetapodSprites34[] = {
 	{sMetapodGfx34, ARRAY_COUNT(sMetapodGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx35[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_35.4bpp");
+static const u8 sMetapodGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_35.4bpp.lz");
 static const ax_sprite sMetapodSprites35[] = {
 	{sMetapodGfx35, ARRAY_COUNT(sMetapodGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx36[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_36.4bpp");
+static const u8 sMetapodGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_36.4bpp.lz");
 static const ax_sprite sMetapodSprites36[] = {
 	{sMetapodGfx36, ARRAY_COUNT(sMetapodGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMetapodGfx37[] = INCBIN_U8("graphics/ax/mon/metapod/sprite_37.4bpp");
+static const u8 sMetapodGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metapod/sprite_37.4bpp.lz");
 static const ax_sprite sMetapodSprites37[] = {
 	{sMetapodGfx37, ARRAY_COUNT(sMetapodGfx37)}, 
 	{NULL, 0}

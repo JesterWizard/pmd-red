@@ -2459,84 +2459,84 @@ static const ax_anim sCacneaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCacneaGfx1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_1.4bpp");
+static const u8 sCacneaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_1.4bpp.lz");
 static const ax_sprite sCacneaSprites1[] = {
 	{sCacneaGfx1, ARRAY_COUNT(sCacneaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_2.4bpp");
+static const u8 sCacneaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_2.4bpp.lz");
 static const ax_sprite sCacneaSprites2[] = {
 	{sCacneaGfx2, ARRAY_COUNT(sCacneaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx3[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_3.4bpp");
+static const u8 sCacneaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_3.4bpp.lz");
 static const ax_sprite sCacneaSprites3[] = {
 	{sCacneaGfx3, ARRAY_COUNT(sCacneaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx4[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_4.4bpp");
+static const u8 sCacneaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_4.4bpp.lz");
 static const ax_sprite sCacneaSprites4[] = {
 	{sCacneaGfx4, ARRAY_COUNT(sCacneaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx5[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_5.4bpp");
+static const u8 sCacneaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_5.4bpp.lz");
 static const ax_sprite sCacneaSprites5[] = {
 	{sCacneaGfx5, ARRAY_COUNT(sCacneaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx6[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_6.4bpp");
+static const u8 sCacneaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_6.4bpp.lz");
 static const ax_sprite sCacneaSprites6[] = {
 	{sCacneaGfx6, ARRAY_COUNT(sCacneaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx7[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_7.4bpp");
+static const u8 sCacneaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_7.4bpp.lz");
 static const ax_sprite sCacneaSprites7[] = {
 	{sCacneaGfx7, ARRAY_COUNT(sCacneaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx8[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_8.4bpp");
+static const u8 sCacneaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_8.4bpp.lz");
 static const ax_sprite sCacneaSprites8[] = {
 	{sCacneaGfx8, ARRAY_COUNT(sCacneaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx9[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_9.4bpp");
+static const u8 sCacneaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_9.4bpp.lz");
 static const ax_sprite sCacneaSprites9[] = {
 	{sCacneaGfx9, ARRAY_COUNT(sCacneaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx10[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_10.4bpp");
+static const u8 sCacneaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_10.4bpp.lz");
 static const ax_sprite sCacneaSprites10[] = {
 	{sCacneaGfx10, ARRAY_COUNT(sCacneaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx11[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_11.4bpp");
+static const u8 sCacneaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_11.4bpp.lz");
 static const ax_sprite sCacneaSprites11[] = {
 	{sCacneaGfx11, ARRAY_COUNT(sCacneaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx12[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_12.4bpp");
+static const u8 sCacneaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_12.4bpp.lz");
 static const ax_sprite sCacneaSprites12[] = {
 	{sCacneaGfx12, ARRAY_COUNT(sCacneaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx13[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_13.4bpp");
+static const u8 sCacneaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_13.4bpp.lz");
 static const ax_sprite sCacneaSprites13[] = {
 	{sCacneaGfx13, ARRAY_COUNT(sCacneaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx14[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_14.4bpp");
+static const u8 sCacneaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_14.4bpp.lz");
 static const ax_sprite sCacneaSprites14[] = {
 	{sCacneaGfx14, ARRAY_COUNT(sCacneaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx15[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_15.4bpp");
+static const u8 sCacneaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_15.4bpp.lz");
 static const ax_sprite sCacneaSprites15[] = {
 	{sCacneaGfx15, ARRAY_COUNT(sCacneaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx16[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_16.4bpp");
-static const u8 sCacneaGfx16_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_16_1.4bpp");
-static const u8 sCacneaGfx16_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_16_2.4bpp");
+static const u8 sCacneaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_16.4bpp.lz");
+static const u8 sCacneaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_16_1.4bpp.lz");
+static const u8 sCacneaGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_16_2.4bpp.lz");
 static const ax_sprite sCacneaSprites16[] = {
 	{sCacneaGfx16, ARRAY_COUNT(sCacneaGfx16)}, 
 	{NULL, 32}, 
@@ -2546,9 +2546,9 @@ static const ax_sprite sCacneaSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx17[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_17.4bpp");
-static const u8 sCacneaGfx17_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_17_1.4bpp");
-static const u8 sCacneaGfx17_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_17_2.4bpp");
+static const u8 sCacneaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_17.4bpp.lz");
+static const u8 sCacneaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_17_1.4bpp.lz");
+static const u8 sCacneaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_17_2.4bpp.lz");
 static const ax_sprite sCacneaSprites17[] = {
 	{NULL, 32}, 
 	{sCacneaGfx17, ARRAY_COUNT(sCacneaGfx17)}, 
@@ -2559,9 +2559,9 @@ static const ax_sprite sCacneaSprites17[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx18[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_18.4bpp");
-static const u8 sCacneaGfx18_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_18_1.4bpp");
-static const u8 sCacneaGfx18_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_18_2.4bpp");
+static const u8 sCacneaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_18.4bpp.lz");
+static const u8 sCacneaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_18_1.4bpp.lz");
+static const u8 sCacneaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_18_2.4bpp.lz");
 static const ax_sprite sCacneaSprites18[] = {
 	{sCacneaGfx18, ARRAY_COUNT(sCacneaGfx18)}, 
 	{NULL, 32}, 
@@ -2571,8 +2571,8 @@ static const ax_sprite sCacneaSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx19[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_19.4bpp");
-static const u8 sCacneaGfx19_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_19_1.4bpp");
+static const u8 sCacneaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_19.4bpp.lz");
+static const u8 sCacneaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_19_1.4bpp.lz");
 static const ax_sprite sCacneaSprites19[] = {
 	{sCacneaGfx19, ARRAY_COUNT(sCacneaGfx19)}, 
 	{NULL, 32}, 
@@ -2580,9 +2580,9 @@ static const ax_sprite sCacneaSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx20[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_20.4bpp");
-static const u8 sCacneaGfx20_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_20_1.4bpp");
-static const u8 sCacneaGfx20_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_20_2.4bpp");
+static const u8 sCacneaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_20.4bpp.lz");
+static const u8 sCacneaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_20_1.4bpp.lz");
+static const u8 sCacneaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_20_2.4bpp.lz");
 static const ax_sprite sCacneaSprites20[] = {
 	{NULL, 32}, 
 	{sCacneaGfx20, ARRAY_COUNT(sCacneaGfx20)}, 
@@ -2593,9 +2593,9 @@ static const ax_sprite sCacneaSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx21[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_21.4bpp");
-static const u8 sCacneaGfx21_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_21_1.4bpp");
-static const u8 sCacneaGfx21_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_21_2.4bpp");
+static const u8 sCacneaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_21.4bpp.lz");
+static const u8 sCacneaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_21_1.4bpp.lz");
+static const u8 sCacneaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_21_2.4bpp.lz");
 static const ax_sprite sCacneaSprites21[] = {
 	{sCacneaGfx21, ARRAY_COUNT(sCacneaGfx21)}, 
 	{NULL, 32}, 
@@ -2605,9 +2605,9 @@ static const ax_sprite sCacneaSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx22[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_22.4bpp");
-static const u8 sCacneaGfx22_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_22_1.4bpp");
-static const u8 sCacneaGfx22_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_22_2.4bpp");
+static const u8 sCacneaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_22.4bpp.lz");
+static const u8 sCacneaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_22_1.4bpp.lz");
+static const u8 sCacneaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_22_2.4bpp.lz");
 static const ax_sprite sCacneaSprites22[] = {
 	{sCacneaGfx22, ARRAY_COUNT(sCacneaGfx22)}, 
 	{NULL, 32}, 
@@ -2617,9 +2617,9 @@ static const ax_sprite sCacneaSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx23[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_23.4bpp");
-static const u8 sCacneaGfx23_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_23_1.4bpp");
-static const u8 sCacneaGfx23_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_23_2.4bpp");
+static const u8 sCacneaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_23.4bpp.lz");
+static const u8 sCacneaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_23_1.4bpp.lz");
+static const u8 sCacneaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_23_2.4bpp.lz");
 static const ax_sprite sCacneaSprites23[] = {
 	{NULL, 32}, 
 	{sCacneaGfx23, ARRAY_COUNT(sCacneaGfx23)}, 
@@ -2630,9 +2630,9 @@ static const ax_sprite sCacneaSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx24[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_24.4bpp");
-static const u8 sCacneaGfx24_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_24_1.4bpp");
-static const u8 sCacneaGfx24_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_24_2.4bpp");
+static const u8 sCacneaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_24.4bpp.lz");
+static const u8 sCacneaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_24_1.4bpp.lz");
+static const u8 sCacneaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_24_2.4bpp.lz");
 static const ax_sprite sCacneaSprites24[] = {
 	{sCacneaGfx24, ARRAY_COUNT(sCacneaGfx24)}, 
 	{NULL, 32}, 
@@ -2642,8 +2642,8 @@ static const ax_sprite sCacneaSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx25[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_25.4bpp");
-static const u8 sCacneaGfx25_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_25_1.4bpp");
+static const u8 sCacneaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_25.4bpp.lz");
+static const u8 sCacneaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_25_1.4bpp.lz");
 static const ax_sprite sCacneaSprites25[] = {
 	{sCacneaGfx25, ARRAY_COUNT(sCacneaGfx25)}, 
 	{NULL, 32}, 
@@ -2651,8 +2651,8 @@ static const ax_sprite sCacneaSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx26[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_26.4bpp");
-static const u8 sCacneaGfx26_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_26_1.4bpp");
+static const u8 sCacneaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_26.4bpp.lz");
+static const u8 sCacneaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_26_1.4bpp.lz");
 static const ax_sprite sCacneaSprites26[] = {
 	{NULL, 32}, 
 	{sCacneaGfx26, ARRAY_COUNT(sCacneaGfx26)}, 
@@ -2661,8 +2661,8 @@ static const ax_sprite sCacneaSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx27[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_27.4bpp");
-static const u8 sCacneaGfx27_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_27_1.4bpp");
+static const u8 sCacneaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_27.4bpp.lz");
+static const u8 sCacneaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_27_1.4bpp.lz");
 static const ax_sprite sCacneaSprites27[] = {
 	{sCacneaGfx27, ARRAY_COUNT(sCacneaGfx27)}, 
 	{NULL, 32}, 
@@ -2670,14 +2670,14 @@ static const ax_sprite sCacneaSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx28[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_28.4bpp");
+static const u8 sCacneaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_28.4bpp.lz");
 static const ax_sprite sCacneaSprites28[] = {
 	{sCacneaGfx28, ARRAY_COUNT(sCacneaGfx28)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx29[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_29.4bpp");
-static const u8 sCacneaGfx29_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_29_1.4bpp");
+static const u8 sCacneaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_29.4bpp.lz");
+static const u8 sCacneaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_29_1.4bpp.lz");
 static const ax_sprite sCacneaSprites29[] = {
 	{NULL, 32}, 
 	{sCacneaGfx29, ARRAY_COUNT(sCacneaGfx29)}, 
@@ -2686,9 +2686,9 @@ static const ax_sprite sCacneaSprites29[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx30[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_30.4bpp");
-static const u8 sCacneaGfx30_1[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_30_1.4bpp");
-static const u8 sCacneaGfx30_2[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_30_2.4bpp");
+static const u8 sCacneaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_30.4bpp.lz");
+static const u8 sCacneaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_30_1.4bpp.lz");
+static const u8 sCacneaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_30_2.4bpp.lz");
 static const ax_sprite sCacneaSprites30[] = {
 	{NULL, 32}, 
 	{sCacneaGfx30, ARRAY_COUNT(sCacneaGfx30)}, 
@@ -2698,72 +2698,72 @@ static const ax_sprite sCacneaSprites30[] = {
 	{sCacneaGfx30_2, ARRAY_COUNT(sCacneaGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx31[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_31.4bpp");
+static const u8 sCacneaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_31.4bpp.lz");
 static const ax_sprite sCacneaSprites31[] = {
 	{sCacneaGfx31, ARRAY_COUNT(sCacneaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx32[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_32.4bpp");
+static const u8 sCacneaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_32.4bpp.lz");
 static const ax_sprite sCacneaSprites32[] = {
 	{sCacneaGfx32, ARRAY_COUNT(sCacneaGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx33[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_33.4bpp");
+static const u8 sCacneaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_33.4bpp.lz");
 static const ax_sprite sCacneaSprites33[] = {
 	{sCacneaGfx33, ARRAY_COUNT(sCacneaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx34[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_34.4bpp");
+static const u8 sCacneaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_34.4bpp.lz");
 static const ax_sprite sCacneaSprites34[] = {
 	{sCacneaGfx34, ARRAY_COUNT(sCacneaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx35[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_35.4bpp");
+static const u8 sCacneaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_35.4bpp.lz");
 static const ax_sprite sCacneaSprites35[] = {
 	{sCacneaGfx35, ARRAY_COUNT(sCacneaGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx36[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_36.4bpp");
+static const u8 sCacneaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_36.4bpp.lz");
 static const ax_sprite sCacneaSprites36[] = {
 	{sCacneaGfx36, ARRAY_COUNT(sCacneaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx37[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_37.4bpp");
+static const u8 sCacneaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_37.4bpp.lz");
 static const ax_sprite sCacneaSprites37[] = {
 	{sCacneaGfx37, ARRAY_COUNT(sCacneaGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx38[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_38.4bpp");
+static const u8 sCacneaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_38.4bpp.lz");
 static const ax_sprite sCacneaSprites38[] = {
 	{sCacneaGfx38, ARRAY_COUNT(sCacneaGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx39[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_39.4bpp");
+static const u8 sCacneaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_39.4bpp.lz");
 static const ax_sprite sCacneaSprites39[] = {
 	{sCacneaGfx39, ARRAY_COUNT(sCacneaGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx40[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_40.4bpp");
+static const u8 sCacneaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_40.4bpp.lz");
 static const ax_sprite sCacneaSprites40[] = {
 	{sCacneaGfx40, ARRAY_COUNT(sCacneaGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx41[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_41.4bpp");
+static const u8 sCacneaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_41.4bpp.lz");
 static const ax_sprite sCacneaSprites41[] = {
 	{sCacneaGfx41, ARRAY_COUNT(sCacneaGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx42[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_42.4bpp");
+static const u8 sCacneaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_42.4bpp.lz");
 static const ax_sprite sCacneaSprites42[] = {
 	{sCacneaGfx42, ARRAY_COUNT(sCacneaGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx43[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_43.4bpp");
+static const u8 sCacneaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_43.4bpp.lz");
 static const ax_sprite sCacneaSprites43[] = {
 	{sCacneaGfx43, ARRAY_COUNT(sCacneaGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sCacneaGfx44[] = INCBIN_U8("graphics/ax/mon/cacnea/sprite_44.4bpp");
+static const u8 sCacneaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacnea/sprite_44.4bpp.lz");
 static const ax_sprite sCacneaSprites44[] = {
 	{sCacneaGfx44, ARRAY_COUNT(sCacneaGfx44)}, 
 	{NULL, 0}

@@ -2103,100 +2103,100 @@ static const ax_anim sMightyenaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMightyenaGfx1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_1.4bpp");
+static const u8 sMightyenaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_1.4bpp.lz");
 static const ax_sprite sMightyenaSprites1[] = {
 	{sMightyenaGfx1, ARRAY_COUNT(sMightyenaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_2.4bpp");
+static const u8 sMightyenaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_2.4bpp.lz");
 static const ax_sprite sMightyenaSprites2[] = {
 	{sMightyenaGfx2, ARRAY_COUNT(sMightyenaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx3[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_3.4bpp");
+static const u8 sMightyenaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_3.4bpp.lz");
 static const ax_sprite sMightyenaSprites3[] = {
 	{sMightyenaGfx3, ARRAY_COUNT(sMightyenaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx4[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_4.4bpp");
+static const u8 sMightyenaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_4.4bpp.lz");
 static const ax_sprite sMightyenaSprites4[] = {
 	{sMightyenaGfx4, ARRAY_COUNT(sMightyenaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx5[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_5.4bpp");
+static const u8 sMightyenaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_5.4bpp.lz");
 static const ax_sprite sMightyenaSprites5[] = {
 	{sMightyenaGfx5, ARRAY_COUNT(sMightyenaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx6[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_6.4bpp");
+static const u8 sMightyenaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_6.4bpp.lz");
 static const ax_sprite sMightyenaSprites6[] = {
 	{sMightyenaGfx6, ARRAY_COUNT(sMightyenaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx7[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_7.4bpp");
+static const u8 sMightyenaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_7.4bpp.lz");
 static const ax_sprite sMightyenaSprites7[] = {
 	{sMightyenaGfx7, ARRAY_COUNT(sMightyenaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx8[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_8.4bpp");
+static const u8 sMightyenaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_8.4bpp.lz");
 static const ax_sprite sMightyenaSprites8[] = {
 	{sMightyenaGfx8, ARRAY_COUNT(sMightyenaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx9[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_9.4bpp");
+static const u8 sMightyenaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_9.4bpp.lz");
 static const ax_sprite sMightyenaSprites9[] = {
 	{sMightyenaGfx9, ARRAY_COUNT(sMightyenaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx10[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_10.4bpp");
+static const u8 sMightyenaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_10.4bpp.lz");
 static const ax_sprite sMightyenaSprites10[] = {
 	{sMightyenaGfx10, ARRAY_COUNT(sMightyenaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx11[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_11.4bpp");
+static const u8 sMightyenaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_11.4bpp.lz");
 static const ax_sprite sMightyenaSprites11[] = {
 	{sMightyenaGfx11, ARRAY_COUNT(sMightyenaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx12[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_12.4bpp");
+static const u8 sMightyenaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_12.4bpp.lz");
 static const ax_sprite sMightyenaSprites12[] = {
 	{sMightyenaGfx12, ARRAY_COUNT(sMightyenaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx13[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_13.4bpp");
+static const u8 sMightyenaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_13.4bpp.lz");
 static const ax_sprite sMightyenaSprites13[] = {
 	{sMightyenaGfx13, ARRAY_COUNT(sMightyenaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx14[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_14.4bpp");
+static const u8 sMightyenaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_14.4bpp.lz");
 static const ax_sprite sMightyenaSprites14[] = {
 	{sMightyenaGfx14, ARRAY_COUNT(sMightyenaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx15[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_15.4bpp");
+static const u8 sMightyenaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_15.4bpp.lz");
 static const ax_sprite sMightyenaSprites15[] = {
 	{sMightyenaGfx15, ARRAY_COUNT(sMightyenaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx16[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_16.4bpp");
+static const u8 sMightyenaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_16.4bpp.lz");
 static const ax_sprite sMightyenaSprites16[] = {
 	{sMightyenaGfx16, ARRAY_COUNT(sMightyenaGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx17[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_17.4bpp");
+static const u8 sMightyenaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_17.4bpp.lz");
 static const ax_sprite sMightyenaSprites17[] = {
 	{sMightyenaGfx17, ARRAY_COUNT(sMightyenaGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx18[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_18.4bpp");
+static const u8 sMightyenaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_18.4bpp.lz");
 static const ax_sprite sMightyenaSprites18[] = {
 	{sMightyenaGfx18, ARRAY_COUNT(sMightyenaGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx19[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_19.4bpp");
-static const u8 sMightyenaGfx19_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_19_1.4bpp");
-static const u8 sMightyenaGfx19_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_19_2.4bpp");
+static const u8 sMightyenaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_19.4bpp.lz");
+static const u8 sMightyenaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_19_1.4bpp.lz");
+static const u8 sMightyenaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_19_2.4bpp.lz");
 static const ax_sprite sMightyenaSprites19[] = {
 	{sMightyenaGfx19, ARRAY_COUNT(sMightyenaGfx19)}, 
 	{NULL, 32}, 
@@ -2206,9 +2206,9 @@ static const ax_sprite sMightyenaSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx20[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_20.4bpp");
-static const u8 sMightyenaGfx20_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_20_1.4bpp");
-static const u8 sMightyenaGfx20_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_20_2.4bpp");
+static const u8 sMightyenaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_20.4bpp.lz");
+static const u8 sMightyenaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_20_1.4bpp.lz");
+static const u8 sMightyenaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_20_2.4bpp.lz");
 static const ax_sprite sMightyenaSprites20[] = {
 	{sMightyenaGfx20, ARRAY_COUNT(sMightyenaGfx20)}, 
 	{NULL, 32}, 
@@ -2218,15 +2218,15 @@ static const ax_sprite sMightyenaSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx21[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_21.4bpp");
+static const u8 sMightyenaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_21.4bpp.lz");
 static const ax_sprite sMightyenaSprites21[] = {
 	{sMightyenaGfx21, ARRAY_COUNT(sMightyenaGfx21)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx22[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_22.4bpp");
-static const u8 sMightyenaGfx22_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_22_1.4bpp");
-static const u8 sMightyenaGfx22_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_22_2.4bpp");
+static const u8 sMightyenaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_22.4bpp.lz");
+static const u8 sMightyenaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_22_1.4bpp.lz");
+static const u8 sMightyenaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_22_2.4bpp.lz");
 static const ax_sprite sMightyenaSprites22[] = {
 	{sMightyenaGfx22, ARRAY_COUNT(sMightyenaGfx22)}, 
 	{NULL, 32}, 
@@ -2235,9 +2235,9 @@ static const ax_sprite sMightyenaSprites22[] = {
 	{sMightyenaGfx22_2, ARRAY_COUNT(sMightyenaGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx23[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_23.4bpp");
-static const u8 sMightyenaGfx23_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_23_1.4bpp");
-static const u8 sMightyenaGfx23_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_23_2.4bpp");
+static const u8 sMightyenaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_23.4bpp.lz");
+static const u8 sMightyenaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_23_1.4bpp.lz");
+static const u8 sMightyenaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_23_2.4bpp.lz");
 static const ax_sprite sMightyenaSprites23[] = {
 	{NULL, 32}, 
 	{sMightyenaGfx23, ARRAY_COUNT(sMightyenaGfx23)}, 
@@ -2247,9 +2247,9 @@ static const ax_sprite sMightyenaSprites23[] = {
 	{sMightyenaGfx23_2, ARRAY_COUNT(sMightyenaGfx23_2)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx24[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_24.4bpp");
-static const u8 sMightyenaGfx24_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_24_1.4bpp");
-static const u8 sMightyenaGfx24_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_24_2.4bpp");
+static const u8 sMightyenaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_24.4bpp.lz");
+static const u8 sMightyenaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_24_1.4bpp.lz");
+static const u8 sMightyenaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_24_2.4bpp.lz");
 static const ax_sprite sMightyenaSprites24[] = {
 	{sMightyenaGfx24, ARRAY_COUNT(sMightyenaGfx24)}, 
 	{NULL, 64}, 
@@ -2258,10 +2258,10 @@ static const ax_sprite sMightyenaSprites24[] = {
 	{sMightyenaGfx24_2, ARRAY_COUNT(sMightyenaGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx25[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_25.4bpp");
-static const u8 sMightyenaGfx25_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_25_1.4bpp");
-static const u8 sMightyenaGfx25_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_25_2.4bpp");
-static const u8 sMightyenaGfx25_3[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_25_3.4bpp");
+static const u8 sMightyenaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_25.4bpp.lz");
+static const u8 sMightyenaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_25_1.4bpp.lz");
+static const u8 sMightyenaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_25_2.4bpp.lz");
+static const u8 sMightyenaGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_25_3.4bpp.lz");
 static const ax_sprite sMightyenaSprites25[] = {
 	{sMightyenaGfx25, ARRAY_COUNT(sMightyenaGfx25)}, 
 	{NULL, 32}, 
@@ -2273,10 +2273,10 @@ static const ax_sprite sMightyenaSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx26[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_26.4bpp");
-static const u8 sMightyenaGfx26_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_26_1.4bpp");
-static const u8 sMightyenaGfx26_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_26_2.4bpp");
-static const u8 sMightyenaGfx26_3[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_26_3.4bpp");
+static const u8 sMightyenaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_26.4bpp.lz");
+static const u8 sMightyenaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_26_1.4bpp.lz");
+static const u8 sMightyenaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_26_2.4bpp.lz");
+static const u8 sMightyenaGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_26_3.4bpp.lz");
 static const ax_sprite sMightyenaSprites26[] = {
 	{sMightyenaGfx26, ARRAY_COUNT(sMightyenaGfx26)}, 
 	{NULL, 32}, 
@@ -2288,10 +2288,10 @@ static const ax_sprite sMightyenaSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx27[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_27.4bpp");
-static const u8 sMightyenaGfx27_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_27_1.4bpp");
-static const u8 sMightyenaGfx27_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_27_2.4bpp");
-static const u8 sMightyenaGfx27_3[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_27_3.4bpp");
+static const u8 sMightyenaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_27.4bpp.lz");
+static const u8 sMightyenaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_27_1.4bpp.lz");
+static const u8 sMightyenaGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_27_2.4bpp.lz");
+static const u8 sMightyenaGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_27_3.4bpp.lz");
 static const ax_sprite sMightyenaSprites27[] = {
 	{sMightyenaGfx27, ARRAY_COUNT(sMightyenaGfx27)}, 
 	{NULL, 64}, 
@@ -2303,28 +2303,28 @@ static const ax_sprite sMightyenaSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx28[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_28.4bpp");
+static const u8 sMightyenaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_28.4bpp.lz");
 static const ax_sprite sMightyenaSprites28[] = {
 	{sMightyenaGfx28, ARRAY_COUNT(sMightyenaGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx29[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_29.4bpp");
+static const u8 sMightyenaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_29.4bpp.lz");
 static const ax_sprite sMightyenaSprites29[] = {
 	{sMightyenaGfx29, ARRAY_COUNT(sMightyenaGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx30[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_30.4bpp");
+static const u8 sMightyenaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_30.4bpp.lz");
 static const ax_sprite sMightyenaSprites30[] = {
 	{sMightyenaGfx30, ARRAY_COUNT(sMightyenaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx31[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_31.4bpp");
+static const u8 sMightyenaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_31.4bpp.lz");
 static const ax_sprite sMightyenaSprites31[] = {
 	{sMightyenaGfx31, ARRAY_COUNT(sMightyenaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx32[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_32.4bpp");
-static const u8 sMightyenaGfx32_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_32_1.4bpp");
+static const u8 sMightyenaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_32.4bpp.lz");
+static const u8 sMightyenaGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_32_1.4bpp.lz");
 static const ax_sprite sMightyenaSprites32[] = {
 	{sMightyenaGfx32, ARRAY_COUNT(sMightyenaGfx32)}, 
 	{NULL, 32}, 
@@ -2332,10 +2332,10 @@ static const ax_sprite sMightyenaSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx33[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_33.4bpp");
-static const u8 sMightyenaGfx33_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_33_1.4bpp");
-static const u8 sMightyenaGfx33_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_33_2.4bpp");
-static const u8 sMightyenaGfx33_3[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_33_3.4bpp");
+static const u8 sMightyenaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_33.4bpp.lz");
+static const u8 sMightyenaGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_33_1.4bpp.lz");
+static const u8 sMightyenaGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_33_2.4bpp.lz");
+static const u8 sMightyenaGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_33_3.4bpp.lz");
 static const ax_sprite sMightyenaSprites33[] = {
 	{sMightyenaGfx33, ARRAY_COUNT(sMightyenaGfx33)}, 
 	{NULL, 64}, 
@@ -2346,10 +2346,10 @@ static const ax_sprite sMightyenaSprites33[] = {
 	{sMightyenaGfx33_3, ARRAY_COUNT(sMightyenaGfx33_3)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx34[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_34.4bpp");
-static const u8 sMightyenaGfx34_1[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_34_1.4bpp");
-static const u8 sMightyenaGfx34_2[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_34_2.4bpp");
-static const u8 sMightyenaGfx34_3[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_34_3.4bpp");
+static const u8 sMightyenaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_34.4bpp.lz");
+static const u8 sMightyenaGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_34_1.4bpp.lz");
+static const u8 sMightyenaGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_34_2.4bpp.lz");
+static const u8 sMightyenaGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_34_3.4bpp.lz");
 static const ax_sprite sMightyenaSprites34[] = {
 	{sMightyenaGfx34, ARRAY_COUNT(sMightyenaGfx34)}, 
 	{NULL, 32}, 
@@ -2361,42 +2361,42 @@ static const ax_sprite sMightyenaSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx35[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_35.4bpp");
+static const u8 sMightyenaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_35.4bpp.lz");
 static const ax_sprite sMightyenaSprites35[] = {
 	{sMightyenaGfx35, ARRAY_COUNT(sMightyenaGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx36[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_36.4bpp");
+static const u8 sMightyenaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_36.4bpp.lz");
 static const ax_sprite sMightyenaSprites36[] = {
 	{sMightyenaGfx36, ARRAY_COUNT(sMightyenaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx37[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_37.4bpp");
+static const u8 sMightyenaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_37.4bpp.lz");
 static const ax_sprite sMightyenaSprites37[] = {
 	{sMightyenaGfx37, ARRAY_COUNT(sMightyenaGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx38[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_38.4bpp");
+static const u8 sMightyenaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_38.4bpp.lz");
 static const ax_sprite sMightyenaSprites38[] = {
 	{sMightyenaGfx38, ARRAY_COUNT(sMightyenaGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx39[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_39.4bpp");
+static const u8 sMightyenaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_39.4bpp.lz");
 static const ax_sprite sMightyenaSprites39[] = {
 	{sMightyenaGfx39, ARRAY_COUNT(sMightyenaGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx40[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_40.4bpp");
+static const u8 sMightyenaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_40.4bpp.lz");
 static const ax_sprite sMightyenaSprites40[] = {
 	{sMightyenaGfx40, ARRAY_COUNT(sMightyenaGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx41[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_41.4bpp");
+static const u8 sMightyenaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_41.4bpp.lz");
 static const ax_sprite sMightyenaSprites41[] = {
 	{sMightyenaGfx41, ARRAY_COUNT(sMightyenaGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMightyenaGfx42[] = INCBIN_U8("graphics/ax/mon/mightyena/sprite_42.4bpp");
+static const u8 sMightyenaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mightyena/sprite_42.4bpp.lz");
 static const ax_sprite sMightyenaSprites42[] = {
 	{sMightyenaGfx42, ARRAY_COUNT(sMightyenaGfx42)}, 
 	{NULL, 0}

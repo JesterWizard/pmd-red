@@ -2381,98 +2381,98 @@ static const ax_anim sFlygonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sFlygonGfx1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_1.4bpp");
+static const u8 sFlygonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_1.4bpp.lz");
 static const ax_sprite sFlygonSprites1[] = {
 	{sFlygonGfx1, ARRAY_COUNT(sFlygonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx2[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_2.4bpp");
+static const u8 sFlygonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_2.4bpp.lz");
 static const ax_sprite sFlygonSprites2[] = {
 	{sFlygonGfx2, ARRAY_COUNT(sFlygonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx3[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_3.4bpp");
+static const u8 sFlygonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_3.4bpp.lz");
 static const ax_sprite sFlygonSprites3[] = {
 	{sFlygonGfx3, ARRAY_COUNT(sFlygonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx4[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_4.4bpp");
+static const u8 sFlygonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_4.4bpp.lz");
 static const ax_sprite sFlygonSprites4[] = {
 	{sFlygonGfx4, ARRAY_COUNT(sFlygonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx5[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_5.4bpp");
+static const u8 sFlygonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_5.4bpp.lz");
 static const ax_sprite sFlygonSprites5[] = {
 	{sFlygonGfx5, ARRAY_COUNT(sFlygonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx6[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_6.4bpp");
+static const u8 sFlygonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_6.4bpp.lz");
 static const ax_sprite sFlygonSprites6[] = {
 	{sFlygonGfx6, ARRAY_COUNT(sFlygonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx7[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_7.4bpp");
+static const u8 sFlygonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_7.4bpp.lz");
 static const ax_sprite sFlygonSprites7[] = {
 	{sFlygonGfx7, ARRAY_COUNT(sFlygonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx8[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_8.4bpp");
+static const u8 sFlygonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_8.4bpp.lz");
 static const ax_sprite sFlygonSprites8[] = {
 	{sFlygonGfx8, ARRAY_COUNT(sFlygonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx9[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_9.4bpp");
+static const u8 sFlygonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_9.4bpp.lz");
 static const ax_sprite sFlygonSprites9[] = {
 	{sFlygonGfx9, ARRAY_COUNT(sFlygonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx10[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_10.4bpp");
+static const u8 sFlygonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_10.4bpp.lz");
 static const ax_sprite sFlygonSprites10[] = {
 	{sFlygonGfx10, ARRAY_COUNT(sFlygonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx11[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_11.4bpp");
+static const u8 sFlygonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_11.4bpp.lz");
 static const ax_sprite sFlygonSprites11[] = {
 	{sFlygonGfx11, ARRAY_COUNT(sFlygonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx12[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_12.4bpp");
+static const u8 sFlygonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_12.4bpp.lz");
 static const ax_sprite sFlygonSprites12[] = {
 	{sFlygonGfx12, ARRAY_COUNT(sFlygonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx13[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_13.4bpp");
+static const u8 sFlygonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_13.4bpp.lz");
 static const ax_sprite sFlygonSprites13[] = {
 	{sFlygonGfx13, ARRAY_COUNT(sFlygonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx14[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_14.4bpp");
+static const u8 sFlygonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_14.4bpp.lz");
 static const ax_sprite sFlygonSprites14[] = {
 	{sFlygonGfx14, ARRAY_COUNT(sFlygonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx15[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_15.4bpp");
+static const u8 sFlygonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_15.4bpp.lz");
 static const ax_sprite sFlygonSprites15[] = {
 	{sFlygonGfx15, ARRAY_COUNT(sFlygonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx16[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_16.4bpp");
+static const u8 sFlygonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_16.4bpp.lz");
 static const ax_sprite sFlygonSprites16[] = {
 	{sFlygonGfx16, ARRAY_COUNT(sFlygonGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx17[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_17.4bpp");
+static const u8 sFlygonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_17.4bpp.lz");
 static const ax_sprite sFlygonSprites17[] = {
 	{sFlygonGfx17, ARRAY_COUNT(sFlygonGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx18[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_18.4bpp");
+static const u8 sFlygonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_18.4bpp.lz");
 static const ax_sprite sFlygonSprites18[] = {
 	{sFlygonGfx18, ARRAY_COUNT(sFlygonGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx19[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_19.4bpp");
-static const u8 sFlygonGfx19_1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_19_1.4bpp");
+static const u8 sFlygonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_19.4bpp.lz");
+static const u8 sFlygonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_19_1.4bpp.lz");
 static const ax_sprite sFlygonSprites19[] = {
 	{sFlygonGfx19, ARRAY_COUNT(sFlygonGfx19)}, 
 	{NULL, 32}, 
@@ -2480,23 +2480,23 @@ static const ax_sprite sFlygonSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx20[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_20.4bpp");
+static const u8 sFlygonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_20.4bpp.lz");
 static const ax_sprite sFlygonSprites20[] = {
 	{sFlygonGfx20, ARRAY_COUNT(sFlygonGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx21[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_21.4bpp");
+static const u8 sFlygonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_21.4bpp.lz");
 static const ax_sprite sFlygonSprites21[] = {
 	{sFlygonGfx21, ARRAY_COUNT(sFlygonGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx22[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_22.4bpp");
+static const u8 sFlygonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_22.4bpp.lz");
 static const ax_sprite sFlygonSprites22[] = {
 	{sFlygonGfx22, ARRAY_COUNT(sFlygonGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx23[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_23.4bpp");
-static const u8 sFlygonGfx23_1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_23_1.4bpp");
+static const u8 sFlygonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_23.4bpp.lz");
+static const u8 sFlygonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_23_1.4bpp.lz");
 static const ax_sprite sFlygonSprites23[] = {
 	{sFlygonGfx23, ARRAY_COUNT(sFlygonGfx23)}, 
 	{NULL, 32}, 
@@ -2504,191 +2504,191 @@ static const ax_sprite sFlygonSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx24[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_24.4bpp");
+static const u8 sFlygonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_24.4bpp.lz");
 static const ax_sprite sFlygonSprites24[] = {
 	{sFlygonGfx24, ARRAY_COUNT(sFlygonGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx25[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_25.4bpp");
+static const u8 sFlygonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_25.4bpp.lz");
 static const ax_sprite sFlygonSprites25[] = {
 	{sFlygonGfx25, ARRAY_COUNT(sFlygonGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx26[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_26.4bpp");
+static const u8 sFlygonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_26.4bpp.lz");
 static const ax_sprite sFlygonSprites26[] = {
 	{sFlygonGfx26, ARRAY_COUNT(sFlygonGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx27[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_27.4bpp");
+static const u8 sFlygonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_27.4bpp.lz");
 static const ax_sprite sFlygonSprites27[] = {
 	{NULL, 128}, 
 	{sFlygonGfx27, ARRAY_COUNT(sFlygonGfx27)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx28[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_28.4bpp");
+static const u8 sFlygonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_28.4bpp.lz");
 static const ax_sprite sFlygonSprites28[] = {
 	{NULL, 128}, 
 	{sFlygonGfx28, ARRAY_COUNT(sFlygonGfx28)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx29[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_29.4bpp");
+static const u8 sFlygonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_29.4bpp.lz");
 static const ax_sprite sFlygonSprites29[] = {
 	{sFlygonGfx29, ARRAY_COUNT(sFlygonGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx30[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_30.4bpp");
+static const u8 sFlygonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_30.4bpp.lz");
 static const ax_sprite sFlygonSprites30[] = {
 	{NULL, 32}, 
 	{sFlygonGfx30, ARRAY_COUNT(sFlygonGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx31[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_31.4bpp");
+static const u8 sFlygonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_31.4bpp.lz");
 static const ax_sprite sFlygonSprites31[] = {
 	{sFlygonGfx31, ARRAY_COUNT(sFlygonGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx32[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_32.4bpp");
+static const u8 sFlygonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_32.4bpp.lz");
 static const ax_sprite sFlygonSprites32[] = {
 	{sFlygonGfx32, ARRAY_COUNT(sFlygonGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx33[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_33.4bpp");
+static const u8 sFlygonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_33.4bpp.lz");
 static const ax_sprite sFlygonSprites33[] = {
 	{sFlygonGfx33, ARRAY_COUNT(sFlygonGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx34[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_34.4bpp");
+static const u8 sFlygonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_34.4bpp.lz");
 static const ax_sprite sFlygonSprites34[] = {
 	{NULL, 32}, 
 	{sFlygonGfx34, ARRAY_COUNT(sFlygonGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx35[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_35.4bpp");
+static const u8 sFlygonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_35.4bpp.lz");
 static const ax_sprite sFlygonSprites35[] = {
 	{sFlygonGfx35, ARRAY_COUNT(sFlygonGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx36[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_36.4bpp");
+static const u8 sFlygonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_36.4bpp.lz");
 static const ax_sprite sFlygonSprites36[] = {
 	{sFlygonGfx36, ARRAY_COUNT(sFlygonGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx37[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_37.4bpp");
+static const u8 sFlygonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_37.4bpp.lz");
 static const ax_sprite sFlygonSprites37[] = {
 	{sFlygonGfx37, ARRAY_COUNT(sFlygonGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx38[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_38.4bpp");
+static const u8 sFlygonGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_38.4bpp.lz");
 static const ax_sprite sFlygonSprites38[] = {
 	{sFlygonGfx38, ARRAY_COUNT(sFlygonGfx38)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx39[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_39.4bpp");
+static const u8 sFlygonGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_39.4bpp.lz");
 static const ax_sprite sFlygonSprites39[] = {
 	{sFlygonGfx39, ARRAY_COUNT(sFlygonGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx40[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_40.4bpp");
+static const u8 sFlygonGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_40.4bpp.lz");
 static const ax_sprite sFlygonSprites40[] = {
 	{sFlygonGfx40, ARRAY_COUNT(sFlygonGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx41[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_41.4bpp");
+static const u8 sFlygonGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_41.4bpp.lz");
 static const ax_sprite sFlygonSprites41[] = {
 	{sFlygonGfx41, ARRAY_COUNT(sFlygonGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx42[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_42.4bpp");
+static const u8 sFlygonGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_42.4bpp.lz");
 static const ax_sprite sFlygonSprites42[] = {
 	{sFlygonGfx42, ARRAY_COUNT(sFlygonGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx43[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_43.4bpp");
+static const u8 sFlygonGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_43.4bpp.lz");
 static const ax_sprite sFlygonSprites43[] = {
 	{sFlygonGfx43, ARRAY_COUNT(sFlygonGfx43)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx44[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_44.4bpp");
+static const u8 sFlygonGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_44.4bpp.lz");
 static const ax_sprite sFlygonSprites44[] = {
 	{sFlygonGfx44, ARRAY_COUNT(sFlygonGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx45[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_45.4bpp");
+static const u8 sFlygonGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_45.4bpp.lz");
 static const ax_sprite sFlygonSprites45[] = {
 	{sFlygonGfx45, ARRAY_COUNT(sFlygonGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx46[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_46.4bpp");
+static const u8 sFlygonGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_46.4bpp.lz");
 static const ax_sprite sFlygonSprites46[] = {
 	{sFlygonGfx46, ARRAY_COUNT(sFlygonGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx47[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_47.4bpp");
+static const u8 sFlygonGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_47.4bpp.lz");
 static const ax_sprite sFlygonSprites47[] = {
 	{sFlygonGfx47, ARRAY_COUNT(sFlygonGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx48[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_48.4bpp");
+static const u8 sFlygonGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_48.4bpp.lz");
 static const ax_sprite sFlygonSprites48[] = {
 	{sFlygonGfx48, ARRAY_COUNT(sFlygonGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx49[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_49.4bpp");
+static const u8 sFlygonGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_49.4bpp.lz");
 static const ax_sprite sFlygonSprites49[] = {
 	{sFlygonGfx49, ARRAY_COUNT(sFlygonGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx50[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_50.4bpp");
+static const u8 sFlygonGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_50.4bpp.lz");
 static const ax_sprite sFlygonSprites50[] = {
 	{sFlygonGfx50, ARRAY_COUNT(sFlygonGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx51[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_51.4bpp");
+static const u8 sFlygonGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_51.4bpp.lz");
 static const ax_sprite sFlygonSprites51[] = {
 	{sFlygonGfx51, ARRAY_COUNT(sFlygonGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx52[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_52.4bpp");
+static const u8 sFlygonGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_52.4bpp.lz");
 static const ax_sprite sFlygonSprites52[] = {
 	{sFlygonGfx52, ARRAY_COUNT(sFlygonGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx53[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_53.4bpp");
+static const u8 sFlygonGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_53.4bpp.lz");
 static const ax_sprite sFlygonSprites53[] = {
 	{sFlygonGfx53, ARRAY_COUNT(sFlygonGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx54[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_54.4bpp");
+static const u8 sFlygonGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_54.4bpp.lz");
 static const ax_sprite sFlygonSprites54[] = {
 	{sFlygonGfx54, ARRAY_COUNT(sFlygonGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx55[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_55.4bpp");
+static const u8 sFlygonGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_55.4bpp.lz");
 static const ax_sprite sFlygonSprites55[] = {
 	{sFlygonGfx55, ARRAY_COUNT(sFlygonGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx56[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_56.4bpp");
+static const u8 sFlygonGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_56.4bpp.lz");
 static const ax_sprite sFlygonSprites56[] = {
 	{sFlygonGfx56, ARRAY_COUNT(sFlygonGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx57[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_57.4bpp");
+static const u8 sFlygonGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_57.4bpp.lz");
 static const ax_sprite sFlygonSprites57[] = {
 	{sFlygonGfx57, ARRAY_COUNT(sFlygonGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx58[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_58.4bpp");
+static const u8 sFlygonGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_58.4bpp.lz");
 static const ax_sprite sFlygonSprites58[] = {
 	{sFlygonGfx58, ARRAY_COUNT(sFlygonGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx59[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_59.4bpp");
-static const u8 sFlygonGfx59_1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_59_1.4bpp");
+static const u8 sFlygonGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_59.4bpp.lz");
+static const u8 sFlygonGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_59_1.4bpp.lz");
 static const ax_sprite sFlygonSprites59[] = {
 	{NULL, 64}, 
 	{sFlygonGfx59, ARRAY_COUNT(sFlygonGfx59)}, 
@@ -2696,8 +2696,8 @@ static const ax_sprite sFlygonSprites59[] = {
 	{sFlygonGfx59_1, ARRAY_COUNT(sFlygonGfx59_1)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx60[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_60.4bpp");
-static const u8 sFlygonGfx60_1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_60_1.4bpp");
+static const u8 sFlygonGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_60.4bpp.lz");
+static const u8 sFlygonGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_60_1.4bpp.lz");
 static const ax_sprite sFlygonSprites60[] = {
 	{NULL, 64}, 
 	{sFlygonGfx60, ARRAY_COUNT(sFlygonGfx60)}, 
@@ -2705,34 +2705,34 @@ static const ax_sprite sFlygonSprites60[] = {
 	{sFlygonGfx60_1, ARRAY_COUNT(sFlygonGfx60_1)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx61[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_61.4bpp");
-static const u8 sFlygonGfx61_1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_61_1.4bpp");
+static const u8 sFlygonGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_61.4bpp.lz");
+static const u8 sFlygonGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_61_1.4bpp.lz");
 static const ax_sprite sFlygonSprites61[] = {
 	{sFlygonGfx61, ARRAY_COUNT(sFlygonGfx61)}, 
 	{NULL, 32}, 
 	{sFlygonGfx61_1, ARRAY_COUNT(sFlygonGfx61_1)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx62[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_62.4bpp");
+static const u8 sFlygonGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_62.4bpp.lz");
 static const ax_sprite sFlygonSprites62[] = {
 	{NULL, 32}, 
 	{sFlygonGfx62, ARRAY_COUNT(sFlygonGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx63[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_63.4bpp");
+static const u8 sFlygonGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_63.4bpp.lz");
 static const ax_sprite sFlygonSprites63[] = {
 	{NULL, 64}, 
 	{sFlygonGfx63, ARRAY_COUNT(sFlygonGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx64[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_64.4bpp");
+static const u8 sFlygonGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_64.4bpp.lz");
 static const ax_sprite sFlygonSprites64[] = {
 	{NULL, 32}, 
 	{sFlygonGfx64, ARRAY_COUNT(sFlygonGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx65[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_65.4bpp");
-static const u8 sFlygonGfx65_1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_65_1.4bpp");
+static const u8 sFlygonGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_65.4bpp.lz");
+static const u8 sFlygonGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_65_1.4bpp.lz");
 static const ax_sprite sFlygonSprites65[] = {
 	{NULL, 32}, 
 	{sFlygonGfx65, ARRAY_COUNT(sFlygonGfx65)}, 
@@ -2740,14 +2740,14 @@ static const ax_sprite sFlygonSprites65[] = {
 	{sFlygonGfx65_1, ARRAY_COUNT(sFlygonGfx65_1)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx66[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_66.4bpp");
+static const u8 sFlygonGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_66.4bpp.lz");
 static const ax_sprite sFlygonSprites66[] = {
 	{sFlygonGfx66, ARRAY_COUNT(sFlygonGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx67[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_67.4bpp");
-static const u8 sFlygonGfx67_1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_67_1.4bpp");
-static const u8 sFlygonGfx67_2[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_67_2.4bpp");
+static const u8 sFlygonGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_67.4bpp.lz");
+static const u8 sFlygonGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_67_1.4bpp.lz");
+static const u8 sFlygonGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_67_2.4bpp.lz");
 static const ax_sprite sFlygonSprites67[] = {
 	{NULL, 32}, 
 	{sFlygonGfx67, ARRAY_COUNT(sFlygonGfx67)}, 
@@ -2758,9 +2758,9 @@ static const ax_sprite sFlygonSprites67[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx68[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_68.4bpp");
-static const u8 sFlygonGfx68_1[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_68_1.4bpp");
-static const u8 sFlygonGfx68_2[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_68_2.4bpp");
+static const u8 sFlygonGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_68.4bpp.lz");
+static const u8 sFlygonGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_68_1.4bpp.lz");
+static const u8 sFlygonGfx68_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_68_2.4bpp.lz");
 static const ax_sprite sFlygonSprites68[] = {
 	{NULL, 32}, 
 	{sFlygonGfx68, ARRAY_COUNT(sFlygonGfx68)}, 
@@ -2770,37 +2770,37 @@ static const ax_sprite sFlygonSprites68[] = {
 	{sFlygonGfx68_2, ARRAY_COUNT(sFlygonGfx68_2)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx69[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_69.4bpp");
+static const u8 sFlygonGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_69.4bpp.lz");
 static const ax_sprite sFlygonSprites69[] = {
 	{sFlygonGfx69, ARRAY_COUNT(sFlygonGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx70[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_70.4bpp");
+static const u8 sFlygonGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_70.4bpp.lz");
 static const ax_sprite sFlygonSprites70[] = {
 	{sFlygonGfx70, ARRAY_COUNT(sFlygonGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx71[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_71.4bpp");
+static const u8 sFlygonGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_71.4bpp.lz");
 static const ax_sprite sFlygonSprites71[] = {
 	{sFlygonGfx71, ARRAY_COUNT(sFlygonGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx72[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_72.4bpp");
+static const u8 sFlygonGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_72.4bpp.lz");
 static const ax_sprite sFlygonSprites72[] = {
 	{sFlygonGfx72, ARRAY_COUNT(sFlygonGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx73[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_73.4bpp");
+static const u8 sFlygonGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_73.4bpp.lz");
 static const ax_sprite sFlygonSprites73[] = {
 	{sFlygonGfx73, ARRAY_COUNT(sFlygonGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx74[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_74.4bpp");
+static const u8 sFlygonGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_74.4bpp.lz");
 static const ax_sprite sFlygonSprites74[] = {
 	{sFlygonGfx74, ARRAY_COUNT(sFlygonGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sFlygonGfx75[] = INCBIN_U8("graphics/ax/mon/flygon/sprite_75.4bpp");
+static const u8 sFlygonGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/flygon/sprite_75.4bpp.lz");
 static const ax_sprite sFlygonSprites75[] = {
 	{sFlygonGfx75, ARRAY_COUNT(sFlygonGfx75)}, 
 	{NULL, 0}

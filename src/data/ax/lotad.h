@@ -2159,83 +2159,83 @@ static const ax_anim sLotadAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLotadGfx1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_1.4bpp");
+static const u8 sLotadGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_1.4bpp.lz");
 static const ax_sprite sLotadSprites1[] = {
 	{sLotadGfx1, ARRAY_COUNT(sLotadGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_2.4bpp");
+static const u8 sLotadGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_2.4bpp.lz");
 static const ax_sprite sLotadSprites2[] = {
 	{sLotadGfx2, ARRAY_COUNT(sLotadGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx3[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_3.4bpp");
+static const u8 sLotadGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_3.4bpp.lz");
 static const ax_sprite sLotadSprites3[] = {
 	{sLotadGfx3, ARRAY_COUNT(sLotadGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx4[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_4.4bpp");
+static const u8 sLotadGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_4.4bpp.lz");
 static const ax_sprite sLotadSprites4[] = {
 	{sLotadGfx4, ARRAY_COUNT(sLotadGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx5[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_5.4bpp");
+static const u8 sLotadGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_5.4bpp.lz");
 static const ax_sprite sLotadSprites5[] = {
 	{sLotadGfx5, ARRAY_COUNT(sLotadGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx6[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_6.4bpp");
+static const u8 sLotadGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_6.4bpp.lz");
 static const ax_sprite sLotadSprites6[] = {
 	{sLotadGfx6, ARRAY_COUNT(sLotadGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx7[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_7.4bpp");
+static const u8 sLotadGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_7.4bpp.lz");
 static const ax_sprite sLotadSprites7[] = {
 	{sLotadGfx7, ARRAY_COUNT(sLotadGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx8[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_8.4bpp");
+static const u8 sLotadGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_8.4bpp.lz");
 static const ax_sprite sLotadSprites8[] = {
 	{sLotadGfx8, ARRAY_COUNT(sLotadGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx9[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_9.4bpp");
+static const u8 sLotadGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_9.4bpp.lz");
 static const ax_sprite sLotadSprites9[] = {
 	{sLotadGfx9, ARRAY_COUNT(sLotadGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx10[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_10.4bpp");
+static const u8 sLotadGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_10.4bpp.lz");
 static const ax_sprite sLotadSprites10[] = {
 	{sLotadGfx10, ARRAY_COUNT(sLotadGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx11[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_11.4bpp");
+static const u8 sLotadGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_11.4bpp.lz");
 static const ax_sprite sLotadSprites11[] = {
 	{sLotadGfx11, ARRAY_COUNT(sLotadGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx12[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_12.4bpp");
+static const u8 sLotadGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_12.4bpp.lz");
 static const ax_sprite sLotadSprites12[] = {
 	{sLotadGfx12, ARRAY_COUNT(sLotadGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx13[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_13.4bpp");
+static const u8 sLotadGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_13.4bpp.lz");
 static const ax_sprite sLotadSprites13[] = {
 	{sLotadGfx13, ARRAY_COUNT(sLotadGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx14[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_14.4bpp");
+static const u8 sLotadGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_14.4bpp.lz");
 static const ax_sprite sLotadSprites14[] = {
 	{sLotadGfx14, ARRAY_COUNT(sLotadGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx15[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_15.4bpp");
+static const u8 sLotadGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_15.4bpp.lz");
 static const ax_sprite sLotadSprites15[] = {
 	{sLotadGfx15, ARRAY_COUNT(sLotadGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx16[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_16.4bpp");
-static const u8 sLotadGfx16_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_16_1.4bpp");
+static const u8 sLotadGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_16.4bpp.lz");
+static const u8 sLotadGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_16_1.4bpp.lz");
 static const ax_sprite sLotadSprites16[] = {
 	{sLotadGfx16, ARRAY_COUNT(sLotadGfx16)}, 
 	{NULL, 32}, 
@@ -2243,8 +2243,8 @@ static const ax_sprite sLotadSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx17[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_17.4bpp");
-static const u8 sLotadGfx17_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_17_1.4bpp");
+static const u8 sLotadGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_17.4bpp.lz");
+static const u8 sLotadGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_17_1.4bpp.lz");
 static const ax_sprite sLotadSprites17[] = {
 	{sLotadGfx17, ARRAY_COUNT(sLotadGfx17)}, 
 	{NULL, 32}, 
@@ -2252,8 +2252,8 @@ static const ax_sprite sLotadSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx18[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_18.4bpp");
-static const u8 sLotadGfx18_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_18_1.4bpp");
+static const u8 sLotadGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_18.4bpp.lz");
+static const u8 sLotadGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_18_1.4bpp.lz");
 static const ax_sprite sLotadSprites18[] = {
 	{sLotadGfx18, ARRAY_COUNT(sLotadGfx18)}, 
 	{NULL, 32}, 
@@ -2261,8 +2261,8 @@ static const ax_sprite sLotadSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx19[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_19.4bpp");
-static const u8 sLotadGfx19_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_19_1.4bpp");
+static const u8 sLotadGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_19.4bpp.lz");
+static const u8 sLotadGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_19_1.4bpp.lz");
 static const ax_sprite sLotadSprites19[] = {
 	{sLotadGfx19, ARRAY_COUNT(sLotadGfx19)}, 
 	{NULL, 32}, 
@@ -2270,9 +2270,9 @@ static const ax_sprite sLotadSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx20[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_20.4bpp");
-static const u8 sLotadGfx20_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_20_1.4bpp");
-static const u8 sLotadGfx20_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_20_2.4bpp");
+static const u8 sLotadGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_20.4bpp.lz");
+static const u8 sLotadGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_20_1.4bpp.lz");
+static const u8 sLotadGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_20_2.4bpp.lz");
 static const ax_sprite sLotadSprites20[] = {
 	{sLotadGfx20, ARRAY_COUNT(sLotadGfx20)}, 
 	{NULL, 32}, 
@@ -2282,9 +2282,9 @@ static const ax_sprite sLotadSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx21[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_21.4bpp");
-static const u8 sLotadGfx21_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_21_1.4bpp");
-static const u8 sLotadGfx21_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_21_2.4bpp");
+static const u8 sLotadGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_21.4bpp.lz");
+static const u8 sLotadGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_21_1.4bpp.lz");
+static const u8 sLotadGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_21_2.4bpp.lz");
 static const ax_sprite sLotadSprites21[] = {
 	{sLotadGfx21, ARRAY_COUNT(sLotadGfx21)}, 
 	{NULL, 32}, 
@@ -2294,15 +2294,15 @@ static const ax_sprite sLotadSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx22[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_22.4bpp");
+static const u8 sLotadGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_22.4bpp.lz");
 static const ax_sprite sLotadSprites22[] = {
 	{sLotadGfx22, ARRAY_COUNT(sLotadGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx23[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_23.4bpp");
-static const u8 sLotadGfx23_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_23_1.4bpp");
-static const u8 sLotadGfx23_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_23_2.4bpp");
+static const u8 sLotadGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_23.4bpp.lz");
+static const u8 sLotadGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_23_1.4bpp.lz");
+static const u8 sLotadGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_23_2.4bpp.lz");
 static const ax_sprite sLotadSprites23[] = {
 	{sLotadGfx23, ARRAY_COUNT(sLotadGfx23)}, 
 	{NULL, 32}, 
@@ -2312,9 +2312,9 @@ static const ax_sprite sLotadSprites23[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx24[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_24.4bpp");
-static const u8 sLotadGfx24_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_24_1.4bpp");
-static const u8 sLotadGfx24_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_24_2.4bpp");
+static const u8 sLotadGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_24.4bpp.lz");
+static const u8 sLotadGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_24_1.4bpp.lz");
+static const u8 sLotadGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_24_2.4bpp.lz");
 static const ax_sprite sLotadSprites24[] = {
 	{sLotadGfx24, ARRAY_COUNT(sLotadGfx24)}, 
 	{NULL, 32}, 
@@ -2324,9 +2324,9 @@ static const ax_sprite sLotadSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx25[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_25.4bpp");
-static const u8 sLotadGfx25_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_25_1.4bpp");
-static const u8 sLotadGfx25_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_25_2.4bpp");
+static const u8 sLotadGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_25.4bpp.lz");
+static const u8 sLotadGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_25_1.4bpp.lz");
+static const u8 sLotadGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_25_2.4bpp.lz");
 static const ax_sprite sLotadSprites25[] = {
 	{sLotadGfx25, ARRAY_COUNT(sLotadGfx25)}, 
 	{NULL, 32}, 
@@ -2336,9 +2336,9 @@ static const ax_sprite sLotadSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx26[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_26.4bpp");
-static const u8 sLotadGfx26_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_26_1.4bpp");
-static const u8 sLotadGfx26_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_26_2.4bpp");
+static const u8 sLotadGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_26.4bpp.lz");
+static const u8 sLotadGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_26_1.4bpp.lz");
+static const u8 sLotadGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_26_2.4bpp.lz");
 static const ax_sprite sLotadSprites26[] = {
 	{sLotadGfx26, ARRAY_COUNT(sLotadGfx26)}, 
 	{NULL, 32}, 
@@ -2348,9 +2348,9 @@ static const ax_sprite sLotadSprites26[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx27[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_27.4bpp");
-static const u8 sLotadGfx27_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_27_1.4bpp");
-static const u8 sLotadGfx27_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_27_2.4bpp");
+static const u8 sLotadGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_27.4bpp.lz");
+static const u8 sLotadGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_27_1.4bpp.lz");
+static const u8 sLotadGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_27_2.4bpp.lz");
 static const ax_sprite sLotadSprites27[] = {
 	{sLotadGfx27, ARRAY_COUNT(sLotadGfx27)}, 
 	{NULL, 32}, 
@@ -2360,9 +2360,9 @@ static const ax_sprite sLotadSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx28[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_28.4bpp");
-static const u8 sLotadGfx28_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_28_1.4bpp");
-static const u8 sLotadGfx28_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_28_2.4bpp");
+static const u8 sLotadGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_28.4bpp.lz");
+static const u8 sLotadGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_28_1.4bpp.lz");
+static const u8 sLotadGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_28_2.4bpp.lz");
 static const ax_sprite sLotadSprites28[] = {
 	{sLotadGfx28, ARRAY_COUNT(sLotadGfx28)}, 
 	{NULL, 32}, 
@@ -2372,9 +2372,9 @@ static const ax_sprite sLotadSprites28[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx29[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_29.4bpp");
-static const u8 sLotadGfx29_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_29_1.4bpp");
-static const u8 sLotadGfx29_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_29_2.4bpp");
+static const u8 sLotadGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_29.4bpp.lz");
+static const u8 sLotadGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_29_1.4bpp.lz");
+static const u8 sLotadGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_29_2.4bpp.lz");
 static const ax_sprite sLotadSprites29[] = {
 	{sLotadGfx29, ARRAY_COUNT(sLotadGfx29)}, 
 	{NULL, 32}, 
@@ -2384,9 +2384,9 @@ static const ax_sprite sLotadSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx30[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_30.4bpp");
-static const u8 sLotadGfx30_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_30_1.4bpp");
-static const u8 sLotadGfx30_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_30_2.4bpp");
+static const u8 sLotadGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_30.4bpp.lz");
+static const u8 sLotadGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_30_1.4bpp.lz");
+static const u8 sLotadGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_30_2.4bpp.lz");
 static const ax_sprite sLotadSprites30[] = {
 	{sLotadGfx30, ARRAY_COUNT(sLotadGfx30)}, 
 	{NULL, 32}, 
@@ -2396,9 +2396,9 @@ static const ax_sprite sLotadSprites30[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx31[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_31.4bpp");
-static const u8 sLotadGfx31_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_31_1.4bpp");
-static const u8 sLotadGfx31_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_31_2.4bpp");
+static const u8 sLotadGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_31.4bpp.lz");
+static const u8 sLotadGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_31_1.4bpp.lz");
+static const u8 sLotadGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_31_2.4bpp.lz");
 static const ax_sprite sLotadSprites31[] = {
 	{sLotadGfx31, ARRAY_COUNT(sLotadGfx31)}, 
 	{NULL, 32}, 
@@ -2408,15 +2408,15 @@ static const ax_sprite sLotadSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx32[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_32.4bpp");
+static const u8 sLotadGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_32.4bpp.lz");
 static const ax_sprite sLotadSprites32[] = {
 	{sLotadGfx32, ARRAY_COUNT(sLotadGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx33[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_33.4bpp");
-static const u8 sLotadGfx33_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_33_1.4bpp");
-static const u8 sLotadGfx33_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_33_2.4bpp");
+static const u8 sLotadGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_33.4bpp.lz");
+static const u8 sLotadGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_33_1.4bpp.lz");
+static const u8 sLotadGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_33_2.4bpp.lz");
 static const ax_sprite sLotadSprites33[] = {
 	{sLotadGfx33, ARRAY_COUNT(sLotadGfx33)}, 
 	{NULL, 32}, 
@@ -2426,9 +2426,9 @@ static const ax_sprite sLotadSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx34[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_34.4bpp");
-static const u8 sLotadGfx34_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_34_1.4bpp");
-static const u8 sLotadGfx34_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_34_2.4bpp");
+static const u8 sLotadGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_34.4bpp.lz");
+static const u8 sLotadGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_34_1.4bpp.lz");
+static const u8 sLotadGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_34_2.4bpp.lz");
 static const ax_sprite sLotadSprites34[] = {
 	{sLotadGfx34, ARRAY_COUNT(sLotadGfx34)}, 
 	{NULL, 32}, 
@@ -2438,9 +2438,9 @@ static const ax_sprite sLotadSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx35[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_35.4bpp");
-static const u8 sLotadGfx35_1[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_35_1.4bpp");
-static const u8 sLotadGfx35_2[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_35_2.4bpp");
+static const u8 sLotadGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_35.4bpp.lz");
+static const u8 sLotadGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_35_1.4bpp.lz");
+static const u8 sLotadGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_35_2.4bpp.lz");
 static const ax_sprite sLotadSprites35[] = {
 	{sLotadGfx35, ARRAY_COUNT(sLotadGfx35)}, 
 	{NULL, 32}, 
@@ -2450,37 +2450,37 @@ static const ax_sprite sLotadSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx36[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_36.4bpp");
+static const u8 sLotadGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_36.4bpp.lz");
 static const ax_sprite sLotadSprites36[] = {
 	{sLotadGfx36, ARRAY_COUNT(sLotadGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx37[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_37.4bpp");
+static const u8 sLotadGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_37.4bpp.lz");
 static const ax_sprite sLotadSprites37[] = {
 	{sLotadGfx37, ARRAY_COUNT(sLotadGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx38[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_38.4bpp");
+static const u8 sLotadGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_38.4bpp.lz");
 static const ax_sprite sLotadSprites38[] = {
 	{sLotadGfx38, ARRAY_COUNT(sLotadGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx39[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_39.4bpp");
+static const u8 sLotadGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_39.4bpp.lz");
 static const ax_sprite sLotadSprites39[] = {
 	{sLotadGfx39, ARRAY_COUNT(sLotadGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx40[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_40.4bpp");
+static const u8 sLotadGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_40.4bpp.lz");
 static const ax_sprite sLotadSprites40[] = {
 	{sLotadGfx40, ARRAY_COUNT(sLotadGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx41[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_41.4bpp");
+static const u8 sLotadGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_41.4bpp.lz");
 static const ax_sprite sLotadSprites41[] = {
 	{sLotadGfx41, ARRAY_COUNT(sLotadGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sLotadGfx42[] = INCBIN_U8("graphics/ax/mon/lotad/sprite_42.4bpp");
+static const u8 sLotadGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lotad/sprite_42.4bpp.lz");
 static const ax_sprite sLotadSprites42[] = {
 	{sLotadGfx42, ARRAY_COUNT(sLotadGfx42)}, 
 	{NULL, 0}

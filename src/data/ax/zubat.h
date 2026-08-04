@@ -2127,112 +2127,112 @@ static const ax_anim sZubatAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sZubatGfx1[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_1.4bpp");
+static const u8 sZubatGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_1.4bpp.lz");
 static const ax_sprite sZubatSprites1[] = {
 	{sZubatGfx1, ARRAY_COUNT(sZubatGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx2[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_2.4bpp");
+static const u8 sZubatGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_2.4bpp.lz");
 static const ax_sprite sZubatSprites2[] = {
 	{sZubatGfx2, ARRAY_COUNT(sZubatGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx3[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_3.4bpp");
+static const u8 sZubatGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_3.4bpp.lz");
 static const ax_sprite sZubatSprites3[] = {
 	{sZubatGfx3, ARRAY_COUNT(sZubatGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx4[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_4.4bpp");
+static const u8 sZubatGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_4.4bpp.lz");
 static const ax_sprite sZubatSprites4[] = {
 	{sZubatGfx4, ARRAY_COUNT(sZubatGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx5[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_5.4bpp");
+static const u8 sZubatGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_5.4bpp.lz");
 static const ax_sprite sZubatSprites5[] = {
 	{sZubatGfx5, ARRAY_COUNT(sZubatGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx6[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_6.4bpp");
+static const u8 sZubatGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_6.4bpp.lz");
 static const ax_sprite sZubatSprites6[] = {
 	{sZubatGfx6, ARRAY_COUNT(sZubatGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx7[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_7.4bpp");
+static const u8 sZubatGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_7.4bpp.lz");
 static const ax_sprite sZubatSprites7[] = {
 	{sZubatGfx7, ARRAY_COUNT(sZubatGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx8[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_8.4bpp");
+static const u8 sZubatGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_8.4bpp.lz");
 static const ax_sprite sZubatSprites8[] = {
 	{sZubatGfx8, ARRAY_COUNT(sZubatGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx9[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_9.4bpp");
+static const u8 sZubatGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_9.4bpp.lz");
 static const ax_sprite sZubatSprites9[] = {
 	{sZubatGfx9, ARRAY_COUNT(sZubatGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx10[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_10.4bpp");
+static const u8 sZubatGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_10.4bpp.lz");
 static const ax_sprite sZubatSprites10[] = {
 	{sZubatGfx10, ARRAY_COUNT(sZubatGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx11[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_11.4bpp");
+static const u8 sZubatGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_11.4bpp.lz");
 static const ax_sprite sZubatSprites11[] = {
 	{sZubatGfx11, ARRAY_COUNT(sZubatGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx12[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_12.4bpp");
+static const u8 sZubatGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_12.4bpp.lz");
 static const ax_sprite sZubatSprites12[] = {
 	{sZubatGfx12, ARRAY_COUNT(sZubatGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx13[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_13.4bpp");
+static const u8 sZubatGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_13.4bpp.lz");
 static const ax_sprite sZubatSprites13[] = {
 	{sZubatGfx13, ARRAY_COUNT(sZubatGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx14[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_14.4bpp");
+static const u8 sZubatGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_14.4bpp.lz");
 static const ax_sprite sZubatSprites14[] = {
 	{sZubatGfx14, ARRAY_COUNT(sZubatGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx15[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_15.4bpp");
+static const u8 sZubatGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_15.4bpp.lz");
 static const ax_sprite sZubatSprites15[] = {
 	{sZubatGfx15, ARRAY_COUNT(sZubatGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx16[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_16.4bpp");
+static const u8 sZubatGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_16.4bpp.lz");
 static const ax_sprite sZubatSprites16[] = {
 	{sZubatGfx16, ARRAY_COUNT(sZubatGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx17[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_17.4bpp");
+static const u8 sZubatGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_17.4bpp.lz");
 static const ax_sprite sZubatSprites17[] = {
 	{sZubatGfx17, ARRAY_COUNT(sZubatGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx18[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_18.4bpp");
+static const u8 sZubatGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_18.4bpp.lz");
 static const ax_sprite sZubatSprites18[] = {
 	{sZubatGfx18, ARRAY_COUNT(sZubatGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx19[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_19.4bpp");
+static const u8 sZubatGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_19.4bpp.lz");
 static const ax_sprite sZubatSprites19[] = {
 	{sZubatGfx19, ARRAY_COUNT(sZubatGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx20[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_20.4bpp");
+static const u8 sZubatGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_20.4bpp.lz");
 static const ax_sprite sZubatSprites20[] = {
 	{sZubatGfx20, ARRAY_COUNT(sZubatGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx21[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_21.4bpp");
+static const u8 sZubatGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_21.4bpp.lz");
 static const ax_sprite sZubatSprites21[] = {
 	{sZubatGfx21, ARRAY_COUNT(sZubatGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sZubatGfx22[] = INCBIN_U8("graphics/ax/mon/zubat/sprite_22.4bpp");
+static const u8 sZubatGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zubat/sprite_22.4bpp.lz");
 static const ax_sprite sZubatSprites22[] = {
 	{sZubatGfx22, ARRAY_COUNT(sZubatGfx22)}, 
 	{NULL, 0}

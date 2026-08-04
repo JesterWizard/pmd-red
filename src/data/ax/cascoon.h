@@ -1671,49 +1671,49 @@ static const ax_anim sCascoonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCascoonGfx1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_1.4bpp");
+static const u8 sCascoonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_1.4bpp.lz");
 static const ax_sprite sCascoonSprites1[] = {
 	{sCascoonGfx1, ARRAY_COUNT(sCascoonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_2.4bpp");
+static const u8 sCascoonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_2.4bpp.lz");
 static const ax_sprite sCascoonSprites2[] = {
 	{sCascoonGfx2, ARRAY_COUNT(sCascoonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx3[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_3.4bpp");
+static const u8 sCascoonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_3.4bpp.lz");
 static const ax_sprite sCascoonSprites3[] = {
 	{sCascoonGfx3, ARRAY_COUNT(sCascoonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx4[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_4.4bpp");
+static const u8 sCascoonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_4.4bpp.lz");
 static const ax_sprite sCascoonSprites4[] = {
 	{sCascoonGfx4, ARRAY_COUNT(sCascoonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx5[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_5.4bpp");
+static const u8 sCascoonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_5.4bpp.lz");
 static const ax_sprite sCascoonSprites5[] = {
 	{sCascoonGfx5, ARRAY_COUNT(sCascoonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx6[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_6.4bpp");
+static const u8 sCascoonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_6.4bpp.lz");
 static const ax_sprite sCascoonSprites6[] = {
 	{sCascoonGfx6, ARRAY_COUNT(sCascoonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx7[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_7.4bpp");
+static const u8 sCascoonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_7.4bpp.lz");
 static const ax_sprite sCascoonSprites7[] = {
 	{sCascoonGfx7, ARRAY_COUNT(sCascoonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx8[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_8.4bpp");
+static const u8 sCascoonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_8.4bpp.lz");
 static const ax_sprite sCascoonSprites8[] = {
 	{sCascoonGfx8, ARRAY_COUNT(sCascoonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx9[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_9.4bpp");
-static const u8 sCascoonGfx9_1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_9_1.4bpp");
-static const u8 sCascoonGfx9_2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_9_2.4bpp");
+static const u8 sCascoonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_9.4bpp.lz");
+static const u8 sCascoonGfx9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_9_1.4bpp.lz");
+static const u8 sCascoonGfx9_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_9_2.4bpp.lz");
 static const ax_sprite sCascoonSprites9[] = {
 	{sCascoonGfx9, ARRAY_COUNT(sCascoonGfx9)}, 
 	{NULL, 32}, 
@@ -1723,10 +1723,10 @@ static const ax_sprite sCascoonSprites9[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx10[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_10.4bpp");
-static const u8 sCascoonGfx10_1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_10_1.4bpp");
-static const u8 sCascoonGfx10_2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_10_2.4bpp");
-static const u8 sCascoonGfx10_3[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_10_3.4bpp");
+static const u8 sCascoonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_10.4bpp.lz");
+static const u8 sCascoonGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_10_1.4bpp.lz");
+static const u8 sCascoonGfx10_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_10_2.4bpp.lz");
+static const u8 sCascoonGfx10_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_10_3.4bpp.lz");
 static const ax_sprite sCascoonSprites10[] = {
 	{sCascoonGfx10, ARRAY_COUNT(sCascoonGfx10)}, 
 	{NULL, 32}, 
@@ -1738,10 +1738,10 @@ static const ax_sprite sCascoonSprites10[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx11[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_11.4bpp");
-static const u8 sCascoonGfx11_1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_11_1.4bpp");
-static const u8 sCascoonGfx11_2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_11_2.4bpp");
-static const u8 sCascoonGfx11_3[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_11_3.4bpp");
+static const u8 sCascoonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_11.4bpp.lz");
+static const u8 sCascoonGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_11_1.4bpp.lz");
+static const u8 sCascoonGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_11_2.4bpp.lz");
+static const u8 sCascoonGfx11_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_11_3.4bpp.lz");
 static const ax_sprite sCascoonSprites11[] = {
 	{NULL, 32}, 
 	{sCascoonGfx11, ARRAY_COUNT(sCascoonGfx11)}, 
@@ -1754,10 +1754,10 @@ static const ax_sprite sCascoonSprites11[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx12[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_12.4bpp");
-static const u8 sCascoonGfx12_1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_12_1.4bpp");
-static const u8 sCascoonGfx12_2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_12_2.4bpp");
-static const u8 sCascoonGfx12_3[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_12_3.4bpp");
+static const u8 sCascoonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_12.4bpp.lz");
+static const u8 sCascoonGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_12_1.4bpp.lz");
+static const u8 sCascoonGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_12_2.4bpp.lz");
+static const u8 sCascoonGfx12_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_12_3.4bpp.lz");
 static const ax_sprite sCascoonSprites12[] = {
 	{sCascoonGfx12, ARRAY_COUNT(sCascoonGfx12)}, 
 	{NULL, 32}, 
@@ -1769,9 +1769,9 @@ static const ax_sprite sCascoonSprites12[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx13[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_13.4bpp");
-static const u8 sCascoonGfx13_1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_13_1.4bpp");
-static const u8 sCascoonGfx13_2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_13_2.4bpp");
+static const u8 sCascoonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_13.4bpp.lz");
+static const u8 sCascoonGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_13_1.4bpp.lz");
+static const u8 sCascoonGfx13_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_13_2.4bpp.lz");
 static const ax_sprite sCascoonSprites13[] = {
 	{sCascoonGfx13, ARRAY_COUNT(sCascoonGfx13)}, 
 	{NULL, 32}, 
@@ -1781,9 +1781,9 @@ static const ax_sprite sCascoonSprites13[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx14[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_14.4bpp");
-static const u8 sCascoonGfx14_1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_14_1.4bpp");
-static const u8 sCascoonGfx14_2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_14_2.4bpp");
+static const u8 sCascoonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_14.4bpp.lz");
+static const u8 sCascoonGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_14_1.4bpp.lz");
+static const u8 sCascoonGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_14_2.4bpp.lz");
 static const ax_sprite sCascoonSprites14[] = {
 	{NULL, 32}, 
 	{sCascoonGfx14, ARRAY_COUNT(sCascoonGfx14)}, 
@@ -1794,10 +1794,10 @@ static const ax_sprite sCascoonSprites14[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx15[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_15.4bpp");
-static const u8 sCascoonGfx15_1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_15_1.4bpp");
-static const u8 sCascoonGfx15_2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_15_2.4bpp");
-static const u8 sCascoonGfx15_3[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_15_3.4bpp");
+static const u8 sCascoonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_15.4bpp.lz");
+static const u8 sCascoonGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_15_1.4bpp.lz");
+static const u8 sCascoonGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_15_2.4bpp.lz");
+static const u8 sCascoonGfx15_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_15_3.4bpp.lz");
 static const ax_sprite sCascoonSprites15[] = {
 	{sCascoonGfx15, ARRAY_COUNT(sCascoonGfx15)}, 
 	{NULL, 32}, 
@@ -1809,9 +1809,9 @@ static const ax_sprite sCascoonSprites15[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx16[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_16.4bpp");
-static const u8 sCascoonGfx16_1[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_16_1.4bpp");
-static const u8 sCascoonGfx16_2[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_16_2.4bpp");
+static const u8 sCascoonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_16.4bpp.lz");
+static const u8 sCascoonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_16_1.4bpp.lz");
+static const u8 sCascoonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_16_2.4bpp.lz");
 static const ax_sprite sCascoonSprites16[] = {
 	{sCascoonGfx16, ARRAY_COUNT(sCascoonGfx16)}, 
 	{NULL, 32}, 
@@ -1821,37 +1821,37 @@ static const ax_sprite sCascoonSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx17[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_17.4bpp");
+static const u8 sCascoonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_17.4bpp.lz");
 static const ax_sprite sCascoonSprites17[] = {
 	{sCascoonGfx17, ARRAY_COUNT(sCascoonGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx18[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_18.4bpp");
+static const u8 sCascoonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_18.4bpp.lz");
 static const ax_sprite sCascoonSprites18[] = {
 	{sCascoonGfx18, ARRAY_COUNT(sCascoonGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx19[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_19.4bpp");
+static const u8 sCascoonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_19.4bpp.lz");
 static const ax_sprite sCascoonSprites19[] = {
 	{sCascoonGfx19, ARRAY_COUNT(sCascoonGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx20[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_20.4bpp");
+static const u8 sCascoonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_20.4bpp.lz");
 static const ax_sprite sCascoonSprites20[] = {
 	{sCascoonGfx20, ARRAY_COUNT(sCascoonGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx21[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_21.4bpp");
+static const u8 sCascoonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_21.4bpp.lz");
 static const ax_sprite sCascoonSprites21[] = {
 	{sCascoonGfx21, ARRAY_COUNT(sCascoonGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx22[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_22.4bpp");
+static const u8 sCascoonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_22.4bpp.lz");
 static const ax_sprite sCascoonSprites22[] = {
 	{sCascoonGfx22, ARRAY_COUNT(sCascoonGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sCascoonGfx23[] = INCBIN_U8("graphics/ax/mon/cascoon/sprite_23.4bpp");
+static const u8 sCascoonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cascoon/sprite_23.4bpp.lz");
 static const ax_sprite sCascoonSprites23[] = {
 	{sCascoonGfx23, ARRAY_COUNT(sCascoonGfx23)}, 
 	{NULL, 0}

@@ -2323,89 +2323,89 @@ static const ax_anim sBeedrillAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBeedrillGfx1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_1.4bpp");
+static const u8 sBeedrillGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_1.4bpp.lz");
 static const ax_sprite sBeedrillSprites1[] = {
 	{sBeedrillGfx1, ARRAY_COUNT(sBeedrillGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_2.4bpp");
+static const u8 sBeedrillGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites2[] = {
 	{sBeedrillGfx2, ARRAY_COUNT(sBeedrillGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx3[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_3.4bpp");
+static const u8 sBeedrillGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_3.4bpp.lz");
 static const ax_sprite sBeedrillSprites3[] = {
 	{sBeedrillGfx3, ARRAY_COUNT(sBeedrillGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx4[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_4.4bpp");
+static const u8 sBeedrillGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_4.4bpp.lz");
 static const ax_sprite sBeedrillSprites4[] = {
 	{sBeedrillGfx4, ARRAY_COUNT(sBeedrillGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx5[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_5.4bpp");
+static const u8 sBeedrillGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_5.4bpp.lz");
 static const ax_sprite sBeedrillSprites5[] = {
 	{sBeedrillGfx5, ARRAY_COUNT(sBeedrillGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx6[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_6.4bpp");
+static const u8 sBeedrillGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_6.4bpp.lz");
 static const ax_sprite sBeedrillSprites6[] = {
 	{sBeedrillGfx6, ARRAY_COUNT(sBeedrillGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx7[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_7.4bpp");
+static const u8 sBeedrillGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_7.4bpp.lz");
 static const ax_sprite sBeedrillSprites7[] = {
 	{sBeedrillGfx7, ARRAY_COUNT(sBeedrillGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx8[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_8.4bpp");
+static const u8 sBeedrillGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_8.4bpp.lz");
 static const ax_sprite sBeedrillSprites8[] = {
 	{sBeedrillGfx8, ARRAY_COUNT(sBeedrillGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx9[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_9.4bpp");
+static const u8 sBeedrillGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_9.4bpp.lz");
 static const ax_sprite sBeedrillSprites9[] = {
 	{sBeedrillGfx9, ARRAY_COUNT(sBeedrillGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx10[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_10.4bpp");
+static const u8 sBeedrillGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_10.4bpp.lz");
 static const ax_sprite sBeedrillSprites10[] = {
 	{sBeedrillGfx10, ARRAY_COUNT(sBeedrillGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx11[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_11.4bpp");
+static const u8 sBeedrillGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_11.4bpp.lz");
 static const ax_sprite sBeedrillSprites11[] = {
 	{sBeedrillGfx11, ARRAY_COUNT(sBeedrillGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx12[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_12.4bpp");
+static const u8 sBeedrillGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_12.4bpp.lz");
 static const ax_sprite sBeedrillSprites12[] = {
 	{sBeedrillGfx12, ARRAY_COUNT(sBeedrillGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx13[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_13.4bpp");
+static const u8 sBeedrillGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_13.4bpp.lz");
 static const ax_sprite sBeedrillSprites13[] = {
 	{sBeedrillGfx13, ARRAY_COUNT(sBeedrillGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx14[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_14.4bpp");
+static const u8 sBeedrillGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_14.4bpp.lz");
 static const ax_sprite sBeedrillSprites14[] = {
 	{sBeedrillGfx14, ARRAY_COUNT(sBeedrillGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx15[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_15.4bpp");
+static const u8 sBeedrillGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_15.4bpp.lz");
 static const ax_sprite sBeedrillSprites15[] = {
 	{sBeedrillGfx15, ARRAY_COUNT(sBeedrillGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx16[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_16.4bpp");
+static const u8 sBeedrillGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_16.4bpp.lz");
 static const ax_sprite sBeedrillSprites16[] = {
 	{sBeedrillGfx16, ARRAY_COUNT(sBeedrillGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx17[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_17.4bpp");
-static const u8 sBeedrillGfx17_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_17_1.4bpp");
-static const u8 sBeedrillGfx17_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_17_2.4bpp");
+static const u8 sBeedrillGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_17.4bpp.lz");
+static const u8 sBeedrillGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_17_1.4bpp.lz");
+static const u8 sBeedrillGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_17_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites17[] = {
 	{sBeedrillGfx17, ARRAY_COUNT(sBeedrillGfx17)}, 
 	{NULL, 64}, 
@@ -2414,10 +2414,10 @@ static const ax_sprite sBeedrillSprites17[] = {
 	{sBeedrillGfx17_2, ARRAY_COUNT(sBeedrillGfx17_2)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx18[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_18.4bpp");
-static const u8 sBeedrillGfx18_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_18_1.4bpp");
-static const u8 sBeedrillGfx18_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_18_2.4bpp");
-static const u8 sBeedrillGfx18_3[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_18_3.4bpp");
+static const u8 sBeedrillGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_18.4bpp.lz");
+static const u8 sBeedrillGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_18_1.4bpp.lz");
+static const u8 sBeedrillGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_18_2.4bpp.lz");
+static const u8 sBeedrillGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_18_3.4bpp.lz");
 static const ax_sprite sBeedrillSprites18[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx18, ARRAY_COUNT(sBeedrillGfx18)}, 
@@ -2430,10 +2430,10 @@ static const ax_sprite sBeedrillSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx19[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_19.4bpp");
-static const u8 sBeedrillGfx19_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_19_1.4bpp");
-static const u8 sBeedrillGfx19_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_19_2.4bpp");
-static const u8 sBeedrillGfx19_3[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_19_3.4bpp");
+static const u8 sBeedrillGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_19.4bpp.lz");
+static const u8 sBeedrillGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_19_1.4bpp.lz");
+static const u8 sBeedrillGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_19_2.4bpp.lz");
+static const u8 sBeedrillGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_19_3.4bpp.lz");
 static const ax_sprite sBeedrillSprites19[] = {
 	{sBeedrillGfx19, ARRAY_COUNT(sBeedrillGfx19)}, 
 	{NULL, 32}, 
@@ -2445,9 +2445,9 @@ static const ax_sprite sBeedrillSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx20[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_20.4bpp");
-static const u8 sBeedrillGfx20_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_20_1.4bpp");
-static const u8 sBeedrillGfx20_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_20_2.4bpp");
+static const u8 sBeedrillGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_20.4bpp.lz");
+static const u8 sBeedrillGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_20_1.4bpp.lz");
+static const u8 sBeedrillGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_20_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites20[] = {
 	{sBeedrillGfx20, ARRAY_COUNT(sBeedrillGfx20)}, 
 	{NULL, 32}, 
@@ -2457,10 +2457,10 @@ static const ax_sprite sBeedrillSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx21[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_21.4bpp");
-static const u8 sBeedrillGfx21_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_21_1.4bpp");
-static const u8 sBeedrillGfx21_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_21_2.4bpp");
-static const u8 sBeedrillGfx21_3[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_21_3.4bpp");
+static const u8 sBeedrillGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_21.4bpp.lz");
+static const u8 sBeedrillGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_21_1.4bpp.lz");
+static const u8 sBeedrillGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_21_2.4bpp.lz");
+static const u8 sBeedrillGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_21_3.4bpp.lz");
 static const ax_sprite sBeedrillSprites21[] = {
 	{sBeedrillGfx21, ARRAY_COUNT(sBeedrillGfx21)}, 
 	{NULL, 96}, 
@@ -2472,9 +2472,9 @@ static const ax_sprite sBeedrillSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx22[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_22.4bpp");
-static const u8 sBeedrillGfx22_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_22_1.4bpp");
-static const u8 sBeedrillGfx22_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_22_2.4bpp");
+static const u8 sBeedrillGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_22.4bpp.lz");
+static const u8 sBeedrillGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_22_1.4bpp.lz");
+static const u8 sBeedrillGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_22_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites22[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx22, ARRAY_COUNT(sBeedrillGfx22)}, 
@@ -2484,9 +2484,9 @@ static const ax_sprite sBeedrillSprites22[] = {
 	{sBeedrillGfx22_2, ARRAY_COUNT(sBeedrillGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx23[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_23.4bpp");
-static const u8 sBeedrillGfx23_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_23_1.4bpp");
-static const u8 sBeedrillGfx23_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_23_2.4bpp");
+static const u8 sBeedrillGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_23.4bpp.lz");
+static const u8 sBeedrillGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_23_1.4bpp.lz");
+static const u8 sBeedrillGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_23_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites23[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx23, ARRAY_COUNT(sBeedrillGfx23)}, 
@@ -2496,10 +2496,10 @@ static const ax_sprite sBeedrillSprites23[] = {
 	{sBeedrillGfx23_2, ARRAY_COUNT(sBeedrillGfx23_2)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx24[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_24.4bpp");
-static const u8 sBeedrillGfx24_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_24_1.4bpp");
-static const u8 sBeedrillGfx24_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_24_2.4bpp");
-static const u8 sBeedrillGfx24_3[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_24_3.4bpp");
+static const u8 sBeedrillGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_24.4bpp.lz");
+static const u8 sBeedrillGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_24_1.4bpp.lz");
+static const u8 sBeedrillGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_24_2.4bpp.lz");
+static const u8 sBeedrillGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_24_3.4bpp.lz");
 static const ax_sprite sBeedrillSprites24[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx24, ARRAY_COUNT(sBeedrillGfx24)}, 
@@ -2512,9 +2512,9 @@ static const ax_sprite sBeedrillSprites24[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx25[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_25.4bpp");
-static const u8 sBeedrillGfx25_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_25_1.4bpp");
-static const u8 sBeedrillGfx25_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_25_2.4bpp");
+static const u8 sBeedrillGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_25.4bpp.lz");
+static const u8 sBeedrillGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_25_1.4bpp.lz");
+static const u8 sBeedrillGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_25_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites25[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx25, ARRAY_COUNT(sBeedrillGfx25)}, 
@@ -2524,15 +2524,15 @@ static const ax_sprite sBeedrillSprites25[] = {
 	{sBeedrillGfx25_2, ARRAY_COUNT(sBeedrillGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx26[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_26.4bpp");
+static const u8 sBeedrillGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_26.4bpp.lz");
 static const ax_sprite sBeedrillSprites26[] = {
 	{NULL, 224}, 
 	{sBeedrillGfx26, ARRAY_COUNT(sBeedrillGfx26)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx27[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_27.4bpp");
-static const u8 sBeedrillGfx27_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_27_1.4bpp");
+static const u8 sBeedrillGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_27.4bpp.lz");
+static const u8 sBeedrillGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_27_1.4bpp.lz");
 static const ax_sprite sBeedrillSprites27[] = {
 	{sBeedrillGfx27, ARRAY_COUNT(sBeedrillGfx27)}, 
 	{NULL, 32}, 
@@ -2540,9 +2540,9 @@ static const ax_sprite sBeedrillSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx28[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_28.4bpp");
-static const u8 sBeedrillGfx28_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_28_1.4bpp");
-static const u8 sBeedrillGfx28_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_28_2.4bpp");
+static const u8 sBeedrillGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_28.4bpp.lz");
+static const u8 sBeedrillGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_28_1.4bpp.lz");
+static const u8 sBeedrillGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_28_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites28[] = {
 	{NULL, 64}, 
 	{sBeedrillGfx28, ARRAY_COUNT(sBeedrillGfx28)}, 
@@ -2553,20 +2553,20 @@ static const ax_sprite sBeedrillSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx29[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_29.4bpp");
+static const u8 sBeedrillGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_29.4bpp.lz");
 static const ax_sprite sBeedrillSprites29[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx29, ARRAY_COUNT(sBeedrillGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx30[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_30.4bpp");
+static const u8 sBeedrillGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_30.4bpp.lz");
 static const ax_sprite sBeedrillSprites30[] = {
 	{sBeedrillGfx30, ARRAY_COUNT(sBeedrillGfx30)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx31[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_31.4bpp");
-static const u8 sBeedrillGfx31_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_31_1.4bpp");
+static const u8 sBeedrillGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_31.4bpp.lz");
+static const u8 sBeedrillGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_31_1.4bpp.lz");
 static const ax_sprite sBeedrillSprites31[] = {
 	{NULL, 64}, 
 	{sBeedrillGfx31, ARRAY_COUNT(sBeedrillGfx31)}, 
@@ -2574,8 +2574,8 @@ static const ax_sprite sBeedrillSprites31[] = {
 	{sBeedrillGfx31_1, ARRAY_COUNT(sBeedrillGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx32[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_32.4bpp");
-static const u8 sBeedrillGfx32_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_32_1.4bpp");
+static const u8 sBeedrillGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_32.4bpp.lz");
+static const u8 sBeedrillGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_32_1.4bpp.lz");
 static const ax_sprite sBeedrillSprites32[] = {
 	{sBeedrillGfx32, ARRAY_COUNT(sBeedrillGfx32)}, 
 	{NULL, 32}, 
@@ -2583,9 +2583,9 @@ static const ax_sprite sBeedrillSprites32[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx33[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_33.4bpp");
-static const u8 sBeedrillGfx33_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_33_1.4bpp");
-static const u8 sBeedrillGfx33_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_33_2.4bpp");
+static const u8 sBeedrillGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_33.4bpp.lz");
+static const u8 sBeedrillGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_33_1.4bpp.lz");
+static const u8 sBeedrillGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_33_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites33[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx33, ARRAY_COUNT(sBeedrillGfx33)}, 
@@ -2595,8 +2595,8 @@ static const ax_sprite sBeedrillSprites33[] = {
 	{sBeedrillGfx33_2, ARRAY_COUNT(sBeedrillGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx34[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_34.4bpp");
-static const u8 sBeedrillGfx34_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_34_1.4bpp");
+static const u8 sBeedrillGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_34.4bpp.lz");
+static const u8 sBeedrillGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_34_1.4bpp.lz");
 static const ax_sprite sBeedrillSprites34[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx34, ARRAY_COUNT(sBeedrillGfx34)}, 
@@ -2604,10 +2604,10 @@ static const ax_sprite sBeedrillSprites34[] = {
 	{sBeedrillGfx34_1, ARRAY_COUNT(sBeedrillGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx35[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_35.4bpp");
-static const u8 sBeedrillGfx35_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_35_1.4bpp");
-static const u8 sBeedrillGfx35_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_35_2.4bpp");
-static const u8 sBeedrillGfx35_3[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_35_3.4bpp");
+static const u8 sBeedrillGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_35.4bpp.lz");
+static const u8 sBeedrillGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_35_1.4bpp.lz");
+static const u8 sBeedrillGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_35_2.4bpp.lz");
+static const u8 sBeedrillGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_35_3.4bpp.lz");
 static const ax_sprite sBeedrillSprites35[] = {
 	{NULL, 32}, 
 	{sBeedrillGfx35, ARRAY_COUNT(sBeedrillGfx35)}, 
@@ -2619,9 +2619,9 @@ static const ax_sprite sBeedrillSprites35[] = {
 	{sBeedrillGfx35_3, ARRAY_COUNT(sBeedrillGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx36[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_36.4bpp");
-static const u8 sBeedrillGfx36_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_36_1.4bpp");
-static const u8 sBeedrillGfx36_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_36_2.4bpp");
+static const u8 sBeedrillGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_36.4bpp.lz");
+static const u8 sBeedrillGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_36_1.4bpp.lz");
+static const u8 sBeedrillGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_36_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites36[] = {
 	{sBeedrillGfx36, ARRAY_COUNT(sBeedrillGfx36)}, 
 	{NULL, 32}, 
@@ -2631,9 +2631,9 @@ static const ax_sprite sBeedrillSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx37[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_37.4bpp");
-static const u8 sBeedrillGfx37_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_37_1.4bpp");
-static const u8 sBeedrillGfx37_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_37_2.4bpp");
+static const u8 sBeedrillGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_37.4bpp.lz");
+static const u8 sBeedrillGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_37_1.4bpp.lz");
+static const u8 sBeedrillGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_37_2.4bpp.lz");
 static const ax_sprite sBeedrillSprites37[] = {
 	{sBeedrillGfx37, ARRAY_COUNT(sBeedrillGfx37)}, 
 	{NULL, 32}, 
@@ -2643,10 +2643,10 @@ static const ax_sprite sBeedrillSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx38[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_38.4bpp");
-static const u8 sBeedrillGfx38_1[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_38_1.4bpp");
-static const u8 sBeedrillGfx38_2[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_38_2.4bpp");
-static const u8 sBeedrillGfx38_3[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_38_3.4bpp");
+static const u8 sBeedrillGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_38.4bpp.lz");
+static const u8 sBeedrillGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_38_1.4bpp.lz");
+static const u8 sBeedrillGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_38_2.4bpp.lz");
+static const u8 sBeedrillGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_38_3.4bpp.lz");
 static const ax_sprite sBeedrillSprites38[] = {
 	{sBeedrillGfx38, ARRAY_COUNT(sBeedrillGfx38)}, 
 	{NULL, 32}, 
@@ -2657,37 +2657,37 @@ static const ax_sprite sBeedrillSprites38[] = {
 	{sBeedrillGfx38_3, ARRAY_COUNT(sBeedrillGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx39[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_39.4bpp");
+static const u8 sBeedrillGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_39.4bpp.lz");
 static const ax_sprite sBeedrillSprites39[] = {
 	{sBeedrillGfx39, ARRAY_COUNT(sBeedrillGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx40[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_40.4bpp");
+static const u8 sBeedrillGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_40.4bpp.lz");
 static const ax_sprite sBeedrillSprites40[] = {
 	{sBeedrillGfx40, ARRAY_COUNT(sBeedrillGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx41[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_41.4bpp");
+static const u8 sBeedrillGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_41.4bpp.lz");
 static const ax_sprite sBeedrillSprites41[] = {
 	{sBeedrillGfx41, ARRAY_COUNT(sBeedrillGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx42[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_42.4bpp");
+static const u8 sBeedrillGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_42.4bpp.lz");
 static const ax_sprite sBeedrillSprites42[] = {
 	{sBeedrillGfx42, ARRAY_COUNT(sBeedrillGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx43[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_43.4bpp");
+static const u8 sBeedrillGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_43.4bpp.lz");
 static const ax_sprite sBeedrillSprites43[] = {
 	{sBeedrillGfx43, ARRAY_COUNT(sBeedrillGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx44[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_44.4bpp");
+static const u8 sBeedrillGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_44.4bpp.lz");
 static const ax_sprite sBeedrillSprites44[] = {
 	{sBeedrillGfx44, ARRAY_COUNT(sBeedrillGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sBeedrillGfx45[] = INCBIN_U8("graphics/ax/mon/beedrill/sprite_45.4bpp");
+static const u8 sBeedrillGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beedrill/sprite_45.4bpp.lz");
 static const ax_sprite sBeedrillSprites45[] = {
 	{sBeedrillGfx45, ARRAY_COUNT(sBeedrillGfx45)}, 
 	{NULL, 0}

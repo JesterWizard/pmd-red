@@ -3048,84 +3048,84 @@ static const ax_anim sEeveeAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sEeveeGfx1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_1.4bpp");
+static const u8 sEeveeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_1.4bpp.lz");
 static const ax_sprite sEeveeSprites1[] = {
 	{sEeveeGfx1, ARRAY_COUNT(sEeveeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_2.4bpp");
+static const u8 sEeveeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_2.4bpp.lz");
 static const ax_sprite sEeveeSprites2[] = {
 	{sEeveeGfx2, ARRAY_COUNT(sEeveeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx3[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_3.4bpp");
+static const u8 sEeveeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_3.4bpp.lz");
 static const ax_sprite sEeveeSprites3[] = {
 	{sEeveeGfx3, ARRAY_COUNT(sEeveeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx4[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_4.4bpp");
+static const u8 sEeveeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_4.4bpp.lz");
 static const ax_sprite sEeveeSprites4[] = {
 	{sEeveeGfx4, ARRAY_COUNT(sEeveeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx5[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_5.4bpp");
+static const u8 sEeveeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_5.4bpp.lz");
 static const ax_sprite sEeveeSprites5[] = {
 	{sEeveeGfx5, ARRAY_COUNT(sEeveeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx6[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_6.4bpp");
+static const u8 sEeveeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_6.4bpp.lz");
 static const ax_sprite sEeveeSprites6[] = {
 	{sEeveeGfx6, ARRAY_COUNT(sEeveeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx7[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_7.4bpp");
+static const u8 sEeveeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_7.4bpp.lz");
 static const ax_sprite sEeveeSprites7[] = {
 	{sEeveeGfx7, ARRAY_COUNT(sEeveeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx8[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_8.4bpp");
+static const u8 sEeveeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_8.4bpp.lz");
 static const ax_sprite sEeveeSprites8[] = {
 	{sEeveeGfx8, ARRAY_COUNT(sEeveeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx9[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_9.4bpp");
+static const u8 sEeveeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_9.4bpp.lz");
 static const ax_sprite sEeveeSprites9[] = {
 	{sEeveeGfx9, ARRAY_COUNT(sEeveeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx10[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_10.4bpp");
+static const u8 sEeveeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_10.4bpp.lz");
 static const ax_sprite sEeveeSprites10[] = {
 	{sEeveeGfx10, ARRAY_COUNT(sEeveeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx11[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_11.4bpp");
+static const u8 sEeveeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_11.4bpp.lz");
 static const ax_sprite sEeveeSprites11[] = {
 	{sEeveeGfx11, ARRAY_COUNT(sEeveeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx12[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_12.4bpp");
+static const u8 sEeveeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_12.4bpp.lz");
 static const ax_sprite sEeveeSprites12[] = {
 	{sEeveeGfx12, ARRAY_COUNT(sEeveeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx13[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_13.4bpp");
+static const u8 sEeveeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_13.4bpp.lz");
 static const ax_sprite sEeveeSprites13[] = {
 	{sEeveeGfx13, ARRAY_COUNT(sEeveeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx14[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_14.4bpp");
+static const u8 sEeveeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_14.4bpp.lz");
 static const ax_sprite sEeveeSprites14[] = {
 	{sEeveeGfx14, ARRAY_COUNT(sEeveeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx15[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_15.4bpp");
+static const u8 sEeveeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_15.4bpp.lz");
 static const ax_sprite sEeveeSprites15[] = {
 	{sEeveeGfx15, ARRAY_COUNT(sEeveeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx16[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_16.4bpp");
-static const u8 sEeveeGfx16_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_16_1.4bpp");
-static const u8 sEeveeGfx16_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_16_2.4bpp");
+static const u8 sEeveeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_16.4bpp.lz");
+static const u8 sEeveeGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_16_1.4bpp.lz");
+static const u8 sEeveeGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_16_2.4bpp.lz");
 static const ax_sprite sEeveeSprites16[] = {
 	{sEeveeGfx16, ARRAY_COUNT(sEeveeGfx16)}, 
 	{NULL, 32}, 
@@ -3135,9 +3135,9 @@ static const ax_sprite sEeveeSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx17[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_17.4bpp");
-static const u8 sEeveeGfx17_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_17_1.4bpp");
-static const u8 sEeveeGfx17_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_17_2.4bpp");
+static const u8 sEeveeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_17.4bpp.lz");
+static const u8 sEeveeGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_17_1.4bpp.lz");
+static const u8 sEeveeGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_17_2.4bpp.lz");
 static const ax_sprite sEeveeSprites17[] = {
 	{sEeveeGfx17, ARRAY_COUNT(sEeveeGfx17)}, 
 	{NULL, 32}, 
@@ -3147,9 +3147,9 @@ static const ax_sprite sEeveeSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx18[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_18.4bpp");
-static const u8 sEeveeGfx18_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_18_1.4bpp");
-static const u8 sEeveeGfx18_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_18_2.4bpp");
+static const u8 sEeveeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_18.4bpp.lz");
+static const u8 sEeveeGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_18_1.4bpp.lz");
+static const u8 sEeveeGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_18_2.4bpp.lz");
 static const ax_sprite sEeveeSprites18[] = {
 	{NULL, 32}, 
 	{sEeveeGfx18, ARRAY_COUNT(sEeveeGfx18)}, 
@@ -3160,9 +3160,9 @@ static const ax_sprite sEeveeSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx19[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_19.4bpp");
-static const u8 sEeveeGfx19_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_19_1.4bpp");
-static const u8 sEeveeGfx19_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_19_2.4bpp");
+static const u8 sEeveeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_19.4bpp.lz");
+static const u8 sEeveeGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_19_1.4bpp.lz");
+static const u8 sEeveeGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_19_2.4bpp.lz");
 static const ax_sprite sEeveeSprites19[] = {
 	{sEeveeGfx19, ARRAY_COUNT(sEeveeGfx19)}, 
 	{NULL, 32}, 
@@ -3172,9 +3172,9 @@ static const ax_sprite sEeveeSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx20[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_20.4bpp");
-static const u8 sEeveeGfx20_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_20_1.4bpp");
-static const u8 sEeveeGfx20_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_20_2.4bpp");
+static const u8 sEeveeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_20.4bpp.lz");
+static const u8 sEeveeGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_20_1.4bpp.lz");
+static const u8 sEeveeGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_20_2.4bpp.lz");
 static const ax_sprite sEeveeSprites20[] = {
 	{sEeveeGfx20, ARRAY_COUNT(sEeveeGfx20)}, 
 	{NULL, 32}, 
@@ -3184,9 +3184,9 @@ static const ax_sprite sEeveeSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx21[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_21.4bpp");
-static const u8 sEeveeGfx21_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_21_1.4bpp");
-static const u8 sEeveeGfx21_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_21_2.4bpp");
+static const u8 sEeveeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_21.4bpp.lz");
+static const u8 sEeveeGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_21_1.4bpp.lz");
+static const u8 sEeveeGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_21_2.4bpp.lz");
 static const ax_sprite sEeveeSprites21[] = {
 	{sEeveeGfx21, ARRAY_COUNT(sEeveeGfx21)}, 
 	{NULL, 32}, 
@@ -3196,9 +3196,9 @@ static const ax_sprite sEeveeSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx22[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_22.4bpp");
-static const u8 sEeveeGfx22_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_22_1.4bpp");
-static const u8 sEeveeGfx22_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_22_2.4bpp");
+static const u8 sEeveeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_22.4bpp.lz");
+static const u8 sEeveeGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_22_1.4bpp.lz");
+static const u8 sEeveeGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_22_2.4bpp.lz");
 static const ax_sprite sEeveeSprites22[] = {
 	{sEeveeGfx22, ARRAY_COUNT(sEeveeGfx22)}, 
 	{NULL, 32}, 
@@ -3208,9 +3208,9 @@ static const ax_sprite sEeveeSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx23[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_23.4bpp");
-static const u8 sEeveeGfx23_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_23_1.4bpp");
-static const u8 sEeveeGfx23_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_23_2.4bpp");
+static const u8 sEeveeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_23.4bpp.lz");
+static const u8 sEeveeGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_23_1.4bpp.lz");
+static const u8 sEeveeGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_23_2.4bpp.lz");
 static const ax_sprite sEeveeSprites23[] = {
 	{sEeveeGfx23, ARRAY_COUNT(sEeveeGfx23)}, 
 	{NULL, 32}, 
@@ -3220,9 +3220,9 @@ static const ax_sprite sEeveeSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx24[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_24.4bpp");
-static const u8 sEeveeGfx24_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_24_1.4bpp");
-static const u8 sEeveeGfx24_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_24_2.4bpp");
+static const u8 sEeveeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_24.4bpp.lz");
+static const u8 sEeveeGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_24_1.4bpp.lz");
+static const u8 sEeveeGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_24_2.4bpp.lz");
 static const ax_sprite sEeveeSprites24[] = {
 	{sEeveeGfx24, ARRAY_COUNT(sEeveeGfx24)}, 
 	{NULL, 32}, 
@@ -3232,9 +3232,9 @@ static const ax_sprite sEeveeSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx25[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_25.4bpp");
-static const u8 sEeveeGfx25_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_25_1.4bpp");
-static const u8 sEeveeGfx25_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_25_2.4bpp");
+static const u8 sEeveeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_25.4bpp.lz");
+static const u8 sEeveeGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_25_1.4bpp.lz");
+static const u8 sEeveeGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_25_2.4bpp.lz");
 static const ax_sprite sEeveeSprites25[] = {
 	{sEeveeGfx25, ARRAY_COUNT(sEeveeGfx25)}, 
 	{NULL, 32}, 
@@ -3244,9 +3244,9 @@ static const ax_sprite sEeveeSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx26[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_26.4bpp");
-static const u8 sEeveeGfx26_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_26_1.4bpp");
-static const u8 sEeveeGfx26_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_26_2.4bpp");
+static const u8 sEeveeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_26.4bpp.lz");
+static const u8 sEeveeGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_26_1.4bpp.lz");
+static const u8 sEeveeGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_26_2.4bpp.lz");
 static const ax_sprite sEeveeSprites26[] = {
 	{sEeveeGfx26, ARRAY_COUNT(sEeveeGfx26)}, 
 	{NULL, 32}, 
@@ -3256,9 +3256,9 @@ static const ax_sprite sEeveeSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx27[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_27.4bpp");
-static const u8 sEeveeGfx27_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_27_1.4bpp");
-static const u8 sEeveeGfx27_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_27_2.4bpp");
+static const u8 sEeveeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_27.4bpp.lz");
+static const u8 sEeveeGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_27_1.4bpp.lz");
+static const u8 sEeveeGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_27_2.4bpp.lz");
 static const ax_sprite sEeveeSprites27[] = {
 	{sEeveeGfx27, ARRAY_COUNT(sEeveeGfx27)}, 
 	{NULL, 32}, 
@@ -3268,9 +3268,9 @@ static const ax_sprite sEeveeSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx28[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_28.4bpp");
-static const u8 sEeveeGfx28_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_28_1.4bpp");
-static const u8 sEeveeGfx28_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_28_2.4bpp");
+static const u8 sEeveeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_28.4bpp.lz");
+static const u8 sEeveeGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_28_1.4bpp.lz");
+static const u8 sEeveeGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_28_2.4bpp.lz");
 static const ax_sprite sEeveeSprites28[] = {
 	{sEeveeGfx28, ARRAY_COUNT(sEeveeGfx28)}, 
 	{NULL, 32}, 
@@ -3280,9 +3280,9 @@ static const ax_sprite sEeveeSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx29[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_29.4bpp");
-static const u8 sEeveeGfx29_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_29_1.4bpp");
-static const u8 sEeveeGfx29_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_29_2.4bpp");
+static const u8 sEeveeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_29.4bpp.lz");
+static const u8 sEeveeGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_29_1.4bpp.lz");
+static const u8 sEeveeGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_29_2.4bpp.lz");
 static const ax_sprite sEeveeSprites29[] = {
 	{sEeveeGfx29, ARRAY_COUNT(sEeveeGfx29)}, 
 	{NULL, 32}, 
@@ -3292,9 +3292,9 @@ static const ax_sprite sEeveeSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx30[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_30.4bpp");
-static const u8 sEeveeGfx30_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_30_1.4bpp");
-static const u8 sEeveeGfx30_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_30_2.4bpp");
+static const u8 sEeveeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_30.4bpp.lz");
+static const u8 sEeveeGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_30_1.4bpp.lz");
+static const u8 sEeveeGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_30_2.4bpp.lz");
 static const ax_sprite sEeveeSprites30[] = {
 	{NULL, 32}, 
 	{sEeveeGfx30, ARRAY_COUNT(sEeveeGfx30)}, 
@@ -3305,9 +3305,9 @@ static const ax_sprite sEeveeSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx31[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_31.4bpp");
-static const u8 sEeveeGfx31_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_31_1.4bpp");
-static const u8 sEeveeGfx31_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_31_2.4bpp");
+static const u8 sEeveeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_31.4bpp.lz");
+static const u8 sEeveeGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_31_1.4bpp.lz");
+static const u8 sEeveeGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_31_2.4bpp.lz");
 static const ax_sprite sEeveeSprites31[] = {
 	{NULL, 32}, 
 	{sEeveeGfx31, ARRAY_COUNT(sEeveeGfx31)}, 
@@ -3318,9 +3318,9 @@ static const ax_sprite sEeveeSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx32[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_32.4bpp");
-static const u8 sEeveeGfx32_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_32_1.4bpp");
-static const u8 sEeveeGfx32_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_32_2.4bpp");
+static const u8 sEeveeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_32.4bpp.lz");
+static const u8 sEeveeGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_32_1.4bpp.lz");
+static const u8 sEeveeGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_32_2.4bpp.lz");
 static const ax_sprite sEeveeSprites32[] = {
 	{sEeveeGfx32, ARRAY_COUNT(sEeveeGfx32)}, 
 	{NULL, 32}, 
@@ -3330,9 +3330,9 @@ static const ax_sprite sEeveeSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx33[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_33.4bpp");
-static const u8 sEeveeGfx33_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_33_1.4bpp");
-static const u8 sEeveeGfx33_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_33_2.4bpp");
+static const u8 sEeveeGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_33.4bpp.lz");
+static const u8 sEeveeGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_33_1.4bpp.lz");
+static const u8 sEeveeGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_33_2.4bpp.lz");
 static const ax_sprite sEeveeSprites33[] = {
 	{sEeveeGfx33, ARRAY_COUNT(sEeveeGfx33)}, 
 	{NULL, 32}, 
@@ -3342,9 +3342,9 @@ static const ax_sprite sEeveeSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx34[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_34.4bpp");
-static const u8 sEeveeGfx34_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_34_1.4bpp");
-static const u8 sEeveeGfx34_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_34_2.4bpp");
+static const u8 sEeveeGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_34.4bpp.lz");
+static const u8 sEeveeGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_34_1.4bpp.lz");
+static const u8 sEeveeGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_34_2.4bpp.lz");
 static const ax_sprite sEeveeSprites34[] = {
 	{sEeveeGfx34, ARRAY_COUNT(sEeveeGfx34)}, 
 	{NULL, 32}, 
@@ -3354,9 +3354,9 @@ static const ax_sprite sEeveeSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx35[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_35.4bpp");
-static const u8 sEeveeGfx35_1[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_35_1.4bpp");
-static const u8 sEeveeGfx35_2[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_35_2.4bpp");
+static const u8 sEeveeGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_35.4bpp.lz");
+static const u8 sEeveeGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_35_1.4bpp.lz");
+static const u8 sEeveeGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_35_2.4bpp.lz");
 static const ax_sprite sEeveeSprites35[] = {
 	{sEeveeGfx35, ARRAY_COUNT(sEeveeGfx35)}, 
 	{NULL, 32}, 
@@ -3366,182 +3366,182 @@ static const ax_sprite sEeveeSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx36[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_36.4bpp");
+static const u8 sEeveeGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_36.4bpp.lz");
 static const ax_sprite sEeveeSprites36[] = {
 	{sEeveeGfx36, ARRAY_COUNT(sEeveeGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx37[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_37.4bpp");
+static const u8 sEeveeGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_37.4bpp.lz");
 static const ax_sprite sEeveeSprites37[] = {
 	{sEeveeGfx37, ARRAY_COUNT(sEeveeGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx38[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_38.4bpp");
+static const u8 sEeveeGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_38.4bpp.lz");
 static const ax_sprite sEeveeSprites38[] = {
 	{sEeveeGfx38, ARRAY_COUNT(sEeveeGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx39[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_39.4bpp");
+static const u8 sEeveeGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_39.4bpp.lz");
 static const ax_sprite sEeveeSprites39[] = {
 	{sEeveeGfx39, ARRAY_COUNT(sEeveeGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx40[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_40.4bpp");
+static const u8 sEeveeGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_40.4bpp.lz");
 static const ax_sprite sEeveeSprites40[] = {
 	{sEeveeGfx40, ARRAY_COUNT(sEeveeGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx41[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_41.4bpp");
+static const u8 sEeveeGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_41.4bpp.lz");
 static const ax_sprite sEeveeSprites41[] = {
 	{sEeveeGfx41, ARRAY_COUNT(sEeveeGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx42[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_42.4bpp");
+static const u8 sEeveeGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_42.4bpp.lz");
 static const ax_sprite sEeveeSprites42[] = {
 	{sEeveeGfx42, ARRAY_COUNT(sEeveeGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx43[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_43.4bpp");
+static const u8 sEeveeGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_43.4bpp.lz");
 static const ax_sprite sEeveeSprites43[] = {
 	{sEeveeGfx43, ARRAY_COUNT(sEeveeGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx44[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_44.4bpp");
+static const u8 sEeveeGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_44.4bpp.lz");
 static const ax_sprite sEeveeSprites44[] = {
 	{sEeveeGfx44, ARRAY_COUNT(sEeveeGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx45[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_45.4bpp");
+static const u8 sEeveeGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_45.4bpp.lz");
 static const ax_sprite sEeveeSprites45[] = {
 	{sEeveeGfx45, ARRAY_COUNT(sEeveeGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx46[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_46.4bpp");
+static const u8 sEeveeGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_46.4bpp.lz");
 static const ax_sprite sEeveeSprites46[] = {
 	{sEeveeGfx46, ARRAY_COUNT(sEeveeGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx47[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_47.4bpp");
+static const u8 sEeveeGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_47.4bpp.lz");
 static const ax_sprite sEeveeSprites47[] = {
 	{sEeveeGfx47, ARRAY_COUNT(sEeveeGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx48[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_48.4bpp");
+static const u8 sEeveeGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_48.4bpp.lz");
 static const ax_sprite sEeveeSprites48[] = {
 	{sEeveeGfx48, ARRAY_COUNT(sEeveeGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx49[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_49.4bpp");
+static const u8 sEeveeGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_49.4bpp.lz");
 static const ax_sprite sEeveeSprites49[] = {
 	{sEeveeGfx49, ARRAY_COUNT(sEeveeGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx50[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_50.4bpp");
+static const u8 sEeveeGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_50.4bpp.lz");
 static const ax_sprite sEeveeSprites50[] = {
 	{sEeveeGfx50, ARRAY_COUNT(sEeveeGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx51[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_51.4bpp");
+static const u8 sEeveeGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_51.4bpp.lz");
 static const ax_sprite sEeveeSprites51[] = {
 	{sEeveeGfx51, ARRAY_COUNT(sEeveeGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx52[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_52.4bpp");
+static const u8 sEeveeGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_52.4bpp.lz");
 static const ax_sprite sEeveeSprites52[] = {
 	{sEeveeGfx52, ARRAY_COUNT(sEeveeGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx53[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_53.4bpp");
+static const u8 sEeveeGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_53.4bpp.lz");
 static const ax_sprite sEeveeSprites53[] = {
 	{sEeveeGfx53, ARRAY_COUNT(sEeveeGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx54[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_54.4bpp");
+static const u8 sEeveeGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_54.4bpp.lz");
 static const ax_sprite sEeveeSprites54[] = {
 	{sEeveeGfx54, ARRAY_COUNT(sEeveeGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx55[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_55.4bpp");
+static const u8 sEeveeGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_55.4bpp.lz");
 static const ax_sprite sEeveeSprites55[] = {
 	{sEeveeGfx55, ARRAY_COUNT(sEeveeGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx56[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_56.4bpp");
+static const u8 sEeveeGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_56.4bpp.lz");
 static const ax_sprite sEeveeSprites56[] = {
 	{sEeveeGfx56, ARRAY_COUNT(sEeveeGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx57[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_57.4bpp");
+static const u8 sEeveeGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_57.4bpp.lz");
 static const ax_sprite sEeveeSprites57[] = {
 	{sEeveeGfx57, ARRAY_COUNT(sEeveeGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx58[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_58.4bpp");
+static const u8 sEeveeGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_58.4bpp.lz");
 static const ax_sprite sEeveeSprites58[] = {
 	{sEeveeGfx58, ARRAY_COUNT(sEeveeGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx59[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_59.4bpp");
+static const u8 sEeveeGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_59.4bpp.lz");
 static const ax_sprite sEeveeSprites59[] = {
 	{sEeveeGfx59, ARRAY_COUNT(sEeveeGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx60[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_60.4bpp");
+static const u8 sEeveeGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_60.4bpp.lz");
 static const ax_sprite sEeveeSprites60[] = {
 	{sEeveeGfx60, ARRAY_COUNT(sEeveeGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx61[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_61.4bpp");
+static const u8 sEeveeGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_61.4bpp.lz");
 static const ax_sprite sEeveeSprites61[] = {
 	{sEeveeGfx61, ARRAY_COUNT(sEeveeGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx62[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_62.4bpp");
+static const u8 sEeveeGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_62.4bpp.lz");
 static const ax_sprite sEeveeSprites62[] = {
 	{sEeveeGfx62, ARRAY_COUNT(sEeveeGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx63[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_63.4bpp");
+static const u8 sEeveeGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_63.4bpp.lz");
 static const ax_sprite sEeveeSprites63[] = {
 	{sEeveeGfx63, ARRAY_COUNT(sEeveeGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx64[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_64.4bpp");
+static const u8 sEeveeGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_64.4bpp.lz");
 static const ax_sprite sEeveeSprites64[] = {
 	{sEeveeGfx64, ARRAY_COUNT(sEeveeGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx65[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_65.4bpp");
+static const u8 sEeveeGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_65.4bpp.lz");
 static const ax_sprite sEeveeSprites65[] = {
 	{sEeveeGfx65, ARRAY_COUNT(sEeveeGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx66[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_66.4bpp");
+static const u8 sEeveeGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_66.4bpp.lz");
 static const ax_sprite sEeveeSprites66[] = {
 	{sEeveeGfx66, ARRAY_COUNT(sEeveeGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx67[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_67.4bpp");
+static const u8 sEeveeGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_67.4bpp.lz");
 static const ax_sprite sEeveeSprites67[] = {
 	{sEeveeGfx67, ARRAY_COUNT(sEeveeGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx68[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_68.4bpp");
+static const u8 sEeveeGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_68.4bpp.lz");
 static const ax_sprite sEeveeSprites68[] = {
 	{sEeveeGfx68, ARRAY_COUNT(sEeveeGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx69[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_69.4bpp");
+static const u8 sEeveeGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_69.4bpp.lz");
 static const ax_sprite sEeveeSprites69[] = {
 	{sEeveeGfx69, ARRAY_COUNT(sEeveeGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx70[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_70.4bpp");
+static const u8 sEeveeGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_70.4bpp.lz");
 static const ax_sprite sEeveeSprites70[] = {
 	{sEeveeGfx70, ARRAY_COUNT(sEeveeGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sEeveeGfx71[] = INCBIN_U8("graphics/ax/mon/eevee/sprite_71.4bpp");
+static const u8 sEeveeGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/eevee/sprite_71.4bpp.lz");
 static const ax_sprite sEeveeSprites71[] = {
 	{sEeveeGfx71, ARRAY_COUNT(sEeveeGfx71)}, 
 	{NULL, 0}

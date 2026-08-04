@@ -1983,84 +1983,84 @@ static const ax_anim sEspeonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sEspeonGfx1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_1.4bpp");
+static const u8 sEspeonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_1.4bpp.lz");
 static const ax_sprite sEspeonSprites1[] = {
 	{sEspeonGfx1, ARRAY_COUNT(sEspeonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_2.4bpp");
+static const u8 sEspeonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_2.4bpp.lz");
 static const ax_sprite sEspeonSprites2[] = {
 	{sEspeonGfx2, ARRAY_COUNT(sEspeonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx3[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_3.4bpp");
+static const u8 sEspeonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_3.4bpp.lz");
 static const ax_sprite sEspeonSprites3[] = {
 	{sEspeonGfx3, ARRAY_COUNT(sEspeonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx4[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_4.4bpp");
+static const u8 sEspeonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_4.4bpp.lz");
 static const ax_sprite sEspeonSprites4[] = {
 	{sEspeonGfx4, ARRAY_COUNT(sEspeonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx5[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_5.4bpp");
+static const u8 sEspeonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_5.4bpp.lz");
 static const ax_sprite sEspeonSprites5[] = {
 	{sEspeonGfx5, ARRAY_COUNT(sEspeonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx6[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_6.4bpp");
+static const u8 sEspeonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_6.4bpp.lz");
 static const ax_sprite sEspeonSprites6[] = {
 	{sEspeonGfx6, ARRAY_COUNT(sEspeonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx7[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_7.4bpp");
+static const u8 sEspeonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_7.4bpp.lz");
 static const ax_sprite sEspeonSprites7[] = {
 	{sEspeonGfx7, ARRAY_COUNT(sEspeonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx8[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_8.4bpp");
+static const u8 sEspeonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_8.4bpp.lz");
 static const ax_sprite sEspeonSprites8[] = {
 	{sEspeonGfx8, ARRAY_COUNT(sEspeonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx9[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_9.4bpp");
+static const u8 sEspeonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_9.4bpp.lz");
 static const ax_sprite sEspeonSprites9[] = {
 	{sEspeonGfx9, ARRAY_COUNT(sEspeonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx10[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_10.4bpp");
+static const u8 sEspeonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_10.4bpp.lz");
 static const ax_sprite sEspeonSprites10[] = {
 	{sEspeonGfx10, ARRAY_COUNT(sEspeonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx11[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_11.4bpp");
+static const u8 sEspeonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_11.4bpp.lz");
 static const ax_sprite sEspeonSprites11[] = {
 	{sEspeonGfx11, ARRAY_COUNT(sEspeonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx12[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_12.4bpp");
+static const u8 sEspeonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_12.4bpp.lz");
 static const ax_sprite sEspeonSprites12[] = {
 	{sEspeonGfx12, ARRAY_COUNT(sEspeonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx13[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_13.4bpp");
+static const u8 sEspeonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_13.4bpp.lz");
 static const ax_sprite sEspeonSprites13[] = {
 	{sEspeonGfx13, ARRAY_COUNT(sEspeonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx14[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_14.4bpp");
+static const u8 sEspeonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_14.4bpp.lz");
 static const ax_sprite sEspeonSprites14[] = {
 	{sEspeonGfx14, ARRAY_COUNT(sEspeonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx15[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_15.4bpp");
+static const u8 sEspeonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_15.4bpp.lz");
 static const ax_sprite sEspeonSprites15[] = {
 	{sEspeonGfx15, ARRAY_COUNT(sEspeonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx16[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_16.4bpp");
-static const u8 sEspeonGfx16_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_16_1.4bpp");
-static const u8 sEspeonGfx16_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_16_2.4bpp");
+static const u8 sEspeonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_16.4bpp.lz");
+static const u8 sEspeonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_16_1.4bpp.lz");
+static const u8 sEspeonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_16_2.4bpp.lz");
 static const ax_sprite sEspeonSprites16[] = {
 	{sEspeonGfx16, ARRAY_COUNT(sEspeonGfx16)}, 
 	{NULL, 32}, 
@@ -2070,10 +2070,10 @@ static const ax_sprite sEspeonSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx17[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_17.4bpp");
-static const u8 sEspeonGfx17_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_17_1.4bpp");
-static const u8 sEspeonGfx17_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_17_2.4bpp");
-static const u8 sEspeonGfx17_3[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_17_3.4bpp");
+static const u8 sEspeonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_17.4bpp.lz");
+static const u8 sEspeonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_17_1.4bpp.lz");
+static const u8 sEspeonGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_17_2.4bpp.lz");
+static const u8 sEspeonGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_17_3.4bpp.lz");
 static const ax_sprite sEspeonSprites17[] = {
 	{sEspeonGfx17, ARRAY_COUNT(sEspeonGfx17)}, 
 	{NULL, 32}, 
@@ -2085,24 +2085,24 @@ static const ax_sprite sEspeonSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx18[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_18.4bpp");
+static const u8 sEspeonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_18.4bpp.lz");
 static const ax_sprite sEspeonSprites18[] = {
 	{sEspeonGfx18, ARRAY_COUNT(sEspeonGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx19[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_19.4bpp");
+static const u8 sEspeonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_19.4bpp.lz");
 static const ax_sprite sEspeonSprites19[] = {
 	{sEspeonGfx19, ARRAY_COUNT(sEspeonGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx20[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_20.4bpp");
+static const u8 sEspeonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_20.4bpp.lz");
 static const ax_sprite sEspeonSprites20[] = {
 	{sEspeonGfx20, ARRAY_COUNT(sEspeonGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx21[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_21.4bpp");
-static const u8 sEspeonGfx21_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_21_1.4bpp");
-static const u8 sEspeonGfx21_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_21_2.4bpp");
+static const u8 sEspeonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_21.4bpp.lz");
+static const u8 sEspeonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_21_1.4bpp.lz");
+static const u8 sEspeonGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_21_2.4bpp.lz");
 static const ax_sprite sEspeonSprites21[] = {
 	{sEspeonGfx21, ARRAY_COUNT(sEspeonGfx21)}, 
 	{NULL, 32}, 
@@ -2112,10 +2112,10 @@ static const ax_sprite sEspeonSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx22[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_22.4bpp");
-static const u8 sEspeonGfx22_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_22_1.4bpp");
-static const u8 sEspeonGfx22_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_22_2.4bpp");
-static const u8 sEspeonGfx22_3[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_22_3.4bpp");
+static const u8 sEspeonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_22.4bpp.lz");
+static const u8 sEspeonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_22_1.4bpp.lz");
+static const u8 sEspeonGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_22_2.4bpp.lz");
+static const u8 sEspeonGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_22_3.4bpp.lz");
 static const ax_sprite sEspeonSprites22[] = {
 	{sEspeonGfx22, ARRAY_COUNT(sEspeonGfx22)}, 
 	{NULL, 32}, 
@@ -2127,9 +2127,9 @@ static const ax_sprite sEspeonSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx23[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_23.4bpp");
-static const u8 sEspeonGfx23_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_23_1.4bpp");
-static const u8 sEspeonGfx23_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_23_2.4bpp");
+static const u8 sEspeonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_23.4bpp.lz");
+static const u8 sEspeonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_23_1.4bpp.lz");
+static const u8 sEspeonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_23_2.4bpp.lz");
 static const ax_sprite sEspeonSprites23[] = {
 	{sEspeonGfx23, ARRAY_COUNT(sEspeonGfx23)}, 
 	{NULL, 32}, 
@@ -2139,16 +2139,16 @@ static const ax_sprite sEspeonSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx24[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_24.4bpp");
+static const u8 sEspeonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_24.4bpp.lz");
 static const ax_sprite sEspeonSprites24[] = {
 	{sEspeonGfx24, ARRAY_COUNT(sEspeonGfx24)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx25[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_25.4bpp");
-static const u8 sEspeonGfx25_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_25_1.4bpp");
-static const u8 sEspeonGfx25_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_25_2.4bpp");
-static const u8 sEspeonGfx25_3[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_25_3.4bpp");
+static const u8 sEspeonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_25.4bpp.lz");
+static const u8 sEspeonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_25_1.4bpp.lz");
+static const u8 sEspeonGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_25_2.4bpp.lz");
+static const u8 sEspeonGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_25_3.4bpp.lz");
 static const ax_sprite sEspeonSprites25[] = {
 	{NULL, 32}, 
 	{sEspeonGfx25, ARRAY_COUNT(sEspeonGfx25)}, 
@@ -2161,10 +2161,10 @@ static const ax_sprite sEspeonSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx26[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_26.4bpp");
-static const u8 sEspeonGfx26_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_26_1.4bpp");
-static const u8 sEspeonGfx26_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_26_2.4bpp");
-static const u8 sEspeonGfx26_3[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_26_3.4bpp");
+static const u8 sEspeonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_26.4bpp.lz");
+static const u8 sEspeonGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_26_1.4bpp.lz");
+static const u8 sEspeonGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_26_2.4bpp.lz");
+static const u8 sEspeonGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_26_3.4bpp.lz");
 static const ax_sprite sEspeonSprites26[] = {
 	{sEspeonGfx26, ARRAY_COUNT(sEspeonGfx26)}, 
 	{NULL, 64}, 
@@ -2176,9 +2176,9 @@ static const ax_sprite sEspeonSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx27[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_27.4bpp");
-static const u8 sEspeonGfx27_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_27_1.4bpp");
-static const u8 sEspeonGfx27_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_27_2.4bpp");
+static const u8 sEspeonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_27.4bpp.lz");
+static const u8 sEspeonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_27_1.4bpp.lz");
+static const u8 sEspeonGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_27_2.4bpp.lz");
 static const ax_sprite sEspeonSprites27[] = {
 	{sEspeonGfx27, ARRAY_COUNT(sEspeonGfx27)}, 
 	{NULL, 32}, 
@@ -2188,10 +2188,10 @@ static const ax_sprite sEspeonSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx28[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_28.4bpp");
-static const u8 sEspeonGfx28_1[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_28_1.4bpp");
-static const u8 sEspeonGfx28_2[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_28_2.4bpp");
-static const u8 sEspeonGfx28_3[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_28_3.4bpp");
+static const u8 sEspeonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_28.4bpp.lz");
+static const u8 sEspeonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_28_1.4bpp.lz");
+static const u8 sEspeonGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_28_2.4bpp.lz");
+static const u8 sEspeonGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_28_3.4bpp.lz");
 static const ax_sprite sEspeonSprites28[] = {
 	{sEspeonGfx28, ARRAY_COUNT(sEspeonGfx28)}, 
 	{NULL, 32}, 
@@ -2203,37 +2203,37 @@ static const ax_sprite sEspeonSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx29[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_29.4bpp");
+static const u8 sEspeonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_29.4bpp.lz");
 static const ax_sprite sEspeonSprites29[] = {
 	{sEspeonGfx29, ARRAY_COUNT(sEspeonGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx30[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_30.4bpp");
+static const u8 sEspeonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_30.4bpp.lz");
 static const ax_sprite sEspeonSprites30[] = {
 	{sEspeonGfx30, ARRAY_COUNT(sEspeonGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx31[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_31.4bpp");
+static const u8 sEspeonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_31.4bpp.lz");
 static const ax_sprite sEspeonSprites31[] = {
 	{sEspeonGfx31, ARRAY_COUNT(sEspeonGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx32[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_32.4bpp");
+static const u8 sEspeonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_32.4bpp.lz");
 static const ax_sprite sEspeonSprites32[] = {
 	{sEspeonGfx32, ARRAY_COUNT(sEspeonGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx33[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_33.4bpp");
+static const u8 sEspeonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_33.4bpp.lz");
 static const ax_sprite sEspeonSprites33[] = {
 	{sEspeonGfx33, ARRAY_COUNT(sEspeonGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx34[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_34.4bpp");
+static const u8 sEspeonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_34.4bpp.lz");
 static const ax_sprite sEspeonSprites34[] = {
 	{sEspeonGfx34, ARRAY_COUNT(sEspeonGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sEspeonGfx35[] = INCBIN_U8("graphics/ax/mon/espeon/sprite_35.4bpp");
+static const u8 sEspeonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/espeon/sprite_35.4bpp.lz");
 static const ax_sprite sEspeonSprites35[] = {
 	{sEspeonGfx35, ARRAY_COUNT(sEspeonGfx35)}, 
 	{NULL, 0}

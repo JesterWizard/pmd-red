@@ -2039,83 +2039,83 @@ static const ax_anim sDrowzeeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDrowzeeGfx1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_1.4bpp");
+static const u8 sDrowzeeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_1.4bpp.lz");
 static const ax_sprite sDrowzeeSprites1[] = {
 	{sDrowzeeGfx1, ARRAY_COUNT(sDrowzeeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_2.4bpp");
+static const u8 sDrowzeeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites2[] = {
 	{sDrowzeeGfx2, ARRAY_COUNT(sDrowzeeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx3[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_3.4bpp");
+static const u8 sDrowzeeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_3.4bpp.lz");
 static const ax_sprite sDrowzeeSprites3[] = {
 	{sDrowzeeGfx3, ARRAY_COUNT(sDrowzeeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx4[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_4.4bpp");
+static const u8 sDrowzeeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_4.4bpp.lz");
 static const ax_sprite sDrowzeeSprites4[] = {
 	{sDrowzeeGfx4, ARRAY_COUNT(sDrowzeeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx5[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_5.4bpp");
+static const u8 sDrowzeeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_5.4bpp.lz");
 static const ax_sprite sDrowzeeSprites5[] = {
 	{sDrowzeeGfx5, ARRAY_COUNT(sDrowzeeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx6[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_6.4bpp");
+static const u8 sDrowzeeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_6.4bpp.lz");
 static const ax_sprite sDrowzeeSprites6[] = {
 	{sDrowzeeGfx6, ARRAY_COUNT(sDrowzeeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx7[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_7.4bpp");
+static const u8 sDrowzeeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_7.4bpp.lz");
 static const ax_sprite sDrowzeeSprites7[] = {
 	{sDrowzeeGfx7, ARRAY_COUNT(sDrowzeeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx8[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_8.4bpp");
+static const u8 sDrowzeeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_8.4bpp.lz");
 static const ax_sprite sDrowzeeSprites8[] = {
 	{sDrowzeeGfx8, ARRAY_COUNT(sDrowzeeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx9[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_9.4bpp");
+static const u8 sDrowzeeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_9.4bpp.lz");
 static const ax_sprite sDrowzeeSprites9[] = {
 	{sDrowzeeGfx9, ARRAY_COUNT(sDrowzeeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx10[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_10.4bpp");
+static const u8 sDrowzeeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_10.4bpp.lz");
 static const ax_sprite sDrowzeeSprites10[] = {
 	{sDrowzeeGfx10, ARRAY_COUNT(sDrowzeeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx11[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_11.4bpp");
+static const u8 sDrowzeeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_11.4bpp.lz");
 static const ax_sprite sDrowzeeSprites11[] = {
 	{sDrowzeeGfx11, ARRAY_COUNT(sDrowzeeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx12[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_12.4bpp");
+static const u8 sDrowzeeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_12.4bpp.lz");
 static const ax_sprite sDrowzeeSprites12[] = {
 	{sDrowzeeGfx12, ARRAY_COUNT(sDrowzeeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx13[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_13.4bpp");
+static const u8 sDrowzeeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_13.4bpp.lz");
 static const ax_sprite sDrowzeeSprites13[] = {
 	{sDrowzeeGfx13, ARRAY_COUNT(sDrowzeeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx14[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_14.4bpp");
+static const u8 sDrowzeeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_14.4bpp.lz");
 static const ax_sprite sDrowzeeSprites14[] = {
 	{sDrowzeeGfx14, ARRAY_COUNT(sDrowzeeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx15[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_15.4bpp");
+static const u8 sDrowzeeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_15.4bpp.lz");
 static const ax_sprite sDrowzeeSprites15[] = {
 	{sDrowzeeGfx15, ARRAY_COUNT(sDrowzeeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx16[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_16.4bpp");
-static const u8 sDrowzeeGfx16_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_16_1.4bpp");
+static const u8 sDrowzeeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_16.4bpp.lz");
+static const u8 sDrowzeeGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_16_1.4bpp.lz");
 static const ax_sprite sDrowzeeSprites16[] = {
 	{sDrowzeeGfx16, ARRAY_COUNT(sDrowzeeGfx16)}, 
 	{NULL, 64}, 
@@ -2123,16 +2123,16 @@ static const ax_sprite sDrowzeeSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx17[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_17.4bpp");
+static const u8 sDrowzeeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_17.4bpp.lz");
 static const ax_sprite sDrowzeeSprites17[] = {
 	{NULL, 32}, 
 	{sDrowzeeGfx17, ARRAY_COUNT(sDrowzeeGfx17)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx18[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_18.4bpp");
-static const u8 sDrowzeeGfx18_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_18_1.4bpp");
-static const u8 sDrowzeeGfx18_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_18_2.4bpp");
+static const u8 sDrowzeeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_18.4bpp.lz");
+static const u8 sDrowzeeGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_18_1.4bpp.lz");
+static const u8 sDrowzeeGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_18_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites18[] = {
 	{sDrowzeeGfx18, ARRAY_COUNT(sDrowzeeGfx18)}, 
 	{NULL, 32}, 
@@ -2142,10 +2142,10 @@ static const ax_sprite sDrowzeeSprites18[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx19[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_19.4bpp");
-static const u8 sDrowzeeGfx19_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_19_1.4bpp");
-static const u8 sDrowzeeGfx19_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_19_2.4bpp");
-static const u8 sDrowzeeGfx19_3[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_19_3.4bpp");
+static const u8 sDrowzeeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_19.4bpp.lz");
+static const u8 sDrowzeeGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_19_1.4bpp.lz");
+static const u8 sDrowzeeGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_19_2.4bpp.lz");
+static const u8 sDrowzeeGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_19_3.4bpp.lz");
 static const ax_sprite sDrowzeeSprites19[] = {
 	{sDrowzeeGfx19, ARRAY_COUNT(sDrowzeeGfx19)}, 
 	{NULL, 32}, 
@@ -2157,9 +2157,9 @@ static const ax_sprite sDrowzeeSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx20[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_20.4bpp");
-static const u8 sDrowzeeGfx20_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_20_1.4bpp");
-static const u8 sDrowzeeGfx20_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_20_2.4bpp");
+static const u8 sDrowzeeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_20.4bpp.lz");
+static const u8 sDrowzeeGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_20_1.4bpp.lz");
+static const u8 sDrowzeeGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_20_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites20[] = {
 	{sDrowzeeGfx20, ARRAY_COUNT(sDrowzeeGfx20)}, 
 	{NULL, 32}, 
@@ -2169,9 +2169,9 @@ static const ax_sprite sDrowzeeSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx21[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_21.4bpp");
-static const u8 sDrowzeeGfx21_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_21_1.4bpp");
-static const u8 sDrowzeeGfx21_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_21_2.4bpp");
+static const u8 sDrowzeeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_21.4bpp.lz");
+static const u8 sDrowzeeGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_21_1.4bpp.lz");
+static const u8 sDrowzeeGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_21_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites21[] = {
 	{sDrowzeeGfx21, ARRAY_COUNT(sDrowzeeGfx21)}, 
 	{NULL, 32}, 
@@ -2181,10 +2181,10 @@ static const ax_sprite sDrowzeeSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx22[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_22.4bpp");
-static const u8 sDrowzeeGfx22_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_22_1.4bpp");
-static const u8 sDrowzeeGfx22_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_22_2.4bpp");
-static const u8 sDrowzeeGfx22_3[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_22_3.4bpp");
+static const u8 sDrowzeeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_22.4bpp.lz");
+static const u8 sDrowzeeGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_22_1.4bpp.lz");
+static const u8 sDrowzeeGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_22_2.4bpp.lz");
+static const u8 sDrowzeeGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_22_3.4bpp.lz");
 static const ax_sprite sDrowzeeSprites22[] = {
 	{NULL, 32}, 
 	{sDrowzeeGfx22, ARRAY_COUNT(sDrowzeeGfx22)}, 
@@ -2197,9 +2197,9 @@ static const ax_sprite sDrowzeeSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx23[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_23.4bpp");
-static const u8 sDrowzeeGfx23_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_23_1.4bpp");
-static const u8 sDrowzeeGfx23_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_23_2.4bpp");
+static const u8 sDrowzeeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_23.4bpp.lz");
+static const u8 sDrowzeeGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_23_1.4bpp.lz");
+static const u8 sDrowzeeGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_23_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites23[] = {
 	{sDrowzeeGfx23, ARRAY_COUNT(sDrowzeeGfx23)}, 
 	{NULL, 32}, 
@@ -2209,9 +2209,9 @@ static const ax_sprite sDrowzeeSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx24[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_24.4bpp");
-static const u8 sDrowzeeGfx24_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_24_1.4bpp");
-static const u8 sDrowzeeGfx24_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_24_2.4bpp");
+static const u8 sDrowzeeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_24.4bpp.lz");
+static const u8 sDrowzeeGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_24_1.4bpp.lz");
+static const u8 sDrowzeeGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_24_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites24[] = {
 	{sDrowzeeGfx24, ARRAY_COUNT(sDrowzeeGfx24)}, 
 	{NULL, 64}, 
@@ -2221,17 +2221,17 @@ static const ax_sprite sDrowzeeSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx25[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_25.4bpp");
+static const u8 sDrowzeeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_25.4bpp.lz");
 static const ax_sprite sDrowzeeSprites25[] = {
 	{NULL, 32}, 
 	{sDrowzeeGfx25, ARRAY_COUNT(sDrowzeeGfx25)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx26[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_26.4bpp");
-static const u8 sDrowzeeGfx26_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_26_1.4bpp");
-static const u8 sDrowzeeGfx26_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_26_2.4bpp");
-static const u8 sDrowzeeGfx26_3[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_26_3.4bpp");
+static const u8 sDrowzeeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_26.4bpp.lz");
+static const u8 sDrowzeeGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_26_1.4bpp.lz");
+static const u8 sDrowzeeGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_26_2.4bpp.lz");
+static const u8 sDrowzeeGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_26_3.4bpp.lz");
 static const ax_sprite sDrowzeeSprites26[] = {
 	{sDrowzeeGfx26, ARRAY_COUNT(sDrowzeeGfx26)}, 
 	{NULL, 32}, 
@@ -2243,9 +2243,9 @@ static const ax_sprite sDrowzeeSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx27[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_27.4bpp");
-static const u8 sDrowzeeGfx27_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_27_1.4bpp");
-static const u8 sDrowzeeGfx27_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_27_2.4bpp");
+static const u8 sDrowzeeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_27.4bpp.lz");
+static const u8 sDrowzeeGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_27_1.4bpp.lz");
+static const u8 sDrowzeeGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_27_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites27[] = {
 	{sDrowzeeGfx27, ARRAY_COUNT(sDrowzeeGfx27)}, 
 	{NULL, 32}, 
@@ -2255,15 +2255,15 @@ static const ax_sprite sDrowzeeSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx28[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_28.4bpp");
+static const u8 sDrowzeeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_28.4bpp.lz");
 static const ax_sprite sDrowzeeSprites28[] = {
 	{sDrowzeeGfx28, ARRAY_COUNT(sDrowzeeGfx28)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx29[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_29.4bpp");
-static const u8 sDrowzeeGfx29_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_29_1.4bpp");
-static const u8 sDrowzeeGfx29_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_29_2.4bpp");
+static const u8 sDrowzeeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_29.4bpp.lz");
+static const u8 sDrowzeeGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_29_1.4bpp.lz");
+static const u8 sDrowzeeGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_29_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites29[] = {
 	{sDrowzeeGfx29, ARRAY_COUNT(sDrowzeeGfx29)}, 
 	{NULL, 32}, 
@@ -2273,9 +2273,9 @@ static const ax_sprite sDrowzeeSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx30[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_30.4bpp");
-static const u8 sDrowzeeGfx30_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_30_1.4bpp");
-static const u8 sDrowzeeGfx30_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_30_2.4bpp");
+static const u8 sDrowzeeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_30.4bpp.lz");
+static const u8 sDrowzeeGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_30_1.4bpp.lz");
+static const u8 sDrowzeeGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_30_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites30[] = {
 	{NULL, 32}, 
 	{sDrowzeeGfx30, ARRAY_COUNT(sDrowzeeGfx30)}, 
@@ -2286,9 +2286,9 @@ static const ax_sprite sDrowzeeSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx31[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_31.4bpp");
-static const u8 sDrowzeeGfx31_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_31_1.4bpp");
-static const u8 sDrowzeeGfx31_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_31_2.4bpp");
+static const u8 sDrowzeeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_31.4bpp.lz");
+static const u8 sDrowzeeGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_31_1.4bpp.lz");
+static const u8 sDrowzeeGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_31_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites31[] = {
 	{NULL, 160}, 
 	{sDrowzeeGfx31, ARRAY_COUNT(sDrowzeeGfx31)}, 
@@ -2299,9 +2299,9 @@ static const ax_sprite sDrowzeeSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx32[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_32.4bpp");
-static const u8 sDrowzeeGfx32_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_32_1.4bpp");
-static const u8 sDrowzeeGfx32_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_32_2.4bpp");
+static const u8 sDrowzeeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_32.4bpp.lz");
+static const u8 sDrowzeeGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_32_1.4bpp.lz");
+static const u8 sDrowzeeGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_32_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites32[] = {
 	{NULL, 128}, 
 	{sDrowzeeGfx32, ARRAY_COUNT(sDrowzeeGfx32)}, 
@@ -2312,9 +2312,9 @@ static const ax_sprite sDrowzeeSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx33[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_33.4bpp");
-static const u8 sDrowzeeGfx33_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_33_1.4bpp");
-static const u8 sDrowzeeGfx33_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_33_2.4bpp");
+static const u8 sDrowzeeGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_33.4bpp.lz");
+static const u8 sDrowzeeGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_33_1.4bpp.lz");
+static const u8 sDrowzeeGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_33_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites33[] = {
 	{sDrowzeeGfx33, ARRAY_COUNT(sDrowzeeGfx33)}, 
 	{NULL, 64}, 
@@ -2324,9 +2324,9 @@ static const ax_sprite sDrowzeeSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx34[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_34.4bpp");
-static const u8 sDrowzeeGfx34_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_34_1.4bpp");
-static const u8 sDrowzeeGfx34_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_34_2.4bpp");
+static const u8 sDrowzeeGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_34.4bpp.lz");
+static const u8 sDrowzeeGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_34_1.4bpp.lz");
+static const u8 sDrowzeeGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_34_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites34[] = {
 	{sDrowzeeGfx34, ARRAY_COUNT(sDrowzeeGfx34)}, 
 	{NULL, 32}, 
@@ -2336,8 +2336,8 @@ static const ax_sprite sDrowzeeSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx35[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_35.4bpp");
-static const u8 sDrowzeeGfx35_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_35_1.4bpp");
+static const u8 sDrowzeeGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_35.4bpp.lz");
+static const u8 sDrowzeeGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_35_1.4bpp.lz");
 static const ax_sprite sDrowzeeSprites35[] = {
 	{NULL, 32}, 
 	{sDrowzeeGfx35, ARRAY_COUNT(sDrowzeeGfx35)}, 
@@ -2346,8 +2346,8 @@ static const ax_sprite sDrowzeeSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx36[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_36.4bpp");
-static const u8 sDrowzeeGfx36_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_36_1.4bpp");
+static const u8 sDrowzeeGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_36.4bpp.lz");
+static const u8 sDrowzeeGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_36_1.4bpp.lz");
 static const ax_sprite sDrowzeeSprites36[] = {
 	{NULL, 32}, 
 	{sDrowzeeGfx36, ARRAY_COUNT(sDrowzeeGfx36)}, 
@@ -2356,9 +2356,9 @@ static const ax_sprite sDrowzeeSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx37[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_37.4bpp");
-static const u8 sDrowzeeGfx37_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_37_1.4bpp");
-static const u8 sDrowzeeGfx37_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_37_2.4bpp");
+static const u8 sDrowzeeGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_37.4bpp.lz");
+static const u8 sDrowzeeGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_37_1.4bpp.lz");
+static const u8 sDrowzeeGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_37_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites37[] = {
 	{sDrowzeeGfx37, ARRAY_COUNT(sDrowzeeGfx37)}, 
 	{NULL, 32}, 
@@ -2368,8 +2368,8 @@ static const ax_sprite sDrowzeeSprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx38[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_38.4bpp");
-static const u8 sDrowzeeGfx38_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_38_1.4bpp");
+static const u8 sDrowzeeGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_38.4bpp.lz");
+static const u8 sDrowzeeGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_38_1.4bpp.lz");
 static const ax_sprite sDrowzeeSprites38[] = {
 	{NULL, 32}, 
 	{sDrowzeeGfx38, ARRAY_COUNT(sDrowzeeGfx38)}, 
@@ -2378,10 +2378,10 @@ static const ax_sprite sDrowzeeSprites38[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx39[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_39.4bpp");
-static const u8 sDrowzeeGfx39_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_39_1.4bpp");
-static const u8 sDrowzeeGfx39_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_39_2.4bpp");
-static const u8 sDrowzeeGfx39_3[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_39_3.4bpp");
+static const u8 sDrowzeeGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_39.4bpp.lz");
+static const u8 sDrowzeeGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_39_1.4bpp.lz");
+static const u8 sDrowzeeGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_39_2.4bpp.lz");
+static const u8 sDrowzeeGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_39_3.4bpp.lz");
 static const ax_sprite sDrowzeeSprites39[] = {
 	{sDrowzeeGfx39, ARRAY_COUNT(sDrowzeeGfx39)}, 
 	{NULL, 32}, 
@@ -2393,9 +2393,9 @@ static const ax_sprite sDrowzeeSprites39[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx40[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_40.4bpp");
-static const u8 sDrowzeeGfx40_1[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_40_1.4bpp");
-static const u8 sDrowzeeGfx40_2[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_40_2.4bpp");
+static const u8 sDrowzeeGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_40.4bpp.lz");
+static const u8 sDrowzeeGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_40_1.4bpp.lz");
+static const u8 sDrowzeeGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_40_2.4bpp.lz");
 static const ax_sprite sDrowzeeSprites40[] = {
 	{NULL, 32}, 
 	{sDrowzeeGfx40, ARRAY_COUNT(sDrowzeeGfx40)}, 
@@ -2406,37 +2406,37 @@ static const ax_sprite sDrowzeeSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx41[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_41.4bpp");
+static const u8 sDrowzeeGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_41.4bpp.lz");
 static const ax_sprite sDrowzeeSprites41[] = {
 	{sDrowzeeGfx41, ARRAY_COUNT(sDrowzeeGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx42[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_42.4bpp");
+static const u8 sDrowzeeGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_42.4bpp.lz");
 static const ax_sprite sDrowzeeSprites42[] = {
 	{sDrowzeeGfx42, ARRAY_COUNT(sDrowzeeGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx43[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_43.4bpp");
+static const u8 sDrowzeeGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_43.4bpp.lz");
 static const ax_sprite sDrowzeeSprites43[] = {
 	{sDrowzeeGfx43, ARRAY_COUNT(sDrowzeeGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx44[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_44.4bpp");
+static const u8 sDrowzeeGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_44.4bpp.lz");
 static const ax_sprite sDrowzeeSprites44[] = {
 	{sDrowzeeGfx44, ARRAY_COUNT(sDrowzeeGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx45[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_45.4bpp");
+static const u8 sDrowzeeGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_45.4bpp.lz");
 static const ax_sprite sDrowzeeSprites45[] = {
 	{sDrowzeeGfx45, ARRAY_COUNT(sDrowzeeGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx46[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_46.4bpp");
+static const u8 sDrowzeeGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_46.4bpp.lz");
 static const ax_sprite sDrowzeeSprites46[] = {
 	{sDrowzeeGfx46, ARRAY_COUNT(sDrowzeeGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sDrowzeeGfx47[] = INCBIN_U8("graphics/ax/mon/drowzee/sprite_47.4bpp");
+static const u8 sDrowzeeGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/drowzee/sprite_47.4bpp.lz");
 static const ax_sprite sDrowzeeSprites47[] = {
 	{sDrowzeeGfx47, ARRAY_COUNT(sDrowzeeGfx47)}, 
 	{NULL, 0}

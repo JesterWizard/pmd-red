@@ -2325,101 +2325,101 @@ static const ax_anim sFearowAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sFearowGfx1[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_1.4bpp");
+static const u8 sFearowGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_1.4bpp.lz");
 static const ax_sprite sFearowSprites1[] = {
 	{sFearowGfx1, ARRAY_COUNT(sFearowGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx2[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_2.4bpp");
+static const u8 sFearowGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_2.4bpp.lz");
 static const ax_sprite sFearowSprites2[] = {
 	{sFearowGfx2, ARRAY_COUNT(sFearowGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx3[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_3.4bpp");
+static const u8 sFearowGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_3.4bpp.lz");
 static const ax_sprite sFearowSprites3[] = {
 	{sFearowGfx3, ARRAY_COUNT(sFearowGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx4[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_4.4bpp");
+static const u8 sFearowGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_4.4bpp.lz");
 static const ax_sprite sFearowSprites4[] = {
 	{sFearowGfx4, ARRAY_COUNT(sFearowGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx5[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_5.4bpp");
+static const u8 sFearowGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_5.4bpp.lz");
 static const ax_sprite sFearowSprites5[] = {
 	{sFearowGfx5, ARRAY_COUNT(sFearowGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx6[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_6.4bpp");
+static const u8 sFearowGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_6.4bpp.lz");
 static const ax_sprite sFearowSprites6[] = {
 	{sFearowGfx6, ARRAY_COUNT(sFearowGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx7[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_7.4bpp");
+static const u8 sFearowGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_7.4bpp.lz");
 static const ax_sprite sFearowSprites7[] = {
 	{sFearowGfx7, ARRAY_COUNT(sFearowGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx8[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_8.4bpp");
+static const u8 sFearowGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_8.4bpp.lz");
 static const ax_sprite sFearowSprites8[] = {
 	{sFearowGfx8, ARRAY_COUNT(sFearowGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx9[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_9.4bpp");
+static const u8 sFearowGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_9.4bpp.lz");
 static const ax_sprite sFearowSprites9[] = {
 	{sFearowGfx9, ARRAY_COUNT(sFearowGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx10[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_10.4bpp");
+static const u8 sFearowGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_10.4bpp.lz");
 static const ax_sprite sFearowSprites10[] = {
 	{sFearowGfx10, ARRAY_COUNT(sFearowGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx11[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_11.4bpp");
+static const u8 sFearowGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_11.4bpp.lz");
 static const ax_sprite sFearowSprites11[] = {
 	{sFearowGfx11, ARRAY_COUNT(sFearowGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx12[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_12.4bpp");
+static const u8 sFearowGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_12.4bpp.lz");
 static const ax_sprite sFearowSprites12[] = {
 	{sFearowGfx12, ARRAY_COUNT(sFearowGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx13[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_13.4bpp");
+static const u8 sFearowGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_13.4bpp.lz");
 static const ax_sprite sFearowSprites13[] = {
 	{sFearowGfx13, ARRAY_COUNT(sFearowGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx14[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_14.4bpp");
+static const u8 sFearowGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_14.4bpp.lz");
 static const ax_sprite sFearowSprites14[] = {
 	{sFearowGfx14, ARRAY_COUNT(sFearowGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx15[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_15.4bpp");
+static const u8 sFearowGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_15.4bpp.lz");
 static const ax_sprite sFearowSprites15[] = {
 	{sFearowGfx15, ARRAY_COUNT(sFearowGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx16[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_16.4bpp");
+static const u8 sFearowGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_16.4bpp.lz");
 static const ax_sprite sFearowSprites16[] = {
 	{sFearowGfx16, ARRAY_COUNT(sFearowGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx17[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_17.4bpp");
-static const u8 sFearowGfx17_1[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_17_1.4bpp");
+static const u8 sFearowGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_17.4bpp.lz");
+static const u8 sFearowGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_17_1.4bpp.lz");
 static const ax_sprite sFearowSprites17[] = {
 	{sFearowGfx17, ARRAY_COUNT(sFearowGfx17)}, 
 	{NULL, 32}, 
 	{sFearowGfx17_1, ARRAY_COUNT(sFearowGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx18[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_18.4bpp");
+static const u8 sFearowGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_18.4bpp.lz");
 static const ax_sprite sFearowSprites18[] = {
 	{sFearowGfx18, ARRAY_COUNT(sFearowGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx19[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_19.4bpp");
-static const u8 sFearowGfx19_1[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_19_1.4bpp");
+static const u8 sFearowGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_19.4bpp.lz");
+static const u8 sFearowGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_19_1.4bpp.lz");
 static const ax_sprite sFearowSprites19[] = {
 	{sFearowGfx19, ARRAY_COUNT(sFearowGfx19)}, 
 	{NULL, 64}, 
@@ -2427,24 +2427,24 @@ static const ax_sprite sFearowSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx20[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_20.4bpp");
+static const u8 sFearowGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_20.4bpp.lz");
 static const ax_sprite sFearowSprites20[] = {
 	{NULL, 64}, 
 	{sFearowGfx20, ARRAY_COUNT(sFearowGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx21[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_21.4bpp");
+static const u8 sFearowGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_21.4bpp.lz");
 static const ax_sprite sFearowSprites21[] = {
 	{sFearowGfx21, ARRAY_COUNT(sFearowGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx22[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_22.4bpp");
+static const u8 sFearowGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_22.4bpp.lz");
 static const ax_sprite sFearowSprites22[] = {
 	{sFearowGfx22, ARRAY_COUNT(sFearowGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx23[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_23.4bpp");
-static const u8 sFearowGfx23_1[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_23_1.4bpp");
+static const u8 sFearowGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_23.4bpp.lz");
+static const u8 sFearowGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_23_1.4bpp.lz");
 static const ax_sprite sFearowSprites23[] = {
 	{sFearowGfx23, ARRAY_COUNT(sFearowGfx23)}, 
 	{NULL, 64}, 
@@ -2452,69 +2452,69 @@ static const ax_sprite sFearowSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx24[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_24.4bpp");
-static const u8 sFearowGfx24_1[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_24_1.4bpp");
+static const u8 sFearowGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_24.4bpp.lz");
+static const u8 sFearowGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_24_1.4bpp.lz");
 static const ax_sprite sFearowSprites24[] = {
 	{sFearowGfx24, ARRAY_COUNT(sFearowGfx24)}, 
 	{NULL, 32}, 
 	{sFearowGfx24_1, ARRAY_COUNT(sFearowGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx25[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_25.4bpp");
+static const u8 sFearowGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_25.4bpp.lz");
 static const ax_sprite sFearowSprites25[] = {
 	{NULL, 32}, 
 	{sFearowGfx25, ARRAY_COUNT(sFearowGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx26[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_26.4bpp");
+static const u8 sFearowGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_26.4bpp.lz");
 static const ax_sprite sFearowSprites26[] = {
 	{sFearowGfx26, ARRAY_COUNT(sFearowGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx27[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_27.4bpp");
+static const u8 sFearowGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_27.4bpp.lz");
 static const ax_sprite sFearowSprites27[] = {
 	{sFearowGfx27, ARRAY_COUNT(sFearowGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx28[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_28.4bpp");
+static const u8 sFearowGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_28.4bpp.lz");
 static const ax_sprite sFearowSprites28[] = {
 	{sFearowGfx28, ARRAY_COUNT(sFearowGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx29[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_29.4bpp");
+static const u8 sFearowGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_29.4bpp.lz");
 static const ax_sprite sFearowSprites29[] = {
 	{sFearowGfx29, ARRAY_COUNT(sFearowGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx30[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_30.4bpp");
+static const u8 sFearowGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_30.4bpp.lz");
 static const ax_sprite sFearowSprites30[] = {
 	{sFearowGfx30, ARRAY_COUNT(sFearowGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx31[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_31.4bpp");
+static const u8 sFearowGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_31.4bpp.lz");
 static const ax_sprite sFearowSprites31[] = {
 	{sFearowGfx31, ARRAY_COUNT(sFearowGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx32[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_32.4bpp");
+static const u8 sFearowGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_32.4bpp.lz");
 static const ax_sprite sFearowSprites32[] = {
 	{sFearowGfx32, ARRAY_COUNT(sFearowGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx33[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_33.4bpp");
+static const u8 sFearowGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_33.4bpp.lz");
 static const ax_sprite sFearowSprites33[] = {
 	{sFearowGfx33, ARRAY_COUNT(sFearowGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx34[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_34.4bpp");
+static const u8 sFearowGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_34.4bpp.lz");
 static const ax_sprite sFearowSprites34[] = {
 	{sFearowGfx34, ARRAY_COUNT(sFearowGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx35[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_35.4bpp");
-static const u8 sFearowGfx35_1[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_35_1.4bpp");
-static const u8 sFearowGfx35_2[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_35_2.4bpp");
-static const u8 sFearowGfx35_3[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_35_3.4bpp");
+static const u8 sFearowGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_35.4bpp.lz");
+static const u8 sFearowGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_35_1.4bpp.lz");
+static const u8 sFearowGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_35_2.4bpp.lz");
+static const u8 sFearowGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_35_3.4bpp.lz");
 static const ax_sprite sFearowSprites35[] = {
 	{sFearowGfx35, ARRAY_COUNT(sFearowGfx35)}, 
 	{NULL, 64}, 
@@ -2526,70 +2526,70 @@ static const ax_sprite sFearowSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx36[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_36.4bpp");
-static const u8 sFearowGfx36_1[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_36_1.4bpp");
+static const u8 sFearowGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_36.4bpp.lz");
+static const u8 sFearowGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_36_1.4bpp.lz");
 static const ax_sprite sFearowSprites36[] = {
 	{sFearowGfx36, ARRAY_COUNT(sFearowGfx36)}, 
 	{NULL, 32}, 
 	{sFearowGfx36_1, ARRAY_COUNT(sFearowGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx37[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_37.4bpp");
+static const u8 sFearowGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_37.4bpp.lz");
 static const ax_sprite sFearowSprites37[] = {
 	{sFearowGfx37, ARRAY_COUNT(sFearowGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx38[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_38.4bpp");
+static const u8 sFearowGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_38.4bpp.lz");
 static const ax_sprite sFearowSprites38[] = {
 	{sFearowGfx38, ARRAY_COUNT(sFearowGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx39[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_39.4bpp");
+static const u8 sFearowGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_39.4bpp.lz");
 static const ax_sprite sFearowSprites39[] = {
 	{sFearowGfx39, ARRAY_COUNT(sFearowGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx40[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_40.4bpp");
+static const u8 sFearowGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_40.4bpp.lz");
 static const ax_sprite sFearowSprites40[] = {
 	{sFearowGfx40, ARRAY_COUNT(sFearowGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx41[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_41.4bpp");
+static const u8 sFearowGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_41.4bpp.lz");
 static const ax_sprite sFearowSprites41[] = {
 	{sFearowGfx41, ARRAY_COUNT(sFearowGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx42[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_42.4bpp");
+static const u8 sFearowGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_42.4bpp.lz");
 static const ax_sprite sFearowSprites42[] = {
 	{sFearowGfx42, ARRAY_COUNT(sFearowGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx43[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_43.4bpp");
+static const u8 sFearowGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_43.4bpp.lz");
 static const ax_sprite sFearowSprites43[] = {
 	{sFearowGfx43, ARRAY_COUNT(sFearowGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx44[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_44.4bpp");
+static const u8 sFearowGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_44.4bpp.lz");
 static const ax_sprite sFearowSprites44[] = {
 	{sFearowGfx44, ARRAY_COUNT(sFearowGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx45[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_45.4bpp");
+static const u8 sFearowGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_45.4bpp.lz");
 static const ax_sprite sFearowSprites45[] = {
 	{sFearowGfx45, ARRAY_COUNT(sFearowGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx46[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_46.4bpp");
+static const u8 sFearowGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_46.4bpp.lz");
 static const ax_sprite sFearowSprites46[] = {
 	{sFearowGfx46, ARRAY_COUNT(sFearowGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx47[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_47.4bpp");
+static const u8 sFearowGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_47.4bpp.lz");
 static const ax_sprite sFearowSprites47[] = {
 	{sFearowGfx47, ARRAY_COUNT(sFearowGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sFearowGfx48[] = INCBIN_U8("graphics/ax/mon/fearow/sprite_48.4bpp");
+static const u8 sFearowGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/fearow/sprite_48.4bpp.lz");
 static const ax_sprite sFearowSprites48[] = {
 	{sFearowGfx48, ARRAY_COUNT(sFearowGfx48)}, 
 	{NULL, 0}

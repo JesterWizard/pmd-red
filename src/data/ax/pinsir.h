@@ -1927,111 +1927,111 @@ static const ax_anim sPinsirAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPinsirGfx1[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_1.4bpp");
+static const u8 sPinsirGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_1.4bpp.lz");
 static const ax_sprite sPinsirSprites1[] = {
 	{sPinsirGfx1, ARRAY_COUNT(sPinsirGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx2[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_2.4bpp");
+static const u8 sPinsirGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_2.4bpp.lz");
 static const ax_sprite sPinsirSprites2[] = {
 	{sPinsirGfx2, ARRAY_COUNT(sPinsirGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx3[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_3.4bpp");
+static const u8 sPinsirGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_3.4bpp.lz");
 static const ax_sprite sPinsirSprites3[] = {
 	{sPinsirGfx3, ARRAY_COUNT(sPinsirGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx4[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_4.4bpp");
+static const u8 sPinsirGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_4.4bpp.lz");
 static const ax_sprite sPinsirSprites4[] = {
 	{sPinsirGfx4, ARRAY_COUNT(sPinsirGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx5[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_5.4bpp");
+static const u8 sPinsirGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_5.4bpp.lz");
 static const ax_sprite sPinsirSprites5[] = {
 	{sPinsirGfx5, ARRAY_COUNT(sPinsirGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx6[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_6.4bpp");
+static const u8 sPinsirGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_6.4bpp.lz");
 static const ax_sprite sPinsirSprites6[] = {
 	{sPinsirGfx6, ARRAY_COUNT(sPinsirGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx7[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_7.4bpp");
+static const u8 sPinsirGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_7.4bpp.lz");
 static const ax_sprite sPinsirSprites7[] = {
 	{sPinsirGfx7, ARRAY_COUNT(sPinsirGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx8[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_8.4bpp");
+static const u8 sPinsirGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_8.4bpp.lz");
 static const ax_sprite sPinsirSprites8[] = {
 	{sPinsirGfx8, ARRAY_COUNT(sPinsirGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx9[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_9.4bpp");
+static const u8 sPinsirGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_9.4bpp.lz");
 static const ax_sprite sPinsirSprites9[] = {
 	{sPinsirGfx9, ARRAY_COUNT(sPinsirGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx10[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_10.4bpp");
+static const u8 sPinsirGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_10.4bpp.lz");
 static const ax_sprite sPinsirSprites10[] = {
 	{sPinsirGfx10, ARRAY_COUNT(sPinsirGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx11[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_11.4bpp");
+static const u8 sPinsirGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_11.4bpp.lz");
 static const ax_sprite sPinsirSprites11[] = {
 	{sPinsirGfx11, ARRAY_COUNT(sPinsirGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx12[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_12.4bpp");
+static const u8 sPinsirGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_12.4bpp.lz");
 static const ax_sprite sPinsirSprites12[] = {
 	{sPinsirGfx12, ARRAY_COUNT(sPinsirGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx13[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_13.4bpp");
+static const u8 sPinsirGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_13.4bpp.lz");
 static const ax_sprite sPinsirSprites13[] = {
 	{sPinsirGfx13, ARRAY_COUNT(sPinsirGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx14[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_14.4bpp");
+static const u8 sPinsirGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_14.4bpp.lz");
 static const ax_sprite sPinsirSprites14[] = {
 	{sPinsirGfx14, ARRAY_COUNT(sPinsirGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx15[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_15.4bpp");
+static const u8 sPinsirGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_15.4bpp.lz");
 static const ax_sprite sPinsirSprites15[] = {
 	{sPinsirGfx15, ARRAY_COUNT(sPinsirGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx16[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_16.4bpp");
+static const u8 sPinsirGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_16.4bpp.lz");
 static const ax_sprite sPinsirSprites16[] = {
 	{NULL, 160}, 
 	{sPinsirGfx16, ARRAY_COUNT(sPinsirGfx16)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx17[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_17.4bpp");
+static const u8 sPinsirGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_17.4bpp.lz");
 static const ax_sprite sPinsirSprites17[] = {
 	{NULL, 160}, 
 	{sPinsirGfx17, ARRAY_COUNT(sPinsirGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx18[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_18.4bpp");
+static const u8 sPinsirGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_18.4bpp.lz");
 static const ax_sprite sPinsirSprites18[] = {
 	{NULL, 160}, 
 	{sPinsirGfx18, ARRAY_COUNT(sPinsirGfx18)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx19[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_19.4bpp");
+static const u8 sPinsirGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_19.4bpp.lz");
 static const ax_sprite sPinsirSprites19[] = {
 	{NULL, 160}, 
 	{sPinsirGfx19, ARRAY_COUNT(sPinsirGfx19)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx20[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_20.4bpp");
-static const u8 sPinsirGfx20_1[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_20_1.4bpp");
+static const u8 sPinsirGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_20.4bpp.lz");
+static const u8 sPinsirGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_20_1.4bpp.lz");
 static const ax_sprite sPinsirSprites20[] = {
 	{NULL, 128}, 
 	{sPinsirGfx20, ARRAY_COUNT(sPinsirGfx20)}, 
@@ -2039,8 +2039,8 @@ static const ax_sprite sPinsirSprites20[] = {
 	{sPinsirGfx20_1, ARRAY_COUNT(sPinsirGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx21[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_21.4bpp");
-static const u8 sPinsirGfx21_1[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_21_1.4bpp");
+static const u8 sPinsirGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_21.4bpp.lz");
+static const u8 sPinsirGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_21_1.4bpp.lz");
 static const ax_sprite sPinsirSprites21[] = {
 	{NULL, 128}, 
 	{sPinsirGfx21, ARRAY_COUNT(sPinsirGfx21)}, 
@@ -2048,10 +2048,10 @@ static const ax_sprite sPinsirSprites21[] = {
 	{sPinsirGfx21_1, ARRAY_COUNT(sPinsirGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx22[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_22.4bpp");
-static const u8 sPinsirGfx22_1[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_22_1.4bpp");
-static const u8 sPinsirGfx22_2[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_22_2.4bpp");
-static const u8 sPinsirGfx22_3[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_22_3.4bpp");
+static const u8 sPinsirGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_22.4bpp.lz");
+static const u8 sPinsirGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_22_1.4bpp.lz");
+static const u8 sPinsirGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_22_2.4bpp.lz");
+static const u8 sPinsirGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_22_3.4bpp.lz");
 static const ax_sprite sPinsirSprites22[] = {
 	{NULL, 32}, 
 	{sPinsirGfx22, ARRAY_COUNT(sPinsirGfx22)}, 
@@ -2064,10 +2064,10 @@ static const ax_sprite sPinsirSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx23[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_23.4bpp");
-static const u8 sPinsirGfx23_1[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_23_1.4bpp");
-static const u8 sPinsirGfx23_2[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_23_2.4bpp");
-static const u8 sPinsirGfx23_3[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_23_3.4bpp");
+static const u8 sPinsirGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_23.4bpp.lz");
+static const u8 sPinsirGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_23_1.4bpp.lz");
+static const u8 sPinsirGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_23_2.4bpp.lz");
+static const u8 sPinsirGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_23_3.4bpp.lz");
 static const ax_sprite sPinsirSprites23[] = {
 	{sPinsirGfx23, ARRAY_COUNT(sPinsirGfx23)}, 
 	{NULL, 32}, 
@@ -2079,8 +2079,8 @@ static const ax_sprite sPinsirSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx24[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_24.4bpp");
-static const u8 sPinsirGfx24_1[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_24_1.4bpp");
+static const u8 sPinsirGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_24.4bpp.lz");
+static const u8 sPinsirGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_24_1.4bpp.lz");
 static const ax_sprite sPinsirSprites24[] = {
 	{sPinsirGfx24, ARRAY_COUNT(sPinsirGfx24)}, 
 	{NULL, 32}, 
@@ -2088,10 +2088,10 @@ static const ax_sprite sPinsirSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx25[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_25.4bpp");
-static const u8 sPinsirGfx25_1[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_25_1.4bpp");
-static const u8 sPinsirGfx25_2[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_25_2.4bpp");
-static const u8 sPinsirGfx25_3[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_25_3.4bpp");
+static const u8 sPinsirGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_25.4bpp.lz");
+static const u8 sPinsirGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_25_1.4bpp.lz");
+static const u8 sPinsirGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_25_2.4bpp.lz");
+static const u8 sPinsirGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_25_3.4bpp.lz");
 static const ax_sprite sPinsirSprites25[] = {
 	{NULL, 32}, 
 	{sPinsirGfx25, ARRAY_COUNT(sPinsirGfx25)}, 
@@ -2104,37 +2104,37 @@ static const ax_sprite sPinsirSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx26[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_26.4bpp");
+static const u8 sPinsirGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_26.4bpp.lz");
 static const ax_sprite sPinsirSprites26[] = {
 	{sPinsirGfx26, ARRAY_COUNT(sPinsirGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx27[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_27.4bpp");
+static const u8 sPinsirGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_27.4bpp.lz");
 static const ax_sprite sPinsirSprites27[] = {
 	{sPinsirGfx27, ARRAY_COUNT(sPinsirGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx28[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_28.4bpp");
+static const u8 sPinsirGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_28.4bpp.lz");
 static const ax_sprite sPinsirSprites28[] = {
 	{sPinsirGfx28, ARRAY_COUNT(sPinsirGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx29[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_29.4bpp");
+static const u8 sPinsirGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_29.4bpp.lz");
 static const ax_sprite sPinsirSprites29[] = {
 	{sPinsirGfx29, ARRAY_COUNT(sPinsirGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx30[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_30.4bpp");
+static const u8 sPinsirGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_30.4bpp.lz");
 static const ax_sprite sPinsirSprites30[] = {
 	{sPinsirGfx30, ARRAY_COUNT(sPinsirGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx31[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_31.4bpp");
+static const u8 sPinsirGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_31.4bpp.lz");
 static const ax_sprite sPinsirSprites31[] = {
 	{sPinsirGfx31, ARRAY_COUNT(sPinsirGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPinsirGfx32[] = INCBIN_U8("graphics/ax/mon/pinsir/sprite_32.4bpp");
+static const u8 sPinsirGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pinsir/sprite_32.4bpp.lz");
 static const ax_sprite sPinsirSprites32[] = {
 	{sPinsirGfx32, ARRAY_COUNT(sPinsirGfx32)}, 
 	{NULL, 0}

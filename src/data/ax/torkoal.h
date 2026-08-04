@@ -2433,84 +2433,84 @@ static const ax_anim sTorkoalAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTorkoalGfx1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_1.4bpp");
+static const u8 sTorkoalGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_1.4bpp.lz");
 static const ax_sprite sTorkoalSprites1[] = {
 	{sTorkoalGfx1, ARRAY_COUNT(sTorkoalGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_2.4bpp");
+static const u8 sTorkoalGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites2[] = {
 	{sTorkoalGfx2, ARRAY_COUNT(sTorkoalGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx3[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_3.4bpp");
+static const u8 sTorkoalGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_3.4bpp.lz");
 static const ax_sprite sTorkoalSprites3[] = {
 	{sTorkoalGfx3, ARRAY_COUNT(sTorkoalGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx4[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_4.4bpp");
+static const u8 sTorkoalGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_4.4bpp.lz");
 static const ax_sprite sTorkoalSprites4[] = {
 	{sTorkoalGfx4, ARRAY_COUNT(sTorkoalGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx5[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_5.4bpp");
+static const u8 sTorkoalGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_5.4bpp.lz");
 static const ax_sprite sTorkoalSprites5[] = {
 	{sTorkoalGfx5, ARRAY_COUNT(sTorkoalGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx6[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_6.4bpp");
+static const u8 sTorkoalGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_6.4bpp.lz");
 static const ax_sprite sTorkoalSprites6[] = {
 	{sTorkoalGfx6, ARRAY_COUNT(sTorkoalGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx7[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_7.4bpp");
+static const u8 sTorkoalGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_7.4bpp.lz");
 static const ax_sprite sTorkoalSprites7[] = {
 	{sTorkoalGfx7, ARRAY_COUNT(sTorkoalGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx8[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_8.4bpp");
+static const u8 sTorkoalGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_8.4bpp.lz");
 static const ax_sprite sTorkoalSprites8[] = {
 	{sTorkoalGfx8, ARRAY_COUNT(sTorkoalGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx9[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_9.4bpp");
+static const u8 sTorkoalGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_9.4bpp.lz");
 static const ax_sprite sTorkoalSprites9[] = {
 	{sTorkoalGfx9, ARRAY_COUNT(sTorkoalGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx10[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_10.4bpp");
+static const u8 sTorkoalGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_10.4bpp.lz");
 static const ax_sprite sTorkoalSprites10[] = {
 	{sTorkoalGfx10, ARRAY_COUNT(sTorkoalGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx11[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_11.4bpp");
+static const u8 sTorkoalGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_11.4bpp.lz");
 static const ax_sprite sTorkoalSprites11[] = {
 	{sTorkoalGfx11, ARRAY_COUNT(sTorkoalGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx12[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_12.4bpp");
+static const u8 sTorkoalGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_12.4bpp.lz");
 static const ax_sprite sTorkoalSprites12[] = {
 	{sTorkoalGfx12, ARRAY_COUNT(sTorkoalGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx13[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_13.4bpp");
+static const u8 sTorkoalGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_13.4bpp.lz");
 static const ax_sprite sTorkoalSprites13[] = {
 	{sTorkoalGfx13, ARRAY_COUNT(sTorkoalGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx14[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_14.4bpp");
+static const u8 sTorkoalGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_14.4bpp.lz");
 static const ax_sprite sTorkoalSprites14[] = {
 	{sTorkoalGfx14, ARRAY_COUNT(sTorkoalGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx15[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_15.4bpp");
+static const u8 sTorkoalGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_15.4bpp.lz");
 static const ax_sprite sTorkoalSprites15[] = {
 	{sTorkoalGfx15, ARRAY_COUNT(sTorkoalGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx16[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_16.4bpp");
-static const u8 sTorkoalGfx16_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_16_1.4bpp");
-static const u8 sTorkoalGfx16_2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_16_2.4bpp");
+static const u8 sTorkoalGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_16.4bpp.lz");
+static const u8 sTorkoalGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_16_1.4bpp.lz");
+static const u8 sTorkoalGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_16_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites16[] = {
 	{sTorkoalGfx16, ARRAY_COUNT(sTorkoalGfx16)}, 
 	{NULL, 32}, 
@@ -2520,13 +2520,13 @@ static const ax_sprite sTorkoalSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx17[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_17.4bpp");
+static const u8 sTorkoalGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_17.4bpp.lz");
 static const ax_sprite sTorkoalSprites17[] = {
 	{sTorkoalGfx17, ARRAY_COUNT(sTorkoalGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx18[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_18.4bpp");
-static const u8 sTorkoalGfx18_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_18_1.4bpp");
+static const u8 sTorkoalGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_18.4bpp.lz");
+static const u8 sTorkoalGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_18_1.4bpp.lz");
 static const ax_sprite sTorkoalSprites18[] = {
 	{sTorkoalGfx18, ARRAY_COUNT(sTorkoalGfx18)}, 
 	{NULL, 32}, 
@@ -2534,8 +2534,8 @@ static const ax_sprite sTorkoalSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx19[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_19.4bpp");
-static const u8 sTorkoalGfx19_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_19_1.4bpp");
+static const u8 sTorkoalGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_19.4bpp.lz");
+static const u8 sTorkoalGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_19_1.4bpp.lz");
 static const ax_sprite sTorkoalSprites19[] = {
 	{sTorkoalGfx19, ARRAY_COUNT(sTorkoalGfx19)}, 
 	{NULL, 32}, 
@@ -2543,8 +2543,8 @@ static const ax_sprite sTorkoalSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx20[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_20.4bpp");
-static const u8 sTorkoalGfx20_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_20_1.4bpp");
+static const u8 sTorkoalGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_20.4bpp.lz");
+static const u8 sTorkoalGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_20_1.4bpp.lz");
 static const ax_sprite sTorkoalSprites20[] = {
 	{sTorkoalGfx20, ARRAY_COUNT(sTorkoalGfx20)}, 
 	{NULL, 32}, 
@@ -2552,9 +2552,9 @@ static const ax_sprite sTorkoalSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx21[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_21.4bpp");
-static const u8 sTorkoalGfx21_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_21_1.4bpp");
-static const u8 sTorkoalGfx21_2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_21_2.4bpp");
+static const u8 sTorkoalGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_21.4bpp.lz");
+static const u8 sTorkoalGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_21_1.4bpp.lz");
+static const u8 sTorkoalGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_21_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites21[] = {
 	{sTorkoalGfx21, ARRAY_COUNT(sTorkoalGfx21)}, 
 	{NULL, 32}, 
@@ -2564,8 +2564,8 @@ static const ax_sprite sTorkoalSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx22[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_22.4bpp");
-static const u8 sTorkoalGfx22_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_22_1.4bpp");
+static const u8 sTorkoalGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_22.4bpp.lz");
+static const u8 sTorkoalGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_22_1.4bpp.lz");
 static const ax_sprite sTorkoalSprites22[] = {
 	{NULL, 32}, 
 	{sTorkoalGfx22, ARRAY_COUNT(sTorkoalGfx22)}, 
@@ -2574,14 +2574,14 @@ static const ax_sprite sTorkoalSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx23[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_23.4bpp");
+static const u8 sTorkoalGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_23.4bpp.lz");
 static const ax_sprite sTorkoalSprites23[] = {
 	{sTorkoalGfx23, ARRAY_COUNT(sTorkoalGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx24[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_24.4bpp");
-static const u8 sTorkoalGfx24_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_24_1.4bpp");
-static const u8 sTorkoalGfx24_2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_24_2.4bpp");
+static const u8 sTorkoalGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_24.4bpp.lz");
+static const u8 sTorkoalGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_24_1.4bpp.lz");
+static const u8 sTorkoalGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_24_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites24[] = {
 	{NULL, 32}, 
 	{sTorkoalGfx24, ARRAY_COUNT(sTorkoalGfx24)}, 
@@ -2592,38 +2592,38 @@ static const ax_sprite sTorkoalSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx25[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_25.4bpp");
+static const u8 sTorkoalGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_25.4bpp.lz");
 static const ax_sprite sTorkoalSprites25[] = {
 	{sTorkoalGfx25, ARRAY_COUNT(sTorkoalGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx26[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_26.4bpp");
+static const u8 sTorkoalGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_26.4bpp.lz");
 static const ax_sprite sTorkoalSprites26[] = {
 	{sTorkoalGfx26, ARRAY_COUNT(sTorkoalGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx27[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_27.4bpp");
+static const u8 sTorkoalGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_27.4bpp.lz");
 static const ax_sprite sTorkoalSprites27[] = {
 	{sTorkoalGfx27, ARRAY_COUNT(sTorkoalGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx28[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_28.4bpp");
+static const u8 sTorkoalGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_28.4bpp.lz");
 static const ax_sprite sTorkoalSprites28[] = {
 	{sTorkoalGfx28, ARRAY_COUNT(sTorkoalGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx29[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_29.4bpp");
+static const u8 sTorkoalGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_29.4bpp.lz");
 static const ax_sprite sTorkoalSprites29[] = {
 	{sTorkoalGfx29, ARRAY_COUNT(sTorkoalGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx30[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_30.4bpp");
+static const u8 sTorkoalGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_30.4bpp.lz");
 static const ax_sprite sTorkoalSprites30[] = {
 	{sTorkoalGfx30, ARRAY_COUNT(sTorkoalGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx31[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_31.4bpp");
-static const u8 sTorkoalGfx31_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_31_1.4bpp");
+static const u8 sTorkoalGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_31.4bpp.lz");
+static const u8 sTorkoalGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_31_1.4bpp.lz");
 static const ax_sprite sTorkoalSprites31[] = {
 	{sTorkoalGfx31, ARRAY_COUNT(sTorkoalGfx31)}, 
 	{NULL, 32}, 
@@ -2631,9 +2631,9 @@ static const ax_sprite sTorkoalSprites31[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx32[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_32.4bpp");
-static const u8 sTorkoalGfx32_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_32_1.4bpp");
-static const u8 sTorkoalGfx32_2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_32_2.4bpp");
+static const u8 sTorkoalGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_32.4bpp.lz");
+static const u8 sTorkoalGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_32_1.4bpp.lz");
+static const u8 sTorkoalGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_32_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites32[] = {
 	{NULL, 32}, 
 	{sTorkoalGfx32, ARRAY_COUNT(sTorkoalGfx32)}, 
@@ -2644,8 +2644,8 @@ static const ax_sprite sTorkoalSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx33[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_33.4bpp");
-static const u8 sTorkoalGfx33_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_33_1.4bpp");
+static const u8 sTorkoalGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_33.4bpp.lz");
+static const u8 sTorkoalGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_33_1.4bpp.lz");
 static const ax_sprite sTorkoalSprites33[] = {
 	{sTorkoalGfx33, ARRAY_COUNT(sTorkoalGfx33)}, 
 	{NULL, 32}, 
@@ -2653,9 +2653,9 @@ static const ax_sprite sTorkoalSprites33[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx34[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_34.4bpp");
-static const u8 sTorkoalGfx34_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_34_1.4bpp");
-static const u8 sTorkoalGfx34_2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_34_2.4bpp");
+static const u8 sTorkoalGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_34.4bpp.lz");
+static const u8 sTorkoalGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_34_1.4bpp.lz");
+static const u8 sTorkoalGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_34_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites34[] = {
 	{NULL, 64}, 
 	{sTorkoalGfx34, ARRAY_COUNT(sTorkoalGfx34)}, 
@@ -2666,9 +2666,9 @@ static const ax_sprite sTorkoalSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx35[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_35.4bpp");
-static const u8 sTorkoalGfx35_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_35_1.4bpp");
-static const u8 sTorkoalGfx35_2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_35_2.4bpp");
+static const u8 sTorkoalGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_35.4bpp.lz");
+static const u8 sTorkoalGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_35_1.4bpp.lz");
+static const u8 sTorkoalGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_35_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites35[] = {
 	{sTorkoalGfx35, ARRAY_COUNT(sTorkoalGfx35)}, 
 	{NULL, 64}, 
@@ -2677,9 +2677,9 @@ static const ax_sprite sTorkoalSprites35[] = {
 	{sTorkoalGfx35_2, ARRAY_COUNT(sTorkoalGfx35_2)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx36[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_36.4bpp");
-static const u8 sTorkoalGfx36_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_36_1.4bpp");
-static const u8 sTorkoalGfx36_2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_36_2.4bpp");
+static const u8 sTorkoalGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_36.4bpp.lz");
+static const u8 sTorkoalGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_36_1.4bpp.lz");
+static const u8 sTorkoalGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_36_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites36[] = {
 	{sTorkoalGfx36, ARRAY_COUNT(sTorkoalGfx36)}, 
 	{NULL, 64}, 
@@ -2689,9 +2689,9 @@ static const ax_sprite sTorkoalSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx37[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_37.4bpp");
-static const u8 sTorkoalGfx37_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_37_1.4bpp");
-static const u8 sTorkoalGfx37_2[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_37_2.4bpp");
+static const u8 sTorkoalGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_37.4bpp.lz");
+static const u8 sTorkoalGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_37_1.4bpp.lz");
+static const u8 sTorkoalGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_37_2.4bpp.lz");
 static const ax_sprite sTorkoalSprites37[] = {
 	{NULL, 32}, 
 	{sTorkoalGfx37, ARRAY_COUNT(sTorkoalGfx37)}, 
@@ -2702,8 +2702,8 @@ static const ax_sprite sTorkoalSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx38[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_38.4bpp");
-static const u8 sTorkoalGfx38_1[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_38_1.4bpp");
+static const u8 sTorkoalGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_38.4bpp.lz");
+static const u8 sTorkoalGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_38_1.4bpp.lz");
 static const ax_sprite sTorkoalSprites38[] = {
 	{NULL, 32}, 
 	{sTorkoalGfx38, ARRAY_COUNT(sTorkoalGfx38)}, 
@@ -2712,37 +2712,37 @@ static const ax_sprite sTorkoalSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx39[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_39.4bpp");
+static const u8 sTorkoalGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_39.4bpp.lz");
 static const ax_sprite sTorkoalSprites39[] = {
 	{sTorkoalGfx39, ARRAY_COUNT(sTorkoalGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx40[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_40.4bpp");
+static const u8 sTorkoalGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_40.4bpp.lz");
 static const ax_sprite sTorkoalSprites40[] = {
 	{sTorkoalGfx40, ARRAY_COUNT(sTorkoalGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx41[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_41.4bpp");
+static const u8 sTorkoalGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_41.4bpp.lz");
 static const ax_sprite sTorkoalSprites41[] = {
 	{sTorkoalGfx41, ARRAY_COUNT(sTorkoalGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx42[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_42.4bpp");
+static const u8 sTorkoalGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_42.4bpp.lz");
 static const ax_sprite sTorkoalSprites42[] = {
 	{sTorkoalGfx42, ARRAY_COUNT(sTorkoalGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx43[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_43.4bpp");
+static const u8 sTorkoalGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_43.4bpp.lz");
 static const ax_sprite sTorkoalSprites43[] = {
 	{sTorkoalGfx43, ARRAY_COUNT(sTorkoalGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx44[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_44.4bpp");
+static const u8 sTorkoalGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_44.4bpp.lz");
 static const ax_sprite sTorkoalSprites44[] = {
 	{sTorkoalGfx44, ARRAY_COUNT(sTorkoalGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sTorkoalGfx45[] = INCBIN_U8("graphics/ax/mon/torkoal/sprite_45.4bpp");
+static const u8 sTorkoalGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torkoal/sprite_45.4bpp.lz");
 static const ax_sprite sTorkoalSprites45[] = {
 	{sTorkoalGfx45, ARRAY_COUNT(sTorkoalGfx45)}, 
 	{NULL, 0}

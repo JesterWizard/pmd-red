@@ -2479,97 +2479,97 @@ static const ax_anim sButterfreeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sButterfreeGfx1[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_1.4bpp");
+static const u8 sButterfreeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_1.4bpp.lz");
 static const ax_sprite sButterfreeSprites1[] = {
 	{sButterfreeGfx1, ARRAY_COUNT(sButterfreeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx2[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_2.4bpp");
+static const u8 sButterfreeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_2.4bpp.lz");
 static const ax_sprite sButterfreeSprites2[] = {
 	{sButterfreeGfx2, ARRAY_COUNT(sButterfreeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx3[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_3.4bpp");
+static const u8 sButterfreeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_3.4bpp.lz");
 static const ax_sprite sButterfreeSprites3[] = {
 	{sButterfreeGfx3, ARRAY_COUNT(sButterfreeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx4[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_4.4bpp");
+static const u8 sButterfreeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_4.4bpp.lz");
 static const ax_sprite sButterfreeSprites4[] = {
 	{sButterfreeGfx4, ARRAY_COUNT(sButterfreeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx5[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_5.4bpp");
+static const u8 sButterfreeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_5.4bpp.lz");
 static const ax_sprite sButterfreeSprites5[] = {
 	{sButterfreeGfx5, ARRAY_COUNT(sButterfreeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx6[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_6.4bpp");
+static const u8 sButterfreeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_6.4bpp.lz");
 static const ax_sprite sButterfreeSprites6[] = {
 	{sButterfreeGfx6, ARRAY_COUNT(sButterfreeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx7[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_7.4bpp");
+static const u8 sButterfreeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_7.4bpp.lz");
 static const ax_sprite sButterfreeSprites7[] = {
 	{sButterfreeGfx7, ARRAY_COUNT(sButterfreeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx8[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_8.4bpp");
+static const u8 sButterfreeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_8.4bpp.lz");
 static const ax_sprite sButterfreeSprites8[] = {
 	{sButterfreeGfx8, ARRAY_COUNT(sButterfreeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx9[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_9.4bpp");
+static const u8 sButterfreeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_9.4bpp.lz");
 static const ax_sprite sButterfreeSprites9[] = {
 	{sButterfreeGfx9, ARRAY_COUNT(sButterfreeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx10[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_10.4bpp");
+static const u8 sButterfreeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_10.4bpp.lz");
 static const ax_sprite sButterfreeSprites10[] = {
 	{sButterfreeGfx10, ARRAY_COUNT(sButterfreeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx11[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_11.4bpp");
+static const u8 sButterfreeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_11.4bpp.lz");
 static const ax_sprite sButterfreeSprites11[] = {
 	{sButterfreeGfx11, ARRAY_COUNT(sButterfreeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx12[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_12.4bpp");
+static const u8 sButterfreeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_12.4bpp.lz");
 static const ax_sprite sButterfreeSprites12[] = {
 	{sButterfreeGfx12, ARRAY_COUNT(sButterfreeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx13[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_13.4bpp");
+static const u8 sButterfreeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_13.4bpp.lz");
 static const ax_sprite sButterfreeSprites13[] = {
 	{sButterfreeGfx13, ARRAY_COUNT(sButterfreeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx14[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_14.4bpp");
+static const u8 sButterfreeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_14.4bpp.lz");
 static const ax_sprite sButterfreeSprites14[] = {
 	{sButterfreeGfx14, ARRAY_COUNT(sButterfreeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx15[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_15.4bpp");
+static const u8 sButterfreeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_15.4bpp.lz");
 static const ax_sprite sButterfreeSprites15[] = {
 	{sButterfreeGfx15, ARRAY_COUNT(sButterfreeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx16[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_16.4bpp");
+static const u8 sButterfreeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_16.4bpp.lz");
 static const ax_sprite sButterfreeSprites16[] = {
 	{sButterfreeGfx16, ARRAY_COUNT(sButterfreeGfx16)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx17[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_17.4bpp");
+static const u8 sButterfreeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_17.4bpp.lz");
 static const ax_sprite sButterfreeSprites17[] = {
 	{sButterfreeGfx17, ARRAY_COUNT(sButterfreeGfx17)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx18[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_18.4bpp");
-static const u8 sButterfreeGfx18_1[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_18_1.4bpp");
-static const u8 sButterfreeGfx18_2[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_18_2.4bpp");
-static const u8 sButterfreeGfx18_3[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_18_3.4bpp");
+static const u8 sButterfreeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_18.4bpp.lz");
+static const u8 sButterfreeGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_18_1.4bpp.lz");
+static const u8 sButterfreeGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_18_2.4bpp.lz");
+static const u8 sButterfreeGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_18_3.4bpp.lz");
 static const ax_sprite sButterfreeSprites18[] = {
 	{sButterfreeGfx18, ARRAY_COUNT(sButterfreeGfx18)}, 
 	{NULL, 32}, 
@@ -2581,9 +2581,9 @@ static const ax_sprite sButterfreeSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx19[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_19.4bpp");
-static const u8 sButterfreeGfx19_1[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_19_1.4bpp");
-static const u8 sButterfreeGfx19_2[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_19_2.4bpp");
+static const u8 sButterfreeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_19.4bpp.lz");
+static const u8 sButterfreeGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_19_1.4bpp.lz");
+static const u8 sButterfreeGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_19_2.4bpp.lz");
 static const ax_sprite sButterfreeSprites19[] = {
 	{sButterfreeGfx19, ARRAY_COUNT(sButterfreeGfx19)}, 
 	{NULL, 64}, 
@@ -2593,18 +2593,18 @@ static const ax_sprite sButterfreeSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx20[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_20.4bpp");
-static const u8 sButterfreeGfx20_1[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_20_1.4bpp");
+static const u8 sButterfreeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_20.4bpp.lz");
+static const u8 sButterfreeGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_20_1.4bpp.lz");
 static const ax_sprite sButterfreeSprites20[] = {
 	{sButterfreeGfx20, ARRAY_COUNT(sButterfreeGfx20)}, 
 	{NULL, 32}, 
 	{sButterfreeGfx20_1, ARRAY_COUNT(sButterfreeGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx21[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_21.4bpp");
-static const u8 sButterfreeGfx21_1[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_21_1.4bpp");
-static const u8 sButterfreeGfx21_2[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_21_2.4bpp");
-static const u8 sButterfreeGfx21_3[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_21_3.4bpp");
+static const u8 sButterfreeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_21.4bpp.lz");
+static const u8 sButterfreeGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_21_1.4bpp.lz");
+static const u8 sButterfreeGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_21_2.4bpp.lz");
+static const u8 sButterfreeGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_21_3.4bpp.lz");
 static const ax_sprite sButterfreeSprites21[] = {
 	{NULL, 32}, 
 	{sButterfreeGfx21, ARRAY_COUNT(sButterfreeGfx21)}, 
@@ -2617,9 +2617,9 @@ static const ax_sprite sButterfreeSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx22[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_22.4bpp");
-static const u8 sButterfreeGfx22_1[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_22_1.4bpp");
-static const u8 sButterfreeGfx22_2[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_22_2.4bpp");
+static const u8 sButterfreeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_22.4bpp.lz");
+static const u8 sButterfreeGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_22_1.4bpp.lz");
+static const u8 sButterfreeGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_22_2.4bpp.lz");
 static const ax_sprite sButterfreeSprites22[] = {
 	{sButterfreeGfx22, ARRAY_COUNT(sButterfreeGfx22)}, 
 	{NULL, 32}, 
@@ -2629,9 +2629,9 @@ static const ax_sprite sButterfreeSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx23[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_23.4bpp");
-static const u8 sButterfreeGfx23_1[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_23_1.4bpp");
-static const u8 sButterfreeGfx23_2[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_23_2.4bpp");
+static const u8 sButterfreeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_23.4bpp.lz");
+static const u8 sButterfreeGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_23_1.4bpp.lz");
+static const u8 sButterfreeGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_23_2.4bpp.lz");
 static const ax_sprite sButterfreeSprites23[] = {
 	{sButterfreeGfx23, ARRAY_COUNT(sButterfreeGfx23)}, 
 	{NULL, 32}, 
@@ -2641,49 +2641,49 @@ static const ax_sprite sButterfreeSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx24[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_24.4bpp");
+static const u8 sButterfreeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_24.4bpp.lz");
 static const ax_sprite sButterfreeSprites24[] = {
 	{sButterfreeGfx24, ARRAY_COUNT(sButterfreeGfx24)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx25[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_25.4bpp");
+static const u8 sButterfreeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_25.4bpp.lz");
 static const ax_sprite sButterfreeSprites25[] = {
 	{sButterfreeGfx25, ARRAY_COUNT(sButterfreeGfx25)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx26[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_26.4bpp");
+static const u8 sButterfreeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_26.4bpp.lz");
 static const ax_sprite sButterfreeSprites26[] = {
 	{sButterfreeGfx26, ARRAY_COUNT(sButterfreeGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx27[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_27.4bpp");
+static const u8 sButterfreeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_27.4bpp.lz");
 static const ax_sprite sButterfreeSprites27[] = {
 	{sButterfreeGfx27, ARRAY_COUNT(sButterfreeGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx28[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_28.4bpp");
+static const u8 sButterfreeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_28.4bpp.lz");
 static const ax_sprite sButterfreeSprites28[] = {
 	{sButterfreeGfx28, ARRAY_COUNT(sButterfreeGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx29[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_29.4bpp");
+static const u8 sButterfreeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_29.4bpp.lz");
 static const ax_sprite sButterfreeSprites29[] = {
 	{sButterfreeGfx29, ARRAY_COUNT(sButterfreeGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx30[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_30.4bpp");
+static const u8 sButterfreeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_30.4bpp.lz");
 static const ax_sprite sButterfreeSprites30[] = {
 	{sButterfreeGfx30, ARRAY_COUNT(sButterfreeGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx31[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_31.4bpp");
+static const u8 sButterfreeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_31.4bpp.lz");
 static const ax_sprite sButterfreeSprites31[] = {
 	{sButterfreeGfx31, ARRAY_COUNT(sButterfreeGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sButterfreeGfx32[] = INCBIN_U8("graphics/ax/mon/butterfree/sprite_32.4bpp");
+static const u8 sButterfreeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/butterfree/sprite_32.4bpp.lz");
 static const ax_sprite sButterfreeSprites32[] = {
 	{sButterfreeGfx32, ARRAY_COUNT(sButterfreeGfx32)}, 
 	{NULL, 0}

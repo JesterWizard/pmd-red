@@ -2447,84 +2447,84 @@ static const ax_anim sGranbullAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGranbullGfx1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_1.4bpp");
+static const u8 sGranbullGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_1.4bpp.lz");
 static const ax_sprite sGranbullSprites1[] = {
 	{sGranbullGfx1, ARRAY_COUNT(sGranbullGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_2.4bpp");
+static const u8 sGranbullGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_2.4bpp.lz");
 static const ax_sprite sGranbullSprites2[] = {
 	{sGranbullGfx2, ARRAY_COUNT(sGranbullGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx3[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_3.4bpp");
+static const u8 sGranbullGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_3.4bpp.lz");
 static const ax_sprite sGranbullSprites3[] = {
 	{sGranbullGfx3, ARRAY_COUNT(sGranbullGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx4[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_4.4bpp");
+static const u8 sGranbullGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_4.4bpp.lz");
 static const ax_sprite sGranbullSprites4[] = {
 	{sGranbullGfx4, ARRAY_COUNT(sGranbullGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx5[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_5.4bpp");
+static const u8 sGranbullGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_5.4bpp.lz");
 static const ax_sprite sGranbullSprites5[] = {
 	{sGranbullGfx5, ARRAY_COUNT(sGranbullGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx6[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_6.4bpp");
+static const u8 sGranbullGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_6.4bpp.lz");
 static const ax_sprite sGranbullSprites6[] = {
 	{sGranbullGfx6, ARRAY_COUNT(sGranbullGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx7[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_7.4bpp");
+static const u8 sGranbullGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_7.4bpp.lz");
 static const ax_sprite sGranbullSprites7[] = {
 	{sGranbullGfx7, ARRAY_COUNT(sGranbullGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx8[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_8.4bpp");
+static const u8 sGranbullGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_8.4bpp.lz");
 static const ax_sprite sGranbullSprites8[] = {
 	{sGranbullGfx8, ARRAY_COUNT(sGranbullGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx9[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_9.4bpp");
+static const u8 sGranbullGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_9.4bpp.lz");
 static const ax_sprite sGranbullSprites9[] = {
 	{sGranbullGfx9, ARRAY_COUNT(sGranbullGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx10[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_10.4bpp");
+static const u8 sGranbullGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_10.4bpp.lz");
 static const ax_sprite sGranbullSprites10[] = {
 	{sGranbullGfx10, ARRAY_COUNT(sGranbullGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx11[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_11.4bpp");
+static const u8 sGranbullGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_11.4bpp.lz");
 static const ax_sprite sGranbullSprites11[] = {
 	{sGranbullGfx11, ARRAY_COUNT(sGranbullGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx12[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_12.4bpp");
+static const u8 sGranbullGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_12.4bpp.lz");
 static const ax_sprite sGranbullSprites12[] = {
 	{sGranbullGfx12, ARRAY_COUNT(sGranbullGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx13[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_13.4bpp");
+static const u8 sGranbullGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_13.4bpp.lz");
 static const ax_sprite sGranbullSprites13[] = {
 	{sGranbullGfx13, ARRAY_COUNT(sGranbullGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx14[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_14.4bpp");
+static const u8 sGranbullGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_14.4bpp.lz");
 static const ax_sprite sGranbullSprites14[] = {
 	{sGranbullGfx14, ARRAY_COUNT(sGranbullGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx15[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_15.4bpp");
+static const u8 sGranbullGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_15.4bpp.lz");
 static const ax_sprite sGranbullSprites15[] = {
 	{sGranbullGfx15, ARRAY_COUNT(sGranbullGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx16[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_16.4bpp");
-static const u8 sGranbullGfx16_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_16_1.4bpp");
-static const u8 sGranbullGfx16_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_16_2.4bpp");
+static const u8 sGranbullGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_16.4bpp.lz");
+static const u8 sGranbullGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_16_1.4bpp.lz");
+static const u8 sGranbullGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_16_2.4bpp.lz");
 static const ax_sprite sGranbullSprites16[] = {
 	{sGranbullGfx16, ARRAY_COUNT(sGranbullGfx16)}, 
 	{NULL, 32}, 
@@ -2534,9 +2534,9 @@ static const ax_sprite sGranbullSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx17[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_17.4bpp");
-static const u8 sGranbullGfx17_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_17_1.4bpp");
-static const u8 sGranbullGfx17_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_17_2.4bpp");
+static const u8 sGranbullGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_17.4bpp.lz");
+static const u8 sGranbullGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_17_1.4bpp.lz");
+static const u8 sGranbullGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_17_2.4bpp.lz");
 static const ax_sprite sGranbullSprites17[] = {
 	{sGranbullGfx17, ARRAY_COUNT(sGranbullGfx17)}, 
 	{NULL, 32}, 
@@ -2546,10 +2546,10 @@ static const ax_sprite sGranbullSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx18[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_18.4bpp");
-static const u8 sGranbullGfx18_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_18_1.4bpp");
-static const u8 sGranbullGfx18_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_18_2.4bpp");
-static const u8 sGranbullGfx18_3[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_18_3.4bpp");
+static const u8 sGranbullGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_18.4bpp.lz");
+static const u8 sGranbullGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_18_1.4bpp.lz");
+static const u8 sGranbullGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_18_2.4bpp.lz");
+static const u8 sGranbullGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_18_3.4bpp.lz");
 static const ax_sprite sGranbullSprites18[] = {
 	{sGranbullGfx18, ARRAY_COUNT(sGranbullGfx18)}, 
 	{NULL, 32}, 
@@ -2561,9 +2561,9 @@ static const ax_sprite sGranbullSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx19[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_19.4bpp");
-static const u8 sGranbullGfx19_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_19_1.4bpp");
-static const u8 sGranbullGfx19_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_19_2.4bpp");
+static const u8 sGranbullGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_19.4bpp.lz");
+static const u8 sGranbullGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_19_1.4bpp.lz");
+static const u8 sGranbullGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_19_2.4bpp.lz");
 static const ax_sprite sGranbullSprites19[] = {
 	{sGranbullGfx19, ARRAY_COUNT(sGranbullGfx19)}, 
 	{NULL, 32}, 
@@ -2573,10 +2573,10 @@ static const ax_sprite sGranbullSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx20[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_20.4bpp");
-static const u8 sGranbullGfx20_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_20_1.4bpp");
-static const u8 sGranbullGfx20_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_20_2.4bpp");
-static const u8 sGranbullGfx20_3[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_20_3.4bpp");
+static const u8 sGranbullGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_20.4bpp.lz");
+static const u8 sGranbullGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_20_1.4bpp.lz");
+static const u8 sGranbullGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_20_2.4bpp.lz");
+static const u8 sGranbullGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_20_3.4bpp.lz");
 static const ax_sprite sGranbullSprites20[] = {
 	{sGranbullGfx20, ARRAY_COUNT(sGranbullGfx20)}, 
 	{NULL, 32}, 
@@ -2588,10 +2588,10 @@ static const ax_sprite sGranbullSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx21[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_21.4bpp");
-static const u8 sGranbullGfx21_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_21_1.4bpp");
-static const u8 sGranbullGfx21_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_21_2.4bpp");
-static const u8 sGranbullGfx21_3[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_21_3.4bpp");
+static const u8 sGranbullGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_21.4bpp.lz");
+static const u8 sGranbullGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_21_1.4bpp.lz");
+static const u8 sGranbullGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_21_2.4bpp.lz");
+static const u8 sGranbullGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_21_3.4bpp.lz");
 static const ax_sprite sGranbullSprites21[] = {
 	{sGranbullGfx21, ARRAY_COUNT(sGranbullGfx21)}, 
 	{NULL, 32}, 
@@ -2603,10 +2603,10 @@ static const ax_sprite sGranbullSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx22[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_22.4bpp");
-static const u8 sGranbullGfx22_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_22_1.4bpp");
-static const u8 sGranbullGfx22_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_22_2.4bpp");
-static const u8 sGranbullGfx22_3[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_22_3.4bpp");
+static const u8 sGranbullGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_22.4bpp.lz");
+static const u8 sGranbullGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_22_1.4bpp.lz");
+static const u8 sGranbullGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_22_2.4bpp.lz");
+static const u8 sGranbullGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_22_3.4bpp.lz");
 static const ax_sprite sGranbullSprites22[] = {
 	{sGranbullGfx22, ARRAY_COUNT(sGranbullGfx22)}, 
 	{NULL, 32}, 
@@ -2618,10 +2618,10 @@ static const ax_sprite sGranbullSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx23[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_23.4bpp");
-static const u8 sGranbullGfx23_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_23_1.4bpp");
-static const u8 sGranbullGfx23_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_23_2.4bpp");
-static const u8 sGranbullGfx23_3[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_23_3.4bpp");
+static const u8 sGranbullGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_23.4bpp.lz");
+static const u8 sGranbullGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_23_1.4bpp.lz");
+static const u8 sGranbullGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_23_2.4bpp.lz");
+static const u8 sGranbullGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_23_3.4bpp.lz");
 static const ax_sprite sGranbullSprites23[] = {
 	{sGranbullGfx23, ARRAY_COUNT(sGranbullGfx23)}, 
 	{NULL, 32}, 
@@ -2633,10 +2633,10 @@ static const ax_sprite sGranbullSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx24[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_24.4bpp");
-static const u8 sGranbullGfx24_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_24_1.4bpp");
-static const u8 sGranbullGfx24_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_24_2.4bpp");
-static const u8 sGranbullGfx24_3[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_24_3.4bpp");
+static const u8 sGranbullGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_24.4bpp.lz");
+static const u8 sGranbullGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_24_1.4bpp.lz");
+static const u8 sGranbullGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_24_2.4bpp.lz");
+static const u8 sGranbullGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_24_3.4bpp.lz");
 static const ax_sprite sGranbullSprites24[] = {
 	{sGranbullGfx24, ARRAY_COUNT(sGranbullGfx24)}, 
 	{NULL, 32}, 
@@ -2648,10 +2648,10 @@ static const ax_sprite sGranbullSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx25[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_25.4bpp");
-static const u8 sGranbullGfx25_1[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_25_1.4bpp");
-static const u8 sGranbullGfx25_2[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_25_2.4bpp");
-static const u8 sGranbullGfx25_3[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_25_3.4bpp");
+static const u8 sGranbullGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_25.4bpp.lz");
+static const u8 sGranbullGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_25_1.4bpp.lz");
+static const u8 sGranbullGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_25_2.4bpp.lz");
+static const u8 sGranbullGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_25_3.4bpp.lz");
 static const ax_sprite sGranbullSprites25[] = {
 	{sGranbullGfx25, ARRAY_COUNT(sGranbullGfx25)}, 
 	{NULL, 32}, 
@@ -2663,37 +2663,37 @@ static const ax_sprite sGranbullSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx26[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_26.4bpp");
+static const u8 sGranbullGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_26.4bpp.lz");
 static const ax_sprite sGranbullSprites26[] = {
 	{sGranbullGfx26, ARRAY_COUNT(sGranbullGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx27[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_27.4bpp");
+static const u8 sGranbullGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_27.4bpp.lz");
 static const ax_sprite sGranbullSprites27[] = {
 	{sGranbullGfx27, ARRAY_COUNT(sGranbullGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx28[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_28.4bpp");
+static const u8 sGranbullGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_28.4bpp.lz");
 static const ax_sprite sGranbullSprites28[] = {
 	{sGranbullGfx28, ARRAY_COUNT(sGranbullGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx29[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_29.4bpp");
+static const u8 sGranbullGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_29.4bpp.lz");
 static const ax_sprite sGranbullSprites29[] = {
 	{sGranbullGfx29, ARRAY_COUNT(sGranbullGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx30[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_30.4bpp");
+static const u8 sGranbullGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_30.4bpp.lz");
 static const ax_sprite sGranbullSprites30[] = {
 	{sGranbullGfx30, ARRAY_COUNT(sGranbullGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx31[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_31.4bpp");
+static const u8 sGranbullGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_31.4bpp.lz");
 static const ax_sprite sGranbullSprites31[] = {
 	{sGranbullGfx31, ARRAY_COUNT(sGranbullGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sGranbullGfx32[] = INCBIN_U8("graphics/ax/mon/granbull/sprite_32.4bpp");
+static const u8 sGranbullGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/granbull/sprite_32.4bpp.lz");
 static const ax_sprite sGranbullSprites32[] = {
 	{sGranbullGfx32, ARRAY_COUNT(sGranbullGfx32)}, 
 	{NULL, 0}

@@ -1895,90 +1895,90 @@ static const ax_anim sWurmpleAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWurmpleGfx1[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_1.4bpp");
+static const u8 sWurmpleGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_1.4bpp.lz");
 static const ax_sprite sWurmpleSprites1[] = {
 	{sWurmpleGfx1, ARRAY_COUNT(sWurmpleGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx2[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_2.4bpp");
+static const u8 sWurmpleGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_2.4bpp.lz");
 static const ax_sprite sWurmpleSprites2[] = {
 	{sWurmpleGfx2, ARRAY_COUNT(sWurmpleGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx3[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_3.4bpp");
+static const u8 sWurmpleGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_3.4bpp.lz");
 static const ax_sprite sWurmpleSprites3[] = {
 	{sWurmpleGfx3, ARRAY_COUNT(sWurmpleGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx4[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_4.4bpp");
+static const u8 sWurmpleGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_4.4bpp.lz");
 static const ax_sprite sWurmpleSprites4[] = {
 	{sWurmpleGfx4, ARRAY_COUNT(sWurmpleGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx5[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_5.4bpp");
+static const u8 sWurmpleGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_5.4bpp.lz");
 static const ax_sprite sWurmpleSprites5[] = {
 	{sWurmpleGfx5, ARRAY_COUNT(sWurmpleGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx6[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_6.4bpp");
+static const u8 sWurmpleGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_6.4bpp.lz");
 static const ax_sprite sWurmpleSprites6[] = {
 	{sWurmpleGfx6, ARRAY_COUNT(sWurmpleGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx7[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_7.4bpp");
+static const u8 sWurmpleGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_7.4bpp.lz");
 static const ax_sprite sWurmpleSprites7[] = {
 	{sWurmpleGfx7, ARRAY_COUNT(sWurmpleGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx8[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_8.4bpp");
+static const u8 sWurmpleGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_8.4bpp.lz");
 static const ax_sprite sWurmpleSprites8[] = {
 	{sWurmpleGfx8, ARRAY_COUNT(sWurmpleGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx9[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_9.4bpp");
+static const u8 sWurmpleGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_9.4bpp.lz");
 static const ax_sprite sWurmpleSprites9[] = {
 	{sWurmpleGfx9, ARRAY_COUNT(sWurmpleGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx10[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_10.4bpp");
+static const u8 sWurmpleGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_10.4bpp.lz");
 static const ax_sprite sWurmpleSprites10[] = {
 	{sWurmpleGfx10, ARRAY_COUNT(sWurmpleGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx11[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_11.4bpp");
+static const u8 sWurmpleGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_11.4bpp.lz");
 static const ax_sprite sWurmpleSprites11[] = {
 	{sWurmpleGfx11, ARRAY_COUNT(sWurmpleGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx12[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_12.4bpp");
+static const u8 sWurmpleGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_12.4bpp.lz");
 static const ax_sprite sWurmpleSprites12[] = {
 	{sWurmpleGfx12, ARRAY_COUNT(sWurmpleGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx13[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_13.4bpp");
+static const u8 sWurmpleGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_13.4bpp.lz");
 static const ax_sprite sWurmpleSprites13[] = {
 	{sWurmpleGfx13, ARRAY_COUNT(sWurmpleGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx14[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_14.4bpp");
+static const u8 sWurmpleGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_14.4bpp.lz");
 static const ax_sprite sWurmpleSprites14[] = {
 	{sWurmpleGfx14, ARRAY_COUNT(sWurmpleGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx15[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_15.4bpp");
+static const u8 sWurmpleGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_15.4bpp.lz");
 static const ax_sprite sWurmpleSprites15[] = {
 	{sWurmpleGfx15, ARRAY_COUNT(sWurmpleGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx16[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_16.4bpp");
+static const u8 sWurmpleGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_16.4bpp.lz");
 static const ax_sprite sWurmpleSprites16[] = {
 	{sWurmpleGfx16, ARRAY_COUNT(sWurmpleGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx17[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_17.4bpp");
-static const u8 sWurmpleGfx17_1[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_17_1.4bpp");
-static const u8 sWurmpleGfx17_2[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_17_2.4bpp");
+static const u8 sWurmpleGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_17.4bpp.lz");
+static const u8 sWurmpleGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_17_1.4bpp.lz");
+static const u8 sWurmpleGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_17_2.4bpp.lz");
 static const ax_sprite sWurmpleSprites17[] = {
 	{NULL, 128}, 
 	{sWurmpleGfx17, ARRAY_COUNT(sWurmpleGfx17)}, 
@@ -1989,9 +1989,9 @@ static const ax_sprite sWurmpleSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx18[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_18.4bpp");
-static const u8 sWurmpleGfx18_1[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_18_1.4bpp");
-static const u8 sWurmpleGfx18_2[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_18_2.4bpp");
+static const u8 sWurmpleGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_18.4bpp.lz");
+static const u8 sWurmpleGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_18_1.4bpp.lz");
+static const u8 sWurmpleGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_18_2.4bpp.lz");
 static const ax_sprite sWurmpleSprites18[] = {
 	{NULL, 32}, 
 	{sWurmpleGfx18, ARRAY_COUNT(sWurmpleGfx18)}, 
@@ -2002,9 +2002,9 @@ static const ax_sprite sWurmpleSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx19[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_19.4bpp");
-static const u8 sWurmpleGfx19_1[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_19_1.4bpp");
-static const u8 sWurmpleGfx19_2[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_19_2.4bpp");
+static const u8 sWurmpleGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_19.4bpp.lz");
+static const u8 sWurmpleGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_19_1.4bpp.lz");
+static const u8 sWurmpleGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_19_2.4bpp.lz");
 static const ax_sprite sWurmpleSprites19[] = {
 	{sWurmpleGfx19, ARRAY_COUNT(sWurmpleGfx19)}, 
 	{NULL, 32}, 
@@ -2014,43 +2014,43 @@ static const ax_sprite sWurmpleSprites19[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx20[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_20.4bpp");
+static const u8 sWurmpleGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_20.4bpp.lz");
 static const ax_sprite sWurmpleSprites20[] = {
 	{sWurmpleGfx20, ARRAY_COUNT(sWurmpleGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx21[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_21.4bpp");
+static const u8 sWurmpleGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_21.4bpp.lz");
 static const ax_sprite sWurmpleSprites21[] = {
 	{sWurmpleGfx21, ARRAY_COUNT(sWurmpleGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx22[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_22.4bpp");
+static const u8 sWurmpleGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_22.4bpp.lz");
 static const ax_sprite sWurmpleSprites22[] = {
 	{sWurmpleGfx22, ARRAY_COUNT(sWurmpleGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx23[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_23.4bpp");
+static const u8 sWurmpleGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_23.4bpp.lz");
 static const ax_sprite sWurmpleSprites23[] = {
 	{sWurmpleGfx23, ARRAY_COUNT(sWurmpleGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx24[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_24.4bpp");
+static const u8 sWurmpleGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_24.4bpp.lz");
 static const ax_sprite sWurmpleSprites24[] = {
 	{sWurmpleGfx24, ARRAY_COUNT(sWurmpleGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx25[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_25.4bpp");
+static const u8 sWurmpleGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_25.4bpp.lz");
 static const ax_sprite sWurmpleSprites25[] = {
 	{sWurmpleGfx25, ARRAY_COUNT(sWurmpleGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx26[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_26.4bpp");
+static const u8 sWurmpleGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_26.4bpp.lz");
 static const ax_sprite sWurmpleSprites26[] = {
 	{sWurmpleGfx26, ARRAY_COUNT(sWurmpleGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sWurmpleGfx27[] = INCBIN_U8("graphics/ax/mon/wurmple/sprite_27.4bpp");
+static const u8 sWurmpleGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wurmple/sprite_27.4bpp.lz");
 static const ax_sprite sWurmpleSprites27[] = {
 	{sWurmpleGfx27, ARRAY_COUNT(sWurmpleGfx27)}, 
 	{NULL, 0}

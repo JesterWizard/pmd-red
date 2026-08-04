@@ -2165,90 +2165,90 @@ static const ax_anim sRattataAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRattataGfx1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_1.4bpp");
+static const u8 sRattataGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_1.4bpp.lz");
 static const ax_sprite sRattataSprites1[] = {
 	{sRattataGfx1, ARRAY_COUNT(sRattataGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_2.4bpp");
+static const u8 sRattataGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_2.4bpp.lz");
 static const ax_sprite sRattataSprites2[] = {
 	{sRattataGfx2, ARRAY_COUNT(sRattataGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx3[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_3.4bpp");
+static const u8 sRattataGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_3.4bpp.lz");
 static const ax_sprite sRattataSprites3[] = {
 	{sRattataGfx3, ARRAY_COUNT(sRattataGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx4[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_4.4bpp");
+static const u8 sRattataGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_4.4bpp.lz");
 static const ax_sprite sRattataSprites4[] = {
 	{sRattataGfx4, ARRAY_COUNT(sRattataGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx5[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_5.4bpp");
+static const u8 sRattataGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_5.4bpp.lz");
 static const ax_sprite sRattataSprites5[] = {
 	{sRattataGfx5, ARRAY_COUNT(sRattataGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx6[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_6.4bpp");
+static const u8 sRattataGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_6.4bpp.lz");
 static const ax_sprite sRattataSprites6[] = {
 	{sRattataGfx6, ARRAY_COUNT(sRattataGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx7[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_7.4bpp");
+static const u8 sRattataGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_7.4bpp.lz");
 static const ax_sprite sRattataSprites7[] = {
 	{sRattataGfx7, ARRAY_COUNT(sRattataGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx8[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_8.4bpp");
+static const u8 sRattataGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_8.4bpp.lz");
 static const ax_sprite sRattataSprites8[] = {
 	{sRattataGfx8, ARRAY_COUNT(sRattataGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx9[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_9.4bpp");
+static const u8 sRattataGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_9.4bpp.lz");
 static const ax_sprite sRattataSprites9[] = {
 	{sRattataGfx9, ARRAY_COUNT(sRattataGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx10[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_10.4bpp");
+static const u8 sRattataGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_10.4bpp.lz");
 static const ax_sprite sRattataSprites10[] = {
 	{sRattataGfx10, ARRAY_COUNT(sRattataGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx11[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_11.4bpp");
+static const u8 sRattataGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_11.4bpp.lz");
 static const ax_sprite sRattataSprites11[] = {
 	{sRattataGfx11, ARRAY_COUNT(sRattataGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx12[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_12.4bpp");
+static const u8 sRattataGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_12.4bpp.lz");
 static const ax_sprite sRattataSprites12[] = {
 	{sRattataGfx12, ARRAY_COUNT(sRattataGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx13[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_13.4bpp");
+static const u8 sRattataGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_13.4bpp.lz");
 static const ax_sprite sRattataSprites13[] = {
 	{sRattataGfx13, ARRAY_COUNT(sRattataGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx14[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_14.4bpp");
+static const u8 sRattataGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_14.4bpp.lz");
 static const ax_sprite sRattataSprites14[] = {
 	{sRattataGfx14, ARRAY_COUNT(sRattataGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx15[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_15.4bpp");
+static const u8 sRattataGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_15.4bpp.lz");
 static const ax_sprite sRattataSprites15[] = {
 	{sRattataGfx15, ARRAY_COUNT(sRattataGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx16[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_16.4bpp");
+static const u8 sRattataGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_16.4bpp.lz");
 static const ax_sprite sRattataSprites16[] = {
 	{sRattataGfx16, ARRAY_COUNT(sRattataGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx17[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_17.4bpp");
-static const u8 sRattataGfx17_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_17_1.4bpp");
-static const u8 sRattataGfx17_2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_17_2.4bpp");
-static const u8 sRattataGfx17_3[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_17_3.4bpp");
+static const u8 sRattataGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_17.4bpp.lz");
+static const u8 sRattataGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_17_1.4bpp.lz");
+static const u8 sRattataGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_17_2.4bpp.lz");
+static const u8 sRattataGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_17_3.4bpp.lz");
 static const ax_sprite sRattataSprites17[] = {
 	{sRattataGfx17, ARRAY_COUNT(sRattataGfx17)}, 
 	{NULL, 64}, 
@@ -2260,10 +2260,10 @@ static const ax_sprite sRattataSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx18[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_18.4bpp");
-static const u8 sRattataGfx18_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_18_1.4bpp");
-static const u8 sRattataGfx18_2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_18_2.4bpp");
-static const u8 sRattataGfx18_3[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_18_3.4bpp");
+static const u8 sRattataGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_18.4bpp.lz");
+static const u8 sRattataGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_18_1.4bpp.lz");
+static const u8 sRattataGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_18_2.4bpp.lz");
+static const u8 sRattataGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_18_3.4bpp.lz");
 static const ax_sprite sRattataSprites18[] = {
 	{NULL, 64}, 
 	{sRattataGfx18, ARRAY_COUNT(sRattataGfx18)}, 
@@ -2276,8 +2276,8 @@ static const ax_sprite sRattataSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx19[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_19.4bpp");
-static const u8 sRattataGfx19_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_19_1.4bpp");
+static const u8 sRattataGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_19.4bpp.lz");
+static const u8 sRattataGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_19_1.4bpp.lz");
 static const ax_sprite sRattataSprites19[] = {
 	{NULL, 32}, 
 	{sRattataGfx19, ARRAY_COUNT(sRattataGfx19)}, 
@@ -2286,21 +2286,21 @@ static const ax_sprite sRattataSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx20[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_20.4bpp");
+static const u8 sRattataGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_20.4bpp.lz");
 static const ax_sprite sRattataSprites20[] = {
 	{sRattataGfx20, ARRAY_COUNT(sRattataGfx20)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx21[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_21.4bpp");
+static const u8 sRattataGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_21.4bpp.lz");
 static const ax_sprite sRattataSprites21[] = {
 	{sRattataGfx21, ARRAY_COUNT(sRattataGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx22[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_22.4bpp");
-static const u8 sRattataGfx22_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_22_1.4bpp");
-static const u8 sRattataGfx22_2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_22_2.4bpp");
+static const u8 sRattataGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_22.4bpp.lz");
+static const u8 sRattataGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_22_1.4bpp.lz");
+static const u8 sRattataGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_22_2.4bpp.lz");
 static const ax_sprite sRattataSprites22[] = {
 	{sRattataGfx22, ARRAY_COUNT(sRattataGfx22)}, 
 	{NULL, 64}, 
@@ -2310,9 +2310,9 @@ static const ax_sprite sRattataSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx23[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_23.4bpp");
-static const u8 sRattataGfx23_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_23_1.4bpp");
-static const u8 sRattataGfx23_2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_23_2.4bpp");
+static const u8 sRattataGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_23.4bpp.lz");
+static const u8 sRattataGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_23_1.4bpp.lz");
+static const u8 sRattataGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_23_2.4bpp.lz");
 static const ax_sprite sRattataSprites23[] = {
 	{sRattataGfx23, ARRAY_COUNT(sRattataGfx23)}, 
 	{NULL, 64}, 
@@ -2322,9 +2322,9 @@ static const ax_sprite sRattataSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx24[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_24.4bpp");
-static const u8 sRattataGfx24_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_24_1.4bpp");
-static const u8 sRattataGfx24_2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_24_2.4bpp");
+static const u8 sRattataGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_24.4bpp.lz");
+static const u8 sRattataGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_24_1.4bpp.lz");
+static const u8 sRattataGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_24_2.4bpp.lz");
 static const ax_sprite sRattataSprites24[] = {
 	{NULL, 32}, 
 	{sRattataGfx24, ARRAY_COUNT(sRattataGfx24)}, 
@@ -2335,9 +2335,9 @@ static const ax_sprite sRattataSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx25[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_25.4bpp");
-static const u8 sRattataGfx25_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_25_1.4bpp");
-static const u8 sRattataGfx25_2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_25_2.4bpp");
+static const u8 sRattataGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_25.4bpp.lz");
+static const u8 sRattataGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_25_1.4bpp.lz");
+static const u8 sRattataGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_25_2.4bpp.lz");
 static const ax_sprite sRattataSprites25[] = {
 	{NULL, 32}, 
 	{sRattataGfx25, ARRAY_COUNT(sRattataGfx25)}, 
@@ -2348,15 +2348,15 @@ static const ax_sprite sRattataSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx26[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_26.4bpp");
+static const u8 sRattataGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_26.4bpp.lz");
 static const ax_sprite sRattataSprites26[] = {
 	{NULL, 64}, 
 	{sRattataGfx26, ARRAY_COUNT(sRattataGfx26)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx27[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_27.4bpp");
-static const u8 sRattataGfx27_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_27_1.4bpp");
+static const u8 sRattataGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_27.4bpp.lz");
+static const u8 sRattataGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_27_1.4bpp.lz");
 static const ax_sprite sRattataSprites27[] = {
 	{NULL, 64}, 
 	{sRattataGfx27, ARRAY_COUNT(sRattataGfx27)}, 
@@ -2365,9 +2365,9 @@ static const ax_sprite sRattataSprites27[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx28[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_28.4bpp");
-static const u8 sRattataGfx28_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_28_1.4bpp");
-static const u8 sRattataGfx28_2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_28_2.4bpp");
+static const u8 sRattataGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_28.4bpp.lz");
+static const u8 sRattataGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_28_1.4bpp.lz");
+static const u8 sRattataGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_28_2.4bpp.lz");
 static const ax_sprite sRattataSprites28[] = {
 	{sRattataGfx28, ARRAY_COUNT(sRattataGfx28)}, 
 	{NULL, 32}, 
@@ -2377,9 +2377,9 @@ static const ax_sprite sRattataSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx29[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_29.4bpp");
-static const u8 sRattataGfx29_1[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_29_1.4bpp");
-static const u8 sRattataGfx29_2[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_29_2.4bpp");
+static const u8 sRattataGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_29.4bpp.lz");
+static const u8 sRattataGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_29_1.4bpp.lz");
+static const u8 sRattataGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_29_2.4bpp.lz");
 static const ax_sprite sRattataSprites29[] = {
 	{sRattataGfx29, ARRAY_COUNT(sRattataGfx29)}, 
 	{NULL, 32}, 
@@ -2389,49 +2389,49 @@ static const ax_sprite sRattataSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx30[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_30.4bpp");
+static const u8 sRattataGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_30.4bpp.lz");
 static const ax_sprite sRattataSprites30[] = {
 	{sRattataGfx30, ARRAY_COUNT(sRattataGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx31[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_31.4bpp");
+static const u8 sRattataGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_31.4bpp.lz");
 static const ax_sprite sRattataSprites31[] = {
 	{sRattataGfx31, ARRAY_COUNT(sRattataGfx31)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx32[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_32.4bpp");
+static const u8 sRattataGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_32.4bpp.lz");
 static const ax_sprite sRattataSprites32[] = {
 	{sRattataGfx32, ARRAY_COUNT(sRattataGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx33[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_33.4bpp");
+static const u8 sRattataGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_33.4bpp.lz");
 static const ax_sprite sRattataSprites33[] = {
 	{sRattataGfx33, ARRAY_COUNT(sRattataGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx34[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_34.4bpp");
+static const u8 sRattataGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_34.4bpp.lz");
 static const ax_sprite sRattataSprites34[] = {
 	{sRattataGfx34, ARRAY_COUNT(sRattataGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx35[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_35.4bpp");
+static const u8 sRattataGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_35.4bpp.lz");
 static const ax_sprite sRattataSprites35[] = {
 	{sRattataGfx35, ARRAY_COUNT(sRattataGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx36[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_36.4bpp");
+static const u8 sRattataGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_36.4bpp.lz");
 static const ax_sprite sRattataSprites36[] = {
 	{sRattataGfx36, ARRAY_COUNT(sRattataGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx37[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_37.4bpp");
+static const u8 sRattataGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_37.4bpp.lz");
 static const ax_sprite sRattataSprites37[] = {
 	{sRattataGfx37, ARRAY_COUNT(sRattataGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sRattataGfx38[] = INCBIN_U8("graphics/ax/mon/rattata/sprite_38.4bpp");
+static const u8 sRattataGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rattata/sprite_38.4bpp.lz");
 static const ax_sprite sRattataSprites38[] = {
 	{sRattataGfx38, ARRAY_COUNT(sRattataGfx38)}, 
 	{NULL, 0}

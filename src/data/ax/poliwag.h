@@ -2047,104 +2047,104 @@ static const ax_anim sPoliwagAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPoliwagGfx1[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_1.4bpp");
+static const u8 sPoliwagGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_1.4bpp.lz");
 static const ax_sprite sPoliwagSprites1[] = {
 	{sPoliwagGfx1, ARRAY_COUNT(sPoliwagGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx2[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_2.4bpp");
+static const u8 sPoliwagGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_2.4bpp.lz");
 static const ax_sprite sPoliwagSprites2[] = {
 	{sPoliwagGfx2, ARRAY_COUNT(sPoliwagGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx3[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_3.4bpp");
+static const u8 sPoliwagGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_3.4bpp.lz");
 static const ax_sprite sPoliwagSprites3[] = {
 	{sPoliwagGfx3, ARRAY_COUNT(sPoliwagGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx4[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_4.4bpp");
+static const u8 sPoliwagGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_4.4bpp.lz");
 static const ax_sprite sPoliwagSprites4[] = {
 	{sPoliwagGfx4, ARRAY_COUNT(sPoliwagGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx5[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_5.4bpp");
+static const u8 sPoliwagGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_5.4bpp.lz");
 static const ax_sprite sPoliwagSprites5[] = {
 	{sPoliwagGfx5, ARRAY_COUNT(sPoliwagGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx6[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_6.4bpp");
+static const u8 sPoliwagGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_6.4bpp.lz");
 static const ax_sprite sPoliwagSprites6[] = {
 	{sPoliwagGfx6, ARRAY_COUNT(sPoliwagGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx7[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_7.4bpp");
+static const u8 sPoliwagGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_7.4bpp.lz");
 static const ax_sprite sPoliwagSprites7[] = {
 	{sPoliwagGfx7, ARRAY_COUNT(sPoliwagGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx8[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_8.4bpp");
+static const u8 sPoliwagGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_8.4bpp.lz");
 static const ax_sprite sPoliwagSprites8[] = {
 	{sPoliwagGfx8, ARRAY_COUNT(sPoliwagGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx9[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_9.4bpp");
+static const u8 sPoliwagGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_9.4bpp.lz");
 static const ax_sprite sPoliwagSprites9[] = {
 	{sPoliwagGfx9, ARRAY_COUNT(sPoliwagGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx10[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_10.4bpp");
+static const u8 sPoliwagGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_10.4bpp.lz");
 static const ax_sprite sPoliwagSprites10[] = {
 	{sPoliwagGfx10, ARRAY_COUNT(sPoliwagGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx11[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_11.4bpp");
+static const u8 sPoliwagGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_11.4bpp.lz");
 static const ax_sprite sPoliwagSprites11[] = {
 	{sPoliwagGfx11, ARRAY_COUNT(sPoliwagGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx12[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_12.4bpp");
+static const u8 sPoliwagGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_12.4bpp.lz");
 static const ax_sprite sPoliwagSprites12[] = {
 	{sPoliwagGfx12, ARRAY_COUNT(sPoliwagGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx13[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_13.4bpp");
+static const u8 sPoliwagGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_13.4bpp.lz");
 static const ax_sprite sPoliwagSprites13[] = {
 	{sPoliwagGfx13, ARRAY_COUNT(sPoliwagGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx14[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_14.4bpp");
+static const u8 sPoliwagGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_14.4bpp.lz");
 static const ax_sprite sPoliwagSprites14[] = {
 	{sPoliwagGfx14, ARRAY_COUNT(sPoliwagGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx15[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_15.4bpp");
+static const u8 sPoliwagGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_15.4bpp.lz");
 static const ax_sprite sPoliwagSprites15[] = {
 	{sPoliwagGfx15, ARRAY_COUNT(sPoliwagGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx16[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_16.4bpp");
+static const u8 sPoliwagGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_16.4bpp.lz");
 static const ax_sprite sPoliwagSprites16[] = {
 	{sPoliwagGfx16, ARRAY_COUNT(sPoliwagGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx17[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_17.4bpp");
+static const u8 sPoliwagGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_17.4bpp.lz");
 static const ax_sprite sPoliwagSprites17[] = {
 	{sPoliwagGfx17, ARRAY_COUNT(sPoliwagGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx18[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_18.4bpp");
+static const u8 sPoliwagGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_18.4bpp.lz");
 static const ax_sprite sPoliwagSprites18[] = {
 	{sPoliwagGfx18, ARRAY_COUNT(sPoliwagGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx19[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_19.4bpp");
+static const u8 sPoliwagGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_19.4bpp.lz");
 static const ax_sprite sPoliwagSprites19[] = {
 	{sPoliwagGfx19, ARRAY_COUNT(sPoliwagGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx20[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_20.4bpp");
-static const u8 sPoliwagGfx20_1[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_20_1.4bpp");
-static const u8 sPoliwagGfx20_2[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_20_2.4bpp");
+static const u8 sPoliwagGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_20.4bpp.lz");
+static const u8 sPoliwagGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_20_1.4bpp.lz");
+static const u8 sPoliwagGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_20_2.4bpp.lz");
 static const ax_sprite sPoliwagSprites20[] = {
 	{NULL, 64}, 
 	{sPoliwagGfx20, ARRAY_COUNT(sPoliwagGfx20)}, 
@@ -2155,8 +2155,8 @@ static const ax_sprite sPoliwagSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx21[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_21.4bpp");
-static const u8 sPoliwagGfx21_1[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_21_1.4bpp");
+static const u8 sPoliwagGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_21.4bpp.lz");
+static const u8 sPoliwagGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_21_1.4bpp.lz");
 static const ax_sprite sPoliwagSprites21[] = {
 	{sPoliwagGfx21, ARRAY_COUNT(sPoliwagGfx21)}, 
 	{NULL, 64}, 
@@ -2164,10 +2164,10 @@ static const ax_sprite sPoliwagSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx22[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_22.4bpp");
-static const u8 sPoliwagGfx22_1[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_22_1.4bpp");
-static const u8 sPoliwagGfx22_2[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_22_2.4bpp");
-static const u8 sPoliwagGfx22_3[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_22_3.4bpp");
+static const u8 sPoliwagGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_22.4bpp.lz");
+static const u8 sPoliwagGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_22_1.4bpp.lz");
+static const u8 sPoliwagGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_22_2.4bpp.lz");
+static const u8 sPoliwagGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_22_3.4bpp.lz");
 static const ax_sprite sPoliwagSprites22[] = {
 	{sPoliwagGfx22, ARRAY_COUNT(sPoliwagGfx22)}, 
 	{NULL, 64}, 
@@ -2179,15 +2179,15 @@ static const ax_sprite sPoliwagSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx23[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_23.4bpp");
+static const u8 sPoliwagGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_23.4bpp.lz");
 static const ax_sprite sPoliwagSprites23[] = {
 	{sPoliwagGfx23, ARRAY_COUNT(sPoliwagGfx23)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx24[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_24.4bpp");
-static const u8 sPoliwagGfx24_1[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_24_1.4bpp");
-static const u8 sPoliwagGfx24_2[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_24_2.4bpp");
+static const u8 sPoliwagGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_24.4bpp.lz");
+static const u8 sPoliwagGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_24_1.4bpp.lz");
+static const u8 sPoliwagGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_24_2.4bpp.lz");
 static const ax_sprite sPoliwagSprites24[] = {
 	{sPoliwagGfx24, ARRAY_COUNT(sPoliwagGfx24)}, 
 	{NULL, 64}, 
@@ -2197,37 +2197,37 @@ static const ax_sprite sPoliwagSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx25[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_25.4bpp");
+static const u8 sPoliwagGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_25.4bpp.lz");
 static const ax_sprite sPoliwagSprites25[] = {
 	{sPoliwagGfx25, ARRAY_COUNT(sPoliwagGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx26[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_26.4bpp");
+static const u8 sPoliwagGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_26.4bpp.lz");
 static const ax_sprite sPoliwagSprites26[] = {
 	{sPoliwagGfx26, ARRAY_COUNT(sPoliwagGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx27[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_27.4bpp");
+static const u8 sPoliwagGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_27.4bpp.lz");
 static const ax_sprite sPoliwagSprites27[] = {
 	{sPoliwagGfx27, ARRAY_COUNT(sPoliwagGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx28[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_28.4bpp");
+static const u8 sPoliwagGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_28.4bpp.lz");
 static const ax_sprite sPoliwagSprites28[] = {
 	{sPoliwagGfx28, ARRAY_COUNT(sPoliwagGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx29[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_29.4bpp");
+static const u8 sPoliwagGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_29.4bpp.lz");
 static const ax_sprite sPoliwagSprites29[] = {
 	{sPoliwagGfx29, ARRAY_COUNT(sPoliwagGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx30[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_30.4bpp");
+static const u8 sPoliwagGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_30.4bpp.lz");
 static const ax_sprite sPoliwagSprites30[] = {
 	{sPoliwagGfx30, ARRAY_COUNT(sPoliwagGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwagGfx31[] = INCBIN_U8("graphics/ax/mon/poliwag/sprite_31.4bpp");
+static const u8 sPoliwagGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwag/sprite_31.4bpp.lz");
 static const ax_sprite sPoliwagSprites31[] = {
 	{sPoliwagGfx31, ARRAY_COUNT(sPoliwagGfx31)}, 
 	{NULL, 0}

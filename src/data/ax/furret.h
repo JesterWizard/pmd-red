@@ -2466,165 +2466,165 @@ static const ax_anim sFurretAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sFurretGfx1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_1.4bpp");
+static const u8 sFurretGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_1.4bpp.lz");
 static const ax_sprite sFurretSprites1[] = {
 	{sFurretGfx1, ARRAY_COUNT(sFurretGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_2.4bpp");
+static const u8 sFurretGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_2.4bpp.lz");
 static const ax_sprite sFurretSprites2[] = {
 	{sFurretGfx2, ARRAY_COUNT(sFurretGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_3.4bpp");
+static const u8 sFurretGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_3.4bpp.lz");
 static const ax_sprite sFurretSprites3[] = {
 	{sFurretGfx3, ARRAY_COUNT(sFurretGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx4[] = INCBIN_U8("graphics/ax/mon/furret/sprite_4.4bpp");
+static const u8 sFurretGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_4.4bpp.lz");
 static const ax_sprite sFurretSprites4[] = {
 	{sFurretGfx4, ARRAY_COUNT(sFurretGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx5[] = INCBIN_U8("graphics/ax/mon/furret/sprite_5.4bpp");
+static const u8 sFurretGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_5.4bpp.lz");
 static const ax_sprite sFurretSprites5[] = {
 	{sFurretGfx5, ARRAY_COUNT(sFurretGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx6[] = INCBIN_U8("graphics/ax/mon/furret/sprite_6.4bpp");
+static const u8 sFurretGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_6.4bpp.lz");
 static const ax_sprite sFurretSprites6[] = {
 	{sFurretGfx6, ARRAY_COUNT(sFurretGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx7[] = INCBIN_U8("graphics/ax/mon/furret/sprite_7.4bpp");
+static const u8 sFurretGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_7.4bpp.lz");
 static const ax_sprite sFurretSprites7[] = {
 	{sFurretGfx7, ARRAY_COUNT(sFurretGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx8[] = INCBIN_U8("graphics/ax/mon/furret/sprite_8.4bpp");
+static const u8 sFurretGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_8.4bpp.lz");
 static const ax_sprite sFurretSprites8[] = {
 	{sFurretGfx8, ARRAY_COUNT(sFurretGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx9[] = INCBIN_U8("graphics/ax/mon/furret/sprite_9.4bpp");
+static const u8 sFurretGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_9.4bpp.lz");
 static const ax_sprite sFurretSprites9[] = {
 	{sFurretGfx9, ARRAY_COUNT(sFurretGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx10[] = INCBIN_U8("graphics/ax/mon/furret/sprite_10.4bpp");
+static const u8 sFurretGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_10.4bpp.lz");
 static const ax_sprite sFurretSprites10[] = {
 	{sFurretGfx10, ARRAY_COUNT(sFurretGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx11[] = INCBIN_U8("graphics/ax/mon/furret/sprite_11.4bpp");
+static const u8 sFurretGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_11.4bpp.lz");
 static const ax_sprite sFurretSprites11[] = {
 	{sFurretGfx11, ARRAY_COUNT(sFurretGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx12[] = INCBIN_U8("graphics/ax/mon/furret/sprite_12.4bpp");
+static const u8 sFurretGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_12.4bpp.lz");
 static const ax_sprite sFurretSprites12[] = {
 	{sFurretGfx12, ARRAY_COUNT(sFurretGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx13[] = INCBIN_U8("graphics/ax/mon/furret/sprite_13.4bpp");
+static const u8 sFurretGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_13.4bpp.lz");
 static const ax_sprite sFurretSprites13[] = {
 	{sFurretGfx13, ARRAY_COUNT(sFurretGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx14[] = INCBIN_U8("graphics/ax/mon/furret/sprite_14.4bpp");
+static const u8 sFurretGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_14.4bpp.lz");
 static const ax_sprite sFurretSprites14[] = {
 	{sFurretGfx14, ARRAY_COUNT(sFurretGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx15[] = INCBIN_U8("graphics/ax/mon/furret/sprite_15.4bpp");
+static const u8 sFurretGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_15.4bpp.lz");
 static const ax_sprite sFurretSprites15[] = {
 	{sFurretGfx15, ARRAY_COUNT(sFurretGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx16[] = INCBIN_U8("graphics/ax/mon/furret/sprite_16.4bpp");
+static const u8 sFurretGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_16.4bpp.lz");
 static const ax_sprite sFurretSprites16[] = {
 	{sFurretGfx16, ARRAY_COUNT(sFurretGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx17[] = INCBIN_U8("graphics/ax/mon/furret/sprite_17.4bpp");
+static const u8 sFurretGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_17.4bpp.lz");
 static const ax_sprite sFurretSprites17[] = {
 	{sFurretGfx17, ARRAY_COUNT(sFurretGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx18[] = INCBIN_U8("graphics/ax/mon/furret/sprite_18.4bpp");
+static const u8 sFurretGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_18.4bpp.lz");
 static const ax_sprite sFurretSprites18[] = {
 	{sFurretGfx18, ARRAY_COUNT(sFurretGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx19[] = INCBIN_U8("graphics/ax/mon/furret/sprite_19.4bpp");
+static const u8 sFurretGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_19.4bpp.lz");
 static const ax_sprite sFurretSprites19[] = {
 	{sFurretGfx19, ARRAY_COUNT(sFurretGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx20[] = INCBIN_U8("graphics/ax/mon/furret/sprite_20.4bpp");
+static const u8 sFurretGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_20.4bpp.lz");
 static const ax_sprite sFurretSprites20[] = {
 	{sFurretGfx20, ARRAY_COUNT(sFurretGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx21[] = INCBIN_U8("graphics/ax/mon/furret/sprite_21.4bpp");
+static const u8 sFurretGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_21.4bpp.lz");
 static const ax_sprite sFurretSprites21[] = {
 	{sFurretGfx21, ARRAY_COUNT(sFurretGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx22[] = INCBIN_U8("graphics/ax/mon/furret/sprite_22.4bpp");
+static const u8 sFurretGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_22.4bpp.lz");
 static const ax_sprite sFurretSprites22[] = {
 	{sFurretGfx22, ARRAY_COUNT(sFurretGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx23[] = INCBIN_U8("graphics/ax/mon/furret/sprite_23.4bpp");
+static const u8 sFurretGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_23.4bpp.lz");
 static const ax_sprite sFurretSprites23[] = {
 	{sFurretGfx23, ARRAY_COUNT(sFurretGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx24[] = INCBIN_U8("graphics/ax/mon/furret/sprite_24.4bpp");
+static const u8 sFurretGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_24.4bpp.lz");
 static const ax_sprite sFurretSprites24[] = {
 	{sFurretGfx24, ARRAY_COUNT(sFurretGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx25[] = INCBIN_U8("graphics/ax/mon/furret/sprite_25.4bpp");
+static const u8 sFurretGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_25.4bpp.lz");
 static const ax_sprite sFurretSprites25[] = {
 	{sFurretGfx25, ARRAY_COUNT(sFurretGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx26[] = INCBIN_U8("graphics/ax/mon/furret/sprite_26.4bpp");
+static const u8 sFurretGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_26.4bpp.lz");
 static const ax_sprite sFurretSprites26[] = {
 	{sFurretGfx26, ARRAY_COUNT(sFurretGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx27[] = INCBIN_U8("graphics/ax/mon/furret/sprite_27.4bpp");
+static const u8 sFurretGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_27.4bpp.lz");
 static const ax_sprite sFurretSprites27[] = {
 	{sFurretGfx27, ARRAY_COUNT(sFurretGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx28[] = INCBIN_U8("graphics/ax/mon/furret/sprite_28.4bpp");
+static const u8 sFurretGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_28.4bpp.lz");
 static const ax_sprite sFurretSprites28[] = {
 	{sFurretGfx28, ARRAY_COUNT(sFurretGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx29[] = INCBIN_U8("graphics/ax/mon/furret/sprite_29.4bpp");
+static const u8 sFurretGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_29.4bpp.lz");
 static const ax_sprite sFurretSprites29[] = {
 	{sFurretGfx29, ARRAY_COUNT(sFurretGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx30[] = INCBIN_U8("graphics/ax/mon/furret/sprite_30.4bpp");
+static const u8 sFurretGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_30.4bpp.lz");
 static const ax_sprite sFurretSprites30[] = {
 	{sFurretGfx30, ARRAY_COUNT(sFurretGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx31[] = INCBIN_U8("graphics/ax/mon/furret/sprite_31.4bpp");
+static const u8 sFurretGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_31.4bpp.lz");
 static const ax_sprite sFurretSprites31[] = {
 	{sFurretGfx31, ARRAY_COUNT(sFurretGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx32[] = INCBIN_U8("graphics/ax/mon/furret/sprite_32.4bpp");
-static const u8 sFurretGfx32_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_32_1.4bpp");
-static const u8 sFurretGfx32_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_32_2.4bpp");
-static const u8 sFurretGfx32_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_32_3.4bpp");
+static const u8 sFurretGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_32.4bpp.lz");
+static const u8 sFurretGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_32_1.4bpp.lz");
+static const u8 sFurretGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_32_2.4bpp.lz");
+static const u8 sFurretGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_32_3.4bpp.lz");
 static const ax_sprite sFurretSprites32[] = {
 	{sFurretGfx32, ARRAY_COUNT(sFurretGfx32)}, 
 	{NULL, 64}, 
@@ -2636,8 +2636,8 @@ static const ax_sprite sFurretSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx33[] = INCBIN_U8("graphics/ax/mon/furret/sprite_33.4bpp");
-static const u8 sFurretGfx33_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_33_1.4bpp");
+static const u8 sFurretGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_33.4bpp.lz");
+static const u8 sFurretGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_33_1.4bpp.lz");
 static const ax_sprite sFurretSprites33[] = {
 	{sFurretGfx33, ARRAY_COUNT(sFurretGfx33)}, 
 	{NULL, 96}, 
@@ -2645,8 +2645,8 @@ static const ax_sprite sFurretSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx34[] = INCBIN_U8("graphics/ax/mon/furret/sprite_34.4bpp");
-static const u8 sFurretGfx34_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_34_1.4bpp");
+static const u8 sFurretGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_34.4bpp.lz");
+static const u8 sFurretGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_34_1.4bpp.lz");
 static const ax_sprite sFurretSprites34[] = {
 	{sFurretGfx34, ARRAY_COUNT(sFurretGfx34)}, 
 	{NULL, 32}, 
@@ -2654,10 +2654,10 @@ static const ax_sprite sFurretSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx35[] = INCBIN_U8("graphics/ax/mon/furret/sprite_35.4bpp");
-static const u8 sFurretGfx35_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_35_1.4bpp");
-static const u8 sFurretGfx35_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_35_2.4bpp");
-static const u8 sFurretGfx35_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_35_3.4bpp");
+static const u8 sFurretGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_35.4bpp.lz");
+static const u8 sFurretGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_35_1.4bpp.lz");
+static const u8 sFurretGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_35_2.4bpp.lz");
+static const u8 sFurretGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_35_3.4bpp.lz");
 static const ax_sprite sFurretSprites35[] = {
 	{sFurretGfx35, ARRAY_COUNT(sFurretGfx35)}, 
 	{NULL, 64}, 
@@ -2669,20 +2669,20 @@ static const ax_sprite sFurretSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx36[] = INCBIN_U8("graphics/ax/mon/furret/sprite_36.4bpp");
+static const u8 sFurretGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_36.4bpp.lz");
 static const ax_sprite sFurretSprites36[] = {
 	{sFurretGfx36, ARRAY_COUNT(sFurretGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx37[] = INCBIN_U8("graphics/ax/mon/furret/sprite_37.4bpp");
+static const u8 sFurretGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_37.4bpp.lz");
 static const ax_sprite sFurretSprites37[] = {
 	{sFurretGfx37, ARRAY_COUNT(sFurretGfx37)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx38[] = INCBIN_U8("graphics/ax/mon/furret/sprite_38.4bpp");
-static const u8 sFurretGfx38_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_38_1.4bpp");
-static const u8 sFurretGfx38_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_38_2.4bpp");
+static const u8 sFurretGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_38.4bpp.lz");
+static const u8 sFurretGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_38_1.4bpp.lz");
+static const u8 sFurretGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_38_2.4bpp.lz");
 static const ax_sprite sFurretSprites38[] = {
 	{sFurretGfx38, ARRAY_COUNT(sFurretGfx38)}, 
 	{NULL, 32}, 
@@ -2691,21 +2691,21 @@ static const ax_sprite sFurretSprites38[] = {
 	{sFurretGfx38_2, ARRAY_COUNT(sFurretGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx39[] = INCBIN_U8("graphics/ax/mon/furret/sprite_39.4bpp");
+static const u8 sFurretGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_39.4bpp.lz");
 static const ax_sprite sFurretSprites39[] = {
 	{NULL, 64}, 
 	{sFurretGfx39, ARRAY_COUNT(sFurretGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx40[] = INCBIN_U8("graphics/ax/mon/furret/sprite_40.4bpp");
+static const u8 sFurretGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_40.4bpp.lz");
 static const ax_sprite sFurretSprites40[] = {
 	{NULL, 64}, 
 	{sFurretGfx40, ARRAY_COUNT(sFurretGfx40)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx41[] = INCBIN_U8("graphics/ax/mon/furret/sprite_41.4bpp");
-static const u8 sFurretGfx41_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_41_1.4bpp");
+static const u8 sFurretGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_41.4bpp.lz");
+static const u8 sFurretGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_41_1.4bpp.lz");
 static const ax_sprite sFurretSprites41[] = {
 	{NULL, 128}, 
 	{sFurretGfx41, ARRAY_COUNT(sFurretGfx41)}, 
@@ -2714,8 +2714,8 @@ static const ax_sprite sFurretSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx42[] = INCBIN_U8("graphics/ax/mon/furret/sprite_42.4bpp");
-static const u8 sFurretGfx42_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_42_1.4bpp");
+static const u8 sFurretGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_42.4bpp.lz");
+static const u8 sFurretGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_42_1.4bpp.lz");
 static const ax_sprite sFurretSprites42[] = {
 	{NULL, 32}, 
 	{sFurretGfx42, ARRAY_COUNT(sFurretGfx42)}, 
@@ -2724,8 +2724,8 @@ static const ax_sprite sFurretSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx43[] = INCBIN_U8("graphics/ax/mon/furret/sprite_43.4bpp");
-static const u8 sFurretGfx43_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_43_1.4bpp");
+static const u8 sFurretGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_43.4bpp.lz");
+static const u8 sFurretGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_43_1.4bpp.lz");
 static const ax_sprite sFurretSprites43[] = {
 	{NULL, 160}, 
 	{sFurretGfx43, ARRAY_COUNT(sFurretGfx43)}, 
@@ -2734,39 +2734,39 @@ static const ax_sprite sFurretSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx44[] = INCBIN_U8("graphics/ax/mon/furret/sprite_44.4bpp");
-static const u8 sFurretGfx44_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_44_1.4bpp");
+static const u8 sFurretGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_44.4bpp.lz");
+static const u8 sFurretGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_44_1.4bpp.lz");
 static const ax_sprite sFurretSprites44[] = {
 	{sFurretGfx44, ARRAY_COUNT(sFurretGfx44)}, 
 	{NULL, 64}, 
 	{sFurretGfx44_1, ARRAY_COUNT(sFurretGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx45[] = INCBIN_U8("graphics/ax/mon/furret/sprite_45.4bpp");
+static const u8 sFurretGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_45.4bpp.lz");
 static const ax_sprite sFurretSprites45[] = {
 	{sFurretGfx45, ARRAY_COUNT(sFurretGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx46[] = INCBIN_U8("graphics/ax/mon/furret/sprite_46.4bpp");
+static const u8 sFurretGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_46.4bpp.lz");
 static const ax_sprite sFurretSprites46[] = {
 	{NULL, 64}, 
 	{sFurretGfx46, ARRAY_COUNT(sFurretGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx47[] = INCBIN_U8("graphics/ax/mon/furret/sprite_47.4bpp");
+static const u8 sFurretGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_47.4bpp.lz");
 static const ax_sprite sFurretSprites47[] = {
 	{NULL, 64}, 
 	{sFurretGfx47, ARRAY_COUNT(sFurretGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx48[] = INCBIN_U8("graphics/ax/mon/furret/sprite_48.4bpp");
+static const u8 sFurretGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_48.4bpp.lz");
 static const ax_sprite sFurretSprites48[] = {
 	{NULL, 32}, 
 	{sFurretGfx48, ARRAY_COUNT(sFurretGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx49[] = INCBIN_U8("graphics/ax/mon/furret/sprite_49.4bpp");
-static const u8 sFurretGfx49_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_49_1.4bpp");
+static const u8 sFurretGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_49.4bpp.lz");
+static const u8 sFurretGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_49_1.4bpp.lz");
 static const ax_sprite sFurretSprites49[] = {
 	{NULL, 128}, 
 	{sFurretGfx49, ARRAY_COUNT(sFurretGfx49)}, 
@@ -2774,14 +2774,14 @@ static const ax_sprite sFurretSprites49[] = {
 	{sFurretGfx49_1, ARRAY_COUNT(sFurretGfx49_1)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx50[] = INCBIN_U8("graphics/ax/mon/furret/sprite_50.4bpp");
+static const u8 sFurretGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_50.4bpp.lz");
 static const ax_sprite sFurretSprites50[] = {
 	{sFurretGfx50, ARRAY_COUNT(sFurretGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx51[] = INCBIN_U8("graphics/ax/mon/furret/sprite_51.4bpp");
-static const u8 sFurretGfx51_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_51_1.4bpp");
-static const u8 sFurretGfx51_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_51_2.4bpp");
+static const u8 sFurretGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_51.4bpp.lz");
+static const u8 sFurretGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_51_1.4bpp.lz");
+static const u8 sFurretGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_51_2.4bpp.lz");
 static const ax_sprite sFurretSprites51[] = {
 	{sFurretGfx51, ARRAY_COUNT(sFurretGfx51)}, 
 	{NULL, 64}, 
@@ -2791,26 +2791,26 @@ static const ax_sprite sFurretSprites51[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx52[] = INCBIN_U8("graphics/ax/mon/furret/sprite_52.4bpp");
+static const u8 sFurretGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_52.4bpp.lz");
 static const ax_sprite sFurretSprites52[] = {
 	{NULL, 64}, 
 	{sFurretGfx52, ARRAY_COUNT(sFurretGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx53[] = INCBIN_U8("graphics/ax/mon/furret/sprite_53.4bpp");
+static const u8 sFurretGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_53.4bpp.lz");
 static const ax_sprite sFurretSprites53[] = {
 	{sFurretGfx53, ARRAY_COUNT(sFurretGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx54[] = INCBIN_U8("graphics/ax/mon/furret/sprite_54.4bpp");
+static const u8 sFurretGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_54.4bpp.lz");
 static const ax_sprite sFurretSprites54[] = {
 	{sFurretGfx54, ARRAY_COUNT(sFurretGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx55[] = INCBIN_U8("graphics/ax/mon/furret/sprite_55.4bpp");
-static const u8 sFurretGfx55_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_55_1.4bpp");
-static const u8 sFurretGfx55_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_55_2.4bpp");
-static const u8 sFurretGfx55_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_55_3.4bpp");
+static const u8 sFurretGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_55.4bpp.lz");
+static const u8 sFurretGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_55_1.4bpp.lz");
+static const u8 sFurretGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_55_2.4bpp.lz");
+static const u8 sFurretGfx55_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_55_3.4bpp.lz");
 static const ax_sprite sFurretSprites55[] = {
 	{sFurretGfx55, ARRAY_COUNT(sFurretGfx55)}, 
 	{NULL, 64}, 
@@ -2821,14 +2821,14 @@ static const ax_sprite sFurretSprites55[] = {
 	{sFurretGfx55_3, ARRAY_COUNT(sFurretGfx55_3)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx56[] = INCBIN_U8("graphics/ax/mon/furret/sprite_56.4bpp");
+static const u8 sFurretGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_56.4bpp.lz");
 static const ax_sprite sFurretSprites56[] = {
 	{sFurretGfx56, ARRAY_COUNT(sFurretGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx57[] = INCBIN_U8("graphics/ax/mon/furret/sprite_57.4bpp");
-static const u8 sFurretGfx57_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_57_1.4bpp");
-static const u8 sFurretGfx57_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_57_2.4bpp");
+static const u8 sFurretGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_57.4bpp.lz");
+static const u8 sFurretGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_57_1.4bpp.lz");
+static const u8 sFurretGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_57_2.4bpp.lz");
 static const ax_sprite sFurretSprites57[] = {
 	{sFurretGfx57, ARRAY_COUNT(sFurretGfx57)}, 
 	{NULL, 64}, 
@@ -2838,10 +2838,10 @@ static const ax_sprite sFurretSprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx58[] = INCBIN_U8("graphics/ax/mon/furret/sprite_58.4bpp");
-static const u8 sFurretGfx58_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_58_1.4bpp");
-static const u8 sFurretGfx58_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_58_2.4bpp");
-static const u8 sFurretGfx58_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_58_3.4bpp");
+static const u8 sFurretGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_58.4bpp.lz");
+static const u8 sFurretGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_58_1.4bpp.lz");
+static const u8 sFurretGfx58_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_58_2.4bpp.lz");
+static const u8 sFurretGfx58_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_58_3.4bpp.lz");
 static const ax_sprite sFurretSprites58[] = {
 	{sFurretGfx58, ARRAY_COUNT(sFurretGfx58)}, 
 	{NULL, 32}, 
@@ -2853,10 +2853,10 @@ static const ax_sprite sFurretSprites58[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx59[] = INCBIN_U8("graphics/ax/mon/furret/sprite_59.4bpp");
-static const u8 sFurretGfx59_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_59_1.4bpp");
-static const u8 sFurretGfx59_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_59_2.4bpp");
-static const u8 sFurretGfx59_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_59_3.4bpp");
+static const u8 sFurretGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_59.4bpp.lz");
+static const u8 sFurretGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_59_1.4bpp.lz");
+static const u8 sFurretGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_59_2.4bpp.lz");
+static const u8 sFurretGfx59_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_59_3.4bpp.lz");
 static const ax_sprite sFurretSprites59[] = {
 	{sFurretGfx59, ARRAY_COUNT(sFurretGfx59)}, 
 	{NULL, 64}, 
@@ -2868,24 +2868,24 @@ static const ax_sprite sFurretSprites59[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx60[] = INCBIN_U8("graphics/ax/mon/furret/sprite_60.4bpp");
+static const u8 sFurretGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_60.4bpp.lz");
 static const ax_sprite sFurretSprites60[] = {
 	{sFurretGfx60, ARRAY_COUNT(sFurretGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx61[] = INCBIN_U8("graphics/ax/mon/furret/sprite_61.4bpp");
+static const u8 sFurretGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_61.4bpp.lz");
 static const ax_sprite sFurretSprites61[] = {
 	{sFurretGfx61, ARRAY_COUNT(sFurretGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx62[] = INCBIN_U8("graphics/ax/mon/furret/sprite_62.4bpp");
+static const u8 sFurretGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_62.4bpp.lz");
 static const ax_sprite sFurretSprites62[] = {
 	{sFurretGfx62, ARRAY_COUNT(sFurretGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx63[] = INCBIN_U8("graphics/ax/mon/furret/sprite_63.4bpp");
-static const u8 sFurretGfx63_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_63_1.4bpp");
-static const u8 sFurretGfx63_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_63_2.4bpp");
+static const u8 sFurretGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_63.4bpp.lz");
+static const u8 sFurretGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_63_1.4bpp.lz");
+static const u8 sFurretGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_63_2.4bpp.lz");
 static const ax_sprite sFurretSprites63[] = {
 	{sFurretGfx63, ARRAY_COUNT(sFurretGfx63)}, 
 	{NULL, 32}, 
@@ -2895,8 +2895,8 @@ static const ax_sprite sFurretSprites63[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx64[] = INCBIN_U8("graphics/ax/mon/furret/sprite_64.4bpp");
-static const u8 sFurretGfx64_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_64_1.4bpp");
+static const u8 sFurretGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_64.4bpp.lz");
+static const u8 sFurretGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_64_1.4bpp.lz");
 static const ax_sprite sFurretSprites64[] = {
 	{NULL, 64}, 
 	{sFurretGfx64, ARRAY_COUNT(sFurretGfx64)}, 
@@ -2905,8 +2905,8 @@ static const ax_sprite sFurretSprites64[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx65[] = INCBIN_U8("graphics/ax/mon/furret/sprite_65.4bpp");
-static const u8 sFurretGfx65_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_65_1.4bpp");
+static const u8 sFurretGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_65.4bpp.lz");
+static const u8 sFurretGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_65_1.4bpp.lz");
 static const ax_sprite sFurretSprites65[] = {
 	{NULL, 64}, 
 	{sFurretGfx65, ARRAY_COUNT(sFurretGfx65)}, 
@@ -2915,10 +2915,10 @@ static const ax_sprite sFurretSprites65[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx66[] = INCBIN_U8("graphics/ax/mon/furret/sprite_66.4bpp");
-static const u8 sFurretGfx66_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_66_1.4bpp");
-static const u8 sFurretGfx66_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_66_2.4bpp");
-static const u8 sFurretGfx66_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_66_3.4bpp");
+static const u8 sFurretGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_66.4bpp.lz");
+static const u8 sFurretGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_66_1.4bpp.lz");
+static const u8 sFurretGfx66_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_66_2.4bpp.lz");
+static const u8 sFurretGfx66_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_66_3.4bpp.lz");
 static const ax_sprite sFurretSprites66[] = {
 	{sFurretGfx66, ARRAY_COUNT(sFurretGfx66)}, 
 	{NULL, 64}, 
@@ -2930,13 +2930,13 @@ static const ax_sprite sFurretSprites66[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx67[] = INCBIN_U8("graphics/ax/mon/furret/sprite_67.4bpp");
+static const u8 sFurretGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_67.4bpp.lz");
 static const ax_sprite sFurretSprites67[] = {
 	{sFurretGfx67, ARRAY_COUNT(sFurretGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx68[] = INCBIN_U8("graphics/ax/mon/furret/sprite_68.4bpp");
-static const u8 sFurretGfx68_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_68_1.4bpp");
+static const u8 sFurretGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_68.4bpp.lz");
+static const u8 sFurretGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_68_1.4bpp.lz");
 static const ax_sprite sFurretSprites68[] = {
 	{NULL, 32}, 
 	{sFurretGfx68, ARRAY_COUNT(sFurretGfx68)}, 
@@ -2944,22 +2944,22 @@ static const ax_sprite sFurretSprites68[] = {
 	{sFurretGfx68_1, ARRAY_COUNT(sFurretGfx68_1)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx69[] = INCBIN_U8("graphics/ax/mon/furret/sprite_69.4bpp");
+static const u8 sFurretGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_69.4bpp.lz");
 static const ax_sprite sFurretSprites69[] = {
 	{sFurretGfx69, ARRAY_COUNT(sFurretGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx70[] = INCBIN_U8("graphics/ax/mon/furret/sprite_70.4bpp");
+static const u8 sFurretGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_70.4bpp.lz");
 static const ax_sprite sFurretSprites70[] = {
 	{NULL, 96}, 
 	{sFurretGfx70, ARRAY_COUNT(sFurretGfx70)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx71[] = INCBIN_U8("graphics/ax/mon/furret/sprite_71.4bpp");
-static const u8 sFurretGfx71_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_71_1.4bpp");
-static const u8 sFurretGfx71_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_71_2.4bpp");
-static const u8 sFurretGfx71_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_71_3.4bpp");
+static const u8 sFurretGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_71.4bpp.lz");
+static const u8 sFurretGfx71_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_71_1.4bpp.lz");
+static const u8 sFurretGfx71_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_71_2.4bpp.lz");
+static const u8 sFurretGfx71_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_71_3.4bpp.lz");
 static const ax_sprite sFurretSprites71[] = {
 	{NULL, 32}, 
 	{sFurretGfx71, ARRAY_COUNT(sFurretGfx71)}, 
@@ -2972,8 +2972,8 @@ static const ax_sprite sFurretSprites71[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx72[] = INCBIN_U8("graphics/ax/mon/furret/sprite_72.4bpp");
-static const u8 sFurretGfx72_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_72_1.4bpp");
+static const u8 sFurretGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_72.4bpp.lz");
+static const u8 sFurretGfx72_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_72_1.4bpp.lz");
 static const ax_sprite sFurretSprites72[] = {
 	{NULL, 64}, 
 	{sFurretGfx72, ARRAY_COUNT(sFurretGfx72)}, 
@@ -2982,8 +2982,8 @@ static const ax_sprite sFurretSprites72[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx73[] = INCBIN_U8("graphics/ax/mon/furret/sprite_73.4bpp");
-static const u8 sFurretGfx73_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_73_1.4bpp");
+static const u8 sFurretGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_73.4bpp.lz");
+static const u8 sFurretGfx73_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_73_1.4bpp.lz");
 static const ax_sprite sFurretSprites73[] = {
 	{NULL, 64}, 
 	{sFurretGfx73, ARRAY_COUNT(sFurretGfx73)}, 
@@ -2992,10 +2992,10 @@ static const ax_sprite sFurretSprites73[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx74[] = INCBIN_U8("graphics/ax/mon/furret/sprite_74.4bpp");
-static const u8 sFurretGfx74_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_74_1.4bpp");
-static const u8 sFurretGfx74_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_74_2.4bpp");
-static const u8 sFurretGfx74_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_74_3.4bpp");
+static const u8 sFurretGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_74.4bpp.lz");
+static const u8 sFurretGfx74_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_74_1.4bpp.lz");
+static const u8 sFurretGfx74_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_74_2.4bpp.lz");
+static const u8 sFurretGfx74_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_74_3.4bpp.lz");
 static const ax_sprite sFurretSprites74[] = {
 	{sFurretGfx74, ARRAY_COUNT(sFurretGfx74)}, 
 	{NULL, 64}, 
@@ -3007,9 +3007,9 @@ static const ax_sprite sFurretSprites74[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx75[] = INCBIN_U8("graphics/ax/mon/furret/sprite_75.4bpp");
-static const u8 sFurretGfx75_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_75_1.4bpp");
-static const u8 sFurretGfx75_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_75_2.4bpp");
+static const u8 sFurretGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_75.4bpp.lz");
+static const u8 sFurretGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_75_1.4bpp.lz");
+static const u8 sFurretGfx75_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_75_2.4bpp.lz");
 static const ax_sprite sFurretSprites75[] = {
 	{NULL, 128}, 
 	{sFurretGfx75, ARRAY_COUNT(sFurretGfx75)}, 
@@ -3020,9 +3020,9 @@ static const ax_sprite sFurretSprites75[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx76[] = INCBIN_U8("graphics/ax/mon/furret/sprite_76.4bpp");
-static const u8 sFurretGfx76_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_76_1.4bpp");
-static const u8 sFurretGfx76_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_76_2.4bpp");
+static const u8 sFurretGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_76.4bpp.lz");
+static const u8 sFurretGfx76_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_76_1.4bpp.lz");
+static const u8 sFurretGfx76_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_76_2.4bpp.lz");
 static const ax_sprite sFurretSprites76[] = {
 	{NULL, 128}, 
 	{sFurretGfx76, ARRAY_COUNT(sFurretGfx76)}, 
@@ -3033,10 +3033,10 @@ static const ax_sprite sFurretSprites76[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx77[] = INCBIN_U8("graphics/ax/mon/furret/sprite_77.4bpp");
-static const u8 sFurretGfx77_1[] = INCBIN_U8("graphics/ax/mon/furret/sprite_77_1.4bpp");
-static const u8 sFurretGfx77_2[] = INCBIN_U8("graphics/ax/mon/furret/sprite_77_2.4bpp");
-static const u8 sFurretGfx77_3[] = INCBIN_U8("graphics/ax/mon/furret/sprite_77_3.4bpp");
+static const u8 sFurretGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_77.4bpp.lz");
+static const u8 sFurretGfx77_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_77_1.4bpp.lz");
+static const u8 sFurretGfx77_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_77_2.4bpp.lz");
+static const u8 sFurretGfx77_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_77_3.4bpp.lz");
 static const ax_sprite sFurretSprites77[] = {
 	{sFurretGfx77, ARRAY_COUNT(sFurretGfx77)}, 
 	{NULL, 32}, 
@@ -3048,37 +3048,37 @@ static const ax_sprite sFurretSprites77[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx78[] = INCBIN_U8("graphics/ax/mon/furret/sprite_78.4bpp");
+static const u8 sFurretGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_78.4bpp.lz");
 static const ax_sprite sFurretSprites78[] = {
 	{sFurretGfx78, ARRAY_COUNT(sFurretGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx79[] = INCBIN_U8("graphics/ax/mon/furret/sprite_79.4bpp");
+static const u8 sFurretGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_79.4bpp.lz");
 static const ax_sprite sFurretSprites79[] = {
 	{sFurretGfx79, ARRAY_COUNT(sFurretGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx80[] = INCBIN_U8("graphics/ax/mon/furret/sprite_80.4bpp");
+static const u8 sFurretGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_80.4bpp.lz");
 static const ax_sprite sFurretSprites80[] = {
 	{sFurretGfx80, ARRAY_COUNT(sFurretGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx81[] = INCBIN_U8("graphics/ax/mon/furret/sprite_81.4bpp");
+static const u8 sFurretGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_81.4bpp.lz");
 static const ax_sprite sFurretSprites81[] = {
 	{sFurretGfx81, ARRAY_COUNT(sFurretGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx82[] = INCBIN_U8("graphics/ax/mon/furret/sprite_82.4bpp");
+static const u8 sFurretGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_82.4bpp.lz");
 static const ax_sprite sFurretSprites82[] = {
 	{sFurretGfx82, ARRAY_COUNT(sFurretGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx83[] = INCBIN_U8("graphics/ax/mon/furret/sprite_83.4bpp");
+static const u8 sFurretGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_83.4bpp.lz");
 static const ax_sprite sFurretSprites83[] = {
 	{sFurretGfx83, ARRAY_COUNT(sFurretGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sFurretGfx84[] = INCBIN_U8("graphics/ax/mon/furret/sprite_84.4bpp");
+static const u8 sFurretGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/furret/sprite_84.4bpp.lz");
 static const ax_sprite sFurretSprites84[] = {
 	{sFurretGfx84, ARRAY_COUNT(sFurretGfx84)}, 
 	{NULL, 0}

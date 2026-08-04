@@ -2551,84 +2551,84 @@ static const ax_anim sVolbeatAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVolbeatGfx1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_1.4bpp");
+static const u8 sVolbeatGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_1.4bpp.lz");
 static const ax_sprite sVolbeatSprites1[] = {
 	{sVolbeatGfx1, ARRAY_COUNT(sVolbeatGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_2.4bpp");
+static const u8 sVolbeatGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites2[] = {
 	{sVolbeatGfx2, ARRAY_COUNT(sVolbeatGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_3.4bpp");
+static const u8 sVolbeatGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites3[] = {
 	{sVolbeatGfx3, ARRAY_COUNT(sVolbeatGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx4[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_4.4bpp");
+static const u8 sVolbeatGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_4.4bpp.lz");
 static const ax_sprite sVolbeatSprites4[] = {
 	{sVolbeatGfx4, ARRAY_COUNT(sVolbeatGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx5[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_5.4bpp");
+static const u8 sVolbeatGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_5.4bpp.lz");
 static const ax_sprite sVolbeatSprites5[] = {
 	{sVolbeatGfx5, ARRAY_COUNT(sVolbeatGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx6[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_6.4bpp");
+static const u8 sVolbeatGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_6.4bpp.lz");
 static const ax_sprite sVolbeatSprites6[] = {
 	{sVolbeatGfx6, ARRAY_COUNT(sVolbeatGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx7[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_7.4bpp");
+static const u8 sVolbeatGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_7.4bpp.lz");
 static const ax_sprite sVolbeatSprites7[] = {
 	{sVolbeatGfx7, ARRAY_COUNT(sVolbeatGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx8[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_8.4bpp");
+static const u8 sVolbeatGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_8.4bpp.lz");
 static const ax_sprite sVolbeatSprites8[] = {
 	{sVolbeatGfx8, ARRAY_COUNT(sVolbeatGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx9[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_9.4bpp");
+static const u8 sVolbeatGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_9.4bpp.lz");
 static const ax_sprite sVolbeatSprites9[] = {
 	{sVolbeatGfx9, ARRAY_COUNT(sVolbeatGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx10[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_10.4bpp");
+static const u8 sVolbeatGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_10.4bpp.lz");
 static const ax_sprite sVolbeatSprites10[] = {
 	{sVolbeatGfx10, ARRAY_COUNT(sVolbeatGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx11[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_11.4bpp");
+static const u8 sVolbeatGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_11.4bpp.lz");
 static const ax_sprite sVolbeatSprites11[] = {
 	{sVolbeatGfx11, ARRAY_COUNT(sVolbeatGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx12[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_12.4bpp");
+static const u8 sVolbeatGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_12.4bpp.lz");
 static const ax_sprite sVolbeatSprites12[] = {
 	{sVolbeatGfx12, ARRAY_COUNT(sVolbeatGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx13[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_13.4bpp");
+static const u8 sVolbeatGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_13.4bpp.lz");
 static const ax_sprite sVolbeatSprites13[] = {
 	{sVolbeatGfx13, ARRAY_COUNT(sVolbeatGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx14[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_14.4bpp");
+static const u8 sVolbeatGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_14.4bpp.lz");
 static const ax_sprite sVolbeatSprites14[] = {
 	{sVolbeatGfx14, ARRAY_COUNT(sVolbeatGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx15[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_15.4bpp");
+static const u8 sVolbeatGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_15.4bpp.lz");
 static const ax_sprite sVolbeatSprites15[] = {
 	{sVolbeatGfx15, ARRAY_COUNT(sVolbeatGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx16[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_16.4bpp");
-static const u8 sVolbeatGfx16_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_16_1.4bpp");
-static const u8 sVolbeatGfx16_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_16_2.4bpp");
+static const u8 sVolbeatGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_16.4bpp.lz");
+static const u8 sVolbeatGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_16_1.4bpp.lz");
+static const u8 sVolbeatGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_16_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites16[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx16, ARRAY_COUNT(sVolbeatGfx16)}, 
@@ -2639,9 +2639,9 @@ static const ax_sprite sVolbeatSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx17[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_17.4bpp");
-static const u8 sVolbeatGfx17_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_17_1.4bpp");
-static const u8 sVolbeatGfx17_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_17_2.4bpp");
+static const u8 sVolbeatGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_17.4bpp.lz");
+static const u8 sVolbeatGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_17_1.4bpp.lz");
+static const u8 sVolbeatGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_17_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites17[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx17, ARRAY_COUNT(sVolbeatGfx17)}, 
@@ -2652,9 +2652,9 @@ static const ax_sprite sVolbeatSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx18[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_18.4bpp");
-static const u8 sVolbeatGfx18_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_18_1.4bpp");
-static const u8 sVolbeatGfx18_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_18_2.4bpp");
+static const u8 sVolbeatGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_18.4bpp.lz");
+static const u8 sVolbeatGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_18_1.4bpp.lz");
+static const u8 sVolbeatGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_18_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites18[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx18, ARRAY_COUNT(sVolbeatGfx18)}, 
@@ -2665,9 +2665,9 @@ static const ax_sprite sVolbeatSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx19[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_19.4bpp");
-static const u8 sVolbeatGfx19_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_19_1.4bpp");
-static const u8 sVolbeatGfx19_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_19_2.4bpp");
+static const u8 sVolbeatGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_19.4bpp.lz");
+static const u8 sVolbeatGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_19_1.4bpp.lz");
+static const u8 sVolbeatGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_19_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites19[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx19, ARRAY_COUNT(sVolbeatGfx19)}, 
@@ -2678,9 +2678,9 @@ static const ax_sprite sVolbeatSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx20[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_20.4bpp");
-static const u8 sVolbeatGfx20_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_20_1.4bpp");
-static const u8 sVolbeatGfx20_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_20_2.4bpp");
+static const u8 sVolbeatGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_20.4bpp.lz");
+static const u8 sVolbeatGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_20_1.4bpp.lz");
+static const u8 sVolbeatGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_20_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites20[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx20, ARRAY_COUNT(sVolbeatGfx20)}, 
@@ -2691,9 +2691,9 @@ static const ax_sprite sVolbeatSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx21[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_21.4bpp");
-static const u8 sVolbeatGfx21_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_21_1.4bpp");
-static const u8 sVolbeatGfx21_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_21_2.4bpp");
+static const u8 sVolbeatGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_21.4bpp.lz");
+static const u8 sVolbeatGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_21_1.4bpp.lz");
+static const u8 sVolbeatGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_21_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites21[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx21, ARRAY_COUNT(sVolbeatGfx21)}, 
@@ -2704,9 +2704,9 @@ static const ax_sprite sVolbeatSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx22[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_22.4bpp");
-static const u8 sVolbeatGfx22_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_22_1.4bpp");
-static const u8 sVolbeatGfx22_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_22_2.4bpp");
+static const u8 sVolbeatGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_22.4bpp.lz");
+static const u8 sVolbeatGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_22_1.4bpp.lz");
+static const u8 sVolbeatGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_22_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites22[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx22, ARRAY_COUNT(sVolbeatGfx22)}, 
@@ -2717,10 +2717,10 @@ static const ax_sprite sVolbeatSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx23[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_23.4bpp");
-static const u8 sVolbeatGfx23_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_23_1.4bpp");
-static const u8 sVolbeatGfx23_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_23_2.4bpp");
-static const u8 sVolbeatGfx23_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_23_3.4bpp");
+static const u8 sVolbeatGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_23.4bpp.lz");
+static const u8 sVolbeatGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_23_1.4bpp.lz");
+static const u8 sVolbeatGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_23_2.4bpp.lz");
+static const u8 sVolbeatGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_23_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites23[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx23, ARRAY_COUNT(sVolbeatGfx23)}, 
@@ -2733,10 +2733,10 @@ static const ax_sprite sVolbeatSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx24[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_24.4bpp");
-static const u8 sVolbeatGfx24_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_24_1.4bpp");
-static const u8 sVolbeatGfx24_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_24_2.4bpp");
-static const u8 sVolbeatGfx24_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_24_3.4bpp");
+static const u8 sVolbeatGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_24.4bpp.lz");
+static const u8 sVolbeatGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_24_1.4bpp.lz");
+static const u8 sVolbeatGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_24_2.4bpp.lz");
+static const u8 sVolbeatGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_24_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites24[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx24, ARRAY_COUNT(sVolbeatGfx24)}, 
@@ -2748,10 +2748,10 @@ static const ax_sprite sVolbeatSprites24[] = {
 	{sVolbeatGfx24_3, ARRAY_COUNT(sVolbeatGfx24_3)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx25[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_25.4bpp");
-static const u8 sVolbeatGfx25_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_25_1.4bpp");
-static const u8 sVolbeatGfx25_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_25_2.4bpp");
-static const u8 sVolbeatGfx25_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_25_3.4bpp");
+static const u8 sVolbeatGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_25.4bpp.lz");
+static const u8 sVolbeatGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_25_1.4bpp.lz");
+static const u8 sVolbeatGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_25_2.4bpp.lz");
+static const u8 sVolbeatGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_25_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites25[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx25, ARRAY_COUNT(sVolbeatGfx25)}, 
@@ -2763,10 +2763,10 @@ static const ax_sprite sVolbeatSprites25[] = {
 	{sVolbeatGfx25_3, ARRAY_COUNT(sVolbeatGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx26[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_26.4bpp");
-static const u8 sVolbeatGfx26_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_26_1.4bpp");
-static const u8 sVolbeatGfx26_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_26_2.4bpp");
-static const u8 sVolbeatGfx26_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_26_3.4bpp");
+static const u8 sVolbeatGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_26.4bpp.lz");
+static const u8 sVolbeatGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_26_1.4bpp.lz");
+static const u8 sVolbeatGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_26_2.4bpp.lz");
+static const u8 sVolbeatGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_26_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites26[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx26, ARRAY_COUNT(sVolbeatGfx26)}, 
@@ -2779,10 +2779,10 @@ static const ax_sprite sVolbeatSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx27[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_27.4bpp");
-static const u8 sVolbeatGfx27_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_27_1.4bpp");
-static const u8 sVolbeatGfx27_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_27_2.4bpp");
-static const u8 sVolbeatGfx27_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_27_3.4bpp");
+static const u8 sVolbeatGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_27.4bpp.lz");
+static const u8 sVolbeatGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_27_1.4bpp.lz");
+static const u8 sVolbeatGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_27_2.4bpp.lz");
+static const u8 sVolbeatGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_27_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites27[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx27, ARRAY_COUNT(sVolbeatGfx27)}, 
@@ -2795,10 +2795,10 @@ static const ax_sprite sVolbeatSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx28[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_28.4bpp");
-static const u8 sVolbeatGfx28_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_28_1.4bpp");
-static const u8 sVolbeatGfx28_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_28_2.4bpp");
-static const u8 sVolbeatGfx28_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_28_3.4bpp");
+static const u8 sVolbeatGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_28.4bpp.lz");
+static const u8 sVolbeatGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_28_1.4bpp.lz");
+static const u8 sVolbeatGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_28_2.4bpp.lz");
+static const u8 sVolbeatGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_28_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites28[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx28, ARRAY_COUNT(sVolbeatGfx28)}, 
@@ -2811,10 +2811,10 @@ static const ax_sprite sVolbeatSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx29[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_29.4bpp");
-static const u8 sVolbeatGfx29_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_29_1.4bpp");
-static const u8 sVolbeatGfx29_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_29_2.4bpp");
-static const u8 sVolbeatGfx29_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_29_3.4bpp");
+static const u8 sVolbeatGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_29.4bpp.lz");
+static const u8 sVolbeatGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_29_1.4bpp.lz");
+static const u8 sVolbeatGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_29_2.4bpp.lz");
+static const u8 sVolbeatGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_29_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites29[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx29, ARRAY_COUNT(sVolbeatGfx29)}, 
@@ -2827,10 +2827,10 @@ static const ax_sprite sVolbeatSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx30[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_30.4bpp");
-static const u8 sVolbeatGfx30_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_30_1.4bpp");
-static const u8 sVolbeatGfx30_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_30_2.4bpp");
-static const u8 sVolbeatGfx30_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_30_3.4bpp");
+static const u8 sVolbeatGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_30.4bpp.lz");
+static const u8 sVolbeatGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_30_1.4bpp.lz");
+static const u8 sVolbeatGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_30_2.4bpp.lz");
+static const u8 sVolbeatGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_30_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites30[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx30, ARRAY_COUNT(sVolbeatGfx30)}, 
@@ -2842,10 +2842,10 @@ static const ax_sprite sVolbeatSprites30[] = {
 	{sVolbeatGfx30_3, ARRAY_COUNT(sVolbeatGfx30_3)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx31[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_31.4bpp");
-static const u8 sVolbeatGfx31_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_31_1.4bpp");
-static const u8 sVolbeatGfx31_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_31_2.4bpp");
-static const u8 sVolbeatGfx31_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_31_3.4bpp");
+static const u8 sVolbeatGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_31.4bpp.lz");
+static const u8 sVolbeatGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_31_1.4bpp.lz");
+static const u8 sVolbeatGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_31_2.4bpp.lz");
+static const u8 sVolbeatGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_31_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites31[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx31, ARRAY_COUNT(sVolbeatGfx31)}, 
@@ -2857,10 +2857,10 @@ static const ax_sprite sVolbeatSprites31[] = {
 	{sVolbeatGfx31_3, ARRAY_COUNT(sVolbeatGfx31_3)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx32[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_32.4bpp");
-static const u8 sVolbeatGfx32_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_32_1.4bpp");
-static const u8 sVolbeatGfx32_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_32_2.4bpp");
-static const u8 sVolbeatGfx32_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_32_3.4bpp");
+static const u8 sVolbeatGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_32.4bpp.lz");
+static const u8 sVolbeatGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_32_1.4bpp.lz");
+static const u8 sVolbeatGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_32_2.4bpp.lz");
+static const u8 sVolbeatGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_32_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites32[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx32, ARRAY_COUNT(sVolbeatGfx32)}, 
@@ -2873,10 +2873,10 @@ static const ax_sprite sVolbeatSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx33[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_33.4bpp");
-static const u8 sVolbeatGfx33_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_33_1.4bpp");
-static const u8 sVolbeatGfx33_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_33_2.4bpp");
-static const u8 sVolbeatGfx33_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_33_3.4bpp");
+static const u8 sVolbeatGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_33.4bpp.lz");
+static const u8 sVolbeatGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_33_1.4bpp.lz");
+static const u8 sVolbeatGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_33_2.4bpp.lz");
+static const u8 sVolbeatGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_33_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites33[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx33, ARRAY_COUNT(sVolbeatGfx33)}, 
@@ -2889,10 +2889,10 @@ static const ax_sprite sVolbeatSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx34[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_34.4bpp");
-static const u8 sVolbeatGfx34_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_34_1.4bpp");
-static const u8 sVolbeatGfx34_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_34_2.4bpp");
-static const u8 sVolbeatGfx34_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_34_3.4bpp");
+static const u8 sVolbeatGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_34.4bpp.lz");
+static const u8 sVolbeatGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_34_1.4bpp.lz");
+static const u8 sVolbeatGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_34_2.4bpp.lz");
+static const u8 sVolbeatGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_34_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites34[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx34, ARRAY_COUNT(sVolbeatGfx34)}, 
@@ -2905,10 +2905,10 @@ static const ax_sprite sVolbeatSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx35[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_35.4bpp");
-static const u8 sVolbeatGfx35_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_35_1.4bpp");
-static const u8 sVolbeatGfx35_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_35_2.4bpp");
-static const u8 sVolbeatGfx35_3[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_35_3.4bpp");
+static const u8 sVolbeatGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_35.4bpp.lz");
+static const u8 sVolbeatGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_35_1.4bpp.lz");
+static const u8 sVolbeatGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_35_2.4bpp.lz");
+static const u8 sVolbeatGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_35_3.4bpp.lz");
 static const ax_sprite sVolbeatSprites35[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx35, ARRAY_COUNT(sVolbeatGfx35)}, 
@@ -2921,9 +2921,9 @@ static const ax_sprite sVolbeatSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx36[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_36.4bpp");
-static const u8 sVolbeatGfx36_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_36_1.4bpp");
-static const u8 sVolbeatGfx36_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_36_2.4bpp");
+static const u8 sVolbeatGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_36.4bpp.lz");
+static const u8 sVolbeatGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_36_1.4bpp.lz");
+static const u8 sVolbeatGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_36_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites36[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx36, ARRAY_COUNT(sVolbeatGfx36)}, 
@@ -2934,9 +2934,9 @@ static const ax_sprite sVolbeatSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx37[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_37.4bpp");
-static const u8 sVolbeatGfx37_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_37_1.4bpp");
-static const u8 sVolbeatGfx37_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_37_2.4bpp");
+static const u8 sVolbeatGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_37.4bpp.lz");
+static const u8 sVolbeatGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_37_1.4bpp.lz");
+static const u8 sVolbeatGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_37_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites37[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx37, ARRAY_COUNT(sVolbeatGfx37)}, 
@@ -2947,9 +2947,9 @@ static const ax_sprite sVolbeatSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx38[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_38.4bpp");
-static const u8 sVolbeatGfx38_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_38_1.4bpp");
-static const u8 sVolbeatGfx38_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_38_2.4bpp");
+static const u8 sVolbeatGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_38.4bpp.lz");
+static const u8 sVolbeatGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_38_1.4bpp.lz");
+static const u8 sVolbeatGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_38_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites38[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx38, ARRAY_COUNT(sVolbeatGfx38)}, 
@@ -2960,9 +2960,9 @@ static const ax_sprite sVolbeatSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx39[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_39.4bpp");
-static const u8 sVolbeatGfx39_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_39_1.4bpp");
-static const u8 sVolbeatGfx39_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_39_2.4bpp");
+static const u8 sVolbeatGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_39.4bpp.lz");
+static const u8 sVolbeatGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_39_1.4bpp.lz");
+static const u8 sVolbeatGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_39_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites39[] = {
 	{NULL, 32}, 
 	{sVolbeatGfx39, ARRAY_COUNT(sVolbeatGfx39)}, 
@@ -2973,9 +2973,9 @@ static const ax_sprite sVolbeatSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx40[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_40.4bpp");
-static const u8 sVolbeatGfx40_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_40_1.4bpp");
-static const u8 sVolbeatGfx40_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_40_2.4bpp");
+static const u8 sVolbeatGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_40.4bpp.lz");
+static const u8 sVolbeatGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_40_1.4bpp.lz");
+static const u8 sVolbeatGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_40_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites40[] = {
 	{sVolbeatGfx40, ARRAY_COUNT(sVolbeatGfx40)}, 
 	{NULL, 32}, 
@@ -2985,9 +2985,9 @@ static const ax_sprite sVolbeatSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx41[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_41.4bpp");
-static const u8 sVolbeatGfx41_1[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_41_1.4bpp");
-static const u8 sVolbeatGfx41_2[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_41_2.4bpp");
+static const u8 sVolbeatGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_41.4bpp.lz");
+static const u8 sVolbeatGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_41_1.4bpp.lz");
+static const u8 sVolbeatGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_41_2.4bpp.lz");
 static const ax_sprite sVolbeatSprites41[] = {
 	{sVolbeatGfx41, ARRAY_COUNT(sVolbeatGfx41)}, 
 	{NULL, 32}, 
@@ -2997,72 +2997,72 @@ static const ax_sprite sVolbeatSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx42[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_42.4bpp");
+static const u8 sVolbeatGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_42.4bpp.lz");
 static const ax_sprite sVolbeatSprites42[] = {
 	{sVolbeatGfx42, ARRAY_COUNT(sVolbeatGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx43[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_43.4bpp");
+static const u8 sVolbeatGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_43.4bpp.lz");
 static const ax_sprite sVolbeatSprites43[] = {
 	{sVolbeatGfx43, ARRAY_COUNT(sVolbeatGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx44[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_44.4bpp");
+static const u8 sVolbeatGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_44.4bpp.lz");
 static const ax_sprite sVolbeatSprites44[] = {
 	{sVolbeatGfx44, ARRAY_COUNT(sVolbeatGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx45[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_45.4bpp");
+static const u8 sVolbeatGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_45.4bpp.lz");
 static const ax_sprite sVolbeatSprites45[] = {
 	{sVolbeatGfx45, ARRAY_COUNT(sVolbeatGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx46[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_46.4bpp");
+static const u8 sVolbeatGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_46.4bpp.lz");
 static const ax_sprite sVolbeatSprites46[] = {
 	{sVolbeatGfx46, ARRAY_COUNT(sVolbeatGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx47[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_47.4bpp");
+static const u8 sVolbeatGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_47.4bpp.lz");
 static const ax_sprite sVolbeatSprites47[] = {
 	{sVolbeatGfx47, ARRAY_COUNT(sVolbeatGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx48[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_48.4bpp");
+static const u8 sVolbeatGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_48.4bpp.lz");
 static const ax_sprite sVolbeatSprites48[] = {
 	{sVolbeatGfx48, ARRAY_COUNT(sVolbeatGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx49[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_49.4bpp");
+static const u8 sVolbeatGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_49.4bpp.lz");
 static const ax_sprite sVolbeatSprites49[] = {
 	{sVolbeatGfx49, ARRAY_COUNT(sVolbeatGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx50[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_50.4bpp");
+static const u8 sVolbeatGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_50.4bpp.lz");
 static const ax_sprite sVolbeatSprites50[] = {
 	{sVolbeatGfx50, ARRAY_COUNT(sVolbeatGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx51[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_51.4bpp");
+static const u8 sVolbeatGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_51.4bpp.lz");
 static const ax_sprite sVolbeatSprites51[] = {
 	{sVolbeatGfx51, ARRAY_COUNT(sVolbeatGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx52[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_52.4bpp");
+static const u8 sVolbeatGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_52.4bpp.lz");
 static const ax_sprite sVolbeatSprites52[] = {
 	{sVolbeatGfx52, ARRAY_COUNT(sVolbeatGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx53[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_53.4bpp");
+static const u8 sVolbeatGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_53.4bpp.lz");
 static const ax_sprite sVolbeatSprites53[] = {
 	{sVolbeatGfx53, ARRAY_COUNT(sVolbeatGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx54[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_54.4bpp");
+static const u8 sVolbeatGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_54.4bpp.lz");
 static const ax_sprite sVolbeatSprites54[] = {
 	{sVolbeatGfx54, ARRAY_COUNT(sVolbeatGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sVolbeatGfx55[] = INCBIN_U8("graphics/ax/mon/volbeat/sprite_55.4bpp");
+static const u8 sVolbeatGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/volbeat/sprite_55.4bpp.lz");
 static const ax_sprite sVolbeatSprites55[] = {
 	{sVolbeatGfx55, ARRAY_COUNT(sVolbeatGfx55)}, 
 	{NULL, 0}

@@ -1995,85 +1995,85 @@ static const ax_anim sMagbyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMagbyGfx1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_1.4bpp");
+static const u8 sMagbyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_1.4bpp.lz");
 static const ax_sprite sMagbySprites1[] = {
 	{sMagbyGfx1, ARRAY_COUNT(sMagbyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_2.4bpp");
+static const u8 sMagbyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_2.4bpp.lz");
 static const ax_sprite sMagbySprites2[] = {
 	{sMagbyGfx2, ARRAY_COUNT(sMagbyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_3.4bpp");
+static const u8 sMagbyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_3.4bpp.lz");
 static const ax_sprite sMagbySprites3[] = {
 	{sMagbyGfx3, ARRAY_COUNT(sMagbyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx4[] = INCBIN_U8("graphics/ax/mon/magby/sprite_4.4bpp");
+static const u8 sMagbyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_4.4bpp.lz");
 static const ax_sprite sMagbySprites4[] = {
 	{sMagbyGfx4, ARRAY_COUNT(sMagbyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx5[] = INCBIN_U8("graphics/ax/mon/magby/sprite_5.4bpp");
+static const u8 sMagbyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_5.4bpp.lz");
 static const ax_sprite sMagbySprites5[] = {
 	{sMagbyGfx5, ARRAY_COUNT(sMagbyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx6[] = INCBIN_U8("graphics/ax/mon/magby/sprite_6.4bpp");
+static const u8 sMagbyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_6.4bpp.lz");
 static const ax_sprite sMagbySprites6[] = {
 	{sMagbyGfx6, ARRAY_COUNT(sMagbyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx7[] = INCBIN_U8("graphics/ax/mon/magby/sprite_7.4bpp");
+static const u8 sMagbyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_7.4bpp.lz");
 static const ax_sprite sMagbySprites7[] = {
 	{sMagbyGfx7, ARRAY_COUNT(sMagbyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx8[] = INCBIN_U8("graphics/ax/mon/magby/sprite_8.4bpp");
+static const u8 sMagbyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_8.4bpp.lz");
 static const ax_sprite sMagbySprites8[] = {
 	{sMagbyGfx8, ARRAY_COUNT(sMagbyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx9[] = INCBIN_U8("graphics/ax/mon/magby/sprite_9.4bpp");
+static const u8 sMagbyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_9.4bpp.lz");
 static const ax_sprite sMagbySprites9[] = {
 	{sMagbyGfx9, ARRAY_COUNT(sMagbyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx10[] = INCBIN_U8("graphics/ax/mon/magby/sprite_10.4bpp");
+static const u8 sMagbyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_10.4bpp.lz");
 static const ax_sprite sMagbySprites10[] = {
 	{sMagbyGfx10, ARRAY_COUNT(sMagbyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx11[] = INCBIN_U8("graphics/ax/mon/magby/sprite_11.4bpp");
+static const u8 sMagbyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_11.4bpp.lz");
 static const ax_sprite sMagbySprites11[] = {
 	{sMagbyGfx11, ARRAY_COUNT(sMagbyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx12[] = INCBIN_U8("graphics/ax/mon/magby/sprite_12.4bpp");
+static const u8 sMagbyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_12.4bpp.lz");
 static const ax_sprite sMagbySprites12[] = {
 	{sMagbyGfx12, ARRAY_COUNT(sMagbyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx13[] = INCBIN_U8("graphics/ax/mon/magby/sprite_13.4bpp");
+static const u8 sMagbyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_13.4bpp.lz");
 static const ax_sprite sMagbySprites13[] = {
 	{sMagbyGfx13, ARRAY_COUNT(sMagbyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx14[] = INCBIN_U8("graphics/ax/mon/magby/sprite_14.4bpp");
+static const u8 sMagbyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_14.4bpp.lz");
 static const ax_sprite sMagbySprites14[] = {
 	{sMagbyGfx14, ARRAY_COUNT(sMagbyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx15[] = INCBIN_U8("graphics/ax/mon/magby/sprite_15.4bpp");
+static const u8 sMagbyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_15.4bpp.lz");
 static const ax_sprite sMagbySprites15[] = {
 	{sMagbyGfx15, ARRAY_COUNT(sMagbyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx16[] = INCBIN_U8("graphics/ax/mon/magby/sprite_16.4bpp");
-static const u8 sMagbyGfx16_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_16_1.4bpp");
-static const u8 sMagbyGfx16_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_16_2.4bpp");
-static const u8 sMagbyGfx16_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_16_3.4bpp");
+static const u8 sMagbyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_16.4bpp.lz");
+static const u8 sMagbyGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_16_1.4bpp.lz");
+static const u8 sMagbyGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_16_2.4bpp.lz");
+static const u8 sMagbyGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_16_3.4bpp.lz");
 static const ax_sprite sMagbySprites16[] = {
 	{NULL, 32}, 
 	{sMagbyGfx16, ARRAY_COUNT(sMagbyGfx16)}, 
@@ -2086,10 +2086,10 @@ static const ax_sprite sMagbySprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx17[] = INCBIN_U8("graphics/ax/mon/magby/sprite_17.4bpp");
-static const u8 sMagbyGfx17_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_17_1.4bpp");
-static const u8 sMagbyGfx17_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_17_2.4bpp");
-static const u8 sMagbyGfx17_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_17_3.4bpp");
+static const u8 sMagbyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_17.4bpp.lz");
+static const u8 sMagbyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_17_1.4bpp.lz");
+static const u8 sMagbyGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_17_2.4bpp.lz");
+static const u8 sMagbyGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_17_3.4bpp.lz");
 static const ax_sprite sMagbySprites17[] = {
 	{NULL, 32}, 
 	{sMagbyGfx17, ARRAY_COUNT(sMagbyGfx17)}, 
@@ -2102,9 +2102,9 @@ static const ax_sprite sMagbySprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx18[] = INCBIN_U8("graphics/ax/mon/magby/sprite_18.4bpp");
-static const u8 sMagbyGfx18_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_18_1.4bpp");
-static const u8 sMagbyGfx18_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_18_2.4bpp");
+static const u8 sMagbyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_18.4bpp.lz");
+static const u8 sMagbyGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_18_1.4bpp.lz");
+static const u8 sMagbyGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_18_2.4bpp.lz");
 static const ax_sprite sMagbySprites18[] = {
 	{NULL, 32}, 
 	{sMagbyGfx18, ARRAY_COUNT(sMagbyGfx18)}, 
@@ -2115,10 +2115,10 @@ static const ax_sprite sMagbySprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx19[] = INCBIN_U8("graphics/ax/mon/magby/sprite_19.4bpp");
-static const u8 sMagbyGfx19_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_19_1.4bpp");
-static const u8 sMagbyGfx19_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_19_2.4bpp");
-static const u8 sMagbyGfx19_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_19_3.4bpp");
+static const u8 sMagbyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_19.4bpp.lz");
+static const u8 sMagbyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_19_1.4bpp.lz");
+static const u8 sMagbyGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_19_2.4bpp.lz");
+static const u8 sMagbyGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_19_3.4bpp.lz");
 static const ax_sprite sMagbySprites19[] = {
 	{NULL, 32}, 
 	{sMagbyGfx19, ARRAY_COUNT(sMagbyGfx19)}, 
@@ -2131,10 +2131,10 @@ static const ax_sprite sMagbySprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx20[] = INCBIN_U8("graphics/ax/mon/magby/sprite_20.4bpp");
-static const u8 sMagbyGfx20_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_20_1.4bpp");
-static const u8 sMagbyGfx20_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_20_2.4bpp");
-static const u8 sMagbyGfx20_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_20_3.4bpp");
+static const u8 sMagbyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_20.4bpp.lz");
+static const u8 sMagbyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_20_1.4bpp.lz");
+static const u8 sMagbyGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_20_2.4bpp.lz");
+static const u8 sMagbyGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_20_3.4bpp.lz");
 static const ax_sprite sMagbySprites20[] = {
 	{NULL, 32}, 
 	{sMagbyGfx20, ARRAY_COUNT(sMagbyGfx20)}, 
@@ -2147,10 +2147,10 @@ static const ax_sprite sMagbySprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx21[] = INCBIN_U8("graphics/ax/mon/magby/sprite_21.4bpp");
-static const u8 sMagbyGfx21_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_21_1.4bpp");
-static const u8 sMagbyGfx21_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_21_2.4bpp");
-static const u8 sMagbyGfx21_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_21_3.4bpp");
+static const u8 sMagbyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_21.4bpp.lz");
+static const u8 sMagbyGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_21_1.4bpp.lz");
+static const u8 sMagbyGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_21_2.4bpp.lz");
+static const u8 sMagbyGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_21_3.4bpp.lz");
 static const ax_sprite sMagbySprites21[] = {
 	{sMagbyGfx21, ARRAY_COUNT(sMagbyGfx21)}, 
 	{NULL, 32}, 
@@ -2161,8 +2161,8 @@ static const ax_sprite sMagbySprites21[] = {
 	{sMagbyGfx21_3, ARRAY_COUNT(sMagbyGfx21_3)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx22[] = INCBIN_U8("graphics/ax/mon/magby/sprite_22.4bpp");
-static const u8 sMagbyGfx22_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_22_1.4bpp");
+static const u8 sMagbyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_22.4bpp.lz");
+static const u8 sMagbyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_22_1.4bpp.lz");
 static const ax_sprite sMagbySprites22[] = {
 	{NULL, 160}, 
 	{sMagbyGfx22, ARRAY_COUNT(sMagbyGfx22)}, 
@@ -2171,8 +2171,8 @@ static const ax_sprite sMagbySprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx23[] = INCBIN_U8("graphics/ax/mon/magby/sprite_23.4bpp");
-static const u8 sMagbyGfx23_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_23_1.4bpp");
+static const u8 sMagbyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_23.4bpp.lz");
+static const u8 sMagbyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_23_1.4bpp.lz");
 static const ax_sprite sMagbySprites23[] = {
 	{NULL, 64}, 
 	{sMagbyGfx23, ARRAY_COUNT(sMagbyGfx23)}, 
@@ -2181,9 +2181,9 @@ static const ax_sprite sMagbySprites23[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx24[] = INCBIN_U8("graphics/ax/mon/magby/sprite_24.4bpp");
-static const u8 sMagbyGfx24_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_24_1.4bpp");
-static const u8 sMagbyGfx24_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_24_2.4bpp");
+static const u8 sMagbyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_24.4bpp.lz");
+static const u8 sMagbyGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_24_1.4bpp.lz");
+static const u8 sMagbyGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_24_2.4bpp.lz");
 static const ax_sprite sMagbySprites24[] = {
 	{NULL, 128}, 
 	{sMagbyGfx24, ARRAY_COUNT(sMagbyGfx24)}, 
@@ -2194,9 +2194,9 @@ static const ax_sprite sMagbySprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx25[] = INCBIN_U8("graphics/ax/mon/magby/sprite_25.4bpp");
-static const u8 sMagbyGfx25_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_25_1.4bpp");
-static const u8 sMagbyGfx25_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_25_2.4bpp");
+static const u8 sMagbyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_25.4bpp.lz");
+static const u8 sMagbyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_25_1.4bpp.lz");
+static const u8 sMagbyGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_25_2.4bpp.lz");
 static const ax_sprite sMagbySprites25[] = {
 	{sMagbyGfx25, ARRAY_COUNT(sMagbyGfx25)}, 
 	{NULL, 64}, 
@@ -2206,16 +2206,16 @@ static const ax_sprite sMagbySprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx26[] = INCBIN_U8("graphics/ax/mon/magby/sprite_26.4bpp");
+static const u8 sMagbyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_26.4bpp.lz");
 static const ax_sprite sMagbySprites26[] = {
 	{sMagbyGfx26, ARRAY_COUNT(sMagbyGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx27[] = INCBIN_U8("graphics/ax/mon/magby/sprite_27.4bpp");
-static const u8 sMagbyGfx27_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_27_1.4bpp");
-static const u8 sMagbyGfx27_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_27_2.4bpp");
-static const u8 sMagbyGfx27_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_27_3.4bpp");
+static const u8 sMagbyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_27.4bpp.lz");
+static const u8 sMagbyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_27_1.4bpp.lz");
+static const u8 sMagbyGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_27_2.4bpp.lz");
+static const u8 sMagbyGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_27_3.4bpp.lz");
 static const ax_sprite sMagbySprites27[] = {
 	{sMagbyGfx27, ARRAY_COUNT(sMagbyGfx27)}, 
 	{NULL, 32}, 
@@ -2227,9 +2227,9 @@ static const ax_sprite sMagbySprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx28[] = INCBIN_U8("graphics/ax/mon/magby/sprite_28.4bpp");
-static const u8 sMagbyGfx28_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_28_1.4bpp");
-static const u8 sMagbyGfx28_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_28_2.4bpp");
+static const u8 sMagbyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_28.4bpp.lz");
+static const u8 sMagbyGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_28_1.4bpp.lz");
+static const u8 sMagbyGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_28_2.4bpp.lz");
 static const ax_sprite sMagbySprites28[] = {
 	{sMagbyGfx28, ARRAY_COUNT(sMagbyGfx28)}, 
 	{NULL, 64}, 
@@ -2239,8 +2239,8 @@ static const ax_sprite sMagbySprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx29[] = INCBIN_U8("graphics/ax/mon/magby/sprite_29.4bpp");
-static const u8 sMagbyGfx29_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_29_1.4bpp");
+static const u8 sMagbyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_29.4bpp.lz");
+static const u8 sMagbyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_29_1.4bpp.lz");
 static const ax_sprite sMagbySprites29[] = {
 	{sMagbyGfx29, ARRAY_COUNT(sMagbyGfx29)}, 
 	{NULL, 32}, 
@@ -2248,10 +2248,10 @@ static const ax_sprite sMagbySprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx30[] = INCBIN_U8("graphics/ax/mon/magby/sprite_30.4bpp");
-static const u8 sMagbyGfx30_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_30_1.4bpp");
-static const u8 sMagbyGfx30_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_30_2.4bpp");
-static const u8 sMagbyGfx30_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_30_3.4bpp");
+static const u8 sMagbyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_30.4bpp.lz");
+static const u8 sMagbyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_30_1.4bpp.lz");
+static const u8 sMagbyGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_30_2.4bpp.lz");
+static const u8 sMagbyGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_30_3.4bpp.lz");
 static const ax_sprite sMagbySprites30[] = {
 	{sMagbyGfx30, ARRAY_COUNT(sMagbyGfx30)}, 
 	{NULL, 32}, 
@@ -2262,10 +2262,10 @@ static const ax_sprite sMagbySprites30[] = {
 	{sMagbyGfx30_3, ARRAY_COUNT(sMagbyGfx30_3)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx31[] = INCBIN_U8("graphics/ax/mon/magby/sprite_31.4bpp");
-static const u8 sMagbyGfx31_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_31_1.4bpp");
-static const u8 sMagbyGfx31_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_31_2.4bpp");
-static const u8 sMagbyGfx31_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_31_3.4bpp");
+static const u8 sMagbyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_31.4bpp.lz");
+static const u8 sMagbyGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_31_1.4bpp.lz");
+static const u8 sMagbyGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_31_2.4bpp.lz");
+static const u8 sMagbyGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_31_3.4bpp.lz");
 static const ax_sprite sMagbySprites31[] = {
 	{NULL, 32}, 
 	{sMagbyGfx31, ARRAY_COUNT(sMagbyGfx31)}, 
@@ -2278,9 +2278,9 @@ static const ax_sprite sMagbySprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx32[] = INCBIN_U8("graphics/ax/mon/magby/sprite_32.4bpp");
-static const u8 sMagbyGfx32_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_32_1.4bpp");
-static const u8 sMagbyGfx32_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_32_2.4bpp");
+static const u8 sMagbyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_32.4bpp.lz");
+static const u8 sMagbyGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_32_1.4bpp.lz");
+static const u8 sMagbyGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_32_2.4bpp.lz");
 static const ax_sprite sMagbySprites32[] = {
 	{NULL, 32}, 
 	{sMagbyGfx32, ARRAY_COUNT(sMagbyGfx32)}, 
@@ -2290,10 +2290,10 @@ static const ax_sprite sMagbySprites32[] = {
 	{sMagbyGfx32_2, ARRAY_COUNT(sMagbyGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx33[] = INCBIN_U8("graphics/ax/mon/magby/sprite_33.4bpp");
-static const u8 sMagbyGfx33_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_33_1.4bpp");
-static const u8 sMagbyGfx33_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_33_2.4bpp");
-static const u8 sMagbyGfx33_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_33_3.4bpp");
+static const u8 sMagbyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_33.4bpp.lz");
+static const u8 sMagbyGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_33_1.4bpp.lz");
+static const u8 sMagbyGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_33_2.4bpp.lz");
+static const u8 sMagbyGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_33_3.4bpp.lz");
 static const ax_sprite sMagbySprites33[] = {
 	{NULL, 32}, 
 	{sMagbyGfx33, ARRAY_COUNT(sMagbyGfx33)}, 
@@ -2306,10 +2306,10 @@ static const ax_sprite sMagbySprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx34[] = INCBIN_U8("graphics/ax/mon/magby/sprite_34.4bpp");
-static const u8 sMagbyGfx34_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_34_1.4bpp");
-static const u8 sMagbyGfx34_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_34_2.4bpp");
-static const u8 sMagbyGfx34_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_34_3.4bpp");
+static const u8 sMagbyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_34.4bpp.lz");
+static const u8 sMagbyGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_34_1.4bpp.lz");
+static const u8 sMagbyGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_34_2.4bpp.lz");
+static const u8 sMagbyGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_34_3.4bpp.lz");
 static const ax_sprite sMagbySprites34[] = {
 	{NULL, 32}, 
 	{sMagbyGfx34, ARRAY_COUNT(sMagbyGfx34)}, 
@@ -2322,10 +2322,10 @@ static const ax_sprite sMagbySprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx35[] = INCBIN_U8("graphics/ax/mon/magby/sprite_35.4bpp");
-static const u8 sMagbyGfx35_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_35_1.4bpp");
-static const u8 sMagbyGfx35_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_35_2.4bpp");
-static const u8 sMagbyGfx35_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_35_3.4bpp");
+static const u8 sMagbyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_35.4bpp.lz");
+static const u8 sMagbyGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_35_1.4bpp.lz");
+static const u8 sMagbyGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_35_2.4bpp.lz");
+static const u8 sMagbyGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_35_3.4bpp.lz");
 static const ax_sprite sMagbySprites35[] = {
 	{NULL, 32}, 
 	{sMagbyGfx35, ARRAY_COUNT(sMagbyGfx35)}, 
@@ -2338,9 +2338,9 @@ static const ax_sprite sMagbySprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx36[] = INCBIN_U8("graphics/ax/mon/magby/sprite_36.4bpp");
-static const u8 sMagbyGfx36_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_36_1.4bpp");
-static const u8 sMagbyGfx36_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_36_2.4bpp");
+static const u8 sMagbyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_36.4bpp.lz");
+static const u8 sMagbyGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_36_1.4bpp.lz");
+static const u8 sMagbyGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_36_2.4bpp.lz");
 static const ax_sprite sMagbySprites36[] = {
 	{NULL, 32}, 
 	{sMagbyGfx36, ARRAY_COUNT(sMagbyGfx36)}, 
@@ -2351,10 +2351,10 @@ static const ax_sprite sMagbySprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx37[] = INCBIN_U8("graphics/ax/mon/magby/sprite_37.4bpp");
-static const u8 sMagbyGfx37_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_37_1.4bpp");
-static const u8 sMagbyGfx37_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_37_2.4bpp");
-static const u8 sMagbyGfx37_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_37_3.4bpp");
+static const u8 sMagbyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_37.4bpp.lz");
+static const u8 sMagbyGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_37_1.4bpp.lz");
+static const u8 sMagbyGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_37_2.4bpp.lz");
+static const u8 sMagbyGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_37_3.4bpp.lz");
 static const ax_sprite sMagbySprites37[] = {
 	{NULL, 32}, 
 	{sMagbyGfx37, ARRAY_COUNT(sMagbyGfx37)}, 
@@ -2367,10 +2367,10 @@ static const ax_sprite sMagbySprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx38[] = INCBIN_U8("graphics/ax/mon/magby/sprite_38.4bpp");
-static const u8 sMagbyGfx38_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_38_1.4bpp");
-static const u8 sMagbyGfx38_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_38_2.4bpp");
-static const u8 sMagbyGfx38_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_38_3.4bpp");
+static const u8 sMagbyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_38.4bpp.lz");
+static const u8 sMagbyGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_38_1.4bpp.lz");
+static const u8 sMagbyGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_38_2.4bpp.lz");
+static const u8 sMagbyGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_38_3.4bpp.lz");
 static const ax_sprite sMagbySprites38[] = {
 	{sMagbyGfx38, ARRAY_COUNT(sMagbyGfx38)}, 
 	{NULL, 32}, 
@@ -2382,10 +2382,10 @@ static const ax_sprite sMagbySprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx39[] = INCBIN_U8("graphics/ax/mon/magby/sprite_39.4bpp");
-static const u8 sMagbyGfx39_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_39_1.4bpp");
-static const u8 sMagbyGfx39_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_39_2.4bpp");
-static const u8 sMagbyGfx39_3[] = INCBIN_U8("graphics/ax/mon/magby/sprite_39_3.4bpp");
+static const u8 sMagbyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_39.4bpp.lz");
+static const u8 sMagbyGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_39_1.4bpp.lz");
+static const u8 sMagbyGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_39_2.4bpp.lz");
+static const u8 sMagbyGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_39_3.4bpp.lz");
 static const ax_sprite sMagbySprites39[] = {
 	{NULL, 32}, 
 	{sMagbyGfx39, ARRAY_COUNT(sMagbyGfx39)}, 
@@ -2398,9 +2398,9 @@ static const ax_sprite sMagbySprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx40[] = INCBIN_U8("graphics/ax/mon/magby/sprite_40.4bpp");
-static const u8 sMagbyGfx40_1[] = INCBIN_U8("graphics/ax/mon/magby/sprite_40_1.4bpp");
-static const u8 sMagbyGfx40_2[] = INCBIN_U8("graphics/ax/mon/magby/sprite_40_2.4bpp");
+static const u8 sMagbyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_40.4bpp.lz");
+static const u8 sMagbyGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_40_1.4bpp.lz");
+static const u8 sMagbyGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_40_2.4bpp.lz");
 static const ax_sprite sMagbySprites40[] = {
 	{NULL, 32}, 
 	{sMagbyGfx40, ARRAY_COUNT(sMagbyGfx40)}, 
@@ -2411,37 +2411,37 @@ static const ax_sprite sMagbySprites40[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx41[] = INCBIN_U8("graphics/ax/mon/magby/sprite_41.4bpp");
+static const u8 sMagbyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_41.4bpp.lz");
 static const ax_sprite sMagbySprites41[] = {
 	{sMagbyGfx41, ARRAY_COUNT(sMagbyGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx42[] = INCBIN_U8("graphics/ax/mon/magby/sprite_42.4bpp");
+static const u8 sMagbyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_42.4bpp.lz");
 static const ax_sprite sMagbySprites42[] = {
 	{sMagbyGfx42, ARRAY_COUNT(sMagbyGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx43[] = INCBIN_U8("graphics/ax/mon/magby/sprite_43.4bpp");
+static const u8 sMagbyGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_43.4bpp.lz");
 static const ax_sprite sMagbySprites43[] = {
 	{sMagbyGfx43, ARRAY_COUNT(sMagbyGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx44[] = INCBIN_U8("graphics/ax/mon/magby/sprite_44.4bpp");
+static const u8 sMagbyGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_44.4bpp.lz");
 static const ax_sprite sMagbySprites44[] = {
 	{sMagbyGfx44, ARRAY_COUNT(sMagbyGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx45[] = INCBIN_U8("graphics/ax/mon/magby/sprite_45.4bpp");
+static const u8 sMagbyGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_45.4bpp.lz");
 static const ax_sprite sMagbySprites45[] = {
 	{sMagbyGfx45, ARRAY_COUNT(sMagbyGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx46[] = INCBIN_U8("graphics/ax/mon/magby/sprite_46.4bpp");
+static const u8 sMagbyGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_46.4bpp.lz");
 static const ax_sprite sMagbySprites46[] = {
 	{sMagbyGfx46, ARRAY_COUNT(sMagbyGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMagbyGfx47[] = INCBIN_U8("graphics/ax/mon/magby/sprite_47.4bpp");
+static const u8 sMagbyGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magby/sprite_47.4bpp.lz");
 static const ax_sprite sMagbySprites47[] = {
 	{sMagbyGfx47, ARRAY_COUNT(sMagbyGfx47)}, 
 	{NULL, 0}

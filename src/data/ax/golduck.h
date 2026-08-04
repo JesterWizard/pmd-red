@@ -2135,84 +2135,84 @@ static const ax_anim sGolduckAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGolduckGfx1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_1.4bpp");
+static const u8 sGolduckGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_1.4bpp.lz");
 static const ax_sprite sGolduckSprites1[] = {
 	{sGolduckGfx1, ARRAY_COUNT(sGolduckGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_2.4bpp");
+static const u8 sGolduckGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_2.4bpp.lz");
 static const ax_sprite sGolduckSprites2[] = {
 	{sGolduckGfx2, ARRAY_COUNT(sGolduckGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_3.4bpp");
+static const u8 sGolduckGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_3.4bpp.lz");
 static const ax_sprite sGolduckSprites3[] = {
 	{sGolduckGfx3, ARRAY_COUNT(sGolduckGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx4[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_4.4bpp");
+static const u8 sGolduckGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_4.4bpp.lz");
 static const ax_sprite sGolduckSprites4[] = {
 	{sGolduckGfx4, ARRAY_COUNT(sGolduckGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx5[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_5.4bpp");
+static const u8 sGolduckGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_5.4bpp.lz");
 static const ax_sprite sGolduckSprites5[] = {
 	{sGolduckGfx5, ARRAY_COUNT(sGolduckGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx6[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_6.4bpp");
+static const u8 sGolduckGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_6.4bpp.lz");
 static const ax_sprite sGolduckSprites6[] = {
 	{sGolduckGfx6, ARRAY_COUNT(sGolduckGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx7[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_7.4bpp");
+static const u8 sGolduckGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_7.4bpp.lz");
 static const ax_sprite sGolduckSprites7[] = {
 	{sGolduckGfx7, ARRAY_COUNT(sGolduckGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx8[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_8.4bpp");
+static const u8 sGolduckGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_8.4bpp.lz");
 static const ax_sprite sGolduckSprites8[] = {
 	{sGolduckGfx8, ARRAY_COUNT(sGolduckGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx9[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_9.4bpp");
+static const u8 sGolduckGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_9.4bpp.lz");
 static const ax_sprite sGolduckSprites9[] = {
 	{sGolduckGfx9, ARRAY_COUNT(sGolduckGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx10[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_10.4bpp");
+static const u8 sGolduckGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_10.4bpp.lz");
 static const ax_sprite sGolduckSprites10[] = {
 	{sGolduckGfx10, ARRAY_COUNT(sGolduckGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx11[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_11.4bpp");
+static const u8 sGolduckGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_11.4bpp.lz");
 static const ax_sprite sGolduckSprites11[] = {
 	{sGolduckGfx11, ARRAY_COUNT(sGolduckGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx12[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_12.4bpp");
+static const u8 sGolduckGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_12.4bpp.lz");
 static const ax_sprite sGolduckSprites12[] = {
 	{sGolduckGfx12, ARRAY_COUNT(sGolduckGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx13[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_13.4bpp");
+static const u8 sGolduckGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_13.4bpp.lz");
 static const ax_sprite sGolduckSprites13[] = {
 	{sGolduckGfx13, ARRAY_COUNT(sGolduckGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx14[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_14.4bpp");
+static const u8 sGolduckGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_14.4bpp.lz");
 static const ax_sprite sGolduckSprites14[] = {
 	{sGolduckGfx14, ARRAY_COUNT(sGolduckGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx15[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_15.4bpp");
+static const u8 sGolduckGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_15.4bpp.lz");
 static const ax_sprite sGolduckSprites15[] = {
 	{sGolduckGfx15, ARRAY_COUNT(sGolduckGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx16[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_16.4bpp");
-static const u8 sGolduckGfx16_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_16_1.4bpp");
-static const u8 sGolduckGfx16_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_16_2.4bpp");
+static const u8 sGolduckGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_16.4bpp.lz");
+static const u8 sGolduckGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_16_1.4bpp.lz");
+static const u8 sGolduckGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_16_2.4bpp.lz");
 static const ax_sprite sGolduckSprites16[] = {
 	{NULL, 32}, 
 	{sGolduckGfx16, ARRAY_COUNT(sGolduckGfx16)}, 
@@ -2223,15 +2223,15 @@ static const ax_sprite sGolduckSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx17[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_17.4bpp");
+static const u8 sGolduckGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_17.4bpp.lz");
 static const ax_sprite sGolduckSprites17[] = {
 	{NULL, 160}, 
 	{sGolduckGfx17, ARRAY_COUNT(sGolduckGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx18[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_18.4bpp");
-static const u8 sGolduckGfx18_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_18_1.4bpp");
+static const u8 sGolduckGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_18.4bpp.lz");
+static const u8 sGolduckGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_18_1.4bpp.lz");
 static const ax_sprite sGolduckSprites18[] = {
 	{sGolduckGfx18, ARRAY_COUNT(sGolduckGfx18)}, 
 	{NULL, 32}, 
@@ -2239,9 +2239,9 @@ static const ax_sprite sGolduckSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx19[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_19.4bpp");
-static const u8 sGolduckGfx19_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_19_1.4bpp");
-static const u8 sGolduckGfx19_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_19_2.4bpp");
+static const u8 sGolduckGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_19.4bpp.lz");
+static const u8 sGolduckGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_19_1.4bpp.lz");
+static const u8 sGolduckGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_19_2.4bpp.lz");
 static const ax_sprite sGolduckSprites19[] = {
 	{NULL, 128}, 
 	{sGolduckGfx19, ARRAY_COUNT(sGolduckGfx19)}, 
@@ -2252,9 +2252,9 @@ static const ax_sprite sGolduckSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx20[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_20.4bpp");
-static const u8 sGolduckGfx20_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_20_1.4bpp");
-static const u8 sGolduckGfx20_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_20_2.4bpp");
+static const u8 sGolduckGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_20.4bpp.lz");
+static const u8 sGolduckGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_20_1.4bpp.lz");
+static const u8 sGolduckGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_20_2.4bpp.lz");
 static const ax_sprite sGolduckSprites20[] = {
 	{sGolduckGfx20, ARRAY_COUNT(sGolduckGfx20)}, 
 	{NULL, 32}, 
@@ -2264,15 +2264,15 @@ static const ax_sprite sGolduckSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx21[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_21.4bpp");
+static const u8 sGolduckGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_21.4bpp.lz");
 static const ax_sprite sGolduckSprites21[] = {
 	{NULL, 128}, 
 	{sGolduckGfx21, ARRAY_COUNT(sGolduckGfx21)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx22[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_22.4bpp");
-static const u8 sGolduckGfx22_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_22_1.4bpp");
+static const u8 sGolduckGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_22.4bpp.lz");
+static const u8 sGolduckGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_22_1.4bpp.lz");
 static const ax_sprite sGolduckSprites22[] = {
 	{NULL, 32}, 
 	{sGolduckGfx22, ARRAY_COUNT(sGolduckGfx22)}, 
@@ -2281,10 +2281,10 @@ static const ax_sprite sGolduckSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx23[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_23.4bpp");
-static const u8 sGolduckGfx23_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_23_1.4bpp");
-static const u8 sGolduckGfx23_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_23_2.4bpp");
-static const u8 sGolduckGfx23_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_23_3.4bpp");
+static const u8 sGolduckGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_23.4bpp.lz");
+static const u8 sGolduckGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_23_1.4bpp.lz");
+static const u8 sGolduckGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_23_2.4bpp.lz");
+static const u8 sGolduckGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_23_3.4bpp.lz");
 static const ax_sprite sGolduckSprites23[] = {
 	{sGolduckGfx23, ARRAY_COUNT(sGolduckGfx23)}, 
 	{NULL, 64}, 
@@ -2296,9 +2296,9 @@ static const ax_sprite sGolduckSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx24[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_24.4bpp");
-static const u8 sGolduckGfx24_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_24_1.4bpp");
-static const u8 sGolduckGfx24_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_24_2.4bpp");
+static const u8 sGolduckGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_24.4bpp.lz");
+static const u8 sGolduckGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_24_1.4bpp.lz");
+static const u8 sGolduckGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_24_2.4bpp.lz");
 static const ax_sprite sGolduckSprites24[] = {
 	{NULL, 32}, 
 	{sGolduckGfx24, ARRAY_COUNT(sGolduckGfx24)}, 
@@ -2309,10 +2309,10 @@ static const ax_sprite sGolduckSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx25[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_25.4bpp");
-static const u8 sGolduckGfx25_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_25_1.4bpp");
-static const u8 sGolduckGfx25_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_25_2.4bpp");
-static const u8 sGolduckGfx25_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_25_3.4bpp");
+static const u8 sGolduckGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_25.4bpp.lz");
+static const u8 sGolduckGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_25_1.4bpp.lz");
+static const u8 sGolduckGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_25_2.4bpp.lz");
+static const u8 sGolduckGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_25_3.4bpp.lz");
 static const ax_sprite sGolduckSprites25[] = {
 	{sGolduckGfx25, ARRAY_COUNT(sGolduckGfx25)}, 
 	{NULL, 32}, 
@@ -2324,10 +2324,10 @@ static const ax_sprite sGolduckSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx26[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_26.4bpp");
-static const u8 sGolduckGfx26_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_26_1.4bpp");
-static const u8 sGolduckGfx26_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_26_2.4bpp");
-static const u8 sGolduckGfx26_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_26_3.4bpp");
+static const u8 sGolduckGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_26.4bpp.lz");
+static const u8 sGolduckGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_26_1.4bpp.lz");
+static const u8 sGolduckGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_26_2.4bpp.lz");
+static const u8 sGolduckGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_26_3.4bpp.lz");
 static const ax_sprite sGolduckSprites26[] = {
 	{sGolduckGfx26, ARRAY_COUNT(sGolduckGfx26)}, 
 	{NULL, 96}, 
@@ -2339,23 +2339,23 @@ static const ax_sprite sGolduckSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx27[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_27.4bpp");
+static const u8 sGolduckGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_27.4bpp.lz");
 static const ax_sprite sGolduckSprites27[] = {
 	{NULL, 32}, 
 	{sGolduckGfx27, ARRAY_COUNT(sGolduckGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx28[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_28.4bpp");
-static const u8 sGolduckGfx28_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_28_1.4bpp");
+static const u8 sGolduckGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_28.4bpp.lz");
+static const u8 sGolduckGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_28_1.4bpp.lz");
 static const ax_sprite sGolduckSprites28[] = {
 	{sGolduckGfx28, ARRAY_COUNT(sGolduckGfx28)}, 
 	{NULL, 32}, 
 	{sGolduckGfx28_1, ARRAY_COUNT(sGolduckGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx29[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_29.4bpp");
-static const u8 sGolduckGfx29_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_29_1.4bpp");
-static const u8 sGolduckGfx29_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_29_2.4bpp");
+static const u8 sGolduckGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_29.4bpp.lz");
+static const u8 sGolduckGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_29_1.4bpp.lz");
+static const u8 sGolduckGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_29_2.4bpp.lz");
 static const ax_sprite sGolduckSprites29[] = {
 	{NULL, 32}, 
 	{sGolduckGfx29, ARRAY_COUNT(sGolduckGfx29)}, 
@@ -2365,8 +2365,8 @@ static const ax_sprite sGolduckSprites29[] = {
 	{sGolduckGfx29_2, ARRAY_COUNT(sGolduckGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx30[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_30.4bpp");
-static const u8 sGolduckGfx30_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_30_1.4bpp");
+static const u8 sGolduckGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_30.4bpp.lz");
+static const u8 sGolduckGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_30_1.4bpp.lz");
 static const ax_sprite sGolduckSprites30[] = {
 	{NULL, 32}, 
 	{sGolduckGfx30, ARRAY_COUNT(sGolduckGfx30)}, 
@@ -2374,8 +2374,8 @@ static const ax_sprite sGolduckSprites30[] = {
 	{sGolduckGfx30_1, ARRAY_COUNT(sGolduckGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx31[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_31.4bpp");
-static const u8 sGolduckGfx31_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_31_1.4bpp");
+static const u8 sGolduckGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_31.4bpp.lz");
+static const u8 sGolduckGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_31_1.4bpp.lz");
 static const ax_sprite sGolduckSprites31[] = {
 	{NULL, 192}, 
 	{sGolduckGfx31, ARRAY_COUNT(sGolduckGfx31)}, 
@@ -2384,10 +2384,10 @@ static const ax_sprite sGolduckSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx32[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_32.4bpp");
-static const u8 sGolduckGfx32_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_32_1.4bpp");
-static const u8 sGolduckGfx32_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_32_2.4bpp");
-static const u8 sGolduckGfx32_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_32_3.4bpp");
+static const u8 sGolduckGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_32.4bpp.lz");
+static const u8 sGolduckGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_32_1.4bpp.lz");
+static const u8 sGolduckGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_32_2.4bpp.lz");
+static const u8 sGolduckGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_32_3.4bpp.lz");
 static const ax_sprite sGolduckSprites32[] = {
 	{NULL, 32}, 
 	{sGolduckGfx32, ARRAY_COUNT(sGolduckGfx32)}, 
@@ -2400,11 +2400,11 @@ static const ax_sprite sGolduckSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx33[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_33.4bpp");
-static const u8 sGolduckGfx33_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_33_1.4bpp");
-static const u8 sGolduckGfx33_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_33_2.4bpp");
-static const u8 sGolduckGfx33_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_33_3.4bpp");
-static const u8 sGolduckGfx33_4[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_33_4.4bpp");
+static const u8 sGolduckGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_33.4bpp.lz");
+static const u8 sGolduckGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_33_1.4bpp.lz");
+static const u8 sGolduckGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_33_2.4bpp.lz");
+static const u8 sGolduckGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_33_3.4bpp.lz");
+static const u8 sGolduckGfx33_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_33_4.4bpp.lz");
 static const ax_sprite sGolduckSprites33[] = {
 	{NULL, 64}, 
 	{sGolduckGfx33, ARRAY_COUNT(sGolduckGfx33)}, 
@@ -2419,9 +2419,9 @@ static const ax_sprite sGolduckSprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx34[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_34.4bpp");
-static const u8 sGolduckGfx34_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_34_1.4bpp");
-static const u8 sGolduckGfx34_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_34_2.4bpp");
+static const u8 sGolduckGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_34.4bpp.lz");
+static const u8 sGolduckGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_34_1.4bpp.lz");
+static const u8 sGolduckGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_34_2.4bpp.lz");
 static const ax_sprite sGolduckSprites34[] = {
 	{NULL, 32}, 
 	{sGolduckGfx34, ARRAY_COUNT(sGolduckGfx34)}, 
@@ -2431,8 +2431,8 @@ static const ax_sprite sGolduckSprites34[] = {
 	{sGolduckGfx34_2, ARRAY_COUNT(sGolduckGfx34_2)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx35[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_35.4bpp");
-static const u8 sGolduckGfx35_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_35_1.4bpp");
+static const u8 sGolduckGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_35.4bpp.lz");
+static const u8 sGolduckGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_35_1.4bpp.lz");
 static const ax_sprite sGolduckSprites35[] = {
 	{NULL, 128}, 
 	{sGolduckGfx35, ARRAY_COUNT(sGolduckGfx35)}, 
@@ -2441,10 +2441,10 @@ static const ax_sprite sGolduckSprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx36[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_36.4bpp");
-static const u8 sGolduckGfx36_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_36_1.4bpp");
-static const u8 sGolduckGfx36_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_36_2.4bpp");
-static const u8 sGolduckGfx36_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_36_3.4bpp");
+static const u8 sGolduckGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_36.4bpp.lz");
+static const u8 sGolduckGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_36_1.4bpp.lz");
+static const u8 sGolduckGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_36_2.4bpp.lz");
+static const u8 sGolduckGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_36_3.4bpp.lz");
 static const ax_sprite sGolduckSprites36[] = {
 	{NULL, 32}, 
 	{sGolduckGfx36, ARRAY_COUNT(sGolduckGfx36)}, 
@@ -2456,10 +2456,10 @@ static const ax_sprite sGolduckSprites36[] = {
 	{sGolduckGfx36_3, ARRAY_COUNT(sGolduckGfx36_3)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx37[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_37.4bpp");
-static const u8 sGolduckGfx37_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_37_1.4bpp");
-static const u8 sGolduckGfx37_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_37_2.4bpp");
-static const u8 sGolduckGfx37_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_37_3.4bpp");
+static const u8 sGolduckGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_37.4bpp.lz");
+static const u8 sGolduckGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_37_1.4bpp.lz");
+static const u8 sGolduckGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_37_2.4bpp.lz");
+static const u8 sGolduckGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_37_3.4bpp.lz");
 static const ax_sprite sGolduckSprites37[] = {
 	{sGolduckGfx37, ARRAY_COUNT(sGolduckGfx37)}, 
 	{NULL, 32}, 
@@ -2471,9 +2471,9 @@ static const ax_sprite sGolduckSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx38[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_38.4bpp");
-static const u8 sGolduckGfx38_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_38_1.4bpp");
-static const u8 sGolduckGfx38_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_38_2.4bpp");
+static const u8 sGolduckGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_38.4bpp.lz");
+static const u8 sGolduckGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_38_1.4bpp.lz");
+static const u8 sGolduckGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_38_2.4bpp.lz");
 static const ax_sprite sGolduckSprites38[] = {
 	{NULL, 32}, 
 	{sGolduckGfx38, ARRAY_COUNT(sGolduckGfx38)}, 
@@ -2483,9 +2483,9 @@ static const ax_sprite sGolduckSprites38[] = {
 	{sGolduckGfx38_2, ARRAY_COUNT(sGolduckGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx39[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_39.4bpp");
-static const u8 sGolduckGfx39_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_39_1.4bpp");
-static const u8 sGolduckGfx39_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_39_2.4bpp");
+static const u8 sGolduckGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_39.4bpp.lz");
+static const u8 sGolduckGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_39_1.4bpp.lz");
+static const u8 sGolduckGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_39_2.4bpp.lz");
 static const ax_sprite sGolduckSprites39[] = {
 	{sGolduckGfx39, ARRAY_COUNT(sGolduckGfx39)}, 
 	{NULL, 96}, 
@@ -2495,8 +2495,8 @@ static const ax_sprite sGolduckSprites39[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx40[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_40.4bpp");
-static const u8 sGolduckGfx40_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_40_1.4bpp");
+static const u8 sGolduckGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_40.4bpp.lz");
+static const u8 sGolduckGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_40_1.4bpp.lz");
 static const ax_sprite sGolduckSprites40[] = {
 	{NULL, 32}, 
 	{sGolduckGfx40, ARRAY_COUNT(sGolduckGfx40)}, 
@@ -2504,8 +2504,8 @@ static const ax_sprite sGolduckSprites40[] = {
 	{sGolduckGfx40_1, ARRAY_COUNT(sGolduckGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx41[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_41.4bpp");
-static const u8 sGolduckGfx41_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_41_1.4bpp");
+static const u8 sGolduckGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_41.4bpp.lz");
+static const u8 sGolduckGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_41_1.4bpp.lz");
 static const ax_sprite sGolduckSprites41[] = {
 	{sGolduckGfx41, ARRAY_COUNT(sGolduckGfx41)}, 
 	{NULL, 32}, 
@@ -2513,8 +2513,8 @@ static const ax_sprite sGolduckSprites41[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx42[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_42.4bpp");
-static const u8 sGolduckGfx42_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_42_1.4bpp");
+static const u8 sGolduckGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_42.4bpp.lz");
+static const u8 sGolduckGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_42_1.4bpp.lz");
 static const ax_sprite sGolduckSprites42[] = {
 	{NULL, 32}, 
 	{sGolduckGfx42, ARRAY_COUNT(sGolduckGfx42)}, 
@@ -2523,9 +2523,9 @@ static const ax_sprite sGolduckSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx43[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_43.4bpp");
-static const u8 sGolduckGfx43_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_43_1.4bpp");
-static const u8 sGolduckGfx43_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_43_2.4bpp");
+static const u8 sGolduckGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_43.4bpp.lz");
+static const u8 sGolduckGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_43_1.4bpp.lz");
+static const u8 sGolduckGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_43_2.4bpp.lz");
 static const ax_sprite sGolduckSprites43[] = {
 	{NULL, 32}, 
 	{sGolduckGfx43, ARRAY_COUNT(sGolduckGfx43)}, 
@@ -2535,8 +2535,8 @@ static const ax_sprite sGolduckSprites43[] = {
 	{sGolduckGfx43_2, ARRAY_COUNT(sGolduckGfx43_2)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx44[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_44.4bpp");
-static const u8 sGolduckGfx44_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_44_1.4bpp");
+static const u8 sGolduckGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_44.4bpp.lz");
+static const u8 sGolduckGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_44_1.4bpp.lz");
 static const ax_sprite sGolduckSprites44[] = {
 	{NULL, 32}, 
 	{sGolduckGfx44, ARRAY_COUNT(sGolduckGfx44)}, 
@@ -2544,9 +2544,9 @@ static const ax_sprite sGolduckSprites44[] = {
 	{sGolduckGfx44_1, ARRAY_COUNT(sGolduckGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx45[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_45.4bpp");
-static const u8 sGolduckGfx45_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_45_1.4bpp");
-static const u8 sGolduckGfx45_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_45_2.4bpp");
+static const u8 sGolduckGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_45.4bpp.lz");
+static const u8 sGolduckGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_45_1.4bpp.lz");
+static const u8 sGolduckGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_45_2.4bpp.lz");
 static const ax_sprite sGolduckSprites45[] = {
 	{NULL, 32}, 
 	{sGolduckGfx45, ARRAY_COUNT(sGolduckGfx45)}, 
@@ -2556,8 +2556,8 @@ static const ax_sprite sGolduckSprites45[] = {
 	{sGolduckGfx45_2, ARRAY_COUNT(sGolduckGfx45_2)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx46[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_46.4bpp");
-static const u8 sGolduckGfx46_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_46_1.4bpp");
+static const u8 sGolduckGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_46.4bpp.lz");
+static const u8 sGolduckGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_46_1.4bpp.lz");
 static const ax_sprite sGolduckSprites46[] = {
 	{NULL, 32}, 
 	{sGolduckGfx46, ARRAY_COUNT(sGolduckGfx46)}, 
@@ -2566,8 +2566,8 @@ static const ax_sprite sGolduckSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx47[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_47.4bpp");
-static const u8 sGolduckGfx47_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_47_1.4bpp");
+static const u8 sGolduckGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_47.4bpp.lz");
+static const u8 sGolduckGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_47_1.4bpp.lz");
 static const ax_sprite sGolduckSprites47[] = {
 	{NULL, 32}, 
 	{sGolduckGfx47, ARRAY_COUNT(sGolduckGfx47)}, 
@@ -2576,10 +2576,10 @@ static const ax_sprite sGolduckSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx48[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_48.4bpp");
-static const u8 sGolduckGfx48_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_48_1.4bpp");
-static const u8 sGolduckGfx48_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_48_2.4bpp");
-static const u8 sGolduckGfx48_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_48_3.4bpp");
+static const u8 sGolduckGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_48.4bpp.lz");
+static const u8 sGolduckGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_48_1.4bpp.lz");
+static const u8 sGolduckGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_48_2.4bpp.lz");
+static const u8 sGolduckGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_48_3.4bpp.lz");
 static const ax_sprite sGolduckSprites48[] = {
 	{NULL, 32}, 
 	{sGolduckGfx48, ARRAY_COUNT(sGolduckGfx48)}, 
@@ -2592,10 +2592,10 @@ static const ax_sprite sGolduckSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx49[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_49.4bpp");
-static const u8 sGolduckGfx49_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_49_1.4bpp");
-static const u8 sGolduckGfx49_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_49_2.4bpp");
-static const u8 sGolduckGfx49_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_49_3.4bpp");
+static const u8 sGolduckGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_49.4bpp.lz");
+static const u8 sGolduckGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_49_1.4bpp.lz");
+static const u8 sGolduckGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_49_2.4bpp.lz");
+static const u8 sGolduckGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_49_3.4bpp.lz");
 static const ax_sprite sGolduckSprites49[] = {
 	{NULL, 32}, 
 	{sGolduckGfx49, ARRAY_COUNT(sGolduckGfx49)}, 
@@ -2608,10 +2608,10 @@ static const ax_sprite sGolduckSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx50[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_50.4bpp");
-static const u8 sGolduckGfx50_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_50_1.4bpp");
-static const u8 sGolduckGfx50_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_50_2.4bpp");
-static const u8 sGolduckGfx50_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_50_3.4bpp");
+static const u8 sGolduckGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_50.4bpp.lz");
+static const u8 sGolduckGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_50_1.4bpp.lz");
+static const u8 sGolduckGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_50_2.4bpp.lz");
+static const u8 sGolduckGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_50_3.4bpp.lz");
 static const ax_sprite sGolduckSprites50[] = {
 	{NULL, 32}, 
 	{sGolduckGfx50, ARRAY_COUNT(sGolduckGfx50)}, 
@@ -2624,9 +2624,9 @@ static const ax_sprite sGolduckSprites50[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx51[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_51.4bpp");
-static const u8 sGolduckGfx51_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_51_1.4bpp");
-static const u8 sGolduckGfx51_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_51_2.4bpp");
+static const u8 sGolduckGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_51.4bpp.lz");
+static const u8 sGolduckGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_51_1.4bpp.lz");
+static const u8 sGolduckGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_51_2.4bpp.lz");
 static const ax_sprite sGolduckSprites51[] = {
 	{sGolduckGfx51, ARRAY_COUNT(sGolduckGfx51)}, 
 	{NULL, 64}, 
@@ -2636,10 +2636,10 @@ static const ax_sprite sGolduckSprites51[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx52[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_52.4bpp");
-static const u8 sGolduckGfx52_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_52_1.4bpp");
-static const u8 sGolduckGfx52_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_52_2.4bpp");
-static const u8 sGolduckGfx52_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_52_3.4bpp");
+static const u8 sGolduckGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_52.4bpp.lz");
+static const u8 sGolduckGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_52_1.4bpp.lz");
+static const u8 sGolduckGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_52_2.4bpp.lz");
+static const u8 sGolduckGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_52_3.4bpp.lz");
 static const ax_sprite sGolduckSprites52[] = {
 	{NULL, 32}, 
 	{sGolduckGfx52, ARRAY_COUNT(sGolduckGfx52)}, 
@@ -2652,10 +2652,10 @@ static const ax_sprite sGolduckSprites52[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx53[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_53.4bpp");
-static const u8 sGolduckGfx53_1[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_53_1.4bpp");
-static const u8 sGolduckGfx53_2[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_53_2.4bpp");
-static const u8 sGolduckGfx53_3[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_53_3.4bpp");
+static const u8 sGolduckGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_53.4bpp.lz");
+static const u8 sGolduckGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_53_1.4bpp.lz");
+static const u8 sGolduckGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_53_2.4bpp.lz");
+static const u8 sGolduckGfx53_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_53_3.4bpp.lz");
 static const ax_sprite sGolduckSprites53[] = {
 	{sGolduckGfx53, ARRAY_COUNT(sGolduckGfx53)}, 
 	{NULL, 32}, 
@@ -2667,37 +2667,37 @@ static const ax_sprite sGolduckSprites53[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx54[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_54.4bpp");
+static const u8 sGolduckGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_54.4bpp.lz");
 static const ax_sprite sGolduckSprites54[] = {
 	{sGolduckGfx54, ARRAY_COUNT(sGolduckGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx55[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_55.4bpp");
+static const u8 sGolduckGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_55.4bpp.lz");
 static const ax_sprite sGolduckSprites55[] = {
 	{sGolduckGfx55, ARRAY_COUNT(sGolduckGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx56[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_56.4bpp");
+static const u8 sGolduckGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_56.4bpp.lz");
 static const ax_sprite sGolduckSprites56[] = {
 	{sGolduckGfx56, ARRAY_COUNT(sGolduckGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx57[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_57.4bpp");
+static const u8 sGolduckGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_57.4bpp.lz");
 static const ax_sprite sGolduckSprites57[] = {
 	{sGolduckGfx57, ARRAY_COUNT(sGolduckGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx58[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_58.4bpp");
+static const u8 sGolduckGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_58.4bpp.lz");
 static const ax_sprite sGolduckSprites58[] = {
 	{sGolduckGfx58, ARRAY_COUNT(sGolduckGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx59[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_59.4bpp");
+static const u8 sGolduckGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_59.4bpp.lz");
 static const ax_sprite sGolduckSprites59[] = {
 	{sGolduckGfx59, ARRAY_COUNT(sGolduckGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sGolduckGfx60[] = INCBIN_U8("graphics/ax/mon/golduck/sprite_60.4bpp");
+static const u8 sGolduckGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/golduck/sprite_60.4bpp.lz");
 static const ax_sprite sGolduckSprites60[] = {
 	{sGolduckGfx60, ARRAY_COUNT(sGolduckGfx60)}, 
 	{NULL, 0}

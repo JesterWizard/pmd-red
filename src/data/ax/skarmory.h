@@ -2458,159 +2458,159 @@ static const ax_anim sSkarmoryAnims_16_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSkarmoryGfx1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_1.4bpp");
+static const u8 sSkarmoryGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_1.4bpp.lz");
 static const ax_sprite sSkarmorySprites1[] = {
 	{sSkarmoryGfx1, ARRAY_COUNT(sSkarmoryGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx2[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_2.4bpp");
+static const u8 sSkarmoryGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_2.4bpp.lz");
 static const ax_sprite sSkarmorySprites2[] = {
 	{sSkarmoryGfx2, ARRAY_COUNT(sSkarmoryGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx3[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_3.4bpp");
+static const u8 sSkarmoryGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_3.4bpp.lz");
 static const ax_sprite sSkarmorySprites3[] = {
 	{sSkarmoryGfx3, ARRAY_COUNT(sSkarmoryGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx4[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_4.4bpp");
+static const u8 sSkarmoryGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_4.4bpp.lz");
 static const ax_sprite sSkarmorySprites4[] = {
 	{sSkarmoryGfx4, ARRAY_COUNT(sSkarmoryGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx5[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_5.4bpp");
+static const u8 sSkarmoryGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_5.4bpp.lz");
 static const ax_sprite sSkarmorySprites5[] = {
 	{sSkarmoryGfx5, ARRAY_COUNT(sSkarmoryGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx6[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_6.4bpp");
+static const u8 sSkarmoryGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_6.4bpp.lz");
 static const ax_sprite sSkarmorySprites6[] = {
 	{sSkarmoryGfx6, ARRAY_COUNT(sSkarmoryGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx7[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_7.4bpp");
+static const u8 sSkarmoryGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_7.4bpp.lz");
 static const ax_sprite sSkarmorySprites7[] = {
 	{sSkarmoryGfx7, ARRAY_COUNT(sSkarmoryGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx8[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_8.4bpp");
+static const u8 sSkarmoryGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_8.4bpp.lz");
 static const ax_sprite sSkarmorySprites8[] = {
 	{sSkarmoryGfx8, ARRAY_COUNT(sSkarmoryGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx9[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_9.4bpp");
+static const u8 sSkarmoryGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_9.4bpp.lz");
 static const ax_sprite sSkarmorySprites9[] = {
 	{sSkarmoryGfx9, ARRAY_COUNT(sSkarmoryGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx10[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_10.4bpp");
+static const u8 sSkarmoryGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_10.4bpp.lz");
 static const ax_sprite sSkarmorySprites10[] = {
 	{sSkarmoryGfx10, ARRAY_COUNT(sSkarmoryGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx11[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_11.4bpp");
+static const u8 sSkarmoryGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_11.4bpp.lz");
 static const ax_sprite sSkarmorySprites11[] = {
 	{sSkarmoryGfx11, ARRAY_COUNT(sSkarmoryGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx12[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_12.4bpp");
+static const u8 sSkarmoryGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_12.4bpp.lz");
 static const ax_sprite sSkarmorySprites12[] = {
 	{sSkarmoryGfx12, ARRAY_COUNT(sSkarmoryGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx13[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_13.4bpp");
+static const u8 sSkarmoryGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_13.4bpp.lz");
 static const ax_sprite sSkarmorySprites13[] = {
 	{sSkarmoryGfx13, ARRAY_COUNT(sSkarmoryGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx14[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_14.4bpp");
+static const u8 sSkarmoryGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_14.4bpp.lz");
 static const ax_sprite sSkarmorySprites14[] = {
 	{sSkarmoryGfx14, ARRAY_COUNT(sSkarmoryGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx15[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_15.4bpp");
+static const u8 sSkarmoryGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_15.4bpp.lz");
 static const ax_sprite sSkarmorySprites15[] = {
 	{sSkarmoryGfx15, ARRAY_COUNT(sSkarmoryGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx16[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_16.4bpp");
+static const u8 sSkarmoryGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_16.4bpp.lz");
 static const ax_sprite sSkarmorySprites16[] = {
 	{sSkarmoryGfx16, ARRAY_COUNT(sSkarmoryGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx17[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_17.4bpp");
+static const u8 sSkarmoryGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_17.4bpp.lz");
 static const ax_sprite sSkarmorySprites17[] = {
 	{sSkarmoryGfx17, ARRAY_COUNT(sSkarmoryGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx18[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_18.4bpp");
+static const u8 sSkarmoryGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_18.4bpp.lz");
 static const ax_sprite sSkarmorySprites18[] = {
 	{sSkarmoryGfx18, ARRAY_COUNT(sSkarmoryGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx19[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_19.4bpp");
+static const u8 sSkarmoryGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_19.4bpp.lz");
 static const ax_sprite sSkarmorySprites19[] = {
 	{sSkarmoryGfx19, ARRAY_COUNT(sSkarmoryGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx20[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_20.4bpp");
+static const u8 sSkarmoryGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_20.4bpp.lz");
 static const ax_sprite sSkarmorySprites20[] = {
 	{sSkarmoryGfx20, ARRAY_COUNT(sSkarmoryGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx21[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_21.4bpp");
+static const u8 sSkarmoryGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_21.4bpp.lz");
 static const ax_sprite sSkarmorySprites21[] = {
 	{sSkarmoryGfx21, ARRAY_COUNT(sSkarmoryGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx22[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_22.4bpp");
+static const u8 sSkarmoryGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_22.4bpp.lz");
 static const ax_sprite sSkarmorySprites22[] = {
 	{sSkarmoryGfx22, ARRAY_COUNT(sSkarmoryGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx23[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_23.4bpp");
+static const u8 sSkarmoryGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_23.4bpp.lz");
 static const ax_sprite sSkarmorySprites23[] = {
 	{sSkarmoryGfx23, ARRAY_COUNT(sSkarmoryGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx24[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_24.4bpp");
+static const u8 sSkarmoryGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_24.4bpp.lz");
 static const ax_sprite sSkarmorySprites24[] = {
 	{sSkarmoryGfx24, ARRAY_COUNT(sSkarmoryGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx25[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_25.4bpp");
+static const u8 sSkarmoryGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_25.4bpp.lz");
 static const ax_sprite sSkarmorySprites25[] = {
 	{sSkarmoryGfx25, ARRAY_COUNT(sSkarmoryGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx26[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_26.4bpp");
+static const u8 sSkarmoryGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_26.4bpp.lz");
 static const ax_sprite sSkarmorySprites26[] = {
 	{sSkarmoryGfx26, ARRAY_COUNT(sSkarmoryGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx27[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_27.4bpp");
+static const u8 sSkarmoryGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_27.4bpp.lz");
 static const ax_sprite sSkarmorySprites27[] = {
 	{sSkarmoryGfx27, ARRAY_COUNT(sSkarmoryGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx28[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_28.4bpp");
+static const u8 sSkarmoryGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_28.4bpp.lz");
 static const ax_sprite sSkarmorySprites28[] = {
 	{sSkarmoryGfx28, ARRAY_COUNT(sSkarmoryGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx29[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_29.4bpp");
+static const u8 sSkarmoryGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_29.4bpp.lz");
 static const ax_sprite sSkarmorySprites29[] = {
 	{sSkarmoryGfx29, ARRAY_COUNT(sSkarmoryGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx30[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_30.4bpp");
+static const u8 sSkarmoryGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_30.4bpp.lz");
 static const ax_sprite sSkarmorySprites30[] = {
 	{sSkarmoryGfx30, ARRAY_COUNT(sSkarmoryGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx31[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_31.4bpp");
-static const u8 sSkarmoryGfx31_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_31_1.4bpp");
-static const u8 sSkarmoryGfx31_2[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_31_2.4bpp");
+static const u8 sSkarmoryGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_31.4bpp.lz");
+static const u8 sSkarmoryGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_31_1.4bpp.lz");
+static const u8 sSkarmoryGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_31_2.4bpp.lz");
 static const ax_sprite sSkarmorySprites31[] = {
 	{NULL, 64}, 
 	{sSkarmoryGfx31, ARRAY_COUNT(sSkarmoryGfx31)}, 
@@ -2621,8 +2621,8 @@ static const ax_sprite sSkarmorySprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx32[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_32.4bpp");
-static const u8 sSkarmoryGfx32_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_32_1.4bpp");
+static const u8 sSkarmoryGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_32.4bpp.lz");
+static const u8 sSkarmoryGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_32_1.4bpp.lz");
 static const ax_sprite sSkarmorySprites32[] = {
 	{NULL, 128}, 
 	{sSkarmoryGfx32, ARRAY_COUNT(sSkarmoryGfx32)}, 
@@ -2630,86 +2630,86 @@ static const ax_sprite sSkarmorySprites32[] = {
 	{sSkarmoryGfx32_1, ARRAY_COUNT(sSkarmoryGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx33[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_33.4bpp");
-static const u8 sSkarmoryGfx33_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_33_1.4bpp");
+static const u8 sSkarmoryGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_33.4bpp.lz");
+static const u8 sSkarmoryGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_33_1.4bpp.lz");
 static const ax_sprite sSkarmorySprites33[] = {
 	{sSkarmoryGfx33, ARRAY_COUNT(sSkarmoryGfx33)}, 
 	{NULL, 96}, 
 	{sSkarmoryGfx33_1, ARRAY_COUNT(sSkarmoryGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx34[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_34.4bpp");
+static const u8 sSkarmoryGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_34.4bpp.lz");
 static const ax_sprite sSkarmorySprites34[] = {
 	{sSkarmoryGfx34, ARRAY_COUNT(sSkarmoryGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx35[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_35.4bpp");
+static const u8 sSkarmoryGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_35.4bpp.lz");
 static const ax_sprite sSkarmorySprites35[] = {
 	{sSkarmoryGfx35, ARRAY_COUNT(sSkarmoryGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx36[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_36.4bpp");
+static const u8 sSkarmoryGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_36.4bpp.lz");
 static const ax_sprite sSkarmorySprites36[] = {
 	{sSkarmoryGfx36, ARRAY_COUNT(sSkarmoryGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx37[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_37.4bpp");
+static const u8 sSkarmoryGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_37.4bpp.lz");
 static const ax_sprite sSkarmorySprites37[] = {
 	{sSkarmoryGfx37, ARRAY_COUNT(sSkarmoryGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx38[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_38.4bpp");
+static const u8 sSkarmoryGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_38.4bpp.lz");
 static const ax_sprite sSkarmorySprites38[] = {
 	{sSkarmoryGfx38, ARRAY_COUNT(sSkarmoryGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx39[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_39.4bpp");
-static const u8 sSkarmoryGfx39_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_39_1.4bpp");
+static const u8 sSkarmoryGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_39.4bpp.lz");
+static const u8 sSkarmoryGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_39_1.4bpp.lz");
 static const ax_sprite sSkarmorySprites39[] = {
 	{sSkarmoryGfx39, ARRAY_COUNT(sSkarmoryGfx39)}, 
 	{NULL, 32}, 
 	{sSkarmoryGfx39_1, ARRAY_COUNT(sSkarmoryGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx40[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_40.4bpp");
+static const u8 sSkarmoryGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_40.4bpp.lz");
 static const ax_sprite sSkarmorySprites40[] = {
 	{NULL, 32}, 
 	{sSkarmoryGfx40, ARRAY_COUNT(sSkarmoryGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx41[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_41.4bpp");
+static const u8 sSkarmoryGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_41.4bpp.lz");
 static const ax_sprite sSkarmorySprites41[] = {
 	{sSkarmoryGfx41, ARRAY_COUNT(sSkarmoryGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx42[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_42.4bpp");
+static const u8 sSkarmoryGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_42.4bpp.lz");
 static const ax_sprite sSkarmorySprites42[] = {
 	{sSkarmoryGfx42, ARRAY_COUNT(sSkarmoryGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx43[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_43.4bpp");
+static const u8 sSkarmoryGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_43.4bpp.lz");
 static const ax_sprite sSkarmorySprites43[] = {
 	{sSkarmoryGfx43, ARRAY_COUNT(sSkarmoryGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx44[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_44.4bpp");
+static const u8 sSkarmoryGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_44.4bpp.lz");
 static const ax_sprite sSkarmorySprites44[] = {
 	{sSkarmoryGfx44, ARRAY_COUNT(sSkarmoryGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx45[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_45.4bpp");
+static const u8 sSkarmoryGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_45.4bpp.lz");
 static const ax_sprite sSkarmorySprites45[] = {
 	{sSkarmoryGfx45, ARRAY_COUNT(sSkarmoryGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx46[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_46.4bpp");
+static const u8 sSkarmoryGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_46.4bpp.lz");
 static const ax_sprite sSkarmorySprites46[] = {
 	{sSkarmoryGfx46, ARRAY_COUNT(sSkarmoryGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx47[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_47.4bpp");
-static const u8 sSkarmoryGfx47_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_47_1.4bpp");
-static const u8 sSkarmoryGfx47_2[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_47_2.4bpp");
+static const u8 sSkarmoryGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_47.4bpp.lz");
+static const u8 sSkarmoryGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_47_1.4bpp.lz");
+static const u8 sSkarmoryGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_47_2.4bpp.lz");
 static const ax_sprite sSkarmorySprites47[] = {
 	{NULL, 32}, 
 	{sSkarmoryGfx47, ARRAY_COUNT(sSkarmoryGfx47)}, 
@@ -2720,8 +2720,8 @@ static const ax_sprite sSkarmorySprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx48[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_48.4bpp");
-static const u8 sSkarmoryGfx48_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_48_1.4bpp");
+static const u8 sSkarmoryGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_48.4bpp.lz");
+static const u8 sSkarmoryGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_48_1.4bpp.lz");
 static const ax_sprite sSkarmorySprites48[] = {
 	{sSkarmoryGfx48, ARRAY_COUNT(sSkarmoryGfx48)}, 
 	{NULL, 64}, 
@@ -2729,9 +2729,9 @@ static const ax_sprite sSkarmorySprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx49[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_49.4bpp");
-static const u8 sSkarmoryGfx49_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_49_1.4bpp");
-static const u8 sSkarmoryGfx49_2[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_49_2.4bpp");
+static const u8 sSkarmoryGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_49.4bpp.lz");
+static const u8 sSkarmoryGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_49_1.4bpp.lz");
+static const u8 sSkarmoryGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_49_2.4bpp.lz");
 static const ax_sprite sSkarmorySprites49[] = {
 	{sSkarmoryGfx49, ARRAY_COUNT(sSkarmoryGfx49)}, 
 	{NULL, 32}, 
@@ -2741,37 +2741,37 @@ static const ax_sprite sSkarmorySprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx50[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_50.4bpp");
-static const u8 sSkarmoryGfx50_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_50_1.4bpp");
+static const u8 sSkarmoryGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_50.4bpp.lz");
+static const u8 sSkarmoryGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_50_1.4bpp.lz");
 static const ax_sprite sSkarmorySprites50[] = {
 	{sSkarmoryGfx50, ARRAY_COUNT(sSkarmoryGfx50)}, 
 	{NULL, 32}, 
 	{sSkarmoryGfx50_1, ARRAY_COUNT(sSkarmoryGfx50_1)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx51[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_51.4bpp");
+static const u8 sSkarmoryGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_51.4bpp.lz");
 static const ax_sprite sSkarmorySprites51[] = {
 	{sSkarmoryGfx51, ARRAY_COUNT(sSkarmoryGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx52[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_52.4bpp");
+static const u8 sSkarmoryGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_52.4bpp.lz");
 static const ax_sprite sSkarmorySprites52[] = {
 	{sSkarmoryGfx52, ARRAY_COUNT(sSkarmoryGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx53[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_53.4bpp");
+static const u8 sSkarmoryGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_53.4bpp.lz");
 static const ax_sprite sSkarmorySprites53[] = {
 	{sSkarmoryGfx53, ARRAY_COUNT(sSkarmoryGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx54[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_54.4bpp");
+static const u8 sSkarmoryGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_54.4bpp.lz");
 static const ax_sprite sSkarmorySprites54[] = {
 	{sSkarmoryGfx54, ARRAY_COUNT(sSkarmoryGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx55[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_55.4bpp");
-static const u8 sSkarmoryGfx55_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_55_1.4bpp");
-static const u8 sSkarmoryGfx55_2[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_55_2.4bpp");
+static const u8 sSkarmoryGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_55.4bpp.lz");
+static const u8 sSkarmoryGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_55_1.4bpp.lz");
+static const u8 sSkarmoryGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_55_2.4bpp.lz");
 static const ax_sprite sSkarmorySprites55[] = {
 	{sSkarmoryGfx55, ARRAY_COUNT(sSkarmoryGfx55)}, 
 	{NULL, 32}, 
@@ -2781,8 +2781,8 @@ static const ax_sprite sSkarmorySprites55[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx56[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_56.4bpp");
-static const u8 sSkarmoryGfx56_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_56_1.4bpp");
+static const u8 sSkarmoryGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_56.4bpp.lz");
+static const u8 sSkarmoryGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_56_1.4bpp.lz");
 static const ax_sprite sSkarmorySprites56[] = {
 	{NULL, 32}, 
 	{sSkarmoryGfx56, ARRAY_COUNT(sSkarmoryGfx56)}, 
@@ -2790,8 +2790,8 @@ static const ax_sprite sSkarmorySprites56[] = {
 	{sSkarmoryGfx56_1, ARRAY_COUNT(sSkarmoryGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx57[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_57.4bpp");
-static const u8 sSkarmoryGfx57_1[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_57_1.4bpp");
+static const u8 sSkarmoryGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_57.4bpp.lz");
+static const u8 sSkarmoryGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_57_1.4bpp.lz");
 static const ax_sprite sSkarmorySprites57[] = {
 	{sSkarmoryGfx57, ARRAY_COUNT(sSkarmoryGfx57)}, 
 	{NULL, 32}, 
@@ -2799,137 +2799,137 @@ static const ax_sprite sSkarmorySprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx58[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_58.4bpp");
+static const u8 sSkarmoryGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_58.4bpp.lz");
 static const ax_sprite sSkarmorySprites58[] = {
 	{sSkarmoryGfx58, ARRAY_COUNT(sSkarmoryGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx59[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_59.4bpp");
+static const u8 sSkarmoryGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_59.4bpp.lz");
 static const ax_sprite sSkarmorySprites59[] = {
 	{sSkarmoryGfx59, ARRAY_COUNT(sSkarmoryGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx60[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_60.4bpp");
+static const u8 sSkarmoryGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_60.4bpp.lz");
 static const ax_sprite sSkarmorySprites60[] = {
 	{sSkarmoryGfx60, ARRAY_COUNT(sSkarmoryGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx61[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_61.4bpp");
+static const u8 sSkarmoryGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_61.4bpp.lz");
 static const ax_sprite sSkarmorySprites61[] = {
 	{sSkarmoryGfx61, ARRAY_COUNT(sSkarmoryGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx62[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_62.4bpp");
+static const u8 sSkarmoryGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_62.4bpp.lz");
 static const ax_sprite sSkarmorySprites62[] = {
 	{sSkarmoryGfx62, ARRAY_COUNT(sSkarmoryGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx63[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_63.4bpp");
+static const u8 sSkarmoryGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_63.4bpp.lz");
 static const ax_sprite sSkarmorySprites63[] = {
 	{sSkarmoryGfx63, ARRAY_COUNT(sSkarmoryGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx64[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_64.4bpp");
+static const u8 sSkarmoryGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_64.4bpp.lz");
 static const ax_sprite sSkarmorySprites64[] = {
 	{sSkarmoryGfx64, ARRAY_COUNT(sSkarmoryGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx65[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_65.4bpp");
+static const u8 sSkarmoryGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_65.4bpp.lz");
 static const ax_sprite sSkarmorySprites65[] = {
 	{sSkarmoryGfx65, ARRAY_COUNT(sSkarmoryGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx66[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_66.4bpp");
+static const u8 sSkarmoryGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_66.4bpp.lz");
 static const ax_sprite sSkarmorySprites66[] = {
 	{sSkarmoryGfx66, ARRAY_COUNT(sSkarmoryGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx67[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_67.4bpp");
+static const u8 sSkarmoryGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_67.4bpp.lz");
 static const ax_sprite sSkarmorySprites67[] = {
 	{sSkarmoryGfx67, ARRAY_COUNT(sSkarmoryGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx68[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_68.4bpp");
+static const u8 sSkarmoryGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_68.4bpp.lz");
 static const ax_sprite sSkarmorySprites68[] = {
 	{sSkarmoryGfx68, ARRAY_COUNT(sSkarmoryGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx69[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_69.4bpp");
+static const u8 sSkarmoryGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_69.4bpp.lz");
 static const ax_sprite sSkarmorySprites69[] = {
 	{sSkarmoryGfx69, ARRAY_COUNT(sSkarmoryGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx70[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_70.4bpp");
+static const u8 sSkarmoryGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_70.4bpp.lz");
 static const ax_sprite sSkarmorySprites70[] = {
 	{sSkarmoryGfx70, ARRAY_COUNT(sSkarmoryGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx71[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_71.4bpp");
+static const u8 sSkarmoryGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_71.4bpp.lz");
 static const ax_sprite sSkarmorySprites71[] = {
 	{sSkarmoryGfx71, ARRAY_COUNT(sSkarmoryGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx72[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_72.4bpp");
+static const u8 sSkarmoryGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_72.4bpp.lz");
 static const ax_sprite sSkarmorySprites72[] = {
 	{sSkarmoryGfx72, ARRAY_COUNT(sSkarmoryGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx73[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_73.4bpp");
+static const u8 sSkarmoryGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_73.4bpp.lz");
 static const ax_sprite sSkarmorySprites73[] = {
 	{sSkarmoryGfx73, ARRAY_COUNT(sSkarmoryGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx74[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_74.4bpp");
+static const u8 sSkarmoryGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_74.4bpp.lz");
 static const ax_sprite sSkarmorySprites74[] = {
 	{sSkarmoryGfx74, ARRAY_COUNT(sSkarmoryGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx75[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_75.4bpp");
+static const u8 sSkarmoryGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_75.4bpp.lz");
 static const ax_sprite sSkarmorySprites75[] = {
 	{sSkarmoryGfx75, ARRAY_COUNT(sSkarmoryGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx76[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_76.4bpp");
+static const u8 sSkarmoryGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_76.4bpp.lz");
 static const ax_sprite sSkarmorySprites76[] = {
 	{sSkarmoryGfx76, ARRAY_COUNT(sSkarmoryGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx77[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_77.4bpp");
+static const u8 sSkarmoryGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_77.4bpp.lz");
 static const ax_sprite sSkarmorySprites77[] = {
 	{sSkarmoryGfx77, ARRAY_COUNT(sSkarmoryGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx78[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_78.4bpp");
+static const u8 sSkarmoryGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_78.4bpp.lz");
 static const ax_sprite sSkarmorySprites78[] = {
 	{sSkarmoryGfx78, ARRAY_COUNT(sSkarmoryGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx79[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_79.4bpp");
+static const u8 sSkarmoryGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_79.4bpp.lz");
 static const ax_sprite sSkarmorySprites79[] = {
 	{sSkarmoryGfx79, ARRAY_COUNT(sSkarmoryGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx80[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_80.4bpp");
+static const u8 sSkarmoryGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_80.4bpp.lz");
 static const ax_sprite sSkarmorySprites80[] = {
 	{sSkarmoryGfx80, ARRAY_COUNT(sSkarmoryGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx81[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_81.4bpp");
+static const u8 sSkarmoryGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_81.4bpp.lz");
 static const ax_sprite sSkarmorySprites81[] = {
 	{sSkarmoryGfx81, ARRAY_COUNT(sSkarmoryGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx82[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_82.4bpp");
+static const u8 sSkarmoryGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_82.4bpp.lz");
 static const ax_sprite sSkarmorySprites82[] = {
 	{sSkarmoryGfx82, ARRAY_COUNT(sSkarmoryGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx83[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_83.4bpp");
+static const u8 sSkarmoryGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_83.4bpp.lz");
 static const ax_sprite sSkarmorySprites83[] = {
 	{sSkarmoryGfx83, ARRAY_COUNT(sSkarmoryGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sSkarmoryGfx84[] = INCBIN_U8("graphics/ax/mon/skarmory/sprite_84.4bpp");
+static const u8 sSkarmoryGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/skarmory/sprite_84.4bpp.lz");
 static const ax_sprite sSkarmorySprites84[] = {
 	{sSkarmoryGfx84, ARRAY_COUNT(sSkarmoryGfx84)}, 
 	{NULL, 0}

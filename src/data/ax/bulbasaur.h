@@ -3012,84 +3012,84 @@ static const ax_anim sBulbasaurAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBulbasaurGfx1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_1.4bpp");
+static const u8 sBulbasaurGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_1.4bpp.lz");
 static const ax_sprite sBulbasaurSprites1[] = {
 	{sBulbasaurGfx1, ARRAY_COUNT(sBulbasaurGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_2.4bpp");
+static const u8 sBulbasaurGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites2[] = {
 	{sBulbasaurGfx2, ARRAY_COUNT(sBulbasaurGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx3[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_3.4bpp");
+static const u8 sBulbasaurGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_3.4bpp.lz");
 static const ax_sprite sBulbasaurSprites3[] = {
 	{sBulbasaurGfx3, ARRAY_COUNT(sBulbasaurGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx4[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_4.4bpp");
+static const u8 sBulbasaurGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_4.4bpp.lz");
 static const ax_sprite sBulbasaurSprites4[] = {
 	{sBulbasaurGfx4, ARRAY_COUNT(sBulbasaurGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx5[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_5.4bpp");
+static const u8 sBulbasaurGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_5.4bpp.lz");
 static const ax_sprite sBulbasaurSprites5[] = {
 	{sBulbasaurGfx5, ARRAY_COUNT(sBulbasaurGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx6[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_6.4bpp");
+static const u8 sBulbasaurGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_6.4bpp.lz");
 static const ax_sprite sBulbasaurSprites6[] = {
 	{sBulbasaurGfx6, ARRAY_COUNT(sBulbasaurGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx7[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_7.4bpp");
+static const u8 sBulbasaurGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_7.4bpp.lz");
 static const ax_sprite sBulbasaurSprites7[] = {
 	{sBulbasaurGfx7, ARRAY_COUNT(sBulbasaurGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx8[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_8.4bpp");
+static const u8 sBulbasaurGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_8.4bpp.lz");
 static const ax_sprite sBulbasaurSprites8[] = {
 	{sBulbasaurGfx8, ARRAY_COUNT(sBulbasaurGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx9[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_9.4bpp");
+static const u8 sBulbasaurGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_9.4bpp.lz");
 static const ax_sprite sBulbasaurSprites9[] = {
 	{sBulbasaurGfx9, ARRAY_COUNT(sBulbasaurGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx10[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_10.4bpp");
+static const u8 sBulbasaurGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_10.4bpp.lz");
 static const ax_sprite sBulbasaurSprites10[] = {
 	{sBulbasaurGfx10, ARRAY_COUNT(sBulbasaurGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx11[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_11.4bpp");
+static const u8 sBulbasaurGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_11.4bpp.lz");
 static const ax_sprite sBulbasaurSprites11[] = {
 	{sBulbasaurGfx11, ARRAY_COUNT(sBulbasaurGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx12[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_12.4bpp");
+static const u8 sBulbasaurGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_12.4bpp.lz");
 static const ax_sprite sBulbasaurSprites12[] = {
 	{sBulbasaurGfx12, ARRAY_COUNT(sBulbasaurGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx13[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_13.4bpp");
+static const u8 sBulbasaurGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_13.4bpp.lz");
 static const ax_sprite sBulbasaurSprites13[] = {
 	{sBulbasaurGfx13, ARRAY_COUNT(sBulbasaurGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx14[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_14.4bpp");
+static const u8 sBulbasaurGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_14.4bpp.lz");
 static const ax_sprite sBulbasaurSprites14[] = {
 	{sBulbasaurGfx14, ARRAY_COUNT(sBulbasaurGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx15[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_15.4bpp");
+static const u8 sBulbasaurGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_15.4bpp.lz");
 static const ax_sprite sBulbasaurSprites15[] = {
 	{sBulbasaurGfx15, ARRAY_COUNT(sBulbasaurGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx16[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_16.4bpp");
-static const u8 sBulbasaurGfx16_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_16_1.4bpp");
-static const u8 sBulbasaurGfx16_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_16_2.4bpp");
+static const u8 sBulbasaurGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_16.4bpp.lz");
+static const u8 sBulbasaurGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_16_1.4bpp.lz");
+static const u8 sBulbasaurGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_16_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites16[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx16, ARRAY_COUNT(sBulbasaurGfx16)}, 
@@ -3100,9 +3100,9 @@ static const ax_sprite sBulbasaurSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx17[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_17.4bpp");
-static const u8 sBulbasaurGfx17_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_17_1.4bpp");
-static const u8 sBulbasaurGfx17_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_17_2.4bpp");
+static const u8 sBulbasaurGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_17.4bpp.lz");
+static const u8 sBulbasaurGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_17_1.4bpp.lz");
+static const u8 sBulbasaurGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_17_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites17[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx17, ARRAY_COUNT(sBulbasaurGfx17)}, 
@@ -3113,9 +3113,9 @@ static const ax_sprite sBulbasaurSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx18[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_18.4bpp");
-static const u8 sBulbasaurGfx18_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_18_1.4bpp");
-static const u8 sBulbasaurGfx18_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_18_2.4bpp");
+static const u8 sBulbasaurGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_18.4bpp.lz");
+static const u8 sBulbasaurGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_18_1.4bpp.lz");
+static const u8 sBulbasaurGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_18_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites18[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx18, ARRAY_COUNT(sBulbasaurGfx18)}, 
@@ -3126,9 +3126,9 @@ static const ax_sprite sBulbasaurSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx19[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_19.4bpp");
-static const u8 sBulbasaurGfx19_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_19_1.4bpp");
-static const u8 sBulbasaurGfx19_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_19_2.4bpp");
+static const u8 sBulbasaurGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_19.4bpp.lz");
+static const u8 sBulbasaurGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_19_1.4bpp.lz");
+static const u8 sBulbasaurGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_19_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites19[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx19, ARRAY_COUNT(sBulbasaurGfx19)}, 
@@ -3139,9 +3139,9 @@ static const ax_sprite sBulbasaurSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx20[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_20.4bpp");
-static const u8 sBulbasaurGfx20_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_20_1.4bpp");
-static const u8 sBulbasaurGfx20_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_20_2.4bpp");
+static const u8 sBulbasaurGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_20.4bpp.lz");
+static const u8 sBulbasaurGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_20_1.4bpp.lz");
+static const u8 sBulbasaurGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_20_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites20[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx20, ARRAY_COUNT(sBulbasaurGfx20)}, 
@@ -3152,9 +3152,9 @@ static const ax_sprite sBulbasaurSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx21[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_21.4bpp");
-static const u8 sBulbasaurGfx21_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_21_1.4bpp");
-static const u8 sBulbasaurGfx21_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_21_2.4bpp");
+static const u8 sBulbasaurGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_21.4bpp.lz");
+static const u8 sBulbasaurGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_21_1.4bpp.lz");
+static const u8 sBulbasaurGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_21_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites21[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx21, ARRAY_COUNT(sBulbasaurGfx21)}, 
@@ -3165,9 +3165,9 @@ static const ax_sprite sBulbasaurSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx22[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_22.4bpp");
-static const u8 sBulbasaurGfx22_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_22_1.4bpp");
-static const u8 sBulbasaurGfx22_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_22_2.4bpp");
+static const u8 sBulbasaurGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_22.4bpp.lz");
+static const u8 sBulbasaurGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_22_1.4bpp.lz");
+static const u8 sBulbasaurGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_22_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites22[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx22, ARRAY_COUNT(sBulbasaurGfx22)}, 
@@ -3178,9 +3178,9 @@ static const ax_sprite sBulbasaurSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx23[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_23.4bpp");
-static const u8 sBulbasaurGfx23_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_23_1.4bpp");
-static const u8 sBulbasaurGfx23_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_23_2.4bpp");
+static const u8 sBulbasaurGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_23.4bpp.lz");
+static const u8 sBulbasaurGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_23_1.4bpp.lz");
+static const u8 sBulbasaurGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_23_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites23[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx23, ARRAY_COUNT(sBulbasaurGfx23)}, 
@@ -3191,9 +3191,9 @@ static const ax_sprite sBulbasaurSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx24[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_24.4bpp");
-static const u8 sBulbasaurGfx24_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_24_1.4bpp");
-static const u8 sBulbasaurGfx24_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_24_2.4bpp");
+static const u8 sBulbasaurGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_24.4bpp.lz");
+static const u8 sBulbasaurGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_24_1.4bpp.lz");
+static const u8 sBulbasaurGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_24_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites24[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx24, ARRAY_COUNT(sBulbasaurGfx24)}, 
@@ -3204,9 +3204,9 @@ static const ax_sprite sBulbasaurSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx25[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_25.4bpp");
-static const u8 sBulbasaurGfx25_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_25_1.4bpp");
-static const u8 sBulbasaurGfx25_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_25_2.4bpp");
+static const u8 sBulbasaurGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_25.4bpp.lz");
+static const u8 sBulbasaurGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_25_1.4bpp.lz");
+static const u8 sBulbasaurGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_25_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites25[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx25, ARRAY_COUNT(sBulbasaurGfx25)}, 
@@ -3217,9 +3217,9 @@ static const ax_sprite sBulbasaurSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx26[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_26.4bpp");
-static const u8 sBulbasaurGfx26_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_26_1.4bpp");
-static const u8 sBulbasaurGfx26_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_26_2.4bpp");
+static const u8 sBulbasaurGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_26.4bpp.lz");
+static const u8 sBulbasaurGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_26_1.4bpp.lz");
+static const u8 sBulbasaurGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_26_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites26[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx26, ARRAY_COUNT(sBulbasaurGfx26)}, 
@@ -3230,9 +3230,9 @@ static const ax_sprite sBulbasaurSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx27[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_27.4bpp");
-static const u8 sBulbasaurGfx27_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_27_1.4bpp");
-static const u8 sBulbasaurGfx27_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_27_2.4bpp");
+static const u8 sBulbasaurGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_27.4bpp.lz");
+static const u8 sBulbasaurGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_27_1.4bpp.lz");
+static const u8 sBulbasaurGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_27_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites27[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx27, ARRAY_COUNT(sBulbasaurGfx27)}, 
@@ -3243,9 +3243,9 @@ static const ax_sprite sBulbasaurSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx28[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_28.4bpp");
-static const u8 sBulbasaurGfx28_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_28_1.4bpp");
-static const u8 sBulbasaurGfx28_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_28_2.4bpp");
+static const u8 sBulbasaurGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_28.4bpp.lz");
+static const u8 sBulbasaurGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_28_1.4bpp.lz");
+static const u8 sBulbasaurGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_28_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites28[] = {
 	{sBulbasaurGfx28, ARRAY_COUNT(sBulbasaurGfx28)}, 
 	{NULL, 32}, 
@@ -3255,9 +3255,9 @@ static const ax_sprite sBulbasaurSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx29[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_29.4bpp");
-static const u8 sBulbasaurGfx29_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_29_1.4bpp");
-static const u8 sBulbasaurGfx29_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_29_2.4bpp");
+static const u8 sBulbasaurGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_29.4bpp.lz");
+static const u8 sBulbasaurGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_29_1.4bpp.lz");
+static const u8 sBulbasaurGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_29_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites29[] = {
 	{sBulbasaurGfx29, ARRAY_COUNT(sBulbasaurGfx29)}, 
 	{NULL, 32}, 
@@ -3267,9 +3267,9 @@ static const ax_sprite sBulbasaurSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx30[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_30.4bpp");
-static const u8 sBulbasaurGfx30_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_30_1.4bpp");
-static const u8 sBulbasaurGfx30_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_30_2.4bpp");
+static const u8 sBulbasaurGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_30.4bpp.lz");
+static const u8 sBulbasaurGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_30_1.4bpp.lz");
+static const u8 sBulbasaurGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_30_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites30[] = {
 	{sBulbasaurGfx30, ARRAY_COUNT(sBulbasaurGfx30)}, 
 	{NULL, 32}, 
@@ -3279,9 +3279,9 @@ static const ax_sprite sBulbasaurSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx31[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_31.4bpp");
-static const u8 sBulbasaurGfx31_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_31_1.4bpp");
-static const u8 sBulbasaurGfx31_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_31_2.4bpp");
+static const u8 sBulbasaurGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_31.4bpp.lz");
+static const u8 sBulbasaurGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_31_1.4bpp.lz");
+static const u8 sBulbasaurGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_31_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites31[] = {
 	{sBulbasaurGfx31, ARRAY_COUNT(sBulbasaurGfx31)}, 
 	{NULL, 32}, 
@@ -3291,9 +3291,9 @@ static const ax_sprite sBulbasaurSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx32[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_32.4bpp");
-static const u8 sBulbasaurGfx32_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_32_1.4bpp");
-static const u8 sBulbasaurGfx32_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_32_2.4bpp");
+static const u8 sBulbasaurGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_32.4bpp.lz");
+static const u8 sBulbasaurGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_32_1.4bpp.lz");
+static const u8 sBulbasaurGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_32_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites32[] = {
 	{sBulbasaurGfx32, ARRAY_COUNT(sBulbasaurGfx32)}, 
 	{NULL, 32}, 
@@ -3303,9 +3303,9 @@ static const ax_sprite sBulbasaurSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx33[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_33.4bpp");
-static const u8 sBulbasaurGfx33_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_33_1.4bpp");
-static const u8 sBulbasaurGfx33_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_33_2.4bpp");
+static const u8 sBulbasaurGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_33.4bpp.lz");
+static const u8 sBulbasaurGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_33_1.4bpp.lz");
+static const u8 sBulbasaurGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_33_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites33[] = {
 	{sBulbasaurGfx33, ARRAY_COUNT(sBulbasaurGfx33)}, 
 	{NULL, 32}, 
@@ -3315,9 +3315,9 @@ static const ax_sprite sBulbasaurSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx34[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_34.4bpp");
-static const u8 sBulbasaurGfx34_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_34_1.4bpp");
-static const u8 sBulbasaurGfx34_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_34_2.4bpp");
+static const u8 sBulbasaurGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_34.4bpp.lz");
+static const u8 sBulbasaurGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_34_1.4bpp.lz");
+static const u8 sBulbasaurGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_34_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites34[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx34, ARRAY_COUNT(sBulbasaurGfx34)}, 
@@ -3328,9 +3328,9 @@ static const ax_sprite sBulbasaurSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx35[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_35.4bpp");
-static const u8 sBulbasaurGfx35_1[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_35_1.4bpp");
-static const u8 sBulbasaurGfx35_2[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_35_2.4bpp");
+static const u8 sBulbasaurGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_35.4bpp.lz");
+static const u8 sBulbasaurGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_35_1.4bpp.lz");
+static const u8 sBulbasaurGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_35_2.4bpp.lz");
 static const ax_sprite sBulbasaurSprites35[] = {
 	{NULL, 32}, 
 	{sBulbasaurGfx35, ARRAY_COUNT(sBulbasaurGfx35)}, 
@@ -3341,182 +3341,182 @@ static const ax_sprite sBulbasaurSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx36[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_36.4bpp");
+static const u8 sBulbasaurGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_36.4bpp.lz");
 static const ax_sprite sBulbasaurSprites36[] = {
 	{sBulbasaurGfx36, ARRAY_COUNT(sBulbasaurGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx37[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_37.4bpp");
+static const u8 sBulbasaurGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_37.4bpp.lz");
 static const ax_sprite sBulbasaurSprites37[] = {
 	{sBulbasaurGfx37, ARRAY_COUNT(sBulbasaurGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx38[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_38.4bpp");
+static const u8 sBulbasaurGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_38.4bpp.lz");
 static const ax_sprite sBulbasaurSprites38[] = {
 	{sBulbasaurGfx38, ARRAY_COUNT(sBulbasaurGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx39[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_39.4bpp");
+static const u8 sBulbasaurGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_39.4bpp.lz");
 static const ax_sprite sBulbasaurSprites39[] = {
 	{sBulbasaurGfx39, ARRAY_COUNT(sBulbasaurGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx40[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_40.4bpp");
+static const u8 sBulbasaurGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_40.4bpp.lz");
 static const ax_sprite sBulbasaurSprites40[] = {
 	{sBulbasaurGfx40, ARRAY_COUNT(sBulbasaurGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx41[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_41.4bpp");
+static const u8 sBulbasaurGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_41.4bpp.lz");
 static const ax_sprite sBulbasaurSprites41[] = {
 	{sBulbasaurGfx41, ARRAY_COUNT(sBulbasaurGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx42[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_42.4bpp");
+static const u8 sBulbasaurGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_42.4bpp.lz");
 static const ax_sprite sBulbasaurSprites42[] = {
 	{sBulbasaurGfx42, ARRAY_COUNT(sBulbasaurGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx43[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_43.4bpp");
+static const u8 sBulbasaurGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_43.4bpp.lz");
 static const ax_sprite sBulbasaurSprites43[] = {
 	{sBulbasaurGfx43, ARRAY_COUNT(sBulbasaurGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx44[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_44.4bpp");
+static const u8 sBulbasaurGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_44.4bpp.lz");
 static const ax_sprite sBulbasaurSprites44[] = {
 	{sBulbasaurGfx44, ARRAY_COUNT(sBulbasaurGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx45[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_45.4bpp");
+static const u8 sBulbasaurGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_45.4bpp.lz");
 static const ax_sprite sBulbasaurSprites45[] = {
 	{sBulbasaurGfx45, ARRAY_COUNT(sBulbasaurGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx46[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_46.4bpp");
+static const u8 sBulbasaurGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_46.4bpp.lz");
 static const ax_sprite sBulbasaurSprites46[] = {
 	{sBulbasaurGfx46, ARRAY_COUNT(sBulbasaurGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx47[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_47.4bpp");
+static const u8 sBulbasaurGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_47.4bpp.lz");
 static const ax_sprite sBulbasaurSprites47[] = {
 	{sBulbasaurGfx47, ARRAY_COUNT(sBulbasaurGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx48[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_48.4bpp");
+static const u8 sBulbasaurGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_48.4bpp.lz");
 static const ax_sprite sBulbasaurSprites48[] = {
 	{sBulbasaurGfx48, ARRAY_COUNT(sBulbasaurGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx49[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_49.4bpp");
+static const u8 sBulbasaurGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_49.4bpp.lz");
 static const ax_sprite sBulbasaurSprites49[] = {
 	{sBulbasaurGfx49, ARRAY_COUNT(sBulbasaurGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx50[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_50.4bpp");
+static const u8 sBulbasaurGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_50.4bpp.lz");
 static const ax_sprite sBulbasaurSprites50[] = {
 	{sBulbasaurGfx50, ARRAY_COUNT(sBulbasaurGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx51[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_51.4bpp");
+static const u8 sBulbasaurGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_51.4bpp.lz");
 static const ax_sprite sBulbasaurSprites51[] = {
 	{sBulbasaurGfx51, ARRAY_COUNT(sBulbasaurGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx52[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_52.4bpp");
+static const u8 sBulbasaurGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_52.4bpp.lz");
 static const ax_sprite sBulbasaurSprites52[] = {
 	{sBulbasaurGfx52, ARRAY_COUNT(sBulbasaurGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx53[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_53.4bpp");
+static const u8 sBulbasaurGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_53.4bpp.lz");
 static const ax_sprite sBulbasaurSprites53[] = {
 	{sBulbasaurGfx53, ARRAY_COUNT(sBulbasaurGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx54[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_54.4bpp");
+static const u8 sBulbasaurGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_54.4bpp.lz");
 static const ax_sprite sBulbasaurSprites54[] = {
 	{sBulbasaurGfx54, ARRAY_COUNT(sBulbasaurGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx55[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_55.4bpp");
+static const u8 sBulbasaurGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_55.4bpp.lz");
 static const ax_sprite sBulbasaurSprites55[] = {
 	{sBulbasaurGfx55, ARRAY_COUNT(sBulbasaurGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx56[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_56.4bpp");
+static const u8 sBulbasaurGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_56.4bpp.lz");
 static const ax_sprite sBulbasaurSprites56[] = {
 	{sBulbasaurGfx56, ARRAY_COUNT(sBulbasaurGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx57[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_57.4bpp");
+static const u8 sBulbasaurGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_57.4bpp.lz");
 static const ax_sprite sBulbasaurSprites57[] = {
 	{sBulbasaurGfx57, ARRAY_COUNT(sBulbasaurGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx58[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_58.4bpp");
+static const u8 sBulbasaurGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_58.4bpp.lz");
 static const ax_sprite sBulbasaurSprites58[] = {
 	{sBulbasaurGfx58, ARRAY_COUNT(sBulbasaurGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx59[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_59.4bpp");
+static const u8 sBulbasaurGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_59.4bpp.lz");
 static const ax_sprite sBulbasaurSprites59[] = {
 	{sBulbasaurGfx59, ARRAY_COUNT(sBulbasaurGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx60[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_60.4bpp");
+static const u8 sBulbasaurGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_60.4bpp.lz");
 static const ax_sprite sBulbasaurSprites60[] = {
 	{sBulbasaurGfx60, ARRAY_COUNT(sBulbasaurGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx61[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_61.4bpp");
+static const u8 sBulbasaurGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_61.4bpp.lz");
 static const ax_sprite sBulbasaurSprites61[] = {
 	{sBulbasaurGfx61, ARRAY_COUNT(sBulbasaurGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx62[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_62.4bpp");
+static const u8 sBulbasaurGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_62.4bpp.lz");
 static const ax_sprite sBulbasaurSprites62[] = {
 	{sBulbasaurGfx62, ARRAY_COUNT(sBulbasaurGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx63[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_63.4bpp");
+static const u8 sBulbasaurGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_63.4bpp.lz");
 static const ax_sprite sBulbasaurSprites63[] = {
 	{sBulbasaurGfx63, ARRAY_COUNT(sBulbasaurGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx64[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_64.4bpp");
+static const u8 sBulbasaurGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_64.4bpp.lz");
 static const ax_sprite sBulbasaurSprites64[] = {
 	{sBulbasaurGfx64, ARRAY_COUNT(sBulbasaurGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx65[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_65.4bpp");
+static const u8 sBulbasaurGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_65.4bpp.lz");
 static const ax_sprite sBulbasaurSprites65[] = {
 	{sBulbasaurGfx65, ARRAY_COUNT(sBulbasaurGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx66[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_66.4bpp");
+static const u8 sBulbasaurGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_66.4bpp.lz");
 static const ax_sprite sBulbasaurSprites66[] = {
 	{sBulbasaurGfx66, ARRAY_COUNT(sBulbasaurGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx67[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_67.4bpp");
+static const u8 sBulbasaurGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_67.4bpp.lz");
 static const ax_sprite sBulbasaurSprites67[] = {
 	{sBulbasaurGfx67, ARRAY_COUNT(sBulbasaurGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx68[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_68.4bpp");
+static const u8 sBulbasaurGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_68.4bpp.lz");
 static const ax_sprite sBulbasaurSprites68[] = {
 	{sBulbasaurGfx68, ARRAY_COUNT(sBulbasaurGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx69[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_69.4bpp");
+static const u8 sBulbasaurGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_69.4bpp.lz");
 static const ax_sprite sBulbasaurSprites69[] = {
 	{sBulbasaurGfx69, ARRAY_COUNT(sBulbasaurGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx70[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_70.4bpp");
+static const u8 sBulbasaurGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_70.4bpp.lz");
 static const ax_sprite sBulbasaurSprites70[] = {
 	{sBulbasaurGfx70, ARRAY_COUNT(sBulbasaurGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sBulbasaurGfx71[] = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_71.4bpp");
+static const u8 sBulbasaurGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bulbasaur/sprite_71.4bpp.lz");
 static const ax_sprite sBulbasaurSprites71[] = {
 	{sBulbasaurGfx71, ARRAY_COUNT(sBulbasaurGfx71)}, 
 	{NULL, 0}

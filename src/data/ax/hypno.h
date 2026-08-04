@@ -2591,129 +2591,129 @@ static const ax_anim sHypnoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHypnoGfx1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_1.4bpp");
+static const u8 sHypnoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_1.4bpp.lz");
 static const ax_sprite sHypnoSprites1[] = {
 	{sHypnoGfx1, ARRAY_COUNT(sHypnoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_2.4bpp");
+static const u8 sHypnoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_2.4bpp.lz");
 static const ax_sprite sHypnoSprites2[] = {
 	{sHypnoGfx2, ARRAY_COUNT(sHypnoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_3.4bpp");
+static const u8 sHypnoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_3.4bpp.lz");
 static const ax_sprite sHypnoSprites3[] = {
 	{sHypnoGfx3, ARRAY_COUNT(sHypnoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx4[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_4.4bpp");
+static const u8 sHypnoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_4.4bpp.lz");
 static const ax_sprite sHypnoSprites4[] = {
 	{sHypnoGfx4, ARRAY_COUNT(sHypnoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx5[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_5.4bpp");
+static const u8 sHypnoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_5.4bpp.lz");
 static const ax_sprite sHypnoSprites5[] = {
 	{sHypnoGfx5, ARRAY_COUNT(sHypnoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx6[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_6.4bpp");
+static const u8 sHypnoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_6.4bpp.lz");
 static const ax_sprite sHypnoSprites6[] = {
 	{sHypnoGfx6, ARRAY_COUNT(sHypnoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx7[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_7.4bpp");
+static const u8 sHypnoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_7.4bpp.lz");
 static const ax_sprite sHypnoSprites7[] = {
 	{sHypnoGfx7, ARRAY_COUNT(sHypnoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx8[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_8.4bpp");
+static const u8 sHypnoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_8.4bpp.lz");
 static const ax_sprite sHypnoSprites8[] = {
 	{sHypnoGfx8, ARRAY_COUNT(sHypnoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx9[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_9.4bpp");
+static const u8 sHypnoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_9.4bpp.lz");
 static const ax_sprite sHypnoSprites9[] = {
 	{sHypnoGfx9, ARRAY_COUNT(sHypnoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx10[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_10.4bpp");
+static const u8 sHypnoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_10.4bpp.lz");
 static const ax_sprite sHypnoSprites10[] = {
 	{sHypnoGfx10, ARRAY_COUNT(sHypnoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx11[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_11.4bpp");
+static const u8 sHypnoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_11.4bpp.lz");
 static const ax_sprite sHypnoSprites11[] = {
 	{sHypnoGfx11, ARRAY_COUNT(sHypnoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx12[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_12.4bpp");
+static const u8 sHypnoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_12.4bpp.lz");
 static const ax_sprite sHypnoSprites12[] = {
 	{sHypnoGfx12, ARRAY_COUNT(sHypnoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx13[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_13.4bpp");
+static const u8 sHypnoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_13.4bpp.lz");
 static const ax_sprite sHypnoSprites13[] = {
 	{sHypnoGfx13, ARRAY_COUNT(sHypnoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx14[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_14.4bpp");
+static const u8 sHypnoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_14.4bpp.lz");
 static const ax_sprite sHypnoSprites14[] = {
 	{sHypnoGfx14, ARRAY_COUNT(sHypnoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx15[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_15.4bpp");
+static const u8 sHypnoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_15.4bpp.lz");
 static const ax_sprite sHypnoSprites15[] = {
 	{sHypnoGfx15, ARRAY_COUNT(sHypnoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx16[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_16.4bpp");
+static const u8 sHypnoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_16.4bpp.lz");
 static const ax_sprite sHypnoSprites16[] = {
 	{sHypnoGfx16, ARRAY_COUNT(sHypnoGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx17[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_17.4bpp");
+static const u8 sHypnoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_17.4bpp.lz");
 static const ax_sprite sHypnoSprites17[] = {
 	{sHypnoGfx17, ARRAY_COUNT(sHypnoGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx18[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_18.4bpp");
+static const u8 sHypnoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_18.4bpp.lz");
 static const ax_sprite sHypnoSprites18[] = {
 	{sHypnoGfx18, ARRAY_COUNT(sHypnoGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx19[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_19.4bpp");
+static const u8 sHypnoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_19.4bpp.lz");
 static const ax_sprite sHypnoSprites19[] = {
 	{sHypnoGfx19, ARRAY_COUNT(sHypnoGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx20[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_20.4bpp");
+static const u8 sHypnoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_20.4bpp.lz");
 static const ax_sprite sHypnoSprites20[] = {
 	{sHypnoGfx20, ARRAY_COUNT(sHypnoGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx21[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_21.4bpp");
+static const u8 sHypnoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_21.4bpp.lz");
 static const ax_sprite sHypnoSprites21[] = {
 	{sHypnoGfx21, ARRAY_COUNT(sHypnoGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx22[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_22.4bpp");
+static const u8 sHypnoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_22.4bpp.lz");
 static const ax_sprite sHypnoSprites22[] = {
 	{sHypnoGfx22, ARRAY_COUNT(sHypnoGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx23[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_23.4bpp");
+static const u8 sHypnoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_23.4bpp.lz");
 static const ax_sprite sHypnoSprites23[] = {
 	{sHypnoGfx23, ARRAY_COUNT(sHypnoGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx24[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_24.4bpp");
+static const u8 sHypnoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_24.4bpp.lz");
 static const ax_sprite sHypnoSprites24[] = {
 	{sHypnoGfx24, ARRAY_COUNT(sHypnoGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx25[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_25.4bpp");
-static const u8 sHypnoGfx25_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_25_1.4bpp");
-static const u8 sHypnoGfx25_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_25_2.4bpp");
+static const u8 sHypnoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_25.4bpp.lz");
+static const u8 sHypnoGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_25_1.4bpp.lz");
+static const u8 sHypnoGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_25_2.4bpp.lz");
 static const ax_sprite sHypnoSprites25[] = {
 	{NULL, 32}, 
 	{sHypnoGfx25, ARRAY_COUNT(sHypnoGfx25)}, 
@@ -2724,10 +2724,10 @@ static const ax_sprite sHypnoSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx26[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_26.4bpp");
-static const u8 sHypnoGfx26_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_26_1.4bpp");
-static const u8 sHypnoGfx26_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_26_2.4bpp");
-static const u8 sHypnoGfx26_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_26_3.4bpp");
+static const u8 sHypnoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_26.4bpp.lz");
+static const u8 sHypnoGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_26_1.4bpp.lz");
+static const u8 sHypnoGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_26_2.4bpp.lz");
+static const u8 sHypnoGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_26_3.4bpp.lz");
 static const ax_sprite sHypnoSprites26[] = {
 	{sHypnoGfx26, ARRAY_COUNT(sHypnoGfx26)}, 
 	{NULL, 96}, 
@@ -2739,8 +2739,8 @@ static const ax_sprite sHypnoSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx27[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_27.4bpp");
-static const u8 sHypnoGfx27_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_27_1.4bpp");
+static const u8 sHypnoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_27.4bpp.lz");
+static const u8 sHypnoGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_27_1.4bpp.lz");
 static const ax_sprite sHypnoSprites27[] = {
 	{NULL, 32}, 
 	{sHypnoGfx27, ARRAY_COUNT(sHypnoGfx27)}, 
@@ -2749,10 +2749,10 @@ static const ax_sprite sHypnoSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx28[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_28.4bpp");
-static const u8 sHypnoGfx28_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_28_1.4bpp");
-static const u8 sHypnoGfx28_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_28_2.4bpp");
-static const u8 sHypnoGfx28_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_28_3.4bpp");
+static const u8 sHypnoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_28.4bpp.lz");
+static const u8 sHypnoGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_28_1.4bpp.lz");
+static const u8 sHypnoGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_28_2.4bpp.lz");
+static const u8 sHypnoGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_28_3.4bpp.lz");
 static const ax_sprite sHypnoSprites28[] = {
 	{NULL, 32}, 
 	{sHypnoGfx28, ARRAY_COUNT(sHypnoGfx28)}, 
@@ -2765,9 +2765,9 @@ static const ax_sprite sHypnoSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx29[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_29.4bpp");
-static const u8 sHypnoGfx29_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_29_1.4bpp");
-static const u8 sHypnoGfx29_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_29_2.4bpp");
+static const u8 sHypnoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_29.4bpp.lz");
+static const u8 sHypnoGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_29_1.4bpp.lz");
+static const u8 sHypnoGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_29_2.4bpp.lz");
 static const ax_sprite sHypnoSprites29[] = {
 	{NULL, 128}, 
 	{sHypnoGfx29, ARRAY_COUNT(sHypnoGfx29)}, 
@@ -2777,9 +2777,9 @@ static const ax_sprite sHypnoSprites29[] = {
 	{sHypnoGfx29_2, ARRAY_COUNT(sHypnoGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx30[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_30.4bpp");
-static const u8 sHypnoGfx30_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_30_1.4bpp");
-static const u8 sHypnoGfx30_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_30_2.4bpp");
+static const u8 sHypnoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_30.4bpp.lz");
+static const u8 sHypnoGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_30_1.4bpp.lz");
+static const u8 sHypnoGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_30_2.4bpp.lz");
 static const ax_sprite sHypnoSprites30[] = {
 	{NULL, 160}, 
 	{sHypnoGfx30, ARRAY_COUNT(sHypnoGfx30)}, 
@@ -2789,8 +2789,8 @@ static const ax_sprite sHypnoSprites30[] = {
 	{sHypnoGfx30_2, ARRAY_COUNT(sHypnoGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx31[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_31.4bpp");
-static const u8 sHypnoGfx31_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_31_1.4bpp");
+static const u8 sHypnoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_31.4bpp.lz");
+static const u8 sHypnoGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_31_1.4bpp.lz");
 static const ax_sprite sHypnoSprites31[] = {
 	{NULL, 32}, 
 	{sHypnoGfx31, ARRAY_COUNT(sHypnoGfx31)}, 
@@ -2799,15 +2799,15 @@ static const ax_sprite sHypnoSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx32[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_32.4bpp");
+static const u8 sHypnoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_32.4bpp.lz");
 static const ax_sprite sHypnoSprites32[] = {
 	{NULL, 64}, 
 	{sHypnoGfx32, ARRAY_COUNT(sHypnoGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx33[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_33.4bpp");
-static const u8 sHypnoGfx33_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_33_1.4bpp");
-static const u8 sHypnoGfx33_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_33_2.4bpp");
+static const u8 sHypnoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_33.4bpp.lz");
+static const u8 sHypnoGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_33_1.4bpp.lz");
+static const u8 sHypnoGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_33_2.4bpp.lz");
 static const ax_sprite sHypnoSprites33[] = {
 	{NULL, 64}, 
 	{sHypnoGfx33, ARRAY_COUNT(sHypnoGfx33)}, 
@@ -2817,17 +2817,17 @@ static const ax_sprite sHypnoSprites33[] = {
 	{sHypnoGfx33_2, ARRAY_COUNT(sHypnoGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx34[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_34.4bpp");
+static const u8 sHypnoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_34.4bpp.lz");
 static const ax_sprite sHypnoSprites34[] = {
 	{NULL, 32}, 
 	{sHypnoGfx34, ARRAY_COUNT(sHypnoGfx34)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx35[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_35.4bpp");
-static const u8 sHypnoGfx35_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_35_1.4bpp");
-static const u8 sHypnoGfx35_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_35_2.4bpp");
-static const u8 sHypnoGfx35_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_35_3.4bpp");
+static const u8 sHypnoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_35.4bpp.lz");
+static const u8 sHypnoGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_35_1.4bpp.lz");
+static const u8 sHypnoGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_35_2.4bpp.lz");
+static const u8 sHypnoGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_35_3.4bpp.lz");
 static const ax_sprite sHypnoSprites35[] = {
 	{NULL, 64}, 
 	{sHypnoGfx35, ARRAY_COUNT(sHypnoGfx35)}, 
@@ -2840,8 +2840,8 @@ static const ax_sprite sHypnoSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx36[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_36.4bpp");
-static const u8 sHypnoGfx36_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_36_1.4bpp");
+static const u8 sHypnoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_36.4bpp.lz");
+static const u8 sHypnoGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_36_1.4bpp.lz");
 static const ax_sprite sHypnoSprites36[] = {
 	{NULL, 32}, 
 	{sHypnoGfx36, ARRAY_COUNT(sHypnoGfx36)}, 
@@ -2850,9 +2850,9 @@ static const ax_sprite sHypnoSprites36[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx37[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_37.4bpp");
-static const u8 sHypnoGfx37_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_37_1.4bpp");
-static const u8 sHypnoGfx37_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_37_2.4bpp");
+static const u8 sHypnoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_37.4bpp.lz");
+static const u8 sHypnoGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_37_1.4bpp.lz");
+static const u8 sHypnoGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_37_2.4bpp.lz");
 static const ax_sprite sHypnoSprites37[] = {
 	{NULL, 32}, 
 	{sHypnoGfx37, ARRAY_COUNT(sHypnoGfx37)}, 
@@ -2862,10 +2862,10 @@ static const ax_sprite sHypnoSprites37[] = {
 	{sHypnoGfx37_2, ARRAY_COUNT(sHypnoGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx38[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_38.4bpp");
-static const u8 sHypnoGfx38_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_38_1.4bpp");
-static const u8 sHypnoGfx38_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_38_2.4bpp");
-static const u8 sHypnoGfx38_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_38_3.4bpp");
+static const u8 sHypnoGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_38.4bpp.lz");
+static const u8 sHypnoGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_38_1.4bpp.lz");
+static const u8 sHypnoGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_38_2.4bpp.lz");
+static const u8 sHypnoGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_38_3.4bpp.lz");
 static const ax_sprite sHypnoSprites38[] = {
 	{NULL, 32}, 
 	{sHypnoGfx38, ARRAY_COUNT(sHypnoGfx38)}, 
@@ -2877,10 +2877,10 @@ static const ax_sprite sHypnoSprites38[] = {
 	{sHypnoGfx38_3, ARRAY_COUNT(sHypnoGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx39[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_39.4bpp");
-static const u8 sHypnoGfx39_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_39_1.4bpp");
-static const u8 sHypnoGfx39_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_39_2.4bpp");
-static const u8 sHypnoGfx39_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_39_3.4bpp");
+static const u8 sHypnoGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_39.4bpp.lz");
+static const u8 sHypnoGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_39_1.4bpp.lz");
+static const u8 sHypnoGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_39_2.4bpp.lz");
+static const u8 sHypnoGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_39_3.4bpp.lz");
 static const ax_sprite sHypnoSprites39[] = {
 	{NULL, 32}, 
 	{sHypnoGfx39, ARRAY_COUNT(sHypnoGfx39)}, 
@@ -2893,10 +2893,10 @@ static const ax_sprite sHypnoSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx40[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_40.4bpp");
-static const u8 sHypnoGfx40_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_40_1.4bpp");
-static const u8 sHypnoGfx40_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_40_2.4bpp");
-static const u8 sHypnoGfx40_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_40_3.4bpp");
+static const u8 sHypnoGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_40.4bpp.lz");
+static const u8 sHypnoGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_40_1.4bpp.lz");
+static const u8 sHypnoGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_40_2.4bpp.lz");
+static const u8 sHypnoGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_40_3.4bpp.lz");
 static const ax_sprite sHypnoSprites40[] = {
 	{NULL, 32}, 
 	{sHypnoGfx40, ARRAY_COUNT(sHypnoGfx40)}, 
@@ -2908,9 +2908,9 @@ static const ax_sprite sHypnoSprites40[] = {
 	{sHypnoGfx40_3, ARRAY_COUNT(sHypnoGfx40_3)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx41[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_41.4bpp");
-static const u8 sHypnoGfx41_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_41_1.4bpp");
-static const u8 sHypnoGfx41_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_41_2.4bpp");
+static const u8 sHypnoGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_41.4bpp.lz");
+static const u8 sHypnoGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_41_1.4bpp.lz");
+static const u8 sHypnoGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_41_2.4bpp.lz");
 static const ax_sprite sHypnoSprites41[] = {
 	{sHypnoGfx41, ARRAY_COUNT(sHypnoGfx41)}, 
 	{NULL, 64}, 
@@ -2920,10 +2920,10 @@ static const ax_sprite sHypnoSprites41[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx42[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_42.4bpp");
-static const u8 sHypnoGfx42_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_42_1.4bpp");
-static const u8 sHypnoGfx42_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_42_2.4bpp");
-static const u8 sHypnoGfx42_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_42_3.4bpp");
+static const u8 sHypnoGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_42.4bpp.lz");
+static const u8 sHypnoGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_42_1.4bpp.lz");
+static const u8 sHypnoGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_42_2.4bpp.lz");
+static const u8 sHypnoGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_42_3.4bpp.lz");
 static const ax_sprite sHypnoSprites42[] = {
 	{sHypnoGfx42, ARRAY_COUNT(sHypnoGfx42)}, 
 	{NULL, 64}, 
@@ -2935,9 +2935,9 @@ static const ax_sprite sHypnoSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx43[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_43.4bpp");
-static const u8 sHypnoGfx43_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_43_1.4bpp");
-static const u8 sHypnoGfx43_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_43_2.4bpp");
+static const u8 sHypnoGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_43.4bpp.lz");
+static const u8 sHypnoGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_43_1.4bpp.lz");
+static const u8 sHypnoGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_43_2.4bpp.lz");
 static const ax_sprite sHypnoSprites43[] = {
 	{NULL, 32}, 
 	{sHypnoGfx43, ARRAY_COUNT(sHypnoGfx43)}, 
@@ -2947,10 +2947,10 @@ static const ax_sprite sHypnoSprites43[] = {
 	{sHypnoGfx43_2, ARRAY_COUNT(sHypnoGfx43_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx44[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_44.4bpp");
-static const u8 sHypnoGfx44_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_44_1.4bpp");
-static const u8 sHypnoGfx44_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_44_2.4bpp");
-static const u8 sHypnoGfx44_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_44_3.4bpp");
+static const u8 sHypnoGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_44.4bpp.lz");
+static const u8 sHypnoGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_44_1.4bpp.lz");
+static const u8 sHypnoGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_44_2.4bpp.lz");
+static const u8 sHypnoGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_44_3.4bpp.lz");
 static const ax_sprite sHypnoSprites44[] = {
 	{NULL, 32}, 
 	{sHypnoGfx44, ARRAY_COUNT(sHypnoGfx44)}, 
@@ -2963,8 +2963,8 @@ static const ax_sprite sHypnoSprites44[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx45[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_45.4bpp");
-static const u8 sHypnoGfx45_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_45_1.4bpp");
+static const u8 sHypnoGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_45.4bpp.lz");
+static const u8 sHypnoGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_45_1.4bpp.lz");
 static const ax_sprite sHypnoSprites45[] = {
 	{NULL, 32}, 
 	{sHypnoGfx45, ARRAY_COUNT(sHypnoGfx45)}, 
@@ -2972,10 +2972,10 @@ static const ax_sprite sHypnoSprites45[] = {
 	{sHypnoGfx45_1, ARRAY_COUNT(sHypnoGfx45_1)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx46[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_46.4bpp");
-static const u8 sHypnoGfx46_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_46_1.4bpp");
-static const u8 sHypnoGfx46_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_46_2.4bpp");
-static const u8 sHypnoGfx46_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_46_3.4bpp");
+static const u8 sHypnoGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_46.4bpp.lz");
+static const u8 sHypnoGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_46_1.4bpp.lz");
+static const u8 sHypnoGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_46_2.4bpp.lz");
+static const u8 sHypnoGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_46_3.4bpp.lz");
 static const ax_sprite sHypnoSprites46[] = {
 	{NULL, 32}, 
 	{sHypnoGfx46, ARRAY_COUNT(sHypnoGfx46)}, 
@@ -2988,10 +2988,10 @@ static const ax_sprite sHypnoSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx47[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_47.4bpp");
-static const u8 sHypnoGfx47_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_47_1.4bpp");
-static const u8 sHypnoGfx47_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_47_2.4bpp");
-static const u8 sHypnoGfx47_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_47_3.4bpp");
+static const u8 sHypnoGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_47.4bpp.lz");
+static const u8 sHypnoGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_47_1.4bpp.lz");
+static const u8 sHypnoGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_47_2.4bpp.lz");
+static const u8 sHypnoGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_47_3.4bpp.lz");
 static const ax_sprite sHypnoSprites47[] = {
 	{NULL, 64}, 
 	{sHypnoGfx47, ARRAY_COUNT(sHypnoGfx47)}, 
@@ -3004,8 +3004,8 @@ static const ax_sprite sHypnoSprites47[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx48[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_48.4bpp");
-static const u8 sHypnoGfx48_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_48_1.4bpp");
+static const u8 sHypnoGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_48.4bpp.lz");
+static const u8 sHypnoGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_48_1.4bpp.lz");
 static const ax_sprite sHypnoSprites48[] = {
 	{NULL, 128}, 
 	{sHypnoGfx48, ARRAY_COUNT(sHypnoGfx48)}, 
@@ -3014,18 +3014,18 @@ static const ax_sprite sHypnoSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx49[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_49.4bpp");
+static const u8 sHypnoGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_49.4bpp.lz");
 static const ax_sprite sHypnoSprites49[] = {
 	{sHypnoGfx49, ARRAY_COUNT(sHypnoGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx50[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_50.4bpp");
+static const u8 sHypnoGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_50.4bpp.lz");
 static const ax_sprite sHypnoSprites50[] = {
 	{sHypnoGfx50, ARRAY_COUNT(sHypnoGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx51[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_51.4bpp");
-static const u8 sHypnoGfx51_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_51_1.4bpp");
+static const u8 sHypnoGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_51.4bpp.lz");
+static const u8 sHypnoGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_51_1.4bpp.lz");
 static const ax_sprite sHypnoSprites51[] = {
 	{sHypnoGfx51, ARRAY_COUNT(sHypnoGfx51)}, 
 	{NULL, 32}, 
@@ -3033,8 +3033,8 @@ static const ax_sprite sHypnoSprites51[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx52[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_52.4bpp");
-static const u8 sHypnoGfx52_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_52_1.4bpp");
+static const u8 sHypnoGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_52.4bpp.lz");
+static const u8 sHypnoGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_52_1.4bpp.lz");
 static const ax_sprite sHypnoSprites52[] = {
 	{NULL, 32}, 
 	{sHypnoGfx52, ARRAY_COUNT(sHypnoGfx52)}, 
@@ -3043,8 +3043,8 @@ static const ax_sprite sHypnoSprites52[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx53[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_53.4bpp");
-static const u8 sHypnoGfx53_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_53_1.4bpp");
+static const u8 sHypnoGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_53.4bpp.lz");
+static const u8 sHypnoGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_53_1.4bpp.lz");
 static const ax_sprite sHypnoSprites53[] = {
 	{NULL, 160}, 
 	{sHypnoGfx53, ARRAY_COUNT(sHypnoGfx53)}, 
@@ -3052,9 +3052,9 @@ static const ax_sprite sHypnoSprites53[] = {
 	{sHypnoGfx53_1, ARRAY_COUNT(sHypnoGfx53_1)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx54[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_54.4bpp");
-static const u8 sHypnoGfx54_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_54_1.4bpp");
-static const u8 sHypnoGfx54_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_54_2.4bpp");
+static const u8 sHypnoGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_54.4bpp.lz");
+static const u8 sHypnoGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_54_1.4bpp.lz");
+static const u8 sHypnoGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_54_2.4bpp.lz");
 static const ax_sprite sHypnoSprites54[] = {
 	{NULL, 64}, 
 	{sHypnoGfx54, ARRAY_COUNT(sHypnoGfx54)}, 
@@ -3064,10 +3064,10 @@ static const ax_sprite sHypnoSprites54[] = {
 	{sHypnoGfx54_2, ARRAY_COUNT(sHypnoGfx54_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx55[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_55.4bpp");
-static const u8 sHypnoGfx55_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_55_1.4bpp");
-static const u8 sHypnoGfx55_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_55_2.4bpp");
-static const u8 sHypnoGfx55_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_55_3.4bpp");
+static const u8 sHypnoGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_55.4bpp.lz");
+static const u8 sHypnoGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_55_1.4bpp.lz");
+static const u8 sHypnoGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_55_2.4bpp.lz");
+static const u8 sHypnoGfx55_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_55_3.4bpp.lz");
 static const ax_sprite sHypnoSprites55[] = {
 	{NULL, 64}, 
 	{sHypnoGfx55, ARRAY_COUNT(sHypnoGfx55)}, 
@@ -3079,10 +3079,10 @@ static const ax_sprite sHypnoSprites55[] = {
 	{sHypnoGfx55_3, ARRAY_COUNT(sHypnoGfx55_3)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx56[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_56.4bpp");
-static const u8 sHypnoGfx56_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_56_1.4bpp");
-static const u8 sHypnoGfx56_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_56_2.4bpp");
-static const u8 sHypnoGfx56_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_56_3.4bpp");
+static const u8 sHypnoGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_56.4bpp.lz");
+static const u8 sHypnoGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_56_1.4bpp.lz");
+static const u8 sHypnoGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_56_2.4bpp.lz");
+static const u8 sHypnoGfx56_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_56_3.4bpp.lz");
 static const ax_sprite sHypnoSprites56[] = {
 	{NULL, 64}, 
 	{sHypnoGfx56, ARRAY_COUNT(sHypnoGfx56)}, 
@@ -3095,8 +3095,8 @@ static const ax_sprite sHypnoSprites56[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx57[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_57.4bpp");
-static const u8 sHypnoGfx57_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_57_1.4bpp");
+static const u8 sHypnoGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_57.4bpp.lz");
+static const u8 sHypnoGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_57_1.4bpp.lz");
 static const ax_sprite sHypnoSprites57[] = {
 	{NULL, 32}, 
 	{sHypnoGfx57, ARRAY_COUNT(sHypnoGfx57)}, 
@@ -3105,8 +3105,8 @@ static const ax_sprite sHypnoSprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx58[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_58.4bpp");
-static const u8 sHypnoGfx58_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_58_1.4bpp");
+static const u8 sHypnoGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_58.4bpp.lz");
+static const u8 sHypnoGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_58_1.4bpp.lz");
 static const ax_sprite sHypnoSprites58[] = {
 	{NULL, 32}, 
 	{sHypnoGfx58, ARRAY_COUNT(sHypnoGfx58)}, 
@@ -3115,8 +3115,8 @@ static const ax_sprite sHypnoSprites58[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx59[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_59.4bpp");
-static const u8 sHypnoGfx59_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_59_1.4bpp");
+static const u8 sHypnoGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_59.4bpp.lz");
+static const u8 sHypnoGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_59_1.4bpp.lz");
 static const ax_sprite sHypnoSprites59[] = {
 	{NULL, 32}, 
 	{sHypnoGfx59, ARRAY_COUNT(sHypnoGfx59)}, 
@@ -3124,15 +3124,15 @@ static const ax_sprite sHypnoSprites59[] = {
 	{sHypnoGfx59_1, ARRAY_COUNT(sHypnoGfx59_1)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx60[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_60.4bpp");
+static const u8 sHypnoGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_60.4bpp.lz");
 static const ax_sprite sHypnoSprites60[] = {
 	{NULL, 128}, 
 	{sHypnoGfx60, ARRAY_COUNT(sHypnoGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx61[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_61.4bpp");
-static const u8 sHypnoGfx61_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_61_1.4bpp");
-static const u8 sHypnoGfx61_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_61_2.4bpp");
+static const u8 sHypnoGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_61.4bpp.lz");
+static const u8 sHypnoGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_61_1.4bpp.lz");
+static const u8 sHypnoGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_61_2.4bpp.lz");
 static const ax_sprite sHypnoSprites61[] = {
 	{NULL, 32}, 
 	{sHypnoGfx61, ARRAY_COUNT(sHypnoGfx61)}, 
@@ -3142,9 +3142,9 @@ static const ax_sprite sHypnoSprites61[] = {
 	{sHypnoGfx61_2, ARRAY_COUNT(sHypnoGfx61_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx62[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_62.4bpp");
-static const u8 sHypnoGfx62_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_62_1.4bpp");
-static const u8 sHypnoGfx62_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_62_2.4bpp");
+static const u8 sHypnoGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_62.4bpp.lz");
+static const u8 sHypnoGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_62_1.4bpp.lz");
+static const u8 sHypnoGfx62_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_62_2.4bpp.lz");
 static const ax_sprite sHypnoSprites62[] = {
 	{NULL, 32}, 
 	{sHypnoGfx62, ARRAY_COUNT(sHypnoGfx62)}, 
@@ -3154,10 +3154,10 @@ static const ax_sprite sHypnoSprites62[] = {
 	{sHypnoGfx62_2, ARRAY_COUNT(sHypnoGfx62_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx63[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_63.4bpp");
-static const u8 sHypnoGfx63_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_63_1.4bpp");
-static const u8 sHypnoGfx63_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_63_2.4bpp");
-static const u8 sHypnoGfx63_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_63_3.4bpp");
+static const u8 sHypnoGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_63.4bpp.lz");
+static const u8 sHypnoGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_63_1.4bpp.lz");
+static const u8 sHypnoGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_63_2.4bpp.lz");
+static const u8 sHypnoGfx63_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_63_3.4bpp.lz");
 static const ax_sprite sHypnoSprites63[] = {
 	{NULL, 32}, 
 	{sHypnoGfx63, ARRAY_COUNT(sHypnoGfx63)}, 
@@ -3170,10 +3170,10 @@ static const ax_sprite sHypnoSprites63[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx64[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_64.4bpp");
-static const u8 sHypnoGfx64_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_64_1.4bpp");
-static const u8 sHypnoGfx64_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_64_2.4bpp");
-static const u8 sHypnoGfx64_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_64_3.4bpp");
+static const u8 sHypnoGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_64.4bpp.lz");
+static const u8 sHypnoGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_64_1.4bpp.lz");
+static const u8 sHypnoGfx64_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_64_2.4bpp.lz");
+static const u8 sHypnoGfx64_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_64_3.4bpp.lz");
 static const ax_sprite sHypnoSprites64[] = {
 	{NULL, 32}, 
 	{sHypnoGfx64, ARRAY_COUNT(sHypnoGfx64)}, 
@@ -3186,10 +3186,10 @@ static const ax_sprite sHypnoSprites64[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx65[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_65.4bpp");
-static const u8 sHypnoGfx65_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_65_1.4bpp");
-static const u8 sHypnoGfx65_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_65_2.4bpp");
-static const u8 sHypnoGfx65_3[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_65_3.4bpp");
+static const u8 sHypnoGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_65.4bpp.lz");
+static const u8 sHypnoGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_65_1.4bpp.lz");
+static const u8 sHypnoGfx65_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_65_2.4bpp.lz");
+static const u8 sHypnoGfx65_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_65_3.4bpp.lz");
 static const ax_sprite sHypnoSprites65[] = {
 	{NULL, 32}, 
 	{sHypnoGfx65, ARRAY_COUNT(sHypnoGfx65)}, 
@@ -3202,9 +3202,9 @@ static const ax_sprite sHypnoSprites65[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx66[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_66.4bpp");
-static const u8 sHypnoGfx66_1[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_66_1.4bpp");
-static const u8 sHypnoGfx66_2[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_66_2.4bpp");
+static const u8 sHypnoGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_66.4bpp.lz");
+static const u8 sHypnoGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_66_1.4bpp.lz");
+static const u8 sHypnoGfx66_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_66_2.4bpp.lz");
 static const ax_sprite sHypnoSprites66[] = {
 	{NULL, 128}, 
 	{sHypnoGfx66, ARRAY_COUNT(sHypnoGfx66)}, 
@@ -3214,37 +3214,37 @@ static const ax_sprite sHypnoSprites66[] = {
 	{sHypnoGfx66_2, ARRAY_COUNT(sHypnoGfx66_2)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx67[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_67.4bpp");
+static const u8 sHypnoGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_67.4bpp.lz");
 static const ax_sprite sHypnoSprites67[] = {
 	{sHypnoGfx67, ARRAY_COUNT(sHypnoGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx68[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_68.4bpp");
+static const u8 sHypnoGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_68.4bpp.lz");
 static const ax_sprite sHypnoSprites68[] = {
 	{sHypnoGfx68, ARRAY_COUNT(sHypnoGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx69[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_69.4bpp");
+static const u8 sHypnoGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_69.4bpp.lz");
 static const ax_sprite sHypnoSprites69[] = {
 	{sHypnoGfx69, ARRAY_COUNT(sHypnoGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx70[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_70.4bpp");
+static const u8 sHypnoGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_70.4bpp.lz");
 static const ax_sprite sHypnoSprites70[] = {
 	{sHypnoGfx70, ARRAY_COUNT(sHypnoGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx71[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_71.4bpp");
+static const u8 sHypnoGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_71.4bpp.lz");
 static const ax_sprite sHypnoSprites71[] = {
 	{sHypnoGfx71, ARRAY_COUNT(sHypnoGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx72[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_72.4bpp");
+static const u8 sHypnoGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_72.4bpp.lz");
 static const ax_sprite sHypnoSprites72[] = {
 	{sHypnoGfx72, ARRAY_COUNT(sHypnoGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sHypnoGfx73[] = INCBIN_U8("graphics/ax/mon/hypno/sprite_73.4bpp");
+static const u8 sHypnoGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hypno/sprite_73.4bpp.lz");
 static const ax_sprite sHypnoSprites73[] = {
 	{sHypnoGfx73, ARRAY_COUNT(sHypnoGfx73)}, 
 	{NULL, 0}

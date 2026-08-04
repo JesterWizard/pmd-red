@@ -1887,84 +1887,84 @@ static const ax_anim sCorsolaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCorsolaGfx1[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_1.4bpp");
+static const u8 sCorsolaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_1.4bpp.lz");
 static const ax_sprite sCorsolaSprites1[] = {
 	{sCorsolaGfx1, ARRAY_COUNT(sCorsolaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx2[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_2.4bpp");
+static const u8 sCorsolaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_2.4bpp.lz");
 static const ax_sprite sCorsolaSprites2[] = {
 	{sCorsolaGfx2, ARRAY_COUNT(sCorsolaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx3[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_3.4bpp");
+static const u8 sCorsolaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_3.4bpp.lz");
 static const ax_sprite sCorsolaSprites3[] = {
 	{sCorsolaGfx3, ARRAY_COUNT(sCorsolaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx4[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_4.4bpp");
+static const u8 sCorsolaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_4.4bpp.lz");
 static const ax_sprite sCorsolaSprites4[] = {
 	{sCorsolaGfx4, ARRAY_COUNT(sCorsolaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx5[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_5.4bpp");
+static const u8 sCorsolaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_5.4bpp.lz");
 static const ax_sprite sCorsolaSprites5[] = {
 	{sCorsolaGfx5, ARRAY_COUNT(sCorsolaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx6[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_6.4bpp");
+static const u8 sCorsolaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_6.4bpp.lz");
 static const ax_sprite sCorsolaSprites6[] = {
 	{sCorsolaGfx6, ARRAY_COUNT(sCorsolaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx7[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_7.4bpp");
+static const u8 sCorsolaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_7.4bpp.lz");
 static const ax_sprite sCorsolaSprites7[] = {
 	{sCorsolaGfx7, ARRAY_COUNT(sCorsolaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx8[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_8.4bpp");
+static const u8 sCorsolaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_8.4bpp.lz");
 static const ax_sprite sCorsolaSprites8[] = {
 	{sCorsolaGfx8, ARRAY_COUNT(sCorsolaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx9[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_9.4bpp");
+static const u8 sCorsolaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_9.4bpp.lz");
 static const ax_sprite sCorsolaSprites9[] = {
 	{sCorsolaGfx9, ARRAY_COUNT(sCorsolaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx10[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_10.4bpp");
+static const u8 sCorsolaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_10.4bpp.lz");
 static const ax_sprite sCorsolaSprites10[] = {
 	{sCorsolaGfx10, ARRAY_COUNT(sCorsolaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx11[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_11.4bpp");
+static const u8 sCorsolaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_11.4bpp.lz");
 static const ax_sprite sCorsolaSprites11[] = {
 	{sCorsolaGfx11, ARRAY_COUNT(sCorsolaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx12[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_12.4bpp");
+static const u8 sCorsolaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_12.4bpp.lz");
 static const ax_sprite sCorsolaSprites12[] = {
 	{sCorsolaGfx12, ARRAY_COUNT(sCorsolaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx13[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_13.4bpp");
+static const u8 sCorsolaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_13.4bpp.lz");
 static const ax_sprite sCorsolaSprites13[] = {
 	{sCorsolaGfx13, ARRAY_COUNT(sCorsolaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx14[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_14.4bpp");
+static const u8 sCorsolaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_14.4bpp.lz");
 static const ax_sprite sCorsolaSprites14[] = {
 	{sCorsolaGfx14, ARRAY_COUNT(sCorsolaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx15[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_15.4bpp");
+static const u8 sCorsolaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_15.4bpp.lz");
 static const ax_sprite sCorsolaSprites15[] = {
 	{sCorsolaGfx15, ARRAY_COUNT(sCorsolaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx16[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_16.4bpp");
-static const u8 sCorsolaGfx16_1[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_16_1.4bpp");
-static const u8 sCorsolaGfx16_2[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_16_2.4bpp");
+static const u8 sCorsolaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_16.4bpp.lz");
+static const u8 sCorsolaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_16_1.4bpp.lz");
+static const u8 sCorsolaGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_16_2.4bpp.lz");
 static const ax_sprite sCorsolaSprites16[] = {
 	{sCorsolaGfx16, ARRAY_COUNT(sCorsolaGfx16)}, 
 	{NULL, 32}, 
@@ -1974,9 +1974,9 @@ static const ax_sprite sCorsolaSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx17[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_17.4bpp");
-static const u8 sCorsolaGfx17_1[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_17_1.4bpp");
-static const u8 sCorsolaGfx17_2[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_17_2.4bpp");
+static const u8 sCorsolaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_17.4bpp.lz");
+static const u8 sCorsolaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_17_1.4bpp.lz");
+static const u8 sCorsolaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_17_2.4bpp.lz");
 static const ax_sprite sCorsolaSprites17[] = {
 	{sCorsolaGfx17, ARRAY_COUNT(sCorsolaGfx17)}, 
 	{NULL, 32}, 
@@ -1986,9 +1986,9 @@ static const ax_sprite sCorsolaSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx18[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_18.4bpp");
-static const u8 sCorsolaGfx18_1[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_18_1.4bpp");
-static const u8 sCorsolaGfx18_2[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_18_2.4bpp");
+static const u8 sCorsolaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_18.4bpp.lz");
+static const u8 sCorsolaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_18_1.4bpp.lz");
+static const u8 sCorsolaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_18_2.4bpp.lz");
 static const ax_sprite sCorsolaSprites18[] = {
 	{sCorsolaGfx18, ARRAY_COUNT(sCorsolaGfx18)}, 
 	{NULL, 32}, 
@@ -1998,9 +1998,9 @@ static const ax_sprite sCorsolaSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx19[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_19.4bpp");
-static const u8 sCorsolaGfx19_1[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_19_1.4bpp");
-static const u8 sCorsolaGfx19_2[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_19_2.4bpp");
+static const u8 sCorsolaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_19.4bpp.lz");
+static const u8 sCorsolaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_19_1.4bpp.lz");
+static const u8 sCorsolaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_19_2.4bpp.lz");
 static const ax_sprite sCorsolaSprites19[] = {
 	{sCorsolaGfx19, ARRAY_COUNT(sCorsolaGfx19)}, 
 	{NULL, 32}, 
@@ -2010,9 +2010,9 @@ static const ax_sprite sCorsolaSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx20[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_20.4bpp");
-static const u8 sCorsolaGfx20_1[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_20_1.4bpp");
-static const u8 sCorsolaGfx20_2[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_20_2.4bpp");
+static const u8 sCorsolaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_20.4bpp.lz");
+static const u8 sCorsolaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_20_1.4bpp.lz");
+static const u8 sCorsolaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_20_2.4bpp.lz");
 static const ax_sprite sCorsolaSprites20[] = {
 	{sCorsolaGfx20, ARRAY_COUNT(sCorsolaGfx20)}, 
 	{NULL, 32}, 
@@ -2022,37 +2022,37 @@ static const ax_sprite sCorsolaSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx21[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_21.4bpp");
+static const u8 sCorsolaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_21.4bpp.lz");
 static const ax_sprite sCorsolaSprites21[] = {
 	{sCorsolaGfx21, ARRAY_COUNT(sCorsolaGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx22[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_22.4bpp");
+static const u8 sCorsolaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_22.4bpp.lz");
 static const ax_sprite sCorsolaSprites22[] = {
 	{sCorsolaGfx22, ARRAY_COUNT(sCorsolaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx23[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_23.4bpp");
+static const u8 sCorsolaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_23.4bpp.lz");
 static const ax_sprite sCorsolaSprites23[] = {
 	{sCorsolaGfx23, ARRAY_COUNT(sCorsolaGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx24[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_24.4bpp");
+static const u8 sCorsolaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_24.4bpp.lz");
 static const ax_sprite sCorsolaSprites24[] = {
 	{sCorsolaGfx24, ARRAY_COUNT(sCorsolaGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx25[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_25.4bpp");
+static const u8 sCorsolaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_25.4bpp.lz");
 static const ax_sprite sCorsolaSprites25[] = {
 	{sCorsolaGfx25, ARRAY_COUNT(sCorsolaGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx26[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_26.4bpp");
+static const u8 sCorsolaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_26.4bpp.lz");
 static const ax_sprite sCorsolaSprites26[] = {
 	{sCorsolaGfx26, ARRAY_COUNT(sCorsolaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sCorsolaGfx27[] = INCBIN_U8("graphics/ax/mon/corsola/sprite_27.4bpp");
+static const u8 sCorsolaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/corsola/sprite_27.4bpp.lz");
 static const ax_sprite sCorsolaSprites27[] = {
 	{sCorsolaGfx27, ARRAY_COUNT(sCorsolaGfx27)}, 
 	{NULL, 0}

@@ -2175,83 +2175,83 @@ static const ax_anim sScizorAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sScizorGfx1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_1.4bpp");
+static const u8 sScizorGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_1.4bpp.lz");
 static const ax_sprite sScizorSprites1[] = {
 	{sScizorGfx1, ARRAY_COUNT(sScizorGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_2.4bpp");
+static const u8 sScizorGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_2.4bpp.lz");
 static const ax_sprite sScizorSprites2[] = {
 	{sScizorGfx2, ARRAY_COUNT(sScizorGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx3[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_3.4bpp");
+static const u8 sScizorGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_3.4bpp.lz");
 static const ax_sprite sScizorSprites3[] = {
 	{sScizorGfx3, ARRAY_COUNT(sScizorGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx4[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_4.4bpp");
+static const u8 sScizorGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_4.4bpp.lz");
 static const ax_sprite sScizorSprites4[] = {
 	{sScizorGfx4, ARRAY_COUNT(sScizorGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx5[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_5.4bpp");
+static const u8 sScizorGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_5.4bpp.lz");
 static const ax_sprite sScizorSprites5[] = {
 	{sScizorGfx5, ARRAY_COUNT(sScizorGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx6[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_6.4bpp");
+static const u8 sScizorGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_6.4bpp.lz");
 static const ax_sprite sScizorSprites6[] = {
 	{sScizorGfx6, ARRAY_COUNT(sScizorGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx7[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_7.4bpp");
+static const u8 sScizorGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_7.4bpp.lz");
 static const ax_sprite sScizorSprites7[] = {
 	{sScizorGfx7, ARRAY_COUNT(sScizorGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx8[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_8.4bpp");
+static const u8 sScizorGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_8.4bpp.lz");
 static const ax_sprite sScizorSprites8[] = {
 	{sScizorGfx8, ARRAY_COUNT(sScizorGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx9[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_9.4bpp");
+static const u8 sScizorGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_9.4bpp.lz");
 static const ax_sprite sScizorSprites9[] = {
 	{sScizorGfx9, ARRAY_COUNT(sScizorGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx10[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_10.4bpp");
+static const u8 sScizorGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_10.4bpp.lz");
 static const ax_sprite sScizorSprites10[] = {
 	{sScizorGfx10, ARRAY_COUNT(sScizorGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx11[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_11.4bpp");
+static const u8 sScizorGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_11.4bpp.lz");
 static const ax_sprite sScizorSprites11[] = {
 	{sScizorGfx11, ARRAY_COUNT(sScizorGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx12[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_12.4bpp");
+static const u8 sScizorGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_12.4bpp.lz");
 static const ax_sprite sScizorSprites12[] = {
 	{sScizorGfx12, ARRAY_COUNT(sScizorGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx13[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_13.4bpp");
+static const u8 sScizorGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_13.4bpp.lz");
 static const ax_sprite sScizorSprites13[] = {
 	{sScizorGfx13, ARRAY_COUNT(sScizorGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx14[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_14.4bpp");
+static const u8 sScizorGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_14.4bpp.lz");
 static const ax_sprite sScizorSprites14[] = {
 	{sScizorGfx14, ARRAY_COUNT(sScizorGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx15[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_15.4bpp");
+static const u8 sScizorGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_15.4bpp.lz");
 static const ax_sprite sScizorSprites15[] = {
 	{sScizorGfx15, ARRAY_COUNT(sScizorGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx16[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_16.4bpp");
-static const u8 sScizorGfx16_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_16_1.4bpp");
+static const u8 sScizorGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_16.4bpp.lz");
+static const u8 sScizorGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_16_1.4bpp.lz");
 static const ax_sprite sScizorSprites16[] = {
 	{sScizorGfx16, ARRAY_COUNT(sScizorGfx16)}, 
 	{NULL, 32}, 
@@ -2259,14 +2259,14 @@ static const ax_sprite sScizorSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx17[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_17.4bpp");
+static const u8 sScizorGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_17.4bpp.lz");
 static const ax_sprite sScizorSprites17[] = {
 	{sScizorGfx17, ARRAY_COUNT(sScizorGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx18[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_18.4bpp");
-static const u8 sScizorGfx18_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_18_1.4bpp");
-static const u8 sScizorGfx18_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_18_2.4bpp");
+static const u8 sScizorGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_18.4bpp.lz");
+static const u8 sScizorGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_18_1.4bpp.lz");
+static const u8 sScizorGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_18_2.4bpp.lz");
 static const ax_sprite sScizorSprites18[] = {
 	{NULL, 32}, 
 	{sScizorGfx18, ARRAY_COUNT(sScizorGfx18)}, 
@@ -2276,8 +2276,8 @@ static const ax_sprite sScizorSprites18[] = {
 	{sScizorGfx18_2, ARRAY_COUNT(sScizorGfx18_2)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx19[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_19.4bpp");
-static const u8 sScizorGfx19_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_19_1.4bpp");
+static const u8 sScizorGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_19.4bpp.lz");
+static const u8 sScizorGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_19_1.4bpp.lz");
 static const ax_sprite sScizorSprites19[] = {
 	{NULL, 32}, 
 	{sScizorGfx19, ARRAY_COUNT(sScizorGfx19)}, 
@@ -2285,9 +2285,9 @@ static const ax_sprite sScizorSprites19[] = {
 	{sScizorGfx19_1, ARRAY_COUNT(sScizorGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx20[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_20.4bpp");
-static const u8 sScizorGfx20_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_20_1.4bpp");
-static const u8 sScizorGfx20_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_20_2.4bpp");
+static const u8 sScizorGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_20.4bpp.lz");
+static const u8 sScizorGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_20_1.4bpp.lz");
+static const u8 sScizorGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_20_2.4bpp.lz");
 static const ax_sprite sScizorSprites20[] = {
 	{NULL, 32}, 
 	{sScizorGfx20, ARRAY_COUNT(sScizorGfx20)}, 
@@ -2297,9 +2297,9 @@ static const ax_sprite sScizorSprites20[] = {
 	{sScizorGfx20_2, ARRAY_COUNT(sScizorGfx20_2)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx21[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_21.4bpp");
-static const u8 sScizorGfx21_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_21_1.4bpp");
-static const u8 sScizorGfx21_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_21_2.4bpp");
+static const u8 sScizorGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_21.4bpp.lz");
+static const u8 sScizorGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_21_1.4bpp.lz");
+static const u8 sScizorGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_21_2.4bpp.lz");
 static const ax_sprite sScizorSprites21[] = {
 	{NULL, 32}, 
 	{sScizorGfx21, ARRAY_COUNT(sScizorGfx21)}, 
@@ -2310,9 +2310,9 @@ static const ax_sprite sScizorSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx22[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_22.4bpp");
-static const u8 sScizorGfx22_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_22_1.4bpp");
-static const u8 sScizorGfx22_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_22_2.4bpp");
+static const u8 sScizorGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_22.4bpp.lz");
+static const u8 sScizorGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_22_1.4bpp.lz");
+static const u8 sScizorGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_22_2.4bpp.lz");
 static const ax_sprite sScizorSprites22[] = {
 	{NULL, 32}, 
 	{sScizorGfx22, ARRAY_COUNT(sScizorGfx22)}, 
@@ -2323,14 +2323,14 @@ static const ax_sprite sScizorSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx23[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_23.4bpp");
+static const u8 sScizorGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_23.4bpp.lz");
 static const ax_sprite sScizorSprites23[] = {
 	{sScizorGfx23, ARRAY_COUNT(sScizorGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx24[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_24.4bpp");
-static const u8 sScizorGfx24_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_24_1.4bpp");
-static const u8 sScizorGfx24_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_24_2.4bpp");
+static const u8 sScizorGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_24.4bpp.lz");
+static const u8 sScizorGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_24_1.4bpp.lz");
+static const u8 sScizorGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_24_2.4bpp.lz");
 static const ax_sprite sScizorSprites24[] = {
 	{NULL, 32}, 
 	{sScizorGfx24, ARRAY_COUNT(sScizorGfx24)}, 
@@ -2341,8 +2341,8 @@ static const ax_sprite sScizorSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx25[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_25.4bpp");
-static const u8 sScizorGfx25_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_25_1.4bpp");
+static const u8 sScizorGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_25.4bpp.lz");
+static const u8 sScizorGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_25_1.4bpp.lz");
 static const ax_sprite sScizorSprites25[] = {
 	{sScizorGfx25, ARRAY_COUNT(sScizorGfx25)}, 
 	{NULL, 64}, 
@@ -2350,9 +2350,9 @@ static const ax_sprite sScizorSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx26[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_26.4bpp");
-static const u8 sScizorGfx26_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_26_1.4bpp");
-static const u8 sScizorGfx26_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_26_2.4bpp");
+static const u8 sScizorGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_26.4bpp.lz");
+static const u8 sScizorGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_26_1.4bpp.lz");
+static const u8 sScizorGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_26_2.4bpp.lz");
 static const ax_sprite sScizorSprites26[] = {
 	{sScizorGfx26, ARRAY_COUNT(sScizorGfx26)}, 
 	{NULL, 32}, 
@@ -2362,8 +2362,8 @@ static const ax_sprite sScizorSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx27[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_27.4bpp");
-static const u8 sScizorGfx27_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_27_1.4bpp");
+static const u8 sScizorGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_27.4bpp.lz");
+static const u8 sScizorGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_27_1.4bpp.lz");
 static const ax_sprite sScizorSprites27[] = {
 	{NULL, 32}, 
 	{sScizorGfx27, ARRAY_COUNT(sScizorGfx27)}, 
@@ -2372,16 +2372,16 @@ static const ax_sprite sScizorSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx28[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_28.4bpp");
+static const u8 sScizorGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_28.4bpp.lz");
 static const ax_sprite sScizorSprites28[] = {
 	{NULL, 128}, 
 	{sScizorGfx28, ARRAY_COUNT(sScizorGfx28)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx29[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_29.4bpp");
-static const u8 sScizorGfx29_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_29_1.4bpp");
-static const u8 sScizorGfx29_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_29_2.4bpp");
+static const u8 sScizorGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_29.4bpp.lz");
+static const u8 sScizorGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_29_1.4bpp.lz");
+static const u8 sScizorGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_29_2.4bpp.lz");
 static const ax_sprite sScizorSprites29[] = {
 	{NULL, 32}, 
 	{sScizorGfx29, ARRAY_COUNT(sScizorGfx29)}, 
@@ -2392,8 +2392,8 @@ static const ax_sprite sScizorSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx30[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_30.4bpp");
-static const u8 sScizorGfx30_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_30_1.4bpp");
+static const u8 sScizorGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_30.4bpp.lz");
+static const u8 sScizorGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_30_1.4bpp.lz");
 static const ax_sprite sScizorSprites30[] = {
 	{NULL, 128}, 
 	{sScizorGfx30, ARRAY_COUNT(sScizorGfx30)}, 
@@ -2402,9 +2402,9 @@ static const ax_sprite sScizorSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx31[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_31.4bpp");
-static const u8 sScizorGfx31_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_31_1.4bpp");
-static const u8 sScizorGfx31_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_31_2.4bpp");
+static const u8 sScizorGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_31.4bpp.lz");
+static const u8 sScizorGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_31_1.4bpp.lz");
+static const u8 sScizorGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_31_2.4bpp.lz");
 static const ax_sprite sScizorSprites31[] = {
 	{NULL, 32}, 
 	{sScizorGfx31, ARRAY_COUNT(sScizorGfx31)}, 
@@ -2415,8 +2415,8 @@ static const ax_sprite sScizorSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx32[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_32.4bpp");
-static const u8 sScizorGfx32_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_32_1.4bpp");
+static const u8 sScizorGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_32.4bpp.lz");
+static const u8 sScizorGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_32_1.4bpp.lz");
 static const ax_sprite sScizorSprites32[] = {
 	{NULL, 128}, 
 	{sScizorGfx32, ARRAY_COUNT(sScizorGfx32)}, 
@@ -2425,8 +2425,8 @@ static const ax_sprite sScizorSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx33[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_33.4bpp");
-static const u8 sScizorGfx33_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_33_1.4bpp");
+static const u8 sScizorGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_33.4bpp.lz");
+static const u8 sScizorGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_33_1.4bpp.lz");
 static const ax_sprite sScizorSprites33[] = {
 	{NULL, 32}, 
 	{sScizorGfx33, ARRAY_COUNT(sScizorGfx33)}, 
@@ -2434,9 +2434,9 @@ static const ax_sprite sScizorSprites33[] = {
 	{sScizorGfx33_1, ARRAY_COUNT(sScizorGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx34[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_34.4bpp");
-static const u8 sScizorGfx34_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_34_1.4bpp");
-static const u8 sScizorGfx34_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_34_2.4bpp");
+static const u8 sScizorGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_34.4bpp.lz");
+static const u8 sScizorGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_34_1.4bpp.lz");
+static const u8 sScizorGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_34_2.4bpp.lz");
 static const ax_sprite sScizorSprites34[] = {
 	{sScizorGfx34, ARRAY_COUNT(sScizorGfx34)}, 
 	{NULL, 64}, 
@@ -2446,9 +2446,9 @@ static const ax_sprite sScizorSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx35[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_35.4bpp");
-static const u8 sScizorGfx35_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_35_1.4bpp");
-static const u8 sScizorGfx35_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_35_2.4bpp");
+static const u8 sScizorGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_35.4bpp.lz");
+static const u8 sScizorGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_35_1.4bpp.lz");
+static const u8 sScizorGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_35_2.4bpp.lz");
 static const ax_sprite sScizorSprites35[] = {
 	{sScizorGfx35, ARRAY_COUNT(sScizorGfx35)}, 
 	{NULL, 32}, 
@@ -2458,9 +2458,9 @@ static const ax_sprite sScizorSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx36[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_36.4bpp");
-static const u8 sScizorGfx36_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_36_1.4bpp");
-static const u8 sScizorGfx36_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_36_2.4bpp");
+static const u8 sScizorGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_36.4bpp.lz");
+static const u8 sScizorGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_36_1.4bpp.lz");
+static const u8 sScizorGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_36_2.4bpp.lz");
 static const ax_sprite sScizorSprites36[] = {
 	{sScizorGfx36, ARRAY_COUNT(sScizorGfx36)}, 
 	{NULL, 32}, 
@@ -2470,9 +2470,9 @@ static const ax_sprite sScizorSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx37[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_37.4bpp");
-static const u8 sScizorGfx37_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_37_1.4bpp");
-static const u8 sScizorGfx37_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_37_2.4bpp");
+static const u8 sScizorGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_37.4bpp.lz");
+static const u8 sScizorGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_37_1.4bpp.lz");
+static const u8 sScizorGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_37_2.4bpp.lz");
 static const ax_sprite sScizorSprites37[] = {
 	{sScizorGfx37, ARRAY_COUNT(sScizorGfx37)}, 
 	{NULL, 32}, 
@@ -2482,10 +2482,10 @@ static const ax_sprite sScizorSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx38[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_38.4bpp");
-static const u8 sScizorGfx38_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_38_1.4bpp");
-static const u8 sScizorGfx38_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_38_2.4bpp");
-static const u8 sScizorGfx38_3[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_38_3.4bpp");
+static const u8 sScizorGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_38.4bpp.lz");
+static const u8 sScizorGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_38_1.4bpp.lz");
+static const u8 sScizorGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_38_2.4bpp.lz");
+static const u8 sScizorGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_38_3.4bpp.lz");
 static const ax_sprite sScizorSprites38[] = {
 	{sScizorGfx38, ARRAY_COUNT(sScizorGfx38)}, 
 	{NULL, 32}, 
@@ -2497,9 +2497,9 @@ static const ax_sprite sScizorSprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx39[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_39.4bpp");
-static const u8 sScizorGfx39_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_39_1.4bpp");
-static const u8 sScizorGfx39_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_39_2.4bpp");
+static const u8 sScizorGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_39.4bpp.lz");
+static const u8 sScizorGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_39_1.4bpp.lz");
+static const u8 sScizorGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_39_2.4bpp.lz");
 static const ax_sprite sScizorSprites39[] = {
 	{NULL, 32}, 
 	{sScizorGfx39, ARRAY_COUNT(sScizorGfx39)}, 
@@ -2510,10 +2510,10 @@ static const ax_sprite sScizorSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx40[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_40.4bpp");
-static const u8 sScizorGfx40_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_40_1.4bpp");
-static const u8 sScizorGfx40_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_40_2.4bpp");
-static const u8 sScizorGfx40_3[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_40_3.4bpp");
+static const u8 sScizorGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_40.4bpp.lz");
+static const u8 sScizorGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_40_1.4bpp.lz");
+static const u8 sScizorGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_40_2.4bpp.lz");
+static const u8 sScizorGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_40_3.4bpp.lz");
 static const ax_sprite sScizorSprites40[] = {
 	{sScizorGfx40, ARRAY_COUNT(sScizorGfx40)}, 
 	{NULL, 32}, 
@@ -2524,9 +2524,9 @@ static const ax_sprite sScizorSprites40[] = {
 	{sScizorGfx40_3, ARRAY_COUNT(sScizorGfx40_3)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx41[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_41.4bpp");
-static const u8 sScizorGfx41_1[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_41_1.4bpp");
-static const u8 sScizorGfx41_2[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_41_2.4bpp");
+static const u8 sScizorGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_41.4bpp.lz");
+static const u8 sScizorGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_41_1.4bpp.lz");
+static const u8 sScizorGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_41_2.4bpp.lz");
 static const ax_sprite sScizorSprites41[] = {
 	{sScizorGfx41, ARRAY_COUNT(sScizorGfx41)}, 
 	{NULL, 32}, 
@@ -2536,37 +2536,37 @@ static const ax_sprite sScizorSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx42[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_42.4bpp");
+static const u8 sScizorGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_42.4bpp.lz");
 static const ax_sprite sScizorSprites42[] = {
 	{sScizorGfx42, ARRAY_COUNT(sScizorGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx43[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_43.4bpp");
+static const u8 sScizorGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_43.4bpp.lz");
 static const ax_sprite sScizorSprites43[] = {
 	{sScizorGfx43, ARRAY_COUNT(sScizorGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx44[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_44.4bpp");
+static const u8 sScizorGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_44.4bpp.lz");
 static const ax_sprite sScizorSprites44[] = {
 	{sScizorGfx44, ARRAY_COUNT(sScizorGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx45[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_45.4bpp");
+static const u8 sScizorGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_45.4bpp.lz");
 static const ax_sprite sScizorSprites45[] = {
 	{sScizorGfx45, ARRAY_COUNT(sScizorGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx46[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_46.4bpp");
+static const u8 sScizorGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_46.4bpp.lz");
 static const ax_sprite sScizorSprites46[] = {
 	{sScizorGfx46, ARRAY_COUNT(sScizorGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx47[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_47.4bpp");
+static const u8 sScizorGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_47.4bpp.lz");
 static const ax_sprite sScizorSprites47[] = {
 	{sScizorGfx47, ARRAY_COUNT(sScizorGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sScizorGfx48[] = INCBIN_U8("graphics/ax/mon/scizor/sprite_48.4bpp");
+static const u8 sScizorGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scizor/sprite_48.4bpp.lz");
 static const ax_sprite sScizorSprites48[] = {
 	{sScizorGfx48, ARRAY_COUNT(sScizorGfx48)}, 
 	{NULL, 0}

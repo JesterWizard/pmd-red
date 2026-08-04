@@ -2359,95 +2359,95 @@ static const ax_anim sPonytaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPonytaGfx1[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_1.4bpp");
+static const u8 sPonytaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_1.4bpp.lz");
 static const ax_sprite sPonytaSprites1[] = {
 	{sPonytaGfx1, ARRAY_COUNT(sPonytaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx2[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_2.4bpp");
+static const u8 sPonytaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_2.4bpp.lz");
 static const ax_sprite sPonytaSprites2[] = {
 	{sPonytaGfx2, ARRAY_COUNT(sPonytaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx3[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_3.4bpp");
+static const u8 sPonytaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_3.4bpp.lz");
 static const ax_sprite sPonytaSprites3[] = {
 	{sPonytaGfx3, ARRAY_COUNT(sPonytaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx4[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_4.4bpp");
+static const u8 sPonytaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_4.4bpp.lz");
 static const ax_sprite sPonytaSprites4[] = {
 	{sPonytaGfx4, ARRAY_COUNT(sPonytaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx5[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_5.4bpp");
+static const u8 sPonytaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_5.4bpp.lz");
 static const ax_sprite sPonytaSprites5[] = {
 	{sPonytaGfx5, ARRAY_COUNT(sPonytaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx6[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_6.4bpp");
+static const u8 sPonytaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_6.4bpp.lz");
 static const ax_sprite sPonytaSprites6[] = {
 	{sPonytaGfx6, ARRAY_COUNT(sPonytaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx7[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_7.4bpp");
+static const u8 sPonytaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_7.4bpp.lz");
 static const ax_sprite sPonytaSprites7[] = {
 	{sPonytaGfx7, ARRAY_COUNT(sPonytaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx8[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_8.4bpp");
+static const u8 sPonytaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_8.4bpp.lz");
 static const ax_sprite sPonytaSprites8[] = {
 	{sPonytaGfx8, ARRAY_COUNT(sPonytaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx9[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_9.4bpp");
+static const u8 sPonytaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_9.4bpp.lz");
 static const ax_sprite sPonytaSprites9[] = {
 	{sPonytaGfx9, ARRAY_COUNT(sPonytaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx10[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_10.4bpp");
+static const u8 sPonytaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_10.4bpp.lz");
 static const ax_sprite sPonytaSprites10[] = {
 	{sPonytaGfx10, ARRAY_COUNT(sPonytaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx11[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_11.4bpp");
+static const u8 sPonytaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_11.4bpp.lz");
 static const ax_sprite sPonytaSprites11[] = {
 	{sPonytaGfx11, ARRAY_COUNT(sPonytaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx12[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_12.4bpp");
+static const u8 sPonytaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_12.4bpp.lz");
 static const ax_sprite sPonytaSprites12[] = {
 	{sPonytaGfx12, ARRAY_COUNT(sPonytaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx13[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_13.4bpp");
+static const u8 sPonytaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_13.4bpp.lz");
 static const ax_sprite sPonytaSprites13[] = {
 	{sPonytaGfx13, ARRAY_COUNT(sPonytaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx14[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_14.4bpp");
+static const u8 sPonytaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_14.4bpp.lz");
 static const ax_sprite sPonytaSprites14[] = {
 	{sPonytaGfx14, ARRAY_COUNT(sPonytaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx15[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_15.4bpp");
+static const u8 sPonytaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_15.4bpp.lz");
 static const ax_sprite sPonytaSprites15[] = {
 	{sPonytaGfx15, ARRAY_COUNT(sPonytaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx16[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_16.4bpp");
+static const u8 sPonytaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_16.4bpp.lz");
 static const ax_sprite sPonytaSprites16[] = {
 	{sPonytaGfx16, ARRAY_COUNT(sPonytaGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx17[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_17.4bpp");
+static const u8 sPonytaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_17.4bpp.lz");
 static const ax_sprite sPonytaSprites17[] = {
 	{sPonytaGfx17, ARRAY_COUNT(sPonytaGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx18[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_18.4bpp");
-static const u8 sPonytaGfx18_1[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_18_1.4bpp");
-static const u8 sPonytaGfx18_2[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_18_2.4bpp");
+static const u8 sPonytaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_18.4bpp.lz");
+static const u8 sPonytaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_18_1.4bpp.lz");
+static const u8 sPonytaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_18_2.4bpp.lz");
 static const ax_sprite sPonytaSprites18[] = {
 	{sPonytaGfx18, ARRAY_COUNT(sPonytaGfx18)}, 
 	{NULL, 32}, 
@@ -2457,9 +2457,9 @@ static const ax_sprite sPonytaSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx19[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_19.4bpp");
-static const u8 sPonytaGfx19_1[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_19_1.4bpp");
-static const u8 sPonytaGfx19_2[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_19_2.4bpp");
+static const u8 sPonytaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_19.4bpp.lz");
+static const u8 sPonytaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_19_1.4bpp.lz");
+static const u8 sPonytaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_19_2.4bpp.lz");
 static const ax_sprite sPonytaSprites19[] = {
 	{sPonytaGfx19, ARRAY_COUNT(sPonytaGfx19)}, 
 	{NULL, 32}, 
@@ -2469,8 +2469,8 @@ static const ax_sprite sPonytaSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx20[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_20.4bpp");
-static const u8 sPonytaGfx20_1[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_20_1.4bpp");
+static const u8 sPonytaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_20.4bpp.lz");
+static const u8 sPonytaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_20_1.4bpp.lz");
 static const ax_sprite sPonytaSprites20[] = {
 	{NULL, 32}, 
 	{sPonytaGfx20, ARRAY_COUNT(sPonytaGfx20)}, 
@@ -2479,10 +2479,10 @@ static const ax_sprite sPonytaSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx21[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_21.4bpp");
-static const u8 sPonytaGfx21_1[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_21_1.4bpp");
-static const u8 sPonytaGfx21_2[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_21_2.4bpp");
-static const u8 sPonytaGfx21_3[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_21_3.4bpp");
+static const u8 sPonytaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_21.4bpp.lz");
+static const u8 sPonytaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_21_1.4bpp.lz");
+static const u8 sPonytaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_21_2.4bpp.lz");
+static const u8 sPonytaGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_21_3.4bpp.lz");
 static const ax_sprite sPonytaSprites21[] = {
 	{NULL, 32}, 
 	{sPonytaGfx21, ARRAY_COUNT(sPonytaGfx21)}, 
@@ -2495,9 +2495,9 @@ static const ax_sprite sPonytaSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx22[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_22.4bpp");
-static const u8 sPonytaGfx22_1[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_22_1.4bpp");
-static const u8 sPonytaGfx22_2[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_22_2.4bpp");
+static const u8 sPonytaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_22.4bpp.lz");
+static const u8 sPonytaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_22_1.4bpp.lz");
+static const u8 sPonytaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_22_2.4bpp.lz");
 static const ax_sprite sPonytaSprites22[] = {
 	{sPonytaGfx22, ARRAY_COUNT(sPonytaGfx22)}, 
 	{NULL, 64}, 
@@ -2507,10 +2507,10 @@ static const ax_sprite sPonytaSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx23[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_23.4bpp");
-static const u8 sPonytaGfx23_1[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_23_1.4bpp");
-static const u8 sPonytaGfx23_2[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_23_2.4bpp");
-static const u8 sPonytaGfx23_3[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_23_3.4bpp");
+static const u8 sPonytaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_23.4bpp.lz");
+static const u8 sPonytaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_23_1.4bpp.lz");
+static const u8 sPonytaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_23_2.4bpp.lz");
+static const u8 sPonytaGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_23_3.4bpp.lz");
 static const ax_sprite sPonytaSprites23[] = {
 	{sPonytaGfx23, ARRAY_COUNT(sPonytaGfx23)}, 
 	{NULL, 32}, 
@@ -2522,49 +2522,49 @@ static const ax_sprite sPonytaSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx24[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_24.4bpp");
+static const u8 sPonytaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_24.4bpp.lz");
 static const ax_sprite sPonytaSprites24[] = {
 	{sPonytaGfx24, ARRAY_COUNT(sPonytaGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx25[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_25.4bpp");
+static const u8 sPonytaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_25.4bpp.lz");
 static const ax_sprite sPonytaSprites25[] = {
 	{sPonytaGfx25, ARRAY_COUNT(sPonytaGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx26[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_26.4bpp");
+static const u8 sPonytaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_26.4bpp.lz");
 static const ax_sprite sPonytaSprites26[] = {
 	{sPonytaGfx26, ARRAY_COUNT(sPonytaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx27[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_27.4bpp");
+static const u8 sPonytaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_27.4bpp.lz");
 static const ax_sprite sPonytaSprites27[] = {
 	{sPonytaGfx27, ARRAY_COUNT(sPonytaGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx28[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_28.4bpp");
+static const u8 sPonytaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_28.4bpp.lz");
 static const ax_sprite sPonytaSprites28[] = {
 	{sPonytaGfx28, ARRAY_COUNT(sPonytaGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx29[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_29.4bpp");
+static const u8 sPonytaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_29.4bpp.lz");
 static const ax_sprite sPonytaSprites29[] = {
 	{sPonytaGfx29, ARRAY_COUNT(sPonytaGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx30[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_30.4bpp");
+static const u8 sPonytaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_30.4bpp.lz");
 static const ax_sprite sPonytaSprites30[] = {
 	{sPonytaGfx30, ARRAY_COUNT(sPonytaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx31[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_31.4bpp");
+static const u8 sPonytaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_31.4bpp.lz");
 static const ax_sprite sPonytaSprites31[] = {
 	{sPonytaGfx31, ARRAY_COUNT(sPonytaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPonytaGfx32[] = INCBIN_U8("graphics/ax/mon/ponyta/sprite_32.4bpp");
+static const u8 sPonytaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ponyta/sprite_32.4bpp.lz");
 static const ax_sprite sPonytaSprites32[] = {
 	{sPonytaGfx32, ARRAY_COUNT(sPonytaGfx32)}, 
 	{NULL, 0}

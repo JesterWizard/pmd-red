@@ -1855,157 +1855,157 @@ static const ax_anim sVoltorbAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVoltorbGfx1[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_1.4bpp");
+static const u8 sVoltorbGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_1.4bpp.lz");
 static const ax_sprite sVoltorbSprites1[] = {
 	{sVoltorbGfx1, ARRAY_COUNT(sVoltorbGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx2[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_2.4bpp");
+static const u8 sVoltorbGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_2.4bpp.lz");
 static const ax_sprite sVoltorbSprites2[] = {
 	{sVoltorbGfx2, ARRAY_COUNT(sVoltorbGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx3[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_3.4bpp");
+static const u8 sVoltorbGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_3.4bpp.lz");
 static const ax_sprite sVoltorbSprites3[] = {
 	{sVoltorbGfx3, ARRAY_COUNT(sVoltorbGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx4[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_4.4bpp");
+static const u8 sVoltorbGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_4.4bpp.lz");
 static const ax_sprite sVoltorbSprites4[] = {
 	{sVoltorbGfx4, ARRAY_COUNT(sVoltorbGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx5[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_5.4bpp");
+static const u8 sVoltorbGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_5.4bpp.lz");
 static const ax_sprite sVoltorbSprites5[] = {
 	{sVoltorbGfx5, ARRAY_COUNT(sVoltorbGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx6[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_6.4bpp");
+static const u8 sVoltorbGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_6.4bpp.lz");
 static const ax_sprite sVoltorbSprites6[] = {
 	{sVoltorbGfx6, ARRAY_COUNT(sVoltorbGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx7[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_7.4bpp");
+static const u8 sVoltorbGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_7.4bpp.lz");
 static const ax_sprite sVoltorbSprites7[] = {
 	{sVoltorbGfx7, ARRAY_COUNT(sVoltorbGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx8[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_8.4bpp");
+static const u8 sVoltorbGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_8.4bpp.lz");
 static const ax_sprite sVoltorbSprites8[] = {
 	{sVoltorbGfx8, ARRAY_COUNT(sVoltorbGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx9[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_9.4bpp");
+static const u8 sVoltorbGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_9.4bpp.lz");
 static const ax_sprite sVoltorbSprites9[] = {
 	{sVoltorbGfx9, ARRAY_COUNT(sVoltorbGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx10[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_10.4bpp");
+static const u8 sVoltorbGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_10.4bpp.lz");
 static const ax_sprite sVoltorbSprites10[] = {
 	{sVoltorbGfx10, ARRAY_COUNT(sVoltorbGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx11[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_11.4bpp");
+static const u8 sVoltorbGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_11.4bpp.lz");
 static const ax_sprite sVoltorbSprites11[] = {
 	{sVoltorbGfx11, ARRAY_COUNT(sVoltorbGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx12[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_12.4bpp");
+static const u8 sVoltorbGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_12.4bpp.lz");
 static const ax_sprite sVoltorbSprites12[] = {
 	{sVoltorbGfx12, ARRAY_COUNT(sVoltorbGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx13[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_13.4bpp");
+static const u8 sVoltorbGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_13.4bpp.lz");
 static const ax_sprite sVoltorbSprites13[] = {
 	{sVoltorbGfx13, ARRAY_COUNT(sVoltorbGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx14[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_14.4bpp");
+static const u8 sVoltorbGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_14.4bpp.lz");
 static const ax_sprite sVoltorbSprites14[] = {
 	{sVoltorbGfx14, ARRAY_COUNT(sVoltorbGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx15[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_15.4bpp");
+static const u8 sVoltorbGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_15.4bpp.lz");
 static const ax_sprite sVoltorbSprites15[] = {
 	{sVoltorbGfx15, ARRAY_COUNT(sVoltorbGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx16[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_16.4bpp");
+static const u8 sVoltorbGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_16.4bpp.lz");
 static const ax_sprite sVoltorbSprites16[] = {
 	{sVoltorbGfx16, ARRAY_COUNT(sVoltorbGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx17[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_17.4bpp");
+static const u8 sVoltorbGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_17.4bpp.lz");
 static const ax_sprite sVoltorbSprites17[] = {
 	{sVoltorbGfx17, ARRAY_COUNT(sVoltorbGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx18[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_18.4bpp");
+static const u8 sVoltorbGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_18.4bpp.lz");
 static const ax_sprite sVoltorbSprites18[] = {
 	{sVoltorbGfx18, ARRAY_COUNT(sVoltorbGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx19[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_19.4bpp");
+static const u8 sVoltorbGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_19.4bpp.lz");
 static const ax_sprite sVoltorbSprites19[] = {
 	{sVoltorbGfx19, ARRAY_COUNT(sVoltorbGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx20[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_20.4bpp");
+static const u8 sVoltorbGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_20.4bpp.lz");
 static const ax_sprite sVoltorbSprites20[] = {
 	{sVoltorbGfx20, ARRAY_COUNT(sVoltorbGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx21[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_21.4bpp");
+static const u8 sVoltorbGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_21.4bpp.lz");
 static const ax_sprite sVoltorbSprites21[] = {
 	{sVoltorbGfx21, ARRAY_COUNT(sVoltorbGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx22[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_22.4bpp");
+static const u8 sVoltorbGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_22.4bpp.lz");
 static const ax_sprite sVoltorbSprites22[] = {
 	{sVoltorbGfx22, ARRAY_COUNT(sVoltorbGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx23[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_23.4bpp");
+static const u8 sVoltorbGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_23.4bpp.lz");
 static const ax_sprite sVoltorbSprites23[] = {
 	{sVoltorbGfx23, ARRAY_COUNT(sVoltorbGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx24[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_24.4bpp");
+static const u8 sVoltorbGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_24.4bpp.lz");
 static const ax_sprite sVoltorbSprites24[] = {
 	{sVoltorbGfx24, ARRAY_COUNT(sVoltorbGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx25[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_25.4bpp");
+static const u8 sVoltorbGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_25.4bpp.lz");
 static const ax_sprite sVoltorbSprites25[] = {
 	{sVoltorbGfx25, ARRAY_COUNT(sVoltorbGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx26[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_26.4bpp");
+static const u8 sVoltorbGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_26.4bpp.lz");
 static const ax_sprite sVoltorbSprites26[] = {
 	{sVoltorbGfx26, ARRAY_COUNT(sVoltorbGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx27[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_27.4bpp");
+static const u8 sVoltorbGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_27.4bpp.lz");
 static const ax_sprite sVoltorbSprites27[] = {
 	{sVoltorbGfx27, ARRAY_COUNT(sVoltorbGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx28[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_28.4bpp");
+static const u8 sVoltorbGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_28.4bpp.lz");
 static const ax_sprite sVoltorbSprites28[] = {
 	{sVoltorbGfx28, ARRAY_COUNT(sVoltorbGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx29[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_29.4bpp");
+static const u8 sVoltorbGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_29.4bpp.lz");
 static const ax_sprite sVoltorbSprites29[] = {
 	{sVoltorbGfx29, ARRAY_COUNT(sVoltorbGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx30[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_30.4bpp");
+static const u8 sVoltorbGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_30.4bpp.lz");
 static const ax_sprite sVoltorbSprites30[] = {
 	{sVoltorbGfx30, ARRAY_COUNT(sVoltorbGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sVoltorbGfx31[] = INCBIN_U8("graphics/ax/mon/voltorb/sprite_31.4bpp");
+static const u8 sVoltorbGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/voltorb/sprite_31.4bpp.lz");
 static const ax_sprite sVoltorbSprites31[] = {
 	{sVoltorbGfx31, ARRAY_COUNT(sVoltorbGfx31)}, 
 	{NULL, 0}

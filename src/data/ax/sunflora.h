@@ -2249,84 +2249,84 @@ static const ax_anim sSunfloraAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSunfloraGfx1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_1.4bpp");
+static const u8 sSunfloraGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_1.4bpp.lz");
 static const ax_sprite sSunfloraSprites1[] = {
 	{sSunfloraGfx1, ARRAY_COUNT(sSunfloraGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_2.4bpp");
+static const u8 sSunfloraGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_2.4bpp.lz");
 static const ax_sprite sSunfloraSprites2[] = {
 	{sSunfloraGfx2, ARRAY_COUNT(sSunfloraGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_3.4bpp");
+static const u8 sSunfloraGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites3[] = {
 	{sSunfloraGfx3, ARRAY_COUNT(sSunfloraGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx4[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_4.4bpp");
+static const u8 sSunfloraGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_4.4bpp.lz");
 static const ax_sprite sSunfloraSprites4[] = {
 	{sSunfloraGfx4, ARRAY_COUNT(sSunfloraGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx5[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_5.4bpp");
+static const u8 sSunfloraGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_5.4bpp.lz");
 static const ax_sprite sSunfloraSprites5[] = {
 	{sSunfloraGfx5, ARRAY_COUNT(sSunfloraGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx6[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_6.4bpp");
+static const u8 sSunfloraGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_6.4bpp.lz");
 static const ax_sprite sSunfloraSprites6[] = {
 	{sSunfloraGfx6, ARRAY_COUNT(sSunfloraGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx7[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_7.4bpp");
+static const u8 sSunfloraGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_7.4bpp.lz");
 static const ax_sprite sSunfloraSprites7[] = {
 	{sSunfloraGfx7, ARRAY_COUNT(sSunfloraGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx8[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_8.4bpp");
+static const u8 sSunfloraGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_8.4bpp.lz");
 static const ax_sprite sSunfloraSprites8[] = {
 	{sSunfloraGfx8, ARRAY_COUNT(sSunfloraGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx9[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_9.4bpp");
+static const u8 sSunfloraGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_9.4bpp.lz");
 static const ax_sprite sSunfloraSprites9[] = {
 	{sSunfloraGfx9, ARRAY_COUNT(sSunfloraGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx10[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_10.4bpp");
+static const u8 sSunfloraGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_10.4bpp.lz");
 static const ax_sprite sSunfloraSprites10[] = {
 	{sSunfloraGfx10, ARRAY_COUNT(sSunfloraGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx11[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_11.4bpp");
+static const u8 sSunfloraGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_11.4bpp.lz");
 static const ax_sprite sSunfloraSprites11[] = {
 	{sSunfloraGfx11, ARRAY_COUNT(sSunfloraGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx12[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_12.4bpp");
+static const u8 sSunfloraGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_12.4bpp.lz");
 static const ax_sprite sSunfloraSprites12[] = {
 	{sSunfloraGfx12, ARRAY_COUNT(sSunfloraGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx13[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_13.4bpp");
+static const u8 sSunfloraGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_13.4bpp.lz");
 static const ax_sprite sSunfloraSprites13[] = {
 	{sSunfloraGfx13, ARRAY_COUNT(sSunfloraGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx14[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_14.4bpp");
+static const u8 sSunfloraGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_14.4bpp.lz");
 static const ax_sprite sSunfloraSprites14[] = {
 	{sSunfloraGfx14, ARRAY_COUNT(sSunfloraGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx15[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_15.4bpp");
+static const u8 sSunfloraGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_15.4bpp.lz");
 static const ax_sprite sSunfloraSprites15[] = {
 	{sSunfloraGfx15, ARRAY_COUNT(sSunfloraGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx16[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_16.4bpp");
-static const u8 sSunfloraGfx16_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_16_1.4bpp");
-static const u8 sSunfloraGfx16_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_16_2.4bpp");
+static const u8 sSunfloraGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_16.4bpp.lz");
+static const u8 sSunfloraGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_16_1.4bpp.lz");
+static const u8 sSunfloraGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_16_2.4bpp.lz");
 static const ax_sprite sSunfloraSprites16[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx16, ARRAY_COUNT(sSunfloraGfx16)}, 
@@ -2337,10 +2337,10 @@ static const ax_sprite sSunfloraSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx17[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_17.4bpp");
-static const u8 sSunfloraGfx17_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_17_1.4bpp");
-static const u8 sSunfloraGfx17_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_17_2.4bpp");
-static const u8 sSunfloraGfx17_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_17_3.4bpp");
+static const u8 sSunfloraGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_17.4bpp.lz");
+static const u8 sSunfloraGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_17_1.4bpp.lz");
+static const u8 sSunfloraGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_17_2.4bpp.lz");
+static const u8 sSunfloraGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_17_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites17[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx17, ARRAY_COUNT(sSunfloraGfx17)}, 
@@ -2353,10 +2353,10 @@ static const ax_sprite sSunfloraSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx18[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_18.4bpp");
-static const u8 sSunfloraGfx18_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_18_1.4bpp");
-static const u8 sSunfloraGfx18_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_18_2.4bpp");
-static const u8 sSunfloraGfx18_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_18_3.4bpp");
+static const u8 sSunfloraGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_18.4bpp.lz");
+static const u8 sSunfloraGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_18_1.4bpp.lz");
+static const u8 sSunfloraGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_18_2.4bpp.lz");
+static const u8 sSunfloraGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_18_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites18[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx18, ARRAY_COUNT(sSunfloraGfx18)}, 
@@ -2369,10 +2369,10 @@ static const ax_sprite sSunfloraSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx19[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_19.4bpp");
-static const u8 sSunfloraGfx19_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_19_1.4bpp");
-static const u8 sSunfloraGfx19_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_19_2.4bpp");
-static const u8 sSunfloraGfx19_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_19_3.4bpp");
+static const u8 sSunfloraGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_19.4bpp.lz");
+static const u8 sSunfloraGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_19_1.4bpp.lz");
+static const u8 sSunfloraGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_19_2.4bpp.lz");
+static const u8 sSunfloraGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_19_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites19[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx19, ARRAY_COUNT(sSunfloraGfx19)}, 
@@ -2385,10 +2385,10 @@ static const ax_sprite sSunfloraSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx20[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_20.4bpp");
-static const u8 sSunfloraGfx20_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_20_1.4bpp");
-static const u8 sSunfloraGfx20_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_20_2.4bpp");
-static const u8 sSunfloraGfx20_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_20_3.4bpp");
+static const u8 sSunfloraGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_20.4bpp.lz");
+static const u8 sSunfloraGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_20_1.4bpp.lz");
+static const u8 sSunfloraGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_20_2.4bpp.lz");
+static const u8 sSunfloraGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_20_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites20[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx20, ARRAY_COUNT(sSunfloraGfx20)}, 
@@ -2401,10 +2401,10 @@ static const ax_sprite sSunfloraSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx21[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_21.4bpp");
-static const u8 sSunfloraGfx21_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_21_1.4bpp");
-static const u8 sSunfloraGfx21_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_21_2.4bpp");
-static const u8 sSunfloraGfx21_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_21_3.4bpp");
+static const u8 sSunfloraGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_21.4bpp.lz");
+static const u8 sSunfloraGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_21_1.4bpp.lz");
+static const u8 sSunfloraGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_21_2.4bpp.lz");
+static const u8 sSunfloraGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_21_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites21[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx21, ARRAY_COUNT(sSunfloraGfx21)}, 
@@ -2416,10 +2416,10 @@ static const ax_sprite sSunfloraSprites21[] = {
 	{sSunfloraGfx21_3, ARRAY_COUNT(sSunfloraGfx21_3)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx22[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_22.4bpp");
-static const u8 sSunfloraGfx22_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_22_1.4bpp");
-static const u8 sSunfloraGfx22_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_22_2.4bpp");
-static const u8 sSunfloraGfx22_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_22_3.4bpp");
+static const u8 sSunfloraGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_22.4bpp.lz");
+static const u8 sSunfloraGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_22_1.4bpp.lz");
+static const u8 sSunfloraGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_22_2.4bpp.lz");
+static const u8 sSunfloraGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_22_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites22[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx22, ARRAY_COUNT(sSunfloraGfx22)}, 
@@ -2432,10 +2432,10 @@ static const ax_sprite sSunfloraSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx23[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_23.4bpp");
-static const u8 sSunfloraGfx23_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_23_1.4bpp");
-static const u8 sSunfloraGfx23_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_23_2.4bpp");
-static const u8 sSunfloraGfx23_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_23_3.4bpp");
+static const u8 sSunfloraGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_23.4bpp.lz");
+static const u8 sSunfloraGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_23_1.4bpp.lz");
+static const u8 sSunfloraGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_23_2.4bpp.lz");
+static const u8 sSunfloraGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_23_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites23[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx23, ARRAY_COUNT(sSunfloraGfx23)}, 
@@ -2448,17 +2448,17 @@ static const ax_sprite sSunfloraSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx24[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_24.4bpp");
+static const u8 sSunfloraGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_24.4bpp.lz");
 static const ax_sprite sSunfloraSprites24[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx24, ARRAY_COUNT(sSunfloraGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx25[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_25.4bpp");
-static const u8 sSunfloraGfx25_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_25_1.4bpp");
-static const u8 sSunfloraGfx25_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_25_2.4bpp");
-static const u8 sSunfloraGfx25_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_25_3.4bpp");
+static const u8 sSunfloraGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_25.4bpp.lz");
+static const u8 sSunfloraGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_25_1.4bpp.lz");
+static const u8 sSunfloraGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_25_2.4bpp.lz");
+static const u8 sSunfloraGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_25_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites25[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx25, ARRAY_COUNT(sSunfloraGfx25)}, 
@@ -2471,15 +2471,15 @@ static const ax_sprite sSunfloraSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx26[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_26.4bpp");
+static const u8 sSunfloraGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_26.4bpp.lz");
 static const ax_sprite sSunfloraSprites26[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx26, ARRAY_COUNT(sSunfloraGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx27[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_27.4bpp");
-static const u8 sSunfloraGfx27_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_27_1.4bpp");
+static const u8 sSunfloraGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_27.4bpp.lz");
+static const u8 sSunfloraGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_27_1.4bpp.lz");
 static const ax_sprite sSunfloraSprites27[] = {
 	{sSunfloraGfx27, ARRAY_COUNT(sSunfloraGfx27)}, 
 	{NULL, 32}, 
@@ -2487,22 +2487,22 @@ static const ax_sprite sSunfloraSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx28[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_28.4bpp");
+static const u8 sSunfloraGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_28.4bpp.lz");
 static const ax_sprite sSunfloraSprites28[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx28, ARRAY_COUNT(sSunfloraGfx28)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx29[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_29.4bpp");
+static const u8 sSunfloraGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_29.4bpp.lz");
 static const ax_sprite sSunfloraSprites29[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx29, ARRAY_COUNT(sSunfloraGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx30[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_30.4bpp");
-static const u8 sSunfloraGfx30_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_30_1.4bpp");
+static const u8 sSunfloraGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_30.4bpp.lz");
+static const u8 sSunfloraGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_30_1.4bpp.lz");
 static const ax_sprite sSunfloraSprites30[] = {
 	{sSunfloraGfx30, ARRAY_COUNT(sSunfloraGfx30)}, 
 	{NULL, 64}, 
@@ -2510,20 +2510,20 @@ static const ax_sprite sSunfloraSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx31[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_31.4bpp");
+static const u8 sSunfloraGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_31.4bpp.lz");
 static const ax_sprite sSunfloraSprites31[] = {
 	{sSunfloraGfx31, ARRAY_COUNT(sSunfloraGfx31)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx32[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_32.4bpp");
+static const u8 sSunfloraGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_32.4bpp.lz");
 static const ax_sprite sSunfloraSprites32[] = {
 	{sSunfloraGfx32, ARRAY_COUNT(sSunfloraGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx33[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_33.4bpp");
-static const u8 sSunfloraGfx33_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_33_1.4bpp");
+static const u8 sSunfloraGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_33.4bpp.lz");
+static const u8 sSunfloraGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_33_1.4bpp.lz");
 static const ax_sprite sSunfloraSprites33[] = {
 	{sSunfloraGfx33, ARRAY_COUNT(sSunfloraGfx33)}, 
 	{NULL, 32}, 
@@ -2531,10 +2531,10 @@ static const ax_sprite sSunfloraSprites33[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx34[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_34.4bpp");
-static const u8 sSunfloraGfx34_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_34_1.4bpp");
-static const u8 sSunfloraGfx34_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_34_2.4bpp");
-static const u8 sSunfloraGfx34_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_34_3.4bpp");
+static const u8 sSunfloraGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_34.4bpp.lz");
+static const u8 sSunfloraGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_34_1.4bpp.lz");
+static const u8 sSunfloraGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_34_2.4bpp.lz");
+static const u8 sSunfloraGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_34_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites34[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx34, ARRAY_COUNT(sSunfloraGfx34)}, 
@@ -2547,10 +2547,10 @@ static const ax_sprite sSunfloraSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx35[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_35.4bpp");
-static const u8 sSunfloraGfx35_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_35_1.4bpp");
-static const u8 sSunfloraGfx35_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_35_2.4bpp");
-static const u8 sSunfloraGfx35_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_35_3.4bpp");
+static const u8 sSunfloraGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_35.4bpp.lz");
+static const u8 sSunfloraGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_35_1.4bpp.lz");
+static const u8 sSunfloraGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_35_2.4bpp.lz");
+static const u8 sSunfloraGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_35_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites35[] = {
 	{sSunfloraGfx35, ARRAY_COUNT(sSunfloraGfx35)}, 
 	{NULL, 32}, 
@@ -2562,8 +2562,8 @@ static const ax_sprite sSunfloraSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx36[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_36.4bpp");
-static const u8 sSunfloraGfx36_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_36_1.4bpp");
+static const u8 sSunfloraGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_36.4bpp.lz");
+static const u8 sSunfloraGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_36_1.4bpp.lz");
 static const ax_sprite sSunfloraSprites36[] = {
 	{NULL, 160}, 
 	{sSunfloraGfx36, ARRAY_COUNT(sSunfloraGfx36)}, 
@@ -2571,9 +2571,9 @@ static const ax_sprite sSunfloraSprites36[] = {
 	{sSunfloraGfx36_1, ARRAY_COUNT(sSunfloraGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx37[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_37.4bpp");
-static const u8 sSunfloraGfx37_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_37_1.4bpp");
-static const u8 sSunfloraGfx37_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_37_2.4bpp");
+static const u8 sSunfloraGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_37.4bpp.lz");
+static const u8 sSunfloraGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_37_1.4bpp.lz");
+static const u8 sSunfloraGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_37_2.4bpp.lz");
 static const ax_sprite sSunfloraSprites37[] = {
 	{NULL, 160}, 
 	{sSunfloraGfx37, ARRAY_COUNT(sSunfloraGfx37)}, 
@@ -2583,10 +2583,10 @@ static const ax_sprite sSunfloraSprites37[] = {
 	{sSunfloraGfx37_2, ARRAY_COUNT(sSunfloraGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx38[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_38.4bpp");
-static const u8 sSunfloraGfx38_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_38_1.4bpp");
-static const u8 sSunfloraGfx38_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_38_2.4bpp");
-static const u8 sSunfloraGfx38_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_38_3.4bpp");
+static const u8 sSunfloraGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_38.4bpp.lz");
+static const u8 sSunfloraGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_38_1.4bpp.lz");
+static const u8 sSunfloraGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_38_2.4bpp.lz");
+static const u8 sSunfloraGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_38_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites38[] = {
 	{sSunfloraGfx38, ARRAY_COUNT(sSunfloraGfx38)}, 
 	{NULL, 32}, 
@@ -2598,9 +2598,9 @@ static const ax_sprite sSunfloraSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx39[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_39.4bpp");
-static const u8 sSunfloraGfx39_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_39_1.4bpp");
-static const u8 sSunfloraGfx39_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_39_2.4bpp");
+static const u8 sSunfloraGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_39.4bpp.lz");
+static const u8 sSunfloraGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_39_1.4bpp.lz");
+static const u8 sSunfloraGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_39_2.4bpp.lz");
 static const ax_sprite sSunfloraSprites39[] = {
 	{NULL, 128}, 
 	{sSunfloraGfx39, ARRAY_COUNT(sSunfloraGfx39)}, 
@@ -2611,17 +2611,17 @@ static const ax_sprite sSunfloraSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx40[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_40.4bpp");
+static const u8 sSunfloraGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_40.4bpp.lz");
 static const ax_sprite sSunfloraSprites40[] = {
 	{NULL, 128}, 
 	{sSunfloraGfx40, ARRAY_COUNT(sSunfloraGfx40)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx41[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_41.4bpp");
-static const u8 sSunfloraGfx41_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_41_1.4bpp");
-static const u8 sSunfloraGfx41_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_41_2.4bpp");
-static const u8 sSunfloraGfx41_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_41_3.4bpp");
+static const u8 sSunfloraGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_41.4bpp.lz");
+static const u8 sSunfloraGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_41_1.4bpp.lz");
+static const u8 sSunfloraGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_41_2.4bpp.lz");
+static const u8 sSunfloraGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_41_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites41[] = {
 	{sSunfloraGfx41, ARRAY_COUNT(sSunfloraGfx41)}, 
 	{NULL, 32}, 
@@ -2633,9 +2633,9 @@ static const ax_sprite sSunfloraSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx42[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_42.4bpp");
-static const u8 sSunfloraGfx42_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_42_1.4bpp");
-static const u8 sSunfloraGfx42_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_42_2.4bpp");
+static const u8 sSunfloraGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_42.4bpp.lz");
+static const u8 sSunfloraGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_42_1.4bpp.lz");
+static const u8 sSunfloraGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_42_2.4bpp.lz");
 static const ax_sprite sSunfloraSprites42[] = {
 	{NULL, 128}, 
 	{sSunfloraGfx42, ARRAY_COUNT(sSunfloraGfx42)}, 
@@ -2646,9 +2646,9 @@ static const ax_sprite sSunfloraSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx43[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_43.4bpp");
-static const u8 sSunfloraGfx43_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_43_1.4bpp");
-static const u8 sSunfloraGfx43_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_43_2.4bpp");
+static const u8 sSunfloraGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_43.4bpp.lz");
+static const u8 sSunfloraGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_43_1.4bpp.lz");
+static const u8 sSunfloraGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_43_2.4bpp.lz");
 static const ax_sprite sSunfloraSprites43[] = {
 	{NULL, 128}, 
 	{sSunfloraGfx43, ARRAY_COUNT(sSunfloraGfx43)}, 
@@ -2659,10 +2659,10 @@ static const ax_sprite sSunfloraSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx44[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_44.4bpp");
-static const u8 sSunfloraGfx44_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_44_1.4bpp");
-static const u8 sSunfloraGfx44_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_44_2.4bpp");
-static const u8 sSunfloraGfx44_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_44_3.4bpp");
+static const u8 sSunfloraGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_44.4bpp.lz");
+static const u8 sSunfloraGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_44_1.4bpp.lz");
+static const u8 sSunfloraGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_44_2.4bpp.lz");
+static const u8 sSunfloraGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_44_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites44[] = {
 	{sSunfloraGfx44, ARRAY_COUNT(sSunfloraGfx44)}, 
 	{NULL, 32}, 
@@ -2674,10 +2674,10 @@ static const ax_sprite sSunfloraSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx45[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_45.4bpp");
-static const u8 sSunfloraGfx45_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_45_1.4bpp");
-static const u8 sSunfloraGfx45_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_45_2.4bpp");
-static const u8 sSunfloraGfx45_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_45_3.4bpp");
+static const u8 sSunfloraGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_45.4bpp.lz");
+static const u8 sSunfloraGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_45_1.4bpp.lz");
+static const u8 sSunfloraGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_45_2.4bpp.lz");
+static const u8 sSunfloraGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_45_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites45[] = {
 	{sSunfloraGfx45, ARRAY_COUNT(sSunfloraGfx45)}, 
 	{NULL, 64}, 
@@ -2689,10 +2689,10 @@ static const ax_sprite sSunfloraSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx46[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_46.4bpp");
-static const u8 sSunfloraGfx46_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_46_1.4bpp");
-static const u8 sSunfloraGfx46_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_46_2.4bpp");
-static const u8 sSunfloraGfx46_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_46_3.4bpp");
+static const u8 sSunfloraGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_46.4bpp.lz");
+static const u8 sSunfloraGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_46_1.4bpp.lz");
+static const u8 sSunfloraGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_46_2.4bpp.lz");
+static const u8 sSunfloraGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_46_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites46[] = {
 	{sSunfloraGfx46, ARRAY_COUNT(sSunfloraGfx46)}, 
 	{NULL, 64}, 
@@ -2704,10 +2704,10 @@ static const ax_sprite sSunfloraSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx47[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_47.4bpp");
-static const u8 sSunfloraGfx47_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_47_1.4bpp");
-static const u8 sSunfloraGfx47_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_47_2.4bpp");
-static const u8 sSunfloraGfx47_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_47_3.4bpp");
+static const u8 sSunfloraGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_47.4bpp.lz");
+static const u8 sSunfloraGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_47_1.4bpp.lz");
+static const u8 sSunfloraGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_47_2.4bpp.lz");
+static const u8 sSunfloraGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_47_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites47[] = {
 	{sSunfloraGfx47, ARRAY_COUNT(sSunfloraGfx47)}, 
 	{NULL, 32}, 
@@ -2719,10 +2719,10 @@ static const ax_sprite sSunfloraSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx48[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_48.4bpp");
-static const u8 sSunfloraGfx48_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_48_1.4bpp");
-static const u8 sSunfloraGfx48_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_48_2.4bpp");
-static const u8 sSunfloraGfx48_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_48_3.4bpp");
+static const u8 sSunfloraGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_48.4bpp.lz");
+static const u8 sSunfloraGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_48_1.4bpp.lz");
+static const u8 sSunfloraGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_48_2.4bpp.lz");
+static const u8 sSunfloraGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_48_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites48[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx48, ARRAY_COUNT(sSunfloraGfx48)}, 
@@ -2735,10 +2735,10 @@ static const ax_sprite sSunfloraSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx49[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_49.4bpp");
-static const u8 sSunfloraGfx49_1[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_49_1.4bpp");
-static const u8 sSunfloraGfx49_2[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_49_2.4bpp");
-static const u8 sSunfloraGfx49_3[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_49_3.4bpp");
+static const u8 sSunfloraGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_49.4bpp.lz");
+static const u8 sSunfloraGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_49_1.4bpp.lz");
+static const u8 sSunfloraGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_49_2.4bpp.lz");
+static const u8 sSunfloraGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_49_3.4bpp.lz");
 static const ax_sprite sSunfloraSprites49[] = {
 	{NULL, 32}, 
 	{sSunfloraGfx49, ARRAY_COUNT(sSunfloraGfx49)}, 
@@ -2750,37 +2750,37 @@ static const ax_sprite sSunfloraSprites49[] = {
 	{sSunfloraGfx49_3, ARRAY_COUNT(sSunfloraGfx49_3)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx50[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_50.4bpp");
+static const u8 sSunfloraGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_50.4bpp.lz");
 static const ax_sprite sSunfloraSprites50[] = {
 	{sSunfloraGfx50, ARRAY_COUNT(sSunfloraGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx51[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_51.4bpp");
+static const u8 sSunfloraGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_51.4bpp.lz");
 static const ax_sprite sSunfloraSprites51[] = {
 	{sSunfloraGfx51, ARRAY_COUNT(sSunfloraGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx52[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_52.4bpp");
+static const u8 sSunfloraGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_52.4bpp.lz");
 static const ax_sprite sSunfloraSprites52[] = {
 	{sSunfloraGfx52, ARRAY_COUNT(sSunfloraGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx53[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_53.4bpp");
+static const u8 sSunfloraGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_53.4bpp.lz");
 static const ax_sprite sSunfloraSprites53[] = {
 	{sSunfloraGfx53, ARRAY_COUNT(sSunfloraGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx54[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_54.4bpp");
+static const u8 sSunfloraGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_54.4bpp.lz");
 static const ax_sprite sSunfloraSprites54[] = {
 	{sSunfloraGfx54, ARRAY_COUNT(sSunfloraGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx55[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_55.4bpp");
+static const u8 sSunfloraGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_55.4bpp.lz");
 static const ax_sprite sSunfloraSprites55[] = {
 	{sSunfloraGfx55, ARRAY_COUNT(sSunfloraGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sSunfloraGfx56[] = INCBIN_U8("graphics/ax/mon/sunflora/sprite_56.4bpp");
+static const u8 sSunfloraGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sunflora/sprite_56.4bpp.lz");
 static const ax_sprite sSunfloraSprites56[] = {
 	{sSunfloraGfx56, ARRAY_COUNT(sSunfloraGfx56)}, 
 	{NULL, 0}

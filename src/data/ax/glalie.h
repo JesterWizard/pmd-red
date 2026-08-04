@@ -1999,83 +1999,83 @@ static const ax_anim sGlalieAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGlalieGfx1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_1.4bpp");
+static const u8 sGlalieGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_1.4bpp.lz");
 static const ax_sprite sGlalieSprites1[] = {
 	{sGlalieGfx1, ARRAY_COUNT(sGlalieGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx2[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_2.4bpp");
+static const u8 sGlalieGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_2.4bpp.lz");
 static const ax_sprite sGlalieSprites2[] = {
 	{sGlalieGfx2, ARRAY_COUNT(sGlalieGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx3[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_3.4bpp");
+static const u8 sGlalieGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_3.4bpp.lz");
 static const ax_sprite sGlalieSprites3[] = {
 	{sGlalieGfx3, ARRAY_COUNT(sGlalieGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx4[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_4.4bpp");
+static const u8 sGlalieGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_4.4bpp.lz");
 static const ax_sprite sGlalieSprites4[] = {
 	{sGlalieGfx4, ARRAY_COUNT(sGlalieGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx5[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_5.4bpp");
+static const u8 sGlalieGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_5.4bpp.lz");
 static const ax_sprite sGlalieSprites5[] = {
 	{sGlalieGfx5, ARRAY_COUNT(sGlalieGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx6[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_6.4bpp");
+static const u8 sGlalieGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_6.4bpp.lz");
 static const ax_sprite sGlalieSprites6[] = {
 	{sGlalieGfx6, ARRAY_COUNT(sGlalieGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx7[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_7.4bpp");
+static const u8 sGlalieGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_7.4bpp.lz");
 static const ax_sprite sGlalieSprites7[] = {
 	{sGlalieGfx7, ARRAY_COUNT(sGlalieGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx8[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_8.4bpp");
+static const u8 sGlalieGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_8.4bpp.lz");
 static const ax_sprite sGlalieSprites8[] = {
 	{sGlalieGfx8, ARRAY_COUNT(sGlalieGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx9[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_9.4bpp");
+static const u8 sGlalieGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_9.4bpp.lz");
 static const ax_sprite sGlalieSprites9[] = {
 	{sGlalieGfx9, ARRAY_COUNT(sGlalieGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx10[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_10.4bpp");
+static const u8 sGlalieGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_10.4bpp.lz");
 static const ax_sprite sGlalieSprites10[] = {
 	{sGlalieGfx10, ARRAY_COUNT(sGlalieGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx11[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_11.4bpp");
+static const u8 sGlalieGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_11.4bpp.lz");
 static const ax_sprite sGlalieSprites11[] = {
 	{sGlalieGfx11, ARRAY_COUNT(sGlalieGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx12[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_12.4bpp");
+static const u8 sGlalieGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_12.4bpp.lz");
 static const ax_sprite sGlalieSprites12[] = {
 	{sGlalieGfx12, ARRAY_COUNT(sGlalieGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx13[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_13.4bpp");
+static const u8 sGlalieGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_13.4bpp.lz");
 static const ax_sprite sGlalieSprites13[] = {
 	{sGlalieGfx13, ARRAY_COUNT(sGlalieGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx14[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_14.4bpp");
+static const u8 sGlalieGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_14.4bpp.lz");
 static const ax_sprite sGlalieSprites14[] = {
 	{sGlalieGfx14, ARRAY_COUNT(sGlalieGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx15[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_15.4bpp");
+static const u8 sGlalieGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_15.4bpp.lz");
 static const ax_sprite sGlalieSprites15[] = {
 	{sGlalieGfx15, ARRAY_COUNT(sGlalieGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx16[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_16.4bpp");
-static const u8 sGlalieGfx16_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_16_1.4bpp");
+static const u8 sGlalieGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_16.4bpp.lz");
+static const u8 sGlalieGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_16_1.4bpp.lz");
 static const ax_sprite sGlalieSprites16[] = {
 	{NULL, 32}, 
 	{sGlalieGfx16, ARRAY_COUNT(sGlalieGfx16)}, 
@@ -2083,8 +2083,8 @@ static const ax_sprite sGlalieSprites16[] = {
 	{sGlalieGfx16_1, ARRAY_COUNT(sGlalieGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx17[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_17.4bpp");
-static const u8 sGlalieGfx17_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_17_1.4bpp");
+static const u8 sGlalieGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_17.4bpp.lz");
+static const u8 sGlalieGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_17_1.4bpp.lz");
 static const ax_sprite sGlalieSprites17[] = {
 	{NULL, 32}, 
 	{sGlalieGfx17, ARRAY_COUNT(sGlalieGfx17)}, 
@@ -2092,8 +2092,8 @@ static const ax_sprite sGlalieSprites17[] = {
 	{sGlalieGfx17_1, ARRAY_COUNT(sGlalieGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx18[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_18.4bpp");
-static const u8 sGlalieGfx18_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_18_1.4bpp");
+static const u8 sGlalieGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_18.4bpp.lz");
+static const u8 sGlalieGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_18_1.4bpp.lz");
 static const ax_sprite sGlalieSprites18[] = {
 	{sGlalieGfx18, ARRAY_COUNT(sGlalieGfx18)}, 
 	{NULL, 32}, 
@@ -2101,9 +2101,9 @@ static const ax_sprite sGlalieSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx19[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_19.4bpp");
-static const u8 sGlalieGfx19_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_19_1.4bpp");
-static const u8 sGlalieGfx19_2[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_19_2.4bpp");
+static const u8 sGlalieGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_19.4bpp.lz");
+static const u8 sGlalieGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_19_1.4bpp.lz");
+static const u8 sGlalieGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_19_2.4bpp.lz");
 static const ax_sprite sGlalieSprites19[] = {
 	{sGlalieGfx19, ARRAY_COUNT(sGlalieGfx19)}, 
 	{NULL, 64}, 
@@ -2113,10 +2113,10 @@ static const ax_sprite sGlalieSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx20[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_20.4bpp");
-static const u8 sGlalieGfx20_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_20_1.4bpp");
-static const u8 sGlalieGfx20_2[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_20_2.4bpp");
-static const u8 sGlalieGfx20_3[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_20_3.4bpp");
+static const u8 sGlalieGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_20.4bpp.lz");
+static const u8 sGlalieGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_20_1.4bpp.lz");
+static const u8 sGlalieGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_20_2.4bpp.lz");
+static const u8 sGlalieGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_20_3.4bpp.lz");
 static const ax_sprite sGlalieSprites20[] = {
 	{sGlalieGfx20, ARRAY_COUNT(sGlalieGfx20)}, 
 	{NULL, 32}, 
@@ -2128,10 +2128,10 @@ static const ax_sprite sGlalieSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx21[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_21.4bpp");
-static const u8 sGlalieGfx21_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_21_1.4bpp");
-static const u8 sGlalieGfx21_2[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_21_2.4bpp");
-static const u8 sGlalieGfx21_3[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_21_3.4bpp");
+static const u8 sGlalieGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_21.4bpp.lz");
+static const u8 sGlalieGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_21_1.4bpp.lz");
+static const u8 sGlalieGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_21_2.4bpp.lz");
+static const u8 sGlalieGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_21_3.4bpp.lz");
 static const ax_sprite sGlalieSprites21[] = {
 	{NULL, 32}, 
 	{sGlalieGfx21, ARRAY_COUNT(sGlalieGfx21)}, 
@@ -2144,8 +2144,8 @@ static const ax_sprite sGlalieSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx22[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_22.4bpp");
-static const u8 sGlalieGfx22_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_22_1.4bpp");
+static const u8 sGlalieGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_22.4bpp.lz");
+static const u8 sGlalieGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_22_1.4bpp.lz");
 static const ax_sprite sGlalieSprites22[] = {
 	{NULL, 32}, 
 	{sGlalieGfx22, ARRAY_COUNT(sGlalieGfx22)}, 
@@ -2153,9 +2153,9 @@ static const ax_sprite sGlalieSprites22[] = {
 	{sGlalieGfx22_1, ARRAY_COUNT(sGlalieGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx23[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_23.4bpp");
-static const u8 sGlalieGfx23_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_23_1.4bpp");
-static const u8 sGlalieGfx23_2[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_23_2.4bpp");
+static const u8 sGlalieGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_23.4bpp.lz");
+static const u8 sGlalieGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_23_1.4bpp.lz");
+static const u8 sGlalieGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_23_2.4bpp.lz");
 static const ax_sprite sGlalieSprites23[] = {
 	{NULL, 32}, 
 	{sGlalieGfx23, ARRAY_COUNT(sGlalieGfx23)}, 
@@ -2166,13 +2166,13 @@ static const ax_sprite sGlalieSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx24[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_24.4bpp");
+static const u8 sGlalieGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_24.4bpp.lz");
 static const ax_sprite sGlalieSprites24[] = {
 	{sGlalieGfx24, ARRAY_COUNT(sGlalieGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx25[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_25.4bpp");
-static const u8 sGlalieGfx25_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_25_1.4bpp");
+static const u8 sGlalieGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_25.4bpp.lz");
+static const u8 sGlalieGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_25_1.4bpp.lz");
 static const ax_sprite sGlalieSprites25[] = {
 	{NULL, 32}, 
 	{sGlalieGfx25, ARRAY_COUNT(sGlalieGfx25)}, 
@@ -2180,8 +2180,8 @@ static const ax_sprite sGlalieSprites25[] = {
 	{sGlalieGfx25_1, ARRAY_COUNT(sGlalieGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx26[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_26.4bpp");
-static const u8 sGlalieGfx26_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_26_1.4bpp");
+static const u8 sGlalieGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_26.4bpp.lz");
+static const u8 sGlalieGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_26_1.4bpp.lz");
 static const ax_sprite sGlalieSprites26[] = {
 	{NULL, 32}, 
 	{sGlalieGfx26, ARRAY_COUNT(sGlalieGfx26)}, 
@@ -2189,8 +2189,8 @@ static const ax_sprite sGlalieSprites26[] = {
 	{sGlalieGfx26_1, ARRAY_COUNT(sGlalieGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx27[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_27.4bpp");
-static const u8 sGlalieGfx27_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_27_1.4bpp");
+static const u8 sGlalieGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_27.4bpp.lz");
+static const u8 sGlalieGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_27_1.4bpp.lz");
 static const ax_sprite sGlalieSprites27[] = {
 	{sGlalieGfx27, ARRAY_COUNT(sGlalieGfx27)}, 
 	{NULL, 32}, 
@@ -2198,10 +2198,10 @@ static const ax_sprite sGlalieSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx28[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_28.4bpp");
-static const u8 sGlalieGfx28_1[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_28_1.4bpp");
-static const u8 sGlalieGfx28_2[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_28_2.4bpp");
-static const u8 sGlalieGfx28_3[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_28_3.4bpp");
+static const u8 sGlalieGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_28.4bpp.lz");
+static const u8 sGlalieGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_28_1.4bpp.lz");
+static const u8 sGlalieGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_28_2.4bpp.lz");
+static const u8 sGlalieGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_28_3.4bpp.lz");
 static const ax_sprite sGlalieSprites28[] = {
 	{sGlalieGfx28, ARRAY_COUNT(sGlalieGfx28)}, 
 	{NULL, 32}, 
@@ -2213,37 +2213,37 @@ static const ax_sprite sGlalieSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx29[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_29.4bpp");
+static const u8 sGlalieGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_29.4bpp.lz");
 static const ax_sprite sGlalieSprites29[] = {
 	{sGlalieGfx29, ARRAY_COUNT(sGlalieGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx30[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_30.4bpp");
+static const u8 sGlalieGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_30.4bpp.lz");
 static const ax_sprite sGlalieSprites30[] = {
 	{sGlalieGfx30, ARRAY_COUNT(sGlalieGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx31[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_31.4bpp");
+static const u8 sGlalieGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_31.4bpp.lz");
 static const ax_sprite sGlalieSprites31[] = {
 	{sGlalieGfx31, ARRAY_COUNT(sGlalieGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx32[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_32.4bpp");
+static const u8 sGlalieGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_32.4bpp.lz");
 static const ax_sprite sGlalieSprites32[] = {
 	{sGlalieGfx32, ARRAY_COUNT(sGlalieGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx33[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_33.4bpp");
+static const u8 sGlalieGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_33.4bpp.lz");
 static const ax_sprite sGlalieSprites33[] = {
 	{sGlalieGfx33, ARRAY_COUNT(sGlalieGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx34[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_34.4bpp");
+static const u8 sGlalieGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_34.4bpp.lz");
 static const ax_sprite sGlalieSprites34[] = {
 	{sGlalieGfx34, ARRAY_COUNT(sGlalieGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sGlalieGfx35[] = INCBIN_U8("graphics/ax/mon/glalie/sprite_35.4bpp");
+static const u8 sGlalieGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/glalie/sprite_35.4bpp.lz");
 static const ax_sprite sGlalieSprites35[] = {
 	{sGlalieGfx35, ARRAY_COUNT(sGlalieGfx35)}, 
 	{NULL, 0}

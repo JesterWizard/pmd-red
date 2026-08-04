@@ -2459,59 +2459,59 @@ static const ax_anim sHoppipAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHoppipGfx1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_1.4bpp");
+static const u8 sHoppipGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_1.4bpp.lz");
 static const ax_sprite sHoppipSprites1[] = {
 	{sHoppipGfx1, ARRAY_COUNT(sHoppipGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_2.4bpp");
+static const u8 sHoppipGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_2.4bpp.lz");
 static const ax_sprite sHoppipSprites2[] = {
 	{sHoppipGfx2, ARRAY_COUNT(sHoppipGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx3[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_3.4bpp");
+static const u8 sHoppipGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_3.4bpp.lz");
 static const ax_sprite sHoppipSprites3[] = {
 	{sHoppipGfx3, ARRAY_COUNT(sHoppipGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx4[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_4.4bpp");
+static const u8 sHoppipGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_4.4bpp.lz");
 static const ax_sprite sHoppipSprites4[] = {
 	{sHoppipGfx4, ARRAY_COUNT(sHoppipGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx5[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_5.4bpp");
+static const u8 sHoppipGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_5.4bpp.lz");
 static const ax_sprite sHoppipSprites5[] = {
 	{sHoppipGfx5, ARRAY_COUNT(sHoppipGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx6[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_6.4bpp");
+static const u8 sHoppipGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_6.4bpp.lz");
 static const ax_sprite sHoppipSprites6[] = {
 	{sHoppipGfx6, ARRAY_COUNT(sHoppipGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx7[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_7.4bpp");
+static const u8 sHoppipGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_7.4bpp.lz");
 static const ax_sprite sHoppipSprites7[] = {
 	{sHoppipGfx7, ARRAY_COUNT(sHoppipGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx8[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_8.4bpp");
+static const u8 sHoppipGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_8.4bpp.lz");
 static const ax_sprite sHoppipSprites8[] = {
 	{sHoppipGfx8, ARRAY_COUNT(sHoppipGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx9[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_9.4bpp");
+static const u8 sHoppipGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_9.4bpp.lz");
 static const ax_sprite sHoppipSprites9[] = {
 	{sHoppipGfx9, ARRAY_COUNT(sHoppipGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx10[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_10.4bpp");
+static const u8 sHoppipGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_10.4bpp.lz");
 static const ax_sprite sHoppipSprites10[] = {
 	{sHoppipGfx10, ARRAY_COUNT(sHoppipGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx11[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_11.4bpp");
-static const u8 sHoppipGfx11_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_11_1.4bpp");
-static const u8 sHoppipGfx11_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_11_2.4bpp");
+static const u8 sHoppipGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_11.4bpp.lz");
+static const u8 sHoppipGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_11_1.4bpp.lz");
+static const u8 sHoppipGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_11_2.4bpp.lz");
 static const ax_sprite sHoppipSprites11[] = {
 	{sHoppipGfx11, ARRAY_COUNT(sHoppipGfx11)}, 
 	{NULL, 32}, 
@@ -2521,9 +2521,9 @@ static const ax_sprite sHoppipSprites11[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx12[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_12.4bpp");
-static const u8 sHoppipGfx12_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_12_1.4bpp");
-static const u8 sHoppipGfx12_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_12_2.4bpp");
+static const u8 sHoppipGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_12.4bpp.lz");
+static const u8 sHoppipGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_12_1.4bpp.lz");
+static const u8 sHoppipGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_12_2.4bpp.lz");
 static const ax_sprite sHoppipSprites12[] = {
 	{sHoppipGfx12, ARRAY_COUNT(sHoppipGfx12)}, 
 	{NULL, 32}, 
@@ -2533,8 +2533,8 @@ static const ax_sprite sHoppipSprites12[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx13[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_13.4bpp");
-static const u8 sHoppipGfx13_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_13_1.4bpp");
+static const u8 sHoppipGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_13.4bpp.lz");
+static const u8 sHoppipGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_13_1.4bpp.lz");
 static const ax_sprite sHoppipSprites13[] = {
 	{sHoppipGfx13, ARRAY_COUNT(sHoppipGfx13)}, 
 	{NULL, 32}, 
@@ -2542,9 +2542,9 @@ static const ax_sprite sHoppipSprites13[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx14[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_14.4bpp");
-static const u8 sHoppipGfx14_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_14_1.4bpp");
-static const u8 sHoppipGfx14_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_14_2.4bpp");
+static const u8 sHoppipGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_14.4bpp.lz");
+static const u8 sHoppipGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_14_1.4bpp.lz");
+static const u8 sHoppipGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_14_2.4bpp.lz");
 static const ax_sprite sHoppipSprites14[] = {
 	{sHoppipGfx14, ARRAY_COUNT(sHoppipGfx14)}, 
 	{NULL, 32}, 
@@ -2554,9 +2554,9 @@ static const ax_sprite sHoppipSprites14[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx15[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_15.4bpp");
-static const u8 sHoppipGfx15_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_15_1.4bpp");
-static const u8 sHoppipGfx15_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_15_2.4bpp");
+static const u8 sHoppipGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_15.4bpp.lz");
+static const u8 sHoppipGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_15_1.4bpp.lz");
+static const u8 sHoppipGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_15_2.4bpp.lz");
 static const ax_sprite sHoppipSprites15[] = {
 	{sHoppipGfx15, ARRAY_COUNT(sHoppipGfx15)}, 
 	{NULL, 32}, 
@@ -2566,9 +2566,9 @@ static const ax_sprite sHoppipSprites15[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx16[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_16.4bpp");
-static const u8 sHoppipGfx16_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_16_1.4bpp");
-static const u8 sHoppipGfx16_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_16_2.4bpp");
+static const u8 sHoppipGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_16.4bpp.lz");
+static const u8 sHoppipGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_16_1.4bpp.lz");
+static const u8 sHoppipGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_16_2.4bpp.lz");
 static const ax_sprite sHoppipSprites16[] = {
 	{sHoppipGfx16, ARRAY_COUNT(sHoppipGfx16)}, 
 	{NULL, 64}, 
@@ -2578,10 +2578,10 @@ static const ax_sprite sHoppipSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx17[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_17.4bpp");
-static const u8 sHoppipGfx17_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_17_1.4bpp");
-static const u8 sHoppipGfx17_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_17_2.4bpp");
-static const u8 sHoppipGfx17_3[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_17_3.4bpp");
+static const u8 sHoppipGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_17.4bpp.lz");
+static const u8 sHoppipGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_17_1.4bpp.lz");
+static const u8 sHoppipGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_17_2.4bpp.lz");
+static const u8 sHoppipGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_17_3.4bpp.lz");
 static const ax_sprite sHoppipSprites17[] = {
 	{NULL, 32}, 
 	{sHoppipGfx17, ARRAY_COUNT(sHoppipGfx17)}, 
@@ -2594,9 +2594,9 @@ static const ax_sprite sHoppipSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx18[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_18.4bpp");
-static const u8 sHoppipGfx18_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_18_1.4bpp");
-static const u8 sHoppipGfx18_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_18_2.4bpp");
+static const u8 sHoppipGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_18.4bpp.lz");
+static const u8 sHoppipGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_18_1.4bpp.lz");
+static const u8 sHoppipGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_18_2.4bpp.lz");
 static const ax_sprite sHoppipSprites18[] = {
 	{NULL, 32}, 
 	{sHoppipGfx18, ARRAY_COUNT(sHoppipGfx18)}, 
@@ -2607,9 +2607,9 @@ static const ax_sprite sHoppipSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx19[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_19.4bpp");
-static const u8 sHoppipGfx19_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_19_1.4bpp");
-static const u8 sHoppipGfx19_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_19_2.4bpp");
+static const u8 sHoppipGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_19.4bpp.lz");
+static const u8 sHoppipGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_19_1.4bpp.lz");
+static const u8 sHoppipGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_19_2.4bpp.lz");
 static const ax_sprite sHoppipSprites19[] = {
 	{NULL, 32}, 
 	{sHoppipGfx19, ARRAY_COUNT(sHoppipGfx19)}, 
@@ -2620,10 +2620,10 @@ static const ax_sprite sHoppipSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx20[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_20.4bpp");
-static const u8 sHoppipGfx20_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_20_1.4bpp");
-static const u8 sHoppipGfx20_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_20_2.4bpp");
-static const u8 sHoppipGfx20_3[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_20_3.4bpp");
+static const u8 sHoppipGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_20.4bpp.lz");
+static const u8 sHoppipGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_20_1.4bpp.lz");
+static const u8 sHoppipGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_20_2.4bpp.lz");
+static const u8 sHoppipGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_20_3.4bpp.lz");
 static const ax_sprite sHoppipSprites20[] = {
 	{sHoppipGfx20, ARRAY_COUNT(sHoppipGfx20)}, 
 	{NULL, 32}, 
@@ -2635,10 +2635,10 @@ static const ax_sprite sHoppipSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx21[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_21.4bpp");
-static const u8 sHoppipGfx21_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_21_1.4bpp");
-static const u8 sHoppipGfx21_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_21_2.4bpp");
-static const u8 sHoppipGfx21_3[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_21_3.4bpp");
+static const u8 sHoppipGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_21.4bpp.lz");
+static const u8 sHoppipGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_21_1.4bpp.lz");
+static const u8 sHoppipGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_21_2.4bpp.lz");
+static const u8 sHoppipGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_21_3.4bpp.lz");
 static const ax_sprite sHoppipSprites21[] = {
 	{sHoppipGfx21, ARRAY_COUNT(sHoppipGfx21)}, 
 	{NULL, 32}, 
@@ -2650,10 +2650,10 @@ static const ax_sprite sHoppipSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx22[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_22.4bpp");
-static const u8 sHoppipGfx22_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_22_1.4bpp");
-static const u8 sHoppipGfx22_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_22_2.4bpp");
-static const u8 sHoppipGfx22_3[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_22_3.4bpp");
+static const u8 sHoppipGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_22.4bpp.lz");
+static const u8 sHoppipGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_22_1.4bpp.lz");
+static const u8 sHoppipGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_22_2.4bpp.lz");
+static const u8 sHoppipGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_22_3.4bpp.lz");
 static const ax_sprite sHoppipSprites22[] = {
 	{NULL, 32}, 
 	{sHoppipGfx22, ARRAY_COUNT(sHoppipGfx22)}, 
@@ -2666,9 +2666,9 @@ static const ax_sprite sHoppipSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx23[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_23.4bpp");
-static const u8 sHoppipGfx23_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_23_1.4bpp");
-static const u8 sHoppipGfx23_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_23_2.4bpp");
+static const u8 sHoppipGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_23.4bpp.lz");
+static const u8 sHoppipGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_23_1.4bpp.lz");
+static const u8 sHoppipGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_23_2.4bpp.lz");
 static const ax_sprite sHoppipSprites23[] = {
 	{sHoppipGfx23, ARRAY_COUNT(sHoppipGfx23)}, 
 	{NULL, 32}, 
@@ -2678,9 +2678,9 @@ static const ax_sprite sHoppipSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx24[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_24.4bpp");
-static const u8 sHoppipGfx24_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_24_1.4bpp");
-static const u8 sHoppipGfx24_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_24_2.4bpp");
+static const u8 sHoppipGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_24.4bpp.lz");
+static const u8 sHoppipGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_24_1.4bpp.lz");
+static const u8 sHoppipGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_24_2.4bpp.lz");
 static const ax_sprite sHoppipSprites24[] = {
 	{sHoppipGfx24, ARRAY_COUNT(sHoppipGfx24)}, 
 	{NULL, 32}, 
@@ -2690,8 +2690,8 @@ static const ax_sprite sHoppipSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx25[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_25.4bpp");
-static const u8 sHoppipGfx25_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_25_1.4bpp");
+static const u8 sHoppipGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_25.4bpp.lz");
+static const u8 sHoppipGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_25_1.4bpp.lz");
 static const ax_sprite sHoppipSprites25[] = {
 	{sHoppipGfx25, ARRAY_COUNT(sHoppipGfx25)}, 
 	{NULL, 32}, 
@@ -2699,8 +2699,8 @@ static const ax_sprite sHoppipSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx26[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_26.4bpp");
-static const u8 sHoppipGfx26_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_26_1.4bpp");
+static const u8 sHoppipGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_26.4bpp.lz");
+static const u8 sHoppipGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_26_1.4bpp.lz");
 static const ax_sprite sHoppipSprites26[] = {
 	{sHoppipGfx26, ARRAY_COUNT(sHoppipGfx26)}, 
 	{NULL, 64}, 
@@ -2708,8 +2708,8 @@ static const ax_sprite sHoppipSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx27[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_27.4bpp");
-static const u8 sHoppipGfx27_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_27_1.4bpp");
+static const u8 sHoppipGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_27.4bpp.lz");
+static const u8 sHoppipGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_27_1.4bpp.lz");
 static const ax_sprite sHoppipSprites27[] = {
 	{sHoppipGfx27, ARRAY_COUNT(sHoppipGfx27)}, 
 	{NULL, 32}, 
@@ -2717,10 +2717,10 @@ static const ax_sprite sHoppipSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx28[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_28.4bpp");
-static const u8 sHoppipGfx28_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_28_1.4bpp");
-static const u8 sHoppipGfx28_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_28_2.4bpp");
-static const u8 sHoppipGfx28_3[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_28_3.4bpp");
+static const u8 sHoppipGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_28.4bpp.lz");
+static const u8 sHoppipGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_28_1.4bpp.lz");
+static const u8 sHoppipGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_28_2.4bpp.lz");
+static const u8 sHoppipGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_28_3.4bpp.lz");
 static const ax_sprite sHoppipSprites28[] = {
 	{NULL, 32}, 
 	{sHoppipGfx28, ARRAY_COUNT(sHoppipGfx28)}, 
@@ -2733,10 +2733,10 @@ static const ax_sprite sHoppipSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx29[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_29.4bpp");
-static const u8 sHoppipGfx29_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_29_1.4bpp");
-static const u8 sHoppipGfx29_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_29_2.4bpp");
-static const u8 sHoppipGfx29_3[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_29_3.4bpp");
+static const u8 sHoppipGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_29.4bpp.lz");
+static const u8 sHoppipGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_29_1.4bpp.lz");
+static const u8 sHoppipGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_29_2.4bpp.lz");
+static const u8 sHoppipGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_29_3.4bpp.lz");
 static const ax_sprite sHoppipSprites29[] = {
 	{NULL, 32}, 
 	{sHoppipGfx29, ARRAY_COUNT(sHoppipGfx29)}, 
@@ -2749,9 +2749,9 @@ static const ax_sprite sHoppipSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx30[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_30.4bpp");
-static const u8 sHoppipGfx30_1[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_30_1.4bpp");
-static const u8 sHoppipGfx30_2[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_30_2.4bpp");
+static const u8 sHoppipGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_30.4bpp.lz");
+static const u8 sHoppipGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_30_1.4bpp.lz");
+static const u8 sHoppipGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_30_2.4bpp.lz");
 static const ax_sprite sHoppipSprites30[] = {
 	{NULL, 32}, 
 	{sHoppipGfx30, ARRAY_COUNT(sHoppipGfx30)}, 
@@ -2762,37 +2762,37 @@ static const ax_sprite sHoppipSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx31[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_31.4bpp");
+static const u8 sHoppipGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_31.4bpp.lz");
 static const ax_sprite sHoppipSprites31[] = {
 	{sHoppipGfx31, ARRAY_COUNT(sHoppipGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx32[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_32.4bpp");
+static const u8 sHoppipGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_32.4bpp.lz");
 static const ax_sprite sHoppipSprites32[] = {
 	{sHoppipGfx32, ARRAY_COUNT(sHoppipGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx33[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_33.4bpp");
+static const u8 sHoppipGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_33.4bpp.lz");
 static const ax_sprite sHoppipSprites33[] = {
 	{sHoppipGfx33, ARRAY_COUNT(sHoppipGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx34[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_34.4bpp");
+static const u8 sHoppipGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_34.4bpp.lz");
 static const ax_sprite sHoppipSprites34[] = {
 	{sHoppipGfx34, ARRAY_COUNT(sHoppipGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx35[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_35.4bpp");
+static const u8 sHoppipGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_35.4bpp.lz");
 static const ax_sprite sHoppipSprites35[] = {
 	{sHoppipGfx35, ARRAY_COUNT(sHoppipGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx36[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_36.4bpp");
+static const u8 sHoppipGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_36.4bpp.lz");
 static const ax_sprite sHoppipSprites36[] = {
 	{sHoppipGfx36, ARRAY_COUNT(sHoppipGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sHoppipGfx37[] = INCBIN_U8("graphics/ax/mon/hoppip/sprite_37.4bpp");
+static const u8 sHoppipGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hoppip/sprite_37.4bpp.lz");
 static const ax_sprite sHoppipSprites37[] = {
 	{sHoppipGfx37, ARRAY_COUNT(sHoppipGfx37)}, 
 	{NULL, 0}

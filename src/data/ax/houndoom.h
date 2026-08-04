@@ -2804,240 +2804,240 @@ static const ax_anim sHoundoomAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHoundoomGfx1[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_1.4bpp");
+static const u8 sHoundoomGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_1.4bpp.lz");
 static const ax_sprite sHoundoomSprites1[] = {
 	{sHoundoomGfx1, ARRAY_COUNT(sHoundoomGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx2[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_2.4bpp");
+static const u8 sHoundoomGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_2.4bpp.lz");
 static const ax_sprite sHoundoomSprites2[] = {
 	{sHoundoomGfx2, ARRAY_COUNT(sHoundoomGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx3[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_3.4bpp");
+static const u8 sHoundoomGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_3.4bpp.lz");
 static const ax_sprite sHoundoomSprites3[] = {
 	{sHoundoomGfx3, ARRAY_COUNT(sHoundoomGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx4[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_4.4bpp");
+static const u8 sHoundoomGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_4.4bpp.lz");
 static const ax_sprite sHoundoomSprites4[] = {
 	{sHoundoomGfx4, ARRAY_COUNT(sHoundoomGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx5[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_5.4bpp");
+static const u8 sHoundoomGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_5.4bpp.lz");
 static const ax_sprite sHoundoomSprites5[] = {
 	{sHoundoomGfx5, ARRAY_COUNT(sHoundoomGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx6[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_6.4bpp");
+static const u8 sHoundoomGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_6.4bpp.lz");
 static const ax_sprite sHoundoomSprites6[] = {
 	{sHoundoomGfx6, ARRAY_COUNT(sHoundoomGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx7[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_7.4bpp");
+static const u8 sHoundoomGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_7.4bpp.lz");
 static const ax_sprite sHoundoomSprites7[] = {
 	{sHoundoomGfx7, ARRAY_COUNT(sHoundoomGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx8[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_8.4bpp");
+static const u8 sHoundoomGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_8.4bpp.lz");
 static const ax_sprite sHoundoomSprites8[] = {
 	{sHoundoomGfx8, ARRAY_COUNT(sHoundoomGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx9[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_9.4bpp");
+static const u8 sHoundoomGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_9.4bpp.lz");
 static const ax_sprite sHoundoomSprites9[] = {
 	{sHoundoomGfx9, ARRAY_COUNT(sHoundoomGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx10[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_10.4bpp");
+static const u8 sHoundoomGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_10.4bpp.lz");
 static const ax_sprite sHoundoomSprites10[] = {
 	{sHoundoomGfx10, ARRAY_COUNT(sHoundoomGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx11[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_11.4bpp");
+static const u8 sHoundoomGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_11.4bpp.lz");
 static const ax_sprite sHoundoomSprites11[] = {
 	{sHoundoomGfx11, ARRAY_COUNT(sHoundoomGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx12[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_12.4bpp");
+static const u8 sHoundoomGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_12.4bpp.lz");
 static const ax_sprite sHoundoomSprites12[] = {
 	{sHoundoomGfx12, ARRAY_COUNT(sHoundoomGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx13[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_13.4bpp");
+static const u8 sHoundoomGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_13.4bpp.lz");
 static const ax_sprite sHoundoomSprites13[] = {
 	{sHoundoomGfx13, ARRAY_COUNT(sHoundoomGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx14[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_14.4bpp");
+static const u8 sHoundoomGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_14.4bpp.lz");
 static const ax_sprite sHoundoomSprites14[] = {
 	{sHoundoomGfx14, ARRAY_COUNT(sHoundoomGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx15[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_15.4bpp");
+static const u8 sHoundoomGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_15.4bpp.lz");
 static const ax_sprite sHoundoomSprites15[] = {
 	{sHoundoomGfx15, ARRAY_COUNT(sHoundoomGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx16[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_16.4bpp");
+static const u8 sHoundoomGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_16.4bpp.lz");
 static const ax_sprite sHoundoomSprites16[] = {
 	{sHoundoomGfx16, ARRAY_COUNT(sHoundoomGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx17[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_17.4bpp");
+static const u8 sHoundoomGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_17.4bpp.lz");
 static const ax_sprite sHoundoomSprites17[] = {
 	{sHoundoomGfx17, ARRAY_COUNT(sHoundoomGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx18[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_18.4bpp");
+static const u8 sHoundoomGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_18.4bpp.lz");
 static const ax_sprite sHoundoomSprites18[] = {
 	{sHoundoomGfx18, ARRAY_COUNT(sHoundoomGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx19[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_19.4bpp");
+static const u8 sHoundoomGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_19.4bpp.lz");
 static const ax_sprite sHoundoomSprites19[] = {
 	{sHoundoomGfx19, ARRAY_COUNT(sHoundoomGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx20[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_20.4bpp");
+static const u8 sHoundoomGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_20.4bpp.lz");
 static const ax_sprite sHoundoomSprites20[] = {
 	{sHoundoomGfx20, ARRAY_COUNT(sHoundoomGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx21[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_21.4bpp");
+static const u8 sHoundoomGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_21.4bpp.lz");
 static const ax_sprite sHoundoomSprites21[] = {
 	{sHoundoomGfx21, ARRAY_COUNT(sHoundoomGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx22[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_22.4bpp");
+static const u8 sHoundoomGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_22.4bpp.lz");
 static const ax_sprite sHoundoomSprites22[] = {
 	{sHoundoomGfx22, ARRAY_COUNT(sHoundoomGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx23[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_23.4bpp");
+static const u8 sHoundoomGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_23.4bpp.lz");
 static const ax_sprite sHoundoomSprites23[] = {
 	{sHoundoomGfx23, ARRAY_COUNT(sHoundoomGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx24[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_24.4bpp");
+static const u8 sHoundoomGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_24.4bpp.lz");
 static const ax_sprite sHoundoomSprites24[] = {
 	{sHoundoomGfx24, ARRAY_COUNT(sHoundoomGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx25[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_25.4bpp");
+static const u8 sHoundoomGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_25.4bpp.lz");
 static const ax_sprite sHoundoomSprites25[] = {
 	{sHoundoomGfx25, ARRAY_COUNT(sHoundoomGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx26[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_26.4bpp");
+static const u8 sHoundoomGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_26.4bpp.lz");
 static const ax_sprite sHoundoomSprites26[] = {
 	{sHoundoomGfx26, ARRAY_COUNT(sHoundoomGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx27[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_27.4bpp");
+static const u8 sHoundoomGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_27.4bpp.lz");
 static const ax_sprite sHoundoomSprites27[] = {
 	{sHoundoomGfx27, ARRAY_COUNT(sHoundoomGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx28[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_28.4bpp");
+static const u8 sHoundoomGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_28.4bpp.lz");
 static const ax_sprite sHoundoomSprites28[] = {
 	{sHoundoomGfx28, ARRAY_COUNT(sHoundoomGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx29[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_29.4bpp");
+static const u8 sHoundoomGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_29.4bpp.lz");
 static const ax_sprite sHoundoomSprites29[] = {
 	{sHoundoomGfx29, ARRAY_COUNT(sHoundoomGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx30[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_30.4bpp");
+static const u8 sHoundoomGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_30.4bpp.lz");
 static const ax_sprite sHoundoomSprites30[] = {
 	{sHoundoomGfx30, ARRAY_COUNT(sHoundoomGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx31[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_31.4bpp");
+static const u8 sHoundoomGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_31.4bpp.lz");
 static const ax_sprite sHoundoomSprites31[] = {
 	{sHoundoomGfx31, ARRAY_COUNT(sHoundoomGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx32[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_32.4bpp");
+static const u8 sHoundoomGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_32.4bpp.lz");
 static const ax_sprite sHoundoomSprites32[] = {
 	{sHoundoomGfx32, ARRAY_COUNT(sHoundoomGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx33[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_33.4bpp");
+static const u8 sHoundoomGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_33.4bpp.lz");
 static const ax_sprite sHoundoomSprites33[] = {
 	{sHoundoomGfx33, ARRAY_COUNT(sHoundoomGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx34[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_34.4bpp");
+static const u8 sHoundoomGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_34.4bpp.lz");
 static const ax_sprite sHoundoomSprites34[] = {
 	{sHoundoomGfx34, ARRAY_COUNT(sHoundoomGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx35[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_35.4bpp");
+static const u8 sHoundoomGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_35.4bpp.lz");
 static const ax_sprite sHoundoomSprites35[] = {
 	{sHoundoomGfx35, ARRAY_COUNT(sHoundoomGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx36[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_36.4bpp");
+static const u8 sHoundoomGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_36.4bpp.lz");
 static const ax_sprite sHoundoomSprites36[] = {
 	{sHoundoomGfx36, ARRAY_COUNT(sHoundoomGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx37[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_37.4bpp");
+static const u8 sHoundoomGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_37.4bpp.lz");
 static const ax_sprite sHoundoomSprites37[] = {
 	{sHoundoomGfx37, ARRAY_COUNT(sHoundoomGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx38[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_38.4bpp");
+static const u8 sHoundoomGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_38.4bpp.lz");
 static const ax_sprite sHoundoomSprites38[] = {
 	{sHoundoomGfx38, ARRAY_COUNT(sHoundoomGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx39[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_39.4bpp");
+static const u8 sHoundoomGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_39.4bpp.lz");
 static const ax_sprite sHoundoomSprites39[] = {
 	{sHoundoomGfx39, ARRAY_COUNT(sHoundoomGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx40[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_40.4bpp");
+static const u8 sHoundoomGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_40.4bpp.lz");
 static const ax_sprite sHoundoomSprites40[] = {
 	{sHoundoomGfx40, ARRAY_COUNT(sHoundoomGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx41[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_41.4bpp");
+static const u8 sHoundoomGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_41.4bpp.lz");
 static const ax_sprite sHoundoomSprites41[] = {
 	{sHoundoomGfx41, ARRAY_COUNT(sHoundoomGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx42[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_42.4bpp");
+static const u8 sHoundoomGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_42.4bpp.lz");
 static const ax_sprite sHoundoomSprites42[] = {
 	{sHoundoomGfx42, ARRAY_COUNT(sHoundoomGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx43[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_43.4bpp");
+static const u8 sHoundoomGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_43.4bpp.lz");
 static const ax_sprite sHoundoomSprites43[] = {
 	{sHoundoomGfx43, ARRAY_COUNT(sHoundoomGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx44[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_44.4bpp");
+static const u8 sHoundoomGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_44.4bpp.lz");
 static const ax_sprite sHoundoomSprites44[] = {
 	{sHoundoomGfx44, ARRAY_COUNT(sHoundoomGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx45[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_45.4bpp");
+static const u8 sHoundoomGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_45.4bpp.lz");
 static const ax_sprite sHoundoomSprites45[] = {
 	{sHoundoomGfx45, ARRAY_COUNT(sHoundoomGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx46[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_46.4bpp");
+static const u8 sHoundoomGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_46.4bpp.lz");
 static const ax_sprite sHoundoomSprites46[] = {
 	{sHoundoomGfx46, ARRAY_COUNT(sHoundoomGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx47[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_47.4bpp");
-static const u8 sHoundoomGfx47_1[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_47_1.4bpp");
-static const u8 sHoundoomGfx47_2[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_47_2.4bpp");
-static const u8 sHoundoomGfx47_3[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_47_3.4bpp");
+static const u8 sHoundoomGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_47.4bpp.lz");
+static const u8 sHoundoomGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_47_1.4bpp.lz");
+static const u8 sHoundoomGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_47_2.4bpp.lz");
+static const u8 sHoundoomGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_47_3.4bpp.lz");
 static const ax_sprite sHoundoomSprites47[] = {
 	{sHoundoomGfx47, ARRAY_COUNT(sHoundoomGfx47)}, 
 	{NULL, 32}, 
@@ -3049,8 +3049,8 @@ static const ax_sprite sHoundoomSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx48[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_48.4bpp");
-static const u8 sHoundoomGfx48_1[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_48_1.4bpp");
+static const u8 sHoundoomGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_48.4bpp.lz");
+static const u8 sHoundoomGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_48_1.4bpp.lz");
 static const ax_sprite sHoundoomSprites48[] = {
 	{sHoundoomGfx48, ARRAY_COUNT(sHoundoomGfx48)}, 
 	{NULL, 32}, 
@@ -3058,85 +3058,85 @@ static const ax_sprite sHoundoomSprites48[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx49[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_49.4bpp");
+static const u8 sHoundoomGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_49.4bpp.lz");
 static const ax_sprite sHoundoomSprites49[] = {
 	{sHoundoomGfx49, ARRAY_COUNT(sHoundoomGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx50[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_50.4bpp");
+static const u8 sHoundoomGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_50.4bpp.lz");
 static const ax_sprite sHoundoomSprites50[] = {
 	{sHoundoomGfx50, ARRAY_COUNT(sHoundoomGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx51[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_51.4bpp");
+static const u8 sHoundoomGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_51.4bpp.lz");
 static const ax_sprite sHoundoomSprites51[] = {
 	{sHoundoomGfx51, ARRAY_COUNT(sHoundoomGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx52[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_52.4bpp");
+static const u8 sHoundoomGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_52.4bpp.lz");
 static const ax_sprite sHoundoomSprites52[] = {
 	{sHoundoomGfx52, ARRAY_COUNT(sHoundoomGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx53[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_53.4bpp");
+static const u8 sHoundoomGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_53.4bpp.lz");
 static const ax_sprite sHoundoomSprites53[] = {
 	{sHoundoomGfx53, ARRAY_COUNT(sHoundoomGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx54[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_54.4bpp");
+static const u8 sHoundoomGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_54.4bpp.lz");
 static const ax_sprite sHoundoomSprites54[] = {
 	{sHoundoomGfx54, ARRAY_COUNT(sHoundoomGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx55[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_55.4bpp");
+static const u8 sHoundoomGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_55.4bpp.lz");
 static const ax_sprite sHoundoomSprites55[] = {
 	{sHoundoomGfx55, ARRAY_COUNT(sHoundoomGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx56[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_56.4bpp");
+static const u8 sHoundoomGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_56.4bpp.lz");
 static const ax_sprite sHoundoomSprites56[] = {
 	{sHoundoomGfx56, ARRAY_COUNT(sHoundoomGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx57[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_57.4bpp");
+static const u8 sHoundoomGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_57.4bpp.lz");
 static const ax_sprite sHoundoomSprites57[] = {
 	{sHoundoomGfx57, ARRAY_COUNT(sHoundoomGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx58[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_58.4bpp");
+static const u8 sHoundoomGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_58.4bpp.lz");
 static const ax_sprite sHoundoomSprites58[] = {
 	{sHoundoomGfx58, ARRAY_COUNT(sHoundoomGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx59[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_59.4bpp");
+static const u8 sHoundoomGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_59.4bpp.lz");
 static const ax_sprite sHoundoomSprites59[] = {
 	{sHoundoomGfx59, ARRAY_COUNT(sHoundoomGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx60[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_60.4bpp");
+static const u8 sHoundoomGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_60.4bpp.lz");
 static const ax_sprite sHoundoomSprites60[] = {
 	{sHoundoomGfx60, ARRAY_COUNT(sHoundoomGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx61[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_61.4bpp");
+static const u8 sHoundoomGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_61.4bpp.lz");
 static const ax_sprite sHoundoomSprites61[] = {
 	{sHoundoomGfx61, ARRAY_COUNT(sHoundoomGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx62[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_62.4bpp");
+static const u8 sHoundoomGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_62.4bpp.lz");
 static const ax_sprite sHoundoomSprites62[] = {
 	{sHoundoomGfx62, ARRAY_COUNT(sHoundoomGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx63[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_63.4bpp");
+static const u8 sHoundoomGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_63.4bpp.lz");
 static const ax_sprite sHoundoomSprites63[] = {
 	{sHoundoomGfx63, ARRAY_COUNT(sHoundoomGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx64[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_64.4bpp");
-static const u8 sHoundoomGfx64_1[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_64_1.4bpp");
-static const u8 sHoundoomGfx64_2[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_64_2.4bpp");
-static const u8 sHoundoomGfx64_3[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_64_3.4bpp");
+static const u8 sHoundoomGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_64.4bpp.lz");
+static const u8 sHoundoomGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_64_1.4bpp.lz");
+static const u8 sHoundoomGfx64_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_64_2.4bpp.lz");
+static const u8 sHoundoomGfx64_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_64_3.4bpp.lz");
 static const ax_sprite sHoundoomSprites64[] = {
 	{sHoundoomGfx64, ARRAY_COUNT(sHoundoomGfx64)}, 
 	{NULL, 32}, 
@@ -3148,18 +3148,18 @@ static const ax_sprite sHoundoomSprites64[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx65[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_65.4bpp");
+static const u8 sHoundoomGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_65.4bpp.lz");
 static const ax_sprite sHoundoomSprites65[] = {
 	{sHoundoomGfx65, ARRAY_COUNT(sHoundoomGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx66[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_66.4bpp");
+static const u8 sHoundoomGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_66.4bpp.lz");
 static const ax_sprite sHoundoomSprites66[] = {
 	{sHoundoomGfx66, ARRAY_COUNT(sHoundoomGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx67[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_67.4bpp");
-static const u8 sHoundoomGfx67_1[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_67_1.4bpp");
+static const u8 sHoundoomGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_67.4bpp.lz");
+static const u8 sHoundoomGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_67_1.4bpp.lz");
 static const ax_sprite sHoundoomSprites67[] = {
 	{sHoundoomGfx67, ARRAY_COUNT(sHoundoomGfx67)}, 
 	{NULL, 32}, 
@@ -3167,83 +3167,83 @@ static const ax_sprite sHoundoomSprites67[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx68[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_68.4bpp");
+static const u8 sHoundoomGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_68.4bpp.lz");
 static const ax_sprite sHoundoomSprites68[] = {
 	{sHoundoomGfx68, ARRAY_COUNT(sHoundoomGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx69[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_69.4bpp");
+static const u8 sHoundoomGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_69.4bpp.lz");
 static const ax_sprite sHoundoomSprites69[] = {
 	{sHoundoomGfx69, ARRAY_COUNT(sHoundoomGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx70[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_70.4bpp");
+static const u8 sHoundoomGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_70.4bpp.lz");
 static const ax_sprite sHoundoomSprites70[] = {
 	{sHoundoomGfx70, ARRAY_COUNT(sHoundoomGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx71[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_71.4bpp");
+static const u8 sHoundoomGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_71.4bpp.lz");
 static const ax_sprite sHoundoomSprites71[] = {
 	{sHoundoomGfx71, ARRAY_COUNT(sHoundoomGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx72[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_72.4bpp");
+static const u8 sHoundoomGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_72.4bpp.lz");
 static const ax_sprite sHoundoomSprites72[] = {
 	{sHoundoomGfx72, ARRAY_COUNT(sHoundoomGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx73[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_73.4bpp");
+static const u8 sHoundoomGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_73.4bpp.lz");
 static const ax_sprite sHoundoomSprites73[] = {
 	{sHoundoomGfx73, ARRAY_COUNT(sHoundoomGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx74[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_74.4bpp");
+static const u8 sHoundoomGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_74.4bpp.lz");
 static const ax_sprite sHoundoomSprites74[] = {
 	{sHoundoomGfx74, ARRAY_COUNT(sHoundoomGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx75[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_75.4bpp");
+static const u8 sHoundoomGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_75.4bpp.lz");
 static const ax_sprite sHoundoomSprites75[] = {
 	{sHoundoomGfx75, ARRAY_COUNT(sHoundoomGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx76[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_76.4bpp");
+static const u8 sHoundoomGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_76.4bpp.lz");
 static const ax_sprite sHoundoomSprites76[] = {
 	{sHoundoomGfx76, ARRAY_COUNT(sHoundoomGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx77[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_77.4bpp");
+static const u8 sHoundoomGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_77.4bpp.lz");
 static const ax_sprite sHoundoomSprites77[] = {
 	{sHoundoomGfx77, ARRAY_COUNT(sHoundoomGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx78[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_78.4bpp");
+static const u8 sHoundoomGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_78.4bpp.lz");
 static const ax_sprite sHoundoomSprites78[] = {
 	{sHoundoomGfx78, ARRAY_COUNT(sHoundoomGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx79[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_79.4bpp");
+static const u8 sHoundoomGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_79.4bpp.lz");
 static const ax_sprite sHoundoomSprites79[] = {
 	{sHoundoomGfx79, ARRAY_COUNT(sHoundoomGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx80[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_80.4bpp");
+static const u8 sHoundoomGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_80.4bpp.lz");
 static const ax_sprite sHoundoomSprites80[] = {
 	{sHoundoomGfx80, ARRAY_COUNT(sHoundoomGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx81[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_81.4bpp");
+static const u8 sHoundoomGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_81.4bpp.lz");
 static const ax_sprite sHoundoomSprites81[] = {
 	{sHoundoomGfx81, ARRAY_COUNT(sHoundoomGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx82[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_82.4bpp");
+static const u8 sHoundoomGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_82.4bpp.lz");
 static const ax_sprite sHoundoomSprites82[] = {
 	{sHoundoomGfx82, ARRAY_COUNT(sHoundoomGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx83[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_83.4bpp");
-static const u8 sHoundoomGfx83_1[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_83_1.4bpp");
+static const u8 sHoundoomGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_83.4bpp.lz");
+static const u8 sHoundoomGfx83_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_83_1.4bpp.lz");
 static const ax_sprite sHoundoomSprites83[] = {
 	{sHoundoomGfx83, ARRAY_COUNT(sHoundoomGfx83)}, 
 	{NULL, 32}, 
@@ -3251,149 +3251,149 @@ static const ax_sprite sHoundoomSprites83[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx84[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_84.4bpp");
+static const u8 sHoundoomGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_84.4bpp.lz");
 static const ax_sprite sHoundoomSprites84[] = {
 	{sHoundoomGfx84, ARRAY_COUNT(sHoundoomGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx85[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_85.4bpp");
+static const u8 sHoundoomGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_85.4bpp.lz");
 static const ax_sprite sHoundoomSprites85[] = {
 	{sHoundoomGfx85, ARRAY_COUNT(sHoundoomGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx86[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_86.4bpp");
-static const u8 sHoundoomGfx86_1[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_86_1.4bpp");
+static const u8 sHoundoomGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_86.4bpp.lz");
+static const u8 sHoundoomGfx86_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_86_1.4bpp.lz");
 static const ax_sprite sHoundoomSprites86[] = {
 	{sHoundoomGfx86, ARRAY_COUNT(sHoundoomGfx86)}, 
 	{NULL, 32}, 
 	{sHoundoomGfx86_1, ARRAY_COUNT(sHoundoomGfx86_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx87[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_87.4bpp");
+static const u8 sHoundoomGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_87.4bpp.lz");
 static const ax_sprite sHoundoomSprites87[] = {
 	{sHoundoomGfx87, ARRAY_COUNT(sHoundoomGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx88[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_88.4bpp");
-static const u8 sHoundoomGfx88_1[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_88_1.4bpp");
+static const u8 sHoundoomGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_88.4bpp.lz");
+static const u8 sHoundoomGfx88_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_88_1.4bpp.lz");
 static const ax_sprite sHoundoomSprites88[] = {
 	{sHoundoomGfx88, ARRAY_COUNT(sHoundoomGfx88)}, 
 	{NULL, 32}, 
 	{sHoundoomGfx88_1, ARRAY_COUNT(sHoundoomGfx88_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx89[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_89.4bpp");
+static const u8 sHoundoomGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_89.4bpp.lz");
 static const ax_sprite sHoundoomSprites89[] = {
 	{sHoundoomGfx89, ARRAY_COUNT(sHoundoomGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx90[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_90.4bpp");
+static const u8 sHoundoomGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_90.4bpp.lz");
 static const ax_sprite sHoundoomSprites90[] = {
 	{sHoundoomGfx90, ARRAY_COUNT(sHoundoomGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx91[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_91.4bpp");
+static const u8 sHoundoomGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_91.4bpp.lz");
 static const ax_sprite sHoundoomSprites91[] = {
 	{sHoundoomGfx91, ARRAY_COUNT(sHoundoomGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx92[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_92.4bpp");
+static const u8 sHoundoomGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_92.4bpp.lz");
 static const ax_sprite sHoundoomSprites92[] = {
 	{sHoundoomGfx92, ARRAY_COUNT(sHoundoomGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx93[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_93.4bpp");
+static const u8 sHoundoomGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_93.4bpp.lz");
 static const ax_sprite sHoundoomSprites93[] = {
 	{sHoundoomGfx93, ARRAY_COUNT(sHoundoomGfx93)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx94[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_94.4bpp");
+static const u8 sHoundoomGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_94.4bpp.lz");
 static const ax_sprite sHoundoomSprites94[] = {
 	{sHoundoomGfx94, ARRAY_COUNT(sHoundoomGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx95[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_95.4bpp");
+static const u8 sHoundoomGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_95.4bpp.lz");
 static const ax_sprite sHoundoomSprites95[] = {
 	{sHoundoomGfx95, ARRAY_COUNT(sHoundoomGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx96[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_96.4bpp");
+static const u8 sHoundoomGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_96.4bpp.lz");
 static const ax_sprite sHoundoomSprites96[] = {
 	{sHoundoomGfx96, ARRAY_COUNT(sHoundoomGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx97[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_97.4bpp");
+static const u8 sHoundoomGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_97.4bpp.lz");
 static const ax_sprite sHoundoomSprites97[] = {
 	{sHoundoomGfx97, ARRAY_COUNT(sHoundoomGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx98[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_98.4bpp");
+static const u8 sHoundoomGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_98.4bpp.lz");
 static const ax_sprite sHoundoomSprites98[] = {
 	{sHoundoomGfx98, ARRAY_COUNT(sHoundoomGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx99[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_99.4bpp");
+static const u8 sHoundoomGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_99.4bpp.lz");
 static const ax_sprite sHoundoomSprites99[] = {
 	{sHoundoomGfx99, ARRAY_COUNT(sHoundoomGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx100[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_100.4bpp");
+static const u8 sHoundoomGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_100.4bpp.lz");
 static const ax_sprite sHoundoomSprites100[] = {
 	{sHoundoomGfx100, ARRAY_COUNT(sHoundoomGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx101[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_101.4bpp");
+static const u8 sHoundoomGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_101.4bpp.lz");
 static const ax_sprite sHoundoomSprites101[] = {
 	{sHoundoomGfx101, ARRAY_COUNT(sHoundoomGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx102[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_102.4bpp");
+static const u8 sHoundoomGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_102.4bpp.lz");
 static const ax_sprite sHoundoomSprites102[] = {
 	{sHoundoomGfx102, ARRAY_COUNT(sHoundoomGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx103[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_103.4bpp");
+static const u8 sHoundoomGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_103.4bpp.lz");
 static const ax_sprite sHoundoomSprites103[] = {
 	{sHoundoomGfx103, ARRAY_COUNT(sHoundoomGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx104[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_104.4bpp");
+static const u8 sHoundoomGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_104.4bpp.lz");
 static const ax_sprite sHoundoomSprites104[] = {
 	{sHoundoomGfx104, ARRAY_COUNT(sHoundoomGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx105[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_105.4bpp");
+static const u8 sHoundoomGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_105.4bpp.lz");
 static const ax_sprite sHoundoomSprites105[] = {
 	{sHoundoomGfx105, ARRAY_COUNT(sHoundoomGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx106[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_106.4bpp");
+static const u8 sHoundoomGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_106.4bpp.lz");
 static const ax_sprite sHoundoomSprites106[] = {
 	{sHoundoomGfx106, ARRAY_COUNT(sHoundoomGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx107[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_107.4bpp");
+static const u8 sHoundoomGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_107.4bpp.lz");
 static const ax_sprite sHoundoomSprites107[] = {
 	{sHoundoomGfx107, ARRAY_COUNT(sHoundoomGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx108[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_108.4bpp");
+static const u8 sHoundoomGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_108.4bpp.lz");
 static const ax_sprite sHoundoomSprites108[] = {
 	{sHoundoomGfx108, ARRAY_COUNT(sHoundoomGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx109[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_109.4bpp");
+static const u8 sHoundoomGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_109.4bpp.lz");
 static const ax_sprite sHoundoomSprites109[] = {
 	{sHoundoomGfx109, ARRAY_COUNT(sHoundoomGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx110[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_110.4bpp");
+static const u8 sHoundoomGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_110.4bpp.lz");
 static const ax_sprite sHoundoomSprites110[] = {
 	{sHoundoomGfx110, ARRAY_COUNT(sHoundoomGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sHoundoomGfx111[] = INCBIN_U8("graphics/ax/mon/houndoom/sprite_111.4bpp");
+static const u8 sHoundoomGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/houndoom/sprite_111.4bpp.lz");
 static const ax_sprite sHoundoomSprites111[] = {
 	{sHoundoomGfx111, ARRAY_COUNT(sHoundoomGfx111)}, 
 	{NULL, 0}

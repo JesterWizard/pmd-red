@@ -4123,8 +4123,8 @@ static const ax_anim sMoltresAnims_17_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMoltresGfx1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_1.4bpp");
-static const u8 sMoltresGfx1_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_1_1.4bpp");
+static const u8 sMoltresGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_1.4bpp.lz");
+static const u8 sMoltresGfx1_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_1_1.4bpp.lz");
 static const ax_sprite sMoltresSprites1[] = {
 	{sMoltresGfx1, ARRAY_COUNT(sMoltresGfx1)}, 
 	{NULL, 32}, 
@@ -4132,189 +4132,189 @@ static const ax_sprite sMoltresSprites1[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx2[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_2.4bpp");
+static const u8 sMoltresGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_2.4bpp.lz");
 static const ax_sprite sMoltresSprites2[] = {
 	{sMoltresGfx2, ARRAY_COUNT(sMoltresGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx3[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_3.4bpp");
+static const u8 sMoltresGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_3.4bpp.lz");
 static const ax_sprite sMoltresSprites3[] = {
 	{sMoltresGfx3, ARRAY_COUNT(sMoltresGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx4[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_4.4bpp");
+static const u8 sMoltresGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_4.4bpp.lz");
 static const ax_sprite sMoltresSprites4[] = {
 	{sMoltresGfx4, ARRAY_COUNT(sMoltresGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx5[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_5.4bpp");
+static const u8 sMoltresGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_5.4bpp.lz");
 static const ax_sprite sMoltresSprites5[] = {
 	{sMoltresGfx5, ARRAY_COUNT(sMoltresGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx6[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_6.4bpp");
+static const u8 sMoltresGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_6.4bpp.lz");
 static const ax_sprite sMoltresSprites6[] = {
 	{sMoltresGfx6, ARRAY_COUNT(sMoltresGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx7[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_7.4bpp");
+static const u8 sMoltresGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_7.4bpp.lz");
 static const ax_sprite sMoltresSprites7[] = {
 	{sMoltresGfx7, ARRAY_COUNT(sMoltresGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx8[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_8.4bpp");
+static const u8 sMoltresGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_8.4bpp.lz");
 static const ax_sprite sMoltresSprites8[] = {
 	{sMoltresGfx8, ARRAY_COUNT(sMoltresGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx9[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_9.4bpp");
+static const u8 sMoltresGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_9.4bpp.lz");
 static const ax_sprite sMoltresSprites9[] = {
 	{sMoltresGfx9, ARRAY_COUNT(sMoltresGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx10[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_10.4bpp");
+static const u8 sMoltresGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_10.4bpp.lz");
 static const ax_sprite sMoltresSprites10[] = {
 	{sMoltresGfx10, ARRAY_COUNT(sMoltresGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx11[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_11.4bpp");
+static const u8 sMoltresGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_11.4bpp.lz");
 static const ax_sprite sMoltresSprites11[] = {
 	{sMoltresGfx11, ARRAY_COUNT(sMoltresGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx12[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_12.4bpp");
+static const u8 sMoltresGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_12.4bpp.lz");
 static const ax_sprite sMoltresSprites12[] = {
 	{sMoltresGfx12, ARRAY_COUNT(sMoltresGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx13[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_13.4bpp");
+static const u8 sMoltresGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_13.4bpp.lz");
 static const ax_sprite sMoltresSprites13[] = {
 	{sMoltresGfx13, ARRAY_COUNT(sMoltresGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx14[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_14.4bpp");
+static const u8 sMoltresGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_14.4bpp.lz");
 static const ax_sprite sMoltresSprites14[] = {
 	{sMoltresGfx14, ARRAY_COUNT(sMoltresGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx15[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_15.4bpp");
+static const u8 sMoltresGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_15.4bpp.lz");
 static const ax_sprite sMoltresSprites15[] = {
 	{sMoltresGfx15, ARRAY_COUNT(sMoltresGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx16[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_16.4bpp");
+static const u8 sMoltresGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_16.4bpp.lz");
 static const ax_sprite sMoltresSprites16[] = {
 	{sMoltresGfx16, ARRAY_COUNT(sMoltresGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx17[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_17.4bpp");
+static const u8 sMoltresGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_17.4bpp.lz");
 static const ax_sprite sMoltresSprites17[] = {
 	{sMoltresGfx17, ARRAY_COUNT(sMoltresGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx18[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_18.4bpp");
+static const u8 sMoltresGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_18.4bpp.lz");
 static const ax_sprite sMoltresSprites18[] = {
 	{sMoltresGfx18, ARRAY_COUNT(sMoltresGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx19[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_19.4bpp");
+static const u8 sMoltresGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_19.4bpp.lz");
 static const ax_sprite sMoltresSprites19[] = {
 	{sMoltresGfx19, ARRAY_COUNT(sMoltresGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx20[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_20.4bpp");
+static const u8 sMoltresGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_20.4bpp.lz");
 static const ax_sprite sMoltresSprites20[] = {
 	{sMoltresGfx20, ARRAY_COUNT(sMoltresGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx21[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_21.4bpp");
+static const u8 sMoltresGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_21.4bpp.lz");
 static const ax_sprite sMoltresSprites21[] = {
 	{sMoltresGfx21, ARRAY_COUNT(sMoltresGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx22[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_22.4bpp");
+static const u8 sMoltresGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_22.4bpp.lz");
 static const ax_sprite sMoltresSprites22[] = {
 	{sMoltresGfx22, ARRAY_COUNT(sMoltresGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx23[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_23.4bpp");
+static const u8 sMoltresGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_23.4bpp.lz");
 static const ax_sprite sMoltresSprites23[] = {
 	{sMoltresGfx23, ARRAY_COUNT(sMoltresGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx24[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_24.4bpp");
+static const u8 sMoltresGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_24.4bpp.lz");
 static const ax_sprite sMoltresSprites24[] = {
 	{sMoltresGfx24, ARRAY_COUNT(sMoltresGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx25[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_25.4bpp");
+static const u8 sMoltresGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_25.4bpp.lz");
 static const ax_sprite sMoltresSprites25[] = {
 	{sMoltresGfx25, ARRAY_COUNT(sMoltresGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx26[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_26.4bpp");
+static const u8 sMoltresGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_26.4bpp.lz");
 static const ax_sprite sMoltresSprites26[] = {
 	{sMoltresGfx26, ARRAY_COUNT(sMoltresGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx27[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_27.4bpp");
+static const u8 sMoltresGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_27.4bpp.lz");
 static const ax_sprite sMoltresSprites27[] = {
 	{sMoltresGfx27, ARRAY_COUNT(sMoltresGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx28[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_28.4bpp");
+static const u8 sMoltresGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_28.4bpp.lz");
 static const ax_sprite sMoltresSprites28[] = {
 	{sMoltresGfx28, ARRAY_COUNT(sMoltresGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx29[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_29.4bpp");
+static const u8 sMoltresGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_29.4bpp.lz");
 static const ax_sprite sMoltresSprites29[] = {
 	{sMoltresGfx29, ARRAY_COUNT(sMoltresGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx30[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_30.4bpp");
+static const u8 sMoltresGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_30.4bpp.lz");
 static const ax_sprite sMoltresSprites30[] = {
 	{sMoltresGfx30, ARRAY_COUNT(sMoltresGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx31[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_31.4bpp");
+static const u8 sMoltresGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_31.4bpp.lz");
 static const ax_sprite sMoltresSprites31[] = {
 	{sMoltresGfx31, ARRAY_COUNT(sMoltresGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx32[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_32.4bpp");
+static const u8 sMoltresGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_32.4bpp.lz");
 static const ax_sprite sMoltresSprites32[] = {
 	{sMoltresGfx32, ARRAY_COUNT(sMoltresGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx33[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_33.4bpp");
+static const u8 sMoltresGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_33.4bpp.lz");
 static const ax_sprite sMoltresSprites33[] = {
 	{sMoltresGfx33, ARRAY_COUNT(sMoltresGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx34[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_34.4bpp");
+static const u8 sMoltresGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_34.4bpp.lz");
 static const ax_sprite sMoltresSprites34[] = {
 	{sMoltresGfx34, ARRAY_COUNT(sMoltresGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx35[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_35.4bpp");
+static const u8 sMoltresGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_35.4bpp.lz");
 static const ax_sprite sMoltresSprites35[] = {
 	{sMoltresGfx35, ARRAY_COUNT(sMoltresGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx36[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_36.4bpp");
+static const u8 sMoltresGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_36.4bpp.lz");
 static const ax_sprite sMoltresSprites36[] = {
 	{sMoltresGfx36, ARRAY_COUNT(sMoltresGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx37[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_37.4bpp");
+static const u8 sMoltresGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_37.4bpp.lz");
 static const ax_sprite sMoltresSprites37[] = {
 	{sMoltresGfx37, ARRAY_COUNT(sMoltresGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx38[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_38.4bpp");
-static const u8 sMoltresGfx38_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_38_1.4bpp");
-static const u8 sMoltresGfx38_2[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_38_2.4bpp");
+static const u8 sMoltresGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_38.4bpp.lz");
+static const u8 sMoltresGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_38_1.4bpp.lz");
+static const u8 sMoltresGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_38_2.4bpp.lz");
 static const ax_sprite sMoltresSprites38[] = {
 	{sMoltresGfx38, ARRAY_COUNT(sMoltresGfx38)}, 
 	{NULL, 32}, 
@@ -4323,449 +4323,449 @@ static const ax_sprite sMoltresSprites38[] = {
 	{sMoltresGfx38_2, ARRAY_COUNT(sMoltresGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx39[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_39.4bpp");
+static const u8 sMoltresGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_39.4bpp.lz");
 static const ax_sprite sMoltresSprites39[] = {
 	{sMoltresGfx39, ARRAY_COUNT(sMoltresGfx39)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx40[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_40.4bpp");
+static const u8 sMoltresGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_40.4bpp.lz");
 static const ax_sprite sMoltresSprites40[] = {
 	{sMoltresGfx40, ARRAY_COUNT(sMoltresGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx41[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_41.4bpp");
+static const u8 sMoltresGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_41.4bpp.lz");
 static const ax_sprite sMoltresSprites41[] = {
 	{sMoltresGfx41, ARRAY_COUNT(sMoltresGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx42[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_42.4bpp");
+static const u8 sMoltresGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_42.4bpp.lz");
 static const ax_sprite sMoltresSprites42[] = {
 	{sMoltresGfx42, ARRAY_COUNT(sMoltresGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx43[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_43.4bpp");
+static const u8 sMoltresGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_43.4bpp.lz");
 static const ax_sprite sMoltresSprites43[] = {
 	{sMoltresGfx43, ARRAY_COUNT(sMoltresGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx44[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_44.4bpp");
+static const u8 sMoltresGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_44.4bpp.lz");
 static const ax_sprite sMoltresSprites44[] = {
 	{sMoltresGfx44, ARRAY_COUNT(sMoltresGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx45[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_45.4bpp");
-static const u8 sMoltresGfx45_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_45_1.4bpp");
+static const u8 sMoltresGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_45.4bpp.lz");
+static const u8 sMoltresGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_45_1.4bpp.lz");
 static const ax_sprite sMoltresSprites45[] = {
 	{sMoltresGfx45, ARRAY_COUNT(sMoltresGfx45)}, 
 	{NULL, 32}, 
 	{sMoltresGfx45_1, ARRAY_COUNT(sMoltresGfx45_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx46[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_46.4bpp");
-static const u8 sMoltresGfx46_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_46_1.4bpp");
+static const u8 sMoltresGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_46.4bpp.lz");
+static const u8 sMoltresGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_46_1.4bpp.lz");
 static const ax_sprite sMoltresSprites46[] = {
 	{sMoltresGfx46, ARRAY_COUNT(sMoltresGfx46)}, 
 	{NULL, 32}, 
 	{sMoltresGfx46_1, ARRAY_COUNT(sMoltresGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx47[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_47.4bpp");
+static const u8 sMoltresGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_47.4bpp.lz");
 static const ax_sprite sMoltresSprites47[] = {
 	{sMoltresGfx47, ARRAY_COUNT(sMoltresGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx48[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_48.4bpp");
+static const u8 sMoltresGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_48.4bpp.lz");
 static const ax_sprite sMoltresSprites48[] = {
 	{sMoltresGfx48, ARRAY_COUNT(sMoltresGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx49[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_49.4bpp");
+static const u8 sMoltresGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_49.4bpp.lz");
 static const ax_sprite sMoltresSprites49[] = {
 	{sMoltresGfx49, ARRAY_COUNT(sMoltresGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx50[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_50.4bpp");
+static const u8 sMoltresGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_50.4bpp.lz");
 static const ax_sprite sMoltresSprites50[] = {
 	{sMoltresGfx50, ARRAY_COUNT(sMoltresGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx51[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_51.4bpp");
+static const u8 sMoltresGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_51.4bpp.lz");
 static const ax_sprite sMoltresSprites51[] = {
 	{sMoltresGfx51, ARRAY_COUNT(sMoltresGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx52[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_52.4bpp");
+static const u8 sMoltresGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_52.4bpp.lz");
 static const ax_sprite sMoltresSprites52[] = {
 	{sMoltresGfx52, ARRAY_COUNT(sMoltresGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx53[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_53.4bpp");
+static const u8 sMoltresGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_53.4bpp.lz");
 static const ax_sprite sMoltresSprites53[] = {
 	{sMoltresGfx53, ARRAY_COUNT(sMoltresGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx54[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_54.4bpp");
+static const u8 sMoltresGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_54.4bpp.lz");
 static const ax_sprite sMoltresSprites54[] = {
 	{sMoltresGfx54, ARRAY_COUNT(sMoltresGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx55[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_55.4bpp");
+static const u8 sMoltresGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_55.4bpp.lz");
 static const ax_sprite sMoltresSprites55[] = {
 	{sMoltresGfx55, ARRAY_COUNT(sMoltresGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx56[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_56.4bpp");
+static const u8 sMoltresGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_56.4bpp.lz");
 static const ax_sprite sMoltresSprites56[] = {
 	{sMoltresGfx56, ARRAY_COUNT(sMoltresGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx57[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_57.4bpp");
+static const u8 sMoltresGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_57.4bpp.lz");
 static const ax_sprite sMoltresSprites57[] = {
 	{sMoltresGfx57, ARRAY_COUNT(sMoltresGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx58[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_58.4bpp");
+static const u8 sMoltresGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_58.4bpp.lz");
 static const ax_sprite sMoltresSprites58[] = {
 	{sMoltresGfx58, ARRAY_COUNT(sMoltresGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx59[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_59.4bpp");
+static const u8 sMoltresGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_59.4bpp.lz");
 static const ax_sprite sMoltresSprites59[] = {
 	{sMoltresGfx59, ARRAY_COUNT(sMoltresGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx60[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_60.4bpp");
+static const u8 sMoltresGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_60.4bpp.lz");
 static const ax_sprite sMoltresSprites60[] = {
 	{sMoltresGfx60, ARRAY_COUNT(sMoltresGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx61[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_61.4bpp");
-static const u8 sMoltresGfx61_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_61_1.4bpp");
+static const u8 sMoltresGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_61.4bpp.lz");
+static const u8 sMoltresGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_61_1.4bpp.lz");
 static const ax_sprite sMoltresSprites61[] = {
 	{sMoltresGfx61, ARRAY_COUNT(sMoltresGfx61)}, 
 	{NULL, 32}, 
 	{sMoltresGfx61_1, ARRAY_COUNT(sMoltresGfx61_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx62[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_62.4bpp");
+static const u8 sMoltresGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_62.4bpp.lz");
 static const ax_sprite sMoltresSprites62[] = {
 	{sMoltresGfx62, ARRAY_COUNT(sMoltresGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx63[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_63.4bpp");
+static const u8 sMoltresGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_63.4bpp.lz");
 static const ax_sprite sMoltresSprites63[] = {
 	{sMoltresGfx63, ARRAY_COUNT(sMoltresGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx64[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_64.4bpp");
+static const u8 sMoltresGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_64.4bpp.lz");
 static const ax_sprite sMoltresSprites64[] = {
 	{sMoltresGfx64, ARRAY_COUNT(sMoltresGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx65[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_65.4bpp");
+static const u8 sMoltresGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_65.4bpp.lz");
 static const ax_sprite sMoltresSprites65[] = {
 	{NULL, 32}, 
 	{sMoltresGfx65, ARRAY_COUNT(sMoltresGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx66[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_66.4bpp");
+static const u8 sMoltresGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_66.4bpp.lz");
 static const ax_sprite sMoltresSprites66[] = {
 	{sMoltresGfx66, ARRAY_COUNT(sMoltresGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx67[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_67.4bpp");
+static const u8 sMoltresGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_67.4bpp.lz");
 static const ax_sprite sMoltresSprites67[] = {
 	{sMoltresGfx67, ARRAY_COUNT(sMoltresGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx68[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_68.4bpp");
+static const u8 sMoltresGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_68.4bpp.lz");
 static const ax_sprite sMoltresSprites68[] = {
 	{sMoltresGfx68, ARRAY_COUNT(sMoltresGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx69[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_69.4bpp");
+static const u8 sMoltresGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_69.4bpp.lz");
 static const ax_sprite sMoltresSprites69[] = {
 	{sMoltresGfx69, ARRAY_COUNT(sMoltresGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx70[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_70.4bpp");
+static const u8 sMoltresGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_70.4bpp.lz");
 static const ax_sprite sMoltresSprites70[] = {
 	{sMoltresGfx70, ARRAY_COUNT(sMoltresGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx71[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_71.4bpp");
+static const u8 sMoltresGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_71.4bpp.lz");
 static const ax_sprite sMoltresSprites71[] = {
 	{sMoltresGfx71, ARRAY_COUNT(sMoltresGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx72[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_72.4bpp");
+static const u8 sMoltresGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_72.4bpp.lz");
 static const ax_sprite sMoltresSprites72[] = {
 	{sMoltresGfx72, ARRAY_COUNT(sMoltresGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx73[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_73.4bpp");
+static const u8 sMoltresGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_73.4bpp.lz");
 static const ax_sprite sMoltresSprites73[] = {
 	{sMoltresGfx73, ARRAY_COUNT(sMoltresGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx74[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_74.4bpp");
+static const u8 sMoltresGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_74.4bpp.lz");
 static const ax_sprite sMoltresSprites74[] = {
 	{sMoltresGfx74, ARRAY_COUNT(sMoltresGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx75[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_75.4bpp");
-static const u8 sMoltresGfx75_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_75_1.4bpp");
+static const u8 sMoltresGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_75.4bpp.lz");
+static const u8 sMoltresGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_75_1.4bpp.lz");
 static const ax_sprite sMoltresSprites75[] = {
 	{sMoltresGfx75, ARRAY_COUNT(sMoltresGfx75)}, 
 	{NULL, 32}, 
 	{sMoltresGfx75_1, ARRAY_COUNT(sMoltresGfx75_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx76[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_76.4bpp");
+static const u8 sMoltresGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_76.4bpp.lz");
 static const ax_sprite sMoltresSprites76[] = {
 	{sMoltresGfx76, ARRAY_COUNT(sMoltresGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx77[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_77.4bpp");
+static const u8 sMoltresGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_77.4bpp.lz");
 static const ax_sprite sMoltresSprites77[] = {
 	{sMoltresGfx77, ARRAY_COUNT(sMoltresGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx78[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_78.4bpp");
+static const u8 sMoltresGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_78.4bpp.lz");
 static const ax_sprite sMoltresSprites78[] = {
 	{sMoltresGfx78, ARRAY_COUNT(sMoltresGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx79[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_79.4bpp");
+static const u8 sMoltresGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_79.4bpp.lz");
 static const ax_sprite sMoltresSprites79[] = {
 	{sMoltresGfx79, ARRAY_COUNT(sMoltresGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx80[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_80.4bpp");
+static const u8 sMoltresGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_80.4bpp.lz");
 static const ax_sprite sMoltresSprites80[] = {
 	{sMoltresGfx80, ARRAY_COUNT(sMoltresGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx81[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_81.4bpp");
+static const u8 sMoltresGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_81.4bpp.lz");
 static const ax_sprite sMoltresSprites81[] = {
 	{sMoltresGfx81, ARRAY_COUNT(sMoltresGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx82[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_82.4bpp");
+static const u8 sMoltresGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_82.4bpp.lz");
 static const ax_sprite sMoltresSprites82[] = {
 	{sMoltresGfx82, ARRAY_COUNT(sMoltresGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx83[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_83.4bpp");
+static const u8 sMoltresGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_83.4bpp.lz");
 static const ax_sprite sMoltresSprites83[] = {
 	{sMoltresGfx83, ARRAY_COUNT(sMoltresGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx84[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_84.4bpp");
+static const u8 sMoltresGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_84.4bpp.lz");
 static const ax_sprite sMoltresSprites84[] = {
 	{sMoltresGfx84, ARRAY_COUNT(sMoltresGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx85[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_85.4bpp");
+static const u8 sMoltresGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_85.4bpp.lz");
 static const ax_sprite sMoltresSprites85[] = {
 	{NULL, 32}, 
 	{sMoltresGfx85, ARRAY_COUNT(sMoltresGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx86[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_86.4bpp");
+static const u8 sMoltresGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_86.4bpp.lz");
 static const ax_sprite sMoltresSprites86[] = {
 	{sMoltresGfx86, ARRAY_COUNT(sMoltresGfx86)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx87[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_87.4bpp");
+static const u8 sMoltresGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_87.4bpp.lz");
 static const ax_sprite sMoltresSprites87[] = {
 	{sMoltresGfx87, ARRAY_COUNT(sMoltresGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx88[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_88.4bpp");
+static const u8 sMoltresGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_88.4bpp.lz");
 static const ax_sprite sMoltresSprites88[] = {
 	{sMoltresGfx88, ARRAY_COUNT(sMoltresGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx89[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_89.4bpp");
+static const u8 sMoltresGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_89.4bpp.lz");
 static const ax_sprite sMoltresSprites89[] = {
 	{sMoltresGfx89, ARRAY_COUNT(sMoltresGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx90[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_90.4bpp");
+static const u8 sMoltresGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_90.4bpp.lz");
 static const ax_sprite sMoltresSprites90[] = {
 	{sMoltresGfx90, ARRAY_COUNT(sMoltresGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx91[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_91.4bpp");
+static const u8 sMoltresGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_91.4bpp.lz");
 static const ax_sprite sMoltresSprites91[] = {
 	{sMoltresGfx91, ARRAY_COUNT(sMoltresGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx92[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_92.4bpp");
+static const u8 sMoltresGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_92.4bpp.lz");
 static const ax_sprite sMoltresSprites92[] = {
 	{sMoltresGfx92, ARRAY_COUNT(sMoltresGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx93[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_93.4bpp");
+static const u8 sMoltresGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_93.4bpp.lz");
 static const ax_sprite sMoltresSprites93[] = {
 	{sMoltresGfx93, ARRAY_COUNT(sMoltresGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx94[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_94.4bpp");
+static const u8 sMoltresGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_94.4bpp.lz");
 static const ax_sprite sMoltresSprites94[] = {
 	{sMoltresGfx94, ARRAY_COUNT(sMoltresGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx95[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_95.4bpp");
+static const u8 sMoltresGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_95.4bpp.lz");
 static const ax_sprite sMoltresSprites95[] = {
 	{sMoltresGfx95, ARRAY_COUNT(sMoltresGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx96[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_96.4bpp");
+static const u8 sMoltresGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_96.4bpp.lz");
 static const ax_sprite sMoltresSprites96[] = {
 	{sMoltresGfx96, ARRAY_COUNT(sMoltresGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx97[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_97.4bpp");
+static const u8 sMoltresGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_97.4bpp.lz");
 static const ax_sprite sMoltresSprites97[] = {
 	{sMoltresGfx97, ARRAY_COUNT(sMoltresGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx98[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_98.4bpp");
+static const u8 sMoltresGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_98.4bpp.lz");
 static const ax_sprite sMoltresSprites98[] = {
 	{sMoltresGfx98, ARRAY_COUNT(sMoltresGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx99[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_99.4bpp");
+static const u8 sMoltresGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_99.4bpp.lz");
 static const ax_sprite sMoltresSprites99[] = {
 	{sMoltresGfx99, ARRAY_COUNT(sMoltresGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx100[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_100.4bpp");
+static const u8 sMoltresGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_100.4bpp.lz");
 static const ax_sprite sMoltresSprites100[] = {
 	{sMoltresGfx100, ARRAY_COUNT(sMoltresGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx101[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_101.4bpp");
+static const u8 sMoltresGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_101.4bpp.lz");
 static const ax_sprite sMoltresSprites101[] = {
 	{sMoltresGfx101, ARRAY_COUNT(sMoltresGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx102[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_102.4bpp");
+static const u8 sMoltresGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_102.4bpp.lz");
 static const ax_sprite sMoltresSprites102[] = {
 	{sMoltresGfx102, ARRAY_COUNT(sMoltresGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx103[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_103.4bpp");
+static const u8 sMoltresGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_103.4bpp.lz");
 static const ax_sprite sMoltresSprites103[] = {
 	{sMoltresGfx103, ARRAY_COUNT(sMoltresGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx104[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_104.4bpp");
+static const u8 sMoltresGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_104.4bpp.lz");
 static const ax_sprite sMoltresSprites104[] = {
 	{sMoltresGfx104, ARRAY_COUNT(sMoltresGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx105[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_105.4bpp");
+static const u8 sMoltresGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_105.4bpp.lz");
 static const ax_sprite sMoltresSprites105[] = {
 	{sMoltresGfx105, ARRAY_COUNT(sMoltresGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx106[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_106.4bpp");
+static const u8 sMoltresGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_106.4bpp.lz");
 static const ax_sprite sMoltresSprites106[] = {
 	{sMoltresGfx106, ARRAY_COUNT(sMoltresGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx107[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_107.4bpp");
+static const u8 sMoltresGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_107.4bpp.lz");
 static const ax_sprite sMoltresSprites107[] = {
 	{sMoltresGfx107, ARRAY_COUNT(sMoltresGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx108[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_108.4bpp");
+static const u8 sMoltresGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_108.4bpp.lz");
 static const ax_sprite sMoltresSprites108[] = {
 	{sMoltresGfx108, ARRAY_COUNT(sMoltresGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx109[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_109.4bpp");
+static const u8 sMoltresGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_109.4bpp.lz");
 static const ax_sprite sMoltresSprites109[] = {
 	{sMoltresGfx109, ARRAY_COUNT(sMoltresGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx110[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_110.4bpp");
+static const u8 sMoltresGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_110.4bpp.lz");
 static const ax_sprite sMoltresSprites110[] = {
 	{sMoltresGfx110, ARRAY_COUNT(sMoltresGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx111[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_111.4bpp");
+static const u8 sMoltresGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_111.4bpp.lz");
 static const ax_sprite sMoltresSprites111[] = {
 	{sMoltresGfx111, ARRAY_COUNT(sMoltresGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx112[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_112.4bpp");
+static const u8 sMoltresGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_112.4bpp.lz");
 static const ax_sprite sMoltresSprites112[] = {
 	{sMoltresGfx112, ARRAY_COUNT(sMoltresGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx113[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_113.4bpp");
+static const u8 sMoltresGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_113.4bpp.lz");
 static const ax_sprite sMoltresSprites113[] = {
 	{sMoltresGfx113, ARRAY_COUNT(sMoltresGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx114[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_114.4bpp");
+static const u8 sMoltresGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_114.4bpp.lz");
 static const ax_sprite sMoltresSprites114[] = {
 	{sMoltresGfx114, ARRAY_COUNT(sMoltresGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx115[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_115.4bpp");
+static const u8 sMoltresGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_115.4bpp.lz");
 static const ax_sprite sMoltresSprites115[] = {
 	{sMoltresGfx115, ARRAY_COUNT(sMoltresGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx116[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_116.4bpp");
+static const u8 sMoltresGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_116.4bpp.lz");
 static const ax_sprite sMoltresSprites116[] = {
 	{sMoltresGfx116, ARRAY_COUNT(sMoltresGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx117[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_117.4bpp");
+static const u8 sMoltresGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_117.4bpp.lz");
 static const ax_sprite sMoltresSprites117[] = {
 	{sMoltresGfx117, ARRAY_COUNT(sMoltresGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx118[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_118.4bpp");
+static const u8 sMoltresGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_118.4bpp.lz");
 static const ax_sprite sMoltresSprites118[] = {
 	{sMoltresGfx118, ARRAY_COUNT(sMoltresGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx119[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_119.4bpp");
+static const u8 sMoltresGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_119.4bpp.lz");
 static const ax_sprite sMoltresSprites119[] = {
 	{sMoltresGfx119, ARRAY_COUNT(sMoltresGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx120[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_120.4bpp");
+static const u8 sMoltresGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_120.4bpp.lz");
 static const ax_sprite sMoltresSprites120[] = {
 	{sMoltresGfx120, ARRAY_COUNT(sMoltresGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx121[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_121.4bpp");
+static const u8 sMoltresGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_121.4bpp.lz");
 static const ax_sprite sMoltresSprites121[] = {
 	{sMoltresGfx121, ARRAY_COUNT(sMoltresGfx121)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx122[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_122.4bpp");
+static const u8 sMoltresGfx122[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_122.4bpp.lz");
 static const ax_sprite sMoltresSprites122[] = {
 	{sMoltresGfx122, ARRAY_COUNT(sMoltresGfx122)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx123[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_123.4bpp");
+static const u8 sMoltresGfx123[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_123.4bpp.lz");
 static const ax_sprite sMoltresSprites123[] = {
 	{sMoltresGfx123, ARRAY_COUNT(sMoltresGfx123)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx124[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_124.4bpp");
-static const u8 sMoltresGfx124_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_124_1.4bpp");
+static const u8 sMoltresGfx124[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_124.4bpp.lz");
+static const u8 sMoltresGfx124_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_124_1.4bpp.lz");
 static const ax_sprite sMoltresSprites124[] = {
 	{NULL, 32}, 
 	{sMoltresGfx124, ARRAY_COUNT(sMoltresGfx124)}, 
@@ -4773,30 +4773,30 @@ static const ax_sprite sMoltresSprites124[] = {
 	{sMoltresGfx124_1, ARRAY_COUNT(sMoltresGfx124_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx125[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_125.4bpp");
+static const u8 sMoltresGfx125[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_125.4bpp.lz");
 static const ax_sprite sMoltresSprites125[] = {
 	{sMoltresGfx125, ARRAY_COUNT(sMoltresGfx125)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx126[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_126.4bpp");
-static const u8 sMoltresGfx126_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_126_1.4bpp");
+static const u8 sMoltresGfx126[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_126.4bpp.lz");
+static const u8 sMoltresGfx126_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_126_1.4bpp.lz");
 static const ax_sprite sMoltresSprites126[] = {
 	{sMoltresGfx126, ARRAY_COUNT(sMoltresGfx126)}, 
 	{NULL, 32}, 
 	{sMoltresGfx126_1, ARRAY_COUNT(sMoltresGfx126_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx127[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_127.4bpp");
+static const u8 sMoltresGfx127[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_127.4bpp.lz");
 static const ax_sprite sMoltresSprites127[] = {
 	{sMoltresGfx127, ARRAY_COUNT(sMoltresGfx127)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx128[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_128.4bpp");
-static const u8 sMoltresGfx128_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_128_1.4bpp");
-static const u8 sMoltresGfx128_2[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_128_2.4bpp");
-static const u8 sMoltresGfx128_3[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_128_3.4bpp");
-static const u8 sMoltresGfx128_4[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_128_4.4bpp");
+static const u8 sMoltresGfx128[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_128.4bpp.lz");
+static const u8 sMoltresGfx128_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_128_1.4bpp.lz");
+static const u8 sMoltresGfx128_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_128_2.4bpp.lz");
+static const u8 sMoltresGfx128_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_128_3.4bpp.lz");
+static const u8 sMoltresGfx128_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_128_4.4bpp.lz");
 static const ax_sprite sMoltresSprites128[] = {
 	{sMoltresGfx128, ARRAY_COUNT(sMoltresGfx128)}, 
 	{NULL, 160}, 
@@ -4809,21 +4809,21 @@ static const ax_sprite sMoltresSprites128[] = {
 	{sMoltresGfx128_4, ARRAY_COUNT(sMoltresGfx128_4)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx129[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_129.4bpp");
+static const u8 sMoltresGfx129[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_129.4bpp.lz");
 static const ax_sprite sMoltresSprites129[] = {
 	{sMoltresGfx129, ARRAY_COUNT(sMoltresGfx129)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx130[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_130.4bpp");
+static const u8 sMoltresGfx130[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_130.4bpp.lz");
 static const ax_sprite sMoltresSprites130[] = {
 	{sMoltresGfx130, ARRAY_COUNT(sMoltresGfx130)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx131[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_131.4bpp");
-static const u8 sMoltresGfx131_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_131_1.4bpp");
-static const u8 sMoltresGfx131_2[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_131_2.4bpp");
-static const u8 sMoltresGfx131_3[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_131_3.4bpp");
+static const u8 sMoltresGfx131[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_131.4bpp.lz");
+static const u8 sMoltresGfx131_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_131_1.4bpp.lz");
+static const u8 sMoltresGfx131_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_131_2.4bpp.lz");
+static const u8 sMoltresGfx131_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_131_3.4bpp.lz");
 static const ax_sprite sMoltresSprites131[] = {
 	{NULL, 64}, 
 	{sMoltresGfx131, ARRAY_COUNT(sMoltresGfx131)}, 
@@ -4835,8 +4835,8 @@ static const ax_sprite sMoltresSprites131[] = {
 	{sMoltresGfx131_3, ARRAY_COUNT(sMoltresGfx131_3)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx132[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_132.4bpp");
-static const u8 sMoltresGfx132_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_132_1.4bpp");
+static const u8 sMoltresGfx132[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_132.4bpp.lz");
+static const u8 sMoltresGfx132_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_132_1.4bpp.lz");
 static const ax_sprite sMoltresSprites132[] = {
 	{NULL, 32}, 
 	{sMoltresGfx132, ARRAY_COUNT(sMoltresGfx132)}, 
@@ -4845,14 +4845,14 @@ static const ax_sprite sMoltresSprites132[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx133[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_133.4bpp");
+static const u8 sMoltresGfx133[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_133.4bpp.lz");
 static const ax_sprite sMoltresSprites133[] = {
 	{sMoltresGfx133, ARRAY_COUNT(sMoltresGfx133)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx134[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_134.4bpp");
-static const u8 sMoltresGfx134_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_134_1.4bpp");
+static const u8 sMoltresGfx134[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_134.4bpp.lz");
+static const u8 sMoltresGfx134_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_134_1.4bpp.lz");
 static const ax_sprite sMoltresSprites134[] = {
 	{NULL, 96}, 
 	{sMoltresGfx134, ARRAY_COUNT(sMoltresGfx134)}, 
@@ -4860,30 +4860,30 @@ static const ax_sprite sMoltresSprites134[] = {
 	{sMoltresGfx134_1, ARRAY_COUNT(sMoltresGfx134_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx135[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_135.4bpp");
+static const u8 sMoltresGfx135[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_135.4bpp.lz");
 static const ax_sprite sMoltresSprites135[] = {
 	{sMoltresGfx135, ARRAY_COUNT(sMoltresGfx135)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx136[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_136.4bpp");
+static const u8 sMoltresGfx136[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_136.4bpp.lz");
 static const ax_sprite sMoltresSprites136[] = {
 	{sMoltresGfx136, ARRAY_COUNT(sMoltresGfx136)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx137[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_137.4bpp");
+static const u8 sMoltresGfx137[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_137.4bpp.lz");
 static const ax_sprite sMoltresSprites137[] = {
 	{sMoltresGfx137, ARRAY_COUNT(sMoltresGfx137)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx138[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_138.4bpp");
+static const u8 sMoltresGfx138[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_138.4bpp.lz");
 static const ax_sprite sMoltresSprites138[] = {
 	{NULL, 32}, 
 	{sMoltresGfx138, ARRAY_COUNT(sMoltresGfx138)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx139[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_139.4bpp");
-static const u8 sMoltresGfx139_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_139_1.4bpp");
+static const u8 sMoltresGfx139[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_139.4bpp.lz");
+static const u8 sMoltresGfx139_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_139_1.4bpp.lz");
 static const ax_sprite sMoltresSprites139[] = {
 	{NULL, 32}, 
 	{sMoltresGfx139, ARRAY_COUNT(sMoltresGfx139)}, 
@@ -4891,228 +4891,228 @@ static const ax_sprite sMoltresSprites139[] = {
 	{sMoltresGfx139_1, ARRAY_COUNT(sMoltresGfx139_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx140[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_140.4bpp");
+static const u8 sMoltresGfx140[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_140.4bpp.lz");
 static const ax_sprite sMoltresSprites140[] = {
 	{sMoltresGfx140, ARRAY_COUNT(sMoltresGfx140)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx141[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_141.4bpp");
+static const u8 sMoltresGfx141[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_141.4bpp.lz");
 static const ax_sprite sMoltresSprites141[] = {
 	{sMoltresGfx141, ARRAY_COUNT(sMoltresGfx141)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx142[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_142.4bpp");
+static const u8 sMoltresGfx142[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_142.4bpp.lz");
 static const ax_sprite sMoltresSprites142[] = {
 	{sMoltresGfx142, ARRAY_COUNT(sMoltresGfx142)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx143[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_143.4bpp");
-static const u8 sMoltresGfx143_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_143_1.4bpp");
+static const u8 sMoltresGfx143[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_143.4bpp.lz");
+static const u8 sMoltresGfx143_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_143_1.4bpp.lz");
 static const ax_sprite sMoltresSprites143[] = {
 	{sMoltresGfx143, ARRAY_COUNT(sMoltresGfx143)}, 
 	{NULL, 32}, 
 	{sMoltresGfx143_1, ARRAY_COUNT(sMoltresGfx143_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx144[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_144.4bpp");
+static const u8 sMoltresGfx144[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_144.4bpp.lz");
 static const ax_sprite sMoltresSprites144[] = {
 	{sMoltresGfx144, ARRAY_COUNT(sMoltresGfx144)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx145[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_145.4bpp");
-static const u8 sMoltresGfx145_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_145_1.4bpp");
+static const u8 sMoltresGfx145[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_145.4bpp.lz");
+static const u8 sMoltresGfx145_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_145_1.4bpp.lz");
 static const ax_sprite sMoltresSprites145[] = {
 	{sMoltresGfx145, ARRAY_COUNT(sMoltresGfx145)}, 
 	{NULL, 32}, 
 	{sMoltresGfx145_1, ARRAY_COUNT(sMoltresGfx145_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx146[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_146.4bpp");
+static const u8 sMoltresGfx146[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_146.4bpp.lz");
 static const ax_sprite sMoltresSprites146[] = {
 	{sMoltresGfx146, ARRAY_COUNT(sMoltresGfx146)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx147[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_147.4bpp");
+static const u8 sMoltresGfx147[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_147.4bpp.lz");
 static const ax_sprite sMoltresSprites147[] = {
 	{sMoltresGfx147, ARRAY_COUNT(sMoltresGfx147)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx148[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_148.4bpp");
+static const u8 sMoltresGfx148[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_148.4bpp.lz");
 static const ax_sprite sMoltresSprites148[] = {
 	{sMoltresGfx148, ARRAY_COUNT(sMoltresGfx148)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx149[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_149.4bpp");
+static const u8 sMoltresGfx149[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_149.4bpp.lz");
 static const ax_sprite sMoltresSprites149[] = {
 	{sMoltresGfx149, ARRAY_COUNT(sMoltresGfx149)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx150[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_150.4bpp");
+static const u8 sMoltresGfx150[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_150.4bpp.lz");
 static const ax_sprite sMoltresSprites150[] = {
 	{sMoltresGfx150, ARRAY_COUNT(sMoltresGfx150)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx151[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_151.4bpp");
+static const u8 sMoltresGfx151[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_151.4bpp.lz");
 static const ax_sprite sMoltresSprites151[] = {
 	{sMoltresGfx151, ARRAY_COUNT(sMoltresGfx151)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx152[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_152.4bpp");
+static const u8 sMoltresGfx152[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_152.4bpp.lz");
 static const ax_sprite sMoltresSprites152[] = {
 	{sMoltresGfx152, ARRAY_COUNT(sMoltresGfx152)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx153[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_153.4bpp");
+static const u8 sMoltresGfx153[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_153.4bpp.lz");
 static const ax_sprite sMoltresSprites153[] = {
 	{sMoltresGfx153, ARRAY_COUNT(sMoltresGfx153)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx154[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_154.4bpp");
+static const u8 sMoltresGfx154[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_154.4bpp.lz");
 static const ax_sprite sMoltresSprites154[] = {
 	{sMoltresGfx154, ARRAY_COUNT(sMoltresGfx154)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx155[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_155.4bpp");
+static const u8 sMoltresGfx155[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_155.4bpp.lz");
 static const ax_sprite sMoltresSprites155[] = {
 	{sMoltresGfx155, ARRAY_COUNT(sMoltresGfx155)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx156[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_156.4bpp");
+static const u8 sMoltresGfx156[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_156.4bpp.lz");
 static const ax_sprite sMoltresSprites156[] = {
 	{sMoltresGfx156, ARRAY_COUNT(sMoltresGfx156)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx157[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_157.4bpp");
+static const u8 sMoltresGfx157[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_157.4bpp.lz");
 static const ax_sprite sMoltresSprites157[] = {
 	{sMoltresGfx157, ARRAY_COUNT(sMoltresGfx157)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx158[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_158.4bpp");
+static const u8 sMoltresGfx158[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_158.4bpp.lz");
 static const ax_sprite sMoltresSprites158[] = {
 	{sMoltresGfx158, ARRAY_COUNT(sMoltresGfx158)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx159[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_159.4bpp");
+static const u8 sMoltresGfx159[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_159.4bpp.lz");
 static const ax_sprite sMoltresSprites159[] = {
 	{sMoltresGfx159, ARRAY_COUNT(sMoltresGfx159)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx160[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_160.4bpp");
+static const u8 sMoltresGfx160[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_160.4bpp.lz");
 static const ax_sprite sMoltresSprites160[] = {
 	{sMoltresGfx160, ARRAY_COUNT(sMoltresGfx160)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx161[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_161.4bpp");
+static const u8 sMoltresGfx161[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_161.4bpp.lz");
 static const ax_sprite sMoltresSprites161[] = {
 	{sMoltresGfx161, ARRAY_COUNT(sMoltresGfx161)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx162[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_162.4bpp");
+static const u8 sMoltresGfx162[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_162.4bpp.lz");
 static const ax_sprite sMoltresSprites162[] = {
 	{sMoltresGfx162, ARRAY_COUNT(sMoltresGfx162)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx163[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_163.4bpp");
+static const u8 sMoltresGfx163[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_163.4bpp.lz");
 static const ax_sprite sMoltresSprites163[] = {
 	{sMoltresGfx163, ARRAY_COUNT(sMoltresGfx163)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx164[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_164.4bpp");
+static const u8 sMoltresGfx164[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_164.4bpp.lz");
 static const ax_sprite sMoltresSprites164[] = {
 	{sMoltresGfx164, ARRAY_COUNT(sMoltresGfx164)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx165[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_165.4bpp");
+static const u8 sMoltresGfx165[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_165.4bpp.lz");
 static const ax_sprite sMoltresSprites165[] = {
 	{sMoltresGfx165, ARRAY_COUNT(sMoltresGfx165)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx166[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_166.4bpp");
+static const u8 sMoltresGfx166[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_166.4bpp.lz");
 static const ax_sprite sMoltresSprites166[] = {
 	{sMoltresGfx166, ARRAY_COUNT(sMoltresGfx166)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx167[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_167.4bpp");
+static const u8 sMoltresGfx167[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_167.4bpp.lz");
 static const ax_sprite sMoltresSprites167[] = {
 	{sMoltresGfx167, ARRAY_COUNT(sMoltresGfx167)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx168[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_168.4bpp");
+static const u8 sMoltresGfx168[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_168.4bpp.lz");
 static const ax_sprite sMoltresSprites168[] = {
 	{sMoltresGfx168, ARRAY_COUNT(sMoltresGfx168)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx169[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_169.4bpp");
+static const u8 sMoltresGfx169[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_169.4bpp.lz");
 static const ax_sprite sMoltresSprites169[] = {
 	{NULL, 32}, 
 	{sMoltresGfx169, ARRAY_COUNT(sMoltresGfx169)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx170[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_170.4bpp");
+static const u8 sMoltresGfx170[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_170.4bpp.lz");
 static const ax_sprite sMoltresSprites170[] = {
 	{NULL, 32}, 
 	{sMoltresGfx170, ARRAY_COUNT(sMoltresGfx170)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx171[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_171.4bpp");
+static const u8 sMoltresGfx171[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_171.4bpp.lz");
 static const ax_sprite sMoltresSprites171[] = {
 	{sMoltresGfx171, ARRAY_COUNT(sMoltresGfx171)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx172[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_172.4bpp");
+static const u8 sMoltresGfx172[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_172.4bpp.lz");
 static const ax_sprite sMoltresSprites172[] = {
 	{sMoltresGfx172, ARRAY_COUNT(sMoltresGfx172)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx173[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_173.4bpp");
+static const u8 sMoltresGfx173[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_173.4bpp.lz");
 static const ax_sprite sMoltresSprites173[] = {
 	{sMoltresGfx173, ARRAY_COUNT(sMoltresGfx173)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx174[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_174.4bpp");
+static const u8 sMoltresGfx174[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_174.4bpp.lz");
 static const ax_sprite sMoltresSprites174[] = {
 	{sMoltresGfx174, ARRAY_COUNT(sMoltresGfx174)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx175[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_175.4bpp");
+static const u8 sMoltresGfx175[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_175.4bpp.lz");
 static const ax_sprite sMoltresSprites175[] = {
 	{sMoltresGfx175, ARRAY_COUNT(sMoltresGfx175)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx176[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_176.4bpp");
-static const u8 sMoltresGfx176_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_176_1.4bpp");
+static const u8 sMoltresGfx176[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_176.4bpp.lz");
+static const u8 sMoltresGfx176_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_176_1.4bpp.lz");
 static const ax_sprite sMoltresSprites176[] = {
 	{sMoltresGfx176, ARRAY_COUNT(sMoltresGfx176)}, 
 	{NULL, 32}, 
 	{sMoltresGfx176_1, ARRAY_COUNT(sMoltresGfx176_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx177[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_177.4bpp");
+static const u8 sMoltresGfx177[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_177.4bpp.lz");
 static const ax_sprite sMoltresSprites177[] = {
 	{sMoltresGfx177, ARRAY_COUNT(sMoltresGfx177)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx178[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_178.4bpp");
+static const u8 sMoltresGfx178[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_178.4bpp.lz");
 static const ax_sprite sMoltresSprites178[] = {
 	{sMoltresGfx178, ARRAY_COUNT(sMoltresGfx178)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx179[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_179.4bpp");
+static const u8 sMoltresGfx179[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_179.4bpp.lz");
 static const ax_sprite sMoltresSprites179[] = {
 	{sMoltresGfx179, ARRAY_COUNT(sMoltresGfx179)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx180[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_180.4bpp");
+static const u8 sMoltresGfx180[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_180.4bpp.lz");
 static const ax_sprite sMoltresSprites180[] = {
 	{sMoltresGfx180, ARRAY_COUNT(sMoltresGfx180)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx181[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_181.4bpp");
-static const u8 sMoltresGfx181_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_181_1.4bpp");
-static const u8 sMoltresGfx181_2[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_181_2.4bpp");
+static const u8 sMoltresGfx181[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_181.4bpp.lz");
+static const u8 sMoltresGfx181_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_181_1.4bpp.lz");
+static const u8 sMoltresGfx181_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_181_2.4bpp.lz");
 static const ax_sprite sMoltresSprites181[] = {
 	{sMoltresGfx181, ARRAY_COUNT(sMoltresGfx181)}, 
 	{NULL, 64}, 
@@ -5121,8 +5121,8 @@ static const ax_sprite sMoltresSprites181[] = {
 	{sMoltresGfx181_2, ARRAY_COUNT(sMoltresGfx181_2)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx182[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_182.4bpp");
-static const u8 sMoltresGfx182_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_182_1.4bpp");
+static const u8 sMoltresGfx182[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_182.4bpp.lz");
+static const u8 sMoltresGfx182_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_182_1.4bpp.lz");
 static const ax_sprite sMoltresSprites182[] = {
 	{NULL, 32}, 
 	{sMoltresGfx182, ARRAY_COUNT(sMoltresGfx182)}, 
@@ -5130,43 +5130,43 @@ static const ax_sprite sMoltresSprites182[] = {
 	{sMoltresGfx182_1, ARRAY_COUNT(sMoltresGfx182_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx183[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_183.4bpp");
-static const u8 sMoltresGfx183_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_183_1.4bpp");
+static const u8 sMoltresGfx183[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_183.4bpp.lz");
+static const u8 sMoltresGfx183_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_183_1.4bpp.lz");
 static const ax_sprite sMoltresSprites183[] = {
 	{sMoltresGfx183, ARRAY_COUNT(sMoltresGfx183)}, 
 	{NULL, 32}, 
 	{sMoltresGfx183_1, ARRAY_COUNT(sMoltresGfx183_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx184[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_184.4bpp");
-static const u8 sMoltresGfx184_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_184_1.4bpp");
+static const u8 sMoltresGfx184[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_184.4bpp.lz");
+static const u8 sMoltresGfx184_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_184_1.4bpp.lz");
 static const ax_sprite sMoltresSprites184[] = {
 	{sMoltresGfx184, ARRAY_COUNT(sMoltresGfx184)}, 
 	{NULL, 32}, 
 	{sMoltresGfx184_1, ARRAY_COUNT(sMoltresGfx184_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx185[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_185.4bpp");
+static const u8 sMoltresGfx185[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_185.4bpp.lz");
 static const ax_sprite sMoltresSprites185[] = {
 	{sMoltresGfx185, ARRAY_COUNT(sMoltresGfx185)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx186[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_186.4bpp");
+static const u8 sMoltresGfx186[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_186.4bpp.lz");
 static const ax_sprite sMoltresSprites186[] = {
 	{sMoltresGfx186, ARRAY_COUNT(sMoltresGfx186)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx187[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_187.4bpp");
+static const u8 sMoltresGfx187[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_187.4bpp.lz");
 static const ax_sprite sMoltresSprites187[] = {
 	{sMoltresGfx187, ARRAY_COUNT(sMoltresGfx187)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx188[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_188.4bpp");
+static const u8 sMoltresGfx188[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_188.4bpp.lz");
 static const ax_sprite sMoltresSprites188[] = {
 	{sMoltresGfx188, ARRAY_COUNT(sMoltresGfx188)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx189[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_189.4bpp");
+static const u8 sMoltresGfx189[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_189.4bpp.lz");
 static const ax_sprite sMoltresSprites189[] = {
 	{sMoltresGfx189, ARRAY_COUNT(sMoltresGfx189)}, 
 	{NULL, 0}
@@ -5175,97 +5175,97 @@ static const ax_sprite sMoltresSprites190[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx191[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_191.4bpp");
-static const u8 sMoltresGfx191_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_191_1.4bpp");
+static const u8 sMoltresGfx191[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_191.4bpp.lz");
+static const u8 sMoltresGfx191_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_191_1.4bpp.lz");
 static const ax_sprite sMoltresSprites191[] = {
 	{sMoltresGfx191, ARRAY_COUNT(sMoltresGfx191)}, 
 	{NULL, 32}, 
 	{sMoltresGfx191_1, ARRAY_COUNT(sMoltresGfx191_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx192[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_192.4bpp");
+static const u8 sMoltresGfx192[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_192.4bpp.lz");
 static const ax_sprite sMoltresSprites192[] = {
 	{sMoltresGfx192, ARRAY_COUNT(sMoltresGfx192)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx193[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_193.4bpp");
+static const u8 sMoltresGfx193[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_193.4bpp.lz");
 static const ax_sprite sMoltresSprites193[] = {
 	{sMoltresGfx193, ARRAY_COUNT(sMoltresGfx193)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx194[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_194.4bpp");
+static const u8 sMoltresGfx194[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_194.4bpp.lz");
 static const ax_sprite sMoltresSprites194[] = {
 	{sMoltresGfx194, ARRAY_COUNT(sMoltresGfx194)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx195[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_195.4bpp");
+static const u8 sMoltresGfx195[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_195.4bpp.lz");
 static const ax_sprite sMoltresSprites195[] = {
 	{sMoltresGfx195, ARRAY_COUNT(sMoltresGfx195)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx196[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_196.4bpp");
+static const u8 sMoltresGfx196[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_196.4bpp.lz");
 static const ax_sprite sMoltresSprites196[] = {
 	{sMoltresGfx196, ARRAY_COUNT(sMoltresGfx196)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx197[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_197.4bpp");
+static const u8 sMoltresGfx197[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_197.4bpp.lz");
 static const ax_sprite sMoltresSprites197[] = {
 	{sMoltresGfx197, ARRAY_COUNT(sMoltresGfx197)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx198[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_198.4bpp");
+static const u8 sMoltresGfx198[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_198.4bpp.lz");
 static const ax_sprite sMoltresSprites198[] = {
 	{sMoltresGfx198, ARRAY_COUNT(sMoltresGfx198)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx199[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_199.4bpp");
+static const u8 sMoltresGfx199[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_199.4bpp.lz");
 static const ax_sprite sMoltresSprites199[] = {
 	{sMoltresGfx199, ARRAY_COUNT(sMoltresGfx199)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx200[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_200.4bpp");
+static const u8 sMoltresGfx200[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_200.4bpp.lz");
 static const ax_sprite sMoltresSprites200[] = {
 	{sMoltresGfx200, ARRAY_COUNT(sMoltresGfx200)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx201[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_201.4bpp");
+static const u8 sMoltresGfx201[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_201.4bpp.lz");
 static const ax_sprite sMoltresSprites201[] = {
 	{sMoltresGfx201, ARRAY_COUNT(sMoltresGfx201)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx202[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_202.4bpp");
+static const u8 sMoltresGfx202[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_202.4bpp.lz");
 static const ax_sprite sMoltresSprites202[] = {
 	{sMoltresGfx202, ARRAY_COUNT(sMoltresGfx202)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx203[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_203.4bpp");
+static const u8 sMoltresGfx203[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_203.4bpp.lz");
 static const ax_sprite sMoltresSprites203[] = {
 	{sMoltresGfx203, ARRAY_COUNT(sMoltresGfx203)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx204[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_204.4bpp");
+static const u8 sMoltresGfx204[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_204.4bpp.lz");
 static const ax_sprite sMoltresSprites204[] = {
 	{sMoltresGfx204, ARRAY_COUNT(sMoltresGfx204)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx205[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_205.4bpp");
+static const u8 sMoltresGfx205[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_205.4bpp.lz");
 static const ax_sprite sMoltresSprites205[] = {
 	{sMoltresGfx205, ARRAY_COUNT(sMoltresGfx205)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx206[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_206.4bpp");
+static const u8 sMoltresGfx206[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_206.4bpp.lz");
 static const ax_sprite sMoltresSprites206[] = {
 	{sMoltresGfx206, ARRAY_COUNT(sMoltresGfx206)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx207[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_207.4bpp");
+static const u8 sMoltresGfx207[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_207.4bpp.lz");
 static const ax_sprite sMoltresSprites207[] = {
 	{sMoltresGfx207, ARRAY_COUNT(sMoltresGfx207)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx208[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_208.4bpp");
-static const u8 sMoltresGfx208_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_208_1.4bpp");
-static const u8 sMoltresGfx208_2[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_208_2.4bpp");
+static const u8 sMoltresGfx208[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_208.4bpp.lz");
+static const u8 sMoltresGfx208_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_208_1.4bpp.lz");
+static const u8 sMoltresGfx208_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_208_2.4bpp.lz");
 static const ax_sprite sMoltresSprites208[] = {
 	{NULL, 32}, 
 	{sMoltresGfx208, ARRAY_COUNT(sMoltresGfx208)}, 
@@ -5275,23 +5275,23 @@ static const ax_sprite sMoltresSprites208[] = {
 	{sMoltresGfx208_2, ARRAY_COUNT(sMoltresGfx208_2)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx209[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_209.4bpp");
+static const u8 sMoltresGfx209[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_209.4bpp.lz");
 static const ax_sprite sMoltresSprites209[] = {
 	{sMoltresGfx209, ARRAY_COUNT(sMoltresGfx209)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx210[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_210.4bpp");
+static const u8 sMoltresGfx210[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_210.4bpp.lz");
 static const ax_sprite sMoltresSprites210[] = {
 	{sMoltresGfx210, ARRAY_COUNT(sMoltresGfx210)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx211[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_211.4bpp");
+static const u8 sMoltresGfx211[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_211.4bpp.lz");
 static const ax_sprite sMoltresSprites211[] = {
 	{sMoltresGfx211, ARRAY_COUNT(sMoltresGfx211)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx212[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_212.4bpp");
-static const u8 sMoltresGfx212_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_212_1.4bpp");
+static const u8 sMoltresGfx212[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_212.4bpp.lz");
+static const u8 sMoltresGfx212_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_212_1.4bpp.lz");
 static const ax_sprite sMoltresSprites212[] = {
 	{NULL, 32}, 
 	{sMoltresGfx212, ARRAY_COUNT(sMoltresGfx212)}, 
@@ -5299,18 +5299,18 @@ static const ax_sprite sMoltresSprites212[] = {
 	{sMoltresGfx212_1, ARRAY_COUNT(sMoltresGfx212_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx213[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_213.4bpp");
+static const u8 sMoltresGfx213[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_213.4bpp.lz");
 static const ax_sprite sMoltresSprites213[] = {
 	{sMoltresGfx213, ARRAY_COUNT(sMoltresGfx213)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx214[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_214.4bpp");
+static const u8 sMoltresGfx214[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_214.4bpp.lz");
 static const ax_sprite sMoltresSprites214[] = {
 	{sMoltresGfx214, ARRAY_COUNT(sMoltresGfx214)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx215[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_215.4bpp");
-static const u8 sMoltresGfx215_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_215_1.4bpp");
+static const u8 sMoltresGfx215[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_215.4bpp.lz");
+static const u8 sMoltresGfx215_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_215_1.4bpp.lz");
 static const ax_sprite sMoltresSprites215[] = {
 	{NULL, 32}, 
 	{sMoltresGfx215, ARRAY_COUNT(sMoltresGfx215)}, 
@@ -5318,8 +5318,8 @@ static const ax_sprite sMoltresSprites215[] = {
 	{sMoltresGfx215_1, ARRAY_COUNT(sMoltresGfx215_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx216[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_216.4bpp");
-static const u8 sMoltresGfx216_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_216_1.4bpp");
+static const u8 sMoltresGfx216[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_216.4bpp.lz");
+static const u8 sMoltresGfx216_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_216_1.4bpp.lz");
 static const ax_sprite sMoltresSprites216[] = {
 	{NULL, 32}, 
 	{sMoltresGfx216, ARRAY_COUNT(sMoltresGfx216)}, 
@@ -5327,18 +5327,18 @@ static const ax_sprite sMoltresSprites216[] = {
 	{sMoltresGfx216_1, ARRAY_COUNT(sMoltresGfx216_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx217[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_217.4bpp");
+static const u8 sMoltresGfx217[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_217.4bpp.lz");
 static const ax_sprite sMoltresSprites217[] = {
 	{sMoltresGfx217, ARRAY_COUNT(sMoltresGfx217)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx218[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_218.4bpp");
+static const u8 sMoltresGfx218[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_218.4bpp.lz");
 static const ax_sprite sMoltresSprites218[] = {
 	{sMoltresGfx218, ARRAY_COUNT(sMoltresGfx218)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx219[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_219.4bpp");
-static const u8 sMoltresGfx219_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_219_1.4bpp");
+static const u8 sMoltresGfx219[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_219.4bpp.lz");
+static const u8 sMoltresGfx219_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_219_1.4bpp.lz");
 static const ax_sprite sMoltresSprites219[] = {
 	{sMoltresGfx219, ARRAY_COUNT(sMoltresGfx219)}, 
 	{NULL, 64}, 
@@ -5346,18 +5346,18 @@ static const ax_sprite sMoltresSprites219[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx220[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_220.4bpp");
+static const u8 sMoltresGfx220[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_220.4bpp.lz");
 static const ax_sprite sMoltresSprites220[] = {
 	{sMoltresGfx220, ARRAY_COUNT(sMoltresGfx220)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx221[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_221.4bpp");
+static const u8 sMoltresGfx221[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_221.4bpp.lz");
 static const ax_sprite sMoltresSprites221[] = {
 	{sMoltresGfx221, ARRAY_COUNT(sMoltresGfx221)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx222[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_222.4bpp");
-static const u8 sMoltresGfx222_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_222_1.4bpp");
+static const u8 sMoltresGfx222[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_222.4bpp.lz");
+static const u8 sMoltresGfx222_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_222_1.4bpp.lz");
 static const ax_sprite sMoltresSprites222[] = {
 	{NULL, 64}, 
 	{sMoltresGfx222, ARRAY_COUNT(sMoltresGfx222)}, 
@@ -5365,36 +5365,36 @@ static const ax_sprite sMoltresSprites222[] = {
 	{sMoltresGfx222_1, ARRAY_COUNT(sMoltresGfx222_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx223[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_223.4bpp");
+static const u8 sMoltresGfx223[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_223.4bpp.lz");
 static const ax_sprite sMoltresSprites223[] = {
 	{sMoltresGfx223, ARRAY_COUNT(sMoltresGfx223)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx224[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_224.4bpp");
+static const u8 sMoltresGfx224[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_224.4bpp.lz");
 static const ax_sprite sMoltresSprites224[] = {
 	{sMoltresGfx224, ARRAY_COUNT(sMoltresGfx224)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx225[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_225.4bpp");
+static const u8 sMoltresGfx225[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_225.4bpp.lz");
 static const ax_sprite sMoltresSprites225[] = {
 	{sMoltresGfx225, ARRAY_COUNT(sMoltresGfx225)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx226[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_226.4bpp");
+static const u8 sMoltresGfx226[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_226.4bpp.lz");
 static const ax_sprite sMoltresSprites226[] = {
 	{NULL, 32}, 
 	{sMoltresGfx226, ARRAY_COUNT(sMoltresGfx226)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx227[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_227.4bpp");
+static const u8 sMoltresGfx227[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_227.4bpp.lz");
 static const ax_sprite sMoltresSprites227[] = {
 	{sMoltresGfx227, ARRAY_COUNT(sMoltresGfx227)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx228[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_228.4bpp");
-static const u8 sMoltresGfx228_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_228_1.4bpp");
+static const u8 sMoltresGfx228[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_228.4bpp.lz");
+static const u8 sMoltresGfx228_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_228_1.4bpp.lz");
 static const ax_sprite sMoltresSprites228[] = {
 	{NULL, 32}, 
 	{sMoltresGfx228, ARRAY_COUNT(sMoltresGfx228)}, 
@@ -5402,30 +5402,30 @@ static const ax_sprite sMoltresSprites228[] = {
 	{sMoltresGfx228_1, ARRAY_COUNT(sMoltresGfx228_1)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx229[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_229.4bpp");
+static const u8 sMoltresGfx229[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_229.4bpp.lz");
 static const ax_sprite sMoltresSprites229[] = {
 	{sMoltresGfx229, ARRAY_COUNT(sMoltresGfx229)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx230[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_230.4bpp");
+static const u8 sMoltresGfx230[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_230.4bpp.lz");
 static const ax_sprite sMoltresSprites230[] = {
 	{NULL, 64}, 
 	{sMoltresGfx230, ARRAY_COUNT(sMoltresGfx230)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx231[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_231.4bpp");
+static const u8 sMoltresGfx231[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_231.4bpp.lz");
 static const ax_sprite sMoltresSprites231[] = {
 	{NULL, 32}, 
 	{sMoltresGfx231, ARRAY_COUNT(sMoltresGfx231)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx232[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_232.4bpp");
+static const u8 sMoltresGfx232[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_232.4bpp.lz");
 static const ax_sprite sMoltresSprites232[] = {
 	{sMoltresGfx232, ARRAY_COUNT(sMoltresGfx232)}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx233[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_233.4bpp");
-static const u8 sMoltresGfx233_1[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_233_1.4bpp");
+static const u8 sMoltresGfx233[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_233.4bpp.lz");
+static const u8 sMoltresGfx233_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_233_1.4bpp.lz");
 static const ax_sprite sMoltresSprites233[] = {
 	{NULL, 32}, 
 	{sMoltresGfx233, ARRAY_COUNT(sMoltresGfx233)}, 
@@ -5434,7 +5434,7 @@ static const ax_sprite sMoltresSprites233[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMoltresGfx234[] = INCBIN_U8("graphics/ax/mon/moltres/sprite_234.4bpp");
+static const u8 sMoltresGfx234[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/moltres/sprite_234.4bpp.lz");
 static const ax_sprite sMoltresSprites234[] = {
 	{sMoltresGfx234, ARRAY_COUNT(sMoltresGfx234)}, 
 	{NULL, 0}

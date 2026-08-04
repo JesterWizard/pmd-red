@@ -3126,362 +3126,362 @@ static const ax_anim sTorchicAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTorchicGfx1[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_1.4bpp");
+static const u8 sTorchicGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_1.4bpp.lz");
 static const ax_sprite sTorchicSprites1[] = {
 	{sTorchicGfx1, ARRAY_COUNT(sTorchicGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx2[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_2.4bpp");
+static const u8 sTorchicGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_2.4bpp.lz");
 static const ax_sprite sTorchicSprites2[] = {
 	{sTorchicGfx2, ARRAY_COUNT(sTorchicGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx3[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_3.4bpp");
+static const u8 sTorchicGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_3.4bpp.lz");
 static const ax_sprite sTorchicSprites3[] = {
 	{sTorchicGfx3, ARRAY_COUNT(sTorchicGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx4[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_4.4bpp");
+static const u8 sTorchicGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_4.4bpp.lz");
 static const ax_sprite sTorchicSprites4[] = {
 	{sTorchicGfx4, ARRAY_COUNT(sTorchicGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx5[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_5.4bpp");
+static const u8 sTorchicGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_5.4bpp.lz");
 static const ax_sprite sTorchicSprites5[] = {
 	{sTorchicGfx5, ARRAY_COUNT(sTorchicGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx6[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_6.4bpp");
+static const u8 sTorchicGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_6.4bpp.lz");
 static const ax_sprite sTorchicSprites6[] = {
 	{sTorchicGfx6, ARRAY_COUNT(sTorchicGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx7[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_7.4bpp");
+static const u8 sTorchicGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_7.4bpp.lz");
 static const ax_sprite sTorchicSprites7[] = {
 	{sTorchicGfx7, ARRAY_COUNT(sTorchicGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx8[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_8.4bpp");
+static const u8 sTorchicGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_8.4bpp.lz");
 static const ax_sprite sTorchicSprites8[] = {
 	{sTorchicGfx8, ARRAY_COUNT(sTorchicGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx9[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_9.4bpp");
+static const u8 sTorchicGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_9.4bpp.lz");
 static const ax_sprite sTorchicSprites9[] = {
 	{sTorchicGfx9, ARRAY_COUNT(sTorchicGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx10[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_10.4bpp");
+static const u8 sTorchicGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_10.4bpp.lz");
 static const ax_sprite sTorchicSprites10[] = {
 	{sTorchicGfx10, ARRAY_COUNT(sTorchicGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx11[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_11.4bpp");
+static const u8 sTorchicGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_11.4bpp.lz");
 static const ax_sprite sTorchicSprites11[] = {
 	{sTorchicGfx11, ARRAY_COUNT(sTorchicGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx12[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_12.4bpp");
+static const u8 sTorchicGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_12.4bpp.lz");
 static const ax_sprite sTorchicSprites12[] = {
 	{sTorchicGfx12, ARRAY_COUNT(sTorchicGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx13[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_13.4bpp");
+static const u8 sTorchicGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_13.4bpp.lz");
 static const ax_sprite sTorchicSprites13[] = {
 	{sTorchicGfx13, ARRAY_COUNT(sTorchicGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx14[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_14.4bpp");
+static const u8 sTorchicGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_14.4bpp.lz");
 static const ax_sprite sTorchicSprites14[] = {
 	{sTorchicGfx14, ARRAY_COUNT(sTorchicGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx15[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_15.4bpp");
+static const u8 sTorchicGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_15.4bpp.lz");
 static const ax_sprite sTorchicSprites15[] = {
 	{sTorchicGfx15, ARRAY_COUNT(sTorchicGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx16[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_16.4bpp");
+static const u8 sTorchicGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_16.4bpp.lz");
 static const ax_sprite sTorchicSprites16[] = {
 	{sTorchicGfx16, ARRAY_COUNT(sTorchicGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx17[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_17.4bpp");
+static const u8 sTorchicGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_17.4bpp.lz");
 static const ax_sprite sTorchicSprites17[] = {
 	{sTorchicGfx17, ARRAY_COUNT(sTorchicGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx18[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_18.4bpp");
+static const u8 sTorchicGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_18.4bpp.lz");
 static const ax_sprite sTorchicSprites18[] = {
 	{sTorchicGfx18, ARRAY_COUNT(sTorchicGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx19[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_19.4bpp");
+static const u8 sTorchicGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_19.4bpp.lz");
 static const ax_sprite sTorchicSprites19[] = {
 	{sTorchicGfx19, ARRAY_COUNT(sTorchicGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx20[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_20.4bpp");
+static const u8 sTorchicGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_20.4bpp.lz");
 static const ax_sprite sTorchicSprites20[] = {
 	{sTorchicGfx20, ARRAY_COUNT(sTorchicGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx21[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_21.4bpp");
+static const u8 sTorchicGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_21.4bpp.lz");
 static const ax_sprite sTorchicSprites21[] = {
 	{sTorchicGfx21, ARRAY_COUNT(sTorchicGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx22[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_22.4bpp");
+static const u8 sTorchicGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_22.4bpp.lz");
 static const ax_sprite sTorchicSprites22[] = {
 	{sTorchicGfx22, ARRAY_COUNT(sTorchicGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx23[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_23.4bpp");
+static const u8 sTorchicGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_23.4bpp.lz");
 static const ax_sprite sTorchicSprites23[] = {
 	{sTorchicGfx23, ARRAY_COUNT(sTorchicGfx23)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx24[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_24.4bpp");
+static const u8 sTorchicGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_24.4bpp.lz");
 static const ax_sprite sTorchicSprites24[] = {
 	{sTorchicGfx24, ARRAY_COUNT(sTorchicGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx25[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_25.4bpp");
+static const u8 sTorchicGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_25.4bpp.lz");
 static const ax_sprite sTorchicSprites25[] = {
 	{sTorchicGfx25, ARRAY_COUNT(sTorchicGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx26[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_26.4bpp");
+static const u8 sTorchicGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_26.4bpp.lz");
 static const ax_sprite sTorchicSprites26[] = {
 	{NULL, 32}, 
 	{sTorchicGfx26, ARRAY_COUNT(sTorchicGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx27[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_27.4bpp");
+static const u8 sTorchicGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_27.4bpp.lz");
 static const ax_sprite sTorchicSprites27[] = {
 	{sTorchicGfx27, ARRAY_COUNT(sTorchicGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx28[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_28.4bpp");
+static const u8 sTorchicGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_28.4bpp.lz");
 static const ax_sprite sTorchicSprites28[] = {
 	{sTorchicGfx28, ARRAY_COUNT(sTorchicGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx29[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_29.4bpp");
+static const u8 sTorchicGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_29.4bpp.lz");
 static const ax_sprite sTorchicSprites29[] = {
 	{sTorchicGfx29, ARRAY_COUNT(sTorchicGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx30[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_30.4bpp");
+static const u8 sTorchicGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_30.4bpp.lz");
 static const ax_sprite sTorchicSprites30[] = {
 	{sTorchicGfx30, ARRAY_COUNT(sTorchicGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx31[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_31.4bpp");
+static const u8 sTorchicGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_31.4bpp.lz");
 static const ax_sprite sTorchicSprites31[] = {
 	{sTorchicGfx31, ARRAY_COUNT(sTorchicGfx31)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx32[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_32.4bpp");
+static const u8 sTorchicGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_32.4bpp.lz");
 static const ax_sprite sTorchicSprites32[] = {
 	{sTorchicGfx32, ARRAY_COUNT(sTorchicGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx33[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_33.4bpp");
+static const u8 sTorchicGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_33.4bpp.lz");
 static const ax_sprite sTorchicSprites33[] = {
 	{sTorchicGfx33, ARRAY_COUNT(sTorchicGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx34[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_34.4bpp");
+static const u8 sTorchicGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_34.4bpp.lz");
 static const ax_sprite sTorchicSprites34[] = {
 	{sTorchicGfx34, ARRAY_COUNT(sTorchicGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx35[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_35.4bpp");
+static const u8 sTorchicGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_35.4bpp.lz");
 static const ax_sprite sTorchicSprites35[] = {
 	{sTorchicGfx35, ARRAY_COUNT(sTorchicGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx36[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_36.4bpp");
+static const u8 sTorchicGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_36.4bpp.lz");
 static const ax_sprite sTorchicSprites36[] = {
 	{sTorchicGfx36, ARRAY_COUNT(sTorchicGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx37[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_37.4bpp");
+static const u8 sTorchicGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_37.4bpp.lz");
 static const ax_sprite sTorchicSprites37[] = {
 	{sTorchicGfx37, ARRAY_COUNT(sTorchicGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx38[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_38.4bpp");
+static const u8 sTorchicGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_38.4bpp.lz");
 static const ax_sprite sTorchicSprites38[] = {
 	{sTorchicGfx38, ARRAY_COUNT(sTorchicGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx39[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_39.4bpp");
+static const u8 sTorchicGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_39.4bpp.lz");
 static const ax_sprite sTorchicSprites39[] = {
 	{sTorchicGfx39, ARRAY_COUNT(sTorchicGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx40[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_40.4bpp");
+static const u8 sTorchicGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_40.4bpp.lz");
 static const ax_sprite sTorchicSprites40[] = {
 	{sTorchicGfx40, ARRAY_COUNT(sTorchicGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx41[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_41.4bpp");
+static const u8 sTorchicGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_41.4bpp.lz");
 static const ax_sprite sTorchicSprites41[] = {
 	{sTorchicGfx41, ARRAY_COUNT(sTorchicGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx42[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_42.4bpp");
+static const u8 sTorchicGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_42.4bpp.lz");
 static const ax_sprite sTorchicSprites42[] = {
 	{sTorchicGfx42, ARRAY_COUNT(sTorchicGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx43[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_43.4bpp");
+static const u8 sTorchicGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_43.4bpp.lz");
 static const ax_sprite sTorchicSprites43[] = {
 	{sTorchicGfx43, ARRAY_COUNT(sTorchicGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx44[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_44.4bpp");
+static const u8 sTorchicGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_44.4bpp.lz");
 static const ax_sprite sTorchicSprites44[] = {
 	{sTorchicGfx44, ARRAY_COUNT(sTorchicGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx45[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_45.4bpp");
+static const u8 sTorchicGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_45.4bpp.lz");
 static const ax_sprite sTorchicSprites45[] = {
 	{sTorchicGfx45, ARRAY_COUNT(sTorchicGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx46[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_46.4bpp");
+static const u8 sTorchicGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_46.4bpp.lz");
 static const ax_sprite sTorchicSprites46[] = {
 	{sTorchicGfx46, ARRAY_COUNT(sTorchicGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx47[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_47.4bpp");
+static const u8 sTorchicGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_47.4bpp.lz");
 static const ax_sprite sTorchicSprites47[] = {
 	{sTorchicGfx47, ARRAY_COUNT(sTorchicGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx48[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_48.4bpp");
+static const u8 sTorchicGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_48.4bpp.lz");
 static const ax_sprite sTorchicSprites48[] = {
 	{sTorchicGfx48, ARRAY_COUNT(sTorchicGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx49[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_49.4bpp");
+static const u8 sTorchicGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_49.4bpp.lz");
 static const ax_sprite sTorchicSprites49[] = {
 	{sTorchicGfx49, ARRAY_COUNT(sTorchicGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx50[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_50.4bpp");
+static const u8 sTorchicGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_50.4bpp.lz");
 static const ax_sprite sTorchicSprites50[] = {
 	{sTorchicGfx50, ARRAY_COUNT(sTorchicGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx51[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_51.4bpp");
+static const u8 sTorchicGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_51.4bpp.lz");
 static const ax_sprite sTorchicSprites51[] = {
 	{sTorchicGfx51, ARRAY_COUNT(sTorchicGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx52[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_52.4bpp");
+static const u8 sTorchicGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_52.4bpp.lz");
 static const ax_sprite sTorchicSprites52[] = {
 	{sTorchicGfx52, ARRAY_COUNT(sTorchicGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx53[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_53.4bpp");
+static const u8 sTorchicGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_53.4bpp.lz");
 static const ax_sprite sTorchicSprites53[] = {
 	{sTorchicGfx53, ARRAY_COUNT(sTorchicGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx54[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_54.4bpp");
+static const u8 sTorchicGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_54.4bpp.lz");
 static const ax_sprite sTorchicSprites54[] = {
 	{sTorchicGfx54, ARRAY_COUNT(sTorchicGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx55[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_55.4bpp");
+static const u8 sTorchicGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_55.4bpp.lz");
 static const ax_sprite sTorchicSprites55[] = {
 	{sTorchicGfx55, ARRAY_COUNT(sTorchicGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx56[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_56.4bpp");
+static const u8 sTorchicGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_56.4bpp.lz");
 static const ax_sprite sTorchicSprites56[] = {
 	{sTorchicGfx56, ARRAY_COUNT(sTorchicGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx57[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_57.4bpp");
+static const u8 sTorchicGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_57.4bpp.lz");
 static const ax_sprite sTorchicSprites57[] = {
 	{sTorchicGfx57, ARRAY_COUNT(sTorchicGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx58[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_58.4bpp");
+static const u8 sTorchicGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_58.4bpp.lz");
 static const ax_sprite sTorchicSprites58[] = {
 	{sTorchicGfx58, ARRAY_COUNT(sTorchicGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx59[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_59.4bpp");
+static const u8 sTorchicGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_59.4bpp.lz");
 static const ax_sprite sTorchicSprites59[] = {
 	{sTorchicGfx59, ARRAY_COUNT(sTorchicGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx60[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_60.4bpp");
+static const u8 sTorchicGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_60.4bpp.lz");
 static const ax_sprite sTorchicSprites60[] = {
 	{sTorchicGfx60, ARRAY_COUNT(sTorchicGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx61[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_61.4bpp");
+static const u8 sTorchicGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_61.4bpp.lz");
 static const ax_sprite sTorchicSprites61[] = {
 	{sTorchicGfx61, ARRAY_COUNT(sTorchicGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx62[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_62.4bpp");
+static const u8 sTorchicGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_62.4bpp.lz");
 static const ax_sprite sTorchicSprites62[] = {
 	{sTorchicGfx62, ARRAY_COUNT(sTorchicGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx63[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_63.4bpp");
+static const u8 sTorchicGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_63.4bpp.lz");
 static const ax_sprite sTorchicSprites63[] = {
 	{sTorchicGfx63, ARRAY_COUNT(sTorchicGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx64[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_64.4bpp");
+static const u8 sTorchicGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_64.4bpp.lz");
 static const ax_sprite sTorchicSprites64[] = {
 	{sTorchicGfx64, ARRAY_COUNT(sTorchicGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx65[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_65.4bpp");
+static const u8 sTorchicGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_65.4bpp.lz");
 static const ax_sprite sTorchicSprites65[] = {
 	{sTorchicGfx65, ARRAY_COUNT(sTorchicGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx66[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_66.4bpp");
+static const u8 sTorchicGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_66.4bpp.lz");
 static const ax_sprite sTorchicSprites66[] = {
 	{sTorchicGfx66, ARRAY_COUNT(sTorchicGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx67[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_67.4bpp");
+static const u8 sTorchicGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_67.4bpp.lz");
 static const ax_sprite sTorchicSprites67[] = {
 	{sTorchicGfx67, ARRAY_COUNT(sTorchicGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx68[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_68.4bpp");
+static const u8 sTorchicGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_68.4bpp.lz");
 static const ax_sprite sTorchicSprites68[] = {
 	{sTorchicGfx68, ARRAY_COUNT(sTorchicGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sTorchicGfx69[] = INCBIN_U8("graphics/ax/mon/torchic/sprite_69.4bpp");
+static const u8 sTorchicGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/torchic/sprite_69.4bpp.lz");
 static const ax_sprite sTorchicSprites69[] = {
 	{sTorchicGfx69, ARRAY_COUNT(sTorchicGfx69)}, 
 	{NULL, 0}

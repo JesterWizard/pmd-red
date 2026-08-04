@@ -2347,112 +2347,112 @@ static const ax_anim sCelebiAnims_14_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCelebiGfx1[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_1.4bpp");
+static const u8 sCelebiGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_1.4bpp.lz");
 static const ax_sprite sCelebiSprites1[] = {
 	{sCelebiGfx1, ARRAY_COUNT(sCelebiGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx2[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_2.4bpp");
+static const u8 sCelebiGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_2.4bpp.lz");
 static const ax_sprite sCelebiSprites2[] = {
 	{sCelebiGfx2, ARRAY_COUNT(sCelebiGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx3[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_3.4bpp");
+static const u8 sCelebiGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_3.4bpp.lz");
 static const ax_sprite sCelebiSprites3[] = {
 	{sCelebiGfx3, ARRAY_COUNT(sCelebiGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx4[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_4.4bpp");
+static const u8 sCelebiGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_4.4bpp.lz");
 static const ax_sprite sCelebiSprites4[] = {
 	{sCelebiGfx4, ARRAY_COUNT(sCelebiGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx5[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_5.4bpp");
+static const u8 sCelebiGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_5.4bpp.lz");
 static const ax_sprite sCelebiSprites5[] = {
 	{sCelebiGfx5, ARRAY_COUNT(sCelebiGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx6[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_6.4bpp");
+static const u8 sCelebiGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_6.4bpp.lz");
 static const ax_sprite sCelebiSprites6[] = {
 	{sCelebiGfx6, ARRAY_COUNT(sCelebiGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx7[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_7.4bpp");
+static const u8 sCelebiGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_7.4bpp.lz");
 static const ax_sprite sCelebiSprites7[] = {
 	{sCelebiGfx7, ARRAY_COUNT(sCelebiGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx8[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_8.4bpp");
+static const u8 sCelebiGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_8.4bpp.lz");
 static const ax_sprite sCelebiSprites8[] = {
 	{sCelebiGfx8, ARRAY_COUNT(sCelebiGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx9[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_9.4bpp");
+static const u8 sCelebiGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_9.4bpp.lz");
 static const ax_sprite sCelebiSprites9[] = {
 	{sCelebiGfx9, ARRAY_COUNT(sCelebiGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx10[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_10.4bpp");
+static const u8 sCelebiGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_10.4bpp.lz");
 static const ax_sprite sCelebiSprites10[] = {
 	{sCelebiGfx10, ARRAY_COUNT(sCelebiGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx11[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_11.4bpp");
+static const u8 sCelebiGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_11.4bpp.lz");
 static const ax_sprite sCelebiSprites11[] = {
 	{sCelebiGfx11, ARRAY_COUNT(sCelebiGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx12[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_12.4bpp");
+static const u8 sCelebiGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_12.4bpp.lz");
 static const ax_sprite sCelebiSprites12[] = {
 	{sCelebiGfx12, ARRAY_COUNT(sCelebiGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx13[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_13.4bpp");
+static const u8 sCelebiGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_13.4bpp.lz");
 static const ax_sprite sCelebiSprites13[] = {
 	{sCelebiGfx13, ARRAY_COUNT(sCelebiGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx14[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_14.4bpp");
+static const u8 sCelebiGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_14.4bpp.lz");
 static const ax_sprite sCelebiSprites14[] = {
 	{sCelebiGfx14, ARRAY_COUNT(sCelebiGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx15[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_15.4bpp");
+static const u8 sCelebiGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_15.4bpp.lz");
 static const ax_sprite sCelebiSprites15[] = {
 	{sCelebiGfx15, ARRAY_COUNT(sCelebiGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx16[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_16.4bpp");
+static const u8 sCelebiGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_16.4bpp.lz");
 static const ax_sprite sCelebiSprites16[] = {
 	{sCelebiGfx16, ARRAY_COUNT(sCelebiGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx17[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_17.4bpp");
+static const u8 sCelebiGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_17.4bpp.lz");
 static const ax_sprite sCelebiSprites17[] = {
 	{sCelebiGfx17, ARRAY_COUNT(sCelebiGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx18[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_18.4bpp");
+static const u8 sCelebiGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_18.4bpp.lz");
 static const ax_sprite sCelebiSprites18[] = {
 	{sCelebiGfx18, ARRAY_COUNT(sCelebiGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx19[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_19.4bpp");
+static const u8 sCelebiGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_19.4bpp.lz");
 static const ax_sprite sCelebiSprites19[] = {
 	{sCelebiGfx19, ARRAY_COUNT(sCelebiGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx20[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_20.4bpp");
+static const u8 sCelebiGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_20.4bpp.lz");
 static const ax_sprite sCelebiSprites20[] = {
 	{sCelebiGfx20, ARRAY_COUNT(sCelebiGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx21[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_21.4bpp");
+static const u8 sCelebiGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_21.4bpp.lz");
 static const ax_sprite sCelebiSprites21[] = {
 	{sCelebiGfx21, ARRAY_COUNT(sCelebiGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sCelebiGfx22[] = INCBIN_U8("graphics/ax/mon/celebi/sprite_22.4bpp");
+static const u8 sCelebiGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/celebi/sprite_22.4bpp.lz");
 static const ax_sprite sCelebiSprites22[] = {
 	{sCelebiGfx22, ARRAY_COUNT(sCelebiGfx22)}, 
 	{NULL, 0}

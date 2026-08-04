@@ -2259,128 +2259,128 @@ static const ax_anim sBanetteAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBanetteGfx1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_1.4bpp");
+static const u8 sBanetteGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_1.4bpp.lz");
 static const ax_sprite sBanetteSprites1[] = {
 	{sBanetteGfx1, ARRAY_COUNT(sBanetteGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_2.4bpp");
+static const u8 sBanetteGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_2.4bpp.lz");
 static const ax_sprite sBanetteSprites2[] = {
 	{sBanetteGfx2, ARRAY_COUNT(sBanetteGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx3[] = INCBIN_U8("graphics/ax/mon/banette/sprite_3.4bpp");
+static const u8 sBanetteGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_3.4bpp.lz");
 static const ax_sprite sBanetteSprites3[] = {
 	{sBanetteGfx3, ARRAY_COUNT(sBanetteGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx4[] = INCBIN_U8("graphics/ax/mon/banette/sprite_4.4bpp");
+static const u8 sBanetteGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_4.4bpp.lz");
 static const ax_sprite sBanetteSprites4[] = {
 	{sBanetteGfx4, ARRAY_COUNT(sBanetteGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx5[] = INCBIN_U8("graphics/ax/mon/banette/sprite_5.4bpp");
+static const u8 sBanetteGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_5.4bpp.lz");
 static const ax_sprite sBanetteSprites5[] = {
 	{sBanetteGfx5, ARRAY_COUNT(sBanetteGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx6[] = INCBIN_U8("graphics/ax/mon/banette/sprite_6.4bpp");
+static const u8 sBanetteGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_6.4bpp.lz");
 static const ax_sprite sBanetteSprites6[] = {
 	{sBanetteGfx6, ARRAY_COUNT(sBanetteGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx7[] = INCBIN_U8("graphics/ax/mon/banette/sprite_7.4bpp");
+static const u8 sBanetteGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_7.4bpp.lz");
 static const ax_sprite sBanetteSprites7[] = {
 	{sBanetteGfx7, ARRAY_COUNT(sBanetteGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx8[] = INCBIN_U8("graphics/ax/mon/banette/sprite_8.4bpp");
+static const u8 sBanetteGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_8.4bpp.lz");
 static const ax_sprite sBanetteSprites8[] = {
 	{sBanetteGfx8, ARRAY_COUNT(sBanetteGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx9[] = INCBIN_U8("graphics/ax/mon/banette/sprite_9.4bpp");
+static const u8 sBanetteGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_9.4bpp.lz");
 static const ax_sprite sBanetteSprites9[] = {
 	{sBanetteGfx9, ARRAY_COUNT(sBanetteGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx10[] = INCBIN_U8("graphics/ax/mon/banette/sprite_10.4bpp");
+static const u8 sBanetteGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_10.4bpp.lz");
 static const ax_sprite sBanetteSprites10[] = {
 	{sBanetteGfx10, ARRAY_COUNT(sBanetteGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx11[] = INCBIN_U8("graphics/ax/mon/banette/sprite_11.4bpp");
+static const u8 sBanetteGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_11.4bpp.lz");
 static const ax_sprite sBanetteSprites11[] = {
 	{sBanetteGfx11, ARRAY_COUNT(sBanetteGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx12[] = INCBIN_U8("graphics/ax/mon/banette/sprite_12.4bpp");
+static const u8 sBanetteGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_12.4bpp.lz");
 static const ax_sprite sBanetteSprites12[] = {
 	{sBanetteGfx12, ARRAY_COUNT(sBanetteGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx13[] = INCBIN_U8("graphics/ax/mon/banette/sprite_13.4bpp");
+static const u8 sBanetteGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_13.4bpp.lz");
 static const ax_sprite sBanetteSprites13[] = {
 	{sBanetteGfx13, ARRAY_COUNT(sBanetteGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx14[] = INCBIN_U8("graphics/ax/mon/banette/sprite_14.4bpp");
+static const u8 sBanetteGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_14.4bpp.lz");
 static const ax_sprite sBanetteSprites14[] = {
 	{sBanetteGfx14, ARRAY_COUNT(sBanetteGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx15[] = INCBIN_U8("graphics/ax/mon/banette/sprite_15.4bpp");
+static const u8 sBanetteGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_15.4bpp.lz");
 static const ax_sprite sBanetteSprites15[] = {
 	{sBanetteGfx15, ARRAY_COUNT(sBanetteGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx16[] = INCBIN_U8("graphics/ax/mon/banette/sprite_16.4bpp");
+static const u8 sBanetteGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_16.4bpp.lz");
 static const ax_sprite sBanetteSprites16[] = {
 	{sBanetteGfx16, ARRAY_COUNT(sBanetteGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx17[] = INCBIN_U8("graphics/ax/mon/banette/sprite_17.4bpp");
+static const u8 sBanetteGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_17.4bpp.lz");
 static const ax_sprite sBanetteSprites17[] = {
 	{sBanetteGfx17, ARRAY_COUNT(sBanetteGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx18[] = INCBIN_U8("graphics/ax/mon/banette/sprite_18.4bpp");
+static const u8 sBanetteGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_18.4bpp.lz");
 static const ax_sprite sBanetteSprites18[] = {
 	{sBanetteGfx18, ARRAY_COUNT(sBanetteGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx19[] = INCBIN_U8("graphics/ax/mon/banette/sprite_19.4bpp");
+static const u8 sBanetteGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_19.4bpp.lz");
 static const ax_sprite sBanetteSprites19[] = {
 	{sBanetteGfx19, ARRAY_COUNT(sBanetteGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx20[] = INCBIN_U8("graphics/ax/mon/banette/sprite_20.4bpp");
+static const u8 sBanetteGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_20.4bpp.lz");
 static const ax_sprite sBanetteSprites20[] = {
 	{sBanetteGfx20, ARRAY_COUNT(sBanetteGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx21[] = INCBIN_U8("graphics/ax/mon/banette/sprite_21.4bpp");
+static const u8 sBanetteGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_21.4bpp.lz");
 static const ax_sprite sBanetteSprites21[] = {
 	{sBanetteGfx21, ARRAY_COUNT(sBanetteGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx22[] = INCBIN_U8("graphics/ax/mon/banette/sprite_22.4bpp");
+static const u8 sBanetteGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_22.4bpp.lz");
 static const ax_sprite sBanetteSprites22[] = {
 	{sBanetteGfx22, ARRAY_COUNT(sBanetteGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx23[] = INCBIN_U8("graphics/ax/mon/banette/sprite_23.4bpp");
+static const u8 sBanetteGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_23.4bpp.lz");
 static const ax_sprite sBanetteSprites23[] = {
 	{sBanetteGfx23, ARRAY_COUNT(sBanetteGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx24[] = INCBIN_U8("graphics/ax/mon/banette/sprite_24.4bpp");
+static const u8 sBanetteGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_24.4bpp.lz");
 static const ax_sprite sBanetteSprites24[] = {
 	{sBanetteGfx24, ARRAY_COUNT(sBanetteGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx25[] = INCBIN_U8("graphics/ax/mon/banette/sprite_25.4bpp");
-static const u8 sBanetteGfx25_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_25_1.4bpp");
+static const u8 sBanetteGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_25.4bpp.lz");
+static const u8 sBanetteGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_25_1.4bpp.lz");
 static const ax_sprite sBanetteSprites25[] = {
 	{NULL, 32}, 
 	{sBanetteGfx25, ARRAY_COUNT(sBanetteGfx25)}, 
@@ -2389,8 +2389,8 @@ static const ax_sprite sBanetteSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx26[] = INCBIN_U8("graphics/ax/mon/banette/sprite_26.4bpp");
-static const u8 sBanetteGfx26_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_26_1.4bpp");
+static const u8 sBanetteGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_26.4bpp.lz");
+static const u8 sBanetteGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_26_1.4bpp.lz");
 static const ax_sprite sBanetteSprites26[] = {
 	{sBanetteGfx26, ARRAY_COUNT(sBanetteGfx26)}, 
 	{NULL, 32}, 
@@ -2398,8 +2398,8 @@ static const ax_sprite sBanetteSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx27[] = INCBIN_U8("graphics/ax/mon/banette/sprite_27.4bpp");
-static const u8 sBanetteGfx27_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_27_1.4bpp");
+static const u8 sBanetteGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_27.4bpp.lz");
+static const u8 sBanetteGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_27_1.4bpp.lz");
 static const ax_sprite sBanetteSprites27[] = {
 	{NULL, 32}, 
 	{sBanetteGfx27, ARRAY_COUNT(sBanetteGfx27)}, 
@@ -2408,17 +2408,17 @@ static const ax_sprite sBanetteSprites27[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx28[] = INCBIN_U8("graphics/ax/mon/banette/sprite_28.4bpp");
+static const u8 sBanetteGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_28.4bpp.lz");
 static const ax_sprite sBanetteSprites28[] = {
 	{NULL, 32}, 
 	{sBanetteGfx28, ARRAY_COUNT(sBanetteGfx28)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx29[] = INCBIN_U8("graphics/ax/mon/banette/sprite_29.4bpp");
-static const u8 sBanetteGfx29_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_29_1.4bpp");
-static const u8 sBanetteGfx29_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_29_2.4bpp");
-static const u8 sBanetteGfx29_3[] = INCBIN_U8("graphics/ax/mon/banette/sprite_29_3.4bpp");
+static const u8 sBanetteGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_29.4bpp.lz");
+static const u8 sBanetteGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_29_1.4bpp.lz");
+static const u8 sBanetteGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_29_2.4bpp.lz");
+static const u8 sBanetteGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_29_3.4bpp.lz");
 static const ax_sprite sBanetteSprites29[] = {
 	{sBanetteGfx29, ARRAY_COUNT(sBanetteGfx29)}, 
 	{NULL, 32}, 
@@ -2430,9 +2430,9 @@ static const ax_sprite sBanetteSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx30[] = INCBIN_U8("graphics/ax/mon/banette/sprite_30.4bpp");
-static const u8 sBanetteGfx30_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_30_1.4bpp");
-static const u8 sBanetteGfx30_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_30_2.4bpp");
+static const u8 sBanetteGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_30.4bpp.lz");
+static const u8 sBanetteGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_30_1.4bpp.lz");
+static const u8 sBanetteGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_30_2.4bpp.lz");
 static const ax_sprite sBanetteSprites30[] = {
 	{sBanetteGfx30, ARRAY_COUNT(sBanetteGfx30)}, 
 	{NULL, 32}, 
@@ -2442,8 +2442,8 @@ static const ax_sprite sBanetteSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx31[] = INCBIN_U8("graphics/ax/mon/banette/sprite_31.4bpp");
-static const u8 sBanetteGfx31_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_31_1.4bpp");
+static const u8 sBanetteGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_31.4bpp.lz");
+static const u8 sBanetteGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_31_1.4bpp.lz");
 static const ax_sprite sBanetteSprites31[] = {
 	{sBanetteGfx31, ARRAY_COUNT(sBanetteGfx31)}, 
 	{NULL, 32}, 
@@ -2451,15 +2451,15 @@ static const ax_sprite sBanetteSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx32[] = INCBIN_U8("graphics/ax/mon/banette/sprite_32.4bpp");
+static const u8 sBanetteGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_32.4bpp.lz");
 static const ax_sprite sBanetteSprites32[] = {
 	{sBanetteGfx32, ARRAY_COUNT(sBanetteGfx32)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx33[] = INCBIN_U8("graphics/ax/mon/banette/sprite_33.4bpp");
-static const u8 sBanetteGfx33_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_33_1.4bpp");
-static const u8 sBanetteGfx33_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_33_2.4bpp");
+static const u8 sBanetteGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_33.4bpp.lz");
+static const u8 sBanetteGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_33_1.4bpp.lz");
+static const u8 sBanetteGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_33_2.4bpp.lz");
 static const ax_sprite sBanetteSprites33[] = {
 	{sBanetteGfx33, ARRAY_COUNT(sBanetteGfx33)}, 
 	{NULL, 32}, 
@@ -2469,9 +2469,9 @@ static const ax_sprite sBanetteSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx34[] = INCBIN_U8("graphics/ax/mon/banette/sprite_34.4bpp");
-static const u8 sBanetteGfx34_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_34_1.4bpp");
-static const u8 sBanetteGfx34_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_34_2.4bpp");
+static const u8 sBanetteGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_34.4bpp.lz");
+static const u8 sBanetteGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_34_1.4bpp.lz");
+static const u8 sBanetteGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_34_2.4bpp.lz");
 static const ax_sprite sBanetteSprites34[] = {
 	{sBanetteGfx34, ARRAY_COUNT(sBanetteGfx34)}, 
 	{NULL, 96}, 
@@ -2481,9 +2481,9 @@ static const ax_sprite sBanetteSprites34[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx35[] = INCBIN_U8("graphics/ax/mon/banette/sprite_35.4bpp");
-static const u8 sBanetteGfx35_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_35_1.4bpp");
-static const u8 sBanetteGfx35_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_35_2.4bpp");
+static const u8 sBanetteGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_35.4bpp.lz");
+static const u8 sBanetteGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_35_1.4bpp.lz");
+static const u8 sBanetteGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_35_2.4bpp.lz");
 static const ax_sprite sBanetteSprites35[] = {
 	{sBanetteGfx35, ARRAY_COUNT(sBanetteGfx35)}, 
 	{NULL, 32}, 
@@ -2493,9 +2493,9 @@ static const ax_sprite sBanetteSprites35[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx36[] = INCBIN_U8("graphics/ax/mon/banette/sprite_36.4bpp");
-static const u8 sBanetteGfx36_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_36_1.4bpp");
-static const u8 sBanetteGfx36_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_36_2.4bpp");
+static const u8 sBanetteGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_36.4bpp.lz");
+static const u8 sBanetteGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_36_1.4bpp.lz");
+static const u8 sBanetteGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_36_2.4bpp.lz");
 static const ax_sprite sBanetteSprites36[] = {
 	{NULL, 32}, 
 	{sBanetteGfx36, ARRAY_COUNT(sBanetteGfx36)}, 
@@ -2506,9 +2506,9 @@ static const ax_sprite sBanetteSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx37[] = INCBIN_U8("graphics/ax/mon/banette/sprite_37.4bpp");
-static const u8 sBanetteGfx37_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_37_1.4bpp");
-static const u8 sBanetteGfx37_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_37_2.4bpp");
+static const u8 sBanetteGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_37.4bpp.lz");
+static const u8 sBanetteGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_37_1.4bpp.lz");
+static const u8 sBanetteGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_37_2.4bpp.lz");
 static const ax_sprite sBanetteSprites37[] = {
 	{sBanetteGfx37, ARRAY_COUNT(sBanetteGfx37)}, 
 	{NULL, 64}, 
@@ -2518,10 +2518,10 @@ static const ax_sprite sBanetteSprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx38[] = INCBIN_U8("graphics/ax/mon/banette/sprite_38.4bpp");
-static const u8 sBanetteGfx38_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_38_1.4bpp");
-static const u8 sBanetteGfx38_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_38_2.4bpp");
-static const u8 sBanetteGfx38_3[] = INCBIN_U8("graphics/ax/mon/banette/sprite_38_3.4bpp");
+static const u8 sBanetteGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_38.4bpp.lz");
+static const u8 sBanetteGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_38_1.4bpp.lz");
+static const u8 sBanetteGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_38_2.4bpp.lz");
+static const u8 sBanetteGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_38_3.4bpp.lz");
 static const ax_sprite sBanetteSprites38[] = {
 	{NULL, 32}, 
 	{sBanetteGfx38, ARRAY_COUNT(sBanetteGfx38)}, 
@@ -2534,15 +2534,15 @@ static const ax_sprite sBanetteSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx39[] = INCBIN_U8("graphics/ax/mon/banette/sprite_39.4bpp");
+static const u8 sBanetteGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_39.4bpp.lz");
 static const ax_sprite sBanetteSprites39[] = {
 	{NULL, 32}, 
 	{sBanetteGfx39, ARRAY_COUNT(sBanetteGfx39)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx40[] = INCBIN_U8("graphics/ax/mon/banette/sprite_40.4bpp");
-static const u8 sBanetteGfx40_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_40_1.4bpp");
+static const u8 sBanetteGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_40.4bpp.lz");
+static const u8 sBanetteGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_40_1.4bpp.lz");
 static const ax_sprite sBanetteSprites40[] = {
 	{sBanetteGfx40, ARRAY_COUNT(sBanetteGfx40)}, 
 	{NULL, 32}, 
@@ -2550,9 +2550,9 @@ static const ax_sprite sBanetteSprites40[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx41[] = INCBIN_U8("graphics/ax/mon/banette/sprite_41.4bpp");
-static const u8 sBanetteGfx41_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_41_1.4bpp");
-static const u8 sBanetteGfx41_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_41_2.4bpp");
+static const u8 sBanetteGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_41.4bpp.lz");
+static const u8 sBanetteGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_41_1.4bpp.lz");
+static const u8 sBanetteGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_41_2.4bpp.lz");
 static const ax_sprite sBanetteSprites41[] = {
 	{NULL, 32}, 
 	{sBanetteGfx41, ARRAY_COUNT(sBanetteGfx41)}, 
@@ -2563,8 +2563,8 @@ static const ax_sprite sBanetteSprites41[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx42[] = INCBIN_U8("graphics/ax/mon/banette/sprite_42.4bpp");
-static const u8 sBanetteGfx42_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_42_1.4bpp");
+static const u8 sBanetteGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_42.4bpp.lz");
+static const u8 sBanetteGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_42_1.4bpp.lz");
 static const ax_sprite sBanetteSprites42[] = {
 	{sBanetteGfx42, ARRAY_COUNT(sBanetteGfx42)}, 
 	{NULL, 32}, 
@@ -2572,8 +2572,8 @@ static const ax_sprite sBanetteSprites42[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx43[] = INCBIN_U8("graphics/ax/mon/banette/sprite_43.4bpp");
-static const u8 sBanetteGfx43_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_43_1.4bpp");
+static const u8 sBanetteGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_43.4bpp.lz");
+static const u8 sBanetteGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_43_1.4bpp.lz");
 static const ax_sprite sBanetteSprites43[] = {
 	{sBanetteGfx43, ARRAY_COUNT(sBanetteGfx43)}, 
 	{NULL, 32}, 
@@ -2581,15 +2581,15 @@ static const ax_sprite sBanetteSprites43[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx44[] = INCBIN_U8("graphics/ax/mon/banette/sprite_44.4bpp");
+static const u8 sBanetteGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_44.4bpp.lz");
 static const ax_sprite sBanetteSprites44[] = {
 	{sBanetteGfx44, ARRAY_COUNT(sBanetteGfx44)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx45[] = INCBIN_U8("graphics/ax/mon/banette/sprite_45.4bpp");
-static const u8 sBanetteGfx45_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_45_1.4bpp");
-static const u8 sBanetteGfx45_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_45_2.4bpp");
+static const u8 sBanetteGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_45.4bpp.lz");
+static const u8 sBanetteGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_45_1.4bpp.lz");
+static const u8 sBanetteGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_45_2.4bpp.lz");
 static const ax_sprite sBanetteSprites45[] = {
 	{sBanetteGfx45, ARRAY_COUNT(sBanetteGfx45)}, 
 	{NULL, 32}, 
@@ -2599,9 +2599,9 @@ static const ax_sprite sBanetteSprites45[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx46[] = INCBIN_U8("graphics/ax/mon/banette/sprite_46.4bpp");
-static const u8 sBanetteGfx46_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_46_1.4bpp");
-static const u8 sBanetteGfx46_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_46_2.4bpp");
+static const u8 sBanetteGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_46.4bpp.lz");
+static const u8 sBanetteGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_46_1.4bpp.lz");
+static const u8 sBanetteGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_46_2.4bpp.lz");
 static const ax_sprite sBanetteSprites46[] = {
 	{sBanetteGfx46, ARRAY_COUNT(sBanetteGfx46)}, 
 	{NULL, 32}, 
@@ -2611,20 +2611,20 @@ static const ax_sprite sBanetteSprites46[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx47[] = INCBIN_U8("graphics/ax/mon/banette/sprite_47.4bpp");
+static const u8 sBanetteGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_47.4bpp.lz");
 static const ax_sprite sBanetteSprites47[] = {
 	{sBanetteGfx47, ARRAY_COUNT(sBanetteGfx47)}, 
 	{NULL, 352}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx48[] = INCBIN_U8("graphics/ax/mon/banette/sprite_48.4bpp");
+static const u8 sBanetteGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_48.4bpp.lz");
 static const ax_sprite sBanetteSprites48[] = {
 	{sBanetteGfx48, ARRAY_COUNT(sBanetteGfx48)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx49[] = INCBIN_U8("graphics/ax/mon/banette/sprite_49.4bpp");
-static const u8 sBanetteGfx49_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_49_1.4bpp");
+static const u8 sBanetteGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_49.4bpp.lz");
+static const u8 sBanetteGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_49_1.4bpp.lz");
 static const ax_sprite sBanetteSprites49[] = {
 	{sBanetteGfx49, ARRAY_COUNT(sBanetteGfx49)}, 
 	{NULL, 32}, 
@@ -2632,9 +2632,9 @@ static const ax_sprite sBanetteSprites49[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx50[] = INCBIN_U8("graphics/ax/mon/banette/sprite_50.4bpp");
-static const u8 sBanetteGfx50_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_50_1.4bpp");
-static const u8 sBanetteGfx50_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_50_2.4bpp");
+static const u8 sBanetteGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_50.4bpp.lz");
+static const u8 sBanetteGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_50_1.4bpp.lz");
+static const u8 sBanetteGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_50_2.4bpp.lz");
 static const ax_sprite sBanetteSprites50[] = {
 	{sBanetteGfx50, ARRAY_COUNT(sBanetteGfx50)}, 
 	{NULL, 32}, 
@@ -2644,9 +2644,9 @@ static const ax_sprite sBanetteSprites50[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx51[] = INCBIN_U8("graphics/ax/mon/banette/sprite_51.4bpp");
-static const u8 sBanetteGfx51_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_51_1.4bpp");
-static const u8 sBanetteGfx51_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_51_2.4bpp");
+static const u8 sBanetteGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_51.4bpp.lz");
+static const u8 sBanetteGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_51_1.4bpp.lz");
+static const u8 sBanetteGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_51_2.4bpp.lz");
 static const ax_sprite sBanetteSprites51[] = {
 	{sBanetteGfx51, ARRAY_COUNT(sBanetteGfx51)}, 
 	{NULL, 32}, 
@@ -2656,10 +2656,10 @@ static const ax_sprite sBanetteSprites51[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx52[] = INCBIN_U8("graphics/ax/mon/banette/sprite_52.4bpp");
-static const u8 sBanetteGfx52_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_52_1.4bpp");
-static const u8 sBanetteGfx52_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_52_2.4bpp");
-static const u8 sBanetteGfx52_3[] = INCBIN_U8("graphics/ax/mon/banette/sprite_52_3.4bpp");
+static const u8 sBanetteGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_52.4bpp.lz");
+static const u8 sBanetteGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_52_1.4bpp.lz");
+static const u8 sBanetteGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_52_2.4bpp.lz");
+static const u8 sBanetteGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_52_3.4bpp.lz");
 static const ax_sprite sBanetteSprites52[] = {
 	{sBanetteGfx52, ARRAY_COUNT(sBanetteGfx52)}, 
 	{NULL, 32}, 
@@ -2671,14 +2671,14 @@ static const ax_sprite sBanetteSprites52[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx53[] = INCBIN_U8("graphics/ax/mon/banette/sprite_53.4bpp");
+static const u8 sBanetteGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_53.4bpp.lz");
 static const ax_sprite sBanetteSprites53[] = {
 	{sBanetteGfx53, ARRAY_COUNT(sBanetteGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx54[] = INCBIN_U8("graphics/ax/mon/banette/sprite_54.4bpp");
-static const u8 sBanetteGfx54_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_54_1.4bpp");
-static const u8 sBanetteGfx54_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_54_2.4bpp");
+static const u8 sBanetteGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_54.4bpp.lz");
+static const u8 sBanetteGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_54_1.4bpp.lz");
+static const u8 sBanetteGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_54_2.4bpp.lz");
 static const ax_sprite sBanetteSprites54[] = {
 	{sBanetteGfx54, ARRAY_COUNT(sBanetteGfx54)}, 
 	{NULL, 32}, 
@@ -2688,34 +2688,34 @@ static const ax_sprite sBanetteSprites54[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx55[] = INCBIN_U8("graphics/ax/mon/banette/sprite_55.4bpp");
+static const u8 sBanetteGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_55.4bpp.lz");
 static const ax_sprite sBanetteSprites55[] = {
 	{sBanetteGfx55, ARRAY_COUNT(sBanetteGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx56[] = INCBIN_U8("graphics/ax/mon/banette/sprite_56.4bpp");
+static const u8 sBanetteGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_56.4bpp.lz");
 static const ax_sprite sBanetteSprites56[] = {
 	{sBanetteGfx56, ARRAY_COUNT(sBanetteGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx57[] = INCBIN_U8("graphics/ax/mon/banette/sprite_57.4bpp");
+static const u8 sBanetteGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_57.4bpp.lz");
 static const ax_sprite sBanetteSprites57[] = {
 	{sBanetteGfx57, ARRAY_COUNT(sBanetteGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx58[] = INCBIN_U8("graphics/ax/mon/banette/sprite_58.4bpp");
+static const u8 sBanetteGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_58.4bpp.lz");
 static const ax_sprite sBanetteSprites58[] = {
 	{sBanetteGfx58, ARRAY_COUNT(sBanetteGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx59[] = INCBIN_U8("graphics/ax/mon/banette/sprite_59.4bpp");
+static const u8 sBanetteGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_59.4bpp.lz");
 static const ax_sprite sBanetteSprites59[] = {
 	{sBanetteGfx59, ARRAY_COUNT(sBanetteGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx60[] = INCBIN_U8("graphics/ax/mon/banette/sprite_60.4bpp");
-static const u8 sBanetteGfx60_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_60_1.4bpp");
-static const u8 sBanetteGfx60_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_60_2.4bpp");
+static const u8 sBanetteGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_60.4bpp.lz");
+static const u8 sBanetteGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_60_1.4bpp.lz");
+static const u8 sBanetteGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_60_2.4bpp.lz");
 static const ax_sprite sBanetteSprites60[] = {
 	{sBanetteGfx60, ARRAY_COUNT(sBanetteGfx60)}, 
 	{NULL, 32}, 
@@ -2725,9 +2725,9 @@ static const ax_sprite sBanetteSprites60[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx61[] = INCBIN_U8("graphics/ax/mon/banette/sprite_61.4bpp");
-static const u8 sBanetteGfx61_1[] = INCBIN_U8("graphics/ax/mon/banette/sprite_61_1.4bpp");
-static const u8 sBanetteGfx61_2[] = INCBIN_U8("graphics/ax/mon/banette/sprite_61_2.4bpp");
+static const u8 sBanetteGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_61.4bpp.lz");
+static const u8 sBanetteGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_61_1.4bpp.lz");
+static const u8 sBanetteGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_61_2.4bpp.lz");
 static const ax_sprite sBanetteSprites61[] = {
 	{sBanetteGfx61, ARRAY_COUNT(sBanetteGfx61)}, 
 	{NULL, 32}, 
@@ -2737,47 +2737,47 @@ static const ax_sprite sBanetteSprites61[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx62[] = INCBIN_U8("graphics/ax/mon/banette/sprite_62.4bpp");
+static const u8 sBanetteGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_62.4bpp.lz");
 static const ax_sprite sBanetteSprites62[] = {
 	{sBanetteGfx62, ARRAY_COUNT(sBanetteGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx63[] = INCBIN_U8("graphics/ax/mon/banette/sprite_63.4bpp");
+static const u8 sBanetteGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_63.4bpp.lz");
 static const ax_sprite sBanetteSprites63[] = {
 	{sBanetteGfx63, ARRAY_COUNT(sBanetteGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx64[] = INCBIN_U8("graphics/ax/mon/banette/sprite_64.4bpp");
+static const u8 sBanetteGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_64.4bpp.lz");
 static const ax_sprite sBanetteSprites64[] = {
 	{sBanetteGfx64, ARRAY_COUNT(sBanetteGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx65[] = INCBIN_U8("graphics/ax/mon/banette/sprite_65.4bpp");
+static const u8 sBanetteGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_65.4bpp.lz");
 static const ax_sprite sBanetteSprites65[] = {
 	{sBanetteGfx65, ARRAY_COUNT(sBanetteGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx66[] = INCBIN_U8("graphics/ax/mon/banette/sprite_66.4bpp");
+static const u8 sBanetteGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_66.4bpp.lz");
 static const ax_sprite sBanetteSprites66[] = {
 	{sBanetteGfx66, ARRAY_COUNT(sBanetteGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx67[] = INCBIN_U8("graphics/ax/mon/banette/sprite_67.4bpp");
+static const u8 sBanetteGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_67.4bpp.lz");
 static const ax_sprite sBanetteSprites67[] = {
 	{sBanetteGfx67, ARRAY_COUNT(sBanetteGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx68[] = INCBIN_U8("graphics/ax/mon/banette/sprite_68.4bpp");
+static const u8 sBanetteGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_68.4bpp.lz");
 static const ax_sprite sBanetteSprites68[] = {
 	{sBanetteGfx68, ARRAY_COUNT(sBanetteGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx69[] = INCBIN_U8("graphics/ax/mon/banette/sprite_69.4bpp");
+static const u8 sBanetteGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_69.4bpp.lz");
 static const ax_sprite sBanetteSprites69[] = {
 	{sBanetteGfx69, ARRAY_COUNT(sBanetteGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sBanetteGfx70[] = INCBIN_U8("graphics/ax/mon/banette/sprite_70.4bpp");
+static const u8 sBanetteGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/banette/sprite_70.4bpp.lz");
 static const ax_sprite sBanetteSprites70[] = {
 	{sBanetteGfx70, ARRAY_COUNT(sBanetteGfx70)}, 
 	{NULL, 0}

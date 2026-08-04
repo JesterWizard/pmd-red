@@ -2396,114 +2396,114 @@ static const ax_anim sKingdraAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKingdraGfx1[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_1.4bpp");
+static const u8 sKingdraGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_1.4bpp.lz");
 static const ax_sprite sKingdraSprites1[] = {
 	{sKingdraGfx1, ARRAY_COUNT(sKingdraGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx2[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_2.4bpp");
+static const u8 sKingdraGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_2.4bpp.lz");
 static const ax_sprite sKingdraSprites2[] = {
 	{sKingdraGfx2, ARRAY_COUNT(sKingdraGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx3[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_3.4bpp");
+static const u8 sKingdraGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_3.4bpp.lz");
 static const ax_sprite sKingdraSprites3[] = {
 	{sKingdraGfx3, ARRAY_COUNT(sKingdraGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx4[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_4.4bpp");
+static const u8 sKingdraGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_4.4bpp.lz");
 static const ax_sprite sKingdraSprites4[] = {
 	{sKingdraGfx4, ARRAY_COUNT(sKingdraGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx5[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_5.4bpp");
+static const u8 sKingdraGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_5.4bpp.lz");
 static const ax_sprite sKingdraSprites5[] = {
 	{sKingdraGfx5, ARRAY_COUNT(sKingdraGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx6[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_6.4bpp");
+static const u8 sKingdraGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_6.4bpp.lz");
 static const ax_sprite sKingdraSprites6[] = {
 	{sKingdraGfx6, ARRAY_COUNT(sKingdraGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx7[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_7.4bpp");
+static const u8 sKingdraGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_7.4bpp.lz");
 static const ax_sprite sKingdraSprites7[] = {
 	{sKingdraGfx7, ARRAY_COUNT(sKingdraGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx8[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_8.4bpp");
+static const u8 sKingdraGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_8.4bpp.lz");
 static const ax_sprite sKingdraSprites8[] = {
 	{sKingdraGfx8, ARRAY_COUNT(sKingdraGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx9[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_9.4bpp");
+static const u8 sKingdraGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_9.4bpp.lz");
 static const ax_sprite sKingdraSprites9[] = {
 	{sKingdraGfx9, ARRAY_COUNT(sKingdraGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx10[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_10.4bpp");
+static const u8 sKingdraGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_10.4bpp.lz");
 static const ax_sprite sKingdraSprites10[] = {
 	{sKingdraGfx10, ARRAY_COUNT(sKingdraGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx11[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_11.4bpp");
+static const u8 sKingdraGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_11.4bpp.lz");
 static const ax_sprite sKingdraSprites11[] = {
 	{sKingdraGfx11, ARRAY_COUNT(sKingdraGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx12[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_12.4bpp");
+static const u8 sKingdraGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_12.4bpp.lz");
 static const ax_sprite sKingdraSprites12[] = {
 	{sKingdraGfx12, ARRAY_COUNT(sKingdraGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx13[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_13.4bpp");
+static const u8 sKingdraGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_13.4bpp.lz");
 static const ax_sprite sKingdraSprites13[] = {
 	{sKingdraGfx13, ARRAY_COUNT(sKingdraGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx14[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_14.4bpp");
+static const u8 sKingdraGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_14.4bpp.lz");
 static const ax_sprite sKingdraSprites14[] = {
 	{sKingdraGfx14, ARRAY_COUNT(sKingdraGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx15[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_15.4bpp");
+static const u8 sKingdraGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_15.4bpp.lz");
 static const ax_sprite sKingdraSprites15[] = {
 	{sKingdraGfx15, ARRAY_COUNT(sKingdraGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx16[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_16.4bpp");
+static const u8 sKingdraGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_16.4bpp.lz");
 static const ax_sprite sKingdraSprites16[] = {
 	{sKingdraGfx16, ARRAY_COUNT(sKingdraGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx17[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_17.4bpp");
+static const u8 sKingdraGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_17.4bpp.lz");
 static const ax_sprite sKingdraSprites17[] = {
 	{sKingdraGfx17, ARRAY_COUNT(sKingdraGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx18[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_18.4bpp");
+static const u8 sKingdraGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_18.4bpp.lz");
 static const ax_sprite sKingdraSprites18[] = {
 	{sKingdraGfx18, ARRAY_COUNT(sKingdraGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx19[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_19.4bpp");
+static const u8 sKingdraGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_19.4bpp.lz");
 static const ax_sprite sKingdraSprites19[] = {
 	{sKingdraGfx19, ARRAY_COUNT(sKingdraGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx20[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_20.4bpp");
+static const u8 sKingdraGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_20.4bpp.lz");
 static const ax_sprite sKingdraSprites20[] = {
 	{sKingdraGfx20, ARRAY_COUNT(sKingdraGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx21[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_21.4bpp");
+static const u8 sKingdraGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_21.4bpp.lz");
 static const ax_sprite sKingdraSprites21[] = {
 	{sKingdraGfx21, ARRAY_COUNT(sKingdraGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx22[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_22.4bpp");
-static const u8 sKingdraGfx22_1[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_22_1.4bpp");
-static const u8 sKingdraGfx22_2[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_22_2.4bpp");
+static const u8 sKingdraGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_22.4bpp.lz");
+static const u8 sKingdraGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_22_1.4bpp.lz");
+static const u8 sKingdraGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_22_2.4bpp.lz");
 static const ax_sprite sKingdraSprites22[] = {
 	{sKingdraGfx22, ARRAY_COUNT(sKingdraGfx22)}, 
 	{NULL, 32}, 
@@ -2513,8 +2513,8 @@ static const ax_sprite sKingdraSprites22[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx23[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_23.4bpp");
-static const u8 sKingdraGfx23_1[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_23_1.4bpp");
+static const u8 sKingdraGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_23.4bpp.lz");
+static const u8 sKingdraGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_23_1.4bpp.lz");
 static const ax_sprite sKingdraSprites23[] = {
 	{sKingdraGfx23, ARRAY_COUNT(sKingdraGfx23)}, 
 	{NULL, 32}, 
@@ -2522,72 +2522,72 @@ static const ax_sprite sKingdraSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx24[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_24.4bpp");
+static const u8 sKingdraGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_24.4bpp.lz");
 static const ax_sprite sKingdraSprites24[] = {
 	{sKingdraGfx24, ARRAY_COUNT(sKingdraGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx25[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_25.4bpp");
+static const u8 sKingdraGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_25.4bpp.lz");
 static const ax_sprite sKingdraSprites25[] = {
 	{sKingdraGfx25, ARRAY_COUNT(sKingdraGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx26[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_26.4bpp");
+static const u8 sKingdraGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_26.4bpp.lz");
 static const ax_sprite sKingdraSprites26[] = {
 	{sKingdraGfx26, ARRAY_COUNT(sKingdraGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx27[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_27.4bpp");
+static const u8 sKingdraGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_27.4bpp.lz");
 static const ax_sprite sKingdraSprites27[] = {
 	{sKingdraGfx27, ARRAY_COUNT(sKingdraGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx28[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_28.4bpp");
+static const u8 sKingdraGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_28.4bpp.lz");
 static const ax_sprite sKingdraSprites28[] = {
 	{sKingdraGfx28, ARRAY_COUNT(sKingdraGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx29[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_29.4bpp");
-static const u8 sKingdraGfx29_1[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_29_1.4bpp");
+static const u8 sKingdraGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_29.4bpp.lz");
+static const u8 sKingdraGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_29_1.4bpp.lz");
 static const ax_sprite sKingdraSprites29[] = {
 	{sKingdraGfx29, ARRAY_COUNT(sKingdraGfx29)}, 
 	{NULL, 32}, 
 	{sKingdraGfx29_1, ARRAY_COUNT(sKingdraGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx30[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_30.4bpp");
+static const u8 sKingdraGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_30.4bpp.lz");
 static const ax_sprite sKingdraSprites30[] = {
 	{sKingdraGfx30, ARRAY_COUNT(sKingdraGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx31[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_31.4bpp");
+static const u8 sKingdraGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_31.4bpp.lz");
 static const ax_sprite sKingdraSprites31[] = {
 	{sKingdraGfx31, ARRAY_COUNT(sKingdraGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx32[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_32.4bpp");
+static const u8 sKingdraGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_32.4bpp.lz");
 static const ax_sprite sKingdraSprites32[] = {
 	{sKingdraGfx32, ARRAY_COUNT(sKingdraGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx33[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_33.4bpp");
+static const u8 sKingdraGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_33.4bpp.lz");
 static const ax_sprite sKingdraSprites33[] = {
 	{sKingdraGfx33, ARRAY_COUNT(sKingdraGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx34[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_34.4bpp");
+static const u8 sKingdraGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_34.4bpp.lz");
 static const ax_sprite sKingdraSprites34[] = {
 	{sKingdraGfx34, ARRAY_COUNT(sKingdraGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx35[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_35.4bpp");
+static const u8 sKingdraGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_35.4bpp.lz");
 static const ax_sprite sKingdraSprites35[] = {
 	{sKingdraGfx35, ARRAY_COUNT(sKingdraGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx36[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_36.4bpp");
-static const u8 sKingdraGfx36_1[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_36_1.4bpp");
-static const u8 sKingdraGfx36_2[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_36_2.4bpp");
+static const u8 sKingdraGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_36.4bpp.lz");
+static const u8 sKingdraGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_36_1.4bpp.lz");
+static const u8 sKingdraGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_36_2.4bpp.lz");
 static const ax_sprite sKingdraSprites36[] = {
 	{NULL, 32}, 
 	{sKingdraGfx36, ARRAY_COUNT(sKingdraGfx36)}, 
@@ -2597,17 +2597,17 @@ static const ax_sprite sKingdraSprites36[] = {
 	{sKingdraGfx36_2, ARRAY_COUNT(sKingdraGfx36_2)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx37[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_37.4bpp");
+static const u8 sKingdraGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_37.4bpp.lz");
 static const ax_sprite sKingdraSprites37[] = {
 	{NULL, 32}, 
 	{sKingdraGfx37, ARRAY_COUNT(sKingdraGfx37)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx38[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_38.4bpp");
-static const u8 sKingdraGfx38_1[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_38_1.4bpp");
-static const u8 sKingdraGfx38_2[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_38_2.4bpp");
-static const u8 sKingdraGfx38_3[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_38_3.4bpp");
+static const u8 sKingdraGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_38.4bpp.lz");
+static const u8 sKingdraGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_38_1.4bpp.lz");
+static const u8 sKingdraGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_38_2.4bpp.lz");
+static const u8 sKingdraGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_38_3.4bpp.lz");
 static const ax_sprite sKingdraSprites38[] = {
 	{NULL, 32}, 
 	{sKingdraGfx38, ARRAY_COUNT(sKingdraGfx38)}, 
@@ -2619,108 +2619,108 @@ static const ax_sprite sKingdraSprites38[] = {
 	{sKingdraGfx38_3, ARRAY_COUNT(sKingdraGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx39[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_39.4bpp");
+static const u8 sKingdraGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_39.4bpp.lz");
 static const ax_sprite sKingdraSprites39[] = {
 	{sKingdraGfx39, ARRAY_COUNT(sKingdraGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx40[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_40.4bpp");
+static const u8 sKingdraGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_40.4bpp.lz");
 static const ax_sprite sKingdraSprites40[] = {
 	{sKingdraGfx40, ARRAY_COUNT(sKingdraGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx41[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_41.4bpp");
+static const u8 sKingdraGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_41.4bpp.lz");
 static const ax_sprite sKingdraSprites41[] = {
 	{sKingdraGfx41, ARRAY_COUNT(sKingdraGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx42[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_42.4bpp");
+static const u8 sKingdraGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_42.4bpp.lz");
 static const ax_sprite sKingdraSprites42[] = {
 	{sKingdraGfx42, ARRAY_COUNT(sKingdraGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx43[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_43.4bpp");
+static const u8 sKingdraGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_43.4bpp.lz");
 static const ax_sprite sKingdraSprites43[] = {
 	{sKingdraGfx43, ARRAY_COUNT(sKingdraGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx44[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_44.4bpp");
+static const u8 sKingdraGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_44.4bpp.lz");
 static const ax_sprite sKingdraSprites44[] = {
 	{sKingdraGfx44, ARRAY_COUNT(sKingdraGfx44)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx45[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_45.4bpp");
+static const u8 sKingdraGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_45.4bpp.lz");
 static const ax_sprite sKingdraSprites45[] = {
 	{sKingdraGfx45, ARRAY_COUNT(sKingdraGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx46[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_46.4bpp");
+static const u8 sKingdraGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_46.4bpp.lz");
 static const ax_sprite sKingdraSprites46[] = {
 	{sKingdraGfx46, ARRAY_COUNT(sKingdraGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx47[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_47.4bpp");
+static const u8 sKingdraGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_47.4bpp.lz");
 static const ax_sprite sKingdraSprites47[] = {
 	{sKingdraGfx47, ARRAY_COUNT(sKingdraGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx48[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_48.4bpp");
+static const u8 sKingdraGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_48.4bpp.lz");
 static const ax_sprite sKingdraSprites48[] = {
 	{sKingdraGfx48, ARRAY_COUNT(sKingdraGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx49[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_49.4bpp");
+static const u8 sKingdraGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_49.4bpp.lz");
 static const ax_sprite sKingdraSprites49[] = {
 	{sKingdraGfx49, ARRAY_COUNT(sKingdraGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx50[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_50.4bpp");
+static const u8 sKingdraGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_50.4bpp.lz");
 static const ax_sprite sKingdraSprites50[] = {
 	{sKingdraGfx50, ARRAY_COUNT(sKingdraGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx51[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_51.4bpp");
+static const u8 sKingdraGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_51.4bpp.lz");
 static const ax_sprite sKingdraSprites51[] = {
 	{sKingdraGfx51, ARRAY_COUNT(sKingdraGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx52[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_52.4bpp");
+static const u8 sKingdraGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_52.4bpp.lz");
 static const ax_sprite sKingdraSprites52[] = {
 	{sKingdraGfx52, ARRAY_COUNT(sKingdraGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx53[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_53.4bpp");
+static const u8 sKingdraGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_53.4bpp.lz");
 static const ax_sprite sKingdraSprites53[] = {
 	{sKingdraGfx53, ARRAY_COUNT(sKingdraGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx54[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_54.4bpp");
+static const u8 sKingdraGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_54.4bpp.lz");
 static const ax_sprite sKingdraSprites54[] = {
 	{sKingdraGfx54, ARRAY_COUNT(sKingdraGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx55[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_55.4bpp");
+static const u8 sKingdraGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_55.4bpp.lz");
 static const ax_sprite sKingdraSprites55[] = {
 	{sKingdraGfx55, ARRAY_COUNT(sKingdraGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx56[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_56.4bpp");
+static const u8 sKingdraGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_56.4bpp.lz");
 static const ax_sprite sKingdraSprites56[] = {
 	{sKingdraGfx56, ARRAY_COUNT(sKingdraGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx57[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_57.4bpp");
+static const u8 sKingdraGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_57.4bpp.lz");
 static const ax_sprite sKingdraSprites57[] = {
 	{sKingdraGfx57, ARRAY_COUNT(sKingdraGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx58[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_58.4bpp");
+static const u8 sKingdraGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_58.4bpp.lz");
 static const ax_sprite sKingdraSprites58[] = {
 	{sKingdraGfx58, ARRAY_COUNT(sKingdraGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sKingdraGfx59[] = INCBIN_U8("graphics/ax/mon/kingdra/sprite_59.4bpp");
+static const u8 sKingdraGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kingdra/sprite_59.4bpp.lz");
 static const ax_sprite sKingdraSprites59[] = {
 	{sKingdraGfx59, ARRAY_COUNT(sKingdraGfx59)}, 
 	{NULL, 0}

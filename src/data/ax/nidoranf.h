@@ -2015,85 +2015,85 @@ static const ax_anim sNidoranFAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sNidoranFGfx1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_1.4bpp");
+static const u8 sNidoranFGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_1.4bpp.lz");
 static const ax_sprite sNidoranFSprites1[] = {
 	{sNidoranFGfx1, ARRAY_COUNT(sNidoranFGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_2.4bpp");
+static const u8 sNidoranFGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites2[] = {
 	{sNidoranFGfx2, ARRAY_COUNT(sNidoranFGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_3.4bpp");
+static const u8 sNidoranFGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites3[] = {
 	{sNidoranFGfx3, ARRAY_COUNT(sNidoranFGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx4[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_4.4bpp");
+static const u8 sNidoranFGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_4.4bpp.lz");
 static const ax_sprite sNidoranFSprites4[] = {
 	{sNidoranFGfx4, ARRAY_COUNT(sNidoranFGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx5[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_5.4bpp");
+static const u8 sNidoranFGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_5.4bpp.lz");
 static const ax_sprite sNidoranFSprites5[] = {
 	{sNidoranFGfx5, ARRAY_COUNT(sNidoranFGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx6[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_6.4bpp");
+static const u8 sNidoranFGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_6.4bpp.lz");
 static const ax_sprite sNidoranFSprites6[] = {
 	{sNidoranFGfx6, ARRAY_COUNT(sNidoranFGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx7[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_7.4bpp");
+static const u8 sNidoranFGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_7.4bpp.lz");
 static const ax_sprite sNidoranFSprites7[] = {
 	{sNidoranFGfx7, ARRAY_COUNT(sNidoranFGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx8[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_8.4bpp");
+static const u8 sNidoranFGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_8.4bpp.lz");
 static const ax_sprite sNidoranFSprites8[] = {
 	{sNidoranFGfx8, ARRAY_COUNT(sNidoranFGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx9[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_9.4bpp");
+static const u8 sNidoranFGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_9.4bpp.lz");
 static const ax_sprite sNidoranFSprites9[] = {
 	{sNidoranFGfx9, ARRAY_COUNT(sNidoranFGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx10[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_10.4bpp");
+static const u8 sNidoranFGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_10.4bpp.lz");
 static const ax_sprite sNidoranFSprites10[] = {
 	{sNidoranFGfx10, ARRAY_COUNT(sNidoranFGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx11[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_11.4bpp");
+static const u8 sNidoranFGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_11.4bpp.lz");
 static const ax_sprite sNidoranFSprites11[] = {
 	{sNidoranFGfx11, ARRAY_COUNT(sNidoranFGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx12[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_12.4bpp");
+static const u8 sNidoranFGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_12.4bpp.lz");
 static const ax_sprite sNidoranFSprites12[] = {
 	{sNidoranFGfx12, ARRAY_COUNT(sNidoranFGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx13[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_13.4bpp");
+static const u8 sNidoranFGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_13.4bpp.lz");
 static const ax_sprite sNidoranFSprites13[] = {
 	{sNidoranFGfx13, ARRAY_COUNT(sNidoranFGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx14[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_14.4bpp");
+static const u8 sNidoranFGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_14.4bpp.lz");
 static const ax_sprite sNidoranFSprites14[] = {
 	{sNidoranFGfx14, ARRAY_COUNT(sNidoranFGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx15[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_15.4bpp");
+static const u8 sNidoranFGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_15.4bpp.lz");
 static const ax_sprite sNidoranFSprites15[] = {
 	{sNidoranFGfx15, ARRAY_COUNT(sNidoranFGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx16[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_16.4bpp");
-static const u8 sNidoranFGfx16_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_16_1.4bpp");
-static const u8 sNidoranFGfx16_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_16_2.4bpp");
-static const u8 sNidoranFGfx16_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_16_3.4bpp");
+static const u8 sNidoranFGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_16.4bpp.lz");
+static const u8 sNidoranFGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_16_1.4bpp.lz");
+static const u8 sNidoranFGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_16_2.4bpp.lz");
+static const u8 sNidoranFGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_16_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites16[] = {
 	{sNidoranFGfx16, ARRAY_COUNT(sNidoranFGfx16)}, 
 	{NULL, 96}, 
@@ -2105,10 +2105,10 @@ static const ax_sprite sNidoranFSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx17[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_17.4bpp");
-static const u8 sNidoranFGfx17_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_17_1.4bpp");
-static const u8 sNidoranFGfx17_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_17_2.4bpp");
-static const u8 sNidoranFGfx17_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_17_3.4bpp");
+static const u8 sNidoranFGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_17.4bpp.lz");
+static const u8 sNidoranFGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_17_1.4bpp.lz");
+static const u8 sNidoranFGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_17_2.4bpp.lz");
+static const u8 sNidoranFGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_17_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites17[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx17, ARRAY_COUNT(sNidoranFGfx17)}, 
@@ -2121,8 +2121,8 @@ static const ax_sprite sNidoranFSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx18[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_18.4bpp");
-static const u8 sNidoranFGfx18_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_18_1.4bpp");
+static const u8 sNidoranFGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_18.4bpp.lz");
+static const u8 sNidoranFGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_18_1.4bpp.lz");
 static const ax_sprite sNidoranFSprites18[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx18, ARRAY_COUNT(sNidoranFGfx18)}, 
@@ -2130,10 +2130,10 @@ static const ax_sprite sNidoranFSprites18[] = {
 	{sNidoranFGfx18_1, ARRAY_COUNT(sNidoranFGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx19[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_19.4bpp");
-static const u8 sNidoranFGfx19_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_19_1.4bpp");
-static const u8 sNidoranFGfx19_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_19_2.4bpp");
-static const u8 sNidoranFGfx19_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_19_3.4bpp");
+static const u8 sNidoranFGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_19.4bpp.lz");
+static const u8 sNidoranFGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_19_1.4bpp.lz");
+static const u8 sNidoranFGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_19_2.4bpp.lz");
+static const u8 sNidoranFGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_19_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites19[] = {
 	{sNidoranFGfx19, ARRAY_COUNT(sNidoranFGfx19)}, 
 	{NULL, 32}, 
@@ -2145,15 +2145,15 @@ static const ax_sprite sNidoranFSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx20[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_20.4bpp");
+static const u8 sNidoranFGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_20.4bpp.lz");
 static const ax_sprite sNidoranFSprites20[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx20, ARRAY_COUNT(sNidoranFGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx21[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_21.4bpp");
-static const u8 sNidoranFGfx21_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_21_1.4bpp");
-static const u8 sNidoranFGfx21_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_21_2.4bpp");
+static const u8 sNidoranFGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_21.4bpp.lz");
+static const u8 sNidoranFGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_21_1.4bpp.lz");
+static const u8 sNidoranFGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_21_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites21[] = {
 	{sNidoranFGfx21, ARRAY_COUNT(sNidoranFGfx21)}, 
 	{NULL, 32}, 
@@ -2163,8 +2163,8 @@ static const ax_sprite sNidoranFSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx22[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_22.4bpp");
-static const u8 sNidoranFGfx22_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_22_1.4bpp");
+static const u8 sNidoranFGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_22.4bpp.lz");
+static const u8 sNidoranFGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_22_1.4bpp.lz");
 static const ax_sprite sNidoranFSprites22[] = {
 	{NULL, 192}, 
 	{sNidoranFGfx22, ARRAY_COUNT(sNidoranFGfx22)}, 
@@ -2173,10 +2173,10 @@ static const ax_sprite sNidoranFSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx23[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_23.4bpp");
-static const u8 sNidoranFGfx23_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_23_1.4bpp");
-static const u8 sNidoranFGfx23_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_23_2.4bpp");
-static const u8 sNidoranFGfx23_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_23_3.4bpp");
+static const u8 sNidoranFGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_23.4bpp.lz");
+static const u8 sNidoranFGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_23_1.4bpp.lz");
+static const u8 sNidoranFGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_23_2.4bpp.lz");
+static const u8 sNidoranFGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_23_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites23[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx23, ARRAY_COUNT(sNidoranFGfx23)}, 
@@ -2189,9 +2189,9 @@ static const ax_sprite sNidoranFSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx24[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_24.4bpp");
-static const u8 sNidoranFGfx24_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_24_1.4bpp");
-static const u8 sNidoranFGfx24_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_24_2.4bpp");
+static const u8 sNidoranFGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_24.4bpp.lz");
+static const u8 sNidoranFGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_24_1.4bpp.lz");
+static const u8 sNidoranFGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_24_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites24[] = {
 	{sNidoranFGfx24, ARRAY_COUNT(sNidoranFGfx24)}, 
 	{NULL, 32}, 
@@ -2201,9 +2201,9 @@ static const ax_sprite sNidoranFSprites24[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx25[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_25.4bpp");
-static const u8 sNidoranFGfx25_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_25_1.4bpp");
-static const u8 sNidoranFGfx25_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_25_2.4bpp");
+static const u8 sNidoranFGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_25.4bpp.lz");
+static const u8 sNidoranFGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_25_1.4bpp.lz");
+static const u8 sNidoranFGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_25_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites25[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx25, ARRAY_COUNT(sNidoranFGfx25)}, 
@@ -2214,8 +2214,8 @@ static const ax_sprite sNidoranFSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx26[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_26.4bpp");
-static const u8 sNidoranFGfx26_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_26_1.4bpp");
+static const u8 sNidoranFGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_26.4bpp.lz");
+static const u8 sNidoranFGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_26_1.4bpp.lz");
 static const ax_sprite sNidoranFSprites26[] = {
 	{sNidoranFGfx26, ARRAY_COUNT(sNidoranFGfx26)}, 
 	{NULL, 32}, 
@@ -2223,9 +2223,9 @@ static const ax_sprite sNidoranFSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx27[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_27.4bpp");
-static const u8 sNidoranFGfx27_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_27_1.4bpp");
-static const u8 sNidoranFGfx27_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_27_2.4bpp");
+static const u8 sNidoranFGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_27.4bpp.lz");
+static const u8 sNidoranFGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_27_1.4bpp.lz");
+static const u8 sNidoranFGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_27_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites27[] = {
 	{sNidoranFGfx27, ARRAY_COUNT(sNidoranFGfx27)}, 
 	{NULL, 32}, 
@@ -2235,9 +2235,9 @@ static const ax_sprite sNidoranFSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx28[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_28.4bpp");
-static const u8 sNidoranFGfx28_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_28_1.4bpp");
-static const u8 sNidoranFGfx28_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_28_2.4bpp");
+static const u8 sNidoranFGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_28.4bpp.lz");
+static const u8 sNidoranFGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_28_1.4bpp.lz");
+static const u8 sNidoranFGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_28_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites28[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx28, ARRAY_COUNT(sNidoranFGfx28)}, 
@@ -2248,10 +2248,10 @@ static const ax_sprite sNidoranFSprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx29[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_29.4bpp");
-static const u8 sNidoranFGfx29_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_29_1.4bpp");
-static const u8 sNidoranFGfx29_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_29_2.4bpp");
-static const u8 sNidoranFGfx29_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_29_3.4bpp");
+static const u8 sNidoranFGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_29.4bpp.lz");
+static const u8 sNidoranFGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_29_1.4bpp.lz");
+static const u8 sNidoranFGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_29_2.4bpp.lz");
+static const u8 sNidoranFGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_29_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites29[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx29, ARRAY_COUNT(sNidoranFGfx29)}, 
@@ -2264,9 +2264,9 @@ static const ax_sprite sNidoranFSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx30[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_30.4bpp");
-static const u8 sNidoranFGfx30_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_30_1.4bpp");
-static const u8 sNidoranFGfx30_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_30_2.4bpp");
+static const u8 sNidoranFGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_30.4bpp.lz");
+static const u8 sNidoranFGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_30_1.4bpp.lz");
+static const u8 sNidoranFGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_30_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites30[] = {
 	{NULL, 64}, 
 	{sNidoranFGfx30, ARRAY_COUNT(sNidoranFGfx30)}, 
@@ -2276,10 +2276,10 @@ static const ax_sprite sNidoranFSprites30[] = {
 	{sNidoranFGfx30_2, ARRAY_COUNT(sNidoranFGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx31[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_31.4bpp");
-static const u8 sNidoranFGfx31_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_31_1.4bpp");
-static const u8 sNidoranFGfx31_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_31_2.4bpp");
-static const u8 sNidoranFGfx31_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_31_3.4bpp");
+static const u8 sNidoranFGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_31.4bpp.lz");
+static const u8 sNidoranFGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_31_1.4bpp.lz");
+static const u8 sNidoranFGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_31_2.4bpp.lz");
+static const u8 sNidoranFGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_31_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites31[] = {
 	{sNidoranFGfx31, ARRAY_COUNT(sNidoranFGfx31)}, 
 	{NULL, 32}, 
@@ -2291,9 +2291,9 @@ static const ax_sprite sNidoranFSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx32[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_32.4bpp");
-static const u8 sNidoranFGfx32_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_32_1.4bpp");
-static const u8 sNidoranFGfx32_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_32_2.4bpp");
+static const u8 sNidoranFGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_32.4bpp.lz");
+static const u8 sNidoranFGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_32_1.4bpp.lz");
+static const u8 sNidoranFGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_32_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites32[] = {
 	{sNidoranFGfx32, ARRAY_COUNT(sNidoranFGfx32)}, 
 	{NULL, 32}, 
@@ -2303,10 +2303,10 @@ static const ax_sprite sNidoranFSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx33[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_33.4bpp");
-static const u8 sNidoranFGfx33_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_33_1.4bpp");
-static const u8 sNidoranFGfx33_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_33_2.4bpp");
-static const u8 sNidoranFGfx33_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_33_3.4bpp");
+static const u8 sNidoranFGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_33.4bpp.lz");
+static const u8 sNidoranFGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_33_1.4bpp.lz");
+static const u8 sNidoranFGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_33_2.4bpp.lz");
+static const u8 sNidoranFGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_33_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites33[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx33, ARRAY_COUNT(sNidoranFGfx33)}, 
@@ -2319,8 +2319,8 @@ static const ax_sprite sNidoranFSprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx34[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_34.4bpp");
-static const u8 sNidoranFGfx34_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_34_1.4bpp");
+static const u8 sNidoranFGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_34.4bpp.lz");
+static const u8 sNidoranFGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_34_1.4bpp.lz");
 static const ax_sprite sNidoranFSprites34[] = {
 	{sNidoranFGfx34, ARRAY_COUNT(sNidoranFGfx34)}, 
 	{NULL, 32}, 
@@ -2328,10 +2328,10 @@ static const ax_sprite sNidoranFSprites34[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx35[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_35.4bpp");
-static const u8 sNidoranFGfx35_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_35_1.4bpp");
-static const u8 sNidoranFGfx35_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_35_2.4bpp");
-static const u8 sNidoranFGfx35_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_35_3.4bpp");
+static const u8 sNidoranFGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_35.4bpp.lz");
+static const u8 sNidoranFGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_35_1.4bpp.lz");
+static const u8 sNidoranFGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_35_2.4bpp.lz");
+static const u8 sNidoranFGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_35_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites35[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx35, ARRAY_COUNT(sNidoranFGfx35)}, 
@@ -2344,9 +2344,9 @@ static const ax_sprite sNidoranFSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx36[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_36.4bpp");
-static const u8 sNidoranFGfx36_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_36_1.4bpp");
-static const u8 sNidoranFGfx36_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_36_2.4bpp");
+static const u8 sNidoranFGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_36.4bpp.lz");
+static const u8 sNidoranFGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_36_1.4bpp.lz");
+static const u8 sNidoranFGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_36_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites36[] = {
 	{sNidoranFGfx36, ARRAY_COUNT(sNidoranFGfx36)}, 
 	{NULL, 32}, 
@@ -2356,10 +2356,10 @@ static const ax_sprite sNidoranFSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx37[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_37.4bpp");
-static const u8 sNidoranFGfx37_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_37_1.4bpp");
-static const u8 sNidoranFGfx37_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_37_2.4bpp");
-static const u8 sNidoranFGfx37_3[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_37_3.4bpp");
+static const u8 sNidoranFGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_37.4bpp.lz");
+static const u8 sNidoranFGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_37_1.4bpp.lz");
+static const u8 sNidoranFGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_37_2.4bpp.lz");
+static const u8 sNidoranFGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_37_3.4bpp.lz");
 static const ax_sprite sNidoranFSprites37[] = {
 	{sNidoranFGfx37, ARRAY_COUNT(sNidoranFGfx37)}, 
 	{NULL, 32}, 
@@ -2371,9 +2371,9 @@ static const ax_sprite sNidoranFSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx38[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_38.4bpp");
-static const u8 sNidoranFGfx38_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_38_1.4bpp");
-static const u8 sNidoranFGfx38_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_38_2.4bpp");
+static const u8 sNidoranFGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_38.4bpp.lz");
+static const u8 sNidoranFGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_38_1.4bpp.lz");
+static const u8 sNidoranFGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_38_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites38[] = {
 	{NULL, 32}, 
 	{sNidoranFGfx38, ARRAY_COUNT(sNidoranFGfx38)}, 
@@ -2384,9 +2384,9 @@ static const ax_sprite sNidoranFSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx39[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_39.4bpp");
-static const u8 sNidoranFGfx39_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_39_1.4bpp");
-static const u8 sNidoranFGfx39_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_39_2.4bpp");
+static const u8 sNidoranFGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_39.4bpp.lz");
+static const u8 sNidoranFGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_39_1.4bpp.lz");
+static const u8 sNidoranFGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_39_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites39[] = {
 	{sNidoranFGfx39, ARRAY_COUNT(sNidoranFGfx39)}, 
 	{NULL, 32}, 
@@ -2396,9 +2396,9 @@ static const ax_sprite sNidoranFSprites39[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx40[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_40.4bpp");
-static const u8 sNidoranFGfx40_1[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_40_1.4bpp");
-static const u8 sNidoranFGfx40_2[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_40_2.4bpp");
+static const u8 sNidoranFGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_40.4bpp.lz");
+static const u8 sNidoranFGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_40_1.4bpp.lz");
+static const u8 sNidoranFGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_40_2.4bpp.lz");
 static const ax_sprite sNidoranFSprites40[] = {
 	{sNidoranFGfx40, ARRAY_COUNT(sNidoranFGfx40)}, 
 	{NULL, 64}, 
@@ -2408,37 +2408,37 @@ static const ax_sprite sNidoranFSprites40[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx41[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_41.4bpp");
+static const u8 sNidoranFGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_41.4bpp.lz");
 static const ax_sprite sNidoranFSprites41[] = {
 	{sNidoranFGfx41, ARRAY_COUNT(sNidoranFGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx42[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_42.4bpp");
+static const u8 sNidoranFGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_42.4bpp.lz");
 static const ax_sprite sNidoranFSprites42[] = {
 	{sNidoranFGfx42, ARRAY_COUNT(sNidoranFGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx43[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_43.4bpp");
+static const u8 sNidoranFGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_43.4bpp.lz");
 static const ax_sprite sNidoranFSprites43[] = {
 	{sNidoranFGfx43, ARRAY_COUNT(sNidoranFGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx44[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_44.4bpp");
+static const u8 sNidoranFGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_44.4bpp.lz");
 static const ax_sprite sNidoranFSprites44[] = {
 	{sNidoranFGfx44, ARRAY_COUNT(sNidoranFGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx45[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_45.4bpp");
+static const u8 sNidoranFGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_45.4bpp.lz");
 static const ax_sprite sNidoranFSprites45[] = {
 	{sNidoranFGfx45, ARRAY_COUNT(sNidoranFGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx46[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_46.4bpp");
+static const u8 sNidoranFGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_46.4bpp.lz");
 static const ax_sprite sNidoranFSprites46[] = {
 	{sNidoranFGfx46, ARRAY_COUNT(sNidoranFGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sNidoranFGfx47[] = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_47.4bpp");
+static const u8 sNidoranFGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoranf/sprite_47.4bpp.lz");
 static const ax_sprite sNidoranFSprites47[] = {
 	{sNidoranFGfx47, ARRAY_COUNT(sNidoranFGfx47)}, 
 	{NULL, 0}

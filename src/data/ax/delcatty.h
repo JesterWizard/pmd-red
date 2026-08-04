@@ -2167,83 +2167,83 @@ static const ax_anim sDelcattyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDelcattyGfx1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_1.4bpp");
+static const u8 sDelcattyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_1.4bpp.lz");
 static const ax_sprite sDelcattySprites1[] = {
 	{sDelcattyGfx1, ARRAY_COUNT(sDelcattyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_2.4bpp");
+static const u8 sDelcattyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_2.4bpp.lz");
 static const ax_sprite sDelcattySprites2[] = {
 	{sDelcattyGfx2, ARRAY_COUNT(sDelcattyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx3[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_3.4bpp");
+static const u8 sDelcattyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_3.4bpp.lz");
 static const ax_sprite sDelcattySprites3[] = {
 	{sDelcattyGfx3, ARRAY_COUNT(sDelcattyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx4[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_4.4bpp");
+static const u8 sDelcattyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_4.4bpp.lz");
 static const ax_sprite sDelcattySprites4[] = {
 	{sDelcattyGfx4, ARRAY_COUNT(sDelcattyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx5[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_5.4bpp");
+static const u8 sDelcattyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_5.4bpp.lz");
 static const ax_sprite sDelcattySprites5[] = {
 	{sDelcattyGfx5, ARRAY_COUNT(sDelcattyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx6[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_6.4bpp");
+static const u8 sDelcattyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_6.4bpp.lz");
 static const ax_sprite sDelcattySprites6[] = {
 	{sDelcattyGfx6, ARRAY_COUNT(sDelcattyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx7[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_7.4bpp");
+static const u8 sDelcattyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_7.4bpp.lz");
 static const ax_sprite sDelcattySprites7[] = {
 	{sDelcattyGfx7, ARRAY_COUNT(sDelcattyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx8[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_8.4bpp");
+static const u8 sDelcattyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_8.4bpp.lz");
 static const ax_sprite sDelcattySprites8[] = {
 	{sDelcattyGfx8, ARRAY_COUNT(sDelcattyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx9[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_9.4bpp");
+static const u8 sDelcattyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_9.4bpp.lz");
 static const ax_sprite sDelcattySprites9[] = {
 	{sDelcattyGfx9, ARRAY_COUNT(sDelcattyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx10[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_10.4bpp");
+static const u8 sDelcattyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_10.4bpp.lz");
 static const ax_sprite sDelcattySprites10[] = {
 	{sDelcattyGfx10, ARRAY_COUNT(sDelcattyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx11[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_11.4bpp");
+static const u8 sDelcattyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_11.4bpp.lz");
 static const ax_sprite sDelcattySprites11[] = {
 	{sDelcattyGfx11, ARRAY_COUNT(sDelcattyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx12[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_12.4bpp");
+static const u8 sDelcattyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_12.4bpp.lz");
 static const ax_sprite sDelcattySprites12[] = {
 	{sDelcattyGfx12, ARRAY_COUNT(sDelcattyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx13[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_13.4bpp");
+static const u8 sDelcattyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_13.4bpp.lz");
 static const ax_sprite sDelcattySprites13[] = {
 	{sDelcattyGfx13, ARRAY_COUNT(sDelcattyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx14[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_14.4bpp");
+static const u8 sDelcattyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_14.4bpp.lz");
 static const ax_sprite sDelcattySprites14[] = {
 	{sDelcattyGfx14, ARRAY_COUNT(sDelcattyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx15[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_15.4bpp");
+static const u8 sDelcattyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_15.4bpp.lz");
 static const ax_sprite sDelcattySprites15[] = {
 	{sDelcattyGfx15, ARRAY_COUNT(sDelcattyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx16[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_16.4bpp");
-static const u8 sDelcattyGfx16_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_16_1.4bpp");
+static const u8 sDelcattyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_16.4bpp.lz");
+static const u8 sDelcattyGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_16_1.4bpp.lz");
 static const ax_sprite sDelcattySprites16[] = {
 	{sDelcattyGfx16, ARRAY_COUNT(sDelcattyGfx16)}, 
 	{NULL, 64}, 
@@ -2251,10 +2251,10 @@ static const ax_sprite sDelcattySprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx17[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_17.4bpp");
-static const u8 sDelcattyGfx17_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_17_1.4bpp");
-static const u8 sDelcattyGfx17_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_17_2.4bpp");
-static const u8 sDelcattyGfx17_3[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_17_3.4bpp");
+static const u8 sDelcattyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_17.4bpp.lz");
+static const u8 sDelcattyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_17_1.4bpp.lz");
+static const u8 sDelcattyGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_17_2.4bpp.lz");
+static const u8 sDelcattyGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_17_3.4bpp.lz");
 static const ax_sprite sDelcattySprites17[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx17, ARRAY_COUNT(sDelcattyGfx17)}, 
@@ -2267,8 +2267,8 @@ static const ax_sprite sDelcattySprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx18[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_18.4bpp");
-static const u8 sDelcattyGfx18_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_18_1.4bpp");
+static const u8 sDelcattyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_18.4bpp.lz");
+static const u8 sDelcattyGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_18_1.4bpp.lz");
 static const ax_sprite sDelcattySprites18[] = {
 	{sDelcattyGfx18, ARRAY_COUNT(sDelcattyGfx18)}, 
 	{NULL, 64}, 
@@ -2276,10 +2276,10 @@ static const ax_sprite sDelcattySprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx19[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_19.4bpp");
-static const u8 sDelcattyGfx19_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_19_1.4bpp");
-static const u8 sDelcattyGfx19_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_19_2.4bpp");
-static const u8 sDelcattyGfx19_3[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_19_3.4bpp");
+static const u8 sDelcattyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_19.4bpp.lz");
+static const u8 sDelcattyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_19_1.4bpp.lz");
+static const u8 sDelcattyGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_19_2.4bpp.lz");
+static const u8 sDelcattyGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_19_3.4bpp.lz");
 static const ax_sprite sDelcattySprites19[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx19, ARRAY_COUNT(sDelcattyGfx19)}, 
@@ -2292,8 +2292,8 @@ static const ax_sprite sDelcattySprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx20[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_20.4bpp");
-static const u8 sDelcattyGfx20_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_20_1.4bpp");
+static const u8 sDelcattyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_20.4bpp.lz");
+static const u8 sDelcattyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_20_1.4bpp.lz");
 static const ax_sprite sDelcattySprites20[] = {
 	{sDelcattyGfx20, ARRAY_COUNT(sDelcattyGfx20)}, 
 	{NULL, 32}, 
@@ -2301,10 +2301,10 @@ static const ax_sprite sDelcattySprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx21[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_21.4bpp");
-static const u8 sDelcattyGfx21_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_21_1.4bpp");
-static const u8 sDelcattyGfx21_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_21_2.4bpp");
-static const u8 sDelcattyGfx21_3[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_21_3.4bpp");
+static const u8 sDelcattyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_21.4bpp.lz");
+static const u8 sDelcattyGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_21_1.4bpp.lz");
+static const u8 sDelcattyGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_21_2.4bpp.lz");
+static const u8 sDelcattyGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_21_3.4bpp.lz");
 static const ax_sprite sDelcattySprites21[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx21, ARRAY_COUNT(sDelcattyGfx21)}, 
@@ -2317,9 +2317,9 @@ static const ax_sprite sDelcattySprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx22[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_22.4bpp");
-static const u8 sDelcattyGfx22_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_22_1.4bpp");
-static const u8 sDelcattyGfx22_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_22_2.4bpp");
+static const u8 sDelcattyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_22.4bpp.lz");
+static const u8 sDelcattyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_22_1.4bpp.lz");
+static const u8 sDelcattyGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_22_2.4bpp.lz");
 static const ax_sprite sDelcattySprites22[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx22, ARRAY_COUNT(sDelcattyGfx22)}, 
@@ -2330,8 +2330,8 @@ static const ax_sprite sDelcattySprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx23[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_23.4bpp");
-static const u8 sDelcattyGfx23_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_23_1.4bpp");
+static const u8 sDelcattyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_23.4bpp.lz");
+static const u8 sDelcattyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_23_1.4bpp.lz");
 static const ax_sprite sDelcattySprites23[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx23, ARRAY_COUNT(sDelcattyGfx23)}, 
@@ -2340,10 +2340,10 @@ static const ax_sprite sDelcattySprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx24[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_24.4bpp");
-static const u8 sDelcattyGfx24_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_24_1.4bpp");
-static const u8 sDelcattyGfx24_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_24_2.4bpp");
-static const u8 sDelcattyGfx24_3[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_24_3.4bpp");
+static const u8 sDelcattyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_24.4bpp.lz");
+static const u8 sDelcattyGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_24_1.4bpp.lz");
+static const u8 sDelcattyGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_24_2.4bpp.lz");
+static const u8 sDelcattyGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_24_3.4bpp.lz");
 static const ax_sprite sDelcattySprites24[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx24, ARRAY_COUNT(sDelcattyGfx24)}, 
@@ -2356,10 +2356,10 @@ static const ax_sprite sDelcattySprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx25[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_25.4bpp");
-static const u8 sDelcattyGfx25_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_25_1.4bpp");
-static const u8 sDelcattyGfx25_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_25_2.4bpp");
-static const u8 sDelcattyGfx25_3[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_25_3.4bpp");
+static const u8 sDelcattyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_25.4bpp.lz");
+static const u8 sDelcattyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_25_1.4bpp.lz");
+static const u8 sDelcattyGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_25_2.4bpp.lz");
+static const u8 sDelcattyGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_25_3.4bpp.lz");
 static const ax_sprite sDelcattySprites25[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx25, ARRAY_COUNT(sDelcattyGfx25)}, 
@@ -2371,9 +2371,9 @@ static const ax_sprite sDelcattySprites25[] = {
 	{sDelcattyGfx25_3, ARRAY_COUNT(sDelcattyGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx26[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_26.4bpp");
-static const u8 sDelcattyGfx26_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_26_1.4bpp");
-static const u8 sDelcattyGfx26_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_26_2.4bpp");
+static const u8 sDelcattyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_26.4bpp.lz");
+static const u8 sDelcattyGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_26_1.4bpp.lz");
+static const u8 sDelcattyGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_26_2.4bpp.lz");
 static const ax_sprite sDelcattySprites26[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx26, ARRAY_COUNT(sDelcattyGfx26)}, 
@@ -2384,9 +2384,9 @@ static const ax_sprite sDelcattySprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx27[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_27.4bpp");
-static const u8 sDelcattyGfx27_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_27_1.4bpp");
-static const u8 sDelcattyGfx27_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_27_2.4bpp");
+static const u8 sDelcattyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_27.4bpp.lz");
+static const u8 sDelcattyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_27_1.4bpp.lz");
+static const u8 sDelcattyGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_27_2.4bpp.lz");
 static const ax_sprite sDelcattySprites27[] = {
 	{sDelcattyGfx27, ARRAY_COUNT(sDelcattyGfx27)}, 
 	{NULL, 32}, 
@@ -2395,9 +2395,9 @@ static const ax_sprite sDelcattySprites27[] = {
 	{sDelcattyGfx27_2, ARRAY_COUNT(sDelcattyGfx27_2)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx28[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_28.4bpp");
-static const u8 sDelcattyGfx28_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_28_1.4bpp");
-static const u8 sDelcattyGfx28_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_28_2.4bpp");
+static const u8 sDelcattyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_28.4bpp.lz");
+static const u8 sDelcattyGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_28_1.4bpp.lz");
+static const u8 sDelcattyGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_28_2.4bpp.lz");
 static const ax_sprite sDelcattySprites28[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx28, ARRAY_COUNT(sDelcattyGfx28)}, 
@@ -2408,9 +2408,9 @@ static const ax_sprite sDelcattySprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx29[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_29.4bpp");
-static const u8 sDelcattyGfx29_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_29_1.4bpp");
-static const u8 sDelcattyGfx29_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_29_2.4bpp");
+static const u8 sDelcattyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_29.4bpp.lz");
+static const u8 sDelcattyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_29_1.4bpp.lz");
+static const u8 sDelcattyGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_29_2.4bpp.lz");
 static const ax_sprite sDelcattySprites29[] = {
 	{sDelcattyGfx29, ARRAY_COUNT(sDelcattyGfx29)}, 
 	{NULL, 32}, 
@@ -2420,9 +2420,9 @@ static const ax_sprite sDelcattySprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx30[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_30.4bpp");
-static const u8 sDelcattyGfx30_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_30_1.4bpp");
-static const u8 sDelcattyGfx30_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_30_2.4bpp");
+static const u8 sDelcattyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_30.4bpp.lz");
+static const u8 sDelcattyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_30_1.4bpp.lz");
+static const u8 sDelcattyGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_30_2.4bpp.lz");
 static const ax_sprite sDelcattySprites30[] = {
 	{sDelcattyGfx30, ARRAY_COUNT(sDelcattyGfx30)}, 
 	{NULL, 32}, 
@@ -2432,8 +2432,8 @@ static const ax_sprite sDelcattySprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx31[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_31.4bpp");
-static const u8 sDelcattyGfx31_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_31_1.4bpp");
+static const u8 sDelcattyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_31.4bpp.lz");
+static const u8 sDelcattyGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_31_1.4bpp.lz");
 static const ax_sprite sDelcattySprites31[] = {
 	{sDelcattyGfx31, ARRAY_COUNT(sDelcattyGfx31)}, 
 	{NULL, 64}, 
@@ -2441,9 +2441,9 @@ static const ax_sprite sDelcattySprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx32[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_32.4bpp");
-static const u8 sDelcattyGfx32_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_32_1.4bpp");
-static const u8 sDelcattyGfx32_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_32_2.4bpp");
+static const u8 sDelcattyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_32.4bpp.lz");
+static const u8 sDelcattyGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_32_1.4bpp.lz");
+static const u8 sDelcattyGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_32_2.4bpp.lz");
 static const ax_sprite sDelcattySprites32[] = {
 	{sDelcattyGfx32, ARRAY_COUNT(sDelcattyGfx32)}, 
 	{NULL, 32}, 
@@ -2453,9 +2453,9 @@ static const ax_sprite sDelcattySprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx33[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_33.4bpp");
-static const u8 sDelcattyGfx33_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_33_1.4bpp");
-static const u8 sDelcattyGfx33_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_33_2.4bpp");
+static const u8 sDelcattyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_33.4bpp.lz");
+static const u8 sDelcattyGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_33_1.4bpp.lz");
+static const u8 sDelcattyGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_33_2.4bpp.lz");
 static const ax_sprite sDelcattySprites33[] = {
 	{sDelcattyGfx33, ARRAY_COUNT(sDelcattyGfx33)}, 
 	{NULL, 32}, 
@@ -2465,10 +2465,10 @@ static const ax_sprite sDelcattySprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx34[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_34.4bpp");
-static const u8 sDelcattyGfx34_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_34_1.4bpp");
-static const u8 sDelcattyGfx34_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_34_2.4bpp");
-static const u8 sDelcattyGfx34_3[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_34_3.4bpp");
+static const u8 sDelcattyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_34.4bpp.lz");
+static const u8 sDelcattyGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_34_1.4bpp.lz");
+static const u8 sDelcattyGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_34_2.4bpp.lz");
+static const u8 sDelcattyGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_34_3.4bpp.lz");
 static const ax_sprite sDelcattySprites34[] = {
 	{sDelcattyGfx34, ARRAY_COUNT(sDelcattyGfx34)}, 
 	{NULL, 32}, 
@@ -2480,9 +2480,9 @@ static const ax_sprite sDelcattySprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx35[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_35.4bpp");
-static const u8 sDelcattyGfx35_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_35_1.4bpp");
-static const u8 sDelcattyGfx35_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_35_2.4bpp");
+static const u8 sDelcattyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_35.4bpp.lz");
+static const u8 sDelcattyGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_35_1.4bpp.lz");
+static const u8 sDelcattyGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_35_2.4bpp.lz");
 static const ax_sprite sDelcattySprites35[] = {
 	{sDelcattyGfx35, ARRAY_COUNT(sDelcattyGfx35)}, 
 	{NULL, 32}, 
@@ -2492,8 +2492,8 @@ static const ax_sprite sDelcattySprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx36[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_36.4bpp");
-static const u8 sDelcattyGfx36_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_36_1.4bpp");
+static const u8 sDelcattyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_36.4bpp.lz");
+static const u8 sDelcattyGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_36_1.4bpp.lz");
 static const ax_sprite sDelcattySprites36[] = {
 	{NULL, 32}, 
 	{sDelcattyGfx36, ARRAY_COUNT(sDelcattyGfx36)}, 
@@ -2502,8 +2502,8 @@ static const ax_sprite sDelcattySprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx37[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_37.4bpp");
-static const u8 sDelcattyGfx37_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_37_1.4bpp");
+static const u8 sDelcattyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_37.4bpp.lz");
+static const u8 sDelcattyGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_37_1.4bpp.lz");
 static const ax_sprite sDelcattySprites37[] = {
 	{sDelcattyGfx37, ARRAY_COUNT(sDelcattyGfx37)}, 
 	{NULL, 32}, 
@@ -2511,9 +2511,9 @@ static const ax_sprite sDelcattySprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx38[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_38.4bpp");
-static const u8 sDelcattyGfx38_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_38_1.4bpp");
-static const u8 sDelcattyGfx38_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_38_2.4bpp");
+static const u8 sDelcattyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_38.4bpp.lz");
+static const u8 sDelcattyGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_38_1.4bpp.lz");
+static const u8 sDelcattyGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_38_2.4bpp.lz");
 static const ax_sprite sDelcattySprites38[] = {
 	{sDelcattyGfx38, ARRAY_COUNT(sDelcattyGfx38)}, 
 	{NULL, 32}, 
@@ -2523,9 +2523,9 @@ static const ax_sprite sDelcattySprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx39[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_39.4bpp");
-static const u8 sDelcattyGfx39_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_39_1.4bpp");
-static const u8 sDelcattyGfx39_2[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_39_2.4bpp");
+static const u8 sDelcattyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_39.4bpp.lz");
+static const u8 sDelcattyGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_39_1.4bpp.lz");
+static const u8 sDelcattyGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_39_2.4bpp.lz");
 static const ax_sprite sDelcattySprites39[] = {
 	{sDelcattyGfx39, ARRAY_COUNT(sDelcattyGfx39)}, 
 	{NULL, 32}, 
@@ -2535,8 +2535,8 @@ static const ax_sprite sDelcattySprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx40[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_40.4bpp");
-static const u8 sDelcattyGfx40_1[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_40_1.4bpp");
+static const u8 sDelcattyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_40.4bpp.lz");
+static const u8 sDelcattyGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_40_1.4bpp.lz");
 static const ax_sprite sDelcattySprites40[] = {
 	{sDelcattyGfx40, ARRAY_COUNT(sDelcattyGfx40)}, 
 	{NULL, 64}, 
@@ -2544,62 +2544,62 @@ static const ax_sprite sDelcattySprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx41[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_41.4bpp");
+static const u8 sDelcattyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_41.4bpp.lz");
 static const ax_sprite sDelcattySprites41[] = {
 	{sDelcattyGfx41, ARRAY_COUNT(sDelcattyGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx42[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_42.4bpp");
+static const u8 sDelcattyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_42.4bpp.lz");
 static const ax_sprite sDelcattySprites42[] = {
 	{sDelcattyGfx42, ARRAY_COUNT(sDelcattyGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx43[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_43.4bpp");
+static const u8 sDelcattyGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_43.4bpp.lz");
 static const ax_sprite sDelcattySprites43[] = {
 	{sDelcattyGfx43, ARRAY_COUNT(sDelcattyGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx44[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_44.4bpp");
+static const u8 sDelcattyGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_44.4bpp.lz");
 static const ax_sprite sDelcattySprites44[] = {
 	{sDelcattyGfx44, ARRAY_COUNT(sDelcattyGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx45[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_45.4bpp");
+static const u8 sDelcattyGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_45.4bpp.lz");
 static const ax_sprite sDelcattySprites45[] = {
 	{sDelcattyGfx45, ARRAY_COUNT(sDelcattyGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx46[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_46.4bpp");
+static const u8 sDelcattyGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_46.4bpp.lz");
 static const ax_sprite sDelcattySprites46[] = {
 	{sDelcattyGfx46, ARRAY_COUNT(sDelcattyGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx47[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_47.4bpp");
+static const u8 sDelcattyGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_47.4bpp.lz");
 static const ax_sprite sDelcattySprites47[] = {
 	{sDelcattyGfx47, ARRAY_COUNT(sDelcattyGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx48[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_48.4bpp");
+static const u8 sDelcattyGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_48.4bpp.lz");
 static const ax_sprite sDelcattySprites48[] = {
 	{sDelcattyGfx48, ARRAY_COUNT(sDelcattyGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx49[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_49.4bpp");
+static const u8 sDelcattyGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_49.4bpp.lz");
 static const ax_sprite sDelcattySprites49[] = {
 	{sDelcattyGfx49, ARRAY_COUNT(sDelcattyGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx50[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_50.4bpp");
+static const u8 sDelcattyGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_50.4bpp.lz");
 static const ax_sprite sDelcattySprites50[] = {
 	{sDelcattyGfx50, ARRAY_COUNT(sDelcattyGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx51[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_51.4bpp");
+static const u8 sDelcattyGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_51.4bpp.lz");
 static const ax_sprite sDelcattySprites51[] = {
 	{sDelcattyGfx51, ARRAY_COUNT(sDelcattyGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sDelcattyGfx52[] = INCBIN_U8("graphics/ax/mon/delcatty/sprite_52.4bpp");
+static const u8 sDelcattyGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delcatty/sprite_52.4bpp.lz");
 static const ax_sprite sDelcattySprites52[] = {
 	{sDelcattyGfx52, ARRAY_COUNT(sDelcattyGfx52)}, 
 	{NULL, 0}

@@ -1557,87 +1557,87 @@ static const ax_anim sUnownZAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sUnownZGfx1[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_1.4bpp");
+static const u8 sUnownZGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_1.4bpp.lz");
 static const ax_sprite sUnownZSprites1[] = {
 	{sUnownZGfx1, ARRAY_COUNT(sUnownZGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx2[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_2.4bpp");
+static const u8 sUnownZGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_2.4bpp.lz");
 static const ax_sprite sUnownZSprites2[] = {
 	{sUnownZGfx2, ARRAY_COUNT(sUnownZGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx3[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_3.4bpp");
+static const u8 sUnownZGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_3.4bpp.lz");
 static const ax_sprite sUnownZSprites3[] = {
 	{sUnownZGfx3, ARRAY_COUNT(sUnownZGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx4[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_4.4bpp");
+static const u8 sUnownZGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_4.4bpp.lz");
 static const ax_sprite sUnownZSprites4[] = {
 	{sUnownZGfx4, ARRAY_COUNT(sUnownZGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx5[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_5.4bpp");
+static const u8 sUnownZGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_5.4bpp.lz");
 static const ax_sprite sUnownZSprites5[] = {
 	{sUnownZGfx5, ARRAY_COUNT(sUnownZGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx6[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_6.4bpp");
+static const u8 sUnownZGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_6.4bpp.lz");
 static const ax_sprite sUnownZSprites6[] = {
 	{sUnownZGfx6, ARRAY_COUNT(sUnownZGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx7[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_7.4bpp");
+static const u8 sUnownZGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_7.4bpp.lz");
 static const ax_sprite sUnownZSprites7[] = {
 	{sUnownZGfx7, ARRAY_COUNT(sUnownZGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx8[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_8.4bpp");
+static const u8 sUnownZGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_8.4bpp.lz");
 static const ax_sprite sUnownZSprites8[] = {
 	{sUnownZGfx8, ARRAY_COUNT(sUnownZGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx9[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_9.4bpp");
+static const u8 sUnownZGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_9.4bpp.lz");
 static const ax_sprite sUnownZSprites9[] = {
 	{sUnownZGfx9, ARRAY_COUNT(sUnownZGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx10[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_10.4bpp");
+static const u8 sUnownZGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_10.4bpp.lz");
 static const ax_sprite sUnownZSprites10[] = {
 	{sUnownZGfx10, ARRAY_COUNT(sUnownZGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx11[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_11.4bpp");
+static const u8 sUnownZGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_11.4bpp.lz");
 static const ax_sprite sUnownZSprites11[] = {
 	{sUnownZGfx11, ARRAY_COUNT(sUnownZGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx12[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_12.4bpp");
+static const u8 sUnownZGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_12.4bpp.lz");
 static const ax_sprite sUnownZSprites12[] = {
 	{sUnownZGfx12, ARRAY_COUNT(sUnownZGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx13[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_13.4bpp");
+static const u8 sUnownZGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_13.4bpp.lz");
 static const ax_sprite sUnownZSprites13[] = {
 	{sUnownZGfx13, ARRAY_COUNT(sUnownZGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx14[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_14.4bpp");
+static const u8 sUnownZGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_14.4bpp.lz");
 static const ax_sprite sUnownZSprites14[] = {
 	{sUnownZGfx14, ARRAY_COUNT(sUnownZGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx15[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_15.4bpp");
+static const u8 sUnownZGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_15.4bpp.lz");
 static const ax_sprite sUnownZSprites15[] = {
 	{sUnownZGfx15, ARRAY_COUNT(sUnownZGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx16[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_16.4bpp");
+static const u8 sUnownZGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_16.4bpp.lz");
 static const ax_sprite sUnownZSprites16[] = {
 	{sUnownZGfx16, ARRAY_COUNT(sUnownZGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sUnownZGfx17[] = INCBIN_U8("graphics/ax/mon/unownz/sprite_17.4bpp");
+static const u8 sUnownZGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownz/sprite_17.4bpp.lz");
 static const ax_sprite sUnownZSprites17[] = {
 	{sUnownZGfx17, ARRAY_COUNT(sUnownZGfx17)}, 
 	{NULL, 0}

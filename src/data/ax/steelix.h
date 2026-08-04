@@ -2056,13 +2056,13 @@ static const ax_anim sSteelixAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSteelixGfx1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_1.4bpp");
-static const u8 sSteelixGfx1_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_1.4bpp");
-static const u8 sSteelixGfx1_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_2.4bpp");
-static const u8 sSteelixGfx1_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_3.4bpp");
-static const u8 sSteelixGfx1_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_4.4bpp");
-static const u8 sSteelixGfx1_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_5.4bpp");
-static const u8 sSteelixGfx1_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_6.4bpp");
+static const u8 sSteelixGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_1.4bpp.lz");
+static const u8 sSteelixGfx1_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_1.4bpp.lz");
+static const u8 sSteelixGfx1_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_2.4bpp.lz");
+static const u8 sSteelixGfx1_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_3.4bpp.lz");
+static const u8 sSteelixGfx1_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_4.4bpp.lz");
+static const u8 sSteelixGfx1_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_5.4bpp.lz");
+static const u8 sSteelixGfx1_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_1_6.4bpp.lz");
 static const ax_sprite sSteelixSprites1[] = {
 	{NULL, 352}, 
 	{sSteelixGfx1, ARRAY_COUNT(sSteelixGfx1)}, 
@@ -2081,12 +2081,12 @@ static const ax_sprite sSteelixSprites1[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_2.4bpp");
-static const u8 sSteelixGfx2_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_1.4bpp");
-static const u8 sSteelixGfx2_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_2.4bpp");
-static const u8 sSteelixGfx2_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_3.4bpp");
-static const u8 sSteelixGfx2_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_4.4bpp");
-static const u8 sSteelixGfx2_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_5.4bpp");
+static const u8 sSteelixGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_2.4bpp.lz");
+static const u8 sSteelixGfx2_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_1.4bpp.lz");
+static const u8 sSteelixGfx2_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_2.4bpp.lz");
+static const u8 sSteelixGfx2_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_3.4bpp.lz");
+static const u8 sSteelixGfx2_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_4.4bpp.lz");
+static const u8 sSteelixGfx2_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_2_5.4bpp.lz");
 static const ax_sprite sSteelixSprites2[] = {
 	{NULL, 352}, 
 	{sSteelixGfx2, ARRAY_COUNT(sSteelixGfx2)}, 
@@ -2103,13 +2103,13 @@ static const ax_sprite sSteelixSprites2[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_3.4bpp");
-static const u8 sSteelixGfx3_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_1.4bpp");
-static const u8 sSteelixGfx3_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_2.4bpp");
-static const u8 sSteelixGfx3_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_3.4bpp");
-static const u8 sSteelixGfx3_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_4.4bpp");
-static const u8 sSteelixGfx3_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_5.4bpp");
-static const u8 sSteelixGfx3_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_6.4bpp");
+static const u8 sSteelixGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_3.4bpp.lz");
+static const u8 sSteelixGfx3_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_1.4bpp.lz");
+static const u8 sSteelixGfx3_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_2.4bpp.lz");
+static const u8 sSteelixGfx3_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_3.4bpp.lz");
+static const u8 sSteelixGfx3_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_4.4bpp.lz");
+static const u8 sSteelixGfx3_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_5.4bpp.lz");
+static const u8 sSteelixGfx3_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_3_6.4bpp.lz");
 static const ax_sprite sSteelixSprites3[] = {
 	{NULL, 320}, 
 	{sSteelixGfx3, ARRAY_COUNT(sSteelixGfx3)}, 
@@ -2128,13 +2128,13 @@ static const ax_sprite sSteelixSprites3[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_4.4bpp");
-static const u8 sSteelixGfx4_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_1.4bpp");
-static const u8 sSteelixGfx4_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_2.4bpp");
-static const u8 sSteelixGfx4_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_3.4bpp");
-static const u8 sSteelixGfx4_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_4.4bpp");
-static const u8 sSteelixGfx4_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_5.4bpp");
-static const u8 sSteelixGfx4_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_6.4bpp");
+static const u8 sSteelixGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_4.4bpp.lz");
+static const u8 sSteelixGfx4_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_1.4bpp.lz");
+static const u8 sSteelixGfx4_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_2.4bpp.lz");
+static const u8 sSteelixGfx4_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_3.4bpp.lz");
+static const u8 sSteelixGfx4_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_4.4bpp.lz");
+static const u8 sSteelixGfx4_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_5.4bpp.lz");
+static const u8 sSteelixGfx4_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_4_6.4bpp.lz");
 static const ax_sprite sSteelixSprites4[] = {
 	{NULL, 288}, 
 	{sSteelixGfx4, ARRAY_COUNT(sSteelixGfx4)}, 
@@ -2153,11 +2153,11 @@ static const ax_sprite sSteelixSprites4[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_5.4bpp");
-static const u8 sSteelixGfx5_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_5_1.4bpp");
-static const u8 sSteelixGfx5_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_5_2.4bpp");
-static const u8 sSteelixGfx5_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_5_3.4bpp");
-static const u8 sSteelixGfx5_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_5_4.4bpp");
+static const u8 sSteelixGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_5.4bpp.lz");
+static const u8 sSteelixGfx5_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_5_1.4bpp.lz");
+static const u8 sSteelixGfx5_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_5_2.4bpp.lz");
+static const u8 sSteelixGfx5_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_5_3.4bpp.lz");
+static const u8 sSteelixGfx5_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_5_4.4bpp.lz");
 static const ax_sprite sSteelixSprites5[] = {
 	{NULL, 512}, 
 	{sSteelixGfx5, ARRAY_COUNT(sSteelixGfx5)}, 
@@ -2172,13 +2172,13 @@ static const ax_sprite sSteelixSprites5[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_6.4bpp");
-static const u8 sSteelixGfx6_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_1.4bpp");
-static const u8 sSteelixGfx6_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_2.4bpp");
-static const u8 sSteelixGfx6_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_3.4bpp");
-static const u8 sSteelixGfx6_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_4.4bpp");
-static const u8 sSteelixGfx6_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_5.4bpp");
-static const u8 sSteelixGfx6_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_6.4bpp");
+static const u8 sSteelixGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_6.4bpp.lz");
+static const u8 sSteelixGfx6_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_1.4bpp.lz");
+static const u8 sSteelixGfx6_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_2.4bpp.lz");
+static const u8 sSteelixGfx6_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_3.4bpp.lz");
+static const u8 sSteelixGfx6_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_4.4bpp.lz");
+static const u8 sSteelixGfx6_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_5.4bpp.lz");
+static const u8 sSteelixGfx6_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_6_6.4bpp.lz");
 static const ax_sprite sSteelixSprites6[] = {
 	{NULL, 288}, 
 	{sSteelixGfx6, ARRAY_COUNT(sSteelixGfx6)}, 
@@ -2197,14 +2197,14 @@ static const ax_sprite sSteelixSprites6[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_7.4bpp");
-static const u8 sSteelixGfx7_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_1.4bpp");
-static const u8 sSteelixGfx7_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_2.4bpp");
-static const u8 sSteelixGfx7_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_3.4bpp");
-static const u8 sSteelixGfx7_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_4.4bpp");
-static const u8 sSteelixGfx7_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_5.4bpp");
-static const u8 sSteelixGfx7_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_6.4bpp");
-static const u8 sSteelixGfx7_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_7.4bpp");
+static const u8 sSteelixGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_7.4bpp.lz");
+static const u8 sSteelixGfx7_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_1.4bpp.lz");
+static const u8 sSteelixGfx7_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_2.4bpp.lz");
+static const u8 sSteelixGfx7_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_3.4bpp.lz");
+static const u8 sSteelixGfx7_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_4.4bpp.lz");
+static const u8 sSteelixGfx7_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_5.4bpp.lz");
+static const u8 sSteelixGfx7_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_6.4bpp.lz");
+static const u8 sSteelixGfx7_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_7_7.4bpp.lz");
 static const ax_sprite sSteelixSprites7[] = {
 	{NULL, 256}, 
 	{sSteelixGfx7, ARRAY_COUNT(sSteelixGfx7)}, 
@@ -2225,14 +2225,14 @@ static const ax_sprite sSteelixSprites7[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx8[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_8.4bpp");
+static const u8 sSteelixGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_8.4bpp.lz");
 static const ax_sprite sSteelixSprites8[] = {
 	{NULL, 128}, 
 	{sSteelixGfx8, ARRAY_COUNT(sSteelixGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx9[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_9.4bpp");
-static const u8 sSteelixGfx9_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_9_1.4bpp");
+static const u8 sSteelixGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_9.4bpp.lz");
+static const u8 sSteelixGfx9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_9_1.4bpp.lz");
 static const ax_sprite sSteelixSprites9[] = {
 	{NULL, 64}, 
 	{sSteelixGfx9, ARRAY_COUNT(sSteelixGfx9)}, 
@@ -2240,8 +2240,8 @@ static const ax_sprite sSteelixSprites9[] = {
 	{sSteelixGfx9_1, ARRAY_COUNT(sSteelixGfx9_1)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx10[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_10.4bpp");
-static const u8 sSteelixGfx10_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_10_1.4bpp");
+static const u8 sSteelixGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_10.4bpp.lz");
+static const u8 sSteelixGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_10_1.4bpp.lz");
 static const ax_sprite sSteelixSprites10[] = {
 	{sSteelixGfx10, ARRAY_COUNT(sSteelixGfx10)}, 
 	{NULL, 32}, 
@@ -2249,18 +2249,18 @@ static const ax_sprite sSteelixSprites10[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx11[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_11.4bpp");
+static const u8 sSteelixGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_11.4bpp.lz");
 static const ax_sprite sSteelixSprites11[] = {
 	{sSteelixGfx11, ARRAY_COUNT(sSteelixGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx12[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_12.4bpp");
-static const u8 sSteelixGfx12_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_1.4bpp");
-static const u8 sSteelixGfx12_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_2.4bpp");
-static const u8 sSteelixGfx12_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_3.4bpp");
-static const u8 sSteelixGfx12_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_4.4bpp");
-static const u8 sSteelixGfx12_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_5.4bpp");
-static const u8 sSteelixGfx12_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_6.4bpp");
+static const u8 sSteelixGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_12.4bpp.lz");
+static const u8 sSteelixGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_1.4bpp.lz");
+static const u8 sSteelixGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_2.4bpp.lz");
+static const u8 sSteelixGfx12_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_3.4bpp.lz");
+static const u8 sSteelixGfx12_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_4.4bpp.lz");
+static const u8 sSteelixGfx12_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_5.4bpp.lz");
+static const u8 sSteelixGfx12_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_12_6.4bpp.lz");
 static const ax_sprite sSteelixSprites12[] = {
 	{NULL, 288}, 
 	{sSteelixGfx12, ARRAY_COUNT(sSteelixGfx12)}, 
@@ -2279,14 +2279,14 @@ static const ax_sprite sSteelixSprites12[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx13[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_13.4bpp");
-static const u8 sSteelixGfx13_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_1.4bpp");
-static const u8 sSteelixGfx13_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_2.4bpp");
-static const u8 sSteelixGfx13_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_3.4bpp");
-static const u8 sSteelixGfx13_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_4.4bpp");
-static const u8 sSteelixGfx13_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_5.4bpp");
-static const u8 sSteelixGfx13_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_6.4bpp");
-static const u8 sSteelixGfx13_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_7.4bpp");
+static const u8 sSteelixGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_13.4bpp.lz");
+static const u8 sSteelixGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_1.4bpp.lz");
+static const u8 sSteelixGfx13_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_2.4bpp.lz");
+static const u8 sSteelixGfx13_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_3.4bpp.lz");
+static const u8 sSteelixGfx13_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_4.4bpp.lz");
+static const u8 sSteelixGfx13_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_5.4bpp.lz");
+static const u8 sSteelixGfx13_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_6.4bpp.lz");
+static const u8 sSteelixGfx13_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_13_7.4bpp.lz");
 static const ax_sprite sSteelixSprites13[] = {
 	{NULL, 32}, 
 	{sSteelixGfx13, ARRAY_COUNT(sSteelixGfx13)}, 
@@ -2307,14 +2307,14 @@ static const ax_sprite sSteelixSprites13[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx14[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_14.4bpp");
-static const u8 sSteelixGfx14_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_1.4bpp");
-static const u8 sSteelixGfx14_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_2.4bpp");
-static const u8 sSteelixGfx14_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_3.4bpp");
-static const u8 sSteelixGfx14_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_4.4bpp");
-static const u8 sSteelixGfx14_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_5.4bpp");
-static const u8 sSteelixGfx14_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_6.4bpp");
-static const u8 sSteelixGfx14_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_7.4bpp");
+static const u8 sSteelixGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_14.4bpp.lz");
+static const u8 sSteelixGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_1.4bpp.lz");
+static const u8 sSteelixGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_2.4bpp.lz");
+static const u8 sSteelixGfx14_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_3.4bpp.lz");
+static const u8 sSteelixGfx14_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_4.4bpp.lz");
+static const u8 sSteelixGfx14_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_5.4bpp.lz");
+static const u8 sSteelixGfx14_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_6.4bpp.lz");
+static const u8 sSteelixGfx14_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_14_7.4bpp.lz");
 static const ax_sprite sSteelixSprites14[] = {
 	{sSteelixGfx14, ARRAY_COUNT(sSteelixGfx14)}, 
 	{NULL, 128}, 
@@ -2334,14 +2334,14 @@ static const ax_sprite sSteelixSprites14[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx15[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_15.4bpp");
-static const u8 sSteelixGfx15_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_1.4bpp");
-static const u8 sSteelixGfx15_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_2.4bpp");
-static const u8 sSteelixGfx15_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_3.4bpp");
-static const u8 sSteelixGfx15_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_4.4bpp");
-static const u8 sSteelixGfx15_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_5.4bpp");
-static const u8 sSteelixGfx15_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_6.4bpp");
-static const u8 sSteelixGfx15_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_7.4bpp");
+static const u8 sSteelixGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_15.4bpp.lz");
+static const u8 sSteelixGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_1.4bpp.lz");
+static const u8 sSteelixGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_2.4bpp.lz");
+static const u8 sSteelixGfx15_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_3.4bpp.lz");
+static const u8 sSteelixGfx15_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_4.4bpp.lz");
+static const u8 sSteelixGfx15_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_5.4bpp.lz");
+static const u8 sSteelixGfx15_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_6.4bpp.lz");
+static const u8 sSteelixGfx15_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_15_7.4bpp.lz");
 static const ax_sprite sSteelixSprites15[] = {
 	{NULL, 64}, 
 	{sSteelixGfx15, ARRAY_COUNT(sSteelixGfx15)}, 
@@ -2362,14 +2362,14 @@ static const ax_sprite sSteelixSprites15[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx16[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_16.4bpp");
-static const u8 sSteelixGfx16_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_1.4bpp");
-static const u8 sSteelixGfx16_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_2.4bpp");
-static const u8 sSteelixGfx16_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_3.4bpp");
-static const u8 sSteelixGfx16_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_4.4bpp");
-static const u8 sSteelixGfx16_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_5.4bpp");
-static const u8 sSteelixGfx16_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_6.4bpp");
-static const u8 sSteelixGfx16_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_7.4bpp");
+static const u8 sSteelixGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_16.4bpp.lz");
+static const u8 sSteelixGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_1.4bpp.lz");
+static const u8 sSteelixGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_2.4bpp.lz");
+static const u8 sSteelixGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_3.4bpp.lz");
+static const u8 sSteelixGfx16_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_4.4bpp.lz");
+static const u8 sSteelixGfx16_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_5.4bpp.lz");
+static const u8 sSteelixGfx16_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_6.4bpp.lz");
+static const u8 sSteelixGfx16_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_16_7.4bpp.lz");
 static const ax_sprite sSteelixSprites16[] = {
 	{NULL, 64}, 
 	{sSteelixGfx16, ARRAY_COUNT(sSteelixGfx16)}, 
@@ -2390,14 +2390,14 @@ static const ax_sprite sSteelixSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx17[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_17.4bpp");
-static const u8 sSteelixGfx17_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_1.4bpp");
-static const u8 sSteelixGfx17_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_2.4bpp");
-static const u8 sSteelixGfx17_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_3.4bpp");
-static const u8 sSteelixGfx17_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_4.4bpp");
-static const u8 sSteelixGfx17_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_5.4bpp");
-static const u8 sSteelixGfx17_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_6.4bpp");
-static const u8 sSteelixGfx17_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_7.4bpp");
+static const u8 sSteelixGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_17.4bpp.lz");
+static const u8 sSteelixGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_1.4bpp.lz");
+static const u8 sSteelixGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_2.4bpp.lz");
+static const u8 sSteelixGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_3.4bpp.lz");
+static const u8 sSteelixGfx17_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_4.4bpp.lz");
+static const u8 sSteelixGfx17_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_5.4bpp.lz");
+static const u8 sSteelixGfx17_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_6.4bpp.lz");
+static const u8 sSteelixGfx17_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_17_7.4bpp.lz");
 static const ax_sprite sSteelixSprites17[] = {
 	{NULL, 64}, 
 	{sSteelixGfx17, ARRAY_COUNT(sSteelixGfx17)}, 
@@ -2418,14 +2418,14 @@ static const ax_sprite sSteelixSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx18[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_18.4bpp");
-static const u8 sSteelixGfx18_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_1.4bpp");
-static const u8 sSteelixGfx18_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_2.4bpp");
-static const u8 sSteelixGfx18_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_3.4bpp");
-static const u8 sSteelixGfx18_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_4.4bpp");
-static const u8 sSteelixGfx18_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_5.4bpp");
-static const u8 sSteelixGfx18_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_6.4bpp");
-static const u8 sSteelixGfx18_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_7.4bpp");
+static const u8 sSteelixGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_18.4bpp.lz");
+static const u8 sSteelixGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_1.4bpp.lz");
+static const u8 sSteelixGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_2.4bpp.lz");
+static const u8 sSteelixGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_3.4bpp.lz");
+static const u8 sSteelixGfx18_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_4.4bpp.lz");
+static const u8 sSteelixGfx18_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_5.4bpp.lz");
+static const u8 sSteelixGfx18_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_6.4bpp.lz");
+static const u8 sSteelixGfx18_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_18_7.4bpp.lz");
 static const ax_sprite sSteelixSprites18[] = {
 	{NULL, 64}, 
 	{sSteelixGfx18, ARRAY_COUNT(sSteelixGfx18)}, 
@@ -2446,9 +2446,9 @@ static const ax_sprite sSteelixSprites18[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx19[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_19.4bpp");
-static const u8 sSteelixGfx19_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_19_1.4bpp");
-static const u8 sSteelixGfx19_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_19_2.4bpp");
+static const u8 sSteelixGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_19.4bpp.lz");
+static const u8 sSteelixGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_19_1.4bpp.lz");
+static const u8 sSteelixGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_19_2.4bpp.lz");
 static const ax_sprite sSteelixSprites19[] = {
 	{NULL, 192}, 
 	{sSteelixGfx19, ARRAY_COUNT(sSteelixGfx19)}, 
@@ -2458,8 +2458,8 @@ static const ax_sprite sSteelixSprites19[] = {
 	{sSteelixGfx19_2, ARRAY_COUNT(sSteelixGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx20[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_20.4bpp");
-static const u8 sSteelixGfx20_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_20_1.4bpp");
+static const u8 sSteelixGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_20.4bpp.lz");
+static const u8 sSteelixGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_20_1.4bpp.lz");
 static const ax_sprite sSteelixSprites20[] = {
 	{sSteelixGfx20, ARRAY_COUNT(sSteelixGfx20)}, 
 	{NULL, 32}, 
@@ -2467,17 +2467,17 @@ static const ax_sprite sSteelixSprites20[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx21[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_21.4bpp");
-static const u8 sSteelixGfx21_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_21_1.4bpp");
+static const u8 sSteelixGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_21.4bpp.lz");
+static const u8 sSteelixGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_21_1.4bpp.lz");
 static const ax_sprite sSteelixSprites21[] = {
 	{sSteelixGfx21, ARRAY_COUNT(sSteelixGfx21)}, 
 	{NULL, 32}, 
 	{sSteelixGfx21_1, ARRAY_COUNT(sSteelixGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx22[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_22.4bpp");
-static const u8 sSteelixGfx22_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_22_1.4bpp");
-static const u8 sSteelixGfx22_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_22_2.4bpp");
+static const u8 sSteelixGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_22.4bpp.lz");
+static const u8 sSteelixGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_22_1.4bpp.lz");
+static const u8 sSteelixGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_22_2.4bpp.lz");
 static const ax_sprite sSteelixSprites22[] = {
 	{sSteelixGfx22, ARRAY_COUNT(sSteelixGfx22)}, 
 	{NULL, 32}, 
@@ -2487,21 +2487,21 @@ static const ax_sprite sSteelixSprites22[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx23[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_23.4bpp");
+static const u8 sSteelixGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_23.4bpp.lz");
 static const ax_sprite sSteelixSprites23[] = {
 	{NULL, 128}, 
 	{sSteelixGfx23, ARRAY_COUNT(sSteelixGfx23)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx24[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_24.4bpp");
+static const u8 sSteelixGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_24.4bpp.lz");
 static const ax_sprite sSteelixSprites24[] = {
 	{NULL, 32}, 
 	{sSteelixGfx24, ARRAY_COUNT(sSteelixGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx25[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_25.4bpp");
-static const u8 sSteelixGfx25_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_25_1.4bpp");
+static const u8 sSteelixGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_25.4bpp.lz");
+static const u8 sSteelixGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_25_1.4bpp.lz");
 static const ax_sprite sSteelixSprites25[] = {
 	{sSteelixGfx25, ARRAY_COUNT(sSteelixGfx25)}, 
 	{NULL, 32}, 
@@ -2509,15 +2509,15 @@ static const ax_sprite sSteelixSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx26[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_26.4bpp");
+static const u8 sSteelixGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_26.4bpp.lz");
 static const ax_sprite sSteelixSprites26[] = {
 	{sSteelixGfx26, ARRAY_COUNT(sSteelixGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx27[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_27.4bpp");
-static const u8 sSteelixGfx27_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_27_1.4bpp");
-static const u8 sSteelixGfx27_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_27_2.4bpp");
-static const u8 sSteelixGfx27_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_27_3.4bpp");
+static const u8 sSteelixGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_27.4bpp.lz");
+static const u8 sSteelixGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_27_1.4bpp.lz");
+static const u8 sSteelixGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_27_2.4bpp.lz");
+static const u8 sSteelixGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_27_3.4bpp.lz");
 static const ax_sprite sSteelixSprites27[] = {
 	{sSteelixGfx27, ARRAY_COUNT(sSteelixGfx27)}, 
 	{NULL, 32}, 
@@ -2528,15 +2528,15 @@ static const ax_sprite sSteelixSprites27[] = {
 	{sSteelixGfx27_3, ARRAY_COUNT(sSteelixGfx27_3)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx28[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28.4bpp");
-static const u8 sSteelixGfx28_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_1.4bpp");
-static const u8 sSteelixGfx28_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_2.4bpp");
-static const u8 sSteelixGfx28_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_3.4bpp");
-static const u8 sSteelixGfx28_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_4.4bpp");
-static const u8 sSteelixGfx28_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_5.4bpp");
-static const u8 sSteelixGfx28_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_6.4bpp");
-static const u8 sSteelixGfx28_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_7.4bpp");
-static const u8 sSteelixGfx28_8[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_8.4bpp");
+static const u8 sSteelixGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28.4bpp.lz");
+static const u8 sSteelixGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_1.4bpp.lz");
+static const u8 sSteelixGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_2.4bpp.lz");
+static const u8 sSteelixGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_3.4bpp.lz");
+static const u8 sSteelixGfx28_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_4.4bpp.lz");
+static const u8 sSteelixGfx28_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_5.4bpp.lz");
+static const u8 sSteelixGfx28_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_6.4bpp.lz");
+static const u8 sSteelixGfx28_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_7.4bpp.lz");
+static const u8 sSteelixGfx28_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_28_8.4bpp.lz");
 static const ax_sprite sSteelixSprites28[] = {
 	{sSteelixGfx28, ARRAY_COUNT(sSteelixGfx28)}, 
 	{NULL, 160}, 
@@ -2557,10 +2557,10 @@ static const ax_sprite sSteelixSprites28[] = {
 	{sSteelixGfx28_8, ARRAY_COUNT(sSteelixGfx28_8)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx29[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_29.4bpp");
-static const u8 sSteelixGfx29_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_29_1.4bpp");
-static const u8 sSteelixGfx29_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_29_2.4bpp");
-static const u8 sSteelixGfx29_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_29_3.4bpp");
+static const u8 sSteelixGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_29.4bpp.lz");
+static const u8 sSteelixGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_29_1.4bpp.lz");
+static const u8 sSteelixGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_29_2.4bpp.lz");
+static const u8 sSteelixGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_29_3.4bpp.lz");
 static const ax_sprite sSteelixSprites29[] = {
 	{NULL, 32}, 
 	{sSteelixGfx29, ARRAY_COUNT(sSteelixGfx29)}, 
@@ -2572,28 +2572,28 @@ static const ax_sprite sSteelixSprites29[] = {
 	{sSteelixGfx29_3, ARRAY_COUNT(sSteelixGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx30[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_30.4bpp");
+static const u8 sSteelixGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_30.4bpp.lz");
 static const ax_sprite sSteelixSprites30[] = {
 	{sSteelixGfx30, ARRAY_COUNT(sSteelixGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx31[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_31.4bpp");
+static const u8 sSteelixGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_31.4bpp.lz");
 static const ax_sprite sSteelixSprites31[] = {
 	{sSteelixGfx31, ARRAY_COUNT(sSteelixGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx32[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_32.4bpp");
+static const u8 sSteelixGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_32.4bpp.lz");
 static const ax_sprite sSteelixSprites32[] = {
 	{sSteelixGfx32, ARRAY_COUNT(sSteelixGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx33[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_33.4bpp");
-static const u8 sSteelixGfx33_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_1.4bpp");
-static const u8 sSteelixGfx33_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_2.4bpp");
-static const u8 sSteelixGfx33_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_3.4bpp");
-static const u8 sSteelixGfx33_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_4.4bpp");
-static const u8 sSteelixGfx33_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_5.4bpp");
-static const u8 sSteelixGfx33_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_6.4bpp");
+static const u8 sSteelixGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_33.4bpp.lz");
+static const u8 sSteelixGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_1.4bpp.lz");
+static const u8 sSteelixGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_2.4bpp.lz");
+static const u8 sSteelixGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_3.4bpp.lz");
+static const u8 sSteelixGfx33_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_4.4bpp.lz");
+static const u8 sSteelixGfx33_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_5.4bpp.lz");
+static const u8 sSteelixGfx33_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_33_6.4bpp.lz");
 static const ax_sprite sSteelixSprites33[] = {
 	{NULL, 320}, 
 	{sSteelixGfx33, ARRAY_COUNT(sSteelixGfx33)}, 
@@ -2612,13 +2612,13 @@ static const ax_sprite sSteelixSprites33[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx34[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_34.4bpp");
-static const u8 sSteelixGfx34_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_1.4bpp");
-static const u8 sSteelixGfx34_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_2.4bpp");
-static const u8 sSteelixGfx34_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_3.4bpp");
-static const u8 sSteelixGfx34_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_4.4bpp");
-static const u8 sSteelixGfx34_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_5.4bpp");
-static const u8 sSteelixGfx34_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_6.4bpp");
+static const u8 sSteelixGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_34.4bpp.lz");
+static const u8 sSteelixGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_1.4bpp.lz");
+static const u8 sSteelixGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_2.4bpp.lz");
+static const u8 sSteelixGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_3.4bpp.lz");
+static const u8 sSteelixGfx34_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_4.4bpp.lz");
+static const u8 sSteelixGfx34_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_5.4bpp.lz");
+static const u8 sSteelixGfx34_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_34_6.4bpp.lz");
 static const ax_sprite sSteelixSprites34[] = {
 	{NULL, 352}, 
 	{sSteelixGfx34, ARRAY_COUNT(sSteelixGfx34)}, 
@@ -2637,13 +2637,13 @@ static const ax_sprite sSteelixSprites34[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx35[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_35.4bpp");
-static const u8 sSteelixGfx35_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_1.4bpp");
-static const u8 sSteelixGfx35_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_2.4bpp");
-static const u8 sSteelixGfx35_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_3.4bpp");
-static const u8 sSteelixGfx35_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_4.4bpp");
-static const u8 sSteelixGfx35_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_5.4bpp");
-static const u8 sSteelixGfx35_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_6.4bpp");
+static const u8 sSteelixGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_35.4bpp.lz");
+static const u8 sSteelixGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_1.4bpp.lz");
+static const u8 sSteelixGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_2.4bpp.lz");
+static const u8 sSteelixGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_3.4bpp.lz");
+static const u8 sSteelixGfx35_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_4.4bpp.lz");
+static const u8 sSteelixGfx35_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_5.4bpp.lz");
+static const u8 sSteelixGfx35_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_35_6.4bpp.lz");
 static const ax_sprite sSteelixSprites35[] = {
 	{NULL, 320}, 
 	{sSteelixGfx35, ARRAY_COUNT(sSteelixGfx35)}, 
@@ -2662,13 +2662,13 @@ static const ax_sprite sSteelixSprites35[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx36[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_36.4bpp");
-static const u8 sSteelixGfx36_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_1.4bpp");
-static const u8 sSteelixGfx36_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_2.4bpp");
-static const u8 sSteelixGfx36_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_3.4bpp");
-static const u8 sSteelixGfx36_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_4.4bpp");
-static const u8 sSteelixGfx36_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_5.4bpp");
-static const u8 sSteelixGfx36_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_6.4bpp");
+static const u8 sSteelixGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_36.4bpp.lz");
+static const u8 sSteelixGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_1.4bpp.lz");
+static const u8 sSteelixGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_2.4bpp.lz");
+static const u8 sSteelixGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_3.4bpp.lz");
+static const u8 sSteelixGfx36_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_4.4bpp.lz");
+static const u8 sSteelixGfx36_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_5.4bpp.lz");
+static const u8 sSteelixGfx36_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_36_6.4bpp.lz");
 static const ax_sprite sSteelixSprites36[] = {
 	{NULL, 256}, 
 	{sSteelixGfx36, ARRAY_COUNT(sSteelixGfx36)}, 
@@ -2687,13 +2687,13 @@ static const ax_sprite sSteelixSprites36[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx37[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_37.4bpp");
-static const u8 sSteelixGfx37_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_1.4bpp");
-static const u8 sSteelixGfx37_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_2.4bpp");
-static const u8 sSteelixGfx37_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_3.4bpp");
-static const u8 sSteelixGfx37_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_4.4bpp");
-static const u8 sSteelixGfx37_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_5.4bpp");
-static const u8 sSteelixGfx37_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_6.4bpp");
+static const u8 sSteelixGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_37.4bpp.lz");
+static const u8 sSteelixGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_1.4bpp.lz");
+static const u8 sSteelixGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_2.4bpp.lz");
+static const u8 sSteelixGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_3.4bpp.lz");
+static const u8 sSteelixGfx37_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_4.4bpp.lz");
+static const u8 sSteelixGfx37_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_5.4bpp.lz");
+static const u8 sSteelixGfx37_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_37_6.4bpp.lz");
 static const ax_sprite sSteelixSprites37[] = {
 	{NULL, 288}, 
 	{sSteelixGfx37, ARRAY_COUNT(sSteelixGfx37)}, 
@@ -2712,14 +2712,14 @@ static const ax_sprite sSteelixSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx38[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_38.4bpp");
-static const u8 sSteelixGfx38_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_1.4bpp");
-static const u8 sSteelixGfx38_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_2.4bpp");
-static const u8 sSteelixGfx38_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_3.4bpp");
-static const u8 sSteelixGfx38_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_4.4bpp");
-static const u8 sSteelixGfx38_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_5.4bpp");
-static const u8 sSteelixGfx38_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_6.4bpp");
-static const u8 sSteelixGfx38_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_7.4bpp");
+static const u8 sSteelixGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_38.4bpp.lz");
+static const u8 sSteelixGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_1.4bpp.lz");
+static const u8 sSteelixGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_2.4bpp.lz");
+static const u8 sSteelixGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_3.4bpp.lz");
+static const u8 sSteelixGfx38_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_4.4bpp.lz");
+static const u8 sSteelixGfx38_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_5.4bpp.lz");
+static const u8 sSteelixGfx38_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_6.4bpp.lz");
+static const u8 sSteelixGfx38_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_38_7.4bpp.lz");
 static const ax_sprite sSteelixSprites38[] = {
 	{NULL, 32}, 
 	{sSteelixGfx38, ARRAY_COUNT(sSteelixGfx38)}, 
@@ -2740,14 +2740,14 @@ static const ax_sprite sSteelixSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx39[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_39.4bpp");
-static const u8 sSteelixGfx39_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_1.4bpp");
-static const u8 sSteelixGfx39_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_2.4bpp");
-static const u8 sSteelixGfx39_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_3.4bpp");
-static const u8 sSteelixGfx39_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_4.4bpp");
-static const u8 sSteelixGfx39_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_5.4bpp");
-static const u8 sSteelixGfx39_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_6.4bpp");
-static const u8 sSteelixGfx39_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_7.4bpp");
+static const u8 sSteelixGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_39.4bpp.lz");
+static const u8 sSteelixGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_1.4bpp.lz");
+static const u8 sSteelixGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_2.4bpp.lz");
+static const u8 sSteelixGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_3.4bpp.lz");
+static const u8 sSteelixGfx39_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_4.4bpp.lz");
+static const u8 sSteelixGfx39_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_5.4bpp.lz");
+static const u8 sSteelixGfx39_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_6.4bpp.lz");
+static const u8 sSteelixGfx39_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_39_7.4bpp.lz");
 static const ax_sprite sSteelixSprites39[] = {
 	{NULL, 32}, 
 	{sSteelixGfx39, ARRAY_COUNT(sSteelixGfx39)}, 
@@ -2768,14 +2768,14 @@ static const ax_sprite sSteelixSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx40[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_40.4bpp");
-static const u8 sSteelixGfx40_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_1.4bpp");
-static const u8 sSteelixGfx40_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_2.4bpp");
-static const u8 sSteelixGfx40_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_3.4bpp");
-static const u8 sSteelixGfx40_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_4.4bpp");
-static const u8 sSteelixGfx40_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_5.4bpp");
-static const u8 sSteelixGfx40_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_6.4bpp");
-static const u8 sSteelixGfx40_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_7.4bpp");
+static const u8 sSteelixGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_40.4bpp.lz");
+static const u8 sSteelixGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_1.4bpp.lz");
+static const u8 sSteelixGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_2.4bpp.lz");
+static const u8 sSteelixGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_3.4bpp.lz");
+static const u8 sSteelixGfx40_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_4.4bpp.lz");
+static const u8 sSteelixGfx40_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_5.4bpp.lz");
+static const u8 sSteelixGfx40_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_6.4bpp.lz");
+static const u8 sSteelixGfx40_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_40_7.4bpp.lz");
 static const ax_sprite sSteelixSprites40[] = {
 	{NULL, 32}, 
 	{sSteelixGfx40, ARRAY_COUNT(sSteelixGfx40)}, 
@@ -2796,14 +2796,14 @@ static const ax_sprite sSteelixSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx41[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_41.4bpp");
-static const u8 sSteelixGfx41_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_1.4bpp");
-static const u8 sSteelixGfx41_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_2.4bpp");
-static const u8 sSteelixGfx41_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_3.4bpp");
-static const u8 sSteelixGfx41_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_4.4bpp");
-static const u8 sSteelixGfx41_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_5.4bpp");
-static const u8 sSteelixGfx41_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_6.4bpp");
-static const u8 sSteelixGfx41_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_7.4bpp");
+static const u8 sSteelixGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_41.4bpp.lz");
+static const u8 sSteelixGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_1.4bpp.lz");
+static const u8 sSteelixGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_2.4bpp.lz");
+static const u8 sSteelixGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_3.4bpp.lz");
+static const u8 sSteelixGfx41_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_4.4bpp.lz");
+static const u8 sSteelixGfx41_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_5.4bpp.lz");
+static const u8 sSteelixGfx41_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_6.4bpp.lz");
+static const u8 sSteelixGfx41_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_41_7.4bpp.lz");
 static const ax_sprite sSteelixSprites41[] = {
 	{NULL, 64}, 
 	{sSteelixGfx41, ARRAY_COUNT(sSteelixGfx41)}, 
@@ -2824,14 +2824,14 @@ static const ax_sprite sSteelixSprites41[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx42[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_42.4bpp");
-static const u8 sSteelixGfx42_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_1.4bpp");
-static const u8 sSteelixGfx42_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_2.4bpp");
-static const u8 sSteelixGfx42_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_3.4bpp");
-static const u8 sSteelixGfx42_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_4.4bpp");
-static const u8 sSteelixGfx42_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_5.4bpp");
-static const u8 sSteelixGfx42_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_6.4bpp");
-static const u8 sSteelixGfx42_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_7.4bpp");
+static const u8 sSteelixGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_42.4bpp.lz");
+static const u8 sSteelixGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_1.4bpp.lz");
+static const u8 sSteelixGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_2.4bpp.lz");
+static const u8 sSteelixGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_3.4bpp.lz");
+static const u8 sSteelixGfx42_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_4.4bpp.lz");
+static const u8 sSteelixGfx42_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_5.4bpp.lz");
+static const u8 sSteelixGfx42_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_6.4bpp.lz");
+static const u8 sSteelixGfx42_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_42_7.4bpp.lz");
 static const ax_sprite sSteelixSprites42[] = {
 	{NULL, 64}, 
 	{sSteelixGfx42, ARRAY_COUNT(sSteelixGfx42)}, 
@@ -2852,8 +2852,8 @@ static const ax_sprite sSteelixSprites42[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx43[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_43.4bpp");
-static const u8 sSteelixGfx43_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_43_1.4bpp");
+static const u8 sSteelixGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_43.4bpp.lz");
+static const u8 sSteelixGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_43_1.4bpp.lz");
 static const ax_sprite sSteelixSprites43[] = {
 	{sSteelixGfx43, ARRAY_COUNT(sSteelixGfx43)}, 
 	{NULL, 32}, 
@@ -2861,25 +2861,25 @@ static const ax_sprite sSteelixSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx44[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_44.4bpp");
+static const u8 sSteelixGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_44.4bpp.lz");
 static const ax_sprite sSteelixSprites44[] = {
 	{NULL, 32}, 
 	{sSteelixGfx44, ARRAY_COUNT(sSteelixGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx45[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_45.4bpp");
+static const u8 sSteelixGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_45.4bpp.lz");
 static const ax_sprite sSteelixSprites45[] = {
 	{sSteelixGfx45, ARRAY_COUNT(sSteelixGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx46[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_46.4bpp");
+static const u8 sSteelixGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_46.4bpp.lz");
 static const ax_sprite sSteelixSprites46[] = {
 	{NULL, 32}, 
 	{sSteelixGfx46, ARRAY_COUNT(sSteelixGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx47[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_47.4bpp");
-static const u8 sSteelixGfx47_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_47_1.4bpp");
+static const u8 sSteelixGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_47.4bpp.lz");
+static const u8 sSteelixGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_47_1.4bpp.lz");
 static const ax_sprite sSteelixSprites47[] = {
 	{sSteelixGfx47, ARRAY_COUNT(sSteelixGfx47)}, 
 	{NULL, 32}, 
@@ -2887,14 +2887,14 @@ static const ax_sprite sSteelixSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx48[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_48.4bpp");
+static const u8 sSteelixGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_48.4bpp.lz");
 static const ax_sprite sSteelixSprites48[] = {
 	{sSteelixGfx48, ARRAY_COUNT(sSteelixGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx49[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_49.4bpp");
-static const u8 sSteelixGfx49_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_49_1.4bpp");
-static const u8 sSteelixGfx49_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_49_2.4bpp");
+static const u8 sSteelixGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_49.4bpp.lz");
+static const u8 sSteelixGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_49_1.4bpp.lz");
+static const u8 sSteelixGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_49_2.4bpp.lz");
 static const ax_sprite sSteelixSprites49[] = {
 	{NULL, 32}, 
 	{sSteelixGfx49, ARRAY_COUNT(sSteelixGfx49)}, 
@@ -2905,11 +2905,11 @@ static const ax_sprite sSteelixSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx50[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_50.4bpp");
-static const u8 sSteelixGfx50_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_50_1.4bpp");
-static const u8 sSteelixGfx50_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_50_2.4bpp");
-static const u8 sSteelixGfx50_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_50_3.4bpp");
-static const u8 sSteelixGfx50_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_50_4.4bpp");
+static const u8 sSteelixGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_50.4bpp.lz");
+static const u8 sSteelixGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_50_1.4bpp.lz");
+static const u8 sSteelixGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_50_2.4bpp.lz");
+static const u8 sSteelixGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_50_3.4bpp.lz");
+static const u8 sSteelixGfx50_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_50_4.4bpp.lz");
 static const ax_sprite sSteelixSprites50[] = {
 	{NULL, 32}, 
 	{sSteelixGfx50, ARRAY_COUNT(sSteelixGfx50)}, 
@@ -2924,14 +2924,14 @@ static const ax_sprite sSteelixSprites50[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx51[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_51.4bpp");
-static const u8 sSteelixGfx51_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_1.4bpp");
-static const u8 sSteelixGfx51_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_2.4bpp");
-static const u8 sSteelixGfx51_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_3.4bpp");
-static const u8 sSteelixGfx51_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_4.4bpp");
-static const u8 sSteelixGfx51_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_5.4bpp");
-static const u8 sSteelixGfx51_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_6.4bpp");
-static const u8 sSteelixGfx51_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_7.4bpp");
+static const u8 sSteelixGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_51.4bpp.lz");
+static const u8 sSteelixGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_1.4bpp.lz");
+static const u8 sSteelixGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_2.4bpp.lz");
+static const u8 sSteelixGfx51_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_3.4bpp.lz");
+static const u8 sSteelixGfx51_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_4.4bpp.lz");
+static const u8 sSteelixGfx51_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_5.4bpp.lz");
+static const u8 sSteelixGfx51_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_6.4bpp.lz");
+static const u8 sSteelixGfx51_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_51_7.4bpp.lz");
 static const ax_sprite sSteelixSprites51[] = {
 	{NULL, 64}, 
 	{sSteelixGfx51, ARRAY_COUNT(sSteelixGfx51)}, 
@@ -2951,14 +2951,14 @@ static const ax_sprite sSteelixSprites51[] = {
 	{sSteelixGfx51_7, ARRAY_COUNT(sSteelixGfx51_7)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx52[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_52.4bpp");
-static const u8 sSteelixGfx52_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_1.4bpp");
-static const u8 sSteelixGfx52_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_2.4bpp");
-static const u8 sSteelixGfx52_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_3.4bpp");
-static const u8 sSteelixGfx52_4[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_4.4bpp");
-static const u8 sSteelixGfx52_5[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_5.4bpp");
-static const u8 sSteelixGfx52_6[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_6.4bpp");
-static const u8 sSteelixGfx52_7[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_7.4bpp");
+static const u8 sSteelixGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_52.4bpp.lz");
+static const u8 sSteelixGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_1.4bpp.lz");
+static const u8 sSteelixGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_2.4bpp.lz");
+static const u8 sSteelixGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_3.4bpp.lz");
+static const u8 sSteelixGfx52_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_4.4bpp.lz");
+static const u8 sSteelixGfx52_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_5.4bpp.lz");
+static const u8 sSteelixGfx52_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_6.4bpp.lz");
+static const u8 sSteelixGfx52_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_52_7.4bpp.lz");
 static const ax_sprite sSteelixSprites52[] = {
 	{NULL, 64}, 
 	{sSteelixGfx52, ARRAY_COUNT(sSteelixGfx52)}, 
@@ -2978,10 +2978,10 @@ static const ax_sprite sSteelixSprites52[] = {
 	{sSteelixGfx52_7, ARRAY_COUNT(sSteelixGfx52_7)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx53[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_53.4bpp");
-static const u8 sSteelixGfx53_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_53_1.4bpp");
-static const u8 sSteelixGfx53_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_53_2.4bpp");
-static const u8 sSteelixGfx53_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_53_3.4bpp");
+static const u8 sSteelixGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_53.4bpp.lz");
+static const u8 sSteelixGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_53_1.4bpp.lz");
+static const u8 sSteelixGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_53_2.4bpp.lz");
+static const u8 sSteelixGfx53_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_53_3.4bpp.lz");
 static const ax_sprite sSteelixSprites53[] = {
 	{NULL, 64}, 
 	{sSteelixGfx53, ARRAY_COUNT(sSteelixGfx53)}, 
@@ -2994,9 +2994,9 @@ static const ax_sprite sSteelixSprites53[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx54[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_54.4bpp");
-static const u8 sSteelixGfx54_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_54_1.4bpp");
-static const u8 sSteelixGfx54_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_54_2.4bpp");
+static const u8 sSteelixGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_54.4bpp.lz");
+static const u8 sSteelixGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_54_1.4bpp.lz");
+static const u8 sSteelixGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_54_2.4bpp.lz");
 static const ax_sprite sSteelixSprites54[] = {
 	{sSteelixGfx54, ARRAY_COUNT(sSteelixGfx54)}, 
 	{NULL, 32}, 
@@ -3005,9 +3005,9 @@ static const ax_sprite sSteelixSprites54[] = {
 	{sSteelixGfx54_2, ARRAY_COUNT(sSteelixGfx54_2)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx55[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_55.4bpp");
-static const u8 sSteelixGfx55_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_55_1.4bpp");
-static const u8 sSteelixGfx55_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_55_2.4bpp");
+static const u8 sSteelixGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_55.4bpp.lz");
+static const u8 sSteelixGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_55_1.4bpp.lz");
+static const u8 sSteelixGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_55_2.4bpp.lz");
 static const ax_sprite sSteelixSprites55[] = {
 	{NULL, 32}, 
 	{sSteelixGfx55, ARRAY_COUNT(sSteelixGfx55)}, 
@@ -3017,15 +3017,15 @@ static const ax_sprite sSteelixSprites55[] = {
 	{sSteelixGfx55_2, ARRAY_COUNT(sSteelixGfx55_2)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx56[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_56.4bpp");
+static const u8 sSteelixGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_56.4bpp.lz");
 static const ax_sprite sSteelixSprites56[] = {
 	{sSteelixGfx56, ARRAY_COUNT(sSteelixGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sSteelixGfx57[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_57.4bpp");
-static const u8 sSteelixGfx57_1[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_57_1.4bpp");
-static const u8 sSteelixGfx57_2[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_57_2.4bpp");
-static const u8 sSteelixGfx57_3[] = INCBIN_U8("graphics/ax/mon/steelix/sprite_57_3.4bpp");
+static const u8 sSteelixGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_57.4bpp.lz");
+static const u8 sSteelixGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_57_1.4bpp.lz");
+static const u8 sSteelixGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_57_2.4bpp.lz");
+static const u8 sSteelixGfx57_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/steelix/sprite_57_3.4bpp.lz");
 static const ax_sprite sSteelixSprites57[] = {
 	{NULL, 32}, 
 	{sSteelixGfx57, ARRAY_COUNT(sSteelixGfx57)}, 

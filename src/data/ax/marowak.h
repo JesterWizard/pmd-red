@@ -2044,130 +2044,130 @@ static const ax_anim sMarowakAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMarowakGfx1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_1.4bpp");
+static const u8 sMarowakGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_1.4bpp.lz");
 static const ax_sprite sMarowakSprites1[] = {
 	{sMarowakGfx1, ARRAY_COUNT(sMarowakGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_2.4bpp");
+static const u8 sMarowakGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_2.4bpp.lz");
 static const ax_sprite sMarowakSprites2[] = {
 	{sMarowakGfx2, ARRAY_COUNT(sMarowakGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_3.4bpp");
+static const u8 sMarowakGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_3.4bpp.lz");
 static const ax_sprite sMarowakSprites3[] = {
 	{sMarowakGfx3, ARRAY_COUNT(sMarowakGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx4[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_4.4bpp");
+static const u8 sMarowakGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_4.4bpp.lz");
 static const ax_sprite sMarowakSprites4[] = {
 	{sMarowakGfx4, ARRAY_COUNT(sMarowakGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx5[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_5.4bpp");
+static const u8 sMarowakGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_5.4bpp.lz");
 static const ax_sprite sMarowakSprites5[] = {
 	{sMarowakGfx5, ARRAY_COUNT(sMarowakGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx6[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_6.4bpp");
+static const u8 sMarowakGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_6.4bpp.lz");
 static const ax_sprite sMarowakSprites6[] = {
 	{sMarowakGfx6, ARRAY_COUNT(sMarowakGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx7[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_7.4bpp");
+static const u8 sMarowakGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_7.4bpp.lz");
 static const ax_sprite sMarowakSprites7[] = {
 	{sMarowakGfx7, ARRAY_COUNT(sMarowakGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx8[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_8.4bpp");
+static const u8 sMarowakGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_8.4bpp.lz");
 static const ax_sprite sMarowakSprites8[] = {
 	{sMarowakGfx8, ARRAY_COUNT(sMarowakGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx9[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_9.4bpp");
+static const u8 sMarowakGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_9.4bpp.lz");
 static const ax_sprite sMarowakSprites9[] = {
 	{sMarowakGfx9, ARRAY_COUNT(sMarowakGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx10[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_10.4bpp");
+static const u8 sMarowakGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_10.4bpp.lz");
 static const ax_sprite sMarowakSprites10[] = {
 	{sMarowakGfx10, ARRAY_COUNT(sMarowakGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx11[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_11.4bpp");
+static const u8 sMarowakGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_11.4bpp.lz");
 static const ax_sprite sMarowakSprites11[] = {
 	{sMarowakGfx11, ARRAY_COUNT(sMarowakGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx12[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_12.4bpp");
+static const u8 sMarowakGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_12.4bpp.lz");
 static const ax_sprite sMarowakSprites12[] = {
 	{sMarowakGfx12, ARRAY_COUNT(sMarowakGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx13[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_13.4bpp");
+static const u8 sMarowakGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_13.4bpp.lz");
 static const ax_sprite sMarowakSprites13[] = {
 	{sMarowakGfx13, ARRAY_COUNT(sMarowakGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx14[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_14.4bpp");
+static const u8 sMarowakGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_14.4bpp.lz");
 static const ax_sprite sMarowakSprites14[] = {
 	{sMarowakGfx14, ARRAY_COUNT(sMarowakGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx15[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_15.4bpp");
+static const u8 sMarowakGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_15.4bpp.lz");
 static const ax_sprite sMarowakSprites15[] = {
 	{sMarowakGfx15, ARRAY_COUNT(sMarowakGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx16[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_16.4bpp");
+static const u8 sMarowakGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_16.4bpp.lz");
 static const ax_sprite sMarowakSprites16[] = {
 	{sMarowakGfx16, ARRAY_COUNT(sMarowakGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx17[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_17.4bpp");
+static const u8 sMarowakGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_17.4bpp.lz");
 static const ax_sprite sMarowakSprites17[] = {
 	{sMarowakGfx17, ARRAY_COUNT(sMarowakGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx18[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_18.4bpp");
+static const u8 sMarowakGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_18.4bpp.lz");
 static const ax_sprite sMarowakSprites18[] = {
 	{sMarowakGfx18, ARRAY_COUNT(sMarowakGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx19[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_19.4bpp");
+static const u8 sMarowakGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_19.4bpp.lz");
 static const ax_sprite sMarowakSprites19[] = {
 	{sMarowakGfx19, ARRAY_COUNT(sMarowakGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx20[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_20.4bpp");
+static const u8 sMarowakGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_20.4bpp.lz");
 static const ax_sprite sMarowakSprites20[] = {
 	{sMarowakGfx20, ARRAY_COUNT(sMarowakGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx21[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_21.4bpp");
+static const u8 sMarowakGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_21.4bpp.lz");
 static const ax_sprite sMarowakSprites21[] = {
 	{sMarowakGfx21, ARRAY_COUNT(sMarowakGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx22[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_22.4bpp");
+static const u8 sMarowakGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_22.4bpp.lz");
 static const ax_sprite sMarowakSprites22[] = {
 	{sMarowakGfx22, ARRAY_COUNT(sMarowakGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx23[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_23.4bpp");
+static const u8 sMarowakGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_23.4bpp.lz");
 static const ax_sprite sMarowakSprites23[] = {
 	{sMarowakGfx23, ARRAY_COUNT(sMarowakGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx24[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_24.4bpp");
+static const u8 sMarowakGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_24.4bpp.lz");
 static const ax_sprite sMarowakSprites24[] = {
 	{sMarowakGfx24, ARRAY_COUNT(sMarowakGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx25[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_25.4bpp");
-static const u8 sMarowakGfx25_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_25_1.4bpp");
-static const u8 sMarowakGfx25_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_25_2.4bpp");
-static const u8 sMarowakGfx25_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_25_3.4bpp");
+static const u8 sMarowakGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_25.4bpp.lz");
+static const u8 sMarowakGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_25_1.4bpp.lz");
+static const u8 sMarowakGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_25_2.4bpp.lz");
+static const u8 sMarowakGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_25_3.4bpp.lz");
 static const ax_sprite sMarowakSprites25[] = {
 	{NULL, 32}, 
 	{sMarowakGfx25, ARRAY_COUNT(sMarowakGfx25)}, 
@@ -2179,10 +2179,10 @@ static const ax_sprite sMarowakSprites25[] = {
 	{sMarowakGfx25_3, ARRAY_COUNT(sMarowakGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx26[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_26.4bpp");
-static const u8 sMarowakGfx26_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_26_1.4bpp");
-static const u8 sMarowakGfx26_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_26_2.4bpp");
-static const u8 sMarowakGfx26_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_26_3.4bpp");
+static const u8 sMarowakGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_26.4bpp.lz");
+static const u8 sMarowakGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_26_1.4bpp.lz");
+static const u8 sMarowakGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_26_2.4bpp.lz");
+static const u8 sMarowakGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_26_3.4bpp.lz");
 static const ax_sprite sMarowakSprites26[] = {
 	{sMarowakGfx26, ARRAY_COUNT(sMarowakGfx26)}, 
 	{NULL, 96}, 
@@ -2194,9 +2194,9 @@ static const ax_sprite sMarowakSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx27[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_27.4bpp");
-static const u8 sMarowakGfx27_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_27_1.4bpp");
-static const u8 sMarowakGfx27_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_27_2.4bpp");
+static const u8 sMarowakGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_27.4bpp.lz");
+static const u8 sMarowakGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_27_1.4bpp.lz");
+static const u8 sMarowakGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_27_2.4bpp.lz");
 static const ax_sprite sMarowakSprites27[] = {
 	{NULL, 32}, 
 	{sMarowakGfx27, ARRAY_COUNT(sMarowakGfx27)}, 
@@ -2207,9 +2207,9 @@ static const ax_sprite sMarowakSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx28[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_28.4bpp");
-static const u8 sMarowakGfx28_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_28_1.4bpp");
-static const u8 sMarowakGfx28_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_28_2.4bpp");
+static const u8 sMarowakGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_28.4bpp.lz");
+static const u8 sMarowakGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_28_1.4bpp.lz");
+static const u8 sMarowakGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_28_2.4bpp.lz");
 static const ax_sprite sMarowakSprites28[] = {
 	{NULL, 32}, 
 	{sMarowakGfx28, ARRAY_COUNT(sMarowakGfx28)}, 
@@ -2219,10 +2219,10 @@ static const ax_sprite sMarowakSprites28[] = {
 	{sMarowakGfx28_2, ARRAY_COUNT(sMarowakGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx29[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_29.4bpp");
-static const u8 sMarowakGfx29_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_29_1.4bpp");
-static const u8 sMarowakGfx29_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_29_2.4bpp");
-static const u8 sMarowakGfx29_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_29_3.4bpp");
+static const u8 sMarowakGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_29.4bpp.lz");
+static const u8 sMarowakGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_29_1.4bpp.lz");
+static const u8 sMarowakGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_29_2.4bpp.lz");
+static const u8 sMarowakGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_29_3.4bpp.lz");
 static const ax_sprite sMarowakSprites29[] = {
 	{NULL, 128}, 
 	{sMarowakGfx29, ARRAY_COUNT(sMarowakGfx29)}, 
@@ -2234,8 +2234,8 @@ static const ax_sprite sMarowakSprites29[] = {
 	{sMarowakGfx29_3, ARRAY_COUNT(sMarowakGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx30[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_30.4bpp");
-static const u8 sMarowakGfx30_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_30_1.4bpp");
+static const u8 sMarowakGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_30.4bpp.lz");
+static const u8 sMarowakGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_30_1.4bpp.lz");
 static const ax_sprite sMarowakSprites30[] = {
 	{NULL, 32}, 
 	{sMarowakGfx30, ARRAY_COUNT(sMarowakGfx30)}, 
@@ -2243,9 +2243,9 @@ static const ax_sprite sMarowakSprites30[] = {
 	{sMarowakGfx30_1, ARRAY_COUNT(sMarowakGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx31[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_31.4bpp");
-static const u8 sMarowakGfx31_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_31_1.4bpp");
-static const u8 sMarowakGfx31_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_31_2.4bpp");
+static const u8 sMarowakGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_31.4bpp.lz");
+static const u8 sMarowakGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_31_1.4bpp.lz");
+static const u8 sMarowakGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_31_2.4bpp.lz");
 static const ax_sprite sMarowakSprites31[] = {
 	{sMarowakGfx31, ARRAY_COUNT(sMarowakGfx31)}, 
 	{NULL, 32}, 
@@ -2255,10 +2255,10 @@ static const ax_sprite sMarowakSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx32[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_32.4bpp");
-static const u8 sMarowakGfx32_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_32_1.4bpp");
-static const u8 sMarowakGfx32_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_32_2.4bpp");
-static const u8 sMarowakGfx32_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_32_3.4bpp");
+static const u8 sMarowakGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_32.4bpp.lz");
+static const u8 sMarowakGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_32_1.4bpp.lz");
+static const u8 sMarowakGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_32_2.4bpp.lz");
+static const u8 sMarowakGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_32_3.4bpp.lz");
 static const ax_sprite sMarowakSprites32[] = {
 	{NULL, 32}, 
 	{sMarowakGfx32, ARRAY_COUNT(sMarowakGfx32)}, 
@@ -2271,10 +2271,10 @@ static const ax_sprite sMarowakSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx33[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_33.4bpp");
-static const u8 sMarowakGfx33_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_33_1.4bpp");
-static const u8 sMarowakGfx33_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_33_2.4bpp");
-static const u8 sMarowakGfx33_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_33_3.4bpp");
+static const u8 sMarowakGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_33.4bpp.lz");
+static const u8 sMarowakGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_33_1.4bpp.lz");
+static const u8 sMarowakGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_33_2.4bpp.lz");
+static const u8 sMarowakGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_33_3.4bpp.lz");
 static const ax_sprite sMarowakSprites33[] = {
 	{NULL, 64}, 
 	{sMarowakGfx33, ARRAY_COUNT(sMarowakGfx33)}, 
@@ -2287,10 +2287,10 @@ static const ax_sprite sMarowakSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx34[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_34.4bpp");
-static const u8 sMarowakGfx34_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_34_1.4bpp");
-static const u8 sMarowakGfx34_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_34_2.4bpp");
-static const u8 sMarowakGfx34_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_34_3.4bpp");
+static const u8 sMarowakGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_34.4bpp.lz");
+static const u8 sMarowakGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_34_1.4bpp.lz");
+static const u8 sMarowakGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_34_2.4bpp.lz");
+static const u8 sMarowakGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_34_3.4bpp.lz");
 static const ax_sprite sMarowakSprites34[] = {
 	{sMarowakGfx34, ARRAY_COUNT(sMarowakGfx34)}, 
 	{NULL, 32}, 
@@ -2301,8 +2301,8 @@ static const ax_sprite sMarowakSprites34[] = {
 	{sMarowakGfx34_3, ARRAY_COUNT(sMarowakGfx34_3)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx35[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_35.4bpp");
-static const u8 sMarowakGfx35_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_35_1.4bpp");
+static const u8 sMarowakGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_35.4bpp.lz");
+static const u8 sMarowakGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_35_1.4bpp.lz");
 static const ax_sprite sMarowakSprites35[] = {
 	{NULL, 96}, 
 	{sMarowakGfx35, ARRAY_COUNT(sMarowakGfx35)}, 
@@ -2311,9 +2311,9 @@ static const ax_sprite sMarowakSprites35[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx36[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_36.4bpp");
-static const u8 sMarowakGfx36_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_36_1.4bpp");
-static const u8 sMarowakGfx36_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_36_2.4bpp");
+static const u8 sMarowakGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_36.4bpp.lz");
+static const u8 sMarowakGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_36_1.4bpp.lz");
+static const u8 sMarowakGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_36_2.4bpp.lz");
 static const ax_sprite sMarowakSprites36[] = {
 	{NULL, 32}, 
 	{sMarowakGfx36, ARRAY_COUNT(sMarowakGfx36)}, 
@@ -2323,9 +2323,9 @@ static const ax_sprite sMarowakSprites36[] = {
 	{sMarowakGfx36_2, ARRAY_COUNT(sMarowakGfx36_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx37[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_37.4bpp");
-static const u8 sMarowakGfx37_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_37_1.4bpp");
-static const u8 sMarowakGfx37_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_37_2.4bpp");
+static const u8 sMarowakGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_37.4bpp.lz");
+static const u8 sMarowakGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_37_1.4bpp.lz");
+static const u8 sMarowakGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_37_2.4bpp.lz");
 static const ax_sprite sMarowakSprites37[] = {
 	{sMarowakGfx37, ARRAY_COUNT(sMarowakGfx37)}, 
 	{NULL, 32}, 
@@ -2334,18 +2334,18 @@ static const ax_sprite sMarowakSprites37[] = {
 	{sMarowakGfx37_2, ARRAY_COUNT(sMarowakGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx38[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_38.4bpp");
-static const u8 sMarowakGfx38_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_38_1.4bpp");
+static const u8 sMarowakGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_38.4bpp.lz");
+static const u8 sMarowakGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_38_1.4bpp.lz");
 static const ax_sprite sMarowakSprites38[] = {
 	{sMarowakGfx38, ARRAY_COUNT(sMarowakGfx38)}, 
 	{NULL, 64}, 
 	{sMarowakGfx38_1, ARRAY_COUNT(sMarowakGfx38_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx39[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_39.4bpp");
-static const u8 sMarowakGfx39_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_39_1.4bpp");
-static const u8 sMarowakGfx39_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_39_2.4bpp");
-static const u8 sMarowakGfx39_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_39_3.4bpp");
+static const u8 sMarowakGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_39.4bpp.lz");
+static const u8 sMarowakGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_39_1.4bpp.lz");
+static const u8 sMarowakGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_39_2.4bpp.lz");
+static const u8 sMarowakGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_39_3.4bpp.lz");
 static const ax_sprite sMarowakSprites39[] = {
 	{NULL, 32}, 
 	{sMarowakGfx39, ARRAY_COUNT(sMarowakGfx39)}, 
@@ -2357,8 +2357,8 @@ static const ax_sprite sMarowakSprites39[] = {
 	{sMarowakGfx39_3, ARRAY_COUNT(sMarowakGfx39_3)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx40[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_40.4bpp");
-static const u8 sMarowakGfx40_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_40_1.4bpp");
+static const u8 sMarowakGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_40.4bpp.lz");
+static const u8 sMarowakGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_40_1.4bpp.lz");
 static const ax_sprite sMarowakSprites40[] = {
 	{NULL, 32}, 
 	{sMarowakGfx40, ARRAY_COUNT(sMarowakGfx40)}, 
@@ -2367,10 +2367,10 @@ static const ax_sprite sMarowakSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx41[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_41.4bpp");
-static const u8 sMarowakGfx41_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_41_1.4bpp");
-static const u8 sMarowakGfx41_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_41_2.4bpp");
-static const u8 sMarowakGfx41_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_41_3.4bpp");
+static const u8 sMarowakGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_41.4bpp.lz");
+static const u8 sMarowakGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_41_1.4bpp.lz");
+static const u8 sMarowakGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_41_2.4bpp.lz");
+static const u8 sMarowakGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_41_3.4bpp.lz");
 static const ax_sprite sMarowakSprites41[] = {
 	{sMarowakGfx41, ARRAY_COUNT(sMarowakGfx41)}, 
 	{NULL, 32}, 
@@ -2382,8 +2382,8 @@ static const ax_sprite sMarowakSprites41[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx42[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_42.4bpp");
-static const u8 sMarowakGfx42_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_42_1.4bpp");
+static const u8 sMarowakGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_42.4bpp.lz");
+static const u8 sMarowakGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_42_1.4bpp.lz");
 static const ax_sprite sMarowakSprites42[] = {
 	{NULL, 32}, 
 	{sMarowakGfx42, ARRAY_COUNT(sMarowakGfx42)}, 
@@ -2391,8 +2391,8 @@ static const ax_sprite sMarowakSprites42[] = {
 	{sMarowakGfx42_1, ARRAY_COUNT(sMarowakGfx42_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx43[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_43.4bpp");
-static const u8 sMarowakGfx43_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_43_1.4bpp");
+static const u8 sMarowakGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_43.4bpp.lz");
+static const u8 sMarowakGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_43_1.4bpp.lz");
 static const ax_sprite sMarowakSprites43[] = {
 	{NULL, 32}, 
 	{sMarowakGfx43, ARRAY_COUNT(sMarowakGfx43)}, 
@@ -2401,9 +2401,9 @@ static const ax_sprite sMarowakSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx44[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_44.4bpp");
-static const u8 sMarowakGfx44_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_44_1.4bpp");
-static const u8 sMarowakGfx44_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_44_2.4bpp");
+static const u8 sMarowakGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_44.4bpp.lz");
+static const u8 sMarowakGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_44_1.4bpp.lz");
+static const u8 sMarowakGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_44_2.4bpp.lz");
 static const ax_sprite sMarowakSprites44[] = {
 	{sMarowakGfx44, ARRAY_COUNT(sMarowakGfx44)}, 
 	{NULL, 32}, 
@@ -2413,8 +2413,8 @@ static const ax_sprite sMarowakSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx45[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_45.4bpp");
-static const u8 sMarowakGfx45_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_45_1.4bpp");
+static const u8 sMarowakGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_45.4bpp.lz");
+static const u8 sMarowakGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_45_1.4bpp.lz");
 static const ax_sprite sMarowakSprites45[] = {
 	{NULL, 32}, 
 	{sMarowakGfx45, ARRAY_COUNT(sMarowakGfx45)}, 
@@ -2422,10 +2422,10 @@ static const ax_sprite sMarowakSprites45[] = {
 	{sMarowakGfx45_1, ARRAY_COUNT(sMarowakGfx45_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx46[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_46.4bpp");
-static const u8 sMarowakGfx46_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_46_1.4bpp");
-static const u8 sMarowakGfx46_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_46_2.4bpp");
-static const u8 sMarowakGfx46_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_46_3.4bpp");
+static const u8 sMarowakGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_46.4bpp.lz");
+static const u8 sMarowakGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_46_1.4bpp.lz");
+static const u8 sMarowakGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_46_2.4bpp.lz");
+static const u8 sMarowakGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_46_3.4bpp.lz");
 static const ax_sprite sMarowakSprites46[] = {
 	{NULL, 32}, 
 	{sMarowakGfx46, ARRAY_COUNT(sMarowakGfx46)}, 
@@ -2437,9 +2437,9 @@ static const ax_sprite sMarowakSprites46[] = {
 	{sMarowakGfx46_3, ARRAY_COUNT(sMarowakGfx46_3)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx47[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_47.4bpp");
-static const u8 sMarowakGfx47_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_47_1.4bpp");
-static const u8 sMarowakGfx47_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_47_2.4bpp");
+static const u8 sMarowakGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_47.4bpp.lz");
+static const u8 sMarowakGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_47_1.4bpp.lz");
+static const u8 sMarowakGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_47_2.4bpp.lz");
 static const ax_sprite sMarowakSprites47[] = {
 	{sMarowakGfx47, ARRAY_COUNT(sMarowakGfx47)}, 
 	{NULL, 32}, 
@@ -2448,9 +2448,9 @@ static const ax_sprite sMarowakSprites47[] = {
 	{sMarowakGfx47_2, ARRAY_COUNT(sMarowakGfx47_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx48[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_48.4bpp");
-static const u8 sMarowakGfx48_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_48_1.4bpp");
-static const u8 sMarowakGfx48_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_48_2.4bpp");
+static const u8 sMarowakGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_48.4bpp.lz");
+static const u8 sMarowakGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_48_1.4bpp.lz");
+static const u8 sMarowakGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_48_2.4bpp.lz");
 static const ax_sprite sMarowakSprites48[] = {
 	{sMarowakGfx48, ARRAY_COUNT(sMarowakGfx48)}, 
 	{NULL, 32}, 
@@ -2459,8 +2459,8 @@ static const ax_sprite sMarowakSprites48[] = {
 	{sMarowakGfx48_2, ARRAY_COUNT(sMarowakGfx48_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx49[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_49.4bpp");
-static const u8 sMarowakGfx49_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_49_1.4bpp");
+static const u8 sMarowakGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_49.4bpp.lz");
+static const u8 sMarowakGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_49_1.4bpp.lz");
 static const ax_sprite sMarowakSprites49[] = {
 	{NULL, 64}, 
 	{sMarowakGfx49, ARRAY_COUNT(sMarowakGfx49)}, 
@@ -2468,9 +2468,9 @@ static const ax_sprite sMarowakSprites49[] = {
 	{sMarowakGfx49_1, ARRAY_COUNT(sMarowakGfx49_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx50[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_50.4bpp");
-static const u8 sMarowakGfx50_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_50_1.4bpp");
-static const u8 sMarowakGfx50_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_50_2.4bpp");
+static const u8 sMarowakGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_50.4bpp.lz");
+static const u8 sMarowakGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_50_1.4bpp.lz");
+static const u8 sMarowakGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_50_2.4bpp.lz");
 static const ax_sprite sMarowakSprites50[] = {
 	{NULL, 32}, 
 	{sMarowakGfx50, ARRAY_COUNT(sMarowakGfx50)}, 
@@ -2481,9 +2481,9 @@ static const ax_sprite sMarowakSprites50[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx51[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_51.4bpp");
-static const u8 sMarowakGfx51_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_51_1.4bpp");
-static const u8 sMarowakGfx51_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_51_2.4bpp");
+static const u8 sMarowakGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_51.4bpp.lz");
+static const u8 sMarowakGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_51_1.4bpp.lz");
+static const u8 sMarowakGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_51_2.4bpp.lz");
 static const ax_sprite sMarowakSprites51[] = {
 	{sMarowakGfx51, ARRAY_COUNT(sMarowakGfx51)}, 
 	{NULL, 32}, 
@@ -2493,8 +2493,8 @@ static const ax_sprite sMarowakSprites51[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx52[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_52.4bpp");
-static const u8 sMarowakGfx52_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_52_1.4bpp");
+static const u8 sMarowakGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_52.4bpp.lz");
+static const u8 sMarowakGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_52_1.4bpp.lz");
 static const ax_sprite sMarowakSprites52[] = {
 	{NULL, 32}, 
 	{sMarowakGfx52, ARRAY_COUNT(sMarowakGfx52)}, 
@@ -2503,8 +2503,8 @@ static const ax_sprite sMarowakSprites52[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx53[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_53.4bpp");
-static const u8 sMarowakGfx53_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_53_1.4bpp");
+static const u8 sMarowakGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_53.4bpp.lz");
+static const u8 sMarowakGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_53_1.4bpp.lz");
 static const ax_sprite sMarowakSprites53[] = {
 	{NULL, 32}, 
 	{sMarowakGfx53, ARRAY_COUNT(sMarowakGfx53)}, 
@@ -2512,8 +2512,8 @@ static const ax_sprite sMarowakSprites53[] = {
 	{sMarowakGfx53_1, ARRAY_COUNT(sMarowakGfx53_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx54[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_54.4bpp");
-static const u8 sMarowakGfx54_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_54_1.4bpp");
+static const u8 sMarowakGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_54.4bpp.lz");
+static const u8 sMarowakGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_54_1.4bpp.lz");
 static const ax_sprite sMarowakSprites54[] = {
 	{NULL, 64}, 
 	{sMarowakGfx54, ARRAY_COUNT(sMarowakGfx54)}, 
@@ -2522,8 +2522,8 @@ static const ax_sprite sMarowakSprites54[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx55[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_55.4bpp");
-static const u8 sMarowakGfx55_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_55_1.4bpp");
+static const u8 sMarowakGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_55.4bpp.lz");
+static const u8 sMarowakGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_55_1.4bpp.lz");
 static const ax_sprite sMarowakSprites55[] = {
 	{NULL, 32}, 
 	{sMarowakGfx55, ARRAY_COUNT(sMarowakGfx55)}, 
@@ -2531,8 +2531,8 @@ static const ax_sprite sMarowakSprites55[] = {
 	{sMarowakGfx55_1, ARRAY_COUNT(sMarowakGfx55_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx56[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_56.4bpp");
-static const u8 sMarowakGfx56_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_56_1.4bpp");
+static const u8 sMarowakGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_56.4bpp.lz");
+static const u8 sMarowakGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_56_1.4bpp.lz");
 static const ax_sprite sMarowakSprites56[] = {
 	{NULL, 32}, 
 	{sMarowakGfx56, ARRAY_COUNT(sMarowakGfx56)}, 
@@ -2540,10 +2540,10 @@ static const ax_sprite sMarowakSprites56[] = {
 	{sMarowakGfx56_1, ARRAY_COUNT(sMarowakGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx57[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_57.4bpp");
-static const u8 sMarowakGfx57_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_57_1.4bpp");
-static const u8 sMarowakGfx57_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_57_2.4bpp");
-static const u8 sMarowakGfx57_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_57_3.4bpp");
+static const u8 sMarowakGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_57.4bpp.lz");
+static const u8 sMarowakGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_57_1.4bpp.lz");
+static const u8 sMarowakGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_57_2.4bpp.lz");
+static const u8 sMarowakGfx57_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_57_3.4bpp.lz");
 static const ax_sprite sMarowakSprites57[] = {
 	{NULL, 32}, 
 	{sMarowakGfx57, ARRAY_COUNT(sMarowakGfx57)}, 
@@ -2555,10 +2555,10 @@ static const ax_sprite sMarowakSprites57[] = {
 	{sMarowakGfx57_3, ARRAY_COUNT(sMarowakGfx57_3)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx58[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_58.4bpp");
-static const u8 sMarowakGfx58_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_58_1.4bpp");
-static const u8 sMarowakGfx58_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_58_2.4bpp");
-static const u8 sMarowakGfx58_3[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_58_3.4bpp");
+static const u8 sMarowakGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_58.4bpp.lz");
+static const u8 sMarowakGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_58_1.4bpp.lz");
+static const u8 sMarowakGfx58_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_58_2.4bpp.lz");
+static const u8 sMarowakGfx58_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_58_3.4bpp.lz");
 static const ax_sprite sMarowakSprites58[] = {
 	{NULL, 32}, 
 	{sMarowakGfx58, ARRAY_COUNT(sMarowakGfx58)}, 
@@ -2570,8 +2570,8 @@ static const ax_sprite sMarowakSprites58[] = {
 	{sMarowakGfx58_3, ARRAY_COUNT(sMarowakGfx58_3)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx59[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_59.4bpp");
-static const u8 sMarowakGfx59_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_59_1.4bpp");
+static const u8 sMarowakGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_59.4bpp.lz");
+static const u8 sMarowakGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_59_1.4bpp.lz");
 static const ax_sprite sMarowakSprites59[] = {
 	{sMarowakGfx59, ARRAY_COUNT(sMarowakGfx59)}, 
 	{NULL, 32}, 
@@ -2579,16 +2579,16 @@ static const ax_sprite sMarowakSprites59[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx60[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_60.4bpp");
+static const u8 sMarowakGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_60.4bpp.lz");
 static const ax_sprite sMarowakSprites60[] = {
 	{NULL, 32}, 
 	{sMarowakGfx60, ARRAY_COUNT(sMarowakGfx60)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx61[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_61.4bpp");
-static const u8 sMarowakGfx61_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_61_1.4bpp");
-static const u8 sMarowakGfx61_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_61_2.4bpp");
+static const u8 sMarowakGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_61.4bpp.lz");
+static const u8 sMarowakGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_61_1.4bpp.lz");
+static const u8 sMarowakGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_61_2.4bpp.lz");
 static const ax_sprite sMarowakSprites61[] = {
 	{NULL, 32}, 
 	{sMarowakGfx61, ARRAY_COUNT(sMarowakGfx61)}, 
@@ -2598,9 +2598,9 @@ static const ax_sprite sMarowakSprites61[] = {
 	{sMarowakGfx61_2, ARRAY_COUNT(sMarowakGfx61_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx62[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_62.4bpp");
-static const u8 sMarowakGfx62_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_62_1.4bpp");
-static const u8 sMarowakGfx62_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_62_2.4bpp");
+static const u8 sMarowakGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_62.4bpp.lz");
+static const u8 sMarowakGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_62_1.4bpp.lz");
+static const u8 sMarowakGfx62_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_62_2.4bpp.lz");
 static const ax_sprite sMarowakSprites62[] = {
 	{NULL, 64}, 
 	{sMarowakGfx62, ARRAY_COUNT(sMarowakGfx62)}, 
@@ -2610,9 +2610,9 @@ static const ax_sprite sMarowakSprites62[] = {
 	{sMarowakGfx62_2, ARRAY_COUNT(sMarowakGfx62_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx63[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_63.4bpp");
-static const u8 sMarowakGfx63_1[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_63_1.4bpp");
-static const u8 sMarowakGfx63_2[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_63_2.4bpp");
+static const u8 sMarowakGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_63.4bpp.lz");
+static const u8 sMarowakGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_63_1.4bpp.lz");
+static const u8 sMarowakGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_63_2.4bpp.lz");
 static const ax_sprite sMarowakSprites63[] = {
 	{NULL, 64}, 
 	{sMarowakGfx63, ARRAY_COUNT(sMarowakGfx63)}, 
@@ -2622,37 +2622,37 @@ static const ax_sprite sMarowakSprites63[] = {
 	{sMarowakGfx63_2, ARRAY_COUNT(sMarowakGfx63_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx64[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_64.4bpp");
+static const u8 sMarowakGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_64.4bpp.lz");
 static const ax_sprite sMarowakSprites64[] = {
 	{sMarowakGfx64, ARRAY_COUNT(sMarowakGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx65[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_65.4bpp");
+static const u8 sMarowakGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_65.4bpp.lz");
 static const ax_sprite sMarowakSprites65[] = {
 	{sMarowakGfx65, ARRAY_COUNT(sMarowakGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx66[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_66.4bpp");
+static const u8 sMarowakGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_66.4bpp.lz");
 static const ax_sprite sMarowakSprites66[] = {
 	{sMarowakGfx66, ARRAY_COUNT(sMarowakGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx67[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_67.4bpp");
+static const u8 sMarowakGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_67.4bpp.lz");
 static const ax_sprite sMarowakSprites67[] = {
 	{sMarowakGfx67, ARRAY_COUNT(sMarowakGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx68[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_68.4bpp");
+static const u8 sMarowakGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_68.4bpp.lz");
 static const ax_sprite sMarowakSprites68[] = {
 	{sMarowakGfx68, ARRAY_COUNT(sMarowakGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx69[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_69.4bpp");
+static const u8 sMarowakGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_69.4bpp.lz");
 static const ax_sprite sMarowakSprites69[] = {
 	{sMarowakGfx69, ARRAY_COUNT(sMarowakGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sMarowakGfx70[] = INCBIN_U8("graphics/ax/mon/marowak/sprite_70.4bpp");
+static const u8 sMarowakGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marowak/sprite_70.4bpp.lz");
 static const ax_sprite sMarowakSprites70[] = {
 	{sMarowakGfx70, ARRAY_COUNT(sMarowakGfx70)}, 
 	{NULL, 0}

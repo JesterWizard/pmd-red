@@ -2277,85 +2277,85 @@ static const ax_anim sMedichamAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMedichamGfx1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_1.4bpp");
+static const u8 sMedichamGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_1.4bpp.lz");
 static const ax_sprite sMedichamSprites1[] = {
 	{sMedichamGfx1, ARRAY_COUNT(sMedichamGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_2.4bpp");
+static const u8 sMedichamGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_2.4bpp.lz");
 static const ax_sprite sMedichamSprites2[] = {
 	{sMedichamGfx2, ARRAY_COUNT(sMedichamGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_3.4bpp");
+static const u8 sMedichamGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_3.4bpp.lz");
 static const ax_sprite sMedichamSprites3[] = {
 	{sMedichamGfx3, ARRAY_COUNT(sMedichamGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx4[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_4.4bpp");
+static const u8 sMedichamGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_4.4bpp.lz");
 static const ax_sprite sMedichamSprites4[] = {
 	{sMedichamGfx4, ARRAY_COUNT(sMedichamGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx5[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_5.4bpp");
+static const u8 sMedichamGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_5.4bpp.lz");
 static const ax_sprite sMedichamSprites5[] = {
 	{sMedichamGfx5, ARRAY_COUNT(sMedichamGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx6[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_6.4bpp");
+static const u8 sMedichamGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_6.4bpp.lz");
 static const ax_sprite sMedichamSprites6[] = {
 	{sMedichamGfx6, ARRAY_COUNT(sMedichamGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx7[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_7.4bpp");
+static const u8 sMedichamGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_7.4bpp.lz");
 static const ax_sprite sMedichamSprites7[] = {
 	{sMedichamGfx7, ARRAY_COUNT(sMedichamGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx8[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_8.4bpp");
+static const u8 sMedichamGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_8.4bpp.lz");
 static const ax_sprite sMedichamSprites8[] = {
 	{sMedichamGfx8, ARRAY_COUNT(sMedichamGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx9[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_9.4bpp");
+static const u8 sMedichamGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_9.4bpp.lz");
 static const ax_sprite sMedichamSprites9[] = {
 	{sMedichamGfx9, ARRAY_COUNT(sMedichamGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx10[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_10.4bpp");
+static const u8 sMedichamGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_10.4bpp.lz");
 static const ax_sprite sMedichamSprites10[] = {
 	{sMedichamGfx10, ARRAY_COUNT(sMedichamGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx11[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_11.4bpp");
+static const u8 sMedichamGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_11.4bpp.lz");
 static const ax_sprite sMedichamSprites11[] = {
 	{sMedichamGfx11, ARRAY_COUNT(sMedichamGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx12[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_12.4bpp");
+static const u8 sMedichamGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_12.4bpp.lz");
 static const ax_sprite sMedichamSprites12[] = {
 	{sMedichamGfx12, ARRAY_COUNT(sMedichamGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx13[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_13.4bpp");
+static const u8 sMedichamGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_13.4bpp.lz");
 static const ax_sprite sMedichamSprites13[] = {
 	{sMedichamGfx13, ARRAY_COUNT(sMedichamGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx14[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_14.4bpp");
+static const u8 sMedichamGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_14.4bpp.lz");
 static const ax_sprite sMedichamSprites14[] = {
 	{sMedichamGfx14, ARRAY_COUNT(sMedichamGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx15[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_15.4bpp");
+static const u8 sMedichamGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_15.4bpp.lz");
 static const ax_sprite sMedichamSprites15[] = {
 	{sMedichamGfx15, ARRAY_COUNT(sMedichamGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx16[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_16.4bpp");
-static const u8 sMedichamGfx16_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_16_1.4bpp");
-static const u8 sMedichamGfx16_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_16_2.4bpp");
-static const u8 sMedichamGfx16_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_16_3.4bpp");
+static const u8 sMedichamGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_16.4bpp.lz");
+static const u8 sMedichamGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_16_1.4bpp.lz");
+static const u8 sMedichamGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_16_2.4bpp.lz");
+static const u8 sMedichamGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_16_3.4bpp.lz");
 static const ax_sprite sMedichamSprites16[] = {
 	{NULL, 32}, 
 	{sMedichamGfx16, ARRAY_COUNT(sMedichamGfx16)}, 
@@ -2368,10 +2368,10 @@ static const ax_sprite sMedichamSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx17[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_17.4bpp");
-static const u8 sMedichamGfx17_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_17_1.4bpp");
-static const u8 sMedichamGfx17_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_17_2.4bpp");
-static const u8 sMedichamGfx17_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_17_3.4bpp");
+static const u8 sMedichamGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_17.4bpp.lz");
+static const u8 sMedichamGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_17_1.4bpp.lz");
+static const u8 sMedichamGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_17_2.4bpp.lz");
+static const u8 sMedichamGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_17_3.4bpp.lz");
 static const ax_sprite sMedichamSprites17[] = {
 	{NULL, 64}, 
 	{sMedichamGfx17, ARRAY_COUNT(sMedichamGfx17)}, 
@@ -2384,10 +2384,10 @@ static const ax_sprite sMedichamSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx18[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_18.4bpp");
-static const u8 sMedichamGfx18_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_18_1.4bpp");
-static const u8 sMedichamGfx18_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_18_2.4bpp");
-static const u8 sMedichamGfx18_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_18_3.4bpp");
+static const u8 sMedichamGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_18.4bpp.lz");
+static const u8 sMedichamGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_18_1.4bpp.lz");
+static const u8 sMedichamGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_18_2.4bpp.lz");
+static const u8 sMedichamGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_18_3.4bpp.lz");
 static const ax_sprite sMedichamSprites18[] = {
 	{sMedichamGfx18, ARRAY_COUNT(sMedichamGfx18)}, 
 	{NULL, 64}, 
@@ -2399,10 +2399,10 @@ static const ax_sprite sMedichamSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx19[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_19.4bpp");
-static const u8 sMedichamGfx19_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_19_1.4bpp");
-static const u8 sMedichamGfx19_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_19_2.4bpp");
-static const u8 sMedichamGfx19_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_19_3.4bpp");
+static const u8 sMedichamGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_19.4bpp.lz");
+static const u8 sMedichamGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_19_1.4bpp.lz");
+static const u8 sMedichamGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_19_2.4bpp.lz");
+static const u8 sMedichamGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_19_3.4bpp.lz");
 static const ax_sprite sMedichamSprites19[] = {
 	{NULL, 32}, 
 	{sMedichamGfx19, ARRAY_COUNT(sMedichamGfx19)}, 
@@ -2415,8 +2415,8 @@ static const ax_sprite sMedichamSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx20[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_20.4bpp");
-static const u8 sMedichamGfx20_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_20_1.4bpp");
+static const u8 sMedichamGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_20.4bpp.lz");
+static const u8 sMedichamGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_20_1.4bpp.lz");
 static const ax_sprite sMedichamSprites20[] = {
 	{NULL, 192}, 
 	{sMedichamGfx20, ARRAY_COUNT(sMedichamGfx20)}, 
@@ -2425,10 +2425,10 @@ static const ax_sprite sMedichamSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx21[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_21.4bpp");
-static const u8 sMedichamGfx21_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_21_1.4bpp");
-static const u8 sMedichamGfx21_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_21_2.4bpp");
-static const u8 sMedichamGfx21_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_21_3.4bpp");
+static const u8 sMedichamGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_21.4bpp.lz");
+static const u8 sMedichamGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_21_1.4bpp.lz");
+static const u8 sMedichamGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_21_2.4bpp.lz");
+static const u8 sMedichamGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_21_3.4bpp.lz");
 static const ax_sprite sMedichamSprites21[] = {
 	{NULL, 32}, 
 	{sMedichamGfx21, ARRAY_COUNT(sMedichamGfx21)}, 
@@ -2441,10 +2441,10 @@ static const ax_sprite sMedichamSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx22[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_22.4bpp");
-static const u8 sMedichamGfx22_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_22_1.4bpp");
-static const u8 sMedichamGfx22_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_22_2.4bpp");
-static const u8 sMedichamGfx22_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_22_3.4bpp");
+static const u8 sMedichamGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_22.4bpp.lz");
+static const u8 sMedichamGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_22_1.4bpp.lz");
+static const u8 sMedichamGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_22_2.4bpp.lz");
+static const u8 sMedichamGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_22_3.4bpp.lz");
 static const ax_sprite sMedichamSprites22[] = {
 	{NULL, 32}, 
 	{sMedichamGfx22, ARRAY_COUNT(sMedichamGfx22)}, 
@@ -2457,8 +2457,8 @@ static const ax_sprite sMedichamSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx23[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_23.4bpp");
-static const u8 sMedichamGfx23_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_23_1.4bpp");
+static const u8 sMedichamGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_23.4bpp.lz");
+static const u8 sMedichamGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_23_1.4bpp.lz");
 static const ax_sprite sMedichamSprites23[] = {
 	{NULL, 128}, 
 	{sMedichamGfx23, ARRAY_COUNT(sMedichamGfx23)}, 
@@ -2467,10 +2467,10 @@ static const ax_sprite sMedichamSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx24[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_24.4bpp");
-static const u8 sMedichamGfx24_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_24_1.4bpp");
-static const u8 sMedichamGfx24_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_24_2.4bpp");
-static const u8 sMedichamGfx24_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_24_3.4bpp");
+static const u8 sMedichamGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_24.4bpp.lz");
+static const u8 sMedichamGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_24_1.4bpp.lz");
+static const u8 sMedichamGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_24_2.4bpp.lz");
+static const u8 sMedichamGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_24_3.4bpp.lz");
 static const ax_sprite sMedichamSprites24[] = {
 	{NULL, 32}, 
 	{sMedichamGfx24, ARRAY_COUNT(sMedichamGfx24)}, 
@@ -2482,10 +2482,10 @@ static const ax_sprite sMedichamSprites24[] = {
 	{sMedichamGfx24_3, ARRAY_COUNT(sMedichamGfx24_3)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx25[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_25.4bpp");
-static const u8 sMedichamGfx25_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_25_1.4bpp");
-static const u8 sMedichamGfx25_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_25_2.4bpp");
-static const u8 sMedichamGfx25_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_25_3.4bpp");
+static const u8 sMedichamGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_25.4bpp.lz");
+static const u8 sMedichamGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_25_1.4bpp.lz");
+static const u8 sMedichamGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_25_2.4bpp.lz");
+static const u8 sMedichamGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_25_3.4bpp.lz");
 static const ax_sprite sMedichamSprites25[] = {
 	{NULL, 64}, 
 	{sMedichamGfx25, ARRAY_COUNT(sMedichamGfx25)}, 
@@ -2497,9 +2497,9 @@ static const ax_sprite sMedichamSprites25[] = {
 	{sMedichamGfx25_3, ARRAY_COUNT(sMedichamGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx26[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_26.4bpp");
-static const u8 sMedichamGfx26_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_26_1.4bpp");
-static const u8 sMedichamGfx26_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_26_2.4bpp");
+static const u8 sMedichamGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_26.4bpp.lz");
+static const u8 sMedichamGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_26_1.4bpp.lz");
+static const u8 sMedichamGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_26_2.4bpp.lz");
 static const ax_sprite sMedichamSprites26[] = {
 	{sMedichamGfx26, ARRAY_COUNT(sMedichamGfx26)}, 
 	{NULL, 64}, 
@@ -2509,10 +2509,10 @@ static const ax_sprite sMedichamSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx27[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_27.4bpp");
-static const u8 sMedichamGfx27_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_27_1.4bpp");
-static const u8 sMedichamGfx27_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_27_2.4bpp");
-static const u8 sMedichamGfx27_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_27_3.4bpp");
+static const u8 sMedichamGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_27.4bpp.lz");
+static const u8 sMedichamGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_27_1.4bpp.lz");
+static const u8 sMedichamGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_27_2.4bpp.lz");
+static const u8 sMedichamGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_27_3.4bpp.lz");
 static const ax_sprite sMedichamSprites27[] = {
 	{sMedichamGfx27, ARRAY_COUNT(sMedichamGfx27)}, 
 	{NULL, 32}, 
@@ -2524,10 +2524,10 @@ static const ax_sprite sMedichamSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx28[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_28.4bpp");
-static const u8 sMedichamGfx28_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_28_1.4bpp");
-static const u8 sMedichamGfx28_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_28_2.4bpp");
-static const u8 sMedichamGfx28_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_28_3.4bpp");
+static const u8 sMedichamGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_28.4bpp.lz");
+static const u8 sMedichamGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_28_1.4bpp.lz");
+static const u8 sMedichamGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_28_2.4bpp.lz");
+static const u8 sMedichamGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_28_3.4bpp.lz");
 static const ax_sprite sMedichamSprites28[] = {
 	{NULL, 32}, 
 	{sMedichamGfx28, ARRAY_COUNT(sMedichamGfx28)}, 
@@ -2540,10 +2540,10 @@ static const ax_sprite sMedichamSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx29[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_29.4bpp");
-static const u8 sMedichamGfx29_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_29_1.4bpp");
-static const u8 sMedichamGfx29_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_29_2.4bpp");
-static const u8 sMedichamGfx29_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_29_3.4bpp");
+static const u8 sMedichamGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_29.4bpp.lz");
+static const u8 sMedichamGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_29_1.4bpp.lz");
+static const u8 sMedichamGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_29_2.4bpp.lz");
+static const u8 sMedichamGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_29_3.4bpp.lz");
 static const ax_sprite sMedichamSprites29[] = {
 	{sMedichamGfx29, ARRAY_COUNT(sMedichamGfx29)}, 
 	{NULL, 64}, 
@@ -2555,10 +2555,10 @@ static const ax_sprite sMedichamSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx30[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_30.4bpp");
-static const u8 sMedichamGfx30_1[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_30_1.4bpp");
-static const u8 sMedichamGfx30_2[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_30_2.4bpp");
-static const u8 sMedichamGfx30_3[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_30_3.4bpp");
+static const u8 sMedichamGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_30.4bpp.lz");
+static const u8 sMedichamGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_30_1.4bpp.lz");
+static const u8 sMedichamGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_30_2.4bpp.lz");
+static const u8 sMedichamGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_30_3.4bpp.lz");
 static const ax_sprite sMedichamSprites30[] = {
 	{NULL, 32}, 
 	{sMedichamGfx30, ARRAY_COUNT(sMedichamGfx30)}, 
@@ -2571,67 +2571,67 @@ static const ax_sprite sMedichamSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx31[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_31.4bpp");
+static const u8 sMedichamGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_31.4bpp.lz");
 static const ax_sprite sMedichamSprites31[] = {
 	{sMedichamGfx31, ARRAY_COUNT(sMedichamGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx32[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_32.4bpp");
+static const u8 sMedichamGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_32.4bpp.lz");
 static const ax_sprite sMedichamSprites32[] = {
 	{sMedichamGfx32, ARRAY_COUNT(sMedichamGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx33[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_33.4bpp");
+static const u8 sMedichamGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_33.4bpp.lz");
 static const ax_sprite sMedichamSprites33[] = {
 	{sMedichamGfx33, ARRAY_COUNT(sMedichamGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx34[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_34.4bpp");
+static const u8 sMedichamGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_34.4bpp.lz");
 static const ax_sprite sMedichamSprites34[] = {
 	{sMedichamGfx34, ARRAY_COUNT(sMedichamGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx35[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_35.4bpp");
+static const u8 sMedichamGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_35.4bpp.lz");
 static const ax_sprite sMedichamSprites35[] = {
 	{sMedichamGfx35, ARRAY_COUNT(sMedichamGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx36[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_36.4bpp");
+static const u8 sMedichamGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_36.4bpp.lz");
 static const ax_sprite sMedichamSprites36[] = {
 	{sMedichamGfx36, ARRAY_COUNT(sMedichamGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx37[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_37.4bpp");
+static const u8 sMedichamGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_37.4bpp.lz");
 static const ax_sprite sMedichamSprites37[] = {
 	{sMedichamGfx37, ARRAY_COUNT(sMedichamGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx38[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_38.4bpp");
+static const u8 sMedichamGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_38.4bpp.lz");
 static const ax_sprite sMedichamSprites38[] = {
 	{sMedichamGfx38, ARRAY_COUNT(sMedichamGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx39[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_39.4bpp");
+static const u8 sMedichamGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_39.4bpp.lz");
 static const ax_sprite sMedichamSprites39[] = {
 	{sMedichamGfx39, ARRAY_COUNT(sMedichamGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx40[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_40.4bpp");
+static const u8 sMedichamGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_40.4bpp.lz");
 static const ax_sprite sMedichamSprites40[] = {
 	{sMedichamGfx40, ARRAY_COUNT(sMedichamGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx41[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_41.4bpp");
+static const u8 sMedichamGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_41.4bpp.lz");
 static const ax_sprite sMedichamSprites41[] = {
 	{sMedichamGfx41, ARRAY_COUNT(sMedichamGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx42[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_42.4bpp");
+static const u8 sMedichamGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_42.4bpp.lz");
 static const ax_sprite sMedichamSprites42[] = {
 	{sMedichamGfx42, ARRAY_COUNT(sMedichamGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMedichamGfx43[] = INCBIN_U8("graphics/ax/mon/medicham/sprite_43.4bpp");
+static const u8 sMedichamGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/medicham/sprite_43.4bpp.lz");
 static const ax_sprite sMedichamSprites43[] = {
 	{sMedichamGfx43, ARRAY_COUNT(sMedichamGfx43)}, 
 	{NULL, 0}

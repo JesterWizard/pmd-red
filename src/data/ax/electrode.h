@@ -2143,157 +2143,157 @@ static const ax_anim sElectrodeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sElectrodeGfx1[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_1.4bpp");
+static const u8 sElectrodeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_1.4bpp.lz");
 static const ax_sprite sElectrodeSprites1[] = {
 	{sElectrodeGfx1, ARRAY_COUNT(sElectrodeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx2[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_2.4bpp");
+static const u8 sElectrodeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_2.4bpp.lz");
 static const ax_sprite sElectrodeSprites2[] = {
 	{sElectrodeGfx2, ARRAY_COUNT(sElectrodeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx3[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_3.4bpp");
+static const u8 sElectrodeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_3.4bpp.lz");
 static const ax_sprite sElectrodeSprites3[] = {
 	{sElectrodeGfx3, ARRAY_COUNT(sElectrodeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx4[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_4.4bpp");
+static const u8 sElectrodeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_4.4bpp.lz");
 static const ax_sprite sElectrodeSprites4[] = {
 	{sElectrodeGfx4, ARRAY_COUNT(sElectrodeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx5[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_5.4bpp");
+static const u8 sElectrodeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_5.4bpp.lz");
 static const ax_sprite sElectrodeSprites5[] = {
 	{sElectrodeGfx5, ARRAY_COUNT(sElectrodeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx6[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_6.4bpp");
+static const u8 sElectrodeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_6.4bpp.lz");
 static const ax_sprite sElectrodeSprites6[] = {
 	{sElectrodeGfx6, ARRAY_COUNT(sElectrodeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx7[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_7.4bpp");
+static const u8 sElectrodeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_7.4bpp.lz");
 static const ax_sprite sElectrodeSprites7[] = {
 	{sElectrodeGfx7, ARRAY_COUNT(sElectrodeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx8[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_8.4bpp");
+static const u8 sElectrodeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_8.4bpp.lz");
 static const ax_sprite sElectrodeSprites8[] = {
 	{sElectrodeGfx8, ARRAY_COUNT(sElectrodeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx9[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_9.4bpp");
+static const u8 sElectrodeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_9.4bpp.lz");
 static const ax_sprite sElectrodeSprites9[] = {
 	{sElectrodeGfx9, ARRAY_COUNT(sElectrodeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx10[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_10.4bpp");
+static const u8 sElectrodeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_10.4bpp.lz");
 static const ax_sprite sElectrodeSprites10[] = {
 	{sElectrodeGfx10, ARRAY_COUNT(sElectrodeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx11[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_11.4bpp");
+static const u8 sElectrodeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_11.4bpp.lz");
 static const ax_sprite sElectrodeSprites11[] = {
 	{sElectrodeGfx11, ARRAY_COUNT(sElectrodeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx12[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_12.4bpp");
+static const u8 sElectrodeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_12.4bpp.lz");
 static const ax_sprite sElectrodeSprites12[] = {
 	{sElectrodeGfx12, ARRAY_COUNT(sElectrodeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx13[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_13.4bpp");
+static const u8 sElectrodeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_13.4bpp.lz");
 static const ax_sprite sElectrodeSprites13[] = {
 	{sElectrodeGfx13, ARRAY_COUNT(sElectrodeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx14[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_14.4bpp");
+static const u8 sElectrodeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_14.4bpp.lz");
 static const ax_sprite sElectrodeSprites14[] = {
 	{sElectrodeGfx14, ARRAY_COUNT(sElectrodeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx15[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_15.4bpp");
+static const u8 sElectrodeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_15.4bpp.lz");
 static const ax_sprite sElectrodeSprites15[] = {
 	{sElectrodeGfx15, ARRAY_COUNT(sElectrodeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx16[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_16.4bpp");
+static const u8 sElectrodeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_16.4bpp.lz");
 static const ax_sprite sElectrodeSprites16[] = {
 	{sElectrodeGfx16, ARRAY_COUNT(sElectrodeGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx17[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_17.4bpp");
+static const u8 sElectrodeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_17.4bpp.lz");
 static const ax_sprite sElectrodeSprites17[] = {
 	{sElectrodeGfx17, ARRAY_COUNT(sElectrodeGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx18[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_18.4bpp");
+static const u8 sElectrodeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_18.4bpp.lz");
 static const ax_sprite sElectrodeSprites18[] = {
 	{sElectrodeGfx18, ARRAY_COUNT(sElectrodeGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx19[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_19.4bpp");
+static const u8 sElectrodeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_19.4bpp.lz");
 static const ax_sprite sElectrodeSprites19[] = {
 	{sElectrodeGfx19, ARRAY_COUNT(sElectrodeGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx20[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_20.4bpp");
+static const u8 sElectrodeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_20.4bpp.lz");
 static const ax_sprite sElectrodeSprites20[] = {
 	{sElectrodeGfx20, ARRAY_COUNT(sElectrodeGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx21[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_21.4bpp");
+static const u8 sElectrodeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_21.4bpp.lz");
 static const ax_sprite sElectrodeSprites21[] = {
 	{sElectrodeGfx21, ARRAY_COUNT(sElectrodeGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx22[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_22.4bpp");
+static const u8 sElectrodeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_22.4bpp.lz");
 static const ax_sprite sElectrodeSprites22[] = {
 	{sElectrodeGfx22, ARRAY_COUNT(sElectrodeGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx23[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_23.4bpp");
+static const u8 sElectrodeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_23.4bpp.lz");
 static const ax_sprite sElectrodeSprites23[] = {
 	{sElectrodeGfx23, ARRAY_COUNT(sElectrodeGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx24[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_24.4bpp");
+static const u8 sElectrodeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_24.4bpp.lz");
 static const ax_sprite sElectrodeSprites24[] = {
 	{sElectrodeGfx24, ARRAY_COUNT(sElectrodeGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx25[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_25.4bpp");
+static const u8 sElectrodeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_25.4bpp.lz");
 static const ax_sprite sElectrodeSprites25[] = {
 	{sElectrodeGfx25, ARRAY_COUNT(sElectrodeGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx26[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_26.4bpp");
+static const u8 sElectrodeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_26.4bpp.lz");
 static const ax_sprite sElectrodeSprites26[] = {
 	{sElectrodeGfx26, ARRAY_COUNT(sElectrodeGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx27[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_27.4bpp");
+static const u8 sElectrodeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_27.4bpp.lz");
 static const ax_sprite sElectrodeSprites27[] = {
 	{sElectrodeGfx27, ARRAY_COUNT(sElectrodeGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx28[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_28.4bpp");
+static const u8 sElectrodeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_28.4bpp.lz");
 static const ax_sprite sElectrodeSprites28[] = {
 	{sElectrodeGfx28, ARRAY_COUNT(sElectrodeGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx29[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_29.4bpp");
+static const u8 sElectrodeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_29.4bpp.lz");
 static const ax_sprite sElectrodeSprites29[] = {
 	{sElectrodeGfx29, ARRAY_COUNT(sElectrodeGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx30[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_30.4bpp");
+static const u8 sElectrodeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_30.4bpp.lz");
 static const ax_sprite sElectrodeSprites30[] = {
 	{sElectrodeGfx30, ARRAY_COUNT(sElectrodeGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sElectrodeGfx31[] = INCBIN_U8("graphics/ax/mon/electrode/sprite_31.4bpp");
+static const u8 sElectrodeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electrode/sprite_31.4bpp.lz");
 static const ax_sprite sElectrodeSprites31[] = {
 	{sElectrodeGfx31, ARRAY_COUNT(sElectrodeGfx31)}, 
 	{NULL, 0}

@@ -1903,85 +1903,85 @@ static const ax_anim sHitmontopAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHitmontopGfx1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_1.4bpp");
+static const u8 sHitmontopGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_1.4bpp.lz");
 static const ax_sprite sHitmontopSprites1[] = {
 	{sHitmontopGfx1, ARRAY_COUNT(sHitmontopGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_2.4bpp");
+static const u8 sHitmontopGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_2.4bpp.lz");
 static const ax_sprite sHitmontopSprites2[] = {
 	{sHitmontopGfx2, ARRAY_COUNT(sHitmontopGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_3.4bpp");
+static const u8 sHitmontopGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites3[] = {
 	{sHitmontopGfx3, ARRAY_COUNT(sHitmontopGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx4[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_4.4bpp");
+static const u8 sHitmontopGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_4.4bpp.lz");
 static const ax_sprite sHitmontopSprites4[] = {
 	{sHitmontopGfx4, ARRAY_COUNT(sHitmontopGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx5[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_5.4bpp");
+static const u8 sHitmontopGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_5.4bpp.lz");
 static const ax_sprite sHitmontopSprites5[] = {
 	{sHitmontopGfx5, ARRAY_COUNT(sHitmontopGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx6[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_6.4bpp");
+static const u8 sHitmontopGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_6.4bpp.lz");
 static const ax_sprite sHitmontopSprites6[] = {
 	{sHitmontopGfx6, ARRAY_COUNT(sHitmontopGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx7[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_7.4bpp");
+static const u8 sHitmontopGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_7.4bpp.lz");
 static const ax_sprite sHitmontopSprites7[] = {
 	{sHitmontopGfx7, ARRAY_COUNT(sHitmontopGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx8[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_8.4bpp");
+static const u8 sHitmontopGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_8.4bpp.lz");
 static const ax_sprite sHitmontopSprites8[] = {
 	{sHitmontopGfx8, ARRAY_COUNT(sHitmontopGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx9[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_9.4bpp");
+static const u8 sHitmontopGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_9.4bpp.lz");
 static const ax_sprite sHitmontopSprites9[] = {
 	{sHitmontopGfx9, ARRAY_COUNT(sHitmontopGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx10[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_10.4bpp");
+static const u8 sHitmontopGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_10.4bpp.lz");
 static const ax_sprite sHitmontopSprites10[] = {
 	{sHitmontopGfx10, ARRAY_COUNT(sHitmontopGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx11[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_11.4bpp");
+static const u8 sHitmontopGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_11.4bpp.lz");
 static const ax_sprite sHitmontopSprites11[] = {
 	{sHitmontopGfx11, ARRAY_COUNT(sHitmontopGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx12[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_12.4bpp");
+static const u8 sHitmontopGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_12.4bpp.lz");
 static const ax_sprite sHitmontopSprites12[] = {
 	{sHitmontopGfx12, ARRAY_COUNT(sHitmontopGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx13[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_13.4bpp");
+static const u8 sHitmontopGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_13.4bpp.lz");
 static const ax_sprite sHitmontopSprites13[] = {
 	{sHitmontopGfx13, ARRAY_COUNT(sHitmontopGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx14[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_14.4bpp");
+static const u8 sHitmontopGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_14.4bpp.lz");
 static const ax_sprite sHitmontopSprites14[] = {
 	{sHitmontopGfx14, ARRAY_COUNT(sHitmontopGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx15[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_15.4bpp");
+static const u8 sHitmontopGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_15.4bpp.lz");
 static const ax_sprite sHitmontopSprites15[] = {
 	{sHitmontopGfx15, ARRAY_COUNT(sHitmontopGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx16[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_16.4bpp");
-static const u8 sHitmontopGfx16_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_16_1.4bpp");
-static const u8 sHitmontopGfx16_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_16_2.4bpp");
-static const u8 sHitmontopGfx16_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_16_3.4bpp");
+static const u8 sHitmontopGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_16.4bpp.lz");
+static const u8 sHitmontopGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_16_1.4bpp.lz");
+static const u8 sHitmontopGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_16_2.4bpp.lz");
+static const u8 sHitmontopGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_16_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites16[] = {
 	{sHitmontopGfx16, ARRAY_COUNT(sHitmontopGfx16)}, 
 	{NULL, 32}, 
@@ -1993,10 +1993,10 @@ static const ax_sprite sHitmontopSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx17[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_17.4bpp");
-static const u8 sHitmontopGfx17_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_17_1.4bpp");
-static const u8 sHitmontopGfx17_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_17_2.4bpp");
-static const u8 sHitmontopGfx17_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_17_3.4bpp");
+static const u8 sHitmontopGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_17.4bpp.lz");
+static const u8 sHitmontopGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_17_1.4bpp.lz");
+static const u8 sHitmontopGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_17_2.4bpp.lz");
+static const u8 sHitmontopGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_17_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites17[] = {
 	{sHitmontopGfx17, ARRAY_COUNT(sHitmontopGfx17)}, 
 	{NULL, 32}, 
@@ -2008,10 +2008,10 @@ static const ax_sprite sHitmontopSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx18[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_18.4bpp");
-static const u8 sHitmontopGfx18_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_18_1.4bpp");
-static const u8 sHitmontopGfx18_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_18_2.4bpp");
-static const u8 sHitmontopGfx18_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_18_3.4bpp");
+static const u8 sHitmontopGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_18.4bpp.lz");
+static const u8 sHitmontopGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_18_1.4bpp.lz");
+static const u8 sHitmontopGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_18_2.4bpp.lz");
+static const u8 sHitmontopGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_18_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites18[] = {
 	{sHitmontopGfx18, ARRAY_COUNT(sHitmontopGfx18)}, 
 	{NULL, 32}, 
@@ -2023,10 +2023,10 @@ static const ax_sprite sHitmontopSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx19[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_19.4bpp");
-static const u8 sHitmontopGfx19_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_19_1.4bpp");
-static const u8 sHitmontopGfx19_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_19_2.4bpp");
-static const u8 sHitmontopGfx19_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_19_3.4bpp");
+static const u8 sHitmontopGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_19.4bpp.lz");
+static const u8 sHitmontopGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_19_1.4bpp.lz");
+static const u8 sHitmontopGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_19_2.4bpp.lz");
+static const u8 sHitmontopGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_19_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites19[] = {
 	{NULL, 32}, 
 	{sHitmontopGfx19, ARRAY_COUNT(sHitmontopGfx19)}, 
@@ -2039,10 +2039,10 @@ static const ax_sprite sHitmontopSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx20[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_20.4bpp");
-static const u8 sHitmontopGfx20_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_20_1.4bpp");
-static const u8 sHitmontopGfx20_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_20_2.4bpp");
-static const u8 sHitmontopGfx20_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_20_3.4bpp");
+static const u8 sHitmontopGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_20.4bpp.lz");
+static const u8 sHitmontopGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_20_1.4bpp.lz");
+static const u8 sHitmontopGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_20_2.4bpp.lz");
+static const u8 sHitmontopGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_20_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites20[] = {
 	{sHitmontopGfx20, ARRAY_COUNT(sHitmontopGfx20)}, 
 	{NULL, 32}, 
@@ -2054,10 +2054,10 @@ static const ax_sprite sHitmontopSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx21[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_21.4bpp");
-static const u8 sHitmontopGfx21_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_21_1.4bpp");
-static const u8 sHitmontopGfx21_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_21_2.4bpp");
-static const u8 sHitmontopGfx21_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_21_3.4bpp");
+static const u8 sHitmontopGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_21.4bpp.lz");
+static const u8 sHitmontopGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_21_1.4bpp.lz");
+static const u8 sHitmontopGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_21_2.4bpp.lz");
+static const u8 sHitmontopGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_21_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites21[] = {
 	{sHitmontopGfx21, ARRAY_COUNT(sHitmontopGfx21)}, 
 	{NULL, 32}, 
@@ -2069,10 +2069,10 @@ static const ax_sprite sHitmontopSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx22[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_22.4bpp");
-static const u8 sHitmontopGfx22_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_22_1.4bpp");
-static const u8 sHitmontopGfx22_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_22_2.4bpp");
-static const u8 sHitmontopGfx22_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_22_3.4bpp");
+static const u8 sHitmontopGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_22.4bpp.lz");
+static const u8 sHitmontopGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_22_1.4bpp.lz");
+static const u8 sHitmontopGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_22_2.4bpp.lz");
+static const u8 sHitmontopGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_22_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites22[] = {
 	{sHitmontopGfx22, ARRAY_COUNT(sHitmontopGfx22)}, 
 	{NULL, 32}, 
@@ -2084,10 +2084,10 @@ static const ax_sprite sHitmontopSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx23[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_23.4bpp");
-static const u8 sHitmontopGfx23_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_23_1.4bpp");
-static const u8 sHitmontopGfx23_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_23_2.4bpp");
-static const u8 sHitmontopGfx23_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_23_3.4bpp");
+static const u8 sHitmontopGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_23.4bpp.lz");
+static const u8 sHitmontopGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_23_1.4bpp.lz");
+static const u8 sHitmontopGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_23_2.4bpp.lz");
+static const u8 sHitmontopGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_23_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites23[] = {
 	{sHitmontopGfx23, ARRAY_COUNT(sHitmontopGfx23)}, 
 	{NULL, 32}, 
@@ -2099,10 +2099,10 @@ static const ax_sprite sHitmontopSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx24[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_24.4bpp");
-static const u8 sHitmontopGfx24_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_24_1.4bpp");
-static const u8 sHitmontopGfx24_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_24_2.4bpp");
-static const u8 sHitmontopGfx24_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_24_3.4bpp");
+static const u8 sHitmontopGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_24.4bpp.lz");
+static const u8 sHitmontopGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_24_1.4bpp.lz");
+static const u8 sHitmontopGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_24_2.4bpp.lz");
+static const u8 sHitmontopGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_24_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites24[] = {
 	{sHitmontopGfx24, ARRAY_COUNT(sHitmontopGfx24)}, 
 	{NULL, 32}, 
@@ -2114,10 +2114,10 @@ static const ax_sprite sHitmontopSprites24[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx25[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_25.4bpp");
-static const u8 sHitmontopGfx25_1[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_25_1.4bpp");
-static const u8 sHitmontopGfx25_2[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_25_2.4bpp");
-static const u8 sHitmontopGfx25_3[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_25_3.4bpp");
+static const u8 sHitmontopGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_25.4bpp.lz");
+static const u8 sHitmontopGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_25_1.4bpp.lz");
+static const u8 sHitmontopGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_25_2.4bpp.lz");
+static const u8 sHitmontopGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_25_3.4bpp.lz");
 static const ax_sprite sHitmontopSprites25[] = {
 	{sHitmontopGfx25, ARRAY_COUNT(sHitmontopGfx25)}, 
 	{NULL, 32}, 
@@ -2129,37 +2129,37 @@ static const ax_sprite sHitmontopSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx26[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_26.4bpp");
+static const u8 sHitmontopGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_26.4bpp.lz");
 static const ax_sprite sHitmontopSprites26[] = {
 	{sHitmontopGfx26, ARRAY_COUNT(sHitmontopGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx27[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_27.4bpp");
+static const u8 sHitmontopGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_27.4bpp.lz");
 static const ax_sprite sHitmontopSprites27[] = {
 	{sHitmontopGfx27, ARRAY_COUNT(sHitmontopGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx28[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_28.4bpp");
+static const u8 sHitmontopGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_28.4bpp.lz");
 static const ax_sprite sHitmontopSprites28[] = {
 	{sHitmontopGfx28, ARRAY_COUNT(sHitmontopGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx29[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_29.4bpp");
+static const u8 sHitmontopGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_29.4bpp.lz");
 static const ax_sprite sHitmontopSprites29[] = {
 	{sHitmontopGfx29, ARRAY_COUNT(sHitmontopGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx30[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_30.4bpp");
+static const u8 sHitmontopGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_30.4bpp.lz");
 static const ax_sprite sHitmontopSprites30[] = {
 	{sHitmontopGfx30, ARRAY_COUNT(sHitmontopGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx31[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_31.4bpp");
+static const u8 sHitmontopGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_31.4bpp.lz");
 static const ax_sprite sHitmontopSprites31[] = {
 	{sHitmontopGfx31, ARRAY_COUNT(sHitmontopGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sHitmontopGfx32[] = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_32.4bpp");
+static const u8 sHitmontopGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmontop/sprite_32.4bpp.lz");
 static const ax_sprite sHitmontopSprites32[] = {
 	{sHitmontopGfx32, ARRAY_COUNT(sHitmontopGfx32)}, 
 	{NULL, 0}

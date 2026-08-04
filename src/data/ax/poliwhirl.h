@@ -2075,165 +2075,165 @@ static const ax_anim sPoliwhirlAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPoliwhirlGfx1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_1.4bpp");
+static const u8 sPoliwhirlGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_1.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites1[] = {
 	{sPoliwhirlGfx1, ARRAY_COUNT(sPoliwhirlGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx2[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_2.4bpp");
+static const u8 sPoliwhirlGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_2.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites2[] = {
 	{sPoliwhirlGfx2, ARRAY_COUNT(sPoliwhirlGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx3[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_3.4bpp");
+static const u8 sPoliwhirlGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_3.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites3[] = {
 	{sPoliwhirlGfx3, ARRAY_COUNT(sPoliwhirlGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx4[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_4.4bpp");
+static const u8 sPoliwhirlGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_4.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites4[] = {
 	{sPoliwhirlGfx4, ARRAY_COUNT(sPoliwhirlGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx5[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_5.4bpp");
+static const u8 sPoliwhirlGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_5.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites5[] = {
 	{sPoliwhirlGfx5, ARRAY_COUNT(sPoliwhirlGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx6[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_6.4bpp");
+static const u8 sPoliwhirlGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_6.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites6[] = {
 	{sPoliwhirlGfx6, ARRAY_COUNT(sPoliwhirlGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx7[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_7.4bpp");
+static const u8 sPoliwhirlGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_7.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites7[] = {
 	{sPoliwhirlGfx7, ARRAY_COUNT(sPoliwhirlGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx8[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_8.4bpp");
+static const u8 sPoliwhirlGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_8.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites8[] = {
 	{sPoliwhirlGfx8, ARRAY_COUNT(sPoliwhirlGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx9[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_9.4bpp");
+static const u8 sPoliwhirlGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_9.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites9[] = {
 	{sPoliwhirlGfx9, ARRAY_COUNT(sPoliwhirlGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx10[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_10.4bpp");
+static const u8 sPoliwhirlGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_10.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites10[] = {
 	{sPoliwhirlGfx10, ARRAY_COUNT(sPoliwhirlGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx11[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_11.4bpp");
+static const u8 sPoliwhirlGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_11.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites11[] = {
 	{sPoliwhirlGfx11, ARRAY_COUNT(sPoliwhirlGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx12[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_12.4bpp");
+static const u8 sPoliwhirlGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_12.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites12[] = {
 	{sPoliwhirlGfx12, ARRAY_COUNT(sPoliwhirlGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx13[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_13.4bpp");
+static const u8 sPoliwhirlGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_13.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites13[] = {
 	{sPoliwhirlGfx13, ARRAY_COUNT(sPoliwhirlGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx14[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_14.4bpp");
+static const u8 sPoliwhirlGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_14.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites14[] = {
 	{sPoliwhirlGfx14, ARRAY_COUNT(sPoliwhirlGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx15[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_15.4bpp");
+static const u8 sPoliwhirlGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_15.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites15[] = {
 	{sPoliwhirlGfx15, ARRAY_COUNT(sPoliwhirlGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx16[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_16.4bpp");
+static const u8 sPoliwhirlGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_16.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites16[] = {
 	{sPoliwhirlGfx16, ARRAY_COUNT(sPoliwhirlGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx17[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_17.4bpp");
+static const u8 sPoliwhirlGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_17.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites17[] = {
 	{sPoliwhirlGfx17, ARRAY_COUNT(sPoliwhirlGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx18[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_18.4bpp");
+static const u8 sPoliwhirlGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_18.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites18[] = {
 	{sPoliwhirlGfx18, ARRAY_COUNT(sPoliwhirlGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx19[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_19.4bpp");
+static const u8 sPoliwhirlGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_19.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites19[] = {
 	{sPoliwhirlGfx19, ARRAY_COUNT(sPoliwhirlGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx20[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_20.4bpp");
+static const u8 sPoliwhirlGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_20.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites20[] = {
 	{sPoliwhirlGfx20, ARRAY_COUNT(sPoliwhirlGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx21[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_21.4bpp");
+static const u8 sPoliwhirlGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_21.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites21[] = {
 	{sPoliwhirlGfx21, ARRAY_COUNT(sPoliwhirlGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx22[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_22.4bpp");
+static const u8 sPoliwhirlGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_22.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites22[] = {
 	{sPoliwhirlGfx22, ARRAY_COUNT(sPoliwhirlGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx23[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_23.4bpp");
+static const u8 sPoliwhirlGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_23.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites23[] = {
 	{sPoliwhirlGfx23, ARRAY_COUNT(sPoliwhirlGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx24[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_24.4bpp");
+static const u8 sPoliwhirlGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_24.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites24[] = {
 	{NULL, 32}, 
 	{sPoliwhirlGfx24, ARRAY_COUNT(sPoliwhirlGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx25[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_25.4bpp");
+static const u8 sPoliwhirlGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_25.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites25[] = {
 	{sPoliwhirlGfx25, ARRAY_COUNT(sPoliwhirlGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx26[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_26.4bpp");
+static const u8 sPoliwhirlGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_26.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites26[] = {
 	{sPoliwhirlGfx26, ARRAY_COUNT(sPoliwhirlGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx27[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_27.4bpp");
+static const u8 sPoliwhirlGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_27.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites27[] = {
 	{sPoliwhirlGfx27, ARRAY_COUNT(sPoliwhirlGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx28[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_28.4bpp");
+static const u8 sPoliwhirlGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_28.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites28[] = {
 	{sPoliwhirlGfx28, ARRAY_COUNT(sPoliwhirlGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx29[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_29.4bpp");
+static const u8 sPoliwhirlGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_29.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites29[] = {
 	{sPoliwhirlGfx29, ARRAY_COUNT(sPoliwhirlGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx30[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_30.4bpp");
+static const u8 sPoliwhirlGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_30.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites30[] = {
 	{sPoliwhirlGfx30, ARRAY_COUNT(sPoliwhirlGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx31[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_31.4bpp");
+static const u8 sPoliwhirlGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_31.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites31[] = {
 	{sPoliwhirlGfx31, ARRAY_COUNT(sPoliwhirlGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx32[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_32.4bpp");
-static const u8 sPoliwhirlGfx32_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_32_1.4bpp");
-static const u8 sPoliwhirlGfx32_2[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_32_2.4bpp");
+static const u8 sPoliwhirlGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_32.4bpp.lz");
+static const u8 sPoliwhirlGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_32_1.4bpp.lz");
+static const u8 sPoliwhirlGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_32_2.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites32[] = {
 	{sPoliwhirlGfx32, ARRAY_COUNT(sPoliwhirlGfx32)}, 
 	{NULL, 64}, 
@@ -2243,39 +2243,39 @@ static const ax_sprite sPoliwhirlSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx33[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_33.4bpp");
-static const u8 sPoliwhirlGfx33_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_33_1.4bpp");
+static const u8 sPoliwhirlGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_33.4bpp.lz");
+static const u8 sPoliwhirlGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_33_1.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites33[] = {
 	{sPoliwhirlGfx33, ARRAY_COUNT(sPoliwhirlGfx33)}, 
 	{NULL, 32}, 
 	{sPoliwhirlGfx33_1, ARRAY_COUNT(sPoliwhirlGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx34[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_34.4bpp");
+static const u8 sPoliwhirlGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_34.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites34[] = {
 	{sPoliwhirlGfx34, ARRAY_COUNT(sPoliwhirlGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx35[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_35.4bpp");
+static const u8 sPoliwhirlGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_35.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites35[] = {
 	{sPoliwhirlGfx35, ARRAY_COUNT(sPoliwhirlGfx35)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx36[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_36.4bpp");
+static const u8 sPoliwhirlGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_36.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites36[] = {
 	{sPoliwhirlGfx36, ARRAY_COUNT(sPoliwhirlGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx37[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_37.4bpp");
+static const u8 sPoliwhirlGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_37.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites37[] = {
 	{sPoliwhirlGfx37, ARRAY_COUNT(sPoliwhirlGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx38[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_38.4bpp");
-static const u8 sPoliwhirlGfx38_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_38_1.4bpp");
-static const u8 sPoliwhirlGfx38_2[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_38_2.4bpp");
-static const u8 sPoliwhirlGfx38_3[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_38_3.4bpp");
+static const u8 sPoliwhirlGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_38.4bpp.lz");
+static const u8 sPoliwhirlGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_38_1.4bpp.lz");
+static const u8 sPoliwhirlGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_38_2.4bpp.lz");
+static const u8 sPoliwhirlGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_38_3.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites38[] = {
 	{sPoliwhirlGfx38, ARRAY_COUNT(sPoliwhirlGfx38)}, 
 	{NULL, 32}, 
@@ -2287,33 +2287,33 @@ static const ax_sprite sPoliwhirlSprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx39[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_39.4bpp");
+static const u8 sPoliwhirlGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_39.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites39[] = {
 	{sPoliwhirlGfx39, ARRAY_COUNT(sPoliwhirlGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx40[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_40.4bpp");
+static const u8 sPoliwhirlGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_40.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites40[] = {
 	{sPoliwhirlGfx40, ARRAY_COUNT(sPoliwhirlGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx41[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_41.4bpp");
+static const u8 sPoliwhirlGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_41.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites41[] = {
 	{sPoliwhirlGfx41, ARRAY_COUNT(sPoliwhirlGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx42[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_42.4bpp");
+static const u8 sPoliwhirlGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_42.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites42[] = {
 	{sPoliwhirlGfx42, ARRAY_COUNT(sPoliwhirlGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx43[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_43.4bpp");
+static const u8 sPoliwhirlGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_43.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites43[] = {
 	{sPoliwhirlGfx43, ARRAY_COUNT(sPoliwhirlGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx44[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_44.4bpp");
-static const u8 sPoliwhirlGfx44_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_44_1.4bpp");
+static const u8 sPoliwhirlGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_44.4bpp.lz");
+static const u8 sPoliwhirlGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_44_1.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites44[] = {
 	{sPoliwhirlGfx44, ARRAY_COUNT(sPoliwhirlGfx44)}, 
 	{NULL, 32}, 
@@ -2321,107 +2321,107 @@ static const ax_sprite sPoliwhirlSprites44[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx45[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_45.4bpp");
+static const u8 sPoliwhirlGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_45.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites45[] = {
 	{sPoliwhirlGfx45, ARRAY_COUNT(sPoliwhirlGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx46[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_46.4bpp");
+static const u8 sPoliwhirlGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_46.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites46[] = {
 	{sPoliwhirlGfx46, ARRAY_COUNT(sPoliwhirlGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx47[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_47.4bpp");
+static const u8 sPoliwhirlGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_47.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites47[] = {
 	{sPoliwhirlGfx47, ARRAY_COUNT(sPoliwhirlGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx48[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_48.4bpp");
+static const u8 sPoliwhirlGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_48.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites48[] = {
 	{sPoliwhirlGfx48, ARRAY_COUNT(sPoliwhirlGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx49[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_49.4bpp");
+static const u8 sPoliwhirlGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_49.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites49[] = {
 	{sPoliwhirlGfx49, ARRAY_COUNT(sPoliwhirlGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx50[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_50.4bpp");
+static const u8 sPoliwhirlGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_50.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites50[] = {
 	{sPoliwhirlGfx50, ARRAY_COUNT(sPoliwhirlGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx51[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_51.4bpp");
+static const u8 sPoliwhirlGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_51.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites51[] = {
 	{sPoliwhirlGfx51, ARRAY_COUNT(sPoliwhirlGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx52[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_52.4bpp");
+static const u8 sPoliwhirlGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_52.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites52[] = {
 	{sPoliwhirlGfx52, ARRAY_COUNT(sPoliwhirlGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx53[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_53.4bpp");
+static const u8 sPoliwhirlGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_53.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites53[] = {
 	{NULL, 32}, 
 	{sPoliwhirlGfx53, ARRAY_COUNT(sPoliwhirlGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx54[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_54.4bpp");
+static const u8 sPoliwhirlGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_54.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites54[] = {
 	{sPoliwhirlGfx54, ARRAY_COUNT(sPoliwhirlGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx55[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_55.4bpp");
+static const u8 sPoliwhirlGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_55.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites55[] = {
 	{NULL, 32}, 
 	{sPoliwhirlGfx55, ARRAY_COUNT(sPoliwhirlGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx56[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_56.4bpp");
+static const u8 sPoliwhirlGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_56.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites56[] = {
 	{sPoliwhirlGfx56, ARRAY_COUNT(sPoliwhirlGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx57[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_57.4bpp");
+static const u8 sPoliwhirlGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_57.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites57[] = {
 	{sPoliwhirlGfx57, ARRAY_COUNT(sPoliwhirlGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx58[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_58.4bpp");
+static const u8 sPoliwhirlGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_58.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites58[] = {
 	{sPoliwhirlGfx58, ARRAY_COUNT(sPoliwhirlGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx59[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_59.4bpp");
+static const u8 sPoliwhirlGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_59.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites59[] = {
 	{sPoliwhirlGfx59, ARRAY_COUNT(sPoliwhirlGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx60[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_60.4bpp");
+static const u8 sPoliwhirlGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_60.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites60[] = {
 	{sPoliwhirlGfx60, ARRAY_COUNT(sPoliwhirlGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx61[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_61.4bpp");
+static const u8 sPoliwhirlGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_61.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites61[] = {
 	{sPoliwhirlGfx61, ARRAY_COUNT(sPoliwhirlGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx62[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_62.4bpp");
+static const u8 sPoliwhirlGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_62.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites62[] = {
 	{sPoliwhirlGfx62, ARRAY_COUNT(sPoliwhirlGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx63[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_63.4bpp");
+static const u8 sPoliwhirlGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_63.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites63[] = {
 	{NULL, 32}, 
 	{sPoliwhirlGfx63, ARRAY_COUNT(sPoliwhirlGfx63)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx64[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_64.4bpp");
-static const u8 sPoliwhirlGfx64_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_64_1.4bpp");
+static const u8 sPoliwhirlGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_64.4bpp.lz");
+static const u8 sPoliwhirlGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_64_1.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites64[] = {
 	{sPoliwhirlGfx64, ARRAY_COUNT(sPoliwhirlGfx64)}, 
 	{NULL, 32}, 
@@ -2429,18 +2429,18 @@ static const ax_sprite sPoliwhirlSprites64[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx65[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_65.4bpp");
-static const u8 sPoliwhirlGfx65_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_65_1.4bpp");
+static const u8 sPoliwhirlGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_65.4bpp.lz");
+static const u8 sPoliwhirlGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_65_1.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites65[] = {
 	{sPoliwhirlGfx65, ARRAY_COUNT(sPoliwhirlGfx65)}, 
 	{NULL, 32}, 
 	{sPoliwhirlGfx65_1, ARRAY_COUNT(sPoliwhirlGfx65_1)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx66[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_66.4bpp");
-static const u8 sPoliwhirlGfx66_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_66_1.4bpp");
-static const u8 sPoliwhirlGfx66_2[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_66_2.4bpp");
-static const u8 sPoliwhirlGfx66_3[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_66_3.4bpp");
+static const u8 sPoliwhirlGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_66.4bpp.lz");
+static const u8 sPoliwhirlGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_66_1.4bpp.lz");
+static const u8 sPoliwhirlGfx66_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_66_2.4bpp.lz");
+static const u8 sPoliwhirlGfx66_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_66_3.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites66[] = {
 	{sPoliwhirlGfx66, ARRAY_COUNT(sPoliwhirlGfx66)}, 
 	{NULL, 64}, 
@@ -2452,10 +2452,10 @@ static const ax_sprite sPoliwhirlSprites66[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx67[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_67.4bpp");
-static const u8 sPoliwhirlGfx67_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_67_1.4bpp");
-static const u8 sPoliwhirlGfx67_2[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_67_2.4bpp");
-static const u8 sPoliwhirlGfx67_3[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_67_3.4bpp");
+static const u8 sPoliwhirlGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_67.4bpp.lz");
+static const u8 sPoliwhirlGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_67_1.4bpp.lz");
+static const u8 sPoliwhirlGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_67_2.4bpp.lz");
+static const u8 sPoliwhirlGfx67_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_67_3.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites67[] = {
 	{NULL, 32}, 
 	{sPoliwhirlGfx67, ARRAY_COUNT(sPoliwhirlGfx67)}, 
@@ -2468,10 +2468,10 @@ static const ax_sprite sPoliwhirlSprites67[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx68[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_68.4bpp");
-static const u8 sPoliwhirlGfx68_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_68_1.4bpp");
-static const u8 sPoliwhirlGfx68_2[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_68_2.4bpp");
-static const u8 sPoliwhirlGfx68_3[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_68_3.4bpp");
+static const u8 sPoliwhirlGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_68.4bpp.lz");
+static const u8 sPoliwhirlGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_68_1.4bpp.lz");
+static const u8 sPoliwhirlGfx68_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_68_2.4bpp.lz");
+static const u8 sPoliwhirlGfx68_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_68_3.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites68[] = {
 	{NULL, 32}, 
 	{sPoliwhirlGfx68, ARRAY_COUNT(sPoliwhirlGfx68)}, 
@@ -2484,10 +2484,10 @@ static const ax_sprite sPoliwhirlSprites68[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx69[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_69.4bpp");
-static const u8 sPoliwhirlGfx69_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_69_1.4bpp");
-static const u8 sPoliwhirlGfx69_2[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_69_2.4bpp");
-static const u8 sPoliwhirlGfx69_3[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_69_3.4bpp");
+static const u8 sPoliwhirlGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_69.4bpp.lz");
+static const u8 sPoliwhirlGfx69_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_69_1.4bpp.lz");
+static const u8 sPoliwhirlGfx69_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_69_2.4bpp.lz");
+static const u8 sPoliwhirlGfx69_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_69_3.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites69[] = {
 	{sPoliwhirlGfx69, ARRAY_COUNT(sPoliwhirlGfx69)}, 
 	{NULL, 32}, 
@@ -2499,8 +2499,8 @@ static const ax_sprite sPoliwhirlSprites69[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx70[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_70.4bpp");
-static const u8 sPoliwhirlGfx70_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_70_1.4bpp");
+static const u8 sPoliwhirlGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_70.4bpp.lz");
+static const u8 sPoliwhirlGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_70_1.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites70[] = {
 	{NULL, 32}, 
 	{sPoliwhirlGfx70, ARRAY_COUNT(sPoliwhirlGfx70)}, 
@@ -2509,8 +2509,8 @@ static const ax_sprite sPoliwhirlSprites70[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx71[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_71.4bpp");
-static const u8 sPoliwhirlGfx71_1[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_71_1.4bpp");
+static const u8 sPoliwhirlGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_71.4bpp.lz");
+static const u8 sPoliwhirlGfx71_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_71_1.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites71[] = {
 	{sPoliwhirlGfx71, ARRAY_COUNT(sPoliwhirlGfx71)}, 
 	{NULL, 32}, 
@@ -2518,55 +2518,55 @@ static const ax_sprite sPoliwhirlSprites71[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx72[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_72.4bpp");
+static const u8 sPoliwhirlGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_72.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites72[] = {
 	{NULL, 32}, 
 	{sPoliwhirlGfx72, ARRAY_COUNT(sPoliwhirlGfx72)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx73[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_73.4bpp");
+static const u8 sPoliwhirlGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_73.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites73[] = {
 	{sPoliwhirlGfx73, ARRAY_COUNT(sPoliwhirlGfx73)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx74[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_74.4bpp");
+static const u8 sPoliwhirlGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_74.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites74[] = {
 	{sPoliwhirlGfx74, ARRAY_COUNT(sPoliwhirlGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx75[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_75.4bpp");
+static const u8 sPoliwhirlGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_75.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites75[] = {
 	{sPoliwhirlGfx75, ARRAY_COUNT(sPoliwhirlGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx76[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_76.4bpp");
+static const u8 sPoliwhirlGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_76.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites76[] = {
 	{sPoliwhirlGfx76, ARRAY_COUNT(sPoliwhirlGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx77[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_77.4bpp");
+static const u8 sPoliwhirlGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_77.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites77[] = {
 	{sPoliwhirlGfx77, ARRAY_COUNT(sPoliwhirlGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx78[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_78.4bpp");
+static const u8 sPoliwhirlGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_78.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites78[] = {
 	{sPoliwhirlGfx78, ARRAY_COUNT(sPoliwhirlGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx79[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_79.4bpp");
+static const u8 sPoliwhirlGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_79.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites79[] = {
 	{sPoliwhirlGfx79, ARRAY_COUNT(sPoliwhirlGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx80[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_80.4bpp");
+static const u8 sPoliwhirlGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_80.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites80[] = {
 	{sPoliwhirlGfx80, ARRAY_COUNT(sPoliwhirlGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sPoliwhirlGfx81[] = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_81.4bpp");
+static const u8 sPoliwhirlGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/poliwhirl/sprite_81.4bpp.lz");
 static const ax_sprite sPoliwhirlSprites81[] = {
 	{sPoliwhirlGfx81, ARRAY_COUNT(sPoliwhirlGfx81)}, 
 	{NULL, 0}

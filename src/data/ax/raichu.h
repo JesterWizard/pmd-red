@@ -2244,128 +2244,128 @@ static const ax_anim sRaichuAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRaichuGfx1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_1.4bpp");
+static const u8 sRaichuGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_1.4bpp.lz");
 static const ax_sprite sRaichuSprites1[] = {
 	{sRaichuGfx1, ARRAY_COUNT(sRaichuGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_2.4bpp");
+static const u8 sRaichuGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_2.4bpp.lz");
 static const ax_sprite sRaichuSprites2[] = {
 	{sRaichuGfx2, ARRAY_COUNT(sRaichuGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx3[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_3.4bpp");
+static const u8 sRaichuGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_3.4bpp.lz");
 static const ax_sprite sRaichuSprites3[] = {
 	{sRaichuGfx3, ARRAY_COUNT(sRaichuGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx4[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_4.4bpp");
+static const u8 sRaichuGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_4.4bpp.lz");
 static const ax_sprite sRaichuSprites4[] = {
 	{sRaichuGfx4, ARRAY_COUNT(sRaichuGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx5[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_5.4bpp");
+static const u8 sRaichuGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_5.4bpp.lz");
 static const ax_sprite sRaichuSprites5[] = {
 	{sRaichuGfx5, ARRAY_COUNT(sRaichuGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx6[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_6.4bpp");
+static const u8 sRaichuGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_6.4bpp.lz");
 static const ax_sprite sRaichuSprites6[] = {
 	{sRaichuGfx6, ARRAY_COUNT(sRaichuGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx7[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_7.4bpp");
+static const u8 sRaichuGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_7.4bpp.lz");
 static const ax_sprite sRaichuSprites7[] = {
 	{sRaichuGfx7, ARRAY_COUNT(sRaichuGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx8[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_8.4bpp");
+static const u8 sRaichuGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_8.4bpp.lz");
 static const ax_sprite sRaichuSprites8[] = {
 	{sRaichuGfx8, ARRAY_COUNT(sRaichuGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx9[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_9.4bpp");
+static const u8 sRaichuGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_9.4bpp.lz");
 static const ax_sprite sRaichuSprites9[] = {
 	{sRaichuGfx9, ARRAY_COUNT(sRaichuGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx10[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_10.4bpp");
+static const u8 sRaichuGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_10.4bpp.lz");
 static const ax_sprite sRaichuSprites10[] = {
 	{sRaichuGfx10, ARRAY_COUNT(sRaichuGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx11[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_11.4bpp");
+static const u8 sRaichuGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_11.4bpp.lz");
 static const ax_sprite sRaichuSprites11[] = {
 	{sRaichuGfx11, ARRAY_COUNT(sRaichuGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx12[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_12.4bpp");
+static const u8 sRaichuGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_12.4bpp.lz");
 static const ax_sprite sRaichuSprites12[] = {
 	{sRaichuGfx12, ARRAY_COUNT(sRaichuGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx13[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_13.4bpp");
+static const u8 sRaichuGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_13.4bpp.lz");
 static const ax_sprite sRaichuSprites13[] = {
 	{sRaichuGfx13, ARRAY_COUNT(sRaichuGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx14[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_14.4bpp");
+static const u8 sRaichuGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_14.4bpp.lz");
 static const ax_sprite sRaichuSprites14[] = {
 	{sRaichuGfx14, ARRAY_COUNT(sRaichuGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx15[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_15.4bpp");
+static const u8 sRaichuGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_15.4bpp.lz");
 static const ax_sprite sRaichuSprites15[] = {
 	{sRaichuGfx15, ARRAY_COUNT(sRaichuGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx16[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_16.4bpp");
+static const u8 sRaichuGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_16.4bpp.lz");
 static const ax_sprite sRaichuSprites16[] = {
 	{sRaichuGfx16, ARRAY_COUNT(sRaichuGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx17[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_17.4bpp");
+static const u8 sRaichuGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_17.4bpp.lz");
 static const ax_sprite sRaichuSprites17[] = {
 	{sRaichuGfx17, ARRAY_COUNT(sRaichuGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx18[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_18.4bpp");
+static const u8 sRaichuGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_18.4bpp.lz");
 static const ax_sprite sRaichuSprites18[] = {
 	{sRaichuGfx18, ARRAY_COUNT(sRaichuGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx19[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_19.4bpp");
+static const u8 sRaichuGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_19.4bpp.lz");
 static const ax_sprite sRaichuSprites19[] = {
 	{sRaichuGfx19, ARRAY_COUNT(sRaichuGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx20[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_20.4bpp");
+static const u8 sRaichuGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_20.4bpp.lz");
 static const ax_sprite sRaichuSprites20[] = {
 	{sRaichuGfx20, ARRAY_COUNT(sRaichuGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx21[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_21.4bpp");
+static const u8 sRaichuGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_21.4bpp.lz");
 static const ax_sprite sRaichuSprites21[] = {
 	{sRaichuGfx21, ARRAY_COUNT(sRaichuGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx22[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_22.4bpp");
+static const u8 sRaichuGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_22.4bpp.lz");
 static const ax_sprite sRaichuSprites22[] = {
 	{sRaichuGfx22, ARRAY_COUNT(sRaichuGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx23[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_23.4bpp");
+static const u8 sRaichuGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_23.4bpp.lz");
 static const ax_sprite sRaichuSprites23[] = {
 	{sRaichuGfx23, ARRAY_COUNT(sRaichuGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx24[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_24.4bpp");
+static const u8 sRaichuGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_24.4bpp.lz");
 static const ax_sprite sRaichuSprites24[] = {
 	{sRaichuGfx24, ARRAY_COUNT(sRaichuGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx25[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_25.4bpp");
-static const u8 sRaichuGfx25_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_25_1.4bpp");
+static const u8 sRaichuGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_25.4bpp.lz");
+static const u8 sRaichuGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_25_1.4bpp.lz");
 static const ax_sprite sRaichuSprites25[] = {
 	{sRaichuGfx25, ARRAY_COUNT(sRaichuGfx25)}, 
 	{NULL, 32}, 
@@ -2373,9 +2373,9 @@ static const ax_sprite sRaichuSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx26[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_26.4bpp");
-static const u8 sRaichuGfx26_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_26_1.4bpp");
-static const u8 sRaichuGfx26_2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_26_2.4bpp");
+static const u8 sRaichuGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_26.4bpp.lz");
+static const u8 sRaichuGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_26_1.4bpp.lz");
+static const u8 sRaichuGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_26_2.4bpp.lz");
 static const ax_sprite sRaichuSprites26[] = {
 	{sRaichuGfx26, ARRAY_COUNT(sRaichuGfx26)}, 
 	{NULL, 32}, 
@@ -2385,8 +2385,8 @@ static const ax_sprite sRaichuSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx27[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_27.4bpp");
-static const u8 sRaichuGfx27_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_27_1.4bpp");
+static const u8 sRaichuGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_27.4bpp.lz");
+static const u8 sRaichuGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_27_1.4bpp.lz");
 static const ax_sprite sRaichuSprites27[] = {
 	{sRaichuGfx27, ARRAY_COUNT(sRaichuGfx27)}, 
 	{NULL, 64}, 
@@ -2394,9 +2394,9 @@ static const ax_sprite sRaichuSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx28[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_28.4bpp");
-static const u8 sRaichuGfx28_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_28_1.4bpp");
-static const u8 sRaichuGfx28_2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_28_2.4bpp");
+static const u8 sRaichuGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_28.4bpp.lz");
+static const u8 sRaichuGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_28_1.4bpp.lz");
+static const u8 sRaichuGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_28_2.4bpp.lz");
 static const ax_sprite sRaichuSprites28[] = {
 	{sRaichuGfx28, ARRAY_COUNT(sRaichuGfx28)}, 
 	{NULL, 32}, 
@@ -2406,27 +2406,27 @@ static const ax_sprite sRaichuSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx29[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_29.4bpp");
+static const u8 sRaichuGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_29.4bpp.lz");
 static const ax_sprite sRaichuSprites29[] = {
 	{sRaichuGfx29, ARRAY_COUNT(sRaichuGfx29)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx30[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_30.4bpp");
+static const u8 sRaichuGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_30.4bpp.lz");
 static const ax_sprite sRaichuSprites30[] = {
 	{sRaichuGfx30, ARRAY_COUNT(sRaichuGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx31[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_31.4bpp");
+static const u8 sRaichuGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_31.4bpp.lz");
 static const ax_sprite sRaichuSprites31[] = {
 	{NULL, 32}, 
 	{sRaichuGfx31, ARRAY_COUNT(sRaichuGfx31)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx32[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_32.4bpp");
-static const u8 sRaichuGfx32_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_32_1.4bpp");
-static const u8 sRaichuGfx32_2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_32_2.4bpp");
+static const u8 sRaichuGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_32.4bpp.lz");
+static const u8 sRaichuGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_32_1.4bpp.lz");
+static const u8 sRaichuGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_32_2.4bpp.lz");
 static const ax_sprite sRaichuSprites32[] = {
 	{sRaichuGfx32, ARRAY_COUNT(sRaichuGfx32)}, 
 	{NULL, 32}, 
@@ -2435,8 +2435,8 @@ static const ax_sprite sRaichuSprites32[] = {
 	{sRaichuGfx32_2, ARRAY_COUNT(sRaichuGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx33[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_33.4bpp");
-static const u8 sRaichuGfx33_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_33_1.4bpp");
+static const u8 sRaichuGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_33.4bpp.lz");
+static const u8 sRaichuGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_33_1.4bpp.lz");
 static const ax_sprite sRaichuSprites33[] = {
 	{NULL, 32}, 
 	{sRaichuGfx33, ARRAY_COUNT(sRaichuGfx33)}, 
@@ -2444,13 +2444,13 @@ static const ax_sprite sRaichuSprites33[] = {
 	{sRaichuGfx33_1, ARRAY_COUNT(sRaichuGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx34[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_34.4bpp");
+static const u8 sRaichuGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_34.4bpp.lz");
 static const ax_sprite sRaichuSprites34[] = {
 	{sRaichuGfx34, ARRAY_COUNT(sRaichuGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx35[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_35.4bpp");
-static const u8 sRaichuGfx35_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_35_1.4bpp");
+static const u8 sRaichuGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_35.4bpp.lz");
+static const u8 sRaichuGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_35_1.4bpp.lz");
 static const ax_sprite sRaichuSprites35[] = {
 	{NULL, 32}, 
 	{sRaichuGfx35, ARRAY_COUNT(sRaichuGfx35)}, 
@@ -2459,9 +2459,9 @@ static const ax_sprite sRaichuSprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx36[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_36.4bpp");
-static const u8 sRaichuGfx36_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_36_1.4bpp");
-static const u8 sRaichuGfx36_2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_36_2.4bpp");
+static const u8 sRaichuGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_36.4bpp.lz");
+static const u8 sRaichuGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_36_1.4bpp.lz");
+static const u8 sRaichuGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_36_2.4bpp.lz");
 static const ax_sprite sRaichuSprites36[] = {
 	{sRaichuGfx36, ARRAY_COUNT(sRaichuGfx36)}, 
 	{NULL, 32}, 
@@ -2470,76 +2470,76 @@ static const ax_sprite sRaichuSprites36[] = {
 	{sRaichuGfx36_2, ARRAY_COUNT(sRaichuGfx36_2)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx37[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_37.4bpp");
+static const u8 sRaichuGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_37.4bpp.lz");
 static const ax_sprite sRaichuSprites37[] = {
 	{sRaichuGfx37, ARRAY_COUNT(sRaichuGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx38[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_38.4bpp");
+static const u8 sRaichuGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_38.4bpp.lz");
 static const ax_sprite sRaichuSprites38[] = {
 	{sRaichuGfx38, ARRAY_COUNT(sRaichuGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx39[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_39.4bpp");
+static const u8 sRaichuGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_39.4bpp.lz");
 static const ax_sprite sRaichuSprites39[] = {
 	{sRaichuGfx39, ARRAY_COUNT(sRaichuGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx40[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_40.4bpp");
+static const u8 sRaichuGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_40.4bpp.lz");
 static const ax_sprite sRaichuSprites40[] = {
 	{sRaichuGfx40, ARRAY_COUNT(sRaichuGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx41[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_41.4bpp");
+static const u8 sRaichuGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_41.4bpp.lz");
 static const ax_sprite sRaichuSprites41[] = {
 	{sRaichuGfx41, ARRAY_COUNT(sRaichuGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx42[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_42.4bpp");
+static const u8 sRaichuGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_42.4bpp.lz");
 static const ax_sprite sRaichuSprites42[] = {
 	{sRaichuGfx42, ARRAY_COUNT(sRaichuGfx42)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx43[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_43.4bpp");
+static const u8 sRaichuGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_43.4bpp.lz");
 static const ax_sprite sRaichuSprites43[] = {
 	{sRaichuGfx43, ARRAY_COUNT(sRaichuGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx44[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_44.4bpp");
+static const u8 sRaichuGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_44.4bpp.lz");
 static const ax_sprite sRaichuSprites44[] = {
 	{sRaichuGfx44, ARRAY_COUNT(sRaichuGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx45[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_45.4bpp");
+static const u8 sRaichuGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_45.4bpp.lz");
 static const ax_sprite sRaichuSprites45[] = {
 	{sRaichuGfx45, ARRAY_COUNT(sRaichuGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx46[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_46.4bpp");
+static const u8 sRaichuGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_46.4bpp.lz");
 static const ax_sprite sRaichuSprites46[] = {
 	{sRaichuGfx46, ARRAY_COUNT(sRaichuGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx47[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_47.4bpp");
+static const u8 sRaichuGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_47.4bpp.lz");
 static const ax_sprite sRaichuSprites47[] = {
 	{sRaichuGfx47, ARRAY_COUNT(sRaichuGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx48[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_48.4bpp");
+static const u8 sRaichuGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_48.4bpp.lz");
 static const ax_sprite sRaichuSprites48[] = {
 	{sRaichuGfx48, ARRAY_COUNT(sRaichuGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx49[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_49.4bpp");
+static const u8 sRaichuGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_49.4bpp.lz");
 static const ax_sprite sRaichuSprites49[] = {
 	{sRaichuGfx49, ARRAY_COUNT(sRaichuGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx50[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_50.4bpp");
-static const u8 sRaichuGfx50_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_50_1.4bpp");
-static const u8 sRaichuGfx50_2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_50_2.4bpp");
-static const u8 sRaichuGfx50_3[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_50_3.4bpp");
+static const u8 sRaichuGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_50.4bpp.lz");
+static const u8 sRaichuGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_50_1.4bpp.lz");
+static const u8 sRaichuGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_50_2.4bpp.lz");
+static const u8 sRaichuGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_50_3.4bpp.lz");
 static const ax_sprite sRaichuSprites50[] = {
 	{sRaichuGfx50, ARRAY_COUNT(sRaichuGfx50)}, 
 	{NULL, 32}, 
@@ -2550,71 +2550,71 @@ static const ax_sprite sRaichuSprites50[] = {
 	{sRaichuGfx50_3, ARRAY_COUNT(sRaichuGfx50_3)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx51[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_51.4bpp");
+static const u8 sRaichuGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_51.4bpp.lz");
 static const ax_sprite sRaichuSprites51[] = {
 	{sRaichuGfx51, ARRAY_COUNT(sRaichuGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx52[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_52.4bpp");
+static const u8 sRaichuGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_52.4bpp.lz");
 static const ax_sprite sRaichuSprites52[] = {
 	{sRaichuGfx52, ARRAY_COUNT(sRaichuGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx53[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_53.4bpp");
+static const u8 sRaichuGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_53.4bpp.lz");
 static const ax_sprite sRaichuSprites53[] = {
 	{NULL, 32}, 
 	{sRaichuGfx53, ARRAY_COUNT(sRaichuGfx53)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx54[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_54.4bpp");
+static const u8 sRaichuGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_54.4bpp.lz");
 static const ax_sprite sRaichuSprites54[] = {
 	{NULL, 32}, 
 	{sRaichuGfx54, ARRAY_COUNT(sRaichuGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx55[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_55.4bpp");
+static const u8 sRaichuGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_55.4bpp.lz");
 static const ax_sprite sRaichuSprites55[] = {
 	{sRaichuGfx55, ARRAY_COUNT(sRaichuGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx56[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_56.4bpp");
+static const u8 sRaichuGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_56.4bpp.lz");
 static const ax_sprite sRaichuSprites56[] = {
 	{NULL, 32}, 
 	{sRaichuGfx56, ARRAY_COUNT(sRaichuGfx56)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx57[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_57.4bpp");
+static const u8 sRaichuGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_57.4bpp.lz");
 static const ax_sprite sRaichuSprites57[] = {
 	{sRaichuGfx57, ARRAY_COUNT(sRaichuGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx58[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_58.4bpp");
+static const u8 sRaichuGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_58.4bpp.lz");
 static const ax_sprite sRaichuSprites58[] = {
 	{NULL, 32}, 
 	{sRaichuGfx58, ARRAY_COUNT(sRaichuGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx59[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_59.4bpp");
+static const u8 sRaichuGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_59.4bpp.lz");
 static const ax_sprite sRaichuSprites59[] = {
 	{sRaichuGfx59, ARRAY_COUNT(sRaichuGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx60[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_60.4bpp");
+static const u8 sRaichuGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_60.4bpp.lz");
 static const ax_sprite sRaichuSprites60[] = {
 	{sRaichuGfx60, ARRAY_COUNT(sRaichuGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx61[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_61.4bpp");
+static const u8 sRaichuGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_61.4bpp.lz");
 static const ax_sprite sRaichuSprites61[] = {
 	{sRaichuGfx61, ARRAY_COUNT(sRaichuGfx61)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx62[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_62.4bpp");
-static const u8 sRaichuGfx62_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_62_1.4bpp");
-static const u8 sRaichuGfx62_2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_62_2.4bpp");
+static const u8 sRaichuGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_62.4bpp.lz");
+static const u8 sRaichuGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_62_1.4bpp.lz");
+static const u8 sRaichuGfx62_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_62_2.4bpp.lz");
 static const ax_sprite sRaichuSprites62[] = {
 	{sRaichuGfx62, ARRAY_COUNT(sRaichuGfx62)}, 
 	{NULL, 32}, 
@@ -2623,14 +2623,14 @@ static const ax_sprite sRaichuSprites62[] = {
 	{sRaichuGfx62_2, ARRAY_COUNT(sRaichuGfx62_2)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx63[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_63.4bpp");
+static const u8 sRaichuGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_63.4bpp.lz");
 static const ax_sprite sRaichuSprites63[] = {
 	{sRaichuGfx63, ARRAY_COUNT(sRaichuGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx64[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_64.4bpp");
-static const u8 sRaichuGfx64_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_64_1.4bpp");
-static const u8 sRaichuGfx64_2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_64_2.4bpp");
+static const u8 sRaichuGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_64.4bpp.lz");
+static const u8 sRaichuGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_64_1.4bpp.lz");
+static const u8 sRaichuGfx64_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_64_2.4bpp.lz");
 static const ax_sprite sRaichuSprites64[] = {
 	{sRaichuGfx64, ARRAY_COUNT(sRaichuGfx64)}, 
 	{NULL, 32}, 
@@ -2639,70 +2639,70 @@ static const ax_sprite sRaichuSprites64[] = {
 	{sRaichuGfx64_2, ARRAY_COUNT(sRaichuGfx64_2)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx65[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_65.4bpp");
-static const u8 sRaichuGfx65_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_65_1.4bpp");
+static const u8 sRaichuGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_65.4bpp.lz");
+static const u8 sRaichuGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_65_1.4bpp.lz");
 static const ax_sprite sRaichuSprites65[] = {
 	{sRaichuGfx65, ARRAY_COUNT(sRaichuGfx65)}, 
 	{NULL, 32}, 
 	{sRaichuGfx65_1, ARRAY_COUNT(sRaichuGfx65_1)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx66[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_66.4bpp");
-static const u8 sRaichuGfx66_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_66_1.4bpp");
+static const u8 sRaichuGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_66.4bpp.lz");
+static const u8 sRaichuGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_66_1.4bpp.lz");
 static const ax_sprite sRaichuSprites66[] = {
 	{sRaichuGfx66, ARRAY_COUNT(sRaichuGfx66)}, 
 	{NULL, 32}, 
 	{sRaichuGfx66_1, ARRAY_COUNT(sRaichuGfx66_1)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx67[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_67.4bpp");
+static const u8 sRaichuGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_67.4bpp.lz");
 static const ax_sprite sRaichuSprites67[] = {
 	{sRaichuGfx67, ARRAY_COUNT(sRaichuGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx68[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_68.4bpp");
+static const u8 sRaichuGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_68.4bpp.lz");
 static const ax_sprite sRaichuSprites68[] = {
 	{sRaichuGfx68, ARRAY_COUNT(sRaichuGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx69[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_69.4bpp");
+static const u8 sRaichuGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_69.4bpp.lz");
 static const ax_sprite sRaichuSprites69[] = {
 	{sRaichuGfx69, ARRAY_COUNT(sRaichuGfx69)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx70[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_70.4bpp");
+static const u8 sRaichuGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_70.4bpp.lz");
 static const ax_sprite sRaichuSprites70[] = {
 	{NULL, 32}, 
 	{sRaichuGfx70, ARRAY_COUNT(sRaichuGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx71[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_71.4bpp");
+static const u8 sRaichuGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_71.4bpp.lz");
 static const ax_sprite sRaichuSprites71[] = {
 	{NULL, 32}, 
 	{sRaichuGfx71, ARRAY_COUNT(sRaichuGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx72[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_72.4bpp");
+static const u8 sRaichuGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_72.4bpp.lz");
 static const ax_sprite sRaichuSprites72[] = {
 	{NULL, 32}, 
 	{sRaichuGfx72, ARRAY_COUNT(sRaichuGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx73[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_73.4bpp");
+static const u8 sRaichuGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_73.4bpp.lz");
 static const ax_sprite sRaichuSprites73[] = {
 	{sRaichuGfx73, ARRAY_COUNT(sRaichuGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx74[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_74.4bpp");
+static const u8 sRaichuGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_74.4bpp.lz");
 static const ax_sprite sRaichuSprites74[] = {
 	{NULL, 32}, 
 	{sRaichuGfx74, ARRAY_COUNT(sRaichuGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx75[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_75.4bpp");
-static const u8 sRaichuGfx75_1[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_75_1.4bpp");
-static const u8 sRaichuGfx75_2[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_75_2.4bpp");
+static const u8 sRaichuGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_75.4bpp.lz");
+static const u8 sRaichuGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_75_1.4bpp.lz");
+static const u8 sRaichuGfx75_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_75_2.4bpp.lz");
 static const ax_sprite sRaichuSprites75[] = {
 	{sRaichuGfx75, ARRAY_COUNT(sRaichuGfx75)}, 
 	{NULL, 32}, 
@@ -2711,78 +2711,78 @@ static const ax_sprite sRaichuSprites75[] = {
 	{sRaichuGfx75_2, ARRAY_COUNT(sRaichuGfx75_2)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx76[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_76.4bpp");
+static const u8 sRaichuGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_76.4bpp.lz");
 static const ax_sprite sRaichuSprites76[] = {
 	{sRaichuGfx76, ARRAY_COUNT(sRaichuGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx77[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_77.4bpp");
+static const u8 sRaichuGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_77.4bpp.lz");
 static const ax_sprite sRaichuSprites77[] = {
 	{NULL, 32}, 
 	{sRaichuGfx77, ARRAY_COUNT(sRaichuGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx78[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_78.4bpp");
+static const u8 sRaichuGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_78.4bpp.lz");
 static const ax_sprite sRaichuSprites78[] = {
 	{sRaichuGfx78, ARRAY_COUNT(sRaichuGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx79[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_79.4bpp");
+static const u8 sRaichuGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_79.4bpp.lz");
 static const ax_sprite sRaichuSprites79[] = {
 	{sRaichuGfx79, ARRAY_COUNT(sRaichuGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx80[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_80.4bpp");
+static const u8 sRaichuGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_80.4bpp.lz");
 static const ax_sprite sRaichuSprites80[] = {
 	{sRaichuGfx80, ARRAY_COUNT(sRaichuGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx81[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_81.4bpp");
+static const u8 sRaichuGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_81.4bpp.lz");
 static const ax_sprite sRaichuSprites81[] = {
 	{sRaichuGfx81, ARRAY_COUNT(sRaichuGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx82[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_82.4bpp");
+static const u8 sRaichuGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_82.4bpp.lz");
 static const ax_sprite sRaichuSprites82[] = {
 	{sRaichuGfx82, ARRAY_COUNT(sRaichuGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx83[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_83.4bpp");
+static const u8 sRaichuGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_83.4bpp.lz");
 static const ax_sprite sRaichuSprites83[] = {
 	{sRaichuGfx83, ARRAY_COUNT(sRaichuGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx84[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_84.4bpp");
+static const u8 sRaichuGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_84.4bpp.lz");
 static const ax_sprite sRaichuSprites84[] = {
 	{sRaichuGfx84, ARRAY_COUNT(sRaichuGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx85[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_85.4bpp");
+static const u8 sRaichuGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_85.4bpp.lz");
 static const ax_sprite sRaichuSprites85[] = {
 	{sRaichuGfx85, ARRAY_COUNT(sRaichuGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx86[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_86.4bpp");
+static const u8 sRaichuGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_86.4bpp.lz");
 static const ax_sprite sRaichuSprites86[] = {
 	{sRaichuGfx86, ARRAY_COUNT(sRaichuGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx87[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_87.4bpp");
+static const u8 sRaichuGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_87.4bpp.lz");
 static const ax_sprite sRaichuSprites87[] = {
 	{sRaichuGfx87, ARRAY_COUNT(sRaichuGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx88[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_88.4bpp");
+static const u8 sRaichuGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_88.4bpp.lz");
 static const ax_sprite sRaichuSprites88[] = {
 	{sRaichuGfx88, ARRAY_COUNT(sRaichuGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx89[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_89.4bpp");
+static const u8 sRaichuGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_89.4bpp.lz");
 static const ax_sprite sRaichuSprites89[] = {
 	{sRaichuGfx89, ARRAY_COUNT(sRaichuGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sRaichuGfx90[] = INCBIN_U8("graphics/ax/mon/raichu/sprite_90.4bpp");
+static const u8 sRaichuGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/raichu/sprite_90.4bpp.lz");
 static const ax_sprite sRaichuSprites90[] = {
 	{sRaichuGfx90, ARRAY_COUNT(sRaichuGfx90)}, 
 	{NULL, 0}

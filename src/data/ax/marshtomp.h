@@ -2055,84 +2055,84 @@ static const ax_anim sMarshtompAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMarshtompGfx1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_1.4bpp");
+static const u8 sMarshtompGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_1.4bpp.lz");
 static const ax_sprite sMarshtompSprites1[] = {
 	{sMarshtompGfx1, ARRAY_COUNT(sMarshtompGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_2.4bpp");
+static const u8 sMarshtompGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites2[] = {
 	{sMarshtompGfx2, ARRAY_COUNT(sMarshtompGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx3[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_3.4bpp");
+static const u8 sMarshtompGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_3.4bpp.lz");
 static const ax_sprite sMarshtompSprites3[] = {
 	{sMarshtompGfx3, ARRAY_COUNT(sMarshtompGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx4[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_4.4bpp");
+static const u8 sMarshtompGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_4.4bpp.lz");
 static const ax_sprite sMarshtompSprites4[] = {
 	{sMarshtompGfx4, ARRAY_COUNT(sMarshtompGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx5[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_5.4bpp");
+static const u8 sMarshtompGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_5.4bpp.lz");
 static const ax_sprite sMarshtompSprites5[] = {
 	{sMarshtompGfx5, ARRAY_COUNT(sMarshtompGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx6[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_6.4bpp");
+static const u8 sMarshtompGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_6.4bpp.lz");
 static const ax_sprite sMarshtompSprites6[] = {
 	{sMarshtompGfx6, ARRAY_COUNT(sMarshtompGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx7[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_7.4bpp");
+static const u8 sMarshtompGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_7.4bpp.lz");
 static const ax_sprite sMarshtompSprites7[] = {
 	{sMarshtompGfx7, ARRAY_COUNT(sMarshtompGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx8[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_8.4bpp");
+static const u8 sMarshtompGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_8.4bpp.lz");
 static const ax_sprite sMarshtompSprites8[] = {
 	{sMarshtompGfx8, ARRAY_COUNT(sMarshtompGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx9[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_9.4bpp");
+static const u8 sMarshtompGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_9.4bpp.lz");
 static const ax_sprite sMarshtompSprites9[] = {
 	{sMarshtompGfx9, ARRAY_COUNT(sMarshtompGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx10[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_10.4bpp");
+static const u8 sMarshtompGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_10.4bpp.lz");
 static const ax_sprite sMarshtompSprites10[] = {
 	{sMarshtompGfx10, ARRAY_COUNT(sMarshtompGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx11[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_11.4bpp");
+static const u8 sMarshtompGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_11.4bpp.lz");
 static const ax_sprite sMarshtompSprites11[] = {
 	{sMarshtompGfx11, ARRAY_COUNT(sMarshtompGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx12[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_12.4bpp");
+static const u8 sMarshtompGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_12.4bpp.lz");
 static const ax_sprite sMarshtompSprites12[] = {
 	{sMarshtompGfx12, ARRAY_COUNT(sMarshtompGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx13[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_13.4bpp");
+static const u8 sMarshtompGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_13.4bpp.lz");
 static const ax_sprite sMarshtompSprites13[] = {
 	{sMarshtompGfx13, ARRAY_COUNT(sMarshtompGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx14[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_14.4bpp");
+static const u8 sMarshtompGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_14.4bpp.lz");
 static const ax_sprite sMarshtompSprites14[] = {
 	{sMarshtompGfx14, ARRAY_COUNT(sMarshtompGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx15[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_15.4bpp");
+static const u8 sMarshtompGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_15.4bpp.lz");
 static const ax_sprite sMarshtompSprites15[] = {
 	{sMarshtompGfx15, ARRAY_COUNT(sMarshtompGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx16[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_16.4bpp");
-static const u8 sMarshtompGfx16_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_16_1.4bpp");
-static const u8 sMarshtompGfx16_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_16_2.4bpp");
+static const u8 sMarshtompGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_16.4bpp.lz");
+static const u8 sMarshtompGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_16_1.4bpp.lz");
+static const u8 sMarshtompGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_16_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites16[] = {
 	{NULL, 32}, 
 	{sMarshtompGfx16, ARRAY_COUNT(sMarshtompGfx16)}, 
@@ -2143,17 +2143,17 @@ static const ax_sprite sMarshtompSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx17[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_17.4bpp");
-static const u8 sMarshtompGfx17_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_17_1.4bpp");
+static const u8 sMarshtompGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_17.4bpp.lz");
+static const u8 sMarshtompGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_17_1.4bpp.lz");
 static const ax_sprite sMarshtompSprites17[] = {
 	{sMarshtompGfx17, ARRAY_COUNT(sMarshtompGfx17)}, 
 	{NULL, 32}, 
 	{sMarshtompGfx17_1, ARRAY_COUNT(sMarshtompGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx18[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_18.4bpp");
-static const u8 sMarshtompGfx18_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_18_1.4bpp");
-static const u8 sMarshtompGfx18_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_18_2.4bpp");
+static const u8 sMarshtompGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_18.4bpp.lz");
+static const u8 sMarshtompGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_18_1.4bpp.lz");
+static const u8 sMarshtompGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_18_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites18[] = {
 	{NULL, 128}, 
 	{sMarshtompGfx18, ARRAY_COUNT(sMarshtompGfx18)}, 
@@ -2164,10 +2164,10 @@ static const ax_sprite sMarshtompSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx19[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_19.4bpp");
-static const u8 sMarshtompGfx19_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_19_1.4bpp");
-static const u8 sMarshtompGfx19_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_19_2.4bpp");
-static const u8 sMarshtompGfx19_3[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_19_3.4bpp");
+static const u8 sMarshtompGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_19.4bpp.lz");
+static const u8 sMarshtompGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_19_1.4bpp.lz");
+static const u8 sMarshtompGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_19_2.4bpp.lz");
+static const u8 sMarshtompGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_19_3.4bpp.lz");
 static const ax_sprite sMarshtompSprites19[] = {
 	{NULL, 32}, 
 	{sMarshtompGfx19, ARRAY_COUNT(sMarshtompGfx19)}, 
@@ -2180,9 +2180,9 @@ static const ax_sprite sMarshtompSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx20[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_20.4bpp");
-static const u8 sMarshtompGfx20_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_20_1.4bpp");
-static const u8 sMarshtompGfx20_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_20_2.4bpp");
+static const u8 sMarshtompGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_20.4bpp.lz");
+static const u8 sMarshtompGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_20_1.4bpp.lz");
+static const u8 sMarshtompGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_20_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites20[] = {
 	{NULL, 32}, 
 	{sMarshtompGfx20, ARRAY_COUNT(sMarshtompGfx20)}, 
@@ -2193,10 +2193,10 @@ static const ax_sprite sMarshtompSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx21[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_21.4bpp");
-static const u8 sMarshtompGfx21_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_21_1.4bpp");
-static const u8 sMarshtompGfx21_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_21_2.4bpp");
-static const u8 sMarshtompGfx21_3[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_21_3.4bpp");
+static const u8 sMarshtompGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_21.4bpp.lz");
+static const u8 sMarshtompGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_21_1.4bpp.lz");
+static const u8 sMarshtompGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_21_2.4bpp.lz");
+static const u8 sMarshtompGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_21_3.4bpp.lz");
 static const ax_sprite sMarshtompSprites21[] = {
 	{NULL, 64}, 
 	{sMarshtompGfx21, ARRAY_COUNT(sMarshtompGfx21)}, 
@@ -2209,9 +2209,9 @@ static const ax_sprite sMarshtompSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx22[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_22.4bpp");
-static const u8 sMarshtompGfx22_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_22_1.4bpp");
-static const u8 sMarshtompGfx22_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_22_2.4bpp");
+static const u8 sMarshtompGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_22.4bpp.lz");
+static const u8 sMarshtompGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_22_1.4bpp.lz");
+static const u8 sMarshtompGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_22_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites22[] = {
 	{NULL, 160}, 
 	{sMarshtompGfx22, ARRAY_COUNT(sMarshtompGfx22)}, 
@@ -2222,9 +2222,9 @@ static const ax_sprite sMarshtompSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx23[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_23.4bpp");
-static const u8 sMarshtompGfx23_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_23_1.4bpp");
-static const u8 sMarshtompGfx23_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_23_2.4bpp");
+static const u8 sMarshtompGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_23.4bpp.lz");
+static const u8 sMarshtompGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_23_1.4bpp.lz");
+static const u8 sMarshtompGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_23_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites23[] = {
 	{NULL, 160}, 
 	{sMarshtompGfx23, ARRAY_COUNT(sMarshtompGfx23)}, 
@@ -2234,9 +2234,9 @@ static const ax_sprite sMarshtompSprites23[] = {
 	{sMarshtompGfx23_2, ARRAY_COUNT(sMarshtompGfx23_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx24[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_24.4bpp");
-static const u8 sMarshtompGfx24_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_24_1.4bpp");
-static const u8 sMarshtompGfx24_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_24_2.4bpp");
+static const u8 sMarshtompGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_24.4bpp.lz");
+static const u8 sMarshtompGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_24_1.4bpp.lz");
+static const u8 sMarshtompGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_24_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites24[] = {
 	{NULL, 160}, 
 	{sMarshtompGfx24, ARRAY_COUNT(sMarshtompGfx24)}, 
@@ -2246,9 +2246,9 @@ static const ax_sprite sMarshtompSprites24[] = {
 	{sMarshtompGfx24_2, ARRAY_COUNT(sMarshtompGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx25[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_25.4bpp");
-static const u8 sMarshtompGfx25_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_25_1.4bpp");
-static const u8 sMarshtompGfx25_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_25_2.4bpp");
+static const u8 sMarshtompGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_25.4bpp.lz");
+static const u8 sMarshtompGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_25_1.4bpp.lz");
+static const u8 sMarshtompGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_25_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites25[] = {
 	{NULL, 160}, 
 	{sMarshtompGfx25, ARRAY_COUNT(sMarshtompGfx25)}, 
@@ -2259,8 +2259,8 @@ static const ax_sprite sMarshtompSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx26[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_26.4bpp");
-static const u8 sMarshtompGfx26_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_26_1.4bpp");
+static const u8 sMarshtompGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_26.4bpp.lz");
+static const u8 sMarshtompGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_26_1.4bpp.lz");
 static const ax_sprite sMarshtompSprites26[] = {
 	{NULL, 32}, 
 	{sMarshtompGfx26, ARRAY_COUNT(sMarshtompGfx26)}, 
@@ -2269,14 +2269,14 @@ static const ax_sprite sMarshtompSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx27[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_27.4bpp");
+static const u8 sMarshtompGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_27.4bpp.lz");
 static const ax_sprite sMarshtompSprites27[] = {
 	{sMarshtompGfx27, ARRAY_COUNT(sMarshtompGfx27)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx28[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_28.4bpp");
-static const u8 sMarshtompGfx28_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_28_1.4bpp");
+static const u8 sMarshtompGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_28.4bpp.lz");
+static const u8 sMarshtompGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_28_1.4bpp.lz");
 static const ax_sprite sMarshtompSprites28[] = {
 	{sMarshtompGfx28, ARRAY_COUNT(sMarshtompGfx28)}, 
 	{NULL, 32}, 
@@ -2284,9 +2284,9 @@ static const ax_sprite sMarshtompSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx29[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_29.4bpp");
-static const u8 sMarshtompGfx29_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_29_1.4bpp");
-static const u8 sMarshtompGfx29_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_29_2.4bpp");
+static const u8 sMarshtompGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_29.4bpp.lz");
+static const u8 sMarshtompGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_29_1.4bpp.lz");
+static const u8 sMarshtompGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_29_2.4bpp.lz");
 static const ax_sprite sMarshtompSprites29[] = {
 	{NULL, 128}, 
 	{sMarshtompGfx29, ARRAY_COUNT(sMarshtompGfx29)}, 
@@ -2297,10 +2297,10 @@ static const ax_sprite sMarshtompSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx30[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_30.4bpp");
-static const u8 sMarshtompGfx30_1[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_30_1.4bpp");
-static const u8 sMarshtompGfx30_2[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_30_2.4bpp");
-static const u8 sMarshtompGfx30_3[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_30_3.4bpp");
+static const u8 sMarshtompGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_30.4bpp.lz");
+static const u8 sMarshtompGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_30_1.4bpp.lz");
+static const u8 sMarshtompGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_30_2.4bpp.lz");
+static const u8 sMarshtompGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_30_3.4bpp.lz");
 static const ax_sprite sMarshtompSprites30[] = {
 	{NULL, 32}, 
 	{sMarshtompGfx30, ARRAY_COUNT(sMarshtompGfx30)}, 
@@ -2313,37 +2313,37 @@ static const ax_sprite sMarshtompSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx31[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_31.4bpp");
+static const u8 sMarshtompGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_31.4bpp.lz");
 static const ax_sprite sMarshtompSprites31[] = {
 	{sMarshtompGfx31, ARRAY_COUNT(sMarshtompGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx32[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_32.4bpp");
+static const u8 sMarshtompGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_32.4bpp.lz");
 static const ax_sprite sMarshtompSprites32[] = {
 	{sMarshtompGfx32, ARRAY_COUNT(sMarshtompGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx33[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_33.4bpp");
+static const u8 sMarshtompGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_33.4bpp.lz");
 static const ax_sprite sMarshtompSprites33[] = {
 	{sMarshtompGfx33, ARRAY_COUNT(sMarshtompGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx34[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_34.4bpp");
+static const u8 sMarshtompGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_34.4bpp.lz");
 static const ax_sprite sMarshtompSprites34[] = {
 	{sMarshtompGfx34, ARRAY_COUNT(sMarshtompGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx35[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_35.4bpp");
+static const u8 sMarshtompGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_35.4bpp.lz");
 static const ax_sprite sMarshtompSprites35[] = {
 	{sMarshtompGfx35, ARRAY_COUNT(sMarshtompGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx36[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_36.4bpp");
+static const u8 sMarshtompGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_36.4bpp.lz");
 static const ax_sprite sMarshtompSprites36[] = {
 	{sMarshtompGfx36, ARRAY_COUNT(sMarshtompGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMarshtompGfx37[] = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_37.4bpp");
+static const u8 sMarshtompGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/marshtomp/sprite_37.4bpp.lz");
 static const ax_sprite sMarshtompSprites37[] = {
 	{sMarshtompGfx37, ARRAY_COUNT(sMarshtompGfx37)}, 
 	{NULL, 0}

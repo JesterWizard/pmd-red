@@ -2604,14 +2604,14 @@ static const ax_anim sHoOhAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHoOhGfx1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_1.4bpp");
-static const u8 sHoOhGfx1_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_1.4bpp");
-static const u8 sHoOhGfx1_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_2.4bpp");
-static const u8 sHoOhGfx1_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_3.4bpp");
-static const u8 sHoOhGfx1_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_4.4bpp");
-static const u8 sHoOhGfx1_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_5.4bpp");
-static const u8 sHoOhGfx1_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_6.4bpp");
-static const u8 sHoOhGfx1_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_7.4bpp");
+static const u8 sHoOhGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_1.4bpp.lz");
+static const u8 sHoOhGfx1_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_1.4bpp.lz");
+static const u8 sHoOhGfx1_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_2.4bpp.lz");
+static const u8 sHoOhGfx1_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_3.4bpp.lz");
+static const u8 sHoOhGfx1_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_4.4bpp.lz");
+static const u8 sHoOhGfx1_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_5.4bpp.lz");
+static const u8 sHoOhGfx1_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_6.4bpp.lz");
+static const u8 sHoOhGfx1_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_1_7.4bpp.lz");
 static const ax_sprite sHoOhSprites1[] = {
 	{sHoOhGfx1, ARRAY_COUNT(sHoOhGfx1)}, 
 	{NULL, 32}, 
@@ -2631,39 +2631,39 @@ static const ax_sprite sHoOhSprites1[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_2.4bpp");
+static const u8 sHoOhGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_2.4bpp.lz");
 static const ax_sprite sHoOhSprites2[] = {
 	{sHoOhGfx2, ARRAY_COUNT(sHoOhGfx2)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_3.4bpp");
+static const u8 sHoOhGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_3.4bpp.lz");
 static const ax_sprite sHoOhSprites3[] = {
 	{NULL, 32}, 
 	{sHoOhGfx3, ARRAY_COUNT(sHoOhGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_4.4bpp");
-static const u8 sHoOhGfx4_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_4_1.4bpp");
+static const u8 sHoOhGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_4.4bpp.lz");
+static const u8 sHoOhGfx4_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_4_1.4bpp.lz");
 static const ax_sprite sHoOhSprites4[] = {
 	{sHoOhGfx4, ARRAY_COUNT(sHoOhGfx4)}, 
 	{NULL, 32}, 
 	{sHoOhGfx4_1, ARRAY_COUNT(sHoOhGfx4_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_5.4bpp");
+static const u8 sHoOhGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_5.4bpp.lz");
 static const ax_sprite sHoOhSprites5[] = {
 	{sHoOhGfx5, ARRAY_COUNT(sHoOhGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_6.4bpp");
+static const u8 sHoOhGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_6.4bpp.lz");
 static const ax_sprite sHoOhSprites6[] = {
 	{sHoOhGfx6, ARRAY_COUNT(sHoOhGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_7.4bpp");
-static const u8 sHoOhGfx7_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_7_1.4bpp");
-static const u8 sHoOhGfx7_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_7_2.4bpp");
+static const u8 sHoOhGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_7.4bpp.lz");
+static const u8 sHoOhGfx7_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_7_1.4bpp.lz");
+static const u8 sHoOhGfx7_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_7_2.4bpp.lz");
 static const ax_sprite sHoOhSprites7[] = {
 	{sHoOhGfx7, ARRAY_COUNT(sHoOhGfx7)}, 
 	{NULL, 32}, 
@@ -2673,15 +2673,15 @@ static const ax_sprite sHoOhSprites7[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx8[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8.4bpp");
-static const u8 sHoOhGfx8_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_1.4bpp");
-static const u8 sHoOhGfx8_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_2.4bpp");
-static const u8 sHoOhGfx8_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_3.4bpp");
-static const u8 sHoOhGfx8_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_4.4bpp");
-static const u8 sHoOhGfx8_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_5.4bpp");
-static const u8 sHoOhGfx8_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_6.4bpp");
-static const u8 sHoOhGfx8_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_7.4bpp");
-static const u8 sHoOhGfx8_8[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_8.4bpp");
+static const u8 sHoOhGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8.4bpp.lz");
+static const u8 sHoOhGfx8_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_1.4bpp.lz");
+static const u8 sHoOhGfx8_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_2.4bpp.lz");
+static const u8 sHoOhGfx8_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_3.4bpp.lz");
+static const u8 sHoOhGfx8_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_4.4bpp.lz");
+static const u8 sHoOhGfx8_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_5.4bpp.lz");
+static const u8 sHoOhGfx8_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_6.4bpp.lz");
+static const u8 sHoOhGfx8_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_7.4bpp.lz");
+static const u8 sHoOhGfx8_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_8_8.4bpp.lz");
 static const ax_sprite sHoOhSprites8[] = {
 	{NULL, 32}, 
 	{sHoOhGfx8, ARRAY_COUNT(sHoOhGfx8)}, 
@@ -2704,13 +2704,13 @@ static const ax_sprite sHoOhSprites8[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx9[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_9.4bpp");
-static const u8 sHoOhGfx9_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_1.4bpp");
-static const u8 sHoOhGfx9_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_2.4bpp");
-static const u8 sHoOhGfx9_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_3.4bpp");
-static const u8 sHoOhGfx9_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_4.4bpp");
-static const u8 sHoOhGfx9_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_5.4bpp");
-static const u8 sHoOhGfx9_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_6.4bpp");
+static const u8 sHoOhGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_9.4bpp.lz");
+static const u8 sHoOhGfx9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_1.4bpp.lz");
+static const u8 sHoOhGfx9_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_2.4bpp.lz");
+static const u8 sHoOhGfx9_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_3.4bpp.lz");
+static const u8 sHoOhGfx9_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_4.4bpp.lz");
+static const u8 sHoOhGfx9_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_5.4bpp.lz");
+static const u8 sHoOhGfx9_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_9_6.4bpp.lz");
 static const ax_sprite sHoOhSprites9[] = {
 	{sHoOhGfx9, ARRAY_COUNT(sHoOhGfx9)}, 
 	{NULL, 96}, 
@@ -2728,12 +2728,12 @@ static const ax_sprite sHoOhSprites9[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx10[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_10.4bpp");
-static const u8 sHoOhGfx10_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_1.4bpp");
-static const u8 sHoOhGfx10_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_2.4bpp");
-static const u8 sHoOhGfx10_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_3.4bpp");
-static const u8 sHoOhGfx10_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_4.4bpp");
-static const u8 sHoOhGfx10_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_5.4bpp");
+static const u8 sHoOhGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_10.4bpp.lz");
+static const u8 sHoOhGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_1.4bpp.lz");
+static const u8 sHoOhGfx10_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_2.4bpp.lz");
+static const u8 sHoOhGfx10_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_3.4bpp.lz");
+static const u8 sHoOhGfx10_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_4.4bpp.lz");
+static const u8 sHoOhGfx10_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_10_5.4bpp.lz");
 static const ax_sprite sHoOhSprites10[] = {
 	{NULL, 96}, 
 	{sHoOhGfx10, ARRAY_COUNT(sHoOhGfx10)}, 
@@ -2750,15 +2750,15 @@ static const ax_sprite sHoOhSprites10[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx11[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11.4bpp");
-static const u8 sHoOhGfx11_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_1.4bpp");
-static const u8 sHoOhGfx11_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_2.4bpp");
-static const u8 sHoOhGfx11_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_3.4bpp");
-static const u8 sHoOhGfx11_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_4.4bpp");
-static const u8 sHoOhGfx11_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_5.4bpp");
-static const u8 sHoOhGfx11_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_6.4bpp");
-static const u8 sHoOhGfx11_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_7.4bpp");
-static const u8 sHoOhGfx11_8[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_8.4bpp");
+static const u8 sHoOhGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11.4bpp.lz");
+static const u8 sHoOhGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_1.4bpp.lz");
+static const u8 sHoOhGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_2.4bpp.lz");
+static const u8 sHoOhGfx11_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_3.4bpp.lz");
+static const u8 sHoOhGfx11_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_4.4bpp.lz");
+static const u8 sHoOhGfx11_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_5.4bpp.lz");
+static const u8 sHoOhGfx11_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_6.4bpp.lz");
+static const u8 sHoOhGfx11_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_7.4bpp.lz");
+static const u8 sHoOhGfx11_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_11_8.4bpp.lz");
 static const ax_sprite sHoOhSprites11[] = {
 	{NULL, 96}, 
 	{sHoOhGfx11, ARRAY_COUNT(sHoOhGfx11)}, 
@@ -2781,15 +2781,15 @@ static const ax_sprite sHoOhSprites11[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx12[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12.4bpp");
-static const u8 sHoOhGfx12_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_1.4bpp");
-static const u8 sHoOhGfx12_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_2.4bpp");
-static const u8 sHoOhGfx12_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_3.4bpp");
-static const u8 sHoOhGfx12_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_4.4bpp");
-static const u8 sHoOhGfx12_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_5.4bpp");
-static const u8 sHoOhGfx12_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_6.4bpp");
-static const u8 sHoOhGfx12_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_7.4bpp");
-static const u8 sHoOhGfx12_8[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_8.4bpp");
+static const u8 sHoOhGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12.4bpp.lz");
+static const u8 sHoOhGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_1.4bpp.lz");
+static const u8 sHoOhGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_2.4bpp.lz");
+static const u8 sHoOhGfx12_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_3.4bpp.lz");
+static const u8 sHoOhGfx12_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_4.4bpp.lz");
+static const u8 sHoOhGfx12_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_5.4bpp.lz");
+static const u8 sHoOhGfx12_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_6.4bpp.lz");
+static const u8 sHoOhGfx12_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_7.4bpp.lz");
+static const u8 sHoOhGfx12_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_12_8.4bpp.lz");
 static const ax_sprite sHoOhSprites12[] = {
 	{NULL, 64}, 
 	{sHoOhGfx12, ARRAY_COUNT(sHoOhGfx12)}, 
@@ -2812,19 +2812,19 @@ static const ax_sprite sHoOhSprites12[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx13[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_13.4bpp");
-static const u8 sHoOhGfx13_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_13_1.4bpp");
+static const u8 sHoOhGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_13.4bpp.lz");
+static const u8 sHoOhGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_13_1.4bpp.lz");
 static const ax_sprite sHoOhSprites13[] = {
 	{sHoOhGfx13, ARRAY_COUNT(sHoOhGfx13)}, 
 	{NULL, 96}, 
 	{sHoOhGfx13_1, ARRAY_COUNT(sHoOhGfx13_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx14[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_14.4bpp");
-static const u8 sHoOhGfx14_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_14_1.4bpp");
-static const u8 sHoOhGfx14_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_14_2.4bpp");
-static const u8 sHoOhGfx14_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_14_3.4bpp");
-static const u8 sHoOhGfx14_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_14_4.4bpp");
+static const u8 sHoOhGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_14.4bpp.lz");
+static const u8 sHoOhGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_14_1.4bpp.lz");
+static const u8 sHoOhGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_14_2.4bpp.lz");
+static const u8 sHoOhGfx14_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_14_3.4bpp.lz");
+static const u8 sHoOhGfx14_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_14_4.4bpp.lz");
 static const ax_sprite sHoOhSprites14[] = {
 	{NULL, 64}, 
 	{sHoOhGfx14, ARRAY_COUNT(sHoOhGfx14)}, 
@@ -2838,16 +2838,16 @@ static const ax_sprite sHoOhSprites14[] = {
 	{sHoOhGfx14_4, ARRAY_COUNT(sHoOhGfx14_4)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx15[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_15.4bpp");
-static const u8 sHoOhGfx15_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_15_1.4bpp");
+static const u8 sHoOhGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_15.4bpp.lz");
+static const u8 sHoOhGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_15_1.4bpp.lz");
 static const ax_sprite sHoOhSprites15[] = {
 	{sHoOhGfx15, ARRAY_COUNT(sHoOhGfx15)}, 
 	{NULL, 64}, 
 	{sHoOhGfx15_1, ARRAY_COUNT(sHoOhGfx15_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx16[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_16.4bpp");
-static const u8 sHoOhGfx16_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_16_1.4bpp");
+static const u8 sHoOhGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_16.4bpp.lz");
+static const u8 sHoOhGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_16_1.4bpp.lz");
 static const ax_sprite sHoOhSprites16[] = {
 	{NULL, 160}, 
 	{sHoOhGfx16, ARRAY_COUNT(sHoOhGfx16)}, 
@@ -2856,9 +2856,9 @@ static const ax_sprite sHoOhSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx17[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_17.4bpp");
-static const u8 sHoOhGfx17_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_17_1.4bpp");
-static const u8 sHoOhGfx17_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_17_2.4bpp");
+static const u8 sHoOhGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_17.4bpp.lz");
+static const u8 sHoOhGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_17_1.4bpp.lz");
+static const u8 sHoOhGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_17_2.4bpp.lz");
 static const ax_sprite sHoOhSprites17[] = {
 	{NULL, 32}, 
 	{sHoOhGfx17, ARRAY_COUNT(sHoOhGfx17)}, 
@@ -2868,22 +2868,22 @@ static const ax_sprite sHoOhSprites17[] = {
 	{sHoOhGfx17_2, ARRAY_COUNT(sHoOhGfx17_2)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx18[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_18.4bpp");
-static const u8 sHoOhGfx18_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_18_1.4bpp");
+static const u8 sHoOhGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_18.4bpp.lz");
+static const u8 sHoOhGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_18_1.4bpp.lz");
 static const ax_sprite sHoOhSprites18[] = {
 	{sHoOhGfx18, ARRAY_COUNT(sHoOhGfx18)}, 
 	{NULL, 32}, 
 	{sHoOhGfx18_1, ARRAY_COUNT(sHoOhGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx19[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_19.4bpp");
-static const u8 sHoOhGfx19_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_1.4bpp");
-static const u8 sHoOhGfx19_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_2.4bpp");
-static const u8 sHoOhGfx19_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_3.4bpp");
-static const u8 sHoOhGfx19_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_4.4bpp");
-static const u8 sHoOhGfx19_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_5.4bpp");
-static const u8 sHoOhGfx19_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_6.4bpp");
-static const u8 sHoOhGfx19_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_7.4bpp");
+static const u8 sHoOhGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_19.4bpp.lz");
+static const u8 sHoOhGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_1.4bpp.lz");
+static const u8 sHoOhGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_2.4bpp.lz");
+static const u8 sHoOhGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_3.4bpp.lz");
+static const u8 sHoOhGfx19_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_4.4bpp.lz");
+static const u8 sHoOhGfx19_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_5.4bpp.lz");
+static const u8 sHoOhGfx19_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_6.4bpp.lz");
+static const u8 sHoOhGfx19_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_19_7.4bpp.lz");
 static const ax_sprite sHoOhSprites19[] = {
 	{NULL, 32}, 
 	{sHoOhGfx19, ARRAY_COUNT(sHoOhGfx19)}, 
@@ -2904,13 +2904,13 @@ static const ax_sprite sHoOhSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx20[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_20.4bpp");
+static const u8 sHoOhGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_20.4bpp.lz");
 static const ax_sprite sHoOhSprites20[] = {
 	{sHoOhGfx20, ARRAY_COUNT(sHoOhGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx21[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_21.4bpp");
-static const u8 sHoOhGfx21_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_21_1.4bpp");
+static const u8 sHoOhGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_21.4bpp.lz");
+static const u8 sHoOhGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_21_1.4bpp.lz");
 static const ax_sprite sHoOhSprites21[] = {
 	{NULL, 192}, 
 	{sHoOhGfx21, ARRAY_COUNT(sHoOhGfx21)}, 
@@ -2918,15 +2918,15 @@ static const ax_sprite sHoOhSprites21[] = {
 	{sHoOhGfx21_1, ARRAY_COUNT(sHoOhGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx22[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_22.4bpp");
+static const u8 sHoOhGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_22.4bpp.lz");
 static const ax_sprite sHoOhSprites22[] = {
 	{NULL, 64}, 
 	{sHoOhGfx22, ARRAY_COUNT(sHoOhGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx23[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_23.4bpp");
-static const u8 sHoOhGfx23_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_23_1.4bpp");
-static const u8 sHoOhGfx23_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_23_2.4bpp");
+static const u8 sHoOhGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_23.4bpp.lz");
+static const u8 sHoOhGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_23_1.4bpp.lz");
+static const u8 sHoOhGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_23_2.4bpp.lz");
 static const ax_sprite sHoOhSprites23[] = {
 	{sHoOhGfx23, ARRAY_COUNT(sHoOhGfx23)}, 
 	{NULL, 96}, 
@@ -2936,13 +2936,13 @@ static const ax_sprite sHoOhSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx24[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_24.4bpp");
+static const u8 sHoOhGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_24.4bpp.lz");
 static const ax_sprite sHoOhSprites24[] = {
 	{sHoOhGfx24, ARRAY_COUNT(sHoOhGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx25[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_25.4bpp");
-static const u8 sHoOhGfx25_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_25_1.4bpp");
+static const u8 sHoOhGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_25.4bpp.lz");
+static const u8 sHoOhGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_25_1.4bpp.lz");
 static const ax_sprite sHoOhSprites25[] = {
 	{NULL, 64}, 
 	{sHoOhGfx25, ARRAY_COUNT(sHoOhGfx25)}, 
@@ -2950,11 +2950,11 @@ static const ax_sprite sHoOhSprites25[] = {
 	{sHoOhGfx25_1, ARRAY_COUNT(sHoOhGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx26[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_26.4bpp");
-static const u8 sHoOhGfx26_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_26_1.4bpp");
-static const u8 sHoOhGfx26_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_26_2.4bpp");
-static const u8 sHoOhGfx26_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_26_3.4bpp");
-static const u8 sHoOhGfx26_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_26_4.4bpp");
+static const u8 sHoOhGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_26.4bpp.lz");
+static const u8 sHoOhGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_26_1.4bpp.lz");
+static const u8 sHoOhGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_26_2.4bpp.lz");
+static const u8 sHoOhGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_26_3.4bpp.lz");
+static const u8 sHoOhGfx26_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_26_4.4bpp.lz");
 static const ax_sprite sHoOhSprites26[] = {
 	{NULL, 32}, 
 	{sHoOhGfx26, ARRAY_COUNT(sHoOhGfx26)}, 
@@ -2969,15 +2969,15 @@ static const ax_sprite sHoOhSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx27[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27.4bpp");
-static const u8 sHoOhGfx27_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_1.4bpp");
-static const u8 sHoOhGfx27_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_2.4bpp");
-static const u8 sHoOhGfx27_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_3.4bpp");
-static const u8 sHoOhGfx27_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_4.4bpp");
-static const u8 sHoOhGfx27_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_5.4bpp");
-static const u8 sHoOhGfx27_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_6.4bpp");
-static const u8 sHoOhGfx27_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_7.4bpp");
-static const u8 sHoOhGfx27_8[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_8.4bpp");
+static const u8 sHoOhGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27.4bpp.lz");
+static const u8 sHoOhGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_1.4bpp.lz");
+static const u8 sHoOhGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_2.4bpp.lz");
+static const u8 sHoOhGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_3.4bpp.lz");
+static const u8 sHoOhGfx27_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_4.4bpp.lz");
+static const u8 sHoOhGfx27_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_5.4bpp.lz");
+static const u8 sHoOhGfx27_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_6.4bpp.lz");
+static const u8 sHoOhGfx27_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_7.4bpp.lz");
+static const u8 sHoOhGfx27_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_27_8.4bpp.lz");
 static const ax_sprite sHoOhSprites27[] = {
 	{sHoOhGfx27, ARRAY_COUNT(sHoOhGfx27)}, 
 	{NULL, 32}, 
@@ -2999,35 +2999,35 @@ static const ax_sprite sHoOhSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx28[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_28.4bpp");
+static const u8 sHoOhGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_28.4bpp.lz");
 static const ax_sprite sHoOhSprites28[] = {
 	{sHoOhGfx28, ARRAY_COUNT(sHoOhGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx29[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_29.4bpp");
+static const u8 sHoOhGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_29.4bpp.lz");
 static const ax_sprite sHoOhSprites29[] = {
 	{sHoOhGfx29, ARRAY_COUNT(sHoOhGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx30[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_30.4bpp");
-static const u8 sHoOhGfx30_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_30_1.4bpp");
+static const u8 sHoOhGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_30.4bpp.lz");
+static const u8 sHoOhGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_30_1.4bpp.lz");
 static const ax_sprite sHoOhSprites30[] = {
 	{sHoOhGfx30, ARRAY_COUNT(sHoOhGfx30)}, 
 	{NULL, 32}, 
 	{sHoOhGfx30_1, ARRAY_COUNT(sHoOhGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx31[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_31.4bpp");
-static const u8 sHoOhGfx31_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_31_1.4bpp");
+static const u8 sHoOhGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_31.4bpp.lz");
+static const u8 sHoOhGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_31_1.4bpp.lz");
 static const ax_sprite sHoOhSprites31[] = {
 	{sHoOhGfx31, ARRAY_COUNT(sHoOhGfx31)}, 
 	{NULL, 32}, 
 	{sHoOhGfx31_1, ARRAY_COUNT(sHoOhGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx32[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_32.4bpp");
-static const u8 sHoOhGfx32_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_32_1.4bpp");
-static const u8 sHoOhGfx32_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_32_2.4bpp");
+static const u8 sHoOhGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_32.4bpp.lz");
+static const u8 sHoOhGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_32_1.4bpp.lz");
+static const u8 sHoOhGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_32_2.4bpp.lz");
 static const ax_sprite sHoOhSprites32[] = {
 	{sHoOhGfx32, ARRAY_COUNT(sHoOhGfx32)}, 
 	{NULL, 32}, 
@@ -3037,21 +3037,21 @@ static const ax_sprite sHoOhSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx33[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_33.4bpp");
+static const u8 sHoOhGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_33.4bpp.lz");
 static const ax_sprite sHoOhSprites33[] = {
 	{sHoOhGfx33, ARRAY_COUNT(sHoOhGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx34[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_34.4bpp");
-static const u8 sHoOhGfx34_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_34_1.4bpp");
+static const u8 sHoOhGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_34.4bpp.lz");
+static const u8 sHoOhGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_34_1.4bpp.lz");
 static const ax_sprite sHoOhSprites34[] = {
 	{sHoOhGfx34, ARRAY_COUNT(sHoOhGfx34)}, 
 	{NULL, 32}, 
 	{sHoOhGfx34_1, ARRAY_COUNT(sHoOhGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx35[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_35.4bpp");
-static const u8 sHoOhGfx35_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_35_1.4bpp");
+static const u8 sHoOhGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_35.4bpp.lz");
+static const u8 sHoOhGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_35_1.4bpp.lz");
 static const ax_sprite sHoOhSprites35[] = {
 	{NULL, 64}, 
 	{sHoOhGfx35, ARRAY_COUNT(sHoOhGfx35)}, 
@@ -3059,10 +3059,10 @@ static const ax_sprite sHoOhSprites35[] = {
 	{sHoOhGfx35_1, ARRAY_COUNT(sHoOhGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx36[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_36.4bpp");
-static const u8 sHoOhGfx36_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_36_1.4bpp");
-static const u8 sHoOhGfx36_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_36_2.4bpp");
-static const u8 sHoOhGfx36_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_36_3.4bpp");
+static const u8 sHoOhGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_36.4bpp.lz");
+static const u8 sHoOhGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_36_1.4bpp.lz");
+static const u8 sHoOhGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_36_2.4bpp.lz");
+static const u8 sHoOhGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_36_3.4bpp.lz");
 static const ax_sprite sHoOhSprites36[] = {
 	{sHoOhGfx36, ARRAY_COUNT(sHoOhGfx36)}, 
 	{NULL, 64}, 
@@ -3074,9 +3074,9 @@ static const ax_sprite sHoOhSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx37[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_37.4bpp");
-static const u8 sHoOhGfx37_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_37_1.4bpp");
-static const u8 sHoOhGfx37_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_37_2.4bpp");
+static const u8 sHoOhGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_37.4bpp.lz");
+static const u8 sHoOhGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_37_1.4bpp.lz");
+static const u8 sHoOhGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_37_2.4bpp.lz");
 static const ax_sprite sHoOhSprites37[] = {
 	{sHoOhGfx37, ARRAY_COUNT(sHoOhGfx37)}, 
 	{NULL, 32}, 
@@ -3086,14 +3086,14 @@ static const ax_sprite sHoOhSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx38[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_38.4bpp");
+static const u8 sHoOhGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_38.4bpp.lz");
 static const ax_sprite sHoOhSprites38[] = {
 	{sHoOhGfx38, ARRAY_COUNT(sHoOhGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx39[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_39.4bpp");
-static const u8 sHoOhGfx39_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_39_1.4bpp");
-static const u8 sHoOhGfx39_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_39_2.4bpp");
+static const u8 sHoOhGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_39.4bpp.lz");
+static const u8 sHoOhGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_39_1.4bpp.lz");
+static const u8 sHoOhGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_39_2.4bpp.lz");
 static const ax_sprite sHoOhSprites39[] = {
 	{NULL, 96}, 
 	{sHoOhGfx39, ARRAY_COUNT(sHoOhGfx39)}, 
@@ -3103,34 +3103,34 @@ static const ax_sprite sHoOhSprites39[] = {
 	{sHoOhGfx39_2, ARRAY_COUNT(sHoOhGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx40[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_40.4bpp");
+static const u8 sHoOhGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_40.4bpp.lz");
 static const ax_sprite sHoOhSprites40[] = {
 	{NULL, 32}, 
 	{sHoOhGfx40, ARRAY_COUNT(sHoOhGfx40)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx41[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_41.4bpp");
-static const u8 sHoOhGfx41_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_41_1.4bpp");
+static const u8 sHoOhGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_41.4bpp.lz");
+static const u8 sHoOhGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_41_1.4bpp.lz");
 static const ax_sprite sHoOhSprites41[] = {
 	{sHoOhGfx41, ARRAY_COUNT(sHoOhGfx41)}, 
 	{NULL, 96}, 
 	{sHoOhGfx41_1, ARRAY_COUNT(sHoOhGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx42[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_42.4bpp");
+static const u8 sHoOhGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_42.4bpp.lz");
 static const ax_sprite sHoOhSprites42[] = {
 	{sHoOhGfx42, ARRAY_COUNT(sHoOhGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx43[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_43.4bpp");
+static const u8 sHoOhGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_43.4bpp.lz");
 static const ax_sprite sHoOhSprites43[] = {
 	{sHoOhGfx43, ARRAY_COUNT(sHoOhGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx44[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_44.4bpp");
-static const u8 sHoOhGfx44_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_44_1.4bpp");
-static const u8 sHoOhGfx44_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_44_2.4bpp");
+static const u8 sHoOhGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_44.4bpp.lz");
+static const u8 sHoOhGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_44_1.4bpp.lz");
+static const u8 sHoOhGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_44_2.4bpp.lz");
 static const ax_sprite sHoOhSprites44[] = {
 	{NULL, 96}, 
 	{sHoOhGfx44, ARRAY_COUNT(sHoOhGfx44)}, 
@@ -3140,14 +3140,14 @@ static const ax_sprite sHoOhSprites44[] = {
 	{sHoOhGfx44_2, ARRAY_COUNT(sHoOhGfx44_2)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx45[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_45.4bpp");
+static const u8 sHoOhGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_45.4bpp.lz");
 static const ax_sprite sHoOhSprites45[] = {
 	{sHoOhGfx45, ARRAY_COUNT(sHoOhGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx46[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_46.4bpp");
-static const u8 sHoOhGfx46_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_46_1.4bpp");
-static const u8 sHoOhGfx46_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_46_2.4bpp");
+static const u8 sHoOhGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_46.4bpp.lz");
+static const u8 sHoOhGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_46_1.4bpp.lz");
+static const u8 sHoOhGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_46_2.4bpp.lz");
 static const ax_sprite sHoOhSprites46[] = {
 	{NULL, 64}, 
 	{sHoOhGfx46, ARRAY_COUNT(sHoOhGfx46)}, 
@@ -3157,21 +3157,21 @@ static const ax_sprite sHoOhSprites46[] = {
 	{sHoOhGfx46_2, ARRAY_COUNT(sHoOhGfx46_2)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx47[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_47.4bpp");
+static const u8 sHoOhGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_47.4bpp.lz");
 static const ax_sprite sHoOhSprites47[] = {
 	{sHoOhGfx47, ARRAY_COUNT(sHoOhGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx48[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_48.4bpp");
+static const u8 sHoOhGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_48.4bpp.lz");
 static const ax_sprite sHoOhSprites48[] = {
 	{sHoOhGfx48, ARRAY_COUNT(sHoOhGfx48)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx49[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_49.4bpp");
-static const u8 sHoOhGfx49_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_49_1.4bpp");
-static const u8 sHoOhGfx49_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_49_2.4bpp");
-static const u8 sHoOhGfx49_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_49_3.4bpp");
+static const u8 sHoOhGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_49.4bpp.lz");
+static const u8 sHoOhGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_49_1.4bpp.lz");
+static const u8 sHoOhGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_49_2.4bpp.lz");
+static const u8 sHoOhGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_49_3.4bpp.lz");
 static const ax_sprite sHoOhSprites49[] = {
 	{NULL, 160}, 
 	{sHoOhGfx49, ARRAY_COUNT(sHoOhGfx49)}, 
@@ -3184,20 +3184,20 @@ static const ax_sprite sHoOhSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx50[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_50.4bpp");
+static const u8 sHoOhGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_50.4bpp.lz");
 static const ax_sprite sHoOhSprites50[] = {
 	{sHoOhGfx50, ARRAY_COUNT(sHoOhGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx51[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_51.4bpp");
+static const u8 sHoOhGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_51.4bpp.lz");
 static const ax_sprite sHoOhSprites51[] = {
 	{sHoOhGfx51, ARRAY_COUNT(sHoOhGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx52[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_52.4bpp");
-static const u8 sHoOhGfx52_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_52_1.4bpp");
-static const u8 sHoOhGfx52_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_52_2.4bpp");
-static const u8 sHoOhGfx52_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_52_3.4bpp");
+static const u8 sHoOhGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_52.4bpp.lz");
+static const u8 sHoOhGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_52_1.4bpp.lz");
+static const u8 sHoOhGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_52_2.4bpp.lz");
+static const u8 sHoOhGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_52_3.4bpp.lz");
 static const ax_sprite sHoOhSprites52[] = {
 	{NULL, 32}, 
 	{sHoOhGfx52, ARRAY_COUNT(sHoOhGfx52)}, 
@@ -3210,13 +3210,13 @@ static const ax_sprite sHoOhSprites52[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx53[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_53.4bpp");
+static const u8 sHoOhGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_53.4bpp.lz");
 static const ax_sprite sHoOhSprites53[] = {
 	{sHoOhGfx53, ARRAY_COUNT(sHoOhGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx54[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_54.4bpp");
-static const u8 sHoOhGfx54_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_54_1.4bpp");
+static const u8 sHoOhGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_54.4bpp.lz");
+static const u8 sHoOhGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_54_1.4bpp.lz");
 static const ax_sprite sHoOhSprites54[] = {
 	{sHoOhGfx54, ARRAY_COUNT(sHoOhGfx54)}, 
 	{NULL, 32}, 
@@ -3224,20 +3224,20 @@ static const ax_sprite sHoOhSprites54[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx55[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_55.4bpp");
+static const u8 sHoOhGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_55.4bpp.lz");
 static const ax_sprite sHoOhSprites55[] = {
 	{sHoOhGfx55, ARRAY_COUNT(sHoOhGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx56[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_56.4bpp");
+static const u8 sHoOhGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_56.4bpp.lz");
 static const ax_sprite sHoOhSprites56[] = {
 	{sHoOhGfx56, ARRAY_COUNT(sHoOhGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx57[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_57.4bpp");
-static const u8 sHoOhGfx57_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_57_1.4bpp");
-static const u8 sHoOhGfx57_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_57_2.4bpp");
-static const u8 sHoOhGfx57_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_57_3.4bpp");
+static const u8 sHoOhGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_57.4bpp.lz");
+static const u8 sHoOhGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_57_1.4bpp.lz");
+static const u8 sHoOhGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_57_2.4bpp.lz");
+static const u8 sHoOhGfx57_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_57_3.4bpp.lz");
 static const ax_sprite sHoOhSprites57[] = {
 	{sHoOhGfx57, ARRAY_COUNT(sHoOhGfx57)}, 
 	{NULL, 64}, 
@@ -3249,18 +3249,18 @@ static const ax_sprite sHoOhSprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx58[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_58.4bpp");
+static const u8 sHoOhGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_58.4bpp.lz");
 static const ax_sprite sHoOhSprites58[] = {
 	{sHoOhGfx58, ARRAY_COUNT(sHoOhGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx59[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_59.4bpp");
-static const u8 sHoOhGfx59_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_1.4bpp");
-static const u8 sHoOhGfx59_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_2.4bpp");
-static const u8 sHoOhGfx59_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_3.4bpp");
-static const u8 sHoOhGfx59_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_4.4bpp");
-static const u8 sHoOhGfx59_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_5.4bpp");
-static const u8 sHoOhGfx59_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_6.4bpp");
+static const u8 sHoOhGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_59.4bpp.lz");
+static const u8 sHoOhGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_1.4bpp.lz");
+static const u8 sHoOhGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_2.4bpp.lz");
+static const u8 sHoOhGfx59_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_3.4bpp.lz");
+static const u8 sHoOhGfx59_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_4.4bpp.lz");
+static const u8 sHoOhGfx59_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_5.4bpp.lz");
+static const u8 sHoOhGfx59_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_59_6.4bpp.lz");
 static const ax_sprite sHoOhSprites59[] = {
 	{sHoOhGfx59, ARRAY_COUNT(sHoOhGfx59)}, 
 	{NULL, 96}, 
@@ -3278,10 +3278,10 @@ static const ax_sprite sHoOhSprites59[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx60[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_60.4bpp");
-static const u8 sHoOhGfx60_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_60_1.4bpp");
-static const u8 sHoOhGfx60_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_60_2.4bpp");
-static const u8 sHoOhGfx60_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_60_3.4bpp");
+static const u8 sHoOhGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_60.4bpp.lz");
+static const u8 sHoOhGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_60_1.4bpp.lz");
+static const u8 sHoOhGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_60_2.4bpp.lz");
+static const u8 sHoOhGfx60_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_60_3.4bpp.lz");
 static const ax_sprite sHoOhSprites60[] = {
 	{NULL, 32}, 
 	{sHoOhGfx60, ARRAY_COUNT(sHoOhGfx60)}, 
@@ -3294,29 +3294,29 @@ static const ax_sprite sHoOhSprites60[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx61[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_61.4bpp");
-static const u8 sHoOhGfx61_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_61_1.4bpp");
+static const u8 sHoOhGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_61.4bpp.lz");
+static const u8 sHoOhGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_61_1.4bpp.lz");
 static const ax_sprite sHoOhSprites61[] = {
 	{sHoOhGfx61, ARRAY_COUNT(sHoOhGfx61)}, 
 	{NULL, 32}, 
 	{sHoOhGfx61_1, ARRAY_COUNT(sHoOhGfx61_1)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx62[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_62.4bpp");
+static const u8 sHoOhGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_62.4bpp.lz");
 static const ax_sprite sHoOhSprites62[] = {
 	{NULL, 32}, 
 	{sHoOhGfx62, ARRAY_COUNT(sHoOhGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx63[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63.4bpp");
-static const u8 sHoOhGfx63_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_1.4bpp");
-static const u8 sHoOhGfx63_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_2.4bpp");
-static const u8 sHoOhGfx63_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_3.4bpp");
-static const u8 sHoOhGfx63_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_4.4bpp");
-static const u8 sHoOhGfx63_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_5.4bpp");
-static const u8 sHoOhGfx63_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_6.4bpp");
-static const u8 sHoOhGfx63_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_7.4bpp");
-static const u8 sHoOhGfx63_8[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_8.4bpp");
+static const u8 sHoOhGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63.4bpp.lz");
+static const u8 sHoOhGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_1.4bpp.lz");
+static const u8 sHoOhGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_2.4bpp.lz");
+static const u8 sHoOhGfx63_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_3.4bpp.lz");
+static const u8 sHoOhGfx63_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_4.4bpp.lz");
+static const u8 sHoOhGfx63_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_5.4bpp.lz");
+static const u8 sHoOhGfx63_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_6.4bpp.lz");
+static const u8 sHoOhGfx63_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_7.4bpp.lz");
+static const u8 sHoOhGfx63_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_63_8.4bpp.lz");
 static const ax_sprite sHoOhSprites63[] = {
 	{NULL, 64}, 
 	{sHoOhGfx63, ARRAY_COUNT(sHoOhGfx63)}, 
@@ -3339,14 +3339,14 @@ static const ax_sprite sHoOhSprites63[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx64[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_64.4bpp");
-static const u8 sHoOhGfx64_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_1.4bpp");
-static const u8 sHoOhGfx64_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_2.4bpp");
-static const u8 sHoOhGfx64_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_3.4bpp");
-static const u8 sHoOhGfx64_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_4.4bpp");
-static const u8 sHoOhGfx64_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_5.4bpp");
-static const u8 sHoOhGfx64_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_6.4bpp");
-static const u8 sHoOhGfx64_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_7.4bpp");
+static const u8 sHoOhGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_64.4bpp.lz");
+static const u8 sHoOhGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_1.4bpp.lz");
+static const u8 sHoOhGfx64_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_2.4bpp.lz");
+static const u8 sHoOhGfx64_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_3.4bpp.lz");
+static const u8 sHoOhGfx64_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_4.4bpp.lz");
+static const u8 sHoOhGfx64_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_5.4bpp.lz");
+static const u8 sHoOhGfx64_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_6.4bpp.lz");
+static const u8 sHoOhGfx64_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_64_7.4bpp.lz");
 static const ax_sprite sHoOhSprites64[] = {
 	{NULL, 96}, 
 	{sHoOhGfx64, ARRAY_COUNT(sHoOhGfx64)}, 
@@ -3366,14 +3366,14 @@ static const ax_sprite sHoOhSprites64[] = {
 	{sHoOhGfx64_7, ARRAY_COUNT(sHoOhGfx64_7)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx65[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_65.4bpp");
-static const u8 sHoOhGfx65_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_1.4bpp");
-static const u8 sHoOhGfx65_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_2.4bpp");
-static const u8 sHoOhGfx65_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_3.4bpp");
-static const u8 sHoOhGfx65_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_4.4bpp");
-static const u8 sHoOhGfx65_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_5.4bpp");
-static const u8 sHoOhGfx65_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_6.4bpp");
-static const u8 sHoOhGfx65_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_7.4bpp");
+static const u8 sHoOhGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_65.4bpp.lz");
+static const u8 sHoOhGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_1.4bpp.lz");
+static const u8 sHoOhGfx65_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_2.4bpp.lz");
+static const u8 sHoOhGfx65_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_3.4bpp.lz");
+static const u8 sHoOhGfx65_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_4.4bpp.lz");
+static const u8 sHoOhGfx65_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_5.4bpp.lz");
+static const u8 sHoOhGfx65_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_6.4bpp.lz");
+static const u8 sHoOhGfx65_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_65_7.4bpp.lz");
 static const ax_sprite sHoOhSprites65[] = {
 	{NULL, 32}, 
 	{sHoOhGfx65, ARRAY_COUNT(sHoOhGfx65)}, 
@@ -3394,16 +3394,16 @@ static const ax_sprite sHoOhSprites65[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx66[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66.4bpp");
-static const u8 sHoOhGfx66_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_1.4bpp");
-static const u8 sHoOhGfx66_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_2.4bpp");
-static const u8 sHoOhGfx66_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_3.4bpp");
-static const u8 sHoOhGfx66_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_4.4bpp");
-static const u8 sHoOhGfx66_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_5.4bpp");
-static const u8 sHoOhGfx66_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_6.4bpp");
-static const u8 sHoOhGfx66_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_7.4bpp");
-static const u8 sHoOhGfx66_8[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_8.4bpp");
-static const u8 sHoOhGfx66_9[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_9.4bpp");
+static const u8 sHoOhGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66.4bpp.lz");
+static const u8 sHoOhGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_1.4bpp.lz");
+static const u8 sHoOhGfx66_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_2.4bpp.lz");
+static const u8 sHoOhGfx66_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_3.4bpp.lz");
+static const u8 sHoOhGfx66_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_4.4bpp.lz");
+static const u8 sHoOhGfx66_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_5.4bpp.lz");
+static const u8 sHoOhGfx66_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_6.4bpp.lz");
+static const u8 sHoOhGfx66_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_7.4bpp.lz");
+static const u8 sHoOhGfx66_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_8.4bpp.lz");
+static const u8 sHoOhGfx66_9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_66_9.4bpp.lz");
 static const ax_sprite sHoOhSprites66[] = {
 	{sHoOhGfx66, ARRAY_COUNT(sHoOhGfx66)}, 
 	{NULL, 32}, 
@@ -3427,15 +3427,15 @@ static const ax_sprite sHoOhSprites66[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx67[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67.4bpp");
-static const u8 sHoOhGfx67_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_1.4bpp");
-static const u8 sHoOhGfx67_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_2.4bpp");
-static const u8 sHoOhGfx67_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_3.4bpp");
-static const u8 sHoOhGfx67_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_4.4bpp");
-static const u8 sHoOhGfx67_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_5.4bpp");
-static const u8 sHoOhGfx67_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_6.4bpp");
-static const u8 sHoOhGfx67_7[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_7.4bpp");
-static const u8 sHoOhGfx67_8[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_8.4bpp");
+static const u8 sHoOhGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67.4bpp.lz");
+static const u8 sHoOhGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_1.4bpp.lz");
+static const u8 sHoOhGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_2.4bpp.lz");
+static const u8 sHoOhGfx67_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_3.4bpp.lz");
+static const u8 sHoOhGfx67_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_4.4bpp.lz");
+static const u8 sHoOhGfx67_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_5.4bpp.lz");
+static const u8 sHoOhGfx67_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_6.4bpp.lz");
+static const u8 sHoOhGfx67_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_7.4bpp.lz");
+static const u8 sHoOhGfx67_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_67_8.4bpp.lz");
 static const ax_sprite sHoOhSprites67[] = {
 	{sHoOhGfx67, ARRAY_COUNT(sHoOhGfx67)}, 
 	{NULL, 32}, 
@@ -3457,75 +3457,75 @@ static const ax_sprite sHoOhSprites67[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx68[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_68.4bpp");
+static const u8 sHoOhGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_68.4bpp.lz");
 static const ax_sprite sHoOhSprites68[] = {
 	{sHoOhGfx68, ARRAY_COUNT(sHoOhGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx69[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_69.4bpp");
+static const u8 sHoOhGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_69.4bpp.lz");
 static const ax_sprite sHoOhSprites69[] = {
 	{NULL, 32}, 
 	{sHoOhGfx69, ARRAY_COUNT(sHoOhGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx70[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_70.4bpp");
+static const u8 sHoOhGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_70.4bpp.lz");
 static const ax_sprite sHoOhSprites70[] = {
 	{NULL, 32}, 
 	{sHoOhGfx70, ARRAY_COUNT(sHoOhGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx71[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_71.4bpp");
+static const u8 sHoOhGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_71.4bpp.lz");
 static const ax_sprite sHoOhSprites71[] = {
 	{sHoOhGfx71, ARRAY_COUNT(sHoOhGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx72[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_72.4bpp");
+static const u8 sHoOhGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_72.4bpp.lz");
 static const ax_sprite sHoOhSprites72[] = {
 	{sHoOhGfx72, ARRAY_COUNT(sHoOhGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx73[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_73.4bpp");
+static const u8 sHoOhGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_73.4bpp.lz");
 static const ax_sprite sHoOhSprites73[] = {
 	{sHoOhGfx73, ARRAY_COUNT(sHoOhGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx74[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_74.4bpp");
+static const u8 sHoOhGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_74.4bpp.lz");
 static const ax_sprite sHoOhSprites74[] = {
 	{sHoOhGfx74, ARRAY_COUNT(sHoOhGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx75[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_75.4bpp");
+static const u8 sHoOhGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_75.4bpp.lz");
 static const ax_sprite sHoOhSprites75[] = {
 	{NULL, 32}, 
 	{sHoOhGfx75, ARRAY_COUNT(sHoOhGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx76[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_76.4bpp");
+static const u8 sHoOhGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_76.4bpp.lz");
 static const ax_sprite sHoOhSprites76[] = {
 	{sHoOhGfx76, ARRAY_COUNT(sHoOhGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx77[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_77.4bpp");
+static const u8 sHoOhGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_77.4bpp.lz");
 static const ax_sprite sHoOhSprites77[] = {
 	{sHoOhGfx77, ARRAY_COUNT(sHoOhGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx78[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_78.4bpp");
+static const u8 sHoOhGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_78.4bpp.lz");
 static const ax_sprite sHoOhSprites78[] = {
 	{sHoOhGfx78, ARRAY_COUNT(sHoOhGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx79[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_79.4bpp");
+static const u8 sHoOhGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_79.4bpp.lz");
 static const ax_sprite sHoOhSprites79[] = {
 	{sHoOhGfx79, ARRAY_COUNT(sHoOhGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx80[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_80.4bpp");
-static const u8 sHoOhGfx80_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_1.4bpp");
-static const u8 sHoOhGfx80_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_2.4bpp");
-static const u8 sHoOhGfx80_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_3.4bpp");
-static const u8 sHoOhGfx80_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_4.4bpp");
-static const u8 sHoOhGfx80_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_5.4bpp");
+static const u8 sHoOhGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_80.4bpp.lz");
+static const u8 sHoOhGfx80_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_1.4bpp.lz");
+static const u8 sHoOhGfx80_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_2.4bpp.lz");
+static const u8 sHoOhGfx80_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_3.4bpp.lz");
+static const u8 sHoOhGfx80_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_4.4bpp.lz");
+static const u8 sHoOhGfx80_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_80_5.4bpp.lz");
 static const ax_sprite sHoOhSprites80[] = {
 	{sHoOhGfx80, ARRAY_COUNT(sHoOhGfx80)}, 
 	{NULL, 32}, 
@@ -3541,12 +3541,12 @@ static const ax_sprite sHoOhSprites80[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx81[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_81.4bpp");
-static const u8 sHoOhGfx81_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_1.4bpp");
-static const u8 sHoOhGfx81_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_2.4bpp");
-static const u8 sHoOhGfx81_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_3.4bpp");
-static const u8 sHoOhGfx81_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_4.4bpp");
-static const u8 sHoOhGfx81_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_5.4bpp");
+static const u8 sHoOhGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_81.4bpp.lz");
+static const u8 sHoOhGfx81_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_1.4bpp.lz");
+static const u8 sHoOhGfx81_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_2.4bpp.lz");
+static const u8 sHoOhGfx81_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_3.4bpp.lz");
+static const u8 sHoOhGfx81_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_4.4bpp.lz");
+static const u8 sHoOhGfx81_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_81_5.4bpp.lz");
 static const ax_sprite sHoOhSprites81[] = {
 	{sHoOhGfx81, ARRAY_COUNT(sHoOhGfx81)}, 
 	{NULL, 64}, 
@@ -3561,12 +3561,12 @@ static const ax_sprite sHoOhSprites81[] = {
 	{sHoOhGfx81_5, ARRAY_COUNT(sHoOhGfx81_5)}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx82[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_82.4bpp");
-static const u8 sHoOhGfx82_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_1.4bpp");
-static const u8 sHoOhGfx82_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_2.4bpp");
-static const u8 sHoOhGfx82_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_3.4bpp");
-static const u8 sHoOhGfx82_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_4.4bpp");
-static const u8 sHoOhGfx82_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_5.4bpp");
+static const u8 sHoOhGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_82.4bpp.lz");
+static const u8 sHoOhGfx82_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_1.4bpp.lz");
+static const u8 sHoOhGfx82_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_2.4bpp.lz");
+static const u8 sHoOhGfx82_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_3.4bpp.lz");
+static const u8 sHoOhGfx82_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_4.4bpp.lz");
+static const u8 sHoOhGfx82_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_82_5.4bpp.lz");
 static const ax_sprite sHoOhSprites82[] = {
 	{NULL, 64}, 
 	{sHoOhGfx82, ARRAY_COUNT(sHoOhGfx82)}, 
@@ -3583,12 +3583,12 @@ static const ax_sprite sHoOhSprites82[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx83[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_83.4bpp");
-static const u8 sHoOhGfx83_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_1.4bpp");
-static const u8 sHoOhGfx83_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_2.4bpp");
-static const u8 sHoOhGfx83_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_3.4bpp");
-static const u8 sHoOhGfx83_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_4.4bpp");
-static const u8 sHoOhGfx83_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_5.4bpp");
+static const u8 sHoOhGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_83.4bpp.lz");
+static const u8 sHoOhGfx83_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_1.4bpp.lz");
+static const u8 sHoOhGfx83_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_2.4bpp.lz");
+static const u8 sHoOhGfx83_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_3.4bpp.lz");
+static const u8 sHoOhGfx83_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_4.4bpp.lz");
+static const u8 sHoOhGfx83_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_83_5.4bpp.lz");
 static const ax_sprite sHoOhSprites83[] = {
 	{NULL, 64}, 
 	{sHoOhGfx83, ARRAY_COUNT(sHoOhGfx83)}, 
@@ -3605,13 +3605,13 @@ static const ax_sprite sHoOhSprites83[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHoOhGfx84[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_84.4bpp");
-static const u8 sHoOhGfx84_1[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_1.4bpp");
-static const u8 sHoOhGfx84_2[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_2.4bpp");
-static const u8 sHoOhGfx84_3[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_3.4bpp");
-static const u8 sHoOhGfx84_4[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_4.4bpp");
-static const u8 sHoOhGfx84_5[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_5.4bpp");
-static const u8 sHoOhGfx84_6[] = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_6.4bpp");
+static const u8 sHoOhGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_84.4bpp.lz");
+static const u8 sHoOhGfx84_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_1.4bpp.lz");
+static const u8 sHoOhGfx84_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_2.4bpp.lz");
+static const u8 sHoOhGfx84_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_3.4bpp.lz");
+static const u8 sHoOhGfx84_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_4.4bpp.lz");
+static const u8 sHoOhGfx84_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_5.4bpp.lz");
+static const u8 sHoOhGfx84_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hooh/sprite_84_6.4bpp.lz");
 static const ax_sprite sHoOhSprites84[] = {
 	{NULL, 64}, 
 	{sHoOhGfx84, ARRAY_COUNT(sHoOhGfx84)}, 

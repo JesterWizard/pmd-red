@@ -1967,84 +1967,84 @@ static const ax_anim sTaurosAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTaurosGfx1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_1.4bpp");
+static const u8 sTaurosGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_1.4bpp.lz");
 static const ax_sprite sTaurosSprites1[] = {
 	{sTaurosGfx1, ARRAY_COUNT(sTaurosGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_2.4bpp");
+static const u8 sTaurosGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_2.4bpp.lz");
 static const ax_sprite sTaurosSprites2[] = {
 	{sTaurosGfx2, ARRAY_COUNT(sTaurosGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx3[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_3.4bpp");
+static const u8 sTaurosGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_3.4bpp.lz");
 static const ax_sprite sTaurosSprites3[] = {
 	{sTaurosGfx3, ARRAY_COUNT(sTaurosGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx4[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_4.4bpp");
+static const u8 sTaurosGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_4.4bpp.lz");
 static const ax_sprite sTaurosSprites4[] = {
 	{sTaurosGfx4, ARRAY_COUNT(sTaurosGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx5[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_5.4bpp");
+static const u8 sTaurosGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_5.4bpp.lz");
 static const ax_sprite sTaurosSprites5[] = {
 	{sTaurosGfx5, ARRAY_COUNT(sTaurosGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx6[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_6.4bpp");
+static const u8 sTaurosGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_6.4bpp.lz");
 static const ax_sprite sTaurosSprites6[] = {
 	{sTaurosGfx6, ARRAY_COUNT(sTaurosGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx7[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_7.4bpp");
+static const u8 sTaurosGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_7.4bpp.lz");
 static const ax_sprite sTaurosSprites7[] = {
 	{sTaurosGfx7, ARRAY_COUNT(sTaurosGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx8[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_8.4bpp");
+static const u8 sTaurosGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_8.4bpp.lz");
 static const ax_sprite sTaurosSprites8[] = {
 	{sTaurosGfx8, ARRAY_COUNT(sTaurosGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx9[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_9.4bpp");
+static const u8 sTaurosGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_9.4bpp.lz");
 static const ax_sprite sTaurosSprites9[] = {
 	{sTaurosGfx9, ARRAY_COUNT(sTaurosGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx10[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_10.4bpp");
+static const u8 sTaurosGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_10.4bpp.lz");
 static const ax_sprite sTaurosSprites10[] = {
 	{sTaurosGfx10, ARRAY_COUNT(sTaurosGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx11[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_11.4bpp");
+static const u8 sTaurosGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_11.4bpp.lz");
 static const ax_sprite sTaurosSprites11[] = {
 	{sTaurosGfx11, ARRAY_COUNT(sTaurosGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx12[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_12.4bpp");
+static const u8 sTaurosGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_12.4bpp.lz");
 static const ax_sprite sTaurosSprites12[] = {
 	{sTaurosGfx12, ARRAY_COUNT(sTaurosGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx13[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_13.4bpp");
+static const u8 sTaurosGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_13.4bpp.lz");
 static const ax_sprite sTaurosSprites13[] = {
 	{sTaurosGfx13, ARRAY_COUNT(sTaurosGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx14[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_14.4bpp");
+static const u8 sTaurosGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_14.4bpp.lz");
 static const ax_sprite sTaurosSprites14[] = {
 	{sTaurosGfx14, ARRAY_COUNT(sTaurosGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx15[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_15.4bpp");
+static const u8 sTaurosGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_15.4bpp.lz");
 static const ax_sprite sTaurosSprites15[] = {
 	{sTaurosGfx15, ARRAY_COUNT(sTaurosGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx16[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_16.4bpp");
-static const u8 sTaurosGfx16_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_16_1.4bpp");
-static const u8 sTaurosGfx16_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_16_2.4bpp");
+static const u8 sTaurosGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_16.4bpp.lz");
+static const u8 sTaurosGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_16_1.4bpp.lz");
+static const u8 sTaurosGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_16_2.4bpp.lz");
 static const ax_sprite sTaurosSprites16[] = {
 	{NULL, 32}, 
 	{sTaurosGfx16, ARRAY_COUNT(sTaurosGfx16)}, 
@@ -2055,9 +2055,9 @@ static const ax_sprite sTaurosSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx17[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_17.4bpp");
-static const u8 sTaurosGfx17_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_17_1.4bpp");
-static const u8 sTaurosGfx17_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_17_2.4bpp");
+static const u8 sTaurosGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_17.4bpp.lz");
+static const u8 sTaurosGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_17_1.4bpp.lz");
+static const u8 sTaurosGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_17_2.4bpp.lz");
 static const ax_sprite sTaurosSprites17[] = {
 	{NULL, 32}, 
 	{sTaurosGfx17, ARRAY_COUNT(sTaurosGfx17)}, 
@@ -2068,9 +2068,9 @@ static const ax_sprite sTaurosSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx18[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_18.4bpp");
-static const u8 sTaurosGfx18_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_18_1.4bpp");
-static const u8 sTaurosGfx18_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_18_2.4bpp");
+static const u8 sTaurosGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_18.4bpp.lz");
+static const u8 sTaurosGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_18_1.4bpp.lz");
+static const u8 sTaurosGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_18_2.4bpp.lz");
 static const ax_sprite sTaurosSprites18[] = {
 	{NULL, 32}, 
 	{sTaurosGfx18, ARRAY_COUNT(sTaurosGfx18)}, 
@@ -2081,14 +2081,14 @@ static const ax_sprite sTaurosSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx19[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_19.4bpp");
+static const u8 sTaurosGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_19.4bpp.lz");
 static const ax_sprite sTaurosSprites19[] = {
 	{NULL, 32}, 
 	{sTaurosGfx19, ARRAY_COUNT(sTaurosGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx20[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_20.4bpp");
-static const u8 sTaurosGfx20_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_20_1.4bpp");
+static const u8 sTaurosGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_20.4bpp.lz");
+static const u8 sTaurosGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_20_1.4bpp.lz");
 static const ax_sprite sTaurosSprites20[] = {
 	{sTaurosGfx20, ARRAY_COUNT(sTaurosGfx20)}, 
 	{NULL, 64}, 
@@ -2096,37 +2096,37 @@ static const ax_sprite sTaurosSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx21[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_21.4bpp");
+static const u8 sTaurosGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_21.4bpp.lz");
 static const ax_sprite sTaurosSprites21[] = {
 	{NULL, 64}, 
 	{sTaurosGfx21, ARRAY_COUNT(sTaurosGfx21)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx22[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_22.4bpp");
+static const u8 sTaurosGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_22.4bpp.lz");
 static const ax_sprite sTaurosSprites22[] = {
 	{NULL, 32}, 
 	{sTaurosGfx22, ARRAY_COUNT(sTaurosGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx23[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_23.4bpp");
-static const u8 sTaurosGfx23_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_23_1.4bpp");
+static const u8 sTaurosGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_23.4bpp.lz");
+static const u8 sTaurosGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_23_1.4bpp.lz");
 static const ax_sprite sTaurosSprites23[] = {
 	{sTaurosGfx23, ARRAY_COUNT(sTaurosGfx23)}, 
 	{NULL, 32}, 
 	{sTaurosGfx23_1, ARRAY_COUNT(sTaurosGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx24[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_24.4bpp");
+static const u8 sTaurosGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_24.4bpp.lz");
 static const ax_sprite sTaurosSprites24[] = {
 	{NULL, 32}, 
 	{sTaurosGfx24, ARRAY_COUNT(sTaurosGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx25[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_25.4bpp");
-static const u8 sTaurosGfx25_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_25_1.4bpp");
-static const u8 sTaurosGfx25_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_25_2.4bpp");
+static const u8 sTaurosGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_25.4bpp.lz");
+static const u8 sTaurosGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_25_1.4bpp.lz");
+static const u8 sTaurosGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_25_2.4bpp.lz");
 static const ax_sprite sTaurosSprites25[] = {
 	{sTaurosGfx25, ARRAY_COUNT(sTaurosGfx25)}, 
 	{NULL, 32}, 
@@ -2135,9 +2135,9 @@ static const ax_sprite sTaurosSprites25[] = {
 	{sTaurosGfx25_2, ARRAY_COUNT(sTaurosGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx26[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_26.4bpp");
-static const u8 sTaurosGfx26_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_26_1.4bpp");
-static const u8 sTaurosGfx26_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_26_2.4bpp");
+static const u8 sTaurosGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_26.4bpp.lz");
+static const u8 sTaurosGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_26_1.4bpp.lz");
+static const u8 sTaurosGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_26_2.4bpp.lz");
 static const ax_sprite sTaurosSprites26[] = {
 	{sTaurosGfx26, ARRAY_COUNT(sTaurosGfx26)}, 
 	{NULL, 32}, 
@@ -2146,18 +2146,18 @@ static const ax_sprite sTaurosSprites26[] = {
 	{sTaurosGfx26_2, ARRAY_COUNT(sTaurosGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx27[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_27.4bpp");
-static const u8 sTaurosGfx27_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_27_1.4bpp");
+static const u8 sTaurosGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_27.4bpp.lz");
+static const u8 sTaurosGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_27_1.4bpp.lz");
 static const ax_sprite sTaurosSprites27[] = {
 	{sTaurosGfx27, ARRAY_COUNT(sTaurosGfx27)}, 
 	{NULL, 64}, 
 	{sTaurosGfx27_1, ARRAY_COUNT(sTaurosGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx28[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_28.4bpp");
-static const u8 sTaurosGfx28_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_28_1.4bpp");
-static const u8 sTaurosGfx28_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_28_2.4bpp");
-static const u8 sTaurosGfx28_3[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_28_3.4bpp");
+static const u8 sTaurosGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_28.4bpp.lz");
+static const u8 sTaurosGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_28_1.4bpp.lz");
+static const u8 sTaurosGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_28_2.4bpp.lz");
+static const u8 sTaurosGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_28_3.4bpp.lz");
 static const ax_sprite sTaurosSprites28[] = {
 	{NULL, 32}, 
 	{sTaurosGfx28, ARRAY_COUNT(sTaurosGfx28)}, 
@@ -2170,10 +2170,10 @@ static const ax_sprite sTaurosSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx29[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_29.4bpp");
-static const u8 sTaurosGfx29_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_29_1.4bpp");
-static const u8 sTaurosGfx29_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_29_2.4bpp");
-static const u8 sTaurosGfx29_3[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_29_3.4bpp");
+static const u8 sTaurosGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_29.4bpp.lz");
+static const u8 sTaurosGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_29_1.4bpp.lz");
+static const u8 sTaurosGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_29_2.4bpp.lz");
+static const u8 sTaurosGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_29_3.4bpp.lz");
 static const ax_sprite sTaurosSprites29[] = {
 	{NULL, 32}, 
 	{sTaurosGfx29, ARRAY_COUNT(sTaurosGfx29)}, 
@@ -2186,9 +2186,9 @@ static const ax_sprite sTaurosSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx30[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_30.4bpp");
-static const u8 sTaurosGfx30_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_30_1.4bpp");
-static const u8 sTaurosGfx30_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_30_2.4bpp");
+static const u8 sTaurosGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_30.4bpp.lz");
+static const u8 sTaurosGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_30_1.4bpp.lz");
+static const u8 sTaurosGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_30_2.4bpp.lz");
 static const ax_sprite sTaurosSprites30[] = {
 	{NULL, 32}, 
 	{sTaurosGfx30, ARRAY_COUNT(sTaurosGfx30)}, 
@@ -2199,8 +2199,8 @@ static const ax_sprite sTaurosSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx31[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_31.4bpp");
-static const u8 sTaurosGfx31_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_31_1.4bpp");
+static const u8 sTaurosGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_31.4bpp.lz");
+static const u8 sTaurosGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_31_1.4bpp.lz");
 static const ax_sprite sTaurosSprites31[] = {
 	{sTaurosGfx31, ARRAY_COUNT(sTaurosGfx31)}, 
 	{NULL, 32}, 
@@ -2208,8 +2208,8 @@ static const ax_sprite sTaurosSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx32[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_32.4bpp");
-static const u8 sTaurosGfx32_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_32_1.4bpp");
+static const u8 sTaurosGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_32.4bpp.lz");
+static const u8 sTaurosGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_32_1.4bpp.lz");
 static const ax_sprite sTaurosSprites32[] = {
 	{NULL, 32}, 
 	{sTaurosGfx32, ARRAY_COUNT(sTaurosGfx32)}, 
@@ -2218,9 +2218,9 @@ static const ax_sprite sTaurosSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx33[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_33.4bpp");
-static const u8 sTaurosGfx33_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_33_1.4bpp");
-static const u8 sTaurosGfx33_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_33_2.4bpp");
+static const u8 sTaurosGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_33.4bpp.lz");
+static const u8 sTaurosGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_33_1.4bpp.lz");
+static const u8 sTaurosGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_33_2.4bpp.lz");
 static const ax_sprite sTaurosSprites33[] = {
 	{sTaurosGfx33, ARRAY_COUNT(sTaurosGfx33)}, 
 	{NULL, 32}, 
@@ -2229,9 +2229,9 @@ static const ax_sprite sTaurosSprites33[] = {
 	{sTaurosGfx33_2, ARRAY_COUNT(sTaurosGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx34[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_34.4bpp");
-static const u8 sTaurosGfx34_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_34_1.4bpp");
-static const u8 sTaurosGfx34_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_34_2.4bpp");
+static const u8 sTaurosGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_34.4bpp.lz");
+static const u8 sTaurosGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_34_1.4bpp.lz");
+static const u8 sTaurosGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_34_2.4bpp.lz");
 static const ax_sprite sTaurosSprites34[] = {
 	{sTaurosGfx34, ARRAY_COUNT(sTaurosGfx34)}, 
 	{NULL, 32}, 
@@ -2240,9 +2240,9 @@ static const ax_sprite sTaurosSprites34[] = {
 	{sTaurosGfx34_2, ARRAY_COUNT(sTaurosGfx34_2)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx35[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_35.4bpp");
-static const u8 sTaurosGfx35_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_35_1.4bpp");
-static const u8 sTaurosGfx35_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_35_2.4bpp");
+static const u8 sTaurosGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_35.4bpp.lz");
+static const u8 sTaurosGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_35_1.4bpp.lz");
+static const u8 sTaurosGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_35_2.4bpp.lz");
 static const ax_sprite sTaurosSprites35[] = {
 	{sTaurosGfx35, ARRAY_COUNT(sTaurosGfx35)}, 
 	{NULL, 32}, 
@@ -2251,18 +2251,18 @@ static const ax_sprite sTaurosSprites35[] = {
 	{sTaurosGfx35_2, ARRAY_COUNT(sTaurosGfx35_2)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx36[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_36.4bpp");
-static const u8 sTaurosGfx36_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_36_1.4bpp");
+static const u8 sTaurosGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_36.4bpp.lz");
+static const u8 sTaurosGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_36_1.4bpp.lz");
 static const ax_sprite sTaurosSprites36[] = {
 	{sTaurosGfx36, ARRAY_COUNT(sTaurosGfx36)}, 
 	{NULL, 32}, 
 	{sTaurosGfx36_1, ARRAY_COUNT(sTaurosGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx37[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_37.4bpp");
-static const u8 sTaurosGfx37_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_37_1.4bpp");
-static const u8 sTaurosGfx37_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_37_2.4bpp");
-static const u8 sTaurosGfx37_3[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_37_3.4bpp");
+static const u8 sTaurosGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_37.4bpp.lz");
+static const u8 sTaurosGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_37_1.4bpp.lz");
+static const u8 sTaurosGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_37_2.4bpp.lz");
+static const u8 sTaurosGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_37_3.4bpp.lz");
 static const ax_sprite sTaurosSprites37[] = {
 	{sTaurosGfx37, ARRAY_COUNT(sTaurosGfx37)}, 
 	{NULL, 32}, 
@@ -2273,10 +2273,10 @@ static const ax_sprite sTaurosSprites37[] = {
 	{sTaurosGfx37_3, ARRAY_COUNT(sTaurosGfx37_3)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx38[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_38.4bpp");
-static const u8 sTaurosGfx38_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_38_1.4bpp");
-static const u8 sTaurosGfx38_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_38_2.4bpp");
-static const u8 sTaurosGfx38_3[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_38_3.4bpp");
+static const u8 sTaurosGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_38.4bpp.lz");
+static const u8 sTaurosGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_38_1.4bpp.lz");
+static const u8 sTaurosGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_38_2.4bpp.lz");
+static const u8 sTaurosGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_38_3.4bpp.lz");
 static const ax_sprite sTaurosSprites38[] = {
 	{sTaurosGfx38, ARRAY_COUNT(sTaurosGfx38)}, 
 	{NULL, 32}, 
@@ -2287,9 +2287,9 @@ static const ax_sprite sTaurosSprites38[] = {
 	{sTaurosGfx38_3, ARRAY_COUNT(sTaurosGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx39[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_39.4bpp");
-static const u8 sTaurosGfx39_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_39_1.4bpp");
-static const u8 sTaurosGfx39_2[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_39_2.4bpp");
+static const u8 sTaurosGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_39.4bpp.lz");
+static const u8 sTaurosGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_39_1.4bpp.lz");
+static const u8 sTaurosGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_39_2.4bpp.lz");
 static const ax_sprite sTaurosSprites39[] = {
 	{NULL, 32}, 
 	{sTaurosGfx39, ARRAY_COUNT(sTaurosGfx39)}, 
@@ -2299,8 +2299,8 @@ static const ax_sprite sTaurosSprites39[] = {
 	{sTaurosGfx39_2, ARRAY_COUNT(sTaurosGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx40[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_40.4bpp");
-static const u8 sTaurosGfx40_1[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_40_1.4bpp");
+static const u8 sTaurosGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_40.4bpp.lz");
+static const u8 sTaurosGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_40_1.4bpp.lz");
 static const ax_sprite sTaurosSprites40[] = {
 	{sTaurosGfx40, ARRAY_COUNT(sTaurosGfx40)}, 
 	{NULL, 64}, 
@@ -2308,37 +2308,37 @@ static const ax_sprite sTaurosSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx41[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_41.4bpp");
+static const u8 sTaurosGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_41.4bpp.lz");
 static const ax_sprite sTaurosSprites41[] = {
 	{sTaurosGfx41, ARRAY_COUNT(sTaurosGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx42[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_42.4bpp");
+static const u8 sTaurosGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_42.4bpp.lz");
 static const ax_sprite sTaurosSprites42[] = {
 	{sTaurosGfx42, ARRAY_COUNT(sTaurosGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx43[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_43.4bpp");
+static const u8 sTaurosGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_43.4bpp.lz");
 static const ax_sprite sTaurosSprites43[] = {
 	{sTaurosGfx43, ARRAY_COUNT(sTaurosGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx44[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_44.4bpp");
+static const u8 sTaurosGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_44.4bpp.lz");
 static const ax_sprite sTaurosSprites44[] = {
 	{sTaurosGfx44, ARRAY_COUNT(sTaurosGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx45[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_45.4bpp");
+static const u8 sTaurosGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_45.4bpp.lz");
 static const ax_sprite sTaurosSprites45[] = {
 	{sTaurosGfx45, ARRAY_COUNT(sTaurosGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx46[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_46.4bpp");
+static const u8 sTaurosGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_46.4bpp.lz");
 static const ax_sprite sTaurosSprites46[] = {
 	{sTaurosGfx46, ARRAY_COUNT(sTaurosGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTaurosGfx47[] = INCBIN_U8("graphics/ax/mon/tauros/sprite_47.4bpp");
+static const u8 sTaurosGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tauros/sprite_47.4bpp.lz");
 static const ax_sprite sTaurosSprites47[] = {
 	{sTaurosGfx47, ARRAY_COUNT(sTaurosGfx47)}, 
 	{NULL, 0}

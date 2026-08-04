@@ -2007,83 +2007,83 @@ static const ax_anim sShroomishAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sShroomishGfx1[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_1.4bpp");
+static const u8 sShroomishGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_1.4bpp.lz");
 static const ax_sprite sShroomishSprites1[] = {
 	{sShroomishGfx1, ARRAY_COUNT(sShroomishGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx2[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_2.4bpp");
+static const u8 sShroomishGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_2.4bpp.lz");
 static const ax_sprite sShroomishSprites2[] = {
 	{sShroomishGfx2, ARRAY_COUNT(sShroomishGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx3[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_3.4bpp");
+static const u8 sShroomishGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_3.4bpp.lz");
 static const ax_sprite sShroomishSprites3[] = {
 	{sShroomishGfx3, ARRAY_COUNT(sShroomishGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx4[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_4.4bpp");
+static const u8 sShroomishGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_4.4bpp.lz");
 static const ax_sprite sShroomishSprites4[] = {
 	{sShroomishGfx4, ARRAY_COUNT(sShroomishGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx5[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_5.4bpp");
+static const u8 sShroomishGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_5.4bpp.lz");
 static const ax_sprite sShroomishSprites5[] = {
 	{sShroomishGfx5, ARRAY_COUNT(sShroomishGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx6[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_6.4bpp");
+static const u8 sShroomishGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_6.4bpp.lz");
 static const ax_sprite sShroomishSprites6[] = {
 	{sShroomishGfx6, ARRAY_COUNT(sShroomishGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx7[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_7.4bpp");
+static const u8 sShroomishGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_7.4bpp.lz");
 static const ax_sprite sShroomishSprites7[] = {
 	{sShroomishGfx7, ARRAY_COUNT(sShroomishGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx8[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_8.4bpp");
+static const u8 sShroomishGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_8.4bpp.lz");
 static const ax_sprite sShroomishSprites8[] = {
 	{sShroomishGfx8, ARRAY_COUNT(sShroomishGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx9[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_9.4bpp");
+static const u8 sShroomishGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_9.4bpp.lz");
 static const ax_sprite sShroomishSprites9[] = {
 	{sShroomishGfx9, ARRAY_COUNT(sShroomishGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx10[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_10.4bpp");
+static const u8 sShroomishGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_10.4bpp.lz");
 static const ax_sprite sShroomishSprites10[] = {
 	{sShroomishGfx10, ARRAY_COUNT(sShroomishGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx11[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_11.4bpp");
+static const u8 sShroomishGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_11.4bpp.lz");
 static const ax_sprite sShroomishSprites11[] = {
 	{sShroomishGfx11, ARRAY_COUNT(sShroomishGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx12[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_12.4bpp");
+static const u8 sShroomishGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_12.4bpp.lz");
 static const ax_sprite sShroomishSprites12[] = {
 	{sShroomishGfx12, ARRAY_COUNT(sShroomishGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx13[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_13.4bpp");
+static const u8 sShroomishGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_13.4bpp.lz");
 static const ax_sprite sShroomishSprites13[] = {
 	{sShroomishGfx13, ARRAY_COUNT(sShroomishGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx14[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_14.4bpp");
+static const u8 sShroomishGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_14.4bpp.lz");
 static const ax_sprite sShroomishSprites14[] = {
 	{sShroomishGfx14, ARRAY_COUNT(sShroomishGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx15[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_15.4bpp");
+static const u8 sShroomishGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_15.4bpp.lz");
 static const ax_sprite sShroomishSprites15[] = {
 	{sShroomishGfx15, ARRAY_COUNT(sShroomishGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx16[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_16.4bpp");
-static const u8 sShroomishGfx16_1[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_16_1.4bpp");
+static const u8 sShroomishGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_16.4bpp.lz");
+static const u8 sShroomishGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_16_1.4bpp.lz");
 static const ax_sprite sShroomishSprites16[] = {
 	{NULL, 128}, 
 	{sShroomishGfx16, ARRAY_COUNT(sShroomishGfx16)}, 
@@ -2092,17 +2092,17 @@ static const ax_sprite sShroomishSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx17[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_17.4bpp");
+static const u8 sShroomishGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_17.4bpp.lz");
 static const ax_sprite sShroomishSprites17[] = {
 	{NULL, 128}, 
 	{sShroomishGfx17, ARRAY_COUNT(sShroomishGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx18[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_18.4bpp");
-static const u8 sShroomishGfx18_1[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_18_1.4bpp");
-static const u8 sShroomishGfx18_2[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_18_2.4bpp");
-static const u8 sShroomishGfx18_3[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_18_3.4bpp");
+static const u8 sShroomishGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_18.4bpp.lz");
+static const u8 sShroomishGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_18_1.4bpp.lz");
+static const u8 sShroomishGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_18_2.4bpp.lz");
+static const u8 sShroomishGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_18_3.4bpp.lz");
 static const ax_sprite sShroomishSprites18[] = {
 	{NULL, 32}, 
 	{sShroomishGfx18, ARRAY_COUNT(sShroomishGfx18)}, 
@@ -2115,8 +2115,8 @@ static const ax_sprite sShroomishSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx19[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_19.4bpp");
-static const u8 sShroomishGfx19_1[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_19_1.4bpp");
+static const u8 sShroomishGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_19.4bpp.lz");
+static const u8 sShroomishGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_19_1.4bpp.lz");
 static const ax_sprite sShroomishSprites19[] = {
 	{NULL, 32}, 
 	{sShroomishGfx19, ARRAY_COUNT(sShroomishGfx19)}, 
@@ -2125,8 +2125,8 @@ static const ax_sprite sShroomishSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx20[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_20.4bpp");
-static const u8 sShroomishGfx20_1[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_20_1.4bpp");
+static const u8 sShroomishGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_20.4bpp.lz");
+static const u8 sShroomishGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_20_1.4bpp.lz");
 static const ax_sprite sShroomishSprites20[] = {
 	{NULL, 32}, 
 	{sShroomishGfx20, ARRAY_COUNT(sShroomishGfx20)}, 
@@ -2135,37 +2135,37 @@ static const ax_sprite sShroomishSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx21[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_21.4bpp");
+static const u8 sShroomishGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_21.4bpp.lz");
 static const ax_sprite sShroomishSprites21[] = {
 	{sShroomishGfx21, ARRAY_COUNT(sShroomishGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx22[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_22.4bpp");
+static const u8 sShroomishGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_22.4bpp.lz");
 static const ax_sprite sShroomishSprites22[] = {
 	{sShroomishGfx22, ARRAY_COUNT(sShroomishGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx23[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_23.4bpp");
+static const u8 sShroomishGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_23.4bpp.lz");
 static const ax_sprite sShroomishSprites23[] = {
 	{sShroomishGfx23, ARRAY_COUNT(sShroomishGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx24[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_24.4bpp");
+static const u8 sShroomishGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_24.4bpp.lz");
 static const ax_sprite sShroomishSprites24[] = {
 	{sShroomishGfx24, ARRAY_COUNT(sShroomishGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx25[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_25.4bpp");
+static const u8 sShroomishGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_25.4bpp.lz");
 static const ax_sprite sShroomishSprites25[] = {
 	{sShroomishGfx25, ARRAY_COUNT(sShroomishGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx26[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_26.4bpp");
+static const u8 sShroomishGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_26.4bpp.lz");
 static const ax_sprite sShroomishSprites26[] = {
 	{sShroomishGfx26, ARRAY_COUNT(sShroomishGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sShroomishGfx27[] = INCBIN_U8("graphics/ax/mon/shroomish/sprite_27.4bpp");
+static const u8 sShroomishGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shroomish/sprite_27.4bpp.lz");
 static const ax_sprite sShroomishSprites27[] = {
 	{sShroomishGfx27, ARRAY_COUNT(sShroomishGfx27)}, 
 	{NULL, 0}

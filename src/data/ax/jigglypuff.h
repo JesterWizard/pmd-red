@@ -2079,84 +2079,84 @@ static const ax_anim sJigglypuffAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sJigglypuffGfx1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_1.4bpp");
+static const u8 sJigglypuffGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_1.4bpp.lz");
 static const ax_sprite sJigglypuffSprites1[] = {
 	{sJigglypuffGfx1, ARRAY_COUNT(sJigglypuffGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_2.4bpp");
+static const u8 sJigglypuffGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites2[] = {
 	{sJigglypuffGfx2, ARRAY_COUNT(sJigglypuffGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx3[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_3.4bpp");
+static const u8 sJigglypuffGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_3.4bpp.lz");
 static const ax_sprite sJigglypuffSprites3[] = {
 	{sJigglypuffGfx3, ARRAY_COUNT(sJigglypuffGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx4[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_4.4bpp");
+static const u8 sJigglypuffGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_4.4bpp.lz");
 static const ax_sprite sJigglypuffSprites4[] = {
 	{sJigglypuffGfx4, ARRAY_COUNT(sJigglypuffGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx5[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_5.4bpp");
+static const u8 sJigglypuffGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_5.4bpp.lz");
 static const ax_sprite sJigglypuffSprites5[] = {
 	{sJigglypuffGfx5, ARRAY_COUNT(sJigglypuffGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx6[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_6.4bpp");
+static const u8 sJigglypuffGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_6.4bpp.lz");
 static const ax_sprite sJigglypuffSprites6[] = {
 	{sJigglypuffGfx6, ARRAY_COUNT(sJigglypuffGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx7[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_7.4bpp");
+static const u8 sJigglypuffGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_7.4bpp.lz");
 static const ax_sprite sJigglypuffSprites7[] = {
 	{sJigglypuffGfx7, ARRAY_COUNT(sJigglypuffGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx8[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_8.4bpp");
+static const u8 sJigglypuffGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_8.4bpp.lz");
 static const ax_sprite sJigglypuffSprites8[] = {
 	{sJigglypuffGfx8, ARRAY_COUNT(sJigglypuffGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx9[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_9.4bpp");
+static const u8 sJigglypuffGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_9.4bpp.lz");
 static const ax_sprite sJigglypuffSprites9[] = {
 	{sJigglypuffGfx9, ARRAY_COUNT(sJigglypuffGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx10[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_10.4bpp");
+static const u8 sJigglypuffGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_10.4bpp.lz");
 static const ax_sprite sJigglypuffSprites10[] = {
 	{sJigglypuffGfx10, ARRAY_COUNT(sJigglypuffGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx11[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_11.4bpp");
+static const u8 sJigglypuffGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_11.4bpp.lz");
 static const ax_sprite sJigglypuffSprites11[] = {
 	{sJigglypuffGfx11, ARRAY_COUNT(sJigglypuffGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx12[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_12.4bpp");
+static const u8 sJigglypuffGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_12.4bpp.lz");
 static const ax_sprite sJigglypuffSprites12[] = {
 	{sJigglypuffGfx12, ARRAY_COUNT(sJigglypuffGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx13[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_13.4bpp");
+static const u8 sJigglypuffGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_13.4bpp.lz");
 static const ax_sprite sJigglypuffSprites13[] = {
 	{sJigglypuffGfx13, ARRAY_COUNT(sJigglypuffGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx14[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_14.4bpp");
+static const u8 sJigglypuffGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_14.4bpp.lz");
 static const ax_sprite sJigglypuffSprites14[] = {
 	{sJigglypuffGfx14, ARRAY_COUNT(sJigglypuffGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx15[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_15.4bpp");
+static const u8 sJigglypuffGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_15.4bpp.lz");
 static const ax_sprite sJigglypuffSprites15[] = {
 	{sJigglypuffGfx15, ARRAY_COUNT(sJigglypuffGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx16[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_16.4bpp");
-static const u8 sJigglypuffGfx16_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_16_1.4bpp");
-static const u8 sJigglypuffGfx16_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_16_2.4bpp");
+static const u8 sJigglypuffGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_16.4bpp.lz");
+static const u8 sJigglypuffGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_16_1.4bpp.lz");
+static const u8 sJigglypuffGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_16_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites16[] = {
 	{sJigglypuffGfx16, ARRAY_COUNT(sJigglypuffGfx16)}, 
 	{NULL, 32}, 
@@ -2166,9 +2166,9 @@ static const ax_sprite sJigglypuffSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx17[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_17.4bpp");
-static const u8 sJigglypuffGfx17_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_17_1.4bpp");
-static const u8 sJigglypuffGfx17_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_17_2.4bpp");
+static const u8 sJigglypuffGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_17.4bpp.lz");
+static const u8 sJigglypuffGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_17_1.4bpp.lz");
+static const u8 sJigglypuffGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_17_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites17[] = {
 	{sJigglypuffGfx17, ARRAY_COUNT(sJigglypuffGfx17)}, 
 	{NULL, 32}, 
@@ -2178,9 +2178,9 @@ static const ax_sprite sJigglypuffSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx18[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_18.4bpp");
-static const u8 sJigglypuffGfx18_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_18_1.4bpp");
-static const u8 sJigglypuffGfx18_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_18_2.4bpp");
+static const u8 sJigglypuffGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_18.4bpp.lz");
+static const u8 sJigglypuffGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_18_1.4bpp.lz");
+static const u8 sJigglypuffGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_18_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites18[] = {
 	{sJigglypuffGfx18, ARRAY_COUNT(sJigglypuffGfx18)}, 
 	{NULL, 32}, 
@@ -2190,10 +2190,10 @@ static const ax_sprite sJigglypuffSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx19[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_19.4bpp");
-static const u8 sJigglypuffGfx19_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_19_1.4bpp");
-static const u8 sJigglypuffGfx19_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_19_2.4bpp");
-static const u8 sJigglypuffGfx19_3[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_19_3.4bpp");
+static const u8 sJigglypuffGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_19.4bpp.lz");
+static const u8 sJigglypuffGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_19_1.4bpp.lz");
+static const u8 sJigglypuffGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_19_2.4bpp.lz");
+static const u8 sJigglypuffGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_19_3.4bpp.lz");
 static const ax_sprite sJigglypuffSprites19[] = {
 	{sJigglypuffGfx19, ARRAY_COUNT(sJigglypuffGfx19)}, 
 	{NULL, 32}, 
@@ -2205,9 +2205,9 @@ static const ax_sprite sJigglypuffSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx20[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_20.4bpp");
-static const u8 sJigglypuffGfx20_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_20_1.4bpp");
-static const u8 sJigglypuffGfx20_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_20_2.4bpp");
+static const u8 sJigglypuffGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_20.4bpp.lz");
+static const u8 sJigglypuffGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_20_1.4bpp.lz");
+static const u8 sJigglypuffGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_20_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites20[] = {
 	{sJigglypuffGfx20, ARRAY_COUNT(sJigglypuffGfx20)}, 
 	{NULL, 32}, 
@@ -2217,10 +2217,10 @@ static const ax_sprite sJigglypuffSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx21[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_21.4bpp");
-static const u8 sJigglypuffGfx21_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_21_1.4bpp");
-static const u8 sJigglypuffGfx21_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_21_2.4bpp");
-static const u8 sJigglypuffGfx21_3[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_21_3.4bpp");
+static const u8 sJigglypuffGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_21.4bpp.lz");
+static const u8 sJigglypuffGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_21_1.4bpp.lz");
+static const u8 sJigglypuffGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_21_2.4bpp.lz");
+static const u8 sJigglypuffGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_21_3.4bpp.lz");
 static const ax_sprite sJigglypuffSprites21[] = {
 	{sJigglypuffGfx21, ARRAY_COUNT(sJigglypuffGfx21)}, 
 	{NULL, 32}, 
@@ -2232,10 +2232,10 @@ static const ax_sprite sJigglypuffSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx22[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_22.4bpp");
-static const u8 sJigglypuffGfx22_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_22_1.4bpp");
-static const u8 sJigglypuffGfx22_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_22_2.4bpp");
-static const u8 sJigglypuffGfx22_3[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_22_3.4bpp");
+static const u8 sJigglypuffGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_22.4bpp.lz");
+static const u8 sJigglypuffGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_22_1.4bpp.lz");
+static const u8 sJigglypuffGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_22_2.4bpp.lz");
+static const u8 sJigglypuffGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_22_3.4bpp.lz");
 static const ax_sprite sJigglypuffSprites22[] = {
 	{NULL, 32}, 
 	{sJigglypuffGfx22, ARRAY_COUNT(sJigglypuffGfx22)}, 
@@ -2248,10 +2248,10 @@ static const ax_sprite sJigglypuffSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx23[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_23.4bpp");
-static const u8 sJigglypuffGfx23_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_23_1.4bpp");
-static const u8 sJigglypuffGfx23_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_23_2.4bpp");
-static const u8 sJigglypuffGfx23_3[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_23_3.4bpp");
+static const u8 sJigglypuffGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_23.4bpp.lz");
+static const u8 sJigglypuffGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_23_1.4bpp.lz");
+static const u8 sJigglypuffGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_23_2.4bpp.lz");
+static const u8 sJigglypuffGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_23_3.4bpp.lz");
 static const ax_sprite sJigglypuffSprites23[] = {
 	{sJigglypuffGfx23, ARRAY_COUNT(sJigglypuffGfx23)}, 
 	{NULL, 64}, 
@@ -2263,10 +2263,10 @@ static const ax_sprite sJigglypuffSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx24[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_24.4bpp");
-static const u8 sJigglypuffGfx24_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_24_1.4bpp");
-static const u8 sJigglypuffGfx24_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_24_2.4bpp");
-static const u8 sJigglypuffGfx24_3[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_24_3.4bpp");
+static const u8 sJigglypuffGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_24.4bpp.lz");
+static const u8 sJigglypuffGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_24_1.4bpp.lz");
+static const u8 sJigglypuffGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_24_2.4bpp.lz");
+static const u8 sJigglypuffGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_24_3.4bpp.lz");
 static const ax_sprite sJigglypuffSprites24[] = {
 	{sJigglypuffGfx24, ARRAY_COUNT(sJigglypuffGfx24)}, 
 	{NULL, 32}, 
@@ -2278,9 +2278,9 @@ static const ax_sprite sJigglypuffSprites24[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx25[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_25.4bpp");
-static const u8 sJigglypuffGfx25_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_25_1.4bpp");
-static const u8 sJigglypuffGfx25_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_25_2.4bpp");
+static const u8 sJigglypuffGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_25.4bpp.lz");
+static const u8 sJigglypuffGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_25_1.4bpp.lz");
+static const u8 sJigglypuffGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_25_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites25[] = {
 	{NULL, 32}, 
 	{sJigglypuffGfx25, ARRAY_COUNT(sJigglypuffGfx25)}, 
@@ -2291,9 +2291,9 @@ static const ax_sprite sJigglypuffSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx26[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_26.4bpp");
-static const u8 sJigglypuffGfx26_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_26_1.4bpp");
-static const u8 sJigglypuffGfx26_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_26_2.4bpp");
+static const u8 sJigglypuffGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_26.4bpp.lz");
+static const u8 sJigglypuffGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_26_1.4bpp.lz");
+static const u8 sJigglypuffGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_26_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites26[] = {
 	{NULL, 128}, 
 	{sJigglypuffGfx26, ARRAY_COUNT(sJigglypuffGfx26)}, 
@@ -2304,9 +2304,9 @@ static const ax_sprite sJigglypuffSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx27[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_27.4bpp");
-static const u8 sJigglypuffGfx27_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_27_1.4bpp");
-static const u8 sJigglypuffGfx27_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_27_2.4bpp");
+static const u8 sJigglypuffGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_27.4bpp.lz");
+static const u8 sJigglypuffGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_27_1.4bpp.lz");
+static const u8 sJigglypuffGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_27_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites27[] = {
 	{NULL, 128}, 
 	{sJigglypuffGfx27, ARRAY_COUNT(sJigglypuffGfx27)}, 
@@ -2317,9 +2317,9 @@ static const ax_sprite sJigglypuffSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx28[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_28.4bpp");
-static const u8 sJigglypuffGfx28_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_28_1.4bpp");
-static const u8 sJigglypuffGfx28_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_28_2.4bpp");
+static const u8 sJigglypuffGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_28.4bpp.lz");
+static const u8 sJigglypuffGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_28_1.4bpp.lz");
+static const u8 sJigglypuffGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_28_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites28[] = {
 	{NULL, 128}, 
 	{sJigglypuffGfx28, ARRAY_COUNT(sJigglypuffGfx28)}, 
@@ -2330,9 +2330,9 @@ static const ax_sprite sJigglypuffSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx29[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_29.4bpp");
-static const u8 sJigglypuffGfx29_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_29_1.4bpp");
-static const u8 sJigglypuffGfx29_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_29_2.4bpp");
+static const u8 sJigglypuffGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_29.4bpp.lz");
+static const u8 sJigglypuffGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_29_1.4bpp.lz");
+static const u8 sJigglypuffGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_29_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites29[] = {
 	{NULL, 128}, 
 	{sJigglypuffGfx29, ARRAY_COUNT(sJigglypuffGfx29)}, 
@@ -2343,9 +2343,9 @@ static const ax_sprite sJigglypuffSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx30[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_30.4bpp");
-static const u8 sJigglypuffGfx30_1[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_30_1.4bpp");
-static const u8 sJigglypuffGfx30_2[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_30_2.4bpp");
+static const u8 sJigglypuffGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_30.4bpp.lz");
+static const u8 sJigglypuffGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_30_1.4bpp.lz");
+static const u8 sJigglypuffGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_30_2.4bpp.lz");
 static const ax_sprite sJigglypuffSprites30[] = {
 	{NULL, 128}, 
 	{sJigglypuffGfx30, ARRAY_COUNT(sJigglypuffGfx30)}, 
@@ -2356,37 +2356,37 @@ static const ax_sprite sJigglypuffSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx31[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_31.4bpp");
+static const u8 sJigglypuffGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_31.4bpp.lz");
 static const ax_sprite sJigglypuffSprites31[] = {
 	{sJigglypuffGfx31, ARRAY_COUNT(sJigglypuffGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx32[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_32.4bpp");
+static const u8 sJigglypuffGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_32.4bpp.lz");
 static const ax_sprite sJigglypuffSprites32[] = {
 	{sJigglypuffGfx32, ARRAY_COUNT(sJigglypuffGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx33[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_33.4bpp");
+static const u8 sJigglypuffGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_33.4bpp.lz");
 static const ax_sprite sJigglypuffSprites33[] = {
 	{sJigglypuffGfx33, ARRAY_COUNT(sJigglypuffGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx34[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_34.4bpp");
+static const u8 sJigglypuffGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_34.4bpp.lz");
 static const ax_sprite sJigglypuffSprites34[] = {
 	{sJigglypuffGfx34, ARRAY_COUNT(sJigglypuffGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx35[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_35.4bpp");
+static const u8 sJigglypuffGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_35.4bpp.lz");
 static const ax_sprite sJigglypuffSprites35[] = {
 	{sJigglypuffGfx35, ARRAY_COUNT(sJigglypuffGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx36[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_36.4bpp");
+static const u8 sJigglypuffGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_36.4bpp.lz");
 static const ax_sprite sJigglypuffSprites36[] = {
 	{sJigglypuffGfx36, ARRAY_COUNT(sJigglypuffGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sJigglypuffGfx37[] = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_37.4bpp");
+static const u8 sJigglypuffGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jigglypuff/sprite_37.4bpp.lz");
 static const ax_sprite sJigglypuffSprites37[] = {
 	{sJigglypuffGfx37, ARRAY_COUNT(sJigglypuffGfx37)}, 
 	{NULL, 0}

@@ -1887,84 +1887,84 @@ static const ax_anim sWobbuffetAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWobbuffetGfx1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_1.4bpp");
+static const u8 sWobbuffetGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_1.4bpp.lz");
 static const ax_sprite sWobbuffetSprites1[] = {
 	{sWobbuffetGfx1, ARRAY_COUNT(sWobbuffetGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_2.4bpp");
+static const u8 sWobbuffetGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_2.4bpp.lz");
 static const ax_sprite sWobbuffetSprites2[] = {
 	{sWobbuffetGfx2, ARRAY_COUNT(sWobbuffetGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_3.4bpp");
+static const u8 sWobbuffetGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites3[] = {
 	{sWobbuffetGfx3, ARRAY_COUNT(sWobbuffetGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx4[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_4.4bpp");
+static const u8 sWobbuffetGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_4.4bpp.lz");
 static const ax_sprite sWobbuffetSprites4[] = {
 	{sWobbuffetGfx4, ARRAY_COUNT(sWobbuffetGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx5[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_5.4bpp");
+static const u8 sWobbuffetGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_5.4bpp.lz");
 static const ax_sprite sWobbuffetSprites5[] = {
 	{sWobbuffetGfx5, ARRAY_COUNT(sWobbuffetGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx6[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_6.4bpp");
+static const u8 sWobbuffetGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_6.4bpp.lz");
 static const ax_sprite sWobbuffetSprites6[] = {
 	{sWobbuffetGfx6, ARRAY_COUNT(sWobbuffetGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx7[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_7.4bpp");
+static const u8 sWobbuffetGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_7.4bpp.lz");
 static const ax_sprite sWobbuffetSprites7[] = {
 	{sWobbuffetGfx7, ARRAY_COUNT(sWobbuffetGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx8[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_8.4bpp");
+static const u8 sWobbuffetGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_8.4bpp.lz");
 static const ax_sprite sWobbuffetSprites8[] = {
 	{sWobbuffetGfx8, ARRAY_COUNT(sWobbuffetGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx9[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_9.4bpp");
+static const u8 sWobbuffetGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_9.4bpp.lz");
 static const ax_sprite sWobbuffetSprites9[] = {
 	{sWobbuffetGfx9, ARRAY_COUNT(sWobbuffetGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx10[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_10.4bpp");
+static const u8 sWobbuffetGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_10.4bpp.lz");
 static const ax_sprite sWobbuffetSprites10[] = {
 	{sWobbuffetGfx10, ARRAY_COUNT(sWobbuffetGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx11[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_11.4bpp");
+static const u8 sWobbuffetGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_11.4bpp.lz");
 static const ax_sprite sWobbuffetSprites11[] = {
 	{sWobbuffetGfx11, ARRAY_COUNT(sWobbuffetGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx12[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_12.4bpp");
+static const u8 sWobbuffetGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_12.4bpp.lz");
 static const ax_sprite sWobbuffetSprites12[] = {
 	{sWobbuffetGfx12, ARRAY_COUNT(sWobbuffetGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx13[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_13.4bpp");
+static const u8 sWobbuffetGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_13.4bpp.lz");
 static const ax_sprite sWobbuffetSprites13[] = {
 	{sWobbuffetGfx13, ARRAY_COUNT(sWobbuffetGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx14[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_14.4bpp");
+static const u8 sWobbuffetGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_14.4bpp.lz");
 static const ax_sprite sWobbuffetSprites14[] = {
 	{sWobbuffetGfx14, ARRAY_COUNT(sWobbuffetGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx15[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_15.4bpp");
+static const u8 sWobbuffetGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_15.4bpp.lz");
 static const ax_sprite sWobbuffetSprites15[] = {
 	{sWobbuffetGfx15, ARRAY_COUNT(sWobbuffetGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx16[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_16.4bpp");
-static const u8 sWobbuffetGfx16_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_16_1.4bpp");
-static const u8 sWobbuffetGfx16_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_16_2.4bpp");
+static const u8 sWobbuffetGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_16.4bpp.lz");
+static const u8 sWobbuffetGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_16_1.4bpp.lz");
+static const u8 sWobbuffetGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_16_2.4bpp.lz");
 static const ax_sprite sWobbuffetSprites16[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx16, ARRAY_COUNT(sWobbuffetGfx16)}, 
@@ -1974,9 +1974,9 @@ static const ax_sprite sWobbuffetSprites16[] = {
 	{sWobbuffetGfx16_2, ARRAY_COUNT(sWobbuffetGfx16_2)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx17[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_17.4bpp");
-static const u8 sWobbuffetGfx17_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_17_1.4bpp");
-static const u8 sWobbuffetGfx17_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_17_2.4bpp");
+static const u8 sWobbuffetGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_17.4bpp.lz");
+static const u8 sWobbuffetGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_17_1.4bpp.lz");
+static const u8 sWobbuffetGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_17_2.4bpp.lz");
 static const ax_sprite sWobbuffetSprites17[] = {
 	{NULL, 64}, 
 	{sWobbuffetGfx17, ARRAY_COUNT(sWobbuffetGfx17)}, 
@@ -1986,9 +1986,9 @@ static const ax_sprite sWobbuffetSprites17[] = {
 	{sWobbuffetGfx17_2, ARRAY_COUNT(sWobbuffetGfx17_2)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx18[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_18.4bpp");
-static const u8 sWobbuffetGfx18_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_18_1.4bpp");
-static const u8 sWobbuffetGfx18_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_18_2.4bpp");
+static const u8 sWobbuffetGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_18.4bpp.lz");
+static const u8 sWobbuffetGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_18_1.4bpp.lz");
+static const u8 sWobbuffetGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_18_2.4bpp.lz");
 static const ax_sprite sWobbuffetSprites18[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx18, ARRAY_COUNT(sWobbuffetGfx18)}, 
@@ -1999,10 +1999,10 @@ static const ax_sprite sWobbuffetSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx19[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_19.4bpp");
-static const u8 sWobbuffetGfx19_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_19_1.4bpp");
-static const u8 sWobbuffetGfx19_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_19_2.4bpp");
-static const u8 sWobbuffetGfx19_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_19_3.4bpp");
+static const u8 sWobbuffetGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_19.4bpp.lz");
+static const u8 sWobbuffetGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_19_1.4bpp.lz");
+static const u8 sWobbuffetGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_19_2.4bpp.lz");
+static const u8 sWobbuffetGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_19_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites19[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx19, ARRAY_COUNT(sWobbuffetGfx19)}, 
@@ -2015,10 +2015,10 @@ static const ax_sprite sWobbuffetSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx20[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_20.4bpp");
-static const u8 sWobbuffetGfx20_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_20_1.4bpp");
-static const u8 sWobbuffetGfx20_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_20_2.4bpp");
-static const u8 sWobbuffetGfx20_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_20_3.4bpp");
+static const u8 sWobbuffetGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_20.4bpp.lz");
+static const u8 sWobbuffetGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_20_1.4bpp.lz");
+static const u8 sWobbuffetGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_20_2.4bpp.lz");
+static const u8 sWobbuffetGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_20_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites20[] = {
 	{NULL, 64}, 
 	{sWobbuffetGfx20, ARRAY_COUNT(sWobbuffetGfx20)}, 
@@ -2030,10 +2030,10 @@ static const ax_sprite sWobbuffetSprites20[] = {
 	{sWobbuffetGfx20_3, ARRAY_COUNT(sWobbuffetGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx21[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_21.4bpp");
-static const u8 sWobbuffetGfx21_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_21_1.4bpp");
-static const u8 sWobbuffetGfx21_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_21_2.4bpp");
-static const u8 sWobbuffetGfx21_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_21_3.4bpp");
+static const u8 sWobbuffetGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_21.4bpp.lz");
+static const u8 sWobbuffetGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_21_1.4bpp.lz");
+static const u8 sWobbuffetGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_21_2.4bpp.lz");
+static const u8 sWobbuffetGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_21_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites21[] = {
 	{sWobbuffetGfx21, ARRAY_COUNT(sWobbuffetGfx21)}, 
 	{NULL, 64}, 
@@ -2045,9 +2045,9 @@ static const ax_sprite sWobbuffetSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx22[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_22.4bpp");
-static const u8 sWobbuffetGfx22_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_22_1.4bpp");
-static const u8 sWobbuffetGfx22_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_22_2.4bpp");
+static const u8 sWobbuffetGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_22.4bpp.lz");
+static const u8 sWobbuffetGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_22_1.4bpp.lz");
+static const u8 sWobbuffetGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_22_2.4bpp.lz");
 static const ax_sprite sWobbuffetSprites22[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx22, ARRAY_COUNT(sWobbuffetGfx22)}, 
@@ -2058,10 +2058,10 @@ static const ax_sprite sWobbuffetSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx23[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_23.4bpp");
-static const u8 sWobbuffetGfx23_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_23_1.4bpp");
-static const u8 sWobbuffetGfx23_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_23_2.4bpp");
-static const u8 sWobbuffetGfx23_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_23_3.4bpp");
+static const u8 sWobbuffetGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_23.4bpp.lz");
+static const u8 sWobbuffetGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_23_1.4bpp.lz");
+static const u8 sWobbuffetGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_23_2.4bpp.lz");
+static const u8 sWobbuffetGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_23_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites23[] = {
 	{sWobbuffetGfx23, ARRAY_COUNT(sWobbuffetGfx23)}, 
 	{NULL, 32}, 
@@ -2073,10 +2073,10 @@ static const ax_sprite sWobbuffetSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx24[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_24.4bpp");
-static const u8 sWobbuffetGfx24_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_24_1.4bpp");
-static const u8 sWobbuffetGfx24_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_24_2.4bpp");
-static const u8 sWobbuffetGfx24_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_24_3.4bpp");
+static const u8 sWobbuffetGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_24.4bpp.lz");
+static const u8 sWobbuffetGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_24_1.4bpp.lz");
+static const u8 sWobbuffetGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_24_2.4bpp.lz");
+static const u8 sWobbuffetGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_24_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites24[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx24, ARRAY_COUNT(sWobbuffetGfx24)}, 
@@ -2089,9 +2089,9 @@ static const ax_sprite sWobbuffetSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx25[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_25.4bpp");
-static const u8 sWobbuffetGfx25_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_25_1.4bpp");
-static const u8 sWobbuffetGfx25_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_25_2.4bpp");
+static const u8 sWobbuffetGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_25.4bpp.lz");
+static const u8 sWobbuffetGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_25_1.4bpp.lz");
+static const u8 sWobbuffetGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_25_2.4bpp.lz");
 static const ax_sprite sWobbuffetSprites25[] = {
 	{sWobbuffetGfx25, ARRAY_COUNT(sWobbuffetGfx25)}, 
 	{NULL, 32}, 
@@ -2101,9 +2101,9 @@ static const ax_sprite sWobbuffetSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx26[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_26.4bpp");
-static const u8 sWobbuffetGfx26_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_26_1.4bpp");
-static const u8 sWobbuffetGfx26_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_26_2.4bpp");
+static const u8 sWobbuffetGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_26.4bpp.lz");
+static const u8 sWobbuffetGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_26_1.4bpp.lz");
+static const u8 sWobbuffetGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_26_2.4bpp.lz");
 static const ax_sprite sWobbuffetSprites26[] = {
 	{sWobbuffetGfx26, ARRAY_COUNT(sWobbuffetGfx26)}, 
 	{NULL, 32}, 
@@ -2112,10 +2112,10 @@ static const ax_sprite sWobbuffetSprites26[] = {
 	{sWobbuffetGfx26_2, ARRAY_COUNT(sWobbuffetGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx27[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_27.4bpp");
-static const u8 sWobbuffetGfx27_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_27_1.4bpp");
-static const u8 sWobbuffetGfx27_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_27_2.4bpp");
-static const u8 sWobbuffetGfx27_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_27_3.4bpp");
+static const u8 sWobbuffetGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_27.4bpp.lz");
+static const u8 sWobbuffetGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_27_1.4bpp.lz");
+static const u8 sWobbuffetGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_27_2.4bpp.lz");
+static const u8 sWobbuffetGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_27_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites27[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx27, ARRAY_COUNT(sWobbuffetGfx27)}, 
@@ -2127,10 +2127,10 @@ static const ax_sprite sWobbuffetSprites27[] = {
 	{sWobbuffetGfx27_3, ARRAY_COUNT(sWobbuffetGfx27_3)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx28[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_28.4bpp");
-static const u8 sWobbuffetGfx28_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_28_1.4bpp");
-static const u8 sWobbuffetGfx28_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_28_2.4bpp");
-static const u8 sWobbuffetGfx28_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_28_3.4bpp");
+static const u8 sWobbuffetGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_28.4bpp.lz");
+static const u8 sWobbuffetGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_28_1.4bpp.lz");
+static const u8 sWobbuffetGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_28_2.4bpp.lz");
+static const u8 sWobbuffetGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_28_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites28[] = {
 	{sWobbuffetGfx28, ARRAY_COUNT(sWobbuffetGfx28)}, 
 	{NULL, 32}, 
@@ -2142,10 +2142,10 @@ static const ax_sprite sWobbuffetSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx29[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_29.4bpp");
-static const u8 sWobbuffetGfx29_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_29_1.4bpp");
-static const u8 sWobbuffetGfx29_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_29_2.4bpp");
-static const u8 sWobbuffetGfx29_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_29_3.4bpp");
+static const u8 sWobbuffetGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_29.4bpp.lz");
+static const u8 sWobbuffetGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_29_1.4bpp.lz");
+static const u8 sWobbuffetGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_29_2.4bpp.lz");
+static const u8 sWobbuffetGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_29_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites29[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx29, ARRAY_COUNT(sWobbuffetGfx29)}, 
@@ -2158,10 +2158,10 @@ static const ax_sprite sWobbuffetSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx30[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_30.4bpp");
-static const u8 sWobbuffetGfx30_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_30_1.4bpp");
-static const u8 sWobbuffetGfx30_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_30_2.4bpp");
-static const u8 sWobbuffetGfx30_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_30_3.4bpp");
+static const u8 sWobbuffetGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_30.4bpp.lz");
+static const u8 sWobbuffetGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_30_1.4bpp.lz");
+static const u8 sWobbuffetGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_30_2.4bpp.lz");
+static const u8 sWobbuffetGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_30_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites30[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx30, ARRAY_COUNT(sWobbuffetGfx30)}, 
@@ -2173,10 +2173,10 @@ static const ax_sprite sWobbuffetSprites30[] = {
 	{sWobbuffetGfx30_3, ARRAY_COUNT(sWobbuffetGfx30_3)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx31[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_31.4bpp");
-static const u8 sWobbuffetGfx31_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_31_1.4bpp");
-static const u8 sWobbuffetGfx31_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_31_2.4bpp");
-static const u8 sWobbuffetGfx31_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_31_3.4bpp");
+static const u8 sWobbuffetGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_31.4bpp.lz");
+static const u8 sWobbuffetGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_31_1.4bpp.lz");
+static const u8 sWobbuffetGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_31_2.4bpp.lz");
+static const u8 sWobbuffetGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_31_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites31[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx31, ARRAY_COUNT(sWobbuffetGfx31)}, 
@@ -2188,10 +2188,10 @@ static const ax_sprite sWobbuffetSprites31[] = {
 	{sWobbuffetGfx31_3, ARRAY_COUNT(sWobbuffetGfx31_3)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx32[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_32.4bpp");
-static const u8 sWobbuffetGfx32_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_32_1.4bpp");
-static const u8 sWobbuffetGfx32_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_32_2.4bpp");
-static const u8 sWobbuffetGfx32_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_32_3.4bpp");
+static const u8 sWobbuffetGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_32.4bpp.lz");
+static const u8 sWobbuffetGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_32_1.4bpp.lz");
+static const u8 sWobbuffetGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_32_2.4bpp.lz");
+static const u8 sWobbuffetGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_32_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites32[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx32, ARRAY_COUNT(sWobbuffetGfx32)}, 
@@ -2204,10 +2204,10 @@ static const ax_sprite sWobbuffetSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx33[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_33.4bpp");
-static const u8 sWobbuffetGfx33_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_33_1.4bpp");
-static const u8 sWobbuffetGfx33_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_33_2.4bpp");
-static const u8 sWobbuffetGfx33_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_33_3.4bpp");
+static const u8 sWobbuffetGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_33.4bpp.lz");
+static const u8 sWobbuffetGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_33_1.4bpp.lz");
+static const u8 sWobbuffetGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_33_2.4bpp.lz");
+static const u8 sWobbuffetGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_33_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites33[] = {
 	{NULL, 32}, 
 	{sWobbuffetGfx33, ARRAY_COUNT(sWobbuffetGfx33)}, 
@@ -2220,10 +2220,10 @@ static const ax_sprite sWobbuffetSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx34[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_34.4bpp");
-static const u8 sWobbuffetGfx34_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_34_1.4bpp");
-static const u8 sWobbuffetGfx34_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_34_2.4bpp");
-static const u8 sWobbuffetGfx34_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_34_3.4bpp");
+static const u8 sWobbuffetGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_34.4bpp.lz");
+static const u8 sWobbuffetGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_34_1.4bpp.lz");
+static const u8 sWobbuffetGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_34_2.4bpp.lz");
+static const u8 sWobbuffetGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_34_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites34[] = {
 	{sWobbuffetGfx34, ARRAY_COUNT(sWobbuffetGfx34)}, 
 	{NULL, 32}, 
@@ -2235,10 +2235,10 @@ static const ax_sprite sWobbuffetSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx35[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_35.4bpp");
-static const u8 sWobbuffetGfx35_1[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_35_1.4bpp");
-static const u8 sWobbuffetGfx35_2[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_35_2.4bpp");
-static const u8 sWobbuffetGfx35_3[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_35_3.4bpp");
+static const u8 sWobbuffetGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_35.4bpp.lz");
+static const u8 sWobbuffetGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_35_1.4bpp.lz");
+static const u8 sWobbuffetGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_35_2.4bpp.lz");
+static const u8 sWobbuffetGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_35_3.4bpp.lz");
 static const ax_sprite sWobbuffetSprites35[] = {
 	{sWobbuffetGfx35, ARRAY_COUNT(sWobbuffetGfx35)}, 
 	{NULL, 32}, 
@@ -2250,37 +2250,37 @@ static const ax_sprite sWobbuffetSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx36[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_36.4bpp");
+static const u8 sWobbuffetGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_36.4bpp.lz");
 static const ax_sprite sWobbuffetSprites36[] = {
 	{sWobbuffetGfx36, ARRAY_COUNT(sWobbuffetGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx37[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_37.4bpp");
+static const u8 sWobbuffetGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_37.4bpp.lz");
 static const ax_sprite sWobbuffetSprites37[] = {
 	{sWobbuffetGfx37, ARRAY_COUNT(sWobbuffetGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx38[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_38.4bpp");
+static const u8 sWobbuffetGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_38.4bpp.lz");
 static const ax_sprite sWobbuffetSprites38[] = {
 	{sWobbuffetGfx38, ARRAY_COUNT(sWobbuffetGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx39[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_39.4bpp");
+static const u8 sWobbuffetGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_39.4bpp.lz");
 static const ax_sprite sWobbuffetSprites39[] = {
 	{sWobbuffetGfx39, ARRAY_COUNT(sWobbuffetGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx40[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_40.4bpp");
+static const u8 sWobbuffetGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_40.4bpp.lz");
 static const ax_sprite sWobbuffetSprites40[] = {
 	{sWobbuffetGfx40, ARRAY_COUNT(sWobbuffetGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx41[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_41.4bpp");
+static const u8 sWobbuffetGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_41.4bpp.lz");
 static const ax_sprite sWobbuffetSprites41[] = {
 	{sWobbuffetGfx41, ARRAY_COUNT(sWobbuffetGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sWobbuffetGfx42[] = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_42.4bpp");
+static const u8 sWobbuffetGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wobbuffet/sprite_42.4bpp.lz");
 static const ax_sprite sWobbuffetSprites42[] = {
 	{sWobbuffetGfx42, ARRAY_COUNT(sWobbuffetGfx42)}, 
 	{NULL, 0}

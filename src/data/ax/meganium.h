@@ -2109,98 +2109,98 @@ static const ax_anim sMeganiumAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMeganiumGfx1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_1.4bpp");
+static const u8 sMeganiumGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_1.4bpp.lz");
 static const ax_sprite sMeganiumSprites1[] = {
 	{sMeganiumGfx1, ARRAY_COUNT(sMeganiumGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_2.4bpp");
+static const u8 sMeganiumGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_2.4bpp.lz");
 static const ax_sprite sMeganiumSprites2[] = {
 	{sMeganiumGfx2, ARRAY_COUNT(sMeganiumGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx3[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_3.4bpp");
+static const u8 sMeganiumGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_3.4bpp.lz");
 static const ax_sprite sMeganiumSprites3[] = {
 	{sMeganiumGfx3, ARRAY_COUNT(sMeganiumGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx4[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_4.4bpp");
+static const u8 sMeganiumGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_4.4bpp.lz");
 static const ax_sprite sMeganiumSprites4[] = {
 	{sMeganiumGfx4, ARRAY_COUNT(sMeganiumGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx5[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_5.4bpp");
+static const u8 sMeganiumGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_5.4bpp.lz");
 static const ax_sprite sMeganiumSprites5[] = {
 	{sMeganiumGfx5, ARRAY_COUNT(sMeganiumGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx6[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_6.4bpp");
+static const u8 sMeganiumGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_6.4bpp.lz");
 static const ax_sprite sMeganiumSprites6[] = {
 	{sMeganiumGfx6, ARRAY_COUNT(sMeganiumGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx7[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_7.4bpp");
+static const u8 sMeganiumGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_7.4bpp.lz");
 static const ax_sprite sMeganiumSprites7[] = {
 	{sMeganiumGfx7, ARRAY_COUNT(sMeganiumGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx8[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_8.4bpp");
+static const u8 sMeganiumGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_8.4bpp.lz");
 static const ax_sprite sMeganiumSprites8[] = {
 	{sMeganiumGfx8, ARRAY_COUNT(sMeganiumGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx9[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_9.4bpp");
+static const u8 sMeganiumGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_9.4bpp.lz");
 static const ax_sprite sMeganiumSprites9[] = {
 	{sMeganiumGfx9, ARRAY_COUNT(sMeganiumGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx10[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_10.4bpp");
+static const u8 sMeganiumGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_10.4bpp.lz");
 static const ax_sprite sMeganiumSprites10[] = {
 	{sMeganiumGfx10, ARRAY_COUNT(sMeganiumGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx11[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_11.4bpp");
+static const u8 sMeganiumGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_11.4bpp.lz");
 static const ax_sprite sMeganiumSprites11[] = {
 	{sMeganiumGfx11, ARRAY_COUNT(sMeganiumGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx12[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_12.4bpp");
+static const u8 sMeganiumGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_12.4bpp.lz");
 static const ax_sprite sMeganiumSprites12[] = {
 	{sMeganiumGfx12, ARRAY_COUNT(sMeganiumGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx13[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_13.4bpp");
+static const u8 sMeganiumGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_13.4bpp.lz");
 static const ax_sprite sMeganiumSprites13[] = {
 	{sMeganiumGfx13, ARRAY_COUNT(sMeganiumGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx14[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_14.4bpp");
+static const u8 sMeganiumGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_14.4bpp.lz");
 static const ax_sprite sMeganiumSprites14[] = {
 	{sMeganiumGfx14, ARRAY_COUNT(sMeganiumGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx15[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_15.4bpp");
+static const u8 sMeganiumGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_15.4bpp.lz");
 static const ax_sprite sMeganiumSprites15[] = {
 	{sMeganiumGfx15, ARRAY_COUNT(sMeganiumGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx16[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_16.4bpp");
+static const u8 sMeganiumGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_16.4bpp.lz");
 static const ax_sprite sMeganiumSprites16[] = {
 	{NULL, 128}, 
 	{sMeganiumGfx16, ARRAY_COUNT(sMeganiumGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx17[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_17.4bpp");
-static const u8 sMeganiumGfx17_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_17_1.4bpp");
+static const u8 sMeganiumGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_17.4bpp.lz");
+static const u8 sMeganiumGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_17_1.4bpp.lz");
 static const ax_sprite sMeganiumSprites17[] = {
 	{sMeganiumGfx17, ARRAY_COUNT(sMeganiumGfx17)}, 
 	{NULL, 96}, 
 	{sMeganiumGfx17_1, ARRAY_COUNT(sMeganiumGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx18[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_18.4bpp");
-static const u8 sMeganiumGfx18_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_18_1.4bpp");
-static const u8 sMeganiumGfx18_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_18_2.4bpp");
+static const u8 sMeganiumGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_18.4bpp.lz");
+static const u8 sMeganiumGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_18_1.4bpp.lz");
+static const u8 sMeganiumGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_18_2.4bpp.lz");
 static const ax_sprite sMeganiumSprites18[] = {
 	{sMeganiumGfx18, ARRAY_COUNT(sMeganiumGfx18)}, 
 	{NULL, 64}, 
@@ -2209,10 +2209,10 @@ static const ax_sprite sMeganiumSprites18[] = {
 	{sMeganiumGfx18_2, ARRAY_COUNT(sMeganiumGfx18_2)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx19[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_19.4bpp");
-static const u8 sMeganiumGfx19_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_19_1.4bpp");
-static const u8 sMeganiumGfx19_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_19_2.4bpp");
-static const u8 sMeganiumGfx19_3[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_19_3.4bpp");
+static const u8 sMeganiumGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_19.4bpp.lz");
+static const u8 sMeganiumGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_19_1.4bpp.lz");
+static const u8 sMeganiumGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_19_2.4bpp.lz");
+static const u8 sMeganiumGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_19_3.4bpp.lz");
 static const ax_sprite sMeganiumSprites19[] = {
 	{sMeganiumGfx19, ARRAY_COUNT(sMeganiumGfx19)}, 
 	{NULL, 64}, 
@@ -2223,10 +2223,10 @@ static const ax_sprite sMeganiumSprites19[] = {
 	{sMeganiumGfx19_3, ARRAY_COUNT(sMeganiumGfx19_3)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx20[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_20.4bpp");
-static const u8 sMeganiumGfx20_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_20_1.4bpp");
-static const u8 sMeganiumGfx20_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_20_2.4bpp");
-static const u8 sMeganiumGfx20_3[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_20_3.4bpp");
+static const u8 sMeganiumGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_20.4bpp.lz");
+static const u8 sMeganiumGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_20_1.4bpp.lz");
+static const u8 sMeganiumGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_20_2.4bpp.lz");
+static const u8 sMeganiumGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_20_3.4bpp.lz");
 static const ax_sprite sMeganiumSprites20[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx20, ARRAY_COUNT(sMeganiumGfx20)}, 
@@ -2238,20 +2238,20 @@ static const ax_sprite sMeganiumSprites20[] = {
 	{sMeganiumGfx20_3, ARRAY_COUNT(sMeganiumGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx21[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_21.4bpp");
+static const u8 sMeganiumGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_21.4bpp.lz");
 static const ax_sprite sMeganiumSprites21[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx21, ARRAY_COUNT(sMeganiumGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx22[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_22.4bpp");
+static const u8 sMeganiumGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_22.4bpp.lz");
 static const ax_sprite sMeganiumSprites22[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx22, ARRAY_COUNT(sMeganiumGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx23[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_23.4bpp");
-static const u8 sMeganiumGfx23_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_23_1.4bpp");
+static const u8 sMeganiumGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_23.4bpp.lz");
+static const u8 sMeganiumGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_23_1.4bpp.lz");
 static const ax_sprite sMeganiumSprites23[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx23, ARRAY_COUNT(sMeganiumGfx23)}, 
@@ -2259,8 +2259,8 @@ static const ax_sprite sMeganiumSprites23[] = {
 	{sMeganiumGfx23_1, ARRAY_COUNT(sMeganiumGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx24[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_24.4bpp");
-static const u8 sMeganiumGfx24_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_24_1.4bpp");
+static const u8 sMeganiumGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_24.4bpp.lz");
+static const u8 sMeganiumGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_24_1.4bpp.lz");
 static const ax_sprite sMeganiumSprites24[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx24, ARRAY_COUNT(sMeganiumGfx24)}, 
@@ -2268,9 +2268,9 @@ static const ax_sprite sMeganiumSprites24[] = {
 	{sMeganiumGfx24_1, ARRAY_COUNT(sMeganiumGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx25[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_25.4bpp");
-static const u8 sMeganiumGfx25_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_25_1.4bpp");
-static const u8 sMeganiumGfx25_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_25_2.4bpp");
+static const u8 sMeganiumGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_25.4bpp.lz");
+static const u8 sMeganiumGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_25_1.4bpp.lz");
+static const u8 sMeganiumGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_25_2.4bpp.lz");
 static const ax_sprite sMeganiumSprites25[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx25, ARRAY_COUNT(sMeganiumGfx25)}, 
@@ -2281,10 +2281,10 @@ static const ax_sprite sMeganiumSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx26[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_26.4bpp");
-static const u8 sMeganiumGfx26_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_26_1.4bpp");
-static const u8 sMeganiumGfx26_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_26_2.4bpp");
-static const u8 sMeganiumGfx26_3[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_26_3.4bpp");
+static const u8 sMeganiumGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_26.4bpp.lz");
+static const u8 sMeganiumGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_26_1.4bpp.lz");
+static const u8 sMeganiumGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_26_2.4bpp.lz");
+static const u8 sMeganiumGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_26_3.4bpp.lz");
 static const ax_sprite sMeganiumSprites26[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx26, ARRAY_COUNT(sMeganiumGfx26)}, 
@@ -2296,8 +2296,8 @@ static const ax_sprite sMeganiumSprites26[] = {
 	{sMeganiumGfx26_3, ARRAY_COUNT(sMeganiumGfx26_3)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx27[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_27.4bpp");
-static const u8 sMeganiumGfx27_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_27_1.4bpp");
+static const u8 sMeganiumGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_27.4bpp.lz");
+static const u8 sMeganiumGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_27_1.4bpp.lz");
 static const ax_sprite sMeganiumSprites27[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx27, ARRAY_COUNT(sMeganiumGfx27)}, 
@@ -2306,9 +2306,9 @@ static const ax_sprite sMeganiumSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx28[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_28.4bpp");
-static const u8 sMeganiumGfx28_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_28_1.4bpp");
-static const u8 sMeganiumGfx28_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_28_2.4bpp");
+static const u8 sMeganiumGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_28.4bpp.lz");
+static const u8 sMeganiumGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_28_1.4bpp.lz");
+static const u8 sMeganiumGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_28_2.4bpp.lz");
 static const ax_sprite sMeganiumSprites28[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx28, ARRAY_COUNT(sMeganiumGfx28)}, 
@@ -2318,9 +2318,9 @@ static const ax_sprite sMeganiumSprites28[] = {
 	{sMeganiumGfx28_2, ARRAY_COUNT(sMeganiumGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx29[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_29.4bpp");
-static const u8 sMeganiumGfx29_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_29_1.4bpp");
-static const u8 sMeganiumGfx29_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_29_2.4bpp");
+static const u8 sMeganiumGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_29.4bpp.lz");
+static const u8 sMeganiumGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_29_1.4bpp.lz");
+static const u8 sMeganiumGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_29_2.4bpp.lz");
 static const ax_sprite sMeganiumSprites29[] = {
 	{sMeganiumGfx29, ARRAY_COUNT(sMeganiumGfx29)}, 
 	{NULL, 32}, 
@@ -2329,9 +2329,9 @@ static const ax_sprite sMeganiumSprites29[] = {
 	{sMeganiumGfx29_2, ARRAY_COUNT(sMeganiumGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx30[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_30.4bpp");
-static const u8 sMeganiumGfx30_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_30_1.4bpp");
-static const u8 sMeganiumGfx30_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_30_2.4bpp");
+static const u8 sMeganiumGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_30.4bpp.lz");
+static const u8 sMeganiumGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_30_1.4bpp.lz");
+static const u8 sMeganiumGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_30_2.4bpp.lz");
 static const ax_sprite sMeganiumSprites30[] = {
 	{sMeganiumGfx30, ARRAY_COUNT(sMeganiumGfx30)}, 
 	{NULL, 64}, 
@@ -2340,9 +2340,9 @@ static const ax_sprite sMeganiumSprites30[] = {
 	{sMeganiumGfx30_2, ARRAY_COUNT(sMeganiumGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx31[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_31.4bpp");
-static const u8 sMeganiumGfx31_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_31_1.4bpp");
-static const u8 sMeganiumGfx31_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_31_2.4bpp");
+static const u8 sMeganiumGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_31.4bpp.lz");
+static const u8 sMeganiumGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_31_1.4bpp.lz");
+static const u8 sMeganiumGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_31_2.4bpp.lz");
 static const ax_sprite sMeganiumSprites31[] = {
 	{sMeganiumGfx31, ARRAY_COUNT(sMeganiumGfx31)}, 
 	{NULL, 64}, 
@@ -2351,10 +2351,10 @@ static const ax_sprite sMeganiumSprites31[] = {
 	{sMeganiumGfx31_2, ARRAY_COUNT(sMeganiumGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx32[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_32.4bpp");
-static const u8 sMeganiumGfx32_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_32_1.4bpp");
-static const u8 sMeganiumGfx32_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_32_2.4bpp");
-static const u8 sMeganiumGfx32_3[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_32_3.4bpp");
+static const u8 sMeganiumGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_32.4bpp.lz");
+static const u8 sMeganiumGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_32_1.4bpp.lz");
+static const u8 sMeganiumGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_32_2.4bpp.lz");
+static const u8 sMeganiumGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_32_3.4bpp.lz");
 static const ax_sprite sMeganiumSprites32[] = {
 	{sMeganiumGfx32, ARRAY_COUNT(sMeganiumGfx32)}, 
 	{NULL, 32}, 
@@ -2365,27 +2365,27 @@ static const ax_sprite sMeganiumSprites32[] = {
 	{sMeganiumGfx32_3, ARRAY_COUNT(sMeganiumGfx32_3)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx33[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_33.4bpp");
-static const u8 sMeganiumGfx33_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_33_1.4bpp");
+static const u8 sMeganiumGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_33.4bpp.lz");
+static const u8 sMeganiumGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_33_1.4bpp.lz");
 static const ax_sprite sMeganiumSprites33[] = {
 	{sMeganiumGfx33, ARRAY_COUNT(sMeganiumGfx33)}, 
 	{NULL, 32}, 
 	{sMeganiumGfx33_1, ARRAY_COUNT(sMeganiumGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx34[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_34.4bpp");
+static const u8 sMeganiumGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_34.4bpp.lz");
 static const ax_sprite sMeganiumSprites34[] = {
 	{sMeganiumGfx34, ARRAY_COUNT(sMeganiumGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx35[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_35.4bpp");
+static const u8 sMeganiumGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_35.4bpp.lz");
 static const ax_sprite sMeganiumSprites35[] = {
 	{sMeganiumGfx35, ARRAY_COUNT(sMeganiumGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx36[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_36.4bpp");
-static const u8 sMeganiumGfx36_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_36_1.4bpp");
-static const u8 sMeganiumGfx36_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_36_2.4bpp");
+static const u8 sMeganiumGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_36.4bpp.lz");
+static const u8 sMeganiumGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_36_1.4bpp.lz");
+static const u8 sMeganiumGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_36_2.4bpp.lz");
 static const ax_sprite sMeganiumSprites36[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx36, ARRAY_COUNT(sMeganiumGfx36)}, 
@@ -2395,10 +2395,10 @@ static const ax_sprite sMeganiumSprites36[] = {
 	{sMeganiumGfx36_2, ARRAY_COUNT(sMeganiumGfx36_2)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx37[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_37.4bpp");
-static const u8 sMeganiumGfx37_1[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_37_1.4bpp");
-static const u8 sMeganiumGfx37_2[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_37_2.4bpp");
-static const u8 sMeganiumGfx37_3[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_37_3.4bpp");
+static const u8 sMeganiumGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_37.4bpp.lz");
+static const u8 sMeganiumGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_37_1.4bpp.lz");
+static const u8 sMeganiumGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_37_2.4bpp.lz");
+static const u8 sMeganiumGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_37_3.4bpp.lz");
 static const ax_sprite sMeganiumSprites37[] = {
 	{NULL, 32}, 
 	{sMeganiumGfx37, ARRAY_COUNT(sMeganiumGfx37)}, 
@@ -2410,52 +2410,52 @@ static const ax_sprite sMeganiumSprites37[] = {
 	{sMeganiumGfx37_3, ARRAY_COUNT(sMeganiumGfx37_3)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx38[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_38.4bpp");
+static const u8 sMeganiumGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_38.4bpp.lz");
 static const ax_sprite sMeganiumSprites38[] = {
 	{sMeganiumGfx38, ARRAY_COUNT(sMeganiumGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx39[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_39.4bpp");
+static const u8 sMeganiumGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_39.4bpp.lz");
 static const ax_sprite sMeganiumSprites39[] = {
 	{sMeganiumGfx39, ARRAY_COUNT(sMeganiumGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx40[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_40.4bpp");
+static const u8 sMeganiumGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_40.4bpp.lz");
 static const ax_sprite sMeganiumSprites40[] = {
 	{sMeganiumGfx40, ARRAY_COUNT(sMeganiumGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx41[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_41.4bpp");
+static const u8 sMeganiumGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_41.4bpp.lz");
 static const ax_sprite sMeganiumSprites41[] = {
 	{sMeganiumGfx41, ARRAY_COUNT(sMeganiumGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx42[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_42.4bpp");
+static const u8 sMeganiumGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_42.4bpp.lz");
 static const ax_sprite sMeganiumSprites42[] = {
 	{sMeganiumGfx42, ARRAY_COUNT(sMeganiumGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx43[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_43.4bpp");
+static const u8 sMeganiumGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_43.4bpp.lz");
 static const ax_sprite sMeganiumSprites43[] = {
 	{sMeganiumGfx43, ARRAY_COUNT(sMeganiumGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx44[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_44.4bpp");
+static const u8 sMeganiumGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_44.4bpp.lz");
 static const ax_sprite sMeganiumSprites44[] = {
 	{sMeganiumGfx44, ARRAY_COUNT(sMeganiumGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx45[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_45.4bpp");
+static const u8 sMeganiumGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_45.4bpp.lz");
 static const ax_sprite sMeganiumSprites45[] = {
 	{sMeganiumGfx45, ARRAY_COUNT(sMeganiumGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx46[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_46.4bpp");
+static const u8 sMeganiumGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_46.4bpp.lz");
 static const ax_sprite sMeganiumSprites46[] = {
 	{sMeganiumGfx46, ARRAY_COUNT(sMeganiumGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMeganiumGfx47[] = INCBIN_U8("graphics/ax/mon/meganium/sprite_47.4bpp");
+static const u8 sMeganiumGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meganium/sprite_47.4bpp.lz");
 static const ax_sprite sMeganiumSprites47[] = {
 	{sMeganiumGfx47, ARRAY_COUNT(sMeganiumGfx47)}, 
 	{NULL, 0}

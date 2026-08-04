@@ -2119,128 +2119,128 @@ static const ax_anim sMagnemiteAnims_14_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMagnemiteGfx1[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_1.4bpp");
+static const u8 sMagnemiteGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_1.4bpp.lz");
 static const ax_sprite sMagnemiteSprites1[] = {
 	{sMagnemiteGfx1, ARRAY_COUNT(sMagnemiteGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx2[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_2.4bpp");
+static const u8 sMagnemiteGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_2.4bpp.lz");
 static const ax_sprite sMagnemiteSprites2[] = {
 	{sMagnemiteGfx2, ARRAY_COUNT(sMagnemiteGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx3[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_3.4bpp");
+static const u8 sMagnemiteGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_3.4bpp.lz");
 static const ax_sprite sMagnemiteSprites3[] = {
 	{sMagnemiteGfx3, ARRAY_COUNT(sMagnemiteGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx4[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_4.4bpp");
+static const u8 sMagnemiteGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_4.4bpp.lz");
 static const ax_sprite sMagnemiteSprites4[] = {
 	{sMagnemiteGfx4, ARRAY_COUNT(sMagnemiteGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx5[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_5.4bpp");
+static const u8 sMagnemiteGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_5.4bpp.lz");
 static const ax_sprite sMagnemiteSprites5[] = {
 	{sMagnemiteGfx5, ARRAY_COUNT(sMagnemiteGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx6[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_6.4bpp");
+static const u8 sMagnemiteGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_6.4bpp.lz");
 static const ax_sprite sMagnemiteSprites6[] = {
 	{sMagnemiteGfx6, ARRAY_COUNT(sMagnemiteGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx7[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_7.4bpp");
+static const u8 sMagnemiteGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_7.4bpp.lz");
 static const ax_sprite sMagnemiteSprites7[] = {
 	{sMagnemiteGfx7, ARRAY_COUNT(sMagnemiteGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx8[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_8.4bpp");
+static const u8 sMagnemiteGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_8.4bpp.lz");
 static const ax_sprite sMagnemiteSprites8[] = {
 	{sMagnemiteGfx8, ARRAY_COUNT(sMagnemiteGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx9[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_9.4bpp");
+static const u8 sMagnemiteGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_9.4bpp.lz");
 static const ax_sprite sMagnemiteSprites9[] = {
 	{sMagnemiteGfx9, ARRAY_COUNT(sMagnemiteGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx10[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_10.4bpp");
+static const u8 sMagnemiteGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_10.4bpp.lz");
 static const ax_sprite sMagnemiteSprites10[] = {
 	{sMagnemiteGfx10, ARRAY_COUNT(sMagnemiteGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx11[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_11.4bpp");
+static const u8 sMagnemiteGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_11.4bpp.lz");
 static const ax_sprite sMagnemiteSprites11[] = {
 	{sMagnemiteGfx11, ARRAY_COUNT(sMagnemiteGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx12[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_12.4bpp");
+static const u8 sMagnemiteGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_12.4bpp.lz");
 static const ax_sprite sMagnemiteSprites12[] = {
 	{sMagnemiteGfx12, ARRAY_COUNT(sMagnemiteGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx13[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_13.4bpp");
+static const u8 sMagnemiteGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_13.4bpp.lz");
 static const ax_sprite sMagnemiteSprites13[] = {
 	{sMagnemiteGfx13, ARRAY_COUNT(sMagnemiteGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx14[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_14.4bpp");
+static const u8 sMagnemiteGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_14.4bpp.lz");
 static const ax_sprite sMagnemiteSprites14[] = {
 	{sMagnemiteGfx14, ARRAY_COUNT(sMagnemiteGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx15[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_15.4bpp");
+static const u8 sMagnemiteGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_15.4bpp.lz");
 static const ax_sprite sMagnemiteSprites15[] = {
 	{sMagnemiteGfx15, ARRAY_COUNT(sMagnemiteGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx16[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_16.4bpp");
+static const u8 sMagnemiteGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_16.4bpp.lz");
 static const ax_sprite sMagnemiteSprites16[] = {
 	{sMagnemiteGfx16, ARRAY_COUNT(sMagnemiteGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx17[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_17.4bpp");
+static const u8 sMagnemiteGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_17.4bpp.lz");
 static const ax_sprite sMagnemiteSprites17[] = {
 	{sMagnemiteGfx17, ARRAY_COUNT(sMagnemiteGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx18[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_18.4bpp");
+static const u8 sMagnemiteGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_18.4bpp.lz");
 static const ax_sprite sMagnemiteSprites18[] = {
 	{sMagnemiteGfx18, ARRAY_COUNT(sMagnemiteGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx19[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_19.4bpp");
+static const u8 sMagnemiteGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_19.4bpp.lz");
 static const ax_sprite sMagnemiteSprites19[] = {
 	{sMagnemiteGfx19, ARRAY_COUNT(sMagnemiteGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx20[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_20.4bpp");
+static const u8 sMagnemiteGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_20.4bpp.lz");
 static const ax_sprite sMagnemiteSprites20[] = {
 	{sMagnemiteGfx20, ARRAY_COUNT(sMagnemiteGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx21[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_21.4bpp");
+static const u8 sMagnemiteGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_21.4bpp.lz");
 static const ax_sprite sMagnemiteSprites21[] = {
 	{sMagnemiteGfx21, ARRAY_COUNT(sMagnemiteGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx22[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_22.4bpp");
+static const u8 sMagnemiteGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_22.4bpp.lz");
 static const ax_sprite sMagnemiteSprites22[] = {
 	{sMagnemiteGfx22, ARRAY_COUNT(sMagnemiteGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx23[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_23.4bpp");
+static const u8 sMagnemiteGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_23.4bpp.lz");
 static const ax_sprite sMagnemiteSprites23[] = {
 	{sMagnemiteGfx23, ARRAY_COUNT(sMagnemiteGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx24[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_24.4bpp");
+static const u8 sMagnemiteGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_24.4bpp.lz");
 static const ax_sprite sMagnemiteSprites24[] = {
 	{sMagnemiteGfx24, ARRAY_COUNT(sMagnemiteGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx25[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_25.4bpp");
-static const u8 sMagnemiteGfx25_1[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_25_1.4bpp");
+static const u8 sMagnemiteGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_25.4bpp.lz");
+static const u8 sMagnemiteGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_25_1.4bpp.lz");
 static const ax_sprite sMagnemiteSprites25[] = {
 	{sMagnemiteGfx25, ARRAY_COUNT(sMagnemiteGfx25)}, 
 	{NULL, 64}, 
@@ -2248,8 +2248,8 @@ static const ax_sprite sMagnemiteSprites25[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx26[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_26.4bpp");
-static const u8 sMagnemiteGfx26_1[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_26_1.4bpp");
+static const u8 sMagnemiteGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_26.4bpp.lz");
+static const u8 sMagnemiteGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_26_1.4bpp.lz");
 static const ax_sprite sMagnemiteSprites26[] = {
 	{sMagnemiteGfx26, ARRAY_COUNT(sMagnemiteGfx26)}, 
 	{NULL, 64}, 
@@ -2257,60 +2257,60 @@ static const ax_sprite sMagnemiteSprites26[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx27[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_27.4bpp");
+static const u8 sMagnemiteGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_27.4bpp.lz");
 static const ax_sprite sMagnemiteSprites27[] = {
 	{sMagnemiteGfx27, ARRAY_COUNT(sMagnemiteGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx28[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_28.4bpp");
+static const u8 sMagnemiteGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_28.4bpp.lz");
 static const ax_sprite sMagnemiteSprites28[] = {
 	{sMagnemiteGfx28, ARRAY_COUNT(sMagnemiteGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx29[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_29.4bpp");
+static const u8 sMagnemiteGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_29.4bpp.lz");
 static const ax_sprite sMagnemiteSprites29[] = {
 	{sMagnemiteGfx29, ARRAY_COUNT(sMagnemiteGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx30[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_30.4bpp");
+static const u8 sMagnemiteGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_30.4bpp.lz");
 static const ax_sprite sMagnemiteSprites30[] = {
 	{sMagnemiteGfx30, ARRAY_COUNT(sMagnemiteGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx31[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_31.4bpp");
+static const u8 sMagnemiteGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_31.4bpp.lz");
 static const ax_sprite sMagnemiteSprites31[] = {
 	{sMagnemiteGfx31, ARRAY_COUNT(sMagnemiteGfx31)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx32[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_32.4bpp");
+static const u8 sMagnemiteGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_32.4bpp.lz");
 static const ax_sprite sMagnemiteSprites32[] = {
 	{sMagnemiteGfx32, ARRAY_COUNT(sMagnemiteGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx33[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_33.4bpp");
+static const u8 sMagnemiteGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_33.4bpp.lz");
 static const ax_sprite sMagnemiteSprites33[] = {
 	{sMagnemiteGfx33, ARRAY_COUNT(sMagnemiteGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx34[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_34.4bpp");
+static const u8 sMagnemiteGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_34.4bpp.lz");
 static const ax_sprite sMagnemiteSprites34[] = {
 	{sMagnemiteGfx34, ARRAY_COUNT(sMagnemiteGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx35[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_35.4bpp");
+static const u8 sMagnemiteGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_35.4bpp.lz");
 static const ax_sprite sMagnemiteSprites35[] = {
 	{sMagnemiteGfx35, ARRAY_COUNT(sMagnemiteGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx36[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_36.4bpp");
+static const u8 sMagnemiteGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_36.4bpp.lz");
 static const ax_sprite sMagnemiteSprites36[] = {
 	{sMagnemiteGfx36, ARRAY_COUNT(sMagnemiteGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx37[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_37.4bpp");
-static const u8 sMagnemiteGfx37_1[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_37_1.4bpp");
+static const u8 sMagnemiteGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_37.4bpp.lz");
+static const u8 sMagnemiteGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_37_1.4bpp.lz");
 static const ax_sprite sMagnemiteSprites37[] = {
 	{sMagnemiteGfx37, ARRAY_COUNT(sMagnemiteGfx37)}, 
 	{NULL, 32}, 
@@ -2318,8 +2318,8 @@ static const ax_sprite sMagnemiteSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx38[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_38.4bpp");
-static const u8 sMagnemiteGfx38_1[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_38_1.4bpp");
+static const u8 sMagnemiteGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_38.4bpp.lz");
+static const u8 sMagnemiteGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_38_1.4bpp.lz");
 static const ax_sprite sMagnemiteSprites38[] = {
 	{sMagnemiteGfx38, ARRAY_COUNT(sMagnemiteGfx38)}, 
 	{NULL, 32}, 
@@ -2327,8 +2327,8 @@ static const ax_sprite sMagnemiteSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx39[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_39.4bpp");
-static const u8 sMagnemiteGfx39_1[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_39_1.4bpp");
+static const u8 sMagnemiteGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_39.4bpp.lz");
+static const u8 sMagnemiteGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_39_1.4bpp.lz");
 static const ax_sprite sMagnemiteSprites39[] = {
 	{sMagnemiteGfx39, ARRAY_COUNT(sMagnemiteGfx39)}, 
 	{NULL, 32}, 
@@ -2336,109 +2336,109 @@ static const ax_sprite sMagnemiteSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx40[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_40.4bpp");
+static const u8 sMagnemiteGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_40.4bpp.lz");
 static const ax_sprite sMagnemiteSprites40[] = {
 	{sMagnemiteGfx40, ARRAY_COUNT(sMagnemiteGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx41[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_41.4bpp");
+static const u8 sMagnemiteGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_41.4bpp.lz");
 static const ax_sprite sMagnemiteSprites41[] = {
 	{sMagnemiteGfx41, ARRAY_COUNT(sMagnemiteGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx42[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_42.4bpp");
+static const u8 sMagnemiteGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_42.4bpp.lz");
 static const ax_sprite sMagnemiteSprites42[] = {
 	{sMagnemiteGfx42, ARRAY_COUNT(sMagnemiteGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx43[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_43.4bpp");
+static const u8 sMagnemiteGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_43.4bpp.lz");
 static const ax_sprite sMagnemiteSprites43[] = {
 	{sMagnemiteGfx43, ARRAY_COUNT(sMagnemiteGfx43)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx44[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_44.4bpp");
+static const u8 sMagnemiteGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_44.4bpp.lz");
 static const ax_sprite sMagnemiteSprites44[] = {
 	{sMagnemiteGfx44, ARRAY_COUNT(sMagnemiteGfx44)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx45[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_45.4bpp");
+static const u8 sMagnemiteGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_45.4bpp.lz");
 static const ax_sprite sMagnemiteSprites45[] = {
 	{sMagnemiteGfx45, ARRAY_COUNT(sMagnemiteGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx46[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_46.4bpp");
+static const u8 sMagnemiteGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_46.4bpp.lz");
 static const ax_sprite sMagnemiteSprites46[] = {
 	{sMagnemiteGfx46, ARRAY_COUNT(sMagnemiteGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx47[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_47.4bpp");
+static const u8 sMagnemiteGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_47.4bpp.lz");
 static const ax_sprite sMagnemiteSprites47[] = {
 	{sMagnemiteGfx47, ARRAY_COUNT(sMagnemiteGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx48[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_48.4bpp");
+static const u8 sMagnemiteGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_48.4bpp.lz");
 static const ax_sprite sMagnemiteSprites48[] = {
 	{sMagnemiteGfx48, ARRAY_COUNT(sMagnemiteGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx49[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_49.4bpp");
+static const u8 sMagnemiteGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_49.4bpp.lz");
 static const ax_sprite sMagnemiteSprites49[] = {
 	{sMagnemiteGfx49, ARRAY_COUNT(sMagnemiteGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx50[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_50.4bpp");
+static const u8 sMagnemiteGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_50.4bpp.lz");
 static const ax_sprite sMagnemiteSprites50[] = {
 	{sMagnemiteGfx50, ARRAY_COUNT(sMagnemiteGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx51[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_51.4bpp");
+static const u8 sMagnemiteGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_51.4bpp.lz");
 static const ax_sprite sMagnemiteSprites51[] = {
 	{sMagnemiteGfx51, ARRAY_COUNT(sMagnemiteGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx52[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_52.4bpp");
+static const u8 sMagnemiteGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_52.4bpp.lz");
 static const ax_sprite sMagnemiteSprites52[] = {
 	{sMagnemiteGfx52, ARRAY_COUNT(sMagnemiteGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx53[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_53.4bpp");
+static const u8 sMagnemiteGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_53.4bpp.lz");
 static const ax_sprite sMagnemiteSprites53[] = {
 	{sMagnemiteGfx53, ARRAY_COUNT(sMagnemiteGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx54[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_54.4bpp");
+static const u8 sMagnemiteGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_54.4bpp.lz");
 static const ax_sprite sMagnemiteSprites54[] = {
 	{sMagnemiteGfx54, ARRAY_COUNT(sMagnemiteGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx55[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_55.4bpp");
+static const u8 sMagnemiteGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_55.4bpp.lz");
 static const ax_sprite sMagnemiteSprites55[] = {
 	{sMagnemiteGfx55, ARRAY_COUNT(sMagnemiteGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx56[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_56.4bpp");
+static const u8 sMagnemiteGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_56.4bpp.lz");
 static const ax_sprite sMagnemiteSprites56[] = {
 	{sMagnemiteGfx56, ARRAY_COUNT(sMagnemiteGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx57[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_57.4bpp");
+static const u8 sMagnemiteGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_57.4bpp.lz");
 static const ax_sprite sMagnemiteSprites57[] = {
 	{sMagnemiteGfx57, ARRAY_COUNT(sMagnemiteGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx58[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_58.4bpp");
+static const u8 sMagnemiteGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_58.4bpp.lz");
 static const ax_sprite sMagnemiteSprites58[] = {
 	{sMagnemiteGfx58, ARRAY_COUNT(sMagnemiteGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx59[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_59.4bpp");
+static const u8 sMagnemiteGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_59.4bpp.lz");
 static const ax_sprite sMagnemiteSprites59[] = {
 	{sMagnemiteGfx59, ARRAY_COUNT(sMagnemiteGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMagnemiteGfx60[] = INCBIN_U8("graphics/ax/mon/magnemite/sprite_60.4bpp");
+static const u8 sMagnemiteGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/magnemite/sprite_60.4bpp.lz");
 static const ax_sprite sMagnemiteSprites60[] = {
 	{sMagnemiteGfx60, ARRAY_COUNT(sMagnemiteGfx60)}, 
 	{NULL, 0}

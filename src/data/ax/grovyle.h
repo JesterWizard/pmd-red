@@ -1891,88 +1891,88 @@ static const ax_anim sGrovyleAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGrovyleGfx1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_1.4bpp");
+static const u8 sGrovyleGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_1.4bpp.lz");
 static const ax_sprite sGrovyleSprites1[] = {
 	{sGrovyleGfx1, ARRAY_COUNT(sGrovyleGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_2.4bpp");
+static const u8 sGrovyleGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_2.4bpp.lz");
 static const ax_sprite sGrovyleSprites2[] = {
 	{sGrovyleGfx2, ARRAY_COUNT(sGrovyleGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx3[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_3.4bpp");
+static const u8 sGrovyleGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_3.4bpp.lz");
 static const ax_sprite sGrovyleSprites3[] = {
 	{sGrovyleGfx3, ARRAY_COUNT(sGrovyleGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx4[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_4.4bpp");
+static const u8 sGrovyleGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_4.4bpp.lz");
 static const ax_sprite sGrovyleSprites4[] = {
 	{sGrovyleGfx4, ARRAY_COUNT(sGrovyleGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx5[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_5.4bpp");
+static const u8 sGrovyleGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_5.4bpp.lz");
 static const ax_sprite sGrovyleSprites5[] = {
 	{sGrovyleGfx5, ARRAY_COUNT(sGrovyleGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx6[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_6.4bpp");
+static const u8 sGrovyleGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_6.4bpp.lz");
 static const ax_sprite sGrovyleSprites6[] = {
 	{sGrovyleGfx6, ARRAY_COUNT(sGrovyleGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx7[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_7.4bpp");
+static const u8 sGrovyleGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_7.4bpp.lz");
 static const ax_sprite sGrovyleSprites7[] = {
 	{sGrovyleGfx7, ARRAY_COUNT(sGrovyleGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx8[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_8.4bpp");
+static const u8 sGrovyleGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_8.4bpp.lz");
 static const ax_sprite sGrovyleSprites8[] = {
 	{sGrovyleGfx8, ARRAY_COUNT(sGrovyleGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx9[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_9.4bpp");
+static const u8 sGrovyleGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_9.4bpp.lz");
 static const ax_sprite sGrovyleSprites9[] = {
 	{sGrovyleGfx9, ARRAY_COUNT(sGrovyleGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx10[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_10.4bpp");
+static const u8 sGrovyleGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_10.4bpp.lz");
 static const ax_sprite sGrovyleSprites10[] = {
 	{sGrovyleGfx10, ARRAY_COUNT(sGrovyleGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx11[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_11.4bpp");
+static const u8 sGrovyleGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_11.4bpp.lz");
 static const ax_sprite sGrovyleSprites11[] = {
 	{sGrovyleGfx11, ARRAY_COUNT(sGrovyleGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx12[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_12.4bpp");
+static const u8 sGrovyleGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_12.4bpp.lz");
 static const ax_sprite sGrovyleSprites12[] = {
 	{sGrovyleGfx12, ARRAY_COUNT(sGrovyleGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx13[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_13.4bpp");
+static const u8 sGrovyleGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_13.4bpp.lz");
 static const ax_sprite sGrovyleSprites13[] = {
 	{sGrovyleGfx13, ARRAY_COUNT(sGrovyleGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx14[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_14.4bpp");
+static const u8 sGrovyleGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_14.4bpp.lz");
 static const ax_sprite sGrovyleSprites14[] = {
 	{sGrovyleGfx14, ARRAY_COUNT(sGrovyleGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx15[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_15.4bpp");
+static const u8 sGrovyleGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_15.4bpp.lz");
 static const ax_sprite sGrovyleSprites15[] = {
 	{sGrovyleGfx15, ARRAY_COUNT(sGrovyleGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx16[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_16.4bpp");
+static const u8 sGrovyleGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_16.4bpp.lz");
 static const ax_sprite sGrovyleSprites16[] = {
 	{sGrovyleGfx16, ARRAY_COUNT(sGrovyleGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx17[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_17.4bpp");
-static const u8 sGrovyleGfx17_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_17_1.4bpp");
+static const u8 sGrovyleGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_17.4bpp.lz");
+static const u8 sGrovyleGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_17_1.4bpp.lz");
 static const ax_sprite sGrovyleSprites17[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx17, ARRAY_COUNT(sGrovyleGfx17)}, 
@@ -1980,35 +1980,35 @@ static const ax_sprite sGrovyleSprites17[] = {
 	{sGrovyleGfx17_1, ARRAY_COUNT(sGrovyleGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx18[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_18.4bpp");
+static const u8 sGrovyleGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_18.4bpp.lz");
 static const ax_sprite sGrovyleSprites18[] = {
 	{sGrovyleGfx18, ARRAY_COUNT(sGrovyleGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx19[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_19.4bpp");
+static const u8 sGrovyleGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_19.4bpp.lz");
 static const ax_sprite sGrovyleSprites19[] = {
 	{sGrovyleGfx19, ARRAY_COUNT(sGrovyleGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx20[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_20.4bpp");
+static const u8 sGrovyleGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_20.4bpp.lz");
 static const ax_sprite sGrovyleSprites20[] = {
 	{sGrovyleGfx20, ARRAY_COUNT(sGrovyleGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx21[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_21.4bpp");
+static const u8 sGrovyleGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_21.4bpp.lz");
 static const ax_sprite sGrovyleSprites21[] = {
 	{sGrovyleGfx21, ARRAY_COUNT(sGrovyleGfx21)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx22[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_22.4bpp");
+static const u8 sGrovyleGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_22.4bpp.lz");
 static const ax_sprite sGrovyleSprites22[] = {
 	{sGrovyleGfx22, ARRAY_COUNT(sGrovyleGfx22)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx23[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_23.4bpp");
-static const u8 sGrovyleGfx23_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_23_1.4bpp");
+static const u8 sGrovyleGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_23.4bpp.lz");
+static const u8 sGrovyleGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_23_1.4bpp.lz");
 static const ax_sprite sGrovyleSprites23[] = {
 	{sGrovyleGfx23, ARRAY_COUNT(sGrovyleGfx23)}, 
 	{NULL, 32}, 
@@ -2016,24 +2016,24 @@ static const ax_sprite sGrovyleSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx24[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_24.4bpp");
+static const u8 sGrovyleGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_24.4bpp.lz");
 static const ax_sprite sGrovyleSprites24[] = {
 	{sGrovyleGfx24, ARRAY_COUNT(sGrovyleGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx25[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_25.4bpp");
+static const u8 sGrovyleGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_25.4bpp.lz");
 static const ax_sprite sGrovyleSprites25[] = {
 	{sGrovyleGfx25, ARRAY_COUNT(sGrovyleGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx26[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_26.4bpp");
+static const u8 sGrovyleGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_26.4bpp.lz");
 static const ax_sprite sGrovyleSprites26[] = {
 	{sGrovyleGfx26, ARRAY_COUNT(sGrovyleGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx27[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_27.4bpp");
-static const u8 sGrovyleGfx27_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_27_1.4bpp");
-static const u8 sGrovyleGfx27_2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_27_2.4bpp");
+static const u8 sGrovyleGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_27.4bpp.lz");
+static const u8 sGrovyleGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_27_1.4bpp.lz");
+static const u8 sGrovyleGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_27_2.4bpp.lz");
 static const ax_sprite sGrovyleSprites27[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx27, ARRAY_COUNT(sGrovyleGfx27)}, 
@@ -2044,16 +2044,16 @@ static const ax_sprite sGrovyleSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx28[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_28.4bpp");
+static const u8 sGrovyleGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_28.4bpp.lz");
 static const ax_sprite sGrovyleSprites28[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx28, ARRAY_COUNT(sGrovyleGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx29[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_29.4bpp");
-static const u8 sGrovyleGfx29_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_29_1.4bpp");
-static const u8 sGrovyleGfx29_2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_29_2.4bpp");
-static const u8 sGrovyleGfx29_3[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_29_3.4bpp");
+static const u8 sGrovyleGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_29.4bpp.lz");
+static const u8 sGrovyleGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_29_1.4bpp.lz");
+static const u8 sGrovyleGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_29_2.4bpp.lz");
+static const u8 sGrovyleGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_29_3.4bpp.lz");
 static const ax_sprite sGrovyleSprites29[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx29, ARRAY_COUNT(sGrovyleGfx29)}, 
@@ -2066,8 +2066,8 @@ static const ax_sprite sGrovyleSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx30[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_30.4bpp");
-static const u8 sGrovyleGfx30_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_30_1.4bpp");
+static const u8 sGrovyleGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_30.4bpp.lz");
+static const u8 sGrovyleGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_30_1.4bpp.lz");
 static const ax_sprite sGrovyleSprites30[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx30, ARRAY_COUNT(sGrovyleGfx30)}, 
@@ -2075,10 +2075,10 @@ static const ax_sprite sGrovyleSprites30[] = {
 	{sGrovyleGfx30_1, ARRAY_COUNT(sGrovyleGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx31[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_31.4bpp");
-static const u8 sGrovyleGfx31_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_31_1.4bpp");
-static const u8 sGrovyleGfx31_2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_31_2.4bpp");
-static const u8 sGrovyleGfx31_3[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_31_3.4bpp");
+static const u8 sGrovyleGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_31.4bpp.lz");
+static const u8 sGrovyleGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_31_1.4bpp.lz");
+static const u8 sGrovyleGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_31_2.4bpp.lz");
+static const u8 sGrovyleGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_31_3.4bpp.lz");
 static const ax_sprite sGrovyleSprites31[] = {
 	{NULL, 64}, 
 	{sGrovyleGfx31, ARRAY_COUNT(sGrovyleGfx31)}, 
@@ -2091,14 +2091,14 @@ static const ax_sprite sGrovyleSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx32[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_32.4bpp");
+static const u8 sGrovyleGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_32.4bpp.lz");
 static const ax_sprite sGrovyleSprites32[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx32, ARRAY_COUNT(sGrovyleGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx33[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_33.4bpp");
-static const u8 sGrovyleGfx33_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_33_1.4bpp");
+static const u8 sGrovyleGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_33.4bpp.lz");
+static const u8 sGrovyleGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_33_1.4bpp.lz");
 static const ax_sprite sGrovyleSprites33[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx33, ARRAY_COUNT(sGrovyleGfx33)}, 
@@ -2107,10 +2107,10 @@ static const ax_sprite sGrovyleSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx34[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_34.4bpp");
-static const u8 sGrovyleGfx34_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_34_1.4bpp");
-static const u8 sGrovyleGfx34_2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_34_2.4bpp");
-static const u8 sGrovyleGfx34_3[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_34_3.4bpp");
+static const u8 sGrovyleGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_34.4bpp.lz");
+static const u8 sGrovyleGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_34_1.4bpp.lz");
+static const u8 sGrovyleGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_34_2.4bpp.lz");
+static const u8 sGrovyleGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_34_3.4bpp.lz");
 static const ax_sprite sGrovyleSprites34[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx34, ARRAY_COUNT(sGrovyleGfx34)}, 
@@ -2123,16 +2123,16 @@ static const ax_sprite sGrovyleSprites34[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx35[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_35.4bpp");
+static const u8 sGrovyleGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_35.4bpp.lz");
 static const ax_sprite sGrovyleSprites35[] = {
 	{sGrovyleGfx35, ARRAY_COUNT(sGrovyleGfx35)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx36[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_36.4bpp");
-static const u8 sGrovyleGfx36_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_36_1.4bpp");
-static const u8 sGrovyleGfx36_2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_36_2.4bpp");
-static const u8 sGrovyleGfx36_3[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_36_3.4bpp");
+static const u8 sGrovyleGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_36.4bpp.lz");
+static const u8 sGrovyleGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_36_1.4bpp.lz");
+static const u8 sGrovyleGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_36_2.4bpp.lz");
+static const u8 sGrovyleGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_36_3.4bpp.lz");
 static const ax_sprite sGrovyleSprites36[] = {
 	{sGrovyleGfx36, ARRAY_COUNT(sGrovyleGfx36)}, 
 	{NULL, 32}, 
@@ -2144,8 +2144,8 @@ static const ax_sprite sGrovyleSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx37[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_37.4bpp");
-static const u8 sGrovyleGfx37_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_37_1.4bpp");
+static const u8 sGrovyleGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_37.4bpp.lz");
+static const u8 sGrovyleGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_37_1.4bpp.lz");
 static const ax_sprite sGrovyleSprites37[] = {
 	{sGrovyleGfx37, ARRAY_COUNT(sGrovyleGfx37)}, 
 	{NULL, 32}, 
@@ -2153,16 +2153,16 @@ static const ax_sprite sGrovyleSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx38[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_38.4bpp");
+static const u8 sGrovyleGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_38.4bpp.lz");
 static const ax_sprite sGrovyleSprites38[] = {
 	{sGrovyleGfx38, ARRAY_COUNT(sGrovyleGfx38)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx39[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_39.4bpp");
-static const u8 sGrovyleGfx39_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_39_1.4bpp");
-static const u8 sGrovyleGfx39_2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_39_2.4bpp");
-static const u8 sGrovyleGfx39_3[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_39_3.4bpp");
+static const u8 sGrovyleGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_39.4bpp.lz");
+static const u8 sGrovyleGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_39_1.4bpp.lz");
+static const u8 sGrovyleGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_39_2.4bpp.lz");
+static const u8 sGrovyleGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_39_3.4bpp.lz");
 static const ax_sprite sGrovyleSprites39[] = {
 	{sGrovyleGfx39, ARRAY_COUNT(sGrovyleGfx39)}, 
 	{NULL, 32}, 
@@ -2173,9 +2173,9 @@ static const ax_sprite sGrovyleSprites39[] = {
 	{sGrovyleGfx39_3, ARRAY_COUNT(sGrovyleGfx39_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx40[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_40.4bpp");
-static const u8 sGrovyleGfx40_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_40_1.4bpp");
-static const u8 sGrovyleGfx40_2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_40_2.4bpp");
+static const u8 sGrovyleGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_40.4bpp.lz");
+static const u8 sGrovyleGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_40_1.4bpp.lz");
+static const u8 sGrovyleGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_40_2.4bpp.lz");
 static const ax_sprite sGrovyleSprites40[] = {
 	{sGrovyleGfx40, ARRAY_COUNT(sGrovyleGfx40)}, 
 	{NULL, 32}, 
@@ -2184,9 +2184,9 @@ static const ax_sprite sGrovyleSprites40[] = {
 	{sGrovyleGfx40_2, ARRAY_COUNT(sGrovyleGfx40_2)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx41[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_41.4bpp");
-static const u8 sGrovyleGfx41_1[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_41_1.4bpp");
-static const u8 sGrovyleGfx41_2[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_41_2.4bpp");
+static const u8 sGrovyleGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_41.4bpp.lz");
+static const u8 sGrovyleGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_41_1.4bpp.lz");
+static const u8 sGrovyleGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_41_2.4bpp.lz");
 static const ax_sprite sGrovyleSprites41[] = {
 	{NULL, 32}, 
 	{sGrovyleGfx41, ARRAY_COUNT(sGrovyleGfx41)}, 
@@ -2196,37 +2196,37 @@ static const ax_sprite sGrovyleSprites41[] = {
 	{sGrovyleGfx41_2, ARRAY_COUNT(sGrovyleGfx41_2)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx42[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_42.4bpp");
+static const u8 sGrovyleGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_42.4bpp.lz");
 static const ax_sprite sGrovyleSprites42[] = {
 	{sGrovyleGfx42, ARRAY_COUNT(sGrovyleGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx43[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_43.4bpp");
+static const u8 sGrovyleGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_43.4bpp.lz");
 static const ax_sprite sGrovyleSprites43[] = {
 	{sGrovyleGfx43, ARRAY_COUNT(sGrovyleGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx44[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_44.4bpp");
+static const u8 sGrovyleGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_44.4bpp.lz");
 static const ax_sprite sGrovyleSprites44[] = {
 	{sGrovyleGfx44, ARRAY_COUNT(sGrovyleGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx45[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_45.4bpp");
+static const u8 sGrovyleGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_45.4bpp.lz");
 static const ax_sprite sGrovyleSprites45[] = {
 	{sGrovyleGfx45, ARRAY_COUNT(sGrovyleGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx46[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_46.4bpp");
+static const u8 sGrovyleGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_46.4bpp.lz");
 static const ax_sprite sGrovyleSprites46[] = {
 	{sGrovyleGfx46, ARRAY_COUNT(sGrovyleGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx47[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_47.4bpp");
+static const u8 sGrovyleGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_47.4bpp.lz");
 static const ax_sprite sGrovyleSprites47[] = {
 	{sGrovyleGfx47, ARRAY_COUNT(sGrovyleGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sGrovyleGfx48[] = INCBIN_U8("graphics/ax/mon/grovyle/sprite_48.4bpp");
+static const u8 sGrovyleGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grovyle/sprite_48.4bpp.lz");
 static const ax_sprite sGrovyleSprites48[] = {
 	{sGrovyleGfx48, ARRAY_COUNT(sGrovyleGfx48)}, 
 	{NULL, 0}

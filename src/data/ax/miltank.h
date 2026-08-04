@@ -2179,85 +2179,85 @@ static const ax_anim sMiltankAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMiltankGfx1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_1.4bpp");
+static const u8 sMiltankGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_1.4bpp.lz");
 static const ax_sprite sMiltankSprites1[] = {
 	{sMiltankGfx1, ARRAY_COUNT(sMiltankGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_2.4bpp");
+static const u8 sMiltankGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_2.4bpp.lz");
 static const ax_sprite sMiltankSprites2[] = {
 	{sMiltankGfx2, ARRAY_COUNT(sMiltankGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_3.4bpp");
+static const u8 sMiltankGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_3.4bpp.lz");
 static const ax_sprite sMiltankSprites3[] = {
 	{sMiltankGfx3, ARRAY_COUNT(sMiltankGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx4[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_4.4bpp");
+static const u8 sMiltankGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_4.4bpp.lz");
 static const ax_sprite sMiltankSprites4[] = {
 	{sMiltankGfx4, ARRAY_COUNT(sMiltankGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx5[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_5.4bpp");
+static const u8 sMiltankGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_5.4bpp.lz");
 static const ax_sprite sMiltankSprites5[] = {
 	{sMiltankGfx5, ARRAY_COUNT(sMiltankGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx6[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_6.4bpp");
+static const u8 sMiltankGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_6.4bpp.lz");
 static const ax_sprite sMiltankSprites6[] = {
 	{sMiltankGfx6, ARRAY_COUNT(sMiltankGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx7[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_7.4bpp");
+static const u8 sMiltankGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_7.4bpp.lz");
 static const ax_sprite sMiltankSprites7[] = {
 	{sMiltankGfx7, ARRAY_COUNT(sMiltankGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx8[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_8.4bpp");
+static const u8 sMiltankGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_8.4bpp.lz");
 static const ax_sprite sMiltankSprites8[] = {
 	{sMiltankGfx8, ARRAY_COUNT(sMiltankGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx9[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_9.4bpp");
+static const u8 sMiltankGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_9.4bpp.lz");
 static const ax_sprite sMiltankSprites9[] = {
 	{sMiltankGfx9, ARRAY_COUNT(sMiltankGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx10[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_10.4bpp");
+static const u8 sMiltankGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_10.4bpp.lz");
 static const ax_sprite sMiltankSprites10[] = {
 	{sMiltankGfx10, ARRAY_COUNT(sMiltankGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx11[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_11.4bpp");
+static const u8 sMiltankGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_11.4bpp.lz");
 static const ax_sprite sMiltankSprites11[] = {
 	{sMiltankGfx11, ARRAY_COUNT(sMiltankGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx12[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_12.4bpp");
+static const u8 sMiltankGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_12.4bpp.lz");
 static const ax_sprite sMiltankSprites12[] = {
 	{sMiltankGfx12, ARRAY_COUNT(sMiltankGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx13[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_13.4bpp");
+static const u8 sMiltankGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_13.4bpp.lz");
 static const ax_sprite sMiltankSprites13[] = {
 	{sMiltankGfx13, ARRAY_COUNT(sMiltankGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx14[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_14.4bpp");
+static const u8 sMiltankGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_14.4bpp.lz");
 static const ax_sprite sMiltankSprites14[] = {
 	{sMiltankGfx14, ARRAY_COUNT(sMiltankGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx15[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_15.4bpp");
+static const u8 sMiltankGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_15.4bpp.lz");
 static const ax_sprite sMiltankSprites15[] = {
 	{sMiltankGfx15, ARRAY_COUNT(sMiltankGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx16[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_16.4bpp");
-static const u8 sMiltankGfx16_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_16_1.4bpp");
-static const u8 sMiltankGfx16_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_16_2.4bpp");
-static const u8 sMiltankGfx16_3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_16_3.4bpp");
+static const u8 sMiltankGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_16.4bpp.lz");
+static const u8 sMiltankGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_16_1.4bpp.lz");
+static const u8 sMiltankGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_16_2.4bpp.lz");
+static const u8 sMiltankGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_16_3.4bpp.lz");
 static const ax_sprite sMiltankSprites16[] = {
 	{NULL, 32}, 
 	{sMiltankGfx16, ARRAY_COUNT(sMiltankGfx16)}, 
@@ -2270,9 +2270,9 @@ static const ax_sprite sMiltankSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx17[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_17.4bpp");
-static const u8 sMiltankGfx17_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_17_1.4bpp");
-static const u8 sMiltankGfx17_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_17_2.4bpp");
+static const u8 sMiltankGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_17.4bpp.lz");
+static const u8 sMiltankGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_17_1.4bpp.lz");
+static const u8 sMiltankGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_17_2.4bpp.lz");
 static const ax_sprite sMiltankSprites17[] = {
 	{NULL, 64}, 
 	{sMiltankGfx17, ARRAY_COUNT(sMiltankGfx17)}, 
@@ -2283,14 +2283,14 @@ static const ax_sprite sMiltankSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx18[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_18.4bpp");
+static const u8 sMiltankGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_18.4bpp.lz");
 static const ax_sprite sMiltankSprites18[] = {
 	{NULL, 64}, 
 	{sMiltankGfx18, ARRAY_COUNT(sMiltankGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx19[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_19.4bpp");
-static const u8 sMiltankGfx19_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_19_1.4bpp");
+static const u8 sMiltankGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_19.4bpp.lz");
+static const u8 sMiltankGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_19_1.4bpp.lz");
 static const ax_sprite sMiltankSprites19[] = {
 	{NULL, 128}, 
 	{sMiltankGfx19, ARRAY_COUNT(sMiltankGfx19)}, 
@@ -2298,9 +2298,9 @@ static const ax_sprite sMiltankSprites19[] = {
 	{sMiltankGfx19_1, ARRAY_COUNT(sMiltankGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx20[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_20.4bpp");
-static const u8 sMiltankGfx20_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_20_1.4bpp");
-static const u8 sMiltankGfx20_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_20_2.4bpp");
+static const u8 sMiltankGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_20.4bpp.lz");
+static const u8 sMiltankGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_20_1.4bpp.lz");
+static const u8 sMiltankGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_20_2.4bpp.lz");
 static const ax_sprite sMiltankSprites20[] = {
 	{NULL, 128}, 
 	{sMiltankGfx20, ARRAY_COUNT(sMiltankGfx20)}, 
@@ -2311,10 +2311,10 @@ static const ax_sprite sMiltankSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx21[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_21.4bpp");
-static const u8 sMiltankGfx21_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_21_1.4bpp");
-static const u8 sMiltankGfx21_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_21_2.4bpp");
-static const u8 sMiltankGfx21_3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_21_3.4bpp");
+static const u8 sMiltankGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_21.4bpp.lz");
+static const u8 sMiltankGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_21_1.4bpp.lz");
+static const u8 sMiltankGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_21_2.4bpp.lz");
+static const u8 sMiltankGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_21_3.4bpp.lz");
 static const ax_sprite sMiltankSprites21[] = {
 	{sMiltankGfx21, ARRAY_COUNT(sMiltankGfx21)}, 
 	{NULL, 32}, 
@@ -2326,10 +2326,10 @@ static const ax_sprite sMiltankSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx22[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_22.4bpp");
-static const u8 sMiltankGfx22_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_22_1.4bpp");
-static const u8 sMiltankGfx22_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_22_2.4bpp");
-static const u8 sMiltankGfx22_3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_22_3.4bpp");
+static const u8 sMiltankGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_22.4bpp.lz");
+static const u8 sMiltankGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_22_1.4bpp.lz");
+static const u8 sMiltankGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_22_2.4bpp.lz");
+static const u8 sMiltankGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_22_3.4bpp.lz");
 static const ax_sprite sMiltankSprites22[] = {
 	{sMiltankGfx22, ARRAY_COUNT(sMiltankGfx22)}, 
 	{NULL, 32}, 
@@ -2341,10 +2341,10 @@ static const ax_sprite sMiltankSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx23[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_23.4bpp");
-static const u8 sMiltankGfx23_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_23_1.4bpp");
-static const u8 sMiltankGfx23_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_23_2.4bpp");
-static const u8 sMiltankGfx23_3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_23_3.4bpp");
+static const u8 sMiltankGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_23.4bpp.lz");
+static const u8 sMiltankGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_23_1.4bpp.lz");
+static const u8 sMiltankGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_23_2.4bpp.lz");
+static const u8 sMiltankGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_23_3.4bpp.lz");
 static const ax_sprite sMiltankSprites23[] = {
 	{sMiltankGfx23, ARRAY_COUNT(sMiltankGfx23)}, 
 	{NULL, 32}, 
@@ -2356,9 +2356,9 @@ static const ax_sprite sMiltankSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx24[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_24.4bpp");
-static const u8 sMiltankGfx24_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_24_1.4bpp");
-static const u8 sMiltankGfx24_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_24_2.4bpp");
+static const u8 sMiltankGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_24.4bpp.lz");
+static const u8 sMiltankGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_24_1.4bpp.lz");
+static const u8 sMiltankGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_24_2.4bpp.lz");
 static const ax_sprite sMiltankSprites24[] = {
 	{sMiltankGfx24, ARRAY_COUNT(sMiltankGfx24)}, 
 	{NULL, 32}, 
@@ -2368,9 +2368,9 @@ static const ax_sprite sMiltankSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx25[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_25.4bpp");
-static const u8 sMiltankGfx25_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_25_1.4bpp");
-static const u8 sMiltankGfx25_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_25_2.4bpp");
+static const u8 sMiltankGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_25.4bpp.lz");
+static const u8 sMiltankGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_25_1.4bpp.lz");
+static const u8 sMiltankGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_25_2.4bpp.lz");
 static const ax_sprite sMiltankSprites25[] = {
 	{sMiltankGfx25, ARRAY_COUNT(sMiltankGfx25)}, 
 	{NULL, 64}, 
@@ -2379,8 +2379,8 @@ static const ax_sprite sMiltankSprites25[] = {
 	{sMiltankGfx25_2, ARRAY_COUNT(sMiltankGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx26[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_26.4bpp");
-static const u8 sMiltankGfx26_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_26_1.4bpp");
+static const u8 sMiltankGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_26.4bpp.lz");
+static const u8 sMiltankGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_26_1.4bpp.lz");
 static const ax_sprite sMiltankSprites26[] = {
 	{NULL, 32}, 
 	{sMiltankGfx26, ARRAY_COUNT(sMiltankGfx26)}, 
@@ -2389,10 +2389,10 @@ static const ax_sprite sMiltankSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx27[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_27.4bpp");
-static const u8 sMiltankGfx27_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_27_1.4bpp");
-static const u8 sMiltankGfx27_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_27_2.4bpp");
-static const u8 sMiltankGfx27_3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_27_3.4bpp");
+static const u8 sMiltankGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_27.4bpp.lz");
+static const u8 sMiltankGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_27_1.4bpp.lz");
+static const u8 sMiltankGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_27_2.4bpp.lz");
+static const u8 sMiltankGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_27_3.4bpp.lz");
 static const ax_sprite sMiltankSprites27[] = {
 	{sMiltankGfx27, ARRAY_COUNT(sMiltankGfx27)}, 
 	{NULL, 64}, 
@@ -2404,10 +2404,10 @@ static const ax_sprite sMiltankSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx28[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_28.4bpp");
-static const u8 sMiltankGfx28_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_28_1.4bpp");
-static const u8 sMiltankGfx28_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_28_2.4bpp");
-static const u8 sMiltankGfx28_3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_28_3.4bpp");
+static const u8 sMiltankGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_28.4bpp.lz");
+static const u8 sMiltankGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_28_1.4bpp.lz");
+static const u8 sMiltankGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_28_2.4bpp.lz");
+static const u8 sMiltankGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_28_3.4bpp.lz");
 static const ax_sprite sMiltankSprites28[] = {
 	{sMiltankGfx28, ARRAY_COUNT(sMiltankGfx28)}, 
 	{NULL, 32}, 
@@ -2419,10 +2419,10 @@ static const ax_sprite sMiltankSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx29[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_29.4bpp");
-static const u8 sMiltankGfx29_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_29_1.4bpp");
-static const u8 sMiltankGfx29_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_29_2.4bpp");
-static const u8 sMiltankGfx29_3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_29_3.4bpp");
+static const u8 sMiltankGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_29.4bpp.lz");
+static const u8 sMiltankGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_29_1.4bpp.lz");
+static const u8 sMiltankGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_29_2.4bpp.lz");
+static const u8 sMiltankGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_29_3.4bpp.lz");
 static const ax_sprite sMiltankSprites29[] = {
 	{sMiltankGfx29, ARRAY_COUNT(sMiltankGfx29)}, 
 	{NULL, 32}, 
@@ -2434,10 +2434,10 @@ static const ax_sprite sMiltankSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx30[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_30.4bpp");
-static const u8 sMiltankGfx30_1[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_30_1.4bpp");
-static const u8 sMiltankGfx30_2[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_30_2.4bpp");
-static const u8 sMiltankGfx30_3[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_30_3.4bpp");
+static const u8 sMiltankGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_30.4bpp.lz");
+static const u8 sMiltankGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_30_1.4bpp.lz");
+static const u8 sMiltankGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_30_2.4bpp.lz");
+static const u8 sMiltankGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_30_3.4bpp.lz");
 static const ax_sprite sMiltankSprites30[] = {
 	{sMiltankGfx30, ARRAY_COUNT(sMiltankGfx30)}, 
 	{NULL, 32}, 
@@ -2449,37 +2449,37 @@ static const ax_sprite sMiltankSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx31[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_31.4bpp");
+static const u8 sMiltankGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_31.4bpp.lz");
 static const ax_sprite sMiltankSprites31[] = {
 	{sMiltankGfx31, ARRAY_COUNT(sMiltankGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx32[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_32.4bpp");
+static const u8 sMiltankGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_32.4bpp.lz");
 static const ax_sprite sMiltankSprites32[] = {
 	{sMiltankGfx32, ARRAY_COUNT(sMiltankGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx33[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_33.4bpp");
+static const u8 sMiltankGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_33.4bpp.lz");
 static const ax_sprite sMiltankSprites33[] = {
 	{sMiltankGfx33, ARRAY_COUNT(sMiltankGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx34[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_34.4bpp");
+static const u8 sMiltankGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_34.4bpp.lz");
 static const ax_sprite sMiltankSprites34[] = {
 	{sMiltankGfx34, ARRAY_COUNT(sMiltankGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx35[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_35.4bpp");
+static const u8 sMiltankGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_35.4bpp.lz");
 static const ax_sprite sMiltankSprites35[] = {
 	{sMiltankGfx35, ARRAY_COUNT(sMiltankGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx36[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_36.4bpp");
+static const u8 sMiltankGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_36.4bpp.lz");
 static const ax_sprite sMiltankSprites36[] = {
 	{sMiltankGfx36, ARRAY_COUNT(sMiltankGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMiltankGfx37[] = INCBIN_U8("graphics/ax/mon/miltank/sprite_37.4bpp");
+static const u8 sMiltankGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/miltank/sprite_37.4bpp.lz");
 static const ax_sprite sMiltankSprites37[] = {
 	{sMiltankGfx37, ARRAY_COUNT(sMiltankGfx37)}, 
 	{NULL, 0}

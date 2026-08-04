@@ -1823,84 +1823,84 @@ static const ax_anim sIvysaurAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sIvysaurGfx1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_1.4bpp");
+static const u8 sIvysaurGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_1.4bpp.lz");
 static const ax_sprite sIvysaurSprites1[] = {
 	{sIvysaurGfx1, ARRAY_COUNT(sIvysaurGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_2.4bpp");
+static const u8 sIvysaurGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites2[] = {
 	{sIvysaurGfx2, ARRAY_COUNT(sIvysaurGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx3[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_3.4bpp");
+static const u8 sIvysaurGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_3.4bpp.lz");
 static const ax_sprite sIvysaurSprites3[] = {
 	{sIvysaurGfx3, ARRAY_COUNT(sIvysaurGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx4[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_4.4bpp");
+static const u8 sIvysaurGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_4.4bpp.lz");
 static const ax_sprite sIvysaurSprites4[] = {
 	{sIvysaurGfx4, ARRAY_COUNT(sIvysaurGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx5[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_5.4bpp");
+static const u8 sIvysaurGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_5.4bpp.lz");
 static const ax_sprite sIvysaurSprites5[] = {
 	{sIvysaurGfx5, ARRAY_COUNT(sIvysaurGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx6[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_6.4bpp");
+static const u8 sIvysaurGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_6.4bpp.lz");
 static const ax_sprite sIvysaurSprites6[] = {
 	{sIvysaurGfx6, ARRAY_COUNT(sIvysaurGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx7[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_7.4bpp");
+static const u8 sIvysaurGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_7.4bpp.lz");
 static const ax_sprite sIvysaurSprites7[] = {
 	{sIvysaurGfx7, ARRAY_COUNT(sIvysaurGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx8[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_8.4bpp");
+static const u8 sIvysaurGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_8.4bpp.lz");
 static const ax_sprite sIvysaurSprites8[] = {
 	{sIvysaurGfx8, ARRAY_COUNT(sIvysaurGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx9[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_9.4bpp");
+static const u8 sIvysaurGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_9.4bpp.lz");
 static const ax_sprite sIvysaurSprites9[] = {
 	{sIvysaurGfx9, ARRAY_COUNT(sIvysaurGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx10[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_10.4bpp");
+static const u8 sIvysaurGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_10.4bpp.lz");
 static const ax_sprite sIvysaurSprites10[] = {
 	{sIvysaurGfx10, ARRAY_COUNT(sIvysaurGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx11[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_11.4bpp");
+static const u8 sIvysaurGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_11.4bpp.lz");
 static const ax_sprite sIvysaurSprites11[] = {
 	{sIvysaurGfx11, ARRAY_COUNT(sIvysaurGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx12[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_12.4bpp");
+static const u8 sIvysaurGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_12.4bpp.lz");
 static const ax_sprite sIvysaurSprites12[] = {
 	{sIvysaurGfx12, ARRAY_COUNT(sIvysaurGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx13[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_13.4bpp");
+static const u8 sIvysaurGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_13.4bpp.lz");
 static const ax_sprite sIvysaurSprites13[] = {
 	{sIvysaurGfx13, ARRAY_COUNT(sIvysaurGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx14[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_14.4bpp");
+static const u8 sIvysaurGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_14.4bpp.lz");
 static const ax_sprite sIvysaurSprites14[] = {
 	{sIvysaurGfx14, ARRAY_COUNT(sIvysaurGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx15[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_15.4bpp");
+static const u8 sIvysaurGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_15.4bpp.lz");
 static const ax_sprite sIvysaurSprites15[] = {
 	{sIvysaurGfx15, ARRAY_COUNT(sIvysaurGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx16[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_16.4bpp");
-static const u8 sIvysaurGfx16_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_16_1.4bpp");
-static const u8 sIvysaurGfx16_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_16_2.4bpp");
+static const u8 sIvysaurGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_16.4bpp.lz");
+static const u8 sIvysaurGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_16_1.4bpp.lz");
+static const u8 sIvysaurGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_16_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites16[] = {
 	{sIvysaurGfx16, ARRAY_COUNT(sIvysaurGfx16)}, 
 	{NULL, 32}, 
@@ -1910,10 +1910,10 @@ static const ax_sprite sIvysaurSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx17[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_17.4bpp");
-static const u8 sIvysaurGfx17_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_17_1.4bpp");
-static const u8 sIvysaurGfx17_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_17_2.4bpp");
-static const u8 sIvysaurGfx17_3[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_17_3.4bpp");
+static const u8 sIvysaurGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_17.4bpp.lz");
+static const u8 sIvysaurGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_17_1.4bpp.lz");
+static const u8 sIvysaurGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_17_2.4bpp.lz");
+static const u8 sIvysaurGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_17_3.4bpp.lz");
 static const ax_sprite sIvysaurSprites17[] = {
 	{sIvysaurGfx17, ARRAY_COUNT(sIvysaurGfx17)}, 
 	{NULL, 32}, 
@@ -1925,9 +1925,9 @@ static const ax_sprite sIvysaurSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx18[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_18.4bpp");
-static const u8 sIvysaurGfx18_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_18_1.4bpp");
-static const u8 sIvysaurGfx18_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_18_2.4bpp");
+static const u8 sIvysaurGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_18.4bpp.lz");
+static const u8 sIvysaurGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_18_1.4bpp.lz");
+static const u8 sIvysaurGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_18_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites18[] = {
 	{sIvysaurGfx18, ARRAY_COUNT(sIvysaurGfx18)}, 
 	{NULL, 32}, 
@@ -1937,9 +1937,9 @@ static const ax_sprite sIvysaurSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx19[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_19.4bpp");
-static const u8 sIvysaurGfx19_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_19_1.4bpp");
-static const u8 sIvysaurGfx19_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_19_2.4bpp");
+static const u8 sIvysaurGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_19.4bpp.lz");
+static const u8 sIvysaurGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_19_1.4bpp.lz");
+static const u8 sIvysaurGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_19_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites19[] = {
 	{sIvysaurGfx19, ARRAY_COUNT(sIvysaurGfx19)}, 
 	{NULL, 32}, 
@@ -1949,9 +1949,9 @@ static const ax_sprite sIvysaurSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx20[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_20.4bpp");
-static const u8 sIvysaurGfx20_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_20_1.4bpp");
-static const u8 sIvysaurGfx20_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_20_2.4bpp");
+static const u8 sIvysaurGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_20.4bpp.lz");
+static const u8 sIvysaurGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_20_1.4bpp.lz");
+static const u8 sIvysaurGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_20_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites20[] = {
 	{sIvysaurGfx20, ARRAY_COUNT(sIvysaurGfx20)}, 
 	{NULL, 32}, 
@@ -1961,9 +1961,9 @@ static const ax_sprite sIvysaurSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx21[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_21.4bpp");
-static const u8 sIvysaurGfx21_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_21_1.4bpp");
-static const u8 sIvysaurGfx21_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_21_2.4bpp");
+static const u8 sIvysaurGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_21.4bpp.lz");
+static const u8 sIvysaurGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_21_1.4bpp.lz");
+static const u8 sIvysaurGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_21_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites21[] = {
 	{sIvysaurGfx21, ARRAY_COUNT(sIvysaurGfx21)}, 
 	{NULL, 32}, 
@@ -1973,9 +1973,9 @@ static const ax_sprite sIvysaurSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx22[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_22.4bpp");
-static const u8 sIvysaurGfx22_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_22_1.4bpp");
-static const u8 sIvysaurGfx22_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_22_2.4bpp");
+static const u8 sIvysaurGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_22.4bpp.lz");
+static const u8 sIvysaurGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_22_1.4bpp.lz");
+static const u8 sIvysaurGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_22_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites22[] = {
 	{sIvysaurGfx22, ARRAY_COUNT(sIvysaurGfx22)}, 
 	{NULL, 32}, 
@@ -1985,9 +1985,9 @@ static const ax_sprite sIvysaurSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx23[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_23.4bpp");
-static const u8 sIvysaurGfx23_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_23_1.4bpp");
-static const u8 sIvysaurGfx23_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_23_2.4bpp");
+static const u8 sIvysaurGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_23.4bpp.lz");
+static const u8 sIvysaurGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_23_1.4bpp.lz");
+static const u8 sIvysaurGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_23_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites23[] = {
 	{sIvysaurGfx23, ARRAY_COUNT(sIvysaurGfx23)}, 
 	{NULL, 32}, 
@@ -1997,9 +1997,9 @@ static const ax_sprite sIvysaurSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx24[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_24.4bpp");
-static const u8 sIvysaurGfx24_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_24_1.4bpp");
-static const u8 sIvysaurGfx24_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_24_2.4bpp");
+static const u8 sIvysaurGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_24.4bpp.lz");
+static const u8 sIvysaurGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_24_1.4bpp.lz");
+static const u8 sIvysaurGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_24_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites24[] = {
 	{sIvysaurGfx24, ARRAY_COUNT(sIvysaurGfx24)}, 
 	{NULL, 32}, 
@@ -2009,9 +2009,9 @@ static const ax_sprite sIvysaurSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx25[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_25.4bpp");
-static const u8 sIvysaurGfx25_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_25_1.4bpp");
-static const u8 sIvysaurGfx25_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_25_2.4bpp");
+static const u8 sIvysaurGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_25.4bpp.lz");
+static const u8 sIvysaurGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_25_1.4bpp.lz");
+static const u8 sIvysaurGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_25_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites25[] = {
 	{sIvysaurGfx25, ARRAY_COUNT(sIvysaurGfx25)}, 
 	{NULL, 32}, 
@@ -2021,9 +2021,9 @@ static const ax_sprite sIvysaurSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx26[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_26.4bpp");
-static const u8 sIvysaurGfx26_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_26_1.4bpp");
-static const u8 sIvysaurGfx26_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_26_2.4bpp");
+static const u8 sIvysaurGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_26.4bpp.lz");
+static const u8 sIvysaurGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_26_1.4bpp.lz");
+static const u8 sIvysaurGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_26_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites26[] = {
 	{sIvysaurGfx26, ARRAY_COUNT(sIvysaurGfx26)}, 
 	{NULL, 32}, 
@@ -2033,9 +2033,9 @@ static const ax_sprite sIvysaurSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx27[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_27.4bpp");
-static const u8 sIvysaurGfx27_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_27_1.4bpp");
-static const u8 sIvysaurGfx27_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_27_2.4bpp");
+static const u8 sIvysaurGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_27.4bpp.lz");
+static const u8 sIvysaurGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_27_1.4bpp.lz");
+static const u8 sIvysaurGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_27_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites27[] = {
 	{sIvysaurGfx27, ARRAY_COUNT(sIvysaurGfx27)}, 
 	{NULL, 32}, 
@@ -2045,9 +2045,9 @@ static const ax_sprite sIvysaurSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx28[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_28.4bpp");
-static const u8 sIvysaurGfx28_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_28_1.4bpp");
-static const u8 sIvysaurGfx28_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_28_2.4bpp");
+static const u8 sIvysaurGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_28.4bpp.lz");
+static const u8 sIvysaurGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_28_1.4bpp.lz");
+static const u8 sIvysaurGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_28_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites28[] = {
 	{sIvysaurGfx28, ARRAY_COUNT(sIvysaurGfx28)}, 
 	{NULL, 32}, 
@@ -2057,9 +2057,9 @@ static const ax_sprite sIvysaurSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx29[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_29.4bpp");
-static const u8 sIvysaurGfx29_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_29_1.4bpp");
-static const u8 sIvysaurGfx29_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_29_2.4bpp");
+static const u8 sIvysaurGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_29.4bpp.lz");
+static const u8 sIvysaurGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_29_1.4bpp.lz");
+static const u8 sIvysaurGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_29_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites29[] = {
 	{sIvysaurGfx29, ARRAY_COUNT(sIvysaurGfx29)}, 
 	{NULL, 32}, 
@@ -2069,9 +2069,9 @@ static const ax_sprite sIvysaurSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx30[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_30.4bpp");
-static const u8 sIvysaurGfx30_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_30_1.4bpp");
-static const u8 sIvysaurGfx30_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_30_2.4bpp");
+static const u8 sIvysaurGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_30.4bpp.lz");
+static const u8 sIvysaurGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_30_1.4bpp.lz");
+static const u8 sIvysaurGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_30_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites30[] = {
 	{sIvysaurGfx30, ARRAY_COUNT(sIvysaurGfx30)}, 
 	{NULL, 32}, 
@@ -2081,9 +2081,9 @@ static const ax_sprite sIvysaurSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx31[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_31.4bpp");
-static const u8 sIvysaurGfx31_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_31_1.4bpp");
-static const u8 sIvysaurGfx31_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_31_2.4bpp");
+static const u8 sIvysaurGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_31.4bpp.lz");
+static const u8 sIvysaurGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_31_1.4bpp.lz");
+static const u8 sIvysaurGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_31_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites31[] = {
 	{sIvysaurGfx31, ARRAY_COUNT(sIvysaurGfx31)}, 
 	{NULL, 32}, 
@@ -2093,9 +2093,9 @@ static const ax_sprite sIvysaurSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx32[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_32.4bpp");
-static const u8 sIvysaurGfx32_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_32_1.4bpp");
-static const u8 sIvysaurGfx32_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_32_2.4bpp");
+static const u8 sIvysaurGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_32.4bpp.lz");
+static const u8 sIvysaurGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_32_1.4bpp.lz");
+static const u8 sIvysaurGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_32_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites32[] = {
 	{sIvysaurGfx32, ARRAY_COUNT(sIvysaurGfx32)}, 
 	{NULL, 32}, 
@@ -2105,9 +2105,9 @@ static const ax_sprite sIvysaurSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx33[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_33.4bpp");
-static const u8 sIvysaurGfx33_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_33_1.4bpp");
-static const u8 sIvysaurGfx33_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_33_2.4bpp");
+static const u8 sIvysaurGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_33.4bpp.lz");
+static const u8 sIvysaurGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_33_1.4bpp.lz");
+static const u8 sIvysaurGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_33_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites33[] = {
 	{sIvysaurGfx33, ARRAY_COUNT(sIvysaurGfx33)}, 
 	{NULL, 32}, 
@@ -2117,9 +2117,9 @@ static const ax_sprite sIvysaurSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx34[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_34.4bpp");
-static const u8 sIvysaurGfx34_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_34_1.4bpp");
-static const u8 sIvysaurGfx34_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_34_2.4bpp");
+static const u8 sIvysaurGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_34.4bpp.lz");
+static const u8 sIvysaurGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_34_1.4bpp.lz");
+static const u8 sIvysaurGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_34_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites34[] = {
 	{sIvysaurGfx34, ARRAY_COUNT(sIvysaurGfx34)}, 
 	{NULL, 32}, 
@@ -2129,9 +2129,9 @@ static const ax_sprite sIvysaurSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx35[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_35.4bpp");
-static const u8 sIvysaurGfx35_1[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_35_1.4bpp");
-static const u8 sIvysaurGfx35_2[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_35_2.4bpp");
+static const u8 sIvysaurGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_35.4bpp.lz");
+static const u8 sIvysaurGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_35_1.4bpp.lz");
+static const u8 sIvysaurGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_35_2.4bpp.lz");
 static const ax_sprite sIvysaurSprites35[] = {
 	{sIvysaurGfx35, ARRAY_COUNT(sIvysaurGfx35)}, 
 	{NULL, 32}, 
@@ -2141,37 +2141,37 @@ static const ax_sprite sIvysaurSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx36[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_36.4bpp");
+static const u8 sIvysaurGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_36.4bpp.lz");
 static const ax_sprite sIvysaurSprites36[] = {
 	{sIvysaurGfx36, ARRAY_COUNT(sIvysaurGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx37[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_37.4bpp");
+static const u8 sIvysaurGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_37.4bpp.lz");
 static const ax_sprite sIvysaurSprites37[] = {
 	{sIvysaurGfx37, ARRAY_COUNT(sIvysaurGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx38[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_38.4bpp");
+static const u8 sIvysaurGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_38.4bpp.lz");
 static const ax_sprite sIvysaurSprites38[] = {
 	{sIvysaurGfx38, ARRAY_COUNT(sIvysaurGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx39[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_39.4bpp");
+static const u8 sIvysaurGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_39.4bpp.lz");
 static const ax_sprite sIvysaurSprites39[] = {
 	{sIvysaurGfx39, ARRAY_COUNT(sIvysaurGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx40[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_40.4bpp");
+static const u8 sIvysaurGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_40.4bpp.lz");
 static const ax_sprite sIvysaurSprites40[] = {
 	{sIvysaurGfx40, ARRAY_COUNT(sIvysaurGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx41[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_41.4bpp");
+static const u8 sIvysaurGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_41.4bpp.lz");
 static const ax_sprite sIvysaurSprites41[] = {
 	{sIvysaurGfx41, ARRAY_COUNT(sIvysaurGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sIvysaurGfx42[] = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_42.4bpp");
+static const u8 sIvysaurGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ivysaur/sprite_42.4bpp.lz");
 static const ax_sprite sIvysaurSprites42[] = {
 	{sIvysaurGfx42, ARRAY_COUNT(sIvysaurGfx42)}, 
 	{NULL, 0}

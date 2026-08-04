@@ -2125,239 +2125,239 @@ static const ax_anim sArbokAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sArbokGfx1[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_1.4bpp");
+static const u8 sArbokGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_1.4bpp.lz");
 static const ax_sprite sArbokSprites1[] = {
 	{sArbokGfx1, ARRAY_COUNT(sArbokGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx2[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_2.4bpp");
+static const u8 sArbokGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_2.4bpp.lz");
 static const ax_sprite sArbokSprites2[] = {
 	{sArbokGfx2, ARRAY_COUNT(sArbokGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx3[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_3.4bpp");
+static const u8 sArbokGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_3.4bpp.lz");
 static const ax_sprite sArbokSprites3[] = {
 	{sArbokGfx3, ARRAY_COUNT(sArbokGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx4[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_4.4bpp");
+static const u8 sArbokGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_4.4bpp.lz");
 static const ax_sprite sArbokSprites4[] = {
 	{sArbokGfx4, ARRAY_COUNT(sArbokGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx5[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_5.4bpp");
+static const u8 sArbokGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_5.4bpp.lz");
 static const ax_sprite sArbokSprites5[] = {
 	{sArbokGfx5, ARRAY_COUNT(sArbokGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx6[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_6.4bpp");
+static const u8 sArbokGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_6.4bpp.lz");
 static const ax_sprite sArbokSprites6[] = {
 	{sArbokGfx6, ARRAY_COUNT(sArbokGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx7[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_7.4bpp");
+static const u8 sArbokGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_7.4bpp.lz");
 static const ax_sprite sArbokSprites7[] = {
 	{sArbokGfx7, ARRAY_COUNT(sArbokGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx8[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_8.4bpp");
+static const u8 sArbokGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_8.4bpp.lz");
 static const ax_sprite sArbokSprites8[] = {
 	{sArbokGfx8, ARRAY_COUNT(sArbokGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx9[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_9.4bpp");
+static const u8 sArbokGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_9.4bpp.lz");
 static const ax_sprite sArbokSprites9[] = {
 	{sArbokGfx9, ARRAY_COUNT(sArbokGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx10[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_10.4bpp");
+static const u8 sArbokGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_10.4bpp.lz");
 static const ax_sprite sArbokSprites10[] = {
 	{sArbokGfx10, ARRAY_COUNT(sArbokGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx11[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_11.4bpp");
+static const u8 sArbokGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_11.4bpp.lz");
 static const ax_sprite sArbokSprites11[] = {
 	{sArbokGfx11, ARRAY_COUNT(sArbokGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx12[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_12.4bpp");
+static const u8 sArbokGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_12.4bpp.lz");
 static const ax_sprite sArbokSprites12[] = {
 	{sArbokGfx12, ARRAY_COUNT(sArbokGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx13[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_13.4bpp");
+static const u8 sArbokGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_13.4bpp.lz");
 static const ax_sprite sArbokSprites13[] = {
 	{sArbokGfx13, ARRAY_COUNT(sArbokGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx14[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_14.4bpp");
+static const u8 sArbokGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_14.4bpp.lz");
 static const ax_sprite sArbokSprites14[] = {
 	{sArbokGfx14, ARRAY_COUNT(sArbokGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx15[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_15.4bpp");
+static const u8 sArbokGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_15.4bpp.lz");
 static const ax_sprite sArbokSprites15[] = {
 	{sArbokGfx15, ARRAY_COUNT(sArbokGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx16[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_16.4bpp");
+static const u8 sArbokGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_16.4bpp.lz");
 static const ax_sprite sArbokSprites16[] = {
 	{sArbokGfx16, ARRAY_COUNT(sArbokGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx17[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_17.4bpp");
+static const u8 sArbokGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_17.4bpp.lz");
 static const ax_sprite sArbokSprites17[] = {
 	{sArbokGfx17, ARRAY_COUNT(sArbokGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx18[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_18.4bpp");
+static const u8 sArbokGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_18.4bpp.lz");
 static const ax_sprite sArbokSprites18[] = {
 	{sArbokGfx18, ARRAY_COUNT(sArbokGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx19[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_19.4bpp");
+static const u8 sArbokGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_19.4bpp.lz");
 static const ax_sprite sArbokSprites19[] = {
 	{sArbokGfx19, ARRAY_COUNT(sArbokGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx20[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_20.4bpp");
+static const u8 sArbokGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_20.4bpp.lz");
 static const ax_sprite sArbokSprites20[] = {
 	{sArbokGfx20, ARRAY_COUNT(sArbokGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx21[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_21.4bpp");
+static const u8 sArbokGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_21.4bpp.lz");
 static const ax_sprite sArbokSprites21[] = {
 	{sArbokGfx21, ARRAY_COUNT(sArbokGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx22[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_22.4bpp");
+static const u8 sArbokGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_22.4bpp.lz");
 static const ax_sprite sArbokSprites22[] = {
 	{sArbokGfx22, ARRAY_COUNT(sArbokGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx23[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_23.4bpp");
+static const u8 sArbokGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_23.4bpp.lz");
 static const ax_sprite sArbokSprites23[] = {
 	{sArbokGfx23, ARRAY_COUNT(sArbokGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx24[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_24.4bpp");
+static const u8 sArbokGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_24.4bpp.lz");
 static const ax_sprite sArbokSprites24[] = {
 	{sArbokGfx24, ARRAY_COUNT(sArbokGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx25[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_25.4bpp");
+static const u8 sArbokGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_25.4bpp.lz");
 static const ax_sprite sArbokSprites25[] = {
 	{sArbokGfx25, ARRAY_COUNT(sArbokGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx26[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_26.4bpp");
+static const u8 sArbokGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_26.4bpp.lz");
 static const ax_sprite sArbokSprites26[] = {
 	{sArbokGfx26, ARRAY_COUNT(sArbokGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx27[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_27.4bpp");
+static const u8 sArbokGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_27.4bpp.lz");
 static const ax_sprite sArbokSprites27[] = {
 	{sArbokGfx27, ARRAY_COUNT(sArbokGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx28[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_28.4bpp");
+static const u8 sArbokGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_28.4bpp.lz");
 static const ax_sprite sArbokSprites28[] = {
 	{sArbokGfx28, ARRAY_COUNT(sArbokGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx29[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_29.4bpp");
+static const u8 sArbokGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_29.4bpp.lz");
 static const ax_sprite sArbokSprites29[] = {
 	{sArbokGfx29, ARRAY_COUNT(sArbokGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx30[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_30.4bpp");
+static const u8 sArbokGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_30.4bpp.lz");
 static const ax_sprite sArbokSprites30[] = {
 	{sArbokGfx30, ARRAY_COUNT(sArbokGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx31[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_31.4bpp");
+static const u8 sArbokGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_31.4bpp.lz");
 static const ax_sprite sArbokSprites31[] = {
 	{sArbokGfx31, ARRAY_COUNT(sArbokGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx32[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_32.4bpp");
+static const u8 sArbokGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_32.4bpp.lz");
 static const ax_sprite sArbokSprites32[] = {
 	{sArbokGfx32, ARRAY_COUNT(sArbokGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx33[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_33.4bpp");
+static const u8 sArbokGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_33.4bpp.lz");
 static const ax_sprite sArbokSprites33[] = {
 	{sArbokGfx33, ARRAY_COUNT(sArbokGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx34[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_34.4bpp");
+static const u8 sArbokGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_34.4bpp.lz");
 static const ax_sprite sArbokSprites34[] = {
 	{sArbokGfx34, ARRAY_COUNT(sArbokGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx35[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_35.4bpp");
+static const u8 sArbokGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_35.4bpp.lz");
 static const ax_sprite sArbokSprites35[] = {
 	{sArbokGfx35, ARRAY_COUNT(sArbokGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx36[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_36.4bpp");
+static const u8 sArbokGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_36.4bpp.lz");
 static const ax_sprite sArbokSprites36[] = {
 	{sArbokGfx36, ARRAY_COUNT(sArbokGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx37[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_37.4bpp");
+static const u8 sArbokGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_37.4bpp.lz");
 static const ax_sprite sArbokSprites37[] = {
 	{sArbokGfx37, ARRAY_COUNT(sArbokGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx38[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_38.4bpp");
+static const u8 sArbokGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_38.4bpp.lz");
 static const ax_sprite sArbokSprites38[] = {
 	{sArbokGfx38, ARRAY_COUNT(sArbokGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx39[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_39.4bpp");
+static const u8 sArbokGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_39.4bpp.lz");
 static const ax_sprite sArbokSprites39[] = {
 	{NULL, 32}, 
 	{sArbokGfx39, ARRAY_COUNT(sArbokGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx40[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_40.4bpp");
+static const u8 sArbokGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_40.4bpp.lz");
 static const ax_sprite sArbokSprites40[] = {
 	{sArbokGfx40, ARRAY_COUNT(sArbokGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx41[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_41.4bpp");
+static const u8 sArbokGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_41.4bpp.lz");
 static const ax_sprite sArbokSprites41[] = {
 	{sArbokGfx41, ARRAY_COUNT(sArbokGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx42[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_42.4bpp");
+static const u8 sArbokGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_42.4bpp.lz");
 static const ax_sprite sArbokSprites42[] = {
 	{sArbokGfx42, ARRAY_COUNT(sArbokGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx43[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_43.4bpp");
+static const u8 sArbokGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_43.4bpp.lz");
 static const ax_sprite sArbokSprites43[] = {
 	{sArbokGfx43, ARRAY_COUNT(sArbokGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx44[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_44.4bpp");
+static const u8 sArbokGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_44.4bpp.lz");
 static const ax_sprite sArbokSprites44[] = {
 	{sArbokGfx44, ARRAY_COUNT(sArbokGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx45[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_45.4bpp");
+static const u8 sArbokGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_45.4bpp.lz");
 static const ax_sprite sArbokSprites45[] = {
 	{sArbokGfx45, ARRAY_COUNT(sArbokGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx46[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_46.4bpp");
+static const u8 sArbokGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_46.4bpp.lz");
 static const ax_sprite sArbokSprites46[] = {
 	{sArbokGfx46, ARRAY_COUNT(sArbokGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx47[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_47.4bpp");
-static const u8 sArbokGfx47_1[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_47_1.4bpp");
+static const u8 sArbokGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_47.4bpp.lz");
+static const u8 sArbokGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_47_1.4bpp.lz");
 static const ax_sprite sArbokSprites47[] = {
 	{NULL, 32}, 
 	{sArbokGfx47, ARRAY_COUNT(sArbokGfx47)}, 
@@ -2366,110 +2366,110 @@ static const ax_sprite sArbokSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx48[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_48.4bpp");
+static const u8 sArbokGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_48.4bpp.lz");
 static const ax_sprite sArbokSprites48[] = {
 	{sArbokGfx48, ARRAY_COUNT(sArbokGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx49[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_49.4bpp");
+static const u8 sArbokGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_49.4bpp.lz");
 static const ax_sprite sArbokSprites49[] = {
 	{sArbokGfx49, ARRAY_COUNT(sArbokGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx50[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_50.4bpp");
+static const u8 sArbokGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_50.4bpp.lz");
 static const ax_sprite sArbokSprites50[] = {
 	{sArbokGfx50, ARRAY_COUNT(sArbokGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx51[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_51.4bpp");
+static const u8 sArbokGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_51.4bpp.lz");
 static const ax_sprite sArbokSprites51[] = {
 	{sArbokGfx51, ARRAY_COUNT(sArbokGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx52[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_52.4bpp");
+static const u8 sArbokGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_52.4bpp.lz");
 static const ax_sprite sArbokSprites52[] = {
 	{sArbokGfx52, ARRAY_COUNT(sArbokGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx53[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_53.4bpp");
+static const u8 sArbokGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_53.4bpp.lz");
 static const ax_sprite sArbokSprites53[] = {
 	{sArbokGfx53, ARRAY_COUNT(sArbokGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx54[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_54.4bpp");
+static const u8 sArbokGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_54.4bpp.lz");
 static const ax_sprite sArbokSprites54[] = {
 	{sArbokGfx54, ARRAY_COUNT(sArbokGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx55[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_55.4bpp");
+static const u8 sArbokGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_55.4bpp.lz");
 static const ax_sprite sArbokSprites55[] = {
 	{sArbokGfx55, ARRAY_COUNT(sArbokGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx56[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_56.4bpp");
-static const u8 sArbokGfx56_1[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_56_1.4bpp");
+static const u8 sArbokGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_56.4bpp.lz");
+static const u8 sArbokGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_56_1.4bpp.lz");
 static const ax_sprite sArbokSprites56[] = {
 	{sArbokGfx56, ARRAY_COUNT(sArbokGfx56)}, 
 	{NULL, 32}, 
 	{sArbokGfx56_1, ARRAY_COUNT(sArbokGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx57[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_57.4bpp");
+static const u8 sArbokGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_57.4bpp.lz");
 static const ax_sprite sArbokSprites57[] = {
 	{sArbokGfx57, ARRAY_COUNT(sArbokGfx57)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx58[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_58.4bpp");
+static const u8 sArbokGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_58.4bpp.lz");
 static const ax_sprite sArbokSprites58[] = {
 	{sArbokGfx58, ARRAY_COUNT(sArbokGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx59[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_59.4bpp");
+static const u8 sArbokGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_59.4bpp.lz");
 static const ax_sprite sArbokSprites59[] = {
 	{NULL, 32}, 
 	{sArbokGfx59, ARRAY_COUNT(sArbokGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx60[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_60.4bpp");
+static const u8 sArbokGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_60.4bpp.lz");
 static const ax_sprite sArbokSprites60[] = {
 	{sArbokGfx60, ARRAY_COUNT(sArbokGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx61[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_61.4bpp");
+static const u8 sArbokGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_61.4bpp.lz");
 static const ax_sprite sArbokSprites61[] = {
 	{sArbokGfx61, ARRAY_COUNT(sArbokGfx61)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx62[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_62.4bpp");
+static const u8 sArbokGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_62.4bpp.lz");
 static const ax_sprite sArbokSprites62[] = {
 	{NULL, 32}, 
 	{sArbokGfx62, ARRAY_COUNT(sArbokGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx63[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_63.4bpp");
+static const u8 sArbokGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_63.4bpp.lz");
 static const ax_sprite sArbokSprites63[] = {
 	{sArbokGfx63, ARRAY_COUNT(sArbokGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx64[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_64.4bpp");
+static const u8 sArbokGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_64.4bpp.lz");
 static const ax_sprite sArbokSprites64[] = {
 	{sArbokGfx64, ARRAY_COUNT(sArbokGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx65[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_65.4bpp");
+static const u8 sArbokGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_65.4bpp.lz");
 static const ax_sprite sArbokSprites65[] = {
 	{sArbokGfx65, ARRAY_COUNT(sArbokGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx66[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_66.4bpp");
+static const u8 sArbokGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_66.4bpp.lz");
 static const ax_sprite sArbokSprites66[] = {
 	{sArbokGfx66, ARRAY_COUNT(sArbokGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx67[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_67.4bpp");
-static const u8 sArbokGfx67_1[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_67_1.4bpp");
+static const u8 sArbokGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_67.4bpp.lz");
+static const u8 sArbokGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_67_1.4bpp.lz");
 static const ax_sprite sArbokSprites67[] = {
 	{sArbokGfx67, ARRAY_COUNT(sArbokGfx67)}, 
 	{NULL, 32}, 
@@ -2477,59 +2477,59 @@ static const ax_sprite sArbokSprites67[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx68[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_68.4bpp");
+static const u8 sArbokGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_68.4bpp.lz");
 static const ax_sprite sArbokSprites68[] = {
 	{sArbokGfx68, ARRAY_COUNT(sArbokGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx69[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_69.4bpp");
+static const u8 sArbokGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_69.4bpp.lz");
 static const ax_sprite sArbokSprites69[] = {
 	{sArbokGfx69, ARRAY_COUNT(sArbokGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx70[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_70.4bpp");
+static const u8 sArbokGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_70.4bpp.lz");
 static const ax_sprite sArbokSprites70[] = {
 	{sArbokGfx70, ARRAY_COUNT(sArbokGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx71[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_71.4bpp");
+static const u8 sArbokGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_71.4bpp.lz");
 static const ax_sprite sArbokSprites71[] = {
 	{sArbokGfx71, ARRAY_COUNT(sArbokGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx72[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_72.4bpp");
+static const u8 sArbokGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_72.4bpp.lz");
 static const ax_sprite sArbokSprites72[] = {
 	{sArbokGfx72, ARRAY_COUNT(sArbokGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx73[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_73.4bpp");
+static const u8 sArbokGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_73.4bpp.lz");
 static const ax_sprite sArbokSprites73[] = {
 	{sArbokGfx73, ARRAY_COUNT(sArbokGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx74[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_74.4bpp");
+static const u8 sArbokGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_74.4bpp.lz");
 static const ax_sprite sArbokSprites74[] = {
 	{sArbokGfx74, ARRAY_COUNT(sArbokGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx75[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_75.4bpp");
+static const u8 sArbokGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_75.4bpp.lz");
 static const ax_sprite sArbokSprites75[] = {
 	{NULL, 32}, 
 	{sArbokGfx75, ARRAY_COUNT(sArbokGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx76[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_76.4bpp");
+static const u8 sArbokGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_76.4bpp.lz");
 static const ax_sprite sArbokSprites76[] = {
 	{sArbokGfx76, ARRAY_COUNT(sArbokGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx77[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_77.4bpp");
+static const u8 sArbokGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_77.4bpp.lz");
 static const ax_sprite sArbokSprites77[] = {
 	{sArbokGfx77, ARRAY_COUNT(sArbokGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx78[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_78.4bpp");
-static const u8 sArbokGfx78_1[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_78_1.4bpp");
+static const u8 sArbokGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_78.4bpp.lz");
+static const u8 sArbokGfx78_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_78_1.4bpp.lz");
 static const ax_sprite sArbokSprites78[] = {
 	{NULL, 32}, 
 	{sArbokGfx78, ARRAY_COUNT(sArbokGfx78)}, 
@@ -2537,78 +2537,78 @@ static const ax_sprite sArbokSprites78[] = {
 	{sArbokGfx78_1, ARRAY_COUNT(sArbokGfx78_1)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx79[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_79.4bpp");
+static const u8 sArbokGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_79.4bpp.lz");
 static const ax_sprite sArbokSprites79[] = {
 	{NULL, 32}, 
 	{sArbokGfx79, ARRAY_COUNT(sArbokGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx80[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_80.4bpp");
+static const u8 sArbokGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_80.4bpp.lz");
 static const ax_sprite sArbokSprites80[] = {
 	{sArbokGfx80, ARRAY_COUNT(sArbokGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx81[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_81.4bpp");
+static const u8 sArbokGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_81.4bpp.lz");
 static const ax_sprite sArbokSprites81[] = {
 	{NULL, 32}, 
 	{sArbokGfx81, ARRAY_COUNT(sArbokGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx82[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_82.4bpp");
+static const u8 sArbokGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_82.4bpp.lz");
 static const ax_sprite sArbokSprites82[] = {
 	{sArbokGfx82, ARRAY_COUNT(sArbokGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx83[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_83.4bpp");
+static const u8 sArbokGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_83.4bpp.lz");
 static const ax_sprite sArbokSprites83[] = {
 	{sArbokGfx83, ARRAY_COUNT(sArbokGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx84[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_84.4bpp");
+static const u8 sArbokGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_84.4bpp.lz");
 static const ax_sprite sArbokSprites84[] = {
 	{sArbokGfx84, ARRAY_COUNT(sArbokGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx85[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_85.4bpp");
+static const u8 sArbokGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_85.4bpp.lz");
 static const ax_sprite sArbokSprites85[] = {
 	{sArbokGfx85, ARRAY_COUNT(sArbokGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx86[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_86.4bpp");
+static const u8 sArbokGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_86.4bpp.lz");
 static const ax_sprite sArbokSprites86[] = {
 	{NULL, 32}, 
 	{sArbokGfx86, ARRAY_COUNT(sArbokGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx87[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_87.4bpp");
+static const u8 sArbokGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_87.4bpp.lz");
 static const ax_sprite sArbokSprites87[] = {
 	{sArbokGfx87, ARRAY_COUNT(sArbokGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx88[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_88.4bpp");
+static const u8 sArbokGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_88.4bpp.lz");
 static const ax_sprite sArbokSprites88[] = {
 	{sArbokGfx88, ARRAY_COUNT(sArbokGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx89[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_89.4bpp");
+static const u8 sArbokGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_89.4bpp.lz");
 static const ax_sprite sArbokSprites89[] = {
 	{NULL, 32}, 
 	{sArbokGfx89, ARRAY_COUNT(sArbokGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx90[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_90.4bpp");
+static const u8 sArbokGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_90.4bpp.lz");
 static const ax_sprite sArbokSprites90[] = {
 	{sArbokGfx90, ARRAY_COUNT(sArbokGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx91[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_91.4bpp");
+static const u8 sArbokGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_91.4bpp.lz");
 static const ax_sprite sArbokSprites91[] = {
 	{sArbokGfx91, ARRAY_COUNT(sArbokGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx92[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_92.4bpp");
-static const u8 sArbokGfx92_1[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_92_1.4bpp");
-static const u8 sArbokGfx92_2[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_92_2.4bpp");
+static const u8 sArbokGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_92.4bpp.lz");
+static const u8 sArbokGfx92_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_92_1.4bpp.lz");
+static const u8 sArbokGfx92_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_92_2.4bpp.lz");
 static const ax_sprite sArbokSprites92[] = {
 	{NULL, 32}, 
 	{sArbokGfx92, ARRAY_COUNT(sArbokGfx92)}, 
@@ -2619,143 +2619,143 @@ static const ax_sprite sArbokSprites92[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx93[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_93.4bpp");
+static const u8 sArbokGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_93.4bpp.lz");
 static const ax_sprite sArbokSprites93[] = {
 	{sArbokGfx93, ARRAY_COUNT(sArbokGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx94[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_94.4bpp");
+static const u8 sArbokGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_94.4bpp.lz");
 static const ax_sprite sArbokSprites94[] = {
 	{sArbokGfx94, ARRAY_COUNT(sArbokGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx95[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_95.4bpp");
+static const u8 sArbokGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_95.4bpp.lz");
 static const ax_sprite sArbokSprites95[] = {
 	{sArbokGfx95, ARRAY_COUNT(sArbokGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx96[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_96.4bpp");
+static const u8 sArbokGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_96.4bpp.lz");
 static const ax_sprite sArbokSprites96[] = {
 	{sArbokGfx96, ARRAY_COUNT(sArbokGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx97[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_97.4bpp");
+static const u8 sArbokGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_97.4bpp.lz");
 static const ax_sprite sArbokSprites97[] = {
 	{sArbokGfx97, ARRAY_COUNT(sArbokGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx98[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_98.4bpp");
+static const u8 sArbokGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_98.4bpp.lz");
 static const ax_sprite sArbokSprites98[] = {
 	{sArbokGfx98, ARRAY_COUNT(sArbokGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx99[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_99.4bpp");
+static const u8 sArbokGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_99.4bpp.lz");
 static const ax_sprite sArbokSprites99[] = {
 	{sArbokGfx99, ARRAY_COUNT(sArbokGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx100[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_100.4bpp");
+static const u8 sArbokGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_100.4bpp.lz");
 static const ax_sprite sArbokSprites100[] = {
 	{sArbokGfx100, ARRAY_COUNT(sArbokGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx101[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_101.4bpp");
+static const u8 sArbokGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_101.4bpp.lz");
 static const ax_sprite sArbokSprites101[] = {
 	{sArbokGfx101, ARRAY_COUNT(sArbokGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx102[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_102.4bpp");
+static const u8 sArbokGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_102.4bpp.lz");
 static const ax_sprite sArbokSprites102[] = {
 	{sArbokGfx102, ARRAY_COUNT(sArbokGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx103[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_103.4bpp");
+static const u8 sArbokGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_103.4bpp.lz");
 static const ax_sprite sArbokSprites103[] = {
 	{sArbokGfx103, ARRAY_COUNT(sArbokGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx104[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_104.4bpp");
+static const u8 sArbokGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_104.4bpp.lz");
 static const ax_sprite sArbokSprites104[] = {
 	{sArbokGfx104, ARRAY_COUNT(sArbokGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx105[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_105.4bpp");
+static const u8 sArbokGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_105.4bpp.lz");
 static const ax_sprite sArbokSprites105[] = {
 	{sArbokGfx105, ARRAY_COUNT(sArbokGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx106[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_106.4bpp");
+static const u8 sArbokGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_106.4bpp.lz");
 static const ax_sprite sArbokSprites106[] = {
 	{sArbokGfx106, ARRAY_COUNT(sArbokGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx107[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_107.4bpp");
+static const u8 sArbokGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_107.4bpp.lz");
 static const ax_sprite sArbokSprites107[] = {
 	{sArbokGfx107, ARRAY_COUNT(sArbokGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx108[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_108.4bpp");
+static const u8 sArbokGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_108.4bpp.lz");
 static const ax_sprite sArbokSprites108[] = {
 	{sArbokGfx108, ARRAY_COUNT(sArbokGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx109[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_109.4bpp");
+static const u8 sArbokGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_109.4bpp.lz");
 static const ax_sprite sArbokSprites109[] = {
 	{sArbokGfx109, ARRAY_COUNT(sArbokGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx110[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_110.4bpp");
+static const u8 sArbokGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_110.4bpp.lz");
 static const ax_sprite sArbokSprites110[] = {
 	{NULL, 64}, 
 	{sArbokGfx110, ARRAY_COUNT(sArbokGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx111[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_111.4bpp");
+static const u8 sArbokGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_111.4bpp.lz");
 static const ax_sprite sArbokSprites111[] = {
 	{sArbokGfx111, ARRAY_COUNT(sArbokGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx112[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_112.4bpp");
+static const u8 sArbokGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_112.4bpp.lz");
 static const ax_sprite sArbokSprites112[] = {
 	{sArbokGfx112, ARRAY_COUNT(sArbokGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx113[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_113.4bpp");
+static const u8 sArbokGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_113.4bpp.lz");
 static const ax_sprite sArbokSprites113[] = {
 	{sArbokGfx113, ARRAY_COUNT(sArbokGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx114[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_114.4bpp");
+static const u8 sArbokGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_114.4bpp.lz");
 static const ax_sprite sArbokSprites114[] = {
 	{sArbokGfx114, ARRAY_COUNT(sArbokGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx115[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_115.4bpp");
+static const u8 sArbokGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_115.4bpp.lz");
 static const ax_sprite sArbokSprites115[] = {
 	{sArbokGfx115, ARRAY_COUNT(sArbokGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx116[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_116.4bpp");
+static const u8 sArbokGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_116.4bpp.lz");
 static const ax_sprite sArbokSprites116[] = {
 	{sArbokGfx116, ARRAY_COUNT(sArbokGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx117[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_117.4bpp");
+static const u8 sArbokGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_117.4bpp.lz");
 static const ax_sprite sArbokSprites117[] = {
 	{sArbokGfx117, ARRAY_COUNT(sArbokGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx118[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_118.4bpp");
+static const u8 sArbokGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_118.4bpp.lz");
 static const ax_sprite sArbokSprites118[] = {
 	{sArbokGfx118, ARRAY_COUNT(sArbokGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx119[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_119.4bpp");
+static const u8 sArbokGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_119.4bpp.lz");
 static const ax_sprite sArbokSprites119[] = {
 	{sArbokGfx119, ARRAY_COUNT(sArbokGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sArbokGfx120[] = INCBIN_U8("graphics/ax/mon/arbok/sprite_120.4bpp");
+static const u8 sArbokGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arbok/sprite_120.4bpp.lz");
 static const ax_sprite sArbokSprites120[] = {
 	{sArbokGfx120, ARRAY_COUNT(sArbokGfx120)}, 
 	{NULL, 0}

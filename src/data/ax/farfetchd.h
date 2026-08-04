@@ -2035,128 +2035,128 @@ static const ax_anim sFarfetchdAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sFarfetchdGfx1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_1.4bpp");
+static const u8 sFarfetchdGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_1.4bpp.lz");
 static const ax_sprite sFarfetchdSprites1[] = {
 	{sFarfetchdGfx1, ARRAY_COUNT(sFarfetchdGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_2.4bpp");
+static const u8 sFarfetchdGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites2[] = {
 	{sFarfetchdGfx2, ARRAY_COUNT(sFarfetchdGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_3.4bpp");
+static const u8 sFarfetchdGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites3[] = {
 	{sFarfetchdGfx3, ARRAY_COUNT(sFarfetchdGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx4[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_4.4bpp");
+static const u8 sFarfetchdGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_4.4bpp.lz");
 static const ax_sprite sFarfetchdSprites4[] = {
 	{sFarfetchdGfx4, ARRAY_COUNT(sFarfetchdGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx5[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_5.4bpp");
+static const u8 sFarfetchdGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_5.4bpp.lz");
 static const ax_sprite sFarfetchdSprites5[] = {
 	{sFarfetchdGfx5, ARRAY_COUNT(sFarfetchdGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx6[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_6.4bpp");
+static const u8 sFarfetchdGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_6.4bpp.lz");
 static const ax_sprite sFarfetchdSprites6[] = {
 	{sFarfetchdGfx6, ARRAY_COUNT(sFarfetchdGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx7[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_7.4bpp");
+static const u8 sFarfetchdGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_7.4bpp.lz");
 static const ax_sprite sFarfetchdSprites7[] = {
 	{sFarfetchdGfx7, ARRAY_COUNT(sFarfetchdGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx8[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_8.4bpp");
+static const u8 sFarfetchdGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_8.4bpp.lz");
 static const ax_sprite sFarfetchdSprites8[] = {
 	{sFarfetchdGfx8, ARRAY_COUNT(sFarfetchdGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx9[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_9.4bpp");
+static const u8 sFarfetchdGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_9.4bpp.lz");
 static const ax_sprite sFarfetchdSprites9[] = {
 	{sFarfetchdGfx9, ARRAY_COUNT(sFarfetchdGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx10[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_10.4bpp");
+static const u8 sFarfetchdGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_10.4bpp.lz");
 static const ax_sprite sFarfetchdSprites10[] = {
 	{sFarfetchdGfx10, ARRAY_COUNT(sFarfetchdGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx11[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_11.4bpp");
+static const u8 sFarfetchdGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_11.4bpp.lz");
 static const ax_sprite sFarfetchdSprites11[] = {
 	{sFarfetchdGfx11, ARRAY_COUNT(sFarfetchdGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx12[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_12.4bpp");
+static const u8 sFarfetchdGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_12.4bpp.lz");
 static const ax_sprite sFarfetchdSprites12[] = {
 	{sFarfetchdGfx12, ARRAY_COUNT(sFarfetchdGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx13[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_13.4bpp");
+static const u8 sFarfetchdGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_13.4bpp.lz");
 static const ax_sprite sFarfetchdSprites13[] = {
 	{sFarfetchdGfx13, ARRAY_COUNT(sFarfetchdGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx14[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_14.4bpp");
+static const u8 sFarfetchdGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_14.4bpp.lz");
 static const ax_sprite sFarfetchdSprites14[] = {
 	{sFarfetchdGfx14, ARRAY_COUNT(sFarfetchdGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx15[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_15.4bpp");
+static const u8 sFarfetchdGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_15.4bpp.lz");
 static const ax_sprite sFarfetchdSprites15[] = {
 	{sFarfetchdGfx15, ARRAY_COUNT(sFarfetchdGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx16[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_16.4bpp");
+static const u8 sFarfetchdGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_16.4bpp.lz");
 static const ax_sprite sFarfetchdSprites16[] = {
 	{sFarfetchdGfx16, ARRAY_COUNT(sFarfetchdGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx17[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_17.4bpp");
+static const u8 sFarfetchdGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_17.4bpp.lz");
 static const ax_sprite sFarfetchdSprites17[] = {
 	{sFarfetchdGfx17, ARRAY_COUNT(sFarfetchdGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx18[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_18.4bpp");
+static const u8 sFarfetchdGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_18.4bpp.lz");
 static const ax_sprite sFarfetchdSprites18[] = {
 	{sFarfetchdGfx18, ARRAY_COUNT(sFarfetchdGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx19[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_19.4bpp");
+static const u8 sFarfetchdGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_19.4bpp.lz");
 static const ax_sprite sFarfetchdSprites19[] = {
 	{sFarfetchdGfx19, ARRAY_COUNT(sFarfetchdGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx20[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_20.4bpp");
+static const u8 sFarfetchdGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_20.4bpp.lz");
 static const ax_sprite sFarfetchdSprites20[] = {
 	{sFarfetchdGfx20, ARRAY_COUNT(sFarfetchdGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx21[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_21.4bpp");
+static const u8 sFarfetchdGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_21.4bpp.lz");
 static const ax_sprite sFarfetchdSprites21[] = {
 	{sFarfetchdGfx21, ARRAY_COUNT(sFarfetchdGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx22[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_22.4bpp");
+static const u8 sFarfetchdGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_22.4bpp.lz");
 static const ax_sprite sFarfetchdSprites22[] = {
 	{sFarfetchdGfx22, ARRAY_COUNT(sFarfetchdGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx23[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_23.4bpp");
+static const u8 sFarfetchdGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_23.4bpp.lz");
 static const ax_sprite sFarfetchdSprites23[] = {
 	{sFarfetchdGfx23, ARRAY_COUNT(sFarfetchdGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx24[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_24.4bpp");
+static const u8 sFarfetchdGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_24.4bpp.lz");
 static const ax_sprite sFarfetchdSprites24[] = {
 	{sFarfetchdGfx24, ARRAY_COUNT(sFarfetchdGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx25[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_25.4bpp");
-static const u8 sFarfetchdGfx25_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_25_1.4bpp");
+static const u8 sFarfetchdGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_25.4bpp.lz");
+static const u8 sFarfetchdGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_25_1.4bpp.lz");
 static const ax_sprite sFarfetchdSprites25[] = {
 	{sFarfetchdGfx25, ARRAY_COUNT(sFarfetchdGfx25)}, 
 	{NULL, 32}, 
@@ -2164,20 +2164,20 @@ static const ax_sprite sFarfetchdSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx26[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_26.4bpp");
+static const u8 sFarfetchdGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_26.4bpp.lz");
 static const ax_sprite sFarfetchdSprites26[] = {
 	{sFarfetchdGfx26, ARRAY_COUNT(sFarfetchdGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx27[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_27.4bpp");
+static const u8 sFarfetchdGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_27.4bpp.lz");
 static const ax_sprite sFarfetchdSprites27[] = {
 	{sFarfetchdGfx27, ARRAY_COUNT(sFarfetchdGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx28[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_28.4bpp");
-static const u8 sFarfetchdGfx28_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_28_1.4bpp");
-static const u8 sFarfetchdGfx28_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_28_2.4bpp");
-static const u8 sFarfetchdGfx28_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_28_3.4bpp");
+static const u8 sFarfetchdGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_28.4bpp.lz");
+static const u8 sFarfetchdGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_28_1.4bpp.lz");
+static const u8 sFarfetchdGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_28_2.4bpp.lz");
+static const u8 sFarfetchdGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_28_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites28[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx28, ARRAY_COUNT(sFarfetchdGfx28)}, 
@@ -2190,8 +2190,8 @@ static const ax_sprite sFarfetchdSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx29[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_29.4bpp");
-static const u8 sFarfetchdGfx29_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_29_1.4bpp");
+static const u8 sFarfetchdGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_29.4bpp.lz");
+static const u8 sFarfetchdGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_29_1.4bpp.lz");
 static const ax_sprite sFarfetchdSprites29[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx29, ARRAY_COUNT(sFarfetchdGfx29)}, 
@@ -2199,24 +2199,24 @@ static const ax_sprite sFarfetchdSprites29[] = {
 	{sFarfetchdGfx29_1, ARRAY_COUNT(sFarfetchdGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx30[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_30.4bpp");
+static const u8 sFarfetchdGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_30.4bpp.lz");
 static const ax_sprite sFarfetchdSprites30[] = {
 	{sFarfetchdGfx30, ARRAY_COUNT(sFarfetchdGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx31[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_31.4bpp");
+static const u8 sFarfetchdGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_31.4bpp.lz");
 static const ax_sprite sFarfetchdSprites31[] = {
 	{sFarfetchdGfx31, ARRAY_COUNT(sFarfetchdGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx32[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_32.4bpp");
+static const u8 sFarfetchdGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_32.4bpp.lz");
 static const ax_sprite sFarfetchdSprites32[] = {
 	{sFarfetchdGfx32, ARRAY_COUNT(sFarfetchdGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx33[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_33.4bpp");
-static const u8 sFarfetchdGfx33_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_33_1.4bpp");
-static const u8 sFarfetchdGfx33_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_33_2.4bpp");
+static const u8 sFarfetchdGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_33.4bpp.lz");
+static const u8 sFarfetchdGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_33_1.4bpp.lz");
+static const u8 sFarfetchdGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_33_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites33[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx33, ARRAY_COUNT(sFarfetchdGfx33)}, 
@@ -2227,25 +2227,25 @@ static const ax_sprite sFarfetchdSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx34[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_34.4bpp");
+static const u8 sFarfetchdGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_34.4bpp.lz");
 static const ax_sprite sFarfetchdSprites34[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx34, ARRAY_COUNT(sFarfetchdGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx35[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_35.4bpp");
+static const u8 sFarfetchdGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_35.4bpp.lz");
 static const ax_sprite sFarfetchdSprites35[] = {
 	{sFarfetchdGfx35, ARRAY_COUNT(sFarfetchdGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx36[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_36.4bpp");
+static const u8 sFarfetchdGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_36.4bpp.lz");
 static const ax_sprite sFarfetchdSprites36[] = {
 	{sFarfetchdGfx36, ARRAY_COUNT(sFarfetchdGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx37[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_37.4bpp");
-static const u8 sFarfetchdGfx37_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_37_1.4bpp");
-static const u8 sFarfetchdGfx37_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_37_2.4bpp");
+static const u8 sFarfetchdGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_37.4bpp.lz");
+static const u8 sFarfetchdGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_37_1.4bpp.lz");
+static const u8 sFarfetchdGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_37_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites37[] = {
 	{sFarfetchdGfx37, ARRAY_COUNT(sFarfetchdGfx37)}, 
 	{NULL, 32}, 
@@ -2255,10 +2255,10 @@ static const ax_sprite sFarfetchdSprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx38[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_38.4bpp");
-static const u8 sFarfetchdGfx38_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_38_1.4bpp");
-static const u8 sFarfetchdGfx38_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_38_2.4bpp");
-static const u8 sFarfetchdGfx38_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_38_3.4bpp");
+static const u8 sFarfetchdGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_38.4bpp.lz");
+static const u8 sFarfetchdGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_38_1.4bpp.lz");
+static const u8 sFarfetchdGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_38_2.4bpp.lz");
+static const u8 sFarfetchdGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_38_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites38[] = {
 	{sFarfetchdGfx38, ARRAY_COUNT(sFarfetchdGfx38)}, 
 	{NULL, 96}, 
@@ -2269,9 +2269,9 @@ static const ax_sprite sFarfetchdSprites38[] = {
 	{sFarfetchdGfx38_3, ARRAY_COUNT(sFarfetchdGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx39[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_39.4bpp");
-static const u8 sFarfetchdGfx39_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_39_1.4bpp");
-static const u8 sFarfetchdGfx39_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_39_2.4bpp");
+static const u8 sFarfetchdGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_39.4bpp.lz");
+static const u8 sFarfetchdGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_39_1.4bpp.lz");
+static const u8 sFarfetchdGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_39_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites39[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx39, ARRAY_COUNT(sFarfetchdGfx39)}, 
@@ -2282,9 +2282,9 @@ static const ax_sprite sFarfetchdSprites39[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx40[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_40.4bpp");
-static const u8 sFarfetchdGfx40_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_40_1.4bpp");
-static const u8 sFarfetchdGfx40_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_40_2.4bpp");
+static const u8 sFarfetchdGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_40.4bpp.lz");
+static const u8 sFarfetchdGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_40_1.4bpp.lz");
+static const u8 sFarfetchdGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_40_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites40[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx40, ARRAY_COUNT(sFarfetchdGfx40)}, 
@@ -2294,10 +2294,10 @@ static const ax_sprite sFarfetchdSprites40[] = {
 	{sFarfetchdGfx40_2, ARRAY_COUNT(sFarfetchdGfx40_2)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx41[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_41.4bpp");
-static const u8 sFarfetchdGfx41_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_41_1.4bpp");
-static const u8 sFarfetchdGfx41_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_41_2.4bpp");
-static const u8 sFarfetchdGfx41_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_41_3.4bpp");
+static const u8 sFarfetchdGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_41.4bpp.lz");
+static const u8 sFarfetchdGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_41_1.4bpp.lz");
+static const u8 sFarfetchdGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_41_2.4bpp.lz");
+static const u8 sFarfetchdGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_41_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites41[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx41, ARRAY_COUNT(sFarfetchdGfx41)}, 
@@ -2310,9 +2310,9 @@ static const ax_sprite sFarfetchdSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx42[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_42.4bpp");
-static const u8 sFarfetchdGfx42_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_42_1.4bpp");
-static const u8 sFarfetchdGfx42_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_42_2.4bpp");
+static const u8 sFarfetchdGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_42.4bpp.lz");
+static const u8 sFarfetchdGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_42_1.4bpp.lz");
+static const u8 sFarfetchdGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_42_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites42[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx42, ARRAY_COUNT(sFarfetchdGfx42)}, 
@@ -2323,9 +2323,9 @@ static const ax_sprite sFarfetchdSprites42[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx43[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_43.4bpp");
-static const u8 sFarfetchdGfx43_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_43_1.4bpp");
-static const u8 sFarfetchdGfx43_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_43_2.4bpp");
+static const u8 sFarfetchdGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_43.4bpp.lz");
+static const u8 sFarfetchdGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_43_1.4bpp.lz");
+static const u8 sFarfetchdGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_43_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites43[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx43, ARRAY_COUNT(sFarfetchdGfx43)}, 
@@ -2336,10 +2336,10 @@ static const ax_sprite sFarfetchdSprites43[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx44[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_44.4bpp");
-static const u8 sFarfetchdGfx44_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_44_1.4bpp");
-static const u8 sFarfetchdGfx44_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_44_2.4bpp");
-static const u8 sFarfetchdGfx44_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_44_3.4bpp");
+static const u8 sFarfetchdGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_44.4bpp.lz");
+static const u8 sFarfetchdGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_44_1.4bpp.lz");
+static const u8 sFarfetchdGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_44_2.4bpp.lz");
+static const u8 sFarfetchdGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_44_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites44[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx44, ARRAY_COUNT(sFarfetchdGfx44)}, 
@@ -2352,10 +2352,10 @@ static const ax_sprite sFarfetchdSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx45[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_45.4bpp");
-static const u8 sFarfetchdGfx45_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_45_1.4bpp");
-static const u8 sFarfetchdGfx45_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_45_2.4bpp");
-static const u8 sFarfetchdGfx45_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_45_3.4bpp");
+static const u8 sFarfetchdGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_45.4bpp.lz");
+static const u8 sFarfetchdGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_45_1.4bpp.lz");
+static const u8 sFarfetchdGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_45_2.4bpp.lz");
+static const u8 sFarfetchdGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_45_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites45[] = {
 	{NULL, 64}, 
 	{sFarfetchdGfx45, ARRAY_COUNT(sFarfetchdGfx45)}, 
@@ -2368,10 +2368,10 @@ static const ax_sprite sFarfetchdSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx46[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_46.4bpp");
-static const u8 sFarfetchdGfx46_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_46_1.4bpp");
-static const u8 sFarfetchdGfx46_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_46_2.4bpp");
-static const u8 sFarfetchdGfx46_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_46_3.4bpp");
+static const u8 sFarfetchdGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_46.4bpp.lz");
+static const u8 sFarfetchdGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_46_1.4bpp.lz");
+static const u8 sFarfetchdGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_46_2.4bpp.lz");
+static const u8 sFarfetchdGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_46_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites46[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx46, ARRAY_COUNT(sFarfetchdGfx46)}, 
@@ -2384,10 +2384,10 @@ static const ax_sprite sFarfetchdSprites46[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx47[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_47.4bpp");
-static const u8 sFarfetchdGfx47_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_47_1.4bpp");
-static const u8 sFarfetchdGfx47_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_47_2.4bpp");
-static const u8 sFarfetchdGfx47_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_47_3.4bpp");
+static const u8 sFarfetchdGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_47.4bpp.lz");
+static const u8 sFarfetchdGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_47_1.4bpp.lz");
+static const u8 sFarfetchdGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_47_2.4bpp.lz");
+static const u8 sFarfetchdGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_47_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites47[] = {
 	{NULL, 64}, 
 	{sFarfetchdGfx47, ARRAY_COUNT(sFarfetchdGfx47)}, 
@@ -2399,10 +2399,10 @@ static const ax_sprite sFarfetchdSprites47[] = {
 	{sFarfetchdGfx47_3, ARRAY_COUNT(sFarfetchdGfx47_3)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx48[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_48.4bpp");
-static const u8 sFarfetchdGfx48_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_48_1.4bpp");
-static const u8 sFarfetchdGfx48_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_48_2.4bpp");
-static const u8 sFarfetchdGfx48_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_48_3.4bpp");
+static const u8 sFarfetchdGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_48.4bpp.lz");
+static const u8 sFarfetchdGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_48_1.4bpp.lz");
+static const u8 sFarfetchdGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_48_2.4bpp.lz");
+static const u8 sFarfetchdGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_48_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites48[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx48, ARRAY_COUNT(sFarfetchdGfx48)}, 
@@ -2415,10 +2415,10 @@ static const ax_sprite sFarfetchdSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx49[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_49.4bpp");
-static const u8 sFarfetchdGfx49_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_49_1.4bpp");
-static const u8 sFarfetchdGfx49_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_49_2.4bpp");
-static const u8 sFarfetchdGfx49_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_49_3.4bpp");
+static const u8 sFarfetchdGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_49.4bpp.lz");
+static const u8 sFarfetchdGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_49_1.4bpp.lz");
+static const u8 sFarfetchdGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_49_2.4bpp.lz");
+static const u8 sFarfetchdGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_49_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites49[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx49, ARRAY_COUNT(sFarfetchdGfx49)}, 
@@ -2430,10 +2430,10 @@ static const ax_sprite sFarfetchdSprites49[] = {
 	{sFarfetchdGfx49_3, ARRAY_COUNT(sFarfetchdGfx49_3)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx50[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_50.4bpp");
-static const u8 sFarfetchdGfx50_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_50_1.4bpp");
-static const u8 sFarfetchdGfx50_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_50_2.4bpp");
-static const u8 sFarfetchdGfx50_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_50_3.4bpp");
+static const u8 sFarfetchdGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_50.4bpp.lz");
+static const u8 sFarfetchdGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_50_1.4bpp.lz");
+static const u8 sFarfetchdGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_50_2.4bpp.lz");
+static const u8 sFarfetchdGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_50_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites50[] = {
 	{sFarfetchdGfx50, ARRAY_COUNT(sFarfetchdGfx50)}, 
 	{NULL, 32}, 
@@ -2444,9 +2444,9 @@ static const ax_sprite sFarfetchdSprites50[] = {
 	{sFarfetchdGfx50_3, ARRAY_COUNT(sFarfetchdGfx50_3)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx51[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_51.4bpp");
-static const u8 sFarfetchdGfx51_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_51_1.4bpp");
-static const u8 sFarfetchdGfx51_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_51_2.4bpp");
+static const u8 sFarfetchdGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_51.4bpp.lz");
+static const u8 sFarfetchdGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_51_1.4bpp.lz");
+static const u8 sFarfetchdGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_51_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites51[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx51, ARRAY_COUNT(sFarfetchdGfx51)}, 
@@ -2457,9 +2457,9 @@ static const ax_sprite sFarfetchdSprites51[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx52[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_52.4bpp");
-static const u8 sFarfetchdGfx52_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_52_1.4bpp");
-static const u8 sFarfetchdGfx52_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_52_2.4bpp");
+static const u8 sFarfetchdGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_52.4bpp.lz");
+static const u8 sFarfetchdGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_52_1.4bpp.lz");
+static const u8 sFarfetchdGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_52_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites52[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx52, ARRAY_COUNT(sFarfetchdGfx52)}, 
@@ -2470,10 +2470,10 @@ static const ax_sprite sFarfetchdSprites52[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx53[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_53.4bpp");
-static const u8 sFarfetchdGfx53_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_53_1.4bpp");
-static const u8 sFarfetchdGfx53_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_53_2.4bpp");
-static const u8 sFarfetchdGfx53_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_53_3.4bpp");
+static const u8 sFarfetchdGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_53.4bpp.lz");
+static const u8 sFarfetchdGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_53_1.4bpp.lz");
+static const u8 sFarfetchdGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_53_2.4bpp.lz");
+static const u8 sFarfetchdGfx53_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_53_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites53[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx53, ARRAY_COUNT(sFarfetchdGfx53)}, 
@@ -2486,9 +2486,9 @@ static const ax_sprite sFarfetchdSprites53[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx54[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_54.4bpp");
-static const u8 sFarfetchdGfx54_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_54_1.4bpp");
-static const u8 sFarfetchdGfx54_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_54_2.4bpp");
+static const u8 sFarfetchdGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_54.4bpp.lz");
+static const u8 sFarfetchdGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_54_1.4bpp.lz");
+static const u8 sFarfetchdGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_54_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites54[] = {
 	{sFarfetchdGfx54, ARRAY_COUNT(sFarfetchdGfx54)}, 
 	{NULL, 32}, 
@@ -2498,8 +2498,8 @@ static const ax_sprite sFarfetchdSprites54[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx55[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_55.4bpp");
-static const u8 sFarfetchdGfx55_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_55_1.4bpp");
+static const u8 sFarfetchdGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_55.4bpp.lz");
+static const u8 sFarfetchdGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_55_1.4bpp.lz");
 static const ax_sprite sFarfetchdSprites55[] = {
 	{sFarfetchdGfx55, ARRAY_COUNT(sFarfetchdGfx55)}, 
 	{NULL, 32}, 
@@ -2507,9 +2507,9 @@ static const ax_sprite sFarfetchdSprites55[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx56[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_56.4bpp");
-static const u8 sFarfetchdGfx56_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_56_1.4bpp");
-static const u8 sFarfetchdGfx56_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_56_2.4bpp");
+static const u8 sFarfetchdGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_56.4bpp.lz");
+static const u8 sFarfetchdGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_56_1.4bpp.lz");
+static const u8 sFarfetchdGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_56_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites56[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx56, ARRAY_COUNT(sFarfetchdGfx56)}, 
@@ -2520,15 +2520,15 @@ static const ax_sprite sFarfetchdSprites56[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx57[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_57.4bpp");
+static const u8 sFarfetchdGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_57.4bpp.lz");
 static const ax_sprite sFarfetchdSprites57[] = {
 	{sFarfetchdGfx57, ARRAY_COUNT(sFarfetchdGfx57)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx58[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_58.4bpp");
-static const u8 sFarfetchdGfx58_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_58_1.4bpp");
-static const u8 sFarfetchdGfx58_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_58_2.4bpp");
+static const u8 sFarfetchdGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_58.4bpp.lz");
+static const u8 sFarfetchdGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_58_1.4bpp.lz");
+static const u8 sFarfetchdGfx58_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_58_2.4bpp.lz");
 static const ax_sprite sFarfetchdSprites58[] = {
 	{NULL, 32}, 
 	{sFarfetchdGfx58, ARRAY_COUNT(sFarfetchdGfx58)}, 
@@ -2539,8 +2539,8 @@ static const ax_sprite sFarfetchdSprites58[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx59[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_59.4bpp");
-static const u8 sFarfetchdGfx59_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_59_1.4bpp");
+static const u8 sFarfetchdGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_59.4bpp.lz");
+static const u8 sFarfetchdGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_59_1.4bpp.lz");
 static const ax_sprite sFarfetchdSprites59[] = {
 	{NULL, 64}, 
 	{sFarfetchdGfx59, ARRAY_COUNT(sFarfetchdGfx59)}, 
@@ -2549,10 +2549,10 @@ static const ax_sprite sFarfetchdSprites59[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx60[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_60.4bpp");
-static const u8 sFarfetchdGfx60_1[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_60_1.4bpp");
-static const u8 sFarfetchdGfx60_2[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_60_2.4bpp");
-static const u8 sFarfetchdGfx60_3[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_60_3.4bpp");
+static const u8 sFarfetchdGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_60.4bpp.lz");
+static const u8 sFarfetchdGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_60_1.4bpp.lz");
+static const u8 sFarfetchdGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_60_2.4bpp.lz");
+static const u8 sFarfetchdGfx60_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_60_3.4bpp.lz");
 static const ax_sprite sFarfetchdSprites60[] = {
 	{sFarfetchdGfx60, ARRAY_COUNT(sFarfetchdGfx60)}, 
 	{NULL, 64}, 
@@ -2564,37 +2564,37 @@ static const ax_sprite sFarfetchdSprites60[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx61[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_61.4bpp");
+static const u8 sFarfetchdGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_61.4bpp.lz");
 static const ax_sprite sFarfetchdSprites61[] = {
 	{sFarfetchdGfx61, ARRAY_COUNT(sFarfetchdGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx62[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_62.4bpp");
+static const u8 sFarfetchdGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_62.4bpp.lz");
 static const ax_sprite sFarfetchdSprites62[] = {
 	{sFarfetchdGfx62, ARRAY_COUNT(sFarfetchdGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx63[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_63.4bpp");
+static const u8 sFarfetchdGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_63.4bpp.lz");
 static const ax_sprite sFarfetchdSprites63[] = {
 	{sFarfetchdGfx63, ARRAY_COUNT(sFarfetchdGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx64[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_64.4bpp");
+static const u8 sFarfetchdGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_64.4bpp.lz");
 static const ax_sprite sFarfetchdSprites64[] = {
 	{sFarfetchdGfx64, ARRAY_COUNT(sFarfetchdGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx65[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_65.4bpp");
+static const u8 sFarfetchdGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_65.4bpp.lz");
 static const ax_sprite sFarfetchdSprites65[] = {
 	{sFarfetchdGfx65, ARRAY_COUNT(sFarfetchdGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx66[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_66.4bpp");
+static const u8 sFarfetchdGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_66.4bpp.lz");
 static const ax_sprite sFarfetchdSprites66[] = {
 	{sFarfetchdGfx66, ARRAY_COUNT(sFarfetchdGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sFarfetchdGfx67[] = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_67.4bpp");
+static const u8 sFarfetchdGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/farfetchd/sprite_67.4bpp.lz");
 static const ax_sprite sFarfetchdSprites67[] = {
 	{sFarfetchdGfx67, ARRAY_COUNT(sFarfetchdGfx67)}, 
 	{NULL, 0}

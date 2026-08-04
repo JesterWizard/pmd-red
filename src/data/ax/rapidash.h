@@ -2701,123 +2701,123 @@ static const ax_anim sRapidashAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRapidashGfx1[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_1.4bpp");
+static const u8 sRapidashGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_1.4bpp.lz");
 static const ax_sprite sRapidashSprites1[] = {
 	{sRapidashGfx1, ARRAY_COUNT(sRapidashGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx2[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_2.4bpp");
+static const u8 sRapidashGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_2.4bpp.lz");
 static const ax_sprite sRapidashSprites2[] = {
 	{sRapidashGfx2, ARRAY_COUNT(sRapidashGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx3[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_3.4bpp");
+static const u8 sRapidashGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_3.4bpp.lz");
 static const ax_sprite sRapidashSprites3[] = {
 	{sRapidashGfx3, ARRAY_COUNT(sRapidashGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx4[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_4.4bpp");
+static const u8 sRapidashGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_4.4bpp.lz");
 static const ax_sprite sRapidashSprites4[] = {
 	{sRapidashGfx4, ARRAY_COUNT(sRapidashGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx5[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_5.4bpp");
+static const u8 sRapidashGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_5.4bpp.lz");
 static const ax_sprite sRapidashSprites5[] = {
 	{sRapidashGfx5, ARRAY_COUNT(sRapidashGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx6[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_6.4bpp");
+static const u8 sRapidashGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_6.4bpp.lz");
 static const ax_sprite sRapidashSprites6[] = {
 	{sRapidashGfx6, ARRAY_COUNT(sRapidashGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx7[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_7.4bpp");
+static const u8 sRapidashGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_7.4bpp.lz");
 static const ax_sprite sRapidashSprites7[] = {
 	{sRapidashGfx7, ARRAY_COUNT(sRapidashGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx8[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_8.4bpp");
+static const u8 sRapidashGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_8.4bpp.lz");
 static const ax_sprite sRapidashSprites8[] = {
 	{sRapidashGfx8, ARRAY_COUNT(sRapidashGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx9[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_9.4bpp");
+static const u8 sRapidashGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_9.4bpp.lz");
 static const ax_sprite sRapidashSprites9[] = {
 	{sRapidashGfx9, ARRAY_COUNT(sRapidashGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx10[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_10.4bpp");
+static const u8 sRapidashGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_10.4bpp.lz");
 static const ax_sprite sRapidashSprites10[] = {
 	{sRapidashGfx10, ARRAY_COUNT(sRapidashGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx11[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_11.4bpp");
+static const u8 sRapidashGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_11.4bpp.lz");
 static const ax_sprite sRapidashSprites11[] = {
 	{sRapidashGfx11, ARRAY_COUNT(sRapidashGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx12[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_12.4bpp");
+static const u8 sRapidashGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_12.4bpp.lz");
 static const ax_sprite sRapidashSprites12[] = {
 	{sRapidashGfx12, ARRAY_COUNT(sRapidashGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx13[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_13.4bpp");
+static const u8 sRapidashGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_13.4bpp.lz");
 static const ax_sprite sRapidashSprites13[] = {
 	{sRapidashGfx13, ARRAY_COUNT(sRapidashGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx14[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_14.4bpp");
+static const u8 sRapidashGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_14.4bpp.lz");
 static const ax_sprite sRapidashSprites14[] = {
 	{sRapidashGfx14, ARRAY_COUNT(sRapidashGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx15[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_15.4bpp");
+static const u8 sRapidashGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_15.4bpp.lz");
 static const ax_sprite sRapidashSprites15[] = {
 	{sRapidashGfx15, ARRAY_COUNT(sRapidashGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx16[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_16.4bpp");
+static const u8 sRapidashGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_16.4bpp.lz");
 static const ax_sprite sRapidashSprites16[] = {
 	{sRapidashGfx16, ARRAY_COUNT(sRapidashGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx17[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_17.4bpp");
+static const u8 sRapidashGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_17.4bpp.lz");
 static const ax_sprite sRapidashSprites17[] = {
 	{sRapidashGfx17, ARRAY_COUNT(sRapidashGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx18[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_18.4bpp");
+static const u8 sRapidashGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_18.4bpp.lz");
 static const ax_sprite sRapidashSprites18[] = {
 	{sRapidashGfx18, ARRAY_COUNT(sRapidashGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx19[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_19.4bpp");
+static const u8 sRapidashGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_19.4bpp.lz");
 static const ax_sprite sRapidashSprites19[] = {
 	{sRapidashGfx19, ARRAY_COUNT(sRapidashGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx20[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_20.4bpp");
+static const u8 sRapidashGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_20.4bpp.lz");
 static const ax_sprite sRapidashSprites20[] = {
 	{sRapidashGfx20, ARRAY_COUNT(sRapidashGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx21[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_21.4bpp");
+static const u8 sRapidashGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_21.4bpp.lz");
 static const ax_sprite sRapidashSprites21[] = {
 	{sRapidashGfx21, ARRAY_COUNT(sRapidashGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx22[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_22.4bpp");
+static const u8 sRapidashGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_22.4bpp.lz");
 static const ax_sprite sRapidashSprites22[] = {
 	{sRapidashGfx22, ARRAY_COUNT(sRapidashGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx23[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_23.4bpp");
+static const u8 sRapidashGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_23.4bpp.lz");
 static const ax_sprite sRapidashSprites23[] = {
 	{sRapidashGfx23, ARRAY_COUNT(sRapidashGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx24[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_24.4bpp");
-static const u8 sRapidashGfx24_1[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_24_1.4bpp");
+static const u8 sRapidashGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_24.4bpp.lz");
+static const u8 sRapidashGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_24_1.4bpp.lz");
 static const ax_sprite sRapidashSprites24[] = {
 	{NULL, 32}, 
 	{sRapidashGfx24, ARRAY_COUNT(sRapidashGfx24)}, 
@@ -2825,30 +2825,30 @@ static const ax_sprite sRapidashSprites24[] = {
 	{sRapidashGfx24_1, ARRAY_COUNT(sRapidashGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx25[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_25.4bpp");
+static const u8 sRapidashGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_25.4bpp.lz");
 static const ax_sprite sRapidashSprites25[] = {
 	{sRapidashGfx25, ARRAY_COUNT(sRapidashGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx26[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_26.4bpp");
+static const u8 sRapidashGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_26.4bpp.lz");
 static const ax_sprite sRapidashSprites26[] = {
 	{sRapidashGfx26, ARRAY_COUNT(sRapidashGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx27[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_27.4bpp");
+static const u8 sRapidashGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_27.4bpp.lz");
 static const ax_sprite sRapidashSprites27[] = {
 	{sRapidashGfx27, ARRAY_COUNT(sRapidashGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx28[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_28.4bpp");
+static const u8 sRapidashGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_28.4bpp.lz");
 static const ax_sprite sRapidashSprites28[] = {
 	{sRapidashGfx28, ARRAY_COUNT(sRapidashGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx29[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_29.4bpp");
-static const u8 sRapidashGfx29_1[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_29_1.4bpp");
-static const u8 sRapidashGfx29_2[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_29_2.4bpp");
-static const u8 sRapidashGfx29_3[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_29_3.4bpp");
+static const u8 sRapidashGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_29.4bpp.lz");
+static const u8 sRapidashGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_29_1.4bpp.lz");
+static const u8 sRapidashGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_29_2.4bpp.lz");
+static const u8 sRapidashGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_29_3.4bpp.lz");
 static const ax_sprite sRapidashSprites29[] = {
 	{NULL, 32}, 
 	{sRapidashGfx29, ARRAY_COUNT(sRapidashGfx29)}, 
@@ -2860,74 +2860,74 @@ static const ax_sprite sRapidashSprites29[] = {
 	{sRapidashGfx29_3, ARRAY_COUNT(sRapidashGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx30[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_30.4bpp");
+static const u8 sRapidashGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_30.4bpp.lz");
 static const ax_sprite sRapidashSprites30[] = {
 	{sRapidashGfx30, ARRAY_COUNT(sRapidashGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx31[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_31.4bpp");
+static const u8 sRapidashGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_31.4bpp.lz");
 static const ax_sprite sRapidashSprites31[] = {
 	{sRapidashGfx31, ARRAY_COUNT(sRapidashGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx32[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_32.4bpp");
+static const u8 sRapidashGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_32.4bpp.lz");
 static const ax_sprite sRapidashSprites32[] = {
 	{sRapidashGfx32, ARRAY_COUNT(sRapidashGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx33[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_33.4bpp");
+static const u8 sRapidashGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_33.4bpp.lz");
 static const ax_sprite sRapidashSprites33[] = {
 	{sRapidashGfx33, ARRAY_COUNT(sRapidashGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx34[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_34.4bpp");
+static const u8 sRapidashGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_34.4bpp.lz");
 static const ax_sprite sRapidashSprites34[] = {
 	{sRapidashGfx34, ARRAY_COUNT(sRapidashGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx35[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_35.4bpp");
+static const u8 sRapidashGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_35.4bpp.lz");
 static const ax_sprite sRapidashSprites35[] = {
 	{sRapidashGfx35, ARRAY_COUNT(sRapidashGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx36[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_36.4bpp");
+static const u8 sRapidashGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_36.4bpp.lz");
 static const ax_sprite sRapidashSprites36[] = {
 	{sRapidashGfx36, ARRAY_COUNT(sRapidashGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx37[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_37.4bpp");
+static const u8 sRapidashGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_37.4bpp.lz");
 static const ax_sprite sRapidashSprites37[] = {
 	{sRapidashGfx37, ARRAY_COUNT(sRapidashGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx38[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_38.4bpp");
+static const u8 sRapidashGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_38.4bpp.lz");
 static const ax_sprite sRapidashSprites38[] = {
 	{sRapidashGfx38, ARRAY_COUNT(sRapidashGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx39[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_39.4bpp");
+static const u8 sRapidashGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_39.4bpp.lz");
 static const ax_sprite sRapidashSprites39[] = {
 	{sRapidashGfx39, ARRAY_COUNT(sRapidashGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx40[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_40.4bpp");
+static const u8 sRapidashGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_40.4bpp.lz");
 static const ax_sprite sRapidashSprites40[] = {
 	{sRapidashGfx40, ARRAY_COUNT(sRapidashGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx41[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_41.4bpp");
+static const u8 sRapidashGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_41.4bpp.lz");
 static const ax_sprite sRapidashSprites41[] = {
 	{sRapidashGfx41, ARRAY_COUNT(sRapidashGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx42[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_42.4bpp");
+static const u8 sRapidashGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_42.4bpp.lz");
 static const ax_sprite sRapidashSprites42[] = {
 	{sRapidashGfx42, ARRAY_COUNT(sRapidashGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx43[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_43.4bpp");
-static const u8 sRapidashGfx43_1[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_43_1.4bpp");
-static const u8 sRapidashGfx43_2[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_43_2.4bpp");
+static const u8 sRapidashGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_43.4bpp.lz");
+static const u8 sRapidashGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_43_1.4bpp.lz");
+static const u8 sRapidashGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_43_2.4bpp.lz");
 static const ax_sprite sRapidashSprites43[] = {
 	{sRapidashGfx43, ARRAY_COUNT(sRapidashGfx43)}, 
 	{NULL, 32}, 
@@ -2937,86 +2937,86 @@ static const ax_sprite sRapidashSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx44[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_44.4bpp");
+static const u8 sRapidashGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_44.4bpp.lz");
 static const ax_sprite sRapidashSprites44[] = {
 	{sRapidashGfx44, ARRAY_COUNT(sRapidashGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx45[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_45.4bpp");
+static const u8 sRapidashGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_45.4bpp.lz");
 static const ax_sprite sRapidashSprites45[] = {
 	{sRapidashGfx45, ARRAY_COUNT(sRapidashGfx45)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx46[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_46.4bpp");
+static const u8 sRapidashGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_46.4bpp.lz");
 static const ax_sprite sRapidashSprites46[] = {
 	{sRapidashGfx46, ARRAY_COUNT(sRapidashGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx47[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_47.4bpp");
+static const u8 sRapidashGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_47.4bpp.lz");
 static const ax_sprite sRapidashSprites47[] = {
 	{sRapidashGfx47, ARRAY_COUNT(sRapidashGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx48[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_48.4bpp");
+static const u8 sRapidashGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_48.4bpp.lz");
 static const ax_sprite sRapidashSprites48[] = {
 	{sRapidashGfx48, ARRAY_COUNT(sRapidashGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx49[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_49.4bpp");
+static const u8 sRapidashGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_49.4bpp.lz");
 static const ax_sprite sRapidashSprites49[] = {
 	{sRapidashGfx49, ARRAY_COUNT(sRapidashGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx50[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_50.4bpp");
+static const u8 sRapidashGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_50.4bpp.lz");
 static const ax_sprite sRapidashSprites50[] = {
 	{sRapidashGfx50, ARRAY_COUNT(sRapidashGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx51[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_51.4bpp");
+static const u8 sRapidashGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_51.4bpp.lz");
 static const ax_sprite sRapidashSprites51[] = {
 	{sRapidashGfx51, ARRAY_COUNT(sRapidashGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx52[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_52.4bpp");
+static const u8 sRapidashGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_52.4bpp.lz");
 static const ax_sprite sRapidashSprites52[] = {
 	{sRapidashGfx52, ARRAY_COUNT(sRapidashGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx53[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_53.4bpp");
+static const u8 sRapidashGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_53.4bpp.lz");
 static const ax_sprite sRapidashSprites53[] = {
 	{sRapidashGfx53, ARRAY_COUNT(sRapidashGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx54[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_54.4bpp");
+static const u8 sRapidashGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_54.4bpp.lz");
 static const ax_sprite sRapidashSprites54[] = {
 	{sRapidashGfx54, ARRAY_COUNT(sRapidashGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx55[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_55.4bpp");
+static const u8 sRapidashGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_55.4bpp.lz");
 static const ax_sprite sRapidashSprites55[] = {
 	{sRapidashGfx55, ARRAY_COUNT(sRapidashGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx56[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_56.4bpp");
+static const u8 sRapidashGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_56.4bpp.lz");
 static const ax_sprite sRapidashSprites56[] = {
 	{sRapidashGfx56, ARRAY_COUNT(sRapidashGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx57[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_57.4bpp");
+static const u8 sRapidashGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_57.4bpp.lz");
 static const ax_sprite sRapidashSprites57[] = {
 	{sRapidashGfx57, ARRAY_COUNT(sRapidashGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx58[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_58.4bpp");
+static const u8 sRapidashGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_58.4bpp.lz");
 static const ax_sprite sRapidashSprites58[] = {
 	{sRapidashGfx58, ARRAY_COUNT(sRapidashGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx59[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_59.4bpp");
-static const u8 sRapidashGfx59_1[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_59_1.4bpp");
-static const u8 sRapidashGfx59_2[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_59_2.4bpp");
-static const u8 sRapidashGfx59_3[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_59_3.4bpp");
+static const u8 sRapidashGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_59.4bpp.lz");
+static const u8 sRapidashGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_59_1.4bpp.lz");
+static const u8 sRapidashGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_59_2.4bpp.lz");
+static const u8 sRapidashGfx59_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_59_3.4bpp.lz");
 static const ax_sprite sRapidashSprites59[] = {
 	{NULL, 32}, 
 	{sRapidashGfx59, ARRAY_COUNT(sRapidashGfx59)}, 
@@ -3028,112 +3028,112 @@ static const ax_sprite sRapidashSprites59[] = {
 	{sRapidashGfx59_3, ARRAY_COUNT(sRapidashGfx59_3)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx60[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_60.4bpp");
+static const u8 sRapidashGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_60.4bpp.lz");
 static const ax_sprite sRapidashSprites60[] = {
 	{sRapidashGfx60, ARRAY_COUNT(sRapidashGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx61[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_61.4bpp");
+static const u8 sRapidashGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_61.4bpp.lz");
 static const ax_sprite sRapidashSprites61[] = {
 	{sRapidashGfx61, ARRAY_COUNT(sRapidashGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx62[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_62.4bpp");
+static const u8 sRapidashGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_62.4bpp.lz");
 static const ax_sprite sRapidashSprites62[] = {
 	{sRapidashGfx62, ARRAY_COUNT(sRapidashGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx63[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_63.4bpp");
+static const u8 sRapidashGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_63.4bpp.lz");
 static const ax_sprite sRapidashSprites63[] = {
 	{sRapidashGfx63, ARRAY_COUNT(sRapidashGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx64[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_64.4bpp");
+static const u8 sRapidashGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_64.4bpp.lz");
 static const ax_sprite sRapidashSprites64[] = {
 	{sRapidashGfx64, ARRAY_COUNT(sRapidashGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx65[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_65.4bpp");
+static const u8 sRapidashGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_65.4bpp.lz");
 static const ax_sprite sRapidashSprites65[] = {
 	{sRapidashGfx65, ARRAY_COUNT(sRapidashGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx66[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_66.4bpp");
+static const u8 sRapidashGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_66.4bpp.lz");
 static const ax_sprite sRapidashSprites66[] = {
 	{sRapidashGfx66, ARRAY_COUNT(sRapidashGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx67[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_67.4bpp");
+static const u8 sRapidashGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_67.4bpp.lz");
 static const ax_sprite sRapidashSprites67[] = {
 	{sRapidashGfx67, ARRAY_COUNT(sRapidashGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx68[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_68.4bpp");
+static const u8 sRapidashGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_68.4bpp.lz");
 static const ax_sprite sRapidashSprites68[] = {
 	{sRapidashGfx68, ARRAY_COUNT(sRapidashGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx69[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_69.4bpp");
+static const u8 sRapidashGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_69.4bpp.lz");
 static const ax_sprite sRapidashSprites69[] = {
 	{sRapidashGfx69, ARRAY_COUNT(sRapidashGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx70[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_70.4bpp");
+static const u8 sRapidashGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_70.4bpp.lz");
 static const ax_sprite sRapidashSprites70[] = {
 	{sRapidashGfx70, ARRAY_COUNT(sRapidashGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx71[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_71.4bpp");
+static const u8 sRapidashGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_71.4bpp.lz");
 static const ax_sprite sRapidashSprites71[] = {
 	{sRapidashGfx71, ARRAY_COUNT(sRapidashGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx72[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_72.4bpp");
+static const u8 sRapidashGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_72.4bpp.lz");
 static const ax_sprite sRapidashSprites72[] = {
 	{sRapidashGfx72, ARRAY_COUNT(sRapidashGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx73[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_73.4bpp");
+static const u8 sRapidashGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_73.4bpp.lz");
 static const ax_sprite sRapidashSprites73[] = {
 	{sRapidashGfx73, ARRAY_COUNT(sRapidashGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx74[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_74.4bpp");
+static const u8 sRapidashGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_74.4bpp.lz");
 static const ax_sprite sRapidashSprites74[] = {
 	{sRapidashGfx74, ARRAY_COUNT(sRapidashGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx75[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_75.4bpp");
+static const u8 sRapidashGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_75.4bpp.lz");
 static const ax_sprite sRapidashSprites75[] = {
 	{sRapidashGfx75, ARRAY_COUNT(sRapidashGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx76[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_76.4bpp");
+static const u8 sRapidashGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_76.4bpp.lz");
 static const ax_sprite sRapidashSprites76[] = {
 	{sRapidashGfx76, ARRAY_COUNT(sRapidashGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx77[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_77.4bpp");
+static const u8 sRapidashGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_77.4bpp.lz");
 static const ax_sprite sRapidashSprites77[] = {
 	{sRapidashGfx77, ARRAY_COUNT(sRapidashGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx78[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_78.4bpp");
+static const u8 sRapidashGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_78.4bpp.lz");
 static const ax_sprite sRapidashSprites78[] = {
 	{sRapidashGfx78, ARRAY_COUNT(sRapidashGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx79[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_79.4bpp");
+static const u8 sRapidashGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_79.4bpp.lz");
 static const ax_sprite sRapidashSprites79[] = {
 	{sRapidashGfx79, ARRAY_COUNT(sRapidashGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx80[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_80.4bpp");
+static const u8 sRapidashGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_80.4bpp.lz");
 static const ax_sprite sRapidashSprites80[] = {
 	{sRapidashGfx80, ARRAY_COUNT(sRapidashGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sRapidashGfx81[] = INCBIN_U8("graphics/ax/mon/rapidash/sprite_81.4bpp");
+static const u8 sRapidashGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rapidash/sprite_81.4bpp.lz");
 static const ax_sprite sRapidashSprites81[] = {
 	{sRapidashGfx81, ARRAY_COUNT(sRapidashGfx81)}, 
 	{NULL, 0}

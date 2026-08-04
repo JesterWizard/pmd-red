@@ -2087,83 +2087,83 @@ static const ax_anim sOctilleryAnims_15_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sOctilleryGfx1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_1.4bpp");
+static const u8 sOctilleryGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_1.4bpp.lz");
 static const ax_sprite sOctillerySprites1[] = {
 	{sOctilleryGfx1, ARRAY_COUNT(sOctilleryGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_2.4bpp");
+static const u8 sOctilleryGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_2.4bpp.lz");
 static const ax_sprite sOctillerySprites2[] = {
 	{sOctilleryGfx2, ARRAY_COUNT(sOctilleryGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx3[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_3.4bpp");
+static const u8 sOctilleryGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_3.4bpp.lz");
 static const ax_sprite sOctillerySprites3[] = {
 	{sOctilleryGfx3, ARRAY_COUNT(sOctilleryGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx4[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_4.4bpp");
+static const u8 sOctilleryGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_4.4bpp.lz");
 static const ax_sprite sOctillerySprites4[] = {
 	{sOctilleryGfx4, ARRAY_COUNT(sOctilleryGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx5[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_5.4bpp");
+static const u8 sOctilleryGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_5.4bpp.lz");
 static const ax_sprite sOctillerySprites5[] = {
 	{sOctilleryGfx5, ARRAY_COUNT(sOctilleryGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx6[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_6.4bpp");
+static const u8 sOctilleryGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_6.4bpp.lz");
 static const ax_sprite sOctillerySprites6[] = {
 	{sOctilleryGfx6, ARRAY_COUNT(sOctilleryGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx7[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_7.4bpp");
+static const u8 sOctilleryGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_7.4bpp.lz");
 static const ax_sprite sOctillerySprites7[] = {
 	{sOctilleryGfx7, ARRAY_COUNT(sOctilleryGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx8[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_8.4bpp");
+static const u8 sOctilleryGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_8.4bpp.lz");
 static const ax_sprite sOctillerySprites8[] = {
 	{sOctilleryGfx8, ARRAY_COUNT(sOctilleryGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx9[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_9.4bpp");
+static const u8 sOctilleryGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_9.4bpp.lz");
 static const ax_sprite sOctillerySprites9[] = {
 	{sOctilleryGfx9, ARRAY_COUNT(sOctilleryGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx10[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_10.4bpp");
+static const u8 sOctilleryGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_10.4bpp.lz");
 static const ax_sprite sOctillerySprites10[] = {
 	{sOctilleryGfx10, ARRAY_COUNT(sOctilleryGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx11[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_11.4bpp");
+static const u8 sOctilleryGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_11.4bpp.lz");
 static const ax_sprite sOctillerySprites11[] = {
 	{sOctilleryGfx11, ARRAY_COUNT(sOctilleryGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx12[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_12.4bpp");
+static const u8 sOctilleryGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_12.4bpp.lz");
 static const ax_sprite sOctillerySprites12[] = {
 	{sOctilleryGfx12, ARRAY_COUNT(sOctilleryGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx13[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_13.4bpp");
+static const u8 sOctilleryGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_13.4bpp.lz");
 static const ax_sprite sOctillerySprites13[] = {
 	{sOctilleryGfx13, ARRAY_COUNT(sOctilleryGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx14[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_14.4bpp");
+static const u8 sOctilleryGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_14.4bpp.lz");
 static const ax_sprite sOctillerySprites14[] = {
 	{sOctilleryGfx14, ARRAY_COUNT(sOctilleryGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx15[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_15.4bpp");
+static const u8 sOctilleryGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_15.4bpp.lz");
 static const ax_sprite sOctillerySprites15[] = {
 	{sOctilleryGfx15, ARRAY_COUNT(sOctilleryGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx16[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_16.4bpp");
-static const u8 sOctilleryGfx16_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_16_1.4bpp");
+static const u8 sOctilleryGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_16.4bpp.lz");
+static const u8 sOctilleryGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_16_1.4bpp.lz");
 static const ax_sprite sOctillerySprites16[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx16, ARRAY_COUNT(sOctilleryGfx16)}, 
@@ -2171,8 +2171,8 @@ static const ax_sprite sOctillerySprites16[] = {
 	{sOctilleryGfx16_1, ARRAY_COUNT(sOctilleryGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx17[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_17.4bpp");
-static const u8 sOctilleryGfx17_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_17_1.4bpp");
+static const u8 sOctilleryGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_17.4bpp.lz");
+static const u8 sOctilleryGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_17_1.4bpp.lz");
 static const ax_sprite sOctillerySprites17[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx17, ARRAY_COUNT(sOctilleryGfx17)}, 
@@ -2180,9 +2180,9 @@ static const ax_sprite sOctillerySprites17[] = {
 	{sOctilleryGfx17_1, ARRAY_COUNT(sOctilleryGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx18[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_18.4bpp");
-static const u8 sOctilleryGfx18_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_18_1.4bpp");
-static const u8 sOctilleryGfx18_2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_18_2.4bpp");
+static const u8 sOctilleryGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_18.4bpp.lz");
+static const u8 sOctilleryGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_18_1.4bpp.lz");
+static const u8 sOctilleryGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_18_2.4bpp.lz");
 static const ax_sprite sOctillerySprites18[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx18, ARRAY_COUNT(sOctilleryGfx18)}, 
@@ -2193,8 +2193,8 @@ static const ax_sprite sOctillerySprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx19[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_19.4bpp");
-static const u8 sOctilleryGfx19_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_19_1.4bpp");
+static const u8 sOctilleryGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_19.4bpp.lz");
+static const u8 sOctilleryGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_19_1.4bpp.lz");
 static const ax_sprite sOctillerySprites19[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx19, ARRAY_COUNT(sOctilleryGfx19)}, 
@@ -2203,8 +2203,8 @@ static const ax_sprite sOctillerySprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx20[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_20.4bpp");
-static const u8 sOctilleryGfx20_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_20_1.4bpp");
+static const u8 sOctilleryGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_20.4bpp.lz");
+static const u8 sOctilleryGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_20_1.4bpp.lz");
 static const ax_sprite sOctillerySprites20[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx20, ARRAY_COUNT(sOctilleryGfx20)}, 
@@ -2213,9 +2213,9 @@ static const ax_sprite sOctillerySprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx21[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_21.4bpp");
-static const u8 sOctilleryGfx21_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_21_1.4bpp");
-static const u8 sOctilleryGfx21_2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_21_2.4bpp");
+static const u8 sOctilleryGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_21.4bpp.lz");
+static const u8 sOctilleryGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_21_1.4bpp.lz");
+static const u8 sOctilleryGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_21_2.4bpp.lz");
 static const ax_sprite sOctillerySprites21[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx21, ARRAY_COUNT(sOctilleryGfx21)}, 
@@ -2226,33 +2226,33 @@ static const ax_sprite sOctillerySprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx22[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_22.4bpp");
+static const u8 sOctilleryGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_22.4bpp.lz");
 static const ax_sprite sOctillerySprites22[] = {
 	{sOctilleryGfx22, ARRAY_COUNT(sOctilleryGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx23[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_23.4bpp");
+static const u8 sOctilleryGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_23.4bpp.lz");
 static const ax_sprite sOctillerySprites23[] = {
 	{sOctilleryGfx23, ARRAY_COUNT(sOctilleryGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx24[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_24.4bpp");
+static const u8 sOctilleryGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_24.4bpp.lz");
 static const ax_sprite sOctillerySprites24[] = {
 	{sOctilleryGfx24, ARRAY_COUNT(sOctilleryGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx25[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_25.4bpp");
+static const u8 sOctilleryGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_25.4bpp.lz");
 static const ax_sprite sOctillerySprites25[] = {
 	{sOctilleryGfx25, ARRAY_COUNT(sOctilleryGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx26[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_26.4bpp");
+static const u8 sOctilleryGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_26.4bpp.lz");
 static const ax_sprite sOctillerySprites26[] = {
 	{sOctilleryGfx26, ARRAY_COUNT(sOctilleryGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx27[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_27.4bpp");
-static const u8 sOctilleryGfx27_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_27_1.4bpp");
+static const u8 sOctilleryGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_27.4bpp.lz");
+static const u8 sOctilleryGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_27_1.4bpp.lz");
 static const ax_sprite sOctillerySprites27[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx27, ARRAY_COUNT(sOctilleryGfx27)}, 
@@ -2260,8 +2260,8 @@ static const ax_sprite sOctillerySprites27[] = {
 	{sOctilleryGfx27_1, ARRAY_COUNT(sOctilleryGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx28[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_28.4bpp");
-static const u8 sOctilleryGfx28_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_28_1.4bpp");
+static const u8 sOctilleryGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_28.4bpp.lz");
+static const u8 sOctilleryGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_28_1.4bpp.lz");
 static const ax_sprite sOctillerySprites28[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx28, ARRAY_COUNT(sOctilleryGfx28)}, 
@@ -2269,10 +2269,10 @@ static const ax_sprite sOctillerySprites28[] = {
 	{sOctilleryGfx28_1, ARRAY_COUNT(sOctilleryGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx29[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_29.4bpp");
-static const u8 sOctilleryGfx29_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_29_1.4bpp");
-static const u8 sOctilleryGfx29_2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_29_2.4bpp");
-static const u8 sOctilleryGfx29_3[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_29_3.4bpp");
+static const u8 sOctilleryGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_29.4bpp.lz");
+static const u8 sOctilleryGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_29_1.4bpp.lz");
+static const u8 sOctilleryGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_29_2.4bpp.lz");
+static const u8 sOctilleryGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_29_3.4bpp.lz");
 static const ax_sprite sOctillerySprites29[] = {
 	{sOctilleryGfx29, ARRAY_COUNT(sOctilleryGfx29)}, 
 	{NULL, 32}, 
@@ -2283,9 +2283,9 @@ static const ax_sprite sOctillerySprites29[] = {
 	{sOctilleryGfx29_3, ARRAY_COUNT(sOctilleryGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx30[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_30.4bpp");
-static const u8 sOctilleryGfx30_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_30_1.4bpp");
-static const u8 sOctilleryGfx30_2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_30_2.4bpp");
+static const u8 sOctilleryGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_30.4bpp.lz");
+static const u8 sOctilleryGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_30_1.4bpp.lz");
+static const u8 sOctilleryGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_30_2.4bpp.lz");
 static const ax_sprite sOctillerySprites30[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx30, ARRAY_COUNT(sOctilleryGfx30)}, 
@@ -2296,9 +2296,9 @@ static const ax_sprite sOctillerySprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx31[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_31.4bpp");
-static const u8 sOctilleryGfx31_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_31_1.4bpp");
-static const u8 sOctilleryGfx31_2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_31_2.4bpp");
+static const u8 sOctilleryGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_31.4bpp.lz");
+static const u8 sOctilleryGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_31_1.4bpp.lz");
+static const u8 sOctilleryGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_31_2.4bpp.lz");
 static const ax_sprite sOctillerySprites31[] = {
 	{NULL, 32}, 
 	{sOctilleryGfx31, ARRAY_COUNT(sOctilleryGfx31)}, 
@@ -2308,10 +2308,10 @@ static const ax_sprite sOctillerySprites31[] = {
 	{sOctilleryGfx31_2, ARRAY_COUNT(sOctilleryGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx32[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_32.4bpp");
-static const u8 sOctilleryGfx32_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_32_1.4bpp");
-static const u8 sOctilleryGfx32_2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_32_2.4bpp");
-static const u8 sOctilleryGfx32_3[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_32_3.4bpp");
+static const u8 sOctilleryGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_32.4bpp.lz");
+static const u8 sOctilleryGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_32_1.4bpp.lz");
+static const u8 sOctilleryGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_32_2.4bpp.lz");
+static const u8 sOctilleryGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_32_3.4bpp.lz");
 static const ax_sprite sOctillerySprites32[] = {
 	{sOctilleryGfx32, ARRAY_COUNT(sOctilleryGfx32)}, 
 	{NULL, 32}, 
@@ -2323,10 +2323,10 @@ static const ax_sprite sOctillerySprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx33[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_33.4bpp");
-static const u8 sOctilleryGfx33_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_33_1.4bpp");
-static const u8 sOctilleryGfx33_2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_33_2.4bpp");
-static const u8 sOctilleryGfx33_3[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_33_3.4bpp");
+static const u8 sOctilleryGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_33.4bpp.lz");
+static const u8 sOctilleryGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_33_1.4bpp.lz");
+static const u8 sOctilleryGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_33_2.4bpp.lz");
+static const u8 sOctilleryGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_33_3.4bpp.lz");
 static const ax_sprite sOctillerySprites33[] = {
 	{sOctilleryGfx33, ARRAY_COUNT(sOctilleryGfx33)}, 
 	{NULL, 32}, 
@@ -2338,10 +2338,10 @@ static const ax_sprite sOctillerySprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx34[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_34.4bpp");
-static const u8 sOctilleryGfx34_1[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_34_1.4bpp");
-static const u8 sOctilleryGfx34_2[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_34_2.4bpp");
-static const u8 sOctilleryGfx34_3[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_34_3.4bpp");
+static const u8 sOctilleryGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_34.4bpp.lz");
+static const u8 sOctilleryGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_34_1.4bpp.lz");
+static const u8 sOctilleryGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_34_2.4bpp.lz");
+static const u8 sOctilleryGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_34_3.4bpp.lz");
 static const ax_sprite sOctillerySprites34[] = {
 	{sOctilleryGfx34, ARRAY_COUNT(sOctilleryGfx34)}, 
 	{NULL, 32}, 
@@ -2353,57 +2353,57 @@ static const ax_sprite sOctillerySprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx35[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_35.4bpp");
+static const u8 sOctilleryGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_35.4bpp.lz");
 static const ax_sprite sOctillerySprites35[] = {
 	{sOctilleryGfx35, ARRAY_COUNT(sOctilleryGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx36[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_36.4bpp");
+static const u8 sOctilleryGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_36.4bpp.lz");
 static const ax_sprite sOctillerySprites36[] = {
 	{sOctilleryGfx36, ARRAY_COUNT(sOctilleryGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx37[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_37.4bpp");
+static const u8 sOctilleryGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_37.4bpp.lz");
 static const ax_sprite sOctillerySprites37[] = {
 	{sOctilleryGfx37, ARRAY_COUNT(sOctilleryGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx38[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_38.4bpp");
+static const u8 sOctilleryGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_38.4bpp.lz");
 static const ax_sprite sOctillerySprites38[] = {
 	{sOctilleryGfx38, ARRAY_COUNT(sOctilleryGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx39[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_39.4bpp");
+static const u8 sOctilleryGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_39.4bpp.lz");
 static const ax_sprite sOctillerySprites39[] = {
 	{sOctilleryGfx39, ARRAY_COUNT(sOctilleryGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx40[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_40.4bpp");
+static const u8 sOctilleryGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_40.4bpp.lz");
 static const ax_sprite sOctillerySprites40[] = {
 	{sOctilleryGfx40, ARRAY_COUNT(sOctilleryGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx41[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_41.4bpp");
+static const u8 sOctilleryGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_41.4bpp.lz");
 static const ax_sprite sOctillerySprites41[] = {
 	{sOctilleryGfx41, ARRAY_COUNT(sOctilleryGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx42[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_42.4bpp");
+static const u8 sOctilleryGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_42.4bpp.lz");
 static const ax_sprite sOctillerySprites42[] = {
 	{sOctilleryGfx42, ARRAY_COUNT(sOctilleryGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx43[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_43.4bpp");
+static const u8 sOctilleryGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_43.4bpp.lz");
 static const ax_sprite sOctillerySprites43[] = {
 	{sOctilleryGfx43, ARRAY_COUNT(sOctilleryGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx44[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_44.4bpp");
+static const u8 sOctilleryGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_44.4bpp.lz");
 static const ax_sprite sOctillerySprites44[] = {
 	{sOctilleryGfx44, ARRAY_COUNT(sOctilleryGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sOctilleryGfx45[] = INCBIN_U8("graphics/ax/mon/octillery/sprite_45.4bpp");
+static const u8 sOctilleryGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/octillery/sprite_45.4bpp.lz");
 static const ax_sprite sOctillerySprites45[] = {
 	{sOctilleryGfx45, ARRAY_COUNT(sOctilleryGfx45)}, 
 	{NULL, 0}

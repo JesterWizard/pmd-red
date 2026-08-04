@@ -2053,129 +2053,129 @@ static const ax_anim sSmeargleAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSmeargleGfx1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_1.4bpp");
+static const u8 sSmeargleGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites1[] = {
 	{sSmeargleGfx1, ARRAY_COUNT(sSmeargleGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_2.4bpp");
+static const u8 sSmeargleGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites2[] = {
 	{sSmeargleGfx2, ARRAY_COUNT(sSmeargleGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_3.4bpp");
+static const u8 sSmeargleGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites3[] = {
 	{sSmeargleGfx3, ARRAY_COUNT(sSmeargleGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx4[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_4.4bpp");
+static const u8 sSmeargleGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_4.4bpp.lz");
 static const ax_sprite sSmeargleSprites4[] = {
 	{sSmeargleGfx4, ARRAY_COUNT(sSmeargleGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx5[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_5.4bpp");
+static const u8 sSmeargleGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_5.4bpp.lz");
 static const ax_sprite sSmeargleSprites5[] = {
 	{sSmeargleGfx5, ARRAY_COUNT(sSmeargleGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx6[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_6.4bpp");
+static const u8 sSmeargleGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_6.4bpp.lz");
 static const ax_sprite sSmeargleSprites6[] = {
 	{sSmeargleGfx6, ARRAY_COUNT(sSmeargleGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx7[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_7.4bpp");
+static const u8 sSmeargleGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_7.4bpp.lz");
 static const ax_sprite sSmeargleSprites7[] = {
 	{sSmeargleGfx7, ARRAY_COUNT(sSmeargleGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx8[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_8.4bpp");
+static const u8 sSmeargleGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_8.4bpp.lz");
 static const ax_sprite sSmeargleSprites8[] = {
 	{sSmeargleGfx8, ARRAY_COUNT(sSmeargleGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx9[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_9.4bpp");
+static const u8 sSmeargleGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_9.4bpp.lz");
 static const ax_sprite sSmeargleSprites9[] = {
 	{sSmeargleGfx9, ARRAY_COUNT(sSmeargleGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx10[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_10.4bpp");
+static const u8 sSmeargleGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_10.4bpp.lz");
 static const ax_sprite sSmeargleSprites10[] = {
 	{sSmeargleGfx10, ARRAY_COUNT(sSmeargleGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx11[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_11.4bpp");
+static const u8 sSmeargleGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_11.4bpp.lz");
 static const ax_sprite sSmeargleSprites11[] = {
 	{sSmeargleGfx11, ARRAY_COUNT(sSmeargleGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx12[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_12.4bpp");
+static const u8 sSmeargleGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_12.4bpp.lz");
 static const ax_sprite sSmeargleSprites12[] = {
 	{sSmeargleGfx12, ARRAY_COUNT(sSmeargleGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx13[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_13.4bpp");
+static const u8 sSmeargleGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_13.4bpp.lz");
 static const ax_sprite sSmeargleSprites13[] = {
 	{sSmeargleGfx13, ARRAY_COUNT(sSmeargleGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx14[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_14.4bpp");
+static const u8 sSmeargleGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_14.4bpp.lz");
 static const ax_sprite sSmeargleSprites14[] = {
 	{sSmeargleGfx14, ARRAY_COUNT(sSmeargleGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx15[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_15.4bpp");
+static const u8 sSmeargleGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_15.4bpp.lz");
 static const ax_sprite sSmeargleSprites15[] = {
 	{sSmeargleGfx15, ARRAY_COUNT(sSmeargleGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx16[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_16.4bpp");
+static const u8 sSmeargleGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_16.4bpp.lz");
 static const ax_sprite sSmeargleSprites16[] = {
 	{sSmeargleGfx16, ARRAY_COUNT(sSmeargleGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx17[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_17.4bpp");
+static const u8 sSmeargleGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_17.4bpp.lz");
 static const ax_sprite sSmeargleSprites17[] = {
 	{sSmeargleGfx17, ARRAY_COUNT(sSmeargleGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx18[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_18.4bpp");
+static const u8 sSmeargleGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_18.4bpp.lz");
 static const ax_sprite sSmeargleSprites18[] = {
 	{sSmeargleGfx18, ARRAY_COUNT(sSmeargleGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx19[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_19.4bpp");
+static const u8 sSmeargleGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_19.4bpp.lz");
 static const ax_sprite sSmeargleSprites19[] = {
 	{sSmeargleGfx19, ARRAY_COUNT(sSmeargleGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx20[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_20.4bpp");
+static const u8 sSmeargleGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_20.4bpp.lz");
 static const ax_sprite sSmeargleSprites20[] = {
 	{sSmeargleGfx20, ARRAY_COUNT(sSmeargleGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx21[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_21.4bpp");
+static const u8 sSmeargleGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_21.4bpp.lz");
 static const ax_sprite sSmeargleSprites21[] = {
 	{sSmeargleGfx21, ARRAY_COUNT(sSmeargleGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx22[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_22.4bpp");
+static const u8 sSmeargleGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_22.4bpp.lz");
 static const ax_sprite sSmeargleSprites22[] = {
 	{sSmeargleGfx22, ARRAY_COUNT(sSmeargleGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx23[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_23.4bpp");
+static const u8 sSmeargleGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_23.4bpp.lz");
 static const ax_sprite sSmeargleSprites23[] = {
 	{sSmeargleGfx23, ARRAY_COUNT(sSmeargleGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx24[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_24.4bpp");
+static const u8 sSmeargleGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_24.4bpp.lz");
 static const ax_sprite sSmeargleSprites24[] = {
 	{sSmeargleGfx24, ARRAY_COUNT(sSmeargleGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx25[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_25.4bpp");
-static const u8 sSmeargleGfx25_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_25_1.4bpp");
-static const u8 sSmeargleGfx25_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_25_2.4bpp");
+static const u8 sSmeargleGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_25.4bpp.lz");
+static const u8 sSmeargleGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_25_1.4bpp.lz");
+static const u8 sSmeargleGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_25_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites25[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx25, ARRAY_COUNT(sSmeargleGfx25)}, 
@@ -2186,9 +2186,9 @@ static const ax_sprite sSmeargleSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx26[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_26.4bpp");
-static const u8 sSmeargleGfx26_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_26_1.4bpp");
-static const u8 sSmeargleGfx26_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_26_2.4bpp");
+static const u8 sSmeargleGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_26.4bpp.lz");
+static const u8 sSmeargleGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_26_1.4bpp.lz");
+static const u8 sSmeargleGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_26_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites26[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx26, ARRAY_COUNT(sSmeargleGfx26)}, 
@@ -2199,10 +2199,10 @@ static const ax_sprite sSmeargleSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx27[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_27.4bpp");
-static const u8 sSmeargleGfx27_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_27_1.4bpp");
-static const u8 sSmeargleGfx27_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_27_2.4bpp");
-static const u8 sSmeargleGfx27_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_27_3.4bpp");
+static const u8 sSmeargleGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_27.4bpp.lz");
+static const u8 sSmeargleGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_27_1.4bpp.lz");
+static const u8 sSmeargleGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_27_2.4bpp.lz");
+static const u8 sSmeargleGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_27_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites27[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx27, ARRAY_COUNT(sSmeargleGfx27)}, 
@@ -2215,10 +2215,10 @@ static const ax_sprite sSmeargleSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx28[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_28.4bpp");
-static const u8 sSmeargleGfx28_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_28_1.4bpp");
-static const u8 sSmeargleGfx28_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_28_2.4bpp");
-static const u8 sSmeargleGfx28_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_28_3.4bpp");
+static const u8 sSmeargleGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_28.4bpp.lz");
+static const u8 sSmeargleGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_28_1.4bpp.lz");
+static const u8 sSmeargleGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_28_2.4bpp.lz");
+static const u8 sSmeargleGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_28_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites28[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx28, ARRAY_COUNT(sSmeargleGfx28)}, 
@@ -2230,10 +2230,10 @@ static const ax_sprite sSmeargleSprites28[] = {
 	{sSmeargleGfx28_3, ARRAY_COUNT(sSmeargleGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx29[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_29.4bpp");
-static const u8 sSmeargleGfx29_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_29_1.4bpp");
-static const u8 sSmeargleGfx29_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_29_2.4bpp");
-static const u8 sSmeargleGfx29_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_29_3.4bpp");
+static const u8 sSmeargleGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_29.4bpp.lz");
+static const u8 sSmeargleGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_29_1.4bpp.lz");
+static const u8 sSmeargleGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_29_2.4bpp.lz");
+static const u8 sSmeargleGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_29_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites29[] = {
 	{sSmeargleGfx29, ARRAY_COUNT(sSmeargleGfx29)}, 
 	{NULL, 32}, 
@@ -2244,10 +2244,10 @@ static const ax_sprite sSmeargleSprites29[] = {
 	{sSmeargleGfx29_3, ARRAY_COUNT(sSmeargleGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx30[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_30.4bpp");
-static const u8 sSmeargleGfx30_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_30_1.4bpp");
-static const u8 sSmeargleGfx30_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_30_2.4bpp");
-static const u8 sSmeargleGfx30_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_30_3.4bpp");
+static const u8 sSmeargleGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_30.4bpp.lz");
+static const u8 sSmeargleGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_30_1.4bpp.lz");
+static const u8 sSmeargleGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_30_2.4bpp.lz");
+static const u8 sSmeargleGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_30_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites30[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx30, ARRAY_COUNT(sSmeargleGfx30)}, 
@@ -2259,10 +2259,10 @@ static const ax_sprite sSmeargleSprites30[] = {
 	{sSmeargleGfx30_3, ARRAY_COUNT(sSmeargleGfx30_3)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx31[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_31.4bpp");
-static const u8 sSmeargleGfx31_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_31_1.4bpp");
-static const u8 sSmeargleGfx31_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_31_2.4bpp");
-static const u8 sSmeargleGfx31_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_31_3.4bpp");
+static const u8 sSmeargleGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_31.4bpp.lz");
+static const u8 sSmeargleGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_31_1.4bpp.lz");
+static const u8 sSmeargleGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_31_2.4bpp.lz");
+static const u8 sSmeargleGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_31_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites31[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx31, ARRAY_COUNT(sSmeargleGfx31)}, 
@@ -2275,26 +2275,26 @@ static const ax_sprite sSmeargleSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx32[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_32.4bpp");
+static const u8 sSmeargleGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_32.4bpp.lz");
 static const ax_sprite sSmeargleSprites32[] = {
 	{sSmeargleGfx32, ARRAY_COUNT(sSmeargleGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx33[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_33.4bpp");
-static const u8 sSmeargleGfx33_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_33_1.4bpp");
+static const u8 sSmeargleGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_33.4bpp.lz");
+static const u8 sSmeargleGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_33_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites33[] = {
 	{sSmeargleGfx33, ARRAY_COUNT(sSmeargleGfx33)}, 
 	{NULL, 32}, 
 	{sSmeargleGfx33_1, ARRAY_COUNT(sSmeargleGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx34[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_34.4bpp");
+static const u8 sSmeargleGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_34.4bpp.lz");
 static const ax_sprite sSmeargleSprites34[] = {
 	{sSmeargleGfx34, ARRAY_COUNT(sSmeargleGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx35[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_35.4bpp");
-static const u8 sSmeargleGfx35_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_35_1.4bpp");
+static const u8 sSmeargleGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_35.4bpp.lz");
+static const u8 sSmeargleGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_35_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites35[] = {
 	{sSmeargleGfx35, ARRAY_COUNT(sSmeargleGfx35)}, 
 	{NULL, 32}, 
@@ -2302,10 +2302,10 @@ static const ax_sprite sSmeargleSprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx36[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_36.4bpp");
-static const u8 sSmeargleGfx36_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_36_1.4bpp");
-static const u8 sSmeargleGfx36_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_36_2.4bpp");
-static const u8 sSmeargleGfx36_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_36_3.4bpp");
+static const u8 sSmeargleGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_36.4bpp.lz");
+static const u8 sSmeargleGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_36_1.4bpp.lz");
+static const u8 sSmeargleGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_36_2.4bpp.lz");
+static const u8 sSmeargleGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_36_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites36[] = {
 	{NULL, 64}, 
 	{sSmeargleGfx36, ARRAY_COUNT(sSmeargleGfx36)}, 
@@ -2317,8 +2317,8 @@ static const ax_sprite sSmeargleSprites36[] = {
 	{sSmeargleGfx36_3, ARRAY_COUNT(sSmeargleGfx36_3)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx37[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_37.4bpp");
-static const u8 sSmeargleGfx37_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_37_1.4bpp");
+static const u8 sSmeargleGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_37.4bpp.lz");
+static const u8 sSmeargleGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_37_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites37[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx37, ARRAY_COUNT(sSmeargleGfx37)}, 
@@ -2327,9 +2327,9 @@ static const ax_sprite sSmeargleSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx38[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_38.4bpp");
-static const u8 sSmeargleGfx38_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_38_1.4bpp");
-static const u8 sSmeargleGfx38_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_38_2.4bpp");
+static const u8 sSmeargleGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_38.4bpp.lz");
+static const u8 sSmeargleGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_38_1.4bpp.lz");
+static const u8 sSmeargleGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_38_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites38[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx38, ARRAY_COUNT(sSmeargleGfx38)}, 
@@ -2340,10 +2340,10 @@ static const ax_sprite sSmeargleSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx39[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_39.4bpp");
-static const u8 sSmeargleGfx39_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_39_1.4bpp");
-static const u8 sSmeargleGfx39_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_39_2.4bpp");
-static const u8 sSmeargleGfx39_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_39_3.4bpp");
+static const u8 sSmeargleGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_39.4bpp.lz");
+static const u8 sSmeargleGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_39_1.4bpp.lz");
+static const u8 sSmeargleGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_39_2.4bpp.lz");
+static const u8 sSmeargleGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_39_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites39[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx39, ARRAY_COUNT(sSmeargleGfx39)}, 
@@ -2356,8 +2356,8 @@ static const ax_sprite sSmeargleSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx40[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_40.4bpp");
-static const u8 sSmeargleGfx40_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_40_1.4bpp");
+static const u8 sSmeargleGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_40.4bpp.lz");
+static const u8 sSmeargleGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_40_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites40[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx40, ARRAY_COUNT(sSmeargleGfx40)}, 
@@ -2366,9 +2366,9 @@ static const ax_sprite sSmeargleSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx41[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_41.4bpp");
-static const u8 sSmeargleGfx41_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_41_1.4bpp");
-static const u8 sSmeargleGfx41_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_41_2.4bpp");
+static const u8 sSmeargleGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_41.4bpp.lz");
+static const u8 sSmeargleGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_41_1.4bpp.lz");
+static const u8 sSmeargleGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_41_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites41[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx41, ARRAY_COUNT(sSmeargleGfx41)}, 
@@ -2379,10 +2379,10 @@ static const ax_sprite sSmeargleSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx42[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_42.4bpp");
-static const u8 sSmeargleGfx42_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_42_1.4bpp");
-static const u8 sSmeargleGfx42_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_42_2.4bpp");
-static const u8 sSmeargleGfx42_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_42_3.4bpp");
+static const u8 sSmeargleGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_42.4bpp.lz");
+static const u8 sSmeargleGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_42_1.4bpp.lz");
+static const u8 sSmeargleGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_42_2.4bpp.lz");
+static const u8 sSmeargleGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_42_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites42[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx42, ARRAY_COUNT(sSmeargleGfx42)}, 
@@ -2394,10 +2394,10 @@ static const ax_sprite sSmeargleSprites42[] = {
 	{sSmeargleGfx42_3, ARRAY_COUNT(sSmeargleGfx42_3)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx43[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_43.4bpp");
-static const u8 sSmeargleGfx43_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_43_1.4bpp");
-static const u8 sSmeargleGfx43_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_43_2.4bpp");
-static const u8 sSmeargleGfx43_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_43_3.4bpp");
+static const u8 sSmeargleGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_43.4bpp.lz");
+static const u8 sSmeargleGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_43_1.4bpp.lz");
+static const u8 sSmeargleGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_43_2.4bpp.lz");
+static const u8 sSmeargleGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_43_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites43[] = {
 	{sSmeargleGfx43, ARRAY_COUNT(sSmeargleGfx43)}, 
 	{NULL, 32}, 
@@ -2409,10 +2409,10 @@ static const ax_sprite sSmeargleSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx44[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_44.4bpp");
-static const u8 sSmeargleGfx44_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_44_1.4bpp");
-static const u8 sSmeargleGfx44_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_44_2.4bpp");
-static const u8 sSmeargleGfx44_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_44_3.4bpp");
+static const u8 sSmeargleGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_44.4bpp.lz");
+static const u8 sSmeargleGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_44_1.4bpp.lz");
+static const u8 sSmeargleGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_44_2.4bpp.lz");
+static const u8 sSmeargleGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_44_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites44[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx44, ARRAY_COUNT(sSmeargleGfx44)}, 
@@ -2425,9 +2425,9 @@ static const ax_sprite sSmeargleSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx45[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_45.4bpp");
-static const u8 sSmeargleGfx45_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_45_1.4bpp");
-static const u8 sSmeargleGfx45_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_45_2.4bpp");
+static const u8 sSmeargleGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_45.4bpp.lz");
+static const u8 sSmeargleGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_45_1.4bpp.lz");
+static const u8 sSmeargleGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_45_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites45[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx45, ARRAY_COUNT(sSmeargleGfx45)}, 
@@ -2437,26 +2437,26 @@ static const ax_sprite sSmeargleSprites45[] = {
 	{sSmeargleGfx45_2, ARRAY_COUNT(sSmeargleGfx45_2)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx46[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_46.4bpp");
+static const u8 sSmeargleGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_46.4bpp.lz");
 static const ax_sprite sSmeargleSprites46[] = {
 	{sSmeargleGfx46, ARRAY_COUNT(sSmeargleGfx46)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx47[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_47.4bpp");
+static const u8 sSmeargleGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_47.4bpp.lz");
 static const ax_sprite sSmeargleSprites47[] = {
 	{sSmeargleGfx47, ARRAY_COUNT(sSmeargleGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx48[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_48.4bpp");
+static const u8 sSmeargleGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_48.4bpp.lz");
 static const ax_sprite sSmeargleSprites48[] = {
 	{sSmeargleGfx48, ARRAY_COUNT(sSmeargleGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx49[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_49.4bpp");
-static const u8 sSmeargleGfx49_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_49_1.4bpp");
-static const u8 sSmeargleGfx49_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_49_2.4bpp");
-static const u8 sSmeargleGfx49_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_49_3.4bpp");
+static const u8 sSmeargleGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_49.4bpp.lz");
+static const u8 sSmeargleGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_49_1.4bpp.lz");
+static const u8 sSmeargleGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_49_2.4bpp.lz");
+static const u8 sSmeargleGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_49_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites49[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx49, ARRAY_COUNT(sSmeargleGfx49)}, 
@@ -2469,10 +2469,10 @@ static const ax_sprite sSmeargleSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx50[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_50.4bpp");
-static const u8 sSmeargleGfx50_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_50_1.4bpp");
-static const u8 sSmeargleGfx50_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_50_2.4bpp");
-static const u8 sSmeargleGfx50_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_50_3.4bpp");
+static const u8 sSmeargleGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_50.4bpp.lz");
+static const u8 sSmeargleGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_50_1.4bpp.lz");
+static const u8 sSmeargleGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_50_2.4bpp.lz");
+static const u8 sSmeargleGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_50_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites50[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx50, ARRAY_COUNT(sSmeargleGfx50)}, 
@@ -2484,30 +2484,30 @@ static const ax_sprite sSmeargleSprites50[] = {
 	{sSmeargleGfx50_3, ARRAY_COUNT(sSmeargleGfx50_3)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx51[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_51.4bpp");
+static const u8 sSmeargleGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_51.4bpp.lz");
 static const ax_sprite sSmeargleSprites51[] = {
 	{sSmeargleGfx51, ARRAY_COUNT(sSmeargleGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx52[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_52.4bpp");
+static const u8 sSmeargleGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_52.4bpp.lz");
 static const ax_sprite sSmeargleSprites52[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx52, ARRAY_COUNT(sSmeargleGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx53[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_53.4bpp");
+static const u8 sSmeargleGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_53.4bpp.lz");
 static const ax_sprite sSmeargleSprites53[] = {
 	{sSmeargleGfx53, ARRAY_COUNT(sSmeargleGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx54[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_54.4bpp");
+static const u8 sSmeargleGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_54.4bpp.lz");
 static const ax_sprite sSmeargleSprites54[] = {
 	{sSmeargleGfx54, ARRAY_COUNT(sSmeargleGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx55[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_55.4bpp");
-static const u8 sSmeargleGfx55_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_55_1.4bpp");
-static const u8 sSmeargleGfx55_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_55_2.4bpp");
+static const u8 sSmeargleGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_55.4bpp.lz");
+static const u8 sSmeargleGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_55_1.4bpp.lz");
+static const u8 sSmeargleGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_55_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites55[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx55, ARRAY_COUNT(sSmeargleGfx55)}, 
@@ -2518,17 +2518,17 @@ static const ax_sprite sSmeargleSprites55[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx56[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_56.4bpp");
-static const u8 sSmeargleGfx56_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_56_1.4bpp");
+static const u8 sSmeargleGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_56.4bpp.lz");
+static const u8 sSmeargleGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_56_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites56[] = {
 	{sSmeargleGfx56, ARRAY_COUNT(sSmeargleGfx56)}, 
 	{NULL, 64}, 
 	{sSmeargleGfx56_1, ARRAY_COUNT(sSmeargleGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx57[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_57.4bpp");
-static const u8 sSmeargleGfx57_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_57_1.4bpp");
-static const u8 sSmeargleGfx57_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_57_2.4bpp");
+static const u8 sSmeargleGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_57.4bpp.lz");
+static const u8 sSmeargleGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_57_1.4bpp.lz");
+static const u8 sSmeargleGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_57_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites57[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx57, ARRAY_COUNT(sSmeargleGfx57)}, 
@@ -2538,8 +2538,8 @@ static const ax_sprite sSmeargleSprites57[] = {
 	{sSmeargleGfx57_2, ARRAY_COUNT(sSmeargleGfx57_2)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx58[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_58.4bpp");
-static const u8 sSmeargleGfx58_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_58_1.4bpp");
+static const u8 sSmeargleGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_58.4bpp.lz");
+static const u8 sSmeargleGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_58_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites58[] = {
 	{sSmeargleGfx58, ARRAY_COUNT(sSmeargleGfx58)}, 
 	{NULL, 64}, 
@@ -2547,10 +2547,10 @@ static const ax_sprite sSmeargleSprites58[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx59[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_59.4bpp");
-static const u8 sSmeargleGfx59_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_59_1.4bpp");
-static const u8 sSmeargleGfx59_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_59_2.4bpp");
-static const u8 sSmeargleGfx59_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_59_3.4bpp");
+static const u8 sSmeargleGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_59.4bpp.lz");
+static const u8 sSmeargleGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_59_1.4bpp.lz");
+static const u8 sSmeargleGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_59_2.4bpp.lz");
+static const u8 sSmeargleGfx59_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_59_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites59[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx59, ARRAY_COUNT(sSmeargleGfx59)}, 
@@ -2563,18 +2563,18 @@ static const ax_sprite sSmeargleSprites59[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx60[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_60.4bpp");
-static const u8 sSmeargleGfx60_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_60_1.4bpp");
+static const u8 sSmeargleGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_60.4bpp.lz");
+static const u8 sSmeargleGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_60_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites60[] = {
 	{sSmeargleGfx60, ARRAY_COUNT(sSmeargleGfx60)}, 
 	{NULL, 32}, 
 	{sSmeargleGfx60_1, ARRAY_COUNT(sSmeargleGfx60_1)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx61[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_61.4bpp");
-static const u8 sSmeargleGfx61_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_61_1.4bpp");
-static const u8 sSmeargleGfx61_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_61_2.4bpp");
-static const u8 sSmeargleGfx61_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_61_3.4bpp");
+static const u8 sSmeargleGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_61.4bpp.lz");
+static const u8 sSmeargleGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_61_1.4bpp.lz");
+static const u8 sSmeargleGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_61_2.4bpp.lz");
+static const u8 sSmeargleGfx61_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_61_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites61[] = {
 	{sSmeargleGfx61, ARRAY_COUNT(sSmeargleGfx61)}, 
 	{NULL, 32}, 
@@ -2586,18 +2586,18 @@ static const ax_sprite sSmeargleSprites61[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx62[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_62.4bpp");
-static const u8 sSmeargleGfx62_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_62_1.4bpp");
+static const u8 sSmeargleGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_62.4bpp.lz");
+static const u8 sSmeargleGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_62_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites62[] = {
 	{sSmeargleGfx62, ARRAY_COUNT(sSmeargleGfx62)}, 
 	{NULL, 32}, 
 	{sSmeargleGfx62_1, ARRAY_COUNT(sSmeargleGfx62_1)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx63[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_63.4bpp");
-static const u8 sSmeargleGfx63_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_63_1.4bpp");
-static const u8 sSmeargleGfx63_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_63_2.4bpp");
-static const u8 sSmeargleGfx63_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_63_3.4bpp");
+static const u8 sSmeargleGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_63.4bpp.lz");
+static const u8 sSmeargleGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_63_1.4bpp.lz");
+static const u8 sSmeargleGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_63_2.4bpp.lz");
+static const u8 sSmeargleGfx63_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_63_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites63[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx63, ARRAY_COUNT(sSmeargleGfx63)}, 
@@ -2610,17 +2610,17 @@ static const ax_sprite sSmeargleSprites63[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx64[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_64.4bpp");
+static const u8 sSmeargleGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_64.4bpp.lz");
 static const ax_sprite sSmeargleSprites64[] = {
 	{NULL, 128}, 
 	{sSmeargleGfx64, ARRAY_COUNT(sSmeargleGfx64)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx65[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_65.4bpp");
-static const u8 sSmeargleGfx65_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_65_1.4bpp");
-static const u8 sSmeargleGfx65_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_65_2.4bpp");
-static const u8 sSmeargleGfx65_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_65_3.4bpp");
+static const u8 sSmeargleGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_65.4bpp.lz");
+static const u8 sSmeargleGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_65_1.4bpp.lz");
+static const u8 sSmeargleGfx65_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_65_2.4bpp.lz");
+static const u8 sSmeargleGfx65_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_65_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites65[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx65, ARRAY_COUNT(sSmeargleGfx65)}, 
@@ -2633,17 +2633,17 @@ static const ax_sprite sSmeargleSprites65[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx66[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_66.4bpp");
+static const u8 sSmeargleGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_66.4bpp.lz");
 static const ax_sprite sSmeargleSprites66[] = {
 	{NULL, 64}, 
 	{sSmeargleGfx66, ARRAY_COUNT(sSmeargleGfx66)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx67[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_67.4bpp");
-static const u8 sSmeargleGfx67_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_67_1.4bpp");
-static const u8 sSmeargleGfx67_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_67_2.4bpp");
-static const u8 sSmeargleGfx67_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_67_3.4bpp");
+static const u8 sSmeargleGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_67.4bpp.lz");
+static const u8 sSmeargleGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_67_1.4bpp.lz");
+static const u8 sSmeargleGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_67_2.4bpp.lz");
+static const u8 sSmeargleGfx67_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_67_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites67[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx67, ARRAY_COUNT(sSmeargleGfx67)}, 
@@ -2656,14 +2656,14 @@ static const ax_sprite sSmeargleSprites67[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx68[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_68.4bpp");
+static const u8 sSmeargleGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_68.4bpp.lz");
 static const ax_sprite sSmeargleSprites68[] = {
 	{NULL, 64}, 
 	{sSmeargleGfx68, ARRAY_COUNT(sSmeargleGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx69[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_69.4bpp");
-static const u8 sSmeargleGfx69_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_69_1.4bpp");
+static const u8 sSmeargleGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_69.4bpp.lz");
+static const u8 sSmeargleGfx69_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_69_1.4bpp.lz");
 static const ax_sprite sSmeargleSprites69[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx69, ARRAY_COUNT(sSmeargleGfx69)}, 
@@ -2672,9 +2672,9 @@ static const ax_sprite sSmeargleSprites69[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx70[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_70.4bpp");
-static const u8 sSmeargleGfx70_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_70_1.4bpp");
-static const u8 sSmeargleGfx70_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_70_2.4bpp");
+static const u8 sSmeargleGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_70.4bpp.lz");
+static const u8 sSmeargleGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_70_1.4bpp.lz");
+static const u8 sSmeargleGfx70_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_70_2.4bpp.lz");
 static const ax_sprite sSmeargleSprites70[] = {
 	{sSmeargleGfx70, ARRAY_COUNT(sSmeargleGfx70)}, 
 	{NULL, 64}, 
@@ -2684,10 +2684,10 @@ static const ax_sprite sSmeargleSprites70[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx71[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_71.4bpp");
-static const u8 sSmeargleGfx71_1[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_71_1.4bpp");
-static const u8 sSmeargleGfx71_2[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_71_2.4bpp");
-static const u8 sSmeargleGfx71_3[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_71_3.4bpp");
+static const u8 sSmeargleGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_71.4bpp.lz");
+static const u8 sSmeargleGfx71_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_71_1.4bpp.lz");
+static const u8 sSmeargleGfx71_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_71_2.4bpp.lz");
+static const u8 sSmeargleGfx71_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_71_3.4bpp.lz");
 static const ax_sprite sSmeargleSprites71[] = {
 	{NULL, 32}, 
 	{sSmeargleGfx71, ARRAY_COUNT(sSmeargleGfx71)}, 
@@ -2700,52 +2700,52 @@ static const ax_sprite sSmeargleSprites71[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx72[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_72.4bpp");
+static const u8 sSmeargleGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_72.4bpp.lz");
 static const ax_sprite sSmeargleSprites72[] = {
 	{sSmeargleGfx72, ARRAY_COUNT(sSmeargleGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx73[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_73.4bpp");
+static const u8 sSmeargleGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_73.4bpp.lz");
 static const ax_sprite sSmeargleSprites73[] = {
 	{sSmeargleGfx73, ARRAY_COUNT(sSmeargleGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx74[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_74.4bpp");
+static const u8 sSmeargleGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_74.4bpp.lz");
 static const ax_sprite sSmeargleSprites74[] = {
 	{sSmeargleGfx74, ARRAY_COUNT(sSmeargleGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx75[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_75.4bpp");
+static const u8 sSmeargleGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_75.4bpp.lz");
 static const ax_sprite sSmeargleSprites75[] = {
 	{sSmeargleGfx75, ARRAY_COUNT(sSmeargleGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx76[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_76.4bpp");
+static const u8 sSmeargleGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_76.4bpp.lz");
 static const ax_sprite sSmeargleSprites76[] = {
 	{sSmeargleGfx76, ARRAY_COUNT(sSmeargleGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx77[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_77.4bpp");
+static const u8 sSmeargleGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_77.4bpp.lz");
 static const ax_sprite sSmeargleSprites77[] = {
 	{sSmeargleGfx77, ARRAY_COUNT(sSmeargleGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx78[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_78.4bpp");
+static const u8 sSmeargleGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_78.4bpp.lz");
 static const ax_sprite sSmeargleSprites78[] = {
 	{sSmeargleGfx78, ARRAY_COUNT(sSmeargleGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx79[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_79.4bpp");
+static const u8 sSmeargleGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_79.4bpp.lz");
 static const ax_sprite sSmeargleSprites79[] = {
 	{sSmeargleGfx79, ARRAY_COUNT(sSmeargleGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx80[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_80.4bpp");
+static const u8 sSmeargleGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_80.4bpp.lz");
 static const ax_sprite sSmeargleSprites80[] = {
 	{sSmeargleGfx80, ARRAY_COUNT(sSmeargleGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sSmeargleGfx81[] = INCBIN_U8("graphics/ax/mon/smeargle/sprite_81.4bpp");
+static const u8 sSmeargleGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smeargle/sprite_81.4bpp.lz");
 static const ax_sprite sSmeargleSprites81[] = {
 	{sSmeargleGfx81, ARRAY_COUNT(sSmeargleGfx81)}, 
 	{NULL, 0}

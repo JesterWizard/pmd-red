@@ -1951,84 +1951,84 @@ static const ax_anim sStarmieAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sStarmieGfx1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_1.4bpp");
+static const u8 sStarmieGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_1.4bpp.lz");
 static const ax_sprite sStarmieSprites1[] = {
 	{sStarmieGfx1, ARRAY_COUNT(sStarmieGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_2.4bpp");
+static const u8 sStarmieGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_2.4bpp.lz");
 static const ax_sprite sStarmieSprites2[] = {
 	{sStarmieGfx2, ARRAY_COUNT(sStarmieGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx3[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_3.4bpp");
+static const u8 sStarmieGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_3.4bpp.lz");
 static const ax_sprite sStarmieSprites3[] = {
 	{sStarmieGfx3, ARRAY_COUNT(sStarmieGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx4[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_4.4bpp");
+static const u8 sStarmieGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_4.4bpp.lz");
 static const ax_sprite sStarmieSprites4[] = {
 	{sStarmieGfx4, ARRAY_COUNT(sStarmieGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx5[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_5.4bpp");
+static const u8 sStarmieGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_5.4bpp.lz");
 static const ax_sprite sStarmieSprites5[] = {
 	{sStarmieGfx5, ARRAY_COUNT(sStarmieGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx6[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_6.4bpp");
+static const u8 sStarmieGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_6.4bpp.lz");
 static const ax_sprite sStarmieSprites6[] = {
 	{sStarmieGfx6, ARRAY_COUNT(sStarmieGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx7[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_7.4bpp");
+static const u8 sStarmieGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_7.4bpp.lz");
 static const ax_sprite sStarmieSprites7[] = {
 	{sStarmieGfx7, ARRAY_COUNT(sStarmieGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx8[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_8.4bpp");
+static const u8 sStarmieGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_8.4bpp.lz");
 static const ax_sprite sStarmieSprites8[] = {
 	{sStarmieGfx8, ARRAY_COUNT(sStarmieGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx9[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_9.4bpp");
+static const u8 sStarmieGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_9.4bpp.lz");
 static const ax_sprite sStarmieSprites9[] = {
 	{sStarmieGfx9, ARRAY_COUNT(sStarmieGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx10[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_10.4bpp");
+static const u8 sStarmieGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_10.4bpp.lz");
 static const ax_sprite sStarmieSprites10[] = {
 	{sStarmieGfx10, ARRAY_COUNT(sStarmieGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx11[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_11.4bpp");
+static const u8 sStarmieGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_11.4bpp.lz");
 static const ax_sprite sStarmieSprites11[] = {
 	{sStarmieGfx11, ARRAY_COUNT(sStarmieGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx12[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_12.4bpp");
+static const u8 sStarmieGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_12.4bpp.lz");
 static const ax_sprite sStarmieSprites12[] = {
 	{sStarmieGfx12, ARRAY_COUNT(sStarmieGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx13[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_13.4bpp");
+static const u8 sStarmieGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_13.4bpp.lz");
 static const ax_sprite sStarmieSprites13[] = {
 	{sStarmieGfx13, ARRAY_COUNT(sStarmieGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx14[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_14.4bpp");
+static const u8 sStarmieGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_14.4bpp.lz");
 static const ax_sprite sStarmieSprites14[] = {
 	{sStarmieGfx14, ARRAY_COUNT(sStarmieGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx15[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_15.4bpp");
+static const u8 sStarmieGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_15.4bpp.lz");
 static const ax_sprite sStarmieSprites15[] = {
 	{sStarmieGfx15, ARRAY_COUNT(sStarmieGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx16[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_16.4bpp");
-static const u8 sStarmieGfx16_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_16_1.4bpp");
-static const u8 sStarmieGfx16_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_16_2.4bpp");
+static const u8 sStarmieGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_16.4bpp.lz");
+static const u8 sStarmieGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_16_1.4bpp.lz");
+static const u8 sStarmieGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_16_2.4bpp.lz");
 static const ax_sprite sStarmieSprites16[] = {
 	{sStarmieGfx16, ARRAY_COUNT(sStarmieGfx16)}, 
 	{NULL, 32}, 
@@ -2038,9 +2038,9 @@ static const ax_sprite sStarmieSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx17[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_17.4bpp");
-static const u8 sStarmieGfx17_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_17_1.4bpp");
-static const u8 sStarmieGfx17_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_17_2.4bpp");
+static const u8 sStarmieGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_17.4bpp.lz");
+static const u8 sStarmieGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_17_1.4bpp.lz");
+static const u8 sStarmieGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_17_2.4bpp.lz");
 static const ax_sprite sStarmieSprites17[] = {
 	{sStarmieGfx17, ARRAY_COUNT(sStarmieGfx17)}, 
 	{NULL, 32}, 
@@ -2050,10 +2050,10 @@ static const ax_sprite sStarmieSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx18[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_18.4bpp");
-static const u8 sStarmieGfx18_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_18_1.4bpp");
-static const u8 sStarmieGfx18_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_18_2.4bpp");
-static const u8 sStarmieGfx18_3[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_18_3.4bpp");
+static const u8 sStarmieGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_18.4bpp.lz");
+static const u8 sStarmieGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_18_1.4bpp.lz");
+static const u8 sStarmieGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_18_2.4bpp.lz");
+static const u8 sStarmieGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_18_3.4bpp.lz");
 static const ax_sprite sStarmieSprites18[] = {
 	{sStarmieGfx18, ARRAY_COUNT(sStarmieGfx18)}, 
 	{NULL, 32}, 
@@ -2065,8 +2065,8 @@ static const ax_sprite sStarmieSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx19[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_19.4bpp");
-static const u8 sStarmieGfx19_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_19_1.4bpp");
+static const u8 sStarmieGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_19.4bpp.lz");
+static const u8 sStarmieGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_19_1.4bpp.lz");
 static const ax_sprite sStarmieSprites19[] = {
 	{NULL, 32}, 
 	{sStarmieGfx19, ARRAY_COUNT(sStarmieGfx19)}, 
@@ -2075,8 +2075,8 @@ static const ax_sprite sStarmieSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx20[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_20.4bpp");
-static const u8 sStarmieGfx20_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_20_1.4bpp");
+static const u8 sStarmieGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_20.4bpp.lz");
+static const u8 sStarmieGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_20_1.4bpp.lz");
 static const ax_sprite sStarmieSprites20[] = {
 	{sStarmieGfx20, ARRAY_COUNT(sStarmieGfx20)}, 
 	{NULL, 32}, 
@@ -2084,10 +2084,10 @@ static const ax_sprite sStarmieSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx21[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_21.4bpp");
-static const u8 sStarmieGfx21_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_21_1.4bpp");
-static const u8 sStarmieGfx21_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_21_2.4bpp");
-static const u8 sStarmieGfx21_3[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_21_3.4bpp");
+static const u8 sStarmieGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_21.4bpp.lz");
+static const u8 sStarmieGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_21_1.4bpp.lz");
+static const u8 sStarmieGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_21_2.4bpp.lz");
+static const u8 sStarmieGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_21_3.4bpp.lz");
 static const ax_sprite sStarmieSprites21[] = {
 	{NULL, 32}, 
 	{sStarmieGfx21, ARRAY_COUNT(sStarmieGfx21)}, 
@@ -2100,9 +2100,9 @@ static const ax_sprite sStarmieSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx22[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_22.4bpp");
-static const u8 sStarmieGfx22_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_22_1.4bpp");
-static const u8 sStarmieGfx22_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_22_2.4bpp");
+static const u8 sStarmieGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_22.4bpp.lz");
+static const u8 sStarmieGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_22_1.4bpp.lz");
+static const u8 sStarmieGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_22_2.4bpp.lz");
 static const ax_sprite sStarmieSprites22[] = {
 	{NULL, 32}, 
 	{sStarmieGfx22, ARRAY_COUNT(sStarmieGfx22)}, 
@@ -2113,8 +2113,8 @@ static const ax_sprite sStarmieSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx23[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_23.4bpp");
-static const u8 sStarmieGfx23_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_23_1.4bpp");
+static const u8 sStarmieGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_23.4bpp.lz");
+static const u8 sStarmieGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_23_1.4bpp.lz");
 static const ax_sprite sStarmieSprites23[] = {
 	{sStarmieGfx23, ARRAY_COUNT(sStarmieGfx23)}, 
 	{NULL, 32}, 
@@ -2122,9 +2122,9 @@ static const ax_sprite sStarmieSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx24[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_24.4bpp");
-static const u8 sStarmieGfx24_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_24_1.4bpp");
-static const u8 sStarmieGfx24_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_24_2.4bpp");
+static const u8 sStarmieGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_24.4bpp.lz");
+static const u8 sStarmieGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_24_1.4bpp.lz");
+static const u8 sStarmieGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_24_2.4bpp.lz");
 static const ax_sprite sStarmieSprites24[] = {
 	{sStarmieGfx24, ARRAY_COUNT(sStarmieGfx24)}, 
 	{NULL, 32}, 
@@ -2134,9 +2134,9 @@ static const ax_sprite sStarmieSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx25[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_25.4bpp");
-static const u8 sStarmieGfx25_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_25_1.4bpp");
-static const u8 sStarmieGfx25_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_25_2.4bpp");
+static const u8 sStarmieGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_25.4bpp.lz");
+static const u8 sStarmieGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_25_1.4bpp.lz");
+static const u8 sStarmieGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_25_2.4bpp.lz");
 static const ax_sprite sStarmieSprites25[] = {
 	{sStarmieGfx25, ARRAY_COUNT(sStarmieGfx25)}, 
 	{NULL, 32}, 
@@ -2146,8 +2146,8 @@ static const ax_sprite sStarmieSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx26[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_26.4bpp");
-static const u8 sStarmieGfx26_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_26_1.4bpp");
+static const u8 sStarmieGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_26.4bpp.lz");
+static const u8 sStarmieGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_26_1.4bpp.lz");
 static const ax_sprite sStarmieSprites26[] = {
 	{sStarmieGfx26, ARRAY_COUNT(sStarmieGfx26)}, 
 	{NULL, 32}, 
@@ -2155,26 +2155,26 @@ static const ax_sprite sStarmieSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx27[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_27.4bpp");
-static const u8 sStarmieGfx27_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_27_1.4bpp");
+static const u8 sStarmieGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_27.4bpp.lz");
+static const u8 sStarmieGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_27_1.4bpp.lz");
 static const ax_sprite sStarmieSprites27[] = {
 	{sStarmieGfx27, ARRAY_COUNT(sStarmieGfx27)}, 
 	{NULL, 32}, 
 	{sStarmieGfx27_1, ARRAY_COUNT(sStarmieGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx28[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_28.4bpp");
-static const u8 sStarmieGfx28_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_28_1.4bpp");
+static const u8 sStarmieGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_28.4bpp.lz");
+static const u8 sStarmieGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_28_1.4bpp.lz");
 static const ax_sprite sStarmieSprites28[] = {
 	{sStarmieGfx28, ARRAY_COUNT(sStarmieGfx28)}, 
 	{NULL, 32}, 
 	{sStarmieGfx28_1, ARRAY_COUNT(sStarmieGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx29[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_29.4bpp");
-static const u8 sStarmieGfx29_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_29_1.4bpp");
-static const u8 sStarmieGfx29_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_29_2.4bpp");
-static const u8 sStarmieGfx29_3[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_29_3.4bpp");
+static const u8 sStarmieGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_29.4bpp.lz");
+static const u8 sStarmieGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_29_1.4bpp.lz");
+static const u8 sStarmieGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_29_2.4bpp.lz");
+static const u8 sStarmieGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_29_3.4bpp.lz");
 static const ax_sprite sStarmieSprites29[] = {
 	{NULL, 32}, 
 	{sStarmieGfx29, ARRAY_COUNT(sStarmieGfx29)}, 
@@ -2187,10 +2187,10 @@ static const ax_sprite sStarmieSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx30[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_30.4bpp");
-static const u8 sStarmieGfx30_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_30_1.4bpp");
-static const u8 sStarmieGfx30_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_30_2.4bpp");
-static const u8 sStarmieGfx30_3[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_30_3.4bpp");
+static const u8 sStarmieGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_30.4bpp.lz");
+static const u8 sStarmieGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_30_1.4bpp.lz");
+static const u8 sStarmieGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_30_2.4bpp.lz");
+static const u8 sStarmieGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_30_3.4bpp.lz");
 static const ax_sprite sStarmieSprites30[] = {
 	{NULL, 32}, 
 	{sStarmieGfx30, ARRAY_COUNT(sStarmieGfx30)}, 
@@ -2203,9 +2203,9 @@ static const ax_sprite sStarmieSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx31[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_31.4bpp");
-static const u8 sStarmieGfx31_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_31_1.4bpp");
-static const u8 sStarmieGfx31_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_31_2.4bpp");
+static const u8 sStarmieGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_31.4bpp.lz");
+static const u8 sStarmieGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_31_1.4bpp.lz");
+static const u8 sStarmieGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_31_2.4bpp.lz");
 static const ax_sprite sStarmieSprites31[] = {
 	{NULL, 32}, 
 	{sStarmieGfx31, ARRAY_COUNT(sStarmieGfx31)}, 
@@ -2216,9 +2216,9 @@ static const ax_sprite sStarmieSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx32[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_32.4bpp");
-static const u8 sStarmieGfx32_1[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_32_1.4bpp");
-static const u8 sStarmieGfx32_2[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_32_2.4bpp");
+static const u8 sStarmieGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_32.4bpp.lz");
+static const u8 sStarmieGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_32_1.4bpp.lz");
+static const u8 sStarmieGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_32_2.4bpp.lz");
 static const ax_sprite sStarmieSprites32[] = {
 	{NULL, 32}, 
 	{sStarmieGfx32, ARRAY_COUNT(sStarmieGfx32)}, 
@@ -2229,37 +2229,37 @@ static const ax_sprite sStarmieSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx33[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_33.4bpp");
+static const u8 sStarmieGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_33.4bpp.lz");
 static const ax_sprite sStarmieSprites33[] = {
 	{sStarmieGfx33, ARRAY_COUNT(sStarmieGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx34[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_34.4bpp");
+static const u8 sStarmieGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_34.4bpp.lz");
 static const ax_sprite sStarmieSprites34[] = {
 	{sStarmieGfx34, ARRAY_COUNT(sStarmieGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx35[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_35.4bpp");
+static const u8 sStarmieGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_35.4bpp.lz");
 static const ax_sprite sStarmieSprites35[] = {
 	{sStarmieGfx35, ARRAY_COUNT(sStarmieGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx36[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_36.4bpp");
+static const u8 sStarmieGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_36.4bpp.lz");
 static const ax_sprite sStarmieSprites36[] = {
 	{sStarmieGfx36, ARRAY_COUNT(sStarmieGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx37[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_37.4bpp");
+static const u8 sStarmieGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_37.4bpp.lz");
 static const ax_sprite sStarmieSprites37[] = {
 	{sStarmieGfx37, ARRAY_COUNT(sStarmieGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx38[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_38.4bpp");
+static const u8 sStarmieGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_38.4bpp.lz");
 static const ax_sprite sStarmieSprites38[] = {
 	{sStarmieGfx38, ARRAY_COUNT(sStarmieGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sStarmieGfx39[] = INCBIN_U8("graphics/ax/mon/starmie/sprite_39.4bpp");
+static const u8 sStarmieGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/starmie/sprite_39.4bpp.lz");
 static const ax_sprite sStarmieSprites39[] = {
 	{sStarmieGfx39, ARRAY_COUNT(sStarmieGfx39)}, 
 	{NULL, 0}

@@ -2133,128 +2133,128 @@ static const ax_anim sSneaselAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSneaselGfx1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_1.4bpp");
+static const u8 sSneaselGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_1.4bpp.lz");
 static const ax_sprite sSneaselSprites1[] = {
 	{sSneaselGfx1, ARRAY_COUNT(sSneaselGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_2.4bpp");
+static const u8 sSneaselGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_2.4bpp.lz");
 static const ax_sprite sSneaselSprites2[] = {
 	{sSneaselGfx2, ARRAY_COUNT(sSneaselGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_3.4bpp");
+static const u8 sSneaselGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_3.4bpp.lz");
 static const ax_sprite sSneaselSprites3[] = {
 	{sSneaselGfx3, ARRAY_COUNT(sSneaselGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx4[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_4.4bpp");
+static const u8 sSneaselGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_4.4bpp.lz");
 static const ax_sprite sSneaselSprites4[] = {
 	{sSneaselGfx4, ARRAY_COUNT(sSneaselGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx5[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_5.4bpp");
+static const u8 sSneaselGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_5.4bpp.lz");
 static const ax_sprite sSneaselSprites5[] = {
 	{sSneaselGfx5, ARRAY_COUNT(sSneaselGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx6[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_6.4bpp");
+static const u8 sSneaselGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_6.4bpp.lz");
 static const ax_sprite sSneaselSprites6[] = {
 	{sSneaselGfx6, ARRAY_COUNT(sSneaselGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx7[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_7.4bpp");
+static const u8 sSneaselGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_7.4bpp.lz");
 static const ax_sprite sSneaselSprites7[] = {
 	{sSneaselGfx7, ARRAY_COUNT(sSneaselGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx8[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_8.4bpp");
+static const u8 sSneaselGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_8.4bpp.lz");
 static const ax_sprite sSneaselSprites8[] = {
 	{sSneaselGfx8, ARRAY_COUNT(sSneaselGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx9[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_9.4bpp");
+static const u8 sSneaselGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_9.4bpp.lz");
 static const ax_sprite sSneaselSprites9[] = {
 	{sSneaselGfx9, ARRAY_COUNT(sSneaselGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx10[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_10.4bpp");
+static const u8 sSneaselGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_10.4bpp.lz");
 static const ax_sprite sSneaselSprites10[] = {
 	{sSneaselGfx10, ARRAY_COUNT(sSneaselGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx11[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_11.4bpp");
+static const u8 sSneaselGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_11.4bpp.lz");
 static const ax_sprite sSneaselSprites11[] = {
 	{sSneaselGfx11, ARRAY_COUNT(sSneaselGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx12[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_12.4bpp");
+static const u8 sSneaselGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_12.4bpp.lz");
 static const ax_sprite sSneaselSprites12[] = {
 	{sSneaselGfx12, ARRAY_COUNT(sSneaselGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx13[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_13.4bpp");
+static const u8 sSneaselGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_13.4bpp.lz");
 static const ax_sprite sSneaselSprites13[] = {
 	{sSneaselGfx13, ARRAY_COUNT(sSneaselGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx14[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_14.4bpp");
+static const u8 sSneaselGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_14.4bpp.lz");
 static const ax_sprite sSneaselSprites14[] = {
 	{sSneaselGfx14, ARRAY_COUNT(sSneaselGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx15[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_15.4bpp");
+static const u8 sSneaselGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_15.4bpp.lz");
 static const ax_sprite sSneaselSprites15[] = {
 	{sSneaselGfx15, ARRAY_COUNT(sSneaselGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx16[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_16.4bpp");
+static const u8 sSneaselGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_16.4bpp.lz");
 static const ax_sprite sSneaselSprites16[] = {
 	{sSneaselGfx16, ARRAY_COUNT(sSneaselGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx17[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_17.4bpp");
+static const u8 sSneaselGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_17.4bpp.lz");
 static const ax_sprite sSneaselSprites17[] = {
 	{sSneaselGfx17, ARRAY_COUNT(sSneaselGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx18[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_18.4bpp");
+static const u8 sSneaselGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_18.4bpp.lz");
 static const ax_sprite sSneaselSprites18[] = {
 	{sSneaselGfx18, ARRAY_COUNT(sSneaselGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx19[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_19.4bpp");
+static const u8 sSneaselGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_19.4bpp.lz");
 static const ax_sprite sSneaselSprites19[] = {
 	{sSneaselGfx19, ARRAY_COUNT(sSneaselGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx20[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_20.4bpp");
+static const u8 sSneaselGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_20.4bpp.lz");
 static const ax_sprite sSneaselSprites20[] = {
 	{sSneaselGfx20, ARRAY_COUNT(sSneaselGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx21[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_21.4bpp");
+static const u8 sSneaselGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_21.4bpp.lz");
 static const ax_sprite sSneaselSprites21[] = {
 	{sSneaselGfx21, ARRAY_COUNT(sSneaselGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx22[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_22.4bpp");
+static const u8 sSneaselGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_22.4bpp.lz");
 static const ax_sprite sSneaselSprites22[] = {
 	{sSneaselGfx22, ARRAY_COUNT(sSneaselGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx23[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_23.4bpp");
+static const u8 sSneaselGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_23.4bpp.lz");
 static const ax_sprite sSneaselSprites23[] = {
 	{sSneaselGfx23, ARRAY_COUNT(sSneaselGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx24[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_24.4bpp");
+static const u8 sSneaselGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_24.4bpp.lz");
 static const ax_sprite sSneaselSprites24[] = {
 	{sSneaselGfx24, ARRAY_COUNT(sSneaselGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx25[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_25.4bpp");
-static const u8 sSneaselGfx25_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_25_1.4bpp");
+static const u8 sSneaselGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_25.4bpp.lz");
+static const u8 sSneaselGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_25_1.4bpp.lz");
 static const ax_sprite sSneaselSprites25[] = {
 	{sSneaselGfx25, ARRAY_COUNT(sSneaselGfx25)}, 
 	{NULL, 32}, 
@@ -2262,8 +2262,8 @@ static const ax_sprite sSneaselSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx26[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_26.4bpp");
-static const u8 sSneaselGfx26_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_26_1.4bpp");
+static const u8 sSneaselGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_26.4bpp.lz");
+static const u8 sSneaselGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_26_1.4bpp.lz");
 static const ax_sprite sSneaselSprites26[] = {
 	{NULL, 32}, 
 	{sSneaselGfx26, ARRAY_COUNT(sSneaselGfx26)}, 
@@ -2272,10 +2272,10 @@ static const ax_sprite sSneaselSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx27[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_27.4bpp");
-static const u8 sSneaselGfx27_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_27_1.4bpp");
-static const u8 sSneaselGfx27_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_27_2.4bpp");
-static const u8 sSneaselGfx27_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_27_3.4bpp");
+static const u8 sSneaselGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_27.4bpp.lz");
+static const u8 sSneaselGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_27_1.4bpp.lz");
+static const u8 sSneaselGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_27_2.4bpp.lz");
+static const u8 sSneaselGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_27_3.4bpp.lz");
 static const ax_sprite sSneaselSprites27[] = {
 	{sSneaselGfx27, ARRAY_COUNT(sSneaselGfx27)}, 
 	{NULL, 32}, 
@@ -2287,8 +2287,8 @@ static const ax_sprite sSneaselSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx28[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_28.4bpp");
-static const u8 sSneaselGfx28_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_28_1.4bpp");
+static const u8 sSneaselGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_28.4bpp.lz");
+static const u8 sSneaselGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_28_1.4bpp.lz");
 static const ax_sprite sSneaselSprites28[] = {
 	{NULL, 32}, 
 	{sSneaselGfx28, ARRAY_COUNT(sSneaselGfx28)}, 
@@ -2296,8 +2296,8 @@ static const ax_sprite sSneaselSprites28[] = {
 	{sSneaselGfx28_1, ARRAY_COUNT(sSneaselGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx29[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_29.4bpp");
-static const u8 sSneaselGfx29_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_29_1.4bpp");
+static const u8 sSneaselGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_29.4bpp.lz");
+static const u8 sSneaselGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_29_1.4bpp.lz");
 static const ax_sprite sSneaselSprites29[] = {
 	{sSneaselGfx29, ARRAY_COUNT(sSneaselGfx29)}, 
 	{NULL, 64}, 
@@ -2305,17 +2305,17 @@ static const ax_sprite sSneaselSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx30[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_30.4bpp");
+static const u8 sSneaselGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_30.4bpp.lz");
 static const ax_sprite sSneaselSprites30[] = {
 	{NULL, 64}, 
 	{sSneaselGfx30, ARRAY_COUNT(sSneaselGfx30)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx31[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_31.4bpp");
-static const u8 sSneaselGfx31_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_31_1.4bpp");
-static const u8 sSneaselGfx31_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_31_2.4bpp");
-static const u8 sSneaselGfx31_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_31_3.4bpp");
+static const u8 sSneaselGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_31.4bpp.lz");
+static const u8 sSneaselGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_31_1.4bpp.lz");
+static const u8 sSneaselGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_31_2.4bpp.lz");
+static const u8 sSneaselGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_31_3.4bpp.lz");
 static const ax_sprite sSneaselSprites31[] = {
 	{sSneaselGfx31, ARRAY_COUNT(sSneaselGfx31)}, 
 	{NULL, 64}, 
@@ -2327,16 +2327,16 @@ static const ax_sprite sSneaselSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx32[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_32.4bpp");
+static const u8 sSneaselGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_32.4bpp.lz");
 static const ax_sprite sSneaselSprites32[] = {
 	{NULL, 32}, 
 	{sSneaselGfx32, ARRAY_COUNT(sSneaselGfx32)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx33[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_33.4bpp");
-static const u8 sSneaselGfx33_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_33_1.4bpp");
-static const u8 sSneaselGfx33_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_33_2.4bpp");
+static const u8 sSneaselGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_33.4bpp.lz");
+static const u8 sSneaselGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_33_1.4bpp.lz");
+static const u8 sSneaselGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_33_2.4bpp.lz");
 static const ax_sprite sSneaselSprites33[] = {
 	{NULL, 32}, 
 	{sSneaselGfx33, ARRAY_COUNT(sSneaselGfx33)}, 
@@ -2347,9 +2347,9 @@ static const ax_sprite sSneaselSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx34[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_34.4bpp");
-static const u8 sSneaselGfx34_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_34_1.4bpp");
-static const u8 sSneaselGfx34_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_34_2.4bpp");
+static const u8 sSneaselGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_34.4bpp.lz");
+static const u8 sSneaselGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_34_1.4bpp.lz");
+static const u8 sSneaselGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_34_2.4bpp.lz");
 static const ax_sprite sSneaselSprites34[] = {
 	{sSneaselGfx34, ARRAY_COUNT(sSneaselGfx34)}, 
 	{NULL, 32}, 
@@ -2359,10 +2359,10 @@ static const ax_sprite sSneaselSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx35[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_35.4bpp");
-static const u8 sSneaselGfx35_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_35_1.4bpp");
-static const u8 sSneaselGfx35_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_35_2.4bpp");
-static const u8 sSneaselGfx35_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_35_3.4bpp");
+static const u8 sSneaselGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_35.4bpp.lz");
+static const u8 sSneaselGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_35_1.4bpp.lz");
+static const u8 sSneaselGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_35_2.4bpp.lz");
+static const u8 sSneaselGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_35_3.4bpp.lz");
 static const ax_sprite sSneaselSprites35[] = {
 	{NULL, 64}, 
 	{sSneaselGfx35, ARRAY_COUNT(sSneaselGfx35)}, 
@@ -2375,10 +2375,10 @@ static const ax_sprite sSneaselSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx36[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_36.4bpp");
-static const u8 sSneaselGfx36_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_36_1.4bpp");
-static const u8 sSneaselGfx36_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_36_2.4bpp");
-static const u8 sSneaselGfx36_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_36_3.4bpp");
+static const u8 sSneaselGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_36.4bpp.lz");
+static const u8 sSneaselGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_36_1.4bpp.lz");
+static const u8 sSneaselGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_36_2.4bpp.lz");
+static const u8 sSneaselGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_36_3.4bpp.lz");
 static const ax_sprite sSneaselSprites36[] = {
 	{sSneaselGfx36, ARRAY_COUNT(sSneaselGfx36)}, 
 	{NULL, 64}, 
@@ -2390,8 +2390,8 @@ static const ax_sprite sSneaselSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx37[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_37.4bpp");
-static const u8 sSneaselGfx37_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_37_1.4bpp");
+static const u8 sSneaselGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_37.4bpp.lz");
+static const u8 sSneaselGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_37_1.4bpp.lz");
 static const ax_sprite sSneaselSprites37[] = {
 	{NULL, 32}, 
 	{sSneaselGfx37, ARRAY_COUNT(sSneaselGfx37)}, 
@@ -2399,10 +2399,10 @@ static const ax_sprite sSneaselSprites37[] = {
 	{sSneaselGfx37_1, ARRAY_COUNT(sSneaselGfx37_1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx38[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_38.4bpp");
-static const u8 sSneaselGfx38_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_38_1.4bpp");
-static const u8 sSneaselGfx38_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_38_2.4bpp");
-static const u8 sSneaselGfx38_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_38_3.4bpp");
+static const u8 sSneaselGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_38.4bpp.lz");
+static const u8 sSneaselGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_38_1.4bpp.lz");
+static const u8 sSneaselGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_38_2.4bpp.lz");
+static const u8 sSneaselGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_38_3.4bpp.lz");
 static const ax_sprite sSneaselSprites38[] = {
 	{sSneaselGfx38, ARRAY_COUNT(sSneaselGfx38)}, 
 	{NULL, 64}, 
@@ -2413,8 +2413,8 @@ static const ax_sprite sSneaselSprites38[] = {
 	{sSneaselGfx38_3, ARRAY_COUNT(sSneaselGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx39[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_39.4bpp");
-static const u8 sSneaselGfx39_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_39_1.4bpp");
+static const u8 sSneaselGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_39.4bpp.lz");
+static const u8 sSneaselGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_39_1.4bpp.lz");
 static const ax_sprite sSneaselSprites39[] = {
 	{NULL, 32}, 
 	{sSneaselGfx39, ARRAY_COUNT(sSneaselGfx39)}, 
@@ -2423,8 +2423,8 @@ static const ax_sprite sSneaselSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx40[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_40.4bpp");
-static const u8 sSneaselGfx40_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_40_1.4bpp");
+static const u8 sSneaselGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_40.4bpp.lz");
+static const u8 sSneaselGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_40_1.4bpp.lz");
 static const ax_sprite sSneaselSprites40[] = {
 	{NULL, 128}, 
 	{sSneaselGfx40, ARRAY_COUNT(sSneaselGfx40)}, 
@@ -2432,26 +2432,26 @@ static const ax_sprite sSneaselSprites40[] = {
 	{sSneaselGfx40_1, ARRAY_COUNT(sSneaselGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx41[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_41.4bpp");
+static const u8 sSneaselGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_41.4bpp.lz");
 static const ax_sprite sSneaselSprites41[] = {
 	{NULL, 32}, 
 	{sSneaselGfx41, ARRAY_COUNT(sSneaselGfx41)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx42[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_42.4bpp");
+static const u8 sSneaselGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_42.4bpp.lz");
 static const ax_sprite sSneaselSprites42[] = {
 	{sSneaselGfx42, ARRAY_COUNT(sSneaselGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx43[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_43.4bpp");
+static const u8 sSneaselGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_43.4bpp.lz");
 static const ax_sprite sSneaselSprites43[] = {
 	{sSneaselGfx43, ARRAY_COUNT(sSneaselGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx44[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_44.4bpp");
-static const u8 sSneaselGfx44_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_44_1.4bpp");
-static const u8 sSneaselGfx44_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_44_2.4bpp");
+static const u8 sSneaselGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_44.4bpp.lz");
+static const u8 sSneaselGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_44_1.4bpp.lz");
+static const u8 sSneaselGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_44_2.4bpp.lz");
 static const ax_sprite sSneaselSprites44[] = {
 	{NULL, 64}, 
 	{sSneaselGfx44, ARRAY_COUNT(sSneaselGfx44)}, 
@@ -2462,9 +2462,9 @@ static const ax_sprite sSneaselSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx45[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_45.4bpp");
-static const u8 sSneaselGfx45_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_45_1.4bpp");
-static const u8 sSneaselGfx45_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_45_2.4bpp");
+static const u8 sSneaselGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_45.4bpp.lz");
+static const u8 sSneaselGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_45_1.4bpp.lz");
+static const u8 sSneaselGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_45_2.4bpp.lz");
 static const ax_sprite sSneaselSprites45[] = {
 	{sSneaselGfx45, ARRAY_COUNT(sSneaselGfx45)}, 
 	{NULL, 32}, 
@@ -2473,46 +2473,46 @@ static const ax_sprite sSneaselSprites45[] = {
 	{sSneaselGfx45_2, ARRAY_COUNT(sSneaselGfx45_2)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx46[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_46.4bpp");
-static const u8 sSneaselGfx46_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_46_1.4bpp");
+static const u8 sSneaselGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_46.4bpp.lz");
+static const u8 sSneaselGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_46_1.4bpp.lz");
 static const ax_sprite sSneaselSprites46[] = {
 	{sSneaselGfx46, ARRAY_COUNT(sSneaselGfx46)}, 
 	{NULL, 32}, 
 	{sSneaselGfx46_1, ARRAY_COUNT(sSneaselGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx47[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_47.4bpp");
+static const u8 sSneaselGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_47.4bpp.lz");
 static const ax_sprite sSneaselSprites47[] = {
 	{sSneaselGfx47, ARRAY_COUNT(sSneaselGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx48[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_48.4bpp");
+static const u8 sSneaselGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_48.4bpp.lz");
 static const ax_sprite sSneaselSprites48[] = {
 	{NULL, 96}, 
 	{sSneaselGfx48, ARRAY_COUNT(sSneaselGfx48)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx49[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_49.4bpp");
-static const u8 sSneaselGfx49_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_49_1.4bpp");
+static const u8 sSneaselGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_49.4bpp.lz");
+static const u8 sSneaselGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_49_1.4bpp.lz");
 static const ax_sprite sSneaselSprites49[] = {
 	{sSneaselGfx49, ARRAY_COUNT(sSneaselGfx49)}, 
 	{NULL, 32}, 
 	{sSneaselGfx49_1, ARRAY_COUNT(sSneaselGfx49_1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx50[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_50.4bpp");
+static const u8 sSneaselGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_50.4bpp.lz");
 static const ax_sprite sSneaselSprites50[] = {
 	{sSneaselGfx50, ARRAY_COUNT(sSneaselGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx51[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_51.4bpp");
+static const u8 sSneaselGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_51.4bpp.lz");
 static const ax_sprite sSneaselSprites51[] = {
 	{sSneaselGfx51, ARRAY_COUNT(sSneaselGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx52[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_52.4bpp");
-static const u8 sSneaselGfx52_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_52_1.4bpp");
+static const u8 sSneaselGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_52.4bpp.lz");
+static const u8 sSneaselGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_52_1.4bpp.lz");
 static const ax_sprite sSneaselSprites52[] = {
 	{NULL, 32}, 
 	{sSneaselGfx52, ARRAY_COUNT(sSneaselGfx52)}, 
@@ -2521,10 +2521,10 @@ static const ax_sprite sSneaselSprites52[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx53[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_53.4bpp");
-static const u8 sSneaselGfx53_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_53_1.4bpp");
-static const u8 sSneaselGfx53_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_53_2.4bpp");
-static const u8 sSneaselGfx53_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_53_3.4bpp");
+static const u8 sSneaselGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_53.4bpp.lz");
+static const u8 sSneaselGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_53_1.4bpp.lz");
+static const u8 sSneaselGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_53_2.4bpp.lz");
+static const u8 sSneaselGfx53_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_53_3.4bpp.lz");
 static const ax_sprite sSneaselSprites53[] = {
 	{sSneaselGfx53, ARRAY_COUNT(sSneaselGfx53)}, 
 	{NULL, 96}, 
@@ -2535,9 +2535,9 @@ static const ax_sprite sSneaselSprites53[] = {
 	{sSneaselGfx53_3, ARRAY_COUNT(sSneaselGfx53_3)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx54[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_54.4bpp");
-static const u8 sSneaselGfx54_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_54_1.4bpp");
-static const u8 sSneaselGfx54_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_54_2.4bpp");
+static const u8 sSneaselGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_54.4bpp.lz");
+static const u8 sSneaselGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_54_1.4bpp.lz");
+static const u8 sSneaselGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_54_2.4bpp.lz");
 static const ax_sprite sSneaselSprites54[] = {
 	{NULL, 32}, 
 	{sSneaselGfx54, ARRAY_COUNT(sSneaselGfx54)}, 
@@ -2547,10 +2547,10 @@ static const ax_sprite sSneaselSprites54[] = {
 	{sSneaselGfx54_2, ARRAY_COUNT(sSneaselGfx54_2)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx55[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_55.4bpp");
-static const u8 sSneaselGfx55_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_55_1.4bpp");
-static const u8 sSneaselGfx55_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_55_2.4bpp");
-static const u8 sSneaselGfx55_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_55_3.4bpp");
+static const u8 sSneaselGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_55.4bpp.lz");
+static const u8 sSneaselGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_55_1.4bpp.lz");
+static const u8 sSneaselGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_55_2.4bpp.lz");
+static const u8 sSneaselGfx55_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_55_3.4bpp.lz");
 static const ax_sprite sSneaselSprites55[] = {
 	{sSneaselGfx55, ARRAY_COUNT(sSneaselGfx55)}, 
 	{NULL, 64}, 
@@ -2561,9 +2561,9 @@ static const ax_sprite sSneaselSprites55[] = {
 	{sSneaselGfx55_3, ARRAY_COUNT(sSneaselGfx55_3)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx56[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_56.4bpp");
-static const u8 sSneaselGfx56_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_56_1.4bpp");
-static const u8 sSneaselGfx56_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_56_2.4bpp");
+static const u8 sSneaselGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_56.4bpp.lz");
+static const u8 sSneaselGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_56_1.4bpp.lz");
+static const u8 sSneaselGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_56_2.4bpp.lz");
 static const ax_sprite sSneaselSprites56[] = {
 	{NULL, 32}, 
 	{sSneaselGfx56, ARRAY_COUNT(sSneaselGfx56)}, 
@@ -2574,9 +2574,9 @@ static const ax_sprite sSneaselSprites56[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx57[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_57.4bpp");
-static const u8 sSneaselGfx57_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_57_1.4bpp");
-static const u8 sSneaselGfx57_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_57_2.4bpp");
+static const u8 sSneaselGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_57.4bpp.lz");
+static const u8 sSneaselGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_57_1.4bpp.lz");
+static const u8 sSneaselGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_57_2.4bpp.lz");
 static const ax_sprite sSneaselSprites57[] = {
 	{NULL, 128}, 
 	{sSneaselGfx57, ARRAY_COUNT(sSneaselGfx57)}, 
@@ -2586,8 +2586,8 @@ static const ax_sprite sSneaselSprites57[] = {
 	{sSneaselGfx57_2, ARRAY_COUNT(sSneaselGfx57_2)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx58[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_58.4bpp");
-static const u8 sSneaselGfx58_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_58_1.4bpp");
+static const u8 sSneaselGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_58.4bpp.lz");
+static const u8 sSneaselGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_58_1.4bpp.lz");
 static const ax_sprite sSneaselSprites58[] = {
 	{NULL, 32}, 
 	{sSneaselGfx58, ARRAY_COUNT(sSneaselGfx58)}, 
@@ -2595,9 +2595,9 @@ static const ax_sprite sSneaselSprites58[] = {
 	{sSneaselGfx58_1, ARRAY_COUNT(sSneaselGfx58_1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx59[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_59.4bpp");
-static const u8 sSneaselGfx59_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_59_1.4bpp");
-static const u8 sSneaselGfx59_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_59_2.4bpp");
+static const u8 sSneaselGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_59.4bpp.lz");
+static const u8 sSneaselGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_59_1.4bpp.lz");
+static const u8 sSneaselGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_59_2.4bpp.lz");
 static const ax_sprite sSneaselSprites59[] = {
 	{NULL, 32}, 
 	{sSneaselGfx59, ARRAY_COUNT(sSneaselGfx59)}, 
@@ -2607,8 +2607,8 @@ static const ax_sprite sSneaselSprites59[] = {
 	{sSneaselGfx59_2, ARRAY_COUNT(sSneaselGfx59_2)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx60[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_60.4bpp");
-static const u8 sSneaselGfx60_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_60_1.4bpp");
+static const u8 sSneaselGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_60.4bpp.lz");
+static const u8 sSneaselGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_60_1.4bpp.lz");
 static const ax_sprite sSneaselSprites60[] = {
 	{NULL, 32}, 
 	{sSneaselGfx60, ARRAY_COUNT(sSneaselGfx60)}, 
@@ -2616,10 +2616,10 @@ static const ax_sprite sSneaselSprites60[] = {
 	{sSneaselGfx60_1, ARRAY_COUNT(sSneaselGfx60_1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx61[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_61.4bpp");
-static const u8 sSneaselGfx61_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_61_1.4bpp");
-static const u8 sSneaselGfx61_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_61_2.4bpp");
-static const u8 sSneaselGfx61_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_61_3.4bpp");
+static const u8 sSneaselGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_61.4bpp.lz");
+static const u8 sSneaselGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_61_1.4bpp.lz");
+static const u8 sSneaselGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_61_2.4bpp.lz");
+static const u8 sSneaselGfx61_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_61_3.4bpp.lz");
 static const ax_sprite sSneaselSprites61[] = {
 	{NULL, 96}, 
 	{sSneaselGfx61, ARRAY_COUNT(sSneaselGfx61)}, 
@@ -2632,10 +2632,10 @@ static const ax_sprite sSneaselSprites61[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx62[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_62.4bpp");
-static const u8 sSneaselGfx62_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_62_1.4bpp");
-static const u8 sSneaselGfx62_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_62_2.4bpp");
-static const u8 sSneaselGfx62_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_62_3.4bpp");
+static const u8 sSneaselGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_62.4bpp.lz");
+static const u8 sSneaselGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_62_1.4bpp.lz");
+static const u8 sSneaselGfx62_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_62_2.4bpp.lz");
+static const u8 sSneaselGfx62_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_62_3.4bpp.lz");
 static const ax_sprite sSneaselSprites62[] = {
 	{sSneaselGfx62, ARRAY_COUNT(sSneaselGfx62)}, 
 	{NULL, 32}, 
@@ -2647,10 +2647,10 @@ static const ax_sprite sSneaselSprites62[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx63[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_63.4bpp");
-static const u8 sSneaselGfx63_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_63_1.4bpp");
-static const u8 sSneaselGfx63_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_63_2.4bpp");
-static const u8 sSneaselGfx63_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_63_3.4bpp");
+static const u8 sSneaselGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_63.4bpp.lz");
+static const u8 sSneaselGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_63_1.4bpp.lz");
+static const u8 sSneaselGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_63_2.4bpp.lz");
+static const u8 sSneaselGfx63_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_63_3.4bpp.lz");
 static const ax_sprite sSneaselSprites63[] = {
 	{sSneaselGfx63, ARRAY_COUNT(sSneaselGfx63)}, 
 	{NULL, 32}, 
@@ -2661,10 +2661,10 @@ static const ax_sprite sSneaselSprites63[] = {
 	{sSneaselGfx63_3, ARRAY_COUNT(sSneaselGfx63_3)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx64[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_64.4bpp");
-static const u8 sSneaselGfx64_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_64_1.4bpp");
-static const u8 sSneaselGfx64_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_64_2.4bpp");
-static const u8 sSneaselGfx64_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_64_3.4bpp");
+static const u8 sSneaselGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_64.4bpp.lz");
+static const u8 sSneaselGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_64_1.4bpp.lz");
+static const u8 sSneaselGfx64_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_64_2.4bpp.lz");
+static const u8 sSneaselGfx64_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_64_3.4bpp.lz");
 static const ax_sprite sSneaselSprites64[] = {
 	{NULL, 32}, 
 	{sSneaselGfx64, ARRAY_COUNT(sSneaselGfx64)}, 
@@ -2677,10 +2677,10 @@ static const ax_sprite sSneaselSprites64[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx65[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_65.4bpp");
-static const u8 sSneaselGfx65_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_65_1.4bpp");
-static const u8 sSneaselGfx65_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_65_2.4bpp");
-static const u8 sSneaselGfx65_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_65_3.4bpp");
+static const u8 sSneaselGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_65.4bpp.lz");
+static const u8 sSneaselGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_65_1.4bpp.lz");
+static const u8 sSneaselGfx65_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_65_2.4bpp.lz");
+static const u8 sSneaselGfx65_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_65_3.4bpp.lz");
 static const ax_sprite sSneaselSprites65[] = {
 	{NULL, 32}, 
 	{sSneaselGfx65, ARRAY_COUNT(sSneaselGfx65)}, 
@@ -2692,10 +2692,10 @@ static const ax_sprite sSneaselSprites65[] = {
 	{sSneaselGfx65_3, ARRAY_COUNT(sSneaselGfx65_3)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx66[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_66.4bpp");
-static const u8 sSneaselGfx66_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_66_1.4bpp");
-static const u8 sSneaselGfx66_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_66_2.4bpp");
-static const u8 sSneaselGfx66_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_66_3.4bpp");
+static const u8 sSneaselGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_66.4bpp.lz");
+static const u8 sSneaselGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_66_1.4bpp.lz");
+static const u8 sSneaselGfx66_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_66_2.4bpp.lz");
+static const u8 sSneaselGfx66_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_66_3.4bpp.lz");
 static const ax_sprite sSneaselSprites66[] = {
 	{sSneaselGfx66, ARRAY_COUNT(sSneaselGfx66)}, 
 	{NULL, 64}, 
@@ -2707,10 +2707,10 @@ static const ax_sprite sSneaselSprites66[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx67[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_67.4bpp");
-static const u8 sSneaselGfx67_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_67_1.4bpp");
-static const u8 sSneaselGfx67_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_67_2.4bpp");
-static const u8 sSneaselGfx67_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_67_3.4bpp");
+static const u8 sSneaselGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_67.4bpp.lz");
+static const u8 sSneaselGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_67_1.4bpp.lz");
+static const u8 sSneaselGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_67_2.4bpp.lz");
+static const u8 sSneaselGfx67_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_67_3.4bpp.lz");
 static const ax_sprite sSneaselSprites67[] = {
 	{sSneaselGfx67, ARRAY_COUNT(sSneaselGfx67)}, 
 	{NULL, 96}, 
@@ -2722,10 +2722,10 @@ static const ax_sprite sSneaselSprites67[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx68[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_68.4bpp");
-static const u8 sSneaselGfx68_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_68_1.4bpp");
-static const u8 sSneaselGfx68_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_68_2.4bpp");
-static const u8 sSneaselGfx68_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_68_3.4bpp");
+static const u8 sSneaselGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_68.4bpp.lz");
+static const u8 sSneaselGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_68_1.4bpp.lz");
+static const u8 sSneaselGfx68_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_68_2.4bpp.lz");
+static const u8 sSneaselGfx68_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_68_3.4bpp.lz");
 static const ax_sprite sSneaselSprites68[] = {
 	{sSneaselGfx68, ARRAY_COUNT(sSneaselGfx68)}, 
 	{NULL, 32}, 
@@ -2737,10 +2737,10 @@ static const ax_sprite sSneaselSprites68[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx69[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_69.4bpp");
-static const u8 sSneaselGfx69_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_69_1.4bpp");
-static const u8 sSneaselGfx69_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_69_2.4bpp");
-static const u8 sSneaselGfx69_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_69_3.4bpp");
+static const u8 sSneaselGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_69.4bpp.lz");
+static const u8 sSneaselGfx69_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_69_1.4bpp.lz");
+static const u8 sSneaselGfx69_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_69_2.4bpp.lz");
+static const u8 sSneaselGfx69_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_69_3.4bpp.lz");
 static const ax_sprite sSneaselSprites69[] = {
 	{sSneaselGfx69, ARRAY_COUNT(sSneaselGfx69)}, 
 	{NULL, 32}, 
@@ -2751,9 +2751,9 @@ static const ax_sprite sSneaselSprites69[] = {
 	{sSneaselGfx69_3, ARRAY_COUNT(sSneaselGfx69_3)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx70[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_70.4bpp");
-static const u8 sSneaselGfx70_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_70_1.4bpp");
-static const u8 sSneaselGfx70_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_70_2.4bpp");
+static const u8 sSneaselGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_70.4bpp.lz");
+static const u8 sSneaselGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_70_1.4bpp.lz");
+static const u8 sSneaselGfx70_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_70_2.4bpp.lz");
 static const ax_sprite sSneaselSprites70[] = {
 	{NULL, 32}, 
 	{sSneaselGfx70, ARRAY_COUNT(sSneaselGfx70)}, 
@@ -2764,8 +2764,8 @@ static const ax_sprite sSneaselSprites70[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx71[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_71.4bpp");
-static const u8 sSneaselGfx71_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_71_1.4bpp");
+static const u8 sSneaselGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_71.4bpp.lz");
+static const u8 sSneaselGfx71_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_71_1.4bpp.lz");
 static const ax_sprite sSneaselSprites71[] = {
 	{NULL, 128}, 
 	{sSneaselGfx71, ARRAY_COUNT(sSneaselGfx71)}, 
@@ -2774,9 +2774,9 @@ static const ax_sprite sSneaselSprites71[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx72[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_72.4bpp");
-static const u8 sSneaselGfx72_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_72_1.4bpp");
-static const u8 sSneaselGfx72_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_72_2.4bpp");
+static const u8 sSneaselGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_72.4bpp.lz");
+static const u8 sSneaselGfx72_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_72_1.4bpp.lz");
+static const u8 sSneaselGfx72_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_72_2.4bpp.lz");
 static const ax_sprite sSneaselSprites72[] = {
 	{NULL, 32}, 
 	{sSneaselGfx72, ARRAY_COUNT(sSneaselGfx72)}, 
@@ -2787,10 +2787,10 @@ static const ax_sprite sSneaselSprites72[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx73[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_73.4bpp");
-static const u8 sSneaselGfx73_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_73_1.4bpp");
-static const u8 sSneaselGfx73_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_73_2.4bpp");
-static const u8 sSneaselGfx73_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_73_3.4bpp");
+static const u8 sSneaselGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_73.4bpp.lz");
+static const u8 sSneaselGfx73_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_73_1.4bpp.lz");
+static const u8 sSneaselGfx73_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_73_2.4bpp.lz");
+static const u8 sSneaselGfx73_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_73_3.4bpp.lz");
 static const ax_sprite sSneaselSprites73[] = {
 	{sSneaselGfx73, ARRAY_COUNT(sSneaselGfx73)}, 
 	{NULL, 32}, 
@@ -2802,9 +2802,9 @@ static const ax_sprite sSneaselSprites73[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx74[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_74.4bpp");
-static const u8 sSneaselGfx74_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_74_1.4bpp");
-static const u8 sSneaselGfx74_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_74_2.4bpp");
+static const u8 sSneaselGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_74.4bpp.lz");
+static const u8 sSneaselGfx74_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_74_1.4bpp.lz");
+static const u8 sSneaselGfx74_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_74_2.4bpp.lz");
 static const ax_sprite sSneaselSprites74[] = {
 	{sSneaselGfx74, ARRAY_COUNT(sSneaselGfx74)}, 
 	{NULL, 32}, 
@@ -2813,8 +2813,8 @@ static const ax_sprite sSneaselSprites74[] = {
 	{sSneaselGfx74_2, ARRAY_COUNT(sSneaselGfx74_2)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx75[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_75.4bpp");
-static const u8 sSneaselGfx75_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_75_1.4bpp");
+static const u8 sSneaselGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_75.4bpp.lz");
+static const u8 sSneaselGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_75_1.4bpp.lz");
 static const ax_sprite sSneaselSprites75[] = {
 	{NULL, 96}, 
 	{sSneaselGfx75, ARRAY_COUNT(sSneaselGfx75)}, 
@@ -2823,9 +2823,9 @@ static const ax_sprite sSneaselSprites75[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx76[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_76.4bpp");
-static const u8 sSneaselGfx76_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_76_1.4bpp");
-static const u8 sSneaselGfx76_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_76_2.4bpp");
+static const u8 sSneaselGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_76.4bpp.lz");
+static const u8 sSneaselGfx76_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_76_1.4bpp.lz");
+static const u8 sSneaselGfx76_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_76_2.4bpp.lz");
 static const ax_sprite sSneaselSprites76[] = {
 	{sSneaselGfx76, ARRAY_COUNT(sSneaselGfx76)}, 
 	{NULL, 32}, 
@@ -2835,27 +2835,27 @@ static const ax_sprite sSneaselSprites76[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx77[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_77.4bpp");
+static const u8 sSneaselGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_77.4bpp.lz");
 static const ax_sprite sSneaselSprites77[] = {
 	{sSneaselGfx77, ARRAY_COUNT(sSneaselGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx78[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_78.4bpp");
-static const u8 sSneaselGfx78_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_78_1.4bpp");
+static const u8 sSneaselGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_78.4bpp.lz");
+static const u8 sSneaselGfx78_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_78_1.4bpp.lz");
 static const ax_sprite sSneaselSprites78[] = {
 	{sSneaselGfx78, ARRAY_COUNT(sSneaselGfx78)}, 
 	{NULL, 32}, 
 	{sSneaselGfx78_1, ARRAY_COUNT(sSneaselGfx78_1)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx79[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_79.4bpp");
+static const u8 sSneaselGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_79.4bpp.lz");
 static const ax_sprite sSneaselSprites79[] = {
 	{sSneaselGfx79, ARRAY_COUNT(sSneaselGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx80[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_80.4bpp");
-static const u8 sSneaselGfx80_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_80_1.4bpp");
-static const u8 sSneaselGfx80_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_80_2.4bpp");
+static const u8 sSneaselGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_80.4bpp.lz");
+static const u8 sSneaselGfx80_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_80_1.4bpp.lz");
+static const u8 sSneaselGfx80_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_80_2.4bpp.lz");
 static const ax_sprite sSneaselSprites80[] = {
 	{sSneaselGfx80, ARRAY_COUNT(sSneaselGfx80)}, 
 	{NULL, 32}, 
@@ -2865,15 +2865,15 @@ static const ax_sprite sSneaselSprites80[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx81[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_81.4bpp");
+static const u8 sSneaselGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_81.4bpp.lz");
 static const ax_sprite sSneaselSprites81[] = {
 	{NULL, 64}, 
 	{sSneaselGfx81, ARRAY_COUNT(sSneaselGfx81)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx82[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_82.4bpp");
-static const u8 sSneaselGfx82_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_82_1.4bpp");
+static const u8 sSneaselGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_82.4bpp.lz");
+static const u8 sSneaselGfx82_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_82_1.4bpp.lz");
 static const ax_sprite sSneaselSprites82[] = {
 	{NULL, 32}, 
 	{sSneaselGfx82, ARRAY_COUNT(sSneaselGfx82)}, 
@@ -2882,9 +2882,9 @@ static const ax_sprite sSneaselSprites82[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx83[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_83.4bpp");
-static const u8 sSneaselGfx83_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_83_1.4bpp");
-static const u8 sSneaselGfx83_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_83_2.4bpp");
+static const u8 sSneaselGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_83.4bpp.lz");
+static const u8 sSneaselGfx83_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_83_1.4bpp.lz");
+static const u8 sSneaselGfx83_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_83_2.4bpp.lz");
 static const ax_sprite sSneaselSprites83[] = {
 	{NULL, 32}, 
 	{sSneaselGfx83, ARRAY_COUNT(sSneaselGfx83)}, 
@@ -2895,9 +2895,9 @@ static const ax_sprite sSneaselSprites83[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx84[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_84.4bpp");
-static const u8 sSneaselGfx84_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_84_1.4bpp");
-static const u8 sSneaselGfx84_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_84_2.4bpp");
+static const u8 sSneaselGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_84.4bpp.lz");
+static const u8 sSneaselGfx84_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_84_1.4bpp.lz");
+static const u8 sSneaselGfx84_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_84_2.4bpp.lz");
 static const ax_sprite sSneaselSprites84[] = {
 	{sSneaselGfx84, ARRAY_COUNT(sSneaselGfx84)}, 
 	{NULL, 32}, 
@@ -2907,9 +2907,9 @@ static const ax_sprite sSneaselSprites84[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx85[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_85.4bpp");
-static const u8 sSneaselGfx85_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_85_1.4bpp");
-static const u8 sSneaselGfx85_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_85_2.4bpp");
+static const u8 sSneaselGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_85.4bpp.lz");
+static const u8 sSneaselGfx85_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_85_1.4bpp.lz");
+static const u8 sSneaselGfx85_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_85_2.4bpp.lz");
 static const ax_sprite sSneaselSprites85[] = {
 	{sSneaselGfx85, ARRAY_COUNT(sSneaselGfx85)}, 
 	{NULL, 32}, 
@@ -2919,10 +2919,10 @@ static const ax_sprite sSneaselSprites85[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx86[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_86.4bpp");
-static const u8 sSneaselGfx86_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_86_1.4bpp");
-static const u8 sSneaselGfx86_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_86_2.4bpp");
-static const u8 sSneaselGfx86_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_86_3.4bpp");
+static const u8 sSneaselGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_86.4bpp.lz");
+static const u8 sSneaselGfx86_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_86_1.4bpp.lz");
+static const u8 sSneaselGfx86_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_86_2.4bpp.lz");
+static const u8 sSneaselGfx86_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_86_3.4bpp.lz");
 static const ax_sprite sSneaselSprites86[] = {
 	{sSneaselGfx86, ARRAY_COUNT(sSneaselGfx86)}, 
 	{NULL, 64}, 
@@ -2934,9 +2934,9 @@ static const ax_sprite sSneaselSprites86[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx87[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_87.4bpp");
-static const u8 sSneaselGfx87_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_87_1.4bpp");
-static const u8 sSneaselGfx87_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_87_2.4bpp");
+static const u8 sSneaselGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_87.4bpp.lz");
+static const u8 sSneaselGfx87_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_87_1.4bpp.lz");
+static const u8 sSneaselGfx87_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_87_2.4bpp.lz");
 static const ax_sprite sSneaselSprites87[] = {
 	{NULL, 32}, 
 	{sSneaselGfx87, ARRAY_COUNT(sSneaselGfx87)}, 
@@ -2947,10 +2947,10 @@ static const ax_sprite sSneaselSprites87[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx88[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_88.4bpp");
-static const u8 sSneaselGfx88_1[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_88_1.4bpp");
-static const u8 sSneaselGfx88_2[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_88_2.4bpp");
-static const u8 sSneaselGfx88_3[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_88_3.4bpp");
+static const u8 sSneaselGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_88.4bpp.lz");
+static const u8 sSneaselGfx88_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_88_1.4bpp.lz");
+static const u8 sSneaselGfx88_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_88_2.4bpp.lz");
+static const u8 sSneaselGfx88_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_88_3.4bpp.lz");
 static const ax_sprite sSneaselSprites88[] = {
 	{sSneaselGfx88, ARRAY_COUNT(sSneaselGfx88)}, 
 	{NULL, 32}, 
@@ -2962,122 +2962,122 @@ static const ax_sprite sSneaselSprites88[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx89[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_89.4bpp");
+static const u8 sSneaselGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_89.4bpp.lz");
 static const ax_sprite sSneaselSprites89[] = {
 	{sSneaselGfx89, ARRAY_COUNT(sSneaselGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx90[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_90.4bpp");
+static const u8 sSneaselGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_90.4bpp.lz");
 static const ax_sprite sSneaselSprites90[] = {
 	{sSneaselGfx90, ARRAY_COUNT(sSneaselGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx91[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_91.4bpp");
+static const u8 sSneaselGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_91.4bpp.lz");
 static const ax_sprite sSneaselSprites91[] = {
 	{sSneaselGfx91, ARRAY_COUNT(sSneaselGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx92[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_92.4bpp");
+static const u8 sSneaselGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_92.4bpp.lz");
 static const ax_sprite sSneaselSprites92[] = {
 	{sSneaselGfx92, ARRAY_COUNT(sSneaselGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx93[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_93.4bpp");
+static const u8 sSneaselGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_93.4bpp.lz");
 static const ax_sprite sSneaselSprites93[] = {
 	{sSneaselGfx93, ARRAY_COUNT(sSneaselGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx94[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_94.4bpp");
+static const u8 sSneaselGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_94.4bpp.lz");
 static const ax_sprite sSneaselSprites94[] = {
 	{sSneaselGfx94, ARRAY_COUNT(sSneaselGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx95[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_95.4bpp");
+static const u8 sSneaselGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_95.4bpp.lz");
 static const ax_sprite sSneaselSprites95[] = {
 	{sSneaselGfx95, ARRAY_COUNT(sSneaselGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx96[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_96.4bpp");
+static const u8 sSneaselGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_96.4bpp.lz");
 static const ax_sprite sSneaselSprites96[] = {
 	{sSneaselGfx96, ARRAY_COUNT(sSneaselGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx97[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_97.4bpp");
+static const u8 sSneaselGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_97.4bpp.lz");
 static const ax_sprite sSneaselSprites97[] = {
 	{sSneaselGfx97, ARRAY_COUNT(sSneaselGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx98[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_98.4bpp");
+static const u8 sSneaselGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_98.4bpp.lz");
 static const ax_sprite sSneaselSprites98[] = {
 	{sSneaselGfx98, ARRAY_COUNT(sSneaselGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx99[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_99.4bpp");
+static const u8 sSneaselGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_99.4bpp.lz");
 static const ax_sprite sSneaselSprites99[] = {
 	{sSneaselGfx99, ARRAY_COUNT(sSneaselGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx100[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_100.4bpp");
+static const u8 sSneaselGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_100.4bpp.lz");
 static const ax_sprite sSneaselSprites100[] = {
 	{sSneaselGfx100, ARRAY_COUNT(sSneaselGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx101[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_101.4bpp");
+static const u8 sSneaselGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_101.4bpp.lz");
 static const ax_sprite sSneaselSprites101[] = {
 	{sSneaselGfx101, ARRAY_COUNT(sSneaselGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx102[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_102.4bpp");
+static const u8 sSneaselGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_102.4bpp.lz");
 static const ax_sprite sSneaselSprites102[] = {
 	{sSneaselGfx102, ARRAY_COUNT(sSneaselGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx103[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_103.4bpp");
+static const u8 sSneaselGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_103.4bpp.lz");
 static const ax_sprite sSneaselSprites103[] = {
 	{sSneaselGfx103, ARRAY_COUNT(sSneaselGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx104[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_104.4bpp");
+static const u8 sSneaselGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_104.4bpp.lz");
 static const ax_sprite sSneaselSprites104[] = {
 	{sSneaselGfx104, ARRAY_COUNT(sSneaselGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx105[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_105.4bpp");
+static const u8 sSneaselGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_105.4bpp.lz");
 static const ax_sprite sSneaselSprites105[] = {
 	{sSneaselGfx105, ARRAY_COUNT(sSneaselGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx106[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_106.4bpp");
+static const u8 sSneaselGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_106.4bpp.lz");
 static const ax_sprite sSneaselSprites106[] = {
 	{sSneaselGfx106, ARRAY_COUNT(sSneaselGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx107[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_107.4bpp");
+static const u8 sSneaselGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_107.4bpp.lz");
 static const ax_sprite sSneaselSprites107[] = {
 	{sSneaselGfx107, ARRAY_COUNT(sSneaselGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx108[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_108.4bpp");
+static const u8 sSneaselGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_108.4bpp.lz");
 static const ax_sprite sSneaselSprites108[] = {
 	{sSneaselGfx108, ARRAY_COUNT(sSneaselGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx109[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_109.4bpp");
+static const u8 sSneaselGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_109.4bpp.lz");
 static const ax_sprite sSneaselSprites109[] = {
 	{sSneaselGfx109, ARRAY_COUNT(sSneaselGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx110[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_110.4bpp");
+static const u8 sSneaselGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_110.4bpp.lz");
 static const ax_sprite sSneaselSprites110[] = {
 	{sSneaselGfx110, ARRAY_COUNT(sSneaselGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx111[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_111.4bpp");
+static const u8 sSneaselGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_111.4bpp.lz");
 static const ax_sprite sSneaselSprites111[] = {
 	{sSneaselGfx111, ARRAY_COUNT(sSneaselGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sSneaselGfx112[] = INCBIN_U8("graphics/ax/mon/sneasel/sprite_112.4bpp");
+static const u8 sSneaselGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sneasel/sprite_112.4bpp.lz");
 static const ax_sprite sSneaselSprites112[] = {
 	{sSneaselGfx112, ARRAY_COUNT(sSneaselGfx112)}, 
 	{NULL, 0}

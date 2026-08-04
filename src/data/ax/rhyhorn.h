@@ -2007,84 +2007,84 @@ static const ax_anim sRhyhornAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRhyhornGfx1[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_1.4bpp");
+static const u8 sRhyhornGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_1.4bpp.lz");
 static const ax_sprite sRhyhornSprites1[] = {
 	{sRhyhornGfx1, ARRAY_COUNT(sRhyhornGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx2[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_2.4bpp");
+static const u8 sRhyhornGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_2.4bpp.lz");
 static const ax_sprite sRhyhornSprites2[] = {
 	{sRhyhornGfx2, ARRAY_COUNT(sRhyhornGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx3[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_3.4bpp");
+static const u8 sRhyhornGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_3.4bpp.lz");
 static const ax_sprite sRhyhornSprites3[] = {
 	{sRhyhornGfx3, ARRAY_COUNT(sRhyhornGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx4[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_4.4bpp");
+static const u8 sRhyhornGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_4.4bpp.lz");
 static const ax_sprite sRhyhornSprites4[] = {
 	{sRhyhornGfx4, ARRAY_COUNT(sRhyhornGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx5[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_5.4bpp");
+static const u8 sRhyhornGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_5.4bpp.lz");
 static const ax_sprite sRhyhornSprites5[] = {
 	{sRhyhornGfx5, ARRAY_COUNT(sRhyhornGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx6[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_6.4bpp");
+static const u8 sRhyhornGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_6.4bpp.lz");
 static const ax_sprite sRhyhornSprites6[] = {
 	{sRhyhornGfx6, ARRAY_COUNT(sRhyhornGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx7[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_7.4bpp");
+static const u8 sRhyhornGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_7.4bpp.lz");
 static const ax_sprite sRhyhornSprites7[] = {
 	{sRhyhornGfx7, ARRAY_COUNT(sRhyhornGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx8[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_8.4bpp");
+static const u8 sRhyhornGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_8.4bpp.lz");
 static const ax_sprite sRhyhornSprites8[] = {
 	{sRhyhornGfx8, ARRAY_COUNT(sRhyhornGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx9[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_9.4bpp");
+static const u8 sRhyhornGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_9.4bpp.lz");
 static const ax_sprite sRhyhornSprites9[] = {
 	{sRhyhornGfx9, ARRAY_COUNT(sRhyhornGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx10[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_10.4bpp");
+static const u8 sRhyhornGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_10.4bpp.lz");
 static const ax_sprite sRhyhornSprites10[] = {
 	{sRhyhornGfx10, ARRAY_COUNT(sRhyhornGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx11[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_11.4bpp");
+static const u8 sRhyhornGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_11.4bpp.lz");
 static const ax_sprite sRhyhornSprites11[] = {
 	{sRhyhornGfx11, ARRAY_COUNT(sRhyhornGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx12[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_12.4bpp");
+static const u8 sRhyhornGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_12.4bpp.lz");
 static const ax_sprite sRhyhornSprites12[] = {
 	{sRhyhornGfx12, ARRAY_COUNT(sRhyhornGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx13[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_13.4bpp");
+static const u8 sRhyhornGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_13.4bpp.lz");
 static const ax_sprite sRhyhornSprites13[] = {
 	{sRhyhornGfx13, ARRAY_COUNT(sRhyhornGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx14[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_14.4bpp");
+static const u8 sRhyhornGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_14.4bpp.lz");
 static const ax_sprite sRhyhornSprites14[] = {
 	{sRhyhornGfx14, ARRAY_COUNT(sRhyhornGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx15[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_15.4bpp");
+static const u8 sRhyhornGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_15.4bpp.lz");
 static const ax_sprite sRhyhornSprites15[] = {
 	{sRhyhornGfx15, ARRAY_COUNT(sRhyhornGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx16[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_16.4bpp");
-static const u8 sRhyhornGfx16_1[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_16_1.4bpp");
-static const u8 sRhyhornGfx16_2[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_16_2.4bpp");
+static const u8 sRhyhornGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_16.4bpp.lz");
+static const u8 sRhyhornGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_16_1.4bpp.lz");
+static const u8 sRhyhornGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_16_2.4bpp.lz");
 static const ax_sprite sRhyhornSprites16[] = {
 	{sRhyhornGfx16, ARRAY_COUNT(sRhyhornGfx16)}, 
 	{NULL, 32}, 
@@ -2094,9 +2094,9 @@ static const ax_sprite sRhyhornSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx17[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_17.4bpp");
-static const u8 sRhyhornGfx17_1[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_17_1.4bpp");
-static const u8 sRhyhornGfx17_2[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_17_2.4bpp");
+static const u8 sRhyhornGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_17.4bpp.lz");
+static const u8 sRhyhornGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_17_1.4bpp.lz");
+static const u8 sRhyhornGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_17_2.4bpp.lz");
 static const ax_sprite sRhyhornSprites17[] = {
 	{sRhyhornGfx17, ARRAY_COUNT(sRhyhornGfx17)}, 
 	{NULL, 32}, 
@@ -2106,20 +2106,20 @@ static const ax_sprite sRhyhornSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx18[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_18.4bpp");
+static const u8 sRhyhornGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_18.4bpp.lz");
 static const ax_sprite sRhyhornSprites18[] = {
 	{sRhyhornGfx18, ARRAY_COUNT(sRhyhornGfx18)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx19[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_19.4bpp");
+static const u8 sRhyhornGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_19.4bpp.lz");
 static const ax_sprite sRhyhornSprites19[] = {
 	{sRhyhornGfx19, ARRAY_COUNT(sRhyhornGfx19)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx20[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_20.4bpp");
-static const u8 sRhyhornGfx20_1[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_20_1.4bpp");
+static const u8 sRhyhornGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_20.4bpp.lz");
+static const u8 sRhyhornGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_20_1.4bpp.lz");
 static const ax_sprite sRhyhornSprites20[] = {
 	{sRhyhornGfx20, ARRAY_COUNT(sRhyhornGfx20)}, 
 	{NULL, 32}, 
@@ -2127,14 +2127,14 @@ static const ax_sprite sRhyhornSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx21[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_21.4bpp");
+static const u8 sRhyhornGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_21.4bpp.lz");
 static const ax_sprite sRhyhornSprites21[] = {
 	{sRhyhornGfx21, ARRAY_COUNT(sRhyhornGfx21)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx22[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_22.4bpp");
-static const u8 sRhyhornGfx22_1[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_22_1.4bpp");
+static const u8 sRhyhornGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_22.4bpp.lz");
+static const u8 sRhyhornGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_22_1.4bpp.lz");
 static const ax_sprite sRhyhornSprites22[] = {
 	{sRhyhornGfx22, ARRAY_COUNT(sRhyhornGfx22)}, 
 	{NULL, 32}, 
@@ -2142,20 +2142,20 @@ static const ax_sprite sRhyhornSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx23[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_23.4bpp");
+static const u8 sRhyhornGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_23.4bpp.lz");
 static const ax_sprite sRhyhornSprites23[] = {
 	{sRhyhornGfx23, ARRAY_COUNT(sRhyhornGfx23)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx24[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_24.4bpp");
+static const u8 sRhyhornGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_24.4bpp.lz");
 static const ax_sprite sRhyhornSprites24[] = {
 	{sRhyhornGfx24, ARRAY_COUNT(sRhyhornGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx25[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_25.4bpp");
-static const u8 sRhyhornGfx25_1[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_25_1.4bpp");
-static const u8 sRhyhornGfx25_2[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_25_2.4bpp");
+static const u8 sRhyhornGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_25.4bpp.lz");
+static const u8 sRhyhornGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_25_1.4bpp.lz");
+static const u8 sRhyhornGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_25_2.4bpp.lz");
 static const ax_sprite sRhyhornSprites25[] = {
 	{NULL, 32}, 
 	{sRhyhornGfx25, ARRAY_COUNT(sRhyhornGfx25)}, 
@@ -2165,9 +2165,9 @@ static const ax_sprite sRhyhornSprites25[] = {
 	{sRhyhornGfx25_2, ARRAY_COUNT(sRhyhornGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx26[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_26.4bpp");
-static const u8 sRhyhornGfx26_1[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_26_1.4bpp");
-static const u8 sRhyhornGfx26_2[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_26_2.4bpp");
+static const u8 sRhyhornGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_26.4bpp.lz");
+static const u8 sRhyhornGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_26_1.4bpp.lz");
+static const u8 sRhyhornGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_26_2.4bpp.lz");
 static const ax_sprite sRhyhornSprites26[] = {
 	{sRhyhornGfx26, ARRAY_COUNT(sRhyhornGfx26)}, 
 	{NULL, 32}, 
@@ -2177,26 +2177,26 @@ static const ax_sprite sRhyhornSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx27[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_27.4bpp");
+static const u8 sRhyhornGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_27.4bpp.lz");
 static const ax_sprite sRhyhornSprites27[] = {
 	{sRhyhornGfx27, ARRAY_COUNT(sRhyhornGfx27)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx28[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_28.4bpp");
+static const u8 sRhyhornGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_28.4bpp.lz");
 static const ax_sprite sRhyhornSprites28[] = {
 	{sRhyhornGfx28, ARRAY_COUNT(sRhyhornGfx28)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx29[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_29.4bpp");
+static const u8 sRhyhornGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_29.4bpp.lz");
 static const ax_sprite sRhyhornSprites29[] = {
 	{sRhyhornGfx29, ARRAY_COUNT(sRhyhornGfx29)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx30[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_30.4bpp");
-static const u8 sRhyhornGfx30_1[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_30_1.4bpp");
+static const u8 sRhyhornGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_30.4bpp.lz");
+static const u8 sRhyhornGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_30_1.4bpp.lz");
 static const ax_sprite sRhyhornSprites30[] = {
 	{NULL, 32}, 
 	{sRhyhornGfx30, ARRAY_COUNT(sRhyhornGfx30)}, 
@@ -2204,37 +2204,37 @@ static const ax_sprite sRhyhornSprites30[] = {
 	{sRhyhornGfx30_1, ARRAY_COUNT(sRhyhornGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx31[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_31.4bpp");
+static const u8 sRhyhornGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_31.4bpp.lz");
 static const ax_sprite sRhyhornSprites31[] = {
 	{sRhyhornGfx31, ARRAY_COUNT(sRhyhornGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx32[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_32.4bpp");
+static const u8 sRhyhornGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_32.4bpp.lz");
 static const ax_sprite sRhyhornSprites32[] = {
 	{sRhyhornGfx32, ARRAY_COUNT(sRhyhornGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx33[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_33.4bpp");
+static const u8 sRhyhornGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_33.4bpp.lz");
 static const ax_sprite sRhyhornSprites33[] = {
 	{sRhyhornGfx33, ARRAY_COUNT(sRhyhornGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx34[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_34.4bpp");
+static const u8 sRhyhornGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_34.4bpp.lz");
 static const ax_sprite sRhyhornSprites34[] = {
 	{sRhyhornGfx34, ARRAY_COUNT(sRhyhornGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx35[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_35.4bpp");
+static const u8 sRhyhornGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_35.4bpp.lz");
 static const ax_sprite sRhyhornSprites35[] = {
 	{sRhyhornGfx35, ARRAY_COUNT(sRhyhornGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx36[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_36.4bpp");
+static const u8 sRhyhornGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_36.4bpp.lz");
 static const ax_sprite sRhyhornSprites36[] = {
 	{sRhyhornGfx36, ARRAY_COUNT(sRhyhornGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sRhyhornGfx37[] = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_37.4bpp");
+static const u8 sRhyhornGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhyhorn/sprite_37.4bpp.lz");
 static const ax_sprite sRhyhornSprites37[] = {
 	{sRhyhornGfx37, ARRAY_COUNT(sRhyhornGfx37)}, 
 	{NULL, 0}

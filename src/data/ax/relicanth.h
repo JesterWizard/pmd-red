@@ -1943,103 +1943,103 @@ static const ax_anim sRelicanthAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRelicanthGfx1[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_1.4bpp");
+static const u8 sRelicanthGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_1.4bpp.lz");
 static const ax_sprite sRelicanthSprites1[] = {
 	{sRelicanthGfx1, ARRAY_COUNT(sRelicanthGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx2[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_2.4bpp");
+static const u8 sRelicanthGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_2.4bpp.lz");
 static const ax_sprite sRelicanthSprites2[] = {
 	{sRelicanthGfx2, ARRAY_COUNT(sRelicanthGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx3[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_3.4bpp");
+static const u8 sRelicanthGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_3.4bpp.lz");
 static const ax_sprite sRelicanthSprites3[] = {
 	{sRelicanthGfx3, ARRAY_COUNT(sRelicanthGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx4[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_4.4bpp");
+static const u8 sRelicanthGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_4.4bpp.lz");
 static const ax_sprite sRelicanthSprites4[] = {
 	{sRelicanthGfx4, ARRAY_COUNT(sRelicanthGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx5[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_5.4bpp");
+static const u8 sRelicanthGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_5.4bpp.lz");
 static const ax_sprite sRelicanthSprites5[] = {
 	{sRelicanthGfx5, ARRAY_COUNT(sRelicanthGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx6[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_6.4bpp");
+static const u8 sRelicanthGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_6.4bpp.lz");
 static const ax_sprite sRelicanthSprites6[] = {
 	{sRelicanthGfx6, ARRAY_COUNT(sRelicanthGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx7[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_7.4bpp");
+static const u8 sRelicanthGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_7.4bpp.lz");
 static const ax_sprite sRelicanthSprites7[] = {
 	{sRelicanthGfx7, ARRAY_COUNT(sRelicanthGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx8[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_8.4bpp");
+static const u8 sRelicanthGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_8.4bpp.lz");
 static const ax_sprite sRelicanthSprites8[] = {
 	{sRelicanthGfx8, ARRAY_COUNT(sRelicanthGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx9[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_9.4bpp");
+static const u8 sRelicanthGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_9.4bpp.lz");
 static const ax_sprite sRelicanthSprites9[] = {
 	{sRelicanthGfx9, ARRAY_COUNT(sRelicanthGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx10[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_10.4bpp");
+static const u8 sRelicanthGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_10.4bpp.lz");
 static const ax_sprite sRelicanthSprites10[] = {
 	{sRelicanthGfx10, ARRAY_COUNT(sRelicanthGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx11[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_11.4bpp");
+static const u8 sRelicanthGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_11.4bpp.lz");
 static const ax_sprite sRelicanthSprites11[] = {
 	{sRelicanthGfx11, ARRAY_COUNT(sRelicanthGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx12[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_12.4bpp");
+static const u8 sRelicanthGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_12.4bpp.lz");
 static const ax_sprite sRelicanthSprites12[] = {
 	{sRelicanthGfx12, ARRAY_COUNT(sRelicanthGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx13[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_13.4bpp");
+static const u8 sRelicanthGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_13.4bpp.lz");
 static const ax_sprite sRelicanthSprites13[] = {
 	{sRelicanthGfx13, ARRAY_COUNT(sRelicanthGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx14[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_14.4bpp");
+static const u8 sRelicanthGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_14.4bpp.lz");
 static const ax_sprite sRelicanthSprites14[] = {
 	{sRelicanthGfx14, ARRAY_COUNT(sRelicanthGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx15[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_15.4bpp");
+static const u8 sRelicanthGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_15.4bpp.lz");
 static const ax_sprite sRelicanthSprites15[] = {
 	{sRelicanthGfx15, ARRAY_COUNT(sRelicanthGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx16[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_16.4bpp");
+static const u8 sRelicanthGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_16.4bpp.lz");
 static const ax_sprite sRelicanthSprites16[] = {
 	{sRelicanthGfx16, ARRAY_COUNT(sRelicanthGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx17[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_17.4bpp");
+static const u8 sRelicanthGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_17.4bpp.lz");
 static const ax_sprite sRelicanthSprites17[] = {
 	{sRelicanthGfx17, ARRAY_COUNT(sRelicanthGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx18[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_18.4bpp");
+static const u8 sRelicanthGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_18.4bpp.lz");
 static const ax_sprite sRelicanthSprites18[] = {
 	{sRelicanthGfx18, ARRAY_COUNT(sRelicanthGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx19[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_19.4bpp");
+static const u8 sRelicanthGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_19.4bpp.lz");
 static const ax_sprite sRelicanthSprites19[] = {
 	{sRelicanthGfx19, ARRAY_COUNT(sRelicanthGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx20[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_20.4bpp");
-static const u8 sRelicanthGfx20_1[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_20_1.4bpp");
+static const u8 sRelicanthGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_20.4bpp.lz");
+static const u8 sRelicanthGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_20_1.4bpp.lz");
 static const ax_sprite sRelicanthSprites20[] = {
 	{sRelicanthGfx20, ARRAY_COUNT(sRelicanthGfx20)}, 
 	{NULL, 32}, 
@@ -2047,62 +2047,62 @@ static const ax_sprite sRelicanthSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx21[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_21.4bpp");
+static const u8 sRelicanthGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_21.4bpp.lz");
 static const ax_sprite sRelicanthSprites21[] = {
 	{sRelicanthGfx21, ARRAY_COUNT(sRelicanthGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx22[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_22.4bpp");
+static const u8 sRelicanthGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_22.4bpp.lz");
 static const ax_sprite sRelicanthSprites22[] = {
 	{sRelicanthGfx22, ARRAY_COUNT(sRelicanthGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx23[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_23.4bpp");
+static const u8 sRelicanthGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_23.4bpp.lz");
 static const ax_sprite sRelicanthSprites23[] = {
 	{sRelicanthGfx23, ARRAY_COUNT(sRelicanthGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx24[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_24.4bpp");
+static const u8 sRelicanthGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_24.4bpp.lz");
 static const ax_sprite sRelicanthSprites24[] = {
 	{sRelicanthGfx24, ARRAY_COUNT(sRelicanthGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx25[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_25.4bpp");
+static const u8 sRelicanthGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_25.4bpp.lz");
 static const ax_sprite sRelicanthSprites25[] = {
 	{sRelicanthGfx25, ARRAY_COUNT(sRelicanthGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx26[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_26.4bpp");
+static const u8 sRelicanthGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_26.4bpp.lz");
 static const ax_sprite sRelicanthSprites26[] = {
 	{sRelicanthGfx26, ARRAY_COUNT(sRelicanthGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx27[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_27.4bpp");
+static const u8 sRelicanthGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_27.4bpp.lz");
 static const ax_sprite sRelicanthSprites27[] = {
 	{sRelicanthGfx27, ARRAY_COUNT(sRelicanthGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx28[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_28.4bpp");
+static const u8 sRelicanthGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_28.4bpp.lz");
 static const ax_sprite sRelicanthSprites28[] = {
 	{sRelicanthGfx28, ARRAY_COUNT(sRelicanthGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx29[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_29.4bpp");
+static const u8 sRelicanthGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_29.4bpp.lz");
 static const ax_sprite sRelicanthSprites29[] = {
 	{sRelicanthGfx29, ARRAY_COUNT(sRelicanthGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx30[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_30.4bpp");
+static const u8 sRelicanthGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_30.4bpp.lz");
 static const ax_sprite sRelicanthSprites30[] = {
 	{sRelicanthGfx30, ARRAY_COUNT(sRelicanthGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx31[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_31.4bpp");
+static const u8 sRelicanthGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_31.4bpp.lz");
 static const ax_sprite sRelicanthSprites31[] = {
 	{sRelicanthGfx31, ARRAY_COUNT(sRelicanthGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sRelicanthGfx32[] = INCBIN_U8("graphics/ax/mon/relicanth/sprite_32.4bpp");
+static const u8 sRelicanthGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/relicanth/sprite_32.4bpp.lz");
 static const ax_sprite sRelicanthSprites32[] = {
 	{sRelicanthGfx32, ARRAY_COUNT(sRelicanthGfx32)}, 
 	{NULL, 0}

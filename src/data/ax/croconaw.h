@@ -1952,128 +1952,128 @@ static const ax_anim sCroconawAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCroconawGfx1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_1.4bpp");
+static const u8 sCroconawGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_1.4bpp.lz");
 static const ax_sprite sCroconawSprites1[] = {
 	{sCroconawGfx1, ARRAY_COUNT(sCroconawGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_2.4bpp");
+static const u8 sCroconawGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_2.4bpp.lz");
 static const ax_sprite sCroconawSprites2[] = {
 	{sCroconawGfx2, ARRAY_COUNT(sCroconawGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_3.4bpp");
+static const u8 sCroconawGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_3.4bpp.lz");
 static const ax_sprite sCroconawSprites3[] = {
 	{sCroconawGfx3, ARRAY_COUNT(sCroconawGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx4[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_4.4bpp");
+static const u8 sCroconawGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_4.4bpp.lz");
 static const ax_sprite sCroconawSprites4[] = {
 	{sCroconawGfx4, ARRAY_COUNT(sCroconawGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx5[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_5.4bpp");
+static const u8 sCroconawGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_5.4bpp.lz");
 static const ax_sprite sCroconawSprites5[] = {
 	{sCroconawGfx5, ARRAY_COUNT(sCroconawGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx6[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_6.4bpp");
+static const u8 sCroconawGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_6.4bpp.lz");
 static const ax_sprite sCroconawSprites6[] = {
 	{sCroconawGfx6, ARRAY_COUNT(sCroconawGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx7[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_7.4bpp");
+static const u8 sCroconawGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_7.4bpp.lz");
 static const ax_sprite sCroconawSprites7[] = {
 	{sCroconawGfx7, ARRAY_COUNT(sCroconawGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx8[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_8.4bpp");
+static const u8 sCroconawGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_8.4bpp.lz");
 static const ax_sprite sCroconawSprites8[] = {
 	{sCroconawGfx8, ARRAY_COUNT(sCroconawGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx9[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_9.4bpp");
+static const u8 sCroconawGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_9.4bpp.lz");
 static const ax_sprite sCroconawSprites9[] = {
 	{sCroconawGfx9, ARRAY_COUNT(sCroconawGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx10[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_10.4bpp");
+static const u8 sCroconawGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_10.4bpp.lz");
 static const ax_sprite sCroconawSprites10[] = {
 	{sCroconawGfx10, ARRAY_COUNT(sCroconawGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx11[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_11.4bpp");
+static const u8 sCroconawGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_11.4bpp.lz");
 static const ax_sprite sCroconawSprites11[] = {
 	{sCroconawGfx11, ARRAY_COUNT(sCroconawGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx12[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_12.4bpp");
+static const u8 sCroconawGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_12.4bpp.lz");
 static const ax_sprite sCroconawSprites12[] = {
 	{sCroconawGfx12, ARRAY_COUNT(sCroconawGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx13[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_13.4bpp");
+static const u8 sCroconawGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_13.4bpp.lz");
 static const ax_sprite sCroconawSprites13[] = {
 	{sCroconawGfx13, ARRAY_COUNT(sCroconawGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx14[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_14.4bpp");
+static const u8 sCroconawGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_14.4bpp.lz");
 static const ax_sprite sCroconawSprites14[] = {
 	{sCroconawGfx14, ARRAY_COUNT(sCroconawGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx15[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_15.4bpp");
+static const u8 sCroconawGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_15.4bpp.lz");
 static const ax_sprite sCroconawSprites15[] = {
 	{sCroconawGfx15, ARRAY_COUNT(sCroconawGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx16[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_16.4bpp");
+static const u8 sCroconawGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_16.4bpp.lz");
 static const ax_sprite sCroconawSprites16[] = {
 	{sCroconawGfx16, ARRAY_COUNT(sCroconawGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx17[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_17.4bpp");
+static const u8 sCroconawGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_17.4bpp.lz");
 static const ax_sprite sCroconawSprites17[] = {
 	{sCroconawGfx17, ARRAY_COUNT(sCroconawGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx18[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_18.4bpp");
+static const u8 sCroconawGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_18.4bpp.lz");
 static const ax_sprite sCroconawSprites18[] = {
 	{sCroconawGfx18, ARRAY_COUNT(sCroconawGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx19[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_19.4bpp");
+static const u8 sCroconawGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_19.4bpp.lz");
 static const ax_sprite sCroconawSprites19[] = {
 	{sCroconawGfx19, ARRAY_COUNT(sCroconawGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx20[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_20.4bpp");
+static const u8 sCroconawGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_20.4bpp.lz");
 static const ax_sprite sCroconawSprites20[] = {
 	{sCroconawGfx20, ARRAY_COUNT(sCroconawGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx21[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_21.4bpp");
+static const u8 sCroconawGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_21.4bpp.lz");
 static const ax_sprite sCroconawSprites21[] = {
 	{sCroconawGfx21, ARRAY_COUNT(sCroconawGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx22[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_22.4bpp");
+static const u8 sCroconawGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_22.4bpp.lz");
 static const ax_sprite sCroconawSprites22[] = {
 	{sCroconawGfx22, ARRAY_COUNT(sCroconawGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx23[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_23.4bpp");
+static const u8 sCroconawGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_23.4bpp.lz");
 static const ax_sprite sCroconawSprites23[] = {
 	{sCroconawGfx23, ARRAY_COUNT(sCroconawGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx24[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_24.4bpp");
+static const u8 sCroconawGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_24.4bpp.lz");
 static const ax_sprite sCroconawSprites24[] = {
 	{sCroconawGfx24, ARRAY_COUNT(sCroconawGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx25[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_25.4bpp");
-static const u8 sCroconawGfx25_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_25_1.4bpp");
+static const u8 sCroconawGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_25.4bpp.lz");
+static const u8 sCroconawGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_25_1.4bpp.lz");
 static const ax_sprite sCroconawSprites25[] = {
 	{NULL, 32}, 
 	{sCroconawGfx25, ARRAY_COUNT(sCroconawGfx25)}, 
@@ -2081,30 +2081,30 @@ static const ax_sprite sCroconawSprites25[] = {
 	{sCroconawGfx25_1, ARRAY_COUNT(sCroconawGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx26[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_26.4bpp");
+static const u8 sCroconawGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_26.4bpp.lz");
 static const ax_sprite sCroconawSprites26[] = {
 	{sCroconawGfx26, ARRAY_COUNT(sCroconawGfx26)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx27[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_27.4bpp");
+static const u8 sCroconawGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_27.4bpp.lz");
 static const ax_sprite sCroconawSprites27[] = {
 	{NULL, 32}, 
 	{sCroconawGfx27, ARRAY_COUNT(sCroconawGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx28[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_28.4bpp");
-static const u8 sCroconawGfx28_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_28_1.4bpp");
+static const u8 sCroconawGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_28.4bpp.lz");
+static const u8 sCroconawGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_28_1.4bpp.lz");
 static const ax_sprite sCroconawSprites28[] = {
 	{sCroconawGfx28, ARRAY_COUNT(sCroconawGfx28)}, 
 	{NULL, 32}, 
 	{sCroconawGfx28_1, ARRAY_COUNT(sCroconawGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx29[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_29.4bpp");
-static const u8 sCroconawGfx29_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_29_1.4bpp");
-static const u8 sCroconawGfx29_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_29_2.4bpp");
-static const u8 sCroconawGfx29_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_29_3.4bpp");
+static const u8 sCroconawGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_29.4bpp.lz");
+static const u8 sCroconawGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_29_1.4bpp.lz");
+static const u8 sCroconawGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_29_2.4bpp.lz");
+static const u8 sCroconawGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_29_3.4bpp.lz");
 static const ax_sprite sCroconawSprites29[] = {
 	{NULL, 32}, 
 	{sCroconawGfx29, ARRAY_COUNT(sCroconawGfx29)}, 
@@ -2117,24 +2117,24 @@ static const ax_sprite sCroconawSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx30[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_30.4bpp");
+static const u8 sCroconawGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_30.4bpp.lz");
 static const ax_sprite sCroconawSprites30[] = {
 	{sCroconawGfx30, ARRAY_COUNT(sCroconawGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx31[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_31.4bpp");
+static const u8 sCroconawGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_31.4bpp.lz");
 static const ax_sprite sCroconawSprites31[] = {
 	{sCroconawGfx31, ARRAY_COUNT(sCroconawGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx32[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_32.4bpp");
+static const u8 sCroconawGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_32.4bpp.lz");
 static const ax_sprite sCroconawSprites32[] = {
 	{sCroconawGfx32, ARRAY_COUNT(sCroconawGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx33[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_33.4bpp");
-static const u8 sCroconawGfx33_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_33_1.4bpp");
-static const u8 sCroconawGfx33_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_33_2.4bpp");
+static const u8 sCroconawGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_33.4bpp.lz");
+static const u8 sCroconawGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_33_1.4bpp.lz");
+static const u8 sCroconawGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_33_2.4bpp.lz");
 static const ax_sprite sCroconawSprites33[] = {
 	{NULL, 32}, 
 	{sCroconawGfx33, ARRAY_COUNT(sCroconawGfx33)}, 
@@ -2145,10 +2145,10 @@ static const ax_sprite sCroconawSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx34[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_34.4bpp");
-static const u8 sCroconawGfx34_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_34_1.4bpp");
-static const u8 sCroconawGfx34_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_34_2.4bpp");
-static const u8 sCroconawGfx34_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_34_3.4bpp");
+static const u8 sCroconawGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_34.4bpp.lz");
+static const u8 sCroconawGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_34_1.4bpp.lz");
+static const u8 sCroconawGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_34_2.4bpp.lz");
+static const u8 sCroconawGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_34_3.4bpp.lz");
 static const ax_sprite sCroconawSprites34[] = {
 	{NULL, 32}, 
 	{sCroconawGfx34, ARRAY_COUNT(sCroconawGfx34)}, 
@@ -2161,23 +2161,23 @@ static const ax_sprite sCroconawSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx35[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_35.4bpp");
+static const u8 sCroconawGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_35.4bpp.lz");
 static const ax_sprite sCroconawSprites35[] = {
 	{sCroconawGfx35, ARRAY_COUNT(sCroconawGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx36[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_36.4bpp");
+static const u8 sCroconawGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_36.4bpp.lz");
 static const ax_sprite sCroconawSprites36[] = {
 	{sCroconawGfx36, ARRAY_COUNT(sCroconawGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx37[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_37.4bpp");
+static const u8 sCroconawGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_37.4bpp.lz");
 static const ax_sprite sCroconawSprites37[] = {
 	{sCroconawGfx37, ARRAY_COUNT(sCroconawGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx38[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_38.4bpp");
-static const u8 sCroconawGfx38_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_38_1.4bpp");
+static const u8 sCroconawGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_38.4bpp.lz");
+static const u8 sCroconawGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_38_1.4bpp.lz");
 static const ax_sprite sCroconawSprites38[] = {
 	{NULL, 64}, 
 	{sCroconawGfx38, ARRAY_COUNT(sCroconawGfx38)}, 
@@ -2186,8 +2186,8 @@ static const ax_sprite sCroconawSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx39[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_39.4bpp");
-static const u8 sCroconawGfx39_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_39_1.4bpp");
+static const u8 sCroconawGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_39.4bpp.lz");
+static const u8 sCroconawGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_39_1.4bpp.lz");
 static const ax_sprite sCroconawSprites39[] = {
 	{NULL, 32}, 
 	{sCroconawGfx39, ARRAY_COUNT(sCroconawGfx39)}, 
@@ -2195,24 +2195,24 @@ static const ax_sprite sCroconawSprites39[] = {
 	{sCroconawGfx39_1, ARRAY_COUNT(sCroconawGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx40[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_40.4bpp");
+static const u8 sCroconawGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_40.4bpp.lz");
 static const ax_sprite sCroconawSprites40[] = {
 	{sCroconawGfx40, ARRAY_COUNT(sCroconawGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx41[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_41.4bpp");
+static const u8 sCroconawGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_41.4bpp.lz");
 static const ax_sprite sCroconawSprites41[] = {
 	{sCroconawGfx41, ARRAY_COUNT(sCroconawGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx42[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_42.4bpp");
+static const u8 sCroconawGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_42.4bpp.lz");
 static const ax_sprite sCroconawSprites42[] = {
 	{sCroconawGfx42, ARRAY_COUNT(sCroconawGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx43[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_43.4bpp");
-static const u8 sCroconawGfx43_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_43_1.4bpp");
-static const u8 sCroconawGfx43_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_43_2.4bpp");
+static const u8 sCroconawGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_43.4bpp.lz");
+static const u8 sCroconawGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_43_1.4bpp.lz");
+static const u8 sCroconawGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_43_2.4bpp.lz");
 static const ax_sprite sCroconawSprites43[] = {
 	{NULL, 64}, 
 	{sCroconawGfx43, ARRAY_COUNT(sCroconawGfx43)}, 
@@ -2222,10 +2222,10 @@ static const ax_sprite sCroconawSprites43[] = {
 	{sCroconawGfx43_2, ARRAY_COUNT(sCroconawGfx43_2)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx44[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_44.4bpp");
-static const u8 sCroconawGfx44_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_44_1.4bpp");
-static const u8 sCroconawGfx44_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_44_2.4bpp");
-static const u8 sCroconawGfx44_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_44_3.4bpp");
+static const u8 sCroconawGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_44.4bpp.lz");
+static const u8 sCroconawGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_44_1.4bpp.lz");
+static const u8 sCroconawGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_44_2.4bpp.lz");
+static const u8 sCroconawGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_44_3.4bpp.lz");
 static const ax_sprite sCroconawSprites44[] = {
 	{NULL, 32}, 
 	{sCroconawGfx44, ARRAY_COUNT(sCroconawGfx44)}, 
@@ -2238,24 +2238,24 @@ static const ax_sprite sCroconawSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx45[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_45.4bpp");
+static const u8 sCroconawGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_45.4bpp.lz");
 static const ax_sprite sCroconawSprites45[] = {
 	{sCroconawGfx45, ARRAY_COUNT(sCroconawGfx45)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx46[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_46.4bpp");
+static const u8 sCroconawGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_46.4bpp.lz");
 static const ax_sprite sCroconawSprites46[] = {
 	{sCroconawGfx46, ARRAY_COUNT(sCroconawGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx47[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_47.4bpp");
+static const u8 sCroconawGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_47.4bpp.lz");
 static const ax_sprite sCroconawSprites47[] = {
 	{sCroconawGfx47, ARRAY_COUNT(sCroconawGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx48[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_48.4bpp");
-static const u8 sCroconawGfx48_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_48_1.4bpp");
+static const u8 sCroconawGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_48.4bpp.lz");
+static const u8 sCroconawGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_48_1.4bpp.lz");
 static const ax_sprite sCroconawSprites48[] = {
 	{NULL, 32}, 
 	{sCroconawGfx48, ARRAY_COUNT(sCroconawGfx48)}, 
@@ -2263,9 +2263,9 @@ static const ax_sprite sCroconawSprites48[] = {
 	{sCroconawGfx48_1, ARRAY_COUNT(sCroconawGfx48_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx49[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_49.4bpp");
-static const u8 sCroconawGfx49_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_49_1.4bpp");
-static const u8 sCroconawGfx49_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_49_2.4bpp");
+static const u8 sCroconawGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_49.4bpp.lz");
+static const u8 sCroconawGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_49_1.4bpp.lz");
+static const u8 sCroconawGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_49_2.4bpp.lz");
 static const ax_sprite sCroconawSprites49[] = {
 	{sCroconawGfx49, ARRAY_COUNT(sCroconawGfx49)}, 
 	{NULL, 64}, 
@@ -2275,10 +2275,10 @@ static const ax_sprite sCroconawSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx50[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_50.4bpp");
-static const u8 sCroconawGfx50_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_50_1.4bpp");
-static const u8 sCroconawGfx50_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_50_2.4bpp");
-static const u8 sCroconawGfx50_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_50_3.4bpp");
+static const u8 sCroconawGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_50.4bpp.lz");
+static const u8 sCroconawGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_50_1.4bpp.lz");
+static const u8 sCroconawGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_50_2.4bpp.lz");
+static const u8 sCroconawGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_50_3.4bpp.lz");
 static const ax_sprite sCroconawSprites50[] = {
 	{NULL, 32}, 
 	{sCroconawGfx50, ARRAY_COUNT(sCroconawGfx50)}, 
@@ -2290,9 +2290,9 @@ static const ax_sprite sCroconawSprites50[] = {
 	{sCroconawGfx50_3, ARRAY_COUNT(sCroconawGfx50_3)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx51[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_51.4bpp");
-static const u8 sCroconawGfx51_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_51_1.4bpp");
-static const u8 sCroconawGfx51_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_51_2.4bpp");
+static const u8 sCroconawGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_51.4bpp.lz");
+static const u8 sCroconawGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_51_1.4bpp.lz");
+static const u8 sCroconawGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_51_2.4bpp.lz");
 static const ax_sprite sCroconawSprites51[] = {
 	{sCroconawGfx51, ARRAY_COUNT(sCroconawGfx51)}, 
 	{NULL, 64}, 
@@ -2302,33 +2302,33 @@ static const ax_sprite sCroconawSprites51[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx52[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_52.4bpp");
+static const u8 sCroconawGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_52.4bpp.lz");
 static const ax_sprite sCroconawSprites52[] = {
 	{sCroconawGfx52, ARRAY_COUNT(sCroconawGfx52)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx53[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_53.4bpp");
-static const u8 sCroconawGfx53_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_53_1.4bpp");
+static const u8 sCroconawGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_53.4bpp.lz");
+static const u8 sCroconawGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_53_1.4bpp.lz");
 static const ax_sprite sCroconawSprites53[] = {
 	{sCroconawGfx53, ARRAY_COUNT(sCroconawGfx53)}, 
 	{NULL, 32}, 
 	{sCroconawGfx53_1, ARRAY_COUNT(sCroconawGfx53_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx54[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_54.4bpp");
+static const u8 sCroconawGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_54.4bpp.lz");
 static const ax_sprite sCroconawSprites54[] = {
 	{NULL, 32}, 
 	{sCroconawGfx54, ARRAY_COUNT(sCroconawGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx55[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_55.4bpp");
+static const u8 sCroconawGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_55.4bpp.lz");
 static const ax_sprite sCroconawSprites55[] = {
 	{sCroconawGfx55, ARRAY_COUNT(sCroconawGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx56[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_56.4bpp");
-static const u8 sCroconawGfx56_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_56_1.4bpp");
+static const u8 sCroconawGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_56.4bpp.lz");
+static const u8 sCroconawGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_56_1.4bpp.lz");
 static const ax_sprite sCroconawSprites56[] = {
 	{NULL, 32}, 
 	{sCroconawGfx56, ARRAY_COUNT(sCroconawGfx56)}, 
@@ -2337,19 +2337,19 @@ static const ax_sprite sCroconawSprites56[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx57[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_57.4bpp");
+static const u8 sCroconawGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_57.4bpp.lz");
 static const ax_sprite sCroconawSprites57[] = {
 	{sCroconawGfx57, ARRAY_COUNT(sCroconawGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx58[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_58.4bpp");
+static const u8 sCroconawGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_58.4bpp.lz");
 static const ax_sprite sCroconawSprites58[] = {
 	{sCroconawGfx58, ARRAY_COUNT(sCroconawGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx59[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_59.4bpp");
-static const u8 sCroconawGfx59_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_59_1.4bpp");
-static const u8 sCroconawGfx59_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_59_2.4bpp");
+static const u8 sCroconawGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_59.4bpp.lz");
+static const u8 sCroconawGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_59_1.4bpp.lz");
+static const u8 sCroconawGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_59_2.4bpp.lz");
 static const ax_sprite sCroconawSprites59[] = {
 	{NULL, 32}, 
 	{sCroconawGfx59, ARRAY_COUNT(sCroconawGfx59)}, 
@@ -2360,8 +2360,8 @@ static const ax_sprite sCroconawSprites59[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx60[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_60.4bpp");
-static const u8 sCroconawGfx60_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_60_1.4bpp");
+static const u8 sCroconawGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_60.4bpp.lz");
+static const u8 sCroconawGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_60_1.4bpp.lz");
 static const ax_sprite sCroconawSprites60[] = {
 	{NULL, 64}, 
 	{sCroconawGfx60, ARRAY_COUNT(sCroconawGfx60)}, 
@@ -2369,10 +2369,10 @@ static const ax_sprite sCroconawSprites60[] = {
 	{sCroconawGfx60_1, ARRAY_COUNT(sCroconawGfx60_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx61[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_61.4bpp");
-static const u8 sCroconawGfx61_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_61_1.4bpp");
-static const u8 sCroconawGfx61_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_61_2.4bpp");
-static const u8 sCroconawGfx61_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_61_3.4bpp");
+static const u8 sCroconawGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_61.4bpp.lz");
+static const u8 sCroconawGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_61_1.4bpp.lz");
+static const u8 sCroconawGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_61_2.4bpp.lz");
+static const u8 sCroconawGfx61_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_61_3.4bpp.lz");
 static const ax_sprite sCroconawSprites61[] = {
 	{NULL, 32}, 
 	{sCroconawGfx61, ARRAY_COUNT(sCroconawGfx61)}, 
@@ -2385,8 +2385,8 @@ static const ax_sprite sCroconawSprites61[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx62[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_62.4bpp");
-static const u8 sCroconawGfx62_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_62_1.4bpp");
+static const u8 sCroconawGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_62.4bpp.lz");
+static const u8 sCroconawGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_62_1.4bpp.lz");
 static const ax_sprite sCroconawSprites62[] = {
 	{NULL, 64}, 
 	{sCroconawGfx62, ARRAY_COUNT(sCroconawGfx62)}, 
@@ -2395,10 +2395,10 @@ static const ax_sprite sCroconawSprites62[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx63[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_63.4bpp");
-static const u8 sCroconawGfx63_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_63_1.4bpp");
-static const u8 sCroconawGfx63_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_63_2.4bpp");
-static const u8 sCroconawGfx63_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_63_3.4bpp");
+static const u8 sCroconawGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_63.4bpp.lz");
+static const u8 sCroconawGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_63_1.4bpp.lz");
+static const u8 sCroconawGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_63_2.4bpp.lz");
+static const u8 sCroconawGfx63_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_63_3.4bpp.lz");
 static const ax_sprite sCroconawSprites63[] = {
 	{NULL, 32}, 
 	{sCroconawGfx63, ARRAY_COUNT(sCroconawGfx63)}, 
@@ -2411,8 +2411,8 @@ static const ax_sprite sCroconawSprites63[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx64[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_64.4bpp");
-static const u8 sCroconawGfx64_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_64_1.4bpp");
+static const u8 sCroconawGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_64.4bpp.lz");
+static const u8 sCroconawGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_64_1.4bpp.lz");
 static const ax_sprite sCroconawSprites64[] = {
 	{NULL, 32}, 
 	{sCroconawGfx64, ARRAY_COUNT(sCroconawGfx64)}, 
@@ -2420,8 +2420,8 @@ static const ax_sprite sCroconawSprites64[] = {
 	{sCroconawGfx64_1, ARRAY_COUNT(sCroconawGfx64_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx65[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_65.4bpp");
-static const u8 sCroconawGfx65_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_65_1.4bpp");
+static const u8 sCroconawGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_65.4bpp.lz");
+static const u8 sCroconawGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_65_1.4bpp.lz");
 static const ax_sprite sCroconawSprites65[] = {
 	{NULL, 32}, 
 	{sCroconawGfx65, ARRAY_COUNT(sCroconawGfx65)}, 
@@ -2429,8 +2429,8 @@ static const ax_sprite sCroconawSprites65[] = {
 	{sCroconawGfx65_1, ARRAY_COUNT(sCroconawGfx65_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx66[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_66.4bpp");
-static const u8 sCroconawGfx66_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_66_1.4bpp");
+static const u8 sCroconawGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_66.4bpp.lz");
+static const u8 sCroconawGfx66_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_66_1.4bpp.lz");
 static const ax_sprite sCroconawSprites66[] = {
 	{NULL, 32}, 
 	{sCroconawGfx66, ARRAY_COUNT(sCroconawGfx66)}, 
@@ -2438,10 +2438,10 @@ static const ax_sprite sCroconawSprites66[] = {
 	{sCroconawGfx66_1, ARRAY_COUNT(sCroconawGfx66_1)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx67[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_67.4bpp");
-static const u8 sCroconawGfx67_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_67_1.4bpp");
-static const u8 sCroconawGfx67_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_67_2.4bpp");
-static const u8 sCroconawGfx67_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_67_3.4bpp");
+static const u8 sCroconawGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_67.4bpp.lz");
+static const u8 sCroconawGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_67_1.4bpp.lz");
+static const u8 sCroconawGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_67_2.4bpp.lz");
+static const u8 sCroconawGfx67_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_67_3.4bpp.lz");
 static const ax_sprite sCroconawSprites67[] = {
 	{NULL, 32}, 
 	{sCroconawGfx67, ARRAY_COUNT(sCroconawGfx67)}, 
@@ -2453,9 +2453,9 @@ static const ax_sprite sCroconawSprites67[] = {
 	{sCroconawGfx67_3, ARRAY_COUNT(sCroconawGfx67_3)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx68[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_68.4bpp");
-static const u8 sCroconawGfx68_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_68_1.4bpp");
-static const u8 sCroconawGfx68_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_68_2.4bpp");
+static const u8 sCroconawGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_68.4bpp.lz");
+static const u8 sCroconawGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_68_1.4bpp.lz");
+static const u8 sCroconawGfx68_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_68_2.4bpp.lz");
 static const ax_sprite sCroconawSprites68[] = {
 	{sCroconawGfx68, ARRAY_COUNT(sCroconawGfx68)}, 
 	{NULL, 32}, 
@@ -2464,10 +2464,10 @@ static const ax_sprite sCroconawSprites68[] = {
 	{sCroconawGfx68_2, ARRAY_COUNT(sCroconawGfx68_2)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx69[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_69.4bpp");
-static const u8 sCroconawGfx69_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_69_1.4bpp");
-static const u8 sCroconawGfx69_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_69_2.4bpp");
-static const u8 sCroconawGfx69_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_69_3.4bpp");
+static const u8 sCroconawGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_69.4bpp.lz");
+static const u8 sCroconawGfx69_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_69_1.4bpp.lz");
+static const u8 sCroconawGfx69_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_69_2.4bpp.lz");
+static const u8 sCroconawGfx69_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_69_3.4bpp.lz");
 static const ax_sprite sCroconawSprites69[] = {
 	{NULL, 32}, 
 	{sCroconawGfx69, ARRAY_COUNT(sCroconawGfx69)}, 
@@ -2479,10 +2479,10 @@ static const ax_sprite sCroconawSprites69[] = {
 	{sCroconawGfx69_3, ARRAY_COUNT(sCroconawGfx69_3)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx70[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_70.4bpp");
-static const u8 sCroconawGfx70_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_70_1.4bpp");
-static const u8 sCroconawGfx70_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_70_2.4bpp");
-static const u8 sCroconawGfx70_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_70_3.4bpp");
+static const u8 sCroconawGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_70.4bpp.lz");
+static const u8 sCroconawGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_70_1.4bpp.lz");
+static const u8 sCroconawGfx70_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_70_2.4bpp.lz");
+static const u8 sCroconawGfx70_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_70_3.4bpp.lz");
 static const ax_sprite sCroconawSprites70[] = {
 	{sCroconawGfx70, ARRAY_COUNT(sCroconawGfx70)}, 
 	{NULL, 64}, 
@@ -2493,10 +2493,10 @@ static const ax_sprite sCroconawSprites70[] = {
 	{sCroconawGfx70_3, ARRAY_COUNT(sCroconawGfx70_3)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx71[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_71.4bpp");
-static const u8 sCroconawGfx71_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_71_1.4bpp");
-static const u8 sCroconawGfx71_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_71_2.4bpp");
-static const u8 sCroconawGfx71_3[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_71_3.4bpp");
+static const u8 sCroconawGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_71.4bpp.lz");
+static const u8 sCroconawGfx71_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_71_1.4bpp.lz");
+static const u8 sCroconawGfx71_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_71_2.4bpp.lz");
+static const u8 sCroconawGfx71_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_71_3.4bpp.lz");
 static const ax_sprite sCroconawSprites71[] = {
 	{NULL, 32}, 
 	{sCroconawGfx71, ARRAY_COUNT(sCroconawGfx71)}, 
@@ -2508,9 +2508,9 @@ static const ax_sprite sCroconawSprites71[] = {
 	{sCroconawGfx71_3, ARRAY_COUNT(sCroconawGfx71_3)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx72[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_72.4bpp");
-static const u8 sCroconawGfx72_1[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_72_1.4bpp");
-static const u8 sCroconawGfx72_2[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_72_2.4bpp");
+static const u8 sCroconawGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_72.4bpp.lz");
+static const u8 sCroconawGfx72_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_72_1.4bpp.lz");
+static const u8 sCroconawGfx72_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_72_2.4bpp.lz");
 static const ax_sprite sCroconawSprites72[] = {
 	{NULL, 32}, 
 	{sCroconawGfx72, ARRAY_COUNT(sCroconawGfx72)}, 
@@ -2520,52 +2520,52 @@ static const ax_sprite sCroconawSprites72[] = {
 	{sCroconawGfx72_2, ARRAY_COUNT(sCroconawGfx72_2)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx73[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_73.4bpp");
+static const u8 sCroconawGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_73.4bpp.lz");
 static const ax_sprite sCroconawSprites73[] = {
 	{sCroconawGfx73, ARRAY_COUNT(sCroconawGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx74[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_74.4bpp");
+static const u8 sCroconawGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_74.4bpp.lz");
 static const ax_sprite sCroconawSprites74[] = {
 	{sCroconawGfx74, ARRAY_COUNT(sCroconawGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx75[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_75.4bpp");
+static const u8 sCroconawGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_75.4bpp.lz");
 static const ax_sprite sCroconawSprites75[] = {
 	{sCroconawGfx75, ARRAY_COUNT(sCroconawGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx76[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_76.4bpp");
+static const u8 sCroconawGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_76.4bpp.lz");
 static const ax_sprite sCroconawSprites76[] = {
 	{sCroconawGfx76, ARRAY_COUNT(sCroconawGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx77[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_77.4bpp");
+static const u8 sCroconawGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_77.4bpp.lz");
 static const ax_sprite sCroconawSprites77[] = {
 	{sCroconawGfx77, ARRAY_COUNT(sCroconawGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx78[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_78.4bpp");
+static const u8 sCroconawGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_78.4bpp.lz");
 static const ax_sprite sCroconawSprites78[] = {
 	{sCroconawGfx78, ARRAY_COUNT(sCroconawGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx79[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_79.4bpp");
+static const u8 sCroconawGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_79.4bpp.lz");
 static const ax_sprite sCroconawSprites79[] = {
 	{sCroconawGfx79, ARRAY_COUNT(sCroconawGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx80[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_80.4bpp");
+static const u8 sCroconawGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_80.4bpp.lz");
 static const ax_sprite sCroconawSprites80[] = {
 	{sCroconawGfx80, ARRAY_COUNT(sCroconawGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx81[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_81.4bpp");
+static const u8 sCroconawGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_81.4bpp.lz");
 static const ax_sprite sCroconawSprites81[] = {
 	{sCroconawGfx81, ARRAY_COUNT(sCroconawGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sCroconawGfx82[] = INCBIN_U8("graphics/ax/mon/croconaw/sprite_82.4bpp");
+static const u8 sCroconawGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/croconaw/sprite_82.4bpp.lz");
 static const ax_sprite sCroconawSprites82[] = {
 	{sCroconawGfx82, ARRAY_COUNT(sCroconawGfx82)}, 
 	{NULL, 0}

@@ -1557,87 +1557,87 @@ static const ax_anim sUnownQmarkAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sUnownQmarkGfx1[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_1.4bpp");
+static const u8 sUnownQmarkGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_1.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites1[] = {
 	{sUnownQmarkGfx1, ARRAY_COUNT(sUnownQmarkGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx2[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_2.4bpp");
+static const u8 sUnownQmarkGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_2.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites2[] = {
 	{sUnownQmarkGfx2, ARRAY_COUNT(sUnownQmarkGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx3[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_3.4bpp");
+static const u8 sUnownQmarkGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_3.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites3[] = {
 	{sUnownQmarkGfx3, ARRAY_COUNT(sUnownQmarkGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx4[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_4.4bpp");
+static const u8 sUnownQmarkGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_4.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites4[] = {
 	{sUnownQmarkGfx4, ARRAY_COUNT(sUnownQmarkGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx5[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_5.4bpp");
+static const u8 sUnownQmarkGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_5.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites5[] = {
 	{sUnownQmarkGfx5, ARRAY_COUNT(sUnownQmarkGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx6[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_6.4bpp");
+static const u8 sUnownQmarkGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_6.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites6[] = {
 	{sUnownQmarkGfx6, ARRAY_COUNT(sUnownQmarkGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx7[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_7.4bpp");
+static const u8 sUnownQmarkGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_7.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites7[] = {
 	{sUnownQmarkGfx7, ARRAY_COUNT(sUnownQmarkGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx8[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_8.4bpp");
+static const u8 sUnownQmarkGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_8.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites8[] = {
 	{sUnownQmarkGfx8, ARRAY_COUNT(sUnownQmarkGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx9[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_9.4bpp");
+static const u8 sUnownQmarkGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_9.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites9[] = {
 	{sUnownQmarkGfx9, ARRAY_COUNT(sUnownQmarkGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx10[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_10.4bpp");
+static const u8 sUnownQmarkGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_10.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites10[] = {
 	{sUnownQmarkGfx10, ARRAY_COUNT(sUnownQmarkGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx11[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_11.4bpp");
+static const u8 sUnownQmarkGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_11.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites11[] = {
 	{sUnownQmarkGfx11, ARRAY_COUNT(sUnownQmarkGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx12[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_12.4bpp");
+static const u8 sUnownQmarkGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_12.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites12[] = {
 	{sUnownQmarkGfx12, ARRAY_COUNT(sUnownQmarkGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx13[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_13.4bpp");
+static const u8 sUnownQmarkGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_13.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites13[] = {
 	{sUnownQmarkGfx13, ARRAY_COUNT(sUnownQmarkGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx14[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_14.4bpp");
+static const u8 sUnownQmarkGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_14.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites14[] = {
 	{sUnownQmarkGfx14, ARRAY_COUNT(sUnownQmarkGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx15[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_15.4bpp");
+static const u8 sUnownQmarkGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_15.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites15[] = {
 	{sUnownQmarkGfx15, ARRAY_COUNT(sUnownQmarkGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx16[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_16.4bpp");
+static const u8 sUnownQmarkGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_16.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites16[] = {
 	{sUnownQmarkGfx16, ARRAY_COUNT(sUnownQmarkGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sUnownQmarkGfx17[] = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_17.4bpp");
+static const u8 sUnownQmarkGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/unownqmark/sprite_17.4bpp.lz");
 static const ax_sprite sUnownQmarkSprites17[] = {
 	{sUnownQmarkGfx17, ARRAY_COUNT(sUnownQmarkGfx17)}, 
 	{NULL, 0}

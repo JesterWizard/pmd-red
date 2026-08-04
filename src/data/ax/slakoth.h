@@ -1999,83 +1999,83 @@ static const ax_anim sSlakothAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSlakothGfx1[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_1.4bpp");
+static const u8 sSlakothGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_1.4bpp.lz");
 static const ax_sprite sSlakothSprites1[] = {
 	{sSlakothGfx1, ARRAY_COUNT(sSlakothGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx2[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_2.4bpp");
+static const u8 sSlakothGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_2.4bpp.lz");
 static const ax_sprite sSlakothSprites2[] = {
 	{sSlakothGfx2, ARRAY_COUNT(sSlakothGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx3[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_3.4bpp");
+static const u8 sSlakothGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_3.4bpp.lz");
 static const ax_sprite sSlakothSprites3[] = {
 	{sSlakothGfx3, ARRAY_COUNT(sSlakothGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx4[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_4.4bpp");
+static const u8 sSlakothGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_4.4bpp.lz");
 static const ax_sprite sSlakothSprites4[] = {
 	{sSlakothGfx4, ARRAY_COUNT(sSlakothGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx5[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_5.4bpp");
+static const u8 sSlakothGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_5.4bpp.lz");
 static const ax_sprite sSlakothSprites5[] = {
 	{sSlakothGfx5, ARRAY_COUNT(sSlakothGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx6[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_6.4bpp");
+static const u8 sSlakothGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_6.4bpp.lz");
 static const ax_sprite sSlakothSprites6[] = {
 	{sSlakothGfx6, ARRAY_COUNT(sSlakothGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx7[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_7.4bpp");
+static const u8 sSlakothGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_7.4bpp.lz");
 static const ax_sprite sSlakothSprites7[] = {
 	{sSlakothGfx7, ARRAY_COUNT(sSlakothGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx8[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_8.4bpp");
+static const u8 sSlakothGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_8.4bpp.lz");
 static const ax_sprite sSlakothSprites8[] = {
 	{sSlakothGfx8, ARRAY_COUNT(sSlakothGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx9[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_9.4bpp");
+static const u8 sSlakothGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_9.4bpp.lz");
 static const ax_sprite sSlakothSprites9[] = {
 	{sSlakothGfx9, ARRAY_COUNT(sSlakothGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx10[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_10.4bpp");
+static const u8 sSlakothGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_10.4bpp.lz");
 static const ax_sprite sSlakothSprites10[] = {
 	{sSlakothGfx10, ARRAY_COUNT(sSlakothGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx11[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_11.4bpp");
+static const u8 sSlakothGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_11.4bpp.lz");
 static const ax_sprite sSlakothSprites11[] = {
 	{sSlakothGfx11, ARRAY_COUNT(sSlakothGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx12[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_12.4bpp");
+static const u8 sSlakothGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_12.4bpp.lz");
 static const ax_sprite sSlakothSprites12[] = {
 	{sSlakothGfx12, ARRAY_COUNT(sSlakothGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx13[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_13.4bpp");
+static const u8 sSlakothGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_13.4bpp.lz");
 static const ax_sprite sSlakothSprites13[] = {
 	{sSlakothGfx13, ARRAY_COUNT(sSlakothGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx14[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_14.4bpp");
+static const u8 sSlakothGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_14.4bpp.lz");
 static const ax_sprite sSlakothSprites14[] = {
 	{sSlakothGfx14, ARRAY_COUNT(sSlakothGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx15[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_15.4bpp");
+static const u8 sSlakothGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_15.4bpp.lz");
 static const ax_sprite sSlakothSprites15[] = {
 	{sSlakothGfx15, ARRAY_COUNT(sSlakothGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx16[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_16.4bpp");
-static const u8 sSlakothGfx16_1[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_16_1.4bpp");
+static const u8 sSlakothGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_16.4bpp.lz");
+static const u8 sSlakothGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_16_1.4bpp.lz");
 static const ax_sprite sSlakothSprites16[] = {
 	{sSlakothGfx16, ARRAY_COUNT(sSlakothGfx16)}, 
 	{NULL, 64}, 
@@ -2083,14 +2083,14 @@ static const ax_sprite sSlakothSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx17[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_17.4bpp");
+static const u8 sSlakothGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_17.4bpp.lz");
 static const ax_sprite sSlakothSprites17[] = {
 	{sSlakothGfx17, ARRAY_COUNT(sSlakothGfx17)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx18[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_18.4bpp");
-static const u8 sSlakothGfx18_1[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_18_1.4bpp");
+static const u8 sSlakothGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_18.4bpp.lz");
+static const u8 sSlakothGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_18_1.4bpp.lz");
 static const ax_sprite sSlakothSprites18[] = {
 	{sSlakothGfx18, ARRAY_COUNT(sSlakothGfx18)}, 
 	{NULL, 32}, 
@@ -2098,14 +2098,14 @@ static const ax_sprite sSlakothSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx19[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_19.4bpp");
+static const u8 sSlakothGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_19.4bpp.lz");
 static const ax_sprite sSlakothSprites19[] = {
 	{sSlakothGfx19, ARRAY_COUNT(sSlakothGfx19)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx20[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_20.4bpp");
-static const u8 sSlakothGfx20_1[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_20_1.4bpp");
+static const u8 sSlakothGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_20.4bpp.lz");
+static const u8 sSlakothGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_20_1.4bpp.lz");
 static const ax_sprite sSlakothSprites20[] = {
 	{NULL, 32}, 
 	{sSlakothGfx20, ARRAY_COUNT(sSlakothGfx20)}, 
@@ -2114,8 +2114,8 @@ static const ax_sprite sSlakothSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx21[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_21.4bpp");
-static const u8 sSlakothGfx21_1[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_21_1.4bpp");
+static const u8 sSlakothGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_21.4bpp.lz");
+static const u8 sSlakothGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_21_1.4bpp.lz");
 static const ax_sprite sSlakothSprites21[] = {
 	{sSlakothGfx21, ARRAY_COUNT(sSlakothGfx21)}, 
 	{NULL, 32}, 
@@ -2123,8 +2123,8 @@ static const ax_sprite sSlakothSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx22[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_22.4bpp");
-static const u8 sSlakothGfx22_1[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_22_1.4bpp");
+static const u8 sSlakothGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_22.4bpp.lz");
+static const u8 sSlakothGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_22_1.4bpp.lz");
 static const ax_sprite sSlakothSprites22[] = {
 	{sSlakothGfx22, ARRAY_COUNT(sSlakothGfx22)}, 
 	{NULL, 32}, 
@@ -2132,9 +2132,9 @@ static const ax_sprite sSlakothSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx23[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_23.4bpp");
-static const u8 sSlakothGfx23_1[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_23_1.4bpp");
-static const u8 sSlakothGfx23_2[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_23_2.4bpp");
+static const u8 sSlakothGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_23.4bpp.lz");
+static const u8 sSlakothGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_23_1.4bpp.lz");
+static const u8 sSlakothGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_23_2.4bpp.lz");
 static const ax_sprite sSlakothSprites23[] = {
 	{sSlakothGfx23, ARRAY_COUNT(sSlakothGfx23)}, 
 	{NULL, 32}, 
@@ -2144,15 +2144,15 @@ static const ax_sprite sSlakothSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx24[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_24.4bpp");
+static const u8 sSlakothGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_24.4bpp.lz");
 static const ax_sprite sSlakothSprites24[] = {
 	{NULL, 32}, 
 	{sSlakothGfx24, ARRAY_COUNT(sSlakothGfx24)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx25[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_25.4bpp");
-static const u8 sSlakothGfx25_1[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_25_1.4bpp");
+static const u8 sSlakothGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_25.4bpp.lz");
+static const u8 sSlakothGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_25_1.4bpp.lz");
 static const ax_sprite sSlakothSprites25[] = {
 	{NULL, 32}, 
 	{sSlakothGfx25, ARRAY_COUNT(sSlakothGfx25)}, 
@@ -2161,62 +2161,62 @@ static const ax_sprite sSlakothSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx26[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_26.4bpp");
+static const u8 sSlakothGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_26.4bpp.lz");
 static const ax_sprite sSlakothSprites26[] = {
 	{sSlakothGfx26, ARRAY_COUNT(sSlakothGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx27[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_27.4bpp");
+static const u8 sSlakothGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_27.4bpp.lz");
 static const ax_sprite sSlakothSprites27[] = {
 	{sSlakothGfx27, ARRAY_COUNT(sSlakothGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx28[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_28.4bpp");
+static const u8 sSlakothGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_28.4bpp.lz");
 static const ax_sprite sSlakothSprites28[] = {
 	{sSlakothGfx28, ARRAY_COUNT(sSlakothGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx29[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_29.4bpp");
+static const u8 sSlakothGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_29.4bpp.lz");
 static const ax_sprite sSlakothSprites29[] = {
 	{sSlakothGfx29, ARRAY_COUNT(sSlakothGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx30[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_30.4bpp");
+static const u8 sSlakothGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_30.4bpp.lz");
 static const ax_sprite sSlakothSprites30[] = {
 	{sSlakothGfx30, ARRAY_COUNT(sSlakothGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx31[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_31.4bpp");
+static const u8 sSlakothGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_31.4bpp.lz");
 static const ax_sprite sSlakothSprites31[] = {
 	{sSlakothGfx31, ARRAY_COUNT(sSlakothGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx32[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_32.4bpp");
+static const u8 sSlakothGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_32.4bpp.lz");
 static const ax_sprite sSlakothSprites32[] = {
 	{sSlakothGfx32, ARRAY_COUNT(sSlakothGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx33[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_33.4bpp");
+static const u8 sSlakothGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_33.4bpp.lz");
 static const ax_sprite sSlakothSprites33[] = {
 	{sSlakothGfx33, ARRAY_COUNT(sSlakothGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx34[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_34.4bpp");
+static const u8 sSlakothGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_34.4bpp.lz");
 static const ax_sprite sSlakothSprites34[] = {
 	{sSlakothGfx34, ARRAY_COUNT(sSlakothGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx35[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_35.4bpp");
+static const u8 sSlakothGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_35.4bpp.lz");
 static const ax_sprite sSlakothSprites35[] = {
 	{sSlakothGfx35, ARRAY_COUNT(sSlakothGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx36[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_36.4bpp");
+static const u8 sSlakothGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_36.4bpp.lz");
 static const ax_sprite sSlakothSprites36[] = {
 	{sSlakothGfx36, ARRAY_COUNT(sSlakothGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSlakothGfx37[] = INCBIN_U8("graphics/ax/mon/slakoth/sprite_37.4bpp");
+static const u8 sSlakothGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slakoth/sprite_37.4bpp.lz");
 static const ax_sprite sSlakothSprites37[] = {
 	{sSlakothGfx37, ARRAY_COUNT(sSlakothGfx37)}, 
 	{NULL, 0}

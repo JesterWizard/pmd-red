@@ -1787,34 +1787,34 @@ static const ax_anim sForretressAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sForretressGfx1[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_1.4bpp");
+static const u8 sForretressGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_1.4bpp.lz");
 static const ax_sprite sForretressSprites1[] = {
 	{sForretressGfx1, ARRAY_COUNT(sForretressGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx2[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_2.4bpp");
+static const u8 sForretressGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_2.4bpp.lz");
 static const ax_sprite sForretressSprites2[] = {
 	{sForretressGfx2, ARRAY_COUNT(sForretressGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx3[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_3.4bpp");
+static const u8 sForretressGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_3.4bpp.lz");
 static const ax_sprite sForretressSprites3[] = {
 	{sForretressGfx3, ARRAY_COUNT(sForretressGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx4[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_4.4bpp");
+static const u8 sForretressGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_4.4bpp.lz");
 static const ax_sprite sForretressSprites4[] = {
 	{sForretressGfx4, ARRAY_COUNT(sForretressGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx5[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_5.4bpp");
+static const u8 sForretressGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_5.4bpp.lz");
 static const ax_sprite sForretressSprites5[] = {
 	{sForretressGfx5, ARRAY_COUNT(sForretressGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx6[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_6.4bpp");
-static const u8 sForretressGfx6_1[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_6_1.4bpp");
-static const u8 sForretressGfx6_2[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_6_2.4bpp");
+static const u8 sForretressGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_6.4bpp.lz");
+static const u8 sForretressGfx6_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_6_1.4bpp.lz");
+static const u8 sForretressGfx6_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_6_2.4bpp.lz");
 static const ax_sprite sForretressSprites6[] = {
 	{sForretressGfx6, ARRAY_COUNT(sForretressGfx6)}, 
 	{NULL, 32}, 
@@ -1824,8 +1824,8 @@ static const ax_sprite sForretressSprites6[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx7[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_7.4bpp");
-static const u8 sForretressGfx7_1[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_7_1.4bpp");
+static const u8 sForretressGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_7.4bpp.lz");
+static const u8 sForretressGfx7_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_7_1.4bpp.lz");
 static const ax_sprite sForretressSprites7[] = {
 	{sForretressGfx7, ARRAY_COUNT(sForretressGfx7)}, 
 	{NULL, 32}, 
@@ -1833,9 +1833,9 @@ static const ax_sprite sForretressSprites7[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx8[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_8.4bpp");
-static const u8 sForretressGfx8_1[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_8_1.4bpp");
-static const u8 sForretressGfx8_2[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_8_2.4bpp");
+static const u8 sForretressGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_8.4bpp.lz");
+static const u8 sForretressGfx8_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_8_1.4bpp.lz");
+static const u8 sForretressGfx8_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_8_2.4bpp.lz");
 static const ax_sprite sForretressSprites8[] = {
 	{sForretressGfx8, ARRAY_COUNT(sForretressGfx8)}, 
 	{NULL, 32}, 
@@ -1845,8 +1845,8 @@ static const ax_sprite sForretressSprites8[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx9[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_9.4bpp");
-static const u8 sForretressGfx9_1[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_9_1.4bpp");
+static const u8 sForretressGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_9.4bpp.lz");
+static const u8 sForretressGfx9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_9_1.4bpp.lz");
 static const ax_sprite sForretressSprites9[] = {
 	{sForretressGfx9, ARRAY_COUNT(sForretressGfx9)}, 
 	{NULL, 32}, 
@@ -1854,9 +1854,9 @@ static const ax_sprite sForretressSprites9[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx10[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_10.4bpp");
-static const u8 sForretressGfx10_1[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_10_1.4bpp");
-static const u8 sForretressGfx10_2[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_10_2.4bpp");
+static const u8 sForretressGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_10.4bpp.lz");
+static const u8 sForretressGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_10_1.4bpp.lz");
+static const u8 sForretressGfx10_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_10_2.4bpp.lz");
 static const ax_sprite sForretressSprites10[] = {
 	{sForretressGfx10, ARRAY_COUNT(sForretressGfx10)}, 
 	{NULL, 32}, 
@@ -1866,37 +1866,37 @@ static const ax_sprite sForretressSprites10[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx11[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_11.4bpp");
+static const u8 sForretressGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_11.4bpp.lz");
 static const ax_sprite sForretressSprites11[] = {
 	{sForretressGfx11, ARRAY_COUNT(sForretressGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx12[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_12.4bpp");
+static const u8 sForretressGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_12.4bpp.lz");
 static const ax_sprite sForretressSprites12[] = {
 	{sForretressGfx12, ARRAY_COUNT(sForretressGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx13[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_13.4bpp");
+static const u8 sForretressGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_13.4bpp.lz");
 static const ax_sprite sForretressSprites13[] = {
 	{sForretressGfx13, ARRAY_COUNT(sForretressGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx14[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_14.4bpp");
+static const u8 sForretressGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_14.4bpp.lz");
 static const ax_sprite sForretressSprites14[] = {
 	{sForretressGfx14, ARRAY_COUNT(sForretressGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx15[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_15.4bpp");
+static const u8 sForretressGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_15.4bpp.lz");
 static const ax_sprite sForretressSprites15[] = {
 	{sForretressGfx15, ARRAY_COUNT(sForretressGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx16[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_16.4bpp");
+static const u8 sForretressGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_16.4bpp.lz");
 static const ax_sprite sForretressSprites16[] = {
 	{sForretressGfx16, ARRAY_COUNT(sForretressGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sForretressGfx17[] = INCBIN_U8("graphics/ax/mon/forretress/sprite_17.4bpp");
+static const u8 sForretressGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/forretress/sprite_17.4bpp.lz");
 static const ax_sprite sForretressSprites17[] = {
 	{sForretressGfx17, ARRAY_COUNT(sForretressGfx17)}, 
 	{NULL, 0}

@@ -3116,85 +3116,85 @@ static const ax_anim sMeowthAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMeowthGfx1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_1.4bpp");
+static const u8 sMeowthGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_1.4bpp.lz");
 static const ax_sprite sMeowthSprites1[] = {
 	{sMeowthGfx1, ARRAY_COUNT(sMeowthGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_2.4bpp");
+static const u8 sMeowthGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_2.4bpp.lz");
 static const ax_sprite sMeowthSprites2[] = {
 	{sMeowthGfx2, ARRAY_COUNT(sMeowthGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx3[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_3.4bpp");
+static const u8 sMeowthGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_3.4bpp.lz");
 static const ax_sprite sMeowthSprites3[] = {
 	{sMeowthGfx3, ARRAY_COUNT(sMeowthGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx4[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_4.4bpp");
+static const u8 sMeowthGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_4.4bpp.lz");
 static const ax_sprite sMeowthSprites4[] = {
 	{sMeowthGfx4, ARRAY_COUNT(sMeowthGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx5[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_5.4bpp");
+static const u8 sMeowthGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_5.4bpp.lz");
 static const ax_sprite sMeowthSprites5[] = {
 	{sMeowthGfx5, ARRAY_COUNT(sMeowthGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx6[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_6.4bpp");
+static const u8 sMeowthGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_6.4bpp.lz");
 static const ax_sprite sMeowthSprites6[] = {
 	{sMeowthGfx6, ARRAY_COUNT(sMeowthGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx7[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_7.4bpp");
+static const u8 sMeowthGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_7.4bpp.lz");
 static const ax_sprite sMeowthSprites7[] = {
 	{sMeowthGfx7, ARRAY_COUNT(sMeowthGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx8[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_8.4bpp");
+static const u8 sMeowthGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_8.4bpp.lz");
 static const ax_sprite sMeowthSprites8[] = {
 	{sMeowthGfx8, ARRAY_COUNT(sMeowthGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx9[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_9.4bpp");
+static const u8 sMeowthGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_9.4bpp.lz");
 static const ax_sprite sMeowthSprites9[] = {
 	{sMeowthGfx9, ARRAY_COUNT(sMeowthGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx10[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_10.4bpp");
+static const u8 sMeowthGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_10.4bpp.lz");
 static const ax_sprite sMeowthSprites10[] = {
 	{sMeowthGfx10, ARRAY_COUNT(sMeowthGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx11[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_11.4bpp");
+static const u8 sMeowthGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_11.4bpp.lz");
 static const ax_sprite sMeowthSprites11[] = {
 	{sMeowthGfx11, ARRAY_COUNT(sMeowthGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx12[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_12.4bpp");
+static const u8 sMeowthGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_12.4bpp.lz");
 static const ax_sprite sMeowthSprites12[] = {
 	{sMeowthGfx12, ARRAY_COUNT(sMeowthGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx13[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_13.4bpp");
+static const u8 sMeowthGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_13.4bpp.lz");
 static const ax_sprite sMeowthSprites13[] = {
 	{sMeowthGfx13, ARRAY_COUNT(sMeowthGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx14[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_14.4bpp");
+static const u8 sMeowthGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_14.4bpp.lz");
 static const ax_sprite sMeowthSprites14[] = {
 	{sMeowthGfx14, ARRAY_COUNT(sMeowthGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx15[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_15.4bpp");
+static const u8 sMeowthGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_15.4bpp.lz");
 static const ax_sprite sMeowthSprites15[] = {
 	{sMeowthGfx15, ARRAY_COUNT(sMeowthGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx16[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_16.4bpp");
-static const u8 sMeowthGfx16_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_16_1.4bpp");
-static const u8 sMeowthGfx16_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_16_2.4bpp");
-static const u8 sMeowthGfx16_3[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_16_3.4bpp");
+static const u8 sMeowthGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_16.4bpp.lz");
+static const u8 sMeowthGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_16_1.4bpp.lz");
+static const u8 sMeowthGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_16_2.4bpp.lz");
+static const u8 sMeowthGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_16_3.4bpp.lz");
 static const ax_sprite sMeowthSprites16[] = {
 	{sMeowthGfx16, ARRAY_COUNT(sMeowthGfx16)}, 
 	{NULL, 96}, 
@@ -3206,9 +3206,9 @@ static const ax_sprite sMeowthSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx17[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_17.4bpp");
-static const u8 sMeowthGfx17_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_17_1.4bpp");
-static const u8 sMeowthGfx17_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_17_2.4bpp");
+static const u8 sMeowthGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_17.4bpp.lz");
+static const u8 sMeowthGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_17_1.4bpp.lz");
+static const u8 sMeowthGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_17_2.4bpp.lz");
 static const ax_sprite sMeowthSprites17[] = {
 	{sMeowthGfx17, ARRAY_COUNT(sMeowthGfx17)}, 
 	{NULL, 32}, 
@@ -3218,8 +3218,8 @@ static const ax_sprite sMeowthSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx18[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_18.4bpp");
-static const u8 sMeowthGfx18_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_18_1.4bpp");
+static const u8 sMeowthGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_18.4bpp.lz");
+static const u8 sMeowthGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_18_1.4bpp.lz");
 static const ax_sprite sMeowthSprites18[] = {
 	{NULL, 64}, 
 	{sMeowthGfx18, ARRAY_COUNT(sMeowthGfx18)}, 
@@ -3227,9 +3227,9 @@ static const ax_sprite sMeowthSprites18[] = {
 	{sMeowthGfx18_1, ARRAY_COUNT(sMeowthGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx19[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_19.4bpp");
-static const u8 sMeowthGfx19_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_19_1.4bpp");
-static const u8 sMeowthGfx19_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_19_2.4bpp");
+static const u8 sMeowthGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_19.4bpp.lz");
+static const u8 sMeowthGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_19_1.4bpp.lz");
+static const u8 sMeowthGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_19_2.4bpp.lz");
 static const ax_sprite sMeowthSprites19[] = {
 	{sMeowthGfx19, ARRAY_COUNT(sMeowthGfx19)}, 
 	{NULL, 32}, 
@@ -3239,9 +3239,9 @@ static const ax_sprite sMeowthSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx20[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_20.4bpp");
-static const u8 sMeowthGfx20_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_20_1.4bpp");
-static const u8 sMeowthGfx20_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_20_2.4bpp");
+static const u8 sMeowthGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_20.4bpp.lz");
+static const u8 sMeowthGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_20_1.4bpp.lz");
+static const u8 sMeowthGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_20_2.4bpp.lz");
 static const ax_sprite sMeowthSprites20[] = {
 	{sMeowthGfx20, ARRAY_COUNT(sMeowthGfx20)}, 
 	{NULL, 32}, 
@@ -3251,9 +3251,9 @@ static const ax_sprite sMeowthSprites20[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx21[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_21.4bpp");
-static const u8 sMeowthGfx21_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_21_1.4bpp");
-static const u8 sMeowthGfx21_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_21_2.4bpp");
+static const u8 sMeowthGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_21.4bpp.lz");
+static const u8 sMeowthGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_21_1.4bpp.lz");
+static const u8 sMeowthGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_21_2.4bpp.lz");
 static const ax_sprite sMeowthSprites21[] = {
 	{NULL, 32}, 
 	{sMeowthGfx21, ARRAY_COUNT(sMeowthGfx21)}, 
@@ -3264,9 +3264,9 @@ static const ax_sprite sMeowthSprites21[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx22[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_22.4bpp");
-static const u8 sMeowthGfx22_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_22_1.4bpp");
-static const u8 sMeowthGfx22_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_22_2.4bpp");
+static const u8 sMeowthGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_22.4bpp.lz");
+static const u8 sMeowthGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_22_1.4bpp.lz");
+static const u8 sMeowthGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_22_2.4bpp.lz");
 static const ax_sprite sMeowthSprites22[] = {
 	{sMeowthGfx22, ARRAY_COUNT(sMeowthGfx22)}, 
 	{NULL, 32}, 
@@ -3276,9 +3276,9 @@ static const ax_sprite sMeowthSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx23[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_23.4bpp");
-static const u8 sMeowthGfx23_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_23_1.4bpp");
-static const u8 sMeowthGfx23_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_23_2.4bpp");
+static const u8 sMeowthGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_23.4bpp.lz");
+static const u8 sMeowthGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_23_1.4bpp.lz");
+static const u8 sMeowthGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_23_2.4bpp.lz");
 static const ax_sprite sMeowthSprites23[] = {
 	{sMeowthGfx23, ARRAY_COUNT(sMeowthGfx23)}, 
 	{NULL, 32}, 
@@ -3288,9 +3288,9 @@ static const ax_sprite sMeowthSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx24[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_24.4bpp");
-static const u8 sMeowthGfx24_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_24_1.4bpp");
-static const u8 sMeowthGfx24_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_24_2.4bpp");
+static const u8 sMeowthGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_24.4bpp.lz");
+static const u8 sMeowthGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_24_1.4bpp.lz");
+static const u8 sMeowthGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_24_2.4bpp.lz");
 static const ax_sprite sMeowthSprites24[] = {
 	{NULL, 64}, 
 	{sMeowthGfx24, ARRAY_COUNT(sMeowthGfx24)}, 
@@ -3301,9 +3301,9 @@ static const ax_sprite sMeowthSprites24[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx25[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_25.4bpp");
-static const u8 sMeowthGfx25_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_25_1.4bpp");
-static const u8 sMeowthGfx25_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_25_2.4bpp");
+static const u8 sMeowthGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_25.4bpp.lz");
+static const u8 sMeowthGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_25_1.4bpp.lz");
+static const u8 sMeowthGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_25_2.4bpp.lz");
 static const ax_sprite sMeowthSprites25[] = {
 	{sMeowthGfx25, ARRAY_COUNT(sMeowthGfx25)}, 
 	{NULL, 32}, 
@@ -3313,9 +3313,9 @@ static const ax_sprite sMeowthSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx26[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_26.4bpp");
-static const u8 sMeowthGfx26_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_26_1.4bpp");
-static const u8 sMeowthGfx26_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_26_2.4bpp");
+static const u8 sMeowthGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_26.4bpp.lz");
+static const u8 sMeowthGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_26_1.4bpp.lz");
+static const u8 sMeowthGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_26_2.4bpp.lz");
 static const ax_sprite sMeowthSprites26[] = {
 	{sMeowthGfx26, ARRAY_COUNT(sMeowthGfx26)}, 
 	{NULL, 32}, 
@@ -3325,9 +3325,9 @@ static const ax_sprite sMeowthSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx27[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_27.4bpp");
-static const u8 sMeowthGfx27_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_27_1.4bpp");
-static const u8 sMeowthGfx27_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_27_2.4bpp");
+static const u8 sMeowthGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_27.4bpp.lz");
+static const u8 sMeowthGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_27_1.4bpp.lz");
+static const u8 sMeowthGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_27_2.4bpp.lz");
 static const ax_sprite sMeowthSprites27[] = {
 	{sMeowthGfx27, ARRAY_COUNT(sMeowthGfx27)}, 
 	{NULL, 32}, 
@@ -3337,15 +3337,15 @@ static const ax_sprite sMeowthSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx28[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_28.4bpp");
+static const u8 sMeowthGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_28.4bpp.lz");
 static const ax_sprite sMeowthSprites28[] = {
 	{sMeowthGfx28, ARRAY_COUNT(sMeowthGfx28)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx29[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_29.4bpp");
-static const u8 sMeowthGfx29_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_29_1.4bpp");
-static const u8 sMeowthGfx29_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_29_2.4bpp");
+static const u8 sMeowthGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_29.4bpp.lz");
+static const u8 sMeowthGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_29_1.4bpp.lz");
+static const u8 sMeowthGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_29_2.4bpp.lz");
 static const ax_sprite sMeowthSprites29[] = {
 	{sMeowthGfx29, ARRAY_COUNT(sMeowthGfx29)}, 
 	{NULL, 32}, 
@@ -3355,9 +3355,9 @@ static const ax_sprite sMeowthSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx30[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_30.4bpp");
-static const u8 sMeowthGfx30_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_30_1.4bpp");
-static const u8 sMeowthGfx30_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_30_2.4bpp");
+static const u8 sMeowthGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_30.4bpp.lz");
+static const u8 sMeowthGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_30_1.4bpp.lz");
+static const u8 sMeowthGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_30_2.4bpp.lz");
 static const ax_sprite sMeowthSprites30[] = {
 	{sMeowthGfx30, ARRAY_COUNT(sMeowthGfx30)}, 
 	{NULL, 32}, 
@@ -3367,9 +3367,9 @@ static const ax_sprite sMeowthSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx31[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_31.4bpp");
-static const u8 sMeowthGfx31_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_31_1.4bpp");
-static const u8 sMeowthGfx31_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_31_2.4bpp");
+static const u8 sMeowthGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_31.4bpp.lz");
+static const u8 sMeowthGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_31_1.4bpp.lz");
+static const u8 sMeowthGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_31_2.4bpp.lz");
 static const ax_sprite sMeowthSprites31[] = {
 	{sMeowthGfx31, ARRAY_COUNT(sMeowthGfx31)}, 
 	{NULL, 32}, 
@@ -3379,9 +3379,9 @@ static const ax_sprite sMeowthSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx32[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_32.4bpp");
-static const u8 sMeowthGfx32_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_32_1.4bpp");
-static const u8 sMeowthGfx32_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_32_2.4bpp");
+static const u8 sMeowthGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_32.4bpp.lz");
+static const u8 sMeowthGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_32_1.4bpp.lz");
+static const u8 sMeowthGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_32_2.4bpp.lz");
 static const ax_sprite sMeowthSprites32[] = {
 	{sMeowthGfx32, ARRAY_COUNT(sMeowthGfx32)}, 
 	{NULL, 32}, 
@@ -3391,9 +3391,9 @@ static const ax_sprite sMeowthSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx33[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_33.4bpp");
-static const u8 sMeowthGfx33_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_33_1.4bpp");
-static const u8 sMeowthGfx33_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_33_2.4bpp");
+static const u8 sMeowthGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_33.4bpp.lz");
+static const u8 sMeowthGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_33_1.4bpp.lz");
+static const u8 sMeowthGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_33_2.4bpp.lz");
 static const ax_sprite sMeowthSprites33[] = {
 	{sMeowthGfx33, ARRAY_COUNT(sMeowthGfx33)}, 
 	{NULL, 32}, 
@@ -3403,9 +3403,9 @@ static const ax_sprite sMeowthSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx34[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_34.4bpp");
-static const u8 sMeowthGfx34_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_34_1.4bpp");
-static const u8 sMeowthGfx34_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_34_2.4bpp");
+static const u8 sMeowthGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_34.4bpp.lz");
+static const u8 sMeowthGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_34_1.4bpp.lz");
+static const u8 sMeowthGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_34_2.4bpp.lz");
 static const ax_sprite sMeowthSprites34[] = {
 	{sMeowthGfx34, ARRAY_COUNT(sMeowthGfx34)}, 
 	{NULL, 32}, 
@@ -3415,10 +3415,10 @@ static const ax_sprite sMeowthSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx35[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_35.4bpp");
-static const u8 sMeowthGfx35_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_35_1.4bpp");
-static const u8 sMeowthGfx35_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_35_2.4bpp");
-static const u8 sMeowthGfx35_3[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_35_3.4bpp");
+static const u8 sMeowthGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_35.4bpp.lz");
+static const u8 sMeowthGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_35_1.4bpp.lz");
+static const u8 sMeowthGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_35_2.4bpp.lz");
+static const u8 sMeowthGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_35_3.4bpp.lz");
 static const ax_sprite sMeowthSprites35[] = {
 	{sMeowthGfx35, ARRAY_COUNT(sMeowthGfx35)}, 
 	{NULL, 96}, 
@@ -3430,9 +3430,9 @@ static const ax_sprite sMeowthSprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx36[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_36.4bpp");
-static const u8 sMeowthGfx36_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_36_1.4bpp");
-static const u8 sMeowthGfx36_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_36_2.4bpp");
+static const u8 sMeowthGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_36.4bpp.lz");
+static const u8 sMeowthGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_36_1.4bpp.lz");
+static const u8 sMeowthGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_36_2.4bpp.lz");
 static const ax_sprite sMeowthSprites36[] = {
 	{sMeowthGfx36, ARRAY_COUNT(sMeowthGfx36)}, 
 	{NULL, 32}, 
@@ -3442,9 +3442,9 @@ static const ax_sprite sMeowthSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx37[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_37.4bpp");
-static const u8 sMeowthGfx37_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_37_1.4bpp");
-static const u8 sMeowthGfx37_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_37_2.4bpp");
+static const u8 sMeowthGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_37.4bpp.lz");
+static const u8 sMeowthGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_37_1.4bpp.lz");
+static const u8 sMeowthGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_37_2.4bpp.lz");
 static const ax_sprite sMeowthSprites37[] = {
 	{NULL, 128}, 
 	{sMeowthGfx37, ARRAY_COUNT(sMeowthGfx37)}, 
@@ -3455,9 +3455,9 @@ static const ax_sprite sMeowthSprites37[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx38[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_38.4bpp");
-static const u8 sMeowthGfx38_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_38_1.4bpp");
-static const u8 sMeowthGfx38_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_38_2.4bpp");
+static const u8 sMeowthGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_38.4bpp.lz");
+static const u8 sMeowthGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_38_1.4bpp.lz");
+static const u8 sMeowthGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_38_2.4bpp.lz");
 static const ax_sprite sMeowthSprites38[] = {
 	{NULL, 192}, 
 	{sMeowthGfx38, ARRAY_COUNT(sMeowthGfx38)}, 
@@ -3468,10 +3468,10 @@ static const ax_sprite sMeowthSprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx39[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_39.4bpp");
-static const u8 sMeowthGfx39_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_39_1.4bpp");
-static const u8 sMeowthGfx39_2[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_39_2.4bpp");
-static const u8 sMeowthGfx39_3[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_39_3.4bpp");
+static const u8 sMeowthGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_39.4bpp.lz");
+static const u8 sMeowthGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_39_1.4bpp.lz");
+static const u8 sMeowthGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_39_2.4bpp.lz");
+static const u8 sMeowthGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_39_3.4bpp.lz");
 static const ax_sprite sMeowthSprites39[] = {
 	{NULL, 64}, 
 	{sMeowthGfx39, ARRAY_COUNT(sMeowthGfx39)}, 
@@ -3484,15 +3484,15 @@ static const ax_sprite sMeowthSprites39[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx40[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_40.4bpp");
+static const u8 sMeowthGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_40.4bpp.lz");
 static const ax_sprite sMeowthSprites40[] = {
 	{NULL, 64}, 
 	{sMeowthGfx40, ARRAY_COUNT(sMeowthGfx40)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx41[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_41.4bpp");
-static const u8 sMeowthGfx41_1[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_41_1.4bpp");
+static const u8 sMeowthGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_41.4bpp.lz");
+static const u8 sMeowthGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_41_1.4bpp.lz");
 static const ax_sprite sMeowthSprites41[] = {
 	{NULL, 64}, 
 	{sMeowthGfx41, ARRAY_COUNT(sMeowthGfx41)}, 
@@ -3501,199 +3501,199 @@ static const ax_sprite sMeowthSprites41[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx42[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_42.4bpp");
+static const u8 sMeowthGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_42.4bpp.lz");
 static const ax_sprite sMeowthSprites42[] = {
 	{NULL, 64}, 
 	{sMeowthGfx42, ARRAY_COUNT(sMeowthGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx43[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_43.4bpp");
+static const u8 sMeowthGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_43.4bpp.lz");
 static const ax_sprite sMeowthSprites43[] = {
 	{sMeowthGfx43, ARRAY_COUNT(sMeowthGfx43)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx44[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_44.4bpp");
+static const u8 sMeowthGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_44.4bpp.lz");
 static const ax_sprite sMeowthSprites44[] = {
 	{sMeowthGfx44, ARRAY_COUNT(sMeowthGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx45[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_45.4bpp");
+static const u8 sMeowthGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_45.4bpp.lz");
 static const ax_sprite sMeowthSprites45[] = {
 	{sMeowthGfx45, ARRAY_COUNT(sMeowthGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx46[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_46.4bpp");
+static const u8 sMeowthGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_46.4bpp.lz");
 static const ax_sprite sMeowthSprites46[] = {
 	{sMeowthGfx46, ARRAY_COUNT(sMeowthGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx47[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_47.4bpp");
+static const u8 sMeowthGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_47.4bpp.lz");
 static const ax_sprite sMeowthSprites47[] = {
 	{sMeowthGfx47, ARRAY_COUNT(sMeowthGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx48[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_48.4bpp");
+static const u8 sMeowthGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_48.4bpp.lz");
 static const ax_sprite sMeowthSprites48[] = {
 	{sMeowthGfx48, ARRAY_COUNT(sMeowthGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx49[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_49.4bpp");
+static const u8 sMeowthGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_49.4bpp.lz");
 static const ax_sprite sMeowthSprites49[] = {
 	{sMeowthGfx49, ARRAY_COUNT(sMeowthGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx50[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_50.4bpp");
+static const u8 sMeowthGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_50.4bpp.lz");
 static const ax_sprite sMeowthSprites50[] = {
 	{sMeowthGfx50, ARRAY_COUNT(sMeowthGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx51[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_51.4bpp");
+static const u8 sMeowthGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_51.4bpp.lz");
 static const ax_sprite sMeowthSprites51[] = {
 	{sMeowthGfx51, ARRAY_COUNT(sMeowthGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx52[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_52.4bpp");
+static const u8 sMeowthGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_52.4bpp.lz");
 static const ax_sprite sMeowthSprites52[] = {
 	{sMeowthGfx52, ARRAY_COUNT(sMeowthGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx53[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_53.4bpp");
+static const u8 sMeowthGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_53.4bpp.lz");
 static const ax_sprite sMeowthSprites53[] = {
 	{sMeowthGfx53, ARRAY_COUNT(sMeowthGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx54[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_54.4bpp");
+static const u8 sMeowthGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_54.4bpp.lz");
 static const ax_sprite sMeowthSprites54[] = {
 	{sMeowthGfx54, ARRAY_COUNT(sMeowthGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx55[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_55.4bpp");
+static const u8 sMeowthGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_55.4bpp.lz");
 static const ax_sprite sMeowthSprites55[] = {
 	{sMeowthGfx55, ARRAY_COUNT(sMeowthGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx56[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_56.4bpp");
+static const u8 sMeowthGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_56.4bpp.lz");
 static const ax_sprite sMeowthSprites56[] = {
 	{sMeowthGfx56, ARRAY_COUNT(sMeowthGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx57[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_57.4bpp");
+static const u8 sMeowthGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_57.4bpp.lz");
 static const ax_sprite sMeowthSprites57[] = {
 	{sMeowthGfx57, ARRAY_COUNT(sMeowthGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx58[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_58.4bpp");
+static const u8 sMeowthGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_58.4bpp.lz");
 static const ax_sprite sMeowthSprites58[] = {
 	{sMeowthGfx58, ARRAY_COUNT(sMeowthGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx59[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_59.4bpp");
+static const u8 sMeowthGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_59.4bpp.lz");
 static const ax_sprite sMeowthSprites59[] = {
 	{sMeowthGfx59, ARRAY_COUNT(sMeowthGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx60[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_60.4bpp");
+static const u8 sMeowthGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_60.4bpp.lz");
 static const ax_sprite sMeowthSprites60[] = {
 	{sMeowthGfx60, ARRAY_COUNT(sMeowthGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx61[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_61.4bpp");
+static const u8 sMeowthGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_61.4bpp.lz");
 static const ax_sprite sMeowthSprites61[] = {
 	{sMeowthGfx61, ARRAY_COUNT(sMeowthGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx62[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_62.4bpp");
+static const u8 sMeowthGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_62.4bpp.lz");
 static const ax_sprite sMeowthSprites62[] = {
 	{sMeowthGfx62, ARRAY_COUNT(sMeowthGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx63[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_63.4bpp");
+static const u8 sMeowthGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_63.4bpp.lz");
 static const ax_sprite sMeowthSprites63[] = {
 	{sMeowthGfx63, ARRAY_COUNT(sMeowthGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx64[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_64.4bpp");
+static const u8 sMeowthGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_64.4bpp.lz");
 static const ax_sprite sMeowthSprites64[] = {
 	{sMeowthGfx64, ARRAY_COUNT(sMeowthGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx65[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_65.4bpp");
+static const u8 sMeowthGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_65.4bpp.lz");
 static const ax_sprite sMeowthSprites65[] = {
 	{sMeowthGfx65, ARRAY_COUNT(sMeowthGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx66[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_66.4bpp");
+static const u8 sMeowthGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_66.4bpp.lz");
 static const ax_sprite sMeowthSprites66[] = {
 	{sMeowthGfx66, ARRAY_COUNT(sMeowthGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx67[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_67.4bpp");
+static const u8 sMeowthGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_67.4bpp.lz");
 static const ax_sprite sMeowthSprites67[] = {
 	{sMeowthGfx67, ARRAY_COUNT(sMeowthGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx68[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_68.4bpp");
+static const u8 sMeowthGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_68.4bpp.lz");
 static const ax_sprite sMeowthSprites68[] = {
 	{sMeowthGfx68, ARRAY_COUNT(sMeowthGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx69[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_69.4bpp");
+static const u8 sMeowthGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_69.4bpp.lz");
 static const ax_sprite sMeowthSprites69[] = {
 	{sMeowthGfx69, ARRAY_COUNT(sMeowthGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx70[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_70.4bpp");
+static const u8 sMeowthGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_70.4bpp.lz");
 static const ax_sprite sMeowthSprites70[] = {
 	{sMeowthGfx70, ARRAY_COUNT(sMeowthGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx71[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_71.4bpp");
+static const u8 sMeowthGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_71.4bpp.lz");
 static const ax_sprite sMeowthSprites71[] = {
 	{sMeowthGfx71, ARRAY_COUNT(sMeowthGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx72[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_72.4bpp");
+static const u8 sMeowthGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_72.4bpp.lz");
 static const ax_sprite sMeowthSprites72[] = {
 	{sMeowthGfx72, ARRAY_COUNT(sMeowthGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx73[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_73.4bpp");
+static const u8 sMeowthGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_73.4bpp.lz");
 static const ax_sprite sMeowthSprites73[] = {
 	{sMeowthGfx73, ARRAY_COUNT(sMeowthGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx74[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_74.4bpp");
+static const u8 sMeowthGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_74.4bpp.lz");
 static const ax_sprite sMeowthSprites74[] = {
 	{sMeowthGfx74, ARRAY_COUNT(sMeowthGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx75[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_75.4bpp");
+static const u8 sMeowthGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_75.4bpp.lz");
 static const ax_sprite sMeowthSprites75[] = {
 	{sMeowthGfx75, ARRAY_COUNT(sMeowthGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx76[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_76.4bpp");
+static const u8 sMeowthGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_76.4bpp.lz");
 static const ax_sprite sMeowthSprites76[] = {
 	{sMeowthGfx76, ARRAY_COUNT(sMeowthGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx77[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_77.4bpp");
+static const u8 sMeowthGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_77.4bpp.lz");
 static const ax_sprite sMeowthSprites77[] = {
 	{sMeowthGfx77, ARRAY_COUNT(sMeowthGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx78[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_78.4bpp");
+static const u8 sMeowthGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_78.4bpp.lz");
 static const ax_sprite sMeowthSprites78[] = {
 	{sMeowthGfx78, ARRAY_COUNT(sMeowthGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx79[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_79.4bpp");
+static const u8 sMeowthGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_79.4bpp.lz");
 static const ax_sprite sMeowthSprites79[] = {
 	{sMeowthGfx79, ARRAY_COUNT(sMeowthGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sMeowthGfx80[] = INCBIN_U8("graphics/ax/mon/meowth/sprite_80.4bpp");
+static const u8 sMeowthGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/meowth/sprite_80.4bpp.lz");
 static const ax_sprite sMeowthSprites80[] = {
 	{sMeowthGfx80, ARRAY_COUNT(sMeowthGfx80)}, 
 	{NULL, 0}

@@ -2147,89 +2147,89 @@ static const ax_anim sVibravaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVibravaGfx1[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_1.4bpp");
+static const u8 sVibravaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_1.4bpp.lz");
 static const ax_sprite sVibravaSprites1[] = {
 	{sVibravaGfx1, ARRAY_COUNT(sVibravaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx2[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_2.4bpp");
+static const u8 sVibravaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_2.4bpp.lz");
 static const ax_sprite sVibravaSprites2[] = {
 	{sVibravaGfx2, ARRAY_COUNT(sVibravaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx3[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_3.4bpp");
+static const u8 sVibravaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_3.4bpp.lz");
 static const ax_sprite sVibravaSprites3[] = {
 	{sVibravaGfx3, ARRAY_COUNT(sVibravaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx4[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_4.4bpp");
+static const u8 sVibravaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_4.4bpp.lz");
 static const ax_sprite sVibravaSprites4[] = {
 	{sVibravaGfx4, ARRAY_COUNT(sVibravaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx5[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_5.4bpp");
+static const u8 sVibravaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_5.4bpp.lz");
 static const ax_sprite sVibravaSprites5[] = {
 	{sVibravaGfx5, ARRAY_COUNT(sVibravaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx6[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_6.4bpp");
+static const u8 sVibravaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_6.4bpp.lz");
 static const ax_sprite sVibravaSprites6[] = {
 	{sVibravaGfx6, ARRAY_COUNT(sVibravaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx7[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_7.4bpp");
+static const u8 sVibravaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_7.4bpp.lz");
 static const ax_sprite sVibravaSprites7[] = {
 	{sVibravaGfx7, ARRAY_COUNT(sVibravaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx8[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_8.4bpp");
+static const u8 sVibravaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_8.4bpp.lz");
 static const ax_sprite sVibravaSprites8[] = {
 	{sVibravaGfx8, ARRAY_COUNT(sVibravaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx9[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_9.4bpp");
+static const u8 sVibravaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_9.4bpp.lz");
 static const ax_sprite sVibravaSprites9[] = {
 	{sVibravaGfx9, ARRAY_COUNT(sVibravaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx10[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_10.4bpp");
+static const u8 sVibravaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_10.4bpp.lz");
 static const ax_sprite sVibravaSprites10[] = {
 	{sVibravaGfx10, ARRAY_COUNT(sVibravaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx11[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_11.4bpp");
+static const u8 sVibravaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_11.4bpp.lz");
 static const ax_sprite sVibravaSprites11[] = {
 	{sVibravaGfx11, ARRAY_COUNT(sVibravaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx12[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_12.4bpp");
+static const u8 sVibravaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_12.4bpp.lz");
 static const ax_sprite sVibravaSprites12[] = {
 	{sVibravaGfx12, ARRAY_COUNT(sVibravaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx13[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_13.4bpp");
+static const u8 sVibravaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_13.4bpp.lz");
 static const ax_sprite sVibravaSprites13[] = {
 	{sVibravaGfx13, ARRAY_COUNT(sVibravaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx14[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_14.4bpp");
+static const u8 sVibravaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_14.4bpp.lz");
 static const ax_sprite sVibravaSprites14[] = {
 	{sVibravaGfx14, ARRAY_COUNT(sVibravaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx15[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_15.4bpp");
+static const u8 sVibravaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_15.4bpp.lz");
 static const ax_sprite sVibravaSprites15[] = {
 	{sVibravaGfx15, ARRAY_COUNT(sVibravaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx16[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_16.4bpp");
+static const u8 sVibravaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_16.4bpp.lz");
 static const ax_sprite sVibravaSprites16[] = {
 	{sVibravaGfx16, ARRAY_COUNT(sVibravaGfx16)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx17[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_17.4bpp");
-static const u8 sVibravaGfx17_1[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_17_1.4bpp");
+static const u8 sVibravaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_17.4bpp.lz");
+static const u8 sVibravaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_17_1.4bpp.lz");
 static const ax_sprite sVibravaSprites17[] = {
 	{sVibravaGfx17, ARRAY_COUNT(sVibravaGfx17)}, 
 	{NULL, 32}, 
@@ -2237,10 +2237,10 @@ static const ax_sprite sVibravaSprites17[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx18[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_18.4bpp");
-static const u8 sVibravaGfx18_1[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_18_1.4bpp");
-static const u8 sVibravaGfx18_2[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_18_2.4bpp");
-static const u8 sVibravaGfx18_3[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_18_3.4bpp");
+static const u8 sVibravaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_18.4bpp.lz");
+static const u8 sVibravaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_18_1.4bpp.lz");
+static const u8 sVibravaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_18_2.4bpp.lz");
+static const u8 sVibravaGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_18_3.4bpp.lz");
 static const ax_sprite sVibravaSprites18[] = {
 	{sVibravaGfx18, ARRAY_COUNT(sVibravaGfx18)}, 
 	{NULL, 32}, 
@@ -2252,10 +2252,10 @@ static const ax_sprite sVibravaSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx19[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_19.4bpp");
-static const u8 sVibravaGfx19_1[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_19_1.4bpp");
-static const u8 sVibravaGfx19_2[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_19_2.4bpp");
-static const u8 sVibravaGfx19_3[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_19_3.4bpp");
+static const u8 sVibravaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_19.4bpp.lz");
+static const u8 sVibravaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_19_1.4bpp.lz");
+static const u8 sVibravaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_19_2.4bpp.lz");
+static const u8 sVibravaGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_19_3.4bpp.lz");
 static const ax_sprite sVibravaSprites19[] = {
 	{NULL, 32}, 
 	{sVibravaGfx19, ARRAY_COUNT(sVibravaGfx19)}, 
@@ -2267,9 +2267,9 @@ static const ax_sprite sVibravaSprites19[] = {
 	{sVibravaGfx19_3, ARRAY_COUNT(sVibravaGfx19_3)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx20[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_20.4bpp");
-static const u8 sVibravaGfx20_1[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_20_1.4bpp");
-static const u8 sVibravaGfx20_2[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_20_2.4bpp");
+static const u8 sVibravaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_20.4bpp.lz");
+static const u8 sVibravaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_20_1.4bpp.lz");
+static const u8 sVibravaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_20_2.4bpp.lz");
 static const ax_sprite sVibravaSprites20[] = {
 	{NULL, 32}, 
 	{sVibravaGfx20, ARRAY_COUNT(sVibravaGfx20)}, 
@@ -2280,57 +2280,57 @@ static const ax_sprite sVibravaSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx21[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_21.4bpp");
+static const u8 sVibravaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_21.4bpp.lz");
 static const ax_sprite sVibravaSprites21[] = {
 	{sVibravaGfx21, ARRAY_COUNT(sVibravaGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx22[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_22.4bpp");
+static const u8 sVibravaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_22.4bpp.lz");
 static const ax_sprite sVibravaSprites22[] = {
 	{sVibravaGfx22, ARRAY_COUNT(sVibravaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx23[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_23.4bpp");
+static const u8 sVibravaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_23.4bpp.lz");
 static const ax_sprite sVibravaSprites23[] = {
 	{sVibravaGfx23, ARRAY_COUNT(sVibravaGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx24[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_24.4bpp");
+static const u8 sVibravaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_24.4bpp.lz");
 static const ax_sprite sVibravaSprites24[] = {
 	{sVibravaGfx24, ARRAY_COUNT(sVibravaGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx25[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_25.4bpp");
+static const u8 sVibravaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_25.4bpp.lz");
 static const ax_sprite sVibravaSprites25[] = {
 	{sVibravaGfx25, ARRAY_COUNT(sVibravaGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx26[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_26.4bpp");
+static const u8 sVibravaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_26.4bpp.lz");
 static const ax_sprite sVibravaSprites26[] = {
 	{sVibravaGfx26, ARRAY_COUNT(sVibravaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx27[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_27.4bpp");
+static const u8 sVibravaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_27.4bpp.lz");
 static const ax_sprite sVibravaSprites27[] = {
 	{sVibravaGfx27, ARRAY_COUNT(sVibravaGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx28[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_28.4bpp");
+static const u8 sVibravaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_28.4bpp.lz");
 static const ax_sprite sVibravaSprites28[] = {
 	{sVibravaGfx28, ARRAY_COUNT(sVibravaGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx29[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_29.4bpp");
+static const u8 sVibravaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_29.4bpp.lz");
 static const ax_sprite sVibravaSprites29[] = {
 	{sVibravaGfx29, ARRAY_COUNT(sVibravaGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx30[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_30.4bpp");
+static const u8 sVibravaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_30.4bpp.lz");
 static const ax_sprite sVibravaSprites30[] = {
 	{sVibravaGfx30, ARRAY_COUNT(sVibravaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sVibravaGfx31[] = INCBIN_U8("graphics/ax/mon/vibrava/sprite_31.4bpp");
+static const u8 sVibravaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vibrava/sprite_31.4bpp.lz");
 static const ax_sprite sVibravaSprites31[] = {
 	{sVibravaGfx31, ARRAY_COUNT(sVibravaGfx31)}, 
 	{NULL, 0}

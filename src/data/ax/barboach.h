@@ -2131,139 +2131,139 @@ static const ax_anim sBarboachAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBarboachGfx1[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_1.4bpp");
+static const u8 sBarboachGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_1.4bpp.lz");
 static const ax_sprite sBarboachSprites1[] = {
 	{sBarboachGfx1, ARRAY_COUNT(sBarboachGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx2[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_2.4bpp");
+static const u8 sBarboachGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_2.4bpp.lz");
 static const ax_sprite sBarboachSprites2[] = {
 	{sBarboachGfx2, ARRAY_COUNT(sBarboachGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx3[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_3.4bpp");
+static const u8 sBarboachGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_3.4bpp.lz");
 static const ax_sprite sBarboachSprites3[] = {
 	{sBarboachGfx3, ARRAY_COUNT(sBarboachGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx4[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_4.4bpp");
+static const u8 sBarboachGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_4.4bpp.lz");
 static const ax_sprite sBarboachSprites4[] = {
 	{sBarboachGfx4, ARRAY_COUNT(sBarboachGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx5[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_5.4bpp");
+static const u8 sBarboachGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_5.4bpp.lz");
 static const ax_sprite sBarboachSprites5[] = {
 	{sBarboachGfx5, ARRAY_COUNT(sBarboachGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx6[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_6.4bpp");
+static const u8 sBarboachGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_6.4bpp.lz");
 static const ax_sprite sBarboachSprites6[] = {
 	{sBarboachGfx6, ARRAY_COUNT(sBarboachGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx7[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_7.4bpp");
+static const u8 sBarboachGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_7.4bpp.lz");
 static const ax_sprite sBarboachSprites7[] = {
 	{sBarboachGfx7, ARRAY_COUNT(sBarboachGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx8[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_8.4bpp");
+static const u8 sBarboachGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_8.4bpp.lz");
 static const ax_sprite sBarboachSprites8[] = {
 	{sBarboachGfx8, ARRAY_COUNT(sBarboachGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx9[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_9.4bpp");
+static const u8 sBarboachGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_9.4bpp.lz");
 static const ax_sprite sBarboachSprites9[] = {
 	{sBarboachGfx9, ARRAY_COUNT(sBarboachGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx10[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_10.4bpp");
+static const u8 sBarboachGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_10.4bpp.lz");
 static const ax_sprite sBarboachSprites10[] = {
 	{sBarboachGfx10, ARRAY_COUNT(sBarboachGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx11[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_11.4bpp");
+static const u8 sBarboachGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_11.4bpp.lz");
 static const ax_sprite sBarboachSprites11[] = {
 	{sBarboachGfx11, ARRAY_COUNT(sBarboachGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx12[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_12.4bpp");
+static const u8 sBarboachGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_12.4bpp.lz");
 static const ax_sprite sBarboachSprites12[] = {
 	{sBarboachGfx12, ARRAY_COUNT(sBarboachGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx13[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_13.4bpp");
+static const u8 sBarboachGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_13.4bpp.lz");
 static const ax_sprite sBarboachSprites13[] = {
 	{sBarboachGfx13, ARRAY_COUNT(sBarboachGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx14[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_14.4bpp");
+static const u8 sBarboachGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_14.4bpp.lz");
 static const ax_sprite sBarboachSprites14[] = {
 	{sBarboachGfx14, ARRAY_COUNT(sBarboachGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx15[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_15.4bpp");
+static const u8 sBarboachGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_15.4bpp.lz");
 static const ax_sprite sBarboachSprites15[] = {
 	{sBarboachGfx15, ARRAY_COUNT(sBarboachGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx16[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_16.4bpp");
+static const u8 sBarboachGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_16.4bpp.lz");
 static const ax_sprite sBarboachSprites16[] = {
 	{sBarboachGfx16, ARRAY_COUNT(sBarboachGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx17[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_17.4bpp");
+static const u8 sBarboachGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_17.4bpp.lz");
 static const ax_sprite sBarboachSprites17[] = {
 	{sBarboachGfx17, ARRAY_COUNT(sBarboachGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx18[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_18.4bpp");
+static const u8 sBarboachGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_18.4bpp.lz");
 static const ax_sprite sBarboachSprites18[] = {
 	{sBarboachGfx18, ARRAY_COUNT(sBarboachGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx19[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_19.4bpp");
+static const u8 sBarboachGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_19.4bpp.lz");
 static const ax_sprite sBarboachSprites19[] = {
 	{sBarboachGfx19, ARRAY_COUNT(sBarboachGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx20[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_20.4bpp");
+static const u8 sBarboachGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_20.4bpp.lz");
 static const ax_sprite sBarboachSprites20[] = {
 	{sBarboachGfx20, ARRAY_COUNT(sBarboachGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx21[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_21.4bpp");
+static const u8 sBarboachGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_21.4bpp.lz");
 static const ax_sprite sBarboachSprites21[] = {
 	{sBarboachGfx21, ARRAY_COUNT(sBarboachGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx22[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_22.4bpp");
+static const u8 sBarboachGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_22.4bpp.lz");
 static const ax_sprite sBarboachSprites22[] = {
 	{sBarboachGfx22, ARRAY_COUNT(sBarboachGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx23[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_23.4bpp");
+static const u8 sBarboachGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_23.4bpp.lz");
 static const ax_sprite sBarboachSprites23[] = {
 	{sBarboachGfx23, ARRAY_COUNT(sBarboachGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx24[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_24.4bpp");
+static const u8 sBarboachGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_24.4bpp.lz");
 static const ax_sprite sBarboachSprites24[] = {
 	{sBarboachGfx24, ARRAY_COUNT(sBarboachGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx25[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_25.4bpp");
+static const u8 sBarboachGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_25.4bpp.lz");
 static const ax_sprite sBarboachSprites25[] = {
 	{NULL, 32}, 
 	{sBarboachGfx25, ARRAY_COUNT(sBarboachGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx26[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_26.4bpp");
+static const u8 sBarboachGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_26.4bpp.lz");
 static const ax_sprite sBarboachSprites26[] = {
 	{sBarboachGfx26, ARRAY_COUNT(sBarboachGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx27[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_27.4bpp");
-static const u8 sBarboachGfx27_1[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_27_1.4bpp");
+static const u8 sBarboachGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_27.4bpp.lz");
+static const u8 sBarboachGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_27_1.4bpp.lz");
 static const ax_sprite sBarboachSprites27[] = {
 	{NULL, 64}, 
 	{sBarboachGfx27, ARRAY_COUNT(sBarboachGfx27)}, 
@@ -2272,29 +2272,29 @@ static const ax_sprite sBarboachSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx28[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_28.4bpp");
+static const u8 sBarboachGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_28.4bpp.lz");
 static const ax_sprite sBarboachSprites28[] = {
 	{NULL, 64}, 
 	{sBarboachGfx28, ARRAY_COUNT(sBarboachGfx28)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx29[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_29.4bpp");
-static const u8 sBarboachGfx29_1[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_29_1.4bpp");
+static const u8 sBarboachGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_29.4bpp.lz");
+static const u8 sBarboachGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_29_1.4bpp.lz");
 static const ax_sprite sBarboachSprites29[] = {
 	{sBarboachGfx29, ARRAY_COUNT(sBarboachGfx29)}, 
 	{NULL, 32}, 
 	{sBarboachGfx29_1, ARRAY_COUNT(sBarboachGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx30[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_30.4bpp");
+static const u8 sBarboachGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_30.4bpp.lz");
 static const ax_sprite sBarboachSprites30[] = {
 	{sBarboachGfx30, ARRAY_COUNT(sBarboachGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx31[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_31.4bpp");
-static const u8 sBarboachGfx31_1[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_31_1.4bpp");
-static const u8 sBarboachGfx31_2[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_31_2.4bpp");
+static const u8 sBarboachGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_31.4bpp.lz");
+static const u8 sBarboachGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_31_1.4bpp.lz");
+static const u8 sBarboachGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_31_2.4bpp.lz");
 static const ax_sprite sBarboachSprites31[] = {
 	{sBarboachGfx31, ARRAY_COUNT(sBarboachGfx31)}, 
 	{NULL, 64}, 
@@ -2304,8 +2304,8 @@ static const ax_sprite sBarboachSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx32[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_32.4bpp");
-static const u8 sBarboachGfx32_1[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_32_1.4bpp");
+static const u8 sBarboachGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_32.4bpp.lz");
+static const u8 sBarboachGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_32_1.4bpp.lz");
 static const ax_sprite sBarboachSprites32[] = {
 	{sBarboachGfx32, ARRAY_COUNT(sBarboachGfx32)}, 
 	{NULL, 64}, 
@@ -2313,51 +2313,51 @@ static const ax_sprite sBarboachSprites32[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx33[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_33.4bpp");
+static const u8 sBarboachGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_33.4bpp.lz");
 static const ax_sprite sBarboachSprites33[] = {
 	{sBarboachGfx33, ARRAY_COUNT(sBarboachGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx34[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_34.4bpp");
-static const u8 sBarboachGfx34_1[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_34_1.4bpp");
+static const u8 sBarboachGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_34.4bpp.lz");
+static const u8 sBarboachGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_34_1.4bpp.lz");
 static const ax_sprite sBarboachSprites34[] = {
 	{sBarboachGfx34, ARRAY_COUNT(sBarboachGfx34)}, 
 	{NULL, 32}, 
 	{sBarboachGfx34_1, ARRAY_COUNT(sBarboachGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx35[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_35.4bpp");
+static const u8 sBarboachGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_35.4bpp.lz");
 static const ax_sprite sBarboachSprites35[] = {
 	{sBarboachGfx35, ARRAY_COUNT(sBarboachGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx36[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_36.4bpp");
+static const u8 sBarboachGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_36.4bpp.lz");
 static const ax_sprite sBarboachSprites36[] = {
 	{sBarboachGfx36, ARRAY_COUNT(sBarboachGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx37[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_37.4bpp");
+static const u8 sBarboachGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_37.4bpp.lz");
 static const ax_sprite sBarboachSprites37[] = {
 	{sBarboachGfx37, ARRAY_COUNT(sBarboachGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx38[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_38.4bpp");
+static const u8 sBarboachGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_38.4bpp.lz");
 static const ax_sprite sBarboachSprites38[] = {
 	{sBarboachGfx38, ARRAY_COUNT(sBarboachGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx39[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_39.4bpp");
+static const u8 sBarboachGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_39.4bpp.lz");
 static const ax_sprite sBarboachSprites39[] = {
 	{sBarboachGfx39, ARRAY_COUNT(sBarboachGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx40[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_40.4bpp");
+static const u8 sBarboachGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_40.4bpp.lz");
 static const ax_sprite sBarboachSprites40[] = {
 	{sBarboachGfx40, ARRAY_COUNT(sBarboachGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sBarboachGfx41[] = INCBIN_U8("graphics/ax/mon/barboach/sprite_41.4bpp");
+static const u8 sBarboachGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/barboach/sprite_41.4bpp.lz");
 static const ax_sprite sBarboachSprites41[] = {
 	{sBarboachGfx41, ARRAY_COUNT(sBarboachGfx41)}, 
 	{NULL, 0}

@@ -2467,412 +2467,412 @@ static const ax_anim sSuicuneAnims_14_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSuicuneGfx1[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_1.4bpp");
+static const u8 sSuicuneGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_1.4bpp.lz");
 static const ax_sprite sSuicuneSprites1[] = {
 	{sSuicuneGfx1, ARRAY_COUNT(sSuicuneGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx2[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_2.4bpp");
+static const u8 sSuicuneGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_2.4bpp.lz");
 static const ax_sprite sSuicuneSprites2[] = {
 	{sSuicuneGfx2, ARRAY_COUNT(sSuicuneGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx3[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_3.4bpp");
+static const u8 sSuicuneGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_3.4bpp.lz");
 static const ax_sprite sSuicuneSprites3[] = {
 	{sSuicuneGfx3, ARRAY_COUNT(sSuicuneGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx4[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_4.4bpp");
+static const u8 sSuicuneGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_4.4bpp.lz");
 static const ax_sprite sSuicuneSprites4[] = {
 	{sSuicuneGfx4, ARRAY_COUNT(sSuicuneGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx5[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_5.4bpp");
+static const u8 sSuicuneGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_5.4bpp.lz");
 static const ax_sprite sSuicuneSprites5[] = {
 	{sSuicuneGfx5, ARRAY_COUNT(sSuicuneGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx6[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_6.4bpp");
+static const u8 sSuicuneGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_6.4bpp.lz");
 static const ax_sprite sSuicuneSprites6[] = {
 	{sSuicuneGfx6, ARRAY_COUNT(sSuicuneGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx7[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_7.4bpp");
+static const u8 sSuicuneGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_7.4bpp.lz");
 static const ax_sprite sSuicuneSprites7[] = {
 	{sSuicuneGfx7, ARRAY_COUNT(sSuicuneGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx8[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_8.4bpp");
+static const u8 sSuicuneGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_8.4bpp.lz");
 static const ax_sprite sSuicuneSprites8[] = {
 	{sSuicuneGfx8, ARRAY_COUNT(sSuicuneGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx9[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_9.4bpp");
+static const u8 sSuicuneGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_9.4bpp.lz");
 static const ax_sprite sSuicuneSprites9[] = {
 	{sSuicuneGfx9, ARRAY_COUNT(sSuicuneGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx10[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_10.4bpp");
+static const u8 sSuicuneGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_10.4bpp.lz");
 static const ax_sprite sSuicuneSprites10[] = {
 	{sSuicuneGfx10, ARRAY_COUNT(sSuicuneGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx11[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_11.4bpp");
+static const u8 sSuicuneGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_11.4bpp.lz");
 static const ax_sprite sSuicuneSprites11[] = {
 	{sSuicuneGfx11, ARRAY_COUNT(sSuicuneGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx12[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_12.4bpp");
+static const u8 sSuicuneGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_12.4bpp.lz");
 static const ax_sprite sSuicuneSprites12[] = {
 	{sSuicuneGfx12, ARRAY_COUNT(sSuicuneGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx13[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_13.4bpp");
+static const u8 sSuicuneGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_13.4bpp.lz");
 static const ax_sprite sSuicuneSprites13[] = {
 	{sSuicuneGfx13, ARRAY_COUNT(sSuicuneGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx14[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_14.4bpp");
+static const u8 sSuicuneGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_14.4bpp.lz");
 static const ax_sprite sSuicuneSprites14[] = {
 	{sSuicuneGfx14, ARRAY_COUNT(sSuicuneGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx15[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_15.4bpp");
+static const u8 sSuicuneGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_15.4bpp.lz");
 static const ax_sprite sSuicuneSprites15[] = {
 	{sSuicuneGfx15, ARRAY_COUNT(sSuicuneGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx16[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_16.4bpp");
+static const u8 sSuicuneGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_16.4bpp.lz");
 static const ax_sprite sSuicuneSprites16[] = {
 	{sSuicuneGfx16, ARRAY_COUNT(sSuicuneGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx17[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_17.4bpp");
+static const u8 sSuicuneGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_17.4bpp.lz");
 static const ax_sprite sSuicuneSprites17[] = {
 	{sSuicuneGfx17, ARRAY_COUNT(sSuicuneGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx18[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_18.4bpp");
+static const u8 sSuicuneGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_18.4bpp.lz");
 static const ax_sprite sSuicuneSprites18[] = {
 	{sSuicuneGfx18, ARRAY_COUNT(sSuicuneGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx19[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_19.4bpp");
+static const u8 sSuicuneGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_19.4bpp.lz");
 static const ax_sprite sSuicuneSprites19[] = {
 	{sSuicuneGfx19, ARRAY_COUNT(sSuicuneGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx20[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_20.4bpp");
+static const u8 sSuicuneGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_20.4bpp.lz");
 static const ax_sprite sSuicuneSprites20[] = {
 	{sSuicuneGfx20, ARRAY_COUNT(sSuicuneGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx21[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_21.4bpp");
+static const u8 sSuicuneGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_21.4bpp.lz");
 static const ax_sprite sSuicuneSprites21[] = {
 	{sSuicuneGfx21, ARRAY_COUNT(sSuicuneGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx22[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_22.4bpp");
+static const u8 sSuicuneGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_22.4bpp.lz");
 static const ax_sprite sSuicuneSprites22[] = {
 	{sSuicuneGfx22, ARRAY_COUNT(sSuicuneGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx23[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_23.4bpp");
+static const u8 sSuicuneGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_23.4bpp.lz");
 static const ax_sprite sSuicuneSprites23[] = {
 	{sSuicuneGfx23, ARRAY_COUNT(sSuicuneGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx24[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_24.4bpp");
+static const u8 sSuicuneGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_24.4bpp.lz");
 static const ax_sprite sSuicuneSprites24[] = {
 	{sSuicuneGfx24, ARRAY_COUNT(sSuicuneGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx25[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_25.4bpp");
+static const u8 sSuicuneGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_25.4bpp.lz");
 static const ax_sprite sSuicuneSprites25[] = {
 	{sSuicuneGfx25, ARRAY_COUNT(sSuicuneGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx26[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_26.4bpp");
+static const u8 sSuicuneGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_26.4bpp.lz");
 static const ax_sprite sSuicuneSprites26[] = {
 	{sSuicuneGfx26, ARRAY_COUNT(sSuicuneGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx27[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_27.4bpp");
+static const u8 sSuicuneGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_27.4bpp.lz");
 static const ax_sprite sSuicuneSprites27[] = {
 	{sSuicuneGfx27, ARRAY_COUNT(sSuicuneGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx28[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_28.4bpp");
+static const u8 sSuicuneGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_28.4bpp.lz");
 static const ax_sprite sSuicuneSprites28[] = {
 	{sSuicuneGfx28, ARRAY_COUNT(sSuicuneGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx29[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_29.4bpp");
+static const u8 sSuicuneGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_29.4bpp.lz");
 static const ax_sprite sSuicuneSprites29[] = {
 	{sSuicuneGfx29, ARRAY_COUNT(sSuicuneGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx30[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_30.4bpp");
+static const u8 sSuicuneGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_30.4bpp.lz");
 static const ax_sprite sSuicuneSprites30[] = {
 	{sSuicuneGfx30, ARRAY_COUNT(sSuicuneGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx31[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_31.4bpp");
+static const u8 sSuicuneGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_31.4bpp.lz");
 static const ax_sprite sSuicuneSprites31[] = {
 	{sSuicuneGfx31, ARRAY_COUNT(sSuicuneGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx32[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_32.4bpp");
+static const u8 sSuicuneGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_32.4bpp.lz");
 static const ax_sprite sSuicuneSprites32[] = {
 	{sSuicuneGfx32, ARRAY_COUNT(sSuicuneGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx33[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_33.4bpp");
+static const u8 sSuicuneGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_33.4bpp.lz");
 static const ax_sprite sSuicuneSprites33[] = {
 	{sSuicuneGfx33, ARRAY_COUNT(sSuicuneGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx34[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_34.4bpp");
+static const u8 sSuicuneGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_34.4bpp.lz");
 static const ax_sprite sSuicuneSprites34[] = {
 	{sSuicuneGfx34, ARRAY_COUNT(sSuicuneGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx35[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_35.4bpp");
+static const u8 sSuicuneGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_35.4bpp.lz");
 static const ax_sprite sSuicuneSprites35[] = {
 	{sSuicuneGfx35, ARRAY_COUNT(sSuicuneGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx36[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_36.4bpp");
+static const u8 sSuicuneGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_36.4bpp.lz");
 static const ax_sprite sSuicuneSprites36[] = {
 	{sSuicuneGfx36, ARRAY_COUNT(sSuicuneGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx37[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_37.4bpp");
+static const u8 sSuicuneGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_37.4bpp.lz");
 static const ax_sprite sSuicuneSprites37[] = {
 	{sSuicuneGfx37, ARRAY_COUNT(sSuicuneGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx38[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_38.4bpp");
+static const u8 sSuicuneGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_38.4bpp.lz");
 static const ax_sprite sSuicuneSprites38[] = {
 	{sSuicuneGfx38, ARRAY_COUNT(sSuicuneGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx39[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_39.4bpp");
+static const u8 sSuicuneGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_39.4bpp.lz");
 static const ax_sprite sSuicuneSprites39[] = {
 	{sSuicuneGfx39, ARRAY_COUNT(sSuicuneGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx40[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_40.4bpp");
+static const u8 sSuicuneGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_40.4bpp.lz");
 static const ax_sprite sSuicuneSprites40[] = {
 	{sSuicuneGfx40, ARRAY_COUNT(sSuicuneGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx41[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_41.4bpp");
+static const u8 sSuicuneGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_41.4bpp.lz");
 static const ax_sprite sSuicuneSprites41[] = {
 	{sSuicuneGfx41, ARRAY_COUNT(sSuicuneGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx42[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_42.4bpp");
+static const u8 sSuicuneGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_42.4bpp.lz");
 static const ax_sprite sSuicuneSprites42[] = {
 	{sSuicuneGfx42, ARRAY_COUNT(sSuicuneGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx43[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_43.4bpp");
+static const u8 sSuicuneGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_43.4bpp.lz");
 static const ax_sprite sSuicuneSprites43[] = {
 	{sSuicuneGfx43, ARRAY_COUNT(sSuicuneGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx44[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_44.4bpp");
+static const u8 sSuicuneGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_44.4bpp.lz");
 static const ax_sprite sSuicuneSprites44[] = {
 	{sSuicuneGfx44, ARRAY_COUNT(sSuicuneGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx45[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_45.4bpp");
+static const u8 sSuicuneGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_45.4bpp.lz");
 static const ax_sprite sSuicuneSprites45[] = {
 	{sSuicuneGfx45, ARRAY_COUNT(sSuicuneGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx46[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_46.4bpp");
+static const u8 sSuicuneGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_46.4bpp.lz");
 static const ax_sprite sSuicuneSprites46[] = {
 	{sSuicuneGfx46, ARRAY_COUNT(sSuicuneGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx47[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_47.4bpp");
+static const u8 sSuicuneGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_47.4bpp.lz");
 static const ax_sprite sSuicuneSprites47[] = {
 	{sSuicuneGfx47, ARRAY_COUNT(sSuicuneGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx48[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_48.4bpp");
+static const u8 sSuicuneGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_48.4bpp.lz");
 static const ax_sprite sSuicuneSprites48[] = {
 	{sSuicuneGfx48, ARRAY_COUNT(sSuicuneGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx49[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_49.4bpp");
+static const u8 sSuicuneGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_49.4bpp.lz");
 static const ax_sprite sSuicuneSprites49[] = {
 	{sSuicuneGfx49, ARRAY_COUNT(sSuicuneGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx50[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_50.4bpp");
+static const u8 sSuicuneGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_50.4bpp.lz");
 static const ax_sprite sSuicuneSprites50[] = {
 	{sSuicuneGfx50, ARRAY_COUNT(sSuicuneGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx51[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_51.4bpp");
+static const u8 sSuicuneGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_51.4bpp.lz");
 static const ax_sprite sSuicuneSprites51[] = {
 	{sSuicuneGfx51, ARRAY_COUNT(sSuicuneGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx52[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_52.4bpp");
+static const u8 sSuicuneGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_52.4bpp.lz");
 static const ax_sprite sSuicuneSprites52[] = {
 	{sSuicuneGfx52, ARRAY_COUNT(sSuicuneGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx53[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_53.4bpp");
+static const u8 sSuicuneGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_53.4bpp.lz");
 static const ax_sprite sSuicuneSprites53[] = {
 	{sSuicuneGfx53, ARRAY_COUNT(sSuicuneGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx54[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_54.4bpp");
+static const u8 sSuicuneGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_54.4bpp.lz");
 static const ax_sprite sSuicuneSprites54[] = {
 	{sSuicuneGfx54, ARRAY_COUNT(sSuicuneGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx55[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_55.4bpp");
+static const u8 sSuicuneGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_55.4bpp.lz");
 static const ax_sprite sSuicuneSprites55[] = {
 	{sSuicuneGfx55, ARRAY_COUNT(sSuicuneGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx56[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_56.4bpp");
+static const u8 sSuicuneGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_56.4bpp.lz");
 static const ax_sprite sSuicuneSprites56[] = {
 	{sSuicuneGfx56, ARRAY_COUNT(sSuicuneGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx57[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_57.4bpp");
+static const u8 sSuicuneGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_57.4bpp.lz");
 static const ax_sprite sSuicuneSprites57[] = {
 	{sSuicuneGfx57, ARRAY_COUNT(sSuicuneGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx58[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_58.4bpp");
+static const u8 sSuicuneGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_58.4bpp.lz");
 static const ax_sprite sSuicuneSprites58[] = {
 	{sSuicuneGfx58, ARRAY_COUNT(sSuicuneGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx59[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_59.4bpp");
+static const u8 sSuicuneGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_59.4bpp.lz");
 static const ax_sprite sSuicuneSprites59[] = {
 	{sSuicuneGfx59, ARRAY_COUNT(sSuicuneGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx60[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_60.4bpp");
+static const u8 sSuicuneGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_60.4bpp.lz");
 static const ax_sprite sSuicuneSprites60[] = {
 	{sSuicuneGfx60, ARRAY_COUNT(sSuicuneGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx61[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_61.4bpp");
+static const u8 sSuicuneGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_61.4bpp.lz");
 static const ax_sprite sSuicuneSprites61[] = {
 	{sSuicuneGfx61, ARRAY_COUNT(sSuicuneGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx62[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_62.4bpp");
+static const u8 sSuicuneGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_62.4bpp.lz");
 static const ax_sprite sSuicuneSprites62[] = {
 	{sSuicuneGfx62, ARRAY_COUNT(sSuicuneGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx63[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_63.4bpp");
+static const u8 sSuicuneGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_63.4bpp.lz");
 static const ax_sprite sSuicuneSprites63[] = {
 	{sSuicuneGfx63, ARRAY_COUNT(sSuicuneGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx64[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_64.4bpp");
+static const u8 sSuicuneGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_64.4bpp.lz");
 static const ax_sprite sSuicuneSprites64[] = {
 	{sSuicuneGfx64, ARRAY_COUNT(sSuicuneGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx65[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_65.4bpp");
+static const u8 sSuicuneGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_65.4bpp.lz");
 static const ax_sprite sSuicuneSprites65[] = {
 	{sSuicuneGfx65, ARRAY_COUNT(sSuicuneGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx66[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_66.4bpp");
+static const u8 sSuicuneGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_66.4bpp.lz");
 static const ax_sprite sSuicuneSprites66[] = {
 	{sSuicuneGfx66, ARRAY_COUNT(sSuicuneGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx67[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_67.4bpp");
+static const u8 sSuicuneGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_67.4bpp.lz");
 static const ax_sprite sSuicuneSprites67[] = {
 	{sSuicuneGfx67, ARRAY_COUNT(sSuicuneGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx68[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_68.4bpp");
+static const u8 sSuicuneGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_68.4bpp.lz");
 static const ax_sprite sSuicuneSprites68[] = {
 	{sSuicuneGfx68, ARRAY_COUNT(sSuicuneGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx69[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_69.4bpp");
+static const u8 sSuicuneGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_69.4bpp.lz");
 static const ax_sprite sSuicuneSprites69[] = {
 	{sSuicuneGfx69, ARRAY_COUNT(sSuicuneGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx70[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_70.4bpp");
+static const u8 sSuicuneGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_70.4bpp.lz");
 static const ax_sprite sSuicuneSprites70[] = {
 	{sSuicuneGfx70, ARRAY_COUNT(sSuicuneGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx71[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_71.4bpp");
+static const u8 sSuicuneGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_71.4bpp.lz");
 static const ax_sprite sSuicuneSprites71[] = {
 	{sSuicuneGfx71, ARRAY_COUNT(sSuicuneGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx72[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_72.4bpp");
+static const u8 sSuicuneGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_72.4bpp.lz");
 static const ax_sprite sSuicuneSprites72[] = {
 	{sSuicuneGfx72, ARRAY_COUNT(sSuicuneGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx73[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_73.4bpp");
+static const u8 sSuicuneGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_73.4bpp.lz");
 static const ax_sprite sSuicuneSprites73[] = {
 	{sSuicuneGfx73, ARRAY_COUNT(sSuicuneGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx74[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_74.4bpp");
+static const u8 sSuicuneGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_74.4bpp.lz");
 static const ax_sprite sSuicuneSprites74[] = {
 	{sSuicuneGfx74, ARRAY_COUNT(sSuicuneGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx75[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_75.4bpp");
-static const u8 sSuicuneGfx75_1[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_75_1.4bpp");
+static const u8 sSuicuneGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_75.4bpp.lz");
+static const u8 sSuicuneGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_75_1.4bpp.lz");
 static const ax_sprite sSuicuneSprites75[] = {
 	{sSuicuneGfx75, ARRAY_COUNT(sSuicuneGfx75)}, 
 	{NULL, 32}, 
 	{sSuicuneGfx75_1, ARRAY_COUNT(sSuicuneGfx75_1)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx76[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_76.4bpp");
+static const u8 sSuicuneGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_76.4bpp.lz");
 static const ax_sprite sSuicuneSprites76[] = {
 	{sSuicuneGfx76, ARRAY_COUNT(sSuicuneGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx77[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_77.4bpp");
+static const u8 sSuicuneGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_77.4bpp.lz");
 static const ax_sprite sSuicuneSprites77[] = {
 	{sSuicuneGfx77, ARRAY_COUNT(sSuicuneGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx78[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_78.4bpp");
+static const u8 sSuicuneGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_78.4bpp.lz");
 static const ax_sprite sSuicuneSprites78[] = {
 	{sSuicuneGfx78, ARRAY_COUNT(sSuicuneGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx79[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_79.4bpp");
+static const u8 sSuicuneGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_79.4bpp.lz");
 static const ax_sprite sSuicuneSprites79[] = {
 	{sSuicuneGfx79, ARRAY_COUNT(sSuicuneGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx80[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_80.4bpp");
+static const u8 sSuicuneGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_80.4bpp.lz");
 static const ax_sprite sSuicuneSprites80[] = {
 	{NULL, 64}, 
 	{sSuicuneGfx80, ARRAY_COUNT(sSuicuneGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx81[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_81.4bpp");
-static const u8 sSuicuneGfx81_1[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_81_1.4bpp");
+static const u8 sSuicuneGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_81.4bpp.lz");
+static const u8 sSuicuneGfx81_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_81_1.4bpp.lz");
 static const ax_sprite sSuicuneSprites81[] = {
 	{NULL, 32}, 
 	{sSuicuneGfx81, ARRAY_COUNT(sSuicuneGfx81)}, 
@@ -2880,18 +2880,18 @@ static const ax_sprite sSuicuneSprites81[] = {
 	{sSuicuneGfx81_1, ARRAY_COUNT(sSuicuneGfx81_1)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx82[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_82.4bpp");
+static const u8 sSuicuneGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_82.4bpp.lz");
 static const ax_sprite sSuicuneSprites82[] = {
 	{sSuicuneGfx82, ARRAY_COUNT(sSuicuneGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx83[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_83.4bpp");
+static const u8 sSuicuneGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_83.4bpp.lz");
 static const ax_sprite sSuicuneSprites83[] = {
 	{sSuicuneGfx83, ARRAY_COUNT(sSuicuneGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx84[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_84.4bpp");
-static const u8 sSuicuneGfx84_1[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_84_1.4bpp");
+static const u8 sSuicuneGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_84.4bpp.lz");
+static const u8 sSuicuneGfx84_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_84_1.4bpp.lz");
 static const ax_sprite sSuicuneSprites84[] = {
 	{NULL, 32}, 
 	{sSuicuneGfx84, ARRAY_COUNT(sSuicuneGfx84)}, 
@@ -2900,85 +2900,85 @@ static const ax_sprite sSuicuneSprites84[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx85[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_85.4bpp");
+static const u8 sSuicuneGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_85.4bpp.lz");
 static const ax_sprite sSuicuneSprites85[] = {
 	{sSuicuneGfx85, ARRAY_COUNT(sSuicuneGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx86[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_86.4bpp");
+static const u8 sSuicuneGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_86.4bpp.lz");
 static const ax_sprite sSuicuneSprites86[] = {
 	{sSuicuneGfx86, ARRAY_COUNT(sSuicuneGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx87[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_87.4bpp");
+static const u8 sSuicuneGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_87.4bpp.lz");
 static const ax_sprite sSuicuneSprites87[] = {
 	{sSuicuneGfx87, ARRAY_COUNT(sSuicuneGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx88[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_88.4bpp");
+static const u8 sSuicuneGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_88.4bpp.lz");
 static const ax_sprite sSuicuneSprites88[] = {
 	{sSuicuneGfx88, ARRAY_COUNT(sSuicuneGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx89[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_89.4bpp");
+static const u8 sSuicuneGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_89.4bpp.lz");
 static const ax_sprite sSuicuneSprites89[] = {
 	{sSuicuneGfx89, ARRAY_COUNT(sSuicuneGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx90[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_90.4bpp");
+static const u8 sSuicuneGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_90.4bpp.lz");
 static const ax_sprite sSuicuneSprites90[] = {
 	{NULL, 32}, 
 	{sSuicuneGfx90, ARRAY_COUNT(sSuicuneGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx91[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_91.4bpp");
+static const u8 sSuicuneGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_91.4bpp.lz");
 static const ax_sprite sSuicuneSprites91[] = {
 	{sSuicuneGfx91, ARRAY_COUNT(sSuicuneGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx92[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_92.4bpp");
+static const u8 sSuicuneGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_92.4bpp.lz");
 static const ax_sprite sSuicuneSprites92[] = {
 	{sSuicuneGfx92, ARRAY_COUNT(sSuicuneGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx93[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_93.4bpp");
+static const u8 sSuicuneGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_93.4bpp.lz");
 static const ax_sprite sSuicuneSprites93[] = {
 	{sSuicuneGfx93, ARRAY_COUNT(sSuicuneGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx94[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_94.4bpp");
+static const u8 sSuicuneGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_94.4bpp.lz");
 static const ax_sprite sSuicuneSprites94[] = {
 	{sSuicuneGfx94, ARRAY_COUNT(sSuicuneGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx95[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_95.4bpp");
+static const u8 sSuicuneGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_95.4bpp.lz");
 static const ax_sprite sSuicuneSprites95[] = {
 	{sSuicuneGfx95, ARRAY_COUNT(sSuicuneGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx96[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_96.4bpp");
+static const u8 sSuicuneGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_96.4bpp.lz");
 static const ax_sprite sSuicuneSprites96[] = {
 	{sSuicuneGfx96, ARRAY_COUNT(sSuicuneGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx97[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_97.4bpp");
+static const u8 sSuicuneGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_97.4bpp.lz");
 static const ax_sprite sSuicuneSprites97[] = {
 	{sSuicuneGfx97, ARRAY_COUNT(sSuicuneGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx98[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_98.4bpp");
+static const u8 sSuicuneGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_98.4bpp.lz");
 static const ax_sprite sSuicuneSprites98[] = {
 	{NULL, 32}, 
 	{sSuicuneGfx98, ARRAY_COUNT(sSuicuneGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx99[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_99.4bpp");
+static const u8 sSuicuneGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_99.4bpp.lz");
 static const ax_sprite sSuicuneSprites99[] = {
 	{sSuicuneGfx99, ARRAY_COUNT(sSuicuneGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx100[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_100.4bpp");
-static const u8 sSuicuneGfx100_1[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_100_1.4bpp");
+static const u8 sSuicuneGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_100.4bpp.lz");
+static const u8 sSuicuneGfx100_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_100_1.4bpp.lz");
 static const ax_sprite sSuicuneSprites100[] = {
 	{NULL, 32}, 
 	{sSuicuneGfx100, ARRAY_COUNT(sSuicuneGfx100)}, 
@@ -2986,167 +2986,167 @@ static const ax_sprite sSuicuneSprites100[] = {
 	{sSuicuneGfx100_1, ARRAY_COUNT(sSuicuneGfx100_1)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx101[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_101.4bpp");
+static const u8 sSuicuneGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_101.4bpp.lz");
 static const ax_sprite sSuicuneSprites101[] = {
 	{sSuicuneGfx101, ARRAY_COUNT(sSuicuneGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx102[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_102.4bpp");
+static const u8 sSuicuneGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_102.4bpp.lz");
 static const ax_sprite sSuicuneSprites102[] = {
 	{sSuicuneGfx102, ARRAY_COUNT(sSuicuneGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx103[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_103.4bpp");
+static const u8 sSuicuneGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_103.4bpp.lz");
 static const ax_sprite sSuicuneSprites103[] = {
 	{sSuicuneGfx103, ARRAY_COUNT(sSuicuneGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx104[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_104.4bpp");
+static const u8 sSuicuneGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_104.4bpp.lz");
 static const ax_sprite sSuicuneSprites104[] = {
 	{sSuicuneGfx104, ARRAY_COUNT(sSuicuneGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx105[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_105.4bpp");
+static const u8 sSuicuneGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_105.4bpp.lz");
 static const ax_sprite sSuicuneSprites105[] = {
 	{sSuicuneGfx105, ARRAY_COUNT(sSuicuneGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx106[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_106.4bpp");
+static const u8 sSuicuneGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_106.4bpp.lz");
 static const ax_sprite sSuicuneSprites106[] = {
 	{sSuicuneGfx106, ARRAY_COUNT(sSuicuneGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx107[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_107.4bpp");
+static const u8 sSuicuneGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_107.4bpp.lz");
 static const ax_sprite sSuicuneSprites107[] = {
 	{sSuicuneGfx107, ARRAY_COUNT(sSuicuneGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx108[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_108.4bpp");
+static const u8 sSuicuneGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_108.4bpp.lz");
 static const ax_sprite sSuicuneSprites108[] = {
 	{sSuicuneGfx108, ARRAY_COUNT(sSuicuneGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx109[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_109.4bpp");
+static const u8 sSuicuneGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_109.4bpp.lz");
 static const ax_sprite sSuicuneSprites109[] = {
 	{sSuicuneGfx109, ARRAY_COUNT(sSuicuneGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx110[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_110.4bpp");
+static const u8 sSuicuneGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_110.4bpp.lz");
 static const ax_sprite sSuicuneSprites110[] = {
 	{sSuicuneGfx110, ARRAY_COUNT(sSuicuneGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx111[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_111.4bpp");
+static const u8 sSuicuneGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_111.4bpp.lz");
 static const ax_sprite sSuicuneSprites111[] = {
 	{sSuicuneGfx111, ARRAY_COUNT(sSuicuneGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx112[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_112.4bpp");
+static const u8 sSuicuneGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_112.4bpp.lz");
 static const ax_sprite sSuicuneSprites112[] = {
 	{sSuicuneGfx112, ARRAY_COUNT(sSuicuneGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx113[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_113.4bpp");
+static const u8 sSuicuneGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_113.4bpp.lz");
 static const ax_sprite sSuicuneSprites113[] = {
 	{sSuicuneGfx113, ARRAY_COUNT(sSuicuneGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx114[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_114.4bpp");
+static const u8 sSuicuneGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_114.4bpp.lz");
 static const ax_sprite sSuicuneSprites114[] = {
 	{sSuicuneGfx114, ARRAY_COUNT(sSuicuneGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx115[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_115.4bpp");
+static const u8 sSuicuneGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_115.4bpp.lz");
 static const ax_sprite sSuicuneSprites115[] = {
 	{sSuicuneGfx115, ARRAY_COUNT(sSuicuneGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx116[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_116.4bpp");
+static const u8 sSuicuneGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_116.4bpp.lz");
 static const ax_sprite sSuicuneSprites116[] = {
 	{sSuicuneGfx116, ARRAY_COUNT(sSuicuneGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx117[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_117.4bpp");
+static const u8 sSuicuneGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_117.4bpp.lz");
 static const ax_sprite sSuicuneSprites117[] = {
 	{sSuicuneGfx117, ARRAY_COUNT(sSuicuneGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx118[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_118.4bpp");
+static const u8 sSuicuneGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_118.4bpp.lz");
 static const ax_sprite sSuicuneSprites118[] = {
 	{sSuicuneGfx118, ARRAY_COUNT(sSuicuneGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx119[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_119.4bpp");
+static const u8 sSuicuneGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_119.4bpp.lz");
 static const ax_sprite sSuicuneSprites119[] = {
 	{sSuicuneGfx119, ARRAY_COUNT(sSuicuneGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx120[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_120.4bpp");
+static const u8 sSuicuneGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_120.4bpp.lz");
 static const ax_sprite sSuicuneSprites120[] = {
 	{sSuicuneGfx120, ARRAY_COUNT(sSuicuneGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx121[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_121.4bpp");
+static const u8 sSuicuneGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_121.4bpp.lz");
 static const ax_sprite sSuicuneSprites121[] = {
 	{sSuicuneGfx121, ARRAY_COUNT(sSuicuneGfx121)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx122[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_122.4bpp");
+static const u8 sSuicuneGfx122[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_122.4bpp.lz");
 static const ax_sprite sSuicuneSprites122[] = {
 	{sSuicuneGfx122, ARRAY_COUNT(sSuicuneGfx122)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx123[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_123.4bpp");
+static const u8 sSuicuneGfx123[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_123.4bpp.lz");
 static const ax_sprite sSuicuneSprites123[] = {
 	{sSuicuneGfx123, ARRAY_COUNT(sSuicuneGfx123)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx124[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_124.4bpp");
+static const u8 sSuicuneGfx124[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_124.4bpp.lz");
 static const ax_sprite sSuicuneSprites124[] = {
 	{sSuicuneGfx124, ARRAY_COUNT(sSuicuneGfx124)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx125[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_125.4bpp");
+static const u8 sSuicuneGfx125[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_125.4bpp.lz");
 static const ax_sprite sSuicuneSprites125[] = {
 	{sSuicuneGfx125, ARRAY_COUNT(sSuicuneGfx125)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx126[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_126.4bpp");
+static const u8 sSuicuneGfx126[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_126.4bpp.lz");
 static const ax_sprite sSuicuneSprites126[] = {
 	{sSuicuneGfx126, ARRAY_COUNT(sSuicuneGfx126)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx127[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_127.4bpp");
+static const u8 sSuicuneGfx127[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_127.4bpp.lz");
 static const ax_sprite sSuicuneSprites127[] = {
 	{sSuicuneGfx127, ARRAY_COUNT(sSuicuneGfx127)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx128[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_128.4bpp");
+static const u8 sSuicuneGfx128[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_128.4bpp.lz");
 static const ax_sprite sSuicuneSprites128[] = {
 	{sSuicuneGfx128, ARRAY_COUNT(sSuicuneGfx128)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx129[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_129.4bpp");
+static const u8 sSuicuneGfx129[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_129.4bpp.lz");
 static const ax_sprite sSuicuneSprites129[] = {
 	{sSuicuneGfx129, ARRAY_COUNT(sSuicuneGfx129)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx130[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_130.4bpp");
+static const u8 sSuicuneGfx130[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_130.4bpp.lz");
 static const ax_sprite sSuicuneSprites130[] = {
 	{sSuicuneGfx130, ARRAY_COUNT(sSuicuneGfx130)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx131[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_131.4bpp");
+static const u8 sSuicuneGfx131[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_131.4bpp.lz");
 static const ax_sprite sSuicuneSprites131[] = {
 	{sSuicuneGfx131, ARRAY_COUNT(sSuicuneGfx131)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx132[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_132.4bpp");
+static const u8 sSuicuneGfx132[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_132.4bpp.lz");
 static const ax_sprite sSuicuneSprites132[] = {
 	{sSuicuneGfx132, ARRAY_COUNT(sSuicuneGfx132)}, 
 	{NULL, 0}
 };
-static const u8 sSuicuneGfx133[] = INCBIN_U8("graphics/ax/mon/suicune/sprite_133.4bpp");
+static const u8 sSuicuneGfx133[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/suicune/sprite_133.4bpp.lz");
 static const ax_sprite sSuicuneSprites133[] = {
 	{sSuicuneGfx133, ARRAY_COUNT(sSuicuneGfx133)}, 
 	{NULL, 0}

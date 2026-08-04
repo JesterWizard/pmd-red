@@ -2087,83 +2087,83 @@ static const ax_anim sNincadaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sNincadaGfx1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_1.4bpp");
+static const u8 sNincadaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_1.4bpp.lz");
 static const ax_sprite sNincadaSprites1[] = {
 	{sNincadaGfx1, ARRAY_COUNT(sNincadaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx2[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_2.4bpp");
+static const u8 sNincadaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_2.4bpp.lz");
 static const ax_sprite sNincadaSprites2[] = {
 	{sNincadaGfx2, ARRAY_COUNT(sNincadaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx3[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_3.4bpp");
+static const u8 sNincadaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_3.4bpp.lz");
 static const ax_sprite sNincadaSprites3[] = {
 	{sNincadaGfx3, ARRAY_COUNT(sNincadaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx4[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_4.4bpp");
+static const u8 sNincadaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_4.4bpp.lz");
 static const ax_sprite sNincadaSprites4[] = {
 	{sNincadaGfx4, ARRAY_COUNT(sNincadaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx5[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_5.4bpp");
+static const u8 sNincadaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_5.4bpp.lz");
 static const ax_sprite sNincadaSprites5[] = {
 	{sNincadaGfx5, ARRAY_COUNT(sNincadaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx6[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_6.4bpp");
+static const u8 sNincadaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_6.4bpp.lz");
 static const ax_sprite sNincadaSprites6[] = {
 	{sNincadaGfx6, ARRAY_COUNT(sNincadaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx7[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_7.4bpp");
+static const u8 sNincadaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_7.4bpp.lz");
 static const ax_sprite sNincadaSprites7[] = {
 	{sNincadaGfx7, ARRAY_COUNT(sNincadaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx8[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_8.4bpp");
+static const u8 sNincadaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_8.4bpp.lz");
 static const ax_sprite sNincadaSprites8[] = {
 	{sNincadaGfx8, ARRAY_COUNT(sNincadaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx9[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_9.4bpp");
+static const u8 sNincadaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_9.4bpp.lz");
 static const ax_sprite sNincadaSprites9[] = {
 	{sNincadaGfx9, ARRAY_COUNT(sNincadaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx10[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_10.4bpp");
+static const u8 sNincadaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_10.4bpp.lz");
 static const ax_sprite sNincadaSprites10[] = {
 	{sNincadaGfx10, ARRAY_COUNT(sNincadaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx11[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_11.4bpp");
+static const u8 sNincadaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_11.4bpp.lz");
 static const ax_sprite sNincadaSprites11[] = {
 	{sNincadaGfx11, ARRAY_COUNT(sNincadaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx12[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_12.4bpp");
+static const u8 sNincadaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_12.4bpp.lz");
 static const ax_sprite sNincadaSprites12[] = {
 	{sNincadaGfx12, ARRAY_COUNT(sNincadaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx13[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_13.4bpp");
+static const u8 sNincadaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_13.4bpp.lz");
 static const ax_sprite sNincadaSprites13[] = {
 	{sNincadaGfx13, ARRAY_COUNT(sNincadaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx14[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_14.4bpp");
+static const u8 sNincadaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_14.4bpp.lz");
 static const ax_sprite sNincadaSprites14[] = {
 	{sNincadaGfx14, ARRAY_COUNT(sNincadaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx15[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_15.4bpp");
+static const u8 sNincadaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_15.4bpp.lz");
 static const ax_sprite sNincadaSprites15[] = {
 	{sNincadaGfx15, ARRAY_COUNT(sNincadaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx16[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_16.4bpp");
-static const u8 sNincadaGfx16_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_16_1.4bpp");
+static const u8 sNincadaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_16.4bpp.lz");
+static const u8 sNincadaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_16_1.4bpp.lz");
 static const ax_sprite sNincadaSprites16[] = {
 	{sNincadaGfx16, ARRAY_COUNT(sNincadaGfx16)}, 
 	{NULL, 32}, 
@@ -2171,8 +2171,8 @@ static const ax_sprite sNincadaSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx17[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_17.4bpp");
-static const u8 sNincadaGfx17_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_17_1.4bpp");
+static const u8 sNincadaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_17.4bpp.lz");
+static const u8 sNincadaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_17_1.4bpp.lz");
 static const ax_sprite sNincadaSprites17[] = {
 	{sNincadaGfx17, ARRAY_COUNT(sNincadaGfx17)}, 
 	{NULL, 32}, 
@@ -2180,8 +2180,8 @@ static const ax_sprite sNincadaSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx18[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_18.4bpp");
-static const u8 sNincadaGfx18_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_18_1.4bpp");
+static const u8 sNincadaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_18.4bpp.lz");
+static const u8 sNincadaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_18_1.4bpp.lz");
 static const ax_sprite sNincadaSprites18[] = {
 	{sNincadaGfx18, ARRAY_COUNT(sNincadaGfx18)}, 
 	{NULL, 32}, 
@@ -2189,8 +2189,8 @@ static const ax_sprite sNincadaSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx19[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_19.4bpp");
-static const u8 sNincadaGfx19_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_19_1.4bpp");
+static const u8 sNincadaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_19.4bpp.lz");
+static const u8 sNincadaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_19_1.4bpp.lz");
 static const ax_sprite sNincadaSprites19[] = {
 	{sNincadaGfx19, ARRAY_COUNT(sNincadaGfx19)}, 
 	{NULL, 32}, 
@@ -2198,8 +2198,8 @@ static const ax_sprite sNincadaSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx20[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_20.4bpp");
-static const u8 sNincadaGfx20_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_20_1.4bpp");
+static const u8 sNincadaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_20.4bpp.lz");
+static const u8 sNincadaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_20_1.4bpp.lz");
 static const ax_sprite sNincadaSprites20[] = {
 	{sNincadaGfx20, ARRAY_COUNT(sNincadaGfx20)}, 
 	{NULL, 32}, 
@@ -2207,8 +2207,8 @@ static const ax_sprite sNincadaSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx21[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_21.4bpp");
-static const u8 sNincadaGfx21_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_21_1.4bpp");
+static const u8 sNincadaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_21.4bpp.lz");
+static const u8 sNincadaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_21_1.4bpp.lz");
 static const ax_sprite sNincadaSprites21[] = {
 	{sNincadaGfx21, ARRAY_COUNT(sNincadaGfx21)}, 
 	{NULL, 32}, 
@@ -2216,8 +2216,8 @@ static const ax_sprite sNincadaSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx22[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_22.4bpp");
-static const u8 sNincadaGfx22_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_22_1.4bpp");
+static const u8 sNincadaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_22.4bpp.lz");
+static const u8 sNincadaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_22_1.4bpp.lz");
 static const ax_sprite sNincadaSprites22[] = {
 	{sNincadaGfx22, ARRAY_COUNT(sNincadaGfx22)}, 
 	{NULL, 32}, 
@@ -2225,8 +2225,8 @@ static const ax_sprite sNincadaSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx23[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_23.4bpp");
-static const u8 sNincadaGfx23_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_23_1.4bpp");
+static const u8 sNincadaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_23.4bpp.lz");
+static const u8 sNincadaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_23_1.4bpp.lz");
 static const ax_sprite sNincadaSprites23[] = {
 	{sNincadaGfx23, ARRAY_COUNT(sNincadaGfx23)}, 
 	{NULL, 32}, 
@@ -2234,8 +2234,8 @@ static const ax_sprite sNincadaSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx24[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_24.4bpp");
-static const u8 sNincadaGfx24_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_24_1.4bpp");
+static const u8 sNincadaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_24.4bpp.lz");
+static const u8 sNincadaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_24_1.4bpp.lz");
 static const ax_sprite sNincadaSprites24[] = {
 	{sNincadaGfx24, ARRAY_COUNT(sNincadaGfx24)}, 
 	{NULL, 32}, 
@@ -2243,8 +2243,8 @@ static const ax_sprite sNincadaSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx25[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_25.4bpp");
-static const u8 sNincadaGfx25_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_25_1.4bpp");
+static const u8 sNincadaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_25.4bpp.lz");
+static const u8 sNincadaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_25_1.4bpp.lz");
 static const ax_sprite sNincadaSprites25[] = {
 	{sNincadaGfx25, ARRAY_COUNT(sNincadaGfx25)}, 
 	{NULL, 32}, 
@@ -2252,9 +2252,9 @@ static const ax_sprite sNincadaSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx26[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_26.4bpp");
-static const u8 sNincadaGfx26_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_26_1.4bpp");
-static const u8 sNincadaGfx26_2[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_26_2.4bpp");
+static const u8 sNincadaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_26.4bpp.lz");
+static const u8 sNincadaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_26_1.4bpp.lz");
+static const u8 sNincadaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_26_2.4bpp.lz");
 static const ax_sprite sNincadaSprites26[] = {
 	{sNincadaGfx26, ARRAY_COUNT(sNincadaGfx26)}, 
 	{NULL, 96}, 
@@ -2264,20 +2264,20 @@ static const ax_sprite sNincadaSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx27[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_27.4bpp");
+static const u8 sNincadaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_27.4bpp.lz");
 static const ax_sprite sNincadaSprites27[] = {
 	{sNincadaGfx27, ARRAY_COUNT(sNincadaGfx27)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx28[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_28.4bpp");
+static const u8 sNincadaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_28.4bpp.lz");
 static const ax_sprite sNincadaSprites28[] = {
 	{sNincadaGfx28, ARRAY_COUNT(sNincadaGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx29[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_29.4bpp");
-static const u8 sNincadaGfx29_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_29_1.4bpp");
+static const u8 sNincadaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_29.4bpp.lz");
+static const u8 sNincadaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_29_1.4bpp.lz");
 static const ax_sprite sNincadaSprites29[] = {
 	{NULL, 32}, 
 	{sNincadaGfx29, ARRAY_COUNT(sNincadaGfx29)}, 
@@ -2286,8 +2286,8 @@ static const ax_sprite sNincadaSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx30[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_30.4bpp");
-static const u8 sNincadaGfx30_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_30_1.4bpp");
+static const u8 sNincadaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_30.4bpp.lz");
+static const u8 sNincadaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_30_1.4bpp.lz");
 static const ax_sprite sNincadaSprites30[] = {
 	{NULL, 64}, 
 	{sNincadaGfx30, ARRAY_COUNT(sNincadaGfx30)}, 
@@ -2296,8 +2296,8 @@ static const ax_sprite sNincadaSprites30[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx31[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_31.4bpp");
-static const u8 sNincadaGfx31_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_31_1.4bpp");
+static const u8 sNincadaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_31.4bpp.lz");
+static const u8 sNincadaGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_31_1.4bpp.lz");
 static const ax_sprite sNincadaSprites31[] = {
 	{sNincadaGfx31, ARRAY_COUNT(sNincadaGfx31)}, 
 	{NULL, 32}, 
@@ -2305,8 +2305,8 @@ static const ax_sprite sNincadaSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx32[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_32.4bpp");
-static const u8 sNincadaGfx32_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_32_1.4bpp");
+static const u8 sNincadaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_32.4bpp.lz");
+static const u8 sNincadaGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_32_1.4bpp.lz");
 static const ax_sprite sNincadaSprites32[] = {
 	{sNincadaGfx32, ARRAY_COUNT(sNincadaGfx32)}, 
 	{NULL, 32}, 
@@ -2314,8 +2314,8 @@ static const ax_sprite sNincadaSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx33[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_33.4bpp");
-static const u8 sNincadaGfx33_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_33_1.4bpp");
+static const u8 sNincadaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_33.4bpp.lz");
+static const u8 sNincadaGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_33_1.4bpp.lz");
 static const ax_sprite sNincadaSprites33[] = {
 	{NULL, 32}, 
 	{sNincadaGfx33, ARRAY_COUNT(sNincadaGfx33)}, 
@@ -2324,15 +2324,15 @@ static const ax_sprite sNincadaSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx34[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_34.4bpp");
+static const u8 sNincadaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_34.4bpp.lz");
 static const ax_sprite sNincadaSprites34[] = {
 	{sNincadaGfx34, ARRAY_COUNT(sNincadaGfx34)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx35[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_35.4bpp");
-static const u8 sNincadaGfx35_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_35_1.4bpp");
-static const u8 sNincadaGfx35_2[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_35_2.4bpp");
+static const u8 sNincadaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_35.4bpp.lz");
+static const u8 sNincadaGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_35_1.4bpp.lz");
+static const u8 sNincadaGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_35_2.4bpp.lz");
 static const ax_sprite sNincadaSprites35[] = {
 	{sNincadaGfx35, ARRAY_COUNT(sNincadaGfx35)}, 
 	{NULL, 32}, 
@@ -2342,8 +2342,8 @@ static const ax_sprite sNincadaSprites35[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx36[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_36.4bpp");
-static const u8 sNincadaGfx36_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_36_1.4bpp");
+static const u8 sNincadaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_36.4bpp.lz");
+static const u8 sNincadaGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_36_1.4bpp.lz");
 static const ax_sprite sNincadaSprites36[] = {
 	{sNincadaGfx36, ARRAY_COUNT(sNincadaGfx36)}, 
 	{NULL, 32}, 
@@ -2351,14 +2351,14 @@ static const ax_sprite sNincadaSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx37[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_37.4bpp");
+static const u8 sNincadaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_37.4bpp.lz");
 static const ax_sprite sNincadaSprites37[] = {
 	{sNincadaGfx37, ARRAY_COUNT(sNincadaGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx38[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_38.4bpp");
-static const u8 sNincadaGfx38_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_38_1.4bpp");
-static const u8 sNincadaGfx38_2[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_38_2.4bpp");
+static const u8 sNincadaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_38.4bpp.lz");
+static const u8 sNincadaGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_38_1.4bpp.lz");
+static const u8 sNincadaGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_38_2.4bpp.lz");
 static const ax_sprite sNincadaSprites38[] = {
 	{sNincadaGfx38, ARRAY_COUNT(sNincadaGfx38)}, 
 	{NULL, 32}, 
@@ -2367,8 +2367,8 @@ static const ax_sprite sNincadaSprites38[] = {
 	{sNincadaGfx38_2, ARRAY_COUNT(sNincadaGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx39[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_39.4bpp");
-static const u8 sNincadaGfx39_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_39_1.4bpp");
+static const u8 sNincadaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_39.4bpp.lz");
+static const u8 sNincadaGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_39_1.4bpp.lz");
 static const ax_sprite sNincadaSprites39[] = {
 	{sNincadaGfx39, ARRAY_COUNT(sNincadaGfx39)}, 
 	{NULL, 32}, 
@@ -2376,8 +2376,8 @@ static const ax_sprite sNincadaSprites39[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx40[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_40.4bpp");
-static const u8 sNincadaGfx40_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_40_1.4bpp");
+static const u8 sNincadaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_40.4bpp.lz");
+static const u8 sNincadaGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_40_1.4bpp.lz");
 static const ax_sprite sNincadaSprites40[] = {
 	{NULL, 32}, 
 	{sNincadaGfx40, ARRAY_COUNT(sNincadaGfx40)}, 
@@ -2386,14 +2386,14 @@ static const ax_sprite sNincadaSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx41[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_41.4bpp");
+static const u8 sNincadaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_41.4bpp.lz");
 static const ax_sprite sNincadaSprites41[] = {
 	{sNincadaGfx41, ARRAY_COUNT(sNincadaGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx42[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_42.4bpp");
-static const u8 sNincadaGfx42_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_42_1.4bpp");
-static const u8 sNincadaGfx42_2[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_42_2.4bpp");
+static const u8 sNincadaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_42.4bpp.lz");
+static const u8 sNincadaGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_42_1.4bpp.lz");
+static const u8 sNincadaGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_42_2.4bpp.lz");
 static const ax_sprite sNincadaSprites42[] = {
 	{sNincadaGfx42, ARRAY_COUNT(sNincadaGfx42)}, 
 	{NULL, 64}, 
@@ -2403,8 +2403,8 @@ static const ax_sprite sNincadaSprites42[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx43[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_43.4bpp");
-static const u8 sNincadaGfx43_1[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_43_1.4bpp");
+static const u8 sNincadaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_43.4bpp.lz");
+static const u8 sNincadaGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_43_1.4bpp.lz");
 static const ax_sprite sNincadaSprites43[] = {
 	{sNincadaGfx43, ARRAY_COUNT(sNincadaGfx43)}, 
 	{NULL, 32}, 
@@ -2412,37 +2412,37 @@ static const ax_sprite sNincadaSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx44[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_44.4bpp");
+static const u8 sNincadaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_44.4bpp.lz");
 static const ax_sprite sNincadaSprites44[] = {
 	{sNincadaGfx44, ARRAY_COUNT(sNincadaGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx45[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_45.4bpp");
+static const u8 sNincadaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_45.4bpp.lz");
 static const ax_sprite sNincadaSprites45[] = {
 	{sNincadaGfx45, ARRAY_COUNT(sNincadaGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx46[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_46.4bpp");
+static const u8 sNincadaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_46.4bpp.lz");
 static const ax_sprite sNincadaSprites46[] = {
 	{sNincadaGfx46, ARRAY_COUNT(sNincadaGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx47[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_47.4bpp");
+static const u8 sNincadaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_47.4bpp.lz");
 static const ax_sprite sNincadaSprites47[] = {
 	{sNincadaGfx47, ARRAY_COUNT(sNincadaGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx48[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_48.4bpp");
+static const u8 sNincadaGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_48.4bpp.lz");
 static const ax_sprite sNincadaSprites48[] = {
 	{sNincadaGfx48, ARRAY_COUNT(sNincadaGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx49[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_49.4bpp");
+static const u8 sNincadaGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_49.4bpp.lz");
 static const ax_sprite sNincadaSprites49[] = {
 	{sNincadaGfx49, ARRAY_COUNT(sNincadaGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sNincadaGfx50[] = INCBIN_U8("graphics/ax/mon/nincada/sprite_50.4bpp");
+static const u8 sNincadaGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nincada/sprite_50.4bpp.lz");
 static const ax_sprite sNincadaSprites50[] = {
 	{sNincadaGfx50, ARRAY_COUNT(sNincadaGfx50)}, 
 	{NULL, 0}

@@ -2115,89 +2115,89 @@ static const ax_anim sJumpluffAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sJumpluffGfx1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_1.4bpp");
+static const u8 sJumpluffGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_1.4bpp.lz");
 static const ax_sprite sJumpluffSprites1[] = {
 	{sJumpluffGfx1, ARRAY_COUNT(sJumpluffGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_2.4bpp");
+static const u8 sJumpluffGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites2[] = {
 	{sJumpluffGfx2, ARRAY_COUNT(sJumpluffGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx3[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_3.4bpp");
+static const u8 sJumpluffGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_3.4bpp.lz");
 static const ax_sprite sJumpluffSprites3[] = {
 	{sJumpluffGfx3, ARRAY_COUNT(sJumpluffGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx4[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_4.4bpp");
+static const u8 sJumpluffGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_4.4bpp.lz");
 static const ax_sprite sJumpluffSprites4[] = {
 	{sJumpluffGfx4, ARRAY_COUNT(sJumpluffGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx5[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_5.4bpp");
+static const u8 sJumpluffGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_5.4bpp.lz");
 static const ax_sprite sJumpluffSprites5[] = {
 	{sJumpluffGfx5, ARRAY_COUNT(sJumpluffGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx6[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_6.4bpp");
+static const u8 sJumpluffGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_6.4bpp.lz");
 static const ax_sprite sJumpluffSprites6[] = {
 	{sJumpluffGfx6, ARRAY_COUNT(sJumpluffGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx7[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_7.4bpp");
+static const u8 sJumpluffGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_7.4bpp.lz");
 static const ax_sprite sJumpluffSprites7[] = {
 	{sJumpluffGfx7, ARRAY_COUNT(sJumpluffGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx8[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_8.4bpp");
+static const u8 sJumpluffGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_8.4bpp.lz");
 static const ax_sprite sJumpluffSprites8[] = {
 	{sJumpluffGfx8, ARRAY_COUNT(sJumpluffGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx9[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_9.4bpp");
+static const u8 sJumpluffGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_9.4bpp.lz");
 static const ax_sprite sJumpluffSprites9[] = {
 	{sJumpluffGfx9, ARRAY_COUNT(sJumpluffGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx10[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_10.4bpp");
+static const u8 sJumpluffGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_10.4bpp.lz");
 static const ax_sprite sJumpluffSprites10[] = {
 	{sJumpluffGfx10, ARRAY_COUNT(sJumpluffGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx11[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_11.4bpp");
+static const u8 sJumpluffGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_11.4bpp.lz");
 static const ax_sprite sJumpluffSprites11[] = {
 	{sJumpluffGfx11, ARRAY_COUNT(sJumpluffGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx12[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_12.4bpp");
+static const u8 sJumpluffGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_12.4bpp.lz");
 static const ax_sprite sJumpluffSprites12[] = {
 	{sJumpluffGfx12, ARRAY_COUNT(sJumpluffGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx13[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_13.4bpp");
+static const u8 sJumpluffGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_13.4bpp.lz");
 static const ax_sprite sJumpluffSprites13[] = {
 	{sJumpluffGfx13, ARRAY_COUNT(sJumpluffGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx14[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_14.4bpp");
+static const u8 sJumpluffGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_14.4bpp.lz");
 static const ax_sprite sJumpluffSprites14[] = {
 	{sJumpluffGfx14, ARRAY_COUNT(sJumpluffGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx15[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_15.4bpp");
+static const u8 sJumpluffGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_15.4bpp.lz");
 static const ax_sprite sJumpluffSprites15[] = {
 	{sJumpluffGfx15, ARRAY_COUNT(sJumpluffGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx16[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_16.4bpp");
+static const u8 sJumpluffGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_16.4bpp.lz");
 static const ax_sprite sJumpluffSprites16[] = {
 	{sJumpluffGfx16, ARRAY_COUNT(sJumpluffGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx17[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_17.4bpp");
-static const u8 sJumpluffGfx17_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_17_1.4bpp");
+static const u8 sJumpluffGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_17.4bpp.lz");
+static const u8 sJumpluffGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_17_1.4bpp.lz");
 static const ax_sprite sJumpluffSprites17[] = {
 	{sJumpluffGfx17, ARRAY_COUNT(sJumpluffGfx17)}, 
 	{NULL, 32}, 
@@ -2205,15 +2205,15 @@ static const ax_sprite sJumpluffSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx18[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_18.4bpp");
+static const u8 sJumpluffGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_18.4bpp.lz");
 static const ax_sprite sJumpluffSprites18[] = {
 	{sJumpluffGfx18, ARRAY_COUNT(sJumpluffGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx19[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_19.4bpp");
-static const u8 sJumpluffGfx19_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_19_1.4bpp");
-static const u8 sJumpluffGfx19_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_19_2.4bpp");
+static const u8 sJumpluffGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_19.4bpp.lz");
+static const u8 sJumpluffGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_19_1.4bpp.lz");
+static const u8 sJumpluffGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_19_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites19[] = {
 	{sJumpluffGfx19, ARRAY_COUNT(sJumpluffGfx19)}, 
 	{NULL, 32}, 
@@ -2223,9 +2223,9 @@ static const ax_sprite sJumpluffSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx20[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_20.4bpp");
-static const u8 sJumpluffGfx20_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_20_1.4bpp");
-static const u8 sJumpluffGfx20_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_20_2.4bpp");
+static const u8 sJumpluffGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_20.4bpp.lz");
+static const u8 sJumpluffGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_20_1.4bpp.lz");
+static const u8 sJumpluffGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_20_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites20[] = {
 	{sJumpluffGfx20, ARRAY_COUNT(sJumpluffGfx20)}, 
 	{NULL, 32}, 
@@ -2235,21 +2235,21 @@ static const ax_sprite sJumpluffSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx21[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_21.4bpp");
+static const u8 sJumpluffGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_21.4bpp.lz");
 static const ax_sprite sJumpluffSprites21[] = {
 	{sJumpluffGfx21, ARRAY_COUNT(sJumpluffGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx22[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_22.4bpp");
+static const u8 sJumpluffGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_22.4bpp.lz");
 static const ax_sprite sJumpluffSprites22[] = {
 	{sJumpluffGfx22, ARRAY_COUNT(sJumpluffGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx23[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_23.4bpp");
-static const u8 sJumpluffGfx23_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_23_1.4bpp");
-static const u8 sJumpluffGfx23_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_23_2.4bpp");
+static const u8 sJumpluffGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_23.4bpp.lz");
+static const u8 sJumpluffGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_23_1.4bpp.lz");
+static const u8 sJumpluffGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_23_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites23[] = {
 	{NULL, 32}, 
 	{sJumpluffGfx23, ARRAY_COUNT(sJumpluffGfx23)}, 
@@ -2260,9 +2260,9 @@ static const ax_sprite sJumpluffSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx24[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_24.4bpp");
-static const u8 sJumpluffGfx24_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_24_1.4bpp");
-static const u8 sJumpluffGfx24_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_24_2.4bpp");
+static const u8 sJumpluffGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_24.4bpp.lz");
+static const u8 sJumpluffGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_24_1.4bpp.lz");
+static const u8 sJumpluffGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_24_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites24[] = {
 	{sJumpluffGfx24, ARRAY_COUNT(sJumpluffGfx24)}, 
 	{NULL, 32}, 
@@ -2272,10 +2272,10 @@ static const ax_sprite sJumpluffSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx25[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_25.4bpp");
-static const u8 sJumpluffGfx25_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_25_1.4bpp");
-static const u8 sJumpluffGfx25_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_25_2.4bpp");
-static const u8 sJumpluffGfx25_3[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_25_3.4bpp");
+static const u8 sJumpluffGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_25.4bpp.lz");
+static const u8 sJumpluffGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_25_1.4bpp.lz");
+static const u8 sJumpluffGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_25_2.4bpp.lz");
+static const u8 sJumpluffGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_25_3.4bpp.lz");
 static const ax_sprite sJumpluffSprites25[] = {
 	{sJumpluffGfx25, ARRAY_COUNT(sJumpluffGfx25)}, 
 	{NULL, 64}, 
@@ -2287,9 +2287,9 @@ static const ax_sprite sJumpluffSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx26[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_26.4bpp");
-static const u8 sJumpluffGfx26_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_26_1.4bpp");
-static const u8 sJumpluffGfx26_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_26_2.4bpp");
+static const u8 sJumpluffGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_26.4bpp.lz");
+static const u8 sJumpluffGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_26_1.4bpp.lz");
+static const u8 sJumpluffGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_26_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites26[] = {
 	{sJumpluffGfx26, ARRAY_COUNT(sJumpluffGfx26)}, 
 	{NULL, 32}, 
@@ -2299,9 +2299,9 @@ static const ax_sprite sJumpluffSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx27[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_27.4bpp");
-static const u8 sJumpluffGfx27_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_27_1.4bpp");
-static const u8 sJumpluffGfx27_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_27_2.4bpp");
+static const u8 sJumpluffGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_27.4bpp.lz");
+static const u8 sJumpluffGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_27_1.4bpp.lz");
+static const u8 sJumpluffGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_27_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites27[] = {
 	{sJumpluffGfx27, ARRAY_COUNT(sJumpluffGfx27)}, 
 	{NULL, 32}, 
@@ -2311,9 +2311,9 @@ static const ax_sprite sJumpluffSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx28[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_28.4bpp");
-static const u8 sJumpluffGfx28_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_28_1.4bpp");
-static const u8 sJumpluffGfx28_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_28_2.4bpp");
+static const u8 sJumpluffGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_28.4bpp.lz");
+static const u8 sJumpluffGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_28_1.4bpp.lz");
+static const u8 sJumpluffGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_28_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites28[] = {
 	{sJumpluffGfx28, ARRAY_COUNT(sJumpluffGfx28)}, 
 	{NULL, 32}, 
@@ -2323,9 +2323,9 @@ static const ax_sprite sJumpluffSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx29[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_29.4bpp");
-static const u8 sJumpluffGfx29_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_29_1.4bpp");
-static const u8 sJumpluffGfx29_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_29_2.4bpp");
+static const u8 sJumpluffGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_29.4bpp.lz");
+static const u8 sJumpluffGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_29_1.4bpp.lz");
+static const u8 sJumpluffGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_29_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites29[] = {
 	{sJumpluffGfx29, ARRAY_COUNT(sJumpluffGfx29)}, 
 	{NULL, 32}, 
@@ -2335,33 +2335,33 @@ static const ax_sprite sJumpluffSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx30[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_30.4bpp");
+static const u8 sJumpluffGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_30.4bpp.lz");
 static const ax_sprite sJumpluffSprites30[] = {
 	{sJumpluffGfx30, ARRAY_COUNT(sJumpluffGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx31[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_31.4bpp");
+static const u8 sJumpluffGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_31.4bpp.lz");
 static const ax_sprite sJumpluffSprites31[] = {
 	{sJumpluffGfx31, ARRAY_COUNT(sJumpluffGfx31)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx32[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_32.4bpp");
+static const u8 sJumpluffGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_32.4bpp.lz");
 static const ax_sprite sJumpluffSprites32[] = {
 	{sJumpluffGfx32, ARRAY_COUNT(sJumpluffGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx33[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_33.4bpp");
+static const u8 sJumpluffGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_33.4bpp.lz");
 static const ax_sprite sJumpluffSprites33[] = {
 	{sJumpluffGfx33, ARRAY_COUNT(sJumpluffGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx34[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_34.4bpp");
-static const u8 sJumpluffGfx34_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_34_1.4bpp");
-static const u8 sJumpluffGfx34_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_34_2.4bpp");
+static const u8 sJumpluffGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_34.4bpp.lz");
+static const u8 sJumpluffGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_34_1.4bpp.lz");
+static const u8 sJumpluffGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_34_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites34[] = {
 	{sJumpluffGfx34, ARRAY_COUNT(sJumpluffGfx34)}, 
 	{NULL, 32}, 
@@ -2371,9 +2371,9 @@ static const ax_sprite sJumpluffSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx35[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_35.4bpp");
-static const u8 sJumpluffGfx35_1[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_35_1.4bpp");
-static const u8 sJumpluffGfx35_2[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_35_2.4bpp");
+static const u8 sJumpluffGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_35.4bpp.lz");
+static const u8 sJumpluffGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_35_1.4bpp.lz");
+static const u8 sJumpluffGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_35_2.4bpp.lz");
 static const ax_sprite sJumpluffSprites35[] = {
 	{sJumpluffGfx35, ARRAY_COUNT(sJumpluffGfx35)}, 
 	{NULL, 32}, 
@@ -2383,37 +2383,37 @@ static const ax_sprite sJumpluffSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx36[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_36.4bpp");
+static const u8 sJumpluffGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_36.4bpp.lz");
 static const ax_sprite sJumpluffSprites36[] = {
 	{sJumpluffGfx36, ARRAY_COUNT(sJumpluffGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx37[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_37.4bpp");
+static const u8 sJumpluffGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_37.4bpp.lz");
 static const ax_sprite sJumpluffSprites37[] = {
 	{sJumpluffGfx37, ARRAY_COUNT(sJumpluffGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx38[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_38.4bpp");
+static const u8 sJumpluffGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_38.4bpp.lz");
 static const ax_sprite sJumpluffSprites38[] = {
 	{sJumpluffGfx38, ARRAY_COUNT(sJumpluffGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx39[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_39.4bpp");
+static const u8 sJumpluffGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_39.4bpp.lz");
 static const ax_sprite sJumpluffSprites39[] = {
 	{sJumpluffGfx39, ARRAY_COUNT(sJumpluffGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx40[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_40.4bpp");
+static const u8 sJumpluffGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_40.4bpp.lz");
 static const ax_sprite sJumpluffSprites40[] = {
 	{sJumpluffGfx40, ARRAY_COUNT(sJumpluffGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx41[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_41.4bpp");
+static const u8 sJumpluffGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_41.4bpp.lz");
 static const ax_sprite sJumpluffSprites41[] = {
 	{sJumpluffGfx41, ARRAY_COUNT(sJumpluffGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sJumpluffGfx42[] = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_42.4bpp");
+static const u8 sJumpluffGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jumpluff/sprite_42.4bpp.lz");
 static const ax_sprite sJumpluffSprites42[] = {
 	{sJumpluffGfx42, ARRAY_COUNT(sJumpluffGfx42)}, 
 	{NULL, 0}

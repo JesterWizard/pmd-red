@@ -2159,85 +2159,85 @@ static const ax_anim sArcanineAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sArcanineGfx1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_1.4bpp");
+static const u8 sArcanineGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_1.4bpp.lz");
 static const ax_sprite sArcanineSprites1[] = {
 	{sArcanineGfx1, ARRAY_COUNT(sArcanineGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_2.4bpp");
+static const u8 sArcanineGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_2.4bpp.lz");
 static const ax_sprite sArcanineSprites2[] = {
 	{sArcanineGfx2, ARRAY_COUNT(sArcanineGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_3.4bpp");
+static const u8 sArcanineGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_3.4bpp.lz");
 static const ax_sprite sArcanineSprites3[] = {
 	{sArcanineGfx3, ARRAY_COUNT(sArcanineGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx4[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_4.4bpp");
+static const u8 sArcanineGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_4.4bpp.lz");
 static const ax_sprite sArcanineSprites4[] = {
 	{sArcanineGfx4, ARRAY_COUNT(sArcanineGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx5[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_5.4bpp");
+static const u8 sArcanineGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_5.4bpp.lz");
 static const ax_sprite sArcanineSprites5[] = {
 	{sArcanineGfx5, ARRAY_COUNT(sArcanineGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx6[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_6.4bpp");
+static const u8 sArcanineGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_6.4bpp.lz");
 static const ax_sprite sArcanineSprites6[] = {
 	{sArcanineGfx6, ARRAY_COUNT(sArcanineGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx7[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_7.4bpp");
+static const u8 sArcanineGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_7.4bpp.lz");
 static const ax_sprite sArcanineSprites7[] = {
 	{sArcanineGfx7, ARRAY_COUNT(sArcanineGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx8[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_8.4bpp");
+static const u8 sArcanineGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_8.4bpp.lz");
 static const ax_sprite sArcanineSprites8[] = {
 	{sArcanineGfx8, ARRAY_COUNT(sArcanineGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx9[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_9.4bpp");
+static const u8 sArcanineGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_9.4bpp.lz");
 static const ax_sprite sArcanineSprites9[] = {
 	{sArcanineGfx9, ARRAY_COUNT(sArcanineGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx10[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_10.4bpp");
+static const u8 sArcanineGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_10.4bpp.lz");
 static const ax_sprite sArcanineSprites10[] = {
 	{sArcanineGfx10, ARRAY_COUNT(sArcanineGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx11[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_11.4bpp");
+static const u8 sArcanineGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_11.4bpp.lz");
 static const ax_sprite sArcanineSprites11[] = {
 	{sArcanineGfx11, ARRAY_COUNT(sArcanineGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx12[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_12.4bpp");
+static const u8 sArcanineGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_12.4bpp.lz");
 static const ax_sprite sArcanineSprites12[] = {
 	{sArcanineGfx12, ARRAY_COUNT(sArcanineGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx13[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_13.4bpp");
+static const u8 sArcanineGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_13.4bpp.lz");
 static const ax_sprite sArcanineSprites13[] = {
 	{sArcanineGfx13, ARRAY_COUNT(sArcanineGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx14[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_14.4bpp");
+static const u8 sArcanineGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_14.4bpp.lz");
 static const ax_sprite sArcanineSprites14[] = {
 	{sArcanineGfx14, ARRAY_COUNT(sArcanineGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx15[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_15.4bpp");
+static const u8 sArcanineGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_15.4bpp.lz");
 static const ax_sprite sArcanineSprites15[] = {
 	{sArcanineGfx15, ARRAY_COUNT(sArcanineGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx16[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_16.4bpp");
-static const u8 sArcanineGfx16_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_16_1.4bpp");
-static const u8 sArcanineGfx16_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_16_2.4bpp");
-static const u8 sArcanineGfx16_3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_16_3.4bpp");
+static const u8 sArcanineGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_16.4bpp.lz");
+static const u8 sArcanineGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_16_1.4bpp.lz");
+static const u8 sArcanineGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_16_2.4bpp.lz");
+static const u8 sArcanineGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_16_3.4bpp.lz");
 static const ax_sprite sArcanineSprites16[] = {
 	{sArcanineGfx16, ARRAY_COUNT(sArcanineGfx16)}, 
 	{NULL, 32}, 
@@ -2249,10 +2249,10 @@ static const ax_sprite sArcanineSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx17[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_17.4bpp");
-static const u8 sArcanineGfx17_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_17_1.4bpp");
-static const u8 sArcanineGfx17_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_17_2.4bpp");
-static const u8 sArcanineGfx17_3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_17_3.4bpp");
+static const u8 sArcanineGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_17.4bpp.lz");
+static const u8 sArcanineGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_17_1.4bpp.lz");
+static const u8 sArcanineGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_17_2.4bpp.lz");
+static const u8 sArcanineGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_17_3.4bpp.lz");
 static const ax_sprite sArcanineSprites17[] = {
 	{sArcanineGfx17, ARRAY_COUNT(sArcanineGfx17)}, 
 	{NULL, 32}, 
@@ -2264,54 +2264,54 @@ static const ax_sprite sArcanineSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx18[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_18.4bpp");
+static const u8 sArcanineGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_18.4bpp.lz");
 static const ax_sprite sArcanineSprites18[] = {
 	{sArcanineGfx18, ARRAY_COUNT(sArcanineGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx19[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_19.4bpp");
+static const u8 sArcanineGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_19.4bpp.lz");
 static const ax_sprite sArcanineSprites19[] = {
 	{NULL, 32}, 
 	{sArcanineGfx19, ARRAY_COUNT(sArcanineGfx19)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx20[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_20.4bpp");
+static const u8 sArcanineGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_20.4bpp.lz");
 static const ax_sprite sArcanineSprites20[] = {
 	{sArcanineGfx20, ARRAY_COUNT(sArcanineGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx21[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_21.4bpp");
+static const u8 sArcanineGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_21.4bpp.lz");
 static const ax_sprite sArcanineSprites21[] = {
 	{sArcanineGfx21, ARRAY_COUNT(sArcanineGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx22[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_22.4bpp");
+static const u8 sArcanineGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_22.4bpp.lz");
 static const ax_sprite sArcanineSprites22[] = {
 	{sArcanineGfx22, ARRAY_COUNT(sArcanineGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx23[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_23.4bpp");
+static const u8 sArcanineGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_23.4bpp.lz");
 static const ax_sprite sArcanineSprites23[] = {
 	{sArcanineGfx23, ARRAY_COUNT(sArcanineGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx24[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_24.4bpp");
+static const u8 sArcanineGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_24.4bpp.lz");
 static const ax_sprite sArcanineSprites24[] = {
 	{sArcanineGfx24, ARRAY_COUNT(sArcanineGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx25[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_25.4bpp");
-static const u8 sArcanineGfx25_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_25_1.4bpp");
+static const u8 sArcanineGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_25.4bpp.lz");
+static const u8 sArcanineGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_25_1.4bpp.lz");
 static const ax_sprite sArcanineSprites25[] = {
 	{sArcanineGfx25, ARRAY_COUNT(sArcanineGfx25)}, 
 	{NULL, 32}, 
 	{sArcanineGfx25_1, ARRAY_COUNT(sArcanineGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx26[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_26.4bpp");
-static const u8 sArcanineGfx26_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_26_1.4bpp");
-static const u8 sArcanineGfx26_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_26_2.4bpp");
+static const u8 sArcanineGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_26.4bpp.lz");
+static const u8 sArcanineGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_26_1.4bpp.lz");
+static const u8 sArcanineGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_26_2.4bpp.lz");
 static const ax_sprite sArcanineSprites26[] = {
 	{sArcanineGfx26, ARRAY_COUNT(sArcanineGfx26)}, 
 	{NULL, 32}, 
@@ -2320,16 +2320,16 @@ static const ax_sprite sArcanineSprites26[] = {
 	{sArcanineGfx26_2, ARRAY_COUNT(sArcanineGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx27[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_27.4bpp");
+static const u8 sArcanineGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_27.4bpp.lz");
 static const ax_sprite sArcanineSprites27[] = {
 	{sArcanineGfx27, ARRAY_COUNT(sArcanineGfx27)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx28[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_28.4bpp");
-static const u8 sArcanineGfx28_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_28_1.4bpp");
-static const u8 sArcanineGfx28_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_28_2.4bpp");
-static const u8 sArcanineGfx28_3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_28_3.4bpp");
+static const u8 sArcanineGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_28.4bpp.lz");
+static const u8 sArcanineGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_28_1.4bpp.lz");
+static const u8 sArcanineGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_28_2.4bpp.lz");
+static const u8 sArcanineGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_28_3.4bpp.lz");
 static const ax_sprite sArcanineSprites28[] = {
 	{sArcanineGfx28, ARRAY_COUNT(sArcanineGfx28)}, 
 	{NULL, 32}, 
@@ -2341,10 +2341,10 @@ static const ax_sprite sArcanineSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx29[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_29.4bpp");
-static const u8 sArcanineGfx29_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_29_1.4bpp");
-static const u8 sArcanineGfx29_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_29_2.4bpp");
-static const u8 sArcanineGfx29_3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_29_3.4bpp");
+static const u8 sArcanineGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_29.4bpp.lz");
+static const u8 sArcanineGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_29_1.4bpp.lz");
+static const u8 sArcanineGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_29_2.4bpp.lz");
+static const u8 sArcanineGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_29_3.4bpp.lz");
 static const ax_sprite sArcanineSprites29[] = {
 	{sArcanineGfx29, ARRAY_COUNT(sArcanineGfx29)}, 
 	{NULL, 32}, 
@@ -2356,10 +2356,10 @@ static const ax_sprite sArcanineSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx30[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_30.4bpp");
-static const u8 sArcanineGfx30_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_30_1.4bpp");
-static const u8 sArcanineGfx30_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_30_2.4bpp");
-static const u8 sArcanineGfx30_3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_30_3.4bpp");
+static const u8 sArcanineGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_30.4bpp.lz");
+static const u8 sArcanineGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_30_1.4bpp.lz");
+static const u8 sArcanineGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_30_2.4bpp.lz");
+static const u8 sArcanineGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_30_3.4bpp.lz");
 static const ax_sprite sArcanineSprites30[] = {
 	{sArcanineGfx30, ARRAY_COUNT(sArcanineGfx30)}, 
 	{NULL, 32}, 
@@ -2371,10 +2371,10 @@ static const ax_sprite sArcanineSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx31[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_31.4bpp");
-static const u8 sArcanineGfx31_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_31_1.4bpp");
-static const u8 sArcanineGfx31_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_31_2.4bpp");
-static const u8 sArcanineGfx31_3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_31_3.4bpp");
+static const u8 sArcanineGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_31.4bpp.lz");
+static const u8 sArcanineGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_31_1.4bpp.lz");
+static const u8 sArcanineGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_31_2.4bpp.lz");
+static const u8 sArcanineGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_31_3.4bpp.lz");
 static const ax_sprite sArcanineSprites31[] = {
 	{sArcanineGfx31, ARRAY_COUNT(sArcanineGfx31)}, 
 	{NULL, 32}, 
@@ -2386,35 +2386,35 @@ static const ax_sprite sArcanineSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx32[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_32.4bpp");
-static const u8 sArcanineGfx32_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_32_1.4bpp");
+static const u8 sArcanineGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_32.4bpp.lz");
+static const u8 sArcanineGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_32_1.4bpp.lz");
 static const ax_sprite sArcanineSprites32[] = {
 	{sArcanineGfx32, ARRAY_COUNT(sArcanineGfx32)}, 
 	{NULL, 32}, 
 	{sArcanineGfx32_1, ARRAY_COUNT(sArcanineGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx33[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_33.4bpp");
+static const u8 sArcanineGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_33.4bpp.lz");
 static const ax_sprite sArcanineSprites33[] = {
 	{sArcanineGfx33, ARRAY_COUNT(sArcanineGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx34[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_34.4bpp");
-static const u8 sArcanineGfx34_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_34_1.4bpp");
+static const u8 sArcanineGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_34.4bpp.lz");
+static const u8 sArcanineGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_34_1.4bpp.lz");
 static const ax_sprite sArcanineSprites34[] = {
 	{sArcanineGfx34, ARRAY_COUNT(sArcanineGfx34)}, 
 	{NULL, 32}, 
 	{sArcanineGfx34_1, ARRAY_COUNT(sArcanineGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx35[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_35.4bpp");
+static const u8 sArcanineGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_35.4bpp.lz");
 static const ax_sprite sArcanineSprites35[] = {
 	{sArcanineGfx35, ARRAY_COUNT(sArcanineGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx36[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_36.4bpp");
-static const u8 sArcanineGfx36_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_36_1.4bpp");
-static const u8 sArcanineGfx36_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_36_2.4bpp");
+static const u8 sArcanineGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_36.4bpp.lz");
+static const u8 sArcanineGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_36_1.4bpp.lz");
+static const u8 sArcanineGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_36_2.4bpp.lz");
 static const ax_sprite sArcanineSprites36[] = {
 	{sArcanineGfx36, ARRAY_COUNT(sArcanineGfx36)}, 
 	{NULL, 32}, 
@@ -2423,15 +2423,15 @@ static const ax_sprite sArcanineSprites36[] = {
 	{sArcanineGfx36_2, ARRAY_COUNT(sArcanineGfx36_2)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx37[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_37.4bpp");
+static const u8 sArcanineGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_37.4bpp.lz");
 static const ax_sprite sArcanineSprites37[] = {
 	{sArcanineGfx37, ARRAY_COUNT(sArcanineGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx38[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_38.4bpp");
-static const u8 sArcanineGfx38_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_38_1.4bpp");
-static const u8 sArcanineGfx38_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_38_2.4bpp");
-static const u8 sArcanineGfx38_3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_38_3.4bpp");
+static const u8 sArcanineGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_38.4bpp.lz");
+static const u8 sArcanineGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_38_1.4bpp.lz");
+static const u8 sArcanineGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_38_2.4bpp.lz");
+static const u8 sArcanineGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_38_3.4bpp.lz");
 static const ax_sprite sArcanineSprites38[] = {
 	{sArcanineGfx38, ARRAY_COUNT(sArcanineGfx38)}, 
 	{NULL, 32}, 
@@ -2443,10 +2443,10 @@ static const ax_sprite sArcanineSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx39[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_39.4bpp");
-static const u8 sArcanineGfx39_1[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_39_1.4bpp");
-static const u8 sArcanineGfx39_2[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_39_2.4bpp");
-static const u8 sArcanineGfx39_3[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_39_3.4bpp");
+static const u8 sArcanineGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_39.4bpp.lz");
+static const u8 sArcanineGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_39_1.4bpp.lz");
+static const u8 sArcanineGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_39_2.4bpp.lz");
+static const u8 sArcanineGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_39_3.4bpp.lz");
 static const ax_sprite sArcanineSprites39[] = {
 	{sArcanineGfx39, ARRAY_COUNT(sArcanineGfx39)}, 
 	{NULL, 32}, 
@@ -2458,37 +2458,37 @@ static const ax_sprite sArcanineSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx40[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_40.4bpp");
+static const u8 sArcanineGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_40.4bpp.lz");
 static const ax_sprite sArcanineSprites40[] = {
 	{sArcanineGfx40, ARRAY_COUNT(sArcanineGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx41[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_41.4bpp");
+static const u8 sArcanineGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_41.4bpp.lz");
 static const ax_sprite sArcanineSprites41[] = {
 	{sArcanineGfx41, ARRAY_COUNT(sArcanineGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx42[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_42.4bpp");
+static const u8 sArcanineGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_42.4bpp.lz");
 static const ax_sprite sArcanineSprites42[] = {
 	{sArcanineGfx42, ARRAY_COUNT(sArcanineGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx43[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_43.4bpp");
+static const u8 sArcanineGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_43.4bpp.lz");
 static const ax_sprite sArcanineSprites43[] = {
 	{sArcanineGfx43, ARRAY_COUNT(sArcanineGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx44[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_44.4bpp");
+static const u8 sArcanineGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_44.4bpp.lz");
 static const ax_sprite sArcanineSprites44[] = {
 	{sArcanineGfx44, ARRAY_COUNT(sArcanineGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx45[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_45.4bpp");
+static const u8 sArcanineGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_45.4bpp.lz");
 static const ax_sprite sArcanineSprites45[] = {
 	{sArcanineGfx45, ARRAY_COUNT(sArcanineGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sArcanineGfx46[] = INCBIN_U8("graphics/ax/mon/arcanine/sprite_46.4bpp");
+static const u8 sArcanineGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/arcanine/sprite_46.4bpp.lz");
 static const ax_sprite sArcanineSprites46[] = {
 	{sArcanineGfx46, ARRAY_COUNT(sArcanineGfx46)}, 
 	{NULL, 0}

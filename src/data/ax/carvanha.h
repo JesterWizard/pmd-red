@@ -1942,85 +1942,85 @@ static const ax_anim sCarvanhaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCarvanhaGfx1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_1.4bpp");
+static const u8 sCarvanhaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_1.4bpp.lz");
 static const ax_sprite sCarvanhaSprites1[] = {
 	{sCarvanhaGfx1, ARRAY_COUNT(sCarvanhaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_2.4bpp");
+static const u8 sCarvanhaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_2.4bpp.lz");
 static const ax_sprite sCarvanhaSprites2[] = {
 	{sCarvanhaGfx2, ARRAY_COUNT(sCarvanhaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_3.4bpp");
+static const u8 sCarvanhaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites3[] = {
 	{sCarvanhaGfx3, ARRAY_COUNT(sCarvanhaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx4[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_4.4bpp");
+static const u8 sCarvanhaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_4.4bpp.lz");
 static const ax_sprite sCarvanhaSprites4[] = {
 	{sCarvanhaGfx4, ARRAY_COUNT(sCarvanhaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx5[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_5.4bpp");
+static const u8 sCarvanhaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_5.4bpp.lz");
 static const ax_sprite sCarvanhaSprites5[] = {
 	{sCarvanhaGfx5, ARRAY_COUNT(sCarvanhaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx6[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_6.4bpp");
+static const u8 sCarvanhaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_6.4bpp.lz");
 static const ax_sprite sCarvanhaSprites6[] = {
 	{sCarvanhaGfx6, ARRAY_COUNT(sCarvanhaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx7[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_7.4bpp");
+static const u8 sCarvanhaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_7.4bpp.lz");
 static const ax_sprite sCarvanhaSprites7[] = {
 	{sCarvanhaGfx7, ARRAY_COUNT(sCarvanhaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx8[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_8.4bpp");
+static const u8 sCarvanhaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_8.4bpp.lz");
 static const ax_sprite sCarvanhaSprites8[] = {
 	{sCarvanhaGfx8, ARRAY_COUNT(sCarvanhaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx9[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_9.4bpp");
+static const u8 sCarvanhaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_9.4bpp.lz");
 static const ax_sprite sCarvanhaSprites9[] = {
 	{sCarvanhaGfx9, ARRAY_COUNT(sCarvanhaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx10[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_10.4bpp");
+static const u8 sCarvanhaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_10.4bpp.lz");
 static const ax_sprite sCarvanhaSprites10[] = {
 	{sCarvanhaGfx10, ARRAY_COUNT(sCarvanhaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx11[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_11.4bpp");
+static const u8 sCarvanhaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_11.4bpp.lz");
 static const ax_sprite sCarvanhaSprites11[] = {
 	{sCarvanhaGfx11, ARRAY_COUNT(sCarvanhaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx12[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_12.4bpp");
+static const u8 sCarvanhaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_12.4bpp.lz");
 static const ax_sprite sCarvanhaSprites12[] = {
 	{sCarvanhaGfx12, ARRAY_COUNT(sCarvanhaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx13[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_13.4bpp");
+static const u8 sCarvanhaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_13.4bpp.lz");
 static const ax_sprite sCarvanhaSprites13[] = {
 	{sCarvanhaGfx13, ARRAY_COUNT(sCarvanhaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx14[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_14.4bpp");
+static const u8 sCarvanhaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_14.4bpp.lz");
 static const ax_sprite sCarvanhaSprites14[] = {
 	{sCarvanhaGfx14, ARRAY_COUNT(sCarvanhaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx15[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_15.4bpp");
+static const u8 sCarvanhaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_15.4bpp.lz");
 static const ax_sprite sCarvanhaSprites15[] = {
 	{sCarvanhaGfx15, ARRAY_COUNT(sCarvanhaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx16[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_16.4bpp");
-static const u8 sCarvanhaGfx16_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_16_1.4bpp");
-static const u8 sCarvanhaGfx16_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_16_2.4bpp");
-static const u8 sCarvanhaGfx16_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_16_3.4bpp");
+static const u8 sCarvanhaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_16.4bpp.lz");
+static const u8 sCarvanhaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_16_1.4bpp.lz");
+static const u8 sCarvanhaGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_16_2.4bpp.lz");
+static const u8 sCarvanhaGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_16_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites16[] = {
 	{NULL, 64}, 
 	{sCarvanhaGfx16, ARRAY_COUNT(sCarvanhaGfx16)}, 
@@ -2033,10 +2033,10 @@ static const ax_sprite sCarvanhaSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx17[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_17.4bpp");
-static const u8 sCarvanhaGfx17_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_17_1.4bpp");
-static const u8 sCarvanhaGfx17_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_17_2.4bpp");
-static const u8 sCarvanhaGfx17_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_17_3.4bpp");
+static const u8 sCarvanhaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_17.4bpp.lz");
+static const u8 sCarvanhaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_17_1.4bpp.lz");
+static const u8 sCarvanhaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_17_2.4bpp.lz");
+static const u8 sCarvanhaGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_17_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites17[] = {
 	{sCarvanhaGfx17, ARRAY_COUNT(sCarvanhaGfx17)}, 
 	{NULL, 32}, 
@@ -2048,10 +2048,10 @@ static const ax_sprite sCarvanhaSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx18[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_18.4bpp");
-static const u8 sCarvanhaGfx18_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_18_1.4bpp");
-static const u8 sCarvanhaGfx18_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_18_2.4bpp");
-static const u8 sCarvanhaGfx18_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_18_3.4bpp");
+static const u8 sCarvanhaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_18.4bpp.lz");
+static const u8 sCarvanhaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_18_1.4bpp.lz");
+static const u8 sCarvanhaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_18_2.4bpp.lz");
+static const u8 sCarvanhaGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_18_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites18[] = {
 	{sCarvanhaGfx18, ARRAY_COUNT(sCarvanhaGfx18)}, 
 	{NULL, 32}, 
@@ -2063,10 +2063,10 @@ static const ax_sprite sCarvanhaSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx19[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_19.4bpp");
-static const u8 sCarvanhaGfx19_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_19_1.4bpp");
-static const u8 sCarvanhaGfx19_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_19_2.4bpp");
-static const u8 sCarvanhaGfx19_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_19_3.4bpp");
+static const u8 sCarvanhaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_19.4bpp.lz");
+static const u8 sCarvanhaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_19_1.4bpp.lz");
+static const u8 sCarvanhaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_19_2.4bpp.lz");
+static const u8 sCarvanhaGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_19_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites19[] = {
 	{sCarvanhaGfx19, ARRAY_COUNT(sCarvanhaGfx19)}, 
 	{NULL, 64}, 
@@ -2078,9 +2078,9 @@ static const ax_sprite sCarvanhaSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx20[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_20.4bpp");
-static const u8 sCarvanhaGfx20_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_20_1.4bpp");
-static const u8 sCarvanhaGfx20_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_20_2.4bpp");
+static const u8 sCarvanhaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_20.4bpp.lz");
+static const u8 sCarvanhaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_20_1.4bpp.lz");
+static const u8 sCarvanhaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_20_2.4bpp.lz");
 static const ax_sprite sCarvanhaSprites20[] = {
 	{NULL, 32}, 
 	{sCarvanhaGfx20, ARRAY_COUNT(sCarvanhaGfx20)}, 
@@ -2091,10 +2091,10 @@ static const ax_sprite sCarvanhaSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx21[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_21.4bpp");
-static const u8 sCarvanhaGfx21_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_21_1.4bpp");
-static const u8 sCarvanhaGfx21_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_21_2.4bpp");
-static const u8 sCarvanhaGfx21_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_21_3.4bpp");
+static const u8 sCarvanhaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_21.4bpp.lz");
+static const u8 sCarvanhaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_21_1.4bpp.lz");
+static const u8 sCarvanhaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_21_2.4bpp.lz");
+static const u8 sCarvanhaGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_21_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites21[] = {
 	{NULL, 32}, 
 	{sCarvanhaGfx21, ARRAY_COUNT(sCarvanhaGfx21)}, 
@@ -2107,10 +2107,10 @@ static const ax_sprite sCarvanhaSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx22[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_22.4bpp");
-static const u8 sCarvanhaGfx22_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_22_1.4bpp");
-static const u8 sCarvanhaGfx22_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_22_2.4bpp");
-static const u8 sCarvanhaGfx22_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_22_3.4bpp");
+static const u8 sCarvanhaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_22.4bpp.lz");
+static const u8 sCarvanhaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_22_1.4bpp.lz");
+static const u8 sCarvanhaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_22_2.4bpp.lz");
+static const u8 sCarvanhaGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_22_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites22[] = {
 	{NULL, 32}, 
 	{sCarvanhaGfx22, ARRAY_COUNT(sCarvanhaGfx22)}, 
@@ -2123,10 +2123,10 @@ static const ax_sprite sCarvanhaSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx23[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_23.4bpp");
-static const u8 sCarvanhaGfx23_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_23_1.4bpp");
-static const u8 sCarvanhaGfx23_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_23_2.4bpp");
-static const u8 sCarvanhaGfx23_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_23_3.4bpp");
+static const u8 sCarvanhaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_23.4bpp.lz");
+static const u8 sCarvanhaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_23_1.4bpp.lz");
+static const u8 sCarvanhaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_23_2.4bpp.lz");
+static const u8 sCarvanhaGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_23_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites23[] = {
 	{sCarvanhaGfx23, ARRAY_COUNT(sCarvanhaGfx23)}, 
 	{NULL, 32}, 
@@ -2138,10 +2138,10 @@ static const ax_sprite sCarvanhaSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx24[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_24.4bpp");
-static const u8 sCarvanhaGfx24_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_24_1.4bpp");
-static const u8 sCarvanhaGfx24_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_24_2.4bpp");
-static const u8 sCarvanhaGfx24_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_24_3.4bpp");
+static const u8 sCarvanhaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_24.4bpp.lz");
+static const u8 sCarvanhaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_24_1.4bpp.lz");
+static const u8 sCarvanhaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_24_2.4bpp.lz");
+static const u8 sCarvanhaGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_24_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites24[] = {
 	{sCarvanhaGfx24, ARRAY_COUNT(sCarvanhaGfx24)}, 
 	{NULL, 64}, 
@@ -2153,10 +2153,10 @@ static const ax_sprite sCarvanhaSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx25[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_25.4bpp");
-static const u8 sCarvanhaGfx25_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_25_1.4bpp");
-static const u8 sCarvanhaGfx25_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_25_2.4bpp");
-static const u8 sCarvanhaGfx25_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_25_3.4bpp");
+static const u8 sCarvanhaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_25.4bpp.lz");
+static const u8 sCarvanhaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_25_1.4bpp.lz");
+static const u8 sCarvanhaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_25_2.4bpp.lz");
+static const u8 sCarvanhaGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_25_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites25[] = {
 	{NULL, 32}, 
 	{sCarvanhaGfx25, ARRAY_COUNT(sCarvanhaGfx25)}, 
@@ -2169,10 +2169,10 @@ static const ax_sprite sCarvanhaSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx26[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_26.4bpp");
-static const u8 sCarvanhaGfx26_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_26_1.4bpp");
-static const u8 sCarvanhaGfx26_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_26_2.4bpp");
-static const u8 sCarvanhaGfx26_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_26_3.4bpp");
+static const u8 sCarvanhaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_26.4bpp.lz");
+static const u8 sCarvanhaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_26_1.4bpp.lz");
+static const u8 sCarvanhaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_26_2.4bpp.lz");
+static const u8 sCarvanhaGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_26_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites26[] = {
 	{NULL, 32}, 
 	{sCarvanhaGfx26, ARRAY_COUNT(sCarvanhaGfx26)}, 
@@ -2185,11 +2185,11 @@ static const ax_sprite sCarvanhaSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx27[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27.4bpp");
-static const u8 sCarvanhaGfx27_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27_1.4bpp");
-static const u8 sCarvanhaGfx27_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27_2.4bpp");
-static const u8 sCarvanhaGfx27_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27_3.4bpp");
-static const u8 sCarvanhaGfx27_4[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27_4.4bpp");
+static const u8 sCarvanhaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27.4bpp.lz");
+static const u8 sCarvanhaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27_1.4bpp.lz");
+static const u8 sCarvanhaGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27_2.4bpp.lz");
+static const u8 sCarvanhaGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27_3.4bpp.lz");
+static const u8 sCarvanhaGfx27_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_27_4.4bpp.lz");
 static const ax_sprite sCarvanhaSprites27[] = {
 	{sCarvanhaGfx27, ARRAY_COUNT(sCarvanhaGfx27)}, 
 	{NULL, 32}, 
@@ -2203,8 +2203,8 @@ static const ax_sprite sCarvanhaSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx28[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_28.4bpp");
-static const u8 sCarvanhaGfx28_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_28_1.4bpp");
+static const u8 sCarvanhaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_28.4bpp.lz");
+static const u8 sCarvanhaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_28_1.4bpp.lz");
 static const ax_sprite sCarvanhaSprites28[] = {
 	{sCarvanhaGfx28, ARRAY_COUNT(sCarvanhaGfx28)}, 
 	{NULL, 32}, 
@@ -2212,10 +2212,10 @@ static const ax_sprite sCarvanhaSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx29[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_29.4bpp");
-static const u8 sCarvanhaGfx29_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_29_1.4bpp");
-static const u8 sCarvanhaGfx29_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_29_2.4bpp");
-static const u8 sCarvanhaGfx29_3[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_29_3.4bpp");
+static const u8 sCarvanhaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_29.4bpp.lz");
+static const u8 sCarvanhaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_29_1.4bpp.lz");
+static const u8 sCarvanhaGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_29_2.4bpp.lz");
+static const u8 sCarvanhaGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_29_3.4bpp.lz");
 static const ax_sprite sCarvanhaSprites29[] = {
 	{sCarvanhaGfx29, ARRAY_COUNT(sCarvanhaGfx29)}, 
 	{NULL, 64}, 
@@ -2227,9 +2227,9 @@ static const ax_sprite sCarvanhaSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx30[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_30.4bpp");
-static const u8 sCarvanhaGfx30_1[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_30_1.4bpp");
-static const u8 sCarvanhaGfx30_2[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_30_2.4bpp");
+static const u8 sCarvanhaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_30.4bpp.lz");
+static const u8 sCarvanhaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_30_1.4bpp.lz");
+static const u8 sCarvanhaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_30_2.4bpp.lz");
 static const ax_sprite sCarvanhaSprites30[] = {
 	{NULL, 32}, 
 	{sCarvanhaGfx30, ARRAY_COUNT(sCarvanhaGfx30)}, 
@@ -2240,52 +2240,52 @@ static const ax_sprite sCarvanhaSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx31[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_31.4bpp");
+static const u8 sCarvanhaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_31.4bpp.lz");
 static const ax_sprite sCarvanhaSprites31[] = {
 	{sCarvanhaGfx31, ARRAY_COUNT(sCarvanhaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx32[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_32.4bpp");
+static const u8 sCarvanhaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_32.4bpp.lz");
 static const ax_sprite sCarvanhaSprites32[] = {
 	{sCarvanhaGfx32, ARRAY_COUNT(sCarvanhaGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx33[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_33.4bpp");
+static const u8 sCarvanhaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_33.4bpp.lz");
 static const ax_sprite sCarvanhaSprites33[] = {
 	{sCarvanhaGfx33, ARRAY_COUNT(sCarvanhaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx34[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_34.4bpp");
+static const u8 sCarvanhaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_34.4bpp.lz");
 static const ax_sprite sCarvanhaSprites34[] = {
 	{sCarvanhaGfx34, ARRAY_COUNT(sCarvanhaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx35[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_35.4bpp");
+static const u8 sCarvanhaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_35.4bpp.lz");
 static const ax_sprite sCarvanhaSprites35[] = {
 	{sCarvanhaGfx35, ARRAY_COUNT(sCarvanhaGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx36[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_36.4bpp");
+static const u8 sCarvanhaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_36.4bpp.lz");
 static const ax_sprite sCarvanhaSprites36[] = {
 	{sCarvanhaGfx36, ARRAY_COUNT(sCarvanhaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx37[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_37.4bpp");
+static const u8 sCarvanhaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_37.4bpp.lz");
 static const ax_sprite sCarvanhaSprites37[] = {
 	{sCarvanhaGfx37, ARRAY_COUNT(sCarvanhaGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx38[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_38.4bpp");
+static const u8 sCarvanhaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_38.4bpp.lz");
 static const ax_sprite sCarvanhaSprites38[] = {
 	{sCarvanhaGfx38, ARRAY_COUNT(sCarvanhaGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx39[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_39.4bpp");
+static const u8 sCarvanhaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_39.4bpp.lz");
 static const ax_sprite sCarvanhaSprites39[] = {
 	{sCarvanhaGfx39, ARRAY_COUNT(sCarvanhaGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sCarvanhaGfx40[] = INCBIN_U8("graphics/ax/mon/carvanha/sprite_40.4bpp");
+static const u8 sCarvanhaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/carvanha/sprite_40.4bpp.lz");
 static const ax_sprite sCarvanhaSprites40[] = {
 	{sCarvanhaGfx40, ARRAY_COUNT(sCarvanhaGfx40)}, 
 	{NULL, 0}

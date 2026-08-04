@@ -2089,84 +2089,84 @@ static const ax_anim sNidoqueenAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sNidoqueenGfx1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_1.4bpp");
+static const u8 sNidoqueenGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites1[] = {
 	{sNidoqueenGfx1, ARRAY_COUNT(sNidoqueenGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_2.4bpp");
+static const u8 sNidoqueenGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites2[] = {
 	{sNidoqueenGfx2, ARRAY_COUNT(sNidoqueenGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx3[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_3.4bpp");
+static const u8 sNidoqueenGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_3.4bpp.lz");
 static const ax_sprite sNidoqueenSprites3[] = {
 	{sNidoqueenGfx3, ARRAY_COUNT(sNidoqueenGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx4[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_4.4bpp");
+static const u8 sNidoqueenGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_4.4bpp.lz");
 static const ax_sprite sNidoqueenSprites4[] = {
 	{sNidoqueenGfx4, ARRAY_COUNT(sNidoqueenGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx5[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_5.4bpp");
+static const u8 sNidoqueenGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_5.4bpp.lz");
 static const ax_sprite sNidoqueenSprites5[] = {
 	{sNidoqueenGfx5, ARRAY_COUNT(sNidoqueenGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx6[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_6.4bpp");
+static const u8 sNidoqueenGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_6.4bpp.lz");
 static const ax_sprite sNidoqueenSprites6[] = {
 	{sNidoqueenGfx6, ARRAY_COUNT(sNidoqueenGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx7[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_7.4bpp");
+static const u8 sNidoqueenGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_7.4bpp.lz");
 static const ax_sprite sNidoqueenSprites7[] = {
 	{sNidoqueenGfx7, ARRAY_COUNT(sNidoqueenGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx8[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_8.4bpp");
+static const u8 sNidoqueenGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_8.4bpp.lz");
 static const ax_sprite sNidoqueenSprites8[] = {
 	{sNidoqueenGfx8, ARRAY_COUNT(sNidoqueenGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx9[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_9.4bpp");
+static const u8 sNidoqueenGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_9.4bpp.lz");
 static const ax_sprite sNidoqueenSprites9[] = {
 	{sNidoqueenGfx9, ARRAY_COUNT(sNidoqueenGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx10[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_10.4bpp");
+static const u8 sNidoqueenGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_10.4bpp.lz");
 static const ax_sprite sNidoqueenSprites10[] = {
 	{sNidoqueenGfx10, ARRAY_COUNT(sNidoqueenGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx11[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_11.4bpp");
+static const u8 sNidoqueenGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_11.4bpp.lz");
 static const ax_sprite sNidoqueenSprites11[] = {
 	{sNidoqueenGfx11, ARRAY_COUNT(sNidoqueenGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx12[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_12.4bpp");
+static const u8 sNidoqueenGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_12.4bpp.lz");
 static const ax_sprite sNidoqueenSprites12[] = {
 	{sNidoqueenGfx12, ARRAY_COUNT(sNidoqueenGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx13[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_13.4bpp");
+static const u8 sNidoqueenGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_13.4bpp.lz");
 static const ax_sprite sNidoqueenSprites13[] = {
 	{sNidoqueenGfx13, ARRAY_COUNT(sNidoqueenGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx14[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_14.4bpp");
+static const u8 sNidoqueenGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_14.4bpp.lz");
 static const ax_sprite sNidoqueenSprites14[] = {
 	{sNidoqueenGfx14, ARRAY_COUNT(sNidoqueenGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx15[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_15.4bpp");
+static const u8 sNidoqueenGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_15.4bpp.lz");
 static const ax_sprite sNidoqueenSprites15[] = {
 	{sNidoqueenGfx15, ARRAY_COUNT(sNidoqueenGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx16[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_16.4bpp");
-static const u8 sNidoqueenGfx16_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_16_1.4bpp");
-static const u8 sNidoqueenGfx16_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_16_2.4bpp");
+static const u8 sNidoqueenGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_16.4bpp.lz");
+static const u8 sNidoqueenGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_16_1.4bpp.lz");
+static const u8 sNidoqueenGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_16_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites16[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx16, ARRAY_COUNT(sNidoqueenGfx16)}, 
@@ -2176,8 +2176,8 @@ static const ax_sprite sNidoqueenSprites16[] = {
 	{sNidoqueenGfx16_2, ARRAY_COUNT(sNidoqueenGfx16_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx17[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_17.4bpp");
-static const u8 sNidoqueenGfx17_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_17_1.4bpp");
+static const u8 sNidoqueenGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_17.4bpp.lz");
+static const u8 sNidoqueenGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_17_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites17[] = {
 	{NULL, 128}, 
 	{sNidoqueenGfx17, ARRAY_COUNT(sNidoqueenGfx17)}, 
@@ -2185,10 +2185,10 @@ static const ax_sprite sNidoqueenSprites17[] = {
 	{sNidoqueenGfx17_1, ARRAY_COUNT(sNidoqueenGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx18[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_18.4bpp");
-static const u8 sNidoqueenGfx18_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_18_1.4bpp");
-static const u8 sNidoqueenGfx18_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_18_2.4bpp");
-static const u8 sNidoqueenGfx18_3[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_18_3.4bpp");
+static const u8 sNidoqueenGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_18.4bpp.lz");
+static const u8 sNidoqueenGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_18_1.4bpp.lz");
+static const u8 sNidoqueenGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_18_2.4bpp.lz");
+static const u8 sNidoqueenGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_18_3.4bpp.lz");
 static const ax_sprite sNidoqueenSprites18[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx18, ARRAY_COUNT(sNidoqueenGfx18)}, 
@@ -2201,9 +2201,9 @@ static const ax_sprite sNidoqueenSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx19[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_19.4bpp");
-static const u8 sNidoqueenGfx19_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_19_1.4bpp");
-static const u8 sNidoqueenGfx19_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_19_2.4bpp");
+static const u8 sNidoqueenGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_19.4bpp.lz");
+static const u8 sNidoqueenGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_19_1.4bpp.lz");
+static const u8 sNidoqueenGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_19_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites19[] = {
 	{sNidoqueenGfx19, ARRAY_COUNT(sNidoqueenGfx19)}, 
 	{NULL, 64}, 
@@ -2212,15 +2212,15 @@ static const ax_sprite sNidoqueenSprites19[] = {
 	{sNidoqueenGfx19_2, ARRAY_COUNT(sNidoqueenGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx20[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_20.4bpp");
+static const u8 sNidoqueenGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_20.4bpp.lz");
 static const ax_sprite sNidoqueenSprites20[] = {
 	{sNidoqueenGfx20, ARRAY_COUNT(sNidoqueenGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx21[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_21.4bpp");
-static const u8 sNidoqueenGfx21_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_21_1.4bpp");
-static const u8 sNidoqueenGfx21_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_21_2.4bpp");
-static const u8 sNidoqueenGfx21_3[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_21_3.4bpp");
+static const u8 sNidoqueenGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_21.4bpp.lz");
+static const u8 sNidoqueenGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_21_1.4bpp.lz");
+static const u8 sNidoqueenGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_21_2.4bpp.lz");
+static const u8 sNidoqueenGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_21_3.4bpp.lz");
 static const ax_sprite sNidoqueenSprites21[] = {
 	{NULL, 96}, 
 	{sNidoqueenGfx21, ARRAY_COUNT(sNidoqueenGfx21)}, 
@@ -2232,16 +2232,16 @@ static const ax_sprite sNidoqueenSprites21[] = {
 	{sNidoqueenGfx21_3, ARRAY_COUNT(sNidoqueenGfx21_3)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx22[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_22.4bpp");
+static const u8 sNidoqueenGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_22.4bpp.lz");
 static const ax_sprite sNidoqueenSprites22[] = {
 	{sNidoqueenGfx22, ARRAY_COUNT(sNidoqueenGfx22)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx23[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_23.4bpp");
-static const u8 sNidoqueenGfx23_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_23_1.4bpp");
-static const u8 sNidoqueenGfx23_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_23_2.4bpp");
-static const u8 sNidoqueenGfx23_3[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_23_3.4bpp");
+static const u8 sNidoqueenGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_23.4bpp.lz");
+static const u8 sNidoqueenGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_23_1.4bpp.lz");
+static const u8 sNidoqueenGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_23_2.4bpp.lz");
+static const u8 sNidoqueenGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_23_3.4bpp.lz");
 static const ax_sprite sNidoqueenSprites23[] = {
 	{sNidoqueenGfx23, ARRAY_COUNT(sNidoqueenGfx23)}, 
 	{NULL, 64}, 
@@ -2253,8 +2253,8 @@ static const ax_sprite sNidoqueenSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx24[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_24.4bpp");
-static const u8 sNidoqueenGfx24_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_24_1.4bpp");
+static const u8 sNidoqueenGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_24.4bpp.lz");
+static const u8 sNidoqueenGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_24_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites24[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx24, ARRAY_COUNT(sNidoqueenGfx24)}, 
@@ -2263,9 +2263,9 @@ static const ax_sprite sNidoqueenSprites24[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx25[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_25.4bpp");
-static const u8 sNidoqueenGfx25_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_25_1.4bpp");
-static const u8 sNidoqueenGfx25_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_25_2.4bpp");
+static const u8 sNidoqueenGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_25.4bpp.lz");
+static const u8 sNidoqueenGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_25_1.4bpp.lz");
+static const u8 sNidoqueenGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_25_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites25[] = {
 	{NULL, 224}, 
 	{sNidoqueenGfx25, ARRAY_COUNT(sNidoqueenGfx25)}, 
@@ -2275,9 +2275,9 @@ static const ax_sprite sNidoqueenSprites25[] = {
 	{sNidoqueenGfx25_2, ARRAY_COUNT(sNidoqueenGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx26[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_26.4bpp");
-static const u8 sNidoqueenGfx26_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_26_1.4bpp");
-static const u8 sNidoqueenGfx26_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_26_2.4bpp");
+static const u8 sNidoqueenGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_26.4bpp.lz");
+static const u8 sNidoqueenGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_26_1.4bpp.lz");
+static const u8 sNidoqueenGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_26_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites26[] = {
 	{NULL, 160}, 
 	{sNidoqueenGfx26, ARRAY_COUNT(sNidoqueenGfx26)}, 
@@ -2287,9 +2287,9 @@ static const ax_sprite sNidoqueenSprites26[] = {
 	{sNidoqueenGfx26_2, ARRAY_COUNT(sNidoqueenGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx27[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_27.4bpp");
-static const u8 sNidoqueenGfx27_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_27_1.4bpp");
-static const u8 sNidoqueenGfx27_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_27_2.4bpp");
+static const u8 sNidoqueenGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_27.4bpp.lz");
+static const u8 sNidoqueenGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_27_1.4bpp.lz");
+static const u8 sNidoqueenGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_27_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites27[] = {
 	{sNidoqueenGfx27, ARRAY_COUNT(sNidoqueenGfx27)}, 
 	{NULL, 32}, 
@@ -2298,8 +2298,8 @@ static const ax_sprite sNidoqueenSprites27[] = {
 	{sNidoqueenGfx27_2, ARRAY_COUNT(sNidoqueenGfx27_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx28[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_28.4bpp");
-static const u8 sNidoqueenGfx28_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_28_1.4bpp");
+static const u8 sNidoqueenGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_28.4bpp.lz");
+static const u8 sNidoqueenGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_28_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites28[] = {
 	{NULL, 128}, 
 	{sNidoqueenGfx28, ARRAY_COUNT(sNidoqueenGfx28)}, 
@@ -2308,9 +2308,9 @@ static const ax_sprite sNidoqueenSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx29[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_29.4bpp");
-static const u8 sNidoqueenGfx29_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_29_1.4bpp");
-static const u8 sNidoqueenGfx29_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_29_2.4bpp");
+static const u8 sNidoqueenGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_29.4bpp.lz");
+static const u8 sNidoqueenGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_29_1.4bpp.lz");
+static const u8 sNidoqueenGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_29_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites29[] = {
 	{NULL, 128}, 
 	{sNidoqueenGfx29, ARRAY_COUNT(sNidoqueenGfx29)}, 
@@ -2321,9 +2321,9 @@ static const ax_sprite sNidoqueenSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx30[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_30.4bpp");
-static const u8 sNidoqueenGfx30_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_30_1.4bpp");
-static const u8 sNidoqueenGfx30_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_30_2.4bpp");
+static const u8 sNidoqueenGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_30.4bpp.lz");
+static const u8 sNidoqueenGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_30_1.4bpp.lz");
+static const u8 sNidoqueenGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_30_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites30[] = {
 	{NULL, 128}, 
 	{sNidoqueenGfx30, ARRAY_COUNT(sNidoqueenGfx30)}, 
@@ -2333,10 +2333,10 @@ static const ax_sprite sNidoqueenSprites30[] = {
 	{sNidoqueenGfx30_2, ARRAY_COUNT(sNidoqueenGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx31[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_31.4bpp");
-static const u8 sNidoqueenGfx31_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_31_1.4bpp");
-static const u8 sNidoqueenGfx31_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_31_2.4bpp");
-static const u8 sNidoqueenGfx31_3[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_31_3.4bpp");
+static const u8 sNidoqueenGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_31.4bpp.lz");
+static const u8 sNidoqueenGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_31_1.4bpp.lz");
+static const u8 sNidoqueenGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_31_2.4bpp.lz");
+static const u8 sNidoqueenGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_31_3.4bpp.lz");
 static const ax_sprite sNidoqueenSprites31[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx31, ARRAY_COUNT(sNidoqueenGfx31)}, 
@@ -2349,9 +2349,9 @@ static const ax_sprite sNidoqueenSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx32[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_32.4bpp");
-static const u8 sNidoqueenGfx32_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_32_1.4bpp");
-static const u8 sNidoqueenGfx32_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_32_2.4bpp");
+static const u8 sNidoqueenGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_32.4bpp.lz");
+static const u8 sNidoqueenGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_32_1.4bpp.lz");
+static const u8 sNidoqueenGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_32_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites32[] = {
 	{NULL, 128}, 
 	{sNidoqueenGfx32, ARRAY_COUNT(sNidoqueenGfx32)}, 
@@ -2362,8 +2362,8 @@ static const ax_sprite sNidoqueenSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx33[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_33.4bpp");
-static const u8 sNidoqueenGfx33_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_33_1.4bpp");
+static const u8 sNidoqueenGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_33.4bpp.lz");
+static const u8 sNidoqueenGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_33_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites33[] = {
 	{sNidoqueenGfx33, ARRAY_COUNT(sNidoqueenGfx33)}, 
 	{NULL, 32}, 
@@ -2371,18 +2371,18 @@ static const ax_sprite sNidoqueenSprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx34[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_34.4bpp");
-static const u8 sNidoqueenGfx34_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_34_1.4bpp");
+static const u8 sNidoqueenGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_34.4bpp.lz");
+static const u8 sNidoqueenGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_34_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites34[] = {
 	{sNidoqueenGfx34, ARRAY_COUNT(sNidoqueenGfx34)}, 
 	{NULL, 32}, 
 	{sNidoqueenGfx34_1, ARRAY_COUNT(sNidoqueenGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx35[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_35.4bpp");
-static const u8 sNidoqueenGfx35_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_35_1.4bpp");
-static const u8 sNidoqueenGfx35_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_35_2.4bpp");
-static const u8 sNidoqueenGfx35_3[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_35_3.4bpp");
+static const u8 sNidoqueenGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_35.4bpp.lz");
+static const u8 sNidoqueenGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_35_1.4bpp.lz");
+static const u8 sNidoqueenGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_35_2.4bpp.lz");
+static const u8 sNidoqueenGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_35_3.4bpp.lz");
 static const ax_sprite sNidoqueenSprites35[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx35, ARRAY_COUNT(sNidoqueenGfx35)}, 
@@ -2394,22 +2394,22 @@ static const ax_sprite sNidoqueenSprites35[] = {
 	{sNidoqueenGfx35_3, ARRAY_COUNT(sNidoqueenGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx36[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_36.4bpp");
-static const u8 sNidoqueenGfx36_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_36_1.4bpp");
+static const u8 sNidoqueenGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_36.4bpp.lz");
+static const u8 sNidoqueenGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_36_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites36[] = {
 	{sNidoqueenGfx36, ARRAY_COUNT(sNidoqueenGfx36)}, 
 	{NULL, 32}, 
 	{sNidoqueenGfx36_1, ARRAY_COUNT(sNidoqueenGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx37[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_37.4bpp");
+static const u8 sNidoqueenGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_37.4bpp.lz");
 static const ax_sprite sNidoqueenSprites37[] = {
 	{sNidoqueenGfx37, ARRAY_COUNT(sNidoqueenGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx38[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_38.4bpp");
-static const u8 sNidoqueenGfx38_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_38_1.4bpp");
-static const u8 sNidoqueenGfx38_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_38_2.4bpp");
+static const u8 sNidoqueenGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_38.4bpp.lz");
+static const u8 sNidoqueenGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_38_1.4bpp.lz");
+static const u8 sNidoqueenGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_38_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites38[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx38, ARRAY_COUNT(sNidoqueenGfx38)}, 
@@ -2419,9 +2419,9 @@ static const ax_sprite sNidoqueenSprites38[] = {
 	{sNidoqueenGfx38_2, ARRAY_COUNT(sNidoqueenGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx39[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_39.4bpp");
-static const u8 sNidoqueenGfx39_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_39_1.4bpp");
-static const u8 sNidoqueenGfx39_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_39_2.4bpp");
+static const u8 sNidoqueenGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_39.4bpp.lz");
+static const u8 sNidoqueenGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_39_1.4bpp.lz");
+static const u8 sNidoqueenGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_39_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites39[] = {
 	{sNidoqueenGfx39, ARRAY_COUNT(sNidoqueenGfx39)}, 
 	{NULL, 32}, 
@@ -2431,10 +2431,10 @@ static const ax_sprite sNidoqueenSprites39[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx40[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_40.4bpp");
-static const u8 sNidoqueenGfx40_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_40_1.4bpp");
-static const u8 sNidoqueenGfx40_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_40_2.4bpp");
-static const u8 sNidoqueenGfx40_3[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_40_3.4bpp");
+static const u8 sNidoqueenGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_40.4bpp.lz");
+static const u8 sNidoqueenGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_40_1.4bpp.lz");
+static const u8 sNidoqueenGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_40_2.4bpp.lz");
+static const u8 sNidoqueenGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_40_3.4bpp.lz");
 static const ax_sprite sNidoqueenSprites40[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx40, ARRAY_COUNT(sNidoqueenGfx40)}, 
@@ -2446,8 +2446,8 @@ static const ax_sprite sNidoqueenSprites40[] = {
 	{sNidoqueenGfx40_3, ARRAY_COUNT(sNidoqueenGfx40_3)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx41[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_41.4bpp");
-static const u8 sNidoqueenGfx41_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_41_1.4bpp");
+static const u8 sNidoqueenGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_41.4bpp.lz");
+static const u8 sNidoqueenGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_41_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites41[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx41, ARRAY_COUNT(sNidoqueenGfx41)}, 
@@ -2455,8 +2455,8 @@ static const ax_sprite sNidoqueenSprites41[] = {
 	{sNidoqueenGfx41_1, ARRAY_COUNT(sNidoqueenGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx42[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_42.4bpp");
-static const u8 sNidoqueenGfx42_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_42_1.4bpp");
+static const u8 sNidoqueenGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_42.4bpp.lz");
+static const u8 sNidoqueenGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_42_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites42[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx42, ARRAY_COUNT(sNidoqueenGfx42)}, 
@@ -2465,10 +2465,10 @@ static const ax_sprite sNidoqueenSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx43[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_43.4bpp");
-static const u8 sNidoqueenGfx43_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_43_1.4bpp");
-static const u8 sNidoqueenGfx43_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_43_2.4bpp");
-static const u8 sNidoqueenGfx43_3[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_43_3.4bpp");
+static const u8 sNidoqueenGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_43.4bpp.lz");
+static const u8 sNidoqueenGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_43_1.4bpp.lz");
+static const u8 sNidoqueenGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_43_2.4bpp.lz");
+static const u8 sNidoqueenGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_43_3.4bpp.lz");
 static const ax_sprite sNidoqueenSprites43[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx43, ARRAY_COUNT(sNidoqueenGfx43)}, 
@@ -2480,9 +2480,9 @@ static const ax_sprite sNidoqueenSprites43[] = {
 	{sNidoqueenGfx43_3, ARRAY_COUNT(sNidoqueenGfx43_3)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx44[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_44.4bpp");
-static const u8 sNidoqueenGfx44_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_44_1.4bpp");
-static const u8 sNidoqueenGfx44_2[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_44_2.4bpp");
+static const u8 sNidoqueenGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_44.4bpp.lz");
+static const u8 sNidoqueenGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_44_1.4bpp.lz");
+static const u8 sNidoqueenGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_44_2.4bpp.lz");
 static const ax_sprite sNidoqueenSprites44[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx44, ARRAY_COUNT(sNidoqueenGfx44)}, 
@@ -2492,8 +2492,8 @@ static const ax_sprite sNidoqueenSprites44[] = {
 	{sNidoqueenGfx44_2, ARRAY_COUNT(sNidoqueenGfx44_2)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx45[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_45.4bpp");
-static const u8 sNidoqueenGfx45_1[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_45_1.4bpp");
+static const u8 sNidoqueenGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_45.4bpp.lz");
+static const u8 sNidoqueenGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_45_1.4bpp.lz");
 static const ax_sprite sNidoqueenSprites45[] = {
 	{NULL, 32}, 
 	{sNidoqueenGfx45, ARRAY_COUNT(sNidoqueenGfx45)}, 
@@ -2501,37 +2501,37 @@ static const ax_sprite sNidoqueenSprites45[] = {
 	{sNidoqueenGfx45_1, ARRAY_COUNT(sNidoqueenGfx45_1)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx46[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_46.4bpp");
+static const u8 sNidoqueenGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_46.4bpp.lz");
 static const ax_sprite sNidoqueenSprites46[] = {
 	{sNidoqueenGfx46, ARRAY_COUNT(sNidoqueenGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx47[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_47.4bpp");
+static const u8 sNidoqueenGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_47.4bpp.lz");
 static const ax_sprite sNidoqueenSprites47[] = {
 	{sNidoqueenGfx47, ARRAY_COUNT(sNidoqueenGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx48[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_48.4bpp");
+static const u8 sNidoqueenGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_48.4bpp.lz");
 static const ax_sprite sNidoqueenSprites48[] = {
 	{sNidoqueenGfx48, ARRAY_COUNT(sNidoqueenGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx49[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_49.4bpp");
+static const u8 sNidoqueenGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_49.4bpp.lz");
 static const ax_sprite sNidoqueenSprites49[] = {
 	{sNidoqueenGfx49, ARRAY_COUNT(sNidoqueenGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx50[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_50.4bpp");
+static const u8 sNidoqueenGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_50.4bpp.lz");
 static const ax_sprite sNidoqueenSprites50[] = {
 	{sNidoqueenGfx50, ARRAY_COUNT(sNidoqueenGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx51[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_51.4bpp");
+static const u8 sNidoqueenGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_51.4bpp.lz");
 static const ax_sprite sNidoqueenSprites51[] = {
 	{sNidoqueenGfx51, ARRAY_COUNT(sNidoqueenGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sNidoqueenGfx52[] = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_52.4bpp");
+static const u8 sNidoqueenGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nidoqueen/sprite_52.4bpp.lz");
 static const ax_sprite sNidoqueenSprites52[] = {
 	{sNidoqueenGfx52, ARRAY_COUNT(sNidoqueenGfx52)}, 
 	{NULL, 0}

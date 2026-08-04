@@ -3120,84 +3120,84 @@ static const ax_anim sMudkipAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMudkipGfx1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_1.4bpp");
+static const u8 sMudkipGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_1.4bpp.lz");
 static const ax_sprite sMudkipSprites1[] = {
 	{sMudkipGfx1, ARRAY_COUNT(sMudkipGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_2.4bpp");
+static const u8 sMudkipGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_2.4bpp.lz");
 static const ax_sprite sMudkipSprites2[] = {
 	{sMudkipGfx2, ARRAY_COUNT(sMudkipGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx3[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_3.4bpp");
+static const u8 sMudkipGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_3.4bpp.lz");
 static const ax_sprite sMudkipSprites3[] = {
 	{sMudkipGfx3, ARRAY_COUNT(sMudkipGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx4[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_4.4bpp");
+static const u8 sMudkipGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_4.4bpp.lz");
 static const ax_sprite sMudkipSprites4[] = {
 	{sMudkipGfx4, ARRAY_COUNT(sMudkipGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx5[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_5.4bpp");
+static const u8 sMudkipGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_5.4bpp.lz");
 static const ax_sprite sMudkipSprites5[] = {
 	{sMudkipGfx5, ARRAY_COUNT(sMudkipGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx6[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_6.4bpp");
+static const u8 sMudkipGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_6.4bpp.lz");
 static const ax_sprite sMudkipSprites6[] = {
 	{sMudkipGfx6, ARRAY_COUNT(sMudkipGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx7[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_7.4bpp");
+static const u8 sMudkipGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_7.4bpp.lz");
 static const ax_sprite sMudkipSprites7[] = {
 	{sMudkipGfx7, ARRAY_COUNT(sMudkipGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx8[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_8.4bpp");
+static const u8 sMudkipGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_8.4bpp.lz");
 static const ax_sprite sMudkipSprites8[] = {
 	{sMudkipGfx8, ARRAY_COUNT(sMudkipGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx9[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_9.4bpp");
+static const u8 sMudkipGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_9.4bpp.lz");
 static const ax_sprite sMudkipSprites9[] = {
 	{sMudkipGfx9, ARRAY_COUNT(sMudkipGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx10[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_10.4bpp");
+static const u8 sMudkipGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_10.4bpp.lz");
 static const ax_sprite sMudkipSprites10[] = {
 	{sMudkipGfx10, ARRAY_COUNT(sMudkipGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx11[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_11.4bpp");
+static const u8 sMudkipGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_11.4bpp.lz");
 static const ax_sprite sMudkipSprites11[] = {
 	{sMudkipGfx11, ARRAY_COUNT(sMudkipGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx12[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_12.4bpp");
+static const u8 sMudkipGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_12.4bpp.lz");
 static const ax_sprite sMudkipSprites12[] = {
 	{sMudkipGfx12, ARRAY_COUNT(sMudkipGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx13[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_13.4bpp");
+static const u8 sMudkipGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_13.4bpp.lz");
 static const ax_sprite sMudkipSprites13[] = {
 	{sMudkipGfx13, ARRAY_COUNT(sMudkipGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx14[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_14.4bpp");
+static const u8 sMudkipGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_14.4bpp.lz");
 static const ax_sprite sMudkipSprites14[] = {
 	{sMudkipGfx14, ARRAY_COUNT(sMudkipGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx15[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_15.4bpp");
+static const u8 sMudkipGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_15.4bpp.lz");
 static const ax_sprite sMudkipSprites15[] = {
 	{sMudkipGfx15, ARRAY_COUNT(sMudkipGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx16[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_16.4bpp");
-static const u8 sMudkipGfx16_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_16_1.4bpp");
-static const u8 sMudkipGfx16_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_16_2.4bpp");
+static const u8 sMudkipGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_16.4bpp.lz");
+static const u8 sMudkipGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_16_1.4bpp.lz");
+static const u8 sMudkipGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_16_2.4bpp.lz");
 static const ax_sprite sMudkipSprites16[] = {
 	{NULL, 160}, 
 	{sMudkipGfx16, ARRAY_COUNT(sMudkipGfx16)}, 
@@ -3208,9 +3208,9 @@ static const ax_sprite sMudkipSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx17[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_17.4bpp");
-static const u8 sMudkipGfx17_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_17_1.4bpp");
-static const u8 sMudkipGfx17_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_17_2.4bpp");
+static const u8 sMudkipGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_17.4bpp.lz");
+static const u8 sMudkipGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_17_1.4bpp.lz");
+static const u8 sMudkipGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_17_2.4bpp.lz");
 static const ax_sprite sMudkipSprites17[] = {
 	{NULL, 160}, 
 	{sMudkipGfx17, ARRAY_COUNT(sMudkipGfx17)}, 
@@ -3221,9 +3221,9 @@ static const ax_sprite sMudkipSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx18[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_18.4bpp");
-static const u8 sMudkipGfx18_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_18_1.4bpp");
-static const u8 sMudkipGfx18_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_18_2.4bpp");
+static const u8 sMudkipGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_18.4bpp.lz");
+static const u8 sMudkipGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_18_1.4bpp.lz");
+static const u8 sMudkipGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_18_2.4bpp.lz");
 static const ax_sprite sMudkipSprites18[] = {
 	{NULL, 128}, 
 	{sMudkipGfx18, ARRAY_COUNT(sMudkipGfx18)}, 
@@ -3234,9 +3234,9 @@ static const ax_sprite sMudkipSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx19[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_19.4bpp");
-static const u8 sMudkipGfx19_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_19_1.4bpp");
-static const u8 sMudkipGfx19_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_19_2.4bpp");
+static const u8 sMudkipGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_19.4bpp.lz");
+static const u8 sMudkipGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_19_1.4bpp.lz");
+static const u8 sMudkipGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_19_2.4bpp.lz");
 static const ax_sprite sMudkipSprites19[] = {
 	{NULL, 160}, 
 	{sMudkipGfx19, ARRAY_COUNT(sMudkipGfx19)}, 
@@ -3247,9 +3247,9 @@ static const ax_sprite sMudkipSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx20[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_20.4bpp");
-static const u8 sMudkipGfx20_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_20_1.4bpp");
-static const u8 sMudkipGfx20_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_20_2.4bpp");
+static const u8 sMudkipGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_20.4bpp.lz");
+static const u8 sMudkipGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_20_1.4bpp.lz");
+static const u8 sMudkipGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_20_2.4bpp.lz");
 static const ax_sprite sMudkipSprites20[] = {
 	{NULL, 128}, 
 	{sMudkipGfx20, ARRAY_COUNT(sMudkipGfx20)}, 
@@ -3260,9 +3260,9 @@ static const ax_sprite sMudkipSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx21[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_21.4bpp");
-static const u8 sMudkipGfx21_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_21_1.4bpp");
-static const u8 sMudkipGfx21_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_21_2.4bpp");
+static const u8 sMudkipGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_21.4bpp.lz");
+static const u8 sMudkipGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_21_1.4bpp.lz");
+static const u8 sMudkipGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_21_2.4bpp.lz");
 static const ax_sprite sMudkipSprites21[] = {
 	{NULL, 128}, 
 	{sMudkipGfx21, ARRAY_COUNT(sMudkipGfx21)}, 
@@ -3273,10 +3273,10 @@ static const ax_sprite sMudkipSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx22[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_22.4bpp");
-static const u8 sMudkipGfx22_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_22_1.4bpp");
-static const u8 sMudkipGfx22_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_22_2.4bpp");
-static const u8 sMudkipGfx22_3[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_22_3.4bpp");
+static const u8 sMudkipGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_22.4bpp.lz");
+static const u8 sMudkipGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_22_1.4bpp.lz");
+static const u8 sMudkipGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_22_2.4bpp.lz");
+static const u8 sMudkipGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_22_3.4bpp.lz");
 static const ax_sprite sMudkipSprites22[] = {
 	{NULL, 32}, 
 	{sMudkipGfx22, ARRAY_COUNT(sMudkipGfx22)}, 
@@ -3289,9 +3289,9 @@ static const ax_sprite sMudkipSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx23[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_23.4bpp");
-static const u8 sMudkipGfx23_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_23_1.4bpp");
-static const u8 sMudkipGfx23_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_23_2.4bpp");
+static const u8 sMudkipGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_23.4bpp.lz");
+static const u8 sMudkipGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_23_1.4bpp.lz");
+static const u8 sMudkipGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_23_2.4bpp.lz");
 static const ax_sprite sMudkipSprites23[] = {
 	{NULL, 160}, 
 	{sMudkipGfx23, ARRAY_COUNT(sMudkipGfx23)}, 
@@ -3302,10 +3302,10 @@ static const ax_sprite sMudkipSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx24[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_24.4bpp");
-static const u8 sMudkipGfx24_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_24_1.4bpp");
-static const u8 sMudkipGfx24_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_24_2.4bpp");
-static const u8 sMudkipGfx24_3[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_24_3.4bpp");
+static const u8 sMudkipGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_24.4bpp.lz");
+static const u8 sMudkipGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_24_1.4bpp.lz");
+static const u8 sMudkipGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_24_2.4bpp.lz");
+static const u8 sMudkipGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_24_3.4bpp.lz");
 static const ax_sprite sMudkipSprites24[] = {
 	{NULL, 32}, 
 	{sMudkipGfx24, ARRAY_COUNT(sMudkipGfx24)}, 
@@ -3318,9 +3318,9 @@ static const ax_sprite sMudkipSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx25[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_25.4bpp");
-static const u8 sMudkipGfx25_1[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_25_1.4bpp");
-static const u8 sMudkipGfx25_2[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_25_2.4bpp");
+static const u8 sMudkipGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_25.4bpp.lz");
+static const u8 sMudkipGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_25_1.4bpp.lz");
+static const u8 sMudkipGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_25_2.4bpp.lz");
 static const ax_sprite sMudkipSprites25[] = {
 	{NULL, 128}, 
 	{sMudkipGfx25, ARRAY_COUNT(sMudkipGfx25)}, 
@@ -3331,177 +3331,177 @@ static const ax_sprite sMudkipSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx26[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_26.4bpp");
+static const u8 sMudkipGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_26.4bpp.lz");
 static const ax_sprite sMudkipSprites26[] = {
 	{sMudkipGfx26, ARRAY_COUNT(sMudkipGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx27[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_27.4bpp");
+static const u8 sMudkipGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_27.4bpp.lz");
 static const ax_sprite sMudkipSprites27[] = {
 	{sMudkipGfx27, ARRAY_COUNT(sMudkipGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx28[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_28.4bpp");
+static const u8 sMudkipGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_28.4bpp.lz");
 static const ax_sprite sMudkipSprites28[] = {
 	{sMudkipGfx28, ARRAY_COUNT(sMudkipGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx29[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_29.4bpp");
+static const u8 sMudkipGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_29.4bpp.lz");
 static const ax_sprite sMudkipSprites29[] = {
 	{sMudkipGfx29, ARRAY_COUNT(sMudkipGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx30[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_30.4bpp");
+static const u8 sMudkipGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_30.4bpp.lz");
 static const ax_sprite sMudkipSprites30[] = {
 	{sMudkipGfx30, ARRAY_COUNT(sMudkipGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx31[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_31.4bpp");
+static const u8 sMudkipGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_31.4bpp.lz");
 static const ax_sprite sMudkipSprites31[] = {
 	{sMudkipGfx31, ARRAY_COUNT(sMudkipGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx32[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_32.4bpp");
+static const u8 sMudkipGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_32.4bpp.lz");
 static const ax_sprite sMudkipSprites32[] = {
 	{sMudkipGfx32, ARRAY_COUNT(sMudkipGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx33[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_33.4bpp");
+static const u8 sMudkipGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_33.4bpp.lz");
 static const ax_sprite sMudkipSprites33[] = {
 	{sMudkipGfx33, ARRAY_COUNT(sMudkipGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx34[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_34.4bpp");
+static const u8 sMudkipGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_34.4bpp.lz");
 static const ax_sprite sMudkipSprites34[] = {
 	{sMudkipGfx34, ARRAY_COUNT(sMudkipGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx35[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_35.4bpp");
+static const u8 sMudkipGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_35.4bpp.lz");
 static const ax_sprite sMudkipSprites35[] = {
 	{sMudkipGfx35, ARRAY_COUNT(sMudkipGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx36[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_36.4bpp");
+static const u8 sMudkipGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_36.4bpp.lz");
 static const ax_sprite sMudkipSprites36[] = {
 	{sMudkipGfx36, ARRAY_COUNT(sMudkipGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx37[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_37.4bpp");
+static const u8 sMudkipGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_37.4bpp.lz");
 static const ax_sprite sMudkipSprites37[] = {
 	{sMudkipGfx37, ARRAY_COUNT(sMudkipGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx38[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_38.4bpp");
+static const u8 sMudkipGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_38.4bpp.lz");
 static const ax_sprite sMudkipSprites38[] = {
 	{sMudkipGfx38, ARRAY_COUNT(sMudkipGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx39[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_39.4bpp");
+static const u8 sMudkipGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_39.4bpp.lz");
 static const ax_sprite sMudkipSprites39[] = {
 	{sMudkipGfx39, ARRAY_COUNT(sMudkipGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx40[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_40.4bpp");
+static const u8 sMudkipGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_40.4bpp.lz");
 static const ax_sprite sMudkipSprites40[] = {
 	{sMudkipGfx40, ARRAY_COUNT(sMudkipGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx41[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_41.4bpp");
+static const u8 sMudkipGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_41.4bpp.lz");
 static const ax_sprite sMudkipSprites41[] = {
 	{sMudkipGfx41, ARRAY_COUNT(sMudkipGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx42[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_42.4bpp");
+static const u8 sMudkipGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_42.4bpp.lz");
 static const ax_sprite sMudkipSprites42[] = {
 	{sMudkipGfx42, ARRAY_COUNT(sMudkipGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx43[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_43.4bpp");
+static const u8 sMudkipGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_43.4bpp.lz");
 static const ax_sprite sMudkipSprites43[] = {
 	{sMudkipGfx43, ARRAY_COUNT(sMudkipGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx44[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_44.4bpp");
+static const u8 sMudkipGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_44.4bpp.lz");
 static const ax_sprite sMudkipSprites44[] = {
 	{sMudkipGfx44, ARRAY_COUNT(sMudkipGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx45[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_45.4bpp");
+static const u8 sMudkipGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_45.4bpp.lz");
 static const ax_sprite sMudkipSprites45[] = {
 	{sMudkipGfx45, ARRAY_COUNT(sMudkipGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx46[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_46.4bpp");
+static const u8 sMudkipGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_46.4bpp.lz");
 static const ax_sprite sMudkipSprites46[] = {
 	{sMudkipGfx46, ARRAY_COUNT(sMudkipGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx47[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_47.4bpp");
+static const u8 sMudkipGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_47.4bpp.lz");
 static const ax_sprite sMudkipSprites47[] = {
 	{sMudkipGfx47, ARRAY_COUNT(sMudkipGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx48[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_48.4bpp");
+static const u8 sMudkipGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_48.4bpp.lz");
 static const ax_sprite sMudkipSprites48[] = {
 	{sMudkipGfx48, ARRAY_COUNT(sMudkipGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx49[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_49.4bpp");
+static const u8 sMudkipGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_49.4bpp.lz");
 static const ax_sprite sMudkipSprites49[] = {
 	{sMudkipGfx49, ARRAY_COUNT(sMudkipGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx50[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_50.4bpp");
+static const u8 sMudkipGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_50.4bpp.lz");
 static const ax_sprite sMudkipSprites50[] = {
 	{sMudkipGfx50, ARRAY_COUNT(sMudkipGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx51[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_51.4bpp");
+static const u8 sMudkipGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_51.4bpp.lz");
 static const ax_sprite sMudkipSprites51[] = {
 	{sMudkipGfx51, ARRAY_COUNT(sMudkipGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx52[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_52.4bpp");
+static const u8 sMudkipGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_52.4bpp.lz");
 static const ax_sprite sMudkipSprites52[] = {
 	{sMudkipGfx52, ARRAY_COUNT(sMudkipGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx53[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_53.4bpp");
+static const u8 sMudkipGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_53.4bpp.lz");
 static const ax_sprite sMudkipSprites53[] = {
 	{sMudkipGfx53, ARRAY_COUNT(sMudkipGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx54[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_54.4bpp");
+static const u8 sMudkipGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_54.4bpp.lz");
 static const ax_sprite sMudkipSprites54[] = {
 	{sMudkipGfx54, ARRAY_COUNT(sMudkipGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx55[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_55.4bpp");
+static const u8 sMudkipGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_55.4bpp.lz");
 static const ax_sprite sMudkipSprites55[] = {
 	{sMudkipGfx55, ARRAY_COUNT(sMudkipGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx56[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_56.4bpp");
+static const u8 sMudkipGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_56.4bpp.lz");
 static const ax_sprite sMudkipSprites56[] = {
 	{sMudkipGfx56, ARRAY_COUNT(sMudkipGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx57[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_57.4bpp");
+static const u8 sMudkipGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_57.4bpp.lz");
 static const ax_sprite sMudkipSprites57[] = {
 	{sMudkipGfx57, ARRAY_COUNT(sMudkipGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx58[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_58.4bpp");
+static const u8 sMudkipGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_58.4bpp.lz");
 static const ax_sprite sMudkipSprites58[] = {
 	{sMudkipGfx58, ARRAY_COUNT(sMudkipGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx59[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_59.4bpp");
+static const u8 sMudkipGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_59.4bpp.lz");
 static const ax_sprite sMudkipSprites59[] = {
 	{sMudkipGfx59, ARRAY_COUNT(sMudkipGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMudkipGfx60[] = INCBIN_U8("graphics/ax/mon/mudkip/sprite_60.4bpp");
+static const u8 sMudkipGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mudkip/sprite_60.4bpp.lz");
 static const ax_sprite sMudkipSprites60[] = {
 	{sMudkipGfx60, ARRAY_COUNT(sMudkipGfx60)}, 
 	{NULL, 0}

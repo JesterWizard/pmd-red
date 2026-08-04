@@ -2023,142 +2023,142 @@ static const ax_anim sBeldumAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBeldumGfx1[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_1.4bpp");
+static const u8 sBeldumGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_1.4bpp.lz");
 static const ax_sprite sBeldumSprites1[] = {
 	{sBeldumGfx1, ARRAY_COUNT(sBeldumGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx2[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_2.4bpp");
+static const u8 sBeldumGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_2.4bpp.lz");
 static const ax_sprite sBeldumSprites2[] = {
 	{sBeldumGfx2, ARRAY_COUNT(sBeldumGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx3[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_3.4bpp");
+static const u8 sBeldumGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_3.4bpp.lz");
 static const ax_sprite sBeldumSprites3[] = {
 	{sBeldumGfx3, ARRAY_COUNT(sBeldumGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx4[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_4.4bpp");
+static const u8 sBeldumGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_4.4bpp.lz");
 static const ax_sprite sBeldumSprites4[] = {
 	{sBeldumGfx4, ARRAY_COUNT(sBeldumGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx5[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_5.4bpp");
+static const u8 sBeldumGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_5.4bpp.lz");
 static const ax_sprite sBeldumSprites5[] = {
 	{sBeldumGfx5, ARRAY_COUNT(sBeldumGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx6[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_6.4bpp");
+static const u8 sBeldumGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_6.4bpp.lz");
 static const ax_sprite sBeldumSprites6[] = {
 	{sBeldumGfx6, ARRAY_COUNT(sBeldumGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx7[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_7.4bpp");
+static const u8 sBeldumGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_7.4bpp.lz");
 static const ax_sprite sBeldumSprites7[] = {
 	{sBeldumGfx7, ARRAY_COUNT(sBeldumGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx8[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_8.4bpp");
+static const u8 sBeldumGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_8.4bpp.lz");
 static const ax_sprite sBeldumSprites8[] = {
 	{sBeldumGfx8, ARRAY_COUNT(sBeldumGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx9[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_9.4bpp");
+static const u8 sBeldumGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_9.4bpp.lz");
 static const ax_sprite sBeldumSprites9[] = {
 	{sBeldumGfx9, ARRAY_COUNT(sBeldumGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx10[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_10.4bpp");
+static const u8 sBeldumGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_10.4bpp.lz");
 static const ax_sprite sBeldumSprites10[] = {
 	{sBeldumGfx10, ARRAY_COUNT(sBeldumGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx11[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_11.4bpp");
+static const u8 sBeldumGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_11.4bpp.lz");
 static const ax_sprite sBeldumSprites11[] = {
 	{sBeldumGfx11, ARRAY_COUNT(sBeldumGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx12[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_12.4bpp");
+static const u8 sBeldumGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_12.4bpp.lz");
 static const ax_sprite sBeldumSprites12[] = {
 	{sBeldumGfx12, ARRAY_COUNT(sBeldumGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx13[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_13.4bpp");
+static const u8 sBeldumGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_13.4bpp.lz");
 static const ax_sprite sBeldumSprites13[] = {
 	{sBeldumGfx13, ARRAY_COUNT(sBeldumGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx14[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_14.4bpp");
+static const u8 sBeldumGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_14.4bpp.lz");
 static const ax_sprite sBeldumSprites14[] = {
 	{sBeldumGfx14, ARRAY_COUNT(sBeldumGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx15[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_15.4bpp");
+static const u8 sBeldumGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_15.4bpp.lz");
 static const ax_sprite sBeldumSprites15[] = {
 	{sBeldumGfx15, ARRAY_COUNT(sBeldumGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx16[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_16.4bpp");
+static const u8 sBeldumGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_16.4bpp.lz");
 static const ax_sprite sBeldumSprites16[] = {
 	{sBeldumGfx16, ARRAY_COUNT(sBeldumGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx17[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_17.4bpp");
+static const u8 sBeldumGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_17.4bpp.lz");
 static const ax_sprite sBeldumSprites17[] = {
 	{sBeldumGfx17, ARRAY_COUNT(sBeldumGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx18[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_18.4bpp");
+static const u8 sBeldumGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_18.4bpp.lz");
 static const ax_sprite sBeldumSprites18[] = {
 	{sBeldumGfx18, ARRAY_COUNT(sBeldumGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx19[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_19.4bpp");
+static const u8 sBeldumGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_19.4bpp.lz");
 static const ax_sprite sBeldumSprites19[] = {
 	{sBeldumGfx19, ARRAY_COUNT(sBeldumGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx20[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_20.4bpp");
+static const u8 sBeldumGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_20.4bpp.lz");
 static const ax_sprite sBeldumSprites20[] = {
 	{sBeldumGfx20, ARRAY_COUNT(sBeldumGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx21[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_21.4bpp");
+static const u8 sBeldumGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_21.4bpp.lz");
 static const ax_sprite sBeldumSprites21[] = {
 	{sBeldumGfx21, ARRAY_COUNT(sBeldumGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx22[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_22.4bpp");
+static const u8 sBeldumGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_22.4bpp.lz");
 static const ax_sprite sBeldumSprites22[] = {
 	{sBeldumGfx22, ARRAY_COUNT(sBeldumGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx23[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_23.4bpp");
+static const u8 sBeldumGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_23.4bpp.lz");
 static const ax_sprite sBeldumSprites23[] = {
 	{sBeldumGfx23, ARRAY_COUNT(sBeldumGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx24[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_24.4bpp");
+static const u8 sBeldumGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_24.4bpp.lz");
 static const ax_sprite sBeldumSprites24[] = {
 	{sBeldumGfx24, ARRAY_COUNT(sBeldumGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx25[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_25.4bpp");
+static const u8 sBeldumGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_25.4bpp.lz");
 static const ax_sprite sBeldumSprites25[] = {
 	{sBeldumGfx25, ARRAY_COUNT(sBeldumGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx26[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_26.4bpp");
+static const u8 sBeldumGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_26.4bpp.lz");
 static const ax_sprite sBeldumSprites26[] = {
 	{sBeldumGfx26, ARRAY_COUNT(sBeldumGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx27[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_27.4bpp");
+static const u8 sBeldumGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_27.4bpp.lz");
 static const ax_sprite sBeldumSprites27[] = {
 	{sBeldumGfx27, ARRAY_COUNT(sBeldumGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sBeldumGfx28[] = INCBIN_U8("graphics/ax/mon/beldum/sprite_28.4bpp");
+static const u8 sBeldumGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beldum/sprite_28.4bpp.lz");
 static const ax_sprite sBeldumSprites28[] = {
 	{sBeldumGfx28, ARRAY_COUNT(sBeldumGfx28)}, 
 	{NULL, 0}

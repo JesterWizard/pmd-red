@@ -2229,172 +2229,172 @@ static const ax_anim sMinunAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMinunGfx1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_1.4bpp");
+static const u8 sMinunGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_1.4bpp.lz");
 static const ax_sprite sMinunSprites1[] = {
 	{sMinunGfx1, ARRAY_COUNT(sMinunGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx2[] = INCBIN_U8("graphics/ax/mon/minun/sprite_2.4bpp");
+static const u8 sMinunGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_2.4bpp.lz");
 static const ax_sprite sMinunSprites2[] = {
 	{sMinunGfx2, ARRAY_COUNT(sMinunGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx3[] = INCBIN_U8("graphics/ax/mon/minun/sprite_3.4bpp");
+static const u8 sMinunGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_3.4bpp.lz");
 static const ax_sprite sMinunSprites3[] = {
 	{sMinunGfx3, ARRAY_COUNT(sMinunGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx4[] = INCBIN_U8("graphics/ax/mon/minun/sprite_4.4bpp");
+static const u8 sMinunGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_4.4bpp.lz");
 static const ax_sprite sMinunSprites4[] = {
 	{sMinunGfx4, ARRAY_COUNT(sMinunGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx5[] = INCBIN_U8("graphics/ax/mon/minun/sprite_5.4bpp");
+static const u8 sMinunGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_5.4bpp.lz");
 static const ax_sprite sMinunSprites5[] = {
 	{sMinunGfx5, ARRAY_COUNT(sMinunGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx6[] = INCBIN_U8("graphics/ax/mon/minun/sprite_6.4bpp");
+static const u8 sMinunGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_6.4bpp.lz");
 static const ax_sprite sMinunSprites6[] = {
 	{sMinunGfx6, ARRAY_COUNT(sMinunGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx7[] = INCBIN_U8("graphics/ax/mon/minun/sprite_7.4bpp");
+static const u8 sMinunGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_7.4bpp.lz");
 static const ax_sprite sMinunSprites7[] = {
 	{sMinunGfx7, ARRAY_COUNT(sMinunGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx8[] = INCBIN_U8("graphics/ax/mon/minun/sprite_8.4bpp");
+static const u8 sMinunGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_8.4bpp.lz");
 static const ax_sprite sMinunSprites8[] = {
 	{sMinunGfx8, ARRAY_COUNT(sMinunGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx9[] = INCBIN_U8("graphics/ax/mon/minun/sprite_9.4bpp");
+static const u8 sMinunGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_9.4bpp.lz");
 static const ax_sprite sMinunSprites9[] = {
 	{sMinunGfx9, ARRAY_COUNT(sMinunGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx10[] = INCBIN_U8("graphics/ax/mon/minun/sprite_10.4bpp");
+static const u8 sMinunGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_10.4bpp.lz");
 static const ax_sprite sMinunSprites10[] = {
 	{sMinunGfx10, ARRAY_COUNT(sMinunGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx11[] = INCBIN_U8("graphics/ax/mon/minun/sprite_11.4bpp");
+static const u8 sMinunGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_11.4bpp.lz");
 static const ax_sprite sMinunSprites11[] = {
 	{sMinunGfx11, ARRAY_COUNT(sMinunGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx12[] = INCBIN_U8("graphics/ax/mon/minun/sprite_12.4bpp");
+static const u8 sMinunGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_12.4bpp.lz");
 static const ax_sprite sMinunSprites12[] = {
 	{sMinunGfx12, ARRAY_COUNT(sMinunGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx13[] = INCBIN_U8("graphics/ax/mon/minun/sprite_13.4bpp");
+static const u8 sMinunGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_13.4bpp.lz");
 static const ax_sprite sMinunSprites13[] = {
 	{sMinunGfx13, ARRAY_COUNT(sMinunGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx14[] = INCBIN_U8("graphics/ax/mon/minun/sprite_14.4bpp");
+static const u8 sMinunGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_14.4bpp.lz");
 static const ax_sprite sMinunSprites14[] = {
 	{sMinunGfx14, ARRAY_COUNT(sMinunGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx15[] = INCBIN_U8("graphics/ax/mon/minun/sprite_15.4bpp");
+static const u8 sMinunGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_15.4bpp.lz");
 static const ax_sprite sMinunSprites15[] = {
 	{sMinunGfx15, ARRAY_COUNT(sMinunGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx16[] = INCBIN_U8("graphics/ax/mon/minun/sprite_16.4bpp");
+static const u8 sMinunGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_16.4bpp.lz");
 static const ax_sprite sMinunSprites16[] = {
 	{NULL, 64}, 
 	{sMinunGfx16, ARRAY_COUNT(sMinunGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx17[] = INCBIN_U8("graphics/ax/mon/minun/sprite_17.4bpp");
+static const u8 sMinunGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_17.4bpp.lz");
 static const ax_sprite sMinunSprites17[] = {
 	{sMinunGfx17, ARRAY_COUNT(sMinunGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx18[] = INCBIN_U8("graphics/ax/mon/minun/sprite_18.4bpp");
-static const u8 sMinunGfx18_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_18_1.4bpp");
+static const u8 sMinunGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_18.4bpp.lz");
+static const u8 sMinunGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_18_1.4bpp.lz");
 static const ax_sprite sMinunSprites18[] = {
 	{sMinunGfx18, ARRAY_COUNT(sMinunGfx18)}, 
 	{NULL, 32}, 
 	{sMinunGfx18_1, ARRAY_COUNT(sMinunGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx19[] = INCBIN_U8("graphics/ax/mon/minun/sprite_19.4bpp");
-static const u8 sMinunGfx19_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_19_1.4bpp");
+static const u8 sMinunGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_19.4bpp.lz");
+static const u8 sMinunGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_19_1.4bpp.lz");
 static const ax_sprite sMinunSprites19[] = {
 	{sMinunGfx19, ARRAY_COUNT(sMinunGfx19)}, 
 	{NULL, 32}, 
 	{sMinunGfx19_1, ARRAY_COUNT(sMinunGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx20[] = INCBIN_U8("graphics/ax/mon/minun/sprite_20.4bpp");
+static const u8 sMinunGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_20.4bpp.lz");
 static const ax_sprite sMinunSprites20[] = {
 	{NULL, 32}, 
 	{sMinunGfx20, ARRAY_COUNT(sMinunGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx21[] = INCBIN_U8("graphics/ax/mon/minun/sprite_21.4bpp");
-static const u8 sMinunGfx21_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_21_1.4bpp");
+static const u8 sMinunGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_21.4bpp.lz");
+static const u8 sMinunGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_21_1.4bpp.lz");
 static const ax_sprite sMinunSprites21[] = {
 	{sMinunGfx21, ARRAY_COUNT(sMinunGfx21)}, 
 	{NULL, 32}, 
 	{sMinunGfx21_1, ARRAY_COUNT(sMinunGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx22[] = INCBIN_U8("graphics/ax/mon/minun/sprite_22.4bpp");
+static const u8 sMinunGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_22.4bpp.lz");
 static const ax_sprite sMinunSprites22[] = {
 	{sMinunGfx22, ARRAY_COUNT(sMinunGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx23[] = INCBIN_U8("graphics/ax/mon/minun/sprite_23.4bpp");
+static const u8 sMinunGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_23.4bpp.lz");
 static const ax_sprite sMinunSprites23[] = {
 	{sMinunGfx23, ARRAY_COUNT(sMinunGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx24[] = INCBIN_U8("graphics/ax/mon/minun/sprite_24.4bpp");
+static const u8 sMinunGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_24.4bpp.lz");
 static const ax_sprite sMinunSprites24[] = {
 	{sMinunGfx24, ARRAY_COUNT(sMinunGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx25[] = INCBIN_U8("graphics/ax/mon/minun/sprite_25.4bpp");
+static const u8 sMinunGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_25.4bpp.lz");
 static const ax_sprite sMinunSprites25[] = {
 	{sMinunGfx25, ARRAY_COUNT(sMinunGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx26[] = INCBIN_U8("graphics/ax/mon/minun/sprite_26.4bpp");
+static const u8 sMinunGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_26.4bpp.lz");
 static const ax_sprite sMinunSprites26[] = {
 	{sMinunGfx26, ARRAY_COUNT(sMinunGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx27[] = INCBIN_U8("graphics/ax/mon/minun/sprite_27.4bpp");
+static const u8 sMinunGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_27.4bpp.lz");
 static const ax_sprite sMinunSprites27[] = {
 	{sMinunGfx27, ARRAY_COUNT(sMinunGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx28[] = INCBIN_U8("graphics/ax/mon/minun/sprite_28.4bpp");
+static const u8 sMinunGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_28.4bpp.lz");
 static const ax_sprite sMinunSprites28[] = {
 	{sMinunGfx28, ARRAY_COUNT(sMinunGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx29[] = INCBIN_U8("graphics/ax/mon/minun/sprite_29.4bpp");
+static const u8 sMinunGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_29.4bpp.lz");
 static const ax_sprite sMinunSprites29[] = {
 	{sMinunGfx29, ARRAY_COUNT(sMinunGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx30[] = INCBIN_U8("graphics/ax/mon/minun/sprite_30.4bpp");
+static const u8 sMinunGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_30.4bpp.lz");
 static const ax_sprite sMinunSprites30[] = {
 	{sMinunGfx30, ARRAY_COUNT(sMinunGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx31[] = INCBIN_U8("graphics/ax/mon/minun/sprite_31.4bpp");
-static const u8 sMinunGfx31_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_31_1.4bpp");
-static const u8 sMinunGfx31_2[] = INCBIN_U8("graphics/ax/mon/minun/sprite_31_2.4bpp");
+static const u8 sMinunGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_31.4bpp.lz");
+static const u8 sMinunGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_31_1.4bpp.lz");
+static const u8 sMinunGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_31_2.4bpp.lz");
 static const ax_sprite sMinunSprites31[] = {
 	{NULL, 160}, 
 	{sMinunGfx31, ARRAY_COUNT(sMinunGfx31)}, 
@@ -2405,20 +2405,20 @@ static const ax_sprite sMinunSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx32[] = INCBIN_U8("graphics/ax/mon/minun/sprite_32.4bpp");
+static const u8 sMinunGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_32.4bpp.lz");
 static const ax_sprite sMinunSprites32[] = {
 	{sMinunGfx32, ARRAY_COUNT(sMinunGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx33[] = INCBIN_U8("graphics/ax/mon/minun/sprite_33.4bpp");
+static const u8 sMinunGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_33.4bpp.lz");
 static const ax_sprite sMinunSprites33[] = {
 	{sMinunGfx33, ARRAY_COUNT(sMinunGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx34[] = INCBIN_U8("graphics/ax/mon/minun/sprite_34.4bpp");
-static const u8 sMinunGfx34_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_34_1.4bpp");
-static const u8 sMinunGfx34_2[] = INCBIN_U8("graphics/ax/mon/minun/sprite_34_2.4bpp");
-static const u8 sMinunGfx34_3[] = INCBIN_U8("graphics/ax/mon/minun/sprite_34_3.4bpp");
+static const u8 sMinunGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_34.4bpp.lz");
+static const u8 sMinunGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_34_1.4bpp.lz");
+static const u8 sMinunGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_34_2.4bpp.lz");
+static const u8 sMinunGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_34_3.4bpp.lz");
 static const ax_sprite sMinunSprites34[] = {
 	{NULL, 32}, 
 	{sMinunGfx34, ARRAY_COUNT(sMinunGfx34)}, 
@@ -2431,9 +2431,9 @@ static const ax_sprite sMinunSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx35[] = INCBIN_U8("graphics/ax/mon/minun/sprite_35.4bpp");
-static const u8 sMinunGfx35_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_35_1.4bpp");
-static const u8 sMinunGfx35_2[] = INCBIN_U8("graphics/ax/mon/minun/sprite_35_2.4bpp");
+static const u8 sMinunGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_35.4bpp.lz");
+static const u8 sMinunGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_35_1.4bpp.lz");
+static const u8 sMinunGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_35_2.4bpp.lz");
 static const ax_sprite sMinunSprites35[] = {
 	{NULL, 32}, 
 	{sMinunGfx35, ARRAY_COUNT(sMinunGfx35)}, 
@@ -2443,10 +2443,10 @@ static const ax_sprite sMinunSprites35[] = {
 	{sMinunGfx35_2, ARRAY_COUNT(sMinunGfx35_2)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx36[] = INCBIN_U8("graphics/ax/mon/minun/sprite_36.4bpp");
-static const u8 sMinunGfx36_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_36_1.4bpp");
-static const u8 sMinunGfx36_2[] = INCBIN_U8("graphics/ax/mon/minun/sprite_36_2.4bpp");
-static const u8 sMinunGfx36_3[] = INCBIN_U8("graphics/ax/mon/minun/sprite_36_3.4bpp");
+static const u8 sMinunGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_36.4bpp.lz");
+static const u8 sMinunGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_36_1.4bpp.lz");
+static const u8 sMinunGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_36_2.4bpp.lz");
+static const u8 sMinunGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_36_3.4bpp.lz");
 static const ax_sprite sMinunSprites36[] = {
 	{NULL, 32}, 
 	{sMinunGfx36, ARRAY_COUNT(sMinunGfx36)}, 
@@ -2459,9 +2459,9 @@ static const ax_sprite sMinunSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx37[] = INCBIN_U8("graphics/ax/mon/minun/sprite_37.4bpp");
-static const u8 sMinunGfx37_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_37_1.4bpp");
-static const u8 sMinunGfx37_2[] = INCBIN_U8("graphics/ax/mon/minun/sprite_37_2.4bpp");
+static const u8 sMinunGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_37.4bpp.lz");
+static const u8 sMinunGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_37_1.4bpp.lz");
+static const u8 sMinunGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_37_2.4bpp.lz");
 static const ax_sprite sMinunSprites37[] = {
 	{sMinunGfx37, ARRAY_COUNT(sMinunGfx37)}, 
 	{NULL, 32}, 
@@ -2471,10 +2471,10 @@ static const ax_sprite sMinunSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx38[] = INCBIN_U8("graphics/ax/mon/minun/sprite_38.4bpp");
-static const u8 sMinunGfx38_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_38_1.4bpp");
-static const u8 sMinunGfx38_2[] = INCBIN_U8("graphics/ax/mon/minun/sprite_38_2.4bpp");
-static const u8 sMinunGfx38_3[] = INCBIN_U8("graphics/ax/mon/minun/sprite_38_3.4bpp");
+static const u8 sMinunGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_38.4bpp.lz");
+static const u8 sMinunGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_38_1.4bpp.lz");
+static const u8 sMinunGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_38_2.4bpp.lz");
+static const u8 sMinunGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_38_3.4bpp.lz");
 static const ax_sprite sMinunSprites38[] = {
 	{NULL, 64}, 
 	{sMinunGfx38, ARRAY_COUNT(sMinunGfx38)}, 
@@ -2487,15 +2487,15 @@ static const ax_sprite sMinunSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx39[] = INCBIN_U8("graphics/ax/mon/minun/sprite_39.4bpp");
+static const u8 sMinunGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_39.4bpp.lz");
 static const ax_sprite sMinunSprites39[] = {
 	{sMinunGfx39, ARRAY_COUNT(sMinunGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx40[] = INCBIN_U8("graphics/ax/mon/minun/sprite_40.4bpp");
-static const u8 sMinunGfx40_1[] = INCBIN_U8("graphics/ax/mon/minun/sprite_40_1.4bpp");
-static const u8 sMinunGfx40_2[] = INCBIN_U8("graphics/ax/mon/minun/sprite_40_2.4bpp");
-static const u8 sMinunGfx40_3[] = INCBIN_U8("graphics/ax/mon/minun/sprite_40_3.4bpp");
+static const u8 sMinunGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_40.4bpp.lz");
+static const u8 sMinunGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_40_1.4bpp.lz");
+static const u8 sMinunGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_40_2.4bpp.lz");
+static const u8 sMinunGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_40_3.4bpp.lz");
 static const ax_sprite sMinunSprites40[] = {
 	{NULL, 32}, 
 	{sMinunGfx40, ARRAY_COUNT(sMinunGfx40)}, 
@@ -2508,37 +2508,37 @@ static const ax_sprite sMinunSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx41[] = INCBIN_U8("graphics/ax/mon/minun/sprite_41.4bpp");
+static const u8 sMinunGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_41.4bpp.lz");
 static const ax_sprite sMinunSprites41[] = {
 	{sMinunGfx41, ARRAY_COUNT(sMinunGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx42[] = INCBIN_U8("graphics/ax/mon/minun/sprite_42.4bpp");
+static const u8 sMinunGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_42.4bpp.lz");
 static const ax_sprite sMinunSprites42[] = {
 	{sMinunGfx42, ARRAY_COUNT(sMinunGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx43[] = INCBIN_U8("graphics/ax/mon/minun/sprite_43.4bpp");
+static const u8 sMinunGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_43.4bpp.lz");
 static const ax_sprite sMinunSprites43[] = {
 	{sMinunGfx43, ARRAY_COUNT(sMinunGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx44[] = INCBIN_U8("graphics/ax/mon/minun/sprite_44.4bpp");
+static const u8 sMinunGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_44.4bpp.lz");
 static const ax_sprite sMinunSprites44[] = {
 	{sMinunGfx44, ARRAY_COUNT(sMinunGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx45[] = INCBIN_U8("graphics/ax/mon/minun/sprite_45.4bpp");
+static const u8 sMinunGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_45.4bpp.lz");
 static const ax_sprite sMinunSprites45[] = {
 	{sMinunGfx45, ARRAY_COUNT(sMinunGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx46[] = INCBIN_U8("graphics/ax/mon/minun/sprite_46.4bpp");
+static const u8 sMinunGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_46.4bpp.lz");
 static const ax_sprite sMinunSprites46[] = {
 	{sMinunGfx46, ARRAY_COUNT(sMinunGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMinunGfx47[] = INCBIN_U8("graphics/ax/mon/minun/sprite_47.4bpp");
+static const u8 sMinunGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/minun/sprite_47.4bpp.lz");
 static const ax_sprite sMinunSprites47[] = {
 	{sMinunGfx47, ARRAY_COUNT(sMinunGfx47)}, 
 	{NULL, 0}

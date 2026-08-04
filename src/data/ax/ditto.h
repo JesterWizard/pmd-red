@@ -1791,157 +1791,157 @@ static const ax_anim sDittoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDittoGfx1[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_1.4bpp");
+static const u8 sDittoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_1.4bpp.lz");
 static const ax_sprite sDittoSprites1[] = {
 	{sDittoGfx1, ARRAY_COUNT(sDittoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx2[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_2.4bpp");
+static const u8 sDittoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_2.4bpp.lz");
 static const ax_sprite sDittoSprites2[] = {
 	{sDittoGfx2, ARRAY_COUNT(sDittoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx3[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_3.4bpp");
+static const u8 sDittoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_3.4bpp.lz");
 static const ax_sprite sDittoSprites3[] = {
 	{sDittoGfx3, ARRAY_COUNT(sDittoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx4[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_4.4bpp");
+static const u8 sDittoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_4.4bpp.lz");
 static const ax_sprite sDittoSprites4[] = {
 	{sDittoGfx4, ARRAY_COUNT(sDittoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx5[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_5.4bpp");
+static const u8 sDittoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_5.4bpp.lz");
 static const ax_sprite sDittoSprites5[] = {
 	{sDittoGfx5, ARRAY_COUNT(sDittoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx6[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_6.4bpp");
+static const u8 sDittoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_6.4bpp.lz");
 static const ax_sprite sDittoSprites6[] = {
 	{sDittoGfx6, ARRAY_COUNT(sDittoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx7[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_7.4bpp");
+static const u8 sDittoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_7.4bpp.lz");
 static const ax_sprite sDittoSprites7[] = {
 	{sDittoGfx7, ARRAY_COUNT(sDittoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx8[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_8.4bpp");
+static const u8 sDittoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_8.4bpp.lz");
 static const ax_sprite sDittoSprites8[] = {
 	{sDittoGfx8, ARRAY_COUNT(sDittoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx9[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_9.4bpp");
+static const u8 sDittoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_9.4bpp.lz");
 static const ax_sprite sDittoSprites9[] = {
 	{sDittoGfx9, ARRAY_COUNT(sDittoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx10[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_10.4bpp");
+static const u8 sDittoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_10.4bpp.lz");
 static const ax_sprite sDittoSprites10[] = {
 	{sDittoGfx10, ARRAY_COUNT(sDittoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx11[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_11.4bpp");
+static const u8 sDittoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_11.4bpp.lz");
 static const ax_sprite sDittoSprites11[] = {
 	{sDittoGfx11, ARRAY_COUNT(sDittoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx12[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_12.4bpp");
+static const u8 sDittoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_12.4bpp.lz");
 static const ax_sprite sDittoSprites12[] = {
 	{sDittoGfx12, ARRAY_COUNT(sDittoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx13[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_13.4bpp");
+static const u8 sDittoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_13.4bpp.lz");
 static const ax_sprite sDittoSprites13[] = {
 	{sDittoGfx13, ARRAY_COUNT(sDittoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx14[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_14.4bpp");
+static const u8 sDittoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_14.4bpp.lz");
 static const ax_sprite sDittoSprites14[] = {
 	{sDittoGfx14, ARRAY_COUNT(sDittoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx15[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_15.4bpp");
+static const u8 sDittoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_15.4bpp.lz");
 static const ax_sprite sDittoSprites15[] = {
 	{sDittoGfx15, ARRAY_COUNT(sDittoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx16[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_16.4bpp");
+static const u8 sDittoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_16.4bpp.lz");
 static const ax_sprite sDittoSprites16[] = {
 	{sDittoGfx16, ARRAY_COUNT(sDittoGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx17[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_17.4bpp");
+static const u8 sDittoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_17.4bpp.lz");
 static const ax_sprite sDittoSprites17[] = {
 	{sDittoGfx17, ARRAY_COUNT(sDittoGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx18[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_18.4bpp");
+static const u8 sDittoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_18.4bpp.lz");
 static const ax_sprite sDittoSprites18[] = {
 	{sDittoGfx18, ARRAY_COUNT(sDittoGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx19[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_19.4bpp");
+static const u8 sDittoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_19.4bpp.lz");
 static const ax_sprite sDittoSprites19[] = {
 	{sDittoGfx19, ARRAY_COUNT(sDittoGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx20[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_20.4bpp");
+static const u8 sDittoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_20.4bpp.lz");
 static const ax_sprite sDittoSprites20[] = {
 	{sDittoGfx20, ARRAY_COUNT(sDittoGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx21[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_21.4bpp");
+static const u8 sDittoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_21.4bpp.lz");
 static const ax_sprite sDittoSprites21[] = {
 	{sDittoGfx21, ARRAY_COUNT(sDittoGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx22[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_22.4bpp");
+static const u8 sDittoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_22.4bpp.lz");
 static const ax_sprite sDittoSprites22[] = {
 	{sDittoGfx22, ARRAY_COUNT(sDittoGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx23[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_23.4bpp");
+static const u8 sDittoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_23.4bpp.lz");
 static const ax_sprite sDittoSprites23[] = {
 	{sDittoGfx23, ARRAY_COUNT(sDittoGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx24[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_24.4bpp");
+static const u8 sDittoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_24.4bpp.lz");
 static const ax_sprite sDittoSprites24[] = {
 	{sDittoGfx24, ARRAY_COUNT(sDittoGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx25[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_25.4bpp");
+static const u8 sDittoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_25.4bpp.lz");
 static const ax_sprite sDittoSprites25[] = {
 	{sDittoGfx25, ARRAY_COUNT(sDittoGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx26[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_26.4bpp");
+static const u8 sDittoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_26.4bpp.lz");
 static const ax_sprite sDittoSprites26[] = {
 	{sDittoGfx26, ARRAY_COUNT(sDittoGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx27[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_27.4bpp");
+static const u8 sDittoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_27.4bpp.lz");
 static const ax_sprite sDittoSprites27[] = {
 	{sDittoGfx27, ARRAY_COUNT(sDittoGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx28[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_28.4bpp");
+static const u8 sDittoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_28.4bpp.lz");
 static const ax_sprite sDittoSprites28[] = {
 	{sDittoGfx28, ARRAY_COUNT(sDittoGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx29[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_29.4bpp");
+static const u8 sDittoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_29.4bpp.lz");
 static const ax_sprite sDittoSprites29[] = {
 	{sDittoGfx29, ARRAY_COUNT(sDittoGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx30[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_30.4bpp");
+static const u8 sDittoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_30.4bpp.lz");
 static const ax_sprite sDittoSprites30[] = {
 	{sDittoGfx30, ARRAY_COUNT(sDittoGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sDittoGfx31[] = INCBIN_U8("graphics/ax/mon/ditto/sprite_31.4bpp");
+static const u8 sDittoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ditto/sprite_31.4bpp.lz");
 static const ax_sprite sDittoSprites31[] = {
 	{sDittoGfx31, ARRAY_COUNT(sDittoGfx31)}, 
 	{NULL, 0}

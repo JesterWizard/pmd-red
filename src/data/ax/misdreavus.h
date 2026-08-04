@@ -2355,84 +2355,84 @@ static const ax_anim sMisdreavusAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMisdreavusGfx1[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_1.4bpp");
+static const u8 sMisdreavusGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_1.4bpp.lz");
 static const ax_sprite sMisdreavusSprites1[] = {
 	{sMisdreavusGfx1, ARRAY_COUNT(sMisdreavusGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx2[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_2.4bpp");
+static const u8 sMisdreavusGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_2.4bpp.lz");
 static const ax_sprite sMisdreavusSprites2[] = {
 	{sMisdreavusGfx2, ARRAY_COUNT(sMisdreavusGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx3[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_3.4bpp");
+static const u8 sMisdreavusGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_3.4bpp.lz");
 static const ax_sprite sMisdreavusSprites3[] = {
 	{sMisdreavusGfx3, ARRAY_COUNT(sMisdreavusGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx4[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_4.4bpp");
+static const u8 sMisdreavusGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_4.4bpp.lz");
 static const ax_sprite sMisdreavusSprites4[] = {
 	{sMisdreavusGfx4, ARRAY_COUNT(sMisdreavusGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx5[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_5.4bpp");
+static const u8 sMisdreavusGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_5.4bpp.lz");
 static const ax_sprite sMisdreavusSprites5[] = {
 	{sMisdreavusGfx5, ARRAY_COUNT(sMisdreavusGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx6[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_6.4bpp");
+static const u8 sMisdreavusGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_6.4bpp.lz");
 static const ax_sprite sMisdreavusSprites6[] = {
 	{sMisdreavusGfx6, ARRAY_COUNT(sMisdreavusGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx7[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_7.4bpp");
+static const u8 sMisdreavusGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_7.4bpp.lz");
 static const ax_sprite sMisdreavusSprites7[] = {
 	{sMisdreavusGfx7, ARRAY_COUNT(sMisdreavusGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx8[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_8.4bpp");
+static const u8 sMisdreavusGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_8.4bpp.lz");
 static const ax_sprite sMisdreavusSprites8[] = {
 	{sMisdreavusGfx8, ARRAY_COUNT(sMisdreavusGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx9[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_9.4bpp");
+static const u8 sMisdreavusGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_9.4bpp.lz");
 static const ax_sprite sMisdreavusSprites9[] = {
 	{sMisdreavusGfx9, ARRAY_COUNT(sMisdreavusGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx10[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_10.4bpp");
+static const u8 sMisdreavusGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_10.4bpp.lz");
 static const ax_sprite sMisdreavusSprites10[] = {
 	{sMisdreavusGfx10, ARRAY_COUNT(sMisdreavusGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx11[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_11.4bpp");
+static const u8 sMisdreavusGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_11.4bpp.lz");
 static const ax_sprite sMisdreavusSprites11[] = {
 	{sMisdreavusGfx11, ARRAY_COUNT(sMisdreavusGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx12[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_12.4bpp");
+static const u8 sMisdreavusGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_12.4bpp.lz");
 static const ax_sprite sMisdreavusSprites12[] = {
 	{sMisdreavusGfx12, ARRAY_COUNT(sMisdreavusGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx13[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_13.4bpp");
+static const u8 sMisdreavusGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_13.4bpp.lz");
 static const ax_sprite sMisdreavusSprites13[] = {
 	{sMisdreavusGfx13, ARRAY_COUNT(sMisdreavusGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx14[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_14.4bpp");
+static const u8 sMisdreavusGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_14.4bpp.lz");
 static const ax_sprite sMisdreavusSprites14[] = {
 	{sMisdreavusGfx14, ARRAY_COUNT(sMisdreavusGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx15[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_15.4bpp");
+static const u8 sMisdreavusGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_15.4bpp.lz");
 static const ax_sprite sMisdreavusSprites15[] = {
 	{sMisdreavusGfx15, ARRAY_COUNT(sMisdreavusGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx16[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_16.4bpp");
-static const u8 sMisdreavusGfx16_1[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_16_1.4bpp");
-static const u8 sMisdreavusGfx16_2[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_16_2.4bpp");
+static const u8 sMisdreavusGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_16.4bpp.lz");
+static const u8 sMisdreavusGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_16_1.4bpp.lz");
+static const u8 sMisdreavusGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_16_2.4bpp.lz");
 static const ax_sprite sMisdreavusSprites16[] = {
 	{sMisdreavusGfx16, ARRAY_COUNT(sMisdreavusGfx16)}, 
 	{NULL, 32}, 
@@ -2442,8 +2442,8 @@ static const ax_sprite sMisdreavusSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx17[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_17.4bpp");
-static const u8 sMisdreavusGfx17_1[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_17_1.4bpp");
+static const u8 sMisdreavusGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_17.4bpp.lz");
+static const u8 sMisdreavusGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_17_1.4bpp.lz");
 static const ax_sprite sMisdreavusSprites17[] = {
 	{sMisdreavusGfx17, ARRAY_COUNT(sMisdreavusGfx17)}, 
 	{NULL, 32}, 
@@ -2451,15 +2451,15 @@ static const ax_sprite sMisdreavusSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx18[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_18.4bpp");
+static const u8 sMisdreavusGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_18.4bpp.lz");
 static const ax_sprite sMisdreavusSprites18[] = {
 	{sMisdreavusGfx18, ARRAY_COUNT(sMisdreavusGfx18)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx19[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_19.4bpp");
-static const u8 sMisdreavusGfx19_1[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_19_1.4bpp");
-static const u8 sMisdreavusGfx19_2[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_19_2.4bpp");
+static const u8 sMisdreavusGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_19.4bpp.lz");
+static const u8 sMisdreavusGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_19_1.4bpp.lz");
+static const u8 sMisdreavusGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_19_2.4bpp.lz");
 static const ax_sprite sMisdreavusSprites19[] = {
 	{sMisdreavusGfx19, ARRAY_COUNT(sMisdreavusGfx19)}, 
 	{NULL, 32}, 
@@ -2469,9 +2469,9 @@ static const ax_sprite sMisdreavusSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx20[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_20.4bpp");
-static const u8 sMisdreavusGfx20_1[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_20_1.4bpp");
-static const u8 sMisdreavusGfx20_2[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_20_2.4bpp");
+static const u8 sMisdreavusGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_20.4bpp.lz");
+static const u8 sMisdreavusGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_20_1.4bpp.lz");
+static const u8 sMisdreavusGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_20_2.4bpp.lz");
 static const ax_sprite sMisdreavusSprites20[] = {
 	{sMisdreavusGfx20, ARRAY_COUNT(sMisdreavusGfx20)}, 
 	{NULL, 32}, 
@@ -2481,69 +2481,69 @@ static const ax_sprite sMisdreavusSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx21[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_21.4bpp");
+static const u8 sMisdreavusGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_21.4bpp.lz");
 static const ax_sprite sMisdreavusSprites21[] = {
 	{sMisdreavusGfx21, ARRAY_COUNT(sMisdreavusGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx22[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_22.4bpp");
+static const u8 sMisdreavusGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_22.4bpp.lz");
 static const ax_sprite sMisdreavusSprites22[] = {
 	{NULL, 32}, 
 	{sMisdreavusGfx22, ARRAY_COUNT(sMisdreavusGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx23[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_23.4bpp");
+static const u8 sMisdreavusGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_23.4bpp.lz");
 static const ax_sprite sMisdreavusSprites23[] = {
 	{NULL, 32}, 
 	{sMisdreavusGfx23, ARRAY_COUNT(sMisdreavusGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx24[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_24.4bpp");
+static const u8 sMisdreavusGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_24.4bpp.lz");
 static const ax_sprite sMisdreavusSprites24[] = {
 	{sMisdreavusGfx24, ARRAY_COUNT(sMisdreavusGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx25[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_25.4bpp");
+static const u8 sMisdreavusGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_25.4bpp.lz");
 static const ax_sprite sMisdreavusSprites25[] = {
 	{sMisdreavusGfx25, ARRAY_COUNT(sMisdreavusGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx26[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_26.4bpp");
+static const u8 sMisdreavusGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_26.4bpp.lz");
 static const ax_sprite sMisdreavusSprites26[] = {
 	{sMisdreavusGfx26, ARRAY_COUNT(sMisdreavusGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx27[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_27.4bpp");
+static const u8 sMisdreavusGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_27.4bpp.lz");
 static const ax_sprite sMisdreavusSprites27[] = {
 	{sMisdreavusGfx27, ARRAY_COUNT(sMisdreavusGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx28[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_28.4bpp");
+static const u8 sMisdreavusGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_28.4bpp.lz");
 static const ax_sprite sMisdreavusSprites28[] = {
 	{sMisdreavusGfx28, ARRAY_COUNT(sMisdreavusGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx29[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_29.4bpp");
+static const u8 sMisdreavusGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_29.4bpp.lz");
 static const ax_sprite sMisdreavusSprites29[] = {
 	{sMisdreavusGfx29, ARRAY_COUNT(sMisdreavusGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx30[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_30.4bpp");
+static const u8 sMisdreavusGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_30.4bpp.lz");
 static const ax_sprite sMisdreavusSprites30[] = {
 	{sMisdreavusGfx30, ARRAY_COUNT(sMisdreavusGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx31[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_31.4bpp");
+static const u8 sMisdreavusGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_31.4bpp.lz");
 static const ax_sprite sMisdreavusSprites31[] = {
 	{sMisdreavusGfx31, ARRAY_COUNT(sMisdreavusGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx32[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_32.4bpp");
+static const u8 sMisdreavusGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_32.4bpp.lz");
 static const ax_sprite sMisdreavusSprites32[] = {
 	{sMisdreavusGfx32, ARRAY_COUNT(sMisdreavusGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMisdreavusGfx33[] = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_33.4bpp");
+static const u8 sMisdreavusGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/misdreavus/sprite_33.4bpp.lz");
 static const ax_sprite sMisdreavusSprites33[] = {
 	{sMisdreavusGfx33, ARRAY_COUNT(sMisdreavusGfx33)}, 
 	{NULL, 0}

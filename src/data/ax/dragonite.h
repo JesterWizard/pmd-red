@@ -2471,121 +2471,121 @@ static const ax_anim sDragoniteAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDragoniteGfx1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_1.4bpp");
+static const u8 sDragoniteGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites1[] = {
 	{sDragoniteGfx1, ARRAY_COUNT(sDragoniteGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx2[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_2.4bpp");
+static const u8 sDragoniteGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_2.4bpp.lz");
 static const ax_sprite sDragoniteSprites2[] = {
 	{sDragoniteGfx2, ARRAY_COUNT(sDragoniteGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx3[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_3.4bpp");
+static const u8 sDragoniteGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_3.4bpp.lz");
 static const ax_sprite sDragoniteSprites3[] = {
 	{sDragoniteGfx3, ARRAY_COUNT(sDragoniteGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx4[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_4.4bpp");
+static const u8 sDragoniteGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_4.4bpp.lz");
 static const ax_sprite sDragoniteSprites4[] = {
 	{sDragoniteGfx4, ARRAY_COUNT(sDragoniteGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx5[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_5.4bpp");
+static const u8 sDragoniteGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_5.4bpp.lz");
 static const ax_sprite sDragoniteSprites5[] = {
 	{sDragoniteGfx5, ARRAY_COUNT(sDragoniteGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx6[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_6.4bpp");
+static const u8 sDragoniteGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_6.4bpp.lz");
 static const ax_sprite sDragoniteSprites6[] = {
 	{sDragoniteGfx6, ARRAY_COUNT(sDragoniteGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx7[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_7.4bpp");
+static const u8 sDragoniteGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_7.4bpp.lz");
 static const ax_sprite sDragoniteSprites7[] = {
 	{sDragoniteGfx7, ARRAY_COUNT(sDragoniteGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx8[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_8.4bpp");
+static const u8 sDragoniteGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_8.4bpp.lz");
 static const ax_sprite sDragoniteSprites8[] = {
 	{sDragoniteGfx8, ARRAY_COUNT(sDragoniteGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx9[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_9.4bpp");
+static const u8 sDragoniteGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_9.4bpp.lz");
 static const ax_sprite sDragoniteSprites9[] = {
 	{sDragoniteGfx9, ARRAY_COUNT(sDragoniteGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx10[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_10.4bpp");
+static const u8 sDragoniteGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_10.4bpp.lz");
 static const ax_sprite sDragoniteSprites10[] = {
 	{sDragoniteGfx10, ARRAY_COUNT(sDragoniteGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx11[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_11.4bpp");
+static const u8 sDragoniteGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_11.4bpp.lz");
 static const ax_sprite sDragoniteSprites11[] = {
 	{sDragoniteGfx11, ARRAY_COUNT(sDragoniteGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx12[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_12.4bpp");
+static const u8 sDragoniteGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_12.4bpp.lz");
 static const ax_sprite sDragoniteSprites12[] = {
 	{sDragoniteGfx12, ARRAY_COUNT(sDragoniteGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx13[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_13.4bpp");
+static const u8 sDragoniteGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_13.4bpp.lz");
 static const ax_sprite sDragoniteSprites13[] = {
 	{sDragoniteGfx13, ARRAY_COUNT(sDragoniteGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx14[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_14.4bpp");
+static const u8 sDragoniteGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_14.4bpp.lz");
 static const ax_sprite sDragoniteSprites14[] = {
 	{sDragoniteGfx14, ARRAY_COUNT(sDragoniteGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx15[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_15.4bpp");
+static const u8 sDragoniteGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_15.4bpp.lz");
 static const ax_sprite sDragoniteSprites15[] = {
 	{sDragoniteGfx15, ARRAY_COUNT(sDragoniteGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx16[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_16.4bpp");
+static const u8 sDragoniteGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_16.4bpp.lz");
 static const ax_sprite sDragoniteSprites16[] = {
 	{sDragoniteGfx16, ARRAY_COUNT(sDragoniteGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx17[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_17.4bpp");
+static const u8 sDragoniteGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_17.4bpp.lz");
 static const ax_sprite sDragoniteSprites17[] = {
 	{sDragoniteGfx17, ARRAY_COUNT(sDragoniteGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx18[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_18.4bpp");
+static const u8 sDragoniteGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_18.4bpp.lz");
 static const ax_sprite sDragoniteSprites18[] = {
 	{sDragoniteGfx18, ARRAY_COUNT(sDragoniteGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx19[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_19.4bpp");
+static const u8 sDragoniteGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_19.4bpp.lz");
 static const ax_sprite sDragoniteSprites19[] = {
 	{sDragoniteGfx19, ARRAY_COUNT(sDragoniteGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx20[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_20.4bpp");
+static const u8 sDragoniteGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_20.4bpp.lz");
 static const ax_sprite sDragoniteSprites20[] = {
 	{sDragoniteGfx20, ARRAY_COUNT(sDragoniteGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx21[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_21.4bpp");
+static const u8 sDragoniteGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_21.4bpp.lz");
 static const ax_sprite sDragoniteSprites21[] = {
 	{sDragoniteGfx21, ARRAY_COUNT(sDragoniteGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx22[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_22.4bpp");
-static const u8 sDragoniteGfx22_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_22_1.4bpp");
+static const u8 sDragoniteGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_22.4bpp.lz");
+static const u8 sDragoniteGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_22_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites22[] = {
 	{sDragoniteGfx22, ARRAY_COUNT(sDragoniteGfx22)}, 
 	{NULL, 32}, 
 	{sDragoniteGfx22_1, ARRAY_COUNT(sDragoniteGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx23[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_23.4bpp");
-static const u8 sDragoniteGfx23_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_23_1.4bpp");
+static const u8 sDragoniteGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_23.4bpp.lz");
+static const u8 sDragoniteGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_23_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites23[] = {
 	{sDragoniteGfx23, ARRAY_COUNT(sDragoniteGfx23)}, 
 	{NULL, 32}, 
@@ -2593,9 +2593,9 @@ static const ax_sprite sDragoniteSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx24[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_24.4bpp");
-static const u8 sDragoniteGfx24_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_24_1.4bpp");
-static const u8 sDragoniteGfx24_2[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_24_2.4bpp");
+static const u8 sDragoniteGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_24.4bpp.lz");
+static const u8 sDragoniteGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_24_1.4bpp.lz");
+static const u8 sDragoniteGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_24_2.4bpp.lz");
 static const ax_sprite sDragoniteSprites24[] = {
 	{sDragoniteGfx24, ARRAY_COUNT(sDragoniteGfx24)}, 
 	{NULL, 32}, 
@@ -2604,9 +2604,9 @@ static const ax_sprite sDragoniteSprites24[] = {
 	{sDragoniteGfx24_2, ARRAY_COUNT(sDragoniteGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx25[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_25.4bpp");
-static const u8 sDragoniteGfx25_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_25_1.4bpp");
-static const u8 sDragoniteGfx25_2[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_25_2.4bpp");
+static const u8 sDragoniteGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_25.4bpp.lz");
+static const u8 sDragoniteGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_25_1.4bpp.lz");
+static const u8 sDragoniteGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_25_2.4bpp.lz");
 static const ax_sprite sDragoniteSprites25[] = {
 	{NULL, 32}, 
 	{sDragoniteGfx25, ARRAY_COUNT(sDragoniteGfx25)}, 
@@ -2616,16 +2616,16 @@ static const ax_sprite sDragoniteSprites25[] = {
 	{sDragoniteGfx25_2, ARRAY_COUNT(sDragoniteGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx26[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_26.4bpp");
-static const u8 sDragoniteGfx26_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_26_1.4bpp");
+static const u8 sDragoniteGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_26.4bpp.lz");
+static const u8 sDragoniteGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_26_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites26[] = {
 	{sDragoniteGfx26, ARRAY_COUNT(sDragoniteGfx26)}, 
 	{NULL, 32}, 
 	{sDragoniteGfx26_1, ARRAY_COUNT(sDragoniteGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx27[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_27.4bpp");
-static const u8 sDragoniteGfx27_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_27_1.4bpp");
+static const u8 sDragoniteGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_27.4bpp.lz");
+static const u8 sDragoniteGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_27_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites27[] = {
 	{NULL, 32}, 
 	{sDragoniteGfx27, ARRAY_COUNT(sDragoniteGfx27)}, 
@@ -2633,8 +2633,8 @@ static const ax_sprite sDragoniteSprites27[] = {
 	{sDragoniteGfx27_1, ARRAY_COUNT(sDragoniteGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx28[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_28.4bpp");
-static const u8 sDragoniteGfx28_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_28_1.4bpp");
+static const u8 sDragoniteGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_28.4bpp.lz");
+static const u8 sDragoniteGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_28_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites28[] = {
 	{sDragoniteGfx28, ARRAY_COUNT(sDragoniteGfx28)}, 
 	{NULL, 32}, 
@@ -2642,81 +2642,81 @@ static const ax_sprite sDragoniteSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx29[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_29.4bpp");
-static const u8 sDragoniteGfx29_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_29_1.4bpp");
+static const u8 sDragoniteGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_29.4bpp.lz");
+static const u8 sDragoniteGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_29_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites29[] = {
 	{sDragoniteGfx29, ARRAY_COUNT(sDragoniteGfx29)}, 
 	{NULL, 32}, 
 	{sDragoniteGfx29_1, ARRAY_COUNT(sDragoniteGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx30[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_30.4bpp");
-static const u8 sDragoniteGfx30_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_30_1.4bpp");
+static const u8 sDragoniteGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_30.4bpp.lz");
+static const u8 sDragoniteGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_30_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites30[] = {
 	{sDragoniteGfx30, ARRAY_COUNT(sDragoniteGfx30)}, 
 	{NULL, 32}, 
 	{sDragoniteGfx30_1, ARRAY_COUNT(sDragoniteGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx31[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_31.4bpp");
-static const u8 sDragoniteGfx31_1[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_31_1.4bpp");
+static const u8 sDragoniteGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_31.4bpp.lz");
+static const u8 sDragoniteGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_31_1.4bpp.lz");
 static const ax_sprite sDragoniteSprites31[] = {
 	{sDragoniteGfx31, ARRAY_COUNT(sDragoniteGfx31)}, 
 	{NULL, 32}, 
 	{sDragoniteGfx31_1, ARRAY_COUNT(sDragoniteGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx32[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_32.4bpp");
+static const u8 sDragoniteGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_32.4bpp.lz");
 static const ax_sprite sDragoniteSprites32[] = {
 	{sDragoniteGfx32, ARRAY_COUNT(sDragoniteGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx33[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_33.4bpp");
+static const u8 sDragoniteGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_33.4bpp.lz");
 static const ax_sprite sDragoniteSprites33[] = {
 	{sDragoniteGfx33, ARRAY_COUNT(sDragoniteGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx34[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_34.4bpp");
+static const u8 sDragoniteGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_34.4bpp.lz");
 static const ax_sprite sDragoniteSprites34[] = {
 	{sDragoniteGfx34, ARRAY_COUNT(sDragoniteGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx35[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_35.4bpp");
+static const u8 sDragoniteGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_35.4bpp.lz");
 static const ax_sprite sDragoniteSprites35[] = {
 	{sDragoniteGfx35, ARRAY_COUNT(sDragoniteGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx36[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_36.4bpp");
+static const u8 sDragoniteGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_36.4bpp.lz");
 static const ax_sprite sDragoniteSprites36[] = {
 	{sDragoniteGfx36, ARRAY_COUNT(sDragoniteGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx37[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_37.4bpp");
+static const u8 sDragoniteGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_37.4bpp.lz");
 static const ax_sprite sDragoniteSprites37[] = {
 	{sDragoniteGfx37, ARRAY_COUNT(sDragoniteGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx38[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_38.4bpp");
+static const u8 sDragoniteGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_38.4bpp.lz");
 static const ax_sprite sDragoniteSprites38[] = {
 	{sDragoniteGfx38, ARRAY_COUNT(sDragoniteGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx39[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_39.4bpp");
+static const u8 sDragoniteGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_39.4bpp.lz");
 static const ax_sprite sDragoniteSprites39[] = {
 	{sDragoniteGfx39, ARRAY_COUNT(sDragoniteGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx40[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_40.4bpp");
+static const u8 sDragoniteGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_40.4bpp.lz");
 static const ax_sprite sDragoniteSprites40[] = {
 	{sDragoniteGfx40, ARRAY_COUNT(sDragoniteGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx41[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_41.4bpp");
+static const u8 sDragoniteGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_41.4bpp.lz");
 static const ax_sprite sDragoniteSprites41[] = {
 	{sDragoniteGfx41, ARRAY_COUNT(sDragoniteGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDragoniteGfx42[] = INCBIN_U8("graphics/ax/mon/dragonite/sprite_42.4bpp");
+static const u8 sDragoniteGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dragonite/sprite_42.4bpp.lz");
 static const ax_sprite sDragoniteSprites42[] = {
 	{sDragoniteGfx42, ARRAY_COUNT(sDragoniteGfx42)}, 
 	{NULL, 0}

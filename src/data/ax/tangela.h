@@ -1975,90 +1975,90 @@ static const ax_anim sTangelaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTangelaGfx1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_1.4bpp");
+static const u8 sTangelaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_1.4bpp.lz");
 static const ax_sprite sTangelaSprites1[] = {
 	{sTangelaGfx1, ARRAY_COUNT(sTangelaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx2[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_2.4bpp");
+static const u8 sTangelaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_2.4bpp.lz");
 static const ax_sprite sTangelaSprites2[] = {
 	{sTangelaGfx2, ARRAY_COUNT(sTangelaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx3[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_3.4bpp");
+static const u8 sTangelaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_3.4bpp.lz");
 static const ax_sprite sTangelaSprites3[] = {
 	{sTangelaGfx3, ARRAY_COUNT(sTangelaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx4[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_4.4bpp");
+static const u8 sTangelaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_4.4bpp.lz");
 static const ax_sprite sTangelaSprites4[] = {
 	{sTangelaGfx4, ARRAY_COUNT(sTangelaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx5[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_5.4bpp");
+static const u8 sTangelaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_5.4bpp.lz");
 static const ax_sprite sTangelaSprites5[] = {
 	{sTangelaGfx5, ARRAY_COUNT(sTangelaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx6[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_6.4bpp");
+static const u8 sTangelaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_6.4bpp.lz");
 static const ax_sprite sTangelaSprites6[] = {
 	{sTangelaGfx6, ARRAY_COUNT(sTangelaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx7[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_7.4bpp");
+static const u8 sTangelaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_7.4bpp.lz");
 static const ax_sprite sTangelaSprites7[] = {
 	{sTangelaGfx7, ARRAY_COUNT(sTangelaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx8[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_8.4bpp");
+static const u8 sTangelaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_8.4bpp.lz");
 static const ax_sprite sTangelaSprites8[] = {
 	{sTangelaGfx8, ARRAY_COUNT(sTangelaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx9[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_9.4bpp");
+static const u8 sTangelaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_9.4bpp.lz");
 static const ax_sprite sTangelaSprites9[] = {
 	{sTangelaGfx9, ARRAY_COUNT(sTangelaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx10[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_10.4bpp");
+static const u8 sTangelaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_10.4bpp.lz");
 static const ax_sprite sTangelaSprites10[] = {
 	{sTangelaGfx10, ARRAY_COUNT(sTangelaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx11[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_11.4bpp");
+static const u8 sTangelaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_11.4bpp.lz");
 static const ax_sprite sTangelaSprites11[] = {
 	{sTangelaGfx11, ARRAY_COUNT(sTangelaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx12[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_12.4bpp");
+static const u8 sTangelaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_12.4bpp.lz");
 static const ax_sprite sTangelaSprites12[] = {
 	{sTangelaGfx12, ARRAY_COUNT(sTangelaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx13[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_13.4bpp");
+static const u8 sTangelaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_13.4bpp.lz");
 static const ax_sprite sTangelaSprites13[] = {
 	{sTangelaGfx13, ARRAY_COUNT(sTangelaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx14[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_14.4bpp");
+static const u8 sTangelaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_14.4bpp.lz");
 static const ax_sprite sTangelaSprites14[] = {
 	{sTangelaGfx14, ARRAY_COUNT(sTangelaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx15[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_15.4bpp");
+static const u8 sTangelaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_15.4bpp.lz");
 static const ax_sprite sTangelaSprites15[] = {
 	{sTangelaGfx15, ARRAY_COUNT(sTangelaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx16[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_16.4bpp");
+static const u8 sTangelaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_16.4bpp.lz");
 static const ax_sprite sTangelaSprites16[] = {
 	{NULL, 128}, 
 	{sTangelaGfx16, ARRAY_COUNT(sTangelaGfx16)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx17[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_17.4bpp");
-static const u8 sTangelaGfx17_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_17_1.4bpp");
+static const u8 sTangelaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_17.4bpp.lz");
+static const u8 sTangelaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_17_1.4bpp.lz");
 static const ax_sprite sTangelaSprites17[] = {
 	{NULL, 32}, 
 	{sTangelaGfx17, ARRAY_COUNT(sTangelaGfx17)}, 
@@ -2067,15 +2067,15 @@ static const ax_sprite sTangelaSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx18[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_18.4bpp");
+static const u8 sTangelaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_18.4bpp.lz");
 static const ax_sprite sTangelaSprites18[] = {
 	{NULL, 128}, 
 	{sTangelaGfx18, ARRAY_COUNT(sTangelaGfx18)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx19[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_19.4bpp");
-static const u8 sTangelaGfx19_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_19_1.4bpp");
+static const u8 sTangelaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_19.4bpp.lz");
+static const u8 sTangelaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_19_1.4bpp.lz");
 static const ax_sprite sTangelaSprites19[] = {
 	{NULL, 32}, 
 	{sTangelaGfx19, ARRAY_COUNT(sTangelaGfx19)}, 
@@ -2084,14 +2084,14 @@ static const ax_sprite sTangelaSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx20[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_20.4bpp");
+static const u8 sTangelaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_20.4bpp.lz");
 static const ax_sprite sTangelaSprites20[] = {
 	{sTangelaGfx20, ARRAY_COUNT(sTangelaGfx20)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx21[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_21.4bpp");
-static const u8 sTangelaGfx21_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_21_1.4bpp");
+static const u8 sTangelaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_21.4bpp.lz");
+static const u8 sTangelaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_21_1.4bpp.lz");
 static const ax_sprite sTangelaSprites21[] = {
 	{NULL, 32}, 
 	{sTangelaGfx21, ARRAY_COUNT(sTangelaGfx21)}, 
@@ -2100,14 +2100,14 @@ static const ax_sprite sTangelaSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx22[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_22.4bpp");
+static const u8 sTangelaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_22.4bpp.lz");
 static const ax_sprite sTangelaSprites22[] = {
 	{NULL, 128}, 
 	{sTangelaGfx22, ARRAY_COUNT(sTangelaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx23[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_23.4bpp");
-static const u8 sTangelaGfx23_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_23_1.4bpp");
+static const u8 sTangelaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_23.4bpp.lz");
+static const u8 sTangelaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_23_1.4bpp.lz");
 static const ax_sprite sTangelaSprites23[] = {
 	{NULL, 32}, 
 	{sTangelaGfx23, ARRAY_COUNT(sTangelaGfx23)}, 
@@ -2116,8 +2116,8 @@ static const ax_sprite sTangelaSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx24[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_24.4bpp");
-static const u8 sTangelaGfx24_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_24_1.4bpp");
+static const u8 sTangelaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_24.4bpp.lz");
+static const u8 sTangelaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_24_1.4bpp.lz");
 static const ax_sprite sTangelaSprites24[] = {
 	{NULL, 32}, 
 	{sTangelaGfx24, ARRAY_COUNT(sTangelaGfx24)}, 
@@ -2126,9 +2126,9 @@ static const ax_sprite sTangelaSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx25[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_25.4bpp");
-static const u8 sTangelaGfx25_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_25_1.4bpp");
-static const u8 sTangelaGfx25_2[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_25_2.4bpp");
+static const u8 sTangelaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_25.4bpp.lz");
+static const u8 sTangelaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_25_1.4bpp.lz");
+static const u8 sTangelaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_25_2.4bpp.lz");
 static const ax_sprite sTangelaSprites25[] = {
 	{NULL, 32}, 
 	{sTangelaGfx25, ARRAY_COUNT(sTangelaGfx25)}, 
@@ -2139,15 +2139,15 @@ static const ax_sprite sTangelaSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx26[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_26.4bpp");
+static const u8 sTangelaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_26.4bpp.lz");
 static const ax_sprite sTangelaSprites26[] = {
 	{NULL, 128}, 
 	{sTangelaGfx26, ARRAY_COUNT(sTangelaGfx26)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx27[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_27.4bpp");
-static const u8 sTangelaGfx27_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_27_1.4bpp");
+static const u8 sTangelaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_27.4bpp.lz");
+static const u8 sTangelaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_27_1.4bpp.lz");
 static const ax_sprite sTangelaSprites27[] = {
 	{NULL, 32}, 
 	{sTangelaGfx27, ARRAY_COUNT(sTangelaGfx27)}, 
@@ -2156,8 +2156,8 @@ static const ax_sprite sTangelaSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx28[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_28.4bpp");
-static const u8 sTangelaGfx28_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_28_1.4bpp");
+static const u8 sTangelaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_28.4bpp.lz");
+static const u8 sTangelaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_28_1.4bpp.lz");
 static const ax_sprite sTangelaSprites28[] = {
 	{NULL, 32}, 
 	{sTangelaGfx28, ARRAY_COUNT(sTangelaGfx28)}, 
@@ -2166,14 +2166,14 @@ static const ax_sprite sTangelaSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx29[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_29.4bpp");
+static const u8 sTangelaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_29.4bpp.lz");
 static const ax_sprite sTangelaSprites29[] = {
 	{sTangelaGfx29, ARRAY_COUNT(sTangelaGfx29)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx30[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_30.4bpp");
-static const u8 sTangelaGfx30_1[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_30_1.4bpp");
+static const u8 sTangelaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_30.4bpp.lz");
+static const u8 sTangelaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_30_1.4bpp.lz");
 static const ax_sprite sTangelaSprites30[] = {
 	{sTangelaGfx30, ARRAY_COUNT(sTangelaGfx30)}, 
 	{NULL, 32}, 
@@ -2181,37 +2181,37 @@ static const ax_sprite sTangelaSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx31[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_31.4bpp");
+static const u8 sTangelaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_31.4bpp.lz");
 static const ax_sprite sTangelaSprites31[] = {
 	{sTangelaGfx31, ARRAY_COUNT(sTangelaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx32[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_32.4bpp");
+static const u8 sTangelaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_32.4bpp.lz");
 static const ax_sprite sTangelaSprites32[] = {
 	{sTangelaGfx32, ARRAY_COUNT(sTangelaGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx33[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_33.4bpp");
+static const u8 sTangelaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_33.4bpp.lz");
 static const ax_sprite sTangelaSprites33[] = {
 	{sTangelaGfx33, ARRAY_COUNT(sTangelaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx34[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_34.4bpp");
+static const u8 sTangelaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_34.4bpp.lz");
 static const ax_sprite sTangelaSprites34[] = {
 	{sTangelaGfx34, ARRAY_COUNT(sTangelaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx35[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_35.4bpp");
+static const u8 sTangelaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_35.4bpp.lz");
 static const ax_sprite sTangelaSprites35[] = {
 	{sTangelaGfx35, ARRAY_COUNT(sTangelaGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx36[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_36.4bpp");
+static const u8 sTangelaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_36.4bpp.lz");
 static const ax_sprite sTangelaSprites36[] = {
 	{sTangelaGfx36, ARRAY_COUNT(sTangelaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sTangelaGfx37[] = INCBIN_U8("graphics/ax/mon/tangela/sprite_37.4bpp");
+static const u8 sTangelaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tangela/sprite_37.4bpp.lz");
 static const ax_sprite sTangelaSprites37[] = {
 	{sTangelaGfx37, ARRAY_COUNT(sTangelaGfx37)}, 
 	{NULL, 0}

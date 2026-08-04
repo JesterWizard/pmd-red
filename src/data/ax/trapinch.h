@@ -1967,84 +1967,84 @@ static const ax_anim sTrapinchAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTrapinchGfx1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_1.4bpp");
+static const u8 sTrapinchGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_1.4bpp.lz");
 static const ax_sprite sTrapinchSprites1[] = {
 	{sTrapinchGfx1, ARRAY_COUNT(sTrapinchGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_2.4bpp");
+static const u8 sTrapinchGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_2.4bpp.lz");
 static const ax_sprite sTrapinchSprites2[] = {
 	{sTrapinchGfx2, ARRAY_COUNT(sTrapinchGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_3.4bpp");
+static const u8 sTrapinchGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites3[] = {
 	{sTrapinchGfx3, ARRAY_COUNT(sTrapinchGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx4[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_4.4bpp");
+static const u8 sTrapinchGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_4.4bpp.lz");
 static const ax_sprite sTrapinchSprites4[] = {
 	{sTrapinchGfx4, ARRAY_COUNT(sTrapinchGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx5[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_5.4bpp");
+static const u8 sTrapinchGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_5.4bpp.lz");
 static const ax_sprite sTrapinchSprites5[] = {
 	{sTrapinchGfx5, ARRAY_COUNT(sTrapinchGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx6[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_6.4bpp");
+static const u8 sTrapinchGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_6.4bpp.lz");
 static const ax_sprite sTrapinchSprites6[] = {
 	{sTrapinchGfx6, ARRAY_COUNT(sTrapinchGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx7[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_7.4bpp");
+static const u8 sTrapinchGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_7.4bpp.lz");
 static const ax_sprite sTrapinchSprites7[] = {
 	{sTrapinchGfx7, ARRAY_COUNT(sTrapinchGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx8[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_8.4bpp");
+static const u8 sTrapinchGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_8.4bpp.lz");
 static const ax_sprite sTrapinchSprites8[] = {
 	{sTrapinchGfx8, ARRAY_COUNT(sTrapinchGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx9[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_9.4bpp");
+static const u8 sTrapinchGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_9.4bpp.lz");
 static const ax_sprite sTrapinchSprites9[] = {
 	{sTrapinchGfx9, ARRAY_COUNT(sTrapinchGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx10[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_10.4bpp");
+static const u8 sTrapinchGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_10.4bpp.lz");
 static const ax_sprite sTrapinchSprites10[] = {
 	{sTrapinchGfx10, ARRAY_COUNT(sTrapinchGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx11[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_11.4bpp");
+static const u8 sTrapinchGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_11.4bpp.lz");
 static const ax_sprite sTrapinchSprites11[] = {
 	{sTrapinchGfx11, ARRAY_COUNT(sTrapinchGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx12[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_12.4bpp");
+static const u8 sTrapinchGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_12.4bpp.lz");
 static const ax_sprite sTrapinchSprites12[] = {
 	{sTrapinchGfx12, ARRAY_COUNT(sTrapinchGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx13[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_13.4bpp");
+static const u8 sTrapinchGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_13.4bpp.lz");
 static const ax_sprite sTrapinchSprites13[] = {
 	{sTrapinchGfx13, ARRAY_COUNT(sTrapinchGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx14[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_14.4bpp");
+static const u8 sTrapinchGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_14.4bpp.lz");
 static const ax_sprite sTrapinchSprites14[] = {
 	{sTrapinchGfx14, ARRAY_COUNT(sTrapinchGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx15[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_15.4bpp");
+static const u8 sTrapinchGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_15.4bpp.lz");
 static const ax_sprite sTrapinchSprites15[] = {
 	{sTrapinchGfx15, ARRAY_COUNT(sTrapinchGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx16[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_16.4bpp");
-static const u8 sTrapinchGfx16_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_16_1.4bpp");
-static const u8 sTrapinchGfx16_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_16_2.4bpp");
+static const u8 sTrapinchGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_16.4bpp.lz");
+static const u8 sTrapinchGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_16_1.4bpp.lz");
+static const u8 sTrapinchGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_16_2.4bpp.lz");
 static const ax_sprite sTrapinchSprites16[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx16, ARRAY_COUNT(sTrapinchGfx16)}, 
@@ -2055,8 +2055,8 @@ static const ax_sprite sTrapinchSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx17[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_17.4bpp");
-static const u8 sTrapinchGfx17_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_17_1.4bpp");
+static const u8 sTrapinchGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_17.4bpp.lz");
+static const u8 sTrapinchGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_17_1.4bpp.lz");
 static const ax_sprite sTrapinchSprites17[] = {
 	{sTrapinchGfx17, ARRAY_COUNT(sTrapinchGfx17)}, 
 	{NULL, 32}, 
@@ -2064,10 +2064,10 @@ static const ax_sprite sTrapinchSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx18[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_18.4bpp");
-static const u8 sTrapinchGfx18_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_18_1.4bpp");
-static const u8 sTrapinchGfx18_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_18_2.4bpp");
-static const u8 sTrapinchGfx18_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_18_3.4bpp");
+static const u8 sTrapinchGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_18.4bpp.lz");
+static const u8 sTrapinchGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_18_1.4bpp.lz");
+static const u8 sTrapinchGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_18_2.4bpp.lz");
+static const u8 sTrapinchGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_18_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites18[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx18, ARRAY_COUNT(sTrapinchGfx18)}, 
@@ -2079,9 +2079,9 @@ static const ax_sprite sTrapinchSprites18[] = {
 	{sTrapinchGfx18_3, ARRAY_COUNT(sTrapinchGfx18_3)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx19[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_19.4bpp");
-static const u8 sTrapinchGfx19_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_19_1.4bpp");
-static const u8 sTrapinchGfx19_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_19_2.4bpp");
+static const u8 sTrapinchGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_19.4bpp.lz");
+static const u8 sTrapinchGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_19_1.4bpp.lz");
+static const u8 sTrapinchGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_19_2.4bpp.lz");
 static const ax_sprite sTrapinchSprites19[] = {
 	{sTrapinchGfx19, ARRAY_COUNT(sTrapinchGfx19)}, 
 	{NULL, 32}, 
@@ -2090,10 +2090,10 @@ static const ax_sprite sTrapinchSprites19[] = {
 	{sTrapinchGfx19_2, ARRAY_COUNT(sTrapinchGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx20[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_20.4bpp");
-static const u8 sTrapinchGfx20_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_20_1.4bpp");
-static const u8 sTrapinchGfx20_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_20_2.4bpp");
-static const u8 sTrapinchGfx20_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_20_3.4bpp");
+static const u8 sTrapinchGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_20.4bpp.lz");
+static const u8 sTrapinchGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_20_1.4bpp.lz");
+static const u8 sTrapinchGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_20_2.4bpp.lz");
+static const u8 sTrapinchGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_20_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites20[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx20, ARRAY_COUNT(sTrapinchGfx20)}, 
@@ -2105,9 +2105,9 @@ static const ax_sprite sTrapinchSprites20[] = {
 	{sTrapinchGfx20_3, ARRAY_COUNT(sTrapinchGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx21[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_21.4bpp");
-static const u8 sTrapinchGfx21_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_21_1.4bpp");
-static const u8 sTrapinchGfx21_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_21_2.4bpp");
+static const u8 sTrapinchGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_21.4bpp.lz");
+static const u8 sTrapinchGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_21_1.4bpp.lz");
+static const u8 sTrapinchGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_21_2.4bpp.lz");
 static const ax_sprite sTrapinchSprites21[] = {
 	{sTrapinchGfx21, ARRAY_COUNT(sTrapinchGfx21)}, 
 	{NULL, 32}, 
@@ -2116,10 +2116,10 @@ static const ax_sprite sTrapinchSprites21[] = {
 	{sTrapinchGfx21_2, ARRAY_COUNT(sTrapinchGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx22[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_22.4bpp");
-static const u8 sTrapinchGfx22_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_22_1.4bpp");
-static const u8 sTrapinchGfx22_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_22_2.4bpp");
-static const u8 sTrapinchGfx22_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_22_3.4bpp");
+static const u8 sTrapinchGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_22.4bpp.lz");
+static const u8 sTrapinchGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_22_1.4bpp.lz");
+static const u8 sTrapinchGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_22_2.4bpp.lz");
+static const u8 sTrapinchGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_22_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites22[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx22, ARRAY_COUNT(sTrapinchGfx22)}, 
@@ -2131,18 +2131,18 @@ static const ax_sprite sTrapinchSprites22[] = {
 	{sTrapinchGfx22_3, ARRAY_COUNT(sTrapinchGfx22_3)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx23[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_23.4bpp");
-static const u8 sTrapinchGfx23_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_23_1.4bpp");
+static const u8 sTrapinchGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_23.4bpp.lz");
+static const u8 sTrapinchGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_23_1.4bpp.lz");
 static const ax_sprite sTrapinchSprites23[] = {
 	{sTrapinchGfx23, ARRAY_COUNT(sTrapinchGfx23)}, 
 	{NULL, 32}, 
 	{sTrapinchGfx23_1, ARRAY_COUNT(sTrapinchGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx24[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_24.4bpp");
-static const u8 sTrapinchGfx24_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_24_1.4bpp");
-static const u8 sTrapinchGfx24_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_24_2.4bpp");
-static const u8 sTrapinchGfx24_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_24_3.4bpp");
+static const u8 sTrapinchGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_24.4bpp.lz");
+static const u8 sTrapinchGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_24_1.4bpp.lz");
+static const u8 sTrapinchGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_24_2.4bpp.lz");
+static const u8 sTrapinchGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_24_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites24[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx24, ARRAY_COUNT(sTrapinchGfx24)}, 
@@ -2155,8 +2155,8 @@ static const ax_sprite sTrapinchSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx25[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_25.4bpp");
-static const u8 sTrapinchGfx25_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_25_1.4bpp");
+static const u8 sTrapinchGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_25.4bpp.lz");
+static const u8 sTrapinchGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_25_1.4bpp.lz");
 static const ax_sprite sTrapinchSprites25[] = {
 	{sTrapinchGfx25, ARRAY_COUNT(sTrapinchGfx25)}, 
 	{NULL, 32}, 
@@ -2164,10 +2164,10 @@ static const ax_sprite sTrapinchSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx26[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_26.4bpp");
-static const u8 sTrapinchGfx26_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_26_1.4bpp");
-static const u8 sTrapinchGfx26_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_26_2.4bpp");
-static const u8 sTrapinchGfx26_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_26_3.4bpp");
+static const u8 sTrapinchGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_26.4bpp.lz");
+static const u8 sTrapinchGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_26_1.4bpp.lz");
+static const u8 sTrapinchGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_26_2.4bpp.lz");
+static const u8 sTrapinchGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_26_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites26[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx26, ARRAY_COUNT(sTrapinchGfx26)}, 
@@ -2180,9 +2180,9 @@ static const ax_sprite sTrapinchSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx27[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_27.4bpp");
-static const u8 sTrapinchGfx27_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_27_1.4bpp");
-static const u8 sTrapinchGfx27_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_27_2.4bpp");
+static const u8 sTrapinchGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_27.4bpp.lz");
+static const u8 sTrapinchGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_27_1.4bpp.lz");
+static const u8 sTrapinchGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_27_2.4bpp.lz");
 static const ax_sprite sTrapinchSprites27[] = {
 	{NULL, 160}, 
 	{sTrapinchGfx27, ARRAY_COUNT(sTrapinchGfx27)}, 
@@ -2193,10 +2193,10 @@ static const ax_sprite sTrapinchSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx28[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_28.4bpp");
-static const u8 sTrapinchGfx28_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_28_1.4bpp");
-static const u8 sTrapinchGfx28_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_28_2.4bpp");
-static const u8 sTrapinchGfx28_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_28_3.4bpp");
+static const u8 sTrapinchGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_28.4bpp.lz");
+static const u8 sTrapinchGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_28_1.4bpp.lz");
+static const u8 sTrapinchGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_28_2.4bpp.lz");
+static const u8 sTrapinchGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_28_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites28[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx28, ARRAY_COUNT(sTrapinchGfx28)}, 
@@ -2208,8 +2208,8 @@ static const ax_sprite sTrapinchSprites28[] = {
 	{sTrapinchGfx28_3, ARRAY_COUNT(sTrapinchGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx29[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_29.4bpp");
-static const u8 sTrapinchGfx29_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_29_1.4bpp");
+static const u8 sTrapinchGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_29.4bpp.lz");
+static const u8 sTrapinchGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_29_1.4bpp.lz");
 static const ax_sprite sTrapinchSprites29[] = {
 	{NULL, 128}, 
 	{sTrapinchGfx29, ARRAY_COUNT(sTrapinchGfx29)}, 
@@ -2217,9 +2217,9 @@ static const ax_sprite sTrapinchSprites29[] = {
 	{sTrapinchGfx29_1, ARRAY_COUNT(sTrapinchGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx30[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_30.4bpp");
-static const u8 sTrapinchGfx30_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_30_1.4bpp");
-static const u8 sTrapinchGfx30_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_30_2.4bpp");
+static const u8 sTrapinchGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_30.4bpp.lz");
+static const u8 sTrapinchGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_30_1.4bpp.lz");
+static const u8 sTrapinchGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_30_2.4bpp.lz");
 static const ax_sprite sTrapinchSprites30[] = {
 	{NULL, 160}, 
 	{sTrapinchGfx30, ARRAY_COUNT(sTrapinchGfx30)}, 
@@ -2229,8 +2229,8 @@ static const ax_sprite sTrapinchSprites30[] = {
 	{sTrapinchGfx30_2, ARRAY_COUNT(sTrapinchGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx31[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_31.4bpp");
-static const u8 sTrapinchGfx31_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_31_1.4bpp");
+static const u8 sTrapinchGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_31.4bpp.lz");
+static const u8 sTrapinchGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_31_1.4bpp.lz");
 static const ax_sprite sTrapinchSprites31[] = {
 	{NULL, 128}, 
 	{sTrapinchGfx31, ARRAY_COUNT(sTrapinchGfx31)}, 
@@ -2238,10 +2238,10 @@ static const ax_sprite sTrapinchSprites31[] = {
 	{sTrapinchGfx31_1, ARRAY_COUNT(sTrapinchGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx32[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_32.4bpp");
-static const u8 sTrapinchGfx32_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_32_1.4bpp");
-static const u8 sTrapinchGfx32_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_32_2.4bpp");
-static const u8 sTrapinchGfx32_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_32_3.4bpp");
+static const u8 sTrapinchGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_32.4bpp.lz");
+static const u8 sTrapinchGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_32_1.4bpp.lz");
+static const u8 sTrapinchGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_32_2.4bpp.lz");
+static const u8 sTrapinchGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_32_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites32[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx32, ARRAY_COUNT(sTrapinchGfx32)}, 
@@ -2253,10 +2253,10 @@ static const ax_sprite sTrapinchSprites32[] = {
 	{sTrapinchGfx32_3, ARRAY_COUNT(sTrapinchGfx32_3)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx33[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_33.4bpp");
-static const u8 sTrapinchGfx33_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_33_1.4bpp");
-static const u8 sTrapinchGfx33_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_33_2.4bpp");
-static const u8 sTrapinchGfx33_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_33_3.4bpp");
+static const u8 sTrapinchGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_33.4bpp.lz");
+static const u8 sTrapinchGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_33_1.4bpp.lz");
+static const u8 sTrapinchGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_33_2.4bpp.lz");
+static const u8 sTrapinchGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_33_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites33[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx33, ARRAY_COUNT(sTrapinchGfx33)}, 
@@ -2268,9 +2268,9 @@ static const ax_sprite sTrapinchSprites33[] = {
 	{sTrapinchGfx33_3, ARRAY_COUNT(sTrapinchGfx33_3)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx34[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_34.4bpp");
-static const u8 sTrapinchGfx34_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_34_1.4bpp");
-static const u8 sTrapinchGfx34_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_34_2.4bpp");
+static const u8 sTrapinchGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_34.4bpp.lz");
+static const u8 sTrapinchGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_34_1.4bpp.lz");
+static const u8 sTrapinchGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_34_2.4bpp.lz");
 static const ax_sprite sTrapinchSprites34[] = {
 	{NULL, 128}, 
 	{sTrapinchGfx34, ARRAY_COUNT(sTrapinchGfx34)}, 
@@ -2281,10 +2281,10 @@ static const ax_sprite sTrapinchSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx35[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_35.4bpp");
-static const u8 sTrapinchGfx35_1[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_35_1.4bpp");
-static const u8 sTrapinchGfx35_2[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_35_2.4bpp");
-static const u8 sTrapinchGfx35_3[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_35_3.4bpp");
+static const u8 sTrapinchGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_35.4bpp.lz");
+static const u8 sTrapinchGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_35_1.4bpp.lz");
+static const u8 sTrapinchGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_35_2.4bpp.lz");
+static const u8 sTrapinchGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_35_3.4bpp.lz");
 static const ax_sprite sTrapinchSprites35[] = {
 	{NULL, 32}, 
 	{sTrapinchGfx35, ARRAY_COUNT(sTrapinchGfx35)}, 
@@ -2297,37 +2297,37 @@ static const ax_sprite sTrapinchSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx36[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_36.4bpp");
+static const u8 sTrapinchGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_36.4bpp.lz");
 static const ax_sprite sTrapinchSprites36[] = {
 	{sTrapinchGfx36, ARRAY_COUNT(sTrapinchGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx37[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_37.4bpp");
+static const u8 sTrapinchGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_37.4bpp.lz");
 static const ax_sprite sTrapinchSprites37[] = {
 	{sTrapinchGfx37, ARRAY_COUNT(sTrapinchGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx38[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_38.4bpp");
+static const u8 sTrapinchGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_38.4bpp.lz");
 static const ax_sprite sTrapinchSprites38[] = {
 	{sTrapinchGfx38, ARRAY_COUNT(sTrapinchGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx39[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_39.4bpp");
+static const u8 sTrapinchGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_39.4bpp.lz");
 static const ax_sprite sTrapinchSprites39[] = {
 	{sTrapinchGfx39, ARRAY_COUNT(sTrapinchGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx40[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_40.4bpp");
+static const u8 sTrapinchGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_40.4bpp.lz");
 static const ax_sprite sTrapinchSprites40[] = {
 	{sTrapinchGfx40, ARRAY_COUNT(sTrapinchGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx41[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_41.4bpp");
+static const u8 sTrapinchGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_41.4bpp.lz");
 static const ax_sprite sTrapinchSprites41[] = {
 	{sTrapinchGfx41, ARRAY_COUNT(sTrapinchGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTrapinchGfx42[] = INCBIN_U8("graphics/ax/mon/trapinch/sprite_42.4bpp");
+static const u8 sTrapinchGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/trapinch/sprite_42.4bpp.lz");
 static const ax_sprite sTrapinchSprites42[] = {
 	{sTrapinchGfx42, ARRAY_COUNT(sTrapinchGfx42)}, 
 	{NULL, 0}

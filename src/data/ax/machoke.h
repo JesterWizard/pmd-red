@@ -2039,85 +2039,85 @@ static const ax_anim sMachokeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMachokeGfx1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_1.4bpp");
+static const u8 sMachokeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_1.4bpp.lz");
 static const ax_sprite sMachokeSprites1[] = {
 	{sMachokeGfx1, ARRAY_COUNT(sMachokeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_2.4bpp");
+static const u8 sMachokeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_2.4bpp.lz");
 static const ax_sprite sMachokeSprites2[] = {
 	{sMachokeGfx2, ARRAY_COUNT(sMachokeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_3.4bpp");
+static const u8 sMachokeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_3.4bpp.lz");
 static const ax_sprite sMachokeSprites3[] = {
 	{sMachokeGfx3, ARRAY_COUNT(sMachokeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx4[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_4.4bpp");
+static const u8 sMachokeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_4.4bpp.lz");
 static const ax_sprite sMachokeSprites4[] = {
 	{sMachokeGfx4, ARRAY_COUNT(sMachokeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx5[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_5.4bpp");
+static const u8 sMachokeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_5.4bpp.lz");
 static const ax_sprite sMachokeSprites5[] = {
 	{sMachokeGfx5, ARRAY_COUNT(sMachokeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx6[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_6.4bpp");
+static const u8 sMachokeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_6.4bpp.lz");
 static const ax_sprite sMachokeSprites6[] = {
 	{sMachokeGfx6, ARRAY_COUNT(sMachokeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx7[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_7.4bpp");
+static const u8 sMachokeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_7.4bpp.lz");
 static const ax_sprite sMachokeSprites7[] = {
 	{sMachokeGfx7, ARRAY_COUNT(sMachokeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx8[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_8.4bpp");
+static const u8 sMachokeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_8.4bpp.lz");
 static const ax_sprite sMachokeSprites8[] = {
 	{sMachokeGfx8, ARRAY_COUNT(sMachokeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx9[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_9.4bpp");
+static const u8 sMachokeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_9.4bpp.lz");
 static const ax_sprite sMachokeSprites9[] = {
 	{sMachokeGfx9, ARRAY_COUNT(sMachokeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx10[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_10.4bpp");
+static const u8 sMachokeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_10.4bpp.lz");
 static const ax_sprite sMachokeSprites10[] = {
 	{sMachokeGfx10, ARRAY_COUNT(sMachokeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx11[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_11.4bpp");
+static const u8 sMachokeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_11.4bpp.lz");
 static const ax_sprite sMachokeSprites11[] = {
 	{sMachokeGfx11, ARRAY_COUNT(sMachokeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx12[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_12.4bpp");
+static const u8 sMachokeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_12.4bpp.lz");
 static const ax_sprite sMachokeSprites12[] = {
 	{sMachokeGfx12, ARRAY_COUNT(sMachokeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx13[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_13.4bpp");
+static const u8 sMachokeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_13.4bpp.lz");
 static const ax_sprite sMachokeSprites13[] = {
 	{sMachokeGfx13, ARRAY_COUNT(sMachokeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx14[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_14.4bpp");
+static const u8 sMachokeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_14.4bpp.lz");
 static const ax_sprite sMachokeSprites14[] = {
 	{sMachokeGfx14, ARRAY_COUNT(sMachokeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx15[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_15.4bpp");
+static const u8 sMachokeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_15.4bpp.lz");
 static const ax_sprite sMachokeSprites15[] = {
 	{sMachokeGfx15, ARRAY_COUNT(sMachokeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx16[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_16.4bpp");
-static const u8 sMachokeGfx16_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_16_1.4bpp");
-static const u8 sMachokeGfx16_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_16_2.4bpp");
-static const u8 sMachokeGfx16_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_16_3.4bpp");
+static const u8 sMachokeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_16.4bpp.lz");
+static const u8 sMachokeGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_16_1.4bpp.lz");
+static const u8 sMachokeGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_16_2.4bpp.lz");
+static const u8 sMachokeGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_16_3.4bpp.lz");
 static const ax_sprite sMachokeSprites16[] = {
 	{NULL, 32}, 
 	{sMachokeGfx16, ARRAY_COUNT(sMachokeGfx16)}, 
@@ -2130,10 +2130,10 @@ static const ax_sprite sMachokeSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx17[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_17.4bpp");
-static const u8 sMachokeGfx17_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_17_1.4bpp");
-static const u8 sMachokeGfx17_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_17_2.4bpp");
-static const u8 sMachokeGfx17_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_17_3.4bpp");
+static const u8 sMachokeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_17.4bpp.lz");
+static const u8 sMachokeGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_17_1.4bpp.lz");
+static const u8 sMachokeGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_17_2.4bpp.lz");
+static const u8 sMachokeGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_17_3.4bpp.lz");
 static const ax_sprite sMachokeSprites17[] = {
 	{NULL, 32}, 
 	{sMachokeGfx17, ARRAY_COUNT(sMachokeGfx17)}, 
@@ -2146,8 +2146,8 @@ static const ax_sprite sMachokeSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx18[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_18.4bpp");
-static const u8 sMachokeGfx18_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_18_1.4bpp");
+static const u8 sMachokeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_18.4bpp.lz");
+static const u8 sMachokeGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_18_1.4bpp.lz");
 static const ax_sprite sMachokeSprites18[] = {
 	{NULL, 32}, 
 	{sMachokeGfx18, ARRAY_COUNT(sMachokeGfx18)}, 
@@ -2156,10 +2156,10 @@ static const ax_sprite sMachokeSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx19[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_19.4bpp");
-static const u8 sMachokeGfx19_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_19_1.4bpp");
-static const u8 sMachokeGfx19_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_19_2.4bpp");
-static const u8 sMachokeGfx19_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_19_3.4bpp");
+static const u8 sMachokeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_19.4bpp.lz");
+static const u8 sMachokeGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_19_1.4bpp.lz");
+static const u8 sMachokeGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_19_2.4bpp.lz");
+static const u8 sMachokeGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_19_3.4bpp.lz");
 static const ax_sprite sMachokeSprites19[] = {
 	{sMachokeGfx19, ARRAY_COUNT(sMachokeGfx19)}, 
 	{NULL, 32}, 
@@ -2171,10 +2171,10 @@ static const ax_sprite sMachokeSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx20[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_20.4bpp");
-static const u8 sMachokeGfx20_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_20_1.4bpp");
-static const u8 sMachokeGfx20_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_20_2.4bpp");
-static const u8 sMachokeGfx20_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_20_3.4bpp");
+static const u8 sMachokeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_20.4bpp.lz");
+static const u8 sMachokeGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_20_1.4bpp.lz");
+static const u8 sMachokeGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_20_2.4bpp.lz");
+static const u8 sMachokeGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_20_3.4bpp.lz");
 static const ax_sprite sMachokeSprites20[] = {
 	{NULL, 32}, 
 	{sMachokeGfx20, ARRAY_COUNT(sMachokeGfx20)}, 
@@ -2187,8 +2187,8 @@ static const ax_sprite sMachokeSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx21[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_21.4bpp");
-static const u8 sMachokeGfx21_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_21_1.4bpp");
+static const u8 sMachokeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_21.4bpp.lz");
+static const u8 sMachokeGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_21_1.4bpp.lz");
 static const ax_sprite sMachokeSprites21[] = {
 	{NULL, 32}, 
 	{sMachokeGfx21, ARRAY_COUNT(sMachokeGfx21)}, 
@@ -2197,10 +2197,10 @@ static const ax_sprite sMachokeSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx22[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_22.4bpp");
-static const u8 sMachokeGfx22_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_22_1.4bpp");
-static const u8 sMachokeGfx22_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_22_2.4bpp");
-static const u8 sMachokeGfx22_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_22_3.4bpp");
+static const u8 sMachokeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_22.4bpp.lz");
+static const u8 sMachokeGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_22_1.4bpp.lz");
+static const u8 sMachokeGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_22_2.4bpp.lz");
+static const u8 sMachokeGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_22_3.4bpp.lz");
 static const ax_sprite sMachokeSprites22[] = {
 	{sMachokeGfx22, ARRAY_COUNT(sMachokeGfx22)}, 
 	{NULL, 32}, 
@@ -2212,9 +2212,9 @@ static const ax_sprite sMachokeSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx23[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_23.4bpp");
-static const u8 sMachokeGfx23_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_23_1.4bpp");
-static const u8 sMachokeGfx23_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_23_2.4bpp");
+static const u8 sMachokeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_23.4bpp.lz");
+static const u8 sMachokeGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_23_1.4bpp.lz");
+static const u8 sMachokeGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_23_2.4bpp.lz");
 static const ax_sprite sMachokeSprites23[] = {
 	{sMachokeGfx23, ARRAY_COUNT(sMachokeGfx23)}, 
 	{NULL, 32}, 
@@ -2224,9 +2224,9 @@ static const ax_sprite sMachokeSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx24[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_24.4bpp");
-static const u8 sMachokeGfx24_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_24_1.4bpp");
-static const u8 sMachokeGfx24_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_24_2.4bpp");
+static const u8 sMachokeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_24.4bpp.lz");
+static const u8 sMachokeGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_24_1.4bpp.lz");
+static const u8 sMachokeGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_24_2.4bpp.lz");
 static const ax_sprite sMachokeSprites24[] = {
 	{NULL, 32}, 
 	{sMachokeGfx24, ARRAY_COUNT(sMachokeGfx24)}, 
@@ -2236,9 +2236,9 @@ static const ax_sprite sMachokeSprites24[] = {
 	{sMachokeGfx24_2, ARRAY_COUNT(sMachokeGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx25[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_25.4bpp");
-static const u8 sMachokeGfx25_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_25_1.4bpp");
-static const u8 sMachokeGfx25_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_25_2.4bpp");
+static const u8 sMachokeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_25.4bpp.lz");
+static const u8 sMachokeGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_25_1.4bpp.lz");
+static const u8 sMachokeGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_25_2.4bpp.lz");
 static const ax_sprite sMachokeSprites25[] = {
 	{NULL, 32}, 
 	{sMachokeGfx25, ARRAY_COUNT(sMachokeGfx25)}, 
@@ -2249,10 +2249,10 @@ static const ax_sprite sMachokeSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx26[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_26.4bpp");
-static const u8 sMachokeGfx26_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_26_1.4bpp");
-static const u8 sMachokeGfx26_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_26_2.4bpp");
-static const u8 sMachokeGfx26_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_26_3.4bpp");
+static const u8 sMachokeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_26.4bpp.lz");
+static const u8 sMachokeGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_26_1.4bpp.lz");
+static const u8 sMachokeGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_26_2.4bpp.lz");
+static const u8 sMachokeGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_26_3.4bpp.lz");
 static const ax_sprite sMachokeSprites26[] = {
 	{sMachokeGfx26, ARRAY_COUNT(sMachokeGfx26)}, 
 	{NULL, 32}, 
@@ -2264,10 +2264,10 @@ static const ax_sprite sMachokeSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx27[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_27.4bpp");
-static const u8 sMachokeGfx27_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_27_1.4bpp");
-static const u8 sMachokeGfx27_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_27_2.4bpp");
-static const u8 sMachokeGfx27_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_27_3.4bpp");
+static const u8 sMachokeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_27.4bpp.lz");
+static const u8 sMachokeGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_27_1.4bpp.lz");
+static const u8 sMachokeGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_27_2.4bpp.lz");
+static const u8 sMachokeGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_27_3.4bpp.lz");
 static const ax_sprite sMachokeSprites27[] = {
 	{sMachokeGfx27, ARRAY_COUNT(sMachokeGfx27)}, 
 	{NULL, 64}, 
@@ -2279,15 +2279,15 @@ static const ax_sprite sMachokeSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx28[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_28.4bpp");
+static const u8 sMachokeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_28.4bpp.lz");
 static const ax_sprite sMachokeSprites28[] = {
 	{sMachokeGfx28, ARRAY_COUNT(sMachokeGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx29[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_29.4bpp");
-static const u8 sMachokeGfx29_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_29_1.4bpp");
-static const u8 sMachokeGfx29_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_29_2.4bpp");
-static const u8 sMachokeGfx29_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_29_3.4bpp");
+static const u8 sMachokeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_29.4bpp.lz");
+static const u8 sMachokeGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_29_1.4bpp.lz");
+static const u8 sMachokeGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_29_2.4bpp.lz");
+static const u8 sMachokeGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_29_3.4bpp.lz");
 static const ax_sprite sMachokeSprites29[] = {
 	{sMachokeGfx29, ARRAY_COUNT(sMachokeGfx29)}, 
 	{NULL, 64}, 
@@ -2299,10 +2299,10 @@ static const ax_sprite sMachokeSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx30[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_30.4bpp");
-static const u8 sMachokeGfx30_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_30_1.4bpp");
-static const u8 sMachokeGfx30_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_30_2.4bpp");
-static const u8 sMachokeGfx30_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_30_3.4bpp");
+static const u8 sMachokeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_30.4bpp.lz");
+static const u8 sMachokeGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_30_1.4bpp.lz");
+static const u8 sMachokeGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_30_2.4bpp.lz");
+static const u8 sMachokeGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_30_3.4bpp.lz");
 static const ax_sprite sMachokeSprites30[] = {
 	{NULL, 32}, 
 	{sMachokeGfx30, ARRAY_COUNT(sMachokeGfx30)}, 
@@ -2315,10 +2315,10 @@ static const ax_sprite sMachokeSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx31[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_31.4bpp");
-static const u8 sMachokeGfx31_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_31_1.4bpp");
-static const u8 sMachokeGfx31_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_31_2.4bpp");
-static const u8 sMachokeGfx31_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_31_3.4bpp");
+static const u8 sMachokeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_31.4bpp.lz");
+static const u8 sMachokeGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_31_1.4bpp.lz");
+static const u8 sMachokeGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_31_2.4bpp.lz");
+static const u8 sMachokeGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_31_3.4bpp.lz");
 static const ax_sprite sMachokeSprites31[] = {
 	{sMachokeGfx31, ARRAY_COUNT(sMachokeGfx31)}, 
 	{NULL, 32}, 
@@ -2330,9 +2330,9 @@ static const ax_sprite sMachokeSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx32[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_32.4bpp");
-static const u8 sMachokeGfx32_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_32_1.4bpp");
-static const u8 sMachokeGfx32_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_32_2.4bpp");
+static const u8 sMachokeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_32.4bpp.lz");
+static const u8 sMachokeGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_32_1.4bpp.lz");
+static const u8 sMachokeGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_32_2.4bpp.lz");
 static const ax_sprite sMachokeSprites32[] = {
 	{sMachokeGfx32, ARRAY_COUNT(sMachokeGfx32)}, 
 	{NULL, 96}, 
@@ -2341,9 +2341,9 @@ static const ax_sprite sMachokeSprites32[] = {
 	{sMachokeGfx32_2, ARRAY_COUNT(sMachokeGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx33[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_33.4bpp");
-static const u8 sMachokeGfx33_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_33_1.4bpp");
-static const u8 sMachokeGfx33_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_33_2.4bpp");
+static const u8 sMachokeGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_33.4bpp.lz");
+static const u8 sMachokeGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_33_1.4bpp.lz");
+static const u8 sMachokeGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_33_2.4bpp.lz");
 static const ax_sprite sMachokeSprites33[] = {
 	{NULL, 32}, 
 	{sMachokeGfx33, ARRAY_COUNT(sMachokeGfx33)}, 
@@ -2354,10 +2354,10 @@ static const ax_sprite sMachokeSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx34[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_34.4bpp");
-static const u8 sMachokeGfx34_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_34_1.4bpp");
-static const u8 sMachokeGfx34_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_34_2.4bpp");
-static const u8 sMachokeGfx34_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_34_3.4bpp");
+static const u8 sMachokeGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_34.4bpp.lz");
+static const u8 sMachokeGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_34_1.4bpp.lz");
+static const u8 sMachokeGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_34_2.4bpp.lz");
+static const u8 sMachokeGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_34_3.4bpp.lz");
 static const ax_sprite sMachokeSprites34[] = {
 	{NULL, 32}, 
 	{sMachokeGfx34, ARRAY_COUNT(sMachokeGfx34)}, 
@@ -2370,10 +2370,10 @@ static const ax_sprite sMachokeSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx35[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_35.4bpp");
-static const u8 sMachokeGfx35_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_35_1.4bpp");
-static const u8 sMachokeGfx35_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_35_2.4bpp");
-static const u8 sMachokeGfx35_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_35_3.4bpp");
+static const u8 sMachokeGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_35.4bpp.lz");
+static const u8 sMachokeGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_35_1.4bpp.lz");
+static const u8 sMachokeGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_35_2.4bpp.lz");
+static const u8 sMachokeGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_35_3.4bpp.lz");
 static const ax_sprite sMachokeSprites35[] = {
 	{sMachokeGfx35, ARRAY_COUNT(sMachokeGfx35)}, 
 	{NULL, 64}, 
@@ -2384,16 +2384,16 @@ static const ax_sprite sMachokeSprites35[] = {
 	{sMachokeGfx35_3, ARRAY_COUNT(sMachokeGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx36[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_36.4bpp");
+static const u8 sMachokeGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_36.4bpp.lz");
 static const ax_sprite sMachokeSprites36[] = {
 	{sMachokeGfx36, ARRAY_COUNT(sMachokeGfx36)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx37[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_37.4bpp");
-static const u8 sMachokeGfx37_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_37_1.4bpp");
-static const u8 sMachokeGfx37_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_37_2.4bpp");
-static const u8 sMachokeGfx37_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_37_3.4bpp");
+static const u8 sMachokeGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_37.4bpp.lz");
+static const u8 sMachokeGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_37_1.4bpp.lz");
+static const u8 sMachokeGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_37_2.4bpp.lz");
+static const u8 sMachokeGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_37_3.4bpp.lz");
 static const ax_sprite sMachokeSprites37[] = {
 	{NULL, 32}, 
 	{sMachokeGfx37, ARRAY_COUNT(sMachokeGfx37)}, 
@@ -2406,13 +2406,13 @@ static const ax_sprite sMachokeSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx38[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_38.4bpp");
+static const u8 sMachokeGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_38.4bpp.lz");
 static const ax_sprite sMachokeSprites38[] = {
 	{sMachokeGfx38, ARRAY_COUNT(sMachokeGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx39[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_39.4bpp");
-static const u8 sMachokeGfx39_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_39_1.4bpp");
+static const u8 sMachokeGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_39.4bpp.lz");
+static const u8 sMachokeGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_39_1.4bpp.lz");
 static const ax_sprite sMachokeSprites39[] = {
 	{NULL, 32}, 
 	{sMachokeGfx39, ARRAY_COUNT(sMachokeGfx39)}, 
@@ -2421,9 +2421,9 @@ static const ax_sprite sMachokeSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx40[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_40.4bpp");
-static const u8 sMachokeGfx40_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_40_1.4bpp");
-static const u8 sMachokeGfx40_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_40_2.4bpp");
+static const u8 sMachokeGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_40.4bpp.lz");
+static const u8 sMachokeGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_40_1.4bpp.lz");
+static const u8 sMachokeGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_40_2.4bpp.lz");
 static const ax_sprite sMachokeSprites40[] = {
 	{sMachokeGfx40, ARRAY_COUNT(sMachokeGfx40)}, 
 	{NULL, 32}, 
@@ -2433,9 +2433,9 @@ static const ax_sprite sMachokeSprites40[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx41[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_41.4bpp");
-static const u8 sMachokeGfx41_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_41_1.4bpp");
-static const u8 sMachokeGfx41_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_41_2.4bpp");
+static const u8 sMachokeGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_41.4bpp.lz");
+static const u8 sMachokeGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_41_1.4bpp.lz");
+static const u8 sMachokeGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_41_2.4bpp.lz");
 static const ax_sprite sMachokeSprites41[] = {
 	{sMachokeGfx41, ARRAY_COUNT(sMachokeGfx41)}, 
 	{NULL, 32}, 
@@ -2445,9 +2445,9 @@ static const ax_sprite sMachokeSprites41[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx42[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_42.4bpp");
-static const u8 sMachokeGfx42_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_42_1.4bpp");
-static const u8 sMachokeGfx42_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_42_2.4bpp");
+static const u8 sMachokeGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_42.4bpp.lz");
+static const u8 sMachokeGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_42_1.4bpp.lz");
+static const u8 sMachokeGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_42_2.4bpp.lz");
 static const ax_sprite sMachokeSprites42[] = {
 	{sMachokeGfx42, ARRAY_COUNT(sMachokeGfx42)}, 
 	{NULL, 32}, 
@@ -2457,10 +2457,10 @@ static const ax_sprite sMachokeSprites42[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx43[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_43.4bpp");
-static const u8 sMachokeGfx43_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_43_1.4bpp");
-static const u8 sMachokeGfx43_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_43_2.4bpp");
-static const u8 sMachokeGfx43_3[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_43_3.4bpp");
+static const u8 sMachokeGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_43.4bpp.lz");
+static const u8 sMachokeGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_43_1.4bpp.lz");
+static const u8 sMachokeGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_43_2.4bpp.lz");
+static const u8 sMachokeGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_43_3.4bpp.lz");
 static const ax_sprite sMachokeSprites43[] = {
 	{sMachokeGfx43, ARRAY_COUNT(sMachokeGfx43)}, 
 	{NULL, 32}, 
@@ -2472,9 +2472,9 @@ static const ax_sprite sMachokeSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx44[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_44.4bpp");
-static const u8 sMachokeGfx44_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_44_1.4bpp");
-static const u8 sMachokeGfx44_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_44_2.4bpp");
+static const u8 sMachokeGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_44.4bpp.lz");
+static const u8 sMachokeGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_44_1.4bpp.lz");
+static const u8 sMachokeGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_44_2.4bpp.lz");
 static const ax_sprite sMachokeSprites44[] = {
 	{sMachokeGfx44, ARRAY_COUNT(sMachokeGfx44)}, 
 	{NULL, 64}, 
@@ -2484,9 +2484,9 @@ static const ax_sprite sMachokeSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx45[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_45.4bpp");
-static const u8 sMachokeGfx45_1[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_45_1.4bpp");
-static const u8 sMachokeGfx45_2[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_45_2.4bpp");
+static const u8 sMachokeGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_45.4bpp.lz");
+static const u8 sMachokeGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_45_1.4bpp.lz");
+static const u8 sMachokeGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_45_2.4bpp.lz");
 static const ax_sprite sMachokeSprites45[] = {
 	{sMachokeGfx45, ARRAY_COUNT(sMachokeGfx45)}, 
 	{NULL, 32}, 
@@ -2496,37 +2496,37 @@ static const ax_sprite sMachokeSprites45[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx46[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_46.4bpp");
+static const u8 sMachokeGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_46.4bpp.lz");
 static const ax_sprite sMachokeSprites46[] = {
 	{sMachokeGfx46, ARRAY_COUNT(sMachokeGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx47[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_47.4bpp");
+static const u8 sMachokeGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_47.4bpp.lz");
 static const ax_sprite sMachokeSprites47[] = {
 	{sMachokeGfx47, ARRAY_COUNT(sMachokeGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx48[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_48.4bpp");
+static const u8 sMachokeGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_48.4bpp.lz");
 static const ax_sprite sMachokeSprites48[] = {
 	{sMachokeGfx48, ARRAY_COUNT(sMachokeGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx49[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_49.4bpp");
+static const u8 sMachokeGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_49.4bpp.lz");
 static const ax_sprite sMachokeSprites49[] = {
 	{sMachokeGfx49, ARRAY_COUNT(sMachokeGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx50[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_50.4bpp");
+static const u8 sMachokeGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_50.4bpp.lz");
 static const ax_sprite sMachokeSprites50[] = {
 	{sMachokeGfx50, ARRAY_COUNT(sMachokeGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx51[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_51.4bpp");
+static const u8 sMachokeGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_51.4bpp.lz");
 static const ax_sprite sMachokeSprites51[] = {
 	{sMachokeGfx51, ARRAY_COUNT(sMachokeGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMachokeGfx52[] = INCBIN_U8("graphics/ax/mon/machoke/sprite_52.4bpp");
+static const u8 sMachokeGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machoke/sprite_52.4bpp.lz");
 static const ax_sprite sMachokeSprites52[] = {
 	{sMachokeGfx52, ARRAY_COUNT(sMachokeGfx52)}, 
 	{NULL, 0}

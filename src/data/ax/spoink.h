@@ -2391,84 +2391,84 @@ static const ax_anim sSpoinkAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSpoinkGfx1[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_1.4bpp");
+static const u8 sSpoinkGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_1.4bpp.lz");
 static const ax_sprite sSpoinkSprites1[] = {
 	{sSpoinkGfx1, ARRAY_COUNT(sSpoinkGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx2[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_2.4bpp");
+static const u8 sSpoinkGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_2.4bpp.lz");
 static const ax_sprite sSpoinkSprites2[] = {
 	{sSpoinkGfx2, ARRAY_COUNT(sSpoinkGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx3[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_3.4bpp");
+static const u8 sSpoinkGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_3.4bpp.lz");
 static const ax_sprite sSpoinkSprites3[] = {
 	{sSpoinkGfx3, ARRAY_COUNT(sSpoinkGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx4[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_4.4bpp");
+static const u8 sSpoinkGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_4.4bpp.lz");
 static const ax_sprite sSpoinkSprites4[] = {
 	{sSpoinkGfx4, ARRAY_COUNT(sSpoinkGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx5[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_5.4bpp");
+static const u8 sSpoinkGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_5.4bpp.lz");
 static const ax_sprite sSpoinkSprites5[] = {
 	{sSpoinkGfx5, ARRAY_COUNT(sSpoinkGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx6[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_6.4bpp");
+static const u8 sSpoinkGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_6.4bpp.lz");
 static const ax_sprite sSpoinkSprites6[] = {
 	{sSpoinkGfx6, ARRAY_COUNT(sSpoinkGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx7[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_7.4bpp");
+static const u8 sSpoinkGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_7.4bpp.lz");
 static const ax_sprite sSpoinkSprites7[] = {
 	{sSpoinkGfx7, ARRAY_COUNT(sSpoinkGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx8[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_8.4bpp");
+static const u8 sSpoinkGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_8.4bpp.lz");
 static const ax_sprite sSpoinkSprites8[] = {
 	{sSpoinkGfx8, ARRAY_COUNT(sSpoinkGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx9[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_9.4bpp");
+static const u8 sSpoinkGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_9.4bpp.lz");
 static const ax_sprite sSpoinkSprites9[] = {
 	{sSpoinkGfx9, ARRAY_COUNT(sSpoinkGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx10[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_10.4bpp");
+static const u8 sSpoinkGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_10.4bpp.lz");
 static const ax_sprite sSpoinkSprites10[] = {
 	{sSpoinkGfx10, ARRAY_COUNT(sSpoinkGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx11[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_11.4bpp");
+static const u8 sSpoinkGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_11.4bpp.lz");
 static const ax_sprite sSpoinkSprites11[] = {
 	{sSpoinkGfx11, ARRAY_COUNT(sSpoinkGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx12[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_12.4bpp");
+static const u8 sSpoinkGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_12.4bpp.lz");
 static const ax_sprite sSpoinkSprites12[] = {
 	{sSpoinkGfx12, ARRAY_COUNT(sSpoinkGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx13[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_13.4bpp");
+static const u8 sSpoinkGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_13.4bpp.lz");
 static const ax_sprite sSpoinkSprites13[] = {
 	{sSpoinkGfx13, ARRAY_COUNT(sSpoinkGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx14[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_14.4bpp");
+static const u8 sSpoinkGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_14.4bpp.lz");
 static const ax_sprite sSpoinkSprites14[] = {
 	{sSpoinkGfx14, ARRAY_COUNT(sSpoinkGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx15[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_15.4bpp");
+static const u8 sSpoinkGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_15.4bpp.lz");
 static const ax_sprite sSpoinkSprites15[] = {
 	{sSpoinkGfx15, ARRAY_COUNT(sSpoinkGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx16[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_16.4bpp");
-static const u8 sSpoinkGfx16_1[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_16_1.4bpp");
-static const u8 sSpoinkGfx16_2[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_16_2.4bpp");
+static const u8 sSpoinkGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_16.4bpp.lz");
+static const u8 sSpoinkGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_16_1.4bpp.lz");
+static const u8 sSpoinkGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_16_2.4bpp.lz");
 static const ax_sprite sSpoinkSprites16[] = {
 	{NULL, 160}, 
 	{sSpoinkGfx16, ARRAY_COUNT(sSpoinkGfx16)}, 
@@ -2479,31 +2479,31 @@ static const ax_sprite sSpoinkSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx17[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_17.4bpp");
+static const u8 sSpoinkGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_17.4bpp.lz");
 static const ax_sprite sSpoinkSprites17[] = {
 	{NULL, 64}, 
 	{sSpoinkGfx17, ARRAY_COUNT(sSpoinkGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx18[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_18.4bpp");
-static const u8 sSpoinkGfx18_1[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_18_1.4bpp");
+static const u8 sSpoinkGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_18.4bpp.lz");
+static const u8 sSpoinkGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_18_1.4bpp.lz");
 static const ax_sprite sSpoinkSprites18[] = {
 	{sSpoinkGfx18, ARRAY_COUNT(sSpoinkGfx18)}, 
 	{NULL, 32}, 
 	{sSpoinkGfx18_1, ARRAY_COUNT(sSpoinkGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx19[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_19.4bpp");
-static const u8 sSpoinkGfx19_1[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_19_1.4bpp");
+static const u8 sSpoinkGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_19.4bpp.lz");
+static const u8 sSpoinkGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_19_1.4bpp.lz");
 static const ax_sprite sSpoinkSprites19[] = {
 	{sSpoinkGfx19, ARRAY_COUNT(sSpoinkGfx19)}, 
 	{NULL, 32}, 
 	{sSpoinkGfx19_1, ARRAY_COUNT(sSpoinkGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx20[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_20.4bpp");
-static const u8 sSpoinkGfx20_1[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_20_1.4bpp");
-static const u8 sSpoinkGfx20_2[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_20_2.4bpp");
+static const u8 sSpoinkGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_20.4bpp.lz");
+static const u8 sSpoinkGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_20_1.4bpp.lz");
+static const u8 sSpoinkGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_20_2.4bpp.lz");
 static const ax_sprite sSpoinkSprites20[] = {
 	{NULL, 160}, 
 	{sSpoinkGfx20, ARRAY_COUNT(sSpoinkGfx20)}, 
@@ -2514,9 +2514,9 @@ static const ax_sprite sSpoinkSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx21[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_21.4bpp");
-static const u8 sSpoinkGfx21_1[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_21_1.4bpp");
-static const u8 sSpoinkGfx21_2[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_21_2.4bpp");
+static const u8 sSpoinkGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_21.4bpp.lz");
+static const u8 sSpoinkGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_21_1.4bpp.lz");
+static const u8 sSpoinkGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_21_2.4bpp.lz");
 static const ax_sprite sSpoinkSprites21[] = {
 	{NULL, 160}, 
 	{sSpoinkGfx21, ARRAY_COUNT(sSpoinkGfx21)}, 
@@ -2527,29 +2527,29 @@ static const ax_sprite sSpoinkSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx22[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_22.4bpp");
+static const u8 sSpoinkGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_22.4bpp.lz");
 static const ax_sprite sSpoinkSprites22[] = {
 	{NULL, 64}, 
 	{sSpoinkGfx22, ARRAY_COUNT(sSpoinkGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx23[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_23.4bpp");
-static const u8 sSpoinkGfx23_1[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_23_1.4bpp");
+static const u8 sSpoinkGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_23.4bpp.lz");
+static const u8 sSpoinkGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_23_1.4bpp.lz");
 static const ax_sprite sSpoinkSprites23[] = {
 	{sSpoinkGfx23, ARRAY_COUNT(sSpoinkGfx23)}, 
 	{NULL, 32}, 
 	{sSpoinkGfx23_1, ARRAY_COUNT(sSpoinkGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx24[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_24.4bpp");
+static const u8 sSpoinkGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_24.4bpp.lz");
 static const ax_sprite sSpoinkSprites24[] = {
 	{sSpoinkGfx24, ARRAY_COUNT(sSpoinkGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx25[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_25.4bpp");
-static const u8 sSpoinkGfx25_1[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_25_1.4bpp");
-static const u8 sSpoinkGfx25_2[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_25_2.4bpp");
-static const u8 sSpoinkGfx25_3[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_25_3.4bpp");
+static const u8 sSpoinkGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_25.4bpp.lz");
+static const u8 sSpoinkGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_25_1.4bpp.lz");
+static const u8 sSpoinkGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_25_2.4bpp.lz");
+static const u8 sSpoinkGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_25_3.4bpp.lz");
 static const ax_sprite sSpoinkSprites25[] = {
 	{NULL, 32}, 
 	{sSpoinkGfx25, ARRAY_COUNT(sSpoinkGfx25)}, 
@@ -2562,62 +2562,62 @@ static const ax_sprite sSpoinkSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx26[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_26.4bpp");
+static const u8 sSpoinkGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_26.4bpp.lz");
 static const ax_sprite sSpoinkSprites26[] = {
 	{sSpoinkGfx26, ARRAY_COUNT(sSpoinkGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx27[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_27.4bpp");
+static const u8 sSpoinkGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_27.4bpp.lz");
 static const ax_sprite sSpoinkSprites27[] = {
 	{sSpoinkGfx27, ARRAY_COUNT(sSpoinkGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx28[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_28.4bpp");
+static const u8 sSpoinkGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_28.4bpp.lz");
 static const ax_sprite sSpoinkSprites28[] = {
 	{sSpoinkGfx28, ARRAY_COUNT(sSpoinkGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx29[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_29.4bpp");
+static const u8 sSpoinkGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_29.4bpp.lz");
 static const ax_sprite sSpoinkSprites29[] = {
 	{sSpoinkGfx29, ARRAY_COUNT(sSpoinkGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx30[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_30.4bpp");
+static const u8 sSpoinkGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_30.4bpp.lz");
 static const ax_sprite sSpoinkSprites30[] = {
 	{sSpoinkGfx30, ARRAY_COUNT(sSpoinkGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx31[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_31.4bpp");
+static const u8 sSpoinkGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_31.4bpp.lz");
 static const ax_sprite sSpoinkSprites31[] = {
 	{sSpoinkGfx31, ARRAY_COUNT(sSpoinkGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx32[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_32.4bpp");
+static const u8 sSpoinkGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_32.4bpp.lz");
 static const ax_sprite sSpoinkSprites32[] = {
 	{sSpoinkGfx32, ARRAY_COUNT(sSpoinkGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx33[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_33.4bpp");
+static const u8 sSpoinkGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_33.4bpp.lz");
 static const ax_sprite sSpoinkSprites33[] = {
 	{sSpoinkGfx33, ARRAY_COUNT(sSpoinkGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx34[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_34.4bpp");
+static const u8 sSpoinkGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_34.4bpp.lz");
 static const ax_sprite sSpoinkSprites34[] = {
 	{sSpoinkGfx34, ARRAY_COUNT(sSpoinkGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx35[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_35.4bpp");
+static const u8 sSpoinkGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_35.4bpp.lz");
 static const ax_sprite sSpoinkSprites35[] = {
 	{sSpoinkGfx35, ARRAY_COUNT(sSpoinkGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx36[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_36.4bpp");
+static const u8 sSpoinkGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_36.4bpp.lz");
 static const ax_sprite sSpoinkSprites36[] = {
 	{sSpoinkGfx36, ARRAY_COUNT(sSpoinkGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSpoinkGfx37[] = INCBIN_U8("graphics/ax/mon/spoink/sprite_37.4bpp");
+static const u8 sSpoinkGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spoink/sprite_37.4bpp.lz");
 static const ax_sprite sSpoinkSprites37[] = {
 	{sSpoinkGfx37, ARRAY_COUNT(sSpoinkGfx37)}, 
 	{NULL, 0}

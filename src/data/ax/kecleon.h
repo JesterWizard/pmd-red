@@ -2033,84 +2033,84 @@ static const ax_anim sKecleonAnims_14_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKecleonGfx1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_1.4bpp");
+static const u8 sKecleonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_1.4bpp.lz");
 static const ax_sprite sKecleonSprites1[] = {
 	{sKecleonGfx1, ARRAY_COUNT(sKecleonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_2.4bpp");
+static const u8 sKecleonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_2.4bpp.lz");
 static const ax_sprite sKecleonSprites2[] = {
 	{sKecleonGfx2, ARRAY_COUNT(sKecleonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_3.4bpp");
+static const u8 sKecleonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_3.4bpp.lz");
 static const ax_sprite sKecleonSprites3[] = {
 	{sKecleonGfx3, ARRAY_COUNT(sKecleonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx4[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_4.4bpp");
+static const u8 sKecleonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_4.4bpp.lz");
 static const ax_sprite sKecleonSprites4[] = {
 	{sKecleonGfx4, ARRAY_COUNT(sKecleonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx5[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_5.4bpp");
+static const u8 sKecleonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_5.4bpp.lz");
 static const ax_sprite sKecleonSprites5[] = {
 	{sKecleonGfx5, ARRAY_COUNT(sKecleonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx6[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_6.4bpp");
+static const u8 sKecleonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_6.4bpp.lz");
 static const ax_sprite sKecleonSprites6[] = {
 	{sKecleonGfx6, ARRAY_COUNT(sKecleonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx7[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_7.4bpp");
+static const u8 sKecleonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_7.4bpp.lz");
 static const ax_sprite sKecleonSprites7[] = {
 	{sKecleonGfx7, ARRAY_COUNT(sKecleonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx8[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_8.4bpp");
+static const u8 sKecleonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_8.4bpp.lz");
 static const ax_sprite sKecleonSprites8[] = {
 	{sKecleonGfx8, ARRAY_COUNT(sKecleonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx9[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_9.4bpp");
+static const u8 sKecleonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_9.4bpp.lz");
 static const ax_sprite sKecleonSprites9[] = {
 	{sKecleonGfx9, ARRAY_COUNT(sKecleonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx10[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_10.4bpp");
+static const u8 sKecleonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_10.4bpp.lz");
 static const ax_sprite sKecleonSprites10[] = {
 	{sKecleonGfx10, ARRAY_COUNT(sKecleonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx11[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_11.4bpp");
+static const u8 sKecleonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_11.4bpp.lz");
 static const ax_sprite sKecleonSprites11[] = {
 	{sKecleonGfx11, ARRAY_COUNT(sKecleonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx12[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_12.4bpp");
+static const u8 sKecleonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_12.4bpp.lz");
 static const ax_sprite sKecleonSprites12[] = {
 	{sKecleonGfx12, ARRAY_COUNT(sKecleonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx13[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_13.4bpp");
+static const u8 sKecleonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_13.4bpp.lz");
 static const ax_sprite sKecleonSprites13[] = {
 	{sKecleonGfx13, ARRAY_COUNT(sKecleonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx14[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_14.4bpp");
+static const u8 sKecleonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_14.4bpp.lz");
 static const ax_sprite sKecleonSprites14[] = {
 	{sKecleonGfx14, ARRAY_COUNT(sKecleonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx15[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_15.4bpp");
+static const u8 sKecleonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_15.4bpp.lz");
 static const ax_sprite sKecleonSprites15[] = {
 	{sKecleonGfx15, ARRAY_COUNT(sKecleonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx16[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_16.4bpp");
-static const u8 sKecleonGfx16_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_16_1.4bpp");
-static const u8 sKecleonGfx16_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_16_2.4bpp");
+static const u8 sKecleonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_16.4bpp.lz");
+static const u8 sKecleonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_16_1.4bpp.lz");
+static const u8 sKecleonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_16_2.4bpp.lz");
 static const ax_sprite sKecleonSprites16[] = {
 	{sKecleonGfx16, ARRAY_COUNT(sKecleonGfx16)}, 
 	{NULL, 32}, 
@@ -2120,10 +2120,10 @@ static const ax_sprite sKecleonSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx17[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_17.4bpp");
-static const u8 sKecleonGfx17_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_17_1.4bpp");
-static const u8 sKecleonGfx17_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_17_2.4bpp");
-static const u8 sKecleonGfx17_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_17_3.4bpp");
+static const u8 sKecleonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_17.4bpp.lz");
+static const u8 sKecleonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_17_1.4bpp.lz");
+static const u8 sKecleonGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_17_2.4bpp.lz");
+static const u8 sKecleonGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_17_3.4bpp.lz");
 static const ax_sprite sKecleonSprites17[] = {
 	{sKecleonGfx17, ARRAY_COUNT(sKecleonGfx17)}, 
 	{NULL, 64}, 
@@ -2135,10 +2135,10 @@ static const ax_sprite sKecleonSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx18[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_18.4bpp");
-static const u8 sKecleonGfx18_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_18_1.4bpp");
-static const u8 sKecleonGfx18_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_18_2.4bpp");
-static const u8 sKecleonGfx18_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_18_3.4bpp");
+static const u8 sKecleonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_18.4bpp.lz");
+static const u8 sKecleonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_18_1.4bpp.lz");
+static const u8 sKecleonGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_18_2.4bpp.lz");
+static const u8 sKecleonGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_18_3.4bpp.lz");
 static const ax_sprite sKecleonSprites18[] = {
 	{sKecleonGfx18, ARRAY_COUNT(sKecleonGfx18)}, 
 	{NULL, 64}, 
@@ -2150,10 +2150,10 @@ static const ax_sprite sKecleonSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx19[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_19.4bpp");
-static const u8 sKecleonGfx19_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_19_1.4bpp");
-static const u8 sKecleonGfx19_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_19_2.4bpp");
-static const u8 sKecleonGfx19_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_19_3.4bpp");
+static const u8 sKecleonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_19.4bpp.lz");
+static const u8 sKecleonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_19_1.4bpp.lz");
+static const u8 sKecleonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_19_2.4bpp.lz");
+static const u8 sKecleonGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_19_3.4bpp.lz");
 static const ax_sprite sKecleonSprites19[] = {
 	{sKecleonGfx19, ARRAY_COUNT(sKecleonGfx19)}, 
 	{NULL, 32}, 
@@ -2165,10 +2165,10 @@ static const ax_sprite sKecleonSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx20[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_20.4bpp");
-static const u8 sKecleonGfx20_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_20_1.4bpp");
-static const u8 sKecleonGfx20_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_20_2.4bpp");
-static const u8 sKecleonGfx20_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_20_3.4bpp");
+static const u8 sKecleonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_20.4bpp.lz");
+static const u8 sKecleonGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_20_1.4bpp.lz");
+static const u8 sKecleonGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_20_2.4bpp.lz");
+static const u8 sKecleonGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_20_3.4bpp.lz");
 static const ax_sprite sKecleonSprites20[] = {
 	{sKecleonGfx20, ARRAY_COUNT(sKecleonGfx20)}, 
 	{NULL, 32}, 
@@ -2180,10 +2180,10 @@ static const ax_sprite sKecleonSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx21[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_21.4bpp");
-static const u8 sKecleonGfx21_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_21_1.4bpp");
-static const u8 sKecleonGfx21_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_21_2.4bpp");
-static const u8 sKecleonGfx21_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_21_3.4bpp");
+static const u8 sKecleonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_21.4bpp.lz");
+static const u8 sKecleonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_21_1.4bpp.lz");
+static const u8 sKecleonGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_21_2.4bpp.lz");
+static const u8 sKecleonGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_21_3.4bpp.lz");
 static const ax_sprite sKecleonSprites21[] = {
 	{NULL, 32}, 
 	{sKecleonGfx21, ARRAY_COUNT(sKecleonGfx21)}, 
@@ -2196,9 +2196,9 @@ static const ax_sprite sKecleonSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx22[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_22.4bpp");
-static const u8 sKecleonGfx22_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_22_1.4bpp");
-static const u8 sKecleonGfx22_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_22_2.4bpp");
+static const u8 sKecleonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_22.4bpp.lz");
+static const u8 sKecleonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_22_1.4bpp.lz");
+static const u8 sKecleonGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_22_2.4bpp.lz");
 static const ax_sprite sKecleonSprites22[] = {
 	{NULL, 128}, 
 	{sKecleonGfx22, ARRAY_COUNT(sKecleonGfx22)}, 
@@ -2209,16 +2209,16 @@ static const ax_sprite sKecleonSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx23[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_23.4bpp");
+static const u8 sKecleonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_23.4bpp.lz");
 static const ax_sprite sKecleonSprites23[] = {
 	{NULL, 128}, 
 	{sKecleonGfx23, ARRAY_COUNT(sKecleonGfx23)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx24[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_24.4bpp");
-static const u8 sKecleonGfx24_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_24_1.4bpp");
-static const u8 sKecleonGfx24_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_24_2.4bpp");
+static const u8 sKecleonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_24.4bpp.lz");
+static const u8 sKecleonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_24_1.4bpp.lz");
+static const u8 sKecleonGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_24_2.4bpp.lz");
 static const ax_sprite sKecleonSprites24[] = {
 	{NULL, 32}, 
 	{sKecleonGfx24, ARRAY_COUNT(sKecleonGfx24)}, 
@@ -2229,10 +2229,10 @@ static const ax_sprite sKecleonSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx25[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_25.4bpp");
-static const u8 sKecleonGfx25_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_25_1.4bpp");
-static const u8 sKecleonGfx25_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_25_2.4bpp");
-static const u8 sKecleonGfx25_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_25_3.4bpp");
+static const u8 sKecleonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_25.4bpp.lz");
+static const u8 sKecleonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_25_1.4bpp.lz");
+static const u8 sKecleonGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_25_2.4bpp.lz");
+static const u8 sKecleonGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_25_3.4bpp.lz");
 static const ax_sprite sKecleonSprites25[] = {
 	{NULL, 32}, 
 	{sKecleonGfx25, ARRAY_COUNT(sKecleonGfx25)}, 
@@ -2245,9 +2245,9 @@ static const ax_sprite sKecleonSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx26[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_26.4bpp");
-static const u8 sKecleonGfx26_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_26_1.4bpp");
-static const u8 sKecleonGfx26_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_26_2.4bpp");
+static const u8 sKecleonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_26.4bpp.lz");
+static const u8 sKecleonGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_26_1.4bpp.lz");
+static const u8 sKecleonGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_26_2.4bpp.lz");
 static const ax_sprite sKecleonSprites26[] = {
 	{NULL, 128}, 
 	{sKecleonGfx26, ARRAY_COUNT(sKecleonGfx26)}, 
@@ -2258,10 +2258,10 @@ static const ax_sprite sKecleonSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx27[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_27.4bpp");
-static const u8 sKecleonGfx27_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_27_1.4bpp");
-static const u8 sKecleonGfx27_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_27_2.4bpp");
-static const u8 sKecleonGfx27_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_27_3.4bpp");
+static const u8 sKecleonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_27.4bpp.lz");
+static const u8 sKecleonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_27_1.4bpp.lz");
+static const u8 sKecleonGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_27_2.4bpp.lz");
+static const u8 sKecleonGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_27_3.4bpp.lz");
 static const ax_sprite sKecleonSprites27[] = {
 	{NULL, 32}, 
 	{sKecleonGfx27, ARRAY_COUNT(sKecleonGfx27)}, 
@@ -2273,8 +2273,8 @@ static const ax_sprite sKecleonSprites27[] = {
 	{sKecleonGfx27_3, ARRAY_COUNT(sKecleonGfx27_3)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx28[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_28.4bpp");
-static const u8 sKecleonGfx28_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_28_1.4bpp");
+static const u8 sKecleonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_28.4bpp.lz");
+static const u8 sKecleonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_28_1.4bpp.lz");
 static const ax_sprite sKecleonSprites28[] = {
 	{NULL, 32}, 
 	{sKecleonGfx28, ARRAY_COUNT(sKecleonGfx28)}, 
@@ -2283,8 +2283,8 @@ static const ax_sprite sKecleonSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx29[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_29.4bpp");
-static const u8 sKecleonGfx29_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_29_1.4bpp");
+static const u8 sKecleonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_29.4bpp.lz");
+static const u8 sKecleonGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_29_1.4bpp.lz");
 static const ax_sprite sKecleonSprites29[] = {
 	{NULL, 32}, 
 	{sKecleonGfx29, ARRAY_COUNT(sKecleonGfx29)}, 
@@ -2293,10 +2293,10 @@ static const ax_sprite sKecleonSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx30[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_30.4bpp");
-static const u8 sKecleonGfx30_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_30_1.4bpp");
-static const u8 sKecleonGfx30_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_30_2.4bpp");
-static const u8 sKecleonGfx30_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_30_3.4bpp");
+static const u8 sKecleonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_30.4bpp.lz");
+static const u8 sKecleonGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_30_1.4bpp.lz");
+static const u8 sKecleonGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_30_2.4bpp.lz");
+static const u8 sKecleonGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_30_3.4bpp.lz");
 static const ax_sprite sKecleonSprites30[] = {
 	{NULL, 32}, 
 	{sKecleonGfx30, ARRAY_COUNT(sKecleonGfx30)}, 
@@ -2308,9 +2308,9 @@ static const ax_sprite sKecleonSprites30[] = {
 	{sKecleonGfx30_3, ARRAY_COUNT(sKecleonGfx30_3)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx31[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_31.4bpp");
-static const u8 sKecleonGfx31_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_31_1.4bpp");
-static const u8 sKecleonGfx31_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_31_2.4bpp");
+static const u8 sKecleonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_31.4bpp.lz");
+static const u8 sKecleonGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_31_1.4bpp.lz");
+static const u8 sKecleonGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_31_2.4bpp.lz");
 static const ax_sprite sKecleonSprites31[] = {
 	{NULL, 32}, 
 	{sKecleonGfx31, ARRAY_COUNT(sKecleonGfx31)}, 
@@ -2321,8 +2321,8 @@ static const ax_sprite sKecleonSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx32[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_32.4bpp");
-static const u8 sKecleonGfx32_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_32_1.4bpp");
+static const u8 sKecleonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_32.4bpp.lz");
+static const u8 sKecleonGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_32_1.4bpp.lz");
 static const ax_sprite sKecleonSprites32[] = {
 	{NULL, 32}, 
 	{sKecleonGfx32, ARRAY_COUNT(sKecleonGfx32)}, 
@@ -2331,10 +2331,10 @@ static const ax_sprite sKecleonSprites32[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx33[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_33.4bpp");
-static const u8 sKecleonGfx33_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_33_1.4bpp");
-static const u8 sKecleonGfx33_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_33_2.4bpp");
-static const u8 sKecleonGfx33_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_33_3.4bpp");
+static const u8 sKecleonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_33.4bpp.lz");
+static const u8 sKecleonGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_33_1.4bpp.lz");
+static const u8 sKecleonGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_33_2.4bpp.lz");
+static const u8 sKecleonGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_33_3.4bpp.lz");
 static const ax_sprite sKecleonSprites33[] = {
 	{NULL, 32}, 
 	{sKecleonGfx33, ARRAY_COUNT(sKecleonGfx33)}, 
@@ -2347,10 +2347,10 @@ static const ax_sprite sKecleonSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx34[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_34.4bpp");
-static const u8 sKecleonGfx34_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_34_1.4bpp");
-static const u8 sKecleonGfx34_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_34_2.4bpp");
-static const u8 sKecleonGfx34_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_34_3.4bpp");
+static const u8 sKecleonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_34.4bpp.lz");
+static const u8 sKecleonGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_34_1.4bpp.lz");
+static const u8 sKecleonGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_34_2.4bpp.lz");
+static const u8 sKecleonGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_34_3.4bpp.lz");
 static const ax_sprite sKecleonSprites34[] = {
 	{sKecleonGfx34, ARRAY_COUNT(sKecleonGfx34)}, 
 	{NULL, 32}, 
@@ -2362,16 +2362,16 @@ static const ax_sprite sKecleonSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx35[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_35.4bpp");
+static const u8 sKecleonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_35.4bpp.lz");
 static const ax_sprite sKecleonSprites35[] = {
 	{sKecleonGfx35, ARRAY_COUNT(sKecleonGfx35)}, 
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx36[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_36.4bpp");
-static const u8 sKecleonGfx36_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_36_1.4bpp");
-static const u8 sKecleonGfx36_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_36_2.4bpp");
-static const u8 sKecleonGfx36_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_36_3.4bpp");
+static const u8 sKecleonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_36.4bpp.lz");
+static const u8 sKecleonGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_36_1.4bpp.lz");
+static const u8 sKecleonGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_36_2.4bpp.lz");
+static const u8 sKecleonGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_36_3.4bpp.lz");
 static const ax_sprite sKecleonSprites36[] = {
 	{sKecleonGfx36, ARRAY_COUNT(sKecleonGfx36)}, 
 	{NULL, 32}, 
@@ -2383,25 +2383,25 @@ static const ax_sprite sKecleonSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx37[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_37.4bpp");
+static const u8 sKecleonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_37.4bpp.lz");
 static const ax_sprite sKecleonSprites37[] = {
 	{sKecleonGfx37, ARRAY_COUNT(sKecleonGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx38[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_38.4bpp");
+static const u8 sKecleonGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_38.4bpp.lz");
 static const ax_sprite sKecleonSprites38[] = {
 	{sKecleonGfx38, ARRAY_COUNT(sKecleonGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx39[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_39.4bpp");
+static const u8 sKecleonGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_39.4bpp.lz");
 static const ax_sprite sKecleonSprites39[] = {
 	{sKecleonGfx39, ARRAY_COUNT(sKecleonGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx40[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_40.4bpp");
-static const u8 sKecleonGfx40_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_40_1.4bpp");
-static const u8 sKecleonGfx40_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_40_2.4bpp");
-static const u8 sKecleonGfx40_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_40_3.4bpp");
+static const u8 sKecleonGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_40.4bpp.lz");
+static const u8 sKecleonGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_40_1.4bpp.lz");
+static const u8 sKecleonGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_40_2.4bpp.lz");
+static const u8 sKecleonGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_40_3.4bpp.lz");
 static const ax_sprite sKecleonSprites40[] = {
 	{NULL, 32}, 
 	{sKecleonGfx40, ARRAY_COUNT(sKecleonGfx40)}, 
@@ -2414,8 +2414,8 @@ static const ax_sprite sKecleonSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx41[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_41.4bpp");
-static const u8 sKecleonGfx41_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_41_1.4bpp");
+static const u8 sKecleonGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_41.4bpp.lz");
+static const u8 sKecleonGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_41_1.4bpp.lz");
 static const ax_sprite sKecleonSprites41[] = {
 	{NULL, 32}, 
 	{sKecleonGfx41, ARRAY_COUNT(sKecleonGfx41)}, 
@@ -2424,9 +2424,9 @@ static const ax_sprite sKecleonSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx42[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_42.4bpp");
-static const u8 sKecleonGfx42_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_42_1.4bpp");
-static const u8 sKecleonGfx42_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_42_2.4bpp");
+static const u8 sKecleonGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_42.4bpp.lz");
+static const u8 sKecleonGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_42_1.4bpp.lz");
+static const u8 sKecleonGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_42_2.4bpp.lz");
 static const ax_sprite sKecleonSprites42[] = {
 	{NULL, 32}, 
 	{sKecleonGfx42, ARRAY_COUNT(sKecleonGfx42)}, 
@@ -2437,31 +2437,31 @@ static const ax_sprite sKecleonSprites42[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx43[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_43.4bpp");
+static const u8 sKecleonGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_43.4bpp.lz");
 static const ax_sprite sKecleonSprites43[] = {
 	{sKecleonGfx43, ARRAY_COUNT(sKecleonGfx43)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx44[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_44.4bpp");
+static const u8 sKecleonGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_44.4bpp.lz");
 static const ax_sprite sKecleonSprites44[] = {
 	{NULL, 32}, 
 	{sKecleonGfx44, ARRAY_COUNT(sKecleonGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx45[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_45.4bpp");
+static const u8 sKecleonGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_45.4bpp.lz");
 static const ax_sprite sKecleonSprites45[] = {
 	{sKecleonGfx45, ARRAY_COUNT(sKecleonGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx46[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_46.4bpp");
+static const u8 sKecleonGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_46.4bpp.lz");
 static const ax_sprite sKecleonSprites46[] = {
 	{sKecleonGfx46, ARRAY_COUNT(sKecleonGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx47[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_47.4bpp");
-static const u8 sKecleonGfx47_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_47_1.4bpp");
-static const u8 sKecleonGfx47_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_47_2.4bpp");
+static const u8 sKecleonGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_47.4bpp.lz");
+static const u8 sKecleonGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_47_1.4bpp.lz");
+static const u8 sKecleonGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_47_2.4bpp.lz");
 static const ax_sprite sKecleonSprites47[] = {
 	{NULL, 32}, 
 	{sKecleonGfx47, ARRAY_COUNT(sKecleonGfx47)}, 
@@ -2472,28 +2472,28 @@ static const ax_sprite sKecleonSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx48[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_48.4bpp");
-static const u8 sKecleonGfx48_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_48_1.4bpp");
+static const u8 sKecleonGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_48.4bpp.lz");
+static const u8 sKecleonGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_48_1.4bpp.lz");
 static const ax_sprite sKecleonSprites48[] = {
 	{sKecleonGfx48, ARRAY_COUNT(sKecleonGfx48)}, 
 	{NULL, 32}, 
 	{sKecleonGfx48_1, ARRAY_COUNT(sKecleonGfx48_1)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx49[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_49.4bpp");
+static const u8 sKecleonGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_49.4bpp.lz");
 static const ax_sprite sKecleonSprites49[] = {
 	{sKecleonGfx49, ARRAY_COUNT(sKecleonGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx50[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_50.4bpp");
+static const u8 sKecleonGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_50.4bpp.lz");
 static const ax_sprite sKecleonSprites50[] = {
 	{sKecleonGfx50, ARRAY_COUNT(sKecleonGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx51[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_51.4bpp");
-static const u8 sKecleonGfx51_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_51_1.4bpp");
-static const u8 sKecleonGfx51_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_51_2.4bpp");
-static const u8 sKecleonGfx51_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_51_3.4bpp");
+static const u8 sKecleonGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_51.4bpp.lz");
+static const u8 sKecleonGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_51_1.4bpp.lz");
+static const u8 sKecleonGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_51_2.4bpp.lz");
+static const u8 sKecleonGfx51_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_51_3.4bpp.lz");
 static const ax_sprite sKecleonSprites51[] = {
 	{NULL, 32}, 
 	{sKecleonGfx51, ARRAY_COUNT(sKecleonGfx51)}, 
@@ -2506,29 +2506,29 @@ static const ax_sprite sKecleonSprites51[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx52[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_52.4bpp");
+static const u8 sKecleonGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_52.4bpp.lz");
 static const ax_sprite sKecleonSprites52[] = {
 	{sKecleonGfx52, ARRAY_COUNT(sKecleonGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx53[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_53.4bpp");
+static const u8 sKecleonGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_53.4bpp.lz");
 static const ax_sprite sKecleonSprites53[] = {
 	{sKecleonGfx53, ARRAY_COUNT(sKecleonGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx54[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_54.4bpp");
+static const u8 sKecleonGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_54.4bpp.lz");
 static const ax_sprite sKecleonSprites54[] = {
 	{sKecleonGfx54, ARRAY_COUNT(sKecleonGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx55[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_55.4bpp");
+static const u8 sKecleonGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_55.4bpp.lz");
 static const ax_sprite sKecleonSprites55[] = {
 	{sKecleonGfx55, ARRAY_COUNT(sKecleonGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx56[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_56.4bpp");
-static const u8 sKecleonGfx56_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_56_1.4bpp");
-static const u8 sKecleonGfx56_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_56_2.4bpp");
+static const u8 sKecleonGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_56.4bpp.lz");
+static const u8 sKecleonGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_56_1.4bpp.lz");
+static const u8 sKecleonGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_56_2.4bpp.lz");
 static const ax_sprite sKecleonSprites56[] = {
 	{sKecleonGfx56, ARRAY_COUNT(sKecleonGfx56)}, 
 	{NULL, 32}, 
@@ -2538,9 +2538,9 @@ static const ax_sprite sKecleonSprites56[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx57[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_57.4bpp");
-static const u8 sKecleonGfx57_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_57_1.4bpp");
-static const u8 sKecleonGfx57_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_57_2.4bpp");
+static const u8 sKecleonGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_57.4bpp.lz");
+static const u8 sKecleonGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_57_1.4bpp.lz");
+static const u8 sKecleonGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_57_2.4bpp.lz");
 static const ax_sprite sKecleonSprites57[] = {
 	{NULL, 32}, 
 	{sKecleonGfx57, ARRAY_COUNT(sKecleonGfx57)}, 
@@ -2551,18 +2551,18 @@ static const ax_sprite sKecleonSprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx58[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_58.4bpp");
-static const u8 sKecleonGfx58_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_58_1.4bpp");
+static const u8 sKecleonGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_58.4bpp.lz");
+static const u8 sKecleonGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_58_1.4bpp.lz");
 static const ax_sprite sKecleonSprites58[] = {
 	{sKecleonGfx58, ARRAY_COUNT(sKecleonGfx58)}, 
 	{NULL, 32}, 
 	{sKecleonGfx58_1, ARRAY_COUNT(sKecleonGfx58_1)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx59[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_59.4bpp");
-static const u8 sKecleonGfx59_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_59_1.4bpp");
-static const u8 sKecleonGfx59_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_59_2.4bpp");
-static const u8 sKecleonGfx59_3[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_59_3.4bpp");
+static const u8 sKecleonGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_59.4bpp.lz");
+static const u8 sKecleonGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_59_1.4bpp.lz");
+static const u8 sKecleonGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_59_2.4bpp.lz");
+static const u8 sKecleonGfx59_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_59_3.4bpp.lz");
 static const ax_sprite sKecleonSprites59[] = {
 	{NULL, 32}, 
 	{sKecleonGfx59, ARRAY_COUNT(sKecleonGfx59)}, 
@@ -2574,9 +2574,9 @@ static const ax_sprite sKecleonSprites59[] = {
 	{sKecleonGfx59_3, ARRAY_COUNT(sKecleonGfx59_3)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx60[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_60.4bpp");
-static const u8 sKecleonGfx60_1[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_60_1.4bpp");
-static const u8 sKecleonGfx60_2[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_60_2.4bpp");
+static const u8 sKecleonGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_60.4bpp.lz");
+static const u8 sKecleonGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_60_1.4bpp.lz");
+static const u8 sKecleonGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_60_2.4bpp.lz");
 static const ax_sprite sKecleonSprites60[] = {
 	{sKecleonGfx60, ARRAY_COUNT(sKecleonGfx60)}, 
 	{NULL, 32}, 
@@ -2586,42 +2586,42 @@ static const ax_sprite sKecleonSprites60[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx61[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_61.4bpp");
+static const u8 sKecleonGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_61.4bpp.lz");
 static const ax_sprite sKecleonSprites61[] = {
 	{sKecleonGfx61, ARRAY_COUNT(sKecleonGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx62[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_62.4bpp");
+static const u8 sKecleonGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_62.4bpp.lz");
 static const ax_sprite sKecleonSprites62[] = {
 	{sKecleonGfx62, ARRAY_COUNT(sKecleonGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx63[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_63.4bpp");
+static const u8 sKecleonGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_63.4bpp.lz");
 static const ax_sprite sKecleonSprites63[] = {
 	{sKecleonGfx63, ARRAY_COUNT(sKecleonGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx64[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_64.4bpp");
+static const u8 sKecleonGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_64.4bpp.lz");
 static const ax_sprite sKecleonSprites64[] = {
 	{sKecleonGfx64, ARRAY_COUNT(sKecleonGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx65[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_65.4bpp");
+static const u8 sKecleonGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_65.4bpp.lz");
 static const ax_sprite sKecleonSprites65[] = {
 	{sKecleonGfx65, ARRAY_COUNT(sKecleonGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx66[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_66.4bpp");
+static const u8 sKecleonGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_66.4bpp.lz");
 static const ax_sprite sKecleonSprites66[] = {
 	{sKecleonGfx66, ARRAY_COUNT(sKecleonGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx67[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_67.4bpp");
+static const u8 sKecleonGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_67.4bpp.lz");
 static const ax_sprite sKecleonSprites67[] = {
 	{sKecleonGfx67, ARRAY_COUNT(sKecleonGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sKecleonGfx68[] = INCBIN_U8("graphics/ax/mon/kecleon/sprite_68.4bpp");
+static const u8 sKecleonGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kecleon/sprite_68.4bpp.lz");
 static const ax_sprite sKecleonSprites68[] = {
 	{sKecleonGfx68, ARRAY_COUNT(sKecleonGfx68)}, 
 	{NULL, 0}

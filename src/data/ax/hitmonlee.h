@@ -2149,239 +2149,239 @@ static const ax_anim sHitmonleeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHitmonleeGfx1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_1.4bpp");
+static const u8 sHitmonleeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites1[] = {
 	{sHitmonleeGfx1, ARRAY_COUNT(sHitmonleeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx2[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_2.4bpp");
+static const u8 sHitmonleeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_2.4bpp.lz");
 static const ax_sprite sHitmonleeSprites2[] = {
 	{sHitmonleeGfx2, ARRAY_COUNT(sHitmonleeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx3[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_3.4bpp");
+static const u8 sHitmonleeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_3.4bpp.lz");
 static const ax_sprite sHitmonleeSprites3[] = {
 	{sHitmonleeGfx3, ARRAY_COUNT(sHitmonleeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx4[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_4.4bpp");
+static const u8 sHitmonleeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_4.4bpp.lz");
 static const ax_sprite sHitmonleeSprites4[] = {
 	{sHitmonleeGfx4, ARRAY_COUNT(sHitmonleeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx5[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_5.4bpp");
+static const u8 sHitmonleeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_5.4bpp.lz");
 static const ax_sprite sHitmonleeSprites5[] = {
 	{sHitmonleeGfx5, ARRAY_COUNT(sHitmonleeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx6[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_6.4bpp");
+static const u8 sHitmonleeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_6.4bpp.lz");
 static const ax_sprite sHitmonleeSprites6[] = {
 	{sHitmonleeGfx6, ARRAY_COUNT(sHitmonleeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx7[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_7.4bpp");
+static const u8 sHitmonleeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_7.4bpp.lz");
 static const ax_sprite sHitmonleeSprites7[] = {
 	{sHitmonleeGfx7, ARRAY_COUNT(sHitmonleeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx8[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_8.4bpp");
+static const u8 sHitmonleeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_8.4bpp.lz");
 static const ax_sprite sHitmonleeSprites8[] = {
 	{sHitmonleeGfx8, ARRAY_COUNT(sHitmonleeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx9[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_9.4bpp");
+static const u8 sHitmonleeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_9.4bpp.lz");
 static const ax_sprite sHitmonleeSprites9[] = {
 	{sHitmonleeGfx9, ARRAY_COUNT(sHitmonleeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx10[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_10.4bpp");
+static const u8 sHitmonleeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_10.4bpp.lz");
 static const ax_sprite sHitmonleeSprites10[] = {
 	{sHitmonleeGfx10, ARRAY_COUNT(sHitmonleeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx11[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_11.4bpp");
+static const u8 sHitmonleeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_11.4bpp.lz");
 static const ax_sprite sHitmonleeSprites11[] = {
 	{sHitmonleeGfx11, ARRAY_COUNT(sHitmonleeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx12[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_12.4bpp");
+static const u8 sHitmonleeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_12.4bpp.lz");
 static const ax_sprite sHitmonleeSprites12[] = {
 	{sHitmonleeGfx12, ARRAY_COUNT(sHitmonleeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx13[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_13.4bpp");
+static const u8 sHitmonleeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_13.4bpp.lz");
 static const ax_sprite sHitmonleeSprites13[] = {
 	{sHitmonleeGfx13, ARRAY_COUNT(sHitmonleeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx14[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_14.4bpp");
+static const u8 sHitmonleeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_14.4bpp.lz");
 static const ax_sprite sHitmonleeSprites14[] = {
 	{sHitmonleeGfx14, ARRAY_COUNT(sHitmonleeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx15[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_15.4bpp");
+static const u8 sHitmonleeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_15.4bpp.lz");
 static const ax_sprite sHitmonleeSprites15[] = {
 	{sHitmonleeGfx15, ARRAY_COUNT(sHitmonleeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx16[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_16.4bpp");
+static const u8 sHitmonleeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_16.4bpp.lz");
 static const ax_sprite sHitmonleeSprites16[] = {
 	{sHitmonleeGfx16, ARRAY_COUNT(sHitmonleeGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx17[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_17.4bpp");
+static const u8 sHitmonleeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_17.4bpp.lz");
 static const ax_sprite sHitmonleeSprites17[] = {
 	{sHitmonleeGfx17, ARRAY_COUNT(sHitmonleeGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx18[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_18.4bpp");
+static const u8 sHitmonleeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_18.4bpp.lz");
 static const ax_sprite sHitmonleeSprites18[] = {
 	{sHitmonleeGfx18, ARRAY_COUNT(sHitmonleeGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx19[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_19.4bpp");
+static const u8 sHitmonleeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_19.4bpp.lz");
 static const ax_sprite sHitmonleeSprites19[] = {
 	{sHitmonleeGfx19, ARRAY_COUNT(sHitmonleeGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx20[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_20.4bpp");
+static const u8 sHitmonleeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_20.4bpp.lz");
 static const ax_sprite sHitmonleeSprites20[] = {
 	{sHitmonleeGfx20, ARRAY_COUNT(sHitmonleeGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx21[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_21.4bpp");
+static const u8 sHitmonleeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_21.4bpp.lz");
 static const ax_sprite sHitmonleeSprites21[] = {
 	{sHitmonleeGfx21, ARRAY_COUNT(sHitmonleeGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx22[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_22.4bpp");
+static const u8 sHitmonleeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_22.4bpp.lz");
 static const ax_sprite sHitmonleeSprites22[] = {
 	{sHitmonleeGfx22, ARRAY_COUNT(sHitmonleeGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx23[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_23.4bpp");
+static const u8 sHitmonleeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_23.4bpp.lz");
 static const ax_sprite sHitmonleeSprites23[] = {
 	{sHitmonleeGfx23, ARRAY_COUNT(sHitmonleeGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx24[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_24.4bpp");
+static const u8 sHitmonleeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_24.4bpp.lz");
 static const ax_sprite sHitmonleeSprites24[] = {
 	{sHitmonleeGfx24, ARRAY_COUNT(sHitmonleeGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx25[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_25.4bpp");
+static const u8 sHitmonleeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_25.4bpp.lz");
 static const ax_sprite sHitmonleeSprites25[] = {
 	{sHitmonleeGfx25, ARRAY_COUNT(sHitmonleeGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx26[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_26.4bpp");
+static const u8 sHitmonleeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_26.4bpp.lz");
 static const ax_sprite sHitmonleeSprites26[] = {
 	{sHitmonleeGfx26, ARRAY_COUNT(sHitmonleeGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx27[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_27.4bpp");
-static const u8 sHitmonleeGfx27_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_27_1.4bpp");
+static const u8 sHitmonleeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_27.4bpp.lz");
+static const u8 sHitmonleeGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_27_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites27[] = {
 	{sHitmonleeGfx27, ARRAY_COUNT(sHitmonleeGfx27)}, 
 	{NULL, 32}, 
 	{sHitmonleeGfx27_1, ARRAY_COUNT(sHitmonleeGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx28[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_28.4bpp");
+static const u8 sHitmonleeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_28.4bpp.lz");
 static const ax_sprite sHitmonleeSprites28[] = {
 	{NULL, 32}, 
 	{sHitmonleeGfx28, ARRAY_COUNT(sHitmonleeGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx29[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_29.4bpp");
+static const u8 sHitmonleeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_29.4bpp.lz");
 static const ax_sprite sHitmonleeSprites29[] = {
 	{NULL, 64}, 
 	{sHitmonleeGfx29, ARRAY_COUNT(sHitmonleeGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx30[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_30.4bpp");
+static const u8 sHitmonleeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_30.4bpp.lz");
 static const ax_sprite sHitmonleeSprites30[] = {
 	{sHitmonleeGfx30, ARRAY_COUNT(sHitmonleeGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx31[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_31.4bpp");
+static const u8 sHitmonleeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_31.4bpp.lz");
 static const ax_sprite sHitmonleeSprites31[] = {
 	{NULL, 64}, 
 	{sHitmonleeGfx31, ARRAY_COUNT(sHitmonleeGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx32[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_32.4bpp");
+static const u8 sHitmonleeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_32.4bpp.lz");
 static const ax_sprite sHitmonleeSprites32[] = {
 	{NULL, 32}, 
 	{sHitmonleeGfx32, ARRAY_COUNT(sHitmonleeGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx33[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_33.4bpp");
+static const u8 sHitmonleeGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_33.4bpp.lz");
 static const ax_sprite sHitmonleeSprites33[] = {
 	{sHitmonleeGfx33, ARRAY_COUNT(sHitmonleeGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx34[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_34.4bpp");
+static const u8 sHitmonleeGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_34.4bpp.lz");
 static const ax_sprite sHitmonleeSprites34[] = {
 	{sHitmonleeGfx34, ARRAY_COUNT(sHitmonleeGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx35[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_35.4bpp");
+static const u8 sHitmonleeGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_35.4bpp.lz");
 static const ax_sprite sHitmonleeSprites35[] = {
 	{sHitmonleeGfx35, ARRAY_COUNT(sHitmonleeGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx36[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_36.4bpp");
+static const u8 sHitmonleeGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_36.4bpp.lz");
 static const ax_sprite sHitmonleeSprites36[] = {
 	{sHitmonleeGfx36, ARRAY_COUNT(sHitmonleeGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx37[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_37.4bpp");
+static const u8 sHitmonleeGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_37.4bpp.lz");
 static const ax_sprite sHitmonleeSprites37[] = {
 	{sHitmonleeGfx37, ARRAY_COUNT(sHitmonleeGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx38[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_38.4bpp");
-static const u8 sHitmonleeGfx38_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_38_1.4bpp");
+static const u8 sHitmonleeGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_38.4bpp.lz");
+static const u8 sHitmonleeGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_38_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites38[] = {
 	{sHitmonleeGfx38, ARRAY_COUNT(sHitmonleeGfx38)}, 
 	{NULL, 64}, 
 	{sHitmonleeGfx38_1, ARRAY_COUNT(sHitmonleeGfx38_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx39[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_39.4bpp");
+static const u8 sHitmonleeGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_39.4bpp.lz");
 static const ax_sprite sHitmonleeSprites39[] = {
 	{sHitmonleeGfx39, ARRAY_COUNT(sHitmonleeGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx40[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_40.4bpp");
+static const u8 sHitmonleeGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_40.4bpp.lz");
 static const ax_sprite sHitmonleeSprites40[] = {
 	{sHitmonleeGfx40, ARRAY_COUNT(sHitmonleeGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx41[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_41.4bpp");
-static const u8 sHitmonleeGfx41_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_41_1.4bpp");
+static const u8 sHitmonleeGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_41.4bpp.lz");
+static const u8 sHitmonleeGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_41_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites41[] = {
 	{sHitmonleeGfx41, ARRAY_COUNT(sHitmonleeGfx41)}, 
 	{NULL, 32}, 
 	{sHitmonleeGfx41_1, ARRAY_COUNT(sHitmonleeGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx42[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_42.4bpp");
-static const u8 sHitmonleeGfx42_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_42_1.4bpp");
+static const u8 sHitmonleeGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_42.4bpp.lz");
+static const u8 sHitmonleeGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_42_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites42[] = {
 	{sHitmonleeGfx42, ARRAY_COUNT(sHitmonleeGfx42)}, 
 	{NULL, 32}, 
 	{sHitmonleeGfx42_1, ARRAY_COUNT(sHitmonleeGfx42_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx43[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_43.4bpp");
+static const u8 sHitmonleeGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_43.4bpp.lz");
 static const ax_sprite sHitmonleeSprites43[] = {
 	{sHitmonleeGfx43, ARRAY_COUNT(sHitmonleeGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx44[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_44.4bpp");
-static const u8 sHitmonleeGfx44_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_44_1.4bpp");
+static const u8 sHitmonleeGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_44.4bpp.lz");
+static const u8 sHitmonleeGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_44_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites44[] = {
 	{sHitmonleeGfx44, ARRAY_COUNT(sHitmonleeGfx44)}, 
 	{NULL, 64}, 
@@ -2389,37 +2389,37 @@ static const ax_sprite sHitmonleeSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx45[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_45.4bpp");
-static const u8 sHitmonleeGfx45_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_45_1.4bpp");
+static const u8 sHitmonleeGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_45.4bpp.lz");
+static const u8 sHitmonleeGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_45_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites45[] = {
 	{sHitmonleeGfx45, ARRAY_COUNT(sHitmonleeGfx45)}, 
 	{NULL, 32}, 
 	{sHitmonleeGfx45_1, ARRAY_COUNT(sHitmonleeGfx45_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx46[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_46.4bpp");
+static const u8 sHitmonleeGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_46.4bpp.lz");
 static const ax_sprite sHitmonleeSprites46[] = {
 	{NULL, 64}, 
 	{sHitmonleeGfx46, ARRAY_COUNT(sHitmonleeGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx47[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_47.4bpp");
+static const u8 sHitmonleeGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_47.4bpp.lz");
 static const ax_sprite sHitmonleeSprites47[] = {
 	{sHitmonleeGfx47, ARRAY_COUNT(sHitmonleeGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx48[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_48.4bpp");
+static const u8 sHitmonleeGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_48.4bpp.lz");
 static const ax_sprite sHitmonleeSprites48[] = {
 	{sHitmonleeGfx48, ARRAY_COUNT(sHitmonleeGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx49[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_49.4bpp");
+static const u8 sHitmonleeGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_49.4bpp.lz");
 static const ax_sprite sHitmonleeSprites49[] = {
 	{sHitmonleeGfx49, ARRAY_COUNT(sHitmonleeGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx50[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_50.4bpp");
-static const u8 sHitmonleeGfx50_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_50_1.4bpp");
+static const u8 sHitmonleeGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_50.4bpp.lz");
+static const u8 sHitmonleeGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_50_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites50[] = {
 	{NULL, 224}, 
 	{sHitmonleeGfx50, ARRAY_COUNT(sHitmonleeGfx50)}, 
@@ -2427,79 +2427,79 @@ static const ax_sprite sHitmonleeSprites50[] = {
 	{sHitmonleeGfx50_1, ARRAY_COUNT(sHitmonleeGfx50_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx51[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_51.4bpp");
+static const u8 sHitmonleeGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_51.4bpp.lz");
 static const ax_sprite sHitmonleeSprites51[] = {
 	{sHitmonleeGfx51, ARRAY_COUNT(sHitmonleeGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx52[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_52.4bpp");
+static const u8 sHitmonleeGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_52.4bpp.lz");
 static const ax_sprite sHitmonleeSprites52[] = {
 	{sHitmonleeGfx52, ARRAY_COUNT(sHitmonleeGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx53[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_53.4bpp");
+static const u8 sHitmonleeGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_53.4bpp.lz");
 static const ax_sprite sHitmonleeSprites53[] = {
 	{sHitmonleeGfx53, ARRAY_COUNT(sHitmonleeGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx54[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_54.4bpp");
+static const u8 sHitmonleeGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_54.4bpp.lz");
 static const ax_sprite sHitmonleeSprites54[] = {
 	{sHitmonleeGfx54, ARRAY_COUNT(sHitmonleeGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx55[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_55.4bpp");
+static const u8 sHitmonleeGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_55.4bpp.lz");
 static const ax_sprite sHitmonleeSprites55[] = {
 	{sHitmonleeGfx55, ARRAY_COUNT(sHitmonleeGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx56[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_56.4bpp");
-static const u8 sHitmonleeGfx56_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_56_1.4bpp");
+static const u8 sHitmonleeGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_56.4bpp.lz");
+static const u8 sHitmonleeGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_56_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites56[] = {
 	{sHitmonleeGfx56, ARRAY_COUNT(sHitmonleeGfx56)}, 
 	{NULL, 32}, 
 	{sHitmonleeGfx56_1, ARRAY_COUNT(sHitmonleeGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx57[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_57.4bpp");
+static const u8 sHitmonleeGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_57.4bpp.lz");
 static const ax_sprite sHitmonleeSprites57[] = {
 	{sHitmonleeGfx57, ARRAY_COUNT(sHitmonleeGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx58[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_58.4bpp");
+static const u8 sHitmonleeGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_58.4bpp.lz");
 static const ax_sprite sHitmonleeSprites58[] = {
 	{sHitmonleeGfx58, ARRAY_COUNT(sHitmonleeGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx59[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_59.4bpp");
+static const u8 sHitmonleeGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_59.4bpp.lz");
 static const ax_sprite sHitmonleeSprites59[] = {
 	{sHitmonleeGfx59, ARRAY_COUNT(sHitmonleeGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx60[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_60.4bpp");
+static const u8 sHitmonleeGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_60.4bpp.lz");
 static const ax_sprite sHitmonleeSprites60[] = {
 	{sHitmonleeGfx60, ARRAY_COUNT(sHitmonleeGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx61[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_61.4bpp");
+static const u8 sHitmonleeGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_61.4bpp.lz");
 static const ax_sprite sHitmonleeSprites61[] = {
 	{sHitmonleeGfx61, ARRAY_COUNT(sHitmonleeGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx62[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_62.4bpp");
+static const u8 sHitmonleeGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_62.4bpp.lz");
 static const ax_sprite sHitmonleeSprites62[] = {
 	{sHitmonleeGfx62, ARRAY_COUNT(sHitmonleeGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx63[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_63.4bpp");
+static const u8 sHitmonleeGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_63.4bpp.lz");
 static const ax_sprite sHitmonleeSprites63[] = {
 	{sHitmonleeGfx63, ARRAY_COUNT(sHitmonleeGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx64[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64.4bpp");
-static const u8 sHitmonleeGfx64_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64_1.4bpp");
-static const u8 sHitmonleeGfx64_2[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64_2.4bpp");
-static const u8 sHitmonleeGfx64_3[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64_3.4bpp");
-static const u8 sHitmonleeGfx64_4[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64_4.4bpp");
+static const u8 sHitmonleeGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64.4bpp.lz");
+static const u8 sHitmonleeGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64_1.4bpp.lz");
+static const u8 sHitmonleeGfx64_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64_2.4bpp.lz");
+static const u8 sHitmonleeGfx64_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64_3.4bpp.lz");
+static const u8 sHitmonleeGfx64_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_64_4.4bpp.lz");
 static const ax_sprite sHitmonleeSprites64[] = {
 	{sHitmonleeGfx64, ARRAY_COUNT(sHitmonleeGfx64)}, 
 	{NULL, 32}, 
@@ -2512,49 +2512,49 @@ static const ax_sprite sHitmonleeSprites64[] = {
 	{sHitmonleeGfx64_4, ARRAY_COUNT(sHitmonleeGfx64_4)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx65[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_65.4bpp");
-static const u8 sHitmonleeGfx65_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_65_1.4bpp");
+static const u8 sHitmonleeGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_65.4bpp.lz");
+static const u8 sHitmonleeGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_65_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites65[] = {
 	{sHitmonleeGfx65, ARRAY_COUNT(sHitmonleeGfx65)}, 
 	{NULL, 32}, 
 	{sHitmonleeGfx65_1, ARRAY_COUNT(sHitmonleeGfx65_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx66[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_66.4bpp");
+static const u8 sHitmonleeGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_66.4bpp.lz");
 static const ax_sprite sHitmonleeSprites66[] = {
 	{sHitmonleeGfx66, ARRAY_COUNT(sHitmonleeGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx67[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_67.4bpp");
+static const u8 sHitmonleeGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_67.4bpp.lz");
 static const ax_sprite sHitmonleeSprites67[] = {
 	{NULL, 32}, 
 	{sHitmonleeGfx67, ARRAY_COUNT(sHitmonleeGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx68[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_68.4bpp");
+static const u8 sHitmonleeGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_68.4bpp.lz");
 static const ax_sprite sHitmonleeSprites68[] = {
 	{sHitmonleeGfx68, ARRAY_COUNT(sHitmonleeGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx69[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_69.4bpp");
+static const u8 sHitmonleeGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_69.4bpp.lz");
 static const ax_sprite sHitmonleeSprites69[] = {
 	{sHitmonleeGfx69, ARRAY_COUNT(sHitmonleeGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx70[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_70.4bpp");
+static const u8 sHitmonleeGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_70.4bpp.lz");
 static const ax_sprite sHitmonleeSprites70[] = {
 	{sHitmonleeGfx70, ARRAY_COUNT(sHitmonleeGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx71[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_71.4bpp");
+static const u8 sHitmonleeGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_71.4bpp.lz");
 static const ax_sprite sHitmonleeSprites71[] = {
 	{sHitmonleeGfx71, ARRAY_COUNT(sHitmonleeGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx72[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_72.4bpp");
-static const u8 sHitmonleeGfx72_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_72_1.4bpp");
-static const u8 sHitmonleeGfx72_2[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_72_2.4bpp");
-static const u8 sHitmonleeGfx72_3[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_72_3.4bpp");
+static const u8 sHitmonleeGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_72.4bpp.lz");
+static const u8 sHitmonleeGfx72_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_72_1.4bpp.lz");
+static const u8 sHitmonleeGfx72_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_72_2.4bpp.lz");
+static const u8 sHitmonleeGfx72_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_72_3.4bpp.lz");
 static const ax_sprite sHitmonleeSprites72[] = {
 	{sHitmonleeGfx72, ARRAY_COUNT(sHitmonleeGfx72)}, 
 	{NULL, 32}, 
@@ -2565,34 +2565,34 @@ static const ax_sprite sHitmonleeSprites72[] = {
 	{sHitmonleeGfx72_3, ARRAY_COUNT(sHitmonleeGfx72_3)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx73[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_73.4bpp");
+static const u8 sHitmonleeGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_73.4bpp.lz");
 static const ax_sprite sHitmonleeSprites73[] = {
 	{sHitmonleeGfx73, ARRAY_COUNT(sHitmonleeGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx74[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_74.4bpp");
+static const u8 sHitmonleeGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_74.4bpp.lz");
 static const ax_sprite sHitmonleeSprites74[] = {
 	{sHitmonleeGfx74, ARRAY_COUNT(sHitmonleeGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx75[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_75.4bpp");
+static const u8 sHitmonleeGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_75.4bpp.lz");
 static const ax_sprite sHitmonleeSprites75[] = {
 	{sHitmonleeGfx75, ARRAY_COUNT(sHitmonleeGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx76[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_76.4bpp");
+static const u8 sHitmonleeGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_76.4bpp.lz");
 static const ax_sprite sHitmonleeSprites76[] = {
 	{sHitmonleeGfx76, ARRAY_COUNT(sHitmonleeGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx77[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_77.4bpp");
+static const u8 sHitmonleeGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_77.4bpp.lz");
 static const ax_sprite sHitmonleeSprites77[] = {
 	{sHitmonleeGfx77, ARRAY_COUNT(sHitmonleeGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx78[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_78.4bpp");
-static const u8 sHitmonleeGfx78_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_78_1.4bpp");
-static const u8 sHitmonleeGfx78_2[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_78_2.4bpp");
+static const u8 sHitmonleeGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_78.4bpp.lz");
+static const u8 sHitmonleeGfx78_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_78_1.4bpp.lz");
+static const u8 sHitmonleeGfx78_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_78_2.4bpp.lz");
 static const ax_sprite sHitmonleeSprites78[] = {
 	{sHitmonleeGfx78, ARRAY_COUNT(sHitmonleeGfx78)}, 
 	{NULL, 32}, 
@@ -2602,9 +2602,9 @@ static const ax_sprite sHitmonleeSprites78[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx79[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_79.4bpp");
-static const u8 sHitmonleeGfx79_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_79_1.4bpp");
-static const u8 sHitmonleeGfx79_2[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_79_2.4bpp");
+static const u8 sHitmonleeGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_79.4bpp.lz");
+static const u8 sHitmonleeGfx79_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_79_1.4bpp.lz");
+static const u8 sHitmonleeGfx79_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_79_2.4bpp.lz");
 static const ax_sprite sHitmonleeSprites79[] = {
 	{NULL, 32}, 
 	{sHitmonleeGfx79, ARRAY_COUNT(sHitmonleeGfx79)}, 
@@ -2614,9 +2614,9 @@ static const ax_sprite sHitmonleeSprites79[] = {
 	{sHitmonleeGfx79_2, ARRAY_COUNT(sHitmonleeGfx79_2)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx80[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_80.4bpp");
-static const u8 sHitmonleeGfx80_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_80_1.4bpp");
-static const u8 sHitmonleeGfx80_2[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_80_2.4bpp");
+static const u8 sHitmonleeGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_80.4bpp.lz");
+static const u8 sHitmonleeGfx80_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_80_1.4bpp.lz");
+static const u8 sHitmonleeGfx80_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_80_2.4bpp.lz");
 static const ax_sprite sHitmonleeSprites80[] = {
 	{NULL, 32}, 
 	{sHitmonleeGfx80, ARRAY_COUNT(sHitmonleeGfx80)}, 
@@ -2627,8 +2627,8 @@ static const ax_sprite sHitmonleeSprites80[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx81[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_81.4bpp");
-static const u8 sHitmonleeGfx81_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_81_1.4bpp");
+static const u8 sHitmonleeGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_81.4bpp.lz");
+static const u8 sHitmonleeGfx81_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_81_1.4bpp.lz");
 static const ax_sprite sHitmonleeSprites81[] = {
 	{NULL, 32}, 
 	{sHitmonleeGfx81, ARRAY_COUNT(sHitmonleeGfx81)}, 
@@ -2636,49 +2636,49 @@ static const ax_sprite sHitmonleeSprites81[] = {
 	{sHitmonleeGfx81_1, ARRAY_COUNT(sHitmonleeGfx81_1)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx82[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_82.4bpp");
+static const u8 sHitmonleeGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_82.4bpp.lz");
 static const ax_sprite sHitmonleeSprites82[] = {
 	{sHitmonleeGfx82, ARRAY_COUNT(sHitmonleeGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx83[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_83.4bpp");
+static const u8 sHitmonleeGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_83.4bpp.lz");
 static const ax_sprite sHitmonleeSprites83[] = {
 	{sHitmonleeGfx83, ARRAY_COUNT(sHitmonleeGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx84[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_84.4bpp");
+static const u8 sHitmonleeGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_84.4bpp.lz");
 static const ax_sprite sHitmonleeSprites84[] = {
 	{sHitmonleeGfx84, ARRAY_COUNT(sHitmonleeGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx85[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_85.4bpp");
+static const u8 sHitmonleeGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_85.4bpp.lz");
 static const ax_sprite sHitmonleeSprites85[] = {
 	{sHitmonleeGfx85, ARRAY_COUNT(sHitmonleeGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx86[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_86.4bpp");
+static const u8 sHitmonleeGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_86.4bpp.lz");
 static const ax_sprite sHitmonleeSprites86[] = {
 	{sHitmonleeGfx86, ARRAY_COUNT(sHitmonleeGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx87[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_87.4bpp");
+static const u8 sHitmonleeGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_87.4bpp.lz");
 static const ax_sprite sHitmonleeSprites87[] = {
 	{sHitmonleeGfx87, ARRAY_COUNT(sHitmonleeGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx88[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_88.4bpp");
+static const u8 sHitmonleeGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_88.4bpp.lz");
 static const ax_sprite sHitmonleeSprites88[] = {
 	{sHitmonleeGfx88, ARRAY_COUNT(sHitmonleeGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx89[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_89.4bpp");
+static const u8 sHitmonleeGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_89.4bpp.lz");
 static const ax_sprite sHitmonleeSprites89[] = {
 	{sHitmonleeGfx89, ARRAY_COUNT(sHitmonleeGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx90[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_90.4bpp");
-static const u8 sHitmonleeGfx90_1[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_90_1.4bpp");
-static const u8 sHitmonleeGfx90_2[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_90_2.4bpp");
+static const u8 sHitmonleeGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_90.4bpp.lz");
+static const u8 sHitmonleeGfx90_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_90_1.4bpp.lz");
+static const u8 sHitmonleeGfx90_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_90_2.4bpp.lz");
 static const ax_sprite sHitmonleeSprites90[] = {
 	{sHitmonleeGfx90, ARRAY_COUNT(sHitmonleeGfx90)}, 
 	{NULL, 32}, 
@@ -2687,37 +2687,37 @@ static const ax_sprite sHitmonleeSprites90[] = {
 	{sHitmonleeGfx90_2, ARRAY_COUNT(sHitmonleeGfx90_2)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx91[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_91.4bpp");
+static const u8 sHitmonleeGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_91.4bpp.lz");
 static const ax_sprite sHitmonleeSprites91[] = {
 	{sHitmonleeGfx91, ARRAY_COUNT(sHitmonleeGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx92[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_92.4bpp");
+static const u8 sHitmonleeGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_92.4bpp.lz");
 static const ax_sprite sHitmonleeSprites92[] = {
 	{sHitmonleeGfx92, ARRAY_COUNT(sHitmonleeGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx93[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_93.4bpp");
+static const u8 sHitmonleeGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_93.4bpp.lz");
 static const ax_sprite sHitmonleeSprites93[] = {
 	{sHitmonleeGfx93, ARRAY_COUNT(sHitmonleeGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx94[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_94.4bpp");
+static const u8 sHitmonleeGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_94.4bpp.lz");
 static const ax_sprite sHitmonleeSprites94[] = {
 	{sHitmonleeGfx94, ARRAY_COUNT(sHitmonleeGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx95[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_95.4bpp");
+static const u8 sHitmonleeGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_95.4bpp.lz");
 static const ax_sprite sHitmonleeSprites95[] = {
 	{sHitmonleeGfx95, ARRAY_COUNT(sHitmonleeGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx96[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_96.4bpp");
+static const u8 sHitmonleeGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_96.4bpp.lz");
 static const ax_sprite sHitmonleeSprites96[] = {
 	{sHitmonleeGfx96, ARRAY_COUNT(sHitmonleeGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sHitmonleeGfx97[] = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_97.4bpp");
+static const u8 sHitmonleeGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/hitmonlee/sprite_97.4bpp.lz");
 static const ax_sprite sHitmonleeSprites97[] = {
 	{sHitmonleeGfx97, ARRAY_COUNT(sHitmonleeGfx97)}, 
 	{NULL, 0}

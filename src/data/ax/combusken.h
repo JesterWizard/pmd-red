@@ -2071,84 +2071,84 @@ static const ax_anim sCombuskenAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCombuskenGfx1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_1.4bpp");
+static const u8 sCombuskenGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_1.4bpp.lz");
 static const ax_sprite sCombuskenSprites1[] = {
 	{sCombuskenGfx1, ARRAY_COUNT(sCombuskenGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_2.4bpp");
+static const u8 sCombuskenGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_2.4bpp.lz");
 static const ax_sprite sCombuskenSprites2[] = {
 	{sCombuskenGfx2, ARRAY_COUNT(sCombuskenGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_3.4bpp");
+static const u8 sCombuskenGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites3[] = {
 	{sCombuskenGfx3, ARRAY_COUNT(sCombuskenGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx4[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_4.4bpp");
+static const u8 sCombuskenGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_4.4bpp.lz");
 static const ax_sprite sCombuskenSprites4[] = {
 	{sCombuskenGfx4, ARRAY_COUNT(sCombuskenGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx5[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_5.4bpp");
+static const u8 sCombuskenGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_5.4bpp.lz");
 static const ax_sprite sCombuskenSprites5[] = {
 	{sCombuskenGfx5, ARRAY_COUNT(sCombuskenGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx6[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_6.4bpp");
+static const u8 sCombuskenGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_6.4bpp.lz");
 static const ax_sprite sCombuskenSprites6[] = {
 	{sCombuskenGfx6, ARRAY_COUNT(sCombuskenGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx7[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_7.4bpp");
+static const u8 sCombuskenGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_7.4bpp.lz");
 static const ax_sprite sCombuskenSprites7[] = {
 	{sCombuskenGfx7, ARRAY_COUNT(sCombuskenGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx8[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_8.4bpp");
+static const u8 sCombuskenGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_8.4bpp.lz");
 static const ax_sprite sCombuskenSprites8[] = {
 	{sCombuskenGfx8, ARRAY_COUNT(sCombuskenGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx9[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_9.4bpp");
+static const u8 sCombuskenGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_9.4bpp.lz");
 static const ax_sprite sCombuskenSprites9[] = {
 	{sCombuskenGfx9, ARRAY_COUNT(sCombuskenGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx10[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_10.4bpp");
+static const u8 sCombuskenGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_10.4bpp.lz");
 static const ax_sprite sCombuskenSprites10[] = {
 	{sCombuskenGfx10, ARRAY_COUNT(sCombuskenGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx11[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_11.4bpp");
+static const u8 sCombuskenGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_11.4bpp.lz");
 static const ax_sprite sCombuskenSprites11[] = {
 	{sCombuskenGfx11, ARRAY_COUNT(sCombuskenGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx12[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_12.4bpp");
+static const u8 sCombuskenGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_12.4bpp.lz");
 static const ax_sprite sCombuskenSprites12[] = {
 	{sCombuskenGfx12, ARRAY_COUNT(sCombuskenGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx13[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_13.4bpp");
+static const u8 sCombuskenGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_13.4bpp.lz");
 static const ax_sprite sCombuskenSprites13[] = {
 	{sCombuskenGfx13, ARRAY_COUNT(sCombuskenGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx14[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_14.4bpp");
+static const u8 sCombuskenGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_14.4bpp.lz");
 static const ax_sprite sCombuskenSprites14[] = {
 	{sCombuskenGfx14, ARRAY_COUNT(sCombuskenGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx15[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_15.4bpp");
+static const u8 sCombuskenGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_15.4bpp.lz");
 static const ax_sprite sCombuskenSprites15[] = {
 	{sCombuskenGfx15, ARRAY_COUNT(sCombuskenGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx16[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_16.4bpp");
-static const u8 sCombuskenGfx16_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_16_1.4bpp");
-static const u8 sCombuskenGfx16_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_16_2.4bpp");
+static const u8 sCombuskenGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_16.4bpp.lz");
+static const u8 sCombuskenGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_16_1.4bpp.lz");
+static const u8 sCombuskenGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_16_2.4bpp.lz");
 static const ax_sprite sCombuskenSprites16[] = {
 	{sCombuskenGfx16, ARRAY_COUNT(sCombuskenGfx16)}, 
 	{NULL, 64}, 
@@ -2158,25 +2158,25 @@ static const ax_sprite sCombuskenSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx17[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_17.4bpp");
+static const u8 sCombuskenGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_17.4bpp.lz");
 static const ax_sprite sCombuskenSprites17[] = {
 	{sCombuskenGfx17, ARRAY_COUNT(sCombuskenGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx18[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_18.4bpp");
+static const u8 sCombuskenGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_18.4bpp.lz");
 static const ax_sprite sCombuskenSprites18[] = {
 	{sCombuskenGfx18, ARRAY_COUNT(sCombuskenGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx19[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_19.4bpp");
+static const u8 sCombuskenGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_19.4bpp.lz");
 static const ax_sprite sCombuskenSprites19[] = {
 	{sCombuskenGfx19, ARRAY_COUNT(sCombuskenGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx20[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_20.4bpp");
-static const u8 sCombuskenGfx20_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_20_1.4bpp");
-static const u8 sCombuskenGfx20_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_20_2.4bpp");
-static const u8 sCombuskenGfx20_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_20_3.4bpp");
+static const u8 sCombuskenGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_20.4bpp.lz");
+static const u8 sCombuskenGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_20_1.4bpp.lz");
+static const u8 sCombuskenGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_20_2.4bpp.lz");
+static const u8 sCombuskenGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_20_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites20[] = {
 	{NULL, 32}, 
 	{sCombuskenGfx20, ARRAY_COUNT(sCombuskenGfx20)}, 
@@ -2189,10 +2189,10 @@ static const ax_sprite sCombuskenSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx21[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_21.4bpp");
-static const u8 sCombuskenGfx21_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_21_1.4bpp");
-static const u8 sCombuskenGfx21_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_21_2.4bpp");
-static const u8 sCombuskenGfx21_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_21_3.4bpp");
+static const u8 sCombuskenGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_21.4bpp.lz");
+static const u8 sCombuskenGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_21_1.4bpp.lz");
+static const u8 sCombuskenGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_21_2.4bpp.lz");
+static const u8 sCombuskenGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_21_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites21[] = {
 	{sCombuskenGfx21, ARRAY_COUNT(sCombuskenGfx21)}, 
 	{NULL, 32}, 
@@ -2204,9 +2204,9 @@ static const ax_sprite sCombuskenSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx22[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_22.4bpp");
-static const u8 sCombuskenGfx22_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_22_1.4bpp");
-static const u8 sCombuskenGfx22_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_22_2.4bpp");
+static const u8 sCombuskenGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_22.4bpp.lz");
+static const u8 sCombuskenGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_22_1.4bpp.lz");
+static const u8 sCombuskenGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_22_2.4bpp.lz");
 static const ax_sprite sCombuskenSprites22[] = {
 	{sCombuskenGfx22, ARRAY_COUNT(sCombuskenGfx22)}, 
 	{NULL, 64}, 
@@ -2216,10 +2216,10 @@ static const ax_sprite sCombuskenSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx23[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_23.4bpp");
-static const u8 sCombuskenGfx23_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_23_1.4bpp");
-static const u8 sCombuskenGfx23_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_23_2.4bpp");
-static const u8 sCombuskenGfx23_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_23_3.4bpp");
+static const u8 sCombuskenGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_23.4bpp.lz");
+static const u8 sCombuskenGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_23_1.4bpp.lz");
+static const u8 sCombuskenGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_23_2.4bpp.lz");
+static const u8 sCombuskenGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_23_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites23[] = {
 	{sCombuskenGfx23, ARRAY_COUNT(sCombuskenGfx23)}, 
 	{NULL, 64}, 
@@ -2231,10 +2231,10 @@ static const ax_sprite sCombuskenSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx24[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_24.4bpp");
-static const u8 sCombuskenGfx24_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_24_1.4bpp");
-static const u8 sCombuskenGfx24_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_24_2.4bpp");
-static const u8 sCombuskenGfx24_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_24_3.4bpp");
+static const u8 sCombuskenGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_24.4bpp.lz");
+static const u8 sCombuskenGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_24_1.4bpp.lz");
+static const u8 sCombuskenGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_24_2.4bpp.lz");
+static const u8 sCombuskenGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_24_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites24[] = {
 	{sCombuskenGfx24, ARRAY_COUNT(sCombuskenGfx24)}, 
 	{NULL, 32}, 
@@ -2246,10 +2246,10 @@ static const ax_sprite sCombuskenSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx25[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_25.4bpp");
-static const u8 sCombuskenGfx25_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_25_1.4bpp");
-static const u8 sCombuskenGfx25_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_25_2.4bpp");
-static const u8 sCombuskenGfx25_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_25_3.4bpp");
+static const u8 sCombuskenGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_25.4bpp.lz");
+static const u8 sCombuskenGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_25_1.4bpp.lz");
+static const u8 sCombuskenGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_25_2.4bpp.lz");
+static const u8 sCombuskenGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_25_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites25[] = {
 	{sCombuskenGfx25, ARRAY_COUNT(sCombuskenGfx25)}, 
 	{NULL, 64}, 
@@ -2261,28 +2261,28 @@ static const ax_sprite sCombuskenSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx26[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_26.4bpp");
+static const u8 sCombuskenGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_26.4bpp.lz");
 static const ax_sprite sCombuskenSprites26[] = {
 	{sCombuskenGfx26, ARRAY_COUNT(sCombuskenGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx27[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_27.4bpp");
+static const u8 sCombuskenGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_27.4bpp.lz");
 static const ax_sprite sCombuskenSprites27[] = {
 	{sCombuskenGfx27, ARRAY_COUNT(sCombuskenGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx28[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_28.4bpp");
-static const u8 sCombuskenGfx28_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_28_1.4bpp");
+static const u8 sCombuskenGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_28.4bpp.lz");
+static const u8 sCombuskenGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_28_1.4bpp.lz");
 static const ax_sprite sCombuskenSprites28[] = {
 	{sCombuskenGfx28, ARRAY_COUNT(sCombuskenGfx28)}, 
 	{NULL, 32}, 
 	{sCombuskenGfx28_1, ARRAY_COUNT(sCombuskenGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx29[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_29.4bpp");
-static const u8 sCombuskenGfx29_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_29_1.4bpp");
-static const u8 sCombuskenGfx29_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_29_2.4bpp");
-static const u8 sCombuskenGfx29_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_29_3.4bpp");
+static const u8 sCombuskenGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_29.4bpp.lz");
+static const u8 sCombuskenGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_29_1.4bpp.lz");
+static const u8 sCombuskenGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_29_2.4bpp.lz");
+static const u8 sCombuskenGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_29_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites29[] = {
 	{sCombuskenGfx29, ARRAY_COUNT(sCombuskenGfx29)}, 
 	{NULL, 64}, 
@@ -2294,8 +2294,8 @@ static const ax_sprite sCombuskenSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx30[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_30.4bpp");
-static const u8 sCombuskenGfx30_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_30_1.4bpp");
+static const u8 sCombuskenGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_30.4bpp.lz");
+static const u8 sCombuskenGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_30_1.4bpp.lz");
 static const ax_sprite sCombuskenSprites30[] = {
 	{sCombuskenGfx30, ARRAY_COUNT(sCombuskenGfx30)}, 
 	{NULL, 32}, 
@@ -2303,10 +2303,10 @@ static const ax_sprite sCombuskenSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx31[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_31.4bpp");
-static const u8 sCombuskenGfx31_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_31_1.4bpp");
-static const u8 sCombuskenGfx31_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_31_2.4bpp");
-static const u8 sCombuskenGfx31_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_31_3.4bpp");
+static const u8 sCombuskenGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_31.4bpp.lz");
+static const u8 sCombuskenGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_31_1.4bpp.lz");
+static const u8 sCombuskenGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_31_2.4bpp.lz");
+static const u8 sCombuskenGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_31_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites31[] = {
 	{sCombuskenGfx31, ARRAY_COUNT(sCombuskenGfx31)}, 
 	{NULL, 64}, 
@@ -2318,22 +2318,22 @@ static const ax_sprite sCombuskenSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx32[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_32.4bpp");
-static const u8 sCombuskenGfx32_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_32_1.4bpp");
+static const u8 sCombuskenGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_32.4bpp.lz");
+static const u8 sCombuskenGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_32_1.4bpp.lz");
 static const ax_sprite sCombuskenSprites32[] = {
 	{sCombuskenGfx32, ARRAY_COUNT(sCombuskenGfx32)}, 
 	{NULL, 32}, 
 	{sCombuskenGfx32_1, ARRAY_COUNT(sCombuskenGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx33[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_33.4bpp");
+static const u8 sCombuskenGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_33.4bpp.lz");
 static const ax_sprite sCombuskenSprites33[] = {
 	{sCombuskenGfx33, ARRAY_COUNT(sCombuskenGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx34[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_34.4bpp");
-static const u8 sCombuskenGfx34_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_34_1.4bpp");
-static const u8 sCombuskenGfx34_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_34_2.4bpp");
+static const u8 sCombuskenGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_34.4bpp.lz");
+static const u8 sCombuskenGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_34_1.4bpp.lz");
+static const u8 sCombuskenGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_34_2.4bpp.lz");
 static const ax_sprite sCombuskenSprites34[] = {
 	{NULL, 32}, 
 	{sCombuskenGfx34, ARRAY_COUNT(sCombuskenGfx34)}, 
@@ -2344,18 +2344,18 @@ static const ax_sprite sCombuskenSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx35[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_35.4bpp");
-static const u8 sCombuskenGfx35_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_35_1.4bpp");
+static const u8 sCombuskenGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_35.4bpp.lz");
+static const u8 sCombuskenGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_35_1.4bpp.lz");
 static const ax_sprite sCombuskenSprites35[] = {
 	{sCombuskenGfx35, ARRAY_COUNT(sCombuskenGfx35)}, 
 	{NULL, 32}, 
 	{sCombuskenGfx35_1, ARRAY_COUNT(sCombuskenGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx36[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_36.4bpp");
-static const u8 sCombuskenGfx36_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_36_1.4bpp");
-static const u8 sCombuskenGfx36_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_36_2.4bpp");
-static const u8 sCombuskenGfx36_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_36_3.4bpp");
+static const u8 sCombuskenGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_36.4bpp.lz");
+static const u8 sCombuskenGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_36_1.4bpp.lz");
+static const u8 sCombuskenGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_36_2.4bpp.lz");
+static const u8 sCombuskenGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_36_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites36[] = {
 	{sCombuskenGfx36, ARRAY_COUNT(sCombuskenGfx36)}, 
 	{NULL, 64}, 
@@ -2367,10 +2367,10 @@ static const ax_sprite sCombuskenSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx37[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_37.4bpp");
-static const u8 sCombuskenGfx37_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_37_1.4bpp");
-static const u8 sCombuskenGfx37_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_37_2.4bpp");
-static const u8 sCombuskenGfx37_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_37_3.4bpp");
+static const u8 sCombuskenGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_37.4bpp.lz");
+static const u8 sCombuskenGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_37_1.4bpp.lz");
+static const u8 sCombuskenGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_37_2.4bpp.lz");
+static const u8 sCombuskenGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_37_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites37[] = {
 	{NULL, 32}, 
 	{sCombuskenGfx37, ARRAY_COUNT(sCombuskenGfx37)}, 
@@ -2383,9 +2383,9 @@ static const ax_sprite sCombuskenSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx38[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_38.4bpp");
-static const u8 sCombuskenGfx38_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_38_1.4bpp");
-static const u8 sCombuskenGfx38_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_38_2.4bpp");
+static const u8 sCombuskenGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_38.4bpp.lz");
+static const u8 sCombuskenGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_38_1.4bpp.lz");
+static const u8 sCombuskenGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_38_2.4bpp.lz");
 static const ax_sprite sCombuskenSprites38[] = {
 	{NULL, 128}, 
 	{sCombuskenGfx38, ARRAY_COUNT(sCombuskenGfx38)}, 
@@ -2396,10 +2396,10 @@ static const ax_sprite sCombuskenSprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx39[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_39.4bpp");
-static const u8 sCombuskenGfx39_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_39_1.4bpp");
-static const u8 sCombuskenGfx39_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_39_2.4bpp");
-static const u8 sCombuskenGfx39_3[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_39_3.4bpp");
+static const u8 sCombuskenGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_39.4bpp.lz");
+static const u8 sCombuskenGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_39_1.4bpp.lz");
+static const u8 sCombuskenGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_39_2.4bpp.lz");
+static const u8 sCombuskenGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_39_3.4bpp.lz");
 static const ax_sprite sCombuskenSprites39[] = {
 	{sCombuskenGfx39, ARRAY_COUNT(sCombuskenGfx39)}, 
 	{NULL, 64}, 
@@ -2411,9 +2411,9 @@ static const ax_sprite sCombuskenSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx40[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_40.4bpp");
-static const u8 sCombuskenGfx40_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_40_1.4bpp");
-static const u8 sCombuskenGfx40_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_40_2.4bpp");
+static const u8 sCombuskenGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_40.4bpp.lz");
+static const u8 sCombuskenGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_40_1.4bpp.lz");
+static const u8 sCombuskenGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_40_2.4bpp.lz");
 static const ax_sprite sCombuskenSprites40[] = {
 	{sCombuskenGfx40, ARRAY_COUNT(sCombuskenGfx40)}, 
 	{NULL, 64}, 
@@ -2423,9 +2423,9 @@ static const ax_sprite sCombuskenSprites40[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx41[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_41.4bpp");
-static const u8 sCombuskenGfx41_1[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_41_1.4bpp");
-static const u8 sCombuskenGfx41_2[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_41_2.4bpp");
+static const u8 sCombuskenGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_41.4bpp.lz");
+static const u8 sCombuskenGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_41_1.4bpp.lz");
+static const u8 sCombuskenGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_41_2.4bpp.lz");
 static const ax_sprite sCombuskenSprites41[] = {
 	{sCombuskenGfx41, ARRAY_COUNT(sCombuskenGfx41)}, 
 	{NULL, 32}, 
@@ -2435,62 +2435,62 @@ static const ax_sprite sCombuskenSprites41[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx42[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_42.4bpp");
+static const u8 sCombuskenGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_42.4bpp.lz");
 static const ax_sprite sCombuskenSprites42[] = {
 	{sCombuskenGfx42, ARRAY_COUNT(sCombuskenGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx43[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_43.4bpp");
+static const u8 sCombuskenGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_43.4bpp.lz");
 static const ax_sprite sCombuskenSprites43[] = {
 	{sCombuskenGfx43, ARRAY_COUNT(sCombuskenGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx44[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_44.4bpp");
+static const u8 sCombuskenGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_44.4bpp.lz");
 static const ax_sprite sCombuskenSprites44[] = {
 	{sCombuskenGfx44, ARRAY_COUNT(sCombuskenGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx45[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_45.4bpp");
+static const u8 sCombuskenGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_45.4bpp.lz");
 static const ax_sprite sCombuskenSprites45[] = {
 	{sCombuskenGfx45, ARRAY_COUNT(sCombuskenGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx46[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_46.4bpp");
+static const u8 sCombuskenGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_46.4bpp.lz");
 static const ax_sprite sCombuskenSprites46[] = {
 	{sCombuskenGfx46, ARRAY_COUNT(sCombuskenGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx47[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_47.4bpp");
+static const u8 sCombuskenGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_47.4bpp.lz");
 static const ax_sprite sCombuskenSprites47[] = {
 	{sCombuskenGfx47, ARRAY_COUNT(sCombuskenGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx48[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_48.4bpp");
+static const u8 sCombuskenGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_48.4bpp.lz");
 static const ax_sprite sCombuskenSprites48[] = {
 	{sCombuskenGfx48, ARRAY_COUNT(sCombuskenGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx49[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_49.4bpp");
+static const u8 sCombuskenGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_49.4bpp.lz");
 static const ax_sprite sCombuskenSprites49[] = {
 	{sCombuskenGfx49, ARRAY_COUNT(sCombuskenGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx50[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_50.4bpp");
+static const u8 sCombuskenGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_50.4bpp.lz");
 static const ax_sprite sCombuskenSprites50[] = {
 	{sCombuskenGfx50, ARRAY_COUNT(sCombuskenGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx51[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_51.4bpp");
+static const u8 sCombuskenGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_51.4bpp.lz");
 static const ax_sprite sCombuskenSprites51[] = {
 	{sCombuskenGfx51, ARRAY_COUNT(sCombuskenGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx52[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_52.4bpp");
+static const u8 sCombuskenGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_52.4bpp.lz");
 static const ax_sprite sCombuskenSprites52[] = {
 	{sCombuskenGfx52, ARRAY_COUNT(sCombuskenGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sCombuskenGfx53[] = INCBIN_U8("graphics/ax/mon/combusken/sprite_53.4bpp");
+static const u8 sCombuskenGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/combusken/sprite_53.4bpp.lz");
 static const ax_sprite sCombuskenSprites53[] = {
 	{sCombuskenGfx53, ARRAY_COUNT(sCombuskenGfx53)}, 
 	{NULL, 0}

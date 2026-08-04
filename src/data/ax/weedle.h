@@ -2188,97 +2188,97 @@ static const ax_anim sWeedleAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWeedleGfx1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_1.4bpp");
+static const u8 sWeedleGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_1.4bpp.lz");
 static const ax_sprite sWeedleSprites1[] = {
 	{sWeedleGfx1, ARRAY_COUNT(sWeedleGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_2.4bpp");
+static const u8 sWeedleGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_2.4bpp.lz");
 static const ax_sprite sWeedleSprites2[] = {
 	{sWeedleGfx2, ARRAY_COUNT(sWeedleGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx3[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_3.4bpp");
+static const u8 sWeedleGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_3.4bpp.lz");
 static const ax_sprite sWeedleSprites3[] = {
 	{sWeedleGfx3, ARRAY_COUNT(sWeedleGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx4[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_4.4bpp");
+static const u8 sWeedleGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_4.4bpp.lz");
 static const ax_sprite sWeedleSprites4[] = {
 	{sWeedleGfx4, ARRAY_COUNT(sWeedleGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx5[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_5.4bpp");
+static const u8 sWeedleGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_5.4bpp.lz");
 static const ax_sprite sWeedleSprites5[] = {
 	{sWeedleGfx5, ARRAY_COUNT(sWeedleGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx6[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_6.4bpp");
+static const u8 sWeedleGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_6.4bpp.lz");
 static const ax_sprite sWeedleSprites6[] = {
 	{sWeedleGfx6, ARRAY_COUNT(sWeedleGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx7[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_7.4bpp");
+static const u8 sWeedleGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_7.4bpp.lz");
 static const ax_sprite sWeedleSprites7[] = {
 	{sWeedleGfx7, ARRAY_COUNT(sWeedleGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx8[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_8.4bpp");
+static const u8 sWeedleGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_8.4bpp.lz");
 static const ax_sprite sWeedleSprites8[] = {
 	{sWeedleGfx8, ARRAY_COUNT(sWeedleGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx9[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_9.4bpp");
+static const u8 sWeedleGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_9.4bpp.lz");
 static const ax_sprite sWeedleSprites9[] = {
 	{sWeedleGfx9, ARRAY_COUNT(sWeedleGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx10[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_10.4bpp");
+static const u8 sWeedleGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_10.4bpp.lz");
 static const ax_sprite sWeedleSprites10[] = {
 	{sWeedleGfx10, ARRAY_COUNT(sWeedleGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx11[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_11.4bpp");
+static const u8 sWeedleGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_11.4bpp.lz");
 static const ax_sprite sWeedleSprites11[] = {
 	{sWeedleGfx11, ARRAY_COUNT(sWeedleGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx12[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_12.4bpp");
+static const u8 sWeedleGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_12.4bpp.lz");
 static const ax_sprite sWeedleSprites12[] = {
 	{sWeedleGfx12, ARRAY_COUNT(sWeedleGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx13[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_13.4bpp");
+static const u8 sWeedleGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_13.4bpp.lz");
 static const ax_sprite sWeedleSprites13[] = {
 	{sWeedleGfx13, ARRAY_COUNT(sWeedleGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx14[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_14.4bpp");
+static const u8 sWeedleGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_14.4bpp.lz");
 static const ax_sprite sWeedleSprites14[] = {
 	{sWeedleGfx14, ARRAY_COUNT(sWeedleGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx15[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_15.4bpp");
+static const u8 sWeedleGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_15.4bpp.lz");
 static const ax_sprite sWeedleSprites15[] = {
 	{sWeedleGfx15, ARRAY_COUNT(sWeedleGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx16[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_16.4bpp");
+static const u8 sWeedleGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_16.4bpp.lz");
 static const ax_sprite sWeedleSprites16[] = {
 	{sWeedleGfx16, ARRAY_COUNT(sWeedleGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx17[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_17.4bpp");
-static const u8 sWeedleGfx17_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_17_1.4bpp");
+static const u8 sWeedleGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_17.4bpp.lz");
+static const u8 sWeedleGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_17_1.4bpp.lz");
 static const ax_sprite sWeedleSprites17[] = {
 	{sWeedleGfx17, ARRAY_COUNT(sWeedleGfx17)}, 
 	{NULL, 32}, 
 	{sWeedleGfx17_1, ARRAY_COUNT(sWeedleGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx18[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_18.4bpp");
-static const u8 sWeedleGfx18_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_18_1.4bpp");
+static const u8 sWeedleGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_18.4bpp.lz");
+static const u8 sWeedleGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_18_1.4bpp.lz");
 static const ax_sprite sWeedleSprites18[] = {
 	{sWeedleGfx18, ARRAY_COUNT(sWeedleGfx18)}, 
 	{NULL, 32}, 
@@ -2286,17 +2286,17 @@ static const ax_sprite sWeedleSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx19[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_19.4bpp");
-static const u8 sWeedleGfx19_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_19_1.4bpp");
+static const u8 sWeedleGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_19.4bpp.lz");
+static const u8 sWeedleGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_19_1.4bpp.lz");
 static const ax_sprite sWeedleSprites19[] = {
 	{sWeedleGfx19, ARRAY_COUNT(sWeedleGfx19)}, 
 	{NULL, 64}, 
 	{sWeedleGfx19_1, ARRAY_COUNT(sWeedleGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx20[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_20.4bpp");
-static const u8 sWeedleGfx20_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_20_1.4bpp");
-static const u8 sWeedleGfx20_2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_20_2.4bpp");
+static const u8 sWeedleGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_20.4bpp.lz");
+static const u8 sWeedleGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_20_1.4bpp.lz");
+static const u8 sWeedleGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_20_2.4bpp.lz");
 static const ax_sprite sWeedleSprites20[] = {
 	{sWeedleGfx20, ARRAY_COUNT(sWeedleGfx20)}, 
 	{NULL, 64}, 
@@ -2306,14 +2306,14 @@ static const ax_sprite sWeedleSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx21[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_21.4bpp");
+static const u8 sWeedleGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_21.4bpp.lz");
 static const ax_sprite sWeedleSprites21[] = {
 	{sWeedleGfx21, ARRAY_COUNT(sWeedleGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx22[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_22.4bpp");
-static const u8 sWeedleGfx22_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_22_1.4bpp");
-static const u8 sWeedleGfx22_2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_22_2.4bpp");
+static const u8 sWeedleGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_22.4bpp.lz");
+static const u8 sWeedleGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_22_1.4bpp.lz");
+static const u8 sWeedleGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_22_2.4bpp.lz");
 static const ax_sprite sWeedleSprites22[] = {
 	{NULL, 128}, 
 	{sWeedleGfx22, ARRAY_COUNT(sWeedleGfx22)}, 
@@ -2324,9 +2324,9 @@ static const ax_sprite sWeedleSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx23[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_23.4bpp");
-static const u8 sWeedleGfx23_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_23_1.4bpp");
-static const u8 sWeedleGfx23_2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_23_2.4bpp");
+static const u8 sWeedleGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_23.4bpp.lz");
+static const u8 sWeedleGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_23_1.4bpp.lz");
+static const u8 sWeedleGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_23_2.4bpp.lz");
 static const ax_sprite sWeedleSprites23[] = {
 	{sWeedleGfx23, ARRAY_COUNT(sWeedleGfx23)}, 
 	{NULL, 64}, 
@@ -2336,9 +2336,9 @@ static const ax_sprite sWeedleSprites23[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx24[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_24.4bpp");
-static const u8 sWeedleGfx24_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_24_1.4bpp");
-static const u8 sWeedleGfx24_2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_24_2.4bpp");
+static const u8 sWeedleGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_24.4bpp.lz");
+static const u8 sWeedleGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_24_1.4bpp.lz");
+static const u8 sWeedleGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_24_2.4bpp.lz");
 static const ax_sprite sWeedleSprites24[] = {
 	{sWeedleGfx24, ARRAY_COUNT(sWeedleGfx24)}, 
 	{NULL, 32}, 
@@ -2348,21 +2348,21 @@ static const ax_sprite sWeedleSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx25[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_25.4bpp");
+static const u8 sWeedleGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_25.4bpp.lz");
 static const ax_sprite sWeedleSprites25[] = {
 	{sWeedleGfx25, ARRAY_COUNT(sWeedleGfx25)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx26[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_26.4bpp");
+static const u8 sWeedleGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_26.4bpp.lz");
 static const ax_sprite sWeedleSprites26[] = {
 	{sWeedleGfx26, ARRAY_COUNT(sWeedleGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx27[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_27.4bpp");
-static const u8 sWeedleGfx27_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_27_1.4bpp");
-static const u8 sWeedleGfx27_2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_27_2.4bpp");
+static const u8 sWeedleGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_27.4bpp.lz");
+static const u8 sWeedleGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_27_1.4bpp.lz");
+static const u8 sWeedleGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_27_2.4bpp.lz");
 static const ax_sprite sWeedleSprites27[] = {
 	{sWeedleGfx27, ARRAY_COUNT(sWeedleGfx27)}, 
 	{NULL, 32}, 
@@ -2371,33 +2371,33 @@ static const ax_sprite sWeedleSprites27[] = {
 	{sWeedleGfx27_2, ARRAY_COUNT(sWeedleGfx27_2)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx28[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_28.4bpp");
+static const u8 sWeedleGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_28.4bpp.lz");
 static const ax_sprite sWeedleSprites28[] = {
 	{sWeedleGfx28, ARRAY_COUNT(sWeedleGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx29[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_29.4bpp");
+static const u8 sWeedleGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_29.4bpp.lz");
 static const ax_sprite sWeedleSprites29[] = {
 	{sWeedleGfx29, ARRAY_COUNT(sWeedleGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx30[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_30.4bpp");
+static const u8 sWeedleGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_30.4bpp.lz");
 static const ax_sprite sWeedleSprites30[] = {
 	{sWeedleGfx30, ARRAY_COUNT(sWeedleGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx31[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_31.4bpp");
+static const u8 sWeedleGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_31.4bpp.lz");
 static const ax_sprite sWeedleSprites31[] = {
 	{sWeedleGfx31, ARRAY_COUNT(sWeedleGfx31)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx32[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_32.4bpp");
-static const u8 sWeedleGfx32_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_32_1.4bpp");
-static const u8 sWeedleGfx32_2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_32_2.4bpp");
+static const u8 sWeedleGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_32.4bpp.lz");
+static const u8 sWeedleGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_32_1.4bpp.lz");
+static const u8 sWeedleGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_32_2.4bpp.lz");
 static const ax_sprite sWeedleSprites32[] = {
 	{sWeedleGfx32, ARRAY_COUNT(sWeedleGfx32)}, 
 	{NULL, 64}, 
@@ -2407,9 +2407,9 @@ static const ax_sprite sWeedleSprites32[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx33[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_33.4bpp");
-static const u8 sWeedleGfx33_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_33_1.4bpp");
-static const u8 sWeedleGfx33_2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_33_2.4bpp");
+static const u8 sWeedleGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_33.4bpp.lz");
+static const u8 sWeedleGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_33_1.4bpp.lz");
+static const u8 sWeedleGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_33_2.4bpp.lz");
 static const ax_sprite sWeedleSprites33[] = {
 	{NULL, 32}, 
 	{sWeedleGfx33, ARRAY_COUNT(sWeedleGfx33)}, 
@@ -2420,15 +2420,15 @@ static const ax_sprite sWeedleSprites33[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx34[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_34.4bpp");
+static const u8 sWeedleGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_34.4bpp.lz");
 static const ax_sprite sWeedleSprites34[] = {
 	{sWeedleGfx34, ARRAY_COUNT(sWeedleGfx34)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx35[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_35.4bpp");
-static const u8 sWeedleGfx35_1[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_35_1.4bpp");
-static const u8 sWeedleGfx35_2[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_35_2.4bpp");
+static const u8 sWeedleGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_35.4bpp.lz");
+static const u8 sWeedleGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_35_1.4bpp.lz");
+static const u8 sWeedleGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_35_2.4bpp.lz");
 static const ax_sprite sWeedleSprites35[] = {
 	{NULL, 32}, 
 	{sWeedleGfx35, ARRAY_COUNT(sWeedleGfx35)}, 
@@ -2439,37 +2439,37 @@ static const ax_sprite sWeedleSprites35[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx36[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_36.4bpp");
+static const u8 sWeedleGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_36.4bpp.lz");
 static const ax_sprite sWeedleSprites36[] = {
 	{sWeedleGfx36, ARRAY_COUNT(sWeedleGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx37[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_37.4bpp");
+static const u8 sWeedleGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_37.4bpp.lz");
 static const ax_sprite sWeedleSprites37[] = {
 	{sWeedleGfx37, ARRAY_COUNT(sWeedleGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx38[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_38.4bpp");
+static const u8 sWeedleGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_38.4bpp.lz");
 static const ax_sprite sWeedleSprites38[] = {
 	{sWeedleGfx38, ARRAY_COUNT(sWeedleGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx39[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_39.4bpp");
+static const u8 sWeedleGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_39.4bpp.lz");
 static const ax_sprite sWeedleSprites39[] = {
 	{sWeedleGfx39, ARRAY_COUNT(sWeedleGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx40[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_40.4bpp");
+static const u8 sWeedleGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_40.4bpp.lz");
 static const ax_sprite sWeedleSprites40[] = {
 	{sWeedleGfx40, ARRAY_COUNT(sWeedleGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx41[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_41.4bpp");
+static const u8 sWeedleGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_41.4bpp.lz");
 static const ax_sprite sWeedleSprites41[] = {
 	{sWeedleGfx41, ARRAY_COUNT(sWeedleGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sWeedleGfx42[] = INCBIN_U8("graphics/ax/mon/weedle/sprite_42.4bpp");
+static const u8 sWeedleGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/weedle/sprite_42.4bpp.lz");
 static const ax_sprite sWeedleSprites42[] = {
 	{sWeedleGfx42, ARRAY_COUNT(sWeedleGfx42)}, 
 	{NULL, 0}

@@ -2239,83 +2239,83 @@ static const ax_anim sVileplumeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVileplumeGfx1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_1.4bpp");
+static const u8 sVileplumeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_1.4bpp.lz");
 static const ax_sprite sVileplumeSprites1[] = {
 	{sVileplumeGfx1, ARRAY_COUNT(sVileplumeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx2[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_2.4bpp");
+static const u8 sVileplumeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_2.4bpp.lz");
 static const ax_sprite sVileplumeSprites2[] = {
 	{sVileplumeGfx2, ARRAY_COUNT(sVileplumeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx3[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_3.4bpp");
+static const u8 sVileplumeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_3.4bpp.lz");
 static const ax_sprite sVileplumeSprites3[] = {
 	{sVileplumeGfx3, ARRAY_COUNT(sVileplumeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx4[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_4.4bpp");
+static const u8 sVileplumeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_4.4bpp.lz");
 static const ax_sprite sVileplumeSprites4[] = {
 	{sVileplumeGfx4, ARRAY_COUNT(sVileplumeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx5[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_5.4bpp");
+static const u8 sVileplumeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_5.4bpp.lz");
 static const ax_sprite sVileplumeSprites5[] = {
 	{sVileplumeGfx5, ARRAY_COUNT(sVileplumeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx6[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_6.4bpp");
+static const u8 sVileplumeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_6.4bpp.lz");
 static const ax_sprite sVileplumeSprites6[] = {
 	{sVileplumeGfx6, ARRAY_COUNT(sVileplumeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx7[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_7.4bpp");
+static const u8 sVileplumeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_7.4bpp.lz");
 static const ax_sprite sVileplumeSprites7[] = {
 	{sVileplumeGfx7, ARRAY_COUNT(sVileplumeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx8[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_8.4bpp");
+static const u8 sVileplumeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_8.4bpp.lz");
 static const ax_sprite sVileplumeSprites8[] = {
 	{sVileplumeGfx8, ARRAY_COUNT(sVileplumeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx9[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_9.4bpp");
+static const u8 sVileplumeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_9.4bpp.lz");
 static const ax_sprite sVileplumeSprites9[] = {
 	{sVileplumeGfx9, ARRAY_COUNT(sVileplumeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx10[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_10.4bpp");
+static const u8 sVileplumeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_10.4bpp.lz");
 static const ax_sprite sVileplumeSprites10[] = {
 	{sVileplumeGfx10, ARRAY_COUNT(sVileplumeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx11[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_11.4bpp");
+static const u8 sVileplumeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_11.4bpp.lz");
 static const ax_sprite sVileplumeSprites11[] = {
 	{sVileplumeGfx11, ARRAY_COUNT(sVileplumeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx12[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_12.4bpp");
+static const u8 sVileplumeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_12.4bpp.lz");
 static const ax_sprite sVileplumeSprites12[] = {
 	{sVileplumeGfx12, ARRAY_COUNT(sVileplumeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx13[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_13.4bpp");
+static const u8 sVileplumeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_13.4bpp.lz");
 static const ax_sprite sVileplumeSprites13[] = {
 	{sVileplumeGfx13, ARRAY_COUNT(sVileplumeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx14[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_14.4bpp");
+static const u8 sVileplumeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_14.4bpp.lz");
 static const ax_sprite sVileplumeSprites14[] = {
 	{sVileplumeGfx14, ARRAY_COUNT(sVileplumeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx15[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_15.4bpp");
+static const u8 sVileplumeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_15.4bpp.lz");
 static const ax_sprite sVileplumeSprites15[] = {
 	{sVileplumeGfx15, ARRAY_COUNT(sVileplumeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx16[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_16.4bpp");
-static const u8 sVileplumeGfx16_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_16_1.4bpp");
+static const u8 sVileplumeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_16.4bpp.lz");
+static const u8 sVileplumeGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_16_1.4bpp.lz");
 static const ax_sprite sVileplumeSprites16[] = {
 	{sVileplumeGfx16, ARRAY_COUNT(sVileplumeGfx16)}, 
 	{NULL, 32}, 
@@ -2323,16 +2323,16 @@ static const ax_sprite sVileplumeSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx17[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_17.4bpp");
+static const u8 sVileplumeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_17.4bpp.lz");
 static const ax_sprite sVileplumeSprites17[] = {
 	{sVileplumeGfx17, ARRAY_COUNT(sVileplumeGfx17)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx18[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_18.4bpp");
-static const u8 sVileplumeGfx18_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_18_1.4bpp");
-static const u8 sVileplumeGfx18_2[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_18_2.4bpp");
-static const u8 sVileplumeGfx18_3[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_18_3.4bpp");
+static const u8 sVileplumeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_18.4bpp.lz");
+static const u8 sVileplumeGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_18_1.4bpp.lz");
+static const u8 sVileplumeGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_18_2.4bpp.lz");
+static const u8 sVileplumeGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_18_3.4bpp.lz");
 static const ax_sprite sVileplumeSprites18[] = {
 	{sVileplumeGfx18, ARRAY_COUNT(sVileplumeGfx18)}, 
 	{NULL, 32}, 
@@ -2344,9 +2344,9 @@ static const ax_sprite sVileplumeSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx19[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_19.4bpp");
-static const u8 sVileplumeGfx19_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_19_1.4bpp");
-static const u8 sVileplumeGfx19_2[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_19_2.4bpp");
+static const u8 sVileplumeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_19.4bpp.lz");
+static const u8 sVileplumeGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_19_1.4bpp.lz");
+static const u8 sVileplumeGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_19_2.4bpp.lz");
 static const ax_sprite sVileplumeSprites19[] = {
 	{sVileplumeGfx19, ARRAY_COUNT(sVileplumeGfx19)}, 
 	{NULL, 32}, 
@@ -2356,10 +2356,10 @@ static const ax_sprite sVileplumeSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx20[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_20.4bpp");
-static const u8 sVileplumeGfx20_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_20_1.4bpp");
-static const u8 sVileplumeGfx20_2[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_20_2.4bpp");
-static const u8 sVileplumeGfx20_3[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_20_3.4bpp");
+static const u8 sVileplumeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_20.4bpp.lz");
+static const u8 sVileplumeGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_20_1.4bpp.lz");
+static const u8 sVileplumeGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_20_2.4bpp.lz");
+static const u8 sVileplumeGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_20_3.4bpp.lz");
 static const ax_sprite sVileplumeSprites20[] = {
 	{NULL, 32}, 
 	{sVileplumeGfx20, ARRAY_COUNT(sVileplumeGfx20)}, 
@@ -2372,10 +2372,10 @@ static const ax_sprite sVileplumeSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx21[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_21.4bpp");
-static const u8 sVileplumeGfx21_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_21_1.4bpp");
-static const u8 sVileplumeGfx21_2[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_21_2.4bpp");
-static const u8 sVileplumeGfx21_3[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_21_3.4bpp");
+static const u8 sVileplumeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_21.4bpp.lz");
+static const u8 sVileplumeGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_21_1.4bpp.lz");
+static const u8 sVileplumeGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_21_2.4bpp.lz");
+static const u8 sVileplumeGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_21_3.4bpp.lz");
 static const ax_sprite sVileplumeSprites21[] = {
 	{NULL, 32}, 
 	{sVileplumeGfx21, ARRAY_COUNT(sVileplumeGfx21)}, 
@@ -2388,8 +2388,8 @@ static const ax_sprite sVileplumeSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx22[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_22.4bpp");
-static const u8 sVileplumeGfx22_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_22_1.4bpp");
+static const u8 sVileplumeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_22.4bpp.lz");
+static const u8 sVileplumeGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_22_1.4bpp.lz");
 static const ax_sprite sVileplumeSprites22[] = {
 	{sVileplumeGfx22, ARRAY_COUNT(sVileplumeGfx22)}, 
 	{NULL, 32}, 
@@ -2397,9 +2397,9 @@ static const ax_sprite sVileplumeSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx23[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_23.4bpp");
-static const u8 sVileplumeGfx23_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_23_1.4bpp");
-static const u8 sVileplumeGfx23_2[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_23_2.4bpp");
+static const u8 sVileplumeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_23.4bpp.lz");
+static const u8 sVileplumeGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_23_1.4bpp.lz");
+static const u8 sVileplumeGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_23_2.4bpp.lz");
 static const ax_sprite sVileplumeSprites23[] = {
 	{sVileplumeGfx23, ARRAY_COUNT(sVileplumeGfx23)}, 
 	{NULL, 32}, 
@@ -2409,8 +2409,8 @@ static const ax_sprite sVileplumeSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx24[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_24.4bpp");
-static const u8 sVileplumeGfx24_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_24_1.4bpp");
+static const u8 sVileplumeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_24.4bpp.lz");
+static const u8 sVileplumeGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_24_1.4bpp.lz");
 static const ax_sprite sVileplumeSprites24[] = {
 	{sVileplumeGfx24, ARRAY_COUNT(sVileplumeGfx24)}, 
 	{NULL, 32}, 
@@ -2418,9 +2418,9 @@ static const ax_sprite sVileplumeSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx25[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_25.4bpp");
-static const u8 sVileplumeGfx25_1[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_25_1.4bpp");
-static const u8 sVileplumeGfx25_2[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_25_2.4bpp");
+static const u8 sVileplumeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_25.4bpp.lz");
+static const u8 sVileplumeGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_25_1.4bpp.lz");
+static const u8 sVileplumeGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_25_2.4bpp.lz");
 static const ax_sprite sVileplumeSprites25[] = {
 	{sVileplumeGfx25, ARRAY_COUNT(sVileplumeGfx25)}, 
 	{NULL, 32}, 
@@ -2430,37 +2430,37 @@ static const ax_sprite sVileplumeSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx26[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_26.4bpp");
+static const u8 sVileplumeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_26.4bpp.lz");
 static const ax_sprite sVileplumeSprites26[] = {
 	{sVileplumeGfx26, ARRAY_COUNT(sVileplumeGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx27[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_27.4bpp");
+static const u8 sVileplumeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_27.4bpp.lz");
 static const ax_sprite sVileplumeSprites27[] = {
 	{sVileplumeGfx27, ARRAY_COUNT(sVileplumeGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx28[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_28.4bpp");
+static const u8 sVileplumeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_28.4bpp.lz");
 static const ax_sprite sVileplumeSprites28[] = {
 	{sVileplumeGfx28, ARRAY_COUNT(sVileplumeGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx29[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_29.4bpp");
+static const u8 sVileplumeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_29.4bpp.lz");
 static const ax_sprite sVileplumeSprites29[] = {
 	{sVileplumeGfx29, ARRAY_COUNT(sVileplumeGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx30[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_30.4bpp");
+static const u8 sVileplumeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_30.4bpp.lz");
 static const ax_sprite sVileplumeSprites30[] = {
 	{sVileplumeGfx30, ARRAY_COUNT(sVileplumeGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx31[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_31.4bpp");
+static const u8 sVileplumeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_31.4bpp.lz");
 static const ax_sprite sVileplumeSprites31[] = {
 	{sVileplumeGfx31, ARRAY_COUNT(sVileplumeGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sVileplumeGfx32[] = INCBIN_U8("graphics/ax/mon/vileplume/sprite_32.4bpp");
+static const u8 sVileplumeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vileplume/sprite_32.4bpp.lz");
 static const ax_sprite sVileplumeSprites32[] = {
 	{sVileplumeGfx32, ARRAY_COUNT(sVileplumeGfx32)}, 
 	{NULL, 0}

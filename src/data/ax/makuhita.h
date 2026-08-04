@@ -2015,83 +2015,83 @@ static const ax_anim sMakuhitaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMakuhitaGfx1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_1.4bpp");
+static const u8 sMakuhitaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_1.4bpp.lz");
 static const ax_sprite sMakuhitaSprites1[] = {
 	{sMakuhitaGfx1, ARRAY_COUNT(sMakuhitaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_2.4bpp");
+static const u8 sMakuhitaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_2.4bpp.lz");
 static const ax_sprite sMakuhitaSprites2[] = {
 	{sMakuhitaGfx2, ARRAY_COUNT(sMakuhitaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx3[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_3.4bpp");
+static const u8 sMakuhitaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_3.4bpp.lz");
 static const ax_sprite sMakuhitaSprites3[] = {
 	{sMakuhitaGfx3, ARRAY_COUNT(sMakuhitaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx4[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_4.4bpp");
+static const u8 sMakuhitaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_4.4bpp.lz");
 static const ax_sprite sMakuhitaSprites4[] = {
 	{sMakuhitaGfx4, ARRAY_COUNT(sMakuhitaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx5[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_5.4bpp");
+static const u8 sMakuhitaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_5.4bpp.lz");
 static const ax_sprite sMakuhitaSprites5[] = {
 	{sMakuhitaGfx5, ARRAY_COUNT(sMakuhitaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx6[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_6.4bpp");
+static const u8 sMakuhitaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_6.4bpp.lz");
 static const ax_sprite sMakuhitaSprites6[] = {
 	{sMakuhitaGfx6, ARRAY_COUNT(sMakuhitaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx7[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_7.4bpp");
+static const u8 sMakuhitaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_7.4bpp.lz");
 static const ax_sprite sMakuhitaSprites7[] = {
 	{sMakuhitaGfx7, ARRAY_COUNT(sMakuhitaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx8[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_8.4bpp");
+static const u8 sMakuhitaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_8.4bpp.lz");
 static const ax_sprite sMakuhitaSprites8[] = {
 	{sMakuhitaGfx8, ARRAY_COUNT(sMakuhitaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx9[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_9.4bpp");
+static const u8 sMakuhitaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_9.4bpp.lz");
 static const ax_sprite sMakuhitaSprites9[] = {
 	{sMakuhitaGfx9, ARRAY_COUNT(sMakuhitaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx10[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_10.4bpp");
+static const u8 sMakuhitaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_10.4bpp.lz");
 static const ax_sprite sMakuhitaSprites10[] = {
 	{sMakuhitaGfx10, ARRAY_COUNT(sMakuhitaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx11[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_11.4bpp");
+static const u8 sMakuhitaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_11.4bpp.lz");
 static const ax_sprite sMakuhitaSprites11[] = {
 	{sMakuhitaGfx11, ARRAY_COUNT(sMakuhitaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx12[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_12.4bpp");
+static const u8 sMakuhitaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_12.4bpp.lz");
 static const ax_sprite sMakuhitaSprites12[] = {
 	{sMakuhitaGfx12, ARRAY_COUNT(sMakuhitaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx13[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_13.4bpp");
+static const u8 sMakuhitaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_13.4bpp.lz");
 static const ax_sprite sMakuhitaSprites13[] = {
 	{sMakuhitaGfx13, ARRAY_COUNT(sMakuhitaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx14[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_14.4bpp");
+static const u8 sMakuhitaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_14.4bpp.lz");
 static const ax_sprite sMakuhitaSprites14[] = {
 	{sMakuhitaGfx14, ARRAY_COUNT(sMakuhitaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx15[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_15.4bpp");
+static const u8 sMakuhitaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_15.4bpp.lz");
 static const ax_sprite sMakuhitaSprites15[] = {
 	{sMakuhitaGfx15, ARRAY_COUNT(sMakuhitaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx16[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_16.4bpp");
-static const u8 sMakuhitaGfx16_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_16_1.4bpp");
+static const u8 sMakuhitaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_16.4bpp.lz");
+static const u8 sMakuhitaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_16_1.4bpp.lz");
 static const ax_sprite sMakuhitaSprites16[] = {
 	{sMakuhitaGfx16, ARRAY_COUNT(sMakuhitaGfx16)}, 
 	{NULL, 32}, 
@@ -2099,10 +2099,10 @@ static const ax_sprite sMakuhitaSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx17[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_17.4bpp");
-static const u8 sMakuhitaGfx17_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_17_1.4bpp");
-static const u8 sMakuhitaGfx17_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_17_2.4bpp");
-static const u8 sMakuhitaGfx17_3[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_17_3.4bpp");
+static const u8 sMakuhitaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_17.4bpp.lz");
+static const u8 sMakuhitaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_17_1.4bpp.lz");
+static const u8 sMakuhitaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_17_2.4bpp.lz");
+static const u8 sMakuhitaGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_17_3.4bpp.lz");
 static const ax_sprite sMakuhitaSprites17[] = {
 	{sMakuhitaGfx17, ARRAY_COUNT(sMakuhitaGfx17)}, 
 	{NULL, 32}, 
@@ -2114,9 +2114,9 @@ static const ax_sprite sMakuhitaSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx18[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_18.4bpp");
-static const u8 sMakuhitaGfx18_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_18_1.4bpp");
-static const u8 sMakuhitaGfx18_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_18_2.4bpp");
+static const u8 sMakuhitaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_18.4bpp.lz");
+static const u8 sMakuhitaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_18_1.4bpp.lz");
+static const u8 sMakuhitaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_18_2.4bpp.lz");
 static const ax_sprite sMakuhitaSprites18[] = {
 	{NULL, 128}, 
 	{sMakuhitaGfx18, ARRAY_COUNT(sMakuhitaGfx18)}, 
@@ -2127,8 +2127,8 @@ static const ax_sprite sMakuhitaSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx19[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_19.4bpp");
-static const u8 sMakuhitaGfx19_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_19_1.4bpp");
+static const u8 sMakuhitaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_19.4bpp.lz");
+static const u8 sMakuhitaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_19_1.4bpp.lz");
 static const ax_sprite sMakuhitaSprites19[] = {
 	{NULL, 32}, 
 	{sMakuhitaGfx19, ARRAY_COUNT(sMakuhitaGfx19)}, 
@@ -2137,10 +2137,10 @@ static const ax_sprite sMakuhitaSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx20[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_20.4bpp");
-static const u8 sMakuhitaGfx20_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_20_1.4bpp");
-static const u8 sMakuhitaGfx20_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_20_2.4bpp");
-static const u8 sMakuhitaGfx20_3[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_20_3.4bpp");
+static const u8 sMakuhitaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_20.4bpp.lz");
+static const u8 sMakuhitaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_20_1.4bpp.lz");
+static const u8 sMakuhitaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_20_2.4bpp.lz");
+static const u8 sMakuhitaGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_20_3.4bpp.lz");
 static const ax_sprite sMakuhitaSprites20[] = {
 	{sMakuhitaGfx20, ARRAY_COUNT(sMakuhitaGfx20)}, 
 	{NULL, 64}, 
@@ -2152,10 +2152,10 @@ static const ax_sprite sMakuhitaSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx21[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_21.4bpp");
-static const u8 sMakuhitaGfx21_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_21_1.4bpp");
-static const u8 sMakuhitaGfx21_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_21_2.4bpp");
-static const u8 sMakuhitaGfx21_3[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_21_3.4bpp");
+static const u8 sMakuhitaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_21.4bpp.lz");
+static const u8 sMakuhitaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_21_1.4bpp.lz");
+static const u8 sMakuhitaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_21_2.4bpp.lz");
+static const u8 sMakuhitaGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_21_3.4bpp.lz");
 static const ax_sprite sMakuhitaSprites21[] = {
 	{sMakuhitaGfx21, ARRAY_COUNT(sMakuhitaGfx21)}, 
 	{NULL, 64}, 
@@ -2167,9 +2167,9 @@ static const ax_sprite sMakuhitaSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx22[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_22.4bpp");
-static const u8 sMakuhitaGfx22_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_22_1.4bpp");
-static const u8 sMakuhitaGfx22_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_22_2.4bpp");
+static const u8 sMakuhitaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_22.4bpp.lz");
+static const u8 sMakuhitaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_22_1.4bpp.lz");
+static const u8 sMakuhitaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_22_2.4bpp.lz");
 static const ax_sprite sMakuhitaSprites22[] = {
 	{NULL, 32}, 
 	{sMakuhitaGfx22, ARRAY_COUNT(sMakuhitaGfx22)}, 
@@ -2179,10 +2179,10 @@ static const ax_sprite sMakuhitaSprites22[] = {
 	{sMakuhitaGfx22_2, ARRAY_COUNT(sMakuhitaGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx23[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_23.4bpp");
-static const u8 sMakuhitaGfx23_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_23_1.4bpp");
-static const u8 sMakuhitaGfx23_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_23_2.4bpp");
-static const u8 sMakuhitaGfx23_3[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_23_3.4bpp");
+static const u8 sMakuhitaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_23.4bpp.lz");
+static const u8 sMakuhitaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_23_1.4bpp.lz");
+static const u8 sMakuhitaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_23_2.4bpp.lz");
+static const u8 sMakuhitaGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_23_3.4bpp.lz");
 static const ax_sprite sMakuhitaSprites23[] = {
 	{NULL, 32}, 
 	{sMakuhitaGfx23, ARRAY_COUNT(sMakuhitaGfx23)}, 
@@ -2195,9 +2195,9 @@ static const ax_sprite sMakuhitaSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx24[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_24.4bpp");
-static const u8 sMakuhitaGfx24_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_24_1.4bpp");
-static const u8 sMakuhitaGfx24_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_24_2.4bpp");
+static const u8 sMakuhitaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_24.4bpp.lz");
+static const u8 sMakuhitaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_24_1.4bpp.lz");
+static const u8 sMakuhitaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_24_2.4bpp.lz");
 static const ax_sprite sMakuhitaSprites24[] = {
 	{NULL, 128}, 
 	{sMakuhitaGfx24, ARRAY_COUNT(sMakuhitaGfx24)}, 
@@ -2208,10 +2208,10 @@ static const ax_sprite sMakuhitaSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx25[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_25.4bpp");
-static const u8 sMakuhitaGfx25_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_25_1.4bpp");
-static const u8 sMakuhitaGfx25_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_25_2.4bpp");
-static const u8 sMakuhitaGfx25_3[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_25_3.4bpp");
+static const u8 sMakuhitaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_25.4bpp.lz");
+static const u8 sMakuhitaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_25_1.4bpp.lz");
+static const u8 sMakuhitaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_25_2.4bpp.lz");
+static const u8 sMakuhitaGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_25_3.4bpp.lz");
 static const ax_sprite sMakuhitaSprites25[] = {
 	{sMakuhitaGfx25, ARRAY_COUNT(sMakuhitaGfx25)}, 
 	{NULL, 64}, 
@@ -2223,9 +2223,9 @@ static const ax_sprite sMakuhitaSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx26[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_26.4bpp");
-static const u8 sMakuhitaGfx26_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_26_1.4bpp");
-static const u8 sMakuhitaGfx26_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_26_2.4bpp");
+static const u8 sMakuhitaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_26.4bpp.lz");
+static const u8 sMakuhitaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_26_1.4bpp.lz");
+static const u8 sMakuhitaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_26_2.4bpp.lz");
 static const ax_sprite sMakuhitaSprites26[] = {
 	{sMakuhitaGfx26, ARRAY_COUNT(sMakuhitaGfx26)}, 
 	{NULL, 32}, 
@@ -2235,10 +2235,10 @@ static const ax_sprite sMakuhitaSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx27[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_27.4bpp");
-static const u8 sMakuhitaGfx27_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_27_1.4bpp");
-static const u8 sMakuhitaGfx27_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_27_2.4bpp");
-static const u8 sMakuhitaGfx27_3[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_27_3.4bpp");
+static const u8 sMakuhitaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_27.4bpp.lz");
+static const u8 sMakuhitaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_27_1.4bpp.lz");
+static const u8 sMakuhitaGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_27_2.4bpp.lz");
+static const u8 sMakuhitaGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_27_3.4bpp.lz");
 static const ax_sprite sMakuhitaSprites27[] = {
 	{sMakuhitaGfx27, ARRAY_COUNT(sMakuhitaGfx27)}, 
 	{NULL, 64}, 
@@ -2250,9 +2250,9 @@ static const ax_sprite sMakuhitaSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx28[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_28.4bpp");
-static const u8 sMakuhitaGfx28_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_28_1.4bpp");
-static const u8 sMakuhitaGfx28_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_28_2.4bpp");
+static const u8 sMakuhitaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_28.4bpp.lz");
+static const u8 sMakuhitaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_28_1.4bpp.lz");
+static const u8 sMakuhitaGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_28_2.4bpp.lz");
 static const ax_sprite sMakuhitaSprites28[] = {
 	{sMakuhitaGfx28, ARRAY_COUNT(sMakuhitaGfx28)}, 
 	{NULL, 64}, 
@@ -2262,10 +2262,10 @@ static const ax_sprite sMakuhitaSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx29[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_29.4bpp");
-static const u8 sMakuhitaGfx29_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_29_1.4bpp");
-static const u8 sMakuhitaGfx29_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_29_2.4bpp");
-static const u8 sMakuhitaGfx29_3[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_29_3.4bpp");
+static const u8 sMakuhitaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_29.4bpp.lz");
+static const u8 sMakuhitaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_29_1.4bpp.lz");
+static const u8 sMakuhitaGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_29_2.4bpp.lz");
+static const u8 sMakuhitaGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_29_3.4bpp.lz");
 static const ax_sprite sMakuhitaSprites29[] = {
 	{sMakuhitaGfx29, ARRAY_COUNT(sMakuhitaGfx29)}, 
 	{NULL, 32}, 
@@ -2277,9 +2277,9 @@ static const ax_sprite sMakuhitaSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx30[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_30.4bpp");
-static const u8 sMakuhitaGfx30_1[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_30_1.4bpp");
-static const u8 sMakuhitaGfx30_2[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_30_2.4bpp");
+static const u8 sMakuhitaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_30.4bpp.lz");
+static const u8 sMakuhitaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_30_1.4bpp.lz");
+static const u8 sMakuhitaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_30_2.4bpp.lz");
 static const ax_sprite sMakuhitaSprites30[] = {
 	{sMakuhitaGfx30, ARRAY_COUNT(sMakuhitaGfx30)}, 
 	{NULL, 32}, 
@@ -2289,37 +2289,37 @@ static const ax_sprite sMakuhitaSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx31[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_31.4bpp");
+static const u8 sMakuhitaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_31.4bpp.lz");
 static const ax_sprite sMakuhitaSprites31[] = {
 	{sMakuhitaGfx31, ARRAY_COUNT(sMakuhitaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx32[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_32.4bpp");
+static const u8 sMakuhitaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_32.4bpp.lz");
 static const ax_sprite sMakuhitaSprites32[] = {
 	{sMakuhitaGfx32, ARRAY_COUNT(sMakuhitaGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx33[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_33.4bpp");
+static const u8 sMakuhitaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_33.4bpp.lz");
 static const ax_sprite sMakuhitaSprites33[] = {
 	{sMakuhitaGfx33, ARRAY_COUNT(sMakuhitaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx34[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_34.4bpp");
+static const u8 sMakuhitaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_34.4bpp.lz");
 static const ax_sprite sMakuhitaSprites34[] = {
 	{sMakuhitaGfx34, ARRAY_COUNT(sMakuhitaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx35[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_35.4bpp");
+static const u8 sMakuhitaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_35.4bpp.lz");
 static const ax_sprite sMakuhitaSprites35[] = {
 	{sMakuhitaGfx35, ARRAY_COUNT(sMakuhitaGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx36[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_36.4bpp");
+static const u8 sMakuhitaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_36.4bpp.lz");
 static const ax_sprite sMakuhitaSprites36[] = {
 	{sMakuhitaGfx36, ARRAY_COUNT(sMakuhitaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMakuhitaGfx37[] = INCBIN_U8("graphics/ax/mon/makuhita/sprite_37.4bpp");
+static const u8 sMakuhitaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/makuhita/sprite_37.4bpp.lz");
 static const ax_sprite sMakuhitaSprites37[] = {
 	{sMakuhitaGfx37, ARRAY_COUNT(sMakuhitaGfx37)}, 
 	{NULL, 0}

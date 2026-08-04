@@ -1891,84 +1891,84 @@ static const ax_anim sPinecoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPinecoGfx1[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_1.4bpp");
+static const u8 sPinecoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_1.4bpp.lz");
 static const ax_sprite sPinecoSprites1[] = {
 	{sPinecoGfx1, ARRAY_COUNT(sPinecoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx2[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_2.4bpp");
+static const u8 sPinecoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_2.4bpp.lz");
 static const ax_sprite sPinecoSprites2[] = {
 	{sPinecoGfx2, ARRAY_COUNT(sPinecoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx3[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_3.4bpp");
+static const u8 sPinecoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_3.4bpp.lz");
 static const ax_sprite sPinecoSprites3[] = {
 	{sPinecoGfx3, ARRAY_COUNT(sPinecoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx4[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_4.4bpp");
+static const u8 sPinecoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_4.4bpp.lz");
 static const ax_sprite sPinecoSprites4[] = {
 	{sPinecoGfx4, ARRAY_COUNT(sPinecoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx5[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_5.4bpp");
+static const u8 sPinecoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_5.4bpp.lz");
 static const ax_sprite sPinecoSprites5[] = {
 	{sPinecoGfx5, ARRAY_COUNT(sPinecoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx6[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_6.4bpp");
+static const u8 sPinecoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_6.4bpp.lz");
 static const ax_sprite sPinecoSprites6[] = {
 	{sPinecoGfx6, ARRAY_COUNT(sPinecoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx7[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_7.4bpp");
+static const u8 sPinecoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_7.4bpp.lz");
 static const ax_sprite sPinecoSprites7[] = {
 	{sPinecoGfx7, ARRAY_COUNT(sPinecoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx8[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_8.4bpp");
+static const u8 sPinecoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_8.4bpp.lz");
 static const ax_sprite sPinecoSprites8[] = {
 	{sPinecoGfx8, ARRAY_COUNT(sPinecoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx9[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_9.4bpp");
+static const u8 sPinecoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_9.4bpp.lz");
 static const ax_sprite sPinecoSprites9[] = {
 	{sPinecoGfx9, ARRAY_COUNT(sPinecoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx10[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_10.4bpp");
+static const u8 sPinecoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_10.4bpp.lz");
 static const ax_sprite sPinecoSprites10[] = {
 	{sPinecoGfx10, ARRAY_COUNT(sPinecoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx11[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_11.4bpp");
+static const u8 sPinecoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_11.4bpp.lz");
 static const ax_sprite sPinecoSprites11[] = {
 	{sPinecoGfx11, ARRAY_COUNT(sPinecoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx12[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_12.4bpp");
+static const u8 sPinecoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_12.4bpp.lz");
 static const ax_sprite sPinecoSprites12[] = {
 	{sPinecoGfx12, ARRAY_COUNT(sPinecoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx13[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_13.4bpp");
+static const u8 sPinecoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_13.4bpp.lz");
 static const ax_sprite sPinecoSprites13[] = {
 	{sPinecoGfx13, ARRAY_COUNT(sPinecoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx14[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_14.4bpp");
+static const u8 sPinecoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_14.4bpp.lz");
 static const ax_sprite sPinecoSprites14[] = {
 	{sPinecoGfx14, ARRAY_COUNT(sPinecoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx15[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_15.4bpp");
+static const u8 sPinecoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_15.4bpp.lz");
 static const ax_sprite sPinecoSprites15[] = {
 	{sPinecoGfx15, ARRAY_COUNT(sPinecoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx16[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_16.4bpp");
-static const u8 sPinecoGfx16_1[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_16_1.4bpp");
-static const u8 sPinecoGfx16_2[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_16_2.4bpp");
+static const u8 sPinecoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_16.4bpp.lz");
+static const u8 sPinecoGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_16_1.4bpp.lz");
+static const u8 sPinecoGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_16_2.4bpp.lz");
 static const ax_sprite sPinecoSprites16[] = {
 	{NULL, 32}, 
 	{sPinecoGfx16, ARRAY_COUNT(sPinecoGfx16)}, 
@@ -1979,9 +1979,9 @@ static const ax_sprite sPinecoSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx17[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_17.4bpp");
-static const u8 sPinecoGfx17_1[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_17_1.4bpp");
-static const u8 sPinecoGfx17_2[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_17_2.4bpp");
+static const u8 sPinecoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_17.4bpp.lz");
+static const u8 sPinecoGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_17_1.4bpp.lz");
+static const u8 sPinecoGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_17_2.4bpp.lz");
 static const ax_sprite sPinecoSprites17[] = {
 	{NULL, 32}, 
 	{sPinecoGfx17, ARRAY_COUNT(sPinecoGfx17)}, 
@@ -1992,9 +1992,9 @@ static const ax_sprite sPinecoSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx18[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_18.4bpp");
-static const u8 sPinecoGfx18_1[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_18_1.4bpp");
-static const u8 sPinecoGfx18_2[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_18_2.4bpp");
+static const u8 sPinecoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_18.4bpp.lz");
+static const u8 sPinecoGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_18_1.4bpp.lz");
+static const u8 sPinecoGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_18_2.4bpp.lz");
 static const ax_sprite sPinecoSprites18[] = {
 	{NULL, 32}, 
 	{sPinecoGfx18, ARRAY_COUNT(sPinecoGfx18)}, 
@@ -2005,9 +2005,9 @@ static const ax_sprite sPinecoSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx19[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_19.4bpp");
-static const u8 sPinecoGfx19_1[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_19_1.4bpp");
-static const u8 sPinecoGfx19_2[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_19_2.4bpp");
+static const u8 sPinecoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_19.4bpp.lz");
+static const u8 sPinecoGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_19_1.4bpp.lz");
+static const u8 sPinecoGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_19_2.4bpp.lz");
 static const ax_sprite sPinecoSprites19[] = {
 	{NULL, 32}, 
 	{sPinecoGfx19, ARRAY_COUNT(sPinecoGfx19)}, 
@@ -2018,9 +2018,9 @@ static const ax_sprite sPinecoSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx20[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_20.4bpp");
-static const u8 sPinecoGfx20_1[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_20_1.4bpp");
-static const u8 sPinecoGfx20_2[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_20_2.4bpp");
+static const u8 sPinecoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_20.4bpp.lz");
+static const u8 sPinecoGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_20_1.4bpp.lz");
+static const u8 sPinecoGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_20_2.4bpp.lz");
 static const ax_sprite sPinecoSprites20[] = {
 	{NULL, 32}, 
 	{sPinecoGfx20, ARRAY_COUNT(sPinecoGfx20)}, 
@@ -2031,37 +2031,37 @@ static const ax_sprite sPinecoSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx21[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_21.4bpp");
+static const u8 sPinecoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_21.4bpp.lz");
 static const ax_sprite sPinecoSprites21[] = {
 	{sPinecoGfx21, ARRAY_COUNT(sPinecoGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx22[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_22.4bpp");
+static const u8 sPinecoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_22.4bpp.lz");
 static const ax_sprite sPinecoSprites22[] = {
 	{sPinecoGfx22, ARRAY_COUNT(sPinecoGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx23[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_23.4bpp");
+static const u8 sPinecoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_23.4bpp.lz");
 static const ax_sprite sPinecoSprites23[] = {
 	{sPinecoGfx23, ARRAY_COUNT(sPinecoGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx24[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_24.4bpp");
+static const u8 sPinecoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_24.4bpp.lz");
 static const ax_sprite sPinecoSprites24[] = {
 	{sPinecoGfx24, ARRAY_COUNT(sPinecoGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx25[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_25.4bpp");
+static const u8 sPinecoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_25.4bpp.lz");
 static const ax_sprite sPinecoSprites25[] = {
 	{sPinecoGfx25, ARRAY_COUNT(sPinecoGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx26[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_26.4bpp");
+static const u8 sPinecoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_26.4bpp.lz");
 static const ax_sprite sPinecoSprites26[] = {
 	{sPinecoGfx26, ARRAY_COUNT(sPinecoGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sPinecoGfx27[] = INCBIN_U8("graphics/ax/mon/pineco/sprite_27.4bpp");
+static const u8 sPinecoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pineco/sprite_27.4bpp.lz");
 static const ax_sprite sPinecoSprites27[] = {
 	{sPinecoGfx27, ARRAY_COUNT(sPinecoGfx27)}, 
 	{NULL, 0}

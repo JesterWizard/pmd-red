@@ -96,6 +96,35 @@ sections for `MODERN=0`.
 
 ---
 
+## 2026-08-04 — Monster AX tile LZ77 compression
+
+### What changed
+AX sprite **tiles** (raw `.4bpp`, not AT4PX — portraits were the only AT4PX in
+`monster_sbin`) are now shipped as `graphics/ax/mon/**/*.4bpp.lz` (`GMLZ` +
+BIOS LZ77).
+
+- Tool: `compress_ax_tiles.py` / `make ax-compress`
+- Headers: all 423 `src/data/ax/*.h` INCBINs point at `.4bpp.lz` (`ALIGNED(4)`)
+- Runtime: `src/sprite.c` `RegisterSpriteParts_80052BC` / `sub_8005304`
+  - Reads uncompressed size from the LZ header (so VRAM packing stays correct)
+  - `LZ77UnCompVram` straight into OBJ VRAM (no heap; tiles ≤ 2 KiB each)
+- Pose/anim tables stay uncompressed in ROM (~9.8 MiB of the old AX blob)
+
+### Size
+- Tiles: `8,044,576 → 5,179,292` bytes (saved **~2.73 MiB**, ~35.6%)
+- `pmd_red.gba`: **24.76 MiB** (baserom 32.00 → **~7.24 MiB** smaller overall)
+- Boot check `docs/boot_proof/ax_*.png`: **PASS** (intro Pelipper / maps OK)
+
+### Reverse
+1. Rewrite `src/data/ax/*.h` INCBINs back to `….4bpp` (drop `.lz` / optional
+   `ALIGNED(4)`).
+2. Restore `sub_8005304` / `RegisterSpriteParts_80052BC` to plain `CpuCopy`.
+3. Remove `ax-compress` Makefile hook; delete `compress_ax_tiles.py` if desired.
+4. `.4bpp.lz` under `graphics/ax/mon/` can be deleted (`make tidy` regenerates
+   only if hooks remain).
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -104,5 +133,7 @@ sections for `MODERN=0`.
 | Padding | Off (`PAD_ROM=1` to restore) |
 | Ground BPC/BMA LZ | On (`GMLZ`) |
 | Ground BPL/BPA LZ | Off |
+| Monster AX tile LZ | On (`GMLZ` → `LZ77UnCompVram`) |
 | Unused unk blobs in modern ROM | Stripped |
 | Matching `make compare` | Not expected to match once assets diverge |
+| Approx `pmd_red.gba` size | **24.76 MiB** |

@@ -2137,85 +2137,85 @@ static const ax_anim sMachampAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMachampGfx1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_1.4bpp");
+static const u8 sMachampGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_1.4bpp.lz");
 static const ax_sprite sMachampSprites1[] = {
 	{sMachampGfx1, ARRAY_COUNT(sMachampGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_2.4bpp");
+static const u8 sMachampGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_2.4bpp.lz");
 static const ax_sprite sMachampSprites2[] = {
 	{sMachampGfx2, ARRAY_COUNT(sMachampGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_3.4bpp");
+static const u8 sMachampGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_3.4bpp.lz");
 static const ax_sprite sMachampSprites3[] = {
 	{sMachampGfx3, ARRAY_COUNT(sMachampGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx4[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_4.4bpp");
+static const u8 sMachampGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_4.4bpp.lz");
 static const ax_sprite sMachampSprites4[] = {
 	{sMachampGfx4, ARRAY_COUNT(sMachampGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx5[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_5.4bpp");
+static const u8 sMachampGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_5.4bpp.lz");
 static const ax_sprite sMachampSprites5[] = {
 	{sMachampGfx5, ARRAY_COUNT(sMachampGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx6[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_6.4bpp");
+static const u8 sMachampGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_6.4bpp.lz");
 static const ax_sprite sMachampSprites6[] = {
 	{sMachampGfx6, ARRAY_COUNT(sMachampGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx7[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_7.4bpp");
+static const u8 sMachampGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_7.4bpp.lz");
 static const ax_sprite sMachampSprites7[] = {
 	{sMachampGfx7, ARRAY_COUNT(sMachampGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx8[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_8.4bpp");
+static const u8 sMachampGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_8.4bpp.lz");
 static const ax_sprite sMachampSprites8[] = {
 	{sMachampGfx8, ARRAY_COUNT(sMachampGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx9[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_9.4bpp");
+static const u8 sMachampGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_9.4bpp.lz");
 static const ax_sprite sMachampSprites9[] = {
 	{sMachampGfx9, ARRAY_COUNT(sMachampGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx10[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_10.4bpp");
+static const u8 sMachampGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_10.4bpp.lz");
 static const ax_sprite sMachampSprites10[] = {
 	{sMachampGfx10, ARRAY_COUNT(sMachampGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx11[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_11.4bpp");
+static const u8 sMachampGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_11.4bpp.lz");
 static const ax_sprite sMachampSprites11[] = {
 	{sMachampGfx11, ARRAY_COUNT(sMachampGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx12[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_12.4bpp");
+static const u8 sMachampGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_12.4bpp.lz");
 static const ax_sprite sMachampSprites12[] = {
 	{sMachampGfx12, ARRAY_COUNT(sMachampGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx13[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_13.4bpp");
+static const u8 sMachampGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_13.4bpp.lz");
 static const ax_sprite sMachampSprites13[] = {
 	{sMachampGfx13, ARRAY_COUNT(sMachampGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx14[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_14.4bpp");
+static const u8 sMachampGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_14.4bpp.lz");
 static const ax_sprite sMachampSprites14[] = {
 	{sMachampGfx14, ARRAY_COUNT(sMachampGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx15[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_15.4bpp");
+static const u8 sMachampGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_15.4bpp.lz");
 static const ax_sprite sMachampSprites15[] = {
 	{sMachampGfx15, ARRAY_COUNT(sMachampGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx16[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_16.4bpp");
-static const u8 sMachampGfx16_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_16_1.4bpp");
-static const u8 sMachampGfx16_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_16_2.4bpp");
-static const u8 sMachampGfx16_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_16_3.4bpp");
+static const u8 sMachampGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_16.4bpp.lz");
+static const u8 sMachampGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_16_1.4bpp.lz");
+static const u8 sMachampGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_16_2.4bpp.lz");
+static const u8 sMachampGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_16_3.4bpp.lz");
 static const ax_sprite sMachampSprites16[] = {
 	{NULL, 32}, 
 	{sMachampGfx16, ARRAY_COUNT(sMachampGfx16)}, 
@@ -2228,10 +2228,10 @@ static const ax_sprite sMachampSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx17[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_17.4bpp");
-static const u8 sMachampGfx17_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_17_1.4bpp");
-static const u8 sMachampGfx17_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_17_2.4bpp");
-static const u8 sMachampGfx17_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_17_3.4bpp");
+static const u8 sMachampGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_17.4bpp.lz");
+static const u8 sMachampGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_17_1.4bpp.lz");
+static const u8 sMachampGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_17_2.4bpp.lz");
+static const u8 sMachampGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_17_3.4bpp.lz");
 static const ax_sprite sMachampSprites17[] = {
 	{sMachampGfx17, ARRAY_COUNT(sMachampGfx17)}, 
 	{NULL, 64}, 
@@ -2243,10 +2243,10 @@ static const ax_sprite sMachampSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx18[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_18.4bpp");
-static const u8 sMachampGfx18_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_18_1.4bpp");
-static const u8 sMachampGfx18_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_18_2.4bpp");
-static const u8 sMachampGfx18_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_18_3.4bpp");
+static const u8 sMachampGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_18.4bpp.lz");
+static const u8 sMachampGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_18_1.4bpp.lz");
+static const u8 sMachampGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_18_2.4bpp.lz");
+static const u8 sMachampGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_18_3.4bpp.lz");
 static const ax_sprite sMachampSprites18[] = {
 	{sMachampGfx18, ARRAY_COUNT(sMachampGfx18)}, 
 	{NULL, 32}, 
@@ -2258,10 +2258,10 @@ static const ax_sprite sMachampSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx19[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_19.4bpp");
-static const u8 sMachampGfx19_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_19_1.4bpp");
-static const u8 sMachampGfx19_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_19_2.4bpp");
-static const u8 sMachampGfx19_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_19_3.4bpp");
+static const u8 sMachampGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_19.4bpp.lz");
+static const u8 sMachampGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_19_1.4bpp.lz");
+static const u8 sMachampGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_19_2.4bpp.lz");
+static const u8 sMachampGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_19_3.4bpp.lz");
 static const ax_sprite sMachampSprites19[] = {
 	{sMachampGfx19, ARRAY_COUNT(sMachampGfx19)}, 
 	{NULL, 32}, 
@@ -2273,13 +2273,13 @@ static const ax_sprite sMachampSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx20[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_20.4bpp");
+static const u8 sMachampGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_20.4bpp.lz");
 static const ax_sprite sMachampSprites20[] = {
 	{sMachampGfx20, ARRAY_COUNT(sMachampGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx21[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_21.4bpp");
-static const u8 sMachampGfx21_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_21_1.4bpp");
+static const u8 sMachampGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_21.4bpp.lz");
+static const u8 sMachampGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_21_1.4bpp.lz");
 static const ax_sprite sMachampSprites21[] = {
 	{sMachampGfx21, ARRAY_COUNT(sMachampGfx21)}, 
 	{NULL, 32}, 
@@ -2287,9 +2287,9 @@ static const ax_sprite sMachampSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx22[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_22.4bpp");
-static const u8 sMachampGfx22_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_22_1.4bpp");
-static const u8 sMachampGfx22_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_22_2.4bpp");
+static const u8 sMachampGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_22.4bpp.lz");
+static const u8 sMachampGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_22_1.4bpp.lz");
+static const u8 sMachampGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_22_2.4bpp.lz");
 static const ax_sprite sMachampSprites22[] = {
 	{sMachampGfx22, ARRAY_COUNT(sMachampGfx22)}, 
 	{NULL, 32}, 
@@ -2299,9 +2299,9 @@ static const ax_sprite sMachampSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx23[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_23.4bpp");
-static const u8 sMachampGfx23_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_23_1.4bpp");
-static const u8 sMachampGfx23_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_23_2.4bpp");
+static const u8 sMachampGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_23.4bpp.lz");
+static const u8 sMachampGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_23_1.4bpp.lz");
+static const u8 sMachampGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_23_2.4bpp.lz");
 static const ax_sprite sMachampSprites23[] = {
 	{sMachampGfx23, ARRAY_COUNT(sMachampGfx23)}, 
 	{NULL, 64}, 
@@ -2311,15 +2311,15 @@ static const ax_sprite sMachampSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx24[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_24.4bpp");
+static const u8 sMachampGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_24.4bpp.lz");
 static const ax_sprite sMachampSprites24[] = {
 	{NULL, 32}, 
 	{sMachampGfx24, ARRAY_COUNT(sMachampGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx25[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_25.4bpp");
-static const u8 sMachampGfx25_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_25_1.4bpp");
-static const u8 sMachampGfx25_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_25_2.4bpp");
+static const u8 sMachampGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_25.4bpp.lz");
+static const u8 sMachampGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_25_1.4bpp.lz");
+static const u8 sMachampGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_25_2.4bpp.lz");
 static const ax_sprite sMachampSprites25[] = {
 	{sMachampGfx25, ARRAY_COUNT(sMachampGfx25)}, 
 	{NULL, 32}, 
@@ -2329,8 +2329,8 @@ static const ax_sprite sMachampSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx26[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_26.4bpp");
-static const u8 sMachampGfx26_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_26_1.4bpp");
+static const u8 sMachampGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_26.4bpp.lz");
+static const u8 sMachampGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_26_1.4bpp.lz");
 static const ax_sprite sMachampSprites26[] = {
 	{sMachampGfx26, ARRAY_COUNT(sMachampGfx26)}, 
 	{NULL, 32}, 
@@ -2338,10 +2338,10 @@ static const ax_sprite sMachampSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx27[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_27.4bpp");
-static const u8 sMachampGfx27_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_27_1.4bpp");
-static const u8 sMachampGfx27_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_27_2.4bpp");
-static const u8 sMachampGfx27_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_27_3.4bpp");
+static const u8 sMachampGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_27.4bpp.lz");
+static const u8 sMachampGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_27_1.4bpp.lz");
+static const u8 sMachampGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_27_2.4bpp.lz");
+static const u8 sMachampGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_27_3.4bpp.lz");
 static const ax_sprite sMachampSprites27[] = {
 	{sMachampGfx27, ARRAY_COUNT(sMachampGfx27)}, 
 	{NULL, 64}, 
@@ -2353,15 +2353,15 @@ static const ax_sprite sMachampSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx28[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_28.4bpp");
+static const u8 sMachampGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_28.4bpp.lz");
 static const ax_sprite sMachampSprites28[] = {
 	{sMachampGfx28, ARRAY_COUNT(sMachampGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx29[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_29.4bpp");
-static const u8 sMachampGfx29_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_29_1.4bpp");
-static const u8 sMachampGfx29_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_29_2.4bpp");
-static const u8 sMachampGfx29_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_29_3.4bpp");
+static const u8 sMachampGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_29.4bpp.lz");
+static const u8 sMachampGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_29_1.4bpp.lz");
+static const u8 sMachampGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_29_2.4bpp.lz");
+static const u8 sMachampGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_29_3.4bpp.lz");
 static const ax_sprite sMachampSprites29[] = {
 	{sMachampGfx29, ARRAY_COUNT(sMachampGfx29)}, 
 	{NULL, 32}, 
@@ -2373,10 +2373,10 @@ static const ax_sprite sMachampSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx30[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_30.4bpp");
-static const u8 sMachampGfx30_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_30_1.4bpp");
-static const u8 sMachampGfx30_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_30_2.4bpp");
-static const u8 sMachampGfx30_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_30_3.4bpp");
+static const u8 sMachampGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_30.4bpp.lz");
+static const u8 sMachampGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_30_1.4bpp.lz");
+static const u8 sMachampGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_30_2.4bpp.lz");
+static const u8 sMachampGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_30_3.4bpp.lz");
 static const ax_sprite sMachampSprites30[] = {
 	{sMachampGfx30, ARRAY_COUNT(sMachampGfx30)}, 
 	{NULL, 32}, 
@@ -2388,15 +2388,15 @@ static const ax_sprite sMachampSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx31[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_31.4bpp");
+static const u8 sMachampGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_31.4bpp.lz");
 static const ax_sprite sMachampSprites31[] = {
 	{sMachampGfx31, ARRAY_COUNT(sMachampGfx31)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx32[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_32.4bpp");
-static const u8 sMachampGfx32_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_32_1.4bpp");
-static const u8 sMachampGfx32_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_32_2.4bpp");
+static const u8 sMachampGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_32.4bpp.lz");
+static const u8 sMachampGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_32_1.4bpp.lz");
+static const u8 sMachampGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_32_2.4bpp.lz");
 static const ax_sprite sMachampSprites32[] = {
 	{sMachampGfx32, ARRAY_COUNT(sMachampGfx32)}, 
 	{NULL, 32}, 
@@ -2405,10 +2405,10 @@ static const ax_sprite sMachampSprites32[] = {
 	{sMachampGfx32_2, ARRAY_COUNT(sMachampGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx33[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_33.4bpp");
-static const u8 sMachampGfx33_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_33_1.4bpp");
-static const u8 sMachampGfx33_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_33_2.4bpp");
-static const u8 sMachampGfx33_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_33_3.4bpp");
+static const u8 sMachampGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_33.4bpp.lz");
+static const u8 sMachampGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_33_1.4bpp.lz");
+static const u8 sMachampGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_33_2.4bpp.lz");
+static const u8 sMachampGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_33_3.4bpp.lz");
 static const ax_sprite sMachampSprites33[] = {
 	{sMachampGfx33, ARRAY_COUNT(sMachampGfx33)}, 
 	{NULL, 32}, 
@@ -2420,31 +2420,31 @@ static const ax_sprite sMachampSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx34[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_34.4bpp");
+static const u8 sMachampGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_34.4bpp.lz");
 static const ax_sprite sMachampSprites34[] = {
 	{sMachampGfx34, ARRAY_COUNT(sMachampGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx35[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_35.4bpp");
+static const u8 sMachampGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_35.4bpp.lz");
 static const ax_sprite sMachampSprites35[] = {
 	{sMachampGfx35, ARRAY_COUNT(sMachampGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx36[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_36.4bpp");
+static const u8 sMachampGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_36.4bpp.lz");
 static const ax_sprite sMachampSprites36[] = {
 	{sMachampGfx36, ARRAY_COUNT(sMachampGfx36)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx37[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_37.4bpp");
+static const u8 sMachampGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_37.4bpp.lz");
 static const ax_sprite sMachampSprites37[] = {
 	{sMachampGfx37, ARRAY_COUNT(sMachampGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx38[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_38.4bpp");
-static const u8 sMachampGfx38_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_38_1.4bpp");
-static const u8 sMachampGfx38_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_38_2.4bpp");
-static const u8 sMachampGfx38_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_38_3.4bpp");
+static const u8 sMachampGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_38.4bpp.lz");
+static const u8 sMachampGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_38_1.4bpp.lz");
+static const u8 sMachampGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_38_2.4bpp.lz");
+static const u8 sMachampGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_38_3.4bpp.lz");
 static const ax_sprite sMachampSprites38[] = {
 	{sMachampGfx38, ARRAY_COUNT(sMachampGfx38)}, 
 	{NULL, 64}, 
@@ -2456,22 +2456,22 @@ static const ax_sprite sMachampSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx39[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_39.4bpp");
-static const u8 sMachampGfx39_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_39_1.4bpp");
+static const u8 sMachampGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_39.4bpp.lz");
+static const u8 sMachampGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_39_1.4bpp.lz");
 static const ax_sprite sMachampSprites39[] = {
 	{sMachampGfx39, ARRAY_COUNT(sMachampGfx39)}, 
 	{NULL, 64}, 
 	{sMachampGfx39_1, ARRAY_COUNT(sMachampGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx40[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_40.4bpp");
+static const u8 sMachampGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_40.4bpp.lz");
 static const ax_sprite sMachampSprites40[] = {
 	{sMachampGfx40, ARRAY_COUNT(sMachampGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx41[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_41.4bpp");
-static const u8 sMachampGfx41_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_41_1.4bpp");
-static const u8 sMachampGfx41_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_41_2.4bpp");
+static const u8 sMachampGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_41.4bpp.lz");
+static const u8 sMachampGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_41_1.4bpp.lz");
+static const u8 sMachampGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_41_2.4bpp.lz");
 static const ax_sprite sMachampSprites41[] = {
 	{sMachampGfx41, ARRAY_COUNT(sMachampGfx41)}, 
 	{NULL, 32}, 
@@ -2481,9 +2481,9 @@ static const ax_sprite sMachampSprites41[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx42[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_42.4bpp");
-static const u8 sMachampGfx42_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_42_1.4bpp");
-static const u8 sMachampGfx42_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_42_2.4bpp");
+static const u8 sMachampGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_42.4bpp.lz");
+static const u8 sMachampGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_42_1.4bpp.lz");
+static const u8 sMachampGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_42_2.4bpp.lz");
 static const ax_sprite sMachampSprites42[] = {
 	{NULL, 32}, 
 	{sMachampGfx42, ARRAY_COUNT(sMachampGfx42)}, 
@@ -2493,13 +2493,13 @@ static const ax_sprite sMachampSprites42[] = {
 	{sMachampGfx42_2, ARRAY_COUNT(sMachampGfx42_2)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx43[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_43.4bpp");
+static const u8 sMachampGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_43.4bpp.lz");
 static const ax_sprite sMachampSprites43[] = {
 	{sMachampGfx43, ARRAY_COUNT(sMachampGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx44[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_44.4bpp");
-static const u8 sMachampGfx44_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_44_1.4bpp");
+static const u8 sMachampGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_44.4bpp.lz");
+static const u8 sMachampGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_44_1.4bpp.lz");
 static const ax_sprite sMachampSprites44[] = {
 	{NULL, 32}, 
 	{sMachampGfx44, ARRAY_COUNT(sMachampGfx44)}, 
@@ -2507,28 +2507,28 @@ static const ax_sprite sMachampSprites44[] = {
 	{sMachampGfx44_1, ARRAY_COUNT(sMachampGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx45[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_45.4bpp");
+static const u8 sMachampGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_45.4bpp.lz");
 static const ax_sprite sMachampSprites45[] = {
 	{sMachampGfx45, ARRAY_COUNT(sMachampGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx46[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_46.4bpp");
+static const u8 sMachampGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_46.4bpp.lz");
 static const ax_sprite sMachampSprites46[] = {
 	{NULL, 32}, 
 	{sMachampGfx46, ARRAY_COUNT(sMachampGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx47[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_47.4bpp");
+static const u8 sMachampGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_47.4bpp.lz");
 static const ax_sprite sMachampSprites47[] = {
 	{NULL, 32}, 
 	{sMachampGfx47, ARRAY_COUNT(sMachampGfx47)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx48[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_48.4bpp");
-static const u8 sMachampGfx48_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_48_1.4bpp");
-static const u8 sMachampGfx48_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_48_2.4bpp");
-static const u8 sMachampGfx48_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_48_3.4bpp");
+static const u8 sMachampGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_48.4bpp.lz");
+static const u8 sMachampGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_48_1.4bpp.lz");
+static const u8 sMachampGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_48_2.4bpp.lz");
+static const u8 sMachampGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_48_3.4bpp.lz");
 static const ax_sprite sMachampSprites48[] = {
 	{sMachampGfx48, ARRAY_COUNT(sMachampGfx48)}, 
 	{NULL, 32}, 
@@ -2540,14 +2540,14 @@ static const ax_sprite sMachampSprites48[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx49[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_49.4bpp");
+static const u8 sMachampGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_49.4bpp.lz");
 static const ax_sprite sMachampSprites49[] = {
 	{sMachampGfx49, ARRAY_COUNT(sMachampGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx50[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_50.4bpp");
-static const u8 sMachampGfx50_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_50_1.4bpp");
-static const u8 sMachampGfx50_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_50_2.4bpp");
+static const u8 sMachampGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_50.4bpp.lz");
+static const u8 sMachampGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_50_1.4bpp.lz");
+static const u8 sMachampGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_50_2.4bpp.lz");
 static const ax_sprite sMachampSprites50[] = {
 	{sMachampGfx50, ARRAY_COUNT(sMachampGfx50)}, 
 	{NULL, 32}, 
@@ -2556,9 +2556,9 @@ static const ax_sprite sMachampSprites50[] = {
 	{sMachampGfx50_2, ARRAY_COUNT(sMachampGfx50_2)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx51[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_51.4bpp");
-static const u8 sMachampGfx51_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_51_1.4bpp");
-static const u8 sMachampGfx51_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_51_2.4bpp");
+static const u8 sMachampGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_51.4bpp.lz");
+static const u8 sMachampGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_51_1.4bpp.lz");
+static const u8 sMachampGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_51_2.4bpp.lz");
 static const ax_sprite sMachampSprites51[] = {
 	{sMachampGfx51, ARRAY_COUNT(sMachampGfx51)}, 
 	{NULL, 32}, 
@@ -2568,21 +2568,21 @@ static const ax_sprite sMachampSprites51[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx52[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_52.4bpp");
+static const u8 sMachampGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_52.4bpp.lz");
 static const ax_sprite sMachampSprites52[] = {
 	{sMachampGfx52, ARRAY_COUNT(sMachampGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx53[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_53.4bpp");
+static const u8 sMachampGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_53.4bpp.lz");
 static const ax_sprite sMachampSprites53[] = {
 	{sMachampGfx53, ARRAY_COUNT(sMachampGfx53)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx54[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_54.4bpp");
-static const u8 sMachampGfx54_1[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_54_1.4bpp");
-static const u8 sMachampGfx54_2[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_54_2.4bpp");
-static const u8 sMachampGfx54_3[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_54_3.4bpp");
+static const u8 sMachampGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_54.4bpp.lz");
+static const u8 sMachampGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_54_1.4bpp.lz");
+static const u8 sMachampGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_54_2.4bpp.lz");
+static const u8 sMachampGfx54_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_54_3.4bpp.lz");
 static const ax_sprite sMachampSprites54[] = {
 	{sMachampGfx54, ARRAY_COUNT(sMachampGfx54)}, 
 	{NULL, 64}, 
@@ -2594,37 +2594,37 @@ static const ax_sprite sMachampSprites54[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx55[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_55.4bpp");
+static const u8 sMachampGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_55.4bpp.lz");
 static const ax_sprite sMachampSprites55[] = {
 	{sMachampGfx55, ARRAY_COUNT(sMachampGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx56[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_56.4bpp");
+static const u8 sMachampGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_56.4bpp.lz");
 static const ax_sprite sMachampSprites56[] = {
 	{sMachampGfx56, ARRAY_COUNT(sMachampGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx57[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_57.4bpp");
+static const u8 sMachampGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_57.4bpp.lz");
 static const ax_sprite sMachampSprites57[] = {
 	{sMachampGfx57, ARRAY_COUNT(sMachampGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx58[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_58.4bpp");
+static const u8 sMachampGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_58.4bpp.lz");
 static const ax_sprite sMachampSprites58[] = {
 	{sMachampGfx58, ARRAY_COUNT(sMachampGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx59[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_59.4bpp");
+static const u8 sMachampGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_59.4bpp.lz");
 static const ax_sprite sMachampSprites59[] = {
 	{sMachampGfx59, ARRAY_COUNT(sMachampGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx60[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_60.4bpp");
+static const u8 sMachampGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_60.4bpp.lz");
 static const ax_sprite sMachampSprites60[] = {
 	{sMachampGfx60, ARRAY_COUNT(sMachampGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sMachampGfx61[] = INCBIN_U8("graphics/ax/mon/machamp/sprite_61.4bpp");
+static const u8 sMachampGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machamp/sprite_61.4bpp.lz");
 static const ax_sprite sMachampSprites61[] = {
 	{sMachampGfx61, ARRAY_COUNT(sMachampGfx61)}, 
 	{NULL, 0}

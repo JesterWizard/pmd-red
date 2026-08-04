@@ -2323,91 +2323,91 @@ static const ax_anim sVenomothAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVenomothGfx1[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_1.4bpp");
+static const u8 sVenomothGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_1.4bpp.lz");
 static const ax_sprite sVenomothSprites1[] = {
 	{sVenomothGfx1, ARRAY_COUNT(sVenomothGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx2[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_2.4bpp");
+static const u8 sVenomothGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_2.4bpp.lz");
 static const ax_sprite sVenomothSprites2[] = {
 	{sVenomothGfx2, ARRAY_COUNT(sVenomothGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx3[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_3.4bpp");
+static const u8 sVenomothGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_3.4bpp.lz");
 static const ax_sprite sVenomothSprites3[] = {
 	{sVenomothGfx3, ARRAY_COUNT(sVenomothGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx4[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_4.4bpp");
+static const u8 sVenomothGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_4.4bpp.lz");
 static const ax_sprite sVenomothSprites4[] = {
 	{sVenomothGfx4, ARRAY_COUNT(sVenomothGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx5[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_5.4bpp");
+static const u8 sVenomothGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_5.4bpp.lz");
 static const ax_sprite sVenomothSprites5[] = {
 	{sVenomothGfx5, ARRAY_COUNT(sVenomothGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx6[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_6.4bpp");
+static const u8 sVenomothGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_6.4bpp.lz");
 static const ax_sprite sVenomothSprites6[] = {
 	{sVenomothGfx6, ARRAY_COUNT(sVenomothGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx7[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_7.4bpp");
+static const u8 sVenomothGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_7.4bpp.lz");
 static const ax_sprite sVenomothSprites7[] = {
 	{sVenomothGfx7, ARRAY_COUNT(sVenomothGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx8[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_8.4bpp");
+static const u8 sVenomothGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_8.4bpp.lz");
 static const ax_sprite sVenomothSprites8[] = {
 	{sVenomothGfx8, ARRAY_COUNT(sVenomothGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx9[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_9.4bpp");
+static const u8 sVenomothGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_9.4bpp.lz");
 static const ax_sprite sVenomothSprites9[] = {
 	{sVenomothGfx9, ARRAY_COUNT(sVenomothGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx10[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_10.4bpp");
+static const u8 sVenomothGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_10.4bpp.lz");
 static const ax_sprite sVenomothSprites10[] = {
 	{sVenomothGfx10, ARRAY_COUNT(sVenomothGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx11[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_11.4bpp");
+static const u8 sVenomothGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_11.4bpp.lz");
 static const ax_sprite sVenomothSprites11[] = {
 	{sVenomothGfx11, ARRAY_COUNT(sVenomothGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx12[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_12.4bpp");
+static const u8 sVenomothGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_12.4bpp.lz");
 static const ax_sprite sVenomothSprites12[] = {
 	{sVenomothGfx12, ARRAY_COUNT(sVenomothGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx13[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_13.4bpp");
+static const u8 sVenomothGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_13.4bpp.lz");
 static const ax_sprite sVenomothSprites13[] = {
 	{sVenomothGfx13, ARRAY_COUNT(sVenomothGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx14[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_14.4bpp");
+static const u8 sVenomothGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_14.4bpp.lz");
 static const ax_sprite sVenomothSprites14[] = {
 	{sVenomothGfx14, ARRAY_COUNT(sVenomothGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx15[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_15.4bpp");
+static const u8 sVenomothGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_15.4bpp.lz");
 static const ax_sprite sVenomothSprites15[] = {
 	{sVenomothGfx15, ARRAY_COUNT(sVenomothGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx16[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_16.4bpp");
+static const u8 sVenomothGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_16.4bpp.lz");
 static const ax_sprite sVenomothSprites16[] = {
 	{sVenomothGfx16, ARRAY_COUNT(sVenomothGfx16)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx17[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_17.4bpp");
-static const u8 sVenomothGfx17_1[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_17_1.4bpp");
-static const u8 sVenomothGfx17_2[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_17_2.4bpp");
-static const u8 sVenomothGfx17_3[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_17_3.4bpp");
+static const u8 sVenomothGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_17.4bpp.lz");
+static const u8 sVenomothGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_17_1.4bpp.lz");
+static const u8 sVenomothGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_17_2.4bpp.lz");
+static const u8 sVenomothGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_17_3.4bpp.lz");
 static const ax_sprite sVenomothSprites17[] = {
 	{sVenomothGfx17, ARRAY_COUNT(sVenomothGfx17)}, 
 	{NULL, 96}, 
@@ -2419,10 +2419,10 @@ static const ax_sprite sVenomothSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx18[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_18.4bpp");
-static const u8 sVenomothGfx18_1[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_18_1.4bpp");
-static const u8 sVenomothGfx18_2[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_18_2.4bpp");
-static const u8 sVenomothGfx18_3[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_18_3.4bpp");
+static const u8 sVenomothGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_18.4bpp.lz");
+static const u8 sVenomothGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_18_1.4bpp.lz");
+static const u8 sVenomothGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_18_2.4bpp.lz");
+static const u8 sVenomothGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_18_3.4bpp.lz");
 static const ax_sprite sVenomothSprites18[] = {
 	{sVenomothGfx18, ARRAY_COUNT(sVenomothGfx18)}, 
 	{NULL, 64}, 
@@ -2434,10 +2434,10 @@ static const ax_sprite sVenomothSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx19[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_19.4bpp");
-static const u8 sVenomothGfx19_1[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_19_1.4bpp");
-static const u8 sVenomothGfx19_2[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_19_2.4bpp");
-static const u8 sVenomothGfx19_3[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_19_3.4bpp");
+static const u8 sVenomothGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_19.4bpp.lz");
+static const u8 sVenomothGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_19_1.4bpp.lz");
+static const u8 sVenomothGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_19_2.4bpp.lz");
+static const u8 sVenomothGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_19_3.4bpp.lz");
 static const ax_sprite sVenomothSprites19[] = {
 	{sVenomothGfx19, ARRAY_COUNT(sVenomothGfx19)}, 
 	{NULL, 32}, 
@@ -2449,9 +2449,9 @@ static const ax_sprite sVenomothSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx20[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_20.4bpp");
-static const u8 sVenomothGfx20_1[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_20_1.4bpp");
-static const u8 sVenomothGfx20_2[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_20_2.4bpp");
+static const u8 sVenomothGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_20.4bpp.lz");
+static const u8 sVenomothGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_20_1.4bpp.lz");
+static const u8 sVenomothGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_20_2.4bpp.lz");
 static const ax_sprite sVenomothSprites20[] = {
 	{sVenomothGfx20, ARRAY_COUNT(sVenomothGfx20)}, 
 	{NULL, 32}, 
@@ -2461,37 +2461,37 @@ static const ax_sprite sVenomothSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx21[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_21.4bpp");
+static const u8 sVenomothGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_21.4bpp.lz");
 static const ax_sprite sVenomothSprites21[] = {
 	{sVenomothGfx21, ARRAY_COUNT(sVenomothGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx22[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_22.4bpp");
+static const u8 sVenomothGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_22.4bpp.lz");
 static const ax_sprite sVenomothSprites22[] = {
 	{sVenomothGfx22, ARRAY_COUNT(sVenomothGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx23[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_23.4bpp");
+static const u8 sVenomothGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_23.4bpp.lz");
 static const ax_sprite sVenomothSprites23[] = {
 	{sVenomothGfx23, ARRAY_COUNT(sVenomothGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx24[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_24.4bpp");
+static const u8 sVenomothGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_24.4bpp.lz");
 static const ax_sprite sVenomothSprites24[] = {
 	{sVenomothGfx24, ARRAY_COUNT(sVenomothGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx25[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_25.4bpp");
+static const u8 sVenomothGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_25.4bpp.lz");
 static const ax_sprite sVenomothSprites25[] = {
 	{sVenomothGfx25, ARRAY_COUNT(sVenomothGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx26[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_26.4bpp");
+static const u8 sVenomothGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_26.4bpp.lz");
 static const ax_sprite sVenomothSprites26[] = {
 	{sVenomothGfx26, ARRAY_COUNT(sVenomothGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sVenomothGfx27[] = INCBIN_U8("graphics/ax/mon/venomoth/sprite_27.4bpp");
+static const u8 sVenomothGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venomoth/sprite_27.4bpp.lz");
 static const ax_sprite sVenomothSprites27[] = {
 	{sVenomothGfx27, ARRAY_COUNT(sVenomothGfx27)}, 
 	{NULL, 0}

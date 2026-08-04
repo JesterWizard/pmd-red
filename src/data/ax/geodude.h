@@ -2043,96 +2043,96 @@ static const ax_anim sGeodudeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGeodudeGfx1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_1.4bpp");
+static const u8 sGeodudeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_1.4bpp.lz");
 static const ax_sprite sGeodudeSprites1[] = {
 	{sGeodudeGfx1, ARRAY_COUNT(sGeodudeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_2.4bpp");
+static const u8 sGeodudeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_2.4bpp.lz");
 static const ax_sprite sGeodudeSprites2[] = {
 	{sGeodudeGfx2, ARRAY_COUNT(sGeodudeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_3.4bpp");
+static const u8 sGeodudeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites3[] = {
 	{sGeodudeGfx3, ARRAY_COUNT(sGeodudeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx4[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_4.4bpp");
+static const u8 sGeodudeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_4.4bpp.lz");
 static const ax_sprite sGeodudeSprites4[] = {
 	{sGeodudeGfx4, ARRAY_COUNT(sGeodudeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx5[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_5.4bpp");
+static const u8 sGeodudeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_5.4bpp.lz");
 static const ax_sprite sGeodudeSprites5[] = {
 	{sGeodudeGfx5, ARRAY_COUNT(sGeodudeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx6[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_6.4bpp");
+static const u8 sGeodudeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_6.4bpp.lz");
 static const ax_sprite sGeodudeSprites6[] = {
 	{sGeodudeGfx6, ARRAY_COUNT(sGeodudeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx7[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_7.4bpp");
+static const u8 sGeodudeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_7.4bpp.lz");
 static const ax_sprite sGeodudeSprites7[] = {
 	{sGeodudeGfx7, ARRAY_COUNT(sGeodudeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx8[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_8.4bpp");
+static const u8 sGeodudeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_8.4bpp.lz");
 static const ax_sprite sGeodudeSprites8[] = {
 	{sGeodudeGfx8, ARRAY_COUNT(sGeodudeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx9[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_9.4bpp");
+static const u8 sGeodudeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_9.4bpp.lz");
 static const ax_sprite sGeodudeSprites9[] = {
 	{sGeodudeGfx9, ARRAY_COUNT(sGeodudeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx10[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_10.4bpp");
+static const u8 sGeodudeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_10.4bpp.lz");
 static const ax_sprite sGeodudeSprites10[] = {
 	{sGeodudeGfx10, ARRAY_COUNT(sGeodudeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx11[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_11.4bpp");
+static const u8 sGeodudeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_11.4bpp.lz");
 static const ax_sprite sGeodudeSprites11[] = {
 	{sGeodudeGfx11, ARRAY_COUNT(sGeodudeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx12[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_12.4bpp");
+static const u8 sGeodudeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_12.4bpp.lz");
 static const ax_sprite sGeodudeSprites12[] = {
 	{sGeodudeGfx12, ARRAY_COUNT(sGeodudeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx13[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_13.4bpp");
+static const u8 sGeodudeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_13.4bpp.lz");
 static const ax_sprite sGeodudeSprites13[] = {
 	{sGeodudeGfx13, ARRAY_COUNT(sGeodudeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx14[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_14.4bpp");
+static const u8 sGeodudeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_14.4bpp.lz");
 static const ax_sprite sGeodudeSprites14[] = {
 	{sGeodudeGfx14, ARRAY_COUNT(sGeodudeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx15[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_15.4bpp");
+static const u8 sGeodudeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_15.4bpp.lz");
 static const ax_sprite sGeodudeSprites15[] = {
 	{sGeodudeGfx15, ARRAY_COUNT(sGeodudeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx16[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_16.4bpp");
+static const u8 sGeodudeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_16.4bpp.lz");
 static const ax_sprite sGeodudeSprites16[] = {
 	{sGeodudeGfx16, ARRAY_COUNT(sGeodudeGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx17[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_17.4bpp");
+static const u8 sGeodudeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_17.4bpp.lz");
 static const ax_sprite sGeodudeSprites17[] = {
 	{sGeodudeGfx17, ARRAY_COUNT(sGeodudeGfx17)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx18[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_18.4bpp");
-static const u8 sGeodudeGfx18_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_18_1.4bpp");
-static const u8 sGeodudeGfx18_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_18_2.4bpp");
-static const u8 sGeodudeGfx18_3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_18_3.4bpp");
+static const u8 sGeodudeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_18.4bpp.lz");
+static const u8 sGeodudeGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_18_1.4bpp.lz");
+static const u8 sGeodudeGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_18_2.4bpp.lz");
+static const u8 sGeodudeGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_18_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites18[] = {
 	{NULL, 32}, 
 	{sGeodudeGfx18, ARRAY_COUNT(sGeodudeGfx18)}, 
@@ -2145,15 +2145,15 @@ static const ax_sprite sGeodudeSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx19[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_19.4bpp");
+static const u8 sGeodudeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_19.4bpp.lz");
 static const ax_sprite sGeodudeSprites19[] = {
 	{sGeodudeGfx19, ARRAY_COUNT(sGeodudeGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx20[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_20.4bpp");
-static const u8 sGeodudeGfx20_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_20_1.4bpp");
-static const u8 sGeodudeGfx20_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_20_2.4bpp");
-static const u8 sGeodudeGfx20_3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_20_3.4bpp");
+static const u8 sGeodudeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_20.4bpp.lz");
+static const u8 sGeodudeGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_20_1.4bpp.lz");
+static const u8 sGeodudeGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_20_2.4bpp.lz");
+static const u8 sGeodudeGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_20_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites20[] = {
 	{NULL, 64}, 
 	{sGeodudeGfx20, ARRAY_COUNT(sGeodudeGfx20)}, 
@@ -2166,9 +2166,9 @@ static const ax_sprite sGeodudeSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx21[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_21.4bpp");
-static const u8 sGeodudeGfx21_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_21_1.4bpp");
-static const u8 sGeodudeGfx21_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_21_2.4bpp");
+static const u8 sGeodudeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_21.4bpp.lz");
+static const u8 sGeodudeGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_21_1.4bpp.lz");
+static const u8 sGeodudeGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_21_2.4bpp.lz");
 static const ax_sprite sGeodudeSprites21[] = {
 	{sGeodudeGfx21, ARRAY_COUNT(sGeodudeGfx21)}, 
 	{NULL, 32}, 
@@ -2178,10 +2178,10 @@ static const ax_sprite sGeodudeSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx22[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_22.4bpp");
-static const u8 sGeodudeGfx22_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_22_1.4bpp");
-static const u8 sGeodudeGfx22_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_22_2.4bpp");
-static const u8 sGeodudeGfx22_3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_22_3.4bpp");
+static const u8 sGeodudeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_22.4bpp.lz");
+static const u8 sGeodudeGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_22_1.4bpp.lz");
+static const u8 sGeodudeGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_22_2.4bpp.lz");
+static const u8 sGeodudeGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_22_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites22[] = {
 	{NULL, 32}, 
 	{sGeodudeGfx22, ARRAY_COUNT(sGeodudeGfx22)}, 
@@ -2194,10 +2194,10 @@ static const ax_sprite sGeodudeSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx23[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_23.4bpp");
-static const u8 sGeodudeGfx23_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_23_1.4bpp");
-static const u8 sGeodudeGfx23_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_23_2.4bpp");
-static const u8 sGeodudeGfx23_3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_23_3.4bpp");
+static const u8 sGeodudeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_23.4bpp.lz");
+static const u8 sGeodudeGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_23_1.4bpp.lz");
+static const u8 sGeodudeGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_23_2.4bpp.lz");
+static const u8 sGeodudeGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_23_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites23[] = {
 	{NULL, 32}, 
 	{sGeodudeGfx23, ARRAY_COUNT(sGeodudeGfx23)}, 
@@ -2210,8 +2210,8 @@ static const ax_sprite sGeodudeSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx24[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_24.4bpp");
-static const u8 sGeodudeGfx24_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_24_1.4bpp");
+static const u8 sGeodudeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_24.4bpp.lz");
+static const u8 sGeodudeGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_24_1.4bpp.lz");
 static const ax_sprite sGeodudeSprites24[] = {
 	{NULL, 160}, 
 	{sGeodudeGfx24, ARRAY_COUNT(sGeodudeGfx24)}, 
@@ -2220,9 +2220,9 @@ static const ax_sprite sGeodudeSprites24[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx25[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_25.4bpp");
-static const u8 sGeodudeGfx25_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_25_1.4bpp");
-static const u8 sGeodudeGfx25_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_25_2.4bpp");
+static const u8 sGeodudeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_25.4bpp.lz");
+static const u8 sGeodudeGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_25_1.4bpp.lz");
+static const u8 sGeodudeGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_25_2.4bpp.lz");
 static const ax_sprite sGeodudeSprites25[] = {
 	{sGeodudeGfx25, ARRAY_COUNT(sGeodudeGfx25)}, 
 	{NULL, 32}, 
@@ -2232,8 +2232,8 @@ static const ax_sprite sGeodudeSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx26[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_26.4bpp");
-static const u8 sGeodudeGfx26_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_26_1.4bpp");
+static const u8 sGeodudeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_26.4bpp.lz");
+static const u8 sGeodudeGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_26_1.4bpp.lz");
 static const ax_sprite sGeodudeSprites26[] = {
 	{NULL, 128}, 
 	{sGeodudeGfx26, ARRAY_COUNT(sGeodudeGfx26)}, 
@@ -2242,8 +2242,8 @@ static const ax_sprite sGeodudeSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx27[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_27.4bpp");
-static const u8 sGeodudeGfx27_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_27_1.4bpp");
+static const u8 sGeodudeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_27.4bpp.lz");
+static const u8 sGeodudeGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_27_1.4bpp.lz");
 static const ax_sprite sGeodudeSprites27[] = {
 	{sGeodudeGfx27, ARRAY_COUNT(sGeodudeGfx27)}, 
 	{NULL, 64}, 
@@ -2251,8 +2251,8 @@ static const ax_sprite sGeodudeSprites27[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx28[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_28.4bpp");
-static const u8 sGeodudeGfx28_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_28_1.4bpp");
+static const u8 sGeodudeGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_28.4bpp.lz");
+static const u8 sGeodudeGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_28_1.4bpp.lz");
 static const ax_sprite sGeodudeSprites28[] = {
 	{NULL, 64}, 
 	{sGeodudeGfx28, ARRAY_COUNT(sGeodudeGfx28)}, 
@@ -2261,19 +2261,19 @@ static const ax_sprite sGeodudeSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx29[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_29.4bpp");
+static const u8 sGeodudeGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_29.4bpp.lz");
 static const ax_sprite sGeodudeSprites29[] = {
 	{sGeodudeGfx29, ARRAY_COUNT(sGeodudeGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx30[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_30.4bpp");
+static const u8 sGeodudeGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_30.4bpp.lz");
 static const ax_sprite sGeodudeSprites30[] = {
 	{sGeodudeGfx30, ARRAY_COUNT(sGeodudeGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx31[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_31.4bpp");
-static const u8 sGeodudeGfx31_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_31_1.4bpp");
-static const u8 sGeodudeGfx31_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_31_2.4bpp");
+static const u8 sGeodudeGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_31.4bpp.lz");
+static const u8 sGeodudeGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_31_1.4bpp.lz");
+static const u8 sGeodudeGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_31_2.4bpp.lz");
 static const ax_sprite sGeodudeSprites31[] = {
 	{NULL, 32}, 
 	{sGeodudeGfx31, ARRAY_COUNT(sGeodudeGfx31)}, 
@@ -2284,10 +2284,10 @@ static const ax_sprite sGeodudeSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx32[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_32.4bpp");
-static const u8 sGeodudeGfx32_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_32_1.4bpp");
-static const u8 sGeodudeGfx32_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_32_2.4bpp");
-static const u8 sGeodudeGfx32_3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_32_3.4bpp");
+static const u8 sGeodudeGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_32.4bpp.lz");
+static const u8 sGeodudeGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_32_1.4bpp.lz");
+static const u8 sGeodudeGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_32_2.4bpp.lz");
+static const u8 sGeodudeGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_32_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites32[] = {
 	{sGeodudeGfx32, ARRAY_COUNT(sGeodudeGfx32)}, 
 	{NULL, 64}, 
@@ -2298,9 +2298,9 @@ static const ax_sprite sGeodudeSprites32[] = {
 	{sGeodudeGfx32_3, ARRAY_COUNT(sGeodudeGfx32_3)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx33[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_33.4bpp");
-static const u8 sGeodudeGfx33_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_33_1.4bpp");
-static const u8 sGeodudeGfx33_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_33_2.4bpp");
+static const u8 sGeodudeGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_33.4bpp.lz");
+static const u8 sGeodudeGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_33_1.4bpp.lz");
+static const u8 sGeodudeGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_33_2.4bpp.lz");
 static const ax_sprite sGeodudeSprites33[] = {
 	{sGeodudeGfx33, ARRAY_COUNT(sGeodudeGfx33)}, 
 	{NULL, 96}, 
@@ -2309,10 +2309,10 @@ static const ax_sprite sGeodudeSprites33[] = {
 	{sGeodudeGfx33_2, ARRAY_COUNT(sGeodudeGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx34[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_34.4bpp");
-static const u8 sGeodudeGfx34_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_34_1.4bpp");
-static const u8 sGeodudeGfx34_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_34_2.4bpp");
-static const u8 sGeodudeGfx34_3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_34_3.4bpp");
+static const u8 sGeodudeGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_34.4bpp.lz");
+static const u8 sGeodudeGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_34_1.4bpp.lz");
+static const u8 sGeodudeGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_34_2.4bpp.lz");
+static const u8 sGeodudeGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_34_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites34[] = {
 	{sGeodudeGfx34, ARRAY_COUNT(sGeodudeGfx34)}, 
 	{NULL, 64}, 
@@ -2324,15 +2324,15 @@ static const ax_sprite sGeodudeSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx35[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_35.4bpp");
+static const u8 sGeodudeGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_35.4bpp.lz");
 static const ax_sprite sGeodudeSprites35[] = {
 	{sGeodudeGfx35, ARRAY_COUNT(sGeodudeGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx36[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_36.4bpp");
-static const u8 sGeodudeGfx36_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_36_1.4bpp");
-static const u8 sGeodudeGfx36_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_36_2.4bpp");
-static const u8 sGeodudeGfx36_3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_36_3.4bpp");
+static const u8 sGeodudeGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_36.4bpp.lz");
+static const u8 sGeodudeGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_36_1.4bpp.lz");
+static const u8 sGeodudeGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_36_2.4bpp.lz");
+static const u8 sGeodudeGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_36_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites36[] = {
 	{NULL, 32}, 
 	{sGeodudeGfx36, ARRAY_COUNT(sGeodudeGfx36)}, 
@@ -2344,9 +2344,9 @@ static const ax_sprite sGeodudeSprites36[] = {
 	{sGeodudeGfx36_3, ARRAY_COUNT(sGeodudeGfx36_3)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx37[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_37.4bpp");
-static const u8 sGeodudeGfx37_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_37_1.4bpp");
-static const u8 sGeodudeGfx37_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_37_2.4bpp");
+static const u8 sGeodudeGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_37.4bpp.lz");
+static const u8 sGeodudeGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_37_1.4bpp.lz");
+static const u8 sGeodudeGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_37_2.4bpp.lz");
 static const ax_sprite sGeodudeSprites37[] = {
 	{sGeodudeGfx37, ARRAY_COUNT(sGeodudeGfx37)}, 
 	{NULL, 32}, 
@@ -2355,10 +2355,10 @@ static const ax_sprite sGeodudeSprites37[] = {
 	{sGeodudeGfx37_2, ARRAY_COUNT(sGeodudeGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx38[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_38.4bpp");
-static const u8 sGeodudeGfx38_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_38_1.4bpp");
-static const u8 sGeodudeGfx38_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_38_2.4bpp");
-static const u8 sGeodudeGfx38_3[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_38_3.4bpp");
+static const u8 sGeodudeGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_38.4bpp.lz");
+static const u8 sGeodudeGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_38_1.4bpp.lz");
+static const u8 sGeodudeGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_38_2.4bpp.lz");
+static const u8 sGeodudeGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_38_3.4bpp.lz");
 static const ax_sprite sGeodudeSprites38[] = {
 	{NULL, 32}, 
 	{sGeodudeGfx38, ARRAY_COUNT(sGeodudeGfx38)}, 
@@ -2371,42 +2371,42 @@ static const ax_sprite sGeodudeSprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx39[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_39.4bpp");
+static const u8 sGeodudeGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_39.4bpp.lz");
 static const ax_sprite sGeodudeSprites39[] = {
 	{sGeodudeGfx39, ARRAY_COUNT(sGeodudeGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx40[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_40.4bpp");
+static const u8 sGeodudeGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_40.4bpp.lz");
 static const ax_sprite sGeodudeSprites40[] = {
 	{sGeodudeGfx40, ARRAY_COUNT(sGeodudeGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx41[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_41.4bpp");
+static const u8 sGeodudeGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_41.4bpp.lz");
 static const ax_sprite sGeodudeSprites41[] = {
 	{sGeodudeGfx41, ARRAY_COUNT(sGeodudeGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx42[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_42.4bpp");
-static const u8 sGeodudeGfx42_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_42_1.4bpp");
+static const u8 sGeodudeGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_42.4bpp.lz");
+static const u8 sGeodudeGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_42_1.4bpp.lz");
 static const ax_sprite sGeodudeSprites42[] = {
 	{sGeodudeGfx42, ARRAY_COUNT(sGeodudeGfx42)}, 
 	{NULL, 32}, 
 	{sGeodudeGfx42_1, ARRAY_COUNT(sGeodudeGfx42_1)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx43[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_43.4bpp");
+static const u8 sGeodudeGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_43.4bpp.lz");
 static const ax_sprite sGeodudeSprites43[] = {
 	{sGeodudeGfx43, ARRAY_COUNT(sGeodudeGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx44[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_44.4bpp");
+static const u8 sGeodudeGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_44.4bpp.lz");
 static const ax_sprite sGeodudeSprites44[] = {
 	{sGeodudeGfx44, ARRAY_COUNT(sGeodudeGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx45[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_45.4bpp");
-static const u8 sGeodudeGfx45_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_45_1.4bpp");
-static const u8 sGeodudeGfx45_2[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_45_2.4bpp");
+static const u8 sGeodudeGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_45.4bpp.lz");
+static const u8 sGeodudeGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_45_1.4bpp.lz");
+static const u8 sGeodudeGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_45_2.4bpp.lz");
 static const ax_sprite sGeodudeSprites45[] = {
 	{NULL, 160}, 
 	{sGeodudeGfx45, ARRAY_COUNT(sGeodudeGfx45)}, 
@@ -2416,15 +2416,15 @@ static const ax_sprite sGeodudeSprites45[] = {
 	{sGeodudeGfx45_2, ARRAY_COUNT(sGeodudeGfx45_2)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx46[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_46.4bpp");
+static const u8 sGeodudeGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_46.4bpp.lz");
 static const ax_sprite sGeodudeSprites46[] = {
 	{NULL, 160}, 
 	{sGeodudeGfx46, ARRAY_COUNT(sGeodudeGfx46)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx47[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_47.4bpp");
-static const u8 sGeodudeGfx47_1[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_47_1.4bpp");
+static const u8 sGeodudeGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_47.4bpp.lz");
+static const u8 sGeodudeGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_47_1.4bpp.lz");
 static const ax_sprite sGeodudeSprites47[] = {
 	{NULL, 32}, 
 	{sGeodudeGfx47, ARRAY_COUNT(sGeodudeGfx47)}, 
@@ -2432,52 +2432,52 @@ static const ax_sprite sGeodudeSprites47[] = {
 	{sGeodudeGfx47_1, ARRAY_COUNT(sGeodudeGfx47_1)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx48[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_48.4bpp");
+static const u8 sGeodudeGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_48.4bpp.lz");
 static const ax_sprite sGeodudeSprites48[] = {
 	{sGeodudeGfx48, ARRAY_COUNT(sGeodudeGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx49[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_49.4bpp");
+static const u8 sGeodudeGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_49.4bpp.lz");
 static const ax_sprite sGeodudeSprites49[] = {
 	{sGeodudeGfx49, ARRAY_COUNT(sGeodudeGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx50[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_50.4bpp");
+static const u8 sGeodudeGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_50.4bpp.lz");
 static const ax_sprite sGeodudeSprites50[] = {
 	{sGeodudeGfx50, ARRAY_COUNT(sGeodudeGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx51[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_51.4bpp");
+static const u8 sGeodudeGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_51.4bpp.lz");
 static const ax_sprite sGeodudeSprites51[] = {
 	{sGeodudeGfx51, ARRAY_COUNT(sGeodudeGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx52[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_52.4bpp");
+static const u8 sGeodudeGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_52.4bpp.lz");
 static const ax_sprite sGeodudeSprites52[] = {
 	{sGeodudeGfx52, ARRAY_COUNT(sGeodudeGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx53[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_53.4bpp");
+static const u8 sGeodudeGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_53.4bpp.lz");
 static const ax_sprite sGeodudeSprites53[] = {
 	{sGeodudeGfx53, ARRAY_COUNT(sGeodudeGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx54[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_54.4bpp");
+static const u8 sGeodudeGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_54.4bpp.lz");
 static const ax_sprite sGeodudeSprites54[] = {
 	{sGeodudeGfx54, ARRAY_COUNT(sGeodudeGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx55[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_55.4bpp");
+static const u8 sGeodudeGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_55.4bpp.lz");
 static const ax_sprite sGeodudeSprites55[] = {
 	{sGeodudeGfx55, ARRAY_COUNT(sGeodudeGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx56[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_56.4bpp");
+static const u8 sGeodudeGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_56.4bpp.lz");
 static const ax_sprite sGeodudeSprites56[] = {
 	{sGeodudeGfx56, ARRAY_COUNT(sGeodudeGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sGeodudeGfx57[] = INCBIN_U8("graphics/ax/mon/geodude/sprite_57.4bpp");
+static const u8 sGeodudeGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/geodude/sprite_57.4bpp.lz");
 static const ax_sprite sGeodudeSprites57[] = {
 	{sGeodudeGfx57, ARRAY_COUNT(sGeodudeGfx57)}, 
 	{NULL, 0}

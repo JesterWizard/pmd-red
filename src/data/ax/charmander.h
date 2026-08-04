@@ -3171,85 +3171,85 @@ static const ax_anim sCharmanderAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCharmanderGfx1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_1.4bpp");
+static const u8 sCharmanderGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_1.4bpp.lz");
 static const ax_sprite sCharmanderSprites1[] = {
 	{sCharmanderGfx1, ARRAY_COUNT(sCharmanderGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_2.4bpp");
+static const u8 sCharmanderGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites2[] = {
 	{sCharmanderGfx2, ARRAY_COUNT(sCharmanderGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx3[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_3.4bpp");
+static const u8 sCharmanderGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_3.4bpp.lz");
 static const ax_sprite sCharmanderSprites3[] = {
 	{sCharmanderGfx3, ARRAY_COUNT(sCharmanderGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx4[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_4.4bpp");
+static const u8 sCharmanderGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_4.4bpp.lz");
 static const ax_sprite sCharmanderSprites4[] = {
 	{sCharmanderGfx4, ARRAY_COUNT(sCharmanderGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx5[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_5.4bpp");
+static const u8 sCharmanderGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_5.4bpp.lz");
 static const ax_sprite sCharmanderSprites5[] = {
 	{sCharmanderGfx5, ARRAY_COUNT(sCharmanderGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx6[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_6.4bpp");
+static const u8 sCharmanderGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_6.4bpp.lz");
 static const ax_sprite sCharmanderSprites6[] = {
 	{sCharmanderGfx6, ARRAY_COUNT(sCharmanderGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx7[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_7.4bpp");
+static const u8 sCharmanderGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_7.4bpp.lz");
 static const ax_sprite sCharmanderSprites7[] = {
 	{sCharmanderGfx7, ARRAY_COUNT(sCharmanderGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx8[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_8.4bpp");
+static const u8 sCharmanderGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_8.4bpp.lz");
 static const ax_sprite sCharmanderSprites8[] = {
 	{sCharmanderGfx8, ARRAY_COUNT(sCharmanderGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx9[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_9.4bpp");
+static const u8 sCharmanderGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_9.4bpp.lz");
 static const ax_sprite sCharmanderSprites9[] = {
 	{sCharmanderGfx9, ARRAY_COUNT(sCharmanderGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx10[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_10.4bpp");
+static const u8 sCharmanderGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_10.4bpp.lz");
 static const ax_sprite sCharmanderSprites10[] = {
 	{sCharmanderGfx10, ARRAY_COUNT(sCharmanderGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx11[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_11.4bpp");
+static const u8 sCharmanderGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_11.4bpp.lz");
 static const ax_sprite sCharmanderSprites11[] = {
 	{sCharmanderGfx11, ARRAY_COUNT(sCharmanderGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx12[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_12.4bpp");
+static const u8 sCharmanderGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_12.4bpp.lz");
 static const ax_sprite sCharmanderSprites12[] = {
 	{sCharmanderGfx12, ARRAY_COUNT(sCharmanderGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx13[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_13.4bpp");
+static const u8 sCharmanderGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_13.4bpp.lz");
 static const ax_sprite sCharmanderSprites13[] = {
 	{sCharmanderGfx13, ARRAY_COUNT(sCharmanderGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx14[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_14.4bpp");
+static const u8 sCharmanderGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_14.4bpp.lz");
 static const ax_sprite sCharmanderSprites14[] = {
 	{sCharmanderGfx14, ARRAY_COUNT(sCharmanderGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx15[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_15.4bpp");
+static const u8 sCharmanderGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_15.4bpp.lz");
 static const ax_sprite sCharmanderSprites15[] = {
 	{sCharmanderGfx15, ARRAY_COUNT(sCharmanderGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx16[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_16.4bpp");
-static const u8 sCharmanderGfx16_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_16_1.4bpp");
-static const u8 sCharmanderGfx16_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_16_2.4bpp");
-static const u8 sCharmanderGfx16_3[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_16_3.4bpp");
+static const u8 sCharmanderGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_16.4bpp.lz");
+static const u8 sCharmanderGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_16_1.4bpp.lz");
+static const u8 sCharmanderGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_16_2.4bpp.lz");
+static const u8 sCharmanderGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_16_3.4bpp.lz");
 static const ax_sprite sCharmanderSprites16[] = {
 	{sCharmanderGfx16, ARRAY_COUNT(sCharmanderGfx16)}, 
 	{NULL, 32}, 
@@ -3260,9 +3260,9 @@ static const ax_sprite sCharmanderSprites16[] = {
 	{sCharmanderGfx16_3, ARRAY_COUNT(sCharmanderGfx16_3)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx17[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_17.4bpp");
-static const u8 sCharmanderGfx17_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_17_1.4bpp");
-static const u8 sCharmanderGfx17_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_17_2.4bpp");
+static const u8 sCharmanderGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_17.4bpp.lz");
+static const u8 sCharmanderGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_17_1.4bpp.lz");
+static const u8 sCharmanderGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_17_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites17[] = {
 	{sCharmanderGfx17, ARRAY_COUNT(sCharmanderGfx17)}, 
 	{NULL, 32}, 
@@ -3272,9 +3272,9 @@ static const ax_sprite sCharmanderSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx18[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_18.4bpp");
-static const u8 sCharmanderGfx18_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_18_1.4bpp");
-static const u8 sCharmanderGfx18_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_18_2.4bpp");
+static const u8 sCharmanderGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_18.4bpp.lz");
+static const u8 sCharmanderGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_18_1.4bpp.lz");
+static const u8 sCharmanderGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_18_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites18[] = {
 	{sCharmanderGfx18, ARRAY_COUNT(sCharmanderGfx18)}, 
 	{NULL, 32}, 
@@ -3284,19 +3284,19 @@ static const ax_sprite sCharmanderSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx19[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_19.4bpp");
+static const u8 sCharmanderGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_19.4bpp.lz");
 static const ax_sprite sCharmanderSprites19[] = {
 	{sCharmanderGfx19, ARRAY_COUNT(sCharmanderGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx20[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_20.4bpp");
+static const u8 sCharmanderGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_20.4bpp.lz");
 static const ax_sprite sCharmanderSprites20[] = {
 	{sCharmanderGfx20, ARRAY_COUNT(sCharmanderGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx21[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_21.4bpp");
-static const u8 sCharmanderGfx21_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_21_1.4bpp");
-static const u8 sCharmanderGfx21_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_21_2.4bpp");
+static const u8 sCharmanderGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_21.4bpp.lz");
+static const u8 sCharmanderGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_21_1.4bpp.lz");
+static const u8 sCharmanderGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_21_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites21[] = {
 	{NULL, 32}, 
 	{sCharmanderGfx21, ARRAY_COUNT(sCharmanderGfx21)}, 
@@ -3307,9 +3307,9 @@ static const ax_sprite sCharmanderSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx22[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_22.4bpp");
-static const u8 sCharmanderGfx22_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_22_1.4bpp");
-static const u8 sCharmanderGfx22_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_22_2.4bpp");
+static const u8 sCharmanderGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_22.4bpp.lz");
+static const u8 sCharmanderGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_22_1.4bpp.lz");
+static const u8 sCharmanderGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_22_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites22[] = {
 	{sCharmanderGfx22, ARRAY_COUNT(sCharmanderGfx22)}, 
 	{NULL, 32}, 
@@ -3319,13 +3319,13 @@ static const ax_sprite sCharmanderSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx23[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_23.4bpp");
+static const u8 sCharmanderGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_23.4bpp.lz");
 static const ax_sprite sCharmanderSprites23[] = {
 	{sCharmanderGfx23, ARRAY_COUNT(sCharmanderGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx24[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_24.4bpp");
-static const u8 sCharmanderGfx24_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_24_1.4bpp");
+static const u8 sCharmanderGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_24.4bpp.lz");
+static const u8 sCharmanderGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_24_1.4bpp.lz");
 static const ax_sprite sCharmanderSprites24[] = {
 	{NULL, 32}, 
 	{sCharmanderGfx24, ARRAY_COUNT(sCharmanderGfx24)}, 
@@ -3334,9 +3334,9 @@ static const ax_sprite sCharmanderSprites24[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx25[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_25.4bpp");
-static const u8 sCharmanderGfx25_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_25_1.4bpp");
-static const u8 sCharmanderGfx25_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_25_2.4bpp");
+static const u8 sCharmanderGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_25.4bpp.lz");
+static const u8 sCharmanderGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_25_1.4bpp.lz");
+static const u8 sCharmanderGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_25_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites25[] = {
 	{sCharmanderGfx25, ARRAY_COUNT(sCharmanderGfx25)}, 
 	{NULL, 32}, 
@@ -3346,9 +3346,9 @@ static const ax_sprite sCharmanderSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx26[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_26.4bpp");
-static const u8 sCharmanderGfx26_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_26_1.4bpp");
-static const u8 sCharmanderGfx26_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_26_2.4bpp");
+static const u8 sCharmanderGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_26.4bpp.lz");
+static const u8 sCharmanderGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_26_1.4bpp.lz");
+static const u8 sCharmanderGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_26_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites26[] = {
 	{sCharmanderGfx26, ARRAY_COUNT(sCharmanderGfx26)}, 
 	{NULL, 64}, 
@@ -3358,9 +3358,9 @@ static const ax_sprite sCharmanderSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx27[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_27.4bpp");
-static const u8 sCharmanderGfx27_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_27_1.4bpp");
-static const u8 sCharmanderGfx27_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_27_2.4bpp");
+static const u8 sCharmanderGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_27.4bpp.lz");
+static const u8 sCharmanderGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_27_1.4bpp.lz");
+static const u8 sCharmanderGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_27_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites27[] = {
 	{sCharmanderGfx27, ARRAY_COUNT(sCharmanderGfx27)}, 
 	{NULL, 32}, 
@@ -3370,9 +3370,9 @@ static const ax_sprite sCharmanderSprites27[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx28[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_28.4bpp");
-static const u8 sCharmanderGfx28_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_28_1.4bpp");
-static const u8 sCharmanderGfx28_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_28_2.4bpp");
+static const u8 sCharmanderGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_28.4bpp.lz");
+static const u8 sCharmanderGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_28_1.4bpp.lz");
+static const u8 sCharmanderGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_28_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites28[] = {
 	{sCharmanderGfx28, ARRAY_COUNT(sCharmanderGfx28)}, 
 	{NULL, 32}, 
@@ -3382,19 +3382,19 @@ static const ax_sprite sCharmanderSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx29[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_29.4bpp");
+static const u8 sCharmanderGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_29.4bpp.lz");
 static const ax_sprite sCharmanderSprites29[] = {
 	{sCharmanderGfx29, ARRAY_COUNT(sCharmanderGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx30[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_30.4bpp");
+static const u8 sCharmanderGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_30.4bpp.lz");
 static const ax_sprite sCharmanderSprites30[] = {
 	{sCharmanderGfx30, ARRAY_COUNT(sCharmanderGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx31[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_31.4bpp");
-static const u8 sCharmanderGfx31_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_31_1.4bpp");
-static const u8 sCharmanderGfx31_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_31_2.4bpp");
+static const u8 sCharmanderGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_31.4bpp.lz");
+static const u8 sCharmanderGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_31_1.4bpp.lz");
+static const u8 sCharmanderGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_31_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites31[] = {
 	{sCharmanderGfx31, ARRAY_COUNT(sCharmanderGfx31)}, 
 	{NULL, 32}, 
@@ -3404,10 +3404,10 @@ static const ax_sprite sCharmanderSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx32[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_32.4bpp");
-static const u8 sCharmanderGfx32_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_32_1.4bpp");
-static const u8 sCharmanderGfx32_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_32_2.4bpp");
-static const u8 sCharmanderGfx32_3[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_32_3.4bpp");
+static const u8 sCharmanderGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_32.4bpp.lz");
+static const u8 sCharmanderGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_32_1.4bpp.lz");
+static const u8 sCharmanderGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_32_2.4bpp.lz");
+static const u8 sCharmanderGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_32_3.4bpp.lz");
 static const ax_sprite sCharmanderSprites32[] = {
 	{sCharmanderGfx32, ARRAY_COUNT(sCharmanderGfx32)}, 
 	{NULL, 32}, 
@@ -3419,9 +3419,9 @@ static const ax_sprite sCharmanderSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx33[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_33.4bpp");
-static const u8 sCharmanderGfx33_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_33_1.4bpp");
-static const u8 sCharmanderGfx33_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_33_2.4bpp");
+static const u8 sCharmanderGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_33.4bpp.lz");
+static const u8 sCharmanderGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_33_1.4bpp.lz");
+static const u8 sCharmanderGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_33_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites33[] = {
 	{sCharmanderGfx33, ARRAY_COUNT(sCharmanderGfx33)}, 
 	{NULL, 32}, 
@@ -3431,9 +3431,9 @@ static const ax_sprite sCharmanderSprites33[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx34[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_34.4bpp");
-static const u8 sCharmanderGfx34_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_34_1.4bpp");
-static const u8 sCharmanderGfx34_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_34_2.4bpp");
+static const u8 sCharmanderGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_34.4bpp.lz");
+static const u8 sCharmanderGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_34_1.4bpp.lz");
+static const u8 sCharmanderGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_34_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites34[] = {
 	{sCharmanderGfx34, ARRAY_COUNT(sCharmanderGfx34)}, 
 	{NULL, 32}, 
@@ -3443,9 +3443,9 @@ static const ax_sprite sCharmanderSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx35[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_35.4bpp");
-static const u8 sCharmanderGfx35_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_35_1.4bpp");
-static const u8 sCharmanderGfx35_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_35_2.4bpp");
+static const u8 sCharmanderGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_35.4bpp.lz");
+static const u8 sCharmanderGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_35_1.4bpp.lz");
+static const u8 sCharmanderGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_35_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites35[] = {
 	{sCharmanderGfx35, ARRAY_COUNT(sCharmanderGfx35)}, 
 	{NULL, 32}, 
@@ -3455,9 +3455,9 @@ static const ax_sprite sCharmanderSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx36[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_36.4bpp");
-static const u8 sCharmanderGfx36_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_36_1.4bpp");
-static const u8 sCharmanderGfx36_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_36_2.4bpp");
+static const u8 sCharmanderGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_36.4bpp.lz");
+static const u8 sCharmanderGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_36_1.4bpp.lz");
+static const u8 sCharmanderGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_36_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites36[] = {
 	{sCharmanderGfx36, ARRAY_COUNT(sCharmanderGfx36)}, 
 	{NULL, 64}, 
@@ -3467,9 +3467,9 @@ static const ax_sprite sCharmanderSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx37[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_37.4bpp");
-static const u8 sCharmanderGfx37_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_37_1.4bpp");
-static const u8 sCharmanderGfx37_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_37_2.4bpp");
+static const u8 sCharmanderGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_37.4bpp.lz");
+static const u8 sCharmanderGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_37_1.4bpp.lz");
+static const u8 sCharmanderGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_37_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites37[] = {
 	{sCharmanderGfx37, ARRAY_COUNT(sCharmanderGfx37)}, 
 	{NULL, 32}, 
@@ -3479,9 +3479,9 @@ static const ax_sprite sCharmanderSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx38[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_38.4bpp");
-static const u8 sCharmanderGfx38_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_38_1.4bpp");
-static const u8 sCharmanderGfx38_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_38_2.4bpp");
+static const u8 sCharmanderGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_38.4bpp.lz");
+static const u8 sCharmanderGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_38_1.4bpp.lz");
+static const u8 sCharmanderGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_38_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites38[] = {
 	{sCharmanderGfx38, ARRAY_COUNT(sCharmanderGfx38)}, 
 	{NULL, 32}, 
@@ -3491,8 +3491,8 @@ static const ax_sprite sCharmanderSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx39[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_39.4bpp");
-static const u8 sCharmanderGfx39_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_39_1.4bpp");
+static const u8 sCharmanderGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_39.4bpp.lz");
+static const u8 sCharmanderGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_39_1.4bpp.lz");
 static const ax_sprite sCharmanderSprites39[] = {
 	{sCharmanderGfx39, ARRAY_COUNT(sCharmanderGfx39)}, 
 	{NULL, 32}, 
@@ -3500,9 +3500,9 @@ static const ax_sprite sCharmanderSprites39[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx40[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_40.4bpp");
-static const u8 sCharmanderGfx40_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_40_1.4bpp");
-static const u8 sCharmanderGfx40_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_40_2.4bpp");
+static const u8 sCharmanderGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_40.4bpp.lz");
+static const u8 sCharmanderGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_40_1.4bpp.lz");
+static const u8 sCharmanderGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_40_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites40[] = {
 	{sCharmanderGfx40, ARRAY_COUNT(sCharmanderGfx40)}, 
 	{NULL, 64}, 
@@ -3512,8 +3512,8 @@ static const ax_sprite sCharmanderSprites40[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx41[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_41.4bpp");
-static const u8 sCharmanderGfx41_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_41_1.4bpp");
+static const u8 sCharmanderGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_41.4bpp.lz");
+static const u8 sCharmanderGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_41_1.4bpp.lz");
 static const ax_sprite sCharmanderSprites41[] = {
 	{sCharmanderGfx41, ARRAY_COUNT(sCharmanderGfx41)}, 
 	{NULL, 32}, 
@@ -3521,9 +3521,9 @@ static const ax_sprite sCharmanderSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx42[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_42.4bpp");
-static const u8 sCharmanderGfx42_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_42_1.4bpp");
-static const u8 sCharmanderGfx42_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_42_2.4bpp");
+static const u8 sCharmanderGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_42.4bpp.lz");
+static const u8 sCharmanderGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_42_1.4bpp.lz");
+static const u8 sCharmanderGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_42_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites42[] = {
 	{sCharmanderGfx42, ARRAY_COUNT(sCharmanderGfx42)}, 
 	{NULL, 32}, 
@@ -3533,17 +3533,17 @@ static const ax_sprite sCharmanderSprites42[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx43[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_43.4bpp");
-static const u8 sCharmanderGfx43_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_43_1.4bpp");
+static const u8 sCharmanderGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_43.4bpp.lz");
+static const u8 sCharmanderGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_43_1.4bpp.lz");
 static const ax_sprite sCharmanderSprites43[] = {
 	{sCharmanderGfx43, ARRAY_COUNT(sCharmanderGfx43)}, 
 	{NULL, 32}, 
 	{sCharmanderGfx43_1, ARRAY_COUNT(sCharmanderGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx44[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_44.4bpp");
-static const u8 sCharmanderGfx44_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_44_1.4bpp");
-static const u8 sCharmanderGfx44_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_44_2.4bpp");
+static const u8 sCharmanderGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_44.4bpp.lz");
+static const u8 sCharmanderGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_44_1.4bpp.lz");
+static const u8 sCharmanderGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_44_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites44[] = {
 	{sCharmanderGfx44, ARRAY_COUNT(sCharmanderGfx44)}, 
 	{NULL, 32}, 
@@ -3553,9 +3553,9 @@ static const ax_sprite sCharmanderSprites44[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx45[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_45.4bpp");
-static const u8 sCharmanderGfx45_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_45_1.4bpp");
-static const u8 sCharmanderGfx45_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_45_2.4bpp");
+static const u8 sCharmanderGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_45.4bpp.lz");
+static const u8 sCharmanderGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_45_1.4bpp.lz");
+static const u8 sCharmanderGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_45_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites45[] = {
 	{NULL, 32}, 
 	{sCharmanderGfx45, ARRAY_COUNT(sCharmanderGfx45)}, 
@@ -3566,17 +3566,17 @@ static const ax_sprite sCharmanderSprites45[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx46[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_46.4bpp");
-static const u8 sCharmanderGfx46_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_46_1.4bpp");
+static const u8 sCharmanderGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_46.4bpp.lz");
+static const u8 sCharmanderGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_46_1.4bpp.lz");
 static const ax_sprite sCharmanderSprites46[] = {
 	{sCharmanderGfx46, ARRAY_COUNT(sCharmanderGfx46)}, 
 	{NULL, 32}, 
 	{sCharmanderGfx46_1, ARRAY_COUNT(sCharmanderGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx47[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_47.4bpp");
-static const u8 sCharmanderGfx47_1[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_47_1.4bpp");
-static const u8 sCharmanderGfx47_2[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_47_2.4bpp");
+static const u8 sCharmanderGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_47.4bpp.lz");
+static const u8 sCharmanderGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_47_1.4bpp.lz");
+static const u8 sCharmanderGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_47_2.4bpp.lz");
 static const ax_sprite sCharmanderSprites47[] = {
 	{sCharmanderGfx47, ARRAY_COUNT(sCharmanderGfx47)}, 
 	{NULL, 64}, 
@@ -3586,187 +3586,187 @@ static const ax_sprite sCharmanderSprites47[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx48[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_48.4bpp");
+static const u8 sCharmanderGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_48.4bpp.lz");
 static const ax_sprite sCharmanderSprites48[] = {
 	{sCharmanderGfx48, ARRAY_COUNT(sCharmanderGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx49[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_49.4bpp");
+static const u8 sCharmanderGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_49.4bpp.lz");
 static const ax_sprite sCharmanderSprites49[] = {
 	{sCharmanderGfx49, ARRAY_COUNT(sCharmanderGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx50[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_50.4bpp");
+static const u8 sCharmanderGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_50.4bpp.lz");
 static const ax_sprite sCharmanderSprites50[] = {
 	{sCharmanderGfx50, ARRAY_COUNT(sCharmanderGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx51[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_51.4bpp");
+static const u8 sCharmanderGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_51.4bpp.lz");
 static const ax_sprite sCharmanderSprites51[] = {
 	{sCharmanderGfx51, ARRAY_COUNT(sCharmanderGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx52[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_52.4bpp");
+static const u8 sCharmanderGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_52.4bpp.lz");
 static const ax_sprite sCharmanderSprites52[] = {
 	{sCharmanderGfx52, ARRAY_COUNT(sCharmanderGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx53[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_53.4bpp");
+static const u8 sCharmanderGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_53.4bpp.lz");
 static const ax_sprite sCharmanderSprites53[] = {
 	{sCharmanderGfx53, ARRAY_COUNT(sCharmanderGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx54[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_54.4bpp");
+static const u8 sCharmanderGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_54.4bpp.lz");
 static const ax_sprite sCharmanderSprites54[] = {
 	{sCharmanderGfx54, ARRAY_COUNT(sCharmanderGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx55[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_55.4bpp");
+static const u8 sCharmanderGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_55.4bpp.lz");
 static const ax_sprite sCharmanderSprites55[] = {
 	{sCharmanderGfx55, ARRAY_COUNT(sCharmanderGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx56[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_56.4bpp");
+static const u8 sCharmanderGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_56.4bpp.lz");
 static const ax_sprite sCharmanderSprites56[] = {
 	{sCharmanderGfx56, ARRAY_COUNT(sCharmanderGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx57[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_57.4bpp");
+static const u8 sCharmanderGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_57.4bpp.lz");
 static const ax_sprite sCharmanderSprites57[] = {
 	{sCharmanderGfx57, ARRAY_COUNT(sCharmanderGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx58[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_58.4bpp");
+static const u8 sCharmanderGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_58.4bpp.lz");
 static const ax_sprite sCharmanderSprites58[] = {
 	{sCharmanderGfx58, ARRAY_COUNT(sCharmanderGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx59[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_59.4bpp");
+static const u8 sCharmanderGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_59.4bpp.lz");
 static const ax_sprite sCharmanderSprites59[] = {
 	{sCharmanderGfx59, ARRAY_COUNT(sCharmanderGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx60[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_60.4bpp");
+static const u8 sCharmanderGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_60.4bpp.lz");
 static const ax_sprite sCharmanderSprites60[] = {
 	{sCharmanderGfx60, ARRAY_COUNT(sCharmanderGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx61[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_61.4bpp");
+static const u8 sCharmanderGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_61.4bpp.lz");
 static const ax_sprite sCharmanderSprites61[] = {
 	{sCharmanderGfx61, ARRAY_COUNT(sCharmanderGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx62[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_62.4bpp");
+static const u8 sCharmanderGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_62.4bpp.lz");
 static const ax_sprite sCharmanderSprites62[] = {
 	{sCharmanderGfx62, ARRAY_COUNT(sCharmanderGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx63[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_63.4bpp");
+static const u8 sCharmanderGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_63.4bpp.lz");
 static const ax_sprite sCharmanderSprites63[] = {
 	{sCharmanderGfx63, ARRAY_COUNT(sCharmanderGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx64[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_64.4bpp");
+static const u8 sCharmanderGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_64.4bpp.lz");
 static const ax_sprite sCharmanderSprites64[] = {
 	{sCharmanderGfx64, ARRAY_COUNT(sCharmanderGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx65[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_65.4bpp");
+static const u8 sCharmanderGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_65.4bpp.lz");
 static const ax_sprite sCharmanderSprites65[] = {
 	{sCharmanderGfx65, ARRAY_COUNT(sCharmanderGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx66[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_66.4bpp");
+static const u8 sCharmanderGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_66.4bpp.lz");
 static const ax_sprite sCharmanderSprites66[] = {
 	{sCharmanderGfx66, ARRAY_COUNT(sCharmanderGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx67[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_67.4bpp");
+static const u8 sCharmanderGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_67.4bpp.lz");
 static const ax_sprite sCharmanderSprites67[] = {
 	{sCharmanderGfx67, ARRAY_COUNT(sCharmanderGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx68[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_68.4bpp");
+static const u8 sCharmanderGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_68.4bpp.lz");
 static const ax_sprite sCharmanderSprites68[] = {
 	{sCharmanderGfx68, ARRAY_COUNT(sCharmanderGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx69[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_69.4bpp");
+static const u8 sCharmanderGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_69.4bpp.lz");
 static const ax_sprite sCharmanderSprites69[] = {
 	{sCharmanderGfx69, ARRAY_COUNT(sCharmanderGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx70[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_70.4bpp");
+static const u8 sCharmanderGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_70.4bpp.lz");
 static const ax_sprite sCharmanderSprites70[] = {
 	{sCharmanderGfx70, ARRAY_COUNT(sCharmanderGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx71[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_71.4bpp");
+static const u8 sCharmanderGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_71.4bpp.lz");
 static const ax_sprite sCharmanderSprites71[] = {
 	{sCharmanderGfx71, ARRAY_COUNT(sCharmanderGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx72[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_72.4bpp");
+static const u8 sCharmanderGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_72.4bpp.lz");
 static const ax_sprite sCharmanderSprites72[] = {
 	{sCharmanderGfx72, ARRAY_COUNT(sCharmanderGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx73[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_73.4bpp");
+static const u8 sCharmanderGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_73.4bpp.lz");
 static const ax_sprite sCharmanderSprites73[] = {
 	{sCharmanderGfx73, ARRAY_COUNT(sCharmanderGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx74[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_74.4bpp");
+static const u8 sCharmanderGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_74.4bpp.lz");
 static const ax_sprite sCharmanderSprites74[] = {
 	{sCharmanderGfx74, ARRAY_COUNT(sCharmanderGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx75[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_75.4bpp");
+static const u8 sCharmanderGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_75.4bpp.lz");
 static const ax_sprite sCharmanderSprites75[] = {
 	{sCharmanderGfx75, ARRAY_COUNT(sCharmanderGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx76[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_76.4bpp");
+static const u8 sCharmanderGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_76.4bpp.lz");
 static const ax_sprite sCharmanderSprites76[] = {
 	{sCharmanderGfx76, ARRAY_COUNT(sCharmanderGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx77[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_77.4bpp");
+static const u8 sCharmanderGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_77.4bpp.lz");
 static const ax_sprite sCharmanderSprites77[] = {
 	{sCharmanderGfx77, ARRAY_COUNT(sCharmanderGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx78[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_78.4bpp");
+static const u8 sCharmanderGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_78.4bpp.lz");
 static const ax_sprite sCharmanderSprites78[] = {
 	{sCharmanderGfx78, ARRAY_COUNT(sCharmanderGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx79[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_79.4bpp");
+static const u8 sCharmanderGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_79.4bpp.lz");
 static const ax_sprite sCharmanderSprites79[] = {
 	{sCharmanderGfx79, ARRAY_COUNT(sCharmanderGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx80[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_80.4bpp");
+static const u8 sCharmanderGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_80.4bpp.lz");
 static const ax_sprite sCharmanderSprites80[] = {
 	{sCharmanderGfx80, ARRAY_COUNT(sCharmanderGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx81[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_81.4bpp");
+static const u8 sCharmanderGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_81.4bpp.lz");
 static const ax_sprite sCharmanderSprites81[] = {
 	{sCharmanderGfx81, ARRAY_COUNT(sCharmanderGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx82[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_82.4bpp");
+static const u8 sCharmanderGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_82.4bpp.lz");
 static const ax_sprite sCharmanderSprites82[] = {
 	{sCharmanderGfx82, ARRAY_COUNT(sCharmanderGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx83[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_83.4bpp");
+static const u8 sCharmanderGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_83.4bpp.lz");
 static const ax_sprite sCharmanderSprites83[] = {
 	{sCharmanderGfx83, ARRAY_COUNT(sCharmanderGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sCharmanderGfx84[] = INCBIN_U8("graphics/ax/mon/charmander/sprite_84.4bpp");
+static const u8 sCharmanderGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmander/sprite_84.4bpp.lz");
 static const ax_sprite sCharmanderSprites84[] = {
 	{sCharmanderGfx84, ARRAY_COUNT(sCharmanderGfx84)}, 
 	{NULL, 0}

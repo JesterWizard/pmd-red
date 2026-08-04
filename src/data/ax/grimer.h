@@ -2303,84 +2303,84 @@ static const ax_anim sGrimerAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGrimerGfx1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_1.4bpp");
+static const u8 sGrimerGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_1.4bpp.lz");
 static const ax_sprite sGrimerSprites1[] = {
 	{sGrimerGfx1, ARRAY_COUNT(sGrimerGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_2.4bpp");
+static const u8 sGrimerGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_2.4bpp.lz");
 static const ax_sprite sGrimerSprites2[] = {
 	{sGrimerGfx2, ARRAY_COUNT(sGrimerGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx3[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_3.4bpp");
+static const u8 sGrimerGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_3.4bpp.lz");
 static const ax_sprite sGrimerSprites3[] = {
 	{sGrimerGfx3, ARRAY_COUNT(sGrimerGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx4[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_4.4bpp");
+static const u8 sGrimerGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_4.4bpp.lz");
 static const ax_sprite sGrimerSprites4[] = {
 	{sGrimerGfx4, ARRAY_COUNT(sGrimerGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx5[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_5.4bpp");
+static const u8 sGrimerGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_5.4bpp.lz");
 static const ax_sprite sGrimerSprites5[] = {
 	{sGrimerGfx5, ARRAY_COUNT(sGrimerGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx6[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_6.4bpp");
+static const u8 sGrimerGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_6.4bpp.lz");
 static const ax_sprite sGrimerSprites6[] = {
 	{sGrimerGfx6, ARRAY_COUNT(sGrimerGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx7[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_7.4bpp");
+static const u8 sGrimerGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_7.4bpp.lz");
 static const ax_sprite sGrimerSprites7[] = {
 	{sGrimerGfx7, ARRAY_COUNT(sGrimerGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx8[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_8.4bpp");
+static const u8 sGrimerGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_8.4bpp.lz");
 static const ax_sprite sGrimerSprites8[] = {
 	{sGrimerGfx8, ARRAY_COUNT(sGrimerGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx9[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_9.4bpp");
+static const u8 sGrimerGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_9.4bpp.lz");
 static const ax_sprite sGrimerSprites9[] = {
 	{sGrimerGfx9, ARRAY_COUNT(sGrimerGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx10[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_10.4bpp");
+static const u8 sGrimerGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_10.4bpp.lz");
 static const ax_sprite sGrimerSprites10[] = {
 	{sGrimerGfx10, ARRAY_COUNT(sGrimerGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx11[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_11.4bpp");
+static const u8 sGrimerGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_11.4bpp.lz");
 static const ax_sprite sGrimerSprites11[] = {
 	{sGrimerGfx11, ARRAY_COUNT(sGrimerGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx12[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_12.4bpp");
+static const u8 sGrimerGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_12.4bpp.lz");
 static const ax_sprite sGrimerSprites12[] = {
 	{sGrimerGfx12, ARRAY_COUNT(sGrimerGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx13[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_13.4bpp");
+static const u8 sGrimerGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_13.4bpp.lz");
 static const ax_sprite sGrimerSprites13[] = {
 	{sGrimerGfx13, ARRAY_COUNT(sGrimerGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx14[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_14.4bpp");
+static const u8 sGrimerGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_14.4bpp.lz");
 static const ax_sprite sGrimerSprites14[] = {
 	{sGrimerGfx14, ARRAY_COUNT(sGrimerGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx15[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_15.4bpp");
+static const u8 sGrimerGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_15.4bpp.lz");
 static const ax_sprite sGrimerSprites15[] = {
 	{sGrimerGfx15, ARRAY_COUNT(sGrimerGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx16[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_16.4bpp");
-static const u8 sGrimerGfx16_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_16_1.4bpp");
-static const u8 sGrimerGfx16_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_16_2.4bpp");
+static const u8 sGrimerGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_16.4bpp.lz");
+static const u8 sGrimerGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_16_1.4bpp.lz");
+static const u8 sGrimerGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_16_2.4bpp.lz");
 static const ax_sprite sGrimerSprites16[] = {
 	{sGrimerGfx16, ARRAY_COUNT(sGrimerGfx16)}, 
 	{NULL, 32}, 
@@ -2390,9 +2390,9 @@ static const ax_sprite sGrimerSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx17[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_17.4bpp");
-static const u8 sGrimerGfx17_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_17_1.4bpp");
-static const u8 sGrimerGfx17_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_17_2.4bpp");
+static const u8 sGrimerGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_17.4bpp.lz");
+static const u8 sGrimerGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_17_1.4bpp.lz");
+static const u8 sGrimerGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_17_2.4bpp.lz");
 static const ax_sprite sGrimerSprites17[] = {
 	{NULL, 32}, 
 	{sGrimerGfx17, ARRAY_COUNT(sGrimerGfx17)}, 
@@ -2403,9 +2403,9 @@ static const ax_sprite sGrimerSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx18[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_18.4bpp");
-static const u8 sGrimerGfx18_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_18_1.4bpp");
-static const u8 sGrimerGfx18_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_18_2.4bpp");
+static const u8 sGrimerGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_18.4bpp.lz");
+static const u8 sGrimerGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_18_1.4bpp.lz");
+static const u8 sGrimerGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_18_2.4bpp.lz");
 static const ax_sprite sGrimerSprites18[] = {
 	{NULL, 32}, 
 	{sGrimerGfx18, ARRAY_COUNT(sGrimerGfx18)}, 
@@ -2416,15 +2416,15 @@ static const ax_sprite sGrimerSprites18[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx19[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_19.4bpp");
+static const u8 sGrimerGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_19.4bpp.lz");
 static const ax_sprite sGrimerSprites19[] = {
 	{NULL, 64}, 
 	{sGrimerGfx19, ARRAY_COUNT(sGrimerGfx19)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx20[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_20.4bpp");
-static const u8 sGrimerGfx20_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_20_1.4bpp");
+static const u8 sGrimerGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_20.4bpp.lz");
+static const u8 sGrimerGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_20_1.4bpp.lz");
 static const ax_sprite sGrimerSprites20[] = {
 	{NULL, 32}, 
 	{sGrimerGfx20, ARRAY_COUNT(sGrimerGfx20)}, 
@@ -2433,25 +2433,25 @@ static const ax_sprite sGrimerSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx21[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_21.4bpp");
+static const u8 sGrimerGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_21.4bpp.lz");
 static const ax_sprite sGrimerSprites21[] = {
 	{sGrimerGfx21, ARRAY_COUNT(sGrimerGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx22[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_22.4bpp");
+static const u8 sGrimerGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_22.4bpp.lz");
 static const ax_sprite sGrimerSprites22[] = {
 	{sGrimerGfx22, ARRAY_COUNT(sGrimerGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx23[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_23.4bpp");
+static const u8 sGrimerGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_23.4bpp.lz");
 static const ax_sprite sGrimerSprites23[] = {
 	{sGrimerGfx23, ARRAY_COUNT(sGrimerGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx24[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_24.4bpp");
-static const u8 sGrimerGfx24_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_24_1.4bpp");
-static const u8 sGrimerGfx24_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_24_2.4bpp");
-static const u8 sGrimerGfx24_3[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_24_3.4bpp");
+static const u8 sGrimerGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_24.4bpp.lz");
+static const u8 sGrimerGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_24_1.4bpp.lz");
+static const u8 sGrimerGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_24_2.4bpp.lz");
+static const u8 sGrimerGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_24_3.4bpp.lz");
 static const ax_sprite sGrimerSprites24[] = {
 	{NULL, 64}, 
 	{sGrimerGfx24, ARRAY_COUNT(sGrimerGfx24)}, 
@@ -2463,10 +2463,10 @@ static const ax_sprite sGrimerSprites24[] = {
 	{sGrimerGfx24_3, ARRAY_COUNT(sGrimerGfx24_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx25[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_25.4bpp");
-static const u8 sGrimerGfx25_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_25_1.4bpp");
-static const u8 sGrimerGfx25_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_25_2.4bpp");
-static const u8 sGrimerGfx25_3[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_25_3.4bpp");
+static const u8 sGrimerGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_25.4bpp.lz");
+static const u8 sGrimerGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_25_1.4bpp.lz");
+static const u8 sGrimerGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_25_2.4bpp.lz");
+static const u8 sGrimerGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_25_3.4bpp.lz");
 static const ax_sprite sGrimerSprites25[] = {
 	{sGrimerGfx25, ARRAY_COUNT(sGrimerGfx25)}, 
 	{NULL, 64}, 
@@ -2477,8 +2477,8 @@ static const ax_sprite sGrimerSprites25[] = {
 	{sGrimerGfx25_3, ARRAY_COUNT(sGrimerGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx26[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_26.4bpp");
-static const u8 sGrimerGfx26_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_26_1.4bpp");
+static const u8 sGrimerGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_26.4bpp.lz");
+static const u8 sGrimerGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_26_1.4bpp.lz");
 static const ax_sprite sGrimerSprites26[] = {
 	{NULL, 32}, 
 	{sGrimerGfx26, ARRAY_COUNT(sGrimerGfx26)}, 
@@ -2487,10 +2487,10 @@ static const ax_sprite sGrimerSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx27[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_27.4bpp");
-static const u8 sGrimerGfx27_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_27_1.4bpp");
-static const u8 sGrimerGfx27_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_27_2.4bpp");
-static const u8 sGrimerGfx27_3[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_27_3.4bpp");
+static const u8 sGrimerGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_27.4bpp.lz");
+static const u8 sGrimerGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_27_1.4bpp.lz");
+static const u8 sGrimerGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_27_2.4bpp.lz");
+static const u8 sGrimerGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_27_3.4bpp.lz");
 static const ax_sprite sGrimerSprites27[] = {
 	{sGrimerGfx27, ARRAY_COUNT(sGrimerGfx27)}, 
 	{NULL, 32}, 
@@ -2502,15 +2502,15 @@ static const ax_sprite sGrimerSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx28[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_28.4bpp");
+static const u8 sGrimerGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_28.4bpp.lz");
 static const ax_sprite sGrimerSprites28[] = {
 	{sGrimerGfx28, ARRAY_COUNT(sGrimerGfx28)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx29[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_29.4bpp");
-static const u8 sGrimerGfx29_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_29_1.4bpp");
-static const u8 sGrimerGfx29_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_29_2.4bpp");
+static const u8 sGrimerGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_29.4bpp.lz");
+static const u8 sGrimerGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_29_1.4bpp.lz");
+static const u8 sGrimerGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_29_2.4bpp.lz");
 static const ax_sprite sGrimerSprites29[] = {
 	{NULL, 32}, 
 	{sGrimerGfx29, ARRAY_COUNT(sGrimerGfx29)}, 
@@ -2521,8 +2521,8 @@ static const ax_sprite sGrimerSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx30[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_30.4bpp");
-static const u8 sGrimerGfx30_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_30_1.4bpp");
+static const u8 sGrimerGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_30.4bpp.lz");
+static const u8 sGrimerGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_30_1.4bpp.lz");
 static const ax_sprite sGrimerSprites30[] = {
 	{sGrimerGfx30, ARRAY_COUNT(sGrimerGfx30)}, 
 	{NULL, 32}, 
@@ -2530,9 +2530,9 @@ static const ax_sprite sGrimerSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx31[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_31.4bpp");
-static const u8 sGrimerGfx31_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_31_1.4bpp");
-static const u8 sGrimerGfx31_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_31_2.4bpp");
+static const u8 sGrimerGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_31.4bpp.lz");
+static const u8 sGrimerGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_31_1.4bpp.lz");
+static const u8 sGrimerGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_31_2.4bpp.lz");
 static const ax_sprite sGrimerSprites31[] = {
 	{NULL, 32}, 
 	{sGrimerGfx31, ARRAY_COUNT(sGrimerGfx31)}, 
@@ -2543,9 +2543,9 @@ static const ax_sprite sGrimerSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx32[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_32.4bpp");
-static const u8 sGrimerGfx32_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_32_1.4bpp");
-static const u8 sGrimerGfx32_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_32_2.4bpp");
+static const u8 sGrimerGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_32.4bpp.lz");
+static const u8 sGrimerGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_32_1.4bpp.lz");
+static const u8 sGrimerGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_32_2.4bpp.lz");
 static const ax_sprite sGrimerSprites32[] = {
 	{sGrimerGfx32, ARRAY_COUNT(sGrimerGfx32)}, 
 	{NULL, 64}, 
@@ -2555,9 +2555,9 @@ static const ax_sprite sGrimerSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx33[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_33.4bpp");
-static const u8 sGrimerGfx33_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_33_1.4bpp");
-static const u8 sGrimerGfx33_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_33_2.4bpp");
+static const u8 sGrimerGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_33.4bpp.lz");
+static const u8 sGrimerGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_33_1.4bpp.lz");
+static const u8 sGrimerGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_33_2.4bpp.lz");
 static const ax_sprite sGrimerSprites33[] = {
 	{sGrimerGfx33, ARRAY_COUNT(sGrimerGfx33)}, 
 	{NULL, 64}, 
@@ -2567,8 +2567,8 @@ static const ax_sprite sGrimerSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx34[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_34.4bpp");
-static const u8 sGrimerGfx34_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_34_1.4bpp");
+static const u8 sGrimerGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_34.4bpp.lz");
+static const u8 sGrimerGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_34_1.4bpp.lz");
 static const ax_sprite sGrimerSprites34[] = {
 	{sGrimerGfx34, ARRAY_COUNT(sGrimerGfx34)}, 
 	{NULL, 32}, 
@@ -2576,9 +2576,9 @@ static const ax_sprite sGrimerSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx35[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_35.4bpp");
-static const u8 sGrimerGfx35_1[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_35_1.4bpp");
-static const u8 sGrimerGfx35_2[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_35_2.4bpp");
+static const u8 sGrimerGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_35.4bpp.lz");
+static const u8 sGrimerGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_35_1.4bpp.lz");
+static const u8 sGrimerGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_35_2.4bpp.lz");
 static const ax_sprite sGrimerSprites35[] = {
 	{sGrimerGfx35, ARRAY_COUNT(sGrimerGfx35)}, 
 	{NULL, 32}, 
@@ -2588,49 +2588,49 @@ static const ax_sprite sGrimerSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx36[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_36.4bpp");
+static const u8 sGrimerGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_36.4bpp.lz");
 static const ax_sprite sGrimerSprites36[] = {
 	{sGrimerGfx36, ARRAY_COUNT(sGrimerGfx36)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx37[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_37.4bpp");
+static const u8 sGrimerGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_37.4bpp.lz");
 static const ax_sprite sGrimerSprites37[] = {
 	{sGrimerGfx37, ARRAY_COUNT(sGrimerGfx37)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx38[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_38.4bpp");
+static const u8 sGrimerGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_38.4bpp.lz");
 static const ax_sprite sGrimerSprites38[] = {
 	{sGrimerGfx38, ARRAY_COUNT(sGrimerGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx39[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_39.4bpp");
+static const u8 sGrimerGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_39.4bpp.lz");
 static const ax_sprite sGrimerSprites39[] = {
 	{sGrimerGfx39, ARRAY_COUNT(sGrimerGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx40[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_40.4bpp");
+static const u8 sGrimerGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_40.4bpp.lz");
 static const ax_sprite sGrimerSprites40[] = {
 	{sGrimerGfx40, ARRAY_COUNT(sGrimerGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx41[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_41.4bpp");
+static const u8 sGrimerGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_41.4bpp.lz");
 static const ax_sprite sGrimerSprites41[] = {
 	{sGrimerGfx41, ARRAY_COUNT(sGrimerGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx42[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_42.4bpp");
+static const u8 sGrimerGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_42.4bpp.lz");
 static const ax_sprite sGrimerSprites42[] = {
 	{sGrimerGfx42, ARRAY_COUNT(sGrimerGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx43[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_43.4bpp");
+static const u8 sGrimerGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_43.4bpp.lz");
 static const ax_sprite sGrimerSprites43[] = {
 	{sGrimerGfx43, ARRAY_COUNT(sGrimerGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGrimerGfx44[] = INCBIN_U8("graphics/ax/mon/grimer/sprite_44.4bpp");
+static const u8 sGrimerGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grimer/sprite_44.4bpp.lz");
 static const ax_sprite sGrimerSprites44[] = {
 	{sGrimerGfx44, ARRAY_COUNT(sGrimerGfx44)}, 
 	{NULL, 0}

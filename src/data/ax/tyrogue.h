@@ -2031,111 +2031,111 @@ static const ax_anim sTyrogueAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTyrogueGfx1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_1.4bpp");
+static const u8 sTyrogueGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_1.4bpp.lz");
 static const ax_sprite sTyrogueSprites1[] = {
 	{sTyrogueGfx1, ARRAY_COUNT(sTyrogueGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_2.4bpp");
+static const u8 sTyrogueGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_2.4bpp.lz");
 static const ax_sprite sTyrogueSprites2[] = {
 	{sTyrogueGfx2, ARRAY_COUNT(sTyrogueGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_3.4bpp");
+static const u8 sTyrogueGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites3[] = {
 	{sTyrogueGfx3, ARRAY_COUNT(sTyrogueGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx4[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_4.4bpp");
+static const u8 sTyrogueGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_4.4bpp.lz");
 static const ax_sprite sTyrogueSprites4[] = {
 	{sTyrogueGfx4, ARRAY_COUNT(sTyrogueGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx5[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_5.4bpp");
+static const u8 sTyrogueGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_5.4bpp.lz");
 static const ax_sprite sTyrogueSprites5[] = {
 	{sTyrogueGfx5, ARRAY_COUNT(sTyrogueGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx6[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_6.4bpp");
+static const u8 sTyrogueGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_6.4bpp.lz");
 static const ax_sprite sTyrogueSprites6[] = {
 	{sTyrogueGfx6, ARRAY_COUNT(sTyrogueGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx7[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_7.4bpp");
+static const u8 sTyrogueGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_7.4bpp.lz");
 static const ax_sprite sTyrogueSprites7[] = {
 	{sTyrogueGfx7, ARRAY_COUNT(sTyrogueGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx8[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_8.4bpp");
+static const u8 sTyrogueGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_8.4bpp.lz");
 static const ax_sprite sTyrogueSprites8[] = {
 	{sTyrogueGfx8, ARRAY_COUNT(sTyrogueGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx9[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_9.4bpp");
+static const u8 sTyrogueGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_9.4bpp.lz");
 static const ax_sprite sTyrogueSprites9[] = {
 	{sTyrogueGfx9, ARRAY_COUNT(sTyrogueGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx10[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_10.4bpp");
+static const u8 sTyrogueGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_10.4bpp.lz");
 static const ax_sprite sTyrogueSprites10[] = {
 	{sTyrogueGfx10, ARRAY_COUNT(sTyrogueGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx11[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_11.4bpp");
+static const u8 sTyrogueGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_11.4bpp.lz");
 static const ax_sprite sTyrogueSprites11[] = {
 	{sTyrogueGfx11, ARRAY_COUNT(sTyrogueGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx12[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_12.4bpp");
+static const u8 sTyrogueGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_12.4bpp.lz");
 static const ax_sprite sTyrogueSprites12[] = {
 	{sTyrogueGfx12, ARRAY_COUNT(sTyrogueGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx13[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_13.4bpp");
+static const u8 sTyrogueGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_13.4bpp.lz");
 static const ax_sprite sTyrogueSprites13[] = {
 	{sTyrogueGfx13, ARRAY_COUNT(sTyrogueGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx14[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_14.4bpp");
+static const u8 sTyrogueGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_14.4bpp.lz");
 static const ax_sprite sTyrogueSprites14[] = {
 	{sTyrogueGfx14, ARRAY_COUNT(sTyrogueGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx15[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_15.4bpp");
+static const u8 sTyrogueGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_15.4bpp.lz");
 static const ax_sprite sTyrogueSprites15[] = {
 	{sTyrogueGfx15, ARRAY_COUNT(sTyrogueGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx16[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_16.4bpp");
+static const u8 sTyrogueGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_16.4bpp.lz");
 static const ax_sprite sTyrogueSprites16[] = {
 	{sTyrogueGfx16, ARRAY_COUNT(sTyrogueGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx17[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_17.4bpp");
+static const u8 sTyrogueGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_17.4bpp.lz");
 static const ax_sprite sTyrogueSprites17[] = {
 	{sTyrogueGfx17, ARRAY_COUNT(sTyrogueGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx18[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_18.4bpp");
+static const u8 sTyrogueGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_18.4bpp.lz");
 static const ax_sprite sTyrogueSprites18[] = {
 	{NULL, 32}, 
 	{sTyrogueGfx18, ARRAY_COUNT(sTyrogueGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx19[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_19.4bpp");
+static const u8 sTyrogueGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_19.4bpp.lz");
 static const ax_sprite sTyrogueSprites19[] = {
 	{sTyrogueGfx19, ARRAY_COUNT(sTyrogueGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx20[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_20.4bpp");
+static const u8 sTyrogueGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_20.4bpp.lz");
 static const ax_sprite sTyrogueSprites20[] = {
 	{sTyrogueGfx20, ARRAY_COUNT(sTyrogueGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx21[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_21.4bpp");
-static const u8 sTyrogueGfx21_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_21_1.4bpp");
-static const u8 sTyrogueGfx21_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_21_2.4bpp");
-static const u8 sTyrogueGfx21_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_21_3.4bpp");
+static const u8 sTyrogueGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_21.4bpp.lz");
+static const u8 sTyrogueGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_21_1.4bpp.lz");
+static const u8 sTyrogueGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_21_2.4bpp.lz");
+static const u8 sTyrogueGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_21_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites21[] = {
 	{NULL, 32}, 
 	{sTyrogueGfx21, ARRAY_COUNT(sTyrogueGfx21)}, 
@@ -2148,9 +2148,9 @@ static const ax_sprite sTyrogueSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx22[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_22.4bpp");
-static const u8 sTyrogueGfx22_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_22_1.4bpp");
-static const u8 sTyrogueGfx22_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_22_2.4bpp");
+static const u8 sTyrogueGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_22.4bpp.lz");
+static const u8 sTyrogueGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_22_1.4bpp.lz");
+static const u8 sTyrogueGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_22_2.4bpp.lz");
 static const ax_sprite sTyrogueSprites22[] = {
 	{sTyrogueGfx22, ARRAY_COUNT(sTyrogueGfx22)}, 
 	{NULL, 32}, 
@@ -2159,16 +2159,16 @@ static const ax_sprite sTyrogueSprites22[] = {
 	{sTyrogueGfx22_2, ARRAY_COUNT(sTyrogueGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx23[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_23.4bpp");
+static const u8 sTyrogueGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_23.4bpp.lz");
 static const ax_sprite sTyrogueSprites23[] = {
 	{NULL, 64}, 
 	{sTyrogueGfx23, ARRAY_COUNT(sTyrogueGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx24[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_24.4bpp");
-static const u8 sTyrogueGfx24_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_24_1.4bpp");
-static const u8 sTyrogueGfx24_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_24_2.4bpp");
-static const u8 sTyrogueGfx24_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_24_3.4bpp");
+static const u8 sTyrogueGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_24.4bpp.lz");
+static const u8 sTyrogueGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_24_1.4bpp.lz");
+static const u8 sTyrogueGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_24_2.4bpp.lz");
+static const u8 sTyrogueGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_24_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites24[] = {
 	{sTyrogueGfx24, ARRAY_COUNT(sTyrogueGfx24)}, 
 	{NULL, 64}, 
@@ -2180,9 +2180,9 @@ static const ax_sprite sTyrogueSprites24[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx25[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_25.4bpp");
-static const u8 sTyrogueGfx25_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_25_1.4bpp");
-static const u8 sTyrogueGfx25_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_25_2.4bpp");
+static const u8 sTyrogueGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_25.4bpp.lz");
+static const u8 sTyrogueGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_25_1.4bpp.lz");
+static const u8 sTyrogueGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_25_2.4bpp.lz");
 static const ax_sprite sTyrogueSprites25[] = {
 	{NULL, 160}, 
 	{sTyrogueGfx25, ARRAY_COUNT(sTyrogueGfx25)}, 
@@ -2193,9 +2193,9 @@ static const ax_sprite sTyrogueSprites25[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx26[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_26.4bpp");
-static const u8 sTyrogueGfx26_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_26_1.4bpp");
-static const u8 sTyrogueGfx26_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_26_2.4bpp");
+static const u8 sTyrogueGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_26.4bpp.lz");
+static const u8 sTyrogueGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_26_1.4bpp.lz");
+static const u8 sTyrogueGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_26_2.4bpp.lz");
 static const ax_sprite sTyrogueSprites26[] = {
 	{NULL, 128}, 
 	{sTyrogueGfx26, ARRAY_COUNT(sTyrogueGfx26)}, 
@@ -2206,10 +2206,10 @@ static const ax_sprite sTyrogueSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx27[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_27.4bpp");
-static const u8 sTyrogueGfx27_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_27_1.4bpp");
-static const u8 sTyrogueGfx27_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_27_2.4bpp");
-static const u8 sTyrogueGfx27_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_27_3.4bpp");
+static const u8 sTyrogueGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_27.4bpp.lz");
+static const u8 sTyrogueGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_27_1.4bpp.lz");
+static const u8 sTyrogueGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_27_2.4bpp.lz");
+static const u8 sTyrogueGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_27_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites27[] = {
 	{sTyrogueGfx27, ARRAY_COUNT(sTyrogueGfx27)}, 
 	{NULL, 64}, 
@@ -2221,8 +2221,8 @@ static const ax_sprite sTyrogueSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx28[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_28.4bpp");
-static const u8 sTyrogueGfx28_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_28_1.4bpp");
+static const u8 sTyrogueGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_28.4bpp.lz");
+static const u8 sTyrogueGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_28_1.4bpp.lz");
 static const ax_sprite sTyrogueSprites28[] = {
 	{sTyrogueGfx28, ARRAY_COUNT(sTyrogueGfx28)}, 
 	{NULL, 32}, 
@@ -2230,10 +2230,10 @@ static const ax_sprite sTyrogueSprites28[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx29[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_29.4bpp");
-static const u8 sTyrogueGfx29_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_29_1.4bpp");
-static const u8 sTyrogueGfx29_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_29_2.4bpp");
-static const u8 sTyrogueGfx29_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_29_3.4bpp");
+static const u8 sTyrogueGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_29.4bpp.lz");
+static const u8 sTyrogueGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_29_1.4bpp.lz");
+static const u8 sTyrogueGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_29_2.4bpp.lz");
+static const u8 sTyrogueGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_29_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites29[] = {
 	{NULL, 32}, 
 	{sTyrogueGfx29, ARRAY_COUNT(sTyrogueGfx29)}, 
@@ -2246,15 +2246,15 @@ static const ax_sprite sTyrogueSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx30[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_30.4bpp");
+static const u8 sTyrogueGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_30.4bpp.lz");
 static const ax_sprite sTyrogueSprites30[] = {
 	{sTyrogueGfx30, ARRAY_COUNT(sTyrogueGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx31[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_31.4bpp");
-static const u8 sTyrogueGfx31_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_31_1.4bpp");
-static const u8 sTyrogueGfx31_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_31_2.4bpp");
-static const u8 sTyrogueGfx31_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_31_3.4bpp");
+static const u8 sTyrogueGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_31.4bpp.lz");
+static const u8 sTyrogueGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_31_1.4bpp.lz");
+static const u8 sTyrogueGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_31_2.4bpp.lz");
+static const u8 sTyrogueGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_31_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites31[] = {
 	{sTyrogueGfx31, ARRAY_COUNT(sTyrogueGfx31)}, 
 	{NULL, 64}, 
@@ -2266,10 +2266,10 @@ static const ax_sprite sTyrogueSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx32[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_32.4bpp");
-static const u8 sTyrogueGfx32_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_32_1.4bpp");
-static const u8 sTyrogueGfx32_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_32_2.4bpp");
-static const u8 sTyrogueGfx32_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_32_3.4bpp");
+static const u8 sTyrogueGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_32.4bpp.lz");
+static const u8 sTyrogueGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_32_1.4bpp.lz");
+static const u8 sTyrogueGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_32_2.4bpp.lz");
+static const u8 sTyrogueGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_32_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites32[] = {
 	{sTyrogueGfx32, ARRAY_COUNT(sTyrogueGfx32)}, 
 	{NULL, 64}, 
@@ -2281,14 +2281,14 @@ static const ax_sprite sTyrogueSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx33[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_33.4bpp");
+static const u8 sTyrogueGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_33.4bpp.lz");
 static const ax_sprite sTyrogueSprites33[] = {
 	{sTyrogueGfx33, ARRAY_COUNT(sTyrogueGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx34[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_34.4bpp");
-static const u8 sTyrogueGfx34_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_34_1.4bpp");
-static const u8 sTyrogueGfx34_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_34_2.4bpp");
+static const u8 sTyrogueGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_34.4bpp.lz");
+static const u8 sTyrogueGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_34_1.4bpp.lz");
+static const u8 sTyrogueGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_34_2.4bpp.lz");
 static const ax_sprite sTyrogueSprites34[] = {
 	{sTyrogueGfx34, ARRAY_COUNT(sTyrogueGfx34)}, 
 	{NULL, 32}, 
@@ -2298,15 +2298,15 @@ static const ax_sprite sTyrogueSprites34[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx35[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_35.4bpp");
+static const u8 sTyrogueGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_35.4bpp.lz");
 static const ax_sprite sTyrogueSprites35[] = {
 	{sTyrogueGfx35, ARRAY_COUNT(sTyrogueGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx36[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_36.4bpp");
-static const u8 sTyrogueGfx36_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_36_1.4bpp");
-static const u8 sTyrogueGfx36_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_36_2.4bpp");
-static const u8 sTyrogueGfx36_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_36_3.4bpp");
+static const u8 sTyrogueGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_36.4bpp.lz");
+static const u8 sTyrogueGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_36_1.4bpp.lz");
+static const u8 sTyrogueGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_36_2.4bpp.lz");
+static const u8 sTyrogueGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_36_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites36[] = {
 	{sTyrogueGfx36, ARRAY_COUNT(sTyrogueGfx36)}, 
 	{NULL, 32}, 
@@ -2318,10 +2318,10 @@ static const ax_sprite sTyrogueSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx37[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_37.4bpp");
-static const u8 sTyrogueGfx37_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_37_1.4bpp");
-static const u8 sTyrogueGfx37_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_37_2.4bpp");
-static const u8 sTyrogueGfx37_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_37_3.4bpp");
+static const u8 sTyrogueGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_37.4bpp.lz");
+static const u8 sTyrogueGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_37_1.4bpp.lz");
+static const u8 sTyrogueGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_37_2.4bpp.lz");
+static const u8 sTyrogueGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_37_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites37[] = {
 	{sTyrogueGfx37, ARRAY_COUNT(sTyrogueGfx37)}, 
 	{NULL, 64}, 
@@ -2333,15 +2333,15 @@ static const ax_sprite sTyrogueSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx38[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_38.4bpp");
+static const u8 sTyrogueGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_38.4bpp.lz");
 static const ax_sprite sTyrogueSprites38[] = {
 	{sTyrogueGfx38, ARRAY_COUNT(sTyrogueGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx39[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_39.4bpp");
-static const u8 sTyrogueGfx39_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_39_1.4bpp");
-static const u8 sTyrogueGfx39_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_39_2.4bpp");
-static const u8 sTyrogueGfx39_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_39_3.4bpp");
+static const u8 sTyrogueGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_39.4bpp.lz");
+static const u8 sTyrogueGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_39_1.4bpp.lz");
+static const u8 sTyrogueGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_39_2.4bpp.lz");
+static const u8 sTyrogueGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_39_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites39[] = {
 	{sTyrogueGfx39, ARRAY_COUNT(sTyrogueGfx39)}, 
 	{NULL, 64}, 
@@ -2353,10 +2353,10 @@ static const ax_sprite sTyrogueSprites39[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx40[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_40.4bpp");
-static const u8 sTyrogueGfx40_1[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_40_1.4bpp");
-static const u8 sTyrogueGfx40_2[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_40_2.4bpp");
-static const u8 sTyrogueGfx40_3[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_40_3.4bpp");
+static const u8 sTyrogueGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_40.4bpp.lz");
+static const u8 sTyrogueGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_40_1.4bpp.lz");
+static const u8 sTyrogueGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_40_2.4bpp.lz");
+static const u8 sTyrogueGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_40_3.4bpp.lz");
 static const ax_sprite sTyrogueSprites40[] = {
 	{sTyrogueGfx40, ARRAY_COUNT(sTyrogueGfx40)}, 
 	{NULL, 32}, 
@@ -2368,37 +2368,37 @@ static const ax_sprite sTyrogueSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx41[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_41.4bpp");
+static const u8 sTyrogueGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_41.4bpp.lz");
 static const ax_sprite sTyrogueSprites41[] = {
 	{sTyrogueGfx41, ARRAY_COUNT(sTyrogueGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx42[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_42.4bpp");
+static const u8 sTyrogueGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_42.4bpp.lz");
 static const ax_sprite sTyrogueSprites42[] = {
 	{sTyrogueGfx42, ARRAY_COUNT(sTyrogueGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx43[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_43.4bpp");
+static const u8 sTyrogueGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_43.4bpp.lz");
 static const ax_sprite sTyrogueSprites43[] = {
 	{sTyrogueGfx43, ARRAY_COUNT(sTyrogueGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx44[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_44.4bpp");
+static const u8 sTyrogueGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_44.4bpp.lz");
 static const ax_sprite sTyrogueSprites44[] = {
 	{sTyrogueGfx44, ARRAY_COUNT(sTyrogueGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx45[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_45.4bpp");
+static const u8 sTyrogueGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_45.4bpp.lz");
 static const ax_sprite sTyrogueSprites45[] = {
 	{sTyrogueGfx45, ARRAY_COUNT(sTyrogueGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx46[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_46.4bpp");
+static const u8 sTyrogueGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_46.4bpp.lz");
 static const ax_sprite sTyrogueSprites46[] = {
 	{sTyrogueGfx46, ARRAY_COUNT(sTyrogueGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTyrogueGfx47[] = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_47.4bpp");
+static const u8 sTyrogueGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tyrogue/sprite_47.4bpp.lz");
 static const ax_sprite sTyrogueSprites47[] = {
 	{sTyrogueGfx47, ARRAY_COUNT(sTyrogueGfx47)}, 
 	{NULL, 0}

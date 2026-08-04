@@ -2111,98 +2111,98 @@ static const ax_anim sClefableAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sClefableGfx1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_1.4bpp");
+static const u8 sClefableGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_1.4bpp.lz");
 static const ax_sprite sClefableSprites1[] = {
 	{sClefableGfx1, ARRAY_COUNT(sClefableGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_2.4bpp");
+static const u8 sClefableGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_2.4bpp.lz");
 static const ax_sprite sClefableSprites2[] = {
 	{sClefableGfx2, ARRAY_COUNT(sClefableGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_3.4bpp");
+static const u8 sClefableGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_3.4bpp.lz");
 static const ax_sprite sClefableSprites3[] = {
 	{sClefableGfx3, ARRAY_COUNT(sClefableGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx4[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_4.4bpp");
+static const u8 sClefableGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_4.4bpp.lz");
 static const ax_sprite sClefableSprites4[] = {
 	{sClefableGfx4, ARRAY_COUNT(sClefableGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx5[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_5.4bpp");
+static const u8 sClefableGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_5.4bpp.lz");
 static const ax_sprite sClefableSprites5[] = {
 	{sClefableGfx5, ARRAY_COUNT(sClefableGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx6[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_6.4bpp");
+static const u8 sClefableGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_6.4bpp.lz");
 static const ax_sprite sClefableSprites6[] = {
 	{sClefableGfx6, ARRAY_COUNT(sClefableGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx7[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_7.4bpp");
+static const u8 sClefableGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_7.4bpp.lz");
 static const ax_sprite sClefableSprites7[] = {
 	{sClefableGfx7, ARRAY_COUNT(sClefableGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx8[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_8.4bpp");
+static const u8 sClefableGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_8.4bpp.lz");
 static const ax_sprite sClefableSprites8[] = {
 	{sClefableGfx8, ARRAY_COUNT(sClefableGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx9[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_9.4bpp");
+static const u8 sClefableGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_9.4bpp.lz");
 static const ax_sprite sClefableSprites9[] = {
 	{sClefableGfx9, ARRAY_COUNT(sClefableGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx10[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_10.4bpp");
+static const u8 sClefableGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_10.4bpp.lz");
 static const ax_sprite sClefableSprites10[] = {
 	{sClefableGfx10, ARRAY_COUNT(sClefableGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx11[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_11.4bpp");
+static const u8 sClefableGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_11.4bpp.lz");
 static const ax_sprite sClefableSprites11[] = {
 	{sClefableGfx11, ARRAY_COUNT(sClefableGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx12[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_12.4bpp");
+static const u8 sClefableGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_12.4bpp.lz");
 static const ax_sprite sClefableSprites12[] = {
 	{sClefableGfx12, ARRAY_COUNT(sClefableGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx13[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_13.4bpp");
+static const u8 sClefableGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_13.4bpp.lz");
 static const ax_sprite sClefableSprites13[] = {
 	{sClefableGfx13, ARRAY_COUNT(sClefableGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx14[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_14.4bpp");
+static const u8 sClefableGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_14.4bpp.lz");
 static const ax_sprite sClefableSprites14[] = {
 	{sClefableGfx14, ARRAY_COUNT(sClefableGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx15[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_15.4bpp");
+static const u8 sClefableGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_15.4bpp.lz");
 static const ax_sprite sClefableSprites15[] = {
 	{sClefableGfx15, ARRAY_COUNT(sClefableGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx16[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_16.4bpp");
+static const u8 sClefableGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_16.4bpp.lz");
 static const ax_sprite sClefableSprites16[] = {
 	{sClefableGfx16, ARRAY_COUNT(sClefableGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx17[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_17.4bpp");
+static const u8 sClefableGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_17.4bpp.lz");
 static const ax_sprite sClefableSprites17[] = {
 	{sClefableGfx17, ARRAY_COUNT(sClefableGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx18[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_18.4bpp");
+static const u8 sClefableGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_18.4bpp.lz");
 static const ax_sprite sClefableSprites18[] = {
 	{sClefableGfx18, ARRAY_COUNT(sClefableGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx19[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_19.4bpp");
-static const u8 sClefableGfx19_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_19_1.4bpp");
+static const u8 sClefableGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_19.4bpp.lz");
+static const u8 sClefableGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_19_1.4bpp.lz");
 static const ax_sprite sClefableSprites19[] = {
 	{sClefableGfx19, ARRAY_COUNT(sClefableGfx19)}, 
 	{NULL, 32}, 
@@ -2210,10 +2210,10 @@ static const ax_sprite sClefableSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx20[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_20.4bpp");
-static const u8 sClefableGfx20_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_20_1.4bpp");
-static const u8 sClefableGfx20_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_20_2.4bpp");
-static const u8 sClefableGfx20_3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_20_3.4bpp");
+static const u8 sClefableGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_20.4bpp.lz");
+static const u8 sClefableGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_20_1.4bpp.lz");
+static const u8 sClefableGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_20_2.4bpp.lz");
+static const u8 sClefableGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_20_3.4bpp.lz");
 static const ax_sprite sClefableSprites20[] = {
 	{sClefableGfx20, ARRAY_COUNT(sClefableGfx20)}, 
 	{NULL, 64}, 
@@ -2225,10 +2225,10 @@ static const ax_sprite sClefableSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx21[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_21.4bpp");
-static const u8 sClefableGfx21_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_21_1.4bpp");
-static const u8 sClefableGfx21_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_21_2.4bpp");
-static const u8 sClefableGfx21_3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_21_3.4bpp");
+static const u8 sClefableGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_21.4bpp.lz");
+static const u8 sClefableGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_21_1.4bpp.lz");
+static const u8 sClefableGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_21_2.4bpp.lz");
+static const u8 sClefableGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_21_3.4bpp.lz");
 static const ax_sprite sClefableSprites21[] = {
 	{sClefableGfx21, ARRAY_COUNT(sClefableGfx21)}, 
 	{NULL, 64}, 
@@ -2240,9 +2240,9 @@ static const ax_sprite sClefableSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx22[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_22.4bpp");
-static const u8 sClefableGfx22_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_22_1.4bpp");
-static const u8 sClefableGfx22_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_22_2.4bpp");
+static const u8 sClefableGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_22.4bpp.lz");
+static const u8 sClefableGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_22_1.4bpp.lz");
+static const u8 sClefableGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_22_2.4bpp.lz");
 static const ax_sprite sClefableSprites22[] = {
 	{sClefableGfx22, ARRAY_COUNT(sClefableGfx22)}, 
 	{NULL, 32}, 
@@ -2252,10 +2252,10 @@ static const ax_sprite sClefableSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx23[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_23.4bpp");
-static const u8 sClefableGfx23_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_23_1.4bpp");
-static const u8 sClefableGfx23_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_23_2.4bpp");
-static const u8 sClefableGfx23_3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_23_3.4bpp");
+static const u8 sClefableGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_23.4bpp.lz");
+static const u8 sClefableGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_23_1.4bpp.lz");
+static const u8 sClefableGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_23_2.4bpp.lz");
+static const u8 sClefableGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_23_3.4bpp.lz");
 static const ax_sprite sClefableSprites23[] = {
 	{sClefableGfx23, ARRAY_COUNT(sClefableGfx23)}, 
 	{NULL, 32}, 
@@ -2267,48 +2267,48 @@ static const ax_sprite sClefableSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx24[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_24.4bpp");
+static const u8 sClefableGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_24.4bpp.lz");
 static const ax_sprite sClefableSprites24[] = {
 	{sClefableGfx24, ARRAY_COUNT(sClefableGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx25[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_25.4bpp");
+static const u8 sClefableGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_25.4bpp.lz");
 static const ax_sprite sClefableSprites25[] = {
 	{sClefableGfx25, ARRAY_COUNT(sClefableGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx26[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_26.4bpp");
+static const u8 sClefableGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_26.4bpp.lz");
 static const ax_sprite sClefableSprites26[] = {
 	{sClefableGfx26, ARRAY_COUNT(sClefableGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx27[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_27.4bpp");
+static const u8 sClefableGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_27.4bpp.lz");
 static const ax_sprite sClefableSprites27[] = {
 	{sClefableGfx27, ARRAY_COUNT(sClefableGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx28[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_28.4bpp");
+static const u8 sClefableGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_28.4bpp.lz");
 static const ax_sprite sClefableSprites28[] = {
 	{sClefableGfx28, ARRAY_COUNT(sClefableGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx29[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_29.4bpp");
+static const u8 sClefableGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_29.4bpp.lz");
 static const ax_sprite sClefableSprites29[] = {
 	{sClefableGfx29, ARRAY_COUNT(sClefableGfx29)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx30[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_30.4bpp");
+static const u8 sClefableGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_30.4bpp.lz");
 static const ax_sprite sClefableSprites30[] = {
 	{sClefableGfx30, ARRAY_COUNT(sClefableGfx30)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx31[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_31.4bpp");
-static const u8 sClefableGfx31_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_31_1.4bpp");
-static const u8 sClefableGfx31_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_31_2.4bpp");
-static const u8 sClefableGfx31_3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_31_3.4bpp");
+static const u8 sClefableGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_31.4bpp.lz");
+static const u8 sClefableGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_31_1.4bpp.lz");
+static const u8 sClefableGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_31_2.4bpp.lz");
+static const u8 sClefableGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_31_3.4bpp.lz");
 static const ax_sprite sClefableSprites31[] = {
 	{sClefableGfx31, ARRAY_COUNT(sClefableGfx31)}, 
 	{NULL, 64}, 
@@ -2320,10 +2320,10 @@ static const ax_sprite sClefableSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx32[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_32.4bpp");
-static const u8 sClefableGfx32_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_32_1.4bpp");
-static const u8 sClefableGfx32_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_32_2.4bpp");
-static const u8 sClefableGfx32_3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_32_3.4bpp");
+static const u8 sClefableGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_32.4bpp.lz");
+static const u8 sClefableGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_32_1.4bpp.lz");
+static const u8 sClefableGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_32_2.4bpp.lz");
+static const u8 sClefableGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_32_3.4bpp.lz");
 static const ax_sprite sClefableSprites32[] = {
 	{sClefableGfx32, ARRAY_COUNT(sClefableGfx32)}, 
 	{NULL, 32}, 
@@ -2335,10 +2335,10 @@ static const ax_sprite sClefableSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx33[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_33.4bpp");
-static const u8 sClefableGfx33_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_33_1.4bpp");
-static const u8 sClefableGfx33_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_33_2.4bpp");
-static const u8 sClefableGfx33_3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_33_3.4bpp");
+static const u8 sClefableGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_33.4bpp.lz");
+static const u8 sClefableGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_33_1.4bpp.lz");
+static const u8 sClefableGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_33_2.4bpp.lz");
+static const u8 sClefableGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_33_3.4bpp.lz");
 static const ax_sprite sClefableSprites33[] = {
 	{sClefableGfx33, ARRAY_COUNT(sClefableGfx33)}, 
 	{NULL, 32}, 
@@ -2350,10 +2350,10 @@ static const ax_sprite sClefableSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx34[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_34.4bpp");
-static const u8 sClefableGfx34_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_34_1.4bpp");
-static const u8 sClefableGfx34_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_34_2.4bpp");
-static const u8 sClefableGfx34_3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_34_3.4bpp");
+static const u8 sClefableGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_34.4bpp.lz");
+static const u8 sClefableGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_34_1.4bpp.lz");
+static const u8 sClefableGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_34_2.4bpp.lz");
+static const u8 sClefableGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_34_3.4bpp.lz");
 static const ax_sprite sClefableSprites34[] = {
 	{NULL, 32}, 
 	{sClefableGfx34, ARRAY_COUNT(sClefableGfx34)}, 
@@ -2366,10 +2366,10 @@ static const ax_sprite sClefableSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx35[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_35.4bpp");
-static const u8 sClefableGfx35_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_35_1.4bpp");
-static const u8 sClefableGfx35_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_35_2.4bpp");
-static const u8 sClefableGfx35_3[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_35_3.4bpp");
+static const u8 sClefableGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_35.4bpp.lz");
+static const u8 sClefableGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_35_1.4bpp.lz");
+static const u8 sClefableGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_35_2.4bpp.lz");
+static const u8 sClefableGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_35_3.4bpp.lz");
 static const ax_sprite sClefableSprites35[] = {
 	{sClefableGfx35, ARRAY_COUNT(sClefableGfx35)}, 
 	{NULL, 32}, 
@@ -2381,9 +2381,9 @@ static const ax_sprite sClefableSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx36[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_36.4bpp");
-static const u8 sClefableGfx36_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_36_1.4bpp");
-static const u8 sClefableGfx36_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_36_2.4bpp");
+static const u8 sClefableGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_36.4bpp.lz");
+static const u8 sClefableGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_36_1.4bpp.lz");
+static const u8 sClefableGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_36_2.4bpp.lz");
 static const ax_sprite sClefableSprites36[] = {
 	{sClefableGfx36, ARRAY_COUNT(sClefableGfx36)}, 
 	{NULL, 32}, 
@@ -2393,9 +2393,9 @@ static const ax_sprite sClefableSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx37[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_37.4bpp");
-static const u8 sClefableGfx37_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_37_1.4bpp");
-static const u8 sClefableGfx37_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_37_2.4bpp");
+static const u8 sClefableGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_37.4bpp.lz");
+static const u8 sClefableGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_37_1.4bpp.lz");
+static const u8 sClefableGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_37_2.4bpp.lz");
 static const ax_sprite sClefableSprites37[] = {
 	{sClefableGfx37, ARRAY_COUNT(sClefableGfx37)}, 
 	{NULL, 32}, 
@@ -2405,9 +2405,9 @@ static const ax_sprite sClefableSprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx38[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_38.4bpp");
-static const u8 sClefableGfx38_1[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_38_1.4bpp");
-static const u8 sClefableGfx38_2[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_38_2.4bpp");
+static const u8 sClefableGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_38.4bpp.lz");
+static const u8 sClefableGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_38_1.4bpp.lz");
+static const u8 sClefableGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_38_2.4bpp.lz");
 static const ax_sprite sClefableSprites38[] = {
 	{sClefableGfx38, ARRAY_COUNT(sClefableGfx38)}, 
 	{NULL, 32}, 
@@ -2417,37 +2417,37 @@ static const ax_sprite sClefableSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx39[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_39.4bpp");
+static const u8 sClefableGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_39.4bpp.lz");
 static const ax_sprite sClefableSprites39[] = {
 	{sClefableGfx39, ARRAY_COUNT(sClefableGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx40[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_40.4bpp");
+static const u8 sClefableGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_40.4bpp.lz");
 static const ax_sprite sClefableSprites40[] = {
 	{sClefableGfx40, ARRAY_COUNT(sClefableGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx41[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_41.4bpp");
+static const u8 sClefableGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_41.4bpp.lz");
 static const ax_sprite sClefableSprites41[] = {
 	{sClefableGfx41, ARRAY_COUNT(sClefableGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx42[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_42.4bpp");
+static const u8 sClefableGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_42.4bpp.lz");
 static const ax_sprite sClefableSprites42[] = {
 	{sClefableGfx42, ARRAY_COUNT(sClefableGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx43[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_43.4bpp");
+static const u8 sClefableGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_43.4bpp.lz");
 static const ax_sprite sClefableSprites43[] = {
 	{sClefableGfx43, ARRAY_COUNT(sClefableGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx44[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_44.4bpp");
+static const u8 sClefableGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_44.4bpp.lz");
 static const ax_sprite sClefableSprites44[] = {
 	{sClefableGfx44, ARRAY_COUNT(sClefableGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sClefableGfx45[] = INCBIN_U8("graphics/ax/mon/clefable/sprite_45.4bpp");
+static const u8 sClefableGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefable/sprite_45.4bpp.lz");
 static const ax_sprite sClefableSprites45[] = {
 	{sClefableGfx45, ARRAY_COUNT(sClefableGfx45)}, 
 	{NULL, 0}

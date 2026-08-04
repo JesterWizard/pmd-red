@@ -2587,109 +2587,109 @@ static const ax_anim sCharizardAnims_17_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCharizardGfx1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_1.4bpp");
+static const u8 sCharizardGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_1.4bpp.lz");
 static const ax_sprite sCharizardSprites1[] = {
 	{sCharizardGfx1, ARRAY_COUNT(sCharizardGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx2[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_2.4bpp");
+static const u8 sCharizardGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_2.4bpp.lz");
 static const ax_sprite sCharizardSprites2[] = {
 	{sCharizardGfx2, ARRAY_COUNT(sCharizardGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx3[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_3.4bpp");
+static const u8 sCharizardGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_3.4bpp.lz");
 static const ax_sprite sCharizardSprites3[] = {
 	{sCharizardGfx3, ARRAY_COUNT(sCharizardGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx4[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_4.4bpp");
+static const u8 sCharizardGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_4.4bpp.lz");
 static const ax_sprite sCharizardSprites4[] = {
 	{sCharizardGfx4, ARRAY_COUNT(sCharizardGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx5[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_5.4bpp");
+static const u8 sCharizardGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_5.4bpp.lz");
 static const ax_sprite sCharizardSprites5[] = {
 	{sCharizardGfx5, ARRAY_COUNT(sCharizardGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx6[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_6.4bpp");
+static const u8 sCharizardGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_6.4bpp.lz");
 static const ax_sprite sCharizardSprites6[] = {
 	{sCharizardGfx6, ARRAY_COUNT(sCharizardGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx7[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_7.4bpp");
+static const u8 sCharizardGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_7.4bpp.lz");
 static const ax_sprite sCharizardSprites7[] = {
 	{sCharizardGfx7, ARRAY_COUNT(sCharizardGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx8[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_8.4bpp");
+static const u8 sCharizardGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_8.4bpp.lz");
 static const ax_sprite sCharizardSprites8[] = {
 	{sCharizardGfx8, ARRAY_COUNT(sCharizardGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx9[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_9.4bpp");
+static const u8 sCharizardGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_9.4bpp.lz");
 static const ax_sprite sCharizardSprites9[] = {
 	{sCharizardGfx9, ARRAY_COUNT(sCharizardGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx10[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_10.4bpp");
+static const u8 sCharizardGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_10.4bpp.lz");
 static const ax_sprite sCharizardSprites10[] = {
 	{sCharizardGfx10, ARRAY_COUNT(sCharizardGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx11[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_11.4bpp");
+static const u8 sCharizardGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_11.4bpp.lz");
 static const ax_sprite sCharizardSprites11[] = {
 	{sCharizardGfx11, ARRAY_COUNT(sCharizardGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx12[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_12.4bpp");
+static const u8 sCharizardGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_12.4bpp.lz");
 static const ax_sprite sCharizardSprites12[] = {
 	{sCharizardGfx12, ARRAY_COUNT(sCharizardGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx13[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_13.4bpp");
+static const u8 sCharizardGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_13.4bpp.lz");
 static const ax_sprite sCharizardSprites13[] = {
 	{sCharizardGfx13, ARRAY_COUNT(sCharizardGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx14[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_14.4bpp");
+static const u8 sCharizardGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_14.4bpp.lz");
 static const ax_sprite sCharizardSprites14[] = {
 	{sCharizardGfx14, ARRAY_COUNT(sCharizardGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx15[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_15.4bpp");
+static const u8 sCharizardGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_15.4bpp.lz");
 static const ax_sprite sCharizardSprites15[] = {
 	{sCharizardGfx15, ARRAY_COUNT(sCharizardGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx16[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_16.4bpp");
+static const u8 sCharizardGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_16.4bpp.lz");
 static const ax_sprite sCharizardSprites16[] = {
 	{sCharizardGfx16, ARRAY_COUNT(sCharizardGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx17[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_17.4bpp");
+static const u8 sCharizardGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_17.4bpp.lz");
 static const ax_sprite sCharizardSprites17[] = {
 	{sCharizardGfx17, ARRAY_COUNT(sCharizardGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx18[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_18.4bpp");
+static const u8 sCharizardGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_18.4bpp.lz");
 static const ax_sprite sCharizardSprites18[] = {
 	{sCharizardGfx18, ARRAY_COUNT(sCharizardGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx19[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_19.4bpp");
+static const u8 sCharizardGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_19.4bpp.lz");
 static const ax_sprite sCharizardSprites19[] = {
 	{sCharizardGfx19, ARRAY_COUNT(sCharizardGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx20[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_20.4bpp");
+static const u8 sCharizardGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_20.4bpp.lz");
 static const ax_sprite sCharizardSprites20[] = {
 	{sCharizardGfx20, ARRAY_COUNT(sCharizardGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx21[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_21.4bpp");
-static const u8 sCharizardGfx21_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_21_1.4bpp");
-static const u8 sCharizardGfx21_2[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_21_2.4bpp");
+static const u8 sCharizardGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_21.4bpp.lz");
+static const u8 sCharizardGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_21_1.4bpp.lz");
+static const u8 sCharizardGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_21_2.4bpp.lz");
 static const ax_sprite sCharizardSprites21[] = {
 	{NULL, 128}, 
 	{sCharizardGfx21, ARRAY_COUNT(sCharizardGfx21)}, 
@@ -2700,9 +2700,9 @@ static const ax_sprite sCharizardSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx22[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_22.4bpp");
-static const u8 sCharizardGfx22_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_22_1.4bpp");
-static const u8 sCharizardGfx22_2[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_22_2.4bpp");
+static const u8 sCharizardGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_22.4bpp.lz");
+static const u8 sCharizardGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_22_1.4bpp.lz");
+static const u8 sCharizardGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_22_2.4bpp.lz");
 static const ax_sprite sCharizardSprites22[] = {
 	{sCharizardGfx22, ARRAY_COUNT(sCharizardGfx22)}, 
 	{NULL, 32}, 
@@ -2711,14 +2711,14 @@ static const ax_sprite sCharizardSprites22[] = {
 	{sCharizardGfx22_2, ARRAY_COUNT(sCharizardGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx23[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_23.4bpp");
+static const u8 sCharizardGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_23.4bpp.lz");
 static const ax_sprite sCharizardSprites23[] = {
 	{sCharizardGfx23, ARRAY_COUNT(sCharizardGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx24[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_24.4bpp");
-static const u8 sCharizardGfx24_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_24_1.4bpp");
-static const u8 sCharizardGfx24_2[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_24_2.4bpp");
+static const u8 sCharizardGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_24.4bpp.lz");
+static const u8 sCharizardGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_24_1.4bpp.lz");
+static const u8 sCharizardGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_24_2.4bpp.lz");
 static const ax_sprite sCharizardSprites24[] = {
 	{NULL, 64}, 
 	{sCharizardGfx24, ARRAY_COUNT(sCharizardGfx24)}, 
@@ -2728,67 +2728,67 @@ static const ax_sprite sCharizardSprites24[] = {
 	{sCharizardGfx24_2, ARRAY_COUNT(sCharizardGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx25[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_25.4bpp");
+static const u8 sCharizardGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_25.4bpp.lz");
 static const ax_sprite sCharizardSprites25[] = {
 	{sCharizardGfx25, ARRAY_COUNT(sCharizardGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx26[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_26.4bpp");
+static const u8 sCharizardGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_26.4bpp.lz");
 static const ax_sprite sCharizardSprites26[] = {
 	{sCharizardGfx26, ARRAY_COUNT(sCharizardGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx27[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_27.4bpp");
-static const u8 sCharizardGfx27_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_27_1.4bpp");
+static const u8 sCharizardGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_27.4bpp.lz");
+static const u8 sCharizardGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_27_1.4bpp.lz");
 static const ax_sprite sCharizardSprites27[] = {
 	{sCharizardGfx27, ARRAY_COUNT(sCharizardGfx27)}, 
 	{NULL, 32}, 
 	{sCharizardGfx27_1, ARRAY_COUNT(sCharizardGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx28[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_28.4bpp");
-static const u8 sCharizardGfx28_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_28_1.4bpp");
+static const u8 sCharizardGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_28.4bpp.lz");
+static const u8 sCharizardGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_28_1.4bpp.lz");
 static const ax_sprite sCharizardSprites28[] = {
 	{sCharizardGfx28, ARRAY_COUNT(sCharizardGfx28)}, 
 	{NULL, 32}, 
 	{sCharizardGfx28_1, ARRAY_COUNT(sCharizardGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx29[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_29.4bpp");
+static const u8 sCharizardGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_29.4bpp.lz");
 static const ax_sprite sCharizardSprites29[] = {
 	{sCharizardGfx29, ARRAY_COUNT(sCharizardGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx30[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_30.4bpp");
-static const u8 sCharizardGfx30_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_30_1.4bpp");
+static const u8 sCharizardGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_30.4bpp.lz");
+static const u8 sCharizardGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_30_1.4bpp.lz");
 static const ax_sprite sCharizardSprites30[] = {
 	{sCharizardGfx30, ARRAY_COUNT(sCharizardGfx30)}, 
 	{NULL, 32}, 
 	{sCharizardGfx30_1, ARRAY_COUNT(sCharizardGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx31[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_31.4bpp");
+static const u8 sCharizardGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_31.4bpp.lz");
 static const ax_sprite sCharizardSprites31[] = {
 	{sCharizardGfx31, ARRAY_COUNT(sCharizardGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx32[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_32.4bpp");
+static const u8 sCharizardGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_32.4bpp.lz");
 static const ax_sprite sCharizardSprites32[] = {
 	{sCharizardGfx32, ARRAY_COUNT(sCharizardGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx33[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_33.4bpp");
+static const u8 sCharizardGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_33.4bpp.lz");
 static const ax_sprite sCharizardSprites33[] = {
 	{sCharizardGfx33, ARRAY_COUNT(sCharizardGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx34[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_34.4bpp");
+static const u8 sCharizardGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_34.4bpp.lz");
 static const ax_sprite sCharizardSprites34[] = {
 	{sCharizardGfx34, ARRAY_COUNT(sCharizardGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx35[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_35.4bpp");
-static const u8 sCharizardGfx35_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_35_1.4bpp");
+static const u8 sCharizardGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_35.4bpp.lz");
+static const u8 sCharizardGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_35_1.4bpp.lz");
 static const ax_sprite sCharizardSprites35[] = {
 	{sCharizardGfx35, ARRAY_COUNT(sCharizardGfx35)}, 
 	{NULL, 32}, 
@@ -2796,40 +2796,40 @@ static const ax_sprite sCharizardSprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx36[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_36.4bpp");
+static const u8 sCharizardGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_36.4bpp.lz");
 static const ax_sprite sCharizardSprites36[] = {
 	{sCharizardGfx36, ARRAY_COUNT(sCharizardGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx37[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_37.4bpp");
+static const u8 sCharizardGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_37.4bpp.lz");
 static const ax_sprite sCharizardSprites37[] = {
 	{sCharizardGfx37, ARRAY_COUNT(sCharizardGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx38[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_38.4bpp");
+static const u8 sCharizardGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_38.4bpp.lz");
 static const ax_sprite sCharizardSprites38[] = {
 	{sCharizardGfx38, ARRAY_COUNT(sCharizardGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx39[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_39.4bpp");
+static const u8 sCharizardGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_39.4bpp.lz");
 static const ax_sprite sCharizardSprites39[] = {
 	{sCharizardGfx39, ARRAY_COUNT(sCharizardGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx40[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_40.4bpp");
+static const u8 sCharizardGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_40.4bpp.lz");
 static const ax_sprite sCharizardSprites40[] = {
 	{sCharizardGfx40, ARRAY_COUNT(sCharizardGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx41[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_41.4bpp");
+static const u8 sCharizardGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_41.4bpp.lz");
 static const ax_sprite sCharizardSprites41[] = {
 	{NULL, 32}, 
 	{sCharizardGfx41, ARRAY_COUNT(sCharizardGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx42[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_42.4bpp");
-static const u8 sCharizardGfx42_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_42_1.4bpp");
-static const u8 sCharizardGfx42_2[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_42_2.4bpp");
+static const u8 sCharizardGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_42.4bpp.lz");
+static const u8 sCharizardGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_42_1.4bpp.lz");
+static const u8 sCharizardGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_42_2.4bpp.lz");
 static const ax_sprite sCharizardSprites42[] = {
 	{sCharizardGfx42, ARRAY_COUNT(sCharizardGfx42)}, 
 	{NULL, 32}, 
@@ -2839,16 +2839,16 @@ static const ax_sprite sCharizardSprites42[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx43[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_43.4bpp");
-static const u8 sCharizardGfx43_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_43_1.4bpp");
+static const u8 sCharizardGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_43.4bpp.lz");
+static const u8 sCharizardGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_43_1.4bpp.lz");
 static const ax_sprite sCharizardSprites43[] = {
 	{sCharizardGfx43, ARRAY_COUNT(sCharizardGfx43)}, 
 	{NULL, 32}, 
 	{sCharizardGfx43_1, ARRAY_COUNT(sCharizardGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx44[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_44.4bpp");
-static const u8 sCharizardGfx44_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_44_1.4bpp");
+static const u8 sCharizardGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_44.4bpp.lz");
+static const u8 sCharizardGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_44_1.4bpp.lz");
 static const ax_sprite sCharizardSprites44[] = {
 	{NULL, 32}, 
 	{sCharizardGfx44, ARRAY_COUNT(sCharizardGfx44)}, 
@@ -2856,14 +2856,14 @@ static const ax_sprite sCharizardSprites44[] = {
 	{sCharizardGfx44_1, ARRAY_COUNT(sCharizardGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx45[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_45.4bpp");
+static const u8 sCharizardGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_45.4bpp.lz");
 static const ax_sprite sCharizardSprites45[] = {
 	{sCharizardGfx45, ARRAY_COUNT(sCharizardGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx46[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_46.4bpp");
-static const u8 sCharizardGfx46_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_46_1.4bpp");
-static const u8 sCharizardGfx46_2[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_46_2.4bpp");
+static const u8 sCharizardGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_46.4bpp.lz");
+static const u8 sCharizardGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_46_1.4bpp.lz");
+static const u8 sCharizardGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_46_2.4bpp.lz");
 static const ax_sprite sCharizardSprites46[] = {
 	{NULL, 32}, 
 	{sCharizardGfx46, ARRAY_COUNT(sCharizardGfx46)}, 
@@ -2873,55 +2873,55 @@ static const ax_sprite sCharizardSprites46[] = {
 	{sCharizardGfx46_2, ARRAY_COUNT(sCharizardGfx46_2)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx47[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_47.4bpp");
+static const u8 sCharizardGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_47.4bpp.lz");
 static const ax_sprite sCharizardSprites47[] = {
 	{sCharizardGfx47, ARRAY_COUNT(sCharizardGfx47)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx48[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_48.4bpp");
+static const u8 sCharizardGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_48.4bpp.lz");
 static const ax_sprite sCharizardSprites48[] = {
 	{sCharizardGfx48, ARRAY_COUNT(sCharizardGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx49[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_49.4bpp");
+static const u8 sCharizardGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_49.4bpp.lz");
 static const ax_sprite sCharizardSprites49[] = {
 	{sCharizardGfx49, ARRAY_COUNT(sCharizardGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx50[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_50.4bpp");
+static const u8 sCharizardGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_50.4bpp.lz");
 static const ax_sprite sCharizardSprites50[] = {
 	{sCharizardGfx50, ARRAY_COUNT(sCharizardGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx51[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_51.4bpp");
+static const u8 sCharizardGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_51.4bpp.lz");
 static const ax_sprite sCharizardSprites51[] = {
 	{sCharizardGfx51, ARRAY_COUNT(sCharizardGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx52[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_52.4bpp");
+static const u8 sCharizardGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_52.4bpp.lz");
 static const ax_sprite sCharizardSprites52[] = {
 	{sCharizardGfx52, ARRAY_COUNT(sCharizardGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx53[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_53.4bpp");
+static const u8 sCharizardGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_53.4bpp.lz");
 static const ax_sprite sCharizardSprites53[] = {
 	{sCharizardGfx53, ARRAY_COUNT(sCharizardGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx54[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_54.4bpp");
+static const u8 sCharizardGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_54.4bpp.lz");
 static const ax_sprite sCharizardSprites54[] = {
 	{NULL, 32}, 
 	{sCharizardGfx54, ARRAY_COUNT(sCharizardGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx55[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_55.4bpp");
+static const u8 sCharizardGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_55.4bpp.lz");
 static const ax_sprite sCharizardSprites55[] = {
 	{sCharizardGfx55, ARRAY_COUNT(sCharizardGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx56[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_56.4bpp");
-static const u8 sCharizardGfx56_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_56_1.4bpp");
+static const u8 sCharizardGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_56.4bpp.lz");
+static const u8 sCharizardGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_56_1.4bpp.lz");
 static const ax_sprite sCharizardSprites56[] = {
 	{NULL, 32}, 
 	{sCharizardGfx56, ARRAY_COUNT(sCharizardGfx56)}, 
@@ -2929,8 +2929,8 @@ static const ax_sprite sCharizardSprites56[] = {
 	{sCharizardGfx56_1, ARRAY_COUNT(sCharizardGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx57[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_57.4bpp");
-static const u8 sCharizardGfx57_1[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_57_1.4bpp");
+static const u8 sCharizardGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_57.4bpp.lz");
+static const u8 sCharizardGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_57_1.4bpp.lz");
 static const ax_sprite sCharizardSprites57[] = {
 	{sCharizardGfx57, ARRAY_COUNT(sCharizardGfx57)}, 
 	{NULL, 32}, 
@@ -2938,132 +2938,132 @@ static const ax_sprite sCharizardSprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx58[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_58.4bpp");
+static const u8 sCharizardGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_58.4bpp.lz");
 static const ax_sprite sCharizardSprites58[] = {
 	{sCharizardGfx58, ARRAY_COUNT(sCharizardGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx59[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_59.4bpp");
+static const u8 sCharizardGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_59.4bpp.lz");
 static const ax_sprite sCharizardSprites59[] = {
 	{sCharizardGfx59, ARRAY_COUNT(sCharizardGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx60[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_60.4bpp");
+static const u8 sCharizardGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_60.4bpp.lz");
 static const ax_sprite sCharizardSprites60[] = {
 	{sCharizardGfx60, ARRAY_COUNT(sCharizardGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx61[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_61.4bpp");
+static const u8 sCharizardGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_61.4bpp.lz");
 static const ax_sprite sCharizardSprites61[] = {
 	{sCharizardGfx61, ARRAY_COUNT(sCharizardGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx62[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_62.4bpp");
+static const u8 sCharizardGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_62.4bpp.lz");
 static const ax_sprite sCharizardSprites62[] = {
 	{sCharizardGfx62, ARRAY_COUNT(sCharizardGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx63[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_63.4bpp");
+static const u8 sCharizardGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_63.4bpp.lz");
 static const ax_sprite sCharizardSprites63[] = {
 	{sCharizardGfx63, ARRAY_COUNT(sCharizardGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx64[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_64.4bpp");
+static const u8 sCharizardGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_64.4bpp.lz");
 static const ax_sprite sCharizardSprites64[] = {
 	{sCharizardGfx64, ARRAY_COUNT(sCharizardGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx65[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_65.4bpp");
+static const u8 sCharizardGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_65.4bpp.lz");
 static const ax_sprite sCharizardSprites65[] = {
 	{sCharizardGfx65, ARRAY_COUNT(sCharizardGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx66[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_66.4bpp");
+static const u8 sCharizardGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_66.4bpp.lz");
 static const ax_sprite sCharizardSprites66[] = {
 	{sCharizardGfx66, ARRAY_COUNT(sCharizardGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx67[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_67.4bpp");
+static const u8 sCharizardGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_67.4bpp.lz");
 static const ax_sprite sCharizardSprites67[] = {
 	{sCharizardGfx67, ARRAY_COUNT(sCharizardGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx68[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_68.4bpp");
+static const u8 sCharizardGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_68.4bpp.lz");
 static const ax_sprite sCharizardSprites68[] = {
 	{sCharizardGfx68, ARRAY_COUNT(sCharizardGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx69[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_69.4bpp");
+static const u8 sCharizardGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_69.4bpp.lz");
 static const ax_sprite sCharizardSprites69[] = {
 	{sCharizardGfx69, ARRAY_COUNT(sCharizardGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx70[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_70.4bpp");
+static const u8 sCharizardGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_70.4bpp.lz");
 static const ax_sprite sCharizardSprites70[] = {
 	{sCharizardGfx70, ARRAY_COUNT(sCharizardGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx71[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_71.4bpp");
+static const u8 sCharizardGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_71.4bpp.lz");
 static const ax_sprite sCharizardSprites71[] = {
 	{sCharizardGfx71, ARRAY_COUNT(sCharizardGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx72[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_72.4bpp");
+static const u8 sCharizardGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_72.4bpp.lz");
 static const ax_sprite sCharizardSprites72[] = {
 	{sCharizardGfx72, ARRAY_COUNT(sCharizardGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx73[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_73.4bpp");
+static const u8 sCharizardGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_73.4bpp.lz");
 static const ax_sprite sCharizardSprites73[] = {
 	{sCharizardGfx73, ARRAY_COUNT(sCharizardGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx74[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_74.4bpp");
+static const u8 sCharizardGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_74.4bpp.lz");
 static const ax_sprite sCharizardSprites74[] = {
 	{sCharizardGfx74, ARRAY_COUNT(sCharizardGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx75[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_75.4bpp");
+static const u8 sCharizardGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_75.4bpp.lz");
 static const ax_sprite sCharizardSprites75[] = {
 	{sCharizardGfx75, ARRAY_COUNT(sCharizardGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx76[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_76.4bpp");
+static const u8 sCharizardGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_76.4bpp.lz");
 static const ax_sprite sCharizardSprites76[] = {
 	{sCharizardGfx76, ARRAY_COUNT(sCharizardGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx77[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_77.4bpp");
+static const u8 sCharizardGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_77.4bpp.lz");
 static const ax_sprite sCharizardSprites77[] = {
 	{sCharizardGfx77, ARRAY_COUNT(sCharizardGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx78[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_78.4bpp");
+static const u8 sCharizardGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_78.4bpp.lz");
 static const ax_sprite sCharizardSprites78[] = {
 	{sCharizardGfx78, ARRAY_COUNT(sCharizardGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx79[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_79.4bpp");
+static const u8 sCharizardGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_79.4bpp.lz");
 static const ax_sprite sCharizardSprites79[] = {
 	{sCharizardGfx79, ARRAY_COUNT(sCharizardGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx80[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_80.4bpp");
+static const u8 sCharizardGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_80.4bpp.lz");
 static const ax_sprite sCharizardSprites80[] = {
 	{sCharizardGfx80, ARRAY_COUNT(sCharizardGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx81[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_81.4bpp");
+static const u8 sCharizardGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_81.4bpp.lz");
 static const ax_sprite sCharizardSprites81[] = {
 	{sCharizardGfx81, ARRAY_COUNT(sCharizardGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx82[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_82.4bpp");
+static const u8 sCharizardGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_82.4bpp.lz");
 static const ax_sprite sCharizardSprites82[] = {
 	{sCharizardGfx82, ARRAY_COUNT(sCharizardGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sCharizardGfx83[] = INCBIN_U8("graphics/ax/mon/charizard/sprite_83.4bpp");
+static const u8 sCharizardGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charizard/sprite_83.4bpp.lz");
 static const ax_sprite sCharizardSprites83[] = {
 	{sCharizardGfx83, ARRAY_COUNT(sCharizardGfx83)}, 
 	{NULL, 0}

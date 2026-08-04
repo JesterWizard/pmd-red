@@ -2119,84 +2119,84 @@ static const ax_anim sAmpharosAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sAmpharosGfx1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_1.4bpp");
+static const u8 sAmpharosGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_1.4bpp.lz");
 static const ax_sprite sAmpharosSprites1[] = {
 	{sAmpharosGfx1, ARRAY_COUNT(sAmpharosGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_2.4bpp");
+static const u8 sAmpharosGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites2[] = {
 	{sAmpharosGfx2, ARRAY_COUNT(sAmpharosGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_3.4bpp");
+static const u8 sAmpharosGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites3[] = {
 	{sAmpharosGfx3, ARRAY_COUNT(sAmpharosGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx4[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_4.4bpp");
+static const u8 sAmpharosGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_4.4bpp.lz");
 static const ax_sprite sAmpharosSprites4[] = {
 	{sAmpharosGfx4, ARRAY_COUNT(sAmpharosGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx5[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_5.4bpp");
+static const u8 sAmpharosGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_5.4bpp.lz");
 static const ax_sprite sAmpharosSprites5[] = {
 	{sAmpharosGfx5, ARRAY_COUNT(sAmpharosGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx6[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_6.4bpp");
+static const u8 sAmpharosGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_6.4bpp.lz");
 static const ax_sprite sAmpharosSprites6[] = {
 	{sAmpharosGfx6, ARRAY_COUNT(sAmpharosGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx7[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_7.4bpp");
+static const u8 sAmpharosGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_7.4bpp.lz");
 static const ax_sprite sAmpharosSprites7[] = {
 	{sAmpharosGfx7, ARRAY_COUNT(sAmpharosGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx8[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_8.4bpp");
+static const u8 sAmpharosGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_8.4bpp.lz");
 static const ax_sprite sAmpharosSprites8[] = {
 	{sAmpharosGfx8, ARRAY_COUNT(sAmpharosGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx9[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_9.4bpp");
+static const u8 sAmpharosGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_9.4bpp.lz");
 static const ax_sprite sAmpharosSprites9[] = {
 	{sAmpharosGfx9, ARRAY_COUNT(sAmpharosGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx10[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_10.4bpp");
+static const u8 sAmpharosGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_10.4bpp.lz");
 static const ax_sprite sAmpharosSprites10[] = {
 	{sAmpharosGfx10, ARRAY_COUNT(sAmpharosGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx11[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_11.4bpp");
+static const u8 sAmpharosGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_11.4bpp.lz");
 static const ax_sprite sAmpharosSprites11[] = {
 	{sAmpharosGfx11, ARRAY_COUNT(sAmpharosGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx12[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_12.4bpp");
+static const u8 sAmpharosGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_12.4bpp.lz");
 static const ax_sprite sAmpharosSprites12[] = {
 	{sAmpharosGfx12, ARRAY_COUNT(sAmpharosGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx13[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_13.4bpp");
+static const u8 sAmpharosGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_13.4bpp.lz");
 static const ax_sprite sAmpharosSprites13[] = {
 	{sAmpharosGfx13, ARRAY_COUNT(sAmpharosGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx14[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_14.4bpp");
+static const u8 sAmpharosGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_14.4bpp.lz");
 static const ax_sprite sAmpharosSprites14[] = {
 	{sAmpharosGfx14, ARRAY_COUNT(sAmpharosGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx15[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_15.4bpp");
+static const u8 sAmpharosGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_15.4bpp.lz");
 static const ax_sprite sAmpharosSprites15[] = {
 	{sAmpharosGfx15, ARRAY_COUNT(sAmpharosGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx16[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_16.4bpp");
-static const u8 sAmpharosGfx16_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_16_1.4bpp");
-static const u8 sAmpharosGfx16_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_16_2.4bpp");
+static const u8 sAmpharosGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_16.4bpp.lz");
+static const u8 sAmpharosGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_16_1.4bpp.lz");
+static const u8 sAmpharosGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_16_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites16[] = {
 	{NULL, 128}, 
 	{sAmpharosGfx16, ARRAY_COUNT(sAmpharosGfx16)}, 
@@ -2207,10 +2207,10 @@ static const ax_sprite sAmpharosSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx17[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_17.4bpp");
-static const u8 sAmpharosGfx17_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_17_1.4bpp");
-static const u8 sAmpharosGfx17_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_17_2.4bpp");
-static const u8 sAmpharosGfx17_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_17_3.4bpp");
+static const u8 sAmpharosGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_17.4bpp.lz");
+static const u8 sAmpharosGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_17_1.4bpp.lz");
+static const u8 sAmpharosGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_17_2.4bpp.lz");
+static const u8 sAmpharosGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_17_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites17[] = {
 	{sAmpharosGfx17, ARRAY_COUNT(sAmpharosGfx17)}, 
 	{NULL, 32}, 
@@ -2222,9 +2222,9 @@ static const ax_sprite sAmpharosSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx18[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_18.4bpp");
-static const u8 sAmpharosGfx18_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_18_1.4bpp");
-static const u8 sAmpharosGfx18_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_18_2.4bpp");
+static const u8 sAmpharosGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_18.4bpp.lz");
+static const u8 sAmpharosGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_18_1.4bpp.lz");
+static const u8 sAmpharosGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_18_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites18[] = {
 	{NULL, 128}, 
 	{sAmpharosGfx18, ARRAY_COUNT(sAmpharosGfx18)}, 
@@ -2235,10 +2235,10 @@ static const ax_sprite sAmpharosSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx19[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_19.4bpp");
-static const u8 sAmpharosGfx19_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_19_1.4bpp");
-static const u8 sAmpharosGfx19_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_19_2.4bpp");
-static const u8 sAmpharosGfx19_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_19_3.4bpp");
+static const u8 sAmpharosGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_19.4bpp.lz");
+static const u8 sAmpharosGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_19_1.4bpp.lz");
+static const u8 sAmpharosGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_19_2.4bpp.lz");
+static const u8 sAmpharosGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_19_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites19[] = {
 	{NULL, 32}, 
 	{sAmpharosGfx19, ARRAY_COUNT(sAmpharosGfx19)}, 
@@ -2251,9 +2251,9 @@ static const ax_sprite sAmpharosSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx20[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_20.4bpp");
-static const u8 sAmpharosGfx20_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_20_1.4bpp");
-static const u8 sAmpharosGfx20_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_20_2.4bpp");
+static const u8 sAmpharosGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_20.4bpp.lz");
+static const u8 sAmpharosGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_20_1.4bpp.lz");
+static const u8 sAmpharosGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_20_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites20[] = {
 	{NULL, 128}, 
 	{sAmpharosGfx20, ARRAY_COUNT(sAmpharosGfx20)}, 
@@ -2263,10 +2263,10 @@ static const ax_sprite sAmpharosSprites20[] = {
 	{sAmpharosGfx20_2, ARRAY_COUNT(sAmpharosGfx20_2)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx21[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_21.4bpp");
-static const u8 sAmpharosGfx21_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_21_1.4bpp");
-static const u8 sAmpharosGfx21_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_21_2.4bpp");
-static const u8 sAmpharosGfx21_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_21_3.4bpp");
+static const u8 sAmpharosGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_21.4bpp.lz");
+static const u8 sAmpharosGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_21_1.4bpp.lz");
+static const u8 sAmpharosGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_21_2.4bpp.lz");
+static const u8 sAmpharosGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_21_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites21[] = {
 	{sAmpharosGfx21, ARRAY_COUNT(sAmpharosGfx21)}, 
 	{NULL, 64}, 
@@ -2278,9 +2278,9 @@ static const ax_sprite sAmpharosSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx22[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_22.4bpp");
-static const u8 sAmpharosGfx22_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_22_1.4bpp");
-static const u8 sAmpharosGfx22_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_22_2.4bpp");
+static const u8 sAmpharosGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_22.4bpp.lz");
+static const u8 sAmpharosGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_22_1.4bpp.lz");
+static const u8 sAmpharosGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_22_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites22[] = {
 	{NULL, 128}, 
 	{sAmpharosGfx22, ARRAY_COUNT(sAmpharosGfx22)}, 
@@ -2291,10 +2291,10 @@ static const ax_sprite sAmpharosSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx23[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_23.4bpp");
-static const u8 sAmpharosGfx23_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_23_1.4bpp");
-static const u8 sAmpharosGfx23_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_23_2.4bpp");
-static const u8 sAmpharosGfx23_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_23_3.4bpp");
+static const u8 sAmpharosGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_23.4bpp.lz");
+static const u8 sAmpharosGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_23_1.4bpp.lz");
+static const u8 sAmpharosGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_23_2.4bpp.lz");
+static const u8 sAmpharosGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_23_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites23[] = {
 	{NULL, 32}, 
 	{sAmpharosGfx23, ARRAY_COUNT(sAmpharosGfx23)}, 
@@ -2307,9 +2307,9 @@ static const ax_sprite sAmpharosSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx24[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_24.4bpp");
-static const u8 sAmpharosGfx24_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_24_1.4bpp");
-static const u8 sAmpharosGfx24_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_24_2.4bpp");
+static const u8 sAmpharosGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_24.4bpp.lz");
+static const u8 sAmpharosGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_24_1.4bpp.lz");
+static const u8 sAmpharosGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_24_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites24[] = {
 	{NULL, 128}, 
 	{sAmpharosGfx24, ARRAY_COUNT(sAmpharosGfx24)}, 
@@ -2320,10 +2320,10 @@ static const ax_sprite sAmpharosSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx25[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_25.4bpp");
-static const u8 sAmpharosGfx25_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_25_1.4bpp");
-static const u8 sAmpharosGfx25_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_25_2.4bpp");
-static const u8 sAmpharosGfx25_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_25_3.4bpp");
+static const u8 sAmpharosGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_25.4bpp.lz");
+static const u8 sAmpharosGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_25_1.4bpp.lz");
+static const u8 sAmpharosGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_25_2.4bpp.lz");
+static const u8 sAmpharosGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_25_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites25[] = {
 	{sAmpharosGfx25, ARRAY_COUNT(sAmpharosGfx25)}, 
 	{NULL, 64}, 
@@ -2335,10 +2335,10 @@ static const ax_sprite sAmpharosSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx26[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_26.4bpp");
-static const u8 sAmpharosGfx26_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_26_1.4bpp");
-static const u8 sAmpharosGfx26_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_26_2.4bpp");
-static const u8 sAmpharosGfx26_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_26_3.4bpp");
+static const u8 sAmpharosGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_26.4bpp.lz");
+static const u8 sAmpharosGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_26_1.4bpp.lz");
+static const u8 sAmpharosGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_26_2.4bpp.lz");
+static const u8 sAmpharosGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_26_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites26[] = {
 	{sAmpharosGfx26, ARRAY_COUNT(sAmpharosGfx26)}, 
 	{NULL, 32}, 
@@ -2350,9 +2350,9 @@ static const ax_sprite sAmpharosSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx27[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_27.4bpp");
-static const u8 sAmpharosGfx27_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_27_1.4bpp");
-static const u8 sAmpharosGfx27_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_27_2.4bpp");
+static const u8 sAmpharosGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_27.4bpp.lz");
+static const u8 sAmpharosGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_27_1.4bpp.lz");
+static const u8 sAmpharosGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_27_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites27[] = {
 	{NULL, 128}, 
 	{sAmpharosGfx27, ARRAY_COUNT(sAmpharosGfx27)}, 
@@ -2363,9 +2363,9 @@ static const ax_sprite sAmpharosSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx28[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_28.4bpp");
-static const u8 sAmpharosGfx28_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_28_1.4bpp");
-static const u8 sAmpharosGfx28_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_28_2.4bpp");
+static const u8 sAmpharosGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_28.4bpp.lz");
+static const u8 sAmpharosGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_28_1.4bpp.lz");
+static const u8 sAmpharosGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_28_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites28[] = {
 	{NULL, 128}, 
 	{sAmpharosGfx28, ARRAY_COUNT(sAmpharosGfx28)}, 
@@ -2376,10 +2376,10 @@ static const ax_sprite sAmpharosSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx29[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_29.4bpp");
-static const u8 sAmpharosGfx29_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_29_1.4bpp");
-static const u8 sAmpharosGfx29_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_29_2.4bpp");
-static const u8 sAmpharosGfx29_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_29_3.4bpp");
+static const u8 sAmpharosGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_29.4bpp.lz");
+static const u8 sAmpharosGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_29_1.4bpp.lz");
+static const u8 sAmpharosGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_29_2.4bpp.lz");
+static const u8 sAmpharosGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_29_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites29[] = {
 	{NULL, 32}, 
 	{sAmpharosGfx29, ARRAY_COUNT(sAmpharosGfx29)}, 
@@ -2392,10 +2392,10 @@ static const ax_sprite sAmpharosSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx30[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_30.4bpp");
-static const u8 sAmpharosGfx30_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_30_1.4bpp");
-static const u8 sAmpharosGfx30_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_30_2.4bpp");
-static const u8 sAmpharosGfx30_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_30_3.4bpp");
+static const u8 sAmpharosGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_30.4bpp.lz");
+static const u8 sAmpharosGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_30_1.4bpp.lz");
+static const u8 sAmpharosGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_30_2.4bpp.lz");
+static const u8 sAmpharosGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_30_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites30[] = {
 	{sAmpharosGfx30, ARRAY_COUNT(sAmpharosGfx30)}, 
 	{NULL, 96}, 
@@ -2407,10 +2407,10 @@ static const ax_sprite sAmpharosSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx31[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_31.4bpp");
-static const u8 sAmpharosGfx31_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_31_1.4bpp");
-static const u8 sAmpharosGfx31_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_31_2.4bpp");
-static const u8 sAmpharosGfx31_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_31_3.4bpp");
+static const u8 sAmpharosGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_31.4bpp.lz");
+static const u8 sAmpharosGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_31_1.4bpp.lz");
+static const u8 sAmpharosGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_31_2.4bpp.lz");
+static const u8 sAmpharosGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_31_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites31[] = {
 	{sAmpharosGfx31, ARRAY_COUNT(sAmpharosGfx31)}, 
 	{NULL, 96}, 
@@ -2422,10 +2422,10 @@ static const ax_sprite sAmpharosSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx32[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_32.4bpp");
-static const u8 sAmpharosGfx32_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_32_1.4bpp");
-static const u8 sAmpharosGfx32_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_32_2.4bpp");
-static const u8 sAmpharosGfx32_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_32_3.4bpp");
+static const u8 sAmpharosGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_32.4bpp.lz");
+static const u8 sAmpharosGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_32_1.4bpp.lz");
+static const u8 sAmpharosGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_32_2.4bpp.lz");
+static const u8 sAmpharosGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_32_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites32[] = {
 	{sAmpharosGfx32, ARRAY_COUNT(sAmpharosGfx32)}, 
 	{NULL, 64}, 
@@ -2437,10 +2437,10 @@ static const ax_sprite sAmpharosSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx33[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_33.4bpp");
-static const u8 sAmpharosGfx33_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_33_1.4bpp");
-static const u8 sAmpharosGfx33_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_33_2.4bpp");
-static const u8 sAmpharosGfx33_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_33_3.4bpp");
+static const u8 sAmpharosGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_33.4bpp.lz");
+static const u8 sAmpharosGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_33_1.4bpp.lz");
+static const u8 sAmpharosGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_33_2.4bpp.lz");
+static const u8 sAmpharosGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_33_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites33[] = {
 	{sAmpharosGfx33, ARRAY_COUNT(sAmpharosGfx33)}, 
 	{NULL, 64}, 
@@ -2451,9 +2451,9 @@ static const ax_sprite sAmpharosSprites33[] = {
 	{sAmpharosGfx33_3, ARRAY_COUNT(sAmpharosGfx33_3)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx34[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_34.4bpp");
-static const u8 sAmpharosGfx34_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_34_1.4bpp");
-static const u8 sAmpharosGfx34_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_34_2.4bpp");
+static const u8 sAmpharosGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_34.4bpp.lz");
+static const u8 sAmpharosGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_34_1.4bpp.lz");
+static const u8 sAmpharosGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_34_2.4bpp.lz");
 static const ax_sprite sAmpharosSprites34[] = {
 	{sAmpharosGfx34, ARRAY_COUNT(sAmpharosGfx34)}, 
 	{NULL, 64}, 
@@ -2462,10 +2462,10 @@ static const ax_sprite sAmpharosSprites34[] = {
 	{sAmpharosGfx34_2, ARRAY_COUNT(sAmpharosGfx34_2)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx35[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_35.4bpp");
-static const u8 sAmpharosGfx35_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_35_1.4bpp");
-static const u8 sAmpharosGfx35_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_35_2.4bpp");
-static const u8 sAmpharosGfx35_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_35_3.4bpp");
+static const u8 sAmpharosGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_35.4bpp.lz");
+static const u8 sAmpharosGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_35_1.4bpp.lz");
+static const u8 sAmpharosGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_35_2.4bpp.lz");
+static const u8 sAmpharosGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_35_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites35[] = {
 	{sAmpharosGfx35, ARRAY_COUNT(sAmpharosGfx35)}, 
 	{NULL, 32}, 
@@ -2477,10 +2477,10 @@ static const ax_sprite sAmpharosSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx36[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_36.4bpp");
-static const u8 sAmpharosGfx36_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_36_1.4bpp");
-static const u8 sAmpharosGfx36_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_36_2.4bpp");
-static const u8 sAmpharosGfx36_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_36_3.4bpp");
+static const u8 sAmpharosGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_36.4bpp.lz");
+static const u8 sAmpharosGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_36_1.4bpp.lz");
+static const u8 sAmpharosGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_36_2.4bpp.lz");
+static const u8 sAmpharosGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_36_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites36[] = {
 	{NULL, 32}, 
 	{sAmpharosGfx36, ARRAY_COUNT(sAmpharosGfx36)}, 
@@ -2492,10 +2492,10 @@ static const ax_sprite sAmpharosSprites36[] = {
 	{sAmpharosGfx36_3, ARRAY_COUNT(sAmpharosGfx36_3)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx37[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_37.4bpp");
-static const u8 sAmpharosGfx37_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_37_1.4bpp");
-static const u8 sAmpharosGfx37_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_37_2.4bpp");
-static const u8 sAmpharosGfx37_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_37_3.4bpp");
+static const u8 sAmpharosGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_37.4bpp.lz");
+static const u8 sAmpharosGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_37_1.4bpp.lz");
+static const u8 sAmpharosGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_37_2.4bpp.lz");
+static const u8 sAmpharosGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_37_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites37[] = {
 	{NULL, 32}, 
 	{sAmpharosGfx37, ARRAY_COUNT(sAmpharosGfx37)}, 
@@ -2507,10 +2507,10 @@ static const ax_sprite sAmpharosSprites37[] = {
 	{sAmpharosGfx37_3, ARRAY_COUNT(sAmpharosGfx37_3)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx38[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_38.4bpp");
-static const u8 sAmpharosGfx38_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_38_1.4bpp");
-static const u8 sAmpharosGfx38_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_38_2.4bpp");
-static const u8 sAmpharosGfx38_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_38_3.4bpp");
+static const u8 sAmpharosGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_38.4bpp.lz");
+static const u8 sAmpharosGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_38_1.4bpp.lz");
+static const u8 sAmpharosGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_38_2.4bpp.lz");
+static const u8 sAmpharosGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_38_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites38[] = {
 	{sAmpharosGfx38, ARRAY_COUNT(sAmpharosGfx38)}, 
 	{NULL, 32}, 
@@ -2522,10 +2522,10 @@ static const ax_sprite sAmpharosSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx39[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_39.4bpp");
-static const u8 sAmpharosGfx39_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_39_1.4bpp");
-static const u8 sAmpharosGfx39_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_39_2.4bpp");
-static const u8 sAmpharosGfx39_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_39_3.4bpp");
+static const u8 sAmpharosGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_39.4bpp.lz");
+static const u8 sAmpharosGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_39_1.4bpp.lz");
+static const u8 sAmpharosGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_39_2.4bpp.lz");
+static const u8 sAmpharosGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_39_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites39[] = {
 	{sAmpharosGfx39, ARRAY_COUNT(sAmpharosGfx39)}, 
 	{NULL, 32}, 
@@ -2537,10 +2537,10 @@ static const ax_sprite sAmpharosSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx40[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_40.4bpp");
-static const u8 sAmpharosGfx40_1[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_40_1.4bpp");
-static const u8 sAmpharosGfx40_2[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_40_2.4bpp");
-static const u8 sAmpharosGfx40_3[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_40_3.4bpp");
+static const u8 sAmpharosGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_40.4bpp.lz");
+static const u8 sAmpharosGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_40_1.4bpp.lz");
+static const u8 sAmpharosGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_40_2.4bpp.lz");
+static const u8 sAmpharosGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_40_3.4bpp.lz");
 static const ax_sprite sAmpharosSprites40[] = {
 	{sAmpharosGfx40, ARRAY_COUNT(sAmpharosGfx40)}, 
 	{NULL, 32}, 
@@ -2552,37 +2552,37 @@ static const ax_sprite sAmpharosSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx41[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_41.4bpp");
+static const u8 sAmpharosGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_41.4bpp.lz");
 static const ax_sprite sAmpharosSprites41[] = {
 	{sAmpharosGfx41, ARRAY_COUNT(sAmpharosGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx42[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_42.4bpp");
+static const u8 sAmpharosGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_42.4bpp.lz");
 static const ax_sprite sAmpharosSprites42[] = {
 	{sAmpharosGfx42, ARRAY_COUNT(sAmpharosGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx43[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_43.4bpp");
+static const u8 sAmpharosGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_43.4bpp.lz");
 static const ax_sprite sAmpharosSprites43[] = {
 	{sAmpharosGfx43, ARRAY_COUNT(sAmpharosGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx44[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_44.4bpp");
+static const u8 sAmpharosGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_44.4bpp.lz");
 static const ax_sprite sAmpharosSprites44[] = {
 	{sAmpharosGfx44, ARRAY_COUNT(sAmpharosGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx45[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_45.4bpp");
+static const u8 sAmpharosGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_45.4bpp.lz");
 static const ax_sprite sAmpharosSprites45[] = {
 	{sAmpharosGfx45, ARRAY_COUNT(sAmpharosGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx46[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_46.4bpp");
+static const u8 sAmpharosGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_46.4bpp.lz");
 static const ax_sprite sAmpharosSprites46[] = {
 	{sAmpharosGfx46, ARRAY_COUNT(sAmpharosGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sAmpharosGfx47[] = INCBIN_U8("graphics/ax/mon/ampharos/sprite_47.4bpp");
+static const u8 sAmpharosGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ampharos/sprite_47.4bpp.lz");
 static const ax_sprite sAmpharosSprites47[] = {
 	{sAmpharosGfx47, ARRAY_COUNT(sAmpharosGfx47)}, 
 	{NULL, 0}

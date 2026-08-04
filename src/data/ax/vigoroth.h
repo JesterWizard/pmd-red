@@ -2097,84 +2097,84 @@ static const ax_anim sVigorothAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVigorothGfx1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_1.4bpp");
+static const u8 sVigorothGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_1.4bpp.lz");
 static const ax_sprite sVigorothSprites1[] = {
 	{sVigorothGfx1, ARRAY_COUNT(sVigorothGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_2.4bpp");
+static const u8 sVigorothGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_2.4bpp.lz");
 static const ax_sprite sVigorothSprites2[] = {
 	{sVigorothGfx2, ARRAY_COUNT(sVigorothGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_3.4bpp");
+static const u8 sVigorothGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_3.4bpp.lz");
 static const ax_sprite sVigorothSprites3[] = {
 	{sVigorothGfx3, ARRAY_COUNT(sVigorothGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx4[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_4.4bpp");
+static const u8 sVigorothGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_4.4bpp.lz");
 static const ax_sprite sVigorothSprites4[] = {
 	{sVigorothGfx4, ARRAY_COUNT(sVigorothGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx5[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_5.4bpp");
+static const u8 sVigorothGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_5.4bpp.lz");
 static const ax_sprite sVigorothSprites5[] = {
 	{sVigorothGfx5, ARRAY_COUNT(sVigorothGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx6[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_6.4bpp");
+static const u8 sVigorothGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_6.4bpp.lz");
 static const ax_sprite sVigorothSprites6[] = {
 	{sVigorothGfx6, ARRAY_COUNT(sVigorothGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx7[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_7.4bpp");
+static const u8 sVigorothGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_7.4bpp.lz");
 static const ax_sprite sVigorothSprites7[] = {
 	{sVigorothGfx7, ARRAY_COUNT(sVigorothGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx8[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_8.4bpp");
+static const u8 sVigorothGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_8.4bpp.lz");
 static const ax_sprite sVigorothSprites8[] = {
 	{sVigorothGfx8, ARRAY_COUNT(sVigorothGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx9[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_9.4bpp");
+static const u8 sVigorothGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_9.4bpp.lz");
 static const ax_sprite sVigorothSprites9[] = {
 	{sVigorothGfx9, ARRAY_COUNT(sVigorothGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx10[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_10.4bpp");
+static const u8 sVigorothGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_10.4bpp.lz");
 static const ax_sprite sVigorothSprites10[] = {
 	{sVigorothGfx10, ARRAY_COUNT(sVigorothGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx11[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_11.4bpp");
+static const u8 sVigorothGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_11.4bpp.lz");
 static const ax_sprite sVigorothSprites11[] = {
 	{sVigorothGfx11, ARRAY_COUNT(sVigorothGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx12[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_12.4bpp");
+static const u8 sVigorothGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_12.4bpp.lz");
 static const ax_sprite sVigorothSprites12[] = {
 	{sVigorothGfx12, ARRAY_COUNT(sVigorothGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx13[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_13.4bpp");
+static const u8 sVigorothGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_13.4bpp.lz");
 static const ax_sprite sVigorothSprites13[] = {
 	{sVigorothGfx13, ARRAY_COUNT(sVigorothGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx14[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_14.4bpp");
+static const u8 sVigorothGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_14.4bpp.lz");
 static const ax_sprite sVigorothSprites14[] = {
 	{sVigorothGfx14, ARRAY_COUNT(sVigorothGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx15[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_15.4bpp");
+static const u8 sVigorothGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_15.4bpp.lz");
 static const ax_sprite sVigorothSprites15[] = {
 	{sVigorothGfx15, ARRAY_COUNT(sVigorothGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx16[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_16.4bpp");
-static const u8 sVigorothGfx16_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_16_1.4bpp");
-static const u8 sVigorothGfx16_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_16_2.4bpp");
+static const u8 sVigorothGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_16.4bpp.lz");
+static const u8 sVigorothGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_16_1.4bpp.lz");
+static const u8 sVigorothGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_16_2.4bpp.lz");
 static const ax_sprite sVigorothSprites16[] = {
 	{NULL, 64}, 
 	{sVigorothGfx16, ARRAY_COUNT(sVigorothGfx16)}, 
@@ -2184,9 +2184,9 @@ static const ax_sprite sVigorothSprites16[] = {
 	{sVigorothGfx16_2, ARRAY_COUNT(sVigorothGfx16_2)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx17[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_17.4bpp");
-static const u8 sVigorothGfx17_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_17_1.4bpp");
-static const u8 sVigorothGfx17_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_17_2.4bpp");
+static const u8 sVigorothGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_17.4bpp.lz");
+static const u8 sVigorothGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_17_1.4bpp.lz");
+static const u8 sVigorothGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_17_2.4bpp.lz");
 static const ax_sprite sVigorothSprites17[] = {
 	{NULL, 64}, 
 	{sVigorothGfx17, ARRAY_COUNT(sVigorothGfx17)}, 
@@ -2196,9 +2196,9 @@ static const ax_sprite sVigorothSprites17[] = {
 	{sVigorothGfx17_2, ARRAY_COUNT(sVigorothGfx17_2)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx18[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_18.4bpp");
-static const u8 sVigorothGfx18_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_18_1.4bpp");
-static const u8 sVigorothGfx18_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_18_2.4bpp");
+static const u8 sVigorothGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_18.4bpp.lz");
+static const u8 sVigorothGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_18_1.4bpp.lz");
+static const u8 sVigorothGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_18_2.4bpp.lz");
 static const ax_sprite sVigorothSprites18[] = {
 	{sVigorothGfx18, ARRAY_COUNT(sVigorothGfx18)}, 
 	{NULL, 64}, 
@@ -2208,9 +2208,9 @@ static const ax_sprite sVigorothSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx19[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_19.4bpp");
-static const u8 sVigorothGfx19_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_19_1.4bpp");
-static const u8 sVigorothGfx19_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_19_2.4bpp");
+static const u8 sVigorothGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_19.4bpp.lz");
+static const u8 sVigorothGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_19_1.4bpp.lz");
+static const u8 sVigorothGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_19_2.4bpp.lz");
 static const ax_sprite sVigorothSprites19[] = {
 	{NULL, 32}, 
 	{sVigorothGfx19, ARRAY_COUNT(sVigorothGfx19)}, 
@@ -2220,8 +2220,8 @@ static const ax_sprite sVigorothSprites19[] = {
 	{sVigorothGfx19_2, ARRAY_COUNT(sVigorothGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx20[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_20.4bpp");
-static const u8 sVigorothGfx20_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_20_1.4bpp");
+static const u8 sVigorothGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_20.4bpp.lz");
+static const u8 sVigorothGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_20_1.4bpp.lz");
 static const ax_sprite sVigorothSprites20[] = {
 	{NULL, 32}, 
 	{sVigorothGfx20, ARRAY_COUNT(sVigorothGfx20)}, 
@@ -2229,10 +2229,10 @@ static const ax_sprite sVigorothSprites20[] = {
 	{sVigorothGfx20_1, ARRAY_COUNT(sVigorothGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx21[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_21.4bpp");
-static const u8 sVigorothGfx21_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_21_1.4bpp");
-static const u8 sVigorothGfx21_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_21_2.4bpp");
-static const u8 sVigorothGfx21_3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_21_3.4bpp");
+static const u8 sVigorothGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_21.4bpp.lz");
+static const u8 sVigorothGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_21_1.4bpp.lz");
+static const u8 sVigorothGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_21_2.4bpp.lz");
+static const u8 sVigorothGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_21_3.4bpp.lz");
 static const ax_sprite sVigorothSprites21[] = {
 	{sVigorothGfx21, ARRAY_COUNT(sVigorothGfx21)}, 
 	{NULL, 32}, 
@@ -2244,9 +2244,9 @@ static const ax_sprite sVigorothSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx22[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_22.4bpp");
-static const u8 sVigorothGfx22_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_22_1.4bpp");
-static const u8 sVigorothGfx22_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_22_2.4bpp");
+static const u8 sVigorothGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_22.4bpp.lz");
+static const u8 sVigorothGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_22_1.4bpp.lz");
+static const u8 sVigorothGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_22_2.4bpp.lz");
 static const ax_sprite sVigorothSprites22[] = {
 	{sVigorothGfx22, ARRAY_COUNT(sVigorothGfx22)}, 
 	{NULL, 96}, 
@@ -2255,10 +2255,10 @@ static const ax_sprite sVigorothSprites22[] = {
 	{sVigorothGfx22_2, ARRAY_COUNT(sVigorothGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx23[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_23.4bpp");
-static const u8 sVigorothGfx23_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_23_1.4bpp");
-static const u8 sVigorothGfx23_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_23_2.4bpp");
-static const u8 sVigorothGfx23_3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_23_3.4bpp");
+static const u8 sVigorothGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_23.4bpp.lz");
+static const u8 sVigorothGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_23_1.4bpp.lz");
+static const u8 sVigorothGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_23_2.4bpp.lz");
+static const u8 sVigorothGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_23_3.4bpp.lz");
 static const ax_sprite sVigorothSprites23[] = {
 	{NULL, 32}, 
 	{sVigorothGfx23, ARRAY_COUNT(sVigorothGfx23)}, 
@@ -2270,10 +2270,10 @@ static const ax_sprite sVigorothSprites23[] = {
 	{sVigorothGfx23_3, ARRAY_COUNT(sVigorothGfx23_3)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx24[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_24.4bpp");
-static const u8 sVigorothGfx24_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_24_1.4bpp");
-static const u8 sVigorothGfx24_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_24_2.4bpp");
-static const u8 sVigorothGfx24_3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_24_3.4bpp");
+static const u8 sVigorothGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_24.4bpp.lz");
+static const u8 sVigorothGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_24_1.4bpp.lz");
+static const u8 sVigorothGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_24_2.4bpp.lz");
+static const u8 sVigorothGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_24_3.4bpp.lz");
 static const ax_sprite sVigorothSprites24[] = {
 	{NULL, 32}, 
 	{sVigorothGfx24, ARRAY_COUNT(sVigorothGfx24)}, 
@@ -2286,10 +2286,10 @@ static const ax_sprite sVigorothSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx25[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_25.4bpp");
-static const u8 sVigorothGfx25_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_25_1.4bpp");
-static const u8 sVigorothGfx25_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_25_2.4bpp");
-static const u8 sVigorothGfx25_3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_25_3.4bpp");
+static const u8 sVigorothGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_25.4bpp.lz");
+static const u8 sVigorothGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_25_1.4bpp.lz");
+static const u8 sVigorothGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_25_2.4bpp.lz");
+static const u8 sVigorothGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_25_3.4bpp.lz");
 static const ax_sprite sVigorothSprites25[] = {
 	{sVigorothGfx25, ARRAY_COUNT(sVigorothGfx25)}, 
 	{NULL, 64}, 
@@ -2301,14 +2301,14 @@ static const ax_sprite sVigorothSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx26[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_26.4bpp");
+static const u8 sVigorothGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_26.4bpp.lz");
 static const ax_sprite sVigorothSprites26[] = {
 	{NULL, 128}, 
 	{sVigorothGfx26, ARRAY_COUNT(sVigorothGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx27[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_27.4bpp");
-static const u8 sVigorothGfx27_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_27_1.4bpp");
+static const u8 sVigorothGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_27.4bpp.lz");
+static const u8 sVigorothGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_27_1.4bpp.lz");
 static const ax_sprite sVigorothSprites27[] = {
 	{NULL, 32}, 
 	{sVigorothGfx27, ARRAY_COUNT(sVigorothGfx27)}, 
@@ -2316,10 +2316,10 @@ static const ax_sprite sVigorothSprites27[] = {
 	{sVigorothGfx27_1, ARRAY_COUNT(sVigorothGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx28[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_28.4bpp");
-static const u8 sVigorothGfx28_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_28_1.4bpp");
-static const u8 sVigorothGfx28_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_28_2.4bpp");
-static const u8 sVigorothGfx28_3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_28_3.4bpp");
+static const u8 sVigorothGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_28.4bpp.lz");
+static const u8 sVigorothGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_28_1.4bpp.lz");
+static const u8 sVigorothGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_28_2.4bpp.lz");
+static const u8 sVigorothGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_28_3.4bpp.lz");
 static const ax_sprite sVigorothSprites28[] = {
 	{NULL, 32}, 
 	{sVigorothGfx28, ARRAY_COUNT(sVigorothGfx28)}, 
@@ -2332,8 +2332,8 @@ static const ax_sprite sVigorothSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx29[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_29.4bpp");
-static const u8 sVigorothGfx29_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_29_1.4bpp");
+static const u8 sVigorothGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_29.4bpp.lz");
+static const u8 sVigorothGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_29_1.4bpp.lz");
 static const ax_sprite sVigorothSprites29[] = {
 	{sVigorothGfx29, ARRAY_COUNT(sVigorothGfx29)}, 
 	{NULL, 64}, 
@@ -2341,9 +2341,9 @@ static const ax_sprite sVigorothSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx30[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_30.4bpp");
-static const u8 sVigorothGfx30_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_30_1.4bpp");
-static const u8 sVigorothGfx30_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_30_2.4bpp");
+static const u8 sVigorothGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_30.4bpp.lz");
+static const u8 sVigorothGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_30_1.4bpp.lz");
+static const u8 sVigorothGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_30_2.4bpp.lz");
 static const ax_sprite sVigorothSprites30[] = {
 	{NULL, 32}, 
 	{sVigorothGfx30, ARRAY_COUNT(sVigorothGfx30)}, 
@@ -2353,9 +2353,9 @@ static const ax_sprite sVigorothSprites30[] = {
 	{sVigorothGfx30_2, ARRAY_COUNT(sVigorothGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx31[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_31.4bpp");
-static const u8 sVigorothGfx31_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_31_1.4bpp");
-static const u8 sVigorothGfx31_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_31_2.4bpp");
+static const u8 sVigorothGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_31.4bpp.lz");
+static const u8 sVigorothGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_31_1.4bpp.lz");
+static const u8 sVigorothGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_31_2.4bpp.lz");
 static const ax_sprite sVigorothSprites31[] = {
 	{sVigorothGfx31, ARRAY_COUNT(sVigorothGfx31)}, 
 	{NULL, 64}, 
@@ -2365,9 +2365,9 @@ static const ax_sprite sVigorothSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx32[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_32.4bpp");
-static const u8 sVigorothGfx32_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_32_1.4bpp");
-static const u8 sVigorothGfx32_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_32_2.4bpp");
+static const u8 sVigorothGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_32.4bpp.lz");
+static const u8 sVigorothGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_32_1.4bpp.lz");
+static const u8 sVigorothGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_32_2.4bpp.lz");
 static const ax_sprite sVigorothSprites32[] = {
 	{sVigorothGfx32, ARRAY_COUNT(sVigorothGfx32)}, 
 	{NULL, 64}, 
@@ -2377,10 +2377,10 @@ static const ax_sprite sVigorothSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx33[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_33.4bpp");
-static const u8 sVigorothGfx33_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_33_1.4bpp");
-static const u8 sVigorothGfx33_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_33_2.4bpp");
-static const u8 sVigorothGfx33_3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_33_3.4bpp");
+static const u8 sVigorothGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_33.4bpp.lz");
+static const u8 sVigorothGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_33_1.4bpp.lz");
+static const u8 sVigorothGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_33_2.4bpp.lz");
+static const u8 sVigorothGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_33_3.4bpp.lz");
 static const ax_sprite sVigorothSprites33[] = {
 	{NULL, 32}, 
 	{sVigorothGfx33, ARRAY_COUNT(sVigorothGfx33)}, 
@@ -2393,10 +2393,10 @@ static const ax_sprite sVigorothSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx34[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_34.4bpp");
-static const u8 sVigorothGfx34_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_34_1.4bpp");
-static const u8 sVigorothGfx34_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_34_2.4bpp");
-static const u8 sVigorothGfx34_3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_34_3.4bpp");
+static const u8 sVigorothGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_34.4bpp.lz");
+static const u8 sVigorothGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_34_1.4bpp.lz");
+static const u8 sVigorothGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_34_2.4bpp.lz");
+static const u8 sVigorothGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_34_3.4bpp.lz");
 static const ax_sprite sVigorothSprites34[] = {
 	{NULL, 32}, 
 	{sVigorothGfx34, ARRAY_COUNT(sVigorothGfx34)}, 
@@ -2408,8 +2408,8 @@ static const ax_sprite sVigorothSprites34[] = {
 	{sVigorothGfx34_3, ARRAY_COUNT(sVigorothGfx34_3)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx35[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_35.4bpp");
-static const u8 sVigorothGfx35_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_35_1.4bpp");
+static const u8 sVigorothGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_35.4bpp.lz");
+static const u8 sVigorothGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_35_1.4bpp.lz");
 static const ax_sprite sVigorothSprites35[] = {
 	{sVigorothGfx35, ARRAY_COUNT(sVigorothGfx35)}, 
 	{NULL, 32}, 
@@ -2417,9 +2417,9 @@ static const ax_sprite sVigorothSprites35[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx36[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_36.4bpp");
-static const u8 sVigorothGfx36_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_36_1.4bpp");
-static const u8 sVigorothGfx36_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_36_2.4bpp");
+static const u8 sVigorothGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_36.4bpp.lz");
+static const u8 sVigorothGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_36_1.4bpp.lz");
+static const u8 sVigorothGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_36_2.4bpp.lz");
 static const ax_sprite sVigorothSprites36[] = {
 	{NULL, 32}, 
 	{sVigorothGfx36, ARRAY_COUNT(sVigorothGfx36)}, 
@@ -2430,8 +2430,8 @@ static const ax_sprite sVigorothSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx37[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_37.4bpp");
-static const u8 sVigorothGfx37_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_37_1.4bpp");
+static const u8 sVigorothGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_37.4bpp.lz");
+static const u8 sVigorothGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_37_1.4bpp.lz");
 static const ax_sprite sVigorothSprites37[] = {
 	{NULL, 32}, 
 	{sVigorothGfx37, ARRAY_COUNT(sVigorothGfx37)}, 
@@ -2440,10 +2440,10 @@ static const ax_sprite sVigorothSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx38[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_38.4bpp");
-static const u8 sVigorothGfx38_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_38_1.4bpp");
-static const u8 sVigorothGfx38_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_38_2.4bpp");
-static const u8 sVigorothGfx38_3[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_38_3.4bpp");
+static const u8 sVigorothGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_38.4bpp.lz");
+static const u8 sVigorothGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_38_1.4bpp.lz");
+static const u8 sVigorothGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_38_2.4bpp.lz");
+static const u8 sVigorothGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_38_3.4bpp.lz");
 static const ax_sprite sVigorothSprites38[] = {
 	{NULL, 32}, 
 	{sVigorothGfx38, ARRAY_COUNT(sVigorothGfx38)}, 
@@ -2455,8 +2455,8 @@ static const ax_sprite sVigorothSprites38[] = {
 	{sVigorothGfx38_3, ARRAY_COUNT(sVigorothGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx39[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_39.4bpp");
-static const u8 sVigorothGfx39_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_39_1.4bpp");
+static const u8 sVigorothGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_39.4bpp.lz");
+static const u8 sVigorothGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_39_1.4bpp.lz");
 static const ax_sprite sVigorothSprites39[] = {
 	{NULL, 160}, 
 	{sVigorothGfx39, ARRAY_COUNT(sVigorothGfx39)}, 
@@ -2464,9 +2464,9 @@ static const ax_sprite sVigorothSprites39[] = {
 	{sVigorothGfx39_1, ARRAY_COUNT(sVigorothGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx40[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_40.4bpp");
-static const u8 sVigorothGfx40_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_40_1.4bpp");
-static const u8 sVigorothGfx40_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_40_2.4bpp");
+static const u8 sVigorothGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_40.4bpp.lz");
+static const u8 sVigorothGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_40_1.4bpp.lz");
+static const u8 sVigorothGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_40_2.4bpp.lz");
 static const ax_sprite sVigorothSprites40[] = {
 	{NULL, 32}, 
 	{sVigorothGfx40, ARRAY_COUNT(sVigorothGfx40)}, 
@@ -2477,17 +2477,17 @@ static const ax_sprite sVigorothSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx41[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_41.4bpp");
-static const u8 sVigorothGfx41_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_41_1.4bpp");
+static const u8 sVigorothGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_41.4bpp.lz");
+static const u8 sVigorothGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_41_1.4bpp.lz");
 static const ax_sprite sVigorothSprites41[] = {
 	{sVigorothGfx41, ARRAY_COUNT(sVigorothGfx41)}, 
 	{NULL, 32}, 
 	{sVigorothGfx41_1, ARRAY_COUNT(sVigorothGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx42[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_42.4bpp");
-static const u8 sVigorothGfx42_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_42_1.4bpp");
-static const u8 sVigorothGfx42_2[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_42_2.4bpp");
+static const u8 sVigorothGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_42.4bpp.lz");
+static const u8 sVigorothGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_42_1.4bpp.lz");
+static const u8 sVigorothGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_42_2.4bpp.lz");
 static const ax_sprite sVigorothSprites42[] = {
 	{sVigorothGfx42, ARRAY_COUNT(sVigorothGfx42)}, 
 	{NULL, 32}, 
@@ -2496,8 +2496,8 @@ static const ax_sprite sVigorothSprites42[] = {
 	{sVigorothGfx42_2, ARRAY_COUNT(sVigorothGfx42_2)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx43[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_43.4bpp");
-static const u8 sVigorothGfx43_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_43_1.4bpp");
+static const u8 sVigorothGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_43.4bpp.lz");
+static const u8 sVigorothGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_43_1.4bpp.lz");
 static const ax_sprite sVigorothSprites43[] = {
 	{NULL, 32}, 
 	{sVigorothGfx43, ARRAY_COUNT(sVigorothGfx43)}, 
@@ -2505,8 +2505,8 @@ static const ax_sprite sVigorothSprites43[] = {
 	{sVigorothGfx43_1, ARRAY_COUNT(sVigorothGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx44[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_44.4bpp");
-static const u8 sVigorothGfx44_1[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_44_1.4bpp");
+static const u8 sVigorothGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_44.4bpp.lz");
+static const u8 sVigorothGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_44_1.4bpp.lz");
 static const ax_sprite sVigorothSprites44[] = {
 	{NULL, 32}, 
 	{sVigorothGfx44, ARRAY_COUNT(sVigorothGfx44)}, 
@@ -2514,53 +2514,53 @@ static const ax_sprite sVigorothSprites44[] = {
 	{sVigorothGfx44_1, ARRAY_COUNT(sVigorothGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx45[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_45.4bpp");
+static const u8 sVigorothGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_45.4bpp.lz");
 static const ax_sprite sVigorothSprites45[] = {
 	{NULL, 32}, 
 	{sVigorothGfx45, ARRAY_COUNT(sVigorothGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx46[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_46.4bpp");
+static const u8 sVigorothGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_46.4bpp.lz");
 static const ax_sprite sVigorothSprites46[] = {
 	{sVigorothGfx46, ARRAY_COUNT(sVigorothGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx47[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_47.4bpp");
+static const u8 sVigorothGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_47.4bpp.lz");
 static const ax_sprite sVigorothSprites47[] = {
 	{sVigorothGfx47, ARRAY_COUNT(sVigorothGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx48[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_48.4bpp");
+static const u8 sVigorothGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_48.4bpp.lz");
 static const ax_sprite sVigorothSprites48[] = {
 	{sVigorothGfx48, ARRAY_COUNT(sVigorothGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx49[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_49.4bpp");
+static const u8 sVigorothGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_49.4bpp.lz");
 static const ax_sprite sVigorothSprites49[] = {
 	{sVigorothGfx49, ARRAY_COUNT(sVigorothGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx50[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_50.4bpp");
+static const u8 sVigorothGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_50.4bpp.lz");
 static const ax_sprite sVigorothSprites50[] = {
 	{sVigorothGfx50, ARRAY_COUNT(sVigorothGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx51[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_51.4bpp");
+static const u8 sVigorothGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_51.4bpp.lz");
 static const ax_sprite sVigorothSprites51[] = {
 	{sVigorothGfx51, ARRAY_COUNT(sVigorothGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx52[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_52.4bpp");
+static const u8 sVigorothGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_52.4bpp.lz");
 static const ax_sprite sVigorothSprites52[] = {
 	{sVigorothGfx52, ARRAY_COUNT(sVigorothGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx53[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_53.4bpp");
+static const u8 sVigorothGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_53.4bpp.lz");
 static const ax_sprite sVigorothSprites53[] = {
 	{sVigorothGfx53, ARRAY_COUNT(sVigorothGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sVigorothGfx54[] = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_54.4bpp");
+static const u8 sVigorothGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vigoroth/sprite_54.4bpp.lz");
 static const ax_sprite sVigorothSprites54[] = {
 	{sVigorothGfx54, ARRAY_COUNT(sVigorothGfx54)}, 
 	{NULL, 0}

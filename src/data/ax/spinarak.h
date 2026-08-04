@@ -1975,84 +1975,84 @@ static const ax_anim sSpinarakAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSpinarakGfx1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_1.4bpp");
+static const u8 sSpinarakGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_1.4bpp.lz");
 static const ax_sprite sSpinarakSprites1[] = {
 	{sSpinarakGfx1, ARRAY_COUNT(sSpinarakGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_2.4bpp");
+static const u8 sSpinarakGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites2[] = {
 	{sSpinarakGfx2, ARRAY_COUNT(sSpinarakGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx3[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_3.4bpp");
+static const u8 sSpinarakGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_3.4bpp.lz");
 static const ax_sprite sSpinarakSprites3[] = {
 	{sSpinarakGfx3, ARRAY_COUNT(sSpinarakGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx4[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_4.4bpp");
+static const u8 sSpinarakGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_4.4bpp.lz");
 static const ax_sprite sSpinarakSprites4[] = {
 	{sSpinarakGfx4, ARRAY_COUNT(sSpinarakGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx5[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_5.4bpp");
+static const u8 sSpinarakGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_5.4bpp.lz");
 static const ax_sprite sSpinarakSprites5[] = {
 	{sSpinarakGfx5, ARRAY_COUNT(sSpinarakGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx6[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_6.4bpp");
+static const u8 sSpinarakGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_6.4bpp.lz");
 static const ax_sprite sSpinarakSprites6[] = {
 	{sSpinarakGfx6, ARRAY_COUNT(sSpinarakGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx7[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_7.4bpp");
+static const u8 sSpinarakGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_7.4bpp.lz");
 static const ax_sprite sSpinarakSprites7[] = {
 	{sSpinarakGfx7, ARRAY_COUNT(sSpinarakGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx8[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_8.4bpp");
+static const u8 sSpinarakGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_8.4bpp.lz");
 static const ax_sprite sSpinarakSprites8[] = {
 	{sSpinarakGfx8, ARRAY_COUNT(sSpinarakGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx9[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_9.4bpp");
+static const u8 sSpinarakGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_9.4bpp.lz");
 static const ax_sprite sSpinarakSprites9[] = {
 	{sSpinarakGfx9, ARRAY_COUNT(sSpinarakGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx10[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_10.4bpp");
+static const u8 sSpinarakGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_10.4bpp.lz");
 static const ax_sprite sSpinarakSprites10[] = {
 	{sSpinarakGfx10, ARRAY_COUNT(sSpinarakGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx11[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_11.4bpp");
+static const u8 sSpinarakGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_11.4bpp.lz");
 static const ax_sprite sSpinarakSprites11[] = {
 	{sSpinarakGfx11, ARRAY_COUNT(sSpinarakGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx12[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_12.4bpp");
+static const u8 sSpinarakGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_12.4bpp.lz");
 static const ax_sprite sSpinarakSprites12[] = {
 	{sSpinarakGfx12, ARRAY_COUNT(sSpinarakGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx13[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_13.4bpp");
+static const u8 sSpinarakGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_13.4bpp.lz");
 static const ax_sprite sSpinarakSprites13[] = {
 	{sSpinarakGfx13, ARRAY_COUNT(sSpinarakGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx14[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_14.4bpp");
+static const u8 sSpinarakGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_14.4bpp.lz");
 static const ax_sprite sSpinarakSprites14[] = {
 	{sSpinarakGfx14, ARRAY_COUNT(sSpinarakGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx15[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_15.4bpp");
+static const u8 sSpinarakGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_15.4bpp.lz");
 static const ax_sprite sSpinarakSprites15[] = {
 	{sSpinarakGfx15, ARRAY_COUNT(sSpinarakGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx16[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_16.4bpp");
-static const u8 sSpinarakGfx16_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_16_1.4bpp");
-static const u8 sSpinarakGfx16_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_16_2.4bpp");
+static const u8 sSpinarakGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_16.4bpp.lz");
+static const u8 sSpinarakGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_16_1.4bpp.lz");
+static const u8 sSpinarakGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_16_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites16[] = {
 	{sSpinarakGfx16, ARRAY_COUNT(sSpinarakGfx16)}, 
 	{NULL, 32}, 
@@ -2062,9 +2062,9 @@ static const ax_sprite sSpinarakSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx17[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_17.4bpp");
-static const u8 sSpinarakGfx17_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_17_1.4bpp");
-static const u8 sSpinarakGfx17_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_17_2.4bpp");
+static const u8 sSpinarakGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_17.4bpp.lz");
+static const u8 sSpinarakGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_17_1.4bpp.lz");
+static const u8 sSpinarakGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_17_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites17[] = {
 	{sSpinarakGfx17, ARRAY_COUNT(sSpinarakGfx17)}, 
 	{NULL, 32}, 
@@ -2074,9 +2074,9 @@ static const ax_sprite sSpinarakSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx18[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_18.4bpp");
-static const u8 sSpinarakGfx18_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_18_1.4bpp");
-static const u8 sSpinarakGfx18_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_18_2.4bpp");
+static const u8 sSpinarakGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_18.4bpp.lz");
+static const u8 sSpinarakGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_18_1.4bpp.lz");
+static const u8 sSpinarakGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_18_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites18[] = {
 	{sSpinarakGfx18, ARRAY_COUNT(sSpinarakGfx18)}, 
 	{NULL, 32}, 
@@ -2086,9 +2086,9 @@ static const ax_sprite sSpinarakSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx19[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_19.4bpp");
-static const u8 sSpinarakGfx19_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_19_1.4bpp");
-static const u8 sSpinarakGfx19_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_19_2.4bpp");
+static const u8 sSpinarakGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_19.4bpp.lz");
+static const u8 sSpinarakGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_19_1.4bpp.lz");
+static const u8 sSpinarakGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_19_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites19[] = {
 	{sSpinarakGfx19, ARRAY_COUNT(sSpinarakGfx19)}, 
 	{NULL, 32}, 
@@ -2098,9 +2098,9 @@ static const ax_sprite sSpinarakSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx20[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_20.4bpp");
-static const u8 sSpinarakGfx20_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_20_1.4bpp");
-static const u8 sSpinarakGfx20_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_20_2.4bpp");
+static const u8 sSpinarakGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_20.4bpp.lz");
+static const u8 sSpinarakGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_20_1.4bpp.lz");
+static const u8 sSpinarakGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_20_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites20[] = {
 	{NULL, 32}, 
 	{sSpinarakGfx20, ARRAY_COUNT(sSpinarakGfx20)}, 
@@ -2111,8 +2111,8 @@ static const ax_sprite sSpinarakSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx21[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_21.4bpp");
-static const u8 sSpinarakGfx21_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_21_1.4bpp");
+static const u8 sSpinarakGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_21.4bpp.lz");
+static const u8 sSpinarakGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_21_1.4bpp.lz");
 static const ax_sprite sSpinarakSprites21[] = {
 	{sSpinarakGfx21, ARRAY_COUNT(sSpinarakGfx21)}, 
 	{NULL, 32}, 
@@ -2120,9 +2120,9 @@ static const ax_sprite sSpinarakSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx22[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_22.4bpp");
-static const u8 sSpinarakGfx22_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_22_1.4bpp");
-static const u8 sSpinarakGfx22_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_22_2.4bpp");
+static const u8 sSpinarakGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_22.4bpp.lz");
+static const u8 sSpinarakGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_22_1.4bpp.lz");
+static const u8 sSpinarakGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_22_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites22[] = {
 	{sSpinarakGfx22, ARRAY_COUNT(sSpinarakGfx22)}, 
 	{NULL, 32}, 
@@ -2132,9 +2132,9 @@ static const ax_sprite sSpinarakSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx23[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_23.4bpp");
-static const u8 sSpinarakGfx23_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_23_1.4bpp");
-static const u8 sSpinarakGfx23_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_23_2.4bpp");
+static const u8 sSpinarakGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_23.4bpp.lz");
+static const u8 sSpinarakGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_23_1.4bpp.lz");
+static const u8 sSpinarakGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_23_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites23[] = {
 	{sSpinarakGfx23, ARRAY_COUNT(sSpinarakGfx23)}, 
 	{NULL, 32}, 
@@ -2144,9 +2144,9 @@ static const ax_sprite sSpinarakSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx24[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_24.4bpp");
-static const u8 sSpinarakGfx24_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_24_1.4bpp");
-static const u8 sSpinarakGfx24_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_24_2.4bpp");
+static const u8 sSpinarakGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_24.4bpp.lz");
+static const u8 sSpinarakGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_24_1.4bpp.lz");
+static const u8 sSpinarakGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_24_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites24[] = {
 	{sSpinarakGfx24, ARRAY_COUNT(sSpinarakGfx24)}, 
 	{NULL, 32}, 
@@ -2156,9 +2156,9 @@ static const ax_sprite sSpinarakSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx25[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_25.4bpp");
-static const u8 sSpinarakGfx25_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_25_1.4bpp");
-static const u8 sSpinarakGfx25_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_25_2.4bpp");
+static const u8 sSpinarakGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_25.4bpp.lz");
+static const u8 sSpinarakGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_25_1.4bpp.lz");
+static const u8 sSpinarakGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_25_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites25[] = {
 	{sSpinarakGfx25, ARRAY_COUNT(sSpinarakGfx25)}, 
 	{NULL, 32}, 
@@ -2168,9 +2168,9 @@ static const ax_sprite sSpinarakSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx26[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_26.4bpp");
-static const u8 sSpinarakGfx26_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_26_1.4bpp");
-static const u8 sSpinarakGfx26_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_26_2.4bpp");
+static const u8 sSpinarakGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_26.4bpp.lz");
+static const u8 sSpinarakGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_26_1.4bpp.lz");
+static const u8 sSpinarakGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_26_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites26[] = {
 	{sSpinarakGfx26, ARRAY_COUNT(sSpinarakGfx26)}, 
 	{NULL, 32}, 
@@ -2180,9 +2180,9 @@ static const ax_sprite sSpinarakSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx27[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_27.4bpp");
-static const u8 sSpinarakGfx27_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_27_1.4bpp");
-static const u8 sSpinarakGfx27_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_27_2.4bpp");
+static const u8 sSpinarakGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_27.4bpp.lz");
+static const u8 sSpinarakGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_27_1.4bpp.lz");
+static const u8 sSpinarakGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_27_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites27[] = {
 	{sSpinarakGfx27, ARRAY_COUNT(sSpinarakGfx27)}, 
 	{NULL, 32}, 
@@ -2192,9 +2192,9 @@ static const ax_sprite sSpinarakSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx28[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_28.4bpp");
-static const u8 sSpinarakGfx28_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_28_1.4bpp");
-static const u8 sSpinarakGfx28_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_28_2.4bpp");
+static const u8 sSpinarakGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_28.4bpp.lz");
+static const u8 sSpinarakGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_28_1.4bpp.lz");
+static const u8 sSpinarakGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_28_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites28[] = {
 	{sSpinarakGfx28, ARRAY_COUNT(sSpinarakGfx28)}, 
 	{NULL, 32}, 
@@ -2204,9 +2204,9 @@ static const ax_sprite sSpinarakSprites28[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx29[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_29.4bpp");
-static const u8 sSpinarakGfx29_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_29_1.4bpp");
-static const u8 sSpinarakGfx29_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_29_2.4bpp");
+static const u8 sSpinarakGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_29.4bpp.lz");
+static const u8 sSpinarakGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_29_1.4bpp.lz");
+static const u8 sSpinarakGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_29_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites29[] = {
 	{sSpinarakGfx29, ARRAY_COUNT(sSpinarakGfx29)}, 
 	{NULL, 32}, 
@@ -2216,9 +2216,9 @@ static const ax_sprite sSpinarakSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx30[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_30.4bpp");
-static const u8 sSpinarakGfx30_1[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_30_1.4bpp");
-static const u8 sSpinarakGfx30_2[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_30_2.4bpp");
+static const u8 sSpinarakGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_30.4bpp.lz");
+static const u8 sSpinarakGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_30_1.4bpp.lz");
+static const u8 sSpinarakGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_30_2.4bpp.lz");
 static const ax_sprite sSpinarakSprites30[] = {
 	{NULL, 32}, 
 	{sSpinarakGfx30, ARRAY_COUNT(sSpinarakGfx30)}, 
@@ -2229,62 +2229,62 @@ static const ax_sprite sSpinarakSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx31[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_31.4bpp");
+static const u8 sSpinarakGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_31.4bpp.lz");
 static const ax_sprite sSpinarakSprites31[] = {
 	{sSpinarakGfx31, ARRAY_COUNT(sSpinarakGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx32[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_32.4bpp");
+static const u8 sSpinarakGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_32.4bpp.lz");
 static const ax_sprite sSpinarakSprites32[] = {
 	{sSpinarakGfx32, ARRAY_COUNT(sSpinarakGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx33[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_33.4bpp");
+static const u8 sSpinarakGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_33.4bpp.lz");
 static const ax_sprite sSpinarakSprites33[] = {
 	{sSpinarakGfx33, ARRAY_COUNT(sSpinarakGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx34[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_34.4bpp");
+static const u8 sSpinarakGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_34.4bpp.lz");
 static const ax_sprite sSpinarakSprites34[] = {
 	{sSpinarakGfx34, ARRAY_COUNT(sSpinarakGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx35[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_35.4bpp");
+static const u8 sSpinarakGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_35.4bpp.lz");
 static const ax_sprite sSpinarakSprites35[] = {
 	{sSpinarakGfx35, ARRAY_COUNT(sSpinarakGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx36[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_36.4bpp");
+static const u8 sSpinarakGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_36.4bpp.lz");
 static const ax_sprite sSpinarakSprites36[] = {
 	{sSpinarakGfx36, ARRAY_COUNT(sSpinarakGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx37[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_37.4bpp");
+static const u8 sSpinarakGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_37.4bpp.lz");
 static const ax_sprite sSpinarakSprites37[] = {
 	{sSpinarakGfx37, ARRAY_COUNT(sSpinarakGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx38[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_38.4bpp");
+static const u8 sSpinarakGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_38.4bpp.lz");
 static const ax_sprite sSpinarakSprites38[] = {
 	{sSpinarakGfx38, ARRAY_COUNT(sSpinarakGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx39[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_39.4bpp");
+static const u8 sSpinarakGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_39.4bpp.lz");
 static const ax_sprite sSpinarakSprites39[] = {
 	{sSpinarakGfx39, ARRAY_COUNT(sSpinarakGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx40[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_40.4bpp");
+static const u8 sSpinarakGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_40.4bpp.lz");
 static const ax_sprite sSpinarakSprites40[] = {
 	{sSpinarakGfx40, ARRAY_COUNT(sSpinarakGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx41[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_41.4bpp");
+static const u8 sSpinarakGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_41.4bpp.lz");
 static const ax_sprite sSpinarakSprites41[] = {
 	{sSpinarakGfx41, ARRAY_COUNT(sSpinarakGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSpinarakGfx42[] = INCBIN_U8("graphics/ax/mon/spinarak/sprite_42.4bpp");
+static const u8 sSpinarakGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/spinarak/sprite_42.4bpp.lz");
 static const ax_sprite sSpinarakSprites42[] = {
 	{sSpinarakGfx42, ARRAY_COUNT(sSpinarakGfx42)}, 
 	{NULL, 0}

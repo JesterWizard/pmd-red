@@ -2079,84 +2079,84 @@ static const ax_anim sAriadosAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sAriadosGfx1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_1.4bpp");
+static const u8 sAriadosGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_1.4bpp.lz");
 static const ax_sprite sAriadosSprites1[] = {
 	{sAriadosGfx1, ARRAY_COUNT(sAriadosGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx2[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_2.4bpp");
+static const u8 sAriadosGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_2.4bpp.lz");
 static const ax_sprite sAriadosSprites2[] = {
 	{sAriadosGfx2, ARRAY_COUNT(sAriadosGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx3[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_3.4bpp");
+static const u8 sAriadosGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_3.4bpp.lz");
 static const ax_sprite sAriadosSprites3[] = {
 	{sAriadosGfx3, ARRAY_COUNT(sAriadosGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx4[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_4.4bpp");
+static const u8 sAriadosGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_4.4bpp.lz");
 static const ax_sprite sAriadosSprites4[] = {
 	{sAriadosGfx4, ARRAY_COUNT(sAriadosGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx5[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_5.4bpp");
+static const u8 sAriadosGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_5.4bpp.lz");
 static const ax_sprite sAriadosSprites5[] = {
 	{sAriadosGfx5, ARRAY_COUNT(sAriadosGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx6[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_6.4bpp");
+static const u8 sAriadosGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_6.4bpp.lz");
 static const ax_sprite sAriadosSprites6[] = {
 	{sAriadosGfx6, ARRAY_COUNT(sAriadosGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx7[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_7.4bpp");
+static const u8 sAriadosGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_7.4bpp.lz");
 static const ax_sprite sAriadosSprites7[] = {
 	{sAriadosGfx7, ARRAY_COUNT(sAriadosGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx8[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_8.4bpp");
+static const u8 sAriadosGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_8.4bpp.lz");
 static const ax_sprite sAriadosSprites8[] = {
 	{sAriadosGfx8, ARRAY_COUNT(sAriadosGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx9[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_9.4bpp");
+static const u8 sAriadosGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_9.4bpp.lz");
 static const ax_sprite sAriadosSprites9[] = {
 	{sAriadosGfx9, ARRAY_COUNT(sAriadosGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx10[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_10.4bpp");
+static const u8 sAriadosGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_10.4bpp.lz");
 static const ax_sprite sAriadosSprites10[] = {
 	{sAriadosGfx10, ARRAY_COUNT(sAriadosGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx11[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_11.4bpp");
+static const u8 sAriadosGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_11.4bpp.lz");
 static const ax_sprite sAriadosSprites11[] = {
 	{sAriadosGfx11, ARRAY_COUNT(sAriadosGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx12[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_12.4bpp");
+static const u8 sAriadosGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_12.4bpp.lz");
 static const ax_sprite sAriadosSprites12[] = {
 	{sAriadosGfx12, ARRAY_COUNT(sAriadosGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx13[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_13.4bpp");
+static const u8 sAriadosGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_13.4bpp.lz");
 static const ax_sprite sAriadosSprites13[] = {
 	{sAriadosGfx13, ARRAY_COUNT(sAriadosGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx14[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_14.4bpp");
+static const u8 sAriadosGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_14.4bpp.lz");
 static const ax_sprite sAriadosSprites14[] = {
 	{sAriadosGfx14, ARRAY_COUNT(sAriadosGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx15[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_15.4bpp");
+static const u8 sAriadosGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_15.4bpp.lz");
 static const ax_sprite sAriadosSprites15[] = {
 	{sAriadosGfx15, ARRAY_COUNT(sAriadosGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx16[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_16.4bpp");
-static const u8 sAriadosGfx16_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_16_1.4bpp");
-static const u8 sAriadosGfx16_2[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_16_2.4bpp");
+static const u8 sAriadosGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_16.4bpp.lz");
+static const u8 sAriadosGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_16_1.4bpp.lz");
+static const u8 sAriadosGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_16_2.4bpp.lz");
 static const ax_sprite sAriadosSprites16[] = {
 	{sAriadosGfx16, ARRAY_COUNT(sAriadosGfx16)}, 
 	{NULL, 32}, 
@@ -2166,8 +2166,8 @@ static const ax_sprite sAriadosSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx17[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_17.4bpp");
-static const u8 sAriadosGfx17_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_17_1.4bpp");
+static const u8 sAriadosGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_17.4bpp.lz");
+static const u8 sAriadosGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_17_1.4bpp.lz");
 static const ax_sprite sAriadosSprites17[] = {
 	{NULL, 32}, 
 	{sAriadosGfx17, ARRAY_COUNT(sAriadosGfx17)}, 
@@ -2176,8 +2176,8 @@ static const ax_sprite sAriadosSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx18[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_18.4bpp");
-static const u8 sAriadosGfx18_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_18_1.4bpp");
+static const u8 sAriadosGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_18.4bpp.lz");
+static const u8 sAriadosGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_18_1.4bpp.lz");
 static const ax_sprite sAriadosSprites18[] = {
 	{NULL, 32}, 
 	{sAriadosGfx18, ARRAY_COUNT(sAriadosGfx18)}, 
@@ -2186,14 +2186,14 @@ static const ax_sprite sAriadosSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx19[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_19.4bpp");
+static const u8 sAriadosGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_19.4bpp.lz");
 static const ax_sprite sAriadosSprites19[] = {
 	{sAriadosGfx19, ARRAY_COUNT(sAriadosGfx19)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx20[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_20.4bpp");
-static const u8 sAriadosGfx20_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_20_1.4bpp");
+static const u8 sAriadosGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_20.4bpp.lz");
+static const u8 sAriadosGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_20_1.4bpp.lz");
 static const ax_sprite sAriadosSprites20[] = {
 	{NULL, 32}, 
 	{sAriadosGfx20, ARRAY_COUNT(sAriadosGfx20)}, 
@@ -2202,8 +2202,8 @@ static const ax_sprite sAriadosSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx21[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_21.4bpp");
-static const u8 sAriadosGfx21_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_21_1.4bpp");
+static const u8 sAriadosGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_21.4bpp.lz");
+static const u8 sAriadosGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_21_1.4bpp.lz");
 static const ax_sprite sAriadosSprites21[] = {
 	{NULL, 32}, 
 	{sAriadosGfx21, ARRAY_COUNT(sAriadosGfx21)}, 
@@ -2212,8 +2212,8 @@ static const ax_sprite sAriadosSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx22[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_22.4bpp");
-static const u8 sAriadosGfx22_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_22_1.4bpp");
+static const u8 sAriadosGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_22.4bpp.lz");
+static const u8 sAriadosGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_22_1.4bpp.lz");
 static const ax_sprite sAriadosSprites22[] = {
 	{NULL, 32}, 
 	{sAriadosGfx22, ARRAY_COUNT(sAriadosGfx22)}, 
@@ -2221,8 +2221,8 @@ static const ax_sprite sAriadosSprites22[] = {
 	{sAriadosGfx22_1, ARRAY_COUNT(sAriadosGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx23[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_23.4bpp");
-static const u8 sAriadosGfx23_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_23_1.4bpp");
+static const u8 sAriadosGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_23.4bpp.lz");
+static const u8 sAriadosGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_23_1.4bpp.lz");
 static const ax_sprite sAriadosSprites23[] = {
 	{sAriadosGfx23, ARRAY_COUNT(sAriadosGfx23)}, 
 	{NULL, 32}, 
@@ -2230,9 +2230,9 @@ static const ax_sprite sAriadosSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx24[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_24.4bpp");
-static const u8 sAriadosGfx24_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_24_1.4bpp");
-static const u8 sAriadosGfx24_2[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_24_2.4bpp");
+static const u8 sAriadosGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_24.4bpp.lz");
+static const u8 sAriadosGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_24_1.4bpp.lz");
+static const u8 sAriadosGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_24_2.4bpp.lz");
 static const ax_sprite sAriadosSprites24[] = {
 	{NULL, 32}, 
 	{sAriadosGfx24, ARRAY_COUNT(sAriadosGfx24)}, 
@@ -2242,16 +2242,16 @@ static const ax_sprite sAriadosSprites24[] = {
 	{sAriadosGfx24_2, ARRAY_COUNT(sAriadosGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx25[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_25.4bpp");
+static const u8 sAriadosGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_25.4bpp.lz");
 static const ax_sprite sAriadosSprites25[] = {
 	{sAriadosGfx25, ARRAY_COUNT(sAriadosGfx25)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx26[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_26.4bpp");
-static const u8 sAriadosGfx26_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_26_1.4bpp");
-static const u8 sAriadosGfx26_2[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_26_2.4bpp");
-static const u8 sAriadosGfx26_3[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_26_3.4bpp");
+static const u8 sAriadosGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_26.4bpp.lz");
+static const u8 sAriadosGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_26_1.4bpp.lz");
+static const u8 sAriadosGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_26_2.4bpp.lz");
+static const u8 sAriadosGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_26_3.4bpp.lz");
 static const ax_sprite sAriadosSprites26[] = {
 	{sAriadosGfx26, ARRAY_COUNT(sAriadosGfx26)}, 
 	{NULL, 32}, 
@@ -2263,9 +2263,9 @@ static const ax_sprite sAriadosSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx27[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_27.4bpp");
-static const u8 sAriadosGfx27_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_27_1.4bpp");
-static const u8 sAriadosGfx27_2[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_27_2.4bpp");
+static const u8 sAriadosGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_27.4bpp.lz");
+static const u8 sAriadosGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_27_1.4bpp.lz");
+static const u8 sAriadosGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_27_2.4bpp.lz");
 static const ax_sprite sAriadosSprites27[] = {
 	{sAriadosGfx27, ARRAY_COUNT(sAriadosGfx27)}, 
 	{NULL, 64}, 
@@ -2274,10 +2274,10 @@ static const ax_sprite sAriadosSprites27[] = {
 	{sAriadosGfx27_2, ARRAY_COUNT(sAriadosGfx27_2)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx28[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_28.4bpp");
-static const u8 sAriadosGfx28_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_28_1.4bpp");
-static const u8 sAriadosGfx28_2[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_28_2.4bpp");
-static const u8 sAriadosGfx28_3[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_28_3.4bpp");
+static const u8 sAriadosGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_28.4bpp.lz");
+static const u8 sAriadosGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_28_1.4bpp.lz");
+static const u8 sAriadosGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_28_2.4bpp.lz");
+static const u8 sAriadosGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_28_3.4bpp.lz");
 static const ax_sprite sAriadosSprites28[] = {
 	{sAriadosGfx28, ARRAY_COUNT(sAriadosGfx28)}, 
 	{NULL, 32}, 
@@ -2289,9 +2289,9 @@ static const ax_sprite sAriadosSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx29[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_29.4bpp");
-static const u8 sAriadosGfx29_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_29_1.4bpp");
-static const u8 sAriadosGfx29_2[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_29_2.4bpp");
+static const u8 sAriadosGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_29.4bpp.lz");
+static const u8 sAriadosGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_29_1.4bpp.lz");
+static const u8 sAriadosGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_29_2.4bpp.lz");
 static const ax_sprite sAriadosSprites29[] = {
 	{NULL, 32}, 
 	{sAriadosGfx29, ARRAY_COUNT(sAriadosGfx29)}, 
@@ -2301,9 +2301,9 @@ static const ax_sprite sAriadosSprites29[] = {
 	{sAriadosGfx29_2, ARRAY_COUNT(sAriadosGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx30[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_30.4bpp");
-static const u8 sAriadosGfx30_1[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_30_1.4bpp");
-static const u8 sAriadosGfx30_2[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_30_2.4bpp");
+static const u8 sAriadosGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_30.4bpp.lz");
+static const u8 sAriadosGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_30_1.4bpp.lz");
+static const u8 sAriadosGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_30_2.4bpp.lz");
 static const ax_sprite sAriadosSprites30[] = {
 	{NULL, 32}, 
 	{sAriadosGfx30, ARRAY_COUNT(sAriadosGfx30)}, 
@@ -2313,37 +2313,37 @@ static const ax_sprite sAriadosSprites30[] = {
 	{sAriadosGfx30_2, ARRAY_COUNT(sAriadosGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx31[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_31.4bpp");
+static const u8 sAriadosGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_31.4bpp.lz");
 static const ax_sprite sAriadosSprites31[] = {
 	{sAriadosGfx31, ARRAY_COUNT(sAriadosGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx32[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_32.4bpp");
+static const u8 sAriadosGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_32.4bpp.lz");
 static const ax_sprite sAriadosSprites32[] = {
 	{sAriadosGfx32, ARRAY_COUNT(sAriadosGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx33[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_33.4bpp");
+static const u8 sAriadosGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_33.4bpp.lz");
 static const ax_sprite sAriadosSprites33[] = {
 	{sAriadosGfx33, ARRAY_COUNT(sAriadosGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx34[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_34.4bpp");
+static const u8 sAriadosGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_34.4bpp.lz");
 static const ax_sprite sAriadosSprites34[] = {
 	{sAriadosGfx34, ARRAY_COUNT(sAriadosGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx35[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_35.4bpp");
+static const u8 sAriadosGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_35.4bpp.lz");
 static const ax_sprite sAriadosSprites35[] = {
 	{sAriadosGfx35, ARRAY_COUNT(sAriadosGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx36[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_36.4bpp");
+static const u8 sAriadosGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_36.4bpp.lz");
 static const ax_sprite sAriadosSprites36[] = {
 	{sAriadosGfx36, ARRAY_COUNT(sAriadosGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sAriadosGfx37[] = INCBIN_U8("graphics/ax/mon/ariados/sprite_37.4bpp");
+static const u8 sAriadosGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/ariados/sprite_37.4bpp.lz");
 static const ax_sprite sAriadosSprites37[] = {
 	{sAriadosGfx37, ARRAY_COUNT(sAriadosGfx37)}, 
 	{NULL, 0}

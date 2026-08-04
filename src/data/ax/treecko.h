@@ -3004,84 +3004,84 @@ static const ax_anim sTreeckoAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTreeckoGfx1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_1.4bpp");
+static const u8 sTreeckoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_1.4bpp.lz");
 static const ax_sprite sTreeckoSprites1[] = {
 	{sTreeckoGfx1, ARRAY_COUNT(sTreeckoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_2.4bpp");
+static const u8 sTreeckoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites2[] = {
 	{sTreeckoGfx2, ARRAY_COUNT(sTreeckoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_3.4bpp");
+static const u8 sTreeckoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites3[] = {
 	{sTreeckoGfx3, ARRAY_COUNT(sTreeckoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx4[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_4.4bpp");
+static const u8 sTreeckoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_4.4bpp.lz");
 static const ax_sprite sTreeckoSprites4[] = {
 	{sTreeckoGfx4, ARRAY_COUNT(sTreeckoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx5[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_5.4bpp");
+static const u8 sTreeckoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_5.4bpp.lz");
 static const ax_sprite sTreeckoSprites5[] = {
 	{sTreeckoGfx5, ARRAY_COUNT(sTreeckoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx6[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_6.4bpp");
+static const u8 sTreeckoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_6.4bpp.lz");
 static const ax_sprite sTreeckoSprites6[] = {
 	{sTreeckoGfx6, ARRAY_COUNT(sTreeckoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx7[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_7.4bpp");
+static const u8 sTreeckoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_7.4bpp.lz");
 static const ax_sprite sTreeckoSprites7[] = {
 	{sTreeckoGfx7, ARRAY_COUNT(sTreeckoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx8[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_8.4bpp");
+static const u8 sTreeckoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_8.4bpp.lz");
 static const ax_sprite sTreeckoSprites8[] = {
 	{sTreeckoGfx8, ARRAY_COUNT(sTreeckoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx9[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_9.4bpp");
+static const u8 sTreeckoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_9.4bpp.lz");
 static const ax_sprite sTreeckoSprites9[] = {
 	{sTreeckoGfx9, ARRAY_COUNT(sTreeckoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx10[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_10.4bpp");
+static const u8 sTreeckoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_10.4bpp.lz");
 static const ax_sprite sTreeckoSprites10[] = {
 	{sTreeckoGfx10, ARRAY_COUNT(sTreeckoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx11[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_11.4bpp");
+static const u8 sTreeckoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_11.4bpp.lz");
 static const ax_sprite sTreeckoSprites11[] = {
 	{sTreeckoGfx11, ARRAY_COUNT(sTreeckoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx12[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_12.4bpp");
+static const u8 sTreeckoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_12.4bpp.lz");
 static const ax_sprite sTreeckoSprites12[] = {
 	{sTreeckoGfx12, ARRAY_COUNT(sTreeckoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx13[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_13.4bpp");
+static const u8 sTreeckoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_13.4bpp.lz");
 static const ax_sprite sTreeckoSprites13[] = {
 	{sTreeckoGfx13, ARRAY_COUNT(sTreeckoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx14[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_14.4bpp");
+static const u8 sTreeckoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_14.4bpp.lz");
 static const ax_sprite sTreeckoSprites14[] = {
 	{sTreeckoGfx14, ARRAY_COUNT(sTreeckoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx15[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_15.4bpp");
+static const u8 sTreeckoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_15.4bpp.lz");
 static const ax_sprite sTreeckoSprites15[] = {
 	{sTreeckoGfx15, ARRAY_COUNT(sTreeckoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx16[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_16.4bpp");
-static const u8 sTreeckoGfx16_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_16_1.4bpp");
-static const u8 sTreeckoGfx16_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_16_2.4bpp");
+static const u8 sTreeckoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_16.4bpp.lz");
+static const u8 sTreeckoGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_16_1.4bpp.lz");
+static const u8 sTreeckoGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_16_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites16[] = {
 	{sTreeckoGfx16, ARRAY_COUNT(sTreeckoGfx16)}, 
 	{NULL, 32}, 
@@ -3091,9 +3091,9 @@ static const ax_sprite sTreeckoSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx17[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_17.4bpp");
-static const u8 sTreeckoGfx17_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_17_1.4bpp");
-static const u8 sTreeckoGfx17_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_17_2.4bpp");
+static const u8 sTreeckoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_17.4bpp.lz");
+static const u8 sTreeckoGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_17_1.4bpp.lz");
+static const u8 sTreeckoGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_17_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites17[] = {
 	{sTreeckoGfx17, ARRAY_COUNT(sTreeckoGfx17)}, 
 	{NULL, 32}, 
@@ -3103,9 +3103,9 @@ static const ax_sprite sTreeckoSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx18[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_18.4bpp");
-static const u8 sTreeckoGfx18_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_18_1.4bpp");
-static const u8 sTreeckoGfx18_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_18_2.4bpp");
+static const u8 sTreeckoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_18.4bpp.lz");
+static const u8 sTreeckoGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_18_1.4bpp.lz");
+static const u8 sTreeckoGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_18_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites18[] = {
 	{sTreeckoGfx18, ARRAY_COUNT(sTreeckoGfx18)}, 
 	{NULL, 32}, 
@@ -3115,10 +3115,10 @@ static const ax_sprite sTreeckoSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx19[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_19.4bpp");
-static const u8 sTreeckoGfx19_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_19_1.4bpp");
-static const u8 sTreeckoGfx19_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_19_2.4bpp");
-static const u8 sTreeckoGfx19_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_19_3.4bpp");
+static const u8 sTreeckoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_19.4bpp.lz");
+static const u8 sTreeckoGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_19_1.4bpp.lz");
+static const u8 sTreeckoGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_19_2.4bpp.lz");
+static const u8 sTreeckoGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_19_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites19[] = {
 	{NULL, 32}, 
 	{sTreeckoGfx19, ARRAY_COUNT(sTreeckoGfx19)}, 
@@ -3131,9 +3131,9 @@ static const ax_sprite sTreeckoSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx20[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_20.4bpp");
-static const u8 sTreeckoGfx20_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_20_1.4bpp");
-static const u8 sTreeckoGfx20_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_20_2.4bpp");
+static const u8 sTreeckoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_20.4bpp.lz");
+static const u8 sTreeckoGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_20_1.4bpp.lz");
+static const u8 sTreeckoGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_20_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites20[] = {
 	{sTreeckoGfx20, ARRAY_COUNT(sTreeckoGfx20)}, 
 	{NULL, 32}, 
@@ -3143,9 +3143,9 @@ static const ax_sprite sTreeckoSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx21[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_21.4bpp");
-static const u8 sTreeckoGfx21_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_21_1.4bpp");
-static const u8 sTreeckoGfx21_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_21_2.4bpp");
+static const u8 sTreeckoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_21.4bpp.lz");
+static const u8 sTreeckoGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_21_1.4bpp.lz");
+static const u8 sTreeckoGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_21_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites21[] = {
 	{sTreeckoGfx21, ARRAY_COUNT(sTreeckoGfx21)}, 
 	{NULL, 64}, 
@@ -3155,17 +3155,17 @@ static const ax_sprite sTreeckoSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx22[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_22.4bpp");
+static const u8 sTreeckoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_22.4bpp.lz");
 static const ax_sprite sTreeckoSprites22[] = {
 	{NULL, 32}, 
 	{sTreeckoGfx22, ARRAY_COUNT(sTreeckoGfx22)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx23[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_23.4bpp");
-static const u8 sTreeckoGfx23_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_23_1.4bpp");
-static const u8 sTreeckoGfx23_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_23_2.4bpp");
-static const u8 sTreeckoGfx23_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_23_3.4bpp");
+static const u8 sTreeckoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_23.4bpp.lz");
+static const u8 sTreeckoGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_23_1.4bpp.lz");
+static const u8 sTreeckoGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_23_2.4bpp.lz");
+static const u8 sTreeckoGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_23_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites23[] = {
 	{sTreeckoGfx23, ARRAY_COUNT(sTreeckoGfx23)}, 
 	{NULL, 64}, 
@@ -3177,9 +3177,9 @@ static const ax_sprite sTreeckoSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx24[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_24.4bpp");
-static const u8 sTreeckoGfx24_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_24_1.4bpp");
-static const u8 sTreeckoGfx24_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_24_2.4bpp");
+static const u8 sTreeckoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_24.4bpp.lz");
+static const u8 sTreeckoGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_24_1.4bpp.lz");
+static const u8 sTreeckoGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_24_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites24[] = {
 	{sTreeckoGfx24, ARRAY_COUNT(sTreeckoGfx24)}, 
 	{NULL, 64}, 
@@ -3189,9 +3189,9 @@ static const ax_sprite sTreeckoSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx25[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_25.4bpp");
-static const u8 sTreeckoGfx25_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_25_1.4bpp");
-static const u8 sTreeckoGfx25_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_25_2.4bpp");
+static const u8 sTreeckoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_25.4bpp.lz");
+static const u8 sTreeckoGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_25_1.4bpp.lz");
+static const u8 sTreeckoGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_25_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites25[] = {
 	{sTreeckoGfx25, ARRAY_COUNT(sTreeckoGfx25)}, 
 	{NULL, 32}, 
@@ -3201,8 +3201,8 @@ static const ax_sprite sTreeckoSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx26[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_26.4bpp");
-static const u8 sTreeckoGfx26_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_26_1.4bpp");
+static const u8 sTreeckoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_26.4bpp.lz");
+static const u8 sTreeckoGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_26_1.4bpp.lz");
 static const ax_sprite sTreeckoSprites26[] = {
 	{NULL, 128}, 
 	{sTreeckoGfx26, ARRAY_COUNT(sTreeckoGfx26)}, 
@@ -3211,8 +3211,8 @@ static const ax_sprite sTreeckoSprites26[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx27[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_27.4bpp");
-static const u8 sTreeckoGfx27_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_27_1.4bpp");
+static const u8 sTreeckoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_27.4bpp.lz");
+static const u8 sTreeckoGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_27_1.4bpp.lz");
 static const ax_sprite sTreeckoSprites27[] = {
 	{sTreeckoGfx27, ARRAY_COUNT(sTreeckoGfx27)}, 
 	{NULL, 64}, 
@@ -3220,9 +3220,9 @@ static const ax_sprite sTreeckoSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx28[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_28.4bpp");
-static const u8 sTreeckoGfx28_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_28_1.4bpp");
-static const u8 sTreeckoGfx28_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_28_2.4bpp");
+static const u8 sTreeckoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_28.4bpp.lz");
+static const u8 sTreeckoGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_28_1.4bpp.lz");
+static const u8 sTreeckoGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_28_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites28[] = {
 	{sTreeckoGfx28, ARRAY_COUNT(sTreeckoGfx28)}, 
 	{NULL, 32}, 
@@ -3232,10 +3232,10 @@ static const ax_sprite sTreeckoSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx29[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_29.4bpp");
-static const u8 sTreeckoGfx29_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_29_1.4bpp");
-static const u8 sTreeckoGfx29_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_29_2.4bpp");
-static const u8 sTreeckoGfx29_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_29_3.4bpp");
+static const u8 sTreeckoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_29.4bpp.lz");
+static const u8 sTreeckoGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_29_1.4bpp.lz");
+static const u8 sTreeckoGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_29_2.4bpp.lz");
+static const u8 sTreeckoGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_29_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites29[] = {
 	{sTreeckoGfx29, ARRAY_COUNT(sTreeckoGfx29)}, 
 	{NULL, 32}, 
@@ -3247,9 +3247,9 @@ static const ax_sprite sTreeckoSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx30[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_30.4bpp");
-static const u8 sTreeckoGfx30_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_30_1.4bpp");
-static const u8 sTreeckoGfx30_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_30_2.4bpp");
+static const u8 sTreeckoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_30.4bpp.lz");
+static const u8 sTreeckoGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_30_1.4bpp.lz");
+static const u8 sTreeckoGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_30_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites30[] = {
 	{sTreeckoGfx30, ARRAY_COUNT(sTreeckoGfx30)}, 
 	{NULL, 64}, 
@@ -3259,16 +3259,16 @@ static const ax_sprite sTreeckoSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx31[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_31.4bpp");
+static const u8 sTreeckoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_31.4bpp.lz");
 static const ax_sprite sTreeckoSprites31[] = {
 	{NULL, 128}, 
 	{sTreeckoGfx31, ARRAY_COUNT(sTreeckoGfx31)}, 
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx32[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_32.4bpp");
-static const u8 sTreeckoGfx32_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_32_1.4bpp");
-static const u8 sTreeckoGfx32_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_32_2.4bpp");
+static const u8 sTreeckoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_32.4bpp.lz");
+static const u8 sTreeckoGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_32_1.4bpp.lz");
+static const u8 sTreeckoGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_32_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites32[] = {
 	{sTreeckoGfx32, ARRAY_COUNT(sTreeckoGfx32)}, 
 	{NULL, 32}, 
@@ -3278,9 +3278,9 @@ static const ax_sprite sTreeckoSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx33[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_33.4bpp");
-static const u8 sTreeckoGfx33_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_33_1.4bpp");
-static const u8 sTreeckoGfx33_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_33_2.4bpp");
+static const u8 sTreeckoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_33.4bpp.lz");
+static const u8 sTreeckoGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_33_1.4bpp.lz");
+static const u8 sTreeckoGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_33_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites33[] = {
 	{sTreeckoGfx33, ARRAY_COUNT(sTreeckoGfx33)}, 
 	{NULL, 64}, 
@@ -3290,9 +3290,9 @@ static const ax_sprite sTreeckoSprites33[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx34[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_34.4bpp");
-static const u8 sTreeckoGfx34_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_34_1.4bpp");
-static const u8 sTreeckoGfx34_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_34_2.4bpp");
+static const u8 sTreeckoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_34.4bpp.lz");
+static const u8 sTreeckoGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_34_1.4bpp.lz");
+static const u8 sTreeckoGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_34_2.4bpp.lz");
 static const ax_sprite sTreeckoSprites34[] = {
 	{sTreeckoGfx34, ARRAY_COUNT(sTreeckoGfx34)}, 
 	{NULL, 32}, 
@@ -3302,16 +3302,16 @@ static const ax_sprite sTreeckoSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx35[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_35.4bpp");
+static const u8 sTreeckoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_35.4bpp.lz");
 static const ax_sprite sTreeckoSprites35[] = {
 	{NULL, 32}, 
 	{sTreeckoGfx35, ARRAY_COUNT(sTreeckoGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx36[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_36.4bpp");
-static const u8 sTreeckoGfx36_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_36_1.4bpp");
-static const u8 sTreeckoGfx36_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_36_2.4bpp");
-static const u8 sTreeckoGfx36_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_36_3.4bpp");
+static const u8 sTreeckoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_36.4bpp.lz");
+static const u8 sTreeckoGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_36_1.4bpp.lz");
+static const u8 sTreeckoGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_36_2.4bpp.lz");
+static const u8 sTreeckoGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_36_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites36[] = {
 	{sTreeckoGfx36, ARRAY_COUNT(sTreeckoGfx36)}, 
 	{NULL, 32}, 
@@ -3323,10 +3323,10 @@ static const ax_sprite sTreeckoSprites36[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx37[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_37.4bpp");
-static const u8 sTreeckoGfx37_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_37_1.4bpp");
-static const u8 sTreeckoGfx37_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_37_2.4bpp");
-static const u8 sTreeckoGfx37_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_37_3.4bpp");
+static const u8 sTreeckoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_37.4bpp.lz");
+static const u8 sTreeckoGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_37_1.4bpp.lz");
+static const u8 sTreeckoGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_37_2.4bpp.lz");
+static const u8 sTreeckoGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_37_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites37[] = {
 	{sTreeckoGfx37, ARRAY_COUNT(sTreeckoGfx37)}, 
 	{NULL, 64}, 
@@ -3338,10 +3338,10 @@ static const ax_sprite sTreeckoSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx38[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_38.4bpp");
-static const u8 sTreeckoGfx38_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_38_1.4bpp");
-static const u8 sTreeckoGfx38_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_38_2.4bpp");
-static const u8 sTreeckoGfx38_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_38_3.4bpp");
+static const u8 sTreeckoGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_38.4bpp.lz");
+static const u8 sTreeckoGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_38_1.4bpp.lz");
+static const u8 sTreeckoGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_38_2.4bpp.lz");
+static const u8 sTreeckoGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_38_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites38[] = {
 	{sTreeckoGfx38, ARRAY_COUNT(sTreeckoGfx38)}, 
 	{NULL, 64}, 
@@ -3353,10 +3353,10 @@ static const ax_sprite sTreeckoSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx39[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_39.4bpp");
-static const u8 sTreeckoGfx39_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_39_1.4bpp");
-static const u8 sTreeckoGfx39_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_39_2.4bpp");
-static const u8 sTreeckoGfx39_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_39_3.4bpp");
+static const u8 sTreeckoGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_39.4bpp.lz");
+static const u8 sTreeckoGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_39_1.4bpp.lz");
+static const u8 sTreeckoGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_39_2.4bpp.lz");
+static const u8 sTreeckoGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_39_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites39[] = {
 	{sTreeckoGfx39, ARRAY_COUNT(sTreeckoGfx39)}, 
 	{NULL, 32}, 
@@ -3368,10 +3368,10 @@ static const ax_sprite sTreeckoSprites39[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx40[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_40.4bpp");
-static const u8 sTreeckoGfx40_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_40_1.4bpp");
-static const u8 sTreeckoGfx40_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_40_2.4bpp");
-static const u8 sTreeckoGfx40_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_40_3.4bpp");
+static const u8 sTreeckoGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_40.4bpp.lz");
+static const u8 sTreeckoGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_40_1.4bpp.lz");
+static const u8 sTreeckoGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_40_2.4bpp.lz");
+static const u8 sTreeckoGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_40_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites40[] = {
 	{sTreeckoGfx40, ARRAY_COUNT(sTreeckoGfx40)}, 
 	{NULL, 32}, 
@@ -3383,10 +3383,10 @@ static const ax_sprite sTreeckoSprites40[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx41[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_41.4bpp");
-static const u8 sTreeckoGfx41_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_41_1.4bpp");
-static const u8 sTreeckoGfx41_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_41_2.4bpp");
-static const u8 sTreeckoGfx41_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_41_3.4bpp");
+static const u8 sTreeckoGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_41.4bpp.lz");
+static const u8 sTreeckoGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_41_1.4bpp.lz");
+static const u8 sTreeckoGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_41_2.4bpp.lz");
+static const u8 sTreeckoGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_41_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites41[] = {
 	{sTreeckoGfx41, ARRAY_COUNT(sTreeckoGfx41)}, 
 	{NULL, 64}, 
@@ -3398,10 +3398,10 @@ static const ax_sprite sTreeckoSprites41[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx42[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_42.4bpp");
-static const u8 sTreeckoGfx42_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_42_1.4bpp");
-static const u8 sTreeckoGfx42_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_42_2.4bpp");
-static const u8 sTreeckoGfx42_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_42_3.4bpp");
+static const u8 sTreeckoGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_42.4bpp.lz");
+static const u8 sTreeckoGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_42_1.4bpp.lz");
+static const u8 sTreeckoGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_42_2.4bpp.lz");
+static const u8 sTreeckoGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_42_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites42[] = {
 	{sTreeckoGfx42, ARRAY_COUNT(sTreeckoGfx42)}, 
 	{NULL, 64}, 
@@ -3413,10 +3413,10 @@ static const ax_sprite sTreeckoSprites42[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx43[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_43.4bpp");
-static const u8 sTreeckoGfx43_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_43_1.4bpp");
-static const u8 sTreeckoGfx43_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_43_2.4bpp");
-static const u8 sTreeckoGfx43_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_43_3.4bpp");
+static const u8 sTreeckoGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_43.4bpp.lz");
+static const u8 sTreeckoGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_43_1.4bpp.lz");
+static const u8 sTreeckoGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_43_2.4bpp.lz");
+static const u8 sTreeckoGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_43_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites43[] = {
 	{sTreeckoGfx43, ARRAY_COUNT(sTreeckoGfx43)}, 
 	{NULL, 64}, 
@@ -3428,10 +3428,10 @@ static const ax_sprite sTreeckoSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx44[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_44.4bpp");
-static const u8 sTreeckoGfx44_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_44_1.4bpp");
-static const u8 sTreeckoGfx44_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_44_2.4bpp");
-static const u8 sTreeckoGfx44_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_44_3.4bpp");
+static const u8 sTreeckoGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_44.4bpp.lz");
+static const u8 sTreeckoGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_44_1.4bpp.lz");
+static const u8 sTreeckoGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_44_2.4bpp.lz");
+static const u8 sTreeckoGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_44_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites44[] = {
 	{sTreeckoGfx44, ARRAY_COUNT(sTreeckoGfx44)}, 
 	{NULL, 32}, 
@@ -3443,10 +3443,10 @@ static const ax_sprite sTreeckoSprites44[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx45[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_45.4bpp");
-static const u8 sTreeckoGfx45_1[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_45_1.4bpp");
-static const u8 sTreeckoGfx45_2[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_45_2.4bpp");
-static const u8 sTreeckoGfx45_3[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_45_3.4bpp");
+static const u8 sTreeckoGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_45.4bpp.lz");
+static const u8 sTreeckoGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_45_1.4bpp.lz");
+static const u8 sTreeckoGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_45_2.4bpp.lz");
+static const u8 sTreeckoGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_45_3.4bpp.lz");
 static const ax_sprite sTreeckoSprites45[] = {
 	{sTreeckoGfx45, ARRAY_COUNT(sTreeckoGfx45)}, 
 	{NULL, 32}, 
@@ -3458,187 +3458,187 @@ static const ax_sprite sTreeckoSprites45[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx46[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_46.4bpp");
+static const u8 sTreeckoGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_46.4bpp.lz");
 static const ax_sprite sTreeckoSprites46[] = {
 	{sTreeckoGfx46, ARRAY_COUNT(sTreeckoGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx47[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_47.4bpp");
+static const u8 sTreeckoGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_47.4bpp.lz");
 static const ax_sprite sTreeckoSprites47[] = {
 	{sTreeckoGfx47, ARRAY_COUNT(sTreeckoGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx48[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_48.4bpp");
+static const u8 sTreeckoGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_48.4bpp.lz");
 static const ax_sprite sTreeckoSprites48[] = {
 	{sTreeckoGfx48, ARRAY_COUNT(sTreeckoGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx49[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_49.4bpp");
+static const u8 sTreeckoGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_49.4bpp.lz");
 static const ax_sprite sTreeckoSprites49[] = {
 	{sTreeckoGfx49, ARRAY_COUNT(sTreeckoGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx50[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_50.4bpp");
+static const u8 sTreeckoGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_50.4bpp.lz");
 static const ax_sprite sTreeckoSprites50[] = {
 	{sTreeckoGfx50, ARRAY_COUNT(sTreeckoGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx51[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_51.4bpp");
+static const u8 sTreeckoGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_51.4bpp.lz");
 static const ax_sprite sTreeckoSprites51[] = {
 	{sTreeckoGfx51, ARRAY_COUNT(sTreeckoGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx52[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_52.4bpp");
+static const u8 sTreeckoGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_52.4bpp.lz");
 static const ax_sprite sTreeckoSprites52[] = {
 	{sTreeckoGfx52, ARRAY_COUNT(sTreeckoGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx53[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_53.4bpp");
+static const u8 sTreeckoGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_53.4bpp.lz");
 static const ax_sprite sTreeckoSprites53[] = {
 	{sTreeckoGfx53, ARRAY_COUNT(sTreeckoGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx54[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_54.4bpp");
+static const u8 sTreeckoGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_54.4bpp.lz");
 static const ax_sprite sTreeckoSprites54[] = {
 	{sTreeckoGfx54, ARRAY_COUNT(sTreeckoGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx55[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_55.4bpp");
+static const u8 sTreeckoGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_55.4bpp.lz");
 static const ax_sprite sTreeckoSprites55[] = {
 	{sTreeckoGfx55, ARRAY_COUNT(sTreeckoGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx56[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_56.4bpp");
+static const u8 sTreeckoGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_56.4bpp.lz");
 static const ax_sprite sTreeckoSprites56[] = {
 	{sTreeckoGfx56, ARRAY_COUNT(sTreeckoGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx57[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_57.4bpp");
+static const u8 sTreeckoGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_57.4bpp.lz");
 static const ax_sprite sTreeckoSprites57[] = {
 	{sTreeckoGfx57, ARRAY_COUNT(sTreeckoGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx58[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_58.4bpp");
+static const u8 sTreeckoGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_58.4bpp.lz");
 static const ax_sprite sTreeckoSprites58[] = {
 	{sTreeckoGfx58, ARRAY_COUNT(sTreeckoGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx59[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_59.4bpp");
+static const u8 sTreeckoGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_59.4bpp.lz");
 static const ax_sprite sTreeckoSprites59[] = {
 	{sTreeckoGfx59, ARRAY_COUNT(sTreeckoGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx60[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_60.4bpp");
+static const u8 sTreeckoGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_60.4bpp.lz");
 static const ax_sprite sTreeckoSprites60[] = {
 	{sTreeckoGfx60, ARRAY_COUNT(sTreeckoGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx61[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_61.4bpp");
+static const u8 sTreeckoGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_61.4bpp.lz");
 static const ax_sprite sTreeckoSprites61[] = {
 	{sTreeckoGfx61, ARRAY_COUNT(sTreeckoGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx62[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_62.4bpp");
+static const u8 sTreeckoGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_62.4bpp.lz");
 static const ax_sprite sTreeckoSprites62[] = {
 	{sTreeckoGfx62, ARRAY_COUNT(sTreeckoGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx63[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_63.4bpp");
+static const u8 sTreeckoGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_63.4bpp.lz");
 static const ax_sprite sTreeckoSprites63[] = {
 	{sTreeckoGfx63, ARRAY_COUNT(sTreeckoGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx64[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_64.4bpp");
+static const u8 sTreeckoGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_64.4bpp.lz");
 static const ax_sprite sTreeckoSprites64[] = {
 	{sTreeckoGfx64, ARRAY_COUNT(sTreeckoGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx65[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_65.4bpp");
+static const u8 sTreeckoGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_65.4bpp.lz");
 static const ax_sprite sTreeckoSprites65[] = {
 	{sTreeckoGfx65, ARRAY_COUNT(sTreeckoGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx66[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_66.4bpp");
+static const u8 sTreeckoGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_66.4bpp.lz");
 static const ax_sprite sTreeckoSprites66[] = {
 	{sTreeckoGfx66, ARRAY_COUNT(sTreeckoGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx67[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_67.4bpp");
+static const u8 sTreeckoGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_67.4bpp.lz");
 static const ax_sprite sTreeckoSprites67[] = {
 	{sTreeckoGfx67, ARRAY_COUNT(sTreeckoGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx68[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_68.4bpp");
+static const u8 sTreeckoGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_68.4bpp.lz");
 static const ax_sprite sTreeckoSprites68[] = {
 	{sTreeckoGfx68, ARRAY_COUNT(sTreeckoGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx69[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_69.4bpp");
+static const u8 sTreeckoGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_69.4bpp.lz");
 static const ax_sprite sTreeckoSprites69[] = {
 	{sTreeckoGfx69, ARRAY_COUNT(sTreeckoGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx70[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_70.4bpp");
+static const u8 sTreeckoGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_70.4bpp.lz");
 static const ax_sprite sTreeckoSprites70[] = {
 	{sTreeckoGfx70, ARRAY_COUNT(sTreeckoGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx71[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_71.4bpp");
+static const u8 sTreeckoGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_71.4bpp.lz");
 static const ax_sprite sTreeckoSprites71[] = {
 	{sTreeckoGfx71, ARRAY_COUNT(sTreeckoGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx72[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_72.4bpp");
+static const u8 sTreeckoGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_72.4bpp.lz");
 static const ax_sprite sTreeckoSprites72[] = {
 	{sTreeckoGfx72, ARRAY_COUNT(sTreeckoGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx73[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_73.4bpp");
+static const u8 sTreeckoGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_73.4bpp.lz");
 static const ax_sprite sTreeckoSprites73[] = {
 	{sTreeckoGfx73, ARRAY_COUNT(sTreeckoGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx74[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_74.4bpp");
+static const u8 sTreeckoGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_74.4bpp.lz");
 static const ax_sprite sTreeckoSprites74[] = {
 	{sTreeckoGfx74, ARRAY_COUNT(sTreeckoGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx75[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_75.4bpp");
+static const u8 sTreeckoGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_75.4bpp.lz");
 static const ax_sprite sTreeckoSprites75[] = {
 	{sTreeckoGfx75, ARRAY_COUNT(sTreeckoGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx76[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_76.4bpp");
+static const u8 sTreeckoGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_76.4bpp.lz");
 static const ax_sprite sTreeckoSprites76[] = {
 	{sTreeckoGfx76, ARRAY_COUNT(sTreeckoGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx77[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_77.4bpp");
+static const u8 sTreeckoGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_77.4bpp.lz");
 static const ax_sprite sTreeckoSprites77[] = {
 	{sTreeckoGfx77, ARRAY_COUNT(sTreeckoGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx78[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_78.4bpp");
+static const u8 sTreeckoGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_78.4bpp.lz");
 static const ax_sprite sTreeckoSprites78[] = {
 	{sTreeckoGfx78, ARRAY_COUNT(sTreeckoGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx79[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_79.4bpp");
+static const u8 sTreeckoGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_79.4bpp.lz");
 static const ax_sprite sTreeckoSprites79[] = {
 	{sTreeckoGfx79, ARRAY_COUNT(sTreeckoGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx80[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_80.4bpp");
+static const u8 sTreeckoGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_80.4bpp.lz");
 static const ax_sprite sTreeckoSprites80[] = {
 	{sTreeckoGfx80, ARRAY_COUNT(sTreeckoGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx81[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_81.4bpp");
+static const u8 sTreeckoGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_81.4bpp.lz");
 static const ax_sprite sTreeckoSprites81[] = {
 	{sTreeckoGfx81, ARRAY_COUNT(sTreeckoGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sTreeckoGfx82[] = INCBIN_U8("graphics/ax/mon/treecko/sprite_82.4bpp");
+static const u8 sTreeckoGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/treecko/sprite_82.4bpp.lz");
 static const ax_sprite sTreeckoSprites82[] = {
 	{sTreeckoGfx82, ARRAY_COUNT(sTreeckoGfx82)}, 
 	{NULL, 0}

@@ -1983,129 +1983,129 @@ static const ax_anim sRoseliaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRoseliaGfx1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_1.4bpp");
+static const u8 sRoseliaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites1[] = {
 	{sRoseliaGfx1, ARRAY_COUNT(sRoseliaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_2.4bpp");
+static const u8 sRoseliaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites2[] = {
 	{sRoseliaGfx2, ARRAY_COUNT(sRoseliaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx3[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_3.4bpp");
+static const u8 sRoseliaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_3.4bpp.lz");
 static const ax_sprite sRoseliaSprites3[] = {
 	{sRoseliaGfx3, ARRAY_COUNT(sRoseliaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx4[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_4.4bpp");
+static const u8 sRoseliaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_4.4bpp.lz");
 static const ax_sprite sRoseliaSprites4[] = {
 	{sRoseliaGfx4, ARRAY_COUNT(sRoseliaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx5[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_5.4bpp");
+static const u8 sRoseliaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_5.4bpp.lz");
 static const ax_sprite sRoseliaSprites5[] = {
 	{sRoseliaGfx5, ARRAY_COUNT(sRoseliaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx6[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_6.4bpp");
+static const u8 sRoseliaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_6.4bpp.lz");
 static const ax_sprite sRoseliaSprites6[] = {
 	{sRoseliaGfx6, ARRAY_COUNT(sRoseliaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx7[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_7.4bpp");
+static const u8 sRoseliaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_7.4bpp.lz");
 static const ax_sprite sRoseliaSprites7[] = {
 	{sRoseliaGfx7, ARRAY_COUNT(sRoseliaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx8[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_8.4bpp");
+static const u8 sRoseliaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_8.4bpp.lz");
 static const ax_sprite sRoseliaSprites8[] = {
 	{sRoseliaGfx8, ARRAY_COUNT(sRoseliaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx9[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_9.4bpp");
+static const u8 sRoseliaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_9.4bpp.lz");
 static const ax_sprite sRoseliaSprites9[] = {
 	{sRoseliaGfx9, ARRAY_COUNT(sRoseliaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx10[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_10.4bpp");
+static const u8 sRoseliaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_10.4bpp.lz");
 static const ax_sprite sRoseliaSprites10[] = {
 	{sRoseliaGfx10, ARRAY_COUNT(sRoseliaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx11[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_11.4bpp");
+static const u8 sRoseliaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_11.4bpp.lz");
 static const ax_sprite sRoseliaSprites11[] = {
 	{sRoseliaGfx11, ARRAY_COUNT(sRoseliaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx12[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_12.4bpp");
+static const u8 sRoseliaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_12.4bpp.lz");
 static const ax_sprite sRoseliaSprites12[] = {
 	{sRoseliaGfx12, ARRAY_COUNT(sRoseliaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx13[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_13.4bpp");
+static const u8 sRoseliaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_13.4bpp.lz");
 static const ax_sprite sRoseliaSprites13[] = {
 	{sRoseliaGfx13, ARRAY_COUNT(sRoseliaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx14[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_14.4bpp");
+static const u8 sRoseliaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_14.4bpp.lz");
 static const ax_sprite sRoseliaSprites14[] = {
 	{sRoseliaGfx14, ARRAY_COUNT(sRoseliaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx15[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_15.4bpp");
+static const u8 sRoseliaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_15.4bpp.lz");
 static const ax_sprite sRoseliaSprites15[] = {
 	{sRoseliaGfx15, ARRAY_COUNT(sRoseliaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx16[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_16.4bpp");
+static const u8 sRoseliaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_16.4bpp.lz");
 static const ax_sprite sRoseliaSprites16[] = {
 	{sRoseliaGfx16, ARRAY_COUNT(sRoseliaGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx17[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_17.4bpp");
+static const u8 sRoseliaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_17.4bpp.lz");
 static const ax_sprite sRoseliaSprites17[] = {
 	{sRoseliaGfx17, ARRAY_COUNT(sRoseliaGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx18[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_18.4bpp");
+static const u8 sRoseliaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_18.4bpp.lz");
 static const ax_sprite sRoseliaSprites18[] = {
 	{sRoseliaGfx18, ARRAY_COUNT(sRoseliaGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx19[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_19.4bpp");
+static const u8 sRoseliaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_19.4bpp.lz");
 static const ax_sprite sRoseliaSprites19[] = {
 	{sRoseliaGfx19, ARRAY_COUNT(sRoseliaGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx20[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_20.4bpp");
+static const u8 sRoseliaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_20.4bpp.lz");
 static const ax_sprite sRoseliaSprites20[] = {
 	{sRoseliaGfx20, ARRAY_COUNT(sRoseliaGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx21[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_21.4bpp");
+static const u8 sRoseliaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_21.4bpp.lz");
 static const ax_sprite sRoseliaSprites21[] = {
 	{sRoseliaGfx21, ARRAY_COUNT(sRoseliaGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx22[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_22.4bpp");
+static const u8 sRoseliaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_22.4bpp.lz");
 static const ax_sprite sRoseliaSprites22[] = {
 	{sRoseliaGfx22, ARRAY_COUNT(sRoseliaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx23[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_23.4bpp");
+static const u8 sRoseliaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_23.4bpp.lz");
 static const ax_sprite sRoseliaSprites23[] = {
 	{sRoseliaGfx23, ARRAY_COUNT(sRoseliaGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx24[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_24.4bpp");
+static const u8 sRoseliaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_24.4bpp.lz");
 static const ax_sprite sRoseliaSprites24[] = {
 	{sRoseliaGfx24, ARRAY_COUNT(sRoseliaGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx25[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_25.4bpp");
-static const u8 sRoseliaGfx25_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_25_1.4bpp");
-static const u8 sRoseliaGfx25_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_25_2.4bpp");
+static const u8 sRoseliaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_25.4bpp.lz");
+static const u8 sRoseliaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_25_1.4bpp.lz");
+static const u8 sRoseliaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_25_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites25[] = {
 	{NULL, 32}, 
 	{sRoseliaGfx25, ARRAY_COUNT(sRoseliaGfx25)}, 
@@ -2115,9 +2115,9 @@ static const ax_sprite sRoseliaSprites25[] = {
 	{sRoseliaGfx25_2, ARRAY_COUNT(sRoseliaGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx26[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_26.4bpp");
-static const u8 sRoseliaGfx26_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_26_1.4bpp");
-static const u8 sRoseliaGfx26_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_26_2.4bpp");
+static const u8 sRoseliaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_26.4bpp.lz");
+static const u8 sRoseliaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_26_1.4bpp.lz");
+static const u8 sRoseliaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_26_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites26[] = {
 	{NULL, 160}, 
 	{sRoseliaGfx26, ARRAY_COUNT(sRoseliaGfx26)}, 
@@ -2127,9 +2127,9 @@ static const ax_sprite sRoseliaSprites26[] = {
 	{sRoseliaGfx26_2, ARRAY_COUNT(sRoseliaGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx27[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_27.4bpp");
-static const u8 sRoseliaGfx27_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_27_1.4bpp");
-static const u8 sRoseliaGfx27_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_27_2.4bpp");
+static const u8 sRoseliaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_27.4bpp.lz");
+static const u8 sRoseliaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_27_1.4bpp.lz");
+static const u8 sRoseliaGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_27_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites27[] = {
 	{NULL, 32}, 
 	{sRoseliaGfx27, ARRAY_COUNT(sRoseliaGfx27)}, 
@@ -2140,9 +2140,9 @@ static const ax_sprite sRoseliaSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx28[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_28.4bpp");
-static const u8 sRoseliaGfx28_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_28_1.4bpp");
-static const u8 sRoseliaGfx28_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_28_2.4bpp");
+static const u8 sRoseliaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_28.4bpp.lz");
+static const u8 sRoseliaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_28_1.4bpp.lz");
+static const u8 sRoseliaGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_28_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites28[] = {
 	{NULL, 160}, 
 	{sRoseliaGfx28, ARRAY_COUNT(sRoseliaGfx28)}, 
@@ -2152,17 +2152,17 @@ static const ax_sprite sRoseliaSprites28[] = {
 	{sRoseliaGfx28_2, ARRAY_COUNT(sRoseliaGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx29[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_29.4bpp");
-static const u8 sRoseliaGfx29_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_29_1.4bpp");
+static const u8 sRoseliaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_29.4bpp.lz");
+static const u8 sRoseliaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_29_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites29[] = {
 	{sRoseliaGfx29, ARRAY_COUNT(sRoseliaGfx29)}, 
 	{NULL, 32}, 
 	{sRoseliaGfx29_1, ARRAY_COUNT(sRoseliaGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx30[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_30.4bpp");
-static const u8 sRoseliaGfx30_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_30_1.4bpp");
-static const u8 sRoseliaGfx30_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_30_2.4bpp");
+static const u8 sRoseliaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_30.4bpp.lz");
+static const u8 sRoseliaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_30_1.4bpp.lz");
+static const u8 sRoseliaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_30_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites30[] = {
 	{NULL, 160}, 
 	{sRoseliaGfx30, ARRAY_COUNT(sRoseliaGfx30)}, 
@@ -2172,10 +2172,10 @@ static const ax_sprite sRoseliaSprites30[] = {
 	{sRoseliaGfx30_2, ARRAY_COUNT(sRoseliaGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx31[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_31.4bpp");
-static const u8 sRoseliaGfx31_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_31_1.4bpp");
-static const u8 sRoseliaGfx31_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_31_2.4bpp");
-static const u8 sRoseliaGfx31_3[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_31_3.4bpp");
+static const u8 sRoseliaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_31.4bpp.lz");
+static const u8 sRoseliaGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_31_1.4bpp.lz");
+static const u8 sRoseliaGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_31_2.4bpp.lz");
+static const u8 sRoseliaGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_31_3.4bpp.lz");
 static const ax_sprite sRoseliaSprites31[] = {
 	{NULL, 32}, 
 	{sRoseliaGfx31, ARRAY_COUNT(sRoseliaGfx31)}, 
@@ -2187,9 +2187,9 @@ static const ax_sprite sRoseliaSprites31[] = {
 	{sRoseliaGfx31_3, ARRAY_COUNT(sRoseliaGfx31_3)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx32[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_32.4bpp");
-static const u8 sRoseliaGfx32_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_32_1.4bpp");
-static const u8 sRoseliaGfx32_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_32_2.4bpp");
+static const u8 sRoseliaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_32.4bpp.lz");
+static const u8 sRoseliaGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_32_1.4bpp.lz");
+static const u8 sRoseliaGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_32_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites32[] = {
 	{NULL, 160}, 
 	{sRoseliaGfx32, ARRAY_COUNT(sRoseliaGfx32)}, 
@@ -2200,8 +2200,8 @@ static const ax_sprite sRoseliaSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx33[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_33.4bpp");
-static const u8 sRoseliaGfx33_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_33_1.4bpp");
+static const u8 sRoseliaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_33.4bpp.lz");
+static const u8 sRoseliaGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_33_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites33[] = {
 	{NULL, 64}, 
 	{sRoseliaGfx33, ARRAY_COUNT(sRoseliaGfx33)}, 
@@ -2209,8 +2209,8 @@ static const ax_sprite sRoseliaSprites33[] = {
 	{sRoseliaGfx33_1, ARRAY_COUNT(sRoseliaGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx34[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_34.4bpp");
-static const u8 sRoseliaGfx34_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_34_1.4bpp");
+static const u8 sRoseliaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_34.4bpp.lz");
+static const u8 sRoseliaGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_34_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites34[] = {
 	{NULL, 128}, 
 	{sRoseliaGfx34, ARRAY_COUNT(sRoseliaGfx34)}, 
@@ -2219,9 +2219,9 @@ static const ax_sprite sRoseliaSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx35[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_35.4bpp");
-static const u8 sRoseliaGfx35_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_35_1.4bpp");
-static const u8 sRoseliaGfx35_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_35_2.4bpp");
+static const u8 sRoseliaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_35.4bpp.lz");
+static const u8 sRoseliaGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_35_1.4bpp.lz");
+static const u8 sRoseliaGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_35_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites35[] = {
 	{NULL, 64}, 
 	{sRoseliaGfx35, ARRAY_COUNT(sRoseliaGfx35)}, 
@@ -2232,9 +2232,9 @@ static const ax_sprite sRoseliaSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx36[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_36.4bpp");
-static const u8 sRoseliaGfx36_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_36_1.4bpp");
-static const u8 sRoseliaGfx36_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_36_2.4bpp");
+static const u8 sRoseliaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_36.4bpp.lz");
+static const u8 sRoseliaGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_36_1.4bpp.lz");
+static const u8 sRoseliaGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_36_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites36[] = {
 	{NULL, 128}, 
 	{sRoseliaGfx36, ARRAY_COUNT(sRoseliaGfx36)}, 
@@ -2245,15 +2245,15 @@ static const ax_sprite sRoseliaSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx37[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_37.4bpp");
+static const u8 sRoseliaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_37.4bpp.lz");
 static const ax_sprite sRoseliaSprites37[] = {
 	{NULL, 32}, 
 	{sRoseliaGfx37, ARRAY_COUNT(sRoseliaGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx38[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_38.4bpp");
-static const u8 sRoseliaGfx38_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_38_1.4bpp");
-static const u8 sRoseliaGfx38_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_38_2.4bpp");
+static const u8 sRoseliaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_38.4bpp.lz");
+static const u8 sRoseliaGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_38_1.4bpp.lz");
+static const u8 sRoseliaGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_38_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites38[] = {
 	{NULL, 160}, 
 	{sRoseliaGfx38, ARRAY_COUNT(sRoseliaGfx38)}, 
@@ -2264,10 +2264,10 @@ static const ax_sprite sRoseliaSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx39[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_39.4bpp");
-static const u8 sRoseliaGfx39_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_39_1.4bpp");
-static const u8 sRoseliaGfx39_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_39_2.4bpp");
-static const u8 sRoseliaGfx39_3[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_39_3.4bpp");
+static const u8 sRoseliaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_39.4bpp.lz");
+static const u8 sRoseliaGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_39_1.4bpp.lz");
+static const u8 sRoseliaGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_39_2.4bpp.lz");
+static const u8 sRoseliaGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_39_3.4bpp.lz");
 static const ax_sprite sRoseliaSprites39[] = {
 	{NULL, 64}, 
 	{sRoseliaGfx39, ARRAY_COUNT(sRoseliaGfx39)}, 
@@ -2279,9 +2279,9 @@ static const ax_sprite sRoseliaSprites39[] = {
 	{sRoseliaGfx39_3, ARRAY_COUNT(sRoseliaGfx39_3)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx40[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_40.4bpp");
-static const u8 sRoseliaGfx40_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_40_1.4bpp");
-static const u8 sRoseliaGfx40_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_40_2.4bpp");
+static const u8 sRoseliaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_40.4bpp.lz");
+static const u8 sRoseliaGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_40_1.4bpp.lz");
+static const u8 sRoseliaGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_40_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites40[] = {
 	{NULL, 160}, 
 	{sRoseliaGfx40, ARRAY_COUNT(sRoseliaGfx40)}, 
@@ -2292,8 +2292,8 @@ static const ax_sprite sRoseliaSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx41[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_41.4bpp");
-static const u8 sRoseliaGfx41_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_41_1.4bpp");
+static const u8 sRoseliaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_41.4bpp.lz");
+static const u8 sRoseliaGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_41_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites41[] = {
 	{NULL, 128}, 
 	{sRoseliaGfx41, ARRAY_COUNT(sRoseliaGfx41)}, 
@@ -2302,8 +2302,8 @@ static const ax_sprite sRoseliaSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx42[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_42.4bpp");
-static const u8 sRoseliaGfx42_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_42_1.4bpp");
+static const u8 sRoseliaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_42.4bpp.lz");
+static const u8 sRoseliaGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_42_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites42[] = {
 	{NULL, 128}, 
 	{sRoseliaGfx42, ARRAY_COUNT(sRoseliaGfx42)}, 
@@ -2312,15 +2312,15 @@ static const ax_sprite sRoseliaSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx43[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_43.4bpp");
+static const u8 sRoseliaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_43.4bpp.lz");
 static const ax_sprite sRoseliaSprites43[] = {
 	{NULL, 64}, 
 	{sRoseliaGfx43, ARRAY_COUNT(sRoseliaGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx44[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_44.4bpp");
-static const u8 sRoseliaGfx44_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_44_1.4bpp");
-static const u8 sRoseliaGfx44_2[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_44_2.4bpp");
+static const u8 sRoseliaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_44.4bpp.lz");
+static const u8 sRoseliaGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_44_1.4bpp.lz");
+static const u8 sRoseliaGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_44_2.4bpp.lz");
 static const ax_sprite sRoseliaSprites44[] = {
 	{NULL, 128}, 
 	{sRoseliaGfx44, ARRAY_COUNT(sRoseliaGfx44)}, 
@@ -2331,8 +2331,8 @@ static const ax_sprite sRoseliaSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx45[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_45.4bpp");
-static const u8 sRoseliaGfx45_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_45_1.4bpp");
+static const u8 sRoseliaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_45.4bpp.lz");
+static const u8 sRoseliaGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_45_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites45[] = {
 	{NULL, 128}, 
 	{sRoseliaGfx45, ARRAY_COUNT(sRoseliaGfx45)}, 
@@ -2341,8 +2341,8 @@ static const ax_sprite sRoseliaSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx46[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_46.4bpp");
-static const u8 sRoseliaGfx46_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_46_1.4bpp");
+static const u8 sRoseliaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_46.4bpp.lz");
+static const u8 sRoseliaGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_46_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites46[] = {
 	{NULL, 128}, 
 	{sRoseliaGfx46, ARRAY_COUNT(sRoseliaGfx46)}, 
@@ -2351,14 +2351,14 @@ static const ax_sprite sRoseliaSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx47[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_47.4bpp");
+static const u8 sRoseliaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_47.4bpp.lz");
 static const ax_sprite sRoseliaSprites47[] = {
 	{NULL, 64}, 
 	{sRoseliaGfx47, ARRAY_COUNT(sRoseliaGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx48[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_48.4bpp");
-static const u8 sRoseliaGfx48_1[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_48_1.4bpp");
+static const u8 sRoseliaGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_48.4bpp.lz");
+static const u8 sRoseliaGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_48_1.4bpp.lz");
 static const ax_sprite sRoseliaSprites48[] = {
 	{NULL, 128}, 
 	{sRoseliaGfx48, ARRAY_COUNT(sRoseliaGfx48)}, 
@@ -2367,52 +2367,52 @@ static const ax_sprite sRoseliaSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx49[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_49.4bpp");
+static const u8 sRoseliaGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_49.4bpp.lz");
 static const ax_sprite sRoseliaSprites49[] = {
 	{sRoseliaGfx49, ARRAY_COUNT(sRoseliaGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx50[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_50.4bpp");
+static const u8 sRoseliaGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_50.4bpp.lz");
 static const ax_sprite sRoseliaSprites50[] = {
 	{sRoseliaGfx50, ARRAY_COUNT(sRoseliaGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx51[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_51.4bpp");
+static const u8 sRoseliaGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_51.4bpp.lz");
 static const ax_sprite sRoseliaSprites51[] = {
 	{sRoseliaGfx51, ARRAY_COUNT(sRoseliaGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx52[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_52.4bpp");
+static const u8 sRoseliaGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_52.4bpp.lz");
 static const ax_sprite sRoseliaSprites52[] = {
 	{sRoseliaGfx52, ARRAY_COUNT(sRoseliaGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx53[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_53.4bpp");
+static const u8 sRoseliaGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_53.4bpp.lz");
 static const ax_sprite sRoseliaSprites53[] = {
 	{sRoseliaGfx53, ARRAY_COUNT(sRoseliaGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx54[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_54.4bpp");
+static const u8 sRoseliaGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_54.4bpp.lz");
 static const ax_sprite sRoseliaSprites54[] = {
 	{sRoseliaGfx54, ARRAY_COUNT(sRoseliaGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx55[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_55.4bpp");
+static const u8 sRoseliaGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_55.4bpp.lz");
 static const ax_sprite sRoseliaSprites55[] = {
 	{sRoseliaGfx55, ARRAY_COUNT(sRoseliaGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx56[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_56.4bpp");
+static const u8 sRoseliaGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_56.4bpp.lz");
 static const ax_sprite sRoseliaSprites56[] = {
 	{sRoseliaGfx56, ARRAY_COUNT(sRoseliaGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx57[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_57.4bpp");
+static const u8 sRoseliaGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_57.4bpp.lz");
 static const ax_sprite sRoseliaSprites57[] = {
 	{sRoseliaGfx57, ARRAY_COUNT(sRoseliaGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sRoseliaGfx58[] = INCBIN_U8("graphics/ax/mon/roselia/sprite_58.4bpp");
+static const u8 sRoseliaGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/roselia/sprite_58.4bpp.lz");
 static const ax_sprite sRoseliaSprites58[] = {
 	{sRoseliaGfx58, ARRAY_COUNT(sRoseliaGfx58)}, 
 	{NULL, 0}

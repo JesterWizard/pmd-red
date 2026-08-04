@@ -2463,85 +2463,85 @@ static const ax_anim sSlowbroAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSlowbroGfx1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_1.4bpp");
+static const u8 sSlowbroGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_1.4bpp.lz");
 static const ax_sprite sSlowbroSprites1[] = {
 	{sSlowbroGfx1, ARRAY_COUNT(sSlowbroGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_2.4bpp");
+static const u8 sSlowbroGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_2.4bpp.lz");
 static const ax_sprite sSlowbroSprites2[] = {
 	{sSlowbroGfx2, ARRAY_COUNT(sSlowbroGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx3[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_3.4bpp");
+static const u8 sSlowbroGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_3.4bpp.lz");
 static const ax_sprite sSlowbroSprites3[] = {
 	{sSlowbroGfx3, ARRAY_COUNT(sSlowbroGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx4[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_4.4bpp");
+static const u8 sSlowbroGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_4.4bpp.lz");
 static const ax_sprite sSlowbroSprites4[] = {
 	{sSlowbroGfx4, ARRAY_COUNT(sSlowbroGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx5[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_5.4bpp");
+static const u8 sSlowbroGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_5.4bpp.lz");
 static const ax_sprite sSlowbroSprites5[] = {
 	{sSlowbroGfx5, ARRAY_COUNT(sSlowbroGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx6[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_6.4bpp");
+static const u8 sSlowbroGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_6.4bpp.lz");
 static const ax_sprite sSlowbroSprites6[] = {
 	{sSlowbroGfx6, ARRAY_COUNT(sSlowbroGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx7[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_7.4bpp");
+static const u8 sSlowbroGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_7.4bpp.lz");
 static const ax_sprite sSlowbroSprites7[] = {
 	{sSlowbroGfx7, ARRAY_COUNT(sSlowbroGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx8[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_8.4bpp");
+static const u8 sSlowbroGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_8.4bpp.lz");
 static const ax_sprite sSlowbroSprites8[] = {
 	{sSlowbroGfx8, ARRAY_COUNT(sSlowbroGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx9[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_9.4bpp");
+static const u8 sSlowbroGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_9.4bpp.lz");
 static const ax_sprite sSlowbroSprites9[] = {
 	{sSlowbroGfx9, ARRAY_COUNT(sSlowbroGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx10[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_10.4bpp");
+static const u8 sSlowbroGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_10.4bpp.lz");
 static const ax_sprite sSlowbroSprites10[] = {
 	{sSlowbroGfx10, ARRAY_COUNT(sSlowbroGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx11[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_11.4bpp");
+static const u8 sSlowbroGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_11.4bpp.lz");
 static const ax_sprite sSlowbroSprites11[] = {
 	{sSlowbroGfx11, ARRAY_COUNT(sSlowbroGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx12[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_12.4bpp");
+static const u8 sSlowbroGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_12.4bpp.lz");
 static const ax_sprite sSlowbroSprites12[] = {
 	{sSlowbroGfx12, ARRAY_COUNT(sSlowbroGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx13[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_13.4bpp");
+static const u8 sSlowbroGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_13.4bpp.lz");
 static const ax_sprite sSlowbroSprites13[] = {
 	{sSlowbroGfx13, ARRAY_COUNT(sSlowbroGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx14[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_14.4bpp");
+static const u8 sSlowbroGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_14.4bpp.lz");
 static const ax_sprite sSlowbroSprites14[] = {
 	{sSlowbroGfx14, ARRAY_COUNT(sSlowbroGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx15[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_15.4bpp");
+static const u8 sSlowbroGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_15.4bpp.lz");
 static const ax_sprite sSlowbroSprites15[] = {
 	{sSlowbroGfx15, ARRAY_COUNT(sSlowbroGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx16[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_16.4bpp");
-static const u8 sSlowbroGfx16_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_16_1.4bpp");
-static const u8 sSlowbroGfx16_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_16_2.4bpp");
-static const u8 sSlowbroGfx16_3[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_16_3.4bpp");
+static const u8 sSlowbroGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_16.4bpp.lz");
+static const u8 sSlowbroGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_16_1.4bpp.lz");
+static const u8 sSlowbroGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_16_2.4bpp.lz");
+static const u8 sSlowbroGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_16_3.4bpp.lz");
 static const ax_sprite sSlowbroSprites16[] = {
 	{sSlowbroGfx16, ARRAY_COUNT(sSlowbroGfx16)}, 
 	{NULL, 32}, 
@@ -2553,10 +2553,10 @@ static const ax_sprite sSlowbroSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx17[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_17.4bpp");
-static const u8 sSlowbroGfx17_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_17_1.4bpp");
-static const u8 sSlowbroGfx17_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_17_2.4bpp");
-static const u8 sSlowbroGfx17_3[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_17_3.4bpp");
+static const u8 sSlowbroGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_17.4bpp.lz");
+static const u8 sSlowbroGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_17_1.4bpp.lz");
+static const u8 sSlowbroGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_17_2.4bpp.lz");
+static const u8 sSlowbroGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_17_3.4bpp.lz");
 static const ax_sprite sSlowbroSprites17[] = {
 	{NULL, 32}, 
 	{sSlowbroGfx17, ARRAY_COUNT(sSlowbroGfx17)}, 
@@ -2569,8 +2569,8 @@ static const ax_sprite sSlowbroSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx18[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_18.4bpp");
-static const u8 sSlowbroGfx18_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_18_1.4bpp");
+static const u8 sSlowbroGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_18.4bpp.lz");
+static const u8 sSlowbroGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_18_1.4bpp.lz");
 static const ax_sprite sSlowbroSprites18[] = {
 	{NULL, 64}, 
 	{sSlowbroGfx18, ARRAY_COUNT(sSlowbroGfx18)}, 
@@ -2579,27 +2579,27 @@ static const ax_sprite sSlowbroSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx19[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_19.4bpp");
+static const u8 sSlowbroGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_19.4bpp.lz");
 static const ax_sprite sSlowbroSprites19[] = {
 	{NULL, 64}, 
 	{sSlowbroGfx19, ARRAY_COUNT(sSlowbroGfx19)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx20[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_20.4bpp");
+static const u8 sSlowbroGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_20.4bpp.lz");
 static const ax_sprite sSlowbroSprites20[] = {
 	{sSlowbroGfx20, ARRAY_COUNT(sSlowbroGfx20)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx21[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_21.4bpp");
+static const u8 sSlowbroGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_21.4bpp.lz");
 static const ax_sprite sSlowbroSprites21[] = {
 	{sSlowbroGfx21, ARRAY_COUNT(sSlowbroGfx21)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx22[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_22.4bpp");
-static const u8 sSlowbroGfx22_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_22_1.4bpp");
+static const u8 sSlowbroGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_22.4bpp.lz");
+static const u8 sSlowbroGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_22_1.4bpp.lz");
 static const ax_sprite sSlowbroSprites22[] = {
 	{sSlowbroGfx22, ARRAY_COUNT(sSlowbroGfx22)}, 
 	{NULL, 32}, 
@@ -2607,16 +2607,16 @@ static const ax_sprite sSlowbroSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx23[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_23.4bpp");
+static const u8 sSlowbroGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_23.4bpp.lz");
 static const ax_sprite sSlowbroSprites23[] = {
 	{sSlowbroGfx23, ARRAY_COUNT(sSlowbroGfx23)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx24[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_24.4bpp");
-static const u8 sSlowbroGfx24_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_24_1.4bpp");
-static const u8 sSlowbroGfx24_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_24_2.4bpp");
-static const u8 sSlowbroGfx24_3[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_24_3.4bpp");
+static const u8 sSlowbroGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_24.4bpp.lz");
+static const u8 sSlowbroGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_24_1.4bpp.lz");
+static const u8 sSlowbroGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_24_2.4bpp.lz");
+static const u8 sSlowbroGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_24_3.4bpp.lz");
 static const ax_sprite sSlowbroSprites24[] = {
 	{sSlowbroGfx24, ARRAY_COUNT(sSlowbroGfx24)}, 
 	{NULL, 32}, 
@@ -2628,9 +2628,9 @@ static const ax_sprite sSlowbroSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx25[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_25.4bpp");
-static const u8 sSlowbroGfx25_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_25_1.4bpp");
-static const u8 sSlowbroGfx25_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_25_2.4bpp");
+static const u8 sSlowbroGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_25.4bpp.lz");
+static const u8 sSlowbroGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_25_1.4bpp.lz");
+static const u8 sSlowbroGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_25_2.4bpp.lz");
 static const ax_sprite sSlowbroSprites25[] = {
 	{sSlowbroGfx25, ARRAY_COUNT(sSlowbroGfx25)}, 
 	{NULL, 32}, 
@@ -2640,10 +2640,10 @@ static const ax_sprite sSlowbroSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx26[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_26.4bpp");
-static const u8 sSlowbroGfx26_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_26_1.4bpp");
-static const u8 sSlowbroGfx26_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_26_2.4bpp");
-static const u8 sSlowbroGfx26_3[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_26_3.4bpp");
+static const u8 sSlowbroGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_26.4bpp.lz");
+static const u8 sSlowbroGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_26_1.4bpp.lz");
+static const u8 sSlowbroGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_26_2.4bpp.lz");
+static const u8 sSlowbroGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_26_3.4bpp.lz");
 static const ax_sprite sSlowbroSprites26[] = {
 	{NULL, 32}, 
 	{sSlowbroGfx26, ARRAY_COUNT(sSlowbroGfx26)}, 
@@ -2656,9 +2656,9 @@ static const ax_sprite sSlowbroSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx27[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_27.4bpp");
-static const u8 sSlowbroGfx27_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_27_1.4bpp");
-static const u8 sSlowbroGfx27_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_27_2.4bpp");
+static const u8 sSlowbroGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_27.4bpp.lz");
+static const u8 sSlowbroGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_27_1.4bpp.lz");
+static const u8 sSlowbroGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_27_2.4bpp.lz");
 static const ax_sprite sSlowbroSprites27[] = {
 	{NULL, 128}, 
 	{sSlowbroGfx27, ARRAY_COUNT(sSlowbroGfx27)}, 
@@ -2669,18 +2669,18 @@ static const ax_sprite sSlowbroSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx28[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_28.4bpp");
-static const u8 sSlowbroGfx28_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_28_1.4bpp");
+static const u8 sSlowbroGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_28.4bpp.lz");
+static const u8 sSlowbroGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_28_1.4bpp.lz");
 static const ax_sprite sSlowbroSprites28[] = {
 	{sSlowbroGfx28, ARRAY_COUNT(sSlowbroGfx28)}, 
 	{NULL, 64}, 
 	{sSlowbroGfx28_1, ARRAY_COUNT(sSlowbroGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx29[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_29.4bpp");
-static const u8 sSlowbroGfx29_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_29_1.4bpp");
-static const u8 sSlowbroGfx29_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_29_2.4bpp");
-static const u8 sSlowbroGfx29_3[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_29_3.4bpp");
+static const u8 sSlowbroGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_29.4bpp.lz");
+static const u8 sSlowbroGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_29_1.4bpp.lz");
+static const u8 sSlowbroGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_29_2.4bpp.lz");
+static const u8 sSlowbroGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_29_3.4bpp.lz");
 static const ax_sprite sSlowbroSprites29[] = {
 	{NULL, 32}, 
 	{sSlowbroGfx29, ARRAY_COUNT(sSlowbroGfx29)}, 
@@ -2693,8 +2693,8 @@ static const ax_sprite sSlowbroSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx30[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_30.4bpp");
-static const u8 sSlowbroGfx30_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_30_1.4bpp");
+static const u8 sSlowbroGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_30.4bpp.lz");
+static const u8 sSlowbroGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_30_1.4bpp.lz");
 static const ax_sprite sSlowbroSprites30[] = {
 	{sSlowbroGfx30, ARRAY_COUNT(sSlowbroGfx30)}, 
 	{NULL, 32}, 
@@ -2702,8 +2702,8 @@ static const ax_sprite sSlowbroSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx31[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_31.4bpp");
-static const u8 sSlowbroGfx31_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_31_1.4bpp");
+static const u8 sSlowbroGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_31.4bpp.lz");
+static const u8 sSlowbroGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_31_1.4bpp.lz");
 static const ax_sprite sSlowbroSprites31[] = {
 	{sSlowbroGfx31, ARRAY_COUNT(sSlowbroGfx31)}, 
 	{NULL, 64}, 
@@ -2711,9 +2711,9 @@ static const ax_sprite sSlowbroSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx32[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_32.4bpp");
-static const u8 sSlowbroGfx32_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_32_1.4bpp");
-static const u8 sSlowbroGfx32_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_32_2.4bpp");
+static const u8 sSlowbroGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_32.4bpp.lz");
+static const u8 sSlowbroGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_32_1.4bpp.lz");
+static const u8 sSlowbroGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_32_2.4bpp.lz");
 static const ax_sprite sSlowbroSprites32[] = {
 	{NULL, 32}, 
 	{sSlowbroGfx32, ARRAY_COUNT(sSlowbroGfx32)}, 
@@ -2724,16 +2724,16 @@ static const ax_sprite sSlowbroSprites32[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx33[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_33.4bpp");
+static const u8 sSlowbroGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_33.4bpp.lz");
 static const ax_sprite sSlowbroSprites33[] = {
 	{sSlowbroGfx33, ARRAY_COUNT(sSlowbroGfx33)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx34[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_34.4bpp");
-static const u8 sSlowbroGfx34_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_34_1.4bpp");
-static const u8 sSlowbroGfx34_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_34_2.4bpp");
-static const u8 sSlowbroGfx34_3[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_34_3.4bpp");
+static const u8 sSlowbroGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_34.4bpp.lz");
+static const u8 sSlowbroGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_34_1.4bpp.lz");
+static const u8 sSlowbroGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_34_2.4bpp.lz");
+static const u8 sSlowbroGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_34_3.4bpp.lz");
 static const ax_sprite sSlowbroSprites34[] = {
 	{NULL, 32}, 
 	{sSlowbroGfx34, ARRAY_COUNT(sSlowbroGfx34)}, 
@@ -2746,10 +2746,10 @@ static const ax_sprite sSlowbroSprites34[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx35[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_35.4bpp");
-static const u8 sSlowbroGfx35_1[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_35_1.4bpp");
-static const u8 sSlowbroGfx35_2[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_35_2.4bpp");
-static const u8 sSlowbroGfx35_3[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_35_3.4bpp");
+static const u8 sSlowbroGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_35.4bpp.lz");
+static const u8 sSlowbroGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_35_1.4bpp.lz");
+static const u8 sSlowbroGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_35_2.4bpp.lz");
+static const u8 sSlowbroGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_35_3.4bpp.lz");
 static const ax_sprite sSlowbroSprites35[] = {
 	{sSlowbroGfx35, ARRAY_COUNT(sSlowbroGfx35)}, 
 	{NULL, 32}, 
@@ -2760,37 +2760,37 @@ static const ax_sprite sSlowbroSprites35[] = {
 	{sSlowbroGfx35_3, ARRAY_COUNT(sSlowbroGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx36[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_36.4bpp");
+static const u8 sSlowbroGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_36.4bpp.lz");
 static const ax_sprite sSlowbroSprites36[] = {
 	{sSlowbroGfx36, ARRAY_COUNT(sSlowbroGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx37[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_37.4bpp");
+static const u8 sSlowbroGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_37.4bpp.lz");
 static const ax_sprite sSlowbroSprites37[] = {
 	{sSlowbroGfx37, ARRAY_COUNT(sSlowbroGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx38[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_38.4bpp");
+static const u8 sSlowbroGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_38.4bpp.lz");
 static const ax_sprite sSlowbroSprites38[] = {
 	{sSlowbroGfx38, ARRAY_COUNT(sSlowbroGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx39[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_39.4bpp");
+static const u8 sSlowbroGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_39.4bpp.lz");
 static const ax_sprite sSlowbroSprites39[] = {
 	{sSlowbroGfx39, ARRAY_COUNT(sSlowbroGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx40[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_40.4bpp");
+static const u8 sSlowbroGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_40.4bpp.lz");
 static const ax_sprite sSlowbroSprites40[] = {
 	{sSlowbroGfx40, ARRAY_COUNT(sSlowbroGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx41[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_41.4bpp");
+static const u8 sSlowbroGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_41.4bpp.lz");
 static const ax_sprite sSlowbroSprites41[] = {
 	{sSlowbroGfx41, ARRAY_COUNT(sSlowbroGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSlowbroGfx42[] = INCBIN_U8("graphics/ax/mon/slowbro/sprite_42.4bpp");
+static const u8 sSlowbroGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowbro/sprite_42.4bpp.lz");
 static const ax_sprite sSlowbroSprites42[] = {
 	{sSlowbroGfx42, ARRAY_COUNT(sSlowbroGfx42)}, 
 	{NULL, 0}

@@ -2206,84 +2206,84 @@ static const ax_anim sJirachiAnims_16_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sJirachiGfx1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_1.4bpp");
+static const u8 sJirachiGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_1.4bpp.lz");
 static const ax_sprite sJirachiSprites1[] = {
 	{sJirachiGfx1, ARRAY_COUNT(sJirachiGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_2.4bpp");
+static const u8 sJirachiGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_2.4bpp.lz");
 static const ax_sprite sJirachiSprites2[] = {
 	{sJirachiGfx2, ARRAY_COUNT(sJirachiGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx3[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_3.4bpp");
+static const u8 sJirachiGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_3.4bpp.lz");
 static const ax_sprite sJirachiSprites3[] = {
 	{sJirachiGfx3, ARRAY_COUNT(sJirachiGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx4[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_4.4bpp");
+static const u8 sJirachiGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_4.4bpp.lz");
 static const ax_sprite sJirachiSprites4[] = {
 	{sJirachiGfx4, ARRAY_COUNT(sJirachiGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx5[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_5.4bpp");
+static const u8 sJirachiGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_5.4bpp.lz");
 static const ax_sprite sJirachiSprites5[] = {
 	{sJirachiGfx5, ARRAY_COUNT(sJirachiGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx6[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_6.4bpp");
+static const u8 sJirachiGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_6.4bpp.lz");
 static const ax_sprite sJirachiSprites6[] = {
 	{sJirachiGfx6, ARRAY_COUNT(sJirachiGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx7[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_7.4bpp");
+static const u8 sJirachiGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_7.4bpp.lz");
 static const ax_sprite sJirachiSprites7[] = {
 	{sJirachiGfx7, ARRAY_COUNT(sJirachiGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx8[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_8.4bpp");
+static const u8 sJirachiGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_8.4bpp.lz");
 static const ax_sprite sJirachiSprites8[] = {
 	{sJirachiGfx8, ARRAY_COUNT(sJirachiGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx9[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_9.4bpp");
+static const u8 sJirachiGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_9.4bpp.lz");
 static const ax_sprite sJirachiSprites9[] = {
 	{sJirachiGfx9, ARRAY_COUNT(sJirachiGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx10[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_10.4bpp");
+static const u8 sJirachiGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_10.4bpp.lz");
 static const ax_sprite sJirachiSprites10[] = {
 	{sJirachiGfx10, ARRAY_COUNT(sJirachiGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx11[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_11.4bpp");
+static const u8 sJirachiGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_11.4bpp.lz");
 static const ax_sprite sJirachiSprites11[] = {
 	{sJirachiGfx11, ARRAY_COUNT(sJirachiGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx12[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_12.4bpp");
+static const u8 sJirachiGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_12.4bpp.lz");
 static const ax_sprite sJirachiSprites12[] = {
 	{sJirachiGfx12, ARRAY_COUNT(sJirachiGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx13[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_13.4bpp");
+static const u8 sJirachiGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_13.4bpp.lz");
 static const ax_sprite sJirachiSprites13[] = {
 	{sJirachiGfx13, ARRAY_COUNT(sJirachiGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx14[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_14.4bpp");
+static const u8 sJirachiGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_14.4bpp.lz");
 static const ax_sprite sJirachiSprites14[] = {
 	{sJirachiGfx14, ARRAY_COUNT(sJirachiGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx15[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_15.4bpp");
+static const u8 sJirachiGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_15.4bpp.lz");
 static const ax_sprite sJirachiSprites15[] = {
 	{sJirachiGfx15, ARRAY_COUNT(sJirachiGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx16[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_16.4bpp");
-static const u8 sJirachiGfx16_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_16_1.4bpp");
-static const u8 sJirachiGfx16_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_16_2.4bpp");
+static const u8 sJirachiGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_16.4bpp.lz");
+static const u8 sJirachiGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_16_1.4bpp.lz");
+static const u8 sJirachiGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_16_2.4bpp.lz");
 static const ax_sprite sJirachiSprites16[] = {
 	{sJirachiGfx16, ARRAY_COUNT(sJirachiGfx16)}, 
 	{NULL, 32}, 
@@ -2293,8 +2293,8 @@ static const ax_sprite sJirachiSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx17[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_17.4bpp");
-static const u8 sJirachiGfx17_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_17_1.4bpp");
+static const u8 sJirachiGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_17.4bpp.lz");
+static const u8 sJirachiGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_17_1.4bpp.lz");
 static const ax_sprite sJirachiSprites17[] = {
 	{NULL, 128}, 
 	{sJirachiGfx17, ARRAY_COUNT(sJirachiGfx17)}, 
@@ -2303,9 +2303,9 @@ static const ax_sprite sJirachiSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx18[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_18.4bpp");
-static const u8 sJirachiGfx18_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_18_1.4bpp");
-static const u8 sJirachiGfx18_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_18_2.4bpp");
+static const u8 sJirachiGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_18.4bpp.lz");
+static const u8 sJirachiGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_18_1.4bpp.lz");
+static const u8 sJirachiGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_18_2.4bpp.lz");
 static const ax_sprite sJirachiSprites18[] = {
 	{sJirachiGfx18, ARRAY_COUNT(sJirachiGfx18)}, 
 	{NULL, 32}, 
@@ -2315,8 +2315,8 @@ static const ax_sprite sJirachiSprites18[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx19[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_19.4bpp");
-static const u8 sJirachiGfx19_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_19_1.4bpp");
+static const u8 sJirachiGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_19.4bpp.lz");
+static const u8 sJirachiGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_19_1.4bpp.lz");
 static const ax_sprite sJirachiSprites19[] = {
 	{NULL, 64}, 
 	{sJirachiGfx19, ARRAY_COUNT(sJirachiGfx19)}, 
@@ -2325,9 +2325,9 @@ static const ax_sprite sJirachiSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx20[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_20.4bpp");
-static const u8 sJirachiGfx20_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_20_1.4bpp");
-static const u8 sJirachiGfx20_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_20_2.4bpp");
+static const u8 sJirachiGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_20.4bpp.lz");
+static const u8 sJirachiGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_20_1.4bpp.lz");
+static const u8 sJirachiGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_20_2.4bpp.lz");
 static const ax_sprite sJirachiSprites20[] = {
 	{NULL, 32}, 
 	{sJirachiGfx20, ARRAY_COUNT(sJirachiGfx20)}, 
@@ -2338,8 +2338,8 @@ static const ax_sprite sJirachiSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx21[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_21.4bpp");
-static const u8 sJirachiGfx21_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_21_1.4bpp");
+static const u8 sJirachiGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_21.4bpp.lz");
+static const u8 sJirachiGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_21_1.4bpp.lz");
 static const ax_sprite sJirachiSprites21[] = {
 	{NULL, 128}, 
 	{sJirachiGfx21, ARRAY_COUNT(sJirachiGfx21)}, 
@@ -2348,9 +2348,9 @@ static const ax_sprite sJirachiSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx22[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_22.4bpp");
-static const u8 sJirachiGfx22_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_22_1.4bpp");
-static const u8 sJirachiGfx22_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_22_2.4bpp");
+static const u8 sJirachiGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_22.4bpp.lz");
+static const u8 sJirachiGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_22_1.4bpp.lz");
+static const u8 sJirachiGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_22_2.4bpp.lz");
 static const ax_sprite sJirachiSprites22[] = {
 	{NULL, 32}, 
 	{sJirachiGfx22, ARRAY_COUNT(sJirachiGfx22)}, 
@@ -2360,9 +2360,9 @@ static const ax_sprite sJirachiSprites22[] = {
 	{sJirachiGfx22_2, ARRAY_COUNT(sJirachiGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx23[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_23.4bpp");
-static const u8 sJirachiGfx23_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_23_1.4bpp");
-static const u8 sJirachiGfx23_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_23_2.4bpp");
+static const u8 sJirachiGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_23.4bpp.lz");
+static const u8 sJirachiGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_23_1.4bpp.lz");
+static const u8 sJirachiGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_23_2.4bpp.lz");
 static const ax_sprite sJirachiSprites23[] = {
 	{NULL, 32}, 
 	{sJirachiGfx23, ARRAY_COUNT(sJirachiGfx23)}, 
@@ -2372,11 +2372,11 @@ static const ax_sprite sJirachiSprites23[] = {
 	{sJirachiGfx23_2, ARRAY_COUNT(sJirachiGfx23_2)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx24[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24.4bpp");
-static const u8 sJirachiGfx24_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24_1.4bpp");
-static const u8 sJirachiGfx24_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24_2.4bpp");
-static const u8 sJirachiGfx24_3[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24_3.4bpp");
-static const u8 sJirachiGfx24_4[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24_4.4bpp");
+static const u8 sJirachiGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24.4bpp.lz");
+static const u8 sJirachiGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24_1.4bpp.lz");
+static const u8 sJirachiGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24_2.4bpp.lz");
+static const u8 sJirachiGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24_3.4bpp.lz");
+static const u8 sJirachiGfx24_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_24_4.4bpp.lz");
 static const ax_sprite sJirachiSprites24[] = {
 	{sJirachiGfx24, ARRAY_COUNT(sJirachiGfx24)}, 
 	{NULL, 32}, 
@@ -2390,8 +2390,8 @@ static const ax_sprite sJirachiSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx25[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_25.4bpp");
-static const u8 sJirachiGfx25_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_25_1.4bpp");
+static const u8 sJirachiGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_25.4bpp.lz");
+static const u8 sJirachiGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_25_1.4bpp.lz");
 static const ax_sprite sJirachiSprites25[] = {
 	{NULL, 32}, 
 	{sJirachiGfx25, ARRAY_COUNT(sJirachiGfx25)}, 
@@ -2399,9 +2399,9 @@ static const ax_sprite sJirachiSprites25[] = {
 	{sJirachiGfx25_1, ARRAY_COUNT(sJirachiGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx26[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_26.4bpp");
-static const u8 sJirachiGfx26_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_26_1.4bpp");
-static const u8 sJirachiGfx26_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_26_2.4bpp");
+static const u8 sJirachiGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_26.4bpp.lz");
+static const u8 sJirachiGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_26_1.4bpp.lz");
+static const u8 sJirachiGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_26_2.4bpp.lz");
 static const ax_sprite sJirachiSprites26[] = {
 	{NULL, 32}, 
 	{sJirachiGfx26, ARRAY_COUNT(sJirachiGfx26)}, 
@@ -2412,9 +2412,9 @@ static const ax_sprite sJirachiSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx27[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_27.4bpp");
-static const u8 sJirachiGfx27_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_27_1.4bpp");
-static const u8 sJirachiGfx27_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_27_2.4bpp");
+static const u8 sJirachiGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_27.4bpp.lz");
+static const u8 sJirachiGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_27_1.4bpp.lz");
+static const u8 sJirachiGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_27_2.4bpp.lz");
 static const ax_sprite sJirachiSprites27[] = {
 	{NULL, 32}, 
 	{sJirachiGfx27, ARRAY_COUNT(sJirachiGfx27)}, 
@@ -2425,10 +2425,10 @@ static const ax_sprite sJirachiSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx28[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_28.4bpp");
-static const u8 sJirachiGfx28_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_28_1.4bpp");
-static const u8 sJirachiGfx28_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_28_2.4bpp");
-static const u8 sJirachiGfx28_3[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_28_3.4bpp");
+static const u8 sJirachiGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_28.4bpp.lz");
+static const u8 sJirachiGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_28_1.4bpp.lz");
+static const u8 sJirachiGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_28_2.4bpp.lz");
+static const u8 sJirachiGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_28_3.4bpp.lz");
 static const ax_sprite sJirachiSprites28[] = {
 	{NULL, 32}, 
 	{sJirachiGfx28, ARRAY_COUNT(sJirachiGfx28)}, 
@@ -2440,9 +2440,9 @@ static const ax_sprite sJirachiSprites28[] = {
 	{sJirachiGfx28_3, ARRAY_COUNT(sJirachiGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx29[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_29.4bpp");
-static const u8 sJirachiGfx29_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_29_1.4bpp");
-static const u8 sJirachiGfx29_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_29_2.4bpp");
+static const u8 sJirachiGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_29.4bpp.lz");
+static const u8 sJirachiGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_29_1.4bpp.lz");
+static const u8 sJirachiGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_29_2.4bpp.lz");
 static const ax_sprite sJirachiSprites29[] = {
 	{NULL, 32}, 
 	{sJirachiGfx29, ARRAY_COUNT(sJirachiGfx29)}, 
@@ -2452,8 +2452,8 @@ static const ax_sprite sJirachiSprites29[] = {
 	{sJirachiGfx29_2, ARRAY_COUNT(sJirachiGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx30[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_30.4bpp");
-static const u8 sJirachiGfx30_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_30_1.4bpp");
+static const u8 sJirachiGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_30.4bpp.lz");
+static const u8 sJirachiGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_30_1.4bpp.lz");
 static const ax_sprite sJirachiSprites30[] = {
 	{NULL, 32}, 
 	{sJirachiGfx30, ARRAY_COUNT(sJirachiGfx30)}, 
@@ -2461,9 +2461,9 @@ static const ax_sprite sJirachiSprites30[] = {
 	{sJirachiGfx30_1, ARRAY_COUNT(sJirachiGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx31[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_31.4bpp");
-static const u8 sJirachiGfx31_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_31_1.4bpp");
-static const u8 sJirachiGfx31_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_31_2.4bpp");
+static const u8 sJirachiGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_31.4bpp.lz");
+static const u8 sJirachiGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_31_1.4bpp.lz");
+static const u8 sJirachiGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_31_2.4bpp.lz");
 static const ax_sprite sJirachiSprites31[] = {
 	{NULL, 32}, 
 	{sJirachiGfx31, ARRAY_COUNT(sJirachiGfx31)}, 
@@ -2474,9 +2474,9 @@ static const ax_sprite sJirachiSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx32[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_32.4bpp");
-static const u8 sJirachiGfx32_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_32_1.4bpp");
-static const u8 sJirachiGfx32_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_32_2.4bpp");
+static const u8 sJirachiGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_32.4bpp.lz");
+static const u8 sJirachiGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_32_1.4bpp.lz");
+static const u8 sJirachiGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_32_2.4bpp.lz");
 static const ax_sprite sJirachiSprites32[] = {
 	{NULL, 32}, 
 	{sJirachiGfx32, ARRAY_COUNT(sJirachiGfx32)}, 
@@ -2487,10 +2487,10 @@ static const ax_sprite sJirachiSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx33[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_33.4bpp");
-static const u8 sJirachiGfx33_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_33_1.4bpp");
-static const u8 sJirachiGfx33_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_33_2.4bpp");
-static const u8 sJirachiGfx33_3[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_33_3.4bpp");
+static const u8 sJirachiGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_33.4bpp.lz");
+static const u8 sJirachiGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_33_1.4bpp.lz");
+static const u8 sJirachiGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_33_2.4bpp.lz");
+static const u8 sJirachiGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_33_3.4bpp.lz");
 static const ax_sprite sJirachiSprites33[] = {
 	{NULL, 32}, 
 	{sJirachiGfx33, ARRAY_COUNT(sJirachiGfx33)}, 
@@ -2502,10 +2502,10 @@ static const ax_sprite sJirachiSprites33[] = {
 	{sJirachiGfx33_3, ARRAY_COUNT(sJirachiGfx33_3)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx34[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_34.4bpp");
-static const u8 sJirachiGfx34_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_34_1.4bpp");
-static const u8 sJirachiGfx34_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_34_2.4bpp");
-static const u8 sJirachiGfx34_3[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_34_3.4bpp");
+static const u8 sJirachiGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_34.4bpp.lz");
+static const u8 sJirachiGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_34_1.4bpp.lz");
+static const u8 sJirachiGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_34_2.4bpp.lz");
+static const u8 sJirachiGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_34_3.4bpp.lz");
 static const ax_sprite sJirachiSprites34[] = {
 	{NULL, 32}, 
 	{sJirachiGfx34, ARRAY_COUNT(sJirachiGfx34)}, 
@@ -2517,8 +2517,8 @@ static const ax_sprite sJirachiSprites34[] = {
 	{sJirachiGfx34_3, ARRAY_COUNT(sJirachiGfx34_3)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx35[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_35.4bpp");
-static const u8 sJirachiGfx35_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_35_1.4bpp");
+static const u8 sJirachiGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_35.4bpp.lz");
+static const u8 sJirachiGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_35_1.4bpp.lz");
 static const ax_sprite sJirachiSprites35[] = {
 	{NULL, 32}, 
 	{sJirachiGfx35, ARRAY_COUNT(sJirachiGfx35)}, 
@@ -2526,43 +2526,43 @@ static const ax_sprite sJirachiSprites35[] = {
 	{sJirachiGfx35_1, ARRAY_COUNT(sJirachiGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx36[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_36.4bpp");
+static const u8 sJirachiGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_36.4bpp.lz");
 static const ax_sprite sJirachiSprites36[] = {
 	{sJirachiGfx36, ARRAY_COUNT(sJirachiGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx37[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_37.4bpp");
+static const u8 sJirachiGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_37.4bpp.lz");
 static const ax_sprite sJirachiSprites37[] = {
 	{sJirachiGfx37, ARRAY_COUNT(sJirachiGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx38[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_38.4bpp");
+static const u8 sJirachiGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_38.4bpp.lz");
 static const ax_sprite sJirachiSprites38[] = {
 	{sJirachiGfx38, ARRAY_COUNT(sJirachiGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx39[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_39.4bpp");
+static const u8 sJirachiGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_39.4bpp.lz");
 static const ax_sprite sJirachiSprites39[] = {
 	{sJirachiGfx39, ARRAY_COUNT(sJirachiGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx40[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_40.4bpp");
+static const u8 sJirachiGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_40.4bpp.lz");
 static const ax_sprite sJirachiSprites40[] = {
 	{sJirachiGfx40, ARRAY_COUNT(sJirachiGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx41[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_41.4bpp");
+static const u8 sJirachiGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_41.4bpp.lz");
 static const ax_sprite sJirachiSprites41[] = {
 	{sJirachiGfx41, ARRAY_COUNT(sJirachiGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx42[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_42.4bpp");
+static const u8 sJirachiGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_42.4bpp.lz");
 static const ax_sprite sJirachiSprites42[] = {
 	{sJirachiGfx42, ARRAY_COUNT(sJirachiGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx43[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_43.4bpp");
-static const u8 sJirachiGfx43_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_43_1.4bpp");
+static const u8 sJirachiGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_43.4bpp.lz");
+static const u8 sJirachiGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_43_1.4bpp.lz");
 static const ax_sprite sJirachiSprites43[] = {
 	{sJirachiGfx43, ARRAY_COUNT(sJirachiGfx43)}, 
 	{NULL, 32}, 
@@ -2570,11 +2570,11 @@ static const ax_sprite sJirachiSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx44[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44.4bpp");
-static const u8 sJirachiGfx44_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44_1.4bpp");
-static const u8 sJirachiGfx44_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44_2.4bpp");
-static const u8 sJirachiGfx44_3[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44_3.4bpp");
-static const u8 sJirachiGfx44_4[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44_4.4bpp");
+static const u8 sJirachiGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44.4bpp.lz");
+static const u8 sJirachiGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44_1.4bpp.lz");
+static const u8 sJirachiGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44_2.4bpp.lz");
+static const u8 sJirachiGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44_3.4bpp.lz");
+static const u8 sJirachiGfx44_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_44_4.4bpp.lz");
 static const ax_sprite sJirachiSprites44[] = {
 	{NULL, 320}, 
 	{sJirachiGfx44, ARRAY_COUNT(sJirachiGfx44)}, 
@@ -2589,14 +2589,14 @@ static const ax_sprite sJirachiSprites44[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx45[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45.4bpp");
-static const u8 sJirachiGfx45_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_1.4bpp");
-static const u8 sJirachiGfx45_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_2.4bpp");
-static const u8 sJirachiGfx45_3[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_3.4bpp");
-static const u8 sJirachiGfx45_4[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_4.4bpp");
-static const u8 sJirachiGfx45_5[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_5.4bpp");
-static const u8 sJirachiGfx45_6[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_6.4bpp");
-static const u8 sJirachiGfx45_7[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_7.4bpp");
+static const u8 sJirachiGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45.4bpp.lz");
+static const u8 sJirachiGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_1.4bpp.lz");
+static const u8 sJirachiGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_2.4bpp.lz");
+static const u8 sJirachiGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_3.4bpp.lz");
+static const u8 sJirachiGfx45_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_4.4bpp.lz");
+static const u8 sJirachiGfx45_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_5.4bpp.lz");
+static const u8 sJirachiGfx45_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_6.4bpp.lz");
+static const u8 sJirachiGfx45_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_45_7.4bpp.lz");
 static const ax_sprite sJirachiSprites45[] = {
 	{NULL, 96}, 
 	{sJirachiGfx45, ARRAY_COUNT(sJirachiGfx45)}, 
@@ -2617,8 +2617,8 @@ static const ax_sprite sJirachiSprites45[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx46[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_46.4bpp");
-static const u8 sJirachiGfx46_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_46_1.4bpp");
+static const u8 sJirachiGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_46.4bpp.lz");
+static const u8 sJirachiGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_46_1.4bpp.lz");
 static const ax_sprite sJirachiSprites46[] = {
 	{NULL, 32}, 
 	{sJirachiGfx46, ARRAY_COUNT(sJirachiGfx46)}, 
@@ -2626,8 +2626,8 @@ static const ax_sprite sJirachiSprites46[] = {
 	{sJirachiGfx46_1, ARRAY_COUNT(sJirachiGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx47[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_47.4bpp");
-static const u8 sJirachiGfx47_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_47_1.4bpp");
+static const u8 sJirachiGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_47.4bpp.lz");
+static const u8 sJirachiGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_47_1.4bpp.lz");
 static const ax_sprite sJirachiSprites47[] = {
 	{sJirachiGfx47, ARRAY_COUNT(sJirachiGfx47)}, 
 	{NULL, 32}, 
@@ -2635,9 +2635,9 @@ static const ax_sprite sJirachiSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx48[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_48.4bpp");
-static const u8 sJirachiGfx48_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_48_1.4bpp");
-static const u8 sJirachiGfx48_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_48_2.4bpp");
+static const u8 sJirachiGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_48.4bpp.lz");
+static const u8 sJirachiGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_48_1.4bpp.lz");
+static const u8 sJirachiGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_48_2.4bpp.lz");
 static const ax_sprite sJirachiSprites48[] = {
 	{NULL, 64}, 
 	{sJirachiGfx48, ARRAY_COUNT(sJirachiGfx48)}, 
@@ -2648,10 +2648,10 @@ static const ax_sprite sJirachiSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx49[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_49.4bpp");
-static const u8 sJirachiGfx49_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_49_1.4bpp");
-static const u8 sJirachiGfx49_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_49_2.4bpp");
-static const u8 sJirachiGfx49_3[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_49_3.4bpp");
+static const u8 sJirachiGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_49.4bpp.lz");
+static const u8 sJirachiGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_49_1.4bpp.lz");
+static const u8 sJirachiGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_49_2.4bpp.lz");
+static const u8 sJirachiGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_49_3.4bpp.lz");
 static const ax_sprite sJirachiSprites49[] = {
 	{NULL, 32}, 
 	{sJirachiGfx49, ARRAY_COUNT(sJirachiGfx49)}, 
@@ -2664,9 +2664,9 @@ static const ax_sprite sJirachiSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx50[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_50.4bpp");
-static const u8 sJirachiGfx50_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_50_1.4bpp");
-static const u8 sJirachiGfx50_2[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_50_2.4bpp");
+static const u8 sJirachiGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_50.4bpp.lz");
+static const u8 sJirachiGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_50_1.4bpp.lz");
+static const u8 sJirachiGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_50_2.4bpp.lz");
 static const ax_sprite sJirachiSprites50[] = {
 	{NULL, 32}, 
 	{sJirachiGfx50, ARRAY_COUNT(sJirachiGfx50)}, 
@@ -2677,8 +2677,8 @@ static const ax_sprite sJirachiSprites50[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJirachiGfx51[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_51.4bpp");
-static const u8 sJirachiGfx51_1[] = INCBIN_U8("graphics/ax/mon/jirachi/sprite_51_1.4bpp");
+static const u8 sJirachiGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_51.4bpp.lz");
+static const u8 sJirachiGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jirachi/sprite_51_1.4bpp.lz");
 static const ax_sprite sJirachiSprites51[] = {
 	{sJirachiGfx51, ARRAY_COUNT(sJirachiGfx51)}, 
 	{NULL, 32}, 

@@ -2185,96 +2185,96 @@ static const ax_anim sStantlerAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sStantlerGfx1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_1.4bpp");
+static const u8 sStantlerGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_1.4bpp.lz");
 static const ax_sprite sStantlerSprites1[] = {
 	{sStantlerGfx1, ARRAY_COUNT(sStantlerGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_2.4bpp");
+static const u8 sStantlerGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_2.4bpp.lz");
 static const ax_sprite sStantlerSprites2[] = {
 	{sStantlerGfx2, ARRAY_COUNT(sStantlerGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_3.4bpp");
+static const u8 sStantlerGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_3.4bpp.lz");
 static const ax_sprite sStantlerSprites3[] = {
 	{sStantlerGfx3, ARRAY_COUNT(sStantlerGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx4[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_4.4bpp");
+static const u8 sStantlerGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_4.4bpp.lz");
 static const ax_sprite sStantlerSprites4[] = {
 	{sStantlerGfx4, ARRAY_COUNT(sStantlerGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx5[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_5.4bpp");
+static const u8 sStantlerGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_5.4bpp.lz");
 static const ax_sprite sStantlerSprites5[] = {
 	{sStantlerGfx5, ARRAY_COUNT(sStantlerGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx6[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_6.4bpp");
+static const u8 sStantlerGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_6.4bpp.lz");
 static const ax_sprite sStantlerSprites6[] = {
 	{sStantlerGfx6, ARRAY_COUNT(sStantlerGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx7[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_7.4bpp");
+static const u8 sStantlerGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_7.4bpp.lz");
 static const ax_sprite sStantlerSprites7[] = {
 	{sStantlerGfx7, ARRAY_COUNT(sStantlerGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx8[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_8.4bpp");
+static const u8 sStantlerGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_8.4bpp.lz");
 static const ax_sprite sStantlerSprites8[] = {
 	{sStantlerGfx8, ARRAY_COUNT(sStantlerGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx9[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_9.4bpp");
+static const u8 sStantlerGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_9.4bpp.lz");
 static const ax_sprite sStantlerSprites9[] = {
 	{sStantlerGfx9, ARRAY_COUNT(sStantlerGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx10[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_10.4bpp");
+static const u8 sStantlerGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_10.4bpp.lz");
 static const ax_sprite sStantlerSprites10[] = {
 	{sStantlerGfx10, ARRAY_COUNT(sStantlerGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx11[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_11.4bpp");
+static const u8 sStantlerGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_11.4bpp.lz");
 static const ax_sprite sStantlerSprites11[] = {
 	{sStantlerGfx11, ARRAY_COUNT(sStantlerGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx12[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_12.4bpp");
+static const u8 sStantlerGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_12.4bpp.lz");
 static const ax_sprite sStantlerSprites12[] = {
 	{sStantlerGfx12, ARRAY_COUNT(sStantlerGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx13[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_13.4bpp");
+static const u8 sStantlerGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_13.4bpp.lz");
 static const ax_sprite sStantlerSprites13[] = {
 	{sStantlerGfx13, ARRAY_COUNT(sStantlerGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx14[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_14.4bpp");
+static const u8 sStantlerGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_14.4bpp.lz");
 static const ax_sprite sStantlerSprites14[] = {
 	{sStantlerGfx14, ARRAY_COUNT(sStantlerGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx15[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_15.4bpp");
+static const u8 sStantlerGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_15.4bpp.lz");
 static const ax_sprite sStantlerSprites15[] = {
 	{sStantlerGfx15, ARRAY_COUNT(sStantlerGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx16[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_16.4bpp");
+static const u8 sStantlerGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_16.4bpp.lz");
 static const ax_sprite sStantlerSprites16[] = {
 	{sStantlerGfx16, ARRAY_COUNT(sStantlerGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx17[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_17.4bpp");
+static const u8 sStantlerGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_17.4bpp.lz");
 static const ax_sprite sStantlerSprites17[] = {
 	{sStantlerGfx17, ARRAY_COUNT(sStantlerGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx18[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_18.4bpp");
-static const u8 sStantlerGfx18_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_18_1.4bpp");
-static const u8 sStantlerGfx18_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_18_2.4bpp");
-static const u8 sStantlerGfx18_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_18_3.4bpp");
-static const u8 sStantlerGfx18_4[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_18_4.4bpp");
+static const u8 sStantlerGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_18.4bpp.lz");
+static const u8 sStantlerGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_18_1.4bpp.lz");
+static const u8 sStantlerGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_18_2.4bpp.lz");
+static const u8 sStantlerGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_18_3.4bpp.lz");
+static const u8 sStantlerGfx18_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_18_4.4bpp.lz");
 static const ax_sprite sStantlerSprites18[] = {
 	{sStantlerGfx18, ARRAY_COUNT(sStantlerGfx18)}, 
 	{NULL, 32}, 
@@ -2288,10 +2288,10 @@ static const ax_sprite sStantlerSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx19[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_19.4bpp");
-static const u8 sStantlerGfx19_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_19_1.4bpp");
-static const u8 sStantlerGfx19_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_19_2.4bpp");
-static const u8 sStantlerGfx19_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_19_3.4bpp");
+static const u8 sStantlerGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_19.4bpp.lz");
+static const u8 sStantlerGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_19_1.4bpp.lz");
+static const u8 sStantlerGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_19_2.4bpp.lz");
+static const u8 sStantlerGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_19_3.4bpp.lz");
 static const ax_sprite sStantlerSprites19[] = {
 	{sStantlerGfx19, ARRAY_COUNT(sStantlerGfx19)}, 
 	{NULL, 96}, 
@@ -2303,9 +2303,9 @@ static const ax_sprite sStantlerSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx20[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_20.4bpp");
-static const u8 sStantlerGfx20_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_20_1.4bpp");
-static const u8 sStantlerGfx20_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_20_2.4bpp");
+static const u8 sStantlerGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_20.4bpp.lz");
+static const u8 sStantlerGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_20_1.4bpp.lz");
+static const u8 sStantlerGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_20_2.4bpp.lz");
 static const ax_sprite sStantlerSprites20[] = {
 	{sStantlerGfx20, ARRAY_COUNT(sStantlerGfx20)}, 
 	{NULL, 64}, 
@@ -2314,10 +2314,10 @@ static const ax_sprite sStantlerSprites20[] = {
 	{sStantlerGfx20_2, ARRAY_COUNT(sStantlerGfx20_2)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx21[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_21.4bpp");
-static const u8 sStantlerGfx21_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_21_1.4bpp");
-static const u8 sStantlerGfx21_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_21_2.4bpp");
-static const u8 sStantlerGfx21_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_21_3.4bpp");
+static const u8 sStantlerGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_21.4bpp.lz");
+static const u8 sStantlerGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_21_1.4bpp.lz");
+static const u8 sStantlerGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_21_2.4bpp.lz");
+static const u8 sStantlerGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_21_3.4bpp.lz");
 static const ax_sprite sStantlerSprites21[] = {
 	{sStantlerGfx21, ARRAY_COUNT(sStantlerGfx21)}, 
 	{NULL, 32}, 
@@ -2329,31 +2329,31 @@ static const ax_sprite sStantlerSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx22[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_22.4bpp");
+static const u8 sStantlerGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_22.4bpp.lz");
 static const ax_sprite sStantlerSprites22[] = {
 	{sStantlerGfx22, ARRAY_COUNT(sStantlerGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx23[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_23.4bpp");
+static const u8 sStantlerGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_23.4bpp.lz");
 static const ax_sprite sStantlerSprites23[] = {
 	{sStantlerGfx23, ARRAY_COUNT(sStantlerGfx23)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx24[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_24.4bpp");
+static const u8 sStantlerGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_24.4bpp.lz");
 static const ax_sprite sStantlerSprites24[] = {
 	{sStantlerGfx24, ARRAY_COUNT(sStantlerGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx25[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_25.4bpp");
+static const u8 sStantlerGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_25.4bpp.lz");
 static const ax_sprite sStantlerSprites25[] = {
 	{sStantlerGfx25, ARRAY_COUNT(sStantlerGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx26[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_26.4bpp");
-static const u8 sStantlerGfx26_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_26_1.4bpp");
-static const u8 sStantlerGfx26_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_26_2.4bpp");
-static const u8 sStantlerGfx26_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_26_3.4bpp");
+static const u8 sStantlerGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_26.4bpp.lz");
+static const u8 sStantlerGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_26_1.4bpp.lz");
+static const u8 sStantlerGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_26_2.4bpp.lz");
+static const u8 sStantlerGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_26_3.4bpp.lz");
 static const ax_sprite sStantlerSprites26[] = {
 	{sStantlerGfx26, ARRAY_COUNT(sStantlerGfx26)}, 
 	{NULL, 32}, 
@@ -2365,10 +2365,10 @@ static const ax_sprite sStantlerSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx27[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_27.4bpp");
-static const u8 sStantlerGfx27_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_27_1.4bpp");
-static const u8 sStantlerGfx27_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_27_2.4bpp");
-static const u8 sStantlerGfx27_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_27_3.4bpp");
+static const u8 sStantlerGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_27.4bpp.lz");
+static const u8 sStantlerGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_27_1.4bpp.lz");
+static const u8 sStantlerGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_27_2.4bpp.lz");
+static const u8 sStantlerGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_27_3.4bpp.lz");
 static const ax_sprite sStantlerSprites27[] = {
 	{NULL, 32}, 
 	{sStantlerGfx27, ARRAY_COUNT(sStantlerGfx27)}, 
@@ -2381,10 +2381,10 @@ static const ax_sprite sStantlerSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx28[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_28.4bpp");
-static const u8 sStantlerGfx28_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_28_1.4bpp");
-static const u8 sStantlerGfx28_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_28_2.4bpp");
-static const u8 sStantlerGfx28_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_28_3.4bpp");
+static const u8 sStantlerGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_28.4bpp.lz");
+static const u8 sStantlerGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_28_1.4bpp.lz");
+static const u8 sStantlerGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_28_2.4bpp.lz");
+static const u8 sStantlerGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_28_3.4bpp.lz");
 static const ax_sprite sStantlerSprites28[] = {
 	{NULL, 32}, 
 	{sStantlerGfx28, ARRAY_COUNT(sStantlerGfx28)}, 
@@ -2396,10 +2396,10 @@ static const ax_sprite sStantlerSprites28[] = {
 	{sStantlerGfx28_3, ARRAY_COUNT(sStantlerGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx29[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_29.4bpp");
-static const u8 sStantlerGfx29_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_29_1.4bpp");
-static const u8 sStantlerGfx29_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_29_2.4bpp");
-static const u8 sStantlerGfx29_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_29_3.4bpp");
+static const u8 sStantlerGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_29.4bpp.lz");
+static const u8 sStantlerGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_29_1.4bpp.lz");
+static const u8 sStantlerGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_29_2.4bpp.lz");
+static const u8 sStantlerGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_29_3.4bpp.lz");
 static const ax_sprite sStantlerSprites29[] = {
 	{NULL, 32}, 
 	{sStantlerGfx29, ARRAY_COUNT(sStantlerGfx29)}, 
@@ -2412,10 +2412,10 @@ static const ax_sprite sStantlerSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx30[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_30.4bpp");
-static const u8 sStantlerGfx30_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_30_1.4bpp");
-static const u8 sStantlerGfx30_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_30_2.4bpp");
-static const u8 sStantlerGfx30_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_30_3.4bpp");
+static const u8 sStantlerGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_30.4bpp.lz");
+static const u8 sStantlerGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_30_1.4bpp.lz");
+static const u8 sStantlerGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_30_2.4bpp.lz");
+static const u8 sStantlerGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_30_3.4bpp.lz");
 static const ax_sprite sStantlerSprites30[] = {
 	{sStantlerGfx30, ARRAY_COUNT(sStantlerGfx30)}, 
 	{NULL, 32}, 
@@ -2427,10 +2427,10 @@ static const ax_sprite sStantlerSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx31[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_31.4bpp");
-static const u8 sStantlerGfx31_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_31_1.4bpp");
-static const u8 sStantlerGfx31_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_31_2.4bpp");
-static const u8 sStantlerGfx31_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_31_3.4bpp");
+static const u8 sStantlerGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_31.4bpp.lz");
+static const u8 sStantlerGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_31_1.4bpp.lz");
+static const u8 sStantlerGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_31_2.4bpp.lz");
+static const u8 sStantlerGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_31_3.4bpp.lz");
 static const ax_sprite sStantlerSprites31[] = {
 	{sStantlerGfx31, ARRAY_COUNT(sStantlerGfx31)}, 
 	{NULL, 32}, 
@@ -2442,10 +2442,10 @@ static const ax_sprite sStantlerSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx32[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_32.4bpp");
-static const u8 sStantlerGfx32_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_32_1.4bpp");
-static const u8 sStantlerGfx32_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_32_2.4bpp");
-static const u8 sStantlerGfx32_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_32_3.4bpp");
+static const u8 sStantlerGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_32.4bpp.lz");
+static const u8 sStantlerGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_32_1.4bpp.lz");
+static const u8 sStantlerGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_32_2.4bpp.lz");
+static const u8 sStantlerGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_32_3.4bpp.lz");
 static const ax_sprite sStantlerSprites32[] = {
 	{sStantlerGfx32, ARRAY_COUNT(sStantlerGfx32)}, 
 	{NULL, 32}, 
@@ -2457,10 +2457,10 @@ static const ax_sprite sStantlerSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx33[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_33.4bpp");
-static const u8 sStantlerGfx33_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_33_1.4bpp");
-static const u8 sStantlerGfx33_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_33_2.4bpp");
-static const u8 sStantlerGfx33_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_33_3.4bpp");
+static const u8 sStantlerGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_33.4bpp.lz");
+static const u8 sStantlerGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_33_1.4bpp.lz");
+static const u8 sStantlerGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_33_2.4bpp.lz");
+static const u8 sStantlerGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_33_3.4bpp.lz");
 static const ax_sprite sStantlerSprites33[] = {
 	{NULL, 32}, 
 	{sStantlerGfx33, ARRAY_COUNT(sStantlerGfx33)}, 
@@ -2473,10 +2473,10 @@ static const ax_sprite sStantlerSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx34[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_34.4bpp");
-static const u8 sStantlerGfx34_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_34_1.4bpp");
-static const u8 sStantlerGfx34_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_34_2.4bpp");
-static const u8 sStantlerGfx34_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_34_3.4bpp");
+static const u8 sStantlerGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_34.4bpp.lz");
+static const u8 sStantlerGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_34_1.4bpp.lz");
+static const u8 sStantlerGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_34_2.4bpp.lz");
+static const u8 sStantlerGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_34_3.4bpp.lz");
 static const ax_sprite sStantlerSprites34[] = {
 	{NULL, 32}, 
 	{sStantlerGfx34, ARRAY_COUNT(sStantlerGfx34)}, 
@@ -2489,10 +2489,10 @@ static const ax_sprite sStantlerSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx35[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_35.4bpp");
-static const u8 sStantlerGfx35_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_35_1.4bpp");
-static const u8 sStantlerGfx35_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_35_2.4bpp");
-static const u8 sStantlerGfx35_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_35_3.4bpp");
+static const u8 sStantlerGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_35.4bpp.lz");
+static const u8 sStantlerGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_35_1.4bpp.lz");
+static const u8 sStantlerGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_35_2.4bpp.lz");
+static const u8 sStantlerGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_35_3.4bpp.lz");
 static const ax_sprite sStantlerSprites35[] = {
 	{NULL, 32}, 
 	{sStantlerGfx35, ARRAY_COUNT(sStantlerGfx35)}, 
@@ -2504,10 +2504,10 @@ static const ax_sprite sStantlerSprites35[] = {
 	{sStantlerGfx35_3, ARRAY_COUNT(sStantlerGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx36[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_36.4bpp");
-static const u8 sStantlerGfx36_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_36_1.4bpp");
-static const u8 sStantlerGfx36_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_36_2.4bpp");
-static const u8 sStantlerGfx36_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_36_3.4bpp");
+static const u8 sStantlerGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_36.4bpp.lz");
+static const u8 sStantlerGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_36_1.4bpp.lz");
+static const u8 sStantlerGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_36_2.4bpp.lz");
+static const u8 sStantlerGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_36_3.4bpp.lz");
 static const ax_sprite sStantlerSprites36[] = {
 	{NULL, 32}, 
 	{sStantlerGfx36, ARRAY_COUNT(sStantlerGfx36)}, 
@@ -2519,10 +2519,10 @@ static const ax_sprite sStantlerSprites36[] = {
 	{sStantlerGfx36_3, ARRAY_COUNT(sStantlerGfx36_3)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx37[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_37.4bpp");
-static const u8 sStantlerGfx37_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_37_1.4bpp");
-static const u8 sStantlerGfx37_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_37_2.4bpp");
-static const u8 sStantlerGfx37_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_37_3.4bpp");
+static const u8 sStantlerGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_37.4bpp.lz");
+static const u8 sStantlerGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_37_1.4bpp.lz");
+static const u8 sStantlerGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_37_2.4bpp.lz");
+static const u8 sStantlerGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_37_3.4bpp.lz");
 static const ax_sprite sStantlerSprites37[] = {
 	{NULL, 32}, 
 	{sStantlerGfx37, ARRAY_COUNT(sStantlerGfx37)}, 
@@ -2535,10 +2535,10 @@ static const ax_sprite sStantlerSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx38[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_38.4bpp");
-static const u8 sStantlerGfx38_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_38_1.4bpp");
-static const u8 sStantlerGfx38_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_38_2.4bpp");
-static const u8 sStantlerGfx38_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_38_3.4bpp");
+static const u8 sStantlerGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_38.4bpp.lz");
+static const u8 sStantlerGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_38_1.4bpp.lz");
+static const u8 sStantlerGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_38_2.4bpp.lz");
+static const u8 sStantlerGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_38_3.4bpp.lz");
 static const ax_sprite sStantlerSprites38[] = {
 	{NULL, 32}, 
 	{sStantlerGfx38, ARRAY_COUNT(sStantlerGfx38)}, 
@@ -2551,10 +2551,10 @@ static const ax_sprite sStantlerSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx39[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_39.4bpp");
-static const u8 sStantlerGfx39_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_39_1.4bpp");
-static const u8 sStantlerGfx39_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_39_2.4bpp");
-static const u8 sStantlerGfx39_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_39_3.4bpp");
+static const u8 sStantlerGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_39.4bpp.lz");
+static const u8 sStantlerGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_39_1.4bpp.lz");
+static const u8 sStantlerGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_39_2.4bpp.lz");
+static const u8 sStantlerGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_39_3.4bpp.lz");
 static const ax_sprite sStantlerSprites39[] = {
 	{sStantlerGfx39, ARRAY_COUNT(sStantlerGfx39)}, 
 	{NULL, 32}, 
@@ -2566,10 +2566,10 @@ static const ax_sprite sStantlerSprites39[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx40[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_40.4bpp");
-static const u8 sStantlerGfx40_1[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_40_1.4bpp");
-static const u8 sStantlerGfx40_2[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_40_2.4bpp");
-static const u8 sStantlerGfx40_3[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_40_3.4bpp");
+static const u8 sStantlerGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_40.4bpp.lz");
+static const u8 sStantlerGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_40_1.4bpp.lz");
+static const u8 sStantlerGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_40_2.4bpp.lz");
+static const u8 sStantlerGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_40_3.4bpp.lz");
 static const ax_sprite sStantlerSprites40[] = {
 	{sStantlerGfx40, ARRAY_COUNT(sStantlerGfx40)}, 
 	{NULL, 32}, 
@@ -2581,72 +2581,72 @@ static const ax_sprite sStantlerSprites40[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx41[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_41.4bpp");
+static const u8 sStantlerGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_41.4bpp.lz");
 static const ax_sprite sStantlerSprites41[] = {
 	{sStantlerGfx41, ARRAY_COUNT(sStantlerGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx42[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_42.4bpp");
+static const u8 sStantlerGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_42.4bpp.lz");
 static const ax_sprite sStantlerSprites42[] = {
 	{sStantlerGfx42, ARRAY_COUNT(sStantlerGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx43[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_43.4bpp");
+static const u8 sStantlerGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_43.4bpp.lz");
 static const ax_sprite sStantlerSprites43[] = {
 	{sStantlerGfx43, ARRAY_COUNT(sStantlerGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx44[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_44.4bpp");
+static const u8 sStantlerGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_44.4bpp.lz");
 static const ax_sprite sStantlerSprites44[] = {
 	{sStantlerGfx44, ARRAY_COUNT(sStantlerGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx45[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_45.4bpp");
+static const u8 sStantlerGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_45.4bpp.lz");
 static const ax_sprite sStantlerSprites45[] = {
 	{sStantlerGfx45, ARRAY_COUNT(sStantlerGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx46[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_46.4bpp");
+static const u8 sStantlerGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_46.4bpp.lz");
 static const ax_sprite sStantlerSprites46[] = {
 	{sStantlerGfx46, ARRAY_COUNT(sStantlerGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx47[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_47.4bpp");
+static const u8 sStantlerGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_47.4bpp.lz");
 static const ax_sprite sStantlerSprites47[] = {
 	{sStantlerGfx47, ARRAY_COUNT(sStantlerGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx48[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_48.4bpp");
+static const u8 sStantlerGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_48.4bpp.lz");
 static const ax_sprite sStantlerSprites48[] = {
 	{sStantlerGfx48, ARRAY_COUNT(sStantlerGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx49[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_49.4bpp");
+static const u8 sStantlerGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_49.4bpp.lz");
 static const ax_sprite sStantlerSprites49[] = {
 	{sStantlerGfx49, ARRAY_COUNT(sStantlerGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx50[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_50.4bpp");
+static const u8 sStantlerGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_50.4bpp.lz");
 static const ax_sprite sStantlerSprites50[] = {
 	{sStantlerGfx50, ARRAY_COUNT(sStantlerGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx51[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_51.4bpp");
+static const u8 sStantlerGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_51.4bpp.lz");
 static const ax_sprite sStantlerSprites51[] = {
 	{sStantlerGfx51, ARRAY_COUNT(sStantlerGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx52[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_52.4bpp");
+static const u8 sStantlerGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_52.4bpp.lz");
 static const ax_sprite sStantlerSprites52[] = {
 	{sStantlerGfx52, ARRAY_COUNT(sStantlerGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx53[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_53.4bpp");
+static const u8 sStantlerGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_53.4bpp.lz");
 static const ax_sprite sStantlerSprites53[] = {
 	{sStantlerGfx53, ARRAY_COUNT(sStantlerGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sStantlerGfx54[] = INCBIN_U8("graphics/ax/mon/stantler/sprite_54.4bpp");
+static const u8 sStantlerGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/stantler/sprite_54.4bpp.lz");
 static const ax_sprite sStantlerSprites54[] = {
 	{sStantlerGfx54, ARRAY_COUNT(sStantlerGfx54)}, 
 	{NULL, 0}

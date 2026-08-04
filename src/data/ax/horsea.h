@@ -1907,84 +1907,84 @@ static const ax_anim sHorseaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHorseaGfx1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_1.4bpp");
+static const u8 sHorseaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_1.4bpp.lz");
 static const ax_sprite sHorseaSprites1[] = {
 	{sHorseaGfx1, ARRAY_COUNT(sHorseaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_2.4bpp");
+static const u8 sHorseaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_2.4bpp.lz");
 static const ax_sprite sHorseaSprites2[] = {
 	{sHorseaGfx2, ARRAY_COUNT(sHorseaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx3[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_3.4bpp");
+static const u8 sHorseaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_3.4bpp.lz");
 static const ax_sprite sHorseaSprites3[] = {
 	{sHorseaGfx3, ARRAY_COUNT(sHorseaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx4[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_4.4bpp");
+static const u8 sHorseaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_4.4bpp.lz");
 static const ax_sprite sHorseaSprites4[] = {
 	{sHorseaGfx4, ARRAY_COUNT(sHorseaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx5[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_5.4bpp");
+static const u8 sHorseaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_5.4bpp.lz");
 static const ax_sprite sHorseaSprites5[] = {
 	{sHorseaGfx5, ARRAY_COUNT(sHorseaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx6[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_6.4bpp");
+static const u8 sHorseaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_6.4bpp.lz");
 static const ax_sprite sHorseaSprites6[] = {
 	{sHorseaGfx6, ARRAY_COUNT(sHorseaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx7[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_7.4bpp");
+static const u8 sHorseaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_7.4bpp.lz");
 static const ax_sprite sHorseaSprites7[] = {
 	{sHorseaGfx7, ARRAY_COUNT(sHorseaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx8[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_8.4bpp");
+static const u8 sHorseaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_8.4bpp.lz");
 static const ax_sprite sHorseaSprites8[] = {
 	{sHorseaGfx8, ARRAY_COUNT(sHorseaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx9[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_9.4bpp");
+static const u8 sHorseaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_9.4bpp.lz");
 static const ax_sprite sHorseaSprites9[] = {
 	{sHorseaGfx9, ARRAY_COUNT(sHorseaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx10[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_10.4bpp");
+static const u8 sHorseaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_10.4bpp.lz");
 static const ax_sprite sHorseaSprites10[] = {
 	{sHorseaGfx10, ARRAY_COUNT(sHorseaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx11[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_11.4bpp");
+static const u8 sHorseaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_11.4bpp.lz");
 static const ax_sprite sHorseaSprites11[] = {
 	{sHorseaGfx11, ARRAY_COUNT(sHorseaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx12[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_12.4bpp");
+static const u8 sHorseaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_12.4bpp.lz");
 static const ax_sprite sHorseaSprites12[] = {
 	{sHorseaGfx12, ARRAY_COUNT(sHorseaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx13[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_13.4bpp");
+static const u8 sHorseaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_13.4bpp.lz");
 static const ax_sprite sHorseaSprites13[] = {
 	{sHorseaGfx13, ARRAY_COUNT(sHorseaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx14[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_14.4bpp");
+static const u8 sHorseaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_14.4bpp.lz");
 static const ax_sprite sHorseaSprites14[] = {
 	{sHorseaGfx14, ARRAY_COUNT(sHorseaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx15[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_15.4bpp");
+static const u8 sHorseaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_15.4bpp.lz");
 static const ax_sprite sHorseaSprites15[] = {
 	{sHorseaGfx15, ARRAY_COUNT(sHorseaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx16[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_16.4bpp");
-static const u8 sHorseaGfx16_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_16_1.4bpp");
-static const u8 sHorseaGfx16_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_16_2.4bpp");
+static const u8 sHorseaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_16.4bpp.lz");
+static const u8 sHorseaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_16_1.4bpp.lz");
+static const u8 sHorseaGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_16_2.4bpp.lz");
 static const ax_sprite sHorseaSprites16[] = {
 	{NULL, 32}, 
 	{sHorseaGfx16, ARRAY_COUNT(sHorseaGfx16)}, 
@@ -1995,9 +1995,9 @@ static const ax_sprite sHorseaSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx17[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_17.4bpp");
-static const u8 sHorseaGfx17_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_17_1.4bpp");
-static const u8 sHorseaGfx17_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_17_2.4bpp");
+static const u8 sHorseaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_17.4bpp.lz");
+static const u8 sHorseaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_17_1.4bpp.lz");
+static const u8 sHorseaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_17_2.4bpp.lz");
 static const ax_sprite sHorseaSprites17[] = {
 	{sHorseaGfx17, ARRAY_COUNT(sHorseaGfx17)}, 
 	{NULL, 96}, 
@@ -2007,9 +2007,9 @@ static const ax_sprite sHorseaSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx18[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_18.4bpp");
-static const u8 sHorseaGfx18_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_18_1.4bpp");
-static const u8 sHorseaGfx18_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_18_2.4bpp");
+static const u8 sHorseaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_18.4bpp.lz");
+static const u8 sHorseaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_18_1.4bpp.lz");
+static const u8 sHorseaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_18_2.4bpp.lz");
 static const ax_sprite sHorseaSprites18[] = {
 	{sHorseaGfx18, ARRAY_COUNT(sHorseaGfx18)}, 
 	{NULL, 64}, 
@@ -2019,9 +2019,9 @@ static const ax_sprite sHorseaSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx19[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_19.4bpp");
-static const u8 sHorseaGfx19_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_19_1.4bpp");
-static const u8 sHorseaGfx19_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_19_2.4bpp");
+static const u8 sHorseaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_19.4bpp.lz");
+static const u8 sHorseaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_19_1.4bpp.lz");
+static const u8 sHorseaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_19_2.4bpp.lz");
 static const ax_sprite sHorseaSprites19[] = {
 	{sHorseaGfx19, ARRAY_COUNT(sHorseaGfx19)}, 
 	{NULL, 64}, 
@@ -2031,10 +2031,10 @@ static const ax_sprite sHorseaSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx20[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_20.4bpp");
-static const u8 sHorseaGfx20_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_20_1.4bpp");
-static const u8 sHorseaGfx20_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_20_2.4bpp");
-static const u8 sHorseaGfx20_3[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_20_3.4bpp");
+static const u8 sHorseaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_20.4bpp.lz");
+static const u8 sHorseaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_20_1.4bpp.lz");
+static const u8 sHorseaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_20_2.4bpp.lz");
+static const u8 sHorseaGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_20_3.4bpp.lz");
 static const ax_sprite sHorseaSprites20[] = {
 	{sHorseaGfx20, ARRAY_COUNT(sHorseaGfx20)}, 
 	{NULL, 32}, 
@@ -2046,9 +2046,9 @@ static const ax_sprite sHorseaSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx21[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_21.4bpp");
-static const u8 sHorseaGfx21_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_21_1.4bpp");
-static const u8 sHorseaGfx21_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_21_2.4bpp");
+static const u8 sHorseaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_21.4bpp.lz");
+static const u8 sHorseaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_21_1.4bpp.lz");
+static const u8 sHorseaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_21_2.4bpp.lz");
 static const ax_sprite sHorseaSprites21[] = {
 	{sHorseaGfx21, ARRAY_COUNT(sHorseaGfx21)}, 
 	{NULL, 32}, 
@@ -2058,9 +2058,9 @@ static const ax_sprite sHorseaSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx22[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_22.4bpp");
-static const u8 sHorseaGfx22_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_22_1.4bpp");
-static const u8 sHorseaGfx22_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_22_2.4bpp");
+static const u8 sHorseaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_22.4bpp.lz");
+static const u8 sHorseaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_22_1.4bpp.lz");
+static const u8 sHorseaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_22_2.4bpp.lz");
 static const ax_sprite sHorseaSprites22[] = {
 	{sHorseaGfx22, ARRAY_COUNT(sHorseaGfx22)}, 
 	{NULL, 32}, 
@@ -2070,9 +2070,9 @@ static const ax_sprite sHorseaSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx23[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_23.4bpp");
-static const u8 sHorseaGfx23_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_23_1.4bpp");
-static const u8 sHorseaGfx23_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_23_2.4bpp");
+static const u8 sHorseaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_23.4bpp.lz");
+static const u8 sHorseaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_23_1.4bpp.lz");
+static const u8 sHorseaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_23_2.4bpp.lz");
 static const ax_sprite sHorseaSprites23[] = {
 	{sHorseaGfx23, ARRAY_COUNT(sHorseaGfx23)}, 
 	{NULL, 32}, 
@@ -2082,9 +2082,9 @@ static const ax_sprite sHorseaSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx24[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_24.4bpp");
-static const u8 sHorseaGfx24_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_24_1.4bpp");
-static const u8 sHorseaGfx24_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_24_2.4bpp");
+static const u8 sHorseaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_24.4bpp.lz");
+static const u8 sHorseaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_24_1.4bpp.lz");
+static const u8 sHorseaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_24_2.4bpp.lz");
 static const ax_sprite sHorseaSprites24[] = {
 	{sHorseaGfx24, ARRAY_COUNT(sHorseaGfx24)}, 
 	{NULL, 64}, 
@@ -2094,9 +2094,9 @@ static const ax_sprite sHorseaSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx25[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_25.4bpp");
-static const u8 sHorseaGfx25_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_25_1.4bpp");
-static const u8 sHorseaGfx25_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_25_2.4bpp");
+static const u8 sHorseaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_25.4bpp.lz");
+static const u8 sHorseaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_25_1.4bpp.lz");
+static const u8 sHorseaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_25_2.4bpp.lz");
 static const ax_sprite sHorseaSprites25[] = {
 	{NULL, 32}, 
 	{sHorseaGfx25, ARRAY_COUNT(sHorseaGfx25)}, 
@@ -2107,9 +2107,9 @@ static const ax_sprite sHorseaSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx26[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_26.4bpp");
-static const u8 sHorseaGfx26_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_26_1.4bpp");
-static const u8 sHorseaGfx26_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_26_2.4bpp");
+static const u8 sHorseaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_26.4bpp.lz");
+static const u8 sHorseaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_26_1.4bpp.lz");
+static const u8 sHorseaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_26_2.4bpp.lz");
 static const ax_sprite sHorseaSprites26[] = {
 	{sHorseaGfx26, ARRAY_COUNT(sHorseaGfx26)}, 
 	{NULL, 64}, 
@@ -2119,9 +2119,9 @@ static const ax_sprite sHorseaSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx27[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_27.4bpp");
-static const u8 sHorseaGfx27_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_27_1.4bpp");
-static const u8 sHorseaGfx27_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_27_2.4bpp");
+static const u8 sHorseaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_27.4bpp.lz");
+static const u8 sHorseaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_27_1.4bpp.lz");
+static const u8 sHorseaGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_27_2.4bpp.lz");
 static const ax_sprite sHorseaSprites27[] = {
 	{sHorseaGfx27, ARRAY_COUNT(sHorseaGfx27)}, 
 	{NULL, 32}, 
@@ -2131,9 +2131,9 @@ static const ax_sprite sHorseaSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx28[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_28.4bpp");
-static const u8 sHorseaGfx28_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_28_1.4bpp");
-static const u8 sHorseaGfx28_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_28_2.4bpp");
+static const u8 sHorseaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_28.4bpp.lz");
+static const u8 sHorseaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_28_1.4bpp.lz");
+static const u8 sHorseaGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_28_2.4bpp.lz");
 static const ax_sprite sHorseaSprites28[] = {
 	{sHorseaGfx28, ARRAY_COUNT(sHorseaGfx28)}, 
 	{NULL, 32}, 
@@ -2143,10 +2143,10 @@ static const ax_sprite sHorseaSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx29[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_29.4bpp");
-static const u8 sHorseaGfx29_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_29_1.4bpp");
-static const u8 sHorseaGfx29_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_29_2.4bpp");
-static const u8 sHorseaGfx29_3[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_29_3.4bpp");
+static const u8 sHorseaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_29.4bpp.lz");
+static const u8 sHorseaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_29_1.4bpp.lz");
+static const u8 sHorseaGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_29_2.4bpp.lz");
+static const u8 sHorseaGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_29_3.4bpp.lz");
 static const ax_sprite sHorseaSprites29[] = {
 	{NULL, 32}, 
 	{sHorseaGfx29, ARRAY_COUNT(sHorseaGfx29)}, 
@@ -2159,9 +2159,9 @@ static const ax_sprite sHorseaSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx30[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_30.4bpp");
-static const u8 sHorseaGfx30_1[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_30_1.4bpp");
-static const u8 sHorseaGfx30_2[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_30_2.4bpp");
+static const u8 sHorseaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_30.4bpp.lz");
+static const u8 sHorseaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_30_1.4bpp.lz");
+static const u8 sHorseaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_30_2.4bpp.lz");
 static const ax_sprite sHorseaSprites30[] = {
 	{sHorseaGfx30, ARRAY_COUNT(sHorseaGfx30)}, 
 	{NULL, 32}, 
@@ -2171,37 +2171,37 @@ static const ax_sprite sHorseaSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx31[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_31.4bpp");
+static const u8 sHorseaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_31.4bpp.lz");
 static const ax_sprite sHorseaSprites31[] = {
 	{sHorseaGfx31, ARRAY_COUNT(sHorseaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx32[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_32.4bpp");
+static const u8 sHorseaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_32.4bpp.lz");
 static const ax_sprite sHorseaSprites32[] = {
 	{sHorseaGfx32, ARRAY_COUNT(sHorseaGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx33[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_33.4bpp");
+static const u8 sHorseaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_33.4bpp.lz");
 static const ax_sprite sHorseaSprites33[] = {
 	{sHorseaGfx33, ARRAY_COUNT(sHorseaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx34[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_34.4bpp");
+static const u8 sHorseaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_34.4bpp.lz");
 static const ax_sprite sHorseaSprites34[] = {
 	{sHorseaGfx34, ARRAY_COUNT(sHorseaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx35[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_35.4bpp");
+static const u8 sHorseaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_35.4bpp.lz");
 static const ax_sprite sHorseaSprites35[] = {
 	{sHorseaGfx35, ARRAY_COUNT(sHorseaGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx36[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_36.4bpp");
+static const u8 sHorseaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_36.4bpp.lz");
 static const ax_sprite sHorseaSprites36[] = {
 	{sHorseaGfx36, ARRAY_COUNT(sHorseaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sHorseaGfx37[] = INCBIN_U8("graphics/ax/mon/horsea/sprite_37.4bpp");
+static const u8 sHorseaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/horsea/sprite_37.4bpp.lz");
 static const ax_sprite sHorseaSprites37[] = {
 	{sHorseaGfx37, ARRAY_COUNT(sHorseaGfx37)}, 
 	{NULL, 0}

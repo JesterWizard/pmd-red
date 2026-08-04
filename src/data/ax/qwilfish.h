@@ -2271,106 +2271,106 @@ static const ax_anim sQwilfishAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sQwilfishGfx1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_1.4bpp");
+static const u8 sQwilfishGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_1.4bpp.lz");
 static const ax_sprite sQwilfishSprites1[] = {
 	{sQwilfishGfx1, ARRAY_COUNT(sQwilfishGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_2.4bpp");
+static const u8 sQwilfishGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_2.4bpp.lz");
 static const ax_sprite sQwilfishSprites2[] = {
 	{sQwilfishGfx2, ARRAY_COUNT(sQwilfishGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx3[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_3.4bpp");
+static const u8 sQwilfishGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_3.4bpp.lz");
 static const ax_sprite sQwilfishSprites3[] = {
 	{sQwilfishGfx3, ARRAY_COUNT(sQwilfishGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx4[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_4.4bpp");
+static const u8 sQwilfishGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_4.4bpp.lz");
 static const ax_sprite sQwilfishSprites4[] = {
 	{sQwilfishGfx4, ARRAY_COUNT(sQwilfishGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx5[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_5.4bpp");
+static const u8 sQwilfishGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_5.4bpp.lz");
 static const ax_sprite sQwilfishSprites5[] = {
 	{sQwilfishGfx5, ARRAY_COUNT(sQwilfishGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx6[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_6.4bpp");
+static const u8 sQwilfishGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_6.4bpp.lz");
 static const ax_sprite sQwilfishSprites6[] = {
 	{sQwilfishGfx6, ARRAY_COUNT(sQwilfishGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx7[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_7.4bpp");
+static const u8 sQwilfishGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_7.4bpp.lz");
 static const ax_sprite sQwilfishSprites7[] = {
 	{sQwilfishGfx7, ARRAY_COUNT(sQwilfishGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx8[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_8.4bpp");
+static const u8 sQwilfishGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_8.4bpp.lz");
 static const ax_sprite sQwilfishSprites8[] = {
 	{sQwilfishGfx8, ARRAY_COUNT(sQwilfishGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx9[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_9.4bpp");
+static const u8 sQwilfishGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_9.4bpp.lz");
 static const ax_sprite sQwilfishSprites9[] = {
 	{sQwilfishGfx9, ARRAY_COUNT(sQwilfishGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx10[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_10.4bpp");
+static const u8 sQwilfishGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_10.4bpp.lz");
 static const ax_sprite sQwilfishSprites10[] = {
 	{sQwilfishGfx10, ARRAY_COUNT(sQwilfishGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx11[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_11.4bpp");
+static const u8 sQwilfishGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_11.4bpp.lz");
 static const ax_sprite sQwilfishSprites11[] = {
 	{sQwilfishGfx11, ARRAY_COUNT(sQwilfishGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx12[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_12.4bpp");
+static const u8 sQwilfishGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_12.4bpp.lz");
 static const ax_sprite sQwilfishSprites12[] = {
 	{sQwilfishGfx12, ARRAY_COUNT(sQwilfishGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx13[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_13.4bpp");
+static const u8 sQwilfishGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_13.4bpp.lz");
 static const ax_sprite sQwilfishSprites13[] = {
 	{sQwilfishGfx13, ARRAY_COUNT(sQwilfishGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx14[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_14.4bpp");
+static const u8 sQwilfishGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_14.4bpp.lz");
 static const ax_sprite sQwilfishSprites14[] = {
 	{sQwilfishGfx14, ARRAY_COUNT(sQwilfishGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx15[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_15.4bpp");
+static const u8 sQwilfishGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_15.4bpp.lz");
 static const ax_sprite sQwilfishSprites15[] = {
 	{sQwilfishGfx15, ARRAY_COUNT(sQwilfishGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx16[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_16.4bpp");
+static const u8 sQwilfishGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_16.4bpp.lz");
 static const ax_sprite sQwilfishSprites16[] = {
 	{sQwilfishGfx16, ARRAY_COUNT(sQwilfishGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx17[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_17.4bpp");
+static const u8 sQwilfishGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_17.4bpp.lz");
 static const ax_sprite sQwilfishSprites17[] = {
 	{sQwilfishGfx17, ARRAY_COUNT(sQwilfishGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx18[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_18.4bpp");
+static const u8 sQwilfishGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_18.4bpp.lz");
 static const ax_sprite sQwilfishSprites18[] = {
 	{NULL, 64}, 
 	{sQwilfishGfx18, ARRAY_COUNT(sQwilfishGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx19[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_19.4bpp");
+static const u8 sQwilfishGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_19.4bpp.lz");
 static const ax_sprite sQwilfishSprites19[] = {
 	{sQwilfishGfx19, ARRAY_COUNT(sQwilfishGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx20[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_20.4bpp");
-static const u8 sQwilfishGfx20_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_20_1.4bpp");
-static const u8 sQwilfishGfx20_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_20_2.4bpp");
+static const u8 sQwilfishGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_20.4bpp.lz");
+static const u8 sQwilfishGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_20_1.4bpp.lz");
+static const u8 sQwilfishGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_20_2.4bpp.lz");
 static const ax_sprite sQwilfishSprites20[] = {
 	{sQwilfishGfx20, ARRAY_COUNT(sQwilfishGfx20)}, 
 	{NULL, 32}, 
@@ -2380,31 +2380,31 @@ static const ax_sprite sQwilfishSprites20[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx21[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_21.4bpp");
+static const u8 sQwilfishGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_21.4bpp.lz");
 static const ax_sprite sQwilfishSprites21[] = {
 	{sQwilfishGfx21, ARRAY_COUNT(sQwilfishGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx22[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_22.4bpp");
+static const u8 sQwilfishGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_22.4bpp.lz");
 static const ax_sprite sQwilfishSprites22[] = {
 	{sQwilfishGfx22, ARRAY_COUNT(sQwilfishGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx23[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_23.4bpp");
+static const u8 sQwilfishGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_23.4bpp.lz");
 static const ax_sprite sQwilfishSprites23[] = {
 	{sQwilfishGfx23, ARRAY_COUNT(sQwilfishGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx24[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_24.4bpp");
+static const u8 sQwilfishGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_24.4bpp.lz");
 static const ax_sprite sQwilfishSprites24[] = {
 	{sQwilfishGfx24, ARRAY_COUNT(sQwilfishGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx25[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_25.4bpp");
-static const u8 sQwilfishGfx25_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_25_1.4bpp");
-static const u8 sQwilfishGfx25_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_25_2.4bpp");
-static const u8 sQwilfishGfx25_3[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_25_3.4bpp");
+static const u8 sQwilfishGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_25.4bpp.lz");
+static const u8 sQwilfishGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_25_1.4bpp.lz");
+static const u8 sQwilfishGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_25_2.4bpp.lz");
+static const u8 sQwilfishGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_25_3.4bpp.lz");
 static const ax_sprite sQwilfishSprites25[] = {
 	{sQwilfishGfx25, ARRAY_COUNT(sQwilfishGfx25)}, 
 	{NULL, 64}, 
@@ -2416,9 +2416,9 @@ static const ax_sprite sQwilfishSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx26[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_26.4bpp");
-static const u8 sQwilfishGfx26_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_26_1.4bpp");
-static const u8 sQwilfishGfx26_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_26_2.4bpp");
+static const u8 sQwilfishGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_26.4bpp.lz");
+static const u8 sQwilfishGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_26_1.4bpp.lz");
+static const u8 sQwilfishGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_26_2.4bpp.lz");
 static const ax_sprite sQwilfishSprites26[] = {
 	{NULL, 32}, 
 	{sQwilfishGfx26, ARRAY_COUNT(sQwilfishGfx26)}, 
@@ -2429,10 +2429,10 @@ static const ax_sprite sQwilfishSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx27[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_27.4bpp");
-static const u8 sQwilfishGfx27_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_27_1.4bpp");
-static const u8 sQwilfishGfx27_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_27_2.4bpp");
-static const u8 sQwilfishGfx27_3[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_27_3.4bpp");
+static const u8 sQwilfishGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_27.4bpp.lz");
+static const u8 sQwilfishGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_27_1.4bpp.lz");
+static const u8 sQwilfishGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_27_2.4bpp.lz");
+static const u8 sQwilfishGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_27_3.4bpp.lz");
 static const ax_sprite sQwilfishSprites27[] = {
 	{sQwilfishGfx27, ARRAY_COUNT(sQwilfishGfx27)}, 
 	{NULL, 32}, 
@@ -2444,8 +2444,8 @@ static const ax_sprite sQwilfishSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx28[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_28.4bpp");
-static const u8 sQwilfishGfx28_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_28_1.4bpp");
+static const u8 sQwilfishGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_28.4bpp.lz");
+static const u8 sQwilfishGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_28_1.4bpp.lz");
 static const ax_sprite sQwilfishSprites28[] = {
 	{sQwilfishGfx28, ARRAY_COUNT(sQwilfishGfx28)}, 
 	{NULL, 64}, 
@@ -2453,9 +2453,9 @@ static const ax_sprite sQwilfishSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx29[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_29.4bpp");
-static const u8 sQwilfishGfx29_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_29_1.4bpp");
-static const u8 sQwilfishGfx29_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_29_2.4bpp");
+static const u8 sQwilfishGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_29.4bpp.lz");
+static const u8 sQwilfishGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_29_1.4bpp.lz");
+static const u8 sQwilfishGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_29_2.4bpp.lz");
 static const ax_sprite sQwilfishSprites29[] = {
 	{sQwilfishGfx29, ARRAY_COUNT(sQwilfishGfx29)}, 
 	{NULL, 32}, 
@@ -2465,9 +2465,9 @@ static const ax_sprite sQwilfishSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx30[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_30.4bpp");
-static const u8 sQwilfishGfx30_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_30_1.4bpp");
-static const u8 sQwilfishGfx30_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_30_2.4bpp");
+static const u8 sQwilfishGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_30.4bpp.lz");
+static const u8 sQwilfishGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_30_1.4bpp.lz");
+static const u8 sQwilfishGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_30_2.4bpp.lz");
 static const ax_sprite sQwilfishSprites30[] = {
 	{sQwilfishGfx30, ARRAY_COUNT(sQwilfishGfx30)}, 
 	{NULL, 64}, 
@@ -2477,8 +2477,8 @@ static const ax_sprite sQwilfishSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx31[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_31.4bpp");
-static const u8 sQwilfishGfx31_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_31_1.4bpp");
+static const u8 sQwilfishGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_31.4bpp.lz");
+static const u8 sQwilfishGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_31_1.4bpp.lz");
 static const ax_sprite sQwilfishSprites31[] = {
 	{sQwilfishGfx31, ARRAY_COUNT(sQwilfishGfx31)}, 
 	{NULL, 32}, 
@@ -2486,10 +2486,10 @@ static const ax_sprite sQwilfishSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx32[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_32.4bpp");
-static const u8 sQwilfishGfx32_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_32_1.4bpp");
-static const u8 sQwilfishGfx32_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_32_2.4bpp");
-static const u8 sQwilfishGfx32_3[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_32_3.4bpp");
+static const u8 sQwilfishGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_32.4bpp.lz");
+static const u8 sQwilfishGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_32_1.4bpp.lz");
+static const u8 sQwilfishGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_32_2.4bpp.lz");
+static const u8 sQwilfishGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_32_3.4bpp.lz");
 static const ax_sprite sQwilfishSprites32[] = {
 	{sQwilfishGfx32, ARRAY_COUNT(sQwilfishGfx32)}, 
 	{NULL, 32}, 
@@ -2501,9 +2501,9 @@ static const ax_sprite sQwilfishSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx33[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_33.4bpp");
-static const u8 sQwilfishGfx33_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_33_1.4bpp");
-static const u8 sQwilfishGfx33_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_33_2.4bpp");
+static const u8 sQwilfishGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_33.4bpp.lz");
+static const u8 sQwilfishGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_33_1.4bpp.lz");
+static const u8 sQwilfishGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_33_2.4bpp.lz");
 static const ax_sprite sQwilfishSprites33[] = {
 	{sQwilfishGfx33, ARRAY_COUNT(sQwilfishGfx33)}, 
 	{NULL, 32}, 
@@ -2513,10 +2513,10 @@ static const ax_sprite sQwilfishSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx34[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_34.4bpp");
-static const u8 sQwilfishGfx34_1[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_34_1.4bpp");
-static const u8 sQwilfishGfx34_2[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_34_2.4bpp");
-static const u8 sQwilfishGfx34_3[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_34_3.4bpp");
+static const u8 sQwilfishGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_34.4bpp.lz");
+static const u8 sQwilfishGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_34_1.4bpp.lz");
+static const u8 sQwilfishGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_34_2.4bpp.lz");
+static const u8 sQwilfishGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_34_3.4bpp.lz");
 static const ax_sprite sQwilfishSprites34[] = {
 	{sQwilfishGfx34, ARRAY_COUNT(sQwilfishGfx34)}, 
 	{NULL, 32}, 
@@ -2528,67 +2528,67 @@ static const ax_sprite sQwilfishSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx35[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_35.4bpp");
+static const u8 sQwilfishGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_35.4bpp.lz");
 static const ax_sprite sQwilfishSprites35[] = {
 	{sQwilfishGfx35, ARRAY_COUNT(sQwilfishGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx36[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_36.4bpp");
+static const u8 sQwilfishGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_36.4bpp.lz");
 static const ax_sprite sQwilfishSprites36[] = {
 	{sQwilfishGfx36, ARRAY_COUNT(sQwilfishGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx37[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_37.4bpp");
+static const u8 sQwilfishGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_37.4bpp.lz");
 static const ax_sprite sQwilfishSprites37[] = {
 	{sQwilfishGfx37, ARRAY_COUNT(sQwilfishGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx38[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_38.4bpp");
+static const u8 sQwilfishGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_38.4bpp.lz");
 static const ax_sprite sQwilfishSprites38[] = {
 	{sQwilfishGfx38, ARRAY_COUNT(sQwilfishGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx39[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_39.4bpp");
+static const u8 sQwilfishGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_39.4bpp.lz");
 static const ax_sprite sQwilfishSprites39[] = {
 	{sQwilfishGfx39, ARRAY_COUNT(sQwilfishGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx40[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_40.4bpp");
+static const u8 sQwilfishGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_40.4bpp.lz");
 static const ax_sprite sQwilfishSprites40[] = {
 	{sQwilfishGfx40, ARRAY_COUNT(sQwilfishGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx41[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_41.4bpp");
+static const u8 sQwilfishGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_41.4bpp.lz");
 static const ax_sprite sQwilfishSprites41[] = {
 	{sQwilfishGfx41, ARRAY_COUNT(sQwilfishGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx42[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_42.4bpp");
+static const u8 sQwilfishGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_42.4bpp.lz");
 static const ax_sprite sQwilfishSprites42[] = {
 	{sQwilfishGfx42, ARRAY_COUNT(sQwilfishGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx43[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_43.4bpp");
+static const u8 sQwilfishGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_43.4bpp.lz");
 static const ax_sprite sQwilfishSprites43[] = {
 	{sQwilfishGfx43, ARRAY_COUNT(sQwilfishGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx44[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_44.4bpp");
+static const u8 sQwilfishGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_44.4bpp.lz");
 static const ax_sprite sQwilfishSprites44[] = {
 	{sQwilfishGfx44, ARRAY_COUNT(sQwilfishGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx45[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_45.4bpp");
+static const u8 sQwilfishGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_45.4bpp.lz");
 static const ax_sprite sQwilfishSprites45[] = {
 	{sQwilfishGfx45, ARRAY_COUNT(sQwilfishGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx46[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_46.4bpp");
+static const u8 sQwilfishGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_46.4bpp.lz");
 static const ax_sprite sQwilfishSprites46[] = {
 	{sQwilfishGfx46, ARRAY_COUNT(sQwilfishGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sQwilfishGfx47[] = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_47.4bpp");
+static const u8 sQwilfishGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/qwilfish/sprite_47.4bpp.lz");
 static const ax_sprite sQwilfishSprites47[] = {
 	{sQwilfishGfx47, ARRAY_COUNT(sQwilfishGfx47)}, 
 	{NULL, 0}

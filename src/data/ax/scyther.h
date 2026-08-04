@@ -2005,83 +2005,83 @@ static const ax_anim sScytherAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sScytherGfx1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_1.4bpp");
+static const u8 sScytherGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_1.4bpp.lz");
 static const ax_sprite sScytherSprites1[] = {
 	{sScytherGfx1, ARRAY_COUNT(sScytherGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx2[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_2.4bpp");
+static const u8 sScytherGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_2.4bpp.lz");
 static const ax_sprite sScytherSprites2[] = {
 	{sScytherGfx2, ARRAY_COUNT(sScytherGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx3[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_3.4bpp");
+static const u8 sScytherGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_3.4bpp.lz");
 static const ax_sprite sScytherSprites3[] = {
 	{sScytherGfx3, ARRAY_COUNT(sScytherGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx4[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_4.4bpp");
+static const u8 sScytherGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_4.4bpp.lz");
 static const ax_sprite sScytherSprites4[] = {
 	{sScytherGfx4, ARRAY_COUNT(sScytherGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx5[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_5.4bpp");
+static const u8 sScytherGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_5.4bpp.lz");
 static const ax_sprite sScytherSprites5[] = {
 	{sScytherGfx5, ARRAY_COUNT(sScytherGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx6[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_6.4bpp");
+static const u8 sScytherGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_6.4bpp.lz");
 static const ax_sprite sScytherSprites6[] = {
 	{sScytherGfx6, ARRAY_COUNT(sScytherGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx7[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_7.4bpp");
+static const u8 sScytherGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_7.4bpp.lz");
 static const ax_sprite sScytherSprites7[] = {
 	{sScytherGfx7, ARRAY_COUNT(sScytherGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx8[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_8.4bpp");
+static const u8 sScytherGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_8.4bpp.lz");
 static const ax_sprite sScytherSprites8[] = {
 	{sScytherGfx8, ARRAY_COUNT(sScytherGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx9[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_9.4bpp");
+static const u8 sScytherGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_9.4bpp.lz");
 static const ax_sprite sScytherSprites9[] = {
 	{sScytherGfx9, ARRAY_COUNT(sScytherGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx10[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_10.4bpp");
+static const u8 sScytherGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_10.4bpp.lz");
 static const ax_sprite sScytherSprites10[] = {
 	{sScytherGfx10, ARRAY_COUNT(sScytherGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx11[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_11.4bpp");
+static const u8 sScytherGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_11.4bpp.lz");
 static const ax_sprite sScytherSprites11[] = {
 	{sScytherGfx11, ARRAY_COUNT(sScytherGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx12[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_12.4bpp");
+static const u8 sScytherGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_12.4bpp.lz");
 static const ax_sprite sScytherSprites12[] = {
 	{sScytherGfx12, ARRAY_COUNT(sScytherGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx13[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_13.4bpp");
+static const u8 sScytherGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_13.4bpp.lz");
 static const ax_sprite sScytherSprites13[] = {
 	{sScytherGfx13, ARRAY_COUNT(sScytherGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx14[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_14.4bpp");
+static const u8 sScytherGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_14.4bpp.lz");
 static const ax_sprite sScytherSprites14[] = {
 	{sScytherGfx14, ARRAY_COUNT(sScytherGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx15[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_15.4bpp");
+static const u8 sScytherGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_15.4bpp.lz");
 static const ax_sprite sScytherSprites15[] = {
 	{sScytherGfx15, ARRAY_COUNT(sScytherGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx16[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_16.4bpp");
-static const u8 sScytherGfx16_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_16_1.4bpp");
+static const u8 sScytherGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_16.4bpp.lz");
+static const u8 sScytherGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_16_1.4bpp.lz");
 static const ax_sprite sScytherSprites16[] = {
 	{NULL, 32}, 
 	{sScytherGfx16, ARRAY_COUNT(sScytherGfx16)}, 
@@ -2090,8 +2090,8 @@ static const ax_sprite sScytherSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx17[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_17.4bpp");
-static const u8 sScytherGfx17_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_17_1.4bpp");
+static const u8 sScytherGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_17.4bpp.lz");
+static const u8 sScytherGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_17_1.4bpp.lz");
 static const ax_sprite sScytherSprites17[] = {
 	{NULL, 32}, 
 	{sScytherGfx17, ARRAY_COUNT(sScytherGfx17)}, 
@@ -2100,9 +2100,9 @@ static const ax_sprite sScytherSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx18[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_18.4bpp");
-static const u8 sScytherGfx18_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_18_1.4bpp");
-static const u8 sScytherGfx18_2[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_18_2.4bpp");
+static const u8 sScytherGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_18.4bpp.lz");
+static const u8 sScytherGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_18_1.4bpp.lz");
+static const u8 sScytherGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_18_2.4bpp.lz");
 static const ax_sprite sScytherSprites18[] = {
 	{NULL, 32}, 
 	{sScytherGfx18, ARRAY_COUNT(sScytherGfx18)}, 
@@ -2112,8 +2112,8 @@ static const ax_sprite sScytherSprites18[] = {
 	{sScytherGfx18_2, ARRAY_COUNT(sScytherGfx18_2)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx19[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_19.4bpp");
-static const u8 sScytherGfx19_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_19_1.4bpp");
+static const u8 sScytherGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_19.4bpp.lz");
+static const u8 sScytherGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_19_1.4bpp.lz");
 static const ax_sprite sScytherSprites19[] = {
 	{NULL, 32}, 
 	{sScytherGfx19, ARRAY_COUNT(sScytherGfx19)}, 
@@ -2122,9 +2122,9 @@ static const ax_sprite sScytherSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx20[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_20.4bpp");
-static const u8 sScytherGfx20_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_20_1.4bpp");
-static const u8 sScytherGfx20_2[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_20_2.4bpp");
+static const u8 sScytherGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_20.4bpp.lz");
+static const u8 sScytherGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_20_1.4bpp.lz");
+static const u8 sScytherGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_20_2.4bpp.lz");
 static const ax_sprite sScytherSprites20[] = {
 	{NULL, 32}, 
 	{sScytherGfx20, ARRAY_COUNT(sScytherGfx20)}, 
@@ -2135,8 +2135,8 @@ static const ax_sprite sScytherSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx21[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_21.4bpp");
-static const u8 sScytherGfx21_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_21_1.4bpp");
+static const u8 sScytherGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_21.4bpp.lz");
+static const u8 sScytherGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_21_1.4bpp.lz");
 static const ax_sprite sScytherSprites21[] = {
 	{sScytherGfx21, ARRAY_COUNT(sScytherGfx21)}, 
 	{NULL, 64}, 
@@ -2144,8 +2144,8 @@ static const ax_sprite sScytherSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx22[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_22.4bpp");
-static const u8 sScytherGfx22_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_22_1.4bpp");
+static const u8 sScytherGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_22.4bpp.lz");
+static const u8 sScytherGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_22_1.4bpp.lz");
 static const ax_sprite sScytherSprites22[] = {
 	{NULL, 192}, 
 	{sScytherGfx22, ARRAY_COUNT(sScytherGfx22)}, 
@@ -2153,8 +2153,8 @@ static const ax_sprite sScytherSprites22[] = {
 	{sScytherGfx22_1, ARRAY_COUNT(sScytherGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx23[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_23.4bpp");
-static const u8 sScytherGfx23_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_23_1.4bpp");
+static const u8 sScytherGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_23.4bpp.lz");
+static const u8 sScytherGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_23_1.4bpp.lz");
 static const ax_sprite sScytherSprites23[] = {
 	{NULL, 32}, 
 	{sScytherGfx23, ARRAY_COUNT(sScytherGfx23)}, 
@@ -2163,9 +2163,9 @@ static const ax_sprite sScytherSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx24[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_24.4bpp");
-static const u8 sScytherGfx24_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_24_1.4bpp");
-static const u8 sScytherGfx24_2[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_24_2.4bpp");
+static const u8 sScytherGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_24.4bpp.lz");
+static const u8 sScytherGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_24_1.4bpp.lz");
+static const u8 sScytherGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_24_2.4bpp.lz");
 static const ax_sprite sScytherSprites24[] = {
 	{NULL, 64}, 
 	{sScytherGfx24, ARRAY_COUNT(sScytherGfx24)}, 
@@ -2175,10 +2175,10 @@ static const ax_sprite sScytherSprites24[] = {
 	{sScytherGfx24_2, ARRAY_COUNT(sScytherGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx25[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_25.4bpp");
-static const u8 sScytherGfx25_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_25_1.4bpp");
-static const u8 sScytherGfx25_2[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_25_2.4bpp");
-static const u8 sScytherGfx25_3[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_25_3.4bpp");
+static const u8 sScytherGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_25.4bpp.lz");
+static const u8 sScytherGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_25_1.4bpp.lz");
+static const u8 sScytherGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_25_2.4bpp.lz");
+static const u8 sScytherGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_25_3.4bpp.lz");
 static const ax_sprite sScytherSprites25[] = {
 	{sScytherGfx25, ARRAY_COUNT(sScytherGfx25)}, 
 	{NULL, 32}, 
@@ -2189,9 +2189,9 @@ static const ax_sprite sScytherSprites25[] = {
 	{sScytherGfx25_3, ARRAY_COUNT(sScytherGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx26[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_26.4bpp");
-static const u8 sScytherGfx26_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_26_1.4bpp");
-static const u8 sScytherGfx26_2[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_26_2.4bpp");
+static const u8 sScytherGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_26.4bpp.lz");
+static const u8 sScytherGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_26_1.4bpp.lz");
+static const u8 sScytherGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_26_2.4bpp.lz");
 static const ax_sprite sScytherSprites26[] = {
 	{NULL, 32}, 
 	{sScytherGfx26, ARRAY_COUNT(sScytherGfx26)}, 
@@ -2202,29 +2202,29 @@ static const ax_sprite sScytherSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx27[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_27.4bpp");
+static const u8 sScytherGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_27.4bpp.lz");
 static const ax_sprite sScytherSprites27[] = {
 	{sScytherGfx27, ARRAY_COUNT(sScytherGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx28[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_28.4bpp");
-static const u8 sScytherGfx28_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_28_1.4bpp");
+static const u8 sScytherGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_28.4bpp.lz");
+static const u8 sScytherGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_28_1.4bpp.lz");
 static const ax_sprite sScytherSprites28[] = {
 	{sScytherGfx28, ARRAY_COUNT(sScytherGfx28)}, 
 	{NULL, 32}, 
 	{sScytherGfx28_1, ARRAY_COUNT(sScytherGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx29[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_29.4bpp");
-static const u8 sScytherGfx29_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_29_1.4bpp");
+static const u8 sScytherGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_29.4bpp.lz");
+static const u8 sScytherGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_29_1.4bpp.lz");
 static const ax_sprite sScytherSprites29[] = {
 	{sScytherGfx29, ARRAY_COUNT(sScytherGfx29)}, 
 	{NULL, 32}, 
 	{sScytherGfx29_1, ARRAY_COUNT(sScytherGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx30[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_30.4bpp");
-static const u8 sScytherGfx30_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_30_1.4bpp");
+static const u8 sScytherGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_30.4bpp.lz");
+static const u8 sScytherGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_30_1.4bpp.lz");
 static const ax_sprite sScytherSprites30[] = {
 	{NULL, 32}, 
 	{sScytherGfx30, ARRAY_COUNT(sScytherGfx30)}, 
@@ -2232,26 +2232,26 @@ static const ax_sprite sScytherSprites30[] = {
 	{sScytherGfx30_1, ARRAY_COUNT(sScytherGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx31[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_31.4bpp");
+static const u8 sScytherGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_31.4bpp.lz");
 static const ax_sprite sScytherSprites31[] = {
 	{sScytherGfx31, ARRAY_COUNT(sScytherGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx32[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_32.4bpp");
+static const u8 sScytherGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_32.4bpp.lz");
 static const ax_sprite sScytherSprites32[] = {
 	{sScytherGfx32, ARRAY_COUNT(sScytherGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx33[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_33.4bpp");
-static const u8 sScytherGfx33_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_33_1.4bpp");
+static const u8 sScytherGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_33.4bpp.lz");
+static const u8 sScytherGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_33_1.4bpp.lz");
 static const ax_sprite sScytherSprites33[] = {
 	{sScytherGfx33, ARRAY_COUNT(sScytherGfx33)}, 
 	{NULL, 32}, 
 	{sScytherGfx33_1, ARRAY_COUNT(sScytherGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx34[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_34.4bpp");
-static const u8 sScytherGfx34_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_34_1.4bpp");
+static const u8 sScytherGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_34.4bpp.lz");
+static const u8 sScytherGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_34_1.4bpp.lz");
 static const ax_sprite sScytherSprites34[] = {
 	{NULL, 128}, 
 	{sScytherGfx34, ARRAY_COUNT(sScytherGfx34)}, 
@@ -2260,25 +2260,25 @@ static const ax_sprite sScytherSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx35[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_35.4bpp");
+static const u8 sScytherGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_35.4bpp.lz");
 static const ax_sprite sScytherSprites35[] = {
 	{sScytherGfx35, ARRAY_COUNT(sScytherGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx36[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_36.4bpp");
+static const u8 sScytherGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_36.4bpp.lz");
 static const ax_sprite sScytherSprites36[] = {
 	{sScytherGfx36, ARRAY_COUNT(sScytherGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx37[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_37.4bpp");
+static const u8 sScytherGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_37.4bpp.lz");
 static const ax_sprite sScytherSprites37[] = {
 	{sScytherGfx37, ARRAY_COUNT(sScytherGfx37)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx38[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_38.4bpp");
-static const u8 sScytherGfx38_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_38_1.4bpp");
-static const u8 sScytherGfx38_2[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_38_2.4bpp");
+static const u8 sScytherGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_38.4bpp.lz");
+static const u8 sScytherGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_38_1.4bpp.lz");
+static const u8 sScytherGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_38_2.4bpp.lz");
 static const ax_sprite sScytherSprites38[] = {
 	{sScytherGfx38, ARRAY_COUNT(sScytherGfx38)}, 
 	{NULL, 32}, 
@@ -2287,10 +2287,10 @@ static const ax_sprite sScytherSprites38[] = {
 	{sScytherGfx38_2, ARRAY_COUNT(sScytherGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx39[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_39.4bpp");
-static const u8 sScytherGfx39_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_39_1.4bpp");
-static const u8 sScytherGfx39_2[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_39_2.4bpp");
-static const u8 sScytherGfx39_3[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_39_3.4bpp");
+static const u8 sScytherGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_39.4bpp.lz");
+static const u8 sScytherGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_39_1.4bpp.lz");
+static const u8 sScytherGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_39_2.4bpp.lz");
+static const u8 sScytherGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_39_3.4bpp.lz");
 static const ax_sprite sScytherSprites39[] = {
 	{NULL, 32}, 
 	{sScytherGfx39, ARRAY_COUNT(sScytherGfx39)}, 
@@ -2302,21 +2302,21 @@ static const ax_sprite sScytherSprites39[] = {
 	{sScytherGfx39_3, ARRAY_COUNT(sScytherGfx39_3)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx40[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_40.4bpp");
-static const u8 sScytherGfx40_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_40_1.4bpp");
+static const u8 sScytherGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_40.4bpp.lz");
+static const u8 sScytherGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_40_1.4bpp.lz");
 static const ax_sprite sScytherSprites40[] = {
 	{sScytherGfx40, ARRAY_COUNT(sScytherGfx40)}, 
 	{NULL, 32}, 
 	{sScytherGfx40_1, ARRAY_COUNT(sScytherGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx41[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_41.4bpp");
+static const u8 sScytherGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_41.4bpp.lz");
 static const ax_sprite sScytherSprites41[] = {
 	{sScytherGfx41, ARRAY_COUNT(sScytherGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx42[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_42.4bpp");
-static const u8 sScytherGfx42_1[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_42_1.4bpp");
+static const u8 sScytherGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_42.4bpp.lz");
+static const u8 sScytherGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_42_1.4bpp.lz");
 static const ax_sprite sScytherSprites42[] = {
 	{sScytherGfx42, ARRAY_COUNT(sScytherGfx42)}, 
 	{NULL, 32}, 
@@ -2324,37 +2324,37 @@ static const ax_sprite sScytherSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx43[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_43.4bpp");
+static const u8 sScytherGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_43.4bpp.lz");
 static const ax_sprite sScytherSprites43[] = {
 	{sScytherGfx43, ARRAY_COUNT(sScytherGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx44[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_44.4bpp");
+static const u8 sScytherGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_44.4bpp.lz");
 static const ax_sprite sScytherSprites44[] = {
 	{sScytherGfx44, ARRAY_COUNT(sScytherGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx45[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_45.4bpp");
+static const u8 sScytherGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_45.4bpp.lz");
 static const ax_sprite sScytherSprites45[] = {
 	{sScytherGfx45, ARRAY_COUNT(sScytherGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx46[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_46.4bpp");
+static const u8 sScytherGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_46.4bpp.lz");
 static const ax_sprite sScytherSprites46[] = {
 	{sScytherGfx46, ARRAY_COUNT(sScytherGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx47[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_47.4bpp");
+static const u8 sScytherGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_47.4bpp.lz");
 static const ax_sprite sScytherSprites47[] = {
 	{sScytherGfx47, ARRAY_COUNT(sScytherGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx48[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_48.4bpp");
+static const u8 sScytherGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_48.4bpp.lz");
 static const ax_sprite sScytherSprites48[] = {
 	{sScytherGfx48, ARRAY_COUNT(sScytherGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sScytherGfx49[] = INCBIN_U8("graphics/ax/mon/scyther/sprite_49.4bpp");
+static const u8 sScytherGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/scyther/sprite_49.4bpp.lz");
 static const ax_sprite sScytherSprites49[] = {
 	{sScytherGfx49, ARRAY_COUNT(sScytherGfx49)}, 
 	{NULL, 0}

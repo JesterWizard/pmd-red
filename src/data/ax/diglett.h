@@ -3927,53 +3927,53 @@ static const ax_anim sDiglettAnims_15_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDiglettGfx1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_1.4bpp");
+static const u8 sDiglettGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_1.4bpp.lz");
 static const ax_sprite sDiglettSprites1[] = {
 	{sDiglettGfx1, ARRAY_COUNT(sDiglettGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx2[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_2.4bpp");
+static const u8 sDiglettGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_2.4bpp.lz");
 static const ax_sprite sDiglettSprites2[] = {
 	{sDiglettGfx2, ARRAY_COUNT(sDiglettGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx3[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_3.4bpp");
+static const u8 sDiglettGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_3.4bpp.lz");
 static const ax_sprite sDiglettSprites3[] = {
 	{sDiglettGfx3, ARRAY_COUNT(sDiglettGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx4[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_4.4bpp");
+static const u8 sDiglettGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_4.4bpp.lz");
 static const ax_sprite sDiglettSprites4[] = {
 	{sDiglettGfx4, ARRAY_COUNT(sDiglettGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx5[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_5.4bpp");
+static const u8 sDiglettGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_5.4bpp.lz");
 static const ax_sprite sDiglettSprites5[] = {
 	{sDiglettGfx5, ARRAY_COUNT(sDiglettGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx6[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_6.4bpp");
+static const u8 sDiglettGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_6.4bpp.lz");
 static const ax_sprite sDiglettSprites6[] = {
 	{sDiglettGfx6, ARRAY_COUNT(sDiglettGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx7[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_7.4bpp");
+static const u8 sDiglettGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_7.4bpp.lz");
 static const ax_sprite sDiglettSprites7[] = {
 	{sDiglettGfx7, ARRAY_COUNT(sDiglettGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx8[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_8.4bpp");
+static const u8 sDiglettGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_8.4bpp.lz");
 static const ax_sprite sDiglettSprites8[] = {
 	{sDiglettGfx8, ARRAY_COUNT(sDiglettGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx9[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_9.4bpp");
+static const u8 sDiglettGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_9.4bpp.lz");
 static const ax_sprite sDiglettSprites9[] = {
 	{sDiglettGfx9, ARRAY_COUNT(sDiglettGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx10[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_10.4bpp");
-static const u8 sDiglettGfx10_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_10_1.4bpp");
+static const u8 sDiglettGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_10.4bpp.lz");
+static const u8 sDiglettGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_10_1.4bpp.lz");
 static const ax_sprite sDiglettSprites10[] = {
 	{sDiglettGfx10, ARRAY_COUNT(sDiglettGfx10)}, 
 	{NULL, 32}, 
@@ -3981,8 +3981,8 @@ static const ax_sprite sDiglettSprites10[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx11[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_11.4bpp");
-static const u8 sDiglettGfx11_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_11_1.4bpp");
+static const u8 sDiglettGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_11.4bpp.lz");
+static const u8 sDiglettGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_11_1.4bpp.lz");
 static const ax_sprite sDiglettSprites11[] = {
 	{sDiglettGfx11, ARRAY_COUNT(sDiglettGfx11)}, 
 	{NULL, 32}, 
@@ -3990,9 +3990,9 @@ static const ax_sprite sDiglettSprites11[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx12[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_12.4bpp");
-static const u8 sDiglettGfx12_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_12_1.4bpp");
-static const u8 sDiglettGfx12_2[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_12_2.4bpp");
+static const u8 sDiglettGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_12.4bpp.lz");
+static const u8 sDiglettGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_12_1.4bpp.lz");
+static const u8 sDiglettGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_12_2.4bpp.lz");
 static const ax_sprite sDiglettSprites12[] = {
 	{sDiglettGfx12, ARRAY_COUNT(sDiglettGfx12)}, 
 	{NULL, 32}, 
@@ -4002,8 +4002,8 @@ static const ax_sprite sDiglettSprites12[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx13[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_13.4bpp");
-static const u8 sDiglettGfx13_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_13_1.4bpp");
+static const u8 sDiglettGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_13.4bpp.lz");
+static const u8 sDiglettGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_13_1.4bpp.lz");
 static const ax_sprite sDiglettSprites13[] = {
 	{sDiglettGfx13, ARRAY_COUNT(sDiglettGfx13)}, 
 	{NULL, 32}, 
@@ -4011,8 +4011,8 @@ static const ax_sprite sDiglettSprites13[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx14[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_14.4bpp");
-static const u8 sDiglettGfx14_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_14_1.4bpp");
+static const u8 sDiglettGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_14.4bpp.lz");
+static const u8 sDiglettGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_14_1.4bpp.lz");
 static const ax_sprite sDiglettSprites14[] = {
 	{sDiglettGfx14, ARRAY_COUNT(sDiglettGfx14)}, 
 	{NULL, 32}, 
@@ -4020,9 +4020,9 @@ static const ax_sprite sDiglettSprites14[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx15[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_15.4bpp");
-static const u8 sDiglettGfx15_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_15_1.4bpp");
-static const u8 sDiglettGfx15_2[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_15_2.4bpp");
+static const u8 sDiglettGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_15.4bpp.lz");
+static const u8 sDiglettGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_15_1.4bpp.lz");
+static const u8 sDiglettGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_15_2.4bpp.lz");
 static const ax_sprite sDiglettSprites15[] = {
 	{sDiglettGfx15, ARRAY_COUNT(sDiglettGfx15)}, 
 	{NULL, 32}, 
@@ -4032,8 +4032,8 @@ static const ax_sprite sDiglettSprites15[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx16[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_16.4bpp");
-static const u8 sDiglettGfx16_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_16_1.4bpp");
+static const u8 sDiglettGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_16.4bpp.lz");
+static const u8 sDiglettGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_16_1.4bpp.lz");
 static const ax_sprite sDiglettSprites16[] = {
 	{sDiglettGfx16, ARRAY_COUNT(sDiglettGfx16)}, 
 	{NULL, 32}, 
@@ -4041,8 +4041,8 @@ static const ax_sprite sDiglettSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx17[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_17.4bpp");
-static const u8 sDiglettGfx17_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_17_1.4bpp");
+static const u8 sDiglettGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_17.4bpp.lz");
+static const u8 sDiglettGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_17_1.4bpp.lz");
 static const ax_sprite sDiglettSprites17[] = {
 	{sDiglettGfx17, ARRAY_COUNT(sDiglettGfx17)}, 
 	{NULL, 32}, 
@@ -4050,9 +4050,9 @@ static const ax_sprite sDiglettSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx18[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_18.4bpp");
-static const u8 sDiglettGfx18_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_18_1.4bpp");
-static const u8 sDiglettGfx18_2[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_18_2.4bpp");
+static const u8 sDiglettGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_18.4bpp.lz");
+static const u8 sDiglettGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_18_1.4bpp.lz");
+static const u8 sDiglettGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_18_2.4bpp.lz");
 static const ax_sprite sDiglettSprites18[] = {
 	{sDiglettGfx18, ARRAY_COUNT(sDiglettGfx18)}, 
 	{NULL, 32}, 
@@ -4062,8 +4062,8 @@ static const ax_sprite sDiglettSprites18[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx19[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_19.4bpp");
-static const u8 sDiglettGfx19_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_19_1.4bpp");
+static const u8 sDiglettGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_19.4bpp.lz");
+static const u8 sDiglettGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_19_1.4bpp.lz");
 static const ax_sprite sDiglettSprites19[] = {
 	{sDiglettGfx19, ARRAY_COUNT(sDiglettGfx19)}, 
 	{NULL, 32}, 
@@ -4071,8 +4071,8 @@ static const ax_sprite sDiglettSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx20[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_20.4bpp");
-static const u8 sDiglettGfx20_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_20_1.4bpp");
+static const u8 sDiglettGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_20.4bpp.lz");
+static const u8 sDiglettGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_20_1.4bpp.lz");
 static const ax_sprite sDiglettSprites20[] = {
 	{sDiglettGfx20, ARRAY_COUNT(sDiglettGfx20)}, 
 	{NULL, 32}, 
@@ -4080,9 +4080,9 @@ static const ax_sprite sDiglettSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx21[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_21.4bpp");
-static const u8 sDiglettGfx21_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_21_1.4bpp");
-static const u8 sDiglettGfx21_2[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_21_2.4bpp");
+static const u8 sDiglettGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_21.4bpp.lz");
+static const u8 sDiglettGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_21_1.4bpp.lz");
+static const u8 sDiglettGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_21_2.4bpp.lz");
 static const ax_sprite sDiglettSprites21[] = {
 	{sDiglettGfx21, ARRAY_COUNT(sDiglettGfx21)}, 
 	{NULL, 32}, 
@@ -4092,8 +4092,8 @@ static const ax_sprite sDiglettSprites21[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx22[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_22.4bpp");
-static const u8 sDiglettGfx22_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_22_1.4bpp");
+static const u8 sDiglettGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_22.4bpp.lz");
+static const u8 sDiglettGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_22_1.4bpp.lz");
 static const ax_sprite sDiglettSprites22[] = {
 	{sDiglettGfx22, ARRAY_COUNT(sDiglettGfx22)}, 
 	{NULL, 32}, 
@@ -4101,8 +4101,8 @@ static const ax_sprite sDiglettSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx23[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_23.4bpp");
-static const u8 sDiglettGfx23_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_23_1.4bpp");
+static const u8 sDiglettGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_23.4bpp.lz");
+static const u8 sDiglettGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_23_1.4bpp.lz");
 static const ax_sprite sDiglettSprites23[] = {
 	{sDiglettGfx23, ARRAY_COUNT(sDiglettGfx23)}, 
 	{NULL, 32}, 
@@ -4110,8 +4110,8 @@ static const ax_sprite sDiglettSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx24[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_24.4bpp");
-static const u8 sDiglettGfx24_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_24_1.4bpp");
+static const u8 sDiglettGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_24.4bpp.lz");
+static const u8 sDiglettGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_24_1.4bpp.lz");
 static const ax_sprite sDiglettSprites24[] = {
 	{sDiglettGfx24, ARRAY_COUNT(sDiglettGfx24)}, 
 	{NULL, 32}, 
@@ -4119,8 +4119,8 @@ static const ax_sprite sDiglettSprites24[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx25[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_25.4bpp");
-static const u8 sDiglettGfx25_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_25_1.4bpp");
+static const u8 sDiglettGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_25.4bpp.lz");
+static const u8 sDiglettGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_25_1.4bpp.lz");
 static const ax_sprite sDiglettSprites25[] = {
 	{sDiglettGfx25, ARRAY_COUNT(sDiglettGfx25)}, 
 	{NULL, 32}, 
@@ -4128,8 +4128,8 @@ static const ax_sprite sDiglettSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx26[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_26.4bpp");
-static const u8 sDiglettGfx26_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_26_1.4bpp");
+static const u8 sDiglettGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_26.4bpp.lz");
+static const u8 sDiglettGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_26_1.4bpp.lz");
 static const ax_sprite sDiglettSprites26[] = {
 	{sDiglettGfx26, ARRAY_COUNT(sDiglettGfx26)}, 
 	{NULL, 32}, 
@@ -4137,8 +4137,8 @@ static const ax_sprite sDiglettSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx27[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_27.4bpp");
-static const u8 sDiglettGfx27_1[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_27_1.4bpp");
+static const u8 sDiglettGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_27.4bpp.lz");
+static const u8 sDiglettGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_27_1.4bpp.lz");
 static const ax_sprite sDiglettSprites27[] = {
 	{sDiglettGfx27, ARRAY_COUNT(sDiglettGfx27)}, 
 	{NULL, 32}, 
@@ -4146,92 +4146,92 @@ static const ax_sprite sDiglettSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx28[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_28.4bpp");
+static const u8 sDiglettGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_28.4bpp.lz");
 static const ax_sprite sDiglettSprites28[] = {
 	{sDiglettGfx28, ARRAY_COUNT(sDiglettGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx29[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_29.4bpp");
+static const u8 sDiglettGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_29.4bpp.lz");
 static const ax_sprite sDiglettSprites29[] = {
 	{sDiglettGfx29, ARRAY_COUNT(sDiglettGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx30[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_30.4bpp");
+static const u8 sDiglettGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_30.4bpp.lz");
 static const ax_sprite sDiglettSprites30[] = {
 	{sDiglettGfx30, ARRAY_COUNT(sDiglettGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx31[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_31.4bpp");
+static const u8 sDiglettGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_31.4bpp.lz");
 static const ax_sprite sDiglettSprites31[] = {
 	{sDiglettGfx31, ARRAY_COUNT(sDiglettGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx32[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_32.4bpp");
+static const u8 sDiglettGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_32.4bpp.lz");
 static const ax_sprite sDiglettSprites32[] = {
 	{sDiglettGfx32, ARRAY_COUNT(sDiglettGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx33[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_33.4bpp");
+static const u8 sDiglettGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_33.4bpp.lz");
 static const ax_sprite sDiglettSprites33[] = {
 	{sDiglettGfx33, ARRAY_COUNT(sDiglettGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx34[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_34.4bpp");
+static const u8 sDiglettGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_34.4bpp.lz");
 static const ax_sprite sDiglettSprites34[] = {
 	{sDiglettGfx34, ARRAY_COUNT(sDiglettGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx35[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_35.4bpp");
+static const u8 sDiglettGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_35.4bpp.lz");
 static const ax_sprite sDiglettSprites35[] = {
 	{sDiglettGfx35, ARRAY_COUNT(sDiglettGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx36[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_36.4bpp");
+static const u8 sDiglettGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_36.4bpp.lz");
 static const ax_sprite sDiglettSprites36[] = {
 	{sDiglettGfx36, ARRAY_COUNT(sDiglettGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx37[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_37.4bpp");
+static const u8 sDiglettGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_37.4bpp.lz");
 static const ax_sprite sDiglettSprites37[] = {
 	{sDiglettGfx37, ARRAY_COUNT(sDiglettGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx38[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_38.4bpp");
+static const u8 sDiglettGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_38.4bpp.lz");
 static const ax_sprite sDiglettSprites38[] = {
 	{sDiglettGfx38, ARRAY_COUNT(sDiglettGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx39[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_39.4bpp");
+static const u8 sDiglettGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_39.4bpp.lz");
 static const ax_sprite sDiglettSprites39[] = {
 	{sDiglettGfx39, ARRAY_COUNT(sDiglettGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx40[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_40.4bpp");
+static const u8 sDiglettGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_40.4bpp.lz");
 static const ax_sprite sDiglettSprites40[] = {
 	{sDiglettGfx40, ARRAY_COUNT(sDiglettGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx41[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_41.4bpp");
+static const u8 sDiglettGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_41.4bpp.lz");
 static const ax_sprite sDiglettSprites41[] = {
 	{sDiglettGfx41, ARRAY_COUNT(sDiglettGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx42[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_42.4bpp");
+static const u8 sDiglettGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_42.4bpp.lz");
 static const ax_sprite sDiglettSprites42[] = {
 	{sDiglettGfx42, ARRAY_COUNT(sDiglettGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx43[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_43.4bpp");
+static const u8 sDiglettGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_43.4bpp.lz");
 static const ax_sprite sDiglettSprites43[] = {
 	{sDiglettGfx43, ARRAY_COUNT(sDiglettGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx44[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_44.4bpp");
+static const u8 sDiglettGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_44.4bpp.lz");
 static const ax_sprite sDiglettSprites44[] = {
 	{sDiglettGfx44, ARRAY_COUNT(sDiglettGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sDiglettGfx45[] = INCBIN_U8("graphics/ax/mon/diglett/sprite_45.4bpp");
+static const u8 sDiglettGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/diglett/sprite_45.4bpp.lz");
 static const ax_sprite sDiglettSprites45[] = {
 	{sDiglettGfx45, ARRAY_COUNT(sDiglettGfx45)}, 
 	{NULL, 0}

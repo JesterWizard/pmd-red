@@ -2551,84 +2551,84 @@ static const ax_anim sKrabbyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKrabbyGfx1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_1.4bpp");
+static const u8 sKrabbyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_1.4bpp.lz");
 static const ax_sprite sKrabbySprites1[] = {
 	{sKrabbyGfx1, ARRAY_COUNT(sKrabbyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_2.4bpp");
+static const u8 sKrabbyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_2.4bpp.lz");
 static const ax_sprite sKrabbySprites2[] = {
 	{sKrabbyGfx2, ARRAY_COUNT(sKrabbyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx3[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_3.4bpp");
+static const u8 sKrabbyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_3.4bpp.lz");
 static const ax_sprite sKrabbySprites3[] = {
 	{sKrabbyGfx3, ARRAY_COUNT(sKrabbyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx4[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_4.4bpp");
+static const u8 sKrabbyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_4.4bpp.lz");
 static const ax_sprite sKrabbySprites4[] = {
 	{sKrabbyGfx4, ARRAY_COUNT(sKrabbyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx5[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_5.4bpp");
+static const u8 sKrabbyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_5.4bpp.lz");
 static const ax_sprite sKrabbySprites5[] = {
 	{sKrabbyGfx5, ARRAY_COUNT(sKrabbyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx6[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_6.4bpp");
+static const u8 sKrabbyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_6.4bpp.lz");
 static const ax_sprite sKrabbySprites6[] = {
 	{sKrabbyGfx6, ARRAY_COUNT(sKrabbyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx7[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_7.4bpp");
+static const u8 sKrabbyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_7.4bpp.lz");
 static const ax_sprite sKrabbySprites7[] = {
 	{sKrabbyGfx7, ARRAY_COUNT(sKrabbyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx8[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_8.4bpp");
+static const u8 sKrabbyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_8.4bpp.lz");
 static const ax_sprite sKrabbySprites8[] = {
 	{sKrabbyGfx8, ARRAY_COUNT(sKrabbyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx9[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_9.4bpp");
+static const u8 sKrabbyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_9.4bpp.lz");
 static const ax_sprite sKrabbySprites9[] = {
 	{sKrabbyGfx9, ARRAY_COUNT(sKrabbyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx10[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_10.4bpp");
+static const u8 sKrabbyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_10.4bpp.lz");
 static const ax_sprite sKrabbySprites10[] = {
 	{sKrabbyGfx10, ARRAY_COUNT(sKrabbyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx11[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_11.4bpp");
+static const u8 sKrabbyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_11.4bpp.lz");
 static const ax_sprite sKrabbySprites11[] = {
 	{sKrabbyGfx11, ARRAY_COUNT(sKrabbyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx12[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_12.4bpp");
+static const u8 sKrabbyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_12.4bpp.lz");
 static const ax_sprite sKrabbySprites12[] = {
 	{sKrabbyGfx12, ARRAY_COUNT(sKrabbyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx13[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_13.4bpp");
+static const u8 sKrabbyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_13.4bpp.lz");
 static const ax_sprite sKrabbySprites13[] = {
 	{sKrabbyGfx13, ARRAY_COUNT(sKrabbyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx14[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_14.4bpp");
+static const u8 sKrabbyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_14.4bpp.lz");
 static const ax_sprite sKrabbySprites14[] = {
 	{sKrabbyGfx14, ARRAY_COUNT(sKrabbyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx15[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_15.4bpp");
+static const u8 sKrabbyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_15.4bpp.lz");
 static const ax_sprite sKrabbySprites15[] = {
 	{sKrabbyGfx15, ARRAY_COUNT(sKrabbyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx16[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_16.4bpp");
-static const u8 sKrabbyGfx16_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_16_1.4bpp");
-static const u8 sKrabbyGfx16_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_16_2.4bpp");
+static const u8 sKrabbyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_16.4bpp.lz");
+static const u8 sKrabbyGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_16_1.4bpp.lz");
+static const u8 sKrabbyGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_16_2.4bpp.lz");
 static const ax_sprite sKrabbySprites16[] = {
 	{sKrabbyGfx16, ARRAY_COUNT(sKrabbyGfx16)}, 
 	{NULL, 32}, 
@@ -2638,9 +2638,9 @@ static const ax_sprite sKrabbySprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx17[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_17.4bpp");
-static const u8 sKrabbyGfx17_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_17_1.4bpp");
-static const u8 sKrabbyGfx17_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_17_2.4bpp");
+static const u8 sKrabbyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_17.4bpp.lz");
+static const u8 sKrabbyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_17_1.4bpp.lz");
+static const u8 sKrabbyGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_17_2.4bpp.lz");
 static const ax_sprite sKrabbySprites17[] = {
 	{sKrabbyGfx17, ARRAY_COUNT(sKrabbyGfx17)}, 
 	{NULL, 32}, 
@@ -2650,10 +2650,10 @@ static const ax_sprite sKrabbySprites17[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx18[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_18.4bpp");
-static const u8 sKrabbyGfx18_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_18_1.4bpp");
-static const u8 sKrabbyGfx18_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_18_2.4bpp");
-static const u8 sKrabbyGfx18_3[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_18_3.4bpp");
+static const u8 sKrabbyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_18.4bpp.lz");
+static const u8 sKrabbyGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_18_1.4bpp.lz");
+static const u8 sKrabbyGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_18_2.4bpp.lz");
+static const u8 sKrabbyGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_18_3.4bpp.lz");
 static const ax_sprite sKrabbySprites18[] = {
 	{sKrabbyGfx18, ARRAY_COUNT(sKrabbyGfx18)}, 
 	{NULL, 64}, 
@@ -2665,9 +2665,9 @@ static const ax_sprite sKrabbySprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx19[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_19.4bpp");
-static const u8 sKrabbyGfx19_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_19_1.4bpp");
-static const u8 sKrabbyGfx19_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_19_2.4bpp");
+static const u8 sKrabbyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_19.4bpp.lz");
+static const u8 sKrabbyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_19_1.4bpp.lz");
+static const u8 sKrabbyGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_19_2.4bpp.lz");
 static const ax_sprite sKrabbySprites19[] = {
 	{sKrabbyGfx19, ARRAY_COUNT(sKrabbyGfx19)}, 
 	{NULL, 32}, 
@@ -2677,10 +2677,10 @@ static const ax_sprite sKrabbySprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx20[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_20.4bpp");
-static const u8 sKrabbyGfx20_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_20_1.4bpp");
-static const u8 sKrabbyGfx20_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_20_2.4bpp");
-static const u8 sKrabbyGfx20_3[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_20_3.4bpp");
+static const u8 sKrabbyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_20.4bpp.lz");
+static const u8 sKrabbyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_20_1.4bpp.lz");
+static const u8 sKrabbyGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_20_2.4bpp.lz");
+static const u8 sKrabbyGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_20_3.4bpp.lz");
 static const ax_sprite sKrabbySprites20[] = {
 	{sKrabbyGfx20, ARRAY_COUNT(sKrabbyGfx20)}, 
 	{NULL, 32}, 
@@ -2692,22 +2692,22 @@ static const ax_sprite sKrabbySprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx21[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_21.4bpp");
+static const u8 sKrabbyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_21.4bpp.lz");
 static const ax_sprite sKrabbySprites21[] = {
 	{sKrabbyGfx21, ARRAY_COUNT(sKrabbyGfx21)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx22[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_22.4bpp");
-static const u8 sKrabbyGfx22_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_22_1.4bpp");
+static const u8 sKrabbyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_22.4bpp.lz");
+static const u8 sKrabbyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_22_1.4bpp.lz");
 static const ax_sprite sKrabbySprites22[] = {
 	{sKrabbyGfx22, ARRAY_COUNT(sKrabbyGfx22)}, 
 	{NULL, 64}, 
 	{sKrabbyGfx22_1, ARRAY_COUNT(sKrabbyGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx23[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_23.4bpp");
-static const u8 sKrabbyGfx23_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_23_1.4bpp");
+static const u8 sKrabbyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_23.4bpp.lz");
+static const u8 sKrabbyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_23_1.4bpp.lz");
 static const ax_sprite sKrabbySprites23[] = {
 	{NULL, 128}, 
 	{sKrabbyGfx23, ARRAY_COUNT(sKrabbyGfx23)}, 
@@ -2716,10 +2716,10 @@ static const ax_sprite sKrabbySprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx24[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_24.4bpp");
-static const u8 sKrabbyGfx24_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_24_1.4bpp");
-static const u8 sKrabbyGfx24_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_24_2.4bpp");
-static const u8 sKrabbyGfx24_3[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_24_3.4bpp");
+static const u8 sKrabbyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_24.4bpp.lz");
+static const u8 sKrabbyGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_24_1.4bpp.lz");
+static const u8 sKrabbyGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_24_2.4bpp.lz");
+static const u8 sKrabbyGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_24_3.4bpp.lz");
 static const ax_sprite sKrabbySprites24[] = {
 	{sKrabbyGfx24, ARRAY_COUNT(sKrabbyGfx24)}, 
 	{NULL, 32}, 
@@ -2731,9 +2731,9 @@ static const ax_sprite sKrabbySprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx25[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_25.4bpp");
-static const u8 sKrabbyGfx25_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_25_1.4bpp");
-static const u8 sKrabbyGfx25_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_25_2.4bpp");
+static const u8 sKrabbyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_25.4bpp.lz");
+static const u8 sKrabbyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_25_1.4bpp.lz");
+static const u8 sKrabbyGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_25_2.4bpp.lz");
 static const ax_sprite sKrabbySprites25[] = {
 	{sKrabbyGfx25, ARRAY_COUNT(sKrabbyGfx25)}, 
 	{NULL, 32}, 
@@ -2743,8 +2743,8 @@ static const ax_sprite sKrabbySprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx26[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_26.4bpp");
-static const u8 sKrabbyGfx26_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_26_1.4bpp");
+static const u8 sKrabbyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_26.4bpp.lz");
+static const u8 sKrabbyGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_26_1.4bpp.lz");
 static const ax_sprite sKrabbySprites26[] = {
 	{NULL, 160}, 
 	{sKrabbyGfx26, ARRAY_COUNT(sKrabbyGfx26)}, 
@@ -2753,10 +2753,10 @@ static const ax_sprite sKrabbySprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx27[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_27.4bpp");
-static const u8 sKrabbyGfx27_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_27_1.4bpp");
-static const u8 sKrabbyGfx27_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_27_2.4bpp");
-static const u8 sKrabbyGfx27_3[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_27_3.4bpp");
+static const u8 sKrabbyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_27.4bpp.lz");
+static const u8 sKrabbyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_27_1.4bpp.lz");
+static const u8 sKrabbyGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_27_2.4bpp.lz");
+static const u8 sKrabbyGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_27_3.4bpp.lz");
 static const ax_sprite sKrabbySprites27[] = {
 	{NULL, 32}, 
 	{sKrabbyGfx27, ARRAY_COUNT(sKrabbyGfx27)}, 
@@ -2769,9 +2769,9 @@ static const ax_sprite sKrabbySprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx28[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_28.4bpp");
-static const u8 sKrabbyGfx28_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_28_1.4bpp");
-static const u8 sKrabbyGfx28_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_28_2.4bpp");
+static const u8 sKrabbyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_28.4bpp.lz");
+static const u8 sKrabbyGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_28_1.4bpp.lz");
+static const u8 sKrabbyGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_28_2.4bpp.lz");
 static const ax_sprite sKrabbySprites28[] = {
 	{sKrabbyGfx28, ARRAY_COUNT(sKrabbyGfx28)}, 
 	{NULL, 32}, 
@@ -2781,8 +2781,8 @@ static const ax_sprite sKrabbySprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx29[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_29.4bpp");
-static const u8 sKrabbyGfx29_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_29_1.4bpp");
+static const u8 sKrabbyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_29.4bpp.lz");
+static const u8 sKrabbyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_29_1.4bpp.lz");
 static const ax_sprite sKrabbySprites29[] = {
 	{NULL, 128}, 
 	{sKrabbyGfx29, ARRAY_COUNT(sKrabbyGfx29)}, 
@@ -2791,9 +2791,9 @@ static const ax_sprite sKrabbySprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx30[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_30.4bpp");
-static const u8 sKrabbyGfx30_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_30_1.4bpp");
-static const u8 sKrabbyGfx30_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_30_2.4bpp");
+static const u8 sKrabbyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_30.4bpp.lz");
+static const u8 sKrabbyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_30_1.4bpp.lz");
+static const u8 sKrabbyGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_30_2.4bpp.lz");
 static const ax_sprite sKrabbySprites30[] = {
 	{sKrabbyGfx30, ARRAY_COUNT(sKrabbyGfx30)}, 
 	{NULL, 32}, 
@@ -2803,8 +2803,8 @@ static const ax_sprite sKrabbySprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx31[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_31.4bpp");
-static const u8 sKrabbyGfx31_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_31_1.4bpp");
+static const u8 sKrabbyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_31.4bpp.lz");
+static const u8 sKrabbyGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_31_1.4bpp.lz");
 static const ax_sprite sKrabbySprites31[] = {
 	{sKrabbyGfx31, ARRAY_COUNT(sKrabbyGfx31)}, 
 	{NULL, 32}, 
@@ -2812,10 +2812,10 @@ static const ax_sprite sKrabbySprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx32[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_32.4bpp");
-static const u8 sKrabbyGfx32_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_32_1.4bpp");
-static const u8 sKrabbyGfx32_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_32_2.4bpp");
-static const u8 sKrabbyGfx32_3[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_32_3.4bpp");
+static const u8 sKrabbyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_32.4bpp.lz");
+static const u8 sKrabbyGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_32_1.4bpp.lz");
+static const u8 sKrabbyGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_32_2.4bpp.lz");
+static const u8 sKrabbyGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_32_3.4bpp.lz");
 static const ax_sprite sKrabbySprites32[] = {
 	{sKrabbyGfx32, ARRAY_COUNT(sKrabbyGfx32)}, 
 	{NULL, 64}, 
@@ -2827,29 +2827,29 @@ static const ax_sprite sKrabbySprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx33[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_33.4bpp");
+static const u8 sKrabbyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_33.4bpp.lz");
 static const ax_sprite sKrabbySprites33[] = {
 	{sKrabbyGfx33, ARRAY_COUNT(sKrabbyGfx33)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx34[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_34.4bpp");
-static const u8 sKrabbyGfx34_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_34_1.4bpp");
+static const u8 sKrabbyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_34.4bpp.lz");
+static const u8 sKrabbyGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_34_1.4bpp.lz");
 static const ax_sprite sKrabbySprites34[] = {
 	{sKrabbyGfx34, ARRAY_COUNT(sKrabbyGfx34)}, 
 	{NULL, 64}, 
 	{sKrabbyGfx34_1, ARRAY_COUNT(sKrabbyGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx35[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_35.4bpp");
+static const u8 sKrabbyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_35.4bpp.lz");
 static const ax_sprite sKrabbySprites35[] = {
 	{NULL, 128}, 
 	{sKrabbyGfx35, ARRAY_COUNT(sKrabbyGfx35)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx36[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_36.4bpp");
-static const u8 sKrabbyGfx36_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_36_1.4bpp");
+static const u8 sKrabbyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_36.4bpp.lz");
+static const u8 sKrabbyGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_36_1.4bpp.lz");
 static const ax_sprite sKrabbySprites36[] = {
 	{NULL, 128}, 
 	{sKrabbyGfx36, ARRAY_COUNT(sKrabbyGfx36)}, 
@@ -2858,8 +2858,8 @@ static const ax_sprite sKrabbySprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx37[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_37.4bpp");
-static const u8 sKrabbyGfx37_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_37_1.4bpp");
+static const u8 sKrabbyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_37.4bpp.lz");
+static const u8 sKrabbyGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_37_1.4bpp.lz");
 static const ax_sprite sKrabbySprites37[] = {
 	{NULL, 160}, 
 	{sKrabbyGfx37, ARRAY_COUNT(sKrabbyGfx37)}, 
@@ -2868,8 +2868,8 @@ static const ax_sprite sKrabbySprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx38[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_38.4bpp");
-static const u8 sKrabbyGfx38_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_38_1.4bpp");
+static const u8 sKrabbyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_38.4bpp.lz");
+static const u8 sKrabbyGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_38_1.4bpp.lz");
 static const ax_sprite sKrabbySprites38[] = {
 	{NULL, 128}, 
 	{sKrabbyGfx38, ARRAY_COUNT(sKrabbyGfx38)}, 
@@ -2878,10 +2878,10 @@ static const ax_sprite sKrabbySprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx39[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_39.4bpp");
-static const u8 sKrabbyGfx39_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_39_1.4bpp");
-static const u8 sKrabbyGfx39_2[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_39_2.4bpp");
-static const u8 sKrabbyGfx39_3[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_39_3.4bpp");
+static const u8 sKrabbyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_39.4bpp.lz");
+static const u8 sKrabbyGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_39_1.4bpp.lz");
+static const u8 sKrabbyGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_39_2.4bpp.lz");
+static const u8 sKrabbyGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_39_3.4bpp.lz");
 static const ax_sprite sKrabbySprites39[] = {
 	{sKrabbyGfx39, ARRAY_COUNT(sKrabbyGfx39)}, 
 	{NULL, 64}, 
@@ -2893,8 +2893,8 @@ static const ax_sprite sKrabbySprites39[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx40[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_40.4bpp");
-static const u8 sKrabbyGfx40_1[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_40_1.4bpp");
+static const u8 sKrabbyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_40.4bpp.lz");
+static const u8 sKrabbyGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_40_1.4bpp.lz");
 static const ax_sprite sKrabbySprites40[] = {
 	{NULL, 32}, 
 	{sKrabbyGfx40, ARRAY_COUNT(sKrabbyGfx40)}, 
@@ -2903,37 +2903,37 @@ static const ax_sprite sKrabbySprites40[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx41[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_41.4bpp");
+static const u8 sKrabbyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_41.4bpp.lz");
 static const ax_sprite sKrabbySprites41[] = {
 	{sKrabbyGfx41, ARRAY_COUNT(sKrabbyGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx42[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_42.4bpp");
+static const u8 sKrabbyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_42.4bpp.lz");
 static const ax_sprite sKrabbySprites42[] = {
 	{sKrabbyGfx42, ARRAY_COUNT(sKrabbyGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx43[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_43.4bpp");
+static const u8 sKrabbyGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_43.4bpp.lz");
 static const ax_sprite sKrabbySprites43[] = {
 	{sKrabbyGfx43, ARRAY_COUNT(sKrabbyGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx44[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_44.4bpp");
+static const u8 sKrabbyGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_44.4bpp.lz");
 static const ax_sprite sKrabbySprites44[] = {
 	{sKrabbyGfx44, ARRAY_COUNT(sKrabbyGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx45[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_45.4bpp");
+static const u8 sKrabbyGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_45.4bpp.lz");
 static const ax_sprite sKrabbySprites45[] = {
 	{sKrabbyGfx45, ARRAY_COUNT(sKrabbyGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx46[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_46.4bpp");
+static const u8 sKrabbyGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_46.4bpp.lz");
 static const ax_sprite sKrabbySprites46[] = {
 	{sKrabbyGfx46, ARRAY_COUNT(sKrabbyGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sKrabbyGfx47[] = INCBIN_U8("graphics/ax/mon/krabby/sprite_47.4bpp");
+static const u8 sKrabbyGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/krabby/sprite_47.4bpp.lz");
 static const ax_sprite sKrabbySprites47[] = {
 	{sKrabbyGfx47, ARRAY_COUNT(sKrabbyGfx47)}, 
 	{NULL, 0}

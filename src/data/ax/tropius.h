@@ -2677,203 +2677,203 @@ static const ax_anim sTropiusAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTropiusGfx1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_1.4bpp");
+static const u8 sTropiusGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_1.4bpp.lz");
 static const ax_sprite sTropiusSprites1[] = {
 	{sTropiusGfx1, ARRAY_COUNT(sTropiusGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx2[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_2.4bpp");
+static const u8 sTropiusGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_2.4bpp.lz");
 static const ax_sprite sTropiusSprites2[] = {
 	{sTropiusGfx2, ARRAY_COUNT(sTropiusGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx3[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_3.4bpp");
+static const u8 sTropiusGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_3.4bpp.lz");
 static const ax_sprite sTropiusSprites3[] = {
 	{sTropiusGfx3, ARRAY_COUNT(sTropiusGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx4[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_4.4bpp");
+static const u8 sTropiusGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_4.4bpp.lz");
 static const ax_sprite sTropiusSprites4[] = {
 	{sTropiusGfx4, ARRAY_COUNT(sTropiusGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx5[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_5.4bpp");
+static const u8 sTropiusGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_5.4bpp.lz");
 static const ax_sprite sTropiusSprites5[] = {
 	{sTropiusGfx5, ARRAY_COUNT(sTropiusGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx6[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_6.4bpp");
+static const u8 sTropiusGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_6.4bpp.lz");
 static const ax_sprite sTropiusSprites6[] = {
 	{sTropiusGfx6, ARRAY_COUNT(sTropiusGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx7[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_7.4bpp");
+static const u8 sTropiusGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_7.4bpp.lz");
 static const ax_sprite sTropiusSprites7[] = {
 	{sTropiusGfx7, ARRAY_COUNT(sTropiusGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx8[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_8.4bpp");
+static const u8 sTropiusGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_8.4bpp.lz");
 static const ax_sprite sTropiusSprites8[] = {
 	{sTropiusGfx8, ARRAY_COUNT(sTropiusGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx9[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_9.4bpp");
+static const u8 sTropiusGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_9.4bpp.lz");
 static const ax_sprite sTropiusSprites9[] = {
 	{sTropiusGfx9, ARRAY_COUNT(sTropiusGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx10[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_10.4bpp");
+static const u8 sTropiusGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_10.4bpp.lz");
 static const ax_sprite sTropiusSprites10[] = {
 	{sTropiusGfx10, ARRAY_COUNT(sTropiusGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx11[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_11.4bpp");
+static const u8 sTropiusGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_11.4bpp.lz");
 static const ax_sprite sTropiusSprites11[] = {
 	{sTropiusGfx11, ARRAY_COUNT(sTropiusGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx12[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_12.4bpp");
+static const u8 sTropiusGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_12.4bpp.lz");
 static const ax_sprite sTropiusSprites12[] = {
 	{sTropiusGfx12, ARRAY_COUNT(sTropiusGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx13[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_13.4bpp");
+static const u8 sTropiusGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_13.4bpp.lz");
 static const ax_sprite sTropiusSprites13[] = {
 	{sTropiusGfx13, ARRAY_COUNT(sTropiusGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx14[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_14.4bpp");
+static const u8 sTropiusGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_14.4bpp.lz");
 static const ax_sprite sTropiusSprites14[] = {
 	{sTropiusGfx14, ARRAY_COUNT(sTropiusGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx15[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_15.4bpp");
+static const u8 sTropiusGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_15.4bpp.lz");
 static const ax_sprite sTropiusSprites15[] = {
 	{sTropiusGfx15, ARRAY_COUNT(sTropiusGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx16[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_16.4bpp");
+static const u8 sTropiusGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_16.4bpp.lz");
 static const ax_sprite sTropiusSprites16[] = {
 	{sTropiusGfx16, ARRAY_COUNT(sTropiusGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx17[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_17.4bpp");
+static const u8 sTropiusGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_17.4bpp.lz");
 static const ax_sprite sTropiusSprites17[] = {
 	{sTropiusGfx17, ARRAY_COUNT(sTropiusGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx18[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_18.4bpp");
+static const u8 sTropiusGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_18.4bpp.lz");
 static const ax_sprite sTropiusSprites18[] = {
 	{sTropiusGfx18, ARRAY_COUNT(sTropiusGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx19[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_19.4bpp");
+static const u8 sTropiusGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_19.4bpp.lz");
 static const ax_sprite sTropiusSprites19[] = {
 	{sTropiusGfx19, ARRAY_COUNT(sTropiusGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx20[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_20.4bpp");
+static const u8 sTropiusGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_20.4bpp.lz");
 static const ax_sprite sTropiusSprites20[] = {
 	{sTropiusGfx20, ARRAY_COUNT(sTropiusGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx21[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_21.4bpp");
+static const u8 sTropiusGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_21.4bpp.lz");
 static const ax_sprite sTropiusSprites21[] = {
 	{sTropiusGfx21, ARRAY_COUNT(sTropiusGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx22[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_22.4bpp");
+static const u8 sTropiusGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_22.4bpp.lz");
 static const ax_sprite sTropiusSprites22[] = {
 	{sTropiusGfx22, ARRAY_COUNT(sTropiusGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx23[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_23.4bpp");
+static const u8 sTropiusGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_23.4bpp.lz");
 static const ax_sprite sTropiusSprites23[] = {
 	{sTropiusGfx23, ARRAY_COUNT(sTropiusGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx24[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_24.4bpp");
+static const u8 sTropiusGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_24.4bpp.lz");
 static const ax_sprite sTropiusSprites24[] = {
 	{sTropiusGfx24, ARRAY_COUNT(sTropiusGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx25[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_25.4bpp");
+static const u8 sTropiusGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_25.4bpp.lz");
 static const ax_sprite sTropiusSprites25[] = {
 	{sTropiusGfx25, ARRAY_COUNT(sTropiusGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx26[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_26.4bpp");
+static const u8 sTropiusGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_26.4bpp.lz");
 static const ax_sprite sTropiusSprites26[] = {
 	{sTropiusGfx26, ARRAY_COUNT(sTropiusGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx27[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_27.4bpp");
+static const u8 sTropiusGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_27.4bpp.lz");
 static const ax_sprite sTropiusSprites27[] = {
 	{sTropiusGfx27, ARRAY_COUNT(sTropiusGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx28[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_28.4bpp");
+static const u8 sTropiusGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_28.4bpp.lz");
 static const ax_sprite sTropiusSprites28[] = {
 	{sTropiusGfx28, ARRAY_COUNT(sTropiusGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx29[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_29.4bpp");
+static const u8 sTropiusGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_29.4bpp.lz");
 static const ax_sprite sTropiusSprites29[] = {
 	{sTropiusGfx29, ARRAY_COUNT(sTropiusGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx30[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_30.4bpp");
+static const u8 sTropiusGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_30.4bpp.lz");
 static const ax_sprite sTropiusSprites30[] = {
 	{sTropiusGfx30, ARRAY_COUNT(sTropiusGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx31[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_31.4bpp");
+static const u8 sTropiusGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_31.4bpp.lz");
 static const ax_sprite sTropiusSprites31[] = {
 	{sTropiusGfx31, ARRAY_COUNT(sTropiusGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx32[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_32.4bpp");
+static const u8 sTropiusGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_32.4bpp.lz");
 static const ax_sprite sTropiusSprites32[] = {
 	{sTropiusGfx32, ARRAY_COUNT(sTropiusGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx33[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_33.4bpp");
+static const u8 sTropiusGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_33.4bpp.lz");
 static const ax_sprite sTropiusSprites33[] = {
 	{sTropiusGfx33, ARRAY_COUNT(sTropiusGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx34[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_34.4bpp");
+static const u8 sTropiusGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_34.4bpp.lz");
 static const ax_sprite sTropiusSprites34[] = {
 	{sTropiusGfx34, ARRAY_COUNT(sTropiusGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx35[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_35.4bpp");
+static const u8 sTropiusGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_35.4bpp.lz");
 static const ax_sprite sTropiusSprites35[] = {
 	{sTropiusGfx35, ARRAY_COUNT(sTropiusGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx36[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_36.4bpp");
+static const u8 sTropiusGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_36.4bpp.lz");
 static const ax_sprite sTropiusSprites36[] = {
 	{sTropiusGfx36, ARRAY_COUNT(sTropiusGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx37[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_37.4bpp");
+static const u8 sTropiusGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_37.4bpp.lz");
 static const ax_sprite sTropiusSprites37[] = {
 	{sTropiusGfx37, ARRAY_COUNT(sTropiusGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx38[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_38.4bpp");
+static const u8 sTropiusGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_38.4bpp.lz");
 static const ax_sprite sTropiusSprites38[] = {
 	{sTropiusGfx38, ARRAY_COUNT(sTropiusGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx39[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_39.4bpp");
+static const u8 sTropiusGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_39.4bpp.lz");
 static const ax_sprite sTropiusSprites39[] = {
 	{sTropiusGfx39, ARRAY_COUNT(sTropiusGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx40[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_40.4bpp");
-static const u8 sTropiusGfx40_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_40_1.4bpp");
+static const u8 sTropiusGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_40.4bpp.lz");
+static const u8 sTropiusGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_40_1.4bpp.lz");
 static const ax_sprite sTropiusSprites40[] = {
 	{sTropiusGfx40, ARRAY_COUNT(sTropiusGfx40)}, 
 	{NULL, 32}, 
@@ -2881,84 +2881,84 @@ static const ax_sprite sTropiusSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx41[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_41.4bpp");
+static const u8 sTropiusGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_41.4bpp.lz");
 static const ax_sprite sTropiusSprites41[] = {
 	{sTropiusGfx41, ARRAY_COUNT(sTropiusGfx41)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx42[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_42.4bpp");
+static const u8 sTropiusGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_42.4bpp.lz");
 static const ax_sprite sTropiusSprites42[] = {
 	{NULL, 32}, 
 	{sTropiusGfx42, ARRAY_COUNT(sTropiusGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx43[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_43.4bpp");
+static const u8 sTropiusGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_43.4bpp.lz");
 static const ax_sprite sTropiusSprites43[] = {
 	{sTropiusGfx43, ARRAY_COUNT(sTropiusGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx44[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_44.4bpp");
+static const u8 sTropiusGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_44.4bpp.lz");
 static const ax_sprite sTropiusSprites44[] = {
 	{sTropiusGfx44, ARRAY_COUNT(sTropiusGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx45[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_45.4bpp");
+static const u8 sTropiusGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_45.4bpp.lz");
 static const ax_sprite sTropiusSprites45[] = {
 	{sTropiusGfx45, ARRAY_COUNT(sTropiusGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx46[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_46.4bpp");
+static const u8 sTropiusGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_46.4bpp.lz");
 static const ax_sprite sTropiusSprites46[] = {
 	{sTropiusGfx46, ARRAY_COUNT(sTropiusGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx47[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_47.4bpp");
+static const u8 sTropiusGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_47.4bpp.lz");
 static const ax_sprite sTropiusSprites47[] = {
 	{NULL, 32}, 
 	{sTropiusGfx47, ARRAY_COUNT(sTropiusGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx48[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_48.4bpp");
+static const u8 sTropiusGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_48.4bpp.lz");
 static const ax_sprite sTropiusSprites48[] = {
 	{sTropiusGfx48, ARRAY_COUNT(sTropiusGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx49[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_49.4bpp");
+static const u8 sTropiusGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_49.4bpp.lz");
 static const ax_sprite sTropiusSprites49[] = {
 	{sTropiusGfx49, ARRAY_COUNT(sTropiusGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx50[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_50.4bpp");
+static const u8 sTropiusGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_50.4bpp.lz");
 static const ax_sprite sTropiusSprites50[] = {
 	{sTropiusGfx50, ARRAY_COUNT(sTropiusGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx51[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_51.4bpp");
-static const u8 sTropiusGfx51_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_51_1.4bpp");
+static const u8 sTropiusGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_51.4bpp.lz");
+static const u8 sTropiusGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_51_1.4bpp.lz");
 static const ax_sprite sTropiusSprites51[] = {
 	{sTropiusGfx51, ARRAY_COUNT(sTropiusGfx51)}, 
 	{NULL, 32}, 
 	{sTropiusGfx51_1, ARRAY_COUNT(sTropiusGfx51_1)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx52[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_52.4bpp");
+static const u8 sTropiusGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_52.4bpp.lz");
 static const ax_sprite sTropiusSprites52[] = {
 	{sTropiusGfx52, ARRAY_COUNT(sTropiusGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx53[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_53.4bpp");
+static const u8 sTropiusGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_53.4bpp.lz");
 static const ax_sprite sTropiusSprites53[] = {
 	{sTropiusGfx53, ARRAY_COUNT(sTropiusGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx54[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_54.4bpp");
+static const u8 sTropiusGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_54.4bpp.lz");
 static const ax_sprite sTropiusSprites54[] = {
 	{sTropiusGfx54, ARRAY_COUNT(sTropiusGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx55[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_55.4bpp");
-static const u8 sTropiusGfx55_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_55_1.4bpp");
+static const u8 sTropiusGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_55.4bpp.lz");
+static const u8 sTropiusGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_55_1.4bpp.lz");
 static const ax_sprite sTropiusSprites55[] = {
 	{NULL, 32}, 
 	{sTropiusGfx55, ARRAY_COUNT(sTropiusGfx55)}, 
@@ -2967,8 +2967,8 @@ static const ax_sprite sTropiusSprites55[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx56[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_56.4bpp");
-static const u8 sTropiusGfx56_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_56_1.4bpp");
+static const u8 sTropiusGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_56.4bpp.lz");
+static const u8 sTropiusGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_56_1.4bpp.lz");
 static const ax_sprite sTropiusSprites56[] = {
 	{NULL, 32}, 
 	{sTropiusGfx56, ARRAY_COUNT(sTropiusGfx56)}, 
@@ -2976,25 +2976,25 @@ static const ax_sprite sTropiusSprites56[] = {
 	{sTropiusGfx56_1, ARRAY_COUNT(sTropiusGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx57[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_57.4bpp");
+static const u8 sTropiusGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_57.4bpp.lz");
 static const ax_sprite sTropiusSprites57[] = {
 	{sTropiusGfx57, ARRAY_COUNT(sTropiusGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx58[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_58.4bpp");
+static const u8 sTropiusGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_58.4bpp.lz");
 static const ax_sprite sTropiusSprites58[] = {
 	{sTropiusGfx58, ARRAY_COUNT(sTropiusGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx59[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_59.4bpp");
+static const u8 sTropiusGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_59.4bpp.lz");
 static const ax_sprite sTropiusSprites59[] = {
 	{sTropiusGfx59, ARRAY_COUNT(sTropiusGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx60[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_60.4bpp");
-static const u8 sTropiusGfx60_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_60_1.4bpp");
-static const u8 sTropiusGfx60_2[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_60_2.4bpp");
-static const u8 sTropiusGfx60_3[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_60_3.4bpp");
+static const u8 sTropiusGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_60.4bpp.lz");
+static const u8 sTropiusGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_60_1.4bpp.lz");
+static const u8 sTropiusGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_60_2.4bpp.lz");
+static const u8 sTropiusGfx60_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_60_3.4bpp.lz");
 static const ax_sprite sTropiusSprites60[] = {
 	{NULL, 32}, 
 	{sTropiusGfx60, ARRAY_COUNT(sTropiusGfx60)}, 
@@ -3006,31 +3006,31 @@ static const ax_sprite sTropiusSprites60[] = {
 	{sTropiusGfx60_3, ARRAY_COUNT(sTropiusGfx60_3)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx61[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_61.4bpp");
+static const u8 sTropiusGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_61.4bpp.lz");
 static const ax_sprite sTropiusSprites61[] = {
 	{sTropiusGfx61, ARRAY_COUNT(sTropiusGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx62[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_62.4bpp");
-static const u8 sTropiusGfx62_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_62_1.4bpp");
+static const u8 sTropiusGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_62.4bpp.lz");
+static const u8 sTropiusGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_62_1.4bpp.lz");
 static const ax_sprite sTropiusSprites62[] = {
 	{sTropiusGfx62, ARRAY_COUNT(sTropiusGfx62)}, 
 	{NULL, 32}, 
 	{sTropiusGfx62_1, ARRAY_COUNT(sTropiusGfx62_1)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx63[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_63.4bpp");
+static const u8 sTropiusGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_63.4bpp.lz");
 static const ax_sprite sTropiusSprites63[] = {
 	{sTropiusGfx63, ARRAY_COUNT(sTropiusGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx64[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_64.4bpp");
+static const u8 sTropiusGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_64.4bpp.lz");
 static const ax_sprite sTropiusSprites64[] = {
 	{sTropiusGfx64, ARRAY_COUNT(sTropiusGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx65[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_65.4bpp");
-static const u8 sTropiusGfx65_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_65_1.4bpp");
+static const u8 sTropiusGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_65.4bpp.lz");
+static const u8 sTropiusGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_65_1.4bpp.lz");
 static const ax_sprite sTropiusSprites65[] = {
 	{NULL, 32}, 
 	{sTropiusGfx65, ARRAY_COUNT(sTropiusGfx65)}, 
@@ -3038,108 +3038,108 @@ static const ax_sprite sTropiusSprites65[] = {
 	{sTropiusGfx65_1, ARRAY_COUNT(sTropiusGfx65_1)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx66[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_66.4bpp");
+static const u8 sTropiusGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_66.4bpp.lz");
 static const ax_sprite sTropiusSprites66[] = {
 	{sTropiusGfx66, ARRAY_COUNT(sTropiusGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx67[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_67.4bpp");
+static const u8 sTropiusGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_67.4bpp.lz");
 static const ax_sprite sTropiusSprites67[] = {
 	{sTropiusGfx67, ARRAY_COUNT(sTropiusGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx68[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_68.4bpp");
+static const u8 sTropiusGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_68.4bpp.lz");
 static const ax_sprite sTropiusSprites68[] = {
 	{sTropiusGfx68, ARRAY_COUNT(sTropiusGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx69[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_69.4bpp");
+static const u8 sTropiusGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_69.4bpp.lz");
 static const ax_sprite sTropiusSprites69[] = {
 	{sTropiusGfx69, ARRAY_COUNT(sTropiusGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx70[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_70.4bpp");
+static const u8 sTropiusGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_70.4bpp.lz");
 static const ax_sprite sTropiusSprites70[] = {
 	{sTropiusGfx70, ARRAY_COUNT(sTropiusGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx71[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_71.4bpp");
+static const u8 sTropiusGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_71.4bpp.lz");
 static const ax_sprite sTropiusSprites71[] = {
 	{sTropiusGfx71, ARRAY_COUNT(sTropiusGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx72[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_72.4bpp");
+static const u8 sTropiusGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_72.4bpp.lz");
 static const ax_sprite sTropiusSprites72[] = {
 	{sTropiusGfx72, ARRAY_COUNT(sTropiusGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx73[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_73.4bpp");
+static const u8 sTropiusGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_73.4bpp.lz");
 static const ax_sprite sTropiusSprites73[] = {
 	{sTropiusGfx73, ARRAY_COUNT(sTropiusGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx74[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_74.4bpp");
+static const u8 sTropiusGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_74.4bpp.lz");
 static const ax_sprite sTropiusSprites74[] = {
 	{sTropiusGfx74, ARRAY_COUNT(sTropiusGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx75[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_75.4bpp");
+static const u8 sTropiusGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_75.4bpp.lz");
 static const ax_sprite sTropiusSprites75[] = {
 	{sTropiusGfx75, ARRAY_COUNT(sTropiusGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx76[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_76.4bpp");
+static const u8 sTropiusGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_76.4bpp.lz");
 static const ax_sprite sTropiusSprites76[] = {
 	{sTropiusGfx76, ARRAY_COUNT(sTropiusGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx77[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_77.4bpp");
+static const u8 sTropiusGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_77.4bpp.lz");
 static const ax_sprite sTropiusSprites77[] = {
 	{sTropiusGfx77, ARRAY_COUNT(sTropiusGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx78[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_78.4bpp");
+static const u8 sTropiusGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_78.4bpp.lz");
 static const ax_sprite sTropiusSprites78[] = {
 	{sTropiusGfx78, ARRAY_COUNT(sTropiusGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx79[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_79.4bpp");
+static const u8 sTropiusGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_79.4bpp.lz");
 static const ax_sprite sTropiusSprites79[] = {
 	{sTropiusGfx79, ARRAY_COUNT(sTropiusGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx80[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_80.4bpp");
+static const u8 sTropiusGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_80.4bpp.lz");
 static const ax_sprite sTropiusSprites80[] = {
 	{sTropiusGfx80, ARRAY_COUNT(sTropiusGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx81[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_81.4bpp");
+static const u8 sTropiusGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_81.4bpp.lz");
 static const ax_sprite sTropiusSprites81[] = {
 	{sTropiusGfx81, ARRAY_COUNT(sTropiusGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx82[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_82.4bpp");
+static const u8 sTropiusGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_82.4bpp.lz");
 static const ax_sprite sTropiusSprites82[] = {
 	{sTropiusGfx82, ARRAY_COUNT(sTropiusGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx83[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_83.4bpp");
+static const u8 sTropiusGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_83.4bpp.lz");
 static const ax_sprite sTropiusSprites83[] = {
 	{sTropiusGfx83, ARRAY_COUNT(sTropiusGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx84[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_84.4bpp");
+static const u8 sTropiusGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_84.4bpp.lz");
 static const ax_sprite sTropiusSprites84[] = {
 	{sTropiusGfx84, ARRAY_COUNT(sTropiusGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx85[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_85.4bpp");
+static const u8 sTropiusGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_85.4bpp.lz");
 static const ax_sprite sTropiusSprites85[] = {
 	{sTropiusGfx85, ARRAY_COUNT(sTropiusGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx86[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_86.4bpp");
-static const u8 sTropiusGfx86_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_86_1.4bpp");
+static const u8 sTropiusGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_86.4bpp.lz");
+static const u8 sTropiusGfx86_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_86_1.4bpp.lz");
 static const ax_sprite sTropiusSprites86[] = {
 	{NULL, 32}, 
 	{sTropiusGfx86, ARRAY_COUNT(sTropiusGfx86)}, 
@@ -3147,10 +3147,10 @@ static const ax_sprite sTropiusSprites86[] = {
 	{sTropiusGfx86_1, ARRAY_COUNT(sTropiusGfx86_1)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx87[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_87.4bpp");
-static const u8 sTropiusGfx87_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_87_1.4bpp");
-static const u8 sTropiusGfx87_2[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_87_2.4bpp");
-static const u8 sTropiusGfx87_3[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_87_3.4bpp");
+static const u8 sTropiusGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_87.4bpp.lz");
+static const u8 sTropiusGfx87_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_87_1.4bpp.lz");
+static const u8 sTropiusGfx87_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_87_2.4bpp.lz");
+static const u8 sTropiusGfx87_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_87_3.4bpp.lz");
 static const ax_sprite sTropiusSprites87[] = {
 	{sTropiusGfx87, ARRAY_COUNT(sTropiusGfx87)}, 
 	{NULL, 64}, 
@@ -3161,9 +3161,9 @@ static const ax_sprite sTropiusSprites87[] = {
 	{sTropiusGfx87_3, ARRAY_COUNT(sTropiusGfx87_3)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx88[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_88.4bpp");
-static const u8 sTropiusGfx88_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_88_1.4bpp");
-static const u8 sTropiusGfx88_2[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_88_2.4bpp");
+static const u8 sTropiusGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_88.4bpp.lz");
+static const u8 sTropiusGfx88_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_88_1.4bpp.lz");
+static const u8 sTropiusGfx88_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_88_2.4bpp.lz");
 static const ax_sprite sTropiusSprites88[] = {
 	{sTropiusGfx88, ARRAY_COUNT(sTropiusGfx88)}, 
 	{NULL, 64}, 
@@ -3172,55 +3172,55 @@ static const ax_sprite sTropiusSprites88[] = {
 	{sTropiusGfx88_2, ARRAY_COUNT(sTropiusGfx88_2)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx89[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_89.4bpp");
+static const u8 sTropiusGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_89.4bpp.lz");
 static const ax_sprite sTropiusSprites89[] = {
 	{sTropiusGfx89, ARRAY_COUNT(sTropiusGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx90[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_90.4bpp");
+static const u8 sTropiusGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_90.4bpp.lz");
 static const ax_sprite sTropiusSprites90[] = {
 	{sTropiusGfx90, ARRAY_COUNT(sTropiusGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx91[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_91.4bpp");
+static const u8 sTropiusGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_91.4bpp.lz");
 static const ax_sprite sTropiusSprites91[] = {
 	{sTropiusGfx91, ARRAY_COUNT(sTropiusGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx92[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_92.4bpp");
+static const u8 sTropiusGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_92.4bpp.lz");
 static const ax_sprite sTropiusSprites92[] = {
 	{sTropiusGfx92, ARRAY_COUNT(sTropiusGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx93[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_93.4bpp");
+static const u8 sTropiusGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_93.4bpp.lz");
 static const ax_sprite sTropiusSprites93[] = {
 	{sTropiusGfx93, ARRAY_COUNT(sTropiusGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx94[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_94.4bpp");
+static const u8 sTropiusGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_94.4bpp.lz");
 static const ax_sprite sTropiusSprites94[] = {
 	{NULL, 64}, 
 	{sTropiusGfx94, ARRAY_COUNT(sTropiusGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx95[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_95.4bpp");
+static const u8 sTropiusGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_95.4bpp.lz");
 static const ax_sprite sTropiusSprites95[] = {
 	{sTropiusGfx95, ARRAY_COUNT(sTropiusGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx96[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_96.4bpp");
+static const u8 sTropiusGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_96.4bpp.lz");
 static const ax_sprite sTropiusSprites96[] = {
 	{sTropiusGfx96, ARRAY_COUNT(sTropiusGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx97[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_97.4bpp");
+static const u8 sTropiusGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_97.4bpp.lz");
 static const ax_sprite sTropiusSprites97[] = {
 	{sTropiusGfx97, ARRAY_COUNT(sTropiusGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx98[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_98.4bpp");
-static const u8 sTropiusGfx98_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_98_1.4bpp");
-static const u8 sTropiusGfx98_2[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_98_2.4bpp");
+static const u8 sTropiusGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_98.4bpp.lz");
+static const u8 sTropiusGfx98_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_98_1.4bpp.lz");
+static const u8 sTropiusGfx98_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_98_2.4bpp.lz");
 static const ax_sprite sTropiusSprites98[] = {
 	{sTropiusGfx98, ARRAY_COUNT(sTropiusGfx98)}, 
 	{NULL, 32}, 
@@ -3229,39 +3229,39 @@ static const ax_sprite sTropiusSprites98[] = {
 	{sTropiusGfx98_2, ARRAY_COUNT(sTropiusGfx98_2)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx99[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_99.4bpp");
+static const u8 sTropiusGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_99.4bpp.lz");
 static const ax_sprite sTropiusSprites99[] = {
 	{sTropiusGfx99, ARRAY_COUNT(sTropiusGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx100[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_100.4bpp");
+static const u8 sTropiusGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_100.4bpp.lz");
 static const ax_sprite sTropiusSprites100[] = {
 	{sTropiusGfx100, ARRAY_COUNT(sTropiusGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx101[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_101.4bpp");
+static const u8 sTropiusGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_101.4bpp.lz");
 static const ax_sprite sTropiusSprites101[] = {
 	{sTropiusGfx101, ARRAY_COUNT(sTropiusGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx102[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_102.4bpp");
+static const u8 sTropiusGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_102.4bpp.lz");
 static const ax_sprite sTropiusSprites102[] = {
 	{sTropiusGfx102, ARRAY_COUNT(sTropiusGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx103[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_103.4bpp");
+static const u8 sTropiusGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_103.4bpp.lz");
 static const ax_sprite sTropiusSprites103[] = {
 	{sTropiusGfx103, ARRAY_COUNT(sTropiusGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx104[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_104.4bpp");
+static const u8 sTropiusGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_104.4bpp.lz");
 static const ax_sprite sTropiusSprites104[] = {
 	{sTropiusGfx104, ARRAY_COUNT(sTropiusGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx105[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_105.4bpp");
-static const u8 sTropiusGfx105_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_105_1.4bpp");
-static const u8 sTropiusGfx105_2[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_105_2.4bpp");
+static const u8 sTropiusGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_105.4bpp.lz");
+static const u8 sTropiusGfx105_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_105_1.4bpp.lz");
+static const u8 sTropiusGfx105_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_105_2.4bpp.lz");
 static const ax_sprite sTropiusSprites105[] = {
 	{sTropiusGfx105, ARRAY_COUNT(sTropiusGfx105)}, 
 	{NULL, 64}, 
@@ -3270,39 +3270,39 @@ static const ax_sprite sTropiusSprites105[] = {
 	{sTropiusGfx105_2, ARRAY_COUNT(sTropiusGfx105_2)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx106[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_106.4bpp");
+static const u8 sTropiusGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_106.4bpp.lz");
 static const ax_sprite sTropiusSprites106[] = {
 	{sTropiusGfx106, ARRAY_COUNT(sTropiusGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx107[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_107.4bpp");
+static const u8 sTropiusGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_107.4bpp.lz");
 static const ax_sprite sTropiusSprites107[] = {
 	{sTropiusGfx107, ARRAY_COUNT(sTropiusGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx108[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_108.4bpp");
+static const u8 sTropiusGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_108.4bpp.lz");
 static const ax_sprite sTropiusSprites108[] = {
 	{sTropiusGfx108, ARRAY_COUNT(sTropiusGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx109[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_109.4bpp");
+static const u8 sTropiusGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_109.4bpp.lz");
 static const ax_sprite sTropiusSprites109[] = {
 	{sTropiusGfx109, ARRAY_COUNT(sTropiusGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx110[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_110.4bpp");
+static const u8 sTropiusGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_110.4bpp.lz");
 static const ax_sprite sTropiusSprites110[] = {
 	{sTropiusGfx110, ARRAY_COUNT(sTropiusGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx111[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_111.4bpp");
+static const u8 sTropiusGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_111.4bpp.lz");
 static const ax_sprite sTropiusSprites111[] = {
 	{sTropiusGfx111, ARRAY_COUNT(sTropiusGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx112[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_112.4bpp");
-static const u8 sTropiusGfx112_1[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_112_1.4bpp");
-static const u8 sTropiusGfx112_2[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_112_2.4bpp");
+static const u8 sTropiusGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_112.4bpp.lz");
+static const u8 sTropiusGfx112_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_112_1.4bpp.lz");
+static const u8 sTropiusGfx112_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_112_2.4bpp.lz");
 static const ax_sprite sTropiusSprites112[] = {
 	{sTropiusGfx112, ARRAY_COUNT(sTropiusGfx112)}, 
 	{NULL, 32}, 
@@ -3311,202 +3311,202 @@ static const ax_sprite sTropiusSprites112[] = {
 	{sTropiusGfx112_2, ARRAY_COUNT(sTropiusGfx112_2)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx113[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_113.4bpp");
+static const u8 sTropiusGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_113.4bpp.lz");
 static const ax_sprite sTropiusSprites113[] = {
 	{sTropiusGfx113, ARRAY_COUNT(sTropiusGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx114[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_114.4bpp");
+static const u8 sTropiusGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_114.4bpp.lz");
 static const ax_sprite sTropiusSprites114[] = {
 	{sTropiusGfx114, ARRAY_COUNT(sTropiusGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx115[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_115.4bpp");
+static const u8 sTropiusGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_115.4bpp.lz");
 static const ax_sprite sTropiusSprites115[] = {
 	{sTropiusGfx115, ARRAY_COUNT(sTropiusGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx116[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_116.4bpp");
+static const u8 sTropiusGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_116.4bpp.lz");
 static const ax_sprite sTropiusSprites116[] = {
 	{sTropiusGfx116, ARRAY_COUNT(sTropiusGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx117[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_117.4bpp");
+static const u8 sTropiusGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_117.4bpp.lz");
 static const ax_sprite sTropiusSprites117[] = {
 	{sTropiusGfx117, ARRAY_COUNT(sTropiusGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx118[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_118.4bpp");
+static const u8 sTropiusGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_118.4bpp.lz");
 static const ax_sprite sTropiusSprites118[] = {
 	{sTropiusGfx118, ARRAY_COUNT(sTropiusGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx119[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_119.4bpp");
+static const u8 sTropiusGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_119.4bpp.lz");
 static const ax_sprite sTropiusSprites119[] = {
 	{sTropiusGfx119, ARRAY_COUNT(sTropiusGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx120[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_120.4bpp");
+static const u8 sTropiusGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_120.4bpp.lz");
 static const ax_sprite sTropiusSprites120[] = {
 	{sTropiusGfx120, ARRAY_COUNT(sTropiusGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx121[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_121.4bpp");
+static const u8 sTropiusGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_121.4bpp.lz");
 static const ax_sprite sTropiusSprites121[] = {
 	{sTropiusGfx121, ARRAY_COUNT(sTropiusGfx121)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx122[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_122.4bpp");
+static const u8 sTropiusGfx122[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_122.4bpp.lz");
 static const ax_sprite sTropiusSprites122[] = {
 	{sTropiusGfx122, ARRAY_COUNT(sTropiusGfx122)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx123[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_123.4bpp");
+static const u8 sTropiusGfx123[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_123.4bpp.lz");
 static const ax_sprite sTropiusSprites123[] = {
 	{sTropiusGfx123, ARRAY_COUNT(sTropiusGfx123)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx124[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_124.4bpp");
+static const u8 sTropiusGfx124[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_124.4bpp.lz");
 static const ax_sprite sTropiusSprites124[] = {
 	{sTropiusGfx124, ARRAY_COUNT(sTropiusGfx124)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx125[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_125.4bpp");
+static const u8 sTropiusGfx125[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_125.4bpp.lz");
 static const ax_sprite sTropiusSprites125[] = {
 	{sTropiusGfx125, ARRAY_COUNT(sTropiusGfx125)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx126[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_126.4bpp");
+static const u8 sTropiusGfx126[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_126.4bpp.lz");
 static const ax_sprite sTropiusSprites126[] = {
 	{sTropiusGfx126, ARRAY_COUNT(sTropiusGfx126)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx127[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_127.4bpp");
+static const u8 sTropiusGfx127[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_127.4bpp.lz");
 static const ax_sprite sTropiusSprites127[] = {
 	{sTropiusGfx127, ARRAY_COUNT(sTropiusGfx127)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx128[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_128.4bpp");
+static const u8 sTropiusGfx128[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_128.4bpp.lz");
 static const ax_sprite sTropiusSprites128[] = {
 	{sTropiusGfx128, ARRAY_COUNT(sTropiusGfx128)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx129[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_129.4bpp");
+static const u8 sTropiusGfx129[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_129.4bpp.lz");
 static const ax_sprite sTropiusSprites129[] = {
 	{sTropiusGfx129, ARRAY_COUNT(sTropiusGfx129)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx130[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_130.4bpp");
+static const u8 sTropiusGfx130[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_130.4bpp.lz");
 static const ax_sprite sTropiusSprites130[] = {
 	{sTropiusGfx130, ARRAY_COUNT(sTropiusGfx130)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx131[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_131.4bpp");
+static const u8 sTropiusGfx131[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_131.4bpp.lz");
 static const ax_sprite sTropiusSprites131[] = {
 	{sTropiusGfx131, ARRAY_COUNT(sTropiusGfx131)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx132[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_132.4bpp");
+static const u8 sTropiusGfx132[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_132.4bpp.lz");
 static const ax_sprite sTropiusSprites132[] = {
 	{sTropiusGfx132, ARRAY_COUNT(sTropiusGfx132)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx133[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_133.4bpp");
+static const u8 sTropiusGfx133[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_133.4bpp.lz");
 static const ax_sprite sTropiusSprites133[] = {
 	{sTropiusGfx133, ARRAY_COUNT(sTropiusGfx133)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx134[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_134.4bpp");
+static const u8 sTropiusGfx134[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_134.4bpp.lz");
 static const ax_sprite sTropiusSprites134[] = {
 	{sTropiusGfx134, ARRAY_COUNT(sTropiusGfx134)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx135[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_135.4bpp");
+static const u8 sTropiusGfx135[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_135.4bpp.lz");
 static const ax_sprite sTropiusSprites135[] = {
 	{sTropiusGfx135, ARRAY_COUNT(sTropiusGfx135)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx136[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_136.4bpp");
+static const u8 sTropiusGfx136[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_136.4bpp.lz");
 static const ax_sprite sTropiusSprites136[] = {
 	{sTropiusGfx136, ARRAY_COUNT(sTropiusGfx136)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx137[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_137.4bpp");
+static const u8 sTropiusGfx137[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_137.4bpp.lz");
 static const ax_sprite sTropiusSprites137[] = {
 	{sTropiusGfx137, ARRAY_COUNT(sTropiusGfx137)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx138[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_138.4bpp");
+static const u8 sTropiusGfx138[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_138.4bpp.lz");
 static const ax_sprite sTropiusSprites138[] = {
 	{sTropiusGfx138, ARRAY_COUNT(sTropiusGfx138)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx139[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_139.4bpp");
+static const u8 sTropiusGfx139[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_139.4bpp.lz");
 static const ax_sprite sTropiusSprites139[] = {
 	{sTropiusGfx139, ARRAY_COUNT(sTropiusGfx139)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx140[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_140.4bpp");
+static const u8 sTropiusGfx140[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_140.4bpp.lz");
 static const ax_sprite sTropiusSprites140[] = {
 	{sTropiusGfx140, ARRAY_COUNT(sTropiusGfx140)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx141[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_141.4bpp");
+static const u8 sTropiusGfx141[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_141.4bpp.lz");
 static const ax_sprite sTropiusSprites141[] = {
 	{sTropiusGfx141, ARRAY_COUNT(sTropiusGfx141)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx142[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_142.4bpp");
+static const u8 sTropiusGfx142[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_142.4bpp.lz");
 static const ax_sprite sTropiusSprites142[] = {
 	{sTropiusGfx142, ARRAY_COUNT(sTropiusGfx142)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx143[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_143.4bpp");
+static const u8 sTropiusGfx143[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_143.4bpp.lz");
 static const ax_sprite sTropiusSprites143[] = {
 	{sTropiusGfx143, ARRAY_COUNT(sTropiusGfx143)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx144[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_144.4bpp");
+static const u8 sTropiusGfx144[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_144.4bpp.lz");
 static const ax_sprite sTropiusSprites144[] = {
 	{sTropiusGfx144, ARRAY_COUNT(sTropiusGfx144)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx145[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_145.4bpp");
+static const u8 sTropiusGfx145[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_145.4bpp.lz");
 static const ax_sprite sTropiusSprites145[] = {
 	{sTropiusGfx145, ARRAY_COUNT(sTropiusGfx145)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx146[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_146.4bpp");
+static const u8 sTropiusGfx146[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_146.4bpp.lz");
 static const ax_sprite sTropiusSprites146[] = {
 	{sTropiusGfx146, ARRAY_COUNT(sTropiusGfx146)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx147[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_147.4bpp");
+static const u8 sTropiusGfx147[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_147.4bpp.lz");
 static const ax_sprite sTropiusSprites147[] = {
 	{sTropiusGfx147, ARRAY_COUNT(sTropiusGfx147)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx148[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_148.4bpp");
+static const u8 sTropiusGfx148[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_148.4bpp.lz");
 static const ax_sprite sTropiusSprites148[] = {
 	{sTropiusGfx148, ARRAY_COUNT(sTropiusGfx148)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx149[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_149.4bpp");
+static const u8 sTropiusGfx149[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_149.4bpp.lz");
 static const ax_sprite sTropiusSprites149[] = {
 	{sTropiusGfx149, ARRAY_COUNT(sTropiusGfx149)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx150[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_150.4bpp");
+static const u8 sTropiusGfx150[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_150.4bpp.lz");
 static const ax_sprite sTropiusSprites150[] = {
 	{sTropiusGfx150, ARRAY_COUNT(sTropiusGfx150)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx151[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_151.4bpp");
+static const u8 sTropiusGfx151[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_151.4bpp.lz");
 static const ax_sprite sTropiusSprites151[] = {
 	{sTropiusGfx151, ARRAY_COUNT(sTropiusGfx151)}, 
 	{NULL, 0}
 };
-static const u8 sTropiusGfx152[] = INCBIN_U8("graphics/ax/mon/tropius/sprite_152.4bpp");
+static const u8 sTropiusGfx152[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tropius/sprite_152.4bpp.lz");
 static const ax_sprite sTropiusSprites152[] = {
 	{sTropiusGfx152, ARRAY_COUNT(sTropiusGfx152)}, 
 	{NULL, 0}

@@ -2031,85 +2031,85 @@ static const ax_anim sNosepassAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sNosepassGfx1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_1.4bpp");
+static const u8 sNosepassGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_1.4bpp.lz");
 static const ax_sprite sNosepassSprites1[] = {
 	{sNosepassGfx1, ARRAY_COUNT(sNosepassGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_2.4bpp");
+static const u8 sNosepassGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_2.4bpp.lz");
 static const ax_sprite sNosepassSprites2[] = {
 	{sNosepassGfx2, ARRAY_COUNT(sNosepassGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx3[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_3.4bpp");
+static const u8 sNosepassGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_3.4bpp.lz");
 static const ax_sprite sNosepassSprites3[] = {
 	{sNosepassGfx3, ARRAY_COUNT(sNosepassGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx4[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_4.4bpp");
+static const u8 sNosepassGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_4.4bpp.lz");
 static const ax_sprite sNosepassSprites4[] = {
 	{sNosepassGfx4, ARRAY_COUNT(sNosepassGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx5[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_5.4bpp");
+static const u8 sNosepassGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_5.4bpp.lz");
 static const ax_sprite sNosepassSprites5[] = {
 	{sNosepassGfx5, ARRAY_COUNT(sNosepassGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx6[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_6.4bpp");
+static const u8 sNosepassGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_6.4bpp.lz");
 static const ax_sprite sNosepassSprites6[] = {
 	{sNosepassGfx6, ARRAY_COUNT(sNosepassGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx7[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_7.4bpp");
+static const u8 sNosepassGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_7.4bpp.lz");
 static const ax_sprite sNosepassSprites7[] = {
 	{sNosepassGfx7, ARRAY_COUNT(sNosepassGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx8[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_8.4bpp");
+static const u8 sNosepassGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_8.4bpp.lz");
 static const ax_sprite sNosepassSprites8[] = {
 	{sNosepassGfx8, ARRAY_COUNT(sNosepassGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx9[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_9.4bpp");
+static const u8 sNosepassGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_9.4bpp.lz");
 static const ax_sprite sNosepassSprites9[] = {
 	{sNosepassGfx9, ARRAY_COUNT(sNosepassGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx10[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_10.4bpp");
+static const u8 sNosepassGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_10.4bpp.lz");
 static const ax_sprite sNosepassSprites10[] = {
 	{sNosepassGfx10, ARRAY_COUNT(sNosepassGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx11[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_11.4bpp");
+static const u8 sNosepassGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_11.4bpp.lz");
 static const ax_sprite sNosepassSprites11[] = {
 	{sNosepassGfx11, ARRAY_COUNT(sNosepassGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx12[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_12.4bpp");
+static const u8 sNosepassGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_12.4bpp.lz");
 static const ax_sprite sNosepassSprites12[] = {
 	{sNosepassGfx12, ARRAY_COUNT(sNosepassGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx13[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_13.4bpp");
+static const u8 sNosepassGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_13.4bpp.lz");
 static const ax_sprite sNosepassSprites13[] = {
 	{sNosepassGfx13, ARRAY_COUNT(sNosepassGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx14[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_14.4bpp");
+static const u8 sNosepassGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_14.4bpp.lz");
 static const ax_sprite sNosepassSprites14[] = {
 	{sNosepassGfx14, ARRAY_COUNT(sNosepassGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx15[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_15.4bpp");
+static const u8 sNosepassGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_15.4bpp.lz");
 static const ax_sprite sNosepassSprites15[] = {
 	{sNosepassGfx15, ARRAY_COUNT(sNosepassGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx16[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_16.4bpp");
-static const u8 sNosepassGfx16_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_16_1.4bpp");
-static const u8 sNosepassGfx16_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_16_2.4bpp");
-static const u8 sNosepassGfx16_3[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_16_3.4bpp");
+static const u8 sNosepassGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_16.4bpp.lz");
+static const u8 sNosepassGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_16_1.4bpp.lz");
+static const u8 sNosepassGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_16_2.4bpp.lz");
+static const u8 sNosepassGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_16_3.4bpp.lz");
 static const ax_sprite sNosepassSprites16[] = {
 	{NULL, 32}, 
 	{sNosepassGfx16, ARRAY_COUNT(sNosepassGfx16)}, 
@@ -2122,10 +2122,10 @@ static const ax_sprite sNosepassSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx17[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_17.4bpp");
-static const u8 sNosepassGfx17_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_17_1.4bpp");
-static const u8 sNosepassGfx17_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_17_2.4bpp");
-static const u8 sNosepassGfx17_3[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_17_3.4bpp");
+static const u8 sNosepassGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_17.4bpp.lz");
+static const u8 sNosepassGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_17_1.4bpp.lz");
+static const u8 sNosepassGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_17_2.4bpp.lz");
+static const u8 sNosepassGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_17_3.4bpp.lz");
 static const ax_sprite sNosepassSprites17[] = {
 	{NULL, 32}, 
 	{sNosepassGfx17, ARRAY_COUNT(sNosepassGfx17)}, 
@@ -2138,8 +2138,8 @@ static const ax_sprite sNosepassSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx18[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_18.4bpp");
-static const u8 sNosepassGfx18_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_18_1.4bpp");
+static const u8 sNosepassGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_18.4bpp.lz");
+static const u8 sNosepassGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_18_1.4bpp.lz");
 static const ax_sprite sNosepassSprites18[] = {
 	{NULL, 32}, 
 	{sNosepassGfx18, ARRAY_COUNT(sNosepassGfx18)}, 
@@ -2148,10 +2148,10 @@ static const ax_sprite sNosepassSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx19[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_19.4bpp");
-static const u8 sNosepassGfx19_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_19_1.4bpp");
-static const u8 sNosepassGfx19_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_19_2.4bpp");
-static const u8 sNosepassGfx19_3[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_19_3.4bpp");
+static const u8 sNosepassGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_19.4bpp.lz");
+static const u8 sNosepassGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_19_1.4bpp.lz");
+static const u8 sNosepassGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_19_2.4bpp.lz");
+static const u8 sNosepassGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_19_3.4bpp.lz");
 static const ax_sprite sNosepassSprites19[] = {
 	{sNosepassGfx19, ARRAY_COUNT(sNosepassGfx19)}, 
 	{NULL, 32}, 
@@ -2163,9 +2163,9 @@ static const ax_sprite sNosepassSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx20[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_20.4bpp");
-static const u8 sNosepassGfx20_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_20_1.4bpp");
-static const u8 sNosepassGfx20_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_20_2.4bpp");
+static const u8 sNosepassGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_20.4bpp.lz");
+static const u8 sNosepassGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_20_1.4bpp.lz");
+static const u8 sNosepassGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_20_2.4bpp.lz");
 static const ax_sprite sNosepassSprites20[] = {
 	{sNosepassGfx20, ARRAY_COUNT(sNosepassGfx20)}, 
 	{NULL, 32}, 
@@ -2175,10 +2175,10 @@ static const ax_sprite sNosepassSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx21[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_21.4bpp");
-static const u8 sNosepassGfx21_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_21_1.4bpp");
-static const u8 sNosepassGfx21_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_21_2.4bpp");
-static const u8 sNosepassGfx21_3[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_21_3.4bpp");
+static const u8 sNosepassGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_21.4bpp.lz");
+static const u8 sNosepassGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_21_1.4bpp.lz");
+static const u8 sNosepassGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_21_2.4bpp.lz");
+static const u8 sNosepassGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_21_3.4bpp.lz");
 static const ax_sprite sNosepassSprites21[] = {
 	{sNosepassGfx21, ARRAY_COUNT(sNosepassGfx21)}, 
 	{NULL, 32}, 
@@ -2190,8 +2190,8 @@ static const ax_sprite sNosepassSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx22[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_22.4bpp");
-static const u8 sNosepassGfx22_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_22_1.4bpp");
+static const u8 sNosepassGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_22.4bpp.lz");
+static const u8 sNosepassGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_22_1.4bpp.lz");
 static const ax_sprite sNosepassSprites22[] = {
 	{NULL, 32}, 
 	{sNosepassGfx22, ARRAY_COUNT(sNosepassGfx22)}, 
@@ -2200,10 +2200,10 @@ static const ax_sprite sNosepassSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx23[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_23.4bpp");
-static const u8 sNosepassGfx23_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_23_1.4bpp");
-static const u8 sNosepassGfx23_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_23_2.4bpp");
-static const u8 sNosepassGfx23_3[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_23_3.4bpp");
+static const u8 sNosepassGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_23.4bpp.lz");
+static const u8 sNosepassGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_23_1.4bpp.lz");
+static const u8 sNosepassGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_23_2.4bpp.lz");
+static const u8 sNosepassGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_23_3.4bpp.lz");
 static const ax_sprite sNosepassSprites23[] = {
 	{sNosepassGfx23, ARRAY_COUNT(sNosepassGfx23)}, 
 	{NULL, 32}, 
@@ -2215,9 +2215,9 @@ static const ax_sprite sNosepassSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx24[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_24.4bpp");
-static const u8 sNosepassGfx24_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_24_1.4bpp");
-static const u8 sNosepassGfx24_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_24_2.4bpp");
+static const u8 sNosepassGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_24.4bpp.lz");
+static const u8 sNosepassGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_24_1.4bpp.lz");
+static const u8 sNosepassGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_24_2.4bpp.lz");
 static const ax_sprite sNosepassSprites24[] = {
 	{NULL, 32}, 
 	{sNosepassGfx24, ARRAY_COUNT(sNosepassGfx24)}, 
@@ -2228,9 +2228,9 @@ static const ax_sprite sNosepassSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx25[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_25.4bpp");
-static const u8 sNosepassGfx25_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_25_1.4bpp");
-static const u8 sNosepassGfx25_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_25_2.4bpp");
+static const u8 sNosepassGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_25.4bpp.lz");
+static const u8 sNosepassGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_25_1.4bpp.lz");
+static const u8 sNosepassGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_25_2.4bpp.lz");
 static const ax_sprite sNosepassSprites25[] = {
 	{NULL, 32}, 
 	{sNosepassGfx25, ARRAY_COUNT(sNosepassGfx25)}, 
@@ -2241,9 +2241,9 @@ static const ax_sprite sNosepassSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx26[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_26.4bpp");
-static const u8 sNosepassGfx26_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_26_1.4bpp");
-static const u8 sNosepassGfx26_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_26_2.4bpp");
+static const u8 sNosepassGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_26.4bpp.lz");
+static const u8 sNosepassGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_26_1.4bpp.lz");
+static const u8 sNosepassGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_26_2.4bpp.lz");
 static const ax_sprite sNosepassSprites26[] = {
 	{NULL, 32}, 
 	{sNosepassGfx26, ARRAY_COUNT(sNosepassGfx26)}, 
@@ -2254,10 +2254,10 @@ static const ax_sprite sNosepassSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx27[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_27.4bpp");
-static const u8 sNosepassGfx27_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_27_1.4bpp");
-static const u8 sNosepassGfx27_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_27_2.4bpp");
-static const u8 sNosepassGfx27_3[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_27_3.4bpp");
+static const u8 sNosepassGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_27.4bpp.lz");
+static const u8 sNosepassGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_27_1.4bpp.lz");
+static const u8 sNosepassGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_27_2.4bpp.lz");
+static const u8 sNosepassGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_27_3.4bpp.lz");
 static const ax_sprite sNosepassSprites27[] = {
 	{sNosepassGfx27, ARRAY_COUNT(sNosepassGfx27)}, 
 	{NULL, 32}, 
@@ -2269,8 +2269,8 @@ static const ax_sprite sNosepassSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx28[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_28.4bpp");
-static const u8 sNosepassGfx28_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_28_1.4bpp");
+static const u8 sNosepassGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_28.4bpp.lz");
+static const u8 sNosepassGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_28_1.4bpp.lz");
 static const ax_sprite sNosepassSprites28[] = {
 	{sNosepassGfx28, ARRAY_COUNT(sNosepassGfx28)}, 
 	{NULL, 32}, 
@@ -2278,9 +2278,9 @@ static const ax_sprite sNosepassSprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx29[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_29.4bpp");
-static const u8 sNosepassGfx29_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_29_1.4bpp");
-static const u8 sNosepassGfx29_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_29_2.4bpp");
+static const u8 sNosepassGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_29.4bpp.lz");
+static const u8 sNosepassGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_29_1.4bpp.lz");
+static const u8 sNosepassGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_29_2.4bpp.lz");
 static const ax_sprite sNosepassSprites29[] = {
 	{sNosepassGfx29, ARRAY_COUNT(sNosepassGfx29)}, 
 	{NULL, 32}, 
@@ -2290,9 +2290,9 @@ static const ax_sprite sNosepassSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx30[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_30.4bpp");
-static const u8 sNosepassGfx30_1[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_30_1.4bpp");
-static const u8 sNosepassGfx30_2[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_30_2.4bpp");
+static const u8 sNosepassGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_30.4bpp.lz");
+static const u8 sNosepassGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_30_1.4bpp.lz");
+static const u8 sNosepassGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_30_2.4bpp.lz");
 static const ax_sprite sNosepassSprites30[] = {
 	{NULL, 32}, 
 	{sNosepassGfx30, ARRAY_COUNT(sNosepassGfx30)}, 
@@ -2303,37 +2303,37 @@ static const ax_sprite sNosepassSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx31[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_31.4bpp");
+static const u8 sNosepassGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_31.4bpp.lz");
 static const ax_sprite sNosepassSprites31[] = {
 	{sNosepassGfx31, ARRAY_COUNT(sNosepassGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx32[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_32.4bpp");
+static const u8 sNosepassGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_32.4bpp.lz");
 static const ax_sprite sNosepassSprites32[] = {
 	{sNosepassGfx32, ARRAY_COUNT(sNosepassGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx33[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_33.4bpp");
+static const u8 sNosepassGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_33.4bpp.lz");
 static const ax_sprite sNosepassSprites33[] = {
 	{sNosepassGfx33, ARRAY_COUNT(sNosepassGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx34[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_34.4bpp");
+static const u8 sNosepassGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_34.4bpp.lz");
 static const ax_sprite sNosepassSprites34[] = {
 	{sNosepassGfx34, ARRAY_COUNT(sNosepassGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx35[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_35.4bpp");
+static const u8 sNosepassGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_35.4bpp.lz");
 static const ax_sprite sNosepassSprites35[] = {
 	{sNosepassGfx35, ARRAY_COUNT(sNosepassGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx36[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_36.4bpp");
+static const u8 sNosepassGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_36.4bpp.lz");
 static const ax_sprite sNosepassSprites36[] = {
 	{sNosepassGfx36, ARRAY_COUNT(sNosepassGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sNosepassGfx37[] = INCBIN_U8("graphics/ax/mon/nosepass/sprite_37.4bpp");
+static const u8 sNosepassGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/nosepass/sprite_37.4bpp.lz");
 static const ax_sprite sNosepassSprites37[] = {
 	{sNosepassGfx37, ARRAY_COUNT(sNosepassGfx37)}, 
 	{NULL, 0}

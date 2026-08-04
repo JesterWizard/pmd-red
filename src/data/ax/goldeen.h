@@ -2251,83 +2251,83 @@ static const ax_anim sGoldeenAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGoldeenGfx1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_1.4bpp");
+static const u8 sGoldeenGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_1.4bpp.lz");
 static const ax_sprite sGoldeenSprites1[] = {
 	{sGoldeenGfx1, ARRAY_COUNT(sGoldeenGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_2.4bpp");
+static const u8 sGoldeenGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_2.4bpp.lz");
 static const ax_sprite sGoldeenSprites2[] = {
 	{sGoldeenGfx2, ARRAY_COUNT(sGoldeenGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_3.4bpp");
+static const u8 sGoldeenGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites3[] = {
 	{sGoldeenGfx3, ARRAY_COUNT(sGoldeenGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx4[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_4.4bpp");
+static const u8 sGoldeenGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_4.4bpp.lz");
 static const ax_sprite sGoldeenSprites4[] = {
 	{sGoldeenGfx4, ARRAY_COUNT(sGoldeenGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx5[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_5.4bpp");
+static const u8 sGoldeenGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_5.4bpp.lz");
 static const ax_sprite sGoldeenSprites5[] = {
 	{sGoldeenGfx5, ARRAY_COUNT(sGoldeenGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx6[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_6.4bpp");
+static const u8 sGoldeenGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_6.4bpp.lz");
 static const ax_sprite sGoldeenSprites6[] = {
 	{sGoldeenGfx6, ARRAY_COUNT(sGoldeenGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx7[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_7.4bpp");
+static const u8 sGoldeenGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_7.4bpp.lz");
 static const ax_sprite sGoldeenSprites7[] = {
 	{sGoldeenGfx7, ARRAY_COUNT(sGoldeenGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx8[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_8.4bpp");
+static const u8 sGoldeenGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_8.4bpp.lz");
 static const ax_sprite sGoldeenSprites8[] = {
 	{sGoldeenGfx8, ARRAY_COUNT(sGoldeenGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx9[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_9.4bpp");
+static const u8 sGoldeenGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_9.4bpp.lz");
 static const ax_sprite sGoldeenSprites9[] = {
 	{sGoldeenGfx9, ARRAY_COUNT(sGoldeenGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx10[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_10.4bpp");
+static const u8 sGoldeenGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_10.4bpp.lz");
 static const ax_sprite sGoldeenSprites10[] = {
 	{sGoldeenGfx10, ARRAY_COUNT(sGoldeenGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx11[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_11.4bpp");
+static const u8 sGoldeenGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_11.4bpp.lz");
 static const ax_sprite sGoldeenSprites11[] = {
 	{sGoldeenGfx11, ARRAY_COUNT(sGoldeenGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx12[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_12.4bpp");
+static const u8 sGoldeenGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_12.4bpp.lz");
 static const ax_sprite sGoldeenSprites12[] = {
 	{sGoldeenGfx12, ARRAY_COUNT(sGoldeenGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx13[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_13.4bpp");
+static const u8 sGoldeenGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_13.4bpp.lz");
 static const ax_sprite sGoldeenSprites13[] = {
 	{sGoldeenGfx13, ARRAY_COUNT(sGoldeenGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx14[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_14.4bpp");
+static const u8 sGoldeenGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_14.4bpp.lz");
 static const ax_sprite sGoldeenSprites14[] = {
 	{sGoldeenGfx14, ARRAY_COUNT(sGoldeenGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx15[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_15.4bpp");
+static const u8 sGoldeenGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_15.4bpp.lz");
 static const ax_sprite sGoldeenSprites15[] = {
 	{sGoldeenGfx15, ARRAY_COUNT(sGoldeenGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx16[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_16.4bpp");
-static const u8 sGoldeenGfx16_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_16_1.4bpp");
+static const u8 sGoldeenGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_16.4bpp.lz");
+static const u8 sGoldeenGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_16_1.4bpp.lz");
 static const ax_sprite sGoldeenSprites16[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx16, ARRAY_COUNT(sGoldeenGfx16)}, 
@@ -2336,9 +2336,9 @@ static const ax_sprite sGoldeenSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx17[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_17.4bpp");
-static const u8 sGoldeenGfx17_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_17_1.4bpp");
-static const u8 sGoldeenGfx17_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_17_2.4bpp");
+static const u8 sGoldeenGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_17.4bpp.lz");
+static const u8 sGoldeenGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_17_1.4bpp.lz");
+static const u8 sGoldeenGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_17_2.4bpp.lz");
 static const ax_sprite sGoldeenSprites17[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx17, ARRAY_COUNT(sGoldeenGfx17)}, 
@@ -2349,9 +2349,9 @@ static const ax_sprite sGoldeenSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx18[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_18.4bpp");
-static const u8 sGoldeenGfx18_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_18_1.4bpp");
-static const u8 sGoldeenGfx18_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_18_2.4bpp");
+static const u8 sGoldeenGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_18.4bpp.lz");
+static const u8 sGoldeenGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_18_1.4bpp.lz");
+static const u8 sGoldeenGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_18_2.4bpp.lz");
 static const ax_sprite sGoldeenSprites18[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx18, ARRAY_COUNT(sGoldeenGfx18)}, 
@@ -2362,9 +2362,9 @@ static const ax_sprite sGoldeenSprites18[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx19[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_19.4bpp");
-static const u8 sGoldeenGfx19_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_19_1.4bpp");
-static const u8 sGoldeenGfx19_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_19_2.4bpp");
+static const u8 sGoldeenGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_19.4bpp.lz");
+static const u8 sGoldeenGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_19_1.4bpp.lz");
+static const u8 sGoldeenGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_19_2.4bpp.lz");
 static const ax_sprite sGoldeenSprites19[] = {
 	{NULL, 64}, 
 	{sGoldeenGfx19, ARRAY_COUNT(sGoldeenGfx19)}, 
@@ -2375,9 +2375,9 @@ static const ax_sprite sGoldeenSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx20[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_20.4bpp");
-static const u8 sGoldeenGfx20_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_20_1.4bpp");
-static const u8 sGoldeenGfx20_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_20_2.4bpp");
+static const u8 sGoldeenGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_20.4bpp.lz");
+static const u8 sGoldeenGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_20_1.4bpp.lz");
+static const u8 sGoldeenGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_20_2.4bpp.lz");
 static const ax_sprite sGoldeenSprites20[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx20, ARRAY_COUNT(sGoldeenGfx20)}, 
@@ -2388,15 +2388,15 @@ static const ax_sprite sGoldeenSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx21[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_21.4bpp");
+static const u8 sGoldeenGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_21.4bpp.lz");
 static const ax_sprite sGoldeenSprites21[] = {
 	{sGoldeenGfx21, ARRAY_COUNT(sGoldeenGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx22[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_22.4bpp");
-static const u8 sGoldeenGfx22_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_22_1.4bpp");
-static const u8 sGoldeenGfx22_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_22_2.4bpp");
-static const u8 sGoldeenGfx22_3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_22_3.4bpp");
+static const u8 sGoldeenGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_22.4bpp.lz");
+static const u8 sGoldeenGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_22_1.4bpp.lz");
+static const u8 sGoldeenGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_22_2.4bpp.lz");
+static const u8 sGoldeenGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_22_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites22[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx22, ARRAY_COUNT(sGoldeenGfx22)}, 
@@ -2409,8 +2409,8 @@ static const ax_sprite sGoldeenSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx23[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_23.4bpp");
-static const u8 sGoldeenGfx23_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_23_1.4bpp");
+static const u8 sGoldeenGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_23.4bpp.lz");
+static const u8 sGoldeenGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_23_1.4bpp.lz");
 static const ax_sprite sGoldeenSprites23[] = {
 	{sGoldeenGfx23, ARRAY_COUNT(sGoldeenGfx23)}, 
 	{NULL, 96}, 
@@ -2418,10 +2418,10 @@ static const ax_sprite sGoldeenSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx24[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_24.4bpp");
-static const u8 sGoldeenGfx24_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_24_1.4bpp");
-static const u8 sGoldeenGfx24_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_24_2.4bpp");
-static const u8 sGoldeenGfx24_3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_24_3.4bpp");
+static const u8 sGoldeenGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_24.4bpp.lz");
+static const u8 sGoldeenGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_24_1.4bpp.lz");
+static const u8 sGoldeenGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_24_2.4bpp.lz");
+static const u8 sGoldeenGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_24_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites24[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx24, ARRAY_COUNT(sGoldeenGfx24)}, 
@@ -2434,8 +2434,8 @@ static const ax_sprite sGoldeenSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx25[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_25.4bpp");
-static const u8 sGoldeenGfx25_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_25_1.4bpp");
+static const u8 sGoldeenGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_25.4bpp.lz");
+static const u8 sGoldeenGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_25_1.4bpp.lz");
 static const ax_sprite sGoldeenSprites25[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx25, ARRAY_COUNT(sGoldeenGfx25)}, 
@@ -2444,9 +2444,9 @@ static const ax_sprite sGoldeenSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx26[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_26.4bpp");
-static const u8 sGoldeenGfx26_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_26_1.4bpp");
-static const u8 sGoldeenGfx26_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_26_2.4bpp");
+static const u8 sGoldeenGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_26.4bpp.lz");
+static const u8 sGoldeenGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_26_1.4bpp.lz");
+static const u8 sGoldeenGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_26_2.4bpp.lz");
 static const ax_sprite sGoldeenSprites26[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx26, ARRAY_COUNT(sGoldeenGfx26)}, 
@@ -2457,10 +2457,10 @@ static const ax_sprite sGoldeenSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx27[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_27.4bpp");
-static const u8 sGoldeenGfx27_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_27_1.4bpp");
-static const u8 sGoldeenGfx27_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_27_2.4bpp");
-static const u8 sGoldeenGfx27_3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_27_3.4bpp");
+static const u8 sGoldeenGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_27.4bpp.lz");
+static const u8 sGoldeenGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_27_1.4bpp.lz");
+static const u8 sGoldeenGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_27_2.4bpp.lz");
+static const u8 sGoldeenGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_27_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites27[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx27, ARRAY_COUNT(sGoldeenGfx27)}, 
@@ -2473,9 +2473,9 @@ static const ax_sprite sGoldeenSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx28[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_28.4bpp");
-static const u8 sGoldeenGfx28_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_28_1.4bpp");
-static const u8 sGoldeenGfx28_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_28_2.4bpp");
+static const u8 sGoldeenGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_28.4bpp.lz");
+static const u8 sGoldeenGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_28_1.4bpp.lz");
+static const u8 sGoldeenGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_28_2.4bpp.lz");
 static const ax_sprite sGoldeenSprites28[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx28, ARRAY_COUNT(sGoldeenGfx28)}, 
@@ -2486,10 +2486,10 @@ static const ax_sprite sGoldeenSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx29[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_29.4bpp");
-static const u8 sGoldeenGfx29_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_29_1.4bpp");
-static const u8 sGoldeenGfx29_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_29_2.4bpp");
-static const u8 sGoldeenGfx29_3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_29_3.4bpp");
+static const u8 sGoldeenGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_29.4bpp.lz");
+static const u8 sGoldeenGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_29_1.4bpp.lz");
+static const u8 sGoldeenGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_29_2.4bpp.lz");
+static const u8 sGoldeenGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_29_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites29[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx29, ARRAY_COUNT(sGoldeenGfx29)}, 
@@ -2502,10 +2502,10 @@ static const ax_sprite sGoldeenSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx30[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_30.4bpp");
-static const u8 sGoldeenGfx30_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_30_1.4bpp");
-static const u8 sGoldeenGfx30_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_30_2.4bpp");
-static const u8 sGoldeenGfx30_3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_30_3.4bpp");
+static const u8 sGoldeenGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_30.4bpp.lz");
+static const u8 sGoldeenGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_30_1.4bpp.lz");
+static const u8 sGoldeenGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_30_2.4bpp.lz");
+static const u8 sGoldeenGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_30_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites30[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx30, ARRAY_COUNT(sGoldeenGfx30)}, 
@@ -2518,10 +2518,10 @@ static const ax_sprite sGoldeenSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx31[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_31.4bpp");
-static const u8 sGoldeenGfx31_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_31_1.4bpp");
-static const u8 sGoldeenGfx31_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_31_2.4bpp");
-static const u8 sGoldeenGfx31_3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_31_3.4bpp");
+static const u8 sGoldeenGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_31.4bpp.lz");
+static const u8 sGoldeenGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_31_1.4bpp.lz");
+static const u8 sGoldeenGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_31_2.4bpp.lz");
+static const u8 sGoldeenGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_31_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites31[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx31, ARRAY_COUNT(sGoldeenGfx31)}, 
@@ -2534,45 +2534,45 @@ static const ax_sprite sGoldeenSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx32[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_32.4bpp");
+static const u8 sGoldeenGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_32.4bpp.lz");
 static const ax_sprite sGoldeenSprites32[] = {
 	{sGoldeenGfx32, ARRAY_COUNT(sGoldeenGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx33[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_33.4bpp");
-static const u8 sGoldeenGfx33_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_33_1.4bpp");
+static const u8 sGoldeenGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_33.4bpp.lz");
+static const u8 sGoldeenGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_33_1.4bpp.lz");
 static const ax_sprite sGoldeenSprites33[] = {
 	{sGoldeenGfx33, ARRAY_COUNT(sGoldeenGfx33)}, 
 	{NULL, 32}, 
 	{sGoldeenGfx33_1, ARRAY_COUNT(sGoldeenGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx34[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_34.4bpp");
+static const u8 sGoldeenGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_34.4bpp.lz");
 static const ax_sprite sGoldeenSprites34[] = {
 	{sGoldeenGfx34, ARRAY_COUNT(sGoldeenGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx35[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_35.4bpp");
+static const u8 sGoldeenGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_35.4bpp.lz");
 static const ax_sprite sGoldeenSprites35[] = {
 	{sGoldeenGfx35, ARRAY_COUNT(sGoldeenGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx36[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_36.4bpp");
-static const u8 sGoldeenGfx36_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_36_1.4bpp");
+static const u8 sGoldeenGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_36.4bpp.lz");
+static const u8 sGoldeenGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_36_1.4bpp.lz");
 static const ax_sprite sGoldeenSprites36[] = {
 	{sGoldeenGfx36, ARRAY_COUNT(sGoldeenGfx36)}, 
 	{NULL, 32}, 
 	{sGoldeenGfx36_1, ARRAY_COUNT(sGoldeenGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx37[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_37.4bpp");
+static const u8 sGoldeenGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_37.4bpp.lz");
 static const ax_sprite sGoldeenSprites37[] = {
 	{sGoldeenGfx37, ARRAY_COUNT(sGoldeenGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx38[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_38.4bpp");
-static const u8 sGoldeenGfx38_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_38_1.4bpp");
-static const u8 sGoldeenGfx38_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_38_2.4bpp");
+static const u8 sGoldeenGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_38.4bpp.lz");
+static const u8 sGoldeenGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_38_1.4bpp.lz");
+static const u8 sGoldeenGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_38_2.4bpp.lz");
 static const ax_sprite sGoldeenSprites38[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx38, ARRAY_COUNT(sGoldeenGfx38)}, 
@@ -2583,10 +2583,10 @@ static const ax_sprite sGoldeenSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx39[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_39.4bpp");
-static const u8 sGoldeenGfx39_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_39_1.4bpp");
-static const u8 sGoldeenGfx39_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_39_2.4bpp");
-static const u8 sGoldeenGfx39_3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_39_3.4bpp");
+static const u8 sGoldeenGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_39.4bpp.lz");
+static const u8 sGoldeenGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_39_1.4bpp.lz");
+static const u8 sGoldeenGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_39_2.4bpp.lz");
+static const u8 sGoldeenGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_39_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites39[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx39, ARRAY_COUNT(sGoldeenGfx39)}, 
@@ -2599,10 +2599,10 @@ static const ax_sprite sGoldeenSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx40[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_40.4bpp");
-static const u8 sGoldeenGfx40_1[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_40_1.4bpp");
-static const u8 sGoldeenGfx40_2[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_40_2.4bpp");
-static const u8 sGoldeenGfx40_3[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_40_3.4bpp");
+static const u8 sGoldeenGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_40.4bpp.lz");
+static const u8 sGoldeenGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_40_1.4bpp.lz");
+static const u8 sGoldeenGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_40_2.4bpp.lz");
+static const u8 sGoldeenGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_40_3.4bpp.lz");
 static const ax_sprite sGoldeenSprites40[] = {
 	{NULL, 32}, 
 	{sGoldeenGfx40, ARRAY_COUNT(sGoldeenGfx40)}, 
@@ -2615,37 +2615,37 @@ static const ax_sprite sGoldeenSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx41[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_41.4bpp");
+static const u8 sGoldeenGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_41.4bpp.lz");
 static const ax_sprite sGoldeenSprites41[] = {
 	{sGoldeenGfx41, ARRAY_COUNT(sGoldeenGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx42[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_42.4bpp");
+static const u8 sGoldeenGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_42.4bpp.lz");
 static const ax_sprite sGoldeenSprites42[] = {
 	{sGoldeenGfx42, ARRAY_COUNT(sGoldeenGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx43[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_43.4bpp");
+static const u8 sGoldeenGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_43.4bpp.lz");
 static const ax_sprite sGoldeenSprites43[] = {
 	{sGoldeenGfx43, ARRAY_COUNT(sGoldeenGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx44[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_44.4bpp");
+static const u8 sGoldeenGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_44.4bpp.lz");
 static const ax_sprite sGoldeenSprites44[] = {
 	{sGoldeenGfx44, ARRAY_COUNT(sGoldeenGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx45[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_45.4bpp");
+static const u8 sGoldeenGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_45.4bpp.lz");
 static const ax_sprite sGoldeenSprites45[] = {
 	{sGoldeenGfx45, ARRAY_COUNT(sGoldeenGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx46[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_46.4bpp");
+static const u8 sGoldeenGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_46.4bpp.lz");
 static const ax_sprite sGoldeenSprites46[] = {
 	{sGoldeenGfx46, ARRAY_COUNT(sGoldeenGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sGoldeenGfx47[] = INCBIN_U8("graphics/ax/mon/goldeen/sprite_47.4bpp");
+static const u8 sGoldeenGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/goldeen/sprite_47.4bpp.lz");
 static const ax_sprite sGoldeenSprites47[] = {
 	{sGoldeenGfx47, ARRAY_COUNT(sGoldeenGfx47)}, 
 	{NULL, 0}

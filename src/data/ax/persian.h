@@ -2115,85 +2115,85 @@ static const ax_anim sPersianAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPersianGfx1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_1.4bpp");
+static const u8 sPersianGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_1.4bpp.lz");
 static const ax_sprite sPersianSprites1[] = {
 	{sPersianGfx1, ARRAY_COUNT(sPersianGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_2.4bpp");
+static const u8 sPersianGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_2.4bpp.lz");
 static const ax_sprite sPersianSprites2[] = {
 	{sPersianGfx2, ARRAY_COUNT(sPersianGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_3.4bpp");
+static const u8 sPersianGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_3.4bpp.lz");
 static const ax_sprite sPersianSprites3[] = {
 	{sPersianGfx3, ARRAY_COUNT(sPersianGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx4[] = INCBIN_U8("graphics/ax/mon/persian/sprite_4.4bpp");
+static const u8 sPersianGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_4.4bpp.lz");
 static const ax_sprite sPersianSprites4[] = {
 	{sPersianGfx4, ARRAY_COUNT(sPersianGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx5[] = INCBIN_U8("graphics/ax/mon/persian/sprite_5.4bpp");
+static const u8 sPersianGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_5.4bpp.lz");
 static const ax_sprite sPersianSprites5[] = {
 	{sPersianGfx5, ARRAY_COUNT(sPersianGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx6[] = INCBIN_U8("graphics/ax/mon/persian/sprite_6.4bpp");
+static const u8 sPersianGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_6.4bpp.lz");
 static const ax_sprite sPersianSprites6[] = {
 	{sPersianGfx6, ARRAY_COUNT(sPersianGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx7[] = INCBIN_U8("graphics/ax/mon/persian/sprite_7.4bpp");
+static const u8 sPersianGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_7.4bpp.lz");
 static const ax_sprite sPersianSprites7[] = {
 	{sPersianGfx7, ARRAY_COUNT(sPersianGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx8[] = INCBIN_U8("graphics/ax/mon/persian/sprite_8.4bpp");
+static const u8 sPersianGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_8.4bpp.lz");
 static const ax_sprite sPersianSprites8[] = {
 	{sPersianGfx8, ARRAY_COUNT(sPersianGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx9[] = INCBIN_U8("graphics/ax/mon/persian/sprite_9.4bpp");
+static const u8 sPersianGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_9.4bpp.lz");
 static const ax_sprite sPersianSprites9[] = {
 	{sPersianGfx9, ARRAY_COUNT(sPersianGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx10[] = INCBIN_U8("graphics/ax/mon/persian/sprite_10.4bpp");
+static const u8 sPersianGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_10.4bpp.lz");
 static const ax_sprite sPersianSprites10[] = {
 	{sPersianGfx10, ARRAY_COUNT(sPersianGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx11[] = INCBIN_U8("graphics/ax/mon/persian/sprite_11.4bpp");
+static const u8 sPersianGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_11.4bpp.lz");
 static const ax_sprite sPersianSprites11[] = {
 	{sPersianGfx11, ARRAY_COUNT(sPersianGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx12[] = INCBIN_U8("graphics/ax/mon/persian/sprite_12.4bpp");
+static const u8 sPersianGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_12.4bpp.lz");
 static const ax_sprite sPersianSprites12[] = {
 	{sPersianGfx12, ARRAY_COUNT(sPersianGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx13[] = INCBIN_U8("graphics/ax/mon/persian/sprite_13.4bpp");
+static const u8 sPersianGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_13.4bpp.lz");
 static const ax_sprite sPersianSprites13[] = {
 	{sPersianGfx13, ARRAY_COUNT(sPersianGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx14[] = INCBIN_U8("graphics/ax/mon/persian/sprite_14.4bpp");
+static const u8 sPersianGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_14.4bpp.lz");
 static const ax_sprite sPersianSprites14[] = {
 	{sPersianGfx14, ARRAY_COUNT(sPersianGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx15[] = INCBIN_U8("graphics/ax/mon/persian/sprite_15.4bpp");
+static const u8 sPersianGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_15.4bpp.lz");
 static const ax_sprite sPersianSprites15[] = {
 	{sPersianGfx15, ARRAY_COUNT(sPersianGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx16[] = INCBIN_U8("graphics/ax/mon/persian/sprite_16.4bpp");
-static const u8 sPersianGfx16_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_16_1.4bpp");
-static const u8 sPersianGfx16_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_16_2.4bpp");
-static const u8 sPersianGfx16_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_16_3.4bpp");
+static const u8 sPersianGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_16.4bpp.lz");
+static const u8 sPersianGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_16_1.4bpp.lz");
+static const u8 sPersianGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_16_2.4bpp.lz");
+static const u8 sPersianGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_16_3.4bpp.lz");
 static const ax_sprite sPersianSprites16[] = {
 	{NULL, 32}, 
 	{sPersianGfx16, ARRAY_COUNT(sPersianGfx16)}, 
@@ -2206,9 +2206,9 @@ static const ax_sprite sPersianSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx17[] = INCBIN_U8("graphics/ax/mon/persian/sprite_17.4bpp");
-static const u8 sPersianGfx17_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_17_1.4bpp");
-static const u8 sPersianGfx17_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_17_2.4bpp");
+static const u8 sPersianGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_17.4bpp.lz");
+static const u8 sPersianGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_17_1.4bpp.lz");
+static const u8 sPersianGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_17_2.4bpp.lz");
 static const ax_sprite sPersianSprites17[] = {
 	{NULL, 32}, 
 	{sPersianGfx17, ARRAY_COUNT(sPersianGfx17)}, 
@@ -2219,15 +2219,15 @@ static const ax_sprite sPersianSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx18[] = INCBIN_U8("graphics/ax/mon/persian/sprite_18.4bpp");
+static const u8 sPersianGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_18.4bpp.lz");
 static const ax_sprite sPersianSprites18[] = {
 	{NULL, 32}, 
 	{sPersianGfx18, ARRAY_COUNT(sPersianGfx18)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx19[] = INCBIN_U8("graphics/ax/mon/persian/sprite_19.4bpp");
-static const u8 sPersianGfx19_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_19_1.4bpp");
+static const u8 sPersianGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_19.4bpp.lz");
+static const u8 sPersianGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_19_1.4bpp.lz");
 static const ax_sprite sPersianSprites19[] = {
 	{sPersianGfx19, ARRAY_COUNT(sPersianGfx19)}, 
 	{NULL, 64}, 
@@ -2235,8 +2235,8 @@ static const ax_sprite sPersianSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx20[] = INCBIN_U8("graphics/ax/mon/persian/sprite_20.4bpp");
-static const u8 sPersianGfx20_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_20_1.4bpp");
+static const u8 sPersianGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_20.4bpp.lz");
+static const u8 sPersianGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_20_1.4bpp.lz");
 static const ax_sprite sPersianSprites20[] = {
 	{NULL, 64}, 
 	{sPersianGfx20, ARRAY_COUNT(sPersianGfx20)}, 
@@ -2244,34 +2244,34 @@ static const ax_sprite sPersianSprites20[] = {
 	{sPersianGfx20_1, ARRAY_COUNT(sPersianGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx21[] = INCBIN_U8("graphics/ax/mon/persian/sprite_21.4bpp");
-static const u8 sPersianGfx21_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_21_1.4bpp");
+static const u8 sPersianGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_21.4bpp.lz");
+static const u8 sPersianGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_21_1.4bpp.lz");
 static const ax_sprite sPersianSprites21[] = {
 	{sPersianGfx21, ARRAY_COUNT(sPersianGfx21)}, 
 	{NULL, 64}, 
 	{sPersianGfx21_1, ARRAY_COUNT(sPersianGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx22[] = INCBIN_U8("graphics/ax/mon/persian/sprite_22.4bpp");
+static const u8 sPersianGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_22.4bpp.lz");
 static const ax_sprite sPersianSprites22[] = {
 	{sPersianGfx22, ARRAY_COUNT(sPersianGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx23[] = INCBIN_U8("graphics/ax/mon/persian/sprite_23.4bpp");
+static const u8 sPersianGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_23.4bpp.lz");
 static const ax_sprite sPersianSprites23[] = {
 	{sPersianGfx23, ARRAY_COUNT(sPersianGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx24[] = INCBIN_U8("graphics/ax/mon/persian/sprite_24.4bpp");
+static const u8 sPersianGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_24.4bpp.lz");
 static const ax_sprite sPersianSprites24[] = {
 	{NULL, 96}, 
 	{sPersianGfx24, ARRAY_COUNT(sPersianGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx25[] = INCBIN_U8("graphics/ax/mon/persian/sprite_25.4bpp");
-static const u8 sPersianGfx25_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_25_1.4bpp");
-static const u8 sPersianGfx25_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_25_2.4bpp");
-static const u8 sPersianGfx25_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_25_3.4bpp");
+static const u8 sPersianGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_25.4bpp.lz");
+static const u8 sPersianGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_25_1.4bpp.lz");
+static const u8 sPersianGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_25_2.4bpp.lz");
+static const u8 sPersianGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_25_3.4bpp.lz");
 static const ax_sprite sPersianSprites25[] = {
 	{sPersianGfx25, ARRAY_COUNT(sPersianGfx25)}, 
 	{NULL, 32}, 
@@ -2282,9 +2282,9 @@ static const ax_sprite sPersianSprites25[] = {
 	{sPersianGfx25_3, ARRAY_COUNT(sPersianGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx26[] = INCBIN_U8("graphics/ax/mon/persian/sprite_26.4bpp");
-static const u8 sPersianGfx26_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_26_1.4bpp");
-static const u8 sPersianGfx26_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_26_2.4bpp");
+static const u8 sPersianGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_26.4bpp.lz");
+static const u8 sPersianGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_26_1.4bpp.lz");
+static const u8 sPersianGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_26_2.4bpp.lz");
 static const ax_sprite sPersianSprites26[] = {
 	{NULL, 128}, 
 	{sPersianGfx26, ARRAY_COUNT(sPersianGfx26)}, 
@@ -2295,10 +2295,10 @@ static const ax_sprite sPersianSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx27[] = INCBIN_U8("graphics/ax/mon/persian/sprite_27.4bpp");
-static const u8 sPersianGfx27_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_27_1.4bpp");
-static const u8 sPersianGfx27_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_27_2.4bpp");
-static const u8 sPersianGfx27_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_27_3.4bpp");
+static const u8 sPersianGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_27.4bpp.lz");
+static const u8 sPersianGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_27_1.4bpp.lz");
+static const u8 sPersianGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_27_2.4bpp.lz");
+static const u8 sPersianGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_27_3.4bpp.lz");
 static const ax_sprite sPersianSprites27[] = {
 	{sPersianGfx27, ARRAY_COUNT(sPersianGfx27)}, 
 	{NULL, 64}, 
@@ -2310,9 +2310,9 @@ static const ax_sprite sPersianSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx28[] = INCBIN_U8("graphics/ax/mon/persian/sprite_28.4bpp");
-static const u8 sPersianGfx28_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_28_1.4bpp");
-static const u8 sPersianGfx28_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_28_2.4bpp");
+static const u8 sPersianGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_28.4bpp.lz");
+static const u8 sPersianGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_28_1.4bpp.lz");
+static const u8 sPersianGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_28_2.4bpp.lz");
 static const ax_sprite sPersianSprites28[] = {
 	{NULL, 128}, 
 	{sPersianGfx28, ARRAY_COUNT(sPersianGfx28)}, 
@@ -2323,10 +2323,10 @@ static const ax_sprite sPersianSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx29[] = INCBIN_U8("graphics/ax/mon/persian/sprite_29.4bpp");
-static const u8 sPersianGfx29_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_29_1.4bpp");
-static const u8 sPersianGfx29_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_29_2.4bpp");
-static const u8 sPersianGfx29_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_29_3.4bpp");
+static const u8 sPersianGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_29.4bpp.lz");
+static const u8 sPersianGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_29_1.4bpp.lz");
+static const u8 sPersianGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_29_2.4bpp.lz");
+static const u8 sPersianGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_29_3.4bpp.lz");
 static const ax_sprite sPersianSprites29[] = {
 	{sPersianGfx29, ARRAY_COUNT(sPersianGfx29)}, 
 	{NULL, 96}, 
@@ -2338,10 +2338,10 @@ static const ax_sprite sPersianSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx30[] = INCBIN_U8("graphics/ax/mon/persian/sprite_30.4bpp");
-static const u8 sPersianGfx30_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_30_1.4bpp");
-static const u8 sPersianGfx30_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_30_2.4bpp");
-static const u8 sPersianGfx30_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_30_3.4bpp");
+static const u8 sPersianGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_30.4bpp.lz");
+static const u8 sPersianGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_30_1.4bpp.lz");
+static const u8 sPersianGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_30_2.4bpp.lz");
+static const u8 sPersianGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_30_3.4bpp.lz");
 static const ax_sprite sPersianSprites30[] = {
 	{NULL, 32}, 
 	{sPersianGfx30, ARRAY_COUNT(sPersianGfx30)}, 
@@ -2354,9 +2354,9 @@ static const ax_sprite sPersianSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx31[] = INCBIN_U8("graphics/ax/mon/persian/sprite_31.4bpp");
-static const u8 sPersianGfx31_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_31_1.4bpp");
-static const u8 sPersianGfx31_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_31_2.4bpp");
+static const u8 sPersianGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_31.4bpp.lz");
+static const u8 sPersianGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_31_1.4bpp.lz");
+static const u8 sPersianGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_31_2.4bpp.lz");
 static const ax_sprite sPersianSprites31[] = {
 	{sPersianGfx31, ARRAY_COUNT(sPersianGfx31)}, 
 	{NULL, 64}, 
@@ -2366,25 +2366,25 @@ static const ax_sprite sPersianSprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx32[] = INCBIN_U8("graphics/ax/mon/persian/sprite_32.4bpp");
-static const u8 sPersianGfx32_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_32_1.4bpp");
+static const u8 sPersianGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_32.4bpp.lz");
+static const u8 sPersianGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_32_1.4bpp.lz");
 static const ax_sprite sPersianSprites32[] = {
 	{sPersianGfx32, ARRAY_COUNT(sPersianGfx32)}, 
 	{NULL, 32}, 
 	{sPersianGfx32_1, ARRAY_COUNT(sPersianGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx33[] = INCBIN_U8("graphics/ax/mon/persian/sprite_33.4bpp");
+static const u8 sPersianGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_33.4bpp.lz");
 static const ax_sprite sPersianSprites33[] = {
 	{NULL, 128}, 
 	{sPersianGfx33, ARRAY_COUNT(sPersianGfx33)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx34[] = INCBIN_U8("graphics/ax/mon/persian/sprite_34.4bpp");
-static const u8 sPersianGfx34_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_34_1.4bpp");
-static const u8 sPersianGfx34_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_34_2.4bpp");
-static const u8 sPersianGfx34_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_34_3.4bpp");
+static const u8 sPersianGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_34.4bpp.lz");
+static const u8 sPersianGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_34_1.4bpp.lz");
+static const u8 sPersianGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_34_2.4bpp.lz");
+static const u8 sPersianGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_34_3.4bpp.lz");
 static const ax_sprite sPersianSprites34[] = {
 	{sPersianGfx34, ARRAY_COUNT(sPersianGfx34)}, 
 	{NULL, 64}, 
@@ -2395,26 +2395,26 @@ static const ax_sprite sPersianSprites34[] = {
 	{sPersianGfx34_3, ARRAY_COUNT(sPersianGfx34_3)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx35[] = INCBIN_U8("graphics/ax/mon/persian/sprite_35.4bpp");
+static const u8 sPersianGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_35.4bpp.lz");
 static const ax_sprite sPersianSprites35[] = {
 	{sPersianGfx35, ARRAY_COUNT(sPersianGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx36[] = INCBIN_U8("graphics/ax/mon/persian/sprite_36.4bpp");
+static const u8 sPersianGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_36.4bpp.lz");
 static const ax_sprite sPersianSprites36[] = {
 	{sPersianGfx36, ARRAY_COUNT(sPersianGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx37[] = INCBIN_U8("graphics/ax/mon/persian/sprite_37.4bpp");
+static const u8 sPersianGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_37.4bpp.lz");
 static const ax_sprite sPersianSprites37[] = {
 	{NULL, 128}, 
 	{sPersianGfx37, ARRAY_COUNT(sPersianGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx38[] = INCBIN_U8("graphics/ax/mon/persian/sprite_38.4bpp");
-static const u8 sPersianGfx38_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_38_1.4bpp");
-static const u8 sPersianGfx38_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_38_2.4bpp");
-static const u8 sPersianGfx38_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_38_3.4bpp");
+static const u8 sPersianGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_38.4bpp.lz");
+static const u8 sPersianGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_38_1.4bpp.lz");
+static const u8 sPersianGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_38_2.4bpp.lz");
+static const u8 sPersianGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_38_3.4bpp.lz");
 static const ax_sprite sPersianSprites38[] = {
 	{sPersianGfx38, ARRAY_COUNT(sPersianGfx38)}, 
 	{NULL, 64}, 
@@ -2425,8 +2425,8 @@ static const ax_sprite sPersianSprites38[] = {
 	{sPersianGfx38_3, ARRAY_COUNT(sPersianGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx39[] = INCBIN_U8("graphics/ax/mon/persian/sprite_39.4bpp");
-static const u8 sPersianGfx39_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_39_1.4bpp");
+static const u8 sPersianGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_39.4bpp.lz");
+static const u8 sPersianGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_39_1.4bpp.lz");
 static const ax_sprite sPersianSprites39[] = {
 	{NULL, 128}, 
 	{sPersianGfx39, ARRAY_COUNT(sPersianGfx39)}, 
@@ -2434,9 +2434,9 @@ static const ax_sprite sPersianSprites39[] = {
 	{sPersianGfx39_1, ARRAY_COUNT(sPersianGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx40[] = INCBIN_U8("graphics/ax/mon/persian/sprite_40.4bpp");
-static const u8 sPersianGfx40_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_40_1.4bpp");
-static const u8 sPersianGfx40_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_40_2.4bpp");
+static const u8 sPersianGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_40.4bpp.lz");
+static const u8 sPersianGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_40_1.4bpp.lz");
+static const u8 sPersianGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_40_2.4bpp.lz");
 static const ax_sprite sPersianSprites40[] = {
 	{sPersianGfx40, ARRAY_COUNT(sPersianGfx40)}, 
 	{NULL, 32}, 
@@ -2446,10 +2446,10 @@ static const ax_sprite sPersianSprites40[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx41[] = INCBIN_U8("graphics/ax/mon/persian/sprite_41.4bpp");
-static const u8 sPersianGfx41_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_41_1.4bpp");
-static const u8 sPersianGfx41_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_41_2.4bpp");
-static const u8 sPersianGfx41_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_41_3.4bpp");
+static const u8 sPersianGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_41.4bpp.lz");
+static const u8 sPersianGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_41_1.4bpp.lz");
+static const u8 sPersianGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_41_2.4bpp.lz");
+static const u8 sPersianGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_41_3.4bpp.lz");
 static const ax_sprite sPersianSprites41[] = {
 	{NULL, 32}, 
 	{sPersianGfx41, ARRAY_COUNT(sPersianGfx41)}, 
@@ -2462,9 +2462,9 @@ static const ax_sprite sPersianSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx42[] = INCBIN_U8("graphics/ax/mon/persian/sprite_42.4bpp");
-static const u8 sPersianGfx42_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_42_1.4bpp");
-static const u8 sPersianGfx42_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_42_2.4bpp");
+static const u8 sPersianGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_42.4bpp.lz");
+static const u8 sPersianGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_42_1.4bpp.lz");
+static const u8 sPersianGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_42_2.4bpp.lz");
 static const ax_sprite sPersianSprites42[] = {
 	{NULL, 128}, 
 	{sPersianGfx42, ARRAY_COUNT(sPersianGfx42)}, 
@@ -2475,8 +2475,8 @@ static const ax_sprite sPersianSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx43[] = INCBIN_U8("graphics/ax/mon/persian/sprite_43.4bpp");
-static const u8 sPersianGfx43_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_43_1.4bpp");
+static const u8 sPersianGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_43.4bpp.lz");
+static const u8 sPersianGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_43_1.4bpp.lz");
 static const ax_sprite sPersianSprites43[] = {
 	{NULL, 32}, 
 	{sPersianGfx43, ARRAY_COUNT(sPersianGfx43)}, 
@@ -2485,10 +2485,10 @@ static const ax_sprite sPersianSprites43[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx44[] = INCBIN_U8("graphics/ax/mon/persian/sprite_44.4bpp");
-static const u8 sPersianGfx44_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_44_1.4bpp");
-static const u8 sPersianGfx44_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_44_2.4bpp");
-static const u8 sPersianGfx44_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_44_3.4bpp");
+static const u8 sPersianGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_44.4bpp.lz");
+static const u8 sPersianGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_44_1.4bpp.lz");
+static const u8 sPersianGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_44_2.4bpp.lz");
+static const u8 sPersianGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_44_3.4bpp.lz");
 static const ax_sprite sPersianSprites44[] = {
 	{NULL, 32}, 
 	{sPersianGfx44, ARRAY_COUNT(sPersianGfx44)}, 
@@ -2501,10 +2501,10 @@ static const ax_sprite sPersianSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx45[] = INCBIN_U8("graphics/ax/mon/persian/sprite_45.4bpp");
-static const u8 sPersianGfx45_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_45_1.4bpp");
-static const u8 sPersianGfx45_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_45_2.4bpp");
-static const u8 sPersianGfx45_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_45_3.4bpp");
+static const u8 sPersianGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_45.4bpp.lz");
+static const u8 sPersianGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_45_1.4bpp.lz");
+static const u8 sPersianGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_45_2.4bpp.lz");
+static const u8 sPersianGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_45_3.4bpp.lz");
 static const ax_sprite sPersianSprites45[] = {
 	{NULL, 32}, 
 	{sPersianGfx45, ARRAY_COUNT(sPersianGfx45)}, 
@@ -2517,9 +2517,9 @@ static const ax_sprite sPersianSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx46[] = INCBIN_U8("graphics/ax/mon/persian/sprite_46.4bpp");
-static const u8 sPersianGfx46_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_46_1.4bpp");
-static const u8 sPersianGfx46_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_46_2.4bpp");
+static const u8 sPersianGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_46.4bpp.lz");
+static const u8 sPersianGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_46_1.4bpp.lz");
+static const u8 sPersianGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_46_2.4bpp.lz");
 static const ax_sprite sPersianSprites46[] = {
 	{NULL, 32}, 
 	{sPersianGfx46, ARRAY_COUNT(sPersianGfx46)}, 
@@ -2530,16 +2530,16 @@ static const ax_sprite sPersianSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx47[] = INCBIN_U8("graphics/ax/mon/persian/sprite_47.4bpp");
+static const u8 sPersianGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_47.4bpp.lz");
 static const ax_sprite sPersianSprites47[] = {
 	{NULL, 160}, 
 	{sPersianGfx47, ARRAY_COUNT(sPersianGfx47)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx48[] = INCBIN_U8("graphics/ax/mon/persian/sprite_48.4bpp");
-static const u8 sPersianGfx48_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_48_1.4bpp");
-static const u8 sPersianGfx48_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_48_2.4bpp");
+static const u8 sPersianGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_48.4bpp.lz");
+static const u8 sPersianGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_48_1.4bpp.lz");
+static const u8 sPersianGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_48_2.4bpp.lz");
 static const ax_sprite sPersianSprites48[] = {
 	{sPersianGfx48, ARRAY_COUNT(sPersianGfx48)}, 
 	{NULL, 32}, 
@@ -2548,25 +2548,25 @@ static const ax_sprite sPersianSprites48[] = {
 	{sPersianGfx48_2, ARRAY_COUNT(sPersianGfx48_2)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx49[] = INCBIN_U8("graphics/ax/mon/persian/sprite_49.4bpp");
+static const u8 sPersianGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_49.4bpp.lz");
 static const ax_sprite sPersianSprites49[] = {
 	{sPersianGfx49, ARRAY_COUNT(sPersianGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx50[] = INCBIN_U8("graphics/ax/mon/persian/sprite_50.4bpp");
+static const u8 sPersianGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_50.4bpp.lz");
 static const ax_sprite sPersianSprites50[] = {
 	{sPersianGfx50, ARRAY_COUNT(sPersianGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx51[] = INCBIN_U8("graphics/ax/mon/persian/sprite_51.4bpp");
+static const u8 sPersianGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_51.4bpp.lz");
 static const ax_sprite sPersianSprites51[] = {
 	{sPersianGfx51, ARRAY_COUNT(sPersianGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx52[] = INCBIN_U8("graphics/ax/mon/persian/sprite_52.4bpp");
-static const u8 sPersianGfx52_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_52_1.4bpp");
-static const u8 sPersianGfx52_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_52_2.4bpp");
-static const u8 sPersianGfx52_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_52_3.4bpp");
+static const u8 sPersianGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_52.4bpp.lz");
+static const u8 sPersianGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_52_1.4bpp.lz");
+static const u8 sPersianGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_52_2.4bpp.lz");
+static const u8 sPersianGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_52_3.4bpp.lz");
 static const ax_sprite sPersianSprites52[] = {
 	{NULL, 32}, 
 	{sPersianGfx52, ARRAY_COUNT(sPersianGfx52)}, 
@@ -2578,8 +2578,8 @@ static const ax_sprite sPersianSprites52[] = {
 	{sPersianGfx52_3, ARRAY_COUNT(sPersianGfx52_3)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx53[] = INCBIN_U8("graphics/ax/mon/persian/sprite_53.4bpp");
-static const u8 sPersianGfx53_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_53_1.4bpp");
+static const u8 sPersianGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_53.4bpp.lz");
+static const u8 sPersianGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_53_1.4bpp.lz");
 static const ax_sprite sPersianSprites53[] = {
 	{NULL, 128}, 
 	{sPersianGfx53, ARRAY_COUNT(sPersianGfx53)}, 
@@ -2587,10 +2587,10 @@ static const ax_sprite sPersianSprites53[] = {
 	{sPersianGfx53_1, ARRAY_COUNT(sPersianGfx53_1)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx54[] = INCBIN_U8("graphics/ax/mon/persian/sprite_54.4bpp");
-static const u8 sPersianGfx54_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_54_1.4bpp");
-static const u8 sPersianGfx54_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_54_2.4bpp");
-static const u8 sPersianGfx54_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_54_3.4bpp");
+static const u8 sPersianGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_54.4bpp.lz");
+static const u8 sPersianGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_54_1.4bpp.lz");
+static const u8 sPersianGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_54_2.4bpp.lz");
+static const u8 sPersianGfx54_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_54_3.4bpp.lz");
 static const ax_sprite sPersianSprites54[] = {
 	{NULL, 32}, 
 	{sPersianGfx54, ARRAY_COUNT(sPersianGfx54)}, 
@@ -2603,9 +2603,9 @@ static const ax_sprite sPersianSprites54[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx55[] = INCBIN_U8("graphics/ax/mon/persian/sprite_55.4bpp");
-static const u8 sPersianGfx55_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_55_1.4bpp");
-static const u8 sPersianGfx55_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_55_2.4bpp");
+static const u8 sPersianGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_55.4bpp.lz");
+static const u8 sPersianGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_55_1.4bpp.lz");
+static const u8 sPersianGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_55_2.4bpp.lz");
 static const ax_sprite sPersianSprites55[] = {
 	{NULL, 160}, 
 	{sPersianGfx55, ARRAY_COUNT(sPersianGfx55)}, 
@@ -2616,20 +2616,20 @@ static const ax_sprite sPersianSprites55[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx56[] = INCBIN_U8("graphics/ax/mon/persian/sprite_56.4bpp");
+static const u8 sPersianGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_56.4bpp.lz");
 static const ax_sprite sPersianSprites56[] = {
 	{sPersianGfx56, ARRAY_COUNT(sPersianGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx57[] = INCBIN_U8("graphics/ax/mon/persian/sprite_57.4bpp");
+static const u8 sPersianGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_57.4bpp.lz");
 static const ax_sprite sPersianSprites57[] = {
 	{sPersianGfx57, ARRAY_COUNT(sPersianGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx58[] = INCBIN_U8("graphics/ax/mon/persian/sprite_58.4bpp");
-static const u8 sPersianGfx58_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_58_1.4bpp");
-static const u8 sPersianGfx58_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_58_2.4bpp");
-static const u8 sPersianGfx58_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_58_3.4bpp");
+static const u8 sPersianGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_58.4bpp.lz");
+static const u8 sPersianGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_58_1.4bpp.lz");
+static const u8 sPersianGfx58_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_58_2.4bpp.lz");
+static const u8 sPersianGfx58_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_58_3.4bpp.lz");
 static const ax_sprite sPersianSprites58[] = {
 	{sPersianGfx58, ARRAY_COUNT(sPersianGfx58)}, 
 	{NULL, 32}, 
@@ -2640,10 +2640,10 @@ static const ax_sprite sPersianSprites58[] = {
 	{sPersianGfx58_3, ARRAY_COUNT(sPersianGfx58_3)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx59[] = INCBIN_U8("graphics/ax/mon/persian/sprite_59.4bpp");
-static const u8 sPersianGfx59_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_59_1.4bpp");
-static const u8 sPersianGfx59_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_59_2.4bpp");
-static const u8 sPersianGfx59_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_59_3.4bpp");
+static const u8 sPersianGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_59.4bpp.lz");
+static const u8 sPersianGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_59_1.4bpp.lz");
+static const u8 sPersianGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_59_2.4bpp.lz");
+static const u8 sPersianGfx59_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_59_3.4bpp.lz");
 static const ax_sprite sPersianSprites59[] = {
 	{sPersianGfx59, ARRAY_COUNT(sPersianGfx59)}, 
 	{NULL, 64}, 
@@ -2654,10 +2654,10 @@ static const ax_sprite sPersianSprites59[] = {
 	{sPersianGfx59_3, ARRAY_COUNT(sPersianGfx59_3)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx60[] = INCBIN_U8("graphics/ax/mon/persian/sprite_60.4bpp");
-static const u8 sPersianGfx60_1[] = INCBIN_U8("graphics/ax/mon/persian/sprite_60_1.4bpp");
-static const u8 sPersianGfx60_2[] = INCBIN_U8("graphics/ax/mon/persian/sprite_60_2.4bpp");
-static const u8 sPersianGfx60_3[] = INCBIN_U8("graphics/ax/mon/persian/sprite_60_3.4bpp");
+static const u8 sPersianGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_60.4bpp.lz");
+static const u8 sPersianGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_60_1.4bpp.lz");
+static const u8 sPersianGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_60_2.4bpp.lz");
+static const u8 sPersianGfx60_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_60_3.4bpp.lz");
 static const ax_sprite sPersianSprites60[] = {
 	{sPersianGfx60, ARRAY_COUNT(sPersianGfx60)}, 
 	{NULL, 32}, 
@@ -2668,47 +2668,47 @@ static const ax_sprite sPersianSprites60[] = {
 	{sPersianGfx60_3, ARRAY_COUNT(sPersianGfx60_3)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx61[] = INCBIN_U8("graphics/ax/mon/persian/sprite_61.4bpp");
+static const u8 sPersianGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_61.4bpp.lz");
 static const ax_sprite sPersianSprites61[] = {
 	{sPersianGfx61, ARRAY_COUNT(sPersianGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx62[] = INCBIN_U8("graphics/ax/mon/persian/sprite_62.4bpp");
+static const u8 sPersianGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_62.4bpp.lz");
 static const ax_sprite sPersianSprites62[] = {
 	{sPersianGfx62, ARRAY_COUNT(sPersianGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx63[] = INCBIN_U8("graphics/ax/mon/persian/sprite_63.4bpp");
+static const u8 sPersianGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_63.4bpp.lz");
 static const ax_sprite sPersianSprites63[] = {
 	{sPersianGfx63, ARRAY_COUNT(sPersianGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx64[] = INCBIN_U8("graphics/ax/mon/persian/sprite_64.4bpp");
+static const u8 sPersianGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_64.4bpp.lz");
 static const ax_sprite sPersianSprites64[] = {
 	{sPersianGfx64, ARRAY_COUNT(sPersianGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx65[] = INCBIN_U8("graphics/ax/mon/persian/sprite_65.4bpp");
+static const u8 sPersianGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_65.4bpp.lz");
 static const ax_sprite sPersianSprites65[] = {
 	{sPersianGfx65, ARRAY_COUNT(sPersianGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx66[] = INCBIN_U8("graphics/ax/mon/persian/sprite_66.4bpp");
+static const u8 sPersianGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_66.4bpp.lz");
 static const ax_sprite sPersianSprites66[] = {
 	{sPersianGfx66, ARRAY_COUNT(sPersianGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx67[] = INCBIN_U8("graphics/ax/mon/persian/sprite_67.4bpp");
+static const u8 sPersianGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_67.4bpp.lz");
 static const ax_sprite sPersianSprites67[] = {
 	{sPersianGfx67, ARRAY_COUNT(sPersianGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx68[] = INCBIN_U8("graphics/ax/mon/persian/sprite_68.4bpp");
+static const u8 sPersianGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_68.4bpp.lz");
 static const ax_sprite sPersianSprites68[] = {
 	{sPersianGfx68, ARRAY_COUNT(sPersianGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sPersianGfx69[] = INCBIN_U8("graphics/ax/mon/persian/sprite_69.4bpp");
+static const u8 sPersianGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/persian/sprite_69.4bpp.lz");
 static const ax_sprite sPersianSprites69[] = {
 	{sPersianGfx69, ARRAY_COUNT(sPersianGfx69)}, 
 	{NULL, 0}

@@ -193,7 +193,7 @@ endif
 ALL_BUILDS := red
 
 # Available targets
-.PHONY: all modern clean compare tidy ground-compress libagbsyscall tools clean-tools $(TOOLDIRS)
+.PHONY: all modern clean compare tidy ground-compress ax-compress libagbsyscall tools clean-tools $(TOOLDIRS)
 
 # Pretend rules that are actually flags defer to `make all`
 modern: all
@@ -236,6 +236,13 @@ tools: $(TOOLDIRS)
 ground-compress: tools/gbagfx
 	python3 compress_ground_assets.py
 
+ax-compress: tools/gbagfx
+	python3 compress_ax_tiles.py
+
+# Monster headers INCBIN compressed tiles; ensure they exist before assembling gfx units.
+MONSTER_GFX_OBJECTS := $(filter $(C_BUILDDIR)/monster_gfx%.o,$(C_OBJECTS))
+$(MONSTER_GFX_OBJECTS): ax-compress
+
 syms: $(SYM)
 
 include dungeon_pokemon.mk
@@ -274,7 +281,7 @@ tidy:
 	$(RM) -f $(DUNGEON_POKEMON)
 	$(RM) -f $(DUNGEON_TRAP)
 	$(RM) -f $(DUNGEON_ITEM)
-	find . \( -iname '*.1bpp' -o -iname '*.4bpp' -o -iname '*.8bpp' -o -iname '*.gbapal' -o -iname '*.lz' -o -iname '*.latfont' -o -iname '*.hwjpnfont' -o -iname '*.fwjpnfont' \) ! -path './data/map_bg_lz/*' -exec rm {} +
+	find . \( -iname '*.1bpp' -o -iname '*.4bpp' -o -iname '*.8bpp' -o -iname '*.gbapal' -o -iname '*.lz' -o -iname '*.latfont' -o -iname '*.hwjpnfont' -o -iname '*.fwjpnfont' \) ! -path './data/map_bg_lz/*' ! -path './graphics/ax/mon/*' -exec rm {} +
 	@$(MAKE) clean -C libagbsyscall
 
 define scaninc

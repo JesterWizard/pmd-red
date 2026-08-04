@@ -2385,237 +2385,237 @@ static const ax_anim sChimechoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sChimechoGfx1[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_1.4bpp");
+static const u8 sChimechoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_1.4bpp.lz");
 static const ax_sprite sChimechoSprites1[] = {
 	{sChimechoGfx1, ARRAY_COUNT(sChimechoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx2[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_2.4bpp");
+static const u8 sChimechoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_2.4bpp.lz");
 static const ax_sprite sChimechoSprites2[] = {
 	{sChimechoGfx2, ARRAY_COUNT(sChimechoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx3[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_3.4bpp");
+static const u8 sChimechoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_3.4bpp.lz");
 static const ax_sprite sChimechoSprites3[] = {
 	{sChimechoGfx3, ARRAY_COUNT(sChimechoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx4[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_4.4bpp");
+static const u8 sChimechoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_4.4bpp.lz");
 static const ax_sprite sChimechoSprites4[] = {
 	{sChimechoGfx4, ARRAY_COUNT(sChimechoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx5[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_5.4bpp");
+static const u8 sChimechoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_5.4bpp.lz");
 static const ax_sprite sChimechoSprites5[] = {
 	{sChimechoGfx5, ARRAY_COUNT(sChimechoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx6[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_6.4bpp");
+static const u8 sChimechoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_6.4bpp.lz");
 static const ax_sprite sChimechoSprites6[] = {
 	{sChimechoGfx6, ARRAY_COUNT(sChimechoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx7[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_7.4bpp");
+static const u8 sChimechoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_7.4bpp.lz");
 static const ax_sprite sChimechoSprites7[] = {
 	{sChimechoGfx7, ARRAY_COUNT(sChimechoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx8[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_8.4bpp");
+static const u8 sChimechoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_8.4bpp.lz");
 static const ax_sprite sChimechoSprites8[] = {
 	{sChimechoGfx8, ARRAY_COUNT(sChimechoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx9[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_9.4bpp");
+static const u8 sChimechoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_9.4bpp.lz");
 static const ax_sprite sChimechoSprites9[] = {
 	{sChimechoGfx9, ARRAY_COUNT(sChimechoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx10[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_10.4bpp");
+static const u8 sChimechoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_10.4bpp.lz");
 static const ax_sprite sChimechoSprites10[] = {
 	{sChimechoGfx10, ARRAY_COUNT(sChimechoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx11[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_11.4bpp");
+static const u8 sChimechoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_11.4bpp.lz");
 static const ax_sprite sChimechoSprites11[] = {
 	{sChimechoGfx11, ARRAY_COUNT(sChimechoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx12[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_12.4bpp");
+static const u8 sChimechoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_12.4bpp.lz");
 static const ax_sprite sChimechoSprites12[] = {
 	{sChimechoGfx12, ARRAY_COUNT(sChimechoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx13[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_13.4bpp");
+static const u8 sChimechoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_13.4bpp.lz");
 static const ax_sprite sChimechoSprites13[] = {
 	{sChimechoGfx13, ARRAY_COUNT(sChimechoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx14[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_14.4bpp");
+static const u8 sChimechoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_14.4bpp.lz");
 static const ax_sprite sChimechoSprites14[] = {
 	{sChimechoGfx14, ARRAY_COUNT(sChimechoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx15[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_15.4bpp");
+static const u8 sChimechoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_15.4bpp.lz");
 static const ax_sprite sChimechoSprites15[] = {
 	{sChimechoGfx15, ARRAY_COUNT(sChimechoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx16[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_16.4bpp");
+static const u8 sChimechoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_16.4bpp.lz");
 static const ax_sprite sChimechoSprites16[] = {
 	{sChimechoGfx16, ARRAY_COUNT(sChimechoGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx17[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_17.4bpp");
+static const u8 sChimechoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_17.4bpp.lz");
 static const ax_sprite sChimechoSprites17[] = {
 	{sChimechoGfx17, ARRAY_COUNT(sChimechoGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx18[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_18.4bpp");
+static const u8 sChimechoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_18.4bpp.lz");
 static const ax_sprite sChimechoSprites18[] = {
 	{sChimechoGfx18, ARRAY_COUNT(sChimechoGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx19[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_19.4bpp");
+static const u8 sChimechoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_19.4bpp.lz");
 static const ax_sprite sChimechoSprites19[] = {
 	{sChimechoGfx19, ARRAY_COUNT(sChimechoGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx20[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_20.4bpp");
+static const u8 sChimechoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_20.4bpp.lz");
 static const ax_sprite sChimechoSprites20[] = {
 	{sChimechoGfx20, ARRAY_COUNT(sChimechoGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx21[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_21.4bpp");
+static const u8 sChimechoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_21.4bpp.lz");
 static const ax_sprite sChimechoSprites21[] = {
 	{sChimechoGfx21, ARRAY_COUNT(sChimechoGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx22[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_22.4bpp");
+static const u8 sChimechoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_22.4bpp.lz");
 static const ax_sprite sChimechoSprites22[] = {
 	{sChimechoGfx22, ARRAY_COUNT(sChimechoGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx23[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_23.4bpp");
+static const u8 sChimechoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_23.4bpp.lz");
 static const ax_sprite sChimechoSprites23[] = {
 	{sChimechoGfx23, ARRAY_COUNT(sChimechoGfx23)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx24[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_24.4bpp");
+static const u8 sChimechoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_24.4bpp.lz");
 static const ax_sprite sChimechoSprites24[] = {
 	{sChimechoGfx24, ARRAY_COUNT(sChimechoGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx25[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_25.4bpp");
+static const u8 sChimechoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_25.4bpp.lz");
 static const ax_sprite sChimechoSprites25[] = {
 	{sChimechoGfx25, ARRAY_COUNT(sChimechoGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx26[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_26.4bpp");
+static const u8 sChimechoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_26.4bpp.lz");
 static const ax_sprite sChimechoSprites26[] = {
 	{sChimechoGfx26, ARRAY_COUNT(sChimechoGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx27[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_27.4bpp");
+static const u8 sChimechoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_27.4bpp.lz");
 static const ax_sprite sChimechoSprites27[] = {
 	{sChimechoGfx27, ARRAY_COUNT(sChimechoGfx27)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx28[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_28.4bpp");
+static const u8 sChimechoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_28.4bpp.lz");
 static const ax_sprite sChimechoSprites28[] = {
 	{sChimechoGfx28, ARRAY_COUNT(sChimechoGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx29[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_29.4bpp");
+static const u8 sChimechoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_29.4bpp.lz");
 static const ax_sprite sChimechoSprites29[] = {
 	{sChimechoGfx29, ARRAY_COUNT(sChimechoGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx30[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_30.4bpp");
+static const u8 sChimechoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_30.4bpp.lz");
 static const ax_sprite sChimechoSprites30[] = {
 	{sChimechoGfx30, ARRAY_COUNT(sChimechoGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx31[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_31.4bpp");
+static const u8 sChimechoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_31.4bpp.lz");
 static const ax_sprite sChimechoSprites31[] = {
 	{sChimechoGfx31, ARRAY_COUNT(sChimechoGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx32[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_32.4bpp");
+static const u8 sChimechoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_32.4bpp.lz");
 static const ax_sprite sChimechoSprites32[] = {
 	{sChimechoGfx32, ARRAY_COUNT(sChimechoGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx33[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_33.4bpp");
+static const u8 sChimechoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_33.4bpp.lz");
 static const ax_sprite sChimechoSprites33[] = {
 	{sChimechoGfx33, ARRAY_COUNT(sChimechoGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx34[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_34.4bpp");
+static const u8 sChimechoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_34.4bpp.lz");
 static const ax_sprite sChimechoSprites34[] = {
 	{sChimechoGfx34, ARRAY_COUNT(sChimechoGfx34)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx35[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_35.4bpp");
+static const u8 sChimechoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_35.4bpp.lz");
 static const ax_sprite sChimechoSprites35[] = {
 	{sChimechoGfx35, ARRAY_COUNT(sChimechoGfx35)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx36[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_36.4bpp");
+static const u8 sChimechoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_36.4bpp.lz");
 static const ax_sprite sChimechoSprites36[] = {
 	{sChimechoGfx36, ARRAY_COUNT(sChimechoGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx37[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_37.4bpp");
+static const u8 sChimechoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_37.4bpp.lz");
 static const ax_sprite sChimechoSprites37[] = {
 	{sChimechoGfx37, ARRAY_COUNT(sChimechoGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx38[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_38.4bpp");
+static const u8 sChimechoGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_38.4bpp.lz");
 static const ax_sprite sChimechoSprites38[] = {
 	{sChimechoGfx38, ARRAY_COUNT(sChimechoGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx39[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_39.4bpp");
+static const u8 sChimechoGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_39.4bpp.lz");
 static const ax_sprite sChimechoSprites39[] = {
 	{sChimechoGfx39, ARRAY_COUNT(sChimechoGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx40[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_40.4bpp");
+static const u8 sChimechoGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_40.4bpp.lz");
 static const ax_sprite sChimechoSprites40[] = {
 	{sChimechoGfx40, ARRAY_COUNT(sChimechoGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx41[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_41.4bpp");
+static const u8 sChimechoGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_41.4bpp.lz");
 static const ax_sprite sChimechoSprites41[] = {
 	{sChimechoGfx41, ARRAY_COUNT(sChimechoGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx42[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_42.4bpp");
+static const u8 sChimechoGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_42.4bpp.lz");
 static const ax_sprite sChimechoSprites42[] = {
 	{sChimechoGfx42, ARRAY_COUNT(sChimechoGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx43[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_43.4bpp");
+static const u8 sChimechoGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_43.4bpp.lz");
 static const ax_sprite sChimechoSprites43[] = {
 	{sChimechoGfx43, ARRAY_COUNT(sChimechoGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sChimechoGfx44[] = INCBIN_U8("graphics/ax/mon/chimecho/sprite_44.4bpp");
+static const u8 sChimechoGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chimecho/sprite_44.4bpp.lz");
 static const ax_sprite sChimechoSprites44[] = {
 	{sChimechoGfx44, ARRAY_COUNT(sChimechoGfx44)}, 
 	{NULL, 0}

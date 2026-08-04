@@ -1911,85 +1911,85 @@ static const ax_anim sSlowpokeAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSlowpokeGfx1[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_1.4bpp");
+static const u8 sSlowpokeGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_1.4bpp.lz");
 static const ax_sprite sSlowpokeSprites1[] = {
 	{sSlowpokeGfx1, ARRAY_COUNT(sSlowpokeGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx2[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_2.4bpp");
+static const u8 sSlowpokeGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_2.4bpp.lz");
 static const ax_sprite sSlowpokeSprites2[] = {
 	{sSlowpokeGfx2, ARRAY_COUNT(sSlowpokeGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx3[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_3.4bpp");
+static const u8 sSlowpokeGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_3.4bpp.lz");
 static const ax_sprite sSlowpokeSprites3[] = {
 	{sSlowpokeGfx3, ARRAY_COUNT(sSlowpokeGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx4[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_4.4bpp");
+static const u8 sSlowpokeGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_4.4bpp.lz");
 static const ax_sprite sSlowpokeSprites4[] = {
 	{sSlowpokeGfx4, ARRAY_COUNT(sSlowpokeGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx5[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_5.4bpp");
+static const u8 sSlowpokeGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_5.4bpp.lz");
 static const ax_sprite sSlowpokeSprites5[] = {
 	{sSlowpokeGfx5, ARRAY_COUNT(sSlowpokeGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx6[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_6.4bpp");
+static const u8 sSlowpokeGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_6.4bpp.lz");
 static const ax_sprite sSlowpokeSprites6[] = {
 	{sSlowpokeGfx6, ARRAY_COUNT(sSlowpokeGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx7[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_7.4bpp");
+static const u8 sSlowpokeGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_7.4bpp.lz");
 static const ax_sprite sSlowpokeSprites7[] = {
 	{sSlowpokeGfx7, ARRAY_COUNT(sSlowpokeGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx8[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_8.4bpp");
+static const u8 sSlowpokeGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_8.4bpp.lz");
 static const ax_sprite sSlowpokeSprites8[] = {
 	{sSlowpokeGfx8, ARRAY_COUNT(sSlowpokeGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx9[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_9.4bpp");
+static const u8 sSlowpokeGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_9.4bpp.lz");
 static const ax_sprite sSlowpokeSprites9[] = {
 	{sSlowpokeGfx9, ARRAY_COUNT(sSlowpokeGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx10[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_10.4bpp");
+static const u8 sSlowpokeGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_10.4bpp.lz");
 static const ax_sprite sSlowpokeSprites10[] = {
 	{sSlowpokeGfx10, ARRAY_COUNT(sSlowpokeGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx11[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_11.4bpp");
+static const u8 sSlowpokeGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_11.4bpp.lz");
 static const ax_sprite sSlowpokeSprites11[] = {
 	{sSlowpokeGfx11, ARRAY_COUNT(sSlowpokeGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx12[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_12.4bpp");
+static const u8 sSlowpokeGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_12.4bpp.lz");
 static const ax_sprite sSlowpokeSprites12[] = {
 	{sSlowpokeGfx12, ARRAY_COUNT(sSlowpokeGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx13[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_13.4bpp");
+static const u8 sSlowpokeGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_13.4bpp.lz");
 static const ax_sprite sSlowpokeSprites13[] = {
 	{sSlowpokeGfx13, ARRAY_COUNT(sSlowpokeGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx14[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_14.4bpp");
+static const u8 sSlowpokeGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_14.4bpp.lz");
 static const ax_sprite sSlowpokeSprites14[] = {
 	{sSlowpokeGfx14, ARRAY_COUNT(sSlowpokeGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx15[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_15.4bpp");
+static const u8 sSlowpokeGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_15.4bpp.lz");
 static const ax_sprite sSlowpokeSprites15[] = {
 	{sSlowpokeGfx15, ARRAY_COUNT(sSlowpokeGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx16[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_16.4bpp");
-static const u8 sSlowpokeGfx16_1[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_16_1.4bpp");
-static const u8 sSlowpokeGfx16_2[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_16_2.4bpp");
-static const u8 sSlowpokeGfx16_3[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_16_3.4bpp");
+static const u8 sSlowpokeGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_16.4bpp.lz");
+static const u8 sSlowpokeGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_16_1.4bpp.lz");
+static const u8 sSlowpokeGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_16_2.4bpp.lz");
+static const u8 sSlowpokeGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_16_3.4bpp.lz");
 static const ax_sprite sSlowpokeSprites16[] = {
 	{NULL, 32}, 
 	{sSlowpokeGfx16, ARRAY_COUNT(sSlowpokeGfx16)}, 
@@ -2002,9 +2002,9 @@ static const ax_sprite sSlowpokeSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx17[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_17.4bpp");
-static const u8 sSlowpokeGfx17_1[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_17_1.4bpp");
-static const u8 sSlowpokeGfx17_2[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_17_2.4bpp");
+static const u8 sSlowpokeGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_17.4bpp.lz");
+static const u8 sSlowpokeGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_17_1.4bpp.lz");
+static const u8 sSlowpokeGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_17_2.4bpp.lz");
 static const ax_sprite sSlowpokeSprites17[] = {
 	{NULL, 64}, 
 	{sSlowpokeGfx17, ARRAY_COUNT(sSlowpokeGfx17)}, 
@@ -2015,9 +2015,9 @@ static const ax_sprite sSlowpokeSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx18[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_18.4bpp");
-static const u8 sSlowpokeGfx18_1[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_18_1.4bpp");
-static const u8 sSlowpokeGfx18_2[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_18_2.4bpp");
+static const u8 sSlowpokeGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_18.4bpp.lz");
+static const u8 sSlowpokeGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_18_1.4bpp.lz");
+static const u8 sSlowpokeGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_18_2.4bpp.lz");
 static const ax_sprite sSlowpokeSprites18[] = {
 	{NULL, 64}, 
 	{sSlowpokeGfx18, ARRAY_COUNT(sSlowpokeGfx18)}, 
@@ -2028,10 +2028,10 @@ static const ax_sprite sSlowpokeSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx19[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_19.4bpp");
-static const u8 sSlowpokeGfx19_1[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_19_1.4bpp");
-static const u8 sSlowpokeGfx19_2[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_19_2.4bpp");
-static const u8 sSlowpokeGfx19_3[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_19_3.4bpp");
+static const u8 sSlowpokeGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_19.4bpp.lz");
+static const u8 sSlowpokeGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_19_1.4bpp.lz");
+static const u8 sSlowpokeGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_19_2.4bpp.lz");
+static const u8 sSlowpokeGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_19_3.4bpp.lz");
 static const ax_sprite sSlowpokeSprites19[] = {
 	{sSlowpokeGfx19, ARRAY_COUNT(sSlowpokeGfx19)}, 
 	{NULL, 32}, 
@@ -2043,9 +2043,9 @@ static const ax_sprite sSlowpokeSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx20[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_20.4bpp");
-static const u8 sSlowpokeGfx20_1[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_20_1.4bpp");
-static const u8 sSlowpokeGfx20_2[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_20_2.4bpp");
+static const u8 sSlowpokeGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_20.4bpp.lz");
+static const u8 sSlowpokeGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_20_1.4bpp.lz");
+static const u8 sSlowpokeGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_20_2.4bpp.lz");
 static const ax_sprite sSlowpokeSprites20[] = {
 	{NULL, 32}, 
 	{sSlowpokeGfx20, ARRAY_COUNT(sSlowpokeGfx20)}, 
@@ -2056,37 +2056,37 @@ static const ax_sprite sSlowpokeSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx21[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_21.4bpp");
+static const u8 sSlowpokeGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_21.4bpp.lz");
 static const ax_sprite sSlowpokeSprites21[] = {
 	{sSlowpokeGfx21, ARRAY_COUNT(sSlowpokeGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx22[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_22.4bpp");
+static const u8 sSlowpokeGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_22.4bpp.lz");
 static const ax_sprite sSlowpokeSprites22[] = {
 	{sSlowpokeGfx22, ARRAY_COUNT(sSlowpokeGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx23[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_23.4bpp");
+static const u8 sSlowpokeGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_23.4bpp.lz");
 static const ax_sprite sSlowpokeSprites23[] = {
 	{sSlowpokeGfx23, ARRAY_COUNT(sSlowpokeGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx24[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_24.4bpp");
+static const u8 sSlowpokeGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_24.4bpp.lz");
 static const ax_sprite sSlowpokeSprites24[] = {
 	{sSlowpokeGfx24, ARRAY_COUNT(sSlowpokeGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx25[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_25.4bpp");
+static const u8 sSlowpokeGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_25.4bpp.lz");
 static const ax_sprite sSlowpokeSprites25[] = {
 	{sSlowpokeGfx25, ARRAY_COUNT(sSlowpokeGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx26[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_26.4bpp");
+static const u8 sSlowpokeGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_26.4bpp.lz");
 static const ax_sprite sSlowpokeSprites26[] = {
 	{sSlowpokeGfx26, ARRAY_COUNT(sSlowpokeGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSlowpokeGfx27[] = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_27.4bpp");
+static const u8 sSlowpokeGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slowpoke/sprite_27.4bpp.lz");
 static const ax_sprite sSlowpokeSprites27[] = {
 	{sSlowpokeGfx27, ARRAY_COUNT(sSlowpokeGfx27)}, 
 	{NULL, 0}

@@ -1991,84 +1991,84 @@ static const ax_anim sVenonatAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVenonatGfx1[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_1.4bpp");
+static const u8 sVenonatGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_1.4bpp.lz");
 static const ax_sprite sVenonatSprites1[] = {
 	{sVenonatGfx1, ARRAY_COUNT(sVenonatGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx2[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_2.4bpp");
+static const u8 sVenonatGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_2.4bpp.lz");
 static const ax_sprite sVenonatSprites2[] = {
 	{sVenonatGfx2, ARRAY_COUNT(sVenonatGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx3[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_3.4bpp");
+static const u8 sVenonatGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_3.4bpp.lz");
 static const ax_sprite sVenonatSprites3[] = {
 	{sVenonatGfx3, ARRAY_COUNT(sVenonatGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx4[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_4.4bpp");
+static const u8 sVenonatGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_4.4bpp.lz");
 static const ax_sprite sVenonatSprites4[] = {
 	{sVenonatGfx4, ARRAY_COUNT(sVenonatGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx5[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_5.4bpp");
+static const u8 sVenonatGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_5.4bpp.lz");
 static const ax_sprite sVenonatSprites5[] = {
 	{sVenonatGfx5, ARRAY_COUNT(sVenonatGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx6[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_6.4bpp");
+static const u8 sVenonatGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_6.4bpp.lz");
 static const ax_sprite sVenonatSprites6[] = {
 	{sVenonatGfx6, ARRAY_COUNT(sVenonatGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx7[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_7.4bpp");
+static const u8 sVenonatGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_7.4bpp.lz");
 static const ax_sprite sVenonatSprites7[] = {
 	{sVenonatGfx7, ARRAY_COUNT(sVenonatGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx8[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_8.4bpp");
+static const u8 sVenonatGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_8.4bpp.lz");
 static const ax_sprite sVenonatSprites8[] = {
 	{sVenonatGfx8, ARRAY_COUNT(sVenonatGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx9[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_9.4bpp");
+static const u8 sVenonatGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_9.4bpp.lz");
 static const ax_sprite sVenonatSprites9[] = {
 	{sVenonatGfx9, ARRAY_COUNT(sVenonatGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx10[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_10.4bpp");
+static const u8 sVenonatGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_10.4bpp.lz");
 static const ax_sprite sVenonatSprites10[] = {
 	{sVenonatGfx10, ARRAY_COUNT(sVenonatGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx11[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_11.4bpp");
+static const u8 sVenonatGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_11.4bpp.lz");
 static const ax_sprite sVenonatSprites11[] = {
 	{sVenonatGfx11, ARRAY_COUNT(sVenonatGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx12[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_12.4bpp");
+static const u8 sVenonatGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_12.4bpp.lz");
 static const ax_sprite sVenonatSprites12[] = {
 	{sVenonatGfx12, ARRAY_COUNT(sVenonatGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx13[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_13.4bpp");
+static const u8 sVenonatGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_13.4bpp.lz");
 static const ax_sprite sVenonatSprites13[] = {
 	{sVenonatGfx13, ARRAY_COUNT(sVenonatGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx14[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_14.4bpp");
+static const u8 sVenonatGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_14.4bpp.lz");
 static const ax_sprite sVenonatSprites14[] = {
 	{sVenonatGfx14, ARRAY_COUNT(sVenonatGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx15[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_15.4bpp");
+static const u8 sVenonatGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_15.4bpp.lz");
 static const ax_sprite sVenonatSprites15[] = {
 	{sVenonatGfx15, ARRAY_COUNT(sVenonatGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx16[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_16.4bpp");
-static const u8 sVenonatGfx16_1[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_16_1.4bpp");
-static const u8 sVenonatGfx16_2[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_16_2.4bpp");
+static const u8 sVenonatGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_16.4bpp.lz");
+static const u8 sVenonatGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_16_1.4bpp.lz");
+static const u8 sVenonatGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_16_2.4bpp.lz");
 static const ax_sprite sVenonatSprites16[] = {
 	{sVenonatGfx16, ARRAY_COUNT(sVenonatGfx16)}, 
 	{NULL, 32}, 
@@ -2078,9 +2078,9 @@ static const ax_sprite sVenonatSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx17[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_17.4bpp");
-static const u8 sVenonatGfx17_1[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_17_1.4bpp");
-static const u8 sVenonatGfx17_2[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_17_2.4bpp");
+static const u8 sVenonatGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_17.4bpp.lz");
+static const u8 sVenonatGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_17_1.4bpp.lz");
+static const u8 sVenonatGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_17_2.4bpp.lz");
 static const ax_sprite sVenonatSprites17[] = {
 	{sVenonatGfx17, ARRAY_COUNT(sVenonatGfx17)}, 
 	{NULL, 32}, 
@@ -2090,9 +2090,9 @@ static const ax_sprite sVenonatSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx18[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_18.4bpp");
-static const u8 sVenonatGfx18_1[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_18_1.4bpp");
-static const u8 sVenonatGfx18_2[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_18_2.4bpp");
+static const u8 sVenonatGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_18.4bpp.lz");
+static const u8 sVenonatGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_18_1.4bpp.lz");
+static const u8 sVenonatGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_18_2.4bpp.lz");
 static const ax_sprite sVenonatSprites18[] = {
 	{sVenonatGfx18, ARRAY_COUNT(sVenonatGfx18)}, 
 	{NULL, 32}, 
@@ -2102,9 +2102,9 @@ static const ax_sprite sVenonatSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx19[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_19.4bpp");
-static const u8 sVenonatGfx19_1[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_19_1.4bpp");
-static const u8 sVenonatGfx19_2[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_19_2.4bpp");
+static const u8 sVenonatGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_19.4bpp.lz");
+static const u8 sVenonatGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_19_1.4bpp.lz");
+static const u8 sVenonatGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_19_2.4bpp.lz");
 static const ax_sprite sVenonatSprites19[] = {
 	{NULL, 32}, 
 	{sVenonatGfx19, ARRAY_COUNT(sVenonatGfx19)}, 
@@ -2115,10 +2115,10 @@ static const ax_sprite sVenonatSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx20[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_20.4bpp");
-static const u8 sVenonatGfx20_1[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_20_1.4bpp");
-static const u8 sVenonatGfx20_2[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_20_2.4bpp");
-static const u8 sVenonatGfx20_3[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_20_3.4bpp");
+static const u8 sVenonatGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_20.4bpp.lz");
+static const u8 sVenonatGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_20_1.4bpp.lz");
+static const u8 sVenonatGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_20_2.4bpp.lz");
+static const u8 sVenonatGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_20_3.4bpp.lz");
 static const ax_sprite sVenonatSprites20[] = {
 	{NULL, 32}, 
 	{sVenonatGfx20, ARRAY_COUNT(sVenonatGfx20)}, 
@@ -2131,37 +2131,37 @@ static const ax_sprite sVenonatSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx21[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_21.4bpp");
+static const u8 sVenonatGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_21.4bpp.lz");
 static const ax_sprite sVenonatSprites21[] = {
 	{sVenonatGfx21, ARRAY_COUNT(sVenonatGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx22[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_22.4bpp");
+static const u8 sVenonatGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_22.4bpp.lz");
 static const ax_sprite sVenonatSprites22[] = {
 	{sVenonatGfx22, ARRAY_COUNT(sVenonatGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx23[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_23.4bpp");
+static const u8 sVenonatGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_23.4bpp.lz");
 static const ax_sprite sVenonatSprites23[] = {
 	{sVenonatGfx23, ARRAY_COUNT(sVenonatGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx24[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_24.4bpp");
+static const u8 sVenonatGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_24.4bpp.lz");
 static const ax_sprite sVenonatSprites24[] = {
 	{sVenonatGfx24, ARRAY_COUNT(sVenonatGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx25[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_25.4bpp");
+static const u8 sVenonatGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_25.4bpp.lz");
 static const ax_sprite sVenonatSprites25[] = {
 	{sVenonatGfx25, ARRAY_COUNT(sVenonatGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx26[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_26.4bpp");
+static const u8 sVenonatGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_26.4bpp.lz");
 static const ax_sprite sVenonatSprites26[] = {
 	{sVenonatGfx26, ARRAY_COUNT(sVenonatGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sVenonatGfx27[] = INCBIN_U8("graphics/ax/mon/venonat/sprite_27.4bpp");
+static const u8 sVenonatGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/venonat/sprite_27.4bpp.lz");
 static const ax_sprite sVenonatSprites27[] = {
 	{sVenonatGfx27, ARRAY_COUNT(sVenonatGfx27)}, 
 	{NULL, 0}

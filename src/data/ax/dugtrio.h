@@ -5358,53 +5358,53 @@ static const ax_anim sDugtrioAnims_15_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDugtrioGfx1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_1.4bpp");
+static const u8 sDugtrioGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites1[] = {
 	{sDugtrioGfx1, ARRAY_COUNT(sDugtrioGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx2[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_2.4bpp");
+static const u8 sDugtrioGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_2.4bpp.lz");
 static const ax_sprite sDugtrioSprites2[] = {
 	{sDugtrioGfx2, ARRAY_COUNT(sDugtrioGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx3[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_3.4bpp");
+static const u8 sDugtrioGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_3.4bpp.lz");
 static const ax_sprite sDugtrioSprites3[] = {
 	{sDugtrioGfx3, ARRAY_COUNT(sDugtrioGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx4[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_4.4bpp");
+static const u8 sDugtrioGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_4.4bpp.lz");
 static const ax_sprite sDugtrioSprites4[] = {
 	{sDugtrioGfx4, ARRAY_COUNT(sDugtrioGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx5[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_5.4bpp");
+static const u8 sDugtrioGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_5.4bpp.lz");
 static const ax_sprite sDugtrioSprites5[] = {
 	{sDugtrioGfx5, ARRAY_COUNT(sDugtrioGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx6[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_6.4bpp");
+static const u8 sDugtrioGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_6.4bpp.lz");
 static const ax_sprite sDugtrioSprites6[] = {
 	{sDugtrioGfx6, ARRAY_COUNT(sDugtrioGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx7[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_7.4bpp");
+static const u8 sDugtrioGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_7.4bpp.lz");
 static const ax_sprite sDugtrioSprites7[] = {
 	{sDugtrioGfx7, ARRAY_COUNT(sDugtrioGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx8[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_8.4bpp");
+static const u8 sDugtrioGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_8.4bpp.lz");
 static const ax_sprite sDugtrioSprites8[] = {
 	{sDugtrioGfx8, ARRAY_COUNT(sDugtrioGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx9[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_9.4bpp");
+static const u8 sDugtrioGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_9.4bpp.lz");
 static const ax_sprite sDugtrioSprites9[] = {
 	{sDugtrioGfx9, ARRAY_COUNT(sDugtrioGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx10[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_10.4bpp");
-static const u8 sDugtrioGfx10_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_10_1.4bpp");
+static const u8 sDugtrioGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_10.4bpp.lz");
+static const u8 sDugtrioGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_10_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites10[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx10, ARRAY_COUNT(sDugtrioGfx10)}, 
@@ -5412,8 +5412,8 @@ static const ax_sprite sDugtrioSprites10[] = {
 	{sDugtrioGfx10_1, ARRAY_COUNT(sDugtrioGfx10_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx11[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_11.4bpp");
-static const u8 sDugtrioGfx11_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_11_1.4bpp");
+static const u8 sDugtrioGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_11.4bpp.lz");
+static const u8 sDugtrioGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_11_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites11[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx11, ARRAY_COUNT(sDugtrioGfx11)}, 
@@ -5421,8 +5421,8 @@ static const ax_sprite sDugtrioSprites11[] = {
 	{sDugtrioGfx11_1, ARRAY_COUNT(sDugtrioGfx11_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx12[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_12.4bpp");
-static const u8 sDugtrioGfx12_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_12_1.4bpp");
+static const u8 sDugtrioGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_12.4bpp.lz");
+static const u8 sDugtrioGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_12_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites12[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx12, ARRAY_COUNT(sDugtrioGfx12)}, 
@@ -5430,8 +5430,8 @@ static const ax_sprite sDugtrioSprites12[] = {
 	{sDugtrioGfx12_1, ARRAY_COUNT(sDugtrioGfx12_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx13[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_13.4bpp");
-static const u8 sDugtrioGfx13_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_13_1.4bpp");
+static const u8 sDugtrioGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_13.4bpp.lz");
+static const u8 sDugtrioGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_13_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites13[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx13, ARRAY_COUNT(sDugtrioGfx13)}, 
@@ -5439,8 +5439,8 @@ static const ax_sprite sDugtrioSprites13[] = {
 	{sDugtrioGfx13_1, ARRAY_COUNT(sDugtrioGfx13_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx14[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_14.4bpp");
-static const u8 sDugtrioGfx14_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_14_1.4bpp");
+static const u8 sDugtrioGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_14.4bpp.lz");
+static const u8 sDugtrioGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_14_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites14[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx14, ARRAY_COUNT(sDugtrioGfx14)}, 
@@ -5448,22 +5448,22 @@ static const ax_sprite sDugtrioSprites14[] = {
 	{sDugtrioGfx14_1, ARRAY_COUNT(sDugtrioGfx14_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx15[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_15.4bpp");
-static const u8 sDugtrioGfx15_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_15_1.4bpp");
+static const u8 sDugtrioGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_15.4bpp.lz");
+static const u8 sDugtrioGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_15_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites15[] = {
 	{sDugtrioGfx15, ARRAY_COUNT(sDugtrioGfx15)}, 
 	{NULL, 32}, 
 	{sDugtrioGfx15_1, ARRAY_COUNT(sDugtrioGfx15_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx16[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_16.4bpp");
+static const u8 sDugtrioGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_16.4bpp.lz");
 static const ax_sprite sDugtrioSprites16[] = {
 	{NULL, 64}, 
 	{sDugtrioGfx16, ARRAY_COUNT(sDugtrioGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx17[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_17.4bpp");
-static const u8 sDugtrioGfx17_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_17_1.4bpp");
+static const u8 sDugtrioGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_17.4bpp.lz");
+static const u8 sDugtrioGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_17_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites17[] = {
 	{NULL, 64}, 
 	{sDugtrioGfx17, ARRAY_COUNT(sDugtrioGfx17)}, 
@@ -5471,8 +5471,8 @@ static const ax_sprite sDugtrioSprites17[] = {
 	{sDugtrioGfx17_1, ARRAY_COUNT(sDugtrioGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx18[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_18.4bpp");
-static const u8 sDugtrioGfx18_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_18_1.4bpp");
+static const u8 sDugtrioGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_18.4bpp.lz");
+static const u8 sDugtrioGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_18_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites18[] = {
 	{NULL, 64}, 
 	{sDugtrioGfx18, ARRAY_COUNT(sDugtrioGfx18)}, 
@@ -5480,8 +5480,8 @@ static const ax_sprite sDugtrioSprites18[] = {
 	{sDugtrioGfx18_1, ARRAY_COUNT(sDugtrioGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx19[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_19.4bpp");
-static const u8 sDugtrioGfx19_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_19_1.4bpp");
+static const u8 sDugtrioGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_19.4bpp.lz");
+static const u8 sDugtrioGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_19_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites19[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx19, ARRAY_COUNT(sDugtrioGfx19)}, 
@@ -5489,8 +5489,8 @@ static const ax_sprite sDugtrioSprites19[] = {
 	{sDugtrioGfx19_1, ARRAY_COUNT(sDugtrioGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx20[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_20.4bpp");
-static const u8 sDugtrioGfx20_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_20_1.4bpp");
+static const u8 sDugtrioGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_20.4bpp.lz");
+static const u8 sDugtrioGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_20_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites20[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx20, ARRAY_COUNT(sDugtrioGfx20)}, 
@@ -5498,9 +5498,9 @@ static const ax_sprite sDugtrioSprites20[] = {
 	{sDugtrioGfx20_1, ARRAY_COUNT(sDugtrioGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx21[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_21.4bpp");
-static const u8 sDugtrioGfx21_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_21_1.4bpp");
-static const u8 sDugtrioGfx21_2[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_21_2.4bpp");
+static const u8 sDugtrioGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_21.4bpp.lz");
+static const u8 sDugtrioGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_21_1.4bpp.lz");
+static const u8 sDugtrioGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_21_2.4bpp.lz");
 static const ax_sprite sDugtrioSprites21[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx21, ARRAY_COUNT(sDugtrioGfx21)}, 
@@ -5510,8 +5510,8 @@ static const ax_sprite sDugtrioSprites21[] = {
 	{sDugtrioGfx21_2, ARRAY_COUNT(sDugtrioGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx22[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_22.4bpp");
-static const u8 sDugtrioGfx22_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_22_1.4bpp");
+static const u8 sDugtrioGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_22.4bpp.lz");
+static const u8 sDugtrioGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_22_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites22[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx22, ARRAY_COUNT(sDugtrioGfx22)}, 
@@ -5519,24 +5519,24 @@ static const ax_sprite sDugtrioSprites22[] = {
 	{sDugtrioGfx22_1, ARRAY_COUNT(sDugtrioGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx23[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_23.4bpp");
-static const u8 sDugtrioGfx23_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_23_1.4bpp");
+static const u8 sDugtrioGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_23.4bpp.lz");
+static const u8 sDugtrioGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_23_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites23[] = {
 	{sDugtrioGfx23, ARRAY_COUNT(sDugtrioGfx23)}, 
 	{NULL, 64}, 
 	{sDugtrioGfx23_1, ARRAY_COUNT(sDugtrioGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx24[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_24.4bpp");
-static const u8 sDugtrioGfx24_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_24_1.4bpp");
+static const u8 sDugtrioGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_24.4bpp.lz");
+static const u8 sDugtrioGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_24_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites24[] = {
 	{sDugtrioGfx24, ARRAY_COUNT(sDugtrioGfx24)}, 
 	{NULL, 64}, 
 	{sDugtrioGfx24_1, ARRAY_COUNT(sDugtrioGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx25[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_25.4bpp");
-static const u8 sDugtrioGfx25_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_25_1.4bpp");
+static const u8 sDugtrioGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_25.4bpp.lz");
+static const u8 sDugtrioGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_25_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites25[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx25, ARRAY_COUNT(sDugtrioGfx25)}, 
@@ -5544,8 +5544,8 @@ static const ax_sprite sDugtrioSprites25[] = {
 	{sDugtrioGfx25_1, ARRAY_COUNT(sDugtrioGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx26[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_26.4bpp");
-static const u8 sDugtrioGfx26_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_26_1.4bpp");
+static const u8 sDugtrioGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_26.4bpp.lz");
+static const u8 sDugtrioGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_26_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites26[] = {
 	{NULL, 64}, 
 	{sDugtrioGfx26, ARRAY_COUNT(sDugtrioGfx26)}, 
@@ -5553,22 +5553,22 @@ static const ax_sprite sDugtrioSprites26[] = {
 	{sDugtrioGfx26_1, ARRAY_COUNT(sDugtrioGfx26_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx27[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_27.4bpp");
+static const u8 sDugtrioGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_27.4bpp.lz");
 static const ax_sprite sDugtrioSprites27[] = {
 	{NULL, 64}, 
 	{sDugtrioGfx27, ARRAY_COUNT(sDugtrioGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx28[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_28.4bpp");
-static const u8 sDugtrioGfx28_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_28_1.4bpp");
+static const u8 sDugtrioGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_28.4bpp.lz");
+static const u8 sDugtrioGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_28_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites28[] = {
 	{sDugtrioGfx28, ARRAY_COUNT(sDugtrioGfx28)}, 
 	{NULL, 64}, 
 	{sDugtrioGfx28_1, ARRAY_COUNT(sDugtrioGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx29[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_29.4bpp");
-static const u8 sDugtrioGfx29_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_29_1.4bpp");
+static const u8 sDugtrioGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_29.4bpp.lz");
+static const u8 sDugtrioGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_29_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites29[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx29, ARRAY_COUNT(sDugtrioGfx29)}, 
@@ -5576,8 +5576,8 @@ static const ax_sprite sDugtrioSprites29[] = {
 	{sDugtrioGfx29_1, ARRAY_COUNT(sDugtrioGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx30[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_30.4bpp");
-static const u8 sDugtrioGfx30_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_30_1.4bpp");
+static const u8 sDugtrioGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_30.4bpp.lz");
+static const u8 sDugtrioGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_30_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites30[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx30, ARRAY_COUNT(sDugtrioGfx30)}, 
@@ -5585,112 +5585,112 @@ static const ax_sprite sDugtrioSprites30[] = {
 	{sDugtrioGfx30_1, ARRAY_COUNT(sDugtrioGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx31[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_31.4bpp");
-static const u8 sDugtrioGfx31_1[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_31_1.4bpp");
+static const u8 sDugtrioGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_31.4bpp.lz");
+static const u8 sDugtrioGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_31_1.4bpp.lz");
 static const ax_sprite sDugtrioSprites31[] = {
 	{sDugtrioGfx31, ARRAY_COUNT(sDugtrioGfx31)}, 
 	{NULL, 32}, 
 	{sDugtrioGfx31_1, ARRAY_COUNT(sDugtrioGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx32[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_32.4bpp");
+static const u8 sDugtrioGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_32.4bpp.lz");
 static const ax_sprite sDugtrioSprites32[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx32, ARRAY_COUNT(sDugtrioGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx33[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_33.4bpp");
+static const u8 sDugtrioGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_33.4bpp.lz");
 static const ax_sprite sDugtrioSprites33[] = {
 	{NULL, 32}, 
 	{sDugtrioGfx33, ARRAY_COUNT(sDugtrioGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx34[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_34.4bpp");
+static const u8 sDugtrioGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_34.4bpp.lz");
 static const ax_sprite sDugtrioSprites34[] = {
 	{sDugtrioGfx34, ARRAY_COUNT(sDugtrioGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx35[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_35.4bpp");
+static const u8 sDugtrioGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_35.4bpp.lz");
 static const ax_sprite sDugtrioSprites35[] = {
 	{sDugtrioGfx35, ARRAY_COUNT(sDugtrioGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx36[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_36.4bpp");
+static const u8 sDugtrioGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_36.4bpp.lz");
 static const ax_sprite sDugtrioSprites36[] = {
 	{sDugtrioGfx36, ARRAY_COUNT(sDugtrioGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx37[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_37.4bpp");
+static const u8 sDugtrioGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_37.4bpp.lz");
 static const ax_sprite sDugtrioSprites37[] = {
 	{sDugtrioGfx37, ARRAY_COUNT(sDugtrioGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx38[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_38.4bpp");
+static const u8 sDugtrioGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_38.4bpp.lz");
 static const ax_sprite sDugtrioSprites38[] = {
 	{sDugtrioGfx38, ARRAY_COUNT(sDugtrioGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx39[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_39.4bpp");
+static const u8 sDugtrioGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_39.4bpp.lz");
 static const ax_sprite sDugtrioSprites39[] = {
 	{sDugtrioGfx39, ARRAY_COUNT(sDugtrioGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx40[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_40.4bpp");
+static const u8 sDugtrioGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_40.4bpp.lz");
 static const ax_sprite sDugtrioSprites40[] = {
 	{sDugtrioGfx40, ARRAY_COUNT(sDugtrioGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx41[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_41.4bpp");
+static const u8 sDugtrioGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_41.4bpp.lz");
 static const ax_sprite sDugtrioSprites41[] = {
 	{sDugtrioGfx41, ARRAY_COUNT(sDugtrioGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx42[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_42.4bpp");
+static const u8 sDugtrioGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_42.4bpp.lz");
 static const ax_sprite sDugtrioSprites42[] = {
 	{sDugtrioGfx42, ARRAY_COUNT(sDugtrioGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx43[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_43.4bpp");
+static const u8 sDugtrioGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_43.4bpp.lz");
 static const ax_sprite sDugtrioSprites43[] = {
 	{sDugtrioGfx43, ARRAY_COUNT(sDugtrioGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx44[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_44.4bpp");
+static const u8 sDugtrioGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_44.4bpp.lz");
 static const ax_sprite sDugtrioSprites44[] = {
 	{sDugtrioGfx44, ARRAY_COUNT(sDugtrioGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx45[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_45.4bpp");
+static const u8 sDugtrioGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_45.4bpp.lz");
 static const ax_sprite sDugtrioSprites45[] = {
 	{sDugtrioGfx45, ARRAY_COUNT(sDugtrioGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx46[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_46.4bpp");
+static const u8 sDugtrioGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_46.4bpp.lz");
 static const ax_sprite sDugtrioSprites46[] = {
 	{sDugtrioGfx46, ARRAY_COUNT(sDugtrioGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx47[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_47.4bpp");
+static const u8 sDugtrioGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_47.4bpp.lz");
 static const ax_sprite sDugtrioSprites47[] = {
 	{sDugtrioGfx47, ARRAY_COUNT(sDugtrioGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx48[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_48.4bpp");
+static const u8 sDugtrioGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_48.4bpp.lz");
 static const ax_sprite sDugtrioSprites48[] = {
 	{sDugtrioGfx48, ARRAY_COUNT(sDugtrioGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx49[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_49.4bpp");
+static const u8 sDugtrioGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_49.4bpp.lz");
 static const ax_sprite sDugtrioSprites49[] = {
 	{sDugtrioGfx49, ARRAY_COUNT(sDugtrioGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx50[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_50.4bpp");
+static const u8 sDugtrioGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_50.4bpp.lz");
 static const ax_sprite sDugtrioSprites50[] = {
 	{sDugtrioGfx50, ARRAY_COUNT(sDugtrioGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sDugtrioGfx51[] = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_51.4bpp");
+static const u8 sDugtrioGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dugtrio/sprite_51.4bpp.lz");
 static const ax_sprite sDugtrioSprites51[] = {
 	{sDugtrioGfx51, ARRAY_COUNT(sDugtrioGfx51)}, 
 	{NULL, 0}

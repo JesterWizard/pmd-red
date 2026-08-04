@@ -2191,85 +2191,85 @@ static const ax_anim sJolteonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sJolteonGfx1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_1.4bpp");
+static const u8 sJolteonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_1.4bpp.lz");
 static const ax_sprite sJolteonSprites1[] = {
 	{sJolteonGfx1, ARRAY_COUNT(sJolteonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_2.4bpp");
+static const u8 sJolteonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_2.4bpp.lz");
 static const ax_sprite sJolteonSprites2[] = {
 	{sJolteonGfx2, ARRAY_COUNT(sJolteonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_3.4bpp");
+static const u8 sJolteonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_3.4bpp.lz");
 static const ax_sprite sJolteonSprites3[] = {
 	{sJolteonGfx3, ARRAY_COUNT(sJolteonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx4[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_4.4bpp");
+static const u8 sJolteonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_4.4bpp.lz");
 static const ax_sprite sJolteonSprites4[] = {
 	{sJolteonGfx4, ARRAY_COUNT(sJolteonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx5[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_5.4bpp");
+static const u8 sJolteonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_5.4bpp.lz");
 static const ax_sprite sJolteonSprites5[] = {
 	{sJolteonGfx5, ARRAY_COUNT(sJolteonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx6[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_6.4bpp");
+static const u8 sJolteonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_6.4bpp.lz");
 static const ax_sprite sJolteonSprites6[] = {
 	{sJolteonGfx6, ARRAY_COUNT(sJolteonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx7[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_7.4bpp");
+static const u8 sJolteonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_7.4bpp.lz");
 static const ax_sprite sJolteonSprites7[] = {
 	{sJolteonGfx7, ARRAY_COUNT(sJolteonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx8[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_8.4bpp");
+static const u8 sJolteonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_8.4bpp.lz");
 static const ax_sprite sJolteonSprites8[] = {
 	{sJolteonGfx8, ARRAY_COUNT(sJolteonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx9[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_9.4bpp");
+static const u8 sJolteonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_9.4bpp.lz");
 static const ax_sprite sJolteonSprites9[] = {
 	{sJolteonGfx9, ARRAY_COUNT(sJolteonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx10[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_10.4bpp");
+static const u8 sJolteonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_10.4bpp.lz");
 static const ax_sprite sJolteonSprites10[] = {
 	{sJolteonGfx10, ARRAY_COUNT(sJolteonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx11[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_11.4bpp");
+static const u8 sJolteonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_11.4bpp.lz");
 static const ax_sprite sJolteonSprites11[] = {
 	{sJolteonGfx11, ARRAY_COUNT(sJolteonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx12[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_12.4bpp");
+static const u8 sJolteonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_12.4bpp.lz");
 static const ax_sprite sJolteonSprites12[] = {
 	{sJolteonGfx12, ARRAY_COUNT(sJolteonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx13[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_13.4bpp");
+static const u8 sJolteonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_13.4bpp.lz");
 static const ax_sprite sJolteonSprites13[] = {
 	{sJolteonGfx13, ARRAY_COUNT(sJolteonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx14[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_14.4bpp");
+static const u8 sJolteonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_14.4bpp.lz");
 static const ax_sprite sJolteonSprites14[] = {
 	{sJolteonGfx14, ARRAY_COUNT(sJolteonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx15[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_15.4bpp");
+static const u8 sJolteonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_15.4bpp.lz");
 static const ax_sprite sJolteonSprites15[] = {
 	{sJolteonGfx15, ARRAY_COUNT(sJolteonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx16[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_16.4bpp");
-static const u8 sJolteonGfx16_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_16_1.4bpp");
-static const u8 sJolteonGfx16_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_16_2.4bpp");
-static const u8 sJolteonGfx16_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_16_3.4bpp");
+static const u8 sJolteonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_16.4bpp.lz");
+static const u8 sJolteonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_16_1.4bpp.lz");
+static const u8 sJolteonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_16_2.4bpp.lz");
+static const u8 sJolteonGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_16_3.4bpp.lz");
 static const ax_sprite sJolteonSprites16[] = {
 	{sJolteonGfx16, ARRAY_COUNT(sJolteonGfx16)}, 
 	{NULL, 32}, 
@@ -2281,10 +2281,10 @@ static const ax_sprite sJolteonSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx17[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_17.4bpp");
-static const u8 sJolteonGfx17_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_17_1.4bpp");
-static const u8 sJolteonGfx17_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_17_2.4bpp");
-static const u8 sJolteonGfx17_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_17_3.4bpp");
+static const u8 sJolteonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_17.4bpp.lz");
+static const u8 sJolteonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_17_1.4bpp.lz");
+static const u8 sJolteonGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_17_2.4bpp.lz");
+static const u8 sJolteonGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_17_3.4bpp.lz");
 static const ax_sprite sJolteonSprites17[] = {
 	{NULL, 64}, 
 	{sJolteonGfx17, ARRAY_COUNT(sJolteonGfx17)}, 
@@ -2297,18 +2297,18 @@ static const ax_sprite sJolteonSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx18[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_18.4bpp");
-static const u8 sJolteonGfx18_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_18_1.4bpp");
+static const u8 sJolteonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_18.4bpp.lz");
+static const u8 sJolteonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_18_1.4bpp.lz");
 static const ax_sprite sJolteonSprites18[] = {
 	{sJolteonGfx18, ARRAY_COUNT(sJolteonGfx18)}, 
 	{NULL, 64}, 
 	{sJolteonGfx18_1, ARRAY_COUNT(sJolteonGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx19[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_19.4bpp");
-static const u8 sJolteonGfx19_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_19_1.4bpp");
-static const u8 sJolteonGfx19_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_19_2.4bpp");
-static const u8 sJolteonGfx19_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_19_3.4bpp");
+static const u8 sJolteonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_19.4bpp.lz");
+static const u8 sJolteonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_19_1.4bpp.lz");
+static const u8 sJolteonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_19_2.4bpp.lz");
+static const u8 sJolteonGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_19_3.4bpp.lz");
 static const ax_sprite sJolteonSprites19[] = {
 	{NULL, 32}, 
 	{sJolteonGfx19, ARRAY_COUNT(sJolteonGfx19)}, 
@@ -2321,10 +2321,10 @@ static const ax_sprite sJolteonSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx20[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_20.4bpp");
-static const u8 sJolteonGfx20_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_20_1.4bpp");
-static const u8 sJolteonGfx20_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_20_2.4bpp");
-static const u8 sJolteonGfx20_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_20_3.4bpp");
+static const u8 sJolteonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_20.4bpp.lz");
+static const u8 sJolteonGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_20_1.4bpp.lz");
+static const u8 sJolteonGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_20_2.4bpp.lz");
+static const u8 sJolteonGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_20_3.4bpp.lz");
 static const ax_sprite sJolteonSprites20[] = {
 	{sJolteonGfx20, ARRAY_COUNT(sJolteonGfx20)}, 
 	{NULL, 32}, 
@@ -2336,10 +2336,10 @@ static const ax_sprite sJolteonSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx21[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_21.4bpp");
-static const u8 sJolteonGfx21_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_21_1.4bpp");
-static const u8 sJolteonGfx21_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_21_2.4bpp");
-static const u8 sJolteonGfx21_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_21_3.4bpp");
+static const u8 sJolteonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_21.4bpp.lz");
+static const u8 sJolteonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_21_1.4bpp.lz");
+static const u8 sJolteonGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_21_2.4bpp.lz");
+static const u8 sJolteonGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_21_3.4bpp.lz");
 static const ax_sprite sJolteonSprites21[] = {
 	{sJolteonGfx21, ARRAY_COUNT(sJolteonGfx21)}, 
 	{NULL, 32}, 
@@ -2351,8 +2351,8 @@ static const ax_sprite sJolteonSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx22[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_22.4bpp");
-static const u8 sJolteonGfx22_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_22_1.4bpp");
+static const u8 sJolteonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_22.4bpp.lz");
+static const u8 sJolteonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_22_1.4bpp.lz");
 static const ax_sprite sJolteonSprites22[] = {
 	{sJolteonGfx22, ARRAY_COUNT(sJolteonGfx22)}, 
 	{NULL, 32}, 
@@ -2360,10 +2360,10 @@ static const ax_sprite sJolteonSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx23[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_23.4bpp");
-static const u8 sJolteonGfx23_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_23_1.4bpp");
-static const u8 sJolteonGfx23_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_23_2.4bpp");
-static const u8 sJolteonGfx23_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_23_3.4bpp");
+static const u8 sJolteonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_23.4bpp.lz");
+static const u8 sJolteonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_23_1.4bpp.lz");
+static const u8 sJolteonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_23_2.4bpp.lz");
+static const u8 sJolteonGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_23_3.4bpp.lz");
 static const ax_sprite sJolteonSprites23[] = {
 	{NULL, 32}, 
 	{sJolteonGfx23, ARRAY_COUNT(sJolteonGfx23)}, 
@@ -2375,10 +2375,10 @@ static const ax_sprite sJolteonSprites23[] = {
 	{sJolteonGfx23_3, ARRAY_COUNT(sJolteonGfx23_3)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx24[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_24.4bpp");
-static const u8 sJolteonGfx24_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_24_1.4bpp");
-static const u8 sJolteonGfx24_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_24_2.4bpp");
-static const u8 sJolteonGfx24_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_24_3.4bpp");
+static const u8 sJolteonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_24.4bpp.lz");
+static const u8 sJolteonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_24_1.4bpp.lz");
+static const u8 sJolteonGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_24_2.4bpp.lz");
+static const u8 sJolteonGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_24_3.4bpp.lz");
 static const ax_sprite sJolteonSprites24[] = {
 	{sJolteonGfx24, ARRAY_COUNT(sJolteonGfx24)}, 
 	{NULL, 32}, 
@@ -2390,10 +2390,10 @@ static const ax_sprite sJolteonSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx25[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_25.4bpp");
-static const u8 sJolteonGfx25_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_25_1.4bpp");
-static const u8 sJolteonGfx25_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_25_2.4bpp");
-static const u8 sJolteonGfx25_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_25_3.4bpp");
+static const u8 sJolteonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_25.4bpp.lz");
+static const u8 sJolteonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_25_1.4bpp.lz");
+static const u8 sJolteonGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_25_2.4bpp.lz");
+static const u8 sJolteonGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_25_3.4bpp.lz");
 static const ax_sprite sJolteonSprites25[] = {
 	{sJolteonGfx25, ARRAY_COUNT(sJolteonGfx25)}, 
 	{NULL, 32}, 
@@ -2405,39 +2405,39 @@ static const ax_sprite sJolteonSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx26[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_26.4bpp");
+static const u8 sJolteonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_26.4bpp.lz");
 static const ax_sprite sJolteonSprites26[] = {
 	{NULL, 32}, 
 	{sJolteonGfx26, ARRAY_COUNT(sJolteonGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx27[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_27.4bpp");
-static const u8 sJolteonGfx27_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_27_1.4bpp");
+static const u8 sJolteonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_27.4bpp.lz");
+static const u8 sJolteonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_27_1.4bpp.lz");
 static const ax_sprite sJolteonSprites27[] = {
 	{sJolteonGfx27, ARRAY_COUNT(sJolteonGfx27)}, 
 	{NULL, 32}, 
 	{sJolteonGfx27_1, ARRAY_COUNT(sJolteonGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx28[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_28.4bpp");
-static const u8 sJolteonGfx28_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_28_1.4bpp");
+static const u8 sJolteonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_28.4bpp.lz");
+static const u8 sJolteonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_28_1.4bpp.lz");
 static const ax_sprite sJolteonSprites28[] = {
 	{sJolteonGfx28, ARRAY_COUNT(sJolteonGfx28)}, 
 	{NULL, 64}, 
 	{sJolteonGfx28_1, ARRAY_COUNT(sJolteonGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx29[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_29.4bpp");
+static const u8 sJolteonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_29.4bpp.lz");
 static const ax_sprite sJolteonSprites29[] = {
 	{sJolteonGfx29, ARRAY_COUNT(sJolteonGfx29)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx30[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_30.4bpp");
-static const u8 sJolteonGfx30_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_30_1.4bpp");
-static const u8 sJolteonGfx30_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_30_2.4bpp");
-static const u8 sJolteonGfx30_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_30_3.4bpp");
+static const u8 sJolteonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_30.4bpp.lz");
+static const u8 sJolteonGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_30_1.4bpp.lz");
+static const u8 sJolteonGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_30_2.4bpp.lz");
+static const u8 sJolteonGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_30_3.4bpp.lz");
 static const ax_sprite sJolteonSprites30[] = {
 	{sJolteonGfx30, ARRAY_COUNT(sJolteonGfx30)}, 
 	{NULL, 32}, 
@@ -2449,8 +2449,8 @@ static const ax_sprite sJolteonSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx31[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_31.4bpp");
-static const u8 sJolteonGfx31_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_31_1.4bpp");
+static const u8 sJolteonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_31.4bpp.lz");
+static const u8 sJolteonGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_31_1.4bpp.lz");
 static const ax_sprite sJolteonSprites31[] = {
 	{NULL, 32}, 
 	{sJolteonGfx31, ARRAY_COUNT(sJolteonGfx31)}, 
@@ -2458,16 +2458,16 @@ static const ax_sprite sJolteonSprites31[] = {
 	{sJolteonGfx31_1, ARRAY_COUNT(sJolteonGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx32[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_32.4bpp");
-static const u8 sJolteonGfx32_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_32_1.4bpp");
+static const u8 sJolteonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_32.4bpp.lz");
+static const u8 sJolteonGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_32_1.4bpp.lz");
 static const ax_sprite sJolteonSprites32[] = {
 	{sJolteonGfx32, ARRAY_COUNT(sJolteonGfx32)}, 
 	{NULL, 32}, 
 	{sJolteonGfx32_1, ARRAY_COUNT(sJolteonGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx33[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_33.4bpp");
-static const u8 sJolteonGfx33_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_33_1.4bpp");
+static const u8 sJolteonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_33.4bpp.lz");
+static const u8 sJolteonGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_33_1.4bpp.lz");
 static const ax_sprite sJolteonSprites33[] = {
 	{sJolteonGfx33, ARRAY_COUNT(sJolteonGfx33)}, 
 	{NULL, 64}, 
@@ -2475,17 +2475,17 @@ static const ax_sprite sJolteonSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx34[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_34.4bpp");
+static const u8 sJolteonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_34.4bpp.lz");
 static const ax_sprite sJolteonSprites34[] = {
 	{sJolteonGfx34, ARRAY_COUNT(sJolteonGfx34)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx35[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35.4bpp");
-static const u8 sJolteonGfx35_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35_1.4bpp");
-static const u8 sJolteonGfx35_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35_2.4bpp");
-static const u8 sJolteonGfx35_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35_3.4bpp");
-static const u8 sJolteonGfx35_4[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35_4.4bpp");
+static const u8 sJolteonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35.4bpp.lz");
+static const u8 sJolteonGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35_1.4bpp.lz");
+static const u8 sJolteonGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35_2.4bpp.lz");
+static const u8 sJolteonGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35_3.4bpp.lz");
+static const u8 sJolteonGfx35_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_35_4.4bpp.lz");
 static const ax_sprite sJolteonSprites35[] = {
 	{sJolteonGfx35, ARRAY_COUNT(sJolteonGfx35)}, 
 	{NULL, 32}, 
@@ -2499,18 +2499,18 @@ static const ax_sprite sJolteonSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx36[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_36.4bpp");
-static const u8 sJolteonGfx36_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_36_1.4bpp");
+static const u8 sJolteonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_36.4bpp.lz");
+static const u8 sJolteonGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_36_1.4bpp.lz");
 static const ax_sprite sJolteonSprites36[] = {
 	{sJolteonGfx36, ARRAY_COUNT(sJolteonGfx36)}, 
 	{NULL, 64}, 
 	{sJolteonGfx36_1, ARRAY_COUNT(sJolteonGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx37[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_37.4bpp");
-static const u8 sJolteonGfx37_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_37_1.4bpp");
-static const u8 sJolteonGfx37_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_37_2.4bpp");
-static const u8 sJolteonGfx37_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_37_3.4bpp");
+static const u8 sJolteonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_37.4bpp.lz");
+static const u8 sJolteonGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_37_1.4bpp.lz");
+static const u8 sJolteonGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_37_2.4bpp.lz");
+static const u8 sJolteonGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_37_3.4bpp.lz");
 static const ax_sprite sJolteonSprites37[] = {
 	{NULL, 32}, 
 	{sJolteonGfx37, ARRAY_COUNT(sJolteonGfx37)}, 
@@ -2523,10 +2523,10 @@ static const ax_sprite sJolteonSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx38[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_38.4bpp");
-static const u8 sJolteonGfx38_1[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_38_1.4bpp");
-static const u8 sJolteonGfx38_2[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_38_2.4bpp");
-static const u8 sJolteonGfx38_3[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_38_3.4bpp");
+static const u8 sJolteonGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_38.4bpp.lz");
+static const u8 sJolteonGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_38_1.4bpp.lz");
+static const u8 sJolteonGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_38_2.4bpp.lz");
+static const u8 sJolteonGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_38_3.4bpp.lz");
 static const ax_sprite sJolteonSprites38[] = {
 	{sJolteonGfx38, ARRAY_COUNT(sJolteonGfx38)}, 
 	{NULL, 32}, 
@@ -2538,37 +2538,37 @@ static const ax_sprite sJolteonSprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx39[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_39.4bpp");
+static const u8 sJolteonGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_39.4bpp.lz");
 static const ax_sprite sJolteonSprites39[] = {
 	{sJolteonGfx39, ARRAY_COUNT(sJolteonGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx40[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_40.4bpp");
+static const u8 sJolteonGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_40.4bpp.lz");
 static const ax_sprite sJolteonSprites40[] = {
 	{sJolteonGfx40, ARRAY_COUNT(sJolteonGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx41[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_41.4bpp");
+static const u8 sJolteonGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_41.4bpp.lz");
 static const ax_sprite sJolteonSprites41[] = {
 	{sJolteonGfx41, ARRAY_COUNT(sJolteonGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx42[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_42.4bpp");
+static const u8 sJolteonGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_42.4bpp.lz");
 static const ax_sprite sJolteonSprites42[] = {
 	{sJolteonGfx42, ARRAY_COUNT(sJolteonGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx43[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_43.4bpp");
+static const u8 sJolteonGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_43.4bpp.lz");
 static const ax_sprite sJolteonSprites43[] = {
 	{sJolteonGfx43, ARRAY_COUNT(sJolteonGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx44[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_44.4bpp");
+static const u8 sJolteonGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_44.4bpp.lz");
 static const ax_sprite sJolteonSprites44[] = {
 	{sJolteonGfx44, ARRAY_COUNT(sJolteonGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sJolteonGfx45[] = INCBIN_U8("graphics/ax/mon/jolteon/sprite_45.4bpp");
+static const u8 sJolteonGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/jolteon/sprite_45.4bpp.lz");
 static const ax_sprite sJolteonSprites45[] = {
 	{sJolteonGfx45, ARRAY_COUNT(sJolteonGfx45)}, 
 	{NULL, 0}

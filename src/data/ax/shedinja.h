@@ -2299,85 +2299,85 @@ static const ax_anim sShedinjaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sShedinjaGfx1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_1.4bpp");
+static const u8 sShedinjaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_1.4bpp.lz");
 static const ax_sprite sShedinjaSprites1[] = {
 	{sShedinjaGfx1, ARRAY_COUNT(sShedinjaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_2.4bpp");
+static const u8 sShedinjaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites2[] = {
 	{sShedinjaGfx2, ARRAY_COUNT(sShedinjaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx3[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_3.4bpp");
+static const u8 sShedinjaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_3.4bpp.lz");
 static const ax_sprite sShedinjaSprites3[] = {
 	{sShedinjaGfx3, ARRAY_COUNT(sShedinjaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx4[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_4.4bpp");
+static const u8 sShedinjaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_4.4bpp.lz");
 static const ax_sprite sShedinjaSprites4[] = {
 	{sShedinjaGfx4, ARRAY_COUNT(sShedinjaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx5[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_5.4bpp");
+static const u8 sShedinjaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_5.4bpp.lz");
 static const ax_sprite sShedinjaSprites5[] = {
 	{sShedinjaGfx5, ARRAY_COUNT(sShedinjaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx6[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_6.4bpp");
+static const u8 sShedinjaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_6.4bpp.lz");
 static const ax_sprite sShedinjaSprites6[] = {
 	{sShedinjaGfx6, ARRAY_COUNT(sShedinjaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx7[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_7.4bpp");
+static const u8 sShedinjaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_7.4bpp.lz");
 static const ax_sprite sShedinjaSprites7[] = {
 	{sShedinjaGfx7, ARRAY_COUNT(sShedinjaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx8[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_8.4bpp");
+static const u8 sShedinjaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_8.4bpp.lz");
 static const ax_sprite sShedinjaSprites8[] = {
 	{sShedinjaGfx8, ARRAY_COUNT(sShedinjaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx9[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_9.4bpp");
+static const u8 sShedinjaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_9.4bpp.lz");
 static const ax_sprite sShedinjaSprites9[] = {
 	{sShedinjaGfx9, ARRAY_COUNT(sShedinjaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx10[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_10.4bpp");
+static const u8 sShedinjaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_10.4bpp.lz");
 static const ax_sprite sShedinjaSprites10[] = {
 	{sShedinjaGfx10, ARRAY_COUNT(sShedinjaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx11[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_11.4bpp");
+static const u8 sShedinjaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_11.4bpp.lz");
 static const ax_sprite sShedinjaSprites11[] = {
 	{sShedinjaGfx11, ARRAY_COUNT(sShedinjaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx12[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_12.4bpp");
+static const u8 sShedinjaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_12.4bpp.lz");
 static const ax_sprite sShedinjaSprites12[] = {
 	{sShedinjaGfx12, ARRAY_COUNT(sShedinjaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx13[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_13.4bpp");
+static const u8 sShedinjaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_13.4bpp.lz");
 static const ax_sprite sShedinjaSprites13[] = {
 	{sShedinjaGfx13, ARRAY_COUNT(sShedinjaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx14[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_14.4bpp");
+static const u8 sShedinjaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_14.4bpp.lz");
 static const ax_sprite sShedinjaSprites14[] = {
 	{sShedinjaGfx14, ARRAY_COUNT(sShedinjaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx15[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_15.4bpp");
+static const u8 sShedinjaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_15.4bpp.lz");
 static const ax_sprite sShedinjaSprites15[] = {
 	{sShedinjaGfx15, ARRAY_COUNT(sShedinjaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx16[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_16.4bpp");
-static const u8 sShedinjaGfx16_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_16_1.4bpp");
-static const u8 sShedinjaGfx16_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_16_2.4bpp");
-static const u8 sShedinjaGfx16_3[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_16_3.4bpp");
+static const u8 sShedinjaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_16.4bpp.lz");
+static const u8 sShedinjaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_16_1.4bpp.lz");
+static const u8 sShedinjaGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_16_2.4bpp.lz");
+static const u8 sShedinjaGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_16_3.4bpp.lz");
 static const ax_sprite sShedinjaSprites16[] = {
 	{NULL, 32}, 
 	{sShedinjaGfx16, ARRAY_COUNT(sShedinjaGfx16)}, 
@@ -2390,9 +2390,9 @@ static const ax_sprite sShedinjaSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx17[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_17.4bpp");
-static const u8 sShedinjaGfx17_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_17_1.4bpp");
-static const u8 sShedinjaGfx17_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_17_2.4bpp");
+static const u8 sShedinjaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_17.4bpp.lz");
+static const u8 sShedinjaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_17_1.4bpp.lz");
+static const u8 sShedinjaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_17_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites17[] = {
 	{sShedinjaGfx17, ARRAY_COUNT(sShedinjaGfx17)}, 
 	{NULL, 32}, 
@@ -2402,9 +2402,9 @@ static const ax_sprite sShedinjaSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx18[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_18.4bpp");
-static const u8 sShedinjaGfx18_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_18_1.4bpp");
-static const u8 sShedinjaGfx18_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_18_2.4bpp");
+static const u8 sShedinjaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_18.4bpp.lz");
+static const u8 sShedinjaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_18_1.4bpp.lz");
+static const u8 sShedinjaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_18_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites18[] = {
 	{sShedinjaGfx18, ARRAY_COUNT(sShedinjaGfx18)}, 
 	{NULL, 32}, 
@@ -2414,9 +2414,9 @@ static const ax_sprite sShedinjaSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx19[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_19.4bpp");
-static const u8 sShedinjaGfx19_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_19_1.4bpp");
-static const u8 sShedinjaGfx19_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_19_2.4bpp");
+static const u8 sShedinjaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_19.4bpp.lz");
+static const u8 sShedinjaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_19_1.4bpp.lz");
+static const u8 sShedinjaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_19_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites19[] = {
 	{sShedinjaGfx19, ARRAY_COUNT(sShedinjaGfx19)}, 
 	{NULL, 64}, 
@@ -2426,9 +2426,9 @@ static const ax_sprite sShedinjaSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx20[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_20.4bpp");
-static const u8 sShedinjaGfx20_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_20_1.4bpp");
-static const u8 sShedinjaGfx20_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_20_2.4bpp");
+static const u8 sShedinjaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_20.4bpp.lz");
+static const u8 sShedinjaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_20_1.4bpp.lz");
+static const u8 sShedinjaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_20_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites20[] = {
 	{sShedinjaGfx20, ARRAY_COUNT(sShedinjaGfx20)}, 
 	{NULL, 32}, 
@@ -2438,9 +2438,9 @@ static const ax_sprite sShedinjaSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx21[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_21.4bpp");
-static const u8 sShedinjaGfx21_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_21_1.4bpp");
-static const u8 sShedinjaGfx21_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_21_2.4bpp");
+static const u8 sShedinjaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_21.4bpp.lz");
+static const u8 sShedinjaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_21_1.4bpp.lz");
+static const u8 sShedinjaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_21_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites21[] = {
 	{sShedinjaGfx21, ARRAY_COUNT(sShedinjaGfx21)}, 
 	{NULL, 64}, 
@@ -2450,9 +2450,9 @@ static const ax_sprite sShedinjaSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx22[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_22.4bpp");
-static const u8 sShedinjaGfx22_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_22_1.4bpp");
-static const u8 sShedinjaGfx22_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_22_2.4bpp");
+static const u8 sShedinjaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_22.4bpp.lz");
+static const u8 sShedinjaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_22_1.4bpp.lz");
+static const u8 sShedinjaGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_22_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites22[] = {
 	{NULL, 32}, 
 	{sShedinjaGfx22, ARRAY_COUNT(sShedinjaGfx22)}, 
@@ -2463,9 +2463,9 @@ static const ax_sprite sShedinjaSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx23[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_23.4bpp");
-static const u8 sShedinjaGfx23_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_23_1.4bpp");
-static const u8 sShedinjaGfx23_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_23_2.4bpp");
+static const u8 sShedinjaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_23.4bpp.lz");
+static const u8 sShedinjaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_23_1.4bpp.lz");
+static const u8 sShedinjaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_23_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites23[] = {
 	{sShedinjaGfx23, ARRAY_COUNT(sShedinjaGfx23)}, 
 	{NULL, 32}, 
@@ -2475,9 +2475,9 @@ static const ax_sprite sShedinjaSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx24[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_24.4bpp");
-static const u8 sShedinjaGfx24_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_24_1.4bpp");
-static const u8 sShedinjaGfx24_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_24_2.4bpp");
+static const u8 sShedinjaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_24.4bpp.lz");
+static const u8 sShedinjaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_24_1.4bpp.lz");
+static const u8 sShedinjaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_24_2.4bpp.lz");
 static const ax_sprite sShedinjaSprites24[] = {
 	{NULL, 32}, 
 	{sShedinjaGfx24, ARRAY_COUNT(sShedinjaGfx24)}, 
@@ -2488,10 +2488,10 @@ static const ax_sprite sShedinjaSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx25[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_25.4bpp");
-static const u8 sShedinjaGfx25_1[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_25_1.4bpp");
-static const u8 sShedinjaGfx25_2[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_25_2.4bpp");
-static const u8 sShedinjaGfx25_3[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_25_3.4bpp");
+static const u8 sShedinjaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_25.4bpp.lz");
+static const u8 sShedinjaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_25_1.4bpp.lz");
+static const u8 sShedinjaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_25_2.4bpp.lz");
+static const u8 sShedinjaGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_25_3.4bpp.lz");
 static const ax_sprite sShedinjaSprites25[] = {
 	{sShedinjaGfx25, ARRAY_COUNT(sShedinjaGfx25)}, 
 	{NULL, 32}, 
@@ -2503,37 +2503,37 @@ static const ax_sprite sShedinjaSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx26[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_26.4bpp");
+static const u8 sShedinjaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_26.4bpp.lz");
 static const ax_sprite sShedinjaSprites26[] = {
 	{sShedinjaGfx26, ARRAY_COUNT(sShedinjaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx27[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_27.4bpp");
+static const u8 sShedinjaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_27.4bpp.lz");
 static const ax_sprite sShedinjaSprites27[] = {
 	{sShedinjaGfx27, ARRAY_COUNT(sShedinjaGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx28[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_28.4bpp");
+static const u8 sShedinjaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_28.4bpp.lz");
 static const ax_sprite sShedinjaSprites28[] = {
 	{sShedinjaGfx28, ARRAY_COUNT(sShedinjaGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx29[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_29.4bpp");
+static const u8 sShedinjaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_29.4bpp.lz");
 static const ax_sprite sShedinjaSprites29[] = {
 	{sShedinjaGfx29, ARRAY_COUNT(sShedinjaGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx30[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_30.4bpp");
+static const u8 sShedinjaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_30.4bpp.lz");
 static const ax_sprite sShedinjaSprites30[] = {
 	{sShedinjaGfx30, ARRAY_COUNT(sShedinjaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx31[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_31.4bpp");
+static const u8 sShedinjaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_31.4bpp.lz");
 static const ax_sprite sShedinjaSprites31[] = {
 	{sShedinjaGfx31, ARRAY_COUNT(sShedinjaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sShedinjaGfx32[] = INCBIN_U8("graphics/ax/mon/shedinja/sprite_32.4bpp");
+static const u8 sShedinjaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shedinja/sprite_32.4bpp.lz");
 static const ax_sprite sShedinjaSprites32[] = {
 	{sShedinjaGfx32, ARRAY_COUNT(sShedinjaGfx32)}, 
 	{NULL, 0}

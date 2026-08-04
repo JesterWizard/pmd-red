@@ -2191,82 +2191,82 @@ static const ax_anim sKakunaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKakunaGfx1[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_1.4bpp");
+static const u8 sKakunaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_1.4bpp.lz");
 static const ax_sprite sKakunaSprites1[] = {
 	{sKakunaGfx1, ARRAY_COUNT(sKakunaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx2[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_2.4bpp");
+static const u8 sKakunaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_2.4bpp.lz");
 static const ax_sprite sKakunaSprites2[] = {
 	{sKakunaGfx2, ARRAY_COUNT(sKakunaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx3[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_3.4bpp");
+static const u8 sKakunaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_3.4bpp.lz");
 static const ax_sprite sKakunaSprites3[] = {
 	{sKakunaGfx3, ARRAY_COUNT(sKakunaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx4[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_4.4bpp");
+static const u8 sKakunaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_4.4bpp.lz");
 static const ax_sprite sKakunaSprites4[] = {
 	{sKakunaGfx4, ARRAY_COUNT(sKakunaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx5[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_5.4bpp");
+static const u8 sKakunaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_5.4bpp.lz");
 static const ax_sprite sKakunaSprites5[] = {
 	{sKakunaGfx5, ARRAY_COUNT(sKakunaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx6[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_6.4bpp");
+static const u8 sKakunaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_6.4bpp.lz");
 static const ax_sprite sKakunaSprites6[] = {
 	{sKakunaGfx6, ARRAY_COUNT(sKakunaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx7[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_7.4bpp");
+static const u8 sKakunaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_7.4bpp.lz");
 static const ax_sprite sKakunaSprites7[] = {
 	{sKakunaGfx7, ARRAY_COUNT(sKakunaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx8[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_8.4bpp");
+static const u8 sKakunaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_8.4bpp.lz");
 static const ax_sprite sKakunaSprites8[] = {
 	{sKakunaGfx8, ARRAY_COUNT(sKakunaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx9[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_9.4bpp");
+static const u8 sKakunaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_9.4bpp.lz");
 static const ax_sprite sKakunaSprites9[] = {
 	{sKakunaGfx9, ARRAY_COUNT(sKakunaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx10[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_10.4bpp");
+static const u8 sKakunaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_10.4bpp.lz");
 static const ax_sprite sKakunaSprites10[] = {
 	{sKakunaGfx10, ARRAY_COUNT(sKakunaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx11[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_11.4bpp");
+static const u8 sKakunaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_11.4bpp.lz");
 static const ax_sprite sKakunaSprites11[] = {
 	{sKakunaGfx11, ARRAY_COUNT(sKakunaGfx11)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx12[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_12.4bpp");
+static const u8 sKakunaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_12.4bpp.lz");
 static const ax_sprite sKakunaSprites12[] = {
 	{sKakunaGfx12, ARRAY_COUNT(sKakunaGfx12)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx13[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_13.4bpp");
+static const u8 sKakunaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_13.4bpp.lz");
 static const ax_sprite sKakunaSprites13[] = {
 	{sKakunaGfx13, ARRAY_COUNT(sKakunaGfx13)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx14[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_14.4bpp");
+static const u8 sKakunaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_14.4bpp.lz");
 static const ax_sprite sKakunaSprites14[] = {
 	{sKakunaGfx14, ARRAY_COUNT(sKakunaGfx14)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx15[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_15.4bpp");
-static const u8 sKakunaGfx15_1[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_15_1.4bpp");
+static const u8 sKakunaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_15.4bpp.lz");
+static const u8 sKakunaGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_15_1.4bpp.lz");
 static const ax_sprite sKakunaSprites15[] = {
 	{sKakunaGfx15, ARRAY_COUNT(sKakunaGfx15)}, 
 	{NULL, 32}, 
@@ -2274,32 +2274,32 @@ static const ax_sprite sKakunaSprites15[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx16[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_16.4bpp");
+static const u8 sKakunaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_16.4bpp.lz");
 static const ax_sprite sKakunaSprites16[] = {
 	{sKakunaGfx16, ARRAY_COUNT(sKakunaGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx17[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_17.4bpp");
+static const u8 sKakunaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_17.4bpp.lz");
 static const ax_sprite sKakunaSprites17[] = {
 	{sKakunaGfx17, ARRAY_COUNT(sKakunaGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx18[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_18.4bpp");
+static const u8 sKakunaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_18.4bpp.lz");
 static const ax_sprite sKakunaSprites18[] = {
 	{sKakunaGfx18, ARRAY_COUNT(sKakunaGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx19[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_19.4bpp");
+static const u8 sKakunaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_19.4bpp.lz");
 static const ax_sprite sKakunaSprites19[] = {
 	{sKakunaGfx19, ARRAY_COUNT(sKakunaGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx20[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_20.4bpp");
-static const u8 sKakunaGfx20_1[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_20_1.4bpp");
+static const u8 sKakunaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_20.4bpp.lz");
+static const u8 sKakunaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_20_1.4bpp.lz");
 static const ax_sprite sKakunaSprites20[] = {
 	{NULL, 32}, 
 	{sKakunaGfx20, ARRAY_COUNT(sKakunaGfx20)}, 
@@ -2308,32 +2308,32 @@ static const ax_sprite sKakunaSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx21[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_21.4bpp");
+static const u8 sKakunaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_21.4bpp.lz");
 static const ax_sprite sKakunaSprites21[] = {
 	{sKakunaGfx21, ARRAY_COUNT(sKakunaGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx22[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_22.4bpp");
+static const u8 sKakunaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_22.4bpp.lz");
 static const ax_sprite sKakunaSprites22[] = {
 	{sKakunaGfx22, ARRAY_COUNT(sKakunaGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx23[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_23.4bpp");
+static const u8 sKakunaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_23.4bpp.lz");
 static const ax_sprite sKakunaSprites23[] = {
 	{sKakunaGfx23, ARRAY_COUNT(sKakunaGfx23)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx24[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_24.4bpp");
+static const u8 sKakunaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_24.4bpp.lz");
 static const ax_sprite sKakunaSprites24[] = {
 	{sKakunaGfx24, ARRAY_COUNT(sKakunaGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx25[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_25.4bpp");
-static const u8 sKakunaGfx25_1[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_25_1.4bpp");
+static const u8 sKakunaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_25.4bpp.lz");
+static const u8 sKakunaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_25_1.4bpp.lz");
 static const ax_sprite sKakunaSprites25[] = {
 	{NULL, 32}, 
 	{sKakunaGfx25, ARRAY_COUNT(sKakunaGfx25)}, 
@@ -2341,33 +2341,33 @@ static const ax_sprite sKakunaSprites25[] = {
 	{sKakunaGfx25_1, ARRAY_COUNT(sKakunaGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx26[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_26.4bpp");
+static const u8 sKakunaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_26.4bpp.lz");
 static const ax_sprite sKakunaSprites26[] = {
 	{sKakunaGfx26, ARRAY_COUNT(sKakunaGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx27[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_27.4bpp");
+static const u8 sKakunaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_27.4bpp.lz");
 static const ax_sprite sKakunaSprites27[] = {
 	{sKakunaGfx27, ARRAY_COUNT(sKakunaGfx27)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx28[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_28.4bpp");
+static const u8 sKakunaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_28.4bpp.lz");
 static const ax_sprite sKakunaSprites28[] = {
 	{sKakunaGfx28, ARRAY_COUNT(sKakunaGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx29[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_29.4bpp");
+static const u8 sKakunaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_29.4bpp.lz");
 static const ax_sprite sKakunaSprites29[] = {
 	{sKakunaGfx29, ARRAY_COUNT(sKakunaGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx30[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_30.4bpp");
-static const u8 sKakunaGfx30_1[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_30_1.4bpp");
-static const u8 sKakunaGfx30_2[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_30_2.4bpp");
+static const u8 sKakunaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_30.4bpp.lz");
+static const u8 sKakunaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_30_1.4bpp.lz");
+static const u8 sKakunaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_30_2.4bpp.lz");
 static const ax_sprite sKakunaSprites30[] = {
 	{NULL, 32}, 
 	{sKakunaGfx30, ARRAY_COUNT(sKakunaGfx30)}, 
@@ -2377,33 +2377,33 @@ static const ax_sprite sKakunaSprites30[] = {
 	{sKakunaGfx30_2, ARRAY_COUNT(sKakunaGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx31[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_31.4bpp");
+static const u8 sKakunaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_31.4bpp.lz");
 static const ax_sprite sKakunaSprites31[] = {
 	{sKakunaGfx31, ARRAY_COUNT(sKakunaGfx31)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx32[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_32.4bpp");
+static const u8 sKakunaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_32.4bpp.lz");
 static const ax_sprite sKakunaSprites32[] = {
 	{sKakunaGfx32, ARRAY_COUNT(sKakunaGfx32)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx33[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_33.4bpp");
+static const u8 sKakunaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_33.4bpp.lz");
 static const ax_sprite sKakunaSprites33[] = {
 	{sKakunaGfx33, ARRAY_COUNT(sKakunaGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx34[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_34.4bpp");
+static const u8 sKakunaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_34.4bpp.lz");
 static const ax_sprite sKakunaSprites34[] = {
 	{sKakunaGfx34, ARRAY_COUNT(sKakunaGfx34)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx35[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_35.4bpp");
-static const u8 sKakunaGfx35_1[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_35_1.4bpp");
-static const u8 sKakunaGfx35_2[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_35_2.4bpp");
+static const u8 sKakunaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_35.4bpp.lz");
+static const u8 sKakunaGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_35_1.4bpp.lz");
+static const u8 sKakunaGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_35_2.4bpp.lz");
 static const ax_sprite sKakunaSprites35[] = {
 	{NULL, 32}, 
 	{sKakunaGfx35, ARRAY_COUNT(sKakunaGfx35)}, 
@@ -2414,37 +2414,37 @@ static const ax_sprite sKakunaSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx36[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_36.4bpp");
+static const u8 sKakunaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_36.4bpp.lz");
 static const ax_sprite sKakunaSprites36[] = {
 	{sKakunaGfx36, ARRAY_COUNT(sKakunaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx37[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_37.4bpp");
+static const u8 sKakunaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_37.4bpp.lz");
 static const ax_sprite sKakunaSprites37[] = {
 	{sKakunaGfx37, ARRAY_COUNT(sKakunaGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx38[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_38.4bpp");
+static const u8 sKakunaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_38.4bpp.lz");
 static const ax_sprite sKakunaSprites38[] = {
 	{sKakunaGfx38, ARRAY_COUNT(sKakunaGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx39[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_39.4bpp");
+static const u8 sKakunaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_39.4bpp.lz");
 static const ax_sprite sKakunaSprites39[] = {
 	{sKakunaGfx39, ARRAY_COUNT(sKakunaGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx40[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_40.4bpp");
+static const u8 sKakunaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_40.4bpp.lz");
 static const ax_sprite sKakunaSprites40[] = {
 	{sKakunaGfx40, ARRAY_COUNT(sKakunaGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx41[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_41.4bpp");
+static const u8 sKakunaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_41.4bpp.lz");
 static const ax_sprite sKakunaSprites41[] = {
 	{sKakunaGfx41, ARRAY_COUNT(sKakunaGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sKakunaGfx42[] = INCBIN_U8("graphics/ax/mon/kakuna/sprite_42.4bpp");
+static const u8 sKakunaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kakuna/sprite_42.4bpp.lz");
 static const ax_sprite sKakunaSprites42[] = {
 	{sKakunaGfx42, ARRAY_COUNT(sKakunaGfx42)}, 
 	{NULL, 0}

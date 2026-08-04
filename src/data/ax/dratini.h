@@ -2257,130 +2257,130 @@ static const ax_anim sDratiniAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDratiniGfx1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_1.4bpp");
+static const u8 sDratiniGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_1.4bpp.lz");
 static const ax_sprite sDratiniSprites1[] = {
 	{sDratiniGfx1, ARRAY_COUNT(sDratiniGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_2.4bpp");
+static const u8 sDratiniGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_2.4bpp.lz");
 static const ax_sprite sDratiniSprites2[] = {
 	{sDratiniGfx2, ARRAY_COUNT(sDratiniGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx3[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_3.4bpp");
+static const u8 sDratiniGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_3.4bpp.lz");
 static const ax_sprite sDratiniSprites3[] = {
 	{sDratiniGfx3, ARRAY_COUNT(sDratiniGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx4[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_4.4bpp");
+static const u8 sDratiniGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_4.4bpp.lz");
 static const ax_sprite sDratiniSprites4[] = {
 	{sDratiniGfx4, ARRAY_COUNT(sDratiniGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx5[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_5.4bpp");
+static const u8 sDratiniGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_5.4bpp.lz");
 static const ax_sprite sDratiniSprites5[] = {
 	{sDratiniGfx5, ARRAY_COUNT(sDratiniGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx6[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_6.4bpp");
+static const u8 sDratiniGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_6.4bpp.lz");
 static const ax_sprite sDratiniSprites6[] = {
 	{sDratiniGfx6, ARRAY_COUNT(sDratiniGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx7[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_7.4bpp");
+static const u8 sDratiniGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_7.4bpp.lz");
 static const ax_sprite sDratiniSprites7[] = {
 	{sDratiniGfx7, ARRAY_COUNT(sDratiniGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx8[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_8.4bpp");
+static const u8 sDratiniGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_8.4bpp.lz");
 static const ax_sprite sDratiniSprites8[] = {
 	{sDratiniGfx8, ARRAY_COUNT(sDratiniGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx9[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_9.4bpp");
+static const u8 sDratiniGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_9.4bpp.lz");
 static const ax_sprite sDratiniSprites9[] = {
 	{sDratiniGfx9, ARRAY_COUNT(sDratiniGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx10[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_10.4bpp");
+static const u8 sDratiniGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_10.4bpp.lz");
 static const ax_sprite sDratiniSprites10[] = {
 	{sDratiniGfx10, ARRAY_COUNT(sDratiniGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx11[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_11.4bpp");
+static const u8 sDratiniGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_11.4bpp.lz");
 static const ax_sprite sDratiniSprites11[] = {
 	{sDratiniGfx11, ARRAY_COUNT(sDratiniGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx12[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_12.4bpp");
+static const u8 sDratiniGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_12.4bpp.lz");
 static const ax_sprite sDratiniSprites12[] = {
 	{sDratiniGfx12, ARRAY_COUNT(sDratiniGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx13[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_13.4bpp");
+static const u8 sDratiniGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_13.4bpp.lz");
 static const ax_sprite sDratiniSprites13[] = {
 	{sDratiniGfx13, ARRAY_COUNT(sDratiniGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx14[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_14.4bpp");
+static const u8 sDratiniGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_14.4bpp.lz");
 static const ax_sprite sDratiniSprites14[] = {
 	{sDratiniGfx14, ARRAY_COUNT(sDratiniGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx15[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_15.4bpp");
+static const u8 sDratiniGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_15.4bpp.lz");
 static const ax_sprite sDratiniSprites15[] = {
 	{sDratiniGfx15, ARRAY_COUNT(sDratiniGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx16[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_16.4bpp");
+static const u8 sDratiniGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_16.4bpp.lz");
 static const ax_sprite sDratiniSprites16[] = {
 	{sDratiniGfx16, ARRAY_COUNT(sDratiniGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx17[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_17.4bpp");
+static const u8 sDratiniGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_17.4bpp.lz");
 static const ax_sprite sDratiniSprites17[] = {
 	{sDratiniGfx17, ARRAY_COUNT(sDratiniGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx18[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_18.4bpp");
+static const u8 sDratiniGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_18.4bpp.lz");
 static const ax_sprite sDratiniSprites18[] = {
 	{sDratiniGfx18, ARRAY_COUNT(sDratiniGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx19[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_19.4bpp");
+static const u8 sDratiniGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_19.4bpp.lz");
 static const ax_sprite sDratiniSprites19[] = {
 	{sDratiniGfx19, ARRAY_COUNT(sDratiniGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx20[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_20.4bpp");
+static const u8 sDratiniGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_20.4bpp.lz");
 static const ax_sprite sDratiniSprites20[] = {
 	{sDratiniGfx20, ARRAY_COUNT(sDratiniGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx21[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_21.4bpp");
+static const u8 sDratiniGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_21.4bpp.lz");
 static const ax_sprite sDratiniSprites21[] = {
 	{sDratiniGfx21, ARRAY_COUNT(sDratiniGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx22[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_22.4bpp");
+static const u8 sDratiniGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_22.4bpp.lz");
 static const ax_sprite sDratiniSprites22[] = {
 	{sDratiniGfx22, ARRAY_COUNT(sDratiniGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx23[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_23.4bpp");
+static const u8 sDratiniGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_23.4bpp.lz");
 static const ax_sprite sDratiniSprites23[] = {
 	{sDratiniGfx23, ARRAY_COUNT(sDratiniGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx24[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_24.4bpp");
+static const u8 sDratiniGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_24.4bpp.lz");
 static const ax_sprite sDratiniSprites24[] = {
 	{sDratiniGfx24, ARRAY_COUNT(sDratiniGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx25[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_25.4bpp");
-static const u8 sDratiniGfx25_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_25_1.4bpp");
-static const u8 sDratiniGfx25_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_25_2.4bpp");
-static const u8 sDratiniGfx25_3[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_25_3.4bpp");
+static const u8 sDratiniGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_25.4bpp.lz");
+static const u8 sDratiniGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_25_1.4bpp.lz");
+static const u8 sDratiniGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_25_2.4bpp.lz");
+static const u8 sDratiniGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_25_3.4bpp.lz");
 static const ax_sprite sDratiniSprites25[] = {
 	{NULL, 32}, 
 	{sDratiniGfx25, ARRAY_COUNT(sDratiniGfx25)}, 
@@ -2393,9 +2393,9 @@ static const ax_sprite sDratiniSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx26[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_26.4bpp");
-static const u8 sDratiniGfx26_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_26_1.4bpp");
-static const u8 sDratiniGfx26_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_26_2.4bpp");
+static const u8 sDratiniGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_26.4bpp.lz");
+static const u8 sDratiniGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_26_1.4bpp.lz");
+static const u8 sDratiniGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_26_2.4bpp.lz");
 static const ax_sprite sDratiniSprites26[] = {
 	{sDratiniGfx26, ARRAY_COUNT(sDratiniGfx26)}, 
 	{NULL, 32}, 
@@ -2405,9 +2405,9 @@ static const ax_sprite sDratiniSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx27[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_27.4bpp");
-static const u8 sDratiniGfx27_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_27_1.4bpp");
-static const u8 sDratiniGfx27_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_27_2.4bpp");
+static const u8 sDratiniGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_27.4bpp.lz");
+static const u8 sDratiniGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_27_1.4bpp.lz");
+static const u8 sDratiniGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_27_2.4bpp.lz");
 static const ax_sprite sDratiniSprites27[] = {
 	{sDratiniGfx27, ARRAY_COUNT(sDratiniGfx27)}, 
 	{NULL, 32}, 
@@ -2417,9 +2417,9 @@ static const ax_sprite sDratiniSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx28[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_28.4bpp");
-static const u8 sDratiniGfx28_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_28_1.4bpp");
-static const u8 sDratiniGfx28_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_28_2.4bpp");
+static const u8 sDratiniGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_28.4bpp.lz");
+static const u8 sDratiniGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_28_1.4bpp.lz");
+static const u8 sDratiniGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_28_2.4bpp.lz");
 static const ax_sprite sDratiniSprites28[] = {
 	{NULL, 32}, 
 	{sDratiniGfx28, ARRAY_COUNT(sDratiniGfx28)}, 
@@ -2430,10 +2430,10 @@ static const ax_sprite sDratiniSprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx29[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_29.4bpp");
-static const u8 sDratiniGfx29_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_29_1.4bpp");
-static const u8 sDratiniGfx29_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_29_2.4bpp");
-static const u8 sDratiniGfx29_3[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_29_3.4bpp");
+static const u8 sDratiniGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_29.4bpp.lz");
+static const u8 sDratiniGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_29_1.4bpp.lz");
+static const u8 sDratiniGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_29_2.4bpp.lz");
+static const u8 sDratiniGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_29_3.4bpp.lz");
 static const ax_sprite sDratiniSprites29[] = {
 	{sDratiniGfx29, ARRAY_COUNT(sDratiniGfx29)}, 
 	{NULL, 64}, 
@@ -2444,10 +2444,10 @@ static const ax_sprite sDratiniSprites29[] = {
 	{sDratiniGfx29_3, ARRAY_COUNT(sDratiniGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx30[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_30.4bpp");
-static const u8 sDratiniGfx30_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_30_1.4bpp");
-static const u8 sDratiniGfx30_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_30_2.4bpp");
-static const u8 sDratiniGfx30_3[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_30_3.4bpp");
+static const u8 sDratiniGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_30.4bpp.lz");
+static const u8 sDratiniGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_30_1.4bpp.lz");
+static const u8 sDratiniGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_30_2.4bpp.lz");
+static const u8 sDratiniGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_30_3.4bpp.lz");
 static const ax_sprite sDratiniSprites30[] = {
 	{sDratiniGfx30, ARRAY_COUNT(sDratiniGfx30)}, 
 	{NULL, 64}, 
@@ -2459,10 +2459,10 @@ static const ax_sprite sDratiniSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx31[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_31.4bpp");
-static const u8 sDratiniGfx31_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_31_1.4bpp");
-static const u8 sDratiniGfx31_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_31_2.4bpp");
-static const u8 sDratiniGfx31_3[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_31_3.4bpp");
+static const u8 sDratiniGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_31.4bpp.lz");
+static const u8 sDratiniGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_31_1.4bpp.lz");
+static const u8 sDratiniGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_31_2.4bpp.lz");
+static const u8 sDratiniGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_31_3.4bpp.lz");
 static const ax_sprite sDratiniSprites31[] = {
 	{sDratiniGfx31, ARRAY_COUNT(sDratiniGfx31)}, 
 	{NULL, 64}, 
@@ -2473,10 +2473,10 @@ static const ax_sprite sDratiniSprites31[] = {
 	{sDratiniGfx31_3, ARRAY_COUNT(sDratiniGfx31_3)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx32[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_32.4bpp");
-static const u8 sDratiniGfx32_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_32_1.4bpp");
-static const u8 sDratiniGfx32_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_32_2.4bpp");
-static const u8 sDratiniGfx32_3[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_32_3.4bpp");
+static const u8 sDratiniGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_32.4bpp.lz");
+static const u8 sDratiniGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_32_1.4bpp.lz");
+static const u8 sDratiniGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_32_2.4bpp.lz");
+static const u8 sDratiniGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_32_3.4bpp.lz");
 static const ax_sprite sDratiniSprites32[] = {
 	{sDratiniGfx32, ARRAY_COUNT(sDratiniGfx32)}, 
 	{NULL, 32}, 
@@ -2488,10 +2488,10 @@ static const ax_sprite sDratiniSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx33[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_33.4bpp");
-static const u8 sDratiniGfx33_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_33_1.4bpp");
-static const u8 sDratiniGfx33_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_33_2.4bpp");
-static const u8 sDratiniGfx33_3[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_33_3.4bpp");
+static const u8 sDratiniGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_33.4bpp.lz");
+static const u8 sDratiniGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_33_1.4bpp.lz");
+static const u8 sDratiniGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_33_2.4bpp.lz");
+static const u8 sDratiniGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_33_3.4bpp.lz");
 static const ax_sprite sDratiniSprites33[] = {
 	{sDratiniGfx33, ARRAY_COUNT(sDratiniGfx33)}, 
 	{NULL, 32}, 
@@ -2503,10 +2503,10 @@ static const ax_sprite sDratiniSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx34[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_34.4bpp");
-static const u8 sDratiniGfx34_1[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_34_1.4bpp");
-static const u8 sDratiniGfx34_2[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_34_2.4bpp");
-static const u8 sDratiniGfx34_3[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_34_3.4bpp");
+static const u8 sDratiniGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_34.4bpp.lz");
+static const u8 sDratiniGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_34_1.4bpp.lz");
+static const u8 sDratiniGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_34_2.4bpp.lz");
+static const u8 sDratiniGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_34_3.4bpp.lz");
 static const ax_sprite sDratiniSprites34[] = {
 	{sDratiniGfx34, ARRAY_COUNT(sDratiniGfx34)}, 
 	{NULL, 32}, 
@@ -2518,47 +2518,47 @@ static const ax_sprite sDratiniSprites34[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx35[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_35.4bpp");
+static const u8 sDratiniGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_35.4bpp.lz");
 static const ax_sprite sDratiniSprites35[] = {
 	{sDratiniGfx35, ARRAY_COUNT(sDratiniGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx36[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_36.4bpp");
+static const u8 sDratiniGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_36.4bpp.lz");
 static const ax_sprite sDratiniSprites36[] = {
 	{sDratiniGfx36, ARRAY_COUNT(sDratiniGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx37[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_37.4bpp");
+static const u8 sDratiniGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_37.4bpp.lz");
 static const ax_sprite sDratiniSprites37[] = {
 	{sDratiniGfx37, ARRAY_COUNT(sDratiniGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx38[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_38.4bpp");
+static const u8 sDratiniGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_38.4bpp.lz");
 static const ax_sprite sDratiniSprites38[] = {
 	{sDratiniGfx38, ARRAY_COUNT(sDratiniGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx39[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_39.4bpp");
+static const u8 sDratiniGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_39.4bpp.lz");
 static const ax_sprite sDratiniSprites39[] = {
 	{sDratiniGfx39, ARRAY_COUNT(sDratiniGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx40[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_40.4bpp");
+static const u8 sDratiniGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_40.4bpp.lz");
 static const ax_sprite sDratiniSprites40[] = {
 	{sDratiniGfx40, ARRAY_COUNT(sDratiniGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx41[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_41.4bpp");
+static const u8 sDratiniGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_41.4bpp.lz");
 static const ax_sprite sDratiniSprites41[] = {
 	{sDratiniGfx41, ARRAY_COUNT(sDratiniGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx42[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_42.4bpp");
+static const u8 sDratiniGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_42.4bpp.lz");
 static const ax_sprite sDratiniSprites42[] = {
 	{sDratiniGfx42, ARRAY_COUNT(sDratiniGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sDratiniGfx43[] = INCBIN_U8("graphics/ax/mon/dratini/sprite_43.4bpp");
+static const u8 sDratiniGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dratini/sprite_43.4bpp.lz");
 static const ax_sprite sDratiniSprites43[] = {
 	{sDratiniGfx43, ARRAY_COUNT(sDratiniGfx43)}, 
 	{NULL, 0}

@@ -2043,85 +2043,85 @@ static const ax_anim sSeadraAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSeadraGfx1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_1.4bpp");
+static const u8 sSeadraGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_1.4bpp.lz");
 static const ax_sprite sSeadraSprites1[] = {
 	{sSeadraGfx1, ARRAY_COUNT(sSeadraGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_2.4bpp");
+static const u8 sSeadraGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_2.4bpp.lz");
 static const ax_sprite sSeadraSprites2[] = {
 	{sSeadraGfx2, ARRAY_COUNT(sSeadraGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx3[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_3.4bpp");
+static const u8 sSeadraGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_3.4bpp.lz");
 static const ax_sprite sSeadraSprites3[] = {
 	{sSeadraGfx3, ARRAY_COUNT(sSeadraGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx4[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_4.4bpp");
+static const u8 sSeadraGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_4.4bpp.lz");
 static const ax_sprite sSeadraSprites4[] = {
 	{sSeadraGfx4, ARRAY_COUNT(sSeadraGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx5[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_5.4bpp");
+static const u8 sSeadraGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_5.4bpp.lz");
 static const ax_sprite sSeadraSprites5[] = {
 	{sSeadraGfx5, ARRAY_COUNT(sSeadraGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx6[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_6.4bpp");
+static const u8 sSeadraGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_6.4bpp.lz");
 static const ax_sprite sSeadraSprites6[] = {
 	{sSeadraGfx6, ARRAY_COUNT(sSeadraGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx7[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_7.4bpp");
+static const u8 sSeadraGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_7.4bpp.lz");
 static const ax_sprite sSeadraSprites7[] = {
 	{sSeadraGfx7, ARRAY_COUNT(sSeadraGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx8[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_8.4bpp");
+static const u8 sSeadraGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_8.4bpp.lz");
 static const ax_sprite sSeadraSprites8[] = {
 	{sSeadraGfx8, ARRAY_COUNT(sSeadraGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx9[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_9.4bpp");
+static const u8 sSeadraGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_9.4bpp.lz");
 static const ax_sprite sSeadraSprites9[] = {
 	{sSeadraGfx9, ARRAY_COUNT(sSeadraGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx10[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_10.4bpp");
+static const u8 sSeadraGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_10.4bpp.lz");
 static const ax_sprite sSeadraSprites10[] = {
 	{sSeadraGfx10, ARRAY_COUNT(sSeadraGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx11[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_11.4bpp");
+static const u8 sSeadraGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_11.4bpp.lz");
 static const ax_sprite sSeadraSprites11[] = {
 	{sSeadraGfx11, ARRAY_COUNT(sSeadraGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx12[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_12.4bpp");
+static const u8 sSeadraGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_12.4bpp.lz");
 static const ax_sprite sSeadraSprites12[] = {
 	{sSeadraGfx12, ARRAY_COUNT(sSeadraGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx13[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_13.4bpp");
+static const u8 sSeadraGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_13.4bpp.lz");
 static const ax_sprite sSeadraSprites13[] = {
 	{sSeadraGfx13, ARRAY_COUNT(sSeadraGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx14[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_14.4bpp");
+static const u8 sSeadraGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_14.4bpp.lz");
 static const ax_sprite sSeadraSprites14[] = {
 	{sSeadraGfx14, ARRAY_COUNT(sSeadraGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx15[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_15.4bpp");
+static const u8 sSeadraGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_15.4bpp.lz");
 static const ax_sprite sSeadraSprites15[] = {
 	{sSeadraGfx15, ARRAY_COUNT(sSeadraGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx16[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_16.4bpp");
-static const u8 sSeadraGfx16_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_16_1.4bpp");
-static const u8 sSeadraGfx16_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_16_2.4bpp");
-static const u8 sSeadraGfx16_3[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_16_3.4bpp");
+static const u8 sSeadraGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_16.4bpp.lz");
+static const u8 sSeadraGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_16_1.4bpp.lz");
+static const u8 sSeadraGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_16_2.4bpp.lz");
+static const u8 sSeadraGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_16_3.4bpp.lz");
 static const ax_sprite sSeadraSprites16[] = {
 	{sSeadraGfx16, ARRAY_COUNT(sSeadraGfx16)}, 
 	{NULL, 32}, 
@@ -2133,8 +2133,8 @@ static const ax_sprite sSeadraSprites16[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx17[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_17.4bpp");
-static const u8 sSeadraGfx17_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_17_1.4bpp");
+static const u8 sSeadraGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_17.4bpp.lz");
+static const u8 sSeadraGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_17_1.4bpp.lz");
 static const ax_sprite sSeadraSprites17[] = {
 	{sSeadraGfx17, ARRAY_COUNT(sSeadraGfx17)}, 
 	{NULL, 32}, 
@@ -2142,9 +2142,9 @@ static const ax_sprite sSeadraSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx18[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_18.4bpp");
-static const u8 sSeadraGfx18_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_18_1.4bpp");
-static const u8 sSeadraGfx18_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_18_2.4bpp");
+static const u8 sSeadraGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_18.4bpp.lz");
+static const u8 sSeadraGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_18_1.4bpp.lz");
+static const u8 sSeadraGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_18_2.4bpp.lz");
 static const ax_sprite sSeadraSprites18[] = {
 	{sSeadraGfx18, ARRAY_COUNT(sSeadraGfx18)}, 
 	{NULL, 32}, 
@@ -2153,10 +2153,10 @@ static const ax_sprite sSeadraSprites18[] = {
 	{sSeadraGfx18_2, ARRAY_COUNT(sSeadraGfx18_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx19[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_19.4bpp");
-static const u8 sSeadraGfx19_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_19_1.4bpp");
-static const u8 sSeadraGfx19_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_19_2.4bpp");
-static const u8 sSeadraGfx19_3[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_19_3.4bpp");
+static const u8 sSeadraGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_19.4bpp.lz");
+static const u8 sSeadraGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_19_1.4bpp.lz");
+static const u8 sSeadraGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_19_2.4bpp.lz");
+static const u8 sSeadraGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_19_3.4bpp.lz");
 static const ax_sprite sSeadraSprites19[] = {
 	{sSeadraGfx19, ARRAY_COUNT(sSeadraGfx19)}, 
 	{NULL, 32}, 
@@ -2168,8 +2168,8 @@ static const ax_sprite sSeadraSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx20[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_20.4bpp");
-static const u8 sSeadraGfx20_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_20_1.4bpp");
+static const u8 sSeadraGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_20.4bpp.lz");
+static const u8 sSeadraGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_20_1.4bpp.lz");
 static const ax_sprite sSeadraSprites20[] = {
 	{sSeadraGfx20, ARRAY_COUNT(sSeadraGfx20)}, 
 	{NULL, 32}, 
@@ -2177,10 +2177,10 @@ static const ax_sprite sSeadraSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx21[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_21.4bpp");
-static const u8 sSeadraGfx21_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_21_1.4bpp");
-static const u8 sSeadraGfx21_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_21_2.4bpp");
-static const u8 sSeadraGfx21_3[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_21_3.4bpp");
+static const u8 sSeadraGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_21.4bpp.lz");
+static const u8 sSeadraGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_21_1.4bpp.lz");
+static const u8 sSeadraGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_21_2.4bpp.lz");
+static const u8 sSeadraGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_21_3.4bpp.lz");
 static const ax_sprite sSeadraSprites21[] = {
 	{sSeadraGfx21, ARRAY_COUNT(sSeadraGfx21)}, 
 	{NULL, 32}, 
@@ -2192,10 +2192,10 @@ static const ax_sprite sSeadraSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx22[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_22.4bpp");
-static const u8 sSeadraGfx22_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_22_1.4bpp");
-static const u8 sSeadraGfx22_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_22_2.4bpp");
-static const u8 sSeadraGfx22_3[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_22_3.4bpp");
+static const u8 sSeadraGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_22.4bpp.lz");
+static const u8 sSeadraGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_22_1.4bpp.lz");
+static const u8 sSeadraGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_22_2.4bpp.lz");
+static const u8 sSeadraGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_22_3.4bpp.lz");
 static const ax_sprite sSeadraSprites22[] = {
 	{sSeadraGfx22, ARRAY_COUNT(sSeadraGfx22)}, 
 	{NULL, 32}, 
@@ -2207,9 +2207,9 @@ static const ax_sprite sSeadraSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx23[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_23.4bpp");
-static const u8 sSeadraGfx23_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_23_1.4bpp");
-static const u8 sSeadraGfx23_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_23_2.4bpp");
+static const u8 sSeadraGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_23.4bpp.lz");
+static const u8 sSeadraGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_23_1.4bpp.lz");
+static const u8 sSeadraGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_23_2.4bpp.lz");
 static const ax_sprite sSeadraSprites23[] = {
 	{sSeadraGfx23, ARRAY_COUNT(sSeadraGfx23)}, 
 	{NULL, 32}, 
@@ -2219,8 +2219,8 @@ static const ax_sprite sSeadraSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx24[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_24.4bpp");
-static const u8 sSeadraGfx24_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_24_1.4bpp");
+static const u8 sSeadraGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_24.4bpp.lz");
+static const u8 sSeadraGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_24_1.4bpp.lz");
 static const ax_sprite sSeadraSprites24[] = {
 	{sSeadraGfx24, ARRAY_COUNT(sSeadraGfx24)}, 
 	{NULL, 32}, 
@@ -2228,9 +2228,9 @@ static const ax_sprite sSeadraSprites24[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx25[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_25.4bpp");
-static const u8 sSeadraGfx25_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_25_1.4bpp");
-static const u8 sSeadraGfx25_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_25_2.4bpp");
+static const u8 sSeadraGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_25.4bpp.lz");
+static const u8 sSeadraGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_25_1.4bpp.lz");
+static const u8 sSeadraGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_25_2.4bpp.lz");
 static const ax_sprite sSeadraSprites25[] = {
 	{sSeadraGfx25, ARRAY_COUNT(sSeadraGfx25)}, 
 	{NULL, 32}, 
@@ -2240,9 +2240,9 @@ static const ax_sprite sSeadraSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx26[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_26.4bpp");
-static const u8 sSeadraGfx26_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_26_1.4bpp");
-static const u8 sSeadraGfx26_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_26_2.4bpp");
+static const u8 sSeadraGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_26.4bpp.lz");
+static const u8 sSeadraGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_26_1.4bpp.lz");
+static const u8 sSeadraGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_26_2.4bpp.lz");
 static const ax_sprite sSeadraSprites26[] = {
 	{sSeadraGfx26, ARRAY_COUNT(sSeadraGfx26)}, 
 	{NULL, 32}, 
@@ -2252,8 +2252,8 @@ static const ax_sprite sSeadraSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx27[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_27.4bpp");
-static const u8 sSeadraGfx27_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_27_1.4bpp");
+static const u8 sSeadraGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_27.4bpp.lz");
+static const u8 sSeadraGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_27_1.4bpp.lz");
 static const ax_sprite sSeadraSprites27[] = {
 	{NULL, 32}, 
 	{sSeadraGfx27, ARRAY_COUNT(sSeadraGfx27)}, 
@@ -2261,9 +2261,9 @@ static const ax_sprite sSeadraSprites27[] = {
 	{sSeadraGfx27_1, ARRAY_COUNT(sSeadraGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx28[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_28.4bpp");
-static const u8 sSeadraGfx28_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_28_1.4bpp");
-static const u8 sSeadraGfx28_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_28_2.4bpp");
+static const u8 sSeadraGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_28.4bpp.lz");
+static const u8 sSeadraGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_28_1.4bpp.lz");
+static const u8 sSeadraGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_28_2.4bpp.lz");
 static const ax_sprite sSeadraSprites28[] = {
 	{NULL, 32}, 
 	{sSeadraGfx28, ARRAY_COUNT(sSeadraGfx28)}, 
@@ -2273,9 +2273,9 @@ static const ax_sprite sSeadraSprites28[] = {
 	{sSeadraGfx28_2, ARRAY_COUNT(sSeadraGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx29[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_29.4bpp");
-static const u8 sSeadraGfx29_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_29_1.4bpp");
-static const u8 sSeadraGfx29_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_29_2.4bpp");
+static const u8 sSeadraGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_29.4bpp.lz");
+static const u8 sSeadraGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_29_1.4bpp.lz");
+static const u8 sSeadraGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_29_2.4bpp.lz");
 static const ax_sprite sSeadraSprites29[] = {
 	{NULL, 32}, 
 	{sSeadraGfx29, ARRAY_COUNT(sSeadraGfx29)}, 
@@ -2285,8 +2285,8 @@ static const ax_sprite sSeadraSprites29[] = {
 	{sSeadraGfx29_2, ARRAY_COUNT(sSeadraGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx30[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_30.4bpp");
-static const u8 sSeadraGfx30_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_30_1.4bpp");
+static const u8 sSeadraGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_30.4bpp.lz");
+static const u8 sSeadraGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_30_1.4bpp.lz");
 static const ax_sprite sSeadraSprites30[] = {
 	{sSeadraGfx30, ARRAY_COUNT(sSeadraGfx30)}, 
 	{NULL, 32}, 
@@ -2294,10 +2294,10 @@ static const ax_sprite sSeadraSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx31[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_31.4bpp");
-static const u8 sSeadraGfx31_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_31_1.4bpp");
-static const u8 sSeadraGfx31_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_31_2.4bpp");
-static const u8 sSeadraGfx31_3[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_31_3.4bpp");
+static const u8 sSeadraGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_31.4bpp.lz");
+static const u8 sSeadraGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_31_1.4bpp.lz");
+static const u8 sSeadraGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_31_2.4bpp.lz");
+static const u8 sSeadraGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_31_3.4bpp.lz");
 static const ax_sprite sSeadraSprites31[] = {
 	{sSeadraGfx31, ARRAY_COUNT(sSeadraGfx31)}, 
 	{NULL, 32}, 
@@ -2309,10 +2309,10 @@ static const ax_sprite sSeadraSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx32[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_32.4bpp");
-static const u8 sSeadraGfx32_1[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_32_1.4bpp");
-static const u8 sSeadraGfx32_2[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_32_2.4bpp");
-static const u8 sSeadraGfx32_3[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_32_3.4bpp");
+static const u8 sSeadraGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_32.4bpp.lz");
+static const u8 sSeadraGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_32_1.4bpp.lz");
+static const u8 sSeadraGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_32_2.4bpp.lz");
+static const u8 sSeadraGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_32_3.4bpp.lz");
 static const ax_sprite sSeadraSprites32[] = {
 	{sSeadraGfx32, ARRAY_COUNT(sSeadraGfx32)}, 
 	{NULL, 32}, 
@@ -2324,55 +2324,55 @@ static const ax_sprite sSeadraSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx33[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_33.4bpp");
+static const u8 sSeadraGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_33.4bpp.lz");
 static const ax_sprite sSeadraSprites33[] = {
 	{sSeadraGfx33, ARRAY_COUNT(sSeadraGfx33)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx34[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_34.4bpp");
+static const u8 sSeadraGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_34.4bpp.lz");
 static const ax_sprite sSeadraSprites34[] = {
 	{sSeadraGfx34, ARRAY_COUNT(sSeadraGfx34)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx35[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_35.4bpp");
+static const u8 sSeadraGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_35.4bpp.lz");
 static const ax_sprite sSeadraSprites35[] = {
 	{sSeadraGfx35, ARRAY_COUNT(sSeadraGfx35)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx36[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_36.4bpp");
+static const u8 sSeadraGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_36.4bpp.lz");
 static const ax_sprite sSeadraSprites36[] = {
 	{sSeadraGfx36, ARRAY_COUNT(sSeadraGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx37[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_37.4bpp");
+static const u8 sSeadraGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_37.4bpp.lz");
 static const ax_sprite sSeadraSprites37[] = {
 	{sSeadraGfx37, ARRAY_COUNT(sSeadraGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx38[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_38.4bpp");
+static const u8 sSeadraGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_38.4bpp.lz");
 static const ax_sprite sSeadraSprites38[] = {
 	{sSeadraGfx38, ARRAY_COUNT(sSeadraGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx39[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_39.4bpp");
+static const u8 sSeadraGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_39.4bpp.lz");
 static const ax_sprite sSeadraSprites39[] = {
 	{sSeadraGfx39, ARRAY_COUNT(sSeadraGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx40[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_40.4bpp");
+static const u8 sSeadraGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_40.4bpp.lz");
 static const ax_sprite sSeadraSprites40[] = {
 	{sSeadraGfx40, ARRAY_COUNT(sSeadraGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx41[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_41.4bpp");
+static const u8 sSeadraGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_41.4bpp.lz");
 static const ax_sprite sSeadraSprites41[] = {
 	{sSeadraGfx41, ARRAY_COUNT(sSeadraGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSeadraGfx42[] = INCBIN_U8("graphics/ax/mon/seadra/sprite_42.4bpp");
+static const u8 sSeadraGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seadra/sprite_42.4bpp.lz");
 static const ax_sprite sSeadraSprites42[] = {
 	{sSeadraGfx42, ARRAY_COUNT(sSeadraGfx42)}, 
 	{NULL, 0}

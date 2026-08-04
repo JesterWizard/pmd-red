@@ -1943,87 +1943,87 @@ static const ax_anim sDecoyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDecoyGfx1[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_1.4bpp");
+static const u8 sDecoyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_1.4bpp.lz");
 static const ax_sprite sDecoySprites1[] = {
 	{sDecoyGfx1, ARRAY_COUNT(sDecoyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx2[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_2.4bpp");
+static const u8 sDecoyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_2.4bpp.lz");
 static const ax_sprite sDecoySprites2[] = {
 	{sDecoyGfx2, ARRAY_COUNT(sDecoyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx3[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_3.4bpp");
+static const u8 sDecoyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_3.4bpp.lz");
 static const ax_sprite sDecoySprites3[] = {
 	{sDecoyGfx3, ARRAY_COUNT(sDecoyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx4[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_4.4bpp");
+static const u8 sDecoyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_4.4bpp.lz");
 static const ax_sprite sDecoySprites4[] = {
 	{sDecoyGfx4, ARRAY_COUNT(sDecoyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx5[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_5.4bpp");
+static const u8 sDecoyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_5.4bpp.lz");
 static const ax_sprite sDecoySprites5[] = {
 	{sDecoyGfx5, ARRAY_COUNT(sDecoyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx6[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_6.4bpp");
+static const u8 sDecoyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_6.4bpp.lz");
 static const ax_sprite sDecoySprites6[] = {
 	{sDecoyGfx6, ARRAY_COUNT(sDecoyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx7[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_7.4bpp");
+static const u8 sDecoyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_7.4bpp.lz");
 static const ax_sprite sDecoySprites7[] = {
 	{sDecoyGfx7, ARRAY_COUNT(sDecoyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx8[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_8.4bpp");
+static const u8 sDecoyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_8.4bpp.lz");
 static const ax_sprite sDecoySprites8[] = {
 	{sDecoyGfx8, ARRAY_COUNT(sDecoyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx9[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_9.4bpp");
+static const u8 sDecoyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_9.4bpp.lz");
 static const ax_sprite sDecoySprites9[] = {
 	{sDecoyGfx9, ARRAY_COUNT(sDecoyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx10[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_10.4bpp");
+static const u8 sDecoyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_10.4bpp.lz");
 static const ax_sprite sDecoySprites10[] = {
 	{sDecoyGfx10, ARRAY_COUNT(sDecoyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx11[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_11.4bpp");
+static const u8 sDecoyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_11.4bpp.lz");
 static const ax_sprite sDecoySprites11[] = {
 	{sDecoyGfx11, ARRAY_COUNT(sDecoyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx12[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_12.4bpp");
+static const u8 sDecoyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_12.4bpp.lz");
 static const ax_sprite sDecoySprites12[] = {
 	{sDecoyGfx12, ARRAY_COUNT(sDecoyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx13[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_13.4bpp");
+static const u8 sDecoyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_13.4bpp.lz");
 static const ax_sprite sDecoySprites13[] = {
 	{sDecoyGfx13, ARRAY_COUNT(sDecoyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx14[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_14.4bpp");
+static const u8 sDecoyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_14.4bpp.lz");
 static const ax_sprite sDecoySprites14[] = {
 	{sDecoyGfx14, ARRAY_COUNT(sDecoyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx15[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_15.4bpp");
+static const u8 sDecoyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_15.4bpp.lz");
 static const ax_sprite sDecoySprites15[] = {
 	{sDecoyGfx15, ARRAY_COUNT(sDecoyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx16[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_16.4bpp");
+static const u8 sDecoyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_16.4bpp.lz");
 static const ax_sprite sDecoySprites16[] = {
 	{sDecoyGfx16, ARRAY_COUNT(sDecoyGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sDecoyGfx17[] = INCBIN_U8("graphics/ax/mon/decoy/sprite_17.4bpp");
+static const u8 sDecoyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/decoy/sprite_17.4bpp.lz");
 static const ax_sprite sDecoySprites17[] = {
 	{sDecoyGfx17, ARRAY_COUNT(sDecoyGfx17)}, 
 	{NULL, 0}

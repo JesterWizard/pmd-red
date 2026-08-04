@@ -1931,59 +1931,59 @@ static const ax_anim sYanmaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sYanmaGfx1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_1.4bpp");
+static const u8 sYanmaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_1.4bpp.lz");
 static const ax_sprite sYanmaSprites1[] = {
 	{sYanmaGfx1, ARRAY_COUNT(sYanmaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_2.4bpp");
+static const u8 sYanmaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_2.4bpp.lz");
 static const ax_sprite sYanmaSprites2[] = {
 	{sYanmaGfx2, ARRAY_COUNT(sYanmaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx3[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_3.4bpp");
+static const u8 sYanmaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_3.4bpp.lz");
 static const ax_sprite sYanmaSprites3[] = {
 	{sYanmaGfx3, ARRAY_COUNT(sYanmaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx4[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_4.4bpp");
+static const u8 sYanmaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_4.4bpp.lz");
 static const ax_sprite sYanmaSprites4[] = {
 	{sYanmaGfx4, ARRAY_COUNT(sYanmaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx5[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_5.4bpp");
+static const u8 sYanmaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_5.4bpp.lz");
 static const ax_sprite sYanmaSprites5[] = {
 	{sYanmaGfx5, ARRAY_COUNT(sYanmaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx6[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_6.4bpp");
+static const u8 sYanmaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_6.4bpp.lz");
 static const ax_sprite sYanmaSprites6[] = {
 	{sYanmaGfx6, ARRAY_COUNT(sYanmaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx7[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_7.4bpp");
+static const u8 sYanmaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_7.4bpp.lz");
 static const ax_sprite sYanmaSprites7[] = {
 	{sYanmaGfx7, ARRAY_COUNT(sYanmaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx8[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_8.4bpp");
+static const u8 sYanmaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_8.4bpp.lz");
 static const ax_sprite sYanmaSprites8[] = {
 	{sYanmaGfx8, ARRAY_COUNT(sYanmaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx9[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_9.4bpp");
+static const u8 sYanmaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_9.4bpp.lz");
 static const ax_sprite sYanmaSprites9[] = {
 	{sYanmaGfx9, ARRAY_COUNT(sYanmaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx10[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_10.4bpp");
+static const u8 sYanmaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_10.4bpp.lz");
 static const ax_sprite sYanmaSprites10[] = {
 	{sYanmaGfx10, ARRAY_COUNT(sYanmaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx11[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_11.4bpp");
-static const u8 sYanmaGfx11_1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_11_1.4bpp");
-static const u8 sYanmaGfx11_2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_11_2.4bpp");
+static const u8 sYanmaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_11.4bpp.lz");
+static const u8 sYanmaGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_11_1.4bpp.lz");
+static const u8 sYanmaGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_11_2.4bpp.lz");
 static const ax_sprite sYanmaSprites11[] = {
 	{NULL, 32}, 
 	{sYanmaGfx11, ARRAY_COUNT(sYanmaGfx11)}, 
@@ -1994,9 +1994,9 @@ static const ax_sprite sYanmaSprites11[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx12[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_12.4bpp");
-static const u8 sYanmaGfx12_1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_12_1.4bpp");
-static const u8 sYanmaGfx12_2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_12_2.4bpp");
+static const u8 sYanmaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_12.4bpp.lz");
+static const u8 sYanmaGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_12_1.4bpp.lz");
+static const u8 sYanmaGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_12_2.4bpp.lz");
 static const ax_sprite sYanmaSprites12[] = {
 	{NULL, 32}, 
 	{sYanmaGfx12, ARRAY_COUNT(sYanmaGfx12)}, 
@@ -2007,9 +2007,9 @@ static const ax_sprite sYanmaSprites12[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx13[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_13.4bpp");
-static const u8 sYanmaGfx13_1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_13_1.4bpp");
-static const u8 sYanmaGfx13_2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_13_2.4bpp");
+static const u8 sYanmaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_13.4bpp.lz");
+static const u8 sYanmaGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_13_1.4bpp.lz");
+static const u8 sYanmaGfx13_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_13_2.4bpp.lz");
 static const ax_sprite sYanmaSprites13[] = {
 	{sYanmaGfx13, ARRAY_COUNT(sYanmaGfx13)}, 
 	{NULL, 64}, 
@@ -2019,9 +2019,9 @@ static const ax_sprite sYanmaSprites13[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx14[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_14.4bpp");
-static const u8 sYanmaGfx14_1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_14_1.4bpp");
-static const u8 sYanmaGfx14_2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_14_2.4bpp");
+static const u8 sYanmaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_14.4bpp.lz");
+static const u8 sYanmaGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_14_1.4bpp.lz");
+static const u8 sYanmaGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_14_2.4bpp.lz");
 static const ax_sprite sYanmaSprites14[] = {
 	{sYanmaGfx14, ARRAY_COUNT(sYanmaGfx14)}, 
 	{NULL, 64}, 
@@ -2031,21 +2031,21 @@ static const ax_sprite sYanmaSprites14[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx15[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_15.4bpp");
+static const u8 sYanmaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_15.4bpp.lz");
 static const ax_sprite sYanmaSprites15[] = {
 	{sYanmaGfx15, ARRAY_COUNT(sYanmaGfx15)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx16[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_16.4bpp");
+static const u8 sYanmaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_16.4bpp.lz");
 static const ax_sprite sYanmaSprites16[] = {
 	{sYanmaGfx16, ARRAY_COUNT(sYanmaGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx17[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_17.4bpp");
-static const u8 sYanmaGfx17_1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_17_1.4bpp");
-static const u8 sYanmaGfx17_2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_17_2.4bpp");
+static const u8 sYanmaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_17.4bpp.lz");
+static const u8 sYanmaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_17_1.4bpp.lz");
+static const u8 sYanmaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_17_2.4bpp.lz");
 static const ax_sprite sYanmaSprites17[] = {
 	{NULL, 32}, 
 	{sYanmaGfx17, ARRAY_COUNT(sYanmaGfx17)}, 
@@ -2056,9 +2056,9 @@ static const ax_sprite sYanmaSprites17[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx18[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_18.4bpp");
-static const u8 sYanmaGfx18_1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_18_1.4bpp");
-static const u8 sYanmaGfx18_2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_18_2.4bpp");
+static const u8 sYanmaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_18.4bpp.lz");
+static const u8 sYanmaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_18_1.4bpp.lz");
+static const u8 sYanmaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_18_2.4bpp.lz");
 static const ax_sprite sYanmaSprites18[] = {
 	{NULL, 32}, 
 	{sYanmaGfx18, ARRAY_COUNT(sYanmaGfx18)}, 
@@ -2069,9 +2069,9 @@ static const ax_sprite sYanmaSprites18[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx19[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_19.4bpp");
-static const u8 sYanmaGfx19_1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_19_1.4bpp");
-static const u8 sYanmaGfx19_2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_19_2.4bpp");
+static const u8 sYanmaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_19.4bpp.lz");
+static const u8 sYanmaGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_19_1.4bpp.lz");
+static const u8 sYanmaGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_19_2.4bpp.lz");
 static const ax_sprite sYanmaSprites19[] = {
 	{sYanmaGfx19, ARRAY_COUNT(sYanmaGfx19)}, 
 	{NULL, 32}, 
@@ -2081,9 +2081,9 @@ static const ax_sprite sYanmaSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx20[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_20.4bpp");
-static const u8 sYanmaGfx20_1[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_20_1.4bpp");
-static const u8 sYanmaGfx20_2[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_20_2.4bpp");
+static const u8 sYanmaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_20.4bpp.lz");
+static const u8 sYanmaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_20_1.4bpp.lz");
+static const u8 sYanmaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_20_2.4bpp.lz");
 static const ax_sprite sYanmaSprites20[] = {
 	{sYanmaGfx20, ARRAY_COUNT(sYanmaGfx20)}, 
 	{NULL, 32}, 
@@ -2093,37 +2093,37 @@ static const ax_sprite sYanmaSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx21[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_21.4bpp");
+static const u8 sYanmaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_21.4bpp.lz");
 static const ax_sprite sYanmaSprites21[] = {
 	{sYanmaGfx21, ARRAY_COUNT(sYanmaGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx22[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_22.4bpp");
+static const u8 sYanmaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_22.4bpp.lz");
 static const ax_sprite sYanmaSprites22[] = {
 	{sYanmaGfx22, ARRAY_COUNT(sYanmaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx23[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_23.4bpp");
+static const u8 sYanmaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_23.4bpp.lz");
 static const ax_sprite sYanmaSprites23[] = {
 	{sYanmaGfx23, ARRAY_COUNT(sYanmaGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx24[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_24.4bpp");
+static const u8 sYanmaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_24.4bpp.lz");
 static const ax_sprite sYanmaSprites24[] = {
 	{sYanmaGfx24, ARRAY_COUNT(sYanmaGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx25[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_25.4bpp");
+static const u8 sYanmaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_25.4bpp.lz");
 static const ax_sprite sYanmaSprites25[] = {
 	{sYanmaGfx25, ARRAY_COUNT(sYanmaGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx26[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_26.4bpp");
+static const u8 sYanmaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_26.4bpp.lz");
 static const ax_sprite sYanmaSprites26[] = {
 	{sYanmaGfx26, ARRAY_COUNT(sYanmaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sYanmaGfx27[] = INCBIN_U8("graphics/ax/mon/yanma/sprite_27.4bpp");
+static const u8 sYanmaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/yanma/sprite_27.4bpp.lz");
 static const ax_sprite sYanmaSprites27[] = {
 	{sYanmaGfx27, ARRAY_COUNT(sYanmaGfx27)}, 
 	{NULL, 0}

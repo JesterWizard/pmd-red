@@ -2296,130 +2296,130 @@ static const ax_anim sNoctowlAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sNoctowlGfx1[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_1.4bpp");
+static const u8 sNoctowlGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_1.4bpp.lz");
 static const ax_sprite sNoctowlSprites1[] = {
 	{sNoctowlGfx1, ARRAY_COUNT(sNoctowlGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx2[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_2.4bpp");
+static const u8 sNoctowlGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_2.4bpp.lz");
 static const ax_sprite sNoctowlSprites2[] = {
 	{sNoctowlGfx2, ARRAY_COUNT(sNoctowlGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx3[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_3.4bpp");
+static const u8 sNoctowlGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_3.4bpp.lz");
 static const ax_sprite sNoctowlSprites3[] = {
 	{sNoctowlGfx3, ARRAY_COUNT(sNoctowlGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx4[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_4.4bpp");
+static const u8 sNoctowlGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_4.4bpp.lz");
 static const ax_sprite sNoctowlSprites4[] = {
 	{sNoctowlGfx4, ARRAY_COUNT(sNoctowlGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx5[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_5.4bpp");
+static const u8 sNoctowlGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_5.4bpp.lz");
 static const ax_sprite sNoctowlSprites5[] = {
 	{sNoctowlGfx5, ARRAY_COUNT(sNoctowlGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx6[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_6.4bpp");
+static const u8 sNoctowlGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_6.4bpp.lz");
 static const ax_sprite sNoctowlSprites6[] = {
 	{sNoctowlGfx6, ARRAY_COUNT(sNoctowlGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx7[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_7.4bpp");
+static const u8 sNoctowlGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_7.4bpp.lz");
 static const ax_sprite sNoctowlSprites7[] = {
 	{sNoctowlGfx7, ARRAY_COUNT(sNoctowlGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx8[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_8.4bpp");
+static const u8 sNoctowlGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_8.4bpp.lz");
 static const ax_sprite sNoctowlSprites8[] = {
 	{sNoctowlGfx8, ARRAY_COUNT(sNoctowlGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx9[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_9.4bpp");
+static const u8 sNoctowlGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_9.4bpp.lz");
 static const ax_sprite sNoctowlSprites9[] = {
 	{sNoctowlGfx9, ARRAY_COUNT(sNoctowlGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx10[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_10.4bpp");
+static const u8 sNoctowlGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_10.4bpp.lz");
 static const ax_sprite sNoctowlSprites10[] = {
 	{sNoctowlGfx10, ARRAY_COUNT(sNoctowlGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx11[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_11.4bpp");
+static const u8 sNoctowlGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_11.4bpp.lz");
 static const ax_sprite sNoctowlSprites11[] = {
 	{sNoctowlGfx11, ARRAY_COUNT(sNoctowlGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx12[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_12.4bpp");
+static const u8 sNoctowlGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_12.4bpp.lz");
 static const ax_sprite sNoctowlSprites12[] = {
 	{sNoctowlGfx12, ARRAY_COUNT(sNoctowlGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx13[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_13.4bpp");
+static const u8 sNoctowlGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_13.4bpp.lz");
 static const ax_sprite sNoctowlSprites13[] = {
 	{sNoctowlGfx13, ARRAY_COUNT(sNoctowlGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx14[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_14.4bpp");
+static const u8 sNoctowlGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_14.4bpp.lz");
 static const ax_sprite sNoctowlSprites14[] = {
 	{sNoctowlGfx14, ARRAY_COUNT(sNoctowlGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx15[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_15.4bpp");
+static const u8 sNoctowlGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_15.4bpp.lz");
 static const ax_sprite sNoctowlSprites15[] = {
 	{sNoctowlGfx15, ARRAY_COUNT(sNoctowlGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx16[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_16.4bpp");
+static const u8 sNoctowlGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_16.4bpp.lz");
 static const ax_sprite sNoctowlSprites16[] = {
 	{sNoctowlGfx16, ARRAY_COUNT(sNoctowlGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx17[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_17.4bpp");
+static const u8 sNoctowlGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_17.4bpp.lz");
 static const ax_sprite sNoctowlSprites17[] = {
 	{sNoctowlGfx17, ARRAY_COUNT(sNoctowlGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx18[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_18.4bpp");
+static const u8 sNoctowlGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_18.4bpp.lz");
 static const ax_sprite sNoctowlSprites18[] = {
 	{sNoctowlGfx18, ARRAY_COUNT(sNoctowlGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx19[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_19.4bpp");
+static const u8 sNoctowlGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_19.4bpp.lz");
 static const ax_sprite sNoctowlSprites19[] = {
 	{sNoctowlGfx19, ARRAY_COUNT(sNoctowlGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx20[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_20.4bpp");
+static const u8 sNoctowlGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_20.4bpp.lz");
 static const ax_sprite sNoctowlSprites20[] = {
 	{sNoctowlGfx20, ARRAY_COUNT(sNoctowlGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx21[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_21.4bpp");
+static const u8 sNoctowlGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_21.4bpp.lz");
 static const ax_sprite sNoctowlSprites21[] = {
 	{sNoctowlGfx21, ARRAY_COUNT(sNoctowlGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx22[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_22.4bpp");
+static const u8 sNoctowlGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_22.4bpp.lz");
 static const ax_sprite sNoctowlSprites22[] = {
 	{sNoctowlGfx22, ARRAY_COUNT(sNoctowlGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx23[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_23.4bpp");
+static const u8 sNoctowlGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_23.4bpp.lz");
 static const ax_sprite sNoctowlSprites23[] = {
 	{sNoctowlGfx23, ARRAY_COUNT(sNoctowlGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx24[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_24.4bpp");
+static const u8 sNoctowlGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_24.4bpp.lz");
 static const ax_sprite sNoctowlSprites24[] = {
 	{sNoctowlGfx24, ARRAY_COUNT(sNoctowlGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx25[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_25.4bpp");
-static const u8 sNoctowlGfx25_1[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_25_1.4bpp");
-static const u8 sNoctowlGfx25_2[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_25_2.4bpp");
-static const u8 sNoctowlGfx25_3[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_25_3.4bpp");
+static const u8 sNoctowlGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_25.4bpp.lz");
+static const u8 sNoctowlGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_25_1.4bpp.lz");
+static const u8 sNoctowlGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_25_2.4bpp.lz");
+static const u8 sNoctowlGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_25_3.4bpp.lz");
 static const ax_sprite sNoctowlSprites25[] = {
 	{sNoctowlGfx25, ARRAY_COUNT(sNoctowlGfx25)}, 
 	{NULL, 64}, 
@@ -2431,30 +2431,30 @@ static const ax_sprite sNoctowlSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx26[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_26.4bpp");
+static const u8 sNoctowlGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_26.4bpp.lz");
 static const ax_sprite sNoctowlSprites26[] = {
 	{sNoctowlGfx26, ARRAY_COUNT(sNoctowlGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx27[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_27.4bpp");
+static const u8 sNoctowlGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_27.4bpp.lz");
 static const ax_sprite sNoctowlSprites27[] = {
 	{sNoctowlGfx27, ARRAY_COUNT(sNoctowlGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx28[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_28.4bpp");
+static const u8 sNoctowlGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_28.4bpp.lz");
 static const ax_sprite sNoctowlSprites28[] = {
 	{sNoctowlGfx28, ARRAY_COUNT(sNoctowlGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx29[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_29.4bpp");
+static const u8 sNoctowlGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_29.4bpp.lz");
 static const ax_sprite sNoctowlSprites29[] = {
 	{sNoctowlGfx29, ARRAY_COUNT(sNoctowlGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx30[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_30.4bpp");
-static const u8 sNoctowlGfx30_1[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_30_1.4bpp");
-static const u8 sNoctowlGfx30_2[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_30_2.4bpp");
-static const u8 sNoctowlGfx30_3[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_30_3.4bpp");
+static const u8 sNoctowlGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_30.4bpp.lz");
+static const u8 sNoctowlGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_30_1.4bpp.lz");
+static const u8 sNoctowlGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_30_2.4bpp.lz");
+static const u8 sNoctowlGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_30_3.4bpp.lz");
 static const ax_sprite sNoctowlSprites30[] = {
 	{sNoctowlGfx30, ARRAY_COUNT(sNoctowlGfx30)}, 
 	{NULL, 32}, 
@@ -2466,8 +2466,8 @@ static const ax_sprite sNoctowlSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx31[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_31.4bpp");
-static const u8 sNoctowlGfx31_1[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_31_1.4bpp");
+static const u8 sNoctowlGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_31.4bpp.lz");
+static const u8 sNoctowlGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_31_1.4bpp.lz");
 static const ax_sprite sNoctowlSprites31[] = {
 	{sNoctowlGfx31, ARRAY_COUNT(sNoctowlGfx31)}, 
 	{NULL, 32}, 
@@ -2475,10 +2475,10 @@ static const ax_sprite sNoctowlSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx32[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_32.4bpp");
-static const u8 sNoctowlGfx32_1[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_32_1.4bpp");
-static const u8 sNoctowlGfx32_2[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_32_2.4bpp");
-static const u8 sNoctowlGfx32_3[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_32_3.4bpp");
+static const u8 sNoctowlGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_32.4bpp.lz");
+static const u8 sNoctowlGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_32_1.4bpp.lz");
+static const u8 sNoctowlGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_32_2.4bpp.lz");
+static const u8 sNoctowlGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_32_3.4bpp.lz");
 static const ax_sprite sNoctowlSprites32[] = {
 	{sNoctowlGfx32, ARRAY_COUNT(sNoctowlGfx32)}, 
 	{NULL, 32}, 
@@ -2490,8 +2490,8 @@ static const ax_sprite sNoctowlSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx33[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_33.4bpp");
-static const u8 sNoctowlGfx33_1[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_33_1.4bpp");
+static const u8 sNoctowlGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_33.4bpp.lz");
+static const u8 sNoctowlGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_33_1.4bpp.lz");
 static const ax_sprite sNoctowlSprites33[] = {
 	{sNoctowlGfx33, ARRAY_COUNT(sNoctowlGfx33)}, 
 	{NULL, 32}, 
@@ -2499,10 +2499,10 @@ static const ax_sprite sNoctowlSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx34[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_34.4bpp");
-static const u8 sNoctowlGfx34_1[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_34_1.4bpp");
-static const u8 sNoctowlGfx34_2[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_34_2.4bpp");
-static const u8 sNoctowlGfx34_3[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_34_3.4bpp");
+static const u8 sNoctowlGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_34.4bpp.lz");
+static const u8 sNoctowlGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_34_1.4bpp.lz");
+static const u8 sNoctowlGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_34_2.4bpp.lz");
+static const u8 sNoctowlGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_34_3.4bpp.lz");
 static const ax_sprite sNoctowlSprites34[] = {
 	{NULL, 32}, 
 	{sNoctowlGfx34, ARRAY_COUNT(sNoctowlGfx34)}, 
@@ -2515,8 +2515,8 @@ static const ax_sprite sNoctowlSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx35[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_35.4bpp");
-static const u8 sNoctowlGfx35_1[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_35_1.4bpp");
+static const u8 sNoctowlGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_35.4bpp.lz");
+static const u8 sNoctowlGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_35_1.4bpp.lz");
 static const ax_sprite sNoctowlSprites35[] = {
 	{sNoctowlGfx35, ARRAY_COUNT(sNoctowlGfx35)}, 
 	{NULL, 64}, 
@@ -2524,67 +2524,67 @@ static const ax_sprite sNoctowlSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx36[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_36.4bpp");
+static const u8 sNoctowlGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_36.4bpp.lz");
 static const ax_sprite sNoctowlSprites36[] = {
 	{sNoctowlGfx36, ARRAY_COUNT(sNoctowlGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx37[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_37.4bpp");
+static const u8 sNoctowlGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_37.4bpp.lz");
 static const ax_sprite sNoctowlSprites37[] = {
 	{sNoctowlGfx37, ARRAY_COUNT(sNoctowlGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx38[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_38.4bpp");
+static const u8 sNoctowlGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_38.4bpp.lz");
 static const ax_sprite sNoctowlSprites38[] = {
 	{sNoctowlGfx38, ARRAY_COUNT(sNoctowlGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx39[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_39.4bpp");
+static const u8 sNoctowlGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_39.4bpp.lz");
 static const ax_sprite sNoctowlSprites39[] = {
 	{sNoctowlGfx39, ARRAY_COUNT(sNoctowlGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx40[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_40.4bpp");
+static const u8 sNoctowlGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_40.4bpp.lz");
 static const ax_sprite sNoctowlSprites40[] = {
 	{sNoctowlGfx40, ARRAY_COUNT(sNoctowlGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx41[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_41.4bpp");
+static const u8 sNoctowlGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_41.4bpp.lz");
 static const ax_sprite sNoctowlSprites41[] = {
 	{sNoctowlGfx41, ARRAY_COUNT(sNoctowlGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx42[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_42.4bpp");
+static const u8 sNoctowlGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_42.4bpp.lz");
 static const ax_sprite sNoctowlSprites42[] = {
 	{sNoctowlGfx42, ARRAY_COUNT(sNoctowlGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx43[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_43.4bpp");
+static const u8 sNoctowlGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_43.4bpp.lz");
 static const ax_sprite sNoctowlSprites43[] = {
 	{sNoctowlGfx43, ARRAY_COUNT(sNoctowlGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx44[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_44.4bpp");
+static const u8 sNoctowlGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_44.4bpp.lz");
 static const ax_sprite sNoctowlSprites44[] = {
 	{sNoctowlGfx44, ARRAY_COUNT(sNoctowlGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx45[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_45.4bpp");
+static const u8 sNoctowlGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_45.4bpp.lz");
 static const ax_sprite sNoctowlSprites45[] = {
 	{sNoctowlGfx45, ARRAY_COUNT(sNoctowlGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx46[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_46.4bpp");
+static const u8 sNoctowlGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_46.4bpp.lz");
 static const ax_sprite sNoctowlSprites46[] = {
 	{sNoctowlGfx46, ARRAY_COUNT(sNoctowlGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx47[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_47.4bpp");
+static const u8 sNoctowlGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_47.4bpp.lz");
 static const ax_sprite sNoctowlSprites47[] = {
 	{sNoctowlGfx47, ARRAY_COUNT(sNoctowlGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sNoctowlGfx48[] = INCBIN_U8("graphics/ax/mon/noctowl/sprite_48.4bpp");
+static const u8 sNoctowlGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/noctowl/sprite_48.4bpp.lz");
 static const ax_sprite sNoctowlSprites48[] = {
 	{sNoctowlGfx48, ARRAY_COUNT(sNoctowlGfx48)}, 
 	{NULL, 0}

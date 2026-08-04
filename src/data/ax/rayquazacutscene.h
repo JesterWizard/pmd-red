@@ -3966,497 +3966,497 @@ static const ax_anim sRayquazaCutsceneAnims_19_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRayquazaCutsceneGfx1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_1.4bpp");
+static const u8 sRayquazaCutsceneGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites1[] = {
 	{sRayquazaCutsceneGfx1, ARRAY_COUNT(sRayquazaCutsceneGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_2.4bpp");
+static const u8 sRayquazaCutsceneGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_2.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites2[] = {
 	{sRayquazaCutsceneGfx2, ARRAY_COUNT(sRayquazaCutsceneGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_3.4bpp");
+static const u8 sRayquazaCutsceneGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_3.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites3[] = {
 	{sRayquazaCutsceneGfx3, ARRAY_COUNT(sRayquazaCutsceneGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_4.4bpp");
+static const u8 sRayquazaCutsceneGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_4.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites4[] = {
 	{sRayquazaCutsceneGfx4, ARRAY_COUNT(sRayquazaCutsceneGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx5[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_5.4bpp");
+static const u8 sRayquazaCutsceneGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_5.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites5[] = {
 	{sRayquazaCutsceneGfx5, ARRAY_COUNT(sRayquazaCutsceneGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx6[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_6.4bpp");
+static const u8 sRayquazaCutsceneGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_6.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites6[] = {
 	{sRayquazaCutsceneGfx6, ARRAY_COUNT(sRayquazaCutsceneGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx7[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_7.4bpp");
+static const u8 sRayquazaCutsceneGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_7.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites7[] = {
 	{sRayquazaCutsceneGfx7, ARRAY_COUNT(sRayquazaCutsceneGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx8[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_8.4bpp");
+static const u8 sRayquazaCutsceneGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_8.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites8[] = {
 	{sRayquazaCutsceneGfx8, ARRAY_COUNT(sRayquazaCutsceneGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx9[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_9.4bpp");
+static const u8 sRayquazaCutsceneGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_9.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites9[] = {
 	{sRayquazaCutsceneGfx9, ARRAY_COUNT(sRayquazaCutsceneGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx10[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_10.4bpp");
+static const u8 sRayquazaCutsceneGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_10.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites10[] = {
 	{sRayquazaCutsceneGfx10, ARRAY_COUNT(sRayquazaCutsceneGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx11[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_11.4bpp");
+static const u8 sRayquazaCutsceneGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_11.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites11[] = {
 	{sRayquazaCutsceneGfx11, ARRAY_COUNT(sRayquazaCutsceneGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx12[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_12.4bpp");
+static const u8 sRayquazaCutsceneGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_12.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites12[] = {
 	{sRayquazaCutsceneGfx12, ARRAY_COUNT(sRayquazaCutsceneGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx13[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_13.4bpp");
+static const u8 sRayquazaCutsceneGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_13.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites13[] = {
 	{sRayquazaCutsceneGfx13, ARRAY_COUNT(sRayquazaCutsceneGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx14[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_14.4bpp");
+static const u8 sRayquazaCutsceneGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_14.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites14[] = {
 	{sRayquazaCutsceneGfx14, ARRAY_COUNT(sRayquazaCutsceneGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx15[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_15.4bpp");
+static const u8 sRayquazaCutsceneGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_15.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites15[] = {
 	{sRayquazaCutsceneGfx15, ARRAY_COUNT(sRayquazaCutsceneGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx16[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_16.4bpp");
+static const u8 sRayquazaCutsceneGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_16.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites16[] = {
 	{sRayquazaCutsceneGfx16, ARRAY_COUNT(sRayquazaCutsceneGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx17[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_17.4bpp");
+static const u8 sRayquazaCutsceneGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_17.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites17[] = {
 	{sRayquazaCutsceneGfx17, ARRAY_COUNT(sRayquazaCutsceneGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx18[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_18.4bpp");
+static const u8 sRayquazaCutsceneGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_18.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites18[] = {
 	{sRayquazaCutsceneGfx18, ARRAY_COUNT(sRayquazaCutsceneGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx19[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_19.4bpp");
+static const u8 sRayquazaCutsceneGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_19.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites19[] = {
 	{sRayquazaCutsceneGfx19, ARRAY_COUNT(sRayquazaCutsceneGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx20[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_20.4bpp");
+static const u8 sRayquazaCutsceneGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_20.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites20[] = {
 	{sRayquazaCutsceneGfx20, ARRAY_COUNT(sRayquazaCutsceneGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx21[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_21.4bpp");
+static const u8 sRayquazaCutsceneGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_21.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites21[] = {
 	{sRayquazaCutsceneGfx21, ARRAY_COUNT(sRayquazaCutsceneGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx22[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_22.4bpp");
+static const u8 sRayquazaCutsceneGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_22.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites22[] = {
 	{sRayquazaCutsceneGfx22, ARRAY_COUNT(sRayquazaCutsceneGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx23[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_23.4bpp");
+static const u8 sRayquazaCutsceneGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_23.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites23[] = {
 	{sRayquazaCutsceneGfx23, ARRAY_COUNT(sRayquazaCutsceneGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx24[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_24.4bpp");
+static const u8 sRayquazaCutsceneGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_24.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites24[] = {
 	{sRayquazaCutsceneGfx24, ARRAY_COUNT(sRayquazaCutsceneGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx25[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_25.4bpp");
+static const u8 sRayquazaCutsceneGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_25.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites25[] = {
 	{sRayquazaCutsceneGfx25, ARRAY_COUNT(sRayquazaCutsceneGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx26[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_26.4bpp");
+static const u8 sRayquazaCutsceneGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_26.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites26[] = {
 	{sRayquazaCutsceneGfx26, ARRAY_COUNT(sRayquazaCutsceneGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx27[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_27.4bpp");
+static const u8 sRayquazaCutsceneGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_27.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites27[] = {
 	{sRayquazaCutsceneGfx27, ARRAY_COUNT(sRayquazaCutsceneGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx28[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_28.4bpp");
+static const u8 sRayquazaCutsceneGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_28.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites28[] = {
 	{sRayquazaCutsceneGfx28, ARRAY_COUNT(sRayquazaCutsceneGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx29[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_29.4bpp");
+static const u8 sRayquazaCutsceneGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_29.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites29[] = {
 	{sRayquazaCutsceneGfx29, ARRAY_COUNT(sRayquazaCutsceneGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx30[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_30.4bpp");
+static const u8 sRayquazaCutsceneGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_30.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites30[] = {
 	{sRayquazaCutsceneGfx30, ARRAY_COUNT(sRayquazaCutsceneGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx31[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_31.4bpp");
+static const u8 sRayquazaCutsceneGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_31.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites31[] = {
 	{sRayquazaCutsceneGfx31, ARRAY_COUNT(sRayquazaCutsceneGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx32[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_32.4bpp");
+static const u8 sRayquazaCutsceneGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_32.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites32[] = {
 	{sRayquazaCutsceneGfx32, ARRAY_COUNT(sRayquazaCutsceneGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx33[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_33.4bpp");
+static const u8 sRayquazaCutsceneGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_33.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites33[] = {
 	{sRayquazaCutsceneGfx33, ARRAY_COUNT(sRayquazaCutsceneGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx34[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_34.4bpp");
+static const u8 sRayquazaCutsceneGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_34.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites34[] = {
 	{sRayquazaCutsceneGfx34, ARRAY_COUNT(sRayquazaCutsceneGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx35[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_35.4bpp");
+static const u8 sRayquazaCutsceneGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_35.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites35[] = {
 	{sRayquazaCutsceneGfx35, ARRAY_COUNT(sRayquazaCutsceneGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx36[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_36.4bpp");
+static const u8 sRayquazaCutsceneGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_36.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites36[] = {
 	{sRayquazaCutsceneGfx36, ARRAY_COUNT(sRayquazaCutsceneGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx37[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_37.4bpp");
+static const u8 sRayquazaCutsceneGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_37.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites37[] = {
 	{sRayquazaCutsceneGfx37, ARRAY_COUNT(sRayquazaCutsceneGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx38[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_38.4bpp");
+static const u8 sRayquazaCutsceneGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_38.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites38[] = {
 	{sRayquazaCutsceneGfx38, ARRAY_COUNT(sRayquazaCutsceneGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx39[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_39.4bpp");
+static const u8 sRayquazaCutsceneGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_39.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites39[] = {
 	{sRayquazaCutsceneGfx39, ARRAY_COUNT(sRayquazaCutsceneGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx40[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_40.4bpp");
+static const u8 sRayquazaCutsceneGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_40.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites40[] = {
 	{sRayquazaCutsceneGfx40, ARRAY_COUNT(sRayquazaCutsceneGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx41[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_41.4bpp");
+static const u8 sRayquazaCutsceneGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_41.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites41[] = {
 	{sRayquazaCutsceneGfx41, ARRAY_COUNT(sRayquazaCutsceneGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx42[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_42.4bpp");
+static const u8 sRayquazaCutsceneGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_42.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites42[] = {
 	{sRayquazaCutsceneGfx42, ARRAY_COUNT(sRayquazaCutsceneGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx43[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_43.4bpp");
+static const u8 sRayquazaCutsceneGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_43.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites43[] = {
 	{sRayquazaCutsceneGfx43, ARRAY_COUNT(sRayquazaCutsceneGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx44[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_44.4bpp");
+static const u8 sRayquazaCutsceneGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_44.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites44[] = {
 	{sRayquazaCutsceneGfx44, ARRAY_COUNT(sRayquazaCutsceneGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx45[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_45.4bpp");
+static const u8 sRayquazaCutsceneGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_45.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites45[] = {
 	{sRayquazaCutsceneGfx45, ARRAY_COUNT(sRayquazaCutsceneGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx46[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_46.4bpp");
+static const u8 sRayquazaCutsceneGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_46.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites46[] = {
 	{sRayquazaCutsceneGfx46, ARRAY_COUNT(sRayquazaCutsceneGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx47[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_47.4bpp");
+static const u8 sRayquazaCutsceneGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_47.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites47[] = {
 	{sRayquazaCutsceneGfx47, ARRAY_COUNT(sRayquazaCutsceneGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx48[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_48.4bpp");
+static const u8 sRayquazaCutsceneGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_48.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites48[] = {
 	{sRayquazaCutsceneGfx48, ARRAY_COUNT(sRayquazaCutsceneGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx49[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_49.4bpp");
+static const u8 sRayquazaCutsceneGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_49.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites49[] = {
 	{sRayquazaCutsceneGfx49, ARRAY_COUNT(sRayquazaCutsceneGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx50[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_50.4bpp");
+static const u8 sRayquazaCutsceneGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_50.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites50[] = {
 	{sRayquazaCutsceneGfx50, ARRAY_COUNT(sRayquazaCutsceneGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx51[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_51.4bpp");
+static const u8 sRayquazaCutsceneGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_51.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites51[] = {
 	{sRayquazaCutsceneGfx51, ARRAY_COUNT(sRayquazaCutsceneGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx52[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_52.4bpp");
+static const u8 sRayquazaCutsceneGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_52.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites52[] = {
 	{sRayquazaCutsceneGfx52, ARRAY_COUNT(sRayquazaCutsceneGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx53[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_53.4bpp");
+static const u8 sRayquazaCutsceneGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_53.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites53[] = {
 	{sRayquazaCutsceneGfx53, ARRAY_COUNT(sRayquazaCutsceneGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx54[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_54.4bpp");
+static const u8 sRayquazaCutsceneGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_54.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites54[] = {
 	{sRayquazaCutsceneGfx54, ARRAY_COUNT(sRayquazaCutsceneGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx55[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_55.4bpp");
+static const u8 sRayquazaCutsceneGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_55.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites55[] = {
 	{sRayquazaCutsceneGfx55, ARRAY_COUNT(sRayquazaCutsceneGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx56[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_56.4bpp");
+static const u8 sRayquazaCutsceneGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_56.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites56[] = {
 	{sRayquazaCutsceneGfx56, ARRAY_COUNT(sRayquazaCutsceneGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx57[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_57.4bpp");
+static const u8 sRayquazaCutsceneGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_57.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites57[] = {
 	{sRayquazaCutsceneGfx57, ARRAY_COUNT(sRayquazaCutsceneGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx58[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_58.4bpp");
+static const u8 sRayquazaCutsceneGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_58.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites58[] = {
 	{sRayquazaCutsceneGfx58, ARRAY_COUNT(sRayquazaCutsceneGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx59[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_59.4bpp");
+static const u8 sRayquazaCutsceneGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_59.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites59[] = {
 	{sRayquazaCutsceneGfx59, ARRAY_COUNT(sRayquazaCutsceneGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx60[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_60.4bpp");
+static const u8 sRayquazaCutsceneGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_60.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites60[] = {
 	{sRayquazaCutsceneGfx60, ARRAY_COUNT(sRayquazaCutsceneGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx61[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_61.4bpp");
+static const u8 sRayquazaCutsceneGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_61.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites61[] = {
 	{sRayquazaCutsceneGfx61, ARRAY_COUNT(sRayquazaCutsceneGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx62[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_62.4bpp");
+static const u8 sRayquazaCutsceneGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_62.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites62[] = {
 	{sRayquazaCutsceneGfx62, ARRAY_COUNT(sRayquazaCutsceneGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx63[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_63.4bpp");
+static const u8 sRayquazaCutsceneGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_63.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites63[] = {
 	{sRayquazaCutsceneGfx63, ARRAY_COUNT(sRayquazaCutsceneGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx64[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_64.4bpp");
+static const u8 sRayquazaCutsceneGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_64.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites64[] = {
 	{sRayquazaCutsceneGfx64, ARRAY_COUNT(sRayquazaCutsceneGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx65[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_65.4bpp");
+static const u8 sRayquazaCutsceneGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_65.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites65[] = {
 	{sRayquazaCutsceneGfx65, ARRAY_COUNT(sRayquazaCutsceneGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx66[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_66.4bpp");
+static const u8 sRayquazaCutsceneGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_66.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites66[] = {
 	{sRayquazaCutsceneGfx66, ARRAY_COUNT(sRayquazaCutsceneGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx67[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_67.4bpp");
+static const u8 sRayquazaCutsceneGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_67.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites67[] = {
 	{sRayquazaCutsceneGfx67, ARRAY_COUNT(sRayquazaCutsceneGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx68[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_68.4bpp");
+static const u8 sRayquazaCutsceneGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_68.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites68[] = {
 	{sRayquazaCutsceneGfx68, ARRAY_COUNT(sRayquazaCutsceneGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx69[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_69.4bpp");
+static const u8 sRayquazaCutsceneGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_69.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites69[] = {
 	{sRayquazaCutsceneGfx69, ARRAY_COUNT(sRayquazaCutsceneGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx70[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_70.4bpp");
+static const u8 sRayquazaCutsceneGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_70.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites70[] = {
 	{sRayquazaCutsceneGfx70, ARRAY_COUNT(sRayquazaCutsceneGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx71[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_71.4bpp");
+static const u8 sRayquazaCutsceneGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_71.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites71[] = {
 	{sRayquazaCutsceneGfx71, ARRAY_COUNT(sRayquazaCutsceneGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx72[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_72.4bpp");
+static const u8 sRayquazaCutsceneGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_72.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites72[] = {
 	{sRayquazaCutsceneGfx72, ARRAY_COUNT(sRayquazaCutsceneGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx73[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_73.4bpp");
+static const u8 sRayquazaCutsceneGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_73.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites73[] = {
 	{sRayquazaCutsceneGfx73, ARRAY_COUNT(sRayquazaCutsceneGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx74[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_74.4bpp");
+static const u8 sRayquazaCutsceneGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_74.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites74[] = {
 	{sRayquazaCutsceneGfx74, ARRAY_COUNT(sRayquazaCutsceneGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx75[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_75.4bpp");
+static const u8 sRayquazaCutsceneGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_75.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites75[] = {
 	{sRayquazaCutsceneGfx75, ARRAY_COUNT(sRayquazaCutsceneGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx76[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_76.4bpp");
+static const u8 sRayquazaCutsceneGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_76.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites76[] = {
 	{sRayquazaCutsceneGfx76, ARRAY_COUNT(sRayquazaCutsceneGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx77[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_77.4bpp");
+static const u8 sRayquazaCutsceneGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_77.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites77[] = {
 	{sRayquazaCutsceneGfx77, ARRAY_COUNT(sRayquazaCutsceneGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx78[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_78.4bpp");
+static const u8 sRayquazaCutsceneGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_78.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites78[] = {
 	{sRayquazaCutsceneGfx78, ARRAY_COUNT(sRayquazaCutsceneGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx79[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_79.4bpp");
+static const u8 sRayquazaCutsceneGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_79.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites79[] = {
 	{sRayquazaCutsceneGfx79, ARRAY_COUNT(sRayquazaCutsceneGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx80[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_80.4bpp");
+static const u8 sRayquazaCutsceneGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_80.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites80[] = {
 	{sRayquazaCutsceneGfx80, ARRAY_COUNT(sRayquazaCutsceneGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx81[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_81.4bpp");
+static const u8 sRayquazaCutsceneGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_81.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites81[] = {
 	{sRayquazaCutsceneGfx81, ARRAY_COUNT(sRayquazaCutsceneGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx82[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_82.4bpp");
+static const u8 sRayquazaCutsceneGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_82.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites82[] = {
 	{sRayquazaCutsceneGfx82, ARRAY_COUNT(sRayquazaCutsceneGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx83[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_83.4bpp");
+static const u8 sRayquazaCutsceneGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_83.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites83[] = {
 	{sRayquazaCutsceneGfx83, ARRAY_COUNT(sRayquazaCutsceneGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx84[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_84.4bpp");
+static const u8 sRayquazaCutsceneGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_84.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites84[] = {
 	{sRayquazaCutsceneGfx84, ARRAY_COUNT(sRayquazaCutsceneGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx85[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_85.4bpp");
+static const u8 sRayquazaCutsceneGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_85.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites85[] = {
 	{sRayquazaCutsceneGfx85, ARRAY_COUNT(sRayquazaCutsceneGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx86[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_86.4bpp");
+static const u8 sRayquazaCutsceneGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_86.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites86[] = {
 	{sRayquazaCutsceneGfx86, ARRAY_COUNT(sRayquazaCutsceneGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx87[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_87.4bpp");
+static const u8 sRayquazaCutsceneGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_87.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites87[] = {
 	{sRayquazaCutsceneGfx87, ARRAY_COUNT(sRayquazaCutsceneGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx88[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_88.4bpp");
+static const u8 sRayquazaCutsceneGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_88.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites88[] = {
 	{sRayquazaCutsceneGfx88, ARRAY_COUNT(sRayquazaCutsceneGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx89[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_89.4bpp");
+static const u8 sRayquazaCutsceneGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_89.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites89[] = {
 	{sRayquazaCutsceneGfx89, ARRAY_COUNT(sRayquazaCutsceneGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx90[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_90.4bpp");
+static const u8 sRayquazaCutsceneGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_90.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites90[] = {
 	{sRayquazaCutsceneGfx90, ARRAY_COUNT(sRayquazaCutsceneGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx91[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_91.4bpp");
+static const u8 sRayquazaCutsceneGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_91.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites91[] = {
 	{sRayquazaCutsceneGfx91, ARRAY_COUNT(sRayquazaCutsceneGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx92[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_92.4bpp");
+static const u8 sRayquazaCutsceneGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_92.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites92[] = {
 	{sRayquazaCutsceneGfx92, ARRAY_COUNT(sRayquazaCutsceneGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx93[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_93.4bpp");
+static const u8 sRayquazaCutsceneGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_93.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites93[] = {
 	{sRayquazaCutsceneGfx93, ARRAY_COUNT(sRayquazaCutsceneGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx94[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_94.4bpp");
+static const u8 sRayquazaCutsceneGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_94.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites94[] = {
 	{sRayquazaCutsceneGfx94, ARRAY_COUNT(sRayquazaCutsceneGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx95[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_95.4bpp");
+static const u8 sRayquazaCutsceneGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_95.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites95[] = {
 	{sRayquazaCutsceneGfx95, ARRAY_COUNT(sRayquazaCutsceneGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx96[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_96.4bpp");
+static const u8 sRayquazaCutsceneGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_96.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites96[] = {
 	{sRayquazaCutsceneGfx96, ARRAY_COUNT(sRayquazaCutsceneGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx97[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_97.4bpp");
+static const u8 sRayquazaCutsceneGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_97.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites97[] = {
 	{sRayquazaCutsceneGfx97, ARRAY_COUNT(sRayquazaCutsceneGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx98[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98.4bpp");
-static const u8 sRayquazaCutsceneGfx98_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_1.4bpp");
-static const u8 sRayquazaCutsceneGfx98_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_2.4bpp");
-static const u8 sRayquazaCutsceneGfx98_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_3.4bpp");
-static const u8 sRayquazaCutsceneGfx98_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_4.4bpp");
-static const u8 sRayquazaCutsceneGfx98_5[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_5.4bpp");
+static const u8 sRayquazaCutsceneGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx98_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx98_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx98_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx98_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_4.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx98_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_98_5.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites98[] = {
 	{sRayquazaCutsceneGfx98, ARRAY_COUNT(sRayquazaCutsceneGfx98)}, 
 	{NULL, 32}, 
@@ -4471,21 +4471,21 @@ static const ax_sprite sRayquazaCutsceneSprites98[] = {
 	{sRayquazaCutsceneGfx98_5, ARRAY_COUNT(sRayquazaCutsceneGfx98_5)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx99[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_99.4bpp");
+static const u8 sRayquazaCutsceneGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_99.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites99[] = {
 	{sRayquazaCutsceneGfx99, ARRAY_COUNT(sRayquazaCutsceneGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx100[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_100.4bpp");
+static const u8 sRayquazaCutsceneGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_100.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites100[] = {
 	{sRayquazaCutsceneGfx100, ARRAY_COUNT(sRayquazaCutsceneGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx101[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101.4bpp");
-static const u8 sRayquazaCutsceneGfx101_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101_1.4bpp");
-static const u8 sRayquazaCutsceneGfx101_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101_2.4bpp");
-static const u8 sRayquazaCutsceneGfx101_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101_3.4bpp");
-static const u8 sRayquazaCutsceneGfx101_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101_4.4bpp");
+static const u8 sRayquazaCutsceneGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx101_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx101_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx101_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx101_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_101_4.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites101[] = {
 	{sRayquazaCutsceneGfx101, ARRAY_COUNT(sRayquazaCutsceneGfx101)}, 
 	{NULL, 64}, 
@@ -4498,31 +4498,31 @@ static const ax_sprite sRayquazaCutsceneSprites101[] = {
 	{sRayquazaCutsceneGfx101_4, ARRAY_COUNT(sRayquazaCutsceneGfx101_4)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx102[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_102.4bpp");
+static const u8 sRayquazaCutsceneGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_102.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites102[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx102, ARRAY_COUNT(sRayquazaCutsceneGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx103[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_103.4bpp");
+static const u8 sRayquazaCutsceneGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_103.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites103[] = {
 	{sRayquazaCutsceneGfx103, ARRAY_COUNT(sRayquazaCutsceneGfx103)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx104[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_104.4bpp");
+static const u8 sRayquazaCutsceneGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_104.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites104[] = {
 	{sRayquazaCutsceneGfx104, ARRAY_COUNT(sRayquazaCutsceneGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx105[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105.4bpp");
-static const u8 sRayquazaCutsceneGfx105_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_1.4bpp");
-static const u8 sRayquazaCutsceneGfx105_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_2.4bpp");
-static const u8 sRayquazaCutsceneGfx105_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_3.4bpp");
-static const u8 sRayquazaCutsceneGfx105_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_4.4bpp");
-static const u8 sRayquazaCutsceneGfx105_5[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_5.4bpp");
-static const u8 sRayquazaCutsceneGfx105_6[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_6.4bpp");
-static const u8 sRayquazaCutsceneGfx105_7[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_7.4bpp");
+static const u8 sRayquazaCutsceneGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx105_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx105_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx105_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx105_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_4.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx105_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_5.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx105_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_6.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx105_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_105_7.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites105[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx105, ARRAY_COUNT(sRayquazaCutsceneGfx105)}, 
@@ -4543,61 +4543,61 @@ static const ax_sprite sRayquazaCutsceneSprites105[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx106[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_106.4bpp");
+static const u8 sRayquazaCutsceneGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_106.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites106[] = {
 	{sRayquazaCutsceneGfx106, ARRAY_COUNT(sRayquazaCutsceneGfx106)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx107[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_107.4bpp");
+static const u8 sRayquazaCutsceneGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_107.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites107[] = {
 	{sRayquazaCutsceneGfx107, ARRAY_COUNT(sRayquazaCutsceneGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx108[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_108.4bpp");
+static const u8 sRayquazaCutsceneGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_108.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites108[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx108, ARRAY_COUNT(sRayquazaCutsceneGfx108)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx109[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_109.4bpp");
+static const u8 sRayquazaCutsceneGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_109.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites109[] = {
 	{sRayquazaCutsceneGfx109, ARRAY_COUNT(sRayquazaCutsceneGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx110[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_110.4bpp");
+static const u8 sRayquazaCutsceneGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_110.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites110[] = {
 	{sRayquazaCutsceneGfx110, ARRAY_COUNT(sRayquazaCutsceneGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx111[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_111.4bpp");
+static const u8 sRayquazaCutsceneGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_111.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites111[] = {
 	{sRayquazaCutsceneGfx111, ARRAY_COUNT(sRayquazaCutsceneGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx112[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_112.4bpp");
+static const u8 sRayquazaCutsceneGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_112.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites112[] = {
 	{sRayquazaCutsceneGfx112, ARRAY_COUNT(sRayquazaCutsceneGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx113[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_113.4bpp");
+static const u8 sRayquazaCutsceneGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_113.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites113[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx113, ARRAY_COUNT(sRayquazaCutsceneGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx114[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_114.4bpp");
+static const u8 sRayquazaCutsceneGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_114.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites114[] = {
 	{sRayquazaCutsceneGfx114, ARRAY_COUNT(sRayquazaCutsceneGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx115[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115.4bpp");
-static const u8 sRayquazaCutsceneGfx115_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_1.4bpp");
-static const u8 sRayquazaCutsceneGfx115_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_2.4bpp");
-static const u8 sRayquazaCutsceneGfx115_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_3.4bpp");
-static const u8 sRayquazaCutsceneGfx115_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_4.4bpp");
-static const u8 sRayquazaCutsceneGfx115_5[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_5.4bpp");
+static const u8 sRayquazaCutsceneGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx115_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx115_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx115_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx115_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_4.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx115_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_115_5.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites115[] = {
 	{sRayquazaCutsceneGfx115, ARRAY_COUNT(sRayquazaCutsceneGfx115)}, 
 	{NULL, 32}, 
@@ -4613,27 +4613,27 @@ static const ax_sprite sRayquazaCutsceneSprites115[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx116[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_116.4bpp");
-static const u8 sRayquazaCutsceneGfx116_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_116_1.4bpp");
+static const u8 sRayquazaCutsceneGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_116.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx116_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_116_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites116[] = {
 	{sRayquazaCutsceneGfx116, ARRAY_COUNT(sRayquazaCutsceneGfx116)}, 
 	{NULL, 64}, 
 	{sRayquazaCutsceneGfx116_1, ARRAY_COUNT(sRayquazaCutsceneGfx116_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx117[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_117.4bpp");
+static const u8 sRayquazaCutsceneGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_117.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites117[] = {
 	{sRayquazaCutsceneGfx117, ARRAY_COUNT(sRayquazaCutsceneGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx118[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_118.4bpp");
+static const u8 sRayquazaCutsceneGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_118.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites118[] = {
 	{sRayquazaCutsceneGfx118, ARRAY_COUNT(sRayquazaCutsceneGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx119[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_119.4bpp");
-static const u8 sRayquazaCutsceneGfx119_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_119_1.4bpp");
-static const u8 sRayquazaCutsceneGfx119_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_119_2.4bpp");
+static const u8 sRayquazaCutsceneGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_119.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx119_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_119_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx119_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_119_2.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites119[] = {
 	{NULL, 64}, 
 	{sRayquazaCutsceneGfx119, ARRAY_COUNT(sRayquazaCutsceneGfx119)}, 
@@ -4643,51 +4643,51 @@ static const ax_sprite sRayquazaCutsceneSprites119[] = {
 	{sRayquazaCutsceneGfx119_2, ARRAY_COUNT(sRayquazaCutsceneGfx119_2)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx120[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_120.4bpp");
+static const u8 sRayquazaCutsceneGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_120.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites120[] = {
 	{sRayquazaCutsceneGfx120, ARRAY_COUNT(sRayquazaCutsceneGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx121[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_121.4bpp");
+static const u8 sRayquazaCutsceneGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_121.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites121[] = {
 	{sRayquazaCutsceneGfx121, ARRAY_COUNT(sRayquazaCutsceneGfx121)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx122[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_122.4bpp");
+static const u8 sRayquazaCutsceneGfx122[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_122.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites122[] = {
 	{sRayquazaCutsceneGfx122, ARRAY_COUNT(sRayquazaCutsceneGfx122)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx123[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_123.4bpp");
+static const u8 sRayquazaCutsceneGfx123[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_123.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites123[] = {
 	{sRayquazaCutsceneGfx123, ARRAY_COUNT(sRayquazaCutsceneGfx123)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx124[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_124.4bpp");
+static const u8 sRayquazaCutsceneGfx124[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_124.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites124[] = {
 	{sRayquazaCutsceneGfx124, ARRAY_COUNT(sRayquazaCutsceneGfx124)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx125[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_125.4bpp");
+static const u8 sRayquazaCutsceneGfx125[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_125.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites125[] = {
 	{sRayquazaCutsceneGfx125, ARRAY_COUNT(sRayquazaCutsceneGfx125)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx126[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_126.4bpp");
+static const u8 sRayquazaCutsceneGfx126[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_126.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites126[] = {
 	{sRayquazaCutsceneGfx126, ARRAY_COUNT(sRayquazaCutsceneGfx126)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx127[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_127.4bpp");
+static const u8 sRayquazaCutsceneGfx127[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_127.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites127[] = {
 	{sRayquazaCutsceneGfx127, ARRAY_COUNT(sRayquazaCutsceneGfx127)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx128[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128.4bpp");
-static const u8 sRayquazaCutsceneGfx128_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128_1.4bpp");
-static const u8 sRayquazaCutsceneGfx128_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128_2.4bpp");
-static const u8 sRayquazaCutsceneGfx128_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128_3.4bpp");
-static const u8 sRayquazaCutsceneGfx128_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128_4.4bpp");
+static const u8 sRayquazaCutsceneGfx128[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx128_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx128_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx128_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx128_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_128_4.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites128[] = {
 	{sRayquazaCutsceneGfx128, ARRAY_COUNT(sRayquazaCutsceneGfx128)}, 
 	{NULL, 32}, 
@@ -4700,52 +4700,52 @@ static const ax_sprite sRayquazaCutsceneSprites128[] = {
 	{sRayquazaCutsceneGfx128_4, ARRAY_COUNT(sRayquazaCutsceneGfx128_4)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx129[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_129.4bpp");
+static const u8 sRayquazaCutsceneGfx129[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_129.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites129[] = {
 	{sRayquazaCutsceneGfx129, ARRAY_COUNT(sRayquazaCutsceneGfx129)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx130[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_130.4bpp");
-static const u8 sRayquazaCutsceneGfx130_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_130_1.4bpp");
+static const u8 sRayquazaCutsceneGfx130[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_130.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx130_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_130_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites130[] = {
 	{sRayquazaCutsceneGfx130, ARRAY_COUNT(sRayquazaCutsceneGfx130)}, 
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx130_1, ARRAY_COUNT(sRayquazaCutsceneGfx130_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx131[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_131.4bpp");
+static const u8 sRayquazaCutsceneGfx131[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_131.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites131[] = {
 	{sRayquazaCutsceneGfx131, ARRAY_COUNT(sRayquazaCutsceneGfx131)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx132[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_132.4bpp");
+static const u8 sRayquazaCutsceneGfx132[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_132.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites132[] = {
 	{sRayquazaCutsceneGfx132, ARRAY_COUNT(sRayquazaCutsceneGfx132)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx133[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_133.4bpp");
+static const u8 sRayquazaCutsceneGfx133[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_133.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites133[] = {
 	{sRayquazaCutsceneGfx133, ARRAY_COUNT(sRayquazaCutsceneGfx133)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx134[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_134.4bpp");
+static const u8 sRayquazaCutsceneGfx134[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_134.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites134[] = {
 	{sRayquazaCutsceneGfx134, ARRAY_COUNT(sRayquazaCutsceneGfx134)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx135[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_135.4bpp");
+static const u8 sRayquazaCutsceneGfx135[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_135.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites135[] = {
 	{sRayquazaCutsceneGfx135, ARRAY_COUNT(sRayquazaCutsceneGfx135)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx136[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_136.4bpp");
+static const u8 sRayquazaCutsceneGfx136[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_136.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites136[] = {
 	{sRayquazaCutsceneGfx136, ARRAY_COUNT(sRayquazaCutsceneGfx136)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx137[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_137.4bpp");
-static const u8 sRayquazaCutsceneGfx137_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_137_1.4bpp");
-static const u8 sRayquazaCutsceneGfx137_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_137_2.4bpp");
+static const u8 sRayquazaCutsceneGfx137[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_137.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx137_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_137_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx137_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_137_2.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites137[] = {
 	{sRayquazaCutsceneGfx137, ARRAY_COUNT(sRayquazaCutsceneGfx137)}, 
 	{NULL, 64}, 
@@ -4754,79 +4754,79 @@ static const ax_sprite sRayquazaCutsceneSprites137[] = {
 	{sRayquazaCutsceneGfx137_2, ARRAY_COUNT(sRayquazaCutsceneGfx137_2)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx138[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_138.4bpp");
+static const u8 sRayquazaCutsceneGfx138[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_138.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites138[] = {
 	{sRayquazaCutsceneGfx138, ARRAY_COUNT(sRayquazaCutsceneGfx138)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx139[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_139.4bpp");
+static const u8 sRayquazaCutsceneGfx139[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_139.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites139[] = {
 	{sRayquazaCutsceneGfx139, ARRAY_COUNT(sRayquazaCutsceneGfx139)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx140[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_140.4bpp");
+static const u8 sRayquazaCutsceneGfx140[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_140.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites140[] = {
 	{sRayquazaCutsceneGfx140, ARRAY_COUNT(sRayquazaCutsceneGfx140)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx141[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_141.4bpp");
+static const u8 sRayquazaCutsceneGfx141[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_141.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites141[] = {
 	{sRayquazaCutsceneGfx141, ARRAY_COUNT(sRayquazaCutsceneGfx141)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx142[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_142.4bpp");
+static const u8 sRayquazaCutsceneGfx142[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_142.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites142[] = {
 	{sRayquazaCutsceneGfx142, ARRAY_COUNT(sRayquazaCutsceneGfx142)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx143[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_143.4bpp");
+static const u8 sRayquazaCutsceneGfx143[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_143.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites143[] = {
 	{sRayquazaCutsceneGfx143, ARRAY_COUNT(sRayquazaCutsceneGfx143)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx144[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_144.4bpp");
+static const u8 sRayquazaCutsceneGfx144[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_144.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites144[] = {
 	{sRayquazaCutsceneGfx144, ARRAY_COUNT(sRayquazaCutsceneGfx144)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx145[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_145.4bpp");
+static const u8 sRayquazaCutsceneGfx145[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_145.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites145[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx145, ARRAY_COUNT(sRayquazaCutsceneGfx145)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx146[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_146.4bpp");
+static const u8 sRayquazaCutsceneGfx146[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_146.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites146[] = {
 	{sRayquazaCutsceneGfx146, ARRAY_COUNT(sRayquazaCutsceneGfx146)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx147[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_147.4bpp");
+static const u8 sRayquazaCutsceneGfx147[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_147.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites147[] = {
 	{sRayquazaCutsceneGfx147, ARRAY_COUNT(sRayquazaCutsceneGfx147)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx148[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_148.4bpp");
+static const u8 sRayquazaCutsceneGfx148[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_148.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites148[] = {
 	{sRayquazaCutsceneGfx148, ARRAY_COUNT(sRayquazaCutsceneGfx148)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx149[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_149.4bpp");
+static const u8 sRayquazaCutsceneGfx149[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_149.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites149[] = {
 	{sRayquazaCutsceneGfx149, ARRAY_COUNT(sRayquazaCutsceneGfx149)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx150[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_150.4bpp");
+static const u8 sRayquazaCutsceneGfx150[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_150.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites150[] = {
 	{sRayquazaCutsceneGfx150, ARRAY_COUNT(sRayquazaCutsceneGfx150)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx151[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151.4bpp");
-static const u8 sRayquazaCutsceneGfx151_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_1.4bpp");
-static const u8 sRayquazaCutsceneGfx151_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_2.4bpp");
-static const u8 sRayquazaCutsceneGfx151_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_3.4bpp");
-static const u8 sRayquazaCutsceneGfx151_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_4.4bpp");
-static const u8 sRayquazaCutsceneGfx151_5[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_5.4bpp");
+static const u8 sRayquazaCutsceneGfx151[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx151_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx151_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx151_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx151_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_4.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx151_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_151_5.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites151[] = {
 	{sRayquazaCutsceneGfx151, ARRAY_COUNT(sRayquazaCutsceneGfx151)}, 
 	{NULL, 32}, 
@@ -4842,37 +4842,37 @@ static const ax_sprite sRayquazaCutsceneSprites151[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx152[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_152.4bpp");
+static const u8 sRayquazaCutsceneGfx152[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_152.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites152[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx152, ARRAY_COUNT(sRayquazaCutsceneGfx152)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx153[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_153.4bpp");
-static const u8 sRayquazaCutsceneGfx153_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_153_1.4bpp");
+static const u8 sRayquazaCutsceneGfx153[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_153.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx153_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_153_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites153[] = {
 	{sRayquazaCutsceneGfx153, ARRAY_COUNT(sRayquazaCutsceneGfx153)}, 
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx153_1, ARRAY_COUNT(sRayquazaCutsceneGfx153_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx154[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_154.4bpp");
+static const u8 sRayquazaCutsceneGfx154[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_154.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites154[] = {
 	{sRayquazaCutsceneGfx154, ARRAY_COUNT(sRayquazaCutsceneGfx154)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx155[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_155.4bpp");
+static const u8 sRayquazaCutsceneGfx155[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_155.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites155[] = {
 	{sRayquazaCutsceneGfx155, ARRAY_COUNT(sRayquazaCutsceneGfx155)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx156[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156.4bpp");
-static const u8 sRayquazaCutsceneGfx156_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_1.4bpp");
-static const u8 sRayquazaCutsceneGfx156_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_2.4bpp");
-static const u8 sRayquazaCutsceneGfx156_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_3.4bpp");
-static const u8 sRayquazaCutsceneGfx156_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_4.4bpp");
-static const u8 sRayquazaCutsceneGfx156_5[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_5.4bpp");
+static const u8 sRayquazaCutsceneGfx156[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx156_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx156_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx156_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx156_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_4.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx156_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_156_5.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites156[] = {
 	{sRayquazaCutsceneGfx156, ARRAY_COUNT(sRayquazaCutsceneGfx156)}, 
 	{NULL, 32}, 
@@ -4888,46 +4888,46 @@ static const ax_sprite sRayquazaCutsceneSprites156[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx157[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_157.4bpp");
+static const u8 sRayquazaCutsceneGfx157[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_157.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites157[] = {
 	{sRayquazaCutsceneGfx157, ARRAY_COUNT(sRayquazaCutsceneGfx157)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx158[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_158.4bpp");
+static const u8 sRayquazaCutsceneGfx158[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_158.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites158[] = {
 	{sRayquazaCutsceneGfx158, ARRAY_COUNT(sRayquazaCutsceneGfx158)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx159[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_159.4bpp");
+static const u8 sRayquazaCutsceneGfx159[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_159.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites159[] = {
 	{sRayquazaCutsceneGfx159, ARRAY_COUNT(sRayquazaCutsceneGfx159)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx160[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_160.4bpp");
+static const u8 sRayquazaCutsceneGfx160[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_160.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites160[] = {
 	{sRayquazaCutsceneGfx160, ARRAY_COUNT(sRayquazaCutsceneGfx160)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx161[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_161.4bpp");
+static const u8 sRayquazaCutsceneGfx161[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_161.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites161[] = {
 	{sRayquazaCutsceneGfx161, ARRAY_COUNT(sRayquazaCutsceneGfx161)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx162[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_162.4bpp");
+static const u8 sRayquazaCutsceneGfx162[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_162.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites162[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx162, ARRAY_COUNT(sRayquazaCutsceneGfx162)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx163[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_163.4bpp");
+static const u8 sRayquazaCutsceneGfx163[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_163.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites163[] = {
 	{sRayquazaCutsceneGfx163, ARRAY_COUNT(sRayquazaCutsceneGfx163)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx164[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_164.4bpp");
-static const u8 sRayquazaCutsceneGfx164_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_164_1.4bpp");
-static const u8 sRayquazaCutsceneGfx164_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_164_2.4bpp");
-static const u8 sRayquazaCutsceneGfx164_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_164_3.4bpp");
+static const u8 sRayquazaCutsceneGfx164[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_164.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx164_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_164_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx164_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_164_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx164_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_164_3.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites164[] = {
 	{sRayquazaCutsceneGfx164, ARRAY_COUNT(sRayquazaCutsceneGfx164)}, 
 	{NULL, 64}, 
@@ -4939,8 +4939,8 @@ static const ax_sprite sRayquazaCutsceneSprites164[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx165[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_165.4bpp");
-static const u8 sRayquazaCutsceneGfx165_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_165_1.4bpp");
+static const u8 sRayquazaCutsceneGfx165[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_165.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx165_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_165_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites165[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx165, ARRAY_COUNT(sRayquazaCutsceneGfx165)}, 
@@ -4948,19 +4948,19 @@ static const ax_sprite sRayquazaCutsceneSprites165[] = {
 	{sRayquazaCutsceneGfx165_1, ARRAY_COUNT(sRayquazaCutsceneGfx165_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx166[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_166.4bpp");
+static const u8 sRayquazaCutsceneGfx166[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_166.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites166[] = {
 	{sRayquazaCutsceneGfx166, ARRAY_COUNT(sRayquazaCutsceneGfx166)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx167[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_167.4bpp");
+static const u8 sRayquazaCutsceneGfx167[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_167.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites167[] = {
 	{sRayquazaCutsceneGfx167, ARRAY_COUNT(sRayquazaCutsceneGfx167)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx168[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_168.4bpp");
-static const u8 sRayquazaCutsceneGfx168_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_168_1.4bpp");
-static const u8 sRayquazaCutsceneGfx168_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_168_2.4bpp");
+static const u8 sRayquazaCutsceneGfx168[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_168.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx168_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_168_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx168_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_168_2.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites168[] = {
 	{sRayquazaCutsceneGfx168, ARRAY_COUNT(sRayquazaCutsceneGfx168)}, 
 	{NULL, 32}, 
@@ -4970,8 +4970,8 @@ static const ax_sprite sRayquazaCutsceneSprites168[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx169[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_169.4bpp");
-static const u8 sRayquazaCutsceneGfx169_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_169_1.4bpp");
+static const u8 sRayquazaCutsceneGfx169[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_169.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx169_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_169_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites169[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx169, ARRAY_COUNT(sRayquazaCutsceneGfx169)}, 
@@ -4979,20 +4979,20 @@ static const ax_sprite sRayquazaCutsceneSprites169[] = {
 	{sRayquazaCutsceneGfx169_1, ARRAY_COUNT(sRayquazaCutsceneGfx169_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx170[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_170.4bpp");
+static const u8 sRayquazaCutsceneGfx170[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_170.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites170[] = {
 	{sRayquazaCutsceneGfx170, ARRAY_COUNT(sRayquazaCutsceneGfx170)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx171[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_171.4bpp");
+static const u8 sRayquazaCutsceneGfx171[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_171.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites171[] = {
 	{sRayquazaCutsceneGfx171, ARRAY_COUNT(sRayquazaCutsceneGfx171)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx172[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_172.4bpp");
-static const u8 sRayquazaCutsceneGfx172_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_172_1.4bpp");
-static const u8 sRayquazaCutsceneGfx172_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_172_2.4bpp");
-static const u8 sRayquazaCutsceneGfx172_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_172_3.4bpp");
+static const u8 sRayquazaCutsceneGfx172[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_172.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx172_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_172_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx172_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_172_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx172_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_172_3.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites172[] = {
 	{sRayquazaCutsceneGfx172, ARRAY_COUNT(sRayquazaCutsceneGfx172)}, 
 	{NULL, 32}, 
@@ -5003,9 +5003,9 @@ static const ax_sprite sRayquazaCutsceneSprites172[] = {
 	{sRayquazaCutsceneGfx172_3, ARRAY_COUNT(sRayquazaCutsceneGfx172_3)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx173[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_173.4bpp");
-static const u8 sRayquazaCutsceneGfx173_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_173_1.4bpp");
-static const u8 sRayquazaCutsceneGfx173_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_173_2.4bpp");
+static const u8 sRayquazaCutsceneGfx173[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_173.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx173_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_173_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx173_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_173_2.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites173[] = {
 	{sRayquazaCutsceneGfx173, ARRAY_COUNT(sRayquazaCutsceneGfx173)}, 
 	{NULL, 64}, 
@@ -5015,50 +5015,50 @@ static const ax_sprite sRayquazaCutsceneSprites173[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx174[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_174.4bpp");
+static const u8 sRayquazaCutsceneGfx174[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_174.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites174[] = {
 	{sRayquazaCutsceneGfx174, ARRAY_COUNT(sRayquazaCutsceneGfx174)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx175[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_175.4bpp");
+static const u8 sRayquazaCutsceneGfx175[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_175.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites175[] = {
 	{sRayquazaCutsceneGfx175, ARRAY_COUNT(sRayquazaCutsceneGfx175)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx176[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_176.4bpp");
+static const u8 sRayquazaCutsceneGfx176[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_176.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites176[] = {
 	{sRayquazaCutsceneGfx176, ARRAY_COUNT(sRayquazaCutsceneGfx176)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx177[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_177.4bpp");
+static const u8 sRayquazaCutsceneGfx177[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_177.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites177[] = {
 	{sRayquazaCutsceneGfx177, ARRAY_COUNT(sRayquazaCutsceneGfx177)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx178[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_178.4bpp");
+static const u8 sRayquazaCutsceneGfx178[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_178.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites178[] = {
 	{sRayquazaCutsceneGfx178, ARRAY_COUNT(sRayquazaCutsceneGfx178)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx179[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_179.4bpp");
+static const u8 sRayquazaCutsceneGfx179[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_179.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites179[] = {
 	{sRayquazaCutsceneGfx179, ARRAY_COUNT(sRayquazaCutsceneGfx179)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx180[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_180.4bpp");
+static const u8 sRayquazaCutsceneGfx180[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_180.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites180[] = {
 	{sRayquazaCutsceneGfx180, ARRAY_COUNT(sRayquazaCutsceneGfx180)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx181[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_181.4bpp");
+static const u8 sRayquazaCutsceneGfx181[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_181.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites181[] = {
 	{sRayquazaCutsceneGfx181, ARRAY_COUNT(sRayquazaCutsceneGfx181)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx182[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_182.4bpp");
-static const u8 sRayquazaCutsceneGfx182_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_182_1.4bpp");
-static const u8 sRayquazaCutsceneGfx182_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_182_2.4bpp");
-static const u8 sRayquazaCutsceneGfx182_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_182_3.4bpp");
+static const u8 sRayquazaCutsceneGfx182[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_182.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx182_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_182_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx182_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_182_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx182_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_182_3.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites182[] = {
 	{sRayquazaCutsceneGfx182, ARRAY_COUNT(sRayquazaCutsceneGfx182)}, 
 	{NULL, 32}, 
@@ -5069,9 +5069,9 @@ static const ax_sprite sRayquazaCutsceneSprites182[] = {
 	{sRayquazaCutsceneGfx182_3, ARRAY_COUNT(sRayquazaCutsceneGfx182_3)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx183[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_183.4bpp");
-static const u8 sRayquazaCutsceneGfx183_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_183_1.4bpp");
-static const u8 sRayquazaCutsceneGfx183_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_183_2.4bpp");
+static const u8 sRayquazaCutsceneGfx183[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_183.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx183_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_183_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx183_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_183_2.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites183[] = {
 	{sRayquazaCutsceneGfx183, ARRAY_COUNT(sRayquazaCutsceneGfx183)}, 
 	{NULL, 32}, 
@@ -5081,28 +5081,28 @@ static const ax_sprite sRayquazaCutsceneSprites183[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx184[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_184.4bpp");
+static const u8 sRayquazaCutsceneGfx184[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_184.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites184[] = {
 	{sRayquazaCutsceneGfx184, ARRAY_COUNT(sRayquazaCutsceneGfx184)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx185[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_185.4bpp");
+static const u8 sRayquazaCutsceneGfx185[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_185.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites185[] = {
 	{sRayquazaCutsceneGfx185, ARRAY_COUNT(sRayquazaCutsceneGfx185)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx186[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_186.4bpp");
+static const u8 sRayquazaCutsceneGfx186[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_186.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites186[] = {
 	{sRayquazaCutsceneGfx186, ARRAY_COUNT(sRayquazaCutsceneGfx186)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx187[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_187.4bpp");
+static const u8 sRayquazaCutsceneGfx187[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_187.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites187[] = {
 	{sRayquazaCutsceneGfx187, ARRAY_COUNT(sRayquazaCutsceneGfx187)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx188[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_188.4bpp");
-static const u8 sRayquazaCutsceneGfx188_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_188_1.4bpp");
+static const u8 sRayquazaCutsceneGfx188[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_188.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx188_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_188_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites188[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx188, ARRAY_COUNT(sRayquazaCutsceneGfx188)}, 
@@ -5110,22 +5110,22 @@ static const ax_sprite sRayquazaCutsceneSprites188[] = {
 	{sRayquazaCutsceneGfx188_1, ARRAY_COUNT(sRayquazaCutsceneGfx188_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx189[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_189.4bpp");
+static const u8 sRayquazaCutsceneGfx189[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_189.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites189[] = {
 	{sRayquazaCutsceneGfx189, ARRAY_COUNT(sRayquazaCutsceneGfx189)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx190[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_190.4bpp");
+static const u8 sRayquazaCutsceneGfx190[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_190.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites190[] = {
 	{sRayquazaCutsceneGfx190, ARRAY_COUNT(sRayquazaCutsceneGfx190)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx191[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191.4bpp");
-static const u8 sRayquazaCutsceneGfx191_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_1.4bpp");
-static const u8 sRayquazaCutsceneGfx191_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_2.4bpp");
-static const u8 sRayquazaCutsceneGfx191_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_3.4bpp");
-static const u8 sRayquazaCutsceneGfx191_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_4.4bpp");
-static const u8 sRayquazaCutsceneGfx191_5[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_5.4bpp");
+static const u8 sRayquazaCutsceneGfx191[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx191_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx191_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx191_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx191_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_4.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx191_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_191_5.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites191[] = {
 	{sRayquazaCutsceneGfx191, ARRAY_COUNT(sRayquazaCutsceneGfx191)}, 
 	{NULL, 32}, 
@@ -5141,36 +5141,36 @@ static const ax_sprite sRayquazaCutsceneSprites191[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx192[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_192.4bpp");
-static const u8 sRayquazaCutsceneGfx192_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_192_1.4bpp");
+static const u8 sRayquazaCutsceneGfx192[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_192.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx192_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_192_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites192[] = {
 	{sRayquazaCutsceneGfx192, ARRAY_COUNT(sRayquazaCutsceneGfx192)}, 
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx192_1, ARRAY_COUNT(sRayquazaCutsceneGfx192_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx193[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_193.4bpp");
+static const u8 sRayquazaCutsceneGfx193[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_193.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites193[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx193, ARRAY_COUNT(sRayquazaCutsceneGfx193)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx194[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_194.4bpp");
+static const u8 sRayquazaCutsceneGfx194[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_194.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites194[] = {
 	{sRayquazaCutsceneGfx194, ARRAY_COUNT(sRayquazaCutsceneGfx194)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx195[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_195.4bpp");
-static const u8 sRayquazaCutsceneGfx195_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_195_1.4bpp");
+static const u8 sRayquazaCutsceneGfx195[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_195.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx195_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_195_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites195[] = {
 	{sRayquazaCutsceneGfx195, ARRAY_COUNT(sRayquazaCutsceneGfx195)}, 
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx195_1, ARRAY_COUNT(sRayquazaCutsceneGfx195_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx196[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_196.4bpp");
-static const u8 sRayquazaCutsceneGfx196_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_196_1.4bpp");
-static const u8 sRayquazaCutsceneGfx196_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_196_2.4bpp");
+static const u8 sRayquazaCutsceneGfx196[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_196.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx196_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_196_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx196_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_196_2.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites196[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx196, ARRAY_COUNT(sRayquazaCutsceneGfx196)}, 
@@ -5180,36 +5180,36 @@ static const ax_sprite sRayquazaCutsceneSprites196[] = {
 	{sRayquazaCutsceneGfx196_2, ARRAY_COUNT(sRayquazaCutsceneGfx196_2)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx197[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_197.4bpp");
-static const u8 sRayquazaCutsceneGfx197_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_197_1.4bpp");
+static const u8 sRayquazaCutsceneGfx197[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_197.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx197_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_197_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites197[] = {
 	{sRayquazaCutsceneGfx197, ARRAY_COUNT(sRayquazaCutsceneGfx197)}, 
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx197_1, ARRAY_COUNT(sRayquazaCutsceneGfx197_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx198[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_198.4bpp");
+static const u8 sRayquazaCutsceneGfx198[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_198.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites198[] = {
 	{sRayquazaCutsceneGfx198, ARRAY_COUNT(sRayquazaCutsceneGfx198)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx199[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_199.4bpp");
+static const u8 sRayquazaCutsceneGfx199[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_199.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites199[] = {
 	{sRayquazaCutsceneGfx199, ARRAY_COUNT(sRayquazaCutsceneGfx199)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx200[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_200.4bpp");
+static const u8 sRayquazaCutsceneGfx200[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_200.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites200[] = {
 	{NULL, 64}, 
 	{sRayquazaCutsceneGfx200, ARRAY_COUNT(sRayquazaCutsceneGfx200)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx201[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201.4bpp");
-static const u8 sRayquazaCutsceneGfx201_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201_1.4bpp");
-static const u8 sRayquazaCutsceneGfx201_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201_2.4bpp");
-static const u8 sRayquazaCutsceneGfx201_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201_3.4bpp");
-static const u8 sRayquazaCutsceneGfx201_4[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201_4.4bpp");
+static const u8 sRayquazaCutsceneGfx201[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx201_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx201_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx201_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201_3.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx201_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_201_4.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites201[] = {
 	{NULL, 64}, 
 	{sRayquazaCutsceneGfx201, ARRAY_COUNT(sRayquazaCutsceneGfx201)}, 
@@ -5223,8 +5223,8 @@ static const ax_sprite sRayquazaCutsceneSprites201[] = {
 	{sRayquazaCutsceneGfx201_4, ARRAY_COUNT(sRayquazaCutsceneGfx201_4)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx202[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_202.4bpp");
-static const u8 sRayquazaCutsceneGfx202_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_202_1.4bpp");
+static const u8 sRayquazaCutsceneGfx202[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_202.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx202_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_202_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites202[] = {
 	{sRayquazaCutsceneGfx202, ARRAY_COUNT(sRayquazaCutsceneGfx202)}, 
 	{NULL, 32}, 
@@ -5232,38 +5232,38 @@ static const ax_sprite sRayquazaCutsceneSprites202[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx203[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_203.4bpp");
+static const u8 sRayquazaCutsceneGfx203[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_203.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites203[] = {
 	{sRayquazaCutsceneGfx203, ARRAY_COUNT(sRayquazaCutsceneGfx203)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx204[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_204.4bpp");
-static const u8 sRayquazaCutsceneGfx204_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_204_1.4bpp");
+static const u8 sRayquazaCutsceneGfx204[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_204.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx204_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_204_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites204[] = {
 	{sRayquazaCutsceneGfx204, ARRAY_COUNT(sRayquazaCutsceneGfx204)}, 
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx204_1, ARRAY_COUNT(sRayquazaCutsceneGfx204_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx205[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_205.4bpp");
+static const u8 sRayquazaCutsceneGfx205[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_205.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites205[] = {
 	{sRayquazaCutsceneGfx205, ARRAY_COUNT(sRayquazaCutsceneGfx205)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx206[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_206.4bpp");
+static const u8 sRayquazaCutsceneGfx206[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_206.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites206[] = {
 	{sRayquazaCutsceneGfx206, ARRAY_COUNT(sRayquazaCutsceneGfx206)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx207[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_207.4bpp");
+static const u8 sRayquazaCutsceneGfx207[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_207.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites207[] = {
 	{sRayquazaCutsceneGfx207, ARRAY_COUNT(sRayquazaCutsceneGfx207)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx208[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_208.4bpp");
-static const u8 sRayquazaCutsceneGfx208_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_208_1.4bpp");
-static const u8 sRayquazaCutsceneGfx208_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_208_2.4bpp");
-static const u8 sRayquazaCutsceneGfx208_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_208_3.4bpp");
+static const u8 sRayquazaCutsceneGfx208[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_208.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx208_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_208_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx208_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_208_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx208_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_208_3.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites208[] = {
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx208, ARRAY_COUNT(sRayquazaCutsceneGfx208)}, 
@@ -5275,23 +5275,23 @@ static const ax_sprite sRayquazaCutsceneSprites208[] = {
 	{sRayquazaCutsceneGfx208_3, ARRAY_COUNT(sRayquazaCutsceneGfx208_3)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx209[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_209.4bpp");
-static const u8 sRayquazaCutsceneGfx209_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_209_1.4bpp");
+static const u8 sRayquazaCutsceneGfx209[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_209.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx209_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_209_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites209[] = {
 	{sRayquazaCutsceneGfx209, ARRAY_COUNT(sRayquazaCutsceneGfx209)}, 
 	{NULL, 32}, 
 	{sRayquazaCutsceneGfx209_1, ARRAY_COUNT(sRayquazaCutsceneGfx209_1)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx210[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_210.4bpp");
+static const u8 sRayquazaCutsceneGfx210[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_210.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites210[] = {
 	{sRayquazaCutsceneGfx210, ARRAY_COUNT(sRayquazaCutsceneGfx210)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx211[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_211.4bpp");
-static const u8 sRayquazaCutsceneGfx211_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_211_1.4bpp");
-static const u8 sRayquazaCutsceneGfx211_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_211_2.4bpp");
-static const u8 sRayquazaCutsceneGfx211_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_211_3.4bpp");
+static const u8 sRayquazaCutsceneGfx211[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_211.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx211_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_211_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx211_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_211_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx211_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_211_3.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites211[] = {
 	{NULL, 64}, 
 	{sRayquazaCutsceneGfx211, ARRAY_COUNT(sRayquazaCutsceneGfx211)}, 
@@ -5303,36 +5303,36 @@ static const ax_sprite sRayquazaCutsceneSprites211[] = {
 	{sRayquazaCutsceneGfx211_3, ARRAY_COUNT(sRayquazaCutsceneGfx211_3)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx212[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_212.4bpp");
+static const u8 sRayquazaCutsceneGfx212[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_212.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites212[] = {
 	{sRayquazaCutsceneGfx212, ARRAY_COUNT(sRayquazaCutsceneGfx212)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx213[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_213.4bpp");
+static const u8 sRayquazaCutsceneGfx213[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_213.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites213[] = {
 	{sRayquazaCutsceneGfx213, ARRAY_COUNT(sRayquazaCutsceneGfx213)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx214[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_214.4bpp");
+static const u8 sRayquazaCutsceneGfx214[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_214.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites214[] = {
 	{sRayquazaCutsceneGfx214, ARRAY_COUNT(sRayquazaCutsceneGfx214)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx215[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_215.4bpp");
+static const u8 sRayquazaCutsceneGfx215[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_215.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites215[] = {
 	{sRayquazaCutsceneGfx215, ARRAY_COUNT(sRayquazaCutsceneGfx215)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx216[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_216.4bpp");
+static const u8 sRayquazaCutsceneGfx216[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_216.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites216[] = {
 	{sRayquazaCutsceneGfx216, ARRAY_COUNT(sRayquazaCutsceneGfx216)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx217[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_217.4bpp");
-static const u8 sRayquazaCutsceneGfx217_1[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_217_1.4bpp");
-static const u8 sRayquazaCutsceneGfx217_2[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_217_2.4bpp");
-static const u8 sRayquazaCutsceneGfx217_3[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_217_3.4bpp");
+static const u8 sRayquazaCutsceneGfx217[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_217.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx217_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_217_1.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx217_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_217_2.4bpp.lz");
+static const u8 sRayquazaCutsceneGfx217_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_217_3.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites217[] = {
 	{sRayquazaCutsceneGfx217, ARRAY_COUNT(sRayquazaCutsceneGfx217)}, 
 	{NULL, 32}, 
@@ -5343,358 +5343,358 @@ static const ax_sprite sRayquazaCutsceneSprites217[] = {
 	{sRayquazaCutsceneGfx217_3, ARRAY_COUNT(sRayquazaCutsceneGfx217_3)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx218[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_218.4bpp");
+static const u8 sRayquazaCutsceneGfx218[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_218.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites218[] = {
 	{sRayquazaCutsceneGfx218, ARRAY_COUNT(sRayquazaCutsceneGfx218)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx219[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_219.4bpp");
+static const u8 sRayquazaCutsceneGfx219[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_219.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites219[] = {
 	{sRayquazaCutsceneGfx219, ARRAY_COUNT(sRayquazaCutsceneGfx219)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx220[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_220.4bpp");
+static const u8 sRayquazaCutsceneGfx220[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_220.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites220[] = {
 	{sRayquazaCutsceneGfx220, ARRAY_COUNT(sRayquazaCutsceneGfx220)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx221[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_221.4bpp");
+static const u8 sRayquazaCutsceneGfx221[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_221.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites221[] = {
 	{sRayquazaCutsceneGfx221, ARRAY_COUNT(sRayquazaCutsceneGfx221)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx222[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_222.4bpp");
+static const u8 sRayquazaCutsceneGfx222[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_222.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites222[] = {
 	{sRayquazaCutsceneGfx222, ARRAY_COUNT(sRayquazaCutsceneGfx222)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx223[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_223.4bpp");
+static const u8 sRayquazaCutsceneGfx223[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_223.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites223[] = {
 	{sRayquazaCutsceneGfx223, ARRAY_COUNT(sRayquazaCutsceneGfx223)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx224[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_224.4bpp");
+static const u8 sRayquazaCutsceneGfx224[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_224.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites224[] = {
 	{sRayquazaCutsceneGfx224, ARRAY_COUNT(sRayquazaCutsceneGfx224)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx225[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_225.4bpp");
+static const u8 sRayquazaCutsceneGfx225[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_225.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites225[] = {
 	{sRayquazaCutsceneGfx225, ARRAY_COUNT(sRayquazaCutsceneGfx225)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx226[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_226.4bpp");
+static const u8 sRayquazaCutsceneGfx226[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_226.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites226[] = {
 	{sRayquazaCutsceneGfx226, ARRAY_COUNT(sRayquazaCutsceneGfx226)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx227[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_227.4bpp");
+static const u8 sRayquazaCutsceneGfx227[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_227.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites227[] = {
 	{sRayquazaCutsceneGfx227, ARRAY_COUNT(sRayquazaCutsceneGfx227)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx228[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_228.4bpp");
+static const u8 sRayquazaCutsceneGfx228[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_228.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites228[] = {
 	{sRayquazaCutsceneGfx228, ARRAY_COUNT(sRayquazaCutsceneGfx228)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx229[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_229.4bpp");
+static const u8 sRayquazaCutsceneGfx229[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_229.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites229[] = {
 	{sRayquazaCutsceneGfx229, ARRAY_COUNT(sRayquazaCutsceneGfx229)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx230[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_230.4bpp");
+static const u8 sRayquazaCutsceneGfx230[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_230.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites230[] = {
 	{sRayquazaCutsceneGfx230, ARRAY_COUNT(sRayquazaCutsceneGfx230)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx231[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_231.4bpp");
+static const u8 sRayquazaCutsceneGfx231[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_231.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites231[] = {
 	{sRayquazaCutsceneGfx231, ARRAY_COUNT(sRayquazaCutsceneGfx231)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx232[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_232.4bpp");
+static const u8 sRayquazaCutsceneGfx232[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_232.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites232[] = {
 	{sRayquazaCutsceneGfx232, ARRAY_COUNT(sRayquazaCutsceneGfx232)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx233[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_233.4bpp");
+static const u8 sRayquazaCutsceneGfx233[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_233.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites233[] = {
 	{sRayquazaCutsceneGfx233, ARRAY_COUNT(sRayquazaCutsceneGfx233)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx234[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_234.4bpp");
+static const u8 sRayquazaCutsceneGfx234[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_234.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites234[] = {
 	{sRayquazaCutsceneGfx234, ARRAY_COUNT(sRayquazaCutsceneGfx234)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx235[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_235.4bpp");
+static const u8 sRayquazaCutsceneGfx235[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_235.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites235[] = {
 	{sRayquazaCutsceneGfx235, ARRAY_COUNT(sRayquazaCutsceneGfx235)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx236[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_236.4bpp");
+static const u8 sRayquazaCutsceneGfx236[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_236.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites236[] = {
 	{sRayquazaCutsceneGfx236, ARRAY_COUNT(sRayquazaCutsceneGfx236)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx237[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_237.4bpp");
+static const u8 sRayquazaCutsceneGfx237[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_237.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites237[] = {
 	{sRayquazaCutsceneGfx237, ARRAY_COUNT(sRayquazaCutsceneGfx237)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx238[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_238.4bpp");
+static const u8 sRayquazaCutsceneGfx238[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_238.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites238[] = {
 	{sRayquazaCutsceneGfx238, ARRAY_COUNT(sRayquazaCutsceneGfx238)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx239[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_239.4bpp");
+static const u8 sRayquazaCutsceneGfx239[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_239.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites239[] = {
 	{sRayquazaCutsceneGfx239, ARRAY_COUNT(sRayquazaCutsceneGfx239)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx240[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_240.4bpp");
+static const u8 sRayquazaCutsceneGfx240[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_240.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites240[] = {
 	{sRayquazaCutsceneGfx240, ARRAY_COUNT(sRayquazaCutsceneGfx240)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx241[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_241.4bpp");
+static const u8 sRayquazaCutsceneGfx241[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_241.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites241[] = {
 	{sRayquazaCutsceneGfx241, ARRAY_COUNT(sRayquazaCutsceneGfx241)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx242[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_242.4bpp");
+static const u8 sRayquazaCutsceneGfx242[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_242.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites242[] = {
 	{sRayquazaCutsceneGfx242, ARRAY_COUNT(sRayquazaCutsceneGfx242)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx243[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_243.4bpp");
+static const u8 sRayquazaCutsceneGfx243[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_243.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites243[] = {
 	{sRayquazaCutsceneGfx243, ARRAY_COUNT(sRayquazaCutsceneGfx243)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx244[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_244.4bpp");
+static const u8 sRayquazaCutsceneGfx244[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_244.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites244[] = {
 	{sRayquazaCutsceneGfx244, ARRAY_COUNT(sRayquazaCutsceneGfx244)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx245[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_245.4bpp");
+static const u8 sRayquazaCutsceneGfx245[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_245.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites245[] = {
 	{sRayquazaCutsceneGfx245, ARRAY_COUNT(sRayquazaCutsceneGfx245)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx246[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_246.4bpp");
+static const u8 sRayquazaCutsceneGfx246[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_246.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites246[] = {
 	{sRayquazaCutsceneGfx246, ARRAY_COUNT(sRayquazaCutsceneGfx246)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx247[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_247.4bpp");
+static const u8 sRayquazaCutsceneGfx247[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_247.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites247[] = {
 	{sRayquazaCutsceneGfx247, ARRAY_COUNT(sRayquazaCutsceneGfx247)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx248[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_248.4bpp");
+static const u8 sRayquazaCutsceneGfx248[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_248.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites248[] = {
 	{sRayquazaCutsceneGfx248, ARRAY_COUNT(sRayquazaCutsceneGfx248)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx249[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_249.4bpp");
+static const u8 sRayquazaCutsceneGfx249[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_249.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites249[] = {
 	{sRayquazaCutsceneGfx249, ARRAY_COUNT(sRayquazaCutsceneGfx249)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx250[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_250.4bpp");
+static const u8 sRayquazaCutsceneGfx250[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_250.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites250[] = {
 	{sRayquazaCutsceneGfx250, ARRAY_COUNT(sRayquazaCutsceneGfx250)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx251[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_251.4bpp");
+static const u8 sRayquazaCutsceneGfx251[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_251.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites251[] = {
 	{sRayquazaCutsceneGfx251, ARRAY_COUNT(sRayquazaCutsceneGfx251)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx252[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_252.4bpp");
+static const u8 sRayquazaCutsceneGfx252[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_252.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites252[] = {
 	{sRayquazaCutsceneGfx252, ARRAY_COUNT(sRayquazaCutsceneGfx252)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx253[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_253.4bpp");
+static const u8 sRayquazaCutsceneGfx253[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_253.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites253[] = {
 	{sRayquazaCutsceneGfx253, ARRAY_COUNT(sRayquazaCutsceneGfx253)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx254[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_254.4bpp");
+static const u8 sRayquazaCutsceneGfx254[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_254.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites254[] = {
 	{sRayquazaCutsceneGfx254, ARRAY_COUNT(sRayquazaCutsceneGfx254)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx255[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_255.4bpp");
+static const u8 sRayquazaCutsceneGfx255[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_255.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites255[] = {
 	{sRayquazaCutsceneGfx255, ARRAY_COUNT(sRayquazaCutsceneGfx255)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx256[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_256.4bpp");
+static const u8 sRayquazaCutsceneGfx256[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_256.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites256[] = {
 	{sRayquazaCutsceneGfx256, ARRAY_COUNT(sRayquazaCutsceneGfx256)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx257[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_257.4bpp");
+static const u8 sRayquazaCutsceneGfx257[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_257.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites257[] = {
 	{sRayquazaCutsceneGfx257, ARRAY_COUNT(sRayquazaCutsceneGfx257)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx258[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_258.4bpp");
+static const u8 sRayquazaCutsceneGfx258[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_258.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites258[] = {
 	{sRayquazaCutsceneGfx258, ARRAY_COUNT(sRayquazaCutsceneGfx258)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx259[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_259.4bpp");
+static const u8 sRayquazaCutsceneGfx259[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_259.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites259[] = {
 	{sRayquazaCutsceneGfx259, ARRAY_COUNT(sRayquazaCutsceneGfx259)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx260[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_260.4bpp");
+static const u8 sRayquazaCutsceneGfx260[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_260.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites260[] = {
 	{sRayquazaCutsceneGfx260, ARRAY_COUNT(sRayquazaCutsceneGfx260)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx261[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_261.4bpp");
+static const u8 sRayquazaCutsceneGfx261[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_261.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites261[] = {
 	{sRayquazaCutsceneGfx261, ARRAY_COUNT(sRayquazaCutsceneGfx261)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx262[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_262.4bpp");
+static const u8 sRayquazaCutsceneGfx262[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_262.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites262[] = {
 	{sRayquazaCutsceneGfx262, ARRAY_COUNT(sRayquazaCutsceneGfx262)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx263[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_263.4bpp");
+static const u8 sRayquazaCutsceneGfx263[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_263.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites263[] = {
 	{sRayquazaCutsceneGfx263, ARRAY_COUNT(sRayquazaCutsceneGfx263)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx264[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_264.4bpp");
+static const u8 sRayquazaCutsceneGfx264[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_264.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites264[] = {
 	{sRayquazaCutsceneGfx264, ARRAY_COUNT(sRayquazaCutsceneGfx264)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx265[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_265.4bpp");
+static const u8 sRayquazaCutsceneGfx265[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_265.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites265[] = {
 	{sRayquazaCutsceneGfx265, ARRAY_COUNT(sRayquazaCutsceneGfx265)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx266[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_266.4bpp");
+static const u8 sRayquazaCutsceneGfx266[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_266.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites266[] = {
 	{sRayquazaCutsceneGfx266, ARRAY_COUNT(sRayquazaCutsceneGfx266)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx267[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_267.4bpp");
+static const u8 sRayquazaCutsceneGfx267[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_267.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites267[] = {
 	{sRayquazaCutsceneGfx267, ARRAY_COUNT(sRayquazaCutsceneGfx267)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx268[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_268.4bpp");
+static const u8 sRayquazaCutsceneGfx268[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_268.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites268[] = {
 	{sRayquazaCutsceneGfx268, ARRAY_COUNT(sRayquazaCutsceneGfx268)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx269[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_269.4bpp");
+static const u8 sRayquazaCutsceneGfx269[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_269.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites269[] = {
 	{sRayquazaCutsceneGfx269, ARRAY_COUNT(sRayquazaCutsceneGfx269)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx270[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_270.4bpp");
+static const u8 sRayquazaCutsceneGfx270[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_270.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites270[] = {
 	{sRayquazaCutsceneGfx270, ARRAY_COUNT(sRayquazaCutsceneGfx270)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx271[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_271.4bpp");
+static const u8 sRayquazaCutsceneGfx271[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_271.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites271[] = {
 	{sRayquazaCutsceneGfx271, ARRAY_COUNT(sRayquazaCutsceneGfx271)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx272[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_272.4bpp");
+static const u8 sRayquazaCutsceneGfx272[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_272.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites272[] = {
 	{sRayquazaCutsceneGfx272, ARRAY_COUNT(sRayquazaCutsceneGfx272)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx273[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_273.4bpp");
+static const u8 sRayquazaCutsceneGfx273[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_273.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites273[] = {
 	{sRayquazaCutsceneGfx273, ARRAY_COUNT(sRayquazaCutsceneGfx273)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx274[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_274.4bpp");
+static const u8 sRayquazaCutsceneGfx274[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_274.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites274[] = {
 	{sRayquazaCutsceneGfx274, ARRAY_COUNT(sRayquazaCutsceneGfx274)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx275[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_275.4bpp");
+static const u8 sRayquazaCutsceneGfx275[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_275.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites275[] = {
 	{sRayquazaCutsceneGfx275, ARRAY_COUNT(sRayquazaCutsceneGfx275)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx276[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_276.4bpp");
+static const u8 sRayquazaCutsceneGfx276[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_276.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites276[] = {
 	{sRayquazaCutsceneGfx276, ARRAY_COUNT(sRayquazaCutsceneGfx276)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx277[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_277.4bpp");
+static const u8 sRayquazaCutsceneGfx277[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_277.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites277[] = {
 	{sRayquazaCutsceneGfx277, ARRAY_COUNT(sRayquazaCutsceneGfx277)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx278[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_278.4bpp");
+static const u8 sRayquazaCutsceneGfx278[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_278.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites278[] = {
 	{sRayquazaCutsceneGfx278, ARRAY_COUNT(sRayquazaCutsceneGfx278)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx279[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_279.4bpp");
+static const u8 sRayquazaCutsceneGfx279[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_279.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites279[] = {
 	{sRayquazaCutsceneGfx279, ARRAY_COUNT(sRayquazaCutsceneGfx279)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx280[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_280.4bpp");
+static const u8 sRayquazaCutsceneGfx280[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_280.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites280[] = {
 	{sRayquazaCutsceneGfx280, ARRAY_COUNT(sRayquazaCutsceneGfx280)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx281[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_281.4bpp");
+static const u8 sRayquazaCutsceneGfx281[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_281.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites281[] = {
 	{sRayquazaCutsceneGfx281, ARRAY_COUNT(sRayquazaCutsceneGfx281)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx282[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_282.4bpp");
+static const u8 sRayquazaCutsceneGfx282[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_282.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites282[] = {
 	{sRayquazaCutsceneGfx282, ARRAY_COUNT(sRayquazaCutsceneGfx282)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx283[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_283.4bpp");
+static const u8 sRayquazaCutsceneGfx283[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_283.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites283[] = {
 	{sRayquazaCutsceneGfx283, ARRAY_COUNT(sRayquazaCutsceneGfx283)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx284[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_284.4bpp");
+static const u8 sRayquazaCutsceneGfx284[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_284.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites284[] = {
 	{sRayquazaCutsceneGfx284, ARRAY_COUNT(sRayquazaCutsceneGfx284)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx285[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_285.4bpp");
+static const u8 sRayquazaCutsceneGfx285[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_285.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites285[] = {
 	{sRayquazaCutsceneGfx285, ARRAY_COUNT(sRayquazaCutsceneGfx285)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx286[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_286.4bpp");
+static const u8 sRayquazaCutsceneGfx286[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_286.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites286[] = {
 	{sRayquazaCutsceneGfx286, ARRAY_COUNT(sRayquazaCutsceneGfx286)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx287[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_287.4bpp");
+static const u8 sRayquazaCutsceneGfx287[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_287.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites287[] = {
 	{sRayquazaCutsceneGfx287, ARRAY_COUNT(sRayquazaCutsceneGfx287)}, 
 	{NULL, 0}
 };
-static const u8 sRayquazaCutsceneGfx288[] = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_288.4bpp");
+static const u8 sRayquazaCutsceneGfx288[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_288.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites288[] = {
 	{sRayquazaCutsceneGfx288, ARRAY_COUNT(sRayquazaCutsceneGfx288)}, 
 	{NULL, 0}

@@ -1886,143 +1886,143 @@ static const ax_anim sSolrockAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSolrockGfx1[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_1.4bpp");
+static const u8 sSolrockGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_1.4bpp.lz");
 static const ax_sprite sSolrockSprites1[] = {
 	{sSolrockGfx1, ARRAY_COUNT(sSolrockGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx2[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_2.4bpp");
+static const u8 sSolrockGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_2.4bpp.lz");
 static const ax_sprite sSolrockSprites2[] = {
 	{sSolrockGfx2, ARRAY_COUNT(sSolrockGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx3[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_3.4bpp");
+static const u8 sSolrockGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_3.4bpp.lz");
 static const ax_sprite sSolrockSprites3[] = {
 	{sSolrockGfx3, ARRAY_COUNT(sSolrockGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx4[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_4.4bpp");
+static const u8 sSolrockGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_4.4bpp.lz");
 static const ax_sprite sSolrockSprites4[] = {
 	{sSolrockGfx4, ARRAY_COUNT(sSolrockGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx5[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_5.4bpp");
+static const u8 sSolrockGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_5.4bpp.lz");
 static const ax_sprite sSolrockSprites5[] = {
 	{sSolrockGfx5, ARRAY_COUNT(sSolrockGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx6[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_6.4bpp");
+static const u8 sSolrockGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_6.4bpp.lz");
 static const ax_sprite sSolrockSprites6[] = {
 	{sSolrockGfx6, ARRAY_COUNT(sSolrockGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx7[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_7.4bpp");
+static const u8 sSolrockGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_7.4bpp.lz");
 static const ax_sprite sSolrockSprites7[] = {
 	{sSolrockGfx7, ARRAY_COUNT(sSolrockGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx8[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_8.4bpp");
+static const u8 sSolrockGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_8.4bpp.lz");
 static const ax_sprite sSolrockSprites8[] = {
 	{sSolrockGfx8, ARRAY_COUNT(sSolrockGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx9[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_9.4bpp");
+static const u8 sSolrockGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_9.4bpp.lz");
 static const ax_sprite sSolrockSprites9[] = {
 	{sSolrockGfx9, ARRAY_COUNT(sSolrockGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx10[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_10.4bpp");
+static const u8 sSolrockGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_10.4bpp.lz");
 static const ax_sprite sSolrockSprites10[] = {
 	{sSolrockGfx10, ARRAY_COUNT(sSolrockGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx11[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_11.4bpp");
+static const u8 sSolrockGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_11.4bpp.lz");
 static const ax_sprite sSolrockSprites11[] = {
 	{NULL, 32}, 
 	{sSolrockGfx11, ARRAY_COUNT(sSolrockGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx12[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_12.4bpp");
+static const u8 sSolrockGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_12.4bpp.lz");
 static const ax_sprite sSolrockSprites12[] = {
 	{NULL, 32}, 
 	{sSolrockGfx12, ARRAY_COUNT(sSolrockGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx13[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_13.4bpp");
+static const u8 sSolrockGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_13.4bpp.lz");
 static const ax_sprite sSolrockSprites13[] = {
 	{sSolrockGfx13, ARRAY_COUNT(sSolrockGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx14[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_14.4bpp");
+static const u8 sSolrockGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_14.4bpp.lz");
 static const ax_sprite sSolrockSprites14[] = {
 	{sSolrockGfx14, ARRAY_COUNT(sSolrockGfx14)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx15[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_15.4bpp");
+static const u8 sSolrockGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_15.4bpp.lz");
 static const ax_sprite sSolrockSprites15[] = {
 	{sSolrockGfx15, ARRAY_COUNT(sSolrockGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx16[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_16.4bpp");
+static const u8 sSolrockGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_16.4bpp.lz");
 static const ax_sprite sSolrockSprites16[] = {
 	{sSolrockGfx16, ARRAY_COUNT(sSolrockGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx17[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_17.4bpp");
+static const u8 sSolrockGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_17.4bpp.lz");
 static const ax_sprite sSolrockSprites17[] = {
 	{sSolrockGfx17, ARRAY_COUNT(sSolrockGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx18[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_18.4bpp");
+static const u8 sSolrockGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_18.4bpp.lz");
 static const ax_sprite sSolrockSprites18[] = {
 	{sSolrockGfx18, ARRAY_COUNT(sSolrockGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx19[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_19.4bpp");
+static const u8 sSolrockGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_19.4bpp.lz");
 static const ax_sprite sSolrockSprites19[] = {
 	{NULL, 32}, 
 	{sSolrockGfx19, ARRAY_COUNT(sSolrockGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx20[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_20.4bpp");
+static const u8 sSolrockGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_20.4bpp.lz");
 static const ax_sprite sSolrockSprites20[] = {
 	{sSolrockGfx20, ARRAY_COUNT(sSolrockGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx21[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_21.4bpp");
+static const u8 sSolrockGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_21.4bpp.lz");
 static const ax_sprite sSolrockSprites21[] = {
 	{sSolrockGfx21, ARRAY_COUNT(sSolrockGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx22[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_22.4bpp");
+static const u8 sSolrockGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_22.4bpp.lz");
 static const ax_sprite sSolrockSprites22[] = {
 	{sSolrockGfx22, ARRAY_COUNT(sSolrockGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx23[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_23.4bpp");
+static const u8 sSolrockGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_23.4bpp.lz");
 static const ax_sprite sSolrockSprites23[] = {
 	{sSolrockGfx23, ARRAY_COUNT(sSolrockGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx24[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_24.4bpp");
+static const u8 sSolrockGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_24.4bpp.lz");
 static const ax_sprite sSolrockSprites24[] = {
 	{sSolrockGfx24, ARRAY_COUNT(sSolrockGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx25[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_25.4bpp");
+static const u8 sSolrockGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_25.4bpp.lz");
 static const ax_sprite sSolrockSprites25[] = {
 	{sSolrockGfx25, ARRAY_COUNT(sSolrockGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx26[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_26.4bpp");
+static const u8 sSolrockGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_26.4bpp.lz");
 static const ax_sprite sSolrockSprites26[] = {
 	{sSolrockGfx26, ARRAY_COUNT(sSolrockGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSolrockGfx27[] = INCBIN_U8("graphics/ax/mon/solrock/sprite_27.4bpp");
+static const u8 sSolrockGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/solrock/sprite_27.4bpp.lz");
 static const ax_sprite sSolrockSprites27[] = {
 	{sSolrockGfx27, ARRAY_COUNT(sSolrockGfx27)}, 
 	{NULL, 0}

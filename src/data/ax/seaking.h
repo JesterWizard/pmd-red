@@ -2347,83 +2347,83 @@ static const ax_anim sSeakingAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSeakingGfx1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_1.4bpp");
+static const u8 sSeakingGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_1.4bpp.lz");
 static const ax_sprite sSeakingSprites1[] = {
 	{sSeakingGfx1, ARRAY_COUNT(sSeakingGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_2.4bpp");
+static const u8 sSeakingGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_2.4bpp.lz");
 static const ax_sprite sSeakingSprites2[] = {
 	{sSeakingGfx2, ARRAY_COUNT(sSeakingGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_3.4bpp");
+static const u8 sSeakingGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_3.4bpp.lz");
 static const ax_sprite sSeakingSprites3[] = {
 	{sSeakingGfx3, ARRAY_COUNT(sSeakingGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx4[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_4.4bpp");
+static const u8 sSeakingGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_4.4bpp.lz");
 static const ax_sprite sSeakingSprites4[] = {
 	{sSeakingGfx4, ARRAY_COUNT(sSeakingGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx5[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_5.4bpp");
+static const u8 sSeakingGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_5.4bpp.lz");
 static const ax_sprite sSeakingSprites5[] = {
 	{sSeakingGfx5, ARRAY_COUNT(sSeakingGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx6[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_6.4bpp");
+static const u8 sSeakingGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_6.4bpp.lz");
 static const ax_sprite sSeakingSprites6[] = {
 	{sSeakingGfx6, ARRAY_COUNT(sSeakingGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx7[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_7.4bpp");
+static const u8 sSeakingGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_7.4bpp.lz");
 static const ax_sprite sSeakingSprites7[] = {
 	{sSeakingGfx7, ARRAY_COUNT(sSeakingGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx8[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_8.4bpp");
+static const u8 sSeakingGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_8.4bpp.lz");
 static const ax_sprite sSeakingSprites8[] = {
 	{sSeakingGfx8, ARRAY_COUNT(sSeakingGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx9[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_9.4bpp");
+static const u8 sSeakingGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_9.4bpp.lz");
 static const ax_sprite sSeakingSprites9[] = {
 	{sSeakingGfx9, ARRAY_COUNT(sSeakingGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx10[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_10.4bpp");
+static const u8 sSeakingGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_10.4bpp.lz");
 static const ax_sprite sSeakingSprites10[] = {
 	{sSeakingGfx10, ARRAY_COUNT(sSeakingGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx11[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_11.4bpp");
+static const u8 sSeakingGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_11.4bpp.lz");
 static const ax_sprite sSeakingSprites11[] = {
 	{sSeakingGfx11, ARRAY_COUNT(sSeakingGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx12[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_12.4bpp");
+static const u8 sSeakingGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_12.4bpp.lz");
 static const ax_sprite sSeakingSprites12[] = {
 	{sSeakingGfx12, ARRAY_COUNT(sSeakingGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx13[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_13.4bpp");
+static const u8 sSeakingGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_13.4bpp.lz");
 static const ax_sprite sSeakingSprites13[] = {
 	{sSeakingGfx13, ARRAY_COUNT(sSeakingGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx14[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_14.4bpp");
+static const u8 sSeakingGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_14.4bpp.lz");
 static const ax_sprite sSeakingSprites14[] = {
 	{sSeakingGfx14, ARRAY_COUNT(sSeakingGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx15[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_15.4bpp");
+static const u8 sSeakingGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_15.4bpp.lz");
 static const ax_sprite sSeakingSprites15[] = {
 	{sSeakingGfx15, ARRAY_COUNT(sSeakingGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx16[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_16.4bpp");
-static const u8 sSeakingGfx16_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_16_1.4bpp");
+static const u8 sSeakingGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_16.4bpp.lz");
+static const u8 sSeakingGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_16_1.4bpp.lz");
 static const ax_sprite sSeakingSprites16[] = {
 	{sSeakingGfx16, ARRAY_COUNT(sSeakingGfx16)}, 
 	{NULL, 32}, 
@@ -2431,8 +2431,8 @@ static const ax_sprite sSeakingSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx17[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_17.4bpp");
-static const u8 sSeakingGfx17_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_17_1.4bpp");
+static const u8 sSeakingGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_17.4bpp.lz");
+static const u8 sSeakingGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_17_1.4bpp.lz");
 static const ax_sprite sSeakingSprites17[] = {
 	{sSeakingGfx17, ARRAY_COUNT(sSeakingGfx17)}, 
 	{NULL, 32}, 
@@ -2440,8 +2440,8 @@ static const ax_sprite sSeakingSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx18[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_18.4bpp");
-static const u8 sSeakingGfx18_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_18_1.4bpp");
+static const u8 sSeakingGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_18.4bpp.lz");
+static const u8 sSeakingGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_18_1.4bpp.lz");
 static const ax_sprite sSeakingSprites18[] = {
 	{NULL, 32}, 
 	{sSeakingGfx18, ARRAY_COUNT(sSeakingGfx18)}, 
@@ -2450,29 +2450,29 @@ static const ax_sprite sSeakingSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx19[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_19.4bpp");
+static const u8 sSeakingGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_19.4bpp.lz");
 static const ax_sprite sSeakingSprites19[] = {
 	{NULL, 32}, 
 	{sSeakingGfx19, ARRAY_COUNT(sSeakingGfx19)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx20[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_20.4bpp");
+static const u8 sSeakingGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_20.4bpp.lz");
 static const ax_sprite sSeakingSprites20[] = {
 	{NULL, 64}, 
 	{sSeakingGfx20, ARRAY_COUNT(sSeakingGfx20)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx21[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_21.4bpp");
+static const u8 sSeakingGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_21.4bpp.lz");
 static const ax_sprite sSeakingSprites21[] = {
 	{NULL, 64}, 
 	{sSeakingGfx21, ARRAY_COUNT(sSeakingGfx21)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx22[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_22.4bpp");
-static const u8 sSeakingGfx22_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_22_1.4bpp");
+static const u8 sSeakingGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_22.4bpp.lz");
+static const u8 sSeakingGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_22_1.4bpp.lz");
 static const ax_sprite sSeakingSprites22[] = {
 	{sSeakingGfx22, ARRAY_COUNT(sSeakingGfx22)}, 
 	{NULL, 64}, 
@@ -2480,9 +2480,9 @@ static const ax_sprite sSeakingSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx23[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_23.4bpp");
-static const u8 sSeakingGfx23_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_23_1.4bpp");
-static const u8 sSeakingGfx23_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_23_2.4bpp");
+static const u8 sSeakingGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_23.4bpp.lz");
+static const u8 sSeakingGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_23_1.4bpp.lz");
+static const u8 sSeakingGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_23_2.4bpp.lz");
 static const ax_sprite sSeakingSprites23[] = {
 	{sSeakingGfx23, ARRAY_COUNT(sSeakingGfx23)}, 
 	{NULL, 64}, 
@@ -2492,10 +2492,10 @@ static const ax_sprite sSeakingSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx24[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_24.4bpp");
-static const u8 sSeakingGfx24_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_24_1.4bpp");
-static const u8 sSeakingGfx24_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_24_2.4bpp");
-static const u8 sSeakingGfx24_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_24_3.4bpp");
+static const u8 sSeakingGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_24.4bpp.lz");
+static const u8 sSeakingGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_24_1.4bpp.lz");
+static const u8 sSeakingGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_24_2.4bpp.lz");
+static const u8 sSeakingGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_24_3.4bpp.lz");
 static const ax_sprite sSeakingSprites24[] = {
 	{NULL, 32}, 
 	{sSeakingGfx24, ARRAY_COUNT(sSeakingGfx24)}, 
@@ -2508,10 +2508,10 @@ static const ax_sprite sSeakingSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx25[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_25.4bpp");
-static const u8 sSeakingGfx25_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_25_1.4bpp");
-static const u8 sSeakingGfx25_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_25_2.4bpp");
-static const u8 sSeakingGfx25_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_25_3.4bpp");
+static const u8 sSeakingGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_25.4bpp.lz");
+static const u8 sSeakingGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_25_1.4bpp.lz");
+static const u8 sSeakingGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_25_2.4bpp.lz");
+static const u8 sSeakingGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_25_3.4bpp.lz");
 static const ax_sprite sSeakingSprites25[] = {
 	{NULL, 32}, 
 	{sSeakingGfx25, ARRAY_COUNT(sSeakingGfx25)}, 
@@ -2524,9 +2524,9 @@ static const ax_sprite sSeakingSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx26[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_26.4bpp");
-static const u8 sSeakingGfx26_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_26_1.4bpp");
-static const u8 sSeakingGfx26_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_26_2.4bpp");
+static const u8 sSeakingGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_26.4bpp.lz");
+static const u8 sSeakingGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_26_1.4bpp.lz");
+static const u8 sSeakingGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_26_2.4bpp.lz");
 static const ax_sprite sSeakingSprites26[] = {
 	{NULL, 32}, 
 	{sSeakingGfx26, ARRAY_COUNT(sSeakingGfx26)}, 
@@ -2537,8 +2537,8 @@ static const ax_sprite sSeakingSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx27[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_27.4bpp");
-static const u8 sSeakingGfx27_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_27_1.4bpp");
+static const u8 sSeakingGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_27.4bpp.lz");
+static const u8 sSeakingGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_27_1.4bpp.lz");
 static const ax_sprite sSeakingSprites27[] = {
 	{sSeakingGfx27, ARRAY_COUNT(sSeakingGfx27)}, 
 	{NULL, 32}, 
@@ -2546,9 +2546,9 @@ static const ax_sprite sSeakingSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx28[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_28.4bpp");
-static const u8 sSeakingGfx28_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_28_1.4bpp");
-static const u8 sSeakingGfx28_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_28_2.4bpp");
+static const u8 sSeakingGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_28.4bpp.lz");
+static const u8 sSeakingGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_28_1.4bpp.lz");
+static const u8 sSeakingGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_28_2.4bpp.lz");
 static const ax_sprite sSeakingSprites28[] = {
 	{NULL, 32}, 
 	{sSeakingGfx28, ARRAY_COUNT(sSeakingGfx28)}, 
@@ -2559,8 +2559,8 @@ static const ax_sprite sSeakingSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx29[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_29.4bpp");
-static const u8 sSeakingGfx29_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_29_1.4bpp");
+static const u8 sSeakingGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_29.4bpp.lz");
+static const u8 sSeakingGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_29_1.4bpp.lz");
 static const ax_sprite sSeakingSprites29[] = {
 	{NULL, 32}, 
 	{sSeakingGfx29, ARRAY_COUNT(sSeakingGfx29)}, 
@@ -2569,9 +2569,9 @@ static const ax_sprite sSeakingSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx30[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_30.4bpp");
-static const u8 sSeakingGfx30_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_30_1.4bpp");
-static const u8 sSeakingGfx30_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_30_2.4bpp");
+static const u8 sSeakingGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_30.4bpp.lz");
+static const u8 sSeakingGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_30_1.4bpp.lz");
+static const u8 sSeakingGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_30_2.4bpp.lz");
 static const ax_sprite sSeakingSprites30[] = {
 	{NULL, 32}, 
 	{sSeakingGfx30, ARRAY_COUNT(sSeakingGfx30)}, 
@@ -2581,17 +2581,17 @@ static const ax_sprite sSeakingSprites30[] = {
 	{sSeakingGfx30_2, ARRAY_COUNT(sSeakingGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx31[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_31.4bpp");
+static const u8 sSeakingGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_31.4bpp.lz");
 static const ax_sprite sSeakingSprites31[] = {
 	{NULL, 32}, 
 	{sSeakingGfx31, ARRAY_COUNT(sSeakingGfx31)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx32[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_32.4bpp");
-static const u8 sSeakingGfx32_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_32_1.4bpp");
-static const u8 sSeakingGfx32_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_32_2.4bpp");
-static const u8 sSeakingGfx32_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_32_3.4bpp");
+static const u8 sSeakingGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_32.4bpp.lz");
+static const u8 sSeakingGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_32_1.4bpp.lz");
+static const u8 sSeakingGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_32_2.4bpp.lz");
+static const u8 sSeakingGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_32_3.4bpp.lz");
 static const ax_sprite sSeakingSprites32[] = {
 	{NULL, 32}, 
 	{sSeakingGfx32, ARRAY_COUNT(sSeakingGfx32)}, 
@@ -2603,9 +2603,9 @@ static const ax_sprite sSeakingSprites32[] = {
 	{sSeakingGfx32_3, ARRAY_COUNT(sSeakingGfx32_3)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx33[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_33.4bpp");
-static const u8 sSeakingGfx33_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_33_1.4bpp");
-static const u8 sSeakingGfx33_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_33_2.4bpp");
+static const u8 sSeakingGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_33.4bpp.lz");
+static const u8 sSeakingGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_33_1.4bpp.lz");
+static const u8 sSeakingGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_33_2.4bpp.lz");
 static const ax_sprite sSeakingSprites33[] = {
 	{sSeakingGfx33, ARRAY_COUNT(sSeakingGfx33)}, 
 	{NULL, 64}, 
@@ -2614,8 +2614,8 @@ static const ax_sprite sSeakingSprites33[] = {
 	{sSeakingGfx33_2, ARRAY_COUNT(sSeakingGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx34[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_34.4bpp");
-static const u8 sSeakingGfx34_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_34_1.4bpp");
+static const u8 sSeakingGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_34.4bpp.lz");
+static const u8 sSeakingGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_34_1.4bpp.lz");
 static const ax_sprite sSeakingSprites34[] = {
 	{NULL, 32}, 
 	{sSeakingGfx34, ARRAY_COUNT(sSeakingGfx34)}, 
@@ -2623,9 +2623,9 @@ static const ax_sprite sSeakingSprites34[] = {
 	{sSeakingGfx34_1, ARRAY_COUNT(sSeakingGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx35[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_35.4bpp");
-static const u8 sSeakingGfx35_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_35_1.4bpp");
-static const u8 sSeakingGfx35_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_35_2.4bpp");
+static const u8 sSeakingGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_35.4bpp.lz");
+static const u8 sSeakingGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_35_1.4bpp.lz");
+static const u8 sSeakingGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_35_2.4bpp.lz");
 static const ax_sprite sSeakingSprites35[] = {
 	{NULL, 32}, 
 	{sSeakingGfx35, ARRAY_COUNT(sSeakingGfx35)}, 
@@ -2636,8 +2636,8 @@ static const ax_sprite sSeakingSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx36[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_36.4bpp");
-static const u8 sSeakingGfx36_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_36_1.4bpp");
+static const u8 sSeakingGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_36.4bpp.lz");
+static const u8 sSeakingGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_36_1.4bpp.lz");
 static const ax_sprite sSeakingSprites36[] = {
 	{NULL, 32}, 
 	{sSeakingGfx36, ARRAY_COUNT(sSeakingGfx36)}, 
@@ -2645,8 +2645,8 @@ static const ax_sprite sSeakingSprites36[] = {
 	{sSeakingGfx36_1, ARRAY_COUNT(sSeakingGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx37[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_37.4bpp");
-static const u8 sSeakingGfx37_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_37_1.4bpp");
+static const u8 sSeakingGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_37.4bpp.lz");
+static const u8 sSeakingGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_37_1.4bpp.lz");
 static const ax_sprite sSeakingSprites37[] = {
 	{NULL, 32}, 
 	{sSeakingGfx37, ARRAY_COUNT(sSeakingGfx37)}, 
@@ -2655,9 +2655,9 @@ static const ax_sprite sSeakingSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx38[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_38.4bpp");
-static const u8 sSeakingGfx38_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_38_1.4bpp");
-static const u8 sSeakingGfx38_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_38_2.4bpp");
+static const u8 sSeakingGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_38.4bpp.lz");
+static const u8 sSeakingGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_38_1.4bpp.lz");
+static const u8 sSeakingGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_38_2.4bpp.lz");
 static const ax_sprite sSeakingSprites38[] = {
 	{NULL, 32}, 
 	{sSeakingGfx38, ARRAY_COUNT(sSeakingGfx38)}, 
@@ -2667,9 +2667,9 @@ static const ax_sprite sSeakingSprites38[] = {
 	{sSeakingGfx38_2, ARRAY_COUNT(sSeakingGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx39[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_39.4bpp");
-static const u8 sSeakingGfx39_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_39_1.4bpp");
-static const u8 sSeakingGfx39_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_39_2.4bpp");
+static const u8 sSeakingGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_39.4bpp.lz");
+static const u8 sSeakingGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_39_1.4bpp.lz");
+static const u8 sSeakingGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_39_2.4bpp.lz");
 static const ax_sprite sSeakingSprites39[] = {
 	{NULL, 32}, 
 	{sSeakingGfx39, ARRAY_COUNT(sSeakingGfx39)}, 
@@ -2680,10 +2680,10 @@ static const ax_sprite sSeakingSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx40[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_40.4bpp");
-static const u8 sSeakingGfx40_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_40_1.4bpp");
-static const u8 sSeakingGfx40_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_40_2.4bpp");
-static const u8 sSeakingGfx40_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_40_3.4bpp");
+static const u8 sSeakingGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_40.4bpp.lz");
+static const u8 sSeakingGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_40_1.4bpp.lz");
+static const u8 sSeakingGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_40_2.4bpp.lz");
+static const u8 sSeakingGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_40_3.4bpp.lz");
 static const ax_sprite sSeakingSprites40[] = {
 	{NULL, 32}, 
 	{sSeakingGfx40, ARRAY_COUNT(sSeakingGfx40)}, 
@@ -2696,9 +2696,9 @@ static const ax_sprite sSeakingSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx41[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_41.4bpp");
-static const u8 sSeakingGfx41_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_41_1.4bpp");
-static const u8 sSeakingGfx41_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_41_2.4bpp");
+static const u8 sSeakingGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_41.4bpp.lz");
+static const u8 sSeakingGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_41_1.4bpp.lz");
+static const u8 sSeakingGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_41_2.4bpp.lz");
 static const ax_sprite sSeakingSprites41[] = {
 	{NULL, 32}, 
 	{sSeakingGfx41, ARRAY_COUNT(sSeakingGfx41)}, 
@@ -2708,10 +2708,10 @@ static const ax_sprite sSeakingSprites41[] = {
 	{sSeakingGfx41_2, ARRAY_COUNT(sSeakingGfx41_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx42[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_42.4bpp");
-static const u8 sSeakingGfx42_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_42_1.4bpp");
-static const u8 sSeakingGfx42_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_42_2.4bpp");
-static const u8 sSeakingGfx42_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_42_3.4bpp");
+static const u8 sSeakingGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_42.4bpp.lz");
+static const u8 sSeakingGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_42_1.4bpp.lz");
+static const u8 sSeakingGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_42_2.4bpp.lz");
+static const u8 sSeakingGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_42_3.4bpp.lz");
 static const ax_sprite sSeakingSprites42[] = {
 	{NULL, 32}, 
 	{sSeakingGfx42, ARRAY_COUNT(sSeakingGfx42)}, 
@@ -2723,10 +2723,10 @@ static const ax_sprite sSeakingSprites42[] = {
 	{sSeakingGfx42_3, ARRAY_COUNT(sSeakingGfx42_3)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx43[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_43.4bpp");
-static const u8 sSeakingGfx43_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_43_1.4bpp");
-static const u8 sSeakingGfx43_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_43_2.4bpp");
-static const u8 sSeakingGfx43_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_43_3.4bpp");
+static const u8 sSeakingGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_43.4bpp.lz");
+static const u8 sSeakingGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_43_1.4bpp.lz");
+static const u8 sSeakingGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_43_2.4bpp.lz");
+static const u8 sSeakingGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_43_3.4bpp.lz");
 static const ax_sprite sSeakingSprites43[] = {
 	{NULL, 32}, 
 	{sSeakingGfx43, ARRAY_COUNT(sSeakingGfx43)}, 
@@ -2738,10 +2738,10 @@ static const ax_sprite sSeakingSprites43[] = {
 	{sSeakingGfx43_3, ARRAY_COUNT(sSeakingGfx43_3)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx44[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_44.4bpp");
-static const u8 sSeakingGfx44_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_44_1.4bpp");
-static const u8 sSeakingGfx44_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_44_2.4bpp");
-static const u8 sSeakingGfx44_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_44_3.4bpp");
+static const u8 sSeakingGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_44.4bpp.lz");
+static const u8 sSeakingGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_44_1.4bpp.lz");
+static const u8 sSeakingGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_44_2.4bpp.lz");
+static const u8 sSeakingGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_44_3.4bpp.lz");
 static const ax_sprite sSeakingSprites44[] = {
 	{NULL, 32}, 
 	{sSeakingGfx44, ARRAY_COUNT(sSeakingGfx44)}, 
@@ -2754,10 +2754,10 @@ static const ax_sprite sSeakingSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx45[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_45.4bpp");
-static const u8 sSeakingGfx45_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_45_1.4bpp");
-static const u8 sSeakingGfx45_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_45_2.4bpp");
-static const u8 sSeakingGfx45_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_45_3.4bpp");
+static const u8 sSeakingGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_45.4bpp.lz");
+static const u8 sSeakingGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_45_1.4bpp.lz");
+static const u8 sSeakingGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_45_2.4bpp.lz");
+static const u8 sSeakingGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_45_3.4bpp.lz");
 static const ax_sprite sSeakingSprites45[] = {
 	{NULL, 32}, 
 	{sSeakingGfx45, ARRAY_COUNT(sSeakingGfx45)}, 
@@ -2769,10 +2769,10 @@ static const ax_sprite sSeakingSprites45[] = {
 	{sSeakingGfx45_3, ARRAY_COUNT(sSeakingGfx45_3)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx46[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_46.4bpp");
-static const u8 sSeakingGfx46_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_46_1.4bpp");
-static const u8 sSeakingGfx46_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_46_2.4bpp");
-static const u8 sSeakingGfx46_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_46_3.4bpp");
+static const u8 sSeakingGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_46.4bpp.lz");
+static const u8 sSeakingGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_46_1.4bpp.lz");
+static const u8 sSeakingGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_46_2.4bpp.lz");
+static const u8 sSeakingGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_46_3.4bpp.lz");
 static const ax_sprite sSeakingSprites46[] = {
 	{NULL, 32}, 
 	{sSeakingGfx46, ARRAY_COUNT(sSeakingGfx46)}, 
@@ -2784,10 +2784,10 @@ static const ax_sprite sSeakingSprites46[] = {
 	{sSeakingGfx46_3, ARRAY_COUNT(sSeakingGfx46_3)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx47[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_47.4bpp");
-static const u8 sSeakingGfx47_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_47_1.4bpp");
-static const u8 sSeakingGfx47_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_47_2.4bpp");
-static const u8 sSeakingGfx47_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_47_3.4bpp");
+static const u8 sSeakingGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_47.4bpp.lz");
+static const u8 sSeakingGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_47_1.4bpp.lz");
+static const u8 sSeakingGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_47_2.4bpp.lz");
+static const u8 sSeakingGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_47_3.4bpp.lz");
 static const ax_sprite sSeakingSprites47[] = {
 	{NULL, 32}, 
 	{sSeakingGfx47, ARRAY_COUNT(sSeakingGfx47)}, 
@@ -2800,8 +2800,8 @@ static const ax_sprite sSeakingSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx48[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_48.4bpp");
-static const u8 sSeakingGfx48_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_48_1.4bpp");
+static const u8 sSeakingGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_48.4bpp.lz");
+static const u8 sSeakingGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_48_1.4bpp.lz");
 static const ax_sprite sSeakingSprites48[] = {
 	{NULL, 32}, 
 	{sSeakingGfx48, ARRAY_COUNT(sSeakingGfx48)}, 
@@ -2809,10 +2809,10 @@ static const ax_sprite sSeakingSprites48[] = {
 	{sSeakingGfx48_1, ARRAY_COUNT(sSeakingGfx48_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx49[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_49.4bpp");
-static const u8 sSeakingGfx49_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_49_1.4bpp");
-static const u8 sSeakingGfx49_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_49_2.4bpp");
-static const u8 sSeakingGfx49_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_49_3.4bpp");
+static const u8 sSeakingGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_49.4bpp.lz");
+static const u8 sSeakingGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_49_1.4bpp.lz");
+static const u8 sSeakingGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_49_2.4bpp.lz");
+static const u8 sSeakingGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_49_3.4bpp.lz");
 static const ax_sprite sSeakingSprites49[] = {
 	{NULL, 32}, 
 	{sSeakingGfx49, ARRAY_COUNT(sSeakingGfx49)}, 
@@ -2824,10 +2824,10 @@ static const ax_sprite sSeakingSprites49[] = {
 	{sSeakingGfx49_3, ARRAY_COUNT(sSeakingGfx49_3)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx50[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_50.4bpp");
-static const u8 sSeakingGfx50_1[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_50_1.4bpp");
-static const u8 sSeakingGfx50_2[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_50_2.4bpp");
-static const u8 sSeakingGfx50_3[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_50_3.4bpp");
+static const u8 sSeakingGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_50.4bpp.lz");
+static const u8 sSeakingGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_50_1.4bpp.lz");
+static const u8 sSeakingGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_50_2.4bpp.lz");
+static const u8 sSeakingGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_50_3.4bpp.lz");
 static const ax_sprite sSeakingSprites50[] = {
 	{NULL, 32}, 
 	{sSeakingGfx50, ARRAY_COUNT(sSeakingGfx50)}, 
@@ -2840,37 +2840,37 @@ static const ax_sprite sSeakingSprites50[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx51[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_51.4bpp");
+static const u8 sSeakingGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_51.4bpp.lz");
 static const ax_sprite sSeakingSprites51[] = {
 	{sSeakingGfx51, ARRAY_COUNT(sSeakingGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx52[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_52.4bpp");
+static const u8 sSeakingGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_52.4bpp.lz");
 static const ax_sprite sSeakingSprites52[] = {
 	{sSeakingGfx52, ARRAY_COUNT(sSeakingGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx53[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_53.4bpp");
+static const u8 sSeakingGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_53.4bpp.lz");
 static const ax_sprite sSeakingSprites53[] = {
 	{sSeakingGfx53, ARRAY_COUNT(sSeakingGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx54[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_54.4bpp");
+static const u8 sSeakingGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_54.4bpp.lz");
 static const ax_sprite sSeakingSprites54[] = {
 	{sSeakingGfx54, ARRAY_COUNT(sSeakingGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx55[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_55.4bpp");
+static const u8 sSeakingGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_55.4bpp.lz");
 static const ax_sprite sSeakingSprites55[] = {
 	{sSeakingGfx55, ARRAY_COUNT(sSeakingGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx56[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_56.4bpp");
+static const u8 sSeakingGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_56.4bpp.lz");
 static const ax_sprite sSeakingSprites56[] = {
 	{sSeakingGfx56, ARRAY_COUNT(sSeakingGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sSeakingGfx57[] = INCBIN_U8("graphics/ax/mon/seaking/sprite_57.4bpp");
+static const u8 sSeakingGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seaking/sprite_57.4bpp.lz");
 static const ax_sprite sSeakingSprites57[] = {
 	{sSeakingGfx57, ARRAY_COUNT(sSeakingGfx57)}, 
 	{NULL, 0}

@@ -2111,84 +2111,84 @@ static const ax_anim sQuilavaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sQuilavaGfx1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_1.4bpp");
+static const u8 sQuilavaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_1.4bpp.lz");
 static const ax_sprite sQuilavaSprites1[] = {
 	{sQuilavaGfx1, ARRAY_COUNT(sQuilavaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_2.4bpp");
+static const u8 sQuilavaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites2[] = {
 	{sQuilavaGfx2, ARRAY_COUNT(sQuilavaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx3[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_3.4bpp");
+static const u8 sQuilavaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_3.4bpp.lz");
 static const ax_sprite sQuilavaSprites3[] = {
 	{sQuilavaGfx3, ARRAY_COUNT(sQuilavaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx4[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_4.4bpp");
+static const u8 sQuilavaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_4.4bpp.lz");
 static const ax_sprite sQuilavaSprites4[] = {
 	{sQuilavaGfx4, ARRAY_COUNT(sQuilavaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx5[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_5.4bpp");
+static const u8 sQuilavaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_5.4bpp.lz");
 static const ax_sprite sQuilavaSprites5[] = {
 	{sQuilavaGfx5, ARRAY_COUNT(sQuilavaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx6[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_6.4bpp");
+static const u8 sQuilavaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_6.4bpp.lz");
 static const ax_sprite sQuilavaSprites6[] = {
 	{sQuilavaGfx6, ARRAY_COUNT(sQuilavaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx7[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_7.4bpp");
+static const u8 sQuilavaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_7.4bpp.lz");
 static const ax_sprite sQuilavaSprites7[] = {
 	{sQuilavaGfx7, ARRAY_COUNT(sQuilavaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx8[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_8.4bpp");
+static const u8 sQuilavaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_8.4bpp.lz");
 static const ax_sprite sQuilavaSprites8[] = {
 	{sQuilavaGfx8, ARRAY_COUNT(sQuilavaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx9[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_9.4bpp");
+static const u8 sQuilavaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_9.4bpp.lz");
 static const ax_sprite sQuilavaSprites9[] = {
 	{sQuilavaGfx9, ARRAY_COUNT(sQuilavaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx10[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_10.4bpp");
+static const u8 sQuilavaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_10.4bpp.lz");
 static const ax_sprite sQuilavaSprites10[] = {
 	{sQuilavaGfx10, ARRAY_COUNT(sQuilavaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx11[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_11.4bpp");
+static const u8 sQuilavaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_11.4bpp.lz");
 static const ax_sprite sQuilavaSprites11[] = {
 	{sQuilavaGfx11, ARRAY_COUNT(sQuilavaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx12[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_12.4bpp");
+static const u8 sQuilavaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_12.4bpp.lz");
 static const ax_sprite sQuilavaSprites12[] = {
 	{sQuilavaGfx12, ARRAY_COUNT(sQuilavaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx13[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_13.4bpp");
+static const u8 sQuilavaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_13.4bpp.lz");
 static const ax_sprite sQuilavaSprites13[] = {
 	{sQuilavaGfx13, ARRAY_COUNT(sQuilavaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx14[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_14.4bpp");
+static const u8 sQuilavaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_14.4bpp.lz");
 static const ax_sprite sQuilavaSprites14[] = {
 	{sQuilavaGfx14, ARRAY_COUNT(sQuilavaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx15[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_15.4bpp");
+static const u8 sQuilavaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_15.4bpp.lz");
 static const ax_sprite sQuilavaSprites15[] = {
 	{sQuilavaGfx15, ARRAY_COUNT(sQuilavaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx16[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_16.4bpp");
-static const u8 sQuilavaGfx16_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_16_1.4bpp");
-static const u8 sQuilavaGfx16_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_16_2.4bpp");
+static const u8 sQuilavaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_16.4bpp.lz");
+static const u8 sQuilavaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_16_1.4bpp.lz");
+static const u8 sQuilavaGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_16_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites16[] = {
 	{sQuilavaGfx16, ARRAY_COUNT(sQuilavaGfx16)}, 
 	{NULL, 32}, 
@@ -2198,10 +2198,10 @@ static const ax_sprite sQuilavaSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx17[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_17.4bpp");
-static const u8 sQuilavaGfx17_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_17_1.4bpp");
-static const u8 sQuilavaGfx17_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_17_2.4bpp");
-static const u8 sQuilavaGfx17_3[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_17_3.4bpp");
+static const u8 sQuilavaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_17.4bpp.lz");
+static const u8 sQuilavaGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_17_1.4bpp.lz");
+static const u8 sQuilavaGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_17_2.4bpp.lz");
+static const u8 sQuilavaGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_17_3.4bpp.lz");
 static const ax_sprite sQuilavaSprites17[] = {
 	{sQuilavaGfx17, ARRAY_COUNT(sQuilavaGfx17)}, 
 	{NULL, 32}, 
@@ -2213,10 +2213,10 @@ static const ax_sprite sQuilavaSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx18[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_18.4bpp");
-static const u8 sQuilavaGfx18_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_18_1.4bpp");
-static const u8 sQuilavaGfx18_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_18_2.4bpp");
-static const u8 sQuilavaGfx18_3[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_18_3.4bpp");
+static const u8 sQuilavaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_18.4bpp.lz");
+static const u8 sQuilavaGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_18_1.4bpp.lz");
+static const u8 sQuilavaGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_18_2.4bpp.lz");
+static const u8 sQuilavaGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_18_3.4bpp.lz");
 static const ax_sprite sQuilavaSprites18[] = {
 	{sQuilavaGfx18, ARRAY_COUNT(sQuilavaGfx18)}, 
 	{NULL, 64}, 
@@ -2228,22 +2228,22 @@ static const ax_sprite sQuilavaSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx19[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_19.4bpp");
+static const u8 sQuilavaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_19.4bpp.lz");
 static const ax_sprite sQuilavaSprites19[] = {
 	{NULL, 32}, 
 	{sQuilavaGfx19, ARRAY_COUNT(sQuilavaGfx19)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx20[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_20.4bpp");
+static const u8 sQuilavaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_20.4bpp.lz");
 static const ax_sprite sQuilavaSprites20[] = {
 	{NULL, 64}, 
 	{sQuilavaGfx20, ARRAY_COUNT(sQuilavaGfx20)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx21[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_21.4bpp");
-static const u8 sQuilavaGfx21_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_21_1.4bpp");
+static const u8 sQuilavaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_21.4bpp.lz");
+static const u8 sQuilavaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_21_1.4bpp.lz");
 static const ax_sprite sQuilavaSprites21[] = {
 	{NULL, 32}, 
 	{sQuilavaGfx21, ARRAY_COUNT(sQuilavaGfx21)}, 
@@ -2252,8 +2252,8 @@ static const ax_sprite sQuilavaSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx22[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_22.4bpp");
-static const u8 sQuilavaGfx22_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_22_1.4bpp");
+static const u8 sQuilavaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_22.4bpp.lz");
+static const u8 sQuilavaGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_22_1.4bpp.lz");
 static const ax_sprite sQuilavaSprites22[] = {
 	{sQuilavaGfx22, ARRAY_COUNT(sQuilavaGfx22)}, 
 	{NULL, 64}, 
@@ -2261,8 +2261,8 @@ static const ax_sprite sQuilavaSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx23[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_23.4bpp");
-static const u8 sQuilavaGfx23_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_23_1.4bpp");
+static const u8 sQuilavaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_23.4bpp.lz");
+static const u8 sQuilavaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_23_1.4bpp.lz");
 static const ax_sprite sQuilavaSprites23[] = {
 	{sQuilavaGfx23, ARRAY_COUNT(sQuilavaGfx23)}, 
 	{NULL, 32}, 
@@ -2270,16 +2270,16 @@ static const ax_sprite sQuilavaSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx24[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_24.4bpp");
+static const u8 sQuilavaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_24.4bpp.lz");
 static const ax_sprite sQuilavaSprites24[] = {
 	{NULL, 32}, 
 	{sQuilavaGfx24, ARRAY_COUNT(sQuilavaGfx24)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx25[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_25.4bpp");
-static const u8 sQuilavaGfx25_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_25_1.4bpp");
-static const u8 sQuilavaGfx25_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_25_2.4bpp");
+static const u8 sQuilavaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_25.4bpp.lz");
+static const u8 sQuilavaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_25_1.4bpp.lz");
+static const u8 sQuilavaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_25_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites25[] = {
 	{sQuilavaGfx25, ARRAY_COUNT(sQuilavaGfx25)}, 
 	{NULL, 32}, 
@@ -2289,9 +2289,9 @@ static const ax_sprite sQuilavaSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx26[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_26.4bpp");
-static const u8 sQuilavaGfx26_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_26_1.4bpp");
-static const u8 sQuilavaGfx26_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_26_2.4bpp");
+static const u8 sQuilavaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_26.4bpp.lz");
+static const u8 sQuilavaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_26_1.4bpp.lz");
+static const u8 sQuilavaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_26_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites26[] = {
 	{sQuilavaGfx26, ARRAY_COUNT(sQuilavaGfx26)}, 
 	{NULL, 32}, 
@@ -2301,9 +2301,9 @@ static const ax_sprite sQuilavaSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx27[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_27.4bpp");
-static const u8 sQuilavaGfx27_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_27_1.4bpp");
-static const u8 sQuilavaGfx27_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_27_2.4bpp");
+static const u8 sQuilavaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_27.4bpp.lz");
+static const u8 sQuilavaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_27_1.4bpp.lz");
+static const u8 sQuilavaGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_27_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites27[] = {
 	{sQuilavaGfx27, ARRAY_COUNT(sQuilavaGfx27)}, 
 	{NULL, 32}, 
@@ -2313,9 +2313,9 @@ static const ax_sprite sQuilavaSprites27[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx28[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_28.4bpp");
-static const u8 sQuilavaGfx28_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_28_1.4bpp");
-static const u8 sQuilavaGfx28_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_28_2.4bpp");
+static const u8 sQuilavaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_28.4bpp.lz");
+static const u8 sQuilavaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_28_1.4bpp.lz");
+static const u8 sQuilavaGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_28_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites28[] = {
 	{NULL, 32}, 
 	{sQuilavaGfx28, ARRAY_COUNT(sQuilavaGfx28)}, 
@@ -2326,16 +2326,16 @@ static const ax_sprite sQuilavaSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx29[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_29.4bpp");
+static const u8 sQuilavaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_29.4bpp.lz");
 static const ax_sprite sQuilavaSprites29[] = {
 	{NULL, 32}, 
 	{sQuilavaGfx29, ARRAY_COUNT(sQuilavaGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx30[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_30.4bpp");
-static const u8 sQuilavaGfx30_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_30_1.4bpp");
-static const u8 sQuilavaGfx30_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_30_2.4bpp");
+static const u8 sQuilavaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_30.4bpp.lz");
+static const u8 sQuilavaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_30_1.4bpp.lz");
+static const u8 sQuilavaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_30_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites30[] = {
 	{NULL, 32}, 
 	{sQuilavaGfx30, ARRAY_COUNT(sQuilavaGfx30)}, 
@@ -2346,9 +2346,9 @@ static const ax_sprite sQuilavaSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx31[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_31.4bpp");
-static const u8 sQuilavaGfx31_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_31_1.4bpp");
-static const u8 sQuilavaGfx31_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_31_2.4bpp");
+static const u8 sQuilavaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_31.4bpp.lz");
+static const u8 sQuilavaGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_31_1.4bpp.lz");
+static const u8 sQuilavaGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_31_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites31[] = {
 	{NULL, 128}, 
 	{sQuilavaGfx31, ARRAY_COUNT(sQuilavaGfx31)}, 
@@ -2359,9 +2359,9 @@ static const ax_sprite sQuilavaSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx32[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_32.4bpp");
-static const u8 sQuilavaGfx32_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_32_1.4bpp");
-static const u8 sQuilavaGfx32_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_32_2.4bpp");
+static const u8 sQuilavaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_32.4bpp.lz");
+static const u8 sQuilavaGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_32_1.4bpp.lz");
+static const u8 sQuilavaGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_32_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites32[] = {
 	{NULL, 128}, 
 	{sQuilavaGfx32, ARRAY_COUNT(sQuilavaGfx32)}, 
@@ -2372,10 +2372,10 @@ static const ax_sprite sQuilavaSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx33[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_33.4bpp");
-static const u8 sQuilavaGfx33_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_33_1.4bpp");
-static const u8 sQuilavaGfx33_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_33_2.4bpp");
-static const u8 sQuilavaGfx33_3[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_33_3.4bpp");
+static const u8 sQuilavaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_33.4bpp.lz");
+static const u8 sQuilavaGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_33_1.4bpp.lz");
+static const u8 sQuilavaGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_33_2.4bpp.lz");
+static const u8 sQuilavaGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_33_3.4bpp.lz");
 static const ax_sprite sQuilavaSprites33[] = {
 	{sQuilavaGfx33, ARRAY_COUNT(sQuilavaGfx33)}, 
 	{NULL, 32}, 
@@ -2387,10 +2387,10 @@ static const ax_sprite sQuilavaSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx34[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_34.4bpp");
-static const u8 sQuilavaGfx34_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_34_1.4bpp");
-static const u8 sQuilavaGfx34_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_34_2.4bpp");
-static const u8 sQuilavaGfx34_3[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_34_3.4bpp");
+static const u8 sQuilavaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_34.4bpp.lz");
+static const u8 sQuilavaGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_34_1.4bpp.lz");
+static const u8 sQuilavaGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_34_2.4bpp.lz");
+static const u8 sQuilavaGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_34_3.4bpp.lz");
 static const ax_sprite sQuilavaSprites34[] = {
 	{sQuilavaGfx34, ARRAY_COUNT(sQuilavaGfx34)}, 
 	{NULL, 32}, 
@@ -2402,9 +2402,9 @@ static const ax_sprite sQuilavaSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx35[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_35.4bpp");
-static const u8 sQuilavaGfx35_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_35_1.4bpp");
-static const u8 sQuilavaGfx35_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_35_2.4bpp");
+static const u8 sQuilavaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_35.4bpp.lz");
+static const u8 sQuilavaGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_35_1.4bpp.lz");
+static const u8 sQuilavaGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_35_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites35[] = {
 	{NULL, 160}, 
 	{sQuilavaGfx35, ARRAY_COUNT(sQuilavaGfx35)}, 
@@ -2415,8 +2415,8 @@ static const ax_sprite sQuilavaSprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx36[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_36.4bpp");
-static const u8 sQuilavaGfx36_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_36_1.4bpp");
+static const u8 sQuilavaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_36.4bpp.lz");
+static const u8 sQuilavaGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_36_1.4bpp.lz");
 static const ax_sprite sQuilavaSprites36[] = {
 	{sQuilavaGfx36, ARRAY_COUNT(sQuilavaGfx36)}, 
 	{NULL, 64}, 
@@ -2424,9 +2424,9 @@ static const ax_sprite sQuilavaSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx37[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_37.4bpp");
-static const u8 sQuilavaGfx37_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_37_1.4bpp");
-static const u8 sQuilavaGfx37_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_37_2.4bpp");
+static const u8 sQuilavaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_37.4bpp.lz");
+static const u8 sQuilavaGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_37_1.4bpp.lz");
+static const u8 sQuilavaGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_37_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites37[] = {
 	{NULL, 128}, 
 	{sQuilavaGfx37, ARRAY_COUNT(sQuilavaGfx37)}, 
@@ -2437,8 +2437,8 @@ static const ax_sprite sQuilavaSprites37[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx38[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_38.4bpp");
-static const u8 sQuilavaGfx38_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_38_1.4bpp");
+static const u8 sQuilavaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_38.4bpp.lz");
+static const u8 sQuilavaGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_38_1.4bpp.lz");
 static const ax_sprite sQuilavaSprites38[] = {
 	{sQuilavaGfx38, ARRAY_COUNT(sQuilavaGfx38)}, 
 	{NULL, 64}, 
@@ -2446,9 +2446,9 @@ static const ax_sprite sQuilavaSprites38[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx39[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_39.4bpp");
-static const u8 sQuilavaGfx39_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_39_1.4bpp");
-static const u8 sQuilavaGfx39_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_39_2.4bpp");
+static const u8 sQuilavaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_39.4bpp.lz");
+static const u8 sQuilavaGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_39_1.4bpp.lz");
+static const u8 sQuilavaGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_39_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites39[] = {
 	{NULL, 128}, 
 	{sQuilavaGfx39, ARRAY_COUNT(sQuilavaGfx39)}, 
@@ -2459,8 +2459,8 @@ static const ax_sprite sQuilavaSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx40[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_40.4bpp");
-static const u8 sQuilavaGfx40_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_40_1.4bpp");
+static const u8 sQuilavaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_40.4bpp.lz");
+static const u8 sQuilavaGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_40_1.4bpp.lz");
 static const ax_sprite sQuilavaSprites40[] = {
 	{sQuilavaGfx40, ARRAY_COUNT(sQuilavaGfx40)}, 
 	{NULL, 64}, 
@@ -2468,9 +2468,9 @@ static const ax_sprite sQuilavaSprites40[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx41[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_41.4bpp");
-static const u8 sQuilavaGfx41_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_41_1.4bpp");
-static const u8 sQuilavaGfx41_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_41_2.4bpp");
+static const u8 sQuilavaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_41.4bpp.lz");
+static const u8 sQuilavaGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_41_1.4bpp.lz");
+static const u8 sQuilavaGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_41_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites41[] = {
 	{NULL, 128}, 
 	{sQuilavaGfx41, ARRAY_COUNT(sQuilavaGfx41)}, 
@@ -2480,8 +2480,8 @@ static const ax_sprite sQuilavaSprites41[] = {
 	{sQuilavaGfx41_2, ARRAY_COUNT(sQuilavaGfx41_2)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx42[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_42.4bpp");
-static const u8 sQuilavaGfx42_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_42_1.4bpp");
+static const u8 sQuilavaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_42.4bpp.lz");
+static const u8 sQuilavaGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_42_1.4bpp.lz");
 static const ax_sprite sQuilavaSprites42[] = {
 	{sQuilavaGfx42, ARRAY_COUNT(sQuilavaGfx42)}, 
 	{NULL, 64}, 
@@ -2489,9 +2489,9 @@ static const ax_sprite sQuilavaSprites42[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx43[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_43.4bpp");
-static const u8 sQuilavaGfx43_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_43_1.4bpp");
-static const u8 sQuilavaGfx43_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_43_2.4bpp");
+static const u8 sQuilavaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_43.4bpp.lz");
+static const u8 sQuilavaGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_43_1.4bpp.lz");
+static const u8 sQuilavaGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_43_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites43[] = {
 	{NULL, 128}, 
 	{sQuilavaGfx43, ARRAY_COUNT(sQuilavaGfx43)}, 
@@ -2502,9 +2502,9 @@ static const ax_sprite sQuilavaSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx44[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_44.4bpp");
-static const u8 sQuilavaGfx44_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_44_1.4bpp");
-static const u8 sQuilavaGfx44_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_44_2.4bpp");
+static const u8 sQuilavaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_44.4bpp.lz");
+static const u8 sQuilavaGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_44_1.4bpp.lz");
+static const u8 sQuilavaGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_44_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites44[] = {
 	{sQuilavaGfx44, ARRAY_COUNT(sQuilavaGfx44)}, 
 	{NULL, 64}, 
@@ -2514,10 +2514,10 @@ static const ax_sprite sQuilavaSprites44[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx45[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_45.4bpp");
-static const u8 sQuilavaGfx45_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_45_1.4bpp");
-static const u8 sQuilavaGfx45_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_45_2.4bpp");
-static const u8 sQuilavaGfx45_3[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_45_3.4bpp");
+static const u8 sQuilavaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_45.4bpp.lz");
+static const u8 sQuilavaGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_45_1.4bpp.lz");
+static const u8 sQuilavaGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_45_2.4bpp.lz");
+static const u8 sQuilavaGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_45_3.4bpp.lz");
 static const ax_sprite sQuilavaSprites45[] = {
 	{sQuilavaGfx45, ARRAY_COUNT(sQuilavaGfx45)}, 
 	{NULL, 64}, 
@@ -2529,9 +2529,9 @@ static const ax_sprite sQuilavaSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx46[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_46.4bpp");
-static const u8 sQuilavaGfx46_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_46_1.4bpp");
-static const u8 sQuilavaGfx46_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_46_2.4bpp");
+static const u8 sQuilavaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_46.4bpp.lz");
+static const u8 sQuilavaGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_46_1.4bpp.lz");
+static const u8 sQuilavaGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_46_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites46[] = {
 	{sQuilavaGfx46, ARRAY_COUNT(sQuilavaGfx46)}, 
 	{NULL, 64}, 
@@ -2541,9 +2541,9 @@ static const ax_sprite sQuilavaSprites46[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx47[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_47.4bpp");
-static const u8 sQuilavaGfx47_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_47_1.4bpp");
-static const u8 sQuilavaGfx47_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_47_2.4bpp");
+static const u8 sQuilavaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_47.4bpp.lz");
+static const u8 sQuilavaGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_47_1.4bpp.lz");
+static const u8 sQuilavaGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_47_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites47[] = {
 	{NULL, 128}, 
 	{sQuilavaGfx47, ARRAY_COUNT(sQuilavaGfx47)}, 
@@ -2554,9 +2554,9 @@ static const ax_sprite sQuilavaSprites47[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx48[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_48.4bpp");
-static const u8 sQuilavaGfx48_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_48_1.4bpp");
-static const u8 sQuilavaGfx48_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_48_2.4bpp");
+static const u8 sQuilavaGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_48.4bpp.lz");
+static const u8 sQuilavaGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_48_1.4bpp.lz");
+static const u8 sQuilavaGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_48_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites48[] = {
 	{sQuilavaGfx48, ARRAY_COUNT(sQuilavaGfx48)}, 
 	{NULL, 64}, 
@@ -2566,10 +2566,10 @@ static const ax_sprite sQuilavaSprites48[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx49[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_49.4bpp");
-static const u8 sQuilavaGfx49_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_49_1.4bpp");
-static const u8 sQuilavaGfx49_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_49_2.4bpp");
-static const u8 sQuilavaGfx49_3[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_49_3.4bpp");
+static const u8 sQuilavaGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_49.4bpp.lz");
+static const u8 sQuilavaGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_49_1.4bpp.lz");
+static const u8 sQuilavaGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_49_2.4bpp.lz");
+static const u8 sQuilavaGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_49_3.4bpp.lz");
 static const ax_sprite sQuilavaSprites49[] = {
 	{sQuilavaGfx49, ARRAY_COUNT(sQuilavaGfx49)}, 
 	{NULL, 64}, 
@@ -2581,9 +2581,9 @@ static const ax_sprite sQuilavaSprites49[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx50[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_50.4bpp");
-static const u8 sQuilavaGfx50_1[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_50_1.4bpp");
-static const u8 sQuilavaGfx50_2[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_50_2.4bpp");
+static const u8 sQuilavaGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_50.4bpp.lz");
+static const u8 sQuilavaGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_50_1.4bpp.lz");
+static const u8 sQuilavaGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_50_2.4bpp.lz");
 static const ax_sprite sQuilavaSprites50[] = {
 	{sQuilavaGfx50, ARRAY_COUNT(sQuilavaGfx50)}, 
 	{NULL, 64}, 
@@ -2593,37 +2593,37 @@ static const ax_sprite sQuilavaSprites50[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx51[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_51.4bpp");
+static const u8 sQuilavaGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_51.4bpp.lz");
 static const ax_sprite sQuilavaSprites51[] = {
 	{sQuilavaGfx51, ARRAY_COUNT(sQuilavaGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx52[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_52.4bpp");
+static const u8 sQuilavaGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_52.4bpp.lz");
 static const ax_sprite sQuilavaSprites52[] = {
 	{sQuilavaGfx52, ARRAY_COUNT(sQuilavaGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx53[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_53.4bpp");
+static const u8 sQuilavaGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_53.4bpp.lz");
 static const ax_sprite sQuilavaSprites53[] = {
 	{sQuilavaGfx53, ARRAY_COUNT(sQuilavaGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx54[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_54.4bpp");
+static const u8 sQuilavaGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_54.4bpp.lz");
 static const ax_sprite sQuilavaSprites54[] = {
 	{sQuilavaGfx54, ARRAY_COUNT(sQuilavaGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx55[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_55.4bpp");
+static const u8 sQuilavaGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_55.4bpp.lz");
 static const ax_sprite sQuilavaSprites55[] = {
 	{sQuilavaGfx55, ARRAY_COUNT(sQuilavaGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx56[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_56.4bpp");
+static const u8 sQuilavaGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_56.4bpp.lz");
 static const ax_sprite sQuilavaSprites56[] = {
 	{sQuilavaGfx56, ARRAY_COUNT(sQuilavaGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sQuilavaGfx57[] = INCBIN_U8("graphics/ax/mon/quilava/sprite_57.4bpp");
+static const u8 sQuilavaGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/quilava/sprite_57.4bpp.lz");
 static const ax_sprite sQuilavaSprites57[] = {
 	{sQuilavaGfx57, ARRAY_COUNT(sQuilavaGfx57)}, 
 	{NULL, 0}

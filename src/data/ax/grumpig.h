@@ -2163,83 +2163,83 @@ static const ax_anim sGrumpigAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGrumpigGfx1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_1.4bpp");
+static const u8 sGrumpigGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_1.4bpp.lz");
 static const ax_sprite sGrumpigSprites1[] = {
 	{sGrumpigGfx1, ARRAY_COUNT(sGrumpigGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_2.4bpp");
+static const u8 sGrumpigGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_2.4bpp.lz");
 static const ax_sprite sGrumpigSprites2[] = {
 	{sGrumpigGfx2, ARRAY_COUNT(sGrumpigGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx3[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_3.4bpp");
+static const u8 sGrumpigGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_3.4bpp.lz");
 static const ax_sprite sGrumpigSprites3[] = {
 	{sGrumpigGfx3, ARRAY_COUNT(sGrumpigGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx4[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_4.4bpp");
+static const u8 sGrumpigGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_4.4bpp.lz");
 static const ax_sprite sGrumpigSprites4[] = {
 	{sGrumpigGfx4, ARRAY_COUNT(sGrumpigGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx5[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_5.4bpp");
+static const u8 sGrumpigGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_5.4bpp.lz");
 static const ax_sprite sGrumpigSprites5[] = {
 	{sGrumpigGfx5, ARRAY_COUNT(sGrumpigGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx6[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_6.4bpp");
+static const u8 sGrumpigGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_6.4bpp.lz");
 static const ax_sprite sGrumpigSprites6[] = {
 	{sGrumpigGfx6, ARRAY_COUNT(sGrumpigGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx7[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_7.4bpp");
+static const u8 sGrumpigGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_7.4bpp.lz");
 static const ax_sprite sGrumpigSprites7[] = {
 	{sGrumpigGfx7, ARRAY_COUNT(sGrumpigGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx8[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_8.4bpp");
+static const u8 sGrumpigGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_8.4bpp.lz");
 static const ax_sprite sGrumpigSprites8[] = {
 	{sGrumpigGfx8, ARRAY_COUNT(sGrumpigGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx9[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_9.4bpp");
+static const u8 sGrumpigGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_9.4bpp.lz");
 static const ax_sprite sGrumpigSprites9[] = {
 	{sGrumpigGfx9, ARRAY_COUNT(sGrumpigGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx10[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_10.4bpp");
+static const u8 sGrumpigGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_10.4bpp.lz");
 static const ax_sprite sGrumpigSprites10[] = {
 	{sGrumpigGfx10, ARRAY_COUNT(sGrumpigGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx11[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_11.4bpp");
+static const u8 sGrumpigGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_11.4bpp.lz");
 static const ax_sprite sGrumpigSprites11[] = {
 	{sGrumpigGfx11, ARRAY_COUNT(sGrumpigGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx12[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_12.4bpp");
+static const u8 sGrumpigGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_12.4bpp.lz");
 static const ax_sprite sGrumpigSprites12[] = {
 	{sGrumpigGfx12, ARRAY_COUNT(sGrumpigGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx13[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_13.4bpp");
+static const u8 sGrumpigGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_13.4bpp.lz");
 static const ax_sprite sGrumpigSprites13[] = {
 	{sGrumpigGfx13, ARRAY_COUNT(sGrumpigGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx14[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_14.4bpp");
+static const u8 sGrumpigGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_14.4bpp.lz");
 static const ax_sprite sGrumpigSprites14[] = {
 	{sGrumpigGfx14, ARRAY_COUNT(sGrumpigGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx15[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_15.4bpp");
+static const u8 sGrumpigGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_15.4bpp.lz");
 static const ax_sprite sGrumpigSprites15[] = {
 	{sGrumpigGfx15, ARRAY_COUNT(sGrumpigGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx16[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_16.4bpp");
-static const u8 sGrumpigGfx16_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_16_1.4bpp");
+static const u8 sGrumpigGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_16.4bpp.lz");
+static const u8 sGrumpigGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_16_1.4bpp.lz");
 static const ax_sprite sGrumpigSprites16[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx16, ARRAY_COUNT(sGrumpigGfx16)}, 
@@ -2248,8 +2248,8 @@ static const ax_sprite sGrumpigSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx17[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_17.4bpp");
-static const u8 sGrumpigGfx17_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_17_1.4bpp");
+static const u8 sGrumpigGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_17.4bpp.lz");
+static const u8 sGrumpigGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_17_1.4bpp.lz");
 static const ax_sprite sGrumpigSprites17[] = {
 	{NULL, 128}, 
 	{sGrumpigGfx17, ARRAY_COUNT(sGrumpigGfx17)}, 
@@ -2257,8 +2257,8 @@ static const ax_sprite sGrumpigSprites17[] = {
 	{sGrumpigGfx17_1, ARRAY_COUNT(sGrumpigGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx18[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_18.4bpp");
-static const u8 sGrumpigGfx18_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_18_1.4bpp");
+static const u8 sGrumpigGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_18.4bpp.lz");
+static const u8 sGrumpigGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_18_1.4bpp.lz");
 static const ax_sprite sGrumpigSprites18[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx18, ARRAY_COUNT(sGrumpigGfx18)}, 
@@ -2266,9 +2266,9 @@ static const ax_sprite sGrumpigSprites18[] = {
 	{sGrumpigGfx18_1, ARRAY_COUNT(sGrumpigGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx19[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_19.4bpp");
-static const u8 sGrumpigGfx19_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_19_1.4bpp");
-static const u8 sGrumpigGfx19_2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_19_2.4bpp");
+static const u8 sGrumpigGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_19.4bpp.lz");
+static const u8 sGrumpigGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_19_1.4bpp.lz");
+static const u8 sGrumpigGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_19_2.4bpp.lz");
 static const ax_sprite sGrumpigSprites19[] = {
 	{sGrumpigGfx19, ARRAY_COUNT(sGrumpigGfx19)}, 
 	{NULL, 64}, 
@@ -2277,10 +2277,10 @@ static const ax_sprite sGrumpigSprites19[] = {
 	{sGrumpigGfx19_2, ARRAY_COUNT(sGrumpigGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx20[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_20.4bpp");
-static const u8 sGrumpigGfx20_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_20_1.4bpp");
-static const u8 sGrumpigGfx20_2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_20_2.4bpp");
-static const u8 sGrumpigGfx20_3[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_20_3.4bpp");
+static const u8 sGrumpigGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_20.4bpp.lz");
+static const u8 sGrumpigGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_20_1.4bpp.lz");
+static const u8 sGrumpigGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_20_2.4bpp.lz");
+static const u8 sGrumpigGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_20_3.4bpp.lz");
 static const ax_sprite sGrumpigSprites20[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx20, ARRAY_COUNT(sGrumpigGfx20)}, 
@@ -2292,10 +2292,10 @@ static const ax_sprite sGrumpigSprites20[] = {
 	{sGrumpigGfx20_3, ARRAY_COUNT(sGrumpigGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx21[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_21.4bpp");
-static const u8 sGrumpigGfx21_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_21_1.4bpp");
-static const u8 sGrumpigGfx21_2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_21_2.4bpp");
-static const u8 sGrumpigGfx21_3[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_21_3.4bpp");
+static const u8 sGrumpigGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_21.4bpp.lz");
+static const u8 sGrumpigGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_21_1.4bpp.lz");
+static const u8 sGrumpigGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_21_2.4bpp.lz");
+static const u8 sGrumpigGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_21_3.4bpp.lz");
 static const ax_sprite sGrumpigSprites21[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx21, ARRAY_COUNT(sGrumpigGfx21)}, 
@@ -2307,9 +2307,9 @@ static const ax_sprite sGrumpigSprites21[] = {
 	{sGrumpigGfx21_3, ARRAY_COUNT(sGrumpigGfx21_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx22[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_22.4bpp");
-static const u8 sGrumpigGfx22_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_22_1.4bpp");
-static const u8 sGrumpigGfx22_2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_22_2.4bpp");
+static const u8 sGrumpigGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_22.4bpp.lz");
+static const u8 sGrumpigGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_22_1.4bpp.lz");
+static const u8 sGrumpigGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_22_2.4bpp.lz");
 static const ax_sprite sGrumpigSprites22[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx22, ARRAY_COUNT(sGrumpigGfx22)}, 
@@ -2319,10 +2319,10 @@ static const ax_sprite sGrumpigSprites22[] = {
 	{sGrumpigGfx22_2, ARRAY_COUNT(sGrumpigGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx23[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_23.4bpp");
-static const u8 sGrumpigGfx23_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_23_1.4bpp");
-static const u8 sGrumpigGfx23_2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_23_2.4bpp");
-static const u8 sGrumpigGfx23_3[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_23_3.4bpp");
+static const u8 sGrumpigGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_23.4bpp.lz");
+static const u8 sGrumpigGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_23_1.4bpp.lz");
+static const u8 sGrumpigGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_23_2.4bpp.lz");
+static const u8 sGrumpigGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_23_3.4bpp.lz");
 static const ax_sprite sGrumpigSprites23[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx23, ARRAY_COUNT(sGrumpigGfx23)}, 
@@ -2334,8 +2334,8 @@ static const ax_sprite sGrumpigSprites23[] = {
 	{sGrumpigGfx23_3, ARRAY_COUNT(sGrumpigGfx23_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx24[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_24.4bpp");
-static const u8 sGrumpigGfx24_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_24_1.4bpp");
+static const u8 sGrumpigGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_24.4bpp.lz");
+static const u8 sGrumpigGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_24_1.4bpp.lz");
 static const ax_sprite sGrumpigSprites24[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx24, ARRAY_COUNT(sGrumpigGfx24)}, 
@@ -2344,8 +2344,8 @@ static const ax_sprite sGrumpigSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx25[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_25.4bpp");
-static const u8 sGrumpigGfx25_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_25_1.4bpp");
+static const u8 sGrumpigGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_25.4bpp.lz");
+static const u8 sGrumpigGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_25_1.4bpp.lz");
 static const ax_sprite sGrumpigSprites25[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx25, ARRAY_COUNT(sGrumpigGfx25)}, 
@@ -2353,16 +2353,16 @@ static const ax_sprite sGrumpigSprites25[] = {
 	{sGrumpigGfx25_1, ARRAY_COUNT(sGrumpigGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx26[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_26.4bpp");
+static const u8 sGrumpigGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_26.4bpp.lz");
 static const ax_sprite sGrumpigSprites26[] = {
 	{NULL, 128}, 
 	{sGrumpigGfx26, ARRAY_COUNT(sGrumpigGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx27[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_27.4bpp");
-static const u8 sGrumpigGfx27_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_27_1.4bpp");
-static const u8 sGrumpigGfx27_2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_27_2.4bpp");
-static const u8 sGrumpigGfx27_3[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_27_3.4bpp");
+static const u8 sGrumpigGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_27.4bpp.lz");
+static const u8 sGrumpigGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_27_1.4bpp.lz");
+static const u8 sGrumpigGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_27_2.4bpp.lz");
+static const u8 sGrumpigGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_27_3.4bpp.lz");
 static const ax_sprite sGrumpigSprites27[] = {
 	{sGrumpigGfx27, ARRAY_COUNT(sGrumpigGfx27)}, 
 	{NULL, 64}, 
@@ -2373,10 +2373,10 @@ static const ax_sprite sGrumpigSprites27[] = {
 	{sGrumpigGfx27_3, ARRAY_COUNT(sGrumpigGfx27_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx28[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_28.4bpp");
-static const u8 sGrumpigGfx28_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_28_1.4bpp");
-static const u8 sGrumpigGfx28_2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_28_2.4bpp");
-static const u8 sGrumpigGfx28_3[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_28_3.4bpp");
+static const u8 sGrumpigGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_28.4bpp.lz");
+static const u8 sGrumpigGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_28_1.4bpp.lz");
+static const u8 sGrumpigGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_28_2.4bpp.lz");
+static const u8 sGrumpigGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_28_3.4bpp.lz");
 static const ax_sprite sGrumpigSprites28[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx28, ARRAY_COUNT(sGrumpigGfx28)}, 
@@ -2388,10 +2388,10 @@ static const ax_sprite sGrumpigSprites28[] = {
 	{sGrumpigGfx28_3, ARRAY_COUNT(sGrumpigGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx29[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_29.4bpp");
-static const u8 sGrumpigGfx29_1[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_29_1.4bpp");
-static const u8 sGrumpigGfx29_2[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_29_2.4bpp");
-static const u8 sGrumpigGfx29_3[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_29_3.4bpp");
+static const u8 sGrumpigGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_29.4bpp.lz");
+static const u8 sGrumpigGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_29_1.4bpp.lz");
+static const u8 sGrumpigGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_29_2.4bpp.lz");
+static const u8 sGrumpigGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_29_3.4bpp.lz");
 static const ax_sprite sGrumpigSprites29[] = {
 	{sGrumpigGfx29, ARRAY_COUNT(sGrumpigGfx29)}, 
 	{NULL, 32}, 
@@ -2402,63 +2402,63 @@ static const ax_sprite sGrumpigSprites29[] = {
 	{sGrumpigGfx29_3, ARRAY_COUNT(sGrumpigGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx30[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_30.4bpp");
+static const u8 sGrumpigGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_30.4bpp.lz");
 static const ax_sprite sGrumpigSprites30[] = {
 	{NULL, 32}, 
 	{sGrumpigGfx30, ARRAY_COUNT(sGrumpigGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx31[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_31.4bpp");
+static const u8 sGrumpigGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_31.4bpp.lz");
 static const ax_sprite sGrumpigSprites31[] = {
 	{sGrumpigGfx31, ARRAY_COUNT(sGrumpigGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx32[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_32.4bpp");
+static const u8 sGrumpigGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_32.4bpp.lz");
 static const ax_sprite sGrumpigSprites32[] = {
 	{sGrumpigGfx32, ARRAY_COUNT(sGrumpigGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx33[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_33.4bpp");
+static const u8 sGrumpigGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_33.4bpp.lz");
 static const ax_sprite sGrumpigSprites33[] = {
 	{sGrumpigGfx33, ARRAY_COUNT(sGrumpigGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx34[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_34.4bpp");
+static const u8 sGrumpigGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_34.4bpp.lz");
 static const ax_sprite sGrumpigSprites34[] = {
 	{sGrumpigGfx34, ARRAY_COUNT(sGrumpigGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx35[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_35.4bpp");
+static const u8 sGrumpigGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_35.4bpp.lz");
 static const ax_sprite sGrumpigSprites35[] = {
 	{sGrumpigGfx35, ARRAY_COUNT(sGrumpigGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx36[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_36.4bpp");
+static const u8 sGrumpigGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_36.4bpp.lz");
 static const ax_sprite sGrumpigSprites36[] = {
 	{sGrumpigGfx36, ARRAY_COUNT(sGrumpigGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx37[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_37.4bpp");
+static const u8 sGrumpigGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_37.4bpp.lz");
 static const ax_sprite sGrumpigSprites37[] = {
 	{sGrumpigGfx37, ARRAY_COUNT(sGrumpigGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx38[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_38.4bpp");
+static const u8 sGrumpigGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_38.4bpp.lz");
 static const ax_sprite sGrumpigSprites38[] = {
 	{sGrumpigGfx38, ARRAY_COUNT(sGrumpigGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx39[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_39.4bpp");
+static const u8 sGrumpigGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_39.4bpp.lz");
 static const ax_sprite sGrumpigSprites39[] = {
 	{sGrumpigGfx39, ARRAY_COUNT(sGrumpigGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx40[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_40.4bpp");
+static const u8 sGrumpigGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_40.4bpp.lz");
 static const ax_sprite sGrumpigSprites40[] = {
 	{sGrumpigGfx40, ARRAY_COUNT(sGrumpigGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sGrumpigGfx41[] = INCBIN_U8("graphics/ax/mon/grumpig/sprite_41.4bpp");
+static const u8 sGrumpigGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/grumpig/sprite_41.4bpp.lz");
 static const ax_sprite sGrumpigSprites41[] = {
 	{sGrumpigGfx41, ARRAY_COUNT(sGrumpigGfx41)}, 
 	{NULL, 0}

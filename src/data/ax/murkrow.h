@@ -1903,59 +1903,59 @@ static const ax_anim sMurkrowAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMurkrowGfx1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_1.4bpp");
+static const u8 sMurkrowGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_1.4bpp.lz");
 static const ax_sprite sMurkrowSprites1[] = {
 	{sMurkrowGfx1, ARRAY_COUNT(sMurkrowGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx2[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_2.4bpp");
+static const u8 sMurkrowGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_2.4bpp.lz");
 static const ax_sprite sMurkrowSprites2[] = {
 	{sMurkrowGfx2, ARRAY_COUNT(sMurkrowGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx3[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_3.4bpp");
+static const u8 sMurkrowGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_3.4bpp.lz");
 static const ax_sprite sMurkrowSprites3[] = {
 	{sMurkrowGfx3, ARRAY_COUNT(sMurkrowGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx4[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_4.4bpp");
+static const u8 sMurkrowGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_4.4bpp.lz");
 static const ax_sprite sMurkrowSprites4[] = {
 	{sMurkrowGfx4, ARRAY_COUNT(sMurkrowGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx5[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_5.4bpp");
+static const u8 sMurkrowGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_5.4bpp.lz");
 static const ax_sprite sMurkrowSprites5[] = {
 	{sMurkrowGfx5, ARRAY_COUNT(sMurkrowGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx6[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_6.4bpp");
+static const u8 sMurkrowGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_6.4bpp.lz");
 static const ax_sprite sMurkrowSprites6[] = {
 	{sMurkrowGfx6, ARRAY_COUNT(sMurkrowGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx7[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_7.4bpp");
+static const u8 sMurkrowGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_7.4bpp.lz");
 static const ax_sprite sMurkrowSprites7[] = {
 	{sMurkrowGfx7, ARRAY_COUNT(sMurkrowGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx8[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_8.4bpp");
+static const u8 sMurkrowGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_8.4bpp.lz");
 static const ax_sprite sMurkrowSprites8[] = {
 	{sMurkrowGfx8, ARRAY_COUNT(sMurkrowGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx9[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_9.4bpp");
+static const u8 sMurkrowGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_9.4bpp.lz");
 static const ax_sprite sMurkrowSprites9[] = {
 	{sMurkrowGfx9, ARRAY_COUNT(sMurkrowGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx10[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_10.4bpp");
+static const u8 sMurkrowGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_10.4bpp.lz");
 static const ax_sprite sMurkrowSprites10[] = {
 	{sMurkrowGfx10, ARRAY_COUNT(sMurkrowGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx11[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_11.4bpp");
-static const u8 sMurkrowGfx11_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_11_1.4bpp");
-static const u8 sMurkrowGfx11_2[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_11_2.4bpp");
+static const u8 sMurkrowGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_11.4bpp.lz");
+static const u8 sMurkrowGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_11_1.4bpp.lz");
+static const u8 sMurkrowGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_11_2.4bpp.lz");
 static const ax_sprite sMurkrowSprites11[] = {
 	{sMurkrowGfx11, ARRAY_COUNT(sMurkrowGfx11)}, 
 	{NULL, 32}, 
@@ -1965,8 +1965,8 @@ static const ax_sprite sMurkrowSprites11[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx12[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_12.4bpp");
-static const u8 sMurkrowGfx12_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_12_1.4bpp");
+static const u8 sMurkrowGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_12.4bpp.lz");
+static const u8 sMurkrowGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_12_1.4bpp.lz");
 static const ax_sprite sMurkrowSprites12[] = {
 	{NULL, 32}, 
 	{sMurkrowGfx12, ARRAY_COUNT(sMurkrowGfx12)}, 
@@ -1975,15 +1975,15 @@ static const ax_sprite sMurkrowSprites12[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx13[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_13.4bpp");
+static const u8 sMurkrowGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_13.4bpp.lz");
 static const ax_sprite sMurkrowSprites13[] = {
 	{sMurkrowGfx13, ARRAY_COUNT(sMurkrowGfx13)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx14[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_14.4bpp");
-static const u8 sMurkrowGfx14_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_14_1.4bpp");
-static const u8 sMurkrowGfx14_2[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_14_2.4bpp");
+static const u8 sMurkrowGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_14.4bpp.lz");
+static const u8 sMurkrowGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_14_1.4bpp.lz");
+static const u8 sMurkrowGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_14_2.4bpp.lz");
 static const ax_sprite sMurkrowSprites14[] = {
 	{sMurkrowGfx14, ARRAY_COUNT(sMurkrowGfx14)}, 
 	{NULL, 32}, 
@@ -1993,20 +1993,20 @@ static const ax_sprite sMurkrowSprites14[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx15[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_15.4bpp");
+static const u8 sMurkrowGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_15.4bpp.lz");
 static const ax_sprite sMurkrowSprites15[] = {
 	{sMurkrowGfx15, ARRAY_COUNT(sMurkrowGfx15)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx16[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_16.4bpp");
+static const u8 sMurkrowGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_16.4bpp.lz");
 static const ax_sprite sMurkrowSprites16[] = {
 	{sMurkrowGfx16, ARRAY_COUNT(sMurkrowGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx17[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_17.4bpp");
-static const u8 sMurkrowGfx17_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_17_1.4bpp");
+static const u8 sMurkrowGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_17.4bpp.lz");
+static const u8 sMurkrowGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_17_1.4bpp.lz");
 static const ax_sprite sMurkrowSprites17[] = {
 	{sMurkrowGfx17, ARRAY_COUNT(sMurkrowGfx17)}, 
 	{NULL, 32}, 
@@ -2014,9 +2014,9 @@ static const ax_sprite sMurkrowSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx18[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_18.4bpp");
-static const u8 sMurkrowGfx18_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_18_1.4bpp");
-static const u8 sMurkrowGfx18_2[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_18_2.4bpp");
+static const u8 sMurkrowGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_18.4bpp.lz");
+static const u8 sMurkrowGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_18_1.4bpp.lz");
+static const u8 sMurkrowGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_18_2.4bpp.lz");
 static const ax_sprite sMurkrowSprites18[] = {
 	{sMurkrowGfx18, ARRAY_COUNT(sMurkrowGfx18)}, 
 	{NULL, 32}, 
@@ -2026,9 +2026,9 @@ static const ax_sprite sMurkrowSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx19[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_19.4bpp");
-static const u8 sMurkrowGfx19_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_19_1.4bpp");
-static const u8 sMurkrowGfx19_2[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_19_2.4bpp");
+static const u8 sMurkrowGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_19.4bpp.lz");
+static const u8 sMurkrowGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_19_1.4bpp.lz");
+static const u8 sMurkrowGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_19_2.4bpp.lz");
 static const ax_sprite sMurkrowSprites19[] = {
 	{sMurkrowGfx19, ARRAY_COUNT(sMurkrowGfx19)}, 
 	{NULL, 32}, 
@@ -2038,9 +2038,9 @@ static const ax_sprite sMurkrowSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx20[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_20.4bpp");
-static const u8 sMurkrowGfx20_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_20_1.4bpp");
-static const u8 sMurkrowGfx20_2[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_20_2.4bpp");
+static const u8 sMurkrowGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_20.4bpp.lz");
+static const u8 sMurkrowGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_20_1.4bpp.lz");
+static const u8 sMurkrowGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_20_2.4bpp.lz");
 static const ax_sprite sMurkrowSprites20[] = {
 	{sMurkrowGfx20, ARRAY_COUNT(sMurkrowGfx20)}, 
 	{NULL, 32}, 
@@ -2050,8 +2050,8 @@ static const ax_sprite sMurkrowSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx21[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_21.4bpp");
-static const u8 sMurkrowGfx21_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_21_1.4bpp");
+static const u8 sMurkrowGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_21.4bpp.lz");
+static const u8 sMurkrowGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_21_1.4bpp.lz");
 static const ax_sprite sMurkrowSprites21[] = {
 	{sMurkrowGfx21, ARRAY_COUNT(sMurkrowGfx21)}, 
 	{NULL, 32}, 
@@ -2059,9 +2059,9 @@ static const ax_sprite sMurkrowSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx22[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_22.4bpp");
-static const u8 sMurkrowGfx22_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_22_1.4bpp");
-static const u8 sMurkrowGfx22_2[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_22_2.4bpp");
+static const u8 sMurkrowGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_22.4bpp.lz");
+static const u8 sMurkrowGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_22_1.4bpp.lz");
+static const u8 sMurkrowGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_22_2.4bpp.lz");
 static const ax_sprite sMurkrowSprites22[] = {
 	{sMurkrowGfx22, ARRAY_COUNT(sMurkrowGfx22)}, 
 	{NULL, 32}, 
@@ -2071,8 +2071,8 @@ static const ax_sprite sMurkrowSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx23[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_23.4bpp");
-static const u8 sMurkrowGfx23_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_23_1.4bpp");
+static const u8 sMurkrowGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_23.4bpp.lz");
+static const u8 sMurkrowGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_23_1.4bpp.lz");
 static const ax_sprite sMurkrowSprites23[] = {
 	{sMurkrowGfx23, ARRAY_COUNT(sMurkrowGfx23)}, 
 	{NULL, 64}, 
@@ -2080,14 +2080,14 @@ static const ax_sprite sMurkrowSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx24[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_24.4bpp");
+static const u8 sMurkrowGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_24.4bpp.lz");
 static const ax_sprite sMurkrowSprites24[] = {
 	{sMurkrowGfx24, ARRAY_COUNT(sMurkrowGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx25[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_25.4bpp");
-static const u8 sMurkrowGfx25_1[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_25_1.4bpp");
+static const u8 sMurkrowGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_25.4bpp.lz");
+static const u8 sMurkrowGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_25_1.4bpp.lz");
 static const ax_sprite sMurkrowSprites25[] = {
 	{sMurkrowGfx25, ARRAY_COUNT(sMurkrowGfx25)}, 
 	{NULL, 32}, 
@@ -2095,37 +2095,37 @@ static const ax_sprite sMurkrowSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx26[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_26.4bpp");
+static const u8 sMurkrowGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_26.4bpp.lz");
 static const ax_sprite sMurkrowSprites26[] = {
 	{sMurkrowGfx26, ARRAY_COUNT(sMurkrowGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx27[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_27.4bpp");
+static const u8 sMurkrowGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_27.4bpp.lz");
 static const ax_sprite sMurkrowSprites27[] = {
 	{sMurkrowGfx27, ARRAY_COUNT(sMurkrowGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx28[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_28.4bpp");
+static const u8 sMurkrowGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_28.4bpp.lz");
 static const ax_sprite sMurkrowSprites28[] = {
 	{sMurkrowGfx28, ARRAY_COUNT(sMurkrowGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx29[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_29.4bpp");
+static const u8 sMurkrowGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_29.4bpp.lz");
 static const ax_sprite sMurkrowSprites29[] = {
 	{sMurkrowGfx29, ARRAY_COUNT(sMurkrowGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx30[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_30.4bpp");
+static const u8 sMurkrowGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_30.4bpp.lz");
 static const ax_sprite sMurkrowSprites30[] = {
 	{sMurkrowGfx30, ARRAY_COUNT(sMurkrowGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx31[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_31.4bpp");
+static const u8 sMurkrowGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_31.4bpp.lz");
 static const ax_sprite sMurkrowSprites31[] = {
 	{sMurkrowGfx31, ARRAY_COUNT(sMurkrowGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMurkrowGfx32[] = INCBIN_U8("graphics/ax/mon/murkrow/sprite_32.4bpp");
+static const u8 sMurkrowGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/murkrow/sprite_32.4bpp.lz");
 static const ax_sprite sMurkrowSprites32[] = {
 	{sMurkrowGfx32, ARRAY_COUNT(sMurkrowGfx32)}, 
 	{NULL, 0}

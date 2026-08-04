@@ -2039,59 +2039,59 @@ static const ax_anim sKirliaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKirliaGfx1[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_1.4bpp");
+static const u8 sKirliaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_1.4bpp.lz");
 static const ax_sprite sKirliaSprites1[] = {
 	{sKirliaGfx1, ARRAY_COUNT(sKirliaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx2[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_2.4bpp");
+static const u8 sKirliaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_2.4bpp.lz");
 static const ax_sprite sKirliaSprites2[] = {
 	{sKirliaGfx2, ARRAY_COUNT(sKirliaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx3[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_3.4bpp");
+static const u8 sKirliaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_3.4bpp.lz");
 static const ax_sprite sKirliaSprites3[] = {
 	{sKirliaGfx3, ARRAY_COUNT(sKirliaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx4[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_4.4bpp");
+static const u8 sKirliaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_4.4bpp.lz");
 static const ax_sprite sKirliaSprites4[] = {
 	{sKirliaGfx4, ARRAY_COUNT(sKirliaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx5[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_5.4bpp");
+static const u8 sKirliaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_5.4bpp.lz");
 static const ax_sprite sKirliaSprites5[] = {
 	{sKirliaGfx5, ARRAY_COUNT(sKirliaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx6[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_6.4bpp");
+static const u8 sKirliaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_6.4bpp.lz");
 static const ax_sprite sKirliaSprites6[] = {
 	{sKirliaGfx6, ARRAY_COUNT(sKirliaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx7[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_7.4bpp");
+static const u8 sKirliaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_7.4bpp.lz");
 static const ax_sprite sKirliaSprites7[] = {
 	{sKirliaGfx7, ARRAY_COUNT(sKirliaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx8[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_8.4bpp");
+static const u8 sKirliaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_8.4bpp.lz");
 static const ax_sprite sKirliaSprites8[] = {
 	{sKirliaGfx8, ARRAY_COUNT(sKirliaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx9[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_9.4bpp");
+static const u8 sKirliaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_9.4bpp.lz");
 static const ax_sprite sKirliaSprites9[] = {
 	{sKirliaGfx9, ARRAY_COUNT(sKirliaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx10[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_10.4bpp");
+static const u8 sKirliaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_10.4bpp.lz");
 static const ax_sprite sKirliaSprites10[] = {
 	{sKirliaGfx10, ARRAY_COUNT(sKirliaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx11[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_11.4bpp");
-static const u8 sKirliaGfx11_1[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_11_1.4bpp");
-static const u8 sKirliaGfx11_2[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_11_2.4bpp");
+static const u8 sKirliaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_11.4bpp.lz");
+static const u8 sKirliaGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_11_1.4bpp.lz");
+static const u8 sKirliaGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_11_2.4bpp.lz");
 static const ax_sprite sKirliaSprites11[] = {
 	{NULL, 32}, 
 	{sKirliaGfx11, ARRAY_COUNT(sKirliaGfx11)}, 
@@ -2102,9 +2102,9 @@ static const ax_sprite sKirliaSprites11[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx12[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_12.4bpp");
-static const u8 sKirliaGfx12_1[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_12_1.4bpp");
-static const u8 sKirliaGfx12_2[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_12_2.4bpp");
+static const u8 sKirliaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_12.4bpp.lz");
+static const u8 sKirliaGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_12_1.4bpp.lz");
+static const u8 sKirliaGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_12_2.4bpp.lz");
 static const ax_sprite sKirliaSprites12[] = {
 	{NULL, 32}, 
 	{sKirliaGfx12, ARRAY_COUNT(sKirliaGfx12)}, 
@@ -2115,9 +2115,9 @@ static const ax_sprite sKirliaSprites12[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx13[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_13.4bpp");
-static const u8 sKirliaGfx13_1[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_13_1.4bpp");
-static const u8 sKirliaGfx13_2[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_13_2.4bpp");
+static const u8 sKirliaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_13.4bpp.lz");
+static const u8 sKirliaGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_13_1.4bpp.lz");
+static const u8 sKirliaGfx13_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_13_2.4bpp.lz");
 static const ax_sprite sKirliaSprites13[] = {
 	{sKirliaGfx13, ARRAY_COUNT(sKirliaGfx13)}, 
 	{NULL, 32}, 
@@ -2127,21 +2127,21 @@ static const ax_sprite sKirliaSprites13[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx14[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_14.4bpp");
+static const u8 sKirliaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_14.4bpp.lz");
 static const ax_sprite sKirliaSprites14[] = {
 	{sKirliaGfx14, ARRAY_COUNT(sKirliaGfx14)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx15[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_15.4bpp");
+static const u8 sKirliaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_15.4bpp.lz");
 static const ax_sprite sKirliaSprites15[] = {
 	{sKirliaGfx15, ARRAY_COUNT(sKirliaGfx15)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx16[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_16.4bpp");
-static const u8 sKirliaGfx16_1[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_16_1.4bpp");
-static const u8 sKirliaGfx16_2[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_16_2.4bpp");
+static const u8 sKirliaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_16.4bpp.lz");
+static const u8 sKirliaGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_16_1.4bpp.lz");
+static const u8 sKirliaGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_16_2.4bpp.lz");
 static const ax_sprite sKirliaSprites16[] = {
 	{sKirliaGfx16, ARRAY_COUNT(sKirliaGfx16)}, 
 	{NULL, 64}, 
@@ -2151,45 +2151,45 @@ static const ax_sprite sKirliaSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx17[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_17.4bpp");
+static const u8 sKirliaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_17.4bpp.lz");
 static const ax_sprite sKirliaSprites17[] = {
 	{sKirliaGfx17, ARRAY_COUNT(sKirliaGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx18[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_18.4bpp");
+static const u8 sKirliaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_18.4bpp.lz");
 static const ax_sprite sKirliaSprites18[] = {
 	{sKirliaGfx18, ARRAY_COUNT(sKirliaGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx19[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_19.4bpp");
+static const u8 sKirliaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_19.4bpp.lz");
 static const ax_sprite sKirliaSprites19[] = {
 	{sKirliaGfx19, ARRAY_COUNT(sKirliaGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx20[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_20.4bpp");
+static const u8 sKirliaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_20.4bpp.lz");
 static const ax_sprite sKirliaSprites20[] = {
 	{sKirliaGfx20, ARRAY_COUNT(sKirliaGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx21[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_21.4bpp");
+static const u8 sKirliaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_21.4bpp.lz");
 static const ax_sprite sKirliaSprites21[] = {
 	{sKirliaGfx21, ARRAY_COUNT(sKirliaGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx22[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_22.4bpp");
+static const u8 sKirliaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_22.4bpp.lz");
 static const ax_sprite sKirliaSprites22[] = {
 	{sKirliaGfx22, ARRAY_COUNT(sKirliaGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx23[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_23.4bpp");
-static const u8 sKirliaGfx23_1[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_23_1.4bpp");
-static const u8 sKirliaGfx23_2[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_23_2.4bpp");
+static const u8 sKirliaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_23.4bpp.lz");
+static const u8 sKirliaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_23_1.4bpp.lz");
+static const u8 sKirliaGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_23_2.4bpp.lz");
 static const ax_sprite sKirliaSprites23[] = {
 	{NULL, 32}, 
 	{sKirliaGfx23, ARRAY_COUNT(sKirliaGfx23)}, 
@@ -2200,9 +2200,9 @@ static const ax_sprite sKirliaSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx24[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_24.4bpp");
-static const u8 sKirliaGfx24_1[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_24_1.4bpp");
-static const u8 sKirliaGfx24_2[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_24_2.4bpp");
+static const u8 sKirliaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_24.4bpp.lz");
+static const u8 sKirliaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_24_1.4bpp.lz");
+static const u8 sKirliaGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_24_2.4bpp.lz");
 static const ax_sprite sKirliaSprites24[] = {
 	{NULL, 32}, 
 	{sKirliaGfx24, ARRAY_COUNT(sKirliaGfx24)}, 
@@ -2213,9 +2213,9 @@ static const ax_sprite sKirliaSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx25[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_25.4bpp");
-static const u8 sKirliaGfx25_1[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_25_1.4bpp");
-static const u8 sKirliaGfx25_2[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_25_2.4bpp");
+static const u8 sKirliaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_25.4bpp.lz");
+static const u8 sKirliaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_25_1.4bpp.lz");
+static const u8 sKirliaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_25_2.4bpp.lz");
 static const ax_sprite sKirliaSprites25[] = {
 	{NULL, 32}, 
 	{sKirliaGfx25, ARRAY_COUNT(sKirliaGfx25)}, 
@@ -2226,37 +2226,37 @@ static const ax_sprite sKirliaSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx26[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_26.4bpp");
+static const u8 sKirliaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_26.4bpp.lz");
 static const ax_sprite sKirliaSprites26[] = {
 	{sKirliaGfx26, ARRAY_COUNT(sKirliaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx27[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_27.4bpp");
+static const u8 sKirliaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_27.4bpp.lz");
 static const ax_sprite sKirliaSprites27[] = {
 	{sKirliaGfx27, ARRAY_COUNT(sKirliaGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx28[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_28.4bpp");
+static const u8 sKirliaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_28.4bpp.lz");
 static const ax_sprite sKirliaSprites28[] = {
 	{sKirliaGfx28, ARRAY_COUNT(sKirliaGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx29[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_29.4bpp");
+static const u8 sKirliaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_29.4bpp.lz");
 static const ax_sprite sKirliaSprites29[] = {
 	{sKirliaGfx29, ARRAY_COUNT(sKirliaGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx30[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_30.4bpp");
+static const u8 sKirliaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_30.4bpp.lz");
 static const ax_sprite sKirliaSprites30[] = {
 	{sKirliaGfx30, ARRAY_COUNT(sKirliaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx31[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_31.4bpp");
+static const u8 sKirliaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_31.4bpp.lz");
 static const ax_sprite sKirliaSprites31[] = {
 	{sKirliaGfx31, ARRAY_COUNT(sKirliaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sKirliaGfx32[] = INCBIN_U8("graphics/ax/mon/kirlia/sprite_32.4bpp");
+static const u8 sKirliaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kirlia/sprite_32.4bpp.lz");
 static const ax_sprite sKirliaSprites32[] = {
 	{sKirliaGfx32, ARRAY_COUNT(sKirliaGfx32)}, 
 	{NULL, 0}

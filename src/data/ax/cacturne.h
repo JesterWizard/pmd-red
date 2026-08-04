@@ -2573,105 +2573,105 @@ static const ax_anim sCacturneAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCacturneGfx1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_1.4bpp");
+static const u8 sCacturneGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_1.4bpp.lz");
 static const ax_sprite sCacturneSprites1[] = {
 	{sCacturneGfx1, ARRAY_COUNT(sCacturneGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_2.4bpp");
+static const u8 sCacturneGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_2.4bpp.lz");
 static const ax_sprite sCacturneSprites2[] = {
 	{sCacturneGfx2, ARRAY_COUNT(sCacturneGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx3[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_3.4bpp");
+static const u8 sCacturneGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_3.4bpp.lz");
 static const ax_sprite sCacturneSprites3[] = {
 	{sCacturneGfx3, ARRAY_COUNT(sCacturneGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx4[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_4.4bpp");
+static const u8 sCacturneGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_4.4bpp.lz");
 static const ax_sprite sCacturneSprites4[] = {
 	{sCacturneGfx4, ARRAY_COUNT(sCacturneGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx5[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_5.4bpp");
+static const u8 sCacturneGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_5.4bpp.lz");
 static const ax_sprite sCacturneSprites5[] = {
 	{sCacturneGfx5, ARRAY_COUNT(sCacturneGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx6[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_6.4bpp");
+static const u8 sCacturneGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_6.4bpp.lz");
 static const ax_sprite sCacturneSprites6[] = {
 	{sCacturneGfx6, ARRAY_COUNT(sCacturneGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx7[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_7.4bpp");
+static const u8 sCacturneGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_7.4bpp.lz");
 static const ax_sprite sCacturneSprites7[] = {
 	{sCacturneGfx7, ARRAY_COUNT(sCacturneGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx8[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_8.4bpp");
+static const u8 sCacturneGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_8.4bpp.lz");
 static const ax_sprite sCacturneSprites8[] = {
 	{sCacturneGfx8, ARRAY_COUNT(sCacturneGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx9[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_9.4bpp");
+static const u8 sCacturneGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_9.4bpp.lz");
 static const ax_sprite sCacturneSprites9[] = {
 	{sCacturneGfx9, ARRAY_COUNT(sCacturneGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx10[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_10.4bpp");
+static const u8 sCacturneGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_10.4bpp.lz");
 static const ax_sprite sCacturneSprites10[] = {
 	{sCacturneGfx10, ARRAY_COUNT(sCacturneGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx11[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_11.4bpp");
+static const u8 sCacturneGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_11.4bpp.lz");
 static const ax_sprite sCacturneSprites11[] = {
 	{sCacturneGfx11, ARRAY_COUNT(sCacturneGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx12[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_12.4bpp");
+static const u8 sCacturneGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_12.4bpp.lz");
 static const ax_sprite sCacturneSprites12[] = {
 	{sCacturneGfx12, ARRAY_COUNT(sCacturneGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx13[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_13.4bpp");
+static const u8 sCacturneGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_13.4bpp.lz");
 static const ax_sprite sCacturneSprites13[] = {
 	{sCacturneGfx13, ARRAY_COUNT(sCacturneGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx14[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_14.4bpp");
+static const u8 sCacturneGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_14.4bpp.lz");
 static const ax_sprite sCacturneSprites14[] = {
 	{sCacturneGfx14, ARRAY_COUNT(sCacturneGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx15[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_15.4bpp");
+static const u8 sCacturneGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_15.4bpp.lz");
 static const ax_sprite sCacturneSprites15[] = {
 	{sCacturneGfx15, ARRAY_COUNT(sCacturneGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx16[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_16.4bpp");
+static const u8 sCacturneGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_16.4bpp.lz");
 static const ax_sprite sCacturneSprites16[] = {
 	{sCacturneGfx16, ARRAY_COUNT(sCacturneGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx17[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_17.4bpp");
+static const u8 sCacturneGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_17.4bpp.lz");
 static const ax_sprite sCacturneSprites17[] = {
 	{sCacturneGfx17, ARRAY_COUNT(sCacturneGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx18[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_18.4bpp");
+static const u8 sCacturneGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_18.4bpp.lz");
 static const ax_sprite sCacturneSprites18[] = {
 	{sCacturneGfx18, ARRAY_COUNT(sCacturneGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx19[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_19.4bpp");
+static const u8 sCacturneGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_19.4bpp.lz");
 static const ax_sprite sCacturneSprites19[] = {
 	{sCacturneGfx19, ARRAY_COUNT(sCacturneGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx20[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_20.4bpp");
-static const u8 sCacturneGfx20_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_20_1.4bpp");
-static const u8 sCacturneGfx20_2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_20_2.4bpp");
-static const u8 sCacturneGfx20_3[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_20_3.4bpp");
+static const u8 sCacturneGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_20.4bpp.lz");
+static const u8 sCacturneGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_20_1.4bpp.lz");
+static const u8 sCacturneGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_20_2.4bpp.lz");
+static const u8 sCacturneGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_20_3.4bpp.lz");
 static const ax_sprite sCacturneSprites20[] = {
 	{sCacturneGfx20, ARRAY_COUNT(sCacturneGfx20)}, 
 	{NULL, 32}, 
@@ -2682,9 +2682,9 @@ static const ax_sprite sCacturneSprites20[] = {
 	{sCacturneGfx20_3, ARRAY_COUNT(sCacturneGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx21[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_21.4bpp");
-static const u8 sCacturneGfx21_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_21_1.4bpp");
-static const u8 sCacturneGfx21_2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_21_2.4bpp");
+static const u8 sCacturneGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_21.4bpp.lz");
+static const u8 sCacturneGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_21_1.4bpp.lz");
+static const u8 sCacturneGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_21_2.4bpp.lz");
 static const ax_sprite sCacturneSprites21[] = {
 	{sCacturneGfx21, ARRAY_COUNT(sCacturneGfx21)}, 
 	{NULL, 32}, 
@@ -2693,8 +2693,8 @@ static const ax_sprite sCacturneSprites21[] = {
 	{sCacturneGfx21_2, ARRAY_COUNT(sCacturneGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx22[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_22.4bpp");
-static const u8 sCacturneGfx22_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_22_1.4bpp");
+static const u8 sCacturneGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_22.4bpp.lz");
+static const u8 sCacturneGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_22_1.4bpp.lz");
 static const ax_sprite sCacturneSprites22[] = {
 	{NULL, 32}, 
 	{sCacturneGfx22, ARRAY_COUNT(sCacturneGfx22)}, 
@@ -2702,23 +2702,23 @@ static const ax_sprite sCacturneSprites22[] = {
 	{sCacturneGfx22_1, ARRAY_COUNT(sCacturneGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx23[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_23.4bpp");
+static const u8 sCacturneGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_23.4bpp.lz");
 static const ax_sprite sCacturneSprites23[] = {
 	{sCacturneGfx23, ARRAY_COUNT(sCacturneGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx24[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_24.4bpp");
+static const u8 sCacturneGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_24.4bpp.lz");
 static const ax_sprite sCacturneSprites24[] = {
 	{sCacturneGfx24, ARRAY_COUNT(sCacturneGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx25[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_25.4bpp");
+static const u8 sCacturneGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_25.4bpp.lz");
 static const ax_sprite sCacturneSprites25[] = {
 	{sCacturneGfx25, ARRAY_COUNT(sCacturneGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx26[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_26.4bpp");
-static const u8 sCacturneGfx26_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_26_1.4bpp");
+static const u8 sCacturneGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_26.4bpp.lz");
+static const u8 sCacturneGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_26_1.4bpp.lz");
 static const ax_sprite sCacturneSprites26[] = {
 	{sCacturneGfx26, ARRAY_COUNT(sCacturneGfx26)}, 
 	{NULL, 64}, 
@@ -2726,30 +2726,30 @@ static const ax_sprite sCacturneSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx27[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_27.4bpp");
-static const u8 sCacturneGfx27_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_27_1.4bpp");
+static const u8 sCacturneGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_27.4bpp.lz");
+static const u8 sCacturneGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_27_1.4bpp.lz");
 static const ax_sprite sCacturneSprites27[] = {
 	{sCacturneGfx27, ARRAY_COUNT(sCacturneGfx27)}, 
 	{NULL, 32}, 
 	{sCacturneGfx27_1, ARRAY_COUNT(sCacturneGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx28[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_28.4bpp");
+static const u8 sCacturneGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_28.4bpp.lz");
 static const ax_sprite sCacturneSprites28[] = {
 	{sCacturneGfx28, ARRAY_COUNT(sCacturneGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx29[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_29.4bpp");
-static const u8 sCacturneGfx29_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_29_1.4bpp");
+static const u8 sCacturneGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_29.4bpp.lz");
+static const u8 sCacturneGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_29_1.4bpp.lz");
 static const ax_sprite sCacturneSprites29[] = {
 	{sCacturneGfx29, ARRAY_COUNT(sCacturneGfx29)}, 
 	{NULL, 32}, 
 	{sCacturneGfx29_1, ARRAY_COUNT(sCacturneGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx30[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_30.4bpp");
-static const u8 sCacturneGfx30_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_30_1.4bpp");
-static const u8 sCacturneGfx30_2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_30_2.4bpp");
+static const u8 sCacturneGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_30.4bpp.lz");
+static const u8 sCacturneGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_30_1.4bpp.lz");
+static const u8 sCacturneGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_30_2.4bpp.lz");
 static const ax_sprite sCacturneSprites30[] = {
 	{sCacturneGfx30, ARRAY_COUNT(sCacturneGfx30)}, 
 	{NULL, 32}, 
@@ -2758,39 +2758,39 @@ static const ax_sprite sCacturneSprites30[] = {
 	{sCacturneGfx30_2, ARRAY_COUNT(sCacturneGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx31[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_31.4bpp");
+static const u8 sCacturneGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_31.4bpp.lz");
 static const ax_sprite sCacturneSprites31[] = {
 	{sCacturneGfx31, ARRAY_COUNT(sCacturneGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx32[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_32.4bpp");
+static const u8 sCacturneGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_32.4bpp.lz");
 static const ax_sprite sCacturneSprites32[] = {
 	{sCacturneGfx32, ARRAY_COUNT(sCacturneGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx33[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_33.4bpp");
+static const u8 sCacturneGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_33.4bpp.lz");
 static const ax_sprite sCacturneSprites33[] = {
 	{sCacturneGfx33, ARRAY_COUNT(sCacturneGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx34[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_34.4bpp");
+static const u8 sCacturneGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_34.4bpp.lz");
 static const ax_sprite sCacturneSprites34[] = {
 	{sCacturneGfx34, ARRAY_COUNT(sCacturneGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx35[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_35.4bpp");
+static const u8 sCacturneGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_35.4bpp.lz");
 static const ax_sprite sCacturneSprites35[] = {
 	{sCacturneGfx35, ARRAY_COUNT(sCacturneGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx36[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_36.4bpp");
+static const u8 sCacturneGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_36.4bpp.lz");
 static const ax_sprite sCacturneSprites36[] = {
 	{sCacturneGfx36, ARRAY_COUNT(sCacturneGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx37[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_37.4bpp");
-static const u8 sCacturneGfx37_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_37_1.4bpp");
-static const u8 sCacturneGfx37_2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_37_2.4bpp");
+static const u8 sCacturneGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_37.4bpp.lz");
+static const u8 sCacturneGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_37_1.4bpp.lz");
+static const u8 sCacturneGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_37_2.4bpp.lz");
 static const ax_sprite sCacturneSprites37[] = {
 	{sCacturneGfx37, ARRAY_COUNT(sCacturneGfx37)}, 
 	{NULL, 32}, 
@@ -2799,9 +2799,9 @@ static const ax_sprite sCacturneSprites37[] = {
 	{sCacturneGfx37_2, ARRAY_COUNT(sCacturneGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx38[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_38.4bpp");
-static const u8 sCacturneGfx38_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_38_1.4bpp");
-static const u8 sCacturneGfx38_2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_38_2.4bpp");
+static const u8 sCacturneGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_38.4bpp.lz");
+static const u8 sCacturneGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_38_1.4bpp.lz");
+static const u8 sCacturneGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_38_2.4bpp.lz");
 static const ax_sprite sCacturneSprites38[] = {
 	{NULL, 32}, 
 	{sCacturneGfx38, ARRAY_COUNT(sCacturneGfx38)}, 
@@ -2811,9 +2811,9 @@ static const ax_sprite sCacturneSprites38[] = {
 	{sCacturneGfx38_2, ARRAY_COUNT(sCacturneGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx39[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_39.4bpp");
-static const u8 sCacturneGfx39_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_39_1.4bpp");
-static const u8 sCacturneGfx39_2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_39_2.4bpp");
+static const u8 sCacturneGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_39.4bpp.lz");
+static const u8 sCacturneGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_39_1.4bpp.lz");
+static const u8 sCacturneGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_39_2.4bpp.lz");
 static const ax_sprite sCacturneSprites39[] = {
 	{sCacturneGfx39, ARRAY_COUNT(sCacturneGfx39)}, 
 	{NULL, 32}, 
@@ -2822,9 +2822,9 @@ static const ax_sprite sCacturneSprites39[] = {
 	{sCacturneGfx39_2, ARRAY_COUNT(sCacturneGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx40[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_40.4bpp");
-static const u8 sCacturneGfx40_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_40_1.4bpp");
-static const u8 sCacturneGfx40_2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_40_2.4bpp");
+static const u8 sCacturneGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_40.4bpp.lz");
+static const u8 sCacturneGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_40_1.4bpp.lz");
+static const u8 sCacturneGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_40_2.4bpp.lz");
 static const ax_sprite sCacturneSprites40[] = {
 	{sCacturneGfx40, ARRAY_COUNT(sCacturneGfx40)}, 
 	{NULL, 32}, 
@@ -2834,8 +2834,8 @@ static const ax_sprite sCacturneSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx41[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_41.4bpp");
-static const u8 sCacturneGfx41_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_41_1.4bpp");
+static const u8 sCacturneGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_41.4bpp.lz");
+static const u8 sCacturneGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_41_1.4bpp.lz");
 static const ax_sprite sCacturneSprites41[] = {
 	{NULL, 32}, 
 	{sCacturneGfx41, ARRAY_COUNT(sCacturneGfx41)}, 
@@ -2843,9 +2843,9 @@ static const ax_sprite sCacturneSprites41[] = {
 	{sCacturneGfx41_1, ARRAY_COUNT(sCacturneGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx42[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_42.4bpp");
-static const u8 sCacturneGfx42_1[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_42_1.4bpp");
-static const u8 sCacturneGfx42_2[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_42_2.4bpp");
+static const u8 sCacturneGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_42.4bpp.lz");
+static const u8 sCacturneGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_42_1.4bpp.lz");
+static const u8 sCacturneGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_42_2.4bpp.lz");
 static const ax_sprite sCacturneSprites42[] = {
 	{NULL, 32}, 
 	{sCacturneGfx42, ARRAY_COUNT(sCacturneGfx42)}, 
@@ -2855,72 +2855,72 @@ static const ax_sprite sCacturneSprites42[] = {
 	{sCacturneGfx42_2, ARRAY_COUNT(sCacturneGfx42_2)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx43[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_43.4bpp");
+static const u8 sCacturneGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_43.4bpp.lz");
 static const ax_sprite sCacturneSprites43[] = {
 	{sCacturneGfx43, ARRAY_COUNT(sCacturneGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx44[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_44.4bpp");
+static const u8 sCacturneGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_44.4bpp.lz");
 static const ax_sprite sCacturneSprites44[] = {
 	{sCacturneGfx44, ARRAY_COUNT(sCacturneGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx45[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_45.4bpp");
+static const u8 sCacturneGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_45.4bpp.lz");
 static const ax_sprite sCacturneSprites45[] = {
 	{sCacturneGfx45, ARRAY_COUNT(sCacturneGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx46[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_46.4bpp");
+static const u8 sCacturneGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_46.4bpp.lz");
 static const ax_sprite sCacturneSprites46[] = {
 	{sCacturneGfx46, ARRAY_COUNT(sCacturneGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx47[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_47.4bpp");
+static const u8 sCacturneGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_47.4bpp.lz");
 static const ax_sprite sCacturneSprites47[] = {
 	{sCacturneGfx47, ARRAY_COUNT(sCacturneGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx48[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_48.4bpp");
+static const u8 sCacturneGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_48.4bpp.lz");
 static const ax_sprite sCacturneSprites48[] = {
 	{sCacturneGfx48, ARRAY_COUNT(sCacturneGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx49[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_49.4bpp");
+static const u8 sCacturneGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_49.4bpp.lz");
 static const ax_sprite sCacturneSprites49[] = {
 	{sCacturneGfx49, ARRAY_COUNT(sCacturneGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx50[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_50.4bpp");
+static const u8 sCacturneGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_50.4bpp.lz");
 static const ax_sprite sCacturneSprites50[] = {
 	{sCacturneGfx50, ARRAY_COUNT(sCacturneGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx51[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_51.4bpp");
+static const u8 sCacturneGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_51.4bpp.lz");
 static const ax_sprite sCacturneSprites51[] = {
 	{sCacturneGfx51, ARRAY_COUNT(sCacturneGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx52[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_52.4bpp");
+static const u8 sCacturneGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_52.4bpp.lz");
 static const ax_sprite sCacturneSprites52[] = {
 	{sCacturneGfx52, ARRAY_COUNT(sCacturneGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx53[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_53.4bpp");
+static const u8 sCacturneGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_53.4bpp.lz");
 static const ax_sprite sCacturneSprites53[] = {
 	{sCacturneGfx53, ARRAY_COUNT(sCacturneGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx54[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_54.4bpp");
+static const u8 sCacturneGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_54.4bpp.lz");
 static const ax_sprite sCacturneSprites54[] = {
 	{sCacturneGfx54, ARRAY_COUNT(sCacturneGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx55[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_55.4bpp");
+static const u8 sCacturneGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_55.4bpp.lz");
 static const ax_sprite sCacturneSprites55[] = {
 	{sCacturneGfx55, ARRAY_COUNT(sCacturneGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sCacturneGfx56[] = INCBIN_U8("graphics/ax/mon/cacturne/sprite_56.4bpp");
+static const u8 sCacturneGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/cacturne/sprite_56.4bpp.lz");
 static const ax_sprite sCacturneSprites56[] = {
 	{sCacturneGfx56, ARRAY_COUNT(sCacturneGfx56)}, 
 	{NULL, 0}

@@ -1915,84 +1915,84 @@ static const ax_anim sShellderAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sShellderGfx1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_1.4bpp");
+static const u8 sShellderGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_1.4bpp.lz");
 static const ax_sprite sShellderSprites1[] = {
 	{sShellderGfx1, ARRAY_COUNT(sShellderGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_2.4bpp");
+static const u8 sShellderGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_2.4bpp.lz");
 static const ax_sprite sShellderSprites2[] = {
 	{sShellderGfx2, ARRAY_COUNT(sShellderGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx3[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_3.4bpp");
+static const u8 sShellderGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_3.4bpp.lz");
 static const ax_sprite sShellderSprites3[] = {
 	{sShellderGfx3, ARRAY_COUNT(sShellderGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx4[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_4.4bpp");
+static const u8 sShellderGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_4.4bpp.lz");
 static const ax_sprite sShellderSprites4[] = {
 	{sShellderGfx4, ARRAY_COUNT(sShellderGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx5[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_5.4bpp");
+static const u8 sShellderGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_5.4bpp.lz");
 static const ax_sprite sShellderSprites5[] = {
 	{sShellderGfx5, ARRAY_COUNT(sShellderGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx6[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_6.4bpp");
+static const u8 sShellderGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_6.4bpp.lz");
 static const ax_sprite sShellderSprites6[] = {
 	{sShellderGfx6, ARRAY_COUNT(sShellderGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx7[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_7.4bpp");
+static const u8 sShellderGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_7.4bpp.lz");
 static const ax_sprite sShellderSprites7[] = {
 	{sShellderGfx7, ARRAY_COUNT(sShellderGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx8[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_8.4bpp");
+static const u8 sShellderGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_8.4bpp.lz");
 static const ax_sprite sShellderSprites8[] = {
 	{sShellderGfx8, ARRAY_COUNT(sShellderGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx9[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_9.4bpp");
+static const u8 sShellderGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_9.4bpp.lz");
 static const ax_sprite sShellderSprites9[] = {
 	{sShellderGfx9, ARRAY_COUNT(sShellderGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx10[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_10.4bpp");
+static const u8 sShellderGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_10.4bpp.lz");
 static const ax_sprite sShellderSprites10[] = {
 	{sShellderGfx10, ARRAY_COUNT(sShellderGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx11[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_11.4bpp");
+static const u8 sShellderGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_11.4bpp.lz");
 static const ax_sprite sShellderSprites11[] = {
 	{sShellderGfx11, ARRAY_COUNT(sShellderGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx12[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_12.4bpp");
+static const u8 sShellderGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_12.4bpp.lz");
 static const ax_sprite sShellderSprites12[] = {
 	{sShellderGfx12, ARRAY_COUNT(sShellderGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx13[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_13.4bpp");
+static const u8 sShellderGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_13.4bpp.lz");
 static const ax_sprite sShellderSprites13[] = {
 	{sShellderGfx13, ARRAY_COUNT(sShellderGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx14[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_14.4bpp");
+static const u8 sShellderGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_14.4bpp.lz");
 static const ax_sprite sShellderSprites14[] = {
 	{sShellderGfx14, ARRAY_COUNT(sShellderGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx15[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_15.4bpp");
+static const u8 sShellderGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_15.4bpp.lz");
 static const ax_sprite sShellderSprites15[] = {
 	{sShellderGfx15, ARRAY_COUNT(sShellderGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx16[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_16.4bpp");
-static const u8 sShellderGfx16_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_16_1.4bpp");
-static const u8 sShellderGfx16_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_16_2.4bpp");
+static const u8 sShellderGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_16.4bpp.lz");
+static const u8 sShellderGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_16_1.4bpp.lz");
+static const u8 sShellderGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_16_2.4bpp.lz");
 static const ax_sprite sShellderSprites16[] = {
 	{sShellderGfx16, ARRAY_COUNT(sShellderGfx16)}, 
 	{NULL, 32}, 
@@ -2002,10 +2002,10 @@ static const ax_sprite sShellderSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx17[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_17.4bpp");
-static const u8 sShellderGfx17_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_17_1.4bpp");
-static const u8 sShellderGfx17_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_17_2.4bpp");
-static const u8 sShellderGfx17_3[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_17_3.4bpp");
+static const u8 sShellderGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_17.4bpp.lz");
+static const u8 sShellderGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_17_1.4bpp.lz");
+static const u8 sShellderGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_17_2.4bpp.lz");
+static const u8 sShellderGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_17_3.4bpp.lz");
 static const ax_sprite sShellderSprites17[] = {
 	{sShellderGfx17, ARRAY_COUNT(sShellderGfx17)}, 
 	{NULL, 32}, 
@@ -2017,9 +2017,9 @@ static const ax_sprite sShellderSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx18[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_18.4bpp");
-static const u8 sShellderGfx18_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_18_1.4bpp");
-static const u8 sShellderGfx18_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_18_2.4bpp");
+static const u8 sShellderGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_18.4bpp.lz");
+static const u8 sShellderGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_18_1.4bpp.lz");
+static const u8 sShellderGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_18_2.4bpp.lz");
 static const ax_sprite sShellderSprites18[] = {
 	{sShellderGfx18, ARRAY_COUNT(sShellderGfx18)}, 
 	{NULL, 32}, 
@@ -2029,10 +2029,10 @@ static const ax_sprite sShellderSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx19[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_19.4bpp");
-static const u8 sShellderGfx19_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_19_1.4bpp");
-static const u8 sShellderGfx19_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_19_2.4bpp");
-static const u8 sShellderGfx19_3[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_19_3.4bpp");
+static const u8 sShellderGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_19.4bpp.lz");
+static const u8 sShellderGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_19_1.4bpp.lz");
+static const u8 sShellderGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_19_2.4bpp.lz");
+static const u8 sShellderGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_19_3.4bpp.lz");
 static const ax_sprite sShellderSprites19[] = {
 	{sShellderGfx19, ARRAY_COUNT(sShellderGfx19)}, 
 	{NULL, 32}, 
@@ -2044,9 +2044,9 @@ static const ax_sprite sShellderSprites19[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx20[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_20.4bpp");
-static const u8 sShellderGfx20_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_20_1.4bpp");
-static const u8 sShellderGfx20_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_20_2.4bpp");
+static const u8 sShellderGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_20.4bpp.lz");
+static const u8 sShellderGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_20_1.4bpp.lz");
+static const u8 sShellderGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_20_2.4bpp.lz");
 static const ax_sprite sShellderSprites20[] = {
 	{sShellderGfx20, ARRAY_COUNT(sShellderGfx20)}, 
 	{NULL, 32}, 
@@ -2056,8 +2056,8 @@ static const ax_sprite sShellderSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx21[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_21.4bpp");
-static const u8 sShellderGfx21_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_21_1.4bpp");
+static const u8 sShellderGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_21.4bpp.lz");
+static const u8 sShellderGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_21_1.4bpp.lz");
 static const ax_sprite sShellderSprites21[] = {
 	{NULL, 32}, 
 	{sShellderGfx21, ARRAY_COUNT(sShellderGfx21)}, 
@@ -2066,9 +2066,9 @@ static const ax_sprite sShellderSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx22[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_22.4bpp");
-static const u8 sShellderGfx22_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_22_1.4bpp");
-static const u8 sShellderGfx22_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_22_2.4bpp");
+static const u8 sShellderGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_22.4bpp.lz");
+static const u8 sShellderGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_22_1.4bpp.lz");
+static const u8 sShellderGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_22_2.4bpp.lz");
 static const ax_sprite sShellderSprites22[] = {
 	{sShellderGfx22, ARRAY_COUNT(sShellderGfx22)}, 
 	{NULL, 32}, 
@@ -2078,9 +2078,9 @@ static const ax_sprite sShellderSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx23[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_23.4bpp");
-static const u8 sShellderGfx23_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_23_1.4bpp");
-static const u8 sShellderGfx23_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_23_2.4bpp");
+static const u8 sShellderGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_23.4bpp.lz");
+static const u8 sShellderGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_23_1.4bpp.lz");
+static const u8 sShellderGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_23_2.4bpp.lz");
 static const ax_sprite sShellderSprites23[] = {
 	{sShellderGfx23, ARRAY_COUNT(sShellderGfx23)}, 
 	{NULL, 32}, 
@@ -2090,9 +2090,9 @@ static const ax_sprite sShellderSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx24[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_24.4bpp");
-static const u8 sShellderGfx24_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_24_1.4bpp");
-static const u8 sShellderGfx24_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_24_2.4bpp");
+static const u8 sShellderGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_24.4bpp.lz");
+static const u8 sShellderGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_24_1.4bpp.lz");
+static const u8 sShellderGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_24_2.4bpp.lz");
 static const ax_sprite sShellderSprites24[] = {
 	{sShellderGfx24, ARRAY_COUNT(sShellderGfx24)}, 
 	{NULL, 32}, 
@@ -2102,9 +2102,9 @@ static const ax_sprite sShellderSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx25[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_25.4bpp");
-static const u8 sShellderGfx25_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_25_1.4bpp");
-static const u8 sShellderGfx25_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_25_2.4bpp");
+static const u8 sShellderGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_25.4bpp.lz");
+static const u8 sShellderGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_25_1.4bpp.lz");
+static const u8 sShellderGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_25_2.4bpp.lz");
 static const ax_sprite sShellderSprites25[] = {
 	{sShellderGfx25, ARRAY_COUNT(sShellderGfx25)}, 
 	{NULL, 32}, 
@@ -2114,9 +2114,9 @@ static const ax_sprite sShellderSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx26[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_26.4bpp");
-static const u8 sShellderGfx26_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_26_1.4bpp");
-static const u8 sShellderGfx26_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_26_2.4bpp");
+static const u8 sShellderGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_26.4bpp.lz");
+static const u8 sShellderGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_26_1.4bpp.lz");
+static const u8 sShellderGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_26_2.4bpp.lz");
 static const ax_sprite sShellderSprites26[] = {
 	{sShellderGfx26, ARRAY_COUNT(sShellderGfx26)}, 
 	{NULL, 32}, 
@@ -2126,9 +2126,9 @@ static const ax_sprite sShellderSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx27[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_27.4bpp");
-static const u8 sShellderGfx27_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_27_1.4bpp");
-static const u8 sShellderGfx27_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_27_2.4bpp");
+static const u8 sShellderGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_27.4bpp.lz");
+static const u8 sShellderGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_27_1.4bpp.lz");
+static const u8 sShellderGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_27_2.4bpp.lz");
 static const ax_sprite sShellderSprites27[] = {
 	{sShellderGfx27, ARRAY_COUNT(sShellderGfx27)}, 
 	{NULL, 32}, 
@@ -2138,9 +2138,9 @@ static const ax_sprite sShellderSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx28[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_28.4bpp");
-static const u8 sShellderGfx28_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_28_1.4bpp");
-static const u8 sShellderGfx28_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_28_2.4bpp");
+static const u8 sShellderGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_28.4bpp.lz");
+static const u8 sShellderGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_28_1.4bpp.lz");
+static const u8 sShellderGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_28_2.4bpp.lz");
 static const ax_sprite sShellderSprites28[] = {
 	{sShellderGfx28, ARRAY_COUNT(sShellderGfx28)}, 
 	{NULL, 32}, 
@@ -2150,9 +2150,9 @@ static const ax_sprite sShellderSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx29[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_29.4bpp");
-static const u8 sShellderGfx29_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_29_1.4bpp");
-static const u8 sShellderGfx29_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_29_2.4bpp");
+static const u8 sShellderGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_29.4bpp.lz");
+static const u8 sShellderGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_29_1.4bpp.lz");
+static const u8 sShellderGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_29_2.4bpp.lz");
 static const ax_sprite sShellderSprites29[] = {
 	{sShellderGfx29, ARRAY_COUNT(sShellderGfx29)}, 
 	{NULL, 32}, 
@@ -2162,9 +2162,9 @@ static const ax_sprite sShellderSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx30[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_30.4bpp");
-static const u8 sShellderGfx30_1[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_30_1.4bpp");
-static const u8 sShellderGfx30_2[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_30_2.4bpp");
+static const u8 sShellderGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_30.4bpp.lz");
+static const u8 sShellderGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_30_1.4bpp.lz");
+static const u8 sShellderGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_30_2.4bpp.lz");
 static const ax_sprite sShellderSprites30[] = {
 	{sShellderGfx30, ARRAY_COUNT(sShellderGfx30)}, 
 	{NULL, 32}, 
@@ -2174,37 +2174,37 @@ static const ax_sprite sShellderSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx31[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_31.4bpp");
+static const u8 sShellderGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_31.4bpp.lz");
 static const ax_sprite sShellderSprites31[] = {
 	{sShellderGfx31, ARRAY_COUNT(sShellderGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx32[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_32.4bpp");
+static const u8 sShellderGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_32.4bpp.lz");
 static const ax_sprite sShellderSprites32[] = {
 	{sShellderGfx32, ARRAY_COUNT(sShellderGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx33[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_33.4bpp");
+static const u8 sShellderGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_33.4bpp.lz");
 static const ax_sprite sShellderSprites33[] = {
 	{sShellderGfx33, ARRAY_COUNT(sShellderGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx34[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_34.4bpp");
+static const u8 sShellderGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_34.4bpp.lz");
 static const ax_sprite sShellderSprites34[] = {
 	{sShellderGfx34, ARRAY_COUNT(sShellderGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx35[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_35.4bpp");
+static const u8 sShellderGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_35.4bpp.lz");
 static const ax_sprite sShellderSprites35[] = {
 	{sShellderGfx35, ARRAY_COUNT(sShellderGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx36[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_36.4bpp");
+static const u8 sShellderGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_36.4bpp.lz");
 static const ax_sprite sShellderSprites36[] = {
 	{sShellderGfx36, ARRAY_COUNT(sShellderGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sShellderGfx37[] = INCBIN_U8("graphics/ax/mon/shellder/sprite_37.4bpp");
+static const u8 sShellderGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/shellder/sprite_37.4bpp.lz");
 static const ax_sprite sShellderSprites37[] = {
 	{sShellderGfx37, ARRAY_COUNT(sShellderGfx37)}, 
 	{NULL, 0}

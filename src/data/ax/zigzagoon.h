@@ -2127,85 +2127,85 @@ static const ax_anim sZigzagoonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sZigzagoonGfx1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_1.4bpp");
+static const u8 sZigzagoonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_1.4bpp.lz");
 static const ax_sprite sZigzagoonSprites1[] = {
 	{sZigzagoonGfx1, ARRAY_COUNT(sZigzagoonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_2.4bpp");
+static const u8 sZigzagoonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites2[] = {
 	{sZigzagoonGfx2, ARRAY_COUNT(sZigzagoonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx3[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_3.4bpp");
+static const u8 sZigzagoonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_3.4bpp.lz");
 static const ax_sprite sZigzagoonSprites3[] = {
 	{sZigzagoonGfx3, ARRAY_COUNT(sZigzagoonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx4[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_4.4bpp");
+static const u8 sZigzagoonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_4.4bpp.lz");
 static const ax_sprite sZigzagoonSprites4[] = {
 	{sZigzagoonGfx4, ARRAY_COUNT(sZigzagoonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx5[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_5.4bpp");
+static const u8 sZigzagoonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_5.4bpp.lz");
 static const ax_sprite sZigzagoonSprites5[] = {
 	{sZigzagoonGfx5, ARRAY_COUNT(sZigzagoonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx6[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_6.4bpp");
+static const u8 sZigzagoonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_6.4bpp.lz");
 static const ax_sprite sZigzagoonSprites6[] = {
 	{sZigzagoonGfx6, ARRAY_COUNT(sZigzagoonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx7[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_7.4bpp");
+static const u8 sZigzagoonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_7.4bpp.lz");
 static const ax_sprite sZigzagoonSprites7[] = {
 	{sZigzagoonGfx7, ARRAY_COUNT(sZigzagoonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx8[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_8.4bpp");
+static const u8 sZigzagoonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_8.4bpp.lz");
 static const ax_sprite sZigzagoonSprites8[] = {
 	{sZigzagoonGfx8, ARRAY_COUNT(sZigzagoonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx9[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_9.4bpp");
+static const u8 sZigzagoonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_9.4bpp.lz");
 static const ax_sprite sZigzagoonSprites9[] = {
 	{sZigzagoonGfx9, ARRAY_COUNT(sZigzagoonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx10[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_10.4bpp");
+static const u8 sZigzagoonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_10.4bpp.lz");
 static const ax_sprite sZigzagoonSprites10[] = {
 	{sZigzagoonGfx10, ARRAY_COUNT(sZigzagoonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx11[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_11.4bpp");
+static const u8 sZigzagoonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_11.4bpp.lz");
 static const ax_sprite sZigzagoonSprites11[] = {
 	{sZigzagoonGfx11, ARRAY_COUNT(sZigzagoonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx12[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_12.4bpp");
+static const u8 sZigzagoonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_12.4bpp.lz");
 static const ax_sprite sZigzagoonSprites12[] = {
 	{sZigzagoonGfx12, ARRAY_COUNT(sZigzagoonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx13[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_13.4bpp");
+static const u8 sZigzagoonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_13.4bpp.lz");
 static const ax_sprite sZigzagoonSprites13[] = {
 	{sZigzagoonGfx13, ARRAY_COUNT(sZigzagoonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx14[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_14.4bpp");
+static const u8 sZigzagoonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_14.4bpp.lz");
 static const ax_sprite sZigzagoonSprites14[] = {
 	{sZigzagoonGfx14, ARRAY_COUNT(sZigzagoonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx15[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_15.4bpp");
+static const u8 sZigzagoonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_15.4bpp.lz");
 static const ax_sprite sZigzagoonSprites15[] = {
 	{sZigzagoonGfx15, ARRAY_COUNT(sZigzagoonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx16[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_16.4bpp");
-static const u8 sZigzagoonGfx16_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_16_1.4bpp");
-static const u8 sZigzagoonGfx16_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_16_2.4bpp");
-static const u8 sZigzagoonGfx16_3[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_16_3.4bpp");
+static const u8 sZigzagoonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_16.4bpp.lz");
+static const u8 sZigzagoonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_16_1.4bpp.lz");
+static const u8 sZigzagoonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_16_2.4bpp.lz");
+static const u8 sZigzagoonGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_16_3.4bpp.lz");
 static const ax_sprite sZigzagoonSprites16[] = {
 	{NULL, 32}, 
 	{sZigzagoonGfx16, ARRAY_COUNT(sZigzagoonGfx16)}, 
@@ -2218,10 +2218,10 @@ static const ax_sprite sZigzagoonSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx17[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_17.4bpp");
-static const u8 sZigzagoonGfx17_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_17_1.4bpp");
-static const u8 sZigzagoonGfx17_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_17_2.4bpp");
-static const u8 sZigzagoonGfx17_3[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_17_3.4bpp");
+static const u8 sZigzagoonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_17.4bpp.lz");
+static const u8 sZigzagoonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_17_1.4bpp.lz");
+static const u8 sZigzagoonGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_17_2.4bpp.lz");
+static const u8 sZigzagoonGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_17_3.4bpp.lz");
 static const ax_sprite sZigzagoonSprites17[] = {
 	{NULL, 32}, 
 	{sZigzagoonGfx17, ARRAY_COUNT(sZigzagoonGfx17)}, 
@@ -2234,8 +2234,8 @@ static const ax_sprite sZigzagoonSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx18[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_18.4bpp");
-static const u8 sZigzagoonGfx18_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_18_1.4bpp");
+static const u8 sZigzagoonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_18.4bpp.lz");
+static const u8 sZigzagoonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_18_1.4bpp.lz");
 static const ax_sprite sZigzagoonSprites18[] = {
 	{NULL, 32}, 
 	{sZigzagoonGfx18, ARRAY_COUNT(sZigzagoonGfx18)}, 
@@ -2244,9 +2244,9 @@ static const ax_sprite sZigzagoonSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx19[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_19.4bpp");
-static const u8 sZigzagoonGfx19_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_19_1.4bpp");
-static const u8 sZigzagoonGfx19_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_19_2.4bpp");
+static const u8 sZigzagoonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_19.4bpp.lz");
+static const u8 sZigzagoonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_19_1.4bpp.lz");
+static const u8 sZigzagoonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_19_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites19[] = {
 	{NULL, 64}, 
 	{sZigzagoonGfx19, ARRAY_COUNT(sZigzagoonGfx19)}, 
@@ -2257,8 +2257,8 @@ static const ax_sprite sZigzagoonSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx20[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_20.4bpp");
-static const u8 sZigzagoonGfx20_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_20_1.4bpp");
+static const u8 sZigzagoonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_20.4bpp.lz");
+static const u8 sZigzagoonGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_20_1.4bpp.lz");
 static const ax_sprite sZigzagoonSprites20[] = {
 	{NULL, 32}, 
 	{sZigzagoonGfx20, ARRAY_COUNT(sZigzagoonGfx20)}, 
@@ -2267,21 +2267,21 @@ static const ax_sprite sZigzagoonSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx21[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_21.4bpp");
+static const u8 sZigzagoonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_21.4bpp.lz");
 static const ax_sprite sZigzagoonSprites21[] = {
 	{sZigzagoonGfx21, ARRAY_COUNT(sZigzagoonGfx21)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx22[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_22.4bpp");
+static const u8 sZigzagoonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_22.4bpp.lz");
 static const ax_sprite sZigzagoonSprites22[] = {
 	{sZigzagoonGfx22, ARRAY_COUNT(sZigzagoonGfx22)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx23[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_23.4bpp");
-static const u8 sZigzagoonGfx23_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_23_1.4bpp");
-static const u8 sZigzagoonGfx23_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_23_2.4bpp");
+static const u8 sZigzagoonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_23.4bpp.lz");
+static const u8 sZigzagoonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_23_1.4bpp.lz");
+static const u8 sZigzagoonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_23_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites23[] = {
 	{sZigzagoonGfx23, ARRAY_COUNT(sZigzagoonGfx23)}, 
 	{NULL, 32}, 
@@ -2291,9 +2291,9 @@ static const ax_sprite sZigzagoonSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx24[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_24.4bpp");
-static const u8 sZigzagoonGfx24_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_24_1.4bpp");
-static const u8 sZigzagoonGfx24_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_24_2.4bpp");
+static const u8 sZigzagoonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_24.4bpp.lz");
+static const u8 sZigzagoonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_24_1.4bpp.lz");
+static const u8 sZigzagoonGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_24_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites24[] = {
 	{NULL, 32}, 
 	{sZigzagoonGfx24, ARRAY_COUNT(sZigzagoonGfx24)}, 
@@ -2304,9 +2304,9 @@ static const ax_sprite sZigzagoonSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx25[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_25.4bpp");
-static const u8 sZigzagoonGfx25_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_25_1.4bpp");
-static const u8 sZigzagoonGfx25_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_25_2.4bpp");
+static const u8 sZigzagoonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_25.4bpp.lz");
+static const u8 sZigzagoonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_25_1.4bpp.lz");
+static const u8 sZigzagoonGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_25_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites25[] = {
 	{sZigzagoonGfx25, ARRAY_COUNT(sZigzagoonGfx25)}, 
 	{NULL, 32}, 
@@ -2316,10 +2316,10 @@ static const ax_sprite sZigzagoonSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx26[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_26.4bpp");
-static const u8 sZigzagoonGfx26_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_26_1.4bpp");
-static const u8 sZigzagoonGfx26_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_26_2.4bpp");
-static const u8 sZigzagoonGfx26_3[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_26_3.4bpp");
+static const u8 sZigzagoonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_26.4bpp.lz");
+static const u8 sZigzagoonGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_26_1.4bpp.lz");
+static const u8 sZigzagoonGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_26_2.4bpp.lz");
+static const u8 sZigzagoonGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_26_3.4bpp.lz");
 static const ax_sprite sZigzagoonSprites26[] = {
 	{NULL, 32}, 
 	{sZigzagoonGfx26, ARRAY_COUNT(sZigzagoonGfx26)}, 
@@ -2332,10 +2332,10 @@ static const ax_sprite sZigzagoonSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx27[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_27.4bpp");
-static const u8 sZigzagoonGfx27_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_27_1.4bpp");
-static const u8 sZigzagoonGfx27_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_27_2.4bpp");
-static const u8 sZigzagoonGfx27_3[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_27_3.4bpp");
+static const u8 sZigzagoonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_27.4bpp.lz");
+static const u8 sZigzagoonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_27_1.4bpp.lz");
+static const u8 sZigzagoonGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_27_2.4bpp.lz");
+static const u8 sZigzagoonGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_27_3.4bpp.lz");
 static const ax_sprite sZigzagoonSprites27[] = {
 	{NULL, 64}, 
 	{sZigzagoonGfx27, ARRAY_COUNT(sZigzagoonGfx27)}, 
@@ -2348,10 +2348,10 @@ static const ax_sprite sZigzagoonSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx28[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_28.4bpp");
-static const u8 sZigzagoonGfx28_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_28_1.4bpp");
-static const u8 sZigzagoonGfx28_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_28_2.4bpp");
-static const u8 sZigzagoonGfx28_3[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_28_3.4bpp");
+static const u8 sZigzagoonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_28.4bpp.lz");
+static const u8 sZigzagoonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_28_1.4bpp.lz");
+static const u8 sZigzagoonGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_28_2.4bpp.lz");
+static const u8 sZigzagoonGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_28_3.4bpp.lz");
 static const ax_sprite sZigzagoonSprites28[] = {
 	{NULL, 32}, 
 	{sZigzagoonGfx28, ARRAY_COUNT(sZigzagoonGfx28)}, 
@@ -2364,8 +2364,8 @@ static const ax_sprite sZigzagoonSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx29[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_29.4bpp");
-static const u8 sZigzagoonGfx29_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_29_1.4bpp");
+static const u8 sZigzagoonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_29.4bpp.lz");
+static const u8 sZigzagoonGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_29_1.4bpp.lz");
 static const ax_sprite sZigzagoonSprites29[] = {
 	{NULL, 128}, 
 	{sZigzagoonGfx29, ARRAY_COUNT(sZigzagoonGfx29)}, 
@@ -2374,14 +2374,14 @@ static const ax_sprite sZigzagoonSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx30[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_30.4bpp");
+static const u8 sZigzagoonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_30.4bpp.lz");
 static const ax_sprite sZigzagoonSprites30[] = {
 	{sZigzagoonGfx30, ARRAY_COUNT(sZigzagoonGfx30)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx31[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_31.4bpp");
-static const u8 sZigzagoonGfx31_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_31_1.4bpp");
+static const u8 sZigzagoonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_31.4bpp.lz");
+static const u8 sZigzagoonGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_31_1.4bpp.lz");
 static const ax_sprite sZigzagoonSprites31[] = {
 	{sZigzagoonGfx31, ARRAY_COUNT(sZigzagoonGfx31)}, 
 	{NULL, 32}, 
@@ -2389,9 +2389,9 @@ static const ax_sprite sZigzagoonSprites31[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx32[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_32.4bpp");
-static const u8 sZigzagoonGfx32_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_32_1.4bpp");
-static const u8 sZigzagoonGfx32_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_32_2.4bpp");
+static const u8 sZigzagoonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_32.4bpp.lz");
+static const u8 sZigzagoonGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_32_1.4bpp.lz");
+static const u8 sZigzagoonGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_32_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites32[] = {
 	{sZigzagoonGfx32, ARRAY_COUNT(sZigzagoonGfx32)}, 
 	{NULL, 32}, 
@@ -2401,9 +2401,9 @@ static const ax_sprite sZigzagoonSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx33[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_33.4bpp");
-static const u8 sZigzagoonGfx33_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_33_1.4bpp");
-static const u8 sZigzagoonGfx33_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_33_2.4bpp");
+static const u8 sZigzagoonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_33.4bpp.lz");
+static const u8 sZigzagoonGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_33_1.4bpp.lz");
+static const u8 sZigzagoonGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_33_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites33[] = {
 	{sZigzagoonGfx33, ARRAY_COUNT(sZigzagoonGfx33)}, 
 	{NULL, 32}, 
@@ -2413,9 +2413,9 @@ static const ax_sprite sZigzagoonSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx34[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_34.4bpp");
-static const u8 sZigzagoonGfx34_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_34_1.4bpp");
-static const u8 sZigzagoonGfx34_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_34_2.4bpp");
+static const u8 sZigzagoonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_34.4bpp.lz");
+static const u8 sZigzagoonGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_34_1.4bpp.lz");
+static const u8 sZigzagoonGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_34_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites34[] = {
 	{sZigzagoonGfx34, ARRAY_COUNT(sZigzagoonGfx34)}, 
 	{NULL, 32}, 
@@ -2425,9 +2425,9 @@ static const ax_sprite sZigzagoonSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx35[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_35.4bpp");
-static const u8 sZigzagoonGfx35_1[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_35_1.4bpp");
-static const u8 sZigzagoonGfx35_2[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_35_2.4bpp");
+static const u8 sZigzagoonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_35.4bpp.lz");
+static const u8 sZigzagoonGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_35_1.4bpp.lz");
+static const u8 sZigzagoonGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_35_2.4bpp.lz");
 static const ax_sprite sZigzagoonSprites35[] = {
 	{sZigzagoonGfx35, ARRAY_COUNT(sZigzagoonGfx35)}, 
 	{NULL, 64}, 
@@ -2437,37 +2437,37 @@ static const ax_sprite sZigzagoonSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx36[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_36.4bpp");
+static const u8 sZigzagoonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_36.4bpp.lz");
 static const ax_sprite sZigzagoonSprites36[] = {
 	{sZigzagoonGfx36, ARRAY_COUNT(sZigzagoonGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx37[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_37.4bpp");
+static const u8 sZigzagoonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_37.4bpp.lz");
 static const ax_sprite sZigzagoonSprites37[] = {
 	{sZigzagoonGfx37, ARRAY_COUNT(sZigzagoonGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx38[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_38.4bpp");
+static const u8 sZigzagoonGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_38.4bpp.lz");
 static const ax_sprite sZigzagoonSprites38[] = {
 	{sZigzagoonGfx38, ARRAY_COUNT(sZigzagoonGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx39[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_39.4bpp");
+static const u8 sZigzagoonGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_39.4bpp.lz");
 static const ax_sprite sZigzagoonSprites39[] = {
 	{sZigzagoonGfx39, ARRAY_COUNT(sZigzagoonGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx40[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_40.4bpp");
+static const u8 sZigzagoonGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_40.4bpp.lz");
 static const ax_sprite sZigzagoonSprites40[] = {
 	{sZigzagoonGfx40, ARRAY_COUNT(sZigzagoonGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx41[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_41.4bpp");
+static const u8 sZigzagoonGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_41.4bpp.lz");
 static const ax_sprite sZigzagoonSprites41[] = {
 	{sZigzagoonGfx41, ARRAY_COUNT(sZigzagoonGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sZigzagoonGfx42[] = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_42.4bpp");
+static const u8 sZigzagoonGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/zigzagoon/sprite_42.4bpp.lz");
 static const ax_sprite sZigzagoonSprites42[] = {
 	{sZigzagoonGfx42, ARRAY_COUNT(sZigzagoonGfx42)}, 
 	{NULL, 0}

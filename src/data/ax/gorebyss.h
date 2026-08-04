@@ -2255,135 +2255,135 @@ static const ax_anim sGorebyssAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGorebyssGfx1[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_1.4bpp");
+static const u8 sGorebyssGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_1.4bpp.lz");
 static const ax_sprite sGorebyssSprites1[] = {
 	{sGorebyssGfx1, ARRAY_COUNT(sGorebyssGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx2[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_2.4bpp");
+static const u8 sGorebyssGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_2.4bpp.lz");
 static const ax_sprite sGorebyssSprites2[] = {
 	{sGorebyssGfx2, ARRAY_COUNT(sGorebyssGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx3[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_3.4bpp");
+static const u8 sGorebyssGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_3.4bpp.lz");
 static const ax_sprite sGorebyssSprites3[] = {
 	{sGorebyssGfx3, ARRAY_COUNT(sGorebyssGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx4[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_4.4bpp");
+static const u8 sGorebyssGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_4.4bpp.lz");
 static const ax_sprite sGorebyssSprites4[] = {
 	{sGorebyssGfx4, ARRAY_COUNT(sGorebyssGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx5[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_5.4bpp");
+static const u8 sGorebyssGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_5.4bpp.lz");
 static const ax_sprite sGorebyssSprites5[] = {
 	{sGorebyssGfx5, ARRAY_COUNT(sGorebyssGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx6[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_6.4bpp");
+static const u8 sGorebyssGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_6.4bpp.lz");
 static const ax_sprite sGorebyssSprites6[] = {
 	{sGorebyssGfx6, ARRAY_COUNT(sGorebyssGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx7[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_7.4bpp");
+static const u8 sGorebyssGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_7.4bpp.lz");
 static const ax_sprite sGorebyssSprites7[] = {
 	{sGorebyssGfx7, ARRAY_COUNT(sGorebyssGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx8[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_8.4bpp");
+static const u8 sGorebyssGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_8.4bpp.lz");
 static const ax_sprite sGorebyssSprites8[] = {
 	{sGorebyssGfx8, ARRAY_COUNT(sGorebyssGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx9[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_9.4bpp");
+static const u8 sGorebyssGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_9.4bpp.lz");
 static const ax_sprite sGorebyssSprites9[] = {
 	{sGorebyssGfx9, ARRAY_COUNT(sGorebyssGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx10[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_10.4bpp");
+static const u8 sGorebyssGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_10.4bpp.lz");
 static const ax_sprite sGorebyssSprites10[] = {
 	{sGorebyssGfx10, ARRAY_COUNT(sGorebyssGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx11[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_11.4bpp");
+static const u8 sGorebyssGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_11.4bpp.lz");
 static const ax_sprite sGorebyssSprites11[] = {
 	{sGorebyssGfx11, ARRAY_COUNT(sGorebyssGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx12[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_12.4bpp");
+static const u8 sGorebyssGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_12.4bpp.lz");
 static const ax_sprite sGorebyssSprites12[] = {
 	{sGorebyssGfx12, ARRAY_COUNT(sGorebyssGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx13[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_13.4bpp");
+static const u8 sGorebyssGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_13.4bpp.lz");
 static const ax_sprite sGorebyssSprites13[] = {
 	{sGorebyssGfx13, ARRAY_COUNT(sGorebyssGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx14[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_14.4bpp");
+static const u8 sGorebyssGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_14.4bpp.lz");
 static const ax_sprite sGorebyssSprites14[] = {
 	{sGorebyssGfx14, ARRAY_COUNT(sGorebyssGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx15[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_15.4bpp");
+static const u8 sGorebyssGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_15.4bpp.lz");
 static const ax_sprite sGorebyssSprites15[] = {
 	{sGorebyssGfx15, ARRAY_COUNT(sGorebyssGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx16[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_16.4bpp");
+static const u8 sGorebyssGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_16.4bpp.lz");
 static const ax_sprite sGorebyssSprites16[] = {
 	{sGorebyssGfx16, ARRAY_COUNT(sGorebyssGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx17[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_17.4bpp");
+static const u8 sGorebyssGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_17.4bpp.lz");
 static const ax_sprite sGorebyssSprites17[] = {
 	{sGorebyssGfx17, ARRAY_COUNT(sGorebyssGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx18[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_18.4bpp");
+static const u8 sGorebyssGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_18.4bpp.lz");
 static const ax_sprite sGorebyssSprites18[] = {
 	{sGorebyssGfx18, ARRAY_COUNT(sGorebyssGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx19[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_19.4bpp");
+static const u8 sGorebyssGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_19.4bpp.lz");
 static const ax_sprite sGorebyssSprites19[] = {
 	{sGorebyssGfx19, ARRAY_COUNT(sGorebyssGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx20[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_20.4bpp");
+static const u8 sGorebyssGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_20.4bpp.lz");
 static const ax_sprite sGorebyssSprites20[] = {
 	{sGorebyssGfx20, ARRAY_COUNT(sGorebyssGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx21[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_21.4bpp");
+static const u8 sGorebyssGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_21.4bpp.lz");
 static const ax_sprite sGorebyssSprites21[] = {
 	{sGorebyssGfx21, ARRAY_COUNT(sGorebyssGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx22[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_22.4bpp");
+static const u8 sGorebyssGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_22.4bpp.lz");
 static const ax_sprite sGorebyssSprites22[] = {
 	{sGorebyssGfx22, ARRAY_COUNT(sGorebyssGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx23[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_23.4bpp");
+static const u8 sGorebyssGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_23.4bpp.lz");
 static const ax_sprite sGorebyssSprites23[] = {
 	{sGorebyssGfx23, ARRAY_COUNT(sGorebyssGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx24[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_24.4bpp");
+static const u8 sGorebyssGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_24.4bpp.lz");
 static const ax_sprite sGorebyssSprites24[] = {
 	{sGorebyssGfx24, ARRAY_COUNT(sGorebyssGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx25[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_25.4bpp");
+static const u8 sGorebyssGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_25.4bpp.lz");
 static const ax_sprite sGorebyssSprites25[] = {
 	{sGorebyssGfx25, ARRAY_COUNT(sGorebyssGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx26[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_26.4bpp");
-static const u8 sGorebyssGfx26_1[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_26_1.4bpp");
-static const u8 sGorebyssGfx26_2[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_26_2.4bpp");
-static const u8 sGorebyssGfx26_3[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_26_3.4bpp");
+static const u8 sGorebyssGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_26.4bpp.lz");
+static const u8 sGorebyssGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_26_1.4bpp.lz");
+static const u8 sGorebyssGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_26_2.4bpp.lz");
+static const u8 sGorebyssGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_26_3.4bpp.lz");
 static const ax_sprite sGorebyssSprites26[] = {
 	{sGorebyssGfx26, ARRAY_COUNT(sGorebyssGfx26)}, 
 	{NULL, 32}, 
@@ -2394,31 +2394,31 @@ static const ax_sprite sGorebyssSprites26[] = {
 	{sGorebyssGfx26_3, ARRAY_COUNT(sGorebyssGfx26_3)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx27[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_27.4bpp");
+static const u8 sGorebyssGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_27.4bpp.lz");
 static const ax_sprite sGorebyssSprites27[] = {
 	{sGorebyssGfx27, ARRAY_COUNT(sGorebyssGfx27)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx28[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_28.4bpp");
+static const u8 sGorebyssGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_28.4bpp.lz");
 static const ax_sprite sGorebyssSprites28[] = {
 	{sGorebyssGfx28, ARRAY_COUNT(sGorebyssGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx29[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_29.4bpp");
+static const u8 sGorebyssGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_29.4bpp.lz");
 static const ax_sprite sGorebyssSprites29[] = {
 	{sGorebyssGfx29, ARRAY_COUNT(sGorebyssGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx30[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_30.4bpp");
+static const u8 sGorebyssGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_30.4bpp.lz");
 static const ax_sprite sGorebyssSprites30[] = {
 	{sGorebyssGfx30, ARRAY_COUNT(sGorebyssGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx31[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_31.4bpp");
-static const u8 sGorebyssGfx31_1[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_31_1.4bpp");
-static const u8 sGorebyssGfx31_2[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_31_2.4bpp");
-static const u8 sGorebyssGfx31_3[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_31_3.4bpp");
+static const u8 sGorebyssGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_31.4bpp.lz");
+static const u8 sGorebyssGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_31_1.4bpp.lz");
+static const u8 sGorebyssGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_31_2.4bpp.lz");
+static const u8 sGorebyssGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_31_3.4bpp.lz");
 static const ax_sprite sGorebyssSprites31[] = {
 	{sGorebyssGfx31, ARRAY_COUNT(sGorebyssGfx31)}, 
 	{NULL, 64}, 
@@ -2429,92 +2429,92 @@ static const ax_sprite sGorebyssSprites31[] = {
 	{sGorebyssGfx31_3, ARRAY_COUNT(sGorebyssGfx31_3)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx32[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_32.4bpp");
+static const u8 sGorebyssGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_32.4bpp.lz");
 static const ax_sprite sGorebyssSprites32[] = {
 	{sGorebyssGfx32, ARRAY_COUNT(sGorebyssGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx33[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_33.4bpp");
+static const u8 sGorebyssGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_33.4bpp.lz");
 static const ax_sprite sGorebyssSprites33[] = {
 	{sGorebyssGfx33, ARRAY_COUNT(sGorebyssGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx34[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_34.4bpp");
+static const u8 sGorebyssGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_34.4bpp.lz");
 static const ax_sprite sGorebyssSprites34[] = {
 	{sGorebyssGfx34, ARRAY_COUNT(sGorebyssGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx35[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_35.4bpp");
+static const u8 sGorebyssGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_35.4bpp.lz");
 static const ax_sprite sGorebyssSprites35[] = {
 	{sGorebyssGfx35, ARRAY_COUNT(sGorebyssGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx36[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_36.4bpp");
+static const u8 sGorebyssGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_36.4bpp.lz");
 static const ax_sprite sGorebyssSprites36[] = {
 	{sGorebyssGfx36, ARRAY_COUNT(sGorebyssGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx37[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_37.4bpp");
+static const u8 sGorebyssGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_37.4bpp.lz");
 static const ax_sprite sGorebyssSprites37[] = {
 	{sGorebyssGfx37, ARRAY_COUNT(sGorebyssGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx38[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_38.4bpp");
+static const u8 sGorebyssGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_38.4bpp.lz");
 static const ax_sprite sGorebyssSprites38[] = {
 	{sGorebyssGfx38, ARRAY_COUNT(sGorebyssGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx39[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_39.4bpp");
+static const u8 sGorebyssGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_39.4bpp.lz");
 static const ax_sprite sGorebyssSprites39[] = {
 	{sGorebyssGfx39, ARRAY_COUNT(sGorebyssGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx40[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_40.4bpp");
+static const u8 sGorebyssGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_40.4bpp.lz");
 static const ax_sprite sGorebyssSprites40[] = {
 	{sGorebyssGfx40, ARRAY_COUNT(sGorebyssGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx41[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_41.4bpp");
+static const u8 sGorebyssGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_41.4bpp.lz");
 static const ax_sprite sGorebyssSprites41[] = {
 	{sGorebyssGfx41, ARRAY_COUNT(sGorebyssGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx42[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_42.4bpp");
+static const u8 sGorebyssGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_42.4bpp.lz");
 static const ax_sprite sGorebyssSprites42[] = {
 	{sGorebyssGfx42, ARRAY_COUNT(sGorebyssGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx43[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_43.4bpp");
+static const u8 sGorebyssGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_43.4bpp.lz");
 static const ax_sprite sGorebyssSprites43[] = {
 	{sGorebyssGfx43, ARRAY_COUNT(sGorebyssGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx44[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_44.4bpp");
+static const u8 sGorebyssGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_44.4bpp.lz");
 static const ax_sprite sGorebyssSprites44[] = {
 	{sGorebyssGfx44, ARRAY_COUNT(sGorebyssGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx45[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_45.4bpp");
+static const u8 sGorebyssGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_45.4bpp.lz");
 static const ax_sprite sGorebyssSprites45[] = {
 	{sGorebyssGfx45, ARRAY_COUNT(sGorebyssGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx46[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_46.4bpp");
+static const u8 sGorebyssGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_46.4bpp.lz");
 static const ax_sprite sGorebyssSprites46[] = {
 	{sGorebyssGfx46, ARRAY_COUNT(sGorebyssGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx47[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_47.4bpp");
+static const u8 sGorebyssGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_47.4bpp.lz");
 static const ax_sprite sGorebyssSprites47[] = {
 	{sGorebyssGfx47, ARRAY_COUNT(sGorebyssGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx48[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_48.4bpp");
+static const u8 sGorebyssGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_48.4bpp.lz");
 static const ax_sprite sGorebyssSprites48[] = {
 	{sGorebyssGfx48, ARRAY_COUNT(sGorebyssGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sGorebyssGfx49[] = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_49.4bpp");
+static const u8 sGorebyssGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gorebyss/sprite_49.4bpp.lz");
 static const ax_sprite sGorebyssSprites49[] = {
 	{sGorebyssGfx49, ARRAY_COUNT(sGorebyssGfx49)}, 
 	{NULL, 0}

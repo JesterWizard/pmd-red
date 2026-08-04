@@ -2213,83 +2213,83 @@ static const ax_anim sAggronAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sAggronGfx1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_1.4bpp");
+static const u8 sAggronGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_1.4bpp.lz");
 static const ax_sprite sAggronSprites1[] = {
 	{sAggronGfx1, ARRAY_COUNT(sAggronGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx2[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_2.4bpp");
+static const u8 sAggronGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_2.4bpp.lz");
 static const ax_sprite sAggronSprites2[] = {
 	{sAggronGfx2, ARRAY_COUNT(sAggronGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx3[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_3.4bpp");
+static const u8 sAggronGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_3.4bpp.lz");
 static const ax_sprite sAggronSprites3[] = {
 	{sAggronGfx3, ARRAY_COUNT(sAggronGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx4[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_4.4bpp");
+static const u8 sAggronGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_4.4bpp.lz");
 static const ax_sprite sAggronSprites4[] = {
 	{sAggronGfx4, ARRAY_COUNT(sAggronGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx5[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_5.4bpp");
+static const u8 sAggronGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_5.4bpp.lz");
 static const ax_sprite sAggronSprites5[] = {
 	{sAggronGfx5, ARRAY_COUNT(sAggronGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx6[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_6.4bpp");
+static const u8 sAggronGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_6.4bpp.lz");
 static const ax_sprite sAggronSprites6[] = {
 	{sAggronGfx6, ARRAY_COUNT(sAggronGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx7[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_7.4bpp");
+static const u8 sAggronGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_7.4bpp.lz");
 static const ax_sprite sAggronSprites7[] = {
 	{sAggronGfx7, ARRAY_COUNT(sAggronGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx8[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_8.4bpp");
+static const u8 sAggronGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_8.4bpp.lz");
 static const ax_sprite sAggronSprites8[] = {
 	{sAggronGfx8, ARRAY_COUNT(sAggronGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx9[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_9.4bpp");
+static const u8 sAggronGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_9.4bpp.lz");
 static const ax_sprite sAggronSprites9[] = {
 	{sAggronGfx9, ARRAY_COUNT(sAggronGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx10[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_10.4bpp");
+static const u8 sAggronGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_10.4bpp.lz");
 static const ax_sprite sAggronSprites10[] = {
 	{sAggronGfx10, ARRAY_COUNT(sAggronGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx11[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_11.4bpp");
+static const u8 sAggronGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_11.4bpp.lz");
 static const ax_sprite sAggronSprites11[] = {
 	{sAggronGfx11, ARRAY_COUNT(sAggronGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx12[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_12.4bpp");
+static const u8 sAggronGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_12.4bpp.lz");
 static const ax_sprite sAggronSprites12[] = {
 	{sAggronGfx12, ARRAY_COUNT(sAggronGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx13[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_13.4bpp");
+static const u8 sAggronGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_13.4bpp.lz");
 static const ax_sprite sAggronSprites13[] = {
 	{sAggronGfx13, ARRAY_COUNT(sAggronGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx14[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_14.4bpp");
+static const u8 sAggronGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_14.4bpp.lz");
 static const ax_sprite sAggronSprites14[] = {
 	{sAggronGfx14, ARRAY_COUNT(sAggronGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx15[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_15.4bpp");
+static const u8 sAggronGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_15.4bpp.lz");
 static const ax_sprite sAggronSprites15[] = {
 	{sAggronGfx15, ARRAY_COUNT(sAggronGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx16[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_16.4bpp");
-static const u8 sAggronGfx16_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_16_1.4bpp");
+static const u8 sAggronGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_16.4bpp.lz");
+static const u8 sAggronGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_16_1.4bpp.lz");
 static const ax_sprite sAggronSprites16[] = {
 	{NULL, 32}, 
 	{sAggronGfx16, ARRAY_COUNT(sAggronGfx16)}, 
@@ -2297,83 +2297,83 @@ static const ax_sprite sAggronSprites16[] = {
 	{sAggronGfx16_1, ARRAY_COUNT(sAggronGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx17[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_17.4bpp");
+static const u8 sAggronGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_17.4bpp.lz");
 static const ax_sprite sAggronSprites17[] = {
 	{sAggronGfx17, ARRAY_COUNT(sAggronGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx18[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_18.4bpp");
+static const u8 sAggronGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_18.4bpp.lz");
 static const ax_sprite sAggronSprites18[] = {
 	{sAggronGfx18, ARRAY_COUNT(sAggronGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx19[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_19.4bpp");
+static const u8 sAggronGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_19.4bpp.lz");
 static const ax_sprite sAggronSprites19[] = {
 	{sAggronGfx19, ARRAY_COUNT(sAggronGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx20[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_20.4bpp");
+static const u8 sAggronGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_20.4bpp.lz");
 static const ax_sprite sAggronSprites20[] = {
 	{sAggronGfx20, ARRAY_COUNT(sAggronGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx21[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_21.4bpp");
+static const u8 sAggronGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_21.4bpp.lz");
 static const ax_sprite sAggronSprites21[] = {
 	{sAggronGfx21, ARRAY_COUNT(sAggronGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx22[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_22.4bpp");
+static const u8 sAggronGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_22.4bpp.lz");
 static const ax_sprite sAggronSprites22[] = {
 	{sAggronGfx22, ARRAY_COUNT(sAggronGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx23[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_23.4bpp");
+static const u8 sAggronGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_23.4bpp.lz");
 static const ax_sprite sAggronSprites23[] = {
 	{sAggronGfx23, ARRAY_COUNT(sAggronGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx24[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_24.4bpp");
+static const u8 sAggronGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_24.4bpp.lz");
 static const ax_sprite sAggronSprites24[] = {
 	{sAggronGfx24, ARRAY_COUNT(sAggronGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx25[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_25.4bpp");
+static const u8 sAggronGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_25.4bpp.lz");
 static const ax_sprite sAggronSprites25[] = {
 	{sAggronGfx25, ARRAY_COUNT(sAggronGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx26[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_26.4bpp");
+static const u8 sAggronGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_26.4bpp.lz");
 static const ax_sprite sAggronSprites26[] = {
 	{sAggronGfx26, ARRAY_COUNT(sAggronGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx27[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_27.4bpp");
+static const u8 sAggronGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_27.4bpp.lz");
 static const ax_sprite sAggronSprites27[] = {
 	{sAggronGfx27, ARRAY_COUNT(sAggronGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx28[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_28.4bpp");
+static const u8 sAggronGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_28.4bpp.lz");
 static const ax_sprite sAggronSprites28[] = {
 	{sAggronGfx28, ARRAY_COUNT(sAggronGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx29[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_29.4bpp");
+static const u8 sAggronGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_29.4bpp.lz");
 static const ax_sprite sAggronSprites29[] = {
 	{sAggronGfx29, ARRAY_COUNT(sAggronGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx30[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_30.4bpp");
+static const u8 sAggronGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_30.4bpp.lz");
 static const ax_sprite sAggronSprites30[] = {
 	{sAggronGfx30, ARRAY_COUNT(sAggronGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx31[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_31.4bpp");
+static const u8 sAggronGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_31.4bpp.lz");
 static const ax_sprite sAggronSprites31[] = {
 	{sAggronGfx31, ARRAY_COUNT(sAggronGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx32[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_32.4bpp");
-static const u8 sAggronGfx32_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_32_1.4bpp");
+static const u8 sAggronGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_32.4bpp.lz");
+static const u8 sAggronGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_32_1.4bpp.lz");
 static const ax_sprite sAggronSprites32[] = {
 	{NULL, 32}, 
 	{sAggronGfx32, ARRAY_COUNT(sAggronGfx32)}, 
@@ -2381,29 +2381,29 @@ static const ax_sprite sAggronSprites32[] = {
 	{sAggronGfx32_1, ARRAY_COUNT(sAggronGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx33[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_33.4bpp");
+static const u8 sAggronGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_33.4bpp.lz");
 static const ax_sprite sAggronSprites33[] = {
 	{sAggronGfx33, ARRAY_COUNT(sAggronGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx34[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_34.4bpp");
+static const u8 sAggronGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_34.4bpp.lz");
 static const ax_sprite sAggronSprites34[] = {
 	{sAggronGfx34, ARRAY_COUNT(sAggronGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx35[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_35.4bpp");
+static const u8 sAggronGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_35.4bpp.lz");
 static const ax_sprite sAggronSprites35[] = {
 	{sAggronGfx35, ARRAY_COUNT(sAggronGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx36[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_36.4bpp");
+static const u8 sAggronGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_36.4bpp.lz");
 static const ax_sprite sAggronSprites36[] = {
 	{sAggronGfx36, ARRAY_COUNT(sAggronGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx37[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_37.4bpp");
-static const u8 sAggronGfx37_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_37_1.4bpp");
-static const u8 sAggronGfx37_2[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_37_2.4bpp");
+static const u8 sAggronGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_37.4bpp.lz");
+static const u8 sAggronGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_37_1.4bpp.lz");
+static const u8 sAggronGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_37_2.4bpp.lz");
 static const ax_sprite sAggronSprites37[] = {
 	{sAggronGfx37, ARRAY_COUNT(sAggronGfx37)}, 
 	{NULL, 32}, 
@@ -2412,14 +2412,14 @@ static const ax_sprite sAggronSprites37[] = {
 	{sAggronGfx37_2, ARRAY_COUNT(sAggronGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx38[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_38.4bpp");
+static const u8 sAggronGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_38.4bpp.lz");
 static const ax_sprite sAggronSprites38[] = {
 	{sAggronGfx38, ARRAY_COUNT(sAggronGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx39[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_39.4bpp");
-static const u8 sAggronGfx39_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_39_1.4bpp");
-static const u8 sAggronGfx39_2[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_39_2.4bpp");
+static const u8 sAggronGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_39.4bpp.lz");
+static const u8 sAggronGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_39_1.4bpp.lz");
+static const u8 sAggronGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_39_2.4bpp.lz");
 static const ax_sprite sAggronSprites39[] = {
 	{NULL, 32}, 
 	{sAggronGfx39, ARRAY_COUNT(sAggronGfx39)}, 
@@ -2429,56 +2429,56 @@ static const ax_sprite sAggronSprites39[] = {
 	{sAggronGfx39_2, ARRAY_COUNT(sAggronGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx40[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_40.4bpp");
+static const u8 sAggronGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_40.4bpp.lz");
 static const ax_sprite sAggronSprites40[] = {
 	{sAggronGfx40, ARRAY_COUNT(sAggronGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx41[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_41.4bpp");
+static const u8 sAggronGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_41.4bpp.lz");
 static const ax_sprite sAggronSprites41[] = {
 	{NULL, 32}, 
 	{sAggronGfx41, ARRAY_COUNT(sAggronGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx42[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_42.4bpp");
+static const u8 sAggronGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_42.4bpp.lz");
 static const ax_sprite sAggronSprites42[] = {
 	{sAggronGfx42, ARRAY_COUNT(sAggronGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx43[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_43.4bpp");
+static const u8 sAggronGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_43.4bpp.lz");
 static const ax_sprite sAggronSprites43[] = {
 	{sAggronGfx43, ARRAY_COUNT(sAggronGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx44[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_44.4bpp");
+static const u8 sAggronGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_44.4bpp.lz");
 static const ax_sprite sAggronSprites44[] = {
 	{sAggronGfx44, ARRAY_COUNT(sAggronGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx45[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_45.4bpp");
+static const u8 sAggronGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_45.4bpp.lz");
 static const ax_sprite sAggronSprites45[] = {
 	{sAggronGfx45, ARRAY_COUNT(sAggronGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx46[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_46.4bpp");
-static const u8 sAggronGfx46_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_46_1.4bpp");
+static const u8 sAggronGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_46.4bpp.lz");
+static const u8 sAggronGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_46_1.4bpp.lz");
 static const ax_sprite sAggronSprites46[] = {
 	{sAggronGfx46, ARRAY_COUNT(sAggronGfx46)}, 
 	{NULL, 32}, 
 	{sAggronGfx46_1, ARRAY_COUNT(sAggronGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx47[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_47.4bpp");
-static const u8 sAggronGfx47_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_47_1.4bpp");
+static const u8 sAggronGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_47.4bpp.lz");
+static const u8 sAggronGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_47_1.4bpp.lz");
 static const ax_sprite sAggronSprites47[] = {
 	{sAggronGfx47, ARRAY_COUNT(sAggronGfx47)}, 
 	{NULL, 32}, 
 	{sAggronGfx47_1, ARRAY_COUNT(sAggronGfx47_1)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx48[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_48.4bpp");
-static const u8 sAggronGfx48_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_48_1.4bpp");
-static const u8 sAggronGfx48_2[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_48_2.4bpp");
+static const u8 sAggronGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_48.4bpp.lz");
+static const u8 sAggronGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_48_1.4bpp.lz");
+static const u8 sAggronGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_48_2.4bpp.lz");
 static const ax_sprite sAggronSprites48[] = {
 	{sAggronGfx48, ARRAY_COUNT(sAggronGfx48)}, 
 	{NULL, 32}, 
@@ -2487,78 +2487,78 @@ static const ax_sprite sAggronSprites48[] = {
 	{sAggronGfx48_2, ARRAY_COUNT(sAggronGfx48_2)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx49[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_49.4bpp");
-static const u8 sAggronGfx49_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_49_1.4bpp");
+static const u8 sAggronGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_49.4bpp.lz");
+static const u8 sAggronGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_49_1.4bpp.lz");
 static const ax_sprite sAggronSprites49[] = {
 	{sAggronGfx49, ARRAY_COUNT(sAggronGfx49)}, 
 	{NULL, 32}, 
 	{sAggronGfx49_1, ARRAY_COUNT(sAggronGfx49_1)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx50[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_50.4bpp");
-static const u8 sAggronGfx50_1[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_50_1.4bpp");
+static const u8 sAggronGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_50.4bpp.lz");
+static const u8 sAggronGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_50_1.4bpp.lz");
 static const ax_sprite sAggronSprites50[] = {
 	{sAggronGfx50, ARRAY_COUNT(sAggronGfx50)}, 
 	{NULL, 32}, 
 	{sAggronGfx50_1, ARRAY_COUNT(sAggronGfx50_1)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx51[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_51.4bpp");
+static const u8 sAggronGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_51.4bpp.lz");
 static const ax_sprite sAggronSprites51[] = {
 	{sAggronGfx51, ARRAY_COUNT(sAggronGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx52[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_52.4bpp");
+static const u8 sAggronGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_52.4bpp.lz");
 static const ax_sprite sAggronSprites52[] = {
 	{sAggronGfx52, ARRAY_COUNT(sAggronGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx53[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_53.4bpp");
+static const u8 sAggronGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_53.4bpp.lz");
 static const ax_sprite sAggronSprites53[] = {
 	{sAggronGfx53, ARRAY_COUNT(sAggronGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx54[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_54.4bpp");
+static const u8 sAggronGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_54.4bpp.lz");
 static const ax_sprite sAggronSprites54[] = {
 	{sAggronGfx54, ARRAY_COUNT(sAggronGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx55[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_55.4bpp");
+static const u8 sAggronGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_55.4bpp.lz");
 static const ax_sprite sAggronSprites55[] = {
 	{sAggronGfx55, ARRAY_COUNT(sAggronGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx56[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_56.4bpp");
+static const u8 sAggronGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_56.4bpp.lz");
 static const ax_sprite sAggronSprites56[] = {
 	{sAggronGfx56, ARRAY_COUNT(sAggronGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx57[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_57.4bpp");
+static const u8 sAggronGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_57.4bpp.lz");
 static const ax_sprite sAggronSprites57[] = {
 	{sAggronGfx57, ARRAY_COUNT(sAggronGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx58[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_58.4bpp");
+static const u8 sAggronGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_58.4bpp.lz");
 static const ax_sprite sAggronSprites58[] = {
 	{sAggronGfx58, ARRAY_COUNT(sAggronGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx59[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_59.4bpp");
+static const u8 sAggronGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_59.4bpp.lz");
 static const ax_sprite sAggronSprites59[] = {
 	{sAggronGfx59, ARRAY_COUNT(sAggronGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx60[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_60.4bpp");
+static const u8 sAggronGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_60.4bpp.lz");
 static const ax_sprite sAggronSprites60[] = {
 	{sAggronGfx60, ARRAY_COUNT(sAggronGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx61[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_61.4bpp");
+static const u8 sAggronGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_61.4bpp.lz");
 static const ax_sprite sAggronSprites61[] = {
 	{sAggronGfx61, ARRAY_COUNT(sAggronGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sAggronGfx62[] = INCBIN_U8("graphics/ax/mon/aggron/sprite_62.4bpp");
+static const u8 sAggronGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aggron/sprite_62.4bpp.lz");
 static const ax_sprite sAggronSprites62[] = {
 	{sAggronGfx62, ARRAY_COUNT(sAggronGfx62)}, 
 	{NULL, 0}

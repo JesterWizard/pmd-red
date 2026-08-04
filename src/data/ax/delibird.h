@@ -1943,130 +1943,130 @@ static const ax_anim sDelibirdAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDelibirdGfx1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_1.4bpp");
+static const u8 sDelibirdGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_1.4bpp.lz");
 static const ax_sprite sDelibirdSprites1[] = {
 	{sDelibirdGfx1, ARRAY_COUNT(sDelibirdGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_2.4bpp");
+static const u8 sDelibirdGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_2.4bpp.lz");
 static const ax_sprite sDelibirdSprites2[] = {
 	{sDelibirdGfx2, ARRAY_COUNT(sDelibirdGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_3.4bpp");
+static const u8 sDelibirdGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites3[] = {
 	{sDelibirdGfx3, ARRAY_COUNT(sDelibirdGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx4[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_4.4bpp");
+static const u8 sDelibirdGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_4.4bpp.lz");
 static const ax_sprite sDelibirdSprites4[] = {
 	{sDelibirdGfx4, ARRAY_COUNT(sDelibirdGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx5[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_5.4bpp");
+static const u8 sDelibirdGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_5.4bpp.lz");
 static const ax_sprite sDelibirdSprites5[] = {
 	{sDelibirdGfx5, ARRAY_COUNT(sDelibirdGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx6[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_6.4bpp");
+static const u8 sDelibirdGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_6.4bpp.lz");
 static const ax_sprite sDelibirdSprites6[] = {
 	{sDelibirdGfx6, ARRAY_COUNT(sDelibirdGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx7[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_7.4bpp");
+static const u8 sDelibirdGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_7.4bpp.lz");
 static const ax_sprite sDelibirdSprites7[] = {
 	{sDelibirdGfx7, ARRAY_COUNT(sDelibirdGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx8[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_8.4bpp");
+static const u8 sDelibirdGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_8.4bpp.lz");
 static const ax_sprite sDelibirdSprites8[] = {
 	{sDelibirdGfx8, ARRAY_COUNT(sDelibirdGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx9[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_9.4bpp");
+static const u8 sDelibirdGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_9.4bpp.lz");
 static const ax_sprite sDelibirdSprites9[] = {
 	{sDelibirdGfx9, ARRAY_COUNT(sDelibirdGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx10[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_10.4bpp");
+static const u8 sDelibirdGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_10.4bpp.lz");
 static const ax_sprite sDelibirdSprites10[] = {
 	{sDelibirdGfx10, ARRAY_COUNT(sDelibirdGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx11[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_11.4bpp");
+static const u8 sDelibirdGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_11.4bpp.lz");
 static const ax_sprite sDelibirdSprites11[] = {
 	{sDelibirdGfx11, ARRAY_COUNT(sDelibirdGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx12[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_12.4bpp");
+static const u8 sDelibirdGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_12.4bpp.lz");
 static const ax_sprite sDelibirdSprites12[] = {
 	{sDelibirdGfx12, ARRAY_COUNT(sDelibirdGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx13[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_13.4bpp");
+static const u8 sDelibirdGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_13.4bpp.lz");
 static const ax_sprite sDelibirdSprites13[] = {
 	{sDelibirdGfx13, ARRAY_COUNT(sDelibirdGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx14[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_14.4bpp");
+static const u8 sDelibirdGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_14.4bpp.lz");
 static const ax_sprite sDelibirdSprites14[] = {
 	{sDelibirdGfx14, ARRAY_COUNT(sDelibirdGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx15[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_15.4bpp");
+static const u8 sDelibirdGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_15.4bpp.lz");
 static const ax_sprite sDelibirdSprites15[] = {
 	{sDelibirdGfx15, ARRAY_COUNT(sDelibirdGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx16[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_16.4bpp");
+static const u8 sDelibirdGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_16.4bpp.lz");
 static const ax_sprite sDelibirdSprites16[] = {
 	{sDelibirdGfx16, ARRAY_COUNT(sDelibirdGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx17[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_17.4bpp");
+static const u8 sDelibirdGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_17.4bpp.lz");
 static const ax_sprite sDelibirdSprites17[] = {
 	{sDelibirdGfx17, ARRAY_COUNT(sDelibirdGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx18[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_18.4bpp");
+static const u8 sDelibirdGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_18.4bpp.lz");
 static const ax_sprite sDelibirdSprites18[] = {
 	{sDelibirdGfx18, ARRAY_COUNT(sDelibirdGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx19[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_19.4bpp");
+static const u8 sDelibirdGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_19.4bpp.lz");
 static const ax_sprite sDelibirdSprites19[] = {
 	{sDelibirdGfx19, ARRAY_COUNT(sDelibirdGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx20[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_20.4bpp");
+static const u8 sDelibirdGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_20.4bpp.lz");
 static const ax_sprite sDelibirdSprites20[] = {
 	{sDelibirdGfx20, ARRAY_COUNT(sDelibirdGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx21[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_21.4bpp");
+static const u8 sDelibirdGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_21.4bpp.lz");
 static const ax_sprite sDelibirdSprites21[] = {
 	{sDelibirdGfx21, ARRAY_COUNT(sDelibirdGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx22[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_22.4bpp");
+static const u8 sDelibirdGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_22.4bpp.lz");
 static const ax_sprite sDelibirdSprites22[] = {
 	{sDelibirdGfx22, ARRAY_COUNT(sDelibirdGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx23[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_23.4bpp");
+static const u8 sDelibirdGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_23.4bpp.lz");
 static const ax_sprite sDelibirdSprites23[] = {
 	{sDelibirdGfx23, ARRAY_COUNT(sDelibirdGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx24[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_24.4bpp");
+static const u8 sDelibirdGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_24.4bpp.lz");
 static const ax_sprite sDelibirdSprites24[] = {
 	{sDelibirdGfx24, ARRAY_COUNT(sDelibirdGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx25[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_25.4bpp");
-static const u8 sDelibirdGfx25_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_25_1.4bpp");
-static const u8 sDelibirdGfx25_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_25_2.4bpp");
-static const u8 sDelibirdGfx25_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_25_3.4bpp");
+static const u8 sDelibirdGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_25.4bpp.lz");
+static const u8 sDelibirdGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_25_1.4bpp.lz");
+static const u8 sDelibirdGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_25_2.4bpp.lz");
+static const u8 sDelibirdGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_25_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites25[] = {
 	{sDelibirdGfx25, ARRAY_COUNT(sDelibirdGfx25)}, 
 	{NULL, 32}, 
@@ -2078,11 +2078,11 @@ static const ax_sprite sDelibirdSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx26[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_26.4bpp");
-static const u8 sDelibirdGfx26_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_26_1.4bpp");
-static const u8 sDelibirdGfx26_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_26_2.4bpp");
-static const u8 sDelibirdGfx26_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_26_3.4bpp");
-static const u8 sDelibirdGfx26_4[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_26_4.4bpp");
+static const u8 sDelibirdGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_26.4bpp.lz");
+static const u8 sDelibirdGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_26_1.4bpp.lz");
+static const u8 sDelibirdGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_26_2.4bpp.lz");
+static const u8 sDelibirdGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_26_3.4bpp.lz");
+static const u8 sDelibirdGfx26_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_26_4.4bpp.lz");
 static const ax_sprite sDelibirdSprites26[] = {
 	{sDelibirdGfx26, ARRAY_COUNT(sDelibirdGfx26)}, 
 	{NULL, 32}, 
@@ -2096,8 +2096,8 @@ static const ax_sprite sDelibirdSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx27[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_27.4bpp");
-static const u8 sDelibirdGfx27_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_27_1.4bpp");
+static const u8 sDelibirdGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_27.4bpp.lz");
+static const u8 sDelibirdGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_27_1.4bpp.lz");
 static const ax_sprite sDelibirdSprites27[] = {
 	{sDelibirdGfx27, ARRAY_COUNT(sDelibirdGfx27)}, 
 	{NULL, 32}, 
@@ -2105,10 +2105,10 @@ static const ax_sprite sDelibirdSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx28[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_28.4bpp");
-static const u8 sDelibirdGfx28_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_28_1.4bpp");
-static const u8 sDelibirdGfx28_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_28_2.4bpp");
-static const u8 sDelibirdGfx28_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_28_3.4bpp");
+static const u8 sDelibirdGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_28.4bpp.lz");
+static const u8 sDelibirdGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_28_1.4bpp.lz");
+static const u8 sDelibirdGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_28_2.4bpp.lz");
+static const u8 sDelibirdGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_28_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites28[] = {
 	{sDelibirdGfx28, ARRAY_COUNT(sDelibirdGfx28)}, 
 	{NULL, 32}, 
@@ -2120,10 +2120,10 @@ static const ax_sprite sDelibirdSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx29[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_29.4bpp");
-static const u8 sDelibirdGfx29_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_29_1.4bpp");
-static const u8 sDelibirdGfx29_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_29_2.4bpp");
-static const u8 sDelibirdGfx29_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_29_3.4bpp");
+static const u8 sDelibirdGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_29.4bpp.lz");
+static const u8 sDelibirdGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_29_1.4bpp.lz");
+static const u8 sDelibirdGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_29_2.4bpp.lz");
+static const u8 sDelibirdGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_29_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites29[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx29, ARRAY_COUNT(sDelibirdGfx29)}, 
@@ -2136,10 +2136,10 @@ static const ax_sprite sDelibirdSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx30[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_30.4bpp");
-static const u8 sDelibirdGfx30_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_30_1.4bpp");
-static const u8 sDelibirdGfx30_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_30_2.4bpp");
-static const u8 sDelibirdGfx30_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_30_3.4bpp");
+static const u8 sDelibirdGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_30.4bpp.lz");
+static const u8 sDelibirdGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_30_1.4bpp.lz");
+static const u8 sDelibirdGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_30_2.4bpp.lz");
+static const u8 sDelibirdGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_30_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites30[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx30, ARRAY_COUNT(sDelibirdGfx30)}, 
@@ -2152,10 +2152,10 @@ static const ax_sprite sDelibirdSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx31[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_31.4bpp");
-static const u8 sDelibirdGfx31_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_31_1.4bpp");
-static const u8 sDelibirdGfx31_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_31_2.4bpp");
-static const u8 sDelibirdGfx31_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_31_3.4bpp");
+static const u8 sDelibirdGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_31.4bpp.lz");
+static const u8 sDelibirdGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_31_1.4bpp.lz");
+static const u8 sDelibirdGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_31_2.4bpp.lz");
+static const u8 sDelibirdGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_31_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites31[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx31, ARRAY_COUNT(sDelibirdGfx31)}, 
@@ -2168,10 +2168,10 @@ static const ax_sprite sDelibirdSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx32[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_32.4bpp");
-static const u8 sDelibirdGfx32_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_32_1.4bpp");
-static const u8 sDelibirdGfx32_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_32_2.4bpp");
-static const u8 sDelibirdGfx32_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_32_3.4bpp");
+static const u8 sDelibirdGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_32.4bpp.lz");
+static const u8 sDelibirdGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_32_1.4bpp.lz");
+static const u8 sDelibirdGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_32_2.4bpp.lz");
+static const u8 sDelibirdGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_32_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites32[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx32, ARRAY_COUNT(sDelibirdGfx32)}, 
@@ -2184,9 +2184,9 @@ static const ax_sprite sDelibirdSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx33[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_33.4bpp");
-static const u8 sDelibirdGfx33_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_33_1.4bpp");
-static const u8 sDelibirdGfx33_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_33_2.4bpp");
+static const u8 sDelibirdGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_33.4bpp.lz");
+static const u8 sDelibirdGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_33_1.4bpp.lz");
+static const u8 sDelibirdGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_33_2.4bpp.lz");
 static const ax_sprite sDelibirdSprites33[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx33, ARRAY_COUNT(sDelibirdGfx33)}, 
@@ -2197,9 +2197,9 @@ static const ax_sprite sDelibirdSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx34[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_34.4bpp");
-static const u8 sDelibirdGfx34_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_34_1.4bpp");
-static const u8 sDelibirdGfx34_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_34_2.4bpp");
+static const u8 sDelibirdGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_34.4bpp.lz");
+static const u8 sDelibirdGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_34_1.4bpp.lz");
+static const u8 sDelibirdGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_34_2.4bpp.lz");
 static const ax_sprite sDelibirdSprites34[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx34, ARRAY_COUNT(sDelibirdGfx34)}, 
@@ -2210,10 +2210,10 @@ static const ax_sprite sDelibirdSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx35[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_35.4bpp");
-static const u8 sDelibirdGfx35_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_35_1.4bpp");
-static const u8 sDelibirdGfx35_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_35_2.4bpp");
-static const u8 sDelibirdGfx35_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_35_3.4bpp");
+static const u8 sDelibirdGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_35.4bpp.lz");
+static const u8 sDelibirdGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_35_1.4bpp.lz");
+static const u8 sDelibirdGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_35_2.4bpp.lz");
+static const u8 sDelibirdGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_35_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites35[] = {
 	{sDelibirdGfx35, ARRAY_COUNT(sDelibirdGfx35)}, 
 	{NULL, 32}, 
@@ -2225,9 +2225,9 @@ static const ax_sprite sDelibirdSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx36[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_36.4bpp");
-static const u8 sDelibirdGfx36_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_36_1.4bpp");
-static const u8 sDelibirdGfx36_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_36_2.4bpp");
+static const u8 sDelibirdGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_36.4bpp.lz");
+static const u8 sDelibirdGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_36_1.4bpp.lz");
+static const u8 sDelibirdGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_36_2.4bpp.lz");
 static const ax_sprite sDelibirdSprites36[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx36, ARRAY_COUNT(sDelibirdGfx36)}, 
@@ -2238,10 +2238,10 @@ static const ax_sprite sDelibirdSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx37[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_37.4bpp");
-static const u8 sDelibirdGfx37_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_37_1.4bpp");
-static const u8 sDelibirdGfx37_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_37_2.4bpp");
-static const u8 sDelibirdGfx37_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_37_3.4bpp");
+static const u8 sDelibirdGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_37.4bpp.lz");
+static const u8 sDelibirdGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_37_1.4bpp.lz");
+static const u8 sDelibirdGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_37_2.4bpp.lz");
+static const u8 sDelibirdGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_37_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites37[] = {
 	{sDelibirdGfx37, ARRAY_COUNT(sDelibirdGfx37)}, 
 	{NULL, 32}, 
@@ -2253,10 +2253,10 @@ static const ax_sprite sDelibirdSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx38[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_38.4bpp");
-static const u8 sDelibirdGfx38_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_38_1.4bpp");
-static const u8 sDelibirdGfx38_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_38_2.4bpp");
-static const u8 sDelibirdGfx38_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_38_3.4bpp");
+static const u8 sDelibirdGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_38.4bpp.lz");
+static const u8 sDelibirdGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_38_1.4bpp.lz");
+static const u8 sDelibirdGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_38_2.4bpp.lz");
+static const u8 sDelibirdGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_38_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites38[] = {
 	{sDelibirdGfx38, ARRAY_COUNT(sDelibirdGfx38)}, 
 	{NULL, 32}, 
@@ -2268,10 +2268,10 @@ static const ax_sprite sDelibirdSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx39[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_39.4bpp");
-static const u8 sDelibirdGfx39_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_39_1.4bpp");
-static const u8 sDelibirdGfx39_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_39_2.4bpp");
-static const u8 sDelibirdGfx39_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_39_3.4bpp");
+static const u8 sDelibirdGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_39.4bpp.lz");
+static const u8 sDelibirdGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_39_1.4bpp.lz");
+static const u8 sDelibirdGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_39_2.4bpp.lz");
+static const u8 sDelibirdGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_39_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites39[] = {
 	{sDelibirdGfx39, ARRAY_COUNT(sDelibirdGfx39)}, 
 	{NULL, 32}, 
@@ -2283,10 +2283,10 @@ static const ax_sprite sDelibirdSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx40[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_40.4bpp");
-static const u8 sDelibirdGfx40_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_40_1.4bpp");
-static const u8 sDelibirdGfx40_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_40_2.4bpp");
-static const u8 sDelibirdGfx40_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_40_3.4bpp");
+static const u8 sDelibirdGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_40.4bpp.lz");
+static const u8 sDelibirdGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_40_1.4bpp.lz");
+static const u8 sDelibirdGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_40_2.4bpp.lz");
+static const u8 sDelibirdGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_40_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites40[] = {
 	{sDelibirdGfx40, ARRAY_COUNT(sDelibirdGfx40)}, 
 	{NULL, 32}, 
@@ -2298,10 +2298,10 @@ static const ax_sprite sDelibirdSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx41[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_41.4bpp");
-static const u8 sDelibirdGfx41_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_41_1.4bpp");
-static const u8 sDelibirdGfx41_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_41_2.4bpp");
-static const u8 sDelibirdGfx41_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_41_3.4bpp");
+static const u8 sDelibirdGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_41.4bpp.lz");
+static const u8 sDelibirdGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_41_1.4bpp.lz");
+static const u8 sDelibirdGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_41_2.4bpp.lz");
+static const u8 sDelibirdGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_41_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites41[] = {
 	{sDelibirdGfx41, ARRAY_COUNT(sDelibirdGfx41)}, 
 	{NULL, 32}, 
@@ -2313,10 +2313,10 @@ static const ax_sprite sDelibirdSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx42[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_42.4bpp");
-static const u8 sDelibirdGfx42_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_42_1.4bpp");
-static const u8 sDelibirdGfx42_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_42_2.4bpp");
-static const u8 sDelibirdGfx42_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_42_3.4bpp");
+static const u8 sDelibirdGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_42.4bpp.lz");
+static const u8 sDelibirdGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_42_1.4bpp.lz");
+static const u8 sDelibirdGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_42_2.4bpp.lz");
+static const u8 sDelibirdGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_42_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites42[] = {
 	{sDelibirdGfx42, ARRAY_COUNT(sDelibirdGfx42)}, 
 	{NULL, 32}, 
@@ -2328,10 +2328,10 @@ static const ax_sprite sDelibirdSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx43[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_43.4bpp");
-static const u8 sDelibirdGfx43_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_43_1.4bpp");
-static const u8 sDelibirdGfx43_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_43_2.4bpp");
-static const u8 sDelibirdGfx43_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_43_3.4bpp");
+static const u8 sDelibirdGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_43.4bpp.lz");
+static const u8 sDelibirdGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_43_1.4bpp.lz");
+static const u8 sDelibirdGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_43_2.4bpp.lz");
+static const u8 sDelibirdGfx43_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_43_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites43[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx43, ARRAY_COUNT(sDelibirdGfx43)}, 
@@ -2344,10 +2344,10 @@ static const ax_sprite sDelibirdSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx44[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_44.4bpp");
-static const u8 sDelibirdGfx44_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_44_1.4bpp");
-static const u8 sDelibirdGfx44_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_44_2.4bpp");
-static const u8 sDelibirdGfx44_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_44_3.4bpp");
+static const u8 sDelibirdGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_44.4bpp.lz");
+static const u8 sDelibirdGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_44_1.4bpp.lz");
+static const u8 sDelibirdGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_44_2.4bpp.lz");
+static const u8 sDelibirdGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_44_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites44[] = {
 	{NULL, 32}, 
 	{sDelibirdGfx44, ARRAY_COUNT(sDelibirdGfx44)}, 
@@ -2360,9 +2360,9 @@ static const ax_sprite sDelibirdSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx45[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_45.4bpp");
-static const u8 sDelibirdGfx45_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_45_1.4bpp");
-static const u8 sDelibirdGfx45_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_45_2.4bpp");
+static const u8 sDelibirdGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_45.4bpp.lz");
+static const u8 sDelibirdGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_45_1.4bpp.lz");
+static const u8 sDelibirdGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_45_2.4bpp.lz");
 static const ax_sprite sDelibirdSprites45[] = {
 	{sDelibirdGfx45, ARRAY_COUNT(sDelibirdGfx45)}, 
 	{NULL, 64}, 
@@ -2372,10 +2372,10 @@ static const ax_sprite sDelibirdSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx46[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_46.4bpp");
-static const u8 sDelibirdGfx46_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_46_1.4bpp");
-static const u8 sDelibirdGfx46_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_46_2.4bpp");
-static const u8 sDelibirdGfx46_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_46_3.4bpp");
+static const u8 sDelibirdGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_46.4bpp.lz");
+static const u8 sDelibirdGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_46_1.4bpp.lz");
+static const u8 sDelibirdGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_46_2.4bpp.lz");
+static const u8 sDelibirdGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_46_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites46[] = {
 	{sDelibirdGfx46, ARRAY_COUNT(sDelibirdGfx46)}, 
 	{NULL, 64}, 
@@ -2387,10 +2387,10 @@ static const ax_sprite sDelibirdSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx47[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_47.4bpp");
-static const u8 sDelibirdGfx47_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_47_1.4bpp");
-static const u8 sDelibirdGfx47_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_47_2.4bpp");
-static const u8 sDelibirdGfx47_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_47_3.4bpp");
+static const u8 sDelibirdGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_47.4bpp.lz");
+static const u8 sDelibirdGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_47_1.4bpp.lz");
+static const u8 sDelibirdGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_47_2.4bpp.lz");
+static const u8 sDelibirdGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_47_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites47[] = {
 	{sDelibirdGfx47, ARRAY_COUNT(sDelibirdGfx47)}, 
 	{NULL, 32}, 
@@ -2402,10 +2402,10 @@ static const ax_sprite sDelibirdSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx48[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_48.4bpp");
-static const u8 sDelibirdGfx48_1[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_48_1.4bpp");
-static const u8 sDelibirdGfx48_2[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_48_2.4bpp");
-static const u8 sDelibirdGfx48_3[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_48_3.4bpp");
+static const u8 sDelibirdGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_48.4bpp.lz");
+static const u8 sDelibirdGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_48_1.4bpp.lz");
+static const u8 sDelibirdGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_48_2.4bpp.lz");
+static const u8 sDelibirdGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_48_3.4bpp.lz");
 static const ax_sprite sDelibirdSprites48[] = {
 	{sDelibirdGfx48, ARRAY_COUNT(sDelibirdGfx48)}, 
 	{NULL, 32}, 
@@ -2417,37 +2417,37 @@ static const ax_sprite sDelibirdSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx49[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_49.4bpp");
+static const u8 sDelibirdGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_49.4bpp.lz");
 static const ax_sprite sDelibirdSprites49[] = {
 	{sDelibirdGfx49, ARRAY_COUNT(sDelibirdGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx50[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_50.4bpp");
+static const u8 sDelibirdGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_50.4bpp.lz");
 static const ax_sprite sDelibirdSprites50[] = {
 	{sDelibirdGfx50, ARRAY_COUNT(sDelibirdGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx51[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_51.4bpp");
+static const u8 sDelibirdGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_51.4bpp.lz");
 static const ax_sprite sDelibirdSprites51[] = {
 	{sDelibirdGfx51, ARRAY_COUNT(sDelibirdGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx52[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_52.4bpp");
+static const u8 sDelibirdGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_52.4bpp.lz");
 static const ax_sprite sDelibirdSprites52[] = {
 	{sDelibirdGfx52, ARRAY_COUNT(sDelibirdGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx53[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_53.4bpp");
+static const u8 sDelibirdGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_53.4bpp.lz");
 static const ax_sprite sDelibirdSprites53[] = {
 	{sDelibirdGfx53, ARRAY_COUNT(sDelibirdGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx54[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_54.4bpp");
+static const u8 sDelibirdGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_54.4bpp.lz");
 static const ax_sprite sDelibirdSprites54[] = {
 	{sDelibirdGfx54, ARRAY_COUNT(sDelibirdGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sDelibirdGfx55[] = INCBIN_U8("graphics/ax/mon/delibird/sprite_55.4bpp");
+static const u8 sDelibirdGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/delibird/sprite_55.4bpp.lz");
 static const ax_sprite sDelibirdSprites55[] = {
 	{sDelibirdGfx55, ARRAY_COUNT(sDelibirdGfx55)}, 
 	{NULL, 0}

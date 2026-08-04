@@ -2236,83 +2236,83 @@ static const ax_anim sGardevoirAnims_16_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGardevoirGfx1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_1.4bpp");
+static const u8 sGardevoirGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_1.4bpp.lz");
 static const ax_sprite sGardevoirSprites1[] = {
 	{sGardevoirGfx1, ARRAY_COUNT(sGardevoirGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_2.4bpp");
+static const u8 sGardevoirGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites2[] = {
 	{sGardevoirGfx2, ARRAY_COUNT(sGardevoirGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx3[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_3.4bpp");
+static const u8 sGardevoirGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_3.4bpp.lz");
 static const ax_sprite sGardevoirSprites3[] = {
 	{sGardevoirGfx3, ARRAY_COUNT(sGardevoirGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx4[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_4.4bpp");
+static const u8 sGardevoirGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_4.4bpp.lz");
 static const ax_sprite sGardevoirSprites4[] = {
 	{sGardevoirGfx4, ARRAY_COUNT(sGardevoirGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx5[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_5.4bpp");
+static const u8 sGardevoirGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_5.4bpp.lz");
 static const ax_sprite sGardevoirSprites5[] = {
 	{sGardevoirGfx5, ARRAY_COUNT(sGardevoirGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx6[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_6.4bpp");
+static const u8 sGardevoirGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_6.4bpp.lz");
 static const ax_sprite sGardevoirSprites6[] = {
 	{sGardevoirGfx6, ARRAY_COUNT(sGardevoirGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx7[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_7.4bpp");
+static const u8 sGardevoirGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_7.4bpp.lz");
 static const ax_sprite sGardevoirSprites7[] = {
 	{sGardevoirGfx7, ARRAY_COUNT(sGardevoirGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx8[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_8.4bpp");
+static const u8 sGardevoirGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_8.4bpp.lz");
 static const ax_sprite sGardevoirSprites8[] = {
 	{sGardevoirGfx8, ARRAY_COUNT(sGardevoirGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx9[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_9.4bpp");
+static const u8 sGardevoirGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_9.4bpp.lz");
 static const ax_sprite sGardevoirSprites9[] = {
 	{sGardevoirGfx9, ARRAY_COUNT(sGardevoirGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx10[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_10.4bpp");
+static const u8 sGardevoirGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_10.4bpp.lz");
 static const ax_sprite sGardevoirSprites10[] = {
 	{sGardevoirGfx10, ARRAY_COUNT(sGardevoirGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx11[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_11.4bpp");
+static const u8 sGardevoirGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_11.4bpp.lz");
 static const ax_sprite sGardevoirSprites11[] = {
 	{sGardevoirGfx11, ARRAY_COUNT(sGardevoirGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx12[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_12.4bpp");
+static const u8 sGardevoirGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_12.4bpp.lz");
 static const ax_sprite sGardevoirSprites12[] = {
 	{sGardevoirGfx12, ARRAY_COUNT(sGardevoirGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx13[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_13.4bpp");
+static const u8 sGardevoirGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_13.4bpp.lz");
 static const ax_sprite sGardevoirSprites13[] = {
 	{sGardevoirGfx13, ARRAY_COUNT(sGardevoirGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx14[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_14.4bpp");
+static const u8 sGardevoirGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_14.4bpp.lz");
 static const ax_sprite sGardevoirSprites14[] = {
 	{sGardevoirGfx14, ARRAY_COUNT(sGardevoirGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx15[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_15.4bpp");
+static const u8 sGardevoirGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_15.4bpp.lz");
 static const ax_sprite sGardevoirSprites15[] = {
 	{sGardevoirGfx15, ARRAY_COUNT(sGardevoirGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx16[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_16.4bpp");
-static const u8 sGardevoirGfx16_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_16_1.4bpp");
+static const u8 sGardevoirGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_16.4bpp.lz");
+static const u8 sGardevoirGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_16_1.4bpp.lz");
 static const ax_sprite sGardevoirSprites16[] = {
 	{NULL, 32}, 
 	{sGardevoirGfx16, ARRAY_COUNT(sGardevoirGfx16)}, 
@@ -2321,9 +2321,9 @@ static const ax_sprite sGardevoirSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx17[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_17.4bpp");
-static const u8 sGardevoirGfx17_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_17_1.4bpp");
-static const u8 sGardevoirGfx17_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_17_2.4bpp");
+static const u8 sGardevoirGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_17.4bpp.lz");
+static const u8 sGardevoirGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_17_1.4bpp.lz");
+static const u8 sGardevoirGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_17_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites17[] = {
 	{sGardevoirGfx17, ARRAY_COUNT(sGardevoirGfx17)}, 
 	{NULL, 64}, 
@@ -2333,9 +2333,9 @@ static const ax_sprite sGardevoirSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx18[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_18.4bpp");
-static const u8 sGardevoirGfx18_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_18_1.4bpp");
-static const u8 sGardevoirGfx18_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_18_2.4bpp");
+static const u8 sGardevoirGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_18.4bpp.lz");
+static const u8 sGardevoirGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_18_1.4bpp.lz");
+static const u8 sGardevoirGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_18_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites18[] = {
 	{sGardevoirGfx18, ARRAY_COUNT(sGardevoirGfx18)}, 
 	{NULL, 64}, 
@@ -2345,10 +2345,10 @@ static const ax_sprite sGardevoirSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx19[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_19.4bpp");
-static const u8 sGardevoirGfx19_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_19_1.4bpp");
-static const u8 sGardevoirGfx19_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_19_2.4bpp");
-static const u8 sGardevoirGfx19_3[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_19_3.4bpp");
+static const u8 sGardevoirGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_19.4bpp.lz");
+static const u8 sGardevoirGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_19_1.4bpp.lz");
+static const u8 sGardevoirGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_19_2.4bpp.lz");
+static const u8 sGardevoirGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_19_3.4bpp.lz");
 static const ax_sprite sGardevoirSprites19[] = {
 	{sGardevoirGfx19, ARRAY_COUNT(sGardevoirGfx19)}, 
 	{NULL, 64}, 
@@ -2360,10 +2360,10 @@ static const ax_sprite sGardevoirSprites19[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx20[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_20.4bpp");
-static const u8 sGardevoirGfx20_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_20_1.4bpp");
-static const u8 sGardevoirGfx20_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_20_2.4bpp");
-static const u8 sGardevoirGfx20_3[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_20_3.4bpp");
+static const u8 sGardevoirGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_20.4bpp.lz");
+static const u8 sGardevoirGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_20_1.4bpp.lz");
+static const u8 sGardevoirGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_20_2.4bpp.lz");
+static const u8 sGardevoirGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_20_3.4bpp.lz");
 static const ax_sprite sGardevoirSprites20[] = {
 	{sGardevoirGfx20, ARRAY_COUNT(sGardevoirGfx20)}, 
 	{NULL, 64}, 
@@ -2375,9 +2375,9 @@ static const ax_sprite sGardevoirSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx21[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_21.4bpp");
-static const u8 sGardevoirGfx21_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_21_1.4bpp");
-static const u8 sGardevoirGfx21_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_21_2.4bpp");
+static const u8 sGardevoirGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_21.4bpp.lz");
+static const u8 sGardevoirGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_21_1.4bpp.lz");
+static const u8 sGardevoirGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_21_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites21[] = {
 	{NULL, 32}, 
 	{sGardevoirGfx21, ARRAY_COUNT(sGardevoirGfx21)}, 
@@ -2388,9 +2388,9 @@ static const ax_sprite sGardevoirSprites21[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx22[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_22.4bpp");
-static const u8 sGardevoirGfx22_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_22_1.4bpp");
-static const u8 sGardevoirGfx22_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_22_2.4bpp");
+static const u8 sGardevoirGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_22.4bpp.lz");
+static const u8 sGardevoirGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_22_1.4bpp.lz");
+static const u8 sGardevoirGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_22_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites22[] = {
 	{NULL, 32}, 
 	{sGardevoirGfx22, ARRAY_COUNT(sGardevoirGfx22)}, 
@@ -2401,9 +2401,9 @@ static const ax_sprite sGardevoirSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx23[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_23.4bpp");
-static const u8 sGardevoirGfx23_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_23_1.4bpp");
-static const u8 sGardevoirGfx23_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_23_2.4bpp");
+static const u8 sGardevoirGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_23.4bpp.lz");
+static const u8 sGardevoirGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_23_1.4bpp.lz");
+static const u8 sGardevoirGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_23_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites23[] = {
 	{NULL, 32}, 
 	{sGardevoirGfx23, ARRAY_COUNT(sGardevoirGfx23)}, 
@@ -2414,9 +2414,9 @@ static const ax_sprite sGardevoirSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx24[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_24.4bpp");
-static const u8 sGardevoirGfx24_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_24_1.4bpp");
-static const u8 sGardevoirGfx24_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_24_2.4bpp");
+static const u8 sGardevoirGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_24.4bpp.lz");
+static const u8 sGardevoirGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_24_1.4bpp.lz");
+static const u8 sGardevoirGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_24_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites24[] = {
 	{sGardevoirGfx24, ARRAY_COUNT(sGardevoirGfx24)}, 
 	{NULL, 32}, 
@@ -2426,9 +2426,9 @@ static const ax_sprite sGardevoirSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx25[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_25.4bpp");
-static const u8 sGardevoirGfx25_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_25_1.4bpp");
-static const u8 sGardevoirGfx25_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_25_2.4bpp");
+static const u8 sGardevoirGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_25.4bpp.lz");
+static const u8 sGardevoirGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_25_1.4bpp.lz");
+static const u8 sGardevoirGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_25_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites25[] = {
 	{sGardevoirGfx25, ARRAY_COUNT(sGardevoirGfx25)}, 
 	{NULL, 32}, 
@@ -2438,9 +2438,9 @@ static const ax_sprite sGardevoirSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx26[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_26.4bpp");
-static const u8 sGardevoirGfx26_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_26_1.4bpp");
-static const u8 sGardevoirGfx26_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_26_2.4bpp");
+static const u8 sGardevoirGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_26.4bpp.lz");
+static const u8 sGardevoirGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_26_1.4bpp.lz");
+static const u8 sGardevoirGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_26_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites26[] = {
 	{sGardevoirGfx26, ARRAY_COUNT(sGardevoirGfx26)}, 
 	{NULL, 32}, 
@@ -2450,9 +2450,9 @@ static const ax_sprite sGardevoirSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx27[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_27.4bpp");
-static const u8 sGardevoirGfx27_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_27_1.4bpp");
-static const u8 sGardevoirGfx27_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_27_2.4bpp");
+static const u8 sGardevoirGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_27.4bpp.lz");
+static const u8 sGardevoirGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_27_1.4bpp.lz");
+static const u8 sGardevoirGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_27_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites27[] = {
 	{sGardevoirGfx27, ARRAY_COUNT(sGardevoirGfx27)}, 
 	{NULL, 32}, 
@@ -2462,9 +2462,9 @@ static const ax_sprite sGardevoirSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx28[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_28.4bpp");
-static const u8 sGardevoirGfx28_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_28_1.4bpp");
-static const u8 sGardevoirGfx28_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_28_2.4bpp");
+static const u8 sGardevoirGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_28.4bpp.lz");
+static const u8 sGardevoirGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_28_1.4bpp.lz");
+static const u8 sGardevoirGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_28_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites28[] = {
 	{sGardevoirGfx28, ARRAY_COUNT(sGardevoirGfx28)}, 
 	{NULL, 32}, 
@@ -2474,9 +2474,9 @@ static const ax_sprite sGardevoirSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx29[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_29.4bpp");
-static const u8 sGardevoirGfx29_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_29_1.4bpp");
-static const u8 sGardevoirGfx29_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_29_2.4bpp");
+static const u8 sGardevoirGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_29.4bpp.lz");
+static const u8 sGardevoirGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_29_1.4bpp.lz");
+static const u8 sGardevoirGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_29_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites29[] = {
 	{sGardevoirGfx29, ARRAY_COUNT(sGardevoirGfx29)}, 
 	{NULL, 32}, 
@@ -2486,9 +2486,9 @@ static const ax_sprite sGardevoirSprites29[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx30[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_30.4bpp");
-static const u8 sGardevoirGfx30_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_30_1.4bpp");
-static const u8 sGardevoirGfx30_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_30_2.4bpp");
+static const u8 sGardevoirGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_30.4bpp.lz");
+static const u8 sGardevoirGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_30_1.4bpp.lz");
+static const u8 sGardevoirGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_30_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites30[] = {
 	{sGardevoirGfx30, ARRAY_COUNT(sGardevoirGfx30)}, 
 	{NULL, 32}, 
@@ -2498,9 +2498,9 @@ static const ax_sprite sGardevoirSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx31[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_31.4bpp");
-static const u8 sGardevoirGfx31_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_31_1.4bpp");
-static const u8 sGardevoirGfx31_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_31_2.4bpp");
+static const u8 sGardevoirGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_31.4bpp.lz");
+static const u8 sGardevoirGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_31_1.4bpp.lz");
+static const u8 sGardevoirGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_31_2.4bpp.lz");
 static const ax_sprite sGardevoirSprites31[] = {
 	{sGardevoirGfx31, ARRAY_COUNT(sGardevoirGfx31)}, 
 	{NULL, 64}, 
@@ -2510,10 +2510,10 @@ static const ax_sprite sGardevoirSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx32[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_32.4bpp");
-static const u8 sGardevoirGfx32_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_32_1.4bpp");
-static const u8 sGardevoirGfx32_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_32_2.4bpp");
-static const u8 sGardevoirGfx32_3[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_32_3.4bpp");
+static const u8 sGardevoirGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_32.4bpp.lz");
+static const u8 sGardevoirGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_32_1.4bpp.lz");
+static const u8 sGardevoirGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_32_2.4bpp.lz");
+static const u8 sGardevoirGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_32_3.4bpp.lz");
 static const ax_sprite sGardevoirSprites32[] = {
 	{sGardevoirGfx32, ARRAY_COUNT(sGardevoirGfx32)}, 
 	{NULL, 32}, 
@@ -2525,10 +2525,10 @@ static const ax_sprite sGardevoirSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx33[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_33.4bpp");
-static const u8 sGardevoirGfx33_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_33_1.4bpp");
-static const u8 sGardevoirGfx33_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_33_2.4bpp");
-static const u8 sGardevoirGfx33_3[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_33_3.4bpp");
+static const u8 sGardevoirGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_33.4bpp.lz");
+static const u8 sGardevoirGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_33_1.4bpp.lz");
+static const u8 sGardevoirGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_33_2.4bpp.lz");
+static const u8 sGardevoirGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_33_3.4bpp.lz");
 static const ax_sprite sGardevoirSprites33[] = {
 	{sGardevoirGfx33, ARRAY_COUNT(sGardevoirGfx33)}, 
 	{NULL, 32}, 
@@ -2540,10 +2540,10 @@ static const ax_sprite sGardevoirSprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx34[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_34.4bpp");
-static const u8 sGardevoirGfx34_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_34_1.4bpp");
-static const u8 sGardevoirGfx34_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_34_2.4bpp");
-static const u8 sGardevoirGfx34_3[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_34_3.4bpp");
+static const u8 sGardevoirGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_34.4bpp.lz");
+static const u8 sGardevoirGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_34_1.4bpp.lz");
+static const u8 sGardevoirGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_34_2.4bpp.lz");
+static const u8 sGardevoirGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_34_3.4bpp.lz");
 static const ax_sprite sGardevoirSprites34[] = {
 	{sGardevoirGfx34, ARRAY_COUNT(sGardevoirGfx34)}, 
 	{NULL, 32}, 
@@ -2555,10 +2555,10 @@ static const ax_sprite sGardevoirSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx35[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_35.4bpp");
-static const u8 sGardevoirGfx35_1[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_35_1.4bpp");
-static const u8 sGardevoirGfx35_2[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_35_2.4bpp");
-static const u8 sGardevoirGfx35_3[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_35_3.4bpp");
+static const u8 sGardevoirGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_35.4bpp.lz");
+static const u8 sGardevoirGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_35_1.4bpp.lz");
+static const u8 sGardevoirGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_35_2.4bpp.lz");
+static const u8 sGardevoirGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_35_3.4bpp.lz");
 static const ax_sprite sGardevoirSprites35[] = {
 	{sGardevoirGfx35, ARRAY_COUNT(sGardevoirGfx35)}, 
 	{NULL, 32}, 
@@ -2570,122 +2570,122 @@ static const ax_sprite sGardevoirSprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx36[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_36.4bpp");
+static const u8 sGardevoirGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_36.4bpp.lz");
 static const ax_sprite sGardevoirSprites36[] = {
 	{sGardevoirGfx36, ARRAY_COUNT(sGardevoirGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx37[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_37.4bpp");
+static const u8 sGardevoirGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_37.4bpp.lz");
 static const ax_sprite sGardevoirSprites37[] = {
 	{sGardevoirGfx37, ARRAY_COUNT(sGardevoirGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx38[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_38.4bpp");
+static const u8 sGardevoirGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_38.4bpp.lz");
 static const ax_sprite sGardevoirSprites38[] = {
 	{sGardevoirGfx38, ARRAY_COUNT(sGardevoirGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx39[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_39.4bpp");
+static const u8 sGardevoirGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_39.4bpp.lz");
 static const ax_sprite sGardevoirSprites39[] = {
 	{sGardevoirGfx39, ARRAY_COUNT(sGardevoirGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx40[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_40.4bpp");
+static const u8 sGardevoirGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_40.4bpp.lz");
 static const ax_sprite sGardevoirSprites40[] = {
 	{sGardevoirGfx40, ARRAY_COUNT(sGardevoirGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx41[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_41.4bpp");
+static const u8 sGardevoirGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_41.4bpp.lz");
 static const ax_sprite sGardevoirSprites41[] = {
 	{sGardevoirGfx41, ARRAY_COUNT(sGardevoirGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx42[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_42.4bpp");
+static const u8 sGardevoirGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_42.4bpp.lz");
 static const ax_sprite sGardevoirSprites42[] = {
 	{sGardevoirGfx42, ARRAY_COUNT(sGardevoirGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx43[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_43.4bpp");
+static const u8 sGardevoirGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_43.4bpp.lz");
 static const ax_sprite sGardevoirSprites43[] = {
 	{sGardevoirGfx43, ARRAY_COUNT(sGardevoirGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx44[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_44.4bpp");
+static const u8 sGardevoirGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_44.4bpp.lz");
 static const ax_sprite sGardevoirSprites44[] = {
 	{sGardevoirGfx44, ARRAY_COUNT(sGardevoirGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx45[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_45.4bpp");
+static const u8 sGardevoirGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_45.4bpp.lz");
 static const ax_sprite sGardevoirSprites45[] = {
 	{sGardevoirGfx45, ARRAY_COUNT(sGardevoirGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx46[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_46.4bpp");
+static const u8 sGardevoirGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_46.4bpp.lz");
 static const ax_sprite sGardevoirSprites46[] = {
 	{sGardevoirGfx46, ARRAY_COUNT(sGardevoirGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx47[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_47.4bpp");
+static const u8 sGardevoirGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_47.4bpp.lz");
 static const ax_sprite sGardevoirSprites47[] = {
 	{sGardevoirGfx47, ARRAY_COUNT(sGardevoirGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx48[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_48.4bpp");
+static const u8 sGardevoirGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_48.4bpp.lz");
 static const ax_sprite sGardevoirSprites48[] = {
 	{sGardevoirGfx48, ARRAY_COUNT(sGardevoirGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx49[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_49.4bpp");
+static const u8 sGardevoirGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_49.4bpp.lz");
 static const ax_sprite sGardevoirSprites49[] = {
 	{sGardevoirGfx49, ARRAY_COUNT(sGardevoirGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx50[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_50.4bpp");
+static const u8 sGardevoirGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_50.4bpp.lz");
 static const ax_sprite sGardevoirSprites50[] = {
 	{sGardevoirGfx50, ARRAY_COUNT(sGardevoirGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx51[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_51.4bpp");
+static const u8 sGardevoirGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_51.4bpp.lz");
 static const ax_sprite sGardevoirSprites51[] = {
 	{sGardevoirGfx51, ARRAY_COUNT(sGardevoirGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx52[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_52.4bpp");
+static const u8 sGardevoirGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_52.4bpp.lz");
 static const ax_sprite sGardevoirSprites52[] = {
 	{sGardevoirGfx52, ARRAY_COUNT(sGardevoirGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx53[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_53.4bpp");
+static const u8 sGardevoirGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_53.4bpp.lz");
 static const ax_sprite sGardevoirSprites53[] = {
 	{sGardevoirGfx53, ARRAY_COUNT(sGardevoirGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx54[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_54.4bpp");
+static const u8 sGardevoirGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_54.4bpp.lz");
 static const ax_sprite sGardevoirSprites54[] = {
 	{sGardevoirGfx54, ARRAY_COUNT(sGardevoirGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx55[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_55.4bpp");
+static const u8 sGardevoirGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_55.4bpp.lz");
 static const ax_sprite sGardevoirSprites55[] = {
 	{sGardevoirGfx55, ARRAY_COUNT(sGardevoirGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx56[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_56.4bpp");
+static const u8 sGardevoirGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_56.4bpp.lz");
 static const ax_sprite sGardevoirSprites56[] = {
 	{sGardevoirGfx56, ARRAY_COUNT(sGardevoirGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx57[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_57.4bpp");
+static const u8 sGardevoirGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_57.4bpp.lz");
 static const ax_sprite sGardevoirSprites57[] = {
 	{sGardevoirGfx57, ARRAY_COUNT(sGardevoirGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx58[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_58.4bpp");
+static const u8 sGardevoirGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_58.4bpp.lz");
 static const ax_sprite sGardevoirSprites58[] = {
 	{sGardevoirGfx58, ARRAY_COUNT(sGardevoirGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sGardevoirGfx59[] = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_59.4bpp");
+static const u8 sGardevoirGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gardevoir/sprite_59.4bpp.lz");
 static const ax_sprite sGardevoirSprites59[] = {
 	{sGardevoirGfx59, ARRAY_COUNT(sGardevoirGfx59)}, 
 	{NULL, 0}

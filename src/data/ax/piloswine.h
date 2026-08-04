@@ -1911,83 +1911,83 @@ static const ax_anim sPiloswineAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPiloswineGfx1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_1.4bpp");
+static const u8 sPiloswineGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_1.4bpp.lz");
 static const ax_sprite sPiloswineSprites1[] = {
 	{sPiloswineGfx1, ARRAY_COUNT(sPiloswineGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx2[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_2.4bpp");
+static const u8 sPiloswineGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_2.4bpp.lz");
 static const ax_sprite sPiloswineSprites2[] = {
 	{sPiloswineGfx2, ARRAY_COUNT(sPiloswineGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx3[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_3.4bpp");
+static const u8 sPiloswineGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_3.4bpp.lz");
 static const ax_sprite sPiloswineSprites3[] = {
 	{sPiloswineGfx3, ARRAY_COUNT(sPiloswineGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx4[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_4.4bpp");
+static const u8 sPiloswineGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_4.4bpp.lz");
 static const ax_sprite sPiloswineSprites4[] = {
 	{sPiloswineGfx4, ARRAY_COUNT(sPiloswineGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx5[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_5.4bpp");
+static const u8 sPiloswineGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_5.4bpp.lz");
 static const ax_sprite sPiloswineSprites5[] = {
 	{sPiloswineGfx5, ARRAY_COUNT(sPiloswineGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx6[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_6.4bpp");
+static const u8 sPiloswineGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_6.4bpp.lz");
 static const ax_sprite sPiloswineSprites6[] = {
 	{sPiloswineGfx6, ARRAY_COUNT(sPiloswineGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx7[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_7.4bpp");
+static const u8 sPiloswineGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_7.4bpp.lz");
 static const ax_sprite sPiloswineSprites7[] = {
 	{sPiloswineGfx7, ARRAY_COUNT(sPiloswineGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx8[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_8.4bpp");
+static const u8 sPiloswineGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_8.4bpp.lz");
 static const ax_sprite sPiloswineSprites8[] = {
 	{sPiloswineGfx8, ARRAY_COUNT(sPiloswineGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx9[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_9.4bpp");
+static const u8 sPiloswineGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_9.4bpp.lz");
 static const ax_sprite sPiloswineSprites9[] = {
 	{sPiloswineGfx9, ARRAY_COUNT(sPiloswineGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx10[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_10.4bpp");
+static const u8 sPiloswineGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_10.4bpp.lz");
 static const ax_sprite sPiloswineSprites10[] = {
 	{sPiloswineGfx10, ARRAY_COUNT(sPiloswineGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx11[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_11.4bpp");
+static const u8 sPiloswineGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_11.4bpp.lz");
 static const ax_sprite sPiloswineSprites11[] = {
 	{sPiloswineGfx11, ARRAY_COUNT(sPiloswineGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx12[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_12.4bpp");
+static const u8 sPiloswineGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_12.4bpp.lz");
 static const ax_sprite sPiloswineSprites12[] = {
 	{sPiloswineGfx12, ARRAY_COUNT(sPiloswineGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx13[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_13.4bpp");
+static const u8 sPiloswineGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_13.4bpp.lz");
 static const ax_sprite sPiloswineSprites13[] = {
 	{sPiloswineGfx13, ARRAY_COUNT(sPiloswineGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx14[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_14.4bpp");
+static const u8 sPiloswineGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_14.4bpp.lz");
 static const ax_sprite sPiloswineSprites14[] = {
 	{sPiloswineGfx14, ARRAY_COUNT(sPiloswineGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx15[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_15.4bpp");
+static const u8 sPiloswineGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_15.4bpp.lz");
 static const ax_sprite sPiloswineSprites15[] = {
 	{sPiloswineGfx15, ARRAY_COUNT(sPiloswineGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx16[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_16.4bpp");
-static const u8 sPiloswineGfx16_1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_16_1.4bpp");
+static const u8 sPiloswineGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_16.4bpp.lz");
+static const u8 sPiloswineGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_16_1.4bpp.lz");
 static const ax_sprite sPiloswineSprites16[] = {
 	{NULL, 32}, 
 	{sPiloswineGfx16, ARRAY_COUNT(sPiloswineGfx16)}, 
@@ -1995,14 +1995,14 @@ static const ax_sprite sPiloswineSprites16[] = {
 	{sPiloswineGfx16_1, ARRAY_COUNT(sPiloswineGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx17[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_17.4bpp");
+static const u8 sPiloswineGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_17.4bpp.lz");
 static const ax_sprite sPiloswineSprites17[] = {
 	{sPiloswineGfx17, ARRAY_COUNT(sPiloswineGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx18[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_18.4bpp");
-static const u8 sPiloswineGfx18_1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_18_1.4bpp");
-static const u8 sPiloswineGfx18_2[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_18_2.4bpp");
+static const u8 sPiloswineGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_18.4bpp.lz");
+static const u8 sPiloswineGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_18_1.4bpp.lz");
+static const u8 sPiloswineGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_18_2.4bpp.lz");
 static const ax_sprite sPiloswineSprites18[] = {
 	{NULL, 32}, 
 	{sPiloswineGfx18, ARRAY_COUNT(sPiloswineGfx18)}, 
@@ -2013,9 +2013,9 @@ static const ax_sprite sPiloswineSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx19[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_19.4bpp");
-static const u8 sPiloswineGfx19_1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_19_1.4bpp");
-static const u8 sPiloswineGfx19_2[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_19_2.4bpp");
+static const u8 sPiloswineGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_19.4bpp.lz");
+static const u8 sPiloswineGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_19_1.4bpp.lz");
+static const u8 sPiloswineGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_19_2.4bpp.lz");
 static const ax_sprite sPiloswineSprites19[] = {
 	{sPiloswineGfx19, ARRAY_COUNT(sPiloswineGfx19)}, 
 	{NULL, 32}, 
@@ -2025,8 +2025,8 @@ static const ax_sprite sPiloswineSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx20[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_20.4bpp");
-static const u8 sPiloswineGfx20_1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_20_1.4bpp");
+static const u8 sPiloswineGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_20.4bpp.lz");
+static const u8 sPiloswineGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_20_1.4bpp.lz");
 static const ax_sprite sPiloswineSprites20[] = {
 	{NULL, 32}, 
 	{sPiloswineGfx20, ARRAY_COUNT(sPiloswineGfx20)}, 
@@ -2034,8 +2034,8 @@ static const ax_sprite sPiloswineSprites20[] = {
 	{sPiloswineGfx20_1, ARRAY_COUNT(sPiloswineGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx21[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_21.4bpp");
-static const u8 sPiloswineGfx21_1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_21_1.4bpp");
+static const u8 sPiloswineGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_21.4bpp.lz");
+static const u8 sPiloswineGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_21_1.4bpp.lz");
 static const ax_sprite sPiloswineSprites21[] = {
 	{sPiloswineGfx21, ARRAY_COUNT(sPiloswineGfx21)}, 
 	{NULL, 32}, 
@@ -2043,16 +2043,16 @@ static const ax_sprite sPiloswineSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx22[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_22.4bpp");
+static const u8 sPiloswineGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_22.4bpp.lz");
 static const ax_sprite sPiloswineSprites22[] = {
 	{NULL, 32}, 
 	{sPiloswineGfx22, ARRAY_COUNT(sPiloswineGfx22)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx23[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_23.4bpp");
-static const u8 sPiloswineGfx23_1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_23_1.4bpp");
-static const u8 sPiloswineGfx23_2[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_23_2.4bpp");
+static const u8 sPiloswineGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_23.4bpp.lz");
+static const u8 sPiloswineGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_23_1.4bpp.lz");
+static const u8 sPiloswineGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_23_2.4bpp.lz");
 static const ax_sprite sPiloswineSprites23[] = {
 	{sPiloswineGfx23, ARRAY_COUNT(sPiloswineGfx23)}, 
 	{NULL, 32}, 
@@ -2062,8 +2062,8 @@ static const ax_sprite sPiloswineSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx24[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_24.4bpp");
-static const u8 sPiloswineGfx24_1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_24_1.4bpp");
+static const u8 sPiloswineGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_24.4bpp.lz");
+static const u8 sPiloswineGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_24_1.4bpp.lz");
 static const ax_sprite sPiloswineSprites24[] = {
 	{NULL, 32}, 
 	{sPiloswineGfx24, ARRAY_COUNT(sPiloswineGfx24)}, 
@@ -2072,8 +2072,8 @@ static const ax_sprite sPiloswineSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx25[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_25.4bpp");
-static const u8 sPiloswineGfx25_1[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_25_1.4bpp");
+static const u8 sPiloswineGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_25.4bpp.lz");
+static const u8 sPiloswineGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_25_1.4bpp.lz");
 static const ax_sprite sPiloswineSprites25[] = {
 	{sPiloswineGfx25, ARRAY_COUNT(sPiloswineGfx25)}, 
 	{NULL, 32}, 
@@ -2081,37 +2081,37 @@ static const ax_sprite sPiloswineSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx26[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_26.4bpp");
+static const u8 sPiloswineGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_26.4bpp.lz");
 static const ax_sprite sPiloswineSprites26[] = {
 	{sPiloswineGfx26, ARRAY_COUNT(sPiloswineGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx27[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_27.4bpp");
+static const u8 sPiloswineGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_27.4bpp.lz");
 static const ax_sprite sPiloswineSprites27[] = {
 	{sPiloswineGfx27, ARRAY_COUNT(sPiloswineGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx28[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_28.4bpp");
+static const u8 sPiloswineGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_28.4bpp.lz");
 static const ax_sprite sPiloswineSprites28[] = {
 	{sPiloswineGfx28, ARRAY_COUNT(sPiloswineGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx29[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_29.4bpp");
+static const u8 sPiloswineGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_29.4bpp.lz");
 static const ax_sprite sPiloswineSprites29[] = {
 	{sPiloswineGfx29, ARRAY_COUNT(sPiloswineGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx30[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_30.4bpp");
+static const u8 sPiloswineGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_30.4bpp.lz");
 static const ax_sprite sPiloswineSprites30[] = {
 	{sPiloswineGfx30, ARRAY_COUNT(sPiloswineGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx31[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_31.4bpp");
+static const u8 sPiloswineGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_31.4bpp.lz");
 static const ax_sprite sPiloswineSprites31[] = {
 	{sPiloswineGfx31, ARRAY_COUNT(sPiloswineGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPiloswineGfx32[] = INCBIN_U8("graphics/ax/mon/piloswine/sprite_32.4bpp");
+static const u8 sPiloswineGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/piloswine/sprite_32.4bpp.lz");
 static const ax_sprite sPiloswineSprites32[] = {
 	{sPiloswineGfx32, ARRAY_COUNT(sPiloswineGfx32)}, 
 	{NULL, 0}

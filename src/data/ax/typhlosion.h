@@ -2264,86 +2264,86 @@ static const ax_anim sTyphlosionAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTyphlosionGfx1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_1.4bpp");
+static const u8 sTyphlosionGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_1.4bpp.lz");
 static const ax_sprite sTyphlosionSprites1[] = {
 	{sTyphlosionGfx1, ARRAY_COUNT(sTyphlosionGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_2.4bpp");
+static const u8 sTyphlosionGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites2[] = {
 	{sTyphlosionGfx2, ARRAY_COUNT(sTyphlosionGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_3.4bpp");
+static const u8 sTyphlosionGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites3[] = {
 	{sTyphlosionGfx3, ARRAY_COUNT(sTyphlosionGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx4[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_4.4bpp");
+static const u8 sTyphlosionGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_4.4bpp.lz");
 static const ax_sprite sTyphlosionSprites4[] = {
 	{sTyphlosionGfx4, ARRAY_COUNT(sTyphlosionGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx5[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_5.4bpp");
+static const u8 sTyphlosionGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_5.4bpp.lz");
 static const ax_sprite sTyphlosionSprites5[] = {
 	{sTyphlosionGfx5, ARRAY_COUNT(sTyphlosionGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx6[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_6.4bpp");
+static const u8 sTyphlosionGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_6.4bpp.lz");
 static const ax_sprite sTyphlosionSprites6[] = {
 	{sTyphlosionGfx6, ARRAY_COUNT(sTyphlosionGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx7[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_7.4bpp");
+static const u8 sTyphlosionGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_7.4bpp.lz");
 static const ax_sprite sTyphlosionSprites7[] = {
 	{sTyphlosionGfx7, ARRAY_COUNT(sTyphlosionGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx8[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_8.4bpp");
+static const u8 sTyphlosionGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_8.4bpp.lz");
 static const ax_sprite sTyphlosionSprites8[] = {
 	{sTyphlosionGfx8, ARRAY_COUNT(sTyphlosionGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx9[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_9.4bpp");
+static const u8 sTyphlosionGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_9.4bpp.lz");
 static const ax_sprite sTyphlosionSprites9[] = {
 	{sTyphlosionGfx9, ARRAY_COUNT(sTyphlosionGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx10[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_10.4bpp");
+static const u8 sTyphlosionGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_10.4bpp.lz");
 static const ax_sprite sTyphlosionSprites10[] = {
 	{sTyphlosionGfx10, ARRAY_COUNT(sTyphlosionGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx11[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_11.4bpp");
+static const u8 sTyphlosionGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_11.4bpp.lz");
 static const ax_sprite sTyphlosionSprites11[] = {
 	{sTyphlosionGfx11, ARRAY_COUNT(sTyphlosionGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx12[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_12.4bpp");
+static const u8 sTyphlosionGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_12.4bpp.lz");
 static const ax_sprite sTyphlosionSprites12[] = {
 	{sTyphlosionGfx12, ARRAY_COUNT(sTyphlosionGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx13[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_13.4bpp");
+static const u8 sTyphlosionGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_13.4bpp.lz");
 static const ax_sprite sTyphlosionSprites13[] = {
 	{sTyphlosionGfx13, ARRAY_COUNT(sTyphlosionGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx14[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_14.4bpp");
+static const u8 sTyphlosionGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_14.4bpp.lz");
 static const ax_sprite sTyphlosionSprites14[] = {
 	{sTyphlosionGfx14, ARRAY_COUNT(sTyphlosionGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx15[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_15.4bpp");
+static const u8 sTyphlosionGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_15.4bpp.lz");
 static const ax_sprite sTyphlosionSprites15[] = {
 	{sTyphlosionGfx15, ARRAY_COUNT(sTyphlosionGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx16[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16.4bpp");
-static const u8 sTyphlosionGfx16_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16_1.4bpp");
-static const u8 sTyphlosionGfx16_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16_2.4bpp");
-static const u8 sTyphlosionGfx16_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16_3.4bpp");
-static const u8 sTyphlosionGfx16_4[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16_4.4bpp");
+static const u8 sTyphlosionGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16.4bpp.lz");
+static const u8 sTyphlosionGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16_1.4bpp.lz");
+static const u8 sTyphlosionGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16_2.4bpp.lz");
+static const u8 sTyphlosionGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16_3.4bpp.lz");
+static const u8 sTyphlosionGfx16_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_16_4.4bpp.lz");
 static const ax_sprite sTyphlosionSprites16[] = {
 	{sTyphlosionGfx16, ARRAY_COUNT(sTyphlosionGfx16)}, 
 	{NULL, 32}, 
@@ -2357,10 +2357,10 @@ static const ax_sprite sTyphlosionSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx17[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_17.4bpp");
-static const u8 sTyphlosionGfx17_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_17_1.4bpp");
-static const u8 sTyphlosionGfx17_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_17_2.4bpp");
-static const u8 sTyphlosionGfx17_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_17_3.4bpp");
+static const u8 sTyphlosionGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_17.4bpp.lz");
+static const u8 sTyphlosionGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_17_1.4bpp.lz");
+static const u8 sTyphlosionGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_17_2.4bpp.lz");
+static const u8 sTyphlosionGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_17_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites17[] = {
 	{sTyphlosionGfx17, ARRAY_COUNT(sTyphlosionGfx17)}, 
 	{NULL, 32}, 
@@ -2372,9 +2372,9 @@ static const ax_sprite sTyphlosionSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx18[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_18.4bpp");
-static const u8 sTyphlosionGfx18_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_18_1.4bpp");
-static const u8 sTyphlosionGfx18_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_18_2.4bpp");
+static const u8 sTyphlosionGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_18.4bpp.lz");
+static const u8 sTyphlosionGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_18_1.4bpp.lz");
+static const u8 sTyphlosionGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_18_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites18[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx18, ARRAY_COUNT(sTyphlosionGfx18)}, 
@@ -2385,10 +2385,10 @@ static const ax_sprite sTyphlosionSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx19[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_19.4bpp");
-static const u8 sTyphlosionGfx19_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_19_1.4bpp");
-static const u8 sTyphlosionGfx19_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_19_2.4bpp");
-static const u8 sTyphlosionGfx19_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_19_3.4bpp");
+static const u8 sTyphlosionGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_19.4bpp.lz");
+static const u8 sTyphlosionGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_19_1.4bpp.lz");
+static const u8 sTyphlosionGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_19_2.4bpp.lz");
+static const u8 sTyphlosionGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_19_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites19[] = {
 	{sTyphlosionGfx19, ARRAY_COUNT(sTyphlosionGfx19)}, 
 	{NULL, 32}, 
@@ -2400,17 +2400,17 @@ static const ax_sprite sTyphlosionSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx20[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_20.4bpp");
+static const u8 sTyphlosionGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_20.4bpp.lz");
 static const ax_sprite sTyphlosionSprites20[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx20, ARRAY_COUNT(sTyphlosionGfx20)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx21[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_21.4bpp");
-static const u8 sTyphlosionGfx21_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_21_1.4bpp");
-static const u8 sTyphlosionGfx21_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_21_2.4bpp");
-static const u8 sTyphlosionGfx21_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_21_3.4bpp");
+static const u8 sTyphlosionGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_21.4bpp.lz");
+static const u8 sTyphlosionGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_21_1.4bpp.lz");
+static const u8 sTyphlosionGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_21_2.4bpp.lz");
+static const u8 sTyphlosionGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_21_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites21[] = {
 	{sTyphlosionGfx21, ARRAY_COUNT(sTyphlosionGfx21)}, 
 	{NULL, 32}, 
@@ -2422,25 +2422,25 @@ static const ax_sprite sTyphlosionSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx22[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_22.4bpp");
+static const u8 sTyphlosionGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_22.4bpp.lz");
 static const ax_sprite sTyphlosionSprites22[] = {
 	{sTyphlosionGfx22, ARRAY_COUNT(sTyphlosionGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx23[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_23.4bpp");
+static const u8 sTyphlosionGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_23.4bpp.lz");
 static const ax_sprite sTyphlosionSprites23[] = {
 	{sTyphlosionGfx23, ARRAY_COUNT(sTyphlosionGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx24[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_24.4bpp");
+static const u8 sTyphlosionGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_24.4bpp.lz");
 static const ax_sprite sTyphlosionSprites24[] = {
 	{sTyphlosionGfx24, ARRAY_COUNT(sTyphlosionGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx25[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_25.4bpp");
-static const u8 sTyphlosionGfx25_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_25_1.4bpp");
-static const u8 sTyphlosionGfx25_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_25_2.4bpp");
+static const u8 sTyphlosionGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_25.4bpp.lz");
+static const u8 sTyphlosionGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_25_1.4bpp.lz");
+static const u8 sTyphlosionGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_25_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites25[] = {
 	{sTyphlosionGfx25, ARRAY_COUNT(sTyphlosionGfx25)}, 
 	{NULL, 32}, 
@@ -2450,8 +2450,8 @@ static const ax_sprite sTyphlosionSprites25[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx26[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_26.4bpp");
-static const u8 sTyphlosionGfx26_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_26_1.4bpp");
+static const u8 sTyphlosionGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_26.4bpp.lz");
+static const u8 sTyphlosionGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_26_1.4bpp.lz");
 static const ax_sprite sTyphlosionSprites26[] = {
 	{sTyphlosionGfx26, ARRAY_COUNT(sTyphlosionGfx26)}, 
 	{NULL, 32}, 
@@ -2459,9 +2459,9 @@ static const ax_sprite sTyphlosionSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx27[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_27.4bpp");
-static const u8 sTyphlosionGfx27_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_27_1.4bpp");
-static const u8 sTyphlosionGfx27_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_27_2.4bpp");
+static const u8 sTyphlosionGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_27.4bpp.lz");
+static const u8 sTyphlosionGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_27_1.4bpp.lz");
+static const u8 sTyphlosionGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_27_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites27[] = {
 	{sTyphlosionGfx27, ARRAY_COUNT(sTyphlosionGfx27)}, 
 	{NULL, 32}, 
@@ -2471,9 +2471,9 @@ static const ax_sprite sTyphlosionSprites27[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx28[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_28.4bpp");
-static const u8 sTyphlosionGfx28_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_28_1.4bpp");
-static const u8 sTyphlosionGfx28_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_28_2.4bpp");
+static const u8 sTyphlosionGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_28.4bpp.lz");
+static const u8 sTyphlosionGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_28_1.4bpp.lz");
+static const u8 sTyphlosionGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_28_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites28[] = {
 	{sTyphlosionGfx28, ARRAY_COUNT(sTyphlosionGfx28)}, 
 	{NULL, 32}, 
@@ -2483,10 +2483,10 @@ static const ax_sprite sTyphlosionSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx29[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_29.4bpp");
-static const u8 sTyphlosionGfx29_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_29_1.4bpp");
-static const u8 sTyphlosionGfx29_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_29_2.4bpp");
-static const u8 sTyphlosionGfx29_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_29_3.4bpp");
+static const u8 sTyphlosionGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_29.4bpp.lz");
+static const u8 sTyphlosionGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_29_1.4bpp.lz");
+static const u8 sTyphlosionGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_29_2.4bpp.lz");
+static const u8 sTyphlosionGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_29_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites29[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx29, ARRAY_COUNT(sTyphlosionGfx29)}, 
@@ -2499,8 +2499,8 @@ static const ax_sprite sTyphlosionSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx30[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_30.4bpp");
-static const u8 sTyphlosionGfx30_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_30_1.4bpp");
+static const u8 sTyphlosionGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_30.4bpp.lz");
+static const u8 sTyphlosionGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_30_1.4bpp.lz");
 static const ax_sprite sTyphlosionSprites30[] = {
 	{sTyphlosionGfx30, ARRAY_COUNT(sTyphlosionGfx30)}, 
 	{NULL, 32}, 
@@ -2508,18 +2508,18 @@ static const ax_sprite sTyphlosionSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx31[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_31.4bpp");
+static const u8 sTyphlosionGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_31.4bpp.lz");
 static const ax_sprite sTyphlosionSprites31[] = {
 	{sTyphlosionGfx31, ARRAY_COUNT(sTyphlosionGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx32[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_32.4bpp");
+static const u8 sTyphlosionGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_32.4bpp.lz");
 static const ax_sprite sTyphlosionSprites32[] = {
 	{sTyphlosionGfx32, ARRAY_COUNT(sTyphlosionGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx33[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_33.4bpp");
-static const u8 sTyphlosionGfx33_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_33_1.4bpp");
+static const u8 sTyphlosionGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_33.4bpp.lz");
+static const u8 sTyphlosionGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_33_1.4bpp.lz");
 static const ax_sprite sTyphlosionSprites33[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx33, ARRAY_COUNT(sTyphlosionGfx33)}, 
@@ -2527,22 +2527,22 @@ static const ax_sprite sTyphlosionSprites33[] = {
 	{sTyphlosionGfx33_1, ARRAY_COUNT(sTyphlosionGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx34[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_34.4bpp");
+static const u8 sTyphlosionGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_34.4bpp.lz");
 static const ax_sprite sTyphlosionSprites34[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx34, ARRAY_COUNT(sTyphlosionGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx35[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_35.4bpp");
+static const u8 sTyphlosionGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_35.4bpp.lz");
 static const ax_sprite sTyphlosionSprites35[] = {
 	{NULL, 64}, 
 	{sTyphlosionGfx35, ARRAY_COUNT(sTyphlosionGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx36[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_36.4bpp");
-static const u8 sTyphlosionGfx36_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_36_1.4bpp");
-static const u8 sTyphlosionGfx36_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_36_2.4bpp");
-static const u8 sTyphlosionGfx36_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_36_3.4bpp");
+static const u8 sTyphlosionGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_36.4bpp.lz");
+static const u8 sTyphlosionGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_36_1.4bpp.lz");
+static const u8 sTyphlosionGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_36_2.4bpp.lz");
+static const u8 sTyphlosionGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_36_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites36[] = {
 	{sTyphlosionGfx36, ARRAY_COUNT(sTyphlosionGfx36)}, 
 	{NULL, 32}, 
@@ -2554,8 +2554,8 @@ static const ax_sprite sTyphlosionSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx37[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_37.4bpp");
-static const u8 sTyphlosionGfx37_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_37_1.4bpp");
+static const u8 sTyphlosionGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_37.4bpp.lz");
+static const u8 sTyphlosionGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_37_1.4bpp.lz");
 static const ax_sprite sTyphlosionSprites37[] = {
 	{NULL, 64}, 
 	{sTyphlosionGfx37, ARRAY_COUNT(sTyphlosionGfx37)}, 
@@ -2564,9 +2564,9 @@ static const ax_sprite sTyphlosionSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx38[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_38.4bpp");
-static const u8 sTyphlosionGfx38_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_38_1.4bpp");
-static const u8 sTyphlosionGfx38_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_38_2.4bpp");
+static const u8 sTyphlosionGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_38.4bpp.lz");
+static const u8 sTyphlosionGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_38_1.4bpp.lz");
+static const u8 sTyphlosionGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_38_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites38[] = {
 	{NULL, 128}, 
 	{sTyphlosionGfx38, ARRAY_COUNT(sTyphlosionGfx38)}, 
@@ -2577,10 +2577,10 @@ static const ax_sprite sTyphlosionSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx39[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_39.4bpp");
-static const u8 sTyphlosionGfx39_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_39_1.4bpp");
-static const u8 sTyphlosionGfx39_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_39_2.4bpp");
-static const u8 sTyphlosionGfx39_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_39_3.4bpp");
+static const u8 sTyphlosionGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_39.4bpp.lz");
+static const u8 sTyphlosionGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_39_1.4bpp.lz");
+static const u8 sTyphlosionGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_39_2.4bpp.lz");
+static const u8 sTyphlosionGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_39_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites39[] = {
 	{sTyphlosionGfx39, ARRAY_COUNT(sTyphlosionGfx39)}, 
 	{NULL, 32}, 
@@ -2592,14 +2592,14 @@ static const ax_sprite sTyphlosionSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx40[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_40.4bpp");
+static const u8 sTyphlosionGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_40.4bpp.lz");
 static const ax_sprite sTyphlosionSprites40[] = {
 	{sTyphlosionGfx40, ARRAY_COUNT(sTyphlosionGfx40)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx41[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_41.4bpp");
-static const u8 sTyphlosionGfx41_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_41_1.4bpp");
+static const u8 sTyphlosionGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_41.4bpp.lz");
+static const u8 sTyphlosionGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_41_1.4bpp.lz");
 static const ax_sprite sTyphlosionSprites41[] = {
 	{NULL, 128}, 
 	{sTyphlosionGfx41, ARRAY_COUNT(sTyphlosionGfx41)}, 
@@ -2608,10 +2608,10 @@ static const ax_sprite sTyphlosionSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx42[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_42.4bpp");
-static const u8 sTyphlosionGfx42_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_42_1.4bpp");
-static const u8 sTyphlosionGfx42_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_42_2.4bpp");
-static const u8 sTyphlosionGfx42_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_42_3.4bpp");
+static const u8 sTyphlosionGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_42.4bpp.lz");
+static const u8 sTyphlosionGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_42_1.4bpp.lz");
+static const u8 sTyphlosionGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_42_2.4bpp.lz");
+static const u8 sTyphlosionGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_42_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites42[] = {
 	{sTyphlosionGfx42, ARRAY_COUNT(sTyphlosionGfx42)}, 
 	{NULL, 32}, 
@@ -2623,9 +2623,9 @@ static const ax_sprite sTyphlosionSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx43[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_43.4bpp");
-static const u8 sTyphlosionGfx43_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_43_1.4bpp");
-static const u8 sTyphlosionGfx43_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_43_2.4bpp");
+static const u8 sTyphlosionGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_43.4bpp.lz");
+static const u8 sTyphlosionGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_43_1.4bpp.lz");
+static const u8 sTyphlosionGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_43_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites43[] = {
 	{sTyphlosionGfx43, ARRAY_COUNT(sTyphlosionGfx43)}, 
 	{NULL, 32}, 
@@ -2635,10 +2635,10 @@ static const ax_sprite sTyphlosionSprites43[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx44[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_44.4bpp");
-static const u8 sTyphlosionGfx44_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_44_1.4bpp");
-static const u8 sTyphlosionGfx44_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_44_2.4bpp");
-static const u8 sTyphlosionGfx44_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_44_3.4bpp");
+static const u8 sTyphlosionGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_44.4bpp.lz");
+static const u8 sTyphlosionGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_44_1.4bpp.lz");
+static const u8 sTyphlosionGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_44_2.4bpp.lz");
+static const u8 sTyphlosionGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_44_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites44[] = {
 	{sTyphlosionGfx44, ARRAY_COUNT(sTyphlosionGfx44)}, 
 	{NULL, 32}, 
@@ -2650,10 +2650,10 @@ static const ax_sprite sTyphlosionSprites44[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx45[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_45.4bpp");
-static const u8 sTyphlosionGfx45_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_45_1.4bpp");
-static const u8 sTyphlosionGfx45_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_45_2.4bpp");
-static const u8 sTyphlosionGfx45_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_45_3.4bpp");
+static const u8 sTyphlosionGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_45.4bpp.lz");
+static const u8 sTyphlosionGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_45_1.4bpp.lz");
+static const u8 sTyphlosionGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_45_2.4bpp.lz");
+static const u8 sTyphlosionGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_45_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites45[] = {
 	{sTyphlosionGfx45, ARRAY_COUNT(sTyphlosionGfx45)}, 
 	{NULL, 32}, 
@@ -2665,16 +2665,16 @@ static const ax_sprite sTyphlosionSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx46[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_46.4bpp");
+static const u8 sTyphlosionGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_46.4bpp.lz");
 static const ax_sprite sTyphlosionSprites46[] = {
 	{sTyphlosionGfx46, ARRAY_COUNT(sTyphlosionGfx46)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx47[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_47.4bpp");
-static const u8 sTyphlosionGfx47_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_47_1.4bpp");
-static const u8 sTyphlosionGfx47_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_47_2.4bpp");
-static const u8 sTyphlosionGfx47_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_47_3.4bpp");
+static const u8 sTyphlosionGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_47.4bpp.lz");
+static const u8 sTyphlosionGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_47_1.4bpp.lz");
+static const u8 sTyphlosionGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_47_2.4bpp.lz");
+static const u8 sTyphlosionGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_47_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites47[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx47, ARRAY_COUNT(sTyphlosionGfx47)}, 
@@ -2687,9 +2687,9 @@ static const ax_sprite sTyphlosionSprites47[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx48[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_48.4bpp");
-static const u8 sTyphlosionGfx48_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_48_1.4bpp");
-static const u8 sTyphlosionGfx48_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_48_2.4bpp");
+static const u8 sTyphlosionGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_48.4bpp.lz");
+static const u8 sTyphlosionGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_48_1.4bpp.lz");
+static const u8 sTyphlosionGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_48_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites48[] = {
 	{NULL, 128}, 
 	{sTyphlosionGfx48, ARRAY_COUNT(sTyphlosionGfx48)}, 
@@ -2700,10 +2700,10 @@ static const ax_sprite sTyphlosionSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx49[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_49.4bpp");
-static const u8 sTyphlosionGfx49_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_49_1.4bpp");
-static const u8 sTyphlosionGfx49_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_49_2.4bpp");
-static const u8 sTyphlosionGfx49_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_49_3.4bpp");
+static const u8 sTyphlosionGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_49.4bpp.lz");
+static const u8 sTyphlosionGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_49_1.4bpp.lz");
+static const u8 sTyphlosionGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_49_2.4bpp.lz");
+static const u8 sTyphlosionGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_49_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites49[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx49, ARRAY_COUNT(sTyphlosionGfx49)}, 
@@ -2716,9 +2716,9 @@ static const ax_sprite sTyphlosionSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx50[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_50.4bpp");
-static const u8 sTyphlosionGfx50_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_50_1.4bpp");
-static const u8 sTyphlosionGfx50_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_50_2.4bpp");
+static const u8 sTyphlosionGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_50.4bpp.lz");
+static const u8 sTyphlosionGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_50_1.4bpp.lz");
+static const u8 sTyphlosionGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_50_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites50[] = {
 	{NULL, 128}, 
 	{sTyphlosionGfx50, ARRAY_COUNT(sTyphlosionGfx50)}, 
@@ -2729,10 +2729,10 @@ static const ax_sprite sTyphlosionSprites50[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx51[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_51.4bpp");
-static const u8 sTyphlosionGfx51_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_51_1.4bpp");
-static const u8 sTyphlosionGfx51_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_51_2.4bpp");
-static const u8 sTyphlosionGfx51_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_51_3.4bpp");
+static const u8 sTyphlosionGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_51.4bpp.lz");
+static const u8 sTyphlosionGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_51_1.4bpp.lz");
+static const u8 sTyphlosionGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_51_2.4bpp.lz");
+static const u8 sTyphlosionGfx51_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_51_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites51[] = {
 	{sTyphlosionGfx51, ARRAY_COUNT(sTyphlosionGfx51)}, 
 	{NULL, 64}, 
@@ -2744,10 +2744,10 @@ static const ax_sprite sTyphlosionSprites51[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx52[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_52.4bpp");
-static const u8 sTyphlosionGfx52_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_52_1.4bpp");
-static const u8 sTyphlosionGfx52_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_52_2.4bpp");
-static const u8 sTyphlosionGfx52_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_52_3.4bpp");
+static const u8 sTyphlosionGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_52.4bpp.lz");
+static const u8 sTyphlosionGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_52_1.4bpp.lz");
+static const u8 sTyphlosionGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_52_2.4bpp.lz");
+static const u8 sTyphlosionGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_52_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites52[] = {
 	{sTyphlosionGfx52, ARRAY_COUNT(sTyphlosionGfx52)}, 
 	{NULL, 64}, 
@@ -2759,10 +2759,10 @@ static const ax_sprite sTyphlosionSprites52[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx53[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_53.4bpp");
-static const u8 sTyphlosionGfx53_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_53_1.4bpp");
-static const u8 sTyphlosionGfx53_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_53_2.4bpp");
-static const u8 sTyphlosionGfx53_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_53_3.4bpp");
+static const u8 sTyphlosionGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_53.4bpp.lz");
+static const u8 sTyphlosionGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_53_1.4bpp.lz");
+static const u8 sTyphlosionGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_53_2.4bpp.lz");
+static const u8 sTyphlosionGfx53_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_53_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites53[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx53, ARRAY_COUNT(sTyphlosionGfx53)}, 
@@ -2775,16 +2775,16 @@ static const ax_sprite sTyphlosionSprites53[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx54[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_54.4bpp");
+static const u8 sTyphlosionGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_54.4bpp.lz");
 static const ax_sprite sTyphlosionSprites54[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx54, ARRAY_COUNT(sTyphlosionGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx55[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_55.4bpp");
-static const u8 sTyphlosionGfx55_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_55_1.4bpp");
-static const u8 sTyphlosionGfx55_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_55_2.4bpp");
-static const u8 sTyphlosionGfx55_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_55_3.4bpp");
+static const u8 sTyphlosionGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_55.4bpp.lz");
+static const u8 sTyphlosionGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_55_1.4bpp.lz");
+static const u8 sTyphlosionGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_55_2.4bpp.lz");
+static const u8 sTyphlosionGfx55_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_55_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites55[] = {
 	{sTyphlosionGfx55, ARRAY_COUNT(sTyphlosionGfx55)}, 
 	{NULL, 32}, 
@@ -2796,15 +2796,15 @@ static const ax_sprite sTyphlosionSprites55[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx56[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_56.4bpp");
+static const u8 sTyphlosionGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_56.4bpp.lz");
 static const ax_sprite sTyphlosionSprites56[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx56, ARRAY_COUNT(sTyphlosionGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx57[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_57.4bpp");
-static const u8 sTyphlosionGfx57_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_57_1.4bpp");
-static const u8 sTyphlosionGfx57_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_57_2.4bpp");
+static const u8 sTyphlosionGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_57.4bpp.lz");
+static const u8 sTyphlosionGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_57_1.4bpp.lz");
+static const u8 sTyphlosionGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_57_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites57[] = {
 	{NULL, 128}, 
 	{sTyphlosionGfx57, ARRAY_COUNT(sTyphlosionGfx57)}, 
@@ -2815,20 +2815,20 @@ static const ax_sprite sTyphlosionSprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx58[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_58.4bpp");
+static const u8 sTyphlosionGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_58.4bpp.lz");
 static const ax_sprite sTyphlosionSprites58[] = {
 	{sTyphlosionGfx58, ARRAY_COUNT(sTyphlosionGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx59[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_59.4bpp");
+static const u8 sTyphlosionGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_59.4bpp.lz");
 static const ax_sprite sTyphlosionSprites59[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx59, ARRAY_COUNT(sTyphlosionGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx60[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_60.4bpp");
-static const u8 sTyphlosionGfx60_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_60_1.4bpp");
-static const u8 sTyphlosionGfx60_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_60_2.4bpp");
+static const u8 sTyphlosionGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_60.4bpp.lz");
+static const u8 sTyphlosionGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_60_1.4bpp.lz");
+static const u8 sTyphlosionGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_60_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites60[] = {
 	{NULL, 160}, 
 	{sTyphlosionGfx60, ARRAY_COUNT(sTyphlosionGfx60)}, 
@@ -2839,9 +2839,9 @@ static const ax_sprite sTyphlosionSprites60[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx61[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_61.4bpp");
-static const u8 sTyphlosionGfx61_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_61_1.4bpp");
-static const u8 sTyphlosionGfx61_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_61_2.4bpp");
+static const u8 sTyphlosionGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_61.4bpp.lz");
+static const u8 sTyphlosionGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_61_1.4bpp.lz");
+static const u8 sTyphlosionGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_61_2.4bpp.lz");
 static const ax_sprite sTyphlosionSprites61[] = {
 	{NULL, 128}, 
 	{sTyphlosionGfx61, ARRAY_COUNT(sTyphlosionGfx61)}, 
@@ -2852,10 +2852,10 @@ static const ax_sprite sTyphlosionSprites61[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx62[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_62.4bpp");
-static const u8 sTyphlosionGfx62_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_62_1.4bpp");
-static const u8 sTyphlosionGfx62_2[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_62_2.4bpp");
-static const u8 sTyphlosionGfx62_3[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_62_3.4bpp");
+static const u8 sTyphlosionGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_62.4bpp.lz");
+static const u8 sTyphlosionGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_62_1.4bpp.lz");
+static const u8 sTyphlosionGfx62_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_62_2.4bpp.lz");
+static const u8 sTyphlosionGfx62_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_62_3.4bpp.lz");
 static const ax_sprite sTyphlosionSprites62[] = {
 	{NULL, 32}, 
 	{sTyphlosionGfx62, ARRAY_COUNT(sTyphlosionGfx62)}, 
@@ -2868,8 +2868,8 @@ static const ax_sprite sTyphlosionSprites62[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx63[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_63.4bpp");
-static const u8 sTyphlosionGfx63_1[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_63_1.4bpp");
+static const u8 sTyphlosionGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_63.4bpp.lz");
+static const u8 sTyphlosionGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_63_1.4bpp.lz");
 static const ax_sprite sTyphlosionSprites63[] = {
 	{NULL, 128}, 
 	{sTyphlosionGfx63, ARRAY_COUNT(sTyphlosionGfx63)}, 
@@ -2877,37 +2877,37 @@ static const ax_sprite sTyphlosionSprites63[] = {
 	{sTyphlosionGfx63_1, ARRAY_COUNT(sTyphlosionGfx63_1)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx64[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_64.4bpp");
+static const u8 sTyphlosionGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_64.4bpp.lz");
 static const ax_sprite sTyphlosionSprites64[] = {
 	{sTyphlosionGfx64, ARRAY_COUNT(sTyphlosionGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx65[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_65.4bpp");
+static const u8 sTyphlosionGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_65.4bpp.lz");
 static const ax_sprite sTyphlosionSprites65[] = {
 	{sTyphlosionGfx65, ARRAY_COUNT(sTyphlosionGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx66[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_66.4bpp");
+static const u8 sTyphlosionGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_66.4bpp.lz");
 static const ax_sprite sTyphlosionSprites66[] = {
 	{sTyphlosionGfx66, ARRAY_COUNT(sTyphlosionGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx67[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_67.4bpp");
+static const u8 sTyphlosionGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_67.4bpp.lz");
 static const ax_sprite sTyphlosionSprites67[] = {
 	{sTyphlosionGfx67, ARRAY_COUNT(sTyphlosionGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx68[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_68.4bpp");
+static const u8 sTyphlosionGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_68.4bpp.lz");
 static const ax_sprite sTyphlosionSprites68[] = {
 	{sTyphlosionGfx68, ARRAY_COUNT(sTyphlosionGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx69[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_69.4bpp");
+static const u8 sTyphlosionGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_69.4bpp.lz");
 static const ax_sprite sTyphlosionSprites69[] = {
 	{sTyphlosionGfx69, ARRAY_COUNT(sTyphlosionGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sTyphlosionGfx70[] = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_70.4bpp");
+static const u8 sTyphlosionGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/typhlosion/sprite_70.4bpp.lz");
 static const ax_sprite sTyphlosionSprites70[] = {
 	{sTyphlosionGfx70, ARRAY_COUNT(sTyphlosionGfx70)}, 
 	{NULL, 0}

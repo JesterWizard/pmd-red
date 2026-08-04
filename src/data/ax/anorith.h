@@ -2139,89 +2139,89 @@ static const ax_anim sAnorithAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sAnorithGfx1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_1.4bpp");
+static const u8 sAnorithGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_1.4bpp.lz");
 static const ax_sprite sAnorithSprites1[] = {
 	{sAnorithGfx1, ARRAY_COUNT(sAnorithGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_2.4bpp");
+static const u8 sAnorithGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_2.4bpp.lz");
 static const ax_sprite sAnorithSprites2[] = {
 	{sAnorithGfx2, ARRAY_COUNT(sAnorithGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx3[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_3.4bpp");
+static const u8 sAnorithGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_3.4bpp.lz");
 static const ax_sprite sAnorithSprites3[] = {
 	{sAnorithGfx3, ARRAY_COUNT(sAnorithGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx4[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_4.4bpp");
+static const u8 sAnorithGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_4.4bpp.lz");
 static const ax_sprite sAnorithSprites4[] = {
 	{sAnorithGfx4, ARRAY_COUNT(sAnorithGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx5[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_5.4bpp");
+static const u8 sAnorithGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_5.4bpp.lz");
 static const ax_sprite sAnorithSprites5[] = {
 	{sAnorithGfx5, ARRAY_COUNT(sAnorithGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx6[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_6.4bpp");
+static const u8 sAnorithGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_6.4bpp.lz");
 static const ax_sprite sAnorithSprites6[] = {
 	{sAnorithGfx6, ARRAY_COUNT(sAnorithGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx7[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_7.4bpp");
+static const u8 sAnorithGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_7.4bpp.lz");
 static const ax_sprite sAnorithSprites7[] = {
 	{sAnorithGfx7, ARRAY_COUNT(sAnorithGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx8[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_8.4bpp");
+static const u8 sAnorithGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_8.4bpp.lz");
 static const ax_sprite sAnorithSprites8[] = {
 	{sAnorithGfx8, ARRAY_COUNT(sAnorithGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx9[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_9.4bpp");
+static const u8 sAnorithGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_9.4bpp.lz");
 static const ax_sprite sAnorithSprites9[] = {
 	{sAnorithGfx9, ARRAY_COUNT(sAnorithGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx10[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_10.4bpp");
+static const u8 sAnorithGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_10.4bpp.lz");
 static const ax_sprite sAnorithSprites10[] = {
 	{sAnorithGfx10, ARRAY_COUNT(sAnorithGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx11[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_11.4bpp");
+static const u8 sAnorithGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_11.4bpp.lz");
 static const ax_sprite sAnorithSprites11[] = {
 	{sAnorithGfx11, ARRAY_COUNT(sAnorithGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx12[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_12.4bpp");
+static const u8 sAnorithGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_12.4bpp.lz");
 static const ax_sprite sAnorithSprites12[] = {
 	{sAnorithGfx12, ARRAY_COUNT(sAnorithGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx13[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_13.4bpp");
+static const u8 sAnorithGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_13.4bpp.lz");
 static const ax_sprite sAnorithSprites13[] = {
 	{sAnorithGfx13, ARRAY_COUNT(sAnorithGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx14[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_14.4bpp");
+static const u8 sAnorithGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_14.4bpp.lz");
 static const ax_sprite sAnorithSprites14[] = {
 	{sAnorithGfx14, ARRAY_COUNT(sAnorithGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx15[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_15.4bpp");
+static const u8 sAnorithGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_15.4bpp.lz");
 static const ax_sprite sAnorithSprites15[] = {
 	{sAnorithGfx15, ARRAY_COUNT(sAnorithGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx16[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_16.4bpp");
+static const u8 sAnorithGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_16.4bpp.lz");
 static const ax_sprite sAnorithSprites16[] = {
 	{sAnorithGfx16, ARRAY_COUNT(sAnorithGfx16)}, 
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx17[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_17.4bpp");
-static const u8 sAnorithGfx17_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_17_1.4bpp");
+static const u8 sAnorithGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_17.4bpp.lz");
+static const u8 sAnorithGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_17_1.4bpp.lz");
 static const ax_sprite sAnorithSprites17[] = {
 	{sAnorithGfx17, ARRAY_COUNT(sAnorithGfx17)}, 
 	{NULL, 32}, 
@@ -2229,10 +2229,10 @@ static const ax_sprite sAnorithSprites17[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx18[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_18.4bpp");
-static const u8 sAnorithGfx18_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_18_1.4bpp");
-static const u8 sAnorithGfx18_2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_18_2.4bpp");
-static const u8 sAnorithGfx18_3[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_18_3.4bpp");
+static const u8 sAnorithGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_18.4bpp.lz");
+static const u8 sAnorithGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_18_1.4bpp.lz");
+static const u8 sAnorithGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_18_2.4bpp.lz");
+static const u8 sAnorithGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_18_3.4bpp.lz");
 static const ax_sprite sAnorithSprites18[] = {
 	{sAnorithGfx18, ARRAY_COUNT(sAnorithGfx18)}, 
 	{NULL, 64}, 
@@ -2244,10 +2244,10 @@ static const ax_sprite sAnorithSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx19[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_19.4bpp");
-static const u8 sAnorithGfx19_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_19_1.4bpp");
-static const u8 sAnorithGfx19_2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_19_2.4bpp");
-static const u8 sAnorithGfx19_3[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_19_3.4bpp");
+static const u8 sAnorithGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_19.4bpp.lz");
+static const u8 sAnorithGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_19_1.4bpp.lz");
+static const u8 sAnorithGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_19_2.4bpp.lz");
+static const u8 sAnorithGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_19_3.4bpp.lz");
 static const ax_sprite sAnorithSprites19[] = {
 	{sAnorithGfx19, ARRAY_COUNT(sAnorithGfx19)}, 
 	{NULL, 32}, 
@@ -2258,9 +2258,9 @@ static const ax_sprite sAnorithSprites19[] = {
 	{sAnorithGfx19_3, ARRAY_COUNT(sAnorithGfx19_3)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx20[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_20.4bpp");
-static const u8 sAnorithGfx20_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_20_1.4bpp");
-static const u8 sAnorithGfx20_2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_20_2.4bpp");
+static const u8 sAnorithGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_20.4bpp.lz");
+static const u8 sAnorithGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_20_1.4bpp.lz");
+static const u8 sAnorithGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_20_2.4bpp.lz");
 static const ax_sprite sAnorithSprites20[] = {
 	{sAnorithGfx20, ARRAY_COUNT(sAnorithGfx20)}, 
 	{NULL, 32}, 
@@ -2269,10 +2269,10 @@ static const ax_sprite sAnorithSprites20[] = {
 	{sAnorithGfx20_2, ARRAY_COUNT(sAnorithGfx20_2)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx21[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_21.4bpp");
-static const u8 sAnorithGfx21_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_21_1.4bpp");
-static const u8 sAnorithGfx21_2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_21_2.4bpp");
-static const u8 sAnorithGfx21_3[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_21_3.4bpp");
+static const u8 sAnorithGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_21.4bpp.lz");
+static const u8 sAnorithGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_21_1.4bpp.lz");
+static const u8 sAnorithGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_21_2.4bpp.lz");
+static const u8 sAnorithGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_21_3.4bpp.lz");
 static const ax_sprite sAnorithSprites21[] = {
 	{sAnorithGfx21, ARRAY_COUNT(sAnorithGfx21)}, 
 	{NULL, 64}, 
@@ -2283,9 +2283,9 @@ static const ax_sprite sAnorithSprites21[] = {
 	{sAnorithGfx21_3, ARRAY_COUNT(sAnorithGfx21_3)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx22[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_22.4bpp");
-static const u8 sAnorithGfx22_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_22_1.4bpp");
-static const u8 sAnorithGfx22_2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_22_2.4bpp");
+static const u8 sAnorithGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_22.4bpp.lz");
+static const u8 sAnorithGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_22_1.4bpp.lz");
+static const u8 sAnorithGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_22_2.4bpp.lz");
 static const ax_sprite sAnorithSprites22[] = {
 	{NULL, 32}, 
 	{sAnorithGfx22, ARRAY_COUNT(sAnorithGfx22)}, 
@@ -2296,9 +2296,9 @@ static const ax_sprite sAnorithSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx23[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_23.4bpp");
-static const u8 sAnorithGfx23_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_23_1.4bpp");
-static const u8 sAnorithGfx23_2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_23_2.4bpp");
+static const u8 sAnorithGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_23.4bpp.lz");
+static const u8 sAnorithGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_23_1.4bpp.lz");
+static const u8 sAnorithGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_23_2.4bpp.lz");
 static const ax_sprite sAnorithSprites23[] = {
 	{sAnorithGfx23, ARRAY_COUNT(sAnorithGfx23)}, 
 	{NULL, 32}, 
@@ -2308,17 +2308,17 @@ static const ax_sprite sAnorithSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx24[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_24.4bpp");
+static const u8 sAnorithGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_24.4bpp.lz");
 static const ax_sprite sAnorithSprites24[] = {
 	{NULL, 32}, 
 	{sAnorithGfx24, ARRAY_COUNT(sAnorithGfx24)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx25[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_25.4bpp");
-static const u8 sAnorithGfx25_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_25_1.4bpp");
-static const u8 sAnorithGfx25_2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_25_2.4bpp");
-static const u8 sAnorithGfx25_3[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_25_3.4bpp");
+static const u8 sAnorithGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_25.4bpp.lz");
+static const u8 sAnorithGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_25_1.4bpp.lz");
+static const u8 sAnorithGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_25_2.4bpp.lz");
+static const u8 sAnorithGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_25_3.4bpp.lz");
 static const ax_sprite sAnorithSprites25[] = {
 	{NULL, 64}, 
 	{sAnorithGfx25, ARRAY_COUNT(sAnorithGfx25)}, 
@@ -2330,16 +2330,16 @@ static const ax_sprite sAnorithSprites25[] = {
 	{sAnorithGfx25_3, ARRAY_COUNT(sAnorithGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx26[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_26.4bpp");
+static const u8 sAnorithGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_26.4bpp.lz");
 static const ax_sprite sAnorithSprites26[] = {
 	{NULL, 32}, 
 	{sAnorithGfx26, ARRAY_COUNT(sAnorithGfx26)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx27[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_27.4bpp");
-static const u8 sAnorithGfx27_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_27_1.4bpp");
-static const u8 sAnorithGfx27_2[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_27_2.4bpp");
+static const u8 sAnorithGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_27.4bpp.lz");
+static const u8 sAnorithGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_27_1.4bpp.lz");
+static const u8 sAnorithGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_27_2.4bpp.lz");
 static const ax_sprite sAnorithSprites27[] = {
 	{NULL, 32}, 
 	{sAnorithGfx27, ARRAY_COUNT(sAnorithGfx27)}, 
@@ -2350,8 +2350,8 @@ static const ax_sprite sAnorithSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx28[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_28.4bpp");
-static const u8 sAnorithGfx28_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_28_1.4bpp");
+static const u8 sAnorithGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_28.4bpp.lz");
+static const u8 sAnorithGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_28_1.4bpp.lz");
 static const ax_sprite sAnorithSprites28[] = {
 	{sAnorithGfx28, ARRAY_COUNT(sAnorithGfx28)}, 
 	{NULL, 32}, 
@@ -2359,8 +2359,8 @@ static const ax_sprite sAnorithSprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx29[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_29.4bpp");
-static const u8 sAnorithGfx29_1[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_29_1.4bpp");
+static const u8 sAnorithGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_29.4bpp.lz");
+static const u8 sAnorithGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_29_1.4bpp.lz");
 static const ax_sprite sAnorithSprites29[] = {
 	{sAnorithGfx29, ARRAY_COUNT(sAnorithGfx29)}, 
 	{NULL, 64}, 
@@ -2368,44 +2368,44 @@ static const ax_sprite sAnorithSprites29[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx30[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_30.4bpp");
+static const u8 sAnorithGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_30.4bpp.lz");
 static const ax_sprite sAnorithSprites30[] = {
 	{NULL, 32}, 
 	{sAnorithGfx30, ARRAY_COUNT(sAnorithGfx30)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx31[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_31.4bpp");
+static const u8 sAnorithGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_31.4bpp.lz");
 static const ax_sprite sAnorithSprites31[] = {
 	{sAnorithGfx31, ARRAY_COUNT(sAnorithGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx32[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_32.4bpp");
+static const u8 sAnorithGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_32.4bpp.lz");
 static const ax_sprite sAnorithSprites32[] = {
 	{sAnorithGfx32, ARRAY_COUNT(sAnorithGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx33[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_33.4bpp");
+static const u8 sAnorithGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_33.4bpp.lz");
 static const ax_sprite sAnorithSprites33[] = {
 	{sAnorithGfx33, ARRAY_COUNT(sAnorithGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx34[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_34.4bpp");
+static const u8 sAnorithGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_34.4bpp.lz");
 static const ax_sprite sAnorithSprites34[] = {
 	{sAnorithGfx34, ARRAY_COUNT(sAnorithGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx35[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_35.4bpp");
+static const u8 sAnorithGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_35.4bpp.lz");
 static const ax_sprite sAnorithSprites35[] = {
 	{sAnorithGfx35, ARRAY_COUNT(sAnorithGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx36[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_36.4bpp");
+static const u8 sAnorithGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_36.4bpp.lz");
 static const ax_sprite sAnorithSprites36[] = {
 	{sAnorithGfx36, ARRAY_COUNT(sAnorithGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sAnorithGfx37[] = INCBIN_U8("graphics/ax/mon/anorith/sprite_37.4bpp");
+static const u8 sAnorithGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/anorith/sprite_37.4bpp.lz");
 static const ax_sprite sAnorithSprites37[] = {
 	{sAnorithGfx37, ARRAY_COUNT(sAnorithGfx37)}, 
 	{NULL, 0}

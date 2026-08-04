@@ -2058,83 +2058,83 @@ static const ax_anim sCameruptAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCameruptGfx1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_1.4bpp");
+static const u8 sCameruptGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_1.4bpp.lz");
 static const ax_sprite sCameruptSprites1[] = {
 	{sCameruptGfx1, ARRAY_COUNT(sCameruptGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx2[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_2.4bpp");
+static const u8 sCameruptGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_2.4bpp.lz");
 static const ax_sprite sCameruptSprites2[] = {
 	{sCameruptGfx2, ARRAY_COUNT(sCameruptGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx3[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_3.4bpp");
+static const u8 sCameruptGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_3.4bpp.lz");
 static const ax_sprite sCameruptSprites3[] = {
 	{sCameruptGfx3, ARRAY_COUNT(sCameruptGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx4[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_4.4bpp");
+static const u8 sCameruptGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_4.4bpp.lz");
 static const ax_sprite sCameruptSprites4[] = {
 	{sCameruptGfx4, ARRAY_COUNT(sCameruptGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx5[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_5.4bpp");
+static const u8 sCameruptGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_5.4bpp.lz");
 static const ax_sprite sCameruptSprites5[] = {
 	{sCameruptGfx5, ARRAY_COUNT(sCameruptGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx6[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_6.4bpp");
+static const u8 sCameruptGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_6.4bpp.lz");
 static const ax_sprite sCameruptSprites6[] = {
 	{sCameruptGfx6, ARRAY_COUNT(sCameruptGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx7[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_7.4bpp");
+static const u8 sCameruptGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_7.4bpp.lz");
 static const ax_sprite sCameruptSprites7[] = {
 	{sCameruptGfx7, ARRAY_COUNT(sCameruptGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx8[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_8.4bpp");
+static const u8 sCameruptGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_8.4bpp.lz");
 static const ax_sprite sCameruptSprites8[] = {
 	{sCameruptGfx8, ARRAY_COUNT(sCameruptGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx9[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_9.4bpp");
+static const u8 sCameruptGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_9.4bpp.lz");
 static const ax_sprite sCameruptSprites9[] = {
 	{sCameruptGfx9, ARRAY_COUNT(sCameruptGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx10[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_10.4bpp");
+static const u8 sCameruptGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_10.4bpp.lz");
 static const ax_sprite sCameruptSprites10[] = {
 	{sCameruptGfx10, ARRAY_COUNT(sCameruptGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx11[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_11.4bpp");
+static const u8 sCameruptGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_11.4bpp.lz");
 static const ax_sprite sCameruptSprites11[] = {
 	{sCameruptGfx11, ARRAY_COUNT(sCameruptGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx12[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_12.4bpp");
+static const u8 sCameruptGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_12.4bpp.lz");
 static const ax_sprite sCameruptSprites12[] = {
 	{sCameruptGfx12, ARRAY_COUNT(sCameruptGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx13[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_13.4bpp");
+static const u8 sCameruptGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_13.4bpp.lz");
 static const ax_sprite sCameruptSprites13[] = {
 	{sCameruptGfx13, ARRAY_COUNT(sCameruptGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx14[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_14.4bpp");
+static const u8 sCameruptGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_14.4bpp.lz");
 static const ax_sprite sCameruptSprites14[] = {
 	{sCameruptGfx14, ARRAY_COUNT(sCameruptGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx15[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_15.4bpp");
+static const u8 sCameruptGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_15.4bpp.lz");
 static const ax_sprite sCameruptSprites15[] = {
 	{sCameruptGfx15, ARRAY_COUNT(sCameruptGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx16[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_16.4bpp");
-static const u8 sCameruptGfx16_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_16_1.4bpp");
+static const u8 sCameruptGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_16.4bpp.lz");
+static const u8 sCameruptGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_16_1.4bpp.lz");
 static const ax_sprite sCameruptSprites16[] = {
 	{NULL, 32}, 
 	{sCameruptGfx16, ARRAY_COUNT(sCameruptGfx16)}, 
@@ -2143,29 +2143,29 @@ static const ax_sprite sCameruptSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx17[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_17.4bpp");
+static const u8 sCameruptGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_17.4bpp.lz");
 static const ax_sprite sCameruptSprites17[] = {
 	{NULL, 32}, 
 	{sCameruptGfx17, ARRAY_COUNT(sCameruptGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx18[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_18.4bpp");
+static const u8 sCameruptGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_18.4bpp.lz");
 static const ax_sprite sCameruptSprites18[] = {
 	{NULL, 32}, 
 	{sCameruptGfx18, ARRAY_COUNT(sCameruptGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx19[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_19.4bpp");
-static const u8 sCameruptGfx19_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_19_1.4bpp");
+static const u8 sCameruptGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_19.4bpp.lz");
+static const u8 sCameruptGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_19_1.4bpp.lz");
 static const ax_sprite sCameruptSprites19[] = {
 	{sCameruptGfx19, ARRAY_COUNT(sCameruptGfx19)}, 
 	{NULL, 32}, 
 	{sCameruptGfx19_1, ARRAY_COUNT(sCameruptGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx20[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_20.4bpp");
-static const u8 sCameruptGfx20_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_20_1.4bpp");
+static const u8 sCameruptGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_20.4bpp.lz");
+static const u8 sCameruptGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_20_1.4bpp.lz");
 static const ax_sprite sCameruptSprites20[] = {
 	{NULL, 32}, 
 	{sCameruptGfx20, ARRAY_COUNT(sCameruptGfx20)}, 
@@ -2174,8 +2174,8 @@ static const ax_sprite sCameruptSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx21[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_21.4bpp");
-static const u8 sCameruptGfx21_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_21_1.4bpp");
+static const u8 sCameruptGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_21.4bpp.lz");
+static const u8 sCameruptGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_21_1.4bpp.lz");
 static const ax_sprite sCameruptSprites21[] = {
 	{NULL, 32}, 
 	{sCameruptGfx21, ARRAY_COUNT(sCameruptGfx21)}, 
@@ -2184,8 +2184,8 @@ static const ax_sprite sCameruptSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx22[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_22.4bpp");
-static const u8 sCameruptGfx22_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_22_1.4bpp");
+static const u8 sCameruptGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_22.4bpp.lz");
+static const u8 sCameruptGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_22_1.4bpp.lz");
 static const ax_sprite sCameruptSprites22[] = {
 	{NULL, 32}, 
 	{sCameruptGfx22, ARRAY_COUNT(sCameruptGfx22)}, 
@@ -2193,16 +2193,16 @@ static const ax_sprite sCameruptSprites22[] = {
 	{sCameruptGfx22_1, ARRAY_COUNT(sCameruptGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx23[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_23.4bpp");
-static const u8 sCameruptGfx23_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_23_1.4bpp");
+static const u8 sCameruptGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_23.4bpp.lz");
+static const u8 sCameruptGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_23_1.4bpp.lz");
 static const ax_sprite sCameruptSprites23[] = {
 	{sCameruptGfx23, ARRAY_COUNT(sCameruptGfx23)}, 
 	{NULL, 32}, 
 	{sCameruptGfx23_1, ARRAY_COUNT(sCameruptGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx24[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_24.4bpp");
-static const u8 sCameruptGfx24_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_24_1.4bpp");
+static const u8 sCameruptGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_24.4bpp.lz");
+static const u8 sCameruptGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_24_1.4bpp.lz");
 static const ax_sprite sCameruptSprites24[] = {
 	{NULL, 32}, 
 	{sCameruptGfx24, ARRAY_COUNT(sCameruptGfx24)}, 
@@ -2210,9 +2210,9 @@ static const ax_sprite sCameruptSprites24[] = {
 	{sCameruptGfx24_1, ARRAY_COUNT(sCameruptGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx25[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_25.4bpp");
-static const u8 sCameruptGfx25_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_25_1.4bpp");
-static const u8 sCameruptGfx25_2[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_25_2.4bpp");
+static const u8 sCameruptGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_25.4bpp.lz");
+static const u8 sCameruptGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_25_1.4bpp.lz");
+static const u8 sCameruptGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_25_2.4bpp.lz");
 static const ax_sprite sCameruptSprites25[] = {
 	{sCameruptGfx25, ARRAY_COUNT(sCameruptGfx25)}, 
 	{NULL, 32}, 
@@ -2221,15 +2221,15 @@ static const ax_sprite sCameruptSprites25[] = {
 	{sCameruptGfx25_2, ARRAY_COUNT(sCameruptGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx26[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_26.4bpp");
+static const u8 sCameruptGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_26.4bpp.lz");
 static const ax_sprite sCameruptSprites26[] = {
 	{NULL, 32}, 
 	{sCameruptGfx26, ARRAY_COUNT(sCameruptGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx27[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_27.4bpp");
-static const u8 sCameruptGfx27_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_27_1.4bpp");
-static const u8 sCameruptGfx27_2[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_27_2.4bpp");
+static const u8 sCameruptGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_27.4bpp.lz");
+static const u8 sCameruptGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_27_1.4bpp.lz");
+static const u8 sCameruptGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_27_2.4bpp.lz");
 static const ax_sprite sCameruptSprites27[] = {
 	{sCameruptGfx27, ARRAY_COUNT(sCameruptGfx27)}, 
 	{NULL, 32}, 
@@ -2238,16 +2238,16 @@ static const ax_sprite sCameruptSprites27[] = {
 	{sCameruptGfx27_2, ARRAY_COUNT(sCameruptGfx27_2)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx28[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_28.4bpp");
-static const u8 sCameruptGfx28_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_28_1.4bpp");
+static const u8 sCameruptGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_28.4bpp.lz");
+static const u8 sCameruptGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_28_1.4bpp.lz");
 static const ax_sprite sCameruptSprites28[] = {
 	{sCameruptGfx28, ARRAY_COUNT(sCameruptGfx28)}, 
 	{NULL, 32}, 
 	{sCameruptGfx28_1, ARRAY_COUNT(sCameruptGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx29[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_29.4bpp");
-static const u8 sCameruptGfx29_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_29_1.4bpp");
+static const u8 sCameruptGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_29.4bpp.lz");
+static const u8 sCameruptGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_29_1.4bpp.lz");
 static const ax_sprite sCameruptSprites29[] = {
 	{sCameruptGfx29, ARRAY_COUNT(sCameruptGfx29)}, 
 	{NULL, 32}, 
@@ -2255,8 +2255,8 @@ static const ax_sprite sCameruptSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx30[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_30.4bpp");
-static const u8 sCameruptGfx30_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_30_1.4bpp");
+static const u8 sCameruptGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_30.4bpp.lz");
+static const u8 sCameruptGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_30_1.4bpp.lz");
 static const ax_sprite sCameruptSprites30[] = {
 	{NULL, 32}, 
 	{sCameruptGfx30, ARRAY_COUNT(sCameruptGfx30)}, 
@@ -2265,8 +2265,8 @@ static const ax_sprite sCameruptSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx31[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_31.4bpp");
-static const u8 sCameruptGfx31_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_31_1.4bpp");
+static const u8 sCameruptGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_31.4bpp.lz");
+static const u8 sCameruptGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_31_1.4bpp.lz");
 static const ax_sprite sCameruptSprites31[] = {
 	{NULL, 32}, 
 	{sCameruptGfx31, ARRAY_COUNT(sCameruptGfx31)}, 
@@ -2275,14 +2275,14 @@ static const ax_sprite sCameruptSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx32[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_32.4bpp");
+static const u8 sCameruptGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_32.4bpp.lz");
 static const ax_sprite sCameruptSprites32[] = {
 	{NULL, 64}, 
 	{sCameruptGfx32, ARRAY_COUNT(sCameruptGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx33[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_33.4bpp");
-static const u8 sCameruptGfx33_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_33_1.4bpp");
+static const u8 sCameruptGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_33.4bpp.lz");
+static const u8 sCameruptGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_33_1.4bpp.lz");
 static const ax_sprite sCameruptSprites33[] = {
 	{NULL, 32}, 
 	{sCameruptGfx33, ARRAY_COUNT(sCameruptGfx33)}, 
@@ -2290,9 +2290,9 @@ static const ax_sprite sCameruptSprites33[] = {
 	{sCameruptGfx33_1, ARRAY_COUNT(sCameruptGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx34[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_34.4bpp");
-static const u8 sCameruptGfx34_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_34_1.4bpp");
-static const u8 sCameruptGfx34_2[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_34_2.4bpp");
+static const u8 sCameruptGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_34.4bpp.lz");
+static const u8 sCameruptGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_34_1.4bpp.lz");
+static const u8 sCameruptGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_34_2.4bpp.lz");
 static const ax_sprite sCameruptSprites34[] = {
 	{sCameruptGfx34, ARRAY_COUNT(sCameruptGfx34)}, 
 	{NULL, 32}, 
@@ -2301,8 +2301,8 @@ static const ax_sprite sCameruptSprites34[] = {
 	{sCameruptGfx34_2, ARRAY_COUNT(sCameruptGfx34_2)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx35[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_35.4bpp");
-static const u8 sCameruptGfx35_1[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_35_1.4bpp");
+static const u8 sCameruptGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_35.4bpp.lz");
+static const u8 sCameruptGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_35_1.4bpp.lz");
 static const ax_sprite sCameruptSprites35[] = {
 	{NULL, 32}, 
 	{sCameruptGfx35, ARRAY_COUNT(sCameruptGfx35)}, 
@@ -2311,52 +2311,52 @@ static const ax_sprite sCameruptSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx36[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_36.4bpp");
+static const u8 sCameruptGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_36.4bpp.lz");
 static const ax_sprite sCameruptSprites36[] = {
 	{sCameruptGfx36, ARRAY_COUNT(sCameruptGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx37[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_37.4bpp");
+static const u8 sCameruptGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_37.4bpp.lz");
 static const ax_sprite sCameruptSprites37[] = {
 	{sCameruptGfx37, ARRAY_COUNT(sCameruptGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx38[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_38.4bpp");
+static const u8 sCameruptGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_38.4bpp.lz");
 static const ax_sprite sCameruptSprites38[] = {
 	{sCameruptGfx38, ARRAY_COUNT(sCameruptGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx39[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_39.4bpp");
+static const u8 sCameruptGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_39.4bpp.lz");
 static const ax_sprite sCameruptSprites39[] = {
 	{sCameruptGfx39, ARRAY_COUNT(sCameruptGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx40[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_40.4bpp");
+static const u8 sCameruptGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_40.4bpp.lz");
 static const ax_sprite sCameruptSprites40[] = {
 	{sCameruptGfx40, ARRAY_COUNT(sCameruptGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx41[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_41.4bpp");
+static const u8 sCameruptGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_41.4bpp.lz");
 static const ax_sprite sCameruptSprites41[] = {
 	{sCameruptGfx41, ARRAY_COUNT(sCameruptGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx42[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_42.4bpp");
+static const u8 sCameruptGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_42.4bpp.lz");
 static const ax_sprite sCameruptSprites42[] = {
 	{sCameruptGfx42, ARRAY_COUNT(sCameruptGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx43[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_43.4bpp");
+static const u8 sCameruptGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_43.4bpp.lz");
 static const ax_sprite sCameruptSprites43[] = {
 	{sCameruptGfx43, ARRAY_COUNT(sCameruptGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx44[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_44.4bpp");
+static const u8 sCameruptGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_44.4bpp.lz");
 static const ax_sprite sCameruptSprites44[] = {
 	{sCameruptGfx44, ARRAY_COUNT(sCameruptGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sCameruptGfx45[] = INCBIN_U8("graphics/ax/mon/camerupt/sprite_45.4bpp");
+static const u8 sCameruptGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/camerupt/sprite_45.4bpp.lz");
 static const ax_sprite sCameruptSprites45[] = {
 	{sCameruptGfx45, ARRAY_COUNT(sCameruptGfx45)}, 
 	{NULL, 0}

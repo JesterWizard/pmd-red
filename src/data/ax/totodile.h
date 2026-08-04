@@ -3152,84 +3152,84 @@ static const ax_anim sTotodileAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTotodileGfx1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_1.4bpp");
+static const u8 sTotodileGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_1.4bpp.lz");
 static const ax_sprite sTotodileSprites1[] = {
 	{sTotodileGfx1, ARRAY_COUNT(sTotodileGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_2.4bpp");
+static const u8 sTotodileGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_2.4bpp.lz");
 static const ax_sprite sTotodileSprites2[] = {
 	{sTotodileGfx2, ARRAY_COUNT(sTotodileGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx3[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_3.4bpp");
+static const u8 sTotodileGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_3.4bpp.lz");
 static const ax_sprite sTotodileSprites3[] = {
 	{sTotodileGfx3, ARRAY_COUNT(sTotodileGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx4[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_4.4bpp");
+static const u8 sTotodileGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_4.4bpp.lz");
 static const ax_sprite sTotodileSprites4[] = {
 	{sTotodileGfx4, ARRAY_COUNT(sTotodileGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx5[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_5.4bpp");
+static const u8 sTotodileGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_5.4bpp.lz");
 static const ax_sprite sTotodileSprites5[] = {
 	{sTotodileGfx5, ARRAY_COUNT(sTotodileGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx6[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_6.4bpp");
+static const u8 sTotodileGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_6.4bpp.lz");
 static const ax_sprite sTotodileSprites6[] = {
 	{sTotodileGfx6, ARRAY_COUNT(sTotodileGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx7[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_7.4bpp");
+static const u8 sTotodileGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_7.4bpp.lz");
 static const ax_sprite sTotodileSprites7[] = {
 	{sTotodileGfx7, ARRAY_COUNT(sTotodileGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx8[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_8.4bpp");
+static const u8 sTotodileGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_8.4bpp.lz");
 static const ax_sprite sTotodileSprites8[] = {
 	{sTotodileGfx8, ARRAY_COUNT(sTotodileGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx9[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_9.4bpp");
+static const u8 sTotodileGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_9.4bpp.lz");
 static const ax_sprite sTotodileSprites9[] = {
 	{sTotodileGfx9, ARRAY_COUNT(sTotodileGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx10[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_10.4bpp");
+static const u8 sTotodileGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_10.4bpp.lz");
 static const ax_sprite sTotodileSprites10[] = {
 	{sTotodileGfx10, ARRAY_COUNT(sTotodileGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx11[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_11.4bpp");
+static const u8 sTotodileGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_11.4bpp.lz");
 static const ax_sprite sTotodileSprites11[] = {
 	{sTotodileGfx11, ARRAY_COUNT(sTotodileGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx12[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_12.4bpp");
+static const u8 sTotodileGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_12.4bpp.lz");
 static const ax_sprite sTotodileSprites12[] = {
 	{sTotodileGfx12, ARRAY_COUNT(sTotodileGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx13[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_13.4bpp");
+static const u8 sTotodileGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_13.4bpp.lz");
 static const ax_sprite sTotodileSprites13[] = {
 	{sTotodileGfx13, ARRAY_COUNT(sTotodileGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx14[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_14.4bpp");
+static const u8 sTotodileGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_14.4bpp.lz");
 static const ax_sprite sTotodileSprites14[] = {
 	{sTotodileGfx14, ARRAY_COUNT(sTotodileGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx15[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_15.4bpp");
+static const u8 sTotodileGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_15.4bpp.lz");
 static const ax_sprite sTotodileSprites15[] = {
 	{sTotodileGfx15, ARRAY_COUNT(sTotodileGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx16[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_16.4bpp");
-static const u8 sTotodileGfx16_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_16_1.4bpp");
-static const u8 sTotodileGfx16_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_16_2.4bpp");
+static const u8 sTotodileGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_16.4bpp.lz");
+static const u8 sTotodileGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_16_1.4bpp.lz");
+static const u8 sTotodileGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_16_2.4bpp.lz");
 static const ax_sprite sTotodileSprites16[] = {
 	{NULL, 32}, 
 	{sTotodileGfx16, ARRAY_COUNT(sTotodileGfx16)}, 
@@ -3240,9 +3240,9 @@ static const ax_sprite sTotodileSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx17[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_17.4bpp");
-static const u8 sTotodileGfx17_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_17_1.4bpp");
-static const u8 sTotodileGfx17_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_17_2.4bpp");
+static const u8 sTotodileGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_17.4bpp.lz");
+static const u8 sTotodileGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_17_1.4bpp.lz");
+static const u8 sTotodileGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_17_2.4bpp.lz");
 static const ax_sprite sTotodileSprites17[] = {
 	{sTotodileGfx17, ARRAY_COUNT(sTotodileGfx17)}, 
 	{NULL, 32}, 
@@ -3251,9 +3251,9 @@ static const ax_sprite sTotodileSprites17[] = {
 	{sTotodileGfx17_2, ARRAY_COUNT(sTotodileGfx17_2)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx18[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_18.4bpp");
-static const u8 sTotodileGfx18_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_18_1.4bpp");
-static const u8 sTotodileGfx18_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_18_2.4bpp");
+static const u8 sTotodileGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_18.4bpp.lz");
+static const u8 sTotodileGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_18_1.4bpp.lz");
+static const u8 sTotodileGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_18_2.4bpp.lz");
 static const ax_sprite sTotodileSprites18[] = {
 	{NULL, 32}, 
 	{sTotodileGfx18, ARRAY_COUNT(sTotodileGfx18)}, 
@@ -3264,9 +3264,9 @@ static const ax_sprite sTotodileSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx19[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_19.4bpp");
-static const u8 sTotodileGfx19_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_19_1.4bpp");
-static const u8 sTotodileGfx19_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_19_2.4bpp");
+static const u8 sTotodileGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_19.4bpp.lz");
+static const u8 sTotodileGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_19_1.4bpp.lz");
+static const u8 sTotodileGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_19_2.4bpp.lz");
 static const ax_sprite sTotodileSprites19[] = {
 	{sTotodileGfx19, ARRAY_COUNT(sTotodileGfx19)}, 
 	{NULL, 32}, 
@@ -3276,8 +3276,8 @@ static const ax_sprite sTotodileSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx20[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_20.4bpp");
-static const u8 sTotodileGfx20_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_20_1.4bpp");
+static const u8 sTotodileGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_20.4bpp.lz");
+static const u8 sTotodileGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_20_1.4bpp.lz");
 static const ax_sprite sTotodileSprites20[] = {
 	{sTotodileGfx20, ARRAY_COUNT(sTotodileGfx20)}, 
 	{NULL, 32}, 
@@ -3285,9 +3285,9 @@ static const ax_sprite sTotodileSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx21[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_21.4bpp");
-static const u8 sTotodileGfx21_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_21_1.4bpp");
-static const u8 sTotodileGfx21_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_21_2.4bpp");
+static const u8 sTotodileGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_21.4bpp.lz");
+static const u8 sTotodileGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_21_1.4bpp.lz");
+static const u8 sTotodileGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_21_2.4bpp.lz");
 static const ax_sprite sTotodileSprites21[] = {
 	{NULL, 32}, 
 	{sTotodileGfx21, ARRAY_COUNT(sTotodileGfx21)}, 
@@ -3298,9 +3298,9 @@ static const ax_sprite sTotodileSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx22[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_22.4bpp");
-static const u8 sTotodileGfx22_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_22_1.4bpp");
-static const u8 sTotodileGfx22_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_22_2.4bpp");
+static const u8 sTotodileGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_22.4bpp.lz");
+static const u8 sTotodileGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_22_1.4bpp.lz");
+static const u8 sTotodileGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_22_2.4bpp.lz");
 static const ax_sprite sTotodileSprites22[] = {
 	{sTotodileGfx22, ARRAY_COUNT(sTotodileGfx22)}, 
 	{NULL, 32}, 
@@ -3310,9 +3310,9 @@ static const ax_sprite sTotodileSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx23[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_23.4bpp");
-static const u8 sTotodileGfx23_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_23_1.4bpp");
-static const u8 sTotodileGfx23_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_23_2.4bpp");
+static const u8 sTotodileGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_23.4bpp.lz");
+static const u8 sTotodileGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_23_1.4bpp.lz");
+static const u8 sTotodileGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_23_2.4bpp.lz");
 static const ax_sprite sTotodileSprites23[] = {
 	{sTotodileGfx23, ARRAY_COUNT(sTotodileGfx23)}, 
 	{NULL, 32}, 
@@ -3322,9 +3322,9 @@ static const ax_sprite sTotodileSprites23[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx24[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_24.4bpp");
-static const u8 sTotodileGfx24_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_24_1.4bpp");
-static const u8 sTotodileGfx24_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_24_2.4bpp");
+static const u8 sTotodileGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_24.4bpp.lz");
+static const u8 sTotodileGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_24_1.4bpp.lz");
+static const u8 sTotodileGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_24_2.4bpp.lz");
 static const ax_sprite sTotodileSprites24[] = {
 	{sTotodileGfx24, ARRAY_COUNT(sTotodileGfx24)}, 
 	{NULL, 64}, 
@@ -3334,9 +3334,9 @@ static const ax_sprite sTotodileSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx25[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_25.4bpp");
-static const u8 sTotodileGfx25_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_25_1.4bpp");
-static const u8 sTotodileGfx25_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_25_2.4bpp");
+static const u8 sTotodileGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_25.4bpp.lz");
+static const u8 sTotodileGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_25_1.4bpp.lz");
+static const u8 sTotodileGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_25_2.4bpp.lz");
 static const ax_sprite sTotodileSprites25[] = {
 	{sTotodileGfx25, ARRAY_COUNT(sTotodileGfx25)}, 
 	{NULL, 64}, 
@@ -3346,10 +3346,10 @@ static const ax_sprite sTotodileSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx26[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_26.4bpp");
-static const u8 sTotodileGfx26_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_26_1.4bpp");
-static const u8 sTotodileGfx26_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_26_2.4bpp");
-static const u8 sTotodileGfx26_3[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_26_3.4bpp");
+static const u8 sTotodileGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_26.4bpp.lz");
+static const u8 sTotodileGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_26_1.4bpp.lz");
+static const u8 sTotodileGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_26_2.4bpp.lz");
+static const u8 sTotodileGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_26_3.4bpp.lz");
 static const ax_sprite sTotodileSprites26[] = {
 	{NULL, 32}, 
 	{sTotodileGfx26, ARRAY_COUNT(sTotodileGfx26)}, 
@@ -3362,9 +3362,9 @@ static const ax_sprite sTotodileSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx27[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_27.4bpp");
-static const u8 sTotodileGfx27_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_27_1.4bpp");
-static const u8 sTotodileGfx27_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_27_2.4bpp");
+static const u8 sTotodileGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_27.4bpp.lz");
+static const u8 sTotodileGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_27_1.4bpp.lz");
+static const u8 sTotodileGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_27_2.4bpp.lz");
 static const ax_sprite sTotodileSprites27[] = {
 	{sTotodileGfx27, ARRAY_COUNT(sTotodileGfx27)}, 
 	{NULL, 32}, 
@@ -3374,9 +3374,9 @@ static const ax_sprite sTotodileSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx28[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_28.4bpp");
-static const u8 sTotodileGfx28_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_28_1.4bpp");
-static const u8 sTotodileGfx28_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_28_2.4bpp");
+static const u8 sTotodileGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_28.4bpp.lz");
+static const u8 sTotodileGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_28_1.4bpp.lz");
+static const u8 sTotodileGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_28_2.4bpp.lz");
 static const ax_sprite sTotodileSprites28[] = {
 	{sTotodileGfx28, ARRAY_COUNT(sTotodileGfx28)}, 
 	{NULL, 64}, 
@@ -3386,9 +3386,9 @@ static const ax_sprite sTotodileSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx29[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_29.4bpp");
-static const u8 sTotodileGfx29_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_29_1.4bpp");
-static const u8 sTotodileGfx29_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_29_2.4bpp");
+static const u8 sTotodileGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_29.4bpp.lz");
+static const u8 sTotodileGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_29_1.4bpp.lz");
+static const u8 sTotodileGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_29_2.4bpp.lz");
 static const ax_sprite sTotodileSprites29[] = {
 	{sTotodileGfx29, ARRAY_COUNT(sTotodileGfx29)}, 
 	{NULL, 32}, 
@@ -3398,9 +3398,9 @@ static const ax_sprite sTotodileSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx30[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_30.4bpp");
-static const u8 sTotodileGfx30_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_30_1.4bpp");
-static const u8 sTotodileGfx30_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_30_2.4bpp");
+static const u8 sTotodileGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_30.4bpp.lz");
+static const u8 sTotodileGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_30_1.4bpp.lz");
+static const u8 sTotodileGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_30_2.4bpp.lz");
 static const ax_sprite sTotodileSprites30[] = {
 	{sTotodileGfx30, ARRAY_COUNT(sTotodileGfx30)}, 
 	{NULL, 64}, 
@@ -3410,9 +3410,9 @@ static const ax_sprite sTotodileSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx31[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_31.4bpp");
-static const u8 sTotodileGfx31_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_31_1.4bpp");
-static const u8 sTotodileGfx31_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_31_2.4bpp");
+static const u8 sTotodileGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_31.4bpp.lz");
+static const u8 sTotodileGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_31_1.4bpp.lz");
+static const u8 sTotodileGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_31_2.4bpp.lz");
 static const ax_sprite sTotodileSprites31[] = {
 	{sTotodileGfx31, ARRAY_COUNT(sTotodileGfx31)}, 
 	{NULL, 32}, 
@@ -3422,9 +3422,9 @@ static const ax_sprite sTotodileSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx32[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_32.4bpp");
-static const u8 sTotodileGfx32_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_32_1.4bpp");
-static const u8 sTotodileGfx32_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_32_2.4bpp");
+static const u8 sTotodileGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_32.4bpp.lz");
+static const u8 sTotodileGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_32_1.4bpp.lz");
+static const u8 sTotodileGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_32_2.4bpp.lz");
 static const ax_sprite sTotodileSprites32[] = {
 	{sTotodileGfx32, ARRAY_COUNT(sTotodileGfx32)}, 
 	{NULL, 32}, 
@@ -3434,10 +3434,10 @@ static const ax_sprite sTotodileSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx33[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_33.4bpp");
-static const u8 sTotodileGfx33_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_33_1.4bpp");
-static const u8 sTotodileGfx33_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_33_2.4bpp");
-static const u8 sTotodileGfx33_3[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_33_3.4bpp");
+static const u8 sTotodileGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_33.4bpp.lz");
+static const u8 sTotodileGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_33_1.4bpp.lz");
+static const u8 sTotodileGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_33_2.4bpp.lz");
+static const u8 sTotodileGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_33_3.4bpp.lz");
 static const ax_sprite sTotodileSprites33[] = {
 	{sTotodileGfx33, ARRAY_COUNT(sTotodileGfx33)}, 
 	{NULL, 32}, 
@@ -3449,10 +3449,10 @@ static const ax_sprite sTotodileSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx34[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_34.4bpp");
-static const u8 sTotodileGfx34_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_34_1.4bpp");
-static const u8 sTotodileGfx34_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_34_2.4bpp");
-static const u8 sTotodileGfx34_3[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_34_3.4bpp");
+static const u8 sTotodileGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_34.4bpp.lz");
+static const u8 sTotodileGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_34_1.4bpp.lz");
+static const u8 sTotodileGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_34_2.4bpp.lz");
+static const u8 sTotodileGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_34_3.4bpp.lz");
 static const ax_sprite sTotodileSprites34[] = {
 	{sTotodileGfx34, ARRAY_COUNT(sTotodileGfx34)}, 
 	{NULL, 64}, 
@@ -3464,10 +3464,10 @@ static const ax_sprite sTotodileSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx35[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_35.4bpp");
-static const u8 sTotodileGfx35_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_35_1.4bpp");
-static const u8 sTotodileGfx35_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_35_2.4bpp");
-static const u8 sTotodileGfx35_3[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_35_3.4bpp");
+static const u8 sTotodileGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_35.4bpp.lz");
+static const u8 sTotodileGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_35_1.4bpp.lz");
+static const u8 sTotodileGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_35_2.4bpp.lz");
+static const u8 sTotodileGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_35_3.4bpp.lz");
 static const ax_sprite sTotodileSprites35[] = {
 	{NULL, 32}, 
 	{sTotodileGfx35, ARRAY_COUNT(sTotodileGfx35)}, 
@@ -3480,10 +3480,10 @@ static const ax_sprite sTotodileSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx36[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_36.4bpp");
-static const u8 sTotodileGfx36_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_36_1.4bpp");
-static const u8 sTotodileGfx36_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_36_2.4bpp");
-static const u8 sTotodileGfx36_3[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_36_3.4bpp");
+static const u8 sTotodileGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_36.4bpp.lz");
+static const u8 sTotodileGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_36_1.4bpp.lz");
+static const u8 sTotodileGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_36_2.4bpp.lz");
+static const u8 sTotodileGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_36_3.4bpp.lz");
 static const ax_sprite sTotodileSprites36[] = {
 	{sTotodileGfx36, ARRAY_COUNT(sTotodileGfx36)}, 
 	{NULL, 64}, 
@@ -3495,10 +3495,10 @@ static const ax_sprite sTotodileSprites36[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx37[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_37.4bpp");
-static const u8 sTotodileGfx37_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_37_1.4bpp");
-static const u8 sTotodileGfx37_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_37_2.4bpp");
-static const u8 sTotodileGfx37_3[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_37_3.4bpp");
+static const u8 sTotodileGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_37.4bpp.lz");
+static const u8 sTotodileGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_37_1.4bpp.lz");
+static const u8 sTotodileGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_37_2.4bpp.lz");
+static const u8 sTotodileGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_37_3.4bpp.lz");
 static const ax_sprite sTotodileSprites37[] = {
 	{NULL, 32}, 
 	{sTotodileGfx37, ARRAY_COUNT(sTotodileGfx37)}, 
@@ -3511,9 +3511,9 @@ static const ax_sprite sTotodileSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx38[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_38.4bpp");
-static const u8 sTotodileGfx38_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_38_1.4bpp");
-static const u8 sTotodileGfx38_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_38_2.4bpp");
+static const u8 sTotodileGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_38.4bpp.lz");
+static const u8 sTotodileGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_38_1.4bpp.lz");
+static const u8 sTotodileGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_38_2.4bpp.lz");
 static const ax_sprite sTotodileSprites38[] = {
 	{sTotodileGfx38, ARRAY_COUNT(sTotodileGfx38)}, 
 	{NULL, 32}, 
@@ -3523,10 +3523,10 @@ static const ax_sprite sTotodileSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx39[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_39.4bpp");
-static const u8 sTotodileGfx39_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_39_1.4bpp");
-static const u8 sTotodileGfx39_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_39_2.4bpp");
-static const u8 sTotodileGfx39_3[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_39_3.4bpp");
+static const u8 sTotodileGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_39.4bpp.lz");
+static const u8 sTotodileGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_39_1.4bpp.lz");
+static const u8 sTotodileGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_39_2.4bpp.lz");
+static const u8 sTotodileGfx39_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_39_3.4bpp.lz");
 static const ax_sprite sTotodileSprites39[] = {
 	{sTotodileGfx39, ARRAY_COUNT(sTotodileGfx39)}, 
 	{NULL, 32}, 
@@ -3538,9 +3538,9 @@ static const ax_sprite sTotodileSprites39[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx40[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_40.4bpp");
-static const u8 sTotodileGfx40_1[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_40_1.4bpp");
-static const u8 sTotodileGfx40_2[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_40_2.4bpp");
+static const u8 sTotodileGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_40.4bpp.lz");
+static const u8 sTotodileGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_40_1.4bpp.lz");
+static const u8 sTotodileGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_40_2.4bpp.lz");
 static const ax_sprite sTotodileSprites40[] = {
 	{sTotodileGfx40, ARRAY_COUNT(sTotodileGfx40)}, 
 	{NULL, 32}, 
@@ -3550,187 +3550,187 @@ static const ax_sprite sTotodileSprites40[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx41[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_41.4bpp");
+static const u8 sTotodileGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_41.4bpp.lz");
 static const ax_sprite sTotodileSprites41[] = {
 	{sTotodileGfx41, ARRAY_COUNT(sTotodileGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx42[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_42.4bpp");
+static const u8 sTotodileGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_42.4bpp.lz");
 static const ax_sprite sTotodileSprites42[] = {
 	{sTotodileGfx42, ARRAY_COUNT(sTotodileGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx43[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_43.4bpp");
+static const u8 sTotodileGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_43.4bpp.lz");
 static const ax_sprite sTotodileSprites43[] = {
 	{sTotodileGfx43, ARRAY_COUNT(sTotodileGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx44[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_44.4bpp");
+static const u8 sTotodileGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_44.4bpp.lz");
 static const ax_sprite sTotodileSprites44[] = {
 	{sTotodileGfx44, ARRAY_COUNT(sTotodileGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx45[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_45.4bpp");
+static const u8 sTotodileGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_45.4bpp.lz");
 static const ax_sprite sTotodileSprites45[] = {
 	{sTotodileGfx45, ARRAY_COUNT(sTotodileGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx46[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_46.4bpp");
+static const u8 sTotodileGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_46.4bpp.lz");
 static const ax_sprite sTotodileSprites46[] = {
 	{sTotodileGfx46, ARRAY_COUNT(sTotodileGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx47[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_47.4bpp");
+static const u8 sTotodileGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_47.4bpp.lz");
 static const ax_sprite sTotodileSprites47[] = {
 	{sTotodileGfx47, ARRAY_COUNT(sTotodileGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx48[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_48.4bpp");
+static const u8 sTotodileGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_48.4bpp.lz");
 static const ax_sprite sTotodileSprites48[] = {
 	{sTotodileGfx48, ARRAY_COUNT(sTotodileGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx49[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_49.4bpp");
+static const u8 sTotodileGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_49.4bpp.lz");
 static const ax_sprite sTotodileSprites49[] = {
 	{sTotodileGfx49, ARRAY_COUNT(sTotodileGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx50[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_50.4bpp");
+static const u8 sTotodileGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_50.4bpp.lz");
 static const ax_sprite sTotodileSprites50[] = {
 	{sTotodileGfx50, ARRAY_COUNT(sTotodileGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx51[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_51.4bpp");
+static const u8 sTotodileGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_51.4bpp.lz");
 static const ax_sprite sTotodileSprites51[] = {
 	{sTotodileGfx51, ARRAY_COUNT(sTotodileGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx52[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_52.4bpp");
+static const u8 sTotodileGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_52.4bpp.lz");
 static const ax_sprite sTotodileSprites52[] = {
 	{sTotodileGfx52, ARRAY_COUNT(sTotodileGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx53[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_53.4bpp");
+static const u8 sTotodileGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_53.4bpp.lz");
 static const ax_sprite sTotodileSprites53[] = {
 	{sTotodileGfx53, ARRAY_COUNT(sTotodileGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx54[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_54.4bpp");
+static const u8 sTotodileGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_54.4bpp.lz");
 static const ax_sprite sTotodileSprites54[] = {
 	{sTotodileGfx54, ARRAY_COUNT(sTotodileGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx55[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_55.4bpp");
+static const u8 sTotodileGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_55.4bpp.lz");
 static const ax_sprite sTotodileSprites55[] = {
 	{sTotodileGfx55, ARRAY_COUNT(sTotodileGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx56[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_56.4bpp");
+static const u8 sTotodileGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_56.4bpp.lz");
 static const ax_sprite sTotodileSprites56[] = {
 	{sTotodileGfx56, ARRAY_COUNT(sTotodileGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx57[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_57.4bpp");
+static const u8 sTotodileGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_57.4bpp.lz");
 static const ax_sprite sTotodileSprites57[] = {
 	{sTotodileGfx57, ARRAY_COUNT(sTotodileGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx58[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_58.4bpp");
+static const u8 sTotodileGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_58.4bpp.lz");
 static const ax_sprite sTotodileSprites58[] = {
 	{sTotodileGfx58, ARRAY_COUNT(sTotodileGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx59[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_59.4bpp");
+static const u8 sTotodileGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_59.4bpp.lz");
 static const ax_sprite sTotodileSprites59[] = {
 	{sTotodileGfx59, ARRAY_COUNT(sTotodileGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx60[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_60.4bpp");
+static const u8 sTotodileGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_60.4bpp.lz");
 static const ax_sprite sTotodileSprites60[] = {
 	{sTotodileGfx60, ARRAY_COUNT(sTotodileGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx61[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_61.4bpp");
+static const u8 sTotodileGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_61.4bpp.lz");
 static const ax_sprite sTotodileSprites61[] = {
 	{sTotodileGfx61, ARRAY_COUNT(sTotodileGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx62[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_62.4bpp");
+static const u8 sTotodileGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_62.4bpp.lz");
 static const ax_sprite sTotodileSprites62[] = {
 	{sTotodileGfx62, ARRAY_COUNT(sTotodileGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx63[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_63.4bpp");
+static const u8 sTotodileGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_63.4bpp.lz");
 static const ax_sprite sTotodileSprites63[] = {
 	{sTotodileGfx63, ARRAY_COUNT(sTotodileGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx64[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_64.4bpp");
+static const u8 sTotodileGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_64.4bpp.lz");
 static const ax_sprite sTotodileSprites64[] = {
 	{sTotodileGfx64, ARRAY_COUNT(sTotodileGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx65[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_65.4bpp");
+static const u8 sTotodileGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_65.4bpp.lz");
 static const ax_sprite sTotodileSprites65[] = {
 	{sTotodileGfx65, ARRAY_COUNT(sTotodileGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx66[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_66.4bpp");
+static const u8 sTotodileGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_66.4bpp.lz");
 static const ax_sprite sTotodileSprites66[] = {
 	{sTotodileGfx66, ARRAY_COUNT(sTotodileGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx67[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_67.4bpp");
+static const u8 sTotodileGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_67.4bpp.lz");
 static const ax_sprite sTotodileSprites67[] = {
 	{sTotodileGfx67, ARRAY_COUNT(sTotodileGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx68[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_68.4bpp");
+static const u8 sTotodileGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_68.4bpp.lz");
 static const ax_sprite sTotodileSprites68[] = {
 	{sTotodileGfx68, ARRAY_COUNT(sTotodileGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx69[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_69.4bpp");
+static const u8 sTotodileGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_69.4bpp.lz");
 static const ax_sprite sTotodileSprites69[] = {
 	{sTotodileGfx69, ARRAY_COUNT(sTotodileGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx70[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_70.4bpp");
+static const u8 sTotodileGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_70.4bpp.lz");
 static const ax_sprite sTotodileSprites70[] = {
 	{sTotodileGfx70, ARRAY_COUNT(sTotodileGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx71[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_71.4bpp");
+static const u8 sTotodileGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_71.4bpp.lz");
 static const ax_sprite sTotodileSprites71[] = {
 	{sTotodileGfx71, ARRAY_COUNT(sTotodileGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx72[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_72.4bpp");
+static const u8 sTotodileGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_72.4bpp.lz");
 static const ax_sprite sTotodileSprites72[] = {
 	{sTotodileGfx72, ARRAY_COUNT(sTotodileGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx73[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_73.4bpp");
+static const u8 sTotodileGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_73.4bpp.lz");
 static const ax_sprite sTotodileSprites73[] = {
 	{sTotodileGfx73, ARRAY_COUNT(sTotodileGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx74[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_74.4bpp");
+static const u8 sTotodileGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_74.4bpp.lz");
 static const ax_sprite sTotodileSprites74[] = {
 	{sTotodileGfx74, ARRAY_COUNT(sTotodileGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx75[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_75.4bpp");
+static const u8 sTotodileGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_75.4bpp.lz");
 static const ax_sprite sTotodileSprites75[] = {
 	{sTotodileGfx75, ARRAY_COUNT(sTotodileGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx76[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_76.4bpp");
+static const u8 sTotodileGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_76.4bpp.lz");
 static const ax_sprite sTotodileSprites76[] = {
 	{sTotodileGfx76, ARRAY_COUNT(sTotodileGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sTotodileGfx77[] = INCBIN_U8("graphics/ax/mon/totodile/sprite_77.4bpp");
+static const u8 sTotodileGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/totodile/sprite_77.4bpp.lz");
 static const ax_sprite sTotodileSprites77[] = {
 	{sTotodileGfx77, ARRAY_COUNT(sTotodileGfx77)}, 
 	{NULL, 0}

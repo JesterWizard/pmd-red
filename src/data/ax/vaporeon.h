@@ -2193,176 +2193,176 @@ static const ax_anim sVaporeonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sVaporeonGfx1[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_1.4bpp");
+static const u8 sVaporeonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_1.4bpp.lz");
 static const ax_sprite sVaporeonSprites1[] = {
 	{sVaporeonGfx1, ARRAY_COUNT(sVaporeonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx2[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_2.4bpp");
+static const u8 sVaporeonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_2.4bpp.lz");
 static const ax_sprite sVaporeonSprites2[] = {
 	{sVaporeonGfx2, ARRAY_COUNT(sVaporeonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx3[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_3.4bpp");
+static const u8 sVaporeonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_3.4bpp.lz");
 static const ax_sprite sVaporeonSprites3[] = {
 	{sVaporeonGfx3, ARRAY_COUNT(sVaporeonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx4[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_4.4bpp");
+static const u8 sVaporeonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_4.4bpp.lz");
 static const ax_sprite sVaporeonSprites4[] = {
 	{sVaporeonGfx4, ARRAY_COUNT(sVaporeonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx5[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_5.4bpp");
+static const u8 sVaporeonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_5.4bpp.lz");
 static const ax_sprite sVaporeonSprites5[] = {
 	{sVaporeonGfx5, ARRAY_COUNT(sVaporeonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx6[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_6.4bpp");
+static const u8 sVaporeonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_6.4bpp.lz");
 static const ax_sprite sVaporeonSprites6[] = {
 	{sVaporeonGfx6, ARRAY_COUNT(sVaporeonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx7[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_7.4bpp");
+static const u8 sVaporeonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_7.4bpp.lz");
 static const ax_sprite sVaporeonSprites7[] = {
 	{sVaporeonGfx7, ARRAY_COUNT(sVaporeonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx8[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_8.4bpp");
+static const u8 sVaporeonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_8.4bpp.lz");
 static const ax_sprite sVaporeonSprites8[] = {
 	{sVaporeonGfx8, ARRAY_COUNT(sVaporeonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx9[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_9.4bpp");
+static const u8 sVaporeonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_9.4bpp.lz");
 static const ax_sprite sVaporeonSprites9[] = {
 	{sVaporeonGfx9, ARRAY_COUNT(sVaporeonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx10[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_10.4bpp");
+static const u8 sVaporeonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_10.4bpp.lz");
 static const ax_sprite sVaporeonSprites10[] = {
 	{sVaporeonGfx10, ARRAY_COUNT(sVaporeonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx11[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_11.4bpp");
+static const u8 sVaporeonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_11.4bpp.lz");
 static const ax_sprite sVaporeonSprites11[] = {
 	{sVaporeonGfx11, ARRAY_COUNT(sVaporeonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx12[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_12.4bpp");
+static const u8 sVaporeonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_12.4bpp.lz");
 static const ax_sprite sVaporeonSprites12[] = {
 	{sVaporeonGfx12, ARRAY_COUNT(sVaporeonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx13[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_13.4bpp");
+static const u8 sVaporeonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_13.4bpp.lz");
 static const ax_sprite sVaporeonSprites13[] = {
 	{sVaporeonGfx13, ARRAY_COUNT(sVaporeonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx14[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_14.4bpp");
+static const u8 sVaporeonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_14.4bpp.lz");
 static const ax_sprite sVaporeonSprites14[] = {
 	{sVaporeonGfx14, ARRAY_COUNT(sVaporeonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx15[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_15.4bpp");
+static const u8 sVaporeonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_15.4bpp.lz");
 static const ax_sprite sVaporeonSprites15[] = {
 	{sVaporeonGfx15, ARRAY_COUNT(sVaporeonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx16[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_16.4bpp");
+static const u8 sVaporeonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_16.4bpp.lz");
 static const ax_sprite sVaporeonSprites16[] = {
 	{sVaporeonGfx16, ARRAY_COUNT(sVaporeonGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx17[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_17.4bpp");
+static const u8 sVaporeonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_17.4bpp.lz");
 static const ax_sprite sVaporeonSprites17[] = {
 	{sVaporeonGfx17, ARRAY_COUNT(sVaporeonGfx17)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx18[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_18.4bpp");
+static const u8 sVaporeonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_18.4bpp.lz");
 static const ax_sprite sVaporeonSprites18[] = {
 	{NULL, 32}, 
 	{sVaporeonGfx18, ARRAY_COUNT(sVaporeonGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx19[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_19.4bpp");
+static const u8 sVaporeonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_19.4bpp.lz");
 static const ax_sprite sVaporeonSprites19[] = {
 	{NULL, 32}, 
 	{sVaporeonGfx19, ARRAY_COUNT(sVaporeonGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx20[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_20.4bpp");
+static const u8 sVaporeonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_20.4bpp.lz");
 static const ax_sprite sVaporeonSprites20[] = {
 	{sVaporeonGfx20, ARRAY_COUNT(sVaporeonGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx21[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_21.4bpp");
+static const u8 sVaporeonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_21.4bpp.lz");
 static const ax_sprite sVaporeonSprites21[] = {
 	{sVaporeonGfx21, ARRAY_COUNT(sVaporeonGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx22[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_22.4bpp");
+static const u8 sVaporeonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_22.4bpp.lz");
 static const ax_sprite sVaporeonSprites22[] = {
 	{sVaporeonGfx22, ARRAY_COUNT(sVaporeonGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx23[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_23.4bpp");
+static const u8 sVaporeonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_23.4bpp.lz");
 static const ax_sprite sVaporeonSprites23[] = {
 	{sVaporeonGfx23, ARRAY_COUNT(sVaporeonGfx23)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx24[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_24.4bpp");
+static const u8 sVaporeonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_24.4bpp.lz");
 static const ax_sprite sVaporeonSprites24[] = {
 	{sVaporeonGfx24, ARRAY_COUNT(sVaporeonGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx25[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_25.4bpp");
+static const u8 sVaporeonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_25.4bpp.lz");
 static const ax_sprite sVaporeonSprites25[] = {
 	{sVaporeonGfx25, ARRAY_COUNT(sVaporeonGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx26[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_26.4bpp");
+static const u8 sVaporeonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_26.4bpp.lz");
 static const ax_sprite sVaporeonSprites26[] = {
 	{sVaporeonGfx26, ARRAY_COUNT(sVaporeonGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx27[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_27.4bpp");
-static const u8 sVaporeonGfx27_1[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_27_1.4bpp");
+static const u8 sVaporeonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_27.4bpp.lz");
+static const u8 sVaporeonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_27_1.4bpp.lz");
 static const ax_sprite sVaporeonSprites27[] = {
 	{sVaporeonGfx27, ARRAY_COUNT(sVaporeonGfx27)}, 
 	{NULL, 32}, 
 	{sVaporeonGfx27_1, ARRAY_COUNT(sVaporeonGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx28[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_28.4bpp");
-static const u8 sVaporeonGfx28_1[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_28_1.4bpp");
+static const u8 sVaporeonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_28.4bpp.lz");
+static const u8 sVaporeonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_28_1.4bpp.lz");
 static const ax_sprite sVaporeonSprites28[] = {
 	{sVaporeonGfx28, ARRAY_COUNT(sVaporeonGfx28)}, 
 	{NULL, 32}, 
 	{sVaporeonGfx28_1, ARRAY_COUNT(sVaporeonGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx29[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_29.4bpp");
+static const u8 sVaporeonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_29.4bpp.lz");
 static const ax_sprite sVaporeonSprites29[] = {
 	{sVaporeonGfx29, ARRAY_COUNT(sVaporeonGfx29)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx30[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_30.4bpp");
+static const u8 sVaporeonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_30.4bpp.lz");
 static const ax_sprite sVaporeonSprites30[] = {
 	{sVaporeonGfx30, ARRAY_COUNT(sVaporeonGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx31[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_31.4bpp");
+static const u8 sVaporeonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_31.4bpp.lz");
 static const ax_sprite sVaporeonSprites31[] = {
 	{NULL, 32}, 
 	{sVaporeonGfx31, ARRAY_COUNT(sVaporeonGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx32[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_32.4bpp");
-static const u8 sVaporeonGfx32_1[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_32_1.4bpp");
-static const u8 sVaporeonGfx32_2[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_32_2.4bpp");
+static const u8 sVaporeonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_32.4bpp.lz");
+static const u8 sVaporeonGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_32_1.4bpp.lz");
+static const u8 sVaporeonGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_32_2.4bpp.lz");
 static const ax_sprite sVaporeonSprites32[] = {
 	{sVaporeonGfx32, ARRAY_COUNT(sVaporeonGfx32)}, 
 	{NULL, 32}, 
@@ -2371,22 +2371,22 @@ static const ax_sprite sVaporeonSprites32[] = {
 	{sVaporeonGfx32_2, ARRAY_COUNT(sVaporeonGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx33[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_33.4bpp");
-static const u8 sVaporeonGfx33_1[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_33_1.4bpp");
+static const u8 sVaporeonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_33.4bpp.lz");
+static const u8 sVaporeonGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_33_1.4bpp.lz");
 static const ax_sprite sVaporeonSprites33[] = {
 	{sVaporeonGfx33, ARRAY_COUNT(sVaporeonGfx33)}, 
 	{NULL, 32}, 
 	{sVaporeonGfx33_1, ARRAY_COUNT(sVaporeonGfx33_1)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx34[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_34.4bpp");
+static const u8 sVaporeonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_34.4bpp.lz");
 static const ax_sprite sVaporeonSprites34[] = {
 	{NULL, 32}, 
 	{sVaporeonGfx34, ARRAY_COUNT(sVaporeonGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx35[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_35.4bpp");
-static const u8 sVaporeonGfx35_1[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_35_1.4bpp");
+static const u8 sVaporeonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_35.4bpp.lz");
+static const u8 sVaporeonGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_35_1.4bpp.lz");
 static const ax_sprite sVaporeonSprites35[] = {
 	{sVaporeonGfx35, ARRAY_COUNT(sVaporeonGfx35)}, 
 	{NULL, 64}, 
@@ -2394,16 +2394,16 @@ static const ax_sprite sVaporeonSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx36[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_36.4bpp");
-static const u8 sVaporeonGfx36_1[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_36_1.4bpp");
+static const u8 sVaporeonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_36.4bpp.lz");
+static const u8 sVaporeonGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_36_1.4bpp.lz");
 static const ax_sprite sVaporeonSprites36[] = {
 	{sVaporeonGfx36, ARRAY_COUNT(sVaporeonGfx36)}, 
 	{NULL, 32}, 
 	{sVaporeonGfx36_1, ARRAY_COUNT(sVaporeonGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx37[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_37.4bpp");
-static const u8 sVaporeonGfx37_1[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_37_1.4bpp");
+static const u8 sVaporeonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_37.4bpp.lz");
+static const u8 sVaporeonGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_37_1.4bpp.lz");
 static const ax_sprite sVaporeonSprites37[] = {
 	{NULL, 32}, 
 	{sVaporeonGfx37, ARRAY_COUNT(sVaporeonGfx37)}, 
@@ -2411,102 +2411,102 @@ static const ax_sprite sVaporeonSprites37[] = {
 	{sVaporeonGfx37_1, ARRAY_COUNT(sVaporeonGfx37_1)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx38[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_38.4bpp");
+static const u8 sVaporeonGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_38.4bpp.lz");
 static const ax_sprite sVaporeonSprites38[] = {
 	{sVaporeonGfx38, ARRAY_COUNT(sVaporeonGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx39[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_39.4bpp");
+static const u8 sVaporeonGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_39.4bpp.lz");
 static const ax_sprite sVaporeonSprites39[] = {
 	{sVaporeonGfx39, ARRAY_COUNT(sVaporeonGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx40[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_40.4bpp");
+static const u8 sVaporeonGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_40.4bpp.lz");
 static const ax_sprite sVaporeonSprites40[] = {
 	{sVaporeonGfx40, ARRAY_COUNT(sVaporeonGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx41[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_41.4bpp");
+static const u8 sVaporeonGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_41.4bpp.lz");
 static const ax_sprite sVaporeonSprites41[] = {
 	{sVaporeonGfx41, ARRAY_COUNT(sVaporeonGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx42[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_42.4bpp");
+static const u8 sVaporeonGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_42.4bpp.lz");
 static const ax_sprite sVaporeonSprites42[] = {
 	{sVaporeonGfx42, ARRAY_COUNT(sVaporeonGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx43[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_43.4bpp");
+static const u8 sVaporeonGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_43.4bpp.lz");
 static const ax_sprite sVaporeonSprites43[] = {
 	{sVaporeonGfx43, ARRAY_COUNT(sVaporeonGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx44[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_44.4bpp");
+static const u8 sVaporeonGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_44.4bpp.lz");
 static const ax_sprite sVaporeonSprites44[] = {
 	{sVaporeonGfx44, ARRAY_COUNT(sVaporeonGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx45[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_45.4bpp");
+static const u8 sVaporeonGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_45.4bpp.lz");
 static const ax_sprite sVaporeonSprites45[] = {
 	{sVaporeonGfx45, ARRAY_COUNT(sVaporeonGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx46[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_46.4bpp");
+static const u8 sVaporeonGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_46.4bpp.lz");
 static const ax_sprite sVaporeonSprites46[] = {
 	{sVaporeonGfx46, ARRAY_COUNT(sVaporeonGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx47[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_47.4bpp");
+static const u8 sVaporeonGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_47.4bpp.lz");
 static const ax_sprite sVaporeonSprites47[] = {
 	{sVaporeonGfx47, ARRAY_COUNT(sVaporeonGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx48[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_48.4bpp");
+static const u8 sVaporeonGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_48.4bpp.lz");
 static const ax_sprite sVaporeonSprites48[] = {
 	{sVaporeonGfx48, ARRAY_COUNT(sVaporeonGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx49[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_49.4bpp");
+static const u8 sVaporeonGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_49.4bpp.lz");
 static const ax_sprite sVaporeonSprites49[] = {
 	{sVaporeonGfx49, ARRAY_COUNT(sVaporeonGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx50[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_50.4bpp");
+static const u8 sVaporeonGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_50.4bpp.lz");
 static const ax_sprite sVaporeonSprites50[] = {
 	{sVaporeonGfx50, ARRAY_COUNT(sVaporeonGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx51[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_51.4bpp");
+static const u8 sVaporeonGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_51.4bpp.lz");
 static const ax_sprite sVaporeonSprites51[] = {
 	{sVaporeonGfx51, ARRAY_COUNT(sVaporeonGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx52[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_52.4bpp");
+static const u8 sVaporeonGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_52.4bpp.lz");
 static const ax_sprite sVaporeonSprites52[] = {
 	{sVaporeonGfx52, ARRAY_COUNT(sVaporeonGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx53[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_53.4bpp");
+static const u8 sVaporeonGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_53.4bpp.lz");
 static const ax_sprite sVaporeonSprites53[] = {
 	{sVaporeonGfx53, ARRAY_COUNT(sVaporeonGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx54[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_54.4bpp");
+static const u8 sVaporeonGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_54.4bpp.lz");
 static const ax_sprite sVaporeonSprites54[] = {
 	{sVaporeonGfx54, ARRAY_COUNT(sVaporeonGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx55[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_55.4bpp");
+static const u8 sVaporeonGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_55.4bpp.lz");
 static const ax_sprite sVaporeonSprites55[] = {
 	{sVaporeonGfx55, ARRAY_COUNT(sVaporeonGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx56[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_56.4bpp");
+static const u8 sVaporeonGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_56.4bpp.lz");
 static const ax_sprite sVaporeonSprites56[] = {
 	{sVaporeonGfx56, ARRAY_COUNT(sVaporeonGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sVaporeonGfx57[] = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_57.4bpp");
+static const u8 sVaporeonGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/vaporeon/sprite_57.4bpp.lz");
 static const ax_sprite sVaporeonSprites57[] = {
 	{sVaporeonGfx57, ARRAY_COUNT(sVaporeonGfx57)}, 
 	{NULL, 0}

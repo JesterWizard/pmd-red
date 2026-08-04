@@ -2245,129 +2245,129 @@ static const ax_anim sMiloticAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMiloticGfx1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_1.4bpp");
+static const u8 sMiloticGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_1.4bpp.lz");
 static const ax_sprite sMiloticSprites1[] = {
 	{sMiloticGfx1, ARRAY_COUNT(sMiloticGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_2.4bpp");
+static const u8 sMiloticGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_2.4bpp.lz");
 static const ax_sprite sMiloticSprites2[] = {
 	{sMiloticGfx2, ARRAY_COUNT(sMiloticGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_3.4bpp");
+static const u8 sMiloticGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_3.4bpp.lz");
 static const ax_sprite sMiloticSprites3[] = {
 	{sMiloticGfx3, ARRAY_COUNT(sMiloticGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx4[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_4.4bpp");
+static const u8 sMiloticGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_4.4bpp.lz");
 static const ax_sprite sMiloticSprites4[] = {
 	{sMiloticGfx4, ARRAY_COUNT(sMiloticGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx5[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_5.4bpp");
+static const u8 sMiloticGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_5.4bpp.lz");
 static const ax_sprite sMiloticSprites5[] = {
 	{sMiloticGfx5, ARRAY_COUNT(sMiloticGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx6[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_6.4bpp");
+static const u8 sMiloticGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_6.4bpp.lz");
 static const ax_sprite sMiloticSprites6[] = {
 	{sMiloticGfx6, ARRAY_COUNT(sMiloticGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx7[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_7.4bpp");
+static const u8 sMiloticGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_7.4bpp.lz");
 static const ax_sprite sMiloticSprites7[] = {
 	{sMiloticGfx7, ARRAY_COUNT(sMiloticGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx8[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_8.4bpp");
+static const u8 sMiloticGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_8.4bpp.lz");
 static const ax_sprite sMiloticSprites8[] = {
 	{sMiloticGfx8, ARRAY_COUNT(sMiloticGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx9[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_9.4bpp");
+static const u8 sMiloticGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_9.4bpp.lz");
 static const ax_sprite sMiloticSprites9[] = {
 	{sMiloticGfx9, ARRAY_COUNT(sMiloticGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx10[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_10.4bpp");
+static const u8 sMiloticGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_10.4bpp.lz");
 static const ax_sprite sMiloticSprites10[] = {
 	{sMiloticGfx10, ARRAY_COUNT(sMiloticGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx11[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_11.4bpp");
+static const u8 sMiloticGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_11.4bpp.lz");
 static const ax_sprite sMiloticSprites11[] = {
 	{sMiloticGfx11, ARRAY_COUNT(sMiloticGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx12[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_12.4bpp");
+static const u8 sMiloticGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_12.4bpp.lz");
 static const ax_sprite sMiloticSprites12[] = {
 	{sMiloticGfx12, ARRAY_COUNT(sMiloticGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx13[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_13.4bpp");
+static const u8 sMiloticGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_13.4bpp.lz");
 static const ax_sprite sMiloticSprites13[] = {
 	{sMiloticGfx13, ARRAY_COUNT(sMiloticGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx14[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_14.4bpp");
+static const u8 sMiloticGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_14.4bpp.lz");
 static const ax_sprite sMiloticSprites14[] = {
 	{sMiloticGfx14, ARRAY_COUNT(sMiloticGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx15[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_15.4bpp");
+static const u8 sMiloticGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_15.4bpp.lz");
 static const ax_sprite sMiloticSprites15[] = {
 	{sMiloticGfx15, ARRAY_COUNT(sMiloticGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx16[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_16.4bpp");
+static const u8 sMiloticGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_16.4bpp.lz");
 static const ax_sprite sMiloticSprites16[] = {
 	{sMiloticGfx16, ARRAY_COUNT(sMiloticGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx17[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_17.4bpp");
+static const u8 sMiloticGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_17.4bpp.lz");
 static const ax_sprite sMiloticSprites17[] = {
 	{sMiloticGfx17, ARRAY_COUNT(sMiloticGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx18[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_18.4bpp");
+static const u8 sMiloticGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_18.4bpp.lz");
 static const ax_sprite sMiloticSprites18[] = {
 	{sMiloticGfx18, ARRAY_COUNT(sMiloticGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx19[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_19.4bpp");
+static const u8 sMiloticGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_19.4bpp.lz");
 static const ax_sprite sMiloticSprites19[] = {
 	{sMiloticGfx19, ARRAY_COUNT(sMiloticGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx20[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_20.4bpp");
+static const u8 sMiloticGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_20.4bpp.lz");
 static const ax_sprite sMiloticSprites20[] = {
 	{sMiloticGfx20, ARRAY_COUNT(sMiloticGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx21[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_21.4bpp");
+static const u8 sMiloticGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_21.4bpp.lz");
 static const ax_sprite sMiloticSprites21[] = {
 	{sMiloticGfx21, ARRAY_COUNT(sMiloticGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx22[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_22.4bpp");
+static const u8 sMiloticGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_22.4bpp.lz");
 static const ax_sprite sMiloticSprites22[] = {
 	{sMiloticGfx22, ARRAY_COUNT(sMiloticGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx23[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_23.4bpp");
+static const u8 sMiloticGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_23.4bpp.lz");
 static const ax_sprite sMiloticSprites23[] = {
 	{sMiloticGfx23, ARRAY_COUNT(sMiloticGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx24[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_24.4bpp");
+static const u8 sMiloticGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_24.4bpp.lz");
 static const ax_sprite sMiloticSprites24[] = {
 	{sMiloticGfx24, ARRAY_COUNT(sMiloticGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx25[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_25.4bpp");
-static const u8 sMiloticGfx25_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_25_1.4bpp");
-static const u8 sMiloticGfx25_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_25_2.4bpp");
+static const u8 sMiloticGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_25.4bpp.lz");
+static const u8 sMiloticGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_25_1.4bpp.lz");
+static const u8 sMiloticGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_25_2.4bpp.lz");
 static const ax_sprite sMiloticSprites25[] = {
 	{NULL, 64}, 
 	{sMiloticGfx25, ARRAY_COUNT(sMiloticGfx25)}, 
@@ -2378,15 +2378,15 @@ static const ax_sprite sMiloticSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx26[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_26.4bpp");
+static const u8 sMiloticGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_26.4bpp.lz");
 static const ax_sprite sMiloticSprites26[] = {
 	{sMiloticGfx26, ARRAY_COUNT(sMiloticGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx27[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_27.4bpp");
-static const u8 sMiloticGfx27_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_27_1.4bpp");
-static const u8 sMiloticGfx27_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_27_2.4bpp");
-static const u8 sMiloticGfx27_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_27_3.4bpp");
+static const u8 sMiloticGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_27.4bpp.lz");
+static const u8 sMiloticGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_27_1.4bpp.lz");
+static const u8 sMiloticGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_27_2.4bpp.lz");
+static const u8 sMiloticGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_27_3.4bpp.lz");
 static const ax_sprite sMiloticSprites27[] = {
 	{NULL, 32}, 
 	{sMiloticGfx27, ARRAY_COUNT(sMiloticGfx27)}, 
@@ -2398,22 +2398,22 @@ static const ax_sprite sMiloticSprites27[] = {
 	{sMiloticGfx27_3, ARRAY_COUNT(sMiloticGfx27_3)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx28[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_28.4bpp");
+static const u8 sMiloticGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_28.4bpp.lz");
 static const ax_sprite sMiloticSprites28[] = {
 	{sMiloticGfx28, ARRAY_COUNT(sMiloticGfx28)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx29[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_29.4bpp");
+static const u8 sMiloticGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_29.4bpp.lz");
 static const ax_sprite sMiloticSprites29[] = {
 	{sMiloticGfx29, ARRAY_COUNT(sMiloticGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx30[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_30.4bpp");
-static const u8 sMiloticGfx30_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_30_1.4bpp");
-static const u8 sMiloticGfx30_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_30_2.4bpp");
-static const u8 sMiloticGfx30_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_30_3.4bpp");
-static const u8 sMiloticGfx30_4[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_30_4.4bpp");
+static const u8 sMiloticGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_30.4bpp.lz");
+static const u8 sMiloticGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_30_1.4bpp.lz");
+static const u8 sMiloticGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_30_2.4bpp.lz");
+static const u8 sMiloticGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_30_3.4bpp.lz");
+static const u8 sMiloticGfx30_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_30_4.4bpp.lz");
 static const ax_sprite sMiloticSprites30[] = {
 	{sMiloticGfx30, ARRAY_COUNT(sMiloticGfx30)}, 
 	{NULL, 64}, 
@@ -2427,8 +2427,8 @@ static const ax_sprite sMiloticSprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx31[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_31.4bpp");
-static const u8 sMiloticGfx31_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_31_1.4bpp");
+static const u8 sMiloticGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_31.4bpp.lz");
+static const u8 sMiloticGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_31_1.4bpp.lz");
 static const ax_sprite sMiloticSprites31[] = {
 	{NULL, 32}, 
 	{sMiloticGfx31, ARRAY_COUNT(sMiloticGfx31)}, 
@@ -2436,8 +2436,8 @@ static const ax_sprite sMiloticSprites31[] = {
 	{sMiloticGfx31_1, ARRAY_COUNT(sMiloticGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx32[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_32.4bpp");
-static const u8 sMiloticGfx32_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_32_1.4bpp");
+static const u8 sMiloticGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_32.4bpp.lz");
+static const u8 sMiloticGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_32_1.4bpp.lz");
 static const ax_sprite sMiloticSprites32[] = {
 	{NULL, 32}, 
 	{sMiloticGfx32, ARRAY_COUNT(sMiloticGfx32)}, 
@@ -2445,19 +2445,19 @@ static const ax_sprite sMiloticSprites32[] = {
 	{sMiloticGfx32_1, ARRAY_COUNT(sMiloticGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx33[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_33.4bpp");
+static const u8 sMiloticGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_33.4bpp.lz");
 static const ax_sprite sMiloticSprites33[] = {
 	{sMiloticGfx33, ARRAY_COUNT(sMiloticGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx34[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_34.4bpp");
+static const u8 sMiloticGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_34.4bpp.lz");
 static const ax_sprite sMiloticSprites34[] = {
 	{sMiloticGfx34, ARRAY_COUNT(sMiloticGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx35[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_35.4bpp");
-static const u8 sMiloticGfx35_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_35_1.4bpp");
+static const u8 sMiloticGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_35.4bpp.lz");
+static const u8 sMiloticGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_35_1.4bpp.lz");
 static const ax_sprite sMiloticSprites35[] = {
 	{NULL, 32}, 
 	{sMiloticGfx35, ARRAY_COUNT(sMiloticGfx35)}, 
@@ -2465,9 +2465,9 @@ static const ax_sprite sMiloticSprites35[] = {
 	{sMiloticGfx35_1, ARRAY_COUNT(sMiloticGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx36[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_36.4bpp");
-static const u8 sMiloticGfx36_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_36_1.4bpp");
-static const u8 sMiloticGfx36_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_36_2.4bpp");
+static const u8 sMiloticGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_36.4bpp.lz");
+static const u8 sMiloticGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_36_1.4bpp.lz");
+static const u8 sMiloticGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_36_2.4bpp.lz");
 static const ax_sprite sMiloticSprites36[] = {
 	{sMiloticGfx36, ARRAY_COUNT(sMiloticGfx36)}, 
 	{NULL, 32}, 
@@ -2477,14 +2477,14 @@ static const ax_sprite sMiloticSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx37[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_37.4bpp");
+static const u8 sMiloticGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_37.4bpp.lz");
 static const ax_sprite sMiloticSprites37[] = {
 	{sMiloticGfx37, ARRAY_COUNT(sMiloticGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx38[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_38.4bpp");
-static const u8 sMiloticGfx38_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_38_1.4bpp");
-static const u8 sMiloticGfx38_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_38_2.4bpp");
+static const u8 sMiloticGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_38.4bpp.lz");
+static const u8 sMiloticGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_38_1.4bpp.lz");
+static const u8 sMiloticGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_38_2.4bpp.lz");
 static const ax_sprite sMiloticSprites38[] = {
 	{sMiloticGfx38, ARRAY_COUNT(sMiloticGfx38)}, 
 	{NULL, 32}, 
@@ -2493,9 +2493,9 @@ static const ax_sprite sMiloticSprites38[] = {
 	{sMiloticGfx38_2, ARRAY_COUNT(sMiloticGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx39[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_39.4bpp");
-static const u8 sMiloticGfx39_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_39_1.4bpp");
-static const u8 sMiloticGfx39_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_39_2.4bpp");
+static const u8 sMiloticGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_39.4bpp.lz");
+static const u8 sMiloticGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_39_1.4bpp.lz");
+static const u8 sMiloticGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_39_2.4bpp.lz");
 static const ax_sprite sMiloticSprites39[] = {
 	{sMiloticGfx39, ARRAY_COUNT(sMiloticGfx39)}, 
 	{NULL, 64}, 
@@ -2504,20 +2504,20 @@ static const ax_sprite sMiloticSprites39[] = {
 	{sMiloticGfx39_2, ARRAY_COUNT(sMiloticGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx40[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_40.4bpp");
+static const u8 sMiloticGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_40.4bpp.lz");
 static const ax_sprite sMiloticSprites40[] = {
 	{sMiloticGfx40, ARRAY_COUNT(sMiloticGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx41[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_41.4bpp");
+static const u8 sMiloticGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_41.4bpp.lz");
 static const ax_sprite sMiloticSprites41[] = {
 	{sMiloticGfx41, ARRAY_COUNT(sMiloticGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx42[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_42.4bpp");
-static const u8 sMiloticGfx42_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_42_1.4bpp");
-static const u8 sMiloticGfx42_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_42_2.4bpp");
-static const u8 sMiloticGfx42_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_42_3.4bpp");
+static const u8 sMiloticGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_42.4bpp.lz");
+static const u8 sMiloticGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_42_1.4bpp.lz");
+static const u8 sMiloticGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_42_2.4bpp.lz");
+static const u8 sMiloticGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_42_3.4bpp.lz");
 static const ax_sprite sMiloticSprites42[] = {
 	{sMiloticGfx42, ARRAY_COUNT(sMiloticGfx42)}, 
 	{NULL, 160}, 
@@ -2528,23 +2528,23 @@ static const ax_sprite sMiloticSprites42[] = {
 	{sMiloticGfx42_3, ARRAY_COUNT(sMiloticGfx42_3)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx43[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_43.4bpp");
+static const u8 sMiloticGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_43.4bpp.lz");
 static const ax_sprite sMiloticSprites43[] = {
 	{sMiloticGfx43, ARRAY_COUNT(sMiloticGfx43)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx44[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_44.4bpp");
-static const u8 sMiloticGfx44_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_44_1.4bpp");
+static const u8 sMiloticGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_44.4bpp.lz");
+static const u8 sMiloticGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_44_1.4bpp.lz");
 static const ax_sprite sMiloticSprites44[] = {
 	{sMiloticGfx44, ARRAY_COUNT(sMiloticGfx44)}, 
 	{NULL, 32}, 
 	{sMiloticGfx44_1, ARRAY_COUNT(sMiloticGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx45[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_45.4bpp");
-static const u8 sMiloticGfx45_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_45_1.4bpp");
-static const u8 sMiloticGfx45_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_45_2.4bpp");
+static const u8 sMiloticGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_45.4bpp.lz");
+static const u8 sMiloticGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_45_1.4bpp.lz");
+static const u8 sMiloticGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_45_2.4bpp.lz");
 static const ax_sprite sMiloticSprites45[] = {
 	{NULL, 64}, 
 	{sMiloticGfx45, ARRAY_COUNT(sMiloticGfx45)}, 
@@ -2555,13 +2555,13 @@ static const ax_sprite sMiloticSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx46[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_46.4bpp");
+static const u8 sMiloticGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_46.4bpp.lz");
 static const ax_sprite sMiloticSprites46[] = {
 	{sMiloticGfx46, ARRAY_COUNT(sMiloticGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx47[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_47.4bpp");
-static const u8 sMiloticGfx47_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_47_1.4bpp");
+static const u8 sMiloticGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_47.4bpp.lz");
+static const u8 sMiloticGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_47_1.4bpp.lz");
 static const ax_sprite sMiloticSprites47[] = {
 	{sMiloticGfx47, ARRAY_COUNT(sMiloticGfx47)}, 
 	{NULL, 32}, 
@@ -2569,10 +2569,10 @@ static const ax_sprite sMiloticSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx48[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_48.4bpp");
-static const u8 sMiloticGfx48_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_48_1.4bpp");
-static const u8 sMiloticGfx48_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_48_2.4bpp");
-static const u8 sMiloticGfx48_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_48_3.4bpp");
+static const u8 sMiloticGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_48.4bpp.lz");
+static const u8 sMiloticGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_48_1.4bpp.lz");
+static const u8 sMiloticGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_48_2.4bpp.lz");
+static const u8 sMiloticGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_48_3.4bpp.lz");
 static const ax_sprite sMiloticSprites48[] = {
 	{NULL, 64}, 
 	{sMiloticGfx48, ARRAY_COUNT(sMiloticGfx48)}, 
@@ -2585,30 +2585,30 @@ static const ax_sprite sMiloticSprites48[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx49[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_49.4bpp");
+static const u8 sMiloticGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_49.4bpp.lz");
 static const ax_sprite sMiloticSprites49[] = {
 	{sMiloticGfx49, ARRAY_COUNT(sMiloticGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx50[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_50.4bpp");
+static const u8 sMiloticGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_50.4bpp.lz");
 static const ax_sprite sMiloticSprites50[] = {
 	{sMiloticGfx50, ARRAY_COUNT(sMiloticGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx51[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_51.4bpp");
+static const u8 sMiloticGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_51.4bpp.lz");
 static const ax_sprite sMiloticSprites51[] = {
 	{sMiloticGfx51, ARRAY_COUNT(sMiloticGfx51)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx52[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_52.4bpp");
+static const u8 sMiloticGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_52.4bpp.lz");
 static const ax_sprite sMiloticSprites52[] = {
 	{sMiloticGfx52, ARRAY_COUNT(sMiloticGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx53[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_53.4bpp");
-static const u8 sMiloticGfx53_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_53_1.4bpp");
-static const u8 sMiloticGfx53_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_53_2.4bpp");
+static const u8 sMiloticGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_53.4bpp.lz");
+static const u8 sMiloticGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_53_1.4bpp.lz");
+static const u8 sMiloticGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_53_2.4bpp.lz");
 static const ax_sprite sMiloticSprites53[] = {
 	{NULL, 64}, 
 	{sMiloticGfx53, ARRAY_COUNT(sMiloticGfx53)}, 
@@ -2618,12 +2618,12 @@ static const ax_sprite sMiloticSprites53[] = {
 	{sMiloticGfx53_2, ARRAY_COUNT(sMiloticGfx53_2)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx54[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_54.4bpp");
-static const u8 sMiloticGfx54_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_1.4bpp");
-static const u8 sMiloticGfx54_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_2.4bpp");
-static const u8 sMiloticGfx54_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_3.4bpp");
-static const u8 sMiloticGfx54_4[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_4.4bpp");
-static const u8 sMiloticGfx54_5[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_5.4bpp");
+static const u8 sMiloticGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_54.4bpp.lz");
+static const u8 sMiloticGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_1.4bpp.lz");
+static const u8 sMiloticGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_2.4bpp.lz");
+static const u8 sMiloticGfx54_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_3.4bpp.lz");
+static const u8 sMiloticGfx54_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_4.4bpp.lz");
+static const u8 sMiloticGfx54_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_54_5.4bpp.lz");
 static const ax_sprite sMiloticSprites54[] = {
 	{sMiloticGfx54, ARRAY_COUNT(sMiloticGfx54)}, 
 	{NULL, 128}, 
@@ -2639,7 +2639,7 @@ static const ax_sprite sMiloticSprites54[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx55[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_55.4bpp");
+static const u8 sMiloticGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_55.4bpp.lz");
 static const ax_sprite sMiloticSprites55[] = {
 	{sMiloticGfx55, ARRAY_COUNT(sMiloticGfx55)}, 
 	{NULL, 0}
@@ -2648,15 +2648,15 @@ static const ax_sprite sMiloticSprites56[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx57[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_57.4bpp");
+static const u8 sMiloticGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_57.4bpp.lz");
 static const ax_sprite sMiloticSprites57[] = {
 	{sMiloticGfx57, ARRAY_COUNT(sMiloticGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx58[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_58.4bpp");
-static const u8 sMiloticGfx58_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_58_1.4bpp");
-static const u8 sMiloticGfx58_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_58_2.4bpp");
-static const u8 sMiloticGfx58_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_58_3.4bpp");
+static const u8 sMiloticGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_58.4bpp.lz");
+static const u8 sMiloticGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_58_1.4bpp.lz");
+static const u8 sMiloticGfx58_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_58_2.4bpp.lz");
+static const u8 sMiloticGfx58_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_58_3.4bpp.lz");
 static const ax_sprite sMiloticSprites58[] = {
 	{NULL, 32}, 
 	{sMiloticGfx58, ARRAY_COUNT(sMiloticGfx58)}, 
@@ -2668,17 +2668,17 @@ static const ax_sprite sMiloticSprites58[] = {
 	{sMiloticGfx58_3, ARRAY_COUNT(sMiloticGfx58_3)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx59[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_59.4bpp");
-static const u8 sMiloticGfx59_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_59_1.4bpp");
+static const u8 sMiloticGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_59.4bpp.lz");
+static const u8 sMiloticGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_59_1.4bpp.lz");
 static const ax_sprite sMiloticSprites59[] = {
 	{sMiloticGfx59, ARRAY_COUNT(sMiloticGfx59)}, 
 	{NULL, 32}, 
 	{sMiloticGfx59_1, ARRAY_COUNT(sMiloticGfx59_1)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx60[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_60.4bpp");
-static const u8 sMiloticGfx60_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_60_1.4bpp");
-static const u8 sMiloticGfx60_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_60_2.4bpp");
+static const u8 sMiloticGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_60.4bpp.lz");
+static const u8 sMiloticGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_60_1.4bpp.lz");
+static const u8 sMiloticGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_60_2.4bpp.lz");
 static const ax_sprite sMiloticSprites60[] = {
 	{NULL, 32}, 
 	{sMiloticGfx60, ARRAY_COUNT(sMiloticGfx60)}, 
@@ -2688,9 +2688,9 @@ static const ax_sprite sMiloticSprites60[] = {
 	{sMiloticGfx60_2, ARRAY_COUNT(sMiloticGfx60_2)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx61[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_61.4bpp");
-static const u8 sMiloticGfx61_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_61_1.4bpp");
-static const u8 sMiloticGfx61_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_61_2.4bpp");
+static const u8 sMiloticGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_61.4bpp.lz");
+static const u8 sMiloticGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_61_1.4bpp.lz");
+static const u8 sMiloticGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_61_2.4bpp.lz");
 static const ax_sprite sMiloticSprites61[] = {
 	{sMiloticGfx61, ARRAY_COUNT(sMiloticGfx61)}, 
 	{NULL, 32}, 
@@ -2700,8 +2700,8 @@ static const ax_sprite sMiloticSprites61[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx62[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_62.4bpp");
-static const u8 sMiloticGfx62_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_62_1.4bpp");
+static const u8 sMiloticGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_62.4bpp.lz");
+static const u8 sMiloticGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_62_1.4bpp.lz");
 static const ax_sprite sMiloticSprites62[] = {
 	{sMiloticGfx62, ARRAY_COUNT(sMiloticGfx62)}, 
 	{NULL, 32}, 
@@ -2709,12 +2709,12 @@ static const ax_sprite sMiloticSprites62[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx63[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_63.4bpp");
-static const u8 sMiloticGfx63_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_1.4bpp");
-static const u8 sMiloticGfx63_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_2.4bpp");
-static const u8 sMiloticGfx63_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_3.4bpp");
-static const u8 sMiloticGfx63_4[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_4.4bpp");
-static const u8 sMiloticGfx63_5[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_5.4bpp");
+static const u8 sMiloticGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_63.4bpp.lz");
+static const u8 sMiloticGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_1.4bpp.lz");
+static const u8 sMiloticGfx63_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_2.4bpp.lz");
+static const u8 sMiloticGfx63_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_3.4bpp.lz");
+static const u8 sMiloticGfx63_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_4.4bpp.lz");
+static const u8 sMiloticGfx63_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_63_5.4bpp.lz");
 static const ax_sprite sMiloticSprites63[] = {
 	{NULL, 32}, 
 	{sMiloticGfx63, ARRAY_COUNT(sMiloticGfx63)}, 
@@ -2730,8 +2730,8 @@ static const ax_sprite sMiloticSprites63[] = {
 	{sMiloticGfx63_5, ARRAY_COUNT(sMiloticGfx63_5)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx64[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_64.4bpp");
-static const u8 sMiloticGfx64_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_64_1.4bpp");
+static const u8 sMiloticGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_64.4bpp.lz");
+static const u8 sMiloticGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_64_1.4bpp.lz");
 static const ax_sprite sMiloticSprites64[] = {
 	{sMiloticGfx64, ARRAY_COUNT(sMiloticGfx64)}, 
 	{NULL, 32}, 
@@ -2739,9 +2739,9 @@ static const ax_sprite sMiloticSprites64[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx65[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_65.4bpp");
-static const u8 sMiloticGfx65_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_65_1.4bpp");
-static const u8 sMiloticGfx65_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_65_2.4bpp");
+static const u8 sMiloticGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_65.4bpp.lz");
+static const u8 sMiloticGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_65_1.4bpp.lz");
+static const u8 sMiloticGfx65_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_65_2.4bpp.lz");
 static const ax_sprite sMiloticSprites65[] = {
 	{NULL, 128}, 
 	{sMiloticGfx65, ARRAY_COUNT(sMiloticGfx65)}, 
@@ -2752,17 +2752,17 @@ static const ax_sprite sMiloticSprites65[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx66[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_66.4bpp");
+static const u8 sMiloticGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_66.4bpp.lz");
 static const ax_sprite sMiloticSprites66[] = {
 	{sMiloticGfx66, ARRAY_COUNT(sMiloticGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx67[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_67.4bpp");
-static const u8 sMiloticGfx67_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_1.4bpp");
-static const u8 sMiloticGfx67_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_2.4bpp");
-static const u8 sMiloticGfx67_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_3.4bpp");
-static const u8 sMiloticGfx67_4[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_4.4bpp");
-static const u8 sMiloticGfx67_5[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_5.4bpp");
+static const u8 sMiloticGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_67.4bpp.lz");
+static const u8 sMiloticGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_1.4bpp.lz");
+static const u8 sMiloticGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_2.4bpp.lz");
+static const u8 sMiloticGfx67_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_3.4bpp.lz");
+static const u8 sMiloticGfx67_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_4.4bpp.lz");
+static const u8 sMiloticGfx67_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_67_5.4bpp.lz");
 static const ax_sprite sMiloticSprites67[] = {
 	{NULL, 32}, 
 	{sMiloticGfx67, ARRAY_COUNT(sMiloticGfx67)}, 
@@ -2778,14 +2778,14 @@ static const ax_sprite sMiloticSprites67[] = {
 	{sMiloticGfx67_5, ARRAY_COUNT(sMiloticGfx67_5)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx68[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_68.4bpp");
+static const u8 sMiloticGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_68.4bpp.lz");
 static const ax_sprite sMiloticSprites68[] = {
 	{sMiloticGfx68, ARRAY_COUNT(sMiloticGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx69[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_69.4bpp");
-static const u8 sMiloticGfx69_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_69_1.4bpp");
-static const u8 sMiloticGfx69_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_69_2.4bpp");
+static const u8 sMiloticGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_69.4bpp.lz");
+static const u8 sMiloticGfx69_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_69_1.4bpp.lz");
+static const u8 sMiloticGfx69_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_69_2.4bpp.lz");
 static const ax_sprite sMiloticSprites69[] = {
 	{sMiloticGfx69, ARRAY_COUNT(sMiloticGfx69)}, 
 	{NULL, 32}, 
@@ -2794,9 +2794,9 @@ static const ax_sprite sMiloticSprites69[] = {
 	{sMiloticGfx69_2, ARRAY_COUNT(sMiloticGfx69_2)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx70[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_70.4bpp");
-static const u8 sMiloticGfx70_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_70_1.4bpp");
-static const u8 sMiloticGfx70_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_70_2.4bpp");
+static const u8 sMiloticGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_70.4bpp.lz");
+static const u8 sMiloticGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_70_1.4bpp.lz");
+static const u8 sMiloticGfx70_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_70_2.4bpp.lz");
 static const ax_sprite sMiloticSprites70[] = {
 	{sMiloticGfx70, ARRAY_COUNT(sMiloticGfx70)}, 
 	{NULL, 64}, 
@@ -2806,18 +2806,18 @@ static const ax_sprite sMiloticSprites70[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx71[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_71.4bpp");
+static const u8 sMiloticGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_71.4bpp.lz");
 static const ax_sprite sMiloticSprites71[] = {
 	{NULL, 32}, 
 	{sMiloticGfx71, ARRAY_COUNT(sMiloticGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx72[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_72.4bpp");
-static const u8 sMiloticGfx72_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_1.4bpp");
-static const u8 sMiloticGfx72_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_2.4bpp");
-static const u8 sMiloticGfx72_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_3.4bpp");
-static const u8 sMiloticGfx72_4[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_4.4bpp");
-static const u8 sMiloticGfx72_5[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_5.4bpp");
+static const u8 sMiloticGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_72.4bpp.lz");
+static const u8 sMiloticGfx72_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_1.4bpp.lz");
+static const u8 sMiloticGfx72_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_2.4bpp.lz");
+static const u8 sMiloticGfx72_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_3.4bpp.lz");
+static const u8 sMiloticGfx72_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_4.4bpp.lz");
+static const u8 sMiloticGfx72_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_72_5.4bpp.lz");
 static const ax_sprite sMiloticSprites72[] = {
 	{sMiloticGfx72, ARRAY_COUNT(sMiloticGfx72)}, 
 	{NULL, 64}, 
@@ -2832,15 +2832,15 @@ static const ax_sprite sMiloticSprites72[] = {
 	{sMiloticGfx72_5, ARRAY_COUNT(sMiloticGfx72_5)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx73[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_73.4bpp");
+static const u8 sMiloticGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_73.4bpp.lz");
 static const ax_sprite sMiloticSprites73[] = {
 	{sMiloticGfx73, ARRAY_COUNT(sMiloticGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx74[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_74.4bpp");
-static const u8 sMiloticGfx74_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_74_1.4bpp");
-static const u8 sMiloticGfx74_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_74_2.4bpp");
-static const u8 sMiloticGfx74_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_74_3.4bpp");
+static const u8 sMiloticGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_74.4bpp.lz");
+static const u8 sMiloticGfx74_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_74_1.4bpp.lz");
+static const u8 sMiloticGfx74_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_74_2.4bpp.lz");
+static const u8 sMiloticGfx74_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_74_3.4bpp.lz");
 static const ax_sprite sMiloticSprites74[] = {
 	{sMiloticGfx74, ARRAY_COUNT(sMiloticGfx74)}, 
 	{NULL, 32}, 
@@ -2851,9 +2851,9 @@ static const ax_sprite sMiloticSprites74[] = {
 	{sMiloticGfx74_3, ARRAY_COUNT(sMiloticGfx74_3)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx75[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_75.4bpp");
-static const u8 sMiloticGfx75_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_75_1.4bpp");
-static const u8 sMiloticGfx75_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_75_2.4bpp");
+static const u8 sMiloticGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_75.4bpp.lz");
+static const u8 sMiloticGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_75_1.4bpp.lz");
+static const u8 sMiloticGfx75_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_75_2.4bpp.lz");
 static const ax_sprite sMiloticSprites75[] = {
 	{sMiloticGfx75, ARRAY_COUNT(sMiloticGfx75)}, 
 	{NULL, 32}, 
@@ -2862,19 +2862,19 @@ static const ax_sprite sMiloticSprites75[] = {
 	{sMiloticGfx75_2, ARRAY_COUNT(sMiloticGfx75_2)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx76[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_76.4bpp");
+static const u8 sMiloticGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_76.4bpp.lz");
 static const ax_sprite sMiloticSprites76[] = {
 	{sMiloticGfx76, ARRAY_COUNT(sMiloticGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx77[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_77.4bpp");
+static const u8 sMiloticGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_77.4bpp.lz");
 static const ax_sprite sMiloticSprites77[] = {
 	{sMiloticGfx77, ARRAY_COUNT(sMiloticGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx78[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_78.4bpp");
-static const u8 sMiloticGfx78_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_78_1.4bpp");
-static const u8 sMiloticGfx78_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_78_2.4bpp");
+static const u8 sMiloticGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_78.4bpp.lz");
+static const u8 sMiloticGfx78_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_78_1.4bpp.lz");
+static const u8 sMiloticGfx78_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_78_2.4bpp.lz");
 static const ax_sprite sMiloticSprites78[] = {
 	{NULL, 160}, 
 	{sMiloticGfx78, ARRAY_COUNT(sMiloticGfx78)}, 
@@ -2884,20 +2884,20 @@ static const ax_sprite sMiloticSprites78[] = {
 	{sMiloticGfx78_2, ARRAY_COUNT(sMiloticGfx78_2)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx79[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_79.4bpp");
+static const u8 sMiloticGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_79.4bpp.lz");
 static const ax_sprite sMiloticSprites79[] = {
 	{sMiloticGfx79, ARRAY_COUNT(sMiloticGfx79)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx80[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_80.4bpp");
+static const u8 sMiloticGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_80.4bpp.lz");
 static const ax_sprite sMiloticSprites80[] = {
 	{sMiloticGfx80, ARRAY_COUNT(sMiloticGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx81[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_81.4bpp");
-static const u8 sMiloticGfx81_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_81_1.4bpp");
-static const u8 sMiloticGfx81_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_81_2.4bpp");
+static const u8 sMiloticGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_81.4bpp.lz");
+static const u8 sMiloticGfx81_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_81_1.4bpp.lz");
+static const u8 sMiloticGfx81_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_81_2.4bpp.lz");
 static const ax_sprite sMiloticSprites81[] = {
 	{NULL, 32}, 
 	{sMiloticGfx81, ARRAY_COUNT(sMiloticGfx81)}, 
@@ -2908,10 +2908,10 @@ static const ax_sprite sMiloticSprites81[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx82[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_82.4bpp");
-static const u8 sMiloticGfx82_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_82_1.4bpp");
-static const u8 sMiloticGfx82_2[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_82_2.4bpp");
-static const u8 sMiloticGfx82_3[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_82_3.4bpp");
+static const u8 sMiloticGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_82.4bpp.lz");
+static const u8 sMiloticGfx82_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_82_1.4bpp.lz");
+static const u8 sMiloticGfx82_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_82_2.4bpp.lz");
+static const u8 sMiloticGfx82_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_82_3.4bpp.lz");
 static const ax_sprite sMiloticSprites82[] = {
 	{NULL, 32}, 
 	{sMiloticGfx82, ARRAY_COUNT(sMiloticGfx82)}, 
@@ -2924,8 +2924,8 @@ static const ax_sprite sMiloticSprites82[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx83[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_83.4bpp");
-static const u8 sMiloticGfx83_1[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_83_1.4bpp");
+static const u8 sMiloticGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_83.4bpp.lz");
+static const u8 sMiloticGfx83_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_83_1.4bpp.lz");
 static const ax_sprite sMiloticSprites83[] = {
 	{sMiloticGfx83, ARRAY_COUNT(sMiloticGfx83)}, 
 	{NULL, 32}, 
@@ -2933,47 +2933,47 @@ static const ax_sprite sMiloticSprites83[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx84[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_84.4bpp");
+static const u8 sMiloticGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_84.4bpp.lz");
 static const ax_sprite sMiloticSprites84[] = {
 	{sMiloticGfx84, ARRAY_COUNT(sMiloticGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx85[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_85.4bpp");
+static const u8 sMiloticGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_85.4bpp.lz");
 static const ax_sprite sMiloticSprites85[] = {
 	{sMiloticGfx85, ARRAY_COUNT(sMiloticGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx86[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_86.4bpp");
+static const u8 sMiloticGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_86.4bpp.lz");
 static const ax_sprite sMiloticSprites86[] = {
 	{sMiloticGfx86, ARRAY_COUNT(sMiloticGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx87[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_87.4bpp");
+static const u8 sMiloticGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_87.4bpp.lz");
 static const ax_sprite sMiloticSprites87[] = {
 	{sMiloticGfx87, ARRAY_COUNT(sMiloticGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx88[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_88.4bpp");
+static const u8 sMiloticGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_88.4bpp.lz");
 static const ax_sprite sMiloticSprites88[] = {
 	{sMiloticGfx88, ARRAY_COUNT(sMiloticGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx89[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_89.4bpp");
+static const u8 sMiloticGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_89.4bpp.lz");
 static const ax_sprite sMiloticSprites89[] = {
 	{sMiloticGfx89, ARRAY_COUNT(sMiloticGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx90[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_90.4bpp");
+static const u8 sMiloticGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_90.4bpp.lz");
 static const ax_sprite sMiloticSprites90[] = {
 	{sMiloticGfx90, ARRAY_COUNT(sMiloticGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx91[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_91.4bpp");
+static const u8 sMiloticGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_91.4bpp.lz");
 static const ax_sprite sMiloticSprites91[] = {
 	{sMiloticGfx91, ARRAY_COUNT(sMiloticGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sMiloticGfx92[] = INCBIN_U8("graphics/ax/mon/milotic/sprite_92.4bpp");
+static const u8 sMiloticGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/milotic/sprite_92.4bpp.lz");
 static const ax_sprite sMiloticSprites92[] = {
 	{sMiloticGfx92, ARRAY_COUNT(sMiloticGfx92)}, 
 	{NULL, 0}

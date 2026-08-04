@@ -2053,83 +2053,83 @@ static const ax_anim sRhydonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sRhydonGfx1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_1.4bpp");
+static const u8 sRhydonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_1.4bpp.lz");
 static const ax_sprite sRhydonSprites1[] = {
 	{sRhydonGfx1, ARRAY_COUNT(sRhydonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx2[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_2.4bpp");
+static const u8 sRhydonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_2.4bpp.lz");
 static const ax_sprite sRhydonSprites2[] = {
 	{sRhydonGfx2, ARRAY_COUNT(sRhydonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx3[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_3.4bpp");
+static const u8 sRhydonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_3.4bpp.lz");
 static const ax_sprite sRhydonSprites3[] = {
 	{sRhydonGfx3, ARRAY_COUNT(sRhydonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx4[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_4.4bpp");
+static const u8 sRhydonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_4.4bpp.lz");
 static const ax_sprite sRhydonSprites4[] = {
 	{sRhydonGfx4, ARRAY_COUNT(sRhydonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx5[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_5.4bpp");
+static const u8 sRhydonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_5.4bpp.lz");
 static const ax_sprite sRhydonSprites5[] = {
 	{sRhydonGfx5, ARRAY_COUNT(sRhydonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx6[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_6.4bpp");
+static const u8 sRhydonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_6.4bpp.lz");
 static const ax_sprite sRhydonSprites6[] = {
 	{sRhydonGfx6, ARRAY_COUNT(sRhydonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx7[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_7.4bpp");
+static const u8 sRhydonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_7.4bpp.lz");
 static const ax_sprite sRhydonSprites7[] = {
 	{sRhydonGfx7, ARRAY_COUNT(sRhydonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx8[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_8.4bpp");
+static const u8 sRhydonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_8.4bpp.lz");
 static const ax_sprite sRhydonSprites8[] = {
 	{sRhydonGfx8, ARRAY_COUNT(sRhydonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx9[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_9.4bpp");
+static const u8 sRhydonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_9.4bpp.lz");
 static const ax_sprite sRhydonSprites9[] = {
 	{sRhydonGfx9, ARRAY_COUNT(sRhydonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx10[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_10.4bpp");
+static const u8 sRhydonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_10.4bpp.lz");
 static const ax_sprite sRhydonSprites10[] = {
 	{sRhydonGfx10, ARRAY_COUNT(sRhydonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx11[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_11.4bpp");
+static const u8 sRhydonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_11.4bpp.lz");
 static const ax_sprite sRhydonSprites11[] = {
 	{sRhydonGfx11, ARRAY_COUNT(sRhydonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx12[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_12.4bpp");
+static const u8 sRhydonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_12.4bpp.lz");
 static const ax_sprite sRhydonSprites12[] = {
 	{sRhydonGfx12, ARRAY_COUNT(sRhydonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx13[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_13.4bpp");
+static const u8 sRhydonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_13.4bpp.lz");
 static const ax_sprite sRhydonSprites13[] = {
 	{sRhydonGfx13, ARRAY_COUNT(sRhydonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx14[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_14.4bpp");
+static const u8 sRhydonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_14.4bpp.lz");
 static const ax_sprite sRhydonSprites14[] = {
 	{sRhydonGfx14, ARRAY_COUNT(sRhydonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx15[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_15.4bpp");
+static const u8 sRhydonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_15.4bpp.lz");
 static const ax_sprite sRhydonSprites15[] = {
 	{sRhydonGfx15, ARRAY_COUNT(sRhydonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx16[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_16.4bpp");
-static const u8 sRhydonGfx16_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_16_1.4bpp");
+static const u8 sRhydonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_16.4bpp.lz");
+static const u8 sRhydonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_16_1.4bpp.lz");
 static const ax_sprite sRhydonSprites16[] = {
 	{NULL, 32}, 
 	{sRhydonGfx16, ARRAY_COUNT(sRhydonGfx16)}, 
@@ -2137,13 +2137,13 @@ static const ax_sprite sRhydonSprites16[] = {
 	{sRhydonGfx16_1, ARRAY_COUNT(sRhydonGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx17[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_17.4bpp");
+static const u8 sRhydonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_17.4bpp.lz");
 static const ax_sprite sRhydonSprites17[] = {
 	{sRhydonGfx17, ARRAY_COUNT(sRhydonGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx18[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_18.4bpp");
-static const u8 sRhydonGfx18_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_18_1.4bpp");
+static const u8 sRhydonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_18.4bpp.lz");
+static const u8 sRhydonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_18_1.4bpp.lz");
 static const ax_sprite sRhydonSprites18[] = {
 	{NULL, 32}, 
 	{sRhydonGfx18, ARRAY_COUNT(sRhydonGfx18)}, 
@@ -2151,54 +2151,54 @@ static const ax_sprite sRhydonSprites18[] = {
 	{sRhydonGfx18_1, ARRAY_COUNT(sRhydonGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx19[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_19.4bpp");
-static const u8 sRhydonGfx19_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_19_1.4bpp");
+static const u8 sRhydonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_19.4bpp.lz");
+static const u8 sRhydonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_19_1.4bpp.lz");
 static const ax_sprite sRhydonSprites19[] = {
 	{sRhydonGfx19, ARRAY_COUNT(sRhydonGfx19)}, 
 	{NULL, 96}, 
 	{sRhydonGfx19_1, ARRAY_COUNT(sRhydonGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx20[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_20.4bpp");
+static const u8 sRhydonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_20.4bpp.lz");
 static const ax_sprite sRhydonSprites20[] = {
 	{sRhydonGfx20, ARRAY_COUNT(sRhydonGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx21[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_21.4bpp");
-static const u8 sRhydonGfx21_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_21_1.4bpp");
+static const u8 sRhydonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_21.4bpp.lz");
+static const u8 sRhydonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_21_1.4bpp.lz");
 static const ax_sprite sRhydonSprites21[] = {
 	{sRhydonGfx21, ARRAY_COUNT(sRhydonGfx21)}, 
 	{NULL, 32}, 
 	{sRhydonGfx21_1, ARRAY_COUNT(sRhydonGfx21_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx22[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_22.4bpp");
+static const u8 sRhydonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_22.4bpp.lz");
 static const ax_sprite sRhydonSprites22[] = {
 	{NULL, 32}, 
 	{sRhydonGfx22, ARRAY_COUNT(sRhydonGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx23[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_23.4bpp");
-static const u8 sRhydonGfx23_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_23_1.4bpp");
+static const u8 sRhydonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_23.4bpp.lz");
+static const u8 sRhydonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_23_1.4bpp.lz");
 static const ax_sprite sRhydonSprites23[] = {
 	{sRhydonGfx23, ARRAY_COUNT(sRhydonGfx23)}, 
 	{NULL, 32}, 
 	{sRhydonGfx23_1, ARRAY_COUNT(sRhydonGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx24[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_24.4bpp");
+static const u8 sRhydonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_24.4bpp.lz");
 static const ax_sprite sRhydonSprites24[] = {
 	{sRhydonGfx24, ARRAY_COUNT(sRhydonGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx25[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_25.4bpp");
+static const u8 sRhydonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_25.4bpp.lz");
 static const ax_sprite sRhydonSprites25[] = {
 	{sRhydonGfx25, ARRAY_COUNT(sRhydonGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx26[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_26.4bpp");
-static const u8 sRhydonGfx26_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_26_1.4bpp");
-static const u8 sRhydonGfx26_2[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_26_2.4bpp");
+static const u8 sRhydonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_26.4bpp.lz");
+static const u8 sRhydonGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_26_1.4bpp.lz");
+static const u8 sRhydonGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_26_2.4bpp.lz");
 static const ax_sprite sRhydonSprites26[] = {
 	{sRhydonGfx26, ARRAY_COUNT(sRhydonGfx26)}, 
 	{NULL, 32}, 
@@ -2207,35 +2207,35 @@ static const ax_sprite sRhydonSprites26[] = {
 	{sRhydonGfx26_2, ARRAY_COUNT(sRhydonGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx27[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_27.4bpp");
-static const u8 sRhydonGfx27_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_27_1.4bpp");
+static const u8 sRhydonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_27.4bpp.lz");
+static const u8 sRhydonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_27_1.4bpp.lz");
 static const ax_sprite sRhydonSprites27[] = {
 	{sRhydonGfx27, ARRAY_COUNT(sRhydonGfx27)}, 
 	{NULL, 32}, 
 	{sRhydonGfx27_1, ARRAY_COUNT(sRhydonGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx28[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_28.4bpp");
-static const u8 sRhydonGfx28_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_28_1.4bpp");
+static const u8 sRhydonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_28.4bpp.lz");
+static const u8 sRhydonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_28_1.4bpp.lz");
 static const ax_sprite sRhydonSprites28[] = {
 	{sRhydonGfx28, ARRAY_COUNT(sRhydonGfx28)}, 
 	{NULL, 32}, 
 	{sRhydonGfx28_1, ARRAY_COUNT(sRhydonGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx29[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_29.4bpp");
+static const u8 sRhydonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_29.4bpp.lz");
 static const ax_sprite sRhydonSprites29[] = {
 	{sRhydonGfx29, ARRAY_COUNT(sRhydonGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx30[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_30.4bpp");
+static const u8 sRhydonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_30.4bpp.lz");
 static const ax_sprite sRhydonSprites30[] = {
 	{sRhydonGfx30, ARRAY_COUNT(sRhydonGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx31[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_31.4bpp");
-static const u8 sRhydonGfx31_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_31_1.4bpp");
-static const u8 sRhydonGfx31_2[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_31_2.4bpp");
+static const u8 sRhydonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_31.4bpp.lz");
+static const u8 sRhydonGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_31_1.4bpp.lz");
+static const u8 sRhydonGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_31_2.4bpp.lz");
 static const ax_sprite sRhydonSprites31[] = {
 	{NULL, 32}, 
 	{sRhydonGfx31, ARRAY_COUNT(sRhydonGfx31)}, 
@@ -2245,9 +2245,9 @@ static const ax_sprite sRhydonSprites31[] = {
 	{sRhydonGfx31_2, ARRAY_COUNT(sRhydonGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx32[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_32.4bpp");
-static const u8 sRhydonGfx32_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_32_1.4bpp");
-static const u8 sRhydonGfx32_2[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_32_2.4bpp");
+static const u8 sRhydonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_32.4bpp.lz");
+static const u8 sRhydonGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_32_1.4bpp.lz");
+static const u8 sRhydonGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_32_2.4bpp.lz");
 static const ax_sprite sRhydonSprites32[] = {
 	{NULL, 32}, 
 	{sRhydonGfx32, ARRAY_COUNT(sRhydonGfx32)}, 
@@ -2257,9 +2257,9 @@ static const ax_sprite sRhydonSprites32[] = {
 	{sRhydonGfx32_2, ARRAY_COUNT(sRhydonGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx33[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_33.4bpp");
-static const u8 sRhydonGfx33_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_33_1.4bpp");
-static const u8 sRhydonGfx33_2[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_33_2.4bpp");
+static const u8 sRhydonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_33.4bpp.lz");
+static const u8 sRhydonGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_33_1.4bpp.lz");
+static const u8 sRhydonGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_33_2.4bpp.lz");
 static const ax_sprite sRhydonSprites33[] = {
 	{sRhydonGfx33, ARRAY_COUNT(sRhydonGfx33)}, 
 	{NULL, 32}, 
@@ -2268,16 +2268,16 @@ static const ax_sprite sRhydonSprites33[] = {
 	{sRhydonGfx33_2, ARRAY_COUNT(sRhydonGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx34[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_34.4bpp");
-static const u8 sRhydonGfx34_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_34_1.4bpp");
+static const u8 sRhydonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_34.4bpp.lz");
+static const u8 sRhydonGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_34_1.4bpp.lz");
 static const ax_sprite sRhydonSprites34[] = {
 	{sRhydonGfx34, ARRAY_COUNT(sRhydonGfx34)}, 
 	{NULL, 32}, 
 	{sRhydonGfx34_1, ARRAY_COUNT(sRhydonGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx35[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_35.4bpp");
-static const u8 sRhydonGfx35_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_35_1.4bpp");
+static const u8 sRhydonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_35.4bpp.lz");
+static const u8 sRhydonGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_35_1.4bpp.lz");
 static const ax_sprite sRhydonSprites35[] = {
 	{NULL, 32}, 
 	{sRhydonGfx35, ARRAY_COUNT(sRhydonGfx35)}, 
@@ -2285,45 +2285,45 @@ static const ax_sprite sRhydonSprites35[] = {
 	{sRhydonGfx35_1, ARRAY_COUNT(sRhydonGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx36[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_36.4bpp");
-static const u8 sRhydonGfx36_1[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_36_1.4bpp");
+static const u8 sRhydonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_36.4bpp.lz");
+static const u8 sRhydonGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_36_1.4bpp.lz");
 static const ax_sprite sRhydonSprites36[] = {
 	{sRhydonGfx36, ARRAY_COUNT(sRhydonGfx36)}, 
 	{NULL, 32}, 
 	{sRhydonGfx36_1, ARRAY_COUNT(sRhydonGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx37[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_37.4bpp");
+static const u8 sRhydonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_37.4bpp.lz");
 static const ax_sprite sRhydonSprites37[] = {
 	{sRhydonGfx37, ARRAY_COUNT(sRhydonGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx38[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_38.4bpp");
+static const u8 sRhydonGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_38.4bpp.lz");
 static const ax_sprite sRhydonSprites38[] = {
 	{sRhydonGfx38, ARRAY_COUNT(sRhydonGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx39[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_39.4bpp");
+static const u8 sRhydonGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_39.4bpp.lz");
 static const ax_sprite sRhydonSprites39[] = {
 	{sRhydonGfx39, ARRAY_COUNT(sRhydonGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx40[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_40.4bpp");
+static const u8 sRhydonGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_40.4bpp.lz");
 static const ax_sprite sRhydonSprites40[] = {
 	{sRhydonGfx40, ARRAY_COUNT(sRhydonGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx41[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_41.4bpp");
+static const u8 sRhydonGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_41.4bpp.lz");
 static const ax_sprite sRhydonSprites41[] = {
 	{sRhydonGfx41, ARRAY_COUNT(sRhydonGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx42[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_42.4bpp");
+static const u8 sRhydonGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_42.4bpp.lz");
 static const ax_sprite sRhydonSprites42[] = {
 	{sRhydonGfx42, ARRAY_COUNT(sRhydonGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sRhydonGfx43[] = INCBIN_U8("graphics/ax/mon/rhydon/sprite_43.4bpp");
+static const u8 sRhydonGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rhydon/sprite_43.4bpp.lz");
 static const ax_sprite sRhydonSprites43[] = {
 	{sRhydonGfx43, ARRAY_COUNT(sRhydonGfx43)}, 
 	{NULL, 0}

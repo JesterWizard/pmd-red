@@ -3255,84 +3255,84 @@ static const ax_anim sPikachuAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPikachuGfx1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_1.4bpp");
+static const u8 sPikachuGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_1.4bpp.lz");
 static const ax_sprite sPikachuSprites1[] = {
 	{sPikachuGfx1, ARRAY_COUNT(sPikachuGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_2.4bpp");
+static const u8 sPikachuGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_2.4bpp.lz");
 static const ax_sprite sPikachuSprites2[] = {
 	{sPikachuGfx2, ARRAY_COUNT(sPikachuGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_3.4bpp");
+static const u8 sPikachuGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_3.4bpp.lz");
 static const ax_sprite sPikachuSprites3[] = {
 	{sPikachuGfx3, ARRAY_COUNT(sPikachuGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx4[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_4.4bpp");
+static const u8 sPikachuGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_4.4bpp.lz");
 static const ax_sprite sPikachuSprites4[] = {
 	{sPikachuGfx4, ARRAY_COUNT(sPikachuGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx5[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_5.4bpp");
+static const u8 sPikachuGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_5.4bpp.lz");
 static const ax_sprite sPikachuSprites5[] = {
 	{sPikachuGfx5, ARRAY_COUNT(sPikachuGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx6[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_6.4bpp");
+static const u8 sPikachuGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_6.4bpp.lz");
 static const ax_sprite sPikachuSprites6[] = {
 	{sPikachuGfx6, ARRAY_COUNT(sPikachuGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx7[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_7.4bpp");
+static const u8 sPikachuGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_7.4bpp.lz");
 static const ax_sprite sPikachuSprites7[] = {
 	{sPikachuGfx7, ARRAY_COUNT(sPikachuGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx8[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_8.4bpp");
+static const u8 sPikachuGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_8.4bpp.lz");
 static const ax_sprite sPikachuSprites8[] = {
 	{sPikachuGfx8, ARRAY_COUNT(sPikachuGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx9[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_9.4bpp");
+static const u8 sPikachuGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_9.4bpp.lz");
 static const ax_sprite sPikachuSprites9[] = {
 	{sPikachuGfx9, ARRAY_COUNT(sPikachuGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx10[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_10.4bpp");
+static const u8 sPikachuGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_10.4bpp.lz");
 static const ax_sprite sPikachuSprites10[] = {
 	{sPikachuGfx10, ARRAY_COUNT(sPikachuGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx11[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_11.4bpp");
+static const u8 sPikachuGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_11.4bpp.lz");
 static const ax_sprite sPikachuSprites11[] = {
 	{sPikachuGfx11, ARRAY_COUNT(sPikachuGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx12[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_12.4bpp");
+static const u8 sPikachuGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_12.4bpp.lz");
 static const ax_sprite sPikachuSprites12[] = {
 	{sPikachuGfx12, ARRAY_COUNT(sPikachuGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx13[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_13.4bpp");
+static const u8 sPikachuGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_13.4bpp.lz");
 static const ax_sprite sPikachuSprites13[] = {
 	{sPikachuGfx13, ARRAY_COUNT(sPikachuGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx14[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_14.4bpp");
+static const u8 sPikachuGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_14.4bpp.lz");
 static const ax_sprite sPikachuSprites14[] = {
 	{sPikachuGfx14, ARRAY_COUNT(sPikachuGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx15[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_15.4bpp");
+static const u8 sPikachuGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_15.4bpp.lz");
 static const ax_sprite sPikachuSprites15[] = {
 	{sPikachuGfx15, ARRAY_COUNT(sPikachuGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx16[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_16.4bpp");
-static const u8 sPikachuGfx16_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_16_1.4bpp");
-static const u8 sPikachuGfx16_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_16_2.4bpp");
+static const u8 sPikachuGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_16.4bpp.lz");
+static const u8 sPikachuGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_16_1.4bpp.lz");
+static const u8 sPikachuGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_16_2.4bpp.lz");
 static const ax_sprite sPikachuSprites16[] = {
 	{sPikachuGfx16, ARRAY_COUNT(sPikachuGfx16)}, 
 	{NULL, 32}, 
@@ -3342,9 +3342,9 @@ static const ax_sprite sPikachuSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx17[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_17.4bpp");
-static const u8 sPikachuGfx17_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_17_1.4bpp");
-static const u8 sPikachuGfx17_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_17_2.4bpp");
+static const u8 sPikachuGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_17.4bpp.lz");
+static const u8 sPikachuGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_17_1.4bpp.lz");
+static const u8 sPikachuGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_17_2.4bpp.lz");
 static const ax_sprite sPikachuSprites17[] = {
 	{sPikachuGfx17, ARRAY_COUNT(sPikachuGfx17)}, 
 	{NULL, 64}, 
@@ -3354,14 +3354,14 @@ static const ax_sprite sPikachuSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx18[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_18.4bpp");
+static const u8 sPikachuGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_18.4bpp.lz");
 static const ax_sprite sPikachuSprites18[] = {
 	{sPikachuGfx18, ARRAY_COUNT(sPikachuGfx18)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx19[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_19.4bpp");
-static const u8 sPikachuGfx19_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_19_1.4bpp");
+static const u8 sPikachuGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_19.4bpp.lz");
+static const u8 sPikachuGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_19_1.4bpp.lz");
 static const ax_sprite sPikachuSprites19[] = {
 	{sPikachuGfx19, ARRAY_COUNT(sPikachuGfx19)}, 
 	{NULL, 32}, 
@@ -3369,10 +3369,10 @@ static const ax_sprite sPikachuSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx20[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_20.4bpp");
-static const u8 sPikachuGfx20_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_20_1.4bpp");
-static const u8 sPikachuGfx20_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_20_2.4bpp");
-static const u8 sPikachuGfx20_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_20_3.4bpp");
+static const u8 sPikachuGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_20.4bpp.lz");
+static const u8 sPikachuGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_20_1.4bpp.lz");
+static const u8 sPikachuGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_20_2.4bpp.lz");
+static const u8 sPikachuGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_20_3.4bpp.lz");
 static const ax_sprite sPikachuSprites20[] = {
 	{sPikachuGfx20, ARRAY_COUNT(sPikachuGfx20)}, 
 	{NULL, 32}, 
@@ -3384,10 +3384,10 @@ static const ax_sprite sPikachuSprites20[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx21[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_21.4bpp");
-static const u8 sPikachuGfx21_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_21_1.4bpp");
-static const u8 sPikachuGfx21_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_21_2.4bpp");
-static const u8 sPikachuGfx21_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_21_3.4bpp");
+static const u8 sPikachuGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_21.4bpp.lz");
+static const u8 sPikachuGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_21_1.4bpp.lz");
+static const u8 sPikachuGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_21_2.4bpp.lz");
+static const u8 sPikachuGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_21_3.4bpp.lz");
 static const ax_sprite sPikachuSprites21[] = {
 	{sPikachuGfx21, ARRAY_COUNT(sPikachuGfx21)}, 
 	{NULL, 32}, 
@@ -3399,9 +3399,9 @@ static const ax_sprite sPikachuSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx22[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_22.4bpp");
-static const u8 sPikachuGfx22_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_22_1.4bpp");
-static const u8 sPikachuGfx22_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_22_2.4bpp");
+static const u8 sPikachuGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_22.4bpp.lz");
+static const u8 sPikachuGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_22_1.4bpp.lz");
+static const u8 sPikachuGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_22_2.4bpp.lz");
 static const ax_sprite sPikachuSprites22[] = {
 	{sPikachuGfx22, ARRAY_COUNT(sPikachuGfx22)}, 
 	{NULL, 64}, 
@@ -3411,14 +3411,14 @@ static const ax_sprite sPikachuSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx23[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_23.4bpp");
+static const u8 sPikachuGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_23.4bpp.lz");
 static const ax_sprite sPikachuSprites23[] = {
 	{sPikachuGfx23, ARRAY_COUNT(sPikachuGfx23)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx24[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_24.4bpp");
-static const u8 sPikachuGfx24_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_24_1.4bpp");
+static const u8 sPikachuGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_24.4bpp.lz");
+static const u8 sPikachuGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_24_1.4bpp.lz");
 static const ax_sprite sPikachuSprites24[] = {
 	{sPikachuGfx24, ARRAY_COUNT(sPikachuGfx24)}, 
 	{NULL, 32}, 
@@ -3426,10 +3426,10 @@ static const ax_sprite sPikachuSprites24[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx25[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_25.4bpp");
-static const u8 sPikachuGfx25_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_25_1.4bpp");
-static const u8 sPikachuGfx25_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_25_2.4bpp");
-static const u8 sPikachuGfx25_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_25_3.4bpp");
+static const u8 sPikachuGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_25.4bpp.lz");
+static const u8 sPikachuGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_25_1.4bpp.lz");
+static const u8 sPikachuGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_25_2.4bpp.lz");
+static const u8 sPikachuGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_25_3.4bpp.lz");
 static const ax_sprite sPikachuSprites25[] = {
 	{sPikachuGfx25, ARRAY_COUNT(sPikachuGfx25)}, 
 	{NULL, 32}, 
@@ -3441,9 +3441,9 @@ static const ax_sprite sPikachuSprites25[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx26[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_26.4bpp");
-static const u8 sPikachuGfx26_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_26_1.4bpp");
-static const u8 sPikachuGfx26_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_26_2.4bpp");
+static const u8 sPikachuGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_26.4bpp.lz");
+static const u8 sPikachuGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_26_1.4bpp.lz");
+static const u8 sPikachuGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_26_2.4bpp.lz");
 static const ax_sprite sPikachuSprites26[] = {
 	{NULL, 32}, 
 	{sPikachuGfx26, ARRAY_COUNT(sPikachuGfx26)}, 
@@ -3453,13 +3453,13 @@ static const ax_sprite sPikachuSprites26[] = {
 	{sPikachuGfx26_2, ARRAY_COUNT(sPikachuGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx27[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_27.4bpp");
+static const u8 sPikachuGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_27.4bpp.lz");
 static const ax_sprite sPikachuSprites27[] = {
 	{sPikachuGfx27, ARRAY_COUNT(sPikachuGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx28[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_28.4bpp");
-static const u8 sPikachuGfx28_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_28_1.4bpp");
+static const u8 sPikachuGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_28.4bpp.lz");
+static const u8 sPikachuGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_28_1.4bpp.lz");
 static const ax_sprite sPikachuSprites28[] = {
 	{NULL, 32}, 
 	{sPikachuGfx28, ARRAY_COUNT(sPikachuGfx28)}, 
@@ -3467,10 +3467,10 @@ static const ax_sprite sPikachuSprites28[] = {
 	{sPikachuGfx28_1, ARRAY_COUNT(sPikachuGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx29[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_29.4bpp");
-static const u8 sPikachuGfx29_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_29_1.4bpp");
-static const u8 sPikachuGfx29_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_29_2.4bpp");
-static const u8 sPikachuGfx29_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_29_3.4bpp");
+static const u8 sPikachuGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_29.4bpp.lz");
+static const u8 sPikachuGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_29_1.4bpp.lz");
+static const u8 sPikachuGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_29_2.4bpp.lz");
+static const u8 sPikachuGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_29_3.4bpp.lz");
 static const ax_sprite sPikachuSprites29[] = {
 	{sPikachuGfx29, ARRAY_COUNT(sPikachuGfx29)}, 
 	{NULL, 32}, 
@@ -3482,9 +3482,9 @@ static const ax_sprite sPikachuSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx30[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_30.4bpp");
-static const u8 sPikachuGfx30_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_30_1.4bpp");
-static const u8 sPikachuGfx30_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_30_2.4bpp");
+static const u8 sPikachuGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_30.4bpp.lz");
+static const u8 sPikachuGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_30_1.4bpp.lz");
+static const u8 sPikachuGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_30_2.4bpp.lz");
 static const ax_sprite sPikachuSprites30[] = {
 	{sPikachuGfx30, ARRAY_COUNT(sPikachuGfx30)}, 
 	{NULL, 64}, 
@@ -3493,25 +3493,25 @@ static const ax_sprite sPikachuSprites30[] = {
 	{sPikachuGfx30_2, ARRAY_COUNT(sPikachuGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx31[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_31.4bpp");
+static const u8 sPikachuGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_31.4bpp.lz");
 static const ax_sprite sPikachuSprites31[] = {
 	{sPikachuGfx31, ARRAY_COUNT(sPikachuGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx32[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_32.4bpp");
+static const u8 sPikachuGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_32.4bpp.lz");
 static const ax_sprite sPikachuSprites32[] = {
 	{sPikachuGfx32, ARRAY_COUNT(sPikachuGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx33[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_33.4bpp");
+static const u8 sPikachuGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_33.4bpp.lz");
 static const ax_sprite sPikachuSprites33[] = {
 	{sPikachuGfx33, ARRAY_COUNT(sPikachuGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx34[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_34.4bpp");
-static const u8 sPikachuGfx34_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_34_1.4bpp");
-static const u8 sPikachuGfx34_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_34_2.4bpp");
-static const u8 sPikachuGfx34_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_34_3.4bpp");
+static const u8 sPikachuGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_34.4bpp.lz");
+static const u8 sPikachuGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_34_1.4bpp.lz");
+static const u8 sPikachuGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_34_2.4bpp.lz");
+static const u8 sPikachuGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_34_3.4bpp.lz");
 static const ax_sprite sPikachuSprites34[] = {
 	{sPikachuGfx34, ARRAY_COUNT(sPikachuGfx34)}, 
 	{NULL, 32}, 
@@ -3523,9 +3523,9 @@ static const ax_sprite sPikachuSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx35[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_35.4bpp");
-static const u8 sPikachuGfx35_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_35_1.4bpp");
-static const u8 sPikachuGfx35_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_35_2.4bpp");
+static const u8 sPikachuGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_35.4bpp.lz");
+static const u8 sPikachuGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_35_1.4bpp.lz");
+static const u8 sPikachuGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_35_2.4bpp.lz");
 static const ax_sprite sPikachuSprites35[] = {
 	{NULL, 32}, 
 	{sPikachuGfx35, ARRAY_COUNT(sPikachuGfx35)}, 
@@ -3535,21 +3535,21 @@ static const ax_sprite sPikachuSprites35[] = {
 	{sPikachuGfx35_2, ARRAY_COUNT(sPikachuGfx35_2)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx36[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_36.4bpp");
+static const u8 sPikachuGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_36.4bpp.lz");
 static const ax_sprite sPikachuSprites36[] = {
 	{sPikachuGfx36, ARRAY_COUNT(sPikachuGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx37[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_37.4bpp");
+static const u8 sPikachuGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_37.4bpp.lz");
 static const ax_sprite sPikachuSprites37[] = {
 	{sPikachuGfx37, ARRAY_COUNT(sPikachuGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx38[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38.4bpp");
-static const u8 sPikachuGfx38_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38_1.4bpp");
-static const u8 sPikachuGfx38_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38_2.4bpp");
-static const u8 sPikachuGfx38_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38_3.4bpp");
-static const u8 sPikachuGfx38_4[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38_4.4bpp");
+static const u8 sPikachuGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38.4bpp.lz");
+static const u8 sPikachuGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38_1.4bpp.lz");
+static const u8 sPikachuGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38_2.4bpp.lz");
+static const u8 sPikachuGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38_3.4bpp.lz");
+static const u8 sPikachuGfx38_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_38_4.4bpp.lz");
 static const ax_sprite sPikachuSprites38[] = {
 	{sPikachuGfx38, ARRAY_COUNT(sPikachuGfx38)}, 
 	{NULL, 32}, 
@@ -3563,9 +3563,9 @@ static const ax_sprite sPikachuSprites38[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx39[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_39.4bpp");
-static const u8 sPikachuGfx39_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_39_1.4bpp");
-static const u8 sPikachuGfx39_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_39_2.4bpp");
+static const u8 sPikachuGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_39.4bpp.lz");
+static const u8 sPikachuGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_39_1.4bpp.lz");
+static const u8 sPikachuGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_39_2.4bpp.lz");
 static const ax_sprite sPikachuSprites39[] = {
 	{sPikachuGfx39, ARRAY_COUNT(sPikachuGfx39)}, 
 	{NULL, 32}, 
@@ -3574,21 +3574,21 @@ static const ax_sprite sPikachuSprites39[] = {
 	{sPikachuGfx39_2, ARRAY_COUNT(sPikachuGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx40[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_40.4bpp");
+static const u8 sPikachuGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_40.4bpp.lz");
 static const ax_sprite sPikachuSprites40[] = {
 	{sPikachuGfx40, ARRAY_COUNT(sPikachuGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx41[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_41.4bpp");
+static const u8 sPikachuGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_41.4bpp.lz");
 static const ax_sprite sPikachuSprites41[] = {
 	{sPikachuGfx41, ARRAY_COUNT(sPikachuGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx42[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42.4bpp");
-static const u8 sPikachuGfx42_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42_1.4bpp");
-static const u8 sPikachuGfx42_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42_2.4bpp");
-static const u8 sPikachuGfx42_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42_3.4bpp");
-static const u8 sPikachuGfx42_4[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42_4.4bpp");
+static const u8 sPikachuGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42.4bpp.lz");
+static const u8 sPikachuGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42_1.4bpp.lz");
+static const u8 sPikachuGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42_2.4bpp.lz");
+static const u8 sPikachuGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42_3.4bpp.lz");
+static const u8 sPikachuGfx42_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_42_4.4bpp.lz");
 static const ax_sprite sPikachuSprites42[] = {
 	{sPikachuGfx42, ARRAY_COUNT(sPikachuGfx42)}, 
 	{NULL, 32}, 
@@ -3602,8 +3602,8 @@ static const ax_sprite sPikachuSprites42[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx43[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_43.4bpp");
-static const u8 sPikachuGfx43_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_43_1.4bpp");
+static const u8 sPikachuGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_43.4bpp.lz");
+static const u8 sPikachuGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_43_1.4bpp.lz");
 static const ax_sprite sPikachuSprites43[] = {
 	{NULL, 32}, 
 	{sPikachuGfx43, ARRAY_COUNT(sPikachuGfx43)}, 
@@ -3611,21 +3611,21 @@ static const ax_sprite sPikachuSprites43[] = {
 	{sPikachuGfx43_1, ARRAY_COUNT(sPikachuGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx44[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_44.4bpp");
+static const u8 sPikachuGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_44.4bpp.lz");
 static const ax_sprite sPikachuSprites44[] = {
 	{NULL, 32}, 
 	{sPikachuGfx44, ARRAY_COUNT(sPikachuGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx45[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_45.4bpp");
+static const u8 sPikachuGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_45.4bpp.lz");
 static const ax_sprite sPikachuSprites45[] = {
 	{sPikachuGfx45, ARRAY_COUNT(sPikachuGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx46[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_46.4bpp");
-static const u8 sPikachuGfx46_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_46_1.4bpp");
-static const u8 sPikachuGfx46_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_46_2.4bpp");
-static const u8 sPikachuGfx46_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_46_3.4bpp");
+static const u8 sPikachuGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_46.4bpp.lz");
+static const u8 sPikachuGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_46_1.4bpp.lz");
+static const u8 sPikachuGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_46_2.4bpp.lz");
+static const u8 sPikachuGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_46_3.4bpp.lz");
 static const ax_sprite sPikachuSprites46[] = {
 	{sPikachuGfx46, ARRAY_COUNT(sPikachuGfx46)}, 
 	{NULL, 32}, 
@@ -3637,10 +3637,10 @@ static const ax_sprite sPikachuSprites46[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx47[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_47.4bpp");
-static const u8 sPikachuGfx47_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_47_1.4bpp");
-static const u8 sPikachuGfx47_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_47_2.4bpp");
-static const u8 sPikachuGfx47_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_47_3.4bpp");
+static const u8 sPikachuGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_47.4bpp.lz");
+static const u8 sPikachuGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_47_1.4bpp.lz");
+static const u8 sPikachuGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_47_2.4bpp.lz");
+static const u8 sPikachuGfx47_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_47_3.4bpp.lz");
 static const ax_sprite sPikachuSprites47[] = {
 	{sPikachuGfx47, ARRAY_COUNT(sPikachuGfx47)}, 
 	{NULL, 32}, 
@@ -3652,8 +3652,8 @@ static const ax_sprite sPikachuSprites47[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx48[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_48.4bpp");
-static const u8 sPikachuGfx48_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_48_1.4bpp");
+static const u8 sPikachuGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_48.4bpp.lz");
+static const u8 sPikachuGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_48_1.4bpp.lz");
 static const ax_sprite sPikachuSprites48[] = {
 	{NULL, 32}, 
 	{sPikachuGfx48, ARRAY_COUNT(sPikachuGfx48)}, 
@@ -3661,21 +3661,21 @@ static const ax_sprite sPikachuSprites48[] = {
 	{sPikachuGfx48_1, ARRAY_COUNT(sPikachuGfx48_1)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx49[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_49.4bpp");
+static const u8 sPikachuGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_49.4bpp.lz");
 static const ax_sprite sPikachuSprites49[] = {
 	{NULL, 32}, 
 	{sPikachuGfx49, ARRAY_COUNT(sPikachuGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx50[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_50.4bpp");
+static const u8 sPikachuGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_50.4bpp.lz");
 static const ax_sprite sPikachuSprites50[] = {
 	{sPikachuGfx50, ARRAY_COUNT(sPikachuGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx51[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_51.4bpp");
-static const u8 sPikachuGfx51_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_51_1.4bpp");
-static const u8 sPikachuGfx51_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_51_2.4bpp");
-static const u8 sPikachuGfx51_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_51_3.4bpp");
+static const u8 sPikachuGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_51.4bpp.lz");
+static const u8 sPikachuGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_51_1.4bpp.lz");
+static const u8 sPikachuGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_51_2.4bpp.lz");
+static const u8 sPikachuGfx51_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_51_3.4bpp.lz");
 static const ax_sprite sPikachuSprites51[] = {
 	{sPikachuGfx51, ARRAY_COUNT(sPikachuGfx51)}, 
 	{NULL, 32}, 
@@ -3687,10 +3687,10 @@ static const ax_sprite sPikachuSprites51[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx52[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_52.4bpp");
-static const u8 sPikachuGfx52_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_52_1.4bpp");
-static const u8 sPikachuGfx52_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_52_2.4bpp");
-static const u8 sPikachuGfx52_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_52_3.4bpp");
+static const u8 sPikachuGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_52.4bpp.lz");
+static const u8 sPikachuGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_52_1.4bpp.lz");
+static const u8 sPikachuGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_52_2.4bpp.lz");
+static const u8 sPikachuGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_52_3.4bpp.lz");
 static const ax_sprite sPikachuSprites52[] = {
 	{sPikachuGfx52, ARRAY_COUNT(sPikachuGfx52)}, 
 	{NULL, 32}, 
@@ -3702,10 +3702,10 @@ static const ax_sprite sPikachuSprites52[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx53[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_53.4bpp");
-static const u8 sPikachuGfx53_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_53_1.4bpp");
-static const u8 sPikachuGfx53_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_53_2.4bpp");
-static const u8 sPikachuGfx53_3[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_53_3.4bpp");
+static const u8 sPikachuGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_53.4bpp.lz");
+static const u8 sPikachuGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_53_1.4bpp.lz");
+static const u8 sPikachuGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_53_2.4bpp.lz");
+static const u8 sPikachuGfx53_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_53_3.4bpp.lz");
 static const ax_sprite sPikachuSprites53[] = {
 	{sPikachuGfx53, ARRAY_COUNT(sPikachuGfx53)}, 
 	{NULL, 32}, 
@@ -3716,14 +3716,14 @@ static const ax_sprite sPikachuSprites53[] = {
 	{sPikachuGfx53_3, ARRAY_COUNT(sPikachuGfx53_3)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx54[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_54.4bpp");
+static const u8 sPikachuGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_54.4bpp.lz");
 static const ax_sprite sPikachuSprites54[] = {
 	{sPikachuGfx54, ARRAY_COUNT(sPikachuGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx55[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_55.4bpp");
-static const u8 sPikachuGfx55_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_55_1.4bpp");
-static const u8 sPikachuGfx55_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_55_2.4bpp");
+static const u8 sPikachuGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_55.4bpp.lz");
+static const u8 sPikachuGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_55_1.4bpp.lz");
+static const u8 sPikachuGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_55_2.4bpp.lz");
 static const ax_sprite sPikachuSprites55[] = {
 	{sPikachuGfx55, ARRAY_COUNT(sPikachuGfx55)}, 
 	{NULL, 32}, 
@@ -3733,9 +3733,9 @@ static const ax_sprite sPikachuSprites55[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx56[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_56.4bpp");
-static const u8 sPikachuGfx56_1[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_56_1.4bpp");
-static const u8 sPikachuGfx56_2[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_56_2.4bpp");
+static const u8 sPikachuGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_56.4bpp.lz");
+static const u8 sPikachuGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_56_1.4bpp.lz");
+static const u8 sPikachuGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_56_2.4bpp.lz");
 static const ax_sprite sPikachuSprites56[] = {
 	{sPikachuGfx56, ARRAY_COUNT(sPikachuGfx56)}, 
 	{NULL, 32}, 
@@ -3745,182 +3745,182 @@ static const ax_sprite sPikachuSprites56[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx57[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_57.4bpp");
+static const u8 sPikachuGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_57.4bpp.lz");
 static const ax_sprite sPikachuSprites57[] = {
 	{sPikachuGfx57, ARRAY_COUNT(sPikachuGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx58[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_58.4bpp");
+static const u8 sPikachuGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_58.4bpp.lz");
 static const ax_sprite sPikachuSprites58[] = {
 	{sPikachuGfx58, ARRAY_COUNT(sPikachuGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx59[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_59.4bpp");
+static const u8 sPikachuGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_59.4bpp.lz");
 static const ax_sprite sPikachuSprites59[] = {
 	{sPikachuGfx59, ARRAY_COUNT(sPikachuGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx60[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_60.4bpp");
+static const u8 sPikachuGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_60.4bpp.lz");
 static const ax_sprite sPikachuSprites60[] = {
 	{sPikachuGfx60, ARRAY_COUNT(sPikachuGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx61[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_61.4bpp");
+static const u8 sPikachuGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_61.4bpp.lz");
 static const ax_sprite sPikachuSprites61[] = {
 	{sPikachuGfx61, ARRAY_COUNT(sPikachuGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx62[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_62.4bpp");
+static const u8 sPikachuGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_62.4bpp.lz");
 static const ax_sprite sPikachuSprites62[] = {
 	{sPikachuGfx62, ARRAY_COUNT(sPikachuGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx63[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_63.4bpp");
+static const u8 sPikachuGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_63.4bpp.lz");
 static const ax_sprite sPikachuSprites63[] = {
 	{sPikachuGfx63, ARRAY_COUNT(sPikachuGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx64[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_64.4bpp");
+static const u8 sPikachuGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_64.4bpp.lz");
 static const ax_sprite sPikachuSprites64[] = {
 	{sPikachuGfx64, ARRAY_COUNT(sPikachuGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx65[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_65.4bpp");
+static const u8 sPikachuGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_65.4bpp.lz");
 static const ax_sprite sPikachuSprites65[] = {
 	{sPikachuGfx65, ARRAY_COUNT(sPikachuGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx66[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_66.4bpp");
+static const u8 sPikachuGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_66.4bpp.lz");
 static const ax_sprite sPikachuSprites66[] = {
 	{sPikachuGfx66, ARRAY_COUNT(sPikachuGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx67[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_67.4bpp");
+static const u8 sPikachuGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_67.4bpp.lz");
 static const ax_sprite sPikachuSprites67[] = {
 	{sPikachuGfx67, ARRAY_COUNT(sPikachuGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx68[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_68.4bpp");
+static const u8 sPikachuGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_68.4bpp.lz");
 static const ax_sprite sPikachuSprites68[] = {
 	{sPikachuGfx68, ARRAY_COUNT(sPikachuGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx69[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_69.4bpp");
+static const u8 sPikachuGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_69.4bpp.lz");
 static const ax_sprite sPikachuSprites69[] = {
 	{sPikachuGfx69, ARRAY_COUNT(sPikachuGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx70[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_70.4bpp");
+static const u8 sPikachuGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_70.4bpp.lz");
 static const ax_sprite sPikachuSprites70[] = {
 	{sPikachuGfx70, ARRAY_COUNT(sPikachuGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx71[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_71.4bpp");
+static const u8 sPikachuGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_71.4bpp.lz");
 static const ax_sprite sPikachuSprites71[] = {
 	{sPikachuGfx71, ARRAY_COUNT(sPikachuGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx72[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_72.4bpp");
+static const u8 sPikachuGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_72.4bpp.lz");
 static const ax_sprite sPikachuSprites72[] = {
 	{sPikachuGfx72, ARRAY_COUNT(sPikachuGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx73[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_73.4bpp");
+static const u8 sPikachuGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_73.4bpp.lz");
 static const ax_sprite sPikachuSprites73[] = {
 	{sPikachuGfx73, ARRAY_COUNT(sPikachuGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx74[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_74.4bpp");
+static const u8 sPikachuGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_74.4bpp.lz");
 static const ax_sprite sPikachuSprites74[] = {
 	{sPikachuGfx74, ARRAY_COUNT(sPikachuGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx75[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_75.4bpp");
+static const u8 sPikachuGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_75.4bpp.lz");
 static const ax_sprite sPikachuSprites75[] = {
 	{sPikachuGfx75, ARRAY_COUNT(sPikachuGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx76[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_76.4bpp");
+static const u8 sPikachuGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_76.4bpp.lz");
 static const ax_sprite sPikachuSprites76[] = {
 	{sPikachuGfx76, ARRAY_COUNT(sPikachuGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx77[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_77.4bpp");
+static const u8 sPikachuGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_77.4bpp.lz");
 static const ax_sprite sPikachuSprites77[] = {
 	{sPikachuGfx77, ARRAY_COUNT(sPikachuGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx78[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_78.4bpp");
+static const u8 sPikachuGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_78.4bpp.lz");
 static const ax_sprite sPikachuSprites78[] = {
 	{sPikachuGfx78, ARRAY_COUNT(sPikachuGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx79[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_79.4bpp");
+static const u8 sPikachuGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_79.4bpp.lz");
 static const ax_sprite sPikachuSprites79[] = {
 	{sPikachuGfx79, ARRAY_COUNT(sPikachuGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx80[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_80.4bpp");
+static const u8 sPikachuGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_80.4bpp.lz");
 static const ax_sprite sPikachuSprites80[] = {
 	{sPikachuGfx80, ARRAY_COUNT(sPikachuGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx81[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_81.4bpp");
+static const u8 sPikachuGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_81.4bpp.lz");
 static const ax_sprite sPikachuSprites81[] = {
 	{sPikachuGfx81, ARRAY_COUNT(sPikachuGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx82[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_82.4bpp");
+static const u8 sPikachuGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_82.4bpp.lz");
 static const ax_sprite sPikachuSprites82[] = {
 	{sPikachuGfx82, ARRAY_COUNT(sPikachuGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx83[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_83.4bpp");
+static const u8 sPikachuGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_83.4bpp.lz");
 static const ax_sprite sPikachuSprites83[] = {
 	{sPikachuGfx83, ARRAY_COUNT(sPikachuGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx84[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_84.4bpp");
+static const u8 sPikachuGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_84.4bpp.lz");
 static const ax_sprite sPikachuSprites84[] = {
 	{sPikachuGfx84, ARRAY_COUNT(sPikachuGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx85[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_85.4bpp");
+static const u8 sPikachuGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_85.4bpp.lz");
 static const ax_sprite sPikachuSprites85[] = {
 	{sPikachuGfx85, ARRAY_COUNT(sPikachuGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx86[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_86.4bpp");
+static const u8 sPikachuGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_86.4bpp.lz");
 static const ax_sprite sPikachuSprites86[] = {
 	{sPikachuGfx86, ARRAY_COUNT(sPikachuGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx87[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_87.4bpp");
+static const u8 sPikachuGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_87.4bpp.lz");
 static const ax_sprite sPikachuSprites87[] = {
 	{sPikachuGfx87, ARRAY_COUNT(sPikachuGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx88[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_88.4bpp");
+static const u8 sPikachuGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_88.4bpp.lz");
 static const ax_sprite sPikachuSprites88[] = {
 	{sPikachuGfx88, ARRAY_COUNT(sPikachuGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx89[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_89.4bpp");
+static const u8 sPikachuGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_89.4bpp.lz");
 static const ax_sprite sPikachuSprites89[] = {
 	{sPikachuGfx89, ARRAY_COUNT(sPikachuGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx90[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_90.4bpp");
+static const u8 sPikachuGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_90.4bpp.lz");
 static const ax_sprite sPikachuSprites90[] = {
 	{sPikachuGfx90, ARRAY_COUNT(sPikachuGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx91[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_91.4bpp");
+static const u8 sPikachuGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_91.4bpp.lz");
 static const ax_sprite sPikachuSprites91[] = {
 	{sPikachuGfx91, ARRAY_COUNT(sPikachuGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sPikachuGfx92[] = INCBIN_U8("graphics/ax/mon/pikachu/sprite_92.4bpp");
+static const u8 sPikachuGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pikachu/sprite_92.4bpp.lz");
 static const ax_sprite sPikachuSprites92[] = {
 	{sPikachuGfx92, ARRAY_COUNT(sPikachuGfx92)}, 
 	{NULL, 0}

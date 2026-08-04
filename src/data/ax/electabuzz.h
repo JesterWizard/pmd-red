@@ -2095,114 +2095,114 @@ static const ax_anim sElectabuzzAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sElectabuzzGfx1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_1.4bpp");
+static const u8 sElectabuzzGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites1[] = {
 	{sElectabuzzGfx1, ARRAY_COUNT(sElectabuzzGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_2.4bpp");
+static const u8 sElectabuzzGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites2[] = {
 	{sElectabuzzGfx2, ARRAY_COUNT(sElectabuzzGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx3[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_3.4bpp");
+static const u8 sElectabuzzGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_3.4bpp.lz");
 static const ax_sprite sElectabuzzSprites3[] = {
 	{sElectabuzzGfx3, ARRAY_COUNT(sElectabuzzGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx4[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_4.4bpp");
+static const u8 sElectabuzzGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_4.4bpp.lz");
 static const ax_sprite sElectabuzzSprites4[] = {
 	{sElectabuzzGfx4, ARRAY_COUNT(sElectabuzzGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx5[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_5.4bpp");
+static const u8 sElectabuzzGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_5.4bpp.lz");
 static const ax_sprite sElectabuzzSprites5[] = {
 	{sElectabuzzGfx5, ARRAY_COUNT(sElectabuzzGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx6[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_6.4bpp");
+static const u8 sElectabuzzGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_6.4bpp.lz");
 static const ax_sprite sElectabuzzSprites6[] = {
 	{sElectabuzzGfx6, ARRAY_COUNT(sElectabuzzGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx7[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_7.4bpp");
+static const u8 sElectabuzzGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_7.4bpp.lz");
 static const ax_sprite sElectabuzzSprites7[] = {
 	{sElectabuzzGfx7, ARRAY_COUNT(sElectabuzzGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx8[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_8.4bpp");
+static const u8 sElectabuzzGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_8.4bpp.lz");
 static const ax_sprite sElectabuzzSprites8[] = {
 	{sElectabuzzGfx8, ARRAY_COUNT(sElectabuzzGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx9[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_9.4bpp");
+static const u8 sElectabuzzGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_9.4bpp.lz");
 static const ax_sprite sElectabuzzSprites9[] = {
 	{sElectabuzzGfx9, ARRAY_COUNT(sElectabuzzGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx10[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_10.4bpp");
+static const u8 sElectabuzzGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_10.4bpp.lz");
 static const ax_sprite sElectabuzzSprites10[] = {
 	{sElectabuzzGfx10, ARRAY_COUNT(sElectabuzzGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx11[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_11.4bpp");
+static const u8 sElectabuzzGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_11.4bpp.lz");
 static const ax_sprite sElectabuzzSprites11[] = {
 	{sElectabuzzGfx11, ARRAY_COUNT(sElectabuzzGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx12[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_12.4bpp");
+static const u8 sElectabuzzGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_12.4bpp.lz");
 static const ax_sprite sElectabuzzSprites12[] = {
 	{sElectabuzzGfx12, ARRAY_COUNT(sElectabuzzGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx13[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_13.4bpp");
+static const u8 sElectabuzzGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_13.4bpp.lz");
 static const ax_sprite sElectabuzzSprites13[] = {
 	{sElectabuzzGfx13, ARRAY_COUNT(sElectabuzzGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx14[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_14.4bpp");
+static const u8 sElectabuzzGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_14.4bpp.lz");
 static const ax_sprite sElectabuzzSprites14[] = {
 	{sElectabuzzGfx14, ARRAY_COUNT(sElectabuzzGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx15[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_15.4bpp");
+static const u8 sElectabuzzGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_15.4bpp.lz");
 static const ax_sprite sElectabuzzSprites15[] = {
 	{sElectabuzzGfx15, ARRAY_COUNT(sElectabuzzGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx16[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_16.4bpp");
+static const u8 sElectabuzzGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_16.4bpp.lz");
 static const ax_sprite sElectabuzzSprites16[] = {
 	{sElectabuzzGfx16, ARRAY_COUNT(sElectabuzzGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx17[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_17.4bpp");
+static const u8 sElectabuzzGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_17.4bpp.lz");
 static const ax_sprite sElectabuzzSprites17[] = {
 	{sElectabuzzGfx17, ARRAY_COUNT(sElectabuzzGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx18[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_18.4bpp");
+static const u8 sElectabuzzGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_18.4bpp.lz");
 static const ax_sprite sElectabuzzSprites18[] = {
 	{sElectabuzzGfx18, ARRAY_COUNT(sElectabuzzGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx19[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_19.4bpp");
+static const u8 sElectabuzzGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_19.4bpp.lz");
 static const ax_sprite sElectabuzzSprites19[] = {
 	{sElectabuzzGfx19, ARRAY_COUNT(sElectabuzzGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx20[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_20.4bpp");
+static const u8 sElectabuzzGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_20.4bpp.lz");
 static const ax_sprite sElectabuzzSprites20[] = {
 	{sElectabuzzGfx20, ARRAY_COUNT(sElectabuzzGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx21[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_21.4bpp");
+static const u8 sElectabuzzGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_21.4bpp.lz");
 static const ax_sprite sElectabuzzSprites21[] = {
 	{sElectabuzzGfx21, ARRAY_COUNT(sElectabuzzGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx22[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_22.4bpp");
-static const u8 sElectabuzzGfx22_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_22_1.4bpp");
-static const u8 sElectabuzzGfx22_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_22_2.4bpp");
+static const u8 sElectabuzzGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_22.4bpp.lz");
+static const u8 sElectabuzzGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_22_1.4bpp.lz");
+static const u8 sElectabuzzGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_22_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites22[] = {
 	{sElectabuzzGfx22, ARRAY_COUNT(sElectabuzzGfx22)}, 
 	{NULL, 64}, 
@@ -2211,9 +2211,9 @@ static const ax_sprite sElectabuzzSprites22[] = {
 	{sElectabuzzGfx22_2, ARRAY_COUNT(sElectabuzzGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx23[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_23.4bpp");
-static const u8 sElectabuzzGfx23_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_23_1.4bpp");
-static const u8 sElectabuzzGfx23_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_23_2.4bpp");
+static const u8 sElectabuzzGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_23.4bpp.lz");
+static const u8 sElectabuzzGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_23_1.4bpp.lz");
+static const u8 sElectabuzzGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_23_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites23[] = {
 	{sElectabuzzGfx23, ARRAY_COUNT(sElectabuzzGfx23)}, 
 	{NULL, 64}, 
@@ -2223,13 +2223,13 @@ static const ax_sprite sElectabuzzSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx24[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_24.4bpp");
+static const u8 sElectabuzzGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_24.4bpp.lz");
 static const ax_sprite sElectabuzzSprites24[] = {
 	{sElectabuzzGfx24, ARRAY_COUNT(sElectabuzzGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx25[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_25.4bpp");
-static const u8 sElectabuzzGfx25_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_25_1.4bpp");
+static const u8 sElectabuzzGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_25.4bpp.lz");
+static const u8 sElectabuzzGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_25_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites25[] = {
 	{sElectabuzzGfx25, ARRAY_COUNT(sElectabuzzGfx25)}, 
 	{NULL, 64}, 
@@ -2237,9 +2237,9 @@ static const ax_sprite sElectabuzzSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx26[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_26.4bpp");
-static const u8 sElectabuzzGfx26_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_26_1.4bpp");
-static const u8 sElectabuzzGfx26_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_26_2.4bpp");
+static const u8 sElectabuzzGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_26.4bpp.lz");
+static const u8 sElectabuzzGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_26_1.4bpp.lz");
+static const u8 sElectabuzzGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_26_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites26[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx26, ARRAY_COUNT(sElectabuzzGfx26)}, 
@@ -2249,8 +2249,8 @@ static const ax_sprite sElectabuzzSprites26[] = {
 	{sElectabuzzGfx26_2, ARRAY_COUNT(sElectabuzzGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx27[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_27.4bpp");
-static const u8 sElectabuzzGfx27_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_27_1.4bpp");
+static const u8 sElectabuzzGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_27.4bpp.lz");
+static const u8 sElectabuzzGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_27_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites27[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx27, ARRAY_COUNT(sElectabuzzGfx27)}, 
@@ -2259,9 +2259,9 @@ static const ax_sprite sElectabuzzSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx28[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_28.4bpp");
-static const u8 sElectabuzzGfx28_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_28_1.4bpp");
-static const u8 sElectabuzzGfx28_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_28_2.4bpp");
+static const u8 sElectabuzzGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_28.4bpp.lz");
+static const u8 sElectabuzzGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_28_1.4bpp.lz");
+static const u8 sElectabuzzGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_28_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites28[] = {
 	{sElectabuzzGfx28, ARRAY_COUNT(sElectabuzzGfx28)}, 
 	{NULL, 96}, 
@@ -2270,9 +2270,9 @@ static const ax_sprite sElectabuzzSprites28[] = {
 	{sElectabuzzGfx28_2, ARRAY_COUNT(sElectabuzzGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx29[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_29.4bpp");
-static const u8 sElectabuzzGfx29_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_29_1.4bpp");
-static const u8 sElectabuzzGfx29_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_29_2.4bpp");
+static const u8 sElectabuzzGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_29.4bpp.lz");
+static const u8 sElectabuzzGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_29_1.4bpp.lz");
+static const u8 sElectabuzzGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_29_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites29[] = {
 	{sElectabuzzGfx29, ARRAY_COUNT(sElectabuzzGfx29)}, 
 	{NULL, 32}, 
@@ -2282,9 +2282,9 @@ static const ax_sprite sElectabuzzSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx30[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_30.4bpp");
-static const u8 sElectabuzzGfx30_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_30_1.4bpp");
-static const u8 sElectabuzzGfx30_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_30_2.4bpp");
+static const u8 sElectabuzzGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_30.4bpp.lz");
+static const u8 sElectabuzzGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_30_1.4bpp.lz");
+static const u8 sElectabuzzGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_30_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites30[] = {
 	{sElectabuzzGfx30, ARRAY_COUNT(sElectabuzzGfx30)}, 
 	{NULL, 32}, 
@@ -2293,17 +2293,17 @@ static const ax_sprite sElectabuzzSprites30[] = {
 	{sElectabuzzGfx30_2, ARRAY_COUNT(sElectabuzzGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx31[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_31.4bpp");
-static const u8 sElectabuzzGfx31_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_31_1.4bpp");
+static const u8 sElectabuzzGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_31.4bpp.lz");
+static const u8 sElectabuzzGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_31_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites31[] = {
 	{sElectabuzzGfx31, ARRAY_COUNT(sElectabuzzGfx31)}, 
 	{NULL, 32}, 
 	{sElectabuzzGfx31_1, ARRAY_COUNT(sElectabuzzGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx32[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_32.4bpp");
-static const u8 sElectabuzzGfx32_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_32_1.4bpp");
-static const u8 sElectabuzzGfx32_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_32_2.4bpp");
+static const u8 sElectabuzzGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_32.4bpp.lz");
+static const u8 sElectabuzzGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_32_1.4bpp.lz");
+static const u8 sElectabuzzGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_32_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites32[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx32, ARRAY_COUNT(sElectabuzzGfx32)}, 
@@ -2313,10 +2313,10 @@ static const ax_sprite sElectabuzzSprites32[] = {
 	{sElectabuzzGfx32_2, ARRAY_COUNT(sElectabuzzGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx33[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_33.4bpp");
-static const u8 sElectabuzzGfx33_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_33_1.4bpp");
-static const u8 sElectabuzzGfx33_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_33_2.4bpp");
-static const u8 sElectabuzzGfx33_3[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_33_3.4bpp");
+static const u8 sElectabuzzGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_33.4bpp.lz");
+static const u8 sElectabuzzGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_33_1.4bpp.lz");
+static const u8 sElectabuzzGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_33_2.4bpp.lz");
+static const u8 sElectabuzzGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_33_3.4bpp.lz");
 static const ax_sprite sElectabuzzSprites33[] = {
 	{sElectabuzzGfx33, ARRAY_COUNT(sElectabuzzGfx33)}, 
 	{NULL, 32}, 
@@ -2328,9 +2328,9 @@ static const ax_sprite sElectabuzzSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx34[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_34.4bpp");
-static const u8 sElectabuzzGfx34_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_34_1.4bpp");
-static const u8 sElectabuzzGfx34_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_34_2.4bpp");
+static const u8 sElectabuzzGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_34.4bpp.lz");
+static const u8 sElectabuzzGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_34_1.4bpp.lz");
+static const u8 sElectabuzzGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_34_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites34[] = {
 	{sElectabuzzGfx34, ARRAY_COUNT(sElectabuzzGfx34)}, 
 	{NULL, 64}, 
@@ -2340,9 +2340,9 @@ static const ax_sprite sElectabuzzSprites34[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx35[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_35.4bpp");
-static const u8 sElectabuzzGfx35_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_35_1.4bpp");
-static const u8 sElectabuzzGfx35_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_35_2.4bpp");
+static const u8 sElectabuzzGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_35.4bpp.lz");
+static const u8 sElectabuzzGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_35_1.4bpp.lz");
+static const u8 sElectabuzzGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_35_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites35[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx35, ARRAY_COUNT(sElectabuzzGfx35)}, 
@@ -2353,9 +2353,9 @@ static const ax_sprite sElectabuzzSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx36[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_36.4bpp");
-static const u8 sElectabuzzGfx36_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_36_1.4bpp");
-static const u8 sElectabuzzGfx36_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_36_2.4bpp");
+static const u8 sElectabuzzGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_36.4bpp.lz");
+static const u8 sElectabuzzGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_36_1.4bpp.lz");
+static const u8 sElectabuzzGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_36_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites36[] = {
 	{sElectabuzzGfx36, ARRAY_COUNT(sElectabuzzGfx36)}, 
 	{NULL, 32}, 
@@ -2365,10 +2365,10 @@ static const ax_sprite sElectabuzzSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx37[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_37.4bpp");
-static const u8 sElectabuzzGfx37_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_37_1.4bpp");
-static const u8 sElectabuzzGfx37_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_37_2.4bpp");
-static const u8 sElectabuzzGfx37_3[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_37_3.4bpp");
+static const u8 sElectabuzzGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_37.4bpp.lz");
+static const u8 sElectabuzzGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_37_1.4bpp.lz");
+static const u8 sElectabuzzGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_37_2.4bpp.lz");
+static const u8 sElectabuzzGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_37_3.4bpp.lz");
 static const ax_sprite sElectabuzzSprites37[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx37, ARRAY_COUNT(sElectabuzzGfx37)}, 
@@ -2380,15 +2380,15 @@ static const ax_sprite sElectabuzzSprites37[] = {
 	{sElectabuzzGfx37_3, ARRAY_COUNT(sElectabuzzGfx37_3)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx38[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_38.4bpp");
+static const u8 sElectabuzzGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_38.4bpp.lz");
 static const ax_sprite sElectabuzzSprites38[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx38, ARRAY_COUNT(sElectabuzzGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx39[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_39.4bpp");
-static const u8 sElectabuzzGfx39_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_39_1.4bpp");
-static const u8 sElectabuzzGfx39_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_39_2.4bpp");
+static const u8 sElectabuzzGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_39.4bpp.lz");
+static const u8 sElectabuzzGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_39_1.4bpp.lz");
+static const u8 sElectabuzzGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_39_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites39[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx39, ARRAY_COUNT(sElectabuzzGfx39)}, 
@@ -2398,8 +2398,8 @@ static const ax_sprite sElectabuzzSprites39[] = {
 	{sElectabuzzGfx39_2, ARRAY_COUNT(sElectabuzzGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx40[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_40.4bpp");
-static const u8 sElectabuzzGfx40_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_40_1.4bpp");
+static const u8 sElectabuzzGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_40.4bpp.lz");
+static const u8 sElectabuzzGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_40_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites40[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx40, ARRAY_COUNT(sElectabuzzGfx40)}, 
@@ -2407,8 +2407,8 @@ static const ax_sprite sElectabuzzSprites40[] = {
 	{sElectabuzzGfx40_1, ARRAY_COUNT(sElectabuzzGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx41[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_41.4bpp");
-static const u8 sElectabuzzGfx41_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_41_1.4bpp");
+static const u8 sElectabuzzGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_41.4bpp.lz");
+static const u8 sElectabuzzGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_41_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites41[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx41, ARRAY_COUNT(sElectabuzzGfx41)}, 
@@ -2416,8 +2416,8 @@ static const ax_sprite sElectabuzzSprites41[] = {
 	{sElectabuzzGfx41_1, ARRAY_COUNT(sElectabuzzGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx42[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_42.4bpp");
-static const u8 sElectabuzzGfx42_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_42_1.4bpp");
+static const u8 sElectabuzzGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_42.4bpp.lz");
+static const u8 sElectabuzzGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_42_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites42[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx42, ARRAY_COUNT(sElectabuzzGfx42)}, 
@@ -2426,8 +2426,8 @@ static const ax_sprite sElectabuzzSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx43[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_43.4bpp");
-static const u8 sElectabuzzGfx43_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_43_1.4bpp");
+static const u8 sElectabuzzGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_43.4bpp.lz");
+static const u8 sElectabuzzGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_43_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites43[] = {
 	{NULL, 64}, 
 	{sElectabuzzGfx43, ARRAY_COUNT(sElectabuzzGfx43)}, 
@@ -2436,8 +2436,8 @@ static const ax_sprite sElectabuzzSprites43[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx44[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_44.4bpp");
-static const u8 sElectabuzzGfx44_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_44_1.4bpp");
+static const u8 sElectabuzzGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_44.4bpp.lz");
+static const u8 sElectabuzzGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_44_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites44[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx44, ARRAY_COUNT(sElectabuzzGfx44)}, 
@@ -2446,8 +2446,8 @@ static const ax_sprite sElectabuzzSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx45[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_45.4bpp");
-static const u8 sElectabuzzGfx45_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_45_1.4bpp");
+static const u8 sElectabuzzGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_45.4bpp.lz");
+static const u8 sElectabuzzGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_45_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites45[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx45, ARRAY_COUNT(sElectabuzzGfx45)}, 
@@ -2456,9 +2456,9 @@ static const ax_sprite sElectabuzzSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx46[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_46.4bpp");
-static const u8 sElectabuzzGfx46_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_46_1.4bpp");
-static const u8 sElectabuzzGfx46_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_46_2.4bpp");
+static const u8 sElectabuzzGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_46.4bpp.lz");
+static const u8 sElectabuzzGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_46_1.4bpp.lz");
+static const u8 sElectabuzzGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_46_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites46[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx46, ARRAY_COUNT(sElectabuzzGfx46)}, 
@@ -2469,9 +2469,9 @@ static const ax_sprite sElectabuzzSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx47[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_47.4bpp");
-static const u8 sElectabuzzGfx47_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_47_1.4bpp");
-static const u8 sElectabuzzGfx47_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_47_2.4bpp");
+static const u8 sElectabuzzGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_47.4bpp.lz");
+static const u8 sElectabuzzGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_47_1.4bpp.lz");
+static const u8 sElectabuzzGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_47_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites47[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx47, ARRAY_COUNT(sElectabuzzGfx47)}, 
@@ -2481,23 +2481,23 @@ static const ax_sprite sElectabuzzSprites47[] = {
 	{sElectabuzzGfx47_2, ARRAY_COUNT(sElectabuzzGfx47_2)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx48[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_48.4bpp");
-static const u8 sElectabuzzGfx48_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_48_1.4bpp");
+static const u8 sElectabuzzGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_48.4bpp.lz");
+static const u8 sElectabuzzGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_48_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites48[] = {
 	{sElectabuzzGfx48, ARRAY_COUNT(sElectabuzzGfx48)}, 
 	{NULL, 32}, 
 	{sElectabuzzGfx48_1, ARRAY_COUNT(sElectabuzzGfx48_1)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx49[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_49.4bpp");
+static const u8 sElectabuzzGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_49.4bpp.lz");
 static const ax_sprite sElectabuzzSprites49[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx49, ARRAY_COUNT(sElectabuzzGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx50[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_50.4bpp");
-static const u8 sElectabuzzGfx50_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_50_1.4bpp");
-static const u8 sElectabuzzGfx50_2[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_50_2.4bpp");
+static const u8 sElectabuzzGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_50.4bpp.lz");
+static const u8 sElectabuzzGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_50_1.4bpp.lz");
+static const u8 sElectabuzzGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_50_2.4bpp.lz");
 static const ax_sprite sElectabuzzSprites50[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx50, ARRAY_COUNT(sElectabuzzGfx50)}, 
@@ -2508,8 +2508,8 @@ static const ax_sprite sElectabuzzSprites50[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx51[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_51.4bpp");
-static const u8 sElectabuzzGfx51_1[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_51_1.4bpp");
+static const u8 sElectabuzzGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_51.4bpp.lz");
+static const u8 sElectabuzzGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_51_1.4bpp.lz");
 static const ax_sprite sElectabuzzSprites51[] = {
 	{NULL, 32}, 
 	{sElectabuzzGfx51, ARRAY_COUNT(sElectabuzzGfx51)}, 
@@ -2518,52 +2518,52 @@ static const ax_sprite sElectabuzzSprites51[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx52[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_52.4bpp");
+static const u8 sElectabuzzGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_52.4bpp.lz");
 static const ax_sprite sElectabuzzSprites52[] = {
 	{sElectabuzzGfx52, ARRAY_COUNT(sElectabuzzGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx53[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_53.4bpp");
+static const u8 sElectabuzzGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_53.4bpp.lz");
 static const ax_sprite sElectabuzzSprites53[] = {
 	{sElectabuzzGfx53, ARRAY_COUNT(sElectabuzzGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx54[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_54.4bpp");
+static const u8 sElectabuzzGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_54.4bpp.lz");
 static const ax_sprite sElectabuzzSprites54[] = {
 	{sElectabuzzGfx54, ARRAY_COUNT(sElectabuzzGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx55[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_55.4bpp");
+static const u8 sElectabuzzGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_55.4bpp.lz");
 static const ax_sprite sElectabuzzSprites55[] = {
 	{sElectabuzzGfx55, ARRAY_COUNT(sElectabuzzGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx56[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_56.4bpp");
+static const u8 sElectabuzzGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_56.4bpp.lz");
 static const ax_sprite sElectabuzzSprites56[] = {
 	{sElectabuzzGfx56, ARRAY_COUNT(sElectabuzzGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx57[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_57.4bpp");
+static const u8 sElectabuzzGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_57.4bpp.lz");
 static const ax_sprite sElectabuzzSprites57[] = {
 	{sElectabuzzGfx57, ARRAY_COUNT(sElectabuzzGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx58[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_58.4bpp");
+static const u8 sElectabuzzGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_58.4bpp.lz");
 static const ax_sprite sElectabuzzSprites58[] = {
 	{sElectabuzzGfx58, ARRAY_COUNT(sElectabuzzGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx59[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_59.4bpp");
+static const u8 sElectabuzzGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_59.4bpp.lz");
 static const ax_sprite sElectabuzzSprites59[] = {
 	{sElectabuzzGfx59, ARRAY_COUNT(sElectabuzzGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx60[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_60.4bpp");
+static const u8 sElectabuzzGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_60.4bpp.lz");
 static const ax_sprite sElectabuzzSprites60[] = {
 	{sElectabuzzGfx60, ARRAY_COUNT(sElectabuzzGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sElectabuzzGfx61[] = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_61.4bpp");
+static const u8 sElectabuzzGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/electabuzz/sprite_61.4bpp.lz");
 static const ax_sprite sElectabuzzSprites61[] = {
 	{sElectabuzzGfx61, ARRAY_COUNT(sElectabuzzGfx61)}, 
 	{NULL, 0}

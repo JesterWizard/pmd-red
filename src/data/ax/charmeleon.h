@@ -2111,85 +2111,85 @@ static const ax_anim sCharmeleonAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCharmeleonGfx1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_1.4bpp");
+static const u8 sCharmeleonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites1[] = {
 	{sCharmeleonGfx1, ARRAY_COUNT(sCharmeleonGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_2.4bpp");
+static const u8 sCharmeleonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites2[] = {
 	{sCharmeleonGfx2, ARRAY_COUNT(sCharmeleonGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx3[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_3.4bpp");
+static const u8 sCharmeleonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_3.4bpp.lz");
 static const ax_sprite sCharmeleonSprites3[] = {
 	{sCharmeleonGfx3, ARRAY_COUNT(sCharmeleonGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx4[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_4.4bpp");
+static const u8 sCharmeleonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_4.4bpp.lz");
 static const ax_sprite sCharmeleonSprites4[] = {
 	{sCharmeleonGfx4, ARRAY_COUNT(sCharmeleonGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx5[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_5.4bpp");
+static const u8 sCharmeleonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_5.4bpp.lz");
 static const ax_sprite sCharmeleonSprites5[] = {
 	{sCharmeleonGfx5, ARRAY_COUNT(sCharmeleonGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx6[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_6.4bpp");
+static const u8 sCharmeleonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_6.4bpp.lz");
 static const ax_sprite sCharmeleonSprites6[] = {
 	{sCharmeleonGfx6, ARRAY_COUNT(sCharmeleonGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx7[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_7.4bpp");
+static const u8 sCharmeleonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_7.4bpp.lz");
 static const ax_sprite sCharmeleonSprites7[] = {
 	{sCharmeleonGfx7, ARRAY_COUNT(sCharmeleonGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx8[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_8.4bpp");
+static const u8 sCharmeleonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_8.4bpp.lz");
 static const ax_sprite sCharmeleonSprites8[] = {
 	{sCharmeleonGfx8, ARRAY_COUNT(sCharmeleonGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx9[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_9.4bpp");
+static const u8 sCharmeleonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_9.4bpp.lz");
 static const ax_sprite sCharmeleonSprites9[] = {
 	{sCharmeleonGfx9, ARRAY_COUNT(sCharmeleonGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx10[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_10.4bpp");
+static const u8 sCharmeleonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_10.4bpp.lz");
 static const ax_sprite sCharmeleonSprites10[] = {
 	{sCharmeleonGfx10, ARRAY_COUNT(sCharmeleonGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx11[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_11.4bpp");
+static const u8 sCharmeleonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_11.4bpp.lz");
 static const ax_sprite sCharmeleonSprites11[] = {
 	{sCharmeleonGfx11, ARRAY_COUNT(sCharmeleonGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx12[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_12.4bpp");
+static const u8 sCharmeleonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_12.4bpp.lz");
 static const ax_sprite sCharmeleonSprites12[] = {
 	{sCharmeleonGfx12, ARRAY_COUNT(sCharmeleonGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx13[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_13.4bpp");
+static const u8 sCharmeleonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_13.4bpp.lz");
 static const ax_sprite sCharmeleonSprites13[] = {
 	{sCharmeleonGfx13, ARRAY_COUNT(sCharmeleonGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx14[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_14.4bpp");
+static const u8 sCharmeleonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_14.4bpp.lz");
 static const ax_sprite sCharmeleonSprites14[] = {
 	{sCharmeleonGfx14, ARRAY_COUNT(sCharmeleonGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx15[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_15.4bpp");
+static const u8 sCharmeleonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_15.4bpp.lz");
 static const ax_sprite sCharmeleonSprites15[] = {
 	{sCharmeleonGfx15, ARRAY_COUNT(sCharmeleonGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx16[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_16.4bpp");
-static const u8 sCharmeleonGfx16_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_16_1.4bpp");
-static const u8 sCharmeleonGfx16_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_16_2.4bpp");
-static const u8 sCharmeleonGfx16_3[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_16_3.4bpp");
+static const u8 sCharmeleonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_16.4bpp.lz");
+static const u8 sCharmeleonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_16_1.4bpp.lz");
+static const u8 sCharmeleonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_16_2.4bpp.lz");
+static const u8 sCharmeleonGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_16_3.4bpp.lz");
 static const ax_sprite sCharmeleonSprites16[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx16, ARRAY_COUNT(sCharmeleonGfx16)}, 
@@ -2201,8 +2201,8 @@ static const ax_sprite sCharmeleonSprites16[] = {
 	{sCharmeleonGfx16_3, ARRAY_COUNT(sCharmeleonGfx16_3)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx17[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_17.4bpp");
-static const u8 sCharmeleonGfx17_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_17_1.4bpp");
+static const u8 sCharmeleonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_17.4bpp.lz");
+static const u8 sCharmeleonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_17_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites17[] = {
 	{NULL, 64}, 
 	{sCharmeleonGfx17, ARRAY_COUNT(sCharmeleonGfx17)}, 
@@ -2210,10 +2210,10 @@ static const ax_sprite sCharmeleonSprites17[] = {
 	{sCharmeleonGfx17_1, ARRAY_COUNT(sCharmeleonGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx18[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_18.4bpp");
-static const u8 sCharmeleonGfx18_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_18_1.4bpp");
-static const u8 sCharmeleonGfx18_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_18_2.4bpp");
-static const u8 sCharmeleonGfx18_3[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_18_3.4bpp");
+static const u8 sCharmeleonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_18.4bpp.lz");
+static const u8 sCharmeleonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_18_1.4bpp.lz");
+static const u8 sCharmeleonGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_18_2.4bpp.lz");
+static const u8 sCharmeleonGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_18_3.4bpp.lz");
 static const ax_sprite sCharmeleonSprites18[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx18, ARRAY_COUNT(sCharmeleonGfx18)}, 
@@ -2225,9 +2225,9 @@ static const ax_sprite sCharmeleonSprites18[] = {
 	{sCharmeleonGfx18_3, ARRAY_COUNT(sCharmeleonGfx18_3)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx19[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_19.4bpp");
-static const u8 sCharmeleonGfx19_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_19_1.4bpp");
-static const u8 sCharmeleonGfx19_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_19_2.4bpp");
+static const u8 sCharmeleonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_19.4bpp.lz");
+static const u8 sCharmeleonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_19_1.4bpp.lz");
+static const u8 sCharmeleonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_19_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites19[] = {
 	{NULL, 64}, 
 	{sCharmeleonGfx19, ARRAY_COUNT(sCharmeleonGfx19)}, 
@@ -2237,10 +2237,10 @@ static const ax_sprite sCharmeleonSprites19[] = {
 	{sCharmeleonGfx19_2, ARRAY_COUNT(sCharmeleonGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx20[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_20.4bpp");
-static const u8 sCharmeleonGfx20_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_20_1.4bpp");
-static const u8 sCharmeleonGfx20_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_20_2.4bpp");
-static const u8 sCharmeleonGfx20_3[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_20_3.4bpp");
+static const u8 sCharmeleonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_20.4bpp.lz");
+static const u8 sCharmeleonGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_20_1.4bpp.lz");
+static const u8 sCharmeleonGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_20_2.4bpp.lz");
+static const u8 sCharmeleonGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_20_3.4bpp.lz");
 static const ax_sprite sCharmeleonSprites20[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx20, ARRAY_COUNT(sCharmeleonGfx20)}, 
@@ -2253,15 +2253,15 @@ static const ax_sprite sCharmeleonSprites20[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx21[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_21.4bpp");
+static const u8 sCharmeleonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_21.4bpp.lz");
 static const ax_sprite sCharmeleonSprites21[] = {
 	{NULL, 64}, 
 	{sCharmeleonGfx21, ARRAY_COUNT(sCharmeleonGfx21)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx22[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_22.4bpp");
-static const u8 sCharmeleonGfx22_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_22_1.4bpp");
+static const u8 sCharmeleonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_22.4bpp.lz");
+static const u8 sCharmeleonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_22_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites22[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx22, ARRAY_COUNT(sCharmeleonGfx22)}, 
@@ -2270,9 +2270,9 @@ static const ax_sprite sCharmeleonSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx23[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_23.4bpp");
-static const u8 sCharmeleonGfx23_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_23_1.4bpp");
-static const u8 sCharmeleonGfx23_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_23_2.4bpp");
+static const u8 sCharmeleonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_23.4bpp.lz");
+static const u8 sCharmeleonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_23_1.4bpp.lz");
+static const u8 sCharmeleonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_23_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites23[] = {
 	{sCharmeleonGfx23, ARRAY_COUNT(sCharmeleonGfx23)}, 
 	{NULL, 32}, 
@@ -2282,8 +2282,8 @@ static const ax_sprite sCharmeleonSprites23[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx24[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_24.4bpp");
-static const u8 sCharmeleonGfx24_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_24_1.4bpp");
+static const u8 sCharmeleonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_24.4bpp.lz");
+static const u8 sCharmeleonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_24_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites24[] = {
 	{NULL, 96}, 
 	{sCharmeleonGfx24, ARRAY_COUNT(sCharmeleonGfx24)}, 
@@ -2292,8 +2292,8 @@ static const ax_sprite sCharmeleonSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx25[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_25.4bpp");
-static const u8 sCharmeleonGfx25_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_25_1.4bpp");
+static const u8 sCharmeleonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_25.4bpp.lz");
+static const u8 sCharmeleonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_25_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites25[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx25, ARRAY_COUNT(sCharmeleonGfx25)}, 
@@ -2301,9 +2301,9 @@ static const ax_sprite sCharmeleonSprites25[] = {
 	{sCharmeleonGfx25_1, ARRAY_COUNT(sCharmeleonGfx25_1)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx26[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_26.4bpp");
-static const u8 sCharmeleonGfx26_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_26_1.4bpp");
-static const u8 sCharmeleonGfx26_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_26_2.4bpp");
+static const u8 sCharmeleonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_26.4bpp.lz");
+static const u8 sCharmeleonGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_26_1.4bpp.lz");
+static const u8 sCharmeleonGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_26_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites26[] = {
 	{sCharmeleonGfx26, ARRAY_COUNT(sCharmeleonGfx26)}, 
 	{NULL, 32}, 
@@ -2312,9 +2312,9 @@ static const ax_sprite sCharmeleonSprites26[] = {
 	{sCharmeleonGfx26_2, ARRAY_COUNT(sCharmeleonGfx26_2)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx27[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_27.4bpp");
-static const u8 sCharmeleonGfx27_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_27_1.4bpp");
-static const u8 sCharmeleonGfx27_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_27_2.4bpp");
+static const u8 sCharmeleonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_27.4bpp.lz");
+static const u8 sCharmeleonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_27_1.4bpp.lz");
+static const u8 sCharmeleonGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_27_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites27[] = {
 	{sCharmeleonGfx27, ARRAY_COUNT(sCharmeleonGfx27)}, 
 	{NULL, 64}, 
@@ -2324,8 +2324,8 @@ static const ax_sprite sCharmeleonSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx28[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_28.4bpp");
-static const u8 sCharmeleonGfx28_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_28_1.4bpp");
+static const u8 sCharmeleonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_28.4bpp.lz");
+static const u8 sCharmeleonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_28_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites28[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx28, ARRAY_COUNT(sCharmeleonGfx28)}, 
@@ -2334,8 +2334,8 @@ static const ax_sprite sCharmeleonSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx29[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_29.4bpp");
-static const u8 sCharmeleonGfx29_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_29_1.4bpp");
+static const u8 sCharmeleonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_29.4bpp.lz");
+static const u8 sCharmeleonGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_29_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites29[] = {
 	{sCharmeleonGfx29, ARRAY_COUNT(sCharmeleonGfx29)}, 
 	{NULL, 32}, 
@@ -2343,9 +2343,9 @@ static const ax_sprite sCharmeleonSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx30[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_30.4bpp");
-static const u8 sCharmeleonGfx30_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_30_1.4bpp");
-static const u8 sCharmeleonGfx30_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_30_2.4bpp");
+static const u8 sCharmeleonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_30.4bpp.lz");
+static const u8 sCharmeleonGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_30_1.4bpp.lz");
+static const u8 sCharmeleonGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_30_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites30[] = {
 	{sCharmeleonGfx30, ARRAY_COUNT(sCharmeleonGfx30)}, 
 	{NULL, 32}, 
@@ -2354,10 +2354,10 @@ static const ax_sprite sCharmeleonSprites30[] = {
 	{sCharmeleonGfx30_2, ARRAY_COUNT(sCharmeleonGfx30_2)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx31[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_31.4bpp");
-static const u8 sCharmeleonGfx31_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_31_1.4bpp");
-static const u8 sCharmeleonGfx31_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_31_2.4bpp");
-static const u8 sCharmeleonGfx31_3[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_31_3.4bpp");
+static const u8 sCharmeleonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_31.4bpp.lz");
+static const u8 sCharmeleonGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_31_1.4bpp.lz");
+static const u8 sCharmeleonGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_31_2.4bpp.lz");
+static const u8 sCharmeleonGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_31_3.4bpp.lz");
 static const ax_sprite sCharmeleonSprites31[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx31, ARRAY_COUNT(sCharmeleonGfx31)}, 
@@ -2370,9 +2370,9 @@ static const ax_sprite sCharmeleonSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx32[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_32.4bpp");
-static const u8 sCharmeleonGfx32_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_32_1.4bpp");
-static const u8 sCharmeleonGfx32_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_32_2.4bpp");
+static const u8 sCharmeleonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_32.4bpp.lz");
+static const u8 sCharmeleonGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_32_1.4bpp.lz");
+static const u8 sCharmeleonGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_32_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites32[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx32, ARRAY_COUNT(sCharmeleonGfx32)}, 
@@ -2382,8 +2382,8 @@ static const ax_sprite sCharmeleonSprites32[] = {
 	{sCharmeleonGfx32_2, ARRAY_COUNT(sCharmeleonGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx33[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_33.4bpp");
-static const u8 sCharmeleonGfx33_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_33_1.4bpp");
+static const u8 sCharmeleonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_33.4bpp.lz");
+static const u8 sCharmeleonGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_33_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites33[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx33, ARRAY_COUNT(sCharmeleonGfx33)}, 
@@ -2392,8 +2392,8 @@ static const ax_sprite sCharmeleonSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx34[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_34.4bpp");
-static const u8 sCharmeleonGfx34_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_34_1.4bpp");
+static const u8 sCharmeleonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_34.4bpp.lz");
+static const u8 sCharmeleonGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_34_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites34[] = {
 	{NULL, 64}, 
 	{sCharmeleonGfx34, ARRAY_COUNT(sCharmeleonGfx34)}, 
@@ -2402,10 +2402,10 @@ static const ax_sprite sCharmeleonSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx35[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_35.4bpp");
-static const u8 sCharmeleonGfx35_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_35_1.4bpp");
-static const u8 sCharmeleonGfx35_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_35_2.4bpp");
-static const u8 sCharmeleonGfx35_3[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_35_3.4bpp");
+static const u8 sCharmeleonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_35.4bpp.lz");
+static const u8 sCharmeleonGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_35_1.4bpp.lz");
+static const u8 sCharmeleonGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_35_2.4bpp.lz");
+static const u8 sCharmeleonGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_35_3.4bpp.lz");
 static const ax_sprite sCharmeleonSprites35[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx35, ARRAY_COUNT(sCharmeleonGfx35)}, 
@@ -2417,8 +2417,8 @@ static const ax_sprite sCharmeleonSprites35[] = {
 	{sCharmeleonGfx35_3, ARRAY_COUNT(sCharmeleonGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx36[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_36.4bpp");
-static const u8 sCharmeleonGfx36_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_36_1.4bpp");
+static const u8 sCharmeleonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_36.4bpp.lz");
+static const u8 sCharmeleonGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_36_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites36[] = {
 	{NULL, 96}, 
 	{sCharmeleonGfx36, ARRAY_COUNT(sCharmeleonGfx36)}, 
@@ -2427,9 +2427,9 @@ static const ax_sprite sCharmeleonSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx37[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_37.4bpp");
-static const u8 sCharmeleonGfx37_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_37_1.4bpp");
-static const u8 sCharmeleonGfx37_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_37_2.4bpp");
+static const u8 sCharmeleonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_37.4bpp.lz");
+static const u8 sCharmeleonGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_37_1.4bpp.lz");
+static const u8 sCharmeleonGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_37_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites37[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx37, ARRAY_COUNT(sCharmeleonGfx37)}, 
@@ -2439,8 +2439,8 @@ static const ax_sprite sCharmeleonSprites37[] = {
 	{sCharmeleonGfx37_2, ARRAY_COUNT(sCharmeleonGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx38[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_38.4bpp");
-static const u8 sCharmeleonGfx38_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_38_1.4bpp");
+static const u8 sCharmeleonGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_38.4bpp.lz");
+static const u8 sCharmeleonGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_38_1.4bpp.lz");
 static const ax_sprite sCharmeleonSprites38[] = {
 	{sCharmeleonGfx38, ARRAY_COUNT(sCharmeleonGfx38)}, 
 	{NULL, 64}, 
@@ -2448,9 +2448,9 @@ static const ax_sprite sCharmeleonSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx39[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_39.4bpp");
-static const u8 sCharmeleonGfx39_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_39_1.4bpp");
-static const u8 sCharmeleonGfx39_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_39_2.4bpp");
+static const u8 sCharmeleonGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_39.4bpp.lz");
+static const u8 sCharmeleonGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_39_1.4bpp.lz");
+static const u8 sCharmeleonGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_39_2.4bpp.lz");
 static const ax_sprite sCharmeleonSprites39[] = {
 	{sCharmeleonGfx39, ARRAY_COUNT(sCharmeleonGfx39)}, 
 	{NULL, 32}, 
@@ -2460,10 +2460,10 @@ static const ax_sprite sCharmeleonSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx40[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_40.4bpp");
-static const u8 sCharmeleonGfx40_1[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_40_1.4bpp");
-static const u8 sCharmeleonGfx40_2[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_40_2.4bpp");
-static const u8 sCharmeleonGfx40_3[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_40_3.4bpp");
+static const u8 sCharmeleonGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_40.4bpp.lz");
+static const u8 sCharmeleonGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_40_1.4bpp.lz");
+static const u8 sCharmeleonGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_40_2.4bpp.lz");
+static const u8 sCharmeleonGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_40_3.4bpp.lz");
 static const ax_sprite sCharmeleonSprites40[] = {
 	{NULL, 32}, 
 	{sCharmeleonGfx40, ARRAY_COUNT(sCharmeleonGfx40)}, 
@@ -2476,37 +2476,37 @@ static const ax_sprite sCharmeleonSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx41[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_41.4bpp");
+static const u8 sCharmeleonGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_41.4bpp.lz");
 static const ax_sprite sCharmeleonSprites41[] = {
 	{sCharmeleonGfx41, ARRAY_COUNT(sCharmeleonGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx42[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_42.4bpp");
+static const u8 sCharmeleonGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_42.4bpp.lz");
 static const ax_sprite sCharmeleonSprites42[] = {
 	{sCharmeleonGfx42, ARRAY_COUNT(sCharmeleonGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx43[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_43.4bpp");
+static const u8 sCharmeleonGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_43.4bpp.lz");
 static const ax_sprite sCharmeleonSprites43[] = {
 	{sCharmeleonGfx43, ARRAY_COUNT(sCharmeleonGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx44[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_44.4bpp");
+static const u8 sCharmeleonGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_44.4bpp.lz");
 static const ax_sprite sCharmeleonSprites44[] = {
 	{sCharmeleonGfx44, ARRAY_COUNT(sCharmeleonGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx45[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_45.4bpp");
+static const u8 sCharmeleonGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_45.4bpp.lz");
 static const ax_sprite sCharmeleonSprites45[] = {
 	{sCharmeleonGfx45, ARRAY_COUNT(sCharmeleonGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx46[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_46.4bpp");
+static const u8 sCharmeleonGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_46.4bpp.lz");
 static const ax_sprite sCharmeleonSprites46[] = {
 	{sCharmeleonGfx46, ARRAY_COUNT(sCharmeleonGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sCharmeleonGfx47[] = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_47.4bpp");
+static const u8 sCharmeleonGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/charmeleon/sprite_47.4bpp.lz");
 static const ax_sprite sCharmeleonSprites47[] = {
 	{sCharmeleonGfx47, ARRAY_COUNT(sCharmeleonGfx47)}, 
 	{NULL, 0}

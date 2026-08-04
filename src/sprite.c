@@ -2,6 +2,7 @@
 #include "globaldata.h"
 #include "bg_palette_buffer.h"
 #include "cpu.h"
+#include "gba/syscall.h"
 #include "main_loops.h"
 #include "random.h"
 #include "sprite.h"
@@ -28,6 +29,23 @@ EWRAM_INIT static unkStruct_20266B0 *sUnknown_203B074 = {0};
 
 static void AxResInitUnoriented(axdata *, EfoFileData *, u32, u32, u32, bool8);
 static void RegisterSpriteParts_80052BC(const ax_sprite *spritesPtr);
+
+static bool8 IsAxGfxCompressed(const u8 *gfx)
+{
+    return gfx != NULL
+        && gfx[0] == 'G'
+        && gfx[1] == 'M'
+        && gfx[2] == 'L'
+        && gfx[3] == 'Z'
+        && gfx[4] == 0x10;
+}
+
+static u32 GetAxGfxByteCount(const u8 *gfx, u32 storedCount)
+{
+    if (IsAxGfxCompressed(gfx))
+        return gfx[5] | (gfx[6] << 8) | (gfx[7] << 16);
+    return storedCount;
+}
 static void sub_800561C(const EfoFileData *, s32 vramIdx, s32 brightness, const RGB_Struct *ramp);
 
 // arm9.bin::0200265C
@@ -432,12 +450,15 @@ void BlinkSavingIcon(void)
 static void RegisterSpriteParts_80052BC(const ax_sprite *spritesPtr)
 {
     while (spritesPtr->byteCount != 0) {
+        u32 byteCount;
+
         if (sUnknown_203B074 >= &sUnknown_20266B0[UNK_20266B0_ARR_COUNT])
             return;
-        sUnknown_203B074->byteCount = spritesPtr->byteCount;
+        byteCount = GetAxGfxByteCount(spritesPtr->gfx, spritesPtr->byteCount);
+        sUnknown_203B074->byteCount = byteCount;
         sUnknown_203B074->src = spritesPtr->gfx;
         sUnknown_203B074->dest = sCharMemCursor;
-        sCharMemCursor += spritesPtr->byteCount;
+        sCharMemCursor += byteCount;
         sUnknown_203B074++;
         spritesPtr++;
     }
@@ -449,10 +470,15 @@ void sub_8005304(void)
     unkStruct_20266B0 *s;
 
     for (s = &sUnknown_20266B0[0]; s < sUnknown_203B074; s++) {
-        if (s->src != NULL)
-            CpuCopy(s->dest, s->src, s->byteCount);
-        else
+        if (s->src != NULL) {
+            if (IsAxGfxCompressed(s->src))
+                LZ77UnCompVram((u8 *)s->src + 4, s->dest);
+            else
+                CpuCopy(s->dest, s->src, s->byteCount);
+        }
+        else {
             CpuClear(s->dest, s->byteCount);
+        }
     }
 }
 

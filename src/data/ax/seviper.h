@@ -2165,130 +2165,130 @@ static const ax_anim sSeviperAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSeviperGfx1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_1.4bpp");
+static const u8 sSeviperGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_1.4bpp.lz");
 static const ax_sprite sSeviperSprites1[] = {
 	{sSeviperGfx1, ARRAY_COUNT(sSeviperGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx2[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_2.4bpp");
+static const u8 sSeviperGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_2.4bpp.lz");
 static const ax_sprite sSeviperSprites2[] = {
 	{sSeviperGfx2, ARRAY_COUNT(sSeviperGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx3[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_3.4bpp");
+static const u8 sSeviperGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_3.4bpp.lz");
 static const ax_sprite sSeviperSprites3[] = {
 	{sSeviperGfx3, ARRAY_COUNT(sSeviperGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx4[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_4.4bpp");
+static const u8 sSeviperGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_4.4bpp.lz");
 static const ax_sprite sSeviperSprites4[] = {
 	{sSeviperGfx4, ARRAY_COUNT(sSeviperGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx5[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_5.4bpp");
+static const u8 sSeviperGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_5.4bpp.lz");
 static const ax_sprite sSeviperSprites5[] = {
 	{sSeviperGfx5, ARRAY_COUNT(sSeviperGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx6[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_6.4bpp");
+static const u8 sSeviperGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_6.4bpp.lz");
 static const ax_sprite sSeviperSprites6[] = {
 	{sSeviperGfx6, ARRAY_COUNT(sSeviperGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx7[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_7.4bpp");
+static const u8 sSeviperGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_7.4bpp.lz");
 static const ax_sprite sSeviperSprites7[] = {
 	{sSeviperGfx7, ARRAY_COUNT(sSeviperGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx8[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_8.4bpp");
+static const u8 sSeviperGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_8.4bpp.lz");
 static const ax_sprite sSeviperSprites8[] = {
 	{sSeviperGfx8, ARRAY_COUNT(sSeviperGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx9[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_9.4bpp");
+static const u8 sSeviperGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_9.4bpp.lz");
 static const ax_sprite sSeviperSprites9[] = {
 	{sSeviperGfx9, ARRAY_COUNT(sSeviperGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx10[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_10.4bpp");
+static const u8 sSeviperGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_10.4bpp.lz");
 static const ax_sprite sSeviperSprites10[] = {
 	{sSeviperGfx10, ARRAY_COUNT(sSeviperGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx11[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_11.4bpp");
+static const u8 sSeviperGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_11.4bpp.lz");
 static const ax_sprite sSeviperSprites11[] = {
 	{sSeviperGfx11, ARRAY_COUNT(sSeviperGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx12[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_12.4bpp");
+static const u8 sSeviperGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_12.4bpp.lz");
 static const ax_sprite sSeviperSprites12[] = {
 	{sSeviperGfx12, ARRAY_COUNT(sSeviperGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx13[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_13.4bpp");
+static const u8 sSeviperGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_13.4bpp.lz");
 static const ax_sprite sSeviperSprites13[] = {
 	{sSeviperGfx13, ARRAY_COUNT(sSeviperGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx14[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_14.4bpp");
+static const u8 sSeviperGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_14.4bpp.lz");
 static const ax_sprite sSeviperSprites14[] = {
 	{sSeviperGfx14, ARRAY_COUNT(sSeviperGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx15[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_15.4bpp");
+static const u8 sSeviperGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_15.4bpp.lz");
 static const ax_sprite sSeviperSprites15[] = {
 	{sSeviperGfx15, ARRAY_COUNT(sSeviperGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx16[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_16.4bpp");
+static const u8 sSeviperGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_16.4bpp.lz");
 static const ax_sprite sSeviperSprites16[] = {
 	{sSeviperGfx16, ARRAY_COUNT(sSeviperGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx17[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_17.4bpp");
+static const u8 sSeviperGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_17.4bpp.lz");
 static const ax_sprite sSeviperSprites17[] = {
 	{sSeviperGfx17, ARRAY_COUNT(sSeviperGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx18[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_18.4bpp");
+static const u8 sSeviperGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_18.4bpp.lz");
 static const ax_sprite sSeviperSprites18[] = {
 	{sSeviperGfx18, ARRAY_COUNT(sSeviperGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx19[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_19.4bpp");
+static const u8 sSeviperGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_19.4bpp.lz");
 static const ax_sprite sSeviperSprites19[] = {
 	{sSeviperGfx19, ARRAY_COUNT(sSeviperGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx20[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_20.4bpp");
+static const u8 sSeviperGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_20.4bpp.lz");
 static const ax_sprite sSeviperSprites20[] = {
 	{sSeviperGfx20, ARRAY_COUNT(sSeviperGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx21[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_21.4bpp");
+static const u8 sSeviperGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_21.4bpp.lz");
 static const ax_sprite sSeviperSprites21[] = {
 	{sSeviperGfx21, ARRAY_COUNT(sSeviperGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx22[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_22.4bpp");
+static const u8 sSeviperGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_22.4bpp.lz");
 static const ax_sprite sSeviperSprites22[] = {
 	{sSeviperGfx22, ARRAY_COUNT(sSeviperGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx23[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_23.4bpp");
+static const u8 sSeviperGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_23.4bpp.lz");
 static const ax_sprite sSeviperSprites23[] = {
 	{sSeviperGfx23, ARRAY_COUNT(sSeviperGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx24[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_24.4bpp");
+static const u8 sSeviperGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_24.4bpp.lz");
 static const ax_sprite sSeviperSprites24[] = {
 	{sSeviperGfx24, ARRAY_COUNT(sSeviperGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx25[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_25.4bpp");
-static const u8 sSeviperGfx25_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_25_1.4bpp");
-static const u8 sSeviperGfx25_2[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_25_2.4bpp");
-static const u8 sSeviperGfx25_3[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_25_3.4bpp");
+static const u8 sSeviperGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_25.4bpp.lz");
+static const u8 sSeviperGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_25_1.4bpp.lz");
+static const u8 sSeviperGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_25_2.4bpp.lz");
+static const u8 sSeviperGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_25_3.4bpp.lz");
 static const ax_sprite sSeviperSprites25[] = {
 	{sSeviperGfx25, ARRAY_COUNT(sSeviperGfx25)}, 
 	{NULL, 32}, 
@@ -2300,25 +2300,25 @@ static const ax_sprite sSeviperSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx26[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_26.4bpp");
+static const u8 sSeviperGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_26.4bpp.lz");
 static const ax_sprite sSeviperSprites26[] = {
 	{sSeviperGfx26, ARRAY_COUNT(sSeviperGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx27[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_27.4bpp");
+static const u8 sSeviperGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_27.4bpp.lz");
 static const ax_sprite sSeviperSprites27[] = {
 	{sSeviperGfx27, ARRAY_COUNT(sSeviperGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx28[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_28.4bpp");
+static const u8 sSeviperGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_28.4bpp.lz");
 static const ax_sprite sSeviperSprites28[] = {
 	{sSeviperGfx28, ARRAY_COUNT(sSeviperGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx29[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_29.4bpp");
-static const u8 sSeviperGfx29_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_29_1.4bpp");
-static const u8 sSeviperGfx29_2[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_29_2.4bpp");
-static const u8 sSeviperGfx29_3[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_29_3.4bpp");
+static const u8 sSeviperGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_29.4bpp.lz");
+static const u8 sSeviperGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_29_1.4bpp.lz");
+static const u8 sSeviperGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_29_2.4bpp.lz");
+static const u8 sSeviperGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_29_3.4bpp.lz");
 static const ax_sprite sSeviperSprites29[] = {
 	{sSeviperGfx29, ARRAY_COUNT(sSeviperGfx29)}, 
 	{NULL, 32}, 
@@ -2330,134 +2330,134 @@ static const ax_sprite sSeviperSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx30[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_30.4bpp");
+static const u8 sSeviperGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_30.4bpp.lz");
 static const ax_sprite sSeviperSprites30[] = {
 	{sSeviperGfx30, ARRAY_COUNT(sSeviperGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx31[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_31.4bpp");
+static const u8 sSeviperGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_31.4bpp.lz");
 static const ax_sprite sSeviperSprites31[] = {
 	{sSeviperGfx31, ARRAY_COUNT(sSeviperGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx32[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_32.4bpp");
+static const u8 sSeviperGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_32.4bpp.lz");
 static const ax_sprite sSeviperSprites32[] = {
 	{sSeviperGfx32, ARRAY_COUNT(sSeviperGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx33[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_33.4bpp");
+static const u8 sSeviperGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_33.4bpp.lz");
 static const ax_sprite sSeviperSprites33[] = {
 	{sSeviperGfx33, ARRAY_COUNT(sSeviperGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx34[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_34.4bpp");
+static const u8 sSeviperGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_34.4bpp.lz");
 static const ax_sprite sSeviperSprites34[] = {
 	{sSeviperGfx34, ARRAY_COUNT(sSeviperGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx35[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_35.4bpp");
+static const u8 sSeviperGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_35.4bpp.lz");
 static const ax_sprite sSeviperSprites35[] = {
 	{sSeviperGfx35, ARRAY_COUNT(sSeviperGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx36[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_36.4bpp");
+static const u8 sSeviperGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_36.4bpp.lz");
 static const ax_sprite sSeviperSprites36[] = {
 	{sSeviperGfx36, ARRAY_COUNT(sSeviperGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx37[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_37.4bpp");
+static const u8 sSeviperGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_37.4bpp.lz");
 static const ax_sprite sSeviperSprites37[] = {
 	{NULL, 32}, 
 	{sSeviperGfx37, ARRAY_COUNT(sSeviperGfx37)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx38[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_38.4bpp");
+static const u8 sSeviperGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_38.4bpp.lz");
 static const ax_sprite sSeviperSprites38[] = {
 	{sSeviperGfx38, ARRAY_COUNT(sSeviperGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx39[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_39.4bpp");
+static const u8 sSeviperGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_39.4bpp.lz");
 static const ax_sprite sSeviperSprites39[] = {
 	{sSeviperGfx39, ARRAY_COUNT(sSeviperGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx40[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_40.4bpp");
+static const u8 sSeviperGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_40.4bpp.lz");
 static const ax_sprite sSeviperSprites40[] = {
 	{sSeviperGfx40, ARRAY_COUNT(sSeviperGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx41[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_41.4bpp");
+static const u8 sSeviperGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_41.4bpp.lz");
 static const ax_sprite sSeviperSprites41[] = {
 	{sSeviperGfx41, ARRAY_COUNT(sSeviperGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx42[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_42.4bpp");
+static const u8 sSeviperGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_42.4bpp.lz");
 static const ax_sprite sSeviperSprites42[] = {
 	{sSeviperGfx42, ARRAY_COUNT(sSeviperGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx43[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_43.4bpp");
+static const u8 sSeviperGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_43.4bpp.lz");
 static const ax_sprite sSeviperSprites43[] = {
 	{NULL, 32}, 
 	{sSeviperGfx43, ARRAY_COUNT(sSeviperGfx43)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx44[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_44.4bpp");
+static const u8 sSeviperGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_44.4bpp.lz");
 static const ax_sprite sSeviperSprites44[] = {
 	{sSeviperGfx44, ARRAY_COUNT(sSeviperGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx45[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_45.4bpp");
+static const u8 sSeviperGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_45.4bpp.lz");
 static const ax_sprite sSeviperSprites45[] = {
 	{sSeviperGfx45, ARRAY_COUNT(sSeviperGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx46[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_46.4bpp");
+static const u8 sSeviperGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_46.4bpp.lz");
 static const ax_sprite sSeviperSprites46[] = {
 	{NULL, 32}, 
 	{sSeviperGfx46, ARRAY_COUNT(sSeviperGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx47[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_47.4bpp");
+static const u8 sSeviperGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_47.4bpp.lz");
 static const ax_sprite sSeviperSprites47[] = {
 	{sSeviperGfx47, ARRAY_COUNT(sSeviperGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx48[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_48.4bpp");
+static const u8 sSeviperGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_48.4bpp.lz");
 static const ax_sprite sSeviperSprites48[] = {
 	{sSeviperGfx48, ARRAY_COUNT(sSeviperGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx49[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_49.4bpp");
+static const u8 sSeviperGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_49.4bpp.lz");
 static const ax_sprite sSeviperSprites49[] = {
 	{sSeviperGfx49, ARRAY_COUNT(sSeviperGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx50[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_50.4bpp");
+static const u8 sSeviperGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_50.4bpp.lz");
 static const ax_sprite sSeviperSprites50[] = {
 	{sSeviperGfx50, ARRAY_COUNT(sSeviperGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx51[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_51.4bpp");
+static const u8 sSeviperGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_51.4bpp.lz");
 static const ax_sprite sSeviperSprites51[] = {
 	{sSeviperGfx51, ARRAY_COUNT(sSeviperGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx52[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_52.4bpp");
+static const u8 sSeviperGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_52.4bpp.lz");
 static const ax_sprite sSeviperSprites52[] = {
 	{sSeviperGfx52, ARRAY_COUNT(sSeviperGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx53[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_53.4bpp");
+static const u8 sSeviperGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_53.4bpp.lz");
 static const ax_sprite sSeviperSprites53[] = {
 	{sSeviperGfx53, ARRAY_COUNT(sSeviperGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx54[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_54.4bpp");
-static const u8 sSeviperGfx54_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_54_1.4bpp");
-static const u8 sSeviperGfx54_2[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_54_2.4bpp");
+static const u8 sSeviperGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_54.4bpp.lz");
+static const u8 sSeviperGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_54_1.4bpp.lz");
+static const u8 sSeviperGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_54_2.4bpp.lz");
 static const ax_sprite sSeviperSprites54[] = {
 	{sSeviperGfx54, ARRAY_COUNT(sSeviperGfx54)}, 
 	{NULL, 32}, 
@@ -2466,35 +2466,35 @@ static const ax_sprite sSeviperSprites54[] = {
 	{sSeviperGfx54_2, ARRAY_COUNT(sSeviperGfx54_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx55[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_55.4bpp");
-static const u8 sSeviperGfx55_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_55_1.4bpp");
+static const u8 sSeviperGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_55.4bpp.lz");
+static const u8 sSeviperGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_55_1.4bpp.lz");
 static const ax_sprite sSeviperSprites55[] = {
 	{sSeviperGfx55, ARRAY_COUNT(sSeviperGfx55)}, 
 	{NULL, 32}, 
 	{sSeviperGfx55_1, ARRAY_COUNT(sSeviperGfx55_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx56[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_56.4bpp");
-static const u8 sSeviperGfx56_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_56_1.4bpp");
+static const u8 sSeviperGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_56.4bpp.lz");
+static const u8 sSeviperGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_56_1.4bpp.lz");
 static const ax_sprite sSeviperSprites56[] = {
 	{sSeviperGfx56, ARRAY_COUNT(sSeviperGfx56)}, 
 	{NULL, 32}, 
 	{sSeviperGfx56_1, ARRAY_COUNT(sSeviperGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx57[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_57.4bpp");
+static const u8 sSeviperGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_57.4bpp.lz");
 static const ax_sprite sSeviperSprites57[] = {
 	{sSeviperGfx57, ARRAY_COUNT(sSeviperGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx58[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_58.4bpp");
+static const u8 sSeviperGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_58.4bpp.lz");
 static const ax_sprite sSeviperSprites58[] = {
 	{sSeviperGfx58, ARRAY_COUNT(sSeviperGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx59[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_59.4bpp");
-static const u8 sSeviperGfx59_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_59_1.4bpp");
-static const u8 sSeviperGfx59_2[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_59_2.4bpp");
+static const u8 sSeviperGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_59.4bpp.lz");
+static const u8 sSeviperGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_59_1.4bpp.lz");
+static const u8 sSeviperGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_59_2.4bpp.lz");
 static const ax_sprite sSeviperSprites59[] = {
 	{sSeviperGfx59, ARRAY_COUNT(sSeviperGfx59)}, 
 	{NULL, 32}, 
@@ -2503,30 +2503,30 @@ static const ax_sprite sSeviperSprites59[] = {
 	{sSeviperGfx59_2, ARRAY_COUNT(sSeviperGfx59_2)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx60[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_60.4bpp");
+static const u8 sSeviperGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_60.4bpp.lz");
 static const ax_sprite sSeviperSprites60[] = {
 	{sSeviperGfx60, ARRAY_COUNT(sSeviperGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx61[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_61.4bpp");
+static const u8 sSeviperGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_61.4bpp.lz");
 static const ax_sprite sSeviperSprites61[] = {
 	{sSeviperGfx61, ARRAY_COUNT(sSeviperGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx62[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_62.4bpp");
+static const u8 sSeviperGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_62.4bpp.lz");
 static const ax_sprite sSeviperSprites62[] = {
 	{sSeviperGfx62, ARRAY_COUNT(sSeviperGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx63[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_63.4bpp");
+static const u8 sSeviperGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_63.4bpp.lz");
 static const ax_sprite sSeviperSprites63[] = {
 	{sSeviperGfx63, ARRAY_COUNT(sSeviperGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx64[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_64.4bpp");
-static const u8 sSeviperGfx64_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_64_1.4bpp");
-static const u8 sSeviperGfx64_2[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_64_2.4bpp");
-static const u8 sSeviperGfx64_3[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_64_3.4bpp");
+static const u8 sSeviperGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_64.4bpp.lz");
+static const u8 sSeviperGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_64_1.4bpp.lz");
+static const u8 sSeviperGfx64_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_64_2.4bpp.lz");
+static const u8 sSeviperGfx64_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_64_3.4bpp.lz");
 static const ax_sprite sSeviperSprites64[] = {
 	{NULL, 32}, 
 	{sSeviperGfx64, ARRAY_COUNT(sSeviperGfx64)}, 
@@ -2538,474 +2538,474 @@ static const ax_sprite sSeviperSprites64[] = {
 	{sSeviperGfx64_3, ARRAY_COUNT(sSeviperGfx64_3)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx65[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_65.4bpp");
+static const u8 sSeviperGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_65.4bpp.lz");
 static const ax_sprite sSeviperSprites65[] = {
 	{sSeviperGfx65, ARRAY_COUNT(sSeviperGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx66[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_66.4bpp");
+static const u8 sSeviperGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_66.4bpp.lz");
 static const ax_sprite sSeviperSprites66[] = {
 	{sSeviperGfx66, ARRAY_COUNT(sSeviperGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx67[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_67.4bpp");
+static const u8 sSeviperGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_67.4bpp.lz");
 static const ax_sprite sSeviperSprites67[] = {
 	{sSeviperGfx67, ARRAY_COUNT(sSeviperGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx68[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_68.4bpp");
+static const u8 sSeviperGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_68.4bpp.lz");
 static const ax_sprite sSeviperSprites68[] = {
 	{sSeviperGfx68, ARRAY_COUNT(sSeviperGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx69[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_69.4bpp");
+static const u8 sSeviperGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_69.4bpp.lz");
 static const ax_sprite sSeviperSprites69[] = {
 	{sSeviperGfx69, ARRAY_COUNT(sSeviperGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx70[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_70.4bpp");
+static const u8 sSeviperGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_70.4bpp.lz");
 static const ax_sprite sSeviperSprites70[] = {
 	{sSeviperGfx70, ARRAY_COUNT(sSeviperGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx71[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_71.4bpp");
+static const u8 sSeviperGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_71.4bpp.lz");
 static const ax_sprite sSeviperSprites71[] = {
 	{sSeviperGfx71, ARRAY_COUNT(sSeviperGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx72[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_72.4bpp");
+static const u8 sSeviperGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_72.4bpp.lz");
 static const ax_sprite sSeviperSprites72[] = {
 	{sSeviperGfx72, ARRAY_COUNT(sSeviperGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx73[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_73.4bpp");
+static const u8 sSeviperGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_73.4bpp.lz");
 static const ax_sprite sSeviperSprites73[] = {
 	{sSeviperGfx73, ARRAY_COUNT(sSeviperGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx74[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_74.4bpp");
+static const u8 sSeviperGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_74.4bpp.lz");
 static const ax_sprite sSeviperSprites74[] = {
 	{sSeviperGfx74, ARRAY_COUNT(sSeviperGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx75[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_75.4bpp");
-static const u8 sSeviperGfx75_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_75_1.4bpp");
+static const u8 sSeviperGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_75.4bpp.lz");
+static const u8 sSeviperGfx75_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_75_1.4bpp.lz");
 static const ax_sprite sSeviperSprites75[] = {
 	{sSeviperGfx75, ARRAY_COUNT(sSeviperGfx75)}, 
 	{NULL, 32}, 
 	{sSeviperGfx75_1, ARRAY_COUNT(sSeviperGfx75_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx76[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_76.4bpp");
+static const u8 sSeviperGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_76.4bpp.lz");
 static const ax_sprite sSeviperSprites76[] = {
 	{sSeviperGfx76, ARRAY_COUNT(sSeviperGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx77[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_77.4bpp");
+static const u8 sSeviperGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_77.4bpp.lz");
 static const ax_sprite sSeviperSprites77[] = {
 	{sSeviperGfx77, ARRAY_COUNT(sSeviperGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx78[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_78.4bpp");
+static const u8 sSeviperGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_78.4bpp.lz");
 static const ax_sprite sSeviperSprites78[] = {
 	{sSeviperGfx78, ARRAY_COUNT(sSeviperGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx79[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_79.4bpp");
+static const u8 sSeviperGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_79.4bpp.lz");
 static const ax_sprite sSeviperSprites79[] = {
 	{sSeviperGfx79, ARRAY_COUNT(sSeviperGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx80[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_80.4bpp");
+static const u8 sSeviperGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_80.4bpp.lz");
 static const ax_sprite sSeviperSprites80[] = {
 	{sSeviperGfx80, ARRAY_COUNT(sSeviperGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx81[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_81.4bpp");
+static const u8 sSeviperGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_81.4bpp.lz");
 static const ax_sprite sSeviperSprites81[] = {
 	{sSeviperGfx81, ARRAY_COUNT(sSeviperGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx82[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_82.4bpp");
+static const u8 sSeviperGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_82.4bpp.lz");
 static const ax_sprite sSeviperSprites82[] = {
 	{sSeviperGfx82, ARRAY_COUNT(sSeviperGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx83[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_83.4bpp");
+static const u8 sSeviperGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_83.4bpp.lz");
 static const ax_sprite sSeviperSprites83[] = {
 	{sSeviperGfx83, ARRAY_COUNT(sSeviperGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx84[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_84.4bpp");
+static const u8 sSeviperGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_84.4bpp.lz");
 static const ax_sprite sSeviperSprites84[] = {
 	{sSeviperGfx84, ARRAY_COUNT(sSeviperGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx85[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_85.4bpp");
+static const u8 sSeviperGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_85.4bpp.lz");
 static const ax_sprite sSeviperSprites85[] = {
 	{NULL, 32}, 
 	{sSeviperGfx85, ARRAY_COUNT(sSeviperGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx86[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_86.4bpp");
+static const u8 sSeviperGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_86.4bpp.lz");
 static const ax_sprite sSeviperSprites86[] = {
 	{sSeviperGfx86, ARRAY_COUNT(sSeviperGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx87[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_87.4bpp");
+static const u8 sSeviperGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_87.4bpp.lz");
 static const ax_sprite sSeviperSprites87[] = {
 	{sSeviperGfx87, ARRAY_COUNT(sSeviperGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx88[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_88.4bpp");
+static const u8 sSeviperGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_88.4bpp.lz");
 static const ax_sprite sSeviperSprites88[] = {
 	{sSeviperGfx88, ARRAY_COUNT(sSeviperGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx89[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_89.4bpp");
+static const u8 sSeviperGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_89.4bpp.lz");
 static const ax_sprite sSeviperSprites89[] = {
 	{sSeviperGfx89, ARRAY_COUNT(sSeviperGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx90[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_90.4bpp");
+static const u8 sSeviperGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_90.4bpp.lz");
 static const ax_sprite sSeviperSprites90[] = {
 	{sSeviperGfx90, ARRAY_COUNT(sSeviperGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx91[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_91.4bpp");
-static const u8 sSeviperGfx91_1[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_91_1.4bpp");
+static const u8 sSeviperGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_91.4bpp.lz");
+static const u8 sSeviperGfx91_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_91_1.4bpp.lz");
 static const ax_sprite sSeviperSprites91[] = {
 	{sSeviperGfx91, ARRAY_COUNT(sSeviperGfx91)}, 
 	{NULL, 32}, 
 	{sSeviperGfx91_1, ARRAY_COUNT(sSeviperGfx91_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx92[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_92.4bpp");
+static const u8 sSeviperGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_92.4bpp.lz");
 static const ax_sprite sSeviperSprites92[] = {
 	{sSeviperGfx92, ARRAY_COUNT(sSeviperGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx93[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_93.4bpp");
+static const u8 sSeviperGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_93.4bpp.lz");
 static const ax_sprite sSeviperSprites93[] = {
 	{sSeviperGfx93, ARRAY_COUNT(sSeviperGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx94[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_94.4bpp");
+static const u8 sSeviperGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_94.4bpp.lz");
 static const ax_sprite sSeviperSprites94[] = {
 	{sSeviperGfx94, ARRAY_COUNT(sSeviperGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx95[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_95.4bpp");
+static const u8 sSeviperGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_95.4bpp.lz");
 static const ax_sprite sSeviperSprites95[] = {
 	{sSeviperGfx95, ARRAY_COUNT(sSeviperGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx96[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_96.4bpp");
+static const u8 sSeviperGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_96.4bpp.lz");
 static const ax_sprite sSeviperSprites96[] = {
 	{sSeviperGfx96, ARRAY_COUNT(sSeviperGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx97[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_97.4bpp");
+static const u8 sSeviperGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_97.4bpp.lz");
 static const ax_sprite sSeviperSprites97[] = {
 	{sSeviperGfx97, ARRAY_COUNT(sSeviperGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx98[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_98.4bpp");
+static const u8 sSeviperGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_98.4bpp.lz");
 static const ax_sprite sSeviperSprites98[] = {
 	{sSeviperGfx98, ARRAY_COUNT(sSeviperGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx99[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_99.4bpp");
+static const u8 sSeviperGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_99.4bpp.lz");
 static const ax_sprite sSeviperSprites99[] = {
 	{sSeviperGfx99, ARRAY_COUNT(sSeviperGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx100[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_100.4bpp");
+static const u8 sSeviperGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_100.4bpp.lz");
 static const ax_sprite sSeviperSprites100[] = {
 	{sSeviperGfx100, ARRAY_COUNT(sSeviperGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx101[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_101.4bpp");
+static const u8 sSeviperGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_101.4bpp.lz");
 static const ax_sprite sSeviperSprites101[] = {
 	{sSeviperGfx101, ARRAY_COUNT(sSeviperGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx102[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_102.4bpp");
+static const u8 sSeviperGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_102.4bpp.lz");
 static const ax_sprite sSeviperSprites102[] = {
 	{sSeviperGfx102, ARRAY_COUNT(sSeviperGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx103[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_103.4bpp");
+static const u8 sSeviperGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_103.4bpp.lz");
 static const ax_sprite sSeviperSprites103[] = {
 	{sSeviperGfx103, ARRAY_COUNT(sSeviperGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx104[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_104.4bpp");
+static const u8 sSeviperGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_104.4bpp.lz");
 static const ax_sprite sSeviperSprites104[] = {
 	{sSeviperGfx104, ARRAY_COUNT(sSeviperGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx105[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_105.4bpp");
+static const u8 sSeviperGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_105.4bpp.lz");
 static const ax_sprite sSeviperSprites105[] = {
 	{sSeviperGfx105, ARRAY_COUNT(sSeviperGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx106[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_106.4bpp");
+static const u8 sSeviperGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_106.4bpp.lz");
 static const ax_sprite sSeviperSprites106[] = {
 	{sSeviperGfx106, ARRAY_COUNT(sSeviperGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx107[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_107.4bpp");
+static const u8 sSeviperGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_107.4bpp.lz");
 static const ax_sprite sSeviperSprites107[] = {
 	{sSeviperGfx107, ARRAY_COUNT(sSeviperGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx108[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_108.4bpp");
+static const u8 sSeviperGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_108.4bpp.lz");
 static const ax_sprite sSeviperSprites108[] = {
 	{sSeviperGfx108, ARRAY_COUNT(sSeviperGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx109[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_109.4bpp");
+static const u8 sSeviperGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_109.4bpp.lz");
 static const ax_sprite sSeviperSprites109[] = {
 	{sSeviperGfx109, ARRAY_COUNT(sSeviperGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx110[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_110.4bpp");
+static const u8 sSeviperGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_110.4bpp.lz");
 static const ax_sprite sSeviperSprites110[] = {
 	{sSeviperGfx110, ARRAY_COUNT(sSeviperGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx111[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_111.4bpp");
+static const u8 sSeviperGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_111.4bpp.lz");
 static const ax_sprite sSeviperSprites111[] = {
 	{sSeviperGfx111, ARRAY_COUNT(sSeviperGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx112[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_112.4bpp");
+static const u8 sSeviperGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_112.4bpp.lz");
 static const ax_sprite sSeviperSprites112[] = {
 	{sSeviperGfx112, ARRAY_COUNT(sSeviperGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx113[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_113.4bpp");
+static const u8 sSeviperGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_113.4bpp.lz");
 static const ax_sprite sSeviperSprites113[] = {
 	{sSeviperGfx113, ARRAY_COUNT(sSeviperGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx114[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_114.4bpp");
+static const u8 sSeviperGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_114.4bpp.lz");
 static const ax_sprite sSeviperSprites114[] = {
 	{sSeviperGfx114, ARRAY_COUNT(sSeviperGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx115[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_115.4bpp");
+static const u8 sSeviperGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_115.4bpp.lz");
 static const ax_sprite sSeviperSprites115[] = {
 	{sSeviperGfx115, ARRAY_COUNT(sSeviperGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx116[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_116.4bpp");
+static const u8 sSeviperGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_116.4bpp.lz");
 static const ax_sprite sSeviperSprites116[] = {
 	{sSeviperGfx116, ARRAY_COUNT(sSeviperGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx117[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_117.4bpp");
+static const u8 sSeviperGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_117.4bpp.lz");
 static const ax_sprite sSeviperSprites117[] = {
 	{sSeviperGfx117, ARRAY_COUNT(sSeviperGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx118[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_118.4bpp");
+static const u8 sSeviperGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_118.4bpp.lz");
 static const ax_sprite sSeviperSprites118[] = {
 	{sSeviperGfx118, ARRAY_COUNT(sSeviperGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx119[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_119.4bpp");
+static const u8 sSeviperGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_119.4bpp.lz");
 static const ax_sprite sSeviperSprites119[] = {
 	{sSeviperGfx119, ARRAY_COUNT(sSeviperGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx120[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_120.4bpp");
+static const u8 sSeviperGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_120.4bpp.lz");
 static const ax_sprite sSeviperSprites120[] = {
 	{sSeviperGfx120, ARRAY_COUNT(sSeviperGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx121[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_121.4bpp");
+static const u8 sSeviperGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_121.4bpp.lz");
 static const ax_sprite sSeviperSprites121[] = {
 	{sSeviperGfx121, ARRAY_COUNT(sSeviperGfx121)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx122[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_122.4bpp");
+static const u8 sSeviperGfx122[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_122.4bpp.lz");
 static const ax_sprite sSeviperSprites122[] = {
 	{sSeviperGfx122, ARRAY_COUNT(sSeviperGfx122)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx123[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_123.4bpp");
+static const u8 sSeviperGfx123[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_123.4bpp.lz");
 static const ax_sprite sSeviperSprites123[] = {
 	{sSeviperGfx123, ARRAY_COUNT(sSeviperGfx123)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx124[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_124.4bpp");
+static const u8 sSeviperGfx124[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_124.4bpp.lz");
 static const ax_sprite sSeviperSprites124[] = {
 	{sSeviperGfx124, ARRAY_COUNT(sSeviperGfx124)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx125[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_125.4bpp");
+static const u8 sSeviperGfx125[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_125.4bpp.lz");
 static const ax_sprite sSeviperSprites125[] = {
 	{sSeviperGfx125, ARRAY_COUNT(sSeviperGfx125)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx126[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_126.4bpp");
+static const u8 sSeviperGfx126[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_126.4bpp.lz");
 static const ax_sprite sSeviperSprites126[] = {
 	{sSeviperGfx126, ARRAY_COUNT(sSeviperGfx126)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx127[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_127.4bpp");
+static const u8 sSeviperGfx127[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_127.4bpp.lz");
 static const ax_sprite sSeviperSprites127[] = {
 	{sSeviperGfx127, ARRAY_COUNT(sSeviperGfx127)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx128[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_128.4bpp");
+static const u8 sSeviperGfx128[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_128.4bpp.lz");
 static const ax_sprite sSeviperSprites128[] = {
 	{sSeviperGfx128, ARRAY_COUNT(sSeviperGfx128)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx129[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_129.4bpp");
+static const u8 sSeviperGfx129[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_129.4bpp.lz");
 static const ax_sprite sSeviperSprites129[] = {
 	{sSeviperGfx129, ARRAY_COUNT(sSeviperGfx129)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx130[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_130.4bpp");
+static const u8 sSeviperGfx130[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_130.4bpp.lz");
 static const ax_sprite sSeviperSprites130[] = {
 	{sSeviperGfx130, ARRAY_COUNT(sSeviperGfx130)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx131[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_131.4bpp");
+static const u8 sSeviperGfx131[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_131.4bpp.lz");
 static const ax_sprite sSeviperSprites131[] = {
 	{sSeviperGfx131, ARRAY_COUNT(sSeviperGfx131)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx132[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_132.4bpp");
+static const u8 sSeviperGfx132[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_132.4bpp.lz");
 static const ax_sprite sSeviperSprites132[] = {
 	{sSeviperGfx132, ARRAY_COUNT(sSeviperGfx132)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx133[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_133.4bpp");
+static const u8 sSeviperGfx133[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_133.4bpp.lz");
 static const ax_sprite sSeviperSprites133[] = {
 	{sSeviperGfx133, ARRAY_COUNT(sSeviperGfx133)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx134[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_134.4bpp");
+static const u8 sSeviperGfx134[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_134.4bpp.lz");
 static const ax_sprite sSeviperSprites134[] = {
 	{sSeviperGfx134, ARRAY_COUNT(sSeviperGfx134)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx135[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_135.4bpp");
+static const u8 sSeviperGfx135[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_135.4bpp.lz");
 static const ax_sprite sSeviperSprites135[] = {
 	{sSeviperGfx135, ARRAY_COUNT(sSeviperGfx135)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx136[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_136.4bpp");
+static const u8 sSeviperGfx136[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_136.4bpp.lz");
 static const ax_sprite sSeviperSprites136[] = {
 	{sSeviperGfx136, ARRAY_COUNT(sSeviperGfx136)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx137[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_137.4bpp");
+static const u8 sSeviperGfx137[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_137.4bpp.lz");
 static const ax_sprite sSeviperSprites137[] = {
 	{sSeviperGfx137, ARRAY_COUNT(sSeviperGfx137)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx138[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_138.4bpp");
+static const u8 sSeviperGfx138[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_138.4bpp.lz");
 static const ax_sprite sSeviperSprites138[] = {
 	{sSeviperGfx138, ARRAY_COUNT(sSeviperGfx138)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx139[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_139.4bpp");
+static const u8 sSeviperGfx139[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_139.4bpp.lz");
 static const ax_sprite sSeviperSprites139[] = {
 	{sSeviperGfx139, ARRAY_COUNT(sSeviperGfx139)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx140[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_140.4bpp");
+static const u8 sSeviperGfx140[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_140.4bpp.lz");
 static const ax_sprite sSeviperSprites140[] = {
 	{sSeviperGfx140, ARRAY_COUNT(sSeviperGfx140)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx141[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_141.4bpp");
+static const u8 sSeviperGfx141[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_141.4bpp.lz");
 static const ax_sprite sSeviperSprites141[] = {
 	{sSeviperGfx141, ARRAY_COUNT(sSeviperGfx141)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx142[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_142.4bpp");
+static const u8 sSeviperGfx142[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_142.4bpp.lz");
 static const ax_sprite sSeviperSprites142[] = {
 	{sSeviperGfx142, ARRAY_COUNT(sSeviperGfx142)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx143[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_143.4bpp");
+static const u8 sSeviperGfx143[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_143.4bpp.lz");
 static const ax_sprite sSeviperSprites143[] = {
 	{sSeviperGfx143, ARRAY_COUNT(sSeviperGfx143)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx144[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_144.4bpp");
+static const u8 sSeviperGfx144[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_144.4bpp.lz");
 static const ax_sprite sSeviperSprites144[] = {
 	{sSeviperGfx144, ARRAY_COUNT(sSeviperGfx144)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx145[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_145.4bpp");
+static const u8 sSeviperGfx145[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_145.4bpp.lz");
 static const ax_sprite sSeviperSprites145[] = {
 	{sSeviperGfx145, ARRAY_COUNT(sSeviperGfx145)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx146[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_146.4bpp");
+static const u8 sSeviperGfx146[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_146.4bpp.lz");
 static const ax_sprite sSeviperSprites146[] = {
 	{sSeviperGfx146, ARRAY_COUNT(sSeviperGfx146)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx147[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_147.4bpp");
+static const u8 sSeviperGfx147[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_147.4bpp.lz");
 static const ax_sprite sSeviperSprites147[] = {
 	{sSeviperGfx147, ARRAY_COUNT(sSeviperGfx147)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx148[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_148.4bpp");
+static const u8 sSeviperGfx148[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_148.4bpp.lz");
 static const ax_sprite sSeviperSprites148[] = {
 	{sSeviperGfx148, ARRAY_COUNT(sSeviperGfx148)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx149[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_149.4bpp");
+static const u8 sSeviperGfx149[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_149.4bpp.lz");
 static const ax_sprite sSeviperSprites149[] = {
 	{sSeviperGfx149, ARRAY_COUNT(sSeviperGfx149)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx150[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_150.4bpp");
+static const u8 sSeviperGfx150[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_150.4bpp.lz");
 static const ax_sprite sSeviperSprites150[] = {
 	{sSeviperGfx150, ARRAY_COUNT(sSeviperGfx150)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx151[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_151.4bpp");
+static const u8 sSeviperGfx151[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_151.4bpp.lz");
 static const ax_sprite sSeviperSprites151[] = {
 	{sSeviperGfx151, ARRAY_COUNT(sSeviperGfx151)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx152[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_152.4bpp");
+static const u8 sSeviperGfx152[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_152.4bpp.lz");
 static const ax_sprite sSeviperSprites152[] = {
 	{sSeviperGfx152, ARRAY_COUNT(sSeviperGfx152)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx153[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_153.4bpp");
+static const u8 sSeviperGfx153[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_153.4bpp.lz");
 static const ax_sprite sSeviperSprites153[] = {
 	{sSeviperGfx153, ARRAY_COUNT(sSeviperGfx153)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx154[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_154.4bpp");
+static const u8 sSeviperGfx154[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_154.4bpp.lz");
 static const ax_sprite sSeviperSprites154[] = {
 	{sSeviperGfx154, ARRAY_COUNT(sSeviperGfx154)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx155[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_155.4bpp");
+static const u8 sSeviperGfx155[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_155.4bpp.lz");
 static const ax_sprite sSeviperSprites155[] = {
 	{sSeviperGfx155, ARRAY_COUNT(sSeviperGfx155)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx156[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_156.4bpp");
+static const u8 sSeviperGfx156[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_156.4bpp.lz");
 static const ax_sprite sSeviperSprites156[] = {
 	{sSeviperGfx156, ARRAY_COUNT(sSeviperGfx156)}, 
 	{NULL, 0}
 };
-static const u8 sSeviperGfx157[] = INCBIN_U8("graphics/ax/mon/seviper/sprite_157.4bpp");
+static const u8 sSeviperGfx157[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seviper/sprite_157.4bpp.lz");
 static const ax_sprite sSeviperSprites157[] = {
 	{sSeviperGfx157, ARRAY_COUNT(sSeviperGfx157)}, 
 	{NULL, 0}

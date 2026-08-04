@@ -2119,88 +2119,88 @@ static const ax_anim sChanseyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sChanseyGfx1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_1.4bpp");
+static const u8 sChanseyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_1.4bpp.lz");
 static const ax_sprite sChanseySprites1[] = {
 	{sChanseyGfx1, ARRAY_COUNT(sChanseyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_2.4bpp");
+static const u8 sChanseyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_2.4bpp.lz");
 static const ax_sprite sChanseySprites2[] = {
 	{sChanseyGfx2, ARRAY_COUNT(sChanseyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_3.4bpp");
+static const u8 sChanseyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_3.4bpp.lz");
 static const ax_sprite sChanseySprites3[] = {
 	{sChanseyGfx3, ARRAY_COUNT(sChanseyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx4[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_4.4bpp");
+static const u8 sChanseyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_4.4bpp.lz");
 static const ax_sprite sChanseySprites4[] = {
 	{sChanseyGfx4, ARRAY_COUNT(sChanseyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx5[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_5.4bpp");
+static const u8 sChanseyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_5.4bpp.lz");
 static const ax_sprite sChanseySprites5[] = {
 	{sChanseyGfx5, ARRAY_COUNT(sChanseyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx6[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_6.4bpp");
+static const u8 sChanseyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_6.4bpp.lz");
 static const ax_sprite sChanseySprites6[] = {
 	{sChanseyGfx6, ARRAY_COUNT(sChanseyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx7[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_7.4bpp");
+static const u8 sChanseyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_7.4bpp.lz");
 static const ax_sprite sChanseySprites7[] = {
 	{sChanseyGfx7, ARRAY_COUNT(sChanseyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx8[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_8.4bpp");
+static const u8 sChanseyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_8.4bpp.lz");
 static const ax_sprite sChanseySprites8[] = {
 	{sChanseyGfx8, ARRAY_COUNT(sChanseyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx9[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_9.4bpp");
+static const u8 sChanseyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_9.4bpp.lz");
 static const ax_sprite sChanseySprites9[] = {
 	{sChanseyGfx9, ARRAY_COUNT(sChanseyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx10[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_10.4bpp");
+static const u8 sChanseyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_10.4bpp.lz");
 static const ax_sprite sChanseySprites10[] = {
 	{sChanseyGfx10, ARRAY_COUNT(sChanseyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx11[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_11.4bpp");
+static const u8 sChanseyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_11.4bpp.lz");
 static const ax_sprite sChanseySprites11[] = {
 	{sChanseyGfx11, ARRAY_COUNT(sChanseyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx12[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_12.4bpp");
+static const u8 sChanseyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_12.4bpp.lz");
 static const ax_sprite sChanseySprites12[] = {
 	{sChanseyGfx12, ARRAY_COUNT(sChanseyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx13[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_13.4bpp");
+static const u8 sChanseyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_13.4bpp.lz");
 static const ax_sprite sChanseySprites13[] = {
 	{sChanseyGfx13, ARRAY_COUNT(sChanseyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx14[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_14.4bpp");
+static const u8 sChanseyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_14.4bpp.lz");
 static const ax_sprite sChanseySprites14[] = {
 	{sChanseyGfx14, ARRAY_COUNT(sChanseyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx15[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_15.4bpp");
+static const u8 sChanseyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_15.4bpp.lz");
 static const ax_sprite sChanseySprites15[] = {
 	{sChanseyGfx15, ARRAY_COUNT(sChanseyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx16[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_16.4bpp");
+static const u8 sChanseyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_16.4bpp.lz");
 static const ax_sprite sChanseySprites16[] = {
 	{sChanseyGfx16, ARRAY_COUNT(sChanseyGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx17[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_17.4bpp");
-static const u8 sChanseyGfx17_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_17_1.4bpp");
+static const u8 sChanseyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_17.4bpp.lz");
+static const u8 sChanseyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_17_1.4bpp.lz");
 static const ax_sprite sChanseySprites17[] = {
 	{NULL, 32}, 
 	{sChanseyGfx17, ARRAY_COUNT(sChanseyGfx17)}, 
@@ -2208,14 +2208,14 @@ static const ax_sprite sChanseySprites17[] = {
 	{sChanseyGfx17_1, ARRAY_COUNT(sChanseyGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx18[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_18.4bpp");
+static const u8 sChanseyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_18.4bpp.lz");
 static const ax_sprite sChanseySprites18[] = {
 	{sChanseyGfx18, ARRAY_COUNT(sChanseyGfx18)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx19[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_19.4bpp");
-static const u8 sChanseyGfx19_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_19_1.4bpp");
+static const u8 sChanseyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_19.4bpp.lz");
+static const u8 sChanseyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_19_1.4bpp.lz");
 static const ax_sprite sChanseySprites19[] = {
 	{NULL, 32}, 
 	{sChanseyGfx19, ARRAY_COUNT(sChanseyGfx19)}, 
@@ -2224,8 +2224,8 @@ static const ax_sprite sChanseySprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx20[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_20.4bpp");
-static const u8 sChanseyGfx20_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_20_1.4bpp");
+static const u8 sChanseyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_20.4bpp.lz");
+static const u8 sChanseyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_20_1.4bpp.lz");
 static const ax_sprite sChanseySprites20[] = {
 	{NULL, 32}, 
 	{sChanseyGfx20, ARRAY_COUNT(sChanseyGfx20)}, 
@@ -2233,9 +2233,9 @@ static const ax_sprite sChanseySprites20[] = {
 	{sChanseyGfx20_1, ARRAY_COUNT(sChanseyGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx21[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_21.4bpp");
-static const u8 sChanseyGfx21_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_21_1.4bpp");
-static const u8 sChanseyGfx21_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_21_2.4bpp");
+static const u8 sChanseyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_21.4bpp.lz");
+static const u8 sChanseyGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_21_1.4bpp.lz");
+static const u8 sChanseyGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_21_2.4bpp.lz");
 static const ax_sprite sChanseySprites21[] = {
 	{sChanseyGfx21, ARRAY_COUNT(sChanseyGfx21)}, 
 	{NULL, 32}, 
@@ -2245,17 +2245,17 @@ static const ax_sprite sChanseySprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx22[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_22.4bpp");
-static const u8 sChanseyGfx22_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_22_1.4bpp");
+static const u8 sChanseyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_22.4bpp.lz");
+static const u8 sChanseyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_22_1.4bpp.lz");
 static const ax_sprite sChanseySprites22[] = {
 	{sChanseyGfx22, ARRAY_COUNT(sChanseyGfx22)}, 
 	{NULL, 32}, 
 	{sChanseyGfx22_1, ARRAY_COUNT(sChanseyGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx23[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_23.4bpp");
-static const u8 sChanseyGfx23_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_23_1.4bpp");
-static const u8 sChanseyGfx23_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_23_2.4bpp");
+static const u8 sChanseyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_23.4bpp.lz");
+static const u8 sChanseyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_23_1.4bpp.lz");
+static const u8 sChanseyGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_23_2.4bpp.lz");
 static const ax_sprite sChanseySprites23[] = {
 	{sChanseyGfx23, ARRAY_COUNT(sChanseyGfx23)}, 
 	{NULL, 32}, 
@@ -2265,13 +2265,13 @@ static const ax_sprite sChanseySprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx24[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_24.4bpp");
+static const u8 sChanseyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_24.4bpp.lz");
 static const ax_sprite sChanseySprites24[] = {
 	{sChanseyGfx24, ARRAY_COUNT(sChanseyGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx25[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_25.4bpp");
-static const u8 sChanseyGfx25_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_25_1.4bpp");
+static const u8 sChanseyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_25.4bpp.lz");
+static const u8 sChanseyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_25_1.4bpp.lz");
 static const ax_sprite sChanseySprites25[] = {
 	{sChanseyGfx25, ARRAY_COUNT(sChanseyGfx25)}, 
 	{NULL, 32}, 
@@ -2279,10 +2279,10 @@ static const ax_sprite sChanseySprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx26[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_26.4bpp");
-static const u8 sChanseyGfx26_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_26_1.4bpp");
-static const u8 sChanseyGfx26_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_26_2.4bpp");
-static const u8 sChanseyGfx26_3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_26_3.4bpp");
+static const u8 sChanseyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_26.4bpp.lz");
+static const u8 sChanseyGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_26_1.4bpp.lz");
+static const u8 sChanseyGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_26_2.4bpp.lz");
+static const u8 sChanseyGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_26_3.4bpp.lz");
 static const ax_sprite sChanseySprites26[] = {
 	{sChanseyGfx26, ARRAY_COUNT(sChanseyGfx26)}, 
 	{NULL, 32}, 
@@ -2294,10 +2294,10 @@ static const ax_sprite sChanseySprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx27[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_27.4bpp");
-static const u8 sChanseyGfx27_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_27_1.4bpp");
-static const u8 sChanseyGfx27_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_27_2.4bpp");
-static const u8 sChanseyGfx27_3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_27_3.4bpp");
+static const u8 sChanseyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_27.4bpp.lz");
+static const u8 sChanseyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_27_1.4bpp.lz");
+static const u8 sChanseyGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_27_2.4bpp.lz");
+static const u8 sChanseyGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_27_3.4bpp.lz");
 static const ax_sprite sChanseySprites27[] = {
 	{sChanseyGfx27, ARRAY_COUNT(sChanseyGfx27)}, 
 	{NULL, 32}, 
@@ -2309,10 +2309,10 @@ static const ax_sprite sChanseySprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx28[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_28.4bpp");
-static const u8 sChanseyGfx28_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_28_1.4bpp");
-static const u8 sChanseyGfx28_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_28_2.4bpp");
-static const u8 sChanseyGfx28_3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_28_3.4bpp");
+static const u8 sChanseyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_28.4bpp.lz");
+static const u8 sChanseyGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_28_1.4bpp.lz");
+static const u8 sChanseyGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_28_2.4bpp.lz");
+static const u8 sChanseyGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_28_3.4bpp.lz");
 static const ax_sprite sChanseySprites28[] = {
 	{sChanseyGfx28, ARRAY_COUNT(sChanseyGfx28)}, 
 	{NULL, 32}, 
@@ -2324,10 +2324,10 @@ static const ax_sprite sChanseySprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx29[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_29.4bpp");
-static const u8 sChanseyGfx29_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_29_1.4bpp");
-static const u8 sChanseyGfx29_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_29_2.4bpp");
-static const u8 sChanseyGfx29_3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_29_3.4bpp");
+static const u8 sChanseyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_29.4bpp.lz");
+static const u8 sChanseyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_29_1.4bpp.lz");
+static const u8 sChanseyGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_29_2.4bpp.lz");
+static const u8 sChanseyGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_29_3.4bpp.lz");
 static const ax_sprite sChanseySprites29[] = {
 	{sChanseyGfx29, ARRAY_COUNT(sChanseyGfx29)}, 
 	{NULL, 32}, 
@@ -2339,10 +2339,10 @@ static const ax_sprite sChanseySprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx30[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_30.4bpp");
-static const u8 sChanseyGfx30_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_30_1.4bpp");
-static const u8 sChanseyGfx30_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_30_2.4bpp");
-static const u8 sChanseyGfx30_3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_30_3.4bpp");
+static const u8 sChanseyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_30.4bpp.lz");
+static const u8 sChanseyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_30_1.4bpp.lz");
+static const u8 sChanseyGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_30_2.4bpp.lz");
+static const u8 sChanseyGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_30_3.4bpp.lz");
 static const ax_sprite sChanseySprites30[] = {
 	{sChanseyGfx30, ARRAY_COUNT(sChanseyGfx30)}, 
 	{NULL, 32}, 
@@ -2354,10 +2354,10 @@ static const ax_sprite sChanseySprites30[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx31[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_31.4bpp");
-static const u8 sChanseyGfx31_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_31_1.4bpp");
-static const u8 sChanseyGfx31_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_31_2.4bpp");
-static const u8 sChanseyGfx31_3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_31_3.4bpp");
+static const u8 sChanseyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_31.4bpp.lz");
+static const u8 sChanseyGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_31_1.4bpp.lz");
+static const u8 sChanseyGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_31_2.4bpp.lz");
+static const u8 sChanseyGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_31_3.4bpp.lz");
 static const ax_sprite sChanseySprites31[] = {
 	{sChanseyGfx31, ARRAY_COUNT(sChanseyGfx31)}, 
 	{NULL, 32}, 
@@ -2369,10 +2369,10 @@ static const ax_sprite sChanseySprites31[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx32[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_32.4bpp");
-static const u8 sChanseyGfx32_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_32_1.4bpp");
-static const u8 sChanseyGfx32_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_32_2.4bpp");
-static const u8 sChanseyGfx32_3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_32_3.4bpp");
+static const u8 sChanseyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_32.4bpp.lz");
+static const u8 sChanseyGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_32_1.4bpp.lz");
+static const u8 sChanseyGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_32_2.4bpp.lz");
+static const u8 sChanseyGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_32_3.4bpp.lz");
 static const ax_sprite sChanseySprites32[] = {
 	{sChanseyGfx32, ARRAY_COUNT(sChanseyGfx32)}, 
 	{NULL, 32}, 
@@ -2384,10 +2384,10 @@ static const ax_sprite sChanseySprites32[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx33[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_33.4bpp");
-static const u8 sChanseyGfx33_1[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_33_1.4bpp");
-static const u8 sChanseyGfx33_2[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_33_2.4bpp");
-static const u8 sChanseyGfx33_3[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_33_3.4bpp");
+static const u8 sChanseyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_33.4bpp.lz");
+static const u8 sChanseyGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_33_1.4bpp.lz");
+static const u8 sChanseyGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_33_2.4bpp.lz");
+static const u8 sChanseyGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_33_3.4bpp.lz");
 static const ax_sprite sChanseySprites33[] = {
 	{sChanseyGfx33, ARRAY_COUNT(sChanseyGfx33)}, 
 	{NULL, 32}, 
@@ -2399,49 +2399,49 @@ static const ax_sprite sChanseySprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx34[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_34.4bpp");
+static const u8 sChanseyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_34.4bpp.lz");
 static const ax_sprite sChanseySprites34[] = {
 	{sChanseyGfx34, ARRAY_COUNT(sChanseyGfx34)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx35[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_35.4bpp");
+static const u8 sChanseyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_35.4bpp.lz");
 static const ax_sprite sChanseySprites35[] = {
 	{sChanseyGfx35, ARRAY_COUNT(sChanseyGfx35)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx36[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_36.4bpp");
+static const u8 sChanseyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_36.4bpp.lz");
 static const ax_sprite sChanseySprites36[] = {
 	{sChanseyGfx36, ARRAY_COUNT(sChanseyGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx37[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_37.4bpp");
+static const u8 sChanseyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_37.4bpp.lz");
 static const ax_sprite sChanseySprites37[] = {
 	{sChanseyGfx37, ARRAY_COUNT(sChanseyGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx38[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_38.4bpp");
+static const u8 sChanseyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_38.4bpp.lz");
 static const ax_sprite sChanseySprites38[] = {
 	{sChanseyGfx38, ARRAY_COUNT(sChanseyGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx39[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_39.4bpp");
+static const u8 sChanseyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_39.4bpp.lz");
 static const ax_sprite sChanseySprites39[] = {
 	{sChanseyGfx39, ARRAY_COUNT(sChanseyGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx40[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_40.4bpp");
+static const u8 sChanseyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_40.4bpp.lz");
 static const ax_sprite sChanseySprites40[] = {
 	{sChanseyGfx40, ARRAY_COUNT(sChanseyGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx41[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_41.4bpp");
+static const u8 sChanseyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_41.4bpp.lz");
 static const ax_sprite sChanseySprites41[] = {
 	{sChanseyGfx41, ARRAY_COUNT(sChanseyGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sChanseyGfx42[] = INCBIN_U8("graphics/ax/mon/chansey/sprite_42.4bpp");
+static const u8 sChanseyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chansey/sprite_42.4bpp.lz");
 static const ax_sprite sChanseySprites42[] = {
 	{sChanseyGfx42, ARRAY_COUNT(sChanseyGfx42)}, 
 	{NULL, 0}

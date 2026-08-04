@@ -2023,99 +2023,99 @@ static const ax_anim sSmoochumAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSmoochumGfx1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_1.4bpp");
+static const u8 sSmoochumGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_1.4bpp.lz");
 static const ax_sprite sSmoochumSprites1[] = {
 	{sSmoochumGfx1, ARRAY_COUNT(sSmoochumGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_2.4bpp");
+static const u8 sSmoochumGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites2[] = {
 	{sSmoochumGfx2, ARRAY_COUNT(sSmoochumGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx3[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_3.4bpp");
+static const u8 sSmoochumGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_3.4bpp.lz");
 static const ax_sprite sSmoochumSprites3[] = {
 	{sSmoochumGfx3, ARRAY_COUNT(sSmoochumGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx4[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_4.4bpp");
+static const u8 sSmoochumGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_4.4bpp.lz");
 static const ax_sprite sSmoochumSprites4[] = {
 	{sSmoochumGfx4, ARRAY_COUNT(sSmoochumGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx5[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_5.4bpp");
+static const u8 sSmoochumGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_5.4bpp.lz");
 static const ax_sprite sSmoochumSprites5[] = {
 	{sSmoochumGfx5, ARRAY_COUNT(sSmoochumGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx6[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_6.4bpp");
+static const u8 sSmoochumGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_6.4bpp.lz");
 static const ax_sprite sSmoochumSprites6[] = {
 	{sSmoochumGfx6, ARRAY_COUNT(sSmoochumGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx7[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_7.4bpp");
+static const u8 sSmoochumGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_7.4bpp.lz");
 static const ax_sprite sSmoochumSprites7[] = {
 	{sSmoochumGfx7, ARRAY_COUNT(sSmoochumGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx8[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_8.4bpp");
+static const u8 sSmoochumGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_8.4bpp.lz");
 static const ax_sprite sSmoochumSprites8[] = {
 	{sSmoochumGfx8, ARRAY_COUNT(sSmoochumGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx9[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_9.4bpp");
+static const u8 sSmoochumGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_9.4bpp.lz");
 static const ax_sprite sSmoochumSprites9[] = {
 	{sSmoochumGfx9, ARRAY_COUNT(sSmoochumGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx10[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_10.4bpp");
+static const u8 sSmoochumGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_10.4bpp.lz");
 static const ax_sprite sSmoochumSprites10[] = {
 	{sSmoochumGfx10, ARRAY_COUNT(sSmoochumGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx11[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_11.4bpp");
+static const u8 sSmoochumGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_11.4bpp.lz");
 static const ax_sprite sSmoochumSprites11[] = {
 	{sSmoochumGfx11, ARRAY_COUNT(sSmoochumGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx12[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_12.4bpp");
+static const u8 sSmoochumGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_12.4bpp.lz");
 static const ax_sprite sSmoochumSprites12[] = {
 	{sSmoochumGfx12, ARRAY_COUNT(sSmoochumGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx13[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_13.4bpp");
+static const u8 sSmoochumGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_13.4bpp.lz");
 static const ax_sprite sSmoochumSprites13[] = {
 	{sSmoochumGfx13, ARRAY_COUNT(sSmoochumGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx14[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_14.4bpp");
+static const u8 sSmoochumGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_14.4bpp.lz");
 static const ax_sprite sSmoochumSprites14[] = {
 	{sSmoochumGfx14, ARRAY_COUNT(sSmoochumGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx15[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_15.4bpp");
+static const u8 sSmoochumGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_15.4bpp.lz");
 static const ax_sprite sSmoochumSprites15[] = {
 	{sSmoochumGfx15, ARRAY_COUNT(sSmoochumGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx16[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_16.4bpp");
+static const u8 sSmoochumGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_16.4bpp.lz");
 static const ax_sprite sSmoochumSprites16[] = {
 	{sSmoochumGfx16, ARRAY_COUNT(sSmoochumGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx17[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_17.4bpp");
+static const u8 sSmoochumGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_17.4bpp.lz");
 static const ax_sprite sSmoochumSprites17[] = {
 	{sSmoochumGfx17, ARRAY_COUNT(sSmoochumGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx18[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_18.4bpp");
+static const u8 sSmoochumGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_18.4bpp.lz");
 static const ax_sprite sSmoochumSprites18[] = {
 	{sSmoochumGfx18, ARRAY_COUNT(sSmoochumGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx19[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_19.4bpp");
-static const u8 sSmoochumGfx19_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_19_1.4bpp");
-static const u8 sSmoochumGfx19_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_19_2.4bpp");
+static const u8 sSmoochumGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_19.4bpp.lz");
+static const u8 sSmoochumGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_19_1.4bpp.lz");
+static const u8 sSmoochumGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_19_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites19[] = {
 	{sSmoochumGfx19, ARRAY_COUNT(sSmoochumGfx19)}, 
 	{NULL, 32}, 
@@ -2125,9 +2125,9 @@ static const ax_sprite sSmoochumSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx20[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_20.4bpp");
-static const u8 sSmoochumGfx20_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_20_1.4bpp");
-static const u8 sSmoochumGfx20_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_20_2.4bpp");
+static const u8 sSmoochumGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_20.4bpp.lz");
+static const u8 sSmoochumGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_20_1.4bpp.lz");
+static const u8 sSmoochumGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_20_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites20[] = {
 	{sSmoochumGfx20, ARRAY_COUNT(sSmoochumGfx20)}, 
 	{NULL, 64}, 
@@ -2137,21 +2137,21 @@ static const ax_sprite sSmoochumSprites20[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx21[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_21.4bpp");
+static const u8 sSmoochumGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_21.4bpp.lz");
 static const ax_sprite sSmoochumSprites21[] = {
 	{sSmoochumGfx21, ARRAY_COUNT(sSmoochumGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx22[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_22.4bpp");
+static const u8 sSmoochumGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_22.4bpp.lz");
 static const ax_sprite sSmoochumSprites22[] = {
 	{sSmoochumGfx22, ARRAY_COUNT(sSmoochumGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx23[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_23.4bpp");
-static const u8 sSmoochumGfx23_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_23_1.4bpp");
-static const u8 sSmoochumGfx23_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_23_2.4bpp");
+static const u8 sSmoochumGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_23.4bpp.lz");
+static const u8 sSmoochumGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_23_1.4bpp.lz");
+static const u8 sSmoochumGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_23_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites23[] = {
 	{NULL, 32}, 
 	{sSmoochumGfx23, ARRAY_COUNT(sSmoochumGfx23)}, 
@@ -2162,9 +2162,9 @@ static const ax_sprite sSmoochumSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx24[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_24.4bpp");
-static const u8 sSmoochumGfx24_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_24_1.4bpp");
-static const u8 sSmoochumGfx24_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_24_2.4bpp");
+static const u8 sSmoochumGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_24.4bpp.lz");
+static const u8 sSmoochumGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_24_1.4bpp.lz");
+static const u8 sSmoochumGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_24_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites24[] = {
 	{sSmoochumGfx24, ARRAY_COUNT(sSmoochumGfx24)}, 
 	{NULL, 32}, 
@@ -2174,9 +2174,9 @@ static const ax_sprite sSmoochumSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx25[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_25.4bpp");
-static const u8 sSmoochumGfx25_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_25_1.4bpp");
-static const u8 sSmoochumGfx25_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_25_2.4bpp");
+static const u8 sSmoochumGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_25.4bpp.lz");
+static const u8 sSmoochumGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_25_1.4bpp.lz");
+static const u8 sSmoochumGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_25_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites25[] = {
 	{sSmoochumGfx25, ARRAY_COUNT(sSmoochumGfx25)}, 
 	{NULL, 32}, 
@@ -2186,21 +2186,21 @@ static const ax_sprite sSmoochumSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx26[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_26.4bpp");
+static const u8 sSmoochumGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_26.4bpp.lz");
 static const ax_sprite sSmoochumSprites26[] = {
 	{sSmoochumGfx26, ARRAY_COUNT(sSmoochumGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx27[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_27.4bpp");
+static const u8 sSmoochumGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_27.4bpp.lz");
 static const ax_sprite sSmoochumSprites27[] = {
 	{sSmoochumGfx27, ARRAY_COUNT(sSmoochumGfx27)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx28[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_28.4bpp");
-static const u8 sSmoochumGfx28_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_28_1.4bpp");
-static const u8 sSmoochumGfx28_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_28_2.4bpp");
+static const u8 sSmoochumGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_28.4bpp.lz");
+static const u8 sSmoochumGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_28_1.4bpp.lz");
+static const u8 sSmoochumGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_28_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites28[] = {
 	{sSmoochumGfx28, ARRAY_COUNT(sSmoochumGfx28)}, 
 	{NULL, 64}, 
@@ -2210,15 +2210,15 @@ static const ax_sprite sSmoochumSprites28[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx29[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_29.4bpp");
+static const u8 sSmoochumGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_29.4bpp.lz");
 static const ax_sprite sSmoochumSprites29[] = {
 	{sSmoochumGfx29, ARRAY_COUNT(sSmoochumGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx30[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_30.4bpp");
-static const u8 sSmoochumGfx30_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_30_1.4bpp");
-static const u8 sSmoochumGfx30_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_30_2.4bpp");
+static const u8 sSmoochumGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_30.4bpp.lz");
+static const u8 sSmoochumGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_30_1.4bpp.lz");
+static const u8 sSmoochumGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_30_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites30[] = {
 	{sSmoochumGfx30, ARRAY_COUNT(sSmoochumGfx30)}, 
 	{NULL, 32}, 
@@ -2228,9 +2228,9 @@ static const ax_sprite sSmoochumSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx31[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_31.4bpp");
-static const u8 sSmoochumGfx31_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_31_1.4bpp");
-static const u8 sSmoochumGfx31_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_31_2.4bpp");
+static const u8 sSmoochumGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_31.4bpp.lz");
+static const u8 sSmoochumGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_31_1.4bpp.lz");
+static const u8 sSmoochumGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_31_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites31[] = {
 	{sSmoochumGfx31, ARRAY_COUNT(sSmoochumGfx31)}, 
 	{NULL, 32}, 
@@ -2240,9 +2240,9 @@ static const ax_sprite sSmoochumSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx32[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_32.4bpp");
-static const u8 sSmoochumGfx32_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_32_1.4bpp");
-static const u8 sSmoochumGfx32_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_32_2.4bpp");
+static const u8 sSmoochumGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_32.4bpp.lz");
+static const u8 sSmoochumGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_32_1.4bpp.lz");
+static const u8 sSmoochumGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_32_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites32[] = {
 	{sSmoochumGfx32, ARRAY_COUNT(sSmoochumGfx32)}, 
 	{NULL, 32}, 
@@ -2252,9 +2252,9 @@ static const ax_sprite sSmoochumSprites32[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx33[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_33.4bpp");
-static const u8 sSmoochumGfx33_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_33_1.4bpp");
-static const u8 sSmoochumGfx33_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_33_2.4bpp");
+static const u8 sSmoochumGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_33.4bpp.lz");
+static const u8 sSmoochumGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_33_1.4bpp.lz");
+static const u8 sSmoochumGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_33_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites33[] = {
 	{sSmoochumGfx33, ARRAY_COUNT(sSmoochumGfx33)}, 
 	{NULL, 32}, 
@@ -2264,9 +2264,9 @@ static const ax_sprite sSmoochumSprites33[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx34[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_34.4bpp");
-static const u8 sSmoochumGfx34_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_34_1.4bpp");
-static const u8 sSmoochumGfx34_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_34_2.4bpp");
+static const u8 sSmoochumGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_34.4bpp.lz");
+static const u8 sSmoochumGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_34_1.4bpp.lz");
+static const u8 sSmoochumGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_34_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites34[] = {
 	{sSmoochumGfx34, ARRAY_COUNT(sSmoochumGfx34)}, 
 	{NULL, 32}, 
@@ -2276,9 +2276,9 @@ static const ax_sprite sSmoochumSprites34[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx35[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_35.4bpp");
-static const u8 sSmoochumGfx35_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_35_1.4bpp");
-static const u8 sSmoochumGfx35_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_35_2.4bpp");
+static const u8 sSmoochumGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_35.4bpp.lz");
+static const u8 sSmoochumGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_35_1.4bpp.lz");
+static const u8 sSmoochumGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_35_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites35[] = {
 	{sSmoochumGfx35, ARRAY_COUNT(sSmoochumGfx35)}, 
 	{NULL, 32}, 
@@ -2288,10 +2288,10 @@ static const ax_sprite sSmoochumSprites35[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx36[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_36.4bpp");
-static const u8 sSmoochumGfx36_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_36_1.4bpp");
-static const u8 sSmoochumGfx36_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_36_2.4bpp");
-static const u8 sSmoochumGfx36_3[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_36_3.4bpp");
+static const u8 sSmoochumGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_36.4bpp.lz");
+static const u8 sSmoochumGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_36_1.4bpp.lz");
+static const u8 sSmoochumGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_36_2.4bpp.lz");
+static const u8 sSmoochumGfx36_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_36_3.4bpp.lz");
 static const ax_sprite sSmoochumSprites36[] = {
 	{sSmoochumGfx36, ARRAY_COUNT(sSmoochumGfx36)}, 
 	{NULL, 32}, 
@@ -2303,9 +2303,9 @@ static const ax_sprite sSmoochumSprites36[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx37[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_37.4bpp");
-static const u8 sSmoochumGfx37_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_37_1.4bpp");
-static const u8 sSmoochumGfx37_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_37_2.4bpp");
+static const u8 sSmoochumGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_37.4bpp.lz");
+static const u8 sSmoochumGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_37_1.4bpp.lz");
+static const u8 sSmoochumGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_37_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites37[] = {
 	{sSmoochumGfx37, ARRAY_COUNT(sSmoochumGfx37)}, 
 	{NULL, 32}, 
@@ -2315,9 +2315,9 @@ static const ax_sprite sSmoochumSprites37[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx38[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_38.4bpp");
-static const u8 sSmoochumGfx38_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_38_1.4bpp");
-static const u8 sSmoochumGfx38_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_38_2.4bpp");
+static const u8 sSmoochumGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_38.4bpp.lz");
+static const u8 sSmoochumGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_38_1.4bpp.lz");
+static const u8 sSmoochumGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_38_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites38[] = {
 	{sSmoochumGfx38, ARRAY_COUNT(sSmoochumGfx38)}, 
 	{NULL, 32}, 
@@ -2327,9 +2327,9 @@ static const ax_sprite sSmoochumSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx39[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_39.4bpp");
-static const u8 sSmoochumGfx39_1[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_39_1.4bpp");
-static const u8 sSmoochumGfx39_2[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_39_2.4bpp");
+static const u8 sSmoochumGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_39.4bpp.lz");
+static const u8 sSmoochumGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_39_1.4bpp.lz");
+static const u8 sSmoochumGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_39_2.4bpp.lz");
 static const ax_sprite sSmoochumSprites39[] = {
 	{sSmoochumGfx39, ARRAY_COUNT(sSmoochumGfx39)}, 
 	{NULL, 32}, 
@@ -2339,37 +2339,37 @@ static const ax_sprite sSmoochumSprites39[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx40[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_40.4bpp");
+static const u8 sSmoochumGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_40.4bpp.lz");
 static const ax_sprite sSmoochumSprites40[] = {
 	{sSmoochumGfx40, ARRAY_COUNT(sSmoochumGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx41[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_41.4bpp");
+static const u8 sSmoochumGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_41.4bpp.lz");
 static const ax_sprite sSmoochumSprites41[] = {
 	{sSmoochumGfx41, ARRAY_COUNT(sSmoochumGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx42[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_42.4bpp");
+static const u8 sSmoochumGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_42.4bpp.lz");
 static const ax_sprite sSmoochumSprites42[] = {
 	{sSmoochumGfx42, ARRAY_COUNT(sSmoochumGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx43[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_43.4bpp");
+static const u8 sSmoochumGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_43.4bpp.lz");
 static const ax_sprite sSmoochumSprites43[] = {
 	{sSmoochumGfx43, ARRAY_COUNT(sSmoochumGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx44[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_44.4bpp");
+static const u8 sSmoochumGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_44.4bpp.lz");
 static const ax_sprite sSmoochumSprites44[] = {
 	{sSmoochumGfx44, ARRAY_COUNT(sSmoochumGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx45[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_45.4bpp");
+static const u8 sSmoochumGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_45.4bpp.lz");
 static const ax_sprite sSmoochumSprites45[] = {
 	{sSmoochumGfx45, ARRAY_COUNT(sSmoochumGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSmoochumGfx46[] = INCBIN_U8("graphics/ax/mon/smoochum/sprite_46.4bpp");
+static const u8 sSmoochumGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/smoochum/sprite_46.4bpp.lz");
 static const ax_sprite sSmoochumSprites46[] = {
 	{sSmoochumGfx46, ARRAY_COUNT(sSmoochumGfx46)}, 
 	{NULL, 0}

@@ -2041,207 +2041,207 @@ static const ax_anim sTogepiAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTogepiGfx1[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_1.4bpp");
+static const u8 sTogepiGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_1.4bpp.lz");
 static const ax_sprite sTogepiSprites1[] = {
 	{sTogepiGfx1, ARRAY_COUNT(sTogepiGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx2[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_2.4bpp");
+static const u8 sTogepiGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_2.4bpp.lz");
 static const ax_sprite sTogepiSprites2[] = {
 	{sTogepiGfx2, ARRAY_COUNT(sTogepiGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx3[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_3.4bpp");
+static const u8 sTogepiGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_3.4bpp.lz");
 static const ax_sprite sTogepiSprites3[] = {
 	{sTogepiGfx3, ARRAY_COUNT(sTogepiGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx4[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_4.4bpp");
+static const u8 sTogepiGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_4.4bpp.lz");
 static const ax_sprite sTogepiSprites4[] = {
 	{sTogepiGfx4, ARRAY_COUNT(sTogepiGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx5[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_5.4bpp");
+static const u8 sTogepiGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_5.4bpp.lz");
 static const ax_sprite sTogepiSprites5[] = {
 	{sTogepiGfx5, ARRAY_COUNT(sTogepiGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx6[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_6.4bpp");
+static const u8 sTogepiGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_6.4bpp.lz");
 static const ax_sprite sTogepiSprites6[] = {
 	{sTogepiGfx6, ARRAY_COUNT(sTogepiGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx7[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_7.4bpp");
+static const u8 sTogepiGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_7.4bpp.lz");
 static const ax_sprite sTogepiSprites7[] = {
 	{sTogepiGfx7, ARRAY_COUNT(sTogepiGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx8[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_8.4bpp");
+static const u8 sTogepiGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_8.4bpp.lz");
 static const ax_sprite sTogepiSprites8[] = {
 	{sTogepiGfx8, ARRAY_COUNT(sTogepiGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx9[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_9.4bpp");
+static const u8 sTogepiGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_9.4bpp.lz");
 static const ax_sprite sTogepiSprites9[] = {
 	{sTogepiGfx9, ARRAY_COUNT(sTogepiGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx10[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_10.4bpp");
+static const u8 sTogepiGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_10.4bpp.lz");
 static const ax_sprite sTogepiSprites10[] = {
 	{sTogepiGfx10, ARRAY_COUNT(sTogepiGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx11[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_11.4bpp");
+static const u8 sTogepiGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_11.4bpp.lz");
 static const ax_sprite sTogepiSprites11[] = {
 	{sTogepiGfx11, ARRAY_COUNT(sTogepiGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx12[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_12.4bpp");
+static const u8 sTogepiGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_12.4bpp.lz");
 static const ax_sprite sTogepiSprites12[] = {
 	{sTogepiGfx12, ARRAY_COUNT(sTogepiGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx13[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_13.4bpp");
+static const u8 sTogepiGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_13.4bpp.lz");
 static const ax_sprite sTogepiSprites13[] = {
 	{sTogepiGfx13, ARRAY_COUNT(sTogepiGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx14[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_14.4bpp");
+static const u8 sTogepiGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_14.4bpp.lz");
 static const ax_sprite sTogepiSprites14[] = {
 	{sTogepiGfx14, ARRAY_COUNT(sTogepiGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx15[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_15.4bpp");
+static const u8 sTogepiGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_15.4bpp.lz");
 static const ax_sprite sTogepiSprites15[] = {
 	{sTogepiGfx15, ARRAY_COUNT(sTogepiGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx16[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_16.4bpp");
+static const u8 sTogepiGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_16.4bpp.lz");
 static const ax_sprite sTogepiSprites16[] = {
 	{sTogepiGfx16, ARRAY_COUNT(sTogepiGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx17[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_17.4bpp");
+static const u8 sTogepiGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_17.4bpp.lz");
 static const ax_sprite sTogepiSprites17[] = {
 	{sTogepiGfx17, ARRAY_COUNT(sTogepiGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx18[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_18.4bpp");
+static const u8 sTogepiGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_18.4bpp.lz");
 static const ax_sprite sTogepiSprites18[] = {
 	{sTogepiGfx18, ARRAY_COUNT(sTogepiGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx19[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_19.4bpp");
+static const u8 sTogepiGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_19.4bpp.lz");
 static const ax_sprite sTogepiSprites19[] = {
 	{sTogepiGfx19, ARRAY_COUNT(sTogepiGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx20[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_20.4bpp");
+static const u8 sTogepiGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_20.4bpp.lz");
 static const ax_sprite sTogepiSprites20[] = {
 	{sTogepiGfx20, ARRAY_COUNT(sTogepiGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx21[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_21.4bpp");
+static const u8 sTogepiGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_21.4bpp.lz");
 static const ax_sprite sTogepiSprites21[] = {
 	{sTogepiGfx21, ARRAY_COUNT(sTogepiGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx22[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_22.4bpp");
+static const u8 sTogepiGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_22.4bpp.lz");
 static const ax_sprite sTogepiSprites22[] = {
 	{sTogepiGfx22, ARRAY_COUNT(sTogepiGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx23[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_23.4bpp");
+static const u8 sTogepiGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_23.4bpp.lz");
 static const ax_sprite sTogepiSprites23[] = {
 	{sTogepiGfx23, ARRAY_COUNT(sTogepiGfx23)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx24[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_24.4bpp");
+static const u8 sTogepiGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_24.4bpp.lz");
 static const ax_sprite sTogepiSprites24[] = {
 	{sTogepiGfx24, ARRAY_COUNT(sTogepiGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx25[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_25.4bpp");
+static const u8 sTogepiGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_25.4bpp.lz");
 static const ax_sprite sTogepiSprites25[] = {
 	{sTogepiGfx25, ARRAY_COUNT(sTogepiGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx26[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_26.4bpp");
+static const u8 sTogepiGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_26.4bpp.lz");
 static const ax_sprite sTogepiSprites26[] = {
 	{sTogepiGfx26, ARRAY_COUNT(sTogepiGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx27[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_27.4bpp");
+static const u8 sTogepiGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_27.4bpp.lz");
 static const ax_sprite sTogepiSprites27[] = {
 	{sTogepiGfx27, ARRAY_COUNT(sTogepiGfx27)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx28[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_28.4bpp");
+static const u8 sTogepiGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_28.4bpp.lz");
 static const ax_sprite sTogepiSprites28[] = {
 	{sTogepiGfx28, ARRAY_COUNT(sTogepiGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx29[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_29.4bpp");
+static const u8 sTogepiGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_29.4bpp.lz");
 static const ax_sprite sTogepiSprites29[] = {
 	{sTogepiGfx29, ARRAY_COUNT(sTogepiGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx30[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_30.4bpp");
+static const u8 sTogepiGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_30.4bpp.lz");
 static const ax_sprite sTogepiSprites30[] = {
 	{sTogepiGfx30, ARRAY_COUNT(sTogepiGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx31[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_31.4bpp");
+static const u8 sTogepiGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_31.4bpp.lz");
 static const ax_sprite sTogepiSprites31[] = {
 	{sTogepiGfx31, ARRAY_COUNT(sTogepiGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx32[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_32.4bpp");
+static const u8 sTogepiGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_32.4bpp.lz");
 static const ax_sprite sTogepiSprites32[] = {
 	{sTogepiGfx32, ARRAY_COUNT(sTogepiGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx33[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_33.4bpp");
+static const u8 sTogepiGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_33.4bpp.lz");
 static const ax_sprite sTogepiSprites33[] = {
 	{sTogepiGfx33, ARRAY_COUNT(sTogepiGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx34[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_34.4bpp");
+static const u8 sTogepiGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_34.4bpp.lz");
 static const ax_sprite sTogepiSprites34[] = {
 	{sTogepiGfx34, ARRAY_COUNT(sTogepiGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx35[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_35.4bpp");
+static const u8 sTogepiGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_35.4bpp.lz");
 static const ax_sprite sTogepiSprites35[] = {
 	{sTogepiGfx35, ARRAY_COUNT(sTogepiGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx36[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_36.4bpp");
+static const u8 sTogepiGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_36.4bpp.lz");
 static const ax_sprite sTogepiSprites36[] = {
 	{sTogepiGfx36, ARRAY_COUNT(sTogepiGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx37[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_37.4bpp");
+static const u8 sTogepiGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_37.4bpp.lz");
 static const ax_sprite sTogepiSprites37[] = {
 	{sTogepiGfx37, ARRAY_COUNT(sTogepiGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sTogepiGfx38[] = INCBIN_U8("graphics/ax/mon/togepi/sprite_38.4bpp");
+static const u8 sTogepiGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/togepi/sprite_38.4bpp.lz");
 static const ax_sprite sTogepiSprites38[] = {
 	{sTogepiGfx38, ARRAY_COUNT(sTogepiGfx38)}, 
 	{NULL, 0}

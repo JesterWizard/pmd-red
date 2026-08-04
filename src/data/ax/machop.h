@@ -3112,84 +3112,84 @@ static const ax_anim sMachopAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMachopGfx1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_1.4bpp");
+static const u8 sMachopGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_1.4bpp.lz");
 static const ax_sprite sMachopSprites1[] = {
 	{sMachopGfx1, ARRAY_COUNT(sMachopGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_2.4bpp");
+static const u8 sMachopGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_2.4bpp.lz");
 static const ax_sprite sMachopSprites2[] = {
 	{sMachopGfx2, ARRAY_COUNT(sMachopGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx3[] = INCBIN_U8("graphics/ax/mon/machop/sprite_3.4bpp");
+static const u8 sMachopGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_3.4bpp.lz");
 static const ax_sprite sMachopSprites3[] = {
 	{sMachopGfx3, ARRAY_COUNT(sMachopGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx4[] = INCBIN_U8("graphics/ax/mon/machop/sprite_4.4bpp");
+static const u8 sMachopGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_4.4bpp.lz");
 static const ax_sprite sMachopSprites4[] = {
 	{sMachopGfx4, ARRAY_COUNT(sMachopGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx5[] = INCBIN_U8("graphics/ax/mon/machop/sprite_5.4bpp");
+static const u8 sMachopGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_5.4bpp.lz");
 static const ax_sprite sMachopSprites5[] = {
 	{sMachopGfx5, ARRAY_COUNT(sMachopGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx6[] = INCBIN_U8("graphics/ax/mon/machop/sprite_6.4bpp");
+static const u8 sMachopGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_6.4bpp.lz");
 static const ax_sprite sMachopSprites6[] = {
 	{sMachopGfx6, ARRAY_COUNT(sMachopGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx7[] = INCBIN_U8("graphics/ax/mon/machop/sprite_7.4bpp");
+static const u8 sMachopGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_7.4bpp.lz");
 static const ax_sprite sMachopSprites7[] = {
 	{sMachopGfx7, ARRAY_COUNT(sMachopGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx8[] = INCBIN_U8("graphics/ax/mon/machop/sprite_8.4bpp");
+static const u8 sMachopGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_8.4bpp.lz");
 static const ax_sprite sMachopSprites8[] = {
 	{sMachopGfx8, ARRAY_COUNT(sMachopGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx9[] = INCBIN_U8("graphics/ax/mon/machop/sprite_9.4bpp");
+static const u8 sMachopGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_9.4bpp.lz");
 static const ax_sprite sMachopSprites9[] = {
 	{sMachopGfx9, ARRAY_COUNT(sMachopGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx10[] = INCBIN_U8("graphics/ax/mon/machop/sprite_10.4bpp");
+static const u8 sMachopGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_10.4bpp.lz");
 static const ax_sprite sMachopSprites10[] = {
 	{sMachopGfx10, ARRAY_COUNT(sMachopGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx11[] = INCBIN_U8("graphics/ax/mon/machop/sprite_11.4bpp");
+static const u8 sMachopGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_11.4bpp.lz");
 static const ax_sprite sMachopSprites11[] = {
 	{sMachopGfx11, ARRAY_COUNT(sMachopGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx12[] = INCBIN_U8("graphics/ax/mon/machop/sprite_12.4bpp");
+static const u8 sMachopGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_12.4bpp.lz");
 static const ax_sprite sMachopSprites12[] = {
 	{sMachopGfx12, ARRAY_COUNT(sMachopGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx13[] = INCBIN_U8("graphics/ax/mon/machop/sprite_13.4bpp");
+static const u8 sMachopGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_13.4bpp.lz");
 static const ax_sprite sMachopSprites13[] = {
 	{sMachopGfx13, ARRAY_COUNT(sMachopGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx14[] = INCBIN_U8("graphics/ax/mon/machop/sprite_14.4bpp");
+static const u8 sMachopGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_14.4bpp.lz");
 static const ax_sprite sMachopSprites14[] = {
 	{sMachopGfx14, ARRAY_COUNT(sMachopGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx15[] = INCBIN_U8("graphics/ax/mon/machop/sprite_15.4bpp");
+static const u8 sMachopGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_15.4bpp.lz");
 static const ax_sprite sMachopSprites15[] = {
 	{sMachopGfx15, ARRAY_COUNT(sMachopGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx16[] = INCBIN_U8("graphics/ax/mon/machop/sprite_16.4bpp");
-static const u8 sMachopGfx16_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_16_1.4bpp");
-static const u8 sMachopGfx16_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_16_2.4bpp");
+static const u8 sMachopGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_16.4bpp.lz");
+static const u8 sMachopGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_16_1.4bpp.lz");
+static const u8 sMachopGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_16_2.4bpp.lz");
 static const ax_sprite sMachopSprites16[] = {
 	{sMachopGfx16, ARRAY_COUNT(sMachopGfx16)}, 
 	{NULL, 32}, 
@@ -3199,10 +3199,10 @@ static const ax_sprite sMachopSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx17[] = INCBIN_U8("graphics/ax/mon/machop/sprite_17.4bpp");
-static const u8 sMachopGfx17_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_17_1.4bpp");
-static const u8 sMachopGfx17_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_17_2.4bpp");
-static const u8 sMachopGfx17_3[] = INCBIN_U8("graphics/ax/mon/machop/sprite_17_3.4bpp");
+static const u8 sMachopGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_17.4bpp.lz");
+static const u8 sMachopGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_17_1.4bpp.lz");
+static const u8 sMachopGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_17_2.4bpp.lz");
+static const u8 sMachopGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_17_3.4bpp.lz");
 static const ax_sprite sMachopSprites17[] = {
 	{NULL, 32}, 
 	{sMachopGfx17, ARRAY_COUNT(sMachopGfx17)}, 
@@ -3215,9 +3215,9 @@ static const ax_sprite sMachopSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx18[] = INCBIN_U8("graphics/ax/mon/machop/sprite_18.4bpp");
-static const u8 sMachopGfx18_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_18_1.4bpp");
-static const u8 sMachopGfx18_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_18_2.4bpp");
+static const u8 sMachopGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_18.4bpp.lz");
+static const u8 sMachopGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_18_1.4bpp.lz");
+static const u8 sMachopGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_18_2.4bpp.lz");
 static const ax_sprite sMachopSprites18[] = {
 	{sMachopGfx18, ARRAY_COUNT(sMachopGfx18)}, 
 	{NULL, 64}, 
@@ -3227,8 +3227,8 @@ static const ax_sprite sMachopSprites18[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx19[] = INCBIN_U8("graphics/ax/mon/machop/sprite_19.4bpp");
-static const u8 sMachopGfx19_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_19_1.4bpp");
+static const u8 sMachopGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_19.4bpp.lz");
+static const u8 sMachopGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_19_1.4bpp.lz");
 static const ax_sprite sMachopSprites19[] = {
 	{NULL, 32}, 
 	{sMachopGfx19, ARRAY_COUNT(sMachopGfx19)}, 
@@ -3237,10 +3237,10 @@ static const ax_sprite sMachopSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx20[] = INCBIN_U8("graphics/ax/mon/machop/sprite_20.4bpp");
-static const u8 sMachopGfx20_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_20_1.4bpp");
-static const u8 sMachopGfx20_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_20_2.4bpp");
-static const u8 sMachopGfx20_3[] = INCBIN_U8("graphics/ax/mon/machop/sprite_20_3.4bpp");
+static const u8 sMachopGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_20.4bpp.lz");
+static const u8 sMachopGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_20_1.4bpp.lz");
+static const u8 sMachopGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_20_2.4bpp.lz");
+static const u8 sMachopGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_20_3.4bpp.lz");
 static const ax_sprite sMachopSprites20[] = {
 	{NULL, 32}, 
 	{sMachopGfx20, ARRAY_COUNT(sMachopGfx20)}, 
@@ -3253,10 +3253,10 @@ static const ax_sprite sMachopSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx21[] = INCBIN_U8("graphics/ax/mon/machop/sprite_21.4bpp");
-static const u8 sMachopGfx21_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_21_1.4bpp");
-static const u8 sMachopGfx21_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_21_2.4bpp");
-static const u8 sMachopGfx21_3[] = INCBIN_U8("graphics/ax/mon/machop/sprite_21_3.4bpp");
+static const u8 sMachopGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_21.4bpp.lz");
+static const u8 sMachopGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_21_1.4bpp.lz");
+static const u8 sMachopGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_21_2.4bpp.lz");
+static const u8 sMachopGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_21_3.4bpp.lz");
 static const ax_sprite sMachopSprites21[] = {
 	{sMachopGfx21, ARRAY_COUNT(sMachopGfx21)}, 
 	{NULL, 96}, 
@@ -3268,9 +3268,9 @@ static const ax_sprite sMachopSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx22[] = INCBIN_U8("graphics/ax/mon/machop/sprite_22.4bpp");
-static const u8 sMachopGfx22_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_22_1.4bpp");
-static const u8 sMachopGfx22_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_22_2.4bpp");
+static const u8 sMachopGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_22.4bpp.lz");
+static const u8 sMachopGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_22_1.4bpp.lz");
+static const u8 sMachopGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_22_2.4bpp.lz");
 static const ax_sprite sMachopSprites22[] = {
 	{NULL, 32}, 
 	{sMachopGfx22, ARRAY_COUNT(sMachopGfx22)}, 
@@ -3281,9 +3281,9 @@ static const ax_sprite sMachopSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx23[] = INCBIN_U8("graphics/ax/mon/machop/sprite_23.4bpp");
-static const u8 sMachopGfx23_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_23_1.4bpp");
-static const u8 sMachopGfx23_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_23_2.4bpp");
+static const u8 sMachopGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_23.4bpp.lz");
+static const u8 sMachopGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_23_1.4bpp.lz");
+static const u8 sMachopGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_23_2.4bpp.lz");
 static const ax_sprite sMachopSprites23[] = {
 	{NULL, 32}, 
 	{sMachopGfx23, ARRAY_COUNT(sMachopGfx23)}, 
@@ -3294,9 +3294,9 @@ static const ax_sprite sMachopSprites23[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx24[] = INCBIN_U8("graphics/ax/mon/machop/sprite_24.4bpp");
-static const u8 sMachopGfx24_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_24_1.4bpp");
-static const u8 sMachopGfx24_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_24_2.4bpp");
+static const u8 sMachopGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_24.4bpp.lz");
+static const u8 sMachopGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_24_1.4bpp.lz");
+static const u8 sMachopGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_24_2.4bpp.lz");
 static const ax_sprite sMachopSprites24[] = {
 	{sMachopGfx24, ARRAY_COUNT(sMachopGfx24)}, 
 	{NULL, 64}, 
@@ -3306,10 +3306,10 @@ static const ax_sprite sMachopSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx25[] = INCBIN_U8("graphics/ax/mon/machop/sprite_25.4bpp");
-static const u8 sMachopGfx25_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_25_1.4bpp");
-static const u8 sMachopGfx25_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_25_2.4bpp");
-static const u8 sMachopGfx25_3[] = INCBIN_U8("graphics/ax/mon/machop/sprite_25_3.4bpp");
+static const u8 sMachopGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_25.4bpp.lz");
+static const u8 sMachopGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_25_1.4bpp.lz");
+static const u8 sMachopGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_25_2.4bpp.lz");
+static const u8 sMachopGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_25_3.4bpp.lz");
 static const ax_sprite sMachopSprites25[] = {
 	{NULL, 32}, 
 	{sMachopGfx25, ARRAY_COUNT(sMachopGfx25)}, 
@@ -3322,15 +3322,15 @@ static const ax_sprite sMachopSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx26[] = INCBIN_U8("graphics/ax/mon/machop/sprite_26.4bpp");
+static const u8 sMachopGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_26.4bpp.lz");
 static const ax_sprite sMachopSprites26[] = {
 	{sMachopGfx26, ARRAY_COUNT(sMachopGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx27[] = INCBIN_U8("graphics/ax/mon/machop/sprite_27.4bpp");
-static const u8 sMachopGfx27_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_27_1.4bpp");
-static const u8 sMachopGfx27_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_27_2.4bpp");
+static const u8 sMachopGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_27.4bpp.lz");
+static const u8 sMachopGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_27_1.4bpp.lz");
+static const u8 sMachopGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_27_2.4bpp.lz");
 static const ax_sprite sMachopSprites27[] = {
 	{sMachopGfx27, ARRAY_COUNT(sMachopGfx27)}, 
 	{NULL, 64}, 
@@ -3340,9 +3340,9 @@ static const ax_sprite sMachopSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx28[] = INCBIN_U8("graphics/ax/mon/machop/sprite_28.4bpp");
-static const u8 sMachopGfx28_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_28_1.4bpp");
-static const u8 sMachopGfx28_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_28_2.4bpp");
+static const u8 sMachopGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_28.4bpp.lz");
+static const u8 sMachopGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_28_1.4bpp.lz");
+static const u8 sMachopGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_28_2.4bpp.lz");
 static const ax_sprite sMachopSprites28[] = {
 	{sMachopGfx28, ARRAY_COUNT(sMachopGfx28)}, 
 	{NULL, 64}, 
@@ -3352,8 +3352,8 @@ static const ax_sprite sMachopSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx29[] = INCBIN_U8("graphics/ax/mon/machop/sprite_29.4bpp");
-static const u8 sMachopGfx29_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_29_1.4bpp");
+static const u8 sMachopGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_29.4bpp.lz");
+static const u8 sMachopGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_29_1.4bpp.lz");
 static const ax_sprite sMachopSprites29[] = {
 	{sMachopGfx29, ARRAY_COUNT(sMachopGfx29)}, 
 	{NULL, 32}, 
@@ -3361,9 +3361,9 @@ static const ax_sprite sMachopSprites29[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx30[] = INCBIN_U8("graphics/ax/mon/machop/sprite_30.4bpp");
-static const u8 sMachopGfx30_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_30_1.4bpp");
-static const u8 sMachopGfx30_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_30_2.4bpp");
+static const u8 sMachopGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_30.4bpp.lz");
+static const u8 sMachopGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_30_1.4bpp.lz");
+static const u8 sMachopGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_30_2.4bpp.lz");
 static const ax_sprite sMachopSprites30[] = {
 	{sMachopGfx30, ARRAY_COUNT(sMachopGfx30)}, 
 	{NULL, 32}, 
@@ -3373,9 +3373,9 @@ static const ax_sprite sMachopSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx31[] = INCBIN_U8("graphics/ax/mon/machop/sprite_31.4bpp");
-static const u8 sMachopGfx31_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_31_1.4bpp");
-static const u8 sMachopGfx31_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_31_2.4bpp");
+static const u8 sMachopGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_31.4bpp.lz");
+static const u8 sMachopGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_31_1.4bpp.lz");
+static const u8 sMachopGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_31_2.4bpp.lz");
 static const ax_sprite sMachopSprites31[] = {
 	{sMachopGfx31, ARRAY_COUNT(sMachopGfx31)}, 
 	{NULL, 32}, 
@@ -3385,9 +3385,9 @@ static const ax_sprite sMachopSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx32[] = INCBIN_U8("graphics/ax/mon/machop/sprite_32.4bpp");
-static const u8 sMachopGfx32_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_32_1.4bpp");
-static const u8 sMachopGfx32_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_32_2.4bpp");
+static const u8 sMachopGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_32.4bpp.lz");
+static const u8 sMachopGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_32_1.4bpp.lz");
+static const u8 sMachopGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_32_2.4bpp.lz");
 static const ax_sprite sMachopSprites32[] = {
 	{sMachopGfx32, ARRAY_COUNT(sMachopGfx32)}, 
 	{NULL, 64}, 
@@ -3397,15 +3397,15 @@ static const ax_sprite sMachopSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx33[] = INCBIN_U8("graphics/ax/mon/machop/sprite_33.4bpp");
+static const u8 sMachopGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_33.4bpp.lz");
 static const ax_sprite sMachopSprites33[] = {
 	{sMachopGfx33, ARRAY_COUNT(sMachopGfx33)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx34[] = INCBIN_U8("graphics/ax/mon/machop/sprite_34.4bpp");
-static const u8 sMachopGfx34_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_34_1.4bpp");
-static const u8 sMachopGfx34_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_34_2.4bpp");
+static const u8 sMachopGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_34.4bpp.lz");
+static const u8 sMachopGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_34_1.4bpp.lz");
+static const u8 sMachopGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_34_2.4bpp.lz");
 static const ax_sprite sMachopSprites34[] = {
 	{NULL, 32}, 
 	{sMachopGfx34, ARRAY_COUNT(sMachopGfx34)}, 
@@ -3416,9 +3416,9 @@ static const ax_sprite sMachopSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx35[] = INCBIN_U8("graphics/ax/mon/machop/sprite_35.4bpp");
-static const u8 sMachopGfx35_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_35_1.4bpp");
-static const u8 sMachopGfx35_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_35_2.4bpp");
+static const u8 sMachopGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_35.4bpp.lz");
+static const u8 sMachopGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_35_1.4bpp.lz");
+static const u8 sMachopGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_35_2.4bpp.lz");
 static const ax_sprite sMachopSprites35[] = {
 	{sMachopGfx35, ARRAY_COUNT(sMachopGfx35)}, 
 	{NULL, 32}, 
@@ -3428,8 +3428,8 @@ static const ax_sprite sMachopSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx36[] = INCBIN_U8("graphics/ax/mon/machop/sprite_36.4bpp");
-static const u8 sMachopGfx36_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_36_1.4bpp");
+static const u8 sMachopGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_36.4bpp.lz");
+static const u8 sMachopGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_36_1.4bpp.lz");
 static const ax_sprite sMachopSprites36[] = {
 	{NULL, 128}, 
 	{sMachopGfx36, ARRAY_COUNT(sMachopGfx36)}, 
@@ -3438,9 +3438,9 @@ static const ax_sprite sMachopSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx37[] = INCBIN_U8("graphics/ax/mon/machop/sprite_37.4bpp");
-static const u8 sMachopGfx37_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_37_1.4bpp");
-static const u8 sMachopGfx37_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_37_2.4bpp");
+static const u8 sMachopGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_37.4bpp.lz");
+static const u8 sMachopGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_37_1.4bpp.lz");
+static const u8 sMachopGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_37_2.4bpp.lz");
 static const ax_sprite sMachopSprites37[] = {
 	{sMachopGfx37, ARRAY_COUNT(sMachopGfx37)}, 
 	{NULL, 64}, 
@@ -3450,8 +3450,8 @@ static const ax_sprite sMachopSprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx38[] = INCBIN_U8("graphics/ax/mon/machop/sprite_38.4bpp");
-static const u8 sMachopGfx38_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_38_1.4bpp");
+static const u8 sMachopGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_38.4bpp.lz");
+static const u8 sMachopGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_38_1.4bpp.lz");
 static const ax_sprite sMachopSprites38[] = {
 	{NULL, 128}, 
 	{sMachopGfx38, ARRAY_COUNT(sMachopGfx38)}, 
@@ -3460,9 +3460,9 @@ static const ax_sprite sMachopSprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx39[] = INCBIN_U8("graphics/ax/mon/machop/sprite_39.4bpp");
-static const u8 sMachopGfx39_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_39_1.4bpp");
-static const u8 sMachopGfx39_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_39_2.4bpp");
+static const u8 sMachopGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_39.4bpp.lz");
+static const u8 sMachopGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_39_1.4bpp.lz");
+static const u8 sMachopGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_39_2.4bpp.lz");
 static const ax_sprite sMachopSprites39[] = {
 	{sMachopGfx39, ARRAY_COUNT(sMachopGfx39)}, 
 	{NULL, 32}, 
@@ -3472,8 +3472,8 @@ static const ax_sprite sMachopSprites39[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx40[] = INCBIN_U8("graphics/ax/mon/machop/sprite_40.4bpp");
-static const u8 sMachopGfx40_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_40_1.4bpp");
+static const u8 sMachopGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_40.4bpp.lz");
+static const u8 sMachopGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_40_1.4bpp.lz");
 static const ax_sprite sMachopSprites40[] = {
 	{NULL, 64}, 
 	{sMachopGfx40, ARRAY_COUNT(sMachopGfx40)}, 
@@ -3482,9 +3482,9 @@ static const ax_sprite sMachopSprites40[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx41[] = INCBIN_U8("graphics/ax/mon/machop/sprite_41.4bpp");
-static const u8 sMachopGfx41_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_41_1.4bpp");
-static const u8 sMachopGfx41_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_41_2.4bpp");
+static const u8 sMachopGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_41.4bpp.lz");
+static const u8 sMachopGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_41_1.4bpp.lz");
+static const u8 sMachopGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_41_2.4bpp.lz");
 static const ax_sprite sMachopSprites41[] = {
 	{sMachopGfx41, ARRAY_COUNT(sMachopGfx41)}, 
 	{NULL, 32}, 
@@ -3494,11 +3494,11 @@ static const ax_sprite sMachopSprites41[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx42[] = INCBIN_U8("graphics/ax/mon/machop/sprite_42.4bpp");
-static const u8 sMachopGfx42_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_42_1.4bpp");
-static const u8 sMachopGfx42_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_42_2.4bpp");
-static const u8 sMachopGfx42_3[] = INCBIN_U8("graphics/ax/mon/machop/sprite_42_3.4bpp");
-static const u8 sMachopGfx42_4[] = INCBIN_U8("graphics/ax/mon/machop/sprite_42_4.4bpp");
+static const u8 sMachopGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_42.4bpp.lz");
+static const u8 sMachopGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_42_1.4bpp.lz");
+static const u8 sMachopGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_42_2.4bpp.lz");
+static const u8 sMachopGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_42_3.4bpp.lz");
+static const u8 sMachopGfx42_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_42_4.4bpp.lz");
 static const ax_sprite sMachopSprites42[] = {
 	{sMachopGfx42, ARRAY_COUNT(sMachopGfx42)}, 
 	{NULL, 96}, 
@@ -3512,9 +3512,9 @@ static const ax_sprite sMachopSprites42[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx43[] = INCBIN_U8("graphics/ax/mon/machop/sprite_43.4bpp");
-static const u8 sMachopGfx43_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_43_1.4bpp");
-static const u8 sMachopGfx43_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_43_2.4bpp");
+static const u8 sMachopGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_43.4bpp.lz");
+static const u8 sMachopGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_43_1.4bpp.lz");
+static const u8 sMachopGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_43_2.4bpp.lz");
 static const ax_sprite sMachopSprites43[] = {
 	{sMachopGfx43, ARRAY_COUNT(sMachopGfx43)}, 
 	{NULL, 32}, 
@@ -3524,11 +3524,11 @@ static const ax_sprite sMachopSprites43[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx44[] = INCBIN_U8("graphics/ax/mon/machop/sprite_44.4bpp");
-static const u8 sMachopGfx44_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_44_1.4bpp");
-static const u8 sMachopGfx44_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_44_2.4bpp");
-static const u8 sMachopGfx44_3[] = INCBIN_U8("graphics/ax/mon/machop/sprite_44_3.4bpp");
-static const u8 sMachopGfx44_4[] = INCBIN_U8("graphics/ax/mon/machop/sprite_44_4.4bpp");
+static const u8 sMachopGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_44.4bpp.lz");
+static const u8 sMachopGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_44_1.4bpp.lz");
+static const u8 sMachopGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_44_2.4bpp.lz");
+static const u8 sMachopGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_44_3.4bpp.lz");
+static const u8 sMachopGfx44_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_44_4.4bpp.lz");
 static const ax_sprite sMachopSprites44[] = {
 	{sMachopGfx44, ARRAY_COUNT(sMachopGfx44)}, 
 	{NULL, 32}, 
@@ -3542,9 +3542,9 @@ static const ax_sprite sMachopSprites44[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx45[] = INCBIN_U8("graphics/ax/mon/machop/sprite_45.4bpp");
-static const u8 sMachopGfx45_1[] = INCBIN_U8("graphics/ax/mon/machop/sprite_45_1.4bpp");
-static const u8 sMachopGfx45_2[] = INCBIN_U8("graphics/ax/mon/machop/sprite_45_2.4bpp");
+static const u8 sMachopGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_45.4bpp.lz");
+static const u8 sMachopGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_45_1.4bpp.lz");
+static const u8 sMachopGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_45_2.4bpp.lz");
 static const ax_sprite sMachopSprites45[] = {
 	{sMachopGfx45, ARRAY_COUNT(sMachopGfx45)}, 
 	{NULL, 32}, 
@@ -3554,187 +3554,187 @@ static const ax_sprite sMachopSprites45[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx46[] = INCBIN_U8("graphics/ax/mon/machop/sprite_46.4bpp");
+static const u8 sMachopGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_46.4bpp.lz");
 static const ax_sprite sMachopSprites46[] = {
 	{sMachopGfx46, ARRAY_COUNT(sMachopGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx47[] = INCBIN_U8("graphics/ax/mon/machop/sprite_47.4bpp");
+static const u8 sMachopGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_47.4bpp.lz");
 static const ax_sprite sMachopSprites47[] = {
 	{sMachopGfx47, ARRAY_COUNT(sMachopGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx48[] = INCBIN_U8("graphics/ax/mon/machop/sprite_48.4bpp");
+static const u8 sMachopGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_48.4bpp.lz");
 static const ax_sprite sMachopSprites48[] = {
 	{sMachopGfx48, ARRAY_COUNT(sMachopGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx49[] = INCBIN_U8("graphics/ax/mon/machop/sprite_49.4bpp");
+static const u8 sMachopGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_49.4bpp.lz");
 static const ax_sprite sMachopSprites49[] = {
 	{sMachopGfx49, ARRAY_COUNT(sMachopGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx50[] = INCBIN_U8("graphics/ax/mon/machop/sprite_50.4bpp");
+static const u8 sMachopGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_50.4bpp.lz");
 static const ax_sprite sMachopSprites50[] = {
 	{sMachopGfx50, ARRAY_COUNT(sMachopGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx51[] = INCBIN_U8("graphics/ax/mon/machop/sprite_51.4bpp");
+static const u8 sMachopGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_51.4bpp.lz");
 static const ax_sprite sMachopSprites51[] = {
 	{sMachopGfx51, ARRAY_COUNT(sMachopGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx52[] = INCBIN_U8("graphics/ax/mon/machop/sprite_52.4bpp");
+static const u8 sMachopGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_52.4bpp.lz");
 static const ax_sprite sMachopSprites52[] = {
 	{sMachopGfx52, ARRAY_COUNT(sMachopGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx53[] = INCBIN_U8("graphics/ax/mon/machop/sprite_53.4bpp");
+static const u8 sMachopGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_53.4bpp.lz");
 static const ax_sprite sMachopSprites53[] = {
 	{sMachopGfx53, ARRAY_COUNT(sMachopGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx54[] = INCBIN_U8("graphics/ax/mon/machop/sprite_54.4bpp");
+static const u8 sMachopGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_54.4bpp.lz");
 static const ax_sprite sMachopSprites54[] = {
 	{sMachopGfx54, ARRAY_COUNT(sMachopGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx55[] = INCBIN_U8("graphics/ax/mon/machop/sprite_55.4bpp");
+static const u8 sMachopGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_55.4bpp.lz");
 static const ax_sprite sMachopSprites55[] = {
 	{sMachopGfx55, ARRAY_COUNT(sMachopGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx56[] = INCBIN_U8("graphics/ax/mon/machop/sprite_56.4bpp");
+static const u8 sMachopGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_56.4bpp.lz");
 static const ax_sprite sMachopSprites56[] = {
 	{sMachopGfx56, ARRAY_COUNT(sMachopGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx57[] = INCBIN_U8("graphics/ax/mon/machop/sprite_57.4bpp");
+static const u8 sMachopGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_57.4bpp.lz");
 static const ax_sprite sMachopSprites57[] = {
 	{sMachopGfx57, ARRAY_COUNT(sMachopGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx58[] = INCBIN_U8("graphics/ax/mon/machop/sprite_58.4bpp");
+static const u8 sMachopGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_58.4bpp.lz");
 static const ax_sprite sMachopSprites58[] = {
 	{sMachopGfx58, ARRAY_COUNT(sMachopGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx59[] = INCBIN_U8("graphics/ax/mon/machop/sprite_59.4bpp");
+static const u8 sMachopGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_59.4bpp.lz");
 static const ax_sprite sMachopSprites59[] = {
 	{sMachopGfx59, ARRAY_COUNT(sMachopGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx60[] = INCBIN_U8("graphics/ax/mon/machop/sprite_60.4bpp");
+static const u8 sMachopGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_60.4bpp.lz");
 static const ax_sprite sMachopSprites60[] = {
 	{sMachopGfx60, ARRAY_COUNT(sMachopGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx61[] = INCBIN_U8("graphics/ax/mon/machop/sprite_61.4bpp");
+static const u8 sMachopGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_61.4bpp.lz");
 static const ax_sprite sMachopSprites61[] = {
 	{sMachopGfx61, ARRAY_COUNT(sMachopGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx62[] = INCBIN_U8("graphics/ax/mon/machop/sprite_62.4bpp");
+static const u8 sMachopGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_62.4bpp.lz");
 static const ax_sprite sMachopSprites62[] = {
 	{sMachopGfx62, ARRAY_COUNT(sMachopGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx63[] = INCBIN_U8("graphics/ax/mon/machop/sprite_63.4bpp");
+static const u8 sMachopGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_63.4bpp.lz");
 static const ax_sprite sMachopSprites63[] = {
 	{sMachopGfx63, ARRAY_COUNT(sMachopGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx64[] = INCBIN_U8("graphics/ax/mon/machop/sprite_64.4bpp");
+static const u8 sMachopGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_64.4bpp.lz");
 static const ax_sprite sMachopSprites64[] = {
 	{sMachopGfx64, ARRAY_COUNT(sMachopGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx65[] = INCBIN_U8("graphics/ax/mon/machop/sprite_65.4bpp");
+static const u8 sMachopGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_65.4bpp.lz");
 static const ax_sprite sMachopSprites65[] = {
 	{sMachopGfx65, ARRAY_COUNT(sMachopGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx66[] = INCBIN_U8("graphics/ax/mon/machop/sprite_66.4bpp");
+static const u8 sMachopGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_66.4bpp.lz");
 static const ax_sprite sMachopSprites66[] = {
 	{sMachopGfx66, ARRAY_COUNT(sMachopGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx67[] = INCBIN_U8("graphics/ax/mon/machop/sprite_67.4bpp");
+static const u8 sMachopGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_67.4bpp.lz");
 static const ax_sprite sMachopSprites67[] = {
 	{sMachopGfx67, ARRAY_COUNT(sMachopGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx68[] = INCBIN_U8("graphics/ax/mon/machop/sprite_68.4bpp");
+static const u8 sMachopGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_68.4bpp.lz");
 static const ax_sprite sMachopSprites68[] = {
 	{sMachopGfx68, ARRAY_COUNT(sMachopGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx69[] = INCBIN_U8("graphics/ax/mon/machop/sprite_69.4bpp");
+static const u8 sMachopGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_69.4bpp.lz");
 static const ax_sprite sMachopSprites69[] = {
 	{sMachopGfx69, ARRAY_COUNT(sMachopGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx70[] = INCBIN_U8("graphics/ax/mon/machop/sprite_70.4bpp");
+static const u8 sMachopGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_70.4bpp.lz");
 static const ax_sprite sMachopSprites70[] = {
 	{sMachopGfx70, ARRAY_COUNT(sMachopGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx71[] = INCBIN_U8("graphics/ax/mon/machop/sprite_71.4bpp");
+static const u8 sMachopGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_71.4bpp.lz");
 static const ax_sprite sMachopSprites71[] = {
 	{sMachopGfx71, ARRAY_COUNT(sMachopGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx72[] = INCBIN_U8("graphics/ax/mon/machop/sprite_72.4bpp");
+static const u8 sMachopGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_72.4bpp.lz");
 static const ax_sprite sMachopSprites72[] = {
 	{sMachopGfx72, ARRAY_COUNT(sMachopGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx73[] = INCBIN_U8("graphics/ax/mon/machop/sprite_73.4bpp");
+static const u8 sMachopGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_73.4bpp.lz");
 static const ax_sprite sMachopSprites73[] = {
 	{sMachopGfx73, ARRAY_COUNT(sMachopGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx74[] = INCBIN_U8("graphics/ax/mon/machop/sprite_74.4bpp");
+static const u8 sMachopGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_74.4bpp.lz");
 static const ax_sprite sMachopSprites74[] = {
 	{sMachopGfx74, ARRAY_COUNT(sMachopGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx75[] = INCBIN_U8("graphics/ax/mon/machop/sprite_75.4bpp");
+static const u8 sMachopGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_75.4bpp.lz");
 static const ax_sprite sMachopSprites75[] = {
 	{sMachopGfx75, ARRAY_COUNT(sMachopGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx76[] = INCBIN_U8("graphics/ax/mon/machop/sprite_76.4bpp");
+static const u8 sMachopGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_76.4bpp.lz");
 static const ax_sprite sMachopSprites76[] = {
 	{sMachopGfx76, ARRAY_COUNT(sMachopGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx77[] = INCBIN_U8("graphics/ax/mon/machop/sprite_77.4bpp");
+static const u8 sMachopGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_77.4bpp.lz");
 static const ax_sprite sMachopSprites77[] = {
 	{sMachopGfx77, ARRAY_COUNT(sMachopGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx78[] = INCBIN_U8("graphics/ax/mon/machop/sprite_78.4bpp");
+static const u8 sMachopGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_78.4bpp.lz");
 static const ax_sprite sMachopSprites78[] = {
 	{sMachopGfx78, ARRAY_COUNT(sMachopGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx79[] = INCBIN_U8("graphics/ax/mon/machop/sprite_79.4bpp");
+static const u8 sMachopGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_79.4bpp.lz");
 static const ax_sprite sMachopSprites79[] = {
 	{sMachopGfx79, ARRAY_COUNT(sMachopGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx80[] = INCBIN_U8("graphics/ax/mon/machop/sprite_80.4bpp");
+static const u8 sMachopGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_80.4bpp.lz");
 static const ax_sprite sMachopSprites80[] = {
 	{sMachopGfx80, ARRAY_COUNT(sMachopGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx81[] = INCBIN_U8("graphics/ax/mon/machop/sprite_81.4bpp");
+static const u8 sMachopGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_81.4bpp.lz");
 static const ax_sprite sMachopSprites81[] = {
 	{sMachopGfx81, ARRAY_COUNT(sMachopGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sMachopGfx82[] = INCBIN_U8("graphics/ax/mon/machop/sprite_82.4bpp");
+static const u8 sMachopGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/machop/sprite_82.4bpp.lz");
 static const ax_sprite sMachopSprites82[] = {
 	{sMachopGfx82, ARRAY_COUNT(sMachopGfx82)}, 
 	{NULL, 0}

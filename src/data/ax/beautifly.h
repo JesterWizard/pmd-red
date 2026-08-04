@@ -2458,242 +2458,242 @@ static const ax_anim sBeautiflyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBeautiflyGfx1[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_1.4bpp");
+static const u8 sBeautiflyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_1.4bpp.lz");
 static const ax_sprite sBeautiflySprites1[] = {
 	{sBeautiflyGfx1, ARRAY_COUNT(sBeautiflyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx2[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_2.4bpp");
+static const u8 sBeautiflyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_2.4bpp.lz");
 static const ax_sprite sBeautiflySprites2[] = {
 	{sBeautiflyGfx2, ARRAY_COUNT(sBeautiflyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx3[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_3.4bpp");
+static const u8 sBeautiflyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_3.4bpp.lz");
 static const ax_sprite sBeautiflySprites3[] = {
 	{sBeautiflyGfx3, ARRAY_COUNT(sBeautiflyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx4[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_4.4bpp");
+static const u8 sBeautiflyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_4.4bpp.lz");
 static const ax_sprite sBeautiflySprites4[] = {
 	{sBeautiflyGfx4, ARRAY_COUNT(sBeautiflyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx5[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_5.4bpp");
+static const u8 sBeautiflyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_5.4bpp.lz");
 static const ax_sprite sBeautiflySprites5[] = {
 	{sBeautiflyGfx5, ARRAY_COUNT(sBeautiflyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx6[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_6.4bpp");
+static const u8 sBeautiflyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_6.4bpp.lz");
 static const ax_sprite sBeautiflySprites6[] = {
 	{sBeautiflyGfx6, ARRAY_COUNT(sBeautiflyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx7[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_7.4bpp");
+static const u8 sBeautiflyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_7.4bpp.lz");
 static const ax_sprite sBeautiflySprites7[] = {
 	{sBeautiflyGfx7, ARRAY_COUNT(sBeautiflyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx8[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_8.4bpp");
+static const u8 sBeautiflyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_8.4bpp.lz");
 static const ax_sprite sBeautiflySprites8[] = {
 	{sBeautiflyGfx8, ARRAY_COUNT(sBeautiflyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx9[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_9.4bpp");
+static const u8 sBeautiflyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_9.4bpp.lz");
 static const ax_sprite sBeautiflySprites9[] = {
 	{sBeautiflyGfx9, ARRAY_COUNT(sBeautiflyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx10[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_10.4bpp");
+static const u8 sBeautiflyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_10.4bpp.lz");
 static const ax_sprite sBeautiflySprites10[] = {
 	{sBeautiflyGfx10, ARRAY_COUNT(sBeautiflyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx11[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_11.4bpp");
+static const u8 sBeautiflyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_11.4bpp.lz");
 static const ax_sprite sBeautiflySprites11[] = {
 	{sBeautiflyGfx11, ARRAY_COUNT(sBeautiflyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx12[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_12.4bpp");
+static const u8 sBeautiflyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_12.4bpp.lz");
 static const ax_sprite sBeautiflySprites12[] = {
 	{sBeautiflyGfx12, ARRAY_COUNT(sBeautiflyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx13[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_13.4bpp");
+static const u8 sBeautiflyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_13.4bpp.lz");
 static const ax_sprite sBeautiflySprites13[] = {
 	{sBeautiflyGfx13, ARRAY_COUNT(sBeautiflyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx14[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_14.4bpp");
+static const u8 sBeautiflyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_14.4bpp.lz");
 static const ax_sprite sBeautiflySprites14[] = {
 	{sBeautiflyGfx14, ARRAY_COUNT(sBeautiflyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx15[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_15.4bpp");
+static const u8 sBeautiflyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_15.4bpp.lz");
 static const ax_sprite sBeautiflySprites15[] = {
 	{sBeautiflyGfx15, ARRAY_COUNT(sBeautiflyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx16[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_16.4bpp");
+static const u8 sBeautiflyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_16.4bpp.lz");
 static const ax_sprite sBeautiflySprites16[] = {
 	{sBeautiflyGfx16, ARRAY_COUNT(sBeautiflyGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx17[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_17.4bpp");
+static const u8 sBeautiflyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_17.4bpp.lz");
 static const ax_sprite sBeautiflySprites17[] = {
 	{sBeautiflyGfx17, ARRAY_COUNT(sBeautiflyGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx18[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_18.4bpp");
+static const u8 sBeautiflyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_18.4bpp.lz");
 static const ax_sprite sBeautiflySprites18[] = {
 	{sBeautiflyGfx18, ARRAY_COUNT(sBeautiflyGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx19[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_19.4bpp");
+static const u8 sBeautiflyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_19.4bpp.lz");
 static const ax_sprite sBeautiflySprites19[] = {
 	{sBeautiflyGfx19, ARRAY_COUNT(sBeautiflyGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx20[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_20.4bpp");
+static const u8 sBeautiflyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_20.4bpp.lz");
 static const ax_sprite sBeautiflySprites20[] = {
 	{sBeautiflyGfx20, ARRAY_COUNT(sBeautiflyGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx21[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_21.4bpp");
+static const u8 sBeautiflyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_21.4bpp.lz");
 static const ax_sprite sBeautiflySprites21[] = {
 	{sBeautiflyGfx21, ARRAY_COUNT(sBeautiflyGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx22[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_22.4bpp");
+static const u8 sBeautiflyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_22.4bpp.lz");
 static const ax_sprite sBeautiflySprites22[] = {
 	{sBeautiflyGfx22, ARRAY_COUNT(sBeautiflyGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx23[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_23.4bpp");
+static const u8 sBeautiflyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_23.4bpp.lz");
 static const ax_sprite sBeautiflySprites23[] = {
 	{sBeautiflyGfx23, ARRAY_COUNT(sBeautiflyGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx24[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_24.4bpp");
+static const u8 sBeautiflyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_24.4bpp.lz");
 static const ax_sprite sBeautiflySprites24[] = {
 	{sBeautiflyGfx24, ARRAY_COUNT(sBeautiflyGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx25[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_25.4bpp");
+static const u8 sBeautiflyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_25.4bpp.lz");
 static const ax_sprite sBeautiflySprites25[] = {
 	{sBeautiflyGfx25, ARRAY_COUNT(sBeautiflyGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx26[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_26.4bpp");
+static const u8 sBeautiflyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_26.4bpp.lz");
 static const ax_sprite sBeautiflySprites26[] = {
 	{sBeautiflyGfx26, ARRAY_COUNT(sBeautiflyGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx27[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_27.4bpp");
+static const u8 sBeautiflyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_27.4bpp.lz");
 static const ax_sprite sBeautiflySprites27[] = {
 	{sBeautiflyGfx27, ARRAY_COUNT(sBeautiflyGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx28[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_28.4bpp");
+static const u8 sBeautiflyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_28.4bpp.lz");
 static const ax_sprite sBeautiflySprites28[] = {
 	{sBeautiflyGfx28, ARRAY_COUNT(sBeautiflyGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx29[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_29.4bpp");
+static const u8 sBeautiflyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_29.4bpp.lz");
 static const ax_sprite sBeautiflySprites29[] = {
 	{sBeautiflyGfx29, ARRAY_COUNT(sBeautiflyGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx30[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_30.4bpp");
+static const u8 sBeautiflyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_30.4bpp.lz");
 static const ax_sprite sBeautiflySprites30[] = {
 	{sBeautiflyGfx30, ARRAY_COUNT(sBeautiflyGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx31[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_31.4bpp");
+static const u8 sBeautiflyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_31.4bpp.lz");
 static const ax_sprite sBeautiflySprites31[] = {
 	{sBeautiflyGfx31, ARRAY_COUNT(sBeautiflyGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx32[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_32.4bpp");
+static const u8 sBeautiflyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_32.4bpp.lz");
 static const ax_sprite sBeautiflySprites32[] = {
 	{sBeautiflyGfx32, ARRAY_COUNT(sBeautiflyGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx33[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_33.4bpp");
+static const u8 sBeautiflyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_33.4bpp.lz");
 static const ax_sprite sBeautiflySprites33[] = {
 	{sBeautiflyGfx33, ARRAY_COUNT(sBeautiflyGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx34[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_34.4bpp");
+static const u8 sBeautiflyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_34.4bpp.lz");
 static const ax_sprite sBeautiflySprites34[] = {
 	{sBeautiflyGfx34, ARRAY_COUNT(sBeautiflyGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx35[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_35.4bpp");
+static const u8 sBeautiflyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_35.4bpp.lz");
 static const ax_sprite sBeautiflySprites35[] = {
 	{sBeautiflyGfx35, ARRAY_COUNT(sBeautiflyGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx36[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_36.4bpp");
+static const u8 sBeautiflyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_36.4bpp.lz");
 static const ax_sprite sBeautiflySprites36[] = {
 	{sBeautiflyGfx36, ARRAY_COUNT(sBeautiflyGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx37[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_37.4bpp");
+static const u8 sBeautiflyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_37.4bpp.lz");
 static const ax_sprite sBeautiflySprites37[] = {
 	{sBeautiflyGfx37, ARRAY_COUNT(sBeautiflyGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx38[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_38.4bpp");
+static const u8 sBeautiflyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_38.4bpp.lz");
 static const ax_sprite sBeautiflySprites38[] = {
 	{sBeautiflyGfx38, ARRAY_COUNT(sBeautiflyGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx39[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_39.4bpp");
+static const u8 sBeautiflyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_39.4bpp.lz");
 static const ax_sprite sBeautiflySprites39[] = {
 	{sBeautiflyGfx39, ARRAY_COUNT(sBeautiflyGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx40[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_40.4bpp");
+static const u8 sBeautiflyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_40.4bpp.lz");
 static const ax_sprite sBeautiflySprites40[] = {
 	{sBeautiflyGfx40, ARRAY_COUNT(sBeautiflyGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx41[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_41.4bpp");
+static const u8 sBeautiflyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_41.4bpp.lz");
 static const ax_sprite sBeautiflySprites41[] = {
 	{sBeautiflyGfx41, ARRAY_COUNT(sBeautiflyGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx42[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_42.4bpp");
+static const u8 sBeautiflyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_42.4bpp.lz");
 static const ax_sprite sBeautiflySprites42[] = {
 	{sBeautiflyGfx42, ARRAY_COUNT(sBeautiflyGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx43[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_43.4bpp");
+static const u8 sBeautiflyGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_43.4bpp.lz");
 static const ax_sprite sBeautiflySprites43[] = {
 	{sBeautiflyGfx43, ARRAY_COUNT(sBeautiflyGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx44[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_44.4bpp");
+static const u8 sBeautiflyGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_44.4bpp.lz");
 static const ax_sprite sBeautiflySprites44[] = {
 	{sBeautiflyGfx44, ARRAY_COUNT(sBeautiflyGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx45[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_45.4bpp");
+static const u8 sBeautiflyGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_45.4bpp.lz");
 static const ax_sprite sBeautiflySprites45[] = {
 	{sBeautiflyGfx45, ARRAY_COUNT(sBeautiflyGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx46[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_46.4bpp");
+static const u8 sBeautiflyGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_46.4bpp.lz");
 static const ax_sprite sBeautiflySprites46[] = {
 	{sBeautiflyGfx46, ARRAY_COUNT(sBeautiflyGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx47[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_47.4bpp");
+static const u8 sBeautiflyGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_47.4bpp.lz");
 static const ax_sprite sBeautiflySprites47[] = {
 	{sBeautiflyGfx47, ARRAY_COUNT(sBeautiflyGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sBeautiflyGfx48[] = INCBIN_U8("graphics/ax/mon/beautifly/sprite_48.4bpp");
+static const u8 sBeautiflyGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/beautifly/sprite_48.4bpp.lz");
 static const ax_sprite sBeautiflySprites48[] = {
 	{sBeautiflyGfx48, ARRAY_COUNT(sBeautiflyGfx48)}, 
 	{NULL, 0}

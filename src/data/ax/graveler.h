@@ -2125,83 +2125,83 @@ static const ax_anim sGravelerAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGravelerGfx1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_1.4bpp");
+static const u8 sGravelerGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_1.4bpp.lz");
 static const ax_sprite sGravelerSprites1[] = {
 	{sGravelerGfx1, ARRAY_COUNT(sGravelerGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx2[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_2.4bpp");
+static const u8 sGravelerGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_2.4bpp.lz");
 static const ax_sprite sGravelerSprites2[] = {
 	{sGravelerGfx2, ARRAY_COUNT(sGravelerGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx3[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_3.4bpp");
+static const u8 sGravelerGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_3.4bpp.lz");
 static const ax_sprite sGravelerSprites3[] = {
 	{sGravelerGfx3, ARRAY_COUNT(sGravelerGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx4[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_4.4bpp");
+static const u8 sGravelerGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_4.4bpp.lz");
 static const ax_sprite sGravelerSprites4[] = {
 	{sGravelerGfx4, ARRAY_COUNT(sGravelerGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx5[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_5.4bpp");
+static const u8 sGravelerGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_5.4bpp.lz");
 static const ax_sprite sGravelerSprites5[] = {
 	{sGravelerGfx5, ARRAY_COUNT(sGravelerGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx6[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_6.4bpp");
+static const u8 sGravelerGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_6.4bpp.lz");
 static const ax_sprite sGravelerSprites6[] = {
 	{sGravelerGfx6, ARRAY_COUNT(sGravelerGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx7[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_7.4bpp");
+static const u8 sGravelerGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_7.4bpp.lz");
 static const ax_sprite sGravelerSprites7[] = {
 	{sGravelerGfx7, ARRAY_COUNT(sGravelerGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx8[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_8.4bpp");
+static const u8 sGravelerGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_8.4bpp.lz");
 static const ax_sprite sGravelerSprites8[] = {
 	{sGravelerGfx8, ARRAY_COUNT(sGravelerGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx9[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_9.4bpp");
+static const u8 sGravelerGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_9.4bpp.lz");
 static const ax_sprite sGravelerSprites9[] = {
 	{sGravelerGfx9, ARRAY_COUNT(sGravelerGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx10[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_10.4bpp");
+static const u8 sGravelerGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_10.4bpp.lz");
 static const ax_sprite sGravelerSprites10[] = {
 	{sGravelerGfx10, ARRAY_COUNT(sGravelerGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx11[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_11.4bpp");
+static const u8 sGravelerGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_11.4bpp.lz");
 static const ax_sprite sGravelerSprites11[] = {
 	{sGravelerGfx11, ARRAY_COUNT(sGravelerGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx12[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_12.4bpp");
+static const u8 sGravelerGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_12.4bpp.lz");
 static const ax_sprite sGravelerSprites12[] = {
 	{sGravelerGfx12, ARRAY_COUNT(sGravelerGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx13[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_13.4bpp");
+static const u8 sGravelerGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_13.4bpp.lz");
 static const ax_sprite sGravelerSprites13[] = {
 	{sGravelerGfx13, ARRAY_COUNT(sGravelerGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx14[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_14.4bpp");
+static const u8 sGravelerGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_14.4bpp.lz");
 static const ax_sprite sGravelerSprites14[] = {
 	{sGravelerGfx14, ARRAY_COUNT(sGravelerGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx15[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_15.4bpp");
+static const u8 sGravelerGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_15.4bpp.lz");
 static const ax_sprite sGravelerSprites15[] = {
 	{sGravelerGfx15, ARRAY_COUNT(sGravelerGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx16[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_16.4bpp");
-static const u8 sGravelerGfx16_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_16_1.4bpp");
+static const u8 sGravelerGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_16.4bpp.lz");
+static const u8 sGravelerGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_16_1.4bpp.lz");
 static const ax_sprite sGravelerSprites16[] = {
 	{NULL, 32}, 
 	{sGravelerGfx16, ARRAY_COUNT(sGravelerGfx16)}, 
@@ -2209,21 +2209,21 @@ static const ax_sprite sGravelerSprites16[] = {
 	{sGravelerGfx16_1, ARRAY_COUNT(sGravelerGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx17[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_17.4bpp");
+static const u8 sGravelerGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_17.4bpp.lz");
 static const ax_sprite sGravelerSprites17[] = {
 	{sGravelerGfx17, ARRAY_COUNT(sGravelerGfx17)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx18[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_18.4bpp");
+static const u8 sGravelerGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_18.4bpp.lz");
 static const ax_sprite sGravelerSprites18[] = {
 	{NULL, 128}, 
 	{sGravelerGfx18, ARRAY_COUNT(sGravelerGfx18)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx19[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_19.4bpp");
-static const u8 sGravelerGfx19_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_19_1.4bpp");
+static const u8 sGravelerGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_19.4bpp.lz");
+static const u8 sGravelerGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_19_1.4bpp.lz");
 static const ax_sprite sGravelerSprites19[] = {
 	{NULL, 32}, 
 	{sGravelerGfx19, ARRAY_COUNT(sGravelerGfx19)}, 
@@ -2232,17 +2232,17 @@ static const ax_sprite sGravelerSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx20[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_20.4bpp");
+static const u8 sGravelerGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_20.4bpp.lz");
 static const ax_sprite sGravelerSprites20[] = {
 	{NULL, 160}, 
 	{sGravelerGfx20, ARRAY_COUNT(sGravelerGfx20)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx21[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_21.4bpp");
-static const u8 sGravelerGfx21_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_21_1.4bpp");
-static const u8 sGravelerGfx21_2[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_21_2.4bpp");
-static const u8 sGravelerGfx21_3[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_21_3.4bpp");
+static const u8 sGravelerGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_21.4bpp.lz");
+static const u8 sGravelerGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_21_1.4bpp.lz");
+static const u8 sGravelerGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_21_2.4bpp.lz");
+static const u8 sGravelerGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_21_3.4bpp.lz");
 static const ax_sprite sGravelerSprites21[] = {
 	{NULL, 64}, 
 	{sGravelerGfx21, ARRAY_COUNT(sGravelerGfx21)}, 
@@ -2255,15 +2255,15 @@ static const ax_sprite sGravelerSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx22[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_22.4bpp");
+static const u8 sGravelerGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_22.4bpp.lz");
 static const ax_sprite sGravelerSprites22[] = {
 	{NULL, 160}, 
 	{sGravelerGfx22, ARRAY_COUNT(sGravelerGfx22)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx23[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_23.4bpp");
-static const u8 sGravelerGfx23_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_23_1.4bpp");
+static const u8 sGravelerGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_23.4bpp.lz");
+static const u8 sGravelerGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_23_1.4bpp.lz");
 static const ax_sprite sGravelerSprites23[] = {
 	{NULL, 64}, 
 	{sGravelerGfx23, ARRAY_COUNT(sGravelerGfx23)}, 
@@ -2272,27 +2272,27 @@ static const ax_sprite sGravelerSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx24[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_24.4bpp");
+static const u8 sGravelerGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_24.4bpp.lz");
 static const ax_sprite sGravelerSprites24[] = {
 	{NULL, 128}, 
 	{sGravelerGfx24, ARRAY_COUNT(sGravelerGfx24)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx25[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_25.4bpp");
+static const u8 sGravelerGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_25.4bpp.lz");
 static const ax_sprite sGravelerSprites25[] = {
 	{sGravelerGfx25, ARRAY_COUNT(sGravelerGfx25)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx26[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_26.4bpp");
+static const u8 sGravelerGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_26.4bpp.lz");
 static const ax_sprite sGravelerSprites26[] = {
 	{sGravelerGfx26, ARRAY_COUNT(sGravelerGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx27[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_27.4bpp");
-static const u8 sGravelerGfx27_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_27_1.4bpp");
-static const u8 sGravelerGfx27_2[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_27_2.4bpp");
+static const u8 sGravelerGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_27.4bpp.lz");
+static const u8 sGravelerGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_27_1.4bpp.lz");
+static const u8 sGravelerGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_27_2.4bpp.lz");
 static const ax_sprite sGravelerSprites27[] = {
 	{NULL, 32}, 
 	{sGravelerGfx27, ARRAY_COUNT(sGravelerGfx27)}, 
@@ -2303,9 +2303,9 @@ static const ax_sprite sGravelerSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx28[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_28.4bpp");
-static const u8 sGravelerGfx28_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_28_1.4bpp");
-static const u8 sGravelerGfx28_2[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_28_2.4bpp");
+static const u8 sGravelerGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_28.4bpp.lz");
+static const u8 sGravelerGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_28_1.4bpp.lz");
+static const u8 sGravelerGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_28_2.4bpp.lz");
 static const ax_sprite sGravelerSprites28[] = {
 	{NULL, 32}, 
 	{sGravelerGfx28, ARRAY_COUNT(sGravelerGfx28)}, 
@@ -2316,8 +2316,8 @@ static const ax_sprite sGravelerSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx29[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_29.4bpp");
-static const u8 sGravelerGfx29_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_29_1.4bpp");
+static const u8 sGravelerGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_29.4bpp.lz");
+static const u8 sGravelerGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_29_1.4bpp.lz");
 static const ax_sprite sGravelerSprites29[] = {
 	{sGravelerGfx29, ARRAY_COUNT(sGravelerGfx29)}, 
 	{NULL, 96}, 
@@ -2325,8 +2325,8 @@ static const ax_sprite sGravelerSprites29[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx30[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_30.4bpp");
-static const u8 sGravelerGfx30_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_30_1.4bpp");
+static const u8 sGravelerGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_30.4bpp.lz");
+static const u8 sGravelerGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_30_1.4bpp.lz");
 static const ax_sprite sGravelerSprites30[] = {
 	{NULL, 32}, 
 	{sGravelerGfx30, ARRAY_COUNT(sGravelerGfx30)}, 
@@ -2335,33 +2335,33 @@ static const ax_sprite sGravelerSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx31[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_31.4bpp");
+static const u8 sGravelerGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_31.4bpp.lz");
 static const ax_sprite sGravelerSprites31[] = {
 	{sGravelerGfx31, ARRAY_COUNT(sGravelerGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx32[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_32.4bpp");
+static const u8 sGravelerGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_32.4bpp.lz");
 static const ax_sprite sGravelerSprites32[] = {
 	{sGravelerGfx32, ARRAY_COUNT(sGravelerGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx33[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_33.4bpp");
+static const u8 sGravelerGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_33.4bpp.lz");
 static const ax_sprite sGravelerSprites33[] = {
 	{sGravelerGfx33, ARRAY_COUNT(sGravelerGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx34[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_34.4bpp");
+static const u8 sGravelerGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_34.4bpp.lz");
 static const ax_sprite sGravelerSprites34[] = {
 	{sGravelerGfx34, ARRAY_COUNT(sGravelerGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx35[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_35.4bpp");
+static const u8 sGravelerGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_35.4bpp.lz");
 static const ax_sprite sGravelerSprites35[] = {
 	{sGravelerGfx35, ARRAY_COUNT(sGravelerGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx36[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_36.4bpp");
-static const u8 sGravelerGfx36_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_36_1.4bpp");
+static const u8 sGravelerGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_36.4bpp.lz");
+static const u8 sGravelerGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_36_1.4bpp.lz");
 static const ax_sprite sGravelerSprites36[] = {
 	{NULL, 128}, 
 	{sGravelerGfx36, ARRAY_COUNT(sGravelerGfx36)}, 
@@ -2369,8 +2369,8 @@ static const ax_sprite sGravelerSprites36[] = {
 	{sGravelerGfx36_1, ARRAY_COUNT(sGravelerGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx37[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_37.4bpp");
-static const u8 sGravelerGfx37_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_37_1.4bpp");
+static const u8 sGravelerGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_37.4bpp.lz");
+static const u8 sGravelerGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_37_1.4bpp.lz");
 static const ax_sprite sGravelerSprites37[] = {
 	{NULL, 128}, 
 	{sGravelerGfx37, ARRAY_COUNT(sGravelerGfx37)}, 
@@ -2378,9 +2378,9 @@ static const ax_sprite sGravelerSprites37[] = {
 	{sGravelerGfx37_1, ARRAY_COUNT(sGravelerGfx37_1)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx38[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_38.4bpp");
-static const u8 sGravelerGfx38_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_38_1.4bpp");
-static const u8 sGravelerGfx38_2[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_38_2.4bpp");
+static const u8 sGravelerGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_38.4bpp.lz");
+static const u8 sGravelerGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_38_1.4bpp.lz");
+static const u8 sGravelerGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_38_2.4bpp.lz");
 static const ax_sprite sGravelerSprites38[] = {
 	{NULL, 128}, 
 	{sGravelerGfx38, ARRAY_COUNT(sGravelerGfx38)}, 
@@ -2391,37 +2391,37 @@ static const ax_sprite sGravelerSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx39[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_39.4bpp");
-static const u8 sGravelerGfx39_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_39_1.4bpp");
+static const u8 sGravelerGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_39.4bpp.lz");
+static const u8 sGravelerGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_39_1.4bpp.lz");
 static const ax_sprite sGravelerSprites39[] = {
 	{sGravelerGfx39, ARRAY_COUNT(sGravelerGfx39)}, 
 	{NULL, 32}, 
 	{sGravelerGfx39_1, ARRAY_COUNT(sGravelerGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx40[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_40.4bpp");
+static const u8 sGravelerGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_40.4bpp.lz");
 static const ax_sprite sGravelerSprites40[] = {
 	{sGravelerGfx40, ARRAY_COUNT(sGravelerGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx41[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_41.4bpp");
+static const u8 sGravelerGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_41.4bpp.lz");
 static const ax_sprite sGravelerSprites41[] = {
 	{sGravelerGfx41, ARRAY_COUNT(sGravelerGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx42[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_42.4bpp");
+static const u8 sGravelerGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_42.4bpp.lz");
 static const ax_sprite sGravelerSprites42[] = {
 	{sGravelerGfx42, ARRAY_COUNT(sGravelerGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx43[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_43.4bpp");
+static const u8 sGravelerGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_43.4bpp.lz");
 static const ax_sprite sGravelerSprites43[] = {
 	{sGravelerGfx43, ARRAY_COUNT(sGravelerGfx43)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx44[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_44.4bpp");
-static const u8 sGravelerGfx44_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_44_1.4bpp");
+static const u8 sGravelerGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_44.4bpp.lz");
+static const u8 sGravelerGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_44_1.4bpp.lz");
 static const ax_sprite sGravelerSprites44[] = {
 	{NULL, 32}, 
 	{sGravelerGfx44, ARRAY_COUNT(sGravelerGfx44)}, 
@@ -2430,8 +2430,8 @@ static const ax_sprite sGravelerSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx45[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_45.4bpp");
-static const u8 sGravelerGfx45_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_45_1.4bpp");
+static const u8 sGravelerGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_45.4bpp.lz");
+static const u8 sGravelerGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_45_1.4bpp.lz");
 static const ax_sprite sGravelerSprites45[] = {
 	{NULL, 64}, 
 	{sGravelerGfx45, ARRAY_COUNT(sGravelerGfx45)}, 
@@ -2440,8 +2440,8 @@ static const ax_sprite sGravelerSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx46[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_46.4bpp");
-static const u8 sGravelerGfx46_1[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_46_1.4bpp");
+static const u8 sGravelerGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_46.4bpp.lz");
+static const u8 sGravelerGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_46_1.4bpp.lz");
 static const ax_sprite sGravelerSprites46[] = {
 	{NULL, 32}, 
 	{sGravelerGfx46, ARRAY_COUNT(sGravelerGfx46)}, 
@@ -2450,37 +2450,37 @@ static const ax_sprite sGravelerSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx47[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_47.4bpp");
+static const u8 sGravelerGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_47.4bpp.lz");
 static const ax_sprite sGravelerSprites47[] = {
 	{sGravelerGfx47, ARRAY_COUNT(sGravelerGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx48[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_48.4bpp");
+static const u8 sGravelerGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_48.4bpp.lz");
 static const ax_sprite sGravelerSprites48[] = {
 	{sGravelerGfx48, ARRAY_COUNT(sGravelerGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx49[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_49.4bpp");
+static const u8 sGravelerGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_49.4bpp.lz");
 static const ax_sprite sGravelerSprites49[] = {
 	{sGravelerGfx49, ARRAY_COUNT(sGravelerGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx50[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_50.4bpp");
+static const u8 sGravelerGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_50.4bpp.lz");
 static const ax_sprite sGravelerSprites50[] = {
 	{sGravelerGfx50, ARRAY_COUNT(sGravelerGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx51[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_51.4bpp");
+static const u8 sGravelerGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_51.4bpp.lz");
 static const ax_sprite sGravelerSprites51[] = {
 	{sGravelerGfx51, ARRAY_COUNT(sGravelerGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx52[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_52.4bpp");
+static const u8 sGravelerGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_52.4bpp.lz");
 static const ax_sprite sGravelerSprites52[] = {
 	{sGravelerGfx52, ARRAY_COUNT(sGravelerGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sGravelerGfx53[] = INCBIN_U8("graphics/ax/mon/graveler/sprite_53.4bpp");
+static const u8 sGravelerGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/graveler/sprite_53.4bpp.lz");
 static const ax_sprite sGravelerSprites53[] = {
 	{sGravelerGfx53, ARRAY_COUNT(sGravelerGfx53)}, 
 	{NULL, 0}

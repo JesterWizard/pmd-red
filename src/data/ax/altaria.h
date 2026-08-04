@@ -2439,212 +2439,212 @@ static const ax_anim sAltariaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sAltariaGfx1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_1.4bpp");
+static const u8 sAltariaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_1.4bpp.lz");
 static const ax_sprite sAltariaSprites1[] = {
 	{sAltariaGfx1, ARRAY_COUNT(sAltariaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx2[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_2.4bpp");
+static const u8 sAltariaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_2.4bpp.lz");
 static const ax_sprite sAltariaSprites2[] = {
 	{sAltariaGfx2, ARRAY_COUNT(sAltariaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx3[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_3.4bpp");
+static const u8 sAltariaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_3.4bpp.lz");
 static const ax_sprite sAltariaSprites3[] = {
 	{sAltariaGfx3, ARRAY_COUNT(sAltariaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx4[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_4.4bpp");
+static const u8 sAltariaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_4.4bpp.lz");
 static const ax_sprite sAltariaSprites4[] = {
 	{sAltariaGfx4, ARRAY_COUNT(sAltariaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx5[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_5.4bpp");
+static const u8 sAltariaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_5.4bpp.lz");
 static const ax_sprite sAltariaSprites5[] = {
 	{sAltariaGfx5, ARRAY_COUNT(sAltariaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx6[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_6.4bpp");
+static const u8 sAltariaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_6.4bpp.lz");
 static const ax_sprite sAltariaSprites6[] = {
 	{sAltariaGfx6, ARRAY_COUNT(sAltariaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx7[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_7.4bpp");
+static const u8 sAltariaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_7.4bpp.lz");
 static const ax_sprite sAltariaSprites7[] = {
 	{sAltariaGfx7, ARRAY_COUNT(sAltariaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx8[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_8.4bpp");
+static const u8 sAltariaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_8.4bpp.lz");
 static const ax_sprite sAltariaSprites8[] = {
 	{sAltariaGfx8, ARRAY_COUNT(sAltariaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx9[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_9.4bpp");
+static const u8 sAltariaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_9.4bpp.lz");
 static const ax_sprite sAltariaSprites9[] = {
 	{sAltariaGfx9, ARRAY_COUNT(sAltariaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx10[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_10.4bpp");
+static const u8 sAltariaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_10.4bpp.lz");
 static const ax_sprite sAltariaSprites10[] = {
 	{sAltariaGfx10, ARRAY_COUNT(sAltariaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx11[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_11.4bpp");
+static const u8 sAltariaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_11.4bpp.lz");
 static const ax_sprite sAltariaSprites11[] = {
 	{sAltariaGfx11, ARRAY_COUNT(sAltariaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx12[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_12.4bpp");
+static const u8 sAltariaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_12.4bpp.lz");
 static const ax_sprite sAltariaSprites12[] = {
 	{sAltariaGfx12, ARRAY_COUNT(sAltariaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx13[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_13.4bpp");
+static const u8 sAltariaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_13.4bpp.lz");
 static const ax_sprite sAltariaSprites13[] = {
 	{sAltariaGfx13, ARRAY_COUNT(sAltariaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx14[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_14.4bpp");
+static const u8 sAltariaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_14.4bpp.lz");
 static const ax_sprite sAltariaSprites14[] = {
 	{sAltariaGfx14, ARRAY_COUNT(sAltariaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx15[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_15.4bpp");
+static const u8 sAltariaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_15.4bpp.lz");
 static const ax_sprite sAltariaSprites15[] = {
 	{sAltariaGfx15, ARRAY_COUNT(sAltariaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx16[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_16.4bpp");
+static const u8 sAltariaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_16.4bpp.lz");
 static const ax_sprite sAltariaSprites16[] = {
 	{sAltariaGfx16, ARRAY_COUNT(sAltariaGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx17[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_17.4bpp");
+static const u8 sAltariaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_17.4bpp.lz");
 static const ax_sprite sAltariaSprites17[] = {
 	{sAltariaGfx17, ARRAY_COUNT(sAltariaGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx18[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_18.4bpp");
+static const u8 sAltariaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_18.4bpp.lz");
 static const ax_sprite sAltariaSprites18[] = {
 	{sAltariaGfx18, ARRAY_COUNT(sAltariaGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx19[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_19.4bpp");
+static const u8 sAltariaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_19.4bpp.lz");
 static const ax_sprite sAltariaSprites19[] = {
 	{sAltariaGfx19, ARRAY_COUNT(sAltariaGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx20[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_20.4bpp");
+static const u8 sAltariaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_20.4bpp.lz");
 static const ax_sprite sAltariaSprites20[] = {
 	{sAltariaGfx20, ARRAY_COUNT(sAltariaGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx21[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_21.4bpp");
+static const u8 sAltariaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_21.4bpp.lz");
 static const ax_sprite sAltariaSprites21[] = {
 	{sAltariaGfx21, ARRAY_COUNT(sAltariaGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx22[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_22.4bpp");
+static const u8 sAltariaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_22.4bpp.lz");
 static const ax_sprite sAltariaSprites22[] = {
 	{sAltariaGfx22, ARRAY_COUNT(sAltariaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx23[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_23.4bpp");
+static const u8 sAltariaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_23.4bpp.lz");
 static const ax_sprite sAltariaSprites23[] = {
 	{sAltariaGfx23, ARRAY_COUNT(sAltariaGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx24[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_24.4bpp");
+static const u8 sAltariaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_24.4bpp.lz");
 static const ax_sprite sAltariaSprites24[] = {
 	{sAltariaGfx24, ARRAY_COUNT(sAltariaGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx25[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_25.4bpp");
+static const u8 sAltariaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_25.4bpp.lz");
 static const ax_sprite sAltariaSprites25[] = {
 	{sAltariaGfx25, ARRAY_COUNT(sAltariaGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx26[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_26.4bpp");
+static const u8 sAltariaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_26.4bpp.lz");
 static const ax_sprite sAltariaSprites26[] = {
 	{sAltariaGfx26, ARRAY_COUNT(sAltariaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx27[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_27.4bpp");
+static const u8 sAltariaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_27.4bpp.lz");
 static const ax_sprite sAltariaSprites27[] = {
 	{sAltariaGfx27, ARRAY_COUNT(sAltariaGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx28[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_28.4bpp");
+static const u8 sAltariaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_28.4bpp.lz");
 static const ax_sprite sAltariaSprites28[] = {
 	{sAltariaGfx28, ARRAY_COUNT(sAltariaGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx29[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_29.4bpp");
+static const u8 sAltariaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_29.4bpp.lz");
 static const ax_sprite sAltariaSprites29[] = {
 	{sAltariaGfx29, ARRAY_COUNT(sAltariaGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx30[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_30.4bpp");
+static const u8 sAltariaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_30.4bpp.lz");
 static const ax_sprite sAltariaSprites30[] = {
 	{sAltariaGfx30, ARRAY_COUNT(sAltariaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx31[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_31.4bpp");
+static const u8 sAltariaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_31.4bpp.lz");
 static const ax_sprite sAltariaSprites31[] = {
 	{sAltariaGfx31, ARRAY_COUNT(sAltariaGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx32[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_32.4bpp");
+static const u8 sAltariaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_32.4bpp.lz");
 static const ax_sprite sAltariaSprites32[] = {
 	{sAltariaGfx32, ARRAY_COUNT(sAltariaGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx33[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_33.4bpp");
+static const u8 sAltariaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_33.4bpp.lz");
 static const ax_sprite sAltariaSprites33[] = {
 	{sAltariaGfx33, ARRAY_COUNT(sAltariaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx34[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_34.4bpp");
+static const u8 sAltariaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_34.4bpp.lz");
 static const ax_sprite sAltariaSprites34[] = {
 	{sAltariaGfx34, ARRAY_COUNT(sAltariaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx35[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_35.4bpp");
+static const u8 sAltariaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_35.4bpp.lz");
 static const ax_sprite sAltariaSprites35[] = {
 	{sAltariaGfx35, ARRAY_COUNT(sAltariaGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx36[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_36.4bpp");
+static const u8 sAltariaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_36.4bpp.lz");
 static const ax_sprite sAltariaSprites36[] = {
 	{sAltariaGfx36, ARRAY_COUNT(sAltariaGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx37[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_37.4bpp");
-static const u8 sAltariaGfx37_1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_37_1.4bpp");
+static const u8 sAltariaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_37.4bpp.lz");
+static const u8 sAltariaGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_37_1.4bpp.lz");
 static const ax_sprite sAltariaSprites37[] = {
 	{sAltariaGfx37, ARRAY_COUNT(sAltariaGfx37)}, 
 	{NULL, 32}, 
 	{sAltariaGfx37_1, ARRAY_COUNT(sAltariaGfx37_1)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx38[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_38.4bpp");
+static const u8 sAltariaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_38.4bpp.lz");
 static const ax_sprite sAltariaSprites38[] = {
 	{sAltariaGfx38, ARRAY_COUNT(sAltariaGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx39[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_39.4bpp");
+static const u8 sAltariaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_39.4bpp.lz");
 static const ax_sprite sAltariaSprites39[] = {
 	{sAltariaGfx39, ARRAY_COUNT(sAltariaGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx40[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_40.4bpp");
+static const u8 sAltariaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_40.4bpp.lz");
 static const ax_sprite sAltariaSprites40[] = {
 	{sAltariaGfx40, ARRAY_COUNT(sAltariaGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx41[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_41.4bpp");
-static const u8 sAltariaGfx41_1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_41_1.4bpp");
-static const u8 sAltariaGfx41_2[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_41_2.4bpp");
+static const u8 sAltariaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_41.4bpp.lz");
+static const u8 sAltariaGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_41_1.4bpp.lz");
+static const u8 sAltariaGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_41_2.4bpp.lz");
 static const ax_sprite sAltariaSprites41[] = {
 	{sAltariaGfx41, ARRAY_COUNT(sAltariaGfx41)}, 
 	{NULL, 32}, 
@@ -2653,88 +2653,88 @@ static const ax_sprite sAltariaSprites41[] = {
 	{sAltariaGfx41_2, ARRAY_COUNT(sAltariaGfx41_2)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx42[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_42.4bpp");
+static const u8 sAltariaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_42.4bpp.lz");
 static const ax_sprite sAltariaSprites42[] = {
 	{sAltariaGfx42, ARRAY_COUNT(sAltariaGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx43[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_43.4bpp");
-static const u8 sAltariaGfx43_1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_43_1.4bpp");
+static const u8 sAltariaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_43.4bpp.lz");
+static const u8 sAltariaGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_43_1.4bpp.lz");
 static const ax_sprite sAltariaSprites43[] = {
 	{sAltariaGfx43, ARRAY_COUNT(sAltariaGfx43)}, 
 	{NULL, 32}, 
 	{sAltariaGfx43_1, ARRAY_COUNT(sAltariaGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx44[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_44.4bpp");
-static const u8 sAltariaGfx44_1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_44_1.4bpp");
+static const u8 sAltariaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_44.4bpp.lz");
+static const u8 sAltariaGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_44_1.4bpp.lz");
 static const ax_sprite sAltariaSprites44[] = {
 	{sAltariaGfx44, ARRAY_COUNT(sAltariaGfx44)}, 
 	{NULL, 32}, 
 	{sAltariaGfx44_1, ARRAY_COUNT(sAltariaGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx45[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_45.4bpp");
+static const u8 sAltariaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_45.4bpp.lz");
 static const ax_sprite sAltariaSprites45[] = {
 	{sAltariaGfx45, ARRAY_COUNT(sAltariaGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx46[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_46.4bpp");
-static const u8 sAltariaGfx46_1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_46_1.4bpp");
+static const u8 sAltariaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_46.4bpp.lz");
+static const u8 sAltariaGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_46_1.4bpp.lz");
 static const ax_sprite sAltariaSprites46[] = {
 	{sAltariaGfx46, ARRAY_COUNT(sAltariaGfx46)}, 
 	{NULL, 32}, 
 	{sAltariaGfx46_1, ARRAY_COUNT(sAltariaGfx46_1)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx47[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_47.4bpp");
+static const u8 sAltariaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_47.4bpp.lz");
 static const ax_sprite sAltariaSprites47[] = {
 	{sAltariaGfx47, ARRAY_COUNT(sAltariaGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx48[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_48.4bpp");
+static const u8 sAltariaGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_48.4bpp.lz");
 static const ax_sprite sAltariaSprites48[] = {
 	{sAltariaGfx48, ARRAY_COUNT(sAltariaGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx49[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_49.4bpp");
+static const u8 sAltariaGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_49.4bpp.lz");
 static const ax_sprite sAltariaSprites49[] = {
 	{sAltariaGfx49, ARRAY_COUNT(sAltariaGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx50[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_50.4bpp");
+static const u8 sAltariaGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_50.4bpp.lz");
 static const ax_sprite sAltariaSprites50[] = {
 	{sAltariaGfx50, ARRAY_COUNT(sAltariaGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx51[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_51.4bpp");
+static const u8 sAltariaGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_51.4bpp.lz");
 static const ax_sprite sAltariaSprites51[] = {
 	{sAltariaGfx51, ARRAY_COUNT(sAltariaGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx52[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_52.4bpp");
+static const u8 sAltariaGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_52.4bpp.lz");
 static const ax_sprite sAltariaSprites52[] = {
 	{sAltariaGfx52, ARRAY_COUNT(sAltariaGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx53[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_53.4bpp");
+static const u8 sAltariaGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_53.4bpp.lz");
 static const ax_sprite sAltariaSprites53[] = {
 	{sAltariaGfx53, ARRAY_COUNT(sAltariaGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx54[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_54.4bpp");
+static const u8 sAltariaGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_54.4bpp.lz");
 static const ax_sprite sAltariaSprites54[] = {
 	{sAltariaGfx54, ARRAY_COUNT(sAltariaGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx55[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_55.4bpp");
+static const u8 sAltariaGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_55.4bpp.lz");
 static const ax_sprite sAltariaSprites55[] = {
 	{sAltariaGfx55, ARRAY_COUNT(sAltariaGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx56[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_56.4bpp");
-static const u8 sAltariaGfx56_1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_56_1.4bpp");
-static const u8 sAltariaGfx56_2[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_56_2.4bpp");
+static const u8 sAltariaGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_56.4bpp.lz");
+static const u8 sAltariaGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_56_1.4bpp.lz");
+static const u8 sAltariaGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_56_2.4bpp.lz");
 static const ax_sprite sAltariaSprites56[] = {
 	{sAltariaGfx56, ARRAY_COUNT(sAltariaGfx56)}, 
 	{NULL, 64}, 
@@ -2743,23 +2743,23 @@ static const ax_sprite sAltariaSprites56[] = {
 	{sAltariaGfx56_2, ARRAY_COUNT(sAltariaGfx56_2)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx57[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_57.4bpp");
+static const u8 sAltariaGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_57.4bpp.lz");
 static const ax_sprite sAltariaSprites57[] = {
 	{sAltariaGfx57, ARRAY_COUNT(sAltariaGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx58[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_58.4bpp");
+static const u8 sAltariaGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_58.4bpp.lz");
 static const ax_sprite sAltariaSprites58[] = {
 	{sAltariaGfx58, ARRAY_COUNT(sAltariaGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx59[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_59.4bpp");
+static const u8 sAltariaGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_59.4bpp.lz");
 static const ax_sprite sAltariaSprites59[] = {
 	{sAltariaGfx59, ARRAY_COUNT(sAltariaGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx60[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_60.4bpp");
-static const u8 sAltariaGfx60_1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_60_1.4bpp");
+static const u8 sAltariaGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_60.4bpp.lz");
+static const u8 sAltariaGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_60_1.4bpp.lz");
 static const ax_sprite sAltariaSprites60[] = {
 	{sAltariaGfx60, ARRAY_COUNT(sAltariaGfx60)}, 
 	{NULL, 32}, 
@@ -2767,13 +2767,13 @@ static const ax_sprite sAltariaSprites60[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx61[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_61.4bpp");
+static const u8 sAltariaGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_61.4bpp.lz");
 static const ax_sprite sAltariaSprites61[] = {
 	{sAltariaGfx61, ARRAY_COUNT(sAltariaGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx62[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_62.4bpp");
-static const u8 sAltariaGfx62_1[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_62_1.4bpp");
+static const u8 sAltariaGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_62.4bpp.lz");
+static const u8 sAltariaGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_62_1.4bpp.lz");
 static const ax_sprite sAltariaSprites62[] = {
 	{sAltariaGfx62, ARRAY_COUNT(sAltariaGfx62)}, 
 	{NULL, 32}, 
@@ -2781,122 +2781,122 @@ static const ax_sprite sAltariaSprites62[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx63[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_63.4bpp");
+static const u8 sAltariaGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_63.4bpp.lz");
 static const ax_sprite sAltariaSprites63[] = {
 	{sAltariaGfx63, ARRAY_COUNT(sAltariaGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx64[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_64.4bpp");
+static const u8 sAltariaGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_64.4bpp.lz");
 static const ax_sprite sAltariaSprites64[] = {
 	{sAltariaGfx64, ARRAY_COUNT(sAltariaGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx65[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_65.4bpp");
+static const u8 sAltariaGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_65.4bpp.lz");
 static const ax_sprite sAltariaSprites65[] = {
 	{sAltariaGfx65, ARRAY_COUNT(sAltariaGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx66[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_66.4bpp");
+static const u8 sAltariaGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_66.4bpp.lz");
 static const ax_sprite sAltariaSprites66[] = {
 	{sAltariaGfx66, ARRAY_COUNT(sAltariaGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx67[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_67.4bpp");
+static const u8 sAltariaGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_67.4bpp.lz");
 static const ax_sprite sAltariaSprites67[] = {
 	{sAltariaGfx67, ARRAY_COUNT(sAltariaGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx68[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_68.4bpp");
+static const u8 sAltariaGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_68.4bpp.lz");
 static const ax_sprite sAltariaSprites68[] = {
 	{sAltariaGfx68, ARRAY_COUNT(sAltariaGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx69[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_69.4bpp");
+static const u8 sAltariaGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_69.4bpp.lz");
 static const ax_sprite sAltariaSprites69[] = {
 	{sAltariaGfx69, ARRAY_COUNT(sAltariaGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx70[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_70.4bpp");
+static const u8 sAltariaGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_70.4bpp.lz");
 static const ax_sprite sAltariaSprites70[] = {
 	{sAltariaGfx70, ARRAY_COUNT(sAltariaGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx71[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_71.4bpp");
+static const u8 sAltariaGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_71.4bpp.lz");
 static const ax_sprite sAltariaSprites71[] = {
 	{sAltariaGfx71, ARRAY_COUNT(sAltariaGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx72[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_72.4bpp");
+static const u8 sAltariaGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_72.4bpp.lz");
 static const ax_sprite sAltariaSprites72[] = {
 	{sAltariaGfx72, ARRAY_COUNT(sAltariaGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx73[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_73.4bpp");
+static const u8 sAltariaGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_73.4bpp.lz");
 static const ax_sprite sAltariaSprites73[] = {
 	{sAltariaGfx73, ARRAY_COUNT(sAltariaGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx74[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_74.4bpp");
+static const u8 sAltariaGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_74.4bpp.lz");
 static const ax_sprite sAltariaSprites74[] = {
 	{sAltariaGfx74, ARRAY_COUNT(sAltariaGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx75[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_75.4bpp");
+static const u8 sAltariaGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_75.4bpp.lz");
 static const ax_sprite sAltariaSprites75[] = {
 	{sAltariaGfx75, ARRAY_COUNT(sAltariaGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx76[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_76.4bpp");
+static const u8 sAltariaGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_76.4bpp.lz");
 static const ax_sprite sAltariaSprites76[] = {
 	{sAltariaGfx76, ARRAY_COUNT(sAltariaGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx77[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_77.4bpp");
+static const u8 sAltariaGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_77.4bpp.lz");
 static const ax_sprite sAltariaSprites77[] = {
 	{sAltariaGfx77, ARRAY_COUNT(sAltariaGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx78[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_78.4bpp");
+static const u8 sAltariaGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_78.4bpp.lz");
 static const ax_sprite sAltariaSprites78[] = {
 	{sAltariaGfx78, ARRAY_COUNT(sAltariaGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx79[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_79.4bpp");
+static const u8 sAltariaGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_79.4bpp.lz");
 static const ax_sprite sAltariaSprites79[] = {
 	{sAltariaGfx79, ARRAY_COUNT(sAltariaGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx80[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_80.4bpp");
+static const u8 sAltariaGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_80.4bpp.lz");
 static const ax_sprite sAltariaSprites80[] = {
 	{sAltariaGfx80, ARRAY_COUNT(sAltariaGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx81[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_81.4bpp");
+static const u8 sAltariaGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_81.4bpp.lz");
 static const ax_sprite sAltariaSprites81[] = {
 	{sAltariaGfx81, ARRAY_COUNT(sAltariaGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx82[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_82.4bpp");
+static const u8 sAltariaGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_82.4bpp.lz");
 static const ax_sprite sAltariaSprites82[] = {
 	{sAltariaGfx82, ARRAY_COUNT(sAltariaGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx83[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_83.4bpp");
+static const u8 sAltariaGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_83.4bpp.lz");
 static const ax_sprite sAltariaSprites83[] = {
 	{sAltariaGfx83, ARRAY_COUNT(sAltariaGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx84[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_84.4bpp");
+static const u8 sAltariaGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_84.4bpp.lz");
 static const ax_sprite sAltariaSprites84[] = {
 	{sAltariaGfx84, ARRAY_COUNT(sAltariaGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx85[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_85.4bpp");
+static const u8 sAltariaGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_85.4bpp.lz");
 static const ax_sprite sAltariaSprites85[] = {
 	{sAltariaGfx85, ARRAY_COUNT(sAltariaGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sAltariaGfx86[] = INCBIN_U8("graphics/ax/mon/altaria/sprite_86.4bpp");
+static const u8 sAltariaGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/altaria/sprite_86.4bpp.lz");
 static const ax_sprite sAltariaSprites86[] = {
 	{sAltariaGfx86, ARRAY_COUNT(sAltariaGfx86)}, 
 	{NULL, 0}

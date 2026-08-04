@@ -2055,129 +2055,129 @@ static const ax_anim sClefairyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sClefairyGfx1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_1.4bpp");
+static const u8 sClefairyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_1.4bpp.lz");
 static const ax_sprite sClefairySprites1[] = {
 	{sClefairyGfx1, ARRAY_COUNT(sClefairyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_2.4bpp");
+static const u8 sClefairyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_2.4bpp.lz");
 static const ax_sprite sClefairySprites2[] = {
 	{sClefairyGfx2, ARRAY_COUNT(sClefairyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx3[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_3.4bpp");
+static const u8 sClefairyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_3.4bpp.lz");
 static const ax_sprite sClefairySprites3[] = {
 	{sClefairyGfx3, ARRAY_COUNT(sClefairyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx4[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_4.4bpp");
+static const u8 sClefairyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_4.4bpp.lz");
 static const ax_sprite sClefairySprites4[] = {
 	{sClefairyGfx4, ARRAY_COUNT(sClefairyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx5[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_5.4bpp");
+static const u8 sClefairyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_5.4bpp.lz");
 static const ax_sprite sClefairySprites5[] = {
 	{sClefairyGfx5, ARRAY_COUNT(sClefairyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx6[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_6.4bpp");
+static const u8 sClefairyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_6.4bpp.lz");
 static const ax_sprite sClefairySprites6[] = {
 	{sClefairyGfx6, ARRAY_COUNT(sClefairyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx7[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_7.4bpp");
+static const u8 sClefairyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_7.4bpp.lz");
 static const ax_sprite sClefairySprites7[] = {
 	{sClefairyGfx7, ARRAY_COUNT(sClefairyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx8[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_8.4bpp");
+static const u8 sClefairyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_8.4bpp.lz");
 static const ax_sprite sClefairySprites8[] = {
 	{sClefairyGfx8, ARRAY_COUNT(sClefairyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx9[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_9.4bpp");
+static const u8 sClefairyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_9.4bpp.lz");
 static const ax_sprite sClefairySprites9[] = {
 	{sClefairyGfx9, ARRAY_COUNT(sClefairyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx10[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_10.4bpp");
+static const u8 sClefairyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_10.4bpp.lz");
 static const ax_sprite sClefairySprites10[] = {
 	{sClefairyGfx10, ARRAY_COUNT(sClefairyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx11[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_11.4bpp");
+static const u8 sClefairyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_11.4bpp.lz");
 static const ax_sprite sClefairySprites11[] = {
 	{sClefairyGfx11, ARRAY_COUNT(sClefairyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx12[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_12.4bpp");
+static const u8 sClefairyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_12.4bpp.lz");
 static const ax_sprite sClefairySprites12[] = {
 	{sClefairyGfx12, ARRAY_COUNT(sClefairyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx13[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_13.4bpp");
+static const u8 sClefairyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_13.4bpp.lz");
 static const ax_sprite sClefairySprites13[] = {
 	{sClefairyGfx13, ARRAY_COUNT(sClefairyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx14[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_14.4bpp");
+static const u8 sClefairyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_14.4bpp.lz");
 static const ax_sprite sClefairySprites14[] = {
 	{sClefairyGfx14, ARRAY_COUNT(sClefairyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx15[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_15.4bpp");
+static const u8 sClefairyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_15.4bpp.lz");
 static const ax_sprite sClefairySprites15[] = {
 	{sClefairyGfx15, ARRAY_COUNT(sClefairyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx16[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_16.4bpp");
+static const u8 sClefairyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_16.4bpp.lz");
 static const ax_sprite sClefairySprites16[] = {
 	{sClefairyGfx16, ARRAY_COUNT(sClefairyGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx17[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_17.4bpp");
+static const u8 sClefairyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_17.4bpp.lz");
 static const ax_sprite sClefairySprites17[] = {
 	{sClefairyGfx17, ARRAY_COUNT(sClefairyGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx18[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_18.4bpp");
+static const u8 sClefairyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_18.4bpp.lz");
 static const ax_sprite sClefairySprites18[] = {
 	{sClefairyGfx18, ARRAY_COUNT(sClefairyGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx19[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_19.4bpp");
+static const u8 sClefairyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_19.4bpp.lz");
 static const ax_sprite sClefairySprites19[] = {
 	{sClefairyGfx19, ARRAY_COUNT(sClefairyGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx20[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_20.4bpp");
+static const u8 sClefairyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_20.4bpp.lz");
 static const ax_sprite sClefairySprites20[] = {
 	{sClefairyGfx20, ARRAY_COUNT(sClefairyGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx21[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_21.4bpp");
+static const u8 sClefairyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_21.4bpp.lz");
 static const ax_sprite sClefairySprites21[] = {
 	{sClefairyGfx21, ARRAY_COUNT(sClefairyGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx22[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_22.4bpp");
+static const u8 sClefairyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_22.4bpp.lz");
 static const ax_sprite sClefairySprites22[] = {
 	{sClefairyGfx22, ARRAY_COUNT(sClefairyGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx23[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_23.4bpp");
+static const u8 sClefairyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_23.4bpp.lz");
 static const ax_sprite sClefairySprites23[] = {
 	{sClefairyGfx23, ARRAY_COUNT(sClefairyGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx24[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_24.4bpp");
+static const u8 sClefairyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_24.4bpp.lz");
 static const ax_sprite sClefairySprites24[] = {
 	{sClefairyGfx24, ARRAY_COUNT(sClefairyGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx25[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_25.4bpp");
-static const u8 sClefairyGfx25_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_25_1.4bpp");
-static const u8 sClefairyGfx25_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_25_2.4bpp");
+static const u8 sClefairyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_25.4bpp.lz");
+static const u8 sClefairyGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_25_1.4bpp.lz");
+static const u8 sClefairyGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_25_2.4bpp.lz");
 static const ax_sprite sClefairySprites25[] = {
 	{sClefairyGfx25, ARRAY_COUNT(sClefairyGfx25)}, 
 	{NULL, 32}, 
@@ -2187,10 +2187,10 @@ static const ax_sprite sClefairySprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx26[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_26.4bpp");
-static const u8 sClefairyGfx26_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_26_1.4bpp");
-static const u8 sClefairyGfx26_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_26_2.4bpp");
-static const u8 sClefairyGfx26_3[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_26_3.4bpp");
+static const u8 sClefairyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_26.4bpp.lz");
+static const u8 sClefairyGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_26_1.4bpp.lz");
+static const u8 sClefairyGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_26_2.4bpp.lz");
+static const u8 sClefairyGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_26_3.4bpp.lz");
 static const ax_sprite sClefairySprites26[] = {
 	{sClefairyGfx26, ARRAY_COUNT(sClefairyGfx26)}, 
 	{NULL, 32}, 
@@ -2202,10 +2202,10 @@ static const ax_sprite sClefairySprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx27[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_27.4bpp");
-static const u8 sClefairyGfx27_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_27_1.4bpp");
-static const u8 sClefairyGfx27_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_27_2.4bpp");
-static const u8 sClefairyGfx27_3[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_27_3.4bpp");
+static const u8 sClefairyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_27.4bpp.lz");
+static const u8 sClefairyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_27_1.4bpp.lz");
+static const u8 sClefairyGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_27_2.4bpp.lz");
+static const u8 sClefairyGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_27_3.4bpp.lz");
 static const ax_sprite sClefairySprites27[] = {
 	{sClefairyGfx27, ARRAY_COUNT(sClefairyGfx27)}, 
 	{NULL, 32}, 
@@ -2217,10 +2217,10 @@ static const ax_sprite sClefairySprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx28[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_28.4bpp");
-static const u8 sClefairyGfx28_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_28_1.4bpp");
-static const u8 sClefairyGfx28_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_28_2.4bpp");
-static const u8 sClefairyGfx28_3[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_28_3.4bpp");
+static const u8 sClefairyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_28.4bpp.lz");
+static const u8 sClefairyGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_28_1.4bpp.lz");
+static const u8 sClefairyGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_28_2.4bpp.lz");
+static const u8 sClefairyGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_28_3.4bpp.lz");
 static const ax_sprite sClefairySprites28[] = {
 	{sClefairyGfx28, ARRAY_COUNT(sClefairyGfx28)}, 
 	{NULL, 32}, 
@@ -2232,9 +2232,9 @@ static const ax_sprite sClefairySprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx29[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_29.4bpp");
-static const u8 sClefairyGfx29_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_29_1.4bpp");
-static const u8 sClefairyGfx29_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_29_2.4bpp");
+static const u8 sClefairyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_29.4bpp.lz");
+static const u8 sClefairyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_29_1.4bpp.lz");
+static const u8 sClefairyGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_29_2.4bpp.lz");
 static const ax_sprite sClefairySprites29[] = {
 	{sClefairyGfx29, ARRAY_COUNT(sClefairyGfx29)}, 
 	{NULL, 32}, 
@@ -2244,9 +2244,9 @@ static const ax_sprite sClefairySprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx30[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_30.4bpp");
-static const u8 sClefairyGfx30_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_30_1.4bpp");
-static const u8 sClefairyGfx30_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_30_2.4bpp");
+static const u8 sClefairyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_30.4bpp.lz");
+static const u8 sClefairyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_30_1.4bpp.lz");
+static const u8 sClefairyGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_30_2.4bpp.lz");
 static const ax_sprite sClefairySprites30[] = {
 	{sClefairyGfx30, ARRAY_COUNT(sClefairyGfx30)}, 
 	{NULL, 32}, 
@@ -2256,9 +2256,9 @@ static const ax_sprite sClefairySprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx31[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_31.4bpp");
-static const u8 sClefairyGfx31_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_31_1.4bpp");
-static const u8 sClefairyGfx31_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_31_2.4bpp");
+static const u8 sClefairyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_31.4bpp.lz");
+static const u8 sClefairyGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_31_1.4bpp.lz");
+static const u8 sClefairyGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_31_2.4bpp.lz");
 static const ax_sprite sClefairySprites31[] = {
 	{sClefairyGfx31, ARRAY_COUNT(sClefairyGfx31)}, 
 	{NULL, 32}, 
@@ -2268,9 +2268,9 @@ static const ax_sprite sClefairySprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx32[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_32.4bpp");
-static const u8 sClefairyGfx32_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_32_1.4bpp");
-static const u8 sClefairyGfx32_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_32_2.4bpp");
+static const u8 sClefairyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_32.4bpp.lz");
+static const u8 sClefairyGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_32_1.4bpp.lz");
+static const u8 sClefairyGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_32_2.4bpp.lz");
 static const ax_sprite sClefairySprites32[] = {
 	{sClefairyGfx32, ARRAY_COUNT(sClefairyGfx32)}, 
 	{NULL, 32}, 
@@ -2280,9 +2280,9 @@ static const ax_sprite sClefairySprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx33[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_33.4bpp");
-static const u8 sClefairyGfx33_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_33_1.4bpp");
-static const u8 sClefairyGfx33_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_33_2.4bpp");
+static const u8 sClefairyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_33.4bpp.lz");
+static const u8 sClefairyGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_33_1.4bpp.lz");
+static const u8 sClefairyGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_33_2.4bpp.lz");
 static const ax_sprite sClefairySprites33[] = {
 	{sClefairyGfx33, ARRAY_COUNT(sClefairyGfx33)}, 
 	{NULL, 32}, 
@@ -2292,9 +2292,9 @@ static const ax_sprite sClefairySprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx34[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_34.4bpp");
-static const u8 sClefairyGfx34_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_34_1.4bpp");
-static const u8 sClefairyGfx34_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_34_2.4bpp");
+static const u8 sClefairyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_34.4bpp.lz");
+static const u8 sClefairyGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_34_1.4bpp.lz");
+static const u8 sClefairyGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_34_2.4bpp.lz");
 static const ax_sprite sClefairySprites34[] = {
 	{sClefairyGfx34, ARRAY_COUNT(sClefairyGfx34)}, 
 	{NULL, 32}, 
@@ -2304,9 +2304,9 @@ static const ax_sprite sClefairySprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx35[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_35.4bpp");
-static const u8 sClefairyGfx35_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_35_1.4bpp");
-static const u8 sClefairyGfx35_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_35_2.4bpp");
+static const u8 sClefairyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_35.4bpp.lz");
+static const u8 sClefairyGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_35_1.4bpp.lz");
+static const u8 sClefairyGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_35_2.4bpp.lz");
 static const ax_sprite sClefairySprites35[] = {
 	{sClefairyGfx35, ARRAY_COUNT(sClefairyGfx35)}, 
 	{NULL, 32}, 
@@ -2316,9 +2316,9 @@ static const ax_sprite sClefairySprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx36[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_36.4bpp");
-static const u8 sClefairyGfx36_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_36_1.4bpp");
-static const u8 sClefairyGfx36_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_36_2.4bpp");
+static const u8 sClefairyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_36.4bpp.lz");
+static const u8 sClefairyGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_36_1.4bpp.lz");
+static const u8 sClefairyGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_36_2.4bpp.lz");
 static const ax_sprite sClefairySprites36[] = {
 	{sClefairyGfx36, ARRAY_COUNT(sClefairyGfx36)}, 
 	{NULL, 32}, 
@@ -2328,9 +2328,9 @@ static const ax_sprite sClefairySprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx37[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_37.4bpp");
-static const u8 sClefairyGfx37_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_37_1.4bpp");
-static const u8 sClefairyGfx37_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_37_2.4bpp");
+static const u8 sClefairyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_37.4bpp.lz");
+static const u8 sClefairyGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_37_1.4bpp.lz");
+static const u8 sClefairyGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_37_2.4bpp.lz");
 static const ax_sprite sClefairySprites37[] = {
 	{sClefairyGfx37, ARRAY_COUNT(sClefairyGfx37)}, 
 	{NULL, 32}, 
@@ -2340,9 +2340,9 @@ static const ax_sprite sClefairySprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx38[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_38.4bpp");
-static const u8 sClefairyGfx38_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_38_1.4bpp");
-static const u8 sClefairyGfx38_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_38_2.4bpp");
+static const u8 sClefairyGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_38.4bpp.lz");
+static const u8 sClefairyGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_38_1.4bpp.lz");
+static const u8 sClefairyGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_38_2.4bpp.lz");
 static const ax_sprite sClefairySprites38[] = {
 	{sClefairyGfx38, ARRAY_COUNT(sClefairyGfx38)}, 
 	{NULL, 32}, 
@@ -2352,9 +2352,9 @@ static const ax_sprite sClefairySprites38[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx39[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_39.4bpp");
-static const u8 sClefairyGfx39_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_39_1.4bpp");
-static const u8 sClefairyGfx39_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_39_2.4bpp");
+static const u8 sClefairyGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_39.4bpp.lz");
+static const u8 sClefairyGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_39_1.4bpp.lz");
+static const u8 sClefairyGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_39_2.4bpp.lz");
 static const ax_sprite sClefairySprites39[] = {
 	{sClefairyGfx39, ARRAY_COUNT(sClefairyGfx39)}, 
 	{NULL, 32}, 
@@ -2364,10 +2364,10 @@ static const ax_sprite sClefairySprites39[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx40[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_40.4bpp");
-static const u8 sClefairyGfx40_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_40_1.4bpp");
-static const u8 sClefairyGfx40_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_40_2.4bpp");
-static const u8 sClefairyGfx40_3[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_40_3.4bpp");
+static const u8 sClefairyGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_40.4bpp.lz");
+static const u8 sClefairyGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_40_1.4bpp.lz");
+static const u8 sClefairyGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_40_2.4bpp.lz");
+static const u8 sClefairyGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_40_3.4bpp.lz");
 static const ax_sprite sClefairySprites40[] = {
 	{sClefairyGfx40, ARRAY_COUNT(sClefairyGfx40)}, 
 	{NULL, 32}, 
@@ -2379,9 +2379,9 @@ static const ax_sprite sClefairySprites40[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx41[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_41.4bpp");
-static const u8 sClefairyGfx41_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_41_1.4bpp");
-static const u8 sClefairyGfx41_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_41_2.4bpp");
+static const u8 sClefairyGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_41.4bpp.lz");
+static const u8 sClefairyGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_41_1.4bpp.lz");
+static const u8 sClefairyGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_41_2.4bpp.lz");
 static const ax_sprite sClefairySprites41[] = {
 	{sClefairyGfx41, ARRAY_COUNT(sClefairyGfx41)}, 
 	{NULL, 32}, 
@@ -2391,9 +2391,9 @@ static const ax_sprite sClefairySprites41[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx42[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_42.4bpp");
-static const u8 sClefairyGfx42_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_42_1.4bpp");
-static const u8 sClefairyGfx42_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_42_2.4bpp");
+static const u8 sClefairyGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_42.4bpp.lz");
+static const u8 sClefairyGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_42_1.4bpp.lz");
+static const u8 sClefairyGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_42_2.4bpp.lz");
 static const ax_sprite sClefairySprites42[] = {
 	{sClefairyGfx42, ARRAY_COUNT(sClefairyGfx42)}, 
 	{NULL, 32}, 
@@ -2403,9 +2403,9 @@ static const ax_sprite sClefairySprites42[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx43[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_43.4bpp");
-static const u8 sClefairyGfx43_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_43_1.4bpp");
-static const u8 sClefairyGfx43_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_43_2.4bpp");
+static const u8 sClefairyGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_43.4bpp.lz");
+static const u8 sClefairyGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_43_1.4bpp.lz");
+static const u8 sClefairyGfx43_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_43_2.4bpp.lz");
 static const ax_sprite sClefairySprites43[] = {
 	{sClefairyGfx43, ARRAY_COUNT(sClefairyGfx43)}, 
 	{NULL, 32}, 
@@ -2415,9 +2415,9 @@ static const ax_sprite sClefairySprites43[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx44[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_44.4bpp");
-static const u8 sClefairyGfx44_1[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_44_1.4bpp");
-static const u8 sClefairyGfx44_2[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_44_2.4bpp");
+static const u8 sClefairyGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_44.4bpp.lz");
+static const u8 sClefairyGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_44_1.4bpp.lz");
+static const u8 sClefairyGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_44_2.4bpp.lz");
 static const ax_sprite sClefairySprites44[] = {
 	{sClefairyGfx44, ARRAY_COUNT(sClefairyGfx44)}, 
 	{NULL, 32}, 
@@ -2427,37 +2427,37 @@ static const ax_sprite sClefairySprites44[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx45[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_45.4bpp");
+static const u8 sClefairyGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_45.4bpp.lz");
 static const ax_sprite sClefairySprites45[] = {
 	{sClefairyGfx45, ARRAY_COUNT(sClefairyGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx46[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_46.4bpp");
+static const u8 sClefairyGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_46.4bpp.lz");
 static const ax_sprite sClefairySprites46[] = {
 	{sClefairyGfx46, ARRAY_COUNT(sClefairyGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx47[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_47.4bpp");
+static const u8 sClefairyGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_47.4bpp.lz");
 static const ax_sprite sClefairySprites47[] = {
 	{sClefairyGfx47, ARRAY_COUNT(sClefairyGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx48[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_48.4bpp");
+static const u8 sClefairyGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_48.4bpp.lz");
 static const ax_sprite sClefairySprites48[] = {
 	{sClefairyGfx48, ARRAY_COUNT(sClefairyGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx49[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_49.4bpp");
+static const u8 sClefairyGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_49.4bpp.lz");
 static const ax_sprite sClefairySprites49[] = {
 	{sClefairyGfx49, ARRAY_COUNT(sClefairyGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx50[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_50.4bpp");
+static const u8 sClefairyGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_50.4bpp.lz");
 static const ax_sprite sClefairySprites50[] = {
 	{sClefairyGfx50, ARRAY_COUNT(sClefairyGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sClefairyGfx51[] = INCBIN_U8("graphics/ax/mon/clefairy/sprite_51.4bpp");
+static const u8 sClefairyGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/clefairy/sprite_51.4bpp.lz");
 static const ax_sprite sClefairySprites51[] = {
 	{sClefairyGfx51, ARRAY_COUNT(sClefairyGfx51)}, 
 	{NULL, 0}

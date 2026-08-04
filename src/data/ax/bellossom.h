@@ -2023,84 +2023,84 @@ static const ax_anim sBellossomAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sBellossomGfx1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_1.4bpp");
+static const u8 sBellossomGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_1.4bpp.lz");
 static const ax_sprite sBellossomSprites1[] = {
 	{sBellossomGfx1, ARRAY_COUNT(sBellossomGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_2.4bpp");
+static const u8 sBellossomGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_2.4bpp.lz");
 static const ax_sprite sBellossomSprites2[] = {
 	{sBellossomGfx2, ARRAY_COUNT(sBellossomGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx3[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_3.4bpp");
+static const u8 sBellossomGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_3.4bpp.lz");
 static const ax_sprite sBellossomSprites3[] = {
 	{sBellossomGfx3, ARRAY_COUNT(sBellossomGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx4[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_4.4bpp");
+static const u8 sBellossomGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_4.4bpp.lz");
 static const ax_sprite sBellossomSprites4[] = {
 	{sBellossomGfx4, ARRAY_COUNT(sBellossomGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx5[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_5.4bpp");
+static const u8 sBellossomGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_5.4bpp.lz");
 static const ax_sprite sBellossomSprites5[] = {
 	{sBellossomGfx5, ARRAY_COUNT(sBellossomGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx6[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_6.4bpp");
+static const u8 sBellossomGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_6.4bpp.lz");
 static const ax_sprite sBellossomSprites6[] = {
 	{sBellossomGfx6, ARRAY_COUNT(sBellossomGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx7[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_7.4bpp");
+static const u8 sBellossomGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_7.4bpp.lz");
 static const ax_sprite sBellossomSprites7[] = {
 	{sBellossomGfx7, ARRAY_COUNT(sBellossomGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx8[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_8.4bpp");
+static const u8 sBellossomGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_8.4bpp.lz");
 static const ax_sprite sBellossomSprites8[] = {
 	{sBellossomGfx8, ARRAY_COUNT(sBellossomGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx9[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_9.4bpp");
+static const u8 sBellossomGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_9.4bpp.lz");
 static const ax_sprite sBellossomSprites9[] = {
 	{sBellossomGfx9, ARRAY_COUNT(sBellossomGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx10[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_10.4bpp");
+static const u8 sBellossomGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_10.4bpp.lz");
 static const ax_sprite sBellossomSprites10[] = {
 	{sBellossomGfx10, ARRAY_COUNT(sBellossomGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx11[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_11.4bpp");
+static const u8 sBellossomGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_11.4bpp.lz");
 static const ax_sprite sBellossomSprites11[] = {
 	{sBellossomGfx11, ARRAY_COUNT(sBellossomGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx12[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_12.4bpp");
+static const u8 sBellossomGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_12.4bpp.lz");
 static const ax_sprite sBellossomSprites12[] = {
 	{sBellossomGfx12, ARRAY_COUNT(sBellossomGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx13[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_13.4bpp");
+static const u8 sBellossomGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_13.4bpp.lz");
 static const ax_sprite sBellossomSprites13[] = {
 	{sBellossomGfx13, ARRAY_COUNT(sBellossomGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx14[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_14.4bpp");
+static const u8 sBellossomGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_14.4bpp.lz");
 static const ax_sprite sBellossomSprites14[] = {
 	{sBellossomGfx14, ARRAY_COUNT(sBellossomGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx15[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_15.4bpp");
+static const u8 sBellossomGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_15.4bpp.lz");
 static const ax_sprite sBellossomSprites15[] = {
 	{sBellossomGfx15, ARRAY_COUNT(sBellossomGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx16[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_16.4bpp");
-static const u8 sBellossomGfx16_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_16_1.4bpp");
-static const u8 sBellossomGfx16_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_16_2.4bpp");
+static const u8 sBellossomGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_16.4bpp.lz");
+static const u8 sBellossomGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_16_1.4bpp.lz");
+static const u8 sBellossomGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_16_2.4bpp.lz");
 static const ax_sprite sBellossomSprites16[] = {
 	{sBellossomGfx16, ARRAY_COUNT(sBellossomGfx16)}, 
 	{NULL, 32}, 
@@ -2110,10 +2110,10 @@ static const ax_sprite sBellossomSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx17[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_17.4bpp");
-static const u8 sBellossomGfx17_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_17_1.4bpp");
-static const u8 sBellossomGfx17_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_17_2.4bpp");
-static const u8 sBellossomGfx17_3[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_17_3.4bpp");
+static const u8 sBellossomGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_17.4bpp.lz");
+static const u8 sBellossomGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_17_1.4bpp.lz");
+static const u8 sBellossomGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_17_2.4bpp.lz");
+static const u8 sBellossomGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_17_3.4bpp.lz");
 static const ax_sprite sBellossomSprites17[] = {
 	{sBellossomGfx17, ARRAY_COUNT(sBellossomGfx17)}, 
 	{NULL, 64}, 
@@ -2125,9 +2125,9 @@ static const ax_sprite sBellossomSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx18[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_18.4bpp");
-static const u8 sBellossomGfx18_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_18_1.4bpp");
-static const u8 sBellossomGfx18_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_18_2.4bpp");
+static const u8 sBellossomGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_18.4bpp.lz");
+static const u8 sBellossomGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_18_1.4bpp.lz");
+static const u8 sBellossomGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_18_2.4bpp.lz");
 static const ax_sprite sBellossomSprites18[] = {
 	{sBellossomGfx18, ARRAY_COUNT(sBellossomGfx18)}, 
 	{NULL, 64}, 
@@ -2137,9 +2137,9 @@ static const ax_sprite sBellossomSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx19[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_19.4bpp");
-static const u8 sBellossomGfx19_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_19_1.4bpp");
-static const u8 sBellossomGfx19_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_19_2.4bpp");
+static const u8 sBellossomGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_19.4bpp.lz");
+static const u8 sBellossomGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_19_1.4bpp.lz");
+static const u8 sBellossomGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_19_2.4bpp.lz");
 static const ax_sprite sBellossomSprites19[] = {
 	{sBellossomGfx19, ARRAY_COUNT(sBellossomGfx19)}, 
 	{NULL, 64}, 
@@ -2149,9 +2149,9 @@ static const ax_sprite sBellossomSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx20[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_20.4bpp");
-static const u8 sBellossomGfx20_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_20_1.4bpp");
-static const u8 sBellossomGfx20_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_20_2.4bpp");
+static const u8 sBellossomGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_20.4bpp.lz");
+static const u8 sBellossomGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_20_1.4bpp.lz");
+static const u8 sBellossomGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_20_2.4bpp.lz");
 static const ax_sprite sBellossomSprites20[] = {
 	{sBellossomGfx20, ARRAY_COUNT(sBellossomGfx20)}, 
 	{NULL, 32}, 
@@ -2161,9 +2161,9 @@ static const ax_sprite sBellossomSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx21[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_21.4bpp");
-static const u8 sBellossomGfx21_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_21_1.4bpp");
-static const u8 sBellossomGfx21_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_21_2.4bpp");
+static const u8 sBellossomGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_21.4bpp.lz");
+static const u8 sBellossomGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_21_1.4bpp.lz");
+static const u8 sBellossomGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_21_2.4bpp.lz");
 static const ax_sprite sBellossomSprites21[] = {
 	{sBellossomGfx21, ARRAY_COUNT(sBellossomGfx21)}, 
 	{NULL, 32}, 
@@ -2173,9 +2173,9 @@ static const ax_sprite sBellossomSprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx22[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_22.4bpp");
-static const u8 sBellossomGfx22_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_22_1.4bpp");
-static const u8 sBellossomGfx22_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_22_2.4bpp");
+static const u8 sBellossomGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_22.4bpp.lz");
+static const u8 sBellossomGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_22_1.4bpp.lz");
+static const u8 sBellossomGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_22_2.4bpp.lz");
 static const ax_sprite sBellossomSprites22[] = {
 	{sBellossomGfx22, ARRAY_COUNT(sBellossomGfx22)}, 
 	{NULL, 32}, 
@@ -2185,9 +2185,9 @@ static const ax_sprite sBellossomSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx23[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_23.4bpp");
-static const u8 sBellossomGfx23_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_23_1.4bpp");
-static const u8 sBellossomGfx23_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_23_2.4bpp");
+static const u8 sBellossomGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_23.4bpp.lz");
+static const u8 sBellossomGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_23_1.4bpp.lz");
+static const u8 sBellossomGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_23_2.4bpp.lz");
 static const ax_sprite sBellossomSprites23[] = {
 	{sBellossomGfx23, ARRAY_COUNT(sBellossomGfx23)}, 
 	{NULL, 32}, 
@@ -2197,9 +2197,9 @@ static const ax_sprite sBellossomSprites23[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx24[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_24.4bpp");
-static const u8 sBellossomGfx24_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_24_1.4bpp");
-static const u8 sBellossomGfx24_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_24_2.4bpp");
+static const u8 sBellossomGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_24.4bpp.lz");
+static const u8 sBellossomGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_24_1.4bpp.lz");
+static const u8 sBellossomGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_24_2.4bpp.lz");
 static const ax_sprite sBellossomSprites24[] = {
 	{sBellossomGfx24, ARRAY_COUNT(sBellossomGfx24)}, 
 	{NULL, 32}, 
@@ -2209,9 +2209,9 @@ static const ax_sprite sBellossomSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx25[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_25.4bpp");
-static const u8 sBellossomGfx25_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_25_1.4bpp");
-static const u8 sBellossomGfx25_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_25_2.4bpp");
+static const u8 sBellossomGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_25.4bpp.lz");
+static const u8 sBellossomGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_25_1.4bpp.lz");
+static const u8 sBellossomGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_25_2.4bpp.lz");
 static const ax_sprite sBellossomSprites25[] = {
 	{sBellossomGfx25, ARRAY_COUNT(sBellossomGfx25)}, 
 	{NULL, 32}, 
@@ -2221,10 +2221,10 @@ static const ax_sprite sBellossomSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx26[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_26.4bpp");
-static const u8 sBellossomGfx26_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_26_1.4bpp");
-static const u8 sBellossomGfx26_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_26_2.4bpp");
-static const u8 sBellossomGfx26_3[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_26_3.4bpp");
+static const u8 sBellossomGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_26.4bpp.lz");
+static const u8 sBellossomGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_26_1.4bpp.lz");
+static const u8 sBellossomGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_26_2.4bpp.lz");
+static const u8 sBellossomGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_26_3.4bpp.lz");
 static const ax_sprite sBellossomSprites26[] = {
 	{sBellossomGfx26, ARRAY_COUNT(sBellossomGfx26)}, 
 	{NULL, 32}, 
@@ -2236,9 +2236,9 @@ static const ax_sprite sBellossomSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx27[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_27.4bpp");
-static const u8 sBellossomGfx27_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_27_1.4bpp");
-static const u8 sBellossomGfx27_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_27_2.4bpp");
+static const u8 sBellossomGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_27.4bpp.lz");
+static const u8 sBellossomGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_27_1.4bpp.lz");
+static const u8 sBellossomGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_27_2.4bpp.lz");
 static const ax_sprite sBellossomSprites27[] = {
 	{sBellossomGfx27, ARRAY_COUNT(sBellossomGfx27)}, 
 	{NULL, 32}, 
@@ -2248,9 +2248,9 @@ static const ax_sprite sBellossomSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx28[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_28.4bpp");
-static const u8 sBellossomGfx28_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_28_1.4bpp");
-static const u8 sBellossomGfx28_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_28_2.4bpp");
+static const u8 sBellossomGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_28.4bpp.lz");
+static const u8 sBellossomGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_28_1.4bpp.lz");
+static const u8 sBellossomGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_28_2.4bpp.lz");
 static const ax_sprite sBellossomSprites28[] = {
 	{sBellossomGfx28, ARRAY_COUNT(sBellossomGfx28)}, 
 	{NULL, 32}, 
@@ -2260,10 +2260,10 @@ static const ax_sprite sBellossomSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx29[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_29.4bpp");
-static const u8 sBellossomGfx29_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_29_1.4bpp");
-static const u8 sBellossomGfx29_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_29_2.4bpp");
-static const u8 sBellossomGfx29_3[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_29_3.4bpp");
+static const u8 sBellossomGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_29.4bpp.lz");
+static const u8 sBellossomGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_29_1.4bpp.lz");
+static const u8 sBellossomGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_29_2.4bpp.lz");
+static const u8 sBellossomGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_29_3.4bpp.lz");
 static const ax_sprite sBellossomSprites29[] = {
 	{sBellossomGfx29, ARRAY_COUNT(sBellossomGfx29)}, 
 	{NULL, 32}, 
@@ -2275,9 +2275,9 @@ static const ax_sprite sBellossomSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx30[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_30.4bpp");
-static const u8 sBellossomGfx30_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_30_1.4bpp");
-static const u8 sBellossomGfx30_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_30_2.4bpp");
+static const u8 sBellossomGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_30.4bpp.lz");
+static const u8 sBellossomGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_30_1.4bpp.lz");
+static const u8 sBellossomGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_30_2.4bpp.lz");
 static const ax_sprite sBellossomSprites30[] = {
 	{sBellossomGfx30, ARRAY_COUNT(sBellossomGfx30)}, 
 	{NULL, 64}, 
@@ -2287,9 +2287,9 @@ static const ax_sprite sBellossomSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx31[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_31.4bpp");
-static const u8 sBellossomGfx31_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_31_1.4bpp");
-static const u8 sBellossomGfx31_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_31_2.4bpp");
+static const u8 sBellossomGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_31.4bpp.lz");
+static const u8 sBellossomGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_31_1.4bpp.lz");
+static const u8 sBellossomGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_31_2.4bpp.lz");
 static const ax_sprite sBellossomSprites31[] = {
 	{sBellossomGfx31, ARRAY_COUNT(sBellossomGfx31)}, 
 	{NULL, 32}, 
@@ -2299,10 +2299,10 @@ static const ax_sprite sBellossomSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx32[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_32.4bpp");
-static const u8 sBellossomGfx32_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_32_1.4bpp");
-static const u8 sBellossomGfx32_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_32_2.4bpp");
-static const u8 sBellossomGfx32_3[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_32_3.4bpp");
+static const u8 sBellossomGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_32.4bpp.lz");
+static const u8 sBellossomGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_32_1.4bpp.lz");
+static const u8 sBellossomGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_32_2.4bpp.lz");
+static const u8 sBellossomGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_32_3.4bpp.lz");
 static const ax_sprite sBellossomSprites32[] = {
 	{sBellossomGfx32, ARRAY_COUNT(sBellossomGfx32)}, 
 	{NULL, 32}, 
@@ -2314,9 +2314,9 @@ static const ax_sprite sBellossomSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx33[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_33.4bpp");
-static const u8 sBellossomGfx33_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_33_1.4bpp");
-static const u8 sBellossomGfx33_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_33_2.4bpp");
+static const u8 sBellossomGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_33.4bpp.lz");
+static const u8 sBellossomGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_33_1.4bpp.lz");
+static const u8 sBellossomGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_33_2.4bpp.lz");
 static const ax_sprite sBellossomSprites33[] = {
 	{sBellossomGfx33, ARRAY_COUNT(sBellossomGfx33)}, 
 	{NULL, 32}, 
@@ -2326,9 +2326,9 @@ static const ax_sprite sBellossomSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx34[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_34.4bpp");
-static const u8 sBellossomGfx34_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_34_1.4bpp");
-static const u8 sBellossomGfx34_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_34_2.4bpp");
+static const u8 sBellossomGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_34.4bpp.lz");
+static const u8 sBellossomGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_34_1.4bpp.lz");
+static const u8 sBellossomGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_34_2.4bpp.lz");
 static const ax_sprite sBellossomSprites34[] = {
 	{sBellossomGfx34, ARRAY_COUNT(sBellossomGfx34)}, 
 	{NULL, 32}, 
@@ -2338,9 +2338,9 @@ static const ax_sprite sBellossomSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx35[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_35.4bpp");
-static const u8 sBellossomGfx35_1[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_35_1.4bpp");
-static const u8 sBellossomGfx35_2[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_35_2.4bpp");
+static const u8 sBellossomGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_35.4bpp.lz");
+static const u8 sBellossomGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_35_1.4bpp.lz");
+static const u8 sBellossomGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_35_2.4bpp.lz");
 static const ax_sprite sBellossomSprites35[] = {
 	{sBellossomGfx35, ARRAY_COUNT(sBellossomGfx35)}, 
 	{NULL, 32}, 
@@ -2350,37 +2350,37 @@ static const ax_sprite sBellossomSprites35[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx36[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_36.4bpp");
+static const u8 sBellossomGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_36.4bpp.lz");
 static const ax_sprite sBellossomSprites36[] = {
 	{sBellossomGfx36, ARRAY_COUNT(sBellossomGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx37[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_37.4bpp");
+static const u8 sBellossomGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_37.4bpp.lz");
 static const ax_sprite sBellossomSprites37[] = {
 	{sBellossomGfx37, ARRAY_COUNT(sBellossomGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx38[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_38.4bpp");
+static const u8 sBellossomGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_38.4bpp.lz");
 static const ax_sprite sBellossomSprites38[] = {
 	{sBellossomGfx38, ARRAY_COUNT(sBellossomGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx39[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_39.4bpp");
+static const u8 sBellossomGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_39.4bpp.lz");
 static const ax_sprite sBellossomSprites39[] = {
 	{sBellossomGfx39, ARRAY_COUNT(sBellossomGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx40[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_40.4bpp");
+static const u8 sBellossomGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_40.4bpp.lz");
 static const ax_sprite sBellossomSprites40[] = {
 	{sBellossomGfx40, ARRAY_COUNT(sBellossomGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx41[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_41.4bpp");
+static const u8 sBellossomGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_41.4bpp.lz");
 static const ax_sprite sBellossomSprites41[] = {
 	{sBellossomGfx41, ARRAY_COUNT(sBellossomGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sBellossomGfx42[] = INCBIN_U8("graphics/ax/mon/bellossom/sprite_42.4bpp");
+static const u8 sBellossomGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/bellossom/sprite_42.4bpp.lz");
 static const ax_sprite sBellossomSprites42[] = {
 	{sBellossomGfx42, ARRAY_COUNT(sBellossomGfx42)}, 
 	{NULL, 0}

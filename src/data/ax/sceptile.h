@@ -2100,84 +2100,84 @@ static const ax_anim sSceptileAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSceptileGfx1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_1.4bpp");
+static const u8 sSceptileGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_1.4bpp.lz");
 static const ax_sprite sSceptileSprites1[] = {
 	{sSceptileGfx1, ARRAY_COUNT(sSceptileGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx2[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_2.4bpp");
+static const u8 sSceptileGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_2.4bpp.lz");
 static const ax_sprite sSceptileSprites2[] = {
 	{sSceptileGfx2, ARRAY_COUNT(sSceptileGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx3[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_3.4bpp");
+static const u8 sSceptileGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_3.4bpp.lz");
 static const ax_sprite sSceptileSprites3[] = {
 	{sSceptileGfx3, ARRAY_COUNT(sSceptileGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx4[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_4.4bpp");
+static const u8 sSceptileGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_4.4bpp.lz");
 static const ax_sprite sSceptileSprites4[] = {
 	{sSceptileGfx4, ARRAY_COUNT(sSceptileGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx5[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_5.4bpp");
+static const u8 sSceptileGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_5.4bpp.lz");
 static const ax_sprite sSceptileSprites5[] = {
 	{sSceptileGfx5, ARRAY_COUNT(sSceptileGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx6[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_6.4bpp");
+static const u8 sSceptileGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_6.4bpp.lz");
 static const ax_sprite sSceptileSprites6[] = {
 	{sSceptileGfx6, ARRAY_COUNT(sSceptileGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx7[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_7.4bpp");
+static const u8 sSceptileGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_7.4bpp.lz");
 static const ax_sprite sSceptileSprites7[] = {
 	{sSceptileGfx7, ARRAY_COUNT(sSceptileGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx8[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_8.4bpp");
+static const u8 sSceptileGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_8.4bpp.lz");
 static const ax_sprite sSceptileSprites8[] = {
 	{sSceptileGfx8, ARRAY_COUNT(sSceptileGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx9[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_9.4bpp");
+static const u8 sSceptileGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_9.4bpp.lz");
 static const ax_sprite sSceptileSprites9[] = {
 	{sSceptileGfx9, ARRAY_COUNT(sSceptileGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx10[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_10.4bpp");
+static const u8 sSceptileGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_10.4bpp.lz");
 static const ax_sprite sSceptileSprites10[] = {
 	{sSceptileGfx10, ARRAY_COUNT(sSceptileGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx11[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_11.4bpp");
+static const u8 sSceptileGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_11.4bpp.lz");
 static const ax_sprite sSceptileSprites11[] = {
 	{sSceptileGfx11, ARRAY_COUNT(sSceptileGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx12[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_12.4bpp");
+static const u8 sSceptileGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_12.4bpp.lz");
 static const ax_sprite sSceptileSprites12[] = {
 	{sSceptileGfx12, ARRAY_COUNT(sSceptileGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx13[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_13.4bpp");
+static const u8 sSceptileGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_13.4bpp.lz");
 static const ax_sprite sSceptileSprites13[] = {
 	{sSceptileGfx13, ARRAY_COUNT(sSceptileGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx14[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_14.4bpp");
+static const u8 sSceptileGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_14.4bpp.lz");
 static const ax_sprite sSceptileSprites14[] = {
 	{sSceptileGfx14, ARRAY_COUNT(sSceptileGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx15[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_15.4bpp");
+static const u8 sSceptileGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_15.4bpp.lz");
 static const ax_sprite sSceptileSprites15[] = {
 	{sSceptileGfx15, ARRAY_COUNT(sSceptileGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx16[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_16.4bpp");
-static const u8 sSceptileGfx16_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_16_1.4bpp");
-static const u8 sSceptileGfx16_2[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_16_2.4bpp");
+static const u8 sSceptileGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_16.4bpp.lz");
+static const u8 sSceptileGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_16_1.4bpp.lz");
+static const u8 sSceptileGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_16_2.4bpp.lz");
 static const ax_sprite sSceptileSprites16[] = {
 	{NULL, 128}, 
 	{sSceptileGfx16, ARRAY_COUNT(sSceptileGfx16)}, 
@@ -2188,22 +2188,22 @@ static const ax_sprite sSceptileSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx17[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_17.4bpp");
+static const u8 sSceptileGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_17.4bpp.lz");
 static const ax_sprite sSceptileSprites17[] = {
 	{NULL, 160}, 
 	{sSceptileGfx17, ARRAY_COUNT(sSceptileGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx18[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_18.4bpp");
+static const u8 sSceptileGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_18.4bpp.lz");
 static const ax_sprite sSceptileSprites18[] = {
 	{NULL, 128}, 
 	{sSceptileGfx18, ARRAY_COUNT(sSceptileGfx18)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx19[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_19.4bpp");
-static const u8 sSceptileGfx19_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_19_1.4bpp");
-static const u8 sSceptileGfx19_2[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_19_2.4bpp");
+static const u8 sSceptileGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_19.4bpp.lz");
+static const u8 sSceptileGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_19_1.4bpp.lz");
+static const u8 sSceptileGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_19_2.4bpp.lz");
 static const ax_sprite sSceptileSprites19[] = {
 	{NULL, 128}, 
 	{sSceptileGfx19, ARRAY_COUNT(sSceptileGfx19)}, 
@@ -2213,10 +2213,10 @@ static const ax_sprite sSceptileSprites19[] = {
 	{sSceptileGfx19_2, ARRAY_COUNT(sSceptileGfx19_2)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx20[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_20.4bpp");
-static const u8 sSceptileGfx20_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_20_1.4bpp");
-static const u8 sSceptileGfx20_2[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_20_2.4bpp");
-static const u8 sSceptileGfx20_3[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_20_3.4bpp");
+static const u8 sSceptileGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_20.4bpp.lz");
+static const u8 sSceptileGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_20_1.4bpp.lz");
+static const u8 sSceptileGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_20_2.4bpp.lz");
+static const u8 sSceptileGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_20_3.4bpp.lz");
 static const ax_sprite sSceptileSprites20[] = {
 	{NULL, 32}, 
 	{sSceptileGfx20, ARRAY_COUNT(sSceptileGfx20)}, 
@@ -2228,14 +2228,14 @@ static const ax_sprite sSceptileSprites20[] = {
 	{sSceptileGfx20_3, ARRAY_COUNT(sSceptileGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx21[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_21.4bpp");
+static const u8 sSceptileGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_21.4bpp.lz");
 static const ax_sprite sSceptileSprites21[] = {
 	{sSceptileGfx21, ARRAY_COUNT(sSceptileGfx21)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx22[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_22.4bpp");
-static const u8 sSceptileGfx22_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_22_1.4bpp");
+static const u8 sSceptileGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_22.4bpp.lz");
+static const u8 sSceptileGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_22_1.4bpp.lz");
 static const ax_sprite sSceptileSprites22[] = {
 	{sSceptileGfx22, ARRAY_COUNT(sSceptileGfx22)}, 
 	{NULL, 32}, 
@@ -2243,17 +2243,17 @@ static const ax_sprite sSceptileSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx23[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_23.4bpp");
-static const u8 sSceptileGfx23_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_23_1.4bpp");
+static const u8 sSceptileGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_23.4bpp.lz");
+static const u8 sSceptileGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_23_1.4bpp.lz");
 static const ax_sprite sSceptileSprites23[] = {
 	{sSceptileGfx23, ARRAY_COUNT(sSceptileGfx23)}, 
 	{NULL, 32}, 
 	{sSceptileGfx23_1, ARRAY_COUNT(sSceptileGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx24[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_24.4bpp");
-static const u8 sSceptileGfx24_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_24_1.4bpp");
-static const u8 sSceptileGfx24_2[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_24_2.4bpp");
+static const u8 sSceptileGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_24.4bpp.lz");
+static const u8 sSceptileGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_24_1.4bpp.lz");
+static const u8 sSceptileGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_24_2.4bpp.lz");
 static const ax_sprite sSceptileSprites24[] = {
 	{sSceptileGfx24, ARRAY_COUNT(sSceptileGfx24)}, 
 	{NULL, 32}, 
@@ -2262,8 +2262,8 @@ static const ax_sprite sSceptileSprites24[] = {
 	{sSceptileGfx24_2, ARRAY_COUNT(sSceptileGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx25[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_25.4bpp");
-static const u8 sSceptileGfx25_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_25_1.4bpp");
+static const u8 sSceptileGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_25.4bpp.lz");
+static const u8 sSceptileGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_25_1.4bpp.lz");
 static const ax_sprite sSceptileSprites25[] = {
 	{sSceptileGfx25, ARRAY_COUNT(sSceptileGfx25)}, 
 	{NULL, 32}, 
@@ -2271,10 +2271,10 @@ static const ax_sprite sSceptileSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx26[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_26.4bpp");
-static const u8 sSceptileGfx26_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_26_1.4bpp");
-static const u8 sSceptileGfx26_2[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_26_2.4bpp");
-static const u8 sSceptileGfx26_3[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_26_3.4bpp");
+static const u8 sSceptileGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_26.4bpp.lz");
+static const u8 sSceptileGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_26_1.4bpp.lz");
+static const u8 sSceptileGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_26_2.4bpp.lz");
+static const u8 sSceptileGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_26_3.4bpp.lz");
 static const ax_sprite sSceptileSprites26[] = {
 	{sSceptileGfx26, ARRAY_COUNT(sSceptileGfx26)}, 
 	{NULL, 64}, 
@@ -2285,15 +2285,15 @@ static const ax_sprite sSceptileSprites26[] = {
 	{sSceptileGfx26_3, ARRAY_COUNT(sSceptileGfx26_3)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx27[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_27.4bpp");
+static const u8 sSceptileGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_27.4bpp.lz");
 static const ax_sprite sSceptileSprites27[] = {
 	{sSceptileGfx27, ARRAY_COUNT(sSceptileGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx28[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_28.4bpp");
-static const u8 sSceptileGfx28_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_28_1.4bpp");
-static const u8 sSceptileGfx28_2[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_28_2.4bpp");
-static const u8 sSceptileGfx28_3[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_28_3.4bpp");
+static const u8 sSceptileGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_28.4bpp.lz");
+static const u8 sSceptileGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_28_1.4bpp.lz");
+static const u8 sSceptileGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_28_2.4bpp.lz");
+static const u8 sSceptileGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_28_3.4bpp.lz");
 static const ax_sprite sSceptileSprites28[] = {
 	{sSceptileGfx28, ARRAY_COUNT(sSceptileGfx28)}, 
 	{NULL, 64}, 
@@ -2304,99 +2304,99 @@ static const ax_sprite sSceptileSprites28[] = {
 	{sSceptileGfx28_3, ARRAY_COUNT(sSceptileGfx28_3)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx29[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_29.4bpp");
+static const u8 sSceptileGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_29.4bpp.lz");
 static const ax_sprite sSceptileSprites29[] = {
 	{sSceptileGfx29, ARRAY_COUNT(sSceptileGfx29)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx30[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_30.4bpp");
+static const u8 sSceptileGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_30.4bpp.lz");
 static const ax_sprite sSceptileSprites30[] = {
 	{sSceptileGfx30, ARRAY_COUNT(sSceptileGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx31[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_31.4bpp");
+static const u8 sSceptileGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_31.4bpp.lz");
 static const ax_sprite sSceptileSprites31[] = {
 	{sSceptileGfx31, ARRAY_COUNT(sSceptileGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx32[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_32.4bpp");
+static const u8 sSceptileGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_32.4bpp.lz");
 static const ax_sprite sSceptileSprites32[] = {
 	{sSceptileGfx32, ARRAY_COUNT(sSceptileGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx33[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_33.4bpp");
+static const u8 sSceptileGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_33.4bpp.lz");
 static const ax_sprite sSceptileSprites33[] = {
 	{sSceptileGfx33, ARRAY_COUNT(sSceptileGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx34[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_34.4bpp");
+static const u8 sSceptileGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_34.4bpp.lz");
 static const ax_sprite sSceptileSprites34[] = {
 	{sSceptileGfx34, ARRAY_COUNT(sSceptileGfx34)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx35[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_35.4bpp");
+static const u8 sSceptileGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_35.4bpp.lz");
 static const ax_sprite sSceptileSprites35[] = {
 	{sSceptileGfx35, ARRAY_COUNT(sSceptileGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx36[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_36.4bpp");
+static const u8 sSceptileGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_36.4bpp.lz");
 static const ax_sprite sSceptileSprites36[] = {
 	{sSceptileGfx36, ARRAY_COUNT(sSceptileGfx36)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx37[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_37.4bpp");
+static const u8 sSceptileGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_37.4bpp.lz");
 static const ax_sprite sSceptileSprites37[] = {
 	{sSceptileGfx37, ARRAY_COUNT(sSceptileGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx38[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_38.4bpp");
+static const u8 sSceptileGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_38.4bpp.lz");
 static const ax_sprite sSceptileSprites38[] = {
 	{sSceptileGfx38, ARRAY_COUNT(sSceptileGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx39[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_39.4bpp");
-static const u8 sSceptileGfx39_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_39_1.4bpp");
+static const u8 sSceptileGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_39.4bpp.lz");
+static const u8 sSceptileGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_39_1.4bpp.lz");
 static const ax_sprite sSceptileSprites39[] = {
 	{sSceptileGfx39, ARRAY_COUNT(sSceptileGfx39)}, 
 	{NULL, 32}, 
 	{sSceptileGfx39_1, ARRAY_COUNT(sSceptileGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx40[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_40.4bpp");
+static const u8 sSceptileGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_40.4bpp.lz");
 static const ax_sprite sSceptileSprites40[] = {
 	{sSceptileGfx40, ARRAY_COUNT(sSceptileGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx41[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_41.4bpp");
+static const u8 sSceptileGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_41.4bpp.lz");
 static const ax_sprite sSceptileSprites41[] = {
 	{sSceptileGfx41, ARRAY_COUNT(sSceptileGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx42[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_42.4bpp");
-static const u8 sSceptileGfx42_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_42_1.4bpp");
+static const u8 sSceptileGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_42.4bpp.lz");
+static const u8 sSceptileGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_42_1.4bpp.lz");
 static const ax_sprite sSceptileSprites42[] = {
 	{sSceptileGfx42, ARRAY_COUNT(sSceptileGfx42)}, 
 	{NULL, 32}, 
 	{sSceptileGfx42_1, ARRAY_COUNT(sSceptileGfx42_1)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx43[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_43.4bpp");
+static const u8 sSceptileGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_43.4bpp.lz");
 static const ax_sprite sSceptileSprites43[] = {
 	{sSceptileGfx43, ARRAY_COUNT(sSceptileGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx44[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_44.4bpp");
+static const u8 sSceptileGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_44.4bpp.lz");
 static const ax_sprite sSceptileSprites44[] = {
 	{sSceptileGfx44, ARRAY_COUNT(sSceptileGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx45[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_45.4bpp");
-static const u8 sSceptileGfx45_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_45_1.4bpp");
-static const u8 sSceptileGfx45_2[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_45_2.4bpp");
-static const u8 sSceptileGfx45_3[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_45_3.4bpp");
+static const u8 sSceptileGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_45.4bpp.lz");
+static const u8 sSceptileGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_45_1.4bpp.lz");
+static const u8 sSceptileGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_45_2.4bpp.lz");
+static const u8 sSceptileGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_45_3.4bpp.lz");
 static const ax_sprite sSceptileSprites45[] = {
 	{NULL, 32}, 
 	{sSceptileGfx45, ARRAY_COUNT(sSceptileGfx45)}, 
@@ -2408,178 +2408,178 @@ static const ax_sprite sSceptileSprites45[] = {
 	{sSceptileGfx45_3, ARRAY_COUNT(sSceptileGfx45_3)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx46[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_46.4bpp");
+static const u8 sSceptileGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_46.4bpp.lz");
 static const ax_sprite sSceptileSprites46[] = {
 	{sSceptileGfx46, ARRAY_COUNT(sSceptileGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx47[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_47.4bpp");
+static const u8 sSceptileGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_47.4bpp.lz");
 static const ax_sprite sSceptileSprites47[] = {
 	{sSceptileGfx47, ARRAY_COUNT(sSceptileGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx48[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_48.4bpp");
+static const u8 sSceptileGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_48.4bpp.lz");
 static const ax_sprite sSceptileSprites48[] = {
 	{sSceptileGfx48, ARRAY_COUNT(sSceptileGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx49[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_49.4bpp");
+static const u8 sSceptileGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_49.4bpp.lz");
 static const ax_sprite sSceptileSprites49[] = {
 	{sSceptileGfx49, ARRAY_COUNT(sSceptileGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx50[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_50.4bpp");
+static const u8 sSceptileGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_50.4bpp.lz");
 static const ax_sprite sSceptileSprites50[] = {
 	{sSceptileGfx50, ARRAY_COUNT(sSceptileGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx51[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_51.4bpp");
+static const u8 sSceptileGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_51.4bpp.lz");
 static const ax_sprite sSceptileSprites51[] = {
 	{sSceptileGfx51, ARRAY_COUNT(sSceptileGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx52[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_52.4bpp");
+static const u8 sSceptileGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_52.4bpp.lz");
 static const ax_sprite sSceptileSprites52[] = {
 	{sSceptileGfx52, ARRAY_COUNT(sSceptileGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx53[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_53.4bpp");
+static const u8 sSceptileGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_53.4bpp.lz");
 static const ax_sprite sSceptileSprites53[] = {
 	{sSceptileGfx53, ARRAY_COUNT(sSceptileGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx54[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_54.4bpp");
+static const u8 sSceptileGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_54.4bpp.lz");
 static const ax_sprite sSceptileSprites54[] = {
 	{sSceptileGfx54, ARRAY_COUNT(sSceptileGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx55[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_55.4bpp");
-static const u8 sSceptileGfx55_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_55_1.4bpp");
+static const u8 sSceptileGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_55.4bpp.lz");
+static const u8 sSceptileGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_55_1.4bpp.lz");
 static const ax_sprite sSceptileSprites55[] = {
 	{sSceptileGfx55, ARRAY_COUNT(sSceptileGfx55)}, 
 	{NULL, 32}, 
 	{sSceptileGfx55_1, ARRAY_COUNT(sSceptileGfx55_1)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx56[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_56.4bpp");
+static const u8 sSceptileGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_56.4bpp.lz");
 static const ax_sprite sSceptileSprites56[] = {
 	{sSceptileGfx56, ARRAY_COUNT(sSceptileGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx57[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_57.4bpp");
+static const u8 sSceptileGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_57.4bpp.lz");
 static const ax_sprite sSceptileSprites57[] = {
 	{sSceptileGfx57, ARRAY_COUNT(sSceptileGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx58[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_58.4bpp");
+static const u8 sSceptileGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_58.4bpp.lz");
 static const ax_sprite sSceptileSprites58[] = {
 	{sSceptileGfx58, ARRAY_COUNT(sSceptileGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx59[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_59.4bpp");
+static const u8 sSceptileGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_59.4bpp.lz");
 static const ax_sprite sSceptileSprites59[] = {
 	{sSceptileGfx59, ARRAY_COUNT(sSceptileGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx60[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_60.4bpp");
+static const u8 sSceptileGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_60.4bpp.lz");
 static const ax_sprite sSceptileSprites60[] = {
 	{sSceptileGfx60, ARRAY_COUNT(sSceptileGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx61[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_61.4bpp");
+static const u8 sSceptileGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_61.4bpp.lz");
 static const ax_sprite sSceptileSprites61[] = {
 	{sSceptileGfx61, ARRAY_COUNT(sSceptileGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx62[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_62.4bpp");
+static const u8 sSceptileGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_62.4bpp.lz");
 static const ax_sprite sSceptileSprites62[] = {
 	{sSceptileGfx62, ARRAY_COUNT(sSceptileGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx63[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_63.4bpp");
+static const u8 sSceptileGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_63.4bpp.lz");
 static const ax_sprite sSceptileSprites63[] = {
 	{sSceptileGfx63, ARRAY_COUNT(sSceptileGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx64[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_64.4bpp");
-static const u8 sSceptileGfx64_1[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_64_1.4bpp");
+static const u8 sSceptileGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_64.4bpp.lz");
+static const u8 sSceptileGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_64_1.4bpp.lz");
 static const ax_sprite sSceptileSprites64[] = {
 	{sSceptileGfx64, ARRAY_COUNT(sSceptileGfx64)}, 
 	{NULL, 32}, 
 	{sSceptileGfx64_1, ARRAY_COUNT(sSceptileGfx64_1)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx65[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_65.4bpp");
+static const u8 sSceptileGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_65.4bpp.lz");
 static const ax_sprite sSceptileSprites65[] = {
 	{sSceptileGfx65, ARRAY_COUNT(sSceptileGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx66[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_66.4bpp");
+static const u8 sSceptileGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_66.4bpp.lz");
 static const ax_sprite sSceptileSprites66[] = {
 	{sSceptileGfx66, ARRAY_COUNT(sSceptileGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx67[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_67.4bpp");
+static const u8 sSceptileGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_67.4bpp.lz");
 static const ax_sprite sSceptileSprites67[] = {
 	{sSceptileGfx67, ARRAY_COUNT(sSceptileGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx68[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_68.4bpp");
+static const u8 sSceptileGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_68.4bpp.lz");
 static const ax_sprite sSceptileSprites68[] = {
 	{sSceptileGfx68, ARRAY_COUNT(sSceptileGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx69[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_69.4bpp");
+static const u8 sSceptileGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_69.4bpp.lz");
 static const ax_sprite sSceptileSprites69[] = {
 	{sSceptileGfx69, ARRAY_COUNT(sSceptileGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx70[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_70.4bpp");
+static const u8 sSceptileGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_70.4bpp.lz");
 static const ax_sprite sSceptileSprites70[] = {
 	{sSceptileGfx70, ARRAY_COUNT(sSceptileGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx71[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_71.4bpp");
+static const u8 sSceptileGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_71.4bpp.lz");
 static const ax_sprite sSceptileSprites71[] = {
 	{sSceptileGfx71, ARRAY_COUNT(sSceptileGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx72[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_72.4bpp");
+static const u8 sSceptileGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_72.4bpp.lz");
 static const ax_sprite sSceptileSprites72[] = {
 	{sSceptileGfx72, ARRAY_COUNT(sSceptileGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx73[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_73.4bpp");
+static const u8 sSceptileGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_73.4bpp.lz");
 static const ax_sprite sSceptileSprites73[] = {
 	{sSceptileGfx73, ARRAY_COUNT(sSceptileGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx74[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_74.4bpp");
+static const u8 sSceptileGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_74.4bpp.lz");
 static const ax_sprite sSceptileSprites74[] = {
 	{sSceptileGfx74, ARRAY_COUNT(sSceptileGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx75[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_75.4bpp");
+static const u8 sSceptileGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_75.4bpp.lz");
 static const ax_sprite sSceptileSprites75[] = {
 	{sSceptileGfx75, ARRAY_COUNT(sSceptileGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx76[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_76.4bpp");
+static const u8 sSceptileGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_76.4bpp.lz");
 static const ax_sprite sSceptileSprites76[] = {
 	{sSceptileGfx76, ARRAY_COUNT(sSceptileGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx77[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_77.4bpp");
+static const u8 sSceptileGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_77.4bpp.lz");
 static const ax_sprite sSceptileSprites77[] = {
 	{sSceptileGfx77, ARRAY_COUNT(sSceptileGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx78[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_78.4bpp");
+static const u8 sSceptileGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_78.4bpp.lz");
 static const ax_sprite sSceptileSprites78[] = {
 	{sSceptileGfx78, ARRAY_COUNT(sSceptileGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sSceptileGfx79[] = INCBIN_U8("graphics/ax/mon/sceptile/sprite_79.4bpp");
+static const u8 sSceptileGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sceptile/sprite_79.4bpp.lz");
 static const ax_sprite sSceptileSprites79[] = {
 	{sSceptileGfx79, ARRAY_COUNT(sSceptileGfx79)}, 
 	{NULL, 0}

@@ -2247,83 +2247,83 @@ static const ax_anim sHeracrossAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sHeracrossGfx1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_1.4bpp");
+static const u8 sHeracrossGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites1[] = {
 	{sHeracrossGfx1, ARRAY_COUNT(sHeracrossGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_2.4bpp");
+static const u8 sHeracrossGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites2[] = {
 	{sHeracrossGfx2, ARRAY_COUNT(sHeracrossGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_3.4bpp");
+static const u8 sHeracrossGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites3[] = {
 	{sHeracrossGfx3, ARRAY_COUNT(sHeracrossGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx4[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_4.4bpp");
+static const u8 sHeracrossGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_4.4bpp.lz");
 static const ax_sprite sHeracrossSprites4[] = {
 	{sHeracrossGfx4, ARRAY_COUNT(sHeracrossGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx5[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_5.4bpp");
+static const u8 sHeracrossGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_5.4bpp.lz");
 static const ax_sprite sHeracrossSprites5[] = {
 	{sHeracrossGfx5, ARRAY_COUNT(sHeracrossGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx6[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_6.4bpp");
+static const u8 sHeracrossGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_6.4bpp.lz");
 static const ax_sprite sHeracrossSprites6[] = {
 	{sHeracrossGfx6, ARRAY_COUNT(sHeracrossGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx7[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_7.4bpp");
+static const u8 sHeracrossGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_7.4bpp.lz");
 static const ax_sprite sHeracrossSprites7[] = {
 	{sHeracrossGfx7, ARRAY_COUNT(sHeracrossGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx8[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_8.4bpp");
+static const u8 sHeracrossGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_8.4bpp.lz");
 static const ax_sprite sHeracrossSprites8[] = {
 	{sHeracrossGfx8, ARRAY_COUNT(sHeracrossGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx9[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_9.4bpp");
+static const u8 sHeracrossGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_9.4bpp.lz");
 static const ax_sprite sHeracrossSprites9[] = {
 	{sHeracrossGfx9, ARRAY_COUNT(sHeracrossGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx10[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_10.4bpp");
+static const u8 sHeracrossGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_10.4bpp.lz");
 static const ax_sprite sHeracrossSprites10[] = {
 	{sHeracrossGfx10, ARRAY_COUNT(sHeracrossGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx11[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_11.4bpp");
+static const u8 sHeracrossGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_11.4bpp.lz");
 static const ax_sprite sHeracrossSprites11[] = {
 	{sHeracrossGfx11, ARRAY_COUNT(sHeracrossGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx12[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_12.4bpp");
+static const u8 sHeracrossGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_12.4bpp.lz");
 static const ax_sprite sHeracrossSprites12[] = {
 	{sHeracrossGfx12, ARRAY_COUNT(sHeracrossGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx13[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_13.4bpp");
+static const u8 sHeracrossGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_13.4bpp.lz");
 static const ax_sprite sHeracrossSprites13[] = {
 	{sHeracrossGfx13, ARRAY_COUNT(sHeracrossGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx14[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_14.4bpp");
+static const u8 sHeracrossGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_14.4bpp.lz");
 static const ax_sprite sHeracrossSprites14[] = {
 	{sHeracrossGfx14, ARRAY_COUNT(sHeracrossGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx15[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_15.4bpp");
+static const u8 sHeracrossGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_15.4bpp.lz");
 static const ax_sprite sHeracrossSprites15[] = {
 	{sHeracrossGfx15, ARRAY_COUNT(sHeracrossGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx16[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_16.4bpp");
-static const u8 sHeracrossGfx16_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_16_1.4bpp");
+static const u8 sHeracrossGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_16.4bpp.lz");
+static const u8 sHeracrossGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_16_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites16[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx16, ARRAY_COUNT(sHeracrossGfx16)}, 
@@ -2331,15 +2331,15 @@ static const ax_sprite sHeracrossSprites16[] = {
 	{sHeracrossGfx16_1, ARRAY_COUNT(sHeracrossGfx16_1)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx17[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_17.4bpp");
+static const u8 sHeracrossGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_17.4bpp.lz");
 static const ax_sprite sHeracrossSprites17[] = {
 	{NULL, 256}, 
 	{sHeracrossGfx17, ARRAY_COUNT(sHeracrossGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx18[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_18.4bpp");
-static const u8 sHeracrossGfx18_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_18_1.4bpp");
-static const u8 sHeracrossGfx18_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_18_2.4bpp");
+static const u8 sHeracrossGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_18.4bpp.lz");
+static const u8 sHeracrossGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_18_1.4bpp.lz");
+static const u8 sHeracrossGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_18_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites18[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx18, ARRAY_COUNT(sHeracrossGfx18)}, 
@@ -2349,16 +2349,16 @@ static const ax_sprite sHeracrossSprites18[] = {
 	{sHeracrossGfx18_2, ARRAY_COUNT(sHeracrossGfx18_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx19[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_19.4bpp");
+static const u8 sHeracrossGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_19.4bpp.lz");
 static const ax_sprite sHeracrossSprites19[] = {
 	{NULL, 256}, 
 	{sHeracrossGfx19, ARRAY_COUNT(sHeracrossGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx20[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_20.4bpp");
-static const u8 sHeracrossGfx20_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_20_1.4bpp");
-static const u8 sHeracrossGfx20_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_20_2.4bpp");
-static const u8 sHeracrossGfx20_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_20_3.4bpp");
+static const u8 sHeracrossGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_20.4bpp.lz");
+static const u8 sHeracrossGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_20_1.4bpp.lz");
+static const u8 sHeracrossGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_20_2.4bpp.lz");
+static const u8 sHeracrossGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_20_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites20[] = {
 	{NULL, 64}, 
 	{sHeracrossGfx20, ARRAY_COUNT(sHeracrossGfx20)}, 
@@ -2370,9 +2370,9 @@ static const ax_sprite sHeracrossSprites20[] = {
 	{sHeracrossGfx20_3, ARRAY_COUNT(sHeracrossGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx21[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_21.4bpp");
-static const u8 sHeracrossGfx21_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_21_1.4bpp");
-static const u8 sHeracrossGfx21_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_21_2.4bpp");
+static const u8 sHeracrossGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_21.4bpp.lz");
+static const u8 sHeracrossGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_21_1.4bpp.lz");
+static const u8 sHeracrossGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_21_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites21[] = {
 	{NULL, 128}, 
 	{sHeracrossGfx21, ARRAY_COUNT(sHeracrossGfx21)}, 
@@ -2382,10 +2382,10 @@ static const ax_sprite sHeracrossSprites21[] = {
 	{sHeracrossGfx21_2, ARRAY_COUNT(sHeracrossGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx22[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_22.4bpp");
-static const u8 sHeracrossGfx22_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_22_1.4bpp");
-static const u8 sHeracrossGfx22_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_22_2.4bpp");
-static const u8 sHeracrossGfx22_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_22_3.4bpp");
+static const u8 sHeracrossGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_22.4bpp.lz");
+static const u8 sHeracrossGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_22_1.4bpp.lz");
+static const u8 sHeracrossGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_22_2.4bpp.lz");
+static const u8 sHeracrossGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_22_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites22[] = {
 	{NULL, 64}, 
 	{sHeracrossGfx22, ARRAY_COUNT(sHeracrossGfx22)}, 
@@ -2397,17 +2397,17 @@ static const ax_sprite sHeracrossSprites22[] = {
 	{sHeracrossGfx22_3, ARRAY_COUNT(sHeracrossGfx22_3)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx23[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_23.4bpp");
-static const u8 sHeracrossGfx23_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_23_1.4bpp");
+static const u8 sHeracrossGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_23.4bpp.lz");
+static const u8 sHeracrossGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_23_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites23[] = {
 	{sHeracrossGfx23, ARRAY_COUNT(sHeracrossGfx23)}, 
 	{NULL, 64}, 
 	{sHeracrossGfx23_1, ARRAY_COUNT(sHeracrossGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx24[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_24.4bpp");
-static const u8 sHeracrossGfx24_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_24_1.4bpp");
-static const u8 sHeracrossGfx24_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_24_2.4bpp");
+static const u8 sHeracrossGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_24.4bpp.lz");
+static const u8 sHeracrossGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_24_1.4bpp.lz");
+static const u8 sHeracrossGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_24_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites24[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx24, ARRAY_COUNT(sHeracrossGfx24)}, 
@@ -2417,9 +2417,9 @@ static const ax_sprite sHeracrossSprites24[] = {
 	{sHeracrossGfx24_2, ARRAY_COUNT(sHeracrossGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx25[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_25.4bpp");
-static const u8 sHeracrossGfx25_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_25_1.4bpp");
-static const u8 sHeracrossGfx25_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_25_2.4bpp");
+static const u8 sHeracrossGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_25.4bpp.lz");
+static const u8 sHeracrossGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_25_1.4bpp.lz");
+static const u8 sHeracrossGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_25_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites25[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx25, ARRAY_COUNT(sHeracrossGfx25)}, 
@@ -2429,10 +2429,10 @@ static const ax_sprite sHeracrossSprites25[] = {
 	{sHeracrossGfx25_2, ARRAY_COUNT(sHeracrossGfx25_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx26[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_26.4bpp");
-static const u8 sHeracrossGfx26_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_26_1.4bpp");
-static const u8 sHeracrossGfx26_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_26_2.4bpp");
-static const u8 sHeracrossGfx26_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_26_3.4bpp");
+static const u8 sHeracrossGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_26.4bpp.lz");
+static const u8 sHeracrossGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_26_1.4bpp.lz");
+static const u8 sHeracrossGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_26_2.4bpp.lz");
+static const u8 sHeracrossGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_26_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites26[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx26, ARRAY_COUNT(sHeracrossGfx26)}, 
@@ -2444,10 +2444,10 @@ static const ax_sprite sHeracrossSprites26[] = {
 	{sHeracrossGfx26_3, ARRAY_COUNT(sHeracrossGfx26_3)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx27[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_27.4bpp");
-static const u8 sHeracrossGfx27_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_27_1.4bpp");
-static const u8 sHeracrossGfx27_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_27_2.4bpp");
-static const u8 sHeracrossGfx27_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_27_3.4bpp");
+static const u8 sHeracrossGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_27.4bpp.lz");
+static const u8 sHeracrossGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_27_1.4bpp.lz");
+static const u8 sHeracrossGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_27_2.4bpp.lz");
+static const u8 sHeracrossGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_27_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites27[] = {
 	{sHeracrossGfx27, ARRAY_COUNT(sHeracrossGfx27)}, 
 	{NULL, 96}, 
@@ -2459,16 +2459,16 @@ static const ax_sprite sHeracrossSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx28[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_28.4bpp");
+static const u8 sHeracrossGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_28.4bpp.lz");
 static const ax_sprite sHeracrossSprites28[] = {
 	{NULL, 160}, 
 	{sHeracrossGfx28, ARRAY_COUNT(sHeracrossGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx29[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_29.4bpp");
-static const u8 sHeracrossGfx29_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_29_1.4bpp");
-static const u8 sHeracrossGfx29_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_29_2.4bpp");
-static const u8 sHeracrossGfx29_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_29_3.4bpp");
+static const u8 sHeracrossGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_29.4bpp.lz");
+static const u8 sHeracrossGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_29_1.4bpp.lz");
+static const u8 sHeracrossGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_29_2.4bpp.lz");
+static const u8 sHeracrossGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_29_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites29[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx29, ARRAY_COUNT(sHeracrossGfx29)}, 
@@ -2481,10 +2481,10 @@ static const ax_sprite sHeracrossSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx30[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_30.4bpp");
-static const u8 sHeracrossGfx30_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_30_1.4bpp");
-static const u8 sHeracrossGfx30_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_30_2.4bpp");
-static const u8 sHeracrossGfx30_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_30_3.4bpp");
+static const u8 sHeracrossGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_30.4bpp.lz");
+static const u8 sHeracrossGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_30_1.4bpp.lz");
+static const u8 sHeracrossGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_30_2.4bpp.lz");
+static const u8 sHeracrossGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_30_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites30[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx30, ARRAY_COUNT(sHeracrossGfx30)}, 
@@ -2497,8 +2497,8 @@ static const ax_sprite sHeracrossSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx31[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_31.4bpp");
-static const u8 sHeracrossGfx31_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_31_1.4bpp");
+static const u8 sHeracrossGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_31.4bpp.lz");
+static const u8 sHeracrossGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_31_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites31[] = {
 	{NULL, 160}, 
 	{sHeracrossGfx31, ARRAY_COUNT(sHeracrossGfx31)}, 
@@ -2507,10 +2507,10 @@ static const ax_sprite sHeracrossSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx32[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_32.4bpp");
-static const u8 sHeracrossGfx32_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_32_1.4bpp");
-static const u8 sHeracrossGfx32_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_32_2.4bpp");
-static const u8 sHeracrossGfx32_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_32_3.4bpp");
+static const u8 sHeracrossGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_32.4bpp.lz");
+static const u8 sHeracrossGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_32_1.4bpp.lz");
+static const u8 sHeracrossGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_32_2.4bpp.lz");
+static const u8 sHeracrossGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_32_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites32[] = {
 	{NULL, 64}, 
 	{sHeracrossGfx32, ARRAY_COUNT(sHeracrossGfx32)}, 
@@ -2522,8 +2522,8 @@ static const ax_sprite sHeracrossSprites32[] = {
 	{sHeracrossGfx32_3, ARRAY_COUNT(sHeracrossGfx32_3)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx33[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_33.4bpp");
-static const u8 sHeracrossGfx33_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_33_1.4bpp");
+static const u8 sHeracrossGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_33.4bpp.lz");
+static const u8 sHeracrossGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_33_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites33[] = {
 	{NULL, 128}, 
 	{sHeracrossGfx33, ARRAY_COUNT(sHeracrossGfx33)}, 
@@ -2532,8 +2532,8 @@ static const ax_sprite sHeracrossSprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx34[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_34.4bpp");
-static const u8 sHeracrossGfx34_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_34_1.4bpp");
+static const u8 sHeracrossGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_34.4bpp.lz");
+static const u8 sHeracrossGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_34_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites34[] = {
 	{NULL, 160}, 
 	{sHeracrossGfx34, ARRAY_COUNT(sHeracrossGfx34)}, 
@@ -2541,10 +2541,10 @@ static const ax_sprite sHeracrossSprites34[] = {
 	{sHeracrossGfx34_1, ARRAY_COUNT(sHeracrossGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx35[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_35.4bpp");
-static const u8 sHeracrossGfx35_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_35_1.4bpp");
-static const u8 sHeracrossGfx35_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_35_2.4bpp");
-static const u8 sHeracrossGfx35_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_35_3.4bpp");
+static const u8 sHeracrossGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_35.4bpp.lz");
+static const u8 sHeracrossGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_35_1.4bpp.lz");
+static const u8 sHeracrossGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_35_2.4bpp.lz");
+static const u8 sHeracrossGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_35_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites35[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx35, ARRAY_COUNT(sHeracrossGfx35)}, 
@@ -2556,9 +2556,9 @@ static const ax_sprite sHeracrossSprites35[] = {
 	{sHeracrossGfx35_3, ARRAY_COUNT(sHeracrossGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx36[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_36.4bpp");
-static const u8 sHeracrossGfx36_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_36_1.4bpp");
-static const u8 sHeracrossGfx36_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_36_2.4bpp");
+static const u8 sHeracrossGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_36.4bpp.lz");
+static const u8 sHeracrossGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_36_1.4bpp.lz");
+static const u8 sHeracrossGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_36_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites36[] = {
 	{sHeracrossGfx36, ARRAY_COUNT(sHeracrossGfx36)}, 
 	{NULL, 32}, 
@@ -2568,9 +2568,9 @@ static const ax_sprite sHeracrossSprites36[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx37[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_37.4bpp");
-static const u8 sHeracrossGfx37_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_37_1.4bpp");
-static const u8 sHeracrossGfx37_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_37_2.4bpp");
+static const u8 sHeracrossGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_37.4bpp.lz");
+static const u8 sHeracrossGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_37_1.4bpp.lz");
+static const u8 sHeracrossGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_37_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites37[] = {
 	{NULL, 128}, 
 	{sHeracrossGfx37, ARRAY_COUNT(sHeracrossGfx37)}, 
@@ -2580,10 +2580,10 @@ static const ax_sprite sHeracrossSprites37[] = {
 	{sHeracrossGfx37_2, ARRAY_COUNT(sHeracrossGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx38[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_38.4bpp");
-static const u8 sHeracrossGfx38_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_38_1.4bpp");
-static const u8 sHeracrossGfx38_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_38_2.4bpp");
-static const u8 sHeracrossGfx38_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_38_3.4bpp");
+static const u8 sHeracrossGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_38.4bpp.lz");
+static const u8 sHeracrossGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_38_1.4bpp.lz");
+static const u8 sHeracrossGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_38_2.4bpp.lz");
+static const u8 sHeracrossGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_38_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites38[] = {
 	{NULL, 64}, 
 	{sHeracrossGfx38, ARRAY_COUNT(sHeracrossGfx38)}, 
@@ -2596,9 +2596,9 @@ static const ax_sprite sHeracrossSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx39[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_39.4bpp");
-static const u8 sHeracrossGfx39_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_39_1.4bpp");
-static const u8 sHeracrossGfx39_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_39_2.4bpp");
+static const u8 sHeracrossGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_39.4bpp.lz");
+static const u8 sHeracrossGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_39_1.4bpp.lz");
+static const u8 sHeracrossGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_39_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites39[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx39, ARRAY_COUNT(sHeracrossGfx39)}, 
@@ -2609,10 +2609,10 @@ static const ax_sprite sHeracrossSprites39[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx40[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_40.4bpp");
-static const u8 sHeracrossGfx40_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_40_1.4bpp");
-static const u8 sHeracrossGfx40_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_40_2.4bpp");
-static const u8 sHeracrossGfx40_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_40_3.4bpp");
+static const u8 sHeracrossGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_40.4bpp.lz");
+static const u8 sHeracrossGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_40_1.4bpp.lz");
+static const u8 sHeracrossGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_40_2.4bpp.lz");
+static const u8 sHeracrossGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_40_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites40[] = {
 	{sHeracrossGfx40, ARRAY_COUNT(sHeracrossGfx40)}, 
 	{NULL, 64}, 
@@ -2624,8 +2624,8 @@ static const ax_sprite sHeracrossSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx41[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_41.4bpp");
-static const u8 sHeracrossGfx41_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_41_1.4bpp");
+static const u8 sHeracrossGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_41.4bpp.lz");
+static const u8 sHeracrossGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_41_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites41[] = {
 	{NULL, 96}, 
 	{sHeracrossGfx41, ARRAY_COUNT(sHeracrossGfx41)}, 
@@ -2633,8 +2633,8 @@ static const ax_sprite sHeracrossSprites41[] = {
 	{sHeracrossGfx41_1, ARRAY_COUNT(sHeracrossGfx41_1)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx42[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_42.4bpp");
-static const u8 sHeracrossGfx42_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_42_1.4bpp");
+static const u8 sHeracrossGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_42.4bpp.lz");
+static const u8 sHeracrossGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_42_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites42[] = {
 	{NULL, 128}, 
 	{sHeracrossGfx42, ARRAY_COUNT(sHeracrossGfx42)}, 
@@ -2643,8 +2643,8 @@ static const ax_sprite sHeracrossSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx43[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_43.4bpp");
-static const u8 sHeracrossGfx43_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_43_1.4bpp");
+static const u8 sHeracrossGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_43.4bpp.lz");
+static const u8 sHeracrossGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_43_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites43[] = {
 	{NULL, 160}, 
 	{sHeracrossGfx43, ARRAY_COUNT(sHeracrossGfx43)}, 
@@ -2652,9 +2652,9 @@ static const ax_sprite sHeracrossSprites43[] = {
 	{sHeracrossGfx43_1, ARRAY_COUNT(sHeracrossGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx44[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_44.4bpp");
-static const u8 sHeracrossGfx44_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_44_1.4bpp");
-static const u8 sHeracrossGfx44_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_44_2.4bpp");
+static const u8 sHeracrossGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_44.4bpp.lz");
+static const u8 sHeracrossGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_44_1.4bpp.lz");
+static const u8 sHeracrossGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_44_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites44[] = {
 	{sHeracrossGfx44, ARRAY_COUNT(sHeracrossGfx44)}, 
 	{NULL, 64}, 
@@ -2663,8 +2663,8 @@ static const ax_sprite sHeracrossSprites44[] = {
 	{sHeracrossGfx44_2, ARRAY_COUNT(sHeracrossGfx44_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx45[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_45.4bpp");
-static const u8 sHeracrossGfx45_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_45_1.4bpp");
+static const u8 sHeracrossGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_45.4bpp.lz");
+static const u8 sHeracrossGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_45_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites45[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx45, ARRAY_COUNT(sHeracrossGfx45)}, 
@@ -2673,10 +2673,10 @@ static const ax_sprite sHeracrossSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx46[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_46.4bpp");
-static const u8 sHeracrossGfx46_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_46_1.4bpp");
-static const u8 sHeracrossGfx46_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_46_2.4bpp");
-static const u8 sHeracrossGfx46_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_46_3.4bpp");
+static const u8 sHeracrossGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_46.4bpp.lz");
+static const u8 sHeracrossGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_46_1.4bpp.lz");
+static const u8 sHeracrossGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_46_2.4bpp.lz");
+static const u8 sHeracrossGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_46_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites46[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx46, ARRAY_COUNT(sHeracrossGfx46)}, 
@@ -2688,9 +2688,9 @@ static const ax_sprite sHeracrossSprites46[] = {
 	{sHeracrossGfx46_3, ARRAY_COUNT(sHeracrossGfx46_3)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx47[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_47.4bpp");
-static const u8 sHeracrossGfx47_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_47_1.4bpp");
-static const u8 sHeracrossGfx47_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_47_2.4bpp");
+static const u8 sHeracrossGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_47.4bpp.lz");
+static const u8 sHeracrossGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_47_1.4bpp.lz");
+static const u8 sHeracrossGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_47_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites47[] = {
 	{NULL, 160}, 
 	{sHeracrossGfx47, ARRAY_COUNT(sHeracrossGfx47)}, 
@@ -2700,15 +2700,15 @@ static const ax_sprite sHeracrossSprites47[] = {
 	{sHeracrossGfx47_2, ARRAY_COUNT(sHeracrossGfx47_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx48[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_48.4bpp");
+static const u8 sHeracrossGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_48.4bpp.lz");
 static const ax_sprite sHeracrossSprites48[] = {
 	{NULL, 160}, 
 	{sHeracrossGfx48, ARRAY_COUNT(sHeracrossGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx49[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_49.4bpp");
-static const u8 sHeracrossGfx49_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_49_1.4bpp");
-static const u8 sHeracrossGfx49_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_49_2.4bpp");
+static const u8 sHeracrossGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_49.4bpp.lz");
+static const u8 sHeracrossGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_49_1.4bpp.lz");
+static const u8 sHeracrossGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_49_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites49[] = {
 	{NULL, 64}, 
 	{sHeracrossGfx49, ARRAY_COUNT(sHeracrossGfx49)}, 
@@ -2718,16 +2718,16 @@ static const ax_sprite sHeracrossSprites49[] = {
 	{sHeracrossGfx49_2, ARRAY_COUNT(sHeracrossGfx49_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx50[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_50.4bpp");
-static const u8 sHeracrossGfx50_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_50_1.4bpp");
+static const u8 sHeracrossGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_50.4bpp.lz");
+static const u8 sHeracrossGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_50_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites50[] = {
 	{sHeracrossGfx50, ARRAY_COUNT(sHeracrossGfx50)}, 
 	{NULL, 64}, 
 	{sHeracrossGfx50_1, ARRAY_COUNT(sHeracrossGfx50_1)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx51[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_51.4bpp");
-static const u8 sHeracrossGfx51_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_51_1.4bpp");
+static const u8 sHeracrossGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_51.4bpp.lz");
+static const u8 sHeracrossGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_51_1.4bpp.lz");
 static const ax_sprite sHeracrossSprites51[] = {
 	{NULL, 128}, 
 	{sHeracrossGfx51, ARRAY_COUNT(sHeracrossGfx51)}, 
@@ -2735,10 +2735,10 @@ static const ax_sprite sHeracrossSprites51[] = {
 	{sHeracrossGfx51_1, ARRAY_COUNT(sHeracrossGfx51_1)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx52[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_52.4bpp");
-static const u8 sHeracrossGfx52_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_52_1.4bpp");
-static const u8 sHeracrossGfx52_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_52_2.4bpp");
-static const u8 sHeracrossGfx52_3[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_52_3.4bpp");
+static const u8 sHeracrossGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_52.4bpp.lz");
+static const u8 sHeracrossGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_52_1.4bpp.lz");
+static const u8 sHeracrossGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_52_2.4bpp.lz");
+static const u8 sHeracrossGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_52_3.4bpp.lz");
 static const ax_sprite sHeracrossSprites52[] = {
 	{sHeracrossGfx52, ARRAY_COUNT(sHeracrossGfx52)}, 
 	{NULL, 96}, 
@@ -2749,9 +2749,9 @@ static const ax_sprite sHeracrossSprites52[] = {
 	{sHeracrossGfx52_3, ARRAY_COUNT(sHeracrossGfx52_3)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx53[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_53.4bpp");
-static const u8 sHeracrossGfx53_1[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_53_1.4bpp");
-static const u8 sHeracrossGfx53_2[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_53_2.4bpp");
+static const u8 sHeracrossGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_53.4bpp.lz");
+static const u8 sHeracrossGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_53_1.4bpp.lz");
+static const u8 sHeracrossGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_53_2.4bpp.lz");
 static const ax_sprite sHeracrossSprites53[] = {
 	{NULL, 32}, 
 	{sHeracrossGfx53, ARRAY_COUNT(sHeracrossGfx53)}, 
@@ -2761,37 +2761,37 @@ static const ax_sprite sHeracrossSprites53[] = {
 	{sHeracrossGfx53_2, ARRAY_COUNT(sHeracrossGfx53_2)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx54[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_54.4bpp");
+static const u8 sHeracrossGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_54.4bpp.lz");
 static const ax_sprite sHeracrossSprites54[] = {
 	{sHeracrossGfx54, ARRAY_COUNT(sHeracrossGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx55[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_55.4bpp");
+static const u8 sHeracrossGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_55.4bpp.lz");
 static const ax_sprite sHeracrossSprites55[] = {
 	{sHeracrossGfx55, ARRAY_COUNT(sHeracrossGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx56[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_56.4bpp");
+static const u8 sHeracrossGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_56.4bpp.lz");
 static const ax_sprite sHeracrossSprites56[] = {
 	{sHeracrossGfx56, ARRAY_COUNT(sHeracrossGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx57[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_57.4bpp");
+static const u8 sHeracrossGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_57.4bpp.lz");
 static const ax_sprite sHeracrossSprites57[] = {
 	{sHeracrossGfx57, ARRAY_COUNT(sHeracrossGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx58[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_58.4bpp");
+static const u8 sHeracrossGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_58.4bpp.lz");
 static const ax_sprite sHeracrossSprites58[] = {
 	{sHeracrossGfx58, ARRAY_COUNT(sHeracrossGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx59[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_59.4bpp");
+static const u8 sHeracrossGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_59.4bpp.lz");
 static const ax_sprite sHeracrossSprites59[] = {
 	{sHeracrossGfx59, ARRAY_COUNT(sHeracrossGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sHeracrossGfx60[] = INCBIN_U8("graphics/ax/mon/heracross/sprite_60.4bpp");
+static const u8 sHeracrossGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/heracross/sprite_60.4bpp.lz");
 static const ax_sprite sHeracrossSprites60[] = {
 	{sHeracrossGfx60, ARRAY_COUNT(sHeracrossGfx60)}, 
 	{NULL, 0}

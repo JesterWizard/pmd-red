@@ -2054,95 +2054,95 @@ static const ax_anim sCrawdauntAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sCrawdauntGfx1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_1.4bpp");
+static const u8 sCrawdauntGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites1[] = {
 	{sCrawdauntGfx1, ARRAY_COUNT(sCrawdauntGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_2.4bpp");
+static const u8 sCrawdauntGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites2[] = {
 	{sCrawdauntGfx2, ARRAY_COUNT(sCrawdauntGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx3[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_3.4bpp");
+static const u8 sCrawdauntGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_3.4bpp.lz");
 static const ax_sprite sCrawdauntSprites3[] = {
 	{sCrawdauntGfx3, ARRAY_COUNT(sCrawdauntGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx4[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_4.4bpp");
+static const u8 sCrawdauntGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_4.4bpp.lz");
 static const ax_sprite sCrawdauntSprites4[] = {
 	{sCrawdauntGfx4, ARRAY_COUNT(sCrawdauntGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx5[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_5.4bpp");
+static const u8 sCrawdauntGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_5.4bpp.lz");
 static const ax_sprite sCrawdauntSprites5[] = {
 	{sCrawdauntGfx5, ARRAY_COUNT(sCrawdauntGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx6[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_6.4bpp");
+static const u8 sCrawdauntGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_6.4bpp.lz");
 static const ax_sprite sCrawdauntSprites6[] = {
 	{sCrawdauntGfx6, ARRAY_COUNT(sCrawdauntGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx7[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_7.4bpp");
+static const u8 sCrawdauntGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_7.4bpp.lz");
 static const ax_sprite sCrawdauntSprites7[] = {
 	{sCrawdauntGfx7, ARRAY_COUNT(sCrawdauntGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx8[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_8.4bpp");
+static const u8 sCrawdauntGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_8.4bpp.lz");
 static const ax_sprite sCrawdauntSprites8[] = {
 	{sCrawdauntGfx8, ARRAY_COUNT(sCrawdauntGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx9[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_9.4bpp");
+static const u8 sCrawdauntGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_9.4bpp.lz");
 static const ax_sprite sCrawdauntSprites9[] = {
 	{sCrawdauntGfx9, ARRAY_COUNT(sCrawdauntGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx10[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_10.4bpp");
+static const u8 sCrawdauntGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_10.4bpp.lz");
 static const ax_sprite sCrawdauntSprites10[] = {
 	{sCrawdauntGfx10, ARRAY_COUNT(sCrawdauntGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx11[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_11.4bpp");
+static const u8 sCrawdauntGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_11.4bpp.lz");
 static const ax_sprite sCrawdauntSprites11[] = {
 	{sCrawdauntGfx11, ARRAY_COUNT(sCrawdauntGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx12[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_12.4bpp");
+static const u8 sCrawdauntGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_12.4bpp.lz");
 static const ax_sprite sCrawdauntSprites12[] = {
 	{sCrawdauntGfx12, ARRAY_COUNT(sCrawdauntGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx13[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_13.4bpp");
+static const u8 sCrawdauntGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_13.4bpp.lz");
 static const ax_sprite sCrawdauntSprites13[] = {
 	{sCrawdauntGfx13, ARRAY_COUNT(sCrawdauntGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx14[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_14.4bpp");
+static const u8 sCrawdauntGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_14.4bpp.lz");
 static const ax_sprite sCrawdauntSprites14[] = {
 	{sCrawdauntGfx14, ARRAY_COUNT(sCrawdauntGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx15[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_15.4bpp");
+static const u8 sCrawdauntGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_15.4bpp.lz");
 static const ax_sprite sCrawdauntSprites15[] = {
 	{sCrawdauntGfx15, ARRAY_COUNT(sCrawdauntGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx16[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_16.4bpp");
+static const u8 sCrawdauntGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_16.4bpp.lz");
 static const ax_sprite sCrawdauntSprites16[] = {
 	{sCrawdauntGfx16, ARRAY_COUNT(sCrawdauntGfx16)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx17[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_17.4bpp");
+static const u8 sCrawdauntGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_17.4bpp.lz");
 static const ax_sprite sCrawdauntSprites17[] = {
 	{sCrawdauntGfx17, ARRAY_COUNT(sCrawdauntGfx17)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx18[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_18.4bpp");
-static const u8 sCrawdauntGfx18_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_18_1.4bpp");
+static const u8 sCrawdauntGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_18.4bpp.lz");
+static const u8 sCrawdauntGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_18_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites18[] = {
 	{sCrawdauntGfx18, ARRAY_COUNT(sCrawdauntGfx18)}, 
 	{NULL, 32}, 
@@ -2150,8 +2150,8 @@ static const ax_sprite sCrawdauntSprites18[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx19[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_19.4bpp");
-static const u8 sCrawdauntGfx19_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_19_1.4bpp");
+static const u8 sCrawdauntGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_19.4bpp.lz");
+static const u8 sCrawdauntGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_19_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites19[] = {
 	{sCrawdauntGfx19, ARRAY_COUNT(sCrawdauntGfx19)}, 
 	{NULL, 32}, 
@@ -2159,10 +2159,10 @@ static const ax_sprite sCrawdauntSprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx20[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_20.4bpp");
-static const u8 sCrawdauntGfx20_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_20_1.4bpp");
-static const u8 sCrawdauntGfx20_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_20_2.4bpp");
-static const u8 sCrawdauntGfx20_3[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_20_3.4bpp");
+static const u8 sCrawdauntGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_20.4bpp.lz");
+static const u8 sCrawdauntGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_20_1.4bpp.lz");
+static const u8 sCrawdauntGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_20_2.4bpp.lz");
+static const u8 sCrawdauntGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_20_3.4bpp.lz");
 static const ax_sprite sCrawdauntSprites20[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx20, ARRAY_COUNT(sCrawdauntGfx20)}, 
@@ -2174,9 +2174,9 @@ static const ax_sprite sCrawdauntSprites20[] = {
 	{sCrawdauntGfx20_3, ARRAY_COUNT(sCrawdauntGfx20_3)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx21[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_21.4bpp");
-static const u8 sCrawdauntGfx21_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_21_1.4bpp");
-static const u8 sCrawdauntGfx21_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_21_2.4bpp");
+static const u8 sCrawdauntGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_21.4bpp.lz");
+static const u8 sCrawdauntGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_21_1.4bpp.lz");
+static const u8 sCrawdauntGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_21_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites21[] = {
 	{sCrawdauntGfx21, ARRAY_COUNT(sCrawdauntGfx21)}, 
 	{NULL, 64}, 
@@ -2186,9 +2186,9 @@ static const ax_sprite sCrawdauntSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx22[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_22.4bpp");
-static const u8 sCrawdauntGfx22_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_22_1.4bpp");
-static const u8 sCrawdauntGfx22_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_22_2.4bpp");
+static const u8 sCrawdauntGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_22.4bpp.lz");
+static const u8 sCrawdauntGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_22_1.4bpp.lz");
+static const u8 sCrawdauntGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_22_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites22[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx22, ARRAY_COUNT(sCrawdauntGfx22)}, 
@@ -2198,9 +2198,9 @@ static const ax_sprite sCrawdauntSprites22[] = {
 	{sCrawdauntGfx22_2, ARRAY_COUNT(sCrawdauntGfx22_2)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx23[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_23.4bpp");
-static const u8 sCrawdauntGfx23_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_23_1.4bpp");
-static const u8 sCrawdauntGfx23_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_23_2.4bpp");
+static const u8 sCrawdauntGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_23.4bpp.lz");
+static const u8 sCrawdauntGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_23_1.4bpp.lz");
+static const u8 sCrawdauntGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_23_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites23[] = {
 	{sCrawdauntGfx23, ARRAY_COUNT(sCrawdauntGfx23)}, 
 	{NULL, 32}, 
@@ -2210,26 +2210,26 @@ static const ax_sprite sCrawdauntSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx24[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_24.4bpp");
+static const u8 sCrawdauntGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_24.4bpp.lz");
 static const ax_sprite sCrawdauntSprites24[] = {
 	{sCrawdauntGfx24, ARRAY_COUNT(sCrawdauntGfx24)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx25[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_25.4bpp");
+static const u8 sCrawdauntGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_25.4bpp.lz");
 static const ax_sprite sCrawdauntSprites25[] = {
 	{sCrawdauntGfx25, ARRAY_COUNT(sCrawdauntGfx25)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx26[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_26.4bpp");
+static const u8 sCrawdauntGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_26.4bpp.lz");
 static const ax_sprite sCrawdauntSprites26[] = {
 	{sCrawdauntGfx26, ARRAY_COUNT(sCrawdauntGfx26)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx27[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_27.4bpp");
-static const u8 sCrawdauntGfx27_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_27_1.4bpp");
+static const u8 sCrawdauntGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_27.4bpp.lz");
+static const u8 sCrawdauntGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_27_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites27[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx27, ARRAY_COUNT(sCrawdauntGfx27)}, 
@@ -2238,8 +2238,8 @@ static const ax_sprite sCrawdauntSprites27[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx28[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_28.4bpp");
-static const u8 sCrawdauntGfx28_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_28_1.4bpp");
+static const u8 sCrawdauntGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_28.4bpp.lz");
+static const u8 sCrawdauntGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_28_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites28[] = {
 	{sCrawdauntGfx28, ARRAY_COUNT(sCrawdauntGfx28)}, 
 	{NULL, 32}, 
@@ -2247,8 +2247,8 @@ static const ax_sprite sCrawdauntSprites28[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx29[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_29.4bpp");
-static const u8 sCrawdauntGfx29_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_29_1.4bpp");
+static const u8 sCrawdauntGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_29.4bpp.lz");
+static const u8 sCrawdauntGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_29_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites29[] = {
 	{sCrawdauntGfx29, ARRAY_COUNT(sCrawdauntGfx29)}, 
 	{NULL, 32}, 
@@ -2256,10 +2256,10 @@ static const ax_sprite sCrawdauntSprites29[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx30[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_30.4bpp");
-static const u8 sCrawdauntGfx30_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_30_1.4bpp");
-static const u8 sCrawdauntGfx30_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_30_2.4bpp");
-static const u8 sCrawdauntGfx30_3[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_30_3.4bpp");
+static const u8 sCrawdauntGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_30.4bpp.lz");
+static const u8 sCrawdauntGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_30_1.4bpp.lz");
+static const u8 sCrawdauntGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_30_2.4bpp.lz");
+static const u8 sCrawdauntGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_30_3.4bpp.lz");
 static const ax_sprite sCrawdauntSprites30[] = {
 	{sCrawdauntGfx30, ARRAY_COUNT(sCrawdauntGfx30)}, 
 	{NULL, 32}, 
@@ -2270,9 +2270,9 @@ static const ax_sprite sCrawdauntSprites30[] = {
 	{sCrawdauntGfx30_3, ARRAY_COUNT(sCrawdauntGfx30_3)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx31[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_31.4bpp");
-static const u8 sCrawdauntGfx31_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_31_1.4bpp");
-static const u8 sCrawdauntGfx31_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_31_2.4bpp");
+static const u8 sCrawdauntGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_31.4bpp.lz");
+static const u8 sCrawdauntGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_31_1.4bpp.lz");
+static const u8 sCrawdauntGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_31_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites31[] = {
 	{sCrawdauntGfx31, ARRAY_COUNT(sCrawdauntGfx31)}, 
 	{NULL, 64}, 
@@ -2282,9 +2282,9 @@ static const ax_sprite sCrawdauntSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx32[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_32.4bpp");
-static const u8 sCrawdauntGfx32_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_32_1.4bpp");
-static const u8 sCrawdauntGfx32_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_32_2.4bpp");
+static const u8 sCrawdauntGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_32.4bpp.lz");
+static const u8 sCrawdauntGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_32_1.4bpp.lz");
+static const u8 sCrawdauntGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_32_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites32[] = {
 	{sCrawdauntGfx32, ARRAY_COUNT(sCrawdauntGfx32)}, 
 	{NULL, 32}, 
@@ -2293,9 +2293,9 @@ static const ax_sprite sCrawdauntSprites32[] = {
 	{sCrawdauntGfx32_2, ARRAY_COUNT(sCrawdauntGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx33[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_33.4bpp");
-static const u8 sCrawdauntGfx33_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_33_1.4bpp");
-static const u8 sCrawdauntGfx33_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_33_2.4bpp");
+static const u8 sCrawdauntGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_33.4bpp.lz");
+static const u8 sCrawdauntGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_33_1.4bpp.lz");
+static const u8 sCrawdauntGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_33_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites33[] = {
 	{sCrawdauntGfx33, ARRAY_COUNT(sCrawdauntGfx33)}, 
 	{NULL, 32}, 
@@ -2305,15 +2305,15 @@ static const ax_sprite sCrawdauntSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx34[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_34.4bpp");
+static const u8 sCrawdauntGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_34.4bpp.lz");
 static const ax_sprite sCrawdauntSprites34[] = {
 	{sCrawdauntGfx34, ARRAY_COUNT(sCrawdauntGfx34)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx35[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_35.4bpp");
-static const u8 sCrawdauntGfx35_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_35_1.4bpp");
-static const u8 sCrawdauntGfx35_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_35_2.4bpp");
+static const u8 sCrawdauntGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_35.4bpp.lz");
+static const u8 sCrawdauntGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_35_1.4bpp.lz");
+static const u8 sCrawdauntGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_35_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites35[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx35, ARRAY_COUNT(sCrawdauntGfx35)}, 
@@ -2324,8 +2324,8 @@ static const ax_sprite sCrawdauntSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx36[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_36.4bpp");
-static const u8 sCrawdauntGfx36_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_36_1.4bpp");
+static const u8 sCrawdauntGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_36.4bpp.lz");
+static const u8 sCrawdauntGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_36_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites36[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx36, ARRAY_COUNT(sCrawdauntGfx36)}, 
@@ -2334,30 +2334,30 @@ static const ax_sprite sCrawdauntSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx37[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_37.4bpp");
+static const u8 sCrawdauntGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_37.4bpp.lz");
 static const ax_sprite sCrawdauntSprites37[] = {
 	{sCrawdauntGfx37, ARRAY_COUNT(sCrawdauntGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx38[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_38.4bpp");
+static const u8 sCrawdauntGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_38.4bpp.lz");
 static const ax_sprite sCrawdauntSprites38[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx38, ARRAY_COUNT(sCrawdauntGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx39[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_39.4bpp");
+static const u8 sCrawdauntGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_39.4bpp.lz");
 static const ax_sprite sCrawdauntSprites39[] = {
 	{sCrawdauntGfx39, ARRAY_COUNT(sCrawdauntGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx40[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_40.4bpp");
+static const u8 sCrawdauntGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_40.4bpp.lz");
 static const ax_sprite sCrawdauntSprites40[] = {
 	{sCrawdauntGfx40, ARRAY_COUNT(sCrawdauntGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx41[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_41.4bpp");
-static const u8 sCrawdauntGfx41_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_41_1.4bpp");
-static const u8 sCrawdauntGfx41_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_41_2.4bpp");
+static const u8 sCrawdauntGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_41.4bpp.lz");
+static const u8 sCrawdauntGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_41_1.4bpp.lz");
+static const u8 sCrawdauntGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_41_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites41[] = {
 	{sCrawdauntGfx41, ARRAY_COUNT(sCrawdauntGfx41)}, 
 	{NULL, 32}, 
@@ -2367,22 +2367,22 @@ static const ax_sprite sCrawdauntSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx42[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_42.4bpp");
+static const u8 sCrawdauntGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_42.4bpp.lz");
 static const ax_sprite sCrawdauntSprites42[] = {
 	{sCrawdauntGfx42, ARRAY_COUNT(sCrawdauntGfx42)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx43[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_43.4bpp");
-static const u8 sCrawdauntGfx43_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_43_1.4bpp");
+static const u8 sCrawdauntGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_43.4bpp.lz");
+static const u8 sCrawdauntGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_43_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites43[] = {
 	{sCrawdauntGfx43, ARRAY_COUNT(sCrawdauntGfx43)}, 
 	{NULL, 32}, 
 	{sCrawdauntGfx43_1, ARRAY_COUNT(sCrawdauntGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx44[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_44.4bpp");
-static const u8 sCrawdauntGfx44_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_44_1.4bpp");
+static const u8 sCrawdauntGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_44.4bpp.lz");
+static const u8 sCrawdauntGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_44_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites44[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx44, ARRAY_COUNT(sCrawdauntGfx44)}, 
@@ -2390,45 +2390,45 @@ static const ax_sprite sCrawdauntSprites44[] = {
 	{sCrawdauntGfx44_1, ARRAY_COUNT(sCrawdauntGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx45[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_45.4bpp");
+static const u8 sCrawdauntGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_45.4bpp.lz");
 static const ax_sprite sCrawdauntSprites45[] = {
 	{sCrawdauntGfx45, ARRAY_COUNT(sCrawdauntGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx46[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_46.4bpp");
+static const u8 sCrawdauntGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_46.4bpp.lz");
 static const ax_sprite sCrawdauntSprites46[] = {
 	{sCrawdauntGfx46, ARRAY_COUNT(sCrawdauntGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx47[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_47.4bpp");
+static const u8 sCrawdauntGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_47.4bpp.lz");
 static const ax_sprite sCrawdauntSprites47[] = {
 	{sCrawdauntGfx47, ARRAY_COUNT(sCrawdauntGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx48[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_48.4bpp");
+static const u8 sCrawdauntGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_48.4bpp.lz");
 static const ax_sprite sCrawdauntSprites48[] = {
 	{sCrawdauntGfx48, ARRAY_COUNT(sCrawdauntGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx49[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_49.4bpp");
+static const u8 sCrawdauntGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_49.4bpp.lz");
 static const ax_sprite sCrawdauntSprites49[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx49, ARRAY_COUNT(sCrawdauntGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx50[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_50.4bpp");
+static const u8 sCrawdauntGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_50.4bpp.lz");
 static const ax_sprite sCrawdauntSprites50[] = {
 	{sCrawdauntGfx50, ARRAY_COUNT(sCrawdauntGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx51[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_51.4bpp");
+static const u8 sCrawdauntGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_51.4bpp.lz");
 static const ax_sprite sCrawdauntSprites51[] = {
 	{sCrawdauntGfx51, ARRAY_COUNT(sCrawdauntGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx52[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_52.4bpp");
-static const u8 sCrawdauntGfx52_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_52_1.4bpp");
-static const u8 sCrawdauntGfx52_2[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_52_2.4bpp");
+static const u8 sCrawdauntGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_52.4bpp.lz");
+static const u8 sCrawdauntGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_52_1.4bpp.lz");
+static const u8 sCrawdauntGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_52_2.4bpp.lz");
 static const ax_sprite sCrawdauntSprites52[] = {
 	{sCrawdauntGfx52, ARRAY_COUNT(sCrawdauntGfx52)}, 
 	{NULL, 64}, 
@@ -2437,8 +2437,8 @@ static const ax_sprite sCrawdauntSprites52[] = {
 	{sCrawdauntGfx52_2, ARRAY_COUNT(sCrawdauntGfx52_2)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx53[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_53.4bpp");
-static const u8 sCrawdauntGfx53_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_53_1.4bpp");
+static const u8 sCrawdauntGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_53.4bpp.lz");
+static const u8 sCrawdauntGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_53_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites53[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx53, ARRAY_COUNT(sCrawdauntGfx53)}, 
@@ -2446,8 +2446,8 @@ static const ax_sprite sCrawdauntSprites53[] = {
 	{sCrawdauntGfx53_1, ARRAY_COUNT(sCrawdauntGfx53_1)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx54[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_54.4bpp");
-static const u8 sCrawdauntGfx54_1[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_54_1.4bpp");
+static const u8 sCrawdauntGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_54.4bpp.lz");
+static const u8 sCrawdauntGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_54_1.4bpp.lz");
 static const ax_sprite sCrawdauntSprites54[] = {
 	{NULL, 32}, 
 	{sCrawdauntGfx54, ARRAY_COUNT(sCrawdauntGfx54)}, 
@@ -2455,37 +2455,37 @@ static const ax_sprite sCrawdauntSprites54[] = {
 	{sCrawdauntGfx54_1, ARRAY_COUNT(sCrawdauntGfx54_1)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx55[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_55.4bpp");
+static const u8 sCrawdauntGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_55.4bpp.lz");
 static const ax_sprite sCrawdauntSprites55[] = {
 	{sCrawdauntGfx55, ARRAY_COUNT(sCrawdauntGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx56[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_56.4bpp");
+static const u8 sCrawdauntGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_56.4bpp.lz");
 static const ax_sprite sCrawdauntSprites56[] = {
 	{sCrawdauntGfx56, ARRAY_COUNT(sCrawdauntGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx57[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_57.4bpp");
+static const u8 sCrawdauntGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_57.4bpp.lz");
 static const ax_sprite sCrawdauntSprites57[] = {
 	{sCrawdauntGfx57, ARRAY_COUNT(sCrawdauntGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx58[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_58.4bpp");
+static const u8 sCrawdauntGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_58.4bpp.lz");
 static const ax_sprite sCrawdauntSprites58[] = {
 	{sCrawdauntGfx58, ARRAY_COUNT(sCrawdauntGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx59[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_59.4bpp");
+static const u8 sCrawdauntGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_59.4bpp.lz");
 static const ax_sprite sCrawdauntSprites59[] = {
 	{sCrawdauntGfx59, ARRAY_COUNT(sCrawdauntGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx60[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_60.4bpp");
+static const u8 sCrawdauntGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_60.4bpp.lz");
 static const ax_sprite sCrawdauntSprites60[] = {
 	{sCrawdauntGfx60, ARRAY_COUNT(sCrawdauntGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sCrawdauntGfx61[] = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_61.4bpp");
+static const u8 sCrawdauntGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/crawdaunt/sprite_61.4bpp.lz");
 static const ax_sprite sCrawdauntSprites61[] = {
 	{sCrawdauntGfx61, ARRAY_COUNT(sCrawdauntGfx61)}, 
 	{NULL, 0}

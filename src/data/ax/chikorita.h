@@ -3067,105 +3067,105 @@ static const ax_anim sChikoritaAnims_28_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sChikoritaGfx1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_1.4bpp");
+static const u8 sChikoritaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_1.4bpp.lz");
 static const ax_sprite sChikoritaSprites1[] = {
 	{sChikoritaGfx1, ARRAY_COUNT(sChikoritaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx2[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_2.4bpp");
+static const u8 sChikoritaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_2.4bpp.lz");
 static const ax_sprite sChikoritaSprites2[] = {
 	{sChikoritaGfx2, ARRAY_COUNT(sChikoritaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx3[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_3.4bpp");
+static const u8 sChikoritaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_3.4bpp.lz");
 static const ax_sprite sChikoritaSprites3[] = {
 	{sChikoritaGfx3, ARRAY_COUNT(sChikoritaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx4[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_4.4bpp");
+static const u8 sChikoritaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_4.4bpp.lz");
 static const ax_sprite sChikoritaSprites4[] = {
 	{sChikoritaGfx4, ARRAY_COUNT(sChikoritaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx5[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_5.4bpp");
+static const u8 sChikoritaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_5.4bpp.lz");
 static const ax_sprite sChikoritaSprites5[] = {
 	{sChikoritaGfx5, ARRAY_COUNT(sChikoritaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx6[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_6.4bpp");
+static const u8 sChikoritaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_6.4bpp.lz");
 static const ax_sprite sChikoritaSprites6[] = {
 	{sChikoritaGfx6, ARRAY_COUNT(sChikoritaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx7[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_7.4bpp");
+static const u8 sChikoritaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_7.4bpp.lz");
 static const ax_sprite sChikoritaSprites7[] = {
 	{sChikoritaGfx7, ARRAY_COUNT(sChikoritaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx8[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_8.4bpp");
+static const u8 sChikoritaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_8.4bpp.lz");
 static const ax_sprite sChikoritaSprites8[] = {
 	{sChikoritaGfx8, ARRAY_COUNT(sChikoritaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx9[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_9.4bpp");
+static const u8 sChikoritaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_9.4bpp.lz");
 static const ax_sprite sChikoritaSprites9[] = {
 	{sChikoritaGfx9, ARRAY_COUNT(sChikoritaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx10[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_10.4bpp");
+static const u8 sChikoritaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_10.4bpp.lz");
 static const ax_sprite sChikoritaSprites10[] = {
 	{sChikoritaGfx10, ARRAY_COUNT(sChikoritaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx11[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_11.4bpp");
+static const u8 sChikoritaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_11.4bpp.lz");
 static const ax_sprite sChikoritaSprites11[] = {
 	{sChikoritaGfx11, ARRAY_COUNT(sChikoritaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx12[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_12.4bpp");
+static const u8 sChikoritaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_12.4bpp.lz");
 static const ax_sprite sChikoritaSprites12[] = {
 	{sChikoritaGfx12, ARRAY_COUNT(sChikoritaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx13[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_13.4bpp");
+static const u8 sChikoritaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_13.4bpp.lz");
 static const ax_sprite sChikoritaSprites13[] = {
 	{sChikoritaGfx13, ARRAY_COUNT(sChikoritaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx14[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_14.4bpp");
+static const u8 sChikoritaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_14.4bpp.lz");
 static const ax_sprite sChikoritaSprites14[] = {
 	{sChikoritaGfx14, ARRAY_COUNT(sChikoritaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx15[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_15.4bpp");
+static const u8 sChikoritaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_15.4bpp.lz");
 static const ax_sprite sChikoritaSprites15[] = {
 	{sChikoritaGfx15, ARRAY_COUNT(sChikoritaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx16[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_16.4bpp");
+static const u8 sChikoritaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_16.4bpp.lz");
 static const ax_sprite sChikoritaSprites16[] = {
 	{sChikoritaGfx16, ARRAY_COUNT(sChikoritaGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx17[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_17.4bpp");
+static const u8 sChikoritaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_17.4bpp.lz");
 static const ax_sprite sChikoritaSprites17[] = {
 	{sChikoritaGfx17, ARRAY_COUNT(sChikoritaGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx18[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_18.4bpp");
+static const u8 sChikoritaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_18.4bpp.lz");
 static const ax_sprite sChikoritaSprites18[] = {
 	{sChikoritaGfx18, ARRAY_COUNT(sChikoritaGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx19[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_19.4bpp");
+static const u8 sChikoritaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_19.4bpp.lz");
 static const ax_sprite sChikoritaSprites19[] = {
 	{sChikoritaGfx19, ARRAY_COUNT(sChikoritaGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx20[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_20.4bpp");
-static const u8 sChikoritaGfx20_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_20_1.4bpp");
-static const u8 sChikoritaGfx20_2[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_20_2.4bpp");
+static const u8 sChikoritaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_20.4bpp.lz");
+static const u8 sChikoritaGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_20_1.4bpp.lz");
+static const u8 sChikoritaGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_20_2.4bpp.lz");
 static const ax_sprite sChikoritaSprites20[] = {
 	{NULL, 32}, 
 	{sChikoritaGfx20, ARRAY_COUNT(sChikoritaGfx20)}, 
@@ -3176,10 +3176,10 @@ static const ax_sprite sChikoritaSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx21[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_21.4bpp");
-static const u8 sChikoritaGfx21_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_21_1.4bpp");
-static const u8 sChikoritaGfx21_2[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_21_2.4bpp");
-static const u8 sChikoritaGfx21_3[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_21_3.4bpp");
+static const u8 sChikoritaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_21.4bpp.lz");
+static const u8 sChikoritaGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_21_1.4bpp.lz");
+static const u8 sChikoritaGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_21_2.4bpp.lz");
+static const u8 sChikoritaGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_21_3.4bpp.lz");
 static const ax_sprite sChikoritaSprites21[] = {
 	{sChikoritaGfx21, ARRAY_COUNT(sChikoritaGfx21)}, 
 	{NULL, 32}, 
@@ -3190,13 +3190,13 @@ static const ax_sprite sChikoritaSprites21[] = {
 	{sChikoritaGfx21_3, ARRAY_COUNT(sChikoritaGfx21_3)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx22[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_22.4bpp");
+static const u8 sChikoritaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_22.4bpp.lz");
 static const ax_sprite sChikoritaSprites22[] = {
 	{sChikoritaGfx22, ARRAY_COUNT(sChikoritaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx23[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_23.4bpp");
-static const u8 sChikoritaGfx23_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_23_1.4bpp");
+static const u8 sChikoritaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_23.4bpp.lz");
+static const u8 sChikoritaGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_23_1.4bpp.lz");
 static const ax_sprite sChikoritaSprites23[] = {
 	{NULL, 64}, 
 	{sChikoritaGfx23, ARRAY_COUNT(sChikoritaGfx23)}, 
@@ -3205,8 +3205,8 @@ static const ax_sprite sChikoritaSprites23[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx24[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_24.4bpp");
-static const u8 sChikoritaGfx24_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_24_1.4bpp");
+static const u8 sChikoritaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_24.4bpp.lz");
+static const u8 sChikoritaGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_24_1.4bpp.lz");
 static const ax_sprite sChikoritaSprites24[] = {
 	{NULL, 32}, 
 	{sChikoritaGfx24, ARRAY_COUNT(sChikoritaGfx24)}, 
@@ -3215,10 +3215,10 @@ static const ax_sprite sChikoritaSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx25[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_25.4bpp");
-static const u8 sChikoritaGfx25_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_25_1.4bpp");
-static const u8 sChikoritaGfx25_2[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_25_2.4bpp");
-static const u8 sChikoritaGfx25_3[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_25_3.4bpp");
+static const u8 sChikoritaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_25.4bpp.lz");
+static const u8 sChikoritaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_25_1.4bpp.lz");
+static const u8 sChikoritaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_25_2.4bpp.lz");
+static const u8 sChikoritaGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_25_3.4bpp.lz");
 static const ax_sprite sChikoritaSprites25[] = {
 	{sChikoritaGfx25, ARRAY_COUNT(sChikoritaGfx25)}, 
 	{NULL, 32}, 
@@ -3229,13 +3229,13 @@ static const ax_sprite sChikoritaSprites25[] = {
 	{sChikoritaGfx25_3, ARRAY_COUNT(sChikoritaGfx25_3)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx26[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_26.4bpp");
+static const u8 sChikoritaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_26.4bpp.lz");
 static const ax_sprite sChikoritaSprites26[] = {
 	{sChikoritaGfx26, ARRAY_COUNT(sChikoritaGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx27[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_27.4bpp");
-static const u8 sChikoritaGfx27_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_27_1.4bpp");
+static const u8 sChikoritaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_27.4bpp.lz");
+static const u8 sChikoritaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_27_1.4bpp.lz");
 static const ax_sprite sChikoritaSprites27[] = {
 	{NULL, 64}, 
 	{sChikoritaGfx27, ARRAY_COUNT(sChikoritaGfx27)}, 
@@ -3244,8 +3244,8 @@ static const ax_sprite sChikoritaSprites27[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx28[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_28.4bpp");
-static const u8 sChikoritaGfx28_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_28_1.4bpp");
+static const u8 sChikoritaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_28.4bpp.lz");
+static const u8 sChikoritaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_28_1.4bpp.lz");
 static const ax_sprite sChikoritaSprites28[] = {
 	{NULL, 32}, 
 	{sChikoritaGfx28, ARRAY_COUNT(sChikoritaGfx28)}, 
@@ -3254,22 +3254,22 @@ static const ax_sprite sChikoritaSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx29[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_29.4bpp");
-static const u8 sChikoritaGfx29_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_29_1.4bpp");
+static const u8 sChikoritaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_29.4bpp.lz");
+static const u8 sChikoritaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_29_1.4bpp.lz");
 static const ax_sprite sChikoritaSprites29[] = {
 	{sChikoritaGfx29, ARRAY_COUNT(sChikoritaGfx29)}, 
 	{NULL, 64}, 
 	{sChikoritaGfx29_1, ARRAY_COUNT(sChikoritaGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx30[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_30.4bpp");
+static const u8 sChikoritaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_30.4bpp.lz");
 static const ax_sprite sChikoritaSprites30[] = {
 	{sChikoritaGfx30, ARRAY_COUNT(sChikoritaGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx31[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_31.4bpp");
-static const u8 sChikoritaGfx31_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_31_1.4bpp");
-static const u8 sChikoritaGfx31_2[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_31_2.4bpp");
+static const u8 sChikoritaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_31.4bpp.lz");
+static const u8 sChikoritaGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_31_1.4bpp.lz");
+static const u8 sChikoritaGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_31_2.4bpp.lz");
 static const ax_sprite sChikoritaSprites31[] = {
 	{sChikoritaGfx31, ARRAY_COUNT(sChikoritaGfx31)}, 
 	{NULL, 32}, 
@@ -3279,30 +3279,30 @@ static const ax_sprite sChikoritaSprites31[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx32[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_32.4bpp");
+static const u8 sChikoritaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_32.4bpp.lz");
 static const ax_sprite sChikoritaSprites32[] = {
 	{sChikoritaGfx32, ARRAY_COUNT(sChikoritaGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx33[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_33.4bpp");
+static const u8 sChikoritaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_33.4bpp.lz");
 static const ax_sprite sChikoritaSprites33[] = {
 	{sChikoritaGfx33, ARRAY_COUNT(sChikoritaGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx34[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_34.4bpp");
+static const u8 sChikoritaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_34.4bpp.lz");
 static const ax_sprite sChikoritaSprites34[] = {
 	{sChikoritaGfx34, ARRAY_COUNT(sChikoritaGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx35[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_35.4bpp");
+static const u8 sChikoritaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_35.4bpp.lz");
 static const ax_sprite sChikoritaSprites35[] = {
 	{sChikoritaGfx35, ARRAY_COUNT(sChikoritaGfx35)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx36[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_36.4bpp");
-static const u8 sChikoritaGfx36_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_36_1.4bpp");
-static const u8 sChikoritaGfx36_2[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_36_2.4bpp");
+static const u8 sChikoritaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_36.4bpp.lz");
+static const u8 sChikoritaGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_36_1.4bpp.lz");
+static const u8 sChikoritaGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_36_2.4bpp.lz");
 static const ax_sprite sChikoritaSprites36[] = {
 	{NULL, 32}, 
 	{sChikoritaGfx36, ARRAY_COUNT(sChikoritaGfx36)}, 
@@ -3313,10 +3313,10 @@ static const ax_sprite sChikoritaSprites36[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx37[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_37.4bpp");
-static const u8 sChikoritaGfx37_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_37_1.4bpp");
-static const u8 sChikoritaGfx37_2[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_37_2.4bpp");
-static const u8 sChikoritaGfx37_3[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_37_3.4bpp");
+static const u8 sChikoritaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_37.4bpp.lz");
+static const u8 sChikoritaGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_37_1.4bpp.lz");
+static const u8 sChikoritaGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_37_2.4bpp.lz");
+static const u8 sChikoritaGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_37_3.4bpp.lz");
 static const ax_sprite sChikoritaSprites37[] = {
 	{NULL, 32}, 
 	{sChikoritaGfx37, ARRAY_COUNT(sChikoritaGfx37)}, 
@@ -3329,10 +3329,10 @@ static const ax_sprite sChikoritaSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx38[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_38.4bpp");
-static const u8 sChikoritaGfx38_1[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_38_1.4bpp");
-static const u8 sChikoritaGfx38_2[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_38_2.4bpp");
-static const u8 sChikoritaGfx38_3[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_38_3.4bpp");
+static const u8 sChikoritaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_38.4bpp.lz");
+static const u8 sChikoritaGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_38_1.4bpp.lz");
+static const u8 sChikoritaGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_38_2.4bpp.lz");
+static const u8 sChikoritaGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_38_3.4bpp.lz");
 static const ax_sprite sChikoritaSprites38[] = {
 	{NULL, 32}, 
 	{sChikoritaGfx38, ARRAY_COUNT(sChikoritaGfx38)}, 
@@ -3345,188 +3345,188 @@ static const ax_sprite sChikoritaSprites38[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx39[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_39.4bpp");
+static const u8 sChikoritaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_39.4bpp.lz");
 static const ax_sprite sChikoritaSprites39[] = {
 	{sChikoritaGfx39, ARRAY_COUNT(sChikoritaGfx39)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx40[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_40.4bpp");
+static const u8 sChikoritaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_40.4bpp.lz");
 static const ax_sprite sChikoritaSprites40[] = {
 	{sChikoritaGfx40, ARRAY_COUNT(sChikoritaGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx41[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_41.4bpp");
+static const u8 sChikoritaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_41.4bpp.lz");
 static const ax_sprite sChikoritaSprites41[] = {
 	{sChikoritaGfx41, ARRAY_COUNT(sChikoritaGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx42[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_42.4bpp");
+static const u8 sChikoritaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_42.4bpp.lz");
 static const ax_sprite sChikoritaSprites42[] = {
 	{sChikoritaGfx42, ARRAY_COUNT(sChikoritaGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx43[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_43.4bpp");
+static const u8 sChikoritaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_43.4bpp.lz");
 static const ax_sprite sChikoritaSprites43[] = {
 	{sChikoritaGfx43, ARRAY_COUNT(sChikoritaGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx44[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_44.4bpp");
+static const u8 sChikoritaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_44.4bpp.lz");
 static const ax_sprite sChikoritaSprites44[] = {
 	{sChikoritaGfx44, ARRAY_COUNT(sChikoritaGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx45[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_45.4bpp");
+static const u8 sChikoritaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_45.4bpp.lz");
 static const ax_sprite sChikoritaSprites45[] = {
 	{sChikoritaGfx45, ARRAY_COUNT(sChikoritaGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx46[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_46.4bpp");
+static const u8 sChikoritaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_46.4bpp.lz");
 static const ax_sprite sChikoritaSprites46[] = {
 	{sChikoritaGfx46, ARRAY_COUNT(sChikoritaGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx47[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_47.4bpp");
+static const u8 sChikoritaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_47.4bpp.lz");
 static const ax_sprite sChikoritaSprites47[] = {
 	{sChikoritaGfx47, ARRAY_COUNT(sChikoritaGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx48[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_48.4bpp");
+static const u8 sChikoritaGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_48.4bpp.lz");
 static const ax_sprite sChikoritaSprites48[] = {
 	{sChikoritaGfx48, ARRAY_COUNT(sChikoritaGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx49[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_49.4bpp");
+static const u8 sChikoritaGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_49.4bpp.lz");
 static const ax_sprite sChikoritaSprites49[] = {
 	{sChikoritaGfx49, ARRAY_COUNT(sChikoritaGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx50[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_50.4bpp");
+static const u8 sChikoritaGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_50.4bpp.lz");
 static const ax_sprite sChikoritaSprites50[] = {
 	{sChikoritaGfx50, ARRAY_COUNT(sChikoritaGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx51[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_51.4bpp");
+static const u8 sChikoritaGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_51.4bpp.lz");
 static const ax_sprite sChikoritaSprites51[] = {
 	{sChikoritaGfx51, ARRAY_COUNT(sChikoritaGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx52[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_52.4bpp");
+static const u8 sChikoritaGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_52.4bpp.lz");
 static const ax_sprite sChikoritaSprites52[] = {
 	{sChikoritaGfx52, ARRAY_COUNT(sChikoritaGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx53[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_53.4bpp");
+static const u8 sChikoritaGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_53.4bpp.lz");
 static const ax_sprite sChikoritaSprites53[] = {
 	{sChikoritaGfx53, ARRAY_COUNT(sChikoritaGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx54[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_54.4bpp");
+static const u8 sChikoritaGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_54.4bpp.lz");
 static const ax_sprite sChikoritaSprites54[] = {
 	{sChikoritaGfx54, ARRAY_COUNT(sChikoritaGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx55[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_55.4bpp");
+static const u8 sChikoritaGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_55.4bpp.lz");
 static const ax_sprite sChikoritaSprites55[] = {
 	{sChikoritaGfx55, ARRAY_COUNT(sChikoritaGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx56[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_56.4bpp");
+static const u8 sChikoritaGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_56.4bpp.lz");
 static const ax_sprite sChikoritaSprites56[] = {
 	{sChikoritaGfx56, ARRAY_COUNT(sChikoritaGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx57[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_57.4bpp");
+static const u8 sChikoritaGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_57.4bpp.lz");
 static const ax_sprite sChikoritaSprites57[] = {
 	{sChikoritaGfx57, ARRAY_COUNT(sChikoritaGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx58[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_58.4bpp");
+static const u8 sChikoritaGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_58.4bpp.lz");
 static const ax_sprite sChikoritaSprites58[] = {
 	{sChikoritaGfx58, ARRAY_COUNT(sChikoritaGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx59[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_59.4bpp");
+static const u8 sChikoritaGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_59.4bpp.lz");
 static const ax_sprite sChikoritaSprites59[] = {
 	{sChikoritaGfx59, ARRAY_COUNT(sChikoritaGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx60[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_60.4bpp");
+static const u8 sChikoritaGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_60.4bpp.lz");
 static const ax_sprite sChikoritaSprites60[] = {
 	{sChikoritaGfx60, ARRAY_COUNT(sChikoritaGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx61[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_61.4bpp");
+static const u8 sChikoritaGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_61.4bpp.lz");
 static const ax_sprite sChikoritaSprites61[] = {
 	{sChikoritaGfx61, ARRAY_COUNT(sChikoritaGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx62[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_62.4bpp");
+static const u8 sChikoritaGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_62.4bpp.lz");
 static const ax_sprite sChikoritaSprites62[] = {
 	{sChikoritaGfx62, ARRAY_COUNT(sChikoritaGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx63[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_63.4bpp");
+static const u8 sChikoritaGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_63.4bpp.lz");
 static const ax_sprite sChikoritaSprites63[] = {
 	{sChikoritaGfx63, ARRAY_COUNT(sChikoritaGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx64[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_64.4bpp");
+static const u8 sChikoritaGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_64.4bpp.lz");
 static const ax_sprite sChikoritaSprites64[] = {
 	{sChikoritaGfx64, ARRAY_COUNT(sChikoritaGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx65[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_65.4bpp");
+static const u8 sChikoritaGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_65.4bpp.lz");
 static const ax_sprite sChikoritaSprites65[] = {
 	{sChikoritaGfx65, ARRAY_COUNT(sChikoritaGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx66[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_66.4bpp");
+static const u8 sChikoritaGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_66.4bpp.lz");
 static const ax_sprite sChikoritaSprites66[] = {
 	{sChikoritaGfx66, ARRAY_COUNT(sChikoritaGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx67[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_67.4bpp");
+static const u8 sChikoritaGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_67.4bpp.lz");
 static const ax_sprite sChikoritaSprites67[] = {
 	{sChikoritaGfx67, ARRAY_COUNT(sChikoritaGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx68[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_68.4bpp");
+static const u8 sChikoritaGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_68.4bpp.lz");
 static const ax_sprite sChikoritaSprites68[] = {
 	{sChikoritaGfx68, ARRAY_COUNT(sChikoritaGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx69[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_69.4bpp");
+static const u8 sChikoritaGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_69.4bpp.lz");
 static const ax_sprite sChikoritaSprites69[] = {
 	{sChikoritaGfx69, ARRAY_COUNT(sChikoritaGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx70[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_70.4bpp");
+static const u8 sChikoritaGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_70.4bpp.lz");
 static const ax_sprite sChikoritaSprites70[] = {
 	{sChikoritaGfx70, ARRAY_COUNT(sChikoritaGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx71[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_71.4bpp");
+static const u8 sChikoritaGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_71.4bpp.lz");
 static const ax_sprite sChikoritaSprites71[] = {
 	{sChikoritaGfx71, ARRAY_COUNT(sChikoritaGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx72[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_72.4bpp");
+static const u8 sChikoritaGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_72.4bpp.lz");
 static const ax_sprite sChikoritaSprites72[] = {
 	{sChikoritaGfx72, ARRAY_COUNT(sChikoritaGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx73[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_73.4bpp");
+static const u8 sChikoritaGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_73.4bpp.lz");
 static const ax_sprite sChikoritaSprites73[] = {
 	{sChikoritaGfx73, ARRAY_COUNT(sChikoritaGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx74[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_74.4bpp");
+static const u8 sChikoritaGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_74.4bpp.lz");
 static const ax_sprite sChikoritaSprites74[] = {
 	{sChikoritaGfx74, ARRAY_COUNT(sChikoritaGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sChikoritaGfx75[] = INCBIN_U8("graphics/ax/mon/chikorita/sprite_75.4bpp");
+static const u8 sChikoritaGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chikorita/sprite_75.4bpp.lz");
 static const ax_sprite sChikoritaSprites75[] = {
 	{sChikoritaGfx75, ARRAY_COUNT(sChikoritaGfx75)}, 
 	{NULL, 0}

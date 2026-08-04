@@ -2677,342 +2677,342 @@ static const ax_anim sMantineAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMantineGfx1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_1.4bpp");
+static const u8 sMantineGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_1.4bpp.lz");
 static const ax_sprite sMantineSprites1[] = {
 	{sMantineGfx1, ARRAY_COUNT(sMantineGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx2[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_2.4bpp");
+static const u8 sMantineGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_2.4bpp.lz");
 static const ax_sprite sMantineSprites2[] = {
 	{sMantineGfx2, ARRAY_COUNT(sMantineGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx3[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_3.4bpp");
+static const u8 sMantineGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_3.4bpp.lz");
 static const ax_sprite sMantineSprites3[] = {
 	{sMantineGfx3, ARRAY_COUNT(sMantineGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx4[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_4.4bpp");
+static const u8 sMantineGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_4.4bpp.lz");
 static const ax_sprite sMantineSprites4[] = {
 	{sMantineGfx4, ARRAY_COUNT(sMantineGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx5[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_5.4bpp");
+static const u8 sMantineGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_5.4bpp.lz");
 static const ax_sprite sMantineSprites5[] = {
 	{sMantineGfx5, ARRAY_COUNT(sMantineGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx6[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_6.4bpp");
+static const u8 sMantineGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_6.4bpp.lz");
 static const ax_sprite sMantineSprites6[] = {
 	{sMantineGfx6, ARRAY_COUNT(sMantineGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx7[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_7.4bpp");
+static const u8 sMantineGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_7.4bpp.lz");
 static const ax_sprite sMantineSprites7[] = {
 	{sMantineGfx7, ARRAY_COUNT(sMantineGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx8[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_8.4bpp");
+static const u8 sMantineGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_8.4bpp.lz");
 static const ax_sprite sMantineSprites8[] = {
 	{sMantineGfx8, ARRAY_COUNT(sMantineGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx9[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_9.4bpp");
+static const u8 sMantineGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_9.4bpp.lz");
 static const ax_sprite sMantineSprites9[] = {
 	{sMantineGfx9, ARRAY_COUNT(sMantineGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx10[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_10.4bpp");
+static const u8 sMantineGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_10.4bpp.lz");
 static const ax_sprite sMantineSprites10[] = {
 	{sMantineGfx10, ARRAY_COUNT(sMantineGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx11[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_11.4bpp");
+static const u8 sMantineGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_11.4bpp.lz");
 static const ax_sprite sMantineSprites11[] = {
 	{sMantineGfx11, ARRAY_COUNT(sMantineGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx12[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_12.4bpp");
+static const u8 sMantineGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_12.4bpp.lz");
 static const ax_sprite sMantineSprites12[] = {
 	{sMantineGfx12, ARRAY_COUNT(sMantineGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx13[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_13.4bpp");
+static const u8 sMantineGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_13.4bpp.lz");
 static const ax_sprite sMantineSprites13[] = {
 	{sMantineGfx13, ARRAY_COUNT(sMantineGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx14[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_14.4bpp");
+static const u8 sMantineGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_14.4bpp.lz");
 static const ax_sprite sMantineSprites14[] = {
 	{sMantineGfx14, ARRAY_COUNT(sMantineGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx15[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_15.4bpp");
+static const u8 sMantineGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_15.4bpp.lz");
 static const ax_sprite sMantineSprites15[] = {
 	{sMantineGfx15, ARRAY_COUNT(sMantineGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx16[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_16.4bpp");
+static const u8 sMantineGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_16.4bpp.lz");
 static const ax_sprite sMantineSprites16[] = {
 	{sMantineGfx16, ARRAY_COUNT(sMantineGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx17[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_17.4bpp");
+static const u8 sMantineGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_17.4bpp.lz");
 static const ax_sprite sMantineSprites17[] = {
 	{sMantineGfx17, ARRAY_COUNT(sMantineGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx18[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_18.4bpp");
+static const u8 sMantineGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_18.4bpp.lz");
 static const ax_sprite sMantineSprites18[] = {
 	{sMantineGfx18, ARRAY_COUNT(sMantineGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx19[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_19.4bpp");
+static const u8 sMantineGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_19.4bpp.lz");
 static const ax_sprite sMantineSprites19[] = {
 	{sMantineGfx19, ARRAY_COUNT(sMantineGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx20[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_20.4bpp");
+static const u8 sMantineGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_20.4bpp.lz");
 static const ax_sprite sMantineSprites20[] = {
 	{sMantineGfx20, ARRAY_COUNT(sMantineGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx21[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_21.4bpp");
+static const u8 sMantineGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_21.4bpp.lz");
 static const ax_sprite sMantineSprites21[] = {
 	{sMantineGfx21, ARRAY_COUNT(sMantineGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx22[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_22.4bpp");
+static const u8 sMantineGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_22.4bpp.lz");
 static const ax_sprite sMantineSprites22[] = {
 	{sMantineGfx22, ARRAY_COUNT(sMantineGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx23[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_23.4bpp");
+static const u8 sMantineGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_23.4bpp.lz");
 static const ax_sprite sMantineSprites23[] = {
 	{sMantineGfx23, ARRAY_COUNT(sMantineGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx24[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_24.4bpp");
+static const u8 sMantineGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_24.4bpp.lz");
 static const ax_sprite sMantineSprites24[] = {
 	{sMantineGfx24, ARRAY_COUNT(sMantineGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx25[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_25.4bpp");
+static const u8 sMantineGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_25.4bpp.lz");
 static const ax_sprite sMantineSprites25[] = {
 	{sMantineGfx25, ARRAY_COUNT(sMantineGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx26[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_26.4bpp");
+static const u8 sMantineGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_26.4bpp.lz");
 static const ax_sprite sMantineSprites26[] = {
 	{sMantineGfx26, ARRAY_COUNT(sMantineGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx27[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_27.4bpp");
+static const u8 sMantineGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_27.4bpp.lz");
 static const ax_sprite sMantineSprites27[] = {
 	{sMantineGfx27, ARRAY_COUNT(sMantineGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx28[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_28.4bpp");
+static const u8 sMantineGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_28.4bpp.lz");
 static const ax_sprite sMantineSprites28[] = {
 	{sMantineGfx28, ARRAY_COUNT(sMantineGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx29[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_29.4bpp");
+static const u8 sMantineGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_29.4bpp.lz");
 static const ax_sprite sMantineSprites29[] = {
 	{sMantineGfx29, ARRAY_COUNT(sMantineGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx30[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_30.4bpp");
+static const u8 sMantineGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_30.4bpp.lz");
 static const ax_sprite sMantineSprites30[] = {
 	{sMantineGfx30, ARRAY_COUNT(sMantineGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx31[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_31.4bpp");
+static const u8 sMantineGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_31.4bpp.lz");
 static const ax_sprite sMantineSprites31[] = {
 	{sMantineGfx31, ARRAY_COUNT(sMantineGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx32[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_32.4bpp");
+static const u8 sMantineGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_32.4bpp.lz");
 static const ax_sprite sMantineSprites32[] = {
 	{sMantineGfx32, ARRAY_COUNT(sMantineGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx33[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_33.4bpp");
+static const u8 sMantineGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_33.4bpp.lz");
 static const ax_sprite sMantineSprites33[] = {
 	{sMantineGfx33, ARRAY_COUNT(sMantineGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx34[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_34.4bpp");
+static const u8 sMantineGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_34.4bpp.lz");
 static const ax_sprite sMantineSprites34[] = {
 	{sMantineGfx34, ARRAY_COUNT(sMantineGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx35[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_35.4bpp");
+static const u8 sMantineGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_35.4bpp.lz");
 static const ax_sprite sMantineSprites35[] = {
 	{sMantineGfx35, ARRAY_COUNT(sMantineGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx36[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_36.4bpp");
+static const u8 sMantineGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_36.4bpp.lz");
 static const ax_sprite sMantineSprites36[] = {
 	{sMantineGfx36, ARRAY_COUNT(sMantineGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx37[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_37.4bpp");
+static const u8 sMantineGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_37.4bpp.lz");
 static const ax_sprite sMantineSprites37[] = {
 	{sMantineGfx37, ARRAY_COUNT(sMantineGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx38[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_38.4bpp");
+static const u8 sMantineGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_38.4bpp.lz");
 static const ax_sprite sMantineSprites38[] = {
 	{sMantineGfx38, ARRAY_COUNT(sMantineGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx39[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_39.4bpp");
+static const u8 sMantineGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_39.4bpp.lz");
 static const ax_sprite sMantineSprites39[] = {
 	{sMantineGfx39, ARRAY_COUNT(sMantineGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx40[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_40.4bpp");
+static const u8 sMantineGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_40.4bpp.lz");
 static const ax_sprite sMantineSprites40[] = {
 	{sMantineGfx40, ARRAY_COUNT(sMantineGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx41[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_41.4bpp");
+static const u8 sMantineGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_41.4bpp.lz");
 static const ax_sprite sMantineSprites41[] = {
 	{sMantineGfx41, ARRAY_COUNT(sMantineGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx42[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_42.4bpp");
+static const u8 sMantineGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_42.4bpp.lz");
 static const ax_sprite sMantineSprites42[] = {
 	{sMantineGfx42, ARRAY_COUNT(sMantineGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx43[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_43.4bpp");
+static const u8 sMantineGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_43.4bpp.lz");
 static const ax_sprite sMantineSprites43[] = {
 	{sMantineGfx43, ARRAY_COUNT(sMantineGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx44[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_44.4bpp");
+static const u8 sMantineGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_44.4bpp.lz");
 static const ax_sprite sMantineSprites44[] = {
 	{sMantineGfx44, ARRAY_COUNT(sMantineGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx45[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_45.4bpp");
+static const u8 sMantineGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_45.4bpp.lz");
 static const ax_sprite sMantineSprites45[] = {
 	{sMantineGfx45, ARRAY_COUNT(sMantineGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx46[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_46.4bpp");
+static const u8 sMantineGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_46.4bpp.lz");
 static const ax_sprite sMantineSprites46[] = {
 	{sMantineGfx46, ARRAY_COUNT(sMantineGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx47[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_47.4bpp");
+static const u8 sMantineGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_47.4bpp.lz");
 static const ax_sprite sMantineSprites47[] = {
 	{sMantineGfx47, ARRAY_COUNT(sMantineGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx48[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_48.4bpp");
+static const u8 sMantineGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_48.4bpp.lz");
 static const ax_sprite sMantineSprites48[] = {
 	{sMantineGfx48, ARRAY_COUNT(sMantineGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx49[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_49.4bpp");
+static const u8 sMantineGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_49.4bpp.lz");
 static const ax_sprite sMantineSprites49[] = {
 	{sMantineGfx49, ARRAY_COUNT(sMantineGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx50[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_50.4bpp");
+static const u8 sMantineGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_50.4bpp.lz");
 static const ax_sprite sMantineSprites50[] = {
 	{sMantineGfx50, ARRAY_COUNT(sMantineGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx51[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_51.4bpp");
+static const u8 sMantineGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_51.4bpp.lz");
 static const ax_sprite sMantineSprites51[] = {
 	{sMantineGfx51, ARRAY_COUNT(sMantineGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx52[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_52.4bpp");
+static const u8 sMantineGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_52.4bpp.lz");
 static const ax_sprite sMantineSprites52[] = {
 	{sMantineGfx52, ARRAY_COUNT(sMantineGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx53[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_53.4bpp");
+static const u8 sMantineGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_53.4bpp.lz");
 static const ax_sprite sMantineSprites53[] = {
 	{sMantineGfx53, ARRAY_COUNT(sMantineGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx54[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_54.4bpp");
+static const u8 sMantineGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_54.4bpp.lz");
 static const ax_sprite sMantineSprites54[] = {
 	{sMantineGfx54, ARRAY_COUNT(sMantineGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx55[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_55.4bpp");
+static const u8 sMantineGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_55.4bpp.lz");
 static const ax_sprite sMantineSprites55[] = {
 	{sMantineGfx55, ARRAY_COUNT(sMantineGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx56[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_56.4bpp");
+static const u8 sMantineGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_56.4bpp.lz");
 static const ax_sprite sMantineSprites56[] = {
 	{sMantineGfx56, ARRAY_COUNT(sMantineGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx57[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_57.4bpp");
+static const u8 sMantineGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_57.4bpp.lz");
 static const ax_sprite sMantineSprites57[] = {
 	{sMantineGfx57, ARRAY_COUNT(sMantineGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx58[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_58.4bpp");
+static const u8 sMantineGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_58.4bpp.lz");
 static const ax_sprite sMantineSprites58[] = {
 	{sMantineGfx58, ARRAY_COUNT(sMantineGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx59[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_59.4bpp");
+static const u8 sMantineGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_59.4bpp.lz");
 static const ax_sprite sMantineSprites59[] = {
 	{sMantineGfx59, ARRAY_COUNT(sMantineGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx60[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_60.4bpp");
+static const u8 sMantineGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_60.4bpp.lz");
 static const ax_sprite sMantineSprites60[] = {
 	{sMantineGfx60, ARRAY_COUNT(sMantineGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx61[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_61.4bpp");
+static const u8 sMantineGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_61.4bpp.lz");
 static const ax_sprite sMantineSprites61[] = {
 	{sMantineGfx61, ARRAY_COUNT(sMantineGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx62[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_62.4bpp");
+static const u8 sMantineGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_62.4bpp.lz");
 static const ax_sprite sMantineSprites62[] = {
 	{sMantineGfx62, ARRAY_COUNT(sMantineGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx63[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_63.4bpp");
+static const u8 sMantineGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_63.4bpp.lz");
 static const ax_sprite sMantineSprites63[] = {
 	{NULL, 96}, 
 	{sMantineGfx63, ARRAY_COUNT(sMantineGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx64[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_64.4bpp");
+static const u8 sMantineGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_64.4bpp.lz");
 static const ax_sprite sMantineSprites64[] = {
 	{NULL, 64}, 
 	{sMantineGfx64, ARRAY_COUNT(sMantineGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx65[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_65.4bpp");
+static const u8 sMantineGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_65.4bpp.lz");
 static const ax_sprite sMantineSprites65[] = {
 	{sMantineGfx65, ARRAY_COUNT(sMantineGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx66[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_66.4bpp");
+static const u8 sMantineGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_66.4bpp.lz");
 static const ax_sprite sMantineSprites66[] = {
 	{sMantineGfx66, ARRAY_COUNT(sMantineGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx67[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_67.4bpp");
-static const u8 sMantineGfx67_1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_67_1.4bpp");
-static const u8 sMantineGfx67_2[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_67_2.4bpp");
-static const u8 sMantineGfx67_3[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_67_3.4bpp");
+static const u8 sMantineGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_67.4bpp.lz");
+static const u8 sMantineGfx67_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_67_1.4bpp.lz");
+static const u8 sMantineGfx67_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_67_2.4bpp.lz");
+static const u8 sMantineGfx67_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_67_3.4bpp.lz");
 static const ax_sprite sMantineSprites67[] = {
 	{sMantineGfx67, ARRAY_COUNT(sMantineGfx67)}, 
 	{NULL, 64}, 
@@ -3024,8 +3024,8 @@ static const ax_sprite sMantineSprites67[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx68[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_68.4bpp");
-static const u8 sMantineGfx68_1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_68_1.4bpp");
+static const u8 sMantineGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_68.4bpp.lz");
+static const u8 sMantineGfx68_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_68_1.4bpp.lz");
 static const ax_sprite sMantineSprites68[] = {
 	{NULL, 64}, 
 	{sMantineGfx68, ARRAY_COUNT(sMantineGfx68)}, 
@@ -3033,30 +3033,30 @@ static const ax_sprite sMantineSprites68[] = {
 	{sMantineGfx68_1, ARRAY_COUNT(sMantineGfx68_1)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx69[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_69.4bpp");
+static const u8 sMantineGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_69.4bpp.lz");
 static const ax_sprite sMantineSprites69[] = {
 	{sMantineGfx69, ARRAY_COUNT(sMantineGfx69)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx70[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_70.4bpp");
+static const u8 sMantineGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_70.4bpp.lz");
 static const ax_sprite sMantineSprites70[] = {
 	{sMantineGfx70, ARRAY_COUNT(sMantineGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx71[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_71.4bpp");
+static const u8 sMantineGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_71.4bpp.lz");
 static const ax_sprite sMantineSprites71[] = {
 	{sMantineGfx71, ARRAY_COUNT(sMantineGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx72[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_72.4bpp");
+static const u8 sMantineGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_72.4bpp.lz");
 static const ax_sprite sMantineSprites72[] = {
 	{sMantineGfx72, ARRAY_COUNT(sMantineGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx73[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_73.4bpp");
-static const u8 sMantineGfx73_1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_73_1.4bpp");
-static const u8 sMantineGfx73_2[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_73_2.4bpp");
+static const u8 sMantineGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_73.4bpp.lz");
+static const u8 sMantineGfx73_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_73_1.4bpp.lz");
+static const u8 sMantineGfx73_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_73_2.4bpp.lz");
 static const ax_sprite sMantineSprites73[] = {
 	{sMantineGfx73, ARRAY_COUNT(sMantineGfx73)}, 
 	{NULL, 32}, 
@@ -3065,18 +3065,18 @@ static const ax_sprite sMantineSprites73[] = {
 	{sMantineGfx73_2, ARRAY_COUNT(sMantineGfx73_2)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx74[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_74.4bpp");
+static const u8 sMantineGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_74.4bpp.lz");
 static const ax_sprite sMantineSprites74[] = {
 	{sMantineGfx74, ARRAY_COUNT(sMantineGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx75[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_75.4bpp");
+static const u8 sMantineGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_75.4bpp.lz");
 static const ax_sprite sMantineSprites75[] = {
 	{sMantineGfx75, ARRAY_COUNT(sMantineGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx76[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_76.4bpp");
-static const u8 sMantineGfx76_1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_76_1.4bpp");
+static const u8 sMantineGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_76.4bpp.lz");
+static const u8 sMantineGfx76_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_76_1.4bpp.lz");
 static const ax_sprite sMantineSprites76[] = {
 	{NULL, 64}, 
 	{sMantineGfx76, ARRAY_COUNT(sMantineGfx76)}, 
@@ -3084,8 +3084,8 @@ static const ax_sprite sMantineSprites76[] = {
 	{sMantineGfx76_1, ARRAY_COUNT(sMantineGfx76_1)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx77[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_77.4bpp");
-static const u8 sMantineGfx77_1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_77_1.4bpp");
+static const u8 sMantineGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_77.4bpp.lz");
+static const u8 sMantineGfx77_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_77_1.4bpp.lz");
 static const ax_sprite sMantineSprites77[] = {
 	{sMantineGfx77, ARRAY_COUNT(sMantineGfx77)}, 
 	{NULL, 32}, 
@@ -3093,23 +3093,23 @@ static const ax_sprite sMantineSprites77[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx78[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_78.4bpp");
+static const u8 sMantineGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_78.4bpp.lz");
 static const ax_sprite sMantineSprites78[] = {
 	{sMantineGfx78, ARRAY_COUNT(sMantineGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx79[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_79.4bpp");
+static const u8 sMantineGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_79.4bpp.lz");
 static const ax_sprite sMantineSprites79[] = {
 	{sMantineGfx79, ARRAY_COUNT(sMantineGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx80[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_80.4bpp");
+static const u8 sMantineGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_80.4bpp.lz");
 static const ax_sprite sMantineSprites80[] = {
 	{sMantineGfx80, ARRAY_COUNT(sMantineGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx81[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_81.4bpp");
-static const u8 sMantineGfx81_1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_81_1.4bpp");
+static const u8 sMantineGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_81.4bpp.lz");
+static const u8 sMantineGfx81_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_81_1.4bpp.lz");
 static const ax_sprite sMantineSprites81[] = {
 	{NULL, 32}, 
 	{sMantineGfx81, ARRAY_COUNT(sMantineGfx81)}, 
@@ -3117,8 +3117,8 @@ static const ax_sprite sMantineSprites81[] = {
 	{sMantineGfx81_1, ARRAY_COUNT(sMantineGfx81_1)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx82[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_82.4bpp");
-static const u8 sMantineGfx82_1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_82_1.4bpp");
+static const u8 sMantineGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_82.4bpp.lz");
+static const u8 sMantineGfx82_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_82_1.4bpp.lz");
 static const ax_sprite sMantineSprites82[] = {
 	{sMantineGfx82, ARRAY_COUNT(sMantineGfx82)}, 
 	{NULL, 32}, 
@@ -3126,196 +3126,196 @@ static const ax_sprite sMantineSprites82[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx83[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_83.4bpp");
+static const u8 sMantineGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_83.4bpp.lz");
 static const ax_sprite sMantineSprites83[] = {
 	{sMantineGfx83, ARRAY_COUNT(sMantineGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx84[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_84.4bpp");
+static const u8 sMantineGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_84.4bpp.lz");
 static const ax_sprite sMantineSprites84[] = {
 	{sMantineGfx84, ARRAY_COUNT(sMantineGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx85[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_85.4bpp");
+static const u8 sMantineGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_85.4bpp.lz");
 static const ax_sprite sMantineSprites85[] = {
 	{sMantineGfx85, ARRAY_COUNT(sMantineGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx86[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_86.4bpp");
+static const u8 sMantineGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_86.4bpp.lz");
 static const ax_sprite sMantineSprites86[] = {
 	{sMantineGfx86, ARRAY_COUNT(sMantineGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx87[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_87.4bpp");
-static const u8 sMantineGfx87_1[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_87_1.4bpp");
+static const u8 sMantineGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_87.4bpp.lz");
+static const u8 sMantineGfx87_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_87_1.4bpp.lz");
 static const ax_sprite sMantineSprites87[] = {
 	{sMantineGfx87, ARRAY_COUNT(sMantineGfx87)}, 
 	{NULL, 32}, 
 	{sMantineGfx87_1, ARRAY_COUNT(sMantineGfx87_1)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx88[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_88.4bpp");
+static const u8 sMantineGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_88.4bpp.lz");
 static const ax_sprite sMantineSprites88[] = {
 	{sMantineGfx88, ARRAY_COUNT(sMantineGfx88)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx89[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_89.4bpp");
+static const u8 sMantineGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_89.4bpp.lz");
 static const ax_sprite sMantineSprites89[] = {
 	{sMantineGfx89, ARRAY_COUNT(sMantineGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx90[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_90.4bpp");
+static const u8 sMantineGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_90.4bpp.lz");
 static const ax_sprite sMantineSprites90[] = {
 	{sMantineGfx90, ARRAY_COUNT(sMantineGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx91[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_91.4bpp");
+static const u8 sMantineGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_91.4bpp.lz");
 static const ax_sprite sMantineSprites91[] = {
 	{sMantineGfx91, ARRAY_COUNT(sMantineGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx92[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_92.4bpp");
+static const u8 sMantineGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_92.4bpp.lz");
 static const ax_sprite sMantineSprites92[] = {
 	{sMantineGfx92, ARRAY_COUNT(sMantineGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx93[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_93.4bpp");
+static const u8 sMantineGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_93.4bpp.lz");
 static const ax_sprite sMantineSprites93[] = {
 	{sMantineGfx93, ARRAY_COUNT(sMantineGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx94[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_94.4bpp");
+static const u8 sMantineGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_94.4bpp.lz");
 static const ax_sprite sMantineSprites94[] = {
 	{sMantineGfx94, ARRAY_COUNT(sMantineGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx95[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_95.4bpp");
+static const u8 sMantineGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_95.4bpp.lz");
 static const ax_sprite sMantineSprites95[] = {
 	{sMantineGfx95, ARRAY_COUNT(sMantineGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx96[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_96.4bpp");
+static const u8 sMantineGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_96.4bpp.lz");
 static const ax_sprite sMantineSprites96[] = {
 	{sMantineGfx96, ARRAY_COUNT(sMantineGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx97[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_97.4bpp");
+static const u8 sMantineGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_97.4bpp.lz");
 static const ax_sprite sMantineSprites97[] = {
 	{sMantineGfx97, ARRAY_COUNT(sMantineGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx98[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_98.4bpp");
+static const u8 sMantineGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_98.4bpp.lz");
 static const ax_sprite sMantineSprites98[] = {
 	{sMantineGfx98, ARRAY_COUNT(sMantineGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx99[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_99.4bpp");
+static const u8 sMantineGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_99.4bpp.lz");
 static const ax_sprite sMantineSprites99[] = {
 	{sMantineGfx99, ARRAY_COUNT(sMantineGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx100[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_100.4bpp");
+static const u8 sMantineGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_100.4bpp.lz");
 static const ax_sprite sMantineSprites100[] = {
 	{sMantineGfx100, ARRAY_COUNT(sMantineGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx101[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_101.4bpp");
+static const u8 sMantineGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_101.4bpp.lz");
 static const ax_sprite sMantineSprites101[] = {
 	{sMantineGfx101, ARRAY_COUNT(sMantineGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx102[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_102.4bpp");
+static const u8 sMantineGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_102.4bpp.lz");
 static const ax_sprite sMantineSprites102[] = {
 	{sMantineGfx102, ARRAY_COUNT(sMantineGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx103[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_103.4bpp");
+static const u8 sMantineGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_103.4bpp.lz");
 static const ax_sprite sMantineSprites103[] = {
 	{sMantineGfx103, ARRAY_COUNT(sMantineGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx104[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_104.4bpp");
+static const u8 sMantineGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_104.4bpp.lz");
 static const ax_sprite sMantineSprites104[] = {
 	{sMantineGfx104, ARRAY_COUNT(sMantineGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx105[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_105.4bpp");
+static const u8 sMantineGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_105.4bpp.lz");
 static const ax_sprite sMantineSprites105[] = {
 	{sMantineGfx105, ARRAY_COUNT(sMantineGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx106[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_106.4bpp");
+static const u8 sMantineGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_106.4bpp.lz");
 static const ax_sprite sMantineSprites106[] = {
 	{sMantineGfx106, ARRAY_COUNT(sMantineGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx107[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_107.4bpp");
+static const u8 sMantineGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_107.4bpp.lz");
 static const ax_sprite sMantineSprites107[] = {
 	{sMantineGfx107, ARRAY_COUNT(sMantineGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx108[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_108.4bpp");
+static const u8 sMantineGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_108.4bpp.lz");
 static const ax_sprite sMantineSprites108[] = {
 	{sMantineGfx108, ARRAY_COUNT(sMantineGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx109[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_109.4bpp");
+static const u8 sMantineGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_109.4bpp.lz");
 static const ax_sprite sMantineSprites109[] = {
 	{sMantineGfx109, ARRAY_COUNT(sMantineGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx110[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_110.4bpp");
+static const u8 sMantineGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_110.4bpp.lz");
 static const ax_sprite sMantineSprites110[] = {
 	{sMantineGfx110, ARRAY_COUNT(sMantineGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx111[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_111.4bpp");
+static const u8 sMantineGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_111.4bpp.lz");
 static const ax_sprite sMantineSprites111[] = {
 	{sMantineGfx111, ARRAY_COUNT(sMantineGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx112[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_112.4bpp");
+static const u8 sMantineGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_112.4bpp.lz");
 static const ax_sprite sMantineSprites112[] = {
 	{sMantineGfx112, ARRAY_COUNT(sMantineGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx113[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_113.4bpp");
+static const u8 sMantineGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_113.4bpp.lz");
 static const ax_sprite sMantineSprites113[] = {
 	{sMantineGfx113, ARRAY_COUNT(sMantineGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx114[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_114.4bpp");
+static const u8 sMantineGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_114.4bpp.lz");
 static const ax_sprite sMantineSprites114[] = {
 	{sMantineGfx114, ARRAY_COUNT(sMantineGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx115[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_115.4bpp");
+static const u8 sMantineGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_115.4bpp.lz");
 static const ax_sprite sMantineSprites115[] = {
 	{sMantineGfx115, ARRAY_COUNT(sMantineGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx116[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_116.4bpp");
+static const u8 sMantineGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_116.4bpp.lz");
 static const ax_sprite sMantineSprites116[] = {
 	{sMantineGfx116, ARRAY_COUNT(sMantineGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx117[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_117.4bpp");
+static const u8 sMantineGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_117.4bpp.lz");
 static const ax_sprite sMantineSprites117[] = {
 	{sMantineGfx117, ARRAY_COUNT(sMantineGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx118[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_118.4bpp");
+static const u8 sMantineGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_118.4bpp.lz");
 static const ax_sprite sMantineSprites118[] = {
 	{sMantineGfx118, ARRAY_COUNT(sMantineGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx119[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_119.4bpp");
+static const u8 sMantineGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_119.4bpp.lz");
 static const ax_sprite sMantineSprites119[] = {
 	{sMantineGfx119, ARRAY_COUNT(sMantineGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sMantineGfx120[] = INCBIN_U8("graphics/ax/mon/mantine/sprite_120.4bpp");
+static const u8 sMantineGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/mantine/sprite_120.4bpp.lz");
 static const ax_sprite sMantineSprites120[] = {
 	{sMantineGfx120, ARRAY_COUNT(sMantineGfx120)}, 
 	{NULL, 0}

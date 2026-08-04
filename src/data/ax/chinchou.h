@@ -2176,84 +2176,84 @@ static const ax_anim sChinchouAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sChinchouGfx1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_1.4bpp");
+static const u8 sChinchouGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_1.4bpp.lz");
 static const ax_sprite sChinchouSprites1[] = {
 	{sChinchouGfx1, ARRAY_COUNT(sChinchouGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_2.4bpp");
+static const u8 sChinchouGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_2.4bpp.lz");
 static const ax_sprite sChinchouSprites2[] = {
 	{sChinchouGfx2, ARRAY_COUNT(sChinchouGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_3.4bpp");
+static const u8 sChinchouGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_3.4bpp.lz");
 static const ax_sprite sChinchouSprites3[] = {
 	{sChinchouGfx3, ARRAY_COUNT(sChinchouGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx4[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_4.4bpp");
+static const u8 sChinchouGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_4.4bpp.lz");
 static const ax_sprite sChinchouSprites4[] = {
 	{sChinchouGfx4, ARRAY_COUNT(sChinchouGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx5[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_5.4bpp");
+static const u8 sChinchouGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_5.4bpp.lz");
 static const ax_sprite sChinchouSprites5[] = {
 	{sChinchouGfx5, ARRAY_COUNT(sChinchouGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx6[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_6.4bpp");
+static const u8 sChinchouGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_6.4bpp.lz");
 static const ax_sprite sChinchouSprites6[] = {
 	{sChinchouGfx6, ARRAY_COUNT(sChinchouGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx7[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_7.4bpp");
+static const u8 sChinchouGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_7.4bpp.lz");
 static const ax_sprite sChinchouSprites7[] = {
 	{sChinchouGfx7, ARRAY_COUNT(sChinchouGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx8[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_8.4bpp");
+static const u8 sChinchouGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_8.4bpp.lz");
 static const ax_sprite sChinchouSprites8[] = {
 	{sChinchouGfx8, ARRAY_COUNT(sChinchouGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx9[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_9.4bpp");
+static const u8 sChinchouGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_9.4bpp.lz");
 static const ax_sprite sChinchouSprites9[] = {
 	{sChinchouGfx9, ARRAY_COUNT(sChinchouGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx10[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_10.4bpp");
+static const u8 sChinchouGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_10.4bpp.lz");
 static const ax_sprite sChinchouSprites10[] = {
 	{sChinchouGfx10, ARRAY_COUNT(sChinchouGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx11[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_11.4bpp");
+static const u8 sChinchouGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_11.4bpp.lz");
 static const ax_sprite sChinchouSprites11[] = {
 	{sChinchouGfx11, ARRAY_COUNT(sChinchouGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx12[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_12.4bpp");
+static const u8 sChinchouGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_12.4bpp.lz");
 static const ax_sprite sChinchouSprites12[] = {
 	{sChinchouGfx12, ARRAY_COUNT(sChinchouGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx13[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_13.4bpp");
+static const u8 sChinchouGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_13.4bpp.lz");
 static const ax_sprite sChinchouSprites13[] = {
 	{sChinchouGfx13, ARRAY_COUNT(sChinchouGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx14[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_14.4bpp");
+static const u8 sChinchouGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_14.4bpp.lz");
 static const ax_sprite sChinchouSprites14[] = {
 	{sChinchouGfx14, ARRAY_COUNT(sChinchouGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx15[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_15.4bpp");
+static const u8 sChinchouGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_15.4bpp.lz");
 static const ax_sprite sChinchouSprites15[] = {
 	{sChinchouGfx15, ARRAY_COUNT(sChinchouGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx16[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_16.4bpp");
-static const u8 sChinchouGfx16_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_16_1.4bpp");
-static const u8 sChinchouGfx16_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_16_2.4bpp");
+static const u8 sChinchouGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_16.4bpp.lz");
+static const u8 sChinchouGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_16_1.4bpp.lz");
+static const u8 sChinchouGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_16_2.4bpp.lz");
 static const ax_sprite sChinchouSprites16[] = {
 	{sChinchouGfx16, ARRAY_COUNT(sChinchouGfx16)}, 
 	{NULL, 32}, 
@@ -2263,8 +2263,8 @@ static const ax_sprite sChinchouSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx17[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_17.4bpp");
-static const u8 sChinchouGfx17_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_17_1.4bpp");
+static const u8 sChinchouGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_17.4bpp.lz");
+static const u8 sChinchouGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_17_1.4bpp.lz");
 static const ax_sprite sChinchouSprites17[] = {
 	{sChinchouGfx17, ARRAY_COUNT(sChinchouGfx17)}, 
 	{NULL, 32}, 
@@ -2272,10 +2272,10 @@ static const ax_sprite sChinchouSprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx18[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_18.4bpp");
-static const u8 sChinchouGfx18_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_18_1.4bpp");
-static const u8 sChinchouGfx18_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_18_2.4bpp");
-static const u8 sChinchouGfx18_3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_18_3.4bpp");
+static const u8 sChinchouGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_18.4bpp.lz");
+static const u8 sChinchouGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_18_1.4bpp.lz");
+static const u8 sChinchouGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_18_2.4bpp.lz");
+static const u8 sChinchouGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_18_3.4bpp.lz");
 static const ax_sprite sChinchouSprites18[] = {
 	{sChinchouGfx18, ARRAY_COUNT(sChinchouGfx18)}, 
 	{NULL, 32}, 
@@ -2287,10 +2287,10 @@ static const ax_sprite sChinchouSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx19[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_19.4bpp");
-static const u8 sChinchouGfx19_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_19_1.4bpp");
-static const u8 sChinchouGfx19_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_19_2.4bpp");
-static const u8 sChinchouGfx19_3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_19_3.4bpp");
+static const u8 sChinchouGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_19.4bpp.lz");
+static const u8 sChinchouGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_19_1.4bpp.lz");
+static const u8 sChinchouGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_19_2.4bpp.lz");
+static const u8 sChinchouGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_19_3.4bpp.lz");
 static const ax_sprite sChinchouSprites19[] = {
 	{sChinchouGfx19, ARRAY_COUNT(sChinchouGfx19)}, 
 	{NULL, 64}, 
@@ -2302,8 +2302,8 @@ static const ax_sprite sChinchouSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx20[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_20.4bpp");
-static const u8 sChinchouGfx20_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_20_1.4bpp");
+static const u8 sChinchouGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_20.4bpp.lz");
+static const u8 sChinchouGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_20_1.4bpp.lz");
 static const ax_sprite sChinchouSprites20[] = {
 	{sChinchouGfx20, ARRAY_COUNT(sChinchouGfx20)}, 
 	{NULL, 32}, 
@@ -2311,10 +2311,10 @@ static const ax_sprite sChinchouSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx21[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_21.4bpp");
-static const u8 sChinchouGfx21_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_21_1.4bpp");
-static const u8 sChinchouGfx21_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_21_2.4bpp");
-static const u8 sChinchouGfx21_3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_21_3.4bpp");
+static const u8 sChinchouGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_21.4bpp.lz");
+static const u8 sChinchouGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_21_1.4bpp.lz");
+static const u8 sChinchouGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_21_2.4bpp.lz");
+static const u8 sChinchouGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_21_3.4bpp.lz");
 static const ax_sprite sChinchouSprites21[] = {
 	{sChinchouGfx21, ARRAY_COUNT(sChinchouGfx21)}, 
 	{NULL, 64}, 
@@ -2326,8 +2326,8 @@ static const ax_sprite sChinchouSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx22[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_22.4bpp");
-static const u8 sChinchouGfx22_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_22_1.4bpp");
+static const u8 sChinchouGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_22.4bpp.lz");
+static const u8 sChinchouGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_22_1.4bpp.lz");
 static const ax_sprite sChinchouSprites22[] = {
 	{sChinchouGfx22, ARRAY_COUNT(sChinchouGfx22)}, 
 	{NULL, 32}, 
@@ -2335,10 +2335,10 @@ static const ax_sprite sChinchouSprites22[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx23[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_23.4bpp");
-static const u8 sChinchouGfx23_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_23_1.4bpp");
-static const u8 sChinchouGfx23_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_23_2.4bpp");
-static const u8 sChinchouGfx23_3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_23_3.4bpp");
+static const u8 sChinchouGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_23.4bpp.lz");
+static const u8 sChinchouGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_23_1.4bpp.lz");
+static const u8 sChinchouGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_23_2.4bpp.lz");
+static const u8 sChinchouGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_23_3.4bpp.lz");
 static const ax_sprite sChinchouSprites23[] = {
 	{sChinchouGfx23, ARRAY_COUNT(sChinchouGfx23)}, 
 	{NULL, 32}, 
@@ -2350,9 +2350,9 @@ static const ax_sprite sChinchouSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx24[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_24.4bpp");
-static const u8 sChinchouGfx24_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_24_1.4bpp");
-static const u8 sChinchouGfx24_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_24_2.4bpp");
+static const u8 sChinchouGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_24.4bpp.lz");
+static const u8 sChinchouGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_24_1.4bpp.lz");
+static const u8 sChinchouGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_24_2.4bpp.lz");
 static const ax_sprite sChinchouSprites24[] = {
 	{sChinchouGfx24, ARRAY_COUNT(sChinchouGfx24)}, 
 	{NULL, 32}, 
@@ -2362,10 +2362,10 @@ static const ax_sprite sChinchouSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx25[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_25.4bpp");
-static const u8 sChinchouGfx25_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_25_1.4bpp");
-static const u8 sChinchouGfx25_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_25_2.4bpp");
-static const u8 sChinchouGfx25_3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_25_3.4bpp");
+static const u8 sChinchouGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_25.4bpp.lz");
+static const u8 sChinchouGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_25_1.4bpp.lz");
+static const u8 sChinchouGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_25_2.4bpp.lz");
+static const u8 sChinchouGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_25_3.4bpp.lz");
 static const ax_sprite sChinchouSprites25[] = {
 	{sChinchouGfx25, ARRAY_COUNT(sChinchouGfx25)}, 
 	{NULL, 32}, 
@@ -2377,8 +2377,8 @@ static const ax_sprite sChinchouSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx26[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_26.4bpp");
-static const u8 sChinchouGfx26_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_26_1.4bpp");
+static const u8 sChinchouGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_26.4bpp.lz");
+static const u8 sChinchouGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_26_1.4bpp.lz");
 static const ax_sprite sChinchouSprites26[] = {
 	{NULL, 32}, 
 	{sChinchouGfx26, ARRAY_COUNT(sChinchouGfx26)}, 
@@ -2387,9 +2387,9 @@ static const ax_sprite sChinchouSprites26[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx27[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_27.4bpp");
-static const u8 sChinchouGfx27_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_27_1.4bpp");
-static const u8 sChinchouGfx27_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_27_2.4bpp");
+static const u8 sChinchouGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_27.4bpp.lz");
+static const u8 sChinchouGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_27_1.4bpp.lz");
+static const u8 sChinchouGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_27_2.4bpp.lz");
 static const ax_sprite sChinchouSprites27[] = {
 	{NULL, 32}, 
 	{sChinchouGfx27, ARRAY_COUNT(sChinchouGfx27)}, 
@@ -2400,15 +2400,15 @@ static const ax_sprite sChinchouSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx28[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_28.4bpp");
+static const u8 sChinchouGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_28.4bpp.lz");
 static const ax_sprite sChinchouSprites28[] = {
 	{NULL, 32}, 
 	{sChinchouGfx28, ARRAY_COUNT(sChinchouGfx28)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx29[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_29.4bpp");
-static const u8 sChinchouGfx29_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_29_1.4bpp");
+static const u8 sChinchouGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_29.4bpp.lz");
+static const u8 sChinchouGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_29_1.4bpp.lz");
 static const ax_sprite sChinchouSprites29[] = {
 	{NULL, 32}, 
 	{sChinchouGfx29, ARRAY_COUNT(sChinchouGfx29)}, 
@@ -2417,8 +2417,8 @@ static const ax_sprite sChinchouSprites29[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx30[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_30.4bpp");
-static const u8 sChinchouGfx30_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_30_1.4bpp");
+static const u8 sChinchouGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_30.4bpp.lz");
+static const u8 sChinchouGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_30_1.4bpp.lz");
 static const ax_sprite sChinchouSprites30[] = {
 	{sChinchouGfx30, ARRAY_COUNT(sChinchouGfx30)}, 
 	{NULL, 32}, 
@@ -2426,8 +2426,8 @@ static const ax_sprite sChinchouSprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx31[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_31.4bpp");
-static const u8 sChinchouGfx31_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_31_1.4bpp");
+static const u8 sChinchouGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_31.4bpp.lz");
+static const u8 sChinchouGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_31_1.4bpp.lz");
 static const ax_sprite sChinchouSprites31[] = {
 	{sChinchouGfx31, ARRAY_COUNT(sChinchouGfx31)}, 
 	{NULL, 32}, 
@@ -2435,10 +2435,10 @@ static const ax_sprite sChinchouSprites31[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx32[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_32.4bpp");
-static const u8 sChinchouGfx32_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_32_1.4bpp");
-static const u8 sChinchouGfx32_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_32_2.4bpp");
-static const u8 sChinchouGfx32_3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_32_3.4bpp");
+static const u8 sChinchouGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_32.4bpp.lz");
+static const u8 sChinchouGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_32_1.4bpp.lz");
+static const u8 sChinchouGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_32_2.4bpp.lz");
+static const u8 sChinchouGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_32_3.4bpp.lz");
 static const ax_sprite sChinchouSprites32[] = {
 	{sChinchouGfx32, ARRAY_COUNT(sChinchouGfx32)}, 
 	{NULL, 64}, 
@@ -2449,10 +2449,10 @@ static const ax_sprite sChinchouSprites32[] = {
 	{sChinchouGfx32_3, ARRAY_COUNT(sChinchouGfx32_3)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx33[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_33.4bpp");
-static const u8 sChinchouGfx33_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_33_1.4bpp");
-static const u8 sChinchouGfx33_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_33_2.4bpp");
-static const u8 sChinchouGfx33_3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_33_3.4bpp");
+static const u8 sChinchouGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_33.4bpp.lz");
+static const u8 sChinchouGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_33_1.4bpp.lz");
+static const u8 sChinchouGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_33_2.4bpp.lz");
+static const u8 sChinchouGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_33_3.4bpp.lz");
 static const ax_sprite sChinchouSprites33[] = {
 	{sChinchouGfx33, ARRAY_COUNT(sChinchouGfx33)}, 
 	{NULL, 32}, 
@@ -2463,9 +2463,9 @@ static const ax_sprite sChinchouSprites33[] = {
 	{sChinchouGfx33_3, ARRAY_COUNT(sChinchouGfx33_3)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx34[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_34.4bpp");
-static const u8 sChinchouGfx34_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_34_1.4bpp");
-static const u8 sChinchouGfx34_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_34_2.4bpp");
+static const u8 sChinchouGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_34.4bpp.lz");
+static const u8 sChinchouGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_34_1.4bpp.lz");
+static const u8 sChinchouGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_34_2.4bpp.lz");
 static const ax_sprite sChinchouSprites34[] = {
 	{NULL, 32}, 
 	{sChinchouGfx34, ARRAY_COUNT(sChinchouGfx34)}, 
@@ -2476,10 +2476,10 @@ static const ax_sprite sChinchouSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx35[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_35.4bpp");
-static const u8 sChinchouGfx35_1[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_35_1.4bpp");
-static const u8 sChinchouGfx35_2[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_35_2.4bpp");
-static const u8 sChinchouGfx35_3[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_35_3.4bpp");
+static const u8 sChinchouGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_35.4bpp.lz");
+static const u8 sChinchouGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_35_1.4bpp.lz");
+static const u8 sChinchouGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_35_2.4bpp.lz");
+static const u8 sChinchouGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_35_3.4bpp.lz");
 static const ax_sprite sChinchouSprites35[] = {
 	{NULL, 32}, 
 	{sChinchouGfx35, ARRAY_COUNT(sChinchouGfx35)}, 
@@ -2492,37 +2492,37 @@ static const ax_sprite sChinchouSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx36[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_36.4bpp");
+static const u8 sChinchouGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_36.4bpp.lz");
 static const ax_sprite sChinchouSprites36[] = {
 	{sChinchouGfx36, ARRAY_COUNT(sChinchouGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx37[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_37.4bpp");
+static const u8 sChinchouGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_37.4bpp.lz");
 static const ax_sprite sChinchouSprites37[] = {
 	{sChinchouGfx37, ARRAY_COUNT(sChinchouGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx38[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_38.4bpp");
+static const u8 sChinchouGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_38.4bpp.lz");
 static const ax_sprite sChinchouSprites38[] = {
 	{sChinchouGfx38, ARRAY_COUNT(sChinchouGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx39[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_39.4bpp");
+static const u8 sChinchouGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_39.4bpp.lz");
 static const ax_sprite sChinchouSprites39[] = {
 	{sChinchouGfx39, ARRAY_COUNT(sChinchouGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx40[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_40.4bpp");
+static const u8 sChinchouGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_40.4bpp.lz");
 static const ax_sprite sChinchouSprites40[] = {
 	{sChinchouGfx40, ARRAY_COUNT(sChinchouGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx41[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_41.4bpp");
+static const u8 sChinchouGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_41.4bpp.lz");
 static const ax_sprite sChinchouSprites41[] = {
 	{sChinchouGfx41, ARRAY_COUNT(sChinchouGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sChinchouGfx42[] = INCBIN_U8("graphics/ax/mon/chinchou/sprite_42.4bpp");
+static const u8 sChinchouGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/chinchou/sprite_42.4bpp.lz");
 static const ax_sprite sChinchouSprites42[] = {
 	{sChinchouGfx42, ARRAY_COUNT(sChinchouGfx42)}, 
 	{NULL, 0}

@@ -106,7 +106,7 @@ static const ax_anim sStatueAnims_13_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sStatueGfx1[] = INCBIN_U8("graphics/ax/mon/statue/sprite_1.4bpp");
+static const u8 sStatueGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/statue/sprite_1.4bpp.lz");
 static const ax_sprite sStatueSprites1[] = {
 	{sStatueGfx1, ARRAY_COUNT(sStatueGfx1)}, 
 	{NULL, 0}

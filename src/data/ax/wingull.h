@@ -2263,83 +2263,83 @@ static const ax_anim sWingullAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sWingullGfx1[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_1.4bpp");
+static const u8 sWingullGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_1.4bpp.lz");
 static const ax_sprite sWingullSprites1[] = {
 	{sWingullGfx1, ARRAY_COUNT(sWingullGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx2[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_2.4bpp");
+static const u8 sWingullGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_2.4bpp.lz");
 static const ax_sprite sWingullSprites2[] = {
 	{sWingullGfx2, ARRAY_COUNT(sWingullGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx3[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_3.4bpp");
+static const u8 sWingullGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_3.4bpp.lz");
 static const ax_sprite sWingullSprites3[] = {
 	{sWingullGfx3, ARRAY_COUNT(sWingullGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx4[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_4.4bpp");
+static const u8 sWingullGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_4.4bpp.lz");
 static const ax_sprite sWingullSprites4[] = {
 	{sWingullGfx4, ARRAY_COUNT(sWingullGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx5[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_5.4bpp");
+static const u8 sWingullGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_5.4bpp.lz");
 static const ax_sprite sWingullSprites5[] = {
 	{sWingullGfx5, ARRAY_COUNT(sWingullGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx6[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_6.4bpp");
+static const u8 sWingullGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_6.4bpp.lz");
 static const ax_sprite sWingullSprites6[] = {
 	{sWingullGfx6, ARRAY_COUNT(sWingullGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx7[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_7.4bpp");
+static const u8 sWingullGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_7.4bpp.lz");
 static const ax_sprite sWingullSprites7[] = {
 	{sWingullGfx7, ARRAY_COUNT(sWingullGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx8[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_8.4bpp");
+static const u8 sWingullGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_8.4bpp.lz");
 static const ax_sprite sWingullSprites8[] = {
 	{sWingullGfx8, ARRAY_COUNT(sWingullGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx9[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_9.4bpp");
+static const u8 sWingullGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_9.4bpp.lz");
 static const ax_sprite sWingullSprites9[] = {
 	{sWingullGfx9, ARRAY_COUNT(sWingullGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx10[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_10.4bpp");
+static const u8 sWingullGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_10.4bpp.lz");
 static const ax_sprite sWingullSprites10[] = {
 	{sWingullGfx10, ARRAY_COUNT(sWingullGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx11[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_11.4bpp");
+static const u8 sWingullGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_11.4bpp.lz");
 static const ax_sprite sWingullSprites11[] = {
 	{sWingullGfx11, ARRAY_COUNT(sWingullGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx12[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_12.4bpp");
+static const u8 sWingullGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_12.4bpp.lz");
 static const ax_sprite sWingullSprites12[] = {
 	{sWingullGfx12, ARRAY_COUNT(sWingullGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx13[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_13.4bpp");
+static const u8 sWingullGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_13.4bpp.lz");
 static const ax_sprite sWingullSprites13[] = {
 	{sWingullGfx13, ARRAY_COUNT(sWingullGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx14[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_14.4bpp");
+static const u8 sWingullGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_14.4bpp.lz");
 static const ax_sprite sWingullSprites14[] = {
 	{sWingullGfx14, ARRAY_COUNT(sWingullGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx15[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_15.4bpp");
+static const u8 sWingullGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_15.4bpp.lz");
 static const ax_sprite sWingullSprites15[] = {
 	{sWingullGfx15, ARRAY_COUNT(sWingullGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx16[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_16.4bpp");
-static const u8 sWingullGfx16_1[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_16_1.4bpp");
+static const u8 sWingullGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_16.4bpp.lz");
+static const u8 sWingullGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_16_1.4bpp.lz");
 static const ax_sprite sWingullSprites16[] = {
 	{NULL, 128}, 
 	{sWingullGfx16, ARRAY_COUNT(sWingullGfx16)}, 
@@ -2348,9 +2348,9 @@ static const ax_sprite sWingullSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx17[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_17.4bpp");
-static const u8 sWingullGfx17_1[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_17_1.4bpp");
-static const u8 sWingullGfx17_2[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_17_2.4bpp");
+static const u8 sWingullGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_17.4bpp.lz");
+static const u8 sWingullGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_17_1.4bpp.lz");
+static const u8 sWingullGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_17_2.4bpp.lz");
 static const ax_sprite sWingullSprites17[] = {
 	{sWingullGfx17, ARRAY_COUNT(sWingullGfx17)}, 
 	{NULL, 64}, 
@@ -2360,8 +2360,8 @@ static const ax_sprite sWingullSprites17[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx18[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_18.4bpp");
-static const u8 sWingullGfx18_1[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_18_1.4bpp");
+static const u8 sWingullGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_18.4bpp.lz");
+static const u8 sWingullGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_18_1.4bpp.lz");
 static const ax_sprite sWingullSprites18[] = {
 	{NULL, 32}, 
 	{sWingullGfx18, ARRAY_COUNT(sWingullGfx18)}, 
@@ -2370,9 +2370,9 @@ static const ax_sprite sWingullSprites18[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx19[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_19.4bpp");
-static const u8 sWingullGfx19_1[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_19_1.4bpp");
-static const u8 sWingullGfx19_2[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_19_2.4bpp");
+static const u8 sWingullGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_19.4bpp.lz");
+static const u8 sWingullGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_19_1.4bpp.lz");
+static const u8 sWingullGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_19_2.4bpp.lz");
 static const ax_sprite sWingullSprites19[] = {
 	{sWingullGfx19, ARRAY_COUNT(sWingullGfx19)}, 
 	{NULL, 32}, 
@@ -2382,8 +2382,8 @@ static const ax_sprite sWingullSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx20[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_20.4bpp");
-static const u8 sWingullGfx20_1[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_20_1.4bpp");
+static const u8 sWingullGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_20.4bpp.lz");
+static const u8 sWingullGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_20_1.4bpp.lz");
 static const ax_sprite sWingullSprites20[] = {
 	{sWingullGfx20, ARRAY_COUNT(sWingullGfx20)}, 
 	{NULL, 32}, 
@@ -2391,37 +2391,37 @@ static const ax_sprite sWingullSprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx21[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_21.4bpp");
+static const u8 sWingullGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_21.4bpp.lz");
 static const ax_sprite sWingullSprites21[] = {
 	{sWingullGfx21, ARRAY_COUNT(sWingullGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx22[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_22.4bpp");
+static const u8 sWingullGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_22.4bpp.lz");
 static const ax_sprite sWingullSprites22[] = {
 	{sWingullGfx22, ARRAY_COUNT(sWingullGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx23[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_23.4bpp");
+static const u8 sWingullGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_23.4bpp.lz");
 static const ax_sprite sWingullSprites23[] = {
 	{sWingullGfx23, ARRAY_COUNT(sWingullGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx24[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_24.4bpp");
+static const u8 sWingullGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_24.4bpp.lz");
 static const ax_sprite sWingullSprites24[] = {
 	{sWingullGfx24, ARRAY_COUNT(sWingullGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx25[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_25.4bpp");
+static const u8 sWingullGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_25.4bpp.lz");
 static const ax_sprite sWingullSprites25[] = {
 	{sWingullGfx25, ARRAY_COUNT(sWingullGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx26[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_26.4bpp");
+static const u8 sWingullGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_26.4bpp.lz");
 static const ax_sprite sWingullSprites26[] = {
 	{sWingullGfx26, ARRAY_COUNT(sWingullGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sWingullGfx27[] = INCBIN_U8("graphics/ax/mon/wingull/sprite_27.4bpp");
+static const u8 sWingullGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/wingull/sprite_27.4bpp.lz");
 static const ax_sprite sWingullSprites27[] = {
 	{sWingullGfx27, ARRAY_COUNT(sWingullGfx27)}, 
 	{NULL, 0}

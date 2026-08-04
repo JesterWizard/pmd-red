@@ -1943,192 +1943,192 @@ static const ax_anim sIgglybuffAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sIgglybuffGfx1[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_1.4bpp");
+static const u8 sIgglybuffGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_1.4bpp.lz");
 static const ax_sprite sIgglybuffSprites1[] = {
 	{sIgglybuffGfx1, ARRAY_COUNT(sIgglybuffGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx2[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_2.4bpp");
+static const u8 sIgglybuffGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_2.4bpp.lz");
 static const ax_sprite sIgglybuffSprites2[] = {
 	{sIgglybuffGfx2, ARRAY_COUNT(sIgglybuffGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx3[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_3.4bpp");
+static const u8 sIgglybuffGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_3.4bpp.lz");
 static const ax_sprite sIgglybuffSprites3[] = {
 	{sIgglybuffGfx3, ARRAY_COUNT(sIgglybuffGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx4[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_4.4bpp");
+static const u8 sIgglybuffGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_4.4bpp.lz");
 static const ax_sprite sIgglybuffSprites4[] = {
 	{sIgglybuffGfx4, ARRAY_COUNT(sIgglybuffGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx5[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_5.4bpp");
+static const u8 sIgglybuffGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_5.4bpp.lz");
 static const ax_sprite sIgglybuffSprites5[] = {
 	{sIgglybuffGfx5, ARRAY_COUNT(sIgglybuffGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx6[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_6.4bpp");
+static const u8 sIgglybuffGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_6.4bpp.lz");
 static const ax_sprite sIgglybuffSprites6[] = {
 	{sIgglybuffGfx6, ARRAY_COUNT(sIgglybuffGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx7[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_7.4bpp");
+static const u8 sIgglybuffGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_7.4bpp.lz");
 static const ax_sprite sIgglybuffSprites7[] = {
 	{sIgglybuffGfx7, ARRAY_COUNT(sIgglybuffGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx8[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_8.4bpp");
+static const u8 sIgglybuffGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_8.4bpp.lz");
 static const ax_sprite sIgglybuffSprites8[] = {
 	{sIgglybuffGfx8, ARRAY_COUNT(sIgglybuffGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx9[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_9.4bpp");
+static const u8 sIgglybuffGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_9.4bpp.lz");
 static const ax_sprite sIgglybuffSprites9[] = {
 	{sIgglybuffGfx9, ARRAY_COUNT(sIgglybuffGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx10[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_10.4bpp");
+static const u8 sIgglybuffGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_10.4bpp.lz");
 static const ax_sprite sIgglybuffSprites10[] = {
 	{sIgglybuffGfx10, ARRAY_COUNT(sIgglybuffGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx11[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_11.4bpp");
+static const u8 sIgglybuffGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_11.4bpp.lz");
 static const ax_sprite sIgglybuffSprites11[] = {
 	{sIgglybuffGfx11, ARRAY_COUNT(sIgglybuffGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx12[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_12.4bpp");
+static const u8 sIgglybuffGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_12.4bpp.lz");
 static const ax_sprite sIgglybuffSprites12[] = {
 	{sIgglybuffGfx12, ARRAY_COUNT(sIgglybuffGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx13[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_13.4bpp");
+static const u8 sIgglybuffGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_13.4bpp.lz");
 static const ax_sprite sIgglybuffSprites13[] = {
 	{sIgglybuffGfx13, ARRAY_COUNT(sIgglybuffGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx14[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_14.4bpp");
+static const u8 sIgglybuffGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_14.4bpp.lz");
 static const ax_sprite sIgglybuffSprites14[] = {
 	{sIgglybuffGfx14, ARRAY_COUNT(sIgglybuffGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx15[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_15.4bpp");
+static const u8 sIgglybuffGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_15.4bpp.lz");
 static const ax_sprite sIgglybuffSprites15[] = {
 	{sIgglybuffGfx15, ARRAY_COUNT(sIgglybuffGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx16[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_16.4bpp");
+static const u8 sIgglybuffGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_16.4bpp.lz");
 static const ax_sprite sIgglybuffSprites16[] = {
 	{sIgglybuffGfx16, ARRAY_COUNT(sIgglybuffGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx17[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_17.4bpp");
+static const u8 sIgglybuffGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_17.4bpp.lz");
 static const ax_sprite sIgglybuffSprites17[] = {
 	{sIgglybuffGfx17, ARRAY_COUNT(sIgglybuffGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx18[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_18.4bpp");
+static const u8 sIgglybuffGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_18.4bpp.lz");
 static const ax_sprite sIgglybuffSprites18[] = {
 	{sIgglybuffGfx18, ARRAY_COUNT(sIgglybuffGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx19[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_19.4bpp");
+static const u8 sIgglybuffGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_19.4bpp.lz");
 static const ax_sprite sIgglybuffSprites19[] = {
 	{sIgglybuffGfx19, ARRAY_COUNT(sIgglybuffGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx20[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_20.4bpp");
+static const u8 sIgglybuffGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_20.4bpp.lz");
 static const ax_sprite sIgglybuffSprites20[] = {
 	{sIgglybuffGfx20, ARRAY_COUNT(sIgglybuffGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx21[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_21.4bpp");
+static const u8 sIgglybuffGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_21.4bpp.lz");
 static const ax_sprite sIgglybuffSprites21[] = {
 	{sIgglybuffGfx21, ARRAY_COUNT(sIgglybuffGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx22[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_22.4bpp");
+static const u8 sIgglybuffGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_22.4bpp.lz");
 static const ax_sprite sIgglybuffSprites22[] = {
 	{sIgglybuffGfx22, ARRAY_COUNT(sIgglybuffGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx23[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_23.4bpp");
+static const u8 sIgglybuffGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_23.4bpp.lz");
 static const ax_sprite sIgglybuffSprites23[] = {
 	{sIgglybuffGfx23, ARRAY_COUNT(sIgglybuffGfx23)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx24[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_24.4bpp");
+static const u8 sIgglybuffGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_24.4bpp.lz");
 static const ax_sprite sIgglybuffSprites24[] = {
 	{sIgglybuffGfx24, ARRAY_COUNT(sIgglybuffGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx25[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_25.4bpp");
+static const u8 sIgglybuffGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_25.4bpp.lz");
 static const ax_sprite sIgglybuffSprites25[] = {
 	{sIgglybuffGfx25, ARRAY_COUNT(sIgglybuffGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx26[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_26.4bpp");
+static const u8 sIgglybuffGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_26.4bpp.lz");
 static const ax_sprite sIgglybuffSprites26[] = {
 	{sIgglybuffGfx26, ARRAY_COUNT(sIgglybuffGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx27[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_27.4bpp");
+static const u8 sIgglybuffGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_27.4bpp.lz");
 static const ax_sprite sIgglybuffSprites27[] = {
 	{sIgglybuffGfx27, ARRAY_COUNT(sIgglybuffGfx27)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx28[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_28.4bpp");
+static const u8 sIgglybuffGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_28.4bpp.lz");
 static const ax_sprite sIgglybuffSprites28[] = {
 	{sIgglybuffGfx28, ARRAY_COUNT(sIgglybuffGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx29[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_29.4bpp");
+static const u8 sIgglybuffGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_29.4bpp.lz");
 static const ax_sprite sIgglybuffSprites29[] = {
 	{sIgglybuffGfx29, ARRAY_COUNT(sIgglybuffGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx30[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_30.4bpp");
+static const u8 sIgglybuffGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_30.4bpp.lz");
 static const ax_sprite sIgglybuffSprites30[] = {
 	{sIgglybuffGfx30, ARRAY_COUNT(sIgglybuffGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx31[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_31.4bpp");
+static const u8 sIgglybuffGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_31.4bpp.lz");
 static const ax_sprite sIgglybuffSprites31[] = {
 	{sIgglybuffGfx31, ARRAY_COUNT(sIgglybuffGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx32[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_32.4bpp");
+static const u8 sIgglybuffGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_32.4bpp.lz");
 static const ax_sprite sIgglybuffSprites32[] = {
 	{sIgglybuffGfx32, ARRAY_COUNT(sIgglybuffGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx33[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_33.4bpp");
+static const u8 sIgglybuffGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_33.4bpp.lz");
 static const ax_sprite sIgglybuffSprites33[] = {
 	{sIgglybuffGfx33, ARRAY_COUNT(sIgglybuffGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx34[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_34.4bpp");
+static const u8 sIgglybuffGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_34.4bpp.lz");
 static const ax_sprite sIgglybuffSprites34[] = {
 	{sIgglybuffGfx34, ARRAY_COUNT(sIgglybuffGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx35[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_35.4bpp");
+static const u8 sIgglybuffGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_35.4bpp.lz");
 static const ax_sprite sIgglybuffSprites35[] = {
 	{sIgglybuffGfx35, ARRAY_COUNT(sIgglybuffGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx36[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_36.4bpp");
+static const u8 sIgglybuffGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_36.4bpp.lz");
 static const ax_sprite sIgglybuffSprites36[] = {
 	{sIgglybuffGfx36, ARRAY_COUNT(sIgglybuffGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sIgglybuffGfx37[] = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_37.4bpp");
+static const u8 sIgglybuffGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/igglybuff/sprite_37.4bpp.lz");
 static const ax_sprite sIgglybuffSprites37[] = {
 	{sIgglybuffGfx37, ARRAY_COUNT(sIgglybuffGfx37)}, 
 	{NULL, 0}

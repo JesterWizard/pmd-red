@@ -1961,165 +1961,165 @@ static const ax_anim sMetagrossAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMetagrossGfx1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_1.4bpp");
+static const u8 sMetagrossGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites1[] = {
 	{sMetagrossGfx1, ARRAY_COUNT(sMetagrossGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx2[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_2.4bpp");
+static const u8 sMetagrossGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_2.4bpp.lz");
 static const ax_sprite sMetagrossSprites2[] = {
 	{sMetagrossGfx2, ARRAY_COUNT(sMetagrossGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx3[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_3.4bpp");
+static const u8 sMetagrossGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_3.4bpp.lz");
 static const ax_sprite sMetagrossSprites3[] = {
 	{sMetagrossGfx3, ARRAY_COUNT(sMetagrossGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx4[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_4.4bpp");
+static const u8 sMetagrossGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_4.4bpp.lz");
 static const ax_sprite sMetagrossSprites4[] = {
 	{sMetagrossGfx4, ARRAY_COUNT(sMetagrossGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx5[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_5.4bpp");
+static const u8 sMetagrossGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_5.4bpp.lz");
 static const ax_sprite sMetagrossSprites5[] = {
 	{sMetagrossGfx5, ARRAY_COUNT(sMetagrossGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx6[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_6.4bpp");
+static const u8 sMetagrossGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_6.4bpp.lz");
 static const ax_sprite sMetagrossSprites6[] = {
 	{sMetagrossGfx6, ARRAY_COUNT(sMetagrossGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx7[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_7.4bpp");
+static const u8 sMetagrossGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_7.4bpp.lz");
 static const ax_sprite sMetagrossSprites7[] = {
 	{sMetagrossGfx7, ARRAY_COUNT(sMetagrossGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx8[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_8.4bpp");
+static const u8 sMetagrossGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_8.4bpp.lz");
 static const ax_sprite sMetagrossSprites8[] = {
 	{sMetagrossGfx8, ARRAY_COUNT(sMetagrossGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx9[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_9.4bpp");
+static const u8 sMetagrossGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_9.4bpp.lz");
 static const ax_sprite sMetagrossSprites9[] = {
 	{sMetagrossGfx9, ARRAY_COUNT(sMetagrossGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx10[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_10.4bpp");
+static const u8 sMetagrossGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_10.4bpp.lz");
 static const ax_sprite sMetagrossSprites10[] = {
 	{sMetagrossGfx10, ARRAY_COUNT(sMetagrossGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx11[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_11.4bpp");
+static const u8 sMetagrossGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_11.4bpp.lz");
 static const ax_sprite sMetagrossSprites11[] = {
 	{sMetagrossGfx11, ARRAY_COUNT(sMetagrossGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx12[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_12.4bpp");
+static const u8 sMetagrossGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_12.4bpp.lz");
 static const ax_sprite sMetagrossSprites12[] = {
 	{sMetagrossGfx12, ARRAY_COUNT(sMetagrossGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx13[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_13.4bpp");
+static const u8 sMetagrossGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_13.4bpp.lz");
 static const ax_sprite sMetagrossSprites13[] = {
 	{sMetagrossGfx13, ARRAY_COUNT(sMetagrossGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx14[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_14.4bpp");
+static const u8 sMetagrossGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_14.4bpp.lz");
 static const ax_sprite sMetagrossSprites14[] = {
 	{sMetagrossGfx14, ARRAY_COUNT(sMetagrossGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx15[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_15.4bpp");
+static const u8 sMetagrossGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_15.4bpp.lz");
 static const ax_sprite sMetagrossSprites15[] = {
 	{sMetagrossGfx15, ARRAY_COUNT(sMetagrossGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx16[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_16.4bpp");
+static const u8 sMetagrossGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_16.4bpp.lz");
 static const ax_sprite sMetagrossSprites16[] = {
 	{sMetagrossGfx16, ARRAY_COUNT(sMetagrossGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx17[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_17.4bpp");
+static const u8 sMetagrossGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_17.4bpp.lz");
 static const ax_sprite sMetagrossSprites17[] = {
 	{sMetagrossGfx17, ARRAY_COUNT(sMetagrossGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx18[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_18.4bpp");
+static const u8 sMetagrossGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_18.4bpp.lz");
 static const ax_sprite sMetagrossSprites18[] = {
 	{sMetagrossGfx18, ARRAY_COUNT(sMetagrossGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx19[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_19.4bpp");
+static const u8 sMetagrossGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_19.4bpp.lz");
 static const ax_sprite sMetagrossSprites19[] = {
 	{sMetagrossGfx19, ARRAY_COUNT(sMetagrossGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx20[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_20.4bpp");
+static const u8 sMetagrossGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_20.4bpp.lz");
 static const ax_sprite sMetagrossSprites20[] = {
 	{sMetagrossGfx20, ARRAY_COUNT(sMetagrossGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx21[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_21.4bpp");
+static const u8 sMetagrossGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_21.4bpp.lz");
 static const ax_sprite sMetagrossSprites21[] = {
 	{sMetagrossGfx21, ARRAY_COUNT(sMetagrossGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx22[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_22.4bpp");
+static const u8 sMetagrossGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_22.4bpp.lz");
 static const ax_sprite sMetagrossSprites22[] = {
 	{sMetagrossGfx22, ARRAY_COUNT(sMetagrossGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx23[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_23.4bpp");
+static const u8 sMetagrossGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_23.4bpp.lz");
 static const ax_sprite sMetagrossSprites23[] = {
 	{sMetagrossGfx23, ARRAY_COUNT(sMetagrossGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx24[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_24.4bpp");
+static const u8 sMetagrossGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_24.4bpp.lz");
 static const ax_sprite sMetagrossSprites24[] = {
 	{sMetagrossGfx24, ARRAY_COUNT(sMetagrossGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx25[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_25.4bpp");
+static const u8 sMetagrossGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_25.4bpp.lz");
 static const ax_sprite sMetagrossSprites25[] = {
 	{sMetagrossGfx25, ARRAY_COUNT(sMetagrossGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx26[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_26.4bpp");
+static const u8 sMetagrossGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_26.4bpp.lz");
 static const ax_sprite sMetagrossSprites26[] = {
 	{sMetagrossGfx26, ARRAY_COUNT(sMetagrossGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx27[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_27.4bpp");
+static const u8 sMetagrossGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_27.4bpp.lz");
 static const ax_sprite sMetagrossSprites27[] = {
 	{sMetagrossGfx27, ARRAY_COUNT(sMetagrossGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx28[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_28.4bpp");
+static const u8 sMetagrossGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_28.4bpp.lz");
 static const ax_sprite sMetagrossSprites28[] = {
 	{sMetagrossGfx28, ARRAY_COUNT(sMetagrossGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx29[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_29.4bpp");
+static const u8 sMetagrossGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_29.4bpp.lz");
 static const ax_sprite sMetagrossSprites29[] = {
 	{sMetagrossGfx29, ARRAY_COUNT(sMetagrossGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx30[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_30.4bpp");
+static const u8 sMetagrossGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_30.4bpp.lz");
 static const ax_sprite sMetagrossSprites30[] = {
 	{sMetagrossGfx30, ARRAY_COUNT(sMetagrossGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx31[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_31.4bpp");
+static const u8 sMetagrossGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_31.4bpp.lz");
 static const ax_sprite sMetagrossSprites31[] = {
 	{NULL, 32}, 
 	{sMetagrossGfx31, ARRAY_COUNT(sMetagrossGfx31)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx32[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_32.4bpp");
-static const u8 sMetagrossGfx32_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_32_1.4bpp");
+static const u8 sMetagrossGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_32.4bpp.lz");
+static const u8 sMetagrossGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_32_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites32[] = {
 	{sMetagrossGfx32, ARRAY_COUNT(sMetagrossGfx32)}, 
 	{NULL, 32}, 
@@ -2127,8 +2127,8 @@ static const ax_sprite sMetagrossSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx33[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_33.4bpp");
-static const u8 sMetagrossGfx33_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_33_1.4bpp");
+static const u8 sMetagrossGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_33.4bpp.lz");
+static const u8 sMetagrossGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_33_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites33[] = {
 	{sMetagrossGfx33, ARRAY_COUNT(sMetagrossGfx33)}, 
 	{NULL, 32}, 
@@ -2136,21 +2136,21 @@ static const ax_sprite sMetagrossSprites33[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx34[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_34.4bpp");
+static const u8 sMetagrossGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_34.4bpp.lz");
 static const ax_sprite sMetagrossSprites34[] = {
 	{sMetagrossGfx34, ARRAY_COUNT(sMetagrossGfx34)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx35[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_35.4bpp");
+static const u8 sMetagrossGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_35.4bpp.lz");
 static const ax_sprite sMetagrossSprites35[] = {
 	{NULL, 32}, 
 	{sMetagrossGfx35, ARRAY_COUNT(sMetagrossGfx35)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx36[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_36.4bpp");
-static const u8 sMetagrossGfx36_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_36_1.4bpp");
+static const u8 sMetagrossGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_36.4bpp.lz");
+static const u8 sMetagrossGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_36_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites36[] = {
 	{sMetagrossGfx36, ARRAY_COUNT(sMetagrossGfx36)}, 
 	{NULL, 32}, 
@@ -2158,8 +2158,8 @@ static const ax_sprite sMetagrossSprites36[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx37[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_37.4bpp");
-static const u8 sMetagrossGfx37_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_37_1.4bpp");
+static const u8 sMetagrossGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_37.4bpp.lz");
+static const u8 sMetagrossGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_37_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites37[] = {
 	{sMetagrossGfx37, ARRAY_COUNT(sMetagrossGfx37)}, 
 	{NULL, 32}, 
@@ -2167,21 +2167,21 @@ static const ax_sprite sMetagrossSprites37[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx38[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_38.4bpp");
+static const u8 sMetagrossGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_38.4bpp.lz");
 static const ax_sprite sMetagrossSprites38[] = {
 	{sMetagrossGfx38, ARRAY_COUNT(sMetagrossGfx38)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx39[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_39.4bpp");
+static const u8 sMetagrossGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_39.4bpp.lz");
 static const ax_sprite sMetagrossSprites39[] = {
 	{NULL, 32}, 
 	{sMetagrossGfx39, ARRAY_COUNT(sMetagrossGfx39)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx40[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_40.4bpp");
-static const u8 sMetagrossGfx40_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_40_1.4bpp");
+static const u8 sMetagrossGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_40.4bpp.lz");
+static const u8 sMetagrossGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_40_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites40[] = {
 	{sMetagrossGfx40, ARRAY_COUNT(sMetagrossGfx40)}, 
 	{NULL, 32}, 
@@ -2189,16 +2189,16 @@ static const ax_sprite sMetagrossSprites40[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx41[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_41.4bpp");
+static const u8 sMetagrossGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_41.4bpp.lz");
 static const ax_sprite sMetagrossSprites41[] = {
 	{NULL, 32}, 
 	{sMetagrossGfx41, ARRAY_COUNT(sMetagrossGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx42[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_42.4bpp");
-static const u8 sMetagrossGfx42_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_42_1.4bpp");
-static const u8 sMetagrossGfx42_2[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_42_2.4bpp");
-static const u8 sMetagrossGfx42_3[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_42_3.4bpp");
+static const u8 sMetagrossGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_42.4bpp.lz");
+static const u8 sMetagrossGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_42_1.4bpp.lz");
+static const u8 sMetagrossGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_42_2.4bpp.lz");
+static const u8 sMetagrossGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_42_3.4bpp.lz");
 static const ax_sprite sMetagrossSprites42[] = {
 	{sMetagrossGfx42, ARRAY_COUNT(sMetagrossGfx42)}, 
 	{NULL, 32}, 
@@ -2209,14 +2209,14 @@ static const ax_sprite sMetagrossSprites42[] = {
 	{sMetagrossGfx42_3, ARRAY_COUNT(sMetagrossGfx42_3)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx43[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_43.4bpp");
+static const u8 sMetagrossGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_43.4bpp.lz");
 static const ax_sprite sMetagrossSprites43[] = {
 	{sMetagrossGfx43, ARRAY_COUNT(sMetagrossGfx43)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx44[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_44.4bpp");
-static const u8 sMetagrossGfx44_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_44_1.4bpp");
+static const u8 sMetagrossGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_44.4bpp.lz");
+static const u8 sMetagrossGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_44_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites44[] = {
 	{sMetagrossGfx44, ARRAY_COUNT(sMetagrossGfx44)}, 
 	{NULL, 32}, 
@@ -2224,8 +2224,8 @@ static const ax_sprite sMetagrossSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx45[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_45.4bpp");
-static const u8 sMetagrossGfx45_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_45_1.4bpp");
+static const u8 sMetagrossGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_45.4bpp.lz");
+static const u8 sMetagrossGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_45_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites45[] = {
 	{NULL, 32}, 
 	{sMetagrossGfx45, ARRAY_COUNT(sMetagrossGfx45)}, 
@@ -2233,10 +2233,10 @@ static const ax_sprite sMetagrossSprites45[] = {
 	{sMetagrossGfx45_1, ARRAY_COUNT(sMetagrossGfx45_1)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx46[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_46.4bpp");
-static const u8 sMetagrossGfx46_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_46_1.4bpp");
-static const u8 sMetagrossGfx46_2[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_46_2.4bpp");
-static const u8 sMetagrossGfx46_3[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_46_3.4bpp");
+static const u8 sMetagrossGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_46.4bpp.lz");
+static const u8 sMetagrossGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_46_1.4bpp.lz");
+static const u8 sMetagrossGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_46_2.4bpp.lz");
+static const u8 sMetagrossGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_46_3.4bpp.lz");
 static const ax_sprite sMetagrossSprites46[] = {
 	{sMetagrossGfx46, ARRAY_COUNT(sMetagrossGfx46)}, 
 	{NULL, 64}, 
@@ -2247,17 +2247,17 @@ static const ax_sprite sMetagrossSprites46[] = {
 	{sMetagrossGfx46_3, ARRAY_COUNT(sMetagrossGfx46_3)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx47[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_47.4bpp");
-static const u8 sMetagrossGfx47_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_47_1.4bpp");
+static const u8 sMetagrossGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_47.4bpp.lz");
+static const u8 sMetagrossGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_47_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites47[] = {
 	{sMetagrossGfx47, ARRAY_COUNT(sMetagrossGfx47)}, 
 	{NULL, 32}, 
 	{sMetagrossGfx47_1, ARRAY_COUNT(sMetagrossGfx47_1)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx48[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_48.4bpp");
-static const u8 sMetagrossGfx48_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_48_1.4bpp");
-static const u8 sMetagrossGfx48_2[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_48_2.4bpp");
+static const u8 sMetagrossGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_48.4bpp.lz");
+static const u8 sMetagrossGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_48_1.4bpp.lz");
+static const u8 sMetagrossGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_48_2.4bpp.lz");
 static const ax_sprite sMetagrossSprites48[] = {
 	{sMetagrossGfx48, ARRAY_COUNT(sMetagrossGfx48)}, 
 	{NULL, 32}, 
@@ -2267,8 +2267,8 @@ static const ax_sprite sMetagrossSprites48[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx49[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_49.4bpp");
-static const u8 sMetagrossGfx49_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_49_1.4bpp");
+static const u8 sMetagrossGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_49.4bpp.lz");
+static const u8 sMetagrossGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_49_1.4bpp.lz");
 static const ax_sprite sMetagrossSprites49[] = {
 	{NULL, 32}, 
 	{sMetagrossGfx49, ARRAY_COUNT(sMetagrossGfx49)}, 
@@ -2276,10 +2276,10 @@ static const ax_sprite sMetagrossSprites49[] = {
 	{sMetagrossGfx49_1, ARRAY_COUNT(sMetagrossGfx49_1)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx50[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_50.4bpp");
-static const u8 sMetagrossGfx50_1[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_50_1.4bpp");
-static const u8 sMetagrossGfx50_2[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_50_2.4bpp");
-static const u8 sMetagrossGfx50_3[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_50_3.4bpp");
+static const u8 sMetagrossGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_50.4bpp.lz");
+static const u8 sMetagrossGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_50_1.4bpp.lz");
+static const u8 sMetagrossGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_50_2.4bpp.lz");
+static const u8 sMetagrossGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_50_3.4bpp.lz");
 static const ax_sprite sMetagrossSprites50[] = {
 	{sMetagrossGfx50, ARRAY_COUNT(sMetagrossGfx50)}, 
 	{NULL, 32}, 
@@ -2290,67 +2290,67 @@ static const ax_sprite sMetagrossSprites50[] = {
 	{sMetagrossGfx50_3, ARRAY_COUNT(sMetagrossGfx50_3)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx51[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_51.4bpp");
+static const u8 sMetagrossGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_51.4bpp.lz");
 static const ax_sprite sMetagrossSprites51[] = {
 	{sMetagrossGfx51, ARRAY_COUNT(sMetagrossGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx52[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_52.4bpp");
+static const u8 sMetagrossGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_52.4bpp.lz");
 static const ax_sprite sMetagrossSprites52[] = {
 	{sMetagrossGfx52, ARRAY_COUNT(sMetagrossGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx53[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_53.4bpp");
+static const u8 sMetagrossGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_53.4bpp.lz");
 static const ax_sprite sMetagrossSprites53[] = {
 	{sMetagrossGfx53, ARRAY_COUNT(sMetagrossGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx54[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_54.4bpp");
+static const u8 sMetagrossGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_54.4bpp.lz");
 static const ax_sprite sMetagrossSprites54[] = {
 	{sMetagrossGfx54, ARRAY_COUNT(sMetagrossGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx55[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_55.4bpp");
+static const u8 sMetagrossGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_55.4bpp.lz");
 static const ax_sprite sMetagrossSprites55[] = {
 	{sMetagrossGfx55, ARRAY_COUNT(sMetagrossGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx56[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_56.4bpp");
+static const u8 sMetagrossGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_56.4bpp.lz");
 static const ax_sprite sMetagrossSprites56[] = {
 	{sMetagrossGfx56, ARRAY_COUNT(sMetagrossGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx57[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_57.4bpp");
+static const u8 sMetagrossGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_57.4bpp.lz");
 static const ax_sprite sMetagrossSprites57[] = {
 	{sMetagrossGfx57, ARRAY_COUNT(sMetagrossGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx58[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_58.4bpp");
+static const u8 sMetagrossGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_58.4bpp.lz");
 static const ax_sprite sMetagrossSprites58[] = {
 	{sMetagrossGfx58, ARRAY_COUNT(sMetagrossGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx59[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_59.4bpp");
+static const u8 sMetagrossGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_59.4bpp.lz");
 static const ax_sprite sMetagrossSprites59[] = {
 	{sMetagrossGfx59, ARRAY_COUNT(sMetagrossGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx60[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_60.4bpp");
+static const u8 sMetagrossGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_60.4bpp.lz");
 static const ax_sprite sMetagrossSprites60[] = {
 	{sMetagrossGfx60, ARRAY_COUNT(sMetagrossGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx61[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_61.4bpp");
+static const u8 sMetagrossGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_61.4bpp.lz");
 static const ax_sprite sMetagrossSprites61[] = {
 	{sMetagrossGfx61, ARRAY_COUNT(sMetagrossGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx62[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_62.4bpp");
+static const u8 sMetagrossGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_62.4bpp.lz");
 static const ax_sprite sMetagrossSprites62[] = {
 	{sMetagrossGfx62, ARRAY_COUNT(sMetagrossGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sMetagrossGfx63[] = INCBIN_U8("graphics/ax/mon/metagross/sprite_63.4bpp");
+static const u8 sMetagrossGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/metagross/sprite_63.4bpp.lz");
 static const ax_sprite sMetagrossSprites63[] = {
 	{sMetagrossGfx63, ARRAY_COUNT(sMetagrossGfx63)}, 
 	{NULL, 0}

@@ -2439,84 +2439,84 @@ static const ax_anim sDoduoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDoduoGfx1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_1.4bpp");
+static const u8 sDoduoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_1.4bpp.lz");
 static const ax_sprite sDoduoSprites1[] = {
 	{sDoduoGfx1, ARRAY_COUNT(sDoduoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_2.4bpp");
+static const u8 sDoduoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_2.4bpp.lz");
 static const ax_sprite sDoduoSprites2[] = {
 	{sDoduoGfx2, ARRAY_COUNT(sDoduoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx3[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_3.4bpp");
+static const u8 sDoduoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_3.4bpp.lz");
 static const ax_sprite sDoduoSprites3[] = {
 	{sDoduoGfx3, ARRAY_COUNT(sDoduoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx4[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_4.4bpp");
+static const u8 sDoduoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_4.4bpp.lz");
 static const ax_sprite sDoduoSprites4[] = {
 	{sDoduoGfx4, ARRAY_COUNT(sDoduoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx5[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_5.4bpp");
+static const u8 sDoduoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_5.4bpp.lz");
 static const ax_sprite sDoduoSprites5[] = {
 	{sDoduoGfx5, ARRAY_COUNT(sDoduoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx6[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_6.4bpp");
+static const u8 sDoduoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_6.4bpp.lz");
 static const ax_sprite sDoduoSprites6[] = {
 	{sDoduoGfx6, ARRAY_COUNT(sDoduoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx7[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_7.4bpp");
+static const u8 sDoduoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_7.4bpp.lz");
 static const ax_sprite sDoduoSprites7[] = {
 	{sDoduoGfx7, ARRAY_COUNT(sDoduoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx8[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_8.4bpp");
+static const u8 sDoduoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_8.4bpp.lz");
 static const ax_sprite sDoduoSprites8[] = {
 	{sDoduoGfx8, ARRAY_COUNT(sDoduoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx9[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_9.4bpp");
+static const u8 sDoduoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_9.4bpp.lz");
 static const ax_sprite sDoduoSprites9[] = {
 	{sDoduoGfx9, ARRAY_COUNT(sDoduoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx10[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_10.4bpp");
+static const u8 sDoduoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_10.4bpp.lz");
 static const ax_sprite sDoduoSprites10[] = {
 	{sDoduoGfx10, ARRAY_COUNT(sDoduoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx11[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_11.4bpp");
+static const u8 sDoduoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_11.4bpp.lz");
 static const ax_sprite sDoduoSprites11[] = {
 	{sDoduoGfx11, ARRAY_COUNT(sDoduoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx12[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_12.4bpp");
+static const u8 sDoduoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_12.4bpp.lz");
 static const ax_sprite sDoduoSprites12[] = {
 	{sDoduoGfx12, ARRAY_COUNT(sDoduoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx13[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_13.4bpp");
+static const u8 sDoduoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_13.4bpp.lz");
 static const ax_sprite sDoduoSprites13[] = {
 	{sDoduoGfx13, ARRAY_COUNT(sDoduoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx14[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_14.4bpp");
+static const u8 sDoduoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_14.4bpp.lz");
 static const ax_sprite sDoduoSprites14[] = {
 	{sDoduoGfx14, ARRAY_COUNT(sDoduoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx15[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_15.4bpp");
+static const u8 sDoduoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_15.4bpp.lz");
 static const ax_sprite sDoduoSprites15[] = {
 	{sDoduoGfx15, ARRAY_COUNT(sDoduoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx16[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_16.4bpp");
-static const u8 sDoduoGfx16_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_16_1.4bpp");
-static const u8 sDoduoGfx16_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_16_2.4bpp");
+static const u8 sDoduoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_16.4bpp.lz");
+static const u8 sDoduoGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_16_1.4bpp.lz");
+static const u8 sDoduoGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_16_2.4bpp.lz");
 static const ax_sprite sDoduoSprites16[] = {
 	{NULL, 32}, 
 	{sDoduoGfx16, ARRAY_COUNT(sDoduoGfx16)}, 
@@ -2527,9 +2527,9 @@ static const ax_sprite sDoduoSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx17[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_17.4bpp");
-static const u8 sDoduoGfx17_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_17_1.4bpp");
-static const u8 sDoduoGfx17_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_17_2.4bpp");
+static const u8 sDoduoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_17.4bpp.lz");
+static const u8 sDoduoGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_17_1.4bpp.lz");
+static const u8 sDoduoGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_17_2.4bpp.lz");
 static const ax_sprite sDoduoSprites17[] = {
 	{sDoduoGfx17, ARRAY_COUNT(sDoduoGfx17)}, 
 	{NULL, 64}, 
@@ -2539,9 +2539,9 @@ static const ax_sprite sDoduoSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx18[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_18.4bpp");
-static const u8 sDoduoGfx18_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_18_1.4bpp");
-static const u8 sDoduoGfx18_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_18_2.4bpp");
+static const u8 sDoduoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_18.4bpp.lz");
+static const u8 sDoduoGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_18_1.4bpp.lz");
+static const u8 sDoduoGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_18_2.4bpp.lz");
 static const ax_sprite sDoduoSprites18[] = {
 	{NULL, 32}, 
 	{sDoduoGfx18, ARRAY_COUNT(sDoduoGfx18)}, 
@@ -2552,9 +2552,9 @@ static const ax_sprite sDoduoSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx19[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_19.4bpp");
-static const u8 sDoduoGfx19_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_19_1.4bpp");
-static const u8 sDoduoGfx19_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_19_2.4bpp");
+static const u8 sDoduoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_19.4bpp.lz");
+static const u8 sDoduoGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_19_1.4bpp.lz");
+static const u8 sDoduoGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_19_2.4bpp.lz");
 static const ax_sprite sDoduoSprites19[] = {
 	{NULL, 32}, 
 	{sDoduoGfx19, ARRAY_COUNT(sDoduoGfx19)}, 
@@ -2565,8 +2565,8 @@ static const ax_sprite sDoduoSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx20[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_20.4bpp");
-static const u8 sDoduoGfx20_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_20_1.4bpp");
+static const u8 sDoduoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_20.4bpp.lz");
+static const u8 sDoduoGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_20_1.4bpp.lz");
 static const ax_sprite sDoduoSprites20[] = {
 	{NULL, 128}, 
 	{sDoduoGfx20, ARRAY_COUNT(sDoduoGfx20)}, 
@@ -2574,10 +2574,10 @@ static const ax_sprite sDoduoSprites20[] = {
 	{sDoduoGfx20_1, ARRAY_COUNT(sDoduoGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx21[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_21.4bpp");
-static const u8 sDoduoGfx21_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_21_1.4bpp");
-static const u8 sDoduoGfx21_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_21_2.4bpp");
-static const u8 sDoduoGfx21_3[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_21_3.4bpp");
+static const u8 sDoduoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_21.4bpp.lz");
+static const u8 sDoduoGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_21_1.4bpp.lz");
+static const u8 sDoduoGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_21_2.4bpp.lz");
+static const u8 sDoduoGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_21_3.4bpp.lz");
 static const ax_sprite sDoduoSprites21[] = {
 	{NULL, 32}, 
 	{sDoduoGfx21, ARRAY_COUNT(sDoduoGfx21)}, 
@@ -2590,10 +2590,10 @@ static const ax_sprite sDoduoSprites21[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx22[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_22.4bpp");
-static const u8 sDoduoGfx22_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_22_1.4bpp");
-static const u8 sDoduoGfx22_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_22_2.4bpp");
-static const u8 sDoduoGfx22_3[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_22_3.4bpp");
+static const u8 sDoduoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_22.4bpp.lz");
+static const u8 sDoduoGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_22_1.4bpp.lz");
+static const u8 sDoduoGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_22_2.4bpp.lz");
+static const u8 sDoduoGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_22_3.4bpp.lz");
 static const ax_sprite sDoduoSprites22[] = {
 	{NULL, 32}, 
 	{sDoduoGfx22, ARRAY_COUNT(sDoduoGfx22)}, 
@@ -2605,10 +2605,10 @@ static const ax_sprite sDoduoSprites22[] = {
 	{sDoduoGfx22_3, ARRAY_COUNT(sDoduoGfx22_3)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx23[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_23.4bpp");
-static const u8 sDoduoGfx23_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_23_1.4bpp");
-static const u8 sDoduoGfx23_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_23_2.4bpp");
-static const u8 sDoduoGfx23_3[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_23_3.4bpp");
+static const u8 sDoduoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_23.4bpp.lz");
+static const u8 sDoduoGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_23_1.4bpp.lz");
+static const u8 sDoduoGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_23_2.4bpp.lz");
+static const u8 sDoduoGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_23_3.4bpp.lz");
 static const ax_sprite sDoduoSprites23[] = {
 	{sDoduoGfx23, ARRAY_COUNT(sDoduoGfx23)}, 
 	{NULL, 64}, 
@@ -2620,9 +2620,9 @@ static const ax_sprite sDoduoSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx24[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_24.4bpp");
-static const u8 sDoduoGfx24_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_24_1.4bpp");
-static const u8 sDoduoGfx24_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_24_2.4bpp");
+static const u8 sDoduoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_24.4bpp.lz");
+static const u8 sDoduoGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_24_1.4bpp.lz");
+static const u8 sDoduoGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_24_2.4bpp.lz");
 static const ax_sprite sDoduoSprites24[] = {
 	{sDoduoGfx24, ARRAY_COUNT(sDoduoGfx24)}, 
 	{NULL, 32}, 
@@ -2632,9 +2632,9 @@ static const ax_sprite sDoduoSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx25[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_25.4bpp");
-static const u8 sDoduoGfx25_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_25_1.4bpp");
-static const u8 sDoduoGfx25_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_25_2.4bpp");
+static const u8 sDoduoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_25.4bpp.lz");
+static const u8 sDoduoGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_25_1.4bpp.lz");
+static const u8 sDoduoGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_25_2.4bpp.lz");
 static const ax_sprite sDoduoSprites25[] = {
 	{sDoduoGfx25, ARRAY_COUNT(sDoduoGfx25)}, 
 	{NULL, 64}, 
@@ -2644,9 +2644,9 @@ static const ax_sprite sDoduoSprites25[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx26[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_26.4bpp");
-static const u8 sDoduoGfx26_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_26_1.4bpp");
-static const u8 sDoduoGfx26_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_26_2.4bpp");
+static const u8 sDoduoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_26.4bpp.lz");
+static const u8 sDoduoGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_26_1.4bpp.lz");
+static const u8 sDoduoGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_26_2.4bpp.lz");
 static const ax_sprite sDoduoSprites26[] = {
 	{NULL, 32}, 
 	{sDoduoGfx26, ARRAY_COUNT(sDoduoGfx26)}, 
@@ -2657,8 +2657,8 @@ static const ax_sprite sDoduoSprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx27[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_27.4bpp");
-static const u8 sDoduoGfx27_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_27_1.4bpp");
+static const u8 sDoduoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_27.4bpp.lz");
+static const u8 sDoduoGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_27_1.4bpp.lz");
 static const ax_sprite sDoduoSprites27[] = {
 	{NULL, 32}, 
 	{sDoduoGfx27, ARRAY_COUNT(sDoduoGfx27)}, 
@@ -2667,9 +2667,9 @@ static const ax_sprite sDoduoSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx28[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_28.4bpp");
-static const u8 sDoduoGfx28_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_28_1.4bpp");
-static const u8 sDoduoGfx28_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_28_2.4bpp");
+static const u8 sDoduoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_28.4bpp.lz");
+static const u8 sDoduoGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_28_1.4bpp.lz");
+static const u8 sDoduoGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_28_2.4bpp.lz");
 static const ax_sprite sDoduoSprites28[] = {
 	{sDoduoGfx28, ARRAY_COUNT(sDoduoGfx28)}, 
 	{NULL, 64}, 
@@ -2679,8 +2679,8 @@ static const ax_sprite sDoduoSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx29[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_29.4bpp");
-static const u8 sDoduoGfx29_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_29_1.4bpp");
+static const u8 sDoduoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_29.4bpp.lz");
+static const u8 sDoduoGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_29_1.4bpp.lz");
 static const ax_sprite sDoduoSprites29[] = {
 	{NULL, 128}, 
 	{sDoduoGfx29, ARRAY_COUNT(sDoduoGfx29)}, 
@@ -2688,10 +2688,10 @@ static const ax_sprite sDoduoSprites29[] = {
 	{sDoduoGfx29_1, ARRAY_COUNT(sDoduoGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx30[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_30.4bpp");
-static const u8 sDoduoGfx30_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_30_1.4bpp");
-static const u8 sDoduoGfx30_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_30_2.4bpp");
-static const u8 sDoduoGfx30_3[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_30_3.4bpp");
+static const u8 sDoduoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_30.4bpp.lz");
+static const u8 sDoduoGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_30_1.4bpp.lz");
+static const u8 sDoduoGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_30_2.4bpp.lz");
+static const u8 sDoduoGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_30_3.4bpp.lz");
 static const ax_sprite sDoduoSprites30[] = {
 	{NULL, 32}, 
 	{sDoduoGfx30, ARRAY_COUNT(sDoduoGfx30)}, 
@@ -2704,10 +2704,10 @@ static const ax_sprite sDoduoSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx31[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_31.4bpp");
-static const u8 sDoduoGfx31_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_31_1.4bpp");
-static const u8 sDoduoGfx31_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_31_2.4bpp");
-static const u8 sDoduoGfx31_3[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_31_3.4bpp");
+static const u8 sDoduoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_31.4bpp.lz");
+static const u8 sDoduoGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_31_1.4bpp.lz");
+static const u8 sDoduoGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_31_2.4bpp.lz");
+static const u8 sDoduoGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_31_3.4bpp.lz");
 static const ax_sprite sDoduoSprites31[] = {
 	{sDoduoGfx31, ARRAY_COUNT(sDoduoGfx31)}, 
 	{NULL, 64}, 
@@ -2718,10 +2718,10 @@ static const ax_sprite sDoduoSprites31[] = {
 	{sDoduoGfx31_3, ARRAY_COUNT(sDoduoGfx31_3)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx32[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_32.4bpp");
-static const u8 sDoduoGfx32_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_32_1.4bpp");
-static const u8 sDoduoGfx32_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_32_2.4bpp");
-static const u8 sDoduoGfx32_3[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_32_3.4bpp");
+static const u8 sDoduoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_32.4bpp.lz");
+static const u8 sDoduoGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_32_1.4bpp.lz");
+static const u8 sDoduoGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_32_2.4bpp.lz");
+static const u8 sDoduoGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_32_3.4bpp.lz");
 static const ax_sprite sDoduoSprites32[] = {
 	{NULL, 32}, 
 	{sDoduoGfx32, ARRAY_COUNT(sDoduoGfx32)}, 
@@ -2734,9 +2734,9 @@ static const ax_sprite sDoduoSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx33[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_33.4bpp");
-static const u8 sDoduoGfx33_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_33_1.4bpp");
-static const u8 sDoduoGfx33_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_33_2.4bpp");
+static const u8 sDoduoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_33.4bpp.lz");
+static const u8 sDoduoGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_33_1.4bpp.lz");
+static const u8 sDoduoGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_33_2.4bpp.lz");
 static const ax_sprite sDoduoSprites33[] = {
 	{sDoduoGfx33, ARRAY_COUNT(sDoduoGfx33)}, 
 	{NULL, 32}, 
@@ -2746,9 +2746,9 @@ static const ax_sprite sDoduoSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx34[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_34.4bpp");
-static const u8 sDoduoGfx34_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_34_1.4bpp");
-static const u8 sDoduoGfx34_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_34_2.4bpp");
+static const u8 sDoduoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_34.4bpp.lz");
+static const u8 sDoduoGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_34_1.4bpp.lz");
+static const u8 sDoduoGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_34_2.4bpp.lz");
 static const ax_sprite sDoduoSprites34[] = {
 	{NULL, 32}, 
 	{sDoduoGfx34, ARRAY_COUNT(sDoduoGfx34)}, 
@@ -2759,9 +2759,9 @@ static const ax_sprite sDoduoSprites34[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx35[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_35.4bpp");
-static const u8 sDoduoGfx35_1[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_35_1.4bpp");
-static const u8 sDoduoGfx35_2[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_35_2.4bpp");
+static const u8 sDoduoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_35.4bpp.lz");
+static const u8 sDoduoGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_35_1.4bpp.lz");
+static const u8 sDoduoGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_35_2.4bpp.lz");
 static const ax_sprite sDoduoSprites35[] = {
 	{NULL, 32}, 
 	{sDoduoGfx35, ARRAY_COUNT(sDoduoGfx35)}, 
@@ -2772,37 +2772,37 @@ static const ax_sprite sDoduoSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx36[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_36.4bpp");
+static const u8 sDoduoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_36.4bpp.lz");
 static const ax_sprite sDoduoSprites36[] = {
 	{sDoduoGfx36, ARRAY_COUNT(sDoduoGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx37[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_37.4bpp");
+static const u8 sDoduoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_37.4bpp.lz");
 static const ax_sprite sDoduoSprites37[] = {
 	{sDoduoGfx37, ARRAY_COUNT(sDoduoGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx38[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_38.4bpp");
+static const u8 sDoduoGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_38.4bpp.lz");
 static const ax_sprite sDoduoSprites38[] = {
 	{sDoduoGfx38, ARRAY_COUNT(sDoduoGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx39[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_39.4bpp");
+static const u8 sDoduoGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_39.4bpp.lz");
 static const ax_sprite sDoduoSprites39[] = {
 	{sDoduoGfx39, ARRAY_COUNT(sDoduoGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx40[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_40.4bpp");
+static const u8 sDoduoGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_40.4bpp.lz");
 static const ax_sprite sDoduoSprites40[] = {
 	{sDoduoGfx40, ARRAY_COUNT(sDoduoGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx41[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_41.4bpp");
+static const u8 sDoduoGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_41.4bpp.lz");
 static const ax_sprite sDoduoSprites41[] = {
 	{sDoduoGfx41, ARRAY_COUNT(sDoduoGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDoduoGfx42[] = INCBIN_U8("graphics/ax/mon/doduo/sprite_42.4bpp");
+static const u8 sDoduoGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/doduo/sprite_42.4bpp.lz");
 static const ax_sprite sDoduoSprites42[] = {
 	{sDoduoGfx42, ARRAY_COUNT(sDoduoGfx42)}, 
 	{NULL, 0}

@@ -2119,84 +2119,84 @@ static const ax_anim sTentacoolAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTentacoolGfx1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_1.4bpp");
+static const u8 sTentacoolGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_1.4bpp.lz");
 static const ax_sprite sTentacoolSprites1[] = {
 	{sTentacoolGfx1, ARRAY_COUNT(sTentacoolGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_2.4bpp");
+static const u8 sTentacoolGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites2[] = {
 	{sTentacoolGfx2, ARRAY_COUNT(sTentacoolGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_3.4bpp");
+static const u8 sTentacoolGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites3[] = {
 	{sTentacoolGfx3, ARRAY_COUNT(sTentacoolGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx4[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_4.4bpp");
+static const u8 sTentacoolGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_4.4bpp.lz");
 static const ax_sprite sTentacoolSprites4[] = {
 	{sTentacoolGfx4, ARRAY_COUNT(sTentacoolGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx5[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_5.4bpp");
+static const u8 sTentacoolGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_5.4bpp.lz");
 static const ax_sprite sTentacoolSprites5[] = {
 	{sTentacoolGfx5, ARRAY_COUNT(sTentacoolGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx6[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_6.4bpp");
+static const u8 sTentacoolGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_6.4bpp.lz");
 static const ax_sprite sTentacoolSprites6[] = {
 	{sTentacoolGfx6, ARRAY_COUNT(sTentacoolGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx7[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_7.4bpp");
+static const u8 sTentacoolGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_7.4bpp.lz");
 static const ax_sprite sTentacoolSprites7[] = {
 	{sTentacoolGfx7, ARRAY_COUNT(sTentacoolGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx8[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_8.4bpp");
+static const u8 sTentacoolGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_8.4bpp.lz");
 static const ax_sprite sTentacoolSprites8[] = {
 	{sTentacoolGfx8, ARRAY_COUNT(sTentacoolGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx9[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_9.4bpp");
+static const u8 sTentacoolGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_9.4bpp.lz");
 static const ax_sprite sTentacoolSprites9[] = {
 	{sTentacoolGfx9, ARRAY_COUNT(sTentacoolGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx10[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_10.4bpp");
+static const u8 sTentacoolGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_10.4bpp.lz");
 static const ax_sprite sTentacoolSprites10[] = {
 	{sTentacoolGfx10, ARRAY_COUNT(sTentacoolGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx11[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_11.4bpp");
+static const u8 sTentacoolGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_11.4bpp.lz");
 static const ax_sprite sTentacoolSprites11[] = {
 	{sTentacoolGfx11, ARRAY_COUNT(sTentacoolGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx12[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_12.4bpp");
+static const u8 sTentacoolGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_12.4bpp.lz");
 static const ax_sprite sTentacoolSprites12[] = {
 	{sTentacoolGfx12, ARRAY_COUNT(sTentacoolGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx13[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_13.4bpp");
+static const u8 sTentacoolGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_13.4bpp.lz");
 static const ax_sprite sTentacoolSprites13[] = {
 	{sTentacoolGfx13, ARRAY_COUNT(sTentacoolGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx14[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_14.4bpp");
+static const u8 sTentacoolGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_14.4bpp.lz");
 static const ax_sprite sTentacoolSprites14[] = {
 	{sTentacoolGfx14, ARRAY_COUNT(sTentacoolGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx15[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_15.4bpp");
+static const u8 sTentacoolGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_15.4bpp.lz");
 static const ax_sprite sTentacoolSprites15[] = {
 	{sTentacoolGfx15, ARRAY_COUNT(sTentacoolGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx16[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_16.4bpp");
-static const u8 sTentacoolGfx16_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_16_1.4bpp");
-static const u8 sTentacoolGfx16_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_16_2.4bpp");
+static const u8 sTentacoolGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_16.4bpp.lz");
+static const u8 sTentacoolGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_16_1.4bpp.lz");
+static const u8 sTentacoolGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_16_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites16[] = {
 	{sTentacoolGfx16, ARRAY_COUNT(sTentacoolGfx16)}, 
 	{NULL, 32}, 
@@ -2206,9 +2206,9 @@ static const ax_sprite sTentacoolSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx17[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_17.4bpp");
-static const u8 sTentacoolGfx17_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_17_1.4bpp");
-static const u8 sTentacoolGfx17_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_17_2.4bpp");
+static const u8 sTentacoolGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_17.4bpp.lz");
+static const u8 sTentacoolGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_17_1.4bpp.lz");
+static const u8 sTentacoolGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_17_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites17[] = {
 	{NULL, 32}, 
 	{sTentacoolGfx17, ARRAY_COUNT(sTentacoolGfx17)}, 
@@ -2219,17 +2219,17 @@ static const ax_sprite sTentacoolSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx18[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_18.4bpp");
+static const u8 sTentacoolGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_18.4bpp.lz");
 static const ax_sprite sTentacoolSprites18[] = {
 	{NULL, 128}, 
 	{sTentacoolGfx18, ARRAY_COUNT(sTentacoolGfx18)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx19[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_19.4bpp");
-static const u8 sTentacoolGfx19_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_19_1.4bpp");
-static const u8 sTentacoolGfx19_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_19_2.4bpp");
-static const u8 sTentacoolGfx19_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_19_3.4bpp");
+static const u8 sTentacoolGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_19.4bpp.lz");
+static const u8 sTentacoolGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_19_1.4bpp.lz");
+static const u8 sTentacoolGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_19_2.4bpp.lz");
+static const u8 sTentacoolGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_19_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites19[] = {
 	{sTentacoolGfx19, ARRAY_COUNT(sTentacoolGfx19)}, 
 	{NULL, 64}, 
@@ -2240,11 +2240,11 @@ static const ax_sprite sTentacoolSprites19[] = {
 	{sTentacoolGfx19_3, ARRAY_COUNT(sTentacoolGfx19_3)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx20[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20.4bpp");
-static const u8 sTentacoolGfx20_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20_1.4bpp");
-static const u8 sTentacoolGfx20_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20_2.4bpp");
-static const u8 sTentacoolGfx20_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20_3.4bpp");
-static const u8 sTentacoolGfx20_4[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20_4.4bpp");
+static const u8 sTentacoolGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20.4bpp.lz");
+static const u8 sTentacoolGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20_1.4bpp.lz");
+static const u8 sTentacoolGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20_2.4bpp.lz");
+static const u8 sTentacoolGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20_3.4bpp.lz");
+static const u8 sTentacoolGfx20_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_20_4.4bpp.lz");
 static const ax_sprite sTentacoolSprites20[] = {
 	{sTentacoolGfx20, ARRAY_COUNT(sTentacoolGfx20)}, 
 	{NULL, 32}, 
@@ -2258,8 +2258,8 @@ static const ax_sprite sTentacoolSprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx21[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_21.4bpp");
-static const u8 sTentacoolGfx21_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_21_1.4bpp");
+static const u8 sTentacoolGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_21.4bpp.lz");
+static const u8 sTentacoolGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_21_1.4bpp.lz");
 static const ax_sprite sTentacoolSprites21[] = {
 	{sTentacoolGfx21, ARRAY_COUNT(sTentacoolGfx21)}, 
 	{NULL, 32}, 
@@ -2267,10 +2267,10 @@ static const ax_sprite sTentacoolSprites21[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx22[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_22.4bpp");
-static const u8 sTentacoolGfx22_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_22_1.4bpp");
-static const u8 sTentacoolGfx22_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_22_2.4bpp");
-static const u8 sTentacoolGfx22_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_22_3.4bpp");
+static const u8 sTentacoolGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_22.4bpp.lz");
+static const u8 sTentacoolGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_22_1.4bpp.lz");
+static const u8 sTentacoolGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_22_2.4bpp.lz");
+static const u8 sTentacoolGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_22_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites22[] = {
 	{sTentacoolGfx22, ARRAY_COUNT(sTentacoolGfx22)}, 
 	{NULL, 32}, 
@@ -2281,10 +2281,10 @@ static const ax_sprite sTentacoolSprites22[] = {
 	{sTentacoolGfx22_3, ARRAY_COUNT(sTentacoolGfx22_3)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx23[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_23.4bpp");
-static const u8 sTentacoolGfx23_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_23_1.4bpp");
-static const u8 sTentacoolGfx23_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_23_2.4bpp");
-static const u8 sTentacoolGfx23_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_23_3.4bpp");
+static const u8 sTentacoolGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_23.4bpp.lz");
+static const u8 sTentacoolGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_23_1.4bpp.lz");
+static const u8 sTentacoolGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_23_2.4bpp.lz");
+static const u8 sTentacoolGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_23_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites23[] = {
 	{sTentacoolGfx23, ARRAY_COUNT(sTentacoolGfx23)}, 
 	{NULL, 32}, 
@@ -2296,9 +2296,9 @@ static const ax_sprite sTentacoolSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx24[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_24.4bpp");
-static const u8 sTentacoolGfx24_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_24_1.4bpp");
-static const u8 sTentacoolGfx24_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_24_2.4bpp");
+static const u8 sTentacoolGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_24.4bpp.lz");
+static const u8 sTentacoolGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_24_1.4bpp.lz");
+static const u8 sTentacoolGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_24_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites24[] = {
 	{sTentacoolGfx24, ARRAY_COUNT(sTentacoolGfx24)}, 
 	{NULL, 32}, 
@@ -2308,10 +2308,10 @@ static const ax_sprite sTentacoolSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx25[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_25.4bpp");
-static const u8 sTentacoolGfx25_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_25_1.4bpp");
-static const u8 sTentacoolGfx25_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_25_2.4bpp");
-static const u8 sTentacoolGfx25_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_25_3.4bpp");
+static const u8 sTentacoolGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_25.4bpp.lz");
+static const u8 sTentacoolGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_25_1.4bpp.lz");
+static const u8 sTentacoolGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_25_2.4bpp.lz");
+static const u8 sTentacoolGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_25_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites25[] = {
 	{sTentacoolGfx25, ARRAY_COUNT(sTentacoolGfx25)}, 
 	{NULL, 32}, 
@@ -2323,10 +2323,10 @@ static const ax_sprite sTentacoolSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx26[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_26.4bpp");
-static const u8 sTentacoolGfx26_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_26_1.4bpp");
-static const u8 sTentacoolGfx26_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_26_2.4bpp");
-static const u8 sTentacoolGfx26_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_26_3.4bpp");
+static const u8 sTentacoolGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_26.4bpp.lz");
+static const u8 sTentacoolGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_26_1.4bpp.lz");
+static const u8 sTentacoolGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_26_2.4bpp.lz");
+static const u8 sTentacoolGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_26_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites26[] = {
 	{sTentacoolGfx26, ARRAY_COUNT(sTentacoolGfx26)}, 
 	{NULL, 32}, 
@@ -2338,9 +2338,9 @@ static const ax_sprite sTentacoolSprites26[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx27[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_27.4bpp");
-static const u8 sTentacoolGfx27_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_27_1.4bpp");
-static const u8 sTentacoolGfx27_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_27_2.4bpp");
+static const u8 sTentacoolGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_27.4bpp.lz");
+static const u8 sTentacoolGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_27_1.4bpp.lz");
+static const u8 sTentacoolGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_27_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites27[] = {
 	{NULL, 32}, 
 	{sTentacoolGfx27, ARRAY_COUNT(sTentacoolGfx27)}, 
@@ -2351,9 +2351,9 @@ static const ax_sprite sTentacoolSprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx28[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_28.4bpp");
-static const u8 sTentacoolGfx28_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_28_1.4bpp");
-static const u8 sTentacoolGfx28_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_28_2.4bpp");
+static const u8 sTentacoolGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_28.4bpp.lz");
+static const u8 sTentacoolGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_28_1.4bpp.lz");
+static const u8 sTentacoolGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_28_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites28[] = {
 	{NULL, 64}, 
 	{sTentacoolGfx28, ARRAY_COUNT(sTentacoolGfx28)}, 
@@ -2364,10 +2364,10 @@ static const ax_sprite sTentacoolSprites28[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx29[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_29.4bpp");
-static const u8 sTentacoolGfx29_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_29_1.4bpp");
-static const u8 sTentacoolGfx29_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_29_2.4bpp");
-static const u8 sTentacoolGfx29_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_29_3.4bpp");
+static const u8 sTentacoolGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_29.4bpp.lz");
+static const u8 sTentacoolGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_29_1.4bpp.lz");
+static const u8 sTentacoolGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_29_2.4bpp.lz");
+static const u8 sTentacoolGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_29_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites29[] = {
 	{sTentacoolGfx29, ARRAY_COUNT(sTentacoolGfx29)}, 
 	{NULL, 64}, 
@@ -2379,8 +2379,8 @@ static const ax_sprite sTentacoolSprites29[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx30[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_30.4bpp");
-static const u8 sTentacoolGfx30_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_30_1.4bpp");
+static const u8 sTentacoolGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_30.4bpp.lz");
+static const u8 sTentacoolGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_30_1.4bpp.lz");
 static const ax_sprite sTentacoolSprites30[] = {
 	{NULL, 32}, 
 	{sTentacoolGfx30, ARRAY_COUNT(sTentacoolGfx30)}, 
@@ -2389,9 +2389,9 @@ static const ax_sprite sTentacoolSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx31[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_31.4bpp");
-static const u8 sTentacoolGfx31_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_31_1.4bpp");
-static const u8 sTentacoolGfx31_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_31_2.4bpp");
+static const u8 sTentacoolGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_31.4bpp.lz");
+static const u8 sTentacoolGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_31_1.4bpp.lz");
+static const u8 sTentacoolGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_31_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites31[] = {
 	{sTentacoolGfx31, ARRAY_COUNT(sTentacoolGfx31)}, 
 	{NULL, 32}, 
@@ -2401,10 +2401,10 @@ static const ax_sprite sTentacoolSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx32[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_32.4bpp");
-static const u8 sTentacoolGfx32_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_32_1.4bpp");
-static const u8 sTentacoolGfx32_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_32_2.4bpp");
-static const u8 sTentacoolGfx32_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_32_3.4bpp");
+static const u8 sTentacoolGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_32.4bpp.lz");
+static const u8 sTentacoolGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_32_1.4bpp.lz");
+static const u8 sTentacoolGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_32_2.4bpp.lz");
+static const u8 sTentacoolGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_32_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites32[] = {
 	{sTentacoolGfx32, ARRAY_COUNT(sTentacoolGfx32)}, 
 	{NULL, 64}, 
@@ -2416,8 +2416,8 @@ static const ax_sprite sTentacoolSprites32[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx33[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_33.4bpp");
-static const u8 sTentacoolGfx33_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_33_1.4bpp");
+static const u8 sTentacoolGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_33.4bpp.lz");
+static const u8 sTentacoolGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_33_1.4bpp.lz");
 static const ax_sprite sTentacoolSprites33[] = {
 	{sTentacoolGfx33, ARRAY_COUNT(sTentacoolGfx33)}, 
 	{NULL, 32}, 
@@ -2425,17 +2425,17 @@ static const ax_sprite sTentacoolSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx34[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_34.4bpp");
-static const u8 sTentacoolGfx34_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_34_1.4bpp");
+static const u8 sTentacoolGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_34.4bpp.lz");
+static const u8 sTentacoolGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_34_1.4bpp.lz");
 static const ax_sprite sTentacoolSprites34[] = {
 	{sTentacoolGfx34, ARRAY_COUNT(sTentacoolGfx34)}, 
 	{NULL, 32}, 
 	{sTentacoolGfx34_1, ARRAY_COUNT(sTentacoolGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx35[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_35.4bpp");
-static const u8 sTentacoolGfx35_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_35_1.4bpp");
-static const u8 sTentacoolGfx35_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_35_2.4bpp");
+static const u8 sTentacoolGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_35.4bpp.lz");
+static const u8 sTentacoolGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_35_1.4bpp.lz");
+static const u8 sTentacoolGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_35_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites35[] = {
 	{sTentacoolGfx35, ARRAY_COUNT(sTentacoolGfx35)}, 
 	{NULL, 32}, 
@@ -2445,9 +2445,9 @@ static const ax_sprite sTentacoolSprites35[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx36[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_36.4bpp");
-static const u8 sTentacoolGfx36_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_36_1.4bpp");
-static const u8 sTentacoolGfx36_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_36_2.4bpp");
+static const u8 sTentacoolGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_36.4bpp.lz");
+static const u8 sTentacoolGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_36_1.4bpp.lz");
+static const u8 sTentacoolGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_36_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites36[] = {
 	{sTentacoolGfx36, ARRAY_COUNT(sTentacoolGfx36)}, 
 	{NULL, 32}, 
@@ -2457,9 +2457,9 @@ static const ax_sprite sTentacoolSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx37[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_37.4bpp");
-static const u8 sTentacoolGfx37_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_37_1.4bpp");
-static const u8 sTentacoolGfx37_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_37_2.4bpp");
+static const u8 sTentacoolGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_37.4bpp.lz");
+static const u8 sTentacoolGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_37_1.4bpp.lz");
+static const u8 sTentacoolGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_37_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites37[] = {
 	{sTentacoolGfx37, ARRAY_COUNT(sTentacoolGfx37)}, 
 	{NULL, 32}, 
@@ -2469,9 +2469,9 @@ static const ax_sprite sTentacoolSprites37[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx38[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_38.4bpp");
-static const u8 sTentacoolGfx38_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_38_1.4bpp");
-static const u8 sTentacoolGfx38_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_38_2.4bpp");
+static const u8 sTentacoolGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_38.4bpp.lz");
+static const u8 sTentacoolGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_38_1.4bpp.lz");
+static const u8 sTentacoolGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_38_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites38[] = {
 	{NULL, 32}, 
 	{sTentacoolGfx38, ARRAY_COUNT(sTentacoolGfx38)}, 
@@ -2482,9 +2482,9 @@ static const ax_sprite sTentacoolSprites38[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx39[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_39.4bpp");
-static const u8 sTentacoolGfx39_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_39_1.4bpp");
-static const u8 sTentacoolGfx39_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_39_2.4bpp");
+static const u8 sTentacoolGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_39.4bpp.lz");
+static const u8 sTentacoolGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_39_1.4bpp.lz");
+static const u8 sTentacoolGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_39_2.4bpp.lz");
 static const ax_sprite sTentacoolSprites39[] = {
 	{sTentacoolGfx39, ARRAY_COUNT(sTentacoolGfx39)}, 
 	{NULL, 64}, 
@@ -2494,10 +2494,10 @@ static const ax_sprite sTentacoolSprites39[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx40[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_40.4bpp");
-static const u8 sTentacoolGfx40_1[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_40_1.4bpp");
-static const u8 sTentacoolGfx40_2[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_40_2.4bpp");
-static const u8 sTentacoolGfx40_3[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_40_3.4bpp");
+static const u8 sTentacoolGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_40.4bpp.lz");
+static const u8 sTentacoolGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_40_1.4bpp.lz");
+static const u8 sTentacoolGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_40_2.4bpp.lz");
+static const u8 sTentacoolGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_40_3.4bpp.lz");
 static const ax_sprite sTentacoolSprites40[] = {
 	{sTentacoolGfx40, ARRAY_COUNT(sTentacoolGfx40)}, 
 	{NULL, 32}, 
@@ -2509,37 +2509,37 @@ static const ax_sprite sTentacoolSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx41[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_41.4bpp");
+static const u8 sTentacoolGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_41.4bpp.lz");
 static const ax_sprite sTentacoolSprites41[] = {
 	{sTentacoolGfx41, ARRAY_COUNT(sTentacoolGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx42[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_42.4bpp");
+static const u8 sTentacoolGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_42.4bpp.lz");
 static const ax_sprite sTentacoolSprites42[] = {
 	{sTentacoolGfx42, ARRAY_COUNT(sTentacoolGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx43[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_43.4bpp");
+static const u8 sTentacoolGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_43.4bpp.lz");
 static const ax_sprite sTentacoolSprites43[] = {
 	{sTentacoolGfx43, ARRAY_COUNT(sTentacoolGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx44[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_44.4bpp");
+static const u8 sTentacoolGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_44.4bpp.lz");
 static const ax_sprite sTentacoolSprites44[] = {
 	{sTentacoolGfx44, ARRAY_COUNT(sTentacoolGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx45[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_45.4bpp");
+static const u8 sTentacoolGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_45.4bpp.lz");
 static const ax_sprite sTentacoolSprites45[] = {
 	{sTentacoolGfx45, ARRAY_COUNT(sTentacoolGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx46[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_46.4bpp");
+static const u8 sTentacoolGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_46.4bpp.lz");
 static const ax_sprite sTentacoolSprites46[] = {
 	{sTentacoolGfx46, ARRAY_COUNT(sTentacoolGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sTentacoolGfx47[] = INCBIN_U8("graphics/ax/mon/tentacool/sprite_47.4bpp");
+static const u8 sTentacoolGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/tentacool/sprite_47.4bpp.lz");
 static const ax_sprite sTentacoolSprites47[] = {
 	{sTentacoolGfx47, ARRAY_COUNT(sTentacoolGfx47)}, 
 	{NULL, 0}

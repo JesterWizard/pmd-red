@@ -1972,83 +1972,83 @@ static const ax_anim sSealeoAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSealeoGfx1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_1.4bpp");
+static const u8 sSealeoGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_1.4bpp.lz");
 static const ax_sprite sSealeoSprites1[] = {
 	{sSealeoGfx1, ARRAY_COUNT(sSealeoGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_2.4bpp");
+static const u8 sSealeoGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_2.4bpp.lz");
 static const ax_sprite sSealeoSprites2[] = {
 	{sSealeoGfx2, ARRAY_COUNT(sSealeoGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx3[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_3.4bpp");
+static const u8 sSealeoGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_3.4bpp.lz");
 static const ax_sprite sSealeoSprites3[] = {
 	{sSealeoGfx3, ARRAY_COUNT(sSealeoGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx4[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_4.4bpp");
+static const u8 sSealeoGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_4.4bpp.lz");
 static const ax_sprite sSealeoSprites4[] = {
 	{sSealeoGfx4, ARRAY_COUNT(sSealeoGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx5[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_5.4bpp");
+static const u8 sSealeoGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_5.4bpp.lz");
 static const ax_sprite sSealeoSprites5[] = {
 	{sSealeoGfx5, ARRAY_COUNT(sSealeoGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx6[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_6.4bpp");
+static const u8 sSealeoGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_6.4bpp.lz");
 static const ax_sprite sSealeoSprites6[] = {
 	{sSealeoGfx6, ARRAY_COUNT(sSealeoGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx7[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_7.4bpp");
+static const u8 sSealeoGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_7.4bpp.lz");
 static const ax_sprite sSealeoSprites7[] = {
 	{sSealeoGfx7, ARRAY_COUNT(sSealeoGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx8[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_8.4bpp");
+static const u8 sSealeoGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_8.4bpp.lz");
 static const ax_sprite sSealeoSprites8[] = {
 	{sSealeoGfx8, ARRAY_COUNT(sSealeoGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx9[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_9.4bpp");
+static const u8 sSealeoGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_9.4bpp.lz");
 static const ax_sprite sSealeoSprites9[] = {
 	{sSealeoGfx9, ARRAY_COUNT(sSealeoGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx10[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_10.4bpp");
+static const u8 sSealeoGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_10.4bpp.lz");
 static const ax_sprite sSealeoSprites10[] = {
 	{sSealeoGfx10, ARRAY_COUNT(sSealeoGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx11[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_11.4bpp");
+static const u8 sSealeoGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_11.4bpp.lz");
 static const ax_sprite sSealeoSprites11[] = {
 	{sSealeoGfx11, ARRAY_COUNT(sSealeoGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx12[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_12.4bpp");
+static const u8 sSealeoGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_12.4bpp.lz");
 static const ax_sprite sSealeoSprites12[] = {
 	{sSealeoGfx12, ARRAY_COUNT(sSealeoGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx13[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_13.4bpp");
+static const u8 sSealeoGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_13.4bpp.lz");
 static const ax_sprite sSealeoSprites13[] = {
 	{sSealeoGfx13, ARRAY_COUNT(sSealeoGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx14[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_14.4bpp");
+static const u8 sSealeoGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_14.4bpp.lz");
 static const ax_sprite sSealeoSprites14[] = {
 	{sSealeoGfx14, ARRAY_COUNT(sSealeoGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx15[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_15.4bpp");
+static const u8 sSealeoGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_15.4bpp.lz");
 static const ax_sprite sSealeoSprites15[] = {
 	{sSealeoGfx15, ARRAY_COUNT(sSealeoGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx16[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_16.4bpp");
-static const u8 sSealeoGfx16_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_16_1.4bpp");
+static const u8 sSealeoGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_16.4bpp.lz");
+static const u8 sSealeoGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_16_1.4bpp.lz");
 static const ax_sprite sSealeoSprites16[] = {
 	{NULL, 32}, 
 	{sSealeoGfx16, ARRAY_COUNT(sSealeoGfx16)}, 
@@ -2057,9 +2057,9 @@ static const ax_sprite sSealeoSprites16[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx17[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_17.4bpp");
-static const u8 sSealeoGfx17_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_17_1.4bpp");
-static const u8 sSealeoGfx17_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_17_2.4bpp");
+static const u8 sSealeoGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_17.4bpp.lz");
+static const u8 sSealeoGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_17_1.4bpp.lz");
+static const u8 sSealeoGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_17_2.4bpp.lz");
 static const ax_sprite sSealeoSprites17[] = {
 	{sSealeoGfx17, ARRAY_COUNT(sSealeoGfx17)}, 
 	{NULL, 32}, 
@@ -2069,8 +2069,8 @@ static const ax_sprite sSealeoSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx18[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_18.4bpp");
-static const u8 sSealeoGfx18_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_18_1.4bpp");
+static const u8 sSealeoGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_18.4bpp.lz");
+static const u8 sSealeoGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_18_1.4bpp.lz");
 static const ax_sprite sSealeoSprites18[] = {
 	{NULL, 96}, 
 	{sSealeoGfx18, ARRAY_COUNT(sSealeoGfx18)}, 
@@ -2079,9 +2079,9 @@ static const ax_sprite sSealeoSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx19[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_19.4bpp");
-static const u8 sSealeoGfx19_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_19_1.4bpp");
-static const u8 sSealeoGfx19_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_19_2.4bpp");
+static const u8 sSealeoGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_19.4bpp.lz");
+static const u8 sSealeoGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_19_1.4bpp.lz");
+static const u8 sSealeoGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_19_2.4bpp.lz");
 static const ax_sprite sSealeoSprites19[] = {
 	{sSealeoGfx19, ARRAY_COUNT(sSealeoGfx19)}, 
 	{NULL, 32}, 
@@ -2091,28 +2091,28 @@ static const ax_sprite sSealeoSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx20[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_20.4bpp");
-static const u8 sSealeoGfx20_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_20_1.4bpp");
+static const u8 sSealeoGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_20.4bpp.lz");
+static const u8 sSealeoGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_20_1.4bpp.lz");
 static const ax_sprite sSealeoSprites20[] = {
 	{sSealeoGfx20, ARRAY_COUNT(sSealeoGfx20)}, 
 	{NULL, 64}, 
 	{sSealeoGfx20_1, ARRAY_COUNT(sSealeoGfx20_1)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx21[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_21.4bpp");
+static const u8 sSealeoGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_21.4bpp.lz");
 static const ax_sprite sSealeoSprites21[] = {
 	{sSealeoGfx21, ARRAY_COUNT(sSealeoGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx22[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_22.4bpp");
+static const u8 sSealeoGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_22.4bpp.lz");
 static const ax_sprite sSealeoSprites22[] = {
 	{sSealeoGfx22, ARRAY_COUNT(sSealeoGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx23[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_23.4bpp");
-static const u8 sSealeoGfx23_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_23_1.4bpp");
-static const u8 sSealeoGfx23_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_23_2.4bpp");
-static const u8 sSealeoGfx23_3[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_23_3.4bpp");
+static const u8 sSealeoGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_23.4bpp.lz");
+static const u8 sSealeoGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_23_1.4bpp.lz");
+static const u8 sSealeoGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_23_2.4bpp.lz");
+static const u8 sSealeoGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_23_3.4bpp.lz");
 static const ax_sprite sSealeoSprites23[] = {
 	{sSealeoGfx23, ARRAY_COUNT(sSealeoGfx23)}, 
 	{NULL, 32}, 
@@ -2123,29 +2123,29 @@ static const ax_sprite sSealeoSprites23[] = {
 	{sSealeoGfx23_3, ARRAY_COUNT(sSealeoGfx23_3)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx24[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_24.4bpp");
-static const u8 sSealeoGfx24_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_24_1.4bpp");
+static const u8 sSealeoGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_24.4bpp.lz");
+static const u8 sSealeoGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_24_1.4bpp.lz");
 static const ax_sprite sSealeoSprites24[] = {
 	{sSealeoGfx24, ARRAY_COUNT(sSealeoGfx24)}, 
 	{NULL, 32}, 
 	{sSealeoGfx24_1, ARRAY_COUNT(sSealeoGfx24_1)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx25[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_25.4bpp");
+static const u8 sSealeoGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_25.4bpp.lz");
 static const ax_sprite sSealeoSprites25[] = {
 	{NULL, 32}, 
 	{sSealeoGfx25, ARRAY_COUNT(sSealeoGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx26[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_26.4bpp");
+static const u8 sSealeoGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_26.4bpp.lz");
 static const ax_sprite sSealeoSprites26[] = {
 	{sSealeoGfx26, ARRAY_COUNT(sSealeoGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx27[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_27.4bpp");
-static const u8 sSealeoGfx27_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_27_1.4bpp");
-static const u8 sSealeoGfx27_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_27_2.4bpp");
-static const u8 sSealeoGfx27_3[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_27_3.4bpp");
+static const u8 sSealeoGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_27.4bpp.lz");
+static const u8 sSealeoGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_27_1.4bpp.lz");
+static const u8 sSealeoGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_27_2.4bpp.lz");
+static const u8 sSealeoGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_27_3.4bpp.lz");
 static const ax_sprite sSealeoSprites27[] = {
 	{sSealeoGfx27, ARRAY_COUNT(sSealeoGfx27)}, 
 	{NULL, 32}, 
@@ -2156,8 +2156,8 @@ static const ax_sprite sSealeoSprites27[] = {
 	{sSealeoGfx27_3, ARRAY_COUNT(sSealeoGfx27_3)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx28[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_28.4bpp");
-static const u8 sSealeoGfx28_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_28_1.4bpp");
+static const u8 sSealeoGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_28.4bpp.lz");
+static const u8 sSealeoGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_28_1.4bpp.lz");
 static const ax_sprite sSealeoSprites28[] = {
 	{sSealeoGfx28, ARRAY_COUNT(sSealeoGfx28)}, 
 	{NULL, 32}, 
@@ -2165,10 +2165,10 @@ static const ax_sprite sSealeoSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx29[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_29.4bpp");
-static const u8 sSealeoGfx29_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_29_1.4bpp");
-static const u8 sSealeoGfx29_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_29_2.4bpp");
-static const u8 sSealeoGfx29_3[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_29_3.4bpp");
+static const u8 sSealeoGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_29.4bpp.lz");
+static const u8 sSealeoGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_29_1.4bpp.lz");
+static const u8 sSealeoGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_29_2.4bpp.lz");
+static const u8 sSealeoGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_29_3.4bpp.lz");
 static const ax_sprite sSealeoSprites29[] = {
 	{sSealeoGfx29, ARRAY_COUNT(sSealeoGfx29)}, 
 	{NULL, 32}, 
@@ -2180,10 +2180,10 @@ static const ax_sprite sSealeoSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx30[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_30.4bpp");
-static const u8 sSealeoGfx30_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_30_1.4bpp");
-static const u8 sSealeoGfx30_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_30_2.4bpp");
-static const u8 sSealeoGfx30_3[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_30_3.4bpp");
+static const u8 sSealeoGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_30.4bpp.lz");
+static const u8 sSealeoGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_30_1.4bpp.lz");
+static const u8 sSealeoGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_30_2.4bpp.lz");
+static const u8 sSealeoGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_30_3.4bpp.lz");
 static const ax_sprite sSealeoSprites30[] = {
 	{sSealeoGfx30, ARRAY_COUNT(sSealeoGfx30)}, 
 	{NULL, 32}, 
@@ -2195,9 +2195,9 @@ static const ax_sprite sSealeoSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx31[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_31.4bpp");
-static const u8 sSealeoGfx31_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_31_1.4bpp");
-static const u8 sSealeoGfx31_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_31_2.4bpp");
+static const u8 sSealeoGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_31.4bpp.lz");
+static const u8 sSealeoGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_31_1.4bpp.lz");
+static const u8 sSealeoGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_31_2.4bpp.lz");
 static const ax_sprite sSealeoSprites31[] = {
 	{NULL, 32}, 
 	{sSealeoGfx31, ARRAY_COUNT(sSealeoGfx31)}, 
@@ -2207,9 +2207,9 @@ static const ax_sprite sSealeoSprites31[] = {
 	{sSealeoGfx31_2, ARRAY_COUNT(sSealeoGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx32[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_32.4bpp");
-static const u8 sSealeoGfx32_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_32_1.4bpp");
-static const u8 sSealeoGfx32_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_32_2.4bpp");
+static const u8 sSealeoGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_32.4bpp.lz");
+static const u8 sSealeoGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_32_1.4bpp.lz");
+static const u8 sSealeoGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_32_2.4bpp.lz");
 static const ax_sprite sSealeoSprites32[] = {
 	{sSealeoGfx32, ARRAY_COUNT(sSealeoGfx32)}, 
 	{NULL, 32}, 
@@ -2219,17 +2219,17 @@ static const ax_sprite sSealeoSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx33[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_33.4bpp");
+static const u8 sSealeoGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_33.4bpp.lz");
 static const ax_sprite sSealeoSprites33[] = {
 	{NULL, 96}, 
 	{sSealeoGfx33, ARRAY_COUNT(sSealeoGfx33)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx34[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_34.4bpp");
-static const u8 sSealeoGfx34_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_34_1.4bpp");
-static const u8 sSealeoGfx34_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_34_2.4bpp");
-static const u8 sSealeoGfx34_3[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_34_3.4bpp");
+static const u8 sSealeoGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_34.4bpp.lz");
+static const u8 sSealeoGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_34_1.4bpp.lz");
+static const u8 sSealeoGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_34_2.4bpp.lz");
+static const u8 sSealeoGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_34_3.4bpp.lz");
 static const ax_sprite sSealeoSprites34[] = {
 	{sSealeoGfx34, ARRAY_COUNT(sSealeoGfx34)}, 
 	{NULL, 32}, 
@@ -2240,28 +2240,28 @@ static const ax_sprite sSealeoSprites34[] = {
 	{sSealeoGfx34_3, ARRAY_COUNT(sSealeoGfx34_3)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx35[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_35.4bpp");
-static const u8 sSealeoGfx35_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_35_1.4bpp");
+static const u8 sSealeoGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_35.4bpp.lz");
+static const u8 sSealeoGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_35_1.4bpp.lz");
 static const ax_sprite sSealeoSprites35[] = {
 	{sSealeoGfx35, ARRAY_COUNT(sSealeoGfx35)}, 
 	{NULL, 64}, 
 	{sSealeoGfx35_1, ARRAY_COUNT(sSealeoGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx36[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_36.4bpp");
+static const u8 sSealeoGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_36.4bpp.lz");
 static const ax_sprite sSealeoSprites36[] = {
 	{sSealeoGfx36, ARRAY_COUNT(sSealeoGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx37[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_37.4bpp");
+static const u8 sSealeoGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_37.4bpp.lz");
 static const ax_sprite sSealeoSprites37[] = {
 	{sSealeoGfx37, ARRAY_COUNT(sSealeoGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx38[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_38.4bpp");
-static const u8 sSealeoGfx38_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_38_1.4bpp");
-static const u8 sSealeoGfx38_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_38_2.4bpp");
-static const u8 sSealeoGfx38_3[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_38_3.4bpp");
+static const u8 sSealeoGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_38.4bpp.lz");
+static const u8 sSealeoGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_38_1.4bpp.lz");
+static const u8 sSealeoGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_38_2.4bpp.lz");
+static const u8 sSealeoGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_38_3.4bpp.lz");
 static const ax_sprite sSealeoSprites38[] = {
 	{sSealeoGfx38, ARRAY_COUNT(sSealeoGfx38)}, 
 	{NULL, 32}, 
@@ -2272,8 +2272,8 @@ static const ax_sprite sSealeoSprites38[] = {
 	{sSealeoGfx38_3, ARRAY_COUNT(sSealeoGfx38_3)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx39[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_39.4bpp");
-static const u8 sSealeoGfx39_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_39_1.4bpp");
+static const u8 sSealeoGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_39.4bpp.lz");
+static const u8 sSealeoGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_39_1.4bpp.lz");
 static const ax_sprite sSealeoSprites39[] = {
 	{sSealeoGfx39, ARRAY_COUNT(sSealeoGfx39)}, 
 	{NULL, 64}, 
@@ -2281,47 +2281,47 @@ static const ax_sprite sSealeoSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx40[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_40.4bpp");
+static const u8 sSealeoGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_40.4bpp.lz");
 static const ax_sprite sSealeoSprites40[] = {
 	{sSealeoGfx40, ARRAY_COUNT(sSealeoGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx41[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_41.4bpp");
+static const u8 sSealeoGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_41.4bpp.lz");
 static const ax_sprite sSealeoSprites41[] = {
 	{sSealeoGfx41, ARRAY_COUNT(sSealeoGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx42[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_42.4bpp");
-static const u8 sSealeoGfx42_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_42_1.4bpp");
+static const u8 sSealeoGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_42.4bpp.lz");
+static const u8 sSealeoGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_42_1.4bpp.lz");
 static const ax_sprite sSealeoSprites42[] = {
 	{sSealeoGfx42, ARRAY_COUNT(sSealeoGfx42)}, 
 	{NULL, 32}, 
 	{sSealeoGfx42_1, ARRAY_COUNT(sSealeoGfx42_1)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx43[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_43.4bpp");
+static const u8 sSealeoGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_43.4bpp.lz");
 static const ax_sprite sSealeoSprites43[] = {
 	{sSealeoGfx43, ARRAY_COUNT(sSealeoGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx44[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_44.4bpp");
+static const u8 sSealeoGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_44.4bpp.lz");
 static const ax_sprite sSealeoSprites44[] = {
 	{sSealeoGfx44, ARRAY_COUNT(sSealeoGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx45[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_45.4bpp");
+static const u8 sSealeoGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_45.4bpp.lz");
 static const ax_sprite sSealeoSprites45[] = {
 	{sSealeoGfx45, ARRAY_COUNT(sSealeoGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx46[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_46.4bpp");
+static const u8 sSealeoGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_46.4bpp.lz");
 static const ax_sprite sSealeoSprites46[] = {
 	{sSealeoGfx46, ARRAY_COUNT(sSealeoGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx47[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_47.4bpp");
-static const u8 sSealeoGfx47_1[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_47_1.4bpp");
-static const u8 sSealeoGfx47_2[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_47_2.4bpp");
+static const u8 sSealeoGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_47.4bpp.lz");
+static const u8 sSealeoGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_47_1.4bpp.lz");
+static const u8 sSealeoGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_47_2.4bpp.lz");
 static const ax_sprite sSealeoSprites47[] = {
 	{NULL, 32}, 
 	{sSealeoGfx47, ARRAY_COUNT(sSealeoGfx47)}, 
@@ -2332,37 +2332,37 @@ static const ax_sprite sSealeoSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx48[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_48.4bpp");
+static const u8 sSealeoGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_48.4bpp.lz");
 static const ax_sprite sSealeoSprites48[] = {
 	{sSealeoGfx48, ARRAY_COUNT(sSealeoGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx49[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_49.4bpp");
+static const u8 sSealeoGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_49.4bpp.lz");
 static const ax_sprite sSealeoSprites49[] = {
 	{sSealeoGfx49, ARRAY_COUNT(sSealeoGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx50[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_50.4bpp");
+static const u8 sSealeoGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_50.4bpp.lz");
 static const ax_sprite sSealeoSprites50[] = {
 	{sSealeoGfx50, ARRAY_COUNT(sSealeoGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx51[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_51.4bpp");
+static const u8 sSealeoGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_51.4bpp.lz");
 static const ax_sprite sSealeoSprites51[] = {
 	{sSealeoGfx51, ARRAY_COUNT(sSealeoGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx52[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_52.4bpp");
+static const u8 sSealeoGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_52.4bpp.lz");
 static const ax_sprite sSealeoSprites52[] = {
 	{sSealeoGfx52, ARRAY_COUNT(sSealeoGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx53[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_53.4bpp");
+static const u8 sSealeoGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_53.4bpp.lz");
 static const ax_sprite sSealeoSprites53[] = {
 	{sSealeoGfx53, ARRAY_COUNT(sSealeoGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sSealeoGfx54[] = INCBIN_U8("graphics/ax/mon/sealeo/sprite_54.4bpp");
+static const u8 sSealeoGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/sealeo/sprite_54.4bpp.lz");
 static const ax_sprite sSealeoSprites54[] = {
 	{sSealeoGfx54, ARRAY_COUNT(sSealeoGfx54)}, 
 	{NULL, 0}

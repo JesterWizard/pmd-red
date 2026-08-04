@@ -3002,156 +3002,156 @@ static const ax_anim sDeoxysAttackAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDeoxysAttackGfx1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_1.4bpp");
+static const u8 sDeoxysAttackGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_1.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites1[] = {
 	{sDeoxysAttackGfx1, ARRAY_COUNT(sDeoxysAttackGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx2[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_2.4bpp");
+static const u8 sDeoxysAttackGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_2.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites2[] = {
 	{sDeoxysAttackGfx2, ARRAY_COUNT(sDeoxysAttackGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx3[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_3.4bpp");
+static const u8 sDeoxysAttackGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_3.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites3[] = {
 	{sDeoxysAttackGfx3, ARRAY_COUNT(sDeoxysAttackGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx4[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_4.4bpp");
+static const u8 sDeoxysAttackGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_4.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites4[] = {
 	{sDeoxysAttackGfx4, ARRAY_COUNT(sDeoxysAttackGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx5[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_5.4bpp");
+static const u8 sDeoxysAttackGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_5.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites5[] = {
 	{sDeoxysAttackGfx5, ARRAY_COUNT(sDeoxysAttackGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx6[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_6.4bpp");
+static const u8 sDeoxysAttackGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_6.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites6[] = {
 	{sDeoxysAttackGfx6, ARRAY_COUNT(sDeoxysAttackGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx7[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_7.4bpp");
+static const u8 sDeoxysAttackGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_7.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites7[] = {
 	{sDeoxysAttackGfx7, ARRAY_COUNT(sDeoxysAttackGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx8[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_8.4bpp");
+static const u8 sDeoxysAttackGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_8.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites8[] = {
 	{sDeoxysAttackGfx8, ARRAY_COUNT(sDeoxysAttackGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx9[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_9.4bpp");
+static const u8 sDeoxysAttackGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_9.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites9[] = {
 	{sDeoxysAttackGfx9, ARRAY_COUNT(sDeoxysAttackGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx10[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_10.4bpp");
+static const u8 sDeoxysAttackGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_10.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites10[] = {
 	{sDeoxysAttackGfx10, ARRAY_COUNT(sDeoxysAttackGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx11[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_11.4bpp");
+static const u8 sDeoxysAttackGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_11.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites11[] = {
 	{sDeoxysAttackGfx11, ARRAY_COUNT(sDeoxysAttackGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx12[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_12.4bpp");
+static const u8 sDeoxysAttackGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_12.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites12[] = {
 	{sDeoxysAttackGfx12, ARRAY_COUNT(sDeoxysAttackGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx13[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_13.4bpp");
+static const u8 sDeoxysAttackGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_13.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites13[] = {
 	{sDeoxysAttackGfx13, ARRAY_COUNT(sDeoxysAttackGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx14[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_14.4bpp");
+static const u8 sDeoxysAttackGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_14.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites14[] = {
 	{sDeoxysAttackGfx14, ARRAY_COUNT(sDeoxysAttackGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx15[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_15.4bpp");
+static const u8 sDeoxysAttackGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_15.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites15[] = {
 	{sDeoxysAttackGfx15, ARRAY_COUNT(sDeoxysAttackGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx16[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_16.4bpp");
+static const u8 sDeoxysAttackGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_16.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites16[] = {
 	{sDeoxysAttackGfx16, ARRAY_COUNT(sDeoxysAttackGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx17[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_17.4bpp");
+static const u8 sDeoxysAttackGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_17.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites17[] = {
 	{sDeoxysAttackGfx17, ARRAY_COUNT(sDeoxysAttackGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx18[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_18.4bpp");
+static const u8 sDeoxysAttackGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_18.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites18[] = {
 	{sDeoxysAttackGfx18, ARRAY_COUNT(sDeoxysAttackGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx19[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_19.4bpp");
+static const u8 sDeoxysAttackGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_19.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites19[] = {
 	{sDeoxysAttackGfx19, ARRAY_COUNT(sDeoxysAttackGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx20[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_20.4bpp");
+static const u8 sDeoxysAttackGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_20.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites20[] = {
 	{sDeoxysAttackGfx20, ARRAY_COUNT(sDeoxysAttackGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx21[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_21.4bpp");
+static const u8 sDeoxysAttackGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_21.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites21[] = {
 	{sDeoxysAttackGfx21, ARRAY_COUNT(sDeoxysAttackGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx22[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_22.4bpp");
+static const u8 sDeoxysAttackGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_22.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites22[] = {
 	{sDeoxysAttackGfx22, ARRAY_COUNT(sDeoxysAttackGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx23[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_23.4bpp");
+static const u8 sDeoxysAttackGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_23.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites23[] = {
 	{sDeoxysAttackGfx23, ARRAY_COUNT(sDeoxysAttackGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx24[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_24.4bpp");
+static const u8 sDeoxysAttackGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_24.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites24[] = {
 	{sDeoxysAttackGfx24, ARRAY_COUNT(sDeoxysAttackGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx25[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_25.4bpp");
+static const u8 sDeoxysAttackGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_25.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites25[] = {
 	{sDeoxysAttackGfx25, ARRAY_COUNT(sDeoxysAttackGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx26[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_26.4bpp");
+static const u8 sDeoxysAttackGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_26.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites26[] = {
 	{sDeoxysAttackGfx26, ARRAY_COUNT(sDeoxysAttackGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx27[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_27.4bpp");
+static const u8 sDeoxysAttackGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_27.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites27[] = {
 	{sDeoxysAttackGfx27, ARRAY_COUNT(sDeoxysAttackGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx28[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_28.4bpp");
+static const u8 sDeoxysAttackGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_28.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites28[] = {
 	{sDeoxysAttackGfx28, ARRAY_COUNT(sDeoxysAttackGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx29[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_29.4bpp");
-static const u8 sDeoxysAttackGfx29_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_29_1.4bpp");
+static const u8 sDeoxysAttackGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_29.4bpp.lz");
+static const u8 sDeoxysAttackGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_29_1.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites29[] = {
 	{sDeoxysAttackGfx29, ARRAY_COUNT(sDeoxysAttackGfx29)}, 
 	{NULL, 32}, 
 	{sDeoxysAttackGfx29_1, ARRAY_COUNT(sDeoxysAttackGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx30[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_30.4bpp");
-static const u8 sDeoxysAttackGfx30_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_30_1.4bpp");
+static const u8 sDeoxysAttackGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_30.4bpp.lz");
+static const u8 sDeoxysAttackGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_30_1.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites30[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx30, ARRAY_COUNT(sDeoxysAttackGfx30)}, 
@@ -3159,10 +3159,10 @@ static const ax_sprite sDeoxysAttackSprites30[] = {
 	{sDeoxysAttackGfx30_1, ARRAY_COUNT(sDeoxysAttackGfx30_1)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx31[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_31.4bpp");
-static const u8 sDeoxysAttackGfx31_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_31_1.4bpp");
-static const u8 sDeoxysAttackGfx31_2[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_31_2.4bpp");
-static const u8 sDeoxysAttackGfx31_3[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_31_3.4bpp");
+static const u8 sDeoxysAttackGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_31.4bpp.lz");
+static const u8 sDeoxysAttackGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_31_1.4bpp.lz");
+static const u8 sDeoxysAttackGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_31_2.4bpp.lz");
+static const u8 sDeoxysAttackGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_31_3.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites31[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx31, ARRAY_COUNT(sDeoxysAttackGfx31)}, 
@@ -3174,10 +3174,10 @@ static const ax_sprite sDeoxysAttackSprites31[] = {
 	{sDeoxysAttackGfx31_3, ARRAY_COUNT(sDeoxysAttackGfx31_3)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx32[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_32.4bpp");
-static const u8 sDeoxysAttackGfx32_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_32_1.4bpp");
-static const u8 sDeoxysAttackGfx32_2[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_32_2.4bpp");
-static const u8 sDeoxysAttackGfx32_3[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_32_3.4bpp");
+static const u8 sDeoxysAttackGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_32.4bpp.lz");
+static const u8 sDeoxysAttackGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_32_1.4bpp.lz");
+static const u8 sDeoxysAttackGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_32_2.4bpp.lz");
+static const u8 sDeoxysAttackGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_32_3.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites32[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx32, ARRAY_COUNT(sDeoxysAttackGfx32)}, 
@@ -3190,35 +3190,35 @@ static const ax_sprite sDeoxysAttackSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx33[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_33.4bpp");
+static const u8 sDeoxysAttackGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_33.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites33[] = {
 	{sDeoxysAttackGfx33, ARRAY_COUNT(sDeoxysAttackGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx34[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_34.4bpp");
-static const u8 sDeoxysAttackGfx34_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_34_1.4bpp");
+static const u8 sDeoxysAttackGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_34.4bpp.lz");
+static const u8 sDeoxysAttackGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_34_1.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites34[] = {
 	{sDeoxysAttackGfx34, ARRAY_COUNT(sDeoxysAttackGfx34)}, 
 	{NULL, 32}, 
 	{sDeoxysAttackGfx34_1, ARRAY_COUNT(sDeoxysAttackGfx34_1)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx35[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_35.4bpp");
-static const u8 sDeoxysAttackGfx35_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_35_1.4bpp");
+static const u8 sDeoxysAttackGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_35.4bpp.lz");
+static const u8 sDeoxysAttackGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_35_1.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites35[] = {
 	{sDeoxysAttackGfx35, ARRAY_COUNT(sDeoxysAttackGfx35)}, 
 	{NULL, 32}, 
 	{sDeoxysAttackGfx35_1, ARRAY_COUNT(sDeoxysAttackGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx36[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_36.4bpp");
+static const u8 sDeoxysAttackGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_36.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites36[] = {
 	{sDeoxysAttackGfx36, ARRAY_COUNT(sDeoxysAttackGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx37[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_37.4bpp");
-static const u8 sDeoxysAttackGfx37_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_37_1.4bpp");
-static const u8 sDeoxysAttackGfx37_2[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_37_2.4bpp");
+static const u8 sDeoxysAttackGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_37.4bpp.lz");
+static const u8 sDeoxysAttackGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_37_1.4bpp.lz");
+static const u8 sDeoxysAttackGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_37_2.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites37[] = {
 	{sDeoxysAttackGfx37, ARRAY_COUNT(sDeoxysAttackGfx37)}, 
 	{NULL, 32}, 
@@ -3227,43 +3227,43 @@ static const ax_sprite sDeoxysAttackSprites37[] = {
 	{sDeoxysAttackGfx37_2, ARRAY_COUNT(sDeoxysAttackGfx37_2)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx38[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_38.4bpp");
+static const u8 sDeoxysAttackGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_38.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites38[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx38, ARRAY_COUNT(sDeoxysAttackGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx39[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_39.4bpp");
+static const u8 sDeoxysAttackGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_39.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites39[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx39, ARRAY_COUNT(sDeoxysAttackGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx40[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_40.4bpp");
-static const u8 sDeoxysAttackGfx40_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_40_1.4bpp");
+static const u8 sDeoxysAttackGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_40.4bpp.lz");
+static const u8 sDeoxysAttackGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_40_1.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites40[] = {
 	{sDeoxysAttackGfx40, ARRAY_COUNT(sDeoxysAttackGfx40)}, 
 	{NULL, 32}, 
 	{sDeoxysAttackGfx40_1, ARRAY_COUNT(sDeoxysAttackGfx40_1)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx41[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_41.4bpp");
+static const u8 sDeoxysAttackGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_41.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites41[] = {
 	{sDeoxysAttackGfx41, ARRAY_COUNT(sDeoxysAttackGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx42[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_42.4bpp");
+static const u8 sDeoxysAttackGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_42.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites42[] = {
 	{sDeoxysAttackGfx42, ARRAY_COUNT(sDeoxysAttackGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx43[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_43.4bpp");
+static const u8 sDeoxysAttackGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_43.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites43[] = {
 	{sDeoxysAttackGfx43, ARRAY_COUNT(sDeoxysAttackGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx44[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_44.4bpp");
-static const u8 sDeoxysAttackGfx44_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_44_1.4bpp");
+static const u8 sDeoxysAttackGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_44.4bpp.lz");
+static const u8 sDeoxysAttackGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_44_1.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites44[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx44, ARRAY_COUNT(sDeoxysAttackGfx44)}, 
@@ -3271,30 +3271,30 @@ static const ax_sprite sDeoxysAttackSprites44[] = {
 	{sDeoxysAttackGfx44_1, ARRAY_COUNT(sDeoxysAttackGfx44_1)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx45[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_45.4bpp");
+static const u8 sDeoxysAttackGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_45.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites45[] = {
 	{sDeoxysAttackGfx45, ARRAY_COUNT(sDeoxysAttackGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx46[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_46.4bpp");
+static const u8 sDeoxysAttackGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_46.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites46[] = {
 	{sDeoxysAttackGfx46, ARRAY_COUNT(sDeoxysAttackGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx47[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_47.4bpp");
+static const u8 sDeoxysAttackGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_47.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites47[] = {
 	{sDeoxysAttackGfx47, ARRAY_COUNT(sDeoxysAttackGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx48[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_48.4bpp");
+static const u8 sDeoxysAttackGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_48.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites48[] = {
 	{sDeoxysAttackGfx48, ARRAY_COUNT(sDeoxysAttackGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx49[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_49.4bpp");
-static const u8 sDeoxysAttackGfx49_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_49_1.4bpp");
-static const u8 sDeoxysAttackGfx49_2[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_49_2.4bpp");
-static const u8 sDeoxysAttackGfx49_3[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_49_3.4bpp");
+static const u8 sDeoxysAttackGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_49.4bpp.lz");
+static const u8 sDeoxysAttackGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_49_1.4bpp.lz");
+static const u8 sDeoxysAttackGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_49_2.4bpp.lz");
+static const u8 sDeoxysAttackGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_49_3.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites49[] = {
 	{NULL, 64}, 
 	{sDeoxysAttackGfx49, ARRAY_COUNT(sDeoxysAttackGfx49)}, 
@@ -3306,56 +3306,56 @@ static const ax_sprite sDeoxysAttackSprites49[] = {
 	{sDeoxysAttackGfx49_3, ARRAY_COUNT(sDeoxysAttackGfx49_3)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx50[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_50.4bpp");
+static const u8 sDeoxysAttackGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_50.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites50[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx50, ARRAY_COUNT(sDeoxysAttackGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx51[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_51.4bpp");
+static const u8 sDeoxysAttackGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_51.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites51[] = {
 	{sDeoxysAttackGfx51, ARRAY_COUNT(sDeoxysAttackGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx52[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_52.4bpp");
+static const u8 sDeoxysAttackGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_52.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites52[] = {
 	{sDeoxysAttackGfx52, ARRAY_COUNT(sDeoxysAttackGfx52)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx53[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_53.4bpp");
+static const u8 sDeoxysAttackGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_53.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites53[] = {
 	{sDeoxysAttackGfx53, ARRAY_COUNT(sDeoxysAttackGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx54[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_54.4bpp");
+static const u8 sDeoxysAttackGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_54.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites54[] = {
 	{sDeoxysAttackGfx54, ARRAY_COUNT(sDeoxysAttackGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx55[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_55.4bpp");
+static const u8 sDeoxysAttackGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_55.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites55[] = {
 	{sDeoxysAttackGfx55, ARRAY_COUNT(sDeoxysAttackGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx56[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_56.4bpp");
+static const u8 sDeoxysAttackGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_56.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites56[] = {
 	{sDeoxysAttackGfx56, ARRAY_COUNT(sDeoxysAttackGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx57[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_57.4bpp");
+static const u8 sDeoxysAttackGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_57.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites57[] = {
 	{sDeoxysAttackGfx57, ARRAY_COUNT(sDeoxysAttackGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx58[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_58.4bpp");
+static const u8 sDeoxysAttackGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_58.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites58[] = {
 	{sDeoxysAttackGfx58, ARRAY_COUNT(sDeoxysAttackGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx59[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_59.4bpp");
-static const u8 sDeoxysAttackGfx59_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_59_1.4bpp");
-static const u8 sDeoxysAttackGfx59_2[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_59_2.4bpp");
+static const u8 sDeoxysAttackGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_59.4bpp.lz");
+static const u8 sDeoxysAttackGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_59_1.4bpp.lz");
+static const u8 sDeoxysAttackGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_59_2.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites59[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx59, ARRAY_COUNT(sDeoxysAttackGfx59)}, 
@@ -3365,316 +3365,316 @@ static const ax_sprite sDeoxysAttackSprites59[] = {
 	{sDeoxysAttackGfx59_2, ARRAY_COUNT(sDeoxysAttackGfx59_2)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx60[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_60.4bpp");
+static const u8 sDeoxysAttackGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_60.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites60[] = {
 	{sDeoxysAttackGfx60, ARRAY_COUNT(sDeoxysAttackGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx61[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_61.4bpp");
+static const u8 sDeoxysAttackGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_61.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites61[] = {
 	{sDeoxysAttackGfx61, ARRAY_COUNT(sDeoxysAttackGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx62[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_62.4bpp");
+static const u8 sDeoxysAttackGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_62.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites62[] = {
 	{sDeoxysAttackGfx62, ARRAY_COUNT(sDeoxysAttackGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx63[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_63.4bpp");
-static const u8 sDeoxysAttackGfx63_1[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_63_1.4bpp");
+static const u8 sDeoxysAttackGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_63.4bpp.lz");
+static const u8 sDeoxysAttackGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_63_1.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites63[] = {
 	{sDeoxysAttackGfx63, ARRAY_COUNT(sDeoxysAttackGfx63)}, 
 	{NULL, 32}, 
 	{sDeoxysAttackGfx63_1, ARRAY_COUNT(sDeoxysAttackGfx63_1)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx64[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_64.4bpp");
+static const u8 sDeoxysAttackGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_64.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites64[] = {
 	{sDeoxysAttackGfx64, ARRAY_COUNT(sDeoxysAttackGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx65[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_65.4bpp");
+static const u8 sDeoxysAttackGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_65.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites65[] = {
 	{sDeoxysAttackGfx65, ARRAY_COUNT(sDeoxysAttackGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx66[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_66.4bpp");
+static const u8 sDeoxysAttackGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_66.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites66[] = {
 	{sDeoxysAttackGfx66, ARRAY_COUNT(sDeoxysAttackGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx67[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_67.4bpp");
+static const u8 sDeoxysAttackGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_67.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites67[] = {
 	{sDeoxysAttackGfx67, ARRAY_COUNT(sDeoxysAttackGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx68[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_68.4bpp");
+static const u8 sDeoxysAttackGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_68.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites68[] = {
 	{sDeoxysAttackGfx68, ARRAY_COUNT(sDeoxysAttackGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx69[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_69.4bpp");
+static const u8 sDeoxysAttackGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_69.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites69[] = {
 	{sDeoxysAttackGfx69, ARRAY_COUNT(sDeoxysAttackGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx70[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_70.4bpp");
+static const u8 sDeoxysAttackGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_70.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites70[] = {
 	{sDeoxysAttackGfx70, ARRAY_COUNT(sDeoxysAttackGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx71[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_71.4bpp");
+static const u8 sDeoxysAttackGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_71.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites71[] = {
 	{sDeoxysAttackGfx71, ARRAY_COUNT(sDeoxysAttackGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx72[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_72.4bpp");
+static const u8 sDeoxysAttackGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_72.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites72[] = {
 	{sDeoxysAttackGfx72, ARRAY_COUNT(sDeoxysAttackGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx73[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_73.4bpp");
+static const u8 sDeoxysAttackGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_73.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites73[] = {
 	{sDeoxysAttackGfx73, ARRAY_COUNT(sDeoxysAttackGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx74[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_74.4bpp");
+static const u8 sDeoxysAttackGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_74.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites74[] = {
 	{sDeoxysAttackGfx74, ARRAY_COUNT(sDeoxysAttackGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx75[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_75.4bpp");
+static const u8 sDeoxysAttackGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_75.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites75[] = {
 	{sDeoxysAttackGfx75, ARRAY_COUNT(sDeoxysAttackGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx76[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_76.4bpp");
+static const u8 sDeoxysAttackGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_76.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites76[] = {
 	{sDeoxysAttackGfx76, ARRAY_COUNT(sDeoxysAttackGfx76)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx77[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_77.4bpp");
+static const u8 sDeoxysAttackGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_77.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites77[] = {
 	{sDeoxysAttackGfx77, ARRAY_COUNT(sDeoxysAttackGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx78[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_78.4bpp");
+static const u8 sDeoxysAttackGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_78.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites78[] = {
 	{sDeoxysAttackGfx78, ARRAY_COUNT(sDeoxysAttackGfx78)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx79[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_79.4bpp");
+static const u8 sDeoxysAttackGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_79.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites79[] = {
 	{sDeoxysAttackGfx79, ARRAY_COUNT(sDeoxysAttackGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx80[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_80.4bpp");
+static const u8 sDeoxysAttackGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_80.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites80[] = {
 	{sDeoxysAttackGfx80, ARRAY_COUNT(sDeoxysAttackGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx81[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_81.4bpp");
+static const u8 sDeoxysAttackGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_81.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites81[] = {
 	{sDeoxysAttackGfx81, ARRAY_COUNT(sDeoxysAttackGfx81)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx82[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_82.4bpp");
+static const u8 sDeoxysAttackGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_82.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites82[] = {
 	{sDeoxysAttackGfx82, ARRAY_COUNT(sDeoxysAttackGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx83[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_83.4bpp");
+static const u8 sDeoxysAttackGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_83.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites83[] = {
 	{sDeoxysAttackGfx83, ARRAY_COUNT(sDeoxysAttackGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx84[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_84.4bpp");
+static const u8 sDeoxysAttackGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_84.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites84[] = {
 	{sDeoxysAttackGfx84, ARRAY_COUNT(sDeoxysAttackGfx84)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx85[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_85.4bpp");
+static const u8 sDeoxysAttackGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_85.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites85[] = {
 	{sDeoxysAttackGfx85, ARRAY_COUNT(sDeoxysAttackGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx86[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_86.4bpp");
+static const u8 sDeoxysAttackGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_86.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites86[] = {
 	{sDeoxysAttackGfx86, ARRAY_COUNT(sDeoxysAttackGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx87[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_87.4bpp");
+static const u8 sDeoxysAttackGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_87.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites87[] = {
 	{sDeoxysAttackGfx87, ARRAY_COUNT(sDeoxysAttackGfx87)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx88[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_88.4bpp");
+static const u8 sDeoxysAttackGfx88[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_88.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites88[] = {
 	{NULL, 32}, 
 	{sDeoxysAttackGfx88, ARRAY_COUNT(sDeoxysAttackGfx88)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx89[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_89.4bpp");
+static const u8 sDeoxysAttackGfx89[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_89.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites89[] = {
 	{sDeoxysAttackGfx89, ARRAY_COUNT(sDeoxysAttackGfx89)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx90[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_90.4bpp");
+static const u8 sDeoxysAttackGfx90[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_90.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites90[] = {
 	{sDeoxysAttackGfx90, ARRAY_COUNT(sDeoxysAttackGfx90)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx91[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_91.4bpp");
+static const u8 sDeoxysAttackGfx91[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_91.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites91[] = {
 	{sDeoxysAttackGfx91, ARRAY_COUNT(sDeoxysAttackGfx91)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx92[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_92.4bpp");
+static const u8 sDeoxysAttackGfx92[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_92.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites92[] = {
 	{sDeoxysAttackGfx92, ARRAY_COUNT(sDeoxysAttackGfx92)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx93[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_93.4bpp");
+static const u8 sDeoxysAttackGfx93[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_93.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites93[] = {
 	{sDeoxysAttackGfx93, ARRAY_COUNT(sDeoxysAttackGfx93)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx94[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_94.4bpp");
+static const u8 sDeoxysAttackGfx94[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_94.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites94[] = {
 	{sDeoxysAttackGfx94, ARRAY_COUNT(sDeoxysAttackGfx94)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx95[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_95.4bpp");
+static const u8 sDeoxysAttackGfx95[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_95.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites95[] = {
 	{sDeoxysAttackGfx95, ARRAY_COUNT(sDeoxysAttackGfx95)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx96[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_96.4bpp");
+static const u8 sDeoxysAttackGfx96[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_96.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites96[] = {
 	{sDeoxysAttackGfx96, ARRAY_COUNT(sDeoxysAttackGfx96)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx97[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_97.4bpp");
+static const u8 sDeoxysAttackGfx97[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_97.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites97[] = {
 	{sDeoxysAttackGfx97, ARRAY_COUNT(sDeoxysAttackGfx97)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx98[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_98.4bpp");
+static const u8 sDeoxysAttackGfx98[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_98.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites98[] = {
 	{sDeoxysAttackGfx98, ARRAY_COUNT(sDeoxysAttackGfx98)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx99[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_99.4bpp");
+static const u8 sDeoxysAttackGfx99[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_99.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites99[] = {
 	{sDeoxysAttackGfx99, ARRAY_COUNT(sDeoxysAttackGfx99)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx100[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_100.4bpp");
+static const u8 sDeoxysAttackGfx100[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_100.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites100[] = {
 	{sDeoxysAttackGfx100, ARRAY_COUNT(sDeoxysAttackGfx100)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx101[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_101.4bpp");
+static const u8 sDeoxysAttackGfx101[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_101.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites101[] = {
 	{sDeoxysAttackGfx101, ARRAY_COUNT(sDeoxysAttackGfx101)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx102[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_102.4bpp");
+static const u8 sDeoxysAttackGfx102[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_102.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites102[] = {
 	{sDeoxysAttackGfx102, ARRAY_COUNT(sDeoxysAttackGfx102)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx103[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_103.4bpp");
+static const u8 sDeoxysAttackGfx103[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_103.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites103[] = {
 	{sDeoxysAttackGfx103, ARRAY_COUNT(sDeoxysAttackGfx103)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx104[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_104.4bpp");
+static const u8 sDeoxysAttackGfx104[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_104.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites104[] = {
 	{sDeoxysAttackGfx104, ARRAY_COUNT(sDeoxysAttackGfx104)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx105[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_105.4bpp");
+static const u8 sDeoxysAttackGfx105[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_105.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites105[] = {
 	{sDeoxysAttackGfx105, ARRAY_COUNT(sDeoxysAttackGfx105)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx106[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_106.4bpp");
+static const u8 sDeoxysAttackGfx106[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_106.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites106[] = {
 	{sDeoxysAttackGfx106, ARRAY_COUNT(sDeoxysAttackGfx106)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx107[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_107.4bpp");
+static const u8 sDeoxysAttackGfx107[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_107.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites107[] = {
 	{sDeoxysAttackGfx107, ARRAY_COUNT(sDeoxysAttackGfx107)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx108[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_108.4bpp");
+static const u8 sDeoxysAttackGfx108[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_108.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites108[] = {
 	{sDeoxysAttackGfx108, ARRAY_COUNT(sDeoxysAttackGfx108)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx109[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_109.4bpp");
+static const u8 sDeoxysAttackGfx109[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_109.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites109[] = {
 	{sDeoxysAttackGfx109, ARRAY_COUNT(sDeoxysAttackGfx109)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx110[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_110.4bpp");
+static const u8 sDeoxysAttackGfx110[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_110.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites110[] = {
 	{sDeoxysAttackGfx110, ARRAY_COUNT(sDeoxysAttackGfx110)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx111[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_111.4bpp");
+static const u8 sDeoxysAttackGfx111[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_111.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites111[] = {
 	{sDeoxysAttackGfx111, ARRAY_COUNT(sDeoxysAttackGfx111)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx112[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_112.4bpp");
+static const u8 sDeoxysAttackGfx112[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_112.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites112[] = {
 	{sDeoxysAttackGfx112, ARRAY_COUNT(sDeoxysAttackGfx112)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx113[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_113.4bpp");
+static const u8 sDeoxysAttackGfx113[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_113.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites113[] = {
 	{sDeoxysAttackGfx113, ARRAY_COUNT(sDeoxysAttackGfx113)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx114[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_114.4bpp");
+static const u8 sDeoxysAttackGfx114[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_114.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites114[] = {
 	{sDeoxysAttackGfx114, ARRAY_COUNT(sDeoxysAttackGfx114)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx115[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_115.4bpp");
+static const u8 sDeoxysAttackGfx115[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_115.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites115[] = {
 	{sDeoxysAttackGfx115, ARRAY_COUNT(sDeoxysAttackGfx115)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx116[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_116.4bpp");
+static const u8 sDeoxysAttackGfx116[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_116.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites116[] = {
 	{sDeoxysAttackGfx116, ARRAY_COUNT(sDeoxysAttackGfx116)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx117[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_117.4bpp");
+static const u8 sDeoxysAttackGfx117[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_117.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites117[] = {
 	{sDeoxysAttackGfx117, ARRAY_COUNT(sDeoxysAttackGfx117)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx118[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_118.4bpp");
+static const u8 sDeoxysAttackGfx118[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_118.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites118[] = {
 	{sDeoxysAttackGfx118, ARRAY_COUNT(sDeoxysAttackGfx118)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx119[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_119.4bpp");
+static const u8 sDeoxysAttackGfx119[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_119.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites119[] = {
 	{sDeoxysAttackGfx119, ARRAY_COUNT(sDeoxysAttackGfx119)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx120[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_120.4bpp");
+static const u8 sDeoxysAttackGfx120[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_120.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites120[] = {
 	{sDeoxysAttackGfx120, ARRAY_COUNT(sDeoxysAttackGfx120)}, 
 	{NULL, 0}
 };
-static const u8 sDeoxysAttackGfx121[] = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_121.4bpp");
+static const u8 sDeoxysAttackGfx121[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/deoxysattack/sprite_121.4bpp.lz");
 static const ax_sprite sDeoxysAttackSprites121[] = {
 	{sDeoxysAttackGfx121, ARRAY_COUNT(sDeoxysAttackGfx121)}, 
 	{NULL, 0}

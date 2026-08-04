@@ -2425,84 +2425,84 @@ static const ax_anim sLaprasAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLaprasGfx1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_1.4bpp");
+static const u8 sLaprasGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_1.4bpp.lz");
 static const ax_sprite sLaprasSprites1[] = {
 	{sLaprasGfx1, ARRAY_COUNT(sLaprasGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_2.4bpp");
+static const u8 sLaprasGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_2.4bpp.lz");
 static const ax_sprite sLaprasSprites2[] = {
 	{sLaprasGfx2, ARRAY_COUNT(sLaprasGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx3[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_3.4bpp");
+static const u8 sLaprasGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_3.4bpp.lz");
 static const ax_sprite sLaprasSprites3[] = {
 	{sLaprasGfx3, ARRAY_COUNT(sLaprasGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx4[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_4.4bpp");
+static const u8 sLaprasGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_4.4bpp.lz");
 static const ax_sprite sLaprasSprites4[] = {
 	{sLaprasGfx4, ARRAY_COUNT(sLaprasGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx5[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_5.4bpp");
+static const u8 sLaprasGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_5.4bpp.lz");
 static const ax_sprite sLaprasSprites5[] = {
 	{sLaprasGfx5, ARRAY_COUNT(sLaprasGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx6[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_6.4bpp");
+static const u8 sLaprasGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_6.4bpp.lz");
 static const ax_sprite sLaprasSprites6[] = {
 	{sLaprasGfx6, ARRAY_COUNT(sLaprasGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx7[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_7.4bpp");
+static const u8 sLaprasGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_7.4bpp.lz");
 static const ax_sprite sLaprasSprites7[] = {
 	{sLaprasGfx7, ARRAY_COUNT(sLaprasGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx8[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_8.4bpp");
+static const u8 sLaprasGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_8.4bpp.lz");
 static const ax_sprite sLaprasSprites8[] = {
 	{sLaprasGfx8, ARRAY_COUNT(sLaprasGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx9[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_9.4bpp");
+static const u8 sLaprasGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_9.4bpp.lz");
 static const ax_sprite sLaprasSprites9[] = {
 	{sLaprasGfx9, ARRAY_COUNT(sLaprasGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx10[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_10.4bpp");
+static const u8 sLaprasGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_10.4bpp.lz");
 static const ax_sprite sLaprasSprites10[] = {
 	{sLaprasGfx10, ARRAY_COUNT(sLaprasGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx11[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_11.4bpp");
+static const u8 sLaprasGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_11.4bpp.lz");
 static const ax_sprite sLaprasSprites11[] = {
 	{sLaprasGfx11, ARRAY_COUNT(sLaprasGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx12[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_12.4bpp");
+static const u8 sLaprasGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_12.4bpp.lz");
 static const ax_sprite sLaprasSprites12[] = {
 	{sLaprasGfx12, ARRAY_COUNT(sLaprasGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx13[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_13.4bpp");
+static const u8 sLaprasGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_13.4bpp.lz");
 static const ax_sprite sLaprasSprites13[] = {
 	{sLaprasGfx13, ARRAY_COUNT(sLaprasGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx14[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_14.4bpp");
+static const u8 sLaprasGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_14.4bpp.lz");
 static const ax_sprite sLaprasSprites14[] = {
 	{sLaprasGfx14, ARRAY_COUNT(sLaprasGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx15[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_15.4bpp");
+static const u8 sLaprasGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_15.4bpp.lz");
 static const ax_sprite sLaprasSprites15[] = {
 	{sLaprasGfx15, ARRAY_COUNT(sLaprasGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx16[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_16.4bpp");
-static const u8 sLaprasGfx16_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_16_1.4bpp");
-static const u8 sLaprasGfx16_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_16_2.4bpp");
+static const u8 sLaprasGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_16.4bpp.lz");
+static const u8 sLaprasGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_16_1.4bpp.lz");
+static const u8 sLaprasGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_16_2.4bpp.lz");
 static const ax_sprite sLaprasSprites16[] = {
 	{NULL, 32}, 
 	{sLaprasGfx16, ARRAY_COUNT(sLaprasGfx16)}, 
@@ -2512,33 +2512,33 @@ static const ax_sprite sLaprasSprites16[] = {
 	{sLaprasGfx16_2, ARRAY_COUNT(sLaprasGfx16_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx17[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_17.4bpp");
-static const u8 sLaprasGfx17_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_17_1.4bpp");
+static const u8 sLaprasGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_17.4bpp.lz");
+static const u8 sLaprasGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_17_1.4bpp.lz");
 static const ax_sprite sLaprasSprites17[] = {
 	{sLaprasGfx17, ARRAY_COUNT(sLaprasGfx17)}, 
 	{NULL, 32}, 
 	{sLaprasGfx17_1, ARRAY_COUNT(sLaprasGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx18[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_18.4bpp");
+static const u8 sLaprasGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_18.4bpp.lz");
 static const ax_sprite sLaprasSprites18[] = {
 	{sLaprasGfx18, ARRAY_COUNT(sLaprasGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx19[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_19.4bpp");
+static const u8 sLaprasGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_19.4bpp.lz");
 static const ax_sprite sLaprasSprites19[] = {
 	{NULL, 32}, 
 	{sLaprasGfx19, ARRAY_COUNT(sLaprasGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx20[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_20.4bpp");
+static const u8 sLaprasGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_20.4bpp.lz");
 static const ax_sprite sLaprasSprites20[] = {
 	{sLaprasGfx20, ARRAY_COUNT(sLaprasGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx21[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_21.4bpp");
-static const u8 sLaprasGfx21_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_21_1.4bpp");
-static const u8 sLaprasGfx21_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_21_2.4bpp");
+static const u8 sLaprasGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_21.4bpp.lz");
+static const u8 sLaprasGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_21_1.4bpp.lz");
+static const u8 sLaprasGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_21_2.4bpp.lz");
 static const ax_sprite sLaprasSprites21[] = {
 	{NULL, 32}, 
 	{sLaprasGfx21, ARRAY_COUNT(sLaprasGfx21)}, 
@@ -2548,22 +2548,22 @@ static const ax_sprite sLaprasSprites21[] = {
 	{sLaprasGfx21_2, ARRAY_COUNT(sLaprasGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx22[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_22.4bpp");
-static const u8 sLaprasGfx22_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_22_1.4bpp");
+static const u8 sLaprasGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_22.4bpp.lz");
+static const u8 sLaprasGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_22_1.4bpp.lz");
 static const ax_sprite sLaprasSprites22[] = {
 	{sLaprasGfx22, ARRAY_COUNT(sLaprasGfx22)}, 
 	{NULL, 64}, 
 	{sLaprasGfx22_1, ARRAY_COUNT(sLaprasGfx22_1)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx23[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_23.4bpp");
+static const u8 sLaprasGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_23.4bpp.lz");
 static const ax_sprite sLaprasSprites23[] = {
 	{sLaprasGfx23, ARRAY_COUNT(sLaprasGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx24[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_24.4bpp");
-static const u8 sLaprasGfx24_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_24_1.4bpp");
-static const u8 sLaprasGfx24_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_24_2.4bpp");
+static const u8 sLaprasGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_24.4bpp.lz");
+static const u8 sLaprasGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_24_1.4bpp.lz");
+static const u8 sLaprasGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_24_2.4bpp.lz");
 static const ax_sprite sLaprasSprites24[] = {
 	{sLaprasGfx24, ARRAY_COUNT(sLaprasGfx24)}, 
 	{NULL, 32}, 
@@ -2572,15 +2572,15 @@ static const ax_sprite sLaprasSprites24[] = {
 	{sLaprasGfx24_2, ARRAY_COUNT(sLaprasGfx24_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx25[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_25.4bpp");
+static const u8 sLaprasGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_25.4bpp.lz");
 static const ax_sprite sLaprasSprites25[] = {
 	{sLaprasGfx25, ARRAY_COUNT(sLaprasGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx26[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_26.4bpp");
-static const u8 sLaprasGfx26_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_26_1.4bpp");
-static const u8 sLaprasGfx26_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_26_2.4bpp");
-static const u8 sLaprasGfx26_3[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_26_3.4bpp");
+static const u8 sLaprasGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_26.4bpp.lz");
+static const u8 sLaprasGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_26_1.4bpp.lz");
+static const u8 sLaprasGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_26_2.4bpp.lz");
+static const u8 sLaprasGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_26_3.4bpp.lz");
 static const ax_sprite sLaprasSprites26[] = {
 	{sLaprasGfx26, ARRAY_COUNT(sLaprasGfx26)}, 
 	{NULL, 32}, 
@@ -2591,14 +2591,14 @@ static const ax_sprite sLaprasSprites26[] = {
 	{sLaprasGfx26_3, ARRAY_COUNT(sLaprasGfx26_3)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx27[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_27.4bpp");
+static const u8 sLaprasGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_27.4bpp.lz");
 static const ax_sprite sLaprasSprites27[] = {
 	{sLaprasGfx27, ARRAY_COUNT(sLaprasGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx28[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_28.4bpp");
-static const u8 sLaprasGfx28_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_28_1.4bpp");
-static const u8 sLaprasGfx28_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_28_2.4bpp");
+static const u8 sLaprasGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_28.4bpp.lz");
+static const u8 sLaprasGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_28_1.4bpp.lz");
+static const u8 sLaprasGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_28_2.4bpp.lz");
 static const ax_sprite sLaprasSprites28[] = {
 	{sLaprasGfx28, ARRAY_COUNT(sLaprasGfx28)}, 
 	{NULL, 32}, 
@@ -2607,8 +2607,8 @@ static const ax_sprite sLaprasSprites28[] = {
 	{sLaprasGfx28_2, ARRAY_COUNT(sLaprasGfx28_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx29[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_29.4bpp");
-static const u8 sLaprasGfx29_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_29_1.4bpp");
+static const u8 sLaprasGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_29.4bpp.lz");
+static const u8 sLaprasGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_29_1.4bpp.lz");
 static const ax_sprite sLaprasSprites29[] = {
 	{sLaprasGfx29, ARRAY_COUNT(sLaprasGfx29)}, 
 	{NULL, 32}, 
@@ -2616,14 +2616,14 @@ static const ax_sprite sLaprasSprites29[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx30[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_30.4bpp");
+static const u8 sLaprasGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_30.4bpp.lz");
 static const ax_sprite sLaprasSprites30[] = {
 	{sLaprasGfx30, ARRAY_COUNT(sLaprasGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx31[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_31.4bpp");
-static const u8 sLaprasGfx31_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_31_1.4bpp");
-static const u8 sLaprasGfx31_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_31_2.4bpp");
+static const u8 sLaprasGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_31.4bpp.lz");
+static const u8 sLaprasGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_31_1.4bpp.lz");
+static const u8 sLaprasGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_31_2.4bpp.lz");
 static const ax_sprite sLaprasSprites31[] = {
 	{NULL, 32}, 
 	{sLaprasGfx31, ARRAY_COUNT(sLaprasGfx31)}, 
@@ -2633,25 +2633,25 @@ static const ax_sprite sLaprasSprites31[] = {
 	{sLaprasGfx31_2, ARRAY_COUNT(sLaprasGfx31_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx32[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_32.4bpp");
+static const u8 sLaprasGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_32.4bpp.lz");
 static const ax_sprite sLaprasSprites32[] = {
 	{sLaprasGfx32, ARRAY_COUNT(sLaprasGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx33[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_33.4bpp");
+static const u8 sLaprasGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_33.4bpp.lz");
 static const ax_sprite sLaprasSprites33[] = {
 	{sLaprasGfx33, ARRAY_COUNT(sLaprasGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx34[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_34.4bpp");
+static const u8 sLaprasGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_34.4bpp.lz");
 static const ax_sprite sLaprasSprites34[] = {
 	{sLaprasGfx34, ARRAY_COUNT(sLaprasGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx35[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_35.4bpp");
-static const u8 sLaprasGfx35_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_35_1.4bpp");
-static const u8 sLaprasGfx35_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_35_2.4bpp");
-static const u8 sLaprasGfx35_3[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_35_3.4bpp");
+static const u8 sLaprasGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_35.4bpp.lz");
+static const u8 sLaprasGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_35_1.4bpp.lz");
+static const u8 sLaprasGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_35_2.4bpp.lz");
+static const u8 sLaprasGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_35_3.4bpp.lz");
 static const ax_sprite sLaprasSprites35[] = {
 	{sLaprasGfx35, ARRAY_COUNT(sLaprasGfx35)}, 
 	{NULL, 32}, 
@@ -2662,24 +2662,24 @@ static const ax_sprite sLaprasSprites35[] = {
 	{sLaprasGfx35_3, ARRAY_COUNT(sLaprasGfx35_3)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx36[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_36.4bpp");
+static const u8 sLaprasGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_36.4bpp.lz");
 static const ax_sprite sLaprasSprites36[] = {
 	{sLaprasGfx36, ARRAY_COUNT(sLaprasGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx37[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_37.4bpp");
+static const u8 sLaprasGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_37.4bpp.lz");
 static const ax_sprite sLaprasSprites37[] = {
 	{sLaprasGfx37, ARRAY_COUNT(sLaprasGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx38[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_38.4bpp");
+static const u8 sLaprasGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_38.4bpp.lz");
 static const ax_sprite sLaprasSprites38[] = {
 	{sLaprasGfx38, ARRAY_COUNT(sLaprasGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx39[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_39.4bpp");
-static const u8 sLaprasGfx39_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_39_1.4bpp");
-static const u8 sLaprasGfx39_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_39_2.4bpp");
+static const u8 sLaprasGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_39.4bpp.lz");
+static const u8 sLaprasGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_39_1.4bpp.lz");
+static const u8 sLaprasGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_39_2.4bpp.lz");
 static const ax_sprite sLaprasSprites39[] = {
 	{NULL, 32}, 
 	{sLaprasGfx39, ARRAY_COUNT(sLaprasGfx39)}, 
@@ -2689,24 +2689,24 @@ static const ax_sprite sLaprasSprites39[] = {
 	{sLaprasGfx39_2, ARRAY_COUNT(sLaprasGfx39_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx40[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_40.4bpp");
+static const u8 sLaprasGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_40.4bpp.lz");
 static const ax_sprite sLaprasSprites40[] = {
 	{sLaprasGfx40, ARRAY_COUNT(sLaprasGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx41[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_41.4bpp");
+static const u8 sLaprasGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_41.4bpp.lz");
 static const ax_sprite sLaprasSprites41[] = {
 	{sLaprasGfx41, ARRAY_COUNT(sLaprasGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx42[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_42.4bpp");
+static const u8 sLaprasGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_42.4bpp.lz");
 static const ax_sprite sLaprasSprites42[] = {
 	{sLaprasGfx42, ARRAY_COUNT(sLaprasGfx42)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx43[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_43.4bpp");
-static const u8 sLaprasGfx43_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_43_1.4bpp");
+static const u8 sLaprasGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_43.4bpp.lz");
+static const u8 sLaprasGfx43_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_43_1.4bpp.lz");
 static const ax_sprite sLaprasSprites43[] = {
 	{NULL, 32}, 
 	{sLaprasGfx43, ARRAY_COUNT(sLaprasGfx43)}, 
@@ -2714,34 +2714,34 @@ static const ax_sprite sLaprasSprites43[] = {
 	{sLaprasGfx43_1, ARRAY_COUNT(sLaprasGfx43_1)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx44[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_44.4bpp");
+static const u8 sLaprasGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_44.4bpp.lz");
 static const ax_sprite sLaprasSprites44[] = {
 	{sLaprasGfx44, ARRAY_COUNT(sLaprasGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx45[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_45.4bpp");
+static const u8 sLaprasGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_45.4bpp.lz");
 static const ax_sprite sLaprasSprites45[] = {
 	{sLaprasGfx45, ARRAY_COUNT(sLaprasGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx46[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_46.4bpp");
+static const u8 sLaprasGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_46.4bpp.lz");
 static const ax_sprite sLaprasSprites46[] = {
 	{sLaprasGfx46, ARRAY_COUNT(sLaprasGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx47[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_47.4bpp");
+static const u8 sLaprasGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_47.4bpp.lz");
 static const ax_sprite sLaprasSprites47[] = {
 	{sLaprasGfx47, ARRAY_COUNT(sLaprasGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx48[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_48.4bpp");
+static const u8 sLaprasGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_48.4bpp.lz");
 static const ax_sprite sLaprasSprites48[] = {
 	{sLaprasGfx48, ARRAY_COUNT(sLaprasGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx49[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_49.4bpp");
-static const u8 sLaprasGfx49_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_49_1.4bpp");
-static const u8 sLaprasGfx49_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_49_2.4bpp");
+static const u8 sLaprasGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_49.4bpp.lz");
+static const u8 sLaprasGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_49_1.4bpp.lz");
+static const u8 sLaprasGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_49_2.4bpp.lz");
 static const ax_sprite sLaprasSprites49[] = {
 	{NULL, 32}, 
 	{sLaprasGfx49, ARRAY_COUNT(sLaprasGfx49)}, 
@@ -2751,29 +2751,29 @@ static const ax_sprite sLaprasSprites49[] = {
 	{sLaprasGfx49_2, ARRAY_COUNT(sLaprasGfx49_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx50[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_50.4bpp");
+static const u8 sLaprasGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_50.4bpp.lz");
 static const ax_sprite sLaprasSprites50[] = {
 	{sLaprasGfx50, ARRAY_COUNT(sLaprasGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx51[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_51.4bpp");
+static const u8 sLaprasGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_51.4bpp.lz");
 static const ax_sprite sLaprasSprites51[] = {
 	{sLaprasGfx51, ARRAY_COUNT(sLaprasGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx52[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_52.4bpp");
+static const u8 sLaprasGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_52.4bpp.lz");
 static const ax_sprite sLaprasSprites52[] = {
 	{sLaprasGfx52, ARRAY_COUNT(sLaprasGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx53[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_53.4bpp");
+static const u8 sLaprasGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_53.4bpp.lz");
 static const ax_sprite sLaprasSprites53[] = {
 	{NULL, 32}, 
 	{sLaprasGfx53, ARRAY_COUNT(sLaprasGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx54[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_54.4bpp");
-static const u8 sLaprasGfx54_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_54_1.4bpp");
+static const u8 sLaprasGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_54.4bpp.lz");
+static const u8 sLaprasGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_54_1.4bpp.lz");
 static const ax_sprite sLaprasSprites54[] = {
 	{sLaprasGfx54, ARRAY_COUNT(sLaprasGfx54)}, 
 	{NULL, 32}, 
@@ -2781,14 +2781,14 @@ static const ax_sprite sLaprasSprites54[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx55[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_55.4bpp");
+static const u8 sLaprasGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_55.4bpp.lz");
 static const ax_sprite sLaprasSprites55[] = {
 	{sLaprasGfx55, ARRAY_COUNT(sLaprasGfx55)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx56[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_56.4bpp");
-static const u8 sLaprasGfx56_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_56_1.4bpp");
-static const u8 sLaprasGfx56_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_56_2.4bpp");
+static const u8 sLaprasGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_56.4bpp.lz");
+static const u8 sLaprasGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_56_1.4bpp.lz");
+static const u8 sLaprasGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_56_2.4bpp.lz");
 static const ax_sprite sLaprasSprites56[] = {
 	{NULL, 32}, 
 	{sLaprasGfx56, ARRAY_COUNT(sLaprasGfx56)}, 
@@ -2798,24 +2798,24 @@ static const ax_sprite sLaprasSprites56[] = {
 	{sLaprasGfx56_2, ARRAY_COUNT(sLaprasGfx56_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx57[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_57.4bpp");
+static const u8 sLaprasGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_57.4bpp.lz");
 static const ax_sprite sLaprasSprites57[] = {
 	{sLaprasGfx57, ARRAY_COUNT(sLaprasGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx58[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_58.4bpp");
+static const u8 sLaprasGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_58.4bpp.lz");
 static const ax_sprite sLaprasSprites58[] = {
 	{sLaprasGfx58, ARRAY_COUNT(sLaprasGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx59[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_59.4bpp");
+static const u8 sLaprasGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_59.4bpp.lz");
 static const ax_sprite sLaprasSprites59[] = {
 	{sLaprasGfx59, ARRAY_COUNT(sLaprasGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx60[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_60.4bpp");
-static const u8 sLaprasGfx60_1[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_60_1.4bpp");
-static const u8 sLaprasGfx60_2[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_60_2.4bpp");
+static const u8 sLaprasGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_60.4bpp.lz");
+static const u8 sLaprasGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_60_1.4bpp.lz");
+static const u8 sLaprasGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_60_2.4bpp.lz");
 static const ax_sprite sLaprasSprites60[] = {
 	{NULL, 32}, 
 	{sLaprasGfx60, ARRAY_COUNT(sLaprasGfx60)}, 
@@ -2825,82 +2825,82 @@ static const ax_sprite sLaprasSprites60[] = {
 	{sLaprasGfx60_2, ARRAY_COUNT(sLaprasGfx60_2)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx61[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_61.4bpp");
+static const u8 sLaprasGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_61.4bpp.lz");
 static const ax_sprite sLaprasSprites61[] = {
 	{sLaprasGfx61, ARRAY_COUNT(sLaprasGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx62[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_62.4bpp");
+static const u8 sLaprasGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_62.4bpp.lz");
 static const ax_sprite sLaprasSprites62[] = {
 	{sLaprasGfx62, ARRAY_COUNT(sLaprasGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx63[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_63.4bpp");
+static const u8 sLaprasGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_63.4bpp.lz");
 static const ax_sprite sLaprasSprites63[] = {
 	{sLaprasGfx63, ARRAY_COUNT(sLaprasGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx64[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_64.4bpp");
+static const u8 sLaprasGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_64.4bpp.lz");
 static const ax_sprite sLaprasSprites64[] = {
 	{sLaprasGfx64, ARRAY_COUNT(sLaprasGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx65[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_65.4bpp");
+static const u8 sLaprasGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_65.4bpp.lz");
 static const ax_sprite sLaprasSprites65[] = {
 	{sLaprasGfx65, ARRAY_COUNT(sLaprasGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx66[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_66.4bpp");
+static const u8 sLaprasGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_66.4bpp.lz");
 static const ax_sprite sLaprasSprites66[] = {
 	{sLaprasGfx66, ARRAY_COUNT(sLaprasGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx67[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_67.4bpp");
+static const u8 sLaprasGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_67.4bpp.lz");
 static const ax_sprite sLaprasSprites67[] = {
 	{sLaprasGfx67, ARRAY_COUNT(sLaprasGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx68[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_68.4bpp");
+static const u8 sLaprasGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_68.4bpp.lz");
 static const ax_sprite sLaprasSprites68[] = {
 	{sLaprasGfx68, ARRAY_COUNT(sLaprasGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx69[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_69.4bpp");
+static const u8 sLaprasGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_69.4bpp.lz");
 static const ax_sprite sLaprasSprites69[] = {
 	{sLaprasGfx69, ARRAY_COUNT(sLaprasGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx70[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_70.4bpp");
+static const u8 sLaprasGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_70.4bpp.lz");
 static const ax_sprite sLaprasSprites70[] = {
 	{sLaprasGfx70, ARRAY_COUNT(sLaprasGfx70)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx71[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_71.4bpp");
+static const u8 sLaprasGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_71.4bpp.lz");
 static const ax_sprite sLaprasSprites71[] = {
 	{sLaprasGfx71, ARRAY_COUNT(sLaprasGfx71)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx72[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_72.4bpp");
+static const u8 sLaprasGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_72.4bpp.lz");
 static const ax_sprite sLaprasSprites72[] = {
 	{sLaprasGfx72, ARRAY_COUNT(sLaprasGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx73[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_73.4bpp");
+static const u8 sLaprasGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_73.4bpp.lz");
 static const ax_sprite sLaprasSprites73[] = {
 	{sLaprasGfx73, ARRAY_COUNT(sLaprasGfx73)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx74[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_74.4bpp");
+static const u8 sLaprasGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_74.4bpp.lz");
 static const ax_sprite sLaprasSprites74[] = {
 	{sLaprasGfx74, ARRAY_COUNT(sLaprasGfx74)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx75[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_75.4bpp");
+static const u8 sLaprasGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_75.4bpp.lz");
 static const ax_sprite sLaprasSprites75[] = {
 	{sLaprasGfx75, ARRAY_COUNT(sLaprasGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sLaprasGfx76[] = INCBIN_U8("graphics/ax/mon/lapras/sprite_76.4bpp");
+static const u8 sLaprasGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lapras/sprite_76.4bpp.lz");
 static const ax_sprite sLaprasSprites76[] = {
 	{sLaprasGfx76, ARRAY_COUNT(sLaprasGfx76)}, 
 	{NULL, 0}

@@ -1873,132 +1873,132 @@ static const ax_anim sLunatoneAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sLunatoneGfx1[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_1.4bpp");
+static const u8 sLunatoneGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_1.4bpp.lz");
 static const ax_sprite sLunatoneSprites1[] = {
 	{sLunatoneGfx1, ARRAY_COUNT(sLunatoneGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx2[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_2.4bpp");
+static const u8 sLunatoneGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_2.4bpp.lz");
 static const ax_sprite sLunatoneSprites2[] = {
 	{sLunatoneGfx2, ARRAY_COUNT(sLunatoneGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx3[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_3.4bpp");
+static const u8 sLunatoneGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_3.4bpp.lz");
 static const ax_sprite sLunatoneSprites3[] = {
 	{sLunatoneGfx3, ARRAY_COUNT(sLunatoneGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx4[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_4.4bpp");
+static const u8 sLunatoneGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_4.4bpp.lz");
 static const ax_sprite sLunatoneSprites4[] = {
 	{sLunatoneGfx4, ARRAY_COUNT(sLunatoneGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx5[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_5.4bpp");
+static const u8 sLunatoneGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_5.4bpp.lz");
 static const ax_sprite sLunatoneSprites5[] = {
 	{sLunatoneGfx5, ARRAY_COUNT(sLunatoneGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx6[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_6.4bpp");
+static const u8 sLunatoneGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_6.4bpp.lz");
 static const ax_sprite sLunatoneSprites6[] = {
 	{sLunatoneGfx6, ARRAY_COUNT(sLunatoneGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx7[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_7.4bpp");
+static const u8 sLunatoneGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_7.4bpp.lz");
 static const ax_sprite sLunatoneSprites7[] = {
 	{sLunatoneGfx7, ARRAY_COUNT(sLunatoneGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx8[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_8.4bpp");
+static const u8 sLunatoneGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_8.4bpp.lz");
 static const ax_sprite sLunatoneSprites8[] = {
 	{sLunatoneGfx8, ARRAY_COUNT(sLunatoneGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx9[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_9.4bpp");
+static const u8 sLunatoneGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_9.4bpp.lz");
 static const ax_sprite sLunatoneSprites9[] = {
 	{sLunatoneGfx9, ARRAY_COUNT(sLunatoneGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx10[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_10.4bpp");
+static const u8 sLunatoneGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_10.4bpp.lz");
 static const ax_sprite sLunatoneSprites10[] = {
 	{sLunatoneGfx10, ARRAY_COUNT(sLunatoneGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx11[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_11.4bpp");
+static const u8 sLunatoneGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_11.4bpp.lz");
 static const ax_sprite sLunatoneSprites11[] = {
 	{sLunatoneGfx11, ARRAY_COUNT(sLunatoneGfx11)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx12[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_12.4bpp");
+static const u8 sLunatoneGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_12.4bpp.lz");
 static const ax_sprite sLunatoneSprites12[] = {
 	{sLunatoneGfx12, ARRAY_COUNT(sLunatoneGfx12)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx13[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_13.4bpp");
+static const u8 sLunatoneGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_13.4bpp.lz");
 static const ax_sprite sLunatoneSprites13[] = {
 	{sLunatoneGfx13, ARRAY_COUNT(sLunatoneGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx14[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_14.4bpp");
+static const u8 sLunatoneGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_14.4bpp.lz");
 static const ax_sprite sLunatoneSprites14[] = {
 	{sLunatoneGfx14, ARRAY_COUNT(sLunatoneGfx14)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx15[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_15.4bpp");
+static const u8 sLunatoneGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_15.4bpp.lz");
 static const ax_sprite sLunatoneSprites15[] = {
 	{sLunatoneGfx15, ARRAY_COUNT(sLunatoneGfx15)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx16[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_16.4bpp");
+static const u8 sLunatoneGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_16.4bpp.lz");
 static const ax_sprite sLunatoneSprites16[] = {
 	{sLunatoneGfx16, ARRAY_COUNT(sLunatoneGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx17[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_17.4bpp");
+static const u8 sLunatoneGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_17.4bpp.lz");
 static const ax_sprite sLunatoneSprites17[] = {
 	{sLunatoneGfx17, ARRAY_COUNT(sLunatoneGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx18[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_18.4bpp");
+static const u8 sLunatoneGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_18.4bpp.lz");
 static const ax_sprite sLunatoneSprites18[] = {
 	{sLunatoneGfx18, ARRAY_COUNT(sLunatoneGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx19[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_19.4bpp");
+static const u8 sLunatoneGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_19.4bpp.lz");
 static const ax_sprite sLunatoneSprites19[] = {
 	{sLunatoneGfx19, ARRAY_COUNT(sLunatoneGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx20[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_20.4bpp");
+static const u8 sLunatoneGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_20.4bpp.lz");
 static const ax_sprite sLunatoneSprites20[] = {
 	{sLunatoneGfx20, ARRAY_COUNT(sLunatoneGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx21[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_21.4bpp");
+static const u8 sLunatoneGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_21.4bpp.lz");
 static const ax_sprite sLunatoneSprites21[] = {
 	{sLunatoneGfx21, ARRAY_COUNT(sLunatoneGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx22[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_22.4bpp");
+static const u8 sLunatoneGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_22.4bpp.lz");
 static const ax_sprite sLunatoneSprites22[] = {
 	{sLunatoneGfx22, ARRAY_COUNT(sLunatoneGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx23[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_23.4bpp");
+static const u8 sLunatoneGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_23.4bpp.lz");
 static const ax_sprite sLunatoneSprites23[] = {
 	{sLunatoneGfx23, ARRAY_COUNT(sLunatoneGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx24[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_24.4bpp");
+static const u8 sLunatoneGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_24.4bpp.lz");
 static const ax_sprite sLunatoneSprites24[] = {
 	{sLunatoneGfx24, ARRAY_COUNT(sLunatoneGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sLunatoneGfx25[] = INCBIN_U8("graphics/ax/mon/lunatone/sprite_25.4bpp");
+static const u8 sLunatoneGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/lunatone/sprite_25.4bpp.lz");
 static const ax_sprite sLunatoneSprites25[] = {
 	{sLunatoneGfx25, ARRAY_COUNT(sLunatoneGfx25)}, 
 	{NULL, 0}

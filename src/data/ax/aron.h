@@ -2151,90 +2151,90 @@ static const ax_anim sAronAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sAronGfx1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_1.4bpp");
+static const u8 sAronGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_1.4bpp.lz");
 static const ax_sprite sAronSprites1[] = {
 	{sAronGfx1, ARRAY_COUNT(sAronGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_2.4bpp");
+static const u8 sAronGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_2.4bpp.lz");
 static const ax_sprite sAronSprites2[] = {
 	{sAronGfx2, ARRAY_COUNT(sAronGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx3[] = INCBIN_U8("graphics/ax/mon/aron/sprite_3.4bpp");
+static const u8 sAronGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_3.4bpp.lz");
 static const ax_sprite sAronSprites3[] = {
 	{sAronGfx3, ARRAY_COUNT(sAronGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx4[] = INCBIN_U8("graphics/ax/mon/aron/sprite_4.4bpp");
+static const u8 sAronGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_4.4bpp.lz");
 static const ax_sprite sAronSprites4[] = {
 	{sAronGfx4, ARRAY_COUNT(sAronGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx5[] = INCBIN_U8("graphics/ax/mon/aron/sprite_5.4bpp");
+static const u8 sAronGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_5.4bpp.lz");
 static const ax_sprite sAronSprites5[] = {
 	{sAronGfx5, ARRAY_COUNT(sAronGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx6[] = INCBIN_U8("graphics/ax/mon/aron/sprite_6.4bpp");
+static const u8 sAronGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_6.4bpp.lz");
 static const ax_sprite sAronSprites6[] = {
 	{sAronGfx6, ARRAY_COUNT(sAronGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx7[] = INCBIN_U8("graphics/ax/mon/aron/sprite_7.4bpp");
+static const u8 sAronGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_7.4bpp.lz");
 static const ax_sprite sAronSprites7[] = {
 	{sAronGfx7, ARRAY_COUNT(sAronGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx8[] = INCBIN_U8("graphics/ax/mon/aron/sprite_8.4bpp");
+static const u8 sAronGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_8.4bpp.lz");
 static const ax_sprite sAronSprites8[] = {
 	{sAronGfx8, ARRAY_COUNT(sAronGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx9[] = INCBIN_U8("graphics/ax/mon/aron/sprite_9.4bpp");
+static const u8 sAronGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_9.4bpp.lz");
 static const ax_sprite sAronSprites9[] = {
 	{sAronGfx9, ARRAY_COUNT(sAronGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx10[] = INCBIN_U8("graphics/ax/mon/aron/sprite_10.4bpp");
+static const u8 sAronGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_10.4bpp.lz");
 static const ax_sprite sAronSprites10[] = {
 	{sAronGfx10, ARRAY_COUNT(sAronGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx11[] = INCBIN_U8("graphics/ax/mon/aron/sprite_11.4bpp");
+static const u8 sAronGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_11.4bpp.lz");
 static const ax_sprite sAronSprites11[] = {
 	{sAronGfx11, ARRAY_COUNT(sAronGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx12[] = INCBIN_U8("graphics/ax/mon/aron/sprite_12.4bpp");
+static const u8 sAronGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_12.4bpp.lz");
 static const ax_sprite sAronSprites12[] = {
 	{sAronGfx12, ARRAY_COUNT(sAronGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx13[] = INCBIN_U8("graphics/ax/mon/aron/sprite_13.4bpp");
+static const u8 sAronGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_13.4bpp.lz");
 static const ax_sprite sAronSprites13[] = {
 	{sAronGfx13, ARRAY_COUNT(sAronGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx14[] = INCBIN_U8("graphics/ax/mon/aron/sprite_14.4bpp");
+static const u8 sAronGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_14.4bpp.lz");
 static const ax_sprite sAronSprites14[] = {
 	{sAronGfx14, ARRAY_COUNT(sAronGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx15[] = INCBIN_U8("graphics/ax/mon/aron/sprite_15.4bpp");
+static const u8 sAronGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_15.4bpp.lz");
 static const ax_sprite sAronSprites15[] = {
 	{sAronGfx15, ARRAY_COUNT(sAronGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx16[] = INCBIN_U8("graphics/ax/mon/aron/sprite_16.4bpp");
+static const u8 sAronGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_16.4bpp.lz");
 static const ax_sprite sAronSprites16[] = {
 	{sAronGfx16, ARRAY_COUNT(sAronGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx17[] = INCBIN_U8("graphics/ax/mon/aron/sprite_17.4bpp");
-static const u8 sAronGfx17_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_17_1.4bpp");
-static const u8 sAronGfx17_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_17_2.4bpp");
+static const u8 sAronGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_17.4bpp.lz");
+static const u8 sAronGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_17_1.4bpp.lz");
+static const u8 sAronGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_17_2.4bpp.lz");
 static const ax_sprite sAronSprites17[] = {
 	{NULL, 32}, 
 	{sAronGfx17, ARRAY_COUNT(sAronGfx17)}, 
@@ -2245,9 +2245,9 @@ static const ax_sprite sAronSprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx18[] = INCBIN_U8("graphics/ax/mon/aron/sprite_18.4bpp");
-static const u8 sAronGfx18_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_18_1.4bpp");
-static const u8 sAronGfx18_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_18_2.4bpp");
+static const u8 sAronGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_18.4bpp.lz");
+static const u8 sAronGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_18_1.4bpp.lz");
+static const u8 sAronGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_18_2.4bpp.lz");
 static const ax_sprite sAronSprites18[] = {
 	{sAronGfx18, ARRAY_COUNT(sAronGfx18)}, 
 	{NULL, 32}, 
@@ -2257,9 +2257,9 @@ static const ax_sprite sAronSprites18[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx19[] = INCBIN_U8("graphics/ax/mon/aron/sprite_19.4bpp");
-static const u8 sAronGfx19_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_19_1.4bpp");
-static const u8 sAronGfx19_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_19_2.4bpp");
+static const u8 sAronGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_19.4bpp.lz");
+static const u8 sAronGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_19_1.4bpp.lz");
+static const u8 sAronGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_19_2.4bpp.lz");
 static const ax_sprite sAronSprites19[] = {
 	{NULL, 32}, 
 	{sAronGfx19, ARRAY_COUNT(sAronGfx19)}, 
@@ -2270,21 +2270,21 @@ static const ax_sprite sAronSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx20[] = INCBIN_U8("graphics/ax/mon/aron/sprite_20.4bpp");
+static const u8 sAronGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_20.4bpp.lz");
 static const ax_sprite sAronSprites20[] = {
 	{sAronGfx20, ARRAY_COUNT(sAronGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx21[] = INCBIN_U8("graphics/ax/mon/aron/sprite_21.4bpp");
+static const u8 sAronGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_21.4bpp.lz");
 static const ax_sprite sAronSprites21[] = {
 	{sAronGfx21, ARRAY_COUNT(sAronGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx22[] = INCBIN_U8("graphics/ax/mon/aron/sprite_22.4bpp");
-static const u8 sAronGfx22_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_22_1.4bpp");
-static const u8 sAronGfx22_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_22_2.4bpp");
+static const u8 sAronGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_22.4bpp.lz");
+static const u8 sAronGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_22_1.4bpp.lz");
+static const u8 sAronGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_22_2.4bpp.lz");
 static const ax_sprite sAronSprites22[] = {
 	{sAronGfx22, ARRAY_COUNT(sAronGfx22)}, 
 	{NULL, 32}, 
@@ -2294,9 +2294,9 @@ static const ax_sprite sAronSprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx23[] = INCBIN_U8("graphics/ax/mon/aron/sprite_23.4bpp");
-static const u8 sAronGfx23_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_23_1.4bpp");
-static const u8 sAronGfx23_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_23_2.4bpp");
+static const u8 sAronGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_23.4bpp.lz");
+static const u8 sAronGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_23_1.4bpp.lz");
+static const u8 sAronGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_23_2.4bpp.lz");
 static const ax_sprite sAronSprites23[] = {
 	{sAronGfx23, ARRAY_COUNT(sAronGfx23)}, 
 	{NULL, 32}, 
@@ -2306,9 +2306,9 @@ static const ax_sprite sAronSprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx24[] = INCBIN_U8("graphics/ax/mon/aron/sprite_24.4bpp");
-static const u8 sAronGfx24_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_24_1.4bpp");
-static const u8 sAronGfx24_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_24_2.4bpp");
+static const u8 sAronGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_24.4bpp.lz");
+static const u8 sAronGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_24_1.4bpp.lz");
+static const u8 sAronGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_24_2.4bpp.lz");
 static const ax_sprite sAronSprites24[] = {
 	{sAronGfx24, ARRAY_COUNT(sAronGfx24)}, 
 	{NULL, 32}, 
@@ -2318,27 +2318,27 @@ static const ax_sprite sAronSprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx25[] = INCBIN_U8("graphics/ax/mon/aron/sprite_25.4bpp");
+static const u8 sAronGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_25.4bpp.lz");
 static const ax_sprite sAronSprites25[] = {
 	{sAronGfx25, ARRAY_COUNT(sAronGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx26[] = INCBIN_U8("graphics/ax/mon/aron/sprite_26.4bpp");
+static const u8 sAronGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_26.4bpp.lz");
 static const ax_sprite sAronSprites26[] = {
 	{sAronGfx26, ARRAY_COUNT(sAronGfx26)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx27[] = INCBIN_U8("graphics/ax/mon/aron/sprite_27.4bpp");
+static const u8 sAronGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_27.4bpp.lz");
 static const ax_sprite sAronSprites27[] = {
 	{sAronGfx27, ARRAY_COUNT(sAronGfx27)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx28[] = INCBIN_U8("graphics/ax/mon/aron/sprite_28.4bpp");
-static const u8 sAronGfx28_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_28_1.4bpp");
-static const u8 sAronGfx28_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_28_2.4bpp");
+static const u8 sAronGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_28.4bpp.lz");
+static const u8 sAronGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_28_1.4bpp.lz");
+static const u8 sAronGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_28_2.4bpp.lz");
 static const ax_sprite sAronSprites28[] = {
 	{sAronGfx28, ARRAY_COUNT(sAronGfx28)}, 
 	{NULL, 32}, 
@@ -2348,9 +2348,9 @@ static const ax_sprite sAronSprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx29[] = INCBIN_U8("graphics/ax/mon/aron/sprite_29.4bpp");
-static const u8 sAronGfx29_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_29_1.4bpp");
-static const u8 sAronGfx29_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_29_2.4bpp");
+static const u8 sAronGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_29.4bpp.lz");
+static const u8 sAronGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_29_1.4bpp.lz");
+static const u8 sAronGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_29_2.4bpp.lz");
 static const ax_sprite sAronSprites29[] = {
 	{NULL, 32}, 
 	{sAronGfx29, ARRAY_COUNT(sAronGfx29)}, 
@@ -2361,9 +2361,9 @@ static const ax_sprite sAronSprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx30[] = INCBIN_U8("graphics/ax/mon/aron/sprite_30.4bpp");
-static const u8 sAronGfx30_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_30_1.4bpp");
-static const u8 sAronGfx30_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_30_2.4bpp");
+static const u8 sAronGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_30.4bpp.lz");
+static const u8 sAronGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_30_1.4bpp.lz");
+static const u8 sAronGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_30_2.4bpp.lz");
 static const ax_sprite sAronSprites30[] = {
 	{sAronGfx30, ARRAY_COUNT(sAronGfx30)}, 
 	{NULL, 32}, 
@@ -2373,9 +2373,9 @@ static const ax_sprite sAronSprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx31[] = INCBIN_U8("graphics/ax/mon/aron/sprite_31.4bpp");
-static const u8 sAronGfx31_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_31_1.4bpp");
-static const u8 sAronGfx31_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_31_2.4bpp");
+static const u8 sAronGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_31.4bpp.lz");
+static const u8 sAronGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_31_1.4bpp.lz");
+static const u8 sAronGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_31_2.4bpp.lz");
 static const ax_sprite sAronSprites31[] = {
 	{sAronGfx31, ARRAY_COUNT(sAronGfx31)}, 
 	{NULL, 32}, 
@@ -2385,9 +2385,9 @@ static const ax_sprite sAronSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx32[] = INCBIN_U8("graphics/ax/mon/aron/sprite_32.4bpp");
-static const u8 sAronGfx32_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_32_1.4bpp");
-static const u8 sAronGfx32_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_32_2.4bpp");
+static const u8 sAronGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_32.4bpp.lz");
+static const u8 sAronGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_32_1.4bpp.lz");
+static const u8 sAronGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_32_2.4bpp.lz");
 static const ax_sprite sAronSprites32[] = {
 	{sAronGfx32, ARRAY_COUNT(sAronGfx32)}, 
 	{NULL, 32}, 
@@ -2397,9 +2397,9 @@ static const ax_sprite sAronSprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx33[] = INCBIN_U8("graphics/ax/mon/aron/sprite_33.4bpp");
-static const u8 sAronGfx33_1[] = INCBIN_U8("graphics/ax/mon/aron/sprite_33_1.4bpp");
-static const u8 sAronGfx33_2[] = INCBIN_U8("graphics/ax/mon/aron/sprite_33_2.4bpp");
+static const u8 sAronGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_33.4bpp.lz");
+static const u8 sAronGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_33_1.4bpp.lz");
+static const u8 sAronGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_33_2.4bpp.lz");
 static const ax_sprite sAronSprites33[] = {
 	{sAronGfx33, ARRAY_COUNT(sAronGfx33)}, 
 	{NULL, 32}, 
@@ -2409,49 +2409,49 @@ static const ax_sprite sAronSprites33[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx34[] = INCBIN_U8("graphics/ax/mon/aron/sprite_34.4bpp");
+static const u8 sAronGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_34.4bpp.lz");
 static const ax_sprite sAronSprites34[] = {
 	{sAronGfx34, ARRAY_COUNT(sAronGfx34)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx35[] = INCBIN_U8("graphics/ax/mon/aron/sprite_35.4bpp");
+static const u8 sAronGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_35.4bpp.lz");
 static const ax_sprite sAronSprites35[] = {
 	{sAronGfx35, ARRAY_COUNT(sAronGfx35)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx36[] = INCBIN_U8("graphics/ax/mon/aron/sprite_36.4bpp");
+static const u8 sAronGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_36.4bpp.lz");
 static const ax_sprite sAronSprites36[] = {
 	{sAronGfx36, ARRAY_COUNT(sAronGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx37[] = INCBIN_U8("graphics/ax/mon/aron/sprite_37.4bpp");
+static const u8 sAronGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_37.4bpp.lz");
 static const ax_sprite sAronSprites37[] = {
 	{sAronGfx37, ARRAY_COUNT(sAronGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx38[] = INCBIN_U8("graphics/ax/mon/aron/sprite_38.4bpp");
+static const u8 sAronGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_38.4bpp.lz");
 static const ax_sprite sAronSprites38[] = {
 	{sAronGfx38, ARRAY_COUNT(sAronGfx38)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx39[] = INCBIN_U8("graphics/ax/mon/aron/sprite_39.4bpp");
+static const u8 sAronGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_39.4bpp.lz");
 static const ax_sprite sAronSprites39[] = {
 	{sAronGfx39, ARRAY_COUNT(sAronGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx40[] = INCBIN_U8("graphics/ax/mon/aron/sprite_40.4bpp");
+static const u8 sAronGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_40.4bpp.lz");
 static const ax_sprite sAronSprites40[] = {
 	{sAronGfx40, ARRAY_COUNT(sAronGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx41[] = INCBIN_U8("graphics/ax/mon/aron/sprite_41.4bpp");
+static const u8 sAronGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_41.4bpp.lz");
 static const ax_sprite sAronSprites41[] = {
 	{sAronGfx41, ARRAY_COUNT(sAronGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sAronGfx42[] = INCBIN_U8("graphics/ax/mon/aron/sprite_42.4bpp");
+static const u8 sAronGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/aron/sprite_42.4bpp.lz");
 static const ax_sprite sAronSprites42[] = {
 	{sAronGfx42, ARRAY_COUNT(sAronGfx42)}, 
 	{NULL, 0}

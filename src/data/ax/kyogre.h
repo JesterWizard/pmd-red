@@ -2259,9 +2259,9 @@ static const ax_anim sKyogreAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sKyogreGfx1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_1.4bpp");
-static const u8 sKyogreGfx1_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_1_1.4bpp");
-static const u8 sKyogreGfx1_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_1_2.4bpp");
+static const u8 sKyogreGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_1.4bpp.lz");
+static const u8 sKyogreGfx1_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_1_1.4bpp.lz");
+static const u8 sKyogreGfx1_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_1_2.4bpp.lz");
 static const ax_sprite sKyogreSprites1[] = {
 	{NULL, 64}, 
 	{sKyogreGfx1, ARRAY_COUNT(sKyogreGfx1)}, 
@@ -2272,9 +2272,9 @@ static const ax_sprite sKyogreSprites1[] = {
 	{NULL, 864}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_2.4bpp");
-static const u8 sKyogreGfx2_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_2_1.4bpp");
-static const u8 sKyogreGfx2_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_2_2.4bpp");
+static const u8 sKyogreGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_2.4bpp.lz");
+static const u8 sKyogreGfx2_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_2_1.4bpp.lz");
+static const u8 sKyogreGfx2_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_2_2.4bpp.lz");
 static const ax_sprite sKyogreSprites2[] = {
 	{NULL, 64}, 
 	{sKyogreGfx2, ARRAY_COUNT(sKyogreGfx2)}, 
@@ -2285,13 +2285,13 @@ static const ax_sprite sKyogreSprites2[] = {
 	{NULL, 864}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3.4bpp");
-static const u8 sKyogreGfx3_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_1.4bpp");
-static const u8 sKyogreGfx3_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_2.4bpp");
-static const u8 sKyogreGfx3_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_3.4bpp");
-static const u8 sKyogreGfx3_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_4.4bpp");
-static const u8 sKyogreGfx3_5[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_5.4bpp");
-static const u8 sKyogreGfx3_6[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_6.4bpp");
+static const u8 sKyogreGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3.4bpp.lz");
+static const u8 sKyogreGfx3_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_1.4bpp.lz");
+static const u8 sKyogreGfx3_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_2.4bpp.lz");
+static const u8 sKyogreGfx3_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_3.4bpp.lz");
+static const u8 sKyogreGfx3_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_4.4bpp.lz");
+static const u8 sKyogreGfx3_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_5.4bpp.lz");
+static const u8 sKyogreGfx3_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_3_6.4bpp.lz");
 static const ax_sprite sKyogreSprites3[] = {
 	{NULL, 32}, 
 	{sKyogreGfx3, ARRAY_COUNT(sKyogreGfx3)}, 
@@ -2310,11 +2310,11 @@ static const ax_sprite sKyogreSprites3[] = {
 	{NULL, 800}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4.4bpp");
-static const u8 sKyogreGfx4_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4_1.4bpp");
-static const u8 sKyogreGfx4_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4_2.4bpp");
-static const u8 sKyogreGfx4_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4_3.4bpp");
-static const u8 sKyogreGfx4_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4_4.4bpp");
+static const u8 sKyogreGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4.4bpp.lz");
+static const u8 sKyogreGfx4_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4_1.4bpp.lz");
+static const u8 sKyogreGfx4_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4_2.4bpp.lz");
+static const u8 sKyogreGfx4_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4_3.4bpp.lz");
+static const u8 sKyogreGfx4_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_4_4.4bpp.lz");
 static const ax_sprite sKyogreSprites4[] = {
 	{NULL, 96}, 
 	{sKyogreGfx4, ARRAY_COUNT(sKyogreGfx4)}, 
@@ -2329,12 +2329,12 @@ static const ax_sprite sKyogreSprites4[] = {
 	{NULL, 544}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx5[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5.4bpp");
-static const u8 sKyogreGfx5_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_1.4bpp");
-static const u8 sKyogreGfx5_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_2.4bpp");
-static const u8 sKyogreGfx5_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_3.4bpp");
-static const u8 sKyogreGfx5_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_4.4bpp");
-static const u8 sKyogreGfx5_5[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_5.4bpp");
+static const u8 sKyogreGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5.4bpp.lz");
+static const u8 sKyogreGfx5_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_1.4bpp.lz");
+static const u8 sKyogreGfx5_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_2.4bpp.lz");
+static const u8 sKyogreGfx5_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_3.4bpp.lz");
+static const u8 sKyogreGfx5_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_4.4bpp.lz");
+static const u8 sKyogreGfx5_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_5_5.4bpp.lz");
 static const ax_sprite sKyogreSprites5[] = {
 	{sKyogreGfx5, ARRAY_COUNT(sKyogreGfx5)}, 
 	{NULL, 32}, 
@@ -2350,12 +2350,12 @@ static const ax_sprite sKyogreSprites5[] = {
 	{NULL, 800}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx6[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6.4bpp");
-static const u8 sKyogreGfx6_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_1.4bpp");
-static const u8 sKyogreGfx6_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_2.4bpp");
-static const u8 sKyogreGfx6_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_3.4bpp");
-static const u8 sKyogreGfx6_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_4.4bpp");
-static const u8 sKyogreGfx6_5[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_5.4bpp");
+static const u8 sKyogreGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6.4bpp.lz");
+static const u8 sKyogreGfx6_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_1.4bpp.lz");
+static const u8 sKyogreGfx6_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_2.4bpp.lz");
+static const u8 sKyogreGfx6_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_3.4bpp.lz");
+static const u8 sKyogreGfx6_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_4.4bpp.lz");
+static const u8 sKyogreGfx6_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_6_5.4bpp.lz");
 static const ax_sprite sKyogreSprites6[] = {
 	{NULL, 64}, 
 	{sKyogreGfx6, ARRAY_COUNT(sKyogreGfx6)}, 
@@ -2372,12 +2372,12 @@ static const ax_sprite sKyogreSprites6[] = {
 	{NULL, 576}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx7[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7.4bpp");
-static const u8 sKyogreGfx7_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_1.4bpp");
-static const u8 sKyogreGfx7_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_2.4bpp");
-static const u8 sKyogreGfx7_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_3.4bpp");
-static const u8 sKyogreGfx7_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_4.4bpp");
-static const u8 sKyogreGfx7_5[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_5.4bpp");
+static const u8 sKyogreGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7.4bpp.lz");
+static const u8 sKyogreGfx7_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_1.4bpp.lz");
+static const u8 sKyogreGfx7_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_2.4bpp.lz");
+static const u8 sKyogreGfx7_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_3.4bpp.lz");
+static const u8 sKyogreGfx7_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_4.4bpp.lz");
+static const u8 sKyogreGfx7_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_7_5.4bpp.lz");
 static const ax_sprite sKyogreSprites7[] = {
 	{NULL, 32}, 
 	{sKyogreGfx7, ARRAY_COUNT(sKyogreGfx7)}, 
@@ -2394,12 +2394,12 @@ static const ax_sprite sKyogreSprites7[] = {
 	{NULL, 640}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx8[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8.4bpp");
-static const u8 sKyogreGfx8_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_1.4bpp");
-static const u8 sKyogreGfx8_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_2.4bpp");
-static const u8 sKyogreGfx8_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_3.4bpp");
-static const u8 sKyogreGfx8_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_4.4bpp");
-static const u8 sKyogreGfx8_5[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_5.4bpp");
+static const u8 sKyogreGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8.4bpp.lz");
+static const u8 sKyogreGfx8_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_1.4bpp.lz");
+static const u8 sKyogreGfx8_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_2.4bpp.lz");
+static const u8 sKyogreGfx8_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_3.4bpp.lz");
+static const u8 sKyogreGfx8_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_4.4bpp.lz");
+static const u8 sKyogreGfx8_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_8_5.4bpp.lz");
 static const ax_sprite sKyogreSprites8[] = {
 	{NULL, 32}, 
 	{sKyogreGfx8, ARRAY_COUNT(sKyogreGfx8)}, 
@@ -2416,12 +2416,12 @@ static const ax_sprite sKyogreSprites8[] = {
 	{NULL, 896}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx9[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9.4bpp");
-static const u8 sKyogreGfx9_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_1.4bpp");
-static const u8 sKyogreGfx9_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_2.4bpp");
-static const u8 sKyogreGfx9_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_3.4bpp");
-static const u8 sKyogreGfx9_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_4.4bpp");
-static const u8 sKyogreGfx9_5[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_5.4bpp");
+static const u8 sKyogreGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9.4bpp.lz");
+static const u8 sKyogreGfx9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_1.4bpp.lz");
+static const u8 sKyogreGfx9_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_2.4bpp.lz");
+static const u8 sKyogreGfx9_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_3.4bpp.lz");
+static const u8 sKyogreGfx9_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_4.4bpp.lz");
+static const u8 sKyogreGfx9_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_9_5.4bpp.lz");
 static const ax_sprite sKyogreSprites9[] = {
 	{NULL, 32}, 
 	{sKyogreGfx9, ARRAY_COUNT(sKyogreGfx9)}, 
@@ -2438,11 +2438,11 @@ static const ax_sprite sKyogreSprites9[] = {
 	{NULL, 640}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx10[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10.4bpp");
-static const u8 sKyogreGfx10_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10_1.4bpp");
-static const u8 sKyogreGfx10_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10_2.4bpp");
-static const u8 sKyogreGfx10_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10_3.4bpp");
-static const u8 sKyogreGfx10_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10_4.4bpp");
+static const u8 sKyogreGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10.4bpp.lz");
+static const u8 sKyogreGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10_1.4bpp.lz");
+static const u8 sKyogreGfx10_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10_2.4bpp.lz");
+static const u8 sKyogreGfx10_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10_3.4bpp.lz");
+static const u8 sKyogreGfx10_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_10_4.4bpp.lz");
 static const ax_sprite sKyogreSprites10[] = {
 	{NULL, 32}, 
 	{sKyogreGfx10, ARRAY_COUNT(sKyogreGfx10)}, 
@@ -2457,11 +2457,11 @@ static const ax_sprite sKyogreSprites10[] = {
 	{NULL, 832}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx11[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11.4bpp");
-static const u8 sKyogreGfx11_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11_1.4bpp");
-static const u8 sKyogreGfx11_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11_2.4bpp");
-static const u8 sKyogreGfx11_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11_3.4bpp");
-static const u8 sKyogreGfx11_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11_4.4bpp");
+static const u8 sKyogreGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11.4bpp.lz");
+static const u8 sKyogreGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11_1.4bpp.lz");
+static const u8 sKyogreGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11_2.4bpp.lz");
+static const u8 sKyogreGfx11_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11_3.4bpp.lz");
+static const u8 sKyogreGfx11_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_11_4.4bpp.lz");
 static const ax_sprite sKyogreSprites11[] = {
 	{NULL, 64}, 
 	{sKyogreGfx11, ARRAY_COUNT(sKyogreGfx11)}, 
@@ -2476,12 +2476,12 @@ static const ax_sprite sKyogreSprites11[] = {
 	{NULL, 864}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx12[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12.4bpp");
-static const u8 sKyogreGfx12_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_1.4bpp");
-static const u8 sKyogreGfx12_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_2.4bpp");
-static const u8 sKyogreGfx12_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_3.4bpp");
-static const u8 sKyogreGfx12_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_4.4bpp");
-static const u8 sKyogreGfx12_5[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_5.4bpp");
+static const u8 sKyogreGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12.4bpp.lz");
+static const u8 sKyogreGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_1.4bpp.lz");
+static const u8 sKyogreGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_2.4bpp.lz");
+static const u8 sKyogreGfx12_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_3.4bpp.lz");
+static const u8 sKyogreGfx12_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_4.4bpp.lz");
+static const u8 sKyogreGfx12_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_12_5.4bpp.lz");
 static const ax_sprite sKyogreSprites12[] = {
 	{NULL, 32}, 
 	{sKyogreGfx12, ARRAY_COUNT(sKyogreGfx12)}, 
@@ -2498,11 +2498,11 @@ static const ax_sprite sKyogreSprites12[] = {
 	{NULL, 864}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx13[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13.4bpp");
-static const u8 sKyogreGfx13_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13_1.4bpp");
-static const u8 sKyogreGfx13_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13_2.4bpp");
-static const u8 sKyogreGfx13_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13_3.4bpp");
-static const u8 sKyogreGfx13_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13_4.4bpp");
+static const u8 sKyogreGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13.4bpp.lz");
+static const u8 sKyogreGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13_1.4bpp.lz");
+static const u8 sKyogreGfx13_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13_2.4bpp.lz");
+static const u8 sKyogreGfx13_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13_3.4bpp.lz");
+static const u8 sKyogreGfx13_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_13_4.4bpp.lz");
 static const ax_sprite sKyogreSprites13[] = {
 	{sKyogreGfx13, ARRAY_COUNT(sKyogreGfx13)}, 
 	{NULL, 32}, 
@@ -2516,9 +2516,9 @@ static const ax_sprite sKyogreSprites13[] = {
 	{NULL, 832}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx14[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_14.4bpp");
-static const u8 sKyogreGfx14_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_14_1.4bpp");
-static const u8 sKyogreGfx14_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_14_2.4bpp");
+static const u8 sKyogreGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_14.4bpp.lz");
+static const u8 sKyogreGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_14_1.4bpp.lz");
+static const u8 sKyogreGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_14_2.4bpp.lz");
 static const ax_sprite sKyogreSprites14[] = {
 	{sKyogreGfx14, ARRAY_COUNT(sKyogreGfx14)}, 
 	{NULL, 64}, 
@@ -2528,11 +2528,11 @@ static const ax_sprite sKyogreSprites14[] = {
 	{NULL, 832}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx15[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15.4bpp");
-static const u8 sKyogreGfx15_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15_1.4bpp");
-static const u8 sKyogreGfx15_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15_2.4bpp");
-static const u8 sKyogreGfx15_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15_3.4bpp");
-static const u8 sKyogreGfx15_4[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15_4.4bpp");
+static const u8 sKyogreGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15.4bpp.lz");
+static const u8 sKyogreGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15_1.4bpp.lz");
+static const u8 sKyogreGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15_2.4bpp.lz");
+static const u8 sKyogreGfx15_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15_3.4bpp.lz");
+static const u8 sKyogreGfx15_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_15_4.4bpp.lz");
 static const ax_sprite sKyogreSprites15[] = {
 	{NULL, 64}, 
 	{sKyogreGfx15, ARRAY_COUNT(sKyogreGfx15)}, 
@@ -2547,8 +2547,8 @@ static const ax_sprite sKyogreSprites15[] = {
 	{NULL, 832}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx16[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_16.4bpp");
-static const u8 sKyogreGfx16_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_16_1.4bpp");
+static const u8 sKyogreGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_16.4bpp.lz");
+static const u8 sKyogreGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_16_1.4bpp.lz");
 static const ax_sprite sKyogreSprites16[] = {
 	{NULL, 64}, 
 	{sKyogreGfx16, ARRAY_COUNT(sKyogreGfx16)}, 
@@ -2557,45 +2557,45 @@ static const ax_sprite sKyogreSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx17[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_17.4bpp");
+static const u8 sKyogreGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_17.4bpp.lz");
 static const ax_sprite sKyogreSprites17[] = {
 	{sKyogreGfx17, ARRAY_COUNT(sKyogreGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx18[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_18.4bpp");
-static const u8 sKyogreGfx18_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_18_1.4bpp");
+static const u8 sKyogreGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_18.4bpp.lz");
+static const u8 sKyogreGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_18_1.4bpp.lz");
 static const ax_sprite sKyogreSprites18[] = {
 	{sKyogreGfx18, ARRAY_COUNT(sKyogreGfx18)}, 
 	{NULL, 32}, 
 	{sKyogreGfx18_1, ARRAY_COUNT(sKyogreGfx18_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx19[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_19.4bpp");
-static const u8 sKyogreGfx19_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_19_1.4bpp");
+static const u8 sKyogreGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_19.4bpp.lz");
+static const u8 sKyogreGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_19_1.4bpp.lz");
 static const ax_sprite sKyogreSprites19[] = {
 	{sKyogreGfx19, ARRAY_COUNT(sKyogreGfx19)}, 
 	{NULL, 32}, 
 	{sKyogreGfx19_1, ARRAY_COUNT(sKyogreGfx19_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx20[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_20.4bpp");
+static const u8 sKyogreGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_20.4bpp.lz");
 static const ax_sprite sKyogreSprites20[] = {
 	{sKyogreGfx20, ARRAY_COUNT(sKyogreGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx21[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_21.4bpp");
+static const u8 sKyogreGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_21.4bpp.lz");
 static const ax_sprite sKyogreSprites21[] = {
 	{NULL, 32}, 
 	{sKyogreGfx21, ARRAY_COUNT(sKyogreGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx22[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_22.4bpp");
+static const u8 sKyogreGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_22.4bpp.lz");
 static const ax_sprite sKyogreSprites22[] = {
 	{sKyogreGfx22, ARRAY_COUNT(sKyogreGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx23[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_23.4bpp");
-static const u8 sKyogreGfx23_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_23_1.4bpp");
+static const u8 sKyogreGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_23.4bpp.lz");
+static const u8 sKyogreGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_23_1.4bpp.lz");
 static const ax_sprite sKyogreSprites23[] = {
 	{NULL, 32}, 
 	{sKyogreGfx23, ARRAY_COUNT(sKyogreGfx23)}, 
@@ -2603,46 +2603,46 @@ static const ax_sprite sKyogreSprites23[] = {
 	{sKyogreGfx23_1, ARRAY_COUNT(sKyogreGfx23_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx24[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_24.4bpp");
+static const u8 sKyogreGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_24.4bpp.lz");
 static const ax_sprite sKyogreSprites24[] = {
 	{sKyogreGfx24, ARRAY_COUNT(sKyogreGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx25[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_25.4bpp");
+static const u8 sKyogreGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_25.4bpp.lz");
 static const ax_sprite sKyogreSprites25[] = {
 	{sKyogreGfx25, ARRAY_COUNT(sKyogreGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx26[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_26.4bpp");
+static const u8 sKyogreGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_26.4bpp.lz");
 static const ax_sprite sKyogreSprites26[] = {
 	{sKyogreGfx26, ARRAY_COUNT(sKyogreGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx27[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_27.4bpp");
+static const u8 sKyogreGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_27.4bpp.lz");
 static const ax_sprite sKyogreSprites27[] = {
 	{sKyogreGfx27, ARRAY_COUNT(sKyogreGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx28[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_28.4bpp");
-static const u8 sKyogreGfx28_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_28_1.4bpp");
+static const u8 sKyogreGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_28.4bpp.lz");
+static const u8 sKyogreGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_28_1.4bpp.lz");
 static const ax_sprite sKyogreSprites28[] = {
 	{sKyogreGfx28, ARRAY_COUNT(sKyogreGfx28)}, 
 	{NULL, 32}, 
 	{sKyogreGfx28_1, ARRAY_COUNT(sKyogreGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx29[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_29.4bpp");
+static const u8 sKyogreGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_29.4bpp.lz");
 static const ax_sprite sKyogreSprites29[] = {
 	{sKyogreGfx29, ARRAY_COUNT(sKyogreGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx30[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_30.4bpp");
+static const u8 sKyogreGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_30.4bpp.lz");
 static const ax_sprite sKyogreSprites30[] = {
 	{sKyogreGfx30, ARRAY_COUNT(sKyogreGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx31[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_31.4bpp");
-static const u8 sKyogreGfx31_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_31_1.4bpp");
+static const u8 sKyogreGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_31.4bpp.lz");
+static const u8 sKyogreGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_31_1.4bpp.lz");
 static const ax_sprite sKyogreSprites31[] = {
 	{NULL, 32}, 
 	{sKyogreGfx31, ARRAY_COUNT(sKyogreGfx31)}, 
@@ -2650,28 +2650,28 @@ static const ax_sprite sKyogreSprites31[] = {
 	{sKyogreGfx31_1, ARRAY_COUNT(sKyogreGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx32[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_32.4bpp");
+static const u8 sKyogreGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_32.4bpp.lz");
 static const ax_sprite sKyogreSprites32[] = {
 	{sKyogreGfx32, ARRAY_COUNT(sKyogreGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx33[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_33.4bpp");
+static const u8 sKyogreGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_33.4bpp.lz");
 static const ax_sprite sKyogreSprites33[] = {
 	{sKyogreGfx33, ARRAY_COUNT(sKyogreGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx34[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_34.4bpp");
+static const u8 sKyogreGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_34.4bpp.lz");
 static const ax_sprite sKyogreSprites34[] = {
 	{sKyogreGfx34, ARRAY_COUNT(sKyogreGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx35[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_35.4bpp");
+static const u8 sKyogreGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_35.4bpp.lz");
 static const ax_sprite sKyogreSprites35[] = {
 	{sKyogreGfx35, ARRAY_COUNT(sKyogreGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx36[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_36.4bpp");
-static const u8 sKyogreGfx36_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_36_1.4bpp");
+static const u8 sKyogreGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_36.4bpp.lz");
+static const u8 sKyogreGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_36_1.4bpp.lz");
 static const ax_sprite sKyogreSprites36[] = {
 	{NULL, 64}, 
 	{sKyogreGfx36, ARRAY_COUNT(sKyogreGfx36)}, 
@@ -2679,14 +2679,14 @@ static const ax_sprite sKyogreSprites36[] = {
 	{sKyogreGfx36_1, ARRAY_COUNT(sKyogreGfx36_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx37[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_37.4bpp");
+static const u8 sKyogreGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_37.4bpp.lz");
 static const ax_sprite sKyogreSprites37[] = {
 	{sKyogreGfx37, ARRAY_COUNT(sKyogreGfx37)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx38[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_38.4bpp");
-static const u8 sKyogreGfx38_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_38_1.4bpp");
-static const u8 sKyogreGfx38_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_38_2.4bpp");
+static const u8 sKyogreGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_38.4bpp.lz");
+static const u8 sKyogreGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_38_1.4bpp.lz");
+static const u8 sKyogreGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_38_2.4bpp.lz");
 static const ax_sprite sKyogreSprites38[] = {
 	{NULL, 96}, 
 	{sKyogreGfx38, ARRAY_COUNT(sKyogreGfx38)}, 
@@ -2696,37 +2696,37 @@ static const ax_sprite sKyogreSprites38[] = {
 	{sKyogreGfx38_2, ARRAY_COUNT(sKyogreGfx38_2)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx39[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_39.4bpp");
+static const u8 sKyogreGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_39.4bpp.lz");
 static const ax_sprite sKyogreSprites39[] = {
 	{sKyogreGfx39, ARRAY_COUNT(sKyogreGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx40[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_40.4bpp");
+static const u8 sKyogreGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_40.4bpp.lz");
 static const ax_sprite sKyogreSprites40[] = {
 	{sKyogreGfx40, ARRAY_COUNT(sKyogreGfx40)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx41[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_41.4bpp");
+static const u8 sKyogreGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_41.4bpp.lz");
 static const ax_sprite sKyogreSprites41[] = {
 	{NULL, 32}, 
 	{sKyogreGfx41, ARRAY_COUNT(sKyogreGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx42[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_42.4bpp");
+static const u8 sKyogreGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_42.4bpp.lz");
 static const ax_sprite sKyogreSprites42[] = {
 	{sKyogreGfx42, ARRAY_COUNT(sKyogreGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx43[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_43.4bpp");
+static const u8 sKyogreGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_43.4bpp.lz");
 static const ax_sprite sKyogreSprites43[] = {
 	{NULL, 64}, 
 	{sKyogreGfx43, ARRAY_COUNT(sKyogreGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx44[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_44.4bpp");
-static const u8 sKyogreGfx44_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_44_1.4bpp");
-static const u8 sKyogreGfx44_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_44_2.4bpp");
-static const u8 sKyogreGfx44_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_44_3.4bpp");
+static const u8 sKyogreGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_44.4bpp.lz");
+static const u8 sKyogreGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_44_1.4bpp.lz");
+static const u8 sKyogreGfx44_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_44_2.4bpp.lz");
+static const u8 sKyogreGfx44_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_44_3.4bpp.lz");
 static const ax_sprite sKyogreSprites44[] = {
 	{NULL, 32}, 
 	{sKyogreGfx44, ARRAY_COUNT(sKyogreGfx44)}, 
@@ -2739,38 +2739,38 @@ static const ax_sprite sKyogreSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx45[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_45.4bpp");
+static const u8 sKyogreGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_45.4bpp.lz");
 static const ax_sprite sKyogreSprites45[] = {
 	{sKyogreGfx45, ARRAY_COUNT(sKyogreGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx46[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_46.4bpp");
+static const u8 sKyogreGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_46.4bpp.lz");
 static const ax_sprite sKyogreSprites46[] = {
 	{sKyogreGfx46, ARRAY_COUNT(sKyogreGfx46)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx47[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_47.4bpp");
+static const u8 sKyogreGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_47.4bpp.lz");
 static const ax_sprite sKyogreSprites47[] = {
 	{sKyogreGfx47, ARRAY_COUNT(sKyogreGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx48[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_48.4bpp");
-static const u8 sKyogreGfx48_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_48_1.4bpp");
+static const u8 sKyogreGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_48.4bpp.lz");
+static const u8 sKyogreGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_48_1.4bpp.lz");
 static const ax_sprite sKyogreSprites48[] = {
 	{sKyogreGfx48, ARRAY_COUNT(sKyogreGfx48)}, 
 	{NULL, 32}, 
 	{sKyogreGfx48_1, ARRAY_COUNT(sKyogreGfx48_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx49[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_49.4bpp");
+static const u8 sKyogreGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_49.4bpp.lz");
 static const ax_sprite sKyogreSprites49[] = {
 	{sKyogreGfx49, ARRAY_COUNT(sKyogreGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx50[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_50.4bpp");
-static const u8 sKyogreGfx50_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_50_1.4bpp");
-static const u8 sKyogreGfx50_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_50_2.4bpp");
+static const u8 sKyogreGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_50.4bpp.lz");
+static const u8 sKyogreGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_50_1.4bpp.lz");
+static const u8 sKyogreGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_50_2.4bpp.lz");
 static const ax_sprite sKyogreSprites50[] = {
 	{NULL, 64}, 
 	{sKyogreGfx50, ARRAY_COUNT(sKyogreGfx50)}, 
@@ -2780,30 +2780,30 @@ static const ax_sprite sKyogreSprites50[] = {
 	{sKyogreGfx50_2, ARRAY_COUNT(sKyogreGfx50_2)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx51[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_51.4bpp");
+static const u8 sKyogreGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_51.4bpp.lz");
 static const ax_sprite sKyogreSprites51[] = {
 	{sKyogreGfx51, ARRAY_COUNT(sKyogreGfx51)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx52[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_52.4bpp");
+static const u8 sKyogreGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_52.4bpp.lz");
 static const ax_sprite sKyogreSprites52[] = {
 	{sKyogreGfx52, ARRAY_COUNT(sKyogreGfx52)}, 
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx53[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_53.4bpp");
+static const u8 sKyogreGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_53.4bpp.lz");
 static const ax_sprite sKyogreSprites53[] = {
 	{sKyogreGfx53, ARRAY_COUNT(sKyogreGfx53)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx54[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_54.4bpp");
+static const u8 sKyogreGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_54.4bpp.lz");
 static const ax_sprite sKyogreSprites54[] = {
 	{sKyogreGfx54, ARRAY_COUNT(sKyogreGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx55[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_55.4bpp");
-static const u8 sKyogreGfx55_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_55_1.4bpp");
+static const u8 sKyogreGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_55.4bpp.lz");
+static const u8 sKyogreGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_55_1.4bpp.lz");
 static const ax_sprite sKyogreSprites55[] = {
 	{NULL, 96}, 
 	{sKyogreGfx55, ARRAY_COUNT(sKyogreGfx55)}, 
@@ -2811,39 +2811,39 @@ static const ax_sprite sKyogreSprites55[] = {
 	{sKyogreGfx55_1, ARRAY_COUNT(sKyogreGfx55_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx56[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_56.4bpp");
-static const u8 sKyogreGfx56_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_56_1.4bpp");
+static const u8 sKyogreGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_56.4bpp.lz");
+static const u8 sKyogreGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_56_1.4bpp.lz");
 static const ax_sprite sKyogreSprites56[] = {
 	{sKyogreGfx56, ARRAY_COUNT(sKyogreGfx56)}, 
 	{NULL, 32}, 
 	{sKyogreGfx56_1, ARRAY_COUNT(sKyogreGfx56_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx57[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_57.4bpp");
+static const u8 sKyogreGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_57.4bpp.lz");
 static const ax_sprite sKyogreSprites57[] = {
 	{sKyogreGfx57, ARRAY_COUNT(sKyogreGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx58[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_58.4bpp");
+static const u8 sKyogreGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_58.4bpp.lz");
 static const ax_sprite sKyogreSprites58[] = {
 	{sKyogreGfx58, ARRAY_COUNT(sKyogreGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx59[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_59.4bpp");
+static const u8 sKyogreGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_59.4bpp.lz");
 static const ax_sprite sKyogreSprites59[] = {
 	{NULL, 32}, 
 	{sKyogreGfx59, ARRAY_COUNT(sKyogreGfx59)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx60[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_60.4bpp");
+static const u8 sKyogreGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_60.4bpp.lz");
 static const ax_sprite sKyogreSprites60[] = {
 	{sKyogreGfx60, ARRAY_COUNT(sKyogreGfx60)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx61[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_61.4bpp");
-static const u8 sKyogreGfx61_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_61_1.4bpp");
-static const u8 sKyogreGfx61_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_61_2.4bpp");
-static const u8 sKyogreGfx61_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_61_3.4bpp");
+static const u8 sKyogreGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_61.4bpp.lz");
+static const u8 sKyogreGfx61_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_61_1.4bpp.lz");
+static const u8 sKyogreGfx61_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_61_2.4bpp.lz");
+static const u8 sKyogreGfx61_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_61_3.4bpp.lz");
 static const ax_sprite sKyogreSprites61[] = {
 	{sKyogreGfx61, ARRAY_COUNT(sKyogreGfx61)}, 
 	{NULL, 32}, 
@@ -2855,8 +2855,8 @@ static const ax_sprite sKyogreSprites61[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx62[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_62.4bpp");
-static const u8 sKyogreGfx62_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_62_1.4bpp");
+static const u8 sKyogreGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_62.4bpp.lz");
+static const u8 sKyogreGfx62_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_62_1.4bpp.lz");
 static const ax_sprite sKyogreSprites62[] = {
 	{NULL, 32}, 
 	{sKyogreGfx62, ARRAY_COUNT(sKyogreGfx62)}, 
@@ -2864,8 +2864,8 @@ static const ax_sprite sKyogreSprites62[] = {
 	{sKyogreGfx62_1, ARRAY_COUNT(sKyogreGfx62_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx63[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_63.4bpp");
-static const u8 sKyogreGfx63_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_63_1.4bpp");
+static const u8 sKyogreGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_63.4bpp.lz");
+static const u8 sKyogreGfx63_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_63_1.4bpp.lz");
 static const ax_sprite sKyogreSprites63[] = {
 	{sKyogreGfx63, ARRAY_COUNT(sKyogreGfx63)}, 
 	{NULL, 32}, 
@@ -2873,8 +2873,8 @@ static const ax_sprite sKyogreSprites63[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx64[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_64.4bpp");
-static const u8 sKyogreGfx64_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_64_1.4bpp");
+static const u8 sKyogreGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_64.4bpp.lz");
+static const u8 sKyogreGfx64_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_64_1.4bpp.lz");
 static const ax_sprite sKyogreSprites64[] = {
 	{sKyogreGfx64, ARRAY_COUNT(sKyogreGfx64)}, 
 	{NULL, 32}, 
@@ -2882,8 +2882,8 @@ static const ax_sprite sKyogreSprites64[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx65[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_65.4bpp");
-static const u8 sKyogreGfx65_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_65_1.4bpp");
+static const u8 sKyogreGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_65.4bpp.lz");
+static const u8 sKyogreGfx65_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_65_1.4bpp.lz");
 static const ax_sprite sKyogreSprites65[] = {
 	{NULL, 96}, 
 	{sKyogreGfx65, ARRAY_COUNT(sKyogreGfx65)}, 
@@ -2891,28 +2891,28 @@ static const ax_sprite sKyogreSprites65[] = {
 	{sKyogreGfx65_1, ARRAY_COUNT(sKyogreGfx65_1)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx66[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_66.4bpp");
+static const u8 sKyogreGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_66.4bpp.lz");
 static const ax_sprite sKyogreSprites66[] = {
 	{sKyogreGfx66, ARRAY_COUNT(sKyogreGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx67[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_67.4bpp");
+static const u8 sKyogreGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_67.4bpp.lz");
 static const ax_sprite sKyogreSprites67[] = {
 	{sKyogreGfx67, ARRAY_COUNT(sKyogreGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx68[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_68.4bpp");
+static const u8 sKyogreGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_68.4bpp.lz");
 static const ax_sprite sKyogreSprites68[] = {
 	{sKyogreGfx68, ARRAY_COUNT(sKyogreGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx69[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_69.4bpp");
+static const u8 sKyogreGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_69.4bpp.lz");
 static const ax_sprite sKyogreSprites69[] = {
 	{sKyogreGfx69, ARRAY_COUNT(sKyogreGfx69)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx70[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_70.4bpp");
-static const u8 sKyogreGfx70_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_70_1.4bpp");
+static const u8 sKyogreGfx70[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_70.4bpp.lz");
+static const u8 sKyogreGfx70_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_70_1.4bpp.lz");
 static const ax_sprite sKyogreSprites70[] = {
 	{NULL, 96}, 
 	{sKyogreGfx70, ARRAY_COUNT(sKyogreGfx70)}, 
@@ -2921,21 +2921,21 @@ static const ax_sprite sKyogreSprites70[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx71[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_71.4bpp");
+static const u8 sKyogreGfx71[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_71.4bpp.lz");
 static const ax_sprite sKyogreSprites71[] = {
 	{sKyogreGfx71, ARRAY_COUNT(sKyogreGfx71)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx72[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_72.4bpp");
+static const u8 sKyogreGfx72[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_72.4bpp.lz");
 static const ax_sprite sKyogreSprites72[] = {
 	{sKyogreGfx72, ARRAY_COUNT(sKyogreGfx72)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx73[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_73.4bpp");
-static const u8 sKyogreGfx73_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_73_1.4bpp");
-static const u8 sKyogreGfx73_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_73_2.4bpp");
-static const u8 sKyogreGfx73_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_73_3.4bpp");
+static const u8 sKyogreGfx73[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_73.4bpp.lz");
+static const u8 sKyogreGfx73_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_73_1.4bpp.lz");
+static const u8 sKyogreGfx73_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_73_2.4bpp.lz");
+static const u8 sKyogreGfx73_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_73_3.4bpp.lz");
 static const ax_sprite sKyogreSprites73[] = {
 	{NULL, 96}, 
 	{sKyogreGfx73, ARRAY_COUNT(sKyogreGfx73)}, 
@@ -2948,20 +2948,20 @@ static const ax_sprite sKyogreSprites73[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx74[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_74.4bpp");
+static const u8 sKyogreGfx74[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_74.4bpp.lz");
 static const ax_sprite sKyogreSprites74[] = {
 	{sKyogreGfx74, ARRAY_COUNT(sKyogreGfx74)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx75[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_75.4bpp");
+static const u8 sKyogreGfx75[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_75.4bpp.lz");
 static const ax_sprite sKyogreSprites75[] = {
 	{sKyogreGfx75, ARRAY_COUNT(sKyogreGfx75)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx76[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_76.4bpp");
-static const u8 sKyogreGfx76_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_76_1.4bpp");
-static const u8 sKyogreGfx76_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_76_2.4bpp");
+static const u8 sKyogreGfx76[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_76.4bpp.lz");
+static const u8 sKyogreGfx76_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_76_1.4bpp.lz");
+static const u8 sKyogreGfx76_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_76_2.4bpp.lz");
 static const ax_sprite sKyogreSprites76[] = {
 	{sKyogreGfx76, ARRAY_COUNT(sKyogreGfx76)}, 
 	{NULL, 32}, 
@@ -2971,15 +2971,15 @@ static const ax_sprite sKyogreSprites76[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx77[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_77.4bpp");
+static const u8 sKyogreGfx77[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_77.4bpp.lz");
 static const ax_sprite sKyogreSprites77[] = {
 	{sKyogreGfx77, ARRAY_COUNT(sKyogreGfx77)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx78[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_78.4bpp");
-static const u8 sKyogreGfx78_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_78_1.4bpp");
-static const u8 sKyogreGfx78_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_78_2.4bpp");
-static const u8 sKyogreGfx78_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_78_3.4bpp");
+static const u8 sKyogreGfx78[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_78.4bpp.lz");
+static const u8 sKyogreGfx78_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_78_1.4bpp.lz");
+static const u8 sKyogreGfx78_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_78_2.4bpp.lz");
+static const u8 sKyogreGfx78_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_78_3.4bpp.lz");
 static const ax_sprite sKyogreSprites78[] = {
 	{NULL, 96}, 
 	{sKyogreGfx78, ARRAY_COUNT(sKyogreGfx78)}, 
@@ -2992,20 +2992,20 @@ static const ax_sprite sKyogreSprites78[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx79[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_79.4bpp");
+static const u8 sKyogreGfx79[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_79.4bpp.lz");
 static const ax_sprite sKyogreSprites79[] = {
 	{sKyogreGfx79, ARRAY_COUNT(sKyogreGfx79)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx80[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_80.4bpp");
+static const u8 sKyogreGfx80[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_80.4bpp.lz");
 static const ax_sprite sKyogreSprites80[] = {
 	{sKyogreGfx80, ARRAY_COUNT(sKyogreGfx80)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx81[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_81.4bpp");
-static const u8 sKyogreGfx81_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_81_1.4bpp");
-static const u8 sKyogreGfx81_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_81_2.4bpp");
-static const u8 sKyogreGfx81_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_81_3.4bpp");
+static const u8 sKyogreGfx81[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_81.4bpp.lz");
+static const u8 sKyogreGfx81_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_81_1.4bpp.lz");
+static const u8 sKyogreGfx81_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_81_2.4bpp.lz");
+static const u8 sKyogreGfx81_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_81_3.4bpp.lz");
 static const ax_sprite sKyogreSprites81[] = {
 	{NULL, 128}, 
 	{sKyogreGfx81, ARRAY_COUNT(sKyogreGfx81)}, 
@@ -3018,20 +3018,20 @@ static const ax_sprite sKyogreSprites81[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx82[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_82.4bpp");
+static const u8 sKyogreGfx82[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_82.4bpp.lz");
 static const ax_sprite sKyogreSprites82[] = {
 	{sKyogreGfx82, ARRAY_COUNT(sKyogreGfx82)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx83[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_83.4bpp");
+static const u8 sKyogreGfx83[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_83.4bpp.lz");
 static const ax_sprite sKyogreSprites83[] = {
 	{sKyogreGfx83, ARRAY_COUNT(sKyogreGfx83)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx84[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_84.4bpp");
-static const u8 sKyogreGfx84_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_84_1.4bpp");
-static const u8 sKyogreGfx84_2[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_84_2.4bpp");
-static const u8 sKyogreGfx84_3[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_84_3.4bpp");
+static const u8 sKyogreGfx84[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_84.4bpp.lz");
+static const u8 sKyogreGfx84_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_84_1.4bpp.lz");
+static const u8 sKyogreGfx84_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_84_2.4bpp.lz");
+static const u8 sKyogreGfx84_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_84_3.4bpp.lz");
 static const ax_sprite sKyogreSprites84[] = {
 	{NULL, 64}, 
 	{sKyogreGfx84, ARRAY_COUNT(sKyogreGfx84)}, 
@@ -3044,18 +3044,18 @@ static const ax_sprite sKyogreSprites84[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx85[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_85.4bpp");
+static const u8 sKyogreGfx85[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_85.4bpp.lz");
 static const ax_sprite sKyogreSprites85[] = {
 	{sKyogreGfx85, ARRAY_COUNT(sKyogreGfx85)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx86[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_86.4bpp");
+static const u8 sKyogreGfx86[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_86.4bpp.lz");
 static const ax_sprite sKyogreSprites86[] = {
 	{sKyogreGfx86, ARRAY_COUNT(sKyogreGfx86)}, 
 	{NULL, 0}
 };
-static const u8 sKyogreGfx87[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_87.4bpp");
-static const u8 sKyogreGfx87_1[] = INCBIN_U8("graphics/ax/mon/kyogre/sprite_87_1.4bpp");
+static const u8 sKyogreGfx87[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_87.4bpp.lz");
+static const u8 sKyogreGfx87_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/kyogre/sprite_87_1.4bpp.lz");
 static const ax_sprite sKyogreSprites87[] = {
 	{sKyogreGfx87, ARRAY_COUNT(sKyogreGfx87)}, 
 	{NULL, 32}, 

@@ -2027,84 +2027,84 @@ static const ax_anim sPorygon2Anims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPorygon2Gfx1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_1.4bpp");
+static const u8 sPorygon2Gfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_1.4bpp.lz");
 static const ax_sprite sPorygon2Sprites1[] = {
 	{sPorygon2Gfx1, ARRAY_COUNT(sPorygon2Gfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_2.4bpp");
+static const u8 sPorygon2Gfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites2[] = {
 	{sPorygon2Gfx2, ARRAY_COUNT(sPorygon2Gfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx3[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_3.4bpp");
+static const u8 sPorygon2Gfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_3.4bpp.lz");
 static const ax_sprite sPorygon2Sprites3[] = {
 	{sPorygon2Gfx3, ARRAY_COUNT(sPorygon2Gfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx4[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_4.4bpp");
+static const u8 sPorygon2Gfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_4.4bpp.lz");
 static const ax_sprite sPorygon2Sprites4[] = {
 	{sPorygon2Gfx4, ARRAY_COUNT(sPorygon2Gfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx5[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_5.4bpp");
+static const u8 sPorygon2Gfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_5.4bpp.lz");
 static const ax_sprite sPorygon2Sprites5[] = {
 	{sPorygon2Gfx5, ARRAY_COUNT(sPorygon2Gfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx6[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_6.4bpp");
+static const u8 sPorygon2Gfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_6.4bpp.lz");
 static const ax_sprite sPorygon2Sprites6[] = {
 	{sPorygon2Gfx6, ARRAY_COUNT(sPorygon2Gfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx7[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_7.4bpp");
+static const u8 sPorygon2Gfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_7.4bpp.lz");
 static const ax_sprite sPorygon2Sprites7[] = {
 	{sPorygon2Gfx7, ARRAY_COUNT(sPorygon2Gfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx8[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_8.4bpp");
+static const u8 sPorygon2Gfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_8.4bpp.lz");
 static const ax_sprite sPorygon2Sprites8[] = {
 	{sPorygon2Gfx8, ARRAY_COUNT(sPorygon2Gfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx9[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_9.4bpp");
+static const u8 sPorygon2Gfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_9.4bpp.lz");
 static const ax_sprite sPorygon2Sprites9[] = {
 	{sPorygon2Gfx9, ARRAY_COUNT(sPorygon2Gfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx10[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_10.4bpp");
+static const u8 sPorygon2Gfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_10.4bpp.lz");
 static const ax_sprite sPorygon2Sprites10[] = {
 	{sPorygon2Gfx10, ARRAY_COUNT(sPorygon2Gfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx11[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_11.4bpp");
+static const u8 sPorygon2Gfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_11.4bpp.lz");
 static const ax_sprite sPorygon2Sprites11[] = {
 	{sPorygon2Gfx11, ARRAY_COUNT(sPorygon2Gfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx12[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_12.4bpp");
+static const u8 sPorygon2Gfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_12.4bpp.lz");
 static const ax_sprite sPorygon2Sprites12[] = {
 	{sPorygon2Gfx12, ARRAY_COUNT(sPorygon2Gfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx13[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_13.4bpp");
+static const u8 sPorygon2Gfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_13.4bpp.lz");
 static const ax_sprite sPorygon2Sprites13[] = {
 	{sPorygon2Gfx13, ARRAY_COUNT(sPorygon2Gfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx14[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_14.4bpp");
+static const u8 sPorygon2Gfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_14.4bpp.lz");
 static const ax_sprite sPorygon2Sprites14[] = {
 	{sPorygon2Gfx14, ARRAY_COUNT(sPorygon2Gfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx15[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_15.4bpp");
+static const u8 sPorygon2Gfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_15.4bpp.lz");
 static const ax_sprite sPorygon2Sprites15[] = {
 	{sPorygon2Gfx15, ARRAY_COUNT(sPorygon2Gfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx16[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_16.4bpp");
-static const u8 sPorygon2Gfx16_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_16_1.4bpp");
-static const u8 sPorygon2Gfx16_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_16_2.4bpp");
+static const u8 sPorygon2Gfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_16.4bpp.lz");
+static const u8 sPorygon2Gfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_16_1.4bpp.lz");
+static const u8 sPorygon2Gfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_16_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites16[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx16, ARRAY_COUNT(sPorygon2Gfx16)}, 
@@ -2115,9 +2115,9 @@ static const ax_sprite sPorygon2Sprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx17[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_17.4bpp");
-static const u8 sPorygon2Gfx17_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_17_1.4bpp");
-static const u8 sPorygon2Gfx17_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_17_2.4bpp");
+static const u8 sPorygon2Gfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_17.4bpp.lz");
+static const u8 sPorygon2Gfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_17_1.4bpp.lz");
+static const u8 sPorygon2Gfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_17_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites17[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx17, ARRAY_COUNT(sPorygon2Gfx17)}, 
@@ -2128,11 +2128,11 @@ static const ax_sprite sPorygon2Sprites17[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx18[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18.4bpp");
-static const u8 sPorygon2Gfx18_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18_1.4bpp");
-static const u8 sPorygon2Gfx18_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18_2.4bpp");
-static const u8 sPorygon2Gfx18_3[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18_3.4bpp");
-static const u8 sPorygon2Gfx18_4[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18_4.4bpp");
+static const u8 sPorygon2Gfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18.4bpp.lz");
+static const u8 sPorygon2Gfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18_1.4bpp.lz");
+static const u8 sPorygon2Gfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18_2.4bpp.lz");
+static const u8 sPorygon2Gfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18_3.4bpp.lz");
+static const u8 sPorygon2Gfx18_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_18_4.4bpp.lz");
 static const ax_sprite sPorygon2Sprites18[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx18, ARRAY_COUNT(sPorygon2Gfx18)}, 
@@ -2147,9 +2147,9 @@ static const ax_sprite sPorygon2Sprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx19[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_19.4bpp");
-static const u8 sPorygon2Gfx19_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_19_1.4bpp");
-static const u8 sPorygon2Gfx19_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_19_2.4bpp");
+static const u8 sPorygon2Gfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_19.4bpp.lz");
+static const u8 sPorygon2Gfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_19_1.4bpp.lz");
+static const u8 sPorygon2Gfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_19_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites19[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx19, ARRAY_COUNT(sPorygon2Gfx19)}, 
@@ -2160,9 +2160,9 @@ static const ax_sprite sPorygon2Sprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx20[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_20.4bpp");
-static const u8 sPorygon2Gfx20_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_20_1.4bpp");
-static const u8 sPorygon2Gfx20_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_20_2.4bpp");
+static const u8 sPorygon2Gfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_20.4bpp.lz");
+static const u8 sPorygon2Gfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_20_1.4bpp.lz");
+static const u8 sPorygon2Gfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_20_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites20[] = {
 	{sPorygon2Gfx20, ARRAY_COUNT(sPorygon2Gfx20)}, 
 	{NULL, 32}, 
@@ -2172,8 +2172,8 @@ static const ax_sprite sPorygon2Sprites20[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx21[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_21.4bpp");
-static const u8 sPorygon2Gfx21_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_21_1.4bpp");
+static const u8 sPorygon2Gfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_21.4bpp.lz");
+static const u8 sPorygon2Gfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_21_1.4bpp.lz");
 static const ax_sprite sPorygon2Sprites21[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx21, ARRAY_COUNT(sPorygon2Gfx21)}, 
@@ -2182,9 +2182,9 @@ static const ax_sprite sPorygon2Sprites21[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx22[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_22.4bpp");
-static const u8 sPorygon2Gfx22_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_22_1.4bpp");
-static const u8 sPorygon2Gfx22_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_22_2.4bpp");
+static const u8 sPorygon2Gfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_22.4bpp.lz");
+static const u8 sPorygon2Gfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_22_1.4bpp.lz");
+static const u8 sPorygon2Gfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_22_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites22[] = {
 	{NULL, 64}, 
 	{sPorygon2Gfx22, ARRAY_COUNT(sPorygon2Gfx22)}, 
@@ -2195,8 +2195,8 @@ static const ax_sprite sPorygon2Sprites22[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx23[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_23.4bpp");
-static const u8 sPorygon2Gfx23_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_23_1.4bpp");
+static const u8 sPorygon2Gfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_23.4bpp.lz");
+static const u8 sPorygon2Gfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_23_1.4bpp.lz");
 static const ax_sprite sPorygon2Sprites23[] = {
 	{sPorygon2Gfx23, ARRAY_COUNT(sPorygon2Gfx23)}, 
 	{NULL, 32}, 
@@ -2204,9 +2204,9 @@ static const ax_sprite sPorygon2Sprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx24[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_24.4bpp");
-static const u8 sPorygon2Gfx24_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_24_1.4bpp");
-static const u8 sPorygon2Gfx24_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_24_2.4bpp");
+static const u8 sPorygon2Gfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_24.4bpp.lz");
+static const u8 sPorygon2Gfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_24_1.4bpp.lz");
+static const u8 sPorygon2Gfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_24_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites24[] = {
 	{sPorygon2Gfx24, ARRAY_COUNT(sPorygon2Gfx24)}, 
 	{NULL, 32}, 
@@ -2216,9 +2216,9 @@ static const ax_sprite sPorygon2Sprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx25[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_25.4bpp");
-static const u8 sPorygon2Gfx25_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_25_1.4bpp");
-static const u8 sPorygon2Gfx25_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_25_2.4bpp");
+static const u8 sPorygon2Gfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_25.4bpp.lz");
+static const u8 sPorygon2Gfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_25_1.4bpp.lz");
+static const u8 sPorygon2Gfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_25_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites25[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx25, ARRAY_COUNT(sPorygon2Gfx25)}, 
@@ -2229,8 +2229,8 @@ static const ax_sprite sPorygon2Sprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx26[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_26.4bpp");
-static const u8 sPorygon2Gfx26_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_26_1.4bpp");
+static const u8 sPorygon2Gfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_26.4bpp.lz");
+static const u8 sPorygon2Gfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_26_1.4bpp.lz");
 static const ax_sprite sPorygon2Sprites26[] = {
 	{sPorygon2Gfx26, ARRAY_COUNT(sPorygon2Gfx26)}, 
 	{NULL, 32}, 
@@ -2238,9 +2238,9 @@ static const ax_sprite sPorygon2Sprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx27[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_27.4bpp");
-static const u8 sPorygon2Gfx27_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_27_1.4bpp");
-static const u8 sPorygon2Gfx27_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_27_2.4bpp");
+static const u8 sPorygon2Gfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_27.4bpp.lz");
+static const u8 sPorygon2Gfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_27_1.4bpp.lz");
+static const u8 sPorygon2Gfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_27_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites27[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx27, ARRAY_COUNT(sPorygon2Gfx27)}, 
@@ -2251,9 +2251,9 @@ static const ax_sprite sPorygon2Sprites27[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx28[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_28.4bpp");
-static const u8 sPorygon2Gfx28_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_28_1.4bpp");
-static const u8 sPorygon2Gfx28_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_28_2.4bpp");
+static const u8 sPorygon2Gfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_28.4bpp.lz");
+static const u8 sPorygon2Gfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_28_1.4bpp.lz");
+static const u8 sPorygon2Gfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_28_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites28[] = {
 	{sPorygon2Gfx28, ARRAY_COUNT(sPorygon2Gfx28)}, 
 	{NULL, 64}, 
@@ -2263,9 +2263,9 @@ static const ax_sprite sPorygon2Sprites28[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx29[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_29.4bpp");
-static const u8 sPorygon2Gfx29_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_29_1.4bpp");
-static const u8 sPorygon2Gfx29_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_29_2.4bpp");
+static const u8 sPorygon2Gfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_29.4bpp.lz");
+static const u8 sPorygon2Gfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_29_1.4bpp.lz");
+static const u8 sPorygon2Gfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_29_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites29[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx29, ARRAY_COUNT(sPorygon2Gfx29)}, 
@@ -2276,9 +2276,9 @@ static const ax_sprite sPorygon2Sprites29[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx30[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_30.4bpp");
-static const u8 sPorygon2Gfx30_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_30_1.4bpp");
-static const u8 sPorygon2Gfx30_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_30_2.4bpp");
+static const u8 sPorygon2Gfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_30.4bpp.lz");
+static const u8 sPorygon2Gfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_30_1.4bpp.lz");
+static const u8 sPorygon2Gfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_30_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites30[] = {
 	{sPorygon2Gfx30, ARRAY_COUNT(sPorygon2Gfx30)}, 
 	{NULL, 32}, 
@@ -2288,9 +2288,9 @@ static const ax_sprite sPorygon2Sprites30[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx31[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_31.4bpp");
-static const u8 sPorygon2Gfx31_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_31_1.4bpp");
-static const u8 sPorygon2Gfx31_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_31_2.4bpp");
+static const u8 sPorygon2Gfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_31.4bpp.lz");
+static const u8 sPorygon2Gfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_31_1.4bpp.lz");
+static const u8 sPorygon2Gfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_31_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites31[] = {
 	{sPorygon2Gfx31, ARRAY_COUNT(sPorygon2Gfx31)}, 
 	{NULL, 64}, 
@@ -2300,9 +2300,9 @@ static const ax_sprite sPorygon2Sprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx32[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_32.4bpp");
-static const u8 sPorygon2Gfx32_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_32_1.4bpp");
-static const u8 sPorygon2Gfx32_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_32_2.4bpp");
+static const u8 sPorygon2Gfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_32.4bpp.lz");
+static const u8 sPorygon2Gfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_32_1.4bpp.lz");
+static const u8 sPorygon2Gfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_32_2.4bpp.lz");
 static const ax_sprite sPorygon2Sprites32[] = {
 	{sPorygon2Gfx32, ARRAY_COUNT(sPorygon2Gfx32)}, 
 	{NULL, 32}, 
@@ -2312,10 +2312,10 @@ static const ax_sprite sPorygon2Sprites32[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx33[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_33.4bpp");
-static const u8 sPorygon2Gfx33_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_33_1.4bpp");
-static const u8 sPorygon2Gfx33_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_33_2.4bpp");
-static const u8 sPorygon2Gfx33_3[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_33_3.4bpp");
+static const u8 sPorygon2Gfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_33.4bpp.lz");
+static const u8 sPorygon2Gfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_33_1.4bpp.lz");
+static const u8 sPorygon2Gfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_33_2.4bpp.lz");
+static const u8 sPorygon2Gfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_33_3.4bpp.lz");
 static const ax_sprite sPorygon2Sprites33[] = {
 	{NULL, 32}, 
 	{sPorygon2Gfx33, ARRAY_COUNT(sPorygon2Gfx33)}, 
@@ -2328,10 +2328,10 @@ static const ax_sprite sPorygon2Sprites33[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx34[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_34.4bpp");
-static const u8 sPorygon2Gfx34_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_34_1.4bpp");
-static const u8 sPorygon2Gfx34_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_34_2.4bpp");
-static const u8 sPorygon2Gfx34_3[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_34_3.4bpp");
+static const u8 sPorygon2Gfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_34.4bpp.lz");
+static const u8 sPorygon2Gfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_34_1.4bpp.lz");
+static const u8 sPorygon2Gfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_34_2.4bpp.lz");
+static const u8 sPorygon2Gfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_34_3.4bpp.lz");
 static const ax_sprite sPorygon2Sprites34[] = {
 	{sPorygon2Gfx34, ARRAY_COUNT(sPorygon2Gfx34)}, 
 	{NULL, 32}, 
@@ -2343,10 +2343,10 @@ static const ax_sprite sPorygon2Sprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx35[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_35.4bpp");
-static const u8 sPorygon2Gfx35_1[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_35_1.4bpp");
-static const u8 sPorygon2Gfx35_2[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_35_2.4bpp");
-static const u8 sPorygon2Gfx35_3[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_35_3.4bpp");
+static const u8 sPorygon2Gfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_35.4bpp.lz");
+static const u8 sPorygon2Gfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_35_1.4bpp.lz");
+static const u8 sPorygon2Gfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_35_2.4bpp.lz");
+static const u8 sPorygon2Gfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_35_3.4bpp.lz");
 static const ax_sprite sPorygon2Sprites35[] = {
 	{sPorygon2Gfx35, ARRAY_COUNT(sPorygon2Gfx35)}, 
 	{NULL, 32}, 
@@ -2358,57 +2358,57 @@ static const ax_sprite sPorygon2Sprites35[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx36[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_36.4bpp");
+static const u8 sPorygon2Gfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_36.4bpp.lz");
 static const ax_sprite sPorygon2Sprites36[] = {
 	{sPorygon2Gfx36, ARRAY_COUNT(sPorygon2Gfx36)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx37[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_37.4bpp");
+static const u8 sPorygon2Gfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_37.4bpp.lz");
 static const ax_sprite sPorygon2Sprites37[] = {
 	{sPorygon2Gfx37, ARRAY_COUNT(sPorygon2Gfx37)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx38[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_38.4bpp");
+static const u8 sPorygon2Gfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_38.4bpp.lz");
 static const ax_sprite sPorygon2Sprites38[] = {
 	{sPorygon2Gfx38, ARRAY_COUNT(sPorygon2Gfx38)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx39[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_39.4bpp");
+static const u8 sPorygon2Gfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_39.4bpp.lz");
 static const ax_sprite sPorygon2Sprites39[] = {
 	{sPorygon2Gfx39, ARRAY_COUNT(sPorygon2Gfx39)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx40[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_40.4bpp");
+static const u8 sPorygon2Gfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_40.4bpp.lz");
 static const ax_sprite sPorygon2Sprites40[] = {
 	{sPorygon2Gfx40, ARRAY_COUNT(sPorygon2Gfx40)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx41[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_41.4bpp");
+static const u8 sPorygon2Gfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_41.4bpp.lz");
 static const ax_sprite sPorygon2Sprites41[] = {
 	{sPorygon2Gfx41, ARRAY_COUNT(sPorygon2Gfx41)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx42[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_42.4bpp");
+static const u8 sPorygon2Gfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_42.4bpp.lz");
 static const ax_sprite sPorygon2Sprites42[] = {
 	{sPorygon2Gfx42, ARRAY_COUNT(sPorygon2Gfx42)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx43[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_43.4bpp");
+static const u8 sPorygon2Gfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_43.4bpp.lz");
 static const ax_sprite sPorygon2Sprites43[] = {
 	{sPorygon2Gfx43, ARRAY_COUNT(sPorygon2Gfx43)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx44[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_44.4bpp");
+static const u8 sPorygon2Gfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_44.4bpp.lz");
 static const ax_sprite sPorygon2Sprites44[] = {
 	{sPorygon2Gfx44, ARRAY_COUNT(sPorygon2Gfx44)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx45[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_45.4bpp");
+static const u8 sPorygon2Gfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_45.4bpp.lz");
 static const ax_sprite sPorygon2Sprites45[] = {
 	{sPorygon2Gfx45, ARRAY_COUNT(sPorygon2Gfx45)}, 
 	{NULL, 0}
 };
-static const u8 sPorygon2Gfx46[] = INCBIN_U8("graphics/ax/mon/porygon2/sprite_46.4bpp");
+static const u8 sPorygon2Gfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/porygon2/sprite_46.4bpp.lz");
 static const ax_sprite sPorygon2Sprites46[] = {
 	{sPorygon2Gfx46, ARRAY_COUNT(sPorygon2Gfx46)}, 
 	{NULL, 0}

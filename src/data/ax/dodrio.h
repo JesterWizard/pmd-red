@@ -2263,83 +2263,83 @@ static const ax_anim sDodrioAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sDodrioGfx1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_1.4bpp");
+static const u8 sDodrioGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_1.4bpp.lz");
 static const ax_sprite sDodrioSprites1[] = {
 	{sDodrioGfx1, ARRAY_COUNT(sDodrioGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_2.4bpp");
+static const u8 sDodrioGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_2.4bpp.lz");
 static const ax_sprite sDodrioSprites2[] = {
 	{sDodrioGfx2, ARRAY_COUNT(sDodrioGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx3[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_3.4bpp");
+static const u8 sDodrioGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_3.4bpp.lz");
 static const ax_sprite sDodrioSprites3[] = {
 	{sDodrioGfx3, ARRAY_COUNT(sDodrioGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx4[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_4.4bpp");
+static const u8 sDodrioGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_4.4bpp.lz");
 static const ax_sprite sDodrioSprites4[] = {
 	{sDodrioGfx4, ARRAY_COUNT(sDodrioGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx5[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_5.4bpp");
+static const u8 sDodrioGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_5.4bpp.lz");
 static const ax_sprite sDodrioSprites5[] = {
 	{sDodrioGfx5, ARRAY_COUNT(sDodrioGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx6[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_6.4bpp");
+static const u8 sDodrioGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_6.4bpp.lz");
 static const ax_sprite sDodrioSprites6[] = {
 	{sDodrioGfx6, ARRAY_COUNT(sDodrioGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx7[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_7.4bpp");
+static const u8 sDodrioGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_7.4bpp.lz");
 static const ax_sprite sDodrioSprites7[] = {
 	{sDodrioGfx7, ARRAY_COUNT(sDodrioGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx8[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_8.4bpp");
+static const u8 sDodrioGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_8.4bpp.lz");
 static const ax_sprite sDodrioSprites8[] = {
 	{sDodrioGfx8, ARRAY_COUNT(sDodrioGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx9[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_9.4bpp");
+static const u8 sDodrioGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_9.4bpp.lz");
 static const ax_sprite sDodrioSprites9[] = {
 	{sDodrioGfx9, ARRAY_COUNT(sDodrioGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx10[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_10.4bpp");
+static const u8 sDodrioGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_10.4bpp.lz");
 static const ax_sprite sDodrioSprites10[] = {
 	{sDodrioGfx10, ARRAY_COUNT(sDodrioGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx11[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_11.4bpp");
+static const u8 sDodrioGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_11.4bpp.lz");
 static const ax_sprite sDodrioSprites11[] = {
 	{sDodrioGfx11, ARRAY_COUNT(sDodrioGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx12[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_12.4bpp");
+static const u8 sDodrioGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_12.4bpp.lz");
 static const ax_sprite sDodrioSprites12[] = {
 	{sDodrioGfx12, ARRAY_COUNT(sDodrioGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx13[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_13.4bpp");
+static const u8 sDodrioGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_13.4bpp.lz");
 static const ax_sprite sDodrioSprites13[] = {
 	{sDodrioGfx13, ARRAY_COUNT(sDodrioGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx14[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_14.4bpp");
+static const u8 sDodrioGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_14.4bpp.lz");
 static const ax_sprite sDodrioSprites14[] = {
 	{sDodrioGfx14, ARRAY_COUNT(sDodrioGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx15[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_15.4bpp");
+static const u8 sDodrioGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_15.4bpp.lz");
 static const ax_sprite sDodrioSprites15[] = {
 	{sDodrioGfx15, ARRAY_COUNT(sDodrioGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx16[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_16.4bpp");
-static const u8 sDodrioGfx16_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_16_1.4bpp");
+static const u8 sDodrioGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_16.4bpp.lz");
+static const u8 sDodrioGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_16_1.4bpp.lz");
 static const ax_sprite sDodrioSprites16[] = {
 	{NULL, 32}, 
 	{sDodrioGfx16, ARRAY_COUNT(sDodrioGfx16)}, 
@@ -2348,10 +2348,10 @@ static const ax_sprite sDodrioSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx17[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_17.4bpp");
-static const u8 sDodrioGfx17_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_17_1.4bpp");
-static const u8 sDodrioGfx17_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_17_2.4bpp");
-static const u8 sDodrioGfx17_3[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_17_3.4bpp");
+static const u8 sDodrioGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_17.4bpp.lz");
+static const u8 sDodrioGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_17_1.4bpp.lz");
+static const u8 sDodrioGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_17_2.4bpp.lz");
+static const u8 sDodrioGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_17_3.4bpp.lz");
 static const ax_sprite sDodrioSprites17[] = {
 	{sDodrioGfx17, ARRAY_COUNT(sDodrioGfx17)}, 
 	{NULL, 32}, 
@@ -2362,9 +2362,9 @@ static const ax_sprite sDodrioSprites17[] = {
 	{sDodrioGfx17_3, ARRAY_COUNT(sDodrioGfx17_3)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx18[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_18.4bpp");
-static const u8 sDodrioGfx18_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_18_1.4bpp");
-static const u8 sDodrioGfx18_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_18_2.4bpp");
+static const u8 sDodrioGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_18.4bpp.lz");
+static const u8 sDodrioGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_18_1.4bpp.lz");
+static const u8 sDodrioGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_18_2.4bpp.lz");
 static const ax_sprite sDodrioSprites18[] = {
 	{NULL, 32}, 
 	{sDodrioGfx18, ARRAY_COUNT(sDodrioGfx18)}, 
@@ -2375,9 +2375,9 @@ static const ax_sprite sDodrioSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx19[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_19.4bpp");
-static const u8 sDodrioGfx19_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_19_1.4bpp");
-static const u8 sDodrioGfx19_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_19_2.4bpp");
+static const u8 sDodrioGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_19.4bpp.lz");
+static const u8 sDodrioGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_19_1.4bpp.lz");
+static const u8 sDodrioGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_19_2.4bpp.lz");
 static const ax_sprite sDodrioSprites19[] = {
 	{sDodrioGfx19, ARRAY_COUNT(sDodrioGfx19)}, 
 	{NULL, 32}, 
@@ -2387,9 +2387,9 @@ static const ax_sprite sDodrioSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx20[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_20.4bpp");
-static const u8 sDodrioGfx20_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_20_1.4bpp");
-static const u8 sDodrioGfx20_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_20_2.4bpp");
+static const u8 sDodrioGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_20.4bpp.lz");
+static const u8 sDodrioGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_20_1.4bpp.lz");
+static const u8 sDodrioGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_20_2.4bpp.lz");
 static const ax_sprite sDodrioSprites20[] = {
 	{sDodrioGfx20, ARRAY_COUNT(sDodrioGfx20)}, 
 	{NULL, 32}, 
@@ -2399,9 +2399,9 @@ static const ax_sprite sDodrioSprites20[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx21[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_21.4bpp");
-static const u8 sDodrioGfx21_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_21_1.4bpp");
-static const u8 sDodrioGfx21_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_21_2.4bpp");
+static const u8 sDodrioGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_21.4bpp.lz");
+static const u8 sDodrioGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_21_1.4bpp.lz");
+static const u8 sDodrioGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_21_2.4bpp.lz");
 static const ax_sprite sDodrioSprites21[] = {
 	{sDodrioGfx21, ARRAY_COUNT(sDodrioGfx21)}, 
 	{NULL, 32}, 
@@ -2410,10 +2410,10 @@ static const ax_sprite sDodrioSprites21[] = {
 	{sDodrioGfx21_2, ARRAY_COUNT(sDodrioGfx21_2)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx22[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_22.4bpp");
-static const u8 sDodrioGfx22_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_22_1.4bpp");
-static const u8 sDodrioGfx22_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_22_2.4bpp");
-static const u8 sDodrioGfx22_3[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_22_3.4bpp");
+static const u8 sDodrioGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_22.4bpp.lz");
+static const u8 sDodrioGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_22_1.4bpp.lz");
+static const u8 sDodrioGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_22_2.4bpp.lz");
+static const u8 sDodrioGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_22_3.4bpp.lz");
 static const ax_sprite sDodrioSprites22[] = {
 	{sDodrioGfx22, ARRAY_COUNT(sDodrioGfx22)}, 
 	{NULL, 32}, 
@@ -2425,10 +2425,10 @@ static const ax_sprite sDodrioSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx23[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_23.4bpp");
-static const u8 sDodrioGfx23_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_23_1.4bpp");
-static const u8 sDodrioGfx23_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_23_2.4bpp");
-static const u8 sDodrioGfx23_3[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_23_3.4bpp");
+static const u8 sDodrioGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_23.4bpp.lz");
+static const u8 sDodrioGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_23_1.4bpp.lz");
+static const u8 sDodrioGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_23_2.4bpp.lz");
+static const u8 sDodrioGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_23_3.4bpp.lz");
 static const ax_sprite sDodrioSprites23[] = {
 	{NULL, 32}, 
 	{sDodrioGfx23, ARRAY_COUNT(sDodrioGfx23)}, 
@@ -2441,9 +2441,9 @@ static const ax_sprite sDodrioSprites23[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx24[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_24.4bpp");
-static const u8 sDodrioGfx24_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_24_1.4bpp");
-static const u8 sDodrioGfx24_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_24_2.4bpp");
+static const u8 sDodrioGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_24.4bpp.lz");
+static const u8 sDodrioGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_24_1.4bpp.lz");
+static const u8 sDodrioGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_24_2.4bpp.lz");
 static const ax_sprite sDodrioSprites24[] = {
 	{sDodrioGfx24, ARRAY_COUNT(sDodrioGfx24)}, 
 	{NULL, 32}, 
@@ -2453,9 +2453,9 @@ static const ax_sprite sDodrioSprites24[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx25[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_25.4bpp");
-static const u8 sDodrioGfx25_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_25_1.4bpp");
-static const u8 sDodrioGfx25_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_25_2.4bpp");
+static const u8 sDodrioGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_25.4bpp.lz");
+static const u8 sDodrioGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_25_1.4bpp.lz");
+static const u8 sDodrioGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_25_2.4bpp.lz");
 static const ax_sprite sDodrioSprites25[] = {
 	{sDodrioGfx25, ARRAY_COUNT(sDodrioGfx25)}, 
 	{NULL, 32}, 
@@ -2465,9 +2465,9 @@ static const ax_sprite sDodrioSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx26[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_26.4bpp");
-static const u8 sDodrioGfx26_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_26_1.4bpp");
-static const u8 sDodrioGfx26_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_26_2.4bpp");
+static const u8 sDodrioGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_26.4bpp.lz");
+static const u8 sDodrioGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_26_1.4bpp.lz");
+static const u8 sDodrioGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_26_2.4bpp.lz");
 static const ax_sprite sDodrioSprites26[] = {
 	{NULL, 32}, 
 	{sDodrioGfx26, ARRAY_COUNT(sDodrioGfx26)}, 
@@ -2478,8 +2478,8 @@ static const ax_sprite sDodrioSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx27[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_27.4bpp");
-static const u8 sDodrioGfx27_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_27_1.4bpp");
+static const u8 sDodrioGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_27.4bpp.lz");
+static const u8 sDodrioGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_27_1.4bpp.lz");
 static const ax_sprite sDodrioSprites27[] = {
 	{NULL, 64}, 
 	{sDodrioGfx27, ARRAY_COUNT(sDodrioGfx27)}, 
@@ -2488,8 +2488,8 @@ static const ax_sprite sDodrioSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx28[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_28.4bpp");
-static const u8 sDodrioGfx28_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_28_1.4bpp");
+static const u8 sDodrioGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_28.4bpp.lz");
+static const u8 sDodrioGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_28_1.4bpp.lz");
 static const ax_sprite sDodrioSprites28[] = {
 	{NULL, 128}, 
 	{sDodrioGfx28, ARRAY_COUNT(sDodrioGfx28)}, 
@@ -2497,10 +2497,10 @@ static const ax_sprite sDodrioSprites28[] = {
 	{sDodrioGfx28_1, ARRAY_COUNT(sDodrioGfx28_1)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx29[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_29.4bpp");
-static const u8 sDodrioGfx29_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_29_1.4bpp");
-static const u8 sDodrioGfx29_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_29_2.4bpp");
-static const u8 sDodrioGfx29_3[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_29_3.4bpp");
+static const u8 sDodrioGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_29.4bpp.lz");
+static const u8 sDodrioGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_29_1.4bpp.lz");
+static const u8 sDodrioGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_29_2.4bpp.lz");
+static const u8 sDodrioGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_29_3.4bpp.lz");
 static const ax_sprite sDodrioSprites29[] = {
 	{sDodrioGfx29, ARRAY_COUNT(sDodrioGfx29)}, 
 	{NULL, 32}, 
@@ -2511,9 +2511,9 @@ static const ax_sprite sDodrioSprites29[] = {
 	{sDodrioGfx29_3, ARRAY_COUNT(sDodrioGfx29_3)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx30[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_30.4bpp");
-static const u8 sDodrioGfx30_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_30_1.4bpp");
-static const u8 sDodrioGfx30_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_30_2.4bpp");
+static const u8 sDodrioGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_30.4bpp.lz");
+static const u8 sDodrioGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_30_1.4bpp.lz");
+static const u8 sDodrioGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_30_2.4bpp.lz");
 static const ax_sprite sDodrioSprites30[] = {
 	{sDodrioGfx30, ARRAY_COUNT(sDodrioGfx30)}, 
 	{NULL, 32}, 
@@ -2523,8 +2523,8 @@ static const ax_sprite sDodrioSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx31[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_31.4bpp");
-static const u8 sDodrioGfx31_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_31_1.4bpp");
+static const u8 sDodrioGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_31.4bpp.lz");
+static const u8 sDodrioGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_31_1.4bpp.lz");
 static const ax_sprite sDodrioSprites31[] = {
 	{sDodrioGfx31, ARRAY_COUNT(sDodrioGfx31)}, 
 	{NULL, 64}, 
@@ -2532,15 +2532,15 @@ static const ax_sprite sDodrioSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx32[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_32.4bpp");
+static const u8 sDodrioGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_32.4bpp.lz");
 static const ax_sprite sDodrioSprites32[] = {
 	{sDodrioGfx32, ARRAY_COUNT(sDodrioGfx32)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx33[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_33.4bpp");
-static const u8 sDodrioGfx33_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_33_1.4bpp");
-static const u8 sDodrioGfx33_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_33_2.4bpp");
+static const u8 sDodrioGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_33.4bpp.lz");
+static const u8 sDodrioGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_33_1.4bpp.lz");
+static const u8 sDodrioGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_33_2.4bpp.lz");
 static const ax_sprite sDodrioSprites33[] = {
 	{NULL, 32}, 
 	{sDodrioGfx33, ARRAY_COUNT(sDodrioGfx33)}, 
@@ -2550,10 +2550,10 @@ static const ax_sprite sDodrioSprites33[] = {
 	{sDodrioGfx33_2, ARRAY_COUNT(sDodrioGfx33_2)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx34[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_34.4bpp");
-static const u8 sDodrioGfx34_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_34_1.4bpp");
-static const u8 sDodrioGfx34_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_34_2.4bpp");
-static const u8 sDodrioGfx34_3[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_34_3.4bpp");
+static const u8 sDodrioGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_34.4bpp.lz");
+static const u8 sDodrioGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_34_1.4bpp.lz");
+static const u8 sDodrioGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_34_2.4bpp.lz");
+static const u8 sDodrioGfx34_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_34_3.4bpp.lz");
 static const ax_sprite sDodrioSprites34[] = {
 	{sDodrioGfx34, ARRAY_COUNT(sDodrioGfx34)}, 
 	{NULL, 32}, 
@@ -2565,9 +2565,9 @@ static const ax_sprite sDodrioSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx35[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_35.4bpp");
-static const u8 sDodrioGfx35_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_35_1.4bpp");
-static const u8 sDodrioGfx35_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_35_2.4bpp");
+static const u8 sDodrioGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_35.4bpp.lz");
+static const u8 sDodrioGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_35_1.4bpp.lz");
+static const u8 sDodrioGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_35_2.4bpp.lz");
 static const ax_sprite sDodrioSprites35[] = {
 	{sDodrioGfx35, ARRAY_COUNT(sDodrioGfx35)}, 
 	{NULL, 32}, 
@@ -2577,9 +2577,9 @@ static const ax_sprite sDodrioSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx36[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_36.4bpp");
-static const u8 sDodrioGfx36_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_36_1.4bpp");
-static const u8 sDodrioGfx36_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_36_2.4bpp");
+static const u8 sDodrioGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_36.4bpp.lz");
+static const u8 sDodrioGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_36_1.4bpp.lz");
+static const u8 sDodrioGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_36_2.4bpp.lz");
 static const ax_sprite sDodrioSprites36[] = {
 	{NULL, 32}, 
 	{sDodrioGfx36, ARRAY_COUNT(sDodrioGfx36)}, 
@@ -2590,15 +2590,15 @@ static const ax_sprite sDodrioSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx37[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_37.4bpp");
+static const u8 sDodrioGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_37.4bpp.lz");
 static const ax_sprite sDodrioSprites37[] = {
 	{NULL, 32}, 
 	{sDodrioGfx37, ARRAY_COUNT(sDodrioGfx37)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx38[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_38.4bpp");
-static const u8 sDodrioGfx38_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_38_1.4bpp");
+static const u8 sDodrioGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_38.4bpp.lz");
+static const u8 sDodrioGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_38_1.4bpp.lz");
 static const ax_sprite sDodrioSprites38[] = {
 	{NULL, 32}, 
 	{sDodrioGfx38, ARRAY_COUNT(sDodrioGfx38)}, 
@@ -2606,9 +2606,9 @@ static const ax_sprite sDodrioSprites38[] = {
 	{sDodrioGfx38_1, ARRAY_COUNT(sDodrioGfx38_1)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx39[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_39.4bpp");
-static const u8 sDodrioGfx39_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_39_1.4bpp");
-static const u8 sDodrioGfx39_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_39_2.4bpp");
+static const u8 sDodrioGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_39.4bpp.lz");
+static const u8 sDodrioGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_39_1.4bpp.lz");
+static const u8 sDodrioGfx39_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_39_2.4bpp.lz");
 static const ax_sprite sDodrioSprites39[] = {
 	{sDodrioGfx39, ARRAY_COUNT(sDodrioGfx39)}, 
 	{NULL, 32}, 
@@ -2618,9 +2618,9 @@ static const ax_sprite sDodrioSprites39[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx40[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_40.4bpp");
-static const u8 sDodrioGfx40_1[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_40_1.4bpp");
-static const u8 sDodrioGfx40_2[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_40_2.4bpp");
+static const u8 sDodrioGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_40.4bpp.lz");
+static const u8 sDodrioGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_40_1.4bpp.lz");
+static const u8 sDodrioGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_40_2.4bpp.lz");
 static const ax_sprite sDodrioSprites40[] = {
 	{sDodrioGfx40, ARRAY_COUNT(sDodrioGfx40)}, 
 	{NULL, 32}, 
@@ -2630,37 +2630,37 @@ static const ax_sprite sDodrioSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx41[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_41.4bpp");
+static const u8 sDodrioGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_41.4bpp.lz");
 static const ax_sprite sDodrioSprites41[] = {
 	{sDodrioGfx41, ARRAY_COUNT(sDodrioGfx41)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx42[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_42.4bpp");
+static const u8 sDodrioGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_42.4bpp.lz");
 static const ax_sprite sDodrioSprites42[] = {
 	{sDodrioGfx42, ARRAY_COUNT(sDodrioGfx42)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx43[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_43.4bpp");
+static const u8 sDodrioGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_43.4bpp.lz");
 static const ax_sprite sDodrioSprites43[] = {
 	{sDodrioGfx43, ARRAY_COUNT(sDodrioGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx44[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_44.4bpp");
+static const u8 sDodrioGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_44.4bpp.lz");
 static const ax_sprite sDodrioSprites44[] = {
 	{sDodrioGfx44, ARRAY_COUNT(sDodrioGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx45[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_45.4bpp");
+static const u8 sDodrioGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_45.4bpp.lz");
 static const ax_sprite sDodrioSprites45[] = {
 	{sDodrioGfx45, ARRAY_COUNT(sDodrioGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx46[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_46.4bpp");
+static const u8 sDodrioGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_46.4bpp.lz");
 static const ax_sprite sDodrioSprites46[] = {
 	{sDodrioGfx46, ARRAY_COUNT(sDodrioGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sDodrioGfx47[] = INCBIN_U8("graphics/ax/mon/dodrio/sprite_47.4bpp");
+static const u8 sDodrioGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/dodrio/sprite_47.4bpp.lz");
 static const ax_sprite sDodrioSprites47[] = {
 	{sDodrioGfx47, ARRAY_COUNT(sDodrioGfx47)}, 
 	{NULL, 0}

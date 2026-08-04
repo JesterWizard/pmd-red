@@ -2586,12 +2586,12 @@ static const ax_anim sGroudonAnims_16_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGroudonGfx1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_1.4bpp");
-static const u8 sGroudonGfx1_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_1.4bpp");
-static const u8 sGroudonGfx1_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_2.4bpp");
-static const u8 sGroudonGfx1_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_3.4bpp");
-static const u8 sGroudonGfx1_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_4.4bpp");
-static const u8 sGroudonGfx1_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_5.4bpp");
+static const u8 sGroudonGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_1.4bpp.lz");
+static const u8 sGroudonGfx1_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_1.4bpp.lz");
+static const u8 sGroudonGfx1_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_2.4bpp.lz");
+static const u8 sGroudonGfx1_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_3.4bpp.lz");
+static const u8 sGroudonGfx1_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_4.4bpp.lz");
+static const u8 sGroudonGfx1_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_1_5.4bpp.lz");
 static const ax_sprite sGroudonSprites1[] = {
 	{NULL, 32}, 
 	{sGroudonGfx1, ARRAY_COUNT(sGroudonGfx1)}, 
@@ -2608,13 +2608,13 @@ static const ax_sprite sGroudonSprites1[] = {
 	{NULL, 864}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_2.4bpp");
-static const u8 sGroudonGfx2_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_1.4bpp");
-static const u8 sGroudonGfx2_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_2.4bpp");
-static const u8 sGroudonGfx2_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_3.4bpp");
-static const u8 sGroudonGfx2_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_4.4bpp");
-static const u8 sGroudonGfx2_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_5.4bpp");
-static const u8 sGroudonGfx2_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_6.4bpp");
+static const u8 sGroudonGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_2.4bpp.lz");
+static const u8 sGroudonGfx2_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_1.4bpp.lz");
+static const u8 sGroudonGfx2_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_2.4bpp.lz");
+static const u8 sGroudonGfx2_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_3.4bpp.lz");
+static const u8 sGroudonGfx2_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_4.4bpp.lz");
+static const u8 sGroudonGfx2_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_5.4bpp.lz");
+static const u8 sGroudonGfx2_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_2_6.4bpp.lz");
 static const ax_sprite sGroudonSprites2[] = {
 	{NULL, 32}, 
 	{sGroudonGfx2, ARRAY_COUNT(sGroudonGfx2)}, 
@@ -2633,12 +2633,12 @@ static const ax_sprite sGroudonSprites2[] = {
 	{NULL, 704}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_3.4bpp");
-static const u8 sGroudonGfx3_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_1.4bpp");
-static const u8 sGroudonGfx3_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_2.4bpp");
-static const u8 sGroudonGfx3_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_3.4bpp");
-static const u8 sGroudonGfx3_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_4.4bpp");
-static const u8 sGroudonGfx3_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_5.4bpp");
+static const u8 sGroudonGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_3.4bpp.lz");
+static const u8 sGroudonGfx3_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_1.4bpp.lz");
+static const u8 sGroudonGfx3_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_2.4bpp.lz");
+static const u8 sGroudonGfx3_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_3.4bpp.lz");
+static const u8 sGroudonGfx3_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_4.4bpp.lz");
+static const u8 sGroudonGfx3_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_3_5.4bpp.lz");
 static const ax_sprite sGroudonSprites3[] = {
 	{sGroudonGfx3, ARRAY_COUNT(sGroudonGfx3)}, 
 	{NULL, 128}, 
@@ -2654,12 +2654,12 @@ static const ax_sprite sGroudonSprites3[] = {
 	{NULL, 608}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_4.4bpp");
-static const u8 sGroudonGfx4_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_1.4bpp");
-static const u8 sGroudonGfx4_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_2.4bpp");
-static const u8 sGroudonGfx4_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_3.4bpp");
-static const u8 sGroudonGfx4_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_4.4bpp");
-static const u8 sGroudonGfx4_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_5.4bpp");
+static const u8 sGroudonGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_4.4bpp.lz");
+static const u8 sGroudonGfx4_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_1.4bpp.lz");
+static const u8 sGroudonGfx4_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_2.4bpp.lz");
+static const u8 sGroudonGfx4_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_3.4bpp.lz");
+static const u8 sGroudonGfx4_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_4.4bpp.lz");
+static const u8 sGroudonGfx4_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_4_5.4bpp.lz");
 static const ax_sprite sGroudonSprites4[] = {
 	{sGroudonGfx4, ARRAY_COUNT(sGroudonGfx4)}, 
 	{NULL, 128}, 
@@ -2675,12 +2675,12 @@ static const ax_sprite sGroudonSprites4[] = {
 	{NULL, 608}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_5.4bpp");
-static const u8 sGroudonGfx5_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_1.4bpp");
-static const u8 sGroudonGfx5_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_2.4bpp");
-static const u8 sGroudonGfx5_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_3.4bpp");
-static const u8 sGroudonGfx5_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_4.4bpp");
-static const u8 sGroudonGfx5_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_5.4bpp");
+static const u8 sGroudonGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_5.4bpp.lz");
+static const u8 sGroudonGfx5_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_1.4bpp.lz");
+static const u8 sGroudonGfx5_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_2.4bpp.lz");
+static const u8 sGroudonGfx5_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_3.4bpp.lz");
+static const u8 sGroudonGfx5_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_4.4bpp.lz");
+static const u8 sGroudonGfx5_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_5_5.4bpp.lz");
 static const ax_sprite sGroudonSprites5[] = {
 	{sGroudonGfx5, ARRAY_COUNT(sGroudonGfx5)}, 
 	{NULL, 128}, 
@@ -2696,12 +2696,12 @@ static const ax_sprite sGroudonSprites5[] = {
 	{NULL, 608}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_6.4bpp");
-static const u8 sGroudonGfx6_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_1.4bpp");
-static const u8 sGroudonGfx6_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_2.4bpp");
-static const u8 sGroudonGfx6_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_3.4bpp");
-static const u8 sGroudonGfx6_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_4.4bpp");
-static const u8 sGroudonGfx6_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_5.4bpp");
+static const u8 sGroudonGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_6.4bpp.lz");
+static const u8 sGroudonGfx6_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_1.4bpp.lz");
+static const u8 sGroudonGfx6_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_2.4bpp.lz");
+static const u8 sGroudonGfx6_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_3.4bpp.lz");
+static const u8 sGroudonGfx6_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_4.4bpp.lz");
+static const u8 sGroudonGfx6_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_6_5.4bpp.lz");
 static const ax_sprite sGroudonSprites6[] = {
 	{sGroudonGfx6, ARRAY_COUNT(sGroudonGfx6)}, 
 	{NULL, 128}, 
@@ -2717,12 +2717,12 @@ static const ax_sprite sGroudonSprites6[] = {
 	{NULL, 640}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx7[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_7.4bpp");
-static const u8 sGroudonGfx7_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_1.4bpp");
-static const u8 sGroudonGfx7_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_2.4bpp");
-static const u8 sGroudonGfx7_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_3.4bpp");
-static const u8 sGroudonGfx7_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_4.4bpp");
-static const u8 sGroudonGfx7_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_5.4bpp");
+static const u8 sGroudonGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_7.4bpp.lz");
+static const u8 sGroudonGfx7_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_1.4bpp.lz");
+static const u8 sGroudonGfx7_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_2.4bpp.lz");
+static const u8 sGroudonGfx7_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_3.4bpp.lz");
+static const u8 sGroudonGfx7_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_4.4bpp.lz");
+static const u8 sGroudonGfx7_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_7_5.4bpp.lz");
 static const ax_sprite sGroudonSprites7[] = {
 	{sGroudonGfx7, ARRAY_COUNT(sGroudonGfx7)}, 
 	{NULL, 128}, 
@@ -2738,12 +2738,12 @@ static const ax_sprite sGroudonSprites7[] = {
 	{NULL, 608}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx8[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_8.4bpp");
-static const u8 sGroudonGfx8_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_1.4bpp");
-static const u8 sGroudonGfx8_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_2.4bpp");
-static const u8 sGroudonGfx8_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_3.4bpp");
-static const u8 sGroudonGfx8_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_4.4bpp");
-static const u8 sGroudonGfx8_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_5.4bpp");
+static const u8 sGroudonGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_8.4bpp.lz");
+static const u8 sGroudonGfx8_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_1.4bpp.lz");
+static const u8 sGroudonGfx8_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_2.4bpp.lz");
+static const u8 sGroudonGfx8_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_3.4bpp.lz");
+static const u8 sGroudonGfx8_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_4.4bpp.lz");
+static const u8 sGroudonGfx8_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_8_5.4bpp.lz");
 static const ax_sprite sGroudonSprites8[] = {
 	{sGroudonGfx8, ARRAY_COUNT(sGroudonGfx8)}, 
 	{NULL, 128}, 
@@ -2759,13 +2759,13 @@ static const ax_sprite sGroudonSprites8[] = {
 	{NULL, 576}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx9[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_9.4bpp");
-static const u8 sGroudonGfx9_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_1.4bpp");
-static const u8 sGroudonGfx9_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_2.4bpp");
-static const u8 sGroudonGfx9_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_3.4bpp");
-static const u8 sGroudonGfx9_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_4.4bpp");
-static const u8 sGroudonGfx9_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_5.4bpp");
-static const u8 sGroudonGfx9_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_6.4bpp");
+static const u8 sGroudonGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_9.4bpp.lz");
+static const u8 sGroudonGfx9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_1.4bpp.lz");
+static const u8 sGroudonGfx9_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_2.4bpp.lz");
+static const u8 sGroudonGfx9_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_3.4bpp.lz");
+static const u8 sGroudonGfx9_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_4.4bpp.lz");
+static const u8 sGroudonGfx9_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_5.4bpp.lz");
+static const u8 sGroudonGfx9_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_9_6.4bpp.lz");
 static const ax_sprite sGroudonSprites9[] = {
 	{sGroudonGfx9, ARRAY_COUNT(sGroudonGfx9)}, 
 	{NULL, 128}, 
@@ -2783,13 +2783,13 @@ static const ax_sprite sGroudonSprites9[] = {
 	{NULL, 576}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx10[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_10.4bpp");
-static const u8 sGroudonGfx10_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_1.4bpp");
-static const u8 sGroudonGfx10_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_2.4bpp");
-static const u8 sGroudonGfx10_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_3.4bpp");
-static const u8 sGroudonGfx10_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_4.4bpp");
-static const u8 sGroudonGfx10_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_5.4bpp");
-static const u8 sGroudonGfx10_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_6.4bpp");
+static const u8 sGroudonGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_10.4bpp.lz");
+static const u8 sGroudonGfx10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_1.4bpp.lz");
+static const u8 sGroudonGfx10_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_2.4bpp.lz");
+static const u8 sGroudonGfx10_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_3.4bpp.lz");
+static const u8 sGroudonGfx10_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_4.4bpp.lz");
+static const u8 sGroudonGfx10_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_5.4bpp.lz");
+static const u8 sGroudonGfx10_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_10_6.4bpp.lz");
 static const ax_sprite sGroudonSprites10[] = {
 	{sGroudonGfx10, ARRAY_COUNT(sGroudonGfx10)}, 
 	{NULL, 128}, 
@@ -2807,12 +2807,12 @@ static const ax_sprite sGroudonSprites10[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx11[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_11.4bpp");
-static const u8 sGroudonGfx11_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_1.4bpp");
-static const u8 sGroudonGfx11_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_2.4bpp");
-static const u8 sGroudonGfx11_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_3.4bpp");
-static const u8 sGroudonGfx11_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_4.4bpp");
-static const u8 sGroudonGfx11_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_5.4bpp");
+static const u8 sGroudonGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_11.4bpp.lz");
+static const u8 sGroudonGfx11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_1.4bpp.lz");
+static const u8 sGroudonGfx11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_2.4bpp.lz");
+static const u8 sGroudonGfx11_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_3.4bpp.lz");
+static const u8 sGroudonGfx11_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_4.4bpp.lz");
+static const u8 sGroudonGfx11_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_11_5.4bpp.lz");
 static const ax_sprite sGroudonSprites11[] = {
 	{sGroudonGfx11, ARRAY_COUNT(sGroudonGfx11)}, 
 	{NULL, 128}, 
@@ -2828,13 +2828,13 @@ static const ax_sprite sGroudonSprites11[] = {
 	{NULL, 544}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx12[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_12.4bpp");
-static const u8 sGroudonGfx12_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_1.4bpp");
-static const u8 sGroudonGfx12_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_2.4bpp");
-static const u8 sGroudonGfx12_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_3.4bpp");
-static const u8 sGroudonGfx12_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_4.4bpp");
-static const u8 sGroudonGfx12_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_5.4bpp");
-static const u8 sGroudonGfx12_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_6.4bpp");
+static const u8 sGroudonGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_12.4bpp.lz");
+static const u8 sGroudonGfx12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_1.4bpp.lz");
+static const u8 sGroudonGfx12_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_2.4bpp.lz");
+static const u8 sGroudonGfx12_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_3.4bpp.lz");
+static const u8 sGroudonGfx12_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_4.4bpp.lz");
+static const u8 sGroudonGfx12_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_5.4bpp.lz");
+static const u8 sGroudonGfx12_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_12_6.4bpp.lz");
 static const ax_sprite sGroudonSprites12[] = {
 	{sGroudonGfx12, ARRAY_COUNT(sGroudonGfx12)}, 
 	{NULL, 128}, 
@@ -2852,13 +2852,13 @@ static const ax_sprite sGroudonSprites12[] = {
 	{NULL, 352}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx13[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_13.4bpp");
-static const u8 sGroudonGfx13_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_1.4bpp");
-static const u8 sGroudonGfx13_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_2.4bpp");
-static const u8 sGroudonGfx13_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_3.4bpp");
-static const u8 sGroudonGfx13_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_4.4bpp");
-static const u8 sGroudonGfx13_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_5.4bpp");
-static const u8 sGroudonGfx13_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_6.4bpp");
+static const u8 sGroudonGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_13.4bpp.lz");
+static const u8 sGroudonGfx13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_1.4bpp.lz");
+static const u8 sGroudonGfx13_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_2.4bpp.lz");
+static const u8 sGroudonGfx13_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_3.4bpp.lz");
+static const u8 sGroudonGfx13_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_4.4bpp.lz");
+static const u8 sGroudonGfx13_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_5.4bpp.lz");
+static const u8 sGroudonGfx13_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_13_6.4bpp.lz");
 static const ax_sprite sGroudonSprites13[] = {
 	{NULL, 32}, 
 	{sGroudonGfx13, ARRAY_COUNT(sGroudonGfx13)}, 
@@ -2877,13 +2877,13 @@ static const ax_sprite sGroudonSprites13[] = {
 	{NULL, 384}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx14[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_14.4bpp");
-static const u8 sGroudonGfx14_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_1.4bpp");
-static const u8 sGroudonGfx14_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_2.4bpp");
-static const u8 sGroudonGfx14_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_3.4bpp");
-static const u8 sGroudonGfx14_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_4.4bpp");
-static const u8 sGroudonGfx14_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_5.4bpp");
-static const u8 sGroudonGfx14_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_6.4bpp");
+static const u8 sGroudonGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_14.4bpp.lz");
+static const u8 sGroudonGfx14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_1.4bpp.lz");
+static const u8 sGroudonGfx14_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_2.4bpp.lz");
+static const u8 sGroudonGfx14_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_3.4bpp.lz");
+static const u8 sGroudonGfx14_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_4.4bpp.lz");
+static const u8 sGroudonGfx14_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_5.4bpp.lz");
+static const u8 sGroudonGfx14_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_14_6.4bpp.lz");
 static const ax_sprite sGroudonSprites14[] = {
 	{sGroudonGfx14, ARRAY_COUNT(sGroudonGfx14)}, 
 	{NULL, 128}, 
@@ -2901,13 +2901,13 @@ static const ax_sprite sGroudonSprites14[] = {
 	{NULL, 384}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx15[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_15.4bpp");
-static const u8 sGroudonGfx15_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_1.4bpp");
-static const u8 sGroudonGfx15_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_2.4bpp");
-static const u8 sGroudonGfx15_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_3.4bpp");
-static const u8 sGroudonGfx15_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_4.4bpp");
-static const u8 sGroudonGfx15_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_5.4bpp");
-static const u8 sGroudonGfx15_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_6.4bpp");
+static const u8 sGroudonGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_15.4bpp.lz");
+static const u8 sGroudonGfx15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_1.4bpp.lz");
+static const u8 sGroudonGfx15_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_2.4bpp.lz");
+static const u8 sGroudonGfx15_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_3.4bpp.lz");
+static const u8 sGroudonGfx15_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_4.4bpp.lz");
+static const u8 sGroudonGfx15_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_5.4bpp.lz");
+static const u8 sGroudonGfx15_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_15_6.4bpp.lz");
 static const ax_sprite sGroudonSprites15[] = {
 	{sGroudonGfx15, ARRAY_COUNT(sGroudonGfx15)}, 
 	{NULL, 128}, 
@@ -2925,13 +2925,13 @@ static const ax_sprite sGroudonSprites15[] = {
 	{NULL, 384}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx16[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_16.4bpp");
-static const u8 sGroudonGfx16_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_1.4bpp");
-static const u8 sGroudonGfx16_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_2.4bpp");
-static const u8 sGroudonGfx16_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_3.4bpp");
-static const u8 sGroudonGfx16_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_4.4bpp");
-static const u8 sGroudonGfx16_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_5.4bpp");
-static const u8 sGroudonGfx16_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_6.4bpp");
+static const u8 sGroudonGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_16.4bpp.lz");
+static const u8 sGroudonGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_1.4bpp.lz");
+static const u8 sGroudonGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_2.4bpp.lz");
+static const u8 sGroudonGfx16_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_3.4bpp.lz");
+static const u8 sGroudonGfx16_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_4.4bpp.lz");
+static const u8 sGroudonGfx16_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_5.4bpp.lz");
+static const u8 sGroudonGfx16_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_16_6.4bpp.lz");
 static const ax_sprite sGroudonSprites16[] = {
 	{NULL, 64}, 
 	{sGroudonGfx16, ARRAY_COUNT(sGroudonGfx16)}, 
@@ -2950,14 +2950,14 @@ static const ax_sprite sGroudonSprites16[] = {
 	{NULL, 384}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx17[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_17.4bpp");
-static const u8 sGroudonGfx17_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_1.4bpp");
-static const u8 sGroudonGfx17_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_2.4bpp");
-static const u8 sGroudonGfx17_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_3.4bpp");
-static const u8 sGroudonGfx17_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_4.4bpp");
-static const u8 sGroudonGfx17_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_5.4bpp");
-static const u8 sGroudonGfx17_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_6.4bpp");
-static const u8 sGroudonGfx17_7[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_7.4bpp");
+static const u8 sGroudonGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_17.4bpp.lz");
+static const u8 sGroudonGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_1.4bpp.lz");
+static const u8 sGroudonGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_2.4bpp.lz");
+static const u8 sGroudonGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_3.4bpp.lz");
+static const u8 sGroudonGfx17_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_4.4bpp.lz");
+static const u8 sGroudonGfx17_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_5.4bpp.lz");
+static const u8 sGroudonGfx17_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_6.4bpp.lz");
+static const u8 sGroudonGfx17_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_17_7.4bpp.lz");
 static const ax_sprite sGroudonSprites17[] = {
 	{NULL, 96}, 
 	{sGroudonGfx17, ARRAY_COUNT(sGroudonGfx17)}, 
@@ -2978,10 +2978,10 @@ static const ax_sprite sGroudonSprites17[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx18[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_18.4bpp");
-static const u8 sGroudonGfx18_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_18_1.4bpp");
-static const u8 sGroudonGfx18_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_18_2.4bpp");
-static const u8 sGroudonGfx18_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_18_3.4bpp");
+static const u8 sGroudonGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_18.4bpp.lz");
+static const u8 sGroudonGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_18_1.4bpp.lz");
+static const u8 sGroudonGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_18_2.4bpp.lz");
+static const u8 sGroudonGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_18_3.4bpp.lz");
 static const ax_sprite sGroudonSprites18[] = {
 	{NULL, 448}, 
 	{sGroudonGfx18, ARRAY_COUNT(sGroudonGfx18)}, 
@@ -2994,13 +2994,13 @@ static const ax_sprite sGroudonSprites18[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx19[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_19.4bpp");
-static const u8 sGroudonGfx19_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_1.4bpp");
-static const u8 sGroudonGfx19_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_2.4bpp");
-static const u8 sGroudonGfx19_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_3.4bpp");
-static const u8 sGroudonGfx19_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_4.4bpp");
-static const u8 sGroudonGfx19_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_5.4bpp");
-static const u8 sGroudonGfx19_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_6.4bpp");
+static const u8 sGroudonGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_19.4bpp.lz");
+static const u8 sGroudonGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_1.4bpp.lz");
+static const u8 sGroudonGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_2.4bpp.lz");
+static const u8 sGroudonGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_3.4bpp.lz");
+static const u8 sGroudonGfx19_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_4.4bpp.lz");
+static const u8 sGroudonGfx19_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_5.4bpp.lz");
+static const u8 sGroudonGfx19_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_19_6.4bpp.lz");
 static const ax_sprite sGroudonSprites19[] = {
 	{NULL, 288}, 
 	{sGroudonGfx19, ARRAY_COUNT(sGroudonGfx19)}, 
@@ -3019,11 +3019,11 @@ static const ax_sprite sGroudonSprites19[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx20[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_20.4bpp");
-static const u8 sGroudonGfx20_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_20_1.4bpp");
-static const u8 sGroudonGfx20_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_20_2.4bpp");
-static const u8 sGroudonGfx20_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_20_3.4bpp");
-static const u8 sGroudonGfx20_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_20_4.4bpp");
+static const u8 sGroudonGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_20.4bpp.lz");
+static const u8 sGroudonGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_20_1.4bpp.lz");
+static const u8 sGroudonGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_20_2.4bpp.lz");
+static const u8 sGroudonGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_20_3.4bpp.lz");
+static const u8 sGroudonGfx20_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_20_4.4bpp.lz");
 static const ax_sprite sGroudonSprites20[] = {
 	{NULL, 576}, 
 	{sGroudonGfx20, ARRAY_COUNT(sGroudonGfx20)}, 
@@ -3038,13 +3038,13 @@ static const ax_sprite sGroudonSprites20[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx21[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_21.4bpp");
-static const u8 sGroudonGfx21_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_1.4bpp");
-static const u8 sGroudonGfx21_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_2.4bpp");
-static const u8 sGroudonGfx21_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_3.4bpp");
-static const u8 sGroudonGfx21_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_4.4bpp");
-static const u8 sGroudonGfx21_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_5.4bpp");
-static const u8 sGroudonGfx21_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_6.4bpp");
+static const u8 sGroudonGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_21.4bpp.lz");
+static const u8 sGroudonGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_1.4bpp.lz");
+static const u8 sGroudonGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_2.4bpp.lz");
+static const u8 sGroudonGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_3.4bpp.lz");
+static const u8 sGroudonGfx21_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_4.4bpp.lz");
+static const u8 sGroudonGfx21_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_5.4bpp.lz");
+static const u8 sGroudonGfx21_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_21_6.4bpp.lz");
 static const ax_sprite sGroudonSprites21[] = {
 	{NULL, 64}, 
 	{sGroudonGfx21, ARRAY_COUNT(sGroudonGfx21)}, 
@@ -3063,14 +3063,14 @@ static const ax_sprite sGroudonSprites21[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx22[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_22.4bpp");
-static const u8 sGroudonGfx22_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_1.4bpp");
-static const u8 sGroudonGfx22_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_2.4bpp");
-static const u8 sGroudonGfx22_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_3.4bpp");
-static const u8 sGroudonGfx22_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_4.4bpp");
-static const u8 sGroudonGfx22_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_5.4bpp");
-static const u8 sGroudonGfx22_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_6.4bpp");
-static const u8 sGroudonGfx22_7[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_7.4bpp");
+static const u8 sGroudonGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_22.4bpp.lz");
+static const u8 sGroudonGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_1.4bpp.lz");
+static const u8 sGroudonGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_2.4bpp.lz");
+static const u8 sGroudonGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_3.4bpp.lz");
+static const u8 sGroudonGfx22_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_4.4bpp.lz");
+static const u8 sGroudonGfx22_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_5.4bpp.lz");
+static const u8 sGroudonGfx22_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_6.4bpp.lz");
+static const u8 sGroudonGfx22_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_22_7.4bpp.lz");
 static const ax_sprite sGroudonSprites22[] = {
 	{NULL, 64}, 
 	{sGroudonGfx22, ARRAY_COUNT(sGroudonGfx22)}, 
@@ -3091,13 +3091,13 @@ static const ax_sprite sGroudonSprites22[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx23[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_23.4bpp");
-static const u8 sGroudonGfx23_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_1.4bpp");
-static const u8 sGroudonGfx23_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_2.4bpp");
-static const u8 sGroudonGfx23_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_3.4bpp");
-static const u8 sGroudonGfx23_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_4.4bpp");
-static const u8 sGroudonGfx23_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_5.4bpp");
-static const u8 sGroudonGfx23_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_6.4bpp");
+static const u8 sGroudonGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_23.4bpp.lz");
+static const u8 sGroudonGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_1.4bpp.lz");
+static const u8 sGroudonGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_2.4bpp.lz");
+static const u8 sGroudonGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_3.4bpp.lz");
+static const u8 sGroudonGfx23_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_4.4bpp.lz");
+static const u8 sGroudonGfx23_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_5.4bpp.lz");
+static const u8 sGroudonGfx23_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_23_6.4bpp.lz");
 static const ax_sprite sGroudonSprites23[] = {
 	{NULL, 96}, 
 	{sGroudonGfx23, ARRAY_COUNT(sGroudonGfx23)}, 
@@ -3116,14 +3116,14 @@ static const ax_sprite sGroudonSprites23[] = {
 	{NULL, 256}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx24[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_24.4bpp");
-static const u8 sGroudonGfx24_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_1.4bpp");
-static const u8 sGroudonGfx24_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_2.4bpp");
-static const u8 sGroudonGfx24_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_3.4bpp");
-static const u8 sGroudonGfx24_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_4.4bpp");
-static const u8 sGroudonGfx24_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_5.4bpp");
-static const u8 sGroudonGfx24_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_6.4bpp");
-static const u8 sGroudonGfx24_7[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_7.4bpp");
+static const u8 sGroudonGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_24.4bpp.lz");
+static const u8 sGroudonGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_1.4bpp.lz");
+static const u8 sGroudonGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_2.4bpp.lz");
+static const u8 sGroudonGfx24_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_3.4bpp.lz");
+static const u8 sGroudonGfx24_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_4.4bpp.lz");
+static const u8 sGroudonGfx24_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_5.4bpp.lz");
+static const u8 sGroudonGfx24_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_6.4bpp.lz");
+static const u8 sGroudonGfx24_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_24_7.4bpp.lz");
 static const ax_sprite sGroudonSprites24[] = {
 	{NULL, 96}, 
 	{sGroudonGfx24, ARRAY_COUNT(sGroudonGfx24)}, 
@@ -3144,14 +3144,14 @@ static const ax_sprite sGroudonSprites24[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx25[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_25.4bpp");
-static const u8 sGroudonGfx25_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_1.4bpp");
-static const u8 sGroudonGfx25_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_2.4bpp");
-static const u8 sGroudonGfx25_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_3.4bpp");
-static const u8 sGroudonGfx25_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_4.4bpp");
-static const u8 sGroudonGfx25_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_5.4bpp");
-static const u8 sGroudonGfx25_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_6.4bpp");
-static const u8 sGroudonGfx25_7[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_7.4bpp");
+static const u8 sGroudonGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_25.4bpp.lz");
+static const u8 sGroudonGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_1.4bpp.lz");
+static const u8 sGroudonGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_2.4bpp.lz");
+static const u8 sGroudonGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_3.4bpp.lz");
+static const u8 sGroudonGfx25_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_4.4bpp.lz");
+static const u8 sGroudonGfx25_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_5.4bpp.lz");
+static const u8 sGroudonGfx25_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_6.4bpp.lz");
+static const u8 sGroudonGfx25_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_25_7.4bpp.lz");
 static const ax_sprite sGroudonSprites25[] = {
 	{NULL, 128}, 
 	{sGroudonGfx25, ARRAY_COUNT(sGroudonGfx25)}, 
@@ -3172,14 +3172,14 @@ static const ax_sprite sGroudonSprites25[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx26[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_26.4bpp");
-static const u8 sGroudonGfx26_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_1.4bpp");
-static const u8 sGroudonGfx26_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_2.4bpp");
-static const u8 sGroudonGfx26_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_3.4bpp");
-static const u8 sGroudonGfx26_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_4.4bpp");
-static const u8 sGroudonGfx26_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_5.4bpp");
-static const u8 sGroudonGfx26_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_6.4bpp");
-static const u8 sGroudonGfx26_7[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_7.4bpp");
+static const u8 sGroudonGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_26.4bpp.lz");
+static const u8 sGroudonGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_1.4bpp.lz");
+static const u8 sGroudonGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_2.4bpp.lz");
+static const u8 sGroudonGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_3.4bpp.lz");
+static const u8 sGroudonGfx26_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_4.4bpp.lz");
+static const u8 sGroudonGfx26_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_5.4bpp.lz");
+static const u8 sGroudonGfx26_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_6.4bpp.lz");
+static const u8 sGroudonGfx26_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_26_7.4bpp.lz");
 static const ax_sprite sGroudonSprites26[] = {
 	{NULL, 352}, 
 	{sGroudonGfx26, ARRAY_COUNT(sGroudonGfx26)}, 
@@ -3200,12 +3200,12 @@ static const ax_sprite sGroudonSprites26[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx27[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_27.4bpp");
-static const u8 sGroudonGfx27_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_1.4bpp");
-static const u8 sGroudonGfx27_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_2.4bpp");
-static const u8 sGroudonGfx27_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_3.4bpp");
-static const u8 sGroudonGfx27_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_4.4bpp");
-static const u8 sGroudonGfx27_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_5.4bpp");
+static const u8 sGroudonGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_27.4bpp.lz");
+static const u8 sGroudonGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_1.4bpp.lz");
+static const u8 sGroudonGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_2.4bpp.lz");
+static const u8 sGroudonGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_3.4bpp.lz");
+static const u8 sGroudonGfx27_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_4.4bpp.lz");
+static const u8 sGroudonGfx27_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_27_5.4bpp.lz");
 static const ax_sprite sGroudonSprites27[] = {
 	{NULL, 256}, 
 	{sGroudonGfx27, ARRAY_COUNT(sGroudonGfx27)}, 
@@ -3222,12 +3222,12 @@ static const ax_sprite sGroudonSprites27[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx28[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_28.4bpp");
-static const u8 sGroudonGfx28_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_1.4bpp");
-static const u8 sGroudonGfx28_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_2.4bpp");
-static const u8 sGroudonGfx28_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_3.4bpp");
-static const u8 sGroudonGfx28_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_4.4bpp");
-static const u8 sGroudonGfx28_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_5.4bpp");
+static const u8 sGroudonGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_28.4bpp.lz");
+static const u8 sGroudonGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_1.4bpp.lz");
+static const u8 sGroudonGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_2.4bpp.lz");
+static const u8 sGroudonGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_3.4bpp.lz");
+static const u8 sGroudonGfx28_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_4.4bpp.lz");
+static const u8 sGroudonGfx28_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_28_5.4bpp.lz");
 static const ax_sprite sGroudonSprites28[] = {
 	{NULL, 320}, 
 	{sGroudonGfx28, ARRAY_COUNT(sGroudonGfx28)}, 
@@ -3244,13 +3244,13 @@ static const ax_sprite sGroudonSprites28[] = {
 	{NULL, 320}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx29[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_29.4bpp");
-static const u8 sGroudonGfx29_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_1.4bpp");
-static const u8 sGroudonGfx29_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_2.4bpp");
-static const u8 sGroudonGfx29_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_3.4bpp");
-static const u8 sGroudonGfx29_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_4.4bpp");
-static const u8 sGroudonGfx29_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_5.4bpp");
-static const u8 sGroudonGfx29_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_6.4bpp");
+static const u8 sGroudonGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_29.4bpp.lz");
+static const u8 sGroudonGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_1.4bpp.lz");
+static const u8 sGroudonGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_2.4bpp.lz");
+static const u8 sGroudonGfx29_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_3.4bpp.lz");
+static const u8 sGroudonGfx29_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_4.4bpp.lz");
+static const u8 sGroudonGfx29_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_5.4bpp.lz");
+static const u8 sGroudonGfx29_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_29_6.4bpp.lz");
 static const ax_sprite sGroudonSprites29[] = {
 	{NULL, 288}, 
 	{sGroudonGfx29, ARRAY_COUNT(sGroudonGfx29)}, 
@@ -3269,12 +3269,12 @@ static const ax_sprite sGroudonSprites29[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx30[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_30.4bpp");
-static const u8 sGroudonGfx30_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_1.4bpp");
-static const u8 sGroudonGfx30_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_2.4bpp");
-static const u8 sGroudonGfx30_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_3.4bpp");
-static const u8 sGroudonGfx30_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_4.4bpp");
-static const u8 sGroudonGfx30_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_5.4bpp");
+static const u8 sGroudonGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_30.4bpp.lz");
+static const u8 sGroudonGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_1.4bpp.lz");
+static const u8 sGroudonGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_2.4bpp.lz");
+static const u8 sGroudonGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_3.4bpp.lz");
+static const u8 sGroudonGfx30_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_4.4bpp.lz");
+static const u8 sGroudonGfx30_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_30_5.4bpp.lz");
 static const ax_sprite sGroudonSprites30[] = {
 	{NULL, 320}, 
 	{sGroudonGfx30, ARRAY_COUNT(sGroudonGfx30)}, 
@@ -3291,8 +3291,8 @@ static const ax_sprite sGroudonSprites30[] = {
 	{NULL, 288}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx31[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_31.4bpp");
-static const u8 sGroudonGfx31_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_31_1.4bpp");
+static const u8 sGroudonGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_31.4bpp.lz");
+static const u8 sGroudonGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_31_1.4bpp.lz");
 static const ax_sprite sGroudonSprites31[] = {
 	{NULL, 32}, 
 	{sGroudonGfx31, ARRAY_COUNT(sGroudonGfx31)}, 
@@ -3300,46 +3300,46 @@ static const ax_sprite sGroudonSprites31[] = {
 	{sGroudonGfx31_1, ARRAY_COUNT(sGroudonGfx31_1)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx32[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_32.4bpp");
-static const u8 sGroudonGfx32_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_32_1.4bpp");
+static const u8 sGroudonGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_32.4bpp.lz");
+static const u8 sGroudonGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_32_1.4bpp.lz");
 static const ax_sprite sGroudonSprites32[] = {
 	{sGroudonGfx32, ARRAY_COUNT(sGroudonGfx32)}, 
 	{NULL, 64}, 
 	{sGroudonGfx32_1, ARRAY_COUNT(sGroudonGfx32_1)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx33[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_33.4bpp");
+static const u8 sGroudonGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_33.4bpp.lz");
 static const ax_sprite sGroudonSprites33[] = {
 	{sGroudonGfx33, ARRAY_COUNT(sGroudonGfx33)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx34[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_34.4bpp");
+static const u8 sGroudonGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_34.4bpp.lz");
 static const ax_sprite sGroudonSprites34[] = {
 	{NULL, 128}, 
 	{sGroudonGfx34, ARRAY_COUNT(sGroudonGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx35[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_35.4bpp");
-static const u8 sGroudonGfx35_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_35_1.4bpp");
+static const u8 sGroudonGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_35.4bpp.lz");
+static const u8 sGroudonGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_35_1.4bpp.lz");
 static const ax_sprite sGroudonSprites35[] = {
 	{sGroudonGfx35, ARRAY_COUNT(sGroudonGfx35)}, 
 	{NULL, 64}, 
 	{sGroudonGfx35_1, ARRAY_COUNT(sGroudonGfx35_1)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx36[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_36.4bpp");
+static const u8 sGroudonGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_36.4bpp.lz");
 static const ax_sprite sGroudonSprites36[] = {
 	{sGroudonGfx36, ARRAY_COUNT(sGroudonGfx36)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx37[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_37.4bpp");
-static const u8 sGroudonGfx37_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_1.4bpp");
-static const u8 sGroudonGfx37_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_2.4bpp");
-static const u8 sGroudonGfx37_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_3.4bpp");
-static const u8 sGroudonGfx37_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_4.4bpp");
-static const u8 sGroudonGfx37_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_5.4bpp");
+static const u8 sGroudonGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_37.4bpp.lz");
+static const u8 sGroudonGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_1.4bpp.lz");
+static const u8 sGroudonGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_2.4bpp.lz");
+static const u8 sGroudonGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_3.4bpp.lz");
+static const u8 sGroudonGfx37_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_4.4bpp.lz");
+static const u8 sGroudonGfx37_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_37_5.4bpp.lz");
 static const ax_sprite sGroudonSprites37[] = {
 	{NULL, 32}, 
 	{sGroudonGfx37, ARRAY_COUNT(sGroudonGfx37)}, 
@@ -3356,13 +3356,13 @@ static const ax_sprite sGroudonSprites37[] = {
 	{NULL, 576}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx38[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_38.4bpp");
-static const u8 sGroudonGfx38_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_1.4bpp");
-static const u8 sGroudonGfx38_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_2.4bpp");
-static const u8 sGroudonGfx38_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_3.4bpp");
-static const u8 sGroudonGfx38_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_4.4bpp");
-static const u8 sGroudonGfx38_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_5.4bpp");
-static const u8 sGroudonGfx38_6[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_6.4bpp");
+static const u8 sGroudonGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_38.4bpp.lz");
+static const u8 sGroudonGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_1.4bpp.lz");
+static const u8 sGroudonGfx38_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_2.4bpp.lz");
+static const u8 sGroudonGfx38_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_3.4bpp.lz");
+static const u8 sGroudonGfx38_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_4.4bpp.lz");
+static const u8 sGroudonGfx38_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_5.4bpp.lz");
+static const u8 sGroudonGfx38_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_38_6.4bpp.lz");
 static const ax_sprite sGroudonSprites38[] = {
 	{NULL, 64}, 
 	{sGroudonGfx38, ARRAY_COUNT(sGroudonGfx38)}, 
@@ -3381,15 +3381,15 @@ static const ax_sprite sGroudonSprites38[] = {
 	{NULL, 352}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx39[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_39.4bpp");
+static const u8 sGroudonGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_39.4bpp.lz");
 static const ax_sprite sGroudonSprites39[] = {
 	{sGroudonGfx39, ARRAY_COUNT(sGroudonGfx39)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx40[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_40.4bpp");
-static const u8 sGroudonGfx40_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_40_1.4bpp");
-static const u8 sGroudonGfx40_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_40_2.4bpp");
-static const u8 sGroudonGfx40_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_40_3.4bpp");
+static const u8 sGroudonGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_40.4bpp.lz");
+static const u8 sGroudonGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_40_1.4bpp.lz");
+static const u8 sGroudonGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_40_2.4bpp.lz");
+static const u8 sGroudonGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_40_3.4bpp.lz");
 static const ax_sprite sGroudonSprites40[] = {
 	{sGroudonGfx40, ARRAY_COUNT(sGroudonGfx40)}, 
 	{NULL, 64}, 
@@ -3401,12 +3401,12 @@ static const ax_sprite sGroudonSprites40[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx41[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_41.4bpp");
-static const u8 sGroudonGfx41_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_1.4bpp");
-static const u8 sGroudonGfx41_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_2.4bpp");
-static const u8 sGroudonGfx41_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_3.4bpp");
-static const u8 sGroudonGfx41_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_4.4bpp");
-static const u8 sGroudonGfx41_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_5.4bpp");
+static const u8 sGroudonGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_41.4bpp.lz");
+static const u8 sGroudonGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_1.4bpp.lz");
+static const u8 sGroudonGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_2.4bpp.lz");
+static const u8 sGroudonGfx41_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_3.4bpp.lz");
+static const u8 sGroudonGfx41_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_4.4bpp.lz");
+static const u8 sGroudonGfx41_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_41_5.4bpp.lz");
 static const ax_sprite sGroudonSprites41[] = {
 	{NULL, 32}, 
 	{sGroudonGfx41, ARRAY_COUNT(sGroudonGfx41)}, 
@@ -3423,12 +3423,12 @@ static const ax_sprite sGroudonSprites41[] = {
 	{NULL, 608}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx42[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_42.4bpp");
-static const u8 sGroudonGfx42_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_1.4bpp");
-static const u8 sGroudonGfx42_2[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_2.4bpp");
-static const u8 sGroudonGfx42_3[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_3.4bpp");
-static const u8 sGroudonGfx42_4[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_4.4bpp");
-static const u8 sGroudonGfx42_5[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_5.4bpp");
+static const u8 sGroudonGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_42.4bpp.lz");
+static const u8 sGroudonGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_1.4bpp.lz");
+static const u8 sGroudonGfx42_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_2.4bpp.lz");
+static const u8 sGroudonGfx42_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_3.4bpp.lz");
+static const u8 sGroudonGfx42_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_4.4bpp.lz");
+static const u8 sGroudonGfx42_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_42_5.4bpp.lz");
 static const ax_sprite sGroudonSprites42[] = {
 	{NULL, 96}, 
 	{sGroudonGfx42, ARRAY_COUNT(sGroudonGfx42)}, 
@@ -3445,43 +3445,43 @@ static const ax_sprite sGroudonSprites42[] = {
 	{NULL, 576}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx43[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_43.4bpp");
+static const u8 sGroudonGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_43.4bpp.lz");
 static const ax_sprite sGroudonSprites43[] = {
 	{NULL, 32}, 
 	{sGroudonGfx43, ARRAY_COUNT(sGroudonGfx43)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx44[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_44.4bpp");
+static const u8 sGroudonGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_44.4bpp.lz");
 static const ax_sprite sGroudonSprites44[] = {
 	{sGroudonGfx44, ARRAY_COUNT(sGroudonGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx45[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_45.4bpp");
+static const u8 sGroudonGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_45.4bpp.lz");
 static const ax_sprite sGroudonSprites45[] = {
 	{sGroudonGfx45, ARRAY_COUNT(sGroudonGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx46[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_46.4bpp");
+static const u8 sGroudonGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_46.4bpp.lz");
 static const ax_sprite sGroudonSprites46[] = {
 	{NULL, 32}, 
 	{sGroudonGfx46, ARRAY_COUNT(sGroudonGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx47[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_47.4bpp");
-static const u8 sGroudonGfx47_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_47_1.4bpp");
+static const u8 sGroudonGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_47.4bpp.lz");
+static const u8 sGroudonGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_47_1.4bpp.lz");
 static const ax_sprite sGroudonSprites47[] = {
 	{sGroudonGfx47, ARRAY_COUNT(sGroudonGfx47)}, 
 	{NULL, 32}, 
 	{sGroudonGfx47_1, ARRAY_COUNT(sGroudonGfx47_1)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx48[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_48.4bpp");
+static const u8 sGroudonGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_48.4bpp.lz");
 static const ax_sprite sGroudonSprites48[] = {
 	{sGroudonGfx48, ARRAY_COUNT(sGroudonGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx49[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_49.4bpp");
-static const u8 sGroudonGfx49_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_49_1.4bpp");
+static const u8 sGroudonGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_49.4bpp.lz");
+static const u8 sGroudonGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_49_1.4bpp.lz");
 static const ax_sprite sGroudonSprites49[] = {
 	{NULL, 32}, 
 	{sGroudonGfx49, ARRAY_COUNT(sGroudonGfx49)}, 
@@ -3490,40 +3490,40 @@ static const ax_sprite sGroudonSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx50[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_50.4bpp");
-static const u8 sGroudonGfx50_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_50_1.4bpp");
+static const u8 sGroudonGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_50.4bpp.lz");
+static const u8 sGroudonGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_50_1.4bpp.lz");
 static const ax_sprite sGroudonSprites50[] = {
 	{sGroudonGfx50, ARRAY_COUNT(sGroudonGfx50)}, 
 	{NULL, 32}, 
 	{sGroudonGfx50_1, ARRAY_COUNT(sGroudonGfx50_1)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx51[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_51.4bpp");
+static const u8 sGroudonGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_51.4bpp.lz");
 static const ax_sprite sGroudonSprites51[] = {
 	{sGroudonGfx51, ARRAY_COUNT(sGroudonGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx52[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_52.4bpp");
+static const u8 sGroudonGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_52.4bpp.lz");
 static const ax_sprite sGroudonSprites52[] = {
 	{NULL, 32}, 
 	{sGroudonGfx52, ARRAY_COUNT(sGroudonGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx53[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_53.4bpp");
-static const u8 sGroudonGfx53_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_53_1.4bpp");
+static const u8 sGroudonGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_53.4bpp.lz");
+static const u8 sGroudonGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_53_1.4bpp.lz");
 static const ax_sprite sGroudonSprites53[] = {
 	{sGroudonGfx53, ARRAY_COUNT(sGroudonGfx53)}, 
 	{NULL, 32}, 
 	{sGroudonGfx53_1, ARRAY_COUNT(sGroudonGfx53_1)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx54[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_54.4bpp");
+static const u8 sGroudonGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_54.4bpp.lz");
 static const ax_sprite sGroudonSprites54[] = {
 	{sGroudonGfx54, ARRAY_COUNT(sGroudonGfx54)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx55[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_55.4bpp");
-static const u8 sGroudonGfx55_1[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_55_1.4bpp");
+static const u8 sGroudonGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_55.4bpp.lz");
+static const u8 sGroudonGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_55_1.4bpp.lz");
 static const ax_sprite sGroudonSprites55[] = {
 	{NULL, 32}, 
 	{sGroudonGfx55, ARRAY_COUNT(sGroudonGfx55)}, 
@@ -3531,22 +3531,22 @@ static const ax_sprite sGroudonSprites55[] = {
 	{sGroudonGfx55_1, ARRAY_COUNT(sGroudonGfx55_1)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx56[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_56.4bpp");
+static const u8 sGroudonGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_56.4bpp.lz");
 static const ax_sprite sGroudonSprites56[] = {
 	{sGroudonGfx56, ARRAY_COUNT(sGroudonGfx56)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx57[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_57.4bpp");
+static const u8 sGroudonGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_57.4bpp.lz");
 static const ax_sprite sGroudonSprites57[] = {
 	{sGroudonGfx57, ARRAY_COUNT(sGroudonGfx57)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx58[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_58.4bpp");
+static const u8 sGroudonGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_58.4bpp.lz");
 static const ax_sprite sGroudonSprites58[] = {
 	{sGroudonGfx58, ARRAY_COUNT(sGroudonGfx58)}, 
 	{NULL, 0}
 };
-static const u8 sGroudonGfx59[] = INCBIN_U8("graphics/ax/mon/groudon/sprite_59.4bpp");
+static const u8 sGroudonGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/groudon/sprite_59.4bpp.lz");
 static const ax_sprite sGroudonSprites59[] = {
 	{sGroudonGfx59, ARRAY_COUNT(sGroudonGfx59)}, 
 	{NULL, 0}

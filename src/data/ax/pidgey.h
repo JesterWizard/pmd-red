@@ -2151,83 +2151,83 @@ static const ax_anim sPidgeyAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sPidgeyGfx1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_1.4bpp");
+static const u8 sPidgeyGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_1.4bpp.lz");
 static const ax_sprite sPidgeySprites1[] = {
 	{sPidgeyGfx1, ARRAY_COUNT(sPidgeyGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_2.4bpp");
+static const u8 sPidgeyGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_2.4bpp.lz");
 static const ax_sprite sPidgeySprites2[] = {
 	{sPidgeyGfx2, ARRAY_COUNT(sPidgeyGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx3[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_3.4bpp");
+static const u8 sPidgeyGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_3.4bpp.lz");
 static const ax_sprite sPidgeySprites3[] = {
 	{sPidgeyGfx3, ARRAY_COUNT(sPidgeyGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx4[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_4.4bpp");
+static const u8 sPidgeyGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_4.4bpp.lz");
 static const ax_sprite sPidgeySprites4[] = {
 	{sPidgeyGfx4, ARRAY_COUNT(sPidgeyGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx5[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_5.4bpp");
+static const u8 sPidgeyGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_5.4bpp.lz");
 static const ax_sprite sPidgeySprites5[] = {
 	{sPidgeyGfx5, ARRAY_COUNT(sPidgeyGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx6[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_6.4bpp");
+static const u8 sPidgeyGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_6.4bpp.lz");
 static const ax_sprite sPidgeySprites6[] = {
 	{sPidgeyGfx6, ARRAY_COUNT(sPidgeyGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx7[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_7.4bpp");
+static const u8 sPidgeyGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_7.4bpp.lz");
 static const ax_sprite sPidgeySprites7[] = {
 	{sPidgeyGfx7, ARRAY_COUNT(sPidgeyGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx8[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_8.4bpp");
+static const u8 sPidgeyGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_8.4bpp.lz");
 static const ax_sprite sPidgeySprites8[] = {
 	{sPidgeyGfx8, ARRAY_COUNT(sPidgeyGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx9[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_9.4bpp");
+static const u8 sPidgeyGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_9.4bpp.lz");
 static const ax_sprite sPidgeySprites9[] = {
 	{sPidgeyGfx9, ARRAY_COUNT(sPidgeyGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx10[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_10.4bpp");
+static const u8 sPidgeyGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_10.4bpp.lz");
 static const ax_sprite sPidgeySprites10[] = {
 	{sPidgeyGfx10, ARRAY_COUNT(sPidgeyGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx11[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_11.4bpp");
+static const u8 sPidgeyGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_11.4bpp.lz");
 static const ax_sprite sPidgeySprites11[] = {
 	{sPidgeyGfx11, ARRAY_COUNT(sPidgeyGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx12[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_12.4bpp");
+static const u8 sPidgeyGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_12.4bpp.lz");
 static const ax_sprite sPidgeySprites12[] = {
 	{sPidgeyGfx12, ARRAY_COUNT(sPidgeyGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx13[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_13.4bpp");
+static const u8 sPidgeyGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_13.4bpp.lz");
 static const ax_sprite sPidgeySprites13[] = {
 	{sPidgeyGfx13, ARRAY_COUNT(sPidgeyGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx14[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_14.4bpp");
+static const u8 sPidgeyGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_14.4bpp.lz");
 static const ax_sprite sPidgeySprites14[] = {
 	{sPidgeyGfx14, ARRAY_COUNT(sPidgeyGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx15[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_15.4bpp");
+static const u8 sPidgeyGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_15.4bpp.lz");
 static const ax_sprite sPidgeySprites15[] = {
 	{sPidgeyGfx15, ARRAY_COUNT(sPidgeyGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx16[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_16.4bpp");
-static const u8 sPidgeyGfx16_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_16_1.4bpp");
+static const u8 sPidgeyGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_16.4bpp.lz");
+static const u8 sPidgeyGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_16_1.4bpp.lz");
 static const ax_sprite sPidgeySprites16[] = {
 	{NULL, 128}, 
 	{sPidgeyGfx16, ARRAY_COUNT(sPidgeyGfx16)}, 
@@ -2236,10 +2236,10 @@ static const ax_sprite sPidgeySprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx17[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_17.4bpp");
-static const u8 sPidgeyGfx17_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_17_1.4bpp");
-static const u8 sPidgeyGfx17_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_17_2.4bpp");
-static const u8 sPidgeyGfx17_3[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_17_3.4bpp");
+static const u8 sPidgeyGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_17.4bpp.lz");
+static const u8 sPidgeyGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_17_1.4bpp.lz");
+static const u8 sPidgeyGfx17_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_17_2.4bpp.lz");
+static const u8 sPidgeyGfx17_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_17_3.4bpp.lz");
 static const ax_sprite sPidgeySprites17[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx17, ARRAY_COUNT(sPidgeyGfx17)}, 
@@ -2252,9 +2252,9 @@ static const ax_sprite sPidgeySprites17[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx18[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_18.4bpp");
-static const u8 sPidgeyGfx18_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_18_1.4bpp");
-static const u8 sPidgeyGfx18_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_18_2.4bpp");
+static const u8 sPidgeyGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_18.4bpp.lz");
+static const u8 sPidgeyGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_18_1.4bpp.lz");
+static const u8 sPidgeyGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_18_2.4bpp.lz");
 static const ax_sprite sPidgeySprites18[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx18, ARRAY_COUNT(sPidgeyGfx18)}, 
@@ -2265,8 +2265,8 @@ static const ax_sprite sPidgeySprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx19[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_19.4bpp");
-static const u8 sPidgeyGfx19_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_19_1.4bpp");
+static const u8 sPidgeyGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_19.4bpp.lz");
+static const u8 sPidgeyGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_19_1.4bpp.lz");
 static const ax_sprite sPidgeySprites19[] = {
 	{NULL, 128}, 
 	{sPidgeyGfx19, ARRAY_COUNT(sPidgeyGfx19)}, 
@@ -2275,10 +2275,10 @@ static const ax_sprite sPidgeySprites19[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx20[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_20.4bpp");
-static const u8 sPidgeyGfx20_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_20_1.4bpp");
-static const u8 sPidgeyGfx20_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_20_2.4bpp");
-static const u8 sPidgeyGfx20_3[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_20_3.4bpp");
+static const u8 sPidgeyGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_20.4bpp.lz");
+static const u8 sPidgeyGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_20_1.4bpp.lz");
+static const u8 sPidgeyGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_20_2.4bpp.lz");
+static const u8 sPidgeyGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_20_3.4bpp.lz");
 static const ax_sprite sPidgeySprites20[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx20, ARRAY_COUNT(sPidgeyGfx20)}, 
@@ -2291,10 +2291,10 @@ static const ax_sprite sPidgeySprites20[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx21[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_21.4bpp");
-static const u8 sPidgeyGfx21_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_21_1.4bpp");
-static const u8 sPidgeyGfx21_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_21_2.4bpp");
-static const u8 sPidgeyGfx21_3[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_21_3.4bpp");
+static const u8 sPidgeyGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_21.4bpp.lz");
+static const u8 sPidgeyGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_21_1.4bpp.lz");
+static const u8 sPidgeyGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_21_2.4bpp.lz");
+static const u8 sPidgeyGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_21_3.4bpp.lz");
 static const ax_sprite sPidgeySprites21[] = {
 	{sPidgeyGfx21, ARRAY_COUNT(sPidgeyGfx21)}, 
 	{NULL, 64}, 
@@ -2306,9 +2306,9 @@ static const ax_sprite sPidgeySprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx22[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_22.4bpp");
-static const u8 sPidgeyGfx22_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_22_1.4bpp");
-static const u8 sPidgeyGfx22_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_22_2.4bpp");
+static const u8 sPidgeyGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_22.4bpp.lz");
+static const u8 sPidgeyGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_22_1.4bpp.lz");
+static const u8 sPidgeyGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_22_2.4bpp.lz");
 static const ax_sprite sPidgeySprites22[] = {
 	{NULL, 128}, 
 	{sPidgeyGfx22, ARRAY_COUNT(sPidgeyGfx22)}, 
@@ -2319,9 +2319,9 @@ static const ax_sprite sPidgeySprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx23[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_23.4bpp");
-static const u8 sPidgeyGfx23_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_23_1.4bpp");
-static const u8 sPidgeyGfx23_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_23_2.4bpp");
+static const u8 sPidgeyGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_23.4bpp.lz");
+static const u8 sPidgeyGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_23_1.4bpp.lz");
+static const u8 sPidgeyGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_23_2.4bpp.lz");
 static const ax_sprite sPidgeySprites23[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx23, ARRAY_COUNT(sPidgeyGfx23)}, 
@@ -2332,9 +2332,9 @@ static const ax_sprite sPidgeySprites23[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx24[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_24.4bpp");
-static const u8 sPidgeyGfx24_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_24_1.4bpp");
-static const u8 sPidgeyGfx24_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_24_2.4bpp");
+static const u8 sPidgeyGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_24.4bpp.lz");
+static const u8 sPidgeyGfx24_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_24_1.4bpp.lz");
+static const u8 sPidgeyGfx24_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_24_2.4bpp.lz");
 static const ax_sprite sPidgeySprites24[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx24, ARRAY_COUNT(sPidgeyGfx24)}, 
@@ -2345,16 +2345,16 @@ static const ax_sprite sPidgeySprites24[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx25[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_25.4bpp");
+static const u8 sPidgeyGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_25.4bpp.lz");
 static const ax_sprite sPidgeySprites25[] = {
 	{NULL, 128}, 
 	{sPidgeyGfx25, ARRAY_COUNT(sPidgeyGfx25)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx26[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_26.4bpp");
-static const u8 sPidgeyGfx26_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_26_1.4bpp");
-static const u8 sPidgeyGfx26_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_26_2.4bpp");
+static const u8 sPidgeyGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_26.4bpp.lz");
+static const u8 sPidgeyGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_26_1.4bpp.lz");
+static const u8 sPidgeyGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_26_2.4bpp.lz");
 static const ax_sprite sPidgeySprites26[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx26, ARRAY_COUNT(sPidgeyGfx26)}, 
@@ -2365,9 +2365,9 @@ static const ax_sprite sPidgeySprites26[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx27[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_27.4bpp");
-static const u8 sPidgeyGfx27_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_27_1.4bpp");
-static const u8 sPidgeyGfx27_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_27_2.4bpp");
+static const u8 sPidgeyGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_27.4bpp.lz");
+static const u8 sPidgeyGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_27_1.4bpp.lz");
+static const u8 sPidgeyGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_27_2.4bpp.lz");
 static const ax_sprite sPidgeySprites27[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx27, ARRAY_COUNT(sPidgeyGfx27)}, 
@@ -2378,8 +2378,8 @@ static const ax_sprite sPidgeySprites27[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx28[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_28.4bpp");
-static const u8 sPidgeyGfx28_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_28_1.4bpp");
+static const u8 sPidgeyGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_28.4bpp.lz");
+static const u8 sPidgeyGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_28_1.4bpp.lz");
 static const ax_sprite sPidgeySprites28[] = {
 	{NULL, 128}, 
 	{sPidgeyGfx28, ARRAY_COUNT(sPidgeyGfx28)}, 
@@ -2388,9 +2388,9 @@ static const ax_sprite sPidgeySprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx29[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_29.4bpp");
-static const u8 sPidgeyGfx29_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_29_1.4bpp");
-static const u8 sPidgeyGfx29_2[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_29_2.4bpp");
+static const u8 sPidgeyGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_29.4bpp.lz");
+static const u8 sPidgeyGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_29_1.4bpp.lz");
+static const u8 sPidgeyGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_29_2.4bpp.lz");
 static const ax_sprite sPidgeySprites29[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx29, ARRAY_COUNT(sPidgeyGfx29)}, 
@@ -2401,8 +2401,8 @@ static const ax_sprite sPidgeySprites29[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx30[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_30.4bpp");
-static const u8 sPidgeyGfx30_1[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_30_1.4bpp");
+static const u8 sPidgeyGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_30.4bpp.lz");
+static const u8 sPidgeyGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_30_1.4bpp.lz");
 static const ax_sprite sPidgeySprites30[] = {
 	{NULL, 32}, 
 	{sPidgeyGfx30, ARRAY_COUNT(sPidgeyGfx30)}, 
@@ -2411,37 +2411,37 @@ static const ax_sprite sPidgeySprites30[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx31[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_31.4bpp");
+static const u8 sPidgeyGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_31.4bpp.lz");
 static const ax_sprite sPidgeySprites31[] = {
 	{sPidgeyGfx31, ARRAY_COUNT(sPidgeyGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx32[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_32.4bpp");
+static const u8 sPidgeyGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_32.4bpp.lz");
 static const ax_sprite sPidgeySprites32[] = {
 	{sPidgeyGfx32, ARRAY_COUNT(sPidgeyGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx33[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_33.4bpp");
+static const u8 sPidgeyGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_33.4bpp.lz");
 static const ax_sprite sPidgeySprites33[] = {
 	{sPidgeyGfx33, ARRAY_COUNT(sPidgeyGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx34[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_34.4bpp");
+static const u8 sPidgeyGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_34.4bpp.lz");
 static const ax_sprite sPidgeySprites34[] = {
 	{sPidgeyGfx34, ARRAY_COUNT(sPidgeyGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx35[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_35.4bpp");
+static const u8 sPidgeyGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_35.4bpp.lz");
 static const ax_sprite sPidgeySprites35[] = {
 	{sPidgeyGfx35, ARRAY_COUNT(sPidgeyGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx36[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_36.4bpp");
+static const u8 sPidgeyGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_36.4bpp.lz");
 static const ax_sprite sPidgeySprites36[] = {
 	{sPidgeyGfx36, ARRAY_COUNT(sPidgeyGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sPidgeyGfx37[] = INCBIN_U8("graphics/ax/mon/pidgey/sprite_37.4bpp");
+static const u8 sPidgeyGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/pidgey/sprite_37.4bpp.lz");
 static const ax_sprite sPidgeySprites37[] = {
 	{sPidgeyGfx37, ARRAY_COUNT(sPidgeyGfx37)}, 
 	{NULL, 0}

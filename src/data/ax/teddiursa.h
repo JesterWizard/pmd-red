@@ -2111,130 +2111,130 @@ static const ax_anim sTeddiursaAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sTeddiursaGfx1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_1.4bpp");
+static const u8 sTeddiursaGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_1.4bpp.lz");
 static const ax_sprite sTeddiursaSprites1[] = {
 	{sTeddiursaGfx1, ARRAY_COUNT(sTeddiursaGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_2.4bpp");
+static const u8 sTeddiursaGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites2[] = {
 	{sTeddiursaGfx2, ARRAY_COUNT(sTeddiursaGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_3.4bpp");
+static const u8 sTeddiursaGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites3[] = {
 	{sTeddiursaGfx3, ARRAY_COUNT(sTeddiursaGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx4[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_4.4bpp");
+static const u8 sTeddiursaGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_4.4bpp.lz");
 static const ax_sprite sTeddiursaSprites4[] = {
 	{sTeddiursaGfx4, ARRAY_COUNT(sTeddiursaGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx5[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_5.4bpp");
+static const u8 sTeddiursaGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_5.4bpp.lz");
 static const ax_sprite sTeddiursaSprites5[] = {
 	{sTeddiursaGfx5, ARRAY_COUNT(sTeddiursaGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx6[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_6.4bpp");
+static const u8 sTeddiursaGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_6.4bpp.lz");
 static const ax_sprite sTeddiursaSprites6[] = {
 	{sTeddiursaGfx6, ARRAY_COUNT(sTeddiursaGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx7[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_7.4bpp");
+static const u8 sTeddiursaGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_7.4bpp.lz");
 static const ax_sprite sTeddiursaSprites7[] = {
 	{sTeddiursaGfx7, ARRAY_COUNT(sTeddiursaGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx8[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_8.4bpp");
+static const u8 sTeddiursaGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_8.4bpp.lz");
 static const ax_sprite sTeddiursaSprites8[] = {
 	{sTeddiursaGfx8, ARRAY_COUNT(sTeddiursaGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx9[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_9.4bpp");
+static const u8 sTeddiursaGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_9.4bpp.lz");
 static const ax_sprite sTeddiursaSprites9[] = {
 	{sTeddiursaGfx9, ARRAY_COUNT(sTeddiursaGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx10[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_10.4bpp");
+static const u8 sTeddiursaGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_10.4bpp.lz");
 static const ax_sprite sTeddiursaSprites10[] = {
 	{sTeddiursaGfx10, ARRAY_COUNT(sTeddiursaGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx11[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_11.4bpp");
+static const u8 sTeddiursaGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_11.4bpp.lz");
 static const ax_sprite sTeddiursaSprites11[] = {
 	{sTeddiursaGfx11, ARRAY_COUNT(sTeddiursaGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx12[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_12.4bpp");
+static const u8 sTeddiursaGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_12.4bpp.lz");
 static const ax_sprite sTeddiursaSprites12[] = {
 	{sTeddiursaGfx12, ARRAY_COUNT(sTeddiursaGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx13[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_13.4bpp");
+static const u8 sTeddiursaGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_13.4bpp.lz");
 static const ax_sprite sTeddiursaSprites13[] = {
 	{sTeddiursaGfx13, ARRAY_COUNT(sTeddiursaGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx14[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_14.4bpp");
+static const u8 sTeddiursaGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_14.4bpp.lz");
 static const ax_sprite sTeddiursaSprites14[] = {
 	{sTeddiursaGfx14, ARRAY_COUNT(sTeddiursaGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx15[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_15.4bpp");
+static const u8 sTeddiursaGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_15.4bpp.lz");
 static const ax_sprite sTeddiursaSprites15[] = {
 	{sTeddiursaGfx15, ARRAY_COUNT(sTeddiursaGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx16[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_16.4bpp");
+static const u8 sTeddiursaGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_16.4bpp.lz");
 static const ax_sprite sTeddiursaSprites16[] = {
 	{sTeddiursaGfx16, ARRAY_COUNT(sTeddiursaGfx16)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx17[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_17.4bpp");
+static const u8 sTeddiursaGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_17.4bpp.lz");
 static const ax_sprite sTeddiursaSprites17[] = {
 	{sTeddiursaGfx17, ARRAY_COUNT(sTeddiursaGfx17)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx18[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_18.4bpp");
+static const u8 sTeddiursaGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_18.4bpp.lz");
 static const ax_sprite sTeddiursaSprites18[] = {
 	{sTeddiursaGfx18, ARRAY_COUNT(sTeddiursaGfx18)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx19[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_19.4bpp");
+static const u8 sTeddiursaGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_19.4bpp.lz");
 static const ax_sprite sTeddiursaSprites19[] = {
 	{sTeddiursaGfx19, ARRAY_COUNT(sTeddiursaGfx19)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx20[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_20.4bpp");
+static const u8 sTeddiursaGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_20.4bpp.lz");
 static const ax_sprite sTeddiursaSprites20[] = {
 	{sTeddiursaGfx20, ARRAY_COUNT(sTeddiursaGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx21[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_21.4bpp");
+static const u8 sTeddiursaGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_21.4bpp.lz");
 static const ax_sprite sTeddiursaSprites21[] = {
 	{sTeddiursaGfx21, ARRAY_COUNT(sTeddiursaGfx21)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx22[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_22.4bpp");
+static const u8 sTeddiursaGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_22.4bpp.lz");
 static const ax_sprite sTeddiursaSprites22[] = {
 	{sTeddiursaGfx22, ARRAY_COUNT(sTeddiursaGfx22)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx23[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_23.4bpp");
+static const u8 sTeddiursaGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_23.4bpp.lz");
 static const ax_sprite sTeddiursaSprites23[] = {
 	{sTeddiursaGfx23, ARRAY_COUNT(sTeddiursaGfx23)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx24[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_24.4bpp");
+static const u8 sTeddiursaGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_24.4bpp.lz");
 static const ax_sprite sTeddiursaSprites24[] = {
 	{sTeddiursaGfx24, ARRAY_COUNT(sTeddiursaGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx25[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_25.4bpp");
-static const u8 sTeddiursaGfx25_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_25_1.4bpp");
-static const u8 sTeddiursaGfx25_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_25_2.4bpp");
-static const u8 sTeddiursaGfx25_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_25_3.4bpp");
+static const u8 sTeddiursaGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_25.4bpp.lz");
+static const u8 sTeddiursaGfx25_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_25_1.4bpp.lz");
+static const u8 sTeddiursaGfx25_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_25_2.4bpp.lz");
+static const u8 sTeddiursaGfx25_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_25_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites25[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx25, ARRAY_COUNT(sTeddiursaGfx25)}, 
@@ -2247,10 +2247,10 @@ static const ax_sprite sTeddiursaSprites25[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx26[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_26.4bpp");
-static const u8 sTeddiursaGfx26_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_26_1.4bpp");
-static const u8 sTeddiursaGfx26_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_26_2.4bpp");
-static const u8 sTeddiursaGfx26_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_26_3.4bpp");
+static const u8 sTeddiursaGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_26.4bpp.lz");
+static const u8 sTeddiursaGfx26_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_26_1.4bpp.lz");
+static const u8 sTeddiursaGfx26_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_26_2.4bpp.lz");
+static const u8 sTeddiursaGfx26_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_26_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites26[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx26, ARRAY_COUNT(sTeddiursaGfx26)}, 
@@ -2263,10 +2263,10 @@ static const ax_sprite sTeddiursaSprites26[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx27[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_27.4bpp");
-static const u8 sTeddiursaGfx27_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_27_1.4bpp");
-static const u8 sTeddiursaGfx27_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_27_2.4bpp");
-static const u8 sTeddiursaGfx27_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_27_3.4bpp");
+static const u8 sTeddiursaGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_27.4bpp.lz");
+static const u8 sTeddiursaGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_27_1.4bpp.lz");
+static const u8 sTeddiursaGfx27_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_27_2.4bpp.lz");
+static const u8 sTeddiursaGfx27_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_27_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites27[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx27, ARRAY_COUNT(sTeddiursaGfx27)}, 
@@ -2279,10 +2279,10 @@ static const ax_sprite sTeddiursaSprites27[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx28[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_28.4bpp");
-static const u8 sTeddiursaGfx28_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_28_1.4bpp");
-static const u8 sTeddiursaGfx28_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_28_2.4bpp");
-static const u8 sTeddiursaGfx28_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_28_3.4bpp");
+static const u8 sTeddiursaGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_28.4bpp.lz");
+static const u8 sTeddiursaGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_28_1.4bpp.lz");
+static const u8 sTeddiursaGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_28_2.4bpp.lz");
+static const u8 sTeddiursaGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_28_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites28[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx28, ARRAY_COUNT(sTeddiursaGfx28)}, 
@@ -2295,9 +2295,9 @@ static const ax_sprite sTeddiursaSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx29[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_29.4bpp");
-static const u8 sTeddiursaGfx29_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_29_1.4bpp");
-static const u8 sTeddiursaGfx29_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_29_2.4bpp");
+static const u8 sTeddiursaGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_29.4bpp.lz");
+static const u8 sTeddiursaGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_29_1.4bpp.lz");
+static const u8 sTeddiursaGfx29_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_29_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites29[] = {
 	{NULL, 128}, 
 	{sTeddiursaGfx29, ARRAY_COUNT(sTeddiursaGfx29)}, 
@@ -2307,9 +2307,9 @@ static const ax_sprite sTeddiursaSprites29[] = {
 	{sTeddiursaGfx29_2, ARRAY_COUNT(sTeddiursaGfx29_2)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx30[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_30.4bpp");
-static const u8 sTeddiursaGfx30_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_30_1.4bpp");
-static const u8 sTeddiursaGfx30_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_30_2.4bpp");
+static const u8 sTeddiursaGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_30.4bpp.lz");
+static const u8 sTeddiursaGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_30_1.4bpp.lz");
+static const u8 sTeddiursaGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_30_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites30[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx30, ARRAY_COUNT(sTeddiursaGfx30)}, 
@@ -2320,10 +2320,10 @@ static const ax_sprite sTeddiursaSprites30[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx31[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_31.4bpp");
-static const u8 sTeddiursaGfx31_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_31_1.4bpp");
-static const u8 sTeddiursaGfx31_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_31_2.4bpp");
-static const u8 sTeddiursaGfx31_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_31_3.4bpp");
+static const u8 sTeddiursaGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_31.4bpp.lz");
+static const u8 sTeddiursaGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_31_1.4bpp.lz");
+static const u8 sTeddiursaGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_31_2.4bpp.lz");
+static const u8 sTeddiursaGfx31_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_31_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites31[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx31, ARRAY_COUNT(sTeddiursaGfx31)}, 
@@ -2336,10 +2336,10 @@ static const ax_sprite sTeddiursaSprites31[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx32[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_32.4bpp");
-static const u8 sTeddiursaGfx32_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_32_1.4bpp");
-static const u8 sTeddiursaGfx32_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_32_2.4bpp");
-static const u8 sTeddiursaGfx32_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_32_3.4bpp");
+static const u8 sTeddiursaGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_32.4bpp.lz");
+static const u8 sTeddiursaGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_32_1.4bpp.lz");
+static const u8 sTeddiursaGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_32_2.4bpp.lz");
+static const u8 sTeddiursaGfx32_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_32_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites32[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx32, ARRAY_COUNT(sTeddiursaGfx32)}, 
@@ -2352,9 +2352,9 @@ static const ax_sprite sTeddiursaSprites32[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx33[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_33.4bpp");
-static const u8 sTeddiursaGfx33_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_33_1.4bpp");
-static const u8 sTeddiursaGfx33_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_33_2.4bpp");
+static const u8 sTeddiursaGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_33.4bpp.lz");
+static const u8 sTeddiursaGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_33_1.4bpp.lz");
+static const u8 sTeddiursaGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_33_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites33[] = {
 	{NULL, 224}, 
 	{sTeddiursaGfx33, ARRAY_COUNT(sTeddiursaGfx33)}, 
@@ -2365,9 +2365,9 @@ static const ax_sprite sTeddiursaSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx34[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_34.4bpp");
-static const u8 sTeddiursaGfx34_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_34_1.4bpp");
-static const u8 sTeddiursaGfx34_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_34_2.4bpp");
+static const u8 sTeddiursaGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_34.4bpp.lz");
+static const u8 sTeddiursaGfx34_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_34_1.4bpp.lz");
+static const u8 sTeddiursaGfx34_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_34_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites34[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx34, ARRAY_COUNT(sTeddiursaGfx34)}, 
@@ -2378,10 +2378,10 @@ static const ax_sprite sTeddiursaSprites34[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx35[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_35.4bpp");
-static const u8 sTeddiursaGfx35_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_35_1.4bpp");
-static const u8 sTeddiursaGfx35_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_35_2.4bpp");
-static const u8 sTeddiursaGfx35_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_35_3.4bpp");
+static const u8 sTeddiursaGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_35.4bpp.lz");
+static const u8 sTeddiursaGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_35_1.4bpp.lz");
+static const u8 sTeddiursaGfx35_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_35_2.4bpp.lz");
+static const u8 sTeddiursaGfx35_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_35_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites35[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx35, ARRAY_COUNT(sTeddiursaGfx35)}, 
@@ -2394,9 +2394,9 @@ static const ax_sprite sTeddiursaSprites35[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx36[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_36.4bpp");
-static const u8 sTeddiursaGfx36_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_36_1.4bpp");
-static const u8 sTeddiursaGfx36_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_36_2.4bpp");
+static const u8 sTeddiursaGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_36.4bpp.lz");
+static const u8 sTeddiursaGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_36_1.4bpp.lz");
+static const u8 sTeddiursaGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_36_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites36[] = {
 	{NULL, 224}, 
 	{sTeddiursaGfx36, ARRAY_COUNT(sTeddiursaGfx36)}, 
@@ -2407,10 +2407,10 @@ static const ax_sprite sTeddiursaSprites36[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx37[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_37.4bpp");
-static const u8 sTeddiursaGfx37_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_37_1.4bpp");
-static const u8 sTeddiursaGfx37_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_37_2.4bpp");
-static const u8 sTeddiursaGfx37_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_37_3.4bpp");
+static const u8 sTeddiursaGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_37.4bpp.lz");
+static const u8 sTeddiursaGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_37_1.4bpp.lz");
+static const u8 sTeddiursaGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_37_2.4bpp.lz");
+static const u8 sTeddiursaGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_37_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites37[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx37, ARRAY_COUNT(sTeddiursaGfx37)}, 
@@ -2423,8 +2423,8 @@ static const ax_sprite sTeddiursaSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx38[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_38.4bpp");
-static const u8 sTeddiursaGfx38_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_38_1.4bpp");
+static const u8 sTeddiursaGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_38.4bpp.lz");
+static const u8 sTeddiursaGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_38_1.4bpp.lz");
 static const ax_sprite sTeddiursaSprites38[] = {
 	{NULL, 128}, 
 	{sTeddiursaGfx38, ARRAY_COUNT(sTeddiursaGfx38)}, 
@@ -2433,16 +2433,16 @@ static const ax_sprite sTeddiursaSprites38[] = {
 	{NULL, 224}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx39[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_39.4bpp");
+static const u8 sTeddiursaGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_39.4bpp.lz");
 static const ax_sprite sTeddiursaSprites39[] = {
 	{sTeddiursaGfx39, ARRAY_COUNT(sTeddiursaGfx39)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx40[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_40.4bpp");
-static const u8 sTeddiursaGfx40_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_40_1.4bpp");
-static const u8 sTeddiursaGfx40_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_40_2.4bpp");
-static const u8 sTeddiursaGfx40_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_40_3.4bpp");
+static const u8 sTeddiursaGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_40.4bpp.lz");
+static const u8 sTeddiursaGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_40_1.4bpp.lz");
+static const u8 sTeddiursaGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_40_2.4bpp.lz");
+static const u8 sTeddiursaGfx40_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_40_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites40[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx40, ARRAY_COUNT(sTeddiursaGfx40)}, 
@@ -2455,9 +2455,9 @@ static const ax_sprite sTeddiursaSprites40[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx41[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_41.4bpp");
-static const u8 sTeddiursaGfx41_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_41_1.4bpp");
-static const u8 sTeddiursaGfx41_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_41_2.4bpp");
+static const u8 sTeddiursaGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_41.4bpp.lz");
+static const u8 sTeddiursaGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_41_1.4bpp.lz");
+static const u8 sTeddiursaGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_41_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites41[] = {
 	{sTeddiursaGfx41, ARRAY_COUNT(sTeddiursaGfx41)}, 
 	{NULL, 64}, 
@@ -2467,8 +2467,8 @@ static const ax_sprite sTeddiursaSprites41[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx42[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_42.4bpp");
-static const u8 sTeddiursaGfx42_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_42_1.4bpp");
+static const u8 sTeddiursaGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_42.4bpp.lz");
+static const u8 sTeddiursaGfx42_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_42_1.4bpp.lz");
 static const ax_sprite sTeddiursaSprites42[] = {
 	{NULL, 256}, 
 	{sTeddiursaGfx42, ARRAY_COUNT(sTeddiursaGfx42)}, 
@@ -2477,15 +2477,15 @@ static const ax_sprite sTeddiursaSprites42[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx43[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_43.4bpp");
+static const u8 sTeddiursaGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_43.4bpp.lz");
 static const ax_sprite sTeddiursaSprites43[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx43, ARRAY_COUNT(sTeddiursaGfx43)}, 
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx44[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_44.4bpp");
-static const u8 sTeddiursaGfx44_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_44_1.4bpp");
+static const u8 sTeddiursaGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_44.4bpp.lz");
+static const u8 sTeddiursaGfx44_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_44_1.4bpp.lz");
 static const ax_sprite sTeddiursaSprites44[] = {
 	{NULL, 160}, 
 	{sTeddiursaGfx44, ARRAY_COUNT(sTeddiursaGfx44)}, 
@@ -2494,10 +2494,10 @@ static const ax_sprite sTeddiursaSprites44[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx45[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_45.4bpp");
-static const u8 sTeddiursaGfx45_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_45_1.4bpp");
-static const u8 sTeddiursaGfx45_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_45_2.4bpp");
-static const u8 sTeddiursaGfx45_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_45_3.4bpp");
+static const u8 sTeddiursaGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_45.4bpp.lz");
+static const u8 sTeddiursaGfx45_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_45_1.4bpp.lz");
+static const u8 sTeddiursaGfx45_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_45_2.4bpp.lz");
+static const u8 sTeddiursaGfx45_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_45_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites45[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx45, ARRAY_COUNT(sTeddiursaGfx45)}, 
@@ -2510,10 +2510,10 @@ static const ax_sprite sTeddiursaSprites45[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx46[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_46.4bpp");
-static const u8 sTeddiursaGfx46_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_46_1.4bpp");
-static const u8 sTeddiursaGfx46_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_46_2.4bpp");
-static const u8 sTeddiursaGfx46_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_46_3.4bpp");
+static const u8 sTeddiursaGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_46.4bpp.lz");
+static const u8 sTeddiursaGfx46_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_46_1.4bpp.lz");
+static const u8 sTeddiursaGfx46_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_46_2.4bpp.lz");
+static const u8 sTeddiursaGfx46_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_46_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites46[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx46, ARRAY_COUNT(sTeddiursaGfx46)}, 
@@ -2526,9 +2526,9 @@ static const ax_sprite sTeddiursaSprites46[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx47[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_47.4bpp");
-static const u8 sTeddiursaGfx47_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_47_1.4bpp");
-static const u8 sTeddiursaGfx47_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_47_2.4bpp");
+static const u8 sTeddiursaGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_47.4bpp.lz");
+static const u8 sTeddiursaGfx47_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_47_1.4bpp.lz");
+static const u8 sTeddiursaGfx47_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_47_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites47[] = {
 	{NULL, 128}, 
 	{sTeddiursaGfx47, ARRAY_COUNT(sTeddiursaGfx47)}, 
@@ -2539,10 +2539,10 @@ static const ax_sprite sTeddiursaSprites47[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx48[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_48.4bpp");
-static const u8 sTeddiursaGfx48_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_48_1.4bpp");
-static const u8 sTeddiursaGfx48_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_48_2.4bpp");
-static const u8 sTeddiursaGfx48_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_48_3.4bpp");
+static const u8 sTeddiursaGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_48.4bpp.lz");
+static const u8 sTeddiursaGfx48_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_48_1.4bpp.lz");
+static const u8 sTeddiursaGfx48_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_48_2.4bpp.lz");
+static const u8 sTeddiursaGfx48_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_48_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites48[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx48, ARRAY_COUNT(sTeddiursaGfx48)}, 
@@ -2555,10 +2555,10 @@ static const ax_sprite sTeddiursaSprites48[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx49[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_49.4bpp");
-static const u8 sTeddiursaGfx49_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_49_1.4bpp");
-static const u8 sTeddiursaGfx49_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_49_2.4bpp");
-static const u8 sTeddiursaGfx49_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_49_3.4bpp");
+static const u8 sTeddiursaGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_49.4bpp.lz");
+static const u8 sTeddiursaGfx49_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_49_1.4bpp.lz");
+static const u8 sTeddiursaGfx49_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_49_2.4bpp.lz");
+static const u8 sTeddiursaGfx49_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_49_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites49[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx49, ARRAY_COUNT(sTeddiursaGfx49)}, 
@@ -2571,10 +2571,10 @@ static const ax_sprite sTeddiursaSprites49[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx50[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_50.4bpp");
-static const u8 sTeddiursaGfx50_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_50_1.4bpp");
-static const u8 sTeddiursaGfx50_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_50_2.4bpp");
-static const u8 sTeddiursaGfx50_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_50_3.4bpp");
+static const u8 sTeddiursaGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_50.4bpp.lz");
+static const u8 sTeddiursaGfx50_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_50_1.4bpp.lz");
+static const u8 sTeddiursaGfx50_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_50_2.4bpp.lz");
+static const u8 sTeddiursaGfx50_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_50_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites50[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx50, ARRAY_COUNT(sTeddiursaGfx50)}, 
@@ -2587,9 +2587,9 @@ static const ax_sprite sTeddiursaSprites50[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx51[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_51.4bpp");
-static const u8 sTeddiursaGfx51_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_51_1.4bpp");
-static const u8 sTeddiursaGfx51_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_51_2.4bpp");
+static const u8 sTeddiursaGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_51.4bpp.lz");
+static const u8 sTeddiursaGfx51_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_51_1.4bpp.lz");
+static const u8 sTeddiursaGfx51_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_51_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites51[] = {
 	{NULL, 128}, 
 	{sTeddiursaGfx51, ARRAY_COUNT(sTeddiursaGfx51)}, 
@@ -2600,10 +2600,10 @@ static const ax_sprite sTeddiursaSprites51[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx52[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_52.4bpp");
-static const u8 sTeddiursaGfx52_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_52_1.4bpp");
-static const u8 sTeddiursaGfx52_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_52_2.4bpp");
-static const u8 sTeddiursaGfx52_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_52_3.4bpp");
+static const u8 sTeddiursaGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_52.4bpp.lz");
+static const u8 sTeddiursaGfx52_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_52_1.4bpp.lz");
+static const u8 sTeddiursaGfx52_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_52_2.4bpp.lz");
+static const u8 sTeddiursaGfx52_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_52_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites52[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx52, ARRAY_COUNT(sTeddiursaGfx52)}, 
@@ -2616,10 +2616,10 @@ static const ax_sprite sTeddiursaSprites52[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx53[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_53.4bpp");
-static const u8 sTeddiursaGfx53_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_53_1.4bpp");
-static const u8 sTeddiursaGfx53_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_53_2.4bpp");
-static const u8 sTeddiursaGfx53_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_53_3.4bpp");
+static const u8 sTeddiursaGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_53.4bpp.lz");
+static const u8 sTeddiursaGfx53_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_53_1.4bpp.lz");
+static const u8 sTeddiursaGfx53_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_53_2.4bpp.lz");
+static const u8 sTeddiursaGfx53_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_53_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites53[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx53, ARRAY_COUNT(sTeddiursaGfx53)}, 
@@ -2632,9 +2632,9 @@ static const ax_sprite sTeddiursaSprites53[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx54[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_54.4bpp");
-static const u8 sTeddiursaGfx54_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_54_1.4bpp");
-static const u8 sTeddiursaGfx54_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_54_2.4bpp");
+static const u8 sTeddiursaGfx54[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_54.4bpp.lz");
+static const u8 sTeddiursaGfx54_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_54_1.4bpp.lz");
+static const u8 sTeddiursaGfx54_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_54_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites54[] = {
 	{NULL, 128}, 
 	{sTeddiursaGfx54, ARRAY_COUNT(sTeddiursaGfx54)}, 
@@ -2645,10 +2645,10 @@ static const ax_sprite sTeddiursaSprites54[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx55[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_55.4bpp");
-static const u8 sTeddiursaGfx55_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_55_1.4bpp");
-static const u8 sTeddiursaGfx55_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_55_2.4bpp");
-static const u8 sTeddiursaGfx55_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_55_3.4bpp");
+static const u8 sTeddiursaGfx55[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_55.4bpp.lz");
+static const u8 sTeddiursaGfx55_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_55_1.4bpp.lz");
+static const u8 sTeddiursaGfx55_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_55_2.4bpp.lz");
+static const u8 sTeddiursaGfx55_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_55_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites55[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx55, ARRAY_COUNT(sTeddiursaGfx55)}, 
@@ -2661,10 +2661,10 @@ static const ax_sprite sTeddiursaSprites55[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx56[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_56.4bpp");
-static const u8 sTeddiursaGfx56_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_56_1.4bpp");
-static const u8 sTeddiursaGfx56_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_56_2.4bpp");
-static const u8 sTeddiursaGfx56_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_56_3.4bpp");
+static const u8 sTeddiursaGfx56[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_56.4bpp.lz");
+static const u8 sTeddiursaGfx56_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_56_1.4bpp.lz");
+static const u8 sTeddiursaGfx56_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_56_2.4bpp.lz");
+static const u8 sTeddiursaGfx56_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_56_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites56[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx56, ARRAY_COUNT(sTeddiursaGfx56)}, 
@@ -2677,10 +2677,10 @@ static const ax_sprite sTeddiursaSprites56[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx57[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_57.4bpp");
-static const u8 sTeddiursaGfx57_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_57_1.4bpp");
-static const u8 sTeddiursaGfx57_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_57_2.4bpp");
-static const u8 sTeddiursaGfx57_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_57_3.4bpp");
+static const u8 sTeddiursaGfx57[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_57.4bpp.lz");
+static const u8 sTeddiursaGfx57_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_57_1.4bpp.lz");
+static const u8 sTeddiursaGfx57_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_57_2.4bpp.lz");
+static const u8 sTeddiursaGfx57_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_57_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites57[] = {
 	{NULL, 64}, 
 	{sTeddiursaGfx57, ARRAY_COUNT(sTeddiursaGfx57)}, 
@@ -2693,9 +2693,9 @@ static const ax_sprite sTeddiursaSprites57[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx58[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_58.4bpp");
-static const u8 sTeddiursaGfx58_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_58_1.4bpp");
-static const u8 sTeddiursaGfx58_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_58_2.4bpp");
+static const u8 sTeddiursaGfx58[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_58.4bpp.lz");
+static const u8 sTeddiursaGfx58_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_58_1.4bpp.lz");
+static const u8 sTeddiursaGfx58_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_58_2.4bpp.lz");
 static const ax_sprite sTeddiursaSprites58[] = {
 	{NULL, 128}, 
 	{sTeddiursaGfx58, ARRAY_COUNT(sTeddiursaGfx58)}, 
@@ -2706,10 +2706,10 @@ static const ax_sprite sTeddiursaSprites58[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx59[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_59.4bpp");
-static const u8 sTeddiursaGfx59_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_59_1.4bpp");
-static const u8 sTeddiursaGfx59_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_59_2.4bpp");
-static const u8 sTeddiursaGfx59_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_59_3.4bpp");
+static const u8 sTeddiursaGfx59[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_59.4bpp.lz");
+static const u8 sTeddiursaGfx59_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_59_1.4bpp.lz");
+static const u8 sTeddiursaGfx59_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_59_2.4bpp.lz");
+static const u8 sTeddiursaGfx59_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_59_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites59[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx59, ARRAY_COUNT(sTeddiursaGfx59)}, 
@@ -2722,10 +2722,10 @@ static const ax_sprite sTeddiursaSprites59[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx60[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_60.4bpp");
-static const u8 sTeddiursaGfx60_1[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_60_1.4bpp");
-static const u8 sTeddiursaGfx60_2[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_60_2.4bpp");
-static const u8 sTeddiursaGfx60_3[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_60_3.4bpp");
+static const u8 sTeddiursaGfx60[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_60.4bpp.lz");
+static const u8 sTeddiursaGfx60_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_60_1.4bpp.lz");
+static const u8 sTeddiursaGfx60_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_60_2.4bpp.lz");
+static const u8 sTeddiursaGfx60_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_60_3.4bpp.lz");
 static const ax_sprite sTeddiursaSprites60[] = {
 	{NULL, 32}, 
 	{sTeddiursaGfx60, ARRAY_COUNT(sTeddiursaGfx60)}, 
@@ -2738,47 +2738,47 @@ static const ax_sprite sTeddiursaSprites60[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx61[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_61.4bpp");
+static const u8 sTeddiursaGfx61[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_61.4bpp.lz");
 static const ax_sprite sTeddiursaSprites61[] = {
 	{sTeddiursaGfx61, ARRAY_COUNT(sTeddiursaGfx61)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx62[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_62.4bpp");
+static const u8 sTeddiursaGfx62[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_62.4bpp.lz");
 static const ax_sprite sTeddiursaSprites62[] = {
 	{sTeddiursaGfx62, ARRAY_COUNT(sTeddiursaGfx62)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx63[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_63.4bpp");
+static const u8 sTeddiursaGfx63[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_63.4bpp.lz");
 static const ax_sprite sTeddiursaSprites63[] = {
 	{sTeddiursaGfx63, ARRAY_COUNT(sTeddiursaGfx63)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx64[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_64.4bpp");
+static const u8 sTeddiursaGfx64[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_64.4bpp.lz");
 static const ax_sprite sTeddiursaSprites64[] = {
 	{sTeddiursaGfx64, ARRAY_COUNT(sTeddiursaGfx64)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx65[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_65.4bpp");
+static const u8 sTeddiursaGfx65[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_65.4bpp.lz");
 static const ax_sprite sTeddiursaSprites65[] = {
 	{sTeddiursaGfx65, ARRAY_COUNT(sTeddiursaGfx65)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx66[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_66.4bpp");
+static const u8 sTeddiursaGfx66[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_66.4bpp.lz");
 static const ax_sprite sTeddiursaSprites66[] = {
 	{sTeddiursaGfx66, ARRAY_COUNT(sTeddiursaGfx66)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx67[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_67.4bpp");
+static const u8 sTeddiursaGfx67[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_67.4bpp.lz");
 static const ax_sprite sTeddiursaSprites67[] = {
 	{sTeddiursaGfx67, ARRAY_COUNT(sTeddiursaGfx67)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx68[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_68.4bpp");
+static const u8 sTeddiursaGfx68[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_68.4bpp.lz");
 static const ax_sprite sTeddiursaSprites68[] = {
 	{sTeddiursaGfx68, ARRAY_COUNT(sTeddiursaGfx68)}, 
 	{NULL, 0}
 };
-static const u8 sTeddiursaGfx69[] = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_69.4bpp");
+static const u8 sTeddiursaGfx69[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/teddiursa/sprite_69.4bpp.lz");
 static const ax_sprite sTeddiursaSprites69[] = {
 	{sTeddiursaGfx69, ARRAY_COUNT(sTeddiursaGfx69)}, 
 	{NULL, 0}

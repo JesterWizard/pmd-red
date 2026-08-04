@@ -2204,84 +2204,84 @@ static const ax_anim sGengarAnims_16_1[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sGengarGfx1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_1.4bpp");
+static const u8 sGengarGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_1.4bpp.lz");
 static const ax_sprite sGengarSprites1[] = {
 	{sGengarGfx1, ARRAY_COUNT(sGengarGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_2.4bpp");
+static const u8 sGengarGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_2.4bpp.lz");
 static const ax_sprite sGengarSprites2[] = {
 	{sGengarGfx2, ARRAY_COUNT(sGengarGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx3[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_3.4bpp");
+static const u8 sGengarGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_3.4bpp.lz");
 static const ax_sprite sGengarSprites3[] = {
 	{sGengarGfx3, ARRAY_COUNT(sGengarGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx4[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_4.4bpp");
+static const u8 sGengarGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_4.4bpp.lz");
 static const ax_sprite sGengarSprites4[] = {
 	{sGengarGfx4, ARRAY_COUNT(sGengarGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx5[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_5.4bpp");
+static const u8 sGengarGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_5.4bpp.lz");
 static const ax_sprite sGengarSprites5[] = {
 	{sGengarGfx5, ARRAY_COUNT(sGengarGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx6[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_6.4bpp");
+static const u8 sGengarGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_6.4bpp.lz");
 static const ax_sprite sGengarSprites6[] = {
 	{sGengarGfx6, ARRAY_COUNT(sGengarGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx7[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_7.4bpp");
+static const u8 sGengarGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_7.4bpp.lz");
 static const ax_sprite sGengarSprites7[] = {
 	{sGengarGfx7, ARRAY_COUNT(sGengarGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx8[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_8.4bpp");
+static const u8 sGengarGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_8.4bpp.lz");
 static const ax_sprite sGengarSprites8[] = {
 	{sGengarGfx8, ARRAY_COUNT(sGengarGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx9[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_9.4bpp");
+static const u8 sGengarGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_9.4bpp.lz");
 static const ax_sprite sGengarSprites9[] = {
 	{sGengarGfx9, ARRAY_COUNT(sGengarGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx10[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_10.4bpp");
+static const u8 sGengarGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_10.4bpp.lz");
 static const ax_sprite sGengarSprites10[] = {
 	{sGengarGfx10, ARRAY_COUNT(sGengarGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx11[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_11.4bpp");
+static const u8 sGengarGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_11.4bpp.lz");
 static const ax_sprite sGengarSprites11[] = {
 	{sGengarGfx11, ARRAY_COUNT(sGengarGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx12[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_12.4bpp");
+static const u8 sGengarGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_12.4bpp.lz");
 static const ax_sprite sGengarSprites12[] = {
 	{sGengarGfx12, ARRAY_COUNT(sGengarGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx13[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_13.4bpp");
+static const u8 sGengarGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_13.4bpp.lz");
 static const ax_sprite sGengarSprites13[] = {
 	{sGengarGfx13, ARRAY_COUNT(sGengarGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx14[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_14.4bpp");
+static const u8 sGengarGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_14.4bpp.lz");
 static const ax_sprite sGengarSprites14[] = {
 	{sGengarGfx14, ARRAY_COUNT(sGengarGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx15[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_15.4bpp");
+static const u8 sGengarGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_15.4bpp.lz");
 static const ax_sprite sGengarSprites15[] = {
 	{sGengarGfx15, ARRAY_COUNT(sGengarGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx16[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_16.4bpp");
-static const u8 sGengarGfx16_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_16_1.4bpp");
-static const u8 sGengarGfx16_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_16_2.4bpp");
+static const u8 sGengarGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_16.4bpp.lz");
+static const u8 sGengarGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_16_1.4bpp.lz");
+static const u8 sGengarGfx16_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_16_2.4bpp.lz");
 static const ax_sprite sGengarSprites16[] = {
 	{sGengarGfx16, ARRAY_COUNT(sGengarGfx16)}, 
 	{NULL, 32}, 
@@ -2291,18 +2291,18 @@ static const ax_sprite sGengarSprites16[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx17[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_17.4bpp");
-static const u8 sGengarGfx17_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_17_1.4bpp");
+static const u8 sGengarGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_17.4bpp.lz");
+static const u8 sGengarGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_17_1.4bpp.lz");
 static const ax_sprite sGengarSprites17[] = {
 	{sGengarGfx17, ARRAY_COUNT(sGengarGfx17)}, 
 	{NULL, 32}, 
 	{sGengarGfx17_1, ARRAY_COUNT(sGengarGfx17_1)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx18[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_18.4bpp");
-static const u8 sGengarGfx18_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_18_1.4bpp");
-static const u8 sGengarGfx18_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_18_2.4bpp");
-static const u8 sGengarGfx18_3[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_18_3.4bpp");
+static const u8 sGengarGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_18.4bpp.lz");
+static const u8 sGengarGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_18_1.4bpp.lz");
+static const u8 sGengarGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_18_2.4bpp.lz");
+static const u8 sGengarGfx18_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_18_3.4bpp.lz");
 static const ax_sprite sGengarSprites18[] = {
 	{sGengarGfx18, ARRAY_COUNT(sGengarGfx18)}, 
 	{NULL, 32}, 
@@ -2314,10 +2314,10 @@ static const ax_sprite sGengarSprites18[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx19[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_19.4bpp");
-static const u8 sGengarGfx19_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_19_1.4bpp");
-static const u8 sGengarGfx19_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_19_2.4bpp");
-static const u8 sGengarGfx19_3[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_19_3.4bpp");
+static const u8 sGengarGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_19.4bpp.lz");
+static const u8 sGengarGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_19_1.4bpp.lz");
+static const u8 sGengarGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_19_2.4bpp.lz");
+static const u8 sGengarGfx19_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_19_3.4bpp.lz");
 static const ax_sprite sGengarSprites19[] = {
 	{NULL, 32}, 
 	{sGengarGfx19, ARRAY_COUNT(sGengarGfx19)}, 
@@ -2330,23 +2330,23 @@ static const ax_sprite sGengarSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx20[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_20.4bpp");
+static const u8 sGengarGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_20.4bpp.lz");
 static const ax_sprite sGengarSprites20[] = {
 	{NULL, 32}, 
 	{sGengarGfx20, ARRAY_COUNT(sGengarGfx20)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx21[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_21.4bpp");
+static const u8 sGengarGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_21.4bpp.lz");
 static const ax_sprite sGengarSprites21[] = {
 	{NULL, 32}, 
 	{sGengarGfx21, ARRAY_COUNT(sGengarGfx21)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx22[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_22.4bpp");
-static const u8 sGengarGfx22_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_22_1.4bpp");
-static const u8 sGengarGfx22_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_22_2.4bpp");
-static const u8 sGengarGfx22_3[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_22_3.4bpp");
+static const u8 sGengarGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_22.4bpp.lz");
+static const u8 sGengarGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_22_1.4bpp.lz");
+static const u8 sGengarGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_22_2.4bpp.lz");
+static const u8 sGengarGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_22_3.4bpp.lz");
 static const ax_sprite sGengarSprites22[] = {
 	{NULL, 32}, 
 	{sGengarGfx22, ARRAY_COUNT(sGengarGfx22)}, 
@@ -2359,8 +2359,8 @@ static const ax_sprite sGengarSprites22[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx23[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_23.4bpp");
-static const u8 sGengarGfx23_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_23_1.4bpp");
+static const u8 sGengarGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_23.4bpp.lz");
+static const u8 sGengarGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_23_1.4bpp.lz");
 static const ax_sprite sGengarSprites23[] = {
 	{NULL, 32}, 
 	{sGengarGfx23, ARRAY_COUNT(sGengarGfx23)}, 
@@ -2369,32 +2369,32 @@ static const ax_sprite sGengarSprites23[] = {
 	{NULL, 192}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx24[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_24.4bpp");
+static const u8 sGengarGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_24.4bpp.lz");
 static const ax_sprite sGengarSprites24[] = {
 	{NULL, 64}, 
 	{sGengarGfx24, ARRAY_COUNT(sGengarGfx24)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx25[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_25.4bpp");
+static const u8 sGengarGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_25.4bpp.lz");
 static const ax_sprite sGengarSprites25[] = {
 	{NULL, 32}, 
 	{sGengarGfx25, ARRAY_COUNT(sGengarGfx25)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx26[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_26.4bpp");
+static const u8 sGengarGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_26.4bpp.lz");
 static const ax_sprite sGengarSprites26[] = {
 	{sGengarGfx26, ARRAY_COUNT(sGengarGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx27[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_27.4bpp");
+static const u8 sGengarGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_27.4bpp.lz");
 static const ax_sprite sGengarSprites27[] = {
 	{sGengarGfx27, ARRAY_COUNT(sGengarGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx28[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_28.4bpp");
-static const u8 sGengarGfx28_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_28_1.4bpp");
-static const u8 sGengarGfx28_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_28_2.4bpp");
-static const u8 sGengarGfx28_3[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_28_3.4bpp");
+static const u8 sGengarGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_28.4bpp.lz");
+static const u8 sGengarGfx28_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_28_1.4bpp.lz");
+static const u8 sGengarGfx28_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_28_2.4bpp.lz");
+static const u8 sGengarGfx28_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_28_3.4bpp.lz");
 static const ax_sprite sGengarSprites28[] = {
 	{NULL, 32}, 
 	{sGengarGfx28, ARRAY_COUNT(sGengarGfx28)}, 
@@ -2407,18 +2407,18 @@ static const ax_sprite sGengarSprites28[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx29[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_29.4bpp");
-static const u8 sGengarGfx29_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_29_1.4bpp");
+static const u8 sGengarGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_29.4bpp.lz");
+static const u8 sGengarGfx29_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_29_1.4bpp.lz");
 static const ax_sprite sGengarSprites29[] = {
 	{sGengarGfx29, ARRAY_COUNT(sGengarGfx29)}, 
 	{NULL, 32}, 
 	{sGengarGfx29_1, ARRAY_COUNT(sGengarGfx29_1)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx30[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_30.4bpp");
-static const u8 sGengarGfx30_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_30_1.4bpp");
-static const u8 sGengarGfx30_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_30_2.4bpp");
-static const u8 sGengarGfx30_3[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_30_3.4bpp");
+static const u8 sGengarGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_30.4bpp.lz");
+static const u8 sGengarGfx30_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_30_1.4bpp.lz");
+static const u8 sGengarGfx30_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_30_2.4bpp.lz");
+static const u8 sGengarGfx30_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_30_3.4bpp.lz");
 static const ax_sprite sGengarSprites30[] = {
 	{sGengarGfx30, ARRAY_COUNT(sGengarGfx30)}, 
 	{NULL, 64}, 
@@ -2429,9 +2429,9 @@ static const ax_sprite sGengarSprites30[] = {
 	{sGengarGfx30_3, ARRAY_COUNT(sGengarGfx30_3)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx31[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_31.4bpp");
-static const u8 sGengarGfx31_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_31_1.4bpp");
-static const u8 sGengarGfx31_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_31_2.4bpp");
+static const u8 sGengarGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_31.4bpp.lz");
+static const u8 sGengarGfx31_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_31_1.4bpp.lz");
+static const u8 sGengarGfx31_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_31_2.4bpp.lz");
 static const ax_sprite sGengarSprites31[] = {
 	{NULL, 32}, 
 	{sGengarGfx31, ARRAY_COUNT(sGengarGfx31)}, 
@@ -2442,9 +2442,9 @@ static const ax_sprite sGengarSprites31[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx32[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_32.4bpp");
-static const u8 sGengarGfx32_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_32_1.4bpp");
-static const u8 sGengarGfx32_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_32_2.4bpp");
+static const u8 sGengarGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_32.4bpp.lz");
+static const u8 sGengarGfx32_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_32_1.4bpp.lz");
+static const u8 sGengarGfx32_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_32_2.4bpp.lz");
 static const ax_sprite sGengarSprites32[] = {
 	{sGengarGfx32, ARRAY_COUNT(sGengarGfx32)}, 
 	{NULL, 32}, 
@@ -2453,10 +2453,10 @@ static const ax_sprite sGengarSprites32[] = {
 	{sGengarGfx32_2, ARRAY_COUNT(sGengarGfx32_2)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx33[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_33.4bpp");
-static const u8 sGengarGfx33_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_33_1.4bpp");
-static const u8 sGengarGfx33_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_33_2.4bpp");
-static const u8 sGengarGfx33_3[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_33_3.4bpp");
+static const u8 sGengarGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_33.4bpp.lz");
+static const u8 sGengarGfx33_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_33_1.4bpp.lz");
+static const u8 sGengarGfx33_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_33_2.4bpp.lz");
+static const u8 sGengarGfx33_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_33_3.4bpp.lz");
 static const ax_sprite sGengarSprites33[] = {
 	{NULL, 32}, 
 	{sGengarGfx33, ARRAY_COUNT(sGengarGfx33)}, 
@@ -2469,14 +2469,14 @@ static const ax_sprite sGengarSprites33[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx34[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_34.4bpp");
+static const u8 sGengarGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_34.4bpp.lz");
 static const ax_sprite sGengarSprites34[] = {
 	{sGengarGfx34, ARRAY_COUNT(sGengarGfx34)}, 
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx35[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_35.4bpp");
-static const u8 sGengarGfx35_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_35_1.4bpp");
+static const u8 sGengarGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_35.4bpp.lz");
+static const u8 sGengarGfx35_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_35_1.4bpp.lz");
 static const ax_sprite sGengarSprites35[] = {
 	{sGengarGfx35, ARRAY_COUNT(sGengarGfx35)}, 
 	{NULL, 32}, 
@@ -2484,9 +2484,9 @@ static const ax_sprite sGengarSprites35[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx36[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_36.4bpp");
-static const u8 sGengarGfx36_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_36_1.4bpp");
-static const u8 sGengarGfx36_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_36_2.4bpp");
+static const u8 sGengarGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_36.4bpp.lz");
+static const u8 sGengarGfx36_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_36_1.4bpp.lz");
+static const u8 sGengarGfx36_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_36_2.4bpp.lz");
 static const ax_sprite sGengarSprites36[] = {
 	{sGengarGfx36, ARRAY_COUNT(sGengarGfx36)}, 
 	{NULL, 32}, 
@@ -2496,10 +2496,10 @@ static const ax_sprite sGengarSprites36[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx37[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_37.4bpp");
-static const u8 sGengarGfx37_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_37_1.4bpp");
-static const u8 sGengarGfx37_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_37_2.4bpp");
-static const u8 sGengarGfx37_3[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_37_3.4bpp");
+static const u8 sGengarGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_37.4bpp.lz");
+static const u8 sGengarGfx37_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_37_1.4bpp.lz");
+static const u8 sGengarGfx37_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_37_2.4bpp.lz");
+static const u8 sGengarGfx37_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_37_3.4bpp.lz");
 static const ax_sprite sGengarSprites37[] = {
 	{sGengarGfx37, ARRAY_COUNT(sGengarGfx37)}, 
 	{NULL, 64}, 
@@ -2511,8 +2511,8 @@ static const ax_sprite sGengarSprites37[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx38[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_38.4bpp");
-static const u8 sGengarGfx38_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_38_1.4bpp");
+static const u8 sGengarGfx38[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_38.4bpp.lz");
+static const u8 sGengarGfx38_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_38_1.4bpp.lz");
 static const ax_sprite sGengarSprites38[] = {
 	{NULL, 32}, 
 	{sGengarGfx38, ARRAY_COUNT(sGengarGfx38)}, 
@@ -2521,8 +2521,8 @@ static const ax_sprite sGengarSprites38[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx39[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_39.4bpp");
-static const u8 sGengarGfx39_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_39_1.4bpp");
+static const u8 sGengarGfx39[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_39.4bpp.lz");
+static const u8 sGengarGfx39_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_39_1.4bpp.lz");
 static const ax_sprite sGengarSprites39[] = {
 	{NULL, 32}, 
 	{sGengarGfx39, ARRAY_COUNT(sGengarGfx39)}, 
@@ -2530,9 +2530,9 @@ static const ax_sprite sGengarSprites39[] = {
 	{sGengarGfx39_1, ARRAY_COUNT(sGengarGfx39_1)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx40[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_40.4bpp");
-static const u8 sGengarGfx40_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_40_1.4bpp");
-static const u8 sGengarGfx40_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_40_2.4bpp");
+static const u8 sGengarGfx40[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_40.4bpp.lz");
+static const u8 sGengarGfx40_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_40_1.4bpp.lz");
+static const u8 sGengarGfx40_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_40_2.4bpp.lz");
 static const ax_sprite sGengarSprites40[] = {
 	{sGengarGfx40, ARRAY_COUNT(sGengarGfx40)}, 
 	{NULL, 32}, 
@@ -2542,9 +2542,9 @@ static const ax_sprite sGengarSprites40[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx41[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_41.4bpp");
-static const u8 sGengarGfx41_1[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_41_1.4bpp");
-static const u8 sGengarGfx41_2[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_41_2.4bpp");
+static const u8 sGengarGfx41[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_41.4bpp.lz");
+static const u8 sGengarGfx41_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_41_1.4bpp.lz");
+static const u8 sGengarGfx41_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_41_2.4bpp.lz");
 static const ax_sprite sGengarSprites41[] = {
 	{sGengarGfx41, ARRAY_COUNT(sGengarGfx41)}, 
 	{NULL, 32}, 
@@ -2554,64 +2554,64 @@ static const ax_sprite sGengarSprites41[] = {
 	{NULL, 160}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx42[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_42.4bpp");
+static const u8 sGengarGfx42[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_42.4bpp.lz");
 static const ax_sprite sGengarSprites42[] = {
 	{sGengarGfx42, ARRAY_COUNT(sGengarGfx42)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx43[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_43.4bpp");
+static const u8 sGengarGfx43[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_43.4bpp.lz");
 static const ax_sprite sGengarSprites43[] = {
 	{sGengarGfx43, ARRAY_COUNT(sGengarGfx43)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx44[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_44.4bpp");
+static const u8 sGengarGfx44[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_44.4bpp.lz");
 static const ax_sprite sGengarSprites44[] = {
 	{sGengarGfx44, ARRAY_COUNT(sGengarGfx44)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx45[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_45.4bpp");
+static const u8 sGengarGfx45[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_45.4bpp.lz");
 static const ax_sprite sGengarSprites45[] = {
 	{sGengarGfx45, ARRAY_COUNT(sGengarGfx45)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx46[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_46.4bpp");
+static const u8 sGengarGfx46[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_46.4bpp.lz");
 static const ax_sprite sGengarSprites46[] = {
 	{sGengarGfx46, ARRAY_COUNT(sGengarGfx46)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx47[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_47.4bpp");
+static const u8 sGengarGfx47[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_47.4bpp.lz");
 static const ax_sprite sGengarSprites47[] = {
 	{sGengarGfx47, ARRAY_COUNT(sGengarGfx47)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx48[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_48.4bpp");
+static const u8 sGengarGfx48[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_48.4bpp.lz");
 static const ax_sprite sGengarSprites48[] = {
 	{sGengarGfx48, ARRAY_COUNT(sGengarGfx48)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx49[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_49.4bpp");
+static const u8 sGengarGfx49[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_49.4bpp.lz");
 static const ax_sprite sGengarSprites49[] = {
 	{sGengarGfx49, ARRAY_COUNT(sGengarGfx49)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx50[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_50.4bpp");
+static const u8 sGengarGfx50[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_50.4bpp.lz");
 static const ax_sprite sGengarSprites50[] = {
 	{sGengarGfx50, ARRAY_COUNT(sGengarGfx50)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx51[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_51.4bpp");
+static const u8 sGengarGfx51[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_51.4bpp.lz");
 static const ax_sprite sGengarSprites51[] = {
 	{sGengarGfx51, ARRAY_COUNT(sGengarGfx51)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx52[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_52.4bpp");
+static const u8 sGengarGfx52[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_52.4bpp.lz");
 static const ax_sprite sGengarSprites52[] = {
 	{sGengarGfx52, ARRAY_COUNT(sGengarGfx52)}, 
 	{NULL, 0}
 };
-static const u8 sGengarGfx53[] = INCBIN_U8("graphics/ax/mon/gengar/sprite_53.4bpp");
+static const u8 sGengarGfx53[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/gengar/sprite_53.4bpp.lz");
 static const ax_sprite sGengarSprites53[] = {
 	{sGengarGfx53, ARRAY_COUNT(sGengarGfx53)}, 
 	{NULL, 0}

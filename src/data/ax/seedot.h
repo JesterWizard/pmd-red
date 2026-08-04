@@ -2103,203 +2103,203 @@ static const ax_anim sSeedotAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sSeedotGfx1[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_1.4bpp");
+static const u8 sSeedotGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_1.4bpp.lz");
 static const ax_sprite sSeedotSprites1[] = {
 	{sSeedotGfx1, ARRAY_COUNT(sSeedotGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx2[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_2.4bpp");
+static const u8 sSeedotGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_2.4bpp.lz");
 static const ax_sprite sSeedotSprites2[] = {
 	{sSeedotGfx2, ARRAY_COUNT(sSeedotGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx3[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_3.4bpp");
+static const u8 sSeedotGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_3.4bpp.lz");
 static const ax_sprite sSeedotSprites3[] = {
 	{sSeedotGfx3, ARRAY_COUNT(sSeedotGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx4[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_4.4bpp");
+static const u8 sSeedotGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_4.4bpp.lz");
 static const ax_sprite sSeedotSprites4[] = {
 	{sSeedotGfx4, ARRAY_COUNT(sSeedotGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx5[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_5.4bpp");
+static const u8 sSeedotGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_5.4bpp.lz");
 static const ax_sprite sSeedotSprites5[] = {
 	{sSeedotGfx5, ARRAY_COUNT(sSeedotGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx6[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_6.4bpp");
+static const u8 sSeedotGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_6.4bpp.lz");
 static const ax_sprite sSeedotSprites6[] = {
 	{sSeedotGfx6, ARRAY_COUNT(sSeedotGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx7[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_7.4bpp");
+static const u8 sSeedotGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_7.4bpp.lz");
 static const ax_sprite sSeedotSprites7[] = {
 	{sSeedotGfx7, ARRAY_COUNT(sSeedotGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx8[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_8.4bpp");
+static const u8 sSeedotGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_8.4bpp.lz");
 static const ax_sprite sSeedotSprites8[] = {
 	{sSeedotGfx8, ARRAY_COUNT(sSeedotGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx9[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_9.4bpp");
+static const u8 sSeedotGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_9.4bpp.lz");
 static const ax_sprite sSeedotSprites9[] = {
 	{sSeedotGfx9, ARRAY_COUNT(sSeedotGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx10[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_10.4bpp");
+static const u8 sSeedotGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_10.4bpp.lz");
 static const ax_sprite sSeedotSprites10[] = {
 	{sSeedotGfx10, ARRAY_COUNT(sSeedotGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx11[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_11.4bpp");
+static const u8 sSeedotGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_11.4bpp.lz");
 static const ax_sprite sSeedotSprites11[] = {
 	{sSeedotGfx11, ARRAY_COUNT(sSeedotGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx12[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_12.4bpp");
+static const u8 sSeedotGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_12.4bpp.lz");
 static const ax_sprite sSeedotSprites12[] = {
 	{sSeedotGfx12, ARRAY_COUNT(sSeedotGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx13[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_13.4bpp");
+static const u8 sSeedotGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_13.4bpp.lz");
 static const ax_sprite sSeedotSprites13[] = {
 	{sSeedotGfx13, ARRAY_COUNT(sSeedotGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx14[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_14.4bpp");
+static const u8 sSeedotGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_14.4bpp.lz");
 static const ax_sprite sSeedotSprites14[] = {
 	{sSeedotGfx14, ARRAY_COUNT(sSeedotGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx15[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_15.4bpp");
+static const u8 sSeedotGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_15.4bpp.lz");
 static const ax_sprite sSeedotSprites15[] = {
 	{sSeedotGfx15, ARRAY_COUNT(sSeedotGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx16[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_16.4bpp");
+static const u8 sSeedotGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_16.4bpp.lz");
 static const ax_sprite sSeedotSprites16[] = {
 	{sSeedotGfx16, ARRAY_COUNT(sSeedotGfx16)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx17[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_17.4bpp");
+static const u8 sSeedotGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_17.4bpp.lz");
 static const ax_sprite sSeedotSprites17[] = {
 	{sSeedotGfx17, ARRAY_COUNT(sSeedotGfx17)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx18[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_18.4bpp");
+static const u8 sSeedotGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_18.4bpp.lz");
 static const ax_sprite sSeedotSprites18[] = {
 	{sSeedotGfx18, ARRAY_COUNT(sSeedotGfx18)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx19[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_19.4bpp");
+static const u8 sSeedotGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_19.4bpp.lz");
 static const ax_sprite sSeedotSprites19[] = {
 	{sSeedotGfx19, ARRAY_COUNT(sSeedotGfx19)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx20[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_20.4bpp");
+static const u8 sSeedotGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_20.4bpp.lz");
 static const ax_sprite sSeedotSprites20[] = {
 	{sSeedotGfx20, ARRAY_COUNT(sSeedotGfx20)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx21[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_21.4bpp");
+static const u8 sSeedotGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_21.4bpp.lz");
 static const ax_sprite sSeedotSprites21[] = {
 	{sSeedotGfx21, ARRAY_COUNT(sSeedotGfx21)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx22[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_22.4bpp");
+static const u8 sSeedotGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_22.4bpp.lz");
 static const ax_sprite sSeedotSprites22[] = {
 	{sSeedotGfx22, ARRAY_COUNT(sSeedotGfx22)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx23[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_23.4bpp");
+static const u8 sSeedotGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_23.4bpp.lz");
 static const ax_sprite sSeedotSprites23[] = {
 	{sSeedotGfx23, ARRAY_COUNT(sSeedotGfx23)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx24[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_24.4bpp");
+static const u8 sSeedotGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_24.4bpp.lz");
 static const ax_sprite sSeedotSprites24[] = {
 	{sSeedotGfx24, ARRAY_COUNT(sSeedotGfx24)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx25[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_25.4bpp");
+static const u8 sSeedotGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_25.4bpp.lz");
 static const ax_sprite sSeedotSprites25[] = {
 	{sSeedotGfx25, ARRAY_COUNT(sSeedotGfx25)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx26[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_26.4bpp");
+static const u8 sSeedotGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_26.4bpp.lz");
 static const ax_sprite sSeedotSprites26[] = {
 	{sSeedotGfx26, ARRAY_COUNT(sSeedotGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx27[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_27.4bpp");
-static const u8 sSeedotGfx27_1[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_27_1.4bpp");
+static const u8 sSeedotGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_27.4bpp.lz");
+static const u8 sSeedotGfx27_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_27_1.4bpp.lz");
 static const ax_sprite sSeedotSprites27[] = {
 	{sSeedotGfx27, ARRAY_COUNT(sSeedotGfx27)}, 
 	{NULL, 32}, 
 	{sSeedotGfx27_1, ARRAY_COUNT(sSeedotGfx27_1)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx28[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_28.4bpp");
+static const u8 sSeedotGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_28.4bpp.lz");
 static const ax_sprite sSeedotSprites28[] = {
 	{sSeedotGfx28, ARRAY_COUNT(sSeedotGfx28)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx29[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_29.4bpp");
+static const u8 sSeedotGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_29.4bpp.lz");
 static const ax_sprite sSeedotSprites29[] = {
 	{sSeedotGfx29, ARRAY_COUNT(sSeedotGfx29)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx30[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_30.4bpp");
+static const u8 sSeedotGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_30.4bpp.lz");
 static const ax_sprite sSeedotSprites30[] = {
 	{sSeedotGfx30, ARRAY_COUNT(sSeedotGfx30)}, 
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx31[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_31.4bpp");
+static const u8 sSeedotGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_31.4bpp.lz");
 static const ax_sprite sSeedotSprites31[] = {
 	{sSeedotGfx31, ARRAY_COUNT(sSeedotGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx32[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_32.4bpp");
+static const u8 sSeedotGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_32.4bpp.lz");
 static const ax_sprite sSeedotSprites32[] = {
 	{sSeedotGfx32, ARRAY_COUNT(sSeedotGfx32)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx33[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_33.4bpp");
+static const u8 sSeedotGfx33[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_33.4bpp.lz");
 static const ax_sprite sSeedotSprites33[] = {
 	{sSeedotGfx33, ARRAY_COUNT(sSeedotGfx33)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx34[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_34.4bpp");
+static const u8 sSeedotGfx34[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_34.4bpp.lz");
 static const ax_sprite sSeedotSprites34[] = {
 	{sSeedotGfx34, ARRAY_COUNT(sSeedotGfx34)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx35[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_35.4bpp");
+static const u8 sSeedotGfx35[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_35.4bpp.lz");
 static const ax_sprite sSeedotSprites35[] = {
 	{sSeedotGfx35, ARRAY_COUNT(sSeedotGfx35)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx36[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_36.4bpp");
+static const u8 sSeedotGfx36[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_36.4bpp.lz");
 static const ax_sprite sSeedotSprites36[] = {
 	{sSeedotGfx36, ARRAY_COUNT(sSeedotGfx36)}, 
 	{NULL, 0}
 };
-static const u8 sSeedotGfx37[] = INCBIN_U8("graphics/ax/mon/seedot/sprite_37.4bpp");
+static const u8 sSeedotGfx37[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/seedot/sprite_37.4bpp.lz");
 static const ax_sprite sSeedotSprites37[] = {
 	{sSeedotGfx37, ARRAY_COUNT(sSeedotGfx37)}, 
 	{NULL, 0}

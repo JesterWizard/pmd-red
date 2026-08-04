@@ -2031,83 +2031,83 @@ static const ax_anim sMasquerainAnims_13_8[] = {
 	AX_ANIM_TERMINATOR
 };
 
-static const u8 sMasquerainGfx1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_1.4bpp");
+static const u8 sMasquerainGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_1.4bpp.lz");
 static const ax_sprite sMasquerainSprites1[] = {
 	{sMasquerainGfx1, ARRAY_COUNT(sMasquerainGfx1)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx2[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_2.4bpp");
+static const u8 sMasquerainGfx2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_2.4bpp.lz");
 static const ax_sprite sMasquerainSprites2[] = {
 	{sMasquerainGfx2, ARRAY_COUNT(sMasquerainGfx2)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx3[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_3.4bpp");
+static const u8 sMasquerainGfx3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_3.4bpp.lz");
 static const ax_sprite sMasquerainSprites3[] = {
 	{sMasquerainGfx3, ARRAY_COUNT(sMasquerainGfx3)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx4[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_4.4bpp");
+static const u8 sMasquerainGfx4[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_4.4bpp.lz");
 static const ax_sprite sMasquerainSprites4[] = {
 	{sMasquerainGfx4, ARRAY_COUNT(sMasquerainGfx4)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx5[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_5.4bpp");
+static const u8 sMasquerainGfx5[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_5.4bpp.lz");
 static const ax_sprite sMasquerainSprites5[] = {
 	{sMasquerainGfx5, ARRAY_COUNT(sMasquerainGfx5)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx6[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_6.4bpp");
+static const u8 sMasquerainGfx6[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_6.4bpp.lz");
 static const ax_sprite sMasquerainSprites6[] = {
 	{sMasquerainGfx6, ARRAY_COUNT(sMasquerainGfx6)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx7[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_7.4bpp");
+static const u8 sMasquerainGfx7[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_7.4bpp.lz");
 static const ax_sprite sMasquerainSprites7[] = {
 	{sMasquerainGfx7, ARRAY_COUNT(sMasquerainGfx7)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx8[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_8.4bpp");
+static const u8 sMasquerainGfx8[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_8.4bpp.lz");
 static const ax_sprite sMasquerainSprites8[] = {
 	{sMasquerainGfx8, ARRAY_COUNT(sMasquerainGfx8)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx9[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_9.4bpp");
+static const u8 sMasquerainGfx9[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_9.4bpp.lz");
 static const ax_sprite sMasquerainSprites9[] = {
 	{sMasquerainGfx9, ARRAY_COUNT(sMasquerainGfx9)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx10[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_10.4bpp");
+static const u8 sMasquerainGfx10[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_10.4bpp.lz");
 static const ax_sprite sMasquerainSprites10[] = {
 	{sMasquerainGfx10, ARRAY_COUNT(sMasquerainGfx10)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx11[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_11.4bpp");
+static const u8 sMasquerainGfx11[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_11.4bpp.lz");
 static const ax_sprite sMasquerainSprites11[] = {
 	{sMasquerainGfx11, ARRAY_COUNT(sMasquerainGfx11)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx12[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_12.4bpp");
+static const u8 sMasquerainGfx12[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_12.4bpp.lz");
 static const ax_sprite sMasquerainSprites12[] = {
 	{sMasquerainGfx12, ARRAY_COUNT(sMasquerainGfx12)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx13[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_13.4bpp");
+static const u8 sMasquerainGfx13[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_13.4bpp.lz");
 static const ax_sprite sMasquerainSprites13[] = {
 	{sMasquerainGfx13, ARRAY_COUNT(sMasquerainGfx13)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx14[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_14.4bpp");
+static const u8 sMasquerainGfx14[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_14.4bpp.lz");
 static const ax_sprite sMasquerainSprites14[] = {
 	{sMasquerainGfx14, ARRAY_COUNT(sMasquerainGfx14)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx15[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_15.4bpp");
+static const u8 sMasquerainGfx15[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_15.4bpp.lz");
 static const ax_sprite sMasquerainSprites15[] = {
 	{sMasquerainGfx15, ARRAY_COUNT(sMasquerainGfx15)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx16[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_16.4bpp");
-static const u8 sMasquerainGfx16_1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_16_1.4bpp");
+static const u8 sMasquerainGfx16[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_16.4bpp.lz");
+static const u8 sMasquerainGfx16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_16_1.4bpp.lz");
 static const ax_sprite sMasquerainSprites16[] = {
 	{sMasquerainGfx16, ARRAY_COUNT(sMasquerainGfx16)}, 
 	{NULL, 64}, 
@@ -2115,8 +2115,8 @@ static const ax_sprite sMasquerainSprites16[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx17[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_17.4bpp");
-static const u8 sMasquerainGfx17_1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_17_1.4bpp");
+static const u8 sMasquerainGfx17[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_17.4bpp.lz");
+static const u8 sMasquerainGfx17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_17_1.4bpp.lz");
 static const ax_sprite sMasquerainSprites17[] = {
 	{sMasquerainGfx17, ARRAY_COUNT(sMasquerainGfx17)}, 
 	{NULL, 64}, 
@@ -2124,9 +2124,9 @@ static const ax_sprite sMasquerainSprites17[] = {
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx18[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_18.4bpp");
-static const u8 sMasquerainGfx18_1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_18_1.4bpp");
-static const u8 sMasquerainGfx18_2[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_18_2.4bpp");
+static const u8 sMasquerainGfx18[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_18.4bpp.lz");
+static const u8 sMasquerainGfx18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_18_1.4bpp.lz");
+static const u8 sMasquerainGfx18_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_18_2.4bpp.lz");
 static const ax_sprite sMasquerainSprites18[] = {
 	{NULL, 32}, 
 	{sMasquerainGfx18, ARRAY_COUNT(sMasquerainGfx18)}, 
@@ -2137,9 +2137,9 @@ static const ax_sprite sMasquerainSprites18[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx19[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_19.4bpp");
-static const u8 sMasquerainGfx19_1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_19_1.4bpp");
-static const u8 sMasquerainGfx19_2[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_19_2.4bpp");
+static const u8 sMasquerainGfx19[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_19.4bpp.lz");
+static const u8 sMasquerainGfx19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_19_1.4bpp.lz");
+static const u8 sMasquerainGfx19_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_19_2.4bpp.lz");
 static const ax_sprite sMasquerainSprites19[] = {
 	{NULL, 32}, 
 	{sMasquerainGfx19, ARRAY_COUNT(sMasquerainGfx19)}, 
@@ -2150,10 +2150,10 @@ static const ax_sprite sMasquerainSprites19[] = {
 	{NULL, 32}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx20[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_20.4bpp");
-static const u8 sMasquerainGfx20_1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_20_1.4bpp");
-static const u8 sMasquerainGfx20_2[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_20_2.4bpp");
-static const u8 sMasquerainGfx20_3[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_20_3.4bpp");
+static const u8 sMasquerainGfx20[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_20.4bpp.lz");
+static const u8 sMasquerainGfx20_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_20_1.4bpp.lz");
+static const u8 sMasquerainGfx20_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_20_2.4bpp.lz");
+static const u8 sMasquerainGfx20_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_20_3.4bpp.lz");
 static const ax_sprite sMasquerainSprites20[] = {
 	{NULL, 32}, 
 	{sMasquerainGfx20, ARRAY_COUNT(sMasquerainGfx20)}, 
@@ -2166,10 +2166,10 @@ static const ax_sprite sMasquerainSprites20[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx21[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_21.4bpp");
-static const u8 sMasquerainGfx21_1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_21_1.4bpp");
-static const u8 sMasquerainGfx21_2[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_21_2.4bpp");
-static const u8 sMasquerainGfx21_3[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_21_3.4bpp");
+static const u8 sMasquerainGfx21[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_21.4bpp.lz");
+static const u8 sMasquerainGfx21_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_21_1.4bpp.lz");
+static const u8 sMasquerainGfx21_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_21_2.4bpp.lz");
+static const u8 sMasquerainGfx21_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_21_3.4bpp.lz");
 static const ax_sprite sMasquerainSprites21[] = {
 	{NULL, 32}, 
 	{sMasquerainGfx21, ARRAY_COUNT(sMasquerainGfx21)}, 
@@ -2182,10 +2182,10 @@ static const ax_sprite sMasquerainSprites21[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx22[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_22.4bpp");
-static const u8 sMasquerainGfx22_1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_22_1.4bpp");
-static const u8 sMasquerainGfx22_2[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_22_2.4bpp");
-static const u8 sMasquerainGfx22_3[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_22_3.4bpp");
+static const u8 sMasquerainGfx22[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_22.4bpp.lz");
+static const u8 sMasquerainGfx22_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_22_1.4bpp.lz");
+static const u8 sMasquerainGfx22_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_22_2.4bpp.lz");
+static const u8 sMasquerainGfx22_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_22_3.4bpp.lz");
 static const ax_sprite sMasquerainSprites22[] = {
 	{sMasquerainGfx22, ARRAY_COUNT(sMasquerainGfx22)}, 
 	{NULL, 32}, 
@@ -2197,10 +2197,10 @@ static const ax_sprite sMasquerainSprites22[] = {
 	{NULL, 64}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx23[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_23.4bpp");
-static const u8 sMasquerainGfx23_1[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_23_1.4bpp");
-static const u8 sMasquerainGfx23_2[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_23_2.4bpp");
-static const u8 sMasquerainGfx23_3[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_23_3.4bpp");
+static const u8 sMasquerainGfx23[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_23.4bpp.lz");
+static const u8 sMasquerainGfx23_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_23_1.4bpp.lz");
+static const u8 sMasquerainGfx23_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_23_2.4bpp.lz");
+static const u8 sMasquerainGfx23_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_23_3.4bpp.lz");
 static const ax_sprite sMasquerainSprites23[] = {
 	{sMasquerainGfx23, ARRAY_COUNT(sMasquerainGfx23)}, 
 	{NULL, 32}, 
@@ -2212,49 +2212,49 @@ static const ax_sprite sMasquerainSprites23[] = {
 	{NULL, 96}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx24[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_24.4bpp");
+static const u8 sMasquerainGfx24[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_24.4bpp.lz");
 static const ax_sprite sMasquerainSprites24[] = {
 	{sMasquerainGfx24, ARRAY_COUNT(sMasquerainGfx24)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx25[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_25.4bpp");
+static const u8 sMasquerainGfx25[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_25.4bpp.lz");
 static const ax_sprite sMasquerainSprites25[] = {
 	{sMasquerainGfx25, ARRAY_COUNT(sMasquerainGfx25)}, 
 	{NULL, 128}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx26[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_26.4bpp");
+static const u8 sMasquerainGfx26[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_26.4bpp.lz");
 static const ax_sprite sMasquerainSprites26[] = {
 	{sMasquerainGfx26, ARRAY_COUNT(sMasquerainGfx26)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx27[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_27.4bpp");
+static const u8 sMasquerainGfx27[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_27.4bpp.lz");
 static const ax_sprite sMasquerainSprites27[] = {
 	{sMasquerainGfx27, ARRAY_COUNT(sMasquerainGfx27)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx28[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_28.4bpp");
+static const u8 sMasquerainGfx28[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_28.4bpp.lz");
 static const ax_sprite sMasquerainSprites28[] = {
 	{sMasquerainGfx28, ARRAY_COUNT(sMasquerainGfx28)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx29[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_29.4bpp");
+static const u8 sMasquerainGfx29[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_29.4bpp.lz");
 static const ax_sprite sMasquerainSprites29[] = {
 	{sMasquerainGfx29, ARRAY_COUNT(sMasquerainGfx29)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx30[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_30.4bpp");
+static const u8 sMasquerainGfx30[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_30.4bpp.lz");
 static const ax_sprite sMasquerainSprites30[] = {
 	{sMasquerainGfx30, ARRAY_COUNT(sMasquerainGfx30)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx31[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_31.4bpp");
+static const u8 sMasquerainGfx31[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_31.4bpp.lz");
 static const ax_sprite sMasquerainSprites31[] = {
 	{sMasquerainGfx31, ARRAY_COUNT(sMasquerainGfx31)}, 
 	{NULL, 0}
 };
-static const u8 sMasquerainGfx32[] = INCBIN_U8("graphics/ax/mon/masquerain/sprite_32.4bpp");
+static const u8 sMasquerainGfx32[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/masquerain/sprite_32.4bpp.lz");
 static const ax_sprite sMasquerainSprites32[] = {
 	{sMasquerainGfx32, ARRAY_COUNT(sMasquerainGfx32)}, 
 	{NULL, 0}
