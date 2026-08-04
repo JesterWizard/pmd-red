@@ -363,6 +363,13 @@ static void LoadTitleScreen(void)
         }
 
         SetTitleBg8bpp(TRUE);
+        /* Hide the text system's 8px left gutter so full-bleed title art shows. */
+        for (i = 0; i < 20; i++) {
+            gBgTilemaps[0][i][0] = 0;
+            gBgTilemaps[1][i][0] = 0;
+        }
+        ScheduleBgTilemapCopy(0);
+        ScheduleBgTilemapCopy(1);
         ScheduleBgTilemapCopy(2);
         ScheduleBgTilemapCopy(3);
         CpuCopy((u32 *)(VRAM + 0x6000), buf + 0x1000, tileBytes);

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "bg_control.h"
 #include "text_1.h"
 #include "text_2.h"
 #include "text_3.h"
@@ -390,12 +391,14 @@ static const u8 *HandleCharFormatInternal(Window *windows, const u8 *str, UnkDra
 void sub_8009388(void)
 {
     s32 i, j;
+    u16 left0 = gTitleBg8bpp ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279));
+    u16 left1 = gTitleBg8bpp ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A));
 
-    gBgTilemaps[0][0][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279);
-    gBgTilemaps[1][0][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
+    gBgTilemaps[0][0][0] = left0;
+    gBgTilemaps[1][0][0] = left1;
     for (i = gUnknown_202B020; i < gUnknown_202B024; i++) {
-        gBgTilemaps[0][i][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279);
-        gBgTilemaps[1][i][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
+        gBgTilemaps[0][i][0] = left0;
+        gBgTilemaps[1][i][0] = left1;
         for (j = 1; j < 32; j++) {
             gBgTilemaps[0][i][j] = 0;
             gBgTilemaps[1][i][j] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
@@ -411,12 +414,14 @@ void sub_8009388(void)
 void sub_8009408(s32 from, s32 to)
 {
     s32 i, j;
+    u16 left0 = gTitleBg8bpp ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279));
+    u16 left1 = gTitleBg8bpp ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A));
 
-    gBgTilemaps[0][0][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279);
-    gBgTilemaps[1][0][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
+    gBgTilemaps[0][0][0] = left0;
+    gBgTilemaps[1][0][0] = left1;
     for (i = from; i < to; i++) {
-        gBgTilemaps[0][i][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279);
-        gBgTilemaps[1][i][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
+        gBgTilemaps[0][i][0] = left0;
+        gBgTilemaps[1][i][0] = left1;
         for (j = 1; j < 32; j++) {
             gBgTilemaps[0][i][j] = 0;
             gBgTilemaps[1][i][j] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
