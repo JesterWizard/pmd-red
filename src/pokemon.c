@@ -18,6 +18,8 @@
 #include "text_util.h"
 #include "dungeon_data.h"
 #include "strings.h"
+#include "runtime.h"
+#include "event_flag.h"
 
 static EWRAM_DATA MonsterDataEntry *sMonsterParameters = {NULL}; // B=02135090
 static EWRAM_DATA OpenedFile *sMonsterParametersFile = {NULL};
@@ -983,7 +985,9 @@ void DungeonMonToPokemon(Pokemon* dst, DungeonMon* src)
     dst->IQ = src->IQ;
     dst->IQSkills = src->IQSkills;
     dst->dungeonLocation = src->dungeonLocation;
-    dst->isTeamLeader = src->isTeamLeader;
+    /* Keep the saved leader when party_leader_switch is temporary (pre-postgame). */
+    if (!gRuntimeConfig.party_leader_switch || CheckQuest(QUEST_CAN_CHANGE_LEADER))
+        dst->isTeamLeader = src->isTeamLeader;
     dst->speciesNum = src->speciesNum;
     dst->tacticIndex = src->tacticIndex;
     dst->pokeHP = src->unk12;

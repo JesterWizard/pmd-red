@@ -13,6 +13,7 @@
 #include "string_format.h"
 #include "strings.h"
 #include "dungeon_data.h"
+#include "runtime.h"
 
 static void AppendWithNewLines(u8 *dst, const u8 *src);
 static bool8 TeamMonWithMove(u16 moveID);
@@ -2441,6 +2442,8 @@ bool8 IsRecruitingEnabled(u8 dungeon)
 
 bool8 CanLeaderSwitch(u8 dungeon)
 {
+    if (gRuntimeConfig.party_leader_switch)
+        return TRUE;
     return gDungeons[dungeon].leaderCanSwitch;
 }
 

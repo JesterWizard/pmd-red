@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_menu_team.h"
 #include "constants/tactic.h"
 #include "structs/map.h"
@@ -369,7 +370,9 @@ static void AddTeamSubMenuOptions(struct UnkFieldTeamMenuStruct *a0)
     if (!monInfo->isTeamLeader) {
         AddActionToDungeonSubMenu(ACTION_CHANGE_TACTICS, 0);
     }
-    if (!monInfo->isTeamLeader && gDungeon->unk644.canChangeLeader && CanLeaderSwitch(gDungeon->unk644.dungeonLocation.id)) {
+    if (!monInfo->isTeamLeader
+        && (gDungeon->unk644.canChangeLeader || gRuntimeConfig.party_leader_switch)
+        && CanLeaderSwitch(gDungeon->unk644.dungeonLocation.id)) {
         bool32 r5;
 
         AddActionToDungeonSubMenu(0x3B, 0);

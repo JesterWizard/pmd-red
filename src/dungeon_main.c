@@ -64,6 +64,7 @@
 #include "dungeon_8041AD0.h"
 #include "status_checks.h"
 #include "adventure_info.h"
+#include "event_flag.h"
 
 static EWRAM_DATA bool8 sInDiagonalMode = 0;
 static EWRAM_DATA bool8 sInRotateMode = 0;
@@ -1060,6 +1061,10 @@ void sub_805F02C(void)
         DisplayDungeonLoggableMessageTrue_Async(r7, gUnknown_80F9C2C);
     }
     else {
+        /* Persist to save only after the postgame Make Leader quest;
+         * party_leader_switch alone is dungeon-temporary until then. */
+        bool8 persistLeader = CheckQuest(QUEST_CAN_CHANGE_LEADER);
+
         gDungeon->unk644.emptyBellyAlert = 0;
         r8->isTeamLeader = TRUE;
         leaderInfo->isTeamLeader = FALSE;
@@ -1073,13 +1078,13 @@ void sub_805F02C(void)
                 }
                 if (i == r8->teamIndex) {
                     mon->isTeamLeader = TRUE;
-                    if (r5 != NULL) {
+                    if (r5 != NULL && persistLeader) {
                         r5->isTeamLeader = TRUE;
                     }
                 }
                 else {
                     mon->isTeamLeader = FALSE;
-                    if (r5 != NULL) {
+                    if (r5 != NULL && persistLeader) {
                         r5->isTeamLeader = FALSE;
                     }
                 }
