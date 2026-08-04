@@ -2422,7 +2422,11 @@ bool8 IsLevelResetDungeon(u8 dungeon)
 
 u32 GetMaxItemsAllowed(u8 dungeon)
 {
-    return gDungeons[dungeon].maxItemsAllowed;
+    u32 max = gDungeons[dungeon].maxItemsAllowed;
+
+    if (gRuntimeConfig.rank_bag_pages && max == INVENTORY_SIZE_VANILLA)
+        return GetBagCapacity();
+    return max;
 }
 
 bool8 IsMoneyAllowed(u8 dungeon)
@@ -2607,12 +2611,16 @@ u32 BufferDungeonRequirementsText(u8 dungeonIndex, s32 speciesId_, u8 *buffer, b
         requirementFailed = TRUE;
     }
 
-    if (gDungeons[dungeonIndex].maxItemsAllowed != 0 && gDungeons[dungeonIndex].maxItemsAllowed < numInvSlots) {
-        gFormatArgs[0] = gDungeons[dungeonIndex].maxItemsAllowed;
-        gFormatArgs[1] = numInvSlots - gDungeons[dungeonIndex].maxItemsAllowed;
-        FormatString((requirementFailed) ? gText_AlsoOnlyXItemsMayBeBroughtIntoDungeon : gText_OnlyXItemsMayBeBroughtIntoDungeon, text, &text[TXT_BUFFER_LEN], 0);
-        AppendWithNewLines(buffer,text);
-        requirementFailed = TRUE;
+    {
+        u32 maxItemsAllowed = GetMaxItemsAllowed(dungeonIndex);
+
+        if (maxItemsAllowed != 0 && maxItemsAllowed < (u32)numInvSlots) {
+            gFormatArgs[0] = maxItemsAllowed;
+            gFormatArgs[1] = numInvSlots - maxItemsAllowed;
+            FormatString((requirementFailed) ? gText_AlsoOnlyXItemsMayBeBroughtIntoDungeon : gText_OnlyXItemsMayBeBroughtIntoDungeon, text, &text[TXT_BUFFER_LEN], 0);
+            AppendWithNewLines(buffer,text);
+            requirementFailed = TRUE;
+        }
     }
 
     if (speciesId != MONSTER_NONE) {

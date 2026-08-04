@@ -30,11 +30,16 @@
 #include "dungeon_engine.h"
 #include "dungeon_strings.h"
 #include "dungeon_8041AD0.h"
+#include "constants/global.h"
+
+#define DUNGEON_ITEM_PAGE_GROUND  8
+#define DUNGEON_ITEM_PAGE_HELD0   10
+#define DUNGEON_ITEM_PAGES_MAX    12
 
 static EWRAM_DATA ActionParameter sUnknownActionUnk4 = {0};
 static EWRAM_DATA s32 sUnknown_202F240 = 0;
 static UNUSED EWRAM_DATA u8 sUnused[4] = {0};
-static EWRAM_DATA s16 sUnknown_202F248[8] = {0};
+static EWRAM_DATA s16 sUnknown_202F248[DUNGEON_ITEM_PAGES_MAX] = {0};
 static EWRAM_DATA s32 sUnknown_202F258 = 0;
 
 static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 a2, bool8 a3, WindowTemplates *a4, WindowHeader *a5);
@@ -44,6 +49,11 @@ static void sub_8060890(DungeonPos *a0);
 static void SetSubMenuActions(Entity *a0);
 static void ChosenSubMenuToAction(ActionContainer *a0);
 static s32 sub_8060D64(s16 *a0, bool8 a1, bool8 a2, bool8 a3, Entity *a4);
+
+static bool8 IsDungeonBagPage(s32 pageId)
+{
+    return pageId >= 0 && pageId < GetBagPageCount();
+}
 
 bool8 sub_805FD3C(struct UnkMenuBitsStruct *a0)
 {
@@ -121,12 +131,13 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
         Entity *r4;
 
         inputAction = 0;
-        for (i = 0; i < INVENTORY_SIZE; i++) {
+        for (i = 0; i < GetBagCapacity(); i++) {
             Item *item = &gTeamInventoryRef->teamItems[i];
             if (item->flags & ITEM_FLAG_EXISTS && item->flags & ITEM_FLAG_UNPAID) {
+                s32 perPage = GetBagItemsPerPage();
                 item->flags &= ~(ITEM_FLAG_UNPAID);
-                r8 = i / 10;
-                sUnknown_202F240 = i % 10;
+                r8 = i / perPage;
+                sUnknown_202F240 = i % perPage;
             }
         }
         for (i_r6 = 0; i_r6 < MAX_TEAM_MEMBERS; i_r6++) {
@@ -136,7 +147,7 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
                 if (monInfo->heldItem.flags & ITEM_FLAG_EXISTS && monInfo->heldItem.flags & ITEM_FLAG_UNPAID) {
                     monInfo->heldItem.flags &= ~(ITEM_FLAG_UNPAID);
                     for (i = 0; i < sUnknown_202F258; i++) {
-                        if (sUnknown_202F248[i] == i_r6 + 4) {
+                        if (sUnknown_202F248[i] == DUNGEON_ITEM_PAGE_HELD0 + i_r6) {
                             r8 = i;
                             break;
                         }
@@ -148,8 +159,8 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
         PrintOnDungeonItemsMenu(r8, a0, var_2C, var_30, &windows, &header);
 
         id = sUnknown_202F248[gDungeonMenu.currPage];
-        if (id >= MAX_TEAM_MEMBERS) {
-            r4 = gDungeon->teamPokemon[id - MAX_TEAM_MEMBERS];
+        if (id >= DUNGEON_ITEM_PAGE_HELD0) {
+            r4 = gDungeon->teamPokemon[id - DUNGEON_ITEM_PAGE_HELD0];
         }
         else {
             r4 = a0;
@@ -187,10 +198,10 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
                     PlayDungeonCursorSE(1);
                     MoveMenuCursorUpWrapAround(&gDungeonMenu, TRUE);
                 }
-                if (gRealInputs.pressed & SELECT_BUTTON && sUnknown_202F248[r8] <= 1) {
+                if (gRealInputs.pressed & SELECT_BUTTON && IsDungeonBagPage(sUnknown_202F248[r8])) {
                     s32 r3;
                     bool32 r7 = TRUE;
-                    s16 arr[10];
+                    s16 arr[DUNGEON_ITEM_PAGES_MAX];
 
                     PlaySoundEffect(0x132);
                     ClearUnpaidFlagFromAllItems();
@@ -243,7 +254,7 @@ bool8 ShowDungeonItemsMenu(Entity * a0, struct UnkMenuBitsStruct *a1)
         }
         AddMenuCursorSprite(&gDungeonMenu);
         DungeonRunFrameActions(0x14);
-        if (sUnknown_202F248[gDungeonMenu.currPage] <= 1 && !(gTeamInventoryRef->teamItems[0].flags & ITEM_FLAG_EXISTS)) {
+        if (IsDungeonBagPage(sUnknown_202F248[gDungeonMenu.currPage]) && !(gTeamInventoryRef->teamItems[0].flags & ITEM_FLAG_EXISTS)) {
             inputAction = 2;
         }
 
@@ -356,9 +367,7 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
         .header = NULL,
     };
     u8 txtBuff[80];
-    EntityInfo *a1Info;
 
-    a1Info = GetEntInfo(a1);
     r10 = sub_8060800(header, a0);
     gDungeonMenu.menuIndex = sUnknown_202F240;
     gDungeonMenu.currPageEntries = 0;
@@ -371,17 +380,7 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
     gDungeon->unk181e8.unk18212 = 0;
 
     switch (sUnknown_202F248[a0]) {
-        case 0:
-        case 1: {
-            windows->id[0].totalHeight = 16;
-            windows->id[0].height = 16;
-            header->width = 12;
-            gDungeonMenu.firstEntryY = 16;
-            gDungeonMenu.entriesPerPage = 10;
-            gDungeon->unk181e8.unk18212 = 1;
-            break;
-        }
-        case 2: {
+        case DUNGEON_ITEM_PAGE_GROUND: {
             windows->id[0].totalHeight = 4;
             windows->id[0].height = 4;
             header->width = 6;
@@ -389,13 +388,25 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
             gDungeonMenu.entriesPerPage = 1;
             break;
         }
-        case 3:
         default: {
-            windows->id[0].totalHeight = 4;
-            windows->id[0].height = 4;
-            header->width = 12;
-            gDungeonMenu.firstEntryY = 18;
-            gDungeonMenu.entriesPerPage = 1;
+            if (IsDungeonBagPage(sUnknown_202F248[a0])) {
+                s32 perPage = GetBagItemsPerPage();
+                s32 bagHeight = (perPage <= 8) ? 14 : 16;
+
+                windows->id[0].totalHeight = bagHeight;
+                windows->id[0].height = bagHeight;
+                header->width = 14;
+                gDungeonMenu.firstEntryY = 16;
+                gDungeonMenu.entriesPerPage = perPage;
+                gDungeon->unk181e8.unk18212 = 1;
+            }
+            else {
+                windows->id[0].totalHeight = 4;
+                windows->id[0].height = 4;
+                header->width = 12;
+                gDungeonMenu.firstEntryY = 18;
+                gDungeonMenu.entriesPerPage = 1;
+            }
             break;
         }
     }
@@ -419,35 +430,7 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
     x = ((a0 - r10) * 8) + 0xC;
     switch (sUnknown_202F248[a0])
     {
-    case 0:
-        PrintFormattedStringOnWindow(x, 0, gTeamToolboxAPtr, 0, 0);
-        for (i = 0; i < 10; i++) {
-            if (ItemExists(&gTeamInventoryRef->teamItems[i])) {
-                gDungeonMenu.currPageEntries++;
-                sub_8090E14(txtBuff, &gTeamInventoryRef->teamItems[i], &gUnknown_8106B60);
-                y = GetMenuEntryYCoord(&gDungeonMenu, i);
-                PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
-            }
-            else {
-                break;
-            }
-        }
-        break;
-    case 1:
-        PrintFormattedStringOnWindow(x, 0, gTeamToolboxBPtr, 0, 0);
-        for (i = 0; i < 10; i++) {
-            if (ItemExists(&gTeamInventoryRef->teamItems[i + 10])) {
-                gDungeonMenu.currPageEntries++;
-                sub_8090E14(txtBuff, &gTeamInventoryRef->teamItems[i + 10], &gUnknown_8106B60);
-                y = GetMenuEntryYCoord(&gDungeonMenu, i);
-                PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
-            }
-            else {
-                break;
-            }
-        }
-        break;
-    case 2: {
+    case DUNGEON_ITEM_PAGE_GROUND: {
             const Tile *tile = GetTile(a1->pos.x, a1->pos.y);
             Item *item = GetItemInfo(tile->object);
             PrintFormattedStringOnWindow(x, 0, gFieldItemMenuGroundTextPtr, 0, 0);
@@ -462,30 +445,40 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
             }
         }
         break;
-    case 3: {
-            Item *item = &GetEntInfo(a1)->heldItem;
-            SetMessageArgument_2(gFormatBuffer_Monsters[0], a1Info, 0);
-            PrintFormattedStringOnWindow(x, 0, gUnknown_80FE940, 0, 0);
-            if (item->flags & ITEM_FLAG_EXISTS) {
-                gDungeonMenu.currPageEntries++;
-                sub_8090E14(txtBuff, item, &gUnknown_8106B60);
-                y = GetMenuEntryYCoord(&gDungeonMenu, 0);
-                PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
-            }
-        }
-        break;
     default: {
-            Entity *chosenTeamMember = gDungeon->teamPokemon[sUnknown_202F248[a0] - MAX_TEAM_MEMBERS];
-            if (EntityIsValid(chosenTeamMember)) {
-                EntityInfo *monInfo = GetEntInfo(chosenTeamMember);
-                Item *item = &monInfo->heldItem;
-                SetMessageArgument_2(gFormatBuffer_Monsters[0], monInfo, 0);
-                PrintFormattedStringOnWindow(x, 0, gUnknown_80FE940, 0, 0);
-                if (item->flags & ITEM_FLAG_EXISTS) {
-                    gDungeonMenu.currPageEntries++;
-                    sub_8090E14(txtBuff, item, &gUnknown_8106B60);
-                    y = GetMenuEntryYCoord(&gDungeonMenu, 0);
-                    PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
+            s32 pageId = sUnknown_202F248[a0];
+
+            if (IsDungeonBagPage(pageId)) {
+                s32 perPage = GetBagItemsPerPage();
+                s32 base = pageId * perPage;
+
+                sprintfStatic(txtBuff, gTeamToolboxFmtPtr, pageId + 1, GetBagPageCount());
+                PrintFormattedStringOnWindow(x, 0, txtBuff, 0, 0);
+                for (i = 0; i < perPage; i++) {
+                    if (ItemExists(&gTeamInventoryRef->teamItems[base + i])) {
+                        gDungeonMenu.currPageEntries++;
+                        sub_8090E14(txtBuff, &gTeamInventoryRef->teamItems[base + i], &gUnknown_8106B60);
+                        y = GetMenuEntryYCoord(&gDungeonMenu, i);
+                        PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
+                    }
+                    else {
+                        break;
+                    }
+                }
+            }
+            else {
+                Entity *chosenTeamMember = gDungeon->teamPokemon[pageId - DUNGEON_ITEM_PAGE_HELD0];
+                if (EntityIsValid(chosenTeamMember)) {
+                    EntityInfo *monInfo = GetEntInfo(chosenTeamMember);
+                    Item *item = &monInfo->heldItem;
+                    SetMessageArgument_2(gFormatBuffer_Monsters[0], monInfo, 0);
+                    PrintFormattedStringOnWindow(x, 0, gUnknown_80FE940, 0, 0);
+                    if (item->flags & ITEM_FLAG_EXISTS) {
+                        gDungeonMenu.currPageEntries++;
+                        sub_8090E14(txtBuff, item, &gUnknown_8106B60);
+                        y = GetMenuEntryYCoord(&gDungeonMenu, 0);
+                        PrintFormattedStringOnWindow(8, y, txtBuff, 0, 0);
+                    }
                 }
             }
         }
@@ -509,12 +502,12 @@ static s32 sub_8060800(WindowHeader *header, s32 a1)
 
     r1 = 0;
     for (i = 0; i < sUnknown_202F258; i++) {
-        if (sUnknown_202F248[i] <= 1) {
+        if (IsDungeonBagPage(sUnknown_202F248[i])) {
             r1++;
         }
     }
 
-    if (sUnknown_202F248[a1] <= 1) {
+    if (IsDungeonBagPage(sUnknown_202F248[a1])) {
         currId = a1;
         count = r1;
         r1 = 0;
@@ -535,7 +528,7 @@ static s32 sub_8060800(WindowHeader *header, s32 a1)
 
 static bool8 sub_8060860(s32 a0)
 {
-    if (gDungeonMenu.currPageEntries <= 1 || sUnknown_202F248[a0] > 1)
+    if (gDungeonMenu.currPageEntries <= 1 || !IsDungeonBagPage(sUnknown_202F248[a0]))
         return FALSE;
     else
         return TRUE;
@@ -544,20 +537,17 @@ static bool8 sub_8060860(s32 a0)
 static void sub_8060890(DungeonPos *a0)
 {
     s32 var = sUnknown_202F248[gDungeonMenu.currPage];
-    switch (var)
-    {
-    case 0:
-        sUnknownActionUnk4.actionUseIndex = gDungeonMenu.menuIndex + 1;
-        break;
-    case 1:
-        sUnknownActionUnk4.actionUseIndex = gDungeonMenu.menuIndex + 11;
-        break;
-    case 2:
+
+    if (IsDungeonBagPage(var)) {
+        s32 perPage = GetBagItemsPerPage();
+        sUnknownActionUnk4.actionUseIndex = var * perPage + gDungeonMenu.menuIndex + 1;
+    }
+    else if (var == DUNGEON_ITEM_PAGE_GROUND) {
         sUnknownActionUnk4.actionUseIndex = 128;
-        break;
-    default:
-        sUnknownActionUnk4.actionUseIndex = var - 116;
-        break;
+    }
+    else {
+        /* Held page ids 10..13 map to actionUseIndex 0x90..0x93 */
+        sUnknownActionUnk4.actionUseIndex = 0x90 + (var - DUNGEON_ITEM_PAGE_HELD0);
     }
 
     sUnknownActionUnk4.itemPos.x = a0->x;
@@ -577,7 +567,7 @@ static void SetSubMenuActions(Entity *a0)
             if (GetItemCategory(item->id) != CATEGORY_POKE) {
                 bool32 noSpace = FALSE;
                 if (gDungeon->unk644.hasInventory) {
-                    if (gTeamInventoryRef->teamItems[INVENTORY_SIZE - 1].flags & ITEM_FLAG_EXISTS) {
+                    if (IsBagFull()) {
                         noSpace = TRUE;
                     }
                 }
@@ -604,7 +594,7 @@ static void SetSubMenuActions(Entity *a0)
             }
         }
 
-        if (sUnknownActionUnk4.actionUseIndex <= 20
+        if (sUnknownActionUnk4.actionUseIndex <= GetBagCapacity()
             && (GetItemCategory(item->id) == CATEGORY_THROWN_LINE || GetItemCategory(item->id) == CATEGORY_THROWN_ARC))
         {
             s32 i;
@@ -616,7 +606,7 @@ static void SetSubMenuActions(Entity *a0)
                 AddActionToDungeonSubMenu(ACTION_SET_ITEM, item->id);
             }
 
-            for (i = 0; i < INVENTORY_SIZE; i++) {
+            for (i = 0; i < GetBagCapacity(); i++) {
                 if (ItemExists(&gTeamInventoryRef->teamItems[i])
                     && ItemSet(&gTeamInventoryRef->teamItems[i])
                     && ItemSticky(&gTeamInventoryRef->teamItems[i]))
@@ -651,7 +641,7 @@ static void SetSubMenuActions(Entity *a0)
             }
         }
         else if (gDungeon->unk644.hasInventory) {
-            if (gTeamInventoryRef->teamItems[INVENTORY_SIZE - 1].flags & ITEM_FLAG_EXISTS) {
+            if (IsBagFull()) {
                 AddActionToDungeonSubMenu(ACTION_UNK3E, item->id);
             }
             else {
@@ -664,7 +654,7 @@ static void SetSubMenuActions(Entity *a0)
             }
         }
 
-        if (sUnknownActionUnk4.actionUseIndex <= 20) {
+        if (sUnknownActionUnk4.actionUseIndex <= GetBagCapacity()) {
             Entity *tileEntity = GetTile(a0->pos.x, a0->pos.y)->object;
             if (tileEntity == NULL) {
                 AddActionToDungeonSubMenu(ACTION_PLACE_ITEM, item->id);
@@ -703,7 +693,7 @@ static void SetSubMenuActions(Entity *a0)
             else
                 r6 = FALSE;
 
-            if (gTeamInventoryRef->teamItems[INVENTORY_SIZE - 1].flags & ITEM_FLAG_EXISTS)
+            if (IsBagFull())
                 r4 = TRUE;
             else
                 r4 = FALSE;
@@ -779,23 +769,25 @@ static s32 sub_8060D64(s16 *a0, bool8 a1, bool8 a2, bool8 a3, Entity *a4)
     s32 count = 0;
 
     if (gDungeon->unk644.hasInventory && !a1) {
-        if (gTeamInventoryRef->teamItems[0].flags & ITEM_FLAG_EXISTS) {
-            a0[count++] = 0;
-        }
-        if (gTeamInventoryRef->teamItems[INVENTORY_SIZE / 2].flags & ITEM_FLAG_EXISTS) {
-            a0[count++] = 1;
+        s32 pages = GetBagPageCount();
+        s32 perPage = GetBagItemsPerPage();
+
+        for (i = 0; i < pages; i++) {
+            if (gTeamInventoryRef->teamItems[i * perPage].flags & ITEM_FLAG_EXISTS) {
+                a0[count++] = i;
+            }
         }
     }
 
     if (a2 && PosHasItem(&a4->pos)) {
-        a0[count++] = 2;
+        a0[count++] = DUNGEON_ITEM_PAGE_GROUND;
     }
 
     if (!a1 && !a3) {
         for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
             Entity *teamMon = gDungeon->teamPokemon[i];
             if (EntityIsValid(teamMon) && GetEntInfo(teamMon)->heldItem.flags & ITEM_FLAG_EXISTS) {
-                a0[count++] = i + MAX_TEAM_MEMBERS;
+                a0[count++] = DUNGEON_ITEM_PAGE_HELD0 + i;
             }
         }
     }

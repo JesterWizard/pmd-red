@@ -332,7 +332,7 @@ static void sub_8025728(void)
 
         gUnknown_203B2B4->unkC8[loopMax].text = sTake;
         gUnknown_203B2B4->unkC8[loopMax].menuAction = FRIEND_LIST_MENU_TAKE;
-        if ((INVENTORY_SIZE <= GetNumberOfFilledInventorySlots()) || (gUnknown_203B2B4->item2.id == ITEM_NOTHING)) {
+        if ((IsBagFull()) || (gUnknown_203B2B4->item2.id == ITEM_NOTHING)) {
             gUnknown_203B2B4->unk108[loopMax] = 1;
         }
         loopMax += 1;

@@ -185,11 +185,12 @@ void TryLeaderItemPickUp_Async(struct DungeonPos *pos, bool8 printMsg)
     else {
         s32 i, maxItems;
         if (gDungeon->unk644.hasInventory) {
-            for (i = 0; i < INVENTORY_SIZE; i++) {
+            s32 capacity = GetBagCapacity();
+            for (i = 0; i < capacity; i++) {
                 inventoryItems[i] = &gTeamInventoryRef->teamItems[i];
                 inventoryIds[i] = i;
             }
-            maxItems = INVENTORY_SIZE;
+            maxItems = capacity;
         }
         else {
             inventoryItems[0] = &leaderInfo->heldItem;

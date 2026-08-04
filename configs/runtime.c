@@ -16,4 +16,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .ally_talk_portrait = TRUE, /* TRUE = show ally default portrait when talking; FALSE = vanilla */
     .pmd2_training_grounds = TRUE, /* TRUE = 5 floors + exit, no boss, scaling levels; FALSE = vanilla 3F+boss */
     .bank_interest_percent = 5, /* Percent interest on savings per dungeon clear; 0 = disabled */
+    .rank_bag_pages = TRUE, /* TRUE = 8/page, rank unlocks pages; FALSE = vanilla 20/10 */
 };

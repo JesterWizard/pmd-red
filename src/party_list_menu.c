@@ -429,7 +429,7 @@ static void PartyListMenu_CreateMenu1(void)
 
     sUnknown_203B2B8->unk16C[loopMax].text = sPartyMenuTake;
     sUnknown_203B2B8->unk16C[loopMax].menuAction = PARTY_LIST_MENU_TAKE_ITEM;
-    if(GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE || sUnknown_203B2B8->item2.id == ITEM_NOTHING)
+    if(IsBagFull() || sUnknown_203B2B8->item2.id == ITEM_NOTHING)
     {
         sUnknown_203B2B8->unk20C[loopMax] = 1;
     }
@@ -894,7 +894,7 @@ static u32 sub_8026F04(Pokemon *r0)
 {
     if(r0->heldItem.id == ITEM_NOTHING)
         return 0;
-    else if(GetNumberOfFilledInventorySlots() < INVENTORY_SIZE)
+    else if(!IsBagFull())
         return 1;
     else if(CanTakePokemonHeldItem(r0))
         return 2;

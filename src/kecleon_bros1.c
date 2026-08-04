@@ -419,7 +419,7 @@ static void UpdateKecleonStoreDialogue(void)
                 sKecleonBrosWork1->fallbackState = 11;
             }
             else {
-                if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE) {
+                if (IsBagFull()) {
                     if (sKecleonBrosWork1->isKecleonItemShop)
                         sub_801A010();
                     else
@@ -640,7 +640,7 @@ static void HandleKecleonBrosMainMenu(void)
         case BUY_ACTION:
             if (CountKecleonItems() == 0)
                 SetKecleonBrosState(KECLEON_STORE_NO_STORE_ITEMS);
-            else if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE)
+            else if (IsBagFull())
                 SetKecleonBrosState(KECLEON_STORE_TOO_MANY_ITEMS);
             else
                 SetKecleonBrosState(15);

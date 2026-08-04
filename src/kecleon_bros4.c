@@ -43,6 +43,8 @@ bool8 sub_801A5D8(u32 param_1, s32 param_2, DungeonPos *param_3, u32 param_4)
     if (GetNumberOfFilledInventorySlots() == 0)
         return FALSE;
 
+    param_4 = GetBagItemsPerPage();
+
     if (gUnknown_203B224 == NULL)
         gUnknown_203B224 = MemoryAlloc(sizeof(unkStruct_203B224), MEMALLOC_GROUP_8);
 
@@ -200,7 +202,7 @@ static void sub_801A998(void)
 {
     gUnknown_203B224->unk54.header.count = gUnknown_203B224->unk54.m.input.pagesCount;
     gUnknown_203B224->unk54.header.currId = gUnknown_203B224->unk54.m.input.currPage;
-    gUnknown_203B224->unk54.header.width = 11;
+    gUnknown_203B224->unk54.header.width = 14;
     gUnknown_203B224->unk54.header.f3 = 0;
     ResetUnusedInputStruct();
     ShowWindows(&gUnknown_203B224->unk54.m.windows, TRUE, TRUE);
@@ -219,10 +221,10 @@ void sub_801A9E0(void)
     sub_80073B8(gUnknown_203B224->unk54.m.menuWinId);
     x = gUnknown_203B224->unk54.m.input.currPage * 8 + 10;
 
-    if (gUnknown_203B224->unk54.m.input.currPage == 0)
-        PrintStringOnWindow(x, 0, sTeamToolboxA, gUnknown_203B224->unk54.m.menuWinId, 0);
-    else
-        PrintStringOnWindow(x, 0, sTeamToolboxB, gUnknown_203B224->unk54.m.menuWinId, 0);
+    sprintfStatic(buf1, sTeamToolboxFmt,
+                  gUnknown_203B224->unk54.m.input.currPage + 1,
+                  GetBagPageCount());
+    PrintStringOnWindow(x, 0, buf1, gUnknown_203B224->unk54.m.menuWinId, 0);
 
     for (r7 = 0; r7 < gUnknown_203B224->unk54.m.input.currPageEntries; r7++) {
         teamItemIndex = (gUnknown_203B224->unk54.m.input.currPage * gUnknown_203B224->unk54.m.input.entriesPerPage) + r7;
@@ -325,7 +327,7 @@ void sub_801AD34(u32 param_1)
     PrintStringOnWindow(6, 0, sItems, param_1, 0);
     PrintNumOnWindow(18, 13, GetNumberOfFilledInventorySlots(), 2, 7, param_1);
     PrintStringOnWindow(22, 13, sSlash, param_1, 0);
-    PrintNumOnWindow(43, 13, INVENTORY_SIZE, 2, 7, param_1);
+    PrintNumOnWindow(43, 13, GetBagCapacity(), 2, 7, param_1);
     sub_80073E0(param_1);
 }
 

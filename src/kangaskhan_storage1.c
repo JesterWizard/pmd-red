@@ -339,7 +339,7 @@ static void sub_8016FF8(void)
                                     gKangaskhanStorageWork->monPortraitPtr, 12);
             break;
         case 29:
-            if (sub_801CF14(1) || GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE) {
+            if (sub_801CF14(1) || IsBagFull()) {
                 sub_801CBB8();
                 gKangaskhanStorageWork->fallbackState = KANGASKHAN_STORAGE_MAIN_MENU;
             }
@@ -510,7 +510,7 @@ static void HandleKangaskhanMainMenu(void)
         case MENU_TAKE:
             if (sub_801CF14(1))
                 UpdateKangaskhanStorageState(7);
-            else if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE)
+            else if (IsBagFull())
                 UpdateKangaskhanStorageState(KANGASKHAN_STORAGE_TOO_MANY_ITEMS);
             else
                 UpdateKangaskhanStorageState(20);
@@ -758,7 +758,7 @@ static void sub_8017D24(void)
 
     switch (menuAction) {
         case MENU_TAKE:
-            if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE) {
+            if (IsBagFull()) {
                 sub_801CBB8();
                 UpdateKangaskhanStorageState(KANGASKHAN_STORAGE_TOO_MANY_ITEMS);
             }

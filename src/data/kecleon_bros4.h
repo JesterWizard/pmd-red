@@ -16,8 +16,7 @@ static const WindowTemplate sUnknown_80DB95C = {
     NULL
 };
 
-ALIGNED(4) static const u8 sTeamToolboxA[] = _("Team Toolbox A");
-ALIGNED(4) static const u8 sTeamToolboxB[] = _("Team Toolbox B");
+ALIGNED(4) static const u8 sTeamToolboxFmt[] = _("Team Toolbox %d/%d");
 ALIGNED(4) static const u8 sFmtMoveItem0[] = _("{COLOR RED_RAW}{MOVE_ITEM_0}{RESET}");
 ALIGNED(4) static const u8 sFmtRed[] = _("{COLOR RED}%s{RESET}");
 ALIGNED(4) static const u8 sItems[] = _("Items");

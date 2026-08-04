@@ -113,7 +113,7 @@ Item * sub_8044CC8(Entity *param_1, ActionParameter *param_2, UNUSED s32 a3)
   Item *item;
   EntityInfo *info;
 
-  if (param_2->actionUseIndex >= 1 && param_2->actionUseIndex < INVENTORY_SIZE + 1) {
+  if (param_2->actionUseIndex >= 1 && param_2->actionUseIndex < GetBagCapacity() + 1) {
     item = &gTeamInventoryRef->teamItems[param_2->actionUseIndex - 1];
   }
   else if (param_2->actionUseIndex == 0x80) {
@@ -143,7 +143,7 @@ bool8 sub_8044D40(ActionContainer *param_1,s32 index)
   ActionParameter *puVar1;
 
   puVar1 = &param_1->actionParameters[index];
-  if ((u8)(puVar1->actionUseIndex - 1) < INVENTORY_SIZE) {
+  if ((u8)(puVar1->actionUseIndex - 1) < GetBagCapacity()) {
     item = &gTeamInventoryRef->teamItems[puVar1->actionUseIndex - 1];
     item->id = ITEM_NOTHING;
     item->quantity = 0;

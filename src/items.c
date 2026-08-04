@@ -16,6 +16,8 @@
 #include "strings.h"
 #include "dungeon_info.h"
 #include "dungeon_data.h"
+#include "rescue_team_info.h"
+#include "runtime.h"
 
 EWRAM_DATA OpenedFile *gItemParametersFile = {NULL};
 EWRAM_DATA ItemDataEntry *gItemParametersData = {NULL}; // NDS=0213BEF0
@@ -128,14 +130,47 @@ void InitializeMoneyItems(void)
     gTeamInventoryRef->teamSavings = 0;
 }
 
+s32 GetBagItemsPerPage(void)
+{
+    if (gRuntimeConfig.rank_bag_pages)
+        return BAG_ITEMS_PER_PAGE_RANK;
+    return BAG_ITEMS_PER_PAGE_VANILLA;
+}
+
+s32 GetBagPageCount(void)
+{
+    s32 pages;
+
+    if (!gRuntimeConfig.rank_bag_pages)
+        return BAG_PAGES_MIN;
+
+    pages = BAG_PAGES_MIN + GetRescueTeamRank();
+    if (pages > BAG_PAGES_MAX)
+        pages = BAG_PAGES_MAX;
+    return pages;
+}
+
+s32 GetBagCapacity(void)
+{
+    if (!gRuntimeConfig.rank_bag_pages)
+        return INVENTORY_SIZE_VANILLA;
+    return GetBagPageCount() * BAG_ITEMS_PER_PAGE_RANK;
+}
+
+bool8 IsBagFull(void)
+{
+    return GetNumberOfFilledInventorySlots() >= GetBagCapacity();
+}
+
 // arm9.bin::02060FE4
 s32 GetNumberOfFilledInventorySlots(void)
 {
   s32 i;
   s32 count;
+  s32 capacity = GetBagCapacity();
 
   count = 0;
-  for(i = 0; i < INVENTORY_SIZE; i++)
+  for(i = 0; i < capacity; i++)
   {
     if ((gTeamInventoryRef->teamItems[i].flags & ITEM_FLAG_EXISTS) != 0) {
       count++;
@@ -519,9 +554,10 @@ void FillInventoryGaps(void)
   // fill inventory gaps
   s32 slot_checking = 0;
   s32 last_filled = 0;
+  s32 capacity = GetBagCapacity();
 
   do {
-    while (slot_checking < INVENTORY_SIZE) {
+    while (slot_checking < capacity) {
       if (slot_checking[gTeamInventoryRef->teamItems].flags & ITEM_FLAG_EXISTS) {
         break;
       }
@@ -529,7 +565,7 @@ void FillInventoryGaps(void)
       slot_checking++;
     }
 
-    if (slot_checking == INVENTORY_SIZE) {
+    if (slot_checking == capacity) {
       break;
     }
 
@@ -551,8 +587,9 @@ void FillInventoryGaps(void)
 s32 FindItemInInventory(u8 id)
 {
     s32 i;
+    s32 capacity = GetBagCapacity();
 
-    for (i = 0; i < INVENTORY_SIZE; i++) {
+    for (i = 0; i < capacity; i++) {
         if ((gTeamInventoryRef->teamItems[i].flags & ITEM_FLAG_EXISTS)
             && gTeamInventoryRef->teamItems[i].id == id) {
             return i;
@@ -567,8 +604,9 @@ s32 GetItemCountInInventory(u8 id)
 {
     s32 i;
     s32 count = 0;
+    s32 capacity = GetBagCapacity();
 
-    for (i = 0; i < INVENTORY_SIZE; i++) {
+    for (i = 0; i < capacity; i++) {
         if (ItemExists(&gTeamInventoryRef->teamItems[i])
             && gTeamInventoryRef->teamItems[i].id == id) {
             count++;
@@ -601,12 +639,13 @@ s32 GetItemPossessionCount(u8 id)
 void ShiftItemsDownFrom(s32 start)
 {
     s32 i, j;
+    s32 capacity = GetBagCapacity();
 
-    for (i = start, j = start + 1; i < INVENTORY_SIZE - 1; i++, j++)
+    for (i = start, j = start + 1; i < capacity - 1; i++, j++)
         gTeamInventoryRef->teamItems[i] = gTeamInventoryRef->teamItems[j];
 
-    gTeamInventoryRef->teamItems[INVENTORY_SIZE - 1].id = ITEM_NOTHING;
-    gTeamInventoryRef->teamItems[INVENTORY_SIZE - 1].flags = 0;
+    gTeamInventoryRef->teamItems[capacity - 1].id = ITEM_NOTHING;
+    gTeamInventoryRef->teamItems[capacity - 1].flags = 0;
 }
 
 // arm9.bin::02060400
@@ -638,9 +677,10 @@ bool8 AddHeldItemToInventory(BulkItem* slot)
 bool8 AddItemToInventory(const Item* slot)
 {
     s32 i;
+    s32 capacity = GetBagCapacity();
 
     // try to add item to inventory, return 1 if failed
-    for (i = 0; i < INVENTORY_SIZE; i++) {
+    for (i = 0; i < capacity; i++) {
         if (!ItemExists(&gTeamInventoryRef->teamItems[i])) {
             gTeamInventoryRef->teamItems[i] = *slot;
             return FALSE;
@@ -653,8 +693,9 @@ bool8 AddItemToInventory(const Item* slot)
 void ConvertMoneyItemToMoney(void)
 {
     s32 i, j;
+    s32 capacity = GetBagCapacity();
 
-    for (i = 0; i < INVENTORY_SIZE; i++) {
+    for (i = 0; i < capacity; i++) {
         Item *item = &gTeamInventoryRef->teamItems[i];
         if (ItemExists(item) && item->id == ITEM_POKE) {
             AddToTeamMoney(GetMoneyValue(item));
@@ -663,13 +704,13 @@ void ConvertMoneyItemToMoney(void)
     }
     FillInventoryGaps();
 
-    for (i = 0; i < INVENTORY_SIZE; i++) {
+    for (i = 0; i < capacity; i++) {
         s32 lowestIndex = -1;
 
         if (ItemExists(&gTeamInventoryRef->teamItems[i])) {
             s32 lowestOrder = GetItemOrder(gTeamInventoryRef->teamItems[i].id);
 
-            for (j = i + 1; j < INVENTORY_SIZE; j++) {
+            for (j = i + 1; j < capacity; j++) {
                 if (ItemExists(&gTeamInventoryRef->teamItems[j]) && lowestOrder > GetItemOrder(gTeamInventoryRef->teamItems[j].id)) {
                     lowestIndex = j;
                     lowestOrder = GetItemOrder(gTeamInventoryRef->teamItems[j].id);
@@ -957,8 +998,9 @@ bool8 IsGummiItem(u8 id)
 bool8 HasGummiItem(void)
 {
     s32 i;
+    s32 capacity = GetBagCapacity();
 
-    for (i = 0; i < INVENTORY_SIZE; i++) {
+    for (i = 0; i < capacity; i++) {
         if (ItemExists(&gTeamInventoryRef->teamItems[i])
             && IsGummiItem(gTeamInventoryRef->teamItems[i].id)) {
             return TRUE;
@@ -1377,8 +1419,9 @@ u8 GetRandomItemForSet(s32 setId, s32 rndValCategory, s32 rndValItem)
 void ClearAllItems_8091FB4(void)
 {
     s32 i;
+    s32 capacity = GetBagCapacity();
 
-    for (i = 0; i < INVENTORY_SIZE; i++) {
+    for (i = 0; i < capacity; i++) {
         Item* slot = &gTeamInventoryRef->teamItems[i];
         if (ItemExists(slot)) {
             slot->flags &= ~(ITEM_FLAG_STICKY);

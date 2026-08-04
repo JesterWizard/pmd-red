@@ -100,7 +100,7 @@ static bool8 TryAddItemWithText(const struct ItemWithQuantity *itemToAdd, const 
         item.id = itemToAdd->id;
 
         sub_8090E14(buffer,&item,0);
-        if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE) {
+        if (IsBagFull()) {
             if (noItemSpaceStr != NULL) {
                 ScriptPrintText(SCRIPT_TEXT_TYPE_INSTANT, -1, noItemSpaceStr);
             }
@@ -128,7 +128,7 @@ s32 CheckScriptItemSpace(s32 tableId)
             return 2;
     }
     else {
-        if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE)
+        if (IsBagFull())
             return 2;
     }
     return 1;

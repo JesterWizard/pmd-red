@@ -3709,7 +3709,7 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
         case 0x28:
             {
                 static const Item item = {.flags = 0, .quantity = 0, .id = ITEM_WISH_STONE};
-                if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE) {
+                if (IsBagFull()) {
                     if (IsNotMoneyOrUsedTMItem(item.id) && gTeamInventoryRef->teamStorage[item.id] < 999)
                         gTeamInventoryRef->teamStorage[item.id] += 1;
 
@@ -3916,7 +3916,7 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                 s32 i;
                 static const Item appleItem = {.flags = 0, .quantity = 0, .id = ITEM_APPLE};
                 for (i = 0; i < 3; i++) {
-                    if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE) {
+                    if (IsBagFull()) {
                         if (IsNotMoneyOrUsedTMItem(appleItem.id) && gTeamInventoryRef->teamStorage[appleItem.id] < 999)
                             gTeamInventoryRef->teamStorage[appleItem.id] += 1;
 

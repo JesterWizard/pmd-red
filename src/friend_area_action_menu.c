@@ -286,7 +286,7 @@ void CreateFriendActionMenu(void)
 
   sUnknown_203B2BC->menuItems[loopMax].text = sTake;
   sUnknown_203B2BC->menuItems[loopMax].menuAction = FRIEND_AREA_ACTION_MENU_ACTION_TAKE;
-  if(GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE || sUnknown_203B2BC->item2.id == ITEM_NOTHING)
+  if(IsBagFull() || sUnknown_203B2BC->item2.id == ITEM_NOTHING)
   {
       sUnknown_203B2BC->unk16C[loopMax] = 1;
   }
@@ -741,7 +741,7 @@ u32 sub_8027E18(Pokemon *pokeStruct)
 {
     if(pokeStruct->heldItem.id == ITEM_NOTHING)
         return 0;
-    else if(GetNumberOfFilledInventorySlots() < INVENTORY_SIZE)
+    else if(!IsBagFull())
         return 1;
     else if(sub_8027E4C(pokeStruct))
         return 2;

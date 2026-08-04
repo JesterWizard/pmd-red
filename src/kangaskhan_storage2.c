@@ -240,7 +240,7 @@ static void BuildKangaskhanStorage2MainMenu(void)
     sUnknown_203B20C->unk20[loopMax].text = gCommonTake[0];
     sUnknown_203B20C->unk20[loopMax].menuAction = TAKE_ACTION;
 
-    if (sub_801CF14(1) || INVENTORY_SIZE <=  GetNumberOfFilledInventorySlots())
+    if (sub_801CF14(1) || IsBagFull())
         sUnknown_203B20C->unk60[loopMax] = 1;
 
     loopMax += 1;
@@ -311,7 +311,7 @@ static void BuildKangaskhanStorage2TakeMenu(void)
     sUnknown_203B20C->unk20[0].text = gCommonTake[0];
     sUnknown_203B20C->unk20[0].menuAction = TAKE_ACTION;
 
-    if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE)
+    if (IsBagFull())
         sUnknown_203B20C->unk60[0] = 1;
 
     loopMax += 1;
@@ -439,7 +439,7 @@ static void sub_80186F8(void)
                 FillInventoryGaps();
                 sub_801CF94();
 
-                if (!sub_801CF14(1) && GetNumberOfFilledInventorySlots() < INVENTORY_SIZE)
+                if (!sub_801CF14(1) && !IsBagFull())
                     UpdateKangaskhanStorage2State(11);
                 else {
                     sub_801CBB8();
@@ -485,7 +485,7 @@ static void sub_8018854(void)
             AddHeldItemToInventory(&item);
 
             if (!sub_801CF14(1)) {
-                if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE) {
+                if (IsBagFull()) {
                 error:
                     sub_801CBB8();
                     UpdateKangaskhanStorage2State(KANGASKHAN_STORAGE_2_MAIN);
@@ -569,7 +569,7 @@ static void HandleKangaskhanStorage2TakeMenu(void)
 
     switch (menuAction) {
         case TAKE_ACTION:
-            if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE)
+            if (IsBagFull())
                 sub_8012EA4(&sUnknown_203B20C->unk70, 1);
             else if (IsThrownItem(sUnknown_203B20C->item.id))
                 UpdateKangaskhanStorage2State(12);
@@ -580,7 +580,7 @@ static void HandleKangaskhanStorage2TakeMenu(void)
                 AddHeldItemToInventory(&item);
 
                 if (!sub_801CF14(1)) {
-                    if (GetNumberOfFilledInventorySlots() >= INVENTORY_SIZE)
+                    if (IsBagFull())
                     {
                     error:
                         sub_801CBB8();
