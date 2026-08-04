@@ -17,6 +17,7 @@
 #include "code_8099360.h"
 #include "code_80A26CC.h"
 #include "cpu.h"
+#include "custom_title_backgrounds.h"
 #include "debug.h"
 #include "decompress_at.h"
 #include "def_filearchives.h"
@@ -44,6 +45,7 @@
 #include "random.h"
 #include "rescue_team_info.h"
 #include "run_dungeon.h"
+#include "runtime.h"
 #include "save.h"
 #include "save_read.h"
 #include "sprite.h"
@@ -243,6 +245,7 @@ void GameLoop_Async(void)
         }
 
         CloseFile(sTitlePaletteFile);
+        SetTitleBg8bpp(FALSE);
 
         switch (nextMenu) {
             case 2: {
@@ -305,33 +308,91 @@ typedef struct TitleMenuFile
     /* 0x1000 */ u8 vramStuff[0x4B20];
 } TitleMenuFile;
 
+/* Max 8bpp tiles after font/UI chrome (CHARBASE1 tile 128 @ 0x6000 → 0x10000).
+ * Indices 0–127 left free so VRAM 0x4F00–0x5FFF (window chrome) stays intact.
+ * Title mode relocates BG0–3 screenbases to 4–7 (0x2000–0x3FFF). */
+#define CUSTOM_TITLE_8BPP_TILE_BASE 128
+#define CUSTOM_TITLE_8BPP_MAX_TILES 640
+
 static void LoadTitleScreen(void)
 {
-    const u8 * renBG[3] = {"titlen0", "titlen1", "titlen2"};
-    const u8 * renPal[3] = {"titlen0p", "titlen1p", "titlen2p"};
+    static const u8 *const sVanillaBG[3] = {"titlen0", "titlen1", "titlen2"};
+    static const u8 *const sVanillaPal[3] = {"titlen0p", "titlen1p", "titlen2p"};
+    static const u8 *const sCustomBG[CUSTOM_TITLE_BG_COUNT] = {
+        "ctitle0", "ctitle1", "ctitle2", "ctitle3", "ctitle4", "ctitle5",
+    };
+    static const u8 *const sCustomPal[CUSTOM_TITLE_BG_COUNT] = {
+        "ctitle0p", "ctitle1p", "ctitle2p", "ctitle3p", "ctitle4p", "ctitle5p",
+    };
     OpenedFile *bgFile;
     s32 i, j;
-    TitleMenuFile *stru = MemoryAlloc(sizeof(TitleMenuFile), MEMALLOC_GROUP_0);
-    s32 rnd = RandInt(3);
+    s32 rnd;
 
-    sTitlePaletteFile = OpenFileAndGetFileDataPtr(renPal[rnd], &gTitleMenuFileArchive);
-    bgFile = OpenFileAndGetFileDataPtr(renBG[rnd], &gTitleMenuFileArchive);
-    DecompressATFile(&stru->tilemap, 0, bgFile);
+    if (gRuntimeConfig.custom_title_backgrounds) {
+        const u8 *srcData;
+        u32 payloadLen;
+        u8 *buf;
+        u32 decompSize;
+        u32 tileBytes;
+        u16 *tilemap;
 
-    for (i = 0; i < 32; i++) {
-        for (j = 0; j < 32; j++) {
-            u16 *ptr = stru->tilemap;
-            gBgTilemaps[2][i][j] = ptr[i * 32 + j];
-            gBgTilemaps[3][i][j] = ptr[i * 32 + j + (32 * 32)];
+        rnd = RandInt(CUSTOM_TITLE_BG_COUNT);
+        sTitlePaletteFile = OpenFileAndGetFileDataPtr(sCustomPal[rnd], &gCustomTitleBgArchive);
+        bgFile = OpenFileAndGetFileDataPtr(sCustomBG[rnd], &gCustomTitleBgArchive);
+
+        srcData = bgFile->data;
+        payloadLen = srcData[5] | (srcData[6] << 8);
+        buf = MemoryAlloc((payloadLen + 3) & ~3, MEMALLOC_GROUP_0);
+        decompSize = DecompressAT(buf, 0, srcData);
+        if (decompSize < 0x1000)
+            decompSize = 0x1000;
+        tilemap = (u16 *)buf;
+        tileBytes = decompSize - 0x1000;
+        if (tileBytes > CUSTOM_TITLE_8BPP_MAX_TILES * 64)
+            tileBytes = CUSTOM_TITLE_8BPP_MAX_TILES * 64;
+        tileBytes = (tileBytes + 3) & ~3;
+
+        for (i = 0; i < 32; i++) {
+            for (j = 0; j < 32; j++) {
+                u16 entry = tilemap[i * 32 + j + (32 * 32)];
+
+                gBgTilemaps[2][i][j] = 0;
+                gBgTilemaps[3][i][j] = (entry & ~0x3FF)
+                    | ((entry & 0x3FF) + CUSTOM_TITLE_8BPP_TILE_BASE);
+            }
         }
+
+        SetTitleBg8bpp(TRUE);
+        ScheduleBgTilemapCopy(2);
+        ScheduleBgTilemapCopy(3);
+        CpuCopy((u32 *)(VRAM + 0x6000), buf + 0x1000, tileBytes);
+
+        CloseFile(bgFile);
+        MemoryFree(buf);
     }
+    else {
+        TitleMenuFile *stru = MemoryAlloc(sizeof(TitleMenuFile), MEMALLOC_GROUP_0);
 
-    ScheduleBgTilemapCopy(2);
-    ScheduleBgTilemapCopy(3);
+        SetTitleBg8bpp(FALSE);
+        rnd = RandInt(3);
+        sTitlePaletteFile = OpenFileAndGetFileDataPtr(sVanillaPal[rnd], &gTitleMenuFileArchive);
+        bgFile = OpenFileAndGetFileDataPtr(sVanillaBG[rnd], &gTitleMenuFileArchive);
+        DecompressATFile(&stru->tilemap, 0, bgFile);
 
-    CpuCopy((u32 *)(VRAM + 0x8000), stru->vramStuff, sizeof(stru->vramStuff));
-    CloseFile(bgFile);
-    MemoryFree(stru);
+        for (i = 0; i < 32; i++) {
+            for (j = 0; j < 32; j++) {
+                u16 *ptr = stru->tilemap;
+                gBgTilemaps[2][i][j] = ptr[i * 32 + j];
+                gBgTilemaps[3][i][j] = ptr[i * 32 + j + (32 * 32)];
+            }
+        }
+
+        ScheduleBgTilemapCopy(2);
+        ScheduleBgTilemapCopy(3);
+        CpuCopy((u32 *)(VRAM + 0x8000), stru->vramStuff, sizeof(stru->vramStuff));
+        CloseFile(bgFile);
+        MemoryFree(stru);
+    }
 }
 
 #include "data/main_loops.h"

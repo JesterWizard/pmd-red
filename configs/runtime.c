@@ -19,4 +19,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .rank_rewards = TRUE, /* TRUE = bag pages + storage by rank; FALSE = vanilla bag 20/10 */
     .achievements = TRUE, /* TRUE = parallel achievements menu + tracking; FALSE = off */
     .compact_kangaskhan_storage = TRUE, /* TRUE = max 99/item (u8); FALSE = max 255 */
+    .custom_title_backgrounds = TRUE, /* TRUE = custom title BGs; FALSE = vanilla titlen0–2 */
 };

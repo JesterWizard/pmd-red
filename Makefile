@@ -211,7 +211,7 @@ endif
 ALL_BUILDS := red
 
 # Available targets
-.PHONY: all modern clean compare tidy ground-compress ax-compress libagbsyscall tools clean-tools FORCE $(TOOLDIRS)
+.PHONY: all modern clean compare tidy ground-compress ax-compress title-bg-convert libagbsyscall tools clean-tools FORCE $(TOOLDIRS)
 
 # Pretend rules that are actually flags defer to `make all`
 modern: all
@@ -271,6 +271,17 @@ $(AX_TILES_STAMP): FORCE
 # Monster headers INCBIN compressed tiles; ensure they exist before assembling.
 MONSTER_GFX_OBJECTS := $(filter $(C_BUILDDIR)/monster_gfx%.o,$(C_OBJECTS))
 $(MONSTER_GFX_OBJECTS): | $(AX_TILES_STAMP)
+
+# Custom title-screen backgrounds (PNG → AT4PN + pal).
+TITLE_BG_STAMP := $(BUILD_DIR)/title_bg.stamp
+
+title-bg-convert: $(TITLE_BG_STAMP)
+
+$(TITLE_BG_STAMP): FORCE
+	@mkdir -p $(dir $@)
+	@python3 convert_title_backgrounds.py --stamp $@ --quiet
+
+$(C_BUILDDIR)/custom_title_backgrounds.o: | $(TITLE_BG_STAMP)
 
 syms: $(SYM)
 

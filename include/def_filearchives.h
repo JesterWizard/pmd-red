@@ -21,4 +21,7 @@ extern const FileArchive gSystemFileArchive;
 // titlemenu_sbin.s
 extern const FileArchive gTitleMenuFileArchive;
 
+// custom_title_backgrounds.c
+extern const FileArchive gCustomTitleBgArchive;
+
 #endif // GUARD_DEF_FILEARCHIVES_H

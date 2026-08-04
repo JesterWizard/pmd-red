@@ -44,6 +44,8 @@ typedef struct {
     u8 achievements;
     /* Compact Kangaskhan storage: u8 counts, max 99/item (else max 255) */
     u8 compact_kangaskhan_storage;
+    /* Random custom title BG from graphics/title_screen_backgrounds/ (else vanilla titlen*) */
+    u8 custom_title_backgrounds;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

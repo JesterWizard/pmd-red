@@ -11,6 +11,7 @@ UNUSED static EWRAM_DATA u8 sUnknownUnusedEwram[0x140] = {0};
 EWRAM_DATA u16 gBldAlpha = 0;
 EWRAM_DATA u16 gBldCnt = 0;
 EWRAM_DATA bool8 gUnknown_202D7FE = 0;
+EWRAM_DATA bool8 gTitleBg8bpp = 0;
 
 void SetBldAlphaReg(s32 lowAlpha, s32 highAlpha)
 {
@@ -107,6 +108,11 @@ void sub_800CD64(s32 r0, bool8 r1)
 {
     gUnknown_202D7FE = r1;
     gBG2Control.unk2 = r0 ? 0x8000 : 0;
+}
+
+void SetTitleBg8bpp(bool8 enabled)
+{
+    gTitleBg8bpp = enabled;
 }
 
 void SetBGOBJEnableFlags(u32 mask)
