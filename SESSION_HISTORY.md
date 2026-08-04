@@ -176,11 +176,13 @@ old script loop.
 
 ## 2026-08-04 — Custom title-screen backgrounds
 
+Docs: [`documentation/Features/CustomTitleBackgrounds.md`](documentation/Features/CustomTitleBackgrounds.md).
+
 ### What changed
 - Source art: `graphics/title_screen_backgrounds/title_01.png` … `title_06.png`
   (240×160).
 - Build converter: `convert_title_backgrounds.py` → sibling `.at4pn` (AT4PN
-  tilemaps+4bpp) + `.pal` (14×16 RGBX).
+  tilemaps+8bpp) + `.pal` (240 RGBX).
 - Archive: `src/custom_title_backgrounds.c` / `include/custom_title_backgrounds.h`
   (`ctitle0`…`ctitle5` + `*p` palettes).
 - Runtime toggle: `gRuntimeConfig.custom_title_backgrounds` (default `TRUE`)
@@ -199,6 +201,8 @@ old script loop.
 
 ## 2026-08-04 — Custom title BGs → 8bpp
 
+Docs: [`documentation/Features/CustomTitleBackgrounds.md`](documentation/Features/CustomTitleBackgrounds.md).
+
 ### What changed
 - Converter emits **8bpp** tiles + up to **239** colors (index 0 reserved).
 - Title-only BG3: `BGCNT_256COLOR | CHARBASE(1) | SCREENBASE(7)` via
@@ -207,6 +211,7 @@ old script loop.
 - 8bpp tiles load at **`VRAM+0x6000`** (tile index base **128**) so font/UI
   chrome at `0x4F00` (tiles `0x278+`) stays intact.
 - Max **640** tiles; extras nearest-merged (current art fits, ~562–601).
+- Left text gutter (column 0) cleared while title 8bpp so art is full-bleed.
 - `LoadTitleScreen` clears flag on title exit.
 - Vanilla `titlen*` path unchanged (4bpp @ CHARBASE 2).
 
