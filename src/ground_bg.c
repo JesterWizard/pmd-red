@@ -6,6 +6,7 @@
 #include "text_1.h"
 #include "memory.h"
 #include "file_system.h"
+#include "ground_assets.h"
 #include "map_files_table.h"
 #include "code_8004AA0.h"
 #include "graphics_memory.h"
@@ -143,13 +144,13 @@ static void CloseOpenedFiles(GroundBg *groundBg)
 
     for (i = 0; i < UNK_3E0_ARR_COUNT; i++) {
         SubStruct_3E0 *unkPtr = &groundBg->unk3E0[i];
-        TRY_CLOSE_FILE_AND_SET_NULL(unkPtr->bpaFile);
+        TRY_CLOSE_GROUND_FILE_AND_SET_NULL(unkPtr->bpaFile);
     }
     TRY_CLOSE_FILE_AND_SET_NULL(groundBg->unk43C);
     TRY_CLOSE_FILE_AND_SET_NULL(groundBg->unk440);
-    TRY_CLOSE_FILE_AND_SET_NULL(groundBg->bplFile);
-    TRY_CLOSE_FILE_AND_SET_NULL(groundBg->bpcFile);
-    TRY_CLOSE_FILE_AND_SET_NULL(groundBg->bmaFile);
+    TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bplFile);
+    TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
+    TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bmaFile);
 }
 
 void sub_80A2E64(GroundBg *groundBg)
@@ -241,19 +242,14 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     CloseOpenedFiles(groundBg);
     groundBg->mapFileId = mapFileId;
     mapFilesPtr = &gMapFilesTable[mapFileId];
-    groundBg->bplFile = OpenFileAndGetFileDataPtr(mapFilesPtr->bplFileName, &gGroundFileArchive);
-    groundBg->bpcFile = OpenFileAndGetFileDataPtr(mapFilesPtr->bpcFileName, &gGroundFileArchive);
-    groundBg->bmaFile = OpenFileAndGetFileDataPtr(mapFilesPtr->bmaFileName, &gGroundFileArchive);
-    bplData = groundBg->bplFile->data;
-    bpcData = groundBg->bpcFile->data;
-    bmaData = groundBg->bmaFile->data;
     bplHeader = &groundBg->bplHeader;
     layerSpecs = &groundBg->layerSpecs;
     bmaHeader = &groundBg->bmaHeader;
 
-    bplHeader->numPalettes = *(u8 *)(bplData); bplData += 2;
-    bplHeader->hasPalAnimations = *(u8 *)(bplData); bplData += 2;
-
+    // Decompress BPC alone first, copy into VRAM/mappings, then free it so the
+    // remaining LZ-decoded BPL/BMA/BPA files fit in the main heap.
+    groundBg->bpcFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bpcFileName, &gGroundFileArchive);
+    bpcData = groundBg->bpcFile->data;
     layerSpecs->chunkWidth = *bpcData++;
     layerSpecs->chunkHeight = *bpcData++;
     layerSpecs->numTiles = *bpcData++;
@@ -264,6 +260,18 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
         sum += layerSpecs->bpaSlotNumTiles[k];
     }
     layerSpecs->numChunks = *bpcData++;
+
+    CopyBpcTilesToVram((void *)(VRAM + 0x8000 + groundBg->unk52C.unk4 * 32), bpcData, &groundBg->unk52C, &groundBg->layerSpecs);
+    _UncompressCell(groundBg->tileMappings, &groundBg->chunkDimensions, bpcData + ((layerSpecs->numTiles - 1) * 16), &groundBg->unk52C, &groundBg->layerSpecs);
+    TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
+
+    groundBg->bplFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bplFileName, &gGroundFileArchive);
+    groundBg->bmaFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bmaFileName, &gGroundFileArchive);
+    bplData = groundBg->bplFile->data;
+    bmaData = groundBg->bmaFile->data;
+
+    bplHeader->numPalettes = *(u8 *)(bplData); bplData += 2;
+    bplHeader->hasPalAnimations = *(u8 *)(bplData); bplData += 2;
 
     bmaHeader->mapWidthTiles = *bmaData; bmaData += 1;
     bmaHeader->mapHeightTiles = *bmaData; bmaData += 1;
@@ -295,8 +303,6 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
         }
     }
 
-    CopyBpcTilesToVram((void *)(VRAM + 0x8000 + groundBg->unk52C.unk4 * 32), bpcData, &groundBg->unk52C, &groundBg->layerSpecs);
-    _UncompressCell(groundBg->tileMappings, &groundBg->chunkDimensions, bpcData + ((layerSpecs->numTiles - 1) * 16), &groundBg->unk52C, &groundBg->layerSpecs);
     bmaData = BmaLayerNrlDecompressor(groundBg->chunkMappings, bmaData, &groundBg->unk52C, &groundBg->bmaHeader);
     groundBg->decompressedBMAData = bmaData;
     if (groundBg->unk544 != NULL) {
@@ -337,6 +343,10 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
         sub0Ptr->unk4 = sub0Ptr->unk8 = 0;
     }
 
+    // Palette data is already copied into CRAM; only animated BPLs must stay mapped.
+    if (!bplHeader->hasPalAnimations)
+        TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bplFile);
+
     vramPtr = (void *)(VRAM + 0x8000 + (groundBg->unk52C.unk4 + layerSpecs->numTiles) * 32);
     for (id = 0; id < 2; id++) {
         SubStruct_3E0 *sub3E0 = &groundBg->unk3E0[id];
@@ -344,7 +354,7 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
             const struct BpaHeader *bpaHeader;
             const void *r1, *r0;
 
-            sub3E0->bpaFile = OpenFileAndGetFileDataPtr(mapFilesPtr->bpaFileNames[id], &gGroundFileArchive);
+            sub3E0->bpaFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bpaFileNames[id], &gGroundFileArchive);
             sub3E0->unk0 = 1;
             sub3E0->unk1 = 1;
             bpaHeader = sub3E0->bpaFile->data;
@@ -378,7 +388,7 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     for (; id < MAX_BPA_SLOTS; id++) {
         if (mapFilesPtr->bpaFileNames[id] != NULL) {
             s32 n;
-            OpenedFile *file = OpenFileAndGetFileDataPtr(mapFilesPtr->bpaFileNames[id], &gGroundFileArchive);
+            OpenedFile *file = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bpaFileNames[id], &gGroundFileArchive);
             const struct BpaHeader *bpaHeader = file->data;
             const u16 *tiles = (void *) &bpaHeader->durationPerFrame;
             tiles += bpaHeader->numFrames * 2;
@@ -388,7 +398,7 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
                 *(u16 *)(vramPtr) = *tiles++;
                 vramPtr += 2;
             }
-            CloseFile(file);
+            CloseGroundFile(file);
         }
     }
 
@@ -421,19 +431,12 @@ void sub_80A3440(GroundBg *groundBg, s32 mapFileId_, const DungeonLocation *dung
     CloseOpenedFiles(groundBg);
     groundBg->mapFileId = mapFileId;
     mapFilesPtr = &gMapFilesTable[mapFileId];
-    groundBg->bplFile = OpenFileAndGetFileDataPtr(mapFilesPtr->bplFileName, &gGroundFileArchive);
-    groundBg->bpcFile = OpenFileAndGetFileDataPtr(mapFilesPtr->bpcFileName, &gGroundFileArchive);
-    groundBg->bmaFile = OpenFileAndGetFileDataPtr(mapFilesPtr->bmaFileName, &gGroundFileArchive);
-    bplData = groundBg->bplFile->data;
-    bpcData = groundBg->bpcFile->data;
-    bmaData = groundBg->bmaFile->data;
     bplHeader = &groundBg->bplHeader;
     layerSpecs = &groundBg->layerSpecs;
     bmaHeader = &groundBg->bmaHeader;
 
-    bplHeader->numPalettes = *(u8 *)(bplData); bplData += 2;
-    bplHeader->hasPalAnimations = *(u8 *)(bplData); bplData += 2;
-
+    groundBg->bpcFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bpcFileName, &gGroundFileArchive);
+    bpcData = groundBg->bpcFile->data;
     layerSpecs->chunkWidth = *bpcData++;
     layerSpecs->chunkHeight = *bpcData++;
     layerSpecs->numTiles = *bpcData++;
@@ -442,6 +445,15 @@ void sub_80A3440(GroundBg *groundBg, s32 mapFileId_, const DungeonLocation *dung
         layerSpecs->bpaSlotNumTiles[i] = *bpcData++;
     }
     layerSpecs->numChunks = *bpcData++;
+    TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
+
+    groundBg->bplFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bplFileName, &gGroundFileArchive);
+    groundBg->bmaFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bmaFileName, &gGroundFileArchive);
+    bplData = groundBg->bplFile->data;
+    bmaData = groundBg->bmaFile->data;
+
+    bplHeader->numPalettes = *(u8 *)(bplData); bplData += 2;
+    bplHeader->hasPalAnimations = *(u8 *)(bplData); bplData += 2;
 
     bmaHeader->mapWidthTiles = *(u8 *)(bmaData); bmaData += 1;
     bmaHeader->mapHeightTiles = *(u8 *)(bmaData); bmaData += 1;

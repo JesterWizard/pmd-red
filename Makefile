@@ -25,8 +25,9 @@ export PATH := $(TOOLCHAIN)/bin:$(PATH)
 endif
 endif
 
-# Builds the ROM using a modern compiler
-MODERN      ?= 0
+# Default build is the packed hack ROM (modern toolchain + linker).
+# Use MODERN=0 for the retail-pinned agbcc matching layout.
+MODERN      ?= 1
 ifeq (modern,$(MAKECMDGOALS))
   MODERN := 1
 endif
@@ -115,21 +116,19 @@ else
 endif
 
 #### Files ####
-BUILD_NAME_NORMAL = red
-BUILD_NAME_MODERN = red_modern
-BUILD_DIR_NORMAL := build/pmd_$(BUILD_NAME_NORMAL)
-BUILD_DIR_MODERN := build/pmd_$(BUILD_NAME_MODERN)
+# Always emit pmd_red.gba. Matching (agbcc) and modern objects stay separated.
+BUILD_DIR_NORMAL := build/pmd_red_matching
+BUILD_DIR_MODERN := build/pmd_red
 ifeq ($(MODERN),0)
-  BUILD_NAME = $(BUILD_NAME_NORMAL)
+  BUILD_DIR := $(BUILD_DIR_NORMAL)
 else
-  BUILD_NAME = $(BUILD_NAME_MODERN)
+  BUILD_DIR := $(BUILD_DIR_MODERN)
 endif
-BUILD_DIR := build/pmd_$(BUILD_NAME)
 
-ROM := pmd_$(BUILD_NAME).gba
-ELF := $(ROM:%.gba=%.elf)
-MAP := $(ROM:%.gba=%.map)
-SYM := $(ROM:%.gba=%.sym)
+ROM := pmd_red.gba
+ELF := pmd_red.elf
+MAP := pmd_red.map
+SYM := pmd_red.sym
 
 C_SUBDIR = src
 ASM_SUBDIR = asm
@@ -159,6 +158,10 @@ SONG_OBJS := $(addprefix $(BUILD_DIR)/, $(SONG_SRCS:%.s=%.o))
 ALL_OBJECTS := $(C_OBJECTS) $(ASM_OBJECTS) $(C_ASM_OBJECTS) $(SONG_OBJS)
 OBJS_REL := $(patsubst $(BUILD_DIR)/%,%,$(ALL_OBJECTS))
 
+GROUND_MAP_RAW_ASSETS := $(wildcard data/map_bg/*)
+GROUND_MAP_COMPRESSED_ASSETS := $(patsubst data/map_bg/%,data/map_bg_lz/%.lz,$(GROUND_MAP_RAW_ASSETS))
+GROUND_MAP_OBJECTS := $(filter $(C_BUILDDIR)/ground_map_files_%.o,$(C_OBJECTS))
+
 SUBDIRS := $(sort $(dir $(ALL_OBJECTS)))
 
 # Special configurations required for lib files
@@ -177,7 +180,7 @@ endif
 ALL_BUILDS := red
 
 # Available targets
-.PHONY: all modern clean compare tidy libagbsyscall tools clean-tools $(TOOLDIRS)
+.PHONY: all modern clean compare tidy ground-compress libagbsyscall tools clean-tools $(TOOLDIRS)
 
 # Pretend rules that are actually flags defer to `make all`
 modern: all
@@ -212,7 +215,13 @@ $(shell mkdir -p $(SUBDIRS))
 
 all: $(ROM)
 
+# Keep after `all:` so this prerequisite-only rule is not the default goal.
+$(GROUND_MAP_OBJECTS): $(GROUND_MAP_COMPRESSED_ASSETS)
+
 tools: $(TOOLDIRS)
+
+ground-compress: tools/gbagfx
+	python3 compress_ground_assets.py
 
 syms: $(SYM)
 
@@ -230,7 +239,7 @@ $(TOOLDIRS):
 	@$(MAKE) -C $@ CC=$(HOSTCC) CXX=$(HOSTCXX)
 
 compare: $(ROM)
-	@$(SHA1SUM) $(BUILD_NAME).sha1
+	@$(SHA1SUM) red.sha1
 
 clean: tidy clean-tools
 	$(RM) $(ALL_OBJECTS) $(ALL_OBJECTS:.o=.d)
@@ -252,7 +261,7 @@ tidy:
 	$(RM) -f $(DUNGEON_POKEMON)
 	$(RM) -f $(DUNGEON_TRAP)
 	$(RM) -f $(DUNGEON_ITEM)
-	find . \( -iname '*.1bpp' -o -iname '*.4bpp' -o -iname '*.8bpp' -o -iname '*.gbapal' -o -iname '*.lz' -o -iname '*.latfont' -o -iname '*.hwjpnfont' -o -iname '*.fwjpnfont' \) -exec rm {} +
+	find . \( -iname '*.1bpp' -o -iname '*.4bpp' -o -iname '*.8bpp' -o -iname '*.gbapal' -o -iname '*.lz' -o -iname '*.latfont' -o -iname '*.hwjpnfont' -o -iname '*.fwjpnfont' \) ! -path './data/map_bg_lz/*' -exec rm {} +
 	@$(MAKE) clean -C libagbsyscall
 
 define scaninc
@@ -324,6 +333,17 @@ else
   LD_SCRIPT_DEPS :=
 endif
 
+# Hack builds are emitted at their real packed size. Matching retail padding can
+# be restored by setting PAD_ROM=1.
+PAD_ROM ?= 0
+ifeq ($(PAD_ROM),1)
+  OBJCOPY_PAD_FLAGS := --pad-to 0xA000000
+  GBAFIX_PAD_FLAGS := -p
+else
+  OBJCOPY_PAD_FLAGS :=
+  GBAFIX_PAD_FLAGS :=
+endif
+
 # Elf from object files
 LDFLAGS = -Map ../../$(MAP)
 $(ELF): $(LD_SCRIPT) $(LD_SCRIPT_DEPS) $(ALL_OBJECTS) libagbsyscall
@@ -333,8 +353,8 @@ $(ELF): $(LD_SCRIPT) $(LD_SCRIPT_DEPS) $(ALL_OBJECTS) libagbsyscall
 
 # Builds the rom from the elf file
 $(ROM): %.gba: $(ELF)
-	$(OBJCOPY) -O binary --gap-fill 0xFF --pad-to 0xA000000 $< $@
-	$(GBAFIX) $@ -p --silent
+	$(OBJCOPY) -O binary --gap-fill 0xFF $(OBJCOPY_PAD_FLAGS) $< $@
+	$(GBAFIX) $@ $(GBAFIX_PAD_FLAGS) --silent
 
 ifeq (,$(filter clean,$(MAKECMDGOALS)))
 -include $(ALL_OBJECTS:.o=.d)

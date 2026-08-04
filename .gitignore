@@ -9,6 +9,8 @@
 *.gbapal
 *.pmdpal
 *.lz
+!data/map_bg_lz/
+!data/map_bg_lz/*.lz
 *.rl
 *.pcm
 *.latfont

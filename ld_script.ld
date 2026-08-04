@@ -345,6 +345,7 @@ SECTIONS {
         src/ground_script.o(.text);
         src/code_80A26CC.o(.text);
         src/ground_place.o(.text);
+        src/ground_assets.o(.text);
         src/ground_bg.o(.text);
         src/ground_map.o(.text);
         src/ground_weather.o(.text);
