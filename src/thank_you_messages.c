@@ -24,6 +24,7 @@ enum TYM_State
     TYM_STATE_3,
     TYM_STATE_4,
     TYM_STATE_5,
+    TYM_STATE_OUTLAW,
     TYM_STATE_6,
     TYM_STATE_7,
 };
@@ -174,6 +175,11 @@ static void TYM_InitStateDialogue(void)
                     UnlockExclusivePokemon(sTYMWork->jobInfo->targetSpecies);
                     break;
                 }
+                case WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT: {
+                    TYM_SetState(TYM_STATE_OUTLAW);
+                    UnlockExclusivePokemon(sTYMWork->jobInfo->targetSpecies);
+                    break;
+                }
                 default:
                 case WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT: {
                     TYM_SetState(TYM_STATE_1);
@@ -196,6 +202,10 @@ static void TYM_InitStateDialogue(void)
         }
         case TYM_STATE_5: {
             CreateDialogueBoxAndPortrait(sThanksForDelivering, 0, &sTYMWork->monPortrait, 0x10D);
+            break;
+        }
+        case TYM_STATE_OUTLAW: {
+            CreateDialogueBoxAndPortrait(sThanksForDefeatingOutlaw, 0, &sTYMWork->monPortrait, 0x10D);
             break;
         }
         case TYM_STATE_4: {

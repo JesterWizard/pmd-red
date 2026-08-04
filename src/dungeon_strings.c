@@ -380,6 +380,14 @@ const u8 *const gUnknown_80FA124[] = {
 };
 
 const u8 *const gUnknown_80FA260 = _("The Rescue Team Badge\nshone on {POKEMON_1}!\n{POKEMON_1} gained a magical power!\n{POKEMON_1}: Thank you!\nPlease come see me at the Pelipper\nPost Office later.\n{POKEMON_1} escaped from the dungeon!");
+const u8 *const gOutlawDefeatedMsg = _("The outlaw {POKEMON_1} was defeated!");
+const u8 *const gOutlawEncounterDialogue[5] = {
+    _("Gwahaha! You'll never take me alive!"),
+    _("Who dares challenge me?! Come and get it!"),
+    _("Huh? Explorers? You're going down!"),
+    _("I've been waiting for a fight! Bring it on!"),
+    _("You think you can stop me? Dream on!"),
+};
 const u8 *const gUnknown_80FA2B0 = _("{POKEMON_1} happily accepted the item!\n\n\n{POKEMON_1}: Thank you!\n\n\n{POKEMON_1} left the dungeon!\n\n");
 const u8 *const gUnknown_80FA2F0 = _("Yes! {POKEMON_1} was found!\nUse the Rescue Team Badge to save\n{POKEMON_1}?");
 const u8 *const gUnknown_80FA32C = _("Yes! {POKEMON_1} was found!\nDeliver the requested item to\n{POKEMON_1}?");

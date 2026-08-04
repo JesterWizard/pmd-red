@@ -180,6 +180,11 @@ void sub_803B35C(WonderMail *mail, unkStruct_802C39C *param_2)
                 param_2->mailDescriptionType = '\x10';
                 param_2->mailMissionType = MISSION_TYPE_DELIVER_ITEM;
                 break;
+            case WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT:
+                param_2->mailTitleType = 13;
+                param_2->mailDescriptionType = 17;
+                param_2->mailMissionType = MISSION_TYPE_OUTLAW_HUNT;
+                break;
             default:
                 param_2->mailTitleType = 8;
                 param_2->mailDescriptionType = 0xC;

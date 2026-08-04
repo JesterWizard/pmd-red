@@ -153,6 +153,10 @@ static void DisplayMissionObjectives(void)
                                 sprintfStatic(buffer1, sFmtEscort, GetMonSpecies(jobInfo->targetSpecies));
                                 PrintStringOnWindow(40, yCoord, buffer1, sUnknown_203B330->unk10, 0);
                                 break;
+                            case WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT:
+                                sprintfStatic(buffer1, sFmtDefeat, GetMonSpecies(jobInfo->targetSpecies));
+                                PrintStringOnWindow(40, yCoord, buffer1, sUnknown_203B330->unk10, 0);
+                                break;
                             default:
                                 sprintfStatic(buffer1, sFmtRescue, GetMonSpecies(jobInfo->targetSpecies));
                                 PrintStringOnWindow(40, yCoord, buffer1, sUnknown_203B330->unk10, 0);

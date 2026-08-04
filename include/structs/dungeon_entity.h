@@ -446,6 +446,7 @@ enum MonsterBehavior
     BEHAVIOR_34,
     BEHAVIOR_35,
     BEHAVIOR_MAZE_BOSS,
+    BEHAVIOR_OUTLAW, // Bulletin outlaw hunt target (hostile; completes job on faint)
 };
 
 enum VisualFlag

@@ -526,7 +526,7 @@ void DisplayPreFightDialogue(void)
 
 void HandleBossFaint_Async(Entity *entity, u8 monsterBehavior, bool8 transformedIntoFriend)
 {
-    if (monsterBehavior == BEHAVIOR_FIXED_ENEMY)
+    if (monsterBehavior == BEHAVIOR_FIXED_ENEMY || monsterBehavior == BEHAVIOR_OUTLAW)
         return;
 
     switch (gDungeon->cutscene) {

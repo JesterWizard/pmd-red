@@ -437,18 +437,90 @@ void sub_806B678(void)
     }
 }
 
+static bool8 TrySpawnMissionMonOnFloor(bool8 preferLeaderRoom)
+{
+    struct MonSpawnInfo monSpawnInfo;
+    s32 i, j;
+    s32 x, y;
+    u8 leaderRoom = CORRIDOR_ROOM;
+
+    if (gDungeon->unk644.unk44 == 0)
+        return TRUE;
+
+    if (preferLeaderRoom)
+        leaderRoom = GetTile(gLeaderPosition.x, gLeaderPosition.y)->room;
+
+    monSpawnInfo.species = gDungeon->unk644.unk44;
+    if (gDungeon->unk644.outlawHunt) {
+        monSpawnInfo.level = 0;
+        monSpawnInfo.unk2 = BEHAVIOR_OUTLAW;
+    }
+    else {
+        monSpawnInfo.level = 1;
+        monSpawnInfo.unk2 = BEHAVIOR_RESCUE_TARGET;
+    }
+    monSpawnInfo.unk4 = 0;
+    monSpawnInfo.unk10 = 0;
+
+    x = DungeonRandInt(DUNGEON_MAX_SIZE_X);
+    y = DungeonRandInt(DUNGEON_MAX_SIZE_Y);
+
+    for (j = 0; j < DUNGEON_MAX_SIZE_Y; j++) {
+        y++;
+        if (y == DUNGEON_MAX_SIZE_Y)
+            y = 0;
+
+        for (i = 0; i < DUNGEON_MAX_SIZE_X; i++) {
+            const Tile *tile;
+
+            x++;
+            if (x == DUNGEON_MAX_SIZE_X)
+                x = 0;
+
+            tile = GetTile(x, y);
+            if (!(tile->spawnOrVisibilityFlags.spawn & SPAWN_FLAG_MONSTER))
+                continue;
+            if (preferLeaderRoom && tile->room != leaderRoom)
+                continue;
+
+            monSpawnInfo.pos.x = x;
+            monSpawnInfo.pos.y = y;
+            if (SpawnWildMon(&monSpawnInfo, FALSE))
+                return TRUE;
+        }
+    }
+
+    return FALSE;
+}
+
 void SpawnWildMonsOnFloor(void)
 {
     struct MonSpawnInfo monSpawnInfo;
     s32 i, j;
     s32 x, y;
-    bool8 r8 = (gDungeon->unk644.unk44 != 0);
+    bool8 needMissionMon = (gDungeon->unk644.unk44 != 0);
 
     if (ItemInInventoryOrHeld(ITEM_MUSIC_BOX) && !HasRecruitedMon(MONSTER_MEW)) {
         gDungeon->unk37FF = FALSE;
     }
     else {
         gDungeon->unk37FF = TRUE;
+    }
+
+    if (needMissionMon) {
+        bool8 preferLeaderRoom = FALSE;
+
+        /* Outlaw hunts: try the leader's room first so the fight starts face-to-face. */
+        if (gDungeon->unk644.outlawHunt) {
+            u8 leaderRoom = GetTile(gLeaderPosition.x, gLeaderPosition.y)->room;
+            if (leaderRoom != CORRIDOR_ROOM)
+                preferLeaderRoom = TRUE;
+        }
+
+        if (TrySpawnMissionMonOnFloor(preferLeaderRoom)
+            || (preferLeaderRoom && TrySpawnMissionMonOnFloor(FALSE))) {
+            needMissionMon = FALSE;
+        }
     }
 
     x = DungeonRandInt(DUNGEON_MAX_SIZE_X);
@@ -463,34 +535,20 @@ void SpawnWildMonsOnFloor(void)
             if (x == DUNGEON_MAX_SIZE_X) {x = 0;}
 
             if (GetTile(x, y)->spawnOrVisibilityFlags.spawn & SPAWN_FLAG_MONSTER) {
-                bool8 r6 = FALSE;
-
-                if (r8) {
-                    monSpawnInfo.species = gDungeon->unk644.unk44;
-                    monSpawnInfo.level = 1;
-                    monSpawnInfo.unk2 = 1;
-                    r6 = TRUE;
-                }
-                else {
-                    monSpawnInfo.species = GetRandomFloorMonsterId(0);
-                    monSpawnInfo.level = 0;
-                    monSpawnInfo.unk2 = 0;
-                }
-
+                monSpawnInfo.species = GetRandomFloorMonsterId(0);
+                monSpawnInfo.level = 0;
+                monSpawnInfo.unk2 = 0;
                 monSpawnInfo.unk4 = 0;
                 monSpawnInfo.unk10 = 0;
                 monSpawnInfo.pos.x = x;
                 monSpawnInfo.pos.y = y;
-                if (r6 || sub_806AA0C(monSpawnInfo.species, TRUE)) {
-                    if (SpawnWildMon(&monSpawnInfo, FALSE)) {
-                        r8 = FALSE;
-                    }
-                }
+                if (sub_806AA0C(monSpawnInfo.species, TRUE))
+                    SpawnWildMon(&monSpawnInfo, FALSE);
             }
         }
     }
 
-    if (r8) {
+    if (needMissionMon) {
         gDungeon->unkA = 1;
     }
 }

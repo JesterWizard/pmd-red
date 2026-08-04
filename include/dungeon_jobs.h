@@ -6,6 +6,7 @@
 void sub_80842F0(void);
 void sub_80843BC(s32 id);
 void sub_8084424(void);
+void CompleteOutlawHuntAfterDefeat_Async(s16 species);
 void sub_8084448(Entity *pokemon);
 void sub_80845E0(Entity *pokemon);
 void sub_8084778(void);

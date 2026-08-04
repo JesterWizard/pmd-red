@@ -13,6 +13,7 @@
 #include "menu_input.h"
 #include "pelipper_board.h"
 #include "pokemon.h"
+#include "runtime.h"
 #include "text_1.h"
 #include "text_2.h"
 #include "wonder_mail_802C10C.h"
@@ -134,6 +135,8 @@ void sub_802E918(void)
         MemoryFree(gPelipperBoard);
         gPelipperBoard = NULL;
     }
+    if (gRuntimeConfig.refresh_bulletin_on_exit)
+        GeneratePelipperJobs();
 }
 
 void SetPelipperBoardState(u32 newState)

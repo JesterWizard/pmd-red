@@ -64,6 +64,13 @@ void CreateRescueTitle(unkStruct_802C39C *param_1)
             sprintfStatic(buf_1, gUnknown_80E8848, gFormatBuffer_Items[0]);
             PrintStringOnWindow(21, param_1->y, buf_1, param_1->unk0[0], 0);
             break;
+        case 13: {
+            monName = GetMonSpecies(param_1->targetSpecies);
+            strcpy(gFormatBuffer_Monsters[0], monName);
+            sprintfStatic(buf_1, gOutlawWantedTitle, gFormatBuffer_Monsters[0]);
+            PrintStringOnWindow(21, param_1->y, buf_1, param_1->unk0[0], 0);
+            break;
+        }
         case 4:
             PrintStringOnWindow(21, param_1->y, gUnknown_80E885C, param_1->unk0[0], 0);
             break;
@@ -188,6 +195,13 @@ void CreateRescueDescription(unkStruct_802C39C *param_1)
         case 11:
             PrintStringOnWindow(10, y, gUnknown_80E8A7C, param_1->unk0[0], 0);
             break;
+        case 17: {
+            monName = GetMonSpecies(param_1->targetSpecies);
+            strcpy(gFormatBuffer_Monsters[0], monName);
+            sprintfStatic(buf_1, gOutlawHuntDescription, gFormatBuffer_Monsters[0]);
+            PrintStringOnWindow(10, y, buf_1, param_1->unk0[0], 0);
+            break;
+        }
         case 15:
         case 16: {
             u8 bVar2 = param_1->dungeonSeed->seed + param_1->dungeonSeed->location.id;
@@ -302,6 +316,12 @@ void CreateRescueDescription(unkStruct_802C39C *param_1)
             monName = GetMonSpecies(param_1->targetSpecies);
             strcpy(gFormatBuffer_Monsters[0], monName);
             sprintfStatic(buf_1, gUnknown_80E8B40, gFormatBuffer_Monsters[0]);
+            PrintStringOnWindow(68, y, buf_1, param_1->unk0[0], 0);
+            break;
+        case MISSION_TYPE_OUTLAW_HUNT:
+            monName = GetMonSpecies(param_1->targetSpecies);
+            strcpy(gFormatBuffer_Monsters[0], monName);
+            sprintfStatic(buf_1, gOutlawObjectiveText, gFormatBuffer_Monsters[0]);
             PrintStringOnWindow(68, y, buf_1, param_1->unk0[0], 0);
             break;
         case MISSION_TYPE_SPECIAL_MISSION:

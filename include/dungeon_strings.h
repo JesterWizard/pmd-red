@@ -187,6 +187,8 @@ extern const u8 *const gText_Pokemon0JoinedToGoOnAdventures;
 extern const u8 *const gText_Pokemon0GainedAccessToFriendArea;
 extern const u8 *const gUnknown_80FA124[];
 extern const u8 *const gUnknown_80FA260;
+extern const u8 *const gOutlawDefeatedMsg;
+extern const u8 *const gOutlawEncounterDialogue[5];
 extern const u8 *const gUnknown_80FA2B0;
 extern const u8 *const gUnknown_80FA2F0;
 extern const u8 *const gUnknown_80FA32C;

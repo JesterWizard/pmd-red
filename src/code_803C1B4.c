@@ -13,7 +13,8 @@ s32 sub_803C1B4(DungeonLocation *dungeon, u8 missionType)
 {
     s32 temp;
     temp = GetDungeonLocMissionDifficulty(dungeon);
-    if(missionType == 2)
+    if (missionType == WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT
+        || missionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT)
     {
         temp += 2;
     }

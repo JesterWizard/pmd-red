@@ -27,4 +27,5 @@ ALIGNED(4) static const u8 sJustGo[] = "Just go!";
 ALIGNED(4) static const u8 sFmtBring[] = _("  Bring {COLOR GREEN}%s{RESET}");
 ALIGNED(4) static const u8 sFmtFind[] = _("  Find {COLOR GREEN}%s{RESET}");
 ALIGNED(4) static const u8 sFmtEscort[] = _("  Escort to {COLOR YELLOW}%s{RESET}");
+ALIGNED(4) static const u8 sFmtDefeat[] = _("  Defeat {COLOR YELLOW}%s{RESET}");
 ALIGNED(4) static const u8 sRedQuestionMarks[] = _("{COLOR RED_W}???{RESET}");

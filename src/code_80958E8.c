@@ -18,16 +18,17 @@
 #include "pokemon_mail.h"
 #include "event_flag.h"
 #include "rescue_team_info.h"
+#include "runtime.h"
 
 static const u8 sPossibleMissionTypes[8] = {
-    MISSION_TYPE_FRIEND_RESCUE,
-    MISSION_TYPE_FIND_ITEM,
-    MISSION_TYPE_DELIVER_ITEM,
-    MISSION_TYPE_RESCUE_CLIENT,
-    MISSION_TYPE_RESCUE_TARGET,
-    MISSION_TYPE_DELIVER_ITEM,
-    MISSION_TYPE_FIND_ITEM,
-    MISSION_TYPE_FRIEND_RESCUE
+    WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT,
+    WONDER_MAIL_MISSION_TYPE_RESCUE_TARGET,
+    WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT,
+    WONDER_MAIL_MISSION_TYPE_FIND_ITEM,
+    WONDER_MAIL_MISSION_TYPE_DELIVER_ITEM,
+    WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT,
+    WONDER_MAIL_MISSION_TYPE_FIND_ITEM,
+    WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT
 };
 
 static EWRAM_DATA unkStruct_203B490 sUnknown_2039448 = { 0 };
@@ -188,8 +189,11 @@ static bool8 GenerateMailJobInfo(WonderMail *mail)
     rand = RandInt(8);
     missionType = sPossibleMissionTypes[rand];
     mail->missionType = missionType;
-    if (missionType == MISSION_TYPE_DELIVER_ITEM && GetRescueTeamRank() == 0) {
-        mail->missionType = MISSION_TYPE_FRIEND_RESCUE;
+    if (missionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT && !gRuntimeConfig.outlaw_missions) {
+        mail->missionType = WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT;
+    }
+    if (mail->missionType == WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT && GetRescueTeamRank() == 0) {
+        mail->missionType = WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT;
     }
     mail->unk2 = 0;
     mail->dungeonSeed.seed = Rand32Bit() & 0xffffff;
@@ -211,19 +215,23 @@ static bool8 GenerateMailJobInfo(WonderMail *mail)
         mail->targetSpecies = 0x122;
     }
 
-    if (mail->missionType != MISSION_TYPE_FIND_ITEM && mail->missionType != MISSION_TYPE_DELIVER_ITEM) {
+    if (mail->missionType != WONDER_MAIL_MISSION_TYPE_RESCUE_TARGET
+        && mail->missionType != WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT
+        && mail->missionType != WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT) {
         mail->targetSpecies = mail->clientSpecies;
     }
 
     mail->targetItem = sub_8095F28(mail->dungeonSeed.location.id);
     if (mail->targetItem == 0) {
-        mail->missionType = MISSION_TYPE_FRIEND_RESCUE;
-        mail->targetSpecies = mail->clientSpecies;
+        if (mail->missionType != WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT) {
+            mail->missionType = WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT;
+            mail->targetSpecies = mail->clientSpecies;
+        }
         sub_803C37C(&mail->dungeonSeed.location,0,&mail->targetItem);
     }
     itemCount = GetMaxItemsAllowed(mail->dungeonSeed.location.id);
-    if (itemCount == 0 && mail->missionType == MISSION_TYPE_RESCUE_TARGET) {
-        mail->missionType = MISSION_TYPE_FRIEND_RESCUE;
+    if (itemCount == 0 && mail->missionType == WONDER_MAIL_MISSION_TYPE_DELIVER_ITEM) {
+        mail->missionType = WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT;
         mail->targetSpecies = mail->clientSpecies;
     }
 
@@ -233,7 +241,7 @@ static bool8 GenerateMailJobInfo(WonderMail *mail)
     mail->friendAreaReward = 0;
 
     switch (mail->missionType) {
-        case MISSION_TYPE_FIND_ITEM:
+        case WONDER_MAIL_MISSION_TYPE_RESCUE_TARGET:
             switch(Rand32Bit() & 0x70) {
                 case 0x10:
                     sub_803C3E0(mail);
@@ -243,13 +251,13 @@ static bool8 GenerateMailJobInfo(WonderMail *mail)
                     break;
             }
             break;
-        case MISSION_TYPE_DELIVER_ITEM:
+        case WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT:
             if ((Rand32Bit() & 0x3000) == 0x1000) {
                 sub_803C4F0(mail);
             }
             break;
-        case MISSION_TYPE_RESCUE_CLIENT:
-        case MISSION_TYPE_RESCUE_TARGET:
+        case WONDER_MAIL_MISSION_TYPE_FIND_ITEM:
+        case WONDER_MAIL_MISSION_TYPE_DELIVER_ITEM:
             switch(Rand32Bit() & 0x700)
             {
             case 0x100:
@@ -1096,6 +1104,7 @@ void sub_8096AF8(struct unkStruct_8096AF8 *param_1, u8 slotIndex,u8 dungeon)
             break;
         case WONDER_MAIL_MISSION_TYPE_RESCUE_TARGET:
         case WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT:
+        case WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT:
             if (jobSlot->mailType == MAIL_TYPE_UNK9) {
                 param_1->unk0 = TRUE;
                 param_1->targetSpecies = jobSlot->targetSpecies;

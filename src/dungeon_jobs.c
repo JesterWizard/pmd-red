@@ -16,6 +16,8 @@
 #include "structs/str_dungeon.h"
 #include "constants/dungeon.h"
 #include "constants/dungeon_exit.h"
+#include "constants/mailbox.h"
+#include "constants/wonder_mail.h"
 
 void sub_80842F0(void)
 {
@@ -23,6 +25,7 @@ void sub_80842F0(void)
 
     gDungeon->unk644.unk33 = 0;
     gDungeon->unk644.unk46 = 0;
+    gDungeon->unk644.outlawHunt = 0;
     if (gDungeon->unk644.missionKind != DUNGEON_MISSION_ACCEPTEDJOB_RELATED)
         return;
 
@@ -31,16 +34,23 @@ void sub_80842F0(void)
         if (jobSlot->mailType == MAIL_TYPE_TAKEN_JOB) {
             if (gDungeon->unk644.dungeonLocation.id == jobSlot->dungeonSeed.location.id
                 && gDungeon->unk644.dungeonLocation.floor == jobSlot->dungeonSeed.location.floor
-                && jobSlot->missionType != 3)
+                && jobSlot->missionType != WONDER_MAIL_MISSION_TYPE_FIND_ITEM)
             {
-                if (jobSlot->missionType == 4) {
+                if (jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_DELIVER_ITEM) {
                     gDungeon->unk644.unk46 = jobSlot->targetItem;
                     gDungeon->unk644.unk44 = jobSlot->targetSpecies;
                     gDungeon->unk9 = 1;
                 }
-                else if (jobSlot->missionType == 0 || jobSlot->missionType == 2 || jobSlot->missionType == 1) {
+                else if (jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT) {
                     gDungeon->unk644.unk44 = jobSlot->targetSpecies;
-                    if (jobSlot->missionType == 2) {
+                    gDungeon->unk644.outlawHunt = 1;
+                    gDungeon->unk9 = 1;
+                }
+                else if (jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT
+                    || jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT
+                    || jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_RESCUE_TARGET) {
+                    gDungeon->unk644.unk44 = jobSlot->targetSpecies;
+                    if (jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT) {
                         gDungeon->unk644.unk33 = 1;
                     }
                     gDungeon->unk9 = 1;
@@ -60,11 +70,40 @@ void sub_80843BC(s32 id)
         if (jobSlot->mailType == MAIL_TYPE_TAKEN_JOB) {
             if (gDungeon->unk644.dungeonLocation.id == jobSlot->dungeonSeed.location.id
                 && (gDungeon->unk644.dungeonLocation.floor == jobSlot->dungeonSeed.location.floor)
-                && (jobSlot->missionType == 0 || jobSlot->missionType == 4 || jobSlot->missionType == 2 || jobSlot->missionType == 1)
+                && (jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT
+                    || jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_DELIVER_ITEM
+                    || jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_ESCORT_CLIENT
+                    || jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_RESCUE_TARGET
+                    || jobSlot->missionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT)
                 && id_s32 == jobSlot->targetSpecies) {
                     jobSlot->mailType = MAIL_TYPE_UNK8;
                 }
             }
+    }
+}
+
+void CompleteOutlawHuntAfterDefeat_Async(s16 species)
+{
+    if (!gDungeon->unk644.outlawHunt)
+        return;
+
+    sub_80843BC(species);
+    gDungeon->unk644.outlawHunt = 0;
+    gDungeon->unk644.unk44 = 0;
+
+    DisplayDungeonMessage_Async(0, gOutlawDefeatedMsg, 1);
+    sub_804178C_Async(TRUE);
+    while (TRUE) {
+        if (DisplayDungeonYesNoMessage_Async(0, gUnknown_80FA36C, 1) == 1) {
+            if (DisplayDungeonYesNoMessage_Async(0, gUnknown_80FA394, 0) == 1) {
+                gDungeon->unk4 = 1;
+                gDungeon->unk11 = 2;
+                return;
+            }
+        }
+        else if (DisplayDungeonYesNoMessage_Async(0, gUnknown_80FA3B8, 0) == 1) {
+            return;
+        }
     }
 }
 

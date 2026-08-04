@@ -44,7 +44,9 @@ void RunMonsterAI(Entity *pokemon, u32 unused)
     else
     {
         pokemonInfo->decoyAITracker = DECOY_AI_NONE;
-        if (pokemonInfo->monsterBehavior == BEHAVIOR_FIXED_ENEMY || ShouldRunMonsterAI(pokemon))
+        if (pokemonInfo->monsterBehavior == BEHAVIOR_FIXED_ENEMY
+            || pokemonInfo->monsterBehavior == BEHAVIOR_OUTLAW
+            || ShouldRunMonsterAI(pokemon))
         {
             if (pokemonInfo->monsterBehavior != BEHAVIOR_RESCUE_TARGET && pokemonInfo->useHeldItem)
             {

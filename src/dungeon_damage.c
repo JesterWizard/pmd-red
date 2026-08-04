@@ -28,6 +28,8 @@
 #include "dungeon_strings.h"
 #include "dungeon_misc.h"
 #include "dungeon_leveling.h"
+#include "dungeon_jobs.h"
+#include "dungeon_range.h"
 #include "weather.h"
 #include "game_options.h"
 #include "dungeon_mon_sprite_render.h"
@@ -738,6 +740,8 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
 
     if (r10) {
         struct unkStruct_8069D4C sp;
+        bool8 wasOutlaw = (GetEntInfo(target)->monsterBehavior == BEHAVIOR_OUTLAW && gDungeon->unk644.outlawHunt);
+        s16 outlawSpecies = GetEntInfo(target)->id;
 
         sub_8069D4C(&sp, target);
         if (TryRecruitMonster(attacker, target)) {
@@ -746,6 +750,11 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
             }
             else {
                 gUnknown_202F221 = 1;
+                if (wasOutlaw) {
+                    SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], GetLeader(), 0);
+                    CopyCyanMonsterNametoBuffer(gFormatBuffer_Monsters[1], outlawSpecies);
+                    CompleteOutlawHuntAfterDefeat_Async(outlawSpecies);
+                }
             }
         }
         else {

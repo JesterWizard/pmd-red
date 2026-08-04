@@ -49,6 +49,7 @@
 #include "dungeon_tilemap.h"
 #include "dungeon_engine.h"
 #include "dungeon_cutscene.h"
+#include "dungeon_jobs.h"
 #include "dungeon_mon_spawn.h"
 #include "dungeon_info.h"
 #include "dungeon_monster_house.h"
@@ -456,6 +457,9 @@ void HandleFaint_Async(Entity *entity, s32 dungeonExitReason_, Entity *param_3)
     s32 dungeonExitReason = (s16) dungeonExitReason_;
     EntityInfo *entInfo = GetEntInfo(entity);
     Tile *tile = GetTileAtEntitySafe(entity);
+    bool8 completeOutlaw = FALSE;
+    s16 outlawSpecies = 0;
+
     if (param_3 == NULL) {
         sub_80457DC(&EStack_a4);
         param_3 = &EStack_a4;
@@ -580,6 +584,13 @@ void HandleFaint_Async(Entity *entity, s32 dungeonExitReason_, Entity *param_3)
     }
 
     if (GetLeader() != NULL && dungeonExitReason != DUNGEON_EXIT_DELETED_FOR_EVENT && !entInfo->isTeamLeader && !gDungeon->unk10) {
+        if (entInfo->monsterBehavior == BEHAVIOR_OUTLAW && gDungeon->unk644.outlawHunt) {
+            completeOutlaw = TRUE;
+            outlawSpecies = entInfo->id;
+            SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], GetLeader(), 0);
+            SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[1], entity, 0);
+        }
+
         HandleBossFaint_Async(entity, entInfo->monsterBehavior, dungeonExitReason == DUNGEON_EXIT_TRANSFORMED_INTO_FRIEND);
         if (IS_DEOXYS_FORM_MONSTER(entInfo->apparentID) && !IsFloorwideFixedRoom() && entInfo->isNotTeamMember) {
             gDungeon->deoxysDefeat = 1;
@@ -622,6 +633,9 @@ void HandleFaint_Async(Entity *entity, s32 dungeonExitReason_, Entity *param_3)
     gDungeon->unkC = 1;
     entity->type = ENTITY_NOTHING;
     sub_8045ACC();
+
+    if (completeOutlaw)
+        CompleteOutlawHuntAfterDefeat_Async(outlawSpecies);
 }
 
 void sub_80694C0(Entity *target,s32 x,s32 y,u8 param_4)

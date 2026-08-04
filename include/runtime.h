@@ -55,6 +55,10 @@ typedef struct {
     u8 overkill_exp_bonus;
     /* SpriteCollab portraits for starter evolutions (else vanilla kao / none) */
     u8 custom_portraits;
+    /* Mix outlaw hunt jobs onto the Pelipper bulletin board */
+    u8 outlaw_missions;
+    /* Regenerate Pelipper bulletin jobs whenever the board UI closes */
+    u8 refresh_bulletin_on_exit;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

@@ -28,6 +28,7 @@
 #include "dungeon_strings.h"
 #include "dungeon_cutscene.h"
 #include "dungeon_portrait_placement.h"
+#include "dungeon_random.h"
 
 static EWRAM_DATA Entity *sLastLogMsgEntity = NULL;
 static UNUSED EWRAM_DATA u8 sUnused = 0;
@@ -660,6 +661,15 @@ void DisplayYouReachedDestFloorStr(void)
     }
     else {
         DisplayDungeonMessage_Async(NULL, gUnknown_80FF6A4, 1);
+        if (gDungeon->unk644.outlawHunt && gDungeon->unk644.unk44 != 0) {
+            struct MonDialogueSpriteInfo dialogueInfo;
+            s32 line = DungeonRandInt(5);
+
+            dialogueInfo.species = gDungeon->unk644.unk44;
+            dialogueInfo.spriteId = 0;
+            CopyCyanMonsterNametoBuffer(gFormatBuffer_Monsters[0], gDungeon->unk644.unk44);
+            DisplayDungeonMessage_Async(&dialogueInfo, gOutlawEncounterDialogue[line], 1);
+        }
     }
 }
 

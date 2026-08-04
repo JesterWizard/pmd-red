@@ -567,6 +567,11 @@ ALIGNED(4) const u8 gUnknown_80E8B20[] = _("Help me.");
 ALIGNED(4) const u8 gUnknown_80E8B2C[] = _("Escort to {COLOR YELLOW}%s{RESET}.");
 ALIGNED(4) const u8 gUnknown_80E8B40[] = _("Find {COLOR YELLOW}%s{RESET}.");
 ALIGNED(4) const u8 gSpecialMissionText[] = _("Special mission");
+ALIGNED(4) const u8 gOutlawWantedTitle[] = _("Wanted: {COLOR YELLOW}%s{RESET}!");
+ALIGNED(4) const u8 gOutlawHuntDescription[] = _(
+    "The outlaw {COLOR YELLOW}%s{RESET} is on the loose!\n"
+    "Please defeat it!");
+ALIGNED(4) const u8 gOutlawObjectiveText[] = _("Defeat {COLOR YELLOW}%s{RESET}.");
 ALIGNED(4) const u8 gPlaceText[] = _("Place:");
 ALIGNED(4) const u8 gDifficultyText[] = _("Difficulty:");
 ALIGNED(4) const u8 gRewardText[] = _("Reward:");
