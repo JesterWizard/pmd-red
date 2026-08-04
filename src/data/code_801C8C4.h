@@ -17,3 +17,4 @@ static const WindowTemplate sUnknown_80DBE54 = {
 };
 
 ALIGNED(4) static const u8 sStorage[] = _("Storage");
+ALIGNED(4) static const u8 sStorageUsedMaxFmt[] = _("Storage %d/%d");

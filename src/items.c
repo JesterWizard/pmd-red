@@ -133,7 +133,7 @@ void InitializeMoneyItems(void)
 
 s32 GetBagItemsPerPage(void)
 {
-    if (gRuntimeConfig.rank_bag_pages)
+    if (gRuntimeConfig.rank_rewards)
         return BAG_ITEMS_PER_PAGE_RANK;
     return BAG_ITEMS_PER_PAGE_VANILLA;
 }
@@ -142,7 +142,7 @@ s32 GetBagPageCount(void)
 {
     s32 pages;
 
-    if (!gRuntimeConfig.rank_bag_pages)
+    if (!gRuntimeConfig.rank_rewards)
         return BAG_PAGES_MIN;
 
     pages = BAG_PAGES_MIN + GetRescueTeamRank();
@@ -151,11 +151,95 @@ s32 GetBagPageCount(void)
     return pages;
 }
 
+s32 GetBagCapacityForRank(u8 rank)
+{
+    s32 pages;
+
+    if (!gRuntimeConfig.rank_rewards)
+        return INVENTORY_SIZE_VANILLA;
+
+    pages = BAG_PAGES_MIN + rank;
+    if (pages > BAG_PAGES_MAX)
+        pages = BAG_PAGES_MAX;
+    return pages * BAG_ITEMS_PER_PAGE_RANK;
+}
+
 s32 GetBagCapacity(void)
 {
-    if (!gRuntimeConfig.rank_bag_pages)
+    if (!gRuntimeConfig.rank_rewards)
         return INVENTORY_SIZE_VANILLA;
     return GetBagPageCount() * BAG_ITEMS_PER_PAGE_RANK;
+}
+
+s32 GetMaxStorageQuantity(void)
+{
+    if (gRuntimeConfig.compact_kangaskhan_storage)
+        return MAX_STORAGE_QUANTITY_COMPACT;
+    return MAX_STORAGE_QUANTITY_U8;
+}
+
+s32 GetStorageUsedCount(void)
+{
+    s32 i;
+    s32 total = 0;
+
+    for (i = 0; i < STORAGE_SIZE; i++)
+        total += gTeamInventoryRef->teamStorage[i];
+    return total;
+}
+
+s32 GetStorageCapacityForRank(u8 rank)
+{
+    static const s32 sStorageCapacityByRank[MAX_TEAM_RANKS] = {
+        [NORMAL_RANK] = STORAGE_CAPACITY_NORMAL,
+        [BRONZE_RANK] = STORAGE_CAPACITY_BRONZE,
+        [SILVER_RANK] = STORAGE_CAPACITY_SILVER,
+        [GOLD_RANK] = STORAGE_CAPACITY_GOLD,
+        [PLATINUM_RANK] = STORAGE_CAPACITY_PLATINUM,
+        [DIAMOND_RANK] = STORAGE_CAPACITY_PLATINUM,
+        [LUCARIO_RANK] = STORAGE_CAPACITY_PLATINUM,
+    };
+
+    if (!gRuntimeConfig.rank_rewards)
+        return STORAGE_CAPACITY_UNLIMITED;
+    if (rank >= MAX_TEAM_RANKS)
+        rank = LUCARIO_RANK;
+    return sStorageCapacityByRank[rank];
+}
+
+s32 GetStorageCapacity(void)
+{
+    return GetStorageCapacityForRank(GetRescueTeamRank());
+}
+
+s32 GetStorageDepositQuantity(const Item *slot)
+{
+    if (IsThrownItem(slot->id))
+        return slot->quantity;
+    return 1;
+}
+
+bool8 CanAddQuantityToStorage(u8 itemId, s32 quantity)
+{
+    s32 newQty;
+    s32 maxQty;
+    s32 used;
+    s32 capacity;
+
+    if (quantity <= 0 || itemId >= STORAGE_SIZE || !IsNotMoneyOrUsedTMItem(itemId))
+        return FALSE;
+
+    maxQty = GetMaxStorageQuantity();
+    newQty = gTeamInventoryRef->teamStorage[itemId] + quantity;
+    if (newQty > maxQty)
+        return FALSE;
+
+    used = GetStorageUsedCount();
+    capacity = GetStorageCapacity();
+    if (used + quantity > capacity)
+        return FALSE;
+
+    return TRUE;
 }
 
 bool8 IsBagFull(void)
@@ -1015,14 +1099,27 @@ bool8 HasGummiItem(void)
 // arm9.bin::0205FB18
 void MoveToStorage(Item* slot)
 {
-    if (IsThrownItem(slot->id))
-        gTeamInventoryRef->teamStorage[slot->id] += slot->quantity;
-    else
-        gTeamInventoryRef->teamStorage[slot->id]++;
+    s32 add;
+    s32 max;
+    s32 qty;
+    s32 space;
 
-    if (gTeamInventoryRef->teamStorage[slot->id] > 999)
-        gTeamInventoryRef->teamStorage[slot->id] = 999;
+    if (slot->id >= STORAGE_SIZE)
+        return;
 
+    add = GetStorageDepositQuantity(slot);
+    max = GetMaxStorageQuantity();
+    qty = gTeamInventoryRef->teamStorage[slot->id];
+    space = GetStorageCapacity() - GetStorageUsedCount();
+
+    if (add > space)
+        add = space;
+    if (qty + add > max)
+        add = max - qty;
+    if (add <= 0)
+        return;
+
+    gTeamInventoryRef->teamStorage[slot->id] = qty + add;
     NoteAchievementItemObtained(slot->id);
 }
 
@@ -1274,7 +1371,7 @@ s32 SaveTeamInventory(u8* unk0, u32 size)
         WriteItemSlotBits(&seri, &gTeamInventoryRef->teamItems[i]);
 
     for (i = 0; i < STORAGE_SIZE; i++)
-        WriteBits(&seri, &gTeamInventoryRef->teamStorage[i], 10);
+        WriteBits(&seri, &gTeamInventoryRef->teamStorage[i], STORAGE_QUANTITY_BITS);
 
     for (i = 0; i < MAX_KECLEON_ITEM_SHOP_ITEMS; i++)
         WriteHeldItemBits(&seri, &gTeamInventoryRef->kecleonShopItems[i]);
@@ -1300,8 +1397,11 @@ s32 RestoreTeamInventory(u8 *unk0, u32 size)
     for (i = 0; i < INVENTORY_SIZE; i++)
         ReadItemSlotBits(&seri, &gTeamInventoryRef->teamItems[i]);
 
-    for (i = 0; i < STORAGE_SIZE; i++)
-        ReadBits(&seri, &gTeamInventoryRef->teamStorage[i], 10);
+    for (i = 0; i < STORAGE_SIZE; i++) {
+        ReadBits(&seri, &gTeamInventoryRef->teamStorage[i], STORAGE_QUANTITY_BITS);
+        if (gTeamInventoryRef->teamStorage[i] > GetMaxStorageQuantity())
+            gTeamInventoryRef->teamStorage[i] = GetMaxStorageQuantity();
+    }
 
     for (i = 0; i < MAX_KECLEON_ITEM_SHOP_ITEMS; i++)
         ReadHeldItemBits(&seri, &gTeamInventoryRef->kecleonShopItems[i]);

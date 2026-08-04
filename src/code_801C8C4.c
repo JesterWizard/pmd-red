@@ -1,11 +1,13 @@
 #include "global.h"
 #include "globaldata.h"
+#include "code_800D090.h"
 #include "music_util.h"
 #include "code_801C8C4.h"
 #include "input.h"
 #include "items.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "runtime.h"
 #include "text_1.h"
 #include "text_2.h"
 #include "text_3.h"
@@ -143,7 +145,7 @@ static void sub_801CC38(void)
 {
     sUnknown_203B244->unk4B4.header.count = 1;
     sUnknown_203B244->unk4B4.header.currId = 0;
-    sUnknown_203B244->unk4B4.header.width = 12;
+    sUnknown_203B244->unk4B4.header.width = gRuntimeConfig.rank_rewards ? 16 : 12;
     sUnknown_203B244->unk4B4.header.f3 = 0;
 
     UPDATE_MENU_WINDOW_HEIGHT(sUnknown_203B244->unk4B4.m);
@@ -159,8 +161,18 @@ void sub_801CCD8(void)
 
     CallPrepareTextbox_8008C54(sUnknown_203B244->unk4B4.m.menuWinId);
     sub_80073B8(sUnknown_203B244->unk4B4.m.menuWinId);
-    PrintStringOnWindow(10, 0, sStorage, sUnknown_203B244->unk4B4.m.menuWinId, 0);
-    PrintNumOnWindow(sUnknown_203B244->unk4B4.header.width * 8 + 4, 0, sUnknown_203B244->unk4B4.m.input.currPage + 1, 2, 7, sUnknown_203B244->unk4B4.m.menuWinId);
+
+    if (gRuntimeConfig.rank_rewards) {
+        sprintfStatic(buffer, sStorageUsedMaxFmt,
+                      GetStorageUsedCount(), GetStorageCapacity());
+        PrintStringOnWindow(10, 0, buffer, sUnknown_203B244->unk4B4.m.menuWinId, 0);
+    }
+    else {
+        PrintStringOnWindow(10, 0, sStorage, sUnknown_203B244->unk4B4.m.menuWinId, 0);
+        PrintNumOnWindow(sUnknown_203B244->unk4B4.header.width * 8 + 4, 0,
+                         sUnknown_203B244->unk4B4.m.input.currPage + 1, 2, 7,
+                         sUnknown_203B244->unk4B4.m.menuWinId);
+    }
 
     for(index = 0; index < sUnknown_203B244->unk4B4.m.input.currPageEntries; index++) {
         itemID = sUnknown_203B244->itemIDs[(sUnknown_203B244->unk4B4.m.input.currPage * sUnknown_203B244->unk4B4.m.input.entriesPerPage) + index];
@@ -232,8 +244,11 @@ bool8 sub_801CF50(s32 a0)
     if (a0 == 2)
         return FALSE;
 
+    if (GetStorageUsedCount() >= GetStorageCapacity())
+        return TRUE;
+
     for (itemID = ITEM_STICK; itemID < NUMBER_OF_ITEM_IDS; itemID++) {
-        if (IsNotMoneyOrUsedTMItem(itemID) && gTeamInventoryRef->teamStorage[itemID] < 999)
+        if (IsNotMoneyOrUsedTMItem(itemID) && gTeamInventoryRef->teamStorage[itemID] < GetMaxStorageQuantity())
             return FALSE;
     }
 

@@ -43,6 +43,7 @@
 #include "palette_util.h"
 #include "pokemon_3.h"
 #include "memory.h"
+#include "runtime.h"
 #include "script_item.h"
 #include "ground_lives_helper.h"
 #include "friend_area_dialogue.h"
@@ -3710,7 +3711,7 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
             {
                 static const Item item = {.flags = 0, .quantity = 0, .id = ITEM_WISH_STONE};
                 if (IsBagFull()) {
-                    if (IsNotMoneyOrUsedTMItem(item.id) && gTeamInventoryRef->teamStorage[item.id] < 999)
+                    if (IsNotMoneyOrUsedTMItem(item.id) && CanAddQuantityToStorage(item.id, 1))
                         gTeamInventoryRef->teamStorage[item.id] += 1;
 
                 }
@@ -3850,11 +3851,49 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                 s32 points = GetPtsToNextRank();
                 if (points > 0) {
                     s32 rankAfter;
+                    const u8 *msg;
+                    bool8 bagUp;
+                    bool8 storageUp;
+
                     AddToTeamRankPts(points);
                     rankAfter = GetRescueTeamRank();
                     InlineStrcpy(gFormatBuffer_Items[0], GetTeamRankString(rankBefore));
                     InlineStrcpy(gFormatBuffer_Items[1], GetTeamRankString(rankAfter));
-                    if (ScriptPrintText(SCRIPT_TEXT_TYPE_INSTANT, -1, _("{CENTER_ALIGN}The rescue rank went up from\n{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!")) != 0)
+
+                    bagUp = gRuntimeConfig.rank_rewards
+                        && GetBagCapacityForRank(rankAfter) > GetBagCapacityForRank(rankBefore);
+                    storageUp = gRuntimeConfig.rank_rewards
+                        && GetStorageCapacityForRank(rankAfter) > GetStorageCapacityForRank(rankBefore);
+
+                    gFormatArgs[0] = GetBagCapacityForRank(rankAfter);
+                    gFormatArgs[1] = GetStorageCapacityForRank(rankAfter);
+
+                    if (bagUp && storageUp) {
+                        msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
+                                "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Your Toolbox can hold more items now!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Kangaskhan Storage can hold more items now!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_1}{RESET} items!");
+                    }
+                    else if (bagUp) {
+                        msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
+                                "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Your Toolbox can hold more items now!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+                    }
+                    else if (storageUp) {
+                        msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
+                                "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Kangaskhan Storage can hold more items now!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_1}{RESET} items!");
+                    }
+                    else {
+                        msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
+                                "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!");
+                    }
+
+                    if (ScriptPrintText(SCRIPT_TEXT_TYPE_INSTANT, -1, msg) != 0)
                         return 1;
                 }
                 else {
@@ -3917,7 +3956,7 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                 static const Item appleItem = {.flags = 0, .quantity = 0, .id = ITEM_APPLE};
                 for (i = 0; i < 3; i++) {
                     if (IsBagFull()) {
-                        if (IsNotMoneyOrUsedTMItem(appleItem.id) && gTeamInventoryRef->teamStorage[appleItem.id] < 999)
+                        if (IsNotMoneyOrUsedTMItem(appleItem.id) && CanAddQuantityToStorage(appleItem.id, 1))
                             gTeamInventoryRef->teamStorage[appleItem.id] += 1;
 
                     }

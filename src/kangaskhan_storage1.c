@@ -150,10 +150,9 @@ static void sub_8016E80(void)
     switch (gKangaskhanStorageWork->currState) {
         case 13:
         case 14:
-            gKangaskhanStorageWork->unkEC.id[0] = sUnknown_80DB748;
+            gKangaskhanStorageWork->unkEC.id[0] = sUnknown_80DB778;
             gKangaskhanStorageWork->unkEC.id[1] = sUnknown_80DB748;
             gKangaskhanStorageWork->unkEC.id[2] = sUnknown_80DB748;
-            gKangaskhanStorageWork->unkEC.id[0] = sUnknown_80DB748;
             break;
         case 22:
         case 23:
@@ -166,6 +165,9 @@ static void sub_8016E80(void)
             gKangaskhanStorageWork->unkEC.id[1] = sUnknown_80DB790;
             break;
         case 15:
+            gKangaskhanStorageWork->unkEC.id[0] = sUnknown_80DB778;
+            gKangaskhanStorageWork->unkEC.id[2] = sUnknown_80DB760;
+            break;
         case 25:
             gKangaskhanStorageWork->unkEC.id[2] = sUnknown_80DB760;
             break;
@@ -247,12 +249,15 @@ static void sub_8016FF8(void)
             break;
         case 13:
             sub_801A5D8(3, 3, NULL, 10);
+            DrawStorageCapacityWindow(0);
             break;
         case 14:
             sub_801A8D0(TRUE);
+            DrawStorageCapacityWindow(0);
             break;
         case 15:
             sub_801A9E0();
+            DrawStorageCapacityWindow(0);
             sub_80176B8();
             sub_8012D60(&gKangaskhanStorageWork->unk58, gKangaskhanStorageWork->unk24, NULL, gKangaskhanStorageWork->unk4C, gKangaskhanStorageWork->menuAction2, 2);
             break;

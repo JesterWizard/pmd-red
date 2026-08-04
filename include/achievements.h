@@ -6,7 +6,9 @@
 
 #define ACHIEVEMENTS_SAVE_SIZE 0x80
 #define ACHIEVEMENTS_DATA_SIZE 0x70
-#define ACH_POPUP_QUEUE_SIZE 4
+#define ACH_POPUP_QUEUE_SIZE 6
+#define ACH_POPUP_RANK_BAG 0xFD
+#define ACH_POPUP_RANK_STORAGE 0xFE
 
 enum AchievementId
 {
@@ -45,8 +47,8 @@ struct AchievementsData
     /* 0x28 */ u8 itemsEverGot[30];
     /* 0x46 */ u8 runFlags;
     /* 0x47 */ u8 popupQueue[ACH_POPUP_QUEUE_SIZE];
-    /* 0x4B */ u8 popupCount;
-    /* 0x4C */ u8 fill4C[0x24];
+    /* 0x4D */ u8 popupCount;
+    /* 0x4E */ u8 fill4E[0x22];
 };
 
 extern struct AchievementsData gAchievementsData;

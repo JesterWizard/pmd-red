@@ -37,10 +37,13 @@ typedef struct {
     u8 pmd2_training_grounds;
     /* Felicity Bank interest on successful dungeon clear (percent; 0 = off) */
     u8 bank_interest_percent;
-    /* Rank-based bag pages: 8/page, unlock pages via rescue rank (else vanilla 20/10) */
-    u8 rank_bag_pages;
+    /* Rank rewards: bag pages + Kangaskhan storage capacity by rescue rank
+     * (else vanilla bag 20/10 and unlimited storage totals) */
+    u8 rank_rewards;
     /* Parallel achievements system (title menu + tracking + rewards) */
     u8 achievements;
+    /* Compact Kangaskhan storage: u8 counts, max 99/item (else max 255) */
+    u8 compact_kangaskhan_storage;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

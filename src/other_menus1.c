@@ -200,8 +200,19 @@ static void sub_80371B8(void)
 
         if (sUnknown_203B35C->linkStatus != COMMS_GOOD && sUnknown_203B35C->unk0 == 0) {
             item = sub_8035D94();
-            if (item->itemIndex != ITEM_NOTHING && item->numItems != 0)
-                gTeamInventoryRef->teamStorage[item->itemIndex] += item->numItems;
+            if (item->itemIndex != ITEM_NOTHING && item->numItems != 0) {
+                s32 add = item->numItems;
+                s32 max = GetMaxStorageQuantity();
+                s32 qty = gTeamInventoryRef->teamStorage[item->itemIndex];
+                s32 space = GetStorageCapacity() - GetStorageUsedCount();
+
+                if (add > space)
+                    add = space;
+                if (qty + add > max)
+                    add = max - qty;
+                if (add > 0)
+                    gTeamInventoryRef->teamStorage[item->itemIndex] = qty + add;
+            }
         }
     }
 }

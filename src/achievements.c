@@ -89,6 +89,14 @@ static const u8 *const sAchievementRewardTexts[ACH_MAX] = {
 static const u8 sAchievementUnlockedMsg[] = _(
     "{CENTER_ALIGN}Achievement unlocked!\n{CENTER_ALIGN}{MOVE_ITEM_0}\n{CENTER_ALIGN}Reward: {MOVE_ITEM_1}");
 
+static const u8 sRankBagUpgradeMsg[] = _(
+    "{CENTER_ALIGN}Your Toolbox can hold more items now!{EXTRA_MSG}"
+    "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+
+static const u8 sRankStorageUpgradeMsg[] = _(
+    "{CENTER_ALIGN}Kangaskhan Storage can hold more items now!{EXTRA_MSG}"
+    "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+
 static bool8 IsTrackableDungeon(u8 dungeonId);
 static bool8 HasVisitedAllDungeons(void);
 static bool8 HasCollectedAllTMs(void);
@@ -97,6 +105,7 @@ static bool8 HasRecruitedAllSpecies(void);
 static void UnlockAchievement(u8 id);
 static void GrantAchievementReward(u8 id);
 static void QueueAchievementPopup(u8 id);
+static void QueueRankRewardPopups(u8 rankBefore, u8 rankAfter);
 static void AddItemQtyToStorage(u8 itemId, s32 qty);
 
 void InitAchievements(void)
@@ -199,15 +208,30 @@ static void QueueAchievementPopup(u8 id)
 
 static void UnlockAchievement(u8 id)
 {
+    u8 rankBefore;
+
     if (!gRuntimeConfig.achievements || id >= ACH_MAX)
         return;
     if (GetAchievementUnlocked(id))
         return;
 
+    rankBefore = GetRescueTeamRank();
     gAchievementsData.unlocked[id / 32] |= (1 << (id % 32));
     GrantAchievementReward(id);
     QueueAchievementPopup(id);
+    QueueRankRewardPopups(rankBefore, GetRescueTeamRank());
     PlayFanfareSE(0x137, 0x100);
+}
+
+static void QueueRankRewardPopups(u8 rankBefore, u8 rankAfter)
+{
+    if (!gRuntimeConfig.rank_rewards || rankAfter <= rankBefore)
+        return;
+
+    if (GetBagCapacityForRank(rankAfter) > GetBagCapacityForRank(rankBefore))
+        QueueAchievementPopup(ACH_POPUP_RANK_BAG);
+    if (GetStorageCapacityForRank(rankAfter) > GetStorageCapacityForRank(rankBefore))
+        QueueAchievementPopup(ACH_POPUP_RANK_STORAGE);
 }
 
 static bool8 IsTrackableDungeon(u8 dungeonId)
@@ -351,6 +375,17 @@ void ProcessAchievementUnlockQueue(void)
             MemoryCopy8(&gAchievementsData.popupQueue[0],
                         &gAchievementsData.popupQueue[1],
                         gAchievementsData.popupCount);
+        }
+
+        if (id == ACH_POPUP_RANK_BAG) {
+            gFormatArgs[0] = GetBagCapacity();
+            ScriptPrintText(SCRIPT_TEXT_TYPE_INSTANT, -1, sRankBagUpgradeMsg);
+            break;
+        }
+        if (id == ACH_POPUP_RANK_STORAGE) {
+            gFormatArgs[0] = GetStorageCapacity();
+            ScriptPrintText(SCRIPT_TEXT_TYPE_INSTANT, -1, sRankStorageUpgradeMsg);
+            break;
         }
 
         if (id >= ACH_MAX)

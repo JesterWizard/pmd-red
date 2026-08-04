@@ -20,4 +20,5 @@ ALIGNED(4) static const u8 sTeamToolboxFmt[] = _("Team Toolbox %d/%d");
 ALIGNED(4) static const u8 sFmtMoveItem0[] = _("{COLOR RED_RAW}{MOVE_ITEM_0}{RESET}");
 ALIGNED(4) static const u8 sFmtRed[] = _("{COLOR RED}%s{RESET}");
 ALIGNED(4) static const u8 sItems[] = _("Items");
+ALIGNED(4) static const u8 sStorage[] = _("Storage");
 ALIGNED(4) static const u8 sSlash[] = _("/");

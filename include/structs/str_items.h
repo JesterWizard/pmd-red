@@ -57,15 +57,15 @@ typedef struct BulkItem
     /* 0x1 */ u8 quantity;
 } BulkItem;
 
-// size: R=0x268 | B=0x23C
+// size: 0x2C8 with INVENTORY_SIZE 48 + u8 teamStorage[480]
 typedef struct TeamInventory
 {
-    /* R=0x0   | B=0x0   */ Item teamItems[INVENTORY_SIZE];
-    /* R=0x50  | B=0x3C  */ u16 teamStorage[STORAGE_SIZE];
-    /* R=0x230 | B=0x21C */ BulkItem kecleonShopItems[MAX_KECLEON_ITEM_SHOP_ITEMS];
-    /* R=0x250 | B=0x22C */ BulkItem kecleonWareItems[MAX_KECLEON_WARE_SHOP_ITEMS];
-    /* R=0x260 | B=0x234 */ s32 teamMoney;
-    /* R=0x264 | B=0x238 */ s32 teamSavings;
+    /* 0x0 */ Item teamItems[INVENTORY_SIZE];
+    /* 0xC0 */ u8 teamStorage[STORAGE_SIZE]; /* u8 counts; 480 ids of headroom */
+    /* 0x2A0 */ BulkItem kecleonShopItems[MAX_KECLEON_ITEM_SHOP_ITEMS];
+    /* 0x2B0 */ BulkItem kecleonWareItems[MAX_KECLEON_WARE_SHOP_ITEMS];
+    /* 0x2B8 */ s32 teamMoney;
+    /* 0x2BC */ s32 teamSavings;
 } TeamInventory;
 
 // TODO: These should be in constants/

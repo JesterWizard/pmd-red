@@ -2424,7 +2424,7 @@ u32 GetMaxItemsAllowed(u8 dungeon)
 {
     u32 max = gDungeons[dungeon].maxItemsAllowed;
 
-    if (gRuntimeConfig.rank_bag_pages && max == INVENTORY_SIZE_VANILLA)
+    if (gRuntimeConfig.rank_rewards && max == INVENTORY_SIZE_VANILLA)
         return GetBagCapacity();
     return max;
 }

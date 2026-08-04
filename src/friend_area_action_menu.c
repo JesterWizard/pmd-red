@@ -757,10 +757,10 @@ bool8 sub_8027E4C(Pokemon *pokeStruct)
     {
         if(IsThrownItem(pokeStruct->heldItem.id))
         {
-            if(gTeamInventoryRef->teamStorage[pokeStruct->heldItem.id] + pokeStruct->heldItem.quantity > 0x3e7)
+            if(!CanAddQuantityToStorage(pokeStruct->heldItem.id, pokeStruct->heldItem.quantity))
                 return FALSE;
         }
-        else if(gTeamInventoryRef->teamStorage[pokeStruct->heldItem.id] > 0x3e6)
+        else if(!CanAddQuantityToStorage(pokeStruct->heldItem.id, 1))
         {
             return FALSE;
         }

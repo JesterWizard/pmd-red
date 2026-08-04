@@ -227,11 +227,11 @@ u32 ReadSaveFromPak(u32 *a)
             saveStatus = 3;
         }
         r4 += 150 * 4;
-        r1 = RestoreTeamInventory(r4, 0x230);
+        r1 = RestoreTeamInventory(r4, TEAM_INVENTORY_SAVE_SIZE);
         if (r1 != playerSave->savedTeamInventory) {
             saveStatus = 3;
         }
-        r4 += 0x230;
+        r4 += TEAM_INVENTORY_SAVE_SIZE;
         r1 = ReadRescueTeamInfo(r4, 0x10);
         if (r1 != playerSave->savedRescueTeamInfo) {
             saveStatus = 3;
@@ -347,8 +347,8 @@ u32 WriteSavetoPak(s32 *param_1, u32 param_2)
   array_ptr += 0x4650;
   playerSave->unk428 = SavePoke2s(array_ptr, 150 * 4);
   array_ptr += 150 * 4;
-  playerSave->savedTeamInventory = SaveTeamInventory(array_ptr,0x230);
-  array_ptr += 0x230;
+  playerSave->savedTeamInventory = SaveTeamInventory(array_ptr, TEAM_INVENTORY_SAVE_SIZE);
+  array_ptr += TEAM_INVENTORY_SAVE_SIZE;
   playerSave->savedRescueTeamInfo = SaveRescueTeamInfo(array_ptr,0x10);
   array_ptr += 0x10;
   playerSave->savedFriendAreas = SaveFriendAreas(array_ptr,8);

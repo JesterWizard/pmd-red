@@ -9,6 +9,7 @@
 #include "music_util.h"
 #include "pokemon.h"
 #include "rescue_team_info.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_1.h"
 
@@ -23,6 +24,8 @@ enum MR_State
     MR_STATE_NEXT_ITEM,
     MR_STATE_TEAM_PNTS_REWARD,
     MR_STATE_NEW_TEAM_RANK,
+    MR_STATE_RANK_BAG_UPGRADE,
+    MR_STATE_RANK_STORAGE_UPGRADE,
     MR_STATE_REWARD_EXIT,
 };
 
@@ -93,11 +96,20 @@ ALIGNED(4) static const u8 gUnknown_80E06A8[] = _(
         "{CENTER_ALIGN}from the {POKEMON_2}\n"
         "{CENTER_ALIGN}to the {POKEMON_3}!");
 
+ALIGNED(4) static const u8 sRankBagUpgradeMsg[] = _(
+        "{CENTER_ALIGN}Your Toolbox can hold more items now!{EXTRA_MSG}"
+        "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+
+ALIGNED(4) static const u8 sRankStorageUpgradeMsg[] = _(
+        "{CENTER_ALIGN}Kangaskhan Storage can hold more items now!{EXTRA_MSG}"
+        "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+
 static void MR_InitStateDialogue(void);
 static void MR_InitStateWindows(void);
 static void MR_SetState(u32 state);
 static void MR_ProceedToNextState(void);
 static void sub_802F6FC(void);
+static u32 MR_NextRankRewardState(u8 oldRank, u8 newRank, bool8 afterBagMsg);
 
 bool8 MR_Create(MissionRewards *rewards, bool8 displayClientSprite)
 {
@@ -338,23 +350,53 @@ static void MR_InitStateDialogue(void)
         }
         case MR_STATE_NEW_TEAM_RANK: {
             const u8 *rankString;
+            u8 newRank = GetRescueTeamRank();
 
             PlaySound(201);
-            sMRWork->nextState = MR_STATE_REWARD_EXIT;
+            sMRWork->nextState = MR_NextRankRewardState(sMRWork->currTeamRank, newRank, FALSE);
 
             rankString = GetTeamRankString(sMRWork->currTeamRank);
             strcpy(gFormatBuffer_Monsters[2], rankString);
 
-            rankString = GetTeamRankString(GetRescueTeamRank());
+            rankString = GetTeamRankString(newRank);
             strcpy(gFormatBuffer_Monsters[3], rankString);
 
             CreateDialogueBoxAndPortrait(gUnknown_80E06A8, 0, 0, 0x101);
+            break;
+        }
+        case MR_STATE_RANK_BAG_UPGRADE: {
+            u8 newRank = GetRescueTeamRank();
+
+            sMRWork->nextState = MR_NextRankRewardState(sMRWork->currTeamRank, newRank, TRUE);
+            gFormatArgs[0] = GetBagCapacityForRank(newRank);
+            CreateDialogueBoxAndPortrait(sRankBagUpgradeMsg, 0, 0, 0x101);
+            break;
+        }
+        case MR_STATE_RANK_STORAGE_UPGRADE: {
+            sMRWork->nextState = MR_STATE_REWARD_EXIT;
+            gFormatArgs[0] = GetStorageCapacityForRank(GetRescueTeamRank());
+            CreateDialogueBoxAndPortrait(sRankStorageUpgradeMsg, 0, 0, 0x101);
             break;
         }
         case MR_STATE_REWARD_EXIT: {
             break;
         }
     }
+}
+
+static u32 MR_NextRankRewardState(u8 oldRank, u8 newRank, bool8 afterBagMsg)
+{
+    if (!gRuntimeConfig.rank_rewards)
+        return MR_STATE_REWARD_EXIT;
+
+    if (!afterBagMsg
+        && GetBagCapacityForRank(newRank) > GetBagCapacityForRank(oldRank))
+        return MR_STATE_RANK_BAG_UPGRADE;
+
+    if (GetStorageCapacityForRank(newRank) > GetStorageCapacityForRank(oldRank))
+        return MR_STATE_RANK_STORAGE_UPGRADE;
+
+    return MR_STATE_REWARD_EXIT;
 }
 
 static void sub_802F6FC(void)

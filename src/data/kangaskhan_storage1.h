@@ -20,7 +20,7 @@ static const WindowTemplate sUnknown_80DB778 = {
     0,
     3,
     20, 9,
-    6, 3,
+    8, 3,
     3, 0,
     NULL
 };

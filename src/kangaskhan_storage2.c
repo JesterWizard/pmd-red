@@ -122,10 +122,9 @@ static void sub_8017F28(void)
             break;
         case 4:
         case 5:
-            sUnknown_203B20C->unkF0.id[0] = sUnknown_80DB7B8;
+            sUnknown_203B20C->unkF0.id[0] = sUnknown_80DB800;
             sUnknown_203B20C->unkF0.id[1] = sUnknown_80DB7B8;
             sUnknown_203B20C->unkF0.id[2] = sUnknown_80DB7B8;
-            sUnknown_203B20C->unkF0.id[0] = sUnknown_80DB7B8;
             break;
         case 10:
         case 11:
@@ -138,6 +137,9 @@ static void sub_8017F28(void)
             sUnknown_203B20C->unkF0.id[1] = sUnknown_80DB818;
             break;
         case 6:
+            sUnknown_203B20C->unkF0.id[0] = sUnknown_80DB800;
+            sUnknown_203B20C->unkF0.id[2] = sUnknown_80DB7E8;
+            break;
         case 13:
             sUnknown_203B20C->unkF0.id[2] = sUnknown_80DB7E8;
             break;
@@ -159,12 +161,15 @@ static void sub_8018100(void)
             break;
         case 4:
             sub_801A5D8(3, 3, NULL, 10);
+            DrawStorageCapacityWindow(0);
             break;
         case 5:
             sub_801A8D0(TRUE);
+            DrawStorageCapacityWindow(0);
             break;
         case 6:
             sub_801A9E0();
+            DrawStorageCapacityWindow(0);
             BuildKangaskhanStorage2StoreMenu();
             sub_8012D60(&sUnknown_203B20C->unk70, sUnknown_203B20C->unk20, 0, sUnknown_203B20C->unk60, sUnknown_203B20C->menuAction2, 2);
             break;

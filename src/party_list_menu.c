@@ -908,12 +908,12 @@ static bool8 CanTakePokemonHeldItem(Pokemon *r0)
     {
         if(IsThrownItem(r0->heldItem.id))
         {
-            if((gTeamInventoryRef->teamStorage[r0->heldItem.id] + r0->heldItem.quantity) > 999)
+            if(!CanAddQuantityToStorage(r0->heldItem.id, r0->heldItem.quantity))
                 return FALSE;
         }
         else
         {
-            if(gTeamInventoryRef->teamStorage[r0->heldItem.id] > 998)
+            if(!CanAddQuantityToStorage(r0->heldItem.id, 1))
                 return FALSE;
         }
     }

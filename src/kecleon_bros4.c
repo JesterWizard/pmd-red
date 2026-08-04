@@ -15,6 +15,7 @@
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
+#include "runtime.h"
 
 // This file seems to be the kecleon "sell" menu
 
@@ -331,39 +332,50 @@ void sub_801AD34(u32 param_1)
     sub_80073E0(param_1);
 }
 
+void DrawStorageCapacityWindow(u32 winId)
+{
+    if (!gRuntimeConfig.rank_rewards)
+        return;
+
+    CallPrepareTextbox_8008C54(winId);
+    sub_80073B8(winId);
+    PrintStringOnWindow(4, 0, sStorage, winId, 0);
+    PrintNumOnWindow(4, 13, GetStorageUsedCount(), 3, 7, winId);
+    PrintStringOnWindow(28, 13, sSlash, winId, 0);
+    PrintNumOnWindow(34, 13, GetStorageCapacity(), 3, 7, winId);
+    sub_80073E0(winId);
+}
+
 bool8 sub_801ADA0(s32 param_1)
 {
-    u16 uVar2;
-    u32 uVar2_32;
-
-    u16 uVar3;
-    u32 uVar3_32;
-    s32 sum1;
-    s32 sum2;
+    s32 pending;
+    s32 selectedSameId;
+    s32 selectedTotal;
+    s32 invIndex;
     Item item;
+    Item other;
 
     item = gTeamInventoryRef->teamItems[param_1];
     if (!IsNotMoneyOrUsedTMItem(item.id))
         return FALSE;
 
-    if (IsThrownItem(item.id)) {
-        uVar3_32 = sub_801AE24(item.id);
-        sum1 = gTeamInventoryRef->teamStorage[item.id];
-        uVar3 = uVar3_32;
-        sum1 += uVar3;
-        sum1 += (item.quantity);
-        if (sum1 > 999)
-            return FALSE;
+    pending = GetStorageDepositQuantity(&item);
+    selectedSameId = sub_801AE24(item.id);
+    if (gTeamInventoryRef->teamStorage[item.id] + selectedSameId + pending > GetMaxStorageQuantity())
+        return FALSE;
+
+    selectedTotal = 0;
+    for (invIndex = 0; invIndex < GetNumberOfFilledInventorySlots(); invIndex++) {
+        if (gUnknown_203B224->unk4[invIndex] != 0) {
+            other = gTeamInventoryRef->teamItems[invIndex];
+            if (IsNotMoneyOrUsedTMItem(other.id))
+                selectedTotal += GetStorageDepositQuantity(&other);
+        }
     }
-    else {
-        uVar2_32 = sub_801AE24(item.id);
-        sum2 = gTeamInventoryRef->teamStorage[item.id];
-        uVar2 = uVar2_32;
-        sum2 += uVar2;
-        if (sum2 > 998)
-            return FALSE;
-    }
-    return 1;
+    if (GetStorageUsedCount() + selectedTotal + pending > GetStorageCapacity())
+        return FALSE;
+
+    return TRUE;
 }
 
 static s32 sub_801AE24(u32 itemID)

@@ -290,7 +290,25 @@
 #define BAG_ITEMS_PER_PAGE_RANK 8
 #define BAG_PAGES_MIN 2
 #define BAG_PAGES_MAX 6
-#define STORAGE_SIZE NUMBER_OF_ITEM_IDS
+
+/* Kangaskhan storage: u8 count per item id. Sized for future catalog growth
+ * (up to 480 ids). Item.id is still u8 today, so only 0..255 are addressable
+ * until ids are widened; NUMBER_OF_ITEM_IDS remains the live catalog size. */
+#define STORAGE_SIZE 480
+#define TEAM_INVENTORY_SAVE_SIZE 0x290 /* was 0x230; fits STORAGE_SIZE * 8-bit counts */
+
+/* Kangaskhan storage per-id caps (counts are u8; see GetMaxStorageQuantity) */
+#define MAX_STORAGE_QUANTITY_COMPACT 99
+#define MAX_STORAGE_QUANTITY_U8 255
+#define STORAGE_QUANTITY_BITS 8 /* was 10 with vanilla u16/999 */
+
+/* Rank-based total storage capacity (sum of all quantities); PMD2-style */
+#define STORAGE_CAPACITY_NORMAL 64
+#define STORAGE_CAPACITY_BRONZE 96
+#define STORAGE_CAPACITY_SILVER 200
+#define STORAGE_CAPACITY_GOLD 320
+#define STORAGE_CAPACITY_PLATINUM 480
+#define STORAGE_CAPACITY_UNLIMITED 0x7FFFFFFF
 
 #define MIN_SPAWN_AMOUNT 0
 #define MAX_SPAWN_AMOUNT 1

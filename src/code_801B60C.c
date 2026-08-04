@@ -179,7 +179,7 @@ static void sub_801B874(void)
             else {
                 if (IsBagFull()) {
                     if (IsNotMoneyOrUsedTMItem(sUnknown_203B234->unk10.id)) {
-                        if (gTeamInventoryRef->teamStorage[sUnknown_203B234->unk10.id] + sUnknown_203B234->unkC > 999) {
+                        if (!CanAddQuantityToStorage(sUnknown_203B234->unk10.id, sUnknown_203B234->unkC)) {
 store:
                             sUnknown_203B234->fallbackState = 6;
                         }
