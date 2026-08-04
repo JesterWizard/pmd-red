@@ -32,6 +32,9 @@ typedef struct {
     u8 party_leader_switch;
     /* Show ally default portrait when talking in dungeon (if available) */
     u8 ally_talk_portrait;
+    /* PMD2-style Makuhita Dojo: 5 playable floors + auto-exit (no boss),
+     * with enemy levels/EXP scaling per floor (1/10/20/25/35) */
+    u8 pmd2_training_grounds;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

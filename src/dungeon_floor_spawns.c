@@ -19,7 +19,45 @@
 #include "text_1.h"
 #include "text_3.h"
 #include "dungeon_config.h"
+#include "runtime.h"
+#include "constants/fixed_rooms.h"
 #include "structs/dungeon_mapparam.h"
+
+/* PMD2 Marowak Dojo enemy levels by floor (B1F-B5F). EXP scales with level. */
+static const u8 sPmd2TrainingGroundLevels[] = {0, 1, 10, 20, 25, 35};
+
+static void ApplyPmd2TrainingGroundOverrides(void)
+{
+    u8 dungId;
+    u8 floor;
+    u8 level;
+    s32 i;
+
+    if (!gRuntimeConfig.pmd2_training_grounds)
+        return;
+
+    dungId = gDungeon->unk644.dungeonLocation.id;
+    if (dungId < DUNGEON_NORMAL_MAZE_2 || dungId > DUNGEON_STEEL_MAZE)
+        return;
+
+    floor = gDungeon->unk644.dungeonLocation.floor;
+    level = 1;
+    if (floor >= 1 && floor <= 5)
+        level = sPmd2TrainingGroundLevels[floor];
+
+    for (i = 0; i < MONSTER_SPAWNS_ARR_COUNT - 1; i++) {
+        s16 species = ExtractSpeciesIndex(&gDungeon->fileMonsterSpawns[i]);
+        if (species == 0)
+            break;
+        SetSpeciesLevelToExtract(&gDungeon->fileMonsterSpawns[i], level, species);
+    }
+
+    /* Safety: never run a dojo boss room under PMD2 rules. */
+    if (gDungeon->floorProperties.fixedRoomNumber >= FIRST_DOJO_MAZE_BOSS_ROOM
+        && gDungeon->floorProperties.fixedRoomNumber <= LAST_DOJO_MAZE_BOSS_ROOM) {
+        gDungeon->floorProperties.fixedRoomNumber = 0;
+    }
+}
 
 void sub_803D4AC(void)
 {
@@ -35,8 +73,11 @@ void SetFloorItemMonsterSpawns(void)
     struct DungeonMapParam1 *strPtr;
 
     GeneralizeMazeDungeonLoc(&gDungeon->unk644.dungeonLocation2, &gDungeon->unk644.dungeonLocation);
-    if (gDungeon->unk1C570.id == gDungeon->unk644.dungeonLocation2.id && gDungeon->unk1C570.floor == gDungeon->unk644.dungeonLocation2.floor)
+    if (gDungeon->unk1C570.id == gDungeon->unk644.dungeonLocation2.id && gDungeon->unk1C570.floor == gDungeon->unk644.dungeonLocation2.floor) {
+        /* Floors 3-5 share remapped B2F data; still refresh per-floor levels. */
+        ApplyPmd2TrainingGroundOverrides();
         return;
+    }
 
     gDungeon->unk1C570 = gDungeon->unk644.dungeonLocation2;
     file = OpenFileAndGetFileDataPtr("mapparam", &gDungeonFileArchive);
@@ -59,6 +100,8 @@ void SetFloorItemMonsterSpawns(void)
         SetSpeciesToExtract(&gDungeon->fileMonsterSpawns[i], 0);
         i++;
     }
+
+    ApplyPmd2TrainingGroundOverrides();
 
     for (i = 0; i < ITEM_SPAWN_TYPES_COUNT; i++)
     {

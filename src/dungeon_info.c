@@ -2470,8 +2470,18 @@ bool8 sub_809017C(DungeonLocation* a1)
 void GeneralizeMazeDungeonLoc(DungeonLocation *dst, const DungeonLocation *src)
 {
     if (DUNGEON_IS_MAZE(src->id)) {
+        s32 floorInMaze = src->floor;
+
         dst->id = DUNGEON_NORMAL_MAZE;
-        dst->floor = (src->id - DUNGEON_NORMAL_MAZE_2) * 3 + src->floor;
+        /* PMD2 training grounds reuse B1F/B2F spawn/layout data for all
+         * playable floors so we never load the B3F boss fixed room. */
+        if (gRuntimeConfig.pmd2_training_grounds
+            && src->id >= DUNGEON_NORMAL_MAZE_2
+            && src->id <= DUNGEON_STEEL_MAZE
+            && floorInMaze >= 3) {
+            floorInMaze = 2;
+        }
+        dst->floor = (src->id - DUNGEON_NORMAL_MAZE_2) * 3 + floorInMaze;
     }
     else {
         *dst = *src;
@@ -2500,8 +2510,15 @@ void CopyDungeonName1toBuffer(u8 *buffer, DungeonLocation *dungeonLocation)
 
 s32 GetDungeonFloorCount(u8 dungeon)
 {
-    if (DUNGEON_IS_MAZE(dungeon))
+    if (DUNGEON_IS_MAZE(dungeon)) {
+        /* Vanilla: 3 playable floors + boss, exit at 4.
+         * PMD2 training grounds: 5 playable floors, auto-exit at 6 (no boss). */
+        if (gRuntimeConfig.pmd2_training_grounds
+            && dungeon >= DUNGEON_NORMAL_MAZE_2
+            && dungeon <= DUNGEON_STEEL_MAZE)
+            return 6;
         return 4;
+    }
     else if (dungeon > DUNGEON_PURITY_FOREST)
         return 1;
     else
