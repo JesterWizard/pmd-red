@@ -45,6 +45,7 @@
 #include "dungeon_monster_house.h"
 #include "warp_target.h"
 #include "move_orb_effects_5.h"
+#include "runtime.h"
 
 static void sub_8067558(Entity *entity, Entity *targetEntity, s32 a2);
 static Entity *sub_806773C(Entity *entity);
@@ -649,6 +650,8 @@ static void sub_8067558(Entity *entity, Entity *targetEntity, s32 a2)
             s32 r2;
             s32 speciesId = info2->apparentID;
             bool8 r6 = FALSE;
+            struct MonDialogueSpriteInfo dialogueInfo;
+            struct MonDialogueSpriteInfo *dialogueInfoPtr = NULL;
 
             if (info2->joinedAt.id == DUNGEON_JOIN_LOCATION_CLIENT_POKEMON) {
                 speciesId = MONSTER_MUNCHLAX;
@@ -671,7 +674,12 @@ static void sub_8067558(Entity *entity, Entity *targetEntity, s32 a2)
             }
 
             sub_806A3D4(txt, speciesId,  r2, r6);
-            DisplayDungeonMessage_Async(NULL, txt, TRUE);
+            if (gRuntimeConfig.ally_talk_portrait) {
+                dialogueInfo.species = info2->apparentID;
+                dialogueInfo.spriteId = 0;
+                dialogueInfoPtr = &dialogueInfo;
+            }
+            DisplayDungeonMessage_Async(dialogueInfoPtr, txt, TRUE);
         }
     }
     else {
