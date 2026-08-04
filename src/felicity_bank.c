@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "constants/colors.h"
 #include "music_util.h"
 #include "common_strings.h"
 #include "felicity_bank.h"
@@ -7,12 +8,14 @@
 #include "memory.h"
 #include "menu_input.h"
 #include "pokemon.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
 #include "text_3.h"
 
 static EWRAM_INIT FelicityBankWork *sFelicityBankWork = {NULL};
+static EWRAM_DATA bool8 sFelicityBankInterestPending = {FALSE};
 
 #include "data/felicity_bank.h"
 
@@ -47,6 +50,31 @@ enum FelicityBankStates {
     FELICITY_BANK_TAKE_HOW_MUCH,
     FELICITY_BANK_TAKE_DEPOSIT,
 };
+
+void ApplyFelicityBankInterest(void)
+{
+    s32 percent;
+    s32 savings;
+    s32 interest;
+
+    percent = gRuntimeConfig.bank_interest_percent;
+    if (percent == 0)
+        return;
+
+    savings = gTeamInventoryRef->teamSavings;
+    if (savings <= 0 || savings >= MAX_TEAM_SAVINGS)
+        return;
+
+    interest = (savings * percent) / 100;
+    if (interest <= 0)
+        return;
+
+    if (savings + interest > MAX_TEAM_SAVINGS)
+        interest = MAX_TEAM_SAVINGS - savings;
+
+    gTeamInventoryRef->teamSavings = savings + interest;
+    sFelicityBankInterestPending = TRUE;
+}
 
 bool8 CreateFelicityBank(s32 mode)
 {
@@ -166,7 +194,18 @@ static void UpdateFelicityBankDialogue(void)
     switch (sFelicityBankWork->currState) {
         case FELICITY_BANK_INIT:
             sFelicityBankWork->fallbackState = 1;
-            CreateDialogueBoxAndPortrait(gCommonFelicity[sFelicityBankWork->mode][FEL_DLG_WELCOME], 0, sFelicityBankWork->monPortraitPtr, 0x10D);
+            if (sFelicityBankInterestPending) {
+                Pokemon *playerMon = GetLeaderMon1();
+
+                sFelicityBankInterestPending = FALSE;
+                if (playerMon != NULL)
+                    PrintColoredPokeNameToBuffer(gFormatBuffer_Names[0], playerMon, COLOR_CYAN);
+                gFormatArgs[0] = gRuntimeConfig.bank_interest_percent;
+                CreateDialogueBoxAndPortrait(gCommonFelicity[sFelicityBankWork->mode][FEL_DLG_INTEREST], 0, sFelicityBankWork->monPortraitPtr, 0x10D);
+            }
+            else {
+                CreateDialogueBoxAndPortrait(gCommonFelicity[sFelicityBankWork->mode][FEL_DLG_WELCOME], 0, sFelicityBankWork->monPortraitPtr, 0x10D);
+            }
             break;
         case 1:
             CreateFelicityBankShopMenu();

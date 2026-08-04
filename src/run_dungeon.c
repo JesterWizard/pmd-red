@@ -60,6 +60,7 @@
 #include "dungeon_mon_spawn.h"
 #include "dungeon_action_execution.h"
 #include "dungeon_8041AD0.h"
+#include "felicity_bank.h"
 #include "ground_main.h"
 #include "dungeon_mon_sprite_render.h"
 #include "adventure_info.h"
@@ -653,6 +654,7 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
     CloseDungeonMapFile();
     if (setupPtr->info.unk7C == 1 || setupPtr->info.unk7C == 4 || setupPtr->info.unk7C == 2) {
         CleanUpInventoryItems();
+        ApplyFelicityBankInterest();
     }
     if (setupPtr->info.unk7C == 1 || setupPtr->info.unk7C == -2 || setupPtr->info.unk7C == 4 || setupPtr->info.unk7C == -1 || setupPtr->info.unk7C == 2) {
         if (setupPtr->info.unk7C == 1 || setupPtr->info.unk7C == 4 || setupPtr->info.unk7C == 2) {

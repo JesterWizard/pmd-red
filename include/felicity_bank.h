@@ -28,5 +28,6 @@ bool8 CreateFelicityBank(s32 mode);
 void DestroyFelicityBank(void);
 void DrawTeamMoneyBox(u32);
 u32 FelicityBankCallback(void);
+void ApplyFelicityBankInterest(void);
 
 #endif // GUARD_FELICITY_BANK_H

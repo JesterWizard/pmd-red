@@ -66,6 +66,11 @@
     "will keep your money safe.{EXTRA_MSG}" \
     " Simple, isn't it?"))
 
+#define FEL_AWAKE_INTEREST (_( \
+    " Good to see you, {NAME_0}.{WAIT_PRESS}\n" \
+    "Your account has had {COLOR CYAN}{VALUE_0}{RESET}%\n" \
+    "interest added to it."))
+
 
 
 #define FEL_ASLEEP_WELCOME (_( \
@@ -155,3 +160,9 @@
     "money safe...{EXTRA_MSG}" \
     " Zzz...\n" \
     "Simple, isn't it...?"))
+
+#define FEL_ASLEEP_INTEREST (_( \
+    " Sssnore... Good to see you,\n" \
+    "{NAME_0}...{WAIT_PRESS}\n" \
+    "Your account has had {COLOR CYAN}{VALUE_0}{RESET}%\n" \
+    "interest added to it..."))

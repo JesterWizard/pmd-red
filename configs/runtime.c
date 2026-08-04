@@ -15,4 +15,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .party_leader_switch = TRUE, /* TRUE = dungeon Make Leader anytime (temp until postgame); FALSE = vanilla */
     .ally_talk_portrait = TRUE, /* TRUE = show ally default portrait when talking; FALSE = vanilla */
     .pmd2_training_grounds = TRUE, /* TRUE = 5 floors + exit, no boss, scaling levels; FALSE = vanilla 3F+boss */
+    .bank_interest_percent = 5, /* Percent interest on savings per dungeon clear; 0 = disabled */
 };

@@ -35,6 +35,8 @@ typedef struct {
     /* PMD2-style Makuhita Dojo: 5 playable floors + auto-exit (no boss),
      * with enemy levels/EXP scaling per floor (1/10/20/25/35) */
     u8 pmd2_training_grounds;
+    /* Felicity Bank interest on successful dungeon clear (percent; 0 = off) */
+    u8 bank_interest_percent;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;
