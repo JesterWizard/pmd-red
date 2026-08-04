@@ -85,8 +85,8 @@ DUNGEONJSON := tools/dungeonjson/dungeonjson
 
 PERL := perl
 
-TOOLDIRS := $(filter-out tools/agbcc tools/binutils,$(wildcard tools/*))
-TOOLBASE = $(TOOLDIRS:tools/%=%)
+TOOLDIRS := $(filter-out tools/agbcc/ tools/binutils/,$(wildcard tools/*/))
+TOOLBASE = $(TOOLDIRS:tools/%/=%)
 TOOLS = $(foreach tool,$(TOOLBASE),tools/$(tool)/$(tool)$(EXE))
 
 
@@ -150,6 +150,13 @@ ASM_SOURCES := $(wildcard asm/*.s data/*.s)
 C_ASM_SOURCES := $(wildcard src/*.s)
 SONG_SRCS := $(wildcard sound/songs/*.s)
 
+# Region fragments are .included by asm/ram_map.s — do not assemble alone.
+RAM_MAP_FRAGMENTS := \
+	asm/ram_map_iwram.s \
+	asm/ram_map_ewram.s \
+	asm/ram_map_sram.s
+ASM_SOURCES := $(filter-out $(RAM_MAP_FRAGMENTS),$(ASM_SOURCES))
+
 # Dead retail padding blobs with no code references. Kept on disk / in the
 # matching linker script so MODERN=0 can still reproduce the baserom layout.
 # See SESSION_HISTORY.md to restore them in the default (modern) build.
@@ -161,6 +168,9 @@ UNUSED_UNK_ASM := \
 	data/unk_9fbd5d0.s
 ifeq ($(MODERN),1)
   ASM_SOURCES := $(filter-out $(UNUSED_UNK_ASM),$(ASM_SOURCES))
+else
+  # Free-pool symbol object is for modern/hacks only (keeps matching clean).
+  ASM_SOURCES := $(filter-out asm/ram_map.s,$(ASM_SOURCES))
 endif
 
 C_OBJECTS := $(patsubst $(C_SUBDIR)/%.c,$(C_BUILDDIR)/%.o,$(C_SOURCES))
@@ -311,7 +321,7 @@ $(DATA_ASM_BUILDDIR)/%.d: $(DATA_ASM_SUBDIR)/%.s
 
 $(ASM_BUILDDIR)/%.o: $(ASM_SUBDIR)/%.s
 	@$(CPP) -x assembler-with-cpp $(CPPFLAGS) $< -o $(ASM_BUILDDIR)/$*.s
-	$(AS) $(ASFLAGS) -o $@ $(ASM_BUILDDIR)/$*.s
+	$(AS) $(ASFLAGS) -I $(ASM_SUBDIR) -o $@ $(ASM_BUILDDIR)/$*.s
 
 $(ASM_BUILDDIR)/%.d: $(ASM_SUBDIR)/%.s
 	@$(call scaninc,$(INCLUDE_PATHS))
