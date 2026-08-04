@@ -150,6 +150,19 @@ ASM_SOURCES := $(wildcard asm/*.s data/*.s)
 C_ASM_SOURCES := $(wildcard src/*.s)
 SONG_SRCS := $(wildcard sound/songs/*.s)
 
+# Dead retail padding blobs with no code references. Kept on disk / in the
+# matching linker script so MODERN=0 can still reproduce the baserom layout.
+# See SESSION_HISTORY.md to restore them in the default (modern) build.
+UNUSED_UNK_ASM := \
+	data/unk_96BD7AC.s \
+	data/unk_98589A4.s \
+	data/unk_9D02950.s \
+	data/unk_9E7EB08.s \
+	data/unk_9fbd5d0.s
+ifeq ($(MODERN),1)
+  ASM_SOURCES := $(filter-out $(UNUSED_UNK_ASM),$(ASM_SOURCES))
+endif
+
 C_OBJECTS := $(patsubst $(C_SUBDIR)/%.c,$(C_BUILDDIR)/%.o,$(C_SOURCES))
 ASM_OBJECTS  := $(addprefix $(BUILD_DIR)/, $(ASM_SOURCES:%.s=%.o))
 C_ASM_OBJECTS := $(addprefix $(BUILD_DIR)/, $(C_ASM_SOURCES:%.s=%.o))

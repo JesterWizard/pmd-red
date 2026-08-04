@@ -8,10 +8,10 @@ unpadded).
 | Image | Size |
 | --- | ---: |
 | `baserom.gba` | 32.00 MiB |
-| `pmd_red.gba` | ~29.85 MiB |
+| `pmd_red.gba` | ~27.5 MiB (varies with current strips) |
 
-Savings come from dropped 32 MiB padding plus LZ77 on ground **BPC/BMA**
-(~1.43 MiB raw→compressed).
+Savings: no 32 MiB pad, ground **BPC/BMA** LZ77 (~1.43 MiB), and unused opaque
+blobs stripped from the modern link (~2.36 MiB). See `SESSION_HISTORY.md`.
 
 ## Ground compression
 
