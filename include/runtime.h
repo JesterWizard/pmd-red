@@ -26,6 +26,8 @@ typedef struct {
     u8 pmd2_battle_info_colors;
     /* PMD2 Poké coin glyph + cyan money amount in dungeon HUD */
     u8 custom_graphics;
+    /* PMD2 Latin dialogue/UI font (Explorers glyph set); else vanilla */
+    u8 pmd2_font;
     /* Dungeon Make Leader anytime; temporary until exit unless postgame */
     u8 party_leader_switch;
     /* Show ally default portrait when talking in dungeon (if available) */
