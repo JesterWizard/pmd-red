@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_damage.h"
 #include "constants/ability.h"
 #include "constants/dungeon_modifiers.h"
@@ -697,6 +698,20 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
             if (!attackerData->isNotTeamMember) {
                 if (targetData->isNotTeamMember) {
                     s32 i;
+
+                    /* +25% EXP per full max-HP of overkill when one-shotting from full HP */
+                    if (gRuntimeConfig.overkill_exp_bonus
+                        && hpBefore == targetData->maxHPStat
+                        && targetData->maxHPStat > 0
+                        && dmgStruct->dmg != 9999)
+                    {
+                        s32 overkill = dmgStruct->dmg - hpBefore;
+                        if (overkill > 0) {
+                            s32 bonusPercent = (overkill / targetData->maxHPStat) * 25;
+                            if (bonusPercent > 0)
+                                exp += (exp * bonusPercent) / 100;
+                        }
+                    }
 
                     AddExpPoints(attacker, attacker, exp);
                     for (i = 0; i < MAX_TEAM_MEMBERS; i++) {

@@ -51,6 +51,8 @@ typedef struct {
     u8 dungeon_modifiers;
     /* Prompt to choose starter directly or take the personality quiz (else quiz only) */
     u8 starter_choice_prompt;
+    /* Extra EXP for one-shotting full-HP foes based on overkill damage */
+    u8 overkill_exp_bonus;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;
