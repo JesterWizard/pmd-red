@@ -7,4 +7,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .recruit_rate_boost = FALSE,
     .all_friend_areas = FALSE,
     .debug_menu = FALSE,
+    .disable_something_approaches = TRUE,
 };

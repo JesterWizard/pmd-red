@@ -19,6 +19,7 @@ typedef struct {
     u8 recruit_rate_boost;    /* +Friend Bow bonus to recruit rate */
     u8 all_friend_areas;      /* Own every Friend Area on load / new save */
     u8 debug_menu;            /* Add Debug to the title main menu */
+    u8 disable_something_approaches; /* Skip dungeon wind timer / blow-out */
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

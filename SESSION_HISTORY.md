@@ -152,6 +152,26 @@ BIOS LZ77).
 
 ---
 
+## 2026-08-04 — Faster incremental makes (AX tiles)
+
+### What changed
+- `ax-compress` no longer forces every `monster_gfx*.o` rebuild (it was
+  `.PHONY` → full cpp/cc1/as of all 43 units each `make`).
+- Lazy stamp `build/pmd_red/ax_tiles.stamp`: compressor always re-checks, but
+  stamp mtime only moves when a `.lz` is rewritten. `monster_gfx` depends
+  **order-only** on the stamp; per-tile rebuilds come from scaninc `.d` →
+  `.4bpp.lz`.
+- `compress_ax_tiles.py`: cache hits use `stat` only (no full-file reads);
+  `--stamp` / `--quiet` for make; verify only newly built tiles.
+- ELF now depends on `libagbsyscall/libagbsyscall.a` (real file) instead of
+  phony `libagbsyscall`, so no-op makes no longer re-link the whole ROM.
+
+### Reverse
+Restore `$(MONSTER_GFX_OBJECTS): ax-compress`, ELF ← `libagbsyscall`, and the
+old script loop.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |

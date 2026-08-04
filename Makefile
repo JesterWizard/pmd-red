@@ -211,7 +211,7 @@ endif
 ALL_BUILDS := red
 
 # Available targets
-.PHONY: all modern clean compare tidy ground-compress ax-compress libagbsyscall tools clean-tools $(TOOLDIRS)
+.PHONY: all modern clean compare tidy ground-compress ax-compress libagbsyscall tools clean-tools FORCE $(TOOLDIRS)
 
 # Pretend rules that are actually flags defer to `make all`
 modern: all
@@ -254,12 +254,23 @@ tools: $(TOOLDIRS)
 ground-compress: tools/gbagfx
 	python3 compress_ground_assets.py
 
-ax-compress: tools/gbagfx
-	python3 compress_ax_tiles.py
+# Lazy stamp: recipe always re-checks tiles (FORCE), but only refreshes the
+# stamp mtime when a .lz was rewritten. monster_gfx uses an order-only dep so
+# a stamp refresh does not force every gfx unit to rebuild — scaninc .d files
+# pull in the specific .4bpp.lz paths that changed.
+AX_TILES_STAMP := $(BUILD_DIR)/ax_tiles.stamp
 
-# Monster headers INCBIN compressed tiles; ensure they exist before assembling gfx units.
+ax-compress: $(AX_TILES_STAMP)
+
+FORCE: ;
+
+$(AX_TILES_STAMP): FORCE
+	@mkdir -p $(dir $@)
+	@python3 compress_ax_tiles.py --stamp $@ --quiet
+
+# Monster headers INCBIN compressed tiles; ensure they exist before assembling.
 MONSTER_GFX_OBJECTS := $(filter $(C_BUILDDIR)/monster_gfx%.o,$(C_OBJECTS))
-$(MONSTER_GFX_OBJECTS): ax-compress
+$(MONSTER_GFX_OBJECTS): | $(AX_TILES_STAMP)
 
 syms: $(SYM)
 
@@ -355,7 +366,9 @@ $(C_BUILDDIR)/%.o: $(C_SUBDIR)/%.s
 $(C_BUILDDIR)/%.d: $(C_SUBDIR)/%.s
 	@$(call scaninc,$(INCLUDE_PATHS))
 
-libagbsyscall:
+libagbsyscall: libagbsyscall/libagbsyscall.a
+
+libagbsyscall/libagbsyscall.a:
 	@$(MAKE) -C libagbsyscall TOOLCHAIN=$(TOOLCHAIN)
 
 $(BUILD_DIR)/sym_ewram.ld: sym_ewram.txt
@@ -391,7 +404,7 @@ endif
 
 # Elf from object files
 LDFLAGS = -Map ../../$(MAP)
-$(ELF): $(LD_SCRIPT) $(LD_SCRIPT_DEPS) $(ALL_OBJECTS) libagbsyscall
+$(ELF): $(LD_SCRIPT) $(LD_SCRIPT_DEPS) $(ALL_OBJECTS) libagbsyscall/libagbsyscall.a
 	@cd $(BUILD_DIR) && $(LD) $(LDFLAGS) -T ../../$< --print-memory-usage -o ../../$@ $(OBJS_REL) $(LIB) | cat
 	@echo "cd $(BUILD_DIR) && $(LD) $(LDFLAGS) -T ../../$< --print-memory-usage -o ../../$@ <objs> <libs> | cat"
 	$(GBAFIX) $@ -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(REVISION) --silent

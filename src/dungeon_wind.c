@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_wind.h"
 #include "dungeon_misc.h"
 #include "dungeon_message.h"
@@ -25,6 +26,9 @@
 void UpdateWindTurns(void)
 {
     Entity *leader = GetLeader();
+
+    if (gRuntimeConfig.disable_something_approaches)
+        return;
 
     if (!EntityIsValid(leader))
         return;
