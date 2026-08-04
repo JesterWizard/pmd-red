@@ -20,6 +20,7 @@
 #include "strings.h"
 #include "runtime.h"
 #include "event_flag.h"
+#include "custom_portraits.h"
 
 static EWRAM_DATA MonsterDataEntry *sMonsterParameters = {NULL}; // B=02135090
 static EWRAM_DATA OpenedFile *sMonsterParametersFile = {NULL};
@@ -897,6 +898,11 @@ OpenedFile *OpenPokemonDialogueSpriteFile(s16 index)
     // Looks like this loads the dialogue sprite for the pokemon
 
     char buffer[0xC];
+
+    if (gRuntimeConfig.custom_portraits && HasCustomPortrait(index)) {
+        sprintf(buffer, "ckao%03d", index);
+        return OpenFile(buffer, &gCustomPortraitArchive);
+    }
     if(sMonsterParameters[index].dialogueSprites == 0)
     {
         return NULL;
@@ -912,6 +918,10 @@ OpenedFile *GetDialogueSpriteDataPtr(s32 index)
     char buffer[0xC];
     s16 id = SpeciesId(index);
 
+    if (gRuntimeConfig.custom_portraits && HasCustomPortrait(id)) {
+        sprintf(buffer, "ckao%03d", id);
+        return OpenFileAndGetFileDataPtr(buffer, &gCustomPortraitArchive);
+    }
     if(sMonsterParameters[id].dialogueSprites == 0)
     {
         return NULL;
@@ -923,6 +933,8 @@ OpenedFile *GetDialogueSpriteDataPtr(s32 index)
 bool8 IsPokemonDialogueSpriteAvail(s16 index, s32 spriteId)
 {
     // checking to see if dialogue sprite is available??
+    if (gRuntimeConfig.custom_portraits && HasCustomPortrait(index))
+        return (GetCustomPortraitMask(index) >> spriteId) & 1;
     return (sMonsterParameters[index].dialogueSprites >> spriteId) & 1;
 }
 

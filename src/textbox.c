@@ -25,6 +25,8 @@
 #include "game_options.h"
 #include "ground_lives.h"
 #include "ground_main.h"
+#include "custom_portraits.h"
+#include "runtime.h"
 #include "ground_map.h"
 #include "ground_script.h"
 #include "gulpin_shop_801FB50.h"
@@ -475,7 +477,8 @@ static bool8 sub_809A8B8(s32 param_1, s32 param_2)
         case 7:
         case 33:
         case 34:
-        if (IsStarterMonster(speciesId)) {
+        if (IsStarterMonster(speciesId)
+            || (gRuntimeConfig.custom_portraits && HasCustomPortrait(speciesId))) {
             byte1 = TRUE;
         }
         else {

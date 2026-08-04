@@ -53,6 +53,8 @@ typedef struct {
     u8 starter_choice_prompt;
     /* Extra EXP for one-shotting full-HP foes based on overkill damage */
     u8 overkill_exp_bonus;
+    /* SpriteCollab portraits for starter evolutions (else vanilla kao / none) */
+    u8 custom_portraits;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

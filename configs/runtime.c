@@ -23,4 +23,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .dungeon_modifiers = TRUE, /* TRUE = 20% chance of a floor modifier; FALSE = off */
     .starter_choice_prompt = TRUE, /* TRUE = choose starter or take quiz; FALSE = quiz only */
     .overkill_exp_bonus = TRUE, /* TRUE = +25% EXP per 100% overkill on full-HP KO; FALSE = off */
+    .custom_portraits = TRUE, /* TRUE = SpriteCollab evo portraits; FALSE = vanilla kao / none */
 };

@@ -283,6 +283,18 @@ $(TITLE_BG_STAMP): FORCE
 
 $(C_BUILDDIR)/custom_title_backgrounds.o: | $(TITLE_BG_STAMP)
 
+# Custom starter-evolution portraits (PNG → AT4PN + pal + data.c).
+CUSTOM_PORTRAIT_STAMP := $(BUILD_DIR)/custom_portraits.stamp
+
+custom-portraits-convert: $(CUSTOM_PORTRAIT_STAMP)
+
+$(CUSTOM_PORTRAIT_STAMP): FORCE
+	@mkdir -p $(dir $@)
+	@python3 convert_custom_portraits.py --stamp $@ --quiet
+
+$(C_BUILDDIR)/custom_portraits_data.o: | $(CUSTOM_PORTRAIT_STAMP)
+$(C_BUILDDIR)/custom_portraits.o: | $(CUSTOM_PORTRAIT_STAMP)
+
 syms: $(SYM)
 
 include dungeon_pokemon.mk
