@@ -9,5 +9,6 @@
 #define COLOR_CYAN 5
 #define COLOR_YELLOW 6
 #define COLOR_WHITE_2 7
+#define COLOR_LIGHT_BLUE 14 /* fontpal #6787FF — PMD2 leader name */
 
 #endif //GUARD_CONSTANTS_COLORS_H

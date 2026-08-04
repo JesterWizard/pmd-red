@@ -196,6 +196,7 @@ const u8 *const gMonDisappointedAndLeft = _("{POKEMON_0} seemed disappointed and
 const u8 *const gUnknown_80F9158 = _("{POKEMON_0} used\nthe {MOVE_ITEM_0}.");
 const u8 *const gUnknown_80F9174 = _("$-Belly:{UNK_MACRO_3E M3E_147}{VALUE_0}/{VALUE_1}");
 const u8 *const gUnknown_80F9190 = _("Money:{UNK_MACRO_3E M3E_147}{VALUE_0} {POKE}");
+const u8 *const gText_MoneyCyan = _("Money:{UNK_MACRO_3E M3E_147}{color CYAN_RAW}{VALUE_0}{reset} {POKE}");
 const u8 *const gUnknown_80F91A8 = _("Weather:{UNK_MACRO_3E M3E_159}{POKEMON_0}");
 const u8 *const gUnknown_80F91C8 = _("Play:{UNK_MACRO_3E M3E_147}{VALUE_0}:$V12:$V22");
 const u8 *const gUnknown_80F91E0 = _("{POKEMON_0}{UNK_MACRO_3E M3E_66}$v03/$v13");
@@ -348,6 +349,7 @@ const u8 *const gUnknown_80F9DF0[] = {
 
 const u8 *const gUnknown_80F9E44 = _("{POKEMON_1} fainted!");
 const u8 *const gUnknown_80F9E64 = _("{POKEMON_0} gained {VALUE_0} Exp. Points!");
+const u8 *const gText_Pokemon0GainedExpPointsCyan = _("{POKEMON_0} gained {color CYAN_RAW}{VALUE_0}{reset} Exp. Points!");
 const u8 *const gUnknown_80F9E80 = _("{POKEMON_0} grew to Level {VALUE_0}!");
 const u8 *const gUnknown_80F9E84 = _("{POKEMON_0}'s level remained unchanged.");
 const u8 *const gUnknown_80F9EC8 = _("{POKEMON_0} dropped to Level {VALUE_0}!");

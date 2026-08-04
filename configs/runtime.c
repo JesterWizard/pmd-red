@@ -8,4 +8,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .all_friend_areas = FALSE,
     .debug_menu = FALSE,
     .disable_something_approaches = TRUE,
+    .l_to_use_move = TRUE, /* TRUE = L alone; FALSE = vanilla L+A */
+    .pmd2_battle_info_colors = TRUE, /* TRUE = PMD2 log colors; FALSE = vanilla */
+    .custom_graphics = TRUE, /* TRUE = PMD2 Poké coin + cyan money; FALSE = vanilla */
 };

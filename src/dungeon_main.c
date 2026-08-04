@@ -183,21 +183,44 @@ void DungeonHandlePlayerInput(void)
             bPress = FALSE;
             rPress = FALSE;
 
-            if (gRealInputs.pressed & A_BUTTON) {
-                if (gRealInputs.held & B_BUTTON) {
-                    if (FixedPointToInt(leaderInfo->belly) != 0) {
+            {
+                bool32 tryUseSetMove = FALSE;
+
+                if (gRealInputs.pressed & A_BUTTON) {
+                    if (gRealInputs.held & B_BUTTON) {
+                        if (FixedPointToInt(leaderInfo->belly) != 0) {
+                            SetLeaderActionFields(ACTION_PASS_TURN);
+                            gDungeon->unk644.unk2F = 1;
+                            break;
+                        }
+                    }
+                    else if (ShouldMonsterRunAwayAndShowEffect(leader, TRUE)) {
+                        LogMessageByIdWithPopupCheckUser_Async(leader, gUnknown_80FD4B0);
                         SetLeaderActionFields(ACTION_PASS_TURN);
                         gDungeon->unk644.unk2F = 1;
                         break;
                     }
+                    else if (gRealInputs.held & L_BUTTON) {
+                        tryUseSetMove = TRUE;
+                    }
+                    else {
+                        if (!sub_805EF60(leader, leaderInfo)) {
+                            SetMonsterActionFields(&leaderInfo->action, ACTION_REGULAR_ATTACK);
+                        }
+                        break;
+                    }
                 }
-                else if (ShouldMonsterRunAwayAndShowEffect(leader, TRUE)) {
-                    LogMessageByIdWithPopupCheckUser_Async(leader, gUnknown_80FD4B0);
-                    SetLeaderActionFields(ACTION_PASS_TURN);
-                    gDungeon->unk644.unk2F = 1;
-                    break;
+                else if (gRuntimeConfig.l_to_use_move && (gRealInputs.pressed & L_BUTTON)) {
+                    if (ShouldMonsterRunAwayAndShowEffect(leader, TRUE)) {
+                        LogMessageByIdWithPopupCheckUser_Async(leader, gUnknown_80FD4B0);
+                        SetLeaderActionFields(ACTION_PASS_TURN);
+                        gDungeon->unk644.unk2F = 1;
+                        break;
+                    }
+                    tryUseSetMove = TRUE;
                 }
-                else if (gRealInputs.held & L_BUTTON) {
+
+                if (tryUseSetMove) {
                     bool32 canUseMove;
                     s32 i, j;
 
@@ -239,12 +262,6 @@ void DungeonHandlePlayerInput(void)
                         SetMonsterActionFields(&leaderInfo->action, ACTION_USE_MOVE_PLAYER);
                         leaderInfo->action.actionParameters[0].actionUseIndex = GetTeamMemberEntityIndex(leader);
                         leaderInfo->action.actionParameters[1].actionUseIndex = i;
-                    }
-                    break;
-                }
-                else {
-                    if (!sub_805EF60(leader, leaderInfo)) {
-                        SetMonsterActionFields(&leaderInfo->action, ACTION_REGULAR_ATTACK);
                     }
                     break;
                 }
@@ -1549,7 +1566,8 @@ static void PrintOnMainMenu(bool8 printAll)
         PrintFormattedStringOnWindow(0x73, 0, gUnknown_80F9174, 2, 0);
 
         gFormatArgs[0] = gTeamInventoryRef->teamMoney;
-        PrintFormattedStringOnWindow(0x73, 12, gUnknown_80F9190, 2, 0);
+        PrintFormattedStringOnWindow(0x73, 12,
+            gRuntimeConfig.custom_graphics ? gText_MoneyCyan : gUnknown_80F9190, 2, 0);
 
         GetWeatherName(gFormatBuffer_Monsters[0], GetApparentWeather(NULL));
         PrintFormattedStringOnWindow(0x73, 24, gUnknown_80F91A8, 2, 0);

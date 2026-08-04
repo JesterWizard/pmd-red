@@ -144,10 +144,12 @@ BIOS LZ77).
 | `recruit_rate_boost` | `TryRecruitMonster` (+ Friend Bow amount) |
 | `all_friend_areas` | `LoadFriendAreas` / `InitializeFriendAreas` / `GetFriendAreaStatus` / `HasAllFriendAreas` |
 | `debug_menu` | `SetMainMenuItems` appends **Debug** → existing `MENU_DEBUG` path |
+| `disable_something_approaches` | `HandleWind` (`dungeon_wind.c`) |
+| `l_to_use_move` | `DungeonHandlePlayerInput` (`dungeon_main.c`): L alone uses set move |
 
 ### Reverse
 1. Drop `configs/`, `include/runtime.h`, Makefile `CONFIG_*` bits, and the
-   `.runtime_config` block in `ld_script_modern.ld`.
+  `.runtime_config` block in `ld_script_modern.ld`.
 2. Revert the `gRuntimeConfig` checks in the files listed above.
 
 ---

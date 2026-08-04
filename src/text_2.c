@@ -4,6 +4,7 @@
 #include "decompress_at.h"
 #include "text_1.h"
 #include "text_2.h"
+#include "custom_graphics.h"
 
 static void AddUnderScoreHighlightInternal(Window *windows, u32 windowId, s32 x, s32 y, s32 width, u32 color);
 static void DisplayMonPortrait(Window *windows, u16 dst[32][32], s32 winID, const u8 *compressedData, u32 palNum);
@@ -838,6 +839,11 @@ const unkChar *GetCharacter(s32 chr)
     s32 r2, r4;
     const unkChar *ret;
     const unkChar *strPtr = gCharmaps[gCurrentCharmap]->unk4;
+    const unkChar *custom = GetCustomPokeCoinChar(chr);
+
+    if (custom != NULL)
+        return custom;
+
     // TODO: create labels for these
     if (chr > 63487 && chr < 65535)
     {

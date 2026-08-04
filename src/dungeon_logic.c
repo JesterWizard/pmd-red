@@ -28,6 +28,8 @@
 #include "pokemon_3.h"
 #include "pokemon.h"
 #include "dungeon_config.h"
+#include "runtime.h"
+#include "constants/colors.h"
 #include "dungeon_pos_data.h"
 #include "dungeon_data.h"
 #include "dungeon_8041AD0.h"
@@ -418,7 +420,13 @@ void SetMessageArgument_2(u8 *buffer, EntityInfo *param_2, s32 colorNum)
             }
             else
             {
-                sub_808D9DC(buffer, &gRecruitedPokemonRef->dungeonTeam[param_2->teamIndex],colorNum);
+                s32 teamColor = colorNum;
+
+                /* PMD2: leader light blue, allies yellow (vanilla: all team yellow). */
+                if (gRuntimeConfig.pmd2_battle_info_colors && teamColor == COLOR_WHITE) {
+                    teamColor = param_2->isTeamLeader ? COLOR_LIGHT_BLUE : COLOR_YELLOW;
+                }
+                sub_808D9DC(buffer, &gRecruitedPokemonRef->dungeonTeam[param_2->teamIndex], teamColor);
             }
         }
     }

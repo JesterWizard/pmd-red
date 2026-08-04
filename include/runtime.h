@@ -20,6 +20,12 @@ typedef struct {
     u8 all_friend_areas;      /* Own every Friend Area on load / new save */
     u8 debug_menu;            /* Add Debug to the title main menu */
     u8 disable_something_approaches; /* Skip dungeon wind timer / blow-out */
+    u8 l_to_use_move;         /* Use set move with L alone (vs vanilla L+A) */
+    /* PMD2-style dungeon battle log colors:
+     * leader = light blue, allies = yellow, enemies = cyan, exp numbers = cyan */
+    u8 pmd2_battle_info_colors;
+    /* PMD2 Poké coin glyph + cyan money amount in dungeon HUD */
+    u8 custom_graphics;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

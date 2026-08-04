@@ -123,7 +123,10 @@ void EnemyEvolution(Entity *entity)
               info->exp += expGained;
               gFormatArgs[0] = expGained;
               SetMessageArgument_2(gFormatBuffer_Monsters[0],info,0);
-              TryDisplayDungeonLoggableMessage3_Async(entityPtr,target,gUnknown_80F9E64); // $m0 gained $d0 Exp Points
+              TryDisplayDungeonLoggableMessage3_Async(entityPtr, target,
+                  gRuntimeConfig.pmd2_battle_info_colors
+                      ? gText_Pokemon0GainedExpPointsCyan
+                      : gUnknown_80F9E64); // $m0 gained $d0 Exp Points
               flag = LevelUp(entityPtr,target,1,1);
             }
           }
