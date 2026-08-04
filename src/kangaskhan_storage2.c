@@ -412,6 +412,9 @@ static void sub_8018620(void)
             sub_801A928();
             UpdateKangaskhanStorage2State(KANGASKHAN_STORAGE_2_MAIN);
             break;
+        case 1:
+            DrawStorageCapacityWindow(0);
+            break;
     }
 }
 

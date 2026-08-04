@@ -201,8 +201,15 @@ void sub_801A928(void)
 
 static void sub_801A998(void)
 {
-    gUnknown_203B224->unk54.header.count = gUnknown_203B224->unk54.m.input.pagesCount;
-    gUnknown_203B224->unk54.header.currId = gUnknown_203B224->unk54.m.input.currPage;
+    /* Rank rewards already puts "n/m" in the title; one tab avoids the broken multi-tab chrome. */
+    if (gRuntimeConfig.rank_rewards) {
+        gUnknown_203B224->unk54.header.count = 1;
+        gUnknown_203B224->unk54.header.currId = 0;
+    }
+    else {
+        gUnknown_203B224->unk54.header.count = gUnknown_203B224->unk54.m.input.pagesCount;
+        gUnknown_203B224->unk54.header.currId = gUnknown_203B224->unk54.m.input.currPage;
+    }
     gUnknown_203B224->unk54.header.width = 14;
     gUnknown_203B224->unk54.header.f3 = 0;
     ResetUnusedInputStruct();
@@ -220,7 +227,7 @@ void sub_801A9E0(void)
 
     CallPrepareTextbox_8008C54(gUnknown_203B224->unk54.m.menuWinId);
     sub_80073B8(gUnknown_203B224->unk54.m.menuWinId);
-    x = gUnknown_203B224->unk54.m.input.currPage * 8 + 10;
+    x = gRuntimeConfig.rank_rewards ? 10 : (gUnknown_203B224->unk54.m.input.currPage * 8 + 10);
 
     sprintfStatic(buf1, sTeamToolboxFmt,
                   gUnknown_203B224->unk54.m.input.currPage + 1,
@@ -340,9 +347,10 @@ void DrawStorageCapacityWindow(u32 winId)
     CallPrepareTextbox_8008C54(winId);
     sub_80073B8(winId);
     PrintStringOnWindow(4, 0, sStorage, winId, 0);
-    PrintNumOnWindow(4, 13, GetStorageUsedCount(), 3, 7, winId);
+    /* Same layout idea as sub_801AD34 Items n/m, but 3-digit (max 480). */
+    PrintNumOnWindow(24, 13, GetStorageUsedCount(), 3, 7, winId);
     PrintStringOnWindow(28, 13, sSlash, winId, 0);
-    PrintNumOnWindow(34, 13, GetStorageCapacity(), 3, 7, winId);
+    PrintNumOnWindow(54, 13, GetStorageCapacity(), 3, 7, winId);
     sub_80073E0(winId);
 }
 
