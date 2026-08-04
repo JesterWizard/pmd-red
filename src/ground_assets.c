@@ -51,12 +51,23 @@ static bool8 IsGroundLzContainer(const u8 *data)
         && data[4] == 0x10;
 }
 
-OpenedFile *OpenGroundFileAndGetFileDataPtr(const u8 *filename, const FileArchive *arc)
+static u32 GetGroundLzDecompressedSize(const u8 *lzStream)
+{
+    return lzStream[1]
+        | (lzStream[2] << 8)
+        | (lzStream[3] << 16);
+}
+
+const void *OpenGroundFileData(const u8 *filename, const FileArchive *arc,
+                               void *scratch, u32 scratchSize, OpenedFile **outFile)
 {
     OpenedFile *openedFile = OpenFile(filename, arc);
     const u8 *compressedData;
-    GroundFileBuffer *fileBuffer;
     u32 decompressedSize;
+    GroundFileBuffer *fileBuffer;
+
+    if (outFile != NULL)
+        *outFile = NULL;
 
     if (openedFile == NULL)
         return NULL;
@@ -64,16 +75,28 @@ OpenedFile *OpenGroundFileAndGetFileDataPtr(const u8 *filename, const FileArchiv
     compressedData = openedFile->file->data;
     if (!IsGroundLzContainer(compressedData)) {
         GetFileDataPtr(openedFile, 0);
-        return openedFile;
+        if (outFile != NULL)
+            *outFile = openedFile;
+        return openedFile->data;
     }
 
     // Skip the GMLZ tag; BIOS wants a standard 0x10 LZ77 stream.
     compressedData += 4;
-    decompressedSize = compressedData[1]
-        | (compressedData[2] << 8)
-        | (compressedData[3] << 16);
+    decompressedSize = GetGroundLzDecompressedSize(compressedData);
+    if (decompressedSize == 0) {
+        CloseFile(openedFile);
+        return NULL;
+    }
+
+    // Prefer caller scratch (e.g. GroundBg unk544) so large BPCs never touch the heap.
+    if (scratch != NULL && decompressedSize <= scratchSize) {
+        LZ77UnCompWram(compressedData, scratch);
+        CloseFile(openedFile);
+        return scratch;
+    }
+
     fileBuffer = FindFreeGroundFileBuffer();
-    if (fileBuffer == NULL || decompressedSize == 0) {
+    if (fileBuffer == NULL) {
         CloseFile(openedFile);
         return NULL;
     }
@@ -83,6 +106,16 @@ OpenedFile *OpenGroundFileAndGetFileDataPtr(const u8 *filename, const FileArchiv
     LZ77UnCompWram(compressedData, fileBuffer->buffer);
     fileBuffer->openedFile = openedFile;
     openedFile->data = fileBuffer->buffer;
+    if (outFile != NULL)
+        *outFile = openedFile;
+    return fileBuffer->buffer;
+}
+
+OpenedFile *OpenGroundFileAndGetFileDataPtr(const u8 *filename, const FileArchive *arc)
+{
+    OpenedFile *openedFile;
+
+    OpenGroundFileData(filename, arc, NULL, 0, &openedFile);
     return openedFile;
 }
 

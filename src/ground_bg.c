@@ -246,10 +246,14 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     layerSpecs = &groundBg->layerSpecs;
     bmaHeader = &groundBg->bmaHeader;
 
-    // Decompress BPC alone first, copy into VRAM/mappings, then free it so the
-    // remaining LZ-decoded BPL/BMA/BPA files fit in the main heap.
-    groundBg->bpcFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bpcFileName, &gGroundFileArchive);
-    bpcData = groundBg->bpcFile->data;
+    // Decompress BPC into unk544 scratch (already allocated) so large LZ payloads
+    // never compete with the main heap, then discard before opening BPL/BMA.
+    {
+        u32 bpcScratchSize = groundBg->unk544 != NULL ? (u32)groundBg->unk52C.unkE * 256 : 0;
+
+        bpcData = OpenGroundFileData(mapFilesPtr->bpcFileName, &gGroundFileArchive,
+                                     groundBg->unk544, bpcScratchSize, &groundBg->bpcFile);
+    }
     layerSpecs->chunkWidth = *bpcData++;
     layerSpecs->chunkHeight = *bpcData++;
     layerSpecs->numTiles = *bpcData++;
@@ -435,8 +439,12 @@ void sub_80A3440(GroundBg *groundBg, s32 mapFileId_, const DungeonLocation *dung
     layerSpecs = &groundBg->layerSpecs;
     bmaHeader = &groundBg->bmaHeader;
 
-    groundBg->bpcFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bpcFileName, &gGroundFileArchive);
-    bpcData = groundBg->bpcFile->data;
+    {
+        u32 bpcScratchSize = groundBg->unk544 != NULL ? (u32)groundBg->unk52C.unkE * 256 : 0;
+
+        bpcData = OpenGroundFileData(mapFilesPtr->bpcFileName, &gGroundFileArchive,
+                                     groundBg->unk544, bpcScratchSize, &groundBg->bpcFile);
+    }
     layerSpecs->chunkWidth = *bpcData++;
     layerSpecs->chunkHeight = *bpcData++;
     layerSpecs->numTiles = *bpcData++;

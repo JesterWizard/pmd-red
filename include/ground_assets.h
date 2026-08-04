@@ -4,6 +4,14 @@
 #include "gba/types.h"
 #include "file_system.h"
 
+// Opens a ground archive file. GMLZ payloads are decompressed:
+// - into scratch when scratchSize is large enough (no heap traffic), or
+// - onto the main heap otherwise (tracked for CloseGroundFile).
+// Uncompressed payloads return a ROM pointer. *outFile is set when the caller
+// must close the file later; it is NULL when data already lives in scratch.
+const void *OpenGroundFileData(const u8 *filename, const FileArchive *arc,
+                               void *scratch, u32 scratchSize, OpenedFile **outFile);
+
 OpenedFile *OpenGroundFileAndGetFileDataPtr(const u8 *filename, const FileArchive *arc);
 void CloseGroundFile(OpenedFile *openedFile);
 

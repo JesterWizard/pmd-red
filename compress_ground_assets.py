@@ -59,6 +59,12 @@ def main() -> None:
         action="store_true",
         help="recompress assets even when the output is newer than the source",
     )
+    parser.add_argument(
+        "--only",
+        choices=("all", "bpc-bma"),
+        default="bpc-bma",
+        help="which raw assets to (re)compress; default ships only BPC/BMA",
+    )
     args = parser.parse_args()
 
     if not GBAGFX.exists():
@@ -67,6 +73,11 @@ def main() -> None:
         )
 
     raw_files = sorted(path for path in RAW_DIR.iterdir() if path.is_file())
+    if args.only == "bpc-bma":
+        raw_files = [
+            path for path in raw_files
+            if path.suffix in (".bpc", ".bma")
+        ]
     COMPRESSED_DIR.mkdir(parents=True, exist_ok=True)
     raw_bytes = 0
     compressed_bytes = 0
@@ -83,7 +94,11 @@ def main() -> None:
             lz_data = compressed_path.read_bytes()
             if not lz_data.startswith(b"\x10"):
                 raise SystemExit(f"gbagfx did not emit LZ77 for {raw_path}")
-            compressed_path.write_bytes(GROUND_LZ_MAGIC + lz_data)
+            # gbagfx may rewrite an existing GMLZ file; always wrap once.
+            if lz_data.startswith(GROUND_LZ_MAGIC):
+                compressed_path.write_bytes(lz_data)
+            else:
+                compressed_path.write_bytes(GROUND_LZ_MAGIC + lz_data)
 
         raw_data = raw_path.read_bytes()
         compressed_data = compressed_path.read_bytes()
@@ -101,7 +116,7 @@ def main() -> None:
     saved = raw_bytes - compressed_bytes
     ratio = compressed_bytes / raw_bytes if raw_bytes else 0
     print(
-        f"verified {len(raw_files)} ground assets: "
+        f"verified {len(raw_files)} ground assets ({args.only}): "
         f"{raw_bytes} -> {compressed_bytes} bytes "
         f"({ratio:.1%}, saved {saved} bytes)"
     )
