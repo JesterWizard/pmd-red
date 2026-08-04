@@ -867,5 +867,7 @@ extern const u8 *const gFloorModifierPoisonousAirMessage;
 extern const u8 *const gFloorModifierDarknessMessage;
 extern const u8 *const gFloorModifierElectricTerrainMessage;
 extern const u8 *const gFloorModifierTreasureRichMessage;
+extern const u8 *const gDamagePreviewEstimatedDamageLabel;
+extern const u8 *const gDamagePreviewAccuracyLabel;
 
 #endif

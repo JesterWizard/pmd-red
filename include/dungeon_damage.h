@@ -15,4 +15,12 @@ void sub_806F480(Entity *pokemon, bool8 attackEnemies);
 u8 sub_806F4A4(Entity *pokemon, u8 type);
 s32 sub_806F62C(s32 param_1);
 
+/* 0 = live combat; 1 = preview min; 2 = preview max (no RNG, no side-effect messages). */
+enum {
+    CALC_DAMAGE_NORMAL = 0,
+    CALC_DAMAGE_PREVIEW_MIN = 1,
+    CALC_DAMAGE_PREVIEW_MAX = 2,
+};
+extern u8 gCalcDamagePreviewMode;
+
 #endif

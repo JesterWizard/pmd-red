@@ -1180,3 +1180,5 @@ const u8 *const gFloorModifierPoisonousAirMessage = _("Floor Modifier: Poisonous
 const u8 *const gFloorModifierDarknessMessage = _("Floor Modifier: Darkness!\nThe dungeon is shrouded in darkness!");
 const u8 *const gFloorModifierElectricTerrainMessage = _("Floor Modifier: Electric Terrain!\nElectric-type moves are powered up!");
 const u8 *const gFloorModifierTreasureRichMessage = _("Floor Modifier: Treasure Rich!\nMoney gained on this floor is doubled!");
+const u8 *const gDamagePreviewEstimatedDamageLabel = _("Estimated Damage:");
+const u8 *const gDamagePreviewAccuracyLabel = _("Accuracy:");

@@ -59,6 +59,8 @@ typedef struct {
     u8 outlaw_missions;
     /* Regenerate Pelipper bulletin jobs whenever the board UI closes */
     u8 refresh_bulletin_on_exit;
+    /* Show estimated damage / accuracy / effect while facing an enemy */
+    u8 damage_preview;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

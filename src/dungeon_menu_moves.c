@@ -17,6 +17,7 @@
 #include "dungeon_submenu.h"
 #include "dungeon_strings.h"
 #include "dungeon_util.h"
+#include "dungeon_damage_preview.h"
 #include "dungeon_engine.h"
 #include "dungeon_map_access.h"
 #include "input.h"
@@ -349,7 +350,7 @@ bool8 ShowDungeonMovesMenu(Entity * entity, bool8 addLinkOptions, bool8 addUseMo
         }
 
         sub_8009524(2);
-        CreateDungeonMenuSubWindow(&windows.id[0], 0x16);
+        CreateDungeonMenuSubWindowWithDamagePreview(&windows.id[0], 0x16, entity, &entInfo->moves.moves[sChosenMoveSlotId]);
         while (TRUE) {
             AddMenuCursorSprite(&gDungeonMenu);
             DungeonRunFrameActions(0x1B);

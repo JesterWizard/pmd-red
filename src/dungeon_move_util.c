@@ -735,25 +735,25 @@ void sub_80566F8(Entity *attacker, Move *move, s32 a2, bool8 a3, s32 itemId, s32
     }
 }
 
-bool8 AccuracyCalc(Entity *attacker, Entity *target, Move *move, s32 accuracyType, bool8 selfAlwaysHits)
+/* Returns 0–100, or ACCURACY_PERCENT_ALWAYS / ACCURACY_PERCENT_NEVER. */
+s32 GetAccuracyPercent(Entity *attacker, Entity *target, Move *move, s32 accuracyType, bool8 selfAlwaysHits)
 {
     s32 statStageAccuracy, statStageEvasion;
     s24_8 statStageMul;
     s32 accuracy = GetMoveAccuracyOrAiChance(move, accuracyType);
-    s32 rand = DungeonRandInt(100);
     EntityInfo *attackerInfo = GetEntInfo(attacker);
     EntityInfo *targetInfo = GetEntInfo(target);
 
     if (selfAlwaysHits && attacker == target)
-        return TRUE;
+        return ACCURACY_PERCENT_ALWAYS;
     if (move->id == MOVE_REGULAR_ATTACK && IqSkillIsEnabled(attacker, IQ_SURE_HIT_ATTACKER))
-        return TRUE;
+        return ACCURACY_PERCENT_ALWAYS;
     if (attackerInfo->sureShotClassStatus.status == STATUS_SURE_SHOT)
-        return TRUE;
+        return ACCURACY_PERCENT_ALWAYS;
     if (attackerInfo->sureShotClassStatus.status == STATUS_WHIFFER)
-        return FALSE;
+        return ACCURACY_PERCENT_NEVER;
     if (accuracy > 100)
-        return TRUE;
+        return ACCURACY_PERCENT_ALWAYS;
 
     if (HasHeldItem(target, ITEM_DETECT_BAND)) {
         accuracy -= gDetectBandAccuracyDebuffValue;
@@ -769,7 +769,7 @@ bool8 AccuracyCalc(Entity *attacker, Entity *target, Move *move, s32 accuracyTyp
     if (move->id == MOVE_THUNDER) {
         s32 weather = GetApparentWeather(attacker);
         if (weather == WEATHER_RAIN) {
-            return TRUE;
+            return ACCURACY_PERCENT_ALWAYS;
         }
         else if (weather == WEATHER_SUNNY) {
             statStageAccuracy -= 2;
@@ -809,6 +809,38 @@ bool8 AccuracyCalc(Entity *attacker, Entity *target, Move *move, s32 accuracyTyp
 
     accuracy *= statStageMul;
     accuracy /= 256;
+    if (accuracy < 0)
+        accuracy = 0;
+    if (accuracy > 100)
+        accuracy = 100;
+    return accuracy;
+}
+
+s32 GetCombinedAccuracyPercent(Entity *attacker, Entity *target, Move *move)
+{
+    s32 acc1 = GetAccuracyPercent(attacker, target, move, ACCURACY_1, TRUE);
+    s32 acc2 = GetAccuracyPercent(attacker, target, move, ACCURACY_2, TRUE);
+
+    if (acc1 == ACCURACY_PERCENT_NEVER || acc2 == ACCURACY_PERCENT_NEVER)
+        return 0;
+    if (acc1 == ACCURACY_PERCENT_ALWAYS)
+        acc1 = 100;
+    if (acc2 == ACCURACY_PERCENT_ALWAYS)
+        acc2 = 100;
+    return (acc1 * acc2) / 100;
+}
+
+bool8 AccuracyCalc(Entity *attacker, Entity *target, Move *move, s32 accuracyType, bool8 selfAlwaysHits)
+{
+    s32 accuracy = GetAccuracyPercent(attacker, target, move, accuracyType, selfAlwaysHits);
+    s32 rand;
+
+    if (accuracy == ACCURACY_PERCENT_ALWAYS)
+        return TRUE;
+    if (accuracy == ACCURACY_PERCENT_NEVER)
+        return FALSE;
+
+    rand = DungeonRandInt(100);
     if (rand < accuracy)
         return TRUE;
     else

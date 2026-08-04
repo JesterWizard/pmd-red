@@ -61,6 +61,8 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
 static void sub_806F500(void);
 static void sub_806F63C(Entity *param_1);
 
+EWRAM_DATA u8 gCalcDamagePreviewMode = CALC_DAMAGE_NORMAL;
+
 static const u32 gUnknown_8106EFC[] = { 0, 0  };
 static const s48_16 gUnknown_8106F04 = { 0x0, 0x10000 };
 static const s48_16 gUnknown_8106F0C = { 0x0, 0x20000 };
@@ -860,7 +862,7 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
         gDungeon->unk134.fill16E[2] = TRUE;
         F48_16_SMul(param_1,param_1, &gUnknown_8106F0C);
       }
-      if (torrentVisualFlag) {
+      if (torrentVisualFlag && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
         sub_80428EC(pokemon);
         TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FEDA8);
       }
@@ -872,7 +874,7 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
         gDungeon->unk134.fill16E[3] = TRUE;
         F48_16_SMul(param_1,param_1, &gUnknown_8106F0C);
       }
-      if (overgrowVisualFlag) {
+      if (overgrowVisualFlag && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
         sub_80428D8(pokemon);
         TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FED88);
       }
@@ -884,7 +886,7 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
         gDungeon->unk134.fill16E[4] = TRUE;
         F48_16_SMul(param_1,param_1, &gUnknown_8106F0C);
       }
-      if (swarmVisualFlag) {
+      if (swarmVisualFlag && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
         sub_8042978(pokemon);
         TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FEDC8);
       }
@@ -896,7 +898,7 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
         gDungeon->unk134.fill16E[5] = TRUE;
         F48_16_SMul(param_1,param_1, &gUnknown_8106F0C);
       }
-      if (blazeVisualFlag) {
+      if (blazeVisualFlag && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
         sub_804298C(pokemon);
         TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FEDE8);
       }
@@ -1071,7 +1073,7 @@ static void ApplyAtkDefStatBoosts(Entity *attacker, Entity *target, u8 moveType,
         if (gutsBoost) {
             atkMultiplier = 2;
         }
-        if (visFlags_attacker_1) {
+        if (visFlags_attacker_1 && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
             sub_80428B0(attacker);
             TryDisplayDungeonLoggableMessage3_Async(attacker,target, gUnknown_80FEE04); // Guts boosted its power
         }
@@ -1086,7 +1088,7 @@ static void ApplyAtkDefStatBoosts(Entity *attacker, Entity *target, u8 moveType,
             atkMultiplier *= 3;
             atkDivisor *= 2;
         }
-        if (visFlags_attacker_2) {
+        if (visFlags_attacker_2 && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
             sub_80428C4(attacker);
             TryDisplayDungeonLoggableMessage3_Async(attacker,target, gUnknown_80FEE2C); // It's special ability boosted Attack
         }
@@ -1127,7 +1129,7 @@ static void ApplyAtkDefStatBoosts(Entity *attacker, Entity *target, u8 moveType,
             defMultiplier *= 3;
             defDivisor *= 2;
         }
-        if (visFlags_target) {
+        if (visFlags_target && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
             sub_8042940(target);
             TryDisplayDungeonLoggableMessage3_Async(attacker,target, gUnknown_80FEE54); // Its special ability quickened attacks!
         }
@@ -1238,7 +1240,12 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         statCalc = s24_8_mul(statCalc, targetInfo->defensiveMultipliers[splitIndex]);
         defStat = F248ToInt(statCalc);
 
-        rand = DungeonRandInt(100);
+        if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MIN)
+            rand = 33; /* Huge/Pure Power off */
+        else if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MAX)
+            rand = 0; /* Huge/Pure Power on if ability present */
+        else
+            rand = DungeonRandInt(100);
         if (splitIndex == 0) {
             if (HasHeldItem(attacker, ITEM_POWER_BAND)) {
                 atkStat += gPowerBandBoost;
@@ -1321,7 +1328,8 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
 
         if (moveType == TYPE_FIRE) {
             s32 flashFireStatus = GetFlashFireStatus(target);
-            if (flashFireStatus != FLASH_FIRE_STATUS_NONE && targetInfo->unk152 == 0 && arg_10) {
+            if (flashFireStatus != FLASH_FIRE_STATUS_NONE && targetInfo->unk152 == 0 && arg_10
+                && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
                 targetInfo->unk152 = 1;
                 SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[1], target, 0);
                 if (flashFireStatus == FLASH_FIRE_STATUS_MAXED) {
@@ -1334,12 +1342,14 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         }
         if (arg_10) {
             if (splitIndex == 0 && targetInfo->reflectClassStatus.status == STATUS_REFLECT) {
-                sub_8041B74(target);
+                if (gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL)
+                    sub_8041B74(target);
                 F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F1C);
                 gDungeon->unk134.unk166 = 1;
             }
             if (splitIndex == 1 && targetInfo->reflectClassStatus.status == STATUS_LIGHT_SCREEN) {
-                sub_8041B5C(target);
+                if (gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL)
+                    sub_8041B5C(target);
                 F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F1C);
                 gDungeon->unk134.unk167 = 1;
             }
@@ -1374,7 +1384,16 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
                     gDungeon->unk134.unk169 = 1;
                 }
             }
-            if (DungeonRandInt(100) < critOdds) {
+            if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MIN) {
+                /* No crit for min preview */
+            }
+            else if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MAX) {
+                if (critOdds > 0) {
+                    F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F14);
+                    dmgStruct->isCrit = TRUE;
+                }
+            }
+            else if (DungeonRandInt(100) < critOdds) {
                 F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F14);
                 dmgStruct->isCrit = TRUE;
             }
@@ -1399,7 +1418,13 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         ASM_MATCH_TRICK(gDungeon->unk644.unk50);
         gDungeon->unk134.unk150 = FP48_16_ToS32(&unkSp8);
         {
-            s32 rnd = DungeonRandInt(0x4000);
+            s32 rnd;
+            if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MIN)
+                rnd = 0; /* 0xE000 */
+            else if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MAX)
+                rnd = 0x3FFF; /* ~0xFFFF */
+            else
+                rnd = DungeonRandInt(0x4000);
             unkSp9.hi = 0;
             unkSp9.lo = 0xE000 + rnd;
         }

@@ -10,6 +10,12 @@ bool8 TryUseChosenMove(struct Entity *attacker, u32 r6, s32 itemId, u32 var_30, 
 bool8 sub_8056468(Entity *entity, Move *move, const u8 *str, Entity **unkArray, bool32 itemId, bool8 arg_4, bool32 unused);
 s32 sub_8056564(Entity *entity, DungeonPos *pos, Move *move, s32 r4);
 void sub_80566F8(Entity *attacker, Move *move, s32 a2, bool8 a3, s32 itemId, s32 isLinkedMove);
+/* Sentinel return values from GetAccuracyPercent (never a normal 0–100 roll). */
+#define ACCURACY_PERCENT_ALWAYS  101
+#define ACCURACY_PERCENT_NEVER  (-1)
+
+s32 GetAccuracyPercent(Entity *attacker, Entity *target, Move *move, s32 accuracyType, bool8 selfAlwaysHits);
+s32 GetCombinedAccuracyPercent(Entity *attacker, Entity *target, Move *move);
 bool8 AccuracyCalc(Entity *attacker, Entity *target, Move *move, s32 accuracyType, bool8 selfAlwaysHits);
 void SetTargetsForMove(Entity **targetsArray, Entity *attacker, Move *move);
 s32 SetNewTarget(s32 targetArrId, Entity **targetsArray, s32 targetFlags_, Entity *attacker, Entity *target, Move *move, bool32 canHitAnyone_);
