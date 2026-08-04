@@ -856,5 +856,9 @@ extern const u8 *const gPtrForecastPreventsTypeSwitchMessage;
 extern const u8 *const gPtrForecastPreventsConversion2Message;
 extern const u8 *const gPtrStenchWavedOffMessage;
 extern const u8 *const gPtrProtectSavedItMessage;
+extern const u8 *const gFloorModifierPoisonousAirMessage;
+extern const u8 *const gFloorModifierDarknessMessage;
+extern const u8 *const gFloorModifierElectricTerrainMessage;
+extern const u8 *const gFloorModifierTreasureRichMessage;
 
 #endif

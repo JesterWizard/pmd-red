@@ -38,6 +38,7 @@
 #include "dungeon_music.h"
 #include "dungeon_name_banner.h"
 #include "dungeon_floor_spawns.h"
+#include "dungeon_modifiers.h"
 #include "dungeon_pokemon_sprites.h"
 #include "dungeon_random.h"
 #include "dungeon_strings.h"
@@ -306,6 +307,7 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
             gDungeon->tileset = gDungeon->floorProperties.tileset;
             gDungeon->unk3A10 = gDungeon->floorProperties.bgMusic;
             gDungeon->fixedRoomNumber = gDungeon->floorProperties.fixedRoomNumber;
+            TryRollAndApplyFloorModifier();
             if (IsCurrentFixedRoomBossFight())
                 NoteAchievementBossFightStart();
             sub_807E5E4(0);
@@ -437,6 +439,7 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
                 if (GetApparentWeather(NULL) != 0) {
                     sub_807E7FC(1);
                 }
+                AnnounceFloorModifier();
             }
         }
         else {

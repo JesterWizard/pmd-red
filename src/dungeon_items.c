@@ -19,6 +19,7 @@
 #include "dungeon_floor_spawns.h"
 #include "dungeon_cutscene.h"
 #include "dungeon_boss_dialogue.h"
+#include "dungeon_modifiers.h"
 #include "string_format.h"
 #include "items.h"
 #include "structs/map.h"
@@ -176,7 +177,7 @@ void TryLeaderItemPickUp_Async(struct DungeonPos *pos, bool8 printMsg)
     }
     else if (GetItemCategory(tileItem->id) == CATEGORY_POKE) {
         PlaySoundEffect(0x14c);
-        AddToTeamMoney(GetMoneyValue(tileItem));
+        AddDungeonFloorMoney(GetMoneyValue(tileItem));
         sub_8045BF8(gFormatBuffer_Items[0],tileItem);
         RemoveGroundItem(pos,TRUE);
         LogMessageByIdWithPopupCheckUser_Async(leader,gPickedUpItem);

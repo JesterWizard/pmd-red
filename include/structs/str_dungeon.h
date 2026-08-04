@@ -261,7 +261,8 @@ typedef struct unkDungeon644
     /* 0x17 */ bool8 hasInventory;
     /* 0x18 */ bool8 canChangeLeader;
     /* 0x19 */ u8 unk19;
-    /* 0x1A */ u8 fill1A[2];
+    /* 0x1A */ u8 floorModifier; // Dungeon floor modifier (see dungeon_modifiers.h); persisted in suspend
+    /* 0x1B */ u8 fill1B;
     /* 0x1C */ s16 fractionalTurn; // Handles turn order when Pokémon have different movement speeds.
     /* 0x1E */ s16 wildMonSpawnFrames;
     /* 0x20 */ s16 enemyDensity; // Taken directly from FloorProperties. Checked only once, if 0 there will be no wild Pokemon in dungeon.

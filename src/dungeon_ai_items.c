@@ -23,6 +23,7 @@
 #include "dungeon_message.h"
 #include "dungeon_music.h"
 #include "dungeon_items.h"
+#include "dungeon_modifiers.h"
 #include "constants/dungeon.h"
 #include "dungeon_engine.h"
 #include "dungeon_action_handler.h"
@@ -464,7 +465,7 @@ void MonTryPickUpItem(Entity *entity)
         else {
             PlaySoundEffect(0x14C);
         }
-        AddToTeamMoney(GetMoneyValue(groundItem));
+        AddDungeonFloorMoney(GetMoneyValue(groundItem));
         sub_8045BF8(gFormatBuffer_Items[0], groundItem);
         RemoveGroundItem(&entity->pos, 1);
         DisplayDungeonLoggableMessageTrue_Async(entity, gMonPickedUpItem);

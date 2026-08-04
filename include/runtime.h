@@ -46,6 +46,8 @@ typedef struct {
     u8 compact_kangaskhan_storage;
     /* Random custom title BG from graphics/title_screen_backgrounds/ (else vanilla titlen*) */
     u8 custom_title_backgrounds;
+    /* Random floor modifiers (Poisonous Air / Darkness / Electric Terrain / Treasure Rich) */
+    u8 dungeon_modifiers;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

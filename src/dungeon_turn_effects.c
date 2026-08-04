@@ -2,6 +2,7 @@
 #include "globaldata.h"
 #include "runtime.h"
 #include "dungeon_turn_effects.h"
+#include "dungeon_modifiers.h"
 #include "dungeon_util.h"
 #include "items.h"
 #include "weather.h"
@@ -19,6 +20,7 @@
 #include "dungeon_random.h"
 #include "constants/dungeon.h"
 #include "constants/dungeon_exit.h"
+#include "constants/dungeon_modifiers.h"
 #include "constants/iq_skill.h"
 #include "constants/residual_damage.h"
 #include "constants/status.h"
@@ -413,7 +415,10 @@ void TickStatusAndHealthRegen(Entity *entity)
     entityInfo = GetEntInfo(entity);
 
     // HP heal
-    if (!entityInfo->bellyEmpty && entityInfo->burnClassStatus.status != STATUS_POISONED && entityInfo->burnClassStatus.status != STATUS_BADLY_POISONED) {
+    if (!entityInfo->bellyEmpty
+        && entityInfo->burnClassStatus.status != STATUS_POISONED
+        && entityInfo->burnClassStatus.status != STATUS_BADLY_POISONED
+        && GetFloorModifier() != FLOOR_MODIFIER_POISONOUS_AIR) {
         s32 regenSpeed = 0;
 
         if (!entityInfo->isNotTeamMember)

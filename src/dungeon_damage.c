@@ -2,8 +2,10 @@
 #include "globaldata.h"
 #include "dungeon_damage.h"
 #include "constants/ability.h"
+#include "constants/dungeon_modifiers.h"
 #include "structs/str_dungeon.h"
 #include "dungeon_logic.h"
+#include "dungeon_modifiers.h"
 #include "dungeon_move.h"
 #include "pokemon_types.h"
 #include "dungeon_message.h"
@@ -916,6 +918,9 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
     if ((type == TYPE_ELECTRIC) && (pokemonInfo->bideClassStatus.status == STATUS_CHARGING)) {
       gDungeon->unk134.fill16E[9] = TRUE;
       F48_16_SMul(param_1,param_1, &gUnknown_8106F0C);
+    }
+    if ((type == TYPE_ELECTRIC) && (GetFloorModifier() == FLOOR_MODIFIER_ELECTRIC_TERRAIN)) {
+      F48_16_SMul(param_1,param_1, &gUnknown_8106F14);
     }
   }
   return bVar4;
