@@ -283,7 +283,7 @@ $(TITLE_BG_STAMP): FORCE
 
 $(C_BUILDDIR)/custom_title_backgrounds.o: | $(TITLE_BG_STAMP)
 
-# Custom starter-evolution portraits (PNG → AT4PN + pal + data.c).
+# Custom starter-evolution portraits (PNG → AT4PX + pal + data.c).
 CUSTOM_PORTRAIT_STAMP := $(BUILD_DIR)/custom_portraits.stamp
 
 custom-portraits-convert: $(CUSTOM_PORTRAIT_STAMP)

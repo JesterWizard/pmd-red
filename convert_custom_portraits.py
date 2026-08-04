@@ -1,26 +1,36 @@
 #!/usr/bin/env python3
-"""Fetch SpriteCollab portraits for starter evolutions and convert to AT4PN + pal.
+"""Fetch SpriteCollab portraits for starter evolutions and convert to AT4PX + pal.
 
 Source PNGs live in graphics/portraits/<species>/{Emotion}.png
 (from https://sprites.pmdcollab.org / PMDCollab SpriteCollab).
 
 Build outputs next to each PNG:
   Emotion.pal    — 16 RGBX colors (index 0 = transparent black, unk4=0x80)
-  Emotion.at4pn  — AT4PN-wrapped 5×5 4bpp tiles (0x320 bytes)
+  Emotion.at4px  — AT4PX-compressed 5×5 4bpp tiles (decomp 0x320), vanilla kao format
 
 Also regenerates src/custom_portraits_data.c (INCBINs + SIRO archive).
+
+Requires skytemple-files for AT4PX compression.
 """
 
 from __future__ import annotations
 
 import argparse
-import struct
 import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
 
 from PIL import Image
+
+try:
+    from skytemple_files.compression_container.at4px.handler import At4pxHandler
+except ImportError as e:
+    raise SystemExit(
+        "convert_custom_portraits.py needs skytemple-files for AT4PX compression.\n"
+        "  pip install skytemple-files\n"
+        f"({e})"
+    ) from e
 
 ROOT = Path(__file__).resolve().parent
 OUT_DIR = ROOT / "graphics" / "portraits"
@@ -178,8 +188,9 @@ def encode_4bpp_tiles(pixels: list[list[int]]) -> bytes:
     return bytes(out)
 
 
-def wrap_at4pn(payload: bytes) -> bytes:
-    return b"AT4PN" + struct.pack("<H", len(payload)) + payload
+def compress_at4px(payload: bytes) -> bytes:
+    """Vanilla-style AT4PX (same container DecompressAT expects)."""
+    return At4pxHandler.serialize(At4pxHandler.compress(payload))
 
 
 def write_palette(path: Path, palette: list[tuple[int, int, int]]) -> None:
@@ -194,7 +205,11 @@ def convert_png(png: Path) -> bool:
     palette, pixels = quantize_portrait(im)
     tiles = encode_4bpp_tiles(pixels)
     write_palette(png.with_suffix(".pal"), palette)
-    png.with_suffix(".at4pn").write_bytes(wrap_at4pn(tiles))
+    png.with_suffix(".at4px").write_bytes(compress_at4px(tiles))
+    # Drop legacy uncompressed outputs if present
+    legacy = png.with_suffix(".at4pn")
+    if legacy.exists():
+        legacy.unlink()
     return True
 
 
@@ -223,7 +238,7 @@ def generate_c(species_emotions: dict[str, list[str]]) -> None:
             label = f"s{camel_name}{emo}"
             base = f"graphics/portraits/{folder}/{emo}"
             lines.append(f"static const u8 {label}Pal[] = INCBIN_U8(\"{base}.pal\");")
-            lines.append(f"static const u8 {label}Gfx[] = INCBIN_U8(\"{base}.at4pn\");")
+            lines.append(f"static const u8 {label}Gfx[] = INCBIN_U8(\"{base}.at4px\");")
         lines.append("")
         lines.append(f"static const PortraitGfx s{camel_name}Portraits = {{")
         lines.append("    .sprites = {")
@@ -286,7 +301,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--fetch", action="store_true", help="Download PNGs from SpriteCollab")
     ap.add_argument("--force-fetch", action="store_true", help="Re-download even if PNG exists")
-    ap.add_argument("--convert", action="store_true", help="Convert PNGs to .pal/.at4pn")
+    ap.add_argument("--convert", action="store_true", help="Convert PNGs to .pal/.at4px")
     ap.add_argument("--generate", action="store_true", help="Regenerate custom_portraits_data.c")
     ap.add_argument("--stamp", type=Path, help="Touch stamp file when done")
     ap.add_argument("--quiet", action="store_true")
@@ -316,7 +331,7 @@ def main() -> int:
                 continue
             if args.convert:
                 convert_png(png)
-            elif not (png.with_suffix(".pal").exists() and png.with_suffix(".at4pn").exists()):
+            elif not (png.with_suffix(".pal").exists() and png.with_suffix(".at4px").exists()):
                 convert_png(png)
             emos.append(game_name)
         if emos:
