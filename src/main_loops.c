@@ -6,6 +6,7 @@
 #include "constants/main_menu.h"
 #include "structs/str_dungeon_setup.h"
 #include "adventure_info.h"
+#include "achievements.h"
 #include "bg_control.h"
 #include "bg_palette_buffer.h"
 #include "window_buffer.h"
@@ -128,6 +129,7 @@ void GameLoop_Async(void)
     ResetDialogueBox();
     LoadMonsterParameters();
     sub_8097670();
+    InitAchievements();
     InitializePlayTime();
     LoadGameOptions();
     SetWindowBGColor();

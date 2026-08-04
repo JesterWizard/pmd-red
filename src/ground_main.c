@@ -5,6 +5,7 @@
 #include "structs/str_wonder_mail.h"
 #include "structs/str_dungeon_setup.h"
 #include "adventure_info.h"
+#include "achievements.h"
 #include "window_buffer.h"
 #include "code_800C9CC.h"
 #include "code_8094F88.h"
@@ -301,6 +302,7 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
         sub_809C658();
         nullsub_16();
         UpdateAdventureAchievements();
+        EvaluateAchievements();
         if (scriptID != -1) {
             GroundMap_ExecuteEvent(scriptID, FALSE);
         }
@@ -333,6 +335,9 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
                     GroundMainGameCancelRequest(30);
                     FadeOutAllMusic(30);
                 }
+            }
+            else if (!sub_809AFAC()) {
+                ProcessAchievementUnlockQueue();
             }
             GroundMap_Action();
             nullsub_124();

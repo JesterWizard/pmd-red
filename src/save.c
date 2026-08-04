@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "achievements.h"
 #include "adventure_info.h"
 #include "adventure_save.h"
 #include "code_800D090_1.h"
@@ -255,6 +256,11 @@ u32 ReadSaveFromPak(u32 *a)
         if (r1 != playerSave->savedMailInfo) {
             saveStatus = 3;
         }
+        r4 += 0x221;
+        r1 = RestoreAchievementsData(r4, ACHIEVEMENTS_SAVE_SIZE);
+        if (r1 != playerSave->savedAchievements) {
+            saveStatus = 3;
+        }
     }
     MemoryFree(playerSave);
     return saveStatus;
@@ -352,6 +358,8 @@ u32 WriteSavetoPak(s32 *param_1, u32 param_2)
   playerSave->unk440 = sub_8095624(array_ptr,0x594);
   array_ptr += 0x594;
   playerSave->savedMailInfo = SaveMailInfo(array_ptr,0x221);
+  array_ptr += 0x221;
+  playerSave->savedAchievements = SaveAchievementsData(array_ptr, ACHIEVEMENTS_SAVE_SIZE);
 
   saveStatus1 = WriteSaveSector(param_1, (u8 *)playerSave, sizeof(struct UnkStruct_sub_8011DAC));
   saveStatus2 = WriteSaveSector(param_1, (u8 *)playerSave, sizeof(struct UnkStruct_sub_8011DAC));
@@ -416,6 +424,7 @@ void sub_8012284(void)
 void sub_8012298(void)
 {
     ResetAdventureInfo();
+    ResetAchievementsData();
     sub_80122A8();
 }
 
@@ -462,6 +471,7 @@ void InitializePlayerData(void)
     sub_80974E8();
     InitializeGameOptions(TRUE);
     InitializeExclusivePokemon();
+    ResetAchievementsData();
 }
 
 

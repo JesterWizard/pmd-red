@@ -48,6 +48,7 @@
 #include "move_orb_effects_2.h"
 #include "move_orb_effects_5.h"
 #include "dungeon_tilemap.h"
+#include "achievements.h"
 #include "effect_main.h"
 
 static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target, struct DamageStruct *r5, bool32 isFalseSwipe, bool32 giveExp, s16 dungeonExitReason_, s32 arg8);
@@ -296,6 +297,10 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
     if (targetData->unk152 == 0) {
         if (dmgStruct->isCrit) {
             TryDisplayDungeonLoggableMessage3_Async(attacker, target, gUnknown_80F9614);
+            if (EntityIsValid(attacker)
+                && GetEntityType(attacker) == ENTITY_MONSTER
+                && !GetEntInfo(attacker)->isNotTeamMember)
+                NoteAchievementCriticalHit();
         }
         switch (dmgStruct->typeEffectiveness) {
             case EFFECTIVENESS_IMMUNE:
@@ -415,6 +420,9 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
     hpChange = hpBefore - targetData->HP;
     if (hpChange < 0)
         hpChange = 0;
+
+    if (hpChange > 0 && !targetData->isNotTeamMember)
+        NoteAchievementTeamTookDamage();
 
     if (var_24 || unkTile != NULL)
         DungeonWaitFrames_Async(0xA, 0x18);
@@ -657,6 +665,7 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
     }
     if (targetData->bossFlag) {
         gDungeon->unk644.bossSongIndex = STOP_BGM;
+        NoteAchievementBossDefeated();
     }
 
     // Give exp
@@ -695,6 +704,7 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
                         }
                     }
                     r10 = TRUE;
+                    NoteAchievementEnemyDefeated();
                 }
             }
             else {
@@ -1400,6 +1410,25 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
     Entity spEntity;
     struct DamageStruct dmgStruct;
     s32 dungeonExitReason = (s16) dungeonExitReason_;
+    EntityInfo *info = GetEntInfo(entity);
+    bool8 statusKoEnemy = FALSE;
+
+    if (info->isNotTeamMember
+        && info->HP > 0
+        && dmg >= info->HP) {
+        switch (dungeonExitReason) {
+            case DUNGEON_EXIT_FAINTED_FROM_BURN:
+            case DUNGEON_EXIT_FAINTED_FROM_POISON:
+            case DUNGEON_EXIT_FAINTED_FROM_CONSTRICTION:
+            case DUNGEON_EXIT_FAINTED_FROM_WRAP:
+            case DUNGEON_EXIT_FELLED_BY_CURSE:
+            case DUNGEON_EXIT_DRAINED_BY_LEECH_SEED:
+            case DUNGEON_EXIT_FAINTED_FROM_PERISH_SONG:
+            case DUNGEON_EXIT_FAINTED_WHILE_IN_NIGHTMARE:
+                statusKoEnemy = TRUE;
+                break;
+        }
+    }
 
     sub_80457DC(&spEntity);
     dmgStruct.dmg = dmg;
@@ -1410,6 +1439,8 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
     dmgStruct.unkE = 0;
     dmgStruct.tookNoDamage = FALSE;
     HandleDealingDamage_Async(&spEntity, entity, &dmgStruct, FALSE, FALSE, dungeonExitReason, FALSE, 0);
+    if (statusKoEnemy)
+        NoteAchievementStatusKO();
 }
 
 void sub_806F370_Async(Entity *pokemon, Entity *target, s32 dmg, s32 giveExp, bool8 *tookNoDamage, u8 moveType, s16 dungeonExitReason_, s32 residualDmgType, s32 arg_10, s32 arg_14)

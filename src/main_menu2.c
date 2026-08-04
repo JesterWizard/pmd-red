@@ -3,6 +3,7 @@
 #include "runtime.h"
 #include "constants/main_menu.h"
 #include "constants/wonder_mail.h"
+#include "achievements_menu.h"
 #include "code_803D0D8.h"
 #include "input.h"
 #include "main_menu1.h"
@@ -20,35 +21,56 @@ static EWRAM_INIT u32 sUnknown_203B354 = {MENU_SEND_ITEMS};
 
 static void SetMainMenuItems(void);
 static bool8 SetMainMenuText(void);
-static const MenuItem *MaybeAppendDebugItem(const MenuItem *items, const WindowTemplate *win, const WindowTemplate **winOut);
+static const MenuItem *MaybeAppendExtraItems(const MenuItem *items, const WindowTemplate *win, const WindowTemplate **winOut);
 
 static void sub_803623C(void);
 
-static EWRAM_DATA MenuItem sMainMenuItemsWithDebug[8] = {0};
-static EWRAM_DATA WindowTemplate sMainMenuWindowWithDebug = {0};
+static EWRAM_DATA MenuItem sMainMenuItemsExtra[10] = {0};
+static EWRAM_DATA WindowTemplate sMainMenuWindowExtra = {0};
 
-static const MenuItem *MaybeAppendDebugItem(const MenuItem *items, const WindowTemplate *win, const WindowTemplate **winOut)
+static const MenuItem *MaybeAppendExtraItems(const MenuItem *items, const WindowTemplate *win, const WindowTemplate **winOut)
 {
     s32 i;
+    s32 out;
+    bool8 addedAchievements = FALSE;
 
     *winOut = win;
-    if (!gRuntimeConfig.debug_menu)
+    if (!gRuntimeConfig.debug_menu && !gRuntimeConfig.achievements)
         return items;
 
-    for (i = 0; items[i].text != NULL; i++)
-        sMainMenuItemsWithDebug[i] = items[i];
+    out = 0;
+    for (i = 0; items[i].text != NULL; i++) {
+        sMainMenuItemsExtra[out++] = items[i];
+        if (gRuntimeConfig.achievements
+            && !addedAchievements
+            && items[i].menuAction == MENU_ADVENTURE_LOG) {
+            sMainMenuItemsExtra[out].text = _("Achievements");
+            sMainMenuItemsExtra[out].menuAction = MENU_ACHIEVEMENTS;
+            out++;
+            addedAchievements = TRUE;
+        }
+    }
 
-    sMainMenuItemsWithDebug[i].text = _("Debug");
-    sMainMenuItemsWithDebug[i].menuAction = MENU_DEBUG;
-    i++;
-    sMainMenuItemsWithDebug[i].text = NULL;
-    sMainMenuItemsWithDebug[i].menuAction = 0xFFDD;
+    if (gRuntimeConfig.debug_menu) {
+        sMainMenuItemsExtra[out].text = _("Debug");
+        sMainMenuItemsExtra[out].menuAction = MENU_DEBUG;
+        out++;
+    }
 
-    sMainMenuWindowWithDebug = *win;
-    sMainMenuWindowWithDebug.height += 1;
-    sMainMenuWindowWithDebug.totalHeight += 1;
-    *winOut = &sMainMenuWindowWithDebug;
-    return sMainMenuItemsWithDebug;
+    sMainMenuItemsExtra[out].text = NULL;
+    sMainMenuItemsExtra[out].menuAction = 0xFFDD;
+
+    sMainMenuWindowExtra = *win;
+    if (addedAchievements) {
+        sMainMenuWindowExtra.height += 1;
+        sMainMenuWindowExtra.totalHeight += 1;
+    }
+    if (gRuntimeConfig.debug_menu) {
+        sMainMenuWindowExtra.height += 1;
+        sMainMenuWindowExtra.totalHeight += 1;
+    }
+    *winOut = &sMainMenuWindowExtra;
+    return sMainMenuItemsExtra;
 }
 
 void DrawMainMenu(void)
@@ -123,6 +145,7 @@ u32 UpdateMainMenu(void)
                 case MENU_DELETE_SAVE_PROMPT:
                 case MENU_DELETE_SAVE_CONFIRM:
                 case MENU_ADVENTURE_LOG:
+                case MENU_ACHIEVEMENTS:
                 case MENU_FRIEND_RESCUE:
                 case MENU_WONDER_MAIL:
                 case MENU_DUAL_SLOT:
@@ -210,6 +233,9 @@ static bool8 SetMainMenuText(void)
         case MENU_ADVENTURE_LOG:
             // Check your career as an adventurer
             SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 2, &sUnknown_80E5CB4, sUnknown_80E5D0C, FALSE, 0, FALSE);
+            break;
+        case MENU_ACHIEVEMENTS:
+            SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 2, &sUnknown_80E5CB4, sUnknown_80E5DAchievements, FALSE, 0, FALSE);
             break;
         case MENU_FRIEND_RESCUE:
             // Using a Game Link cable or passwords, friends may rescue each other
@@ -327,7 +353,7 @@ static void SetMainMenuItems(void)
         win = &sUnknown_80E59E0;
     }
 
-    items = MaybeAppendDebugItem(items, win, &winOut);
+    items = MaybeAppendExtraItems(items, win, &winOut);
     SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 0, winOut, items, TRUE, sUnknown_203B350, TRUE);
 }
 

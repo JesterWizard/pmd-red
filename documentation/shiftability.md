@@ -30,11 +30,6 @@ Runtime (`src/ground_assets.c`):
 - `GMLZ` magic avoids false-positive LZ detection on raw BPA headers that start
   with `0x10`.
 
-## Boot proof
-
-Headless libmgba (`docs/boot_proof/comp_*.png`): compressed `pmd_red.gba` reaches
-colorful in-game frames (64 colors) within the same window as `baserom.gba`.
-
 ```bash
 make -j$(nproc)
 ```

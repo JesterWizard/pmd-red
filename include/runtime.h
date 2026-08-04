@@ -39,6 +39,8 @@ typedef struct {
     u8 bank_interest_percent;
     /* Rank-based bag pages: 8/page, unlock pages via rescue rank (else vanilla 20/10) */
     u8 rank_bag_pages;
+    /* Parallel achievements system (title menu + tracking + rewards) */
+    u8 achievements;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

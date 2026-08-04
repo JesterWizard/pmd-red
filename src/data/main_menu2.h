@@ -171,6 +171,12 @@ static const MenuItem sUnknown_80E5D0C[] = {
     {NULL, 0xFFDD},
 };
 
+static const MenuItem sUnknown_80E5DAchievements[] = {
+    {_("View achievements and rewards."), 0xFFDE},
+    {_("  "), 0xFFDE},
+    {NULL, 0xFFDD},
+};
+
 static const MenuItem sUnknown_80E5D48[] = {
     {_("This is the Debug Mode."), 0xFFDE},
     {_("It won't be in the release version."), 0xFFDE},

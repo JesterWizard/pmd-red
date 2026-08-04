@@ -41,6 +41,7 @@
 #include "dungeon_pokemon_sprites.h"
 #include "dungeon_random.h"
 #include "dungeon_strings.h"
+#include "achievements.h"
 #include "dungeon_serializer.h"
 #include "dungeon_util.h"
 #include "exclusive_pokemon.h"
@@ -305,6 +306,8 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
             gDungeon->tileset = gDungeon->floorProperties.tileset;
             gDungeon->unk3A10 = gDungeon->floorProperties.bgMusic;
             gDungeon->fixedRoomNumber = gDungeon->floorProperties.fixedRoomNumber;
+            if (IsCurrentFixedRoomBossFight())
+                NoteAchievementBossFightStart();
             sub_807E5E4(0);
             sub_80842F0();
         }

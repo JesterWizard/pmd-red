@@ -88,3 +88,6 @@ REF_DATA gSavePakRead, 0x0203B21C
 @
 @ Example:
 @ _kernel_malloc_ewram_array gExampleEwramBuf, 0x1000
+
+@ Parallel achievements blob (see include/achievements.h; ACHIEVEMENTS_DATA_SIZE)
+_kernel_malloc_ewram gAchievementsData, 0x70

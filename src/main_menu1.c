@@ -3,6 +3,7 @@
 #include "constants/item.h"
 #include "constants/main_menu.h"
 #include "adventure_log_menu.h"
+#include "achievements_menu.h"
 #include "code_8099360.h"
 #include "debug_menu1.h"
 #include "ds_menus.h"
@@ -111,6 +112,9 @@ void SetUpMenu(void)
         case MENU_ADVENTURE_LOG:
             CreateAdventureLogMenu();
             break;
+        case MENU_ACHIEVEMENTS:
+            CreateAchievementsMenu();
+            break;
         case 0x29:
         case 0x2A:
         case 0x2B:
@@ -184,6 +188,9 @@ s32 UpdateMenu(void)
         case MENU_ADVENTURE_LOG:
             nextMenu = UpdateAdventureLogMenu();
             break;
+        case MENU_ACHIEVEMENTS:
+            nextMenu = UpdateAchievementsMenu();
+            break;
         case 0x24:
         case 0x25:
         case 0x26:
@@ -250,6 +257,9 @@ void CleanUpMenu(void)
             break;
         case MENU_ADVENTURE_LOG:
             CleanAdventureLogMenu();
+            break;
+        case MENU_ACHIEVEMENTS:
+            CleanAchievementsMenu();
             break;
         case 0x24:
         case 0x25:

@@ -18,6 +18,7 @@
 #include "dungeon_data.h"
 #include "rescue_team_info.h"
 #include "runtime.h"
+#include "achievements.h"
 
 EWRAM_DATA OpenedFile *gItemParametersFile = {NULL};
 EWRAM_DATA ItemDataEntry *gItemParametersData = {NULL}; // NDS=0213BEF0
@@ -683,6 +684,7 @@ bool8 AddItemToInventory(const Item* slot)
     for (i = 0; i < capacity; i++) {
         if (!ItemExists(&gTeamInventoryRef->teamItems[i])) {
             gTeamInventoryRef->teamItems[i] = *slot;
+            NoteAchievementItemObtained(slot->id);
             return FALSE;
         }
     }
@@ -1020,6 +1022,8 @@ void MoveToStorage(Item* slot)
 
     if (gTeamInventoryRef->teamStorage[slot->id] > 999)
         gTeamInventoryRef->teamStorage[slot->id] = 999;
+
+    NoteAchievementItemObtained(slot->id);
 }
 
 // arm9.bin::0205FAE4

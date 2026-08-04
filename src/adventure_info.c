@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "achievements.h"
 #include "adventure_info.h"
 #include "pokemon.h"
 #include "pokemon_3.h"
@@ -27,6 +28,7 @@ void SetDungeonLocationInfo(DungeonLocation *dl)
 {
     gUnknown_203B494->dungeonLocation.id = dl->id;
     gUnknown_203B494->dungeonLocation.floor = dl->floor;
+    NoteAchievementDungeonVisited(dl->id);
 }
 
 DungeonLocation *GetDungeonLocationInfo(void)
@@ -99,6 +101,7 @@ void IncrementFriendRescueSuccesses(void)
         gUnknown_203B494->friendRescueSuccesses = 99999;
 
     SetAdventureAchievement(AA_NUM_FRIEND_RESCUE_SUCCESSES);
+    EvaluateAchievements();
 }
 
 s32 GetFriendRescueSuccesses(void)
@@ -149,6 +152,7 @@ void IncrementAdventureNumJoined(void)
         gUnknown_203B494->numJoined++;
 
     SetAdventureAchievement(AA_NUM_POKEMON_JOINED);
+    EvaluateAchievements();
 }
 
 s16 GetAdventureNumJoined(void)
@@ -167,6 +171,7 @@ void IncrementAdventureFloorsExplored(void)
         gUnknown_203B494->numFloorsExplored++;
 
     SetAdventureAchievement(AA_NUM_FLOORS_EXPLORED);
+    EvaluateAchievements();
 }
 
 s16 GetAdventureFloorsExplored(void)
@@ -305,6 +310,8 @@ void UpdateAdventureAchievements(void)
         gUnknown_203B494->adventureMovesLearned = moveCount;
         SetAdventureAchievement(AA_NUM_MOVES_LEARNED);
     }
+
+    EvaluateAchievements();
 }
 
 void WriteAdventureBits(DataSerializer *r0)
