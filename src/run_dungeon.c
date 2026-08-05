@@ -62,6 +62,7 @@
 #include "dungeon_mon_spawn.h"
 #include "dungeon_action_execution.h"
 #include "dungeon_8041AD0.h"
+#include "move_orb_effects_2.h"
 #include "felicity_bank.h"
 #include "ground_main.h"
 #include "dungeon_mon_sprite_render.h"
@@ -348,6 +349,7 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
         LoadDungeonTilesetAssets();
         if (!r6) {
             sub_806B168();
+            ApplyDeepBreatherOnFloorEnter();
             sub_806C3C0();
             SpawnWildMonsOnFloor();
         }

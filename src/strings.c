@@ -807,6 +807,7 @@ const u8 *const gIQSkillNames[NUM_IQ_SKILLS] = {
     [IQ_STATUS_EXPERT] = _("Status Expert"),
     [IQ_EFFICIENT_EATER] = _("Efficient Eater"),
     [IQ_TREASURE_SENSE] = _("Treasure Sense"),
+    [IQ_DEEP_BREATHER] = _("Deep Breather"),
 };
 
 const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
@@ -841,6 +842,7 @@ const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
     [IQ_STATUS_EXPERT] = _("Status moves have a 10% higher chance\nof succeeding."),
     [IQ_EFFICIENT_EATER] = _("Doubles Belly restored from Seeds\nand Berries."),
     [IQ_TREASURE_SENSE] = _("Can see unclaimed items on the map."),
+    [IQ_DEEP_BREATHER] = _("Restores 1 {color YELLOW}PP{reset} to a random move that\nhas lost {color YELLOW}PP{reset} when entering a new floor."),
 };
 
 const u8 *const gTacticsNames[NUM_TACTICS] = {

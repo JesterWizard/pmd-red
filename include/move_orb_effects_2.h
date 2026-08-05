@@ -35,6 +35,7 @@ void BlindTarget(Entity *pokemon, Entity *target);
 void CrossEyeVisionTarget(Entity *pokemon, Entity *target);
 void RestoreVisionTarget(Entity *pokemon, Entity *target);
 void RestorePPTarget(Entity * pokemon,Entity * target, s32 param_3);
+void ApplyDeepBreatherOnFloorEnter(void);
 void RaiseAtkStatTarget(Entity * pokemon,Entity * target, s32 increment);
 void RaiseSpAtkStatTarget(Entity * pokemon,Entity * target, s32 increment);
 void RaiseDefStatTarget(Entity * pokemon,Entity * target, s32 increment);

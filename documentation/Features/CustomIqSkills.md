@@ -64,6 +64,7 @@ IQ unlock values and groups below match `gReqIQSkillPts` / `gIQSkillGroups` in t
 | 150 | PP Saver | 18 | Moves have a 10% chance of not consuming PP. |
 | 175 | Type Expert | 19 | Super-effective moves deal 25% more damage. |
 | 175 | Type Guard | 19 | Reduces damage from super-effective attacks by 25%. |
+| 190 | Deep Breather | 23 | Restores 1 PP to a random move that has lost PP when entering a new floor. |
 | 220 | Treasure Sense | 22 | Can see unclaimed items on the map. |
 
 ---
@@ -87,6 +88,10 @@ When consuming an item in `CATEGORY_BERRIES_SEEDS_VITAMINS`, the automatic Belly
 ### Treasure Sense
 
 While the camera target (usually the leader) has Treasure Sense enabled, sets `showAllFloorItems` each camera update — same flag as Scanner Orb / X-Ray Specs. Unclaimed floor items appear on the minimap (and off-FOV as sprites). Does not reveal enemies (Radar) or stairs. Own group (22).
+
+### Deep Breather
+
+On each new floor (after team spawn in `run_dungeon.c`, skipped on mid-dungeon save resume): for each team member with Deep Breather, pick one random move with `PP < base PP` and restore **1** PP. No effect if every move is at max. Own group (23).
 
 ### Status Expert
 
@@ -138,6 +143,7 @@ Flag capacity is **32 bits** (`NUM_PICKED_IQ_SKILLS == 4`). Do not exceed skill 
 | Status Expert | [`src/dungeon_move_util.c`](../../src/dungeon_move_util.c) (`GetAccuracyPercent`) |
 | Efficient Eater | [`src/dungeon_item_action.c`](../../src/dungeon_item_action.c) (berries/seeds belly restore) |
 | Treasure Sense | [`src/dungeon_tilemap.c`](../../src/dungeon_tilemap.c) (`UpdateCamera` → `showAllFloorItems`) |
+| Deep Breather | [`src/move_orb_effects_2.c`](../../src/move_orb_effects_2.c) (`ApplyDeepBreatherOnFloorEnter`), called from [`src/run_dungeon.c`](../../src/run_dungeon.c) |
 | Type Expert / Type Guard | [`src/dungeon_damage.c`](../../src/dungeon_damage.c) (`sub_806E100`) |
 | Damage estimate | `EstimateRegularAttackMinDamage` / `EstimateMoveDamageRange` in [`src/dungeon_damage.c`](../../src/dungeon_damage.c) |
 

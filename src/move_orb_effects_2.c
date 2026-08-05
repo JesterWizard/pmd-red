@@ -5,6 +5,8 @@
 #include "dungeon_mon_sprite_render.h"
 #include "dungeon_random.h"
 #include "constants/ability.h"
+#include "constants/iq_skill.h"
+#include "constants/move.h"
 #include "constants/status.h"
 #include "constants/type.h"
 #include "dungeon_ai_movement.h"
@@ -1093,6 +1095,33 @@ void RestorePPTarget(Entity * pokemon,Entity * target, s32 param_3)
     }
     UpdateStatusIconFlags(target);
   }
+}
+
+void ApplyDeepBreatherOnFloorEnter(void)
+{
+    s32 monId;
+
+    for (monId = 0; monId < MAX_TEAM_MEMBERS; monId++) {
+        Entity *mon = gDungeon->teamPokemon[monId];
+        EntityInfo *info;
+        Move *candidates[MAX_MON_MOVES];
+        s32 numCandidates = 0;
+        s32 i;
+
+        if (!EntityIsValid(mon))
+            continue;
+        if (!IqSkillIsEnabled(mon, IQ_DEEP_BREATHER))
+            continue;
+
+        info = GetEntInfo(mon);
+        for (i = 0; i < MAX_MON_MOVES; i++) {
+            Move *move = &info->moves.moves[i];
+            if ((move->moveFlags & MOVE_FLAG_EXISTS) && move->PP < GetMoveBasePP(move))
+                candidates[numCandidates++] = move;
+        }
+        if (numCandidates != 0)
+            candidates[DungeonRandInt(numCandidates)]->PP++;
+    }
 }
 
 void RaiseAtkStatTarget(Entity * pokemon, Entity *target, s32 increment)
