@@ -9,10 +9,11 @@
 #include "kecleon_bros3.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "menu_work.h"
 #include "text_1.h"
 #include "text_2.h"
 
-static EWRAM_INIT MenuHeaderWindow *gUnknown_203B21C = {NULL};
+#define gUnknown_203B21C MENU_WORK(MenuHeaderWindow, MENU_WORK_SLOT_1)
 static EWRAM_INIT u16 gUnknown_203B220 = {0};
 
 #include "data/kecleon_bros3.h"

@@ -33,3 +33,32 @@ IWRAM above `0x03007F00` is stacks + `SOUND_INFO_PTR` / `INTR_*` — do not allo
 - **Save bus `0x0E000000`:** flash sectors via `ReadFlashData` / `WriteFlashData` — not cart SRAM/EEPROM.
 
 Vanilla symbols already linked from C are documented with `REF_DATA` / pool comments only (not re-exported). Only `Free*` markers and `_kernel_malloc*` allocations are new globals for hacks.
+
+## EWRAM savings: shared menu work pointers
+
+Most UI already `MemoryAlloc`s its work struct and frees it on exit, but each file still keeps a permanent `EWRAM_INIT Type *work = { NULL }` (4 bytes) for the live pointer. Town/shop menus never run at the same time, so those pointers can share a small pool:
+
+```c
+// include/menu_work.h / src/menu_work.c
+EWRAM_INIT void *gMenuWork[MENU_WORK_SLOTS] = { NULL }; // currently 4 slots
+
+#define MENU_WORK(type, slot) (*(type **)&gMenuWork[slot])
+// usage: #define sKecleonBrosWork1 MENU_WORK(KecleonBrosWork1, MENU_WORK_SLOT_0)
+```
+
+Slot conventions for the shop/storage first pass:
+
+| Slot | Role | Examples |
+| --- | --- | --- |
+| 0 | Root shop/storage UI | Kangaskhan 1/2, Kecleon 1, Gulpin main, Wigglytuff 3, Felicity, Makuhita 1 |
+| 1 | First nested submenu | Kecleon 2/3/4 lists, Gulpin move UI, Wigglytuff area list, Makuhita courses |
+| 2 | Second nested layer | Wigglytuff friend-area info (while list still live), item description over an inventory picker |
+| 3 | Reserved | deeper nesting / future menus |
+
+Notes:
+
+- Kangaskhan storage1 and storage2 are **alternate roots** (different textbox entry points), not parent/child — both use slot 0.
+- Nested depth matters: Kangaskhan/Kecleon keep the root allocated while opening Kecleon 4 (`sub_801A5D8`) on slot 1, then item description on slot 2.
+- Cursor-restore scalars (`u16` last menu index, etc.) stay as file-local `EWRAM_INIT`; only the heap work **pointers** are pooled.
+- Larger wins come from the same idea applied to static buffers / BSS blobs listed in `sym_ewram.txt` and `sym_ewram_init.txt`, not just pointers — especially relevant for an NDS port with tighter RAM.
+

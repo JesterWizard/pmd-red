@@ -11,6 +11,7 @@
 #include "iq_skill_menu.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "menu_work.h"
 #include "moves.h"
 #include "music_util.h"
 #include "pokemon_3.h"
@@ -19,7 +20,7 @@
 #include "string_format.h"
 #include "text_1.h"
 
-EWRAM_INIT unkStruct_203B27C *gUnknown_203B27C = {NULL};
+#define gUnknown_203B27C MENU_WORK(unkStruct_203B27C, MENU_WORK_SLOT_0)
 
 #include "data/gulpin_shop_801FB50.h"
 

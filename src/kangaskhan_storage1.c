@@ -9,12 +9,13 @@
 #include "kecleon_bros4.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "menu_work.h"
 #include "pokemon.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
 
-EWRAM_INIT struct KangaskhanStorageWork *gKangaskhanStorageWork = {NULL};
+#define gKangaskhanStorageWork MENU_WORK(struct KangaskhanStorageWork, MENU_WORK_SLOT_0)
 
 #include "data/kangaskhan_storage1.h" // 80DB748
 

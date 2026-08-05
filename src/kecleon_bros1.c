@@ -16,6 +16,7 @@
 #include "kecleon_bros4.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "menu_work.h"
 #include "pokemon.h"
 #include "string_format.h"
 #include "text_1.h"
@@ -95,7 +96,7 @@ typedef struct KecleonBrosWork1
     /* 0xE8 */ WindowTemplates unkE8;
 } KecleonBrosWork1;
 
-static EWRAM_INIT KecleonBrosWork1 *sKecleonBrosWork1 = {NULL}; // NDS=020EAD7C
+#define sKecleonBrosWork1 MENU_WORK(KecleonBrosWork1, MENU_WORK_SLOT_0) // NDS=020EAD7C
 
 #include "data/kecleon_bros1.h"
 
