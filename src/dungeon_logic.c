@@ -1368,7 +1368,28 @@ void LoadIQSkills(Entity *pokemon)
             SetIQSkill(&pokemonInfo->IQSkillFlags,IQSkill);
       }
     }
+    /* Clamp current PP if Multitalent (or similar) max changed. */
+    {
+      s32 moveIdx;
+      for (moveIdx = 0; moveIdx < MAX_MON_MOVES; moveIdx++) {
+        Move *move = &pokemonInfo->moves.moves[moveIdx];
+        if (move->moveFlags & MOVE_FLAG_EXISTS) {
+          u32 maxPP = GetEntityMoveMaxPP(pokemon, move);
+          if (move->PP > maxPP)
+            move->PP = maxPP;
+        }
+      }
+    }
   }
+}
+
+u32 GetEntityMoveMaxPP(Entity *pokemon, Move *move)
+{
+    u32 maxPP = GetMoveBasePP(move);
+
+    if (IqSkillIsEnabled(pokemon, IQ_MULTITALENT))
+        maxPP += 5;
+    return maxPP;
 }
 
 bool8 CanSeeTeammate(Entity * pokemon)

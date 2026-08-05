@@ -208,7 +208,8 @@ void UpdateCamera(u8 a0)
                 || IqSkillIsEnabled(cameraTarget, IQ_TREASURE_SENSE);
         }
 
-        strPtr->unk18211 = info->stairSpotter;
+        strPtr->unk18211 = info->stairSpotter
+            || IqSkillIsEnabled(cameraTarget, IQ_STAIR_SENSOR);
         before = strPtr->blinded;
         inFloorMapMode = strPtr->inFloorMapMode;
         if (inFloorMapMode == 0) {

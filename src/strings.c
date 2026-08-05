@@ -813,6 +813,10 @@ const u8 *const gIQSkillNames[NUM_IQ_SKILLS] = {
     [IQ_CONCENTRATOR] = _("Concentrator"),
     [IQ_SHARP_SHOOTER] = _("Sharpshooter"),
     [IQ_QUICK_HEALER] = _("Quick Healer"),
+    [IQ_STAIR_SENSOR] = _("Stair Sensor"),
+    [IQ_POWER_PITCHER] = _("Power Pitcher"),
+    [IQ_MULTITALENT] = _("Multitalent"),
+    [IQ_EXP_ELITE] = _("Exp. Elite"),
 };
 
 const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
@@ -853,6 +857,10 @@ const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
     [IQ_CONCENTRATOR] = _("Raises accuracy by 1 and reduces\nevasion by 1."),
     [IQ_SHARP_SHOOTER] = _("Raises the Pokémon's critical-hit rate."),
     [IQ_QUICK_HEALER] = _("Raises the Pokémon's natural {color YELLOW}HP{reset}\nrecovery."),
+    [IQ_STAIR_SENSOR] = _("Learns the location of the stairs when\nchanging floors."),
+    [IQ_POWER_PITCHER] = _("Doubles the damage of thrown items\nsuch as Gravelerocks."),
+    [IQ_MULTITALENT] = _("Adds 5 to the Pokémon's maximum {color YELLOW}PP{reset}\nwhile active."),
+    [IQ_EXP_ELITE] = _("Earns 1.2× experience when defeating\nfoes."),
 };
 
 const u8 *const gTacticsNames[NUM_TACTICS] = {

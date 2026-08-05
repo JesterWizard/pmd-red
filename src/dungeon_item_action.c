@@ -374,14 +374,19 @@ static void SleepSeedItemAction(Entity *pokemon, Entity *target)
 static void sub_80482FC(Entity *pokemon, Entity *target, u32 pp, u8 param_4)
 {
     Move move;
+    s24_8 modifier = IntToF248(1);
 
     InitPokemonMove(&move, MOVE_PROJECTILE);
     move.PP = pp;
-    HandleDamagingMove(pokemon, target, &move, IntToF248(1), param_4);
+    if (IqSkillIsEnabled(pokemon, IQ_POWER_PITCHER))
+        modifier = IntToF248(2);
+    HandleDamagingMove(pokemon, target, &move, modifier, param_4);
 }
 
 static void sub_8048340(Entity *pokemon, Entity *target, u32 r2)
 {
+    if (IqSkillIsEnabled(pokemon, IQ_POWER_PITCHER))
+        r2 *= 2;
     sub_806F370_Async(pokemon, target, r2, 1, 0, 0, DUNGEON_EXIT_FELLED_BY_THROWN_ROCK, RESIDUAL_DAMAGE_REGULAR, 0, 0);
 }
 
@@ -583,6 +588,8 @@ static void BlastSeedItemAction(Entity *pokemon, Entity * target, u8 param_3)
     else {
         dmg = gBlastSeedThrownDmgValue;
     }
+    if (IqSkillIsEnabled(pokemon, IQ_POWER_PITCHER))
+        dmg *= 2;
     if (entityInfo_1->frozenClassStatus.status == STATUS_FROZEN) {
       EndFrozenClassStatus(pokemon, target);
     }

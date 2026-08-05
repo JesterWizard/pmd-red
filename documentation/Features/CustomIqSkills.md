@@ -63,14 +63,18 @@ IQ unlock values and groups below match `gReqIQSkillPts` / `gIQSkillGroups` in t
 | 100 | Conserver | 6 | Avoids using moves when a regular attack is sufficient to defeat the target. |
 | 120 | Quick Healer | 28 | Raises natural HP recovery. |
 | 130 | Status Expert | 20 | Status moves have a 10% higher chance of succeeding. |
+| 135 | Power Pitcher | 30 | Doubles the damage of thrown items such as Gravelerocks. |
 | 145 | Concentrator | 26 | Raises accuracy by 1 and reduces evasion by 1. |
 | 150 | PP Saver | 18 | Moves have a 10% chance of not consuming PP. |
+| 155 | Multitalent | 31 | Adds 5 to the Pokémon's maximum PP while active. |
 | 165 | Hit-and-Runner | 25 | Sometimes cancels foes' counterattacks (50%). |
 | 175 | Type Expert | 19 | Super-effective moves deal 25% more damage. |
 | 175 | Type Guard | 19 | Reduces damage from super-effective attacks by 25%. |
 | 185 | Sharpshooter | 27 | Raises critical-hit rate (+15%). |
 | 190 | Deep Breather | 23 | Restores 1 PP to a random move that has lost PP when entering a new floor. |
+| 210 | Stair Sensor | 29 | Learns the location of the stairs when changing floors. |
 | 220 | Treasure Sense | 22 | Can see unclaimed items on the map. |
+| 230 | Exp. Elite | 32 | Earns 1.2× experience when defeating foes. |
 
 ---
 
@@ -102,6 +106,10 @@ In natural HP regen (`TickStatusAndHealthRegen`), adds `gQuickHealerRegenValue` 
 
 While the camera target (usually the leader) has Treasure Sense enabled, sets `showAllFloorItems` each camera update — same flag as Scanner Orb / X-Ray Specs. Unclaimed floor items appear on the minimap (and off-FOV as sprites). Does not reveal enemies (Radar) or stairs. Own group (22).
 
+### Stair Sensor
+
+While the camera target has Stair Sensor enabled, sets `unk18211` each camera update — same flag as Stairs Orb (`stairSpotter`). Stairs appear on the minimap for every floor. Own group (29).
+
 ### Deep Breather
 
 On each new floor (after team spawn in `run_dungeon.c`, skipped on mid-dungeon save resume): for each team member with Deep Breather, pick one random move with `PP < base PP` and restore **1** PP. No effect if every move is at max. Own group (23).
@@ -109,6 +117,20 @@ On each new floor (after team spawn in `run_dungeon.c`, skipped on mid-dungeon s
 ### Status Expert
 
 In `GetAccuracyPercent`, after accuracy / evasion stage modifiers: if the move’s base power is **0** (status move) and Status Expert is enabled, add **+10** to the hit chance (capped at 100). Also reflected in Damage Preview accuracy. Own group (20).
+
+### Power Pitcher
+
+Doubles thrown-item damage for the thrower:
+
+- Rocks (Geo Pebble / Gravelerock): fixed damage ×2 in `sub_8048340`
+- Stick / spike projectiles: `HandleDamagingMove` modifier **2.0×**
+- Thrown Blast Seed: thrown damage ×2
+
+Own group (30).
+
+### Multitalent
+
+While enabled, each move’s maximum PP is **base + 5** (`GetEntityMoveMaxPP`). Used for Max Elixir / PP restore caps, Deep Breather eligibility, AI elixir weight, and dungeon move-list display. Disabling clamps current PP down to the new max via `LoadIQSkills`. Own group (31).
 
 ### Concentrator
 
@@ -134,6 +156,10 @@ Mutually exclusive with each other (group 19). Damage Preview uses the same path
 ### Sharpshooter
 
 In `CalcDamage` crit odds (after Scope Lens / Type-Advantage Master): adds `gCritOddsSharpShooter` (**+15**). Own group (27).
+
+### Exp. Elite
+
+In `AddExpPoints`, if the recipient has Exp. Elite enabled, multiplies the granted amount by **6/5** (1.2×) after the global `exp_multiplier` runtime option. Applies to that Pokémon’s share of KO EXP (and any other EXP routed through `AddExpPoints`). Own group (32).
 
 ---
 
@@ -166,13 +192,17 @@ Flag capacity is **64 bits** (`NUM_PICKED_IQ_SKILLS == 8`). Bit helpers use skil
 | Conserver AI | [`src/dungeon_ai_attack.c`](../../src/dungeon_ai_attack.c) |
 | PP Saver | [`src/dungeon_move_util.c`](../../src/dungeon_move_util.c) (`sub_8057588`), Snore/Sleep Talk in [`src/dungeon_action_execution.c`](../../src/dungeon_action_execution.c) |
 | Status Expert / Concentrator | [`src/dungeon_move_util.c`](../../src/dungeon_move_util.c) (`GetAccuracyPercent`) |
+| Power Pitcher | [`src/dungeon_item_action.c`](../../src/dungeon_item_action.c) (thrown rock / projectile / Blast Seed) |
+| Multitalent | [`src/dungeon_logic.c`](../../src/dungeon_logic.c) (`GetEntityMoveMaxPP` / `LoadIQSkills` clamp) |
 | Efficient Eater | [`src/dungeon_item_action.c`](../../src/dungeon_item_action.c) (berries/seeds belly restore) |
 | Coin Watcher | [`src/dungeon_modifiers.c`](../../src/dungeon_modifiers.c) (`AddDungeonFloorMoney`) |
 | Treasure Sense | [`src/dungeon_tilemap.c`](../../src/dungeon_tilemap.c) (`UpdateCamera` → `showAllFloorItems`) |
+| Stair Sensor | [`src/dungeon_tilemap.c`](../../src/dungeon_tilemap.c) (`UpdateCamera` → `unk18211`) |
 | Deep Breather | [`src/move_orb_effects_2.c`](../../src/move_orb_effects_2.c) (`ApplyDeepBreatherOnFloorEnter`), called from [`src/run_dungeon.c`](../../src/run_dungeon.c) |
 | Hit-and-Runner | [`src/dungeon_damage.c`](../../src/dungeon_damage.c) (`HandleDealingDamage_Async`) |
 | Type Expert / Type Guard | [`src/dungeon_damage.c`](../../src/dungeon_damage.c) (`sub_806E100`) |
 | Sharpshooter | [`src/dungeon_damage.c`](../../src/dungeon_damage.c) (`CalcDamage`) |
+| Exp. Elite | [`src/dungeon_leveling.c`](../../src/dungeon_leveling.c) (`AddExpPoints`) |
 | Quick Healer | [`src/dungeon_turn_effects.c`](../../src/dungeon_turn_effects.c) (`TickStatusAndHealthRegen`) |
 | Damage estimate | `EstimateRegularAttackMinDamage` / `EstimateMoveDamageRange` in [`src/dungeon_damage.c`](../../src/dungeon_damage.c) |
 

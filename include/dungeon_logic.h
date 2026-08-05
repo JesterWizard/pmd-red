@@ -49,6 +49,7 @@ bool8 CanSeeInvisibleMonsters(Entity *pokemon);
 bool8 IsTacticSet(Entity *pokemon, u8 tactic);
 bool8 IqSkillIsEnabled(Entity *pokemon, u8 IQSkill);
 void LoadIQSkills(Entity *pokemon);
+u32 GetEntityMoveMaxPP(Entity *pokemon, Move *move);
 bool8 CanSeeTeammate(Entity * pokemon);
 u8 GetMoveTypeForMonster(Entity *pokemon, Move *pokeMove);
 s32 GetMovePower(Entity *pokemon, Move *pokeMove);

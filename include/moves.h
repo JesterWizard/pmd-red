@@ -17,13 +17,14 @@ enum
 
 #define X_PP_COORD_DEFAULT 106
 
-// size: 0xC
+// size: 0x10
 typedef struct MoveBufferStruct
 {
     u32 style;
     s32 xPPCoord;
     bool8 redColor;
     bool8 useRedColorForChargingMoves;
+    u8 maxPPBonus; /* added to base PP for display (e.g. Multitalent) */
 } MoveBufferStruct;
 
 // size: 0x8

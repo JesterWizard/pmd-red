@@ -13,6 +13,7 @@
 #include "dungeon_message.h"
 #include "dungeon_logic.h"
 #include "dungeon_music.h"
+#include "constants/iq_skill.h"
 #include "dungeon_random.h"
 #include "dungeon_submenu.h"
 #include "dungeon_strings.h"
@@ -485,6 +486,8 @@ static void PrintMoveNamesOnWindow(s32 count, Entity *entity, Move *moves, s32 w
             }
 
             movStruct.redColor = (CanMonsterUseMove(entity, move, TRUE) == FALSE);
+            if (IqSkillIsEnabled(entity, IQ_MULTITALENT))
+                movStruct.maxPPBonus = 5;
             BufferMoveName(gFormatBuffer_Items[0], move, &movStruct);
             y = GetMenuEntryYCoord(&gDungeonMenu, i);
             if MOVE_FLAG_LINK_CHAIN(move) {

@@ -88,7 +88,7 @@ u32 GetAIUseItemProbability(Entity *targetPokemon, Item *item, u32 itemTargetFla
                     {
                         itemWeight += 30;
                     }
-                    if (move->PP != GetMoveBasePP(move2))
+                    if (move->PP != GetEntityMoveMaxPP(targetPokemon, move2))
                     {
                         itemWeight += 6;
                     }

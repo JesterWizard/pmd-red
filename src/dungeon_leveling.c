@@ -2,6 +2,7 @@
 #include "globaldata.h"
 #include "runtime.h"
 #include "dungeon_leveling.h"
+#include "constants/iq_skill.h"
 #include "constants/tactic.h"
 #include "dungeon_config.h"
 #include "dungeon_range.h"
@@ -54,6 +55,8 @@ void AddExpPoints(Entity *pokemon, Entity *target, s32 exp)
 
   if (gRuntimeConfig.exp_multiplier != 1)
     exp *= gRuntimeConfig.exp_multiplier;
+  if (IqSkillIsEnabled(target, IQ_EXP_ELITE))
+    exp = (exp * 6) / 5;
 
   EntityInfo *info = GetEntInfo(target);
   if (info->level != 100) {

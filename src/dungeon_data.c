@@ -118,6 +118,10 @@ const s32 gReqIQSkillPts[NUM_IQ_SKILLS] =
     [IQ_CONCENTRATOR] = 145,
     [IQ_SHARP_SHOOTER] = 185,
     [IQ_QUICK_HEALER] = 120,
+    [IQ_STAIR_SENSOR] = 210,
+    [IQ_POWER_PITCHER] = 135,
+    [IQ_MULTITALENT] = 155,
+    [IQ_EXP_ELITE] = 230,
 };
 
 /* Skills in the same group are mutually exclusive when enabled. */
@@ -159,6 +163,10 @@ const s32 gIQSkillGroups[NUM_IQ_SKILLS] = {
     [IQ_CONCENTRATOR] = 26,
     [IQ_SHARP_SHOOTER] = 27,
     [IQ_QUICK_HEALER] = 28,
+    [IQ_STAIR_SENSOR] = 29,
+    [IQ_POWER_PITCHER] = 30,
+    [IQ_MULTITALENT] = 31,
+    [IQ_EXP_ELITE] = 32,
 };
 
 // LUT for money item stack size -> money amount

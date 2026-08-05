@@ -86,25 +86,25 @@ void BufferMoveName(u8 *buffer, Move *move, const MoveBufferStruct *bufferParams
                 color, sMovesData[move->id].name, ginsengBoostStr);
             break;
         case BUFFER_MOVE_SET_ICON_POSITIONED_PP_UNUSED:
-            basePP = GetMoveBasePP(move);
+            basePP = GetMoveBasePP(move) + bufferParams->maxPPBonus;
             sprintfStatic(buffer, _("{color}%c#:%s%s%s#;%c%2d/%2d{reset}"),
                 color, move->moveFlags & MOVE_FLAG_SET ? _("{ICON_SET}") : _("{ICON_BLANK}"),
                 sMovesData[move->id].name, ginsengBoostStr, bufferParams->xPPCoord, move->PP, basePP);
             break;
         case BUFFER_MOVE_SET_ICON_POSITIONED_PP:
-            basePP = GetMoveBasePP(move);
+            basePP = GetMoveBasePP(move) + bufferParams->maxPPBonus;
             sprintfStatic(buffer, _("{color}%c%s%s%s{MOVE_X_POSITION}%c%2d/%2d{reset}"),
                 color, move->moveFlags & MOVE_FLAG_SET ? _("{ICON_SET}") : _("{ICON_BLANK}"),
                 sMovesData[move->id].name, ginsengBoostStr, bufferParams->xPPCoord, move->PP, basePP);
             break;
         case BUFFER_MOVE_STAR_ICON_POSITIONED_PP_UNUSED:
-            basePP = GetMoveBasePP(move);
+            basePP = GetMoveBasePP(move) + bufferParams->maxPPBonus;
             sprintfStatic(buffer, _("{color}%c#:%s%s%s#;%c%2d/%2d{reset}"),
                 color, move->moveFlags & MOVE_FLAG_ENABLED_FOR_AI ? _("{STAR_BULLET}") : _("{ICON_BLANK}"),
                 sMovesData[move->id].name, ginsengBoostStr, bufferParams->xPPCoord, move->PP, basePP);
             break;
         case BUFFER_MOVE_STAR_ICON_POSITIONED_PP:
-            basePP = GetMoveBasePP(move);
+            basePP = GetMoveBasePP(move) + bufferParams->maxPPBonus;
             sprintfStatic(buffer, _("{color}%c%s%s%s{MOVE_X_POSITION}%c%2d/%2d{reset}"),
                 color, move->moveFlags & MOVE_FLAG_ENABLED_FOR_AI ? _("{STAR_BULLET}") : _("{ICON_BLANK}"),
                 sMovesData[move->id].name, ginsengBoostStr, bufferParams->xPPCoord, move->PP, basePP);

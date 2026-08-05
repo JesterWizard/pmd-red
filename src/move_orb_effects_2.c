@@ -1075,7 +1075,7 @@ void RestorePPTarget(Entity * pokemon,Entity * target, s32 param_3)
       movePtr1 = movePtr;
       if ((movePtr->moveFlags & MOVE_FLAG_EXISTS)) {
         PP = movePtr->PP;
-        basePP = GetMoveBasePP(movePtr1);
+        basePP = GetEntityMoveMaxPP(target, movePtr1);
         if (PP < basePP) {
           PP += param_3;
           if (PP > basePP) {
@@ -1116,7 +1116,7 @@ void ApplyDeepBreatherOnFloorEnter(void)
         info = GetEntInfo(mon);
         for (i = 0; i < MAX_MON_MOVES; i++) {
             Move *move = &info->moves.moves[i];
-            if ((move->moveFlags & MOVE_FLAG_EXISTS) && move->PP < GetMoveBasePP(move))
+            if ((move->moveFlags & MOVE_FLAG_EXISTS) && move->PP < GetEntityMoveMaxPP(mon, move))
                 candidates[numCandidates++] = move;
         }
         if (numCandidates != 0)
