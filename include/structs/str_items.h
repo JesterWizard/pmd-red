@@ -57,15 +57,16 @@ typedef struct BulkItem
     /* 0x1 */ u8 quantity;
 } BulkItem;
 
-// size: 0x2C8 with INVENTORY_SIZE 48 + u8 teamStorage[480]
+/* Item/BulkItem are 4 bytes under ARM -mstructure-size-boundary=32 (3/2 payload + pad).
+ * With INVENTORY_SIZE 48 + u8 teamStorage[480]: size 0x2D8; money at 0x2D0. */
 typedef struct TeamInventory
 {
     /* 0x0 */ Item teamItems[INVENTORY_SIZE];
     /* 0xC0 */ u8 teamStorage[STORAGE_SIZE]; /* u8 counts; 480 ids of headroom */
-    /* 0x2A0 */ BulkItem kecleonShopItems[MAX_KECLEON_ITEM_SHOP_ITEMS];
-    /* 0x2B0 */ BulkItem kecleonWareItems[MAX_KECLEON_WARE_SHOP_ITEMS];
-    /* 0x2B8 */ s32 teamMoney;
-    /* 0x2BC */ s32 teamSavings;
+    /* 0x2A0 */ BulkItem kecleonShopItems[MAX_KECLEON_ITEM_SHOP_ITEMS]; /* 8 * 4 */
+    /* 0x2C0 */ BulkItem kecleonWareItems[MAX_KECLEON_WARE_SHOP_ITEMS]; /* 4 * 4 */
+    /* 0x2D0 */ s32 teamMoney;
+    /* 0x2D4 */ s32 teamSavings;
 } TeamInventory;
 
 // TODO: These should be in constants/

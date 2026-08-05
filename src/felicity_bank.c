@@ -5,6 +5,7 @@
 #include "common_strings.h"
 #include "felicity_bank.h"
 #include "input.h"
+#include "items.h"
 #include "memory.h"
 #include "menu_input.h"
 #include "pokemon.h"
@@ -462,6 +463,7 @@ static void CreateFelicityMoneySavingsHeader(u32 windowId)
 // arm9.bin::0201FAE8
 void DrawTeamMoneyBox(u32 windowId)
 {
+    SanitizeTeamMoney();
     CallPrepareTextbox_8008C54(windowId);
     sub_80073B8(windowId);
     PrintStringOnWindow(6, 0, sMoney, windowId, 0);

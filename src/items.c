@@ -127,8 +127,31 @@ void InitializeMoneyItems(void)
     for (i = 0; i < MAX_KECLEON_ITEM_SHOP_ITEMS; i++)
         InitKecleonShopItem(i);
 
+    for (i = 0; i < MAX_KECLEON_WARE_SHOP_ITEMS; i++)
+        InitKecleonWareItem(i);
+
     gTeamInventoryRef->teamMoney = 0;
     gTeamInventoryRef->teamSavings = 0;
+}
+
+/*
+ * Team money/savings are stored as 24-bit fields in the save blob. ReadBits only
+ * writes those 24 bits and leaves the s32 high byte untouched. A dirty high byte
+ * makes teamMoney negative: PrintNumOnWindow still shows the low digits (so shops
+ * look funded) while spend checks fail. Mask + clamp after any 24-bit restore.
+ */
+void SanitizeTeamMoney(void)
+{
+    s32 money = (s32)((u32)gTeamInventoryRef->teamMoney & 0x00FFFFFF);
+    s32 savings = (s32)((u32)gTeamInventoryRef->teamSavings & 0x00FFFFFF);
+
+    if (money > MAX_TEAM_MONEY)
+        money = MAX_TEAM_MONEY;
+    if (savings > MAX_TEAM_SAVINGS)
+        savings = MAX_TEAM_SAVINGS;
+
+    gTeamInventoryRef->teamMoney = money;
+    gTeamInventoryRef->teamSavings = savings;
 }
 
 s32 GetBagItemsPerPage(void)
@@ -1409,8 +1432,12 @@ s32 RestoreTeamInventory(u8 *unk0, u32 size)
     for (i = 0; i < MAX_KECLEON_WARE_SHOP_ITEMS; i++)
         ReadHeldItemBits(&seri, &gTeamInventoryRef->kecleonWareItems[i]);
 
+    /* Clear before 24-bit read so a stale high byte cannot make money negative. */
+    gTeamInventoryRef->teamMoney = 0;
+    gTeamInventoryRef->teamSavings = 0;
     ReadBits(&seri, &gTeamInventoryRef->teamMoney, 24);
     ReadBits(&seri, &gTeamInventoryRef->teamSavings, 24);
+    SanitizeTeamMoney();
 
     FinishBitSerializer(&seri);
     return seri.count;

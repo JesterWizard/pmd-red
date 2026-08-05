@@ -18,12 +18,14 @@
 #include "ground_map.h"
 #include "input.h"
 #include "iq_skill_menu.h"
+#include "items.h"
 #include "memory.h"
 #include "menu_input.h"
 #include "options_menu1.h"
 #include "party_list_menu.h"
 #include "recruited_mon_summary_menu.h"
 #include "rescue_team_info.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -596,8 +598,13 @@ static void sub_801D894(void)
     // %s {COLOR CYAN}%d{RESET} Pts.
     sprintfStatic(buffer, sFmtPointsCyan, GetTeamRankString(GetRescueTeamRank()), GetTeamRankPts());
     PrintStringOnWindow(32, 4, buffer, 2, 0);
-    sprintfStatic(buffer, sFmtMoneyCyan, gTeamInventoryRef->teamMoney);
-    PrintStringOnWindow(32, 18, buffer, 2, 0);
+
+    /* Sanitize first: a dirty high byte from 24-bit save IO makes money look funded in
+     * PrintNumOnWindow shops while spend checks see a negative wallet. */
+    SanitizeTeamMoney();
+    gFormatArgs[0] = gTeamInventoryRef->teamMoney;
+    PrintFormattedStringOnWindow(32, 18,
+        gRuntimeConfig.custom_graphics ? sFmtMoneyCyan : sFmtMoney, 2, 0);
     sub_80073E0(2);
 }
 

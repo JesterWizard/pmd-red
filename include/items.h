@@ -44,6 +44,7 @@ enum
 void LoadItemParameters(void);
 TeamInventory *GetMoneyItemsInfo(void);
 void InitializeMoneyItems(void);
+void SanitizeTeamMoney(void);
 s32 GetNumberOfFilledInventorySlots(void);
 s32 GetBagItemsPerPage(void);
 s32 GetBagPageCount(void);

@@ -20,7 +20,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .achievements = TRUE, /* TRUE = parallel achievements menu + tracking; FALSE = off */
     .compact_kangaskhan_storage = TRUE, /* TRUE = max 99/item (u8); FALSE = max 255 */
     .custom_title_backgrounds = TRUE, /* TRUE = custom title BGs; FALSE = vanilla titlen0–2 */
-    .dungeon_modifiers = TRUE, /* TRUE = 20% chance of a floor modifier; FALSE = off */
+    .dungeon_modifiers = FALSE, /* TRUE = 20% chance of a floor modifier; FALSE = off */
     .starter_choice_prompt = TRUE, /* TRUE = choose starter or take quiz; FALSE = quiz only */
     .overkill_exp_bonus = TRUE, /* TRUE = +25% EXP per 100% overkill on full-HP KO; FALSE = off */
     .custom_portraits = TRUE, /* TRUE = SpriteCollab evo portraits; FALSE = vanilla kao / none */
