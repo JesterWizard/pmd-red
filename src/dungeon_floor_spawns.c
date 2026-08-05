@@ -26,31 +26,50 @@
 /* PMD2 Marowak Dojo enemy levels by floor (B1F-B5F). EXP scales with level. */
 static const u8 sPmd2TrainingGroundLevels[] = {0, 1, 10, 20, 25, 35};
 
-static void ApplyPmd2TrainingGroundOverrides(void)
+/* Returns FALSE when pmd2_training_grounds does not apply to this dungeon. */
+static bool8 TryGetPmd2TrainingGroundEnemyLevel(u8 *levelOut)
 {
     u8 dungId;
     u8 floor;
-    u8 level;
-    s32 i;
 
     if (!gRuntimeConfig.pmd2_training_grounds)
-        return;
+        return FALSE;
 
     dungId = gDungeon->unk644.dungeonLocation.id;
     if (dungId < DUNGEON_NORMAL_MAZE_2 || dungId > DUNGEON_STEEL_MAZE)
-        return;
+        return FALSE;
 
     floor = gDungeon->unk644.dungeonLocation.floor;
-    level = 1;
     if (floor >= 1 && floor <= 5)
-        level = sPmd2TrainingGroundLevels[floor];
+        *levelOut = sPmd2TrainingGroundLevels[floor];
+    else
+        *levelOut = 1;
+    return TRUE;
+}
 
-    for (i = 0; i < MONSTER_SPAWNS_ARR_COUNT - 1; i++) {
-        s16 species = ExtractSpeciesIndex(&gDungeon->fileMonsterSpawns[i]);
+static void SetSpawnListLevels(SpawnPokemonData *spawns, s32 count, u8 level)
+{
+    s32 i;
+
+    for (i = 0; i < count; i++) {
+        s16 species = ExtractSpeciesIndex(&spawns[i]);
         if (species == 0)
             break;
-        SetSpeciesLevelToExtract(&gDungeon->fileMonsterSpawns[i], level, species);
+        SetSpeciesLevelToExtract(&spawns[i], level, species);
     }
+}
+
+static void ApplyPmd2TrainingGroundOverrides(void)
+{
+    u8 level;
+
+    if (!TryGetPmd2TrainingGroundEnemyLevel(&level))
+        return;
+
+    SetSpawnListLevels(gDungeon->fileMonsterSpawns, MONSTER_SPAWNS_ARR_COUNT - 1, level);
+    /* Keep the live spawn table in sync when floors 3-5 reuse cached map data. */
+    if (gDungeon->monsterSpawnsPopulated)
+        SetSpawnListLevels(gDungeon->monsterSpawns, gDungeon->currFloorMonsterSpawnsCount, level);
 
     /* Safety: never run a dojo boss room under PMD2 rules. */
     if (gDungeon->floorProperties.fixedRoomNumber >= FIRST_DOJO_MAZE_BOSS_ROOM
@@ -207,6 +226,8 @@ void SetCurrentMonsterSpawns(void)
     if (!gDungeon->monsterSpawnsPopulated) {
         gDungeon->monsterSpawnsPopulated = TRUE;
         gDungeon->currFloorMonsterSpawnsCount = SetMonsterSpawnsArray(gDungeon->monsterSpawns, 0);
+        /* Re-apply after copy so floors 3-5 (shared mapparam cache) get per-floor levels. */
+        ApplyPmd2TrainingGroundOverrides();
     }
 }
 
@@ -248,6 +269,11 @@ s32 GetSpawnedMonsterLevel(s32 species)
 {
     s32 i;
     s32 speciesId = SpeciesId(species);
+    u8 pmd2Level;
+
+    /* Authoritative for training grounds: spawn-table copies can lag on remapped floors. */
+    if (TryGetPmd2TrainingGroundEnemyLevel(&pmd2Level))
+        return pmd2Level;
 
     for (i = 0; i < gDungeon->currFloorMonsterSpawnsCount; i++) {
         if (ExtractSpeciesIndex(&gDungeon->monsterSpawns[i]) == speciesId)
