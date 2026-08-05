@@ -134,6 +134,13 @@ void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageSt
         if (AbilityIsActive(target, ABILITY_ROUGH_SKIN))
             returnDmg += 2;
 
+        if (returnDmg
+            && IqSkillIsEnabled(attacker, IQ_HIT_AND_RUNNER)
+            && DungeonRandOutcome(50))
+        {
+            returnDmg = 0;
+        }
+
         if (returnDmg) {
             struct DamageStruct sp;
 
@@ -1385,6 +1392,9 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
                 if (r5 && IqSkillIsEnabled(attacker, IQ_TYPE_ADVANTAGE_MASTER)) {
                     critOdds = gCritOddsIqAdvantageMaster;
                     gDungeon->unk134.unk169 = 1;
+                }
+                if (IqSkillIsEnabled(attacker, IQ_SHARP_SHOOTER)) {
+                    critOdds += gCritOddsSharpShooter;
                 }
             }
             if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MIN) {

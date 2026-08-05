@@ -465,7 +465,7 @@ void MonTryPickUpItem(Entity *entity)
         else {
             PlaySoundEffect(0x14C);
         }
-        AddDungeonFloorMoney(GetMoneyValue(groundItem));
+        AddDungeonFloorMoney(entity, GetMoneyValue(groundItem));
         sub_8045BF8(gFormatBuffer_Items[0], groundItem);
         RemoveGroundItem(&entity->pos, 1);
         DisplayDungeonLoggableMessageTrue_Async(entity, gMonPickedUpItem);

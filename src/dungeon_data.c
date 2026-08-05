@@ -113,6 +113,11 @@ const s32 gReqIQSkillPts[NUM_IQ_SKILLS] =
     [IQ_EFFICIENT_EATER] = 80,
     [IQ_TREASURE_SENSE] = 220,
     [IQ_DEEP_BREATHER] = 190,
+    [IQ_COIN_WATCHER] = 90,
+    [IQ_HIT_AND_RUNNER] = 165,
+    [IQ_CONCENTRATOR] = 145,
+    [IQ_SHARP_SHOOTER] = 185,
+    [IQ_QUICK_HEALER] = 120,
 };
 
 /* Skills in the same group are mutually exclusive when enabled. */
@@ -149,6 +154,11 @@ const s32 gIQSkillGroups[NUM_IQ_SKILLS] = {
     [IQ_EFFICIENT_EATER] = 21,
     [IQ_TREASURE_SENSE] = 22,
     [IQ_DEEP_BREATHER] = 23,
+    [IQ_COIN_WATCHER] = 24,
+    [IQ_HIT_AND_RUNNER] = 25,
+    [IQ_CONCENTRATOR] = 26,
+    [IQ_SHARP_SHOOTER] = 27,
+    [IQ_QUICK_HEALER] = 28,
 };
 
 // LUT for money item stack size -> money amount

@@ -204,7 +204,7 @@ void ShowPokemonSummaryWindow(s32 which, s32 currSubWindowId, MonSummaryInfo *mo
                         bVar11 = TRUE;
                         iqSkillName = GetIQSkillName(iqSkillBuffer[iVar13]);
                         strncpy(gFormatBuffer_Items[1],iqSkillName,0x50);
-                        if (IsIQSkillSet(&monInfo->IQSkills,1 << iqSkillBuffer[iVar13])) {
+                        if (IsIQSkillSet(&monInfo->IQSkills, iqSkillBuffer[iVar13])) {
                             InlineStrcpy(gFormatBuffer_Items[0],_("{STAR_BULLET}"));
                         }
                         else {

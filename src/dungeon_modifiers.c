@@ -1,6 +1,8 @@
 #include "global.h"
 #include "constants/dungeon_modifiers.h"
+#include "constants/iq_skill.h"
 #include "dungeon_modifiers.h"
+#include "dungeon_logic.h"
 #include "dungeon_message.h"
 #include "dungeon_random.h"
 #include "dungeon_range.h"
@@ -70,8 +72,10 @@ void AnnounceFloorModifier(void)
     LogMessageByIdWithPopupCheckUser_Async(cameraTarget, msg);
 }
 
-void AddDungeonFloorMoney(s32 amount)
+void AddDungeonFloorMoney(Entity *picker, s32 amount)
 {
+    if (picker != NULL && IqSkillIsEnabled(picker, IQ_COIN_WATCHER))
+        amount = (amount * 6) / 5;
     if (GetFloorModifier() == FLOOR_MODIFIER_TREASURE_RICH)
         amount *= 2;
     AddToTeamMoney(amount);

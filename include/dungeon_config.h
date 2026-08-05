@@ -18,6 +18,7 @@ extern const s16 gWildSpawnIntervalFrames;
 extern const s16 gKecleonSpawnIntervalFrames;
 extern const s16 gCritOddsScopeLensPatsyBand;
 extern const s16 gCritOddsIqAdvantageMaster;
+extern const s16 gCritOddsSharpShooter;
 extern const s16 gAIConfusedAttackChance;
 extern const s16 gIronTailSecondaryChance;
 extern const s16 gBubbleSecondaryChance;
@@ -197,6 +198,7 @@ extern const s16 gLifeSeedMaxHpRiseValue;
 extern const s16 gWishRegenValue;
 extern const s16 gRainDishRegenValue;
 extern const s16 gHealRibbonRegenValue;
+extern const s16 gQuickHealerRegenValue;
 extern const s16 gFamishBellyDownValue;
 #define BAD_POISON_DMG_TURN_VALUES_COUNT 30
 extern const s16 gBadPoisonDmgValuesByTurn[BAD_POISON_DMG_TURN_VALUES_COUNT];

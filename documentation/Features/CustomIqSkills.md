@@ -59,11 +59,16 @@ IQ unlock values and groups below match `gReqIQSkillPts` / `gIQSkillGroups` in t
 | IQ | IQ Skill | Group | What it does |
 |----|----------|-------|--------------|
 | 80 | Efficient Eater | 21 | Doubles Belly restored from Seeds and Berries. |
+| 90 | Coin Watcher | 24 | When money is picked up, 1.2× the usual amount is received. |
 | 100 | Conserver | 6 | Avoids using moves when a regular attack is sufficient to defeat the target. |
+| 120 | Quick Healer | 28 | Raises natural HP recovery. |
 | 130 | Status Expert | 20 | Status moves have a 10% higher chance of succeeding. |
+| 145 | Concentrator | 26 | Raises accuracy by 1 and reduces evasion by 1. |
 | 150 | PP Saver | 18 | Moves have a 10% chance of not consuming PP. |
+| 165 | Hit-and-Runner | 25 | Sometimes cancels foes' counterattacks (50%). |
 | 175 | Type Expert | 19 | Super-effective moves deal 25% more damage. |
 | 175 | Type Guard | 19 | Reduces damage from super-effective attacks by 25%. |
+| 185 | Sharpshooter | 27 | Raises critical-hit rate (+15%). |
 | 190 | Deep Breather | 23 | Restores 1 PP to a random move that has lost PP when entering a new floor. |
 | 220 | Treasure Sense | 22 | Can see unclaimed items on the map. |
 
@@ -85,6 +90,14 @@ Mutually exclusive with PP Checker and Exclusive Move-User (group 6): enabling o
 
 When consuming an item in `CATEGORY_BERRIES_SEEDS_VITAMINS`, the automatic Belly restore (vanilla **5**) is doubled to **10** if the eater has Efficient Eater enabled. Does not affect Apples / Gummis / other food. Own group (21).
 
+### Coin Watcher
+
+Floor Poké pickups (leader or ally AI) go through `AddDungeonFloorMoney`. If the picker has Coin Watcher, amount is multiplied by **6/5** (1.2×) before Treasure Rich doubling. Own group (24).
+
+### Quick Healer
+
+In natural HP regen (`TickStatusAndHealthRegen`), adds `gQuickHealerRegenValue` (−50) to regen speed (lower = faster), same style as Heal Ribbon. Own group (28).
+
 ### Treasure Sense
 
 While the camera target (usually the leader) has Treasure Sense enabled, sets `showAllFloorItems` each camera update — same flag as Scanner Orb / X-Ray Specs. Unclaimed floor items appear on the minimap (and off-FOV as sprites). Does not reveal enemies (Radar) or stairs. Own group (22).
@@ -97,9 +110,17 @@ On each new floor (after team spawn in `run_dungeon.c`, skipped on mid-dungeon s
 
 In `GetAccuracyPercent`, after accuracy / evasion stage modifiers: if the move’s base power is **0** (status move) and Status Expert is enabled, add **+10** to the hit chance (capped at 100). Also reflected in Damage Preview accuracy. Own group (20).
 
+### Concentrator
+
+In `GetAccuracyPercent`: attacker with Concentrator gets **+1** accuracy stage; defender with Concentrator gets **−1** evasion stage (Compound Eyes-style modifiers, not permanent stage changes). Own group (26).
+
 ### PP Saver
 
 When enabled on a team member, each move use has a **10%** chance to skip PP consumption (including Pressure’s extra PP cost, and Snore / Sleep Talk’s direct PP drain). Own group (18): can be enabled alongside any other skill.
+
+### Hit-and-Runner
+
+In `HandleDealingDamage_Async`, after Counter / Mini Counter / Mirror Coat / Rough Skin build `returnDmg`: **50%** chance to zero it out if the attacker has Hit-and-Runner. Own group (25).
 
 ### Type Expert / Type Guard
 
@@ -109,6 +130,10 @@ Applied in `sub_806E100` when the final type matchup is super-effective:
 - **Type Guard** (defender): multiplies damage by **0.75**
 
 Mutually exclusive with each other (group 19). Damage Preview uses the same path, so estimates reflect these skills.
+
+### Sharpshooter
+
+In `CalcDamage` crit odds (after Scope Lens / Type-Advantage Master): adds `gCritOddsSharpShooter` (**+15**). Own group (27).
 
 ---
 
@@ -124,7 +149,7 @@ Each skill needs:
 | name / description | `gIQSkillNames` / `gIQSkillDescriptions` in [`src/strings.c`](../../src/strings.c) |
 | effect | `IqSkillIsEnabled(entity, IQ_*)` hook in the relevant gameplay file |
 
-Flag capacity is **32 bits** (`NUM_PICKED_IQ_SKILLS == 4`). Do not exceed skill index 31 without rewriting the bit helpers.
+Flag capacity is **64 bits** (`NUM_PICKED_IQ_SKILLS == 8`). Bit helpers use skill-index byte/bit addressing (supports indices past 31).
 
 ---
 
@@ -140,19 +165,23 @@ Flag capacity is **32 bits** (`NUM_PICKED_IQ_SKILLS == 4`). Do not exceed skill 
 | Names / descs | [`src/strings.c`](../../src/strings.c) |
 | Conserver AI | [`src/dungeon_ai_attack.c`](../../src/dungeon_ai_attack.c) |
 | PP Saver | [`src/dungeon_move_util.c`](../../src/dungeon_move_util.c) (`sub_8057588`), Snore/Sleep Talk in [`src/dungeon_action_execution.c`](../../src/dungeon_action_execution.c) |
-| Status Expert | [`src/dungeon_move_util.c`](../../src/dungeon_move_util.c) (`GetAccuracyPercent`) |
+| Status Expert / Concentrator | [`src/dungeon_move_util.c`](../../src/dungeon_move_util.c) (`GetAccuracyPercent`) |
 | Efficient Eater | [`src/dungeon_item_action.c`](../../src/dungeon_item_action.c) (berries/seeds belly restore) |
+| Coin Watcher | [`src/dungeon_modifiers.c`](../../src/dungeon_modifiers.c) (`AddDungeonFloorMoney`) |
 | Treasure Sense | [`src/dungeon_tilemap.c`](../../src/dungeon_tilemap.c) (`UpdateCamera` → `showAllFloorItems`) |
 | Deep Breather | [`src/move_orb_effects_2.c`](../../src/move_orb_effects_2.c) (`ApplyDeepBreatherOnFloorEnter`), called from [`src/run_dungeon.c`](../../src/run_dungeon.c) |
+| Hit-and-Runner | [`src/dungeon_damage.c`](../../src/dungeon_damage.c) (`HandleDealingDamage_Async`) |
 | Type Expert / Type Guard | [`src/dungeon_damage.c`](../../src/dungeon_damage.c) (`sub_806E100`) |
+| Sharpshooter | [`src/dungeon_damage.c`](../../src/dungeon_damage.c) (`CalcDamage`) |
+| Quick Healer | [`src/dungeon_turn_effects.c`](../../src/dungeon_turn_effects.c) (`TickStatusAndHealthRegen`) |
 | Damage estimate | `EstimateRegularAttackMinDamage` / `EstimateMoveDamageRange` in [`src/dungeon_damage.c`](../../src/dungeon_damage.c) |
 
 ---
 
 ## Limitations
 
-- Expanding flags from 24 → 32 bits changes save layout for `Pokemon.IQSkills` (not bit-compatible with vanilla 24-bit saves).
+- Expanding flags from 24 → 64 bits changes save layout for `Pokemon.IQSkills` (not bit-compatible with vanilla saves).
 - Effects remain hand-written hooks (no central effect callback table).
 - Conserver uses minimum estimated damage (conservative); misses / Wonder Guard / special handlers can still fail to KO.
 - Conserver is not auto-enabled for wild Pokémon (team / IQ menu only).
-- At most 8 custom skills with the current 4-byte flag array (indices 24–31).
+- Energy Saver is already a vanilla skill (IQ 250, group 14); it was not re-added as a custom.

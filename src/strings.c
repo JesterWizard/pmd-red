@@ -808,6 +808,11 @@ const u8 *const gIQSkillNames[NUM_IQ_SKILLS] = {
     [IQ_EFFICIENT_EATER] = _("Efficient Eater"),
     [IQ_TREASURE_SENSE] = _("Treasure Sense"),
     [IQ_DEEP_BREATHER] = _("Deep Breather"),
+    [IQ_COIN_WATCHER] = _("Coin Watcher"),
+    [IQ_HIT_AND_RUNNER] = _("Hit-and-Runner"),
+    [IQ_CONCENTRATOR] = _("Concentrator"),
+    [IQ_SHARP_SHOOTER] = _("Sharpshooter"),
+    [IQ_QUICK_HEALER] = _("Quick Healer"),
 };
 
 const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
@@ -843,6 +848,11 @@ const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
     [IQ_EFFICIENT_EATER] = _("Doubles Belly restored from Seeds\nand Berries."),
     [IQ_TREASURE_SENSE] = _("Can see unclaimed items on the map."),
     [IQ_DEEP_BREATHER] = _("Restores 1 {color YELLOW}PP{reset} to a random move that\nhas lost {color YELLOW}PP{reset} when entering a new floor."),
+    [IQ_COIN_WATCHER] = _("When money is picked up, 1.2× the usual\namount is received."),
+    [IQ_HIT_AND_RUNNER] = _("Sometimes cancels foes' counterattacks."),
+    [IQ_CONCENTRATOR] = _("Raises accuracy by 1 and reduces\nevasion by 1."),
+    [IQ_SHARP_SHOOTER] = _("Raises the Pokémon's critical-hit rate."),
+    [IQ_QUICK_HEALER] = _("Raises the Pokémon's natural {color YELLOW}HP{reset}\nrecovery."),
 };
 
 const u8 *const gTacticsNames[NUM_TACTICS] = {

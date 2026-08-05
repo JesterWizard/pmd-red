@@ -766,6 +766,9 @@ s32 GetAccuracyPercent(Entity *attacker, Entity *target, Move *move, s32 accurac
     if (AbilityIsActive(attacker, ABILITY_COMPOUNDEYES)) {
         statStageAccuracy += 2;
     }
+    if (IqSkillIsEnabled(attacker, IQ_CONCENTRATOR)) {
+        statStageAccuracy += 1;
+    }
     if (move->id == MOVE_THUNDER) {
         s32 weather = GetApparentWeather(attacker);
         if (weather == WEATHER_RAIN) {
@@ -789,6 +792,9 @@ s32 GetAccuracyPercent(Entity *attacker, Entity *target, Move *move, s32 accurac
     statStageEvasion = targetInfo->hitChanceStages[1];
     if (targetInfo->exposed) {
         statStageEvasion = 10;
+    }
+    if (IqSkillIsEnabled(target, IQ_CONCENTRATOR)) {
+        statStageEvasion -= 1;
     }
     if (GetApparentWeather(target) == WEATHER_SANDSTORM && AbilityIsActive(target, ABILITY_SAND_VEIL)) {
         statStageEvasion += 2;

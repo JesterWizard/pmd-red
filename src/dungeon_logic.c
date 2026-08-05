@@ -1330,18 +1330,20 @@ bool8 IsTacticSet(Entity *pokemon, u8 tactic)
 
 bool8 IqSkillIsEnabled(Entity *pokemon, u8 IQSkill)
 {
-    return IsIQSkillSet(&GetEntInfo(pokemon)->IQSkillFlags, 1 << IQSkill);
+    return IsIQSkillSet(&GetEntInfo(pokemon)->IQSkillFlags, IQSkill);
 }
 
 UNUSED static bool8 IQSkillPairIsEnabled(Entity *pokemon, u8 IQSkill1, u8 IQSkill2)
 {
-    return IsIQSkillSet(&GetEntInfo(pokemon)->IQSkillFlags, 1 << IQSkill1 | 1 << IQSkill2);
+    return IsIQSkillSet(&GetEntInfo(pokemon)->IQSkillFlags, IQSkill1)
+        || IsIQSkillSet(&GetEntInfo(pokemon)->IQSkillFlags, IQSkill2);
 }
 
 void LoadIQSkills(Entity *pokemon)
 {
   s32 IQSkill;
   EntityInfo *pokemonInfo;
+  s32 i;
 
   pokemonInfo = GetEntInfo(pokemon);
   if (pokemonInfo->isNotTeamMember) {
@@ -1356,14 +1358,12 @@ void LoadIQSkills(Entity *pokemon)
     pokemonInfo->tactic = TACTIC_GO_AFTER_FOES;
   }
   else {
-    pokemonInfo->IQSkillFlags.flags[0] = 0;
-    pokemonInfo->IQSkillFlags.flags[1] = 0;
-    pokemonInfo->IQSkillFlags.flags[2] = 0;
-    pokemonInfo->IQSkillFlags.flags[3] = 0;
+    for (i = 0; i < NUM_PICKED_IQ_SKILLS; i++)
+      pokemonInfo->IQSkillFlags.flags[i] = 0;
     for(IQSkill = IQ_TYPE_ADVANTAGE_MASTER; IQSkill < NUM_IQ_SKILLS; IQSkill++)
     {
       if (HasIQForSkill(pokemonInfo->IQ,IQSkill) &&
-            IsIQSkillSet(&pokemonInfo->IQSkillMenuFlags, 1 << IQSkill))
+            IsIQSkillSet(&pokemonInfo->IQSkillMenuFlags, IQSkill))
         {
             SetIQSkill(&pokemonInfo->IQSkillFlags,IQSkill);
       }

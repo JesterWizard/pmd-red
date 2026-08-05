@@ -351,7 +351,7 @@ u32 sub_80954CC(u8 *buffer, u32 size)
     ReadBits(&backup, &mon->offense.def[0], 8);
     ReadBits(&backup, &mon->offense.def[1], 8);
     ReadBits(&backup, &mon->currExp, 24);
-    ReadBits(&backup, &mon->IQSkills, 32);
+    ReadBits(&backup, &mon->IQSkills, IQ_SKILL_FLAGS_BIT_COUNT);
     ReadBits(&backup, &mon->tacticIndex, 4);
     ReadHeldItemBits(&backup, &mon->heldItem);
     ReadPoke1MovesBits(&backup, mon->moves);
@@ -396,7 +396,7 @@ u32 sub_8095624(u8 *buffer, u32 b)
     WriteBits(&backup, &mon->offense.def[0], 8);
     WriteBits(&backup, &mon->offense.def[1], 8);
     WriteBits(&backup, &mon->currExp, 24);
-    WriteBits(&backup, &mon->IQSkills, 32);
+    WriteBits(&backup, &mon->IQSkills, IQ_SKILL_FLAGS_BIT_COUNT);
     WriteBits(&backup, &mon->tacticIndex, 4);
     WriteHeldItemBits(&backup, &mon->heldItem);
     WritePoke1MovesBits(&backup, mon->moves);

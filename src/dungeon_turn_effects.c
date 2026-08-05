@@ -427,6 +427,8 @@ void TickStatusAndHealthRegen(Entity *entity)
         if (regenSpeed != 0) {
             if (HasHeldItem(entity, ITEM_HEAL_RIBBON))
                 regenSpeed += gHealRibbonRegenValue;
+            if (IqSkillIsEnabled(entity, IQ_QUICK_HEALER))
+                regenSpeed += gQuickHealerRegenValue;
             if (entityInfo->reflectClassStatus.status == STATUS_WISH)
                 regenSpeed += gWishRegenValue;
             if (AbilityIsActive(entity, ABILITY_RAIN_DISH) && GetApparentWeather(entity) == WEATHER_RAIN)
