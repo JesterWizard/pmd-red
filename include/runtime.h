@@ -67,6 +67,8 @@ typedef struct {
     u8 keep_allies;
     /* Kecleon sell: L/R multi-select like Kangaskhan store (else single-item only) */
     u8 multi_select_selling;
+    /* Town Team menu: Give Gummi for IQ / Friend-Area stat boosts (else Friend Area only) */
+    u8 gummis_in_town;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

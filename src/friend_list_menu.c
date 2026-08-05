@@ -4,6 +4,7 @@
 #include "code_801B3C0.h"
 #include "code_801EE10.h"
 #include "code_801EE10_mid.h"
+#include "code_80227B8.h"
 #include "code_8099360.h"
 #include "common_strings.h"
 #include "confirm_name_menu.h"
@@ -22,6 +23,7 @@
 #include "pokemon.h"
 #include "pokemon_3.h"
 #include "recruited_mon_summary_menu.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -50,8 +52,8 @@ typedef struct unkStruct_203B2B4
     u32 menuAction1;
     s32 menuAction2;
     MenuStruct unk78;
-    MenuItem unkC8[8];
-    u16 unk108[8];
+    MenuItem unkC8[10];
+    u16 unk108[10];
     WindowTemplates unk118;
 } unkStruct_203B2B4;
 
@@ -74,6 +76,7 @@ static void sub_8025D90(void);
 static void sub_8025DAC(void);
 static void sub_8025E08(void);
 static void sub_8025E24(void);
+static void FriendListMenu_HandleGiveGummi(void);
 static void FriendListMenu_GotoFallbackState(void);
 static void sub_8025E68(u32 , BulkItem *);
 static bool8 FriendListMenu_isOnTeam(Pokemon *);
@@ -97,7 +100,8 @@ enum FriendListMenuStates {
     // 0x10
     // 0x11
     // 0x12
-    FRIEND_LIST_MENU_STATE_EXIT = 0x13
+    FRIEND_LIST_MENU_STATE_EXIT = 0x13,
+    FRIEND_LIST_MENU_STATE_GIVE_GUMMI = 0x14,
 };
 
 enum FriendListMenuActions {
@@ -111,7 +115,7 @@ enum FriendListMenuActions {
     FRIEND_LIST_MENU_STANDBY = 9,
     FRIEND_LIST_MENU_GIVE = 0xA,
     FRIEND_LIST_MENU_TAKE,
-
+    FRIEND_LIST_MENU_GIVE_GUMMI,
 };
 
 bool8 CreateFriendListMenu(s32 param_1)
@@ -173,6 +177,9 @@ u32 sub_8025354(void)
     case 0x12:
         sub_8025E24();
         break;
+    case FRIEND_LIST_MENU_STATE_GIVE_GUMMI:
+        FriendListMenu_HandleGiveGummi();
+        break;
     default:
         FriendListMenu_GotoFallbackState();
         break;
@@ -211,6 +218,8 @@ static void sub_802544C(void)
             sub_8025728();
             gUnknown_203B2B4->unk118.id[2] = sUnknown_80DD160;
             sub_8012CAC(&gUnknown_203B2B4->unk118.id[2], gUnknown_203B2B4->unkC8);
+            if (gRuntimeConfig.gummis_in_town && gUnknown_203B2B4->unk0 == 0)
+                gUnknown_203B2B4->unk118.id[2].width = 9;
             break;
         case 13:
             sub_802591C();
@@ -309,6 +318,9 @@ static void sub_8025518(void)
     case 0x12:
         CreateConfirmNameMenu(2,gUnknown_203B2B4->pokeStruct->name);
         break;
+    case FRIEND_LIST_MENU_STATE_GIVE_GUMMI:
+        sub_80227B8(gUnknown_203B2B4->pokeStruct);
+        break;
     case FRIEND_LIST_MENU_STATE_EXIT:
         break;
   }
@@ -323,6 +335,15 @@ static void sub_8025728(void)
     pokeStruct = &gRecruitedPokemonRef->pokemon[gUnknown_203B2B4->species];
     MemoryFill16(gUnknown_203B2B4->unk108,0,sizeof(gUnknown_203B2B4->unk108));
     if (gUnknown_203B2B4->unk0 == 0) {
+        if (gRuntimeConfig.gummis_in_town) {
+            gUnknown_203B2B4->unkC8[loopMax].text = sGiveGummi;
+            gUnknown_203B2B4->unkC8[loopMax].menuAction = FRIEND_LIST_MENU_GIVE_GUMMI;
+            if (!HasGummiItem()) {
+                gUnknown_203B2B4->unk108[loopMax] = 1;
+            }
+            loopMax += 1;
+        }
+
         gUnknown_203B2B4->unkC8[loopMax].text = sGive;
         gUnknown_203B2B4->unkC8[loopMax].menuAction = FRIEND_LIST_MENU_GIVE;
         if (GetNumberOfFilledInventorySlots() == 0) {
@@ -465,6 +486,9 @@ static void sub_8025A84(void)
             FriendList_Free();
             SetFriendListMenuState(FRIEND_LIST_MENU_STATE_EXIT);
             break;
+        case FRIEND_LIST_MENU_GIVE_GUMMI:
+            SetFriendListMenuState(FRIEND_LIST_MENU_STATE_GIVE_GUMMI);
+            break;
         case FRIEND_LIST_MENU_GIVE:
             SetFriendListMenuState(FRIEND_LIST_MENU_STATE_GIVE);
             break;
@@ -532,6 +556,20 @@ static void sub_8025BE8(void)
         case 2:
         case 3:
             CleanIQSkillMenu();
+            SetFriendListMenuState(2);
+            break;
+        case 0:
+        case 1:
+            break;
+    }
+}
+
+static void FriendListMenu_HandleGiveGummi(void)
+{
+    switch (sub_8022860()) {
+        case 2:
+        case 3:
+            sub_8022908();
             SetFriendListMenuState(2);
             break;
         case 0:

@@ -55,6 +55,7 @@ ALIGNED(4) static const u8 sLeftOnStandby[] = _(
     "{CENTER_ALIGN}on standby in the Friend Area.");
 
 ALIGNED(4) static const u8 sGive[] = "Give";
+ALIGNED(4) static const u8 sGiveGummi[] = "Give Gummi";
 ALIGNED(4) static const u8 sTake[] = "Take";
 ALIGNED(4) static const u8 sStandBy[] = "Stand By";
 ALIGNED(4) static const u8 sVisit[] = "Visit";
