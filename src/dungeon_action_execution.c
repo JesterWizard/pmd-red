@@ -367,7 +367,8 @@ static void HandleSleepTalk(void)
                                     if(move2->id == MOVE_SLEEP_TALK){
                                         if(CanMonsterUseMove(entity, move2, TRUE))
                                         {
-                                             sub_80838EC(&move2->PP);
+                                             if (!(IqSkillIsEnabled(entity, IQ_PP_SAVER) && DungeonRandOutcome(10)))
+                                                 sub_80838EC(&move2->PP);
                                              break;
                                         }
                                     }
@@ -434,7 +435,8 @@ static void HandleSnore(void)
                             ((info->isTeamLeader || (move->moveFlags & MOVE_FLAG_ENABLED_FOR_AI)) && move->id == MOVE_SNORE)) &&
                             (CanMonsterUseMove(pokemon,move,TRUE))) {
                             chosenMove = *move;
-                            sub_80838EC(&move->PP);
+                            if (!(IqSkillIsEnabled(pokemon, IQ_PP_SAVER) && DungeonRandOutcome(10)))
+                                sub_80838EC(&move->PP);
                             MarkLastUsedMonMove(pokemon,move);
                             break;
                         }

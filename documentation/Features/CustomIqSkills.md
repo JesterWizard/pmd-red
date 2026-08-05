@@ -20,45 +20,51 @@ Extends the vanilla IQ skill system past the original 24-bit flag limit and adds
 
 Toggle: `gRuntimeConfig.custom_iq_skills` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). Set to `FALSE` to hide and disable all custom skills (`IQ_FIRST_CUSTOM_SKILL` and above).
 
-IQ unlock values below match `gReqIQSkillPts` in this ROM.
+IQ unlock values and groups below match `gReqIQSkillPts` / `gIQSkillGroups` in this ROM. Skills that share a **Group** are mutually exclusive: enabling one in the IQ menu clears the others in that group.
 
 ---
 
 ## Default IQ Skills
 
-| IQ | IQ Skill | What it does |
-|----|----------|--------------|
-| 1 | Item Catcher | Catches thrown items and holds them, provided it isn't already holding something. |
-| 1 | Course Checker | Checks whether walls or Pokémon are blocking the path before using a move or thrown item. |
-| 1 | Dedicated Traveler | Prioritises moving through the dungeon and uses moves/items less frequently. |
-| 1 | Item Master | Uses or throws its held item. |
-| 1 | Exclusive Move-User | Only uses moves; never uses the regular attack. |
-| 2 | PP Checker | Stops using linked moves that are nearly out of PP and avoids moves with 0 PP. |
-| 10 | Efficiency Expert | When multiple enemies are available, targets the one with the lowest HP. |
-| 25 | Status Checker | Doesn't use a move that inflicts a status condition the target already has. |
-| 40 | Nontraitor | Prevents attacks from accidentally hitting allies while Confused/Cowering. |
-| 70 | Self-Curer | Recovers from status conditions more quickly. |
-| 100 | Quick Dodger | Improves evasion against attacks and moves. |
-| 105 | Type-Advantage Master | Improves critical-hit rate against foes with a type disadvantage. |
-| 125 | Weak-Type Picker | Prioritises enemies against which it has a type advantage. |
-| 140 | Trap Avoider | Makes the Pokémon more likely to avoid visible traps. |
-| 160 | Nonsleeper | Resists sleep from traps and enemy moves. |
-| 200 | Exp. Go-Getter | Prioritises enemies that give the most EXP. |
-| 250 | Energy Saver | Makes the Belly decrease more slowly. |
-| 300 | Lava Evader | Avoids walking onto lava. |
-| 400 | All-Terrain Hiker | Allows walking across water, lava and clouds. |
-| 500 | Sure-Hit Attacker | Regular attacks never miss. |
-| 600 | Trap Seer | Reveals a trap underneath the Pokémon without triggering it. |
-| 800 | House Avoider | Avoids entering Monster Houses. |
-| 990 | Super Mobile | Walks through water, lava and clouds and can travel through walls. |
+| IQ | IQ Skill | Group | What it does |
+|----|----------|-------|--------------|
+| 1 | Item Catcher | 1 | Catches thrown items and holds them, provided it isn't already holding something. |
+| 1 | Course Checker | 2 | Checks whether walls or Pokémon are blocking the path before using a move or thrown item. |
+| 1 | Dedicated Traveler | 9 | Prioritises moving through the dungeon and uses moves/items less frequently. |
+| 1 | Item Master | 17 | Uses or throws its held item. |
+| 1 | Exclusive Move-User | 6 | Only uses moves; never uses the regular attack. |
+| 2 | PP Checker | 6 | Stops using linked moves that are nearly out of PP and avoids moves with 0 PP. |
+| 10 | Efficiency Expert | 9 | When multiple enemies are available, targets the one with the lowest HP. |
+| 25 | Status Checker | 8 | Doesn't use a move that inflicts a status condition the target already has. |
+| 40 | Nontraitor | 7 | Prevents attacks from accidentally hitting allies while Confused/Cowering. |
+| 70 | Self-Curer | 14 | Recovers from status conditions more quickly. |
+| 100 | Quick Dodger | 4 | Improves evasion against attacks and moves. |
+| 105 | Type-Advantage Master | 4 | Improves critical-hit rate against foes with a type disadvantage. |
+| 125 | Weak-Type Picker | 9 | Prioritises enemies against which it has a type advantage. |
+| 140 | Trap Avoider | 11 | Makes the Pokémon more likely to avoid visible traps. |
+| 160 | Nonsleeper | 14 | Resists sleep from traps and enemy moves. |
+| 200 | Exp. Go-Getter | 9 | Prioritises enemies that give the most EXP. |
+| 250 | Energy Saver | 14 | Makes the Belly decrease more slowly. |
+| 300 | Lava Evader | 16 | Avoids walking onto lava. |
+| 400 | All-Terrain Hiker | 10 | Allows walking across water, lava and clouds. |
+| 500 | Sure-Hit Attacker | 4 | Regular attacks never miss. |
+| 600 | Trap Seer | 16 | Reveals a trap underneath the Pokémon without triggering it. |
+| 800 | House Avoider | 11 | Avoids entering Monster Houses. |
+| 990 | Super Mobile | 10 | Walks through water, lava and clouds and can travel through walls. |
 
 ---
 
 ## Custom IQ Skills
 
-| IQ | IQ Skill | What it does |
-|----|----------|--------------|
-| 100 | Conserver | Avoids using moves when a regular attack is sufficient to defeat the target. |
+| IQ | IQ Skill | Group | What it does |
+|----|----------|-------|--------------|
+| 80 | Efficient Eater | 21 | Doubles Belly restored from Seeds and Berries. |
+| 100 | Conserver | 6 | Avoids using moves when a regular attack is sufficient to defeat the target. |
+| 130 | Status Expert | 20 | Status moves have a 10% higher chance of succeeding. |
+| 150 | PP Saver | 18 | Moves have a 10% chance of not consuming PP. |
+| 175 | Type Expert | 19 | Super-effective moves deal 25% more damage. |
+| 175 | Type Guard | 19 | Reduces damage from super-effective attacks by 25%. |
+| 220 | Treasure Sense | 22 | Can see unclaimed items on the map. |
 
 ---
 
@@ -73,6 +79,31 @@ When enabled on a team member:
 3. If that damage is **≥** the target’s current HP, forces `ACTION_REGULAR_ATTACK` instead of using a move
 
 Mutually exclusive with PP Checker and Exclusive Move-User (group 6): enabling one in the IQ menu clears the others.
+
+### Efficient Eater
+
+When consuming an item in `CATEGORY_BERRIES_SEEDS_VITAMINS`, the automatic Belly restore (vanilla **5**) is doubled to **10** if the eater has Efficient Eater enabled. Does not affect Apples / Gummis / other food. Own group (21).
+
+### Treasure Sense
+
+While the camera target (usually the leader) has Treasure Sense enabled, sets `showAllFloorItems` each camera update — same flag as Scanner Orb / X-Ray Specs. Unclaimed floor items appear on the minimap (and off-FOV as sprites). Does not reveal enemies (Radar) or stairs. Own group (22).
+
+### Status Expert
+
+In `GetAccuracyPercent`, after accuracy / evasion stage modifiers: if the move’s base power is **0** (status move) and Status Expert is enabled, add **+10** to the hit chance (capped at 100). Also reflected in Damage Preview accuracy. Own group (20).
+
+### PP Saver
+
+When enabled on a team member, each move use has a **10%** chance to skip PP consumption (including Pressure’s extra PP cost, and Snore / Sleep Talk’s direct PP drain). Own group (18): can be enabled alongside any other skill.
+
+### Type Expert / Type Guard
+
+Applied in `sub_806E100` when the final type matchup is super-effective:
+
+- **Type Expert** (attacker): multiplies damage by **1.25**
+- **Type Guard** (defender): multiplies damage by **0.75**
+
+Mutually exclusive with each other (group 19). Damage Preview uses the same path, so estimates reflect these skills.
 
 ---
 
@@ -103,6 +134,11 @@ Flag capacity is **32 bits** (`NUM_PICKED_IQ_SKILLS == 4`). Do not exceed skill 
 | Availability gate | `HasIQForSkill` in [`src/pokemon_3.c`](../../src/pokemon_3.c) |
 | Names / descs | [`src/strings.c`](../../src/strings.c) |
 | Conserver AI | [`src/dungeon_ai_attack.c`](../../src/dungeon_ai_attack.c) |
+| PP Saver | [`src/dungeon_move_util.c`](../../src/dungeon_move_util.c) (`sub_8057588`), Snore/Sleep Talk in [`src/dungeon_action_execution.c`](../../src/dungeon_action_execution.c) |
+| Status Expert | [`src/dungeon_move_util.c`](../../src/dungeon_move_util.c) (`GetAccuracyPercent`) |
+| Efficient Eater | [`src/dungeon_item_action.c`](../../src/dungeon_item_action.c) (berries/seeds belly restore) |
+| Treasure Sense | [`src/dungeon_tilemap.c`](../../src/dungeon_tilemap.c) (`UpdateCamera` → `showAllFloorItems`) |
+| Type Expert / Type Guard | [`src/dungeon_damage.c`](../../src/dungeon_damage.c) (`sub_806E100`) |
 | Damage estimate | `EstimateRegularAttackMinDamage` / `EstimateMoveDamageRange` in [`src/dungeon_damage.c`](../../src/dungeon_damage.c) |
 
 ---

@@ -809,6 +809,9 @@ s32 GetAccuracyPercent(Entity *attacker, Entity *target, Move *move, s32 accurac
 
     accuracy *= statStageMul;
     accuracy /= 256;
+    if (GetMoveBasePower(move) == 0 && IqSkillIsEnabled(attacker, IQ_STATUS_EXPERT)) {
+        accuracy += 10;
+    }
     if (accuracy < 0)
         accuracy = 0;
     if (accuracy > 100)
@@ -1406,7 +1409,10 @@ void sub_8057588(Entity * pokemon, u8 param_2)
                 }
                 if (((move->moveFlags2 & MOVE_FLAG_SET)) && (move->moveFlags2 &= ~(MOVE_FLAG_SET), param_2 != 0))
                 {
-                    if(PPtoRemove != 0)
+                    if (IqSkillIsEnabled(pokemon, IQ_PP_SAVER) && DungeonRandOutcome(10)) {
+                        /* PP Saver: skip PP cost for this use. */
+                    }
+                    else if(PPtoRemove != 0)
                     {
                         PPCounter = PPtoRemove;
                         for (; PPCounter != 0; PPCounter--) {

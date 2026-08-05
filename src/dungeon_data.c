@@ -106,6 +106,12 @@ const s32 gReqIQSkillPts[NUM_IQ_SKILLS] =
     [IQ_ITEM_MASTER] = 1,
     [IQ_EXCLUSIVE_MOVE_USER] = 1,
     [IQ_CONSERVER] = 100,
+    [IQ_PP_SAVER] = 150,
+    [IQ_TYPE_EXPERT] = 175,
+    [IQ_TYPE_GUARD] = 175,
+    [IQ_STATUS_EXPERT] = 130,
+    [IQ_EFFICIENT_EATER] = 80,
+    [IQ_TREASURE_SENSE] = 220,
 };
 
 /* Skills in the same group are mutually exclusive when enabled. */
@@ -135,6 +141,12 @@ const s32 gIQSkillGroups[NUM_IQ_SKILLS] = {
     [IQ_ITEM_MASTER] = 17,
     [IQ_EXCLUSIVE_MOVE_USER] = 6,
     [IQ_CONSERVER] = 6,
+    [IQ_PP_SAVER] = 18,
+    [IQ_TYPE_EXPERT] = 19,
+    [IQ_TYPE_GUARD] = 19,
+    [IQ_STATUS_EXPERT] = 20,
+    [IQ_EFFICIENT_EATER] = 21,
+    [IQ_TREASURE_SENSE] = 22,
 };
 
 // LUT for money item stack size -> money amount

@@ -801,6 +801,12 @@ const u8 *const gIQSkillNames[NUM_IQ_SKILLS] = {
     [IQ_ITEM_MASTER] = _("Item Master"),
     [IQ_EXCLUSIVE_MOVE_USER] = _("Exclusive Move-User"),
     [IQ_CONSERVER] = _("Conserver"),
+    [IQ_PP_SAVER] = _("PP Saver"),
+    [IQ_TYPE_EXPERT] = _("Type Expert"),
+    [IQ_TYPE_GUARD] = _("Type Guard"),
+    [IQ_STATUS_EXPERT] = _("Status Expert"),
+    [IQ_EFFICIENT_EATER] = _("Efficient Eater"),
+    [IQ_TREASURE_SENSE] = _("Treasure Sense"),
 };
 
 const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
@@ -829,6 +835,12 @@ const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
     [IQ_ITEM_MASTER] = _("The Pokémon will use or throw its hold\nitem."),
     [IQ_EXCLUSIVE_MOVE_USER] = _("The Pokémon will only use moves. It\nwill not use its regular attack."),
     [IQ_CONSERVER] = _("Avoids using moves when a regular attack\nis sufficient to defeat the target."),
+    [IQ_PP_SAVER] = _("Moves have a 10% chance of not\nconsuming {color YELLOW}PP{reset}."),
+    [IQ_TYPE_EXPERT] = _("Super-effective moves deal 25% more\ndamage."),
+    [IQ_TYPE_GUARD] = _("Reduces damage from super-effective\nattacks by 25%."),
+    [IQ_STATUS_EXPERT] = _("Status moves have a 10% higher chance\nof succeeding."),
+    [IQ_EFFICIENT_EATER] = _("Doubles Belly restored from Seeds\nand Berries."),
+    [IQ_TREASURE_SENSE] = _("Can see unclaimed items on the map."),
 };
 
 const u8 *const gTacticsNames[NUM_TACTICS] = {

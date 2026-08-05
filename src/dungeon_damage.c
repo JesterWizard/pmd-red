@@ -74,6 +74,8 @@ UNUSED static const s48_16 sUnusedModifier2 = { 0x0, 0x17FFE };
 static const s48_16 gUnknown_8106F3C = {0x0, 0x8000};
 static const s48_16 gUnknown_8106F44 = {0x0, 0xE666};
 static const s48_16 gUnknown_8106F4C = {0x0, 0x18000};
+static const s48_16 sTypeExpertBoost = {0x0, 0x14000}; /* 1.25× */
+static const s48_16 sTypeGuardReduce = {0x0, 0xC000};  /* 0.75× */
 
 void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageStruct *dmgStruct, bool32 isFalseSwipe, bool32 giveExp, s16 dungeonExitReason_, bool32 arg8, s32 argC)
 {
@@ -825,6 +827,15 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
       temp = gUnknown_8106EFC[1];
       param_1->hi = gUnknown_8106EFC[0];
       param_1->lo = temp;
+    }
+
+    if (dmgStruct->typeEffectiveness == EFFECTIVENESS_SUPER) {
+      if (IqSkillIsEnabled(pokemon, IQ_TYPE_EXPERT)) {
+        F48_16_SMul(param_1, param_1, &sTypeExpertBoost);
+      }
+      if (IqSkillIsEnabled(target, IQ_TYPE_GUARD)) {
+        F48_16_SMul(param_1, param_1, &sTypeGuardReduce);
+      }
     }
 
     if (((type == TYPE_FIRE) || (type == TYPE_ICE)) && (AbilityIsActive(target,ABILITY_THICK_FAT))) {

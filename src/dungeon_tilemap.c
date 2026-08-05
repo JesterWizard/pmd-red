@@ -2,6 +2,7 @@
 #include "globaldata.h"
 #include "dungeon_tilemap.h"
 #include "constants/item.h"
+#include "constants/iq_skill.h"
 #include "constants/status.h"
 #include "bg_control.h"
 #include "bg_palette_buffer.h"
@@ -203,7 +204,8 @@ void UpdateCamera(u8 a0)
         }
         else {
             strPtr->unk1820D = info->powerEars;
-            strPtr->showAllFloorItems = info->scanning;
+            strPtr->showAllFloorItems = info->scanning
+                || IqSkillIsEnabled(cameraTarget, IQ_TREASURE_SENSE);
         }
 
         strPtr->unk18211 = info->stairSpotter;

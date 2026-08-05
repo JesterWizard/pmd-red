@@ -139,7 +139,10 @@ void sub_80479B8(bool8 param_1, bool8 param_2, u8 param_3, Entity *pokemon, Enti
         sub_804245C(target,item);
 
     if (GetItemCategory(item->id) == CATEGORY_BERRIES_SEEDS_VITAMINS) {
-        sub_8078B5C(pokemon,target,5,0,0);
+        s32 bellyAmt = 5;
+        if (IqSkillIsEnabled(target, IQ_EFFICIENT_EATER))
+            bellyAmt *= 2;
+        sub_8078B5C(pokemon,target,bellyAmt,0,0);
     }
 
     if (GetItemCategory(item->id) == CATEGORY_TMS_HMS || GetItemCategory(item->id) == CATEGORY_LINK_BOX) {

@@ -29,6 +29,12 @@ enum IQSkillID
     IQ_EXCLUSIVE_MOVE_USER,
     /* Custom skills (gated by gRuntimeConfig.custom_iq_skills) */
     IQ_CONSERVER,
+    IQ_PP_SAVER,
+    IQ_TYPE_EXPERT,
+    IQ_TYPE_GUARD,
+    IQ_STATUS_EXPERT,
+    IQ_EFFICIENT_EATER,
+    IQ_TREASURE_SENSE,
     NUM_IQ_SKILLS
 };
 
