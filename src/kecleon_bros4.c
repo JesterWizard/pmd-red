@@ -37,6 +37,7 @@ static void SortInventoryItems(void);
 
 static void sub_801A998(void);
 static s32 sub_801AE24(u32);
+static bool8 CanSelectItemForSell(s32 index);
 
 // arm9.bin::02026BE4
 bool8 sub_801A5D8(u32 param_1, s32 param_2, DungeonPos *param_3, u32 param_4)
@@ -106,12 +107,17 @@ u32 sub_801A6E8(bool8 param_1)
                     break;
                 }
                 case 4: {
-                    Item item = gTeamInventoryRef->teamItems[sub_801A8AC()];
-
-                    if (IsShoppableItem(item.id) && GetActualSellPrice(&item) + gTeamInventoryRef->teamMoney <= MAX_TEAM_MONEY)
+                    if (gRuntimeConfig.multi_select_selling
+                        && (sub_801AEA8() != 0 || CanSelectItemForSell(sub_801A8AC())))
                         PlayMenuSoundEffect(MENU_SFX_ACCEPT);
-                    else
-                        PlayMenuSoundEffect(MENU_SFX_FAIL);
+                    else {
+                        Item item = gTeamInventoryRef->teamItems[sub_801A8AC()];
+
+                        if (IsShoppableItem(item.id) && GetActualSellPrice(&item) + gTeamInventoryRef->teamMoney <= MAX_TEAM_MONEY)
+                            PlayMenuSoundEffect(MENU_SFX_ACCEPT);
+                        else
+                            PlayMenuSoundEffect(MENU_SFX_FAIL);
+                    }
                     break;
                 }
                 case 5: {
@@ -127,10 +133,17 @@ u32 sub_801A6E8(bool8 param_1)
         }
         case INPUT_L_BUTTON:
         case INPUT_R_BUTTON: {
-            if (gUnknown_203B224->unk0 == 3) {
+            if (gUnknown_203B224->unk0 == 3
+                || (gUnknown_203B224->unk0 == 4 && gRuntimeConfig.multi_select_selling)) {
                 s32 index = sub_801A8AC();
+                bool8 canToggle;
 
-                if (gUnknown_203B224->unk4[index] != 0 || sub_801ADA0(index)) {
+                if (gUnknown_203B224->unk0 == 3)
+                    canToggle = gUnknown_203B224->unk4[index] != 0 || sub_801ADA0(index);
+                else
+                    canToggle = gUnknown_203B224->unk4[index] != 0 || CanSelectItemForSell(index);
+
+                if (canToggle) {
                     PlayMenuSoundEffect(MENU_SFX_TOGGLE);
                     gUnknown_203B224->unk4[index] ^= 1;
                     MenuCursorUpdate(&gUnknown_203B224->unk54.m.input, 0);
@@ -279,19 +292,38 @@ void sub_801A9E0(void)
                 u8 buf2[80]; // sp78
 
                 if (IsShoppableItem(item.id)) {
-                    thing.unk0 = 3;
-                    thing.unk4 = 0;
-                    thing.unk6 = 88;
-                    thing.unk8 = 1;
-                    item.flags = 3;
-                    sub_8090E14(buf1, &item, &thing);
-
-                    if (GetActualSellPrice(&item) + gTeamInventoryRef->teamMoney > MAX_TEAM_MONEY) {
-                        sprintfStatic(buf2, sFmtRed, buf1);
-                        PrintStringOnWindow(8, GetMenuEntryYCoord(&gUnknown_203B224->unk54.m.input, r7), buf2, gUnknown_203B224->unk54.m.menuWinId, 0);
-                    }
-                    else
+                    /* Hide price while selected so it doesn't sit on the highlight bar. */
+                    if (gRuntimeConfig.multi_select_selling && gUnknown_203B224->unk4[teamItemIndex] != 0) {
+                        thing.unk0 = 0;
+                        thing.unk4 = 0;
+                        thing.unk8 = 1;
+                        item.flags = 1;
+                        sub_8090E14(buf1, &item, &thing);
                         PrintStringOnWindow(8, GetMenuEntryYCoord(&gUnknown_203B224->unk54.m.input, r7), buf1, gUnknown_203B224->unk54.m.menuWinId, 0);
+                    }
+                    else {
+                        thing.unk0 = 3;
+                        thing.unk4 = 0;
+                        thing.unk6 = 88;
+                        thing.unk8 = 1;
+                        item.flags = 3;
+                        sub_8090E14(buf1, &item, &thing);
+
+                        if (gRuntimeConfig.multi_select_selling) {
+                            if (CanSelectItemForSell(teamItemIndex))
+                                PrintStringOnWindow(8, GetMenuEntryYCoord(&gUnknown_203B224->unk54.m.input, r7), buf1, gUnknown_203B224->unk54.m.menuWinId, 0);
+                            else {
+                                strncpy(gFormatBuffer_Items[0], buf1, 80);
+                                PrintFormattedStringOnWindow(8, GetMenuEntryYCoord(&gUnknown_203B224->unk54.m.input, r7), sFmtMoveItem0, gUnknown_203B224->unk54.m.menuWinId, 0);
+                            }
+                        }
+                        else if (GetActualSellPrice(&item) + gTeamInventoryRef->teamMoney > MAX_TEAM_MONEY) {
+                            sprintfStatic(buf2, sFmtRed, buf1);
+                            PrintStringOnWindow(8, GetMenuEntryYCoord(&gUnknown_203B224->unk54.m.input, r7), buf2, gUnknown_203B224->unk54.m.menuWinId, 0);
+                        }
+                        else
+                            PrintStringOnWindow(8, GetMenuEntryYCoord(&gUnknown_203B224->unk54.m.input, r7), buf1, gUnknown_203B224->unk54.m.menuWinId, 0);
+                    }
                 }
                 else {
                     sub_8090E14(buf1, &item, 0);
@@ -381,6 +413,32 @@ bool8 sub_801ADA0(s32 param_1)
         }
     }
     if (GetStorageUsedCount() + selectedTotal + pending > GetStorageCapacity())
+        return FALSE;
+
+    return TRUE;
+}
+
+/* Like sub_801ADA0, but for Kecleon sell multi-select (shoppable + money cap). */
+static bool8 CanSelectItemForSell(s32 index)
+{
+    s32 selectedTotal;
+    s32 invIndex;
+    Item item;
+    Item other;
+
+    item = gTeamInventoryRef->teamItems[index];
+    if (!IsShoppableItem(item.id))
+        return FALSE;
+
+    selectedTotal = 0;
+    for (invIndex = 0; invIndex < GetNumberOfFilledInventorySlots(); invIndex++) {
+        if (gUnknown_203B224->unk4[invIndex] != 0) {
+            other = gTeamInventoryRef->teamItems[invIndex];
+            if (IsShoppableItem(other.id))
+                selectedTotal += GetActualSellPrice(&other);
+        }
+    }
+    if (gTeamInventoryRef->teamMoney + selectedTotal + GetActualSellPrice(&item) > MAX_TEAM_MONEY)
         return FALSE;
 
     return TRUE;

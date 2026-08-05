@@ -65,6 +65,8 @@ typedef struct {
      * Stand By / Farewell still work. Story alone segments (PARTNER1_KIND==0)
      * still dismiss so cutscenes stay correct. */
     u8 keep_allies;
+    /* Kecleon sell: L/R multi-select like Kangaskhan store (else single-item only) */
+    u8 multi_select_selling;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

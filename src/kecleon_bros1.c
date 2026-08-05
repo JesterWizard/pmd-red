@@ -19,6 +19,7 @@
 #include "pokemon.h"
 #include "string_format.h"
 #include "text_1.h"
+#include "runtime.h"
 
 enum KecleonStoreStates
 {
@@ -55,6 +56,7 @@ enum KecleonStoreStates
     KECLEON_STORE_SELL_ITEM,
     KECLEON_STORE_SELL_ALL_ITEMS,
     KECLEON_STORE_SELL_ALL_ITEMS_RECEIPT,
+    KECLEON_STORE_SELL_SELECTED_ITEMS,
 };
 
 enum MenuActions
@@ -110,6 +112,7 @@ static void HandleKecleonBrosMainMenu(void);
 static void HandleKecleonBrosBuyItemYesNoMenu(void);
 static void HandleKecleonBrosSellItemYesNoMenu(void);
 static void HandleKecleonBrosSellAllItemsMenu(void);
+static void HandleKecleonBrosSellSelectedItemsMenu(void);
 static void sub_80199CC(void);
 static void sub_8019B08(void);
 static void HandleKecleonBrosBuyItemMenu(void);
@@ -118,6 +121,7 @@ static void sub_8019D30(void);
 static void sub_8019D4C(void);
 static void ProceedToKecleonBros1FallbackState(void);
 static void KecleonCalcSellPriceForAllItems(void);
+static s32 KecleonCalcSellPriceForSelectedItems(void);
 static void SetKecleonPortraitSpriteId(bool32 angrySprite);
 
 // arm9.bin::020252B0
@@ -211,6 +215,9 @@ u32 KecleonBrosCallback(void)
             break;
         case KECLEON_STORE_SELL_ALL_ITEMS:
             HandleKecleonBrosSellAllItemsMenu();
+            break;
+        case KECLEON_STORE_SELL_SELECTED_ITEMS:
+            HandleKecleonBrosSellSelectedItemsMenu();
             break;
         case KECLEON_STORE_BUY_ITEM_INFO:
             sub_8019D30();
@@ -481,6 +488,12 @@ static void UpdateKecleonStoreDialogue(void)
         case KECLEON_STORE_SELL_ALL_ITEMS:
             BuildKecleonBrosYesNoMenu();
             gFormatArgs[0] = sKecleonBrosWork1->inventoryItemSellPrice;
+            SetKecleonPortraitSpriteId(FALSE);
+            CreateMenuDialogueBoxAndPortrait(gCommonKecleonBros[sKecleonBrosWork1->mode][KECLEON_DLG_10], 0, 5, sKecleonBrosWork1->menuItems, NULL, 4, 0, sKecleonBrosWork1->monPortraitPtr, 12);
+            break;
+        case KECLEON_STORE_SELL_SELECTED_ITEMS:
+            BuildKecleonBrosYesNoMenu();
+            gFormatArgs[0] = sKecleonBrosWork1->itemSellPrice;
             SetKecleonPortraitSpriteId(FALSE);
             CreateMenuDialogueBoxAndPortrait(gCommonKecleonBros[sKecleonBrosWork1->mode][KECLEON_DLG_10], 0, 5, sKecleonBrosWork1->menuItems, NULL, 4, 0, sKecleonBrosWork1->monPortraitPtr, 12);
             break;
@@ -757,6 +770,34 @@ static void HandleKecleonBrosSellAllItemsMenu(void)
     }
 }
 
+static void HandleKecleonBrosSellSelectedItemsMenu(void)
+{
+    s32 index;
+    s32 menuAction;
+
+    if (sub_80144A4(&menuAction) != 0)
+        return;
+
+    switch (menuAction) {
+        case YES_ACTION:
+            for (index = 0; index < INVENTORY_SIZE; index++) {
+                if (sub_801AED0(index))
+                    ClearItemSlotAt(index);
+            }
+
+            FillInventoryGaps();
+            sub_801AE84();
+            AddToTeamMoney(sKecleonBrosWork1->itemSellPrice);
+            PlaySound(0x14c);
+            SetKecleonBrosState(KECLEON_STORE_SELL_ITEM_RECEIPT);
+            break;
+        case CANCEL_ACTION:
+        case NO_ACTION:
+            SetKecleonBrosState(27);
+            break;
+    }
+}
+
 // arm9.bin::02023BC0
 static void sub_80199CC(void)
 {
@@ -821,10 +862,21 @@ static void sub_8019B08(void)
         case 0:
             break;
         case 3:
-            sKecleonBrosWork1->soldItemInventoryIndex = sub_801A8AC();
-            sKecleonBrosWork1->soldItem = gTeamInventoryRef->teamItems[sKecleonBrosWork1->soldItemInventoryIndex];
-            sKecleonBrosWork1->itemSellPrice = GetActualSellPrice(&sKecleonBrosWork1->soldItem);
-            SetKecleonBrosState(28);
+            if (gRuntimeConfig.multi_select_selling && sub_801AEA8() != 0) {
+                sKecleonBrosWork1->itemSellPrice = KecleonCalcSellPriceForSelectedItems();
+                if (sKecleonBrosWork1->itemSellPrice + gTeamInventoryRef->teamMoney > MAX_TEAM_MONEY)
+                    SetKecleonBrosState(KECLEON_STORE_SELL_ITEM_TOO_MUCH_MONEY);
+                else {
+                    sub_8099690(0);
+                    SetKecleonBrosState(KECLEON_STORE_SELL_SELECTED_ITEMS);
+                }
+            }
+            else {
+                sKecleonBrosWork1->soldItemInventoryIndex = sub_801A8AC();
+                sKecleonBrosWork1->soldItem = gTeamInventoryRef->teamItems[sKecleonBrosWork1->soldItemInventoryIndex];
+                sKecleonBrosWork1->itemSellPrice = GetActualSellPrice(&sKecleonBrosWork1->soldItem);
+                SetKecleonBrosState(28);
+            }
             break;
         case 4:
             sKecleonBrosWork1->soldItemInventoryIndex = sub_801A8AC();
@@ -975,6 +1027,23 @@ static void KecleonCalcSellPriceForAllItems(void)
             sKecleonBrosWork1->numInventoryItemToSell++;
         }
     }
+}
+
+static s32 KecleonCalcSellPriceForSelectedItems(void)
+{
+    s32 total;
+    s32 index;
+    Item *item;
+
+    total = 0;
+    for (index = 0; index < INVENTORY_SIZE; index++) {
+        if (sub_801AED0(index)) {
+            item = &gTeamInventoryRef->teamItems[index];
+            if ((item->flags & ITEM_FLAG_EXISTS) != 0 && IsShoppableItem(item->id))
+                total += GetActualSellPrice(item);
+        }
+    }
+    return total;
 }
 
 // arm9.bin::020236B8

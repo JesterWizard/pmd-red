@@ -28,4 +28,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .refresh_bulletin_on_exit = TRUE, /* TRUE = reroll board jobs on board exit; FALSE = vanilla (dungeon/day only) */
     .damage_preview = TRUE, /* TRUE = estimated dmg/acc/effect while facing foe; FALSE = off */
     .keep_allies = TRUE, /* TRUE = allies stay overnight; FALSE = vanilla end-of-day Stand By */
+    .multi_select_selling = TRUE, /* TRUE = L/R multi-select sell (Kangaskhan-style); FALSE = one at a time */
 };
