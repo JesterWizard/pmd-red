@@ -9,12 +9,11 @@
 #include "kecleon_bros4.h"
 #include "memory.h"
 #include "menu_input.h"
-#include "menu_work.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
 
-#define sUnknown_203B20C MENU_WORK(unkStruct_203B20C, MENU_WORK_SLOT_0)
+static EWRAM_INIT unkStruct_203B20C *sUnknown_203B20C = {NULL};
 
 #include "data/kangaskhan_storage2.h"
 

@@ -17,9 +17,8 @@
 #include "wigglytuff_shop1.h"
 #include "wigglytuff_shop2.h"
 #include "wigglytuff_shop3.h"
-#include "menu_work.h"
 
-#define sWigglytuffShop3Work MENU_WORK(WigglytuffShop3Work, MENU_WORK_SLOT_0)
+static EWRAM_INIT WigglytuffShop3Work *sWigglytuffShop3Work = {NULL};
 
 #include "data/wigglytuff_shop3.h"
 

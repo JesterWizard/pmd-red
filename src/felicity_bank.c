@@ -8,7 +8,6 @@
 #include "items.h"
 #include "memory.h"
 #include "menu_input.h"
-#include "menu_work.h"
 #include "pokemon.h"
 #include "runtime.h"
 #include "string_format.h"
@@ -16,7 +15,7 @@
 #include "text_2.h"
 #include "text_3.h"
 
-#define sFelicityBankWork MENU_WORK(FelicityBankWork, MENU_WORK_SLOT_0)
+static EWRAM_INIT FelicityBankWork *sFelicityBankWork = {NULL};
 static EWRAM_DATA bool8 sFelicityBankInterestPending = {FALSE};
 
 #include "data/felicity_bank.h"

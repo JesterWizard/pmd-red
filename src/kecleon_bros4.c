@@ -12,7 +12,6 @@
 #include "kecleon_bros4.h"
 #include "memory.h"
 #include "menu_input.h"
-#include "menu_work.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -28,7 +27,7 @@ typedef struct unkStruct_203B224
     /* 0x54 */ MenuHeaderWindow unk54;
 } unkStruct_203B224;
 
-#define gUnknown_203B224 MENU_WORK(unkStruct_203B224, MENU_WORK_SLOT_1)
+static EWRAM_INIT unkStruct_203B224 *gUnknown_203B224 = {NULL};
 static EWRAM_INIT u16 gUnknown_203B228 = {0};
 static EWRAM_INIT u16 gUnknown_203B22A = {0};
 

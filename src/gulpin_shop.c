@@ -8,13 +8,12 @@
 #include "input.h"
 #include "memory.h"
 #include "menu_input.h"
-#include "menu_work.h"
 #include "moves.h"
 #include "pokemon.h"
 #include "string_format.h"
 #include "text_1.h"
 
-#define sGulpinShopWork MENU_WORK(GulpinShopWork, MENU_WORK_SLOT_1)
+static EWRAM_INIT GulpinShopWork *sGulpinShopWork = {NULL};
 
 #include "data/gulpin_shop.h"
 

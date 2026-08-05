@@ -6,13 +6,12 @@
 #include "items.h"
 #include "memory.h"
 #include "menu_input.h"
-#include "menu_work.h"
 #include "sprite.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
 
-#define sUnknown_203B230 MENU_WORK(unkStruct_203B230, MENU_WORK_SLOT_2)
+static EWRAM_INIT unkStruct_203B230 *sUnknown_203B230 = { NULL };
 
 #include "data/code_801B3C0.h"
 

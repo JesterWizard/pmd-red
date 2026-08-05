@@ -11,11 +11,10 @@
 #include "makuhita_dojo2.h"
 #include "memory.h"
 #include "menu_input.h"
-#include "menu_work.h"
 #include "text_1.h"
 #include "text_2.h"
 
-#define sMakuhitaDojoWork2 MENU_WORK(MakuhitaDojoWork2, MENU_WORK_SLOT_1)
+static EWRAM_INIT MakuhitaDojoWork2 *sMakuhitaDojoWork2 = {NULL};
 
 #include "data/makuhita_dojo2.h" // 80E07EC
 

@@ -12,9 +12,8 @@
 #include "text_1.h"
 #include "text_2.h"
 #include "wigglytuff_shop1.h"
-#include "menu_work.h"
 
-#define sWigglytuffShop1Work MENU_WORK(WigglytuffShop1Work, MENU_WORK_SLOT_1)
+static EWRAM_INIT WigglytuffShop1Work *sWigglytuffShop1Work = {NULL};
 static EWRAM_INIT u32 sUnknown_203B284 = {0};
 static EWRAM_INIT u16 sUnknown_203B288 = {0};
 static EWRAM_INIT u16 sUnknown_203B28A = {0};
