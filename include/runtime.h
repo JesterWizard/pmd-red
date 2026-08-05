@@ -71,6 +71,8 @@ typedef struct {
     u8 gummis_in_town;
     /* Grant EXP when an enemy faints to status residual damage (else vanilla: no EXP) */
     u8 status_condition_exp;
+    /* Keep linked moves linked when a move in the chain hits 0 PP (else vanilla: delink) */
+    u8 keep_linked_moves_at_0_pp;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

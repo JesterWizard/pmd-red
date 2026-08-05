@@ -31,4 +31,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .multi_select_selling = TRUE, /* TRUE = L/R multi-select sell (Kangaskhan-style); FALSE = one at a time */
     .gummis_in_town = TRUE, /* TRUE = Give Gummi from town Team menu; FALSE = Friend Area only */
     .status_condition_exp = TRUE, /* TRUE = EXP on status KOs; FALSE = vanilla (no EXP) */
+    .keep_linked_moves_at_0_pp = TRUE, /* TRUE = links survive 0 PP; FALSE = vanilla delink */
 };

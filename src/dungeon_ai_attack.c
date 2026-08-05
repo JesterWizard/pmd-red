@@ -28,6 +28,7 @@
 #include "status_checks.h"
 #include "structs/str_dungeon.h"
 #include "dungeon_misc.h"
+#include "runtime.h"
 #include "dungeon_pos_data.h"
 #include "dungeon_engine.h"
 #include "dungeon_damage.h"
@@ -134,7 +135,7 @@ void ChooseAIMove(Entity *pokemon)
     {
         willNotUnlinkMove[i] = TRUE;
     }
-    if (hasPPChecker)
+    if (hasPPChecker && !gRuntimeConfig.keep_linked_moves_at_0_pp)
     {
         s32 minPP = 99;
         s32 linkedMoveStartIndex = 0;

@@ -8,6 +8,7 @@
 #include "def_filearchives.h"
 #include "memory.h"
 #include "moves.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -891,14 +892,18 @@ s32 sub_80935B8(Move *moves, s32 index)
 
         if (pp > move->PP)
             pp = move->PP;
-        if (move->PP == 0)
+        if (move->PP == 0 && !gRuntimeConfig.keep_linked_moves_at_0_pp)
             v1 = TRUE;
         if (move->moveFlags2 & MOVE_FLAG_REPLACE)
             v1 = TRUE;
     }
 
-    if (!v1)
+    if (!v1) {
+        /* No come-apart warning when links are allowed to survive 0 PP. */
+        if (gRuntimeConfig.keep_linked_moves_at_0_pp)
+            return 99;
         return pp;
+    }
 
     for (i = linkSequenceStart + 1; i < MAX_MON_MOVES; i++) {
         Move *move = &moves[i];
