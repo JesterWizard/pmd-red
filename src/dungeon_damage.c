@@ -1458,6 +1458,9 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
     s32 dungeonExitReason = (s16) dungeonExitReason_;
     EntityInfo *info = GetEntInfo(entity);
     bool8 statusKoEnemy = FALSE;
+    s16 statusKoId = 0;
+    s32 statusKoLevel = 0;
+    u8 statusKoExpMult = EXP_REGULAR;
 
     if (info->isNotTeamMember
         && info->HP > 0
@@ -1472,6 +1475,9 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
             case DUNGEON_EXIT_FAINTED_FROM_PERISH_SONG:
             case DUNGEON_EXIT_FAINTED_WHILE_IN_NIGHTMARE:
                 statusKoEnemy = TRUE;
+                statusKoId = info->id;
+                statusKoLevel = info->level;
+                statusKoExpMult = info->expMultiplier;
                 break;
         }
     }
@@ -1485,8 +1491,38 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
     dmgStruct.unkE = 0;
     dmgStruct.tookNoDamage = FALSE;
     HandleDealingDamage_Async(&spEntity, entity, &dmgStruct, FALSE, FALSE, dungeonExitReason, FALSE, 0);
-    if (statusKoEnemy)
+    if (statusKoEnemy) {
         NoteAchievementStatusKO();
+        /* Vanilla residual damage uses a dummy attacker, so no EXP. Optionally
+         * award the normal team share after a real status faint. */
+        if (gRuntimeConfig.status_condition_exp && !EntityIsValid(entity)) {
+            Entity *leader = GetLeader();
+            if (EntityIsValid(leader)) {
+                s32 i;
+                s32 exp = CalculateEXPGain(statusKoId, statusKoLevel);
+
+                switch (statusKoExpMult) {
+                    case EXP_BOOSTED:
+                        exp *= 3;
+                        exp /= 2;
+                        break;
+                    case EXP_HALVED:
+                        exp /= 2;
+                        break;
+                }
+                if (exp == 0)
+                    exp = 1;
+
+                SetMonSeenFlag(statusKoId);
+                for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
+                    Entity *teamMember = gDungeon->teamPokemon[i];
+                    if (EntityIsValid(teamMember))
+                        AddExpPoints(leader, teamMember, exp);
+                }
+                NoteAchievementEnemyDefeated();
+            }
+        }
+    }
 }
 
 void sub_806F370_Async(Entity *pokemon, Entity *target, s32 dmg, s32 giveExp, bool8 *tookNoDamage, u8 moveType, s16 dungeonExitReason_, s32 residualDmgType, s32 arg_10, s32 arg_14)

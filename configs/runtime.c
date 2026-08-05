@@ -30,4 +30,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .keep_allies = TRUE, /* TRUE = allies stay overnight; FALSE = vanilla end-of-day Stand By */
     .multi_select_selling = TRUE, /* TRUE = L/R multi-select sell (Kangaskhan-style); FALSE = one at a time */
     .gummis_in_town = TRUE, /* TRUE = Give Gummi from town Team menu; FALSE = Friend Area only */
+    .status_condition_exp = TRUE, /* TRUE = EXP on status KOs; FALSE = vanilla (no EXP) */
 };

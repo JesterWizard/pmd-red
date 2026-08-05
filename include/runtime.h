@@ -69,6 +69,8 @@ typedef struct {
     u8 multi_select_selling;
     /* Town Team menu: Give Gummi for IQ / Friend-Area stat boosts (else Friend Area only) */
     u8 gummis_in_town;
+    /* Grant EXP when an enemy faints to status residual damage (else vanilla: no EXP) */
+    u8 status_condition_exp;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;
