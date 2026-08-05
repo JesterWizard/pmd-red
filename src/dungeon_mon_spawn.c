@@ -39,11 +39,24 @@
 #include "dungeon_8041AD0.h"
 #include "dungeon_cutscene.h"
 #include "dungeon_action_execution.h"
+#include "dungeon_info.h"
+#include "constants/direction.h"
+#include "constants/dungeon.h"
+
+/* EoS OUTLAW_LEVEL_TABLE (NA), indexed by base mission difficulty 0–15. */
+static const s16 sOutlawLevelTable[16] = {
+    0, 17, 20, 25, 32, 37, 42, 47, 52, 57, 60, 65, 70, 75, 80, 90
+};
 
 static s32 CalcSpeciesHPAtLevel(s32 species, s32 level);
 static s32 CalcSpeciesAtkAtLevel(s32 species, s32 level, s32 categoryIndex);
 static s32 CalcSpeciesDefAtLevel(s32 species, s32 level, s32 categoryIndex);
 static void InitEntityFromSpawnInfo(bool8 a0, Entity *entity, struct MonSpawnInfo *monSpawnInfo, DungeonPos *pos);
+static void InitMissionMonSpawnInfo(struct MonSpawnInfo *monSpawnInfo);
+static bool8 TrySpawnMissionMonAt(struct MonSpawnInfo *monSpawnInfo, s32 x, s32 y);
+static bool8 TrySpawnMissionMonAdjacent(struct MonSpawnInfo *monSpawnInfo, Entity *around);
+static Entity *GetDungeonPartnerEntity(void);
+static bool8 TrySpawnMissionMonOnFloor(struct MonSpawnInfo *monSpawnInfo, bool8 preferLeaderRoom);
 
 void sub_806AD3C(void)
 {
@@ -437,9 +450,67 @@ void sub_806B678(void)
     }
 }
 
-static bool8 TrySpawnMissionMonOnFloor(bool8 preferLeaderRoom)
+static void InitMissionMonSpawnInfo(struct MonSpawnInfo *monSpawnInfo)
 {
-    struct MonSpawnInfo monSpawnInfo;
+    u32 difficulty;
+
+    monSpawnInfo->species = gDungeon->unk644.unk44;
+    if (gDungeon->unk644.outlawHunt) {
+        difficulty = GetDungeonLocMissionDifficulty(&gDungeon->unk644.dungeonLocation);
+        if (difficulty > 15)
+            difficulty = 15;
+        monSpawnInfo->level = sOutlawLevelTable[difficulty];
+        monSpawnInfo->unk2 = BEHAVIOR_OUTLAW;
+    }
+    else {
+        monSpawnInfo->level = 1;
+        monSpawnInfo->unk2 = BEHAVIOR_RESCUE_TARGET;
+    }
+    monSpawnInfo->unk4 = 0;
+    monSpawnInfo->unk10 = 0;
+}
+
+static bool8 TrySpawnMissionMonAt(struct MonSpawnInfo *monSpawnInfo, s32 x, s32 y)
+{
+    monSpawnInfo->pos.x = x;
+    monSpawnInfo->pos.y = y;
+    return SpawnWildMon(monSpawnInfo, FALSE) != NULL;
+}
+
+static bool8 TrySpawnMissionMonAdjacent(struct MonSpawnInfo *monSpawnInfo, Entity *around)
+{
+    s32 i;
+    s32 startDir;
+
+    if (around == NULL || !EntityIsValid(around))
+        return FALSE;
+
+    startDir = DungeonRandInt(NUM_DIRECTIONS);
+    for (i = 0; i < NUM_DIRECTIONS; i++) {
+        s32 dir = (startDir + i) % NUM_DIRECTIONS;
+        s32 x = around->pos.x + gAdjacentTileOffsets[dir].x;
+        s32 y = around->pos.y + gAdjacentTileOffsets[dir].y;
+
+        if (TrySpawnMissionMonAt(monSpawnInfo, x, y))
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static Entity *GetDungeonPartnerEntity(void)
+{
+    s32 i;
+
+    for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
+        Entity *mon = gDungeon->teamPokemon[i];
+        if (EntityIsValid(mon) && GetEntInfo(mon)->joinedAt.id == DUNGEON_JOIN_LOCATION_PARTNER)
+            return mon;
+    }
+    return NULL;
+}
+
+static bool8 TrySpawnMissionMonOnFloor(struct MonSpawnInfo *monSpawnInfo, bool8 preferLeaderRoom)
+{
     s32 i, j;
     s32 x, y;
     u8 leaderRoom = CORRIDOR_ROOM;
@@ -449,18 +520,6 @@ static bool8 TrySpawnMissionMonOnFloor(bool8 preferLeaderRoom)
 
     if (preferLeaderRoom)
         leaderRoom = GetTile(gLeaderPosition.x, gLeaderPosition.y)->room;
-
-    monSpawnInfo.species = gDungeon->unk644.unk44;
-    if (gDungeon->unk644.outlawHunt) {
-        monSpawnInfo.level = 0;
-        monSpawnInfo.unk2 = BEHAVIOR_OUTLAW;
-    }
-    else {
-        monSpawnInfo.level = 1;
-        monSpawnInfo.unk2 = BEHAVIOR_RESCUE_TARGET;
-    }
-    monSpawnInfo.unk4 = 0;
-    monSpawnInfo.unk10 = 0;
 
     x = DungeonRandInt(DUNGEON_MAX_SIZE_X);
     y = DungeonRandInt(DUNGEON_MAX_SIZE_Y);
@@ -483,9 +542,7 @@ static bool8 TrySpawnMissionMonOnFloor(bool8 preferLeaderRoom)
             if (preferLeaderRoom && tile->room != leaderRoom)
                 continue;
 
-            monSpawnInfo.pos.x = x;
-            monSpawnInfo.pos.y = y;
-            if (SpawnWildMon(&monSpawnInfo, FALSE))
+            if (TrySpawnMissionMonAt(monSpawnInfo, x, y))
                 return TRUE;
         }
     }
@@ -508,17 +565,26 @@ void SpawnWildMonsOnFloor(void)
     }
 
     if (needMissionMon) {
-        bool8 preferLeaderRoom = FALSE;
+        InitMissionMonSpawnInfo(&monSpawnInfo);
 
-        /* Outlaw hunts: try the leader's room first so the fight starts face-to-face. */
         if (gDungeon->unk644.outlawHunt) {
+            Entity *leader = GetLeader();
+            Entity *partner = GetDungeonPartnerEntity();
+            bool8 preferLeaderRoom = FALSE;
             u8 leaderRoom = GetTile(gLeaderPosition.x, gLeaderPosition.y)->room;
+
+            /* Prefer adjacent to leader, then partner, then leader's room, then any tile. */
             if (leaderRoom != CORRIDOR_ROOM)
                 preferLeaderRoom = TRUE;
-        }
 
-        if (TrySpawnMissionMonOnFloor(preferLeaderRoom)
-            || (preferLeaderRoom && TrySpawnMissionMonOnFloor(FALSE))) {
+            if (TrySpawnMissionMonAdjacent(&monSpawnInfo, leader)
+                || TrySpawnMissionMonAdjacent(&monSpawnInfo, partner)
+                || (preferLeaderRoom && TrySpawnMissionMonOnFloor(&monSpawnInfo, TRUE))
+                || TrySpawnMissionMonOnFloor(&monSpawnInfo, FALSE)) {
+                needMissionMon = FALSE;
+            }
+        }
+        else if (TrySpawnMissionMonOnFloor(&monSpawnInfo, FALSE)) {
             needMissionMon = FALSE;
         }
     }

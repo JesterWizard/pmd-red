@@ -29,12 +29,12 @@ Toggle: `gRuntimeConfig.outlaw_missions` in [`configs/runtime.c`](../../configs/
 1. `GeneratePelipperJobs` / `GenerateMailJobInfo` may assign `WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT` (5).
 2. Board UI shows **Wanted:** titles and defeat objectives (same Accept / Take Job path as other jobs).
 3. On the destination floor, `sub_80842F0` sets `unk44` (species) and `outlawHunt`.
-4. `SpawnWildMonsOnFloor` spawns that species as `BEHAVIOR_OUTLAW` in the **leader's room** when possible (falls back to any spawn tile).
+4. `SpawnWildMonsOnFloor` spawns that species as `BEHAVIOR_OUTLAW` at a level from `sOutlawLevelTable[GetDungeonLocMissionDifficulty]` (EoS `OUTLAW_LEVEL_TABLE` values). Spawn priority: tile adjacent to the leader, else adjacent to the partner, else the leader's room, else any monster spawn tile.
 5. After the destination-floor banner, the outlaw speaks **one of five** random taunt lines (with portrait).
-6. Defeating (or successfully recruiting) the outlaw marks the job complete and offers to leave the dungeon.
+6. Defeating the outlaw (not recruitable) marks the job complete. EXP gain is shown first, then the defeated dialogue, then the offer to leave the dungeon.
 7. On successful exit, `MAIL_TYPE_UNK8` → `UNK9`. At Pelipper Post, `sub_8096AF8` / `TYM_Create` run the thank-you scene, then `MR_Create` pays the usual mission reward.
 
-Difficulty uses the same +2 bump as escort missions (`sub_803C1B4`).
+Difficulty uses the same +2 bump as escort missions for board/rewards (`sub_803C1B4`). Combat level uses base difficulty only.
 
 ---
 
@@ -60,7 +60,8 @@ Difficulty uses the same +2 bump as escort missions (`sub_803C1B4`).
 ## Limitations
 
 - Hunt only — no Arrest/Escort outlaw, Outlaw Monster House, or fleeing AI.
-- Outlaw uses floor-normal level (no Explorers-style heavy stat inflate).
+- Outlaws are not recruitable.
+- Combat level comes from `sOutlawLevelTable` (EoS NA `OUTLAW_LEVEL_TABLE`) by base dungeon difficulty; no separate stat multiplier.
 - External Wonder Mail passwords cannot encode type 5 (`ValidateWonderMail` still rejects `missionType > DELIVER`).
 - Mixed into the existing bulletin slots; there is no separate Wanted Poster board.
-- Same-room spawn prefers the leader's room; if that room has no free monster spawn tiles, any floor tile is used.
+- Spawn prefers a tile next to the leader, then the partner, then the leader's room; if none work, any floor spawn tile is used.

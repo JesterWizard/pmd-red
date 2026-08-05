@@ -52,6 +52,7 @@
 #include "dungeon_jobs.h"
 #include "dungeon_mon_spawn.h"
 #include "dungeon_info.h"
+#include "dungeon_leveling.h"
 #include "dungeon_monster_house.h"
 #include "move_orb_effects_2.h"
 #include "move_orb_effects_5.h"
@@ -634,8 +635,13 @@ void HandleFaint_Async(Entity *entity, s32 dungeonExitReason_, Entity *param_3)
     entity->type = ENTITY_NOTHING;
     sub_8045ACC();
 
-    if (completeOutlaw)
+    if (completeOutlaw) {
+        /* Flush pending EXP popups before the outlaw-defeated dialogue. */
+        Entity *leader = GetLeader();
+        if (leader != NULL)
+            EnemyEvolution(leader);
         CompleteOutlawHuntAfterDefeat_Async(outlawSpecies);
+    }
 }
 
 void sub_80694C0(Entity *target,s32 x,s32 y,u8 param_4)

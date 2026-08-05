@@ -94,7 +94,9 @@ bool8 TryRecruitMonster(Entity *attacker, Entity *target)
         return FALSE;
     if (targetInfo->joinedAt.id == DUNGEON_JOIN_LOCATION_CLIENT_POKEMON)
         return FALSE;
-    if (targetInfo->monsterBehavior == 1)
+    if (targetInfo->monsterBehavior == BEHAVIOR_RESCUE_TARGET)
+        return FALSE;
+    if (targetInfo->monsterBehavior == BEHAVIOR_OUTLAW)
         return FALSE;
     if (!CanSeeTarget(target,attacker))
         return FALSE;
