@@ -73,6 +73,8 @@ typedef struct {
     u8 status_condition_exp;
     /* Keep linked moves linked when a move in the chain hits 0 PP (else vanilla: delink) */
     u8 keep_linked_moves_at_0_pp;
+    /* +10% to current HP / Atk / Sp.Atk / Def / Sp.Def on each evolution */
+    u8 evolution_stat_boost;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

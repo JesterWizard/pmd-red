@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "pokemon_evolution.h"
 #include "pokemon.h"
 #include "pokemon_3.h"
@@ -8,6 +9,35 @@
 #include "adventure_info.h"
 #include "constants/evolve_type.h"
 #include "constants/evolution_status.h"
+
+#define EVOLUTION_STAT_BOOST_PERCENT 10
+#define MAX_POKE_HP 999
+#define MAX_OFFENSE_STAT 255
+
+static void ApplyEvolutionStatBoost(Pokemon *pokemon)
+{
+    s32 i;
+    s32 hp;
+
+    if (!gRuntimeConfig.evolution_stat_boost)
+        return;
+
+    hp = pokemon->pokeHP * (100 + EVOLUTION_STAT_BOOST_PERCENT) / 100;
+    if (hp > MAX_POKE_HP)
+        hp = MAX_POKE_HP;
+    pokemon->pokeHP = hp;
+
+    for (i = 0; i < 2; i++) {
+        s32 att = pokemon->offense.att[i] * (100 + EVOLUTION_STAT_BOOST_PERCENT) / 100;
+        s32 def = pokemon->offense.def[i] * (100 + EVOLUTION_STAT_BOOST_PERCENT) / 100;
+        if (att > MAX_OFFENSE_STAT)
+            att = MAX_OFFENSE_STAT;
+        if (def > MAX_OFFENSE_STAT)
+            def = MAX_OFFENSE_STAT;
+        pokemon->offense.att[i] = att;
+        pokemon->offense.def[i] = def;
+    }
+}
 
 void SetMonEvolveStatus(Pokemon *pokemon, EvolveStatus *evolveStatus, bool8 param_3)
 {
@@ -244,6 +274,8 @@ Pokemon *sub_808F798(Pokemon *pokemon, s16 _species)
 
     if (copy)
         BoundedCopyStringtoBuffer(pokeStruct.name, GetMonSpecies(species), POKEMON_NAME_LENGTH);
+
+    ApplyEvolutionStatBoost(&pokeStruct);
 
     return TryAddPokemonToRecruited(&pokeStruct);
 }

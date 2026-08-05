@@ -786,6 +786,8 @@ static inline void fu(EntityInfo *entityInfo, s16 id)
   entityInfo->id = id;
 }
 
+#define EVOLUTION_STAT_BOOST_PERCENT 10
+
 static void sub_8072B78(Entity *pokemon, Entity *target, s16 id)
 {
   OpenedFile *file;
@@ -804,6 +806,30 @@ static void sub_8072B78(Entity *pokemon, Entity *target, s16 id)
   fu(entityInfo, id_s32);
   GetLvlUpEntry(&levelData,id_s32,entityInfo->level);
   entityInfo->exp = levelData.expRequired;
+  if (gRuntimeConfig.evolution_stat_boost) {
+    s32 i;
+    s32 hp = entityInfo->maxHPStat * (100 + EVOLUTION_STAT_BOOST_PERCENT) / 100;
+    s32 curHp;
+
+    if (hp > 999)
+      hp = 999;
+    curHp = entityInfo->HP * (100 + EVOLUTION_STAT_BOOST_PERCENT) / 100;
+    if (curHp > hp)
+      curHp = hp;
+    entityInfo->maxHPStat = hp;
+    entityInfo->HP = curHp;
+
+    for (i = 0; i < 2; i++) {
+      s32 atk = entityInfo->atk[i] * (100 + EVOLUTION_STAT_BOOST_PERCENT) / 100;
+      s32 def = entityInfo->def[i] * (100 + EVOLUTION_STAT_BOOST_PERCENT) / 100;
+      if (atk > 255)
+        atk = 255;
+      if (def > 255)
+        def = 255;
+      entityInfo->atk[i] = atk;
+      entityInfo->def[i] = def;
+    }
+  }
   target->axObj.spriteFile = file;
   ResetMonEntityData(entityInfo,0);
   sub_8069E0C(target);

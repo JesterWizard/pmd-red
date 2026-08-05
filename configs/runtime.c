@@ -32,4 +32,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .gummis_in_town = TRUE, /* TRUE = Give Gummi from town Team menu; FALSE = Friend Area only */
     .status_condition_exp = TRUE, /* TRUE = EXP on status KOs; FALSE = vanilla (no EXP) */
     .keep_linked_moves_at_0_pp = TRUE, /* TRUE = links survive 0 PP; FALSE = vanilla delink */
+    .evolution_stat_boost = TRUE, /* TRUE = +10% current stats per evolution; FALSE = vanilla */
 };
