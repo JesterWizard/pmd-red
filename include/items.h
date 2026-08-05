@@ -55,6 +55,7 @@ s32 GetStorageUsedCount(void);
 s32 GetStorageCapacity(void);
 s32 GetStorageCapacityForRank(u8 rank);
 s32 GetStorageDepositQuantity(const Item *slot);
+s32 GetStorageDepositCapacityCost(u8 itemId, s32 quantity);
 bool8 CanAddQuantityToStorage(u8 itemId, s32 quantity);
 bool8 IsBagFull(void);
 bool8 IsThrownItem(u8 id);

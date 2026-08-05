@@ -204,14 +204,22 @@ static void sub_80371B8(void)
                 s32 add = item->numItems;
                 s32 max = GetMaxStorageQuantity();
                 s32 qty = gTeamInventoryRef->teamStorage[item->itemIndex];
-                s32 space = GetStorageCapacity() - GetStorageUsedCount();
 
-                if (add > space)
-                    add = space;
                 if (qty + add > max)
                     add = max - qty;
-                if (add > 0)
-                    gTeamInventoryRef->teamStorage[item->itemIndex] = qty + add;
+                if (add > 0) {
+                    if (IsThrownItem(item->itemIndex)) {
+                        if (qty == 0 && GetStorageUsedCount() >= GetStorageCapacity())
+                            add = 0;
+                    }
+                    else {
+                        s32 space = GetStorageCapacity() - GetStorageUsedCount();
+                        if (add > space)
+                            add = space;
+                    }
+                    if (add > 0)
+                        gTeamInventoryRef->teamStorage[item->itemIndex] = qty + add;
+                }
             }
         }
     }

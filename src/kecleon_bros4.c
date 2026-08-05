@@ -389,11 +389,14 @@ void DrawStorageCapacityWindow(u32 winId)
 bool8 sub_801ADA0(s32 param_1)
 {
     s32 pending;
+    s32 pendingCost;
     s32 selectedSameId;
     s32 selectedTotal;
     s32 invIndex;
+    s32 earlier;
     Item item;
     Item other;
+    bool8 alreadyCounted;
 
     item = gTeamInventoryRef->teamItems[param_1];
     if (!IsNotMoneyOrUsedTMItem(item.id))
@@ -404,15 +407,39 @@ bool8 sub_801ADA0(s32 param_1)
     if (gTeamInventoryRef->teamStorage[item.id] + selectedSameId + pending > GetMaxStorageQuantity())
         return FALSE;
 
+    /* Capacity: thrown stacks cost 1 only when opening a new id (dedupe selection). */
     selectedTotal = 0;
     for (invIndex = 0; invIndex < GetNumberOfFilledInventorySlots(); invIndex++) {
-        if (gUnknown_203B224->unk4[invIndex] != 0) {
-            other = gTeamInventoryRef->teamItems[invIndex];
-            if (IsNotMoneyOrUsedTMItem(other.id))
-                selectedTotal += GetStorageDepositQuantity(&other);
+        if (gUnknown_203B224->unk4[invIndex] == 0)
+            continue;
+        other = gTeamInventoryRef->teamItems[invIndex];
+        if (!IsNotMoneyOrUsedTMItem(other.id))
+            continue;
+        if (IsThrownItem(other.id)) {
+            if (gTeamInventoryRef->teamStorage[other.id] != 0)
+                continue;
+            alreadyCounted = FALSE;
+            for (earlier = 0; earlier < invIndex; earlier++) {
+                if (gUnknown_203B224->unk4[earlier] != 0
+                    && gTeamInventoryRef->teamItems[earlier].id == other.id) {
+                    alreadyCounted = TRUE;
+                    break;
+                }
+            }
+            if (!alreadyCounted)
+                selectedTotal++;
+        }
+        else {
+            selectedTotal += GetStorageDepositQuantity(&other);
         }
     }
-    if (GetStorageUsedCount() + selectedTotal + pending > GetStorageCapacity())
+
+    if (IsThrownItem(item.id))
+        pendingCost = (gTeamInventoryRef->teamStorage[item.id] == 0 && selectedSameId == 0) ? 1 : 0;
+    else
+        pendingCost = pending;
+
+    if (GetStorageUsedCount() + selectedTotal + pendingCost > GetStorageCapacity())
         return FALSE;
 
     return TRUE;

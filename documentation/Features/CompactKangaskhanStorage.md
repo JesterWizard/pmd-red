@@ -18,7 +18,7 @@ Vanilla Rescue Team stores Kangaskhan Storage as `u16 teamStorage[itemId]` with 
 
 This feature switches counts to **`u8`** and caps stacks at **99** when enabled. The storage array is sized for **480 item ids** (`STORAGE_SIZE`), matching the compact-u8 RAM budget of vanilla’s `u16[240]`.
 
-Total how many items you may store at once (sum of quantities) is controlled separately by [`RankRewards.md`](RankRewards.md) (`rank_rewards`: 64 → 480 by rescue rank).
+Total how many items you may store at once is controlled separately by [`RankRewards.md`](RankRewards.md) (`rank_rewards`: 64 → 480 by rescue rank). Thrown stacks count as one toward that total; other items count by quantity.
 
 Toggle: `gRuntimeConfig.compact_kangaskhan_storage` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`).
 

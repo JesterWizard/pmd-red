@@ -40,7 +40,7 @@ Same math as the old rank-bag-pages mode:
 
 ### Kangaskhan Storage (total items)
 
-Capacity is the **sum of all `teamStorage[]` quantities** (PMD2-style: stack size counts). Per-id caps remain separate (`GetMaxStorageQuantity`, usually 99). The physical array is `u8 teamStorage[STORAGE_SIZE]` with **`STORAGE_SIZE` = 480** item-id slots (see Compact Kangaskhan Storage).
+Capacity counts **non-thrown quantities** plus **one per thrown item id** that has any stock (Gravelerock / sticks / etc. are one stack even at 99). Per-id caps remain separate (`GetMaxStorageQuantity`, usually 99 with Compact Kangaskhan Storage). The physical array is `u8 teamStorage[STORAGE_SIZE]` with **`STORAGE_SIZE` = 480** item-id slots.
 
 | Rank | Storage capacity |
 |------|-----------------:|
@@ -50,7 +50,7 @@ Capacity is the **sum of all `teamStorage[]` quantities** (PMD2-style: stack siz
 | Gold | 320 |
 | Platinum / Diamond / Lucario | 480 |
 
-Deposit paths refuse adds that would exceed either the per-id max or the total capacity (`CanAddQuantityToStorage`, `MoveToStorage`, Kangaskhan / held-item / script / link hooks).
+Deposit paths refuse adds that would exceed either the per-id max or the total capacity (`CanAddQuantityToStorage`, `GetStorageDepositCapacityCost`, `MoveToStorage`, Kangaskhan / held-item / script / link hooks). Adding more rocks to an existing Gravelerock stack does not consume another capacity slot.
 
 ### Kangaskhan UI (used / max)
 
@@ -81,7 +81,7 @@ Wired for:
 | Toggle | `configs/runtime.c` / `include/runtime.h` | `rank_rewards` |
 | Caps | `include/constants/item.h` | `STORAGE_CAPACITY_*` (Gold = 320), bag page defines |
 | Bag helpers | `GetBagCapacity` / `GetBagCapacityForRank` in `src/items.c` | Rank → toolbox size |
-| Storage helpers | `GetStorageCapacity` / `GetStorageUsedCount` / `CanAddQuantityToStorage` in `src/items.c` | Rank → total storage |
+| Storage helpers | `GetStorageCapacity` / `GetStorageUsedCount` / `GetStorageDepositCapacityCost` / `CanAddQuantityToStorage` in `src/items.c` | Rank → total storage; thrown = 1 stack |
 | Deposit clamp | `MoveToStorage` in `src/items.c` | Respects remaining capacity |
 | Take header used/max | `sub_801CCD8` in `src/code_801C8C4.c` | `Storage %d/%d` |
 | Store side used/max | `DrawStorageCapacityWindow` in `src/kecleon_bros4.c` | Side panel on deposit |
@@ -99,7 +99,7 @@ Wired for:
 
 ## Limitations & Bugs
 
-- Rank **total-quantity** cap tops out at 480 items; that is separate from `STORAGE_SIZE` (**480 item-id slots** in `teamStorage[]`).
+- Rank **total** cap tops out at 480; thrown item ids count as **1** each toward that total (not stack size). That is separate from `STORAGE_SIZE` (**480 item-id slots** in `teamStorage[]`).
 - Live catalog is still `NUMBER_OF_ITEM_IDS` (240). `Item.id` is `u8`, so ids ≥ 256 need a type widen before use.
 - Disabling `rank_rewards` removes the total cap but does not restore vanilla `u16`/999 stacks (see Compact Kangaskhan Storage).
 - Please file issues if any deposit path still ignores `CanAddQuantityToStorage`.

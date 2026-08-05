@@ -206,8 +206,16 @@ s32 GetStorageUsedCount(void)
     s32 i;
     s32 total = 0;
 
-    for (i = 0; i < STORAGE_SIZE; i++)
-        total += gTeamInventoryRef->teamStorage[i];
+    /* Thrown stacks (Gravelerock, etc.) count as 1 toward ranked capacity;
+     * other items still count by quantity. */
+    for (i = 0; i < STORAGE_SIZE; i++) {
+        if (gTeamInventoryRef->teamStorage[i] == 0)
+            continue;
+        if (IsThrownItem(i))
+            total++;
+        else
+            total += gTeamInventoryRef->teamStorage[i];
+    }
     return total;
 }
 
@@ -242,12 +250,24 @@ s32 GetStorageDepositQuantity(const Item *slot)
     return 1;
 }
 
+/* Ranked-capacity cost of depositing `quantity` of itemId.
+ * Thrown items cost 1 only when opening a new stack (id was empty). */
+s32 GetStorageDepositCapacityCost(u8 itemId, s32 quantity)
+{
+    if (quantity <= 0 || itemId >= STORAGE_SIZE)
+        return 0;
+    if (IsThrownItem(itemId))
+        return (gTeamInventoryRef->teamStorage[itemId] == 0) ? 1 : 0;
+    return quantity;
+}
+
 bool8 CanAddQuantityToStorage(u8 itemId, s32 quantity)
 {
     s32 newQty;
     s32 maxQty;
     s32 used;
     s32 capacity;
+    s32 cost;
 
     if (quantity <= 0 || itemId >= STORAGE_SIZE || !IsNotMoneyOrUsedTMItem(itemId))
         return FALSE;
@@ -257,9 +277,10 @@ bool8 CanAddQuantityToStorage(u8 itemId, s32 quantity)
     if (newQty > maxQty)
         return FALSE;
 
+    cost = GetStorageDepositCapacityCost(itemId, quantity);
     used = GetStorageUsedCount();
     capacity = GetStorageCapacity();
-    if (used + quantity > capacity)
+    if (used + cost > capacity)
         return FALSE;
 
     return TRUE;
@@ -1125,6 +1146,7 @@ void MoveToStorage(Item* slot)
     s32 add;
     s32 max;
     s32 qty;
+    s32 cost;
     s32 space;
 
     if (slot->id >= STORAGE_SIZE)
@@ -1133,14 +1155,22 @@ void MoveToStorage(Item* slot)
     add = GetStorageDepositQuantity(slot);
     max = GetMaxStorageQuantity();
     qty = gTeamInventoryRef->teamStorage[slot->id];
-    space = GetStorageCapacity() - GetStorageUsedCount();
 
-    if (add > space)
-        add = space;
     if (qty + add > max)
         add = max - qty;
     if (add <= 0)
         return;
+
+    cost = GetStorageDepositCapacityCost(slot->id, add);
+    space = GetStorageCapacity() - GetStorageUsedCount();
+    if (cost > space) {
+        /* Thrown new-stack needs 1 free slot; non-thrown clamp to remaining. */
+        if (IsThrownItem(slot->id))
+            return;
+        add = space;
+        if (add <= 0)
+            return;
+    }
 
     gTeamInventoryRef->teamStorage[slot->id] = qty + add;
     NoteAchievementItemObtained(slot->id);
