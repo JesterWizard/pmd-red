@@ -168,25 +168,23 @@ static const u8 sCharizardDeterminedPal[] = INCBIN_U8("graphics/portraits/chariz
 static const u8 sCharizardDeterminedGfx[] = INCBIN_U8("graphics/portraits/charizard/Determined.at4px");
 static const u8 sCharizardJoyousPal[] = INCBIN_U8("graphics/portraits/charizard/Joyous.pal");
 static const u8 sCharizardJoyousGfx[] = INCBIN_U8("graphics/portraits/charizard/Joyous.at4px");
-static const u8 sCharizardInspiredPal[] = INCBIN_U8("graphics/portraits/charizard/Inspired.pal");
-static const u8 sCharizardInspiredGfx[] = INCBIN_U8("graphics/portraits/charizard/Inspired.at4px");
 static const u8 sCharizardSurprisedPal[] = INCBIN_U8("graphics/portraits/charizard/Surprised.pal");
 static const u8 sCharizardSurprisedGfx[] = INCBIN_U8("graphics/portraits/charizard/Surprised.at4px");
 
 static const PortraitGfx sCharizardPortraits = {
     .sprites = {
         { (const RGB_Struct *)sCharizardNormalPal, sCharizardNormalGfx },
-        { (const RGB_Struct *)sCharizardHappyPal, sCharizardHappyGfx },
+        { (const RGB_Struct *)sCharizardSurprisedPal, sCharizardSurprisedGfx },
+        { (const RGB_Struct *)sCharizardJoyousPal, sCharizardJoyousGfx },
         { (const RGB_Struct *)sCharizardPainedPal, sCharizardPainedGfx },
-        { (const RGB_Struct *)sCharizardAngryPal, sCharizardAngryGfx },
-        { (const RGB_Struct *)sCharizardWorriedPal, sCharizardWorriedGfx },
         { (const RGB_Struct *)sCharizardSadPal, sCharizardSadGfx },
+        { (const RGB_Struct *)sCharizardHappyPal, sCharizardHappyGfx },
         { (const RGB_Struct *)sCharizardCryingPal, sCharizardCryingGfx },
         { (const RGB_Struct *)sCharizardShoutingPal, sCharizardShoutingGfx },
         { (const RGB_Struct *)sCharizardTearyEyePal, sCharizardTearyEyeGfx },
         { (const RGB_Struct *)sCharizardDeterminedPal, sCharizardDeterminedGfx },
-        { (const RGB_Struct *)sCharizardJoyousPal, sCharizardJoyousGfx },
-        { (const RGB_Struct *)sCharizardInspiredPal, sCharizardInspiredGfx },
+        { (const RGB_Struct *)sCharizardAngryPal, sCharizardAngryGfx },
+        { (const RGB_Struct *)sCharizardWorriedPal, sCharizardWorriedGfx },
         { (const RGB_Struct *)sCharizardSurprisedPal, sCharizardSurprisedGfx },
     },
 };
@@ -262,17 +260,16 @@ static const u8 sBlastoiseDeterminedPal[] = INCBIN_U8("graphics/portraits/blasto
 static const u8 sBlastoiseDeterminedGfx[] = INCBIN_U8("graphics/portraits/blastoise/Determined.at4px");
 static const u8 sBlastoiseJoyousPal[] = INCBIN_U8("graphics/portraits/blastoise/Joyous.pal");
 static const u8 sBlastoiseJoyousGfx[] = INCBIN_U8("graphics/portraits/blastoise/Joyous.at4px");
-static const u8 sBlastoiseInspiredPal[] = INCBIN_U8("graphics/portraits/blastoise/Inspired.pal");
-static const u8 sBlastoiseInspiredGfx[] = INCBIN_U8("graphics/portraits/blastoise/Inspired.at4px");
 static const u8 sBlastoiseSurprisedPal[] = INCBIN_U8("graphics/portraits/blastoise/Surprised.pal");
 static const u8 sBlastoiseSurprisedGfx[] = INCBIN_U8("graphics/portraits/blastoise/Surprised.at4px");
 
 static const PortraitGfx sBlastoisePortraits = {
     .sprites = {
         { (const RGB_Struct *)sBlastoiseNormalPal, sBlastoiseNormalGfx },
-        { (const RGB_Struct *)sBlastoiseHappyPal, sBlastoiseHappyGfx },
-        { (const RGB_Struct *)sBlastoisePainedPal, sBlastoisePainedGfx },
+        { (const RGB_Struct *)sBlastoiseSurprisedPal, sBlastoiseSurprisedGfx },
         { (const RGB_Struct *)sBlastoiseAngryPal, sBlastoiseAngryGfx },
+        { (const RGB_Struct *)sBlastoisePainedPal, sBlastoisePainedGfx },
+        { (const RGB_Struct *)sBlastoiseHappyPal, sBlastoiseHappyGfx },
         { (const RGB_Struct *)sBlastoiseWorriedPal, sBlastoiseWorriedGfx },
         { (const RGB_Struct *)sBlastoiseSadPal, sBlastoiseSadGfx },
         { (const RGB_Struct *)sBlastoiseCryingPal, sBlastoiseCryingGfx },
@@ -280,7 +277,6 @@ static const PortraitGfx sBlastoisePortraits = {
         { (const RGB_Struct *)sBlastoiseTearyEyePal, sBlastoiseTearyEyeGfx },
         { (const RGB_Struct *)sBlastoiseDeterminedPal, sBlastoiseDeterminedGfx },
         { (const RGB_Struct *)sBlastoiseJoyousPal, sBlastoiseJoyousGfx },
-        { (const RGB_Struct *)sBlastoiseInspiredPal, sBlastoiseInspiredGfx },
         { (const RGB_Struct *)sBlastoiseSurprisedPal, sBlastoiseSurprisedGfx },
     },
 };

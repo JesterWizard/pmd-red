@@ -57,7 +57,7 @@ Portraits credit the SpriteCollab contributors listed in each folder’s `credit
 | Mudkip | Marshtomp, Swampert |
 | Skitty | Delcatty |
 
-Emotion slots match the game’s 13 kao emotions (Normal … Surprised).
+Emotion slots match the game’s 13 kao emotions (Normal … Surprised), except **Charizard** and **Blastoise**: vanilla NPC `kao` packs those oddly (e.g. Charizard slot 1 = Surprised, not Happy). Custom portraits keep that packing so story scripts (Zapdos human reveal, Magma Cavern, etc.) still show the intended face.
 
 ---
 
