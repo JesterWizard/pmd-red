@@ -15,6 +15,7 @@
 #include "constants/ability.h"
 #include "constants/type.h"
 #include "constants/colors.h"
+#include "constants/iq_skill.h"
 
 void ShowPokemonSummaryWindow(s32 which, s32 currSubWindowId, MonSummaryInfo *monInfo, UnkInfoTabStruct *param_4, u32 windowId)
 {
@@ -181,7 +182,7 @@ void ShowPokemonSummaryWindow(s32 which, s32 currSubWindowId, MonSummaryInfo *mo
         case SUB_WINDOW_IQ: {
             s32 iVar13;
             bool8 bVar11;
-            u8 iqSkillBuffer[24];
+            u8 iqSkillBuffer[NUM_IQ_SKILLS];
 
             PrintFormattedStringOnWindow(currSubWindowId * 8 + 0x10,0,gText_IqSkills,windowId,'\0');
             GetNumAvailableIQSkills(iqSkillBuffer,monInfo->IQ);

@@ -20,6 +20,7 @@
 #include "text_util.h"
 #include "dungeon_data.h"
 #include "number_util.h"
+#include "runtime.h"
 
 struct UnusedOffenseStruct
 {
@@ -373,6 +374,11 @@ bool8 HasIQForSkill(s32 pokeIQ, u8 IQSkillIndex)
         return FALSE;
     }
 
+    if (IQSkillIndex >= IQ_FIRST_CUSTOM_SKILL && !gRuntimeConfig.custom_iq_skills)
+    {
+        return FALSE;
+    }
+
     return gReqIQSkillPts[IQSkillIndex] <= pokeIQ;
 }
 
@@ -407,38 +413,12 @@ void ToggleIQSkill(IqSkillFlags *iq, u32 skillIndex)
         iq->flags[0] &= ~(bit);
         iq->flags[1] &= ~(bit >> 8);
         iq->flags[2] &= ~(bit >> 16);
+        iq->flags[3] &= ~(bit >> 24);
     }
     else {
         SetIQSkill(iq, skillIndex);
     }
 }
-
-static const s32 sIQSkillGroups[NUM_IQ_SKILLS] = {
-    [IQ_NONE] = 9999,
-    [IQ_TYPE_ADVANTAGE_MASTER] = 4,
-    [IQ_ITEM_CATCHER] = 1,
-    [IQ_COURSE_CHECKER] = 2,
-    [IQ_SURE_HIT_ATTACKER] = 4,
-    [IQ_QUICK_DODGER] = 4,
-    [IQ_PP_CHECKER] = 6,
-    [IQ_NONTRAITOR] = 7,
-    [IQ_STATUS_CHECKER] = 8,
-    [IQ_EXP_GO_GETTER] = 9,
-    [IQ_EFFICIENCY_EXPERT] = 9,
-    [IQ_WEAK_TYPE_PICKER] = 9,
-    [IQ_ALL_TERRAIN_HIKER] = 10,
-    [IQ_SUPER_MOBILE] = 10,
-    [IQ_TRAP_AVOIDER] = 11,
-    [IQ_HOUSE_AVOIDER] = 11,
-    [IQ_ENERGY_SAVER] = 14,
-    [IQ_NONSLEEPER] = 14,
-    [IQ_SELF_CURER] = 14,
-    [IQ_TRAP_SEER] = 16,
-    [IQ_LAVA_EVADER] = 16,
-    [IQ_DEDICATED_TRAVELER] = 9,
-    [IQ_ITEM_MASTER] = 17,
-    [IQ_EXCLUSIVE_MOVE_USER] = 6,
-};
 
 void SetIQSkill(IqSkillFlags *iq, u32 skillIndex)
 {
@@ -446,13 +426,14 @@ void SetIQSkill(IqSkillFlags *iq, u32 skillIndex)
     s32 iqSkillGroup;
     s32 bit;
 
-    for (iqSkill = 0, iqSkillGroup = sIQSkillGroups[skillIndex]; iqSkill < NUM_IQ_SKILLS; iqSkill++) {
+    for (iqSkill = 0, iqSkillGroup = gIQSkillGroups[skillIndex]; iqSkill < NUM_IQ_SKILLS; iqSkill++) {
         // Turn off each IQ Skill that's in the same group as the chosen skill
-        if (iqSkillGroup == sIQSkillGroups[iqSkill]) {
+        if (iqSkillGroup == gIQSkillGroups[iqSkill]) {
             s32 bit = 1 << (iqSkill);
             iq->flags[0] &= ~(bit);
             iq->flags[1] &= ~(bit >> 8);
             iq->flags[2] &= ~(bit >> 16);
+            iq->flags[3] &= ~(bit >> 24);
         }
     }
 
@@ -460,6 +441,7 @@ void SetIQSkill(IqSkillFlags *iq, u32 skillIndex)
     iq->flags[0] |= bit;
     iq->flags[1] |= (bit >> 8);
     iq->flags[2] |= (bit >> 16);
+    iq->flags[3] |= (bit >> 24);
 }
 
 void SetDefaultIQSkills(IqSkillFlags *iq, bool8 enableSelfCurer)
@@ -467,6 +449,7 @@ void SetDefaultIQSkills(IqSkillFlags *iq, bool8 enableSelfCurer)
     iq->flags[0] = 0;
     iq->flags[1] = 0;
     iq->flags[2] = 0;
+    iq->flags[3] = 0;
     SetIQSkill(iq, IQ_ITEM_CATCHER);
     SetIQSkill(iq, IQ_COURSE_CHECKER);
     SetIQSkill(iq, IQ_ITEM_MASTER);
@@ -481,7 +464,8 @@ bool8 IsIQSkillSet(IqSkillFlags *iq, u32 IQSkillBit)
 {
     if (!(iq->flags[0] & IQSkillBit) &&
         !(iq->flags[1] & IQSkillBit >> 8) &&
-        !(iq->flags[2] & IQSkillBit >> 16))
+        !(iq->flags[2] & IQSkillBit >> 16) &&
+        !(iq->flags[3] & IQSkillBit >> 24))
     {
         return FALSE;
     }
@@ -628,7 +612,7 @@ void WritePoke1Bits(DataSerializer* a1, Pokemon* pokemon)
     WriteBits(a1, &pokemon->offense.def[0], 8);
     WriteBits(a1, &pokemon->offense.def[1], 8);
     WriteBits(a1, &pokemon->currExp, 24);
-    WriteBits(a1, &pokemon->IQSkills, 24);
+    WriteBits(a1, &pokemon->IQSkills, 32);
     WriteBits(a1, &pokemon->tacticIndex, 4);
     WriteHeldItemBits(a1, &pokemon->heldItem);
     WritePoke1MovesBits(a1, pokemon->moves);
@@ -658,7 +642,7 @@ void ReadPoke1Bits(DataSerializer* a1, Pokemon* pokemon)
     ReadBits(a1, &pokemon->offense.def[0], 8);
     ReadBits(a1, &pokemon->offense.def[1], 8);
     ReadBits(a1, &pokemon->currExp, 24);
-    ReadBits(a1, &pokemon->IQSkills, 24);
+    ReadBits(a1, &pokemon->IQSkills, 32);
     ReadBits(a1, &pokemon->tacticIndex, 4);
     ReadHeldItemBits(a1, &pokemon->heldItem);
     ReadPoke1MovesBits(a1, pokemon->moves);
@@ -700,7 +684,7 @@ s32 SavePoke2s(u8* buffer, s32 size)
         WriteItemSlotBits(&backup, &pokemon2->itemSlot);
         WriteBellyBits(&backup, &pokemon2->belly);
         WriteBellyBits(&backup, &pokemon2->maxBelly);
-        WriteBits(&backup, &pokemon2->IQSkills, 24);
+        WriteBits(&backup, &pokemon2->IQSkills, 32);
         WriteBits(&backup, &pokemon2->tacticIndex, 4);
         WriteHiddenPowerBits(&backup, &pokemon2->hiddenPower);
         WriteBits(&backup, &pokemon2->name, POKEMON_NAME_LENGTH * 8);
@@ -751,7 +735,7 @@ s32 RestorePoke2s(u8* a1, s32 size)
         ReadItemSlotBits(&backup, &pokemon2->itemSlot);
         ReadBellyBits(&backup, &pokemon2->belly);
         ReadBellyBits(&backup, &pokemon2->maxBelly);
-        ReadBits(&backup, &pokemon2->IQSkills, 24);
+        ReadBits(&backup, &pokemon2->IQSkills, 32);
         ReadBits(&backup, &pokemon2->tacticIndex, 4);
         ReadHiddenPowerBits(&backup, &pokemon2->hiddenPower);
         ReadBits(&backup, &pokemon2->name, POKEMON_NAME_LENGTH * 8);

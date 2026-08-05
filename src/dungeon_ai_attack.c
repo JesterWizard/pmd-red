@@ -273,8 +273,6 @@ void ChooseAIMove(Entity *pokemon)
     {
         return;
     }
-    randomWeight = DungeonRandInt(total);
-    weightCounter = 0;
     if (!IqSkillIsEnabled(pokemon, IQ_EXCLUSIVE_MOVE_USER))
     {
         canTargetRegularAttack = TargetRegularAttack(pokemon, &regularAttackTargetDir, TRUE);
@@ -284,6 +282,26 @@ void ChooseAIMove(Entity *pokemon)
         canTargetRegularAttack = FALSE;
         regularAttackTargetDir = DIRECTION_SOUTH;
     }
+    /* Conserver: prefer regular attack when it is enough to KO. */
+    if (canTargetRegularAttack
+        && aiPossibleMove[REGULAR_ATTACK_INDEX].canBeUsed
+        && IqSkillIsEnabled(pokemon, IQ_CONSERVER))
+    {
+        s32 dir = regularAttackTargetDir & DIRECTION_MASK;
+        Entity *target = GetTile(pokemon->pos.x + gAdjacentTileOffsets[dir].x,
+            pokemon->pos.y + gAdjacentTileOffsets[dir].y)->monster;
+        if (target != NULL
+            && GetEntityType(target) == ENTITY_MONSTER
+            && EstimateRegularAttackMinDamage(pokemon, target) >= GetEntInfo(target)->HP)
+        {
+            SetMonsterActionFields(&pokemonInfo->action, ACTION_REGULAR_ATTACK);
+            pokemonInfo->action.direction = dir;
+            TargetTileInFront(pokemon);
+            return;
+        }
+    }
+    randomWeight = DungeonRandInt(total);
+    weightCounter = 0;
     for (i = 0; i <= REGULAR_ATTACK_INDEX; i++)
     {
         if (aiPossibleMove[i].canBeUsed && aiPossibleMove[i].weight != 0)

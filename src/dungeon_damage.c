@@ -54,6 +54,7 @@
 #include "dungeon_tilemap.h"
 #include "achievements.h"
 #include "effect_main.h"
+#include "moves.h"
 
 static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target, struct DamageStruct *r5, bool32 isFalseSwipe, bool32 giveExp, s16 dungeonExitReason_, s32 arg8);
 static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 type, DamageStruct *dmgStruct);
@@ -1683,4 +1684,62 @@ static void sub_806F63C(Entity *param_1)
     if (temp->cameraTarget == param_1) {
         PointCameraToMonster(temp->cameraTarget);
     }
+}
+
+void EstimateMoveDamageRange(Entity *attacker, Entity *target, Move *move, s32 *minOut, s32 *maxOut)
+{
+    struct DamageStruct dmgStruct;
+    EntityInfo *atkInfo = GetEntInfo(attacker);
+    EntityInfo *tgtInfo = GetEntInfo(target);
+    u16 savedAtkVis = atkInfo->visualFlags;
+    u16 savedAtkPrev = atkInfo->previousVisualFlags;
+    u16 savedTgtVis = tgtInfo->visualFlags;
+    u16 savedTgtPrev = tgtInfo->previousVisualFlags;
+    u8 savedUnk152 = tgtInfo->unk152;
+    s32 moveType = GetMoveTypeForMonster(attacker, move);
+    s32 movePower = GetMovePower(attacker, move);
+    s32 critChance = GetMoveCritChance(move);
+    s24_8 modifier = (move->id == MOVE_REGULAR_ATTACK) ? IntToF248(0.5) : IntToF248(1);
+    s32 minDmg;
+    s32 maxDmg;
+
+    gCalcDamagePreviewMode = CALC_DAMAGE_PREVIEW_MIN;
+    CalcDamage(attacker, target, moveType, movePower, critChance, &dmgStruct, modifier, move->id, TRUE);
+    minDmg = dmgStruct.dmg;
+
+    atkInfo->visualFlags = savedAtkVis;
+    atkInfo->previousVisualFlags = savedAtkPrev;
+    tgtInfo->visualFlags = savedTgtVis;
+    tgtInfo->previousVisualFlags = savedTgtPrev;
+    tgtInfo->unk152 = savedUnk152;
+
+    gCalcDamagePreviewMode = CALC_DAMAGE_PREVIEW_MAX;
+    CalcDamage(attacker, target, moveType, movePower, critChance, &dmgStruct, modifier, move->id, TRUE);
+    maxDmg = dmgStruct.dmg;
+
+    gCalcDamagePreviewMode = CALC_DAMAGE_NORMAL;
+    atkInfo->visualFlags = savedAtkVis;
+    atkInfo->previousVisualFlags = savedAtkPrev;
+    tgtInfo->visualFlags = savedTgtVis;
+    tgtInfo->previousVisualFlags = savedTgtPrev;
+    tgtInfo->unk152 = savedUnk152;
+
+    if (minDmg > maxDmg) {
+        s32 tmp = minDmg;
+        minDmg = maxDmg;
+        maxDmg = tmp;
+    }
+    *minOut = minDmg;
+    *maxOut = maxDmg;
+}
+
+s32 EstimateRegularAttackMinDamage(Entity *attacker, Entity *target)
+{
+    Move move;
+    s32 minDmg;
+    s32 maxDmg;
+
+    InitPokemonMove(&move, MOVE_REGULAR_ATTACK);
+    EstimateMoveDamageRange(attacker, target, &move, &minDmg, &maxDmg);
+    return minDmg;
 }

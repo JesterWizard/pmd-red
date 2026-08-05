@@ -75,6 +75,8 @@ typedef struct {
     u8 keep_linked_moves_at_0_pp;
     /* +10% to current HP / Atk / Sp.Atk / Def / Sp.Def on each evolution */
     u8 evolution_stat_boost;
+    /* Custom IQ skills (e.g. Conserver); else vanilla skill set only */
+    u8 custom_iq_skills;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

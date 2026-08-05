@@ -800,6 +800,7 @@ const u8 *const gIQSkillNames[NUM_IQ_SKILLS] = {
     [IQ_DEDICATED_TRAVELER] = _("Dedicated Traveler"),
     [IQ_ITEM_MASTER] = _("Item Master"),
     [IQ_EXCLUSIVE_MOVE_USER] = _("Exclusive Move-User"),
+    [IQ_CONSERVER] = _("Conserver"),
 };
 
 const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
@@ -827,6 +828,7 @@ const u8 *const gIQSkillDescriptions[NUM_IQ_SKILLS] = {
     [IQ_DEDICATED_TRAVELER] = _("The Pokémon will focus on traveling.\nIt will use moves and items less often."),
     [IQ_ITEM_MASTER] = _("The Pokémon will use or throw its hold\nitem."),
     [IQ_EXCLUSIVE_MOVE_USER] = _("The Pokémon will only use moves. It\nwill not use its regular attack."),
+    [IQ_CONSERVER] = _("Avoids using moves when a regular attack\nis sufficient to defeat the target."),
 };
 
 const u8 *const gTacticsNames[NUM_TACTICS] = {

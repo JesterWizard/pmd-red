@@ -27,7 +27,11 @@ enum IQSkillID
     IQ_DEDICATED_TRAVELER,
     IQ_ITEM_MASTER,
     IQ_EXCLUSIVE_MOVE_USER,
+    /* Custom skills (gated by gRuntimeConfig.custom_iq_skills) */
+    IQ_CONSERVER,
     NUM_IQ_SKILLS
 };
+
+#define IQ_FIRST_CUSTOM_SKILL IQ_CONSERVER
 
 #endif // GUARD_CONSTANTS_IQ_SKILL_H

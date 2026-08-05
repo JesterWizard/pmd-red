@@ -3,10 +3,13 @@
 
 #include "structs/dungeon_entity.h"
 #include "structs/str_damage.h"
+#include "structs/str_moves.h"
 
 void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageStruct *dmgStruct, bool32 isFalseSwipe, bool32 giveExp, s16 dungeonExitReason, bool32 arg8, s32 argC);
 s32 WeightWeakTypePicker(Entity *user, Entity *target, u8 moveType);
 void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s32 critChance, struct DamageStruct *dmgStruct, s24_8 arg8, u16 moveId, bool8 arg_10);
+void EstimateMoveDamageRange(Entity *attacker, Entity *target, Move *move, s32 *minOut, s32 *maxOut);
+s32 EstimateRegularAttackMinDamage(Entity *attacker, Entity *target);
 void sub_806F2BC(Entity *attacker, Entity *target, u8 moveType, s32 a2, struct DamageStruct *dmgStruct);
 void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 dungeonExitReason);
 void sub_806F370_Async(Entity *pokemon, Entity *target, s32 dmg, s32 giveExp, bool8 *tookNoDamage, u8 moveType, s16 dungeonExitReason, s32 residualDmgType, s32 arg_10, s32 arg_14);

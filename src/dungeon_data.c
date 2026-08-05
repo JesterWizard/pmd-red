@@ -105,6 +105,36 @@ const s32 gReqIQSkillPts[NUM_IQ_SKILLS] =
     [IQ_DEDICATED_TRAVELER] = 1,
     [IQ_ITEM_MASTER] = 1,
     [IQ_EXCLUSIVE_MOVE_USER] = 1,
+    [IQ_CONSERVER] = 100,
+};
+
+/* Skills in the same group are mutually exclusive when enabled. */
+const s32 gIQSkillGroups[NUM_IQ_SKILLS] = {
+    [IQ_NONE] = 9999,
+    [IQ_TYPE_ADVANTAGE_MASTER] = 4,
+    [IQ_ITEM_CATCHER] = 1,
+    [IQ_COURSE_CHECKER] = 2,
+    [IQ_SURE_HIT_ATTACKER] = 4,
+    [IQ_QUICK_DODGER] = 4,
+    [IQ_PP_CHECKER] = 6,
+    [IQ_NONTRAITOR] = 7,
+    [IQ_STATUS_CHECKER] = 8,
+    [IQ_EXP_GO_GETTER] = 9,
+    [IQ_EFFICIENCY_EXPERT] = 9,
+    [IQ_WEAK_TYPE_PICKER] = 9,
+    [IQ_ALL_TERRAIN_HIKER] = 10,
+    [IQ_SUPER_MOBILE] = 10,
+    [IQ_TRAP_AVOIDER] = 11,
+    [IQ_HOUSE_AVOIDER] = 11,
+    [IQ_ENERGY_SAVER] = 14,
+    [IQ_NONSLEEPER] = 14,
+    [IQ_SELF_CURER] = 14,
+    [IQ_TRAP_SEER] = 16,
+    [IQ_LAVA_EVADER] = 16,
+    [IQ_DEDICATED_TRAVELER] = 9,
+    [IQ_ITEM_MASTER] = 17,
+    [IQ_EXCLUSIVE_MOVE_USER] = 6,
+    [IQ_CONSERVER] = 6,
 };
 
 // LUT for money item stack size -> money amount

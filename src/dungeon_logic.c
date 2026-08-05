@@ -1359,6 +1359,7 @@ void LoadIQSkills(Entity *pokemon)
     pokemonInfo->IQSkillFlags.flags[0] = 0;
     pokemonInfo->IQSkillFlags.flags[1] = 0;
     pokemonInfo->IQSkillFlags.flags[2] = 0;
+    pokemonInfo->IQSkillFlags.flags[3] = 0;
     for(IQSkill = IQ_TYPE_ADVANTAGE_MASTER; IQSkill < NUM_IQ_SKILLS; IQSkill++)
     {
       if (HasIQForSkill(pokemonInfo->IQ,IQSkill) &&
