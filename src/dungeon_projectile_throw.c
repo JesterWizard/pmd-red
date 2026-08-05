@@ -18,7 +18,10 @@
 #include "dungeon_range.h"
 #include "dungeon_item_action.h"
 #include "structs/dungeon_entity.h"
+#include "constants/iq_skill.h"
 #include "constants/move_id.h"
+#include "constants/targeting.h"
+#include "dungeon_logic.h"
 
 static bool8 CanProjectileHitTarget(Entity *thrower, Entity *target);
 
@@ -154,15 +157,24 @@ void HandleStraightProjectileThrow(Entity *thrower, Item *item, DungeonPos *pos,
                 }
 
                 if (canHit) {
-                    if (count < 64) {
-                        hitList[count].target = tile->monster;
-                        hitList[count].didHit = CanProjectileHitTarget(thrower, tile->monster);
-                        count++;
+                    /* Gap Prober: thrown items pass allies without hitting */
+                    if (GetEntityType(tile->monster) == ENTITY_MONSTER
+                        && IqSkillIsEnabled(thrower, IQ_GAP_PROBER)
+                        && GetTreatmentBetweenMonsters(thrower, tile->monster, TRUE, FALSE) == TREATMENT_TREAT_AS_ALLY)
+                    {
+                        /* keep flying */
                     }
+                    else {
+                        if (count < 64) {
+                            hitList[count].target = tile->monster;
+                            hitList[count].didHit = CanProjectileHitTarget(thrower, tile->monster);
+                            count++;
+                        }
 
-                    if (!a4->unk0) {
-                        stepResult = 0;
-                        break;
+                        if (!a4->unk0) {
+                            stepResult = 0;
+                            break;
+                        }
                     }
                 }
             }

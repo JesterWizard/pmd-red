@@ -45,8 +45,12 @@
 #include "dungeon_engine.h"
 #include "warp_target.h"
 #include "dungeon_ai_attack.h"
+#include "constants/move.h"
+#include "constants/targeting.h"
 
 static s32 TryHitTarget_Async(Entity *attacker, Entity *target, Move *move, struct DamageStruct *dmgStruct, s16 unk_);
+static bool8 BodyguardCanIntercept(Entity *pokemon);
+static Entity *FindAdjacentBodyguard(Entity *ally);
 
 EWRAM_DATA s32 gUnknown_202F208 = 0;
 EWRAM_DATA s32 gUnknown_202F20C = 0;
@@ -73,6 +77,7 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
     bool8 moveHits;
     bool8 lightRodRedirect;
     bool8 moveRedirected;
+    bool8 accuracyMissed;
 
     moveId = move->id;
     for (i = 0; i < MAX_MOVE_TARGETS; i++) {
@@ -81,6 +86,7 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
         moveHits = TRUE;
         lightRodRedirect = FALSE;
         moveRedirected = FALSE;
+        accuracyMissed = FALSE;
         if (currTarget == NULL)
             break;
         if (!EntityIsValid(attacker))
@@ -180,6 +186,27 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
                 }
             }
 
+            /* Bodyguard: redirect single-target attacks from low-HP allies */
+            {
+                u32 rangeFlags = GetMoveTargetAndRangeForPokemon(attacker, move, FALSE) & 0xF0;
+                Entity *bodyguard;
+
+                if (rangeFlags != TARGETING_FLAG_TARGET_AROUND
+                    && rangeFlags != TARGETING_FLAG_TARGET_ROOM
+                    && rangeFlags != TARGETING_FLAG_TARGET_FLOOR
+                    && rangeFlags != TARGETING_FLAG_TARGET_FRONTAL_CONE
+                    && rangeFlags != TARGETING_FLAG_TARGET_SELF
+                    && GetTreatmentBetweenMonsters(attacker, currTarget, TRUE, FALSE) == TREATMENT_TREAT_AS_ENEMY
+                    && (bodyguard = FindAdjacentBodyguard(currTarget)) != NULL
+                    && bodyguard != attacker)
+                {
+                    SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], bodyguard, 0);
+                    SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[1], currTarget, 0);
+                    TryDisplayDungeonLoggableMessage3_Async(attacker, currTarget, gText_BodyguardTookHit);
+                    currTarget = bodyguard;
+                }
+            }
+
             gUnknown_202F208++;
             gUnknown_202F20C++;
             targetInfo = GetEntInfo(currTarget); // currTarget could've been changed, hence info pointers needs to be reloaded
@@ -233,6 +260,25 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
                 }
             }
 
+            /* Intimidator: 33% cancel close-range attacks (PP already spent) */
+            if (moveHits
+                && itemId == 0
+                && moveId != MOVE_PROJECTILE
+                && IqSkillIsEnabled(currTarget, IQ_INTIMIDATOR)
+                && !AbilityIsActive(attacker, ABILITY_INNER_FOCUS))
+            {
+                u32 rangeFlags = GetMoveTargetAndRangeForPokemon(attacker, move, FALSE) & 0xF0;
+                if (rangeFlags != TARGETING_FLAG_TARGET_LINE
+                    && rangeFlags != TARGETING_FLAG_TARGET_ROOM
+                    && rangeFlags != TARGETING_FLAG_TARGET_FLOOR
+                    && rangeFlags != TARGETING_FLAG_TARGET_SELF
+                    && DungeonRandOutcome(33))
+                {
+                    TryInflictCringeStatus(currTarget, attacker, TRUE);
+                    moveHits = FALSE;
+                }
+            }
+
             if (sub_80571F0(currTarget, move)) {
                 moveHits = FALSE;
             }
@@ -251,6 +297,7 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
                 }
                 if (!AccuracyCalc(attacker, currTarget, move, ACCURACY_1, selfAlwaysHits)) {
                     moveHits = FALSE;
+                    accuracyMissed = TRUE;
                 }
             }
 
@@ -264,6 +311,12 @@ void UseMoveAgainstTargets(Entity **targetsArray, Entity *attacker, Move *move, 
             }
 
             if (!moveHits) {
+                if (accuracyMissed
+                    && IqSkillIsEnabled(attacker, IQ_PRACTICE_SWINGER))
+                {
+                    /* Rest of this turn + next turn of +1 Atk/Sp.Atk */
+                    GetEntInfo(attacker)->practiceSwingerBoost = 2;
+                }
                 if (GetEntInfo(attacker)->isTeamLeader) {
                     sub_80421C0(attacker, 0x156);
                 }
@@ -1463,4 +1516,51 @@ void sub_80559DC(Entity *entity1, Entity *entity2)
 
     entInfo->action.direction = direction & DIRECTION_MASK;
     sub_806CE68(entity1, direction);
+}
+
+static bool8 BodyguardCanIntercept(Entity *pokemon)
+{
+    EntityInfo *info = GetEntInfo(pokemon);
+
+    if (info->sleepClassStatus.status != STATUS_SLEEPLESS
+        && info->sleepClassStatus.status != STATUS_YAWNING
+        && info->sleepClassStatus.status != STATUS_NONE)
+        return FALSE;
+    if (info->frozenClassStatus.status == STATUS_FROZEN
+        || info->frozenClassStatus.status == STATUS_WRAP
+        || info->frozenClassStatus.status == STATUS_WRAPPED
+        || info->frozenClassStatus.status == STATUS_PETRIFIED)
+        return FALSE;
+    if (info->cringeClassStatus.status == STATUS_CRINGE
+        || info->cringeClassStatus.status == STATUS_PAUSED
+        || info->cringeClassStatus.status == STATUS_INFATUATED)
+        return FALSE;
+    if (info->burnClassStatus.status == STATUS_PARALYSIS)
+        return FALSE;
+    return TRUE;
+}
+
+static Entity *FindAdjacentBodyguard(Entity *ally)
+{
+    EntityInfo *allyInfo = GetEntInfo(ally);
+    s32 direction;
+
+    if (allyInfo->maxHPStat / 4 < allyInfo->HP)
+        return NULL;
+
+    for (direction = 0; direction < NUM_DIRECTIONS; direction++) {
+        Entity *adjacent = GetTile(ally->pos.x + gAdjacentTileOffsets[direction].x,
+                                   ally->pos.y + gAdjacentTileOffsets[direction].y)->monster;
+
+        if (!EntityIsValid(adjacent) || GetEntityType(adjacent) != ENTITY_MONSTER)
+            continue;
+        if (GetEntInfo(adjacent)->isNotTeamMember != allyInfo->isNotTeamMember)
+            continue;
+        if (!IqSkillIsEnabled(adjacent, IQ_BODYGUARD))
+            continue;
+        if (!BodyguardCanIntercept(adjacent))
+            continue;
+        return adjacent;
+    }
+    return NULL;
 }

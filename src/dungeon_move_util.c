@@ -4,6 +4,7 @@
 #include "constants/ability.h"
 #include "constants/iq_skill.h"
 #include "constants/status.h"
+#include "constants/targeting.h"
 #include "constants/weather.h"
 #include "code_8040094_1.h"
 #include "dungeon_move_util.h"
@@ -622,8 +623,12 @@ void sub_80566F8(Entity *attacker, Move *move, s32 a2, bool8 a3, s32 itemId, s32
         tile = GetTile(var_68.x, var_68.y);
         if (!(tile->terrainFlags & (TERRAIN_TYPE_NORMAL | TERRAIN_TYPE_SECONDARY)))
             break;
-        if (tile->monster != NULL && GetEntityType(tile->monster) == ENTITY_MONSTER)
-            break;
+        if (tile->monster != NULL && GetEntityType(tile->monster) == ENTITY_MONSTER) {
+            /* Gap Prober: continue past allies when measuring range */
+            if (!(IqSkillIsEnabled(attacker, IQ_GAP_PROBER)
+                && GetTreatmentBetweenMonsters(attacker, tile->monster, TRUE, FALSE) == TREATMENT_TREAT_AS_ALLY))
+                break;
+        }
     }
 
     if (MoveRequiresCharging(attacker, move->id) && !MoveMatchesBideClassStatus(attacker, move)) {
@@ -702,6 +707,12 @@ void sub_80566F8(Entity *attacker, Move *move, s32 a2, bool8 a3, s32 itemId, s32
         if (!(tile->terrainFlags & (TERRAIN_TYPE_NORMAL | TERRAIN_TYPE_SECONDARY)))
             break;
         if (tile->monster != NULL && GetEntityType(tile->monster) == ENTITY_MONSTER && !sub_80571F0(tile->monster, move)) {
+            /* Gap Prober: pass through allies without hitting them */
+            if (IqSkillIsEnabled(attacker, IQ_GAP_PROBER)
+                && GetTreatmentBetweenMonsters(attacker, tile->monster, TRUE, FALSE) == TREATMENT_TREAT_AS_ALLY)
+            {
+                continue;
+            }
             if (targetArrId <= 0) {
                 bool8 canHitAnyone = FALSE;
                 s32 targetFlags;

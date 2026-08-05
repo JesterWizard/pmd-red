@@ -886,8 +886,13 @@ bool8 IsTargetInRange(Entity *user, Entity *target, s32 direction, s32 nTiles)
             if (mapTile->monster == target)
                 return TRUE;
 
-            if (mapTile->monster != NULL)
+            if (mapTile->monster != NULL) {
+                /* Gap Prober: allies do not block the line of fire */
+                if (IqSkillIsEnabled(user, IQ_GAP_PROBER)
+                    && GetTreatmentBetweenMonsters(user, mapTile->monster, TRUE, FALSE) == TREATMENT_TREAT_AS_ALLY)
+                    continue;
                 return FALSE;
+            }
         }
     }
     return FALSE;

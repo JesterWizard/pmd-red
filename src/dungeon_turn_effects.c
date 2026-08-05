@@ -59,6 +59,8 @@ void DoEndOfTurnEffects_Async(Entity *entity)
 
     entityInfo = GetEntInfo(entity);
     entityInfo->bellyEmpty = FALSE;
+    if (entityInfo->practiceSwingerBoost != 0)
+        entityInfo->practiceSwingerBoost--;
     sub_805229C();
     sub_807E8F0(entity);
     if (HasHeldItem(entity, ITEM_WARP_SCARF)) {

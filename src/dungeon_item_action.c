@@ -80,6 +80,9 @@ static void EyedropSeedItemAction(Entity *, Entity *);
 static void BlinkerSeedItemAction(Entity *, Entity *);
 static void DoomSeedItemAction(Entity *, Entity *);
 static void sub_80482FC(Entity *, Entity *, u32, u8);
+static bool8 ApplyBerrySeedEffect(Entity *pokemon, Entity *target, Item *item, u8 param_3);
+static bool8 IsNaturalGifterItem(u8 itemId);
+static void SpreadNaturalGifterEffects(Entity *pokemon, Entity *eater, Item *item, u8 param_3);
 
 void sub_80479B8(bool8 param_1, bool8 param_2, u8 param_3, Entity *pokemon, Entity *target, Item *item)
 {
@@ -181,64 +184,26 @@ void sub_80479B8(bool8 param_1, bool8 param_2, u8 param_3, Entity *pokemon, Enti
                 sub_8048340(pokemon,target,gGravelerockThrownDmgValue);
                 break;
             case ITEM_HEAL_SEED:
-                HealSeedItemAction(pokemon,target,param_3);
-                break;
             case ITEM_ORAN_BERRY:
-                OranBerryItemAction(pokemon,target);
-                break;
             case ITEM_SITRUS_BERRY:
-                SitrusBerryItemAction(pokemon,target);
-                break;
             case ITEM_LIFE_SEED:
-                LifeSeedItemAction(pokemon,target);
-                break;
             case ITEM_BLINKER_SEED:
-                BlinkerSeedItemAction(pokemon,target);
-                break;
             case ITEM_ALLURE_SEED:
-                AllureSeedItemAction(pokemon,target);
-                break;
             case ITEM_QUICK_SEED:
-                QuickSeedItemAction(pokemon,target);
-                break;
             case ITEM_EYEDROP_SEED:
-                EyedropSeedItemAction(pokemon,target);
-                break;
             case ITEM_TOTTER_SEED:
-                TotterSeedItemAction(pokemon,target);
-                break;
             case ITEM_CHERI_BERRY:
-                CheriBerryItemAction(pokemon,target);
-                break;
             case ITEM_PECHA_BERRY:
-                PechaBerryItemAction(pokemon,target);
-                break;
             case ITEM_WARP_SEED:
-                WarpSeedItemAction(pokemon,target);
-                break;
             case ITEM_SLEEP_SEED:
-                SleepSeedItemAction(pokemon,target);
-                break;
             case ITEM_CHESTO_BERRY:
-                ChestoBerryItemAction(pokemon,target);
-                break;
             case ITEM_JOY_SEED:
-                JoySeedItemAction(pokemon,target);
-                break;
             case ITEM_DOOM_SEED:
-                DoomSeedItemAction(pokemon,target);
-                break;
-             case ITEM_STUN_SEED:
-                StunSeedItemAction(pokemon,target);
-                break;
+            case ITEM_STUN_SEED:
             case ITEM_PLAIN_SEED:
-                PlainSeedItemAction(pokemon,target);
-                break;
             case ITEM_RAWST_BERRY:
-                RawstBerryItemAction(pokemon,target);
-                break;
             case ITEM_HUNGER_SEED:
-                HungerSeedItemAction(pokemon,target);
+                ApplyBerrySeedEffect(pokemon, target, item, param_3);
                 break;
             case ITEM_GINSENG:
                 GinsengItemAction(pokemon,target);
@@ -361,10 +326,137 @@ void sub_80479B8(bool8 param_1, bool8 param_2, u8 param_3, Entity *pokemon, Enti
         }
     }
 
+    /* Leader-only: eaten berries/seeds also apply to other team members */
+    if (!param_1)
+        SpreadNaturalGifterEffects(pokemon, target, item, param_3);
+
     EnemyEvolution(pokemon);
 }
 
 UNUSED static void nullsub_205(void) { }
+
+static bool8 IsNaturalGifterItem(u8 itemId)
+{
+    switch (itemId) {
+        case ITEM_HEAL_SEED:
+        case ITEM_ORAN_BERRY:
+        case ITEM_SITRUS_BERRY:
+        case ITEM_LIFE_SEED:
+        case ITEM_BLINKER_SEED:
+        case ITEM_ALLURE_SEED:
+        case ITEM_QUICK_SEED:
+        case ITEM_EYEDROP_SEED:
+        case ITEM_TOTTER_SEED:
+        case ITEM_CHERI_BERRY:
+        case ITEM_PECHA_BERRY:
+        case ITEM_WARP_SEED:
+        case ITEM_SLEEP_SEED:
+        case ITEM_CHESTO_BERRY:
+        case ITEM_JOY_SEED:
+        case ITEM_DOOM_SEED:
+        case ITEM_STUN_SEED:
+        case ITEM_PLAIN_SEED:
+        case ITEM_RAWST_BERRY:
+        case ITEM_HUNGER_SEED:
+            return TRUE;
+        default:
+            return FALSE;
+    }
+}
+
+static bool8 ApplyBerrySeedEffect(Entity *pokemon, Entity *target, Item *item, u8 param_3)
+{
+    switch (item->id) {
+        case ITEM_HEAL_SEED:
+            HealSeedItemAction(pokemon, target, param_3);
+            return TRUE;
+        case ITEM_ORAN_BERRY:
+            OranBerryItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_SITRUS_BERRY:
+            SitrusBerryItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_LIFE_SEED:
+            LifeSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_BLINKER_SEED:
+            BlinkerSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_ALLURE_SEED:
+            AllureSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_QUICK_SEED:
+            QuickSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_EYEDROP_SEED:
+            EyedropSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_TOTTER_SEED:
+            TotterSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_CHERI_BERRY:
+            CheriBerryItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_PECHA_BERRY:
+            PechaBerryItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_WARP_SEED:
+            WarpSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_SLEEP_SEED:
+            SleepSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_CHESTO_BERRY:
+            ChestoBerryItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_JOY_SEED:
+            JoySeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_DOOM_SEED:
+            DoomSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_STUN_SEED:
+            StunSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_PLAIN_SEED:
+            PlainSeedItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_RAWST_BERRY:
+            RawstBerryItemAction(pokemon, target);
+            return TRUE;
+        case ITEM_HUNGER_SEED:
+            HungerSeedItemAction(pokemon, target);
+            return TRUE;
+        default:
+            return FALSE;
+    }
+}
+
+static void SpreadNaturalGifterEffects(Entity *pokemon, Entity *eater, Item *item, u8 param_3)
+{
+    s32 i;
+
+    if (!GetEntInfo(eater)->isTeamLeader)
+        return;
+    if (!IqSkillIsEnabled(eater, IQ_NATURAL_GIFTER))
+        return;
+    if (!IsNaturalGifterItem(item->id))
+        return;
+
+    for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
+        Entity *ally = gDungeon->teamPokemon[i];
+        s32 bellyAmt;
+
+        if (!EntityIsValid(ally) || ally == eater)
+            continue;
+
+        bellyAmt = 5;
+        if (IqSkillIsEnabled(ally, IQ_EFFICIENT_EATER))
+            bellyAmt *= 2;
+        sub_8078B5C(pokemon, ally, bellyAmt, 0, 0);
+        ApplyBerrySeedEffect(pokemon, ally, item, param_3);
+    }
+}
 
 static void SleepSeedItemAction(Entity *pokemon, Entity *target)
 {

@@ -16,6 +16,8 @@
 #include "dungeon_music.h"
 #include "dungeon_util.h"
 #include "dungeon_vram.h"
+#include "dungeon_logic.h"
+#include "constants/iq_skill.h"
 #include "file_system.h"
 #include "game_options.h"
 #include "sprite.h"
@@ -167,8 +169,10 @@ void DrawMinimapTile(s32 x, s32 y)
     bool8 showItems;
     bool8 showHiddenTraps;
     bool8 allTilesRevealed;
+    bool8 mapSurveyor;
     bool8 var_24;
     bool8 tileKnown;
+    bool8 layoutKnown;
     s32 mapGfxType;
     s32 xDiv2, yDiv2;
     u32 *src, *dst;
@@ -209,8 +213,16 @@ void DrawMinimapTile(s32 x, s32 y)
     showHiddenTraps = gDungeon->unk181e8.showInvisibleTrapsMonsters;
     showItems = gDungeon->unk181e8.showAllFloorItems;
     allTilesRevealed = gDungeon->unk181e8.allTilesRevealed;
+    mapSurveyor = FALSE;
+    if (gDungeon->unk181e8.cameraTarget != NULL
+        && EntityIsValid(gDungeon->unk181e8.cameraTarget)
+        && IqSkillIsEnabled(gDungeon->unk181e8.cameraTarget, IQ_MAP_SURVEYOR))
+    {
+        mapSurveyor = TRUE;
+    }
     if (blinded) {
         tileKnown = tile->spawnOrVisibilityFlags.visibility & VISIBILITY_FLAG_REVEALED;
+        layoutKnown = tileKnown;
         var_24 = FALSE;
     }
     else {
@@ -220,6 +232,7 @@ void DrawMinimapTile(s32 x, s32 y)
         else {
             tileKnown = tile->spawnOrVisibilityFlags.visibility & VISIBILITY_FLAG_REVEALED;
         }
+        layoutKnown = tileKnown || mapSurveyor;
 
         if (GetFloorType() == FLOOR_TYPE_NORMAL) {
             var_24 = gDungeon->unk181e8.unk18211;
@@ -330,7 +343,7 @@ void DrawMinimapTile(s32 x, s32 y)
             }
         }
         if (mapGfxType == MAP_GFX_NOTHING) {
-            if (!tileKnown) {
+            if (!layoutKnown) {
                 mapGfxType = 1;
             }
             else if (terrainType != TERRAIN_TYPE_NORMAL) {

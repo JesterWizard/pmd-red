@@ -907,6 +907,8 @@ static void InitEntityFromSpawnInfo(bool8 a0, Entity *entity, struct MonSpawnInf
     entInfo->unk149 = FALSE;
     entInfo->abilityEffectFlags = FALSE;
     entInfo->terrifiedTurns = 0;
+    entInfo->practiceSwingerBoost = 0;
+    entInfo->brickToughApplied = FALSE;
     entInfo->useHeldItem = 0;
     entInfo->unk14B = 0;
     entInfo->unk14C = 1;
@@ -1052,10 +1054,24 @@ void sub_806C1D8(void)
 void sub_806C264(s32 teamIndex, EntityInfo *entInfo)
 {
     s32 i;
+    s32 hp = entInfo->HP;
+    s32 maxHP = entInfo->maxHPStat;
     DungeonMon *monPtr = &gRecruitedPokemonRef->dungeonTeam[teamIndex];
 
-    monPtr->unk10 = entInfo->HP;
-    monPtr->unk12 = entInfo->maxHPStat;
+    /* Strip Brick Tough dungeon boost so it is not double-applied next floor */
+    if (entInfo->brickToughApplied) {
+        maxHP -= 10;
+        hp -= 10;
+        if (maxHP < 1)
+            maxHP = 1;
+        if (hp < 1)
+            hp = 1;
+        if (hp > maxHP)
+            hp = maxHP;
+    }
+
+    monPtr->unk10 = hp;
+    monPtr->unk12 = maxHP;
     monPtr->currExp = entInfo->exp;
     for (i = 0; i < 2; i++) {
         monPtr->offense.att[i] = entInfo->atk[i];

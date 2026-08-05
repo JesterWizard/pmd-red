@@ -328,6 +328,10 @@ typedef struct EntityInfo
     /* 0x1FC */ u32 expGainedInTurn; // Used to accumulate experience when multiple enemies are defeated in one turn.
     /* 0x200 */ u32 statusIcons;
     /* 0x204 */ u8 shadowIndex;
+    /* Practice Swinger: 0=off, >0 = turns of +1 Atk/Sp.Atk remaining */
+    /* 0x205 */ u8 practiceSwingerBoost;
+    /* Brick Tough: whether +10 max HP is currently applied in-dungeon */
+    /* 0x206 */ bool8 brickToughApplied;
 } EntityInfo;
 
 // size: 0x74 | Used for Pokémon, items, and traps.

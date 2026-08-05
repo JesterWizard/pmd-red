@@ -366,6 +366,7 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
         if (!r6) {
             sub_807FA18();
             CreateFloorItems();
+            ApplyAcuteSnifferOnFloorEnter();
             gDungeon->unk644.unk50 = gDungeon->unk644.unk48;
             gDungeon->unk644.unk4C = 0;
             sub_8051E3C();

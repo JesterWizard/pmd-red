@@ -3,6 +3,7 @@
 #include "dungeon_action_handler.h"
 #include "constants/dungeon.h"
 #include "constants/dungeon_exit.h"
+#include "constants/iq_skill.h"
 #include "constants/item.h"
 #include "constants/move_id.h"
 #include "dungeon_vram.h"
@@ -571,6 +572,11 @@ void sub_80671A0(Entity *entity)
             unkStruct.unk2 = 99;
         }
 
+        if (IqSkillIsEnabled(entity, IQ_PIERCE_HURLER)) {
+            unkStruct.unk0 = 1;
+            unkStruct.unk2 = 99;
+        }
+
         if (GetItemCategory(newItem.id) == CATEGORY_THROWN_ARC) {
             sub_8083904(&pos, entity);
             HandleCurvedProjectileThrow(entity, &newItem, &entity->pos, &pos, &unkStruct);
@@ -810,6 +816,26 @@ void sub_8067904(Entity *entity, u16 moveId)
                 break;
             }
             i++;
+        }
+        /* Quick Striker: always one extra regular attack.
+         * Extra Striker: 33% chance of one extra (mutually exclusive via group 4). */
+        if (moveId == MOVE_REGULAR_ATTACK
+            && EntityIsValid(entity)
+            && info->unk159 == 0)
+        {
+            bool8 extraHit = FALSE;
+            if (IqSkillIsEnabled(entity, IQ_QUICK_STRIKER))
+                extraHit = TRUE;
+            else if (IqSkillIsEnabled(entity, IQ_EXTRA_STRIKER) && DungeonRandOutcome(33))
+                extraHit = TRUE;
+
+            if (extraHit) {
+                info->abilityEffectFlags = 0;
+                move.moveFlags |= 8;
+                move.moveFlags |= 4;
+                move.PP = 10;
+                TryUseChosenMove(entity, isStruggle, 0, 0, FALSE, &move);
+            }
         }
 
         if (EntityIsValid(entity)) {

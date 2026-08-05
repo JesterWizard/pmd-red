@@ -353,6 +353,9 @@ s32 CalcSpeedStage(Entity *pokemon)
   if (entityInfo->apparentID == MONSTER_DEOXYS_SPEED) {
     speed++;
   }
+  if (IqSkillIsEnabled(pokemon, IQ_TIME_TRIPPER)) {
+    speed++;
+  }
   if ((entityInfo->id == MONSTER_KECLEON) && entityInfo->isNotTeamMember &&
      gDungeon->unk644.stoleFromKecleon) {
     speed++;
@@ -1368,6 +1371,11 @@ void LoadIQSkills(Entity *pokemon)
             SetIQSkill(&pokemonInfo->IQSkillFlags,IQSkill);
       }
     }
+    /* Brick Tough: always on once unlocked; cannot be turned off */
+    if (HasIQForSkill(pokemonInfo->IQ, IQ_BRICK_TOUGH)) {
+      pokemonInfo->IQSkillMenuFlags.flags[IQ_BRICK_TOUGH / 8] |= (1 << (IQ_BRICK_TOUGH % 8));
+      pokemonInfo->IQSkillFlags.flags[IQ_BRICK_TOUGH / 8] |= (1 << (IQ_BRICK_TOUGH % 8));
+    }
     /* Clamp current PP if Multitalent (or similar) max changed. */
     {
       s32 moveIdx;
@@ -1380,6 +1388,31 @@ void LoadIQSkills(Entity *pokemon)
         }
       }
     }
+    SyncBrickToughMaxHP(pokemon);
+  }
+}
+
+void SyncBrickToughMaxHP(Entity *pokemon)
+{
+  EntityInfo *info = GetEntInfo(pokemon);
+  bool8 wantBoost = IqSkillIsEnabled(pokemon, IQ_BRICK_TOUGH);
+
+  if (wantBoost && !info->brickToughApplied) {
+    info->maxHPStat += 10;
+    info->HP += 10;
+    if (info->maxHPStat > 999)
+      info->maxHPStat = 999;
+    if (info->HP > info->maxHPStat)
+      info->HP = info->maxHPStat;
+    info->brickToughApplied = TRUE;
+  }
+  else if (!wantBoost && info->brickToughApplied) {
+    info->maxHPStat -= 10;
+    if (info->maxHPStat < 1)
+      info->maxHPStat = 1;
+    if (info->HP > info->maxHPStat)
+      info->HP = info->maxHPStat;
+    info->brickToughApplied = FALSE;
   }
 }
 

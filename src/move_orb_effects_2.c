@@ -108,6 +108,10 @@ void HealTargetHP(Entity *pokemon, Entity *target, s32 param_3, s32 param_4, boo
         return;
     }
 
+    /* Wise Healer: +15% HP restored (rounded down) */
+    if (param_3 > 0 && IqSkillIsEnabled(target, IQ_WISE_HEALER))
+        param_3 = (param_3 * 115) / 100;
+
     entityInfo = GetEntInfo(target);
     maxHPStat = entityInfo->maxHPStat;
     HP = entityInfo->HP;
@@ -1122,6 +1126,41 @@ void ApplyDeepBreatherOnFloorEnter(void)
         if (numCandidates != 0)
             candidates[DungeonRandInt(numCandidates)]->PP++;
     }
+}
+
+void ApplyAcuteSnifferOnFloorEnter(void)
+{
+    Entity *sniffer = NULL;
+    s32 i;
+    s32 count = 0;
+
+    for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
+        Entity *mon = gDungeon->teamPokemon[i];
+        if (!EntityIsValid(mon))
+            continue;
+        if (IqSkillIsEnabled(mon, IQ_ACUTE_SNIFFER)) {
+            sniffer = mon;
+            break;
+        }
+    }
+    if (sniffer == NULL)
+        return;
+
+    for (i = 0; i < DUNGEON_MAX_ITEMS; i++) {
+        Entity *itemEnt = gDungeon->items[i];
+        const Tile *tile;
+
+        if (!EntityIsValid(itemEnt))
+            continue;
+        tile = GetTile(itemEnt->pos.x, itemEnt->pos.y);
+        if (GetTerrainType(tile) == TERRAIN_TYPE_WALL)
+            continue;
+        count++;
+    }
+
+    gFormatArgs[0] = count;
+    SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], sniffer, 0);
+    LogMessageByIdWithPopupCheckUser_Async(sniffer, gText_AcuteSnifferItemCount);
 }
 
 void RaiseAtkStatTarget(Entity * pokemon, Entity *target, s32 increment)

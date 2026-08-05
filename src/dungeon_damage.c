@@ -48,6 +48,7 @@
 #include "hurl_orb.h"
 #include "dungeon_mon_spawn.h"
 #include "dungeon_mon_recruit.h"
+#include "dungeon_pos_data.h"
 #include "move_orb_actions_1.h"
 #include "move_orb_effects_2.h"
 #include "move_orb_effects_5.h"
@@ -60,6 +61,7 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
 static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 type, DamageStruct *dmgStruct);
 static void sub_806F500(void);
 static void sub_806F63C(Entity *param_1);
+static bool8 HasAdjacentCheerleaderAlly(Entity *pokemon);
 
 EWRAM_DATA u8 gCalcDamagePreviewMode = CALC_DAMAGE_NORMAL;
 
@@ -271,6 +273,15 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
     targetData = GetEntInfo(target);
     TrySendImmobilizeSleepEndMsg(attacker, target);
     SetShopkeeperAggression(attacker, target);
+
+    /* Practice Swinger: consume boost on dealing damage */
+    if (GetEntityType(attacker) == ENTITY_MONSTER
+        && dmgStruct->dmg > 0
+        && GetEntInfo(attacker)->practiceSwingerBoost != 0)
+    {
+        GetEntInfo(attacker)->practiceSwingerBoost = 0;
+    }
+
     if (GetEntityType(attacker) == ENTITY_MONSTER
         && GetEntInfo(attacker)->sureShotClassStatus.status == STATUS_SET_DAMAGE
         && dmgStruct->unkE == 0)
@@ -1216,6 +1227,18 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         if (attackerInfo->apparentID == MONSTER_DEOXYS_SPEED) {
             atkStatStage -= 2;
         }
+        if (IqSkillIsEnabled(attacker, IQ_AGGRESSOR)) {
+            atkStatStage++;
+        }
+        if (IqSkillIsEnabled(attacker, IQ_DEFENDER)) {
+            atkStatStage--;
+        }
+        if (attackerInfo->practiceSwingerBoost != 0) {
+            atkStatStage++;
+        }
+        if (HasAdjacentCheerleaderAlly(attacker)) {
+            atkStatStage++;
+        }
 
         if (atkStatStage < 0) atkStatStage = 0;
         if (atkStatStage > 20) atkStatStage = 20;
@@ -1239,6 +1262,12 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         }
         if (targetInfo->apparentID == MONSTER_DEOXYS_SPEED) {
             defStatStage -= 2;
+        }
+        if (IqSkillIsEnabled(target, IQ_AGGRESSOR)) {
+            defStatStage--;
+        }
+        if (IqSkillIsEnabled(target, IQ_DEFENDER)) {
+            defStatStage++;
         }
 
         if (defStatStage < 0) defStatStage = 0;
@@ -1705,6 +1734,26 @@ static void sub_806F63C(Entity *param_1)
     if (temp->cameraTarget == param_1) {
         PointCameraToMonster(temp->cameraTarget);
     }
+}
+
+static bool8 HasAdjacentCheerleaderAlly(Entity *pokemon)
+{
+    s32 direction;
+    bool8 isNotTeamMember = GetEntInfo(pokemon)->isNotTeamMember;
+
+    for (direction = 0; direction < NUM_DIRECTIONS; direction++) {
+        const Tile *mapTile = GetTile(pokemon->pos.x + gAdjacentTileOffsets[direction].x,
+                                      pokemon->pos.y + gAdjacentTileOffsets[direction].y);
+        Entity *adjacent = mapTile->monster;
+
+        if (adjacent == NULL || GetEntityType(adjacent) != ENTITY_MONSTER)
+            continue;
+        if (GetEntInfo(adjacent)->isNotTeamMember != isNotTeamMember)
+            continue;
+        if (IqSkillIsEnabled(adjacent, IQ_CHEERLEADER))
+            return TRUE;
+    }
+    return FALSE;
 }
 
 void EstimateMoveDamageRange(Entity *attacker, Entity *target, Move *move, s32 *minOut, s32 *maxOut)

@@ -412,6 +412,9 @@ void ToggleIQSkill(IqSkillFlags *iq, u32 skillIndex)
     u8 mask = 1 << (skillIndex % 8);
 
     if (IsIQSkillSet(iq, skillIndex)) {
+        /* Brick Tough cannot be turned off */
+        if (skillIndex == IQ_BRICK_TOUGH)
+            return;
         iq->flags[byte] &= ~mask;
     }
     else {
@@ -426,7 +429,8 @@ void SetIQSkill(IqSkillFlags *iq, u32 skillIndex)
 
     for (iqSkill = 0; iqSkill < NUM_IQ_SKILLS; iqSkill++) {
         // Turn off each IQ Skill that's in the same group as the chosen skill
-        if (iqSkillGroup == gIQSkillGroups[iqSkill]) {
+        // Brick Tough cannot be cleared by other group-1 skills
+        if (iqSkillGroup == gIQSkillGroups[iqSkill] && iqSkill != IQ_BRICK_TOUGH) {
             iq->flags[iqSkill / 8] &= ~(1 << (iqSkill % 8));
         }
     }

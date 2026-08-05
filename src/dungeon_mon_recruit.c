@@ -4,6 +4,7 @@
 #include "dungeon_mon_recruit.h"
 #include "constants/dungeon_exit.h"
 #include "constants/fixed_rooms.h"
+#include "constants/iq_skill.h"
 #include "constants/type.h"
 #include "structs/str_pokemon.h"
 #include "dungeon_main.h"
@@ -16,6 +17,7 @@
 #include "dungeon_items.h"
 #include "dungeon_logic.h"
 #include "dungeon_random.h"
+#include "dungeon_range.h"
 #include "dungeon_vram.h"
 #include "dungeon_util.h"
 #include "friend_area.h"
@@ -113,6 +115,12 @@ bool8 TryRecruitMonster(Entity *attacker, Entity *target)
     recruitRate += gRecruitRateByLevel[attackerInfo->level];
     if (gRuntimeConfig.recruit_rate_boost)
         recruitRate += gFriendBowRecruitRateUpValue;
+    /* Fast Friend (leader only): +5% on the 1000-scale recruit roll */
+    {
+        Entity *leader = GetLeader();
+        if (leader != NULL && EntityIsValid(leader) && IqSkillIsEnabled(leader, IQ_FAST_FRIEND))
+            recruitRate += 50;
+    }
     if (rand >= recruitRate)
         return FALSE;
 
