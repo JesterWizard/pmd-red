@@ -90,12 +90,15 @@ static const u8 sAchievementUnlockedMsg[] = _(
     "{CENTER_ALIGN}Achievement unlocked!\n{CENTER_ALIGN}{MOVE_ITEM_0}\n{CENTER_ALIGN}Reward: {MOVE_ITEM_1}");
 
 static const u8 sRankBagUpgradeMsg[] = _(
-    "{CENTER_ALIGN}Your Toolbox can hold more items now!{EXTRA_MSG}"
-    "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+    "{CENTER_ALIGN}Toolbox storage increased from\n"
+    "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}");
 
 static const u8 sRankStorageUpgradeMsg[] = _(
-    "{CENTER_ALIGN}Kangaskhan Storage can hold more items now!{EXTRA_MSG}"
-    "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+    "{CENTER_ALIGN}Kangaskhan storage increased from\n"
+    "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}");
+
+static s32 sRankBagCapBefore;
+static s32 sRankStorageCapBefore;
 
 static bool8 IsTrackableDungeon(u8 dungeonId);
 static bool8 HasVisitedAllDungeons(void);
@@ -228,10 +231,14 @@ static void QueueRankRewardPopups(u8 rankBefore, u8 rankAfter)
     if (!gRuntimeConfig.rank_rewards || rankAfter <= rankBefore)
         return;
 
-    if (GetBagCapacityForRank(rankAfter) > GetBagCapacityForRank(rankBefore))
+    if (GetBagCapacityForRank(rankAfter) > GetBagCapacityForRank(rankBefore)) {
+        sRankBagCapBefore = GetBagCapacityForRank(rankBefore);
         QueueAchievementPopup(ACH_POPUP_RANK_BAG);
-    if (GetStorageCapacityForRank(rankAfter) > GetStorageCapacityForRank(rankBefore))
+    }
+    if (GetStorageCapacityForRank(rankAfter) > GetStorageCapacityForRank(rankBefore)) {
+        sRankStorageCapBefore = GetStorageCapacityForRank(rankBefore);
         QueueAchievementPopup(ACH_POPUP_RANK_STORAGE);
+    }
 }
 
 static bool8 IsTrackableDungeon(u8 dungeonId)
@@ -378,12 +385,14 @@ void ProcessAchievementUnlockQueue(void)
         }
 
         if (id == ACH_POPUP_RANK_BAG) {
-            gFormatArgs[0] = GetBagCapacity();
+            gFormatArgs[0] = sRankBagCapBefore;
+            gFormatArgs[1] = GetBagCapacity();
             ScriptPrintText(SCRIPT_TEXT_TYPE_INSTANT, -1, sRankBagUpgradeMsg);
             break;
         }
         if (id == ACH_POPUP_RANK_STORAGE) {
-            gFormatArgs[0] = GetStorageCapacity();
+            gFormatArgs[0] = sRankStorageCapBefore;
+            gFormatArgs[1] = GetStorageCapacity();
             ScriptPrintText(SCRIPT_TEXT_TYPE_INSTANT, -1, sRankStorageUpgradeMsg);
             break;
         }

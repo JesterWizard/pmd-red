@@ -97,12 +97,12 @@ ALIGNED(4) static const u8 gUnknown_80E06A8[] = _(
         "{CENTER_ALIGN}to the {POKEMON_3}!");
 
 ALIGNED(4) static const u8 sRankBagUpgradeMsg[] = _(
-        "{CENTER_ALIGN}Your Toolbox can hold more items now!{EXTRA_MSG}"
-        "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+        "{CENTER_ALIGN}Toolbox storage increased from\n"
+        "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}");
 
 ALIGNED(4) static const u8 sRankStorageUpgradeMsg[] = _(
-        "{CENTER_ALIGN}Kangaskhan Storage can hold more items now!{EXTRA_MSG}"
-        "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+        "{CENTER_ALIGN}Kangaskhan storage increased from\n"
+        "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}");
 
 static void MR_InitStateDialogue(void);
 static void MR_InitStateWindows(void);
@@ -368,13 +368,17 @@ static void MR_InitStateDialogue(void)
             u8 newRank = GetRescueTeamRank();
 
             sMRWork->nextState = MR_NextRankRewardState(sMRWork->currTeamRank, newRank, TRUE);
-            gFormatArgs[0] = GetBagCapacityForRank(newRank);
+            gFormatArgs[0] = GetBagCapacityForRank(sMRWork->currTeamRank);
+            gFormatArgs[1] = GetBagCapacityForRank(newRank);
             CreateDialogueBoxAndPortrait(sRankBagUpgradeMsg, 0, 0, 0x101);
             break;
         }
         case MR_STATE_RANK_STORAGE_UPGRADE: {
+            u8 newRank = GetRescueTeamRank();
+
             sMRWork->nextState = MR_STATE_REWARD_EXIT;
-            gFormatArgs[0] = GetStorageCapacityForRank(GetRescueTeamRank());
+            gFormatArgs[0] = GetStorageCapacityForRank(sMRWork->currTeamRank);
+            gFormatArgs[1] = GetStorageCapacityForRank(newRank);
             CreateDialogueBoxAndPortrait(sRankStorageUpgradeMsg, 0, 0, 0x101);
             break;
         }

@@ -3865,28 +3865,30 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                     storageUp = gRuntimeConfig.rank_rewards
                         && GetStorageCapacityForRank(rankAfter) > GetStorageCapacityForRank(rankBefore);
 
-                    gFormatArgs[0] = GetBagCapacityForRank(rankAfter);
-                    gFormatArgs[1] = GetStorageCapacityForRank(rankAfter);
+                    gFormatArgs[0] = GetBagCapacityForRank(rankBefore);
+                    gFormatArgs[1] = GetBagCapacityForRank(rankAfter);
+                    gFormatArgs[2] = GetStorageCapacityForRank(rankBefore);
+                    gFormatArgs[3] = GetStorageCapacityForRank(rankAfter);
 
                     if (bagUp && storageUp) {
                         msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
                                 "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
-                                "{CENTER_ALIGN}Your Toolbox can hold more items now!{EXTRA_MSG}"
-                                "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!{EXTRA_MSG}"
-                                "{CENTER_ALIGN}Kangaskhan Storage can hold more items now!{EXTRA_MSG}"
-                                "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_1}{RESET} items!");
+                                "{CENTER_ALIGN}Toolbox storage increased from\n"
+                                "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Kangaskhan storage increased from\n"
+                                "{CENTER_ALIGN}{COLOR CYAN}{VALUE_2}{RESET} -> {COLOR CYAN}{VALUE_3}{RESET}");
                     }
                     else if (bagUp) {
                         msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
                                 "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
-                                "{CENTER_ALIGN}Your Toolbox can hold more items now!{EXTRA_MSG}"
-                                "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_0}{RESET} items!");
+                                "{CENTER_ALIGN}Toolbox storage increased from\n"
+                                "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}");
                     }
                     else if (storageUp) {
                         msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
                                 "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
-                                "{CENTER_ALIGN}Kangaskhan Storage can hold more items now!{EXTRA_MSG}"
-                                "{CENTER_ALIGN}It can now hold {COLOR CYAN}{VALUE_1}{RESET} items!");
+                                "{CENTER_ALIGN}Kangaskhan storage increased from\n"
+                                "{CENTER_ALIGN}{COLOR CYAN}{VALUE_2}{RESET} -> {COLOR CYAN}{VALUE_3}{RESET}");
                     }
                     else {
                         msg = _("{CENTER_ALIGN}The rescue rank went up from\n"

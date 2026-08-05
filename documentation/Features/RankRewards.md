@@ -63,8 +63,8 @@ When `rank_rewards` is on:
 
 After the existing “went up in rank” line (or after an achievement unlock that grants rank points):
 
-1. If bag capacity increased → Toolbox upgrade message with the new size.
-2. If storage capacity increased → Kangaskhan Storage upgrade message with the new size.
+1. If bag capacity increased → `Toolbox storage increased from N -> M`.
+2. If storage capacity increased → `Kangaskhan storage increased from N -> M`.
 
 Wired for:
 
