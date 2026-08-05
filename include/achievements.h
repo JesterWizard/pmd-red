@@ -48,7 +48,8 @@ struct AchievementsData
     /* 0x46 */ u8 runFlags;
     /* 0x47 */ u8 popupQueue[ACH_POPUP_QUEUE_SIZE];
     /* 0x4D */ u8 popupCount;
-    /* 0x4E */ u8 fill4E[0x22];
+    /* 0x4E */ u16 pendingUnlocks; /* bit per ACH_* deferred during boss fight */
+    /* 0x50 */ u8 fill50[0x20];
 };
 
 extern struct AchievementsData gAchievementsData;
@@ -70,7 +71,8 @@ void NoteAchievementCriticalHit(void);
 void NoteAchievementStatusKO(void);
 void NoteAchievementBossFightStart(void);
 void NoteAchievementTeamTookDamage(void);
-void NoteAchievementBossDefeated(void);
+void FlushBossFightAchievementUnlocks(bool8 bossCleared);
+void PresentQueuedAchievementUnlocksInDungeon(void);
 void NoteAchievementDungeonVisited(u8 dungeonId);
 void NoteAchievementItemObtained(u8 itemId);
 

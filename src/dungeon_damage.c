@@ -671,7 +671,6 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
     }
     if (targetData->bossFlag) {
         gDungeon->unk644.bossSongIndex = STOP_BGM;
-        NoteAchievementBossDefeated();
     }
 
     // Give exp

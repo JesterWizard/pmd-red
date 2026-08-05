@@ -70,7 +70,7 @@ Unlock flow: `EvaluateAchievements` / one-shot notes → set unlock bit → `Gra
 | Friend rescues / floors / joins | Adventure Log getters (`GetFriendRescueSuccesses`, etc.) |
 | Enemy KOs / crits / team damage / boss clear | Hooks in `dungeon_damage.c` |
 | Status KO | Residual damage path in `DealDamageToEntity_Async` |
-| Boss no-damage window | `NoteAchievementBossFightStart` when `IsCurrentFixedRoomBossFight()` |
+| Boss no-damage window | `NoteAchievementBossFightStart` when `IsCurrentFixedRoomBossFight()`; unlocks flush in `HandleBossFaint_Async` before post-fight event |
 | Dungeon visited | `SetDungeonLocationInfo` |
 | Items ever got | `AddItemToInventory` / `MoveToStorage` |
 
@@ -95,8 +95,8 @@ Trackable dungeons for “all dungeons”: ids `0`…`DUNGEON_PURITY_FOREST`, ex
 | Boot / new game | `InitAchievements` in `src/main_loops.c`; `ResetAchievementsData` in `InitializePlayerData` / new-game path | Clear blob |
 | Title menu | `MENU_ACHIEVEMENTS` in `include/constants/main_menu.h`; `src/main_menu1.c`, `src/main_menu2.c` | Screen setup / update / cleanup |
 | List UI | `src/achievements_log.c`, `src/achievements_menu.c`, `src/data/achievements_log.h` | Paginated achievements screen |
-| Combat hooks | `src/dungeon_damage.c` | Crits, team damage, enemy KO, status KO, boss defeated |
-| Boss start | `src/run_dungeon.c` | Starts no-damage boss run when fixed-room boss fight begins |
+| Combat hooks | `src/dungeon_damage.c` | Crits, team damage, enemy KO, status KO |
+| Boss start / end | `src/run_dungeon.c`, `src/dungeon_cutscene.c` | Starts no-damage boss run; flushes deferred unlocks before post-fight event |
 | Adventure counters | `src/adventure_info.c` | Dungeon visit note; evaluate after rescue/floor/join updates |
 | Item collection | `src/items.c` (`AddItemToInventory`, `MoveToStorage`) | Sets `itemsEverGot` bits |
 | Ground popup | `ProcessAchievementUnlockQueue` from `src/ground_main.c` | Textbox when idle |
@@ -118,7 +118,7 @@ Trackable dungeons for “all dungeons”: ids `0`…`DUNGEON_PURITY_FOREST`, ex
 - **Save compatibility:** Growing `UnkStruct_sub_8011DAC` breaks vanilla-sized save loads. Expect a new game or wiped pak after enabling this chunk.
 - **Adventure Log is separate:** Completing an Adventure Log milestone does not auto-list it under Achievements; only the parallel `ACH_*` set is shown.
 - **“Every item / TM” is lifetime ever-obtained**, not current storage. Selling or using an item does not clear the bit; never picking it up blocks the achievement.
-- **Boss no-damage** uses `IsCurrentFixedRoomBossFight()` (tileset heuristic) plus team HP loss during that window; edge cases around multi-boss or non-fixed-room bosses may not count as intended.
+- **Boss no-damage** uses `IsCurrentFixedRoomBossFight()` (tileset heuristic) plus team HP loss during that window; unlocks (and any other achievements earned mid-fight) are deferred until `HandleBossFaint_Async`, before post-fight dialogue/event. Wipe/exit without a clear grants pending unlocks on return to ground but not the flawless-boss reward.
 - **Status KO** only counts residual DoT exit reasons (burn, poison, wrap, etc.), not “last hit was a status move.”
 - **Popup queue** holds 4 entries; additional unlocks in the same stretch can be dropped if the queue is full.
 - **Rewards go to money / rank pts / Kangaskhan storage**, not the bag—by design, to avoid full-bag failures.

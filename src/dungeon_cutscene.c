@@ -32,6 +32,7 @@
 #include "effect_main.h"
 #include "effect_sub_1.h"
 #include "exclusive_pokemon.h"
+#include "achievements.h"
 #include "items.h"
 #include "math.h"
 #include "pokemon.h"
@@ -528,6 +529,12 @@ void HandleBossFaint_Async(Entity *entity, u8 monsterBehavior, bool8 transformed
 {
     if (monsterBehavior == BEHAVIOR_FIXED_ENEMY || monsterBehavior == BEHAVIOR_OUTLAW)
         return;
+
+    /* Unlock achievements earned during the fight before post-fight events/dialogue. */
+    if (gAchievementsData.runFlags & ACH_RUN_BOSS_ACTIVE) {
+        FlushBossFightAchievementUnlocks(TRUE);
+        PresentQueuedAchievementUnlocksInDungeon();
+    }
 
     switch (gDungeon->cutscene) {
         case CUTSCENE_NONE:

@@ -7,6 +7,7 @@
 #include "constants/monster.h"
 #include "items.h"
 #include "memory.h"
+#include "dungeon_message.h"
 #include "music.h"
 #include "pokemon.h"
 #include "rescue_team_info.h"
@@ -97,8 +98,8 @@ static const u8 sRankStorageUpgradeMsg[] = _(
     "{CENTER_ALIGN}Kangaskhan storage increased from\n"
     "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}");
 
-static s32 sRankBagCapBefore;
-static s32 sRankStorageCapBefore;
+static EWRAM_DATA s32 sRankBagCapBefore = 0;
+static EWRAM_DATA s32 sRankStorageCapBefore = 0;
 
 static bool8 IsTrackableDungeon(u8 dungeonId);
 static bool8 HasVisitedAllDungeons(void);
@@ -217,6 +218,12 @@ static void UnlockAchievement(u8 id)
         return;
     if (GetAchievementUnlocked(id))
         return;
+
+    /* Defer during boss fights so fanfare/rewards land after the clear, before the event. */
+    if (gAchievementsData.runFlags & ACH_RUN_BOSS_ACTIVE) {
+        gAchievementsData.pendingUnlocks |= (1 << id);
+        return;
+    }
 
     rankBefore = GetRescueTeamRank();
     gAchievementsData.unlocked[id / 32] |= (1 << (id % 32));
@@ -450,14 +457,70 @@ void NoteAchievementTeamTookDamage(void)
         gAchievementsData.runFlags &= ~ACH_RUN_BOSS_NO_DAMAGE;
 }
 
-void NoteAchievementBossDefeated(void)
+void FlushBossFightAchievementUnlocks(bool8 bossCleared)
 {
+    u16 pending;
+    s32 id;
+    bool8 noDamage;
+
     if (!gRuntimeConfig.achievements)
         return;
-    if ((gAchievementsData.runFlags & (ACH_RUN_BOSS_ACTIVE | ACH_RUN_BOSS_NO_DAMAGE))
-        == (ACH_RUN_BOSS_ACTIVE | ACH_RUN_BOSS_NO_DAMAGE))
-        UnlockAchievement(ACH_BOSS_NO_DAMAGE);
+    if (!(gAchievementsData.runFlags & ACH_RUN_BOSS_ACTIVE) && gAchievementsData.pendingUnlocks == 0)
+        return;
+
+    noDamage = bossCleared
+        && (gAchievementsData.runFlags & ACH_RUN_BOSS_ACTIVE)
+        && (gAchievementsData.runFlags & ACH_RUN_BOSS_NO_DAMAGE);
+
+    pending = gAchievementsData.pendingUnlocks;
+    gAchievementsData.pendingUnlocks = 0;
     gAchievementsData.runFlags &= ~(ACH_RUN_BOSS_ACTIVE | ACH_RUN_BOSS_NO_DAMAGE);
+
+    for (id = 0; id < ACH_MAX; id++) {
+        if (pending & (1 << id))
+            UnlockAchievement(id);
+    }
+    if (noDamage)
+        UnlockAchievement(ACH_BOSS_NO_DAMAGE);
+}
+
+void PresentQueuedAchievementUnlocksInDungeon(void)
+{
+    u8 id;
+
+    if (!gRuntimeConfig.achievements)
+        return;
+
+    while (gAchievementsData.popupCount > 0) {
+        id = gAchievementsData.popupQueue[0];
+        gAchievementsData.popupCount--;
+        if (gAchievementsData.popupCount > 0) {
+            MemoryCopy8(&gAchievementsData.popupQueue[0],
+                        &gAchievementsData.popupQueue[1],
+                        gAchievementsData.popupCount);
+        }
+
+        if (id == ACH_POPUP_RANK_BAG) {
+            gFormatArgs[0] = sRankBagCapBefore;
+            gFormatArgs[1] = GetBagCapacity();
+            DisplayDungeonMessage_Async(NULL, sRankBagUpgradeMsg, TRUE);
+            continue;
+        }
+        if (id == ACH_POPUP_RANK_STORAGE) {
+            gFormatArgs[0] = sRankStorageCapBefore;
+            gFormatArgs[1] = GetStorageCapacity();
+            DisplayDungeonMessage_Async(NULL, sRankStorageUpgradeMsg, TRUE);
+            continue;
+        }
+        if (id >= ACH_MAX)
+            continue;
+
+        strncpy(gFormatBuffer_Items[0], GetAchievementName(id), FORMAT_BUFFER_LEN);
+        strncpy(gFormatBuffer_Items[1], GetAchievementRewardText(id), FORMAT_BUFFER_LEN);
+        gFormatBuffer_Items[0][FORMAT_BUFFER_LEN - 1] = '\0';
+        gFormatBuffer_Items[1][FORMAT_BUFFER_LEN - 1] = '\0';
+        DisplayDungeonMessage_Async(NULL, sAchievementUnlockedMsg, TRUE);
+    }
 }
 
 void NoteAchievementDungeonVisited(u8 dungeonId)

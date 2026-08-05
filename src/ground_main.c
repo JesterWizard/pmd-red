@@ -302,6 +302,7 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
         sub_809C658();
         nullsub_16();
         UpdateAdventureAchievements();
+        FlushBossFightAchievementUnlocks(FALSE);
         EvaluateAchievements();
         if (scriptID != -1) {
             GroundMap_ExecuteEvent(scriptID, FALSE);
