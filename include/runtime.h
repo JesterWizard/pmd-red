@@ -61,6 +61,10 @@ typedef struct {
     u8 refresh_bulletin_on_exit;
     /* Show estimated damage / accuracy / effect while facing an enemy */
     u8 damage_preview;
+    /* Keep recruited allies on the team overnight (skip auto Stand By).
+     * Stand By / Farewell still work. Story alone segments (PARTNER1_KIND==0)
+     * still dismiss so cutscenes stay correct. */
+    u8 keep_allies;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

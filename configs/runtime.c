@@ -27,4 +27,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .outlaw_missions = TRUE, /* TRUE = WANTED hunt jobs on bulletin; FALSE = vanilla job types only */
     .refresh_bulletin_on_exit = TRUE, /* TRUE = reroll board jobs on board exit; FALSE = vanilla (dungeon/day only) */
     .damage_preview = TRUE, /* TRUE = estimated dmg/acc/effect while facing foe; FALSE = off */
+    .keep_allies = TRUE, /* TRUE = allies stay overnight; FALSE = vanilla end-of-day Stand By */
 };

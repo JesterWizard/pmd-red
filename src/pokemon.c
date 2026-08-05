@@ -390,6 +390,11 @@ bool8 sub_808D4B0(void)
     Pokemon *pokeStruct;
     bool8 flag;
 
+    /* keep_allies: skip routine end-of-day / return dismissals. Still run when
+     * PARTNER1_KIND is 0 (story alone / no-follower segments). */
+    if (gRuntimeConfig.keep_allies && GetScriptVarValue(NULL, PARTNER1_KIND) != 0)
+        return FALSE;
+
     pokeStruct = gRecruitedPokemonRef->pokemon;
     flag = FALSE;
     for(index = 0; index < NUM_MONSTERS; index++, pokeStruct++)
@@ -407,6 +412,9 @@ bool8 sub_808D500(void)
     s32 index;
     Pokemon *pokeStruct;
     bool8 flag;
+
+    if (gRuntimeConfig.keep_allies && GetScriptVarValue(NULL, PARTNER1_KIND) != 0)
+        return FALSE;
 
     pokeStruct = gRecruitedPokemonRef->pokemon;
     flag = FALSE;
