@@ -77,7 +77,12 @@ void VBlank_CB(void)
     REG_DMA0CNT_H = cnt & ~(DMA_ENABLE);
 
     REG_WININ = WININ_WIN0_ALL | WININ_WIN1_ALL;
-    REG_WINOUT = WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR | WINOUT_WIN01_BG3 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG0;
+    /* Café: keep BG0/BG1 out of WINOUT — InitText's left fade column aliases
+     * into the 8bpp tile pool and shows as a noise strip if BG0 composites. */
+    if (gGroundMap8bpp)
+        REG_WINOUT = WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR | WINOUT_WIN01_BG3 | WINOUT_WIN01_BG2;
+    else
+        REG_WINOUT = WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR | WINOUT_WIN01_BG3 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG0;
     REG_BLDCNT = gBldCnt;
     REG_BLDALPHA = gBldAlpha;
     if (gDrawWindow) {

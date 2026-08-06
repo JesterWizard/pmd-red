@@ -29,6 +29,9 @@ extern bool8 gUnknown_202D7FE;
  * BG0–2 maps at screenbases 6–8 (0x3000–0x47FF); BG3 map at 31 (0xF800).
  * 8bpp tiles at VRAM+0x6000 (CHARBASE1 index +128, max 600 → 0xF600). */
 extern bool8 gTitleBg8bpp;
+/* Spinda Café (and any ground map with 8bpp BPL marker): BG2+BG3 256-color,
+ * CHARBASE1 @ 0x4000, screenbases 30/31. Mutually exclusive with gTitleBg8bpp. */
+extern bool8 gGroundMap8bpp;
 
 void SetBG2RegOffsets(s32, s32);
 void SetBG3RegOffsets(s32, s32);
@@ -36,6 +39,9 @@ void SetBGOBJEnableFlags(u32);
 void SetBldAlphaReg(s32, s32);
 void sub_800CD64(s32, bool8);
 void SetTitleBg8bpp(bool8 enabled);
+void SetGroundMap8bpp(bool8 enabled);
+bool8 GroundMap8bppHideBg0(void);
 void ClearTitleBgMapsForGround(void);
+void ClearGroundMap8bppMaps(void);
 
 #endif // GUARD_BG_CONTROL_H

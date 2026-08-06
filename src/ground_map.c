@@ -49,6 +49,21 @@ static const SubStruct_52C gUnknown_811733C = {
     .unk14 = sub_80A5204,
 };
 
+/* Spinda Café 8bpp: dual-layer, CHARBASE1 tile pool (704×64 B slots). */
+static const SubStruct_52C sCafe8bppBgConfig = {
+    .unk0 = 0,
+    .unk2 = 16,
+    .unk4 = 0,
+    .unk6 = 704,
+    .unk8 = 0x4B0,
+    .unkA = 0,
+    .numLayers = 2,
+    .unkE = 0xbc,
+    .unk10 = 0x5e,
+    .unk12 = 0,
+    .unk14 = sub_80A5204,
+};
+
 static const SubStruct_52C gUnknown_8117354 = {
     .unk0 = 0,
     .unk2 = 12,
@@ -409,7 +424,10 @@ void GroundMap_Select(s32 mapId_)
         case 7:
         case 8:
         case 9:
-            GroundBg_Init(gGroundMapDungeon_3001B70, &gUnknown_811733C);
+            if (mapId == MAP_SPINDA_CAFE)
+                GroundBg_Init(gGroundMapDungeon_3001B70, &sCafe8bppBgConfig);
+            else
+                GroundBg_Init(gGroundMapDungeon_3001B70, &gUnknown_811733C);
             gUnknown_2026E4E = 0x1000;
         break;
         case 0xA:

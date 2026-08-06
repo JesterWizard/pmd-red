@@ -33,7 +33,7 @@ Keep the **full source tile set** addressable (prefer **ROM**, not heap). Treat 
 4. Hardware BG entries always see **10-bit slots**; scrolling within a tile only updates BG offsets.
 
 ```
-ROM/EWRAM source tiles (N can be > 1024)
+ROM/EWRAM source tiles (N can be > VRAM slots)
         │
         ▼
   chunk expand ──► CPU tilemap (source IDs)
@@ -42,7 +42,7 @@ ROM/EWRAM source tiles (N can be > 1024)
   Remap / EnsureTile ──► slot cache (≤ unk6)
         │
         ▼  (after VBlank, with tilemap DMA)
-  VRAM charblock @ 0x06008000
+  VRAM charblock (4bpp @ 0x8000 / 8bpp café @ 0x4000)
 ```
 
 ---
@@ -51,19 +51,21 @@ ROM/EWRAM source tiles (N can be > 1024)
 
 | Stage | What lives where |
 |-------|------------------|
-| BPC tiles | Prefer **uncompressed ROM** (`INCBIN` raw `.bpc`) so `OpenGroundFileData` returns a stable pointer — no ~N×32 heap copy. |
+| BPC tiles | Prefer **uncompressed ROM** (`INCBIN` raw `.bpc`) so `OpenGroundFileData` returns a stable pointer — no huge heap copy. **4bpp** = 32 B/tile; **8bpp café** = 64 B/tile. |
 | Chunk defs | Loaded once into `tileMappings` (source IDs + pal). |
-| Visible window | `CallMapTilemapRenderFunc` writes **source** IDs into `gBgTilemaps[]`. |
+| Visible window | `CallMapTilemapRenderFunc` writes **source** IDs into `gBgTilemaps[]` (cleared first on stream rebuild). |
 | Slot cache | `sSourceToSlot[]` / `sSlotToSource[]` + free-bit set + clock stamps. |
-| Hardware | After remap: tilemap entries are `slot \| (pal << 12)`; gfx in VRAM slots. |
+| Hardware | After remap: tilemap entries are `slot \| (pal << 12)`; gfx in VRAM slots. 8bpp ignores palette nibble. |
 
-Install paths:
+Install paths (extra `bppMode` arg: `GROUND_STREAM_4BPP` / `GROUND_STREAM_8BPP`):
 
 - `GroundBgTileStream_InstallRom` — ROM pointer (café).
 - `GroundBgTileStream_InstallOwned` — steal heap LZ buffer (avoid a second copy).
 - `GroundBgTileStream_Install` — alloc + copy (last resort).
 
 Activation: `layerSpecs->numTiles > groundBg->unk52C.unk6`.
+
+**8bpp café layout:** BPL flag `0x8B` → `gGroundMap8bpp`; BG2+BG3 `BGCNT_256COLOR` + `CHARBASE(1)` + SB **30/31**; `unk6 = 704`. BG0/BG1 UI maps move to SB **6/7** (CHARBASE0) because the 8bpp tile pool (`0x4000`–`0xEFFF`) overlaps vanilla SB 12–15. The 3×3 dual-layer renderer fills a **32×24** tile window (not the full 32×32 buffer); café worst-case unique tiles in that window stay under 704.
 
 ---
 
@@ -120,4 +122,4 @@ Poor fit when:
 
 ## Reference use
 
-**Spinda’s Café** indoor map (`T01P08*`, ~1800 tiles, 520×400 source): see [`documentation/Features/SpindaCafe.md`](../Features/SpindaCafe.md). Dual-layer (`unk0 = 6`); BPC shipped uncompressed in ROM for streaming.
+**Spinda’s Café** indoor map (`T01P08*`, ~1840 **8bpp** tiles, 520×400 source, 147 palette colors): see [`documentation/Features/SpindaCafe.md`](../Features/SpindaCafe.md). Dual-layer (`unk0 = 6`); BPC shipped uncompressed in ROM; convert with `--bpp 8` for exact PNG pixels. 4bpp cannot hit 1:1 on this art (illegal >15-color tiles + palette packing).

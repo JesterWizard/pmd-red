@@ -113,6 +113,10 @@ void GroundBg_FreeAll(GroundBg *groundBg)
 {
     s32 i;
 
+    if (gGroundMap8bpp) {
+        SetGroundMap8bpp(FALSE);
+        ClearGroundMap8bppMaps();
+    }
     GroundBgTileStream_Reset();
     CloseOpenedFiles(groundBg);
     TRY_FREE_AND_SET_NULL(groundBg->unk544);
@@ -255,6 +259,23 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     {
         u32 bpcScratchSize = groundBg->unk544 != NULL ? (u32)groundBg->unk52C.unkE * 256 : 0;
         u32 bpcDecodedSize = GetGroundFileDecompressedSize(mapFilesPtr->bpcFileName, &gGroundFileArchive);
+        u8 bppMode = GROUND_STREAM_4BPP;
+        s32 tileStrideU16 = 16; /* 4bpp: 16×u16 = 32 bytes */
+
+        /* Peek BPL flag byte (offset 2) for 8bpp exact-palette marker 0x8B. */
+        {
+            OpenedFile *bplPeek = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bplFileName, &gGroundFileArchive);
+            const u8 *peek = bplPeek->data;
+            if (peek[2] == 0x8B) {
+                bppMode = GROUND_STREAM_8BPP;
+                tileStrideU16 = 32; /* 8bpp: 32×u16 = 64 bytes */
+                SetGroundMap8bpp(TRUE);
+            }
+            else {
+                SetGroundMap8bpp(FALSE);
+            }
+            TRY_CLOSE_GROUND_FILE_AND_SET_NULL(bplPeek);
+        }
 
         if (bpcDecodedSize > bpcScratchSize && groundBg->unk544 != NULL) {
             TRY_FREE_AND_SET_NULL(groundBg->unk544);
@@ -263,40 +284,53 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
 
         bpcData = OpenGroundFileData(mapFilesPtr->bpcFileName, &gGroundFileArchive,
                                      groundBg->unk544, bpcScratchSize, &groundBg->bpcFile);
-    }
-    layerSpecs->chunkWidth = *bpcData++;
-    layerSpecs->chunkHeight = *bpcData++;
-    layerSpecs->numTiles = *bpcData++;
+        layerSpecs->chunkWidth = *bpcData++;
+        layerSpecs->chunkHeight = *bpcData++;
+        layerSpecs->numTiles = *bpcData++;
 
-    sum = layerSpecs->numTiles;
-    for (k = 0; k < MAX_BPA_SLOTS; k++) {
-        layerSpecs->bpaSlotNumTiles[k] = *bpcData++;
-        sum += layerSpecs->bpaSlotNumTiles[k];
-    }
-    layerSpecs->numChunks = *bpcData++;
-
-    _UncompressCell(groundBg->tileMappings, &groundBg->chunkDimensions, bpcData + ((layerSpecs->numTiles - 1) * 16), &groundBg->unk52C, &groundBg->layerSpecs);
-
-    if (layerSpecs->numTiles > groundBg->unk52C.unk6) {
-        if (GroundFileHasHeapBuffer(groundBg->bpcFile)) {
-            /* Heap-backed LZ BPC: steal buffer for streamer (no second copy). */
-            void *owned = StealGroundFileBuffer(&groundBg->bpcFile);
-            GroundBgTileStream_InstallOwned(owned, bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6);
+        sum = layerSpecs->numTiles;
+        for (k = 0; k < MAX_BPA_SLOTS; k++) {
+            layerSpecs->bpaSlotNumTiles[k] = *bpcData++;
+            sum += layerSpecs->bpaSlotNumTiles[k];
         }
-        else if (groundBg->bpcFile != NULL) {
-            /* Uncompressed ROM BPC: stream directly from ROM, no heap tiles. */
-            GroundBgTileStream_InstallRom(bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6);
-            TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
+        layerSpecs->numChunks = *bpcData++;
+
+        _UncompressCell(groundBg->tileMappings, &groundBg->chunkDimensions,
+                        bpcData + ((layerSpecs->numTiles - 1) * tileStrideU16),
+                        &groundBg->unk52C, &groundBg->layerSpecs);
+
+        if (layerSpecs->numTiles > groundBg->unk52C.unk6) {
+            if (GroundFileHasHeapBuffer(groundBg->bpcFile)) {
+                void *owned = StealGroundFileBuffer(&groundBg->bpcFile);
+                GroundBgTileStream_InstallOwned(owned, bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6, bppMode);
+            }
+            else if (groundBg->bpcFile != NULL) {
+                GroundBgTileStream_InstallRom(bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6, bppMode);
+                TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
+            }
+            else {
+                GroundBgTileStream_Install(bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6, bppMode);
+            }
         }
         else {
-            /* BPC lived in unk544 scratch — copy tiles out, keep scratch for collision. */
-            GroundBgTileStream_Install(bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6);
+            GroundBgTileStream_Reset();
+            if (bppMode == GROUND_STREAM_8BPP) {
+                /* Rare: fits in VRAM — copy 8bpp tiles to CHARBASE1. */
+                s32 id, i;
+                u16 *dst = (u16 *)GROUND_STREAM_8BPP_VRAM_BASE;
+                const u16 *src = bpcData;
+                for (i = 0; i < 32; i++)
+                    *dst++ = 0;
+                for (id = 1; id < layerSpecs->numTiles; id++) {
+                    for (i = 0; i < 32; i++)
+                        *dst++ = *src++;
+                }
+            }
+            else {
+                CopyBpcTilesToVram((void *)(VRAM + 0x8000 + groundBg->unk52C.unk4 * 32), bpcData, &groundBg->unk52C, &groundBg->layerSpecs);
+            }
+            TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
         }
-    }
-    else {
-        GroundBgTileStream_Reset();
-        CopyBpcTilesToVram((void *)(VRAM + 0x8000 + groundBg->unk52C.unk4 * 32), bpcData, &groundBg->unk52C, &groundBg->layerSpecs);
-        TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
     }
 
     groundBg->bplFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bplFileName, &gGroundFileArchive);
@@ -324,16 +358,37 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     str1.c[RGB_G] = 0xff;
     str1.c[RGB_B] = 0xff;
     str1.c[RGB_UNK] = 0;
-    for (i = 0; i < bplHeader->numPalettes && i < groundBg->unk52C.unk2; i++) {
-        sub_8003810(r5++, str2);
-        sub_809971C(r5, (RGB_Array*)rgbPal, 15);
-        r5 += 15;
-        rgbPal += 15;
+    if (bplHeader->hasPalAnimations == 0x8B) {
+        /* 8bpp exact palette: numPalettes = color count; RGBA8×N includes index 0. */
+        s32 nColors = bplHeader->numPalettes;
+        const u8 *c = (const u8 *)bplData;
+
+        for (i = 0; i < nColors && i < 256; i++) {
+            RGB_Array rgb;
+            rgb.c[RGB_R] = c[0];
+            rgb.c[RGB_G] = c[1];
+            rgb.c[RGB_B] = c[2];
+            rgb.c[RGB_UNK] = 0;
+            sub_8003810((u16)i, rgb);
+            c += 4;
+        }
+        bplHeader->hasPalAnimations = FALSE;
+        groundBg->animationSpecifications = NULL;
+        groundBg->unk470 = 0;
+        groundBg->unk471 = 0;
     }
-    for (; i < groundBg->unk52C.unk2; i++) {
-        sub_8003810(r5++, str2);
-        for (j = 0; j < 15; j++) {
-            sub_8003810(r5++, str1);
+    else {
+        for (i = 0; i < bplHeader->numPalettes && i < groundBg->unk52C.unk2; i++) {
+            sub_8003810(r5++, str2);
+            sub_809971C(r5, (RGB_Array*)rgbPal, 15);
+            r5 += 15;
+            rgbPal += 15;
+        }
+        for (; i < groundBg->unk52C.unk2; i++) {
+            sub_8003810(r5++, str2);
+            for (j = 0; j < 15; j++) {
+                sub_8003810(r5++, str1);
+            }
         }
     }
 

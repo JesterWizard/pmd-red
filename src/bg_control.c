@@ -117,6 +117,29 @@ void SetTitleBg8bpp(bool8 enabled)
     gTitleBg8bpp = enabled;
 }
 
+EWRAM_DATA bool8 gGroundMap8bpp = 0;
+
+void SetGroundMap8bpp(bool8 enabled)
+{
+    gGroundMap8bpp = enabled;
+    if (enabled) {
+        /* InitText plants a left-edge fade tile (0x279) on BG0 col0; that VRAM
+         * overlaps the café 8bpp tile pool and reads as a noise strip. */
+        CpuClear(gBgTilemaps[0], BG_SCREEN_SIZE);
+        CpuClear(gBgTilemaps[1], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(6), gBgTilemaps[0], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(7), gBgTilemaps[1], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(12), gBgTilemaps[0], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(13), gBgTilemaps[1], BG_SCREEN_SIZE);
+    }
+}
+
+/* Café keeps BG0 off while exploring; text windows may turn it back on. */
+bool8 GroundMap8bppHideBg0(void)
+{
+    return gGroundMap8bpp;
+}
+
 /* Call after leaving the title screen (gTitleBg8bpp already FALSE). Title art
  * lives on BG2/BG3; house maps typically only rebuild BG3 (unkA==1). Stale BG2
  * tilemaps keep indexing into CHARBASE2 after map tiles replace title tiles →
@@ -133,7 +156,31 @@ void ClearTitleBgMapsForGround(void)
     CpuCopy(BG_SCREEN_ADDR(15), gBgTilemaps[3], BG_SCREEN_SIZE);
 }
 
+/* Leave café 8bpp: clear flag caller-side, then wipe café UI (SB 6/7) + art
+ * (SB 30/31) and republish vanilla SB 12–15 so the next 4bpp map is clean. */
+void ClearGroundMap8bppMaps(void)
+{
+    CpuClear(gBgTilemaps[0], BG_SCREEN_SIZE);
+    CpuClear(gBgTilemaps[1], BG_SCREEN_SIZE);
+    CpuClear(gBgTilemaps[2], BG_SCREEN_SIZE);
+    CpuClear(gBgTilemaps[3], BG_SCREEN_SIZE);
+    /* Café 8bpp UI map slots (CHARBASE0). */
+    CpuCopy(BG_SCREEN_ADDR(6), gBgTilemaps[0], BG_SCREEN_SIZE);
+    CpuCopy(BG_SCREEN_ADDR(7), gBgTilemaps[1], BG_SCREEN_SIZE);
+    /* Café 8bpp art maps. */
+    CpuCopy(BG_SCREEN_ADDR(30), gBgTilemaps[2], BG_SCREEN_SIZE);
+    CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
+    /* Vanilla ground layout. */
+    CpuCopy(BG_SCREEN_ADDR(12), gBgTilemaps[0], BG_SCREEN_SIZE);
+    CpuCopy(BG_SCREEN_ADDR(13), gBgTilemaps[1], BG_SCREEN_SIZE);
+    CpuCopy(BG_SCREEN_ADDR(14), gBgTilemaps[2], BG_SCREEN_SIZE);
+    CpuCopy(BG_SCREEN_ADDR(15), gBgTilemaps[3], BG_SCREEN_SIZE);
+}
+
 void SetBGOBJEnableFlags(u32 mask)
 {
+    /* Spinda Café: never show BG0/BG1 (fade-edge tilemap overlaps 8bpp VRAM). */
+    if (gGroundMap8bpp)
+        mask |= (1 << BG0) | (1 << BG1);
     REG_DISPCNT = (REG_DISPCNT & 0xE0FF) | (~(mask << 8) & (DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON));
 }

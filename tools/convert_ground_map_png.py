@@ -27,6 +27,10 @@ TILE = 8
 TRANSPARENT = (8, 8, 12)
 
 
+# BPL hasPalAnimations high marker: 8bpp exact 256-color café palette.
+BPL_FLAG_8BPP = 0x8B
+
+
 def gba_encode_4bpp(indices: list[int]) -> bytes:
     """Encode 64 palette indices (0–15) as GBA 4bpp (32 bytes)."""
     out = bytearray(32)
@@ -35,6 +39,12 @@ def gba_encode_4bpp(indices: list[int]) -> bytes:
         hi = indices[i * 2 + 1] & 0xF
         out[i] = lo | (hi << 4)
     return bytes(out)
+
+
+def gba_encode_8bpp(indices: list[int]) -> bytes:
+    """Encode 64 palette indices (0–255) as GBA 8bpp (64 bytes)."""
+    assert len(indices) == 64
+    return bytes(i & 0xFF for i in indices)
 
 
 def write_bpl(path: Path, palettes: list[list[tuple[int, int, int]]]) -> None:
@@ -48,17 +58,29 @@ def write_bpl(path: Path, palettes: list[list[tuple[int, int, int]]]) -> None:
     path.write_bytes(data)
 
 
+def write_bpl_8bpp(path: Path, colors: list[tuple[int, int, int]]) -> None:
+    """Write 8bpp exact palette: u16 numColors, u16 flags=0x008B, then RGBA8×N (incl. index 0)."""
+    assert 1 <= len(colors) <= 256
+    data = bytearray()
+    data += struct.pack("<HH", len(colors), BPL_FLAG_8BPP)
+    for r, g, b in colors:
+        data += bytes((r & 0xFF, g & 0xFF, b & 0xFF, 0))
+    path.write_bytes(data)
+
+
 def write_bpc(
     path: Path,
-    tiles_4bpp: list[bytes],
+    tiles: list[bytes],
     chunks: list[list[int]],
+    *,
+    tile_bytes: int = 32,
 ) -> None:
     """Write RT BPC header + raw tiles + raw chunk tilemaps.
 
-    tiles_4bpp: tile 1..N (tile 0 implied empty)
+    tiles: tile 1..N (tile 0 implied empty), each tile_bytes long (32=4bpp, 64=8bpp)
     chunks: chunk 1..M, each a list of 9 GBA tilemap u16s (chunk 0 implied empty)
     """
-    num_tiles = len(tiles_4bpp) + 1
+    num_tiles = len(tiles) + 1
     num_chunks = len(chunks) + 1
     data = bytearray()
     data += struct.pack(
@@ -72,8 +94,8 @@ def write_bpc(
         0,
         num_chunks,
     )
-    for t in tiles_4bpp:
-        assert len(t) == 32
+    for t in tiles:
+        assert len(t) == tile_bytes
         data += t
     for ch in chunks:
         assert len(ch) == CHUNK * CHUNK
@@ -275,6 +297,518 @@ def split_bar_layers(canvas: Image.Image, w_tiles: int, h_tiles: int) -> tuple[I
     return back, front
 
 
+def color_dist2(a: tuple[int, int, int], b: tuple[int, int, int]) -> int:
+    return (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2
+
+
+def nearest_color_index(
+    rgb: tuple[int, int, int], bank: list[tuple[int, int, int]], *, skip0: bool = True
+) -> int:
+    """Index of nearest color in bank (optionally skipping transparent slot 0)."""
+    best_i = 1 if skip0 else 0
+    best_d = 1 << 30
+    start = 1 if skip0 else 0
+    for i in range(start, len(bank)):
+        d = color_dist2(rgb, bank[i])
+        if d < best_d:
+            best_d = d
+            best_i = i
+    return best_i
+
+
+def soft_merge_non_cooccurring(
+    img: Image.Image,
+    *,
+    transparent: tuple[int, int, int] = TRANSPARENT,
+    max_dist2: int = 100,
+) -> Image.Image:
+    """Merge near colors that never share an 8×8 tile.
+
+    Frees palette slots for duplication without destroying grain (co-occurring
+    near-yellows are left alone). Returns a new RGB image.
+    """
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    w, h = img.size
+    w_tiles = (w + TILE - 1) // TILE
+    h_tiles = (h + TILE - 1) // TILE
+    px = img.load()
+
+    colors: list[tuple[int, int, int]] = []
+    color_id: dict[tuple[int, int, int], int] = {transparent: -1}
+    freq: list[int] = []
+    for y in range(h):
+        for x in range(w):
+            rgb = px[x, y]
+            if rgb == transparent:
+                continue
+            if rgb in color_id:
+                freq[color_id[rgb]] += 1
+                continue
+            color_id[rgb] = len(colors)
+            colors.append(rgb)
+            freq.append(1)
+
+    co: list[set[int]] = [set() for _ in range(len(colors))]
+    for ty in range(h_tiles):
+        for tx in range(w_tiles):
+            s: list[int] = []
+            for oy in range(TILE):
+                for ox in range(TILE):
+                    x = tx * TILE + ox
+                    y = ty * TILE + oy
+                    if x >= w or y >= h:
+                        continue
+                    rgb = px[x, y]
+                    if rgb == transparent:
+                        continue
+                    s.append(color_id[rgb])
+            # unique ids in tile
+            uniq = list(set(s))
+            for i in range(len(uniq)):
+                for j in range(i + 1, len(uniq)):
+                    a, b = uniq[i], uniq[j]
+                    co[a].add(b)
+                    co[b].add(a)
+
+    parent = list(range(len(colors)))
+
+    def find(a: int) -> int:
+        while parent[a] != a:
+            parent[a] = parent[parent[a]]
+            a = parent[a]
+        return a
+
+    merges = 0
+    for i in range(len(colors)):
+        for j in range(i + 1, len(colors)):
+            if j in co[i]:
+                continue
+            if color_dist2(colors[i], colors[j]) > max_dist2:
+                continue
+            ri, rj = find(i), find(j)
+            if ri != rj:
+                parent[rj] = ri
+                merges += 1
+
+    comps: dict[int, list[int]] = {}
+    for i in range(len(colors)):
+        comps.setdefault(find(i), []).append(i)
+    rep = {
+        r: colors[max(members, key=lambda i: freq[i])]
+        for r, members in comps.items()
+    }
+    if merges:
+        print(
+            f"  soft-merge: {len(colors)} → {len(comps)} colors "
+            f"(dist²≤{max_dist2}, {merges} merges)"
+        )
+
+    out = Image.new("RGB", (w, h))
+    out_px = out.load()
+    for y in range(h):
+        for x in range(w):
+            rgb = px[x, y]
+            if rgb == transparent:
+                out_px[x, y] = transparent
+            else:
+                out_px[x, y] = rep[find(color_id[rgb])]
+    return out
+
+
+def reduce_colors_to_limit(
+    counts: dict[tuple[int, int, int], int],
+    limit: int,
+) -> list[tuple[int, int, int]]:
+    """Merge closest colors until ≤ limit, preferring the more frequent survivor."""
+    items = dict(counts)
+    if len(items) <= limit:
+        return sorted(items.keys(), key=lambda c: -items[c])
+    while len(items) > limit:
+        cols = list(items)
+        best_d = 1 << 30
+        best_a = cols[0]
+        best_b = cols[1]
+        for i, a in enumerate(cols):
+            for b in cols[i + 1 :]:
+                d = color_dist2(a, b)
+                if d < best_d:
+                    best_d = d
+                    best_a, best_b = a, b
+        if items[best_a] >= items[best_b]:
+            keep, drop = best_a, best_b
+        else:
+            keep, drop = best_b, best_a
+        items[keep] += items.pop(drop)
+    return sorted(items.keys(), key=lambda c: -items[c])
+
+
+def pack_tilequant_exact_colors(
+    img: Image.Image,
+    num_palettes: int,
+    *,
+    transparent: tuple[int, int, int] = TRANSPARENT,
+) -> tuple[Image.Image, list[list[tuple[int, int, int]]]]:
+    """Tilequant assigns each 8×8 tile to a bank; rebuild banks from exact source RGB.
+
+    Tilequant's own clustered colors smear near-neighbors (flat tabletops). Its
+    *bank assignment* is still valuable: every tile is guaranteed to fit one
+    bank. We discard Tilequant's palette and refill each bank with the exact
+    source colors that appear in its tiles (merging only within a bank when
+    that bank sees more than 15 unique colors).
+    """
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    w, h = img.size
+    w_tiles = (w + TILE - 1) // TILE
+    h_tiles = (h + TILE - 1) // TILE
+
+    tq = Tilequant(img, transparent_color=transparent)
+    indexed_tq = tq.convert(
+        num_palettes=num_palettes,
+        colors_per_palette=16,
+        dithering_mode=DitheringMode.NONE,
+        dithering_level=0.0,
+    )
+    assert indexed_tq.mode == "P"
+    tq_px = indexed_tq.load()
+    px = img.load()
+
+    tile_bank = [0] * (w_tiles * h_tiles)
+    for ty in range(h_tiles):
+        for tx in range(w_tiles):
+            votes: list[int] = []
+            for oy in range(TILE):
+                for ox in range(TILE):
+                    x = tx * TILE + ox
+                    y = ty * TILE + oy
+                    if x >= w or y >= h:
+                        continue
+                    idx = tq_px[x, y]
+                    if (idx & 0xF) != 0:
+                        votes.append(idx >> 4)
+            if votes:
+                tile_bank[ty * w_tiles + tx] = max(set(votes), key=votes.count)
+
+    bank_counts: list[dict[tuple[int, int, int], int]] = [
+        {} for _ in range(num_palettes)
+    ]
+    for ty in range(h_tiles):
+        for tx in range(w_tiles):
+            b = tile_bank[ty * w_tiles + tx]
+            counts = bank_counts[b]
+            for oy in range(TILE):
+                for ox in range(TILE):
+                    x = tx * TILE + ox
+                    y = ty * TILE + oy
+                    if x >= w or y >= h:
+                        continue
+                    rgb = px[x, y]
+                    if rgb == transparent:
+                        continue
+                    counts[rgb] = counts.get(rgb, 0) + 1
+
+    palettes: list[list[tuple[int, int, int]]] = []
+    overflow = 0
+    for b in range(num_palettes):
+        chosen = reduce_colors_to_limit(bank_counts[b], 15)
+        if len(bank_counts[b]) > 15:
+            overflow += 1
+        bank = [transparent] + list(chosen)
+        while len(bank) < 16:
+            bank.append(transparent)
+        palettes.append(bank[:16])
+    if overflow:
+        print(
+            f"  tilequant-exact: {overflow}/{num_palettes} banks needed "
+            f"in-bank merges (>15 source colors)"
+        )
+    else:
+        print(
+            f"  tilequant-exact: all {num_palettes} banks fit exact source colors"
+        )
+
+    color_indices: dict[tuple[int, int, int], list[int]] = {transparent: [0]}
+    for b in range(num_palettes):
+        for local in range(1, 16):
+            rgb = palettes[b][local]
+            if rgb == transparent:
+                continue
+            color_indices.setdefault(rgb, []).append(b * 16 + local)
+
+    out = Image.new("P", (w, h))
+    flat_pal: list[int] = []
+    for b in range(num_palettes):
+        for c in range(16):
+            r, g, bl = palettes[b][c]
+            flat_pal.extend((r, g, bl))
+    while len(flat_pal) < 256 * 3:
+        flat_pal.extend(transparent)
+    out.putpalette(flat_pal)
+
+    out_px = out.load()
+    for ty in range(h_tiles):
+        for tx in range(w_tiles):
+            b = tile_bank[ty * w_tiles + tx]
+            bank = palettes[b]
+            for oy in range(TILE):
+                for ox in range(TILE):
+                    x = tx * TILE + ox
+                    y = ty * TILE + oy
+                    if x >= w or y >= h:
+                        continue
+                    rgb = px[x, y]
+                    if rgb == transparent:
+                        out_px[x, y] = 0
+                        continue
+                    chosen = None
+                    for gi in color_indices.get(rgb, ()):
+                        if gi >> 4 == b:
+                            chosen = gi
+                            break
+                    if chosen is None:
+                        chosen = b * 16 + nearest_color_index(rgb, bank)
+                    out_px[x, y] = chosen
+
+    return out, palettes
+
+
+def pack_exact_colors_to_indexed(
+    img: Image.Image,
+    num_palettes: int,
+    *,
+    transparent: tuple[int, int, int] = TRANSPARENT,
+) -> tuple[Image.Image, list[list[tuple[int, int, int]]]]:
+    """Pack an RGB image into GBA multi-bank indexed form without inventing colors.
+
+    When the source already has ≤ num_palettes×15 unique colors (common for
+    authored pixel art), Tilequant's clustering can merge near-neighbors (e.g.
+    tabletop wood grain → flat fill). This packer keeps exact RGB values.
+
+    Strategy:
+      1. Give every color exactly one primary bank (tile-aware greedy).
+      2. Spend leftover slots on *cheapest* duplications first so as many
+         8×8 tiles as possible become expressible in a single bank.
+      3. Rasterize each tile with a bank that holds all of its colors.
+    """
+    if img.mode != "RGB":
+        img = img.convert("RGB")
+    w, h = img.size
+    w_tiles = (w + TILE - 1) // TILE
+    h_tiles = (h + TILE - 1) // TILE
+    px = img.load()
+
+    colors: list[tuple[int, int, int]] = []
+    color_id: dict[tuple[int, int, int], int] = {transparent: -1}
+    for y in range(h):
+        for x in range(w):
+            rgb = px[x, y]
+            if rgb in color_id:
+                continue
+            color_id[rgb] = len(colors)
+            colors.append(rgb)
+
+    slots = num_palettes * 15
+    if len(colors) > slots:
+        raise ValueError(
+            f"too many exact colors ({len(colors)} > {slots}); use Tilequant"
+        )
+
+    tile_sets: list[frozenset[int]] = []
+    for ty in range(h_tiles):
+        for tx in range(w_tiles):
+            counts: dict[int, int] = {}
+            for oy in range(TILE):
+                for ox in range(TILE):
+                    x = tx * TILE + ox
+                    y = ty * TILE + oy
+                    if x >= w or y >= h:
+                        continue
+                    rgb = px[x, y]
+                    if rgb == transparent:
+                        continue
+                    cid = color_id[rgb]
+                    counts[cid] = counts.get(cid, 0) + 1
+            if len(counts) > 15:
+                kept = sorted(counts, key=lambda c: counts[c], reverse=True)[:15]
+                tile_sets.append(frozenset(kept))
+            else:
+                tile_sets.append(frozenset(counts))
+
+    banks: list[list[int]] = [[] for _ in range(num_palettes)]
+    in_bank: list[set[int]] = [set() for _ in range(num_palettes)]
+    color_bank: dict[int, int] = {}
+
+    def add_primary(b: int, cid: int) -> bool:
+        if cid in color_bank:
+            return color_bank[cid] == b
+        if len(banks[b]) >= 15:
+            return False
+        banks[b].append(cid)
+        in_bank[b].add(cid)
+        color_bank[cid] = b
+        return True
+
+    def add_dup(b: int, cid: int) -> bool:
+        if cid in in_bank[b]:
+            return True
+        if len(banks[b]) >= 15:
+            return False
+        banks[b].append(cid)
+        in_bank[b].add(cid)
+        return True
+
+    def missing(b: int, s: frozenset[int] | set[int]) -> list[int]:
+        return [c for c in s if c not in in_bank[b]]
+
+    # Phase 1: primary homes only.
+    order = sorted(range(len(tile_sets)), key=lambda i: len(tile_sets[i]), reverse=True)
+    for ti in order:
+        s = tile_sets[ti]
+        if not s:
+            continue
+        assigned = [c for c in s if c in color_bank]
+        unassigned = [c for c in s if c not in color_bank]
+        if not unassigned:
+            continue
+        homes = {color_bank[c] for c in assigned}
+        if len(homes) == 1:
+            b = next(iter(homes))
+            if len(banks[b]) + len(unassigned) <= 15:
+                for c in unassigned:
+                    add_primary(b, c)
+        elif len(homes) == 0:
+            for b in sorted(range(num_palettes), key=lambda i: len(banks[i])):
+                if len(banks[b]) + len(unassigned) <= 15:
+                    for c in unassigned:
+                        add_primary(b, c)
+                    break
+
+    for cid in range(len(colors)):
+        if cid in color_bank:
+            continue
+        for b in sorted(range(num_palettes), key=lambda i: len(banks[i])):
+            if add_primary(b, cid):
+                break
+        else:
+            raise RuntimeError(f"no room for color {cid}; slots exhausted")
+
+    def remap_error(b: int, s: frozenset[int]) -> int:
+        err = 0
+        for c in s:
+            if c in in_bank[b]:
+                continue
+            best_d = 1 << 30
+            for o in in_bank[b]:
+                d = color_dist2(colors[c], colors[o])
+                if d < best_d:
+                    best_d = d
+            err += best_d if in_bank[b] else 1 << 20
+        return err
+
+    # Phase 2: cheapest duplication first; among equal cost, fix highest-error
+    # tiles (plates/whites) before low-error near-neighbor remaps.
+    while True:
+        best: tuple[int, int, int, list[int]] | None = None
+        for s in tile_sets:
+            if not s:
+                continue
+            if any(not missing(b, s) for b in range(num_palettes)):
+                continue
+            for b in range(num_palettes):
+                miss = missing(b, s)
+                room = 15 - len(banks[b])
+                if not miss or len(miss) > room:
+                    continue
+                err = remap_error(b, s)
+                cand = (len(miss), -err, b, miss)
+                if best is None or cand[:2] < best[:2]:
+                    best = cand
+        if best is None:
+            break
+        _, _, b, miss = best
+        for c in miss:
+            add_dup(b, c)
+
+    unresolved = sum(
+        1
+        for s in tile_sets
+        if s and all(missing(b, s) for b in range(num_palettes))
+    )
+    if unresolved:
+        print(
+            f"  warning: {unresolved} tiles still span banks "
+            f"(will nearest-remap within chosen bank)"
+        )
+
+    used = sum(len(b) for b in banks)
+    uniq = len({c for b in banks for c in b})
+    print(
+        f"  palette fill {used}/{slots} slots, {uniq} unique colors, "
+        f"{used - uniq} duplicates"
+    )
+
+    palettes: list[list[tuple[int, int, int]]] = []
+    color_indices: dict[tuple[int, int, int], list[int]] = {transparent: [0]}
+    for b in range(num_palettes):
+        bank_rgb = [transparent] + [(0, 0, 0)] * 15
+        for local, cid in enumerate(banks[b]):
+            rgb = colors[cid]
+            bank_rgb[local + 1] = rgb
+            color_indices.setdefault(rgb, []).append(b * 16 + (local + 1))
+        for local in range(len(banks[b]) + 1, 16):
+            bank_rgb[local] = transparent
+        palettes.append(bank_rgb)
+
+    tile_bank = [0] * len(tile_sets)
+    for ti, s in enumerate(tile_sets):
+        best_b, best_miss = 0, 1 << 30
+        for b in range(num_palettes):
+            m = len(missing(b, s))
+            if m < best_miss:
+                best_miss = m
+                best_b = b
+                if m == 0:
+                    break
+        tile_bank[ti] = best_b
+
+    out = Image.new("P", (w, h))
+    flat_pal: list[int] = []
+    for b in range(num_palettes):
+        for c in range(16):
+            r, g, bl = palettes[b][c]
+            flat_pal.extend((r, g, bl))
+    while len(flat_pal) < 256 * 3:
+        flat_pal.extend(transparent)
+    out.putpalette(flat_pal)
+
+    out_px = out.load()
+    for ty in range(h_tiles):
+        for tx in range(w_tiles):
+            b = tile_bank[ty * w_tiles + tx]
+            bank = palettes[b]
+            for oy in range(TILE):
+                for ox in range(TILE):
+                    x = tx * TILE + ox
+                    y = ty * TILE + oy
+                    if x >= w or y >= h:
+                        continue
+                    rgb = px[x, y]
+                    if rgb == transparent:
+                        out_px[x, y] = 0
+                        continue
+                    chosen = None
+                    for gi in color_indices.get(rgb, ()):
+                        if gi >> 4 == b:
+                            chosen = gi
+                            break
+                    if chosen is None:
+                        chosen = b * 16 + nearest_color_index(rgb, bank)
+                    out_px[x, y] = chosen
+
+    return out, palettes
+
+
 def indexed_to_tilemap(
     indexed: Image.Image,
     w_tiles: int,
@@ -282,22 +816,45 @@ def indexed_to_tilemap(
     get_tile,
     *,
     allow_empty: bool,
+    palettes: list[list[tuple[int, int, int]]] | None = None,
 ) -> list[list[int]]:
-    """Build per-tile GBA tilemap entries from an indexed (mode P) image."""
+    """Build per-tile GBA tilemap entries from an indexed (mode P) image.
+
+    Cross-bank pixels are remapped to the nearest color in the chosen bank
+    (not zeroed — zeroing punched holes / flat blocks into furniture).
+    """
     tilemap = [[0] * w_tiles for _ in range(h_tiles)]
     pix = indexed.load()
+    full_pal = indexed.getpalette() or []
+
+    def idx_rgb(idx: int) -> tuple[int, int, int]:
+        i = idx * 3
+        return (full_pal[i], full_pal[i + 1], full_pal[i + 2])
+
     for ty in range(h_tiles):
         for tx in range(w_tiles):
             raw_idx = []
             for row in range(TILE):
                 for col in range(TILE):
                     raw_idx.append(pix[tx * TILE + col, ty * TILE + row])
-            banks = [i >> 4 for i in raw_idx]
+            # Ignore transparent (index 0) when voting — a tile with many
+            # clear pixels would otherwise pick bank 0 and nearest-remap the
+            # furniture colors into a flat wrong fill.
+            opaque = [i for i in raw_idx if (i & 0xF) != 0]
+            banks = [i >> 4 for i in opaque] if opaque else [0]
             pal = max(set(banks), key=banks.count)
             local = [i & 0xF for i in raw_idx]
-            for i, b in enumerate(banks):
-                if b != pal:
-                    local[i] = 0
+            if palettes is not None:
+                bank = palettes[pal]
+                for i, idx in enumerate(raw_idx):
+                    if (idx & 0xF) == 0:
+                        local[i] = 0
+                    elif (idx >> 4) != pal:
+                        local[i] = nearest_color_index(idx_rgb(idx), bank)
+            else:
+                for i, idx in enumerate(raw_idx):
+                    if (idx >> 4) != pal and (idx & 0xF) != 0:
+                        local[i] = 0
             if allow_empty and all(c == 0 for c in local):
                 tilemap[ty][tx] = 0
                 continue
@@ -345,7 +902,12 @@ def convert(
     out_stem: Path,
     num_palettes: int = 14,
     max_width: int = 520,
+    bpp: int = 4,
 ) -> None:
+    if bpp == 8:
+        convert_8bpp(png, out_stem, max_width=max_width)
+        return
+
     target_colors = num_palettes * 16
     img = preprocess_for_rt_limits(
         Image.open(png).convert("RGB"), max_width, target_colors
@@ -354,7 +916,7 @@ def convert(
     rgb_for_collision = canvas.copy()
     back_img, front_img = split_bar_layers(canvas, w_tiles, h_tiles)
 
-    # Shared palette: quantize back+front stacked so both layers share banks.
+    # Shared palette across both layers (stacked vertically).
     stacked = Image.new("RGB", (canvas.width, canvas.height * 2), TRANSPARENT)
     stacked.paste(back_img, (0, 0))
     stacked.paste(front_img, (0, canvas.height))
@@ -363,29 +925,30 @@ def convert(
         f"quantizing {canvas.size} → {w_tiles}x{h_tiles} tiles, "
         f"{num_palettes} palettes (dual-layer bars)…"
     )
-    tq = Tilequant(stacked, transparent_color=TRANSPARENT)
-    indexed_stack = tq.convert(
-        num_palettes=num_palettes,
-        colors_per_palette=16,
-        dithering_mode=DitheringMode.NONE,
-        dithering_level=0.0,
-    )
-    assert indexed_stack.mode == "P"
-    full_pal = indexed_stack.getpalette()
-    assert full_pal is not None
 
+    # Soft-merge near colors that never share a tile (frees dup slots), then
+    # exact-pack so co-occurring grain/plate colors stay distinct. Pure
+    # Tilequant flattens tabletops; exact-pack alone remaps plates/shelves
+    # when banks fill up.
+    merged = soft_merge_non_cooccurring(
+        stacked, transparent=TRANSPARENT, max_dist2=100
+    )
+    try:
+        indexed_stack, palettes = pack_exact_colors_to_indexed(
+            merged, num_palettes, transparent=TRANSPARENT
+        )
+        print(f"  exact-color pack OK ({num_palettes} banks)")
+    except ValueError as exc:
+        print(f"  exact pack skipped ({exc}); falling back to tilequant-exact")
+        indexed_stack, palettes = pack_tilequant_exact_colors(
+            stacked, num_palettes, transparent=TRANSPARENT
+        )
+
+    assert indexed_stack.mode == "P"
     indexed_back = indexed_stack.crop((0, 0, canvas.width, canvas.height))
     indexed_front = indexed_stack.crop(
         (0, canvas.height, canvas.width, canvas.height * 2)
     )
-
-    palettes: list[list[tuple[int, int, int]]] = []
-    for p in range(num_palettes):
-        bank: list[tuple[int, int, int]] = []
-        for c in range(16):
-            i = (p * 16 + c) * 3
-            bank.append((full_pal[i], full_pal[i + 1], full_pal[i + 2]))
-        palettes.append(bank)
 
     tile_list: list[bytes] = []
     tile_keys: dict[tuple[int, bytes], int] = {}
@@ -402,10 +965,20 @@ def convert(
 
     # layer0 = front (BG2), layer1 = back (BG3)
     front_tm = indexed_to_tilemap(
-        indexed_front, w_tiles, h_tiles, get_tile, allow_empty=True
+        indexed_front,
+        w_tiles,
+        h_tiles,
+        get_tile,
+        allow_empty=True,
+        palettes=palettes,
     )
     back_tm = indexed_to_tilemap(
-        indexed_back, w_tiles, h_tiles, get_tile, allow_empty=False
+        indexed_back,
+        w_tiles,
+        h_tiles,
+        get_tile,
+        allow_empty=False,
+        palettes=palettes,
     )
     chunk_list, layer_maps = tilemaps_to_chunks(
         [front_tm, back_tm], w_tiles, h_tiles
@@ -418,7 +991,7 @@ def convert(
 
     out_stem.parent.mkdir(parents=True, exist_ok=True)
     write_bpl(Path(str(out_stem) + ".bpl"), palettes)
-    write_bpc(Path(str(out_stem) + "c.bpc"), tile_list, chunk_list)
+    write_bpc(Path(str(out_stem) + "c.bpc"), tile_list, chunk_list, tile_bytes=32)
     write_bma(
         Path(str(out_stem) + "m.bma"),
         w_tiles,
@@ -440,6 +1013,125 @@ def convert(
     )
 
 
+def convert_8bpp(png: Path, out_stem: Path, max_width: int = 520) -> None:
+    """Exact 8bpp / 256-color convert — 100% pixel match to the source PNG."""
+    img = Image.open(png).convert("RGB")
+    if img.width > max_width:
+        raise SystemExit(
+            f"8bpp café convert refuses downscale ({img.width} > {max_width})"
+        )
+    canvas, w_tiles, h_tiles = pad_to_chunk_grid(img)
+    rgb_for_collision = canvas.copy()
+    back_img, front_img = split_bar_layers(canvas, w_tiles, h_tiles)
+
+    # Exact palette from both layers (transparent = index 0).
+    color_to_idx: dict[tuple[int, int, int], int] = {TRANSPARENT: 0}
+    colors: list[tuple[int, int, int]] = [TRANSPARENT]
+
+    def add_color(rgb: tuple[int, int, int]) -> int:
+        if rgb in color_to_idx:
+            return color_to_idx[rgb]
+        if len(colors) >= 256:
+            raise SystemExit(f"too many colors for 8bpp ({len(colors)}+)")
+        idx = len(colors)
+        color_to_idx[rgb] = idx
+        colors.append(rgb)
+        return idx
+
+    for layer in (back_img, front_img):
+        px = layer.load()
+        for y in range(layer.height):
+            for x in range(layer.width):
+                add_color(px[x, y])
+
+    print(
+        f"8bpp exact {canvas.size} → {w_tiles}x{h_tiles} tiles, "
+        f"{len(colors)} colors (dual-layer bars)…"
+    )
+
+    tile_list: list[bytes] = []
+    tile_keys: dict[bytes, int] = {}
+
+    def get_tile_8bpp(indices: list[int]) -> int:
+        raw = gba_encode_8bpp(indices)
+        if raw in tile_keys:
+            return tile_keys[raw]
+        idx = len(tile_list) + 1
+        tile_list.append(raw)
+        tile_keys[raw] = idx
+        return idx
+
+    def layer_to_tilemap(layer: Image.Image, *, allow_empty: bool) -> list[list[int]]:
+        px = layer.load()
+        tilemap = [[0] * w_tiles for _ in range(h_tiles)]
+        for ty in range(h_tiles):
+            for tx in range(w_tiles):
+                idxs: list[int] = []
+                for row in range(TILE):
+                    for col in range(TILE):
+                        idxs.append(color_to_idx[px[tx * TILE + col, ty * TILE + row]])
+                if allow_empty and all(i == 0 for i in idxs):
+                    tilemap[ty][tx] = 0
+                    continue
+                tilemap[ty][tx] = get_tile_8bpp(idxs)  # palette nibble 0
+        return tilemap
+
+    front_tm = layer_to_tilemap(front_img, allow_empty=True)
+    back_tm = layer_to_tilemap(back_img, allow_empty=False)
+    chunk_list, layer_maps = tilemaps_to_chunks(
+        [front_tm, back_tm], w_tiles, h_tiles
+    )
+    layer0_chunks, layer1_chunks = layer_maps
+
+    # Verify composite(back, front) matches the source PNG exactly.
+    src = Image.open(png).convert("RGB")
+    sw, sh = src.size
+    spx = src.load()
+    bpx = back_img.load()
+    fpx = front_img.load()
+    mismatches = 0
+    for y in range(sh):
+        for x in range(sw):
+            got = fpx[x, y] if fpx[x, y] != TRANSPARENT else bpx[x, y]
+            if got != spx[x, y]:
+                mismatches += 1
+    if mismatches:
+        raise SystemExit(
+            f"8bpp convert not 1:1: {mismatches} pixels differ from PNG "
+            f"(layer split / pad bug)"
+        )
+    print("  exact PNG match OK (100%)")
+
+    collision = build_collision(rgb_for_collision, w_tiles, h_tiles)
+    w_chunks = w_tiles // CHUNK
+    h_chunks = h_tiles // CHUNK
+
+    out_stem.parent.mkdir(parents=True, exist_ok=True)
+    write_bpl_8bpp(Path(str(out_stem) + ".bpl"), colors)
+    write_bpc(
+        Path(str(out_stem) + "c.bpc"), tile_list, chunk_list, tile_bytes=64
+    )
+    write_bma(
+        Path(str(out_stem) + "m.bma"),
+        w_tiles,
+        h_tiles,
+        w_chunks,
+        h_chunks,
+        layer0_chunks,
+        layer1_chunks,
+        collision,
+    )
+
+    fg_chunks = sum(1 for c in layer0_chunks if c != 0)
+    walkable = sum(1 for b in collision if not b)
+    print(
+        f"wrote {out_stem.name}.bpl / {out_stem.name}c.bpc / {out_stem.name}m.bma — "
+        f"{len(tile_list)} 8bpp tiles, {len(chunk_list)} chunks, "
+        f"{w_tiles}x{h_tiles} camera, {walkable} walkable, "
+        f"{fg_chunks} FG chunks (layer0), {len(colors)} colors"
+    )
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("png", type=Path)
@@ -453,19 +1145,30 @@ def main() -> int:
         "--palettes",
         type=int,
         default=14,
-        help="Number of 16-color BG palettes (max 13 for normal town maps; "
-        "dual-layer café init allows 14)",
+        help="Number of 16-color BG palettes (4bpp only)",
     )
     ap.add_argument(
         "--max-width",
         type=int,
         default=520,
-        help="Max PNG width before tiling. Café 520×400 stays native; runtime "
-        "streams the visible tile set into the 1024-slot VRAM budget",
+        help="Max PNG width before tiling",
+    )
+    ap.add_argument(
+        "--bpp",
+        type=int,
+        choices=(4, 8),
+        default=8,
+        help="4 = multi-bank 4bpp (lossy); 8 = exact 256-color (café default)",
     )
     args = ap.parse_args()
     out = args.out_stem or (ROOT / "data" / "map_bg" / "T01P08")
-    convert(args.png, out, num_palettes=args.palettes, max_width=args.max_width)
+    convert(
+        args.png,
+        out,
+        num_palettes=args.palettes,
+        max_width=args.max_width,
+        bpp=args.bpp,
+    )
     return 0
 
 

@@ -8,21 +8,24 @@
 
 #define STREAM_MAX_SOURCE_TILES 2048
 #define STREAM_MAX_UPLOADS 256
-#define STREAM_VRAM_BASE (VRAM + 0x8000)
+#define STREAM_VRAM_BASE_4BPP (VRAM + 0x8000)
 
 static EWRAM_DATA bool8 sActive = FALSE;
 static EWRAM_DATA bool8 sPrimed = FALSE;
+static EWRAM_DATA u8 sBppMode = GROUND_STREAM_4BPP;
+static EWRAM_DATA u16 sTileBytes = 32;
+static EWRAM_DATA u32 sVramBase = STREAM_VRAM_BASE_4BPP;
 static EWRAM_DATA s16 sNumTiles = 0;      /* includes null tile 0 */
-static EWRAM_DATA s16 sVramSlots = 0;     /* unk6, typically 0x400 */
+static EWRAM_DATA s16 sVramSlots = 0;
 static EWRAM_DATA u8 *sTileGfx = NULL;    /* pointer to tile 1..N-1 gfx */
-static EWRAM_DATA void *sOwnedBase = NULL; /* MemoryFree this on Reset; may equal sTileGfx */
+static EWRAM_DATA void *sOwnedBase = NULL;
 static EWRAM_DATA u16 sSourceToSlot[STREAM_MAX_SOURCE_TILES];
 static EWRAM_DATA u16 sSlotToSource[1024];
 static EWRAM_DATA u16 sSlotStamp[1024];
-static EWRAM_DATA u32 sFreeBits[32];      /* bit N set ⇒ slot N is free */
+static EWRAM_DATA u32 sFreeBits[32];
 static EWRAM_DATA u16 sFreeCount = 0;
 static EWRAM_DATA u16 sClock = 1;
-static EWRAM_DATA u16 sOnScreenClock = 0; /* stamp of tiles in the displayed tilemap */
+static EWRAM_DATA u16 sOnScreenClock = 0;
 static EWRAM_DATA u16 sClockHand = 1;
 static EWRAM_DATA s16 sCachedTileX = -1;
 static EWRAM_DATA s16 sCachedTileY = -1;
@@ -39,6 +42,9 @@ void GroundBgTileStream_Reset(void)
     sTileGfx = NULL;
     sActive = FALSE;
     sPrimed = FALSE;
+    sBppMode = GROUND_STREAM_4BPP;
+    sTileBytes = 32;
+    sVramBase = STREAM_VRAM_BASE_4BPP;
     sNumTiles = 0;
     sVramSlots = 0;
     sFreeCount = 0;
@@ -57,6 +63,11 @@ void GroundBgTileStream_Reset(void)
 bool8 GroundBgTileStream_IsActive(void)
 {
     return sActive;
+}
+
+bool8 GroundBgTileStream_Is8bpp(void)
+{
+    return sActive && sBppMode == GROUND_STREAM_8BPP;
 }
 
 static void MarkFree(u16 slot)
@@ -90,13 +101,15 @@ static void BuildFreeList(s32 vramSlots)
 
 static void ClearVramPool(s32 vramSlots)
 {
-    CpuFill16(0, (void *)STREAM_VRAM_BASE, 32);
+    u32 tileBytes = sTileBytes;
+
+    CpuFill16(0, (void *)sVramBase, tileBytes);
     if (vramSlots > 1)
-        CpuFill16(0xFFFF, (void *)(STREAM_VRAM_BASE + 32), (vramSlots - 1) * 32);
+        CpuFill16(0xFFFF, (void *)(sVramBase + tileBytes), (vramSlots - 1) * tileBytes);
     BuildFreeList(vramSlots);
 }
 
-static bool8 ActivateStream(const u16 *tileData, s32 numTiles, s32 vramSlots, void *ownedBase)
+static bool8 ActivateStream(const u16 *tileData, s32 numTiles, s32 vramSlots, void *ownedBase, u8 bppMode)
 {
     GroundBgTileStream_Reset();
 
@@ -109,6 +122,18 @@ static bool8 ActivateStream(const u16 *tileData, s32 numTiles, s32 vramSlots, vo
     if (vramSlots > 1024)
         vramSlots = 1024;
 
+    sBppMode = bppMode;
+    if (bppMode == GROUND_STREAM_8BPP) {
+        sTileBytes = 64;
+        sVramBase = GROUND_STREAM_8BPP_VRAM_BASE;
+        if (vramSlots > GROUND_STREAM_8BPP_VRAM_SLOTS)
+            vramSlots = GROUND_STREAM_8BPP_VRAM_SLOTS;
+    }
+    else {
+        sTileBytes = 32;
+        sVramBase = STREAM_VRAM_BASE_4BPP;
+    }
+
     sOwnedBase = ownedBase;
     sTileGfx = (u8 *)tileData;
     sNumTiles = numTiles;
@@ -118,23 +143,24 @@ static bool8 ActivateStream(const u16 *tileData, s32 numTiles, s32 vramSlots, vo
     return TRUE;
 }
 
-bool8 GroundBgTileStream_InstallOwned(void *ownedBase, const u16 *tileData, s32 numTiles, s32 vramSlots)
+bool8 GroundBgTileStream_InstallOwned(void *ownedBase, const u16 *tileData, s32 numTiles, s32 vramSlots, u8 bppMode)
 {
     if (ownedBase == NULL)
         FATAL_ERROR("ground tile stream: null owned buffer");
-    return ActivateStream(tileData, numTiles, vramSlots, ownedBase);
+    return ActivateStream(tileData, numTiles, vramSlots, ownedBase, bppMode);
 }
 
-bool8 GroundBgTileStream_InstallRom(const u16 *tileData, s32 numTiles, s32 vramSlots)
+bool8 GroundBgTileStream_InstallRom(const u16 *tileData, s32 numTiles, s32 vramSlots, u8 bppMode)
 {
-    return ActivateStream(tileData, numTiles, vramSlots, NULL);
+    return ActivateStream(tileData, numTiles, vramSlots, NULL, bppMode);
 }
 
-bool8 GroundBgTileStream_Install(const u16 *tileData, s32 numTiles, s32 vramSlots)
+bool8 GroundBgTileStream_Install(const u16 *tileData, s32 numTiles, s32 vramSlots, u8 bppMode)
 {
     s32 dataTiles;
     s32 bytes;
     void *owned;
+    u16 tileBytes = (bppMode == GROUND_STREAM_8BPP) ? 64 : 32;
 
     if (numTiles <= vramSlots || numTiles <= 1) {
         GroundBgTileStream_Reset();
@@ -146,13 +172,13 @@ bool8 GroundBgTileStream_Install(const u16 *tileData, s32 numTiles, s32 vramSlot
         vramSlots = 1024;
 
     dataTiles = numTiles - 1;
-    bytes = dataTiles * 32;
+    bytes = dataTiles * tileBytes;
     owned = MemoryAlloc(bytes, MEMALLOC_GROUP_6);
     if (owned == NULL)
         FATAL_ERROR("ground tile stream: alloc failed");
 
     CpuCopy(owned, tileData, bytes);
-    return GroundBgTileStream_InstallOwned(owned, owned, numTiles, vramSlots);
+    return GroundBgTileStream_InstallOwned(owned, owned, numTiles, vramSlots, bppMode);
 }
 
 bool8 GroundBgTileStream_NeedsRebuild(GroundBg *groundBg)
@@ -179,10 +205,9 @@ static void QueueUpload(u16 sourceId, u16 slot)
         sUploadCount++;
         return;
     }
-    /* Rare overflow: write immediately (may hitch, but keeps correctness). */
-    CpuFastCopy(sTileGfx + (sourceId - 1) * 32,
-                (void *)(STREAM_VRAM_BASE + slot * 32),
-                32);
+    CpuFastCopy(sTileGfx + (sourceId - 1) * sTileBytes,
+                (void *)(sVramBase + slot * sTileBytes),
+                sTileBytes);
 }
 
 void GroundBgTileStream_FlushUploads(void)
@@ -196,12 +221,11 @@ void GroundBgTileStream_FlushUploads(void)
         u16 sourceId = sUploadSource[i];
         u16 slot = sUploadSlot[i];
 
-        CpuFastCopy(sTileGfx + (sourceId - 1) * 32,
-                    (void *)(STREAM_VRAM_BASE + slot * 32),
-                    32);
+        CpuFastCopy(sTileGfx + (sourceId - 1) * sTileBytes,
+                    (void *)(sVramBase + slot * sTileBytes),
+                    sTileBytes);
     }
     sUploadCount = 0;
-    /* Tilemap DMA follows in DoScheduledMemCopies — these stamps are now on-screen. */
     sOnScreenClock = sClock;
 }
 
@@ -243,7 +267,6 @@ static u16 AllocSlot(void)
     if (freeSlot != 0)
         return freeSlot;
 
-    /* Prefer slots not in the currently displayed tilemap and not in this rebuild. */
     limit = (u16)sVramSlots;
     for (scanned = 1; scanned < limit; scanned++) {
         slot = sClockHand;
@@ -260,7 +283,6 @@ static u16 AllocSlot(void)
         }
     }
 
-    /* Fallback: steal a non-current slot even if it is on-screen (should be rare). */
     for (scanned = 1; scanned < limit; scanned++) {
         slot = sClockHand;
         if (++sClockHand >= limit)
