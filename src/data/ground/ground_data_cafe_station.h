@@ -78,25 +78,39 @@ static const struct ScriptCommand s_gs229_g1_s0_lives2_dlg2[] = {
     JUMP_SCRIPT(END_TALK),
 };
 
-/* Player / partner near base of entrance stairs (just above exit row), facing north */
+/* Player / partner at top of entrance stairs (café floor landing), facing north */
 static const struct GroundLivesData s_gs229_g0_s1_lives[] = {
-    /*  0 */ {   0,   4,   0,   0, {  21,  31, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  0 */ {   0,   4,   0,   0, {  21,  27, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs229_g0_s1_lives0_dlg0,
     } },
-    /*  1 */ {   4,   4,   0,   0, {  23,  31, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  1 */ {   4,   4,   0,   0, {  23,  27, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs229_g0_s1_lives1_dlg0,
     } },
 };
 
-/* Spinda (left bar), Wynaut+Wobbuffet (right bar) — behind desks, face south */
+/* Spinda (left bar), Wynaut+Wobbuffet (right bar) — on fascia, face south.
+ * Counter solid through y=15; talk hits kind-4 proxies there. */
 static const struct GroundLivesData s_gs229_g1_s0_lives[] = {
-    /*  0 */ { 115,   0,   0,   0, {  13,   8, 0, CPOS_HALFTILE }, {
+    /*  0 */ { 115,   0,   0,   0, {  14,  12, 0, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives0_dlg2,
     } },
-    /*  1 */ { 109,   0,   0,   0, {  31,   8, 0, CPOS_HALFTILE }, {
+    /*  1 */ { 109,   0,   0,   0, {  29,  12, 0, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives1_dlg2,
     } },
-    /*  2 */ { 110,   0,   0,   0, {  34,   8, 0, CPOS_HALFTILE }, {
+    /*  2 */ { 110,   0,   0,   0, {  31,  12, 0, CPOS_HALFTILE }, {
+        [2] = s_gs229_g1_s0_lives2_dlg2,
+    } },
+};
+
+/* Invisible talk zones on solid y=15 so A works from player y=16 (kind 4 = no sprite). */
+static const struct GroundObjectData s_gs229_g1_s0_objs[] = {
+    /*  0 */ {   4,   0,   5,   1, {  14,  15, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [2] = s_gs229_g1_s0_lives0_dlg2,
+    } },
+    /*  1 */ {   4,   0,   3,   1, {  29,  15, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [2] = s_gs229_g1_s0_lives1_dlg2,
+    } },
+    /*  2 */ {   4,   0,   3,   1, {  31,  15, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives2_dlg2,
     } },
 };
@@ -116,7 +130,7 @@ static const struct GroundScriptSector s_gs229_g0_sectors[] = {
 };
 
 static const struct GroundScriptSector s_gs229_g1_sectors[] = {
-    { LPARRAY(s_gs229_g1_s0_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs229_g1_s0_lives), LPARRAY(s_gs229_g1_s0_objs), 0,NULL, 0,NULL, 0,NULL, },
 };
 
 static const struct GroundScriptGroup s_gs229_groups[] = {

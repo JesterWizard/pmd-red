@@ -85,7 +85,8 @@ DUNGEONJSON := tools/dungeonjson/dungeonjson
 
 PERL := perl
 
-TOOLDIRS := $(filter-out tools/agbcc/ tools/binutils/,$(wildcard tools/*/))
+# Only real tool packages (dirs with a Makefile). Skips e.g. tools/__pycache__/.
+TOOLDIRS := $(foreach d,$(filter-out tools/agbcc/ tools/binutils/,$(wildcard tools/*/)),$(if $(wildcard $(d)Makefile),$(d)))
 TOOLBASE = $(TOOLDIRS:tools/%/=%)
 TOOLS = $(foreach tool,$(TOOLBASE),tools/$(tool)/$(tool)$(EXE))
 

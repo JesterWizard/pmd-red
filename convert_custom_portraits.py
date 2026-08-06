@@ -241,11 +241,17 @@ def write_palette(path: Path, palette: list[tuple[int, int, int]]) -> None:
 
 
 def convert_png(png: Path) -> bool:
+    pal = png.with_suffix(".pal")
+    at4 = png.with_suffix(".at4px")
+    if pal.exists() and at4.exists():
+        src_mtime = png.stat().st_mtime
+        if pal.stat().st_mtime >= src_mtime and at4.stat().st_mtime >= src_mtime:
+            return False
     im = Image.open(png)
     palette, pixels = quantize_portrait(im)
     tiles = encode_4bpp_tiles(pixels)
-    write_palette(png.with_suffix(".pal"), palette)
-    png.with_suffix(".at4px").write_bytes(compress_at4px(tiles))
+    write_palette(pal, palette)
+    at4.write_bytes(compress_at4px(tiles))
     # Drop legacy uncompressed outputs if present
     legacy = png.with_suffix(".at4pn")
     if legacy.exists():
@@ -344,8 +350,27 @@ def generate_c(species_emotions: dict[str, list[str]]) -> None:
     lines.append("};")
     lines.append("")
 
-    GEN_C.write_text("\n".join(lines))
+    text = "\n".join(lines)
+    if GEN_C.exists() and GEN_C.read_text() == text:
+        return False
+    GEN_C.write_text(text)
     print(f"wrote {GEN_C.relative_to(ROOT)}")
+    return True
+
+
+def stamp_inputs_fresh(stamp: Path) -> bool:
+    """True when stamp is newer than portrait PNGs and generated C already exists."""
+    if not stamp.exists() or not GEN_C.exists():
+        return False
+    stamp_mtime = stamp.stat().st_mtime
+    if Path(__file__).stat().st_mtime > stamp_mtime:
+        return False
+    if not OUT_DIR.exists():
+        return False
+    for png in OUT_DIR.rglob("*.png"):
+        if png.stat().st_mtime > stamp_mtime:
+            return False
+    return True
 
 
 def main() -> int:
@@ -364,6 +389,8 @@ def main() -> int:
 
     if args.stamp and not (args.fetch or args.convert or args.generate):
         # Makefile rebuild path: convert + generate only
+        if stamp_inputs_fresh(args.stamp):
+            return 0
         args.convert = args.generate = True
 
     if args.fetch or args.force_fetch:
@@ -373,6 +400,7 @@ def main() -> int:
                 print(f"fetched {folder} (#{dex}): {n} emotions")
 
     species_emotions: dict[str, list[str]] = {}
+    converted_any = False
     for sid, folder, _dex in EVOLVED_FORMS:
         dest = OUT_DIR / folder
         emos: list[str] = []
@@ -381,17 +409,18 @@ def main() -> int:
             if not png.exists():
                 continue
             if args.convert:
-                convert_png(png)
+                converted_any = convert_png(png) or converted_any
             elif not (png.with_suffix(".pal").exists() and png.with_suffix(".at4px").exists()):
-                convert_png(png)
+                converted_any = convert_png(png) or converted_any
             emos.append(game_name)
         if emos:
             species_emotions[folder] = emos
             if not args.quiet and args.convert:
                 print(f"converted {folder}: {len(emos)} emotions")
 
+    wrote_c = False
     if args.generate or args.convert or args.fetch:
-        generate_c(species_emotions)
+        wrote_c = generate_c(species_emotions)
 
     if args.stamp:
         args.stamp.parent.mkdir(parents=True, exist_ok=True)

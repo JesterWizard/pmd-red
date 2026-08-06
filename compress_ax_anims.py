@@ -272,6 +272,23 @@ def main() -> None:
     if not GBAGFX.exists():
         raise SystemExit(f"{GBAGFX} missing; build tools/gbagfx first")
 
+    # Incremental make: stamp newer than all anim sources ⇒ nothing to do.
+    if (
+        args.stamp is not None
+        and not args.force
+        and not args.only
+        and args.stamp.exists()
+    ):
+        stamp_mtime = args.stamp.stat().st_mtime
+        newest = 0.0
+        for p in AX_DIR.glob("*.h"):
+            newest = max(newest, p.stat().st_mtime)
+        for p in (SHARED_C, SHARED_H, Path(__file__)):
+            if p.exists():
+                newest = max(newest, p.stat().st_mtime)
+        if newest <= stamp_mtime:
+            return
+
     total_c = total_s = total_r = 0
     shared_compressed: set[str] = set()
 

@@ -1610,7 +1610,8 @@ const GroundConversionStruct gGroundMapConversionTable[MAP_COUNT] = {
         .text = _("__ground_amd_conversion_00240"),
     },
     [MAP_SPINDA_CAFE] = {
-        .unk0 = 2,
+        /* unk0=6: dual BG layers; sprites sit between BG2 (bars) and BG3 (room) */
+        .unk0 = 6,
         .groundPlaceId = GROUND_PLACE_SPINDA_CAFE,
         .mapFileTableId = MAP_FILE_ID_SPINDA_CAFE,
         .unk6 = -1,
