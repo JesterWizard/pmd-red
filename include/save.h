@@ -26,7 +26,7 @@ enum
     READ_SAVE_CHECKSUM_ERROR
 };
 
-// size: 0x594C (unk448 grown for STORAGE_SIZE 480 + achievements chunk)
+// size: 0x5E4C (unk448 grown for 64-bit IQ save + STORAGE_SIZE 480 + achievements)
 struct UnkStruct_sub_8011DAC
 {
     u8 fill000[0x4];
@@ -46,7 +46,7 @@ struct UnkStruct_sub_8011DAC
     u32 unk440;
     u32 savedMailInfo;
     u32 savedAchievements;
-    u8 unk448[0x5500];
+    u8 unk448[0x5A00];
 };
 
 // size: 0x5C

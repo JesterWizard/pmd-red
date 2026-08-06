@@ -314,7 +314,7 @@ Flag capacity is **64 bits** (`NUM_PICKED_IQ_SKILLS == 8`). Bit helpers use skil
 
 ## Limitations
 
-- Expanding flags from 24 → 64 bits changes save layout for `Pokemon.IQSkills` (not bit-compatible with vanilla saves).
+- Expanding flags from 24 → 64 bits changes save layout for `Pokemon.IQSkills` (not bit-compatible with vanilla or pre-64-bit-IQ hack saves). The recruited-Pokémon save chunk is `RECRUITED_POKEMON_SAVE_SIZE` (`0x4B00`, was vanilla `0x4650`) so the bit stream fits; saves written while that chunk was still `0x4650` with 64-bit IQ are corrupted — use **New Game** (or a save from before the 64-bit expand).
 - Effects remain hand-written hooks (no central effect callback table).
 - Conserver uses minimum estimated damage (conservative); misses / Wonder Guard / special handlers can still fail to KO.
 - Conserver is not auto-enabled for wild Pokémon (team / IQ menu only).

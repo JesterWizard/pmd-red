@@ -217,11 +217,11 @@ u32 ReadSaveFromPak(u32 *a)
     }
     if (!saveStatus)
     {
-        r1 = RestoreRecruitedPokemon(r4, 0x4650);
+        r1 = RestoreRecruitedPokemon(r4, RECRUITED_POKEMON_SAVE_SIZE);
         if (r1 != playerSave->savedRecruitedPokemon) {
             saveStatus = 3;
         }
-        r4 += 0x4650;
+        r4 += RECRUITED_POKEMON_SAVE_SIZE;
         r1 = RestorePoke2s(r4, 150 * 4);
         if (r1 != playerSave->unk428) {
             saveStatus = 3;
@@ -343,8 +343,8 @@ u32 WriteSavetoPak(s32 *param_1, u32 param_2)
     MemoryCopy8(playerSave->unk004,gUnknown_203B184->unk04C,ARRAY_COUNT(playerSave->unk004));
   }
 
-  playerSave->savedRecruitedPokemon = SaveRecruitedPokemon(array_ptr,0x4650);
-  array_ptr += 0x4650;
+  playerSave->savedRecruitedPokemon = SaveRecruitedPokemon(array_ptr, RECRUITED_POKEMON_SAVE_SIZE);
+  array_ptr += RECRUITED_POKEMON_SAVE_SIZE;
   playerSave->unk428 = SavePoke2s(array_ptr, 150 * 4);
   array_ptr += 150 * 4;
   playerSave->savedTeamInventory = SaveTeamInventory(array_ptr, TEAM_INVENTORY_SAVE_SIZE);

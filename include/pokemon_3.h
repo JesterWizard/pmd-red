@@ -29,6 +29,12 @@ bool8 IsIQSkillSet(IqSkillFlags *iq, u32 skillIndex);
 void sub_808ED00(void);
 s32 SaveRecruitedPokemon(u8 *a1, s32 a2);
 s32 RestoreRecruitedPokemon(u8 *a1, s32 a2);
+
+/* Bit-packed recruited Pokémon blob in the save pak.
+ * Vanilla was 0x4650 (~24 IQ flag bits). 64-bit IQ flags need ~0x49F8;
+ * 0x4B00 leaves headroom. Must stay in sync with save.c / UnkStruct_sub_8011DAC. */
+#define RECRUITED_POKEMON_SAVE_SIZE 0x4B00
+
 void WritePoke1Bits(DataSerializer *, Pokemon *pokemon);
 void ReadPoke1Bits(DataSerializer *, Pokemon *);
 s32 SavePoke2s(u8* buffer, s32 size);

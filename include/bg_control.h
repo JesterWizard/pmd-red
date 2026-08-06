@@ -36,5 +36,6 @@ void SetBGOBJEnableFlags(u32);
 void SetBldAlphaReg(s32, s32);
 void sub_800CD64(s32, bool8);
 void SetTitleBg8bpp(bool8 enabled);
+void ClearTitleBgMapsForGround(void);
 
 #endif // GUARD_BG_CONTROL_H

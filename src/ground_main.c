@@ -6,6 +6,7 @@
 #include "structs/str_dungeon_setup.h"
 #include "adventure_info.h"
 #include "achievements.h"
+#include "bg_control.h"
 #include "window_buffer.h"
 #include "code_800C9CC.h"
 #include "code_8094F88.h"
@@ -310,7 +311,17 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
         else {
             GroundMap_ExecuteEvent(EVENT_DIVIDE, FALSE);
         }
-        GroundMap_Action();
+        /* Keep BG2/BG3 hidden (set at title exit) until SELECT_MAP has run. */
+        {
+            s32 mapWait;
+
+            for (mapWait = 0; mapWait < 64; mapWait++) {
+                GroundMap_Action();
+                if (GetGroundMapID() != -1)
+                    break;
+            }
+        }
+        SetBGOBJEnableFlags(0);
         CopyWindowBgBuffer(NULL, COPY_WINDOW_BG_BUFFER_WIN0);
         ToggleWindowBgBuffer();
         xxx_call_update_bg_sound_input();

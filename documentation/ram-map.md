@@ -33,3 +33,17 @@ IWRAM above `0x03007F00` is stacks + `SOUND_INFO_PTR` / `INTR_*` — do not allo
 - **Save bus `0x0E000000`:** flash sectors via `ReadFlashData` / `WriteFlashData` — not cart SRAM/EEPROM.
 
 Vanilla symbols already linked from C are documented with `REF_DATA` / pool comments only (not re-exported). Only `Free*` markers and `_kernel_malloc*` allocations are new globals for hacks.
+
+## EWRAM savings idea: shared menu work pointers
+
+Most UI already `MemoryAlloc`s its work struct and frees it on exit, but each file still keeps a permanent `EWRAM_INIT Type *work = { NULL }` (4 bytes). Menus that cannot run at the same time could share a small pool:
+
+```c
+EWRAM_INIT void *gMenuWork[4] = { NULL };
+#define MENU_WORK(type, slot) (*(type **)&gMenuWork[slot])
+```
+
+Typical slot layout: 0 = root shop/storage, 1 = first nested list, 2 = second nested (e.g. item description). Cursor-restore scalars (`u16` last index) must stay file-local.
+
+**Caveat:** do not put `kecleon_bros4` (`sub_801A5D8`) on a shared slot without changing its init. It does `if (ptr == NULL) ptr = MemoryAlloc(...)` and **reuses** a non-NULL pointer — safe when the pointer is private, but on a shared slot it will reinterpret another menu’s live (or stale) allocation as its own struct and corrupt heap/VRAM. A first-pass pool that shared that slot was reverted after Continue → house graphics corruption.
+

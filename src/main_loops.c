@@ -246,6 +246,11 @@ void GameLoop_Async(void)
 
         CloseFile(sTitlePaletteFile);
         SetTitleBg8bpp(FALSE);
+        ClearTitleBgMapsForGround();
+        /* Hide BG2/BG3 until ground SELECT_MAP rebuilds them — otherwise one
+         * frame can show title tilemap indices over new CHARBASE2 tiles. */
+        SetBGOBJEnableFlags(0xC);
+        MainLoops_RunFrameActions(0);
 
         switch (nextMenu) {
             case 2: {

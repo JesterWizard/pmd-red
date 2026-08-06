@@ -36,7 +36,7 @@ Toggle: `gRuntimeConfig.custom_title_backgrounds` in [`configs/runtime.c`](../..
 2. Decompress AT4PN → heap: two 32×32 tilemaps + 8bpp tile bytes.
 3. Enable title-only VRAM layout (`SetTitleBg8bpp(TRUE)`), copy tiles, schedule tilemap DMA.
 4. Fade in the 240-entry palette; main menu runs as usual (Continue stats, Adventure Log, etc.).
-5. On title exit, `SetTitleBg8bpp(FALSE)` restores vanilla BG control.
+5. On title exit, `SetTitleBg8bpp(FALSE)` then `ClearTitleBgMapsForGround()` so stale BG2/BG3 title maps cannot overlay the house.
 
 ### Title-only VRAM layout
 
@@ -132,7 +132,8 @@ Set `.custom_title_backgrounds = FALSE` in `configs/runtime.c`. No need to delet
 
 - **600-tile cap** (CHARBASE1 from index 128 through `0xF5FF`). Images that exceed it are similarity-merged and can show soft 8×8 mismatches.
 - **Palette 0–239** for art (index 0 transparent); **240–255** font/UI. Continue legendary icons load into the **OBJ palette** (buffer 256+) and draw as sprites when custom title 8bpp is on, so they do not clash with the title art.
-- Title 8bpp layout is **title-screen only**. Leaving `gTitleBg8bpp` set outside that path will mis-place maps and break UI.
+- Title 8bpp layout is **title-screen only**. Leaving `gTitleBg8bpp` set outside that path will mis-place maps and break UI. After the title fade, `ClearTitleBgMapsForGround()` clears BG2/BG3 maps and publishes empty maps to vanilla SB 14–15 (house maps often only rebuild BG3; stale BG2 title indices over new CHARBASE2 tiles look like garbage).
+- If Continue → house is black, map palettes may still be at brightness 0 after the title fade-to-black; ground snaps brightness after the first map-script tick.
 - Vanilla `titlen*` path is unchanged and still uses CHARBASE2 / screenbase 15.
 - Generated `.at4pn` / `.pal` should be treated as build outputs; edit the PNGs, not the binaries.
 

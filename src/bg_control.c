@@ -1,5 +1,7 @@
 #include "global.h"
 #include "bg_control.h"
+#include "cpu.h"
+#include "text_1.h"
 
 EWRAM_DATA BGControlStruct gBG0Control = {0};
 EWRAM_DATA BGControlStruct gBG1Control = {0};
@@ -113,6 +115,22 @@ void sub_800CD64(s32 r0, bool8 r1)
 void SetTitleBg8bpp(bool8 enabled)
 {
     gTitleBg8bpp = enabled;
+}
+
+/* Call after leaving the title screen (gTitleBg8bpp already FALSE). Title art
+ * lives on BG2/BG3; house maps typically only rebuild BG3 (unkA==1). Stale BG2
+ * tilemaps keep indexing into CHARBASE2 after map tiles replace title tiles →
+ * garbage flash. Clear software maps and both title-8bpp + vanilla screenbases. */
+void ClearTitleBgMapsForGround(void)
+{
+    CpuClear(gBgTilemaps[2], BG_SCREEN_SIZE);
+    CpuClear(gBgTilemaps[3], BG_SCREEN_SIZE);
+    /* Title 8bpp layout (may still be what the last frame scanned). */
+    CpuCopy(BG_SCREEN_ADDR(8), gBgTilemaps[2], BG_SCREEN_SIZE);
+    CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
+    /* Vanilla ground layout. */
+    CpuCopy(BG_SCREEN_ADDR(14), gBgTilemaps[2], BG_SCREEN_SIZE);
+    CpuCopy(BG_SCREEN_ADDR(15), gBgTilemaps[3], BG_SCREEN_SIZE);
 }
 
 void SetBGOBJEnableFlags(u32 mask)
