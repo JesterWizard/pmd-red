@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "dungeon_action.h"
 #include "constants/dungeon_action.h"
 #include "dungeon_ai.h"
@@ -210,17 +211,19 @@ void sub_8044E24(Entity *entity,s32 index,u32 unused)
   info = GetEntInfo(entity);
   if (!IsHMItem(itemPtr->id)) {
     if (GetItemCategory(itemPtr->id) == CATEGORY_TMS_HMS) {
-      if (info->action.actionParameters[index].actionUseIndex == 0x80) {
-        item = *itemPtr;
-        pos = &info->action.actionParameters[index].itemPos;
-        RemoveGroundItem(pos,1);
-        item.quantity = itemPtr->id - 125;
-        item.id = ITEM_TM_USED_TM;
-        SpawnItem(pos,&item,1);
-      }
-      else {
-        itemPtr->quantity = itemPtr->id - 125;
-        itemPtr->id = ITEM_TM_USED_TM;
+      if (!gRuntimeConfig.infinite_tms) {
+        if (info->action.actionParameters[index].actionUseIndex == 0x80) {
+          item = *itemPtr;
+          pos = &info->action.actionParameters[index].itemPos;
+          RemoveGroundItem(pos,1);
+          item.quantity = itemPtr->id - 125;
+          item.id = ITEM_TM_USED_TM;
+          SpawnItem(pos,&item,1);
+        }
+        else {
+          itemPtr->quantity = itemPtr->id - 125;
+          itemPtr->id = ITEM_TM_USED_TM;
+        }
       }
     }
     else {

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "runtime.h"
 #include "music_util.h"
 #include "string_format.h"
 #include "code_801AFA4.h"
@@ -90,7 +91,7 @@ static void sub_801B080(void)
             break;
         case 2:
             sub_8094060(sUnknown_203B22C->moves, sUnknown_203B22C->pokeStruct->moves);
-            if (!IsHMItem(sUnknown_203B22C->id)) {
+            if (!IsHMItem(sUnknown_203B22C->id) && !gRuntimeConfig.infinite_tms) {
                 gTeamInventoryRef->teamItems[sUnknown_203B22C->teamItemIndex].quantity = sUnknown_203B22C->id - 125;
                 gTeamInventoryRef->teamItems[sUnknown_203B22C->teamItemIndex].id = ITEM_TM_USED_TM;
             }

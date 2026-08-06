@@ -83,6 +83,8 @@ typedef struct {
     u8 spinda_cafe;
     /* Keep at least one of every gummi type in Kangaskhan storage */
     u8 perpetual_gummis;
+    /* TMs stay usable after teaching (else convert to Used TM) */
+    u8 infinite_tms;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;
