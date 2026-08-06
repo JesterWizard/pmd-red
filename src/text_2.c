@@ -53,6 +53,66 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
     u32 r4;
     u32 r2;
 
+    /* Custom coin: merge into window tiles; empty = BG transparent. */
+    if (IsCustomPokeCoinChar(chr)) {
+        if (chr == POKE_COIN_CHR_RIGHT)
+            return 0;
+
+        {
+            s32 alignedX = (x + 7) & ~7;
+            s32 alignedY = y & ~7;
+            /* Nudge art 4px left / 1px up vs the tile-aligned block. */
+            s32 blitX = alignedX - 8;
+            s32 blitY = alignedY;
+            s32 ox = 4; /* 8 - 4 */
+            s32 oy = (y - alignedY) - 1;
+            u32 baseTiles[32];
+            const u32 *coinTiles;
+            Window *win = window;
+            s32 tileX, tileY, ty, tx, row;
+            bool8 haveBase = FALSE;
+
+            if (blitX < 0) {
+                blitX = 0;
+                ox = alignedX - 4;
+                if (ox < 0)
+                    ox = 0;
+            }
+            if (oy < 0) {
+                blitY -= 8;
+                oy += 8;
+                if (blitY < 0) {
+                    blitY = 0;
+                    oy = 0;
+                }
+            }
+
+            tileX = blitX / 8;
+            tileY = blitY / 8;
+            if (tileX >= 0 && tileY >= 0
+                && tileX + 1 < win->width && tileY + 1 < win->totalHeight) {
+                u32 *dst = baseTiles;
+                for (ty = 0; ty < 2; ty++) {
+                    for (tx = 0; tx < 2; tx++) {
+                        u32 *gfx = &win->winGFX[(win->width * (tileY + ty) + (tileX + tx)) * 8];
+                        for (row = 0; row < 8; row++)
+                            *dst++ = gfx[row];
+                    }
+                }
+                haveBase = TRUE;
+            }
+
+            coinTiles = BuildPokeCoinBlit(haveBase ? baseTiles : NULL, ox, oy);
+            if (coinTiles != NULL) {
+                ApplyCustomPokeCoinPalette();
+                WriteGFXToBG0Window(windowId, blitX, blitY, POKE_COIN_SIZE, POKE_COIN_SIZE,
+                                    (u32 *)coinTiles, POKE_COIN_PAL_BANK);
+                gUnknown_20274A5 = TRUE;
+                return (blitX + POKE_COIN_SIZE) - x + gCharacterSpacing;
+            }
+        }
+    }
+
     if (gCurrentCharmap == 1) {
         if (chr == 0x70 || chr == 0x6A || chr == 0x71 || chr == 0x79 || chr == 0x67)
             y += 2;
@@ -881,6 +941,11 @@ const unkChar *GetCharacter(s32 chr)
             ret = &gUnknown_80B86A4;
 
     }
+
+    custom = GetRemappedIconChar(chr, ret);
+    if (custom != NULL)
+        return custom;
+
     return ret;
 }
 

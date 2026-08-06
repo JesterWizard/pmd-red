@@ -23,7 +23,9 @@ typedef struct {
     u8 l_to_use_move;         /* Use set move with L alone (vs vanilla L+A) */
     /* PMD2-style dungeon battle log colors:
      * leader = light blue, allies = yellow, enemies = cyan,
-     * exp / level-up stat gain numbers = cyan */
+     * exp / level-up stat gain numbers = cyan,
+     * obtained / dungeon item names = cream pink,
+     * obtained money amounts = cyan */
     u8 pmd2_battle_info_colors;
     /* PMD2 Poké coin glyph + cyan money amount in dungeon HUD */
     u8 custom_graphics;

@@ -543,6 +543,8 @@ static s32 InterpretColorChar(u8 a0)
             return 6;
         case 'W':
             return 2;
+        case 'P': /* PMD2 item pink (slot 11); letter form avoids control-byte issues */
+            return 11;
 
     }
     return 7;

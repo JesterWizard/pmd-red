@@ -579,6 +579,7 @@ WHITE_F = 46 @ F - unused
 DARKER_GRAY = 38 @ 8 - unused
 DARK_GRAY = 39 @ 9 - unused
 GENDER_COLOR = 45 @ E - color 15
+PINK = 50 @ P — PMD2 item light pink (palette index 11)
 COLOR15_S = 53 @ S - color 15 - unused
 COLOR15_T = 54 @ T - color 15 - unused
 

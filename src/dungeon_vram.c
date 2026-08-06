@@ -26,6 +26,7 @@
 #include "dungeon_range.h"
 #include "dungeon_util.h"
 #include "dungeon_pokemon_sprites.h"
+#include "custom_graphics.h"
 #include "menu_input.h"
 #include "confirm_name_menu.h"
 #include "dungeon_tilemap.h"
@@ -397,6 +398,8 @@ void sub_803E874(bool8 r10, s32 r9)
     }
 
     SetBGPaletteBufferColorRGB(248, &gFontPalette[8], gDungeonBrightness, NULL);
+    /* Bank 12 was just rewritten from gUnknown_202ECA4; restore coin gold. */
+    ApplyCustomPokeCoinPalette();
 
     color = ((struct DungeonPalFile*) gDungeon->paletFile)->unk4;
     index = 256;
@@ -454,6 +457,7 @@ void sub_803EA10(void)
     }
 
     SetBGPaletteBufferColorRGB(248, &gFontPalette[8], gDungeonBrightness, NULL);
+    ApplyCustomPokeCoinPalette();
 }
 
 static const WindowTemplates gUnknown_80F62B0 =

@@ -28,6 +28,8 @@
 #include "structs/str_item_text.h"
 #include "dungeon_vram.h"
 #include "sprite.h"
+#include "runtime.h"
+#include "constants/colors.h"
 
 static void MusicBoxCreation_Async(void);
 static bool8 sub_8046D70(void);
@@ -44,12 +46,36 @@ static const struct unkStruct_8090F58 gUnknown_80F69A8 = {0, 0, 0, 0, 0};
 
 void sub_8045BF8(u8 *buffer, Item *item)
 {
-    sub_8090E14(buffer, item, &gUnknown_80F699C);
+    if (gRuntimeConfig.pmd2_battle_info_colors) {
+        /* PMD2: money amounts cyan; other item names light pink.
+         * Use {COLOR PINK} (letter), not raw index 11/13 — 13 is '\\r' and breaks text. */
+        if (item->id == ITEM_POKE) {
+            sprintfStatic(buffer, _("{color}%c%d{reset} {POKE}"), COLOR_CYAN, GetMoneyValue(item));
+        } else {
+            u8 nameBuf[FORMAT_BUFFER_LEN];
+
+            sub_8090E14(nameBuf, item, &gUnknown_80F699C);
+            sprintfStatic(buffer, _("{COLOR PINK}%s{RESET}"), nameBuf);
+        }
+    } else {
+        sub_8090E14(buffer, item, &gUnknown_80F699C);
+    }
 }
 
 void sub_8045C08(u8 *buffer, Item *item)
 {
-    sub_8090E14(buffer, item, &gUnknown_80F69A8);
+    if (gRuntimeConfig.pmd2_battle_info_colors) {
+        if (item->id == ITEM_POKE) {
+            sprintfStatic(buffer, _("{color}%c%d{reset} {POKE}"), COLOR_CYAN, GetMoneyValue(item));
+        } else {
+            u8 nameBuf[FORMAT_BUFFER_LEN];
+
+            sub_8090E14(nameBuf, item, &gUnknown_80F69A8);
+            sprintfStatic(buffer, _("{COLOR PINK}%s{RESET}"), nameBuf);
+        }
+    } else {
+        sub_8090E14(buffer, item, &gUnknown_80F69A8);
+    }
 }
 
 void sub_8045C18(u8 *buffer, Item *item)

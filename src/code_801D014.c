@@ -37,6 +37,9 @@
 #define RANK_ICON_W 16
 #define RANK_ICON_H 16
 #define RANK_ICON_4BPP_LEN (RANK_ICON_W * RANK_ICON_H / 8)
+/* Bank 13 — coin uses bank 12; bank 14 is dungeon minimap. */
+#define RANK_ICON_PAL_BANK 13
+#define RANK_ICON_PAL_INDEX (RANK_ICON_PAL_BANK * 16)
 
 // size: 0x8
 struct TeamBadgeData
@@ -622,12 +625,12 @@ static void LoadTeamRankBadge(u32 winID, u32 x, u32 y)
     pal = TMRKPAT_DATA->palette;
 
     for (i = 0; i < 16; i++) {
-        SetBGPaletteBufferColorArray(i + 0xE0, pal);
+        SetBGPaletteBufferColorArray(i + RANK_ICON_PAL_INDEX, pal);
         pal++;
     }
 
     gfx = &gfx[GetRescueTeamRank() * RANK_ICON_4BPP_LEN];
-    WriteGFXToBG0Window(winID, x, y, RANK_ICON_W, RANK_ICON_H, gfx, 14);
+    WriteGFXToBG0Window(winID, x, y, RANK_ICON_W, RANK_ICON_H, gfx, RANK_ICON_PAL_BANK);
 
 #undef TMRKPAT_DATA
     CloseFile(teamBadgeFile);
