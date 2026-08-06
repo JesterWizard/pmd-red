@@ -214,8 +214,17 @@ def process_file(
     )
     new_text = wrap_anim_ptrs(new_text, all_names | shared_names)
 
-    if not new_text.startswith("/* ax-anim-lz"):
-        banner = "/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */\n"
+    # Only insert the banner once. Deduped headers start with /* ax-table-deduped,
+    # so startswith("/* ax-anim-lz") is false forever and used to append a new
+    # banner (and rewrite the file) on every make → all monster_gfx*.o rebuild.
+    banner = "/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */\n"
+    # Collapse duplicates left by older buggy runs.
+    while True:
+        collapsed = new_text.replace(banner + banner, banner)
+        if collapsed == new_text:
+            break
+        new_text = collapsed
+    if banner not in new_text:
         if new_text.startswith("/* ax-table-deduped"):
             nl = new_text.find("\n") + 1
             new_text = new_text[:nl] + banner + new_text[nl:]
@@ -232,18 +241,20 @@ def rewrite_shared_header(compressed_names: set[str]) -> None:
     if not SHARED_H.exists() or not compressed_names:
         return
     text = SHARED_H.read_text()
+    new_text = text
     for name in compressed_names:
-        text = re.sub(
+        new_text = re.sub(
             rf"extern const ax_anim {name}\[\]\s*;",
             f"extern const u8 {name}[];",
-            text,
+            new_text,
         )
-    if "ax-anim-lz" not in text:
-        text = (
+    if "ax-anim-lz" not in new_text:
+        new_text = (
             "/* ax-anim-lz: compressed symbols are const u8[]; use AX_ANIM_PTR */\n"
-            + text
+            + new_text
         )
-    SHARED_H.write_text(text)
+    if new_text != text:
+        SHARED_H.write_text(new_text)
 
 
 def main() -> None:

@@ -1,40 +1,5 @@
 /* ax-table-deduped: duplicate pose/anim arrays aliased */
 /* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
-/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
 static const axmain sAxMainStatue;
 const SiroArchive gAxStatue = {"SIRO", &sAxMainStatue};
 
