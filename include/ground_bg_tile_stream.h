@@ -25,8 +25,11 @@ bool8 GroundBgTileStream_InstallRom(const u16 *tileData, s32 numTiles, s32 vramS
  * must be rebuilt + remapped. FALSE → only scroll regs need updating. */
 bool8 GroundBgTileStream_NeedsRebuild(GroundBg *groundBg);
 
-/* After chunk→tilemap expand: ensure referenced source tiles are in VRAM and
- * rewrite bgTilemaps entries to hardware 10-bit slot indices. */
+/* After chunk→tilemap expand: assign VRAM slots and queue gfx uploads (no VRAM
+ * writes yet — call FlushUploads after VBlank, before tilemap DMA). */
 void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg);
+
+/* Apply queued tile uploads. Safe during VBlank / DoScheduledMemCopies. */
+void GroundBgTileStream_FlushUploads(void);
 
 #endif /* GUARD_GROUND_BG_TILE_STREAM_H */

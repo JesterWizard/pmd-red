@@ -6,6 +6,7 @@
 #include "def_filearchives.h"
 #include "file_system.h"
 #include "graphics_memory.h"
+#include "ground_bg_tile_stream.h"
 #include "text_1.h"
 
 struct FontData
@@ -183,6 +184,9 @@ void ScheduleBgTilemapCopy(u32 bgId)
 void DoScheduledMemCopies(void)
 {
     s32 i;
+
+    /* Streamer uploads first so VRAM tile gfx match the tilemaps we DMA next. */
+    GroundBgTileStream_FlushUploads();
 
     for (i = 0; i < sNumMemCopies; i++)
         CpuCopy(sMemCopies[i].dst, sMemCopies[i].src, sMemCopies[i].size);

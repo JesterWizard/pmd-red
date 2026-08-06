@@ -73,7 +73,7 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 
 ## Limitations
 
-- Indoor art source is **520×400** (indexed). Unique tiles exceed the GBA **1024** VRAM slot cap, so [`ground_bg_tile_stream.c`](../../src/ground_bg_tile_stream.c) keeps the café **BPC uncompressed in ROM** and remaps the visible window into VRAM each frame (no downscale, no ~63KB heap tile buffer). Café map conversion uses **`unk0 = 6`** (dual-layer init, up to 14 banks) so sprites sit between BG layers — do not use `unk0 = 5` (sprites draw above both).
+- Indoor art source is **520×400** (indexed). Unique tiles exceed the GBA **1024** VRAM slot cap, so the café uses **[dynamic tile loading](../gba_techniques/DynamicTileLoading.md)** ([`ground_bg_tile_stream.c`](../../src/ground_bg_tile_stream.c)): **BPC uncompressed in ROM**, visible window remapped into VRAM (no downscale, no ~63KB heap tile buffer). Café map conversion uses **`unk0 = 6`** (dual-layer init, up to 14 banks) so sprites sit between BG layers — do not use `unk0 = 5` (sprites draw above both).
 - Collision: cave walls/void from luminance; **bars** (counter through approach row `y=22`) and **round tables** from fixed tile regions. Player stands on `y=24`; invisible kind-4 talk objects on `y=22` bridge A-range. Staff stay on solid fascia tiles.
 - **Bar occlusion:** bottom **4px** of the fascia row on **BMA layer0 (BG2)** in front of Pokémon (left bar FG ends at `x=24`, dropping Spinda’s rightmost two jar tiles). Rest of the room on **layer1 (BG3)**.
 - No cup-dungeon unlocks, door recruits, or Project P dungeon unlocks.

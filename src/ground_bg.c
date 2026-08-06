@@ -453,6 +453,8 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     sub_80A3BB0(groundBg, 0);
     CallMapTilemapRenderFunc(groundBg->mapRender);
     GroundBgTileStream_RemapVisibleTilemaps(groundBg);
+    /* Map-load: push tiles before the first drawn frame (often under fade). */
+    GroundBgTileStream_FlushUploads();
     groundBg->unk52A = 1;
 }
 
