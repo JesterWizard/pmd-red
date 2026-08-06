@@ -132,6 +132,7 @@ void InitializeMoneyItems(void)
 
     gTeamInventoryRef->teamMoney = 0;
     gTeamInventoryRef->teamSavings = 0;
+    EnsurePerpetualGummisInStorage();
 }
 
 /*
@@ -1140,6 +1141,20 @@ bool8 HasGummiItem(void)
     return FALSE;
 }
 
+/* When enabled, Kangaskhan storage never drops below 1 of each gummi type. */
+void EnsurePerpetualGummisInStorage(void)
+{
+    s32 id;
+
+    if (!gRuntimeConfig.perpetual_gummis)
+        return;
+
+    for (id = ITEM_WHITE_GUMMI; id <= ITEM_SILVER_GUMMI; id++) {
+        if (gTeamInventoryRef->teamStorage[id] < 1)
+            gTeamInventoryRef->teamStorage[id] = 1;
+    }
+}
+
 // arm9.bin::0205FB18
 void MoveToStorage(Item* slot)
 {
@@ -1418,6 +1433,7 @@ s32 SaveTeamInventory(u8* unk0, u32 size)
     DataSerializer seri;
     s32 i;
 
+    EnsurePerpetualGummisInStorage();
     InitBitWriter(&seri, unk0, size);
 
     for (i = 0; i < INVENTORY_SIZE; i++)
@@ -1468,6 +1484,7 @@ s32 RestoreTeamInventory(u8 *unk0, u32 size)
     ReadBits(&seri, &gTeamInventoryRef->teamMoney, 24);
     ReadBits(&seri, &gTeamInventoryRef->teamSavings, 24);
     SanitizeTeamMoney();
+    EnsurePerpetualGummisInStorage();
 
     FinishBitSerializer(&seri);
     return seri.count;

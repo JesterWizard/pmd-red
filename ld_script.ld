@@ -108,6 +108,8 @@ SECTIONS {
         src/naming_screen.o(.text);
         src/confirm_name_menu.o(.text);
         src/felicity_bank.o(.text);
+        src/spinda_cafe.o(.text);
+        src/recycle_shop.o(.text);
         src/kangaskhan_storage1.o(.text);
         src/kangaskhan_storage2.o(.text);
         src/kecleon_bros1.o(.text);
@@ -480,6 +482,8 @@ SECTIONS {
         src/naming_screen.o(.rodata);
         src/confirm_name_menu.o(.rodata);
         src/felicity_bank.o(.rodata);
+        src/spinda_cafe.o(.rodata);
+        src/recycle_shop.o(.rodata);
         src/kangaskhan_storage1.o(.rodata);
         src/kangaskhan_storage2.o(.rodata);
         src/kecleon_bros1.o(.rodata);

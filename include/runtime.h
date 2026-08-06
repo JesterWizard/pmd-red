@@ -79,6 +79,10 @@ typedef struct {
     u8 custom_iq_skills;
     /* Cheat: R+B in dungeon clears with success */
     u8 rb_complete_dungeon;
+    /* Spinda's Café at Whiscash Pond (Juice Bar + Recycle Shop) */
+    u8 spinda_cafe;
+    /* Keep at least one of every gummi type in Kangaskhan storage */
+    u8 perpetual_gummis;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

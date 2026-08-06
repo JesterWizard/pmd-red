@@ -27,6 +27,7 @@
 #include "ground_main.h"
 #include "custom_portraits.h"
 #include "runtime.h"
+#include "spinda_cafe.h"
 #include "ground_map.h"
 #include "ground_script.h"
 #include "gulpin_shop_801FB50.h"
@@ -1260,6 +1261,22 @@ static const unkStruct_3001B64_unk418 gUnknown_8116318 =
     .unkC = sub_801B6AC,
 };
 
+static const unkStruct_3001B64_unk418 gSpindaJuiceBarHandlers =
+{
+    .unk0 = 1,
+    .unk4 = NULL,
+    .unk8 = DestroySpindaJuiceBar,
+    .unkC = SpindaJuiceBarCallback,
+};
+
+static const unkStruct_3001B64_unk418 gRecycleShopHandlers =
+{
+    .unk0 = 1,
+    .unk4 = NULL,
+    .unk8 = DestroyRecycleShop,
+    .unkC = RecycleShopCallback,
+};
+
 static bool8 sub_809B648(void)
 {
     switch (sTextbox->specialTextKind) {
@@ -1880,6 +1897,28 @@ static bool8 sub_809B648(void)
                 }
             }
             break;
+        case SPECIAL_TEXT_SPINDA_JUICE_BAR: {
+            u32 mode = CheckQuest(QUEST_SQUARE_ASLEEP) ? 1 : 0;
+
+            ResetTextbox();
+            if (CreateSpindaJuiceBar(mode)) {
+                sTextbox->unk418 = &gSpindaJuiceBarHandlers;
+                return 1;
+            }
+            sTextbox->unk430 = -1;
+            return 0;
+        }
+        case SPECIAL_TEXT_RECYCLE_SHOP: {
+            u32 mode = CheckQuest(QUEST_SQUARE_ASLEEP) ? 1 : 0;
+
+            ResetTextbox();
+            if (CreateRecycleShop(mode)) {
+                sTextbox->unk418 = &gRecycleShopHandlers;
+                return 1;
+            }
+            sTextbox->unk430 = -1;
+            return 0;
+        }
     }
 
     return 0;

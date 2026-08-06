@@ -35,4 +35,6 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .evolution_stat_boost = TRUE, /* TRUE = +10% current stats per evolution; FALSE = vanilla */
     .custom_iq_skills = TRUE, /* TRUE = custom IQ skills (Conserver, …); FALSE = vanilla set */
     .rb_complete_dungeon = TRUE, /* TRUE = R+B clears dungeon; FALSE = off */
+    .spinda_cafe = TRUE, /* TRUE = Spinda Café at Whiscash Pond; FALSE = off */
+    .perpetual_gummis = TRUE, /* TRUE = always ≥1 of each gummi in storage; FALSE = off */
 };

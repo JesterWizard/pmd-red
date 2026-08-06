@@ -1387,7 +1387,54 @@ static const PortraitGfx sDelcattyPortraits = {
 
 const SiroArchive gCustomKaoDelcatty = { "SIRO", &sDelcattyPortraits };
 
-#define CUSTOM_PORTRAIT_COUNT 30
+static const u8 sSpindaNormalPal[] = INCBIN_U8("graphics/portraits/spinda/Normal.pal");
+static const u8 sSpindaNormalGfx[] = INCBIN_U8("graphics/portraits/spinda/Normal.at4px");
+static const u8 sSpindaHappyPal[] = INCBIN_U8("graphics/portraits/spinda/Happy.pal");
+static const u8 sSpindaHappyGfx[] = INCBIN_U8("graphics/portraits/spinda/Happy.at4px");
+static const u8 sSpindaPainedPal[] = INCBIN_U8("graphics/portraits/spinda/Pained.pal");
+static const u8 sSpindaPainedGfx[] = INCBIN_U8("graphics/portraits/spinda/Pained.at4px");
+static const u8 sSpindaAngryPal[] = INCBIN_U8("graphics/portraits/spinda/Angry.pal");
+static const u8 sSpindaAngryGfx[] = INCBIN_U8("graphics/portraits/spinda/Angry.at4px");
+static const u8 sSpindaWorriedPal[] = INCBIN_U8("graphics/portraits/spinda/Worried.pal");
+static const u8 sSpindaWorriedGfx[] = INCBIN_U8("graphics/portraits/spinda/Worried.at4px");
+static const u8 sSpindaSadPal[] = INCBIN_U8("graphics/portraits/spinda/Sad.pal");
+static const u8 sSpindaSadGfx[] = INCBIN_U8("graphics/portraits/spinda/Sad.at4px");
+static const u8 sSpindaCryingPal[] = INCBIN_U8("graphics/portraits/spinda/Crying.pal");
+static const u8 sSpindaCryingGfx[] = INCBIN_U8("graphics/portraits/spinda/Crying.at4px");
+static const u8 sSpindaShoutingPal[] = INCBIN_U8("graphics/portraits/spinda/Shouting.pal");
+static const u8 sSpindaShoutingGfx[] = INCBIN_U8("graphics/portraits/spinda/Shouting.at4px");
+static const u8 sSpindaTearyEyePal[] = INCBIN_U8("graphics/portraits/spinda/TearyEye.pal");
+static const u8 sSpindaTearyEyeGfx[] = INCBIN_U8("graphics/portraits/spinda/TearyEye.at4px");
+static const u8 sSpindaDeterminedPal[] = INCBIN_U8("graphics/portraits/spinda/Determined.pal");
+static const u8 sSpindaDeterminedGfx[] = INCBIN_U8("graphics/portraits/spinda/Determined.at4px");
+static const u8 sSpindaJoyousPal[] = INCBIN_U8("graphics/portraits/spinda/Joyous.pal");
+static const u8 sSpindaJoyousGfx[] = INCBIN_U8("graphics/portraits/spinda/Joyous.at4px");
+static const u8 sSpindaInspiredPal[] = INCBIN_U8("graphics/portraits/spinda/Inspired.pal");
+static const u8 sSpindaInspiredGfx[] = INCBIN_U8("graphics/portraits/spinda/Inspired.at4px");
+static const u8 sSpindaSurprisedPal[] = INCBIN_U8("graphics/portraits/spinda/Surprised.pal");
+static const u8 sSpindaSurprisedGfx[] = INCBIN_U8("graphics/portraits/spinda/Surprised.at4px");
+
+static const PortraitGfx sSpindaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSpindaNormalPal, sSpindaNormalGfx },
+        { (const RGB_Struct *)sSpindaHappyPal, sSpindaHappyGfx },
+        { (const RGB_Struct *)sSpindaPainedPal, sSpindaPainedGfx },
+        { (const RGB_Struct *)sSpindaAngryPal, sSpindaAngryGfx },
+        { (const RGB_Struct *)sSpindaWorriedPal, sSpindaWorriedGfx },
+        { (const RGB_Struct *)sSpindaSadPal, sSpindaSadGfx },
+        { (const RGB_Struct *)sSpindaCryingPal, sSpindaCryingGfx },
+        { (const RGB_Struct *)sSpindaShoutingPal, sSpindaShoutingGfx },
+        { (const RGB_Struct *)sSpindaTearyEyePal, sSpindaTearyEyeGfx },
+        { (const RGB_Struct *)sSpindaDeterminedPal, sSpindaDeterminedGfx },
+        { (const RGB_Struct *)sSpindaJoyousPal, sSpindaJoyousGfx },
+        { (const RGB_Struct *)sSpindaInspiredPal, sSpindaInspiredGfx },
+        { (const RGB_Struct *)sSpindaSurprisedPal, sSpindaSurprisedGfx },
+    },
+};
+
+const SiroArchive gCustomKaoSpinda = { "SIRO", &sSpindaPortraits };
+
+#define CUSTOM_PORTRAIT_COUNT 31
 const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     2, /* ivysaur */
     3, /* venusaur */
@@ -1419,6 +1466,7 @@ const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
     284, /* marshtomp */
     285, /* swampert */
     326, /* delcatty */
+    352, /* spinda */
 };
 
 const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
@@ -1452,6 +1500,7 @@ const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
     0x1FFF, /* marshtomp */
     0x1FFF, /* swampert */
     0x1FFF, /* delcatty */
+    0x1FFF, /* spinda */
 };
 
 const u8 gCustomPortraitCount = CUSTOM_PORTRAIT_COUNT;
@@ -1487,6 +1536,7 @@ static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
     { "ckao284", &gCustomKaoMarshtomp },
     { "ckao285", &gCustomKaoSwampert },
     { "ckao326", &gCustomKaoDelcatty },
+    { "ckao352", &gCustomKaoSpinda },
 };
 
 const FileArchive gCustomPortraitArchive = {

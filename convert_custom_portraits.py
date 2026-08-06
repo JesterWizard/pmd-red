@@ -124,6 +124,8 @@ EVOLVED_FORMS: list[tuple[int, str, int]] = [
     (284, "marshtomp", 259),
     (285, "swampert", 260),
     (326, "delcatty", 301),
+    # Café NPC — full emotion set for Juice Bar reactions
+    (352, "spinda", 327),
 ]
 
 

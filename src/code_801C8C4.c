@@ -198,6 +198,8 @@ static u32 sub_801CE58(void)
     s32 itemR;
     s32 itemIndex; // re-used variable to match
 
+    EnsurePerpetualGummisInStorage();
+
     itemCount = 0;
     for (itemIndex = 1; itemIndex < NUMBER_OF_ITEM_IDS; itemIndex++) {
         if (sUnknown_203B244->unk0 == 2 || (gTeamInventoryRef->teamStorage[itemIndex] != 0 && IsNotMoneyOrUsedTMItem(itemIndex))) {
@@ -228,6 +230,8 @@ bool8 sub_801CF14(s32 a0)
 
     if (a0 == 2)
         return FALSE;
+
+    EnsurePerpetualGummisInStorage();
 
     for (itemID = ITEM_STICK; itemID < NUMBER_OF_ITEM_IDS; itemID++) {
         if (gTeamInventoryRef->teamStorage[itemID] != 0 && IsNotMoneyOrUsedTMItem(itemID))

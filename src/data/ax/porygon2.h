@@ -8,6 +8,18 @@
 /* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
 /* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
 /* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
 #include "ax_shared_anims.h"
 static const axmain sAxMainPorygon2;
 const SiroArchive gAxPorygon2 = {"SIRO", &sAxMainPorygon2};

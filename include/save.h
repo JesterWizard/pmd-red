@@ -38,7 +38,7 @@ struct UnkStruct_sub_8011DAC
     u32 RngState;
     u32 savedRecruitedPokemon;
     u32 unk428;
-    u8 fill42C[0x4];
+    u32 savedSpindaCafe; /* was fill42C[4]; café recycle progress checksum */
     u32 savedTeamInventory;
     u32 savedRescueTeamInfo;
     u32 savedFriendAreas;

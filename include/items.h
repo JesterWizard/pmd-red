@@ -110,6 +110,7 @@ bool8 IsHMItem(u8 id);
 bool8 IsEdibleItem(u8 id);
 u8 xxx_bit_lut_lookup_8091E50(u8 i0, u8 i1);
 bool8 HasGummiItem(void);
+void EnsurePerpetualGummisInStorage(void);
 void GetGummiItemStatBoost(Pokemon* pokemon, u8 id, bool8 checkBoostFlags, Gummi *gummi);
 void ReadHeldItemBits(DataSerializer *, BulkItem *);
 void WriteHeldItemBits(DataSerializer *, BulkItem *);

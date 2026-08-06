@@ -7,6 +7,7 @@
 #include "structs/str_dungeon_setup.h"
 #include "adventure_info.h"
 #include "achievements.h"
+#include "spinda_cafe.h"
 #include "bg_control.h"
 #include "bg_palette_buffer.h"
 #include "window_buffer.h"
@@ -132,6 +133,7 @@ void GameLoop_Async(void)
     LoadMonsterParameters();
     sub_8097670();
     InitAchievements();
+    InitSpindaCafe();
     InitializePlayTime();
     LoadGameOptions();
     SetWindowBGColor();

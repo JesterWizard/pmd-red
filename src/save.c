@@ -17,6 +17,7 @@
 #include "random.h"
 #include "rescue_scenario.h"
 #include "save.h"
+#include "spinda_cafe.h"
 #include "string_format.h"
 #include "training_maze.h"
 
@@ -261,6 +262,15 @@ u32 ReadSaveFromPak(u32 *a)
         if (r1 != playerSave->savedAchievements) {
             saveStatus = 3;
         }
+        r4 += ACHIEVEMENTS_SAVE_SIZE;
+        r1 = RestoreSpindaCafeData(r4, SPINDA_CAFE_SAVE_SIZE);
+        /* Old saves lack this chunk (checksum 0); soft-accept rather than corrupt. */
+        if (playerSave->savedSpindaCafe != 0 && r1 != playerSave->savedSpindaCafe) {
+            saveStatus = 3;
+        }
+        else if (playerSave->savedSpindaCafe == 0) {
+            ResetSpindaCafeData();
+        }
     }
     MemoryFree(playerSave);
     return saveStatus;
@@ -360,6 +370,8 @@ u32 WriteSavetoPak(s32 *param_1, u32 param_2)
   playerSave->savedMailInfo = SaveMailInfo(array_ptr,0x221);
   array_ptr += 0x221;
   playerSave->savedAchievements = SaveAchievementsData(array_ptr, ACHIEVEMENTS_SAVE_SIZE);
+  array_ptr += ACHIEVEMENTS_SAVE_SIZE;
+  playerSave->savedSpindaCafe = SaveSpindaCafeData(array_ptr, SPINDA_CAFE_SAVE_SIZE);
 
   saveStatus1 = WriteSaveSector(param_1, (u8 *)playerSave, sizeof(struct UnkStruct_sub_8011DAC));
   saveStatus2 = WriteSaveSector(param_1, (u8 *)playerSave, sizeof(struct UnkStruct_sub_8011DAC));
@@ -425,6 +437,7 @@ void sub_8012298(void)
 {
     ResetAdventureInfo();
     ResetAchievementsData();
+    ResetSpindaCafeData();
     sub_80122A8();
 }
 
@@ -472,6 +485,7 @@ void InitializePlayerData(void)
     InitializeGameOptions(TRUE);
     InitializeExclusivePokemon();
     ResetAchievementsData();
+    ResetSpindaCafeData();
 }
 
 
