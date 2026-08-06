@@ -8,11 +8,12 @@ unpadded).
 | Image | Size |
 | --- | ---: |
 | `baserom.gba` | 32.00 MiB |
-| `pmd_red.gba` | ~21.92 MiB (varies with current strips) |
+| `pmd_red.gba` | ~20.71 MiB (varies with current strips) |
 
 Savings: no 32 MiB pad, ground **BPC/BMA** LZ77, unused opaque blobs stripped,
-monster **AX `.4bpp` tile** LZ77 (`LZ77UnCompVram` on blit), and **AX pose/anim
-table dedupe** (`make ax-dedupe`). See `SESSION_HISTORY.md`.
+monster **AX `.4bpp` tile** LZ77 (`LZ77UnCompVram` on blit), **AX pose/anim
+table dedupe** (`make ax-dedupe`), and **AX anim GMLZ** (`make ax-anim-compress`,
+decompress into a heap anim-cache pool). See `SESSION_HISTORY.md`.
 
 ## Ground compression
 

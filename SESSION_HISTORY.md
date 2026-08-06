@@ -262,6 +262,48 @@ Re-running `make ax-dedupe` on an already-deduped tree is a no-op.
 
 ---
 
+## 2026-08-06 — Fix axdata growth softlock (anim LZ)
+
+Embedding `animCache[256]` in `axdata` broke `UnkGroundSpriteStruct`
+(documented size **0x80**, first field `axdata` at 0x3C) embedded in
+`GroundLives` → black-screen softlock at boot.
+
+**Fix:** keep `axdata` at **0x3C**. GMLZ anims decompress into a **24-slot
+EWRAM BSS pool** (`ClaimAxAnimCache` in `sprite.c`). A mid-intro 16 KiB
+`MemoryAlloc` was also unsafe (ground already fills the heap; failed alloc
+returned GMLZ bytes as `ax_anim*` → black screen after logos).
+
+
+### What changed
+Anim frame arrays (after dedupe, ~2.89 MiB) are mostly ≤256 bytes. Those that
+shrink under LZ ship as `GMLZ` + BIOS LZ77 under `graphics/ax/anim_lz/`.
+
+- Tool: `compress_ax_anims.py` / `make ax-anim-compress`
+- Rewrites `src/data/ax/*.h` + `ax_shared_anims.c` defs to `INCBIN` of `.lz`
+- Anim tables use `AX_ANIM_PTR()` (blobs are `const u8[]`)
+- Runtime: `ResolveAxAnimData` in `src/sprite.c` — on `AxResInit` /
+  `AxResInitUnoriented`, if pointer is GMLZ and decomp size ≤256, decompress
+  into new `axdata.animCache[256]`; else keep ROM pointer
+- ~166 oversized anims stay uncompressed C arrays
+
+Why not full table LZ-on-open: `Dungeon` (~116 KiB) already fills most of the
+144 KiB main heap; many species stay open on a floor.
+
+### Size
+| | Before | After |
+| --- | ---: | ---: |
+| `pmd_red.gba` | 21.92 MiB | **20.71 MiB** |
+| Anim frame data | ~2.89 MiB | **~1.69 MiB** |
+| **Saved** | | **~1.20 MiB** |
+
+### Reverse
+1. Restore anim defs from git (`src/data/ax/`, `ax_shared_anims.*`).
+2. Drop `animCache` / `ResolveAxAnimData` / `AX_ANIM_PTR`.
+3. Remove `compress_ax_anims.py` / `ax-anim-compress` Makefile bits;
+   `graphics/ax/anim_lz/` optional delete.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -272,6 +314,7 @@ Re-running `make ax-dedupe` on an already-deduped tree is a no-op.
 | Ground BPL/BPA LZ | Off |
 | Monster AX tile LZ | On (`GMLZ` → `LZ77UnCompVram`) |
 | AX pose/anim dedupe | On (`make ax-dedupe`) |
+| AX anim sequence LZ | On (`make ax-anim-compress` → heap cache pool) |
 | Unused unk blobs in modern ROM | Stripped |
 | Runtime config | On (modern; edit `configs/runtime.c`) |
 | Custom title backgrounds | On (8bpp ≤600 tiles @ +128; maps SB 6–8/31; `custom_title_backgrounds`) |

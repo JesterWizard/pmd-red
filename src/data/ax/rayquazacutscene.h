@@ -1,4 +1,13 @@
 /* ax-table-deduped: duplicate pose/anim arrays aliased */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
 #include "ax_shared_anims.h"
 static const axmain sAxMainRayquazaCutscene;
 const SiroArchive gAxRayquazaCutscene = {"SIRO", &sAxMainRayquazaCutscene};
@@ -749,69 +758,12 @@ static const ax_pose sRayquazaCutscenePose340[] = {
 	AX_POSE(287, OAM1(198, ST_OAM_SQUARE     , 1), OAM2(226, ST_OAM_SIZE_3, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_anim sRayquazaCutsceneAnims_14_1[] = {
-	{ .frames = 30, .unkFlags = 0, .poseId = 210, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 36, .unkFlags = 0, .poseId = 211, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sRayquazaCutsceneAnims_15_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {1, -1}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 234, .offset = {3, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 235, .offset = {2, -2}, .shadow = {0, 0} },
-	{ .frames = 5, .unkFlags = 0, .poseId = 235, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 5, .unkFlags = 0, .poseId = 236, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 5, .unkFlags = 0, .poseId = 236, .offset = {-2, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 237, .offset = {-3, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 237, .offset = {-1, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sRayquazaCutsceneAnims_16_1[] = {
-	{ .frames = 10, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 262, .offset = {-1, 0}, .shadow = {-1, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {-1, 0}, .shadow = {-1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {-1, 0}, .shadow = {-1, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 266, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 266, .offset = {0, 3}, .shadow = {0, 3} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 266, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 266, .offset = {0, 2}, .shadow = {0, 2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 266, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 266, .offset = {0, 1}, .shadow = {0, 1} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 266, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 266, .offset = {0, 1}, .shadow = {0, 1} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 266, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sRayquazaCutsceneAnims_17_1[] = {
-	{ .frames = 10, .unkFlags = 0, .poseId = 288, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 5, .unkFlags = 0, .poseId = 289, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 290, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 290, .offset = {-1, 0}, .shadow = {-1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 290, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 290, .offset = {-1, 0}, .shadow = {-1, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 290, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sRayquazaCutsceneAnims_18_1[] = {
-	{ .frames = 5, .unkFlags = 0, .poseId = 312, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 313, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 314, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 315, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sRayquazaCutsceneAnims_19_1[] = {
-	{ .frames = 10, .unkFlags = 0, .poseId = 337, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 338, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 20, .unkFlags = 0, .poseId = 339, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
+static const u8 sRayquazaCutsceneAnims_14_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/rayquazacutscene/sRayquazaCutsceneAnims_14_1.lz");
+static const u8 sRayquazaCutsceneAnims_15_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/rayquazacutscene/sRayquazaCutsceneAnims_15_1.lz");
+static const u8 sRayquazaCutsceneAnims_16_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/rayquazacutscene/sRayquazaCutsceneAnims_16_1.lz");
+static const u8 sRayquazaCutsceneAnims_17_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/rayquazacutscene/sRayquazaCutsceneAnims_17_1.lz");
+static const u8 sRayquazaCutsceneAnims_18_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/rayquazacutscene/sRayquazaCutsceneAnims_18_1.lz");
+static const u8 sRayquazaCutsceneAnims_19_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/rayquazacutscene/sRayquazaCutsceneAnims_19_1.lz");
 
 static const u8 sRayquazaCutsceneGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/rayquazacutscene/sprite_1.4bpp.lz");
 static const ax_sprite sRayquazaCutsceneSprites1[] = {
@@ -3276,212 +3228,212 @@ static const struct PositionSets sAxPositionsRayquazaCutscene[] = {
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable1[] = {
-	gAxSharedAnim_02605,
-	gAxSharedAnim_02681,
-	gAxSharedAnim_02690,
-	gAxSharedAnim_02699,
-	gAxSharedAnim_02617,
-	gAxSharedAnim_02640,
-	gAxSharedAnim_02653,
-	gAxSharedAnim_02662,
+	AX_ANIM_PTR(gAxSharedAnim_02605),
+	AX_ANIM_PTR(gAxSharedAnim_02681),
+	AX_ANIM_PTR(gAxSharedAnim_02690),
+	AX_ANIM_PTR(gAxSharedAnim_02699),
+	AX_ANIM_PTR(gAxSharedAnim_02617),
+	AX_ANIM_PTR(gAxSharedAnim_02640),
+	AX_ANIM_PTR(gAxSharedAnim_02653),
+	AX_ANIM_PTR(gAxSharedAnim_02662),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable2[] = {
-	gAxSharedAnim_01568,
-	gAxSharedAnim_01732,
-	gAxSharedAnim_01820,
-	gAxSharedAnim_01854,
-	gAxSharedAnim_01894,
-	gAxSharedAnim_01909,
-	gAxSharedAnim_01933,
-	gAxSharedAnim_01952,
+	AX_ANIM_PTR(gAxSharedAnim_01568),
+	AX_ANIM_PTR(gAxSharedAnim_01732),
+	AX_ANIM_PTR(gAxSharedAnim_01820),
+	AX_ANIM_PTR(gAxSharedAnim_01854),
+	AX_ANIM_PTR(gAxSharedAnim_01894),
+	AX_ANIM_PTR(gAxSharedAnim_01909),
+	AX_ANIM_PTR(gAxSharedAnim_01933),
+	AX_ANIM_PTR(gAxSharedAnim_01952),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable3[] = {
-	gAxSharedAnim_01965,
-	gAxSharedAnim_01984,
-	gAxSharedAnim_01994,
-	gAxSharedAnim_02010,
-	gAxSharedAnim_02030,
-	gAxSharedAnim_02043,
-	gAxSharedAnim_02063,
-	gAxSharedAnim_02074,
+	AX_ANIM_PTR(gAxSharedAnim_01965),
+	AX_ANIM_PTR(gAxSharedAnim_01984),
+	AX_ANIM_PTR(gAxSharedAnim_01994),
+	AX_ANIM_PTR(gAxSharedAnim_02010),
+	AX_ANIM_PTR(gAxSharedAnim_02030),
+	AX_ANIM_PTR(gAxSharedAnim_02043),
+	AX_ANIM_PTR(gAxSharedAnim_02063),
+	AX_ANIM_PTR(gAxSharedAnim_02074),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable4[] = {
-	gAxSharedAnim_02097,
-	gAxSharedAnim_02115,
-	gAxSharedAnim_02138,
-	gAxSharedAnim_02160,
-	gAxSharedAnim_02195,
-	gAxSharedAnim_02223,
-	gAxSharedAnim_02252,
-	gAxSharedAnim_02281,
+	AX_ANIM_PTR(gAxSharedAnim_02097),
+	AX_ANIM_PTR(gAxSharedAnim_02115),
+	AX_ANIM_PTR(gAxSharedAnim_02138),
+	AX_ANIM_PTR(gAxSharedAnim_02160),
+	AX_ANIM_PTR(gAxSharedAnim_02195),
+	AX_ANIM_PTR(gAxSharedAnim_02223),
+	AX_ANIM_PTR(gAxSharedAnim_02252),
+	AX_ANIM_PTR(gAxSharedAnim_02281),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable5[] = {
-	gAxSharedAnim_02293,
-	gAxSharedAnim_02317,
-	gAxSharedAnim_00166,
-	gAxSharedAnim_00188,
-	gAxSharedAnim_00212,
-	gAxSharedAnim_00237,
-	gAxSharedAnim_00261,
-	gAxSharedAnim_00292,
+	AX_ANIM_PTR(gAxSharedAnim_02293),
+	AX_ANIM_PTR(gAxSharedAnim_02317),
+	AX_ANIM_PTR(gAxSharedAnim_00166),
+	AX_ANIM_PTR(gAxSharedAnim_00188),
+	AX_ANIM_PTR(gAxSharedAnim_00212),
+	AX_ANIM_PTR(gAxSharedAnim_00237),
+	AX_ANIM_PTR(gAxSharedAnim_00261),
+	AX_ANIM_PTR(gAxSharedAnim_00292),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable6[] = {
-	gAxSharedAnim_00045,
-	gAxSharedAnim_00045,
-	gAxSharedAnim_00045,
-	gAxSharedAnim_00045,
-	gAxSharedAnim_00045,
-	gAxSharedAnim_00045,
-	gAxSharedAnim_00045,
-	gAxSharedAnim_00045,
+	AX_ANIM_PTR(gAxSharedAnim_00045),
+	AX_ANIM_PTR(gAxSharedAnim_00045),
+	AX_ANIM_PTR(gAxSharedAnim_00045),
+	AX_ANIM_PTR(gAxSharedAnim_00045),
+	AX_ANIM_PTR(gAxSharedAnim_00045),
+	AX_ANIM_PTR(gAxSharedAnim_00045),
+	AX_ANIM_PTR(gAxSharedAnim_00045),
+	AX_ANIM_PTR(gAxSharedAnim_00045),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable7[] = {
-	gAxSharedAnim_00330,
-	gAxSharedAnim_00342,
-	gAxSharedAnim_00348,
-	gAxSharedAnim_00356,
-	gAxSharedAnim_00368,
-	gAxSharedAnim_00376,
-	gAxSharedAnim_00383,
-	gAxSharedAnim_00393,
+	AX_ANIM_PTR(gAxSharedAnim_00330),
+	AX_ANIM_PTR(gAxSharedAnim_00342),
+	AX_ANIM_PTR(gAxSharedAnim_00348),
+	AX_ANIM_PTR(gAxSharedAnim_00356),
+	AX_ANIM_PTR(gAxSharedAnim_00368),
+	AX_ANIM_PTR(gAxSharedAnim_00376),
+	AX_ANIM_PTR(gAxSharedAnim_00383),
+	AX_ANIM_PTR(gAxSharedAnim_00393),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable8[] = {
-	gAxSharedAnim_00125,
-	gAxSharedAnim_00126,
-	gAxSharedAnim_00127,
-	gAxSharedAnim_00128,
-	gAxSharedAnim_00129,
-	gAxSharedAnim_00130,
-	gAxSharedAnim_00131,
-	gAxSharedAnim_00132,
+	AX_ANIM_PTR(gAxSharedAnim_00125),
+	AX_ANIM_PTR(gAxSharedAnim_00126),
+	AX_ANIM_PTR(gAxSharedAnim_00127),
+	AX_ANIM_PTR(gAxSharedAnim_00128),
+	AX_ANIM_PTR(gAxSharedAnim_00129),
+	AX_ANIM_PTR(gAxSharedAnim_00130),
+	AX_ANIM_PTR(gAxSharedAnim_00131),
+	AX_ANIM_PTR(gAxSharedAnim_00132),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable9[] = {
-	gAxSharedAnim_00608,
-	gAxSharedAnim_00684,
-	gAxSharedAnim_00672,
-	gAxSharedAnim_00659,
-	gAxSharedAnim_00645,
-	gAxSharedAnim_00639,
-	gAxSharedAnim_00629,
-	gAxSharedAnim_00619,
+	AX_ANIM_PTR(gAxSharedAnim_00608),
+	AX_ANIM_PTR(gAxSharedAnim_00684),
+	AX_ANIM_PTR(gAxSharedAnim_00672),
+	AX_ANIM_PTR(gAxSharedAnim_00659),
+	AX_ANIM_PTR(gAxSharedAnim_00645),
+	AX_ANIM_PTR(gAxSharedAnim_00639),
+	AX_ANIM_PTR(gAxSharedAnim_00629),
+	AX_ANIM_PTR(gAxSharedAnim_00619),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable10[] = {
-	gAxSharedAnim_00705,
-	gAxSharedAnim_00714,
-	gAxSharedAnim_00725,
-	gAxSharedAnim_00737,
-	gAxSharedAnim_00750,
-	gAxSharedAnim_00760,
-	gAxSharedAnim_00772,
-	gAxSharedAnim_00781,
+	AX_ANIM_PTR(gAxSharedAnim_00705),
+	AX_ANIM_PTR(gAxSharedAnim_00714),
+	AX_ANIM_PTR(gAxSharedAnim_00725),
+	AX_ANIM_PTR(gAxSharedAnim_00737),
+	AX_ANIM_PTR(gAxSharedAnim_00750),
+	AX_ANIM_PTR(gAxSharedAnim_00760),
+	AX_ANIM_PTR(gAxSharedAnim_00772),
+	AX_ANIM_PTR(gAxSharedAnim_00781),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable11[] = {
-	gAxSharedAnim_00799,
-	gAxSharedAnim_00837,
-	gAxSharedAnim_00878,
-	gAxSharedAnim_00916,
-	gAxSharedAnim_00954,
-	gAxSharedAnim_00991,
-	gAxSharedAnim_01045,
-	gAxSharedAnim_01090,
+	AX_ANIM_PTR(gAxSharedAnim_00799),
+	AX_ANIM_PTR(gAxSharedAnim_00837),
+	AX_ANIM_PTR(gAxSharedAnim_00878),
+	AX_ANIM_PTR(gAxSharedAnim_00916),
+	AX_ANIM_PTR(gAxSharedAnim_00954),
+	AX_ANIM_PTR(gAxSharedAnim_00991),
+	AX_ANIM_PTR(gAxSharedAnim_01045),
+	AX_ANIM_PTR(gAxSharedAnim_01090),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable12[] = {
-	gAxSharedAnim_01147,
-	gAxSharedAnim_01230,
-	gAxSharedAnim_01208,
-	gAxSharedAnim_01194,
-	gAxSharedAnim_01193,
-	gAxSharedAnim_01181,
-	gAxSharedAnim_01161,
-	gAxSharedAnim_01148,
+	AX_ANIM_PTR(gAxSharedAnim_01147),
+	AX_ANIM_PTR(gAxSharedAnim_01230),
+	AX_ANIM_PTR(gAxSharedAnim_01208),
+	AX_ANIM_PTR(gAxSharedAnim_01194),
+	AX_ANIM_PTR(gAxSharedAnim_01193),
+	AX_ANIM_PTR(gAxSharedAnim_01181),
+	AX_ANIM_PTR(gAxSharedAnim_01161),
+	AX_ANIM_PTR(gAxSharedAnim_01148),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable13[] = {
-	gAxSharedAnim_01242,
-	gAxSharedAnim_01323,
-	gAxSharedAnim_01314,
-	gAxSharedAnim_01301,
-	gAxSharedAnim_01286,
-	gAxSharedAnim_01278,
-	gAxSharedAnim_01267,
-	gAxSharedAnim_01253,
+	AX_ANIM_PTR(gAxSharedAnim_01242),
+	AX_ANIM_PTR(gAxSharedAnim_01323),
+	AX_ANIM_PTR(gAxSharedAnim_01314),
+	AX_ANIM_PTR(gAxSharedAnim_01301),
+	AX_ANIM_PTR(gAxSharedAnim_01286),
+	AX_ANIM_PTR(gAxSharedAnim_01278),
+	AX_ANIM_PTR(gAxSharedAnim_01267),
+	AX_ANIM_PTR(gAxSharedAnim_01253),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable14[] = {
-	sRayquazaCutsceneAnims_14_1,
-	sRayquazaCutsceneAnims_14_1,
-	sRayquazaCutsceneAnims_14_1,
-	sRayquazaCutsceneAnims_14_1,
-	sRayquazaCutsceneAnims_14_1,
-	sRayquazaCutsceneAnims_14_1,
-	sRayquazaCutsceneAnims_14_1,
-	sRayquazaCutsceneAnims_14_1,
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_14_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_14_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_14_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_14_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_14_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_14_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_14_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_14_1),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable15[] = {
-	sRayquazaCutsceneAnims_15_1,
-	sRayquazaCutsceneAnims_15_1,
-	sRayquazaCutsceneAnims_15_1,
-	sRayquazaCutsceneAnims_15_1,
-	sRayquazaCutsceneAnims_15_1,
-	sRayquazaCutsceneAnims_15_1,
-	sRayquazaCutsceneAnims_15_1,
-	sRayquazaCutsceneAnims_15_1,
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_15_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_15_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_15_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_15_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_15_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_15_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_15_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_15_1),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable16[] = {
-	sRayquazaCutsceneAnims_16_1,
-	sRayquazaCutsceneAnims_16_1,
-	sRayquazaCutsceneAnims_16_1,
-	sRayquazaCutsceneAnims_16_1,
-	sRayquazaCutsceneAnims_16_1,
-	sRayquazaCutsceneAnims_16_1,
-	sRayquazaCutsceneAnims_16_1,
-	sRayquazaCutsceneAnims_16_1,
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_16_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_16_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_16_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_16_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_16_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_16_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_16_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_16_1),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable17[] = {
-	sRayquazaCutsceneAnims_17_1,
-	sRayquazaCutsceneAnims_17_1,
-	sRayquazaCutsceneAnims_17_1,
-	sRayquazaCutsceneAnims_17_1,
-	sRayquazaCutsceneAnims_17_1,
-	sRayquazaCutsceneAnims_17_1,
-	sRayquazaCutsceneAnims_17_1,
-	sRayquazaCutsceneAnims_17_1,
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_17_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_17_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_17_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_17_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_17_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_17_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_17_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_17_1),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable18[] = {
-	sRayquazaCutsceneAnims_18_1,
-	sRayquazaCutsceneAnims_18_1,
-	sRayquazaCutsceneAnims_18_1,
-	sRayquazaCutsceneAnims_18_1,
-	sRayquazaCutsceneAnims_18_1,
-	sRayquazaCutsceneAnims_18_1,
-	sRayquazaCutsceneAnims_18_1,
-	sRayquazaCutsceneAnims_18_1,
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_18_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_18_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_18_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_18_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_18_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_18_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_18_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_18_1),
 };
 
 static const ax_anim *const sRayquazaCutsceneAnimTable19[] = {
-	sRayquazaCutsceneAnims_19_1,
-	sRayquazaCutsceneAnims_19_1,
-	sRayquazaCutsceneAnims_19_1,
-	sRayquazaCutsceneAnims_19_1,
-	sRayquazaCutsceneAnims_19_1,
-	sRayquazaCutsceneAnims_19_1,
-	sRayquazaCutsceneAnims_19_1,
-	sRayquazaCutsceneAnims_19_1,
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_19_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_19_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_19_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_19_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_19_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_19_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_19_1),
+	AX_ANIM_PTR(sRayquazaCutsceneAnims_19_1),
 };
 
 static const ax_anim *const *const sAxAnimationsRayquazaCutscene[] = {

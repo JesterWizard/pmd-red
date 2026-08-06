@@ -1,4 +1,13 @@
 /* ax-table-deduped: duplicate pose/anim arrays aliased */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
 #include "ax_shared_anims.h"
 static const axmain sAxMainSlaking;
 const SiroArchive gAxSlaking = {"SIRO", &sAxMainSlaking};
@@ -371,471 +380,43 @@ static const ax_pose sSlakingPose192[] = {
 	AX_POSE(42, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 4)),
 	AX_POSE_TERMINATOR
 };
-static const ax_anim sSlakingAnims_2_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 28, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 28, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 30, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 29, .offset = {4, 4}, .shadow = {4, 4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 30, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 31, .offset = {16, 19}, .shadow = {16, 19} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 31, .offset = {17, 18}, .shadow = {17, 18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 31, .offset = {16, 19}, .shadow = {16, 19} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 31, .offset = {17, 18}, .shadow = {17, 18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 28, .offset = {6, 6}, .shadow = {6, 6} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_2_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 36, .offset = {-1, 1}, .shadow = {-1, 1} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 36, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 38, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 37, .offset = {5, -6}, .shadow = {5, -6} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 38, .offset = {11, -13}, .shadow = {11, -13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 39, .offset = {18, -17}, .shadow = {18, -17} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 39, .offset = {19, -16}, .shadow = {19, -16} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 39, .offset = {18, -17}, .shadow = {18, -17} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 39, .offset = {19, -16}, .shadow = {19, -16} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 36, .offset = {6, -6}, .shadow = {6, -6} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_2_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 40, .offset = {0, 1}, .shadow = {0, 1} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 40, .offset = {0, 2}, .shadow = {0, 2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 42, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 41, .offset = {0, -4}, .shadow = {0, -4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 42, .offset = {0, -9}, .shadow = {0, -9} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 43, .offset = {0, -17}, .shadow = {0, -17} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 43, .offset = {1, -17}, .shadow = {1, -17} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 43, .offset = {0, -17}, .shadow = {0, -17} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 43, .offset = {1, -17}, .shadow = {1, -17} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 40, .offset = {0, -6}, .shadow = {0, -6} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_2_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 44, .offset = {1, 1}, .shadow = {1, 1} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 44, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 46, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 45, .offset = {-5, -6}, .shadow = {-5, -6} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 46, .offset = {-11, -13}, .shadow = {-11, -13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 47, .offset = {-18, -17}, .shadow = {-18, -17} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 47, .offset = {-19, -16}, .shadow = {-19, -16} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 47, .offset = {-18, -17}, .shadow = {-18, -17} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 47, .offset = {-19, -16}, .shadow = {-19, -16} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 44, .offset = {-6, -6}, .shadow = {-6, -6} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_2_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 52, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 52, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 54, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 53, .offset = {-4, 4}, .shadow = {-4, 4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 54, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 55, .offset = {-16, 19}, .shadow = {-16, 19} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 55, .offset = {-17, 18}, .shadow = {-17, 18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 55, .offset = {-16, 19}, .shadow = {-16, 19} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 55, .offset = {-17, 18}, .shadow = {-17, 18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 52, .offset = {-6, 6}, .shadow = {-6, 6} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_3_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 56, .offset = {0, -2}, .shadow = {0, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 59, .offset = {0, -4}, .shadow = {0, -4} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 59, .offset = {0, -5}, .shadow = {0, -5} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 59, .offset = {0, -3}, .shadow = {0, -3} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 59, .offset = {0, 2}, .shadow = {0, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 60, .offset = {0, 14}, .shadow = {0, 14} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 61, .offset = {1, 14}, .shadow = {1, 14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 61, .offset = {0, 14}, .shadow = {0, 14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 61, .offset = {1, 14}, .shadow = {1, 14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 61, .offset = {0, 14}, .shadow = {0, 14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 56, .offset = {0, 7}, .shadow = {0, 7} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 56, .offset = {0, 3}, .shadow = {0, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_3_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 62, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 65, .offset = {-4, -4}, .shadow = {-4, -4} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 65, .offset = {-5, -5}, .shadow = {-5, -5} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 65, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 65, .offset = {5, 7}, .shadow = {5, 7} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 66, .offset = {12, 15}, .shadow = {12, 15} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 67, .offset = {13, 14}, .shadow = {13, 14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 67, .offset = {12, 15}, .shadow = {12, 15} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 67, .offset = {13, 14}, .shadow = {13, 14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 67, .offset = {12, 15}, .shadow = {12, 15} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 62, .offset = {6, 8}, .shadow = {6, 8} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 62, .offset = {3, 3}, .shadow = {3, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_3_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 68, .offset = {-2, 0}, .shadow = {-2, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 71, .offset = {-4, 0}, .shadow = {-4, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 71, .offset = {-5, 0}, .shadow = {-5, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 71, .offset = {-1, 0}, .shadow = {-1, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 71, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 72, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 73, .offset = {12, 1}, .shadow = {12, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 73, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 73, .offset = {12, 1}, .shadow = {12, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 73, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 68, .offset = {7, 0}, .shadow = {7, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 68, .offset = {3, 0}, .shadow = {3, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_3_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 77, .offset = {-4, 4}, .shadow = {-4, 4} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 77, .offset = {-5, 5}, .shadow = {-5, 5} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 77, .offset = {-1, 1}, .shadow = {-1, 1} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 77, .offset = {7, -6}, .shadow = {7, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 78, .offset = {15, -13}, .shadow = {15, -13} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 79, .offset = {16, -12}, .shadow = {16, -12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 79, .offset = {15, -13}, .shadow = {15, -13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 79, .offset = {16, -12}, .shadow = {16, -12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 79, .offset = {15, -13}, .shadow = {15, -13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {8, -7}, .shadow = {8, -7} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {3, -3}, .shadow = {3, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_3_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 80, .offset = {0, 2}, .shadow = {0, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 83, .offset = {0, 4}, .shadow = {0, 4} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 83, .offset = {0, 5}, .shadow = {0, 5} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 83, .offset = {0, 3}, .shadow = {0, 3} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 83, .offset = {0, -2}, .shadow = {0, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 84, .offset = {0, -14}, .shadow = {0, -14} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 85, .offset = {1, -14}, .shadow = {1, -14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 85, .offset = {0, -14}, .shadow = {0, -14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 85, .offset = {1, -14}, .shadow = {1, -14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 85, .offset = {0, -14}, .shadow = {0, -14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 80, .offset = {0, -7}, .shadow = {0, -7} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 80, .offset = {0, -3}, .shadow = {0, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_3_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 86, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 89, .offset = {4, 4}, .shadow = {4, 4} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 89, .offset = {5, 5}, .shadow = {5, 5} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 89, .offset = {1, 1}, .shadow = {1, 1} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 89, .offset = {-7, -6}, .shadow = {-7, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 90, .offset = {-15, -13}, .shadow = {-15, -13} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 91, .offset = {-16, -12}, .shadow = {-16, -12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 91, .offset = {-15, -13}, .shadow = {-15, -13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 91, .offset = {-16, -12}, .shadow = {-16, -12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 91, .offset = {-15, -13}, .shadow = {-15, -13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 86, .offset = {-8, -7}, .shadow = {-8, -7} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 86, .offset = {-3, -3}, .shadow = {-3, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_3_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 92, .offset = {2, 0}, .shadow = {2, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 95, .offset = {4, 0}, .shadow = {4, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 95, .offset = {5, 0}, .shadow = {5, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 95, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 95, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 96, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 97, .offset = {-12, 1}, .shadow = {-12, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 97, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 97, .offset = {-12, 1}, .shadow = {-12, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 97, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 92, .offset = {-7, 0}, .shadow = {-7, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 92, .offset = {-3, 0}, .shadow = {-3, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_3_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 98, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 101, .offset = {4, -4}, .shadow = {4, -4} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 101, .offset = {5, -5}, .shadow = {5, -5} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 101, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 101, .offset = {-5, 7}, .shadow = {-5, 7} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 102, .offset = {-12, 15}, .shadow = {-12, 15} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 103, .offset = {-13, 14}, .shadow = {-13, 14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 103, .offset = {-12, 15}, .shadow = {-12, 15} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 103, .offset = {-13, 14}, .shadow = {-13, 14} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 103, .offset = {-12, 15}, .shadow = {-12, 15} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 98, .offset = {-6, 8}, .shadow = {-6, 8} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 98, .offset = {-3, 3}, .shadow = {-3, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_8_1[] = {
-	{ .frames = 50, .unkFlags = 0, .poseId = 154, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 154, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 154, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 154, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_8_2[] = {
-	{ .frames = 50, .unkFlags = 0, .poseId = 161, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 161, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 161, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 161, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_8_3[] = {
-	{ .frames = 50, .unkFlags = 0, .poseId = 160, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 160, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 160, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 160, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_8_4[] = {
-	{ .frames = 50, .unkFlags = 0, .poseId = 159, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 159, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 159, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 159, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_8_5[] = {
-	{ .frames = 50, .unkFlags = 0, .poseId = 158, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 158, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 158, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 158, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 158, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 158, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 158, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_8_6[] = {
-	{ .frames = 50, .unkFlags = 0, .poseId = 157, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 157, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 157, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 157, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 157, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 157, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 157, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_8_7[] = {
-	{ .frames = 50, .unkFlags = 0, .poseId = 156, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 156, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 156, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 156, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 156, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 156, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 156, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_8_8[] = {
-	{ .frames = 50, .unkFlags = 0, .poseId = 155, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 155, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 155, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 6, .unkFlags = 0, .poseId = 155, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 155, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 155, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 155, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_9_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 163, .offset = {7, 4}, .shadow = {7, 4} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {12, 11}, .shadow = {12, 11} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {8, 19}, .shadow = {8, 19} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 166, .offset = {0, 20}, .shadow = {0, 20} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 167, .offset = {-8, 19}, .shadow = {-8, 19} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 168, .offset = {-12, 11}, .shadow = {-12, 11} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 169, .offset = {-7, 4}, .shadow = {-7, 4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 162, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_9_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 162, .offset = {8, -1}, .shadow = {8, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 163, .offset = {17, 7}, .shadow = {17, 7} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {21, 15}, .shadow = {21, 15} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 165, .offset = {19, 21}, .shadow = {19, 21} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 166, .offset = {10, 21}, .shadow = {10, 21} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {0, 17}, .shadow = {0, 17} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 168, .offset = {0, 7}, .shadow = {0, 7} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 169, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_9_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 168, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 169, .offset = {3, -3}, .shadow = {3, -3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {10, -6}, .shadow = {10, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 163, .offset = {17, -3}, .shadow = {17, -3} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 164, .offset = {18, 0}, .shadow = {18, 0} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 165, .offset = {15, 5}, .shadow = {15, 5} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {9, 7}, .shadow = {9, 7} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 167, .offset = {3, 5}, .shadow = {3, 5} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 168, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_9_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 168, .offset = {-1, -8}, .shadow = {-1, -8} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {3, -17}, .shadow = {3, -17} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {10, -22}, .shadow = {10, -22} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 163, .offset = {18, -22}, .shadow = {18, -22} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 164, .offset = {22, -18}, .shadow = {22, -18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {18, -8}, .shadow = {18, -8} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 166, .offset = {9, -2}, .shadow = {9, -2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 167, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_9_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 167, .offset = {-9, -4}, .shadow = {-9, -4} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 168, .offset = {-11, -12}, .shadow = {-11, -12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {-8, -19}, .shadow = {-8, -19} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 162, .offset = {0, -23}, .shadow = {0, -23} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 163, .offset = {8, -19}, .shadow = {8, -19} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {11, -12}, .shadow = {11, -12} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 165, .offset = {9, -4}, .shadow = {9, -4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 166, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_9_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 164, .offset = {1, -8}, .shadow = {1, -8} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 163, .offset = {-2, -17}, .shadow = {-2, -17} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {-10, -23}, .shadow = {-10, -23} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 169, .offset = {-18, -22}, .shadow = {-18, -22} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 168, .offset = {-22, -16}, .shadow = {-22, -16} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {-19, -6}, .shadow = {-19, -6} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 166, .offset = {-9, -1}, .shadow = {-9, -1} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 165, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_9_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 163, .offset = {-3, -3}, .shadow = {-3, -3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {-10, -6}, .shadow = {-10, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {-16, -4}, .shadow = {-16, -4} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 168, .offset = {-18, 0}, .shadow = {-18, 0} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 167, .offset = {-15, 5}, .shadow = {-15, 5} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {-9, 5}, .shadow = {-9, 5} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 165, .offset = {-3, 5}, .shadow = {-3, 5} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 164, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_9_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 163, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 162, .offset = {-8, -1}, .shadow = {-8, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {-18, 7}, .shadow = {-18, 7} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 168, .offset = {-21, 14}, .shadow = {-21, 14} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 167, .offset = {-19, 21}, .shadow = {-19, 21} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 166, .offset = {-10, 21}, .shadow = {-10, 21} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {-3, 16}, .shadow = {-3, 16} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 164, .offset = {1, 7}, .shadow = {1, 7} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 163, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_11_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {0, 2}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 179, .offset = {0, -7}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {0, -13}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 179, .offset = {0, -17}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 179, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 178, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 178, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 178, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 178, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_11_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 181, .offset = {0, -6}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 181, .offset = {0, -16}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 181, .offset = {0, -17}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 180, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 180, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 180, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_11_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 183, .offset = {0, -8}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {0, -14}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 183, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 183, .offset = {0, -19}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 182, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 182, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 182, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_11_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 185, .offset = {0, -7}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {0, -13}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 185, .offset = {0, -17}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 185, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 184, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 184, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 184, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_11_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 187, .offset = {0, -8}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {0, -14}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 187, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 187, .offset = {0, -19}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 186, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 186, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 186, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_11_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 189, .offset = {0, -7}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, -13}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 189, .offset = {0, -17}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 189, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 188, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 188, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 188, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_11_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 191, .offset = {0, -8}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, -14}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 191, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 191, .offset = {0, -19}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 190, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 190, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 190, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSlakingAnims_11_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 193, .offset = {0, -6}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 193, .offset = {0, -16}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 193, .offset = {0, -17}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 192, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 192, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 192, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
+static const u8 sSlakingAnims_2_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_2_2.lz");
+static const u8 sSlakingAnims_2_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_2_4.lz");
+static const u8 sSlakingAnims_2_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_2_5.lz");
+static const u8 sSlakingAnims_2_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_2_6.lz");
+static const u8 sSlakingAnims_2_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_2_8.lz");
+static const u8 sSlakingAnims_3_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_3_1.lz");
+static const u8 sSlakingAnims_3_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_3_2.lz");
+static const u8 sSlakingAnims_3_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_3_3.lz");
+static const u8 sSlakingAnims_3_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_3_4.lz");
+static const u8 sSlakingAnims_3_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_3_5.lz");
+static const u8 sSlakingAnims_3_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_3_6.lz");
+static const u8 sSlakingAnims_3_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_3_7.lz");
+static const u8 sSlakingAnims_3_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_3_8.lz");
+static const u8 sSlakingAnims_8_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_8_1.lz");
+static const u8 sSlakingAnims_8_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_8_2.lz");
+static const u8 sSlakingAnims_8_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_8_3.lz");
+static const u8 sSlakingAnims_8_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_8_4.lz");
+static const u8 sSlakingAnims_8_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_8_5.lz");
+static const u8 sSlakingAnims_8_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_8_6.lz");
+static const u8 sSlakingAnims_8_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_8_7.lz");
+static const u8 sSlakingAnims_8_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_8_8.lz");
+static const u8 sSlakingAnims_9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_9_1.lz");
+static const u8 sSlakingAnims_9_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_9_2.lz");
+static const u8 sSlakingAnims_9_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_9_3.lz");
+static const u8 sSlakingAnims_9_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_9_4.lz");
+static const u8 sSlakingAnims_9_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_9_5.lz");
+static const u8 sSlakingAnims_9_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_9_6.lz");
+static const u8 sSlakingAnims_9_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_9_7.lz");
+static const u8 sSlakingAnims_9_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_9_8.lz");
+static const u8 sSlakingAnims_11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_11_1.lz");
+static const u8 sSlakingAnims_11_2[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_11_2.lz");
+static const u8 sSlakingAnims_11_3[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_11_3.lz");
+static const u8 sSlakingAnims_11_4[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_11_4.lz");
+static const u8 sSlakingAnims_11_5[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_11_5.lz");
+static const u8 sSlakingAnims_11_6[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_11_6.lz");
+static const u8 sSlakingAnims_11_7[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_11_7.lz");
+static const u8 sSlakingAnims_11_8[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/slaking/sSlakingAnims_11_8.lz");
 
 static const u8 sSlakingGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/slaking/sprite_1.4bpp.lz");
 static const ax_sprite sSlakingSprites1[] = {
@@ -1674,146 +1255,146 @@ static const struct PositionSets sAxPositionsSlaking[] = {
 };
 
 static const ax_anim *const sSlakingAnimTable1[] = {
-	gAxSharedAnim_00038,
-	gAxSharedAnim_00082,
-	gAxSharedAnim_00087,
-	gAxSharedAnim_00092,
-	gAxSharedAnim_00043,
-	gAxSharedAnim_00057,
-	gAxSharedAnim_00063,
-	gAxSharedAnim_00068,
+	AX_ANIM_PTR(gAxSharedAnim_00038),
+	AX_ANIM_PTR(gAxSharedAnim_00082),
+	AX_ANIM_PTR(gAxSharedAnim_00087),
+	AX_ANIM_PTR(gAxSharedAnim_00092),
+	AX_ANIM_PTR(gAxSharedAnim_00043),
+	AX_ANIM_PTR(gAxSharedAnim_00057),
+	AX_ANIM_PTR(gAxSharedAnim_00063),
+	AX_ANIM_PTR(gAxSharedAnim_00068),
 };
 
 static const ax_anim *const sSlakingAnimTable2[] = {
-	gAxSharedAnim_01564,
-	sSlakingAnims_2_2,
-	gAxSharedAnim_01826,
-	sSlakingAnims_2_4,
-	sSlakingAnims_2_5,
-	sSlakingAnims_2_6,
-	gAxSharedAnim_01967,
-	sSlakingAnims_2_8,
+	AX_ANIM_PTR(gAxSharedAnim_01564),
+	AX_ANIM_PTR(sSlakingAnims_2_2),
+	AX_ANIM_PTR(gAxSharedAnim_01826),
+	AX_ANIM_PTR(sSlakingAnims_2_4),
+	AX_ANIM_PTR(sSlakingAnims_2_5),
+	AX_ANIM_PTR(sSlakingAnims_2_6),
+	AX_ANIM_PTR(gAxSharedAnim_01967),
+	AX_ANIM_PTR(sSlakingAnims_2_8),
 };
 
 static const ax_anim *const sSlakingAnimTable3[] = {
-	sSlakingAnims_3_1,
-	sSlakingAnims_3_2,
-	sSlakingAnims_3_3,
-	sSlakingAnims_3_4,
-	sSlakingAnims_3_5,
-	sSlakingAnims_3_6,
-	sSlakingAnims_3_7,
-	sSlakingAnims_3_8,
+	AX_ANIM_PTR(sSlakingAnims_3_1),
+	AX_ANIM_PTR(sSlakingAnims_3_2),
+	AX_ANIM_PTR(sSlakingAnims_3_3),
+	AX_ANIM_PTR(sSlakingAnims_3_4),
+	AX_ANIM_PTR(sSlakingAnims_3_5),
+	AX_ANIM_PTR(sSlakingAnims_3_6),
+	AX_ANIM_PTR(sSlakingAnims_3_7),
+	AX_ANIM_PTR(sSlakingAnims_3_8),
 };
 
 static const ax_anim *const sSlakingAnimTable4[] = {
-	gAxSharedAnim_00185,
-	gAxSharedAnim_00208,
-	gAxSharedAnim_00239,
-	gAxSharedAnim_00262,
-	gAxSharedAnim_00295,
-	gAxSharedAnim_00323,
-	gAxSharedAnim_00346,
-	gAxSharedAnim_00371,
+	AX_ANIM_PTR(gAxSharedAnim_00185),
+	AX_ANIM_PTR(gAxSharedAnim_00208),
+	AX_ANIM_PTR(gAxSharedAnim_00239),
+	AX_ANIM_PTR(gAxSharedAnim_00262),
+	AX_ANIM_PTR(gAxSharedAnim_00295),
+	AX_ANIM_PTR(gAxSharedAnim_00323),
+	AX_ANIM_PTR(gAxSharedAnim_00346),
+	AX_ANIM_PTR(gAxSharedAnim_00371),
 };
 
 static const ax_anim *const sSlakingAnimTable5[] = {
-	gAxSharedAnim_00014,
-	gAxSharedAnim_00016,
-	gAxSharedAnim_00018,
-	gAxSharedAnim_00020,
-	gAxSharedAnim_00022,
-	gAxSharedAnim_00024,
-	gAxSharedAnim_00025,
-	gAxSharedAnim_00028,
+	AX_ANIM_PTR(gAxSharedAnim_00014),
+	AX_ANIM_PTR(gAxSharedAnim_00016),
+	AX_ANIM_PTR(gAxSharedAnim_00018),
+	AX_ANIM_PTR(gAxSharedAnim_00020),
+	AX_ANIM_PTR(gAxSharedAnim_00022),
+	AX_ANIM_PTR(gAxSharedAnim_00024),
+	AX_ANIM_PTR(gAxSharedAnim_00025),
+	AX_ANIM_PTR(gAxSharedAnim_00028),
 };
 
 static const ax_anim *const sSlakingAnimTable6[] = {
-	gAxSharedAnim_02367,
-	gAxSharedAnim_02367,
-	gAxSharedAnim_02367,
-	gAxSharedAnim_02367,
-	gAxSharedAnim_02367,
-	gAxSharedAnim_02367,
-	gAxSharedAnim_02367,
-	gAxSharedAnim_02367,
+	AX_ANIM_PTR(gAxSharedAnim_02367),
+	AX_ANIM_PTR(gAxSharedAnim_02367),
+	AX_ANIM_PTR(gAxSharedAnim_02367),
+	AX_ANIM_PTR(gAxSharedAnim_02367),
+	AX_ANIM_PTR(gAxSharedAnim_02367),
+	AX_ANIM_PTR(gAxSharedAnim_02367),
+	AX_ANIM_PTR(gAxSharedAnim_02367),
+	AX_ANIM_PTR(gAxSharedAnim_02367),
 };
 
 static const ax_anim *const sSlakingAnimTable7[] = {
-	gAxSharedAnim_00532,
-	gAxSharedAnim_00544,
-	gAxSharedAnim_00552,
-	gAxSharedAnim_00560,
-	gAxSharedAnim_00578,
-	gAxSharedAnim_00588,
-	gAxSharedAnim_00597,
-	gAxSharedAnim_00603,
+	AX_ANIM_PTR(gAxSharedAnim_00532),
+	AX_ANIM_PTR(gAxSharedAnim_00544),
+	AX_ANIM_PTR(gAxSharedAnim_00552),
+	AX_ANIM_PTR(gAxSharedAnim_00560),
+	AX_ANIM_PTR(gAxSharedAnim_00578),
+	AX_ANIM_PTR(gAxSharedAnim_00588),
+	AX_ANIM_PTR(gAxSharedAnim_00597),
+	AX_ANIM_PTR(gAxSharedAnim_00603),
 };
 
 static const ax_anim *const sSlakingAnimTable8[] = {
-	sSlakingAnims_8_1,
-	sSlakingAnims_8_2,
-	sSlakingAnims_8_3,
-	sSlakingAnims_8_4,
-	sSlakingAnims_8_5,
-	sSlakingAnims_8_6,
-	sSlakingAnims_8_7,
-	sSlakingAnims_8_8,
+	AX_ANIM_PTR(sSlakingAnims_8_1),
+	AX_ANIM_PTR(sSlakingAnims_8_2),
+	AX_ANIM_PTR(sSlakingAnims_8_3),
+	AX_ANIM_PTR(sSlakingAnims_8_4),
+	AX_ANIM_PTR(sSlakingAnims_8_5),
+	AX_ANIM_PTR(sSlakingAnims_8_6),
+	AX_ANIM_PTR(sSlakingAnims_8_7),
+	AX_ANIM_PTR(sSlakingAnims_8_8),
 };
 
 static const ax_anim *const sSlakingAnimTable9[] = {
-	sSlakingAnims_9_1,
-	sSlakingAnims_9_2,
-	sSlakingAnims_9_3,
-	sSlakingAnims_9_4,
-	sSlakingAnims_9_5,
-	sSlakingAnims_9_6,
-	sSlakingAnims_9_7,
-	sSlakingAnims_9_8,
+	AX_ANIM_PTR(sSlakingAnims_9_1),
+	AX_ANIM_PTR(sSlakingAnims_9_2),
+	AX_ANIM_PTR(sSlakingAnims_9_3),
+	AX_ANIM_PTR(sSlakingAnims_9_4),
+	AX_ANIM_PTR(sSlakingAnims_9_5),
+	AX_ANIM_PTR(sSlakingAnims_9_6),
+	AX_ANIM_PTR(sSlakingAnims_9_7),
+	AX_ANIM_PTR(sSlakingAnims_9_8),
 };
 
 static const ax_anim *const sSlakingAnimTable10[] = {
-	gAxSharedAnim_00801,
-	gAxSharedAnim_00813,
-	gAxSharedAnim_00827,
-	gAxSharedAnim_00838,
-	gAxSharedAnim_00849,
-	gAxSharedAnim_00862,
-	gAxSharedAnim_00879,
-	gAxSharedAnim_00889,
+	AX_ANIM_PTR(gAxSharedAnim_00801),
+	AX_ANIM_PTR(gAxSharedAnim_00813),
+	AX_ANIM_PTR(gAxSharedAnim_00827),
+	AX_ANIM_PTR(gAxSharedAnim_00838),
+	AX_ANIM_PTR(gAxSharedAnim_00849),
+	AX_ANIM_PTR(gAxSharedAnim_00862),
+	AX_ANIM_PTR(gAxSharedAnim_00879),
+	AX_ANIM_PTR(gAxSharedAnim_00889),
 };
 
 static const ax_anim *const sSlakingAnimTable11[] = {
-	sSlakingAnims_11_1,
-	sSlakingAnims_11_2,
-	sSlakingAnims_11_3,
-	sSlakingAnims_11_4,
-	sSlakingAnims_11_5,
-	sSlakingAnims_11_6,
-	sSlakingAnims_11_7,
-	sSlakingAnims_11_8,
+	AX_ANIM_PTR(sSlakingAnims_11_1),
+	AX_ANIM_PTR(sSlakingAnims_11_2),
+	AX_ANIM_PTR(sSlakingAnims_11_3),
+	AX_ANIM_PTR(sSlakingAnims_11_4),
+	AX_ANIM_PTR(sSlakingAnims_11_5),
+	AX_ANIM_PTR(sSlakingAnims_11_6),
+	AX_ANIM_PTR(sSlakingAnims_11_7),
+	AX_ANIM_PTR(sSlakingAnims_11_8),
 };
 
 static const ax_anim *const sSlakingAnimTable12[] = {
-	gAxSharedAnim_01147,
-	gAxSharedAnim_01230,
-	gAxSharedAnim_01208,
-	gAxSharedAnim_01194,
-	gAxSharedAnim_01193,
-	gAxSharedAnim_01181,
-	gAxSharedAnim_01161,
-	gAxSharedAnim_01148,
+	AX_ANIM_PTR(gAxSharedAnim_01147),
+	AX_ANIM_PTR(gAxSharedAnim_01230),
+	AX_ANIM_PTR(gAxSharedAnim_01208),
+	AX_ANIM_PTR(gAxSharedAnim_01194),
+	AX_ANIM_PTR(gAxSharedAnim_01193),
+	AX_ANIM_PTR(gAxSharedAnim_01181),
+	AX_ANIM_PTR(gAxSharedAnim_01161),
+	AX_ANIM_PTR(gAxSharedAnim_01148),
 };
 
 static const ax_anim *const sSlakingAnimTable13[] = {
-	gAxSharedAnim_01242,
-	gAxSharedAnim_01323,
-	gAxSharedAnim_01314,
-	gAxSharedAnim_01301,
-	gAxSharedAnim_01286,
-	gAxSharedAnim_01278,
-	gAxSharedAnim_01267,
-	gAxSharedAnim_01253,
+	AX_ANIM_PTR(gAxSharedAnim_01242),
+	AX_ANIM_PTR(gAxSharedAnim_01323),
+	AX_ANIM_PTR(gAxSharedAnim_01314),
+	AX_ANIM_PTR(gAxSharedAnim_01301),
+	AX_ANIM_PTR(gAxSharedAnim_01286),
+	AX_ANIM_PTR(gAxSharedAnim_01278),
+	AX_ANIM_PTR(gAxSharedAnim_01267),
+	AX_ANIM_PTR(gAxSharedAnim_01253),
 };
 
 static const ax_anim *const *const sAxAnimationsSlaking[] = {

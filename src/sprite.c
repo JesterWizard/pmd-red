@@ -27,6 +27,17 @@ UNUSED EWRAM_DATA static u32 sUnused3 = {0}; // R=2026E34
 
 EWRAM_INIT static unkStruct_20266B0 *sUnknown_203B074 = {0};
 
+// Side pool for GMLZ anim decompress — must NOT live inside axdata (GroundLives
+// embeds UnkGroundSpriteStruct at a fixed 0x80 with axdata at offset 0).
+// Kept in EWRAM BSS (not a 16 KiB mid-intro MemoryAlloc): company logos /
+// intro already fill most of sMainHeap with GroundLives/maps; a failed alloc
+// used to return the GMLZ pointer as ax_anim* (garbage poseId → black screen).
+#define AX_ANIM_CACHE_SLOTS 24
+static EWRAM_DATA u8 sAxAnimCacheData[AX_ANIM_CACHE_SLOTS][AX_ANIM_CACHE_SIZE] ALIGNED(4) = {0};
+static EWRAM_DATA axdata *sAxAnimCacheOwner[AX_ANIM_CACHE_SLOTS] = {0};
+static EWRAM_DATA u32 sAxAnimCacheCursor = {0};
+static const ax_anim sAxAnimFallback[1] = { AX_ANIM_TERMINATOR };
+
 static void AxResInitUnoriented(axdata *, EfoFileData *, u32, u32, u32, bool8);
 static void RegisterSpriteParts_80052BC(const ax_sprite *spritesPtr);
 
@@ -46,6 +57,50 @@ static u32 GetAxGfxByteCount(const u8 *gfx, u32 storedCount)
         return gfx[5] | (gfx[6] << 8) | (gfx[7] << 16);
     return storedCount;
 }
+
+static u8 *ClaimAxAnimCache(axdata *ax)
+{
+    s32 i;
+    u32 slot;
+
+    for (i = 0; i < AX_ANIM_CACHE_SLOTS; i++) {
+        if (sAxAnimCacheOwner[i] == ax)
+            return sAxAnimCacheData[i];
+    }
+
+    for (i = 0; i < AX_ANIM_CACHE_SLOTS; i++) {
+        if (sAxAnimCacheOwner[i] == NULL) {
+            sAxAnimCacheOwner[i] = ax;
+            return sAxAnimCacheData[i];
+        }
+    }
+
+    // All slots busy: steal round-robin (busy ground scenes).
+    slot = sAxAnimCacheCursor++ % AX_ANIM_CACHE_SLOTS;
+    sAxAnimCacheOwner[slot] = ax;
+    return sAxAnimCacheData[slot];
+}
+
+// Anim tables may point at raw ax_anim[] or GMLZ+LZ77 blobs (compress_ax_anims.py).
+static const ax_anim *ResolveAxAnimData(axdata *ax, const ax_anim *anim)
+{
+    const u8 *data = (const u8 *)anim;
+    u32 decompressedSize;
+    u8 *cache;
+
+    if (!IsAxGfxCompressed(data))
+        return anim;
+
+    decompressedSize = data[5] | (data[6] << 8) | (data[7] << 16);
+    if (decompressedSize == 0 || decompressedSize > AX_ANIM_CACHE_SIZE)
+        return sAxAnimFallback;
+
+    cache = ClaimAxAnimCache(ax);
+    // Skip GMLZ tag; BIOS wants a standard 0x10 LZ77 stream (4-byte aligned).
+    LZ77UnCompWram(data + 4, cache);
+    return (const ax_anim *)cache;
+}
+
 static void sub_800561C(const EfoFileData *, s32 vramIdx, s32 brightness, const RGB_Struct *ramp);
 
 // arm9.bin::0200265C
@@ -521,7 +576,7 @@ void AxResInit(axdata *a0, axmain *a1, u32 a2, u32 direction, u32 a4, u32 sprite
     a0->sub1.unkC = 0;
     a0->sub1.unk10 = 0;
     a0->totalFrames = 0;
-    a0->nextAnimData = a1->animations[a2][direction];
+    a0->nextAnimData = ResolveAxAnimData(a0, a1->animations[a2][direction]);
     a0->activeAnimData = a0->nextAnimData;
     a0->poseData = a1->poses;
     a0->spriteData = a1->spriteData;
@@ -551,7 +606,7 @@ static void AxResInitUnoriented(axdata *a0, EfoFileData *a1, u32 a2, u32 a3, u32
     a0->sub1.unkC = 0;
     a0->sub1.unk10 = 0;
     a0->totalFrames = 0;
-    a0->nextAnimData = a1->animations[a2][0];
+    a0->nextAnimData = ResolveAxAnimData(a0, a1->animations[a2][0]);
     a0->activeAnimData = a0->nextAnimData;
     a0->poseData = a1->poses;
     a0->positions = NULL;

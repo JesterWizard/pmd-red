@@ -1,4 +1,13 @@
 /* ax-table-deduped: duplicate pose/anim arrays aliased */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
 static const axmain sAxMainStatue;
 const SiroArchive gAxStatue = {"SIRO", &sAxMainStatue};
 
@@ -6,58 +15,19 @@ static const ax_pose sStatuePose1[] = {
 	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
 	AX_POSE_TERMINATOR
 };
-static const ax_anim sStatueAnims_1_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 0, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_2_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 1, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_3_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 2, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_4_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 3, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_5_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 4, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_6_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 5, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_7_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 6, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_8_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 7, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_9_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 8, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_10_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 9, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_11_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 10, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_12_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 11, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sStatueAnims_13_1[] = {
-	{ .frames = 6, .unkFlags = 0, .poseId = 12, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
+static const u8 sStatueAnims_1_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_1_1.lz");
+static const u8 sStatueAnims_2_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_2_1.lz");
+static const u8 sStatueAnims_3_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_3_1.lz");
+static const u8 sStatueAnims_4_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_4_1.lz");
+static const u8 sStatueAnims_5_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_5_1.lz");
+static const u8 sStatueAnims_6_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_6_1.lz");
+static const u8 sStatueAnims_7_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_7_1.lz");
+static const u8 sStatueAnims_8_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_8_1.lz");
+static const u8 sStatueAnims_9_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_9_1.lz");
+static const u8 sStatueAnims_10_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_10_1.lz");
+static const u8 sStatueAnims_11_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_11_1.lz");
+static const u8 sStatueAnims_12_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_12_1.lz");
+static const u8 sStatueAnims_13_1[] ALIGNED(4) = INCBIN_U8("graphics/ax/anim_lz/statue/sStatueAnims_13_1.lz");
 
 static const u8 sStatueGfx1[] ALIGNED(4) = INCBIN_U8("graphics/ax/mon/statue/sprite_1.4bpp.lz");
 static const ax_sprite sStatueSprites1[] = {
@@ -98,146 +68,146 @@ static const struct PositionSets sAxPositionsStatue[] = {
 };
 
 static const ax_anim *const sStatueAnimTable1[] = {
-	sStatueAnims_1_1,
-	sStatueAnims_1_1,
-	sStatueAnims_1_1,
-	sStatueAnims_1_1,
-	sStatueAnims_1_1,
-	sStatueAnims_1_1,
-	sStatueAnims_1_1,
-	sStatueAnims_1_1,
+	AX_ANIM_PTR(sStatueAnims_1_1),
+	AX_ANIM_PTR(sStatueAnims_1_1),
+	AX_ANIM_PTR(sStatueAnims_1_1),
+	AX_ANIM_PTR(sStatueAnims_1_1),
+	AX_ANIM_PTR(sStatueAnims_1_1),
+	AX_ANIM_PTR(sStatueAnims_1_1),
+	AX_ANIM_PTR(sStatueAnims_1_1),
+	AX_ANIM_PTR(sStatueAnims_1_1),
 };
 
 static const ax_anim *const sStatueAnimTable2[] = {
-	sStatueAnims_2_1,
-	sStatueAnims_2_1,
-	sStatueAnims_2_1,
-	sStatueAnims_2_1,
-	sStatueAnims_2_1,
-	sStatueAnims_2_1,
-	sStatueAnims_2_1,
-	sStatueAnims_2_1,
+	AX_ANIM_PTR(sStatueAnims_2_1),
+	AX_ANIM_PTR(sStatueAnims_2_1),
+	AX_ANIM_PTR(sStatueAnims_2_1),
+	AX_ANIM_PTR(sStatueAnims_2_1),
+	AX_ANIM_PTR(sStatueAnims_2_1),
+	AX_ANIM_PTR(sStatueAnims_2_1),
+	AX_ANIM_PTR(sStatueAnims_2_1),
+	AX_ANIM_PTR(sStatueAnims_2_1),
 };
 
 static const ax_anim *const sStatueAnimTable3[] = {
-	sStatueAnims_3_1,
-	sStatueAnims_3_1,
-	sStatueAnims_3_1,
-	sStatueAnims_3_1,
-	sStatueAnims_3_1,
-	sStatueAnims_3_1,
-	sStatueAnims_3_1,
-	sStatueAnims_3_1,
+	AX_ANIM_PTR(sStatueAnims_3_1),
+	AX_ANIM_PTR(sStatueAnims_3_1),
+	AX_ANIM_PTR(sStatueAnims_3_1),
+	AX_ANIM_PTR(sStatueAnims_3_1),
+	AX_ANIM_PTR(sStatueAnims_3_1),
+	AX_ANIM_PTR(sStatueAnims_3_1),
+	AX_ANIM_PTR(sStatueAnims_3_1),
+	AX_ANIM_PTR(sStatueAnims_3_1),
 };
 
 static const ax_anim *const sStatueAnimTable4[] = {
-	sStatueAnims_4_1,
-	sStatueAnims_4_1,
-	sStatueAnims_4_1,
-	sStatueAnims_4_1,
-	sStatueAnims_4_1,
-	sStatueAnims_4_1,
-	sStatueAnims_4_1,
-	sStatueAnims_4_1,
+	AX_ANIM_PTR(sStatueAnims_4_1),
+	AX_ANIM_PTR(sStatueAnims_4_1),
+	AX_ANIM_PTR(sStatueAnims_4_1),
+	AX_ANIM_PTR(sStatueAnims_4_1),
+	AX_ANIM_PTR(sStatueAnims_4_1),
+	AX_ANIM_PTR(sStatueAnims_4_1),
+	AX_ANIM_PTR(sStatueAnims_4_1),
+	AX_ANIM_PTR(sStatueAnims_4_1),
 };
 
 static const ax_anim *const sStatueAnimTable5[] = {
-	sStatueAnims_5_1,
-	sStatueAnims_5_1,
-	sStatueAnims_5_1,
-	sStatueAnims_5_1,
-	sStatueAnims_5_1,
-	sStatueAnims_5_1,
-	sStatueAnims_5_1,
-	sStatueAnims_5_1,
+	AX_ANIM_PTR(sStatueAnims_5_1),
+	AX_ANIM_PTR(sStatueAnims_5_1),
+	AX_ANIM_PTR(sStatueAnims_5_1),
+	AX_ANIM_PTR(sStatueAnims_5_1),
+	AX_ANIM_PTR(sStatueAnims_5_1),
+	AX_ANIM_PTR(sStatueAnims_5_1),
+	AX_ANIM_PTR(sStatueAnims_5_1),
+	AX_ANIM_PTR(sStatueAnims_5_1),
 };
 
 static const ax_anim *const sStatueAnimTable6[] = {
-	sStatueAnims_6_1,
-	sStatueAnims_6_1,
-	sStatueAnims_6_1,
-	sStatueAnims_6_1,
-	sStatueAnims_6_1,
-	sStatueAnims_6_1,
-	sStatueAnims_6_1,
-	sStatueAnims_6_1,
+	AX_ANIM_PTR(sStatueAnims_6_1),
+	AX_ANIM_PTR(sStatueAnims_6_1),
+	AX_ANIM_PTR(sStatueAnims_6_1),
+	AX_ANIM_PTR(sStatueAnims_6_1),
+	AX_ANIM_PTR(sStatueAnims_6_1),
+	AX_ANIM_PTR(sStatueAnims_6_1),
+	AX_ANIM_PTR(sStatueAnims_6_1),
+	AX_ANIM_PTR(sStatueAnims_6_1),
 };
 
 static const ax_anim *const sStatueAnimTable7[] = {
-	sStatueAnims_7_1,
-	sStatueAnims_7_1,
-	sStatueAnims_7_1,
-	sStatueAnims_7_1,
-	sStatueAnims_7_1,
-	sStatueAnims_7_1,
-	sStatueAnims_7_1,
-	sStatueAnims_7_1,
+	AX_ANIM_PTR(sStatueAnims_7_1),
+	AX_ANIM_PTR(sStatueAnims_7_1),
+	AX_ANIM_PTR(sStatueAnims_7_1),
+	AX_ANIM_PTR(sStatueAnims_7_1),
+	AX_ANIM_PTR(sStatueAnims_7_1),
+	AX_ANIM_PTR(sStatueAnims_7_1),
+	AX_ANIM_PTR(sStatueAnims_7_1),
+	AX_ANIM_PTR(sStatueAnims_7_1),
 };
 
 static const ax_anim *const sStatueAnimTable8[] = {
-	sStatueAnims_8_1,
-	sStatueAnims_8_1,
-	sStatueAnims_8_1,
-	sStatueAnims_8_1,
-	sStatueAnims_8_1,
-	sStatueAnims_8_1,
-	sStatueAnims_8_1,
-	sStatueAnims_8_1,
+	AX_ANIM_PTR(sStatueAnims_8_1),
+	AX_ANIM_PTR(sStatueAnims_8_1),
+	AX_ANIM_PTR(sStatueAnims_8_1),
+	AX_ANIM_PTR(sStatueAnims_8_1),
+	AX_ANIM_PTR(sStatueAnims_8_1),
+	AX_ANIM_PTR(sStatueAnims_8_1),
+	AX_ANIM_PTR(sStatueAnims_8_1),
+	AX_ANIM_PTR(sStatueAnims_8_1),
 };
 
 static const ax_anim *const sStatueAnimTable9[] = {
-	sStatueAnims_9_1,
-	sStatueAnims_9_1,
-	sStatueAnims_9_1,
-	sStatueAnims_9_1,
-	sStatueAnims_9_1,
-	sStatueAnims_9_1,
-	sStatueAnims_9_1,
-	sStatueAnims_9_1,
+	AX_ANIM_PTR(sStatueAnims_9_1),
+	AX_ANIM_PTR(sStatueAnims_9_1),
+	AX_ANIM_PTR(sStatueAnims_9_1),
+	AX_ANIM_PTR(sStatueAnims_9_1),
+	AX_ANIM_PTR(sStatueAnims_9_1),
+	AX_ANIM_PTR(sStatueAnims_9_1),
+	AX_ANIM_PTR(sStatueAnims_9_1),
+	AX_ANIM_PTR(sStatueAnims_9_1),
 };
 
 static const ax_anim *const sStatueAnimTable10[] = {
-	sStatueAnims_10_1,
-	sStatueAnims_10_1,
-	sStatueAnims_10_1,
-	sStatueAnims_10_1,
-	sStatueAnims_10_1,
-	sStatueAnims_10_1,
-	sStatueAnims_10_1,
-	sStatueAnims_10_1,
+	AX_ANIM_PTR(sStatueAnims_10_1),
+	AX_ANIM_PTR(sStatueAnims_10_1),
+	AX_ANIM_PTR(sStatueAnims_10_1),
+	AX_ANIM_PTR(sStatueAnims_10_1),
+	AX_ANIM_PTR(sStatueAnims_10_1),
+	AX_ANIM_PTR(sStatueAnims_10_1),
+	AX_ANIM_PTR(sStatueAnims_10_1),
+	AX_ANIM_PTR(sStatueAnims_10_1),
 };
 
 static const ax_anim *const sStatueAnimTable11[] = {
-	sStatueAnims_11_1,
-	sStatueAnims_11_1,
-	sStatueAnims_11_1,
-	sStatueAnims_11_1,
-	sStatueAnims_11_1,
-	sStatueAnims_11_1,
-	sStatueAnims_11_1,
-	sStatueAnims_11_1,
+	AX_ANIM_PTR(sStatueAnims_11_1),
+	AX_ANIM_PTR(sStatueAnims_11_1),
+	AX_ANIM_PTR(sStatueAnims_11_1),
+	AX_ANIM_PTR(sStatueAnims_11_1),
+	AX_ANIM_PTR(sStatueAnims_11_1),
+	AX_ANIM_PTR(sStatueAnims_11_1),
+	AX_ANIM_PTR(sStatueAnims_11_1),
+	AX_ANIM_PTR(sStatueAnims_11_1),
 };
 
 static const ax_anim *const sStatueAnimTable12[] = {
-	sStatueAnims_12_1,
-	sStatueAnims_12_1,
-	sStatueAnims_12_1,
-	sStatueAnims_12_1,
-	sStatueAnims_12_1,
-	sStatueAnims_12_1,
-	sStatueAnims_12_1,
-	sStatueAnims_12_1,
+	AX_ANIM_PTR(sStatueAnims_12_1),
+	AX_ANIM_PTR(sStatueAnims_12_1),
+	AX_ANIM_PTR(sStatueAnims_12_1),
+	AX_ANIM_PTR(sStatueAnims_12_1),
+	AX_ANIM_PTR(sStatueAnims_12_1),
+	AX_ANIM_PTR(sStatueAnims_12_1),
+	AX_ANIM_PTR(sStatueAnims_12_1),
+	AX_ANIM_PTR(sStatueAnims_12_1),
 };
 
 static const ax_anim *const sStatueAnimTable13[] = {
-	sStatueAnims_13_1,
-	sStatueAnims_13_1,
-	sStatueAnims_13_1,
-	sStatueAnims_13_1,
-	sStatueAnims_13_1,
-	sStatueAnims_13_1,
-	sStatueAnims_13_1,
-	sStatueAnims_13_1,
+	AX_ANIM_PTR(sStatueAnims_13_1),
+	AX_ANIM_PTR(sStatueAnims_13_1),
+	AX_ANIM_PTR(sStatueAnims_13_1),
+	AX_ANIM_PTR(sStatueAnims_13_1),
+	AX_ANIM_PTR(sStatueAnims_13_1),
+	AX_ANIM_PTR(sStatueAnims_13_1),
+	AX_ANIM_PTR(sStatueAnims_13_1),
+	AX_ANIM_PTR(sStatueAnims_13_1),
 };
 
 static const ax_anim *const *const sAxAnimationsStatue[] = {

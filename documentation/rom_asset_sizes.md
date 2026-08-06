@@ -4,7 +4,7 @@ Retail baseline is a fixed **32.00 MiB** GBA image (`baserom.gba`). The default
 **modern** build (`make`) emits an unpadded `pmd_red.gba` packed with
 `ld_script_modern.ld`.
 
-Current modern image: **~21.92 MiB** (~10.08 MiB under 32 MiB). Details and
+Current modern image: **~20.71 MiB** (~11.29 MiB under 32 MiB). Details and
 reversals: `SESSION_HISTORY.md`.
 
 Percentages below are of the **32 MiB** retail image unless noted.
@@ -19,6 +19,7 @@ Percentages below are of the **32 MiB** retail image unless noted.
 | AX tile LZ77 | **24.76 MiB** | **−~2.73 MiB** | `.4bpp` → `.4bpp.lz` (`LZ77UnCompVram`) |
 | (+ custom title BGs / portraits) | **25.30 MiB** | +~0.54 MiB | New always-linked assets |
 | AX pose/anim table dedupe | **21.92 MiB** | **−~3.38 MiB** | Alias duplicate pose/anim arrays |
+| AX anim sequence LZ | **20.71 MiB** | **−~1.20 MiB** | GMLZ anims → `axdata.animCache` on init |
 
 ## High-level layout — before vs after
 
@@ -27,7 +28,7 @@ contiguously (see `pmd_red.map`).
 
 | Section | Before (retail) | After (modern) | Saved | What was done |
 | --- | ---: | ---: | ---: | --- |
-| **Monster AX** (`monster_sbin` / `monster_gfx*`) | **17.68 MiB** | **~11.33 MiB** | **~6.35 MiB** | Tile LZ77 + pose/anim dedupe (see below) |
+| **Monster AX** (`monster_sbin` / `monster_gfx*`) | **17.68 MiB** | **~10.13 MiB** | **~7.55 MiB** | Tile LZ + table dedupe + anim LZ (see below) |
 | **Ground maps** (`ground_sbin`) | **4.45 MiB** raw | **~3.08 MiB** | **~1.37 MiB** | BPC/BMA LZ77 only; BPL/BPA still raw |
 | **Unused opaque blobs** | **~2.36 MiB** | **0** (not linked) | **~2.36 MiB** | Stripped from modern `ASM_SOURCES` |
 | `dungeon_sbin` | 1.32 MiB | ~1.32 MiB | — | Already AT4PX-heavy; unchanged |
@@ -38,11 +39,11 @@ contiguously (see `pmd_red.map`).
 | `ornament_sbin` | 0.12 MiB | ~0.12 MiB | — | Unchanged |
 | `.text` + `.rodata` | ~2.44 MiB | ~2.4 MiB | — | Poor compression target |
 | Custom title BGs + portraits | 0 | **~0.51 MiB** | *(added)* | Hack features; always linked today |
-| **Full image** | **32.00 MiB** | **~21.92 MiB** | **~10.08 MiB** | Sum of the above (+ unpad) |
+| **Full image** | **32.00 MiB** | **~20.71 MiB** | **~11.29 MiB** | Sum of the above (+ unpad) |
 
 ```
-BEFORE (retail 32 MiB)          AFTER (modern ~21.92 MiB)
-monster  ████████████████ 17.7   monster  ██████████░░░░ 11.3
+BEFORE (retail 32 MiB)          AFTER (modern ~20.71 MiB)
+monster  ████████████████ 17.7   monster  █████████░░░░░ 10.1
 ground   ████░░░░░░░░░░░░  4.5   ground   ███░░░░░░░░░░░  3.1
 unks     ██░░░░░░░░░░░░░░  2.4   unks     (stripped)
 other    ██████░░░░░░░░░░  7.4   other    █████░░░░░░░░░ ~7.5
@@ -50,24 +51,31 @@ other    ██████░░░░░░░░░░  7.4   other    ██
 
 ## Per-section detail
 
-### 1. Monster graphics — 17.68 → ~11.33 MiB (−~6.35 MiB)
+### 1. Monster graphics — 17.68 → ~10.13 MiB (−~7.55 MiB)
 
-Largest bucket. Two separate reductions:
+Largest bucket. Three separate reductions:
 
 | Sub-bucket | Before | After | Saved | Method |
 | --- | ---: | ---: | ---: | --- |
 | AX **tiles** (`.4bpp`) | ~7.67 MiB raw / ~8.04 MiB linked | **~4.93 MiB** LZ | **~2.73 MiB** | `compress_ax_tiles.py` / `make ax-compress` — `GMLZ` + BIOS LZ77; `LZ77UnCompVram` on blit |
-| AX **pose/anim tables** | **~9.77 MiB** | **~6.39 MiB** | **~3.38 MiB** | `dedupe_ax_tables.py` / `make ax-dedupe` |
+| AX **pose/anim tables** (dedupe) | **~9.77 MiB** | **~6.39 MiB** | **~3.38 MiB** | `dedupe_ax_tables.py` / `make ax-dedupe` |
 | → pose bodies | 2.06 MiB | 0.81 MiB | 1.25 MiB | Within-species identical `ax_pose` arrays aliased |
-| → anim frames | 5.03 MiB | 2.89 MiB | 2.14 MiB | Within-file aliases + cross-species pool (`ax_shared_anims.c`) |
+| → anim frames (deduped) | 5.03 MiB | 2.89 MiB | 2.14 MiB | Within-file aliases + cross-species pool |
 | → positions | 1.43 MiB | 1.43 MiB | — | Untouched |
 | → ptr tables / sprite meta | ~1.25 MiB | ~1.25 MiB | — | Untouched |
+| AX **anim LZ** (after dedupe) | **~2.89 MiB** | **~1.69 MiB** | **~1.20 MiB** | `compress_ax_anims.py` / `make ax-anim-compress` |
+
+Anim LZ details: sequences ≤256 B that shrink under LZ ship as `GMLZ` blobs
+under `graphics/ax/anim_lz/`. `AxResInit` decompresses into a **heap-backed
+64-slot pool** (`ClaimAxAnimCache` / `ResolveAxAnimData` in `sprite.c`) — not
+inside `axdata` (that broke `UnkGroundSpriteStruct` / GroundLives at boot).
+Oversized anims (~166) stay raw ROM.
 
 Retail also had AT4PX portraits inside `monster_sbin` (~329 markers). Hack adds
 optional SpriteCollab portraits outside this bucket (`custom_portraits_*`).
 
-**Not done yet:** LZ of remaining tables (~6.4 MiB, ~4× in probes), position-set
-indexing (~0.8 MiB potential), culling species/frames.
+**Not done yet:** pose/position LZ or offset packing, position-set indexing
+(~0.8 MiB potential), culling species/frames.
 
 ### 2. Ground maps — 4.45 → ~3.08 MiB (−~1.37 MiB)
 
@@ -140,8 +148,8 @@ Build-time exclusion or fewer BG/expression files would reclaim this.
 | `titlemenu_sbin` | 9 | 8 |
 | `sound_data` | 0 | 1 |
 
-Modern **adds** `GMLZ` (BIOS LZ77) for ground BPC/BMA and AX tiles, plus
-structural dedupe for AX pose/anim tables.
+Modern **adds** `GMLZ` (BIOS LZ77) for ground BPC/BMA, AX tiles, and AX anim
+sequences, plus structural dedupe for AX pose/anim tables.
 
 ## Forced gaps (matching layout only)
 
@@ -152,17 +160,17 @@ unpadded modern pack.
 
 | Tree path | On-disk size | Role |
 | --- | ---: | --- |
-| `graphics/ax/` | ~15.3 MiB+ | Monster sprite source (PNG/4bpp + `.lz`) |
+| `graphics/ax/` | ~15.3 MiB+ | Monster sprite source (PNG/4bpp + tile/anim `.lz`) |
 | `sound/wave/` + `sound/songs/` | ~14.4 MiB | Samples + sequences (source form) |
 | `data/` | ~22 MiB | Archives, JSON, dungeon data, `map_bg` / `map_bg_lz` |
-| `src/data/ax/` | large | Per-species AX headers (deduped in place) |
+| `src/data/ax/` | large | Per-species AX headers (deduped + anim-lz in place) |
 
 ## Remaining checklist
 
 1. **LZ `effect_sbin`** (~0.4 MiB likely) — needs decompress-on-open.
 2. **Ground BPL/BPA LZ** (~0.4 MiB) — boot-safe scratch path required.
 3. **Position-set indexing** in AX tables (~0.8 MiB potential).
-4. **LZ remaining AX tables** (~6.4 MiB raw; large win, heap/fixup work).
+4. **Pose/remaining table packing** (offset format; full table LZ still heap-hostile).
 5. **Trim or build-exclude** custom title BGs / portraits if unused.
 6. **Sound** downsample/cull if quality can drop.
 
@@ -171,7 +179,7 @@ unpadded modern pack.
 ```bash
 make -j$(nproc)
 # optional refresh tools:
-make ground-compress ax-compress ax-dedupe
+make ground-compress ax-compress ax-dedupe ax-anim-compress
 # then inspect pmd_red.map / `arm-none-eabi-nm -S` on monster_gfx*.o
 ls -lh pmd_red.gba
 ```

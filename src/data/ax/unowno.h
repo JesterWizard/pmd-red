@@ -1,4 +1,13 @@
 /* ax-table-deduped: duplicate pose/anim arrays aliased */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
+/* ax-anim-lz: GMLZ anim sequences; AX_ANIM_PTR in tables */
 #include "ax_shared_anims.h"
 static const axmain sAxMainUnownO;
 const SiroArchive gAxUnownO = {"SIRO", &sAxMainUnownO};
@@ -329,146 +338,146 @@ static const struct PositionSets sAxPositionsUnownO[] = {
 };
 
 static const ax_anim *const sUnownOAnimTable1[] = {
-	gAxSharedAnim_02475,
-	gAxSharedAnim_02478,
-	gAxSharedAnim_02528,
-	gAxSharedAnim_02540,
-	gAxSharedAnim_02543,
-	gAxSharedAnim_02544,
-	gAxSharedAnim_02549,
-	gAxSharedAnim_02552,
+	AX_ANIM_PTR(gAxSharedAnim_02475),
+	AX_ANIM_PTR(gAxSharedAnim_02478),
+	AX_ANIM_PTR(gAxSharedAnim_02528),
+	AX_ANIM_PTR(gAxSharedAnim_02540),
+	AX_ANIM_PTR(gAxSharedAnim_02543),
+	AX_ANIM_PTR(gAxSharedAnim_02544),
+	AX_ANIM_PTR(gAxSharedAnim_02549),
+	AX_ANIM_PTR(gAxSharedAnim_02552),
 };
 
 static const ax_anim *const sUnownOAnimTable2[] = {
-	gAxSharedAnim_02144,
-	gAxSharedAnim_02232,
-	gAxSharedAnim_00150,
-	gAxSharedAnim_00226,
-	gAxSharedAnim_00317,
-	gAxSharedAnim_00394,
-	gAxSharedAnim_00486,
-	gAxSharedAnim_00569,
+	AX_ANIM_PTR(gAxSharedAnim_02144),
+	AX_ANIM_PTR(gAxSharedAnim_02232),
+	AX_ANIM_PTR(gAxSharedAnim_00150),
+	AX_ANIM_PTR(gAxSharedAnim_00226),
+	AX_ANIM_PTR(gAxSharedAnim_00317),
+	AX_ANIM_PTR(gAxSharedAnim_00394),
+	AX_ANIM_PTR(gAxSharedAnim_00486),
+	AX_ANIM_PTR(gAxSharedAnim_00569),
 };
 
 static const ax_anim *const sUnownOAnimTable3[] = {
-	gAxSharedAnim_00666,
-	gAxSharedAnim_00787,
-	gAxSharedAnim_00922,
-	gAxSharedAnim_01066,
-	gAxSharedAnim_01207,
-	gAxSharedAnim_01330,
-	gAxSharedAnim_01431,
-	gAxSharedAnim_01492,
+	AX_ANIM_PTR(gAxSharedAnim_00666),
+	AX_ANIM_PTR(gAxSharedAnim_00787),
+	AX_ANIM_PTR(gAxSharedAnim_00922),
+	AX_ANIM_PTR(gAxSharedAnim_01066),
+	AX_ANIM_PTR(gAxSharedAnim_01207),
+	AX_ANIM_PTR(gAxSharedAnim_01330),
+	AX_ANIM_PTR(gAxSharedAnim_01431),
+	AX_ANIM_PTR(gAxSharedAnim_01492),
 };
 
 static const ax_anim *const sUnownOAnimTable4[] = {
-	gAxSharedAnim_01573,
-	gAxSharedAnim_01633,
-	gAxSharedAnim_01684,
-	gAxSharedAnim_01726,
-	gAxSharedAnim_01763,
-	gAxSharedAnim_01794,
-	gAxSharedAnim_01821,
-	gAxSharedAnim_01824,
+	AX_ANIM_PTR(gAxSharedAnim_01573),
+	AX_ANIM_PTR(gAxSharedAnim_01633),
+	AX_ANIM_PTR(gAxSharedAnim_01684),
+	AX_ANIM_PTR(gAxSharedAnim_01726),
+	AX_ANIM_PTR(gAxSharedAnim_01763),
+	AX_ANIM_PTR(gAxSharedAnim_01794),
+	AX_ANIM_PTR(gAxSharedAnim_01821),
+	AX_ANIM_PTR(gAxSharedAnim_01824),
 };
 
 static const ax_anim *const sUnownOAnimTable5[] = {
-	gAxSharedAnim_01840,
-	gAxSharedAnim_01855,
-	gAxSharedAnim_01869,
-	gAxSharedAnim_01880,
-	gAxSharedAnim_01886,
-	gAxSharedAnim_01895,
-	gAxSharedAnim_01900,
-	gAxSharedAnim_01903,
+	AX_ANIM_PTR(gAxSharedAnim_01840),
+	AX_ANIM_PTR(gAxSharedAnim_01855),
+	AX_ANIM_PTR(gAxSharedAnim_01869),
+	AX_ANIM_PTR(gAxSharedAnim_01880),
+	AX_ANIM_PTR(gAxSharedAnim_01886),
+	AX_ANIM_PTR(gAxSharedAnim_01895),
+	AX_ANIM_PTR(gAxSharedAnim_01900),
+	AX_ANIM_PTR(gAxSharedAnim_01903),
 };
 
 static const ax_anim *const sUnownOAnimTable6[] = {
-	gAxSharedAnim_02402,
-	gAxSharedAnim_02402,
-	gAxSharedAnim_02402,
-	gAxSharedAnim_02402,
-	gAxSharedAnim_02402,
-	gAxSharedAnim_02402,
-	gAxSharedAnim_02402,
-	gAxSharedAnim_02402,
+	AX_ANIM_PTR(gAxSharedAnim_02402),
+	AX_ANIM_PTR(gAxSharedAnim_02402),
+	AX_ANIM_PTR(gAxSharedAnim_02402),
+	AX_ANIM_PTR(gAxSharedAnim_02402),
+	AX_ANIM_PTR(gAxSharedAnim_02402),
+	AX_ANIM_PTR(gAxSharedAnim_02402),
+	AX_ANIM_PTR(gAxSharedAnim_02402),
+	AX_ANIM_PTR(gAxSharedAnim_02402),
 };
 
 static const ax_anim *const sUnownOAnimTable7[] = {
-	gAxSharedAnim_01921,
-	gAxSharedAnim_01924,
-	gAxSharedAnim_01935,
-	gAxSharedAnim_01937,
-	gAxSharedAnim_01947,
-	gAxSharedAnim_01957,
-	gAxSharedAnim_01960,
-	gAxSharedAnim_01975,
+	AX_ANIM_PTR(gAxSharedAnim_01921),
+	AX_ANIM_PTR(gAxSharedAnim_01924),
+	AX_ANIM_PTR(gAxSharedAnim_01935),
+	AX_ANIM_PTR(gAxSharedAnim_01937),
+	AX_ANIM_PTR(gAxSharedAnim_01947),
+	AX_ANIM_PTR(gAxSharedAnim_01957),
+	AX_ANIM_PTR(gAxSharedAnim_01960),
+	AX_ANIM_PTR(gAxSharedAnim_01975),
 };
 
 static const ax_anim *const sUnownOAnimTable8[] = {
-	gAxSharedAnim_02320,
-	gAxSharedAnim_02321,
-	gAxSharedAnim_02322,
-	gAxSharedAnim_02323,
-	gAxSharedAnim_02324,
-	gAxSharedAnim_02325,
-	gAxSharedAnim_02326,
-	gAxSharedAnim_02327,
+	AX_ANIM_PTR(gAxSharedAnim_02320),
+	AX_ANIM_PTR(gAxSharedAnim_02321),
+	AX_ANIM_PTR(gAxSharedAnim_02322),
+	AX_ANIM_PTR(gAxSharedAnim_02323),
+	AX_ANIM_PTR(gAxSharedAnim_02324),
+	AX_ANIM_PTR(gAxSharedAnim_02325),
+	AX_ANIM_PTR(gAxSharedAnim_02326),
+	AX_ANIM_PTR(gAxSharedAnim_02327),
 };
 
 static const ax_anim *const sUnownOAnimTable9[] = {
-	gAxSharedAnim_02011,
-	gAxSharedAnim_02016,
-	gAxSharedAnim_02019,
-	gAxSharedAnim_02025,
-	gAxSharedAnim_02032,
-	gAxSharedAnim_02037,
-	gAxSharedAnim_02040,
-	gAxSharedAnim_02051,
+	AX_ANIM_PTR(gAxSharedAnim_02011),
+	AX_ANIM_PTR(gAxSharedAnim_02016),
+	AX_ANIM_PTR(gAxSharedAnim_02019),
+	AX_ANIM_PTR(gAxSharedAnim_02025),
+	AX_ANIM_PTR(gAxSharedAnim_02032),
+	AX_ANIM_PTR(gAxSharedAnim_02037),
+	AX_ANIM_PTR(gAxSharedAnim_02040),
+	AX_ANIM_PTR(gAxSharedAnim_02051),
 };
 
 static const ax_anim *const sUnownOAnimTable10[] = {
-	gAxSharedAnim_02055,
-	gAxSharedAnim_02059,
-	gAxSharedAnim_02066,
-	gAxSharedAnim_02072,
-	gAxSharedAnim_02073,
-	gAxSharedAnim_02078,
-	gAxSharedAnim_02082,
-	gAxSharedAnim_02085,
+	AX_ANIM_PTR(gAxSharedAnim_02055),
+	AX_ANIM_PTR(gAxSharedAnim_02059),
+	AX_ANIM_PTR(gAxSharedAnim_02066),
+	AX_ANIM_PTR(gAxSharedAnim_02072),
+	AX_ANIM_PTR(gAxSharedAnim_02073),
+	AX_ANIM_PTR(gAxSharedAnim_02078),
+	AX_ANIM_PTR(gAxSharedAnim_02082),
+	AX_ANIM_PTR(gAxSharedAnim_02085),
 };
 
 static const ax_anim *const sUnownOAnimTable11[] = {
-	gAxSharedAnim_02098,
-	gAxSharedAnim_02104,
-	gAxSharedAnim_02108,
-	gAxSharedAnim_02118,
-	gAxSharedAnim_02125,
-	gAxSharedAnim_02131,
-	gAxSharedAnim_02139,
-	gAxSharedAnim_02145,
+	AX_ANIM_PTR(gAxSharedAnim_02098),
+	AX_ANIM_PTR(gAxSharedAnim_02104),
+	AX_ANIM_PTR(gAxSharedAnim_02108),
+	AX_ANIM_PTR(gAxSharedAnim_02118),
+	AX_ANIM_PTR(gAxSharedAnim_02125),
+	AX_ANIM_PTR(gAxSharedAnim_02131),
+	AX_ANIM_PTR(gAxSharedAnim_02139),
+	AX_ANIM_PTR(gAxSharedAnim_02145),
 };
 
 static const ax_anim *const sUnownOAnimTable12[] = {
-	gAxSharedAnim_02158,
-	gAxSharedAnim_02167,
-	gAxSharedAnim_02169,
-	gAxSharedAnim_02174,
-	gAxSharedAnim_02196,
-	gAxSharedAnim_02202,
-	gAxSharedAnim_02205,
-	gAxSharedAnim_02214,
+	AX_ANIM_PTR(gAxSharedAnim_02158),
+	AX_ANIM_PTR(gAxSharedAnim_02167),
+	AX_ANIM_PTR(gAxSharedAnim_02169),
+	AX_ANIM_PTR(gAxSharedAnim_02174),
+	AX_ANIM_PTR(gAxSharedAnim_02196),
+	AX_ANIM_PTR(gAxSharedAnim_02202),
+	AX_ANIM_PTR(gAxSharedAnim_02205),
+	AX_ANIM_PTR(gAxSharedAnim_02214),
 };
 
 static const ax_anim *const sUnownOAnimTable13[] = {
-	gAxSharedAnim_02230,
-	gAxSharedAnim_02240,
-	gAxSharedAnim_02247,
-	gAxSharedAnim_02259,
-	gAxSharedAnim_02269,
-	gAxSharedAnim_02276,
-	gAxSharedAnim_02286,
-	gAxSharedAnim_02291,
+	AX_ANIM_PTR(gAxSharedAnim_02230),
+	AX_ANIM_PTR(gAxSharedAnim_02240),
+	AX_ANIM_PTR(gAxSharedAnim_02247),
+	AX_ANIM_PTR(gAxSharedAnim_02259),
+	AX_ANIM_PTR(gAxSharedAnim_02269),
+	AX_ANIM_PTR(gAxSharedAnim_02276),
+	AX_ANIM_PTR(gAxSharedAnim_02286),
+	AX_ANIM_PTR(gAxSharedAnim_02291),
 };
 
 static const ax_anim *const *const sAxAnimationsUnownO[] = {

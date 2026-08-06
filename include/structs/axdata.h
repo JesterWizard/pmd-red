@@ -108,6 +108,13 @@ typedef struct axObject
     } info;
 } axObject;
 
+// Max decompressed GMLZ anim sequence (compress_ax_anims.py). Kept out of axdata —
+// growing axdata breaks UnkGroundSpriteStruct (fixed 0x80 in GroundLives).
+#define AX_ANIM_CACHE_SIZE 256
+
+// Anim table slots may point at ax_anim[] or GMLZ u8[] blobs.
+#define AX_ANIM_PTR(p) ((const ax_anim *)(p))
+
 // Macros used for ax data. See monster_gfx/ornament_gfx
 
 // Only Latios's pose 189 has these unk2 fields different. Actually, only unk2_1 is different. unk2_0 is still 0.
