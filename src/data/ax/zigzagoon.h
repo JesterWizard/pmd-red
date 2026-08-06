@@ -1,3 +1,5 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
+#include "ax_shared_anims.h"
 static const axmain sAxMainZigzagoon;
 const SiroArchive gAxZigzagoon = {"SIRO", &sAxMainZigzagoon};
 
@@ -97,212 +99,12 @@ static const ax_pose sZigzagoonPose24[] = {
 	AX_POSE(5, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose25[] = {
-	AX_POSE(0, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose26[] = {
-	AX_POSE(1, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose27[] = {
-	AX_POSE(2, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose28[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose29[] = {
-	AX_POSE(4, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose30[] = {
-	AX_POSE(5, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose31[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose32[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose33[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose34[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose35[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose36[] = {
-	AX_POSE(11, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose37[] = {
-	AX_POSE(12, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose38[] = {
-	AX_POSE(13, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose39[] = {
-	AX_POSE(14, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose40[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose41[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose42[] = {
-	AX_POSE(11, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose43[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose44[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose45[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose46[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose47[] = {
-	AX_POSE(4, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose48[] = {
-	AX_POSE(5, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose49[] = {
-	AX_POSE(0, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose50[] = {
-	AX_POSE(1, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose51[] = {
-	AX_POSE(2, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose52[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose53[] = {
-	AX_POSE(4, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose54[] = {
-	AX_POSE(5, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose55[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose56[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose57[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose58[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose59[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose60[] = {
-	AX_POSE(11, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose61[] = {
-	AX_POSE(12, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose62[] = {
-	AX_POSE(13, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose63[] = {
-	AX_POSE(14, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose64[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose65[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose66[] = {
-	AX_POSE(11, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose67[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose68[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose69[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose70[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose71[] = {
-	AX_POSE(4, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose72[] = {
-	AX_POSE(5, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose73[] = {
-	AX_POSE(0, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose74[] = {
 	AX_POSE(15, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose75[] = {
 	AX_POSE(16, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose76[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose77[] = {
@@ -313,20 +115,12 @@ static const ax_pose sZigzagoonPose78[] = {
 	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose79[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose80[] = {
 	AX_POSE(19, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose81[] = {
 	AX_POSE(20, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose82[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose83[] = {
@@ -337,20 +131,12 @@ static const ax_pose sZigzagoonPose84[] = {
 	AX_POSE(22, OAM1(240, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose85[] = {
-	AX_POSE(12, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose86[] = {
 	AX_POSE(23, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose87[] = {
 	AX_POSE(24, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose88[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose89[] = {
@@ -361,20 +147,12 @@ static const ax_pose sZigzagoonPose90[] = {
 	AX_POSE(22, OAM1(240, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose91[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose92[] = {
 	AX_POSE(19, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose93[] = {
 	AX_POSE(20, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose94[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose95[] = {
@@ -385,36 +163,12 @@ static const ax_pose sZigzagoonPose96[] = {
 	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose97[] = {
-	AX_POSE(0, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose98[] = {
-	AX_POSE(15, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose99[] = {
-	AX_POSE(16, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose100[] = {
 	AX_POSE(25, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose101[] = {
 	AX_POSE(26, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose102[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose103[] = {
-	AX_POSE(17, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose104[] = {
-	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose105[] = {
@@ -425,28 +179,12 @@ static const ax_pose sZigzagoonPose106[] = {
 	AX_POSE(28, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose107[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose108[] = {
-	AX_POSE(19, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose109[] = {
-	AX_POSE(20, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose110[] = {
 	AX_POSE(29, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose111[] = {
 	AX_POSE(30, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose112[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose113[] = {
@@ -465,28 +203,12 @@ static const ax_pose sZigzagoonPose116[] = {
 	AX_POSE(32, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose117[] = {
-	AX_POSE(12, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose118[] = {
-	AX_POSE(23, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose119[] = {
-	AX_POSE(24, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose120[] = {
 	AX_POSE(33, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose121[] = {
 	AX_POSE(34, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose122[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose123[] = {
@@ -505,36 +227,12 @@ static const ax_pose sZigzagoonPose126[] = {
 	AX_POSE(32, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose127[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose128[] = {
-	AX_POSE(19, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose129[] = {
-	AX_POSE(20, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose130[] = {
 	AX_POSE(29, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose131[] = {
 	AX_POSE(30, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose132[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose133[] = {
-	AX_POSE(17, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose134[] = {
-	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose135[] = {
@@ -585,132 +283,16 @@ static const ax_pose sZigzagoonPose146[] = {
 	AX_POSE(38, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose147[] = {
-	AX_POSE(0, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose148[] = {
-	AX_POSE(1, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose149[] = {
-	AX_POSE(2, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose150[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose151[] = {
-	AX_POSE(4, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose152[] = {
-	AX_POSE(5, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose153[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose154[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose155[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose156[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose157[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose158[] = {
-	AX_POSE(11, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose159[] = {
-	AX_POSE(12, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose160[] = {
-	AX_POSE(13, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose161[] = {
-	AX_POSE(14, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose162[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose163[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose164[] = {
-	AX_POSE(11, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose165[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose166[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose167[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose168[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose169[] = {
-	AX_POSE(4, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose170[] = {
-	AX_POSE(5, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose171[] = {
-	AX_POSE(2, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose172[] = {
 	AX_POSE(5, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose173[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose174[] = {
 	AX_POSE(11, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose175[] = {
-	AX_POSE(14, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose176[] = {
 	AX_POSE(11, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose177[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose178[] = {
-	AX_POSE(5, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose179[] = {
@@ -723,10 +305,6 @@ static const ax_pose sZigzagoonPose180[] = {
 };
 static const ax_pose sZigzagoonPose181[] = {
 	AX_POSE(20, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose182[] = {
-	AX_POSE(22, OAM1(241, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose183[] = {
@@ -745,32 +323,12 @@ static const ax_pose sZigzagoonPose186[] = {
 	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose187[] = {
-	AX_POSE(0, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose188[] = {
-	AX_POSE(15, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose189[] = {
-	AX_POSE(16, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose190[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose191[] = {
 	AX_POSE(17, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose192[] = {
 	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose193[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose194[] = {
@@ -781,28 +339,8 @@ static const ax_pose sZigzagoonPose195[] = {
 	AX_POSE(20, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose196[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose197[] = {
-	AX_POSE(21, OAM1(240, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose198[] = {
 	AX_POSE(22, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose199[] = {
-	AX_POSE(12, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose200[] = {
-	AX_POSE(23, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose201[] = {
-	AX_POSE(24, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sZigzagoonPose202[] = {
@@ -841,10 +379,6 @@ static const ax_pose sZigzagoonPose210[] = {
 	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose211[] = {
-	AX_POSE(15, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose212[] = {
 	AX_POSE(17, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -857,10 +391,6 @@ static const ax_pose sZigzagoonPose214[] = {
 	AX_POSE(21, OAM1(240, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sZigzagoonPose215[] = {
-	AX_POSE(23, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sZigzagoonPose216[] = {
 	AX_POSE(21, OAM1(240, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -871,38 +401,6 @@ static const ax_pose sZigzagoonPose217[] = {
 };
 static const ax_pose sZigzagoonPose218[] = {
 	AX_POSE(17, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose219[] = {
-	AX_POSE(0, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose220[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose221[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose222[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose223[] = {
-	AX_POSE(12, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose224[] = {
-	AX_POSE(9, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose225[] = {
-	AX_POSE(6, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sZigzagoonPose226[] = {
-	AX_POSE(3, OAM1(239, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_anim sZigzagoonAnims_1_1[] = {
@@ -1225,34 +723,6 @@ static const ax_anim sZigzagoonAnims_3_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 69, .offset = {-8, 8}, .shadow = {-8, 8} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sZigzagoonAnims_4_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 73, .offset = {0, -2}, .shadow = {0, -2} },
-	{ .frames = 6, .unkFlags = 2, .poseId = 73, .offset = {0, -3}, .shadow = {0, -3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 72, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 74, .offset = {0, 3}, .shadow = {0, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {1, 3}, .shadow = {1, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {0, 3}, .shadow = {0, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {1, 3}, .shadow = {1, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {0, 3}, .shadow = {0, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {1, 3}, .shadow = {1, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 74, .offset = {0, 3}, .shadow = {0, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 72, .offset = {0, 1}, .shadow = {0, 1} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_4_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 76, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 6, .unkFlags = 2, .poseId = 76, .offset = {-3, -3}, .shadow = {-3, -3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 75, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 77, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 77, .offset = {3, 1}, .shadow = {3, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 77, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 77, .offset = {3, 1}, .shadow = {3, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 77, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 77, .offset = {3, 1}, .shadow = {3, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 77, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 75, .offset = {1, 1}, .shadow = {1, 1} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sZigzagoonAnims_4_3[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 79, .offset = {-2, 0}, .shadow = {-2, 0} },
 	{ .frames = 6, .unkFlags = 2, .poseId = 79, .offset = {-3, 0}, .shadow = {-3, 0} },
@@ -1265,20 +735,6 @@ static const ax_anim sZigzagoonAnims_4_3[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 80, .offset = {2, 1}, .shadow = {6, 1} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 80, .offset = {2, 0}, .shadow = {6, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 78, .offset = {1, 0}, .shadow = {1, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_4_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 82, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 6, .unkFlags = 2, .poseId = 82, .offset = {-3, 3}, .shadow = {-3, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 81, .offset = {-1, 1}, .shadow = {-1, 1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 83, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 83, .offset = {3, -1}, .shadow = {3, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 83, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 83, .offset = {3, -1}, .shadow = {3, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 83, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 83, .offset = {3, -1}, .shadow = {3, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 83, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 81, .offset = {1, -1}, .shadow = {1, -1} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sZigzagoonAnims_4_5[] = {
@@ -1295,20 +751,6 @@ static const ax_anim sZigzagoonAnims_4_5[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 84, .offset = {0, -1}, .shadow = {0, -1} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sZigzagoonAnims_4_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 88, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 6, .unkFlags = 2, .poseId = 88, .offset = {3, 3}, .shadow = {3, 3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 87, .offset = {1, 1}, .shadow = {1, 1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 89, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 89, .offset = {-3, -1}, .shadow = {-3, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 89, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 89, .offset = {-3, -1}, .shadow = {-3, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 89, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 89, .offset = {-3, -1}, .shadow = {-3, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 89, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 87, .offset = {-1, -1}, .shadow = {-1, -1} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sZigzagoonAnims_4_7[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 91, .offset = {2, 0}, .shadow = {2, 0} },
 	{ .frames = 6, .unkFlags = 2, .poseId = 91, .offset = {3, 0}, .shadow = {3, 0} },
@@ -1321,20 +763,6 @@ static const ax_anim sZigzagoonAnims_4_7[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 92, .offset = {-2, 1}, .shadow = {-6, 1} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 92, .offset = {-2, 0}, .shadow = {-6, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 90, .offset = {-1, 0}, .shadow = {-1, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_4_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 94, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 6, .unkFlags = 2, .poseId = 94, .offset = {3, -3}, .shadow = {3, -3} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 93, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 95, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 95, .offset = {-3, 1}, .shadow = {-3, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 95, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 95, .offset = {-3, 1}, .shadow = {-3, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 95, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 95, .offset = {-3, 1}, .shadow = {-3, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 95, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 93, .offset = {-1, 1}, .shadow = {-1, 1} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sZigzagoonAnims_5_1[] = {
@@ -1455,51 +883,6 @@ static const ax_anim sZigzagoonAnims_5_8[] = {
 	{ .frames = 3, .unkFlags = 0, .poseId = 135, .offset = {0, 0}, .shadow = {-1, 1} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 133, .offset = {0, 0}, .shadow = {-1, 1} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 131, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_6_1[] = {
-	{ .frames = 30, .unkFlags = 0, .poseId = 136, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 35, .unkFlags = 0, .poseId = 137, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_7_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 138, .offset = {0, -4}, .shadow = {0, -4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 138, .offset = {0, -5}, .shadow = {0, -5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_7_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 139, .offset = {-4, -4}, .shadow = {-4, -4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 139, .offset = {-5, -5}, .shadow = {-5, -5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_7_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 140, .offset = {-4, 0}, .shadow = {-4, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 140, .offset = {-5, 0}, .shadow = {-5, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_7_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 141, .offset = {-4, 4}, .shadow = {-4, 4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 141, .offset = {-5, 5}, .shadow = {-5, 5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_7_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 142, .offset = {0, 4}, .shadow = {0, 4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 142, .offset = {0, 5}, .shadow = {0, 5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_7_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 143, .offset = {4, 4}, .shadow = {4, 4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 143, .offset = {5, 5}, .shadow = {5, 5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_7_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 144, .offset = {4, 0}, .shadow = {4, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 144, .offset = {5, 0}, .shadow = {5, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_7_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 145, .offset = {4, -4}, .shadow = {4, -4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 145, .offset = {5, -5}, .shadow = {5, -5} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sZigzagoonAnims_8_1[] = {
@@ -1670,158 +1053,6 @@ static const ax_anim sZigzagoonAnims_9_8[] = {
 	{ .frames = 1, .unkFlags = 0, .poseId = 171, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sZigzagoonAnims_10_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 178, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 178, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 178, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 178, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_10_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 179, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 179, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 179, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 179, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_10_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 180, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 180, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 180, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 180, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_10_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 181, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 181, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 181, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 181, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_10_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 182, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 182, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 182, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 182, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_10_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 183, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 183, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 183, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 183, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_10_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 184, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 184, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 184, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 184, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_10_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 185, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 185, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 185, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 185, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sZigzagoonAnims_11_1[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 188, .offset = {0, -10}, .shadow = {0, 0} },
@@ -1924,206 +1155,6 @@ static const ax_anim sZigzagoonAnims_11_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, -18}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 208, .offset = {0, -12}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 2, .poseId = 207, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_12_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 210, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 210, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_12_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 217, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 217, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_12_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 216, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 216, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 216, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 216, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 216, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 216, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 216, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 216, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 216, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 216, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_12_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 215, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 215, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 215, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 215, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 215, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 215, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 215, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 215, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 215, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 215, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_12_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 214, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 214, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 214, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 214, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 214, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 214, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 214, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 214, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 214, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 214, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_12_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 213, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 213, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 213, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 213, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 213, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 213, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 213, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 213, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 213, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 213, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_12_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 212, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 212, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 212, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 212, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 212, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 212, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 212, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 212, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 212, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 212, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_12_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 211, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 211, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 211, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 211, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 211, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 211, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 211, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 211, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 211, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 211, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_13_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_13_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_13_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_13_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_13_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_13_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_13_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sZigzagoonAnims_13_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 
@@ -2498,116 +1529,116 @@ static const ax_pose *const sAxPosesZigzagoon[] = {
 	sZigzagoonPose22,
 	sZigzagoonPose23,
 	sZigzagoonPose24,
-	sZigzagoonPose25,
-	sZigzagoonPose26,
-	sZigzagoonPose27,
-	sZigzagoonPose28,
-	sZigzagoonPose29,
-	sZigzagoonPose30,
-	sZigzagoonPose31,
-	sZigzagoonPose32,
-	sZigzagoonPose33,
-	sZigzagoonPose34,
-	sZigzagoonPose35,
-	sZigzagoonPose36,
-	sZigzagoonPose37,
-	sZigzagoonPose38,
-	sZigzagoonPose39,
-	sZigzagoonPose40,
-	sZigzagoonPose41,
-	sZigzagoonPose42,
-	sZigzagoonPose43,
-	sZigzagoonPose44,
-	sZigzagoonPose45,
-	sZigzagoonPose46,
-	sZigzagoonPose47,
-	sZigzagoonPose48,
-	sZigzagoonPose49,
-	sZigzagoonPose50,
-	sZigzagoonPose51,
-	sZigzagoonPose52,
-	sZigzagoonPose53,
-	sZigzagoonPose54,
-	sZigzagoonPose55,
-	sZigzagoonPose56,
-	sZigzagoonPose57,
-	sZigzagoonPose58,
-	sZigzagoonPose59,
-	sZigzagoonPose60,
-	sZigzagoonPose61,
-	sZigzagoonPose62,
-	sZigzagoonPose63,
-	sZigzagoonPose64,
-	sZigzagoonPose65,
-	sZigzagoonPose66,
-	sZigzagoonPose67,
-	sZigzagoonPose68,
-	sZigzagoonPose69,
-	sZigzagoonPose70,
-	sZigzagoonPose71,
-	sZigzagoonPose72,
-	sZigzagoonPose73,
+	sZigzagoonPose1,
+	sZigzagoonPose2,
+	sZigzagoonPose3,
+	sZigzagoonPose4,
+	sZigzagoonPose5,
+	sZigzagoonPose6,
+	sZigzagoonPose7,
+	sZigzagoonPose8,
+	sZigzagoonPose9,
+	sZigzagoonPose10,
+	sZigzagoonPose11,
+	sZigzagoonPose12,
+	sZigzagoonPose13,
+	sZigzagoonPose14,
+	sZigzagoonPose15,
+	sZigzagoonPose16,
+	sZigzagoonPose17,
+	sZigzagoonPose18,
+	sZigzagoonPose19,
+	sZigzagoonPose20,
+	sZigzagoonPose21,
+	sZigzagoonPose22,
+	sZigzagoonPose23,
+	sZigzagoonPose24,
+	sZigzagoonPose1,
+	sZigzagoonPose2,
+	sZigzagoonPose3,
+	sZigzagoonPose4,
+	sZigzagoonPose5,
+	sZigzagoonPose6,
+	sZigzagoonPose7,
+	sZigzagoonPose8,
+	sZigzagoonPose9,
+	sZigzagoonPose10,
+	sZigzagoonPose11,
+	sZigzagoonPose12,
+	sZigzagoonPose13,
+	sZigzagoonPose14,
+	sZigzagoonPose15,
+	sZigzagoonPose16,
+	sZigzagoonPose17,
+	sZigzagoonPose18,
+	sZigzagoonPose19,
+	sZigzagoonPose20,
+	sZigzagoonPose21,
+	sZigzagoonPose22,
+	sZigzagoonPose23,
+	sZigzagoonPose24,
+	sZigzagoonPose1,
 	sZigzagoonPose74,
 	sZigzagoonPose75,
-	sZigzagoonPose76,
+	sZigzagoonPose4,
 	sZigzagoonPose77,
 	sZigzagoonPose78,
-	sZigzagoonPose79,
+	sZigzagoonPose7,
 	sZigzagoonPose80,
 	sZigzagoonPose81,
-	sZigzagoonPose82,
+	sZigzagoonPose10,
 	sZigzagoonPose83,
 	sZigzagoonPose84,
-	sZigzagoonPose85,
+	sZigzagoonPose13,
 	sZigzagoonPose86,
 	sZigzagoonPose87,
-	sZigzagoonPose88,
+	sZigzagoonPose16,
 	sZigzagoonPose89,
 	sZigzagoonPose90,
-	sZigzagoonPose91,
+	sZigzagoonPose19,
 	sZigzagoonPose92,
 	sZigzagoonPose93,
-	sZigzagoonPose94,
+	sZigzagoonPose22,
 	sZigzagoonPose95,
 	sZigzagoonPose96,
-	sZigzagoonPose97,
-	sZigzagoonPose98,
-	sZigzagoonPose99,
+	sZigzagoonPose1,
+	sZigzagoonPose74,
+	sZigzagoonPose75,
 	sZigzagoonPose100,
 	sZigzagoonPose101,
-	sZigzagoonPose102,
-	sZigzagoonPose103,
-	sZigzagoonPose104,
+	sZigzagoonPose4,
+	sZigzagoonPose77,
+	sZigzagoonPose78,
 	sZigzagoonPose105,
 	sZigzagoonPose106,
-	sZigzagoonPose107,
-	sZigzagoonPose108,
-	sZigzagoonPose109,
+	sZigzagoonPose7,
+	sZigzagoonPose80,
+	sZigzagoonPose81,
 	sZigzagoonPose110,
 	sZigzagoonPose111,
-	sZigzagoonPose112,
+	sZigzagoonPose10,
 	sZigzagoonPose113,
 	sZigzagoonPose114,
 	sZigzagoonPose115,
 	sZigzagoonPose116,
-	sZigzagoonPose117,
-	sZigzagoonPose118,
-	sZigzagoonPose119,
+	sZigzagoonPose13,
+	sZigzagoonPose86,
+	sZigzagoonPose87,
 	sZigzagoonPose120,
 	sZigzagoonPose121,
-	sZigzagoonPose122,
+	sZigzagoonPose16,
 	sZigzagoonPose123,
 	sZigzagoonPose124,
 	sZigzagoonPose125,
 	sZigzagoonPose126,
-	sZigzagoonPose127,
-	sZigzagoonPose128,
-	sZigzagoonPose129,
+	sZigzagoonPose19,
+	sZigzagoonPose92,
+	sZigzagoonPose93,
 	sZigzagoonPose130,
 	sZigzagoonPose131,
-	sZigzagoonPose132,
-	sZigzagoonPose133,
-	sZigzagoonPose134,
+	sZigzagoonPose22,
+	sZigzagoonPose95,
+	sZigzagoonPose96,
 	sZigzagoonPose135,
 	sZigzagoonPose136,
 	sZigzagoonPose137,
@@ -2620,61 +1651,61 @@ static const ax_pose *const sAxPosesZigzagoon[] = {
 	sZigzagoonPose144,
 	sZigzagoonPose145,
 	sZigzagoonPose146,
-	sZigzagoonPose147,
-	sZigzagoonPose148,
-	sZigzagoonPose149,
-	sZigzagoonPose150,
-	sZigzagoonPose151,
-	sZigzagoonPose152,
-	sZigzagoonPose153,
-	sZigzagoonPose154,
-	sZigzagoonPose155,
-	sZigzagoonPose156,
-	sZigzagoonPose157,
-	sZigzagoonPose158,
-	sZigzagoonPose159,
-	sZigzagoonPose160,
-	sZigzagoonPose161,
-	sZigzagoonPose162,
-	sZigzagoonPose163,
-	sZigzagoonPose164,
-	sZigzagoonPose165,
-	sZigzagoonPose166,
-	sZigzagoonPose167,
-	sZigzagoonPose168,
-	sZigzagoonPose169,
-	sZigzagoonPose170,
-	sZigzagoonPose171,
+	sZigzagoonPose1,
+	sZigzagoonPose2,
+	sZigzagoonPose3,
+	sZigzagoonPose4,
+	sZigzagoonPose5,
+	sZigzagoonPose6,
+	sZigzagoonPose7,
+	sZigzagoonPose8,
+	sZigzagoonPose9,
+	sZigzagoonPose10,
+	sZigzagoonPose11,
+	sZigzagoonPose12,
+	sZigzagoonPose13,
+	sZigzagoonPose14,
+	sZigzagoonPose15,
+	sZigzagoonPose16,
+	sZigzagoonPose17,
+	sZigzagoonPose18,
+	sZigzagoonPose19,
+	sZigzagoonPose20,
+	sZigzagoonPose21,
+	sZigzagoonPose22,
+	sZigzagoonPose23,
+	sZigzagoonPose24,
+	sZigzagoonPose3,
 	sZigzagoonPose172,
-	sZigzagoonPose173,
+	sZigzagoonPose21,
 	sZigzagoonPose174,
-	sZigzagoonPose175,
+	sZigzagoonPose15,
 	sZigzagoonPose176,
-	sZigzagoonPose177,
-	sZigzagoonPose178,
+	sZigzagoonPose9,
+	sZigzagoonPose6,
 	sZigzagoonPose179,
 	sZigzagoonPose180,
 	sZigzagoonPose181,
-	sZigzagoonPose182,
+	sZigzagoonPose114,
 	sZigzagoonPose183,
 	sZigzagoonPose184,
 	sZigzagoonPose185,
 	sZigzagoonPose186,
-	sZigzagoonPose187,
-	sZigzagoonPose188,
-	sZigzagoonPose189,
-	sZigzagoonPose190,
+	sZigzagoonPose1,
+	sZigzagoonPose74,
+	sZigzagoonPose75,
+	sZigzagoonPose4,
 	sZigzagoonPose191,
 	sZigzagoonPose192,
-	sZigzagoonPose193,
+	sZigzagoonPose7,
 	sZigzagoonPose194,
 	sZigzagoonPose195,
-	sZigzagoonPose196,
-	sZigzagoonPose197,
+	sZigzagoonPose10,
+	sZigzagoonPose113,
 	sZigzagoonPose198,
-	sZigzagoonPose199,
-	sZigzagoonPose200,
-	sZigzagoonPose201,
+	sZigzagoonPose13,
+	sZigzagoonPose86,
+	sZigzagoonPose87,
 	sZigzagoonPose202,
 	sZigzagoonPose203,
 	sZigzagoonPose204,
@@ -2684,22 +1715,22 @@ static const ax_pose *const sAxPosesZigzagoon[] = {
 	sZigzagoonPose208,
 	sZigzagoonPose209,
 	sZigzagoonPose210,
-	sZigzagoonPose211,
+	sZigzagoonPose74,
 	sZigzagoonPose212,
 	sZigzagoonPose213,
 	sZigzagoonPose214,
-	sZigzagoonPose215,
+	sZigzagoonPose86,
 	sZigzagoonPose216,
 	sZigzagoonPose217,
 	sZigzagoonPose218,
-	sZigzagoonPose219,
-	sZigzagoonPose220,
-	sZigzagoonPose221,
-	sZigzagoonPose222,
-	sZigzagoonPose223,
-	sZigzagoonPose224,
-	sZigzagoonPose225,
-	sZigzagoonPose226,
+	sZigzagoonPose1,
+	sZigzagoonPose22,
+	sZigzagoonPose19,
+	sZigzagoonPose16,
+	sZigzagoonPose13,
+	sZigzagoonPose10,
+	sZigzagoonPose7,
+	sZigzagoonPose4,
 };
 
 static const struct PositionSets sAxPositionsZigzagoon[] = {
@@ -2965,14 +1996,14 @@ static const ax_anim *const sZigzagoonAnimTable3[] = {
 };
 
 static const ax_anim *const sZigzagoonAnimTable4[] = {
-	sZigzagoonAnims_4_1,
-	sZigzagoonAnims_4_2,
+	gAxSharedAnim_02096,
+	gAxSharedAnim_02114,
 	sZigzagoonAnims_4_3,
-	sZigzagoonAnims_4_4,
+	gAxSharedAnim_02159,
 	sZigzagoonAnims_4_5,
-	sZigzagoonAnims_4_6,
+	gAxSharedAnim_02222,
 	sZigzagoonAnims_4_7,
-	sZigzagoonAnims_4_8,
+	gAxSharedAnim_02280,
 };
 
 static const ax_anim *const sZigzagoonAnimTable5[] = {
@@ -2987,25 +2018,25 @@ static const ax_anim *const sZigzagoonAnimTable5[] = {
 };
 
 static const ax_anim *const sZigzagoonAnimTable6[] = {
-	sZigzagoonAnims_6_1,
-	sZigzagoonAnims_6_1,
-	sZigzagoonAnims_6_1,
-	sZigzagoonAnims_6_1,
-	sZigzagoonAnims_6_1,
-	sZigzagoonAnims_6_1,
-	sZigzagoonAnims_6_1,
-	sZigzagoonAnims_6_1,
+	gAxSharedAnim_02365,
+	gAxSharedAnim_02365,
+	gAxSharedAnim_02365,
+	gAxSharedAnim_02365,
+	gAxSharedAnim_02365,
+	gAxSharedAnim_02365,
+	gAxSharedAnim_02365,
+	gAxSharedAnim_02365,
 };
 
 static const ax_anim *const sZigzagoonAnimTable7[] = {
-	sZigzagoonAnims_7_1,
-	sZigzagoonAnims_7_2,
-	sZigzagoonAnims_7_3,
-	sZigzagoonAnims_7_4,
-	sZigzagoonAnims_7_5,
-	sZigzagoonAnims_7_6,
-	sZigzagoonAnims_7_7,
-	sZigzagoonAnims_7_8,
+	gAxSharedAnim_00467,
+	gAxSharedAnim_00480,
+	gAxSharedAnim_00488,
+	gAxSharedAnim_00497,
+	gAxSharedAnim_00509,
+	gAxSharedAnim_00518,
+	gAxSharedAnim_00524,
+	gAxSharedAnim_00530,
 };
 
 static const ax_anim *const sZigzagoonAnimTable8[] = {
@@ -3031,14 +2062,14 @@ static const ax_anim *const sZigzagoonAnimTable9[] = {
 };
 
 static const ax_anim *const sZigzagoonAnimTable10[] = {
-	sZigzagoonAnims_10_1,
-	sZigzagoonAnims_10_2,
-	sZigzagoonAnims_10_3,
-	sZigzagoonAnims_10_4,
-	sZigzagoonAnims_10_5,
-	sZigzagoonAnims_10_6,
-	sZigzagoonAnims_10_7,
-	sZigzagoonAnims_10_8,
+	gAxSharedAnim_00905,
+	gAxSharedAnim_00918,
+	gAxSharedAnim_00930,
+	gAxSharedAnim_00942,
+	gAxSharedAnim_00955,
+	gAxSharedAnim_00965,
+	gAxSharedAnim_00978,
+	gAxSharedAnim_00993,
 };
 
 static const ax_anim *const sZigzagoonAnimTable11[] = {
@@ -3053,25 +2084,25 @@ static const ax_anim *const sZigzagoonAnimTable11[] = {
 };
 
 static const ax_anim *const sZigzagoonAnimTable12[] = {
-	sZigzagoonAnims_12_1,
-	sZigzagoonAnims_12_2,
-	sZigzagoonAnims_12_3,
-	sZigzagoonAnims_12_4,
-	sZigzagoonAnims_12_5,
-	sZigzagoonAnims_12_6,
-	sZigzagoonAnims_12_7,
-	sZigzagoonAnims_12_8,
+	gAxSharedAnim_01337,
+	gAxSharedAnim_01414,
+	gAxSharedAnim_01392,
+	gAxSharedAnim_01380,
+	gAxSharedAnim_01379,
+	gAxSharedAnim_01368,
+	gAxSharedAnim_01354,
+	gAxSharedAnim_01338,
 };
 
 static const ax_anim *const sZigzagoonAnimTable13[] = {
-	sZigzagoonAnims_13_1,
-	sZigzagoonAnims_13_2,
-	sZigzagoonAnims_13_3,
-	sZigzagoonAnims_13_4,
-	sZigzagoonAnims_13_5,
-	sZigzagoonAnims_13_6,
-	sZigzagoonAnims_13_7,
-	sZigzagoonAnims_13_8,
+	gAxSharedAnim_01422,
+	gAxSharedAnim_01464,
+	gAxSharedAnim_01461,
+	gAxSharedAnim_01456,
+	gAxSharedAnim_01446,
+	gAxSharedAnim_01443,
+	gAxSharedAnim_01438,
+	gAxSharedAnim_01429,
 };
 
 static const ax_anim *const *const sAxAnimationsZigzagoon[] = {

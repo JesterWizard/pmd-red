@@ -230,6 +230,38 @@ at `0x2000+`. Maps relocated above window GFX / after the tile blob; tile cap
 
 ---
 
+## 2026-08-06 — AX pose/anim table dedupe
+
+### What changed
+Pose/anim **tables** (not tiles) were full of duplicate arrays. Tool:
+`dedupe_ax_tables.py` / `make ax-dedupe`.
+
+1. **Within each** `src/data/ax/*.h`: identical `ax_pose` / `ax_anim` arrays
+   keep one definition; pose/anim table slots alias it.
+2. **Across species**: anim bodies used by 2+ mons move to
+   `src/data/ax_shared_anims.c` + `include/ax_shared_anims.h`.
+
+No runtime/loader changes — still ROM-mapped SIRO pointers.
+
+### Size
+| | Before | After |
+| --- | ---: | ---: |
+| `pmd_red.gba` | 25.30 MiB | **21.92 MiB** |
+| AX tables (excl. tiles) | ~9.77 MiB | **~6.39 MiB** |
+| **Saved** | | **~3.38 MiB** |
+
+Breakdown: poses 2.06→0.81 MiB, anims 5.03→2.89 MiB (local+shared),
+positions unchanged (1.43 MiB).
+
+### Reverse
+1. `git checkout -- src/data/ax/ include/ax_shared_anims.h`
+2. Delete `src/data/ax_shared_anims.c` (and optional Makefile `ax-dedupe` bits).
+3. Rebuild.
+
+Re-running `make ax-dedupe` on an already-deduped tree is a no-op.
+
+---
+
 ## Quick status snapshot
 
 | Item | State |
@@ -239,6 +271,7 @@ at `0x2000+`. Maps relocated above window GFX / after the tile blob; tile cap
 | Ground BPC/BMA LZ | On (`GMLZ`) |
 | Ground BPL/BPA LZ | Off |
 | Monster AX tile LZ | On (`GMLZ` → `LZ77UnCompVram`) |
+| AX pose/anim dedupe | On (`make ax-dedupe`) |
 | Unused unk blobs in modern ROM | Stripped |
 | Runtime config | On (modern; edit `configs/runtime.c`) |
 | Custom title backgrounds | On (8bpp ≤600 tiles @ +128; maps SB 6–8/31; `custom_title_backgrounds`) |

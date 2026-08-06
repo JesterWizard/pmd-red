@@ -1,3 +1,5 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
+#include "ax_shared_anims.h"
 static const axmain sAxMainPorygon2;
 const SiroArchive gAxPorygon2 = {"SIRO", &sAxMainPorygon2};
 
@@ -94,198 +96,6 @@ static const ax_pose sPorygon2Pose23[] = {
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sPorygon2Pose24[] = {
-	AX_POSE(5, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose25[] = {
-	AX_POSE(0, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose26[] = {
-	AX_POSE(1, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose27[] = {
-	AX_POSE(2, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose28[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose29[] = {
-	AX_POSE(4, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose30[] = {
-	AX_POSE(5, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose31[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose32[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose33[] = {
-	AX_POSE(8, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose34[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose35[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose36[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose37[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose38[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose39[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose40[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose41[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose42[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose43[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose44[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose45[] = {
-	AX_POSE(8, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose46[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose47[] = {
-	AX_POSE(4, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose48[] = {
-	AX_POSE(5, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose49[] = {
-	AX_POSE(0, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose50[] = {
-	AX_POSE(1, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose51[] = {
-	AX_POSE(2, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose52[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose53[] = {
-	AX_POSE(4, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose54[] = {
-	AX_POSE(5, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose55[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose56[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose57[] = {
-	AX_POSE(8, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose58[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose59[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose60[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose61[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose62[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose63[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose64[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose65[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose66[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose67[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose68[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose69[] = {
-	AX_POSE(8, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose70[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose71[] = {
-	AX_POSE(4, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose72[] = {
 	AX_POSE(5, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
@@ -417,128 +227,20 @@ static const ax_pose sPorygon2Pose104[] = {
 	AX_POSE(22, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose105[] = {
-	AX_POSE(15, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose106[] = {
-	AX_POSE(16, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose107[] = {
-	AX_POSE(17, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose108[] = {
 	AX_POSE(18, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose109[] = {
-	AX_POSE(19, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose110[] = {
-	AX_POSE(20, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose111[] = {
-	AX_POSE(21, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sPorygon2Pose112[] = {
 	AX_POSE(22, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose113[] = {
-	AX_POSE(23, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose114[] = {
-	AX_POSE(24, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose115[] = {
-	AX_POSE(25, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose116[] = {
-	AX_POSE(26, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose117[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose118[] = {
-	AX_POSE(28, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose119[] = {
-	AX_POSE(29, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose120[] = {
 	AX_POSE(30, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose121[] = {
-	AX_POSE(31, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose122[] = {
-	AX_POSE(32, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose123[] = {
-	AX_POSE(33, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose124[] = {
-	AX_POSE(34, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose125[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose126[] = {
-	AX_POSE(28, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose127[] = {
-	AX_POSE(29, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose128[] = {
 	AX_POSE(30, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose129[] = {
-	AX_POSE(23, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose130[] = {
-	AX_POSE(24, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose131[] = {
-	AX_POSE(25, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose132[] = {
-	AX_POSE(26, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose133[] = {
-	AX_POSE(19, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose134[] = {
-	AX_POSE(20, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose135[] = {
-	AX_POSE(21, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sPorygon2Pose136[] = {
@@ -593,38 +295,6 @@ static const ax_pose sPorygon2Pose146[] = {
 	AX_POSE(38, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose147[] = {
-	AX_POSE(15, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose148[] = {
-	AX_POSE(19, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose149[] = {
-	AX_POSE(23, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose150[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose151[] = {
-	AX_POSE(31, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose152[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose153[] = {
-	AX_POSE(23, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose154[] = {
-	AX_POSE(19, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose155[] = {
 	AX_POSE(17, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
@@ -657,22 +327,6 @@ static const ax_pose sPorygon2Pose162[] = {
 	AX_POSE(21, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose163[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose164[] = {
-	AX_POSE(28, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose165[] = {
-	AX_POSE(30, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose166[] = {
-	AX_POSE(18, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose167[] = {
 	AX_POSE(22, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
@@ -701,32 +355,8 @@ static const ax_pose sPorygon2Pose173[] = {
 	AX_POSE(22, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose174[] = {
-	AX_POSE(15, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose175[] = {
-	AX_POSE(17, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose176[] = {
-	AX_POSE(18, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose177[] = {
-	AX_POSE(19, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose178[] = {
 	AX_POSE(21, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose179[] = {
-	AX_POSE(22, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose180[] = {
-	AX_POSE(23, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sPorygon2Pose181[] = {
@@ -737,44 +367,16 @@ static const ax_pose sPorygon2Pose182[] = {
 	AX_POSE(26, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose183[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose184[] = {
 	AX_POSE(29, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose185[] = {
-	AX_POSE(30, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose186[] = {
-	AX_POSE(31, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose187[] = {
-	AX_POSE(33, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sPorygon2Pose188[] = {
 	AX_POSE(34, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose189[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose190[] = {
 	AX_POSE(29, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose191[] = {
-	AX_POSE(30, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose192[] = {
-	AX_POSE(23, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sPorygon2Pose193[] = {
@@ -785,92 +387,8 @@ static const ax_pose sPorygon2Pose194[] = {
 	AX_POSE(26, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sPorygon2Pose195[] = {
-	AX_POSE(19, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sPorygon2Pose196[] = {
 	AX_POSE(21, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose197[] = {
-	AX_POSE(22, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose198[] = {
-	AX_POSE(17, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose199[] = {
-	AX_POSE(21, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose200[] = {
-	AX_POSE(25, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose201[] = {
-	AX_POSE(29, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose202[] = {
-	AX_POSE(33, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose203[] = {
-	AX_POSE(29, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose204[] = {
-	AX_POSE(25, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose205[] = {
-	AX_POSE(21, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose206[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose207[] = {
-	AX_POSE(28, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose208[] = {
-	AX_POSE(30, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose209[] = {
-	AX_POSE(15, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose210[] = {
-	AX_POSE(19, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose211[] = {
-	AX_POSE(23, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose212[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose213[] = {
-	AX_POSE(31, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose214[] = {
-	AX_POSE(27, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose215[] = {
-	AX_POSE(23, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sPorygon2Pose216[] = {
-	AX_POSE(19, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_anim sPorygon2Anims_1_1[] = {
@@ -1369,111 +887,6 @@ static const ax_anim sPorygon2Anims_5_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 135, .offset = {-1, 1}, .shadow = {-1, 1} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sPorygon2Anims_6_1[] = {
-	{ .frames = 16, .unkFlags = 0, .poseId = 136, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 136, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 16, .unkFlags = 0, .poseId = 136, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 16, .unkFlags = 0, .poseId = 137, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 137, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 16, .unkFlags = 0, .poseId = 137, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_7_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 138, .offset = {0, -4}, .shadow = {0, -4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 138, .offset = {0, -5}, .shadow = {0, -5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_7_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 139, .offset = {-4, -4}, .shadow = {-4, -4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 139, .offset = {-5, -5}, .shadow = {-5, -5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_7_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 140, .offset = {-4, 0}, .shadow = {-4, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 140, .offset = {-5, 0}, .shadow = {-5, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_7_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 141, .offset = {-4, 4}, .shadow = {-4, 4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 141, .offset = {-5, 5}, .shadow = {-5, 5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_7_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 142, .offset = {0, 4}, .shadow = {0, 4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 142, .offset = {0, 5}, .shadow = {0, 5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_7_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 143, .offset = {4, 4}, .shadow = {4, 4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 143, .offset = {5, 5}, .shadow = {5, 5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_7_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 144, .offset = {4, 0}, .shadow = {4, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 144, .offset = {5, 0}, .shadow = {5, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_7_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 145, .offset = {4, -4}, .shadow = {4, -4} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 145, .offset = {5, -5}, .shadow = {5, -5} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_8_1[] = {
-	{ .frames = 12, .unkFlags = 0, .poseId = 146, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 146, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 146, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 146, .offset = {0, -1}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_8_2[] = {
-	{ .frames = 12, .unkFlags = 0, .poseId = 153, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 153, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 153, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 153, .offset = {0, -1}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_8_3[] = {
-	{ .frames = 12, .unkFlags = 0, .poseId = 152, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 152, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 152, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 152, .offset = {0, -1}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_8_4[] = {
-	{ .frames = 12, .unkFlags = 0, .poseId = 151, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 151, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 151, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 151, .offset = {0, -1}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_8_5[] = {
-	{ .frames = 12, .unkFlags = 0, .poseId = 150, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 150, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 150, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 150, .offset = {0, -1}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_8_6[] = {
-	{ .frames = 12, .unkFlags = 0, .poseId = 149, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 149, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 149, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 149, .offset = {0, -1}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_8_7[] = {
-	{ .frames = 12, .unkFlags = 0, .poseId = 148, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 148, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 148, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 148, .offset = {0, -1}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_8_8[] = {
-	{ .frames = 12, .unkFlags = 0, .poseId = 147, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 147, .offset = {0, -1}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 147, .offset = {0, -2}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 147, .offset = {0, -1}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sPorygon2Anims_9_1[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 155, .offset = {7, 4}, .shadow = {7, 4} },
@@ -1663,25 +1076,6 @@ static const ax_anim sPorygon2Anims_10_5[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {6, 0}, .shadow = {6, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {-6, 0}, .shadow = {-6, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_10_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 170, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 170, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 170, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 170, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 170, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sPorygon2Anims_10_7[] = {
@@ -1902,19 +1296,6 @@ static const ax_anim sPorygon2Anims_12_6[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 200, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 200, .offset = {1, -1}, .shadow = {1, -1} },
 	{ .frames = 2, .unkFlags = 1, .poseId = 200, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sPorygon2Anims_12_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sPorygon2Anims_12_8[] = {
@@ -2439,54 +1820,54 @@ static const ax_pose *const sAxPosesPorygon2[] = {
 	sPorygon2Pose22,
 	sPorygon2Pose23,
 	sPorygon2Pose24,
-	sPorygon2Pose25,
-	sPorygon2Pose26,
-	sPorygon2Pose27,
-	sPorygon2Pose28,
-	sPorygon2Pose29,
-	sPorygon2Pose30,
-	sPorygon2Pose31,
-	sPorygon2Pose32,
-	sPorygon2Pose33,
-	sPorygon2Pose34,
-	sPorygon2Pose35,
-	sPorygon2Pose36,
-	sPorygon2Pose37,
-	sPorygon2Pose38,
-	sPorygon2Pose39,
-	sPorygon2Pose40,
-	sPorygon2Pose41,
-	sPorygon2Pose42,
-	sPorygon2Pose43,
-	sPorygon2Pose44,
-	sPorygon2Pose45,
-	sPorygon2Pose46,
-	sPorygon2Pose47,
-	sPorygon2Pose48,
-	sPorygon2Pose49,
-	sPorygon2Pose50,
-	sPorygon2Pose51,
-	sPorygon2Pose52,
-	sPorygon2Pose53,
-	sPorygon2Pose54,
-	sPorygon2Pose55,
-	sPorygon2Pose56,
-	sPorygon2Pose57,
-	sPorygon2Pose58,
-	sPorygon2Pose59,
-	sPorygon2Pose60,
-	sPorygon2Pose61,
-	sPorygon2Pose62,
-	sPorygon2Pose63,
-	sPorygon2Pose64,
-	sPorygon2Pose65,
-	sPorygon2Pose66,
-	sPorygon2Pose67,
-	sPorygon2Pose68,
-	sPorygon2Pose69,
-	sPorygon2Pose70,
-	sPorygon2Pose71,
-	sPorygon2Pose72,
+	sPorygon2Pose1,
+	sPorygon2Pose2,
+	sPorygon2Pose3,
+	sPorygon2Pose4,
+	sPorygon2Pose5,
+	sPorygon2Pose6,
+	sPorygon2Pose7,
+	sPorygon2Pose8,
+	sPorygon2Pose9,
+	sPorygon2Pose10,
+	sPorygon2Pose11,
+	sPorygon2Pose12,
+	sPorygon2Pose13,
+	sPorygon2Pose14,
+	sPorygon2Pose15,
+	sPorygon2Pose16,
+	sPorygon2Pose17,
+	sPorygon2Pose18,
+	sPorygon2Pose19,
+	sPorygon2Pose20,
+	sPorygon2Pose21,
+	sPorygon2Pose22,
+	sPorygon2Pose23,
+	sPorygon2Pose24,
+	sPorygon2Pose1,
+	sPorygon2Pose2,
+	sPorygon2Pose3,
+	sPorygon2Pose4,
+	sPorygon2Pose5,
+	sPorygon2Pose6,
+	sPorygon2Pose7,
+	sPorygon2Pose8,
+	sPorygon2Pose9,
+	sPorygon2Pose10,
+	sPorygon2Pose11,
+	sPorygon2Pose12,
+	sPorygon2Pose13,
+	sPorygon2Pose14,
+	sPorygon2Pose15,
+	sPorygon2Pose16,
+	sPorygon2Pose17,
+	sPorygon2Pose18,
+	sPorygon2Pose19,
+	sPorygon2Pose20,
+	sPorygon2Pose21,
+	sPorygon2Pose22,
+	sPorygon2Pose23,
+	sPorygon2Pose24,
 	sPorygon2Pose73,
 	sPorygon2Pose74,
 	sPorygon2Pose75,
@@ -2519,37 +1900,37 @@ static const ax_pose *const sAxPosesPorygon2[] = {
 	sPorygon2Pose102,
 	sPorygon2Pose103,
 	sPorygon2Pose104,
-	sPorygon2Pose105,
-	sPorygon2Pose106,
-	sPorygon2Pose107,
+	sPorygon2Pose73,
+	sPorygon2Pose74,
+	sPorygon2Pose75,
 	sPorygon2Pose108,
-	sPorygon2Pose109,
-	sPorygon2Pose110,
-	sPorygon2Pose111,
+	sPorygon2Pose77,
+	sPorygon2Pose78,
+	sPorygon2Pose79,
 	sPorygon2Pose112,
-	sPorygon2Pose113,
-	sPorygon2Pose114,
-	sPorygon2Pose115,
-	sPorygon2Pose116,
-	sPorygon2Pose117,
-	sPorygon2Pose118,
-	sPorygon2Pose119,
+	sPorygon2Pose81,
+	sPorygon2Pose82,
+	sPorygon2Pose83,
+	sPorygon2Pose84,
+	sPorygon2Pose85,
+	sPorygon2Pose86,
+	sPorygon2Pose87,
 	sPorygon2Pose120,
-	sPorygon2Pose121,
-	sPorygon2Pose122,
-	sPorygon2Pose123,
-	sPorygon2Pose124,
-	sPorygon2Pose125,
-	sPorygon2Pose126,
-	sPorygon2Pose127,
+	sPorygon2Pose89,
+	sPorygon2Pose90,
+	sPorygon2Pose91,
+	sPorygon2Pose92,
+	sPorygon2Pose93,
+	sPorygon2Pose94,
+	sPorygon2Pose95,
 	sPorygon2Pose128,
-	sPorygon2Pose129,
-	sPorygon2Pose130,
-	sPorygon2Pose131,
-	sPorygon2Pose132,
-	sPorygon2Pose133,
-	sPorygon2Pose134,
-	sPorygon2Pose135,
+	sPorygon2Pose97,
+	sPorygon2Pose98,
+	sPorygon2Pose99,
+	sPorygon2Pose100,
+	sPorygon2Pose101,
+	sPorygon2Pose102,
+	sPorygon2Pose103,
 	sPorygon2Pose136,
 	sPorygon2Pose137,
 	sPorygon2Pose138,
@@ -2561,14 +1942,14 @@ static const ax_pose *const sAxPosesPorygon2[] = {
 	sPorygon2Pose144,
 	sPorygon2Pose145,
 	sPorygon2Pose146,
-	sPorygon2Pose147,
-	sPorygon2Pose148,
-	sPorygon2Pose149,
-	sPorygon2Pose150,
-	sPorygon2Pose151,
-	sPorygon2Pose152,
-	sPorygon2Pose153,
-	sPorygon2Pose154,
+	sPorygon2Pose73,
+	sPorygon2Pose101,
+	sPorygon2Pose97,
+	sPorygon2Pose93,
+	sPorygon2Pose89,
+	sPorygon2Pose85,
+	sPorygon2Pose81,
+	sPorygon2Pose77,
 	sPorygon2Pose155,
 	sPorygon2Pose156,
 	sPorygon2Pose157,
@@ -2577,10 +1958,10 @@ static const ax_pose *const sAxPosesPorygon2[] = {
 	sPorygon2Pose160,
 	sPorygon2Pose161,
 	sPorygon2Pose162,
-	sPorygon2Pose163,
-	sPorygon2Pose164,
-	sPorygon2Pose165,
-	sPorygon2Pose166,
+	sPorygon2Pose85,
+	sPorygon2Pose86,
+	sPorygon2Pose88,
+	sPorygon2Pose76,
 	sPorygon2Pose167,
 	sPorygon2Pose168,
 	sPorygon2Pose169,
@@ -2588,49 +1969,49 @@ static const ax_pose *const sAxPosesPorygon2[] = {
 	sPorygon2Pose171,
 	sPorygon2Pose172,
 	sPorygon2Pose173,
-	sPorygon2Pose174,
-	sPorygon2Pose175,
-	sPorygon2Pose176,
-	sPorygon2Pose177,
+	sPorygon2Pose73,
+	sPorygon2Pose75,
+	sPorygon2Pose108,
+	sPorygon2Pose77,
 	sPorygon2Pose178,
-	sPorygon2Pose179,
-	sPorygon2Pose180,
+	sPorygon2Pose80,
+	sPorygon2Pose81,
 	sPorygon2Pose181,
 	sPorygon2Pose182,
-	sPorygon2Pose183,
+	sPorygon2Pose85,
 	sPorygon2Pose184,
-	sPorygon2Pose185,
-	sPorygon2Pose186,
-	sPorygon2Pose187,
+	sPorygon2Pose120,
+	sPorygon2Pose89,
+	sPorygon2Pose91,
 	sPorygon2Pose188,
-	sPorygon2Pose189,
+	sPorygon2Pose93,
 	sPorygon2Pose190,
-	sPorygon2Pose191,
-	sPorygon2Pose192,
+	sPorygon2Pose128,
+	sPorygon2Pose97,
 	sPorygon2Pose193,
 	sPorygon2Pose194,
-	sPorygon2Pose195,
+	sPorygon2Pose101,
 	sPorygon2Pose196,
-	sPorygon2Pose197,
-	sPorygon2Pose198,
-	sPorygon2Pose199,
-	sPorygon2Pose200,
-	sPorygon2Pose201,
-	sPorygon2Pose202,
-	sPorygon2Pose203,
-	sPorygon2Pose204,
-	sPorygon2Pose205,
-	sPorygon2Pose206,
-	sPorygon2Pose207,
-	sPorygon2Pose208,
-	sPorygon2Pose209,
-	sPorygon2Pose210,
-	sPorygon2Pose211,
-	sPorygon2Pose212,
-	sPorygon2Pose213,
-	sPorygon2Pose214,
-	sPorygon2Pose215,
-	sPorygon2Pose216,
+	sPorygon2Pose104,
+	sPorygon2Pose155,
+	sPorygon2Pose156,
+	sPorygon2Pose157,
+	sPorygon2Pose158,
+	sPorygon2Pose159,
+	sPorygon2Pose160,
+	sPorygon2Pose161,
+	sPorygon2Pose162,
+	sPorygon2Pose85,
+	sPorygon2Pose86,
+	sPorygon2Pose88,
+	sPorygon2Pose73,
+	sPorygon2Pose101,
+	sPorygon2Pose97,
+	sPorygon2Pose93,
+	sPorygon2Pose89,
+	sPorygon2Pose85,
+	sPorygon2Pose81,
+	sPorygon2Pose77,
 };
 
 static const struct PositionSets sAxPositionsPorygon2[] = {
@@ -2908,36 +2289,36 @@ static const ax_anim *const sPorygon2AnimTable5[] = {
 };
 
 static const ax_anim *const sPorygon2AnimTable6[] = {
-	sPorygon2Anims_6_1,
-	sPorygon2Anims_6_1,
-	sPorygon2Anims_6_1,
-	sPorygon2Anims_6_1,
-	sPorygon2Anims_6_1,
-	sPorygon2Anims_6_1,
-	sPorygon2Anims_6_1,
-	sPorygon2Anims_6_1,
+	gAxSharedAnim_00138,
+	gAxSharedAnim_00138,
+	gAxSharedAnim_00138,
+	gAxSharedAnim_00138,
+	gAxSharedAnim_00138,
+	gAxSharedAnim_00138,
+	gAxSharedAnim_00138,
+	gAxSharedAnim_00138,
 };
 
 static const ax_anim *const sPorygon2AnimTable7[] = {
-	sPorygon2Anims_7_1,
-	sPorygon2Anims_7_2,
-	sPorygon2Anims_7_3,
-	sPorygon2Anims_7_4,
-	sPorygon2Anims_7_5,
-	sPorygon2Anims_7_6,
-	sPorygon2Anims_7_7,
-	sPorygon2Anims_7_8,
+	gAxSharedAnim_00467,
+	gAxSharedAnim_00480,
+	gAxSharedAnim_00488,
+	gAxSharedAnim_00497,
+	gAxSharedAnim_00509,
+	gAxSharedAnim_00518,
+	gAxSharedAnim_00524,
+	gAxSharedAnim_00530,
 };
 
 static const ax_anim *const sPorygon2AnimTable8[] = {
-	sPorygon2Anims_8_1,
-	sPorygon2Anims_8_2,
-	sPorygon2Anims_8_3,
-	sPorygon2Anims_8_4,
-	sPorygon2Anims_8_5,
-	sPorygon2Anims_8_6,
-	sPorygon2Anims_8_7,
-	sPorygon2Anims_8_8,
+	gAxSharedAnim_00094,
+	gAxSharedAnim_00101,
+	gAxSharedAnim_00100,
+	gAxSharedAnim_00099,
+	gAxSharedAnim_00098,
+	gAxSharedAnim_00097,
+	gAxSharedAnim_00096,
+	gAxSharedAnim_00095,
 };
 
 static const ax_anim *const sPorygon2AnimTable9[] = {
@@ -2957,7 +2338,7 @@ static const ax_anim *const sPorygon2AnimTable10[] = {
 	sPorygon2Anims_10_3,
 	sPorygon2Anims_10_4,
 	sPorygon2Anims_10_5,
-	sPorygon2Anims_10_6,
+	gAxSharedAnim_00800,
 	sPorygon2Anims_10_7,
 	sPorygon2Anims_10_8,
 };
@@ -2980,7 +2361,7 @@ static const ax_anim *const sPorygon2AnimTable12[] = {
 	sPorygon2Anims_12_4,
 	sPorygon2Anims_12_5,
 	sPorygon2Anims_12_6,
-	sPorygon2Anims_12_7,
+	gAxSharedAnim_01195,
 	sPorygon2Anims_12_8,
 };
 

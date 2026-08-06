@@ -1,3 +1,5 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
+#include "ax_shared_anims.h"
 static const axmain sAxMainKangaskhan;
 const SiroArchive gAxKangaskhan = {"SIRO", &sAxMainKangaskhan};
 
@@ -97,106 +99,6 @@ static const ax_pose sKangaskhanPose24[] = {
 	AX_POSE(5, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose25[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose26[] = {
-	AX_POSE(1, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose27[] = {
-	AX_POSE(2, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose28[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose29[] = {
-	AX_POSE(4, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose30[] = {
-	AX_POSE(5, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose31[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose32[] = {
-	AX_POSE(7, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose33[] = {
-	AX_POSE(8, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose34[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose35[] = {
-	AX_POSE(10, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose36[] = {
-	AX_POSE(11, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose37[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose38[] = {
-	AX_POSE(13, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose39[] = {
-	AX_POSE(14, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose40[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose41[] = {
-	AX_POSE(10, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose42[] = {
-	AX_POSE(11, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose43[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose44[] = {
-	AX_POSE(7, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose45[] = {
-	AX_POSE(8, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose46[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose47[] = {
-	AX_POSE(4, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose48[] = {
-	AX_POSE(5, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose49[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose50[] = {
 	AX_POSE(15, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -220,10 +122,6 @@ static const ax_pose sKangaskhanPose54[] = {
 	AX_POSE(18, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose55[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose56[] = {
 	AX_POSE(19, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -235,10 +133,6 @@ static const ax_pose sKangaskhanPose57[] = {
 };
 static const ax_pose sKangaskhanPose58[] = {
 	AX_POSE(21, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose59[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose60[] = {
@@ -254,10 +148,6 @@ static const ax_pose sKangaskhanPose62[] = {
 	AX_POSE(24, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose63[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose64[] = {
 	AX_POSE(25, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -269,10 +159,6 @@ static const ax_pose sKangaskhanPose65[] = {
 };
 static const ax_pose sKangaskhanPose66[] = {
 	AX_POSE(26, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose67[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose68[] = {
@@ -301,10 +187,6 @@ static const ax_pose sKangaskhanPose73[] = {
 	AX_POSE(29, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose74[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose75[] = {
 	AX_POSE(25, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -316,10 +198,6 @@ static const ax_pose sKangaskhanPose76[] = {
 };
 static const ax_pose sKangaskhanPose77[] = {
 	AX_POSE(26, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose78[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose79[] = {
@@ -335,10 +213,6 @@ static const ax_pose sKangaskhanPose81[] = {
 	AX_POSE(24, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose82[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose83[] = {
 	AX_POSE(19, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -352,20 +226,12 @@ static const ax_pose sKangaskhanPose85[] = {
 	AX_POSE(21, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose86[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose87[] = {
 	AX_POSE(31, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose88[] = {
 	AX_POSE(32, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose89[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose90[] = {
@@ -376,20 +242,12 @@ static const ax_pose sKangaskhanPose91[] = {
 	AX_POSE(34, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose92[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose93[] = {
 	AX_POSE(35, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose94[] = {
 	AX_POSE(36, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose95[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose96[] = {
@@ -400,20 +258,12 @@ static const ax_pose sKangaskhanPose97[] = {
 	AX_POSE(38, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose98[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose99[] = {
 	AX_POSE(39, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose100[] = {
 	AX_POSE(40, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose101[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose102[] = {
@@ -424,10 +274,6 @@ static const ax_pose sKangaskhanPose103[] = {
 	AX_POSE(38, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose104[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose105[] = {
 	AX_POSE(35, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -436,48 +282,12 @@ static const ax_pose sKangaskhanPose106[] = {
 	AX_POSE(36, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose107[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose108[] = {
 	AX_POSE(33, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose109[] = {
 	AX_POSE(34, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose110[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose111[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose112[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose113[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose114[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose115[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose116[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose117[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose118[] = {
@@ -520,138 +330,6 @@ static const ax_pose sKangaskhanPose127[] = {
 	AX_POSE(44, OAM1(225, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose128[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose129[] = {
-	AX_POSE(31, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose130[] = {
-	AX_POSE(32, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose131[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose132[] = {
-	AX_POSE(33, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose133[] = {
-	AX_POSE(34, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose134[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose135[] = {
-	AX_POSE(35, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose136[] = {
-	AX_POSE(36, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose137[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose138[] = {
-	AX_POSE(37, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose139[] = {
-	AX_POSE(38, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose140[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose141[] = {
-	AX_POSE(39, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose142[] = {
-	AX_POSE(40, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose143[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose144[] = {
-	AX_POSE(37, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose145[] = {
-	AX_POSE(38, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose146[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose147[] = {
-	AX_POSE(35, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose148[] = {
-	AX_POSE(36, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose149[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose150[] = {
-	AX_POSE(33, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose151[] = {
-	AX_POSE(34, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose152[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose153[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose154[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose155[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose156[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose157[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose158[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose159[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose160[] = {
-	AX_POSE(32, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose161[] = {
 	AX_POSE(34, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
@@ -662,10 +340,6 @@ static const ax_pose sKangaskhanPose162[] = {
 };
 static const ax_pose sKangaskhanPose163[] = {
 	AX_POSE(38, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose164[] = {
-	AX_POSE(40, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose165[] = {
@@ -680,164 +354,28 @@ static const ax_pose sKangaskhanPose167[] = {
 	AX_POSE(34, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose168[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose169[] = {
-	AX_POSE(31, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose170[] = {
-	AX_POSE(32, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose171[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose172[] = {
-	AX_POSE(33, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose173[] = {
 	AX_POSE(34, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose174[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose175[] = {
-	AX_POSE(35, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose176[] = {
 	AX_POSE(36, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose177[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose178[] = {
-	AX_POSE(37, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose179[] = {
-	AX_POSE(38, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose180[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose181[] = {
-	AX_POSE(39, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose182[] = {
-	AX_POSE(40, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose183[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose184[] = {
-	AX_POSE(37, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose185[] = {
-	AX_POSE(38, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose186[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose187[] = {
-	AX_POSE(35, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose188[] = {
 	AX_POSE(36, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose189[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose190[] = {
-	AX_POSE(33, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sKangaskhanPose191[] = {
 	AX_POSE(34, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose192[] = {
-	AX_POSE(31, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose193[] = {
 	AX_POSE(33, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sKangaskhanPose194[] = {
-	AX_POSE(35, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose195[] = {
-	AX_POSE(37, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose196[] = {
-	AX_POSE(39, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose197[] = {
-	AX_POSE(37, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose198[] = {
-	AX_POSE(35, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sKangaskhanPose199[] = {
 	AX_POSE(33, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose200[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose201[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose202[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose203[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose204[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose205[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose206[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sKangaskhanPose207[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 6)),
 	AX_POSE_TERMINATOR
 };
 static const ax_anim sKangaskhanAnims_1_1[] = {
@@ -1597,82 +1135,6 @@ static const ax_anim sKangaskhanAnims_9_8[] = {
 	{ .frames = 1, .unkFlags = 0, .poseId = 152, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sKangaskhanAnims_10_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 159, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 159, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 159, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 159, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 159, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sKangaskhanAnims_10_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 160, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 160, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 160, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 160, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 160, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sKangaskhanAnims_10_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 161, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 161, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 161, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 161, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 161, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sKangaskhanAnims_10_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 162, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 162, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 162, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 162, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sKangaskhanAnims_10_5[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 163, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 163, .offset = {6, 0}, .shadow = {6, 0} },
@@ -1801,19 +1263,6 @@ static const ax_anim sKangaskhanAnims_11_4[] = {
 	{ .frames = 2, .unkFlags = 2, .poseId = 178, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sKangaskhanAnims_11_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 180, .offset = {0, -10}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, -16}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 180, .offset = {0, -20}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 180, .offset = {0, -21}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 181, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 181, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 181, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sKangaskhanAnims_11_6[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 183, .offset = {0, -10}, .shadow = {0, 0} },
@@ -1825,19 +1274,6 @@ static const ax_anim sKangaskhanAnims_11_6[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, -17}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 184, .offset = {0, -11}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 2, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sKangaskhanAnims_11_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 186, .offset = {0, -10}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, -16}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 186, .offset = {0, -20}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 186, .offset = {0, -21}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 187, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 187, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 187, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 187, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sKangaskhanAnims_11_8[] = {
@@ -1853,19 +1289,6 @@ static const ax_anim sKangaskhanAnims_11_8[] = {
 	{ .frames = 2, .unkFlags = 2, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sKangaskhanAnims_12_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sKangaskhanAnims_12_2[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {1, -1}, .shadow = {1, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, 0}, .shadow = {0, 0} },
@@ -1879,19 +1302,6 @@ static const ax_anim sKangaskhanAnims_12_2[] = {
 	{ .frames = 2, .unkFlags = 1, .poseId = 198, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sKangaskhanAnims_12_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sKangaskhanAnims_12_4[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {-1, -1}, .shadow = {-1, -1} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {0, 0}, .shadow = {0, 0} },
@@ -1903,58 +1313,6 @@ static const ax_anim sKangaskhanAnims_12_4[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {-1, -1}, .shadow = {-1, -1} },
 	{ .frames = 2, .unkFlags = 1, .poseId = 196, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sKangaskhanAnims_12_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sKangaskhanAnims_12_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sKangaskhanAnims_12_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sKangaskhanAnims_12_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sKangaskhanAnims_13_1[] = {
@@ -2401,99 +1759,99 @@ static const ax_pose *const sAxPosesKangaskhan[] = {
 	sKangaskhanPose22,
 	sKangaskhanPose23,
 	sKangaskhanPose24,
-	sKangaskhanPose25,
-	sKangaskhanPose26,
-	sKangaskhanPose27,
-	sKangaskhanPose28,
-	sKangaskhanPose29,
-	sKangaskhanPose30,
-	sKangaskhanPose31,
-	sKangaskhanPose32,
-	sKangaskhanPose33,
-	sKangaskhanPose34,
-	sKangaskhanPose35,
-	sKangaskhanPose36,
-	sKangaskhanPose37,
-	sKangaskhanPose38,
-	sKangaskhanPose39,
-	sKangaskhanPose40,
-	sKangaskhanPose41,
-	sKangaskhanPose42,
-	sKangaskhanPose43,
-	sKangaskhanPose44,
-	sKangaskhanPose45,
-	sKangaskhanPose46,
-	sKangaskhanPose47,
-	sKangaskhanPose48,
-	sKangaskhanPose49,
+	sKangaskhanPose1,
+	sKangaskhanPose2,
+	sKangaskhanPose3,
+	sKangaskhanPose4,
+	sKangaskhanPose5,
+	sKangaskhanPose6,
+	sKangaskhanPose7,
+	sKangaskhanPose8,
+	sKangaskhanPose9,
+	sKangaskhanPose10,
+	sKangaskhanPose11,
+	sKangaskhanPose12,
+	sKangaskhanPose13,
+	sKangaskhanPose14,
+	sKangaskhanPose15,
+	sKangaskhanPose16,
+	sKangaskhanPose17,
+	sKangaskhanPose18,
+	sKangaskhanPose19,
+	sKangaskhanPose20,
+	sKangaskhanPose21,
+	sKangaskhanPose22,
+	sKangaskhanPose23,
+	sKangaskhanPose24,
+	sKangaskhanPose1,
 	sKangaskhanPose50,
 	sKangaskhanPose51,
 	sKangaskhanPose52,
 	sKangaskhanPose53,
 	sKangaskhanPose54,
-	sKangaskhanPose55,
+	sKangaskhanPose4,
 	sKangaskhanPose56,
 	sKangaskhanPose57,
 	sKangaskhanPose58,
-	sKangaskhanPose59,
+	sKangaskhanPose7,
 	sKangaskhanPose60,
 	sKangaskhanPose61,
 	sKangaskhanPose62,
-	sKangaskhanPose63,
+	sKangaskhanPose10,
 	sKangaskhanPose64,
 	sKangaskhanPose65,
 	sKangaskhanPose66,
-	sKangaskhanPose67,
+	sKangaskhanPose13,
 	sKangaskhanPose68,
 	sKangaskhanPose69,
 	sKangaskhanPose70,
 	sKangaskhanPose71,
 	sKangaskhanPose72,
 	sKangaskhanPose73,
-	sKangaskhanPose74,
+	sKangaskhanPose16,
 	sKangaskhanPose75,
 	sKangaskhanPose76,
 	sKangaskhanPose77,
-	sKangaskhanPose78,
+	sKangaskhanPose19,
 	sKangaskhanPose79,
 	sKangaskhanPose80,
 	sKangaskhanPose81,
-	sKangaskhanPose82,
+	sKangaskhanPose22,
 	sKangaskhanPose83,
 	sKangaskhanPose84,
 	sKangaskhanPose85,
-	sKangaskhanPose86,
+	sKangaskhanPose1,
 	sKangaskhanPose87,
 	sKangaskhanPose88,
-	sKangaskhanPose89,
+	sKangaskhanPose4,
 	sKangaskhanPose90,
 	sKangaskhanPose91,
-	sKangaskhanPose92,
+	sKangaskhanPose7,
 	sKangaskhanPose93,
 	sKangaskhanPose94,
-	sKangaskhanPose95,
+	sKangaskhanPose10,
 	sKangaskhanPose96,
 	sKangaskhanPose97,
-	sKangaskhanPose98,
+	sKangaskhanPose13,
 	sKangaskhanPose99,
 	sKangaskhanPose100,
-	sKangaskhanPose101,
+	sKangaskhanPose16,
 	sKangaskhanPose102,
 	sKangaskhanPose103,
-	sKangaskhanPose104,
+	sKangaskhanPose19,
 	sKangaskhanPose105,
 	sKangaskhanPose106,
-	sKangaskhanPose107,
+	sKangaskhanPose22,
 	sKangaskhanPose108,
 	sKangaskhanPose109,
-	sKangaskhanPose110,
-	sKangaskhanPose111,
-	sKangaskhanPose112,
-	sKangaskhanPose113,
-	sKangaskhanPose114,
-	sKangaskhanPose115,
-	sKangaskhanPose116,
-	sKangaskhanPose117,
+	sKangaskhanPose1,
+	sKangaskhanPose22,
+	sKangaskhanPose19,
+	sKangaskhanPose16,
+	sKangaskhanPose13,
+	sKangaskhanPose10,
+	sKangaskhanPose7,
+	sKangaskhanPose4,
 	sKangaskhanPose118,
 	sKangaskhanPose119,
 	sKangaskhanPose120,
@@ -2504,86 +1862,86 @@ static const ax_pose *const sAxPosesKangaskhan[] = {
 	sKangaskhanPose125,
 	sKangaskhanPose126,
 	sKangaskhanPose127,
-	sKangaskhanPose128,
-	sKangaskhanPose129,
-	sKangaskhanPose130,
-	sKangaskhanPose131,
-	sKangaskhanPose132,
-	sKangaskhanPose133,
-	sKangaskhanPose134,
-	sKangaskhanPose135,
-	sKangaskhanPose136,
-	sKangaskhanPose137,
-	sKangaskhanPose138,
-	sKangaskhanPose139,
-	sKangaskhanPose140,
-	sKangaskhanPose141,
-	sKangaskhanPose142,
-	sKangaskhanPose143,
-	sKangaskhanPose144,
-	sKangaskhanPose145,
-	sKangaskhanPose146,
-	sKangaskhanPose147,
-	sKangaskhanPose148,
-	sKangaskhanPose149,
-	sKangaskhanPose150,
-	sKangaskhanPose151,
-	sKangaskhanPose152,
-	sKangaskhanPose153,
-	sKangaskhanPose154,
-	sKangaskhanPose155,
-	sKangaskhanPose156,
-	sKangaskhanPose157,
-	sKangaskhanPose158,
-	sKangaskhanPose159,
-	sKangaskhanPose160,
+	sKangaskhanPose1,
+	sKangaskhanPose87,
+	sKangaskhanPose88,
+	sKangaskhanPose4,
+	sKangaskhanPose90,
+	sKangaskhanPose91,
+	sKangaskhanPose7,
+	sKangaskhanPose93,
+	sKangaskhanPose94,
+	sKangaskhanPose10,
+	sKangaskhanPose96,
+	sKangaskhanPose97,
+	sKangaskhanPose13,
+	sKangaskhanPose99,
+	sKangaskhanPose100,
+	sKangaskhanPose16,
+	sKangaskhanPose102,
+	sKangaskhanPose103,
+	sKangaskhanPose19,
+	sKangaskhanPose105,
+	sKangaskhanPose106,
+	sKangaskhanPose22,
+	sKangaskhanPose108,
+	sKangaskhanPose109,
+	sKangaskhanPose1,
+	sKangaskhanPose22,
+	sKangaskhanPose19,
+	sKangaskhanPose16,
+	sKangaskhanPose13,
+	sKangaskhanPose10,
+	sKangaskhanPose7,
+	sKangaskhanPose4,
+	sKangaskhanPose88,
 	sKangaskhanPose161,
 	sKangaskhanPose162,
 	sKangaskhanPose163,
-	sKangaskhanPose164,
+	sKangaskhanPose100,
 	sKangaskhanPose165,
 	sKangaskhanPose166,
 	sKangaskhanPose167,
-	sKangaskhanPose168,
-	sKangaskhanPose169,
-	sKangaskhanPose170,
-	sKangaskhanPose171,
-	sKangaskhanPose172,
+	sKangaskhanPose1,
+	sKangaskhanPose87,
+	sKangaskhanPose88,
+	sKangaskhanPose4,
+	sKangaskhanPose90,
 	sKangaskhanPose173,
-	sKangaskhanPose174,
-	sKangaskhanPose175,
+	sKangaskhanPose7,
+	sKangaskhanPose93,
 	sKangaskhanPose176,
-	sKangaskhanPose177,
-	sKangaskhanPose178,
-	sKangaskhanPose179,
-	sKangaskhanPose180,
-	sKangaskhanPose181,
-	sKangaskhanPose182,
-	sKangaskhanPose183,
-	sKangaskhanPose184,
-	sKangaskhanPose185,
-	sKangaskhanPose186,
-	sKangaskhanPose187,
+	sKangaskhanPose10,
+	sKangaskhanPose96,
+	sKangaskhanPose163,
+	sKangaskhanPose13,
+	sKangaskhanPose99,
+	sKangaskhanPose100,
+	sKangaskhanPose16,
+	sKangaskhanPose102,
+	sKangaskhanPose165,
+	sKangaskhanPose19,
+	sKangaskhanPose105,
 	sKangaskhanPose188,
-	sKangaskhanPose189,
-	sKangaskhanPose190,
+	sKangaskhanPose22,
+	sKangaskhanPose108,
 	sKangaskhanPose191,
-	sKangaskhanPose192,
+	sKangaskhanPose87,
 	sKangaskhanPose193,
-	sKangaskhanPose194,
-	sKangaskhanPose195,
-	sKangaskhanPose196,
-	sKangaskhanPose197,
-	sKangaskhanPose198,
+	sKangaskhanPose105,
+	sKangaskhanPose102,
+	sKangaskhanPose99,
+	sKangaskhanPose96,
+	sKangaskhanPose93,
 	sKangaskhanPose199,
-	sKangaskhanPose200,
-	sKangaskhanPose201,
-	sKangaskhanPose202,
-	sKangaskhanPose203,
-	sKangaskhanPose204,
-	sKangaskhanPose205,
-	sKangaskhanPose206,
-	sKangaskhanPose207,
+	sKangaskhanPose1,
+	sKangaskhanPose22,
+	sKangaskhanPose19,
+	sKangaskhanPose16,
+	sKangaskhanPose13,
+	sKangaskhanPose10,
+	sKangaskhanPose7,
+	sKangaskhanPose4,
 };
 
 static const struct PositionSets sAxPositionsKangaskhan[] = {
@@ -2896,10 +2254,10 @@ static const ax_anim *const sKangaskhanAnimTable9[] = {
 };
 
 static const ax_anim *const sKangaskhanAnimTable10[] = {
-	sKangaskhanAnims_10_1,
-	sKangaskhanAnims_10_2,
-	sKangaskhanAnims_10_3,
-	sKangaskhanAnims_10_4,
+	gAxSharedAnim_00661,
+	gAxSharedAnim_00676,
+	gAxSharedAnim_00687,
+	gAxSharedAnim_00704,
 	sKangaskhanAnims_10_5,
 	sKangaskhanAnims_10_6,
 	sKangaskhanAnims_10_7,
@@ -2911,21 +2269,21 @@ static const ax_anim *const sKangaskhanAnimTable11[] = {
 	sKangaskhanAnims_11_2,
 	sKangaskhanAnims_11_3,
 	sKangaskhanAnims_11_4,
-	sKangaskhanAnims_11_5,
+	gAxSharedAnim_00915,
 	sKangaskhanAnims_11_6,
-	sKangaskhanAnims_11_7,
+	gAxSharedAnim_00990,
 	sKangaskhanAnims_11_8,
 };
 
 static const ax_anim *const sKangaskhanAnimTable12[] = {
-	sKangaskhanAnims_12_1,
+	gAxSharedAnim_01095,
 	sKangaskhanAnims_12_2,
-	sKangaskhanAnims_12_3,
+	gAxSharedAnim_01173,
 	sKangaskhanAnims_12_4,
-	sKangaskhanAnims_12_5,
-	sKangaskhanAnims_12_6,
-	sKangaskhanAnims_12_7,
-	sKangaskhanAnims_12_8,
+	gAxSharedAnim_01159,
+	gAxSharedAnim_01146,
+	gAxSharedAnim_01117,
+	gAxSharedAnim_01098,
 };
 
 static const ax_anim *const sKangaskhanAnimTable13[] = {

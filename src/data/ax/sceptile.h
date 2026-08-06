@@ -1,3 +1,5 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
+#include "ax_shared_anims.h"
 static const axmain sAxMainSceptile;
 const SiroArchive gAxSceptile = {"SIRO", &sAxMainSceptile};
 
@@ -95,18 +97,6 @@ static const ax_pose sSceptilePose23[] = {
 };
 static const ax_pose sSceptilePose24[] = {
 	AX_POSE(5, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose25[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose26[] = {
-	AX_POSE(1, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose27[] = {
-	AX_POSE(2, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose28[] = {
@@ -225,14 +215,6 @@ static const ax_pose sSceptilePose56[] = {
 	AX_POSE(16, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose57[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose58[] = {
-	AX_POSE(15, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose59[] = {
 	AX_POSE(20, OAM1(223, ST_OAM_V_RECTANGLE, 1), OAM2(2, ST_OAM_SIZE_2, FLIP(0, 0), 0, 1), OAM3(0, 3, 3)),
 	AX_POSE(21, OAM1(223, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(8, 3, 3)),
@@ -288,14 +270,6 @@ static const ax_pose sSceptilePose71[] = {
 	AX_POSE(7, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose72[] = {
-	AX_POSE(9, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose73[] = {
-	AX_POSE(18, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose74[] = {
 	AX_POSE(26, OAM1(221, ST_OAM_V_RECTANGLE, 1), OAM2(1, ST_OAM_SIZE_2, FLIP(1, 0), 0, 1), OAM3(0, 3, 3)),
 	AX_POSE(27, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(8, 3, 3)),
@@ -303,10 +277,6 @@ static const ax_pose sSceptilePose74[] = {
 };
 static const ax_pose sSceptilePose75[] = {
 	AX_POSE(27, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose76[] = {
-	AX_POSE(10, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose77[] = {
@@ -364,10 +334,6 @@ static const ax_pose sSceptilePose86[] = {
 	AX_POSE(27, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose87[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose88[] = {
 	AX_POSE(17, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
@@ -398,10 +364,6 @@ static const ax_pose sSceptilePose94[] = {
 	AX_POSE(23, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose95[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose96[] = {
 	AX_POSE(33, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
@@ -411,10 +373,6 @@ static const ax_pose sSceptilePose97[] = {
 	AX_POSE(35, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
 	AX_POSE(36, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
 	AX_POSE(37, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose98[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose99[] = {
@@ -427,10 +385,6 @@ static const ax_pose sSceptilePose100[] = {
 	AX_POSE(41, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE(42, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(4, 3, 3)),
 	AX_POSE(43, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(14, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(12, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose101[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose102[] = {
@@ -516,10 +470,6 @@ static const ax_pose sSceptilePose115[] = {
 	AX_POSE(48, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(13, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose116[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose117[] = {
 	AX_POSE(38, OAM1(229, ST_OAM_V_RECTANGLE, 1), OAM2(255, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE(39, OAM1(229, ST_OAM_V_RECTANGLE, 1), OAM2(247, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 3)),
@@ -530,38 +480,6 @@ static const ax_pose sSceptilePose118[] = {
 	AX_POSE(41, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE(42, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
 	AX_POSE(43, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose119[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose120[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose121[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose122[] = {
-	AX_POSE(9, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose123[] = {
-	AX_POSE(12, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose124[] = {
-	AX_POSE(9, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose125[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose126[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose127[] = {
@@ -604,40 +522,20 @@ static const ax_pose sSceptilePose136[] = {
 	AX_POSE(70, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose137[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose138[] = {
 	AX_POSE(74, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose139[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose140[] = {
 	AX_POSE(75, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose141[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose142[] = {
 	AX_POSE(76, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose143[] = {
-	AX_POSE(9, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose144[] = {
 	AX_POSE(77, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose145[] = {
-	AX_POSE(12, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose146[] = {
@@ -652,10 +550,6 @@ static const ax_pose sSceptilePose148[] = {
 	AX_POSE(77, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose149[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose150[] = {
 	AX_POSE(76, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
@@ -666,19 +560,6 @@ static const ax_pose sSceptilePose151[] = {
 };
 static const ax_pose sSceptilePose152[] = {
 	AX_POSE(75, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose153[] = {
-	AX_POSE(34, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(35, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(36, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE(37, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose154[] = {
-	AX_POSE(41, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(42, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(43, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose155[] = {
@@ -716,61 +597,16 @@ static const ax_pose sSceptilePose159[] = {
 	AX_POSE(48, OAM1(250, ST_OAM_SQUARE     , 1), OAM2(10, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(13, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose160[] = {
-	AX_POSE(41, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(42, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(43, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(14, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(12, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose161[] = {
-	AX_POSE(15, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose162[] = {
-	AX_POSE(16, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose163[] = {
 	AX_POSE(17, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose164[] = {
-	AX_POSE(18, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose165[] = {
-	AX_POSE(19, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose166[] = {
-	AX_POSE(18, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose167[] = {
 	AX_POSE(17, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose168[] = {
-	AX_POSE(16, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose169[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose170[] = {
 	AX_POSE(33, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose171[] = {
-	AX_POSE(34, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(35, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(36, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE(37, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose172[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose173[] = {
@@ -783,25 +619,6 @@ static const ax_pose sSceptilePose174[] = {
 	AX_POSE(41, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(237, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE(42, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(4, 3, 3)),
 	AX_POSE(43, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(13, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(12, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose175[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose176[] = {
-	AX_POSE(44, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose177[] = {
-	AX_POSE(45, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(236, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(46, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(47, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(12, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(12, 3, 3)),
-	AX_POSE(48, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(12, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose178[] = {
-	AX_POSE(9, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose179[] = {
@@ -819,27 +636,12 @@ static const ax_pose sSceptilePose180[] = {
 	AX_POSE(57, OAM1(245, ST_OAM_V_RECTANGLE, 1), OAM2(237, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(14, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose181[] = {
-	AX_POSE(12, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose182[] = {
 	AX_POSE(58, OAM1(231, ST_OAM_V_RECTANGLE, 1), OAM2(253, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE(59, OAM1(231, ST_OAM_V_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 3)),
 	AX_POSE(60, OAM1(231, ST_OAM_V_RECTANGLE, 1), OAM2(237, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
 	AX_POSE(61, OAM1(223, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(14, 3, 3)),
 	AX_POSE(62, OAM1(223, ST_OAM_SQUARE     , 1), OAM2(253, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(15, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose183[] = {
-	AX_POSE(63, OAM1(229, ST_OAM_V_RECTANGLE, 1), OAM2(254, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(64, OAM1(229, ST_OAM_V_RECTANGLE, 1), OAM2(246, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 3)),
-	AX_POSE(65, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE(66, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(14, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose184[] = {
-	AX_POSE(9, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sSceptilePose185[] = {
@@ -857,25 +659,6 @@ static const ax_pose sSceptilePose186[] = {
 	AX_POSE(57, OAM1(245, ST_OAM_V_RECTANGLE, 1), OAM2(11, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose187[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose188[] = {
-	AX_POSE(44, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose189[] = {
-	AX_POSE(45, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(244, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(46, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(47, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE(48, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose190[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose191[] = {
 	AX_POSE(38, OAM1(230, ST_OAM_V_RECTANGLE, 1), OAM2(255, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE(39, OAM1(230, ST_OAM_V_RECTANGLE, 1), OAM2(247, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 3)),
@@ -888,90 +671,11 @@ static const ax_pose sSceptilePose192[] = {
 	AX_POSE(43, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sSceptilePose193[] = {
-	AX_POSE(34, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(35, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(36, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE(37, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose194[] = {
-	AX_POSE(41, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(42, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(43, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose195[] = {
-	AX_POSE(45, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(246, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(46, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(47, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE(48, OAM1(250, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose196[] = {
-	AX_POSE(54, OAM1(229, ST_OAM_V_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(55, OAM1(229, ST_OAM_V_RECTANGLE, 1), OAM2(5, ST_OAM_SIZE_1, FLIP(0, 0), 0, 1), OAM3(8, 3, 3)),
-	AX_POSE(56, OAM1(237, ST_OAM_V_RECTANGLE, 1), OAM2(237, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
-	AX_POSE(57, OAM1(245, ST_OAM_V_RECTANGLE, 1), OAM2(13, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 3)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sSceptilePose197[] = {
 	AX_POSE(63, OAM1(230, ST_OAM_V_RECTANGLE, 1), OAM2(254, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE(64, OAM1(230, ST_OAM_V_RECTANGLE, 1), OAM2(246, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 3)),
 	AX_POSE(65, OAM1(238, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 3)),
 	AX_POSE(66, OAM1(238, ST_OAM_SQUARE     , 1), OAM2(14, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose198[] = {
-	AX_POSE(54, OAM1(229, ST_OAM_V_RECTANGLE, 1), OAM2(251, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(55, OAM1(229, ST_OAM_V_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 3)),
-	AX_POSE(56, OAM1(237, ST_OAM_V_RECTANGLE, 1), OAM2(11, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(12, 3, 3)),
-	AX_POSE(57, OAM1(245, ST_OAM_V_RECTANGLE, 1), OAM2(235, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(14, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose199[] = {
-	AX_POSE(45, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(234, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(46, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(47, OAM1(242, ST_OAM_SQUARE     , 1), OAM2(10, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(12, 3, 3)),
-	AX_POSE(48, OAM1(250, ST_OAM_SQUARE     , 1), OAM2(10, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(13, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose200[] = {
-	AX_POSE(41, OAM1(234, ST_OAM_H_RECTANGLE, 1), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE(42, OAM1(242, ST_OAM_H_RECTANGLE, 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(4, 3, 3)),
-	AX_POSE(43, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(14, ST_OAM_SIZE_0, FLIP(1, 0), 0, 1), OAM3(12, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose201[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose202[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose203[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose204[] = {
-	AX_POSE(9, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose205[] = {
-	AX_POSE(12, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose206[] = {
-	AX_POSE(9, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose207[] = {
-	AX_POSE(6, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sSceptilePose208[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 3)),
 	AX_POSE_TERMINATOR
 };
 static const ax_anim sSceptileAnims_1_1[] = {
@@ -1719,82 +1423,6 @@ static const ax_anim sSceptileAnims_10_4[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 163, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sSceptileAnims_10_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 164, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 164, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 164, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 164, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSceptileAnims_10_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 165, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 165, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 165, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 165, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSceptileAnims_10_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 166, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 166, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 166, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 166, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSceptileAnims_10_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 167, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 167, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 167, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 167, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sSceptileAnims_11_1[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 168, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 169, .offset = {0, -10}, .shadow = {0, 0} },
@@ -1912,58 +1540,6 @@ static const ax_anim sSceptileAnims_12_1[] = {
 	{ .frames = 2, .unkFlags = 1, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sSceptileAnims_12_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 199, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSceptileAnims_12_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 198, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 198, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 198, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSceptileAnims_12_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 197, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSceptileAnims_12_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 196, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 196, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 196, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sSceptileAnims_12_6[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {1, -1}, .shadow = {1, -1} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
@@ -1988,19 +1564,6 @@ static const ax_anim sSceptileAnims_12_7[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, -1}, .shadow = {0, -1} },
 	{ .frames = 2, .unkFlags = 1, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sSceptileAnims_12_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sSceptileAnims_13_1[] = {
@@ -2610,9 +2173,9 @@ static const ax_pose *const sAxPosesSceptile[] = {
 	sSceptilePose22,
 	sSceptilePose23,
 	sSceptilePose24,
-	sSceptilePose25,
-	sSceptilePose26,
-	sSceptilePose27,
+	sSceptilePose1,
+	sSceptilePose2,
+	sSceptilePose3,
 	sSceptilePose28,
 	sSceptilePose29,
 	sSceptilePose30,
@@ -2642,8 +2205,8 @@ static const ax_pose *const sAxPosesSceptile[] = {
 	sSceptilePose54,
 	sSceptilePose55,
 	sSceptilePose56,
-	sSceptilePose57,
-	sSceptilePose58,
+	sSceptilePose1,
+	sSceptilePose28,
 	sSceptilePose59,
 	sSceptilePose60,
 	sSceptilePose61,
@@ -2657,11 +2220,11 @@ static const ax_pose *const sAxPosesSceptile[] = {
 	sSceptilePose69,
 	sSceptilePose70,
 	sSceptilePose71,
-	sSceptilePose72,
-	sSceptilePose73,
+	sSceptilePose37,
+	sSceptilePose40,
 	sSceptilePose74,
 	sSceptilePose75,
-	sSceptilePose76,
+	sSceptilePose38,
 	sSceptilePose77,
 	sSceptilePose78,
 	sSceptilePose79,
@@ -2672,7 +2235,7 @@ static const ax_pose *const sAxPosesSceptile[] = {
 	sSceptilePose84,
 	sSceptilePose85,
 	sSceptilePose86,
-	sSceptilePose87,
+	sSceptilePose19,
 	sSceptilePose88,
 	sSceptilePose89,
 	sSceptilePose90,
@@ -2680,13 +2243,13 @@ static const ax_pose *const sAxPosesSceptile[] = {
 	sSceptilePose92,
 	sSceptilePose93,
 	sSceptilePose94,
-	sSceptilePose95,
+	sSceptilePose1,
 	sSceptilePose96,
 	sSceptilePose97,
-	sSceptilePose98,
+	sSceptilePose62,
 	sSceptilePose99,
 	sSceptilePose100,
-	sSceptilePose101,
+	sSceptilePose33,
 	sSceptilePose102,
 	sSceptilePose103,
 	sSceptilePose104,
@@ -2701,17 +2264,17 @@ static const ax_pose *const sAxPosesSceptile[] = {
 	sSceptilePose113,
 	sSceptilePose114,
 	sSceptilePose115,
-	sSceptilePose116,
+	sSceptilePose91,
 	sSceptilePose117,
 	sSceptilePose118,
-	sSceptilePose119,
-	sSceptilePose120,
-	sSceptilePose121,
-	sSceptilePose122,
-	sSceptilePose123,
-	sSceptilePose124,
-	sSceptilePose125,
-	sSceptilePose126,
+	sSceptilePose1,
+	sSceptilePose22,
+	sSceptilePose19,
+	sSceptilePose16,
+	sSceptilePose13,
+	sSceptilePose10,
+	sSceptilePose7,
+	sSceptilePose4,
 	sSceptilePose127,
 	sSceptilePose128,
 	sSceptilePose129,
@@ -2722,78 +2285,78 @@ static const ax_pose *const sAxPosesSceptile[] = {
 	sSceptilePose134,
 	sSceptilePose135,
 	sSceptilePose136,
-	sSceptilePose137,
+	sSceptilePose1,
 	sSceptilePose138,
-	sSceptilePose139,
+	sSceptilePose29,
 	sSceptilePose140,
-	sSceptilePose141,
+	sSceptilePose33,
 	sSceptilePose142,
-	sSceptilePose143,
+	sSceptilePose104,
 	sSceptilePose144,
-	sSceptilePose145,
+	sSceptilePose77,
 	sSceptilePose146,
 	sSceptilePose147,
 	sSceptilePose148,
-	sSceptilePose149,
+	sSceptilePose113,
 	sSceptilePose150,
 	sSceptilePose151,
 	sSceptilePose152,
-	sSceptilePose153,
-	sSceptilePose154,
+	sSceptilePose97,
+	sSceptilePose118,
 	sSceptilePose155,
 	sSceptilePose156,
 	sSceptilePose157,
 	sSceptilePose158,
 	sSceptilePose159,
-	sSceptilePose160,
-	sSceptilePose161,
-	sSceptilePose162,
+	sSceptilePose100,
+	sSceptilePose28,
+	sSceptilePose32,
 	sSceptilePose163,
-	sSceptilePose164,
-	sSceptilePose165,
-	sSceptilePose166,
+	sSceptilePose40,
+	sSceptilePose44,
+	sSceptilePose48,
 	sSceptilePose167,
-	sSceptilePose168,
-	sSceptilePose169,
+	sSceptilePose56,
+	sSceptilePose1,
 	sSceptilePose170,
-	sSceptilePose171,
-	sSceptilePose172,
+	sSceptilePose97,
+	sSceptilePose62,
 	sSceptilePose173,
 	sSceptilePose174,
-	sSceptilePose175,
-	sSceptilePose176,
-	sSceptilePose177,
-	sSceptilePose178,
+	sSceptilePose33,
+	sSceptilePose102,
+	sSceptilePose103,
+	sSceptilePose104,
 	sSceptilePose179,
 	sSceptilePose180,
-	sSceptilePose181,
+	sSceptilePose107,
 	sSceptilePose182,
-	sSceptilePose183,
-	sSceptilePose184,
+	sSceptilePose109,
+	sSceptilePose110,
 	sSceptilePose185,
 	sSceptilePose186,
-	sSceptilePose187,
-	sSceptilePose188,
-	sSceptilePose189,
-	sSceptilePose190,
+	sSceptilePose113,
+	sSceptilePose114,
+	sSceptilePose115,
+	sSceptilePose91,
 	sSceptilePose191,
 	sSceptilePose192,
-	sSceptilePose193,
-	sSceptilePose194,
-	sSceptilePose195,
-	sSceptilePose196,
+	sSceptilePose97,
+	sSceptilePose118,
+	sSceptilePose155,
+	sSceptilePose156,
 	sSceptilePose197,
-	sSceptilePose198,
-	sSceptilePose199,
-	sSceptilePose200,
-	sSceptilePose201,
-	sSceptilePose202,
-	sSceptilePose203,
-	sSceptilePose204,
-	sSceptilePose205,
-	sSceptilePose206,
-	sSceptilePose207,
-	sSceptilePose208,
+	sSceptilePose158,
+	sSceptilePose159,
+	sSceptilePose100,
+	sSceptilePose1,
+	sSceptilePose22,
+	sSceptilePose19,
+	sSceptilePose16,
+	sSceptilePose13,
+	sSceptilePose10,
+	sSceptilePose7,
+	sSceptilePose4,
 };
 
 static const struct PositionSets sAxPositionsSceptile[] = {
@@ -3111,10 +2674,10 @@ static const ax_anim *const sSceptileAnimTable10[] = {
 	sSceptileAnims_10_2,
 	sSceptileAnims_10_3,
 	sSceptileAnims_10_4,
-	sSceptileAnims_10_5,
-	sSceptileAnims_10_6,
-	sSceptileAnims_10_7,
-	sSceptileAnims_10_8,
+	gAxSharedAnim_00726,
+	gAxSharedAnim_00738,
+	gAxSharedAnim_00749,
+	gAxSharedAnim_00759,
 };
 
 static const ax_anim *const sSceptileAnimTable11[] = {
@@ -3130,13 +2693,13 @@ static const ax_anim *const sSceptileAnimTable11[] = {
 
 static const ax_anim *const sSceptileAnimTable12[] = {
 	sSceptileAnims_12_1,
-	sSceptileAnims_12_2,
-	sSceptileAnims_12_3,
-	sSceptileAnims_12_4,
-	sSceptileAnims_12_5,
+	gAxSharedAnim_01203,
+	gAxSharedAnim_01182,
+	gAxSharedAnim_01171,
+	gAxSharedAnim_01170,
 	sSceptileAnims_12_6,
 	sSceptileAnims_12_7,
-	sSceptileAnims_12_8,
+	gAxSharedAnim_01116,
 };
 
 static const ax_anim *const sSceptileAnimTable13[] = {

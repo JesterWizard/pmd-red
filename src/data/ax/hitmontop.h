@@ -1,3 +1,5 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
+#include "ax_shared_anims.h"
 static const axmain sAxMainHitmontop;
 const SiroArchive gAxHitmontop = {"SIRO", &sAxMainHitmontop};
 
@@ -129,38 +131,6 @@ static const ax_pose sHitmontopPose32[] = {
 	AX_POSE(16, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sHitmontopPose33[] = {
-	AX_POSE(15, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose34[] = {
-	AX_POSE(16, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose35[] = {
-	AX_POSE(17, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose36[] = {
-	AX_POSE(18, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose37[] = {
-	AX_POSE(19, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose38[] = {
-	AX_POSE(18, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose39[] = {
-	AX_POSE(17, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose40[] = {
-	AX_POSE(16, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sHitmontopPose41[] = {
 	AX_POSE(20, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
@@ -190,38 +160,6 @@ static const ax_pose sHitmontopPose47[] = {
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sHitmontopPose48[] = {
-	AX_POSE(21, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose49[] = {
-	AX_POSE(20, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose50[] = {
-	AX_POSE(21, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose51[] = {
-	AX_POSE(22, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose52[] = {
-	AX_POSE(23, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose53[] = {
-	AX_POSE(24, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose54[] = {
-	AX_POSE(23, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose55[] = {
-	AX_POSE(22, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose56[] = {
 	AX_POSE(21, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
@@ -264,382 +202,6 @@ static const ax_pose sHitmontopPose65[] = {
 static const ax_pose sHitmontopPose66[] = {
 	AX_POSE(28, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose67[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose68[] = {
-	AX_POSE(1, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose69[] = {
-	AX_POSE(2, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose70[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose71[] = {
-	AX_POSE(4, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose72[] = {
-	AX_POSE(5, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose73[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose74[] = {
-	AX_POSE(7, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose75[] = {
-	AX_POSE(8, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose76[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose77[] = {
-	AX_POSE(10, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose78[] = {
-	AX_POSE(11, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose79[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose80[] = {
-	AX_POSE(13, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose81[] = {
-	AX_POSE(14, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose82[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose83[] = {
-	AX_POSE(10, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose84[] = {
-	AX_POSE(11, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose85[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose86[] = {
-	AX_POSE(7, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose87[] = {
-	AX_POSE(8, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose88[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose89[] = {
-	AX_POSE(4, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose90[] = {
-	AX_POSE(5, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose91[] = {
-	AX_POSE(20, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose92[] = {
-	AX_POSE(21, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose93[] = {
-	AX_POSE(22, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose94[] = {
-	AX_POSE(23, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose95[] = {
-	AX_POSE(24, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose96[] = {
-	AX_POSE(23, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose97[] = {
-	AX_POSE(22, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose98[] = {
-	AX_POSE(21, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose99[] = {
-	AX_POSE(15, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose100[] = {
-	AX_POSE(16, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose101[] = {
-	AX_POSE(17, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose102[] = {
-	AX_POSE(18, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose103[] = {
-	AX_POSE(19, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose104[] = {
-	AX_POSE(18, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose105[] = {
-	AX_POSE(17, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose106[] = {
-	AX_POSE(16, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose107[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose108[] = {
-	AX_POSE(1, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose109[] = {
-	AX_POSE(2, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose110[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose111[] = {
-	AX_POSE(4, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose112[] = {
-	AX_POSE(5, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose113[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose114[] = {
-	AX_POSE(7, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose115[] = {
-	AX_POSE(8, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose116[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose117[] = {
-	AX_POSE(10, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose118[] = {
-	AX_POSE(11, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose119[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose120[] = {
-	AX_POSE(13, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose121[] = {
-	AX_POSE(14, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose122[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose123[] = {
-	AX_POSE(10, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose124[] = {
-	AX_POSE(11, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose125[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose126[] = {
-	AX_POSE(7, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose127[] = {
-	AX_POSE(8, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose128[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose129[] = {
-	AX_POSE(4, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose130[] = {
-	AX_POSE(5, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose131[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose132[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose133[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose134[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose135[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose136[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose137[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose138[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose139[] = {
-	AX_POSE(0, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose140[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose141[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose142[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose143[] = {
-	AX_POSE(12, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose144[] = {
-	AX_POSE(9, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose145[] = {
-	AX_POSE(6, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sHitmontopPose146[] = {
-	AX_POSE(3, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_1_1[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 0, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 1, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 0, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 2, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_1_2[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 3, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 4, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 3, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 5, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_1_3[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 6, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 7, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 6, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 8, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_1_4[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 9, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 10, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 9, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 11, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_1_5[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 12, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 13, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 12, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 14, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_1_6[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 15, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 16, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 15, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 17, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_1_7[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 18, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 19, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 18, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 20, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_1_8[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 21, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 22, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 21, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 23, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
 };
 static const ax_anim sHitmontopAnims_2_1[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 24, .offset = {0, 0}, .shadow = {0, 0} },
@@ -1215,11 +777,6 @@ static const ax_anim sHitmontopAnims_5_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 55, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 48, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 49, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sHitmontopAnims_6_1[] = {
-	{ .frames = 30, .unkFlags = 0, .poseId = 56, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 35, .unkFlags = 0, .poseId = 57, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sHitmontopAnims_7_1[] = {
@@ -2198,14 +1755,14 @@ static const ax_pose *const sAxPosesHitmontop[] = {
 	sHitmontopPose30,
 	sHitmontopPose31,
 	sHitmontopPose32,
-	sHitmontopPose33,
-	sHitmontopPose34,
-	sHitmontopPose35,
-	sHitmontopPose36,
-	sHitmontopPose37,
-	sHitmontopPose38,
-	sHitmontopPose39,
-	sHitmontopPose40,
+	sHitmontopPose25,
+	sHitmontopPose26,
+	sHitmontopPose27,
+	sHitmontopPose28,
+	sHitmontopPose29,
+	sHitmontopPose30,
+	sHitmontopPose31,
+	sHitmontopPose32,
 	sHitmontopPose41,
 	sHitmontopPose42,
 	sHitmontopPose43,
@@ -2214,14 +1771,14 @@ static const ax_pose *const sAxPosesHitmontop[] = {
 	sHitmontopPose46,
 	sHitmontopPose47,
 	sHitmontopPose48,
-	sHitmontopPose49,
-	sHitmontopPose50,
-	sHitmontopPose51,
-	sHitmontopPose52,
-	sHitmontopPose53,
-	sHitmontopPose54,
-	sHitmontopPose55,
-	sHitmontopPose56,
+	sHitmontopPose41,
+	sHitmontopPose42,
+	sHitmontopPose43,
+	sHitmontopPose44,
+	sHitmontopPose45,
+	sHitmontopPose46,
+	sHitmontopPose47,
+	sHitmontopPose48,
 	sHitmontopPose57,
 	sHitmontopPose58,
 	sHitmontopPose59,
@@ -2232,86 +1789,86 @@ static const ax_pose *const sAxPosesHitmontop[] = {
 	sHitmontopPose64,
 	sHitmontopPose65,
 	sHitmontopPose66,
-	sHitmontopPose67,
-	sHitmontopPose68,
-	sHitmontopPose69,
-	sHitmontopPose70,
-	sHitmontopPose71,
-	sHitmontopPose72,
-	sHitmontopPose73,
-	sHitmontopPose74,
-	sHitmontopPose75,
-	sHitmontopPose76,
-	sHitmontopPose77,
-	sHitmontopPose78,
-	sHitmontopPose79,
-	sHitmontopPose80,
-	sHitmontopPose81,
-	sHitmontopPose82,
-	sHitmontopPose83,
-	sHitmontopPose84,
-	sHitmontopPose85,
-	sHitmontopPose86,
-	sHitmontopPose87,
-	sHitmontopPose88,
-	sHitmontopPose89,
-	sHitmontopPose90,
-	sHitmontopPose91,
-	sHitmontopPose92,
-	sHitmontopPose93,
-	sHitmontopPose94,
-	sHitmontopPose95,
-	sHitmontopPose96,
-	sHitmontopPose97,
-	sHitmontopPose98,
-	sHitmontopPose99,
-	sHitmontopPose100,
-	sHitmontopPose101,
-	sHitmontopPose102,
-	sHitmontopPose103,
-	sHitmontopPose104,
-	sHitmontopPose105,
-	sHitmontopPose106,
-	sHitmontopPose107,
-	sHitmontopPose108,
-	sHitmontopPose109,
-	sHitmontopPose110,
-	sHitmontopPose111,
-	sHitmontopPose112,
-	sHitmontopPose113,
-	sHitmontopPose114,
-	sHitmontopPose115,
-	sHitmontopPose116,
-	sHitmontopPose117,
-	sHitmontopPose118,
-	sHitmontopPose119,
-	sHitmontopPose120,
-	sHitmontopPose121,
-	sHitmontopPose122,
-	sHitmontopPose123,
-	sHitmontopPose124,
-	sHitmontopPose125,
-	sHitmontopPose126,
-	sHitmontopPose127,
-	sHitmontopPose128,
-	sHitmontopPose129,
-	sHitmontopPose130,
-	sHitmontopPose131,
-	sHitmontopPose132,
-	sHitmontopPose133,
-	sHitmontopPose134,
-	sHitmontopPose135,
-	sHitmontopPose136,
-	sHitmontopPose137,
-	sHitmontopPose138,
-	sHitmontopPose139,
-	sHitmontopPose140,
-	sHitmontopPose141,
-	sHitmontopPose142,
-	sHitmontopPose143,
-	sHitmontopPose144,
-	sHitmontopPose145,
-	sHitmontopPose146,
+	sHitmontopPose1,
+	sHitmontopPose2,
+	sHitmontopPose3,
+	sHitmontopPose4,
+	sHitmontopPose5,
+	sHitmontopPose6,
+	sHitmontopPose7,
+	sHitmontopPose8,
+	sHitmontopPose9,
+	sHitmontopPose10,
+	sHitmontopPose11,
+	sHitmontopPose12,
+	sHitmontopPose13,
+	sHitmontopPose14,
+	sHitmontopPose15,
+	sHitmontopPose16,
+	sHitmontopPose17,
+	sHitmontopPose18,
+	sHitmontopPose19,
+	sHitmontopPose20,
+	sHitmontopPose21,
+	sHitmontopPose22,
+	sHitmontopPose23,
+	sHitmontopPose24,
+	sHitmontopPose41,
+	sHitmontopPose42,
+	sHitmontopPose43,
+	sHitmontopPose44,
+	sHitmontopPose45,
+	sHitmontopPose46,
+	sHitmontopPose47,
+	sHitmontopPose48,
+	sHitmontopPose25,
+	sHitmontopPose26,
+	sHitmontopPose27,
+	sHitmontopPose28,
+	sHitmontopPose29,
+	sHitmontopPose30,
+	sHitmontopPose31,
+	sHitmontopPose32,
+	sHitmontopPose1,
+	sHitmontopPose2,
+	sHitmontopPose3,
+	sHitmontopPose4,
+	sHitmontopPose5,
+	sHitmontopPose6,
+	sHitmontopPose7,
+	sHitmontopPose8,
+	sHitmontopPose9,
+	sHitmontopPose10,
+	sHitmontopPose11,
+	sHitmontopPose12,
+	sHitmontopPose13,
+	sHitmontopPose14,
+	sHitmontopPose15,
+	sHitmontopPose16,
+	sHitmontopPose17,
+	sHitmontopPose18,
+	sHitmontopPose19,
+	sHitmontopPose20,
+	sHitmontopPose21,
+	sHitmontopPose22,
+	sHitmontopPose23,
+	sHitmontopPose24,
+	sHitmontopPose1,
+	sHitmontopPose22,
+	sHitmontopPose19,
+	sHitmontopPose16,
+	sHitmontopPose13,
+	sHitmontopPose10,
+	sHitmontopPose7,
+	sHitmontopPose4,
+	sHitmontopPose1,
+	sHitmontopPose22,
+	sHitmontopPose19,
+	sHitmontopPose16,
+	sHitmontopPose13,
+	sHitmontopPose10,
+	sHitmontopPose7,
+	sHitmontopPose4,
 };
 
 static const struct PositionSets sAxPositionsHitmontop[] = {
@@ -2464,14 +2021,14 @@ static const struct PositionSets sAxPositionsHitmontop[] = {
 };
 
 static const ax_anim *const sHitmontopAnimTable1[] = {
-	sHitmontopAnims_1_1,
-	sHitmontopAnims_1_2,
-	sHitmontopAnims_1_3,
-	sHitmontopAnims_1_4,
-	sHitmontopAnims_1_5,
-	sHitmontopAnims_1_6,
-	sHitmontopAnims_1_7,
-	sHitmontopAnims_1_8,
+	gAxSharedAnim_02602,
+	gAxSharedAnim_02678,
+	gAxSharedAnim_02687,
+	gAxSharedAnim_02696,
+	gAxSharedAnim_02614,
+	gAxSharedAnim_02636,
+	gAxSharedAnim_02649,
+	gAxSharedAnim_02658,
 };
 
 static const ax_anim *const sHitmontopAnimTable2[] = {
@@ -2519,14 +2076,14 @@ static const ax_anim *const sHitmontopAnimTable5[] = {
 };
 
 static const ax_anim *const sHitmontopAnimTable6[] = {
-	sHitmontopAnims_6_1,
-	sHitmontopAnims_6_1,
-	sHitmontopAnims_6_1,
-	sHitmontopAnims_6_1,
-	sHitmontopAnims_6_1,
-	sHitmontopAnims_6_1,
-	sHitmontopAnims_6_1,
-	sHitmontopAnims_6_1,
+	gAxSharedAnim_02403,
+	gAxSharedAnim_02403,
+	gAxSharedAnim_02403,
+	gAxSharedAnim_02403,
+	gAxSharedAnim_02403,
+	gAxSharedAnim_02403,
+	gAxSharedAnim_02403,
+	gAxSharedAnim_02403,
 };
 
 static const ax_anim *const sHitmontopAnimTable7[] = {

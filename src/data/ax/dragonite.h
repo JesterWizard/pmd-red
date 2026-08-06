@@ -1,3 +1,5 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
+#include "ax_shared_anims.h"
 static const axmain sAxMainDragonite;
 const SiroArchive gAxDragonite = {"SIRO", &sAxMainDragonite};
 
@@ -109,70 +111,16 @@ static const ax_pose sDragonitePose24[] = {
 	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose25[] = {
-	AX_POSE(0, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose26[] = {
-	AX_POSE(1, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose27[] = {
-	AX_POSE(2, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose28[] = {
 	AX_POSE(21, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose29[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose30[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose31[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose32[] = {
 	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose33[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose34[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose35[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose36[] = {
 	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose37[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose38[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose39[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose40[] = {
@@ -195,510 +143,52 @@ static const ax_pose sDragonitePose44[] = {
 	AX_POSE(25, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose45[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose46[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose47[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose48[] = {
 	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose49[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose50[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose51[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose52[] = {
 	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose53[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose54[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose55[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose56[] = {
 	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose57[] = {
-	AX_POSE(0, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose58[] = {
-	AX_POSE(1, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose59[] = {
-	AX_POSE(2, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose60[] = {
-	AX_POSE(21, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose61[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose62[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose63[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose64[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose65[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose66[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose67[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose68[] = {
-	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose69[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose70[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose71[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose72[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose73[] = {
-	AX_POSE(18, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose74[] = {
-	AX_POSE(19, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose75[] = {
-	AX_POSE(20, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose76[] = {
-	AX_POSE(25, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose77[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose78[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose79[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose80[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose81[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose82[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose83[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose84[] = {
-	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose85[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose86[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose87[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose88[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose89[] = {
-	AX_POSE(0, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose90[] = {
-	AX_POSE(1, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose91[] = {
-	AX_POSE(2, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose92[] = {
 	AX_POSE(26, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose93[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose94[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose95[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose96[] = {
 	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose97[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose98[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose99[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose100[] = {
 	AX_POSE(28, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose101[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose102[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose103[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose104[] = {
 	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose105[] = {
-	AX_POSE(18, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose106[] = {
-	AX_POSE(19, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose107[] = {
-	AX_POSE(20, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose108[] = {
 	AX_POSE(30, OAM1(225, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose109[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose110[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose111[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose112[] = {
 	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose113[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose114[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose115[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose116[] = {
 	AX_POSE(28, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose117[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose118[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose119[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose120[] = {
 	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose121[] = {
-	AX_POSE(0, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose122[] = {
-	AX_POSE(1, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose123[] = {
-	AX_POSE(2, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose124[] = {
-	AX_POSE(26, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose125[] = {
-	AX_POSE(21, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose126[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose127[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose128[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose129[] = {
-	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose130[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose131[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose132[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose133[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose134[] = {
-	AX_POSE(28, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose135[] = {
-	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose136[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose137[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose138[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose139[] = {
-	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose140[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose141[] = {
-	AX_POSE(18, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose142[] = {
-	AX_POSE(19, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose143[] = {
-	AX_POSE(20, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose144[] = {
 	AX_POSE(30, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose145[] = {
-	AX_POSE(25, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose146[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose147[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose148[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose149[] = {
-	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose150[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose151[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose152[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose153[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose154[] = {
-	AX_POSE(28, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose155[] = {
-	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose156[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose157[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose158[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose159[] = {
-	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose160[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose161[] = {
@@ -747,223 +237,8 @@ static const ax_pose sDragonitePose170[] = {
 	AX_POSE(37, OAM1(252, ST_OAM_H_RECTANGLE, 1), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose171[] = {
-	AX_POSE(0, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose172[] = {
-	AX_POSE(1, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose173[] = {
-	AX_POSE(2, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose174[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose175[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose176[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose177[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose178[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose179[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose180[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose181[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose182[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose183[] = {
-	AX_POSE(18, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose184[] = {
-	AX_POSE(19, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose185[] = {
-	AX_POSE(20, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose186[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose187[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose188[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose189[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose190[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose191[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose192[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose193[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose194[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose195[] = {
-	AX_POSE(26, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose196[] = {
-	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose197[] = {
 	AX_POSE(28, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose198[] = {
-	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose199[] = {
-	AX_POSE(30, OAM1(225, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose200[] = {
-	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose201[] = {
-	AX_POSE(28, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose202[] = {
-	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose203[] = {
-	AX_POSE(26, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose204[] = {
-	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose205[] = {
-	AX_POSE(28, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose206[] = {
-	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose207[] = {
-	AX_POSE(30, OAM1(225, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose208[] = {
-	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose209[] = {
-	AX_POSE(28, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose210[] = {
-	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose211[] = {
-	AX_POSE(0, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose212[] = {
-	AX_POSE(1, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose213[] = {
-	AX_POSE(2, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose214[] = {
-	AX_POSE(26, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose215[] = {
-	AX_POSE(21, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose216[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose217[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose218[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose219[] = {
-	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose220[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose221[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose222[] = {
@@ -984,19 +259,6 @@ static const ax_pose sDragonitePose225[] = {
 	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose226[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose227[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose228[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose229[] = {
 	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
@@ -1005,50 +267,12 @@ static const ax_pose sDragonitePose230[] = {
 	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose231[] = {
-	AX_POSE(18, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose232[] = {
-	AX_POSE(19, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose233[] = {
-	AX_POSE(20, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose234[] = {
-	AX_POSE(30, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose235[] = {
-	AX_POSE(25, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose236[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose237[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose238[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose239[] = {
 	AX_POSE(29, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose240[] = {
 	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose241[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose242[] = {
@@ -1069,249 +293,13 @@ static const ax_pose sDragonitePose245[] = {
 	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDragonitePose246[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose247[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose248[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose249[] = {
-	AX_POSE(27, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose250[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose251[] = {
-	AX_POSE(21, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDragonitePose252[] = {
 	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose253[] = {
-	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose254[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose255[] = {
-	AX_POSE(25, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose256[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose257[] = {
-	AX_POSE(23, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDragonitePose258[] = {
 	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
 	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose259[] = {
-	AX_POSE(0, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose260[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose261[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose262[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose263[] = {
-	AX_POSE(18, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose264[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose265[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose266[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose267[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose268[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose269[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose270[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose271[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose272[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(238, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose273[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose274[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose275[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose276[] = {
-	AX_POSE(18, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose277[] = {
-	AX_POSE(19, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose278[] = {
-	AX_POSE(20, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose279[] = {
-	AX_POSE(14, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(15, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose280[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose281[] = {
-	AX_POSE(17, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose282[] = {
-	AX_POSE(8, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(9, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose283[] = {
-	AX_POSE(10, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(11, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose284[] = {
-	AX_POSE(12, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(13, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(242, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose285[] = {
-	AX_POSE(3, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(4, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose286[] = {
-	AX_POSE(5, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDragonitePose287[] = {
-	AX_POSE(6, OAM1(224, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 8)),
-	AX_POSE(7, OAM1(0, ST_OAM_H_RECTANGLE, 2), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(16, 3, 8)),
-	AX_POSE_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_1_1[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 0, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 1, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 0, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 2, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_1_2[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 3, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 4, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 3, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 5, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_1_3[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 6, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 7, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 6, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 8, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_1_4[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 9, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 10, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 9, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 11, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_1_5[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 12, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 13, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 12, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 14, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_1_6[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 15, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 16, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 15, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 17, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_1_7[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 18, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 19, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 18, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 20, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_1_8[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 21, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 22, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 21, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 12, .unkFlags = 0, .poseId = 23, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
 };
 static const ax_anim sDragoniteAnims_2_1[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 25, .offset = {0, -2}, .shadow = {0, -2} },
@@ -1793,51 +781,6 @@ static const ax_anim sDragoniteAnims_5_8[] = {
 	{ .frames = 2, .unkFlags = 1, .poseId = 159, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sDragoniteAnims_6_1[] = {
-	{ .frames = 30, .unkFlags = 0, .poseId = 160, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 35, .unkFlags = 0, .poseId = 161, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_7_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 162, .offset = {0, -2}, .shadow = {0, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 162, .offset = {0, -3}, .shadow = {0, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_7_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 163, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 163, .offset = {-3, -3}, .shadow = {-3, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_7_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 164, .offset = {-2, 0}, .shadow = {-2, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 164, .offset = {-3, 0}, .shadow = {-3, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_7_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 165, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 165, .offset = {-3, 3}, .shadow = {-3, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_7_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 166, .offset = {0, 2}, .shadow = {0, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 166, .offset = {0, 3}, .shadow = {0, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_7_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 167, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 167, .offset = {3, 3}, .shadow = {3, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_7_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 168, .offset = {2, 0}, .shadow = {2, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 168, .offset = {3, 0}, .shadow = {3, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_7_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 169, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 169, .offset = {3, -3}, .shadow = {3, -3} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sDragoniteAnims_8_1[] = {
 	{ .frames = 40, .unkFlags = 0, .poseId = 170, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 171, .offset = {0, -4}, .shadow = {0, 0} },
@@ -2014,158 +957,6 @@ static const ax_anim sDragoniteAnims_9_8[] = {
 	{ .frames = 1, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sDragoniteAnims_10_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 202, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 202, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 202, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 202, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_10_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 203, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 203, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 203, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 203, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_10_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 204, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 204, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 204, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 204, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_10_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 205, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 205, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 205, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 205, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_10_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 206, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 206, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 206, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 206, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_10_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 207, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 207, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 207, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 207, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_10_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 208, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 208, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 208, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 208, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_10_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 209, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 209, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 209, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 209, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 209, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sDragoniteAnims_11_1[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 210, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 211, .offset = {0, -10}, .shadow = {0, 0} },
@@ -2268,206 +1059,6 @@ static const ax_anim sDragoniteAnims_11_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 247, .offset = {0, -18}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 248, .offset = {0, -12}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 2, .poseId = 249, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_12_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 250, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 250, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 250, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 250, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 250, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 250, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 250, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 250, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 250, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 250, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_12_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 257, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 257, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 257, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 257, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 257, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 257, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 257, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 257, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 257, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 257, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_12_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 256, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 256, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 256, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 256, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 256, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 256, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 256, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 256, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 256, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 256, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_12_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 255, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 255, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 255, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 255, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 255, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 255, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 255, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 255, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 255, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 255, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_12_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 254, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 254, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 254, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 254, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 254, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 254, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 254, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 254, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 254, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 254, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_12_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 253, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 253, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 253, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 253, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 253, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 253, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 253, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 253, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 253, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 253, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_12_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 252, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 252, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 252, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 252, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 252, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 252, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 252, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 252, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 252, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 252, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_12_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 251, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 251, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 251, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 251, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 251, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 251, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 251, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 251, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 251, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 251, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_13_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_13_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_13_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_13_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_13_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_13_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_13_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDragoniteAnims_13_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 260, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 261, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 262, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 263, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 264, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 265, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 258, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 259, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 
@@ -2747,142 +1338,142 @@ static const ax_pose *const sAxPosesDragonite[] = {
 	sDragonitePose22,
 	sDragonitePose23,
 	sDragonitePose24,
-	sDragonitePose25,
-	sDragonitePose26,
-	sDragonitePose27,
+	sDragonitePose1,
+	sDragonitePose2,
+	sDragonitePose3,
 	sDragonitePose28,
-	sDragonitePose29,
-	sDragonitePose30,
-	sDragonitePose31,
+	sDragonitePose4,
+	sDragonitePose5,
+	sDragonitePose6,
 	sDragonitePose32,
-	sDragonitePose33,
-	sDragonitePose34,
-	sDragonitePose35,
+	sDragonitePose7,
+	sDragonitePose8,
+	sDragonitePose9,
 	sDragonitePose36,
-	sDragonitePose37,
-	sDragonitePose38,
-	sDragonitePose39,
+	sDragonitePose10,
+	sDragonitePose11,
+	sDragonitePose12,
 	sDragonitePose40,
 	sDragonitePose41,
 	sDragonitePose42,
 	sDragonitePose43,
 	sDragonitePose44,
-	sDragonitePose45,
-	sDragonitePose46,
-	sDragonitePose47,
+	sDragonitePose16,
+	sDragonitePose17,
+	sDragonitePose18,
 	sDragonitePose48,
-	sDragonitePose49,
-	sDragonitePose50,
-	sDragonitePose51,
+	sDragonitePose19,
+	sDragonitePose20,
+	sDragonitePose21,
 	sDragonitePose52,
-	sDragonitePose53,
-	sDragonitePose54,
-	sDragonitePose55,
+	sDragonitePose22,
+	sDragonitePose23,
+	sDragonitePose24,
 	sDragonitePose56,
-	sDragonitePose57,
-	sDragonitePose58,
-	sDragonitePose59,
-	sDragonitePose60,
-	sDragonitePose61,
-	sDragonitePose62,
-	sDragonitePose63,
-	sDragonitePose64,
-	sDragonitePose65,
-	sDragonitePose66,
-	sDragonitePose67,
-	sDragonitePose68,
-	sDragonitePose69,
-	sDragonitePose70,
-	sDragonitePose71,
-	sDragonitePose72,
-	sDragonitePose73,
-	sDragonitePose74,
-	sDragonitePose75,
-	sDragonitePose76,
-	sDragonitePose77,
-	sDragonitePose78,
-	sDragonitePose79,
-	sDragonitePose80,
-	sDragonitePose81,
-	sDragonitePose82,
-	sDragonitePose83,
-	sDragonitePose84,
-	sDragonitePose85,
-	sDragonitePose86,
-	sDragonitePose87,
-	sDragonitePose88,
-	sDragonitePose89,
-	sDragonitePose90,
-	sDragonitePose91,
+	sDragonitePose1,
+	sDragonitePose2,
+	sDragonitePose3,
+	sDragonitePose28,
+	sDragonitePose4,
+	sDragonitePose5,
+	sDragonitePose6,
+	sDragonitePose32,
+	sDragonitePose7,
+	sDragonitePose8,
+	sDragonitePose9,
+	sDragonitePose36,
+	sDragonitePose10,
+	sDragonitePose11,
+	sDragonitePose12,
+	sDragonitePose40,
+	sDragonitePose41,
+	sDragonitePose42,
+	sDragonitePose43,
+	sDragonitePose44,
+	sDragonitePose16,
+	sDragonitePose17,
+	sDragonitePose18,
+	sDragonitePose48,
+	sDragonitePose19,
+	sDragonitePose20,
+	sDragonitePose21,
+	sDragonitePose52,
+	sDragonitePose22,
+	sDragonitePose23,
+	sDragonitePose24,
+	sDragonitePose56,
+	sDragonitePose1,
+	sDragonitePose2,
+	sDragonitePose3,
 	sDragonitePose92,
-	sDragonitePose93,
-	sDragonitePose94,
-	sDragonitePose95,
+	sDragonitePose4,
+	sDragonitePose5,
+	sDragonitePose6,
 	sDragonitePose96,
-	sDragonitePose97,
-	sDragonitePose98,
-	sDragonitePose99,
+	sDragonitePose7,
+	sDragonitePose8,
+	sDragonitePose9,
 	sDragonitePose100,
-	sDragonitePose101,
-	sDragonitePose102,
-	sDragonitePose103,
+	sDragonitePose10,
+	sDragonitePose11,
+	sDragonitePose12,
 	sDragonitePose104,
-	sDragonitePose105,
-	sDragonitePose106,
-	sDragonitePose107,
+	sDragonitePose13,
+	sDragonitePose14,
+	sDragonitePose15,
 	sDragonitePose108,
-	sDragonitePose109,
-	sDragonitePose110,
-	sDragonitePose111,
+	sDragonitePose16,
+	sDragonitePose17,
+	sDragonitePose18,
 	sDragonitePose112,
-	sDragonitePose113,
-	sDragonitePose114,
-	sDragonitePose115,
+	sDragonitePose19,
+	sDragonitePose20,
+	sDragonitePose21,
 	sDragonitePose116,
-	sDragonitePose117,
-	sDragonitePose118,
-	sDragonitePose119,
+	sDragonitePose22,
+	sDragonitePose23,
+	sDragonitePose24,
 	sDragonitePose120,
-	sDragonitePose121,
-	sDragonitePose122,
-	sDragonitePose123,
-	sDragonitePose124,
-	sDragonitePose125,
-	sDragonitePose126,
-	sDragonitePose127,
-	sDragonitePose128,
-	sDragonitePose129,
-	sDragonitePose130,
-	sDragonitePose131,
-	sDragonitePose132,
-	sDragonitePose133,
-	sDragonitePose134,
-	sDragonitePose135,
-	sDragonitePose136,
-	sDragonitePose137,
-	sDragonitePose138,
-	sDragonitePose139,
-	sDragonitePose140,
-	sDragonitePose141,
-	sDragonitePose142,
-	sDragonitePose143,
+	sDragonitePose1,
+	sDragonitePose2,
+	sDragonitePose3,
+	sDragonitePose92,
+	sDragonitePose28,
+	sDragonitePose4,
+	sDragonitePose5,
+	sDragonitePose6,
+	sDragonitePose96,
+	sDragonitePose32,
+	sDragonitePose7,
+	sDragonitePose8,
+	sDragonitePose9,
+	sDragonitePose100,
+	sDragonitePose36,
+	sDragonitePose10,
+	sDragonitePose11,
+	sDragonitePose12,
+	sDragonitePose104,
+	sDragonitePose40,
+	sDragonitePose41,
+	sDragonitePose42,
+	sDragonitePose43,
 	sDragonitePose144,
-	sDragonitePose145,
-	sDragonitePose146,
-	sDragonitePose147,
-	sDragonitePose148,
-	sDragonitePose149,
-	sDragonitePose150,
-	sDragonitePose151,
-	sDragonitePose152,
-	sDragonitePose153,
-	sDragonitePose154,
-	sDragonitePose155,
-	sDragonitePose156,
-	sDragonitePose157,
-	sDragonitePose158,
-	sDragonitePose159,
-	sDragonitePose160,
+	sDragonitePose44,
+	sDragonitePose16,
+	sDragonitePose17,
+	sDragonitePose18,
+	sDragonitePose112,
+	sDragonitePose48,
+	sDragonitePose19,
+	sDragonitePose20,
+	sDragonitePose21,
+	sDragonitePose116,
+	sDragonitePose52,
+	sDragonitePose22,
+	sDragonitePose23,
+	sDragonitePose24,
+	sDragonitePose120,
+	sDragonitePose56,
 	sDragonitePose161,
 	sDragonitePose162,
 	sDragonitePose163,
@@ -2893,123 +1484,123 @@ static const ax_pose *const sAxPosesDragonite[] = {
 	sDragonitePose168,
 	sDragonitePose169,
 	sDragonitePose170,
-	sDragonitePose171,
-	sDragonitePose172,
-	sDragonitePose173,
-	sDragonitePose174,
-	sDragonitePose175,
-	sDragonitePose176,
-	sDragonitePose177,
-	sDragonitePose178,
-	sDragonitePose179,
-	sDragonitePose180,
-	sDragonitePose181,
-	sDragonitePose182,
-	sDragonitePose183,
-	sDragonitePose184,
-	sDragonitePose185,
-	sDragonitePose186,
-	sDragonitePose187,
-	sDragonitePose188,
-	sDragonitePose189,
-	sDragonitePose190,
-	sDragonitePose191,
-	sDragonitePose192,
-	sDragonitePose193,
-	sDragonitePose194,
-	sDragonitePose195,
-	sDragonitePose196,
+	sDragonitePose1,
+	sDragonitePose2,
+	sDragonitePose3,
+	sDragonitePose4,
+	sDragonitePose5,
+	sDragonitePose6,
+	sDragonitePose7,
+	sDragonitePose8,
+	sDragonitePose9,
+	sDragonitePose10,
+	sDragonitePose11,
+	sDragonitePose12,
+	sDragonitePose13,
+	sDragonitePose14,
+	sDragonitePose15,
+	sDragonitePose16,
+	sDragonitePose17,
+	sDragonitePose18,
+	sDragonitePose19,
+	sDragonitePose20,
+	sDragonitePose21,
+	sDragonitePose22,
+	sDragonitePose23,
+	sDragonitePose24,
+	sDragonitePose92,
+	sDragonitePose120,
 	sDragonitePose197,
-	sDragonitePose198,
-	sDragonitePose199,
-	sDragonitePose200,
-	sDragonitePose201,
-	sDragonitePose202,
-	sDragonitePose203,
-	sDragonitePose204,
-	sDragonitePose205,
-	sDragonitePose206,
-	sDragonitePose207,
-	sDragonitePose208,
-	sDragonitePose209,
-	sDragonitePose210,
-	sDragonitePose211,
-	sDragonitePose212,
-	sDragonitePose213,
-	sDragonitePose214,
-	sDragonitePose215,
-	sDragonitePose216,
-	sDragonitePose217,
-	sDragonitePose218,
-	sDragonitePose219,
-	sDragonitePose220,
-	sDragonitePose221,
+	sDragonitePose112,
+	sDragonitePose108,
+	sDragonitePose104,
+	sDragonitePose100,
+	sDragonitePose96,
+	sDragonitePose92,
+	sDragonitePose96,
+	sDragonitePose100,
+	sDragonitePose104,
+	sDragonitePose108,
+	sDragonitePose112,
+	sDragonitePose197,
+	sDragonitePose120,
+	sDragonitePose1,
+	sDragonitePose2,
+	sDragonitePose3,
+	sDragonitePose92,
+	sDragonitePose28,
+	sDragonitePose4,
+	sDragonitePose5,
+	sDragonitePose6,
+	sDragonitePose96,
+	sDragonitePose32,
+	sDragonitePose7,
 	sDragonitePose222,
 	sDragonitePose223,
 	sDragonitePose224,
 	sDragonitePose225,
-	sDragonitePose226,
-	sDragonitePose227,
-	sDragonitePose228,
+	sDragonitePose10,
+	sDragonitePose11,
+	sDragonitePose12,
 	sDragonitePose229,
 	sDragonitePose230,
-	sDragonitePose231,
-	sDragonitePose232,
-	sDragonitePose233,
-	sDragonitePose234,
-	sDragonitePose235,
-	sDragonitePose236,
-	sDragonitePose237,
-	sDragonitePose238,
+	sDragonitePose41,
+	sDragonitePose42,
+	sDragonitePose43,
+	sDragonitePose144,
+	sDragonitePose44,
+	sDragonitePose16,
+	sDragonitePose17,
+	sDragonitePose18,
 	sDragonitePose239,
 	sDragonitePose240,
-	sDragonitePose241,
+	sDragonitePose19,
 	sDragonitePose242,
 	sDragonitePose243,
 	sDragonitePose244,
 	sDragonitePose245,
-	sDragonitePose246,
-	sDragonitePose247,
-	sDragonitePose248,
-	sDragonitePose249,
-	sDragonitePose250,
-	sDragonitePose251,
+	sDragonitePose22,
+	sDragonitePose23,
+	sDragonitePose24,
+	sDragonitePose120,
+	sDragonitePose56,
+	sDragonitePose28,
 	sDragonitePose252,
-	sDragonitePose253,
-	sDragonitePose254,
-	sDragonitePose255,
-	sDragonitePose256,
-	sDragonitePose257,
+	sDragonitePose52,
+	sDragonitePose48,
+	sDragonitePose44,
+	sDragonitePose40,
+	sDragonitePose36,
 	sDragonitePose258,
-	sDragonitePose259,
-	sDragonitePose260,
-	sDragonitePose261,
-	sDragonitePose262,
-	sDragonitePose263,
-	sDragonitePose264,
-	sDragonitePose265,
-	sDragonitePose266,
-	sDragonitePose267,
-	sDragonitePose268,
-	sDragonitePose269,
-	sDragonitePose270,
-	sDragonitePose271,
-	sDragonitePose272,
-	sDragonitePose273,
-	sDragonitePose274,
-	sDragonitePose275,
-	sDragonitePose276,
-	sDragonitePose277,
-	sDragonitePose278,
-	sDragonitePose279,
-	sDragonitePose280,
-	sDragonitePose281,
-	sDragonitePose282,
-	sDragonitePose283,
-	sDragonitePose284,
-	sDragonitePose285,
-	sDragonitePose286,
-	sDragonitePose287,
+	sDragonitePose1,
+	sDragonitePose22,
+	sDragonitePose19,
+	sDragonitePose16,
+	sDragonitePose13,
+	sDragonitePose10,
+	sDragonitePose7,
+	sDragonitePose4,
+	sDragonitePose4,
+	sDragonitePose5,
+	sDragonitePose6,
+	sDragonitePose7,
+	sDragonitePose8,
+	sDragonitePose9,
+	sDragonitePose10,
+	sDragonitePose11,
+	sDragonitePose12,
+	sDragonitePose13,
+	sDragonitePose14,
+	sDragonitePose15,
+	sDragonitePose16,
+	sDragonitePose17,
+	sDragonitePose18,
+	sDragonitePose19,
+	sDragonitePose20,
+	sDragonitePose21,
+	sDragonitePose22,
+	sDragonitePose23,
+	sDragonitePose24,
 };
 
 static const struct PositionSets sAxPositionsDragonite[] = {
@@ -3303,14 +1894,14 @@ static const struct PositionSets sAxPositionsDragonite[] = {
 };
 
 static const ax_anim *const sDragoniteAnimTable1[] = {
-	sDragoniteAnims_1_1,
-	sDragoniteAnims_1_2,
-	sDragoniteAnims_1_3,
-	sDragoniteAnims_1_4,
-	sDragoniteAnims_1_5,
-	sDragoniteAnims_1_6,
-	sDragoniteAnims_1_7,
-	sDragoniteAnims_1_8,
+	gAxSharedAnim_02603,
+	gAxSharedAnim_02679,
+	gAxSharedAnim_02688,
+	gAxSharedAnim_02697,
+	gAxSharedAnim_02615,
+	gAxSharedAnim_02637,
+	gAxSharedAnim_02650,
+	gAxSharedAnim_02659,
 };
 
 static const ax_anim *const sDragoniteAnimTable2[] = {
@@ -3358,25 +1949,25 @@ static const ax_anim *const sDragoniteAnimTable5[] = {
 };
 
 static const ax_anim *const sDragoniteAnimTable6[] = {
-	sDragoniteAnims_6_1,
-	sDragoniteAnims_6_1,
-	sDragoniteAnims_6_1,
-	sDragoniteAnims_6_1,
-	sDragoniteAnims_6_1,
-	sDragoniteAnims_6_1,
-	sDragoniteAnims_6_1,
-	sDragoniteAnims_6_1,
+	gAxSharedAnim_02371,
+	gAxSharedAnim_02371,
+	gAxSharedAnim_02371,
+	gAxSharedAnim_02371,
+	gAxSharedAnim_02371,
+	gAxSharedAnim_02371,
+	gAxSharedAnim_02371,
+	gAxSharedAnim_02371,
 };
 
 static const ax_anim *const sDragoniteAnimTable7[] = {
-	sDragoniteAnims_7_1,
-	sDragoniteAnims_7_2,
-	sDragoniteAnims_7_3,
-	sDragoniteAnims_7_4,
-	sDragoniteAnims_7_5,
-	sDragoniteAnims_7_6,
-	sDragoniteAnims_7_7,
-	sDragoniteAnims_7_8,
+	gAxSharedAnim_00693,
+	gAxSharedAnim_00709,
+	gAxSharedAnim_00717,
+	gAxSharedAnim_00730,
+	gAxSharedAnim_00752,
+	gAxSharedAnim_00763,
+	gAxSharedAnim_00775,
+	gAxSharedAnim_00785,
 };
 
 static const ax_anim *const sDragoniteAnimTable8[] = {
@@ -3402,14 +1993,14 @@ static const ax_anim *const sDragoniteAnimTable9[] = {
 };
 
 static const ax_anim *const sDragoniteAnimTable10[] = {
-	sDragoniteAnims_10_1,
-	sDragoniteAnims_10_2,
-	sDragoniteAnims_10_3,
-	sDragoniteAnims_10_4,
-	sDragoniteAnims_10_5,
-	sDragoniteAnims_10_6,
-	sDragoniteAnims_10_7,
-	sDragoniteAnims_10_8,
+	gAxSharedAnim_01241,
+	gAxSharedAnim_01252,
+	gAxSharedAnim_01266,
+	gAxSharedAnim_01277,
+	gAxSharedAnim_01285,
+	gAxSharedAnim_01300,
+	gAxSharedAnim_01313,
+	gAxSharedAnim_01324,
 };
 
 static const ax_anim *const sDragoniteAnimTable11[] = {
@@ -3424,25 +2015,25 @@ static const ax_anim *const sDragoniteAnimTable11[] = {
 };
 
 static const ax_anim *const sDragoniteAnimTable12[] = {
-	sDragoniteAnims_12_1,
-	sDragoniteAnims_12_2,
-	sDragoniteAnims_12_3,
-	sDragoniteAnims_12_4,
-	sDragoniteAnims_12_5,
-	sDragoniteAnims_12_6,
-	sDragoniteAnims_12_7,
-	sDragoniteAnims_12_8,
+	gAxSharedAnim_01639,
+	gAxSharedAnim_01673,
+	gAxSharedAnim_01665,
+	gAxSharedAnim_01661,
+	gAxSharedAnim_01660,
+	gAxSharedAnim_01655,
+	gAxSharedAnim_01646,
+	gAxSharedAnim_01640,
 };
 
 static const ax_anim *const sDragoniteAnimTable13[] = {
-	sDragoniteAnims_13_1,
-	sDragoniteAnims_13_2,
-	sDragoniteAnims_13_3,
-	sDragoniteAnims_13_4,
-	sDragoniteAnims_13_5,
-	sDragoniteAnims_13_6,
-	sDragoniteAnims_13_7,
-	sDragoniteAnims_13_8,
+	gAxSharedAnim_01678,
+	gAxSharedAnim_01710,
+	gAxSharedAnim_01708,
+	gAxSharedAnim_01704,
+	gAxSharedAnim_01698,
+	gAxSharedAnim_01694,
+	gAxSharedAnim_01692,
+	gAxSharedAnim_01682,
 };
 
 static const ax_anim *const *const sAxAnimationsDragonite[] = {

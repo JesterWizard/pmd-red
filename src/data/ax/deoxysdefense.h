@@ -1,3 +1,5 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
+#include "ax_shared_anims.h"
 static const axmain sAxMainDeoxysDefense;
 const SiroArchive gAxDeoxysDefense = {"SIRO", &sAxMainDeoxysDefense};
 
@@ -69,14 +71,6 @@ static const ax_pose sDeoxysDefensePose17[] = {
 	AX_POSE(10, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose18[] = {
-	AX_POSE(0, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose19[] = {
-	AX_POSE(1, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose20[] = {
 	AX_POSE(11, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(12, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
@@ -89,14 +83,6 @@ static const ax_pose sDeoxysDefensePose21[] = {
 	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose22[] = {
-	AX_POSE(2, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose23[] = {
-	AX_POSE(3, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose24[] = {
 	AX_POSE(17, OAM1(247, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(18, OAM1(239, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
@@ -105,14 +91,6 @@ static const ax_pose sDeoxysDefensePose24[] = {
 };
 static const ax_pose sDeoxysDefensePose25[] = {
 	AX_POSE(20, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose26[] = {
-	AX_POSE(4, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose27[] = {
-	AX_POSE(5, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose28[] = {
@@ -125,14 +103,6 @@ static const ax_pose sDeoxysDefensePose29[] = {
 	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose30[] = {
-	AX_POSE(6, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose31[] = {
-	AX_POSE(7, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose32[] = {
 	AX_POSE(25, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(0, ST_OAM_SIZE_2, FLIP(1, 0), 0, 1), OAM3(0, 3, 9)),
 	AX_POSE(26, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
@@ -143,28 +113,12 @@ static const ax_pose sDeoxysDefensePose33[] = {
 	AX_POSE(28, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose34[] = {
-	AX_POSE(8, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose35[] = {
-	AX_POSE(9, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose36[] = {
 	AX_POSE(29, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose37[] = {
 	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose38[] = {
-	AX_POSE(6, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose39[] = {
-	AX_POSE(7, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose40[] = {
@@ -177,14 +131,6 @@ static const ax_pose sDeoxysDefensePose41[] = {
 	AX_POSE(20, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose42[] = {
-	AX_POSE(4, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose43[] = {
-	AX_POSE(5, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose44[] = {
 	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(3, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(8, 3, 9)),
@@ -195,176 +141,16 @@ static const ax_pose sDeoxysDefensePose45[] = {
 	AX_POSE(16, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose46[] = {
-	AX_POSE(2, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose47[] = {
-	AX_POSE(3, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose48[] = {
 	AX_POSE(17, OAM1(246, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(18, OAM1(238, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
 	AX_POSE(19, OAM1(230, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose49[] = {
-	AX_POSE(10, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose50[] = {
-	AX_POSE(0, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose51[] = {
-	AX_POSE(1, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose52[] = {
-	AX_POSE(11, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(12, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(13, OAM1(227, ST_OAM_H_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE(14, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 9)),
-	AX_POSE(15, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(15, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose53[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose54[] = {
-	AX_POSE(2, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose55[] = {
-	AX_POSE(3, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose56[] = {
-	AX_POSE(17, OAM1(247, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(18, OAM1(239, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(19, OAM1(231, ST_OAM_H_RECTANGLE, 1), OAM2(254, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose57[] = {
-	AX_POSE(20, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose58[] = {
-	AX_POSE(4, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose59[] = {
-	AX_POSE(5, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose60[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(253, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(23, OAM1(252, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(10, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose61[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose62[] = {
-	AX_POSE(6, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose63[] = {
-	AX_POSE(7, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose64[] = {
-	AX_POSE(25, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(0, ST_OAM_SIZE_2, FLIP(1, 0), 0, 1), OAM3(0, 3, 9)),
-	AX_POSE(26, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(27, OAM1(243, ST_OAM_V_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose65[] = {
-	AX_POSE(28, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose66[] = {
-	AX_POSE(8, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose67[] = {
-	AX_POSE(9, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose68[] = {
-	AX_POSE(29, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose69[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose70[] = {
-	AX_POSE(6, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose71[] = {
-	AX_POSE(7, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose72[] = {
-	AX_POSE(25, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(26, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(255, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(27, OAM1(243, ST_OAM_V_RECTANGLE, 1), OAM2(7, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose73[] = {
-	AX_POSE(20, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose74[] = {
-	AX_POSE(4, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose75[] = {
-	AX_POSE(5, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose76[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(3, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(8, 3, 9)),
-	AX_POSE(23, OAM1(252, ST_OAM_SQUARE     , 1), OAM2(3, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(10, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose77[] = {
-	AX_POSE(16, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose78[] = {
-	AX_POSE(2, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose79[] = {
-	AX_POSE(3, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose80[] = {
-	AX_POSE(17, OAM1(246, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(18, OAM1(238, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(19, OAM1(230, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose81[] = {
-	AX_POSE(10, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose82[] = {
 	AX_POSE(30, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(232, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(31, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(8, ST_OAM_SIZE_2, FLIP(0, 0), 0, 1), OAM3(16, 3, 9)),
 	AX_POSE(32, OAM1(218, ST_OAM_H_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(24, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose83[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose84[] = {
@@ -376,34 +162,18 @@ static const ax_pose sDeoxysDefensePose84[] = {
 	AX_POSE(38, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(17, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose85[] = {
-	AX_POSE(20, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose86[] = {
 	AX_POSE(39, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(244, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(40, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(4, ST_OAM_SIZE_1, FLIP(1, 0), 0, 1), OAM3(8, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose87[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose88[] = {
 	AX_POSE(41, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose89[] = {
-	AX_POSE(28, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose90[] = {
 	AX_POSE(42, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(43, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(12, ST_OAM_SIZE_2, FLIP(0, 0), 0, 1), OAM3(16, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose91[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose92[] = {
@@ -419,10 +189,6 @@ static const ax_pose sDeoxysDefensePose94[] = {
 	AX_POSE(40, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(244, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose95[] = {
-	AX_POSE(16, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose96[] = {
 	AX_POSE(33, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(34, OAM1(226, ST_OAM_V_RECTANGLE, 1), OAM2(5, ST_OAM_SIZE_1, FLIP(0, 0), 0, 1), OAM3(8, 3, 9)),
@@ -434,10 +200,6 @@ static const ax_pose sDeoxysDefensePose96[] = {
 };
 static const ax_pose sDeoxysDefensePose97[] = {
 	AX_POSE(10, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose98[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose99[] = {
@@ -464,58 +226,6 @@ static const ax_pose sDeoxysDefensePose104[] = {
 	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose105[] = {
-	AX_POSE(0, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose106[] = {
-	AX_POSE(2, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose107[] = {
-	AX_POSE(4, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose108[] = {
-	AX_POSE(6, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose109[] = {
-	AX_POSE(8, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose110[] = {
-	AX_POSE(6, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose111[] = {
-	AX_POSE(4, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose112[] = {
-	AX_POSE(2, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose113[] = {
-	AX_POSE(11, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(12, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(13, OAM1(227, ST_OAM_H_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE(14, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 9)),
-	AX_POSE(15, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(15, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose114[] = {
-	AX_POSE(17, OAM1(247, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(18, OAM1(239, ST_OAM_H_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(19, OAM1(231, ST_OAM_H_RECTANGLE, 1), OAM2(254, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose115[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(253, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(23, OAM1(252, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(10, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose116[] = {
 	AX_POSE(25, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(255, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(26, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(247, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
@@ -524,24 +234,6 @@ static const ax_pose sDeoxysDefensePose116[] = {
 };
 static const ax_pose sDeoxysDefensePose117[] = {
 	AX_POSE(29, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose118[] = {
-	AX_POSE(25, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(26, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(255, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(27, OAM1(243, ST_OAM_V_RECTANGLE, 1), OAM2(7, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose119[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(3, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(8, 3, 9)),
-	AX_POSE(23, OAM1(252, ST_OAM_SQUARE     , 1), OAM2(3, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(10, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose120[] = {
-	AX_POSE(17, OAM1(246, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(18, OAM1(238, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(19, OAM1(230, ST_OAM_H_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose121[] = {
@@ -584,44 +276,8 @@ static const ax_pose sDeoxysDefensePose130[] = {
 	AX_POSE(47, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose131[] = {
-	AX_POSE(10, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose132[] = {
-	AX_POSE(16, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose133[] = {
-	AX_POSE(20, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose134[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose135[] = {
-	AX_POSE(28, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose136[] = {
-	AX_POSE(24, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose137[] = {
-	AX_POSE(20, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose138[] = {
 	AX_POSE(16, OAM1(226, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose139[] = {
-	AX_POSE(11, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(12, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(13, OAM1(227, ST_OAM_H_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE(14, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 9)),
-	AX_POSE(15, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(15, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose140[] = {
@@ -642,10 +298,6 @@ static const ax_pose sDeoxysDefensePose142[] = {
 	AX_POSE(27, OAM1(244, ST_OAM_V_RECTANGLE, 1), OAM2(10, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(12, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose143[] = {
-	AX_POSE(29, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose144[] = {
 	AX_POSE(25, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(254, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(26, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(246, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
@@ -664,146 +316,10 @@ static const ax_pose sDeoxysDefensePose146[] = {
 	AX_POSE(19, OAM1(229, ST_OAM_H_RECTANGLE, 1), OAM2(251, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(12, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose147[] = {
-	AX_POSE(11, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(12, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(13, OAM1(227, ST_OAM_H_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE(14, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 9)),
-	AX_POSE(15, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(15, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose148[] = {
-	AX_POSE(11, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(12, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(13, OAM1(227, ST_OAM_H_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE(14, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 9)),
-	AX_POSE(15, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(15, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose149[] = {
-	AX_POSE(17, OAM1(245, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(18, OAM1(237, ST_OAM_H_RECTANGLE, 1), OAM2(239, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(19, OAM1(229, ST_OAM_H_RECTANGLE, 1), OAM2(251, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose150[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(252, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(244, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(23, OAM1(252, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(10, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose151[] = {
-	AX_POSE(25, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(254, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(26, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(246, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(27, OAM1(244, ST_OAM_V_RECTANGLE, 1), OAM2(238, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose152[] = {
-	AX_POSE(29, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose153[] = {
-	AX_POSE(25, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(26, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(2, ST_OAM_SIZE_1, FLIP(0, 0), 0, 1), OAM3(8, 3, 9)),
-	AX_POSE(27, OAM1(244, ST_OAM_V_RECTANGLE, 1), OAM2(10, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose154[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(4, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(8, 3, 9)),
-	AX_POSE(23, OAM1(252, ST_OAM_SQUARE     , 1), OAM2(4, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(10, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose155[] = {
-	AX_POSE(17, OAM1(245, ST_OAM_H_RECTANGLE, 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(18, OAM1(237, ST_OAM_H_RECTANGLE, 1), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(19, OAM1(229, ST_OAM_H_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose156[] = {
-	AX_POSE(11, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(12, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(13, OAM1(227, ST_OAM_H_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE(14, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 9)),
-	AX_POSE(15, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(15, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose157[] = {
-	AX_POSE(0, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose158[] = {
-	AX_POSE(1, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose159[] = {
-	AX_POSE(11, OAM1(243, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(12, OAM1(235, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(13, OAM1(227, ST_OAM_H_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE(14, OAM1(251, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(14, 3, 9)),
-	AX_POSE(15, OAM1(243, ST_OAM_SQUARE     , 1), OAM2(16, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(15, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose160[] = {
-	AX_POSE(2, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose161[] = {
-	AX_POSE(3, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose162[] = {
 	AX_POSE(17, OAM1(247, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(18, OAM1(239, ST_OAM_H_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
 	AX_POSE(19, OAM1(231, ST_OAM_H_RECTANGLE, 1), OAM2(252, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose163[] = {
-	AX_POSE(4, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose164[] = {
-	AX_POSE(5, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose165[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(253, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(23, OAM1(252, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(10, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose166[] = {
-	AX_POSE(6, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose167[] = {
-	AX_POSE(7, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose168[] = {
-	AX_POSE(25, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(0, ST_OAM_SIZE_2, FLIP(1, 0), 0, 1), OAM3(0, 3, 9)),
-	AX_POSE(26, OAM1(227, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_1, FLIP(1, 0), 0, 0), OAM3(8, 3, 9)),
-	AX_POSE(27, OAM1(243, ST_OAM_V_RECTANGLE, 1), OAM2(240, ST_OAM_SIZE_0, FLIP(1, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose169[] = {
-	AX_POSE(8, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose170[] = {
-	AX_POSE(9, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose171[] = {
-	AX_POSE(29, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose172[] = {
-	AX_POSE(6, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose173[] = {
-	AX_POSE(7, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sDeoxysDefensePose174[] = {
@@ -812,96 +328,10 @@ static const ax_pose sDeoxysDefensePose174[] = {
 	AX_POSE(27, OAM1(243, ST_OAM_V_RECTANGLE, 1), OAM2(9, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(12, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sDeoxysDefensePose175[] = {
-	AX_POSE(4, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose176[] = {
-	AX_POSE(5, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose177[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_V_RECTANGLE, 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE(22, OAM1(236, ST_OAM_V_RECTANGLE, 1), OAM2(3, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(8, 3, 9)),
-	AX_POSE(23, OAM1(252, ST_OAM_SQUARE     , 1), OAM2(3, ST_OAM_SIZE_0, FLIP(0, 0), 0, 1), OAM3(10, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose178[] = {
-	AX_POSE(2, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose179[] = {
-	AX_POSE(3, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sDeoxysDefensePose180[] = {
 	AX_POSE(17, OAM1(246, ST_OAM_H_RECTANGLE, 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE(18, OAM1(238, ST_OAM_H_RECTANGLE, 1), OAM2(241, ST_OAM_SIZE_1, FLIP(0, 0), 0, 0), OAM3(8, 3, 9)),
 	AX_POSE(19, OAM1(230, ST_OAM_H_RECTANGLE, 1), OAM2(245, ST_OAM_SIZE_0, FLIP(0, 0), 0, 0), OAM3(12, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose181[] = {
-	AX_POSE(10, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose182[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose183[] = {
-	AX_POSE(20, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose184[] = {
-	AX_POSE(24, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose185[] = {
-	AX_POSE(28, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose186[] = {
-	AX_POSE(24, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose187[] = {
-	AX_POSE(20, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose188[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose189[] = {
-	AX_POSE(10, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose190[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose191[] = {
-	AX_POSE(20, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose192[] = {
-	AX_POSE(24, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose193[] = {
-	AX_POSE(28, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose194[] = {
-	AX_POSE(24, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose195[] = {
-	AX_POSE(20, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sDeoxysDefensePose196[] = {
-	AX_POSE(16, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_anim sDeoxysDefenseAnims_1_1[] = {
@@ -1424,51 +854,6 @@ static const ax_anim sDeoxysDefenseAnims_5_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 103, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sDeoxysDefenseAnims_6_1[] = {
-	{ .frames = 30, .unkFlags = 0, .poseId = 120, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 35, .unkFlags = 0, .poseId = 121, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_7_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 122, .offset = {0, -2}, .shadow = {0, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 122, .offset = {0, -3}, .shadow = {0, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_7_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 123, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 123, .offset = {-3, -3}, .shadow = {-3, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_7_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 124, .offset = {-2, 0}, .shadow = {-2, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 124, .offset = {-3, 0}, .shadow = {-3, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_7_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 125, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 125, .offset = {-3, 3}, .shadow = {-3, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_7_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 126, .offset = {0, 2}, .shadow = {0, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 126, .offset = {0, 3}, .shadow = {0, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_7_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 127, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 127, .offset = {3, 3}, .shadow = {3, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_7_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 128, .offset = {2, 0}, .shadow = {2, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 128, .offset = {3, 0}, .shadow = {3, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_7_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 129, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 129, .offset = {3, -3}, .shadow = {3, -3} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sDeoxysDefenseAnims_8_1[] = {
 	{ .frames = 12, .unkFlags = 0, .poseId = 130, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 8, .unkFlags = 0, .poseId = 130, .offset = {0, -1}, .shadow = {0, 0} },
@@ -1637,158 +1022,6 @@ static const ax_anim sDeoxysDefenseAnims_9_8[] = {
 	{ .frames = 1, .unkFlags = 0, .poseId = 139, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sDeoxysDefenseAnims_10_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 147, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 147, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 147, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 147, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_10_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 148, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 148, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 148, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 148, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_10_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 149, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 149, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 149, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 149, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_10_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 150, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 150, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 150, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 150, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_10_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 151, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 151, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 151, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 151, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_10_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 152, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 152, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 152, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 152, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_10_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 153, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 153, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 153, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 153, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_10_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 154, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 154, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 154, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 154, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 154, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sDeoxysDefenseAnims_11_1[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 156, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 157, .offset = {0, -10}, .shadow = {0, 0} },
@@ -1891,206 +1124,6 @@ static const ax_anim sDeoxysDefenseAnims_11_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {0, -18}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 179, .offset = {0, -12}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 2, .poseId = 179, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_12_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_12_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 187, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 187, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_12_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_12_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 185, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 185, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_12_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_12_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_12_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_12_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_13_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_13_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_13_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_13_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_13_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_13_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_13_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sDeoxysDefenseAnims_13_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 194, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 195, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 
@@ -2396,109 +1429,109 @@ static const ax_pose *const sAxPosesDeoxysDefense[] = {
 	sDeoxysDefensePose15,
 	sDeoxysDefensePose16,
 	sDeoxysDefensePose17,
-	sDeoxysDefensePose18,
-	sDeoxysDefensePose19,
+	sDeoxysDefensePose1,
+	sDeoxysDefensePose2,
 	sDeoxysDefensePose20,
 	sDeoxysDefensePose21,
-	sDeoxysDefensePose22,
-	sDeoxysDefensePose23,
+	sDeoxysDefensePose3,
+	sDeoxysDefensePose4,
 	sDeoxysDefensePose24,
 	sDeoxysDefensePose25,
-	sDeoxysDefensePose26,
-	sDeoxysDefensePose27,
+	sDeoxysDefensePose5,
+	sDeoxysDefensePose6,
 	sDeoxysDefensePose28,
 	sDeoxysDefensePose29,
-	sDeoxysDefensePose30,
-	sDeoxysDefensePose31,
+	sDeoxysDefensePose7,
+	sDeoxysDefensePose8,
 	sDeoxysDefensePose32,
 	sDeoxysDefensePose33,
-	sDeoxysDefensePose34,
-	sDeoxysDefensePose35,
+	sDeoxysDefensePose9,
+	sDeoxysDefensePose10,
 	sDeoxysDefensePose36,
 	sDeoxysDefensePose37,
-	sDeoxysDefensePose38,
-	sDeoxysDefensePose39,
+	sDeoxysDefensePose11,
+	sDeoxysDefensePose12,
 	sDeoxysDefensePose40,
 	sDeoxysDefensePose41,
-	sDeoxysDefensePose42,
-	sDeoxysDefensePose43,
+	sDeoxysDefensePose13,
+	sDeoxysDefensePose14,
 	sDeoxysDefensePose44,
 	sDeoxysDefensePose45,
-	sDeoxysDefensePose46,
-	sDeoxysDefensePose47,
+	sDeoxysDefensePose15,
+	sDeoxysDefensePose16,
 	sDeoxysDefensePose48,
-	sDeoxysDefensePose49,
-	sDeoxysDefensePose50,
-	sDeoxysDefensePose51,
-	sDeoxysDefensePose52,
-	sDeoxysDefensePose53,
-	sDeoxysDefensePose54,
-	sDeoxysDefensePose55,
-	sDeoxysDefensePose56,
-	sDeoxysDefensePose57,
-	sDeoxysDefensePose58,
-	sDeoxysDefensePose59,
-	sDeoxysDefensePose60,
-	sDeoxysDefensePose61,
-	sDeoxysDefensePose62,
-	sDeoxysDefensePose63,
-	sDeoxysDefensePose64,
-	sDeoxysDefensePose65,
-	sDeoxysDefensePose66,
-	sDeoxysDefensePose67,
-	sDeoxysDefensePose68,
-	sDeoxysDefensePose69,
-	sDeoxysDefensePose70,
-	sDeoxysDefensePose71,
-	sDeoxysDefensePose72,
-	sDeoxysDefensePose73,
-	sDeoxysDefensePose74,
-	sDeoxysDefensePose75,
-	sDeoxysDefensePose76,
-	sDeoxysDefensePose77,
-	sDeoxysDefensePose78,
-	sDeoxysDefensePose79,
-	sDeoxysDefensePose80,
-	sDeoxysDefensePose81,
+	sDeoxysDefensePose17,
+	sDeoxysDefensePose1,
+	sDeoxysDefensePose2,
+	sDeoxysDefensePose20,
+	sDeoxysDefensePose21,
+	sDeoxysDefensePose3,
+	sDeoxysDefensePose4,
+	sDeoxysDefensePose24,
+	sDeoxysDefensePose25,
+	sDeoxysDefensePose5,
+	sDeoxysDefensePose6,
+	sDeoxysDefensePose28,
+	sDeoxysDefensePose29,
+	sDeoxysDefensePose7,
+	sDeoxysDefensePose8,
+	sDeoxysDefensePose32,
+	sDeoxysDefensePose33,
+	sDeoxysDefensePose9,
+	sDeoxysDefensePose10,
+	sDeoxysDefensePose36,
+	sDeoxysDefensePose37,
+	sDeoxysDefensePose11,
+	sDeoxysDefensePose12,
+	sDeoxysDefensePose40,
+	sDeoxysDefensePose41,
+	sDeoxysDefensePose13,
+	sDeoxysDefensePose14,
+	sDeoxysDefensePose44,
+	sDeoxysDefensePose45,
+	sDeoxysDefensePose15,
+	sDeoxysDefensePose16,
+	sDeoxysDefensePose48,
+	sDeoxysDefensePose17,
 	sDeoxysDefensePose82,
-	sDeoxysDefensePose83,
+	sDeoxysDefensePose21,
 	sDeoxysDefensePose84,
-	sDeoxysDefensePose85,
+	sDeoxysDefensePose25,
 	sDeoxysDefensePose86,
-	sDeoxysDefensePose87,
+	sDeoxysDefensePose29,
 	sDeoxysDefensePose88,
-	sDeoxysDefensePose89,
+	sDeoxysDefensePose33,
 	sDeoxysDefensePose90,
-	sDeoxysDefensePose91,
+	sDeoxysDefensePose37,
 	sDeoxysDefensePose92,
 	sDeoxysDefensePose93,
 	sDeoxysDefensePose94,
-	sDeoxysDefensePose95,
+	sDeoxysDefensePose45,
 	sDeoxysDefensePose96,
 	sDeoxysDefensePose97,
-	sDeoxysDefensePose98,
+	sDeoxysDefensePose21,
 	sDeoxysDefensePose99,
 	sDeoxysDefensePose100,
 	sDeoxysDefensePose101,
 	sDeoxysDefensePose102,
 	sDeoxysDefensePose103,
 	sDeoxysDefensePose104,
-	sDeoxysDefensePose105,
-	sDeoxysDefensePose106,
-	sDeoxysDefensePose107,
-	sDeoxysDefensePose108,
-	sDeoxysDefensePose109,
-	sDeoxysDefensePose110,
-	sDeoxysDefensePose111,
-	sDeoxysDefensePose112,
-	sDeoxysDefensePose113,
-	sDeoxysDefensePose114,
-	sDeoxysDefensePose115,
+	sDeoxysDefensePose1,
+	sDeoxysDefensePose3,
+	sDeoxysDefensePose5,
+	sDeoxysDefensePose7,
+	sDeoxysDefensePose9,
+	sDeoxysDefensePose11,
+	sDeoxysDefensePose13,
+	sDeoxysDefensePose15,
+	sDeoxysDefensePose20,
+	sDeoxysDefensePose24,
+	sDeoxysDefensePose28,
 	sDeoxysDefensePose116,
 	sDeoxysDefensePose117,
-	sDeoxysDefensePose118,
-	sDeoxysDefensePose119,
-	sDeoxysDefensePose120,
+	sDeoxysDefensePose40,
+	sDeoxysDefensePose44,
+	sDeoxysDefensePose48,
 	sDeoxysDefensePose121,
 	sDeoxysDefensePose122,
 	sDeoxysDefensePose123,
@@ -2509,72 +1542,72 @@ static const ax_pose *const sAxPosesDeoxysDefense[] = {
 	sDeoxysDefensePose128,
 	sDeoxysDefensePose129,
 	sDeoxysDefensePose130,
-	sDeoxysDefensePose131,
-	sDeoxysDefensePose132,
-	sDeoxysDefensePose133,
-	sDeoxysDefensePose134,
-	sDeoxysDefensePose135,
-	sDeoxysDefensePose136,
-	sDeoxysDefensePose137,
+	sDeoxysDefensePose17,
+	sDeoxysDefensePose45,
+	sDeoxysDefensePose41,
+	sDeoxysDefensePose37,
+	sDeoxysDefensePose33,
+	sDeoxysDefensePose29,
+	sDeoxysDefensePose25,
 	sDeoxysDefensePose138,
-	sDeoxysDefensePose139,
+	sDeoxysDefensePose20,
 	sDeoxysDefensePose140,
 	sDeoxysDefensePose141,
 	sDeoxysDefensePose142,
-	sDeoxysDefensePose143,
+	sDeoxysDefensePose36,
 	sDeoxysDefensePose144,
 	sDeoxysDefensePose145,
 	sDeoxysDefensePose146,
-	sDeoxysDefensePose147,
-	sDeoxysDefensePose148,
-	sDeoxysDefensePose149,
-	sDeoxysDefensePose150,
-	sDeoxysDefensePose151,
-	sDeoxysDefensePose152,
-	sDeoxysDefensePose153,
-	sDeoxysDefensePose154,
-	sDeoxysDefensePose155,
-	sDeoxysDefensePose156,
-	sDeoxysDefensePose157,
-	sDeoxysDefensePose158,
-	sDeoxysDefensePose159,
-	sDeoxysDefensePose160,
-	sDeoxysDefensePose161,
+	sDeoxysDefensePose20,
+	sDeoxysDefensePose20,
+	sDeoxysDefensePose146,
+	sDeoxysDefensePose145,
+	sDeoxysDefensePose144,
+	sDeoxysDefensePose36,
+	sDeoxysDefensePose142,
+	sDeoxysDefensePose141,
+	sDeoxysDefensePose140,
+	sDeoxysDefensePose20,
+	sDeoxysDefensePose1,
+	sDeoxysDefensePose2,
+	sDeoxysDefensePose20,
+	sDeoxysDefensePose3,
+	sDeoxysDefensePose4,
 	sDeoxysDefensePose162,
-	sDeoxysDefensePose163,
-	sDeoxysDefensePose164,
-	sDeoxysDefensePose165,
-	sDeoxysDefensePose166,
-	sDeoxysDefensePose167,
-	sDeoxysDefensePose168,
-	sDeoxysDefensePose169,
-	sDeoxysDefensePose170,
-	sDeoxysDefensePose171,
-	sDeoxysDefensePose172,
-	sDeoxysDefensePose173,
+	sDeoxysDefensePose5,
+	sDeoxysDefensePose6,
+	sDeoxysDefensePose28,
+	sDeoxysDefensePose7,
+	sDeoxysDefensePose8,
+	sDeoxysDefensePose32,
+	sDeoxysDefensePose9,
+	sDeoxysDefensePose10,
+	sDeoxysDefensePose36,
+	sDeoxysDefensePose11,
+	sDeoxysDefensePose12,
 	sDeoxysDefensePose174,
-	sDeoxysDefensePose175,
-	sDeoxysDefensePose176,
-	sDeoxysDefensePose177,
-	sDeoxysDefensePose178,
-	sDeoxysDefensePose179,
+	sDeoxysDefensePose13,
+	sDeoxysDefensePose14,
+	sDeoxysDefensePose44,
+	sDeoxysDefensePose15,
+	sDeoxysDefensePose16,
 	sDeoxysDefensePose180,
-	sDeoxysDefensePose181,
-	sDeoxysDefensePose182,
-	sDeoxysDefensePose183,
-	sDeoxysDefensePose184,
-	sDeoxysDefensePose185,
-	sDeoxysDefensePose186,
-	sDeoxysDefensePose187,
-	sDeoxysDefensePose188,
-	sDeoxysDefensePose189,
-	sDeoxysDefensePose190,
-	sDeoxysDefensePose191,
-	sDeoxysDefensePose192,
-	sDeoxysDefensePose193,
-	sDeoxysDefensePose194,
-	sDeoxysDefensePose195,
-	sDeoxysDefensePose196,
+	sDeoxysDefensePose97,
+	sDeoxysDefensePose104,
+	sDeoxysDefensePose103,
+	sDeoxysDefensePose102,
+	sDeoxysDefensePose101,
+	sDeoxysDefensePose100,
+	sDeoxysDefensePose99,
+	sDeoxysDefensePose21,
+	sDeoxysDefensePose97,
+	sDeoxysDefensePose104,
+	sDeoxysDefensePose103,
+	sDeoxysDefensePose102,
+	sDeoxysDefensePose101,
+	sDeoxysDefensePose100,
+	sDeoxysDefensePose99,
+	sDeoxysDefensePose21,
 };
 
 static const struct PositionSets sAxPositionsDeoxysDefense[] = {
@@ -2832,25 +1865,25 @@ static const ax_anim *const sDeoxysDefenseAnimTable5[] = {
 };
 
 static const ax_anim *const sDeoxysDefenseAnimTable6[] = {
-	sDeoxysDefenseAnims_6_1,
-	sDeoxysDefenseAnims_6_1,
-	sDeoxysDefenseAnims_6_1,
-	sDeoxysDefenseAnims_6_1,
-	sDeoxysDefenseAnims_6_1,
-	sDeoxysDefenseAnims_6_1,
-	sDeoxysDefenseAnims_6_1,
-	sDeoxysDefenseAnims_6_1,
+	gAxSharedAnim_02362,
+	gAxSharedAnim_02362,
+	gAxSharedAnim_02362,
+	gAxSharedAnim_02362,
+	gAxSharedAnim_02362,
+	gAxSharedAnim_02362,
+	gAxSharedAnim_02362,
+	gAxSharedAnim_02362,
 };
 
 static const ax_anim *const sDeoxysDefenseAnimTable7[] = {
-	sDeoxysDefenseAnims_7_1,
-	sDeoxysDefenseAnims_7_2,
-	sDeoxysDefenseAnims_7_3,
-	sDeoxysDefenseAnims_7_4,
-	sDeoxysDefenseAnims_7_5,
-	sDeoxysDefenseAnims_7_6,
-	sDeoxysDefenseAnims_7_7,
-	sDeoxysDefenseAnims_7_8,
+	gAxSharedAnim_00330,
+	gAxSharedAnim_00340,
+	gAxSharedAnim_00348,
+	gAxSharedAnim_00356,
+	gAxSharedAnim_00368,
+	gAxSharedAnim_00376,
+	gAxSharedAnim_00383,
+	gAxSharedAnim_00390,
 };
 
 static const ax_anim *const sDeoxysDefenseAnimTable8[] = {
@@ -2876,14 +1909,14 @@ static const ax_anim *const sDeoxysDefenseAnimTable9[] = {
 };
 
 static const ax_anim *const sDeoxysDefenseAnimTable10[] = {
-	sDeoxysDefenseAnims_10_1,
-	sDeoxysDefenseAnims_10_2,
-	sDeoxysDefenseAnims_10_3,
-	sDeoxysDefenseAnims_10_4,
-	sDeoxysDefenseAnims_10_5,
-	sDeoxysDefenseAnims_10_6,
-	sDeoxysDefenseAnims_10_7,
-	sDeoxysDefenseAnims_10_8,
+	gAxSharedAnim_00548,
+	gAxSharedAnim_00556,
+	gAxSharedAnim_00566,
+	gAxSharedAnim_00572,
+	gAxSharedAnim_00585,
+	gAxSharedAnim_00594,
+	gAxSharedAnim_00601,
+	gAxSharedAnim_00611,
 };
 
 static const ax_anim *const sDeoxysDefenseAnimTable11[] = {
@@ -2898,25 +1931,25 @@ static const ax_anim *const sDeoxysDefenseAnimTable11[] = {
 };
 
 static const ax_anim *const sDeoxysDefenseAnimTable12[] = {
-	sDeoxysDefenseAnims_12_1,
-	sDeoxysDefenseAnims_12_2,
-	sDeoxysDefenseAnims_12_3,
-	sDeoxysDefenseAnims_12_4,
-	sDeoxysDefenseAnims_12_5,
-	sDeoxysDefenseAnims_12_6,
-	sDeoxysDefenseAnims_12_7,
-	sDeoxysDefenseAnims_12_8,
+	gAxSharedAnim_00932,
+	gAxSharedAnim_01029,
+	gAxSharedAnim_01000,
+	gAxSharedAnim_00984,
+	gAxSharedAnim_00981,
+	gAxSharedAnim_00968,
+	gAxSharedAnim_00946,
+	gAxSharedAnim_00933,
 };
 
 static const ax_anim *const sDeoxysDefenseAnimTable13[] = {
-	sDeoxysDefenseAnims_13_1,
-	sDeoxysDefenseAnims_13_2,
-	sDeoxysDefenseAnims_13_3,
-	sDeoxysDefenseAnims_13_4,
-	sDeoxysDefenseAnims_13_5,
-	sDeoxysDefenseAnims_13_6,
-	sDeoxysDefenseAnims_13_7,
-	sDeoxysDefenseAnims_13_8,
+	gAxSharedAnim_01049,
+	gAxSharedAnim_01154,
+	gAxSharedAnim_01144,
+	gAxSharedAnim_01126,
+	gAxSharedAnim_01113,
+	gAxSharedAnim_01094,
+	gAxSharedAnim_01080,
+	gAxSharedAnim_01064,
 };
 
 static const ax_anim *const *const sAxAnimationsDeoxysDefense[] = {

@@ -1,3 +1,5 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
+#include "ax_shared_anims.h"
 static const axmain sAxMainWigglytuff;
 const SiroArchive gAxWigglytuff = {"SIRO", &sAxMainWigglytuff};
 
@@ -97,112 +99,8 @@ static const ax_pose sWigglytuffPose24[] = {
 	AX_POSE(5, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose25[] = {
-	AX_POSE(0, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose26[] = {
-	AX_POSE(1, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose27[] = {
-	AX_POSE(2, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose28[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose29[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose30[] = {
-	AX_POSE(5, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose31[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose32[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose33[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose34[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(232, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose35[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose36[] = {
-	AX_POSE(11, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose37[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose38[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose39[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose40[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(248, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose41[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose42[] = {
-	AX_POSE(11, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose43[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose44[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose45[] = {
-	AX_POSE(8, OAM1(234, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose46[] = {
-	AX_POSE(3, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose47[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose48[] = {
-	AX_POSE(5, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose49[] = {
 	AX_POSE(0, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose50[] = {
-	AX_POSE(1, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose51[] = {
-	AX_POSE(2, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose52[] = {
@@ -213,28 +111,8 @@ static const ax_pose sWigglytuffPose53[] = {
 	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose54[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose55[] = {
-	AX_POSE(5, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose56[] = {
 	AX_POSE(16, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose57[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose58[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose59[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose60[] = {
@@ -245,28 +123,8 @@ static const ax_pose sWigglytuffPose61[] = {
 	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose62[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose63[] = {
-	AX_POSE(11, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose64[] = {
 	AX_POSE(18, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose65[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose66[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose67[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose68[] = {
@@ -277,28 +135,8 @@ static const ax_pose sWigglytuffPose69[] = {
 	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose70[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose71[] = {
-	AX_POSE(11, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose72[] = {
 	AX_POSE(18, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose73[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose74[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose75[] = {
-	AX_POSE(8, OAM1(234, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose76[] = {
@@ -309,28 +147,8 @@ static const ax_pose sWigglytuffPose77[] = {
 	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose78[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose79[] = {
-	AX_POSE(5, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose80[] = {
 	AX_POSE(16, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose81[] = {
-	AX_POSE(0, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose82[] = {
-	AX_POSE(1, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose83[] = {
-	AX_POSE(2, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose84[] = {
@@ -341,36 +159,12 @@ static const ax_pose sWigglytuffPose85[] = {
 	AX_POSE(21, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose86[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose87[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose88[] = {
-	AX_POSE(5, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose89[] = {
 	AX_POSE(22, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose90[] = {
 	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose91[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose92[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose93[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose94[] = {
@@ -381,36 +175,12 @@ static const ax_pose sWigglytuffPose95[] = {
 	AX_POSE(25, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose96[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose97[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose98[] = {
-	AX_POSE(11, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose99[] = {
 	AX_POSE(26, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose100[] = {
 	AX_POSE(27, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose101[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose102[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose103[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose104[] = {
@@ -421,36 +191,12 @@ static const ax_pose sWigglytuffPose105[] = {
 	AX_POSE(29, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose106[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose107[] = {
-	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose108[] = {
-	AX_POSE(11, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose109[] = {
 	AX_POSE(26, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose110[] = {
 	AX_POSE(27, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose111[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose112[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose113[] = {
-	AX_POSE(8, OAM1(234, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose114[] = {
@@ -461,18 +207,6 @@ static const ax_pose sWigglytuffPose115[] = {
 	AX_POSE(25, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose116[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose117[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose118[] = {
-	AX_POSE(5, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose119[] = {
 	AX_POSE(22, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
@@ -481,96 +215,16 @@ static const ax_pose sWigglytuffPose120[] = {
 	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose121[] = {
-	AX_POSE(0, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose122[] = {
-	AX_POSE(21, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose123[] = {
-	AX_POSE(20, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose124[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose125[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose126[] = {
 	AX_POSE(22, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose127[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose128[] = {
-	AX_POSE(25, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose129[] = {
 	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose130[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose131[] = {
-	AX_POSE(27, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose132[] = {
-	AX_POSE(26, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose133[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose134[] = {
-	AX_POSE(29, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose135[] = {
-	AX_POSE(28, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose136[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose137[] = {
-	AX_POSE(27, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose138[] = {
-	AX_POSE(26, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose139[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose140[] = {
-	AX_POSE(25, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose141[] = {
 	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose142[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose143[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose144[] = {
@@ -617,20 +271,12 @@ static const ax_pose sWigglytuffPose154[] = {
 	AX_POSE(33, OAM1(227, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose155[] = {
-	AX_POSE(0, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose156[] = {
 	AX_POSE(1, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose157[] = {
 	AX_POSE(2, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose158[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose159[] = {
@@ -641,44 +287,12 @@ static const ax_pose sWigglytuffPose160[] = {
 	AX_POSE(5, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose161[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose162[] = {
-	AX_POSE(7, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose163[] = {
-	AX_POSE(8, OAM1(235, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose164[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose165[] = {
 	AX_POSE(10, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose166[] = {
 	AX_POSE(11, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose167[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose168[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose169[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose170[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose171[] = {
@@ -689,22 +303,6 @@ static const ax_pose sWigglytuffPose172[] = {
 	AX_POSE(11, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose173[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose174[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose175[] = {
-	AX_POSE(8, OAM1(234, ST_OAM_V_RECTANGLE, 1), OAM2(248, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose176[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose177[] = {
 	AX_POSE(4, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
@@ -713,44 +311,20 @@ static const ax_pose sWigglytuffPose178[] = {
 	AX_POSE(5, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose179[] = {
-	AX_POSE(15, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose180[] = {
 	AX_POSE(16, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose181[] = {
-	AX_POSE(17, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(243, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose182[] = {
 	AX_POSE(18, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose183[] = {
-	AX_POSE(19, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose184[] = {
 	AX_POSE(18, OAM1(237, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose185[] = {
-	AX_POSE(17, OAM1(236, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose186[] = {
 	AX_POSE(16, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose187[] = {
-	AX_POSE(20, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose188[] = {
-	AX_POSE(22, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose189[] = {
@@ -773,238 +347,25 @@ static const ax_pose sWigglytuffPose193[] = {
 	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose194[] = {
-	AX_POSE(22, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose195[] = {
-	AX_POSE(0, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose196[] = {
-	AX_POSE(20, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose197[] = {
-	AX_POSE(21, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose198[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose199[] = {
-	AX_POSE(22, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose200[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose201[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose202[] = {
-	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose203[] = {
-	AX_POSE(25, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose204[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose205[] = {
 	AX_POSE(26, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose206[] = {
-	AX_POSE(27, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose207[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose208[] = {
 	AX_POSE(28, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose209[] = {
-	AX_POSE(29, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose210[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose211[] = {
 	AX_POSE(26, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose212[] = {
-	AX_POSE(27, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose213[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose214[] = {
-	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose215[] = {
-	AX_POSE(25, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose216[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose217[] = {
-	AX_POSE(22, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose218[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose219[] = {
-	AX_POSE(21, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose220[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose221[] = {
-	AX_POSE(25, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(245, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWigglytuffPose222[] = {
 	AX_POSE(27, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(246, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWigglytuffPose223[] = {
-	AX_POSE(29, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWigglytuffPose224[] = {
 	AX_POSE(27, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(234, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
 	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose225[] = {
-	AX_POSE(25, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(235, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose226[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose227[] = {
-	AX_POSE(0, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose228[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose229[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose230[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(247, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose231[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose232[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose233[] = {
-	AX_POSE(6, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(233, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWigglytuffPose234[] = {
-	AX_POSE(3, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(236, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 1)),
-	AX_POSE_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_1_1[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 0, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 1, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 0, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 2, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_1_2[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 3, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 4, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 3, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 5, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_1_3[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 6, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 7, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 6, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 8, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_1_4[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 9, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 10, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 9, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 11, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_1_5[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 12, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 13, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 12, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 14, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_1_6[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 15, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 16, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 15, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 17, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_1_7[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 18, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 19, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 18, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 20, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_1_8[] = {
-	{ .frames = 8, .unkFlags = 0, .poseId = 21, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 22, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 21, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 10, .unkFlags = 0, .poseId = 23, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_2_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 25, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 25, .offset = {0, -2}, .shadow = {0, -2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 26, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 25, .offset = {0, 4}, .shadow = {0, 4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 26, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 25, .offset = {0, 18}, .shadow = {0, 18} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 25, .offset = {1, 18}, .shadow = {1, 18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 25, .offset = {0, 18}, .shadow = {0, 18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 25, .offset = {1, 18}, .shadow = {1, 18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 24, .offset = {0, 6}, .shadow = {0, 6} },
-	AX_ANIM_TERMINATOR
 };
 static const ax_anim sWigglytuffAnims_2_2[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 27, .offset = {-1, -1}, .shadow = {-1, -1} },
@@ -1019,45 +380,6 @@ static const ax_anim sWigglytuffAnims_2_2[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 27, .offset = {8, 8}, .shadow = {6, 6} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sWigglytuffAnims_2_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 30, .offset = {-1, 0}, .shadow = {-1, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 30, .offset = {-2, 0}, .shadow = {-2, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 32, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 31, .offset = {4, 0}, .shadow = {4, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 32, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 31, .offset = {20, 0}, .shadow = {20, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 31, .offset = {20, 1}, .shadow = {20, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 31, .offset = {20, 0}, .shadow = {20, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 31, .offset = {20, 1}, .shadow = {20, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 30, .offset = {6, 0}, .shadow = {6, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_2_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 33, .offset = {-1, 1}, .shadow = {-1, 1} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 33, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 35, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 34, .offset = {4, -6}, .shadow = {4, -6} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 35, .offset = {11, -12}, .shadow = {11, -12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 34, .offset = {20, -23}, .shadow = {20, -23} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 34, .offset = {21, -22}, .shadow = {21, -22} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 34, .offset = {20, -23}, .shadow = {20, -23} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 34, .offset = {21, -22}, .shadow = {21, -22} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 33, .offset = {6, -6}, .shadow = {6, -6} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_2_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 36, .offset = {0, 1}, .shadow = {0, 1} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 36, .offset = {0, 2}, .shadow = {0, 2} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 38, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 37, .offset = {0, -4}, .shadow = {0, -4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 38, .offset = {0, -11}, .shadow = {0, -11} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 37, .offset = {0, -22}, .shadow = {0, -22} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 37, .offset = {1, -22}, .shadow = {1, -22} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 37, .offset = {0, -22}, .shadow = {0, -22} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 37, .offset = {1, -22}, .shadow = {1, -22} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 36, .offset = {0, -6}, .shadow = {0, -6} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sWigglytuffAnims_2_6[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 39, .offset = {1, 1}, .shadow = {1, 1} },
 	{ .frames = 4, .unkFlags = 0, .poseId = 39, .offset = {2, 2}, .shadow = {2, 2} },
@@ -1069,19 +391,6 @@ static const ax_anim sWigglytuffAnims_2_6[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 40, .offset = {-20, -23}, .shadow = {-20, -23} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 40, .offset = {-21, -22}, .shadow = {-21, -22} },
 	{ .frames = 2, .unkFlags = 0, .poseId = 39, .offset = {-6, -6}, .shadow = {-6, -6} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_2_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 42, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 42, .offset = {2, 0}, .shadow = {2, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 44, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 2, .poseId = 43, .offset = {-4, 0}, .shadow = {-4, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 44, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 43, .offset = {-20, 0}, .shadow = {-20, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 43, .offset = {-20, 1}, .shadow = {-20, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 43, .offset = {-20, 0}, .shadow = {-20, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 43, .offset = {-20, 1}, .shadow = {-20, 1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 42, .offset = {-6, 0}, .shadow = {-6, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sWigglytuffAnims_2_8[] = {
@@ -1478,46 +787,6 @@ static const ax_anim sWigglytuffAnims_6_1[] = {
 	{ .frames = 35, .unkFlags = 0, .poseId = 145, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sWigglytuffAnims_7_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 146, .offset = {0, -2}, .shadow = {0, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 146, .offset = {0, -3}, .shadow = {0, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_7_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 147, .offset = {-2, -2}, .shadow = {-2, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 147, .offset = {-3, -3}, .shadow = {-3, -3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_7_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 148, .offset = {-2, 0}, .shadow = {-2, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 148, .offset = {-3, 0}, .shadow = {-3, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_7_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 149, .offset = {-2, 2}, .shadow = {-2, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 149, .offset = {-3, 3}, .shadow = {-3, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_7_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 150, .offset = {0, 2}, .shadow = {0, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 150, .offset = {0, 3}, .shadow = {0, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_7_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 151, .offset = {2, 2}, .shadow = {2, 2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 151, .offset = {3, 3}, .shadow = {3, 3} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_7_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 152, .offset = {2, 0}, .shadow = {2, 0} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 152, .offset = {3, 0}, .shadow = {3, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_7_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 153, .offset = {2, -2}, .shadow = {2, -2} },
-	{ .frames = 8, .unkFlags = 0, .poseId = 153, .offset = {3, -3}, .shadow = {3, -3} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sWigglytuffAnims_8_1[] = {
 	{ .frames = 40, .unkFlags = 0, .poseId = 154, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 4, .unkFlags = 0, .poseId = 155, .offset = {0, -3}, .shadow = {0, 0} },
@@ -1610,42 +879,6 @@ static const ax_anim sWigglytuffAnims_9_3[] = {
 	{ .frames = 1, .unkFlags = 0, .poseId = 184, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
-static const ax_anim sWigglytuffAnims_9_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 184, .offset = {-1, -6}, .shadow = {-1, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {4, -16}, .shadow = {4, -16} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {12, -22}, .shadow = {12, -22} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 179, .offset = {19, -21}, .shadow = {19, -21} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 180, .offset = {22, -15}, .shadow = {22, -15} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {17, -4}, .shadow = {17, -4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 182, .offset = {7, -1}, .shadow = {7, -1} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 183, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_9_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 183, .offset = {-8, -4}, .shadow = {-8, -4} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 184, .offset = {-9, -12}, .shadow = {-9, -12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 185, .offset = {-7, -18}, .shadow = {-7, -18} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 178, .offset = {0, -22}, .shadow = {0, -22} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 179, .offset = {7, -18}, .shadow = {7, -18} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {9, -10}, .shadow = {9, -10} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 181, .offset = {8, -4}, .shadow = {8, -4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 182, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_9_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 180, .offset = {1, -6}, .shadow = {1, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 179, .offset = {-4, -16}, .shadow = {-4, -16} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 178, .offset = {-12, -22}, .shadow = {-12, -22} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 185, .offset = {-19, -21}, .shadow = {-19, -21} },
-	{ .frames = 2, .unkFlags = 3, .poseId = 184, .offset = {-22, -15}, .shadow = {-22, -15} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 183, .offset = {-17, -4}, .shadow = {-17, -4} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 182, .offset = {-7, -1}, .shadow = {-7, -1} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 181, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
 static const ax_anim sWigglytuffAnims_9_7[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 180, .offset = {0, 0}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 179, .offset = {-3, -5}, .shadow = {-3, -5} },
@@ -1668,158 +901,6 @@ static const ax_anim sWigglytuffAnims_9_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 181, .offset = {-3, 15}, .shadow = {-3, 15} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 180, .offset = {0, 7}, .shadow = {0, 7} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 179, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_10_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 186, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 186, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 186, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 186, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 186, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_10_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 187, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 187, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 187, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 187, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 187, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_10_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 188, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 188, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 188, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 188, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 188, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_10_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 189, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 189, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 189, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 189, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 189, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_10_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 190, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 190, .offset = {13, 0}, .shadow = {13, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 190, .offset = {-13, 0}, .shadow = {-13, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {12, 0}, .shadow = {12, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 190, .offset = {-12, 0}, .shadow = {-12, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {10, 0}, .shadow = {10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {-10, 0}, .shadow = {-10, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {6, 0}, .shadow = {6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {-6, 0}, .shadow = {-6, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 190, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_10_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 191, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 191, .offset = {13, -13}, .shadow = {13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 191, .offset = {-13, 13}, .shadow = {-13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {12, -12}, .shadow = {12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 191, .offset = {-12, 12}, .shadow = {-12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {10, -10}, .shadow = {10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {-10, 10}, .shadow = {-10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {6, -6}, .shadow = {6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {-6, 6}, .shadow = {-6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 191, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_10_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 192, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 192, .offset = {0, -13}, .shadow = {0, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 192, .offset = {0, 13}, .shadow = {0, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, -12}, .shadow = {0, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 192, .offset = {0, 12}, .shadow = {0, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, -10}, .shadow = {0, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 10}, .shadow = {0, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, -6}, .shadow = {0, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 6}, .shadow = {0, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 192, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_10_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 193, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 193, .offset = {-13, -13}, .shadow = {-13, -13} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 193, .offset = {13, 13}, .shadow = {13, 13} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-12, -12}, .shadow = {-12, -12} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 193, .offset = {12, 12}, .shadow = {12, 12} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-10, -10}, .shadow = {-10, -10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {10, 10}, .shadow = {10, 10} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {-6, -6}, .shadow = {-6, -6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {6, 6}, .shadow = {6, 6} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 193, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sWigglytuffAnims_11_1[] = {
@@ -1846,45 +927,6 @@ static const ax_anim sWigglytuffAnims_11_2[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 199, .offset = {0, -18}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 199, .offset = {0, -12}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 2, .poseId = 197, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_11_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 200, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 201, .offset = {0, -10}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 201, .offset = {0, -16}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 201, .offset = {0, -20}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 201, .offset = {0, -21}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 202, .offset = {0, -25}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 202, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 202, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 202, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 200, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_11_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 203, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 204, .offset = {0, -10}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 204, .offset = {0, -16}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 204, .offset = {0, -20}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 204, .offset = {0, -21}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 205, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 205, .offset = {0, -21}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 205, .offset = {0, -17}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 205, .offset = {0, -11}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 203, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_11_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 206, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 207, .offset = {0, -10}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 207, .offset = {0, -16}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 207, .offset = {0, -20}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 207, .offset = {0, -21}, .shadow = {0, 0} },
-	{ .frames = 4, .unkFlags = 0, .poseId = 208, .offset = {0, -23}, .shadow = {0, 0} },
-	{ .frames = 3, .unkFlags = 0, .poseId = 208, .offset = {0, -22}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 208, .offset = {0, -18}, .shadow = {0, 0} },
-	{ .frames = 1, .unkFlags = 0, .poseId = 208, .offset = {0, -12}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 206, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 static const ax_anim sWigglytuffAnims_11_6[] = {
@@ -1924,206 +966,6 @@ static const ax_anim sWigglytuffAnims_11_8[] = {
 	{ .frames = 2, .unkFlags = 0, .poseId = 217, .offset = {0, -18}, .shadow = {0, 0} },
 	{ .frames = 1, .unkFlags = 0, .poseId = 217, .offset = {0, -12}, .shadow = {0, 0} },
 	{ .frames = 2, .unkFlags = 2, .poseId = 215, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_12_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 218, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 218, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_12_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 225, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 225, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_12_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 224, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 224, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_12_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 223, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 223, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_12_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 222, .offset = {1, 0}, .shadow = {1, 0} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 222, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_12_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 221, .offset = {1, -1}, .shadow = {1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 221, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_12_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 220, .offset = {0, -1}, .shadow = {0, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 220, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_12_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 219, .offset = {-1, -1}, .shadow = {-1, -1} },
-	{ .frames = 2, .unkFlags = 1, .poseId = 219, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_13_1[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_13_2[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_13_3[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_13_4[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_13_5[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_13_6[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_13_7[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	AX_ANIM_TERMINATOR
-};
-static const ax_anim sWigglytuffAnims_13_8[] = {
-	{ .frames = 2, .unkFlags = 0, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 228, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 229, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 230, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 231, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 232, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 233, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 0, .poseId = 226, .offset = {0, 0}, .shadow = {0, 0} },
-	{ .frames = 2, .unkFlags = 2, .poseId = 227, .offset = {0, 0}, .shadow = {0, 0} },
 	AX_ANIM_TERMINATOR
 };
 
@@ -2465,125 +1307,125 @@ static const ax_pose *const sAxPosesWigglytuff[] = {
 	sWigglytuffPose22,
 	sWigglytuffPose23,
 	sWigglytuffPose24,
-	sWigglytuffPose25,
-	sWigglytuffPose26,
-	sWigglytuffPose27,
-	sWigglytuffPose28,
-	sWigglytuffPose29,
-	sWigglytuffPose30,
-	sWigglytuffPose31,
-	sWigglytuffPose32,
-	sWigglytuffPose33,
-	sWigglytuffPose34,
-	sWigglytuffPose35,
-	sWigglytuffPose36,
-	sWigglytuffPose37,
-	sWigglytuffPose38,
-	sWigglytuffPose39,
-	sWigglytuffPose40,
-	sWigglytuffPose41,
-	sWigglytuffPose42,
-	sWigglytuffPose43,
-	sWigglytuffPose44,
-	sWigglytuffPose45,
-	sWigglytuffPose46,
-	sWigglytuffPose47,
-	sWigglytuffPose48,
+	sWigglytuffPose1,
+	sWigglytuffPose2,
+	sWigglytuffPose3,
+	sWigglytuffPose4,
+	sWigglytuffPose5,
+	sWigglytuffPose6,
+	sWigglytuffPose7,
+	sWigglytuffPose8,
+	sWigglytuffPose9,
+	sWigglytuffPose10,
+	sWigglytuffPose11,
+	sWigglytuffPose12,
+	sWigglytuffPose13,
+	sWigglytuffPose14,
+	sWigglytuffPose15,
+	sWigglytuffPose16,
+	sWigglytuffPose17,
+	sWigglytuffPose18,
+	sWigglytuffPose19,
+	sWigglytuffPose20,
+	sWigglytuffPose21,
+	sWigglytuffPose22,
+	sWigglytuffPose23,
+	sWigglytuffPose24,
 	sWigglytuffPose49,
-	sWigglytuffPose50,
-	sWigglytuffPose51,
+	sWigglytuffPose2,
+	sWigglytuffPose3,
 	sWigglytuffPose52,
 	sWigglytuffPose53,
-	sWigglytuffPose54,
-	sWigglytuffPose55,
+	sWigglytuffPose5,
+	sWigglytuffPose6,
 	sWigglytuffPose56,
-	sWigglytuffPose57,
-	sWigglytuffPose58,
-	sWigglytuffPose59,
+	sWigglytuffPose7,
+	sWigglytuffPose8,
+	sWigglytuffPose9,
 	sWigglytuffPose60,
 	sWigglytuffPose61,
-	sWigglytuffPose62,
-	sWigglytuffPose63,
+	sWigglytuffPose11,
+	sWigglytuffPose12,
 	sWigglytuffPose64,
-	sWigglytuffPose65,
-	sWigglytuffPose66,
-	sWigglytuffPose67,
+	sWigglytuffPose13,
+	sWigglytuffPose14,
+	sWigglytuffPose15,
 	sWigglytuffPose68,
 	sWigglytuffPose69,
-	sWigglytuffPose70,
-	sWigglytuffPose71,
+	sWigglytuffPose17,
+	sWigglytuffPose18,
 	sWigglytuffPose72,
-	sWigglytuffPose73,
-	sWigglytuffPose74,
-	sWigglytuffPose75,
+	sWigglytuffPose19,
+	sWigglytuffPose20,
+	sWigglytuffPose21,
 	sWigglytuffPose76,
 	sWigglytuffPose77,
-	sWigglytuffPose78,
-	sWigglytuffPose79,
+	sWigglytuffPose23,
+	sWigglytuffPose24,
 	sWigglytuffPose80,
-	sWigglytuffPose81,
-	sWigglytuffPose82,
-	sWigglytuffPose83,
+	sWigglytuffPose49,
+	sWigglytuffPose2,
+	sWigglytuffPose3,
 	sWigglytuffPose84,
 	sWigglytuffPose85,
-	sWigglytuffPose86,
-	sWigglytuffPose87,
-	sWigglytuffPose88,
+	sWigglytuffPose53,
+	sWigglytuffPose5,
+	sWigglytuffPose6,
 	sWigglytuffPose89,
 	sWigglytuffPose90,
-	sWigglytuffPose91,
-	sWigglytuffPose92,
-	sWigglytuffPose93,
+	sWigglytuffPose7,
+	sWigglytuffPose8,
+	sWigglytuffPose9,
 	sWigglytuffPose94,
 	sWigglytuffPose95,
-	sWigglytuffPose96,
-	sWigglytuffPose97,
-	sWigglytuffPose98,
+	sWigglytuffPose61,
+	sWigglytuffPose11,
+	sWigglytuffPose12,
 	sWigglytuffPose99,
 	sWigglytuffPose100,
-	sWigglytuffPose101,
-	sWigglytuffPose102,
-	sWigglytuffPose103,
+	sWigglytuffPose13,
+	sWigglytuffPose14,
+	sWigglytuffPose15,
 	sWigglytuffPose104,
 	sWigglytuffPose105,
-	sWigglytuffPose106,
-	sWigglytuffPose107,
-	sWigglytuffPose108,
+	sWigglytuffPose69,
+	sWigglytuffPose17,
+	sWigglytuffPose18,
 	sWigglytuffPose109,
 	sWigglytuffPose110,
-	sWigglytuffPose111,
-	sWigglytuffPose112,
-	sWigglytuffPose113,
+	sWigglytuffPose19,
+	sWigglytuffPose20,
+	sWigglytuffPose21,
 	sWigglytuffPose114,
 	sWigglytuffPose115,
-	sWigglytuffPose116,
-	sWigglytuffPose117,
-	sWigglytuffPose118,
+	sWigglytuffPose77,
+	sWigglytuffPose23,
+	sWigglytuffPose24,
 	sWigglytuffPose119,
 	sWigglytuffPose120,
-	sWigglytuffPose121,
-	sWigglytuffPose122,
-	sWigglytuffPose123,
-	sWigglytuffPose124,
-	sWigglytuffPose125,
+	sWigglytuffPose49,
+	sWigglytuffPose85,
+	sWigglytuffPose84,
+	sWigglytuffPose53,
+	sWigglytuffPose90,
 	sWigglytuffPose126,
-	sWigglytuffPose127,
-	sWigglytuffPose128,
+	sWigglytuffPose7,
+	sWigglytuffPose95,
 	sWigglytuffPose129,
-	sWigglytuffPose130,
-	sWigglytuffPose131,
-	sWigglytuffPose132,
-	sWigglytuffPose133,
-	sWigglytuffPose134,
-	sWigglytuffPose135,
-	sWigglytuffPose136,
-	sWigglytuffPose137,
-	sWigglytuffPose138,
-	sWigglytuffPose139,
-	sWigglytuffPose140,
+	sWigglytuffPose61,
+	sWigglytuffPose100,
+	sWigglytuffPose99,
+	sWigglytuffPose13,
+	sWigglytuffPose105,
+	sWigglytuffPose104,
+	sWigglytuffPose69,
+	sWigglytuffPose110,
+	sWigglytuffPose109,
+	sWigglytuffPose19,
+	sWigglytuffPose115,
 	sWigglytuffPose141,
-	sWigglytuffPose142,
-	sWigglytuffPose143,
+	sWigglytuffPose77,
+	sWigglytuffPose120,
 	sWigglytuffPose144,
 	sWigglytuffPose145,
 	sWigglytuffPose146,
@@ -2595,86 +1437,86 @@ static const ax_pose *const sAxPosesWigglytuff[] = {
 	sWigglytuffPose152,
 	sWigglytuffPose153,
 	sWigglytuffPose154,
-	sWigglytuffPose155,
+	sWigglytuffPose49,
 	sWigglytuffPose156,
 	sWigglytuffPose157,
-	sWigglytuffPose158,
+	sWigglytuffPose53,
 	sWigglytuffPose159,
 	sWigglytuffPose160,
-	sWigglytuffPose161,
-	sWigglytuffPose162,
-	sWigglytuffPose163,
-	sWigglytuffPose164,
+	sWigglytuffPose7,
+	sWigglytuffPose8,
+	sWigglytuffPose9,
+	sWigglytuffPose61,
 	sWigglytuffPose165,
 	sWigglytuffPose166,
-	sWigglytuffPose167,
-	sWigglytuffPose168,
-	sWigglytuffPose169,
-	sWigglytuffPose170,
+	sWigglytuffPose13,
+	sWigglytuffPose14,
+	sWigglytuffPose15,
+	sWigglytuffPose69,
 	sWigglytuffPose171,
 	sWigglytuffPose172,
-	sWigglytuffPose173,
-	sWigglytuffPose174,
-	sWigglytuffPose175,
-	sWigglytuffPose176,
+	sWigglytuffPose19,
+	sWigglytuffPose20,
+	sWigglytuffPose21,
+	sWigglytuffPose77,
 	sWigglytuffPose177,
 	sWigglytuffPose178,
-	sWigglytuffPose179,
+	sWigglytuffPose52,
 	sWigglytuffPose180,
-	sWigglytuffPose181,
+	sWigglytuffPose76,
 	sWigglytuffPose182,
-	sWigglytuffPose183,
+	sWigglytuffPose68,
 	sWigglytuffPose184,
-	sWigglytuffPose185,
+	sWigglytuffPose60,
 	sWigglytuffPose186,
-	sWigglytuffPose187,
-	sWigglytuffPose188,
+	sWigglytuffPose84,
+	sWigglytuffPose126,
 	sWigglytuffPose189,
 	sWigglytuffPose190,
 	sWigglytuffPose191,
 	sWigglytuffPose192,
 	sWigglytuffPose193,
-	sWigglytuffPose194,
-	sWigglytuffPose195,
-	sWigglytuffPose196,
-	sWigglytuffPose197,
-	sWigglytuffPose198,
-	sWigglytuffPose199,
-	sWigglytuffPose200,
-	sWigglytuffPose201,
-	sWigglytuffPose202,
-	sWigglytuffPose203,
-	sWigglytuffPose204,
+	sWigglytuffPose144,
+	sWigglytuffPose49,
+	sWigglytuffPose84,
+	sWigglytuffPose85,
+	sWigglytuffPose53,
+	sWigglytuffPose126,
+	sWigglytuffPose90,
+	sWigglytuffPose7,
+	sWigglytuffPose129,
+	sWigglytuffPose95,
+	sWigglytuffPose61,
 	sWigglytuffPose205,
-	sWigglytuffPose206,
-	sWigglytuffPose207,
+	sWigglytuffPose100,
+	sWigglytuffPose13,
 	sWigglytuffPose208,
-	sWigglytuffPose209,
-	sWigglytuffPose210,
+	sWigglytuffPose105,
+	sWigglytuffPose69,
 	sWigglytuffPose211,
-	sWigglytuffPose212,
-	sWigglytuffPose213,
-	sWigglytuffPose214,
-	sWigglytuffPose215,
-	sWigglytuffPose216,
-	sWigglytuffPose217,
-	sWigglytuffPose218,
-	sWigglytuffPose219,
-	sWigglytuffPose220,
-	sWigglytuffPose221,
+	sWigglytuffPose110,
+	sWigglytuffPose19,
+	sWigglytuffPose141,
+	sWigglytuffPose115,
+	sWigglytuffPose77,
+	sWigglytuffPose144,
+	sWigglytuffPose120,
+	sWigglytuffPose85,
+	sWigglytuffPose120,
+	sWigglytuffPose115,
 	sWigglytuffPose222,
-	sWigglytuffPose223,
+	sWigglytuffPose105,
 	sWigglytuffPose224,
-	sWigglytuffPose225,
-	sWigglytuffPose226,
-	sWigglytuffPose227,
-	sWigglytuffPose228,
-	sWigglytuffPose229,
-	sWigglytuffPose230,
-	sWigglytuffPose231,
-	sWigglytuffPose232,
-	sWigglytuffPose233,
-	sWigglytuffPose234,
+	sWigglytuffPose95,
+	sWigglytuffPose90,
+	sWigglytuffPose49,
+	sWigglytuffPose77,
+	sWigglytuffPose19,
+	sWigglytuffPose69,
+	sWigglytuffPose13,
+	sWigglytuffPose61,
+	sWigglytuffPose7,
+	sWigglytuffPose53,
 };
 
 static const struct PositionSets sAxPositionsWigglytuff[] = {
@@ -2915,24 +1757,24 @@ static const struct PositionSets sAxPositionsWigglytuff[] = {
 };
 
 static const ax_anim *const sWigglytuffAnimTable1[] = {
-	sWigglytuffAnims_1_1,
-	sWigglytuffAnims_1_2,
-	sWigglytuffAnims_1_3,
-	sWigglytuffAnims_1_4,
-	sWigglytuffAnims_1_5,
-	sWigglytuffAnims_1_6,
-	sWigglytuffAnims_1_7,
-	sWigglytuffAnims_1_8,
+	gAxSharedAnim_02602,
+	gAxSharedAnim_02678,
+	gAxSharedAnim_02687,
+	gAxSharedAnim_02696,
+	gAxSharedAnim_02614,
+	gAxSharedAnim_02636,
+	gAxSharedAnim_02649,
+	gAxSharedAnim_02658,
 };
 
 static const ax_anim *const sWigglytuffAnimTable2[] = {
-	sWigglytuffAnims_2_1,
+	gAxSharedAnim_01631,
 	sWigglytuffAnims_2_2,
-	sWigglytuffAnims_2_3,
-	sWigglytuffAnims_2_4,
-	sWigglytuffAnims_2_5,
+	gAxSharedAnim_01819,
+	gAxSharedAnim_01852,
+	gAxSharedAnim_01890,
 	sWigglytuffAnims_2_6,
-	sWigglytuffAnims_2_7,
+	gAxSharedAnim_01931,
 	sWigglytuffAnims_2_8,
 };
 
@@ -2981,14 +1823,14 @@ static const ax_anim *const sWigglytuffAnimTable6[] = {
 };
 
 static const ax_anim *const sWigglytuffAnimTable7[] = {
-	sWigglytuffAnims_7_1,
-	sWigglytuffAnims_7_2,
-	sWigglytuffAnims_7_3,
-	sWigglytuffAnims_7_4,
-	sWigglytuffAnims_7_5,
-	sWigglytuffAnims_7_6,
-	sWigglytuffAnims_7_7,
-	sWigglytuffAnims_7_8,
+	gAxSharedAnim_00531,
+	gAxSharedAnim_00543,
+	gAxSharedAnim_00551,
+	gAxSharedAnim_00559,
+	gAxSharedAnim_00577,
+	gAxSharedAnim_00587,
+	gAxSharedAnim_00596,
+	gAxSharedAnim_00602,
 };
 
 static const ax_anim *const sWigglytuffAnimTable8[] = {
@@ -3006,55 +1848,55 @@ static const ax_anim *const sWigglytuffAnimTable9[] = {
 	sWigglytuffAnims_9_1,
 	sWigglytuffAnims_9_2,
 	sWigglytuffAnims_9_3,
-	sWigglytuffAnims_9_4,
-	sWigglytuffAnims_9_5,
-	sWigglytuffAnims_9_6,
+	gAxSharedAnim_00961,
+	gAxSharedAnim_00949,
+	gAxSharedAnim_00936,
 	sWigglytuffAnims_9_7,
 	sWigglytuffAnims_9_8,
 };
 
 static const ax_anim *const sWigglytuffAnimTable10[] = {
-	sWigglytuffAnims_10_1,
-	sWigglytuffAnims_10_2,
-	sWigglytuffAnims_10_3,
-	sWigglytuffAnims_10_4,
-	sWigglytuffAnims_10_5,
-	sWigglytuffAnims_10_6,
-	sWigglytuffAnims_10_7,
-	sWigglytuffAnims_10_8,
+	gAxSharedAnim_01016,
+	gAxSharedAnim_01027,
+	gAxSharedAnim_01046,
+	gAxSharedAnim_01061,
+	gAxSharedAnim_01078,
+	gAxSharedAnim_01092,
+	gAxSharedAnim_01110,
+	gAxSharedAnim_01124,
 };
 
 static const ax_anim *const sWigglytuffAnimTable11[] = {
 	sWigglytuffAnims_11_1,
 	sWigglytuffAnims_11_2,
-	sWigglytuffAnims_11_3,
-	sWigglytuffAnims_11_4,
-	sWigglytuffAnims_11_5,
+	gAxSharedAnim_01215,
+	gAxSharedAnim_01250,
+	gAxSharedAnim_01284,
 	sWigglytuffAnims_11_6,
 	sWigglytuffAnims_11_7,
 	sWigglytuffAnims_11_8,
 };
 
 static const ax_anim *const sWigglytuffAnimTable12[] = {
-	sWigglytuffAnims_12_1,
-	sWigglytuffAnims_12_2,
-	sWigglytuffAnims_12_3,
-	sWigglytuffAnims_12_4,
-	sWigglytuffAnims_12_5,
-	sWigglytuffAnims_12_6,
-	sWigglytuffAnims_12_7,
-	sWigglytuffAnims_12_8,
+	gAxSharedAnim_01423,
+	gAxSharedAnim_01467,
+	gAxSharedAnim_01458,
+	gAxSharedAnim_01449,
+	gAxSharedAnim_01448,
+	gAxSharedAnim_01444,
+	gAxSharedAnim_01432,
+	gAxSharedAnim_01424,
 };
 
 static const ax_anim *const sWigglytuffAnimTable13[] = {
-	sWigglytuffAnims_13_1,
-	sWigglytuffAnims_13_2,
-	sWigglytuffAnims_13_3,
-	sWigglytuffAnims_13_4,
-	sWigglytuffAnims_13_5,
-	sWigglytuffAnims_13_6,
-	sWigglytuffAnims_13_7,
-	sWigglytuffAnims_13_8,
+	gAxSharedAnim_01471,
+	gAxSharedAnim_01516,
+	gAxSharedAnim_01511,
+	gAxSharedAnim_01504,
+	gAxSharedAnim_01497,
+	gAxSharedAnim_01490,
+	gAxSharedAnim_01486,
+	gAxSharedAnim_01478,
 };
 
 static const ax_anim *const *const sAxAnimationsWigglytuff[] = {

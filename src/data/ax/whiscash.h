@@ -1,3 +1,4 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
 static const axmain sAxMainWhiscash;
 const SiroArchive gAxWhiscash = {"SIRO", &sAxMainWhiscash};
 
@@ -97,36 +98,12 @@ static const ax_pose sWhiscashPose24[] = {
 	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose25[] = {
-	AX_POSE(0, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose26[] = {
-	AX_POSE(1, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose27[] = {
-	AX_POSE(2, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose28[] = {
 	AX_POSE(15, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose29[] = {
 	AX_POSE(16, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose30[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose31[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose32[] = {
-	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose33[] = {
@@ -137,36 +114,12 @@ static const ax_pose sWhiscashPose34[] = {
 	AX_POSE(18, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose35[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose36[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose37[] = {
-	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose38[] = {
 	AX_POSE(19, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose39[] = {
 	AX_POSE(20, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose40[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose41[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose42[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose43[] = {
@@ -177,36 +130,12 @@ static const ax_pose sWhiscashPose44[] = {
 	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose45[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose46[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose47[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose48[] = {
 	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose49[] = {
 	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose50[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose51[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose52[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose53[] = {
@@ -217,36 +146,12 @@ static const ax_pose sWhiscashPose54[] = {
 	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose55[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose56[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose57[] = {
-	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose58[] = {
 	AX_POSE(19, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose59[] = {
 	AX_POSE(20, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose60[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose61[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose62[] = {
-	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose63[] = {
@@ -257,170 +162,6 @@ static const ax_pose sWhiscashPose64[] = {
 	AX_POSE(18, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose65[] = {
-	AX_POSE(0, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose66[] = {
-	AX_POSE(1, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose67[] = {
-	AX_POSE(2, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose68[] = {
-	AX_POSE(15, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose69[] = {
-	AX_POSE(16, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose70[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose71[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose72[] = {
-	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose73[] = {
-	AX_POSE(17, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose74[] = {
-	AX_POSE(18, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose75[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose76[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose77[] = {
-	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose78[] = {
-	AX_POSE(19, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose79[] = {
-	AX_POSE(20, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose80[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose81[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose82[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose83[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose84[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose85[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose86[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose87[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose88[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose89[] = {
-	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose90[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose91[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose92[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose93[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose94[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose95[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose96[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose97[] = {
-	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose98[] = {
-	AX_POSE(19, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose99[] = {
-	AX_POSE(20, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose100[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose101[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose102[] = {
-	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose103[] = {
-	AX_POSE(17, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose104[] = {
-	AX_POSE(18, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose105[] = {
-	AX_POSE(2, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose106[] = {
 	AX_POSE(15, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
@@ -429,20 +170,8 @@ static const ax_pose sWhiscashPose107[] = {
 	AX_POSE(25, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose108[] = {
-	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose109[] = {
-	AX_POSE(17, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose110[] = {
 	AX_POSE(26, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose111[] = {
-	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose112[] = {
@@ -453,52 +182,16 @@ static const ax_pose sWhiscashPose113[] = {
 	AX_POSE(27, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose114[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose115[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose116[] = {
 	AX_POSE(28, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose117[] = {
-	AX_POSE(22, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose118[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose119[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose120[] = {
 	AX_POSE(29, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose121[] = {
-	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose122[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose123[] = {
-	AX_POSE(21, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose124[] = {
 	AX_POSE(28, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose125[] = {
-	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose126[] = {
@@ -513,44 +206,12 @@ static const ax_pose sWhiscashPose128[] = {
 	AX_POSE(20, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose129[] = {
-	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose130[] = {
-	AX_POSE(17, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose131[] = {
 	AX_POSE(26, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose132[] = {
-	AX_POSE(1, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose133[] = {
-	AX_POSE(15, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose134[] = {
 	AX_POSE(16, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose135[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose136[] = {
-	AX_POSE(17, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose137[] = {
-	AX_POSE(18, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose138[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose139[] = {
@@ -561,32 +222,12 @@ static const ax_pose sWhiscashPose140[] = {
 	AX_POSE(20, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose141[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose142[] = {
 	AX_POSE(21, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose143[] = {
 	AX_POSE(22, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose144[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose145[] = {
-	AX_POSE(23, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose146[] = {
-	AX_POSE(24, OAM1(231, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose147[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose148[] = {
@@ -597,28 +238,12 @@ static const ax_pose sWhiscashPose149[] = {
 	AX_POSE(22, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose150[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose151[] = {
 	AX_POSE(19, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose152[] = {
 	AX_POSE(20, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose153[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose154[] = {
-	AX_POSE(17, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose155[] = {
-	AX_POSE(18, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose156[] = {
@@ -661,106 +286,6 @@ static const ax_pose sWhiscashPose165[] = {
 	AX_POSE(33, OAM1(225, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose166[] = {
-	AX_POSE(0, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose167[] = {
-	AX_POSE(1, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose168[] = {
-	AX_POSE(2, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose169[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose170[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose171[] = {
-	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose172[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose173[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose174[] = {
-	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose175[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose176[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose177[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose178[] = {
-	AX_POSE(12, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose179[] = {
-	AX_POSE(13, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose180[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose181[] = {
-	AX_POSE(9, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose182[] = {
-	AX_POSE(10, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose183[] = {
-	AX_POSE(11, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose184[] = {
-	AX_POSE(6, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose185[] = {
-	AX_POSE(7, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose186[] = {
-	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose187[] = {
-	AX_POSE(3, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose188[] = {
-	AX_POSE(4, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose189[] = {
-	AX_POSE(5, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose190[] = {
-	AX_POSE(16, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose191[] = {
 	AX_POSE(18, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(242, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
@@ -787,10 +312,6 @@ static const ax_pose sWhiscashPose196[] = {
 };
 static const ax_pose sWhiscashPose197[] = {
 	AX_POSE(18, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose198[] = {
-	AX_POSE(25, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose199[] = {
@@ -821,18 +342,6 @@ static const ax_pose sWhiscashPose205[] = {
 	AX_POSE(26, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose206[] = {
-	AX_POSE(2, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose207[] = {
-	AX_POSE(25, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose208[] = {
-	AX_POSE(15, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose209[] = {
 	AX_POSE(5, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
@@ -849,10 +358,6 @@ static const ax_pose sWhiscashPose212[] = {
 	AX_POSE(8, OAM1(232, ST_OAM_SQUARE     , 1), OAM2(238, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose213[] = {
-	AX_POSE(27, OAM1(228, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose214[] = {
 	AX_POSE(19, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(237, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
@@ -867,14 +372,6 @@ static const ax_pose sWhiscashPose216[] = {
 };
 static const ax_pose sWhiscashPose217[] = {
 	AX_POSE(21, OAM1(229, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose218[] = {
-	AX_POSE(14, OAM1(234, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose219[] = {
-	AX_POSE(29, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose220[] = {
@@ -917,10 +414,6 @@ static const ax_pose sWhiscashPose229[] = {
 	AX_POSE(17, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
-static const ax_pose sWhiscashPose230[] = {
-	AX_POSE(16, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
 static const ax_pose sWhiscashPose231[] = {
 	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(241, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
@@ -947,10 +440,6 @@ static const ax_pose sWhiscashPose236[] = {
 };
 static const ax_pose sWhiscashPose237[] = {
 	AX_POSE(18, OAM1(235, ST_OAM_SQUARE     , 1), OAM2(239, ST_OAM_SIZE_2, FLIP(1, 0), 0, 0), OAM3(0, 3, 9)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sWhiscashPose238[] = {
-	AX_POSE(0, OAM1(233, ST_OAM_SQUARE     , 1), OAM2(244, ST_OAM_SIZE_2, FLIP(0, 0), 0, 0), OAM3(0, 3, 9)),
 	AX_POSE_TERMINATOR
 };
 static const ax_pose sWhiscashPose239[] = {
@@ -2465,137 +1954,137 @@ static const ax_pose *const sAxPosesWhiscash[] = {
 	sWhiscashPose22,
 	sWhiscashPose23,
 	sWhiscashPose24,
-	sWhiscashPose25,
-	sWhiscashPose26,
-	sWhiscashPose27,
+	sWhiscashPose1,
+	sWhiscashPose2,
+	sWhiscashPose3,
 	sWhiscashPose28,
 	sWhiscashPose29,
-	sWhiscashPose30,
-	sWhiscashPose31,
-	sWhiscashPose32,
+	sWhiscashPose4,
+	sWhiscashPose5,
+	sWhiscashPose6,
 	sWhiscashPose33,
 	sWhiscashPose34,
-	sWhiscashPose35,
-	sWhiscashPose36,
-	sWhiscashPose37,
+	sWhiscashPose7,
+	sWhiscashPose8,
+	sWhiscashPose9,
 	sWhiscashPose38,
 	sWhiscashPose39,
-	sWhiscashPose40,
-	sWhiscashPose41,
-	sWhiscashPose42,
+	sWhiscashPose10,
+	sWhiscashPose11,
+	sWhiscashPose12,
 	sWhiscashPose43,
 	sWhiscashPose44,
-	sWhiscashPose45,
-	sWhiscashPose46,
-	sWhiscashPose47,
+	sWhiscashPose13,
+	sWhiscashPose14,
+	sWhiscashPose15,
 	sWhiscashPose48,
 	sWhiscashPose49,
-	sWhiscashPose50,
-	sWhiscashPose51,
-	sWhiscashPose52,
+	sWhiscashPose16,
+	sWhiscashPose17,
+	sWhiscashPose18,
 	sWhiscashPose53,
 	sWhiscashPose54,
-	sWhiscashPose55,
-	sWhiscashPose56,
-	sWhiscashPose57,
+	sWhiscashPose19,
+	sWhiscashPose20,
+	sWhiscashPose21,
 	sWhiscashPose58,
 	sWhiscashPose59,
-	sWhiscashPose60,
-	sWhiscashPose61,
-	sWhiscashPose62,
+	sWhiscashPose22,
+	sWhiscashPose23,
+	sWhiscashPose24,
 	sWhiscashPose63,
 	sWhiscashPose64,
-	sWhiscashPose65,
-	sWhiscashPose66,
-	sWhiscashPose67,
-	sWhiscashPose68,
-	sWhiscashPose69,
-	sWhiscashPose70,
-	sWhiscashPose71,
-	sWhiscashPose72,
-	sWhiscashPose73,
-	sWhiscashPose74,
-	sWhiscashPose75,
-	sWhiscashPose76,
-	sWhiscashPose77,
-	sWhiscashPose78,
-	sWhiscashPose79,
-	sWhiscashPose80,
-	sWhiscashPose81,
-	sWhiscashPose82,
-	sWhiscashPose83,
-	sWhiscashPose84,
-	sWhiscashPose85,
-	sWhiscashPose86,
-	sWhiscashPose87,
-	sWhiscashPose88,
-	sWhiscashPose89,
-	sWhiscashPose90,
-	sWhiscashPose91,
-	sWhiscashPose92,
-	sWhiscashPose93,
-	sWhiscashPose94,
-	sWhiscashPose95,
-	sWhiscashPose96,
-	sWhiscashPose97,
-	sWhiscashPose98,
-	sWhiscashPose99,
-	sWhiscashPose100,
-	sWhiscashPose101,
-	sWhiscashPose102,
-	sWhiscashPose103,
-	sWhiscashPose104,
-	sWhiscashPose105,
+	sWhiscashPose1,
+	sWhiscashPose2,
+	sWhiscashPose3,
+	sWhiscashPose28,
+	sWhiscashPose29,
+	sWhiscashPose4,
+	sWhiscashPose5,
+	sWhiscashPose6,
+	sWhiscashPose33,
+	sWhiscashPose34,
+	sWhiscashPose7,
+	sWhiscashPose8,
+	sWhiscashPose9,
+	sWhiscashPose38,
+	sWhiscashPose39,
+	sWhiscashPose10,
+	sWhiscashPose11,
+	sWhiscashPose12,
+	sWhiscashPose43,
+	sWhiscashPose44,
+	sWhiscashPose13,
+	sWhiscashPose14,
+	sWhiscashPose15,
+	sWhiscashPose48,
+	sWhiscashPose49,
+	sWhiscashPose16,
+	sWhiscashPose17,
+	sWhiscashPose18,
+	sWhiscashPose53,
+	sWhiscashPose54,
+	sWhiscashPose19,
+	sWhiscashPose20,
+	sWhiscashPose21,
+	sWhiscashPose58,
+	sWhiscashPose59,
+	sWhiscashPose22,
+	sWhiscashPose23,
+	sWhiscashPose24,
+	sWhiscashPose63,
+	sWhiscashPose64,
+	sWhiscashPose3,
 	sWhiscashPose106,
 	sWhiscashPose107,
-	sWhiscashPose108,
-	sWhiscashPose109,
+	sWhiscashPose6,
+	sWhiscashPose33,
 	sWhiscashPose110,
-	sWhiscashPose111,
+	sWhiscashPose9,
 	sWhiscashPose112,
 	sWhiscashPose113,
-	sWhiscashPose114,
-	sWhiscashPose115,
+	sWhiscashPose12,
+	sWhiscashPose43,
 	sWhiscashPose116,
-	sWhiscashPose117,
-	sWhiscashPose118,
-	sWhiscashPose119,
+	sWhiscashPose44,
+	sWhiscashPose15,
+	sWhiscashPose48,
 	sWhiscashPose120,
-	sWhiscashPose121,
-	sWhiscashPose122,
-	sWhiscashPose123,
+	sWhiscashPose49,
+	sWhiscashPose18,
+	sWhiscashPose53,
 	sWhiscashPose124,
-	sWhiscashPose125,
+	sWhiscashPose21,
 	sWhiscashPose126,
 	sWhiscashPose127,
 	sWhiscashPose128,
-	sWhiscashPose129,
-	sWhiscashPose130,
+	sWhiscashPose24,
+	sWhiscashPose63,
 	sWhiscashPose131,
-	sWhiscashPose132,
-	sWhiscashPose133,
+	sWhiscashPose2,
+	sWhiscashPose28,
 	sWhiscashPose134,
-	sWhiscashPose135,
-	sWhiscashPose136,
-	sWhiscashPose137,
-	sWhiscashPose138,
+	sWhiscashPose5,
+	sWhiscashPose33,
+	sWhiscashPose34,
+	sWhiscashPose8,
 	sWhiscashPose139,
 	sWhiscashPose140,
-	sWhiscashPose141,
+	sWhiscashPose11,
 	sWhiscashPose142,
 	sWhiscashPose143,
-	sWhiscashPose144,
-	sWhiscashPose145,
-	sWhiscashPose146,
-	sWhiscashPose147,
+	sWhiscashPose14,
+	sWhiscashPose48,
+	sWhiscashPose49,
+	sWhiscashPose17,
 	sWhiscashPose148,
 	sWhiscashPose149,
-	sWhiscashPose150,
+	sWhiscashPose20,
 	sWhiscashPose151,
 	sWhiscashPose152,
-	sWhiscashPose153,
-	sWhiscashPose154,
-	sWhiscashPose155,
+	sWhiscashPose23,
+	sWhiscashPose63,
+	sWhiscashPose64,
 	sWhiscashPose156,
 	sWhiscashPose157,
 	sWhiscashPose158,
@@ -2606,31 +2095,31 @@ static const ax_pose *const sAxPosesWhiscash[] = {
 	sWhiscashPose163,
 	sWhiscashPose164,
 	sWhiscashPose165,
-	sWhiscashPose166,
-	sWhiscashPose167,
-	sWhiscashPose168,
-	sWhiscashPose169,
-	sWhiscashPose170,
-	sWhiscashPose171,
-	sWhiscashPose172,
-	sWhiscashPose173,
-	sWhiscashPose174,
-	sWhiscashPose175,
-	sWhiscashPose176,
-	sWhiscashPose177,
-	sWhiscashPose178,
-	sWhiscashPose179,
-	sWhiscashPose180,
-	sWhiscashPose181,
-	sWhiscashPose182,
-	sWhiscashPose183,
-	sWhiscashPose184,
-	sWhiscashPose185,
-	sWhiscashPose186,
-	sWhiscashPose187,
-	sWhiscashPose188,
-	sWhiscashPose189,
-	sWhiscashPose190,
+	sWhiscashPose1,
+	sWhiscashPose2,
+	sWhiscashPose3,
+	sWhiscashPose4,
+	sWhiscashPose5,
+	sWhiscashPose6,
+	sWhiscashPose7,
+	sWhiscashPose8,
+	sWhiscashPose9,
+	sWhiscashPose10,
+	sWhiscashPose11,
+	sWhiscashPose12,
+	sWhiscashPose13,
+	sWhiscashPose14,
+	sWhiscashPose15,
+	sWhiscashPose16,
+	sWhiscashPose17,
+	sWhiscashPose18,
+	sWhiscashPose19,
+	sWhiscashPose20,
+	sWhiscashPose21,
+	sWhiscashPose22,
+	sWhiscashPose23,
+	sWhiscashPose24,
+	sWhiscashPose134,
 	sWhiscashPose191,
 	sWhiscashPose192,
 	sWhiscashPose193,
@@ -2638,7 +2127,7 @@ static const ax_pose *const sAxPosesWhiscash[] = {
 	sWhiscashPose195,
 	sWhiscashPose196,
 	sWhiscashPose197,
-	sWhiscashPose198,
+	sWhiscashPose107,
 	sWhiscashPose199,
 	sWhiscashPose200,
 	sWhiscashPose201,
@@ -2646,20 +2135,20 @@ static const ax_pose *const sAxPosesWhiscash[] = {
 	sWhiscashPose203,
 	sWhiscashPose204,
 	sWhiscashPose205,
-	sWhiscashPose206,
-	sWhiscashPose207,
-	sWhiscashPose208,
+	sWhiscashPose3,
+	sWhiscashPose107,
+	sWhiscashPose106,
 	sWhiscashPose209,
 	sWhiscashPose210,
 	sWhiscashPose211,
 	sWhiscashPose212,
-	sWhiscashPose213,
+	sWhiscashPose200,
 	sWhiscashPose214,
 	sWhiscashPose215,
 	sWhiscashPose216,
 	sWhiscashPose217,
-	sWhiscashPose218,
-	sWhiscashPose219,
+	sWhiscashPose15,
+	sWhiscashPose202,
 	sWhiscashPose220,
 	sWhiscashPose221,
 	sWhiscashPose222,
@@ -2670,7 +2159,7 @@ static const ax_pose *const sAxPosesWhiscash[] = {
 	sWhiscashPose227,
 	sWhiscashPose228,
 	sWhiscashPose229,
-	sWhiscashPose230,
+	sWhiscashPose134,
 	sWhiscashPose231,
 	sWhiscashPose232,
 	sWhiscashPose233,
@@ -2678,7 +2167,7 @@ static const ax_pose *const sAxPosesWhiscash[] = {
 	sWhiscashPose235,
 	sWhiscashPose236,
 	sWhiscashPose237,
-	sWhiscashPose238,
+	sWhiscashPose1,
 	sWhiscashPose239,
 	sWhiscashPose240,
 	sWhiscashPose241,

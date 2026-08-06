@@ -211,7 +211,7 @@ endif
 ALL_BUILDS := red
 
 # Available targets
-.PHONY: all modern clean compare tidy ground-compress ax-compress title-bg-convert libagbsyscall tools clean-tools FORCE $(TOOLDIRS)
+.PHONY: all modern clean compare tidy ground-compress ax-compress ax-dedupe title-bg-convert libagbsyscall tools clean-tools FORCE $(TOOLDIRS)
 
 # Pretend rules that are actually flags defer to `make all`
 modern: all
@@ -261,6 +261,11 @@ ground-compress: tools/gbagfx
 AX_TILES_STAMP := $(BUILD_DIR)/ax_tiles.stamp
 
 ax-compress: $(AX_TILES_STAMP)
+
+# Alias duplicate AX pose/anim arrays (within + cross-species shared anims).
+# Safe to re-run; no-op when already deduped. See SESSION_HISTORY.md.
+ax-dedupe:
+	python3 dedupe_ax_tables.py --shared-anims
 
 FORCE: ;
 

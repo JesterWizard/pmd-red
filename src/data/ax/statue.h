@@ -1,55 +1,8 @@
+/* ax-table-deduped: duplicate pose/anim arrays aliased */
 static const axmain sAxMainStatue;
 const SiroArchive gAxStatue = {"SIRO", &sAxMainStatue};
 
 static const ax_pose sStatuePose1[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose2[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose3[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose4[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose5[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose6[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose7[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose8[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose9[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose10[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose11[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose12[] = {
-	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
-	AX_POSE_TERMINATOR
-};
-static const ax_pose sStatuePose13[] = {
 	AX_POSE(0, OAM1(230, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
 	AX_POSE_TERMINATOR
 };
@@ -114,18 +67,18 @@ static const ax_sprite sStatueSprites1[] = {
 
 static const ax_pose *const sAxPosesStatue[] = {
 	sStatuePose1,
-	sStatuePose2,
-	sStatuePose3,
-	sStatuePose4,
-	sStatuePose5,
-	sStatuePose6,
-	sStatuePose7,
-	sStatuePose8,
-	sStatuePose9,
-	sStatuePose10,
-	sStatuePose11,
-	sStatuePose12,
-	sStatuePose13,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
+	sStatuePose1,
 };
 
 static const struct PositionSets sAxPositionsStatue[] = {
