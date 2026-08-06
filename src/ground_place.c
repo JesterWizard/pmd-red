@@ -39,6 +39,7 @@ static const u8 *const sGroundPlaceNames[] = {
     [GROUND_PLACE_SKY_TOWER] =                  _("Sky Tower"),
     [GROUND_PLACE_SKY_TOWER_MID] =              _("Sky Tower Mid"),
     [GROUND_PLACE_WESTERN_CAVE] =               _("Western Cave"),
+    [GROUND_PLACE_SPINDA_CAFE] =                _("Spinda's Café"),
     [GROUND_PLACE_DIRECTION] =                  _("{COLOR YELLOW_C}direction{RESET}"),
     [GROUND_PLACE_NEW_GAME] =                   _("New Game"),
     [GROUND_PLACE_SCENE] =                      _("{COLOR YELLOW_C}scene{RESET}"),

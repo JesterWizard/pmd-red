@@ -150,11 +150,15 @@ static const struct ScriptCommand s_gs2_g0_s0_station_sref_script[] = { /* 0x817
     CJUMP_VAR(GROUND_GETOUT),
     COND_EQUAL(1, /* to label */ 28),
     COND_EQUAL(8, /* to label */ 29),
+    COND_EQUAL(229, /* to label */ 35),
   LABEL(28), /* = 0x1c */
     SELECT_LIVES(0, 1),
     JUMP_LABEL(30),
   LABEL(29), /* = 0x1d */
     SELECT_LIVES(0, 2),
+    JUMP_LABEL(30),
+  LABEL(35), /* = 0x23 */
+    SELECT_LIVES(0, 3),
     JUMP_LABEL(30),
   LABEL(30), /* = 0x1e */
     BGM_SWITCH(MUS_FILE_SELECT),
@@ -2672,32 +2676,27 @@ static const struct ScriptCommand s_gs2_g30_s0_obj0_dlg2[] = { /* 0x8188748 */
     RET,
 };
 
-/* Spinda's Café (Whiscash Pond) */
-static const struct ScriptCommand s_gs2_g31_s0_lives0_dlg2[] = {
+/* Spinda's Café stairs entrance (ornament kind 67) + warp */
+static const struct ScriptCommand s_gs2_g31_s0_evt0_sref_script[] = {
     DEBUGINFO_O(2675),
-    SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    WAIT(1),
-    SPECIAL_TEXT(SPECIAL_TEXT_SPINDA_JUICE_BAR, 0, 0),
-    JUMP_SCRIPT(END_TALK),
+    { 0x01, 0x00, -0x0001,  0x000000e5,  0x00000000, NULL }, /* MAP_SPINDA_CAFE = 229 */
+    HALT,
 };
 
-static const struct ScriptCommand s_gs2_g31_s0_lives1_dlg2[] = {
-    DEBUGINFO_O(2685),
+static const ScriptRef s_gs2_g31_s0_evt0_sref = { GETOUT_NORMAL, SCRIPT_TYPE_02, NULL, s_gs2_g31_s0_evt0_sref_script };
+
+static const struct ScriptCommand s_gs2_g0_s3_lives0_dlg0[] = {
+    DEBUGINFO_O(2686),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    WAIT(1),
-    SPECIAL_TEXT(SPECIAL_TEXT_RECYCLE_SHOP, 0, 0),
-    JUMP_SCRIPT(END_TALK),
+    CALL_SCRIPT(WAIT_START_FUNC),
+    RET,
 };
 
-static const struct ScriptCommand s_gs2_g31_s0_lives2_dlg2[] = {
-    DEBUGINFO_O(2695),
+static const struct ScriptCommand s_gs2_g0_s3_lives1_dlg0[] = {
+    DEBUGINFO_O(2693),
     SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    WAIT(1),
-    MSG_NPC(1, _(" Wobbuffet!")),
-    JUMP_SCRIPT(END_TALK),
+    CALL_SCRIPT(WAIT_START_FUNC),
+    RET,
 };
 
 static const struct GroundLivesData s_gs2_g0_s1_lives[] = { /* 0x8188778 */
@@ -2715,6 +2714,16 @@ static const struct GroundLivesData s_gs2_g0_s2_lives[] = { /* 0x81887a8 */
     } },
     /*  1 */ {   4,   0,   0,   0, {  28,  25, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs2_g0_s2_lives1_dlg0,
+    } },
+};
+
+/* Spawn when leaving Spinda's Café (just south of stairs) */
+static const struct GroundLivesData s_gs2_g0_s3_lives[] = {
+    /*  0 */ {   0,   0,   0,   0, {  30,  48, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs2_g0_s3_lives0_dlg0,
+    } },
+    /*  1 */ {   4,   0,   0,   0, {  30,  50, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs2_g0_s3_lives1_dlg0,
     } },
 };
 
@@ -3081,17 +3090,9 @@ static const struct GroundLivesData s_gs2_g30_s0_lives[] = { /* 0x8188ee0 */
     } },
 };
 
-/* Café NPCs: Spinda (115), Wynaut (109), Wobbuffet (110) — mid grass, face south */
-static const struct GroundLivesData s_gs2_g31_s0_lives[] = {
-    /*  0 */ { 115,   0,   0,   0, {  30,  50, 0, CPOS_HALFTILE }, {
-        [2] = s_gs2_g31_s0_lives0_dlg2,
-    } },
-    /*  1 */ { 109,   0,   0,   0, {  34,  50, 0, CPOS_HALFTILE }, {
-        [2] = s_gs2_g31_s0_lives1_dlg2,
-    } },
-    /*  2 */ { 110,   0,   0,   0, {  38,  50, 0, CPOS_HALFTILE }, {
-        [2] = s_gs2_g31_s0_lives2_dlg2,
-    } },
+/* Café NPCs moved indoors — group 31 is stairs ornament + warp only */
+static const struct GroundObjectData s_gs2_g31_s0_objs[] = {
+    /*  0 */ {  67,   0,   2,   2, {  30,  46, CPOS_HALFTILE, CPOS_HALFTILE }, {} },
 };
 
 static const struct GroundObjectData s_gs2_g1_s0_objs[] = { /* 0x8188f58 */
@@ -3244,6 +3245,10 @@ static const struct GroundEventData s_gs2_g0_s2_evts[] = { /* 0x8189180 */
     /*  0 */ {   3,   3,   0,   0, {  27,  22, 0, 0 }, &s_gs2_g0_s2_evt0_sref },
 };
 
+static const struct GroundEventData s_gs2_g31_s0_evts[] = {
+    /*  0 */ {   3,   3,   0,   0, {  29,  45, 0, 0 }, &s_gs2_g31_s0_evt0_sref },
+};
+
 static const struct GroundEventData s_gs2_g5_s0_evts[] = { /* 0x818918c */
     /*  0 */ {   9,   5,   0,   0, {  14,  41, 0, 0 }, &s_gs2_g5_s0_evt0_sref },
 };
@@ -3287,6 +3292,7 @@ static const struct GroundScriptSector s_gs2_g0_sectors[] = { /* 0x8189214 */
     { 0,NULL, 0,NULL, 0,NULL, LPARRAY(s_gs2_g0_s0_evts), 1,&sStationScripts[0], },
     { LPARRAY(s_gs2_g0_s1_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
     { LPARRAY(s_gs2_g0_s2_lives), 0,NULL, 0,NULL, LPARRAY(s_gs2_g0_s2_evts), 0,NULL, },
+    { LPARRAY(s_gs2_g0_s3_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
 };
 
 static const struct GroundScriptSector s_gs2_g1_sectors[] = { /* 0x818928c */
@@ -3412,7 +3418,7 @@ static const struct GroundScriptSector s_gs2_g30_sectors[] = { /* 0x8189764 */
 };
 
 static const struct GroundScriptSector s_gs2_g31_sectors[] = {
-    { LPARRAY(s_gs2_g31_s0_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { 0,NULL, LPARRAY(s_gs2_g31_s0_objs), 0,NULL, LPARRAY(s_gs2_g31_s0_evts), 0,NULL, },
 };
 
 static const struct GroundScriptGroup s_gs2_groups[] = { /* 0x818978c */

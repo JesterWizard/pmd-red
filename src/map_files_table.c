@@ -1473,4 +1473,10 @@ const struct MapFilesStruct gMapFilesTable[MAP_FILE_ID_COUNT] = {
         .bmaFileName = "W06m",
         .bpaFileNames = {NULL, NULL, NULL, NULL},
     },
+    [MAP_FILE_ID_SPINDA_CAFE] = {
+        .bplFileName = "T01P08",
+        .bpcFileName = "T01P08c",
+        .bmaFileName = "T01P08m",
+        .bpaFileNames = {NULL, NULL, NULL, NULL},
+    },
 };

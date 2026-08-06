@@ -136,6 +136,7 @@ extern const GroundScriptHeader gGroundScript_gs225;
 extern const GroundScriptHeader gGroundScript_gs226;
 extern const GroundScriptHeader gGroundScript_gs227;
 extern const GroundScriptHeader gGroundScript_gs228;
+extern const GroundScriptHeader gGroundScript_gs229;
 
 const struct GroundScriptHeader *const gMapScriptTable[MAP_COUNT] = {
     [MAP_SQUARE] = &gGroundScript_gs0,
@@ -367,4 +368,5 @@ const struct GroundScriptHeader *const gMapScriptTable[MAP_COUNT] = {
     [MAP_LOGO_POKEMON_COMPANY] = &gGroundScript_gs226,
     [MAP_LOGO_WARNING] = &gGroundScript_gs227,
     [MAP_TEAM_BASE_WALL_MAP] = &gGroundScript_gs228,
+    [MAP_SPINDA_CAFE] = &gGroundScript_gs229,
 };

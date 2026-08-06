@@ -1,7 +1,7 @@
 #ifndef GUARD_ORNAMENT_FILES_TABLE_H
 #define GUARD_ORNAMENT_FILES_TABLE_H
 
-#define ORNAMENT_FILES_COUNT 75
+#define ORNAMENT_FILES_COUNT 76
 
 #include "structs/str_file_system.h"
 

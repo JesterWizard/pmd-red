@@ -1,7 +1,7 @@
 #ifndef GUARD_GROUND_FILES_TABLE_H
 #define GUARD_GROUND_FILES_TABLE_H
 
-#define GROUND_FILES_COUNT 677
+#define GROUND_FILES_COUNT 680
 
 #include "structs/str_file_system.h"
 

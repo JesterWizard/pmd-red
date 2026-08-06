@@ -13,15 +13,21 @@
 
 ## Introduction
 
-Adds a PMD2-style **Spinda's Café** on Whiscash Pond (north of Pokémon Square): outdoor NPCs for the Juice Bar (Spinda) and Recycle Shop (Wynaut). Wobbuffet is present and only says his name. No indoor map in v1.
+Adds a PMD2-style **Spinda's Café** entered from Whiscash Pond (north of Pokémon Square): a stairs ornament warps into an indoor café map with the Juice Bar (Spinda) and Recycle Shop (Wynaut). Wobbuffet is present and only says his name.
 
 Toggle: `gRuntimeConfig.spinda_cafe` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`).
 
-Unlock: café NPCs spawn after `QUEST_CAN_ACCESS_JOBS` on normal pond visits.
+Unlock: stairs + indoor staff after `QUEST_CAN_ACCESS_JOBS`.
 
 ---
 
 ## Behavior
+
+### Entrance (Whiscash Pond)
+
+- Dungeon-style **stairs** ornament at `{30,46}` (group 31).
+- Stepping on the 3×3 warp event enters `MAP_SPINDA_CAFE`.
+- Outdoor café NPCs are **not** on the pond; staff live only inside.
 
 ### Juice Bar (Spinda)
 
@@ -52,7 +58,10 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 | Area | Paths |
 |------|--------|
 | Toggle | [`include/runtime.h`](../../include/runtime.h), [`configs/runtime.c`](../../configs/runtime.c) |
-| Pond NPCs | [`src/data/ground/ground_data_t01p02a_station.h`](../../src/data/ground/ground_data_t01p02a_station.h) (group 31) |
+| Pond stairs / warp | [`src/data/ground/ground_data_t01p02a_station.h`](../../src/data/ground/ground_data_t01p02a_station.h) (group 31) |
+| Indoor map / NPCs | [`src/data/ground/ground_data_cafe_station.h`](../../src/data/ground/ground_data_cafe_station.h) (`MAP_SPINDA_CAFE` / gs229) |
+| Map art source | [`graphics/custom/spinda_cafe.png`](../../graphics/custom/spinda_cafe.png) → `data/map_bg/T01P08*` via [`tools/convert_ground_map_png.py`](../../tools/convert_ground_map_png.py) |
+| Stairs ornament | [`graphics/ornament/Stairs01/`](../../graphics/ornament/Stairs01/), [`src/data/ornament/stairs01.h`](../../src/data/ornament/stairs01.h) |
 | Special text | [`include/constants/script_cmd.h`](../../include/constants/script_cmd.h), [`src/textbox.c`](../../src/textbox.c) |
 | Juice Bar | [`src/spinda_cafe.c`](../../src/spinda_cafe.c), [`include/spinda_cafe.h`](../../include/spinda_cafe.h) |
 | Recycle Shop | [`src/recycle_shop.c`](../../src/recycle_shop.c) |
@@ -63,6 +72,8 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 
 ## Limitations
 
-- No indoor café map, cup-dungeon unlocks, door recruits, or Project P dungeon unlocks.
+- Indoor art uses **13×16-color** BG palettes (208 colors) — the town-map engine loads at most 13 (`gUnknown_8117324.unk2`). More banks corrupt the floor. Downscaled with `--max-width 360` to stay under ~1024 tiles; converter applies a mild saturation/contrast boost.
+- Collision: cave walls/void from luminance; **bars** and **round tables** from fixed tile regions in [`tools/convert_ground_map_png.py`](../../tools/convert_ground_map_png.py); staff NPC tiles stay walkable.
+- No cup-dungeon unlocks, door recruits, or Project P dungeon unlocks.
 - Recycle catalog / lottery tables are Red-adapted, not a full Sky dump.
-- NPC positions on the grassy mid-pond area (`{30,50}` / `{34,50}` / `{38,50}`, facing south). Tune further in-game if needed.
+- Stairs / NPC positions may need in-game tuning.

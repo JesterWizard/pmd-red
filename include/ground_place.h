@@ -38,6 +38,7 @@ enum GroundPlace {
     GROUND_PLACE_SKY_TOWER,
     GROUND_PLACE_SKY_TOWER_MID,
     GROUND_PLACE_WESTERN_CAVE,
+    GROUND_PLACE_SPINDA_CAFE,
     GROUND_PLACE_DIRECTION, // Similarly to GROUND_PLACE_SCENE, used in the conversion table for bgs which are not maps.
     GROUND_PLACE_NEW_GAME,
     GROUND_PLACE_SCENE, // For all maps that aren't really maps, for example warning screen, personality test background, etc.

@@ -110,6 +110,7 @@ const struct GroundObjectKind gGroundObjectKinds[] = {
     { 1, 0x005, "npc03p" },
     { 1, 0x006, "npc04p" },
     { 1, 0x000, "item01p" },
+    { 1, 0x000, "stairs01p" },
     { -1, 0x000, NULL }
 };
 

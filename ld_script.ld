@@ -772,6 +772,7 @@ SECTIONS {
         src/ground_data_t01p04_station.o(.rodata);
         src/ground_data_t01p05_station.o(.rodata);
         src/ground_data_t01p06_station.o(.rodata);
+        src/ground_data_cafe_station.o(.rodata);
         src/ground_data_t01p07_station.o(.rodata);
         src/ground_data_b01p01a_station.o(.rodata);
         src/ground_data_b01p02a_station.o(.rodata);

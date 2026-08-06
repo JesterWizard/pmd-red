@@ -71,6 +71,7 @@ extern const SiroArchive gAxFlag15;
 extern const RGB_Struct gFlag16Pal[];
 extern const SiroArchive gAxFlag16;
 extern const SiroArchive gAxItem01;
+extern const SiroArchive gAxStairs01;
 extern const SiroArchive gAxNpc01;
 extern const SiroArchive gAxNpc02;
 extern const SiroArchive gAxNpc03;
