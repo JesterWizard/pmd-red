@@ -90,13 +90,13 @@ static const struct GroundLivesData s_gs229_g0_s1_lives[] = {
 
 /* Spinda (left bar), Wynaut+Wobbuffet (right bar) — behind desks, face south */
 static const struct GroundLivesData s_gs229_g1_s0_lives[] = {
-    /*  0 */ { 115,   0,   0,   0, {  11,  11, 0, CPOS_HALFTILE }, {
+    /*  0 */ { 115,   0,   0,   0, {  13,   8, 0, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives0_dlg2,
     } },
-    /*  1 */ { 109,   0,   0,   0, {  32,  11, 0, CPOS_HALFTILE }, {
+    /*  1 */ { 109,   0,   0,   0, {  31,   8, 0, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives1_dlg2,
     } },
-    /*  2 */ { 110,   0,   0,   0, {  35,  12, 0, CPOS_HALFTILE }, {
+    /*  2 */ { 110,   0,   0,   0, {  34,   8, 0, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives2_dlg2,
     } },
 };

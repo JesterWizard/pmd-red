@@ -72,8 +72,8 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 
 ## Limitations
 
-- Indoor art uses **13×16-color** BG palettes (208 colors) — the town-map engine loads at most 13 (`gUnknown_8117324.unk2`). More banks corrupt the floor. Downscaled with `--max-width 360` to stay under ~1024 tiles; converter applies a mild saturation/contrast boost.
-- Collision: cave walls/void from luminance; **bars** and **round tables** from fixed tile regions in [`tools/convert_ground_map_png.py`](../../tools/convert_ground_map_png.py); staff NPC tiles stay walkable.
+- Indoor art uses **13×16-color** BG palettes (208 colors) — the town-map engine loads at most 13 (`gUnknown_8117324.unk2`). More banks corrupt the floor. Downscaled with `--max-width 360` to stay under ~1024 tiles (no saturation boost — that yellow-washed the map).
+- Collision: cave walls/void from luminance; **bars** (counter face) and **round tables** from fixed tile regions in [`tools/convert_ground_map_png.py`](../../tools/convert_ground_map_png.py); staff stand in the walkable strip behind the counters.
 - No cup-dungeon unlocks, door recruits, or Project P dungeon unlocks.
 - Recycle catalog / lottery tables are Red-adapted, not a full Sky dump.
 - Stairs / NPC positions may need in-game tuning.

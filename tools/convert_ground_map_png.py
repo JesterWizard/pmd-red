@@ -116,9 +116,9 @@ def luminance(rgb: tuple[int, int, int]) -> float:
 # Spinda Café furniture on the downscaled 45×36 tile grid (max-width 360).
 # Bars: counter tops players must not cross. Tables: round seating.
 CAFE_BAR_RECTS = (
-    # x0, y0, x1, y1 inclusive — left juice bar / right recycle bar
-    (8, 8, 20, 11),
-    (24, 8, 36, 11),
+    # x0, y0, x1, y1 inclusive — counter face (south of staff strip)
+    (8, 9, 20, 12),
+    (24, 9, 36, 12),
 )
 CAFE_TABLE_DISKS = (
     # cx, cy, radius in tiles
@@ -127,11 +127,11 @@ CAFE_TABLE_DISKS = (
     (33, 18, 2),  # upper-right
     (29, 22, 2),  # lower-right
 )
-# Staff stand on/behind counters; keep their tiles walkable.
+# Staff stand in the strip between back shelves and counter face.
 CAFE_NPC_WALKABLE = (
-    (11, 11),  # Spinda
-    (32, 11),  # Wynaut
-    (35, 12),  # Wobbuffet
+    (13, 8),   # Spinda
+    (31, 8),   # Wynaut
+    (34, 8),   # Wobbuffet
 )
 
 
@@ -192,20 +192,16 @@ def build_collision(img_rgb: Image.Image, w_tiles: int, h_tiles: int) -> list[bo
 def preprocess_for_rt_limits(
     img: Image.Image, max_width: int, target_colors: int
 ) -> Image.Image:
-    """Downscale (and lightly enrich) so tiles stay under the GBA 10-bit tile cap.
+    """Downscale so tiles stay under the GBA 10-bit tile cap.
 
-    Do not pre-posterize: Tilequant maps to the chosen palette count. Town maps
-    only load up to 13 BG palettes (see gUnknown_8117324.unk2 in ground_map.c).
+    Do not pre-posterize or boost saturation: Tilequant maps to the chosen
+    palette count, and Color-enhance yellow-washed this café. Town maps only
+    load up to 13 BG palettes (see gUnknown_8117324.unk2 in ground_map.c).
     """
-    from PIL import ImageEnhance
-
     del target_colors  # reserved for callers / future budgets
     if img.width > max_width:
         h = int(round(img.height * (max_width / img.width)))
         img = img.resize((max_width, h), Image.Resampling.LANCZOS)
-    # Mild vibrance — source art reads washed after GBA 4bpp + limited banks.
-    img = ImageEnhance.Color(img).enhance(1.28)
-    img = ImageEnhance.Contrast(img).enhance(1.12)
     return img
 
 
