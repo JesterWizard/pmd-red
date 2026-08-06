@@ -5,7 +5,7 @@
 
 /* Source tile ids in tileMappings use bits 0-11 (up to 4095); bits 12-15 = palette.
  * Hardware BG entries only have a 10-bit tile field, so maps with numTiles > unk6
- * keep graphics in EWRAM and remap the visible window into VRAM each frame. */
+ * keep graphics in ROM/EWRAM and remap the visible window into VRAM on camera moves. */
 
 void GroundBgTileStream_Reset(void);
 bool8 GroundBgTileStream_IsActive(void);
@@ -20,6 +20,10 @@ bool8 GroundBgTileStream_InstallOwned(void *ownedBase, const u16 *tileData, s32 
 
 /* Stream from a stable pointer (ROM / static). Nothing is freed on Reset. */
 bool8 GroundBgTileStream_InstallRom(const u16 *tileData, s32 numTiles, s32 vramSlots);
+
+/* TRUE when the visible tile window changed (or first frame) and BG tilemaps
+ * must be rebuilt + remapped. FALSE → only scroll regs need updating. */
+bool8 GroundBgTileStream_NeedsRebuild(GroundBg *groundBg);
 
 /* After chunk→tilemap expand: ensure referenced source tiles are in VRAM and
  * rewrite bgTilemaps entries to hardware 10-bit slot indices. */

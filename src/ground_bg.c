@@ -1472,34 +1472,51 @@ void sub_80A4764(GroundBg *groundBg)
 
     mapRender = groundBg->mapRender;
     map478 = groundBg->cameraPixelPosition;
-    for (i = 0; i < groundBg->unk474; i++, mapRender++, map478++) {
-        s32 unk;
+    {
+        bool8 streamActive = GroundBgTileStream_IsActive();
+        bool8 streamRebuild;
 
-        UpdateMapCameraPosition(mapRender, map478);
-        /* Streaming remaps source tile ids → VRAM slots in-place. Clear first so
-         * unwritten cells never carry stale slot indexes into the next Remap. */
-        if (GroundBgTileStream_IsActive()) {
-            if (mapRender->numBgs > 1)
-                ClearDoubleBgTilemaps(mapRender);
-            else
-                ClearSingleBgTilemap(mapRender);
-        }
-        CallMapTilemapRenderFunc(mapRender);
-        for (j = 0, unk = mapRender->unk2 + groundBg->unk52C.unkA; j < mapRender->numBgs; j++, unk++) {
-            switch (unk) {
-                case 0:
-                    SetBG2RegOffsets(mapRender->bgRegOffsets.x, mapRender->bgRegOffsets.y);
-                    break;
-                case 1:
-                    SetBG3RegOffsets(mapRender->bgRegOffsets.x, mapRender->bgRegOffsets.y);
-                    break;
+        /* Update camera/tile positions first so NeedsRebuild sees this frame. */
+        for (i = 0; i < groundBg->unk474; i++)
+            UpdateMapCameraPosition(&mapRender[i], &map478[i]);
+
+        streamRebuild = streamActive && GroundBgTileStream_NeedsRebuild(groundBg);
+
+        for (i = 0; i < groundBg->unk474; i++) {
+            s32 unk;
+            MapRender *mr = &mapRender[i];
+
+            if (!streamActive) {
+                CallMapTilemapRenderFunc(mr);
+            }
+            else if (streamRebuild) {
+                /* Rebuild only when the camera crosses a tile boundary. Sub-tile
+                 * scrolling is handled by BG offsets alone (big CPU win indoors). */
+                if (mr->numBgs > 1)
+                    ClearDoubleBgTilemaps(mr);
+                else
+                    ClearSingleBgTilemap(mr);
+                CallMapTilemapRenderFunc(mr);
+            }
+            for (j = 0, unk = mr->unk2 + groundBg->unk52C.unkA; j < mr->numBgs; j++, unk++) {
+                switch (unk) {
+                    case 0:
+                        SetBG2RegOffsets(mr->bgRegOffsets.x, mr->bgRegOffsets.y);
+                        break;
+                    case 1:
+                        SetBG3RegOffsets(mr->bgRegOffsets.x, mr->bgRegOffsets.y);
+                        break;
+                }
             }
         }
+
+        if (streamRebuild)
+            GroundBgTileStream_RemapVisibleTilemaps(groundBg);
+
+        /* Skip redundant BG tilemap VRAM DMA when the streamer cache is warm. */
+        if (!streamActive || streamRebuild)
+            groundBg->unk52A = 1;
     }
-
-    GroundBgTileStream_RemapVisibleTilemaps(groundBg);
-
-    groundBg->unk52A = 1;
 }
 
 void sub_80A49E8(GroundBg *groundBg)

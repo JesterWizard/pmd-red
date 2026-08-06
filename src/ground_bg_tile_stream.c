@@ -4,11 +4,13 @@
 #include "cpu.h"
 #include "memory.h"
 #include "debug.h"
+#include "gba/macro.h"
 
 #define STREAM_MAX_SOURCE_TILES 2048
 #define STREAM_VRAM_BASE (VRAM + 0x8000)
 
 static EWRAM_DATA bool8 sActive = FALSE;
+static EWRAM_DATA bool8 sPrimed = FALSE;
 static EWRAM_DATA s16 sNumTiles = 0;      /* includes null tile 0 */
 static EWRAM_DATA s16 sVramSlots = 0;     /* unk6, typically 0x400 */
 static EWRAM_DATA u8 *sTileGfx = NULL;    /* pointer to tile 1..N-1 gfx */
@@ -16,8 +18,12 @@ static EWRAM_DATA void *sOwnedBase = NULL; /* MemoryFree this on Reset; may equa
 static EWRAM_DATA u16 sSourceToSlot[STREAM_MAX_SOURCE_TILES];
 static EWRAM_DATA u16 sSlotToSource[1024];
 static EWRAM_DATA u16 sSlotStamp[1024];
-static EWRAM_DATA u16 sStamp = 1;
+static EWRAM_DATA u16 sFreeStack[1024];
+static EWRAM_DATA u16 sFreeCount = 0;
 static EWRAM_DATA u16 sClock = 1;
+static EWRAM_DATA u16 sClockHand = 1;
+static EWRAM_DATA s16 sCachedTileX = -1;
+static EWRAM_DATA s16 sCachedTileY = -1;
 
 void GroundBgTileStream_Reset(void)
 {
@@ -27,10 +33,14 @@ void GroundBgTileStream_Reset(void)
     }
     sTileGfx = NULL;
     sActive = FALSE;
+    sPrimed = FALSE;
     sNumTiles = 0;
     sVramSlots = 0;
-    sStamp = 1;
+    sFreeCount = 0;
     sClock = 1;
+    sClockHand = 1;
+    sCachedTileX = -1;
+    sCachedTileY = -1;
     CpuFill16(0, sSourceToSlot, sizeof(sSourceToSlot));
     CpuFill16(0, sSlotToSource, sizeof(sSlotToSource));
     CpuFill16(0, sSlotStamp, sizeof(sSlotStamp));
@@ -41,23 +51,27 @@ bool8 GroundBgTileStream_IsActive(void)
     return sActive;
 }
 
-static void ClearVramPool(s32 vramSlots)
+static void BuildFreeList(s32 vramSlots)
 {
-    u16 *dst = (u16 *)STREAM_VRAM_BASE;
-    s32 i, j;
+    s32 i;
 
-    /* Tile 0 = transparent/empty */
-    for (j = 0; j < 16; j++)
-        *dst++ = 0;
-
-    for (i = 1; i < vramSlots; i++) {
-        for (j = 0; j < 16; j++)
-            *dst++ = 0xFFFF;
-    }
+    sFreeCount = 0;
+    /* Slot 0 is always empty/transparent — never allocate it. */
+    for (i = vramSlots - 1; i >= 1; i--)
+        sFreeStack[sFreeCount++] = (u16)i;
+    sClockHand = 1;
 }
 
-/* Keep an already-allocated BPC (or tile) buffer; no second heap copy. */
-bool8 GroundBgTileStream_InstallOwned(void *ownedBase, const u16 *tileData, s32 numTiles, s32 vramSlots)
+static void ClearVramPool(s32 vramSlots)
+{
+    /* Tile 0 = transparent; remaining slots marked unused (matches retail fill). */
+    CpuFill16(0, (void *)STREAM_VRAM_BASE, 32);
+    if (vramSlots > 1)
+        CpuFill16(0xFFFF, (void *)(STREAM_VRAM_BASE + 32), (vramSlots - 1) * 32);
+    BuildFreeList(vramSlots);
+}
+
+static bool8 ActivateStream(const u16 *tileData, s32 numTiles, s32 vramSlots, void *ownedBase)
 {
     GroundBgTileStream_Reset();
 
@@ -65,8 +79,8 @@ bool8 GroundBgTileStream_InstallOwned(void *ownedBase, const u16 *tileData, s32 
         return FALSE;
     if (numTiles > STREAM_MAX_SOURCE_TILES)
         FATAL_ERROR("ground tile stream: too many source tiles");
-    if (ownedBase == NULL || tileData == NULL)
-        FATAL_ERROR("ground tile stream: null owned buffer");
+    if (tileData == NULL)
+        FATAL_ERROR("ground tile stream: null tiles");
     if (vramSlots > 1024)
         vramSlots = 1024;
 
@@ -79,27 +93,16 @@ bool8 GroundBgTileStream_InstallOwned(void *ownedBase, const u16 *tileData, s32 
     return TRUE;
 }
 
-/* ROM / static tile gfx — stable for the life of the map, nothing to free. */
+bool8 GroundBgTileStream_InstallOwned(void *ownedBase, const u16 *tileData, s32 numTiles, s32 vramSlots)
+{
+    if (ownedBase == NULL)
+        FATAL_ERROR("ground tile stream: null owned buffer");
+    return ActivateStream(tileData, numTiles, vramSlots, ownedBase);
+}
+
 bool8 GroundBgTileStream_InstallRom(const u16 *tileData, s32 numTiles, s32 vramSlots)
 {
-    GroundBgTileStream_Reset();
-
-    if (numTiles <= vramSlots || numTiles <= 1)
-        return FALSE;
-    if (numTiles > STREAM_MAX_SOURCE_TILES)
-        FATAL_ERROR("ground tile stream: too many source tiles");
-    if (tileData == NULL)
-        FATAL_ERROR("ground tile stream: null rom tiles");
-    if (vramSlots > 1024)
-        vramSlots = 1024;
-
-    sOwnedBase = NULL;
-    sTileGfx = (u8 *)tileData;
-    sNumTiles = numTiles;
-    sVramSlots = vramSlots;
-    ClearVramPool(vramSlots);
-    sActive = TRUE;
-    return TRUE;
+    return ActivateStream(tileData, numTiles, vramSlots, NULL);
 }
 
 bool8 GroundBgTileStream_Install(const u16 *tileData, s32 numTiles, s32 vramSlots)
@@ -108,10 +111,10 @@ bool8 GroundBgTileStream_Install(const u16 *tileData, s32 numTiles, s32 vramSlot
     s32 bytes;
     void *owned;
 
-    GroundBgTileStream_Reset();
-
-    if (numTiles <= vramSlots || numTiles <= 1)
+    if (numTiles <= vramSlots || numTiles <= 1) {
+        GroundBgTileStream_Reset();
         return FALSE;
+    }
     if (numTiles > STREAM_MAX_SOURCE_TILES)
         FATAL_ERROR("ground tile stream: too many source tiles");
     if (vramSlots > 1024)
@@ -127,42 +130,72 @@ bool8 GroundBgTileStream_Install(const u16 *tileData, s32 numTiles, s32 vramSlot
     return GroundBgTileStream_InstallOwned(owned, owned, numTiles, vramSlots);
 }
 
-static void UploadTile(u16 sourceId, u16 slot)
+bool8 GroundBgTileStream_NeedsRebuild(GroundBg *groundBg)
 {
-    const u8 *src = sTileGfx + (sourceId - 1) * 32;
-    void *dst = (void *)(STREAM_VRAM_BASE + slot * 32);
+    MapRender *mapRender;
+    s16 tx, ty;
 
-    CpuCopy(dst, src, 32);
+    if (!sActive || groundBg == NULL)
+        return FALSE;
+
+    mapRender = &groundBg->mapRender[0];
+    tx = mapRender->tilePos.x;
+    ty = mapRender->tilePos.y;
+    if (sPrimed && tx == sCachedTileX && ty == sCachedTileY)
+        return FALSE;
+    return TRUE;
 }
 
-static u16 EvictSlot(void)
+static void UploadTile(u16 sourceId, u16 slot)
 {
-    u16 bestSlot = 1;
-    u16 bestStamp = 0xFFFF;
-    u16 slot;
+    const void *src = sTileGfx + (sourceId - 1) * 32;
+    void *dst = (void *)(STREAM_VRAM_BASE + slot * 32);
 
-    for (slot = 1; slot < (u16)sVramSlots; slot++) {
+    /* 32 bytes → one CpuFastSet block (8 words). */
+    CpuFastCopy(src, dst, 32);
+}
+
+static u16 AllocSlot(void)
+{
+    u16 slot;
+    u16 scanned;
+    u16 limit;
+
+    if (sFreeCount > 0)
+        return sFreeStack[--sFreeCount];
+
+    /* Clock: prefer a slot not touched this frame (stamp != sClock). */
+    limit = (u16)sVramSlots;
+    for (scanned = 1; scanned < limit; scanned++) {
+        slot = sClockHand;
+        if (++sClockHand >= limit)
+            sClockHand = 1;
+
         if (sSlotToSource[slot] == 0)
             return slot;
-        if (sSlotStamp[slot] < bestStamp) {
-            bestStamp = sSlotStamp[slot];
-            bestSlot = slot;
+
+        if (sSlotStamp[slot] != sClock) {
+            sSourceToSlot[sSlotToSource[slot]] = 0;
+            sSlotToSource[slot] = 0;
+            return slot;
         }
     }
 
-    if (sSlotToSource[bestSlot] != 0)
-        sSourceToSlot[sSlotToSource[bestSlot]] = 0;
-    sSlotToSource[bestSlot] = 0;
-    return bestSlot;
+    /* All slots used this frame — force the hand position. */
+    slot = sClockHand;
+    if (++sClockHand >= limit)
+        sClockHand = 1;
+    if (sSlotToSource[slot] != 0)
+        sSourceToSlot[sSlotToSource[slot]] = 0;
+    sSlotToSource[slot] = 0;
+    return slot;
 }
 
 static u16 EnsureTile(u16 sourceId)
 {
     u16 slot;
 
-    if (sourceId == 0)
-        return 0;
-    if (sourceId >= (u16)sNumTiles)
+    if (sourceId == 0 || sourceId >= (u16)sNumTiles)
         return 0;
 
     slot = sSourceToSlot[sourceId];
@@ -171,7 +204,7 @@ static u16 EnsureTile(u16 sourceId)
         return slot;
     }
 
-    slot = EvictSlot();
+    slot = AllocSlot();
     UploadTile(sourceId, slot);
     sSourceToSlot[sourceId] = slot;
     sSlotToSource[slot] = sourceId;
@@ -186,13 +219,10 @@ static void RemapTilemap(u16 *tilemap, s32 count)
     for (i = 0; i < count; i++) {
         u16 entry = tilemap[i];
         u16 sourceId = entry & 0x0FFF;
-        u16 palBits = entry & 0xF000;
 
-        if (sourceId == 0) {
-            tilemap[i] = 0;
+        if (sourceId == 0)
             continue;
-        }
-        tilemap[i] = EnsureTile(sourceId) | palBits;
+        tilemap[i] = EnsureTile(sourceId) | (entry & 0xF000);
     }
 }
 
@@ -206,7 +236,6 @@ void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg)
 
     sClock++;
     if (sClock == 0) {
-        /* stamp overflow — bump everyone so relative order stays usable */
         sClock = 1;
         CpuFill16(0, sSlotStamp, sizeof(sSlotStamp));
     }
@@ -219,5 +248,7 @@ void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg)
             RemapTilemap(mapRender->bgTilemaps[1], 32 * 32);
     }
 
-    sStamp = sClock;
+    sCachedTileX = groundBg->mapRender[0].tilePos.x;
+    sCachedTileY = groundBg->mapRender[0].tilePos.y;
+    sPrimed = TRUE;
 }
