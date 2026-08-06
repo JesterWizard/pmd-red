@@ -8,6 +8,8 @@ MEMORY
     EWRAM (rwx) : ORIGIN = 0x2000000, LENGTH = 256K
     IWRAM (rwx) : ORIGIN = 0x3000000, LENGTH = 32K
     ROM    (rx) : ORIGIN = 0x8000000, LENGTH = 32M
+    /* Cart save bus (FLASH1M @ 0x0E000000). Named SRAM so --print-memory-usage lists it. */
+    SRAM    (r) : ORIGIN = 0x0E000000, LENGTH = 128K
 }
 
 SECTIONS {
@@ -104,6 +106,16 @@ SECTIONS {
     {
         configs/runtime.o(.runtime_config);
     } > ROM =0
+
+    /* Actual save-pak byte footprint (see sSramSaveFootprint in src/save.c).
+     * MEMORY LENGTH stays 128K (chip capacity); Used Size is real streamed data. */
+    sram_save (NOLOAD) :
+    {
+        sram_start = .;
+        KEEP(*(.sram_save));
+        KEEP(*(.sram_save.*));
+        sram_end = .;
+    } > SRAM
 
     /* DWARF 2 sections */
     .debug_aranges  0 : { *(.debug_aranges) }

@@ -10,9 +10,13 @@
 @ uses bank switching via SwitchFlashBank — logical size 128 KiB / 32 × 4 KiB
 @ sectors).
 @
-@ Vanilla ownership: the entire flash chip is the save pak. Sectors are
-@ streamed 0x1000 bytes at a time (see ReadFlashData / WriteFlashData).
-@ Sector 0x1F is used for a small metadata block in save.c.
+@ Linker MEMORY region "SRAM" (128 KiB capacity): Used Size comes from
+@ sSramSaveFootprint in src/save.c (primary + backup main pak + metadata) —
+@ not the whole chip. Remaining flash is unused capacity, not free scratch
+@ for gameplay buffers.
+@
+@ Vanilla ownership: the save pak streams sectors 0x1000 bytes at a time
+@ (ReadFlashData / WriteFlashData). Sector 0x1F holds a small metadata block.
 @
 @ 0x0E000000 ── FlashSpaceTop ──────────── USED by save system (NOT free)
 @ 0x0E010000 ── bus window end (banked flash continues via SwitchFlashBank)

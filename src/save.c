@@ -513,3 +513,10 @@ UNUSED static void sub_8012334(UnkStruct_203B184 *data)
         gPlayTimeRef = GetPlayTime();
     }
 }
+
+/* Link-map only (NOLOAD in SRAM @ 0x0E000000). Reports actual streamed save
+ * bytes in `make` --print-memory-usage: primary + backup main pak + sector
+ * 0x1F metadata. Chip capacity remains MEMORY LENGTH 128K. */
+USED static u8 sSramSaveFootprint[
+    sizeof(struct UnkStruct_sub_8011DAC) * 2 + sizeof(struct unk_struct)
+] __attribute__((section(".sram_save")));

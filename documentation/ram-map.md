@@ -14,17 +14,20 @@ Occupancy and free-space notes for custom code. Pattern follows
 ```bash
 python3 tools/gen_ram_map.py --emit-asm   # refresh pool.inc from pmd_red.map
 python3 tools/scan_ram_literals.py        # optional baserom LDR-pool cross-check
+python3 tools/check_save_layout.py        # bit-packed save chunks vs buffer caps
 ```
 
-## Free space (matching `pmd_red.map`)
+## Free space (matching `pmd_red.map` / `make` `--print-memory-usage`)
 
 | Region | Free range | Size | Allocator |
 | --- | --- | ---: | --- |
 | **EWRAM** | `0x0203B368`–`0x02040000` | ~19.4 KiB | `_kernel_malloc_ewram` (grows down) |
 | **IWRAM** | `0x03004108`–`0x03007F00` | ~15.7 KiB | `_kernel_malloc` (grows up) |
-| **Flash** | none | 0 | `FLASH1M_V102` save pak owns the chip |
+| **SRAM** (flash) | capacity `0x0E000000`–`+128 KiB` | used = save footprint | `FLASH1M` save pak; linker **Used Size** is primary+backup main pak + metadata (`sSramSaveFootprint`), not 100% of the chip |
 
 IWRAM above `0x03007F00` is stacks + `SOUND_INFO_PTR` / `INTR_*` — do not allocate there.
+
+Save layout changes (IQ flag bits, storage size, achievements blob, etc.) must keep chunk `#define`s and `unk448[]` in sync — see `.cursor/skills/save-sram-layout/SKILL.md` and `tools/check_save_layout.py` (runs after link).
 
 ## Used highlights
 
