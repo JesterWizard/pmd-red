@@ -38,6 +38,8 @@ const char *const gUnknown_81178F4[] = {
     "titleopc",
     "titlebgc",
     "stoneimc",
+    "stairs01c",
+    "sign01c",
     NULL
 };
 
@@ -110,7 +112,9 @@ const struct GroundObjectKind gGroundObjectKinds[] = {
     { 1, 0x005, "npc03p" },
     { 1, 0x006, "npc04p" },
     { 1, 0x000, "item01p" },
-    { 1, 0x000, "stairs01p" },
+    /* Shared stairs01c palette (0x100|35) — one extend slot for both ornaments. */
+    { 1, 0x123, "stairs01p" },
+    { 1, 0x123, "sign01p" },
     { -1, 0x000, NULL }
 };
 

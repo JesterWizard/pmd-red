@@ -116,6 +116,7 @@ void GroundBg_FreeAll(GroundBg *groundBg)
     if (gGroundMap8bpp) {
         SetGroundMap8bpp(FALSE);
         ClearGroundMap8bppMaps();
+        ReloadFontSheet();
     }
     GroundBgTileStream_Reset();
     CloseOpenedFiles(groundBg);
@@ -272,7 +273,14 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
                 SetGroundMap8bpp(TRUE);
             }
             else {
-                SetGroundMap8bpp(FALSE);
+                if (gGroundMap8bpp) {
+                    SetGroundMap8bpp(FALSE);
+                    ClearGroundMap8bppMaps();
+                    ReloadFontSheet();
+                }
+                else {
+                    SetGroundMap8bpp(FALSE);
+                }
             }
             TRY_CLOSE_GROUND_FILE_AND_SET_NULL(bplPeek);
         }
@@ -315,9 +323,9 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
         else {
             GroundBgTileStream_Reset();
             if (bppMode == GROUND_STREAM_8BPP) {
-                /* Rare: fits in VRAM — copy 8bpp tiles to CHARBASE1. */
+                /* Rare: fits in VRAM — copy 8bpp tiles above font chrome (slot 128+). */
                 s32 id, i;
-                u16 *dst = (u16 *)GROUND_STREAM_8BPP_VRAM_BASE;
+                u16 *dst = (u16 *)GROUND_STREAM_8BPP_TILE_VRAM_BASE;
                 const u16 *src = bpcData;
                 for (i = 0; i < 32; i++)
                     *dst++ = 0;
@@ -506,10 +514,20 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     }
 
     sub_80A3BB0(groundBg, 0);
-    CallMapTilemapRenderFunc(groundBg->mapRender);
-    GroundBgTileStream_RemapVisibleTilemaps(groundBg);
-    /* Map-load: push tiles before the first drawn frame (often under fade). */
-    GroundBgTileStream_FlushUploads();
+    if (GroundBgTileStream_IsActive()) {
+        /* Do NOT Remap/Flush at sUnknownPosition — café windows there can exceed
+         * the 576-slot 8bpp pool, thrash the cache, and leave font-alias garbage
+         * for the first real camera rebuild. Publish blanks; first sub_80A4764
+         * at the player camera is the only Remap. */
+        if (groundBg->mapRender[0].numBgs > 1)
+            ClearDoubleBgTilemaps(&groundBg->mapRender[0]);
+        else
+            ClearSingleBgTilemap(&groundBg->mapRender[0]);
+        GroundBgTileStream_Invalidate();
+    }
+    else {
+        CallMapTilemapRenderFunc(groundBg->mapRender);
+    }
     groundBg->unk52A = 1;
 }
 

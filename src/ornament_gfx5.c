@@ -3,6 +3,7 @@
 #include "ornament_gfx.h"
 
 #include "data/ornament/item01.h"
+#include "data/ornament/sign01.h"
 #include "data/ornament/stairs01.h"
 #include "data/ornament/npc01.h"
 #include "data/ornament/npc02.h"

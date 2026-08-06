@@ -8,13 +8,18 @@
  * keep graphics in ROM/EWRAM and remap the visible window into VRAM on camera moves.
  *
  * 4bpp: VRAM+0x8000, 32 B/tile, up to 1024 slots (CHARBASE2).
- * 8bpp café: VRAM+0x4000, 64 B/tile, up to 704 slots (CHARBASE1; SB 30/31 for maps). */
+ * 8bpp café: CHARBASE1 indices 128..703 (VRAM+0x6000..0xEFFF, 576 tiles) so
+ * font/chrome at 0x4F00–0x5FFF stays intact (same reservation as title 8bpp).
+ * Maps remain SB 30/31. */
 
 #define GROUND_STREAM_4BPP 0
 #define GROUND_STREAM_8BPP 1
 
-#define GROUND_STREAM_8BPP_VRAM_SLOTS 704
+#define GROUND_STREAM_8BPP_FIRST_SLOT 128
+#define GROUND_STREAM_8BPP_VRAM_SLOTS 704 /* absolute end; free pool = 128..703 */
 #define GROUND_STREAM_8BPP_VRAM_BASE (VRAM + 0x4000)
+#define GROUND_STREAM_8BPP_TILE_VRAM_BASE \
+    (GROUND_STREAM_8BPP_VRAM_BASE + GROUND_STREAM_8BPP_FIRST_SLOT * 64) /* 0x6000 */
 
 void GroundBgTileStream_Reset(void);
 bool8 GroundBgTileStream_IsActive(void);
@@ -30,6 +35,10 @@ bool8 GroundBgTileStream_InstallOwned(void *ownedBase, const u16 *tileData, s32 
 bool8 GroundBgTileStream_InstallRom(const u16 *tileData, s32 numTiles, s32 vramSlots, u8 bppMode);
 
 bool8 GroundBgTileStream_NeedsRebuild(GroundBg *groundBg);
+
+/* Force the next ground update to clear/render/remap. Also resets the slot
+ * cache so a discarded provisional Remap cannot poison the first real one. */
+void GroundBgTileStream_Invalidate(void);
 
 void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg);
 

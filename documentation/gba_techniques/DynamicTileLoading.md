@@ -65,7 +65,7 @@ Install paths (extra `bppMode` arg: `GROUND_STREAM_4BPP` / `GROUND_STREAM_8BPP`)
 
 Activation: `layerSpecs->numTiles > groundBg->unk52C.unk6`.
 
-**8bpp café layout:** BPL flag `0x8B` → `gGroundMap8bpp`; BG2+BG3 `BGCNT_256COLOR` + `CHARBASE(1)` + SB **30/31**; `unk6 = 704`. BG0/BG1 UI maps move to SB **6/7** (CHARBASE0) because the 8bpp tile pool (`0x4000`–`0xEFFF`) overlaps vanilla SB 12–15. The 3×3 dual-layer renderer fills a **32×24** tile window (not the full 32×32 buffer); café worst-case unique tiles in that window stay under 704.
+**8bpp café layout:** BPL flag `0x8B` → `gGroundMap8bpp`; BG2+BG3 `BGCNT_256COLOR` + `CHARBASE(1)` + SB **30/31**; art tiles at indices **128–703** (`0x6000–0xEFFF`, 576 slots) so font/chrome at `0x4F00–0x5FFF` is preserved. `unk6 = 704` (absolute end). BG0/BG1 UI maps at SB **6/7**. Exit reloads the font sheet. Menus stay enabled; left-edge fade tiles are forced transparent via `sub_8009388` / `InitText`. Entering café clears SB 30/31 and keeps BG1 fill clear. The 3×3 dual-layer renderer fills a **32×24** tile window; Remap only that window. **Never Remap at map-load’s default camera** (`sUnknownPosition`) — that window can exceed 576 unique tiles and poison the slot cache (font-chrome garbage on entry); first `sub_80A4764` at the player camera is the only Remap.
 
 ---
 

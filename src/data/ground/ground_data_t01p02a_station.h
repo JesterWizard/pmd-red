@@ -2676,7 +2676,7 @@ static const struct ScriptCommand s_gs2_g30_s0_obj0_dlg2[] = { /* 0x8188748 */
     RET,
 };
 
-/* Spinda's Café stairs entrance (ornament kind 67) + warp */
+/* Spinda's Café entrance (stairs + sign on NW grass) + warp */
 static const struct ScriptCommand s_gs2_g31_s0_evt0_sref_script[] = {
     DEBUGINFO_O(2675),
     { 0x01, 0x00, -0x0001,  0x000000e5,  0x00000000, NULL }, /* MAP_SPINDA_CAFE = 229 */
@@ -2717,12 +2717,12 @@ static const struct GroundLivesData s_gs2_g0_s2_lives[] = { /* 0x81887a8 */
     } },
 };
 
-/* Spawn when leaving Spinda's Café (just south of stairs) */
+/* Spawn when leaving Spinda's Café (just south of west-grass stairs) */
 static const struct GroundLivesData s_gs2_g0_s3_lives[] = {
-    /*  0 */ {   0,   0,   0,   0, {  30,  48, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  0 */ {   0,   0,   0,   0, {  15,  47, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs2_g0_s3_lives0_dlg0,
     } },
-    /*  1 */ {   4,   0,   0,   0, {  30,  50, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  1 */ {   4,   0,   0,   0, {  15,  49, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs2_g0_s3_lives1_dlg0,
     } },
 };
@@ -3090,9 +3090,10 @@ static const struct GroundLivesData s_gs2_g30_s0_lives[] = { /* 0x8188ee0 */
     } },
 };
 
-/* Café NPCs moved indoors — group 31 is stairs ornament + warp only */
+/* Café NPCs moved indoors — group 31 is stairs + sign ornaments + warp */
 static const struct GroundObjectData s_gs2_g31_s0_objs[] = {
-    /*  0 */ {  67,   0,   2,   2, {  30,  46, CPOS_HALFTILE, CPOS_HALFTILE }, {} },
+    /*  0 */ {  67,   0,   2,   2, {  15,  45, CPOS_HALFTILE, CPOS_HALFTILE }, {} }, /* stairs */
+    /*  1 */ {  68,   0,   2,   2, {  18,  45, CPOS_HALFTILE, CPOS_HALFTILE }, {} }, /* sign */
 };
 
 static const struct GroundObjectData s_gs2_g1_s0_objs[] = { /* 0x8188f58 */
@@ -3246,7 +3247,7 @@ static const struct GroundEventData s_gs2_g0_s2_evts[] = { /* 0x8189180 */
 };
 
 static const struct GroundEventData s_gs2_g31_s0_evts[] = {
-    /*  0 */ {   3,   3,   0,   0, {  29,  45, 0, 0 }, &s_gs2_g31_s0_evt0_sref },
+    /*  0 */ {   3,   3,   0,   0, {  14,  44, 0, 0 }, &s_gs2_g31_s0_evt0_sref },
 };
 
 static const struct GroundEventData s_gs2_g5_s0_evts[] = { /* 0x818918c */

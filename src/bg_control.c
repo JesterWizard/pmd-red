@@ -123,14 +123,19 @@ void SetGroundMap8bpp(bool8 enabled)
 {
     gGroundMap8bpp = enabled;
     if (enabled) {
-        /* InitText plants a left-edge fade tile (0x279) on BG0 col0; that VRAM
-         * overlaps the café 8bpp tile pool and reads as a noise strip. */
+        /* Wipe UI + art maps before the first café DMA. SB 31 often still holds
+         * title-screen entries; those low indices read as font/chrome garbage on
+         * CHARBASE1 until the streamer publishes remapped tilemaps. */
         CpuClear(gBgTilemaps[0], BG_SCREEN_SIZE);
         CpuClear(gBgTilemaps[1], BG_SCREEN_SIZE);
+        CpuClear(gBgTilemaps[2], BG_SCREEN_SIZE);
+        CpuClear(gBgTilemaps[3], BG_SCREEN_SIZE);
         CpuCopy(BG_SCREEN_ADDR(6), gBgTilemaps[0], BG_SCREEN_SIZE);
         CpuCopy(BG_SCREEN_ADDR(7), gBgTilemaps[1], BG_SCREEN_SIZE);
         CpuCopy(BG_SCREEN_ADDR(12), gBgTilemaps[0], BG_SCREEN_SIZE);
         CpuCopy(BG_SCREEN_ADDR(13), gBgTilemaps[1], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(30), gBgTilemaps[2], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
     }
 }
 
@@ -179,8 +184,5 @@ void ClearGroundMap8bppMaps(void)
 
 void SetBGOBJEnableFlags(u32 mask)
 {
-    /* Spinda Café: never show BG0/BG1 (fade-edge tilemap overlaps 8bpp VRAM). */
-    if (gGroundMap8bpp)
-        mask |= (1 << BG0) | (1 << BG1);
     REG_DISPCNT = (REG_DISPCNT & 0xE0FF) | (~(mask << 8) & (DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON));
 }

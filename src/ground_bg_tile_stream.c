@@ -7,14 +7,19 @@
 #include "gba/macro.h"
 
 #define STREAM_MAX_SOURCE_TILES 2048
-#define STREAM_MAX_UPLOADS 256
+/* Café entry can need ~400 unique 8bpp tiles in one remap; keep them queued so
+ * FlushUploads commits with the tilemap DMA instead of mid-frame copies. */
+#define STREAM_MAX_UPLOADS 576
 #define STREAM_VRAM_BASE_4BPP (VRAM + 0x8000)
+/* 3×3 dual-layer renderer fills rows 0..23 only (see RenderChunksToBgTilemaps_3x3). */
+#define STREAM_VISIBLE_TILEMAP_ENTRIES (32 * 24)
 
 static EWRAM_DATA bool8 sActive = FALSE;
 static EWRAM_DATA bool8 sPrimed = FALSE;
 static EWRAM_DATA u8 sBppMode = GROUND_STREAM_4BPP;
 static EWRAM_DATA u16 sTileBytes = 32;
 static EWRAM_DATA u32 sVramBase = STREAM_VRAM_BASE_4BPP;
+static EWRAM_DATA u16 sFirstSlot = 1;
 static EWRAM_DATA s16 sNumTiles = 0;      /* includes null tile 0 */
 static EWRAM_DATA s16 sVramSlots = 0;
 static EWRAM_DATA u8 *sTileGfx = NULL;    /* pointer to tile 1..N-1 gfx */
@@ -45,6 +50,7 @@ void GroundBgTileStream_Reset(void)
     sBppMode = GROUND_STREAM_4BPP;
     sTileBytes = 32;
     sVramBase = STREAM_VRAM_BASE_4BPP;
+    sFirstSlot = 1;
     sNumTiles = 0;
     sVramSlots = 0;
     sFreeCount = 0;
@@ -91,21 +97,28 @@ static void MarkUsed(u16 slot)
 static void BuildFreeList(s32 vramSlots)
 {
     s32 i;
+    u16 first = sFirstSlot;
 
     CpuFill16(0, sFreeBits, sizeof(sFreeBits));
     sFreeCount = 0;
-    for (i = 1; i < vramSlots; i++)
+    for (i = first; i < vramSlots; i++)
         MarkFree((u16)i);
-    sClockHand = 1;
+    sClockHand = first;
 }
 
 static void ClearVramPool(s32 vramSlots)
 {
     u32 tileBytes = sTileBytes;
+    u16 first = sFirstSlot;
+    u32 clearSlots;
 
-    CpuFill16(0, (void *)sVramBase, tileBytes);
-    if (vramSlots > 1)
-        CpuFill16(0xFFFF, (void *)(sVramBase + tileBytes), (vramSlots - 1) * tileBytes);
+    /* Never wipe slots below sFirstSlot — 8bpp café leaves 0–127 for font/chrome. */
+    if (first >= vramSlots)
+        return;
+    clearSlots = (u32)(vramSlots - first);
+    CpuFill16(0, (void *)(sVramBase + first * tileBytes), tileBytes);
+    if (clearSlots > 1)
+        CpuFill16(0xFFFF, (void *)(sVramBase + (first + 1) * tileBytes), (clearSlots - 1) * tileBytes);
     BuildFreeList(vramSlots);
 }
 
@@ -126,12 +139,14 @@ static bool8 ActivateStream(const u16 *tileData, s32 numTiles, s32 vramSlots, vo
     if (bppMode == GROUND_STREAM_8BPP) {
         sTileBytes = 64;
         sVramBase = GROUND_STREAM_8BPP_VRAM_BASE;
+        sFirstSlot = GROUND_STREAM_8BPP_FIRST_SLOT;
         if (vramSlots > GROUND_STREAM_8BPP_VRAM_SLOTS)
             vramSlots = GROUND_STREAM_8BPP_VRAM_SLOTS;
     }
     else {
         sTileBytes = 32;
         sVramBase = STREAM_VRAM_BASE_4BPP;
+        sFirstSlot = 1;
     }
 
     sOwnedBase = ownedBase;
@@ -245,7 +260,7 @@ static u16 PopFreeSlot(void)
         for (bit = 0; bit < 32; bit++) {
             if (bits & (1u << bit)) {
                 slot = (word << 5) | bit;
-                if (slot == 0)
+                if (slot < sFirstSlot)
                     continue;
                 MarkUsed(slot);
                 return slot;
@@ -261,17 +276,24 @@ static u16 AllocSlot(void)
     u16 slot;
     u16 scanned;
     u16 limit;
+    u16 first;
     u16 freeSlot;
 
     freeSlot = PopFreeSlot();
     if (freeSlot != 0)
         return freeSlot;
 
+    first = sFirstSlot;
     limit = (u16)sVramSlots;
-    for (scanned = 1; scanned < limit; scanned++) {
+    if (sClockHand < first)
+        sClockHand = first;
+    for (scanned = first; scanned < limit; scanned++) {
         slot = sClockHand;
         if (++sClockHand >= limit)
-            sClockHand = 1;
+            sClockHand = first;
+
+        if (slot < first)
+            continue;
 
         if (sSlotToSource[slot] == 0)
             return slot;
@@ -283,10 +305,12 @@ static u16 AllocSlot(void)
         }
     }
 
-    for (scanned = 1; scanned < limit; scanned++) {
+    for (scanned = first; scanned < limit; scanned++) {
         slot = sClockHand;
         if (++sClockHand >= limit)
-            sClockHand = 1;
+            sClockHand = first;
+        if (slot < first)
+            continue;
         if (sSlotStamp[slot] != sClock) {
             if (sSlotToSource[slot] != 0)
                 sSourceToSlot[sSlotToSource[slot]] = 0;
@@ -297,7 +321,9 @@ static u16 AllocSlot(void)
 
     slot = sClockHand;
     if (++sClockHand >= limit)
-        sClockHand = 1;
+        sClockHand = first;
+    if (slot < first)
+        slot = first;
     if (sSlotToSource[slot] != 0)
         sSourceToSlot[sSlotToSource[slot]] = 0;
     sSlotToSource[slot] = 0;
@@ -339,6 +365,24 @@ static void RemapTilemap(u16 *tilemap, s32 count)
     }
 }
 
+void GroundBgTileStream_Invalidate(void)
+{
+    sPrimed = FALSE;
+    sCachedTileX = -1;
+    sCachedTileY = -1;
+    sOnScreenClock = 0;
+    sUploadCount = 0;
+    /* Drop any provisional slot cache so the next Remap starts clean. */
+    if (sActive && sVramSlots > 0) {
+        CpuFill16(0, sSourceToSlot, sizeof(sSourceToSlot));
+        CpuFill16(0, sSlotToSource, sizeof(sSlotToSource));
+        CpuFill16(0, sSlotStamp, sizeof(sSlotStamp));
+        BuildFreeList(sVramSlots);
+        sClock = 1;
+        sClockHand = sFirstSlot;
+    }
+}
+
 void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg)
 {
     s32 layer;
@@ -356,10 +400,11 @@ void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg)
 
     for (layer = 0; layer < groundBg->unk474; layer++) {
         mapRender = &groundBg->mapRender[layer];
+        /* Only the rendered 32×24 window — remapping blank rows wastes slots. */
         if (mapRender->bgTilemaps[0] != NULL)
-            RemapTilemap(mapRender->bgTilemaps[0], 32 * 32);
+            RemapTilemap(mapRender->bgTilemaps[0], STREAM_VISIBLE_TILEMAP_ENTRIES);
         if (mapRender->numBgs > 1 && mapRender->bgTilemaps[1] != NULL)
-            RemapTilemap(mapRender->bgTilemaps[1], 32 * 32);
+            RemapTilemap(mapRender->bgTilemaps[1], STREAM_VISIBLE_TILEMAP_ENTRIES);
     }
 
     sCachedTileX = groundBg->mapRender[0].tilePos.x;

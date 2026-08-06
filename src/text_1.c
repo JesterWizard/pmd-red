@@ -1,6 +1,7 @@
 #include "global.h"
 #include "globaldata.h"
 #include "structs/str_text.h"
+#include "bg_control.h"
 #include "bg_palette_buffer.h"
 #include "window_buffer.h"
 #include "graphics_memory.h"
@@ -149,12 +150,21 @@ void LoadCharmaps(void)
     gCharacterSpacing = 0;
 
     for (i = 0; i < 20; i++) {
-        gBgTilemaps[0][i][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279);
-        gBgTilemaps[1][i][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
+        /* Title / café 8bpp: transparent left gutter (fade tile aliases badly). */
+        if (gTitleBg8bpp || gGroundMap8bpp) {
+            gBgTilemaps[0][i][0] = 0;
+            gBgTilemaps[1][i][0] = 0;
+        }
+        else {
+            gBgTilemaps[0][i][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x279);
+            gBgTilemaps[1][i][0] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
+        }
 
         for (j = 1; j < 32; j++) {
             gBgTilemaps[0][i][j] = 0;
-            gBgTilemaps[1][i][j] = TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A);
+            /* Café 8bpp: keep BG1 clear — 0x27A chrome fragments show through when
+             * windows aren't masking (entry frames / WINOUT edge cases). */
+            gBgTilemaps[1][i][j] = gGroundMap8bpp ? 0 : (TILEMAP_PAL(15) | TILEMAP_TILE_NUM(0x27A));
         }
     }
 

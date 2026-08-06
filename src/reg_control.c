@@ -415,22 +415,12 @@ static void UpdateBGControlRegisters(void)
     }
     else if (gGroundMap8bpp) {
         /* Spinda Café: dual-layer 8bpp art on BG2+BG3.
-         * Tiles CHARBASE1 @ 0x4000–0xEFFF (704×64 B) — that range includes
-         * vanilla SB 12–15, so UI maps must sit in CHARBASE0 (SB 6/7). */
+         * Art tiles CHARBASE1 indices 128..703 @ 0x6000–0xEFFF (font/chrome at
+         * 0x4F00–0x5FFF preserved). UI maps in CHARBASE0 SB 6/7. */
         REG_BG0CNT = BGCNT_Priority[BG0] | BGCNT_SCREENBASE(6) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
         REG_BG1CNT = BGCNT_Priority[BG1] | BGCNT_SCREENBASE(7) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
         REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(30) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
         REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(31) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
-        /* Kill BG0/BG1 every frame — text init keeps a fade tile in BG0 col0 that
-         * aliases into the café tile pool as a 1-tile noise strip. */
-        REG_DISPCNT &= ~(DISPCNT_BG0_ON | DISPCNT_BG1_ON);
-        {
-            s32 row;
-            for (row = 0; row < 32; row++) {
-                gBgTilemaps[0][row][0] = 0;
-                gBgTilemaps[1][row][0] = 0;
-            }
-        }
     }
     else {
         REG_BG0CNT = BGCNT_Priority[BG0] | BGCNT_SCREENBASE(12) | BGCNT_CHARBASE(0) | BGCNT_WRAP; // 0x2C00

@@ -1,9 +1,11 @@
+const RGB_Struct gStairs01Pal[] = { INCBIN_RGB("graphics/ornament/pal/stairs01.pmdpal") };
+
 static const axmain sAxMainStairs01;
 const SiroArchive gAxStairs01 = {"SIRO", &sAxMainStairs01};
 
-/* Single 16×16 dungeon-stairs ornament (all facings share pose 0). */
+/* 32×32 café stairs ornament (all facings share pose 0). */
 static const ax_pose sStairs01Pose1[] = {
-	AX_POSE(0, OAM1(248, ST_OAM_SQUARE     , 1), OAM2(248, ST_OAM_SIZE_1, FLIP(0, 0), 2, 0), OAM3(0, 3, 4)),
+	AX_POSE(0, OAM1(240, ST_OAM_SQUARE     , 1), OAM2(240, ST_OAM_SIZE_2, FLIP(0, 0), 2, 0), OAM3(0, 3, 13)),
 	AX_POSE_TERMINATOR
 };
 

@@ -49,7 +49,7 @@ static const SubStruct_52C gUnknown_811733C = {
     .unk14 = sub_80A5204,
 };
 
-/* Spinda Café 8bpp: dual-layer, CHARBASE1 tile pool (704×64 B slots). */
+/* Spinda Café 8bpp: dual-layer; CHARBASE1 slots 128..703 (576 tiles) for art. */
 static const SubStruct_52C sCafe8bppBgConfig = {
     .unk0 = 0,
     .unk2 = 16,

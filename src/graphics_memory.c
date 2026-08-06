@@ -7,6 +7,7 @@
 #include "file_system.h"
 #include "graphics_memory.h"
 #include "ground_bg_tile_stream.h"
+#include "custom_graphics.h"
 #include "text_1.h"
 
 struct FontData
@@ -110,6 +111,21 @@ void InitFontPalette(void)
         SetBGPaletteBufferColorArray(i + 240, ptr);
 
     CloseFile(fontpalFile);
+    ApplyCustomPokeCoinPalette();
+}
+
+/* Re-copy the shared font/chrome tiles after café 8bpp stomped VRAM (legacy path)
+ * or after any map mode that may have touched CHARBASE0 mid-block. */
+void ReloadFontSheet(void)
+{
+    OpenedFile *file;
+    struct FontData *font;
+
+    file = OpenFileAndGetFileDataPtr("font", &gSystemFileArchive);
+    font = (struct FontData *)(file->data);
+    CpuCopy((u32 *)(VRAM + 0x4f00), font->dataArray, font->size * 32);
+    CloseFile(file);
+    InitFontPalette();
 }
 
 // arm9.bin::0200A00C
@@ -194,16 +210,13 @@ void DoScheduledMemCopies(void)
     sNumMemCopies = 0;
     if (sTilemapCopyScheduled[0]) {
         sTilemapCopyScheduled[0] = FALSE;
-        /* Café: never publish BG0 (fade-edge col0 → noise over 8bpp tiles). */
-        if (!gGroundMap8bpp)
-            CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(6) : BG_SCREEN_ADDR(12),
-                    gBgTilemaps[0], BG_SCREEN_SIZE);
+        CpuCopy((gTitleBg8bpp || gGroundMap8bpp) ? BG_SCREEN_ADDR(6) : BG_SCREEN_ADDR(12),
+                gBgTilemaps[0], BG_SCREEN_SIZE);
     }
     if (sTilemapCopyScheduled[1]) {
         sTilemapCopyScheduled[1] = FALSE;
-        if (!gGroundMap8bpp)
-            CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(7) : BG_SCREEN_ADDR(13),
-                    gBgTilemaps[1], BG_SCREEN_SIZE);
+        CpuCopy((gTitleBg8bpp || gGroundMap8bpp) ? BG_SCREEN_ADDR(7) : BG_SCREEN_ADDR(13),
+                gBgTilemaps[1], BG_SCREEN_SIZE);
     }
     if (sTilemapCopyScheduled[2]) {
         sTilemapCopyScheduled[2] = FALSE;
@@ -225,11 +238,9 @@ void DoScheduledMemCopies(void)
 
 void CopyBgTilemaps0And1(void)
 {
-    if (gGroundMap8bpp)
-        return;
-    CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(6) : BG_SCREEN_ADDR(12),
+    CpuCopy((gTitleBg8bpp || gGroundMap8bpp) ? BG_SCREEN_ADDR(6) : BG_SCREEN_ADDR(12),
             gBgTilemaps[0], BG_SCREEN_SIZE);
-    CpuCopy(gTitleBg8bpp ? BG_SCREEN_ADDR(7) : BG_SCREEN_ADDR(13),
+    CpuCopy((gTitleBg8bpp || gGroundMap8bpp) ? BG_SCREEN_ADDR(7) : BG_SCREEN_ADDR(13),
             gBgTilemaps[1], BG_SCREEN_SIZE);
 }
 
