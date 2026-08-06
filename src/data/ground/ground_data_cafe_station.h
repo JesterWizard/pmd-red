@@ -80,44 +80,44 @@ static const struct ScriptCommand s_gs229_g1_s0_lives2_dlg2[] = {
 
 /* Player / partner at top of entrance stairs (café floor landing), facing north */
 static const struct GroundLivesData s_gs229_g0_s1_lives[] = {
-    /*  0 */ {   0,   4,   0,   0, {  21,  27, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  0 */ {   0,   4,   0,   0, {  30,  38, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs229_g0_s1_lives0_dlg0,
     } },
-    /*  1 */ {   4,   4,   0,   0, {  23,  27, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  1 */ {   4,   4,   0,   0, {  34,  38, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs229_g0_s1_lives1_dlg0,
     } },
 };
 
 /* Spinda (left bar), Wynaut+Wobbuffet (right bar) — on fascia, face south.
- * Counter solid through y=15; talk hits kind-4 proxies there. */
+ * Counter solid through y=22; talk hits kind-4 proxies there. */
 static const struct GroundLivesData s_gs229_g1_s0_lives[] = {
-    /*  0 */ { 115,   0,   0,   0, {  14,  12, 0, CPOS_HALFTILE }, {
+    /*  0 */ { 115,   0,   0,   0, {  20,  16, 0, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives0_dlg2,
     } },
-    /*  1 */ { 109,   0,   0,   0, {  29,  12, 0, CPOS_HALFTILE }, {
+    /*  1 */ { 109,   0,   0,   0, {  42,  16, 0, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives1_dlg2,
     } },
-    /*  2 */ { 110,   0,   0,   0, {  31,  12, 0, CPOS_HALFTILE }, {
+    /*  2 */ { 110,   0,   0,   0, {  44,  16, 0, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives2_dlg2,
     } },
 };
 
-/* Invisible talk zones on solid y=15 so A works from player y=16 (kind 4 = no sprite). */
+/* Invisible talk zones on solid y=22 so A works from player y=24 (kind 4 = no sprite). */
 static const struct GroundObjectData s_gs229_g1_s0_objs[] = {
-    /*  0 */ {   4,   0,   5,   1, {  14,  15, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  0 */ {   4,   0,   5,   1, {  20,  22, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives0_dlg2,
     } },
-    /*  1 */ {   4,   0,   3,   1, {  29,  15, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  1 */ {   4,   0,   3,   1, {  42,  22, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives1_dlg2,
     } },
-    /*  2 */ {   4,   0,   3,   1, {  31,  15, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /*  2 */ {   4,   0,   3,   1, {  44,  22, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [2] = s_gs229_g1_s0_lives2_dlg2,
     } },
 };
 
 /* Exit on the bottom stair row → Whiscash Pond */
 static const struct GroundEventData s_gs229_g0_s0_evts[] = {
-    /*  0 */ {   5,   1,   0,   0, {  20,  32, 0, 0 }, &s_gs229_g0_s0_evt0_sref },
+    /*  0 */ {   5,   1,   0,   0, {  28,  46, 0, 0 }, &s_gs229_g0_s0_evt0_sref },
 };
 
 static const ScriptRef * const (sStationScripts[]) = {

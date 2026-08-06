@@ -134,3 +134,50 @@ void CloseGroundFile(OpenedFile *openedFile)
     }
     CloseFile(openedFile);
 }
+
+u32 GetGroundFileDecompressedSize(const u8 *filename, const FileArchive *arc)
+{
+    OpenedFile *openedFile = OpenFile(filename, arc);
+    const u8 *compressedData;
+    u32 size;
+
+    if (openedFile == NULL)
+        return 0;
+
+    compressedData = openedFile->file->data;
+    if (!IsGroundLzContainer(compressedData)) {
+        CloseFile(openedFile);
+        return 0;
+    }
+
+    size = GetGroundLzDecompressedSize(compressedData + 4);
+    CloseFile(openedFile);
+    return size;
+}
+
+void *StealGroundFileBuffer(OpenedFile **filePtr)
+{
+    OpenedFile *openedFile;
+    GroundFileBuffer *fileBuffer;
+    void *buffer;
+
+    if (filePtr == NULL || *filePtr == NULL)
+        return NULL;
+
+    openedFile = *filePtr;
+    fileBuffer = FindGroundFileBuffer(openedFile);
+    buffer = NULL;
+    if (fileBuffer != NULL) {
+        buffer = fileBuffer->buffer;
+        fileBuffer->openedFile = NULL;
+        fileBuffer->buffer = NULL;
+    }
+    CloseFile(openedFile);
+    *filePtr = NULL;
+    return buffer;
+}
+
+bool8 GroundFileHasHeapBuffer(OpenedFile *openedFile)
+{
+    return openedFile != NULL && FindGroundFileBuffer(openedFile) != NULL;
+}

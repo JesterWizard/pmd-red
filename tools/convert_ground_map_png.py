@@ -5,6 +5,8 @@ RT BPC is raw 4bpp (not Sky AT4PX). BPL/BMA match skytemple-files layouts.
 
 Spinda Café emits a dual-layer BMA: layer0 (BG2) = bar fronts in front of
 Pokémon sprites; layer1 (BG3) = room behind sprites. Requires MAP unk0=6/7/9.
+Native 520×400 exceeds the 1024 VRAM tile cap; ground_bg_tile_stream remaps
+the visible window at runtime so the map need not be downscaled.
 """
 
 from __future__ import annotations
@@ -139,26 +141,27 @@ def luminance(rgb: tuple[int, int, int]) -> float:
     return 0.2126 * r + 0.7152 * g + 0.0722 * b
 
 
-# Spinda Café furniture on the downscaled 45×36 tile grid (max-width 360).
+# Spinda Café furniture — authored for native 520×400 → 65×50 tiles
+# (padded camera 66×51). Runtime streams VRAM tiles for the visible region.
 CAFE_BAR_RECTS = (
-    # Full counter block through approach row y=15. Player stands on y=16;
-    # talk proxies on solid y=15 handle A-range.
-    (8, 9, 20, 15),
-    (24, 9, 36, 15),
+    # Full counter through approach row. Player stands on y=24;
+    # talk proxies on solid y=22 handle A-range.
+    (12, 12, 28, 22),
+    (34, 12, 52, 22),
 )
 # South counter fascia → BMA layer0 (BG2), in front of Pokémon sprites.
 # Left bar: drop Spinda's rightmost two fascia tiles (orange/green jars).
 CAFE_BAR_FG_RECTS = (
-    (8, 12, 16, 12),
-    (24, 12, 36, 12),
+    (12, 16, 24, 16),
+    (34, 16, 52, 16),
 )
 # Bottom lip only — taller FG overlaps café staff sprites.
 CAFE_BAR_FG_PIXELS = 4
 CAFE_TABLE_DISKS = (
-    (11, 18, 2),
-    (15, 22, 2),
-    (33, 18, 2),
-    (29, 22, 2),
+    (16, 26, 3),
+    (22, 30, 3),
+    (48, 26, 3),
+    (42, 30, 3),
 )
 CAFE_NPC_WALKABLE = ()  # staff stand on solid counter tiles; do not punch bar holes
 
@@ -222,11 +225,12 @@ def build_collision(img_rgb: Image.Image, w_tiles: int, h_tiles: int) -> list[bo
 def preprocess_for_rt_limits(
     img: Image.Image, max_width: int, target_colors: int
 ) -> Image.Image:
-    """Downscale so tiles stay under the GBA 10-bit tile cap."""
+    """Optionally downscale. Café art stays native (520) and streams VRAM tiles."""
     del target_colors
     if img.width > max_width:
+        # Integer-friendly NEAREST keeps palette-like edges; avoid LANCZOS blur.
         h = int(round(img.height * (max_width / img.width)))
-        img = img.resize((max_width, h), Image.Resampling.LANCZOS)
+        img = img.resize((max_width, h), Image.Resampling.NEAREST)
     return img
 
 
@@ -339,8 +343,8 @@ def tilemaps_to_chunks(
 def convert(
     png: Path,
     out_stem: Path,
-    num_palettes: int = 13,
-    max_width: int = 360,
+    num_palettes: int = 14,
+    max_width: int = 520,
 ) -> None:
     target_colors = num_palettes * 16
     img = preprocess_for_rt_limits(
@@ -448,15 +452,16 @@ def main() -> int:
     ap.add_argument(
         "--palettes",
         type=int,
-        default=13,
+        default=14,
         help="Number of 16-color BG palettes (max 13 for normal town maps; "
         "dual-layer café init allows 14)",
     )
     ap.add_argument(
         "--max-width",
         type=int,
-        default=360,
-        help="Downscale PNG width before tiling (keeps tile count under GBA limits)",
+        default=520,
+        help="Max PNG width before tiling. Café 520×400 stays native; runtime "
+        "streams the visible tile set into the 1024-slot VRAM budget",
     )
     args = ap.parse_args()
     out = args.out_stem or (ROOT / "data" / "map_bg" / "T01P08")

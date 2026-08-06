@@ -351,6 +351,7 @@ SECTIONS {
         src/ground_place.o(.text);
         src/ground_assets.o(.text);
         src/ground_bg.o(.text);
+        src/ground_bg_tile_stream.o(.text);
         src/ground_map.o(.text);
         src/ground_weather.o(.text);
         src/ground_sprite.o(.text);
@@ -745,6 +746,7 @@ SECTIONS {
         src/code_80A26CC.o(.rodata);
         src/ground_place.o(.rodata);
         src/ground_bg.o(.rodata);
+        src/ground_bg_tile_stream.o(.rodata);
         src/ground_map.o(.rodata);
         src/ground_weather.o(.rodata);
         src/ground_sprite.o(.rodata);

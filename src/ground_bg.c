@@ -7,6 +7,7 @@
 #include "memory.h"
 #include "file_system.h"
 #include "ground_assets.h"
+#include "ground_bg_tile_stream.h"
 #include "map_files_table.h"
 #include "code_8004AA0.h"
 #include "graphics_memory.h"
@@ -112,6 +113,7 @@ void GroundBg_FreeAll(GroundBg *groundBg)
 {
     s32 i;
 
+    GroundBgTileStream_Reset();
     CloseOpenedFiles(groundBg);
     TRY_FREE_AND_SET_NULL(groundBg->unk544);
     FREE_AND_SET_NULL(groundBg->tileMappings);
@@ -160,6 +162,7 @@ void sub_80A2E64(GroundBg *groundBg)
     SubStruct_0 *unk0Ptr;
     s32 unk0Id, unk3E0Id;
 
+    GroundBgTileStream_Reset();
     CloseOpenedFiles(groundBg);
     groundBg->mapFileId = -1;
     groundBg->chunkDimensions = 0;
@@ -246,10 +249,17 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     layerSpecs = &groundBg->layerSpecs;
     bmaHeader = &groundBg->bmaHeader;
 
-    // Decompress BPC into unk544 scratch (already allocated) so large LZ payloads
-    // never compete with the main heap, then discard before opening BPL/BMA.
+    // Decompress BPC into unk544 scratch when it fits. Oversized LZ BPCs free
+    // that scratch and hit the heap; Spinda Café ships raw ROM tiles instead so
+    // streaming never needs a ~63KB heap copy (OOM → black screen).
     {
         u32 bpcScratchSize = groundBg->unk544 != NULL ? (u32)groundBg->unk52C.unkE * 256 : 0;
+        u32 bpcDecodedSize = GetGroundFileDecompressedSize(mapFilesPtr->bpcFileName, &gGroundFileArchive);
+
+        if (bpcDecodedSize > bpcScratchSize && groundBg->unk544 != NULL) {
+            TRY_FREE_AND_SET_NULL(groundBg->unk544);
+            bpcScratchSize = 0;
+        }
 
         bpcData = OpenGroundFileData(mapFilesPtr->bpcFileName, &gGroundFileArchive,
                                      groundBg->unk544, bpcScratchSize, &groundBg->bpcFile);
@@ -265,9 +275,29 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     }
     layerSpecs->numChunks = *bpcData++;
 
-    CopyBpcTilesToVram((void *)(VRAM + 0x8000 + groundBg->unk52C.unk4 * 32), bpcData, &groundBg->unk52C, &groundBg->layerSpecs);
     _UncompressCell(groundBg->tileMappings, &groundBg->chunkDimensions, bpcData + ((layerSpecs->numTiles - 1) * 16), &groundBg->unk52C, &groundBg->layerSpecs);
-    TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
+
+    if (layerSpecs->numTiles > groundBg->unk52C.unk6) {
+        if (GroundFileHasHeapBuffer(groundBg->bpcFile)) {
+            /* Heap-backed LZ BPC: steal buffer for streamer (no second copy). */
+            void *owned = StealGroundFileBuffer(&groundBg->bpcFile);
+            GroundBgTileStream_InstallOwned(owned, bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6);
+        }
+        else if (groundBg->bpcFile != NULL) {
+            /* Uncompressed ROM BPC: stream directly from ROM, no heap tiles. */
+            GroundBgTileStream_InstallRom(bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6);
+            TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
+        }
+        else {
+            /* BPC lived in unk544 scratch — copy tiles out, keep scratch for collision. */
+            GroundBgTileStream_Install(bpcData, layerSpecs->numTiles, groundBg->unk52C.unk6);
+        }
+    }
+    else {
+        GroundBgTileStream_Reset();
+        CopyBpcTilesToVram((void *)(VRAM + 0x8000 + groundBg->unk52C.unk4 * 32), bpcData, &groundBg->unk52C, &groundBg->layerSpecs);
+        TRY_CLOSE_GROUND_FILE_AND_SET_NULL(groundBg->bpcFile);
+    }
 
     groundBg->bplFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bplFileName, &gGroundFileArchive);
     groundBg->bmaFile = OpenGroundFileAndGetFileDataPtr(mapFilesPtr->bmaFileName, &gGroundFileArchive);
@@ -309,8 +339,22 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
 
     bmaData = BmaLayerNrlDecompressor(groundBg->chunkMappings, bmaData, &groundBg->unk52C, &groundBg->bmaHeader);
     groundBg->decompressedBMAData = bmaData;
-    if (groundBg->unk544 != NULL) {
-        groundBg->unk52C.unk14(groundBg->unk544, bmaData, bmaHeader, groundBg->unk52C.unkE);
+    if (groundBg->unk52C.unk14 != NULL) {
+        /* Oversized-BPC streaming frees unk544 before decompress; restore a
+         * collision scratch sized for this map (not the full dual-layer cap). */
+        if (groundBg->unk544 == NULL) {
+            s32 rows = bmaHeader->mapHeightTiles + 8;
+            u32 bytes = (u32)rows * 256;
+            u32 cap = (u32)groundBg->unk52C.unkE * 256;
+
+            if (bytes > cap)
+                bytes = cap;
+            groundBg->unk544 = MemoryAlloc(bytes, MEMALLOC_GROUP_6);
+            groundBg->unk52C.unk14(groundBg->unk544, bmaData, bmaHeader, (s32)(bytes / 256));
+        }
+        else {
+            groundBg->unk52C.unk14(groundBg->unk544, bmaData, bmaHeader, groundBg->unk52C.unkE);
+        }
     }
 
     sub0Ptr = groundBg->unk0;
@@ -408,6 +452,7 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
 
     sub_80A3BB0(groundBg, 0);
     CallMapTilemapRenderFunc(groundBg->mapRender);
+    GroundBgTileStream_RemapVisibleTilemaps(groundBg);
     groundBg->unk52A = 1;
 }
 
@@ -1431,6 +1476,14 @@ void sub_80A4764(GroundBg *groundBg)
         s32 unk;
 
         UpdateMapCameraPosition(mapRender, map478);
+        /* Streaming remaps source tile ids → VRAM slots in-place. Clear first so
+         * unwritten cells never carry stale slot indexes into the next Remap. */
+        if (GroundBgTileStream_IsActive()) {
+            if (mapRender->numBgs > 1)
+                ClearDoubleBgTilemaps(mapRender);
+            else
+                ClearSingleBgTilemap(mapRender);
+        }
         CallMapTilemapRenderFunc(mapRender);
         for (j = 0, unk = mapRender->unk2 + groundBg->unk52C.unkA; j < mapRender->numBgs; j++, unk++) {
             switch (unk) {
@@ -1443,6 +1496,8 @@ void sub_80A4764(GroundBg *groundBg)
             }
         }
     }
+
+    GroundBgTileStream_RemapVisibleTilemaps(groundBg);
 
     groundBg->unk52A = 1;
 }

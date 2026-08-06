@@ -33,7 +33,9 @@ const u8 gFileT01P07Wm[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/T01P07Wm.bma.lz"
 const u8 gFileT01P07c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/T01P07c.bpc.lz");
 const u8 gFileT01P07m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/T01P07m.bma.lz");
 const u8 gFileT01P08[] ALIGNED(4) = INCBIN_U8("data/map_bg/T01P08.bpl");
-const u8 gFileT01P08c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/T01P08c.bpc.lz");
+/* Raw (not GMLZ): café BPC is ~63KB / ~1800 tiles; streaming reads tiles from ROM
+ * so we never allocate a decompressed copy on the main heap (OOM softlock). */
+const u8 gFileT01P08c[] ALIGNED(4) = INCBIN_U8("data/map_bg/T01P08c.bpc");
 const u8 gFileT01P08m[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/T01P08m.bma.lz");
 const u8 gFileW01[] ALIGNED(4) = INCBIN_U8("data/map_bg/W01.bpl");
 const u8 gFileW01c[] ALIGNED(4) = INCBIN_U8("data/map_bg_lz/W01c.bpc.lz");

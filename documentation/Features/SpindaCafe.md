@@ -61,7 +61,7 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 | Pond stairs / warp | [`src/data/ground/ground_data_t01p02a_station.h`](../../src/data/ground/ground_data_t01p02a_station.h) (group 31) |
 | Indoor map / NPCs | [`src/data/ground/ground_data_cafe_station.h`](../../src/data/ground/ground_data_cafe_station.h) (`MAP_SPINDA_CAFE` / gs229) |
 | Map conversion | [`src/ground_map_conversion_table.c`](../../src/ground_map_conversion_table.c) (`unk0 = 6` dual-layer) |
-| Map art source | [`graphics/custom/spinda_cafe.png`](../../graphics/custom/spinda_cafe.png) → `data/map_bg/T01P08*` via [`tools/convert_ground_map_png.py`](../../tools/convert_ground_map_png.py) |
+| Map art source | [`graphics/custom/spinda_cafe.png`](../../graphics/custom/spinda_cafe.png) → `data/map_bg/T01P08*` via [`tools/convert_ground_map_png.py`](../../tools/convert_ground_map_png.py); VRAM streaming in [`src/ground_bg_tile_stream.c`](../../src/ground_bg_tile_stream.c) |
 | Stairs ornament | [`graphics/ornament/Stairs01/`](../../graphics/ornament/Stairs01/), [`src/data/ornament/stairs01.h`](../../src/data/ornament/stairs01.h) |
 | Special text | [`include/constants/script_cmd.h`](../../include/constants/script_cmd.h), [`src/textbox.c`](../../src/textbox.c) |
 | Juice Bar | [`src/spinda_cafe.c`](../../src/spinda_cafe.c), [`include/spinda_cafe.h`](../../include/spinda_cafe.h) |
@@ -73,9 +73,9 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 
 ## Limitations
 
-- Indoor art uses **13×16-color** BG palettes (208 colors), downscaled with `--max-width 360` (~970 tiles). Café map conversion uses **`unk0 = 6`** (dual-layer init, up to 14 banks) so sprites sit between BG layers — do not use `unk0 = 5` (sprites draw above both).
-- Collision: cave walls/void from luminance; **bars** (counter through approach row `y=15`) and **round tables** from fixed tile regions. Player stands on `y=16`; invisible kind-4 talk objects on `y=15` bridge A-range. Staff stay on solid fascia tiles.
-- **Bar occlusion:** bottom **4px** of the fascia row on **BMA layer0 (BG2)** in front of Pokémon (left bar FG ends at `x=16`, dropping Spinda’s rightmost two jar tiles). Rest of the room on **layer1 (BG3)**.
+- Indoor art source is **520×400** (indexed). Unique tiles exceed the GBA **1024** VRAM slot cap, so [`ground_bg_tile_stream.c`](../../src/ground_bg_tile_stream.c) keeps the café **BPC uncompressed in ROM** and remaps the visible window into VRAM each frame (no downscale, no ~63KB heap tile buffer). Café map conversion uses **`unk0 = 6`** (dual-layer init, up to 14 banks) so sprites sit between BG layers — do not use `unk0 = 5` (sprites draw above both).
+- Collision: cave walls/void from luminance; **bars** (counter through approach row `y=22`) and **round tables** from fixed tile regions. Player stands on `y=24`; invisible kind-4 talk objects on `y=22` bridge A-range. Staff stay on solid fascia tiles.
+- **Bar occlusion:** bottom **4px** of the fascia row on **BMA layer0 (BG2)** in front of Pokémon (left bar FG ends at `x=24`, dropping Spinda’s rightmost two jar tiles). Rest of the room on **layer1 (BG3)**.
 - No cup-dungeon unlocks, door recruits, or Project P dungeon unlocks.
 - Recycle catalog / lottery tables are Red-adapted, not a full Sky dump.
 - Stairs / NPC positions may need in-game tuning.

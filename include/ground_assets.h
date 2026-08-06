@@ -15,6 +15,17 @@ const void *OpenGroundFileData(const u8 *filename, const FileArchive *arc,
 OpenedFile *OpenGroundFileAndGetFileDataPtr(const u8 *filename, const FileArchive *arc);
 void CloseGroundFile(OpenedFile *openedFile);
 
+/* Peek GMLZ decompressed size for filename, or 0 if missing/uncompressed. */
+u32 GetGroundFileDecompressedSize(const u8 *filename, const FileArchive *arc);
+
+/* Detach heap buffer from an opened ground file so CloseGroundFile will not
+ * free it. Returns the buffer (caller owns it). Closes and nulls *filePtr.
+ * Returns NULL when the file was ROM-backed (no heap buffer); still closes. */
+void *StealGroundFileBuffer(OpenedFile **filePtr);
+
+/* TRUE when OpenGroundFileData decompressed this file onto the heap. */
+bool8 GroundFileHasHeapBuffer(OpenedFile *openedFile);
+
 #define CLOSE_GROUND_FILE_AND_SET_NULL(filePtr) \
 {                                               \
     CloseGroundFile(filePtr);                   \
