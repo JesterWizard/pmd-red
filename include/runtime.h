@@ -77,6 +77,8 @@ typedef struct {
     u8 evolution_stat_boost;
     /* Custom IQ skills (e.g. Conserver); else vanilla skill set only */
     u8 custom_iq_skills;
+    /* Cheat: R+B in dungeon clears with success */
+    u8 rb_complete_dungeon;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

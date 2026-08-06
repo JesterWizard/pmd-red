@@ -354,6 +354,14 @@ void DungeonHandlePlayerInput(void)
             if ((gRealInputs.held & L_BUTTON) == L_BUTTON && (gRealInputs.pressed & R_BUTTON) == R_BUTTON) {
                 tryItemThrow = TRUE;
             }
+            if (gRuntimeConfig.rb_complete_dungeon
+                && (gRealInputs.held & R_BUTTON) == R_BUTTON
+                && (gRealInputs.pressed & B_BUTTON) == B_BUTTON) {
+                gDungeon->unk4 = 1;
+                gDungeon->unk11 = 4; /* DUNGEON_EXIT_CLEARED_DUNGEON */
+                SetLeaderActionFields(ACTION_PASS_TURN);
+                break;
+            }
             if (triggers[0]) {
                 tryItemThrow = TRUE;
             }
