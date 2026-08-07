@@ -28,7 +28,7 @@ When enabled (and rebuilt):
 
 1. Personality portal runs a fixed 8-question quiz (SSLP answers only — one choice each), then gender (“What does it matter?”).
 2. Result is forced to **the sassy type**; hero is **Treecko**; partner is **Squirtle** (partner picker skipped).
-3. Partner is named **Floyd** automatically (nickname prompt skipped); hero rename still happens in the Tiny Woods cutscene.
+3. Partner is named **Floyd** automatically (nickname prompt skipped); hero rename still runs in Tiny Woods with **Trielo** prefilled (editable).
 4. Tiny Woods wake-up through the Caterpie-rescue decision uses faithful SSLP Section 1 dialogue (including meta / fourth-wall lines).
 
 When disabled (and rebuilt): full vanilla flow.
@@ -60,7 +60,7 @@ Later SSLP sections are not implemented yet; edit the matching maps under [`src/
 
 ## Limitations
 
-- Does not force the hero nickname (Trielo); player still chooses it in Tiny Woods.
+- Hero nickname defaults to Trielo but can still be changed on the naming screen.
 - Partner animation cues still follow the vanilla timeline; some vanilla reaction anims may play during custom dialogue beats.
 - Save layout unchanged (`CUSTOM_STORY` is SPECIAL / not packed into `gScriptVarBuffer`).
 - Only one script pack is linked per build; flipping `.custom_story` without rebuilding leaves the old pack in the ROM.

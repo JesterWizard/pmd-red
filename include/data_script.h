@@ -312,6 +312,8 @@
 #define PLAY_CUTSCENE_EFFECT_30(a)      SPECIAL_PROCESS(0x48, a)
 #define EXTEND_SPRITE_PALETTE(id)       SPECIAL_PROCESS(0x49, id)
 #define CLEAR_EXTENDED_SPRITE_PALETTE   SPECIAL_PROCESS(0x4A, 0)
+// Prefill ally #1 (hero) nickname with "Trielo" for the rename prompt.
+#define PRESET_HERO_NAME_TRIELO         SPECIAL_PROCESS(0x4B, 0)
 
 // k: See enum "SpecialTextKind"
 // i: ???

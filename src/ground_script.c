@@ -4163,6 +4163,16 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
         case 0x4A:
             GroundSprite_ExtendPaletteDelete(0);
             return 0;
+        case 0x4B: {
+            static const u8 sTrieloName[] = _("Trielo");
+            Pokemon *ptr = sub_80A8D54(1);
+
+            if (ptr != NULL) {
+                BoundedCopyStringtoBuffer(ptr->name, (u8 *)sTrieloName, POKEMON_NAME_LENGTH);
+                return 1;
+            }
+            return 0;
+        }
     }
 
     return 0;
