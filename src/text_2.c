@@ -106,7 +106,7 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
             if (coinTiles != NULL) {
                 ApplyCustomPokeCoinPalette();
                 WriteGFXToBG0Window(windowId, blitX, blitY, POKE_COIN_SIZE, POKE_COIN_SIZE,
-                                    (u32 *)coinTiles, POKE_COIN_PAL_BANK);
+                                    (u32 *)coinTiles, GetPokeCoinPalBank());
                 gUnknown_20274A5 = TRUE;
                 return (blitX + POKE_COIN_SIZE) - x + gCharacterSpacing;
             }

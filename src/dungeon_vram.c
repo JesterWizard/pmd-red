@@ -398,7 +398,7 @@ void sub_803E874(bool8 r10, s32 r9)
     }
 
     SetBGPaletteBufferColorRGB(248, &gFontPalette[8], gDungeonBrightness, NULL);
-    /* Bank 12 was just rewritten from gUnknown_202ECA4; restore coin gold. */
+    /* Coin uses font slots 9–10 here; banks 12–13 stay stairs/traps. */
     ApplyCustomPokeCoinPalette();
 
     color = ((struct DungeonPalFile*) gDungeon->paletFile)->unk4;

@@ -5,39 +5,35 @@
 #include "graphics_memory.h"
 #include "structs/rgb.h"
 #include "text_1.h"
-#include "dungeon_map.h"
+#include "dungeon_vram.h"
 
 /*
- * Poké coin + shared fontpal coexistence
- * --------------------------------------
- * Coin uses dedicated BG palette bank 12 (192–207). Bank 14 is the dungeon
- * minimap (items/stairs); bank 15 is shared fontpal. Source black (#000000)
- * stays index 0 (BG hardware transparent). Blits merge into existing window
- * tiles so opaque menus keep their fill and transparent HUD stays clear.
- * Team-rank badges use bank 13 so both can appear together.
+ * Poké coin — see include/palette_owners.h (enforced by tools/check_palette_owners.py).
  *
- * Item pink (pmd2_battle_info_colors) still patches fontpal slot 11.
+ * Town + dungeon: BG bank 12. Town owns the whole bank; dungeon only writes
+ * slots 8–11 (full 4 golds) so normal stairs (indices 1–7,15) stay intact.
+ * Font bank 15 (HUD / HP / pink) is never touched for coin colors.
  */
 
-enum {
-    ITEM_PINK_SLOT = 11,
-    COIN_FILL_INDEX = 1, /* window fill when present in merged base tiles */
+static const RGB_Struct sItemPinkColor = {
+    ITEM_PINK_R, ITEM_PINK_G, ITEM_PINK_B, 0x80
+}; /* must match palette_owners.h / check_palette_owners.py */
+
+static const RGB_Struct sPokeCoinTownPal[16] = {
+    [POKE_COIN_SLOT_TRANSPARENT] = {   0,   0,   0, 0x80 },
+    [POKE_COIN_SLOT_WHITE] = { 255, 255, 255, 0x80 },
+    [POKE_COIN_SLOT_PALE] = { 255, 255, 115, 0x80 },
+    [POKE_COIN_SLOT_YELLOW] = { 247, 206,   0, 0x80 },
+    [POKE_COIN_SLOT_MID] = { 222, 173,   0, 0x80 },
+    [POKE_COIN_SLOT_DARK_TOWN] = { 165, 115,   0, 0x80 },
 };
 
-static const RGB_Struct sItemPinkColor = { 255, 119, 199, 0x80 }; /* #FF77C7 */
+static const RGB_Struct sPokeCoinPale = { 255, 255, 115, 0x80 };
+static const RGB_Struct sPokeCoinYellow = { 247, 206,   0, 0x80 };
+static const RGB_Struct sPokeCoinMid = { 222, 173,   0, 0x80 };
+static const RGB_Struct sPokeCoinDark = { 165, 115,   0, 0x80 };
 
-/* Slot 0 = transparent. Slot 1 mirrors window fill for merged menu pixels. */
-static const RGB_Struct sPokeCoinPalette[16] = {
-    [0]  = {   0,   0,   0, 0x80 }, /* transparent */
-    [1]  = {  39,  79, 111, 0x80 }, /* placeholder; replaced by window fill */
-    [7]  = { 255, 255, 255, 0x80 }, /* rim highlight */
-    [9]  = { 255, 255, 115, 0x80 }, /* pale gold */
-    [10] = { 247, 206,   0, 0x80 }, /* yellow */
-    [11] = { 222, 173,   0, 0x80 }, /* mid gold */
-    [12] = { 165, 115,   0, 0x80 }, /* dark gold */
-};
-
-/* 16×16 from poke_coin.png — black (#000000) is index 0. */
+/* 16×16 from poke_coin.png — black (#000000) is index 0; full gold indices. */
 static const u32 sPokeCoinTiles[32] = {
     0xA9977700, 0xAAA99770, 0xACCCCC77, 0xCBAABC97,
     0xBBAABCA7, 0xABCCBCA9, 0xAAAABCAA, 0x9AAABCAB,
@@ -86,7 +82,7 @@ static const unkChar sPokeCoinRight = {
     .fillB = 0,
 };
 
-/* Button/icon glyphs with 9→8, 10→7 (kept; harmless with isolated coin bank). */
+/* Button/icon glyphs with 9→8, 10→7 (safe when dungeon coin uses 9/10). */
 static const u16 sRemap_A_BUTTON[] = {
     0x7700, 0x7777, 0x0000,
     0x3770, 0x7333, 0x0007,
@@ -188,7 +184,7 @@ static const u16 sRemap_SELECT2[] = {
     0x7737, 0x7773, 0x0773,
     0x7337, 0x7733, 0x0773,
     0x7777, 0x7777, 0x0877,
-    0x8888, 0x8888, 0x0088,
+    0x8888, 0x8888, 0x0008,
     0x0000, 0x0000, 0x0000,
 };
 static const u16 sRemap_NDS_Y[] = {
@@ -259,20 +255,30 @@ static void RefreshActiveFontPalette(void)
         SetBGPaletteBufferColorArray(i + 240, ptr);
 }
 
-static void LoadPokeCoinPaletteBank(void)
+u32 GetPokeCoinPalBank(void)
+{
+    if (gUnknown_203B40C)
+        return POKE_COIN_PAL_BANK_DUNGEON;
+    return POKE_COIN_PAL_BANK_TOWN;
+}
+
+static void LoadPokeCoinPalette(void)
 {
     s32 i;
-    const RGB_Struct *fill;
+    s32 base;
 
-    for (i = 0; i < 16; i++)
-        SetBGPaletteBufferColorArray(POKE_COIN_PAL_BANK * 16 + i, &sPokeCoinPalette[i]);
-
-    /* Keep slot 1 as window fill so merged menu pixels stay correct. */
-    if (sub_80063B0() == 1)
-        fill = &gFontPalette[1];
-    else
-        fill = &gFontPalette[16 + 1];
-    SetBGPaletteBufferColorArray(POKE_COIN_PAL_BANK * 16 + COIN_FILL_INDEX, fill);
+    if (gUnknown_203B40C) {
+        /* Full 4 golds into trappat bank slots 8–11 only (stairs use 1–7,15). */
+        base = POKE_COIN_PAL_BANK_DUNGEON * 16;
+        SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT0, &sPokeCoinPale);
+        SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT1, &sPokeCoinYellow);
+        SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT2, &sPokeCoinMid);
+        SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT3, &sPokeCoinDark);
+    }
+    else {
+        for (i = 0; i < 16; i++)
+            SetBGPaletteBufferColorArray(POKE_COIN_PAL_BANK_TOWN * 16 + i, &sPokeCoinTownPal[i]);
+    }
 }
 
 /* Unpack one 8×8 tile row-words into a 16×16 nibble grid. */
@@ -290,6 +296,22 @@ static void UnpackCoinSource(u8 out[16][16])
             }
         }
     }
+}
+
+static u8 RemapCoinPixelForBank(u8 p)
+{
+    if (!gUnknown_203B40C)
+        return p;
+    /* Town indices → dungeon bank12 slots 8–11; white/transparent unchanged. */
+    if (p == POKE_COIN_SLOT_PALE)
+        return POKE_COIN_SLOT_PALE_DUNGEON;
+    if (p == POKE_COIN_SLOT_YELLOW)
+        return POKE_COIN_SLOT_YELLOW_DUNGEON;
+    if (p == POKE_COIN_SLOT_MID)
+        return POKE_COIN_SLOT_MID_DUNGEON;
+    if (p == POKE_COIN_SLOT_DARK_TOWN)
+        return POKE_COIN_SLOT_DARK_DUNGEON;
+    return p;
 }
 
 static void PackCoinBlit(const u8 in[16][16])
@@ -357,7 +379,7 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
         for (x = 0; x < 16; x++) {
             u8 p = src[y][x];
             if (p != 0 && (y + oy) < 16 && (x + ox) < 16)
-                dst[y + oy][x + ox] = p;
+                dst[y + oy][x + ox] = RemapCoinPixelForBank(p);
         }
     }
     PackCoinBlit(dst);
@@ -368,16 +390,14 @@ void ApplyCustomPokeCoinPalette(void)
 {
     s32 bank;
 
-    if (gRuntimeConfig.custom_graphics) {
-        LoadPokeCoinPaletteBank();
-        /* Heal minimap bank 14 if a prior coin build stomped it. */
-        LoadDungeonMapPalette();
-    }
+    if (gRuntimeConfig.custom_graphics)
+        LoadPokeCoinPalette();
 
     if (gRuntimeConfig.pmd2_battle_info_colors) {
         for (bank = 0; bank < 8; bank++)
             gFontPalette[bank * 16 + ITEM_PINK_SLOT] = sItemPinkColor;
         RefreshActiveFontPalette();
+        /* Coin is on bank 12 — font refresh does not clear it. */
     }
 }
 

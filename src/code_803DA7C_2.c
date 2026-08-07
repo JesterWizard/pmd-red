@@ -134,7 +134,7 @@ void sub_803E13C(void)
         SetBGPaletteBufferColorArray(240 + i, pal);
         pal++;
     }
-    /* Re-apply coin bank 12 + item-pink patches after the raw font upload. */
+    /* Re-apply coin palette (dungeon: font 9–10) + item-pink after font upload. */
     ApplyCustomPokeCoinPalette();
 }
 

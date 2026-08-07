@@ -450,15 +450,19 @@ $(ELF): $(LD_SCRIPT) $(LD_SCRIPT_DEPS) $(ALL_OBJECTS) libagbsyscall/libagbsyscal
 	@echo "cd $(BUILD_DIR) && $(LD) $(LDFLAGS) -T ../../$< --print-memory-usage -o ../../$@ <objs> <libs> | cat"
 	$(GBAFIX) $@ -t"$(TITLE)" -c$(GAME_CODE) -m$(MAKER_CODE) -r$(REVISION) --silent
 	@python3 tools/check_save_layout.py
+	@python3 tools/check_palette_owners.py
 
 # Builds the rom from the elf file
 $(ROM): %.gba: $(ELF)
 	$(OBJCOPY) -O binary --gap-fill 0xFF $(OBJCOPY_PAD_FLAGS) $< $@
 	$(GBAFIX) $@ $(GBAFIX_PAD_FLAGS) --silent
 
-.PHONY: check-save-layout
+.PHONY: check-save-layout check-palette-owners
 check-save-layout:
 	python3 tools/check_save_layout.py
+
+check-palette-owners:
+	python3 tools/check_palette_owners.py
 
 ifeq (,$(filter clean,$(MAKECMDGOALS)))
 -include $(ALL_OBJECTS:.o=.d)
