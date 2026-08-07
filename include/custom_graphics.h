@@ -8,8 +8,15 @@
 #define POKE_COIN_CHR_RIGHT 0x83C4
 #define POKE_COIN_SIZE 16
 
+/* Half {STAR_BULLET} for move Power rows (full stars use vanilla STAR_BULLET). */
+#define POWER_STAR_HALF_CHR 0x8754
+#define MOVE_POWER_STAR_MAX 60 /* PMD2 Giga Impact base power */
+
 /* Returns a replacement glyph for {POKE} when custom_graphics is on, else NULL. */
 const unkChar *GetCustomPokeCoinChar(s32 chr);
+
+/* Half-star glyph matching IQ STAR_BULLET palette (not gated on custom_graphics). */
+const unkChar *GetPowerStarChar(s32 chr);
 
 /*
  * Build 16×16 coin blit. baseTiles (32 words) is existing window GFX to merge

@@ -15,6 +15,9 @@
 
 static void AdjustMoveInfoWindowHeight(WindowTemplate *win)
 {
+    /* Power row (always) + Stat row when physical/special split is on. */
+    win->height += 2;
+    win->totalHeight += 2;
     if (gRuntimeConfig.physical_special_split) {
         win->height += 2;
         win->totalHeight += 2;

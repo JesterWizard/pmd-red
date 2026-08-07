@@ -594,6 +594,9 @@ static void ShowMovesInfoWindow(Move *moves, s32 firstMoveId, s32 movesCount)
 
     sub_80140B4(&windows);
     windows.id[0].header = &header;
+    /* Power row (always) + Stat row when physical/special split is on. */
+    windows.id[0].height += 2;
+    windows.id[0].totalHeight += 2;
     if (gRuntimeConfig.physical_special_split) {
         windows.id[0].height += 2;
         windows.id[0].totalHeight += 2;

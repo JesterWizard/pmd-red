@@ -418,3 +418,39 @@ const unkChar *GetCustomPokeCoinChar(s32 chr)
         return &sPokeCoinRight;
     return NULL;
 }
+
+/*
+ * Half {STAR_BULLET} for move Power (IQ uses the full glyph at 0x8742).
+ * Pixel data / unkA match kanji_a STAR_BULLET (width 8, unkA 3, multi-tone).
+ */
+static const u16 sPowerStarHalfGlyph[] = {
+    0x0000, 0x0000, 0x0000,
+    0x0000, 0x0000, 0x0000,
+    0x6000, 0x0003, 0x0000,
+    0x7200, 0x0002, 0x0000,
+    0x7776, 0x0006, 0x0000,
+    0x7600, 0x0002, 0x0000,
+    0x6720, 0x0007, 0x0000,
+    0x3260, 0x0002, 0x0000,
+    0x3300, 0x0000, 0x0000,
+    0x0000, 0x0000, 0x0000,
+    0x0000, 0x0000, 0x0000,
+    0x0000, 0x0000, 0x0000,
+};
+
+static const unkChar sPowerStarHalf = {
+    .unk0 = sPowerStarHalfGlyph,
+    .unk4 = POWER_STAR_HALF_CHR,
+    .width = 5,
+    .unk8 = 0,
+    .fill9 = 0,
+    .unkA = 3, /* same direct multi-color blit path as STAR_BULLET */
+    .fillB = 0,
+};
+
+const unkChar *GetPowerStarChar(s32 chr)
+{
+    if (chr == POWER_STAR_HALF_CHR)
+        return &sPowerStarHalf;
+    return NULL;
+}

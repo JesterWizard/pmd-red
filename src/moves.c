@@ -13,6 +13,7 @@
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
+#include "custom_graphics.h"
 #include "pokemon_types.h"
 #include "strings.h"
 
@@ -32,6 +33,7 @@ static void unk_LinkedSequencesToMoves4(Move *, Move [MAX_MON_MOVES][MAX_MON_MOV
 static void unk_LinkedSequencesToMoves8(Move *, Move [8][8]);
 static void unk_LinkedSequencesToMoves8_v2(Move *, Move [8][8]);
 static void unk_MovePrintData(Move *, s32);
+static void BufferMovePowerStars(u8 *dst, s32 power);
 
 static const MoveBufferStruct sDefaultMoveBufferParams = {0};
 
@@ -1376,10 +1378,39 @@ s32 unk_PrintMoveDescription(s32 x, Move *move, s32 a3, STATUSTEXTS(statuses))
     return PrepareStatusStringArrays(buffer, statuses);
 }
 
+#define STAR_BULLET_CHR 0x8742
+
+/* PMD2-style: 1 base power ≈ half star, capped at MOVE_POWER_STAR_MAX.
+ * Full stars are IQ's {STAR_BULLET}; odd power adds a matching half glyph. */
+static void BufferMovePowerStars(u8 *dst, s32 power)
+{
+    s32 i;
+    s32 full;
+    bool8 half;
+
+    if (power < 0)
+        power = 0;
+    if (power > MOVE_POWER_STAR_MAX)
+        power = MOVE_POWER_STAR_MAX;
+
+    full = power / 2;
+    half = (power & 1) != 0;
+    for (i = 0; i < full; i++) {
+        *dst++ = (u8)(STAR_BULLET_CHR >> 8);
+        *dst++ = (u8)(STAR_BULLET_CHR & 0xFF);
+    }
+    if (half) {
+        *dst++ = (u8)(POWER_STAR_HALF_CHR >> 8);
+        *dst++ = (u8)(POWER_STAR_HALF_CHR & 0xFF);
+    }
+    *dst = '\0';
+}
+
 static void unk_MovePrintData(Move *move, s32 y)
 {
     u8 type;
     s32 power;
+    s32 powerY;
     const u8 *text;
 
     AddDoubleUnderScoreHighlight(y, 4, 72, 200, COLOR_WHITE_2);
@@ -1389,6 +1420,7 @@ static void unk_MovePrintData(Move *move, s32 y)
     type = GetMoveType(move);
     text = GetUnformattedTypeString(type);
     PrintFormattedStringOnWindow(64, 86, text, y, 0);
+    powerY = 98;
     if (gRuntimeConfig.physical_special_split) {
         u8 category = GetMoveCategory(move->id);
 
@@ -1400,9 +1432,16 @@ static void unk_MovePrintData(Move *move, s32 y)
         else
             text = gUnknown_810DD58; /* "Status" */
         PrintFormattedStringOnWindow(64, 98, text, y, 0);
+        powerY = 110;
     }
-    power = GetMoveBasePower(move);
-    gFormatArgs[0] = power;
+    /* Status moves use placeholder basePower (often 2); show no stars. */
+    if (GetMoveCategory(move->id) == CATEGORY_STATUS)
+        power = 0;
+    else
+        power = GetMoveBasePower(move) + move->ginseng;
+    BufferMovePowerStars(gFormatBuffer_Items[0], power);
+    PrintFormattedStringOnWindow(4, powerY, gTextPower, y, 0);
+    PrintFormattedStringOnWindow(64, powerY, gFormatBuffer_Items[0], y, 0);
 }
 
 static void CopyAndResetMove(Move *dest, Move *src)

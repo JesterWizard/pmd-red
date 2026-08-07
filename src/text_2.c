@@ -900,8 +900,12 @@ const unkChar *GetCharacter(s32 chr)
     s32 r2, r4;
     const unkChar *ret;
     const unkChar *strPtr = gCharmaps[gCurrentCharmap]->unk4;
-    const unkChar *custom = GetCustomPokeCoinChar(chr);
+    const unkChar *    custom = GetCustomPokeCoinChar(chr);
 
+    if (custom != NULL)
+        return custom;
+
+    custom = GetPowerStarChar(chr);
     if (custom != NULL)
         return custom;
 

@@ -479,7 +479,7 @@ A_BUTTON = 87 50
 B_BUTTON = 87 51
 DPAD = 87 52
 START_BUTTON = 87 53 87 71
-@ 87 54 placeholder, some kanji character
+POWER_STAR_HALF = 87 54 @ left half of STAR_BULLET for move power display
 @ 87 5F ?????
 SELECT_BUTTON = 87 72 87 73
 L_BUTTON = 87 74
