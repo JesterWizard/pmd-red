@@ -1,4 +1,4 @@
-# Custom Portraits: Starter Evolution Faces
+# Custom Portraits: SpriteCollab Faces
 
 ---
 
@@ -13,15 +13,13 @@
 
 ## Introduction
 
-Vanilla Red Rescue Team only ships dialogue portraits (`kao`) for base starters (and a few evolved NPCs like Charizard / Blastoise / Persian). Mid and final evolutions of the personality-test starters normally show no face.
+This feature loads **[SpriteCollab](https://sprites.pmdcollab.org)** portraits from `graphics/portraits/<species>/`, converts them at build time to **AT4PX** (vanilla kao compression) + RGBX palettes, and serves them from a separate `pksdir0` archive when enabled.
 
-This feature loads **[SpriteCollab](https://sprites.pmdcollab.org)** portraits for those evolved forms from `graphics/portraits/<species>/`, converts them at build time to **AT4PX** (vanilla kao compression) + RGBX palettes, and serves them from a separate `pksdir0` archive when enabled.
-
-Toggle: `gRuntimeConfig.custom_portraits` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). Set to `FALSE` to restore vanilla kao lookup (no portraits for most evolutions).
+Toggle: `gRuntimeConfig.custom_portraits` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). Set to `FALSE` to restore vanilla kao lookup only.
 
 | Mode | Behavior |
 |------|----------|
-| `TRUE` (default) | Prefer `ckaoNNN` from `gCustomPortraitArchive` for covered species |
+| `TRUE` (default) | Prefer `ckaoNNN` from `gCustomPortraitArchive` when that pack has the emotion; otherwise vanilla `kaoNNN` |
 | `FALSE` | Vanilla `kaoNNN` / `dialogueSprites` only |
 
 Portraits credit the SpriteCollab contributors listed in each folder’s `credits.txt`.
@@ -30,13 +28,9 @@ Portraits credit the SpriteCollab contributors listed in each folder’s `credit
 
 ## Coverage
 
-**Player-selectable starters (16):** Bulbasaur, Charmander, Squirtle, Pikachu, Meowth, Psyduck, Machop, Cubone, Eevee, Chikorita, Cyndaquil, Totodile, Treecko, Torchic, Mudkip, Skitty.
+**Normal portraits:** every unique Gen 1–3 species in the game (national dex 1–386, one Unown / Castform / Deoxys form each) plus **Munchlax**.
 
-**Partner pool (10):** Charmander, Bulbasaur, Squirtle, Pikachu, Chikorita, Totodile, Cyndaquil, Torchic, Treecko, Mudkip.
-
-**Player-only (not partner):** Meowth, Psyduck, Machop, Cubone, Eevee, Skitty.
-
-**Evolved forms with custom portraits (30):**
+**Full emotion packs** (13 kao slots, starter evolutions + café NPC):
 
 | Line | Evolutions |
 |------|------------|
@@ -56,8 +50,11 @@ Portraits credit the SpriteCollab contributors listed in each folder’s `credit
 | Torchic | Combusken, Blaziken |
 | Mudkip | Marshtomp, Swampert |
 | Skitty | Delcatty |
+| — | Spinda (Juice Bar reactions) |
 
-Emotion slots match the game’s 13 kao emotions (Normal … Surprised), except **Charizard** and **Blastoise**: vanilla NPC `kao` packs those oddly (e.g. Charizard slot 1 = Surprised, not Happy). Custom portraits keep that packing so story scripts (Zapdos human reveal, Magma Cavern, etc.) still show the intended face.
+**Charizard / Blastoise** keep vanilla NPC slot packing so story scripts still show the intended face.
+
+**Not included:** Bonsly, Lucario, and Weavile — no monster IDs in Red Rescue Team (only Munchlax exists as a Gen 4 species).
 
 ---
 
@@ -94,5 +91,5 @@ python3 convert_custom_portraits.py --convert --generate
 | Converter | `convert_custom_portraits.py` |
 | Archive helpers | `src/custom_portraits.c`, `include/custom_portraits.h` |
 | Generated data | `src/custom_portraits_data.c` |
-| Load hooks | `src/pokemon.c` (`GetDialogueSpriteDataPtr`, etc.) |
-| Overworld gate | `src/textbox.c` (allow evo faces for hero/partner) |
+| Load hooks | `src/pokemon.c` (`GetDialogueSpriteDataPtr`, `GetDialogueSpriteDataPtrForEmotion`, etc.) |
+| Overworld gate | `src/textbox.c` (allow custom faces for hero/partner) |

@@ -127,7 +127,7 @@ bool8 MR_Create(MissionRewards *rewards, bool8 displayClientSprite)
     strcpy(gSpeakerNameBuffer, preload->rewards->clientName);
     PrintPokeNameToBuffer(gFormatBuffer_Monsters[0], GetLeaderMon1());
 
-    sMRWork->monPortrait.faceFile = GetDialogueSpriteDataPtr(sMRWork->rewards->clientSpecies);
+    sMRWork->monPortrait.faceFile = GetDialogueSpriteDataPtrForEmotion(sMRWork->rewards->clientSpecies, 0);
     sMRWork->monPortrait.faceData = NULL;
 
     sMRWork->monPortrait.spriteId = 0;

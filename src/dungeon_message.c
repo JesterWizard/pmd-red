@@ -330,7 +330,7 @@ void DisplayDungeonMessage_Async(struct MonDialogueSpriteInfo *monSpriteInfo, co
         && monSpriteInfo != NULL
         && IsPokemonDialogueSpriteAvail(monSpriteInfo->species, monSpriteInfo->spriteId))
     {
-        monPortrait.faceFile = GetDialogueSpriteDataPtr(monSpriteInfo->species);
+        monPortrait.faceFile = GetDialogueSpriteDataPtrForEmotion(monSpriteInfo->species, monSpriteInfo->spriteId);
         monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
         monPortrait.pos.x = 2;
         monPortrait.pos.y = 9;
@@ -446,7 +446,7 @@ void DisplayDungeonDialogue_Async(const struct DungeonDialogueStruct *dialogueIn
         const PortraitPlacementInfo *placementInfo = GetPortraitPlacementInfo(dialogueInfo->spritePlacementId);
 
         monPortraitPtr = &monPortrait;
-        monPortraitPtr->faceFile = GetDialogueSpriteDataPtr(dialogueMonId);
+        monPortraitPtr->faceFile = GetDialogueSpriteDataPtrForEmotion(dialogueMonId, dialogueInfo->spriteId);
         if (monPortraitPtr->faceFile != NULL) {
             monPortraitPtr->faceData = (PortraitGfx *) monPortraitPtr->faceFile->data;
             monPortraitPtr->unkE = 0;
@@ -497,7 +497,7 @@ bool32 DisplayDungeonYesNoMessage_Async(struct MonDialogueSpriteInfo *monSpriteI
         && monSpriteInfo != NULL
         && IsPokemonDialogueSpriteAvail(monSpriteInfo->species, monSpriteInfo->spriteId))
     {
-        monPortrait.faceFile = GetDialogueSpriteDataPtr(monSpriteInfo->species);
+        monPortrait.faceFile = GetDialogueSpriteDataPtrForEmotion(monSpriteInfo->species, monSpriteInfo->spriteId);
         monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
         monPortrait.pos.x = 2;
         monPortrait.pos.y = 9;
@@ -544,7 +544,7 @@ s32 DisplayDungeonMenuMessage(struct MonDialogueSpriteInfo *monSpriteInfo, const
         && monSpriteInfo != NULL
         && IsPokemonDialogueSpriteAvail(monSpriteInfo->species, monSpriteInfo->spriteId))
     {
-        monPortrait.faceFile = GetDialogueSpriteDataPtr(monSpriteInfo->species);
+        monPortrait.faceFile = GetDialogueSpriteDataPtrForEmotion(monSpriteInfo->species, monSpriteInfo->spriteId);
         monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
         monPortrait.pos.x = 2;
         monPortrait.pos.y = 9;

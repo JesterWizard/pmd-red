@@ -5,6 +5,29 @@
 #include "structs/rgb.h"
 #include "structs/str_mon_portrait.h"
 
+static const u8 sBulbasaurNormalPal[] = INCBIN_U8("graphics/portraits/bulbasaur/Normal.pal");
+static const u8 sBulbasaurNormalGfx[] = INCBIN_U8("graphics/portraits/bulbasaur/Normal.at4px");
+
+static const PortraitGfx sBulbasaurPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBulbasaurNormalPal, sBulbasaurNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBulbasaur = { "SIRO", &sBulbasaurPortraits };
+
 static const u8 sIvysaurNormalPal[] = INCBIN_U8("graphics/portraits/ivysaur/Normal.pal");
 static const u8 sIvysaurNormalGfx[] = INCBIN_U8("graphics/portraits/ivysaur/Normal.at4px");
 static const u8 sIvysaurHappyPal[] = INCBIN_U8("graphics/portraits/ivysaur/Happy.pal");
@@ -99,6 +122,29 @@ static const PortraitGfx sVenusaurPortraits = {
 
 const SiroArchive gCustomKaoVenusaur = { "SIRO", &sVenusaurPortraits };
 
+static const u8 sCharmanderNormalPal[] = INCBIN_U8("graphics/portraits/charmander/Normal.pal");
+static const u8 sCharmanderNormalGfx[] = INCBIN_U8("graphics/portraits/charmander/Normal.at4px");
+
+static const PortraitGfx sCharmanderPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCharmanderNormalPal, sCharmanderNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCharmander = { "SIRO", &sCharmanderPortraits };
+
 static const u8 sCharmeleonNormalPal[] = INCBIN_U8("graphics/portraits/charmeleon/Normal.pal");
 static const u8 sCharmeleonNormalGfx[] = INCBIN_U8("graphics/portraits/charmeleon/Normal.at4px");
 static const u8 sCharmeleonHappyPal[] = INCBIN_U8("graphics/portraits/charmeleon/Happy.pal");
@@ -190,6 +236,29 @@ static const PortraitGfx sCharizardPortraits = {
 };
 
 const SiroArchive gCustomKaoCharizard = { "SIRO", &sCharizardPortraits };
+
+static const u8 sSquirtleNormalPal[] = INCBIN_U8("graphics/portraits/squirtle/Normal.pal");
+static const u8 sSquirtleNormalGfx[] = INCBIN_U8("graphics/portraits/squirtle/Normal.at4px");
+
+static const PortraitGfx sSquirtlePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSquirtleNormalPal, sSquirtleNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSquirtle = { "SIRO", &sSquirtlePortraits };
 
 static const u8 sWartortleNormalPal[] = INCBIN_U8("graphics/portraits/wartortle/Normal.pal");
 static const u8 sWartortleNormalGfx[] = INCBIN_U8("graphics/portraits/wartortle/Normal.at4px");
@@ -283,6 +352,374 @@ static const PortraitGfx sBlastoisePortraits = {
 
 const SiroArchive gCustomKaoBlastoise = { "SIRO", &sBlastoisePortraits };
 
+static const u8 sCaterpieNormalPal[] = INCBIN_U8("graphics/portraits/caterpie/Normal.pal");
+static const u8 sCaterpieNormalGfx[] = INCBIN_U8("graphics/portraits/caterpie/Normal.at4px");
+
+static const PortraitGfx sCaterpiePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCaterpieNormalPal, sCaterpieNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCaterpie = { "SIRO", &sCaterpiePortraits };
+
+static const u8 sMetapodNormalPal[] = INCBIN_U8("graphics/portraits/metapod/Normal.pal");
+static const u8 sMetapodNormalGfx[] = INCBIN_U8("graphics/portraits/metapod/Normal.at4px");
+
+static const PortraitGfx sMetapodPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMetapodNormalPal, sMetapodNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMetapod = { "SIRO", &sMetapodPortraits };
+
+static const u8 sButterfreeNormalPal[] = INCBIN_U8("graphics/portraits/butterfree/Normal.pal");
+static const u8 sButterfreeNormalGfx[] = INCBIN_U8("graphics/portraits/butterfree/Normal.at4px");
+
+static const PortraitGfx sButterfreePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sButterfreeNormalPal, sButterfreeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoButterfree = { "SIRO", &sButterfreePortraits };
+
+static const u8 sWeedleNormalPal[] = INCBIN_U8("graphics/portraits/weedle/Normal.pal");
+static const u8 sWeedleNormalGfx[] = INCBIN_U8("graphics/portraits/weedle/Normal.at4px");
+
+static const PortraitGfx sWeedlePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWeedleNormalPal, sWeedleNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWeedle = { "SIRO", &sWeedlePortraits };
+
+static const u8 sKakunaNormalPal[] = INCBIN_U8("graphics/portraits/kakuna/Normal.pal");
+static const u8 sKakunaNormalGfx[] = INCBIN_U8("graphics/portraits/kakuna/Normal.at4px");
+
+static const PortraitGfx sKakunaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKakunaNormalPal, sKakunaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKakuna = { "SIRO", &sKakunaPortraits };
+
+static const u8 sBeedrillNormalPal[] = INCBIN_U8("graphics/portraits/beedrill/Normal.pal");
+static const u8 sBeedrillNormalGfx[] = INCBIN_U8("graphics/portraits/beedrill/Normal.at4px");
+
+static const PortraitGfx sBeedrillPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBeedrillNormalPal, sBeedrillNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBeedrill = { "SIRO", &sBeedrillPortraits };
+
+static const u8 sPidgeyNormalPal[] = INCBIN_U8("graphics/portraits/pidgey/Normal.pal");
+static const u8 sPidgeyNormalGfx[] = INCBIN_U8("graphics/portraits/pidgey/Normal.at4px");
+
+static const PortraitGfx sPidgeyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPidgeyNormalPal, sPidgeyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPidgey = { "SIRO", &sPidgeyPortraits };
+
+static const u8 sPidgeottoNormalPal[] = INCBIN_U8("graphics/portraits/pidgeotto/Normal.pal");
+static const u8 sPidgeottoNormalGfx[] = INCBIN_U8("graphics/portraits/pidgeotto/Normal.at4px");
+
+static const PortraitGfx sPidgeottoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPidgeottoNormalPal, sPidgeottoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPidgeotto = { "SIRO", &sPidgeottoPortraits };
+
+static const u8 sPidgeotNormalPal[] = INCBIN_U8("graphics/portraits/pidgeot/Normal.pal");
+static const u8 sPidgeotNormalGfx[] = INCBIN_U8("graphics/portraits/pidgeot/Normal.at4px");
+
+static const PortraitGfx sPidgeotPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPidgeotNormalPal, sPidgeotNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPidgeot = { "SIRO", &sPidgeotPortraits };
+
+static const u8 sRattataNormalPal[] = INCBIN_U8("graphics/portraits/rattata/Normal.pal");
+static const u8 sRattataNormalGfx[] = INCBIN_U8("graphics/portraits/rattata/Normal.at4px");
+
+static const PortraitGfx sRattataPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRattataNormalPal, sRattataNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRattata = { "SIRO", &sRattataPortraits };
+
+static const u8 sRaticateNormalPal[] = INCBIN_U8("graphics/portraits/raticate/Normal.pal");
+static const u8 sRaticateNormalGfx[] = INCBIN_U8("graphics/portraits/raticate/Normal.at4px");
+
+static const PortraitGfx sRaticatePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRaticateNormalPal, sRaticateNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRaticate = { "SIRO", &sRaticatePortraits };
+
+static const u8 sSpearowNormalPal[] = INCBIN_U8("graphics/portraits/spearow/Normal.pal");
+static const u8 sSpearowNormalGfx[] = INCBIN_U8("graphics/portraits/spearow/Normal.at4px");
+
+static const PortraitGfx sSpearowPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSpearowNormalPal, sSpearowNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSpearow = { "SIRO", &sSpearowPortraits };
+
+static const u8 sFearowNormalPal[] = INCBIN_U8("graphics/portraits/fearow/Normal.pal");
+static const u8 sFearowNormalGfx[] = INCBIN_U8("graphics/portraits/fearow/Normal.at4px");
+
+static const PortraitGfx sFearowPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sFearowNormalPal, sFearowNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoFearow = { "SIRO", &sFearowPortraits };
+
+static const u8 sEkansNormalPal[] = INCBIN_U8("graphics/portraits/ekans/Normal.pal");
+static const u8 sEkansNormalGfx[] = INCBIN_U8("graphics/portraits/ekans/Normal.at4px");
+
+static const PortraitGfx sEkansPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sEkansNormalPal, sEkansNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoEkans = { "SIRO", &sEkansPortraits };
+
+static const u8 sArbokNormalPal[] = INCBIN_U8("graphics/portraits/arbok/Normal.pal");
+static const u8 sArbokNormalGfx[] = INCBIN_U8("graphics/portraits/arbok/Normal.at4px");
+
+static const PortraitGfx sArbokPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sArbokNormalPal, sArbokNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoArbok = { "SIRO", &sArbokPortraits };
+
+static const u8 sPikachuNormalPal[] = INCBIN_U8("graphics/portraits/pikachu/Normal.pal");
+static const u8 sPikachuNormalGfx[] = INCBIN_U8("graphics/portraits/pikachu/Normal.at4px");
+
+static const PortraitGfx sPikachuPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPikachuNormalPal, sPikachuNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPikachu = { "SIRO", &sPikachuPortraits };
+
 static const u8 sRaichuNormalPal[] = INCBIN_U8("graphics/portraits/raichu/Normal.pal");
 static const u8 sRaichuNormalGfx[] = INCBIN_U8("graphics/portraits/raichu/Normal.at4px");
 static const u8 sRaichuHappyPal[] = INCBIN_U8("graphics/portraits/raichu/Happy.pal");
@@ -329,6 +766,604 @@ static const PortraitGfx sRaichuPortraits = {
 };
 
 const SiroArchive gCustomKaoRaichu = { "SIRO", &sRaichuPortraits };
+
+static const u8 sSandshrewNormalPal[] = INCBIN_U8("graphics/portraits/sandshrew/Normal.pal");
+static const u8 sSandshrewNormalGfx[] = INCBIN_U8("graphics/portraits/sandshrew/Normal.at4px");
+
+static const PortraitGfx sSandshrewPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSandshrewNormalPal, sSandshrewNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSandshrew = { "SIRO", &sSandshrewPortraits };
+
+static const u8 sSandslashNormalPal[] = INCBIN_U8("graphics/portraits/sandslash/Normal.pal");
+static const u8 sSandslashNormalGfx[] = INCBIN_U8("graphics/portraits/sandslash/Normal.at4px");
+
+static const PortraitGfx sSandslashPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSandslashNormalPal, sSandslashNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSandslash = { "SIRO", &sSandslashPortraits };
+
+static const u8 sNidoranFNormalPal[] = INCBIN_U8("graphics/portraits/nidoran_f/Normal.pal");
+static const u8 sNidoranFNormalGfx[] = INCBIN_U8("graphics/portraits/nidoran_f/Normal.at4px");
+
+static const PortraitGfx sNidoranFPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNidoranFNormalPal, sNidoranFNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNidoranF = { "SIRO", &sNidoranFPortraits };
+
+static const u8 sNidorinaNormalPal[] = INCBIN_U8("graphics/portraits/nidorina/Normal.pal");
+static const u8 sNidorinaNormalGfx[] = INCBIN_U8("graphics/portraits/nidorina/Normal.at4px");
+
+static const PortraitGfx sNidorinaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNidorinaNormalPal, sNidorinaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNidorina = { "SIRO", &sNidorinaPortraits };
+
+static const u8 sNidoqueenNormalPal[] = INCBIN_U8("graphics/portraits/nidoqueen/Normal.pal");
+static const u8 sNidoqueenNormalGfx[] = INCBIN_U8("graphics/portraits/nidoqueen/Normal.at4px");
+
+static const PortraitGfx sNidoqueenPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNidoqueenNormalPal, sNidoqueenNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNidoqueen = { "SIRO", &sNidoqueenPortraits };
+
+static const u8 sNidoranMNormalPal[] = INCBIN_U8("graphics/portraits/nidoran_m/Normal.pal");
+static const u8 sNidoranMNormalGfx[] = INCBIN_U8("graphics/portraits/nidoran_m/Normal.at4px");
+
+static const PortraitGfx sNidoranMPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNidoranMNormalPal, sNidoranMNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNidoranM = { "SIRO", &sNidoranMPortraits };
+
+static const u8 sNidorinoNormalPal[] = INCBIN_U8("graphics/portraits/nidorino/Normal.pal");
+static const u8 sNidorinoNormalGfx[] = INCBIN_U8("graphics/portraits/nidorino/Normal.at4px");
+
+static const PortraitGfx sNidorinoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNidorinoNormalPal, sNidorinoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNidorino = { "SIRO", &sNidorinoPortraits };
+
+static const u8 sNidokingNormalPal[] = INCBIN_U8("graphics/portraits/nidoking/Normal.pal");
+static const u8 sNidokingNormalGfx[] = INCBIN_U8("graphics/portraits/nidoking/Normal.at4px");
+
+static const PortraitGfx sNidokingPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNidokingNormalPal, sNidokingNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNidoking = { "SIRO", &sNidokingPortraits };
+
+static const u8 sClefairyNormalPal[] = INCBIN_U8("graphics/portraits/clefairy/Normal.pal");
+static const u8 sClefairyNormalGfx[] = INCBIN_U8("graphics/portraits/clefairy/Normal.at4px");
+
+static const PortraitGfx sClefairyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sClefairyNormalPal, sClefairyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoClefairy = { "SIRO", &sClefairyPortraits };
+
+static const u8 sClefableNormalPal[] = INCBIN_U8("graphics/portraits/clefable/Normal.pal");
+static const u8 sClefableNormalGfx[] = INCBIN_U8("graphics/portraits/clefable/Normal.at4px");
+
+static const PortraitGfx sClefablePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sClefableNormalPal, sClefableNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoClefable = { "SIRO", &sClefablePortraits };
+
+static const u8 sVulpixNormalPal[] = INCBIN_U8("graphics/portraits/vulpix/Normal.pal");
+static const u8 sVulpixNormalGfx[] = INCBIN_U8("graphics/portraits/vulpix/Normal.at4px");
+
+static const PortraitGfx sVulpixPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVulpixNormalPal, sVulpixNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVulpix = { "SIRO", &sVulpixPortraits };
+
+static const u8 sNinetalesNormalPal[] = INCBIN_U8("graphics/portraits/ninetales/Normal.pal");
+static const u8 sNinetalesNormalGfx[] = INCBIN_U8("graphics/portraits/ninetales/Normal.at4px");
+
+static const PortraitGfx sNinetalesPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNinetalesNormalPal, sNinetalesNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNinetales = { "SIRO", &sNinetalesPortraits };
+
+static const u8 sJigglypuffNormalPal[] = INCBIN_U8("graphics/portraits/jigglypuff/Normal.pal");
+static const u8 sJigglypuffNormalGfx[] = INCBIN_U8("graphics/portraits/jigglypuff/Normal.at4px");
+
+static const PortraitGfx sJigglypuffPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sJigglypuffNormalPal, sJigglypuffNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoJigglypuff = { "SIRO", &sJigglypuffPortraits };
+
+static const u8 sWigglytuffNormalPal[] = INCBIN_U8("graphics/portraits/wigglytuff/Normal.pal");
+static const u8 sWigglytuffNormalGfx[] = INCBIN_U8("graphics/portraits/wigglytuff/Normal.at4px");
+
+static const PortraitGfx sWigglytuffPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWigglytuffNormalPal, sWigglytuffNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWigglytuff = { "SIRO", &sWigglytuffPortraits };
+
+static const u8 sZubatNormalPal[] = INCBIN_U8("graphics/portraits/zubat/Normal.pal");
+static const u8 sZubatNormalGfx[] = INCBIN_U8("graphics/portraits/zubat/Normal.at4px");
+
+static const PortraitGfx sZubatPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sZubatNormalPal, sZubatNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoZubat = { "SIRO", &sZubatPortraits };
+
+static const u8 sGolbatNormalPal[] = INCBIN_U8("graphics/portraits/golbat/Normal.pal");
+static const u8 sGolbatNormalGfx[] = INCBIN_U8("graphics/portraits/golbat/Normal.at4px");
+
+static const PortraitGfx sGolbatPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGolbatNormalPal, sGolbatNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGolbat = { "SIRO", &sGolbatPortraits };
+
+static const u8 sOddishNormalPal[] = INCBIN_U8("graphics/portraits/oddish/Normal.pal");
+static const u8 sOddishNormalGfx[] = INCBIN_U8("graphics/portraits/oddish/Normal.at4px");
+
+static const PortraitGfx sOddishPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sOddishNormalPal, sOddishNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoOddish = { "SIRO", &sOddishPortraits };
+
+static const u8 sGloomNormalPal[] = INCBIN_U8("graphics/portraits/gloom/Normal.pal");
+static const u8 sGloomNormalGfx[] = INCBIN_U8("graphics/portraits/gloom/Normal.at4px");
+
+static const PortraitGfx sGloomPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGloomNormalPal, sGloomNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGloom = { "SIRO", &sGloomPortraits };
+
+static const u8 sVileplumeNormalPal[] = INCBIN_U8("graphics/portraits/vileplume/Normal.pal");
+static const u8 sVileplumeNormalGfx[] = INCBIN_U8("graphics/portraits/vileplume/Normal.at4px");
+
+static const PortraitGfx sVileplumePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVileplumeNormalPal, sVileplumeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVileplume = { "SIRO", &sVileplumePortraits };
+
+static const u8 sParasNormalPal[] = INCBIN_U8("graphics/portraits/paras/Normal.pal");
+static const u8 sParasNormalGfx[] = INCBIN_U8("graphics/portraits/paras/Normal.at4px");
+
+static const PortraitGfx sParasPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sParasNormalPal, sParasNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoParas = { "SIRO", &sParasPortraits };
+
+static const u8 sParasectNormalPal[] = INCBIN_U8("graphics/portraits/parasect/Normal.pal");
+static const u8 sParasectNormalGfx[] = INCBIN_U8("graphics/portraits/parasect/Normal.at4px");
+
+static const PortraitGfx sParasectPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sParasectNormalPal, sParasectNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoParasect = { "SIRO", &sParasectPortraits };
+
+static const u8 sVenonatNormalPal[] = INCBIN_U8("graphics/portraits/venonat/Normal.pal");
+static const u8 sVenonatNormalGfx[] = INCBIN_U8("graphics/portraits/venonat/Normal.at4px");
+
+static const PortraitGfx sVenonatPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVenonatNormalPal, sVenonatNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVenonat = { "SIRO", &sVenonatPortraits };
+
+static const u8 sVenomothNormalPal[] = INCBIN_U8("graphics/portraits/venomoth/Normal.pal");
+static const u8 sVenomothNormalGfx[] = INCBIN_U8("graphics/portraits/venomoth/Normal.at4px");
+
+static const PortraitGfx sVenomothPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVenomothNormalPal, sVenomothNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVenomoth = { "SIRO", &sVenomothPortraits };
+
+static const u8 sDiglettNormalPal[] = INCBIN_U8("graphics/portraits/diglett/Normal.pal");
+static const u8 sDiglettNormalGfx[] = INCBIN_U8("graphics/portraits/diglett/Normal.at4px");
+
+static const PortraitGfx sDiglettPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDiglettNormalPal, sDiglettNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDiglett = { "SIRO", &sDiglettPortraits };
+
+static const u8 sDugtrioNormalPal[] = INCBIN_U8("graphics/portraits/dugtrio/Normal.pal");
+static const u8 sDugtrioNormalGfx[] = INCBIN_U8("graphics/portraits/dugtrio/Normal.at4px");
+
+static const PortraitGfx sDugtrioPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDugtrioNormalPal, sDugtrioNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDugtrio = { "SIRO", &sDugtrioPortraits };
+
+static const u8 sMeowthNormalPal[] = INCBIN_U8("graphics/portraits/meowth/Normal.pal");
+static const u8 sMeowthNormalGfx[] = INCBIN_U8("graphics/portraits/meowth/Normal.at4px");
+
+static const PortraitGfx sMeowthPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMeowthNormalPal, sMeowthNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMeowth = { "SIRO", &sMeowthPortraits };
 
 static const u8 sPersianNormalPal[] = INCBIN_U8("graphics/portraits/persian/Normal.pal");
 static const u8 sPersianNormalGfx[] = INCBIN_U8("graphics/portraits/persian/Normal.at4px");
@@ -377,6 +1412,29 @@ static const PortraitGfx sPersianPortraits = {
 
 const SiroArchive gCustomKaoPersian = { "SIRO", &sPersianPortraits };
 
+static const u8 sPsyduckNormalPal[] = INCBIN_U8("graphics/portraits/psyduck/Normal.pal");
+static const u8 sPsyduckNormalGfx[] = INCBIN_U8("graphics/portraits/psyduck/Normal.at4px");
+
+static const PortraitGfx sPsyduckPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPsyduckNormalPal, sPsyduckNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPsyduck = { "SIRO", &sPsyduckPortraits };
+
 static const u8 sGolduckNormalPal[] = INCBIN_U8("graphics/portraits/golduck/Normal.pal");
 static const u8 sGolduckNormalGfx[] = INCBIN_U8("graphics/portraits/golduck/Normal.at4px");
 static const u8 sGolduckHappyPal[] = INCBIN_U8("graphics/portraits/golduck/Happy.pal");
@@ -423,6 +1481,259 @@ static const PortraitGfx sGolduckPortraits = {
 };
 
 const SiroArchive gCustomKaoGolduck = { "SIRO", &sGolduckPortraits };
+
+static const u8 sMankeyNormalPal[] = INCBIN_U8("graphics/portraits/mankey/Normal.pal");
+static const u8 sMankeyNormalGfx[] = INCBIN_U8("graphics/portraits/mankey/Normal.at4px");
+
+static const PortraitGfx sMankeyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMankeyNormalPal, sMankeyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMankey = { "SIRO", &sMankeyPortraits };
+
+static const u8 sPrimeapeNormalPal[] = INCBIN_U8("graphics/portraits/primeape/Normal.pal");
+static const u8 sPrimeapeNormalGfx[] = INCBIN_U8("graphics/portraits/primeape/Normal.at4px");
+
+static const PortraitGfx sPrimeapePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPrimeapeNormalPal, sPrimeapeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPrimeape = { "SIRO", &sPrimeapePortraits };
+
+static const u8 sGrowlitheNormalPal[] = INCBIN_U8("graphics/portraits/growlithe/Normal.pal");
+static const u8 sGrowlitheNormalGfx[] = INCBIN_U8("graphics/portraits/growlithe/Normal.at4px");
+
+static const PortraitGfx sGrowlithePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGrowlitheNormalPal, sGrowlitheNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGrowlithe = { "SIRO", &sGrowlithePortraits };
+
+static const u8 sArcanineNormalPal[] = INCBIN_U8("graphics/portraits/arcanine/Normal.pal");
+static const u8 sArcanineNormalGfx[] = INCBIN_U8("graphics/portraits/arcanine/Normal.at4px");
+
+static const PortraitGfx sArcaninePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sArcanineNormalPal, sArcanineNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoArcanine = { "SIRO", &sArcaninePortraits };
+
+static const u8 sPoliwagNormalPal[] = INCBIN_U8("graphics/portraits/poliwag/Normal.pal");
+static const u8 sPoliwagNormalGfx[] = INCBIN_U8("graphics/portraits/poliwag/Normal.at4px");
+
+static const PortraitGfx sPoliwagPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPoliwagNormalPal, sPoliwagNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPoliwag = { "SIRO", &sPoliwagPortraits };
+
+static const u8 sPoliwhirlNormalPal[] = INCBIN_U8("graphics/portraits/poliwhirl/Normal.pal");
+static const u8 sPoliwhirlNormalGfx[] = INCBIN_U8("graphics/portraits/poliwhirl/Normal.at4px");
+
+static const PortraitGfx sPoliwhirlPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPoliwhirlNormalPal, sPoliwhirlNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPoliwhirl = { "SIRO", &sPoliwhirlPortraits };
+
+static const u8 sPoliwrathNormalPal[] = INCBIN_U8("graphics/portraits/poliwrath/Normal.pal");
+static const u8 sPoliwrathNormalGfx[] = INCBIN_U8("graphics/portraits/poliwrath/Normal.at4px");
+
+static const PortraitGfx sPoliwrathPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPoliwrathNormalPal, sPoliwrathNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPoliwrath = { "SIRO", &sPoliwrathPortraits };
+
+static const u8 sAbraNormalPal[] = INCBIN_U8("graphics/portraits/abra/Normal.pal");
+static const u8 sAbraNormalGfx[] = INCBIN_U8("graphics/portraits/abra/Normal.at4px");
+
+static const PortraitGfx sAbraPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAbraNormalPal, sAbraNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAbra = { "SIRO", &sAbraPortraits };
+
+static const u8 sKadabraNormalPal[] = INCBIN_U8("graphics/portraits/kadabra/Normal.pal");
+static const u8 sKadabraNormalGfx[] = INCBIN_U8("graphics/portraits/kadabra/Normal.at4px");
+
+static const PortraitGfx sKadabraPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKadabraNormalPal, sKadabraNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKadabra = { "SIRO", &sKadabraPortraits };
+
+static const u8 sAlakazamNormalPal[] = INCBIN_U8("graphics/portraits/alakazam/Normal.pal");
+static const u8 sAlakazamNormalGfx[] = INCBIN_U8("graphics/portraits/alakazam/Normal.at4px");
+
+static const PortraitGfx sAlakazamPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAlakazamNormalPal, sAlakazamNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAlakazam = { "SIRO", &sAlakazamPortraits };
+
+static const u8 sMachopNormalPal[] = INCBIN_U8("graphics/portraits/machop/Normal.pal");
+static const u8 sMachopNormalGfx[] = INCBIN_U8("graphics/portraits/machop/Normal.at4px");
+
+static const PortraitGfx sMachopPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMachopNormalPal, sMachopNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMachop = { "SIRO", &sMachopPortraits };
 
 static const u8 sMachokeNormalPal[] = INCBIN_U8("graphics/portraits/machoke/Normal.pal");
 static const u8 sMachokeNormalGfx[] = INCBIN_U8("graphics/portraits/machoke/Normal.at4px");
@@ -494,6 +1805,834 @@ static const PortraitGfx sMachampPortraits = {
 
 const SiroArchive gCustomKaoMachamp = { "SIRO", &sMachampPortraits };
 
+static const u8 sBellsproutNormalPal[] = INCBIN_U8("graphics/portraits/bellsprout/Normal.pal");
+static const u8 sBellsproutNormalGfx[] = INCBIN_U8("graphics/portraits/bellsprout/Normal.at4px");
+
+static const PortraitGfx sBellsproutPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBellsproutNormalPal, sBellsproutNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBellsprout = { "SIRO", &sBellsproutPortraits };
+
+static const u8 sWeepinbellNormalPal[] = INCBIN_U8("graphics/portraits/weepinbell/Normal.pal");
+static const u8 sWeepinbellNormalGfx[] = INCBIN_U8("graphics/portraits/weepinbell/Normal.at4px");
+
+static const PortraitGfx sWeepinbellPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWeepinbellNormalPal, sWeepinbellNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWeepinbell = { "SIRO", &sWeepinbellPortraits };
+
+static const u8 sVictreebelNormalPal[] = INCBIN_U8("graphics/portraits/victreebel/Normal.pal");
+static const u8 sVictreebelNormalGfx[] = INCBIN_U8("graphics/portraits/victreebel/Normal.at4px");
+
+static const PortraitGfx sVictreebelPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVictreebelNormalPal, sVictreebelNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVictreebel = { "SIRO", &sVictreebelPortraits };
+
+static const u8 sTentacoolNormalPal[] = INCBIN_U8("graphics/portraits/tentacool/Normal.pal");
+static const u8 sTentacoolNormalGfx[] = INCBIN_U8("graphics/portraits/tentacool/Normal.at4px");
+
+static const PortraitGfx sTentacoolPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTentacoolNormalPal, sTentacoolNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTentacool = { "SIRO", &sTentacoolPortraits };
+
+static const u8 sTentacruelNormalPal[] = INCBIN_U8("graphics/portraits/tentacruel/Normal.pal");
+static const u8 sTentacruelNormalGfx[] = INCBIN_U8("graphics/portraits/tentacruel/Normal.at4px");
+
+static const PortraitGfx sTentacruelPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTentacruelNormalPal, sTentacruelNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTentacruel = { "SIRO", &sTentacruelPortraits };
+
+static const u8 sGeodudeNormalPal[] = INCBIN_U8("graphics/portraits/geodude/Normal.pal");
+static const u8 sGeodudeNormalGfx[] = INCBIN_U8("graphics/portraits/geodude/Normal.at4px");
+
+static const PortraitGfx sGeodudePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGeodudeNormalPal, sGeodudeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGeodude = { "SIRO", &sGeodudePortraits };
+
+static const u8 sGravelerNormalPal[] = INCBIN_U8("graphics/portraits/graveler/Normal.pal");
+static const u8 sGravelerNormalGfx[] = INCBIN_U8("graphics/portraits/graveler/Normal.at4px");
+
+static const PortraitGfx sGravelerPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGravelerNormalPal, sGravelerNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGraveler = { "SIRO", &sGravelerPortraits };
+
+static const u8 sGolemNormalPal[] = INCBIN_U8("graphics/portraits/golem/Normal.pal");
+static const u8 sGolemNormalGfx[] = INCBIN_U8("graphics/portraits/golem/Normal.at4px");
+
+static const PortraitGfx sGolemPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGolemNormalPal, sGolemNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGolem = { "SIRO", &sGolemPortraits };
+
+static const u8 sPonytaNormalPal[] = INCBIN_U8("graphics/portraits/ponyta/Normal.pal");
+static const u8 sPonytaNormalGfx[] = INCBIN_U8("graphics/portraits/ponyta/Normal.at4px");
+
+static const PortraitGfx sPonytaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPonytaNormalPal, sPonytaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPonyta = { "SIRO", &sPonytaPortraits };
+
+static const u8 sRapidashNormalPal[] = INCBIN_U8("graphics/portraits/rapidash/Normal.pal");
+static const u8 sRapidashNormalGfx[] = INCBIN_U8("graphics/portraits/rapidash/Normal.at4px");
+
+static const PortraitGfx sRapidashPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRapidashNormalPal, sRapidashNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRapidash = { "SIRO", &sRapidashPortraits };
+
+static const u8 sSlowpokeNormalPal[] = INCBIN_U8("graphics/portraits/slowpoke/Normal.pal");
+static const u8 sSlowpokeNormalGfx[] = INCBIN_U8("graphics/portraits/slowpoke/Normal.at4px");
+
+static const PortraitGfx sSlowpokePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSlowpokeNormalPal, sSlowpokeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSlowpoke = { "SIRO", &sSlowpokePortraits };
+
+static const u8 sSlowbroNormalPal[] = INCBIN_U8("graphics/portraits/slowbro/Normal.pal");
+static const u8 sSlowbroNormalGfx[] = INCBIN_U8("graphics/portraits/slowbro/Normal.at4px");
+
+static const PortraitGfx sSlowbroPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSlowbroNormalPal, sSlowbroNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSlowbro = { "SIRO", &sSlowbroPortraits };
+
+static const u8 sMagnemiteNormalPal[] = INCBIN_U8("graphics/portraits/magnemite/Normal.pal");
+static const u8 sMagnemiteNormalGfx[] = INCBIN_U8("graphics/portraits/magnemite/Normal.at4px");
+
+static const PortraitGfx sMagnemitePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMagnemiteNormalPal, sMagnemiteNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMagnemite = { "SIRO", &sMagnemitePortraits };
+
+static const u8 sMagnetonNormalPal[] = INCBIN_U8("graphics/portraits/magneton/Normal.pal");
+static const u8 sMagnetonNormalGfx[] = INCBIN_U8("graphics/portraits/magneton/Normal.at4px");
+
+static const PortraitGfx sMagnetonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMagnetonNormalPal, sMagnetonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMagneton = { "SIRO", &sMagnetonPortraits };
+
+static const u8 sFarfetchdNormalPal[] = INCBIN_U8("graphics/portraits/farfetchd/Normal.pal");
+static const u8 sFarfetchdNormalGfx[] = INCBIN_U8("graphics/portraits/farfetchd/Normal.at4px");
+
+static const PortraitGfx sFarfetchdPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sFarfetchdNormalPal, sFarfetchdNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoFarfetchd = { "SIRO", &sFarfetchdPortraits };
+
+static const u8 sDoduoNormalPal[] = INCBIN_U8("graphics/portraits/doduo/Normal.pal");
+static const u8 sDoduoNormalGfx[] = INCBIN_U8("graphics/portraits/doduo/Normal.at4px");
+
+static const PortraitGfx sDoduoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDoduoNormalPal, sDoduoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDoduo = { "SIRO", &sDoduoPortraits };
+
+static const u8 sDodrioNormalPal[] = INCBIN_U8("graphics/portraits/dodrio/Normal.pal");
+static const u8 sDodrioNormalGfx[] = INCBIN_U8("graphics/portraits/dodrio/Normal.at4px");
+
+static const PortraitGfx sDodrioPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDodrioNormalPal, sDodrioNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDodrio = { "SIRO", &sDodrioPortraits };
+
+static const u8 sSeelNormalPal[] = INCBIN_U8("graphics/portraits/seel/Normal.pal");
+static const u8 sSeelNormalGfx[] = INCBIN_U8("graphics/portraits/seel/Normal.at4px");
+
+static const PortraitGfx sSeelPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSeelNormalPal, sSeelNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSeel = { "SIRO", &sSeelPortraits };
+
+static const u8 sDewgongNormalPal[] = INCBIN_U8("graphics/portraits/dewgong/Normal.pal");
+static const u8 sDewgongNormalGfx[] = INCBIN_U8("graphics/portraits/dewgong/Normal.at4px");
+
+static const PortraitGfx sDewgongPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDewgongNormalPal, sDewgongNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDewgong = { "SIRO", &sDewgongPortraits };
+
+static const u8 sGrimerNormalPal[] = INCBIN_U8("graphics/portraits/grimer/Normal.pal");
+static const u8 sGrimerNormalGfx[] = INCBIN_U8("graphics/portraits/grimer/Normal.at4px");
+
+static const PortraitGfx sGrimerPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGrimerNormalPal, sGrimerNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGrimer = { "SIRO", &sGrimerPortraits };
+
+static const u8 sMukNormalPal[] = INCBIN_U8("graphics/portraits/muk/Normal.pal");
+static const u8 sMukNormalGfx[] = INCBIN_U8("graphics/portraits/muk/Normal.at4px");
+
+static const PortraitGfx sMukPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMukNormalPal, sMukNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMuk = { "SIRO", &sMukPortraits };
+
+static const u8 sShellderNormalPal[] = INCBIN_U8("graphics/portraits/shellder/Normal.pal");
+static const u8 sShellderNormalGfx[] = INCBIN_U8("graphics/portraits/shellder/Normal.at4px");
+
+static const PortraitGfx sShellderPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sShellderNormalPal, sShellderNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoShellder = { "SIRO", &sShellderPortraits };
+
+static const u8 sCloysterNormalPal[] = INCBIN_U8("graphics/portraits/cloyster/Normal.pal");
+static const u8 sCloysterNormalGfx[] = INCBIN_U8("graphics/portraits/cloyster/Normal.at4px");
+
+static const PortraitGfx sCloysterPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCloysterNormalPal, sCloysterNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCloyster = { "SIRO", &sCloysterPortraits };
+
+static const u8 sGastlyNormalPal[] = INCBIN_U8("graphics/portraits/gastly/Normal.pal");
+static const u8 sGastlyNormalGfx[] = INCBIN_U8("graphics/portraits/gastly/Normal.at4px");
+
+static const PortraitGfx sGastlyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGastlyNormalPal, sGastlyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGastly = { "SIRO", &sGastlyPortraits };
+
+static const u8 sHaunterNormalPal[] = INCBIN_U8("graphics/portraits/haunter/Normal.pal");
+static const u8 sHaunterNormalGfx[] = INCBIN_U8("graphics/portraits/haunter/Normal.at4px");
+
+static const PortraitGfx sHaunterPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHaunterNormalPal, sHaunterNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHaunter = { "SIRO", &sHaunterPortraits };
+
+static const u8 sGengarNormalPal[] = INCBIN_U8("graphics/portraits/gengar/Normal.pal");
+static const u8 sGengarNormalGfx[] = INCBIN_U8("graphics/portraits/gengar/Normal.at4px");
+
+static const PortraitGfx sGengarPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGengarNormalPal, sGengarNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGengar = { "SIRO", &sGengarPortraits };
+
+static const u8 sOnixNormalPal[] = INCBIN_U8("graphics/portraits/onix/Normal.pal");
+static const u8 sOnixNormalGfx[] = INCBIN_U8("graphics/portraits/onix/Normal.at4px");
+
+static const PortraitGfx sOnixPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sOnixNormalPal, sOnixNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoOnix = { "SIRO", &sOnixPortraits };
+
+static const u8 sDrowzeeNormalPal[] = INCBIN_U8("graphics/portraits/drowzee/Normal.pal");
+static const u8 sDrowzeeNormalGfx[] = INCBIN_U8("graphics/portraits/drowzee/Normal.at4px");
+
+static const PortraitGfx sDrowzeePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDrowzeeNormalPal, sDrowzeeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDrowzee = { "SIRO", &sDrowzeePortraits };
+
+static const u8 sHypnoNormalPal[] = INCBIN_U8("graphics/portraits/hypno/Normal.pal");
+static const u8 sHypnoNormalGfx[] = INCBIN_U8("graphics/portraits/hypno/Normal.at4px");
+
+static const PortraitGfx sHypnoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHypnoNormalPal, sHypnoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHypno = { "SIRO", &sHypnoPortraits };
+
+static const u8 sKrabbyNormalPal[] = INCBIN_U8("graphics/portraits/krabby/Normal.pal");
+static const u8 sKrabbyNormalGfx[] = INCBIN_U8("graphics/portraits/krabby/Normal.at4px");
+
+static const PortraitGfx sKrabbyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKrabbyNormalPal, sKrabbyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKrabby = { "SIRO", &sKrabbyPortraits };
+
+static const u8 sKinglerNormalPal[] = INCBIN_U8("graphics/portraits/kingler/Normal.pal");
+static const u8 sKinglerNormalGfx[] = INCBIN_U8("graphics/portraits/kingler/Normal.at4px");
+
+static const PortraitGfx sKinglerPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKinglerNormalPal, sKinglerNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKingler = { "SIRO", &sKinglerPortraits };
+
+static const u8 sVoltorbNormalPal[] = INCBIN_U8("graphics/portraits/voltorb/Normal.pal");
+static const u8 sVoltorbNormalGfx[] = INCBIN_U8("graphics/portraits/voltorb/Normal.at4px");
+
+static const PortraitGfx sVoltorbPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVoltorbNormalPal, sVoltorbNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVoltorb = { "SIRO", &sVoltorbPortraits };
+
+static const u8 sElectrodeNormalPal[] = INCBIN_U8("graphics/portraits/electrode/Normal.pal");
+static const u8 sElectrodeNormalGfx[] = INCBIN_U8("graphics/portraits/electrode/Normal.at4px");
+
+static const PortraitGfx sElectrodePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sElectrodeNormalPal, sElectrodeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoElectrode = { "SIRO", &sElectrodePortraits };
+
+static const u8 sExeggcuteNormalPal[] = INCBIN_U8("graphics/portraits/exeggcute/Normal.pal");
+static const u8 sExeggcuteNormalGfx[] = INCBIN_U8("graphics/portraits/exeggcute/Normal.at4px");
+
+static const PortraitGfx sExeggcutePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sExeggcuteNormalPal, sExeggcuteNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoExeggcute = { "SIRO", &sExeggcutePortraits };
+
+static const u8 sExeggutorNormalPal[] = INCBIN_U8("graphics/portraits/exeggutor/Normal.pal");
+static const u8 sExeggutorNormalGfx[] = INCBIN_U8("graphics/portraits/exeggutor/Normal.at4px");
+
+static const PortraitGfx sExeggutorPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sExeggutorNormalPal, sExeggutorNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoExeggutor = { "SIRO", &sExeggutorPortraits };
+
+static const u8 sCuboneNormalPal[] = INCBIN_U8("graphics/portraits/cubone/Normal.pal");
+static const u8 sCuboneNormalGfx[] = INCBIN_U8("graphics/portraits/cubone/Normal.at4px");
+
+static const PortraitGfx sCubonePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCuboneNormalPal, sCuboneNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCubone = { "SIRO", &sCubonePortraits };
+
 static const u8 sMarowakNormalPal[] = INCBIN_U8("graphics/portraits/marowak/Normal.pal");
 static const u8 sMarowakNormalGfx[] = INCBIN_U8("graphics/portraits/marowak/Normal.at4px");
 static const u8 sMarowakHappyPal[] = INCBIN_U8("graphics/portraits/marowak/Happy.pal");
@@ -540,6 +2679,650 @@ static const PortraitGfx sMarowakPortraits = {
 };
 
 const SiroArchive gCustomKaoMarowak = { "SIRO", &sMarowakPortraits };
+
+static const u8 sHitmonleeNormalPal[] = INCBIN_U8("graphics/portraits/hitmonlee/Normal.pal");
+static const u8 sHitmonleeNormalGfx[] = INCBIN_U8("graphics/portraits/hitmonlee/Normal.at4px");
+
+static const PortraitGfx sHitmonleePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHitmonleeNormalPal, sHitmonleeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHitmonlee = { "SIRO", &sHitmonleePortraits };
+
+static const u8 sHitmonchanNormalPal[] = INCBIN_U8("graphics/portraits/hitmonchan/Normal.pal");
+static const u8 sHitmonchanNormalGfx[] = INCBIN_U8("graphics/portraits/hitmonchan/Normal.at4px");
+
+static const PortraitGfx sHitmonchanPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHitmonchanNormalPal, sHitmonchanNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHitmonchan = { "SIRO", &sHitmonchanPortraits };
+
+static const u8 sLickitungNormalPal[] = INCBIN_U8("graphics/portraits/lickitung/Normal.pal");
+static const u8 sLickitungNormalGfx[] = INCBIN_U8("graphics/portraits/lickitung/Normal.at4px");
+
+static const PortraitGfx sLickitungPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLickitungNormalPal, sLickitungNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLickitung = { "SIRO", &sLickitungPortraits };
+
+static const u8 sKoffingNormalPal[] = INCBIN_U8("graphics/portraits/koffing/Normal.pal");
+static const u8 sKoffingNormalGfx[] = INCBIN_U8("graphics/portraits/koffing/Normal.at4px");
+
+static const PortraitGfx sKoffingPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKoffingNormalPal, sKoffingNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKoffing = { "SIRO", &sKoffingPortraits };
+
+static const u8 sWeezingNormalPal[] = INCBIN_U8("graphics/portraits/weezing/Normal.pal");
+static const u8 sWeezingNormalGfx[] = INCBIN_U8("graphics/portraits/weezing/Normal.at4px");
+
+static const PortraitGfx sWeezingPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWeezingNormalPal, sWeezingNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWeezing = { "SIRO", &sWeezingPortraits };
+
+static const u8 sRhyhornNormalPal[] = INCBIN_U8("graphics/portraits/rhyhorn/Normal.pal");
+static const u8 sRhyhornNormalGfx[] = INCBIN_U8("graphics/portraits/rhyhorn/Normal.at4px");
+
+static const PortraitGfx sRhyhornPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRhyhornNormalPal, sRhyhornNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRhyhorn = { "SIRO", &sRhyhornPortraits };
+
+static const u8 sRhydonNormalPal[] = INCBIN_U8("graphics/portraits/rhydon/Normal.pal");
+static const u8 sRhydonNormalGfx[] = INCBIN_U8("graphics/portraits/rhydon/Normal.at4px");
+
+static const PortraitGfx sRhydonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRhydonNormalPal, sRhydonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRhydon = { "SIRO", &sRhydonPortraits };
+
+static const u8 sChanseyNormalPal[] = INCBIN_U8("graphics/portraits/chansey/Normal.pal");
+static const u8 sChanseyNormalGfx[] = INCBIN_U8("graphics/portraits/chansey/Normal.at4px");
+
+static const PortraitGfx sChanseyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sChanseyNormalPal, sChanseyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoChansey = { "SIRO", &sChanseyPortraits };
+
+static const u8 sTangelaNormalPal[] = INCBIN_U8("graphics/portraits/tangela/Normal.pal");
+static const u8 sTangelaNormalGfx[] = INCBIN_U8("graphics/portraits/tangela/Normal.at4px");
+
+static const PortraitGfx sTangelaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTangelaNormalPal, sTangelaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTangela = { "SIRO", &sTangelaPortraits };
+
+static const u8 sKangaskhanNormalPal[] = INCBIN_U8("graphics/portraits/kangaskhan/Normal.pal");
+static const u8 sKangaskhanNormalGfx[] = INCBIN_U8("graphics/portraits/kangaskhan/Normal.at4px");
+
+static const PortraitGfx sKangaskhanPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKangaskhanNormalPal, sKangaskhanNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKangaskhan = { "SIRO", &sKangaskhanPortraits };
+
+static const u8 sHorseaNormalPal[] = INCBIN_U8("graphics/portraits/horsea/Normal.pal");
+static const u8 sHorseaNormalGfx[] = INCBIN_U8("graphics/portraits/horsea/Normal.at4px");
+
+static const PortraitGfx sHorseaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHorseaNormalPal, sHorseaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHorsea = { "SIRO", &sHorseaPortraits };
+
+static const u8 sSeadraNormalPal[] = INCBIN_U8("graphics/portraits/seadra/Normal.pal");
+static const u8 sSeadraNormalGfx[] = INCBIN_U8("graphics/portraits/seadra/Normal.at4px");
+
+static const PortraitGfx sSeadraPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSeadraNormalPal, sSeadraNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSeadra = { "SIRO", &sSeadraPortraits };
+
+static const u8 sGoldeenNormalPal[] = INCBIN_U8("graphics/portraits/goldeen/Normal.pal");
+static const u8 sGoldeenNormalGfx[] = INCBIN_U8("graphics/portraits/goldeen/Normal.at4px");
+
+static const PortraitGfx sGoldeenPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGoldeenNormalPal, sGoldeenNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGoldeen = { "SIRO", &sGoldeenPortraits };
+
+static const u8 sSeakingNormalPal[] = INCBIN_U8("graphics/portraits/seaking/Normal.pal");
+static const u8 sSeakingNormalGfx[] = INCBIN_U8("graphics/portraits/seaking/Normal.at4px");
+
+static const PortraitGfx sSeakingPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSeakingNormalPal, sSeakingNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSeaking = { "SIRO", &sSeakingPortraits };
+
+static const u8 sStaryuNormalPal[] = INCBIN_U8("graphics/portraits/staryu/Normal.pal");
+static const u8 sStaryuNormalGfx[] = INCBIN_U8("graphics/portraits/staryu/Normal.at4px");
+
+static const PortraitGfx sStaryuPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sStaryuNormalPal, sStaryuNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoStaryu = { "SIRO", &sStaryuPortraits };
+
+static const u8 sStarmieNormalPal[] = INCBIN_U8("graphics/portraits/starmie/Normal.pal");
+static const u8 sStarmieNormalGfx[] = INCBIN_U8("graphics/portraits/starmie/Normal.at4px");
+
+static const PortraitGfx sStarmiePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sStarmieNormalPal, sStarmieNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoStarmie = { "SIRO", &sStarmiePortraits };
+
+static const u8 sMrMimeNormalPal[] = INCBIN_U8("graphics/portraits/mr_mime/Normal.pal");
+static const u8 sMrMimeNormalGfx[] = INCBIN_U8("graphics/portraits/mr_mime/Normal.at4px");
+
+static const PortraitGfx sMrMimePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMrMimeNormalPal, sMrMimeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMrMime = { "SIRO", &sMrMimePortraits };
+
+static const u8 sScytherNormalPal[] = INCBIN_U8("graphics/portraits/scyther/Normal.pal");
+static const u8 sScytherNormalGfx[] = INCBIN_U8("graphics/portraits/scyther/Normal.at4px");
+
+static const PortraitGfx sScytherPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sScytherNormalPal, sScytherNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoScyther = { "SIRO", &sScytherPortraits };
+
+static const u8 sJynxNormalPal[] = INCBIN_U8("graphics/portraits/jynx/Normal.pal");
+static const u8 sJynxNormalGfx[] = INCBIN_U8("graphics/portraits/jynx/Normal.at4px");
+
+static const PortraitGfx sJynxPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sJynxNormalPal, sJynxNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoJynx = { "SIRO", &sJynxPortraits };
+
+static const u8 sElectabuzzNormalPal[] = INCBIN_U8("graphics/portraits/electabuzz/Normal.pal");
+static const u8 sElectabuzzNormalGfx[] = INCBIN_U8("graphics/portraits/electabuzz/Normal.at4px");
+
+static const PortraitGfx sElectabuzzPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sElectabuzzNormalPal, sElectabuzzNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoElectabuzz = { "SIRO", &sElectabuzzPortraits };
+
+static const u8 sMagmarNormalPal[] = INCBIN_U8("graphics/portraits/magmar/Normal.pal");
+static const u8 sMagmarNormalGfx[] = INCBIN_U8("graphics/portraits/magmar/Normal.at4px");
+
+static const PortraitGfx sMagmarPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMagmarNormalPal, sMagmarNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMagmar = { "SIRO", &sMagmarPortraits };
+
+static const u8 sPinsirNormalPal[] = INCBIN_U8("graphics/portraits/pinsir/Normal.pal");
+static const u8 sPinsirNormalGfx[] = INCBIN_U8("graphics/portraits/pinsir/Normal.at4px");
+
+static const PortraitGfx sPinsirPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPinsirNormalPal, sPinsirNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPinsir = { "SIRO", &sPinsirPortraits };
+
+static const u8 sTaurosNormalPal[] = INCBIN_U8("graphics/portraits/tauros/Normal.pal");
+static const u8 sTaurosNormalGfx[] = INCBIN_U8("graphics/portraits/tauros/Normal.at4px");
+
+static const PortraitGfx sTaurosPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTaurosNormalPal, sTaurosNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTauros = { "SIRO", &sTaurosPortraits };
+
+static const u8 sMagikarpNormalPal[] = INCBIN_U8("graphics/portraits/magikarp/Normal.pal");
+static const u8 sMagikarpNormalGfx[] = INCBIN_U8("graphics/portraits/magikarp/Normal.at4px");
+
+static const PortraitGfx sMagikarpPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMagikarpNormalPal, sMagikarpNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMagikarp = { "SIRO", &sMagikarpPortraits };
+
+static const u8 sGyaradosNormalPal[] = INCBIN_U8("graphics/portraits/gyarados/Normal.pal");
+static const u8 sGyaradosNormalGfx[] = INCBIN_U8("graphics/portraits/gyarados/Normal.at4px");
+
+static const PortraitGfx sGyaradosPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGyaradosNormalPal, sGyaradosNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGyarados = { "SIRO", &sGyaradosPortraits };
+
+static const u8 sLaprasNormalPal[] = INCBIN_U8("graphics/portraits/lapras/Normal.pal");
+static const u8 sLaprasNormalGfx[] = INCBIN_U8("graphics/portraits/lapras/Normal.at4px");
+
+static const PortraitGfx sLaprasPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLaprasNormalPal, sLaprasNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLapras = { "SIRO", &sLaprasPortraits };
+
+static const u8 sDittoNormalPal[] = INCBIN_U8("graphics/portraits/ditto/Normal.pal");
+static const u8 sDittoNormalGfx[] = INCBIN_U8("graphics/portraits/ditto/Normal.at4px");
+
+static const PortraitGfx sDittoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDittoNormalPal, sDittoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDitto = { "SIRO", &sDittoPortraits };
+
+static const u8 sEeveeNormalPal[] = INCBIN_U8("graphics/portraits/eevee/Normal.pal");
+static const u8 sEeveeNormalGfx[] = INCBIN_U8("graphics/portraits/eevee/Normal.at4px");
+
+static const PortraitGfx sEeveePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sEeveeNormalPal, sEeveeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoEevee = { "SIRO", &sEeveePortraits };
 
 static const u8 sVaporeonNormalPal[] = INCBIN_U8("graphics/portraits/vaporeon/Normal.pal");
 static const u8 sVaporeonNormalGfx[] = INCBIN_U8("graphics/portraits/vaporeon/Normal.at4px");
@@ -682,6 +3465,374 @@ static const PortraitGfx sFlareonPortraits = {
 
 const SiroArchive gCustomKaoFlareon = { "SIRO", &sFlareonPortraits };
 
+static const u8 sPorygonNormalPal[] = INCBIN_U8("graphics/portraits/porygon/Normal.pal");
+static const u8 sPorygonNormalGfx[] = INCBIN_U8("graphics/portraits/porygon/Normal.at4px");
+
+static const PortraitGfx sPorygonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPorygonNormalPal, sPorygonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPorygon = { "SIRO", &sPorygonPortraits };
+
+static const u8 sOmanyteNormalPal[] = INCBIN_U8("graphics/portraits/omanyte/Normal.pal");
+static const u8 sOmanyteNormalGfx[] = INCBIN_U8("graphics/portraits/omanyte/Normal.at4px");
+
+static const PortraitGfx sOmanytePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sOmanyteNormalPal, sOmanyteNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoOmanyte = { "SIRO", &sOmanytePortraits };
+
+static const u8 sOmastarNormalPal[] = INCBIN_U8("graphics/portraits/omastar/Normal.pal");
+static const u8 sOmastarNormalGfx[] = INCBIN_U8("graphics/portraits/omastar/Normal.at4px");
+
+static const PortraitGfx sOmastarPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sOmastarNormalPal, sOmastarNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoOmastar = { "SIRO", &sOmastarPortraits };
+
+static const u8 sKabutoNormalPal[] = INCBIN_U8("graphics/portraits/kabuto/Normal.pal");
+static const u8 sKabutoNormalGfx[] = INCBIN_U8("graphics/portraits/kabuto/Normal.at4px");
+
+static const PortraitGfx sKabutoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKabutoNormalPal, sKabutoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKabuto = { "SIRO", &sKabutoPortraits };
+
+static const u8 sKabutopsNormalPal[] = INCBIN_U8("graphics/portraits/kabutops/Normal.pal");
+static const u8 sKabutopsNormalGfx[] = INCBIN_U8("graphics/portraits/kabutops/Normal.at4px");
+
+static const PortraitGfx sKabutopsPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKabutopsNormalPal, sKabutopsNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKabutops = { "SIRO", &sKabutopsPortraits };
+
+static const u8 sAerodactylNormalPal[] = INCBIN_U8("graphics/portraits/aerodactyl/Normal.pal");
+static const u8 sAerodactylNormalGfx[] = INCBIN_U8("graphics/portraits/aerodactyl/Normal.at4px");
+
+static const PortraitGfx sAerodactylPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAerodactylNormalPal, sAerodactylNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAerodactyl = { "SIRO", &sAerodactylPortraits };
+
+static const u8 sSnorlaxNormalPal[] = INCBIN_U8("graphics/portraits/snorlax/Normal.pal");
+static const u8 sSnorlaxNormalGfx[] = INCBIN_U8("graphics/portraits/snorlax/Normal.at4px");
+
+static const PortraitGfx sSnorlaxPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSnorlaxNormalPal, sSnorlaxNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSnorlax = { "SIRO", &sSnorlaxPortraits };
+
+static const u8 sArticunoNormalPal[] = INCBIN_U8("graphics/portraits/articuno/Normal.pal");
+static const u8 sArticunoNormalGfx[] = INCBIN_U8("graphics/portraits/articuno/Normal.at4px");
+
+static const PortraitGfx sArticunoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sArticunoNormalPal, sArticunoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoArticuno = { "SIRO", &sArticunoPortraits };
+
+static const u8 sZapdosNormalPal[] = INCBIN_U8("graphics/portraits/zapdos/Normal.pal");
+static const u8 sZapdosNormalGfx[] = INCBIN_U8("graphics/portraits/zapdos/Normal.at4px");
+
+static const PortraitGfx sZapdosPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sZapdosNormalPal, sZapdosNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoZapdos = { "SIRO", &sZapdosPortraits };
+
+static const u8 sMoltresNormalPal[] = INCBIN_U8("graphics/portraits/moltres/Normal.pal");
+static const u8 sMoltresNormalGfx[] = INCBIN_U8("graphics/portraits/moltres/Normal.at4px");
+
+static const PortraitGfx sMoltresPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMoltresNormalPal, sMoltresNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMoltres = { "SIRO", &sMoltresPortraits };
+
+static const u8 sDratiniNormalPal[] = INCBIN_U8("graphics/portraits/dratini/Normal.pal");
+static const u8 sDratiniNormalGfx[] = INCBIN_U8("graphics/portraits/dratini/Normal.at4px");
+
+static const PortraitGfx sDratiniPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDratiniNormalPal, sDratiniNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDratini = { "SIRO", &sDratiniPortraits };
+
+static const u8 sDragonairNormalPal[] = INCBIN_U8("graphics/portraits/dragonair/Normal.pal");
+static const u8 sDragonairNormalGfx[] = INCBIN_U8("graphics/portraits/dragonair/Normal.at4px");
+
+static const PortraitGfx sDragonairPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDragonairNormalPal, sDragonairNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDragonair = { "SIRO", &sDragonairPortraits };
+
+static const u8 sDragoniteNormalPal[] = INCBIN_U8("graphics/portraits/dragonite/Normal.pal");
+static const u8 sDragoniteNormalGfx[] = INCBIN_U8("graphics/portraits/dragonite/Normal.at4px");
+
+static const PortraitGfx sDragonitePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDragoniteNormalPal, sDragoniteNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDragonite = { "SIRO", &sDragonitePortraits };
+
+static const u8 sMewtwoNormalPal[] = INCBIN_U8("graphics/portraits/mewtwo/Normal.pal");
+static const u8 sMewtwoNormalGfx[] = INCBIN_U8("graphics/portraits/mewtwo/Normal.at4px");
+
+static const PortraitGfx sMewtwoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMewtwoNormalPal, sMewtwoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMewtwo = { "SIRO", &sMewtwoPortraits };
+
+static const u8 sMewNormalPal[] = INCBIN_U8("graphics/portraits/mew/Normal.pal");
+static const u8 sMewNormalGfx[] = INCBIN_U8("graphics/portraits/mew/Normal.at4px");
+
+static const PortraitGfx sMewPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMewNormalPal, sMewNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMew = { "SIRO", &sMewPortraits };
+
+static const u8 sChikoritaNormalPal[] = INCBIN_U8("graphics/portraits/chikorita/Normal.pal");
+static const u8 sChikoritaNormalGfx[] = INCBIN_U8("graphics/portraits/chikorita/Normal.at4px");
+
+static const PortraitGfx sChikoritaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sChikoritaNormalPal, sChikoritaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoChikorita = { "SIRO", &sChikoritaPortraits };
+
 static const u8 sBayleefNormalPal[] = INCBIN_U8("graphics/portraits/bayleef/Normal.pal");
 static const u8 sBayleefNormalGfx[] = INCBIN_U8("graphics/portraits/bayleef/Normal.at4px");
 static const u8 sBayleefHappyPal[] = INCBIN_U8("graphics/portraits/bayleef/Happy.pal");
@@ -775,6 +3926,29 @@ static const PortraitGfx sMeganiumPortraits = {
 };
 
 const SiroArchive gCustomKaoMeganium = { "SIRO", &sMeganiumPortraits };
+
+static const u8 sCyndaquilNormalPal[] = INCBIN_U8("graphics/portraits/cyndaquil/Normal.pal");
+static const u8 sCyndaquilNormalGfx[] = INCBIN_U8("graphics/portraits/cyndaquil/Normal.at4px");
+
+static const PortraitGfx sCyndaquilPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCyndaquilNormalPal, sCyndaquilNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCyndaquil = { "SIRO", &sCyndaquilPortraits };
 
 static const u8 sQuilavaNormalPal[] = INCBIN_U8("graphics/portraits/quilava/Normal.pal");
 static const u8 sQuilavaNormalGfx[] = INCBIN_U8("graphics/portraits/quilava/Normal.at4px");
@@ -870,6 +4044,29 @@ static const PortraitGfx sTyphlosionPortraits = {
 
 const SiroArchive gCustomKaoTyphlosion = { "SIRO", &sTyphlosionPortraits };
 
+static const u8 sTotodileNormalPal[] = INCBIN_U8("graphics/portraits/totodile/Normal.pal");
+static const u8 sTotodileNormalGfx[] = INCBIN_U8("graphics/portraits/totodile/Normal.at4px");
+
+static const PortraitGfx sTotodilePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTotodileNormalPal, sTotodileNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTotodile = { "SIRO", &sTotodilePortraits };
+
 static const u8 sCroconawNormalPal[] = INCBIN_U8("graphics/portraits/croconaw/Normal.pal");
 static const u8 sCroconawNormalGfx[] = INCBIN_U8("graphics/portraits/croconaw/Normal.at4px");
 static const u8 sCroconawHappyPal[] = INCBIN_U8("graphics/portraits/croconaw/Happy.pal");
@@ -963,6 +4160,811 @@ static const PortraitGfx sFeraligatrPortraits = {
 };
 
 const SiroArchive gCustomKaoFeraligatr = { "SIRO", &sFeraligatrPortraits };
+
+static const u8 sSentretNormalPal[] = INCBIN_U8("graphics/portraits/sentret/Normal.pal");
+static const u8 sSentretNormalGfx[] = INCBIN_U8("graphics/portraits/sentret/Normal.at4px");
+
+static const PortraitGfx sSentretPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSentretNormalPal, sSentretNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSentret = { "SIRO", &sSentretPortraits };
+
+static const u8 sFurretNormalPal[] = INCBIN_U8("graphics/portraits/furret/Normal.pal");
+static const u8 sFurretNormalGfx[] = INCBIN_U8("graphics/portraits/furret/Normal.at4px");
+
+static const PortraitGfx sFurretPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sFurretNormalPal, sFurretNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoFurret = { "SIRO", &sFurretPortraits };
+
+static const u8 sHoothootNormalPal[] = INCBIN_U8("graphics/portraits/hoothoot/Normal.pal");
+static const u8 sHoothootNormalGfx[] = INCBIN_U8("graphics/portraits/hoothoot/Normal.at4px");
+
+static const PortraitGfx sHoothootPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHoothootNormalPal, sHoothootNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHoothoot = { "SIRO", &sHoothootPortraits };
+
+static const u8 sNoctowlNormalPal[] = INCBIN_U8("graphics/portraits/noctowl/Normal.pal");
+static const u8 sNoctowlNormalGfx[] = INCBIN_U8("graphics/portraits/noctowl/Normal.at4px");
+
+static const PortraitGfx sNoctowlPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNoctowlNormalPal, sNoctowlNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNoctowl = { "SIRO", &sNoctowlPortraits };
+
+static const u8 sLedybaNormalPal[] = INCBIN_U8("graphics/portraits/ledyba/Normal.pal");
+static const u8 sLedybaNormalGfx[] = INCBIN_U8("graphics/portraits/ledyba/Normal.at4px");
+
+static const PortraitGfx sLedybaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLedybaNormalPal, sLedybaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLedyba = { "SIRO", &sLedybaPortraits };
+
+static const u8 sLedianNormalPal[] = INCBIN_U8("graphics/portraits/ledian/Normal.pal");
+static const u8 sLedianNormalGfx[] = INCBIN_U8("graphics/portraits/ledian/Normal.at4px");
+
+static const PortraitGfx sLedianPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLedianNormalPal, sLedianNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLedian = { "SIRO", &sLedianPortraits };
+
+static const u8 sSpinarakNormalPal[] = INCBIN_U8("graphics/portraits/spinarak/Normal.pal");
+static const u8 sSpinarakNormalGfx[] = INCBIN_U8("graphics/portraits/spinarak/Normal.at4px");
+
+static const PortraitGfx sSpinarakPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSpinarakNormalPal, sSpinarakNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSpinarak = { "SIRO", &sSpinarakPortraits };
+
+static const u8 sAriadosNormalPal[] = INCBIN_U8("graphics/portraits/ariados/Normal.pal");
+static const u8 sAriadosNormalGfx[] = INCBIN_U8("graphics/portraits/ariados/Normal.at4px");
+
+static const PortraitGfx sAriadosPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAriadosNormalPal, sAriadosNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAriados = { "SIRO", &sAriadosPortraits };
+
+static const u8 sCrobatNormalPal[] = INCBIN_U8("graphics/portraits/crobat/Normal.pal");
+static const u8 sCrobatNormalGfx[] = INCBIN_U8("graphics/portraits/crobat/Normal.at4px");
+
+static const PortraitGfx sCrobatPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCrobatNormalPal, sCrobatNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCrobat = { "SIRO", &sCrobatPortraits };
+
+static const u8 sChinchouNormalPal[] = INCBIN_U8("graphics/portraits/chinchou/Normal.pal");
+static const u8 sChinchouNormalGfx[] = INCBIN_U8("graphics/portraits/chinchou/Normal.at4px");
+
+static const PortraitGfx sChinchouPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sChinchouNormalPal, sChinchouNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoChinchou = { "SIRO", &sChinchouPortraits };
+
+static const u8 sLanturnNormalPal[] = INCBIN_U8("graphics/portraits/lanturn/Normal.pal");
+static const u8 sLanturnNormalGfx[] = INCBIN_U8("graphics/portraits/lanturn/Normal.at4px");
+
+static const PortraitGfx sLanturnPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLanturnNormalPal, sLanturnNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLanturn = { "SIRO", &sLanturnPortraits };
+
+static const u8 sPichuNormalPal[] = INCBIN_U8("graphics/portraits/pichu/Normal.pal");
+static const u8 sPichuNormalGfx[] = INCBIN_U8("graphics/portraits/pichu/Normal.at4px");
+
+static const PortraitGfx sPichuPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPichuNormalPal, sPichuNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPichu = { "SIRO", &sPichuPortraits };
+
+static const u8 sCleffaNormalPal[] = INCBIN_U8("graphics/portraits/cleffa/Normal.pal");
+static const u8 sCleffaNormalGfx[] = INCBIN_U8("graphics/portraits/cleffa/Normal.at4px");
+
+static const PortraitGfx sCleffaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCleffaNormalPal, sCleffaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCleffa = { "SIRO", &sCleffaPortraits };
+
+static const u8 sIgglybuffNormalPal[] = INCBIN_U8("graphics/portraits/igglybuff/Normal.pal");
+static const u8 sIgglybuffNormalGfx[] = INCBIN_U8("graphics/portraits/igglybuff/Normal.at4px");
+
+static const PortraitGfx sIgglybuffPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sIgglybuffNormalPal, sIgglybuffNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoIgglybuff = { "SIRO", &sIgglybuffPortraits };
+
+static const u8 sTogepiNormalPal[] = INCBIN_U8("graphics/portraits/togepi/Normal.pal");
+static const u8 sTogepiNormalGfx[] = INCBIN_U8("graphics/portraits/togepi/Normal.at4px");
+
+static const PortraitGfx sTogepiPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTogepiNormalPal, sTogepiNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTogepi = { "SIRO", &sTogepiPortraits };
+
+static const u8 sTogeticNormalPal[] = INCBIN_U8("graphics/portraits/togetic/Normal.pal");
+static const u8 sTogeticNormalGfx[] = INCBIN_U8("graphics/portraits/togetic/Normal.at4px");
+
+static const PortraitGfx sTogeticPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTogeticNormalPal, sTogeticNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTogetic = { "SIRO", &sTogeticPortraits };
+
+static const u8 sNatuNormalPal[] = INCBIN_U8("graphics/portraits/natu/Normal.pal");
+static const u8 sNatuNormalGfx[] = INCBIN_U8("graphics/portraits/natu/Normal.at4px");
+
+static const PortraitGfx sNatuPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNatuNormalPal, sNatuNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNatu = { "SIRO", &sNatuPortraits };
+
+static const u8 sXatuNormalPal[] = INCBIN_U8("graphics/portraits/xatu/Normal.pal");
+static const u8 sXatuNormalGfx[] = INCBIN_U8("graphics/portraits/xatu/Normal.at4px");
+
+static const PortraitGfx sXatuPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sXatuNormalPal, sXatuNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoXatu = { "SIRO", &sXatuPortraits };
+
+static const u8 sMareepNormalPal[] = INCBIN_U8("graphics/portraits/mareep/Normal.pal");
+static const u8 sMareepNormalGfx[] = INCBIN_U8("graphics/portraits/mareep/Normal.at4px");
+
+static const PortraitGfx sMareepPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMareepNormalPal, sMareepNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMareep = { "SIRO", &sMareepPortraits };
+
+static const u8 sFlaaffyNormalPal[] = INCBIN_U8("graphics/portraits/flaaffy/Normal.pal");
+static const u8 sFlaaffyNormalGfx[] = INCBIN_U8("graphics/portraits/flaaffy/Normal.at4px");
+
+static const PortraitGfx sFlaaffyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sFlaaffyNormalPal, sFlaaffyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoFlaaffy = { "SIRO", &sFlaaffyPortraits };
+
+static const u8 sAmpharosNormalPal[] = INCBIN_U8("graphics/portraits/ampharos/Normal.pal");
+static const u8 sAmpharosNormalGfx[] = INCBIN_U8("graphics/portraits/ampharos/Normal.at4px");
+
+static const PortraitGfx sAmpharosPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAmpharosNormalPal, sAmpharosNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAmpharos = { "SIRO", &sAmpharosPortraits };
+
+static const u8 sBellossomNormalPal[] = INCBIN_U8("graphics/portraits/bellossom/Normal.pal");
+static const u8 sBellossomNormalGfx[] = INCBIN_U8("graphics/portraits/bellossom/Normal.at4px");
+
+static const PortraitGfx sBellossomPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBellossomNormalPal, sBellossomNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBellossom = { "SIRO", &sBellossomPortraits };
+
+static const u8 sMarillNormalPal[] = INCBIN_U8("graphics/portraits/marill/Normal.pal");
+static const u8 sMarillNormalGfx[] = INCBIN_U8("graphics/portraits/marill/Normal.at4px");
+
+static const PortraitGfx sMarillPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMarillNormalPal, sMarillNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMarill = { "SIRO", &sMarillPortraits };
+
+static const u8 sAzumarillNormalPal[] = INCBIN_U8("graphics/portraits/azumarill/Normal.pal");
+static const u8 sAzumarillNormalGfx[] = INCBIN_U8("graphics/portraits/azumarill/Normal.at4px");
+
+static const PortraitGfx sAzumarillPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAzumarillNormalPal, sAzumarillNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAzumarill = { "SIRO", &sAzumarillPortraits };
+
+static const u8 sSudowoodoNormalPal[] = INCBIN_U8("graphics/portraits/sudowoodo/Normal.pal");
+static const u8 sSudowoodoNormalGfx[] = INCBIN_U8("graphics/portraits/sudowoodo/Normal.at4px");
+
+static const PortraitGfx sSudowoodoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSudowoodoNormalPal, sSudowoodoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSudowoodo = { "SIRO", &sSudowoodoPortraits };
+
+static const u8 sPolitoedNormalPal[] = INCBIN_U8("graphics/portraits/politoed/Normal.pal");
+static const u8 sPolitoedNormalGfx[] = INCBIN_U8("graphics/portraits/politoed/Normal.at4px");
+
+static const PortraitGfx sPolitoedPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPolitoedNormalPal, sPolitoedNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPolitoed = { "SIRO", &sPolitoedPortraits };
+
+static const u8 sHoppipNormalPal[] = INCBIN_U8("graphics/portraits/hoppip/Normal.pal");
+static const u8 sHoppipNormalGfx[] = INCBIN_U8("graphics/portraits/hoppip/Normal.at4px");
+
+static const PortraitGfx sHoppipPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHoppipNormalPal, sHoppipNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHoppip = { "SIRO", &sHoppipPortraits };
+
+static const u8 sSkiploomNormalPal[] = INCBIN_U8("graphics/portraits/skiploom/Normal.pal");
+static const u8 sSkiploomNormalGfx[] = INCBIN_U8("graphics/portraits/skiploom/Normal.at4px");
+
+static const PortraitGfx sSkiploomPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkiploomNormalPal, sSkiploomNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSkiploom = { "SIRO", &sSkiploomPortraits };
+
+static const u8 sJumpluffNormalPal[] = INCBIN_U8("graphics/portraits/jumpluff/Normal.pal");
+static const u8 sJumpluffNormalGfx[] = INCBIN_U8("graphics/portraits/jumpluff/Normal.at4px");
+
+static const PortraitGfx sJumpluffPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sJumpluffNormalPal, sJumpluffNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoJumpluff = { "SIRO", &sJumpluffPortraits };
+
+static const u8 sAipomNormalPal[] = INCBIN_U8("graphics/portraits/aipom/Normal.pal");
+static const u8 sAipomNormalGfx[] = INCBIN_U8("graphics/portraits/aipom/Normal.at4px");
+
+static const PortraitGfx sAipomPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAipomNormalPal, sAipomNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAipom = { "SIRO", &sAipomPortraits };
+
+static const u8 sSunkernNormalPal[] = INCBIN_U8("graphics/portraits/sunkern/Normal.pal");
+static const u8 sSunkernNormalGfx[] = INCBIN_U8("graphics/portraits/sunkern/Normal.at4px");
+
+static const PortraitGfx sSunkernPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSunkernNormalPal, sSunkernNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSunkern = { "SIRO", &sSunkernPortraits };
+
+static const u8 sSunfloraNormalPal[] = INCBIN_U8("graphics/portraits/sunflora/Normal.pal");
+static const u8 sSunfloraNormalGfx[] = INCBIN_U8("graphics/portraits/sunflora/Normal.at4px");
+
+static const PortraitGfx sSunfloraPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSunfloraNormalPal, sSunfloraNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSunflora = { "SIRO", &sSunfloraPortraits };
+
+static const u8 sYanmaNormalPal[] = INCBIN_U8("graphics/portraits/yanma/Normal.pal");
+static const u8 sYanmaNormalGfx[] = INCBIN_U8("graphics/portraits/yanma/Normal.at4px");
+
+static const PortraitGfx sYanmaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sYanmaNormalPal, sYanmaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoYanma = { "SIRO", &sYanmaPortraits };
+
+static const u8 sWooperNormalPal[] = INCBIN_U8("graphics/portraits/wooper/Normal.pal");
+static const u8 sWooperNormalGfx[] = INCBIN_U8("graphics/portraits/wooper/Normal.at4px");
+
+static const PortraitGfx sWooperPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWooperNormalPal, sWooperNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWooper = { "SIRO", &sWooperPortraits };
+
+static const u8 sQuagsireNormalPal[] = INCBIN_U8("graphics/portraits/quagsire/Normal.pal");
+static const u8 sQuagsireNormalGfx[] = INCBIN_U8("graphics/portraits/quagsire/Normal.at4px");
+
+static const PortraitGfx sQuagsirePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sQuagsireNormalPal, sQuagsireNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoQuagsire = { "SIRO", &sQuagsirePortraits };
 
 static const u8 sEspeonNormalPal[] = INCBIN_U8("graphics/portraits/espeon/Normal.pal");
 static const u8 sEspeonNormalGfx[] = INCBIN_U8("graphics/portraits/espeon/Normal.at4px");
@@ -1058,6 +5060,1271 @@ static const PortraitGfx sUmbreonPortraits = {
 
 const SiroArchive gCustomKaoUmbreon = { "SIRO", &sUmbreonPortraits };
 
+static const u8 sMurkrowNormalPal[] = INCBIN_U8("graphics/portraits/murkrow/Normal.pal");
+static const u8 sMurkrowNormalGfx[] = INCBIN_U8("graphics/portraits/murkrow/Normal.at4px");
+
+static const PortraitGfx sMurkrowPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMurkrowNormalPal, sMurkrowNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMurkrow = { "SIRO", &sMurkrowPortraits };
+
+static const u8 sSlowkingNormalPal[] = INCBIN_U8("graphics/portraits/slowking/Normal.pal");
+static const u8 sSlowkingNormalGfx[] = INCBIN_U8("graphics/portraits/slowking/Normal.at4px");
+
+static const PortraitGfx sSlowkingPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSlowkingNormalPal, sSlowkingNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSlowking = { "SIRO", &sSlowkingPortraits };
+
+static const u8 sMisdreavusNormalPal[] = INCBIN_U8("graphics/portraits/misdreavus/Normal.pal");
+static const u8 sMisdreavusNormalGfx[] = INCBIN_U8("graphics/portraits/misdreavus/Normal.at4px");
+
+static const PortraitGfx sMisdreavusPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMisdreavusNormalPal, sMisdreavusNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMisdreavus = { "SIRO", &sMisdreavusPortraits };
+
+static const u8 sUnownNormalPal[] = INCBIN_U8("graphics/portraits/unown/Normal.pal");
+static const u8 sUnownNormalGfx[] = INCBIN_U8("graphics/portraits/unown/Normal.at4px");
+
+static const PortraitGfx sUnownPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sUnownNormalPal, sUnownNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoUnown = { "SIRO", &sUnownPortraits };
+
+static const u8 sWobbuffetNormalPal[] = INCBIN_U8("graphics/portraits/wobbuffet/Normal.pal");
+static const u8 sWobbuffetNormalGfx[] = INCBIN_U8("graphics/portraits/wobbuffet/Normal.at4px");
+
+static const PortraitGfx sWobbuffetPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWobbuffetNormalPal, sWobbuffetNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWobbuffet = { "SIRO", &sWobbuffetPortraits };
+
+static const u8 sGirafarigNormalPal[] = INCBIN_U8("graphics/portraits/girafarig/Normal.pal");
+static const u8 sGirafarigNormalGfx[] = INCBIN_U8("graphics/portraits/girafarig/Normal.at4px");
+
+static const PortraitGfx sGirafarigPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGirafarigNormalPal, sGirafarigNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGirafarig = { "SIRO", &sGirafarigPortraits };
+
+static const u8 sPinecoNormalPal[] = INCBIN_U8("graphics/portraits/pineco/Normal.pal");
+static const u8 sPinecoNormalGfx[] = INCBIN_U8("graphics/portraits/pineco/Normal.at4px");
+
+static const PortraitGfx sPinecoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPinecoNormalPal, sPinecoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPineco = { "SIRO", &sPinecoPortraits };
+
+static const u8 sForretressNormalPal[] = INCBIN_U8("graphics/portraits/forretress/Normal.pal");
+static const u8 sForretressNormalGfx[] = INCBIN_U8("graphics/portraits/forretress/Normal.at4px");
+
+static const PortraitGfx sForretressPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sForretressNormalPal, sForretressNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoForretress = { "SIRO", &sForretressPortraits };
+
+static const u8 sDunsparceNormalPal[] = INCBIN_U8("graphics/portraits/dunsparce/Normal.pal");
+static const u8 sDunsparceNormalGfx[] = INCBIN_U8("graphics/portraits/dunsparce/Normal.at4px");
+
+static const PortraitGfx sDunsparcePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDunsparceNormalPal, sDunsparceNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDunsparce = { "SIRO", &sDunsparcePortraits };
+
+static const u8 sGligarNormalPal[] = INCBIN_U8("graphics/portraits/gligar/Normal.pal");
+static const u8 sGligarNormalGfx[] = INCBIN_U8("graphics/portraits/gligar/Normal.at4px");
+
+static const PortraitGfx sGligarPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGligarNormalPal, sGligarNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGligar = { "SIRO", &sGligarPortraits };
+
+static const u8 sSteelixNormalPal[] = INCBIN_U8("graphics/portraits/steelix/Normal.pal");
+static const u8 sSteelixNormalGfx[] = INCBIN_U8("graphics/portraits/steelix/Normal.at4px");
+
+static const PortraitGfx sSteelixPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSteelixNormalPal, sSteelixNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSteelix = { "SIRO", &sSteelixPortraits };
+
+static const u8 sSnubbullNormalPal[] = INCBIN_U8("graphics/portraits/snubbull/Normal.pal");
+static const u8 sSnubbullNormalGfx[] = INCBIN_U8("graphics/portraits/snubbull/Normal.at4px");
+
+static const PortraitGfx sSnubbullPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSnubbullNormalPal, sSnubbullNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSnubbull = { "SIRO", &sSnubbullPortraits };
+
+static const u8 sGranbullNormalPal[] = INCBIN_U8("graphics/portraits/granbull/Normal.pal");
+static const u8 sGranbullNormalGfx[] = INCBIN_U8("graphics/portraits/granbull/Normal.at4px");
+
+static const PortraitGfx sGranbullPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGranbullNormalPal, sGranbullNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGranbull = { "SIRO", &sGranbullPortraits };
+
+static const u8 sQwilfishNormalPal[] = INCBIN_U8("graphics/portraits/qwilfish/Normal.pal");
+static const u8 sQwilfishNormalGfx[] = INCBIN_U8("graphics/portraits/qwilfish/Normal.at4px");
+
+static const PortraitGfx sQwilfishPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sQwilfishNormalPal, sQwilfishNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoQwilfish = { "SIRO", &sQwilfishPortraits };
+
+static const u8 sScizorNormalPal[] = INCBIN_U8("graphics/portraits/scizor/Normal.pal");
+static const u8 sScizorNormalGfx[] = INCBIN_U8("graphics/portraits/scizor/Normal.at4px");
+
+static const PortraitGfx sScizorPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sScizorNormalPal, sScizorNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoScizor = { "SIRO", &sScizorPortraits };
+
+static const u8 sShuckleNormalPal[] = INCBIN_U8("graphics/portraits/shuckle/Normal.pal");
+static const u8 sShuckleNormalGfx[] = INCBIN_U8("graphics/portraits/shuckle/Normal.at4px");
+
+static const PortraitGfx sShucklePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sShuckleNormalPal, sShuckleNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoShuckle = { "SIRO", &sShucklePortraits };
+
+static const u8 sHeracrossNormalPal[] = INCBIN_U8("graphics/portraits/heracross/Normal.pal");
+static const u8 sHeracrossNormalGfx[] = INCBIN_U8("graphics/portraits/heracross/Normal.at4px");
+
+static const PortraitGfx sHeracrossPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHeracrossNormalPal, sHeracrossNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHeracross = { "SIRO", &sHeracrossPortraits };
+
+static const u8 sSneaselNormalPal[] = INCBIN_U8("graphics/portraits/sneasel/Normal.pal");
+static const u8 sSneaselNormalGfx[] = INCBIN_U8("graphics/portraits/sneasel/Normal.at4px");
+
+static const PortraitGfx sSneaselPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSneaselNormalPal, sSneaselNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSneasel = { "SIRO", &sSneaselPortraits };
+
+static const u8 sTeddiursaNormalPal[] = INCBIN_U8("graphics/portraits/teddiursa/Normal.pal");
+static const u8 sTeddiursaNormalGfx[] = INCBIN_U8("graphics/portraits/teddiursa/Normal.at4px");
+
+static const PortraitGfx sTeddiursaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTeddiursaNormalPal, sTeddiursaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTeddiursa = { "SIRO", &sTeddiursaPortraits };
+
+static const u8 sUrsaringNormalPal[] = INCBIN_U8("graphics/portraits/ursaring/Normal.pal");
+static const u8 sUrsaringNormalGfx[] = INCBIN_U8("graphics/portraits/ursaring/Normal.at4px");
+
+static const PortraitGfx sUrsaringPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sUrsaringNormalPal, sUrsaringNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoUrsaring = { "SIRO", &sUrsaringPortraits };
+
+static const u8 sSlugmaNormalPal[] = INCBIN_U8("graphics/portraits/slugma/Normal.pal");
+static const u8 sSlugmaNormalGfx[] = INCBIN_U8("graphics/portraits/slugma/Normal.at4px");
+
+static const PortraitGfx sSlugmaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSlugmaNormalPal, sSlugmaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSlugma = { "SIRO", &sSlugmaPortraits };
+
+static const u8 sMagcargoNormalPal[] = INCBIN_U8("graphics/portraits/magcargo/Normal.pal");
+static const u8 sMagcargoNormalGfx[] = INCBIN_U8("graphics/portraits/magcargo/Normal.at4px");
+
+static const PortraitGfx sMagcargoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMagcargoNormalPal, sMagcargoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMagcargo = { "SIRO", &sMagcargoPortraits };
+
+static const u8 sSwinubNormalPal[] = INCBIN_U8("graphics/portraits/swinub/Normal.pal");
+static const u8 sSwinubNormalGfx[] = INCBIN_U8("graphics/portraits/swinub/Normal.at4px");
+
+static const PortraitGfx sSwinubPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSwinubNormalPal, sSwinubNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSwinub = { "SIRO", &sSwinubPortraits };
+
+static const u8 sPiloswineNormalPal[] = INCBIN_U8("graphics/portraits/piloswine/Normal.pal");
+static const u8 sPiloswineNormalGfx[] = INCBIN_U8("graphics/portraits/piloswine/Normal.at4px");
+
+static const PortraitGfx sPiloswinePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPiloswineNormalPal, sPiloswineNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPiloswine = { "SIRO", &sPiloswinePortraits };
+
+static const u8 sCorsolaNormalPal[] = INCBIN_U8("graphics/portraits/corsola/Normal.pal");
+static const u8 sCorsolaNormalGfx[] = INCBIN_U8("graphics/portraits/corsola/Normal.at4px");
+
+static const PortraitGfx sCorsolaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCorsolaNormalPal, sCorsolaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCorsola = { "SIRO", &sCorsolaPortraits };
+
+static const u8 sRemoraidNormalPal[] = INCBIN_U8("graphics/portraits/remoraid/Normal.pal");
+static const u8 sRemoraidNormalGfx[] = INCBIN_U8("graphics/portraits/remoraid/Normal.at4px");
+
+static const PortraitGfx sRemoraidPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRemoraidNormalPal, sRemoraidNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRemoraid = { "SIRO", &sRemoraidPortraits };
+
+static const u8 sOctilleryNormalPal[] = INCBIN_U8("graphics/portraits/octillery/Normal.pal");
+static const u8 sOctilleryNormalGfx[] = INCBIN_U8("graphics/portraits/octillery/Normal.at4px");
+
+static const PortraitGfx sOctilleryPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sOctilleryNormalPal, sOctilleryNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoOctillery = { "SIRO", &sOctilleryPortraits };
+
+static const u8 sDelibirdNormalPal[] = INCBIN_U8("graphics/portraits/delibird/Normal.pal");
+static const u8 sDelibirdNormalGfx[] = INCBIN_U8("graphics/portraits/delibird/Normal.at4px");
+
+static const PortraitGfx sDelibirdPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDelibirdNormalPal, sDelibirdNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDelibird = { "SIRO", &sDelibirdPortraits };
+
+static const u8 sMantineNormalPal[] = INCBIN_U8("graphics/portraits/mantine/Normal.pal");
+static const u8 sMantineNormalGfx[] = INCBIN_U8("graphics/portraits/mantine/Normal.at4px");
+
+static const PortraitGfx sMantinePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMantineNormalPal, sMantineNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMantine = { "SIRO", &sMantinePortraits };
+
+static const u8 sSkarmoryNormalPal[] = INCBIN_U8("graphics/portraits/skarmory/Normal.pal");
+static const u8 sSkarmoryNormalGfx[] = INCBIN_U8("graphics/portraits/skarmory/Normal.at4px");
+
+static const PortraitGfx sSkarmoryPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkarmoryNormalPal, sSkarmoryNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSkarmory = { "SIRO", &sSkarmoryPortraits };
+
+static const u8 sHoundourNormalPal[] = INCBIN_U8("graphics/portraits/houndour/Normal.pal");
+static const u8 sHoundourNormalGfx[] = INCBIN_U8("graphics/portraits/houndour/Normal.at4px");
+
+static const PortraitGfx sHoundourPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHoundourNormalPal, sHoundourNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHoundour = { "SIRO", &sHoundourPortraits };
+
+static const u8 sHoundoomNormalPal[] = INCBIN_U8("graphics/portraits/houndoom/Normal.pal");
+static const u8 sHoundoomNormalGfx[] = INCBIN_U8("graphics/portraits/houndoom/Normal.at4px");
+
+static const PortraitGfx sHoundoomPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHoundoomNormalPal, sHoundoomNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHoundoom = { "SIRO", &sHoundoomPortraits };
+
+static const u8 sKingdraNormalPal[] = INCBIN_U8("graphics/portraits/kingdra/Normal.pal");
+static const u8 sKingdraNormalGfx[] = INCBIN_U8("graphics/portraits/kingdra/Normal.at4px");
+
+static const PortraitGfx sKingdraPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKingdraNormalPal, sKingdraNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKingdra = { "SIRO", &sKingdraPortraits };
+
+static const u8 sPhanpyNormalPal[] = INCBIN_U8("graphics/portraits/phanpy/Normal.pal");
+static const u8 sPhanpyNormalGfx[] = INCBIN_U8("graphics/portraits/phanpy/Normal.at4px");
+
+static const PortraitGfx sPhanpyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPhanpyNormalPal, sPhanpyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPhanpy = { "SIRO", &sPhanpyPortraits };
+
+static const u8 sDonphanNormalPal[] = INCBIN_U8("graphics/portraits/donphan/Normal.pal");
+static const u8 sDonphanNormalGfx[] = INCBIN_U8("graphics/portraits/donphan/Normal.at4px");
+
+static const PortraitGfx sDonphanPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDonphanNormalPal, sDonphanNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDonphan = { "SIRO", &sDonphanPortraits };
+
+static const u8 sPorygon2NormalPal[] = INCBIN_U8("graphics/portraits/porygon2/Normal.pal");
+static const u8 sPorygon2NormalGfx[] = INCBIN_U8("graphics/portraits/porygon2/Normal.at4px");
+
+static const PortraitGfx sPorygon2Portraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPorygon2NormalPal, sPorygon2NormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPorygon2 = { "SIRO", &sPorygon2Portraits };
+
+static const u8 sStantlerNormalPal[] = INCBIN_U8("graphics/portraits/stantler/Normal.pal");
+static const u8 sStantlerNormalGfx[] = INCBIN_U8("graphics/portraits/stantler/Normal.at4px");
+
+static const PortraitGfx sStantlerPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sStantlerNormalPal, sStantlerNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoStantler = { "SIRO", &sStantlerPortraits };
+
+static const u8 sSmeargleNormalPal[] = INCBIN_U8("graphics/portraits/smeargle/Normal.pal");
+static const u8 sSmeargleNormalGfx[] = INCBIN_U8("graphics/portraits/smeargle/Normal.at4px");
+
+static const PortraitGfx sSmearglePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSmeargleNormalPal, sSmeargleNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSmeargle = { "SIRO", &sSmearglePortraits };
+
+static const u8 sTyrogueNormalPal[] = INCBIN_U8("graphics/portraits/tyrogue/Normal.pal");
+static const u8 sTyrogueNormalGfx[] = INCBIN_U8("graphics/portraits/tyrogue/Normal.at4px");
+
+static const PortraitGfx sTyroguePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTyrogueNormalPal, sTyrogueNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTyrogue = { "SIRO", &sTyroguePortraits };
+
+static const u8 sHitmontopNormalPal[] = INCBIN_U8("graphics/portraits/hitmontop/Normal.pal");
+static const u8 sHitmontopNormalGfx[] = INCBIN_U8("graphics/portraits/hitmontop/Normal.at4px");
+
+static const PortraitGfx sHitmontopPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHitmontopNormalPal, sHitmontopNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHitmontop = { "SIRO", &sHitmontopPortraits };
+
+static const u8 sSmoochumNormalPal[] = INCBIN_U8("graphics/portraits/smoochum/Normal.pal");
+static const u8 sSmoochumNormalGfx[] = INCBIN_U8("graphics/portraits/smoochum/Normal.at4px");
+
+static const PortraitGfx sSmoochumPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSmoochumNormalPal, sSmoochumNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSmoochum = { "SIRO", &sSmoochumPortraits };
+
+static const u8 sElekidNormalPal[] = INCBIN_U8("graphics/portraits/elekid/Normal.pal");
+static const u8 sElekidNormalGfx[] = INCBIN_U8("graphics/portraits/elekid/Normal.at4px");
+
+static const PortraitGfx sElekidPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sElekidNormalPal, sElekidNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoElekid = { "SIRO", &sElekidPortraits };
+
+static const u8 sMagbyNormalPal[] = INCBIN_U8("graphics/portraits/magby/Normal.pal");
+static const u8 sMagbyNormalGfx[] = INCBIN_U8("graphics/portraits/magby/Normal.at4px");
+
+static const PortraitGfx sMagbyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMagbyNormalPal, sMagbyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMagby = { "SIRO", &sMagbyPortraits };
+
+static const u8 sMiltankNormalPal[] = INCBIN_U8("graphics/portraits/miltank/Normal.pal");
+static const u8 sMiltankNormalGfx[] = INCBIN_U8("graphics/portraits/miltank/Normal.at4px");
+
+static const PortraitGfx sMiltankPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMiltankNormalPal, sMiltankNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMiltank = { "SIRO", &sMiltankPortraits };
+
+static const u8 sBlisseyNormalPal[] = INCBIN_U8("graphics/portraits/blissey/Normal.pal");
+static const u8 sBlisseyNormalGfx[] = INCBIN_U8("graphics/portraits/blissey/Normal.at4px");
+
+static const PortraitGfx sBlisseyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBlisseyNormalPal, sBlisseyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBlissey = { "SIRO", &sBlisseyPortraits };
+
+static const u8 sRaikouNormalPal[] = INCBIN_U8("graphics/portraits/raikou/Normal.pal");
+static const u8 sRaikouNormalGfx[] = INCBIN_U8("graphics/portraits/raikou/Normal.at4px");
+
+static const PortraitGfx sRaikouPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRaikouNormalPal, sRaikouNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRaikou = { "SIRO", &sRaikouPortraits };
+
+static const u8 sEnteiNormalPal[] = INCBIN_U8("graphics/portraits/entei/Normal.pal");
+static const u8 sEnteiNormalGfx[] = INCBIN_U8("graphics/portraits/entei/Normal.at4px");
+
+static const PortraitGfx sEnteiPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sEnteiNormalPal, sEnteiNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoEntei = { "SIRO", &sEnteiPortraits };
+
+static const u8 sSuicuneNormalPal[] = INCBIN_U8("graphics/portraits/suicune/Normal.pal");
+static const u8 sSuicuneNormalGfx[] = INCBIN_U8("graphics/portraits/suicune/Normal.at4px");
+
+static const PortraitGfx sSuicunePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSuicuneNormalPal, sSuicuneNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSuicune = { "SIRO", &sSuicunePortraits };
+
+static const u8 sLarvitarNormalPal[] = INCBIN_U8("graphics/portraits/larvitar/Normal.pal");
+static const u8 sLarvitarNormalGfx[] = INCBIN_U8("graphics/portraits/larvitar/Normal.at4px");
+
+static const PortraitGfx sLarvitarPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLarvitarNormalPal, sLarvitarNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLarvitar = { "SIRO", &sLarvitarPortraits };
+
+static const u8 sPupitarNormalPal[] = INCBIN_U8("graphics/portraits/pupitar/Normal.pal");
+static const u8 sPupitarNormalGfx[] = INCBIN_U8("graphics/portraits/pupitar/Normal.at4px");
+
+static const PortraitGfx sPupitarPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPupitarNormalPal, sPupitarNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPupitar = { "SIRO", &sPupitarPortraits };
+
+static const u8 sTyranitarNormalPal[] = INCBIN_U8("graphics/portraits/tyranitar/Normal.pal");
+static const u8 sTyranitarNormalGfx[] = INCBIN_U8("graphics/portraits/tyranitar/Normal.at4px");
+
+static const PortraitGfx sTyranitarPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTyranitarNormalPal, sTyranitarNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTyranitar = { "SIRO", &sTyranitarPortraits };
+
+static const u8 sLugiaNormalPal[] = INCBIN_U8("graphics/portraits/lugia/Normal.pal");
+static const u8 sLugiaNormalGfx[] = INCBIN_U8("graphics/portraits/lugia/Normal.at4px");
+
+static const PortraitGfx sLugiaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLugiaNormalPal, sLugiaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLugia = { "SIRO", &sLugiaPortraits };
+
+static const u8 sHoohNormalPal[] = INCBIN_U8("graphics/portraits/hooh/Normal.pal");
+static const u8 sHoohNormalGfx[] = INCBIN_U8("graphics/portraits/hooh/Normal.at4px");
+
+static const PortraitGfx sHoohPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHoohNormalPal, sHoohNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHooh = { "SIRO", &sHoohPortraits };
+
+static const u8 sCelebiNormalPal[] = INCBIN_U8("graphics/portraits/celebi/Normal.pal");
+static const u8 sCelebiNormalGfx[] = INCBIN_U8("graphics/portraits/celebi/Normal.at4px");
+
+static const PortraitGfx sCelebiPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCelebiNormalPal, sCelebiNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCelebi = { "SIRO", &sCelebiPortraits };
+
+static const u8 sTreeckoNormalPal[] = INCBIN_U8("graphics/portraits/treecko/Normal.pal");
+static const u8 sTreeckoNormalGfx[] = INCBIN_U8("graphics/portraits/treecko/Normal.at4px");
+
+static const PortraitGfx sTreeckoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTreeckoNormalPal, sTreeckoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTreecko = { "SIRO", &sTreeckoPortraits };
+
 static const u8 sGrovyleNormalPal[] = INCBIN_U8("graphics/portraits/grovyle/Normal.pal");
 static const u8 sGrovyleNormalGfx[] = INCBIN_U8("graphics/portraits/grovyle/Normal.at4px");
 static const u8 sGrovyleHappyPal[] = INCBIN_U8("graphics/portraits/grovyle/Happy.pal");
@@ -1151,6 +6418,29 @@ static const PortraitGfx sSceptilePortraits = {
 };
 
 const SiroArchive gCustomKaoSceptile = { "SIRO", &sSceptilePortraits };
+
+static const u8 sTorchicNormalPal[] = INCBIN_U8("graphics/portraits/torchic/Normal.pal");
+static const u8 sTorchicNormalGfx[] = INCBIN_U8("graphics/portraits/torchic/Normal.at4px");
+
+static const PortraitGfx sTorchicPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTorchicNormalPal, sTorchicNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTorchic = { "SIRO", &sTorchicPortraits };
 
 static const u8 sCombuskenNormalPal[] = INCBIN_U8("graphics/portraits/combusken/Normal.pal");
 static const u8 sCombuskenNormalGfx[] = INCBIN_U8("graphics/portraits/combusken/Normal.at4px");
@@ -1246,6 +6536,29 @@ static const PortraitGfx sBlazikenPortraits = {
 
 const SiroArchive gCustomKaoBlaziken = { "SIRO", &sBlazikenPortraits };
 
+static const u8 sMudkipNormalPal[] = INCBIN_U8("graphics/portraits/mudkip/Normal.pal");
+static const u8 sMudkipNormalGfx[] = INCBIN_U8("graphics/portraits/mudkip/Normal.at4px");
+
+static const PortraitGfx sMudkipPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMudkipNormalPal, sMudkipNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMudkip = { "SIRO", &sMudkipPortraits };
+
 static const u8 sMarshtompNormalPal[] = INCBIN_U8("graphics/portraits/marshtomp/Normal.pal");
 static const u8 sMarshtompNormalGfx[] = INCBIN_U8("graphics/portraits/marshtomp/Normal.at4px");
 static const u8 sMarshtompHappyPal[] = INCBIN_U8("graphics/portraits/marshtomp/Happy.pal");
@@ -1340,6 +6653,926 @@ static const PortraitGfx sSwampertPortraits = {
 
 const SiroArchive gCustomKaoSwampert = { "SIRO", &sSwampertPortraits };
 
+static const u8 sPoochyenaNormalPal[] = INCBIN_U8("graphics/portraits/poochyena/Normal.pal");
+static const u8 sPoochyenaNormalGfx[] = INCBIN_U8("graphics/portraits/poochyena/Normal.at4px");
+
+static const PortraitGfx sPoochyenaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPoochyenaNormalPal, sPoochyenaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPoochyena = { "SIRO", &sPoochyenaPortraits };
+
+static const u8 sMightyenaNormalPal[] = INCBIN_U8("graphics/portraits/mightyena/Normal.pal");
+static const u8 sMightyenaNormalGfx[] = INCBIN_U8("graphics/portraits/mightyena/Normal.at4px");
+
+static const PortraitGfx sMightyenaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMightyenaNormalPal, sMightyenaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMightyena = { "SIRO", &sMightyenaPortraits };
+
+static const u8 sZigzagoonNormalPal[] = INCBIN_U8("graphics/portraits/zigzagoon/Normal.pal");
+static const u8 sZigzagoonNormalGfx[] = INCBIN_U8("graphics/portraits/zigzagoon/Normal.at4px");
+
+static const PortraitGfx sZigzagoonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sZigzagoonNormalPal, sZigzagoonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoZigzagoon = { "SIRO", &sZigzagoonPortraits };
+
+static const u8 sLinooneNormalPal[] = INCBIN_U8("graphics/portraits/linoone/Normal.pal");
+static const u8 sLinooneNormalGfx[] = INCBIN_U8("graphics/portraits/linoone/Normal.at4px");
+
+static const PortraitGfx sLinoonePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLinooneNormalPal, sLinooneNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLinoone = { "SIRO", &sLinoonePortraits };
+
+static const u8 sWurmpleNormalPal[] = INCBIN_U8("graphics/portraits/wurmple/Normal.pal");
+static const u8 sWurmpleNormalGfx[] = INCBIN_U8("graphics/portraits/wurmple/Normal.at4px");
+
+static const PortraitGfx sWurmplePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWurmpleNormalPal, sWurmpleNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWurmple = { "SIRO", &sWurmplePortraits };
+
+static const u8 sSilcoonNormalPal[] = INCBIN_U8("graphics/portraits/silcoon/Normal.pal");
+static const u8 sSilcoonNormalGfx[] = INCBIN_U8("graphics/portraits/silcoon/Normal.at4px");
+
+static const PortraitGfx sSilcoonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSilcoonNormalPal, sSilcoonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSilcoon = { "SIRO", &sSilcoonPortraits };
+
+static const u8 sBeautiflyNormalPal[] = INCBIN_U8("graphics/portraits/beautifly/Normal.pal");
+static const u8 sBeautiflyNormalGfx[] = INCBIN_U8("graphics/portraits/beautifly/Normal.at4px");
+
+static const PortraitGfx sBeautiflyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBeautiflyNormalPal, sBeautiflyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBeautifly = { "SIRO", &sBeautiflyPortraits };
+
+static const u8 sCascoonNormalPal[] = INCBIN_U8("graphics/portraits/cascoon/Normal.pal");
+static const u8 sCascoonNormalGfx[] = INCBIN_U8("graphics/portraits/cascoon/Normal.at4px");
+
+static const PortraitGfx sCascoonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCascoonNormalPal, sCascoonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCascoon = { "SIRO", &sCascoonPortraits };
+
+static const u8 sDustoxNormalPal[] = INCBIN_U8("graphics/portraits/dustox/Normal.pal");
+static const u8 sDustoxNormalGfx[] = INCBIN_U8("graphics/portraits/dustox/Normal.at4px");
+
+static const PortraitGfx sDustoxPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDustoxNormalPal, sDustoxNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDustox = { "SIRO", &sDustoxPortraits };
+
+static const u8 sLotadNormalPal[] = INCBIN_U8("graphics/portraits/lotad/Normal.pal");
+static const u8 sLotadNormalGfx[] = INCBIN_U8("graphics/portraits/lotad/Normal.at4px");
+
+static const PortraitGfx sLotadPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLotadNormalPal, sLotadNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLotad = { "SIRO", &sLotadPortraits };
+
+static const u8 sLombreNormalPal[] = INCBIN_U8("graphics/portraits/lombre/Normal.pal");
+static const u8 sLombreNormalGfx[] = INCBIN_U8("graphics/portraits/lombre/Normal.at4px");
+
+static const PortraitGfx sLombrePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLombreNormalPal, sLombreNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLombre = { "SIRO", &sLombrePortraits };
+
+static const u8 sLudicoloNormalPal[] = INCBIN_U8("graphics/portraits/ludicolo/Normal.pal");
+static const u8 sLudicoloNormalGfx[] = INCBIN_U8("graphics/portraits/ludicolo/Normal.at4px");
+
+static const PortraitGfx sLudicoloPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLudicoloNormalPal, sLudicoloNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLudicolo = { "SIRO", &sLudicoloPortraits };
+
+static const u8 sSeedotNormalPal[] = INCBIN_U8("graphics/portraits/seedot/Normal.pal");
+static const u8 sSeedotNormalGfx[] = INCBIN_U8("graphics/portraits/seedot/Normal.at4px");
+
+static const PortraitGfx sSeedotPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSeedotNormalPal, sSeedotNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSeedot = { "SIRO", &sSeedotPortraits };
+
+static const u8 sNuzleafNormalPal[] = INCBIN_U8("graphics/portraits/nuzleaf/Normal.pal");
+static const u8 sNuzleafNormalGfx[] = INCBIN_U8("graphics/portraits/nuzleaf/Normal.at4px");
+
+static const PortraitGfx sNuzleafPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNuzleafNormalPal, sNuzleafNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNuzleaf = { "SIRO", &sNuzleafPortraits };
+
+static const u8 sShiftryNormalPal[] = INCBIN_U8("graphics/portraits/shiftry/Normal.pal");
+static const u8 sShiftryNormalGfx[] = INCBIN_U8("graphics/portraits/shiftry/Normal.at4px");
+
+static const PortraitGfx sShiftryPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sShiftryNormalPal, sShiftryNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoShiftry = { "SIRO", &sShiftryPortraits };
+
+static const u8 sTaillowNormalPal[] = INCBIN_U8("graphics/portraits/taillow/Normal.pal");
+static const u8 sTaillowNormalGfx[] = INCBIN_U8("graphics/portraits/taillow/Normal.at4px");
+
+static const PortraitGfx sTaillowPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTaillowNormalPal, sTaillowNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTaillow = { "SIRO", &sTaillowPortraits };
+
+static const u8 sSwellowNormalPal[] = INCBIN_U8("graphics/portraits/swellow/Normal.pal");
+static const u8 sSwellowNormalGfx[] = INCBIN_U8("graphics/portraits/swellow/Normal.at4px");
+
+static const PortraitGfx sSwellowPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSwellowNormalPal, sSwellowNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSwellow = { "SIRO", &sSwellowPortraits };
+
+static const u8 sWingullNormalPal[] = INCBIN_U8("graphics/portraits/wingull/Normal.pal");
+static const u8 sWingullNormalGfx[] = INCBIN_U8("graphics/portraits/wingull/Normal.at4px");
+
+static const PortraitGfx sWingullPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWingullNormalPal, sWingullNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWingull = { "SIRO", &sWingullPortraits };
+
+static const u8 sPelipperNormalPal[] = INCBIN_U8("graphics/portraits/pelipper/Normal.pal");
+static const u8 sPelipperNormalGfx[] = INCBIN_U8("graphics/portraits/pelipper/Normal.at4px");
+
+static const PortraitGfx sPelipperPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPelipperNormalPal, sPelipperNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPelipper = { "SIRO", &sPelipperPortraits };
+
+static const u8 sRaltsNormalPal[] = INCBIN_U8("graphics/portraits/ralts/Normal.pal");
+static const u8 sRaltsNormalGfx[] = INCBIN_U8("graphics/portraits/ralts/Normal.at4px");
+
+static const PortraitGfx sRaltsPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRaltsNormalPal, sRaltsNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRalts = { "SIRO", &sRaltsPortraits };
+
+static const u8 sKirliaNormalPal[] = INCBIN_U8("graphics/portraits/kirlia/Normal.pal");
+static const u8 sKirliaNormalGfx[] = INCBIN_U8("graphics/portraits/kirlia/Normal.at4px");
+
+static const PortraitGfx sKirliaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKirliaNormalPal, sKirliaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKirlia = { "SIRO", &sKirliaPortraits };
+
+static const u8 sGardevoirNormalPal[] = INCBIN_U8("graphics/portraits/gardevoir/Normal.pal");
+static const u8 sGardevoirNormalGfx[] = INCBIN_U8("graphics/portraits/gardevoir/Normal.at4px");
+
+static const PortraitGfx sGardevoirPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGardevoirNormalPal, sGardevoirNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGardevoir = { "SIRO", &sGardevoirPortraits };
+
+static const u8 sSurskitNormalPal[] = INCBIN_U8("graphics/portraits/surskit/Normal.pal");
+static const u8 sSurskitNormalGfx[] = INCBIN_U8("graphics/portraits/surskit/Normal.at4px");
+
+static const PortraitGfx sSurskitPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSurskitNormalPal, sSurskitNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSurskit = { "SIRO", &sSurskitPortraits };
+
+static const u8 sMasquerainNormalPal[] = INCBIN_U8("graphics/portraits/masquerain/Normal.pal");
+static const u8 sMasquerainNormalGfx[] = INCBIN_U8("graphics/portraits/masquerain/Normal.at4px");
+
+static const PortraitGfx sMasquerainPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMasquerainNormalPal, sMasquerainNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMasquerain = { "SIRO", &sMasquerainPortraits };
+
+static const u8 sShroomishNormalPal[] = INCBIN_U8("graphics/portraits/shroomish/Normal.pal");
+static const u8 sShroomishNormalGfx[] = INCBIN_U8("graphics/portraits/shroomish/Normal.at4px");
+
+static const PortraitGfx sShroomishPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sShroomishNormalPal, sShroomishNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoShroomish = { "SIRO", &sShroomishPortraits };
+
+static const u8 sBreloomNormalPal[] = INCBIN_U8("graphics/portraits/breloom/Normal.pal");
+static const u8 sBreloomNormalGfx[] = INCBIN_U8("graphics/portraits/breloom/Normal.at4px");
+
+static const PortraitGfx sBreloomPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBreloomNormalPal, sBreloomNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBreloom = { "SIRO", &sBreloomPortraits };
+
+static const u8 sSlakothNormalPal[] = INCBIN_U8("graphics/portraits/slakoth/Normal.pal");
+static const u8 sSlakothNormalGfx[] = INCBIN_U8("graphics/portraits/slakoth/Normal.at4px");
+
+static const PortraitGfx sSlakothPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSlakothNormalPal, sSlakothNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSlakoth = { "SIRO", &sSlakothPortraits };
+
+static const u8 sVigorothNormalPal[] = INCBIN_U8("graphics/portraits/vigoroth/Normal.pal");
+static const u8 sVigorothNormalGfx[] = INCBIN_U8("graphics/portraits/vigoroth/Normal.at4px");
+
+static const PortraitGfx sVigorothPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVigorothNormalPal, sVigorothNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVigoroth = { "SIRO", &sVigorothPortraits };
+
+static const u8 sSlakingNormalPal[] = INCBIN_U8("graphics/portraits/slaking/Normal.pal");
+static const u8 sSlakingNormalGfx[] = INCBIN_U8("graphics/portraits/slaking/Normal.at4px");
+
+static const PortraitGfx sSlakingPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSlakingNormalPal, sSlakingNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSlaking = { "SIRO", &sSlakingPortraits };
+
+static const u8 sNincadaNormalPal[] = INCBIN_U8("graphics/portraits/nincada/Normal.pal");
+static const u8 sNincadaNormalGfx[] = INCBIN_U8("graphics/portraits/nincada/Normal.at4px");
+
+static const PortraitGfx sNincadaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNincadaNormalPal, sNincadaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNincada = { "SIRO", &sNincadaPortraits };
+
+static const u8 sNinjaskNormalPal[] = INCBIN_U8("graphics/portraits/ninjask/Normal.pal");
+static const u8 sNinjaskNormalGfx[] = INCBIN_U8("graphics/portraits/ninjask/Normal.at4px");
+
+static const PortraitGfx sNinjaskPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNinjaskNormalPal, sNinjaskNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNinjask = { "SIRO", &sNinjaskPortraits };
+
+static const u8 sShedinjaNormalPal[] = INCBIN_U8("graphics/portraits/shedinja/Normal.pal");
+static const u8 sShedinjaNormalGfx[] = INCBIN_U8("graphics/portraits/shedinja/Normal.at4px");
+
+static const PortraitGfx sShedinjaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sShedinjaNormalPal, sShedinjaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoShedinja = { "SIRO", &sShedinjaPortraits };
+
+static const u8 sWhismurNormalPal[] = INCBIN_U8("graphics/portraits/whismur/Normal.pal");
+static const u8 sWhismurNormalGfx[] = INCBIN_U8("graphics/portraits/whismur/Normal.at4px");
+
+static const PortraitGfx sWhismurPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWhismurNormalPal, sWhismurNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWhismur = { "SIRO", &sWhismurPortraits };
+
+static const u8 sLoudredNormalPal[] = INCBIN_U8("graphics/portraits/loudred/Normal.pal");
+static const u8 sLoudredNormalGfx[] = INCBIN_U8("graphics/portraits/loudred/Normal.at4px");
+
+static const PortraitGfx sLoudredPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLoudredNormalPal, sLoudredNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLoudred = { "SIRO", &sLoudredPortraits };
+
+static const u8 sExploudNormalPal[] = INCBIN_U8("graphics/portraits/exploud/Normal.pal");
+static const u8 sExploudNormalGfx[] = INCBIN_U8("graphics/portraits/exploud/Normal.at4px");
+
+static const PortraitGfx sExploudPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sExploudNormalPal, sExploudNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoExploud = { "SIRO", &sExploudPortraits };
+
+static const u8 sMakuhitaNormalPal[] = INCBIN_U8("graphics/portraits/makuhita/Normal.pal");
+static const u8 sMakuhitaNormalGfx[] = INCBIN_U8("graphics/portraits/makuhita/Normal.at4px");
+
+static const PortraitGfx sMakuhitaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMakuhitaNormalPal, sMakuhitaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMakuhita = { "SIRO", &sMakuhitaPortraits };
+
+static const u8 sHariyamaNormalPal[] = INCBIN_U8("graphics/portraits/hariyama/Normal.pal");
+static const u8 sHariyamaNormalGfx[] = INCBIN_U8("graphics/portraits/hariyama/Normal.at4px");
+
+static const PortraitGfx sHariyamaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHariyamaNormalPal, sHariyamaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHariyama = { "SIRO", &sHariyamaPortraits };
+
+static const u8 sAzurillNormalPal[] = INCBIN_U8("graphics/portraits/azurill/Normal.pal");
+static const u8 sAzurillNormalGfx[] = INCBIN_U8("graphics/portraits/azurill/Normal.at4px");
+
+static const PortraitGfx sAzurillPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAzurillNormalPal, sAzurillNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAzurill = { "SIRO", &sAzurillPortraits };
+
+static const u8 sNosepassNormalPal[] = INCBIN_U8("graphics/portraits/nosepass/Normal.pal");
+static const u8 sNosepassNormalGfx[] = INCBIN_U8("graphics/portraits/nosepass/Normal.at4px");
+
+static const PortraitGfx sNosepassPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNosepassNormalPal, sNosepassNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNosepass = { "SIRO", &sNosepassPortraits };
+
+static const u8 sSkittyNormalPal[] = INCBIN_U8("graphics/portraits/skitty/Normal.pal");
+static const u8 sSkittyNormalGfx[] = INCBIN_U8("graphics/portraits/skitty/Normal.at4px");
+
+static const PortraitGfx sSkittyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSkittyNormalPal, sSkittyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSkitty = { "SIRO", &sSkittyPortraits };
+
 static const u8 sDelcattyNormalPal[] = INCBIN_U8("graphics/portraits/delcatty/Normal.pal");
 static const u8 sDelcattyNormalGfx[] = INCBIN_U8("graphics/portraits/delcatty/Normal.at4px");
 static const u8 sDelcattyHappyPal[] = INCBIN_U8("graphics/portraits/delcatty/Happy.pal");
@@ -1386,6 +7619,581 @@ static const PortraitGfx sDelcattyPortraits = {
 };
 
 const SiroArchive gCustomKaoDelcatty = { "SIRO", &sDelcattyPortraits };
+
+static const u8 sSableyeNormalPal[] = INCBIN_U8("graphics/portraits/sableye/Normal.pal");
+static const u8 sSableyeNormalGfx[] = INCBIN_U8("graphics/portraits/sableye/Normal.at4px");
+
+static const PortraitGfx sSableyePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSableyeNormalPal, sSableyeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSableye = { "SIRO", &sSableyePortraits };
+
+static const u8 sMawileNormalPal[] = INCBIN_U8("graphics/portraits/mawile/Normal.pal");
+static const u8 sMawileNormalGfx[] = INCBIN_U8("graphics/portraits/mawile/Normal.at4px");
+
+static const PortraitGfx sMawilePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMawileNormalPal, sMawileNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMawile = { "SIRO", &sMawilePortraits };
+
+static const u8 sAronNormalPal[] = INCBIN_U8("graphics/portraits/aron/Normal.pal");
+static const u8 sAronNormalGfx[] = INCBIN_U8("graphics/portraits/aron/Normal.at4px");
+
+static const PortraitGfx sAronPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAronNormalPal, sAronNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAron = { "SIRO", &sAronPortraits };
+
+static const u8 sLaironNormalPal[] = INCBIN_U8("graphics/portraits/lairon/Normal.pal");
+static const u8 sLaironNormalGfx[] = INCBIN_U8("graphics/portraits/lairon/Normal.at4px");
+
+static const PortraitGfx sLaironPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLaironNormalPal, sLaironNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLairon = { "SIRO", &sLaironPortraits };
+
+static const u8 sAggronNormalPal[] = INCBIN_U8("graphics/portraits/aggron/Normal.pal");
+static const u8 sAggronNormalGfx[] = INCBIN_U8("graphics/portraits/aggron/Normal.at4px");
+
+static const PortraitGfx sAggronPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAggronNormalPal, sAggronNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAggron = { "SIRO", &sAggronPortraits };
+
+static const u8 sMedititeNormalPal[] = INCBIN_U8("graphics/portraits/meditite/Normal.pal");
+static const u8 sMedititeNormalGfx[] = INCBIN_U8("graphics/portraits/meditite/Normal.at4px");
+
+static const PortraitGfx sMedititePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMedititeNormalPal, sMedititeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMeditite = { "SIRO", &sMedititePortraits };
+
+static const u8 sMedichamNormalPal[] = INCBIN_U8("graphics/portraits/medicham/Normal.pal");
+static const u8 sMedichamNormalGfx[] = INCBIN_U8("graphics/portraits/medicham/Normal.at4px");
+
+static const PortraitGfx sMedichamPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMedichamNormalPal, sMedichamNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMedicham = { "SIRO", &sMedichamPortraits };
+
+static const u8 sElectrikeNormalPal[] = INCBIN_U8("graphics/portraits/electrike/Normal.pal");
+static const u8 sElectrikeNormalGfx[] = INCBIN_U8("graphics/portraits/electrike/Normal.at4px");
+
+static const PortraitGfx sElectrikePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sElectrikeNormalPal, sElectrikeNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoElectrike = { "SIRO", &sElectrikePortraits };
+
+static const u8 sManectricNormalPal[] = INCBIN_U8("graphics/portraits/manectric/Normal.pal");
+static const u8 sManectricNormalGfx[] = INCBIN_U8("graphics/portraits/manectric/Normal.at4px");
+
+static const PortraitGfx sManectricPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sManectricNormalPal, sManectricNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoManectric = { "SIRO", &sManectricPortraits };
+
+static const u8 sPlusleNormalPal[] = INCBIN_U8("graphics/portraits/plusle/Normal.pal");
+static const u8 sPlusleNormalGfx[] = INCBIN_U8("graphics/portraits/plusle/Normal.at4px");
+
+static const PortraitGfx sPluslePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sPlusleNormalPal, sPlusleNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoPlusle = { "SIRO", &sPluslePortraits };
+
+static const u8 sMinunNormalPal[] = INCBIN_U8("graphics/portraits/minun/Normal.pal");
+static const u8 sMinunNormalGfx[] = INCBIN_U8("graphics/portraits/minun/Normal.at4px");
+
+static const PortraitGfx sMinunPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMinunNormalPal, sMinunNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMinun = { "SIRO", &sMinunPortraits };
+
+static const u8 sVolbeatNormalPal[] = INCBIN_U8("graphics/portraits/volbeat/Normal.pal");
+static const u8 sVolbeatNormalGfx[] = INCBIN_U8("graphics/portraits/volbeat/Normal.at4px");
+
+static const PortraitGfx sVolbeatPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVolbeatNormalPal, sVolbeatNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVolbeat = { "SIRO", &sVolbeatPortraits };
+
+static const u8 sIllumiseNormalPal[] = INCBIN_U8("graphics/portraits/illumise/Normal.pal");
+static const u8 sIllumiseNormalGfx[] = INCBIN_U8("graphics/portraits/illumise/Normal.at4px");
+
+static const PortraitGfx sIllumisePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sIllumiseNormalPal, sIllumiseNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoIllumise = { "SIRO", &sIllumisePortraits };
+
+static const u8 sRoseliaNormalPal[] = INCBIN_U8("graphics/portraits/roselia/Normal.pal");
+static const u8 sRoseliaNormalGfx[] = INCBIN_U8("graphics/portraits/roselia/Normal.at4px");
+
+static const PortraitGfx sRoseliaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRoseliaNormalPal, sRoseliaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRoselia = { "SIRO", &sRoseliaPortraits };
+
+static const u8 sGulpinNormalPal[] = INCBIN_U8("graphics/portraits/gulpin/Normal.pal");
+static const u8 sGulpinNormalGfx[] = INCBIN_U8("graphics/portraits/gulpin/Normal.at4px");
+
+static const PortraitGfx sGulpinPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGulpinNormalPal, sGulpinNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGulpin = { "SIRO", &sGulpinPortraits };
+
+static const u8 sSwalotNormalPal[] = INCBIN_U8("graphics/portraits/swalot/Normal.pal");
+static const u8 sSwalotNormalGfx[] = INCBIN_U8("graphics/portraits/swalot/Normal.at4px");
+
+static const PortraitGfx sSwalotPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSwalotNormalPal, sSwalotNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSwalot = { "SIRO", &sSwalotPortraits };
+
+static const u8 sCarvanhaNormalPal[] = INCBIN_U8("graphics/portraits/carvanha/Normal.pal");
+static const u8 sCarvanhaNormalGfx[] = INCBIN_U8("graphics/portraits/carvanha/Normal.at4px");
+
+static const PortraitGfx sCarvanhaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCarvanhaNormalPal, sCarvanhaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCarvanha = { "SIRO", &sCarvanhaPortraits };
+
+static const u8 sSharpedoNormalPal[] = INCBIN_U8("graphics/portraits/sharpedo/Normal.pal");
+static const u8 sSharpedoNormalGfx[] = INCBIN_U8("graphics/portraits/sharpedo/Normal.at4px");
+
+static const PortraitGfx sSharpedoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSharpedoNormalPal, sSharpedoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSharpedo = { "SIRO", &sSharpedoPortraits };
+
+static const u8 sWailmerNormalPal[] = INCBIN_U8("graphics/portraits/wailmer/Normal.pal");
+static const u8 sWailmerNormalGfx[] = INCBIN_U8("graphics/portraits/wailmer/Normal.at4px");
+
+static const PortraitGfx sWailmerPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWailmerNormalPal, sWailmerNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWailmer = { "SIRO", &sWailmerPortraits };
+
+static const u8 sWailordNormalPal[] = INCBIN_U8("graphics/portraits/wailord/Normal.pal");
+static const u8 sWailordNormalGfx[] = INCBIN_U8("graphics/portraits/wailord/Normal.at4px");
+
+static const PortraitGfx sWailordPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWailordNormalPal, sWailordNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWailord = { "SIRO", &sWailordPortraits };
+
+static const u8 sNumelNormalPal[] = INCBIN_U8("graphics/portraits/numel/Normal.pal");
+static const u8 sNumelNormalGfx[] = INCBIN_U8("graphics/portraits/numel/Normal.at4px");
+
+static const PortraitGfx sNumelPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sNumelNormalPal, sNumelNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoNumel = { "SIRO", &sNumelPortraits };
+
+static const u8 sCameruptNormalPal[] = INCBIN_U8("graphics/portraits/camerupt/Normal.pal");
+static const u8 sCameruptNormalGfx[] = INCBIN_U8("graphics/portraits/camerupt/Normal.at4px");
+
+static const PortraitGfx sCameruptPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCameruptNormalPal, sCameruptNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCamerupt = { "SIRO", &sCameruptPortraits };
+
+static const u8 sTorkoalNormalPal[] = INCBIN_U8("graphics/portraits/torkoal/Normal.pal");
+static const u8 sTorkoalNormalGfx[] = INCBIN_U8("graphics/portraits/torkoal/Normal.at4px");
+
+static const PortraitGfx sTorkoalPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTorkoalNormalPal, sTorkoalNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTorkoal = { "SIRO", &sTorkoalPortraits };
+
+static const u8 sSpoinkNormalPal[] = INCBIN_U8("graphics/portraits/spoink/Normal.pal");
+static const u8 sSpoinkNormalGfx[] = INCBIN_U8("graphics/portraits/spoink/Normal.at4px");
+
+static const PortraitGfx sSpoinkPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSpoinkNormalPal, sSpoinkNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSpoink = { "SIRO", &sSpoinkPortraits };
+
+static const u8 sGrumpigNormalPal[] = INCBIN_U8("graphics/portraits/grumpig/Normal.pal");
+static const u8 sGrumpigNormalGfx[] = INCBIN_U8("graphics/portraits/grumpig/Normal.at4px");
+
+static const PortraitGfx sGrumpigPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGrumpigNormalPal, sGrumpigNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGrumpig = { "SIRO", &sGrumpigPortraits };
 
 static const u8 sSpindaNormalPal[] = INCBIN_U8("graphics/portraits/spinda/Normal.pal");
 static const u8 sSpindaNormalGfx[] = INCBIN_U8("graphics/portraits/spinda/Normal.at4px");
@@ -1434,109 +8242,2557 @@ static const PortraitGfx sSpindaPortraits = {
 
 const SiroArchive gCustomKaoSpinda = { "SIRO", &sSpindaPortraits };
 
-#define CUSTOM_PORTRAIT_COUNT 31
+static const u8 sTrapinchNormalPal[] = INCBIN_U8("graphics/portraits/trapinch/Normal.pal");
+static const u8 sTrapinchNormalGfx[] = INCBIN_U8("graphics/portraits/trapinch/Normal.at4px");
+
+static const PortraitGfx sTrapinchPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTrapinchNormalPal, sTrapinchNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTrapinch = { "SIRO", &sTrapinchPortraits };
+
+static const u8 sVibravaNormalPal[] = INCBIN_U8("graphics/portraits/vibrava/Normal.pal");
+static const u8 sVibravaNormalGfx[] = INCBIN_U8("graphics/portraits/vibrava/Normal.at4px");
+
+static const PortraitGfx sVibravaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sVibravaNormalPal, sVibravaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoVibrava = { "SIRO", &sVibravaPortraits };
+
+static const u8 sFlygonNormalPal[] = INCBIN_U8("graphics/portraits/flygon/Normal.pal");
+static const u8 sFlygonNormalGfx[] = INCBIN_U8("graphics/portraits/flygon/Normal.at4px");
+
+static const PortraitGfx sFlygonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sFlygonNormalPal, sFlygonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoFlygon = { "SIRO", &sFlygonPortraits };
+
+static const u8 sCacneaNormalPal[] = INCBIN_U8("graphics/portraits/cacnea/Normal.pal");
+static const u8 sCacneaNormalGfx[] = INCBIN_U8("graphics/portraits/cacnea/Normal.at4px");
+
+static const PortraitGfx sCacneaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCacneaNormalPal, sCacneaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCacnea = { "SIRO", &sCacneaPortraits };
+
+static const u8 sCacturneNormalPal[] = INCBIN_U8("graphics/portraits/cacturne/Normal.pal");
+static const u8 sCacturneNormalGfx[] = INCBIN_U8("graphics/portraits/cacturne/Normal.at4px");
+
+static const PortraitGfx sCacturnePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCacturneNormalPal, sCacturneNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCacturne = { "SIRO", &sCacturnePortraits };
+
+static const u8 sSwabluNormalPal[] = INCBIN_U8("graphics/portraits/swablu/Normal.pal");
+static const u8 sSwabluNormalGfx[] = INCBIN_U8("graphics/portraits/swablu/Normal.at4px");
+
+static const PortraitGfx sSwabluPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSwabluNormalPal, sSwabluNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSwablu = { "SIRO", &sSwabluPortraits };
+
+static const u8 sAltariaNormalPal[] = INCBIN_U8("graphics/portraits/altaria/Normal.pal");
+static const u8 sAltariaNormalGfx[] = INCBIN_U8("graphics/portraits/altaria/Normal.at4px");
+
+static const PortraitGfx sAltariaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAltariaNormalPal, sAltariaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAltaria = { "SIRO", &sAltariaPortraits };
+
+static const u8 sZangooseNormalPal[] = INCBIN_U8("graphics/portraits/zangoose/Normal.pal");
+static const u8 sZangooseNormalGfx[] = INCBIN_U8("graphics/portraits/zangoose/Normal.at4px");
+
+static const PortraitGfx sZangoosePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sZangooseNormalPal, sZangooseNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoZangoose = { "SIRO", &sZangoosePortraits };
+
+static const u8 sSeviperNormalPal[] = INCBIN_U8("graphics/portraits/seviper/Normal.pal");
+static const u8 sSeviperNormalGfx[] = INCBIN_U8("graphics/portraits/seviper/Normal.at4px");
+
+static const PortraitGfx sSeviperPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSeviperNormalPal, sSeviperNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSeviper = { "SIRO", &sSeviperPortraits };
+
+static const u8 sLunatoneNormalPal[] = INCBIN_U8("graphics/portraits/lunatone/Normal.pal");
+static const u8 sLunatoneNormalGfx[] = INCBIN_U8("graphics/portraits/lunatone/Normal.at4px");
+
+static const PortraitGfx sLunatonePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLunatoneNormalPal, sLunatoneNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLunatone = { "SIRO", &sLunatonePortraits };
+
+static const u8 sSolrockNormalPal[] = INCBIN_U8("graphics/portraits/solrock/Normal.pal");
+static const u8 sSolrockNormalGfx[] = INCBIN_U8("graphics/portraits/solrock/Normal.at4px");
+
+static const PortraitGfx sSolrockPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSolrockNormalPal, sSolrockNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSolrock = { "SIRO", &sSolrockPortraits };
+
+static const u8 sBarboachNormalPal[] = INCBIN_U8("graphics/portraits/barboach/Normal.pal");
+static const u8 sBarboachNormalGfx[] = INCBIN_U8("graphics/portraits/barboach/Normal.at4px");
+
+static const PortraitGfx sBarboachPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBarboachNormalPal, sBarboachNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBarboach = { "SIRO", &sBarboachPortraits };
+
+static const u8 sWhiscashNormalPal[] = INCBIN_U8("graphics/portraits/whiscash/Normal.pal");
+static const u8 sWhiscashNormalGfx[] = INCBIN_U8("graphics/portraits/whiscash/Normal.at4px");
+
+static const PortraitGfx sWhiscashPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWhiscashNormalPal, sWhiscashNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWhiscash = { "SIRO", &sWhiscashPortraits };
+
+static const u8 sCorphishNormalPal[] = INCBIN_U8("graphics/portraits/corphish/Normal.pal");
+static const u8 sCorphishNormalGfx[] = INCBIN_U8("graphics/portraits/corphish/Normal.at4px");
+
+static const PortraitGfx sCorphishPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCorphishNormalPal, sCorphishNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCorphish = { "SIRO", &sCorphishPortraits };
+
+static const u8 sCrawdauntNormalPal[] = INCBIN_U8("graphics/portraits/crawdaunt/Normal.pal");
+static const u8 sCrawdauntNormalGfx[] = INCBIN_U8("graphics/portraits/crawdaunt/Normal.at4px");
+
+static const PortraitGfx sCrawdauntPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCrawdauntNormalPal, sCrawdauntNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCrawdaunt = { "SIRO", &sCrawdauntPortraits };
+
+static const u8 sBaltoyNormalPal[] = INCBIN_U8("graphics/portraits/baltoy/Normal.pal");
+static const u8 sBaltoyNormalGfx[] = INCBIN_U8("graphics/portraits/baltoy/Normal.at4px");
+
+static const PortraitGfx sBaltoyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBaltoyNormalPal, sBaltoyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBaltoy = { "SIRO", &sBaltoyPortraits };
+
+static const u8 sClaydolNormalPal[] = INCBIN_U8("graphics/portraits/claydol/Normal.pal");
+static const u8 sClaydolNormalGfx[] = INCBIN_U8("graphics/portraits/claydol/Normal.at4px");
+
+static const PortraitGfx sClaydolPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sClaydolNormalPal, sClaydolNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoClaydol = { "SIRO", &sClaydolPortraits };
+
+static const u8 sLileepNormalPal[] = INCBIN_U8("graphics/portraits/lileep/Normal.pal");
+static const u8 sLileepNormalGfx[] = INCBIN_U8("graphics/portraits/lileep/Normal.at4px");
+
+static const PortraitGfx sLileepPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLileepNormalPal, sLileepNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLileep = { "SIRO", &sLileepPortraits };
+
+static const u8 sCradilyNormalPal[] = INCBIN_U8("graphics/portraits/cradily/Normal.pal");
+static const u8 sCradilyNormalGfx[] = INCBIN_U8("graphics/portraits/cradily/Normal.at4px");
+
+static const PortraitGfx sCradilyPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCradilyNormalPal, sCradilyNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCradily = { "SIRO", &sCradilyPortraits };
+
+static const u8 sAnorithNormalPal[] = INCBIN_U8("graphics/portraits/anorith/Normal.pal");
+static const u8 sAnorithNormalGfx[] = INCBIN_U8("graphics/portraits/anorith/Normal.at4px");
+
+static const PortraitGfx sAnorithPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAnorithNormalPal, sAnorithNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAnorith = { "SIRO", &sAnorithPortraits };
+
+static const u8 sArmaldoNormalPal[] = INCBIN_U8("graphics/portraits/armaldo/Normal.pal");
+static const u8 sArmaldoNormalGfx[] = INCBIN_U8("graphics/portraits/armaldo/Normal.at4px");
+
+static const PortraitGfx sArmaldoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sArmaldoNormalPal, sArmaldoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoArmaldo = { "SIRO", &sArmaldoPortraits };
+
+static const u8 sFeebasNormalPal[] = INCBIN_U8("graphics/portraits/feebas/Normal.pal");
+static const u8 sFeebasNormalGfx[] = INCBIN_U8("graphics/portraits/feebas/Normal.at4px");
+
+static const PortraitGfx sFeebasPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sFeebasNormalPal, sFeebasNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoFeebas = { "SIRO", &sFeebasPortraits };
+
+static const u8 sMiloticNormalPal[] = INCBIN_U8("graphics/portraits/milotic/Normal.pal");
+static const u8 sMiloticNormalGfx[] = INCBIN_U8("graphics/portraits/milotic/Normal.at4px");
+
+static const PortraitGfx sMiloticPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMiloticNormalPal, sMiloticNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMilotic = { "SIRO", &sMiloticPortraits };
+
+static const u8 sCastformNormalPal[] = INCBIN_U8("graphics/portraits/castform/Normal.pal");
+static const u8 sCastformNormalGfx[] = INCBIN_U8("graphics/portraits/castform/Normal.at4px");
+
+static const PortraitGfx sCastformPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sCastformNormalPal, sCastformNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoCastform = { "SIRO", &sCastformPortraits };
+
+static const u8 sKecleonNormalPal[] = INCBIN_U8("graphics/portraits/kecleon/Normal.pal");
+static const u8 sKecleonNormalGfx[] = INCBIN_U8("graphics/portraits/kecleon/Normal.at4px");
+
+static const PortraitGfx sKecleonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKecleonNormalPal, sKecleonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKecleon = { "SIRO", &sKecleonPortraits };
+
+static const u8 sShuppetNormalPal[] = INCBIN_U8("graphics/portraits/shuppet/Normal.pal");
+static const u8 sShuppetNormalGfx[] = INCBIN_U8("graphics/portraits/shuppet/Normal.at4px");
+
+static const PortraitGfx sShuppetPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sShuppetNormalPal, sShuppetNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoShuppet = { "SIRO", &sShuppetPortraits };
+
+static const u8 sBanetteNormalPal[] = INCBIN_U8("graphics/portraits/banette/Normal.pal");
+static const u8 sBanetteNormalGfx[] = INCBIN_U8("graphics/portraits/banette/Normal.at4px");
+
+static const PortraitGfx sBanettePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBanetteNormalPal, sBanetteNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBanette = { "SIRO", &sBanettePortraits };
+
+static const u8 sDuskullNormalPal[] = INCBIN_U8("graphics/portraits/duskull/Normal.pal");
+static const u8 sDuskullNormalGfx[] = INCBIN_U8("graphics/portraits/duskull/Normal.at4px");
+
+static const PortraitGfx sDuskullPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDuskullNormalPal, sDuskullNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDuskull = { "SIRO", &sDuskullPortraits };
+
+static const u8 sDusclopsNormalPal[] = INCBIN_U8("graphics/portraits/dusclops/Normal.pal");
+static const u8 sDusclopsNormalGfx[] = INCBIN_U8("graphics/portraits/dusclops/Normal.at4px");
+
+static const PortraitGfx sDusclopsPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDusclopsNormalPal, sDusclopsNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDusclops = { "SIRO", &sDusclopsPortraits };
+
+static const u8 sTropiusNormalPal[] = INCBIN_U8("graphics/portraits/tropius/Normal.pal");
+static const u8 sTropiusNormalGfx[] = INCBIN_U8("graphics/portraits/tropius/Normal.at4px");
+
+static const PortraitGfx sTropiusPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sTropiusNormalPal, sTropiusNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoTropius = { "SIRO", &sTropiusPortraits };
+
+static const u8 sChimechoNormalPal[] = INCBIN_U8("graphics/portraits/chimecho/Normal.pal");
+static const u8 sChimechoNormalGfx[] = INCBIN_U8("graphics/portraits/chimecho/Normal.at4px");
+
+static const PortraitGfx sChimechoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sChimechoNormalPal, sChimechoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoChimecho = { "SIRO", &sChimechoPortraits };
+
+static const u8 sAbsolNormalPal[] = INCBIN_U8("graphics/portraits/absol/Normal.pal");
+static const u8 sAbsolNormalGfx[] = INCBIN_U8("graphics/portraits/absol/Normal.at4px");
+
+static const PortraitGfx sAbsolPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sAbsolNormalPal, sAbsolNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoAbsol = { "SIRO", &sAbsolPortraits };
+
+static const u8 sWynautNormalPal[] = INCBIN_U8("graphics/portraits/wynaut/Normal.pal");
+static const u8 sWynautNormalGfx[] = INCBIN_U8("graphics/portraits/wynaut/Normal.at4px");
+
+static const PortraitGfx sWynautPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWynautNormalPal, sWynautNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWynaut = { "SIRO", &sWynautPortraits };
+
+static const u8 sSnoruntNormalPal[] = INCBIN_U8("graphics/portraits/snorunt/Normal.pal");
+static const u8 sSnoruntNormalGfx[] = INCBIN_U8("graphics/portraits/snorunt/Normal.at4px");
+
+static const PortraitGfx sSnoruntPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSnoruntNormalPal, sSnoruntNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSnorunt = { "SIRO", &sSnoruntPortraits };
+
+static const u8 sGlalieNormalPal[] = INCBIN_U8("graphics/portraits/glalie/Normal.pal");
+static const u8 sGlalieNormalGfx[] = INCBIN_U8("graphics/portraits/glalie/Normal.at4px");
+
+static const PortraitGfx sGlaliePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGlalieNormalPal, sGlalieNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGlalie = { "SIRO", &sGlaliePortraits };
+
+static const u8 sSphealNormalPal[] = INCBIN_U8("graphics/portraits/spheal/Normal.pal");
+static const u8 sSphealNormalGfx[] = INCBIN_U8("graphics/portraits/spheal/Normal.at4px");
+
+static const PortraitGfx sSphealPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSphealNormalPal, sSphealNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSpheal = { "SIRO", &sSphealPortraits };
+
+static const u8 sSealeoNormalPal[] = INCBIN_U8("graphics/portraits/sealeo/Normal.pal");
+static const u8 sSealeoNormalGfx[] = INCBIN_U8("graphics/portraits/sealeo/Normal.at4px");
+
+static const PortraitGfx sSealeoPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSealeoNormalPal, sSealeoNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSealeo = { "SIRO", &sSealeoPortraits };
+
+static const u8 sWalreinNormalPal[] = INCBIN_U8("graphics/portraits/walrein/Normal.pal");
+static const u8 sWalreinNormalGfx[] = INCBIN_U8("graphics/portraits/walrein/Normal.at4px");
+
+static const PortraitGfx sWalreinPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sWalreinNormalPal, sWalreinNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoWalrein = { "SIRO", &sWalreinPortraits };
+
+static const u8 sClamperlNormalPal[] = INCBIN_U8("graphics/portraits/clamperl/Normal.pal");
+static const u8 sClamperlNormalGfx[] = INCBIN_U8("graphics/portraits/clamperl/Normal.at4px");
+
+static const PortraitGfx sClamperlPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sClamperlNormalPal, sClamperlNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoClamperl = { "SIRO", &sClamperlPortraits };
+
+static const u8 sHuntailNormalPal[] = INCBIN_U8("graphics/portraits/huntail/Normal.pal");
+static const u8 sHuntailNormalGfx[] = INCBIN_U8("graphics/portraits/huntail/Normal.at4px");
+
+static const PortraitGfx sHuntailPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sHuntailNormalPal, sHuntailNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoHuntail = { "SIRO", &sHuntailPortraits };
+
+static const u8 sGorebyssNormalPal[] = INCBIN_U8("graphics/portraits/gorebyss/Normal.pal");
+static const u8 sGorebyssNormalGfx[] = INCBIN_U8("graphics/portraits/gorebyss/Normal.at4px");
+
+static const PortraitGfx sGorebyssPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGorebyssNormalPal, sGorebyssNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGorebyss = { "SIRO", &sGorebyssPortraits };
+
+static const u8 sRelicanthNormalPal[] = INCBIN_U8("graphics/portraits/relicanth/Normal.pal");
+static const u8 sRelicanthNormalGfx[] = INCBIN_U8("graphics/portraits/relicanth/Normal.at4px");
+
+static const PortraitGfx sRelicanthPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRelicanthNormalPal, sRelicanthNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRelicanth = { "SIRO", &sRelicanthPortraits };
+
+static const u8 sLuvdiscNormalPal[] = INCBIN_U8("graphics/portraits/luvdisc/Normal.pal");
+static const u8 sLuvdiscNormalGfx[] = INCBIN_U8("graphics/portraits/luvdisc/Normal.at4px");
+
+static const PortraitGfx sLuvdiscPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLuvdiscNormalPal, sLuvdiscNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLuvdisc = { "SIRO", &sLuvdiscPortraits };
+
+static const u8 sBagonNormalPal[] = INCBIN_U8("graphics/portraits/bagon/Normal.pal");
+static const u8 sBagonNormalGfx[] = INCBIN_U8("graphics/portraits/bagon/Normal.at4px");
+
+static const PortraitGfx sBagonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBagonNormalPal, sBagonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBagon = { "SIRO", &sBagonPortraits };
+
+static const u8 sShelgonNormalPal[] = INCBIN_U8("graphics/portraits/shelgon/Normal.pal");
+static const u8 sShelgonNormalGfx[] = INCBIN_U8("graphics/portraits/shelgon/Normal.at4px");
+
+static const PortraitGfx sShelgonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sShelgonNormalPal, sShelgonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoShelgon = { "SIRO", &sShelgonPortraits };
+
+static const u8 sSalamenceNormalPal[] = INCBIN_U8("graphics/portraits/salamence/Normal.pal");
+static const u8 sSalamenceNormalGfx[] = INCBIN_U8("graphics/portraits/salamence/Normal.at4px");
+
+static const PortraitGfx sSalamencePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sSalamenceNormalPal, sSalamenceNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoSalamence = { "SIRO", &sSalamencePortraits };
+
+static const u8 sBeldumNormalPal[] = INCBIN_U8("graphics/portraits/beldum/Normal.pal");
+static const u8 sBeldumNormalGfx[] = INCBIN_U8("graphics/portraits/beldum/Normal.at4px");
+
+static const PortraitGfx sBeldumPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sBeldumNormalPal, sBeldumNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoBeldum = { "SIRO", &sBeldumPortraits };
+
+static const u8 sMetangNormalPal[] = INCBIN_U8("graphics/portraits/metang/Normal.pal");
+static const u8 sMetangNormalGfx[] = INCBIN_U8("graphics/portraits/metang/Normal.at4px");
+
+static const PortraitGfx sMetangPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMetangNormalPal, sMetangNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMetang = { "SIRO", &sMetangPortraits };
+
+static const u8 sMetagrossNormalPal[] = INCBIN_U8("graphics/portraits/metagross/Normal.pal");
+static const u8 sMetagrossNormalGfx[] = INCBIN_U8("graphics/portraits/metagross/Normal.at4px");
+
+static const PortraitGfx sMetagrossPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMetagrossNormalPal, sMetagrossNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMetagross = { "SIRO", &sMetagrossPortraits };
+
+static const u8 sRegirockNormalPal[] = INCBIN_U8("graphics/portraits/regirock/Normal.pal");
+static const u8 sRegirockNormalGfx[] = INCBIN_U8("graphics/portraits/regirock/Normal.at4px");
+
+static const PortraitGfx sRegirockPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRegirockNormalPal, sRegirockNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRegirock = { "SIRO", &sRegirockPortraits };
+
+static const u8 sRegiceNormalPal[] = INCBIN_U8("graphics/portraits/regice/Normal.pal");
+static const u8 sRegiceNormalGfx[] = INCBIN_U8("graphics/portraits/regice/Normal.at4px");
+
+static const PortraitGfx sRegicePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRegiceNormalPal, sRegiceNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRegice = { "SIRO", &sRegicePortraits };
+
+static const u8 sRegisteelNormalPal[] = INCBIN_U8("graphics/portraits/registeel/Normal.pal");
+static const u8 sRegisteelNormalGfx[] = INCBIN_U8("graphics/portraits/registeel/Normal.at4px");
+
+static const PortraitGfx sRegisteelPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRegisteelNormalPal, sRegisteelNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRegisteel = { "SIRO", &sRegisteelPortraits };
+
+static const u8 sLatiasNormalPal[] = INCBIN_U8("graphics/portraits/latias/Normal.pal");
+static const u8 sLatiasNormalGfx[] = INCBIN_U8("graphics/portraits/latias/Normal.at4px");
+
+static const PortraitGfx sLatiasPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLatiasNormalPal, sLatiasNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLatias = { "SIRO", &sLatiasPortraits };
+
+static const u8 sLatiosNormalPal[] = INCBIN_U8("graphics/portraits/latios/Normal.pal");
+static const u8 sLatiosNormalGfx[] = INCBIN_U8("graphics/portraits/latios/Normal.at4px");
+
+static const PortraitGfx sLatiosPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sLatiosNormalPal, sLatiosNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoLatios = { "SIRO", &sLatiosPortraits };
+
+static const u8 sKyogreNormalPal[] = INCBIN_U8("graphics/portraits/kyogre/Normal.pal");
+static const u8 sKyogreNormalGfx[] = INCBIN_U8("graphics/portraits/kyogre/Normal.at4px");
+
+static const PortraitGfx sKyogrePortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sKyogreNormalPal, sKyogreNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoKyogre = { "SIRO", &sKyogrePortraits };
+
+static const u8 sGroudonNormalPal[] = INCBIN_U8("graphics/portraits/groudon/Normal.pal");
+static const u8 sGroudonNormalGfx[] = INCBIN_U8("graphics/portraits/groudon/Normal.at4px");
+
+static const PortraitGfx sGroudonPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sGroudonNormalPal, sGroudonNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoGroudon = { "SIRO", &sGroudonPortraits };
+
+static const u8 sRayquazaNormalPal[] = INCBIN_U8("graphics/portraits/rayquaza/Normal.pal");
+static const u8 sRayquazaNormalGfx[] = INCBIN_U8("graphics/portraits/rayquaza/Normal.at4px");
+
+static const PortraitGfx sRayquazaPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sRayquazaNormalPal, sRayquazaNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoRayquaza = { "SIRO", &sRayquazaPortraits };
+
+static const u8 sJirachiNormalPal[] = INCBIN_U8("graphics/portraits/jirachi/Normal.pal");
+static const u8 sJirachiNormalGfx[] = INCBIN_U8("graphics/portraits/jirachi/Normal.at4px");
+
+static const PortraitGfx sJirachiPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sJirachiNormalPal, sJirachiNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoJirachi = { "SIRO", &sJirachiPortraits };
+
+static const u8 sDeoxysnormalNormalPal[] = INCBIN_U8("graphics/portraits/deoxysnormal/Normal.pal");
+static const u8 sDeoxysnormalNormalGfx[] = INCBIN_U8("graphics/portraits/deoxysnormal/Normal.at4px");
+
+static const PortraitGfx sDeoxysnormalPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sDeoxysnormalNormalPal, sDeoxysnormalNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoDeoxysnormal = { "SIRO", &sDeoxysnormalPortraits };
+
+static const u8 sMunchlaxNormalPal[] = INCBIN_U8("graphics/portraits/munchlax/Normal.pal");
+static const u8 sMunchlaxNormalGfx[] = INCBIN_U8("graphics/portraits/munchlax/Normal.at4px");
+
+static const PortraitGfx sMunchlaxPortraits = {
+    .sprites = {
+        { (const RGB_Struct *)sMunchlaxNormalPal, sMunchlaxNormalGfx },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+        { NULL, NULL },
+    },
+};
+
+const SiroArchive gCustomKaoMunchlax = { "SIRO", &sMunchlaxPortraits };
+
+#define CUSTOM_PORTRAIT_COUNT 387
 const s16 gCustomPortraitSpecies[CUSTOM_PORTRAIT_COUNT] = {
+    1, /* bulbasaur */
     2, /* ivysaur */
     3, /* venusaur */
+    4, /* charmander */
     5, /* charmeleon */
     6, /* charizard */
+    7, /* squirtle */
     8, /* wartortle */
     9, /* blastoise */
+    10, /* caterpie */
+    11, /* metapod */
+    12, /* butterfree */
+    13, /* weedle */
+    14, /* kakuna */
+    15, /* beedrill */
+    16, /* pidgey */
+    17, /* pidgeotto */
+    18, /* pidgeot */
+    19, /* rattata */
+    20, /* raticate */
+    21, /* spearow */
+    22, /* fearow */
+    23, /* ekans */
+    24, /* arbok */
+    25, /* pikachu */
     26, /* raichu */
+    27, /* sandshrew */
+    28, /* sandslash */
+    29, /* nidoran_f */
+    30, /* nidorina */
+    31, /* nidoqueen */
+    32, /* nidoran_m */
+    33, /* nidorino */
+    34, /* nidoking */
+    35, /* clefairy */
+    36, /* clefable */
+    37, /* vulpix */
+    38, /* ninetales */
+    39, /* jigglypuff */
+    40, /* wigglytuff */
+    41, /* zubat */
+    42, /* golbat */
+    43, /* oddish */
+    44, /* gloom */
+    45, /* vileplume */
+    46, /* paras */
+    47, /* parasect */
+    48, /* venonat */
+    49, /* venomoth */
+    50, /* diglett */
+    51, /* dugtrio */
+    52, /* meowth */
     53, /* persian */
+    54, /* psyduck */
     55, /* golduck */
+    56, /* mankey */
+    57, /* primeape */
+    58, /* growlithe */
+    59, /* arcanine */
+    60, /* poliwag */
+    61, /* poliwhirl */
+    62, /* poliwrath */
+    63, /* abra */
+    64, /* kadabra */
+    65, /* alakazam */
+    66, /* machop */
     67, /* machoke */
     68, /* machamp */
+    69, /* bellsprout */
+    70, /* weepinbell */
+    71, /* victreebel */
+    72, /* tentacool */
+    73, /* tentacruel */
+    74, /* geodude */
+    75, /* graveler */
+    76, /* golem */
+    77, /* ponyta */
+    78, /* rapidash */
+    79, /* slowpoke */
+    80, /* slowbro */
+    81, /* magnemite */
+    82, /* magneton */
+    83, /* farfetchd */
+    84, /* doduo */
+    85, /* dodrio */
+    86, /* seel */
+    87, /* dewgong */
+    88, /* grimer */
+    89, /* muk */
+    90, /* shellder */
+    91, /* cloyster */
+    92, /* gastly */
+    93, /* haunter */
+    94, /* gengar */
+    95, /* onix */
+    96, /* drowzee */
+    97, /* hypno */
+    98, /* krabby */
+    99, /* kingler */
+    100, /* voltorb */
+    101, /* electrode */
+    102, /* exeggcute */
+    103, /* exeggutor */
+    104, /* cubone */
     105, /* marowak */
+    106, /* hitmonlee */
+    107, /* hitmonchan */
+    108, /* lickitung */
+    109, /* koffing */
+    110, /* weezing */
+    111, /* rhyhorn */
+    112, /* rhydon */
+    113, /* chansey */
+    114, /* tangela */
+    115, /* kangaskhan */
+    116, /* horsea */
+    117, /* seadra */
+    118, /* goldeen */
+    119, /* seaking */
+    120, /* staryu */
+    121, /* starmie */
+    122, /* mr_mime */
+    123, /* scyther */
+    124, /* jynx */
+    125, /* electabuzz */
+    126, /* magmar */
+    127, /* pinsir */
+    128, /* tauros */
+    129, /* magikarp */
+    130, /* gyarados */
+    131, /* lapras */
+    132, /* ditto */
+    133, /* eevee */
     134, /* vaporeon */
     135, /* jolteon */
     136, /* flareon */
+    137, /* porygon */
+    138, /* omanyte */
+    139, /* omastar */
+    140, /* kabuto */
+    141, /* kabutops */
+    142, /* aerodactyl */
+    143, /* snorlax */
+    144, /* articuno */
+    145, /* zapdos */
+    146, /* moltres */
+    147, /* dratini */
+    148, /* dragonair */
+    149, /* dragonite */
+    150, /* mewtwo */
+    151, /* mew */
+    152, /* chikorita */
     153, /* bayleef */
     154, /* meganium */
+    155, /* cyndaquil */
     156, /* quilava */
     157, /* typhlosion */
+    158, /* totodile */
     159, /* croconaw */
     160, /* feraligatr */
+    161, /* sentret */
+    162, /* furret */
+    163, /* hoothoot */
+    164, /* noctowl */
+    165, /* ledyba */
+    166, /* ledian */
+    167, /* spinarak */
+    168, /* ariados */
+    169, /* crobat */
+    170, /* chinchou */
+    171, /* lanturn */
+    172, /* pichu */
+    173, /* cleffa */
+    174, /* igglybuff */
+    175, /* togepi */
+    176, /* togetic */
+    177, /* natu */
+    178, /* xatu */
+    179, /* mareep */
+    180, /* flaaffy */
+    181, /* ampharos */
+    182, /* bellossom */
+    183, /* marill */
+    184, /* azumarill */
+    185, /* sudowoodo */
+    186, /* politoed */
+    187, /* hoppip */
+    188, /* skiploom */
+    189, /* jumpluff */
+    190, /* aipom */
+    191, /* sunkern */
+    192, /* sunflora */
+    193, /* yanma */
+    194, /* wooper */
+    195, /* quagsire */
     196, /* espeon */
     197, /* umbreon */
+    198, /* murkrow */
+    199, /* slowking */
+    200, /* misdreavus */
+    201, /* unown */
+    227, /* wobbuffet */
+    228, /* girafarig */
+    229, /* pineco */
+    230, /* forretress */
+    231, /* dunsparce */
+    232, /* gligar */
+    233, /* steelix */
+    234, /* snubbull */
+    235, /* granbull */
+    236, /* qwilfish */
+    237, /* scizor */
+    238, /* shuckle */
+    239, /* heracross */
+    240, /* sneasel */
+    241, /* teddiursa */
+    242, /* ursaring */
+    243, /* slugma */
+    244, /* magcargo */
+    245, /* swinub */
+    246, /* piloswine */
+    247, /* corsola */
+    248, /* remoraid */
+    249, /* octillery */
+    250, /* delibird */
+    251, /* mantine */
+    252, /* skarmory */
+    253, /* houndour */
+    254, /* houndoom */
+    255, /* kingdra */
+    256, /* phanpy */
+    257, /* donphan */
+    258, /* porygon2 */
+    259, /* stantler */
+    260, /* smeargle */
+    261, /* tyrogue */
+    262, /* hitmontop */
+    263, /* smoochum */
+    264, /* elekid */
+    265, /* magby */
+    266, /* miltank */
+    267, /* blissey */
+    268, /* raikou */
+    269, /* entei */
+    270, /* suicune */
+    271, /* larvitar */
+    272, /* pupitar */
+    273, /* tyranitar */
+    274, /* lugia */
+    275, /* hooh */
+    276, /* celebi */
+    277, /* treecko */
     278, /* grovyle */
     279, /* sceptile */
+    280, /* torchic */
     281, /* combusken */
     282, /* blaziken */
+    283, /* mudkip */
     284, /* marshtomp */
     285, /* swampert */
+    286, /* poochyena */
+    287, /* mightyena */
+    288, /* zigzagoon */
+    289, /* linoone */
+    290, /* wurmple */
+    291, /* silcoon */
+    292, /* beautifly */
+    293, /* cascoon */
+    294, /* dustox */
+    295, /* lotad */
+    296, /* lombre */
+    297, /* ludicolo */
+    298, /* seedot */
+    299, /* nuzleaf */
+    300, /* shiftry */
+    301, /* taillow */
+    302, /* swellow */
+    303, /* wingull */
+    304, /* pelipper */
+    305, /* ralts */
+    306, /* kirlia */
+    307, /* gardevoir */
+    308, /* surskit */
+    309, /* masquerain */
+    310, /* shroomish */
+    311, /* breloom */
+    312, /* slakoth */
+    313, /* vigoroth */
+    314, /* slaking */
+    315, /* nincada */
+    316, /* ninjask */
+    317, /* shedinja */
+    318, /* whismur */
+    319, /* loudred */
+    320, /* exploud */
+    321, /* makuhita */
+    322, /* hariyama */
+    323, /* azurill */
+    324, /* nosepass */
+    325, /* skitty */
     326, /* delcatty */
+    327, /* sableye */
+    328, /* mawile */
+    329, /* aron */
+    330, /* lairon */
+    331, /* aggron */
+    332, /* meditite */
+    333, /* medicham */
+    334, /* electrike */
+    335, /* manectric */
+    336, /* plusle */
+    337, /* minun */
+    338, /* volbeat */
+    339, /* illumise */
+    340, /* roselia */
+    341, /* gulpin */
+    342, /* swalot */
+    343, /* carvanha */
+    344, /* sharpedo */
+    345, /* wailmer */
+    346, /* wailord */
+    347, /* numel */
+    348, /* camerupt */
+    349, /* torkoal */
+    350, /* spoink */
+    351, /* grumpig */
     352, /* spinda */
+    353, /* trapinch */
+    354, /* vibrava */
+    355, /* flygon */
+    356, /* cacnea */
+    357, /* cacturne */
+    358, /* swablu */
+    359, /* altaria */
+    360, /* zangoose */
+    361, /* seviper */
+    362, /* lunatone */
+    363, /* solrock */
+    364, /* barboach */
+    365, /* whiscash */
+    366, /* corphish */
+    367, /* crawdaunt */
+    368, /* baltoy */
+    369, /* claydol */
+    370, /* lileep */
+    371, /* cradily */
+    372, /* anorith */
+    373, /* armaldo */
+    374, /* feebas */
+    375, /* milotic */
+    376, /* castform */
+    380, /* kecleon */
+    381, /* shuppet */
+    382, /* banette */
+    383, /* duskull */
+    384, /* dusclops */
+    385, /* tropius */
+    386, /* chimecho */
+    387, /* absol */
+    388, /* wynaut */
+    389, /* snorunt */
+    390, /* glalie */
+    391, /* spheal */
+    392, /* sealeo */
+    393, /* walrein */
+    394, /* clamperl */
+    395, /* huntail */
+    396, /* gorebyss */
+    397, /* relicanth */
+    398, /* luvdisc */
+    399, /* bagon */
+    400, /* shelgon */
+    401, /* salamence */
+    402, /* beldum */
+    403, /* metang */
+    404, /* metagross */
+    405, /* regirock */
+    406, /* regice */
+    407, /* registeel */
+    408, /* latias */
+    409, /* latios */
+    410, /* kyogre */
+    411, /* groudon */
+    412, /* rayquaza */
+    413, /* jirachi */
+    414, /* deoxysnormal */
+    420, /* munchlax */
 };
 
 const u16 gCustomPortraitMasks[CUSTOM_PORTRAIT_COUNT] = {
+    0x0001, /* bulbasaur */
     0x1FFF, /* ivysaur */
     0x1FFF, /* venusaur */
+    0x0001, /* charmander */
     0x1FFF, /* charmeleon */
     0x1FFF, /* charizard */
+    0x0001, /* squirtle */
     0x1FFF, /* wartortle */
     0x1FFF, /* blastoise */
+    0x0001, /* caterpie */
+    0x0001, /* metapod */
+    0x0001, /* butterfree */
+    0x0001, /* weedle */
+    0x0001, /* kakuna */
+    0x0001, /* beedrill */
+    0x0001, /* pidgey */
+    0x0001, /* pidgeotto */
+    0x0001, /* pidgeot */
+    0x0001, /* rattata */
+    0x0001, /* raticate */
+    0x0001, /* spearow */
+    0x0001, /* fearow */
+    0x0001, /* ekans */
+    0x0001, /* arbok */
+    0x0001, /* pikachu */
     0x1FFF, /* raichu */
+    0x0001, /* sandshrew */
+    0x0001, /* sandslash */
+    0x0001, /* nidoran_f */
+    0x0001, /* nidorina */
+    0x0001, /* nidoqueen */
+    0x0001, /* nidoran_m */
+    0x0001, /* nidorino */
+    0x0001, /* nidoking */
+    0x0001, /* clefairy */
+    0x0001, /* clefable */
+    0x0001, /* vulpix */
+    0x0001, /* ninetales */
+    0x0001, /* jigglypuff */
+    0x0001, /* wigglytuff */
+    0x0001, /* zubat */
+    0x0001, /* golbat */
+    0x0001, /* oddish */
+    0x0001, /* gloom */
+    0x0001, /* vileplume */
+    0x0001, /* paras */
+    0x0001, /* parasect */
+    0x0001, /* venonat */
+    0x0001, /* venomoth */
+    0x0001, /* diglett */
+    0x0001, /* dugtrio */
+    0x0001, /* meowth */
     0x1FFF, /* persian */
+    0x0001, /* psyduck */
     0x1FFF, /* golduck */
+    0x0001, /* mankey */
+    0x0001, /* primeape */
+    0x0001, /* growlithe */
+    0x0001, /* arcanine */
+    0x0001, /* poliwag */
+    0x0001, /* poliwhirl */
+    0x0001, /* poliwrath */
+    0x0001, /* abra */
+    0x0001, /* kadabra */
+    0x0001, /* alakazam */
+    0x0001, /* machop */
     0x1FFF, /* machoke */
     0x0001, /* machamp */
+    0x0001, /* bellsprout */
+    0x0001, /* weepinbell */
+    0x0001, /* victreebel */
+    0x0001, /* tentacool */
+    0x0001, /* tentacruel */
+    0x0001, /* geodude */
+    0x0001, /* graveler */
+    0x0001, /* golem */
+    0x0001, /* ponyta */
+    0x0001, /* rapidash */
+    0x0001, /* slowpoke */
+    0x0001, /* slowbro */
+    0x0001, /* magnemite */
+    0x0001, /* magneton */
+    0x0001, /* farfetchd */
+    0x0001, /* doduo */
+    0x0001, /* dodrio */
+    0x0001, /* seel */
+    0x0001, /* dewgong */
+    0x0001, /* grimer */
+    0x0001, /* muk */
+    0x0001, /* shellder */
+    0x0001, /* cloyster */
+    0x0001, /* gastly */
+    0x0001, /* haunter */
+    0x0001, /* gengar */
+    0x0001, /* onix */
+    0x0001, /* drowzee */
+    0x0001, /* hypno */
+    0x0001, /* krabby */
+    0x0001, /* kingler */
+    0x0001, /* voltorb */
+    0x0001, /* electrode */
+    0x0001, /* exeggcute */
+    0x0001, /* exeggutor */
+    0x0001, /* cubone */
     0x1FFF, /* marowak */
+    0x0001, /* hitmonlee */
+    0x0001, /* hitmonchan */
+    0x0001, /* lickitung */
+    0x0001, /* koffing */
+    0x0001, /* weezing */
+    0x0001, /* rhyhorn */
+    0x0001, /* rhydon */
+    0x0001, /* chansey */
+    0x0001, /* tangela */
+    0x0001, /* kangaskhan */
+    0x0001, /* horsea */
+    0x0001, /* seadra */
+    0x0001, /* goldeen */
+    0x0001, /* seaking */
+    0x0001, /* staryu */
+    0x0001, /* starmie */
+    0x0001, /* mr_mime */
+    0x0001, /* scyther */
+    0x0001, /* jynx */
+    0x0001, /* electabuzz */
+    0x0001, /* magmar */
+    0x0001, /* pinsir */
+    0x0001, /* tauros */
+    0x0001, /* magikarp */
+    0x0001, /* gyarados */
+    0x0001, /* lapras */
+    0x0001, /* ditto */
+    0x0001, /* eevee */
     0x1FFF, /* vaporeon */
     0x1FFF, /* jolteon */
     0x1FFF, /* flareon */
+    0x0001, /* porygon */
+    0x0001, /* omanyte */
+    0x0001, /* omastar */
+    0x0001, /* kabuto */
+    0x0001, /* kabutops */
+    0x0001, /* aerodactyl */
+    0x0001, /* snorlax */
+    0x0001, /* articuno */
+    0x0001, /* zapdos */
+    0x0001, /* moltres */
+    0x0001, /* dratini */
+    0x0001, /* dragonair */
+    0x0001, /* dragonite */
+    0x0001, /* mewtwo */
+    0x0001, /* mew */
+    0x0001, /* chikorita */
     0x1FFF, /* bayleef */
     0x1FFF, /* meganium */
+    0x0001, /* cyndaquil */
     0x1FFF, /* quilava */
     0x1FFF, /* typhlosion */
+    0x0001, /* totodile */
     0x1FFF, /* croconaw */
     0x1FFF, /* feraligatr */
+    0x0001, /* sentret */
+    0x0001, /* furret */
+    0x0001, /* hoothoot */
+    0x0001, /* noctowl */
+    0x0001, /* ledyba */
+    0x0001, /* ledian */
+    0x0001, /* spinarak */
+    0x0001, /* ariados */
+    0x0001, /* crobat */
+    0x0001, /* chinchou */
+    0x0001, /* lanturn */
+    0x0001, /* pichu */
+    0x0001, /* cleffa */
+    0x0001, /* igglybuff */
+    0x0001, /* togepi */
+    0x0001, /* togetic */
+    0x0001, /* natu */
+    0x0001, /* xatu */
+    0x0001, /* mareep */
+    0x0001, /* flaaffy */
+    0x0001, /* ampharos */
+    0x0001, /* bellossom */
+    0x0001, /* marill */
+    0x0001, /* azumarill */
+    0x0001, /* sudowoodo */
+    0x0001, /* politoed */
+    0x0001, /* hoppip */
+    0x0001, /* skiploom */
+    0x0001, /* jumpluff */
+    0x0001, /* aipom */
+    0x0001, /* sunkern */
+    0x0001, /* sunflora */
+    0x0001, /* yanma */
+    0x0001, /* wooper */
+    0x0001, /* quagsire */
     0x1FFF, /* espeon */
     0x1FFF, /* umbreon */
+    0x0001, /* murkrow */
+    0x0001, /* slowking */
+    0x0001, /* misdreavus */
+    0x0001, /* unown */
+    0x0001, /* wobbuffet */
+    0x0001, /* girafarig */
+    0x0001, /* pineco */
+    0x0001, /* forretress */
+    0x0001, /* dunsparce */
+    0x0001, /* gligar */
+    0x0001, /* steelix */
+    0x0001, /* snubbull */
+    0x0001, /* granbull */
+    0x0001, /* qwilfish */
+    0x0001, /* scizor */
+    0x0001, /* shuckle */
+    0x0001, /* heracross */
+    0x0001, /* sneasel */
+    0x0001, /* teddiursa */
+    0x0001, /* ursaring */
+    0x0001, /* slugma */
+    0x0001, /* magcargo */
+    0x0001, /* swinub */
+    0x0001, /* piloswine */
+    0x0001, /* corsola */
+    0x0001, /* remoraid */
+    0x0001, /* octillery */
+    0x0001, /* delibird */
+    0x0001, /* mantine */
+    0x0001, /* skarmory */
+    0x0001, /* houndour */
+    0x0001, /* houndoom */
+    0x0001, /* kingdra */
+    0x0001, /* phanpy */
+    0x0001, /* donphan */
+    0x0001, /* porygon2 */
+    0x0001, /* stantler */
+    0x0001, /* smeargle */
+    0x0001, /* tyrogue */
+    0x0001, /* hitmontop */
+    0x0001, /* smoochum */
+    0x0001, /* elekid */
+    0x0001, /* magby */
+    0x0001, /* miltank */
+    0x0001, /* blissey */
+    0x0001, /* raikou */
+    0x0001, /* entei */
+    0x0001, /* suicune */
+    0x0001, /* larvitar */
+    0x0001, /* pupitar */
+    0x0001, /* tyranitar */
+    0x0001, /* lugia */
+    0x0001, /* hooh */
+    0x0001, /* celebi */
+    0x0001, /* treecko */
     0x1FFF, /* grovyle */
     0x1FFF, /* sceptile */
+    0x0001, /* torchic */
     0x1FFF, /* combusken */
     0x1FFF, /* blaziken */
+    0x0001, /* mudkip */
     0x1FFF, /* marshtomp */
     0x1FFF, /* swampert */
+    0x0001, /* poochyena */
+    0x0001, /* mightyena */
+    0x0001, /* zigzagoon */
+    0x0001, /* linoone */
+    0x0001, /* wurmple */
+    0x0001, /* silcoon */
+    0x0001, /* beautifly */
+    0x0001, /* cascoon */
+    0x0001, /* dustox */
+    0x0001, /* lotad */
+    0x0001, /* lombre */
+    0x0001, /* ludicolo */
+    0x0001, /* seedot */
+    0x0001, /* nuzleaf */
+    0x0001, /* shiftry */
+    0x0001, /* taillow */
+    0x0001, /* swellow */
+    0x0001, /* wingull */
+    0x0001, /* pelipper */
+    0x0001, /* ralts */
+    0x0001, /* kirlia */
+    0x0001, /* gardevoir */
+    0x0001, /* surskit */
+    0x0001, /* masquerain */
+    0x0001, /* shroomish */
+    0x0001, /* breloom */
+    0x0001, /* slakoth */
+    0x0001, /* vigoroth */
+    0x0001, /* slaking */
+    0x0001, /* nincada */
+    0x0001, /* ninjask */
+    0x0001, /* shedinja */
+    0x0001, /* whismur */
+    0x0001, /* loudred */
+    0x0001, /* exploud */
+    0x0001, /* makuhita */
+    0x0001, /* hariyama */
+    0x0001, /* azurill */
+    0x0001, /* nosepass */
+    0x0001, /* skitty */
     0x1FFF, /* delcatty */
+    0x0001, /* sableye */
+    0x0001, /* mawile */
+    0x0001, /* aron */
+    0x0001, /* lairon */
+    0x0001, /* aggron */
+    0x0001, /* meditite */
+    0x0001, /* medicham */
+    0x0001, /* electrike */
+    0x0001, /* manectric */
+    0x0001, /* plusle */
+    0x0001, /* minun */
+    0x0001, /* volbeat */
+    0x0001, /* illumise */
+    0x0001, /* roselia */
+    0x0001, /* gulpin */
+    0x0001, /* swalot */
+    0x0001, /* carvanha */
+    0x0001, /* sharpedo */
+    0x0001, /* wailmer */
+    0x0001, /* wailord */
+    0x0001, /* numel */
+    0x0001, /* camerupt */
+    0x0001, /* torkoal */
+    0x0001, /* spoink */
+    0x0001, /* grumpig */
     0x1FFF, /* spinda */
+    0x0001, /* trapinch */
+    0x0001, /* vibrava */
+    0x0001, /* flygon */
+    0x0001, /* cacnea */
+    0x0001, /* cacturne */
+    0x0001, /* swablu */
+    0x0001, /* altaria */
+    0x0001, /* zangoose */
+    0x0001, /* seviper */
+    0x0001, /* lunatone */
+    0x0001, /* solrock */
+    0x0001, /* barboach */
+    0x0001, /* whiscash */
+    0x0001, /* corphish */
+    0x0001, /* crawdaunt */
+    0x0001, /* baltoy */
+    0x0001, /* claydol */
+    0x0001, /* lileep */
+    0x0001, /* cradily */
+    0x0001, /* anorith */
+    0x0001, /* armaldo */
+    0x0001, /* feebas */
+    0x0001, /* milotic */
+    0x0001, /* castform */
+    0x0001, /* kecleon */
+    0x0001, /* shuppet */
+    0x0001, /* banette */
+    0x0001, /* duskull */
+    0x0001, /* dusclops */
+    0x0001, /* tropius */
+    0x0001, /* chimecho */
+    0x0001, /* absol */
+    0x0001, /* wynaut */
+    0x0001, /* snorunt */
+    0x0001, /* glalie */
+    0x0001, /* spheal */
+    0x0001, /* sealeo */
+    0x0001, /* walrein */
+    0x0001, /* clamperl */
+    0x0001, /* huntail */
+    0x0001, /* gorebyss */
+    0x0001, /* relicanth */
+    0x0001, /* luvdisc */
+    0x0001, /* bagon */
+    0x0001, /* shelgon */
+    0x0001, /* salamence */
+    0x0001, /* beldum */
+    0x0001, /* metang */
+    0x0001, /* metagross */
+    0x0001, /* regirock */
+    0x0001, /* regice */
+    0x0001, /* registeel */
+    0x0001, /* latias */
+    0x0001, /* latios */
+    0x0001, /* kyogre */
+    0x0001, /* groudon */
+    0x0001, /* rayquaza */
+    0x0001, /* jirachi */
+    0x0001, /* deoxysnormal */
+    0x0001, /* munchlax */
 };
 
-const u8 gCustomPortraitCount = CUSTOM_PORTRAIT_COUNT;
+const u16 gCustomPortraitCount = CUSTOM_PORTRAIT_COUNT;
 
 static const File sCustomPortraitFiles[CUSTOM_PORTRAIT_COUNT] = {
+    { "ckao001", &gCustomKaoBulbasaur },
     { "ckao002", &gCustomKaoIvysaur },
     { "ckao003", &gCustomKaoVenusaur },
+    { "ckao004", &gCustomKaoCharmander },
     { "ckao005", &gCustomKaoCharmeleon },
     { "ckao006", &gCustomKaoCharizard },
+    { "ckao007", &gCustomKaoSquirtle },
     { "ckao008", &gCustomKaoWartortle },
     { "ckao009", &gCustomKaoBlastoise },
+    { "ckao010", &gCustomKaoCaterpie },
+    { "ckao011", &gCustomKaoMetapod },
+    { "ckao012", &gCustomKaoButterfree },
+    { "ckao013", &gCustomKaoWeedle },
+    { "ckao014", &gCustomKaoKakuna },
+    { "ckao015", &gCustomKaoBeedrill },
+    { "ckao016", &gCustomKaoPidgey },
+    { "ckao017", &gCustomKaoPidgeotto },
+    { "ckao018", &gCustomKaoPidgeot },
+    { "ckao019", &gCustomKaoRattata },
+    { "ckao020", &gCustomKaoRaticate },
+    { "ckao021", &gCustomKaoSpearow },
+    { "ckao022", &gCustomKaoFearow },
+    { "ckao023", &gCustomKaoEkans },
+    { "ckao024", &gCustomKaoArbok },
+    { "ckao025", &gCustomKaoPikachu },
     { "ckao026", &gCustomKaoRaichu },
+    { "ckao027", &gCustomKaoSandshrew },
+    { "ckao028", &gCustomKaoSandslash },
+    { "ckao029", &gCustomKaoNidoranF },
+    { "ckao030", &gCustomKaoNidorina },
+    { "ckao031", &gCustomKaoNidoqueen },
+    { "ckao032", &gCustomKaoNidoranM },
+    { "ckao033", &gCustomKaoNidorino },
+    { "ckao034", &gCustomKaoNidoking },
+    { "ckao035", &gCustomKaoClefairy },
+    { "ckao036", &gCustomKaoClefable },
+    { "ckao037", &gCustomKaoVulpix },
+    { "ckao038", &gCustomKaoNinetales },
+    { "ckao039", &gCustomKaoJigglypuff },
+    { "ckao040", &gCustomKaoWigglytuff },
+    { "ckao041", &gCustomKaoZubat },
+    { "ckao042", &gCustomKaoGolbat },
+    { "ckao043", &gCustomKaoOddish },
+    { "ckao044", &gCustomKaoGloom },
+    { "ckao045", &gCustomKaoVileplume },
+    { "ckao046", &gCustomKaoParas },
+    { "ckao047", &gCustomKaoParasect },
+    { "ckao048", &gCustomKaoVenonat },
+    { "ckao049", &gCustomKaoVenomoth },
+    { "ckao050", &gCustomKaoDiglett },
+    { "ckao051", &gCustomKaoDugtrio },
+    { "ckao052", &gCustomKaoMeowth },
     { "ckao053", &gCustomKaoPersian },
+    { "ckao054", &gCustomKaoPsyduck },
     { "ckao055", &gCustomKaoGolduck },
+    { "ckao056", &gCustomKaoMankey },
+    { "ckao057", &gCustomKaoPrimeape },
+    { "ckao058", &gCustomKaoGrowlithe },
+    { "ckao059", &gCustomKaoArcanine },
+    { "ckao060", &gCustomKaoPoliwag },
+    { "ckao061", &gCustomKaoPoliwhirl },
+    { "ckao062", &gCustomKaoPoliwrath },
+    { "ckao063", &gCustomKaoAbra },
+    { "ckao064", &gCustomKaoKadabra },
+    { "ckao065", &gCustomKaoAlakazam },
+    { "ckao066", &gCustomKaoMachop },
     { "ckao067", &gCustomKaoMachoke },
     { "ckao068", &gCustomKaoMachamp },
+    { "ckao069", &gCustomKaoBellsprout },
+    { "ckao070", &gCustomKaoWeepinbell },
+    { "ckao071", &gCustomKaoVictreebel },
+    { "ckao072", &gCustomKaoTentacool },
+    { "ckao073", &gCustomKaoTentacruel },
+    { "ckao074", &gCustomKaoGeodude },
+    { "ckao075", &gCustomKaoGraveler },
+    { "ckao076", &gCustomKaoGolem },
+    { "ckao077", &gCustomKaoPonyta },
+    { "ckao078", &gCustomKaoRapidash },
+    { "ckao079", &gCustomKaoSlowpoke },
+    { "ckao080", &gCustomKaoSlowbro },
+    { "ckao081", &gCustomKaoMagnemite },
+    { "ckao082", &gCustomKaoMagneton },
+    { "ckao083", &gCustomKaoFarfetchd },
+    { "ckao084", &gCustomKaoDoduo },
+    { "ckao085", &gCustomKaoDodrio },
+    { "ckao086", &gCustomKaoSeel },
+    { "ckao087", &gCustomKaoDewgong },
+    { "ckao088", &gCustomKaoGrimer },
+    { "ckao089", &gCustomKaoMuk },
+    { "ckao090", &gCustomKaoShellder },
+    { "ckao091", &gCustomKaoCloyster },
+    { "ckao092", &gCustomKaoGastly },
+    { "ckao093", &gCustomKaoHaunter },
+    { "ckao094", &gCustomKaoGengar },
+    { "ckao095", &gCustomKaoOnix },
+    { "ckao096", &gCustomKaoDrowzee },
+    { "ckao097", &gCustomKaoHypno },
+    { "ckao098", &gCustomKaoKrabby },
+    { "ckao099", &gCustomKaoKingler },
+    { "ckao100", &gCustomKaoVoltorb },
+    { "ckao101", &gCustomKaoElectrode },
+    { "ckao102", &gCustomKaoExeggcute },
+    { "ckao103", &gCustomKaoExeggutor },
+    { "ckao104", &gCustomKaoCubone },
     { "ckao105", &gCustomKaoMarowak },
+    { "ckao106", &gCustomKaoHitmonlee },
+    { "ckao107", &gCustomKaoHitmonchan },
+    { "ckao108", &gCustomKaoLickitung },
+    { "ckao109", &gCustomKaoKoffing },
+    { "ckao110", &gCustomKaoWeezing },
+    { "ckao111", &gCustomKaoRhyhorn },
+    { "ckao112", &gCustomKaoRhydon },
+    { "ckao113", &gCustomKaoChansey },
+    { "ckao114", &gCustomKaoTangela },
+    { "ckao115", &gCustomKaoKangaskhan },
+    { "ckao116", &gCustomKaoHorsea },
+    { "ckao117", &gCustomKaoSeadra },
+    { "ckao118", &gCustomKaoGoldeen },
+    { "ckao119", &gCustomKaoSeaking },
+    { "ckao120", &gCustomKaoStaryu },
+    { "ckao121", &gCustomKaoStarmie },
+    { "ckao122", &gCustomKaoMrMime },
+    { "ckao123", &gCustomKaoScyther },
+    { "ckao124", &gCustomKaoJynx },
+    { "ckao125", &gCustomKaoElectabuzz },
+    { "ckao126", &gCustomKaoMagmar },
+    { "ckao127", &gCustomKaoPinsir },
+    { "ckao128", &gCustomKaoTauros },
+    { "ckao129", &gCustomKaoMagikarp },
+    { "ckao130", &gCustomKaoGyarados },
+    { "ckao131", &gCustomKaoLapras },
+    { "ckao132", &gCustomKaoDitto },
+    { "ckao133", &gCustomKaoEevee },
     { "ckao134", &gCustomKaoVaporeon },
     { "ckao135", &gCustomKaoJolteon },
     { "ckao136", &gCustomKaoFlareon },
+    { "ckao137", &gCustomKaoPorygon },
+    { "ckao138", &gCustomKaoOmanyte },
+    { "ckao139", &gCustomKaoOmastar },
+    { "ckao140", &gCustomKaoKabuto },
+    { "ckao141", &gCustomKaoKabutops },
+    { "ckao142", &gCustomKaoAerodactyl },
+    { "ckao143", &gCustomKaoSnorlax },
+    { "ckao144", &gCustomKaoArticuno },
+    { "ckao145", &gCustomKaoZapdos },
+    { "ckao146", &gCustomKaoMoltres },
+    { "ckao147", &gCustomKaoDratini },
+    { "ckao148", &gCustomKaoDragonair },
+    { "ckao149", &gCustomKaoDragonite },
+    { "ckao150", &gCustomKaoMewtwo },
+    { "ckao151", &gCustomKaoMew },
+    { "ckao152", &gCustomKaoChikorita },
     { "ckao153", &gCustomKaoBayleef },
     { "ckao154", &gCustomKaoMeganium },
+    { "ckao155", &gCustomKaoCyndaquil },
     { "ckao156", &gCustomKaoQuilava },
     { "ckao157", &gCustomKaoTyphlosion },
+    { "ckao158", &gCustomKaoTotodile },
     { "ckao159", &gCustomKaoCroconaw },
     { "ckao160", &gCustomKaoFeraligatr },
+    { "ckao161", &gCustomKaoSentret },
+    { "ckao162", &gCustomKaoFurret },
+    { "ckao163", &gCustomKaoHoothoot },
+    { "ckao164", &gCustomKaoNoctowl },
+    { "ckao165", &gCustomKaoLedyba },
+    { "ckao166", &gCustomKaoLedian },
+    { "ckao167", &gCustomKaoSpinarak },
+    { "ckao168", &gCustomKaoAriados },
+    { "ckao169", &gCustomKaoCrobat },
+    { "ckao170", &gCustomKaoChinchou },
+    { "ckao171", &gCustomKaoLanturn },
+    { "ckao172", &gCustomKaoPichu },
+    { "ckao173", &gCustomKaoCleffa },
+    { "ckao174", &gCustomKaoIgglybuff },
+    { "ckao175", &gCustomKaoTogepi },
+    { "ckao176", &gCustomKaoTogetic },
+    { "ckao177", &gCustomKaoNatu },
+    { "ckao178", &gCustomKaoXatu },
+    { "ckao179", &gCustomKaoMareep },
+    { "ckao180", &gCustomKaoFlaaffy },
+    { "ckao181", &gCustomKaoAmpharos },
+    { "ckao182", &gCustomKaoBellossom },
+    { "ckao183", &gCustomKaoMarill },
+    { "ckao184", &gCustomKaoAzumarill },
+    { "ckao185", &gCustomKaoSudowoodo },
+    { "ckao186", &gCustomKaoPolitoed },
+    { "ckao187", &gCustomKaoHoppip },
+    { "ckao188", &gCustomKaoSkiploom },
+    { "ckao189", &gCustomKaoJumpluff },
+    { "ckao190", &gCustomKaoAipom },
+    { "ckao191", &gCustomKaoSunkern },
+    { "ckao192", &gCustomKaoSunflora },
+    { "ckao193", &gCustomKaoYanma },
+    { "ckao194", &gCustomKaoWooper },
+    { "ckao195", &gCustomKaoQuagsire },
     { "ckao196", &gCustomKaoEspeon },
     { "ckao197", &gCustomKaoUmbreon },
+    { "ckao198", &gCustomKaoMurkrow },
+    { "ckao199", &gCustomKaoSlowking },
+    { "ckao200", &gCustomKaoMisdreavus },
+    { "ckao201", &gCustomKaoUnown },
+    { "ckao227", &gCustomKaoWobbuffet },
+    { "ckao228", &gCustomKaoGirafarig },
+    { "ckao229", &gCustomKaoPineco },
+    { "ckao230", &gCustomKaoForretress },
+    { "ckao231", &gCustomKaoDunsparce },
+    { "ckao232", &gCustomKaoGligar },
+    { "ckao233", &gCustomKaoSteelix },
+    { "ckao234", &gCustomKaoSnubbull },
+    { "ckao235", &gCustomKaoGranbull },
+    { "ckao236", &gCustomKaoQwilfish },
+    { "ckao237", &gCustomKaoScizor },
+    { "ckao238", &gCustomKaoShuckle },
+    { "ckao239", &gCustomKaoHeracross },
+    { "ckao240", &gCustomKaoSneasel },
+    { "ckao241", &gCustomKaoTeddiursa },
+    { "ckao242", &gCustomKaoUrsaring },
+    { "ckao243", &gCustomKaoSlugma },
+    { "ckao244", &gCustomKaoMagcargo },
+    { "ckao245", &gCustomKaoSwinub },
+    { "ckao246", &gCustomKaoPiloswine },
+    { "ckao247", &gCustomKaoCorsola },
+    { "ckao248", &gCustomKaoRemoraid },
+    { "ckao249", &gCustomKaoOctillery },
+    { "ckao250", &gCustomKaoDelibird },
+    { "ckao251", &gCustomKaoMantine },
+    { "ckao252", &gCustomKaoSkarmory },
+    { "ckao253", &gCustomKaoHoundour },
+    { "ckao254", &gCustomKaoHoundoom },
+    { "ckao255", &gCustomKaoKingdra },
+    { "ckao256", &gCustomKaoPhanpy },
+    { "ckao257", &gCustomKaoDonphan },
+    { "ckao258", &gCustomKaoPorygon2 },
+    { "ckao259", &gCustomKaoStantler },
+    { "ckao260", &gCustomKaoSmeargle },
+    { "ckao261", &gCustomKaoTyrogue },
+    { "ckao262", &gCustomKaoHitmontop },
+    { "ckao263", &gCustomKaoSmoochum },
+    { "ckao264", &gCustomKaoElekid },
+    { "ckao265", &gCustomKaoMagby },
+    { "ckao266", &gCustomKaoMiltank },
+    { "ckao267", &gCustomKaoBlissey },
+    { "ckao268", &gCustomKaoRaikou },
+    { "ckao269", &gCustomKaoEntei },
+    { "ckao270", &gCustomKaoSuicune },
+    { "ckao271", &gCustomKaoLarvitar },
+    { "ckao272", &gCustomKaoPupitar },
+    { "ckao273", &gCustomKaoTyranitar },
+    { "ckao274", &gCustomKaoLugia },
+    { "ckao275", &gCustomKaoHooh },
+    { "ckao276", &gCustomKaoCelebi },
+    { "ckao277", &gCustomKaoTreecko },
     { "ckao278", &gCustomKaoGrovyle },
     { "ckao279", &gCustomKaoSceptile },
+    { "ckao280", &gCustomKaoTorchic },
     { "ckao281", &gCustomKaoCombusken },
     { "ckao282", &gCustomKaoBlaziken },
+    { "ckao283", &gCustomKaoMudkip },
     { "ckao284", &gCustomKaoMarshtomp },
     { "ckao285", &gCustomKaoSwampert },
+    { "ckao286", &gCustomKaoPoochyena },
+    { "ckao287", &gCustomKaoMightyena },
+    { "ckao288", &gCustomKaoZigzagoon },
+    { "ckao289", &gCustomKaoLinoone },
+    { "ckao290", &gCustomKaoWurmple },
+    { "ckao291", &gCustomKaoSilcoon },
+    { "ckao292", &gCustomKaoBeautifly },
+    { "ckao293", &gCustomKaoCascoon },
+    { "ckao294", &gCustomKaoDustox },
+    { "ckao295", &gCustomKaoLotad },
+    { "ckao296", &gCustomKaoLombre },
+    { "ckao297", &gCustomKaoLudicolo },
+    { "ckao298", &gCustomKaoSeedot },
+    { "ckao299", &gCustomKaoNuzleaf },
+    { "ckao300", &gCustomKaoShiftry },
+    { "ckao301", &gCustomKaoTaillow },
+    { "ckao302", &gCustomKaoSwellow },
+    { "ckao303", &gCustomKaoWingull },
+    { "ckao304", &gCustomKaoPelipper },
+    { "ckao305", &gCustomKaoRalts },
+    { "ckao306", &gCustomKaoKirlia },
+    { "ckao307", &gCustomKaoGardevoir },
+    { "ckao308", &gCustomKaoSurskit },
+    { "ckao309", &gCustomKaoMasquerain },
+    { "ckao310", &gCustomKaoShroomish },
+    { "ckao311", &gCustomKaoBreloom },
+    { "ckao312", &gCustomKaoSlakoth },
+    { "ckao313", &gCustomKaoVigoroth },
+    { "ckao314", &gCustomKaoSlaking },
+    { "ckao315", &gCustomKaoNincada },
+    { "ckao316", &gCustomKaoNinjask },
+    { "ckao317", &gCustomKaoShedinja },
+    { "ckao318", &gCustomKaoWhismur },
+    { "ckao319", &gCustomKaoLoudred },
+    { "ckao320", &gCustomKaoExploud },
+    { "ckao321", &gCustomKaoMakuhita },
+    { "ckao322", &gCustomKaoHariyama },
+    { "ckao323", &gCustomKaoAzurill },
+    { "ckao324", &gCustomKaoNosepass },
+    { "ckao325", &gCustomKaoSkitty },
     { "ckao326", &gCustomKaoDelcatty },
+    { "ckao327", &gCustomKaoSableye },
+    { "ckao328", &gCustomKaoMawile },
+    { "ckao329", &gCustomKaoAron },
+    { "ckao330", &gCustomKaoLairon },
+    { "ckao331", &gCustomKaoAggron },
+    { "ckao332", &gCustomKaoMeditite },
+    { "ckao333", &gCustomKaoMedicham },
+    { "ckao334", &gCustomKaoElectrike },
+    { "ckao335", &gCustomKaoManectric },
+    { "ckao336", &gCustomKaoPlusle },
+    { "ckao337", &gCustomKaoMinun },
+    { "ckao338", &gCustomKaoVolbeat },
+    { "ckao339", &gCustomKaoIllumise },
+    { "ckao340", &gCustomKaoRoselia },
+    { "ckao341", &gCustomKaoGulpin },
+    { "ckao342", &gCustomKaoSwalot },
+    { "ckao343", &gCustomKaoCarvanha },
+    { "ckao344", &gCustomKaoSharpedo },
+    { "ckao345", &gCustomKaoWailmer },
+    { "ckao346", &gCustomKaoWailord },
+    { "ckao347", &gCustomKaoNumel },
+    { "ckao348", &gCustomKaoCamerupt },
+    { "ckao349", &gCustomKaoTorkoal },
+    { "ckao350", &gCustomKaoSpoink },
+    { "ckao351", &gCustomKaoGrumpig },
     { "ckao352", &gCustomKaoSpinda },
+    { "ckao353", &gCustomKaoTrapinch },
+    { "ckao354", &gCustomKaoVibrava },
+    { "ckao355", &gCustomKaoFlygon },
+    { "ckao356", &gCustomKaoCacnea },
+    { "ckao357", &gCustomKaoCacturne },
+    { "ckao358", &gCustomKaoSwablu },
+    { "ckao359", &gCustomKaoAltaria },
+    { "ckao360", &gCustomKaoZangoose },
+    { "ckao361", &gCustomKaoSeviper },
+    { "ckao362", &gCustomKaoLunatone },
+    { "ckao363", &gCustomKaoSolrock },
+    { "ckao364", &gCustomKaoBarboach },
+    { "ckao365", &gCustomKaoWhiscash },
+    { "ckao366", &gCustomKaoCorphish },
+    { "ckao367", &gCustomKaoCrawdaunt },
+    { "ckao368", &gCustomKaoBaltoy },
+    { "ckao369", &gCustomKaoClaydol },
+    { "ckao370", &gCustomKaoLileep },
+    { "ckao371", &gCustomKaoCradily },
+    { "ckao372", &gCustomKaoAnorith },
+    { "ckao373", &gCustomKaoArmaldo },
+    { "ckao374", &gCustomKaoFeebas },
+    { "ckao375", &gCustomKaoMilotic },
+    { "ckao376", &gCustomKaoCastform },
+    { "ckao380", &gCustomKaoKecleon },
+    { "ckao381", &gCustomKaoShuppet },
+    { "ckao382", &gCustomKaoBanette },
+    { "ckao383", &gCustomKaoDuskull },
+    { "ckao384", &gCustomKaoDusclops },
+    { "ckao385", &gCustomKaoTropius },
+    { "ckao386", &gCustomKaoChimecho },
+    { "ckao387", &gCustomKaoAbsol },
+    { "ckao388", &gCustomKaoWynaut },
+    { "ckao389", &gCustomKaoSnorunt },
+    { "ckao390", &gCustomKaoGlalie },
+    { "ckao391", &gCustomKaoSpheal },
+    { "ckao392", &gCustomKaoSealeo },
+    { "ckao393", &gCustomKaoWalrein },
+    { "ckao394", &gCustomKaoClamperl },
+    { "ckao395", &gCustomKaoHuntail },
+    { "ckao396", &gCustomKaoGorebyss },
+    { "ckao397", &gCustomKaoRelicanth },
+    { "ckao398", &gCustomKaoLuvdisc },
+    { "ckao399", &gCustomKaoBagon },
+    { "ckao400", &gCustomKaoShelgon },
+    { "ckao401", &gCustomKaoSalamence },
+    { "ckao402", &gCustomKaoBeldum },
+    { "ckao403", &gCustomKaoMetang },
+    { "ckao404", &gCustomKaoMetagross },
+    { "ckao405", &gCustomKaoRegirock },
+    { "ckao406", &gCustomKaoRegice },
+    { "ckao407", &gCustomKaoRegisteel },
+    { "ckao408", &gCustomKaoLatias },
+    { "ckao409", &gCustomKaoLatios },
+    { "ckao410", &gCustomKaoKyogre },
+    { "ckao411", &gCustomKaoGroudon },
+    { "ckao412", &gCustomKaoRayquaza },
+    { "ckao413", &gCustomKaoJirachi },
+    { "ckao414", &gCustomKaoDeoxysnormal },
+    { "ckao420", &gCustomKaoMunchlax },
 };
 
 const FileArchive gCustomPortraitArchive = {

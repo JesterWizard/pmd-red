@@ -69,7 +69,7 @@ bool8 TYM_Create(u8 jobSlotIndex, u8 dungeon)
     sub_8096EEC(sTYMWork->jobInfo);
     sub_803C21C(sTYMWork->jobInfo, &sTYMWork->rewards);
 
-    sTYMWork->monPortrait.faceFile = GetDialogueSpriteDataPtr(sTYMWork->jobInfo->clientSpecies);
+    sTYMWork->monPortrait.faceFile = GetDialogueSpriteDataPtrForEmotion(sTYMWork->jobInfo->clientSpecies, 0);
     sTYMWork->monPortrait.faceData = NULL;
     sTYMWork->monPortrait.spriteId = 0;
     sTYMWork->monPortrait.flip = FALSE;

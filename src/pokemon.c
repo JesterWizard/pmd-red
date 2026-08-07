@@ -906,48 +906,72 @@ u8 GetPokemonOverworldPalette(s16 index, bool32 recolorShopKecleon)
     }
 }
 
-OpenedFile *OpenPokemonDialogueSpriteFile(s16 index)
+static bool8 CustomPortraitHasEmotion(s16 id, s32 spriteId)
 {
-    // Looks like this loads the dialogue sprite for the pokemon
+    if (!gRuntimeConfig.custom_portraits || !HasCustomPortrait(id))
+        return FALSE;
+    return (GetCustomPortraitMask(id) >> (spriteId & 0xF)) & 1;
+}
 
+/* Prefer custom when it has the emotion; else vanilla kao. */
+OpenedFile *OpenPokemonDialogueSpriteFile(s16 index, s32 spriteId)
+{
     char buffer[0xC];
 
-    if (gRuntimeConfig.custom_portraits && HasCustomPortrait(index)) {
+    if (CustomPortraitHasEmotion(index, spriteId)) {
         sprintf(buffer, "ckao%03d", index);
         return OpenFile(buffer, &gCustomPortraitArchive);
     }
-    if(sMonsterParameters[index].dialogueSprites == 0)
-    {
+    if (sMonsterParameters[index].dialogueSprites == 0)
         return NULL;
-    }
     sprintf(buffer, "kao%03d", index);
     return OpenFile(buffer, &gMonsterFileArchive);
 }
 
-// arm9.bin::0205AC60
+/*
+ * Full portrait pack for multi-emotion consumers (shops, etc.).
+ * Uses custom only when it covers every vanilla emotion bit (or there is no vanilla kao).
+ */
 OpenedFile *GetDialogueSpriteDataPtr(s32 index)
 {
-    // Looks like this loads the dialogue sprite for the pokemon
+    char buffer[0xC];
+    s16 id = SpeciesId(index);
+    u16 vanillaMask = sMonsterParameters[id].dialogueSprites;
+
+    if (gRuntimeConfig.custom_portraits && HasCustomPortrait(id)) {
+        u16 customMask = GetCustomPortraitMask(id);
+
+        if (vanillaMask == 0 || (customMask & vanillaMask) == vanillaMask) {
+            sprintf(buffer, "ckao%03d", id);
+            return OpenFileAndGetFileDataPtr(buffer, &gCustomPortraitArchive);
+        }
+    }
+    if (vanillaMask == 0)
+        return NULL;
+    sprintf(buffer, "kao%03d", id);
+    return OpenFileAndGetFileDataPtr(buffer, &gMonsterFileArchive);
+}
+
+/* Single-emotion open (dungeon talk, level-up, etc.). */
+OpenedFile *GetDialogueSpriteDataPtrForEmotion(s32 index, s32 spriteId)
+{
     char buffer[0xC];
     s16 id = SpeciesId(index);
 
-    if (gRuntimeConfig.custom_portraits && HasCustomPortrait(id)) {
+    if (CustomPortraitHasEmotion(id, spriteId)) {
         sprintf(buffer, "ckao%03d", id);
         return OpenFileAndGetFileDataPtr(buffer, &gCustomPortraitArchive);
     }
-    if(sMonsterParameters[id].dialogueSprites == 0)
-    {
+    if (sMonsterParameters[id].dialogueSprites == 0)
         return NULL;
-    }
     sprintf(buffer, "kao%03d", id);
     return OpenFileAndGetFileDataPtr(buffer, &gMonsterFileArchive);
 }
 
 bool8 IsPokemonDialogueSpriteAvail(s16 index, s32 spriteId)
 {
-    // checking to see if dialogue sprite is available??
-    if (gRuntimeConfig.custom_portraits && HasCustomPortrait(index))
-        return (GetCustomPortraitMask(index) >> spriteId) & 1;
+    if (CustomPortraitHasEmotion(index, spriteId))
+        return TRUE;
     return (sMonsterParameters[index].dialogueSprites >> spriteId) & 1;
 }
 

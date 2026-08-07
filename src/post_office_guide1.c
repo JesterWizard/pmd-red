@@ -56,7 +56,7 @@ bool8 CreateHelperPelipperMenu(s16 speciesID)
     sPostOfficeHelper->monPortrait.faceData = NULL;
 
     if (species_32 != MONSTER_NONE) {
-        faceFile = GetDialogueSpriteDataPtr(species_32);
+        faceFile = GetDialogueSpriteDataPtrForEmotion(species_32, 0);
         sPostOfficeHelper->monPortrait.faceFile = faceFile;
         sPostOfficeHelper->monPortrait.spriteId = 0;
         sPostOfficeHelper->monPortrait.flip = FALSE;

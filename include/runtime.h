@@ -61,7 +61,7 @@ typedef struct {
     u8 starter_confirm_preview;
     /* Extra EXP for one-shotting full-HP foes based on overkill damage */
     u8 overkill_exp_bonus;
-    /* SpriteCollab portraits for starter evolutions (else vanilla kao / none) */
+    /* SpriteCollab portraits: Normal for Gen1–3 + Munchlax; full packs for starter evos / Spinda */
     u8 custom_portraits;
     /* Mix outlaw hunt jobs onto the Pelipper bulletin board */
     u8 outlaw_missions;

@@ -612,7 +612,7 @@ bool8 ScriptSetPortraitInfo(s32 portraitId_, s32 spriteId_, s32 placementId_)
         }
 
         if (portraitPtr->showPortrait) {
-            portraitPtr->faceFile = OpenPokemonDialogueSpriteFile(portraitPtr->speciesID);
+            portraitPtr->faceFile = OpenPokemonDialogueSpriteFile(portraitPtr->speciesID, spriteId);
             if (portraitPtr->faceFile != NULL) {
                 portraitPtr->spriteId = spriteId;
                 portraitPtr->monPortrait.faceFile = portraitPtr->faceFile;

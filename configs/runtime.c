@@ -25,7 +25,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .starter_choice_prompt = TRUE, /* TRUE = choose starter or take quiz; FALSE = quiz only */
     .starter_confirm_preview = TRUE, /* TRUE = stats/moves confirm before starter/partner commit; FALSE = vanilla instant pick */
     .overkill_exp_bonus = TRUE, /* TRUE = +25% EXP per 100% overkill on full-HP KO; FALSE = off */
-    .custom_portraits = TRUE, /* TRUE = SpriteCollab evo portraits; FALSE = vanilla kao / none */
+    .custom_portraits = TRUE, /* TRUE = SpriteCollab portraits (Normal + evo packs); FALSE = vanilla kao */
     .outlaw_missions = TRUE, /* TRUE = WANTED hunt jobs on bulletin; FALSE = vanilla job types only */
     .refresh_bulletin_on_exit = TRUE, /* TRUE = reroll board jobs on board exit; FALSE = vanilla (dungeon/day only) */
     .damage_preview = TRUE, /* TRUE = estimated dmg/acc/effect while facing foe; FALSE = off */

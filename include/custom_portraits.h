@@ -6,7 +6,7 @@
 extern const FileArchive gCustomPortraitArchive;
 extern const s16 gCustomPortraitSpecies[];
 extern const u16 gCustomPortraitMasks[];
-extern const u8 gCustomPortraitCount;
+extern const u16 gCustomPortraitCount;
 
 /* TRUE if species has a SpriteCollab portrait pack in gCustomPortraitArchive. */
 bool8 HasCustomPortrait(s16 speciesId);
