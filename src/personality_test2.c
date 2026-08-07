@@ -113,7 +113,11 @@ UNUSED static void sub_803CE34(bool8 cursorSprite)
 
 void sub_803CE6C(void)
 {
-    gUnknown_203B404->s18.m.windows.id[gUnknown_203B404->s18.m.menuWinId] = gUnknown_80F4278;
+    s32 i;
+
+    /* Clear list + portrait (and any other) windows so nothing remains on screen. */
+    for (i = 0; i < MAX_WINDOWS; i++)
+        gUnknown_203B404->s18.m.windows.id[i] = gUnknown_80F4278;
     ResetUnusedInputStruct();
     ShowWindows(&gUnknown_203B404->s18.m.windows, TRUE, TRUE);
     sub_803CECC();

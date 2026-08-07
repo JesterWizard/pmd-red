@@ -24,7 +24,7 @@ typedef struct TeamBasicInfo
     /* 0x1C */ u8 PartnerNick[20];
 } TeamBasicInfo;
 
-// size: 0xC0
+// size: 0xC4
 typedef struct PersonalityTestTracker
 {
     /* 0x0 */ s32 FrameCounter;
@@ -38,6 +38,7 @@ typedef struct PersonalityTestTracker
     /* 0x78 */ u8 QuestionTracker[NUM_QUIZ_QUESTIONS];
     /* 0xB0 */ u32 playerGender; // 0 = Male, 1 = Female
     /* 0xB4 */ TouchScreenMenuInput input;
+    /* 0xC0 */ s16 pendingSpecies; /* species awaiting confirm (starter/partner preview) */
 } PersonalityTestTracker;
 
 bool8 CreateTestTracker(void);

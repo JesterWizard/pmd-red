@@ -23,6 +23,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .custom_title_backgrounds = TRUE, /* TRUE = custom title BGs; FALSE = vanilla titlen0–2 */
     .dungeon_modifiers = FALSE, /* TRUE = 20% chance of a floor modifier; FALSE = off */
     .starter_choice_prompt = TRUE, /* TRUE = choose starter or take quiz; FALSE = quiz only */
+    .starter_confirm_preview = TRUE, /* TRUE = stats/moves confirm before starter/partner commit; FALSE = vanilla instant pick */
     .overkill_exp_bonus = TRUE, /* TRUE = +25% EXP per 100% overkill on full-HP KO; FALSE = off */
     .custom_portraits = TRUE, /* TRUE = SpriteCollab evo portraits; FALSE = vanilla kao / none */
     .outlaw_missions = TRUE, /* TRUE = WANTED hunt jobs on bulletin; FALSE = vanilla job types only */

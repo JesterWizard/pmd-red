@@ -808,6 +808,9 @@ UNUSED ALIGNED(4) static const u8* const gPartnerPromptPtr = gPartnerPrompt;
 ALIGNED(4) static const u8 gPartnerNickPrompt[] = PARTNER_NICK_PROMPT;
 UNUSED ALIGNED(4) static const u8* const gPartnerNickPromptPtr[] = { gPartnerNickPrompt };
 
+ALIGNED(4) static const u8 gStarterConfirmPrompt[] = STARTER_CONFIRM_Q;
+ALIGNED(4) static const u8 gPartnerConfirmPrompt[] = PARTNER_CONFIRM_Q;
+
 ALIGNED(4) static const u8 gEndIntroText[] = END_TEXT;
 UNUSED ALIGNED(4) static const u8* const gEndIntroTextPtr[] = { gEndIntroText };
 

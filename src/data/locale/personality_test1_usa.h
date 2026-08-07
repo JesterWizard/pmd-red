@@ -774,6 +774,12 @@
 
 #define PARTNER_NICK_PROMPT (_("{CENTER_ALIGN}What is your partner's nickname?"))
 
+#define STARTER_CONFIRM_Q (_( \
+    "Choose {COLOR CYAN}{POKEMON_0}{RESET}?"))
+
+#define PARTNER_CONFIRM_Q (_( \
+    "Choose {COLOR CYAN}{POKEMON_0}{RESET} as your partner?"))
+
 #define END_TEXT (_( \
     "{CENTER_ALIGN}OK! We're all set!{EXTRA_MSG}" \
     "{CENTER_ALIGN}Let's get you into the\n" \

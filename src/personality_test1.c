@@ -16,6 +16,7 @@
 #include "random.h"
 #include "runtime.h"
 #include "save.h"
+#include "starter_confirm_menu.h"
 #include "string_format.h"
 #include "structs/rgb.h"
 #include "text_1.h"
@@ -34,6 +35,8 @@ enum
     PERSONALITY_ADVANCE_TO_STARTER_SELECTION,
     PERSONALITY_STARTER_SELECTION,
     PERSONALITY_HANDLE_STARTER_SELECTION,
+    PERSONALITY_STARTER_CONFIRM,
+    PERSONALITY_STARTER_CONFIRM_YESNO,
     PERSONALITY_REVEAL,
     PERSONALITY_STARTER_REVEAL,
     PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_1,
@@ -41,6 +44,8 @@ enum
     PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_3,
     PERSONALITY_PARTNER_SELECTION,
     PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_1,
+    PERSONALITY_PARTNER_CONFIRM,
+    PERSONALITY_PARTNER_CONFIRM_YESNO,
     PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_2,
     PERSONALITY_PARTNER_NICKNAME,
     PERSONALITY_END_INTRO,
@@ -61,7 +66,13 @@ static void CallCreatePartnerSelectionMenu(void);
 static void CallCreateStarterSelectionMenu(void);
 static void CallPromptNewQuestion(void);
 static void GenerateNewQuestionOrGender(void);
+static void CommitPendingPartner(void);
+static void CommitPendingStarter(void);
+static void HandlePartnerConfirm(void);
+static void HandlePartnerConfirmYesNo(void);
 static void HandleStarterChoice(void);
+static void HandleStarterConfirm(void);
+static void HandleStarterConfirmYesNo(void);
 static void HandleStarterSelection(void);
 static void InitializeTestStats(void);
 static void NicknamePartner(void);
@@ -151,6 +162,12 @@ u32 HandleTestTrackerState(void)
         case PERSONALITY_HANDLE_STARTER_SELECTION:
             HandleStarterSelection();
             break;
+        case PERSONALITY_STARTER_CONFIRM:
+            HandleStarterConfirm();
+            break;
+        case PERSONALITY_STARTER_CONFIRM_YESNO:
+            HandleStarterConfirmYesNo();
+            break;
         case PERSONALITY_REVEAL:
             RevealPersonality();
             break;
@@ -171,6 +188,12 @@ u32 HandleTestTrackerState(void)
             break;
         case PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_1:
             PromptForPartnerNickname();
+            break;
+        case PERSONALITY_PARTNER_CONFIRM:
+            HandlePartnerConfirm();
+            break;
+        case PERSONALITY_PARTNER_CONFIRM_YESNO:
+            HandlePartnerConfirmYesNo();
             break;
         case PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_2:
             AdvanceToPartnerNicknameScreen();
@@ -340,6 +363,13 @@ static void CallCreateStarterSelectionMenu(void)
     sPersonalityTestTracker->TestState = PERSONALITY_HANDLE_STARTER_SELECTION;
 }
 
+static void CommitPendingStarter(void)
+{
+    sPersonalityTestTracker->TeamBasicInfo.StarterID = sPersonalityTestTracker->pendingSpecies;
+    CreateDialogueBoxAndPortrait(gPartnerPrompt, 0, 0, 0x301);
+    sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_3;
+}
+
 static void HandleStarterSelection(void)
 {
     u16 selectedStarter;
@@ -349,10 +379,50 @@ static void HandleStarterSelection(void)
     if (selectedStarter != 0xFFFF) {
         if (selectedStarter != 0xFFFE) {
             sub_803CE6C();
-            sPersonalityTestTracker->TeamBasicInfo.StarterID = selectedStarter;
-            CreateDialogueBoxAndPortrait(gPartnerPrompt, 0, 0, 0x301);
-            sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_3;
+            if (gRuntimeConfig.starter_confirm_preview) {
+                sPersonalityTestTracker->pendingSpecies = selectedStarter;
+                StarterConfirmMenu_Create(selectedStarter);
+                sPersonalityTestTracker->TestState = PERSONALITY_STARTER_CONFIRM;
+            }
+            else {
+                sPersonalityTestTracker->pendingSpecies = selectedStarter;
+                CommitPendingStarter();
+            }
         }
+    }
+}
+
+static void HandleStarterConfirm(void)
+{
+    switch (StarterConfirmMenu_Input()) {
+        case StarterConfirmMenu_INPUTRET_ACCEPT:
+            StarterConfirmMenu_Destroy();
+            CopyMonsterNameToBuffer(gFormatBuffer_Monsters[0], sPersonalityTestTracker->pendingSpecies);
+            CreateYesNoDialogueBoxAndPortrait_DefaultYes(gStarterConfirmPrompt, NULL, 0x101);
+            sPersonalityTestTracker->TestState = PERSONALITY_STARTER_CONFIRM_YESNO;
+            break;
+        case StarterConfirmMenu_INPUTRET_BACK:
+            StarterConfirmMenu_Destroy();
+            CreateStarterSelectionMenu();
+            sPersonalityTestTracker->TestState = PERSONALITY_HANDLE_STARTER_SELECTION;
+            break;
+        default:
+            break;
+    }
+}
+
+static void HandleStarterConfirmYesNo(void)
+{
+    s32 choice;
+
+    if (sub_80144A4(&choice) != 0)
+        return;
+
+    if (choice == 1)
+        CommitPendingStarter();
+    else {
+        CreateStarterSelectionMenu();
+        sPersonalityTestTracker->TestState = PERSONALITY_HANDLE_STARTER_SELECTION;
     }
 }
 
@@ -419,6 +489,13 @@ static void CallCreatePartnerSelectionMenu(void)
     sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_1;
 }
 
+static void CommitPendingPartner(void)
+{
+    sPersonalityTestTracker->TeamBasicInfo.PartnerID = sPersonalityTestTracker->pendingSpecies;
+    CreateDialogueBoxAndPortrait(gPartnerNickPrompt, 0, 0, 0x301);
+    sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_2;
+}
+
 static void PromptForPartnerNickname(void)
 {
     u16 selectedPartner;
@@ -428,10 +505,50 @@ static void PromptForPartnerNickname(void)
     if (selectedPartner != 0xFFFF) {
         if (selectedPartner != 0xFFFE) {
             sub_803CE6C();
-            sPersonalityTestTracker->TeamBasicInfo.PartnerID = selectedPartner;
-            CreateDialogueBoxAndPortrait(gPartnerNickPrompt, 0, 0, 0x301);
-            sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_2;
+            if (gRuntimeConfig.starter_confirm_preview) {
+                sPersonalityTestTracker->pendingSpecies = selectedPartner;
+                StarterConfirmMenu_Create(selectedPartner);
+                sPersonalityTestTracker->TestState = PERSONALITY_PARTNER_CONFIRM;
+            }
+            else {
+                sPersonalityTestTracker->pendingSpecies = selectedPartner;
+                CommitPendingPartner();
+            }
         }
+    }
+}
+
+static void HandlePartnerConfirm(void)
+{
+    switch (StarterConfirmMenu_Input()) {
+        case StarterConfirmMenu_INPUTRET_ACCEPT:
+            StarterConfirmMenu_Destroy();
+            CopyMonsterNameToBuffer(gFormatBuffer_Monsters[0], sPersonalityTestTracker->pendingSpecies);
+            CreateYesNoDialogueBoxAndPortrait_DefaultYes(gPartnerConfirmPrompt, NULL, 0x101);
+            sPersonalityTestTracker->TestState = PERSONALITY_PARTNER_CONFIRM_YESNO;
+            break;
+        case StarterConfirmMenu_INPUTRET_BACK:
+            StarterConfirmMenu_Destroy();
+            CreatePartnerSelectionMenu(sPersonalityTestTracker->TeamBasicInfo.StarterID);
+            sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_1;
+            break;
+        default:
+            break;
+    }
+}
+
+static void HandlePartnerConfirmYesNo(void)
+{
+    s32 choice;
+
+    if (sub_80144A4(&choice) != 0)
+        return;
+
+    if (choice == 1)
+        CommitPendingPartner();
+    else {
+        CreatePartnerSelectionMenu(sPersonalityTestTracker->TeamBasicInfo.StarterID);
+        sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_1;
     }
 }
 

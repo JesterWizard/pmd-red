@@ -55,6 +55,8 @@ typedef struct {
     u8 dungeon_modifiers;
     /* Prompt to choose starter directly or take the personality quiz (else quiz only) */
     u8 starter_choice_prompt;
+    /* Before committing starter/partner pick: preview Lv1 stats + moves, then Yes/No */
+    u8 starter_confirm_preview;
     /* Extra EXP for one-shotting full-HP foes based on overkill damage */
     u8 overkill_exp_bonus;
     /* SpriteCollab portraits for starter evolutions (else vanilla kao / none) */
