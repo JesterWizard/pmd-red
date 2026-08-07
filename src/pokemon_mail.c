@@ -13,6 +13,7 @@
 #include "pokemon_3.h"
 #include "pokemon_mail.h"
 #include "pokemon_mail_pre.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_3.h"
 #include "text_util.h"
@@ -349,7 +350,13 @@ void CreateRescueDescription(unkStruct_802C39C *param_1)
 
     y += 12;
     PrintStringOnWindow(10, y, gDifficultyText, param_1->unk0[0], 0);
-    PrintStringOnWindow(68, y, GetMissionRankText(uVar3), param_1->unk0[0], 0);
+    if (gRuntimeConfig.pmd2_rescue_points) {
+        sprintfStatic(buf_1, _("%s (%d)"), GetMissionRankText(uVar3),
+                      param_1->rewards.teamRankPtsReward);
+        PrintStringOnWindow(68, y, buf_1, param_1->unk0[0], 0);
+    }
+    else
+        PrintStringOnWindow(68, y, GetMissionRankText(uVar3), param_1->unk0[0], 0);
 
     y += 12;
     PrintStringOnWindow(10, y, gRewardText, param_1->unk0[0], 0);

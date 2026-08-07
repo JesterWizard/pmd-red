@@ -4,6 +4,7 @@
 #include "constants/wonder_mail.h"
 #include "structs/str_802C39C.h"
 #include "code_800D090.h"
+#include "code_803C1B4.h"
 #include "music_util.h"
 #include "code_8094F88.h"
 #include "dungeon_info.h"
@@ -125,6 +126,8 @@ static void sub_8030E48(void)
     stack.clientSpecies = mail->clientSpecies;
     stack.targetSpecies = mail->clientSpecies;
     stack.targetItem = ITEM_NOTHING;
+    stack.rewards.teamRankPtsReward =
+        GetDungeonTeamRankPts(&mail->dungeonSeed.location, MISSION_TYPE_FRIEND_RESCUE);
 
     if (mail->item.id == ITEM_NOTHING) {
         stack.rewards.rewardType = MONEY1;
