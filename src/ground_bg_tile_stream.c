@@ -7,11 +7,13 @@
 #include "gba/macro.h"
 
 #define STREAM_MAX_SOURCE_TILES 2048
-/* Café entry can need ~400 unique 8bpp tiles in one remap; keep them queued so
+/* Café screens can need ~640 unique 8bpp tiles in one remap; keep them queued so
  * FlushUploads commits with the tilemap DMA instead of mid-frame copies. */
-#define STREAM_MAX_UPLOADS 576
+#define STREAM_MAX_UPLOADS 640
 #define STREAM_VRAM_BASE_4BPP (VRAM + 0x8000)
-/* 3×3 dual-layer renderer fills rows 0..23 only (see RenderChunksToBgTilemaps_3x3). */
+/* 3×3 dual-layer renderer fills rows 0..23 only (see RenderChunksToBgTilemaps_3x3).
+ * Must Remap this whole buffer — a smaller “viewport only” window leaves black
+ * holes in the scroll margin when the camera moves. */
 #define STREAM_VISIBLE_TILEMAP_ENTRIES (32 * 24)
 
 static EWRAM_DATA bool8 sActive = FALSE;
@@ -112,9 +114,12 @@ static void ClearVramPool(s32 vramSlots)
     u16 first = sFirstSlot;
     u32 clearSlots;
 
-    /* Never wipe slots below sFirstSlot — 8bpp café leaves 0–127 for font/chrome. */
+    /* Never wipe slots 1..(first-1) — 8bpp café leaves those for font/chrome.
+     * Do clear tile 0: empty/failed remap entries index it, and it must be
+     * fully transparent (not leftover map/title bytes). */
     if (first >= vramSlots)
         return;
+    CpuFill16(0, (void *)sVramBase, tileBytes);
     clearSlots = (u32)(vramSlots - first);
     CpuFill16(0, (void *)(sVramBase + first * tileBytes), tileBytes);
     if (clearSlots > 1)
@@ -247,8 +252,8 @@ void GroundBgTileStream_FlushUploads(void)
 static u16 PopFreeSlot(void)
 {
     u16 word;
-    u16 bit;
     u16 slot;
+    u16 first = sFirstSlot;
 
     if (sFreeCount == 0)
         return 0;
@@ -257,20 +262,23 @@ static u16 PopFreeSlot(void)
         u32 bits = sFreeBits[word];
         if (bits == 0)
             continue;
-        for (bit = 0; bit < 32; bit++) {
-            if (bits & (1u << bit)) {
-                slot = (word << 5) | bit;
-                if (slot < sFirstSlot)
-                    continue;
-                MarkUsed(slot);
-                return slot;
-            }
-        }
+        /* Skip bits below sFirstSlot in the first partial word. */
+        if (word == (first >> 5))
+            bits &= ~((1u << (first & 31)) - 1);
+        if (bits == 0)
+            continue;
+        slot = (word << 5) | (u16)__builtin_ctz(bits);
+        MarkUsed(slot);
+        return slot;
     }
     sFreeCount = 0;
     return 0;
 }
 
+/* Prefer free/empty/aged slots; else steal from the previous frame's map.
+ * Never evict a slot stamped for the current Remap (avoids upload thrash).
+ * One clock sweep — a failed “aged-only” pass then a second full scan was the
+ * main CPU spike when the café top filled the pool. */
 static u16 AllocSlot(void)
 {
     u16 slot;
@@ -278,6 +286,7 @@ static u16 AllocSlot(void)
     u16 limit;
     u16 first;
     u16 freeSlot;
+    u16 onScreenSteal = 0;
 
     freeSlot = PopFreeSlot();
     if (freeSlot != 0)
@@ -287,47 +296,36 @@ static u16 AllocSlot(void)
     limit = (u16)sVramSlots;
     if (sClockHand < first)
         sClockHand = first;
+
     for (scanned = first; scanned < limit; scanned++) {
         slot = sClockHand;
         if (++sClockHand >= limit)
             sClockHand = first;
-
-        if (slot < first)
-            continue;
 
         if (sSlotToSource[slot] == 0)
             return slot;
 
-        if (sSlotStamp[slot] != sClock && sSlotStamp[slot] != sOnScreenClock) {
+        if (sSlotStamp[slot] == sClock)
+            continue;
+
+        if (sSlotStamp[slot] != sOnScreenClock) {
             sSourceToSlot[sSlotToSource[slot]] = 0;
             sSlotToSource[slot] = 0;
             return slot;
         }
+
+        if (onScreenSteal == 0)
+            onScreenSteal = slot;
     }
 
-    for (scanned = first; scanned < limit; scanned++) {
-        slot = sClockHand;
-        if (++sClockHand >= limit)
-            sClockHand = first;
-        if (slot < first)
-            continue;
-        if (sSlotStamp[slot] != sClock) {
-            if (sSlotToSource[slot] != 0)
-                sSourceToSlot[sSlotToSource[slot]] = 0;
-            sSlotToSource[slot] = 0;
-            return slot;
-        }
+    if (onScreenSteal != 0) {
+        if (sSlotToSource[onScreenSteal] != 0)
+            sSourceToSlot[sSlotToSource[onScreenSteal]] = 0;
+        sSlotToSource[onScreenSteal] = 0;
+        return onScreenSteal;
     }
 
-    slot = sClockHand;
-    if (++sClockHand >= limit)
-        sClockHand = first;
-    if (slot < first)
-        slot = first;
-    if (sSlotToSource[slot] != 0)
-        sSourceToSlot[sSlotToSource[slot]] = 0;
-    sSlotToSource[slot] = 0;
-    return slot;
+    return 0;
 }
 
 static u16 EnsureTile(u16 sourceId)
@@ -344,6 +342,8 @@ static u16 EnsureTile(u16 sourceId)
     }
 
     slot = AllocSlot();
+    if (slot == 0)
+        return 0;
     QueueUpload(sourceId, slot);
     sSourceToSlot[sourceId] = slot;
     sSlotToSource[slot] = sourceId;
@@ -351,17 +351,49 @@ static u16 EnsureTile(u16 sourceId)
     return slot;
 }
 
-static void RemapTilemap(u16 *tilemap, s32 count)
+static void StampCachedVisible(u16 *tilemap)
 {
     s32 i;
 
-    for (i = 0; i < count; i++) {
+    for (i = 0; i < STREAM_VISIBLE_TILEMAP_ENTRIES; i++) {
+        u16 sourceId = tilemap[i] & 0x0FFF;
+        u16 slot;
+
+        if (sourceId == 0 || sourceId >= (u16)sNumTiles)
+            continue;
+        slot = sSourceToSlot[sourceId];
+        if (slot != 0)
+            sSlotStamp[slot] = sClock;
+    }
+}
+
+static void AllocMissesVisible(u16 *tilemap)
+{
+    s32 i;
+
+    for (i = 0; i < STREAM_VISIBLE_TILEMAP_ENTRIES; i++) {
+        u16 sourceId = tilemap[i] & 0x0FFF;
+
+        if (sourceId == 0 || sourceId >= (u16)sNumTiles)
+            continue;
+        if (sSourceToSlot[sourceId] == 0)
+            EnsureTile(sourceId);
+    }
+}
+
+static void RewriteTilemapSlots(u16 *tilemap)
+{
+    s32 i;
+
+    for (i = 0; i < STREAM_VISIBLE_TILEMAP_ENTRIES; i++) {
         u16 entry = tilemap[i];
         u16 sourceId = entry & 0x0FFF;
+        u16 slot;
 
         if (sourceId == 0)
             continue;
-        tilemap[i] = EnsureTile(sourceId) | (entry & 0xF000);
+        slot = sSourceToSlot[sourceId];
+        tilemap[i] = (slot != 0) ? (slot | (entry & 0xF000)) : (entry & 0xF000);
     }
 }
 
@@ -398,13 +430,27 @@ void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg)
         sOnScreenClock = 0;
     }
 
+    /* Stamp both layers before any alloc so BG2 cannot starve BG3. */
     for (layer = 0; layer < groundBg->unk474; layer++) {
         mapRender = &groundBg->mapRender[layer];
-        /* Only the rendered 32×24 window — remapping blank rows wastes slots. */
         if (mapRender->bgTilemaps[0] != NULL)
-            RemapTilemap(mapRender->bgTilemaps[0], STREAM_VISIBLE_TILEMAP_ENTRIES);
+            StampCachedVisible(mapRender->bgTilemaps[0]);
         if (mapRender->numBgs > 1 && mapRender->bgTilemaps[1] != NULL)
-            RemapTilemap(mapRender->bgTilemaps[1], STREAM_VISIBLE_TILEMAP_ENTRIES);
+            StampCachedVisible(mapRender->bgTilemaps[1]);
+    }
+    for (layer = 0; layer < groundBg->unk474; layer++) {
+        mapRender = &groundBg->mapRender[layer];
+        if (mapRender->bgTilemaps[0] != NULL)
+            AllocMissesVisible(mapRender->bgTilemaps[0]);
+        if (mapRender->numBgs > 1 && mapRender->bgTilemaps[1] != NULL)
+            AllocMissesVisible(mapRender->bgTilemaps[1]);
+    }
+    for (layer = 0; layer < groundBg->unk474; layer++) {
+        mapRender = &groundBg->mapRender[layer];
+        if (mapRender->bgTilemaps[0] != NULL)
+            RewriteTilemapSlots(mapRender->bgTilemaps[0]);
+        if (mapRender->numBgs > 1 && mapRender->bgTilemaps[1] != NULL)
+            RewriteTilemapSlots(mapRender->bgTilemaps[1]);
     }
 
     sCachedTileX = groundBg->mapRender[0].tilePos.x;

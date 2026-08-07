@@ -516,7 +516,7 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     sub_80A3BB0(groundBg, 0);
     if (GroundBgTileStream_IsActive()) {
         /* Do NOT Remap/Flush at sUnknownPosition — café windows there can exceed
-         * the 576-slot 8bpp pool, thrash the cache, and leave font-alias garbage
+         * the 640-slot 8bpp pool, thrash the cache, and leave font-alias garbage
          * for the first real camera rebuild. Publish blanks; first sub_80A4764
          * at the player camera is the only Remap. */
         if (groundBg->mapRender[0].numBgs > 1)

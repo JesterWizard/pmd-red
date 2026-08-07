@@ -8,15 +8,15 @@
  * keep graphics in ROM/EWRAM and remap the visible window into VRAM on camera moves.
  *
  * 4bpp: VRAM+0x8000, 32 B/tile, up to 1024 slots (CHARBASE2).
- * 8bpp café: CHARBASE1 indices 128..703 (VRAM+0x6000..0xEFFF, 576 tiles) so
- * font/chrome at 0x4F00–0x5FFF stays intact (same reservation as title 8bpp).
- * Maps remain SB 30/31. */
+ * 8bpp café: CHARBASE1 indices 128..767 (VRAM+0x6000..0xFFFF, 640 tiles) so
+ * font/chrome at 0x4F00–0x5FFF stays intact. Art maps at SB 0/1 (0x0000–0x0FFF,
+ * below window tile VRAM ~0x2D00) — never SB 8 (aliases CHARBASE1 tile 0). */
 
 #define GROUND_STREAM_4BPP 0
 #define GROUND_STREAM_8BPP 1
 
 #define GROUND_STREAM_8BPP_FIRST_SLOT 128
-#define GROUND_STREAM_8BPP_VRAM_SLOTS 704 /* absolute end; free pool = 128..703 */
+#define GROUND_STREAM_8BPP_VRAM_SLOTS 768 /* absolute end; free pool = 128..767 */
 #define GROUND_STREAM_8BPP_VRAM_BASE (VRAM + 0x4000)
 #define GROUND_STREAM_8BPP_TILE_VRAM_BASE \
     (GROUND_STREAM_8BPP_VRAM_BASE + GROUND_STREAM_8BPP_FIRST_SLOT * 64) /* 0x6000 */

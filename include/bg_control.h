@@ -30,7 +30,7 @@ extern bool8 gUnknown_202D7FE;
  * 8bpp tiles at VRAM+0x6000 (CHARBASE1 index +128, max 600 → 0xF600). */
 extern bool8 gTitleBg8bpp;
 /* Spinda Café (and any ground map with 8bpp BPL marker): BG2+BG3 256-color,
- * CHARBASE1 @ 0x4000, screenbases 30/31. Mutually exclusive with gTitleBg8bpp. */
+ * CHARBASE1 @ 0x4000, screenbases 0/1. Mutually exclusive with gTitleBg8bpp. */
 extern bool8 gGroundMap8bpp;
 
 void SetBG2RegOffsets(s32, s32);

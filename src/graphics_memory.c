@@ -223,14 +223,16 @@ void DoScheduledMemCopies(void)
         if (gTitleBg8bpp)
             CpuCopy(BG_SCREEN_ADDR(8), gBgTilemaps[2], BG_SCREEN_SIZE);
         else if (gGroundMap8bpp)
-            CpuCopy(BG_SCREEN_ADDR(30), gBgTilemaps[2], BG_SCREEN_SIZE);
+            CpuCopy(BG_SCREEN_ADDR(0), gBgTilemaps[2], BG_SCREEN_SIZE);
         else
             CpuCopy(BG_SCREEN_ADDR(14), gBgTilemaps[2], BG_SCREEN_SIZE);
     }
     if (sTilemapCopyScheduled[3]) {
         sTilemapCopyScheduled[3] = FALSE;
-        if (gTitleBg8bpp || gGroundMap8bpp)
+        if (gTitleBg8bpp)
             CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
+        else if (gGroundMap8bpp)
+            CpuCopy(BG_SCREEN_ADDR(1), gBgTilemaps[3], BG_SCREEN_SIZE);
         else
             CpuCopy(BG_SCREEN_ADDR(15), gBgTilemaps[3], BG_SCREEN_SIZE);
     }

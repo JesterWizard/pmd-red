@@ -415,12 +415,13 @@ static void UpdateBGControlRegisters(void)
     }
     else if (gGroundMap8bpp) {
         /* Spinda Café: dual-layer 8bpp art on BG2+BG3.
-         * Art tiles CHARBASE1 indices 128..703 @ 0x6000–0xEFFF (font/chrome at
-         * 0x4F00–0x5FFF preserved). UI maps in CHARBASE0 SB 6/7. */
+         * Art tiles CHARBASE1 indices 128..767 @ 0x6000–0xFFFF (font/chrome at
+         * 0x4F00–0x5FFF preserved). Art maps SB 0/1 (below window GFX ~0x2D00).
+         * UI maps SB 6/7. Do not use SB 8 for art maps (aliases CHARBASE1 tile 0). */
         REG_BG0CNT = BGCNT_Priority[BG0] | BGCNT_SCREENBASE(6) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
         REG_BG1CNT = BGCNT_Priority[BG1] | BGCNT_SCREENBASE(7) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
-        REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(30) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
-        REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(31) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
+        REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(0) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
+        REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(1) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
     }
     else {
         REG_BG0CNT = BGCNT_Priority[BG0] | BGCNT_SCREENBASE(12) | BGCNT_CHARBASE(0) | BGCNT_WRAP; // 0x2C00

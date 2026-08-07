@@ -123,9 +123,8 @@ void SetGroundMap8bpp(bool8 enabled)
 {
     gGroundMap8bpp = enabled;
     if (enabled) {
-        /* Wipe UI + art maps before the first café DMA. SB 31 often still holds
-         * title-screen entries; those low indices read as font/chrome garbage on
-         * CHARBASE1 until the streamer publishes remapped tilemaps. */
+        /* Wipe UI + art maps before the first café DMA. Legacy SB 30/31 and
+         * title SB 31 can still hold stale entries. */
         CpuClear(gBgTilemaps[0], BG_SCREEN_SIZE);
         CpuClear(gBgTilemaps[1], BG_SCREEN_SIZE);
         CpuClear(gBgTilemaps[2], BG_SCREEN_SIZE);
@@ -134,6 +133,9 @@ void SetGroundMap8bpp(bool8 enabled)
         CpuCopy(BG_SCREEN_ADDR(7), gBgTilemaps[1], BG_SCREEN_SIZE);
         CpuCopy(BG_SCREEN_ADDR(12), gBgTilemaps[0], BG_SCREEN_SIZE);
         CpuCopy(BG_SCREEN_ADDR(13), gBgTilemaps[1], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(0), gBgTilemaps[2], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(1), gBgTilemaps[3], BG_SCREEN_SIZE);
+        /* Wipe legacy café map slots so a mode switch cannot flash old data. */
         CpuCopy(BG_SCREEN_ADDR(30), gBgTilemaps[2], BG_SCREEN_SIZE);
         CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
     }
@@ -162,7 +164,7 @@ void ClearTitleBgMapsForGround(void)
 }
 
 /* Leave café 8bpp: clear flag caller-side, then wipe café UI (SB 6/7) + art
- * (SB 30/31) and republish vanilla SB 12–15 so the next 4bpp map is clean. */
+ * (SB 0/1) and republish vanilla SB 12–15 so the next 4bpp map is clean. */
 void ClearGroundMap8bppMaps(void)
 {
     CpuClear(gBgTilemaps[0], BG_SCREEN_SIZE);
@@ -172,7 +174,9 @@ void ClearGroundMap8bppMaps(void)
     /* Café 8bpp UI map slots (CHARBASE0). */
     CpuCopy(BG_SCREEN_ADDR(6), gBgTilemaps[0], BG_SCREEN_SIZE);
     CpuCopy(BG_SCREEN_ADDR(7), gBgTilemaps[1], BG_SCREEN_SIZE);
-    /* Café 8bpp art maps. */
+    /* Café 8bpp art maps (+ legacy SB 30/31). */
+    CpuCopy(BG_SCREEN_ADDR(0), gBgTilemaps[2], BG_SCREEN_SIZE);
+    CpuCopy(BG_SCREEN_ADDR(1), gBgTilemaps[3], BG_SCREEN_SIZE);
     CpuCopy(BG_SCREEN_ADDR(30), gBgTilemaps[2], BG_SCREEN_SIZE);
     CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
     /* Vanilla ground layout. */
