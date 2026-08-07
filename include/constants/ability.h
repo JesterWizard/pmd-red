@@ -78,6 +78,17 @@
 #define ABILITY_CHLOROPHYLL 0x4A
 #define ABILITY_PURE_POWER 0x4B
 #define ABILITY_SHIELD_DUST 0x4C
-#define NUM_ABILITIES 0x4D
+
+/*
+ * Custom abilities (gated by gRuntimeConfig.custom_abilities).
+ * Append new IDs here (starting at ABILITY_FIRST_CUSTOM_ABILITY), then bump
+ * NUM_ABILITIES. IDs must fit in u8 (max 255).
+ */
+#define ABILITY_NORMALIZE 0x4D
+
+#define ABILITY_FIRST_CUSTOM_ABILITY ABILITY_NORMALIZE
+#define NUM_ABILITIES 0x4E
+
+#define IS_CUSTOM_ABILITY(ability) ((u8)(ability) >= ABILITY_FIRST_CUSTOM_ABILITY)
 
 #endif

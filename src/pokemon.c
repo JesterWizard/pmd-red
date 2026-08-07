@@ -1,6 +1,7 @@
 #include "global.h"
 #include "globaldata.h"
 #include "pokemon.h"
+#include "constants/ability.h"
 #include "constants/colors.h"
 #include "constants/monster.h"
 #include "constants/tactic.h"
@@ -846,7 +847,11 @@ u8 GetPokemonType(s32 index, u32 typeIndex)
 
 u8 GetPokemonAbility(s16 index, u32 abilityIndex)
 {
-    return sMonsterParameters[index].abilities[abilityIndex];
+    u8 ability = sMonsterParameters[index].abilities[abilityIndex];
+
+    if (IS_CUSTOM_ABILITY(ability) && !gRuntimeConfig.custom_abilities)
+        return ABILITY_UNKNOWN;
+    return ability;
 }
 
 s16 GetDexInternalNo(s32 index, u32 r1)

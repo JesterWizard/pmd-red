@@ -383,7 +383,7 @@ static void ShowPokemonSummary(Pokemon *a0)
     winTemplates.id[0].type = WINDOW_TYPE_WITH_HEADER;
     winTemplates.id[0].pos.x = 2;
     winTemplates.id[0].pos.y = 2;
-    winTemplates.id[0].width = 18;
+    winTemplates.id[0].width = MON_SUMMARY_WINDOW_WIDTH;
     winTemplates.id[0].height = 14;
     winTemplates.id[0].totalHeight = 18;
     winTemplates.id[0].unk12 = 2;

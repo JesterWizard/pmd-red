@@ -15,6 +15,9 @@ enum MonSummarySubWindow
 
 #define MON_SUMMARY_UNK58_COUNT 12
 
+/* Tile width for Features/Stats/etc. summary boxes (PMD2-like; was vanilla 18) */
+#define MON_SUMMARY_WINDOW_WIDTH 20
+
 // Size: R=0x64 | B=?
 typedef struct MonSummaryInfo
 {

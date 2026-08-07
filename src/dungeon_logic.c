@@ -1277,6 +1277,10 @@ bool8 AbilityIsActive(Entity *pokemon, u8 ability)
     {
         return FALSE;
     }
+    if (IS_CUSTOM_ABILITY(ability) && !gRuntimeConfig.custom_abilities)
+    {
+        return FALSE;
+    }
     else
     {
         EntityInfo *pokemonInfo = GetEntInfo(pokemon);
@@ -1449,6 +1453,9 @@ bool8 CanSeeTeammate(Entity * pokemon)
 
 u8 GetMoveTypeForMonster(Entity *pokemon, Move *pokeMove)
 {
+    /* Normalize: all moves (incl. TYPE_NONE regular attack) become Normal */
+    if (AbilityIsActive(pokemon, ABILITY_NORMALIZE))
+        return TYPE_NORMAL;
     if (pokeMove->id == MOVE_HIDDEN_POWER)
         return GetEntInfo(pokemon)->hiddenPower.hiddenPowerType;
     else

@@ -645,7 +645,7 @@ void ShowDungeonSummaryOrIQMenu(ActionContainer *a0, bool8 showIq)
             [0] = {
                 .type = WINDOW_TYPE_WITH_HEADER,
                 .pos = { 2, 2 },
-                .width = 18,
+                .width = MON_SUMMARY_WINDOW_WIDTH,
                 .height = 14,
                 .totalHeight = 18,
                 .unk12 = 2,

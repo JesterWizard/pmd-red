@@ -15526,7 +15526,8 @@
         ],
         "friendArea": "FRIEND_AREA_ENERGETIC_FOREST",
         "abilities": [
-            "ABILITY_CUTE_CHARM"
+            "ABILITY_CUTE_CHARM",
+            "ABILITY_NORMALIZE"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -15569,7 +15570,8 @@
         ],
         "friendArea": "FRIEND_AREA_ENERGETIC_FOREST",
         "abilities": [
-            "ABILITY_CUTE_CHARM"
+            "ABILITY_CUTE_CHARM",
+            "ABILITY_NORMALIZE"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,

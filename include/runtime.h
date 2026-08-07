@@ -81,6 +81,8 @@ typedef struct {
     u8 evolution_stat_boost;
     /* Custom IQ skills (e.g. Conserver); else vanilla skill set only */
     u8 custom_iq_skills;
+    /* Custom abilities (ABILITY_FIRST_CUSTOM_ABILITY+); else vanilla set only */
+    u8 custom_abilities;
     /* Cheat: R+B in dungeon clears with success */
     u8 rb_complete_dungeon;
     /* Spinda's Café at Whiscash Pond (Juice Bar + Recycle Shop) */

@@ -5,7 +5,7 @@ static const WindowTemplate sSummaryWinTemplate =
     .flags = WINTEMPLATE_FLAG_NONE,
     .type = WINDOW_TYPE_WITH_HEADER,
     .pos = { .x = 2, .y = 2 },
-    .width = 18,
+    .width = MON_SUMMARY_WINDOW_WIDTH,
     .height = 14,
     .totalHeight = 18,
     .unk12 = 2,
