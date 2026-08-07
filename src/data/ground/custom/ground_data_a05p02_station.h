@@ -19,7 +19,7 @@ static const struct ScriptCommand s_gs176_g1_s0_station_sref_script[] = { /* 0x8
     DEBUGINFO_O(19),
     SELECT_MAP(MAP_NIGHT_SKY_2),
     SELECT_ENTITIES(-1, 0),
-    { 0x3b, 0x36,  0x0000, -0x00000002,  0x00000000, NULL },
+    SET_CAMERA_OFFSET(0, -2),
     FLASH_FROM(TRUE, PALUTIL_KIND_01, 30, RGB_U32(0xFF, 0xFF, 0xFF)),
     AWAIT_CUE(3),
     FLASH_TO(TRUE, PALUTIL_KIND_05, 120, RGB_U32(0xFF, 0xFF, 0xFF)),

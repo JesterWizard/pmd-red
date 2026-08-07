@@ -38,7 +38,7 @@ static const struct ScriptCommand s_gs6_g0_s0_station_sref_script[] = { /* 0x819
     RET,
   LABEL(4), /* = 0x04 */
     SET_DUNGEON_RES(/* result */ 0, /* enter */ -1),
-    { 0x3b, 0x0d,  0x0000,  0x00000000,  0x00000000, NULL },
+    CHECK_WONDER_MAIL_PENDING,
     COND_EQUAL(1, /* to label */ 8),
     EXECUTE_SUBSTATION(-1, 2, 0),
     RET,
@@ -195,7 +195,7 @@ static const struct ScriptCommand s_gs6_g2_s0_lives0_dlg0[] = { /* 0x81996f8 */
     WAIT(1),
     CALL_SCRIPT(WAIT_START_FUNC),
     SPECIAL_TEXT(SPECIAL_TEXT_DOJO_SUCCESS, 0, 0),
-    { 0x3b, 0x0e,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLAIM_NEXT_MAZE_PRESENT,
     COND_EQUAL(1, /* to label */ 0),
     COND_EQUAL(2, /* to label */ 0),
     COND_EQUAL(3, /* to label */ 0),

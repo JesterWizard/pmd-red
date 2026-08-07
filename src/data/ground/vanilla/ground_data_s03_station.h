@@ -38,7 +38,7 @@ static const struct ScriptCommand s_gs225_g1_s0_station_sref_script[] = { /* 0x8
     WAIT(20),
     ALERT_CUE(4),
     WAIT(40),
-    { 0x3b, 0x38,  0x0000,  0x00000001,  0x00000000, NULL },
+    REFRESH_MAP_CAMERA,
     AWAIT_CUE(3),
     FLASH_TO(TRUE, PALUTIL_KIND_01, 60, RGB_U32(0xFF, 0xFF, 0xFF)),
     { 0xe0, 0x00,  0x0028,  0x00000000,  0x00000000, NULL },

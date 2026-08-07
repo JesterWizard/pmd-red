@@ -1073,7 +1073,7 @@ static const struct ScriptCommand s_gs12_g12_s0_lives0_dlg0[] = { /* 0x81e5884 *
     ALERT_CUE(6),
     AWAIT_CUE(5),
     WAIT(30),
-    { 0x3b, 0x2c,  0x0000,  0x00000000,  0x00000000, NULL },
+    RECRUIT_OR_CLEAR_NEW_FRIEND(0),
     ALERT_CUE(3),
     HALT,
 };
@@ -1184,7 +1184,7 @@ static const struct ScriptCommand s_gs12_g13_s0_lives0_dlg0[] = { /* 0x81e6580 *
     FANFARE_PLAY(201),
     WAIT_FANFARE1(201),
     TEXTBOX_CLEAR2,
-    { 0x3b, 0x2e,  0x0000,  0x00000000,  0x00000000, NULL },
+    PERFORM_RANK_UP,
     COND_EQUAL(0, /* to label */ 2),
     AWAIT_CUE(0),
   LABEL(2), /* = 0x02 */
@@ -2456,13 +2456,13 @@ static const struct ScriptCommand s_gs12_g41_s0_lives0_dlg0[] = { /* 0x81eb830 *
 static const struct ScriptCommand s_gs12_g42_s0_station_sref_script[] = { /* 0x81eb8b0 */
     DEBUGINFO_O(2457),
     SELECT_MAP(MAP_TEAM_BASE_INSIDE),
-    { 0x3b, 0x48,  0x0002,  0x00000000,  0x00000000, NULL },
+    PLAY_CUTSCENE_EFFECT_30(2),
     SELECT_ENTITIES(-1, -1),
     FLASH_FROM(TRUE, PALUTIL_KIND_13, 60, RGB_U32(0x00, 0x00, 0x00)),
     AWAIT_CUE(3),
     FANFARE_FADEOUT2(90, 484),
     FLASH_TO(TRUE, PALUTIL_KIND_13, 60, RGB_U32(0x00, 0x00, 0x00)),
-    { 0x3b, 0x48,  0x0000,  0x00000000,  0x00000000, NULL },
+    PLAY_CUTSCENE_EFFECT_30(0),
     RET,
 };
 
@@ -2618,7 +2618,7 @@ static const struct ScriptCommand s_gs12_g45_s0_station_sref_script[] = { /* 0x8
     { 0x2d, 0x09,  0x0001,  0x00000022,  0x00000000, NULL },
     { 0x2d, 0x09,  0x0002,  0x00000037,  0x00000000, NULL },
     BGM_STOP,
-    { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(1),
     { 0x23, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     { 0x26, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     SELECT_MAP(MAP_TEAM_BASE_INSIDE),
@@ -2637,9 +2637,9 @@ static const struct ScriptCommand s_gs12_g45_s0_station_sref_script[] = { /* 0x8
     SELECT_ENTITIES(-1, -1),
     BGM_SWITCH(MUS_RESCUE_TEAM_BASE),
     { 0x22, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },
-    { 0x3b, 0x39,  0x0004,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(4),
     AWAIT_CUE(3),
-    { 0x3b, 0x3a,  0x0000,  0x00000000,  0x00000000, NULL },
+    APPLY_DEFAULT_PLACE_MODE,
     SELECT_ENTITIES(46, 0),
     RET,
 };

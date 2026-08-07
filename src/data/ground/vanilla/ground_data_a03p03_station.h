@@ -33,7 +33,7 @@ static const struct ScriptCommand s_gs170_g1_s0_lives0_dlg0[] = { /* 0x821d2f8 *
     DEBUGINFO_O(33),
     SELECT_ANIMATION(5),
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    { 0x3b, 0x36,  0x0004,  0x00000000,  0x00000000, NULL },
+    SET_CAMERA_OFFSET(4, 0),
     { 0xdf, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(30),
     WAIT(120),
@@ -81,7 +81,7 @@ static const struct ScriptCommand s_gs170_g1_s0_lives0_dlg0[] = { /* 0x821d2f8 *
   LABEL(3), /* = 0x03 */
     TEXTBOX_CLEAR,
     WAIT(10),
-    { 0x3b, 0x36,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_CAMERA_OFFSET(0, 0),
     SELECT_ANIMATION(2),
     ALERT_CUE(6),
     ROTATE_TO(4, DIR_TRANS_SPINRIGHT1, DIRECTION_SOUTHEAST),
@@ -115,7 +115,7 @@ static const struct ScriptCommand s_gs170_g1_s0_lives0_dlg0[] = { /* 0x821d2f8 *
   LABEL(4), /* = 0x04 */
     TEXTBOX_CLEAR,
     WAIT(10),
-    { 0x3b, 0x36,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_CAMERA_OFFSET(0, 0),
     SELECT_ANIMATION(2),
     ALERT_CUE(6),
     ROTATE_TO(4, DIR_TRANS_SPINRIGHT1, DIRECTION_SOUTHEAST),

@@ -117,7 +117,7 @@ static const struct ScriptCommand s_gs195_g0_s5_obj1_dlg2[] = { /* 0x82461b0 */
 static const struct ScriptCommand s_gs195_g1_s0_station_sref_script[] = { /* 0x82461d0 */
     DEBUGINFO_O(136),
     BGM_STOP,
-    { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(1),
     SELECT_MAP(195),
     SELECT_WEATHER(13),
     SELECT_ENTITIES(-1, 0),
@@ -144,7 +144,7 @@ static const struct ScriptCommand s_gs195_g1_s0_station_sref_script[] = { /* 0x8
     MSG_NPC(1, _(" ...I think...{WAIT_PRESS}\nThey're gone.")),
     TEXTBOX_CLEAR,
     BGM_SWITCH(MUS_MT_BLAZE),
-    { 0x3b, 0x3a,  0x0000,  0x00000000,  0x00000000, NULL },
+    APPLY_DEFAULT_PLACE_MODE,
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     ALERT_CUE(5),
     AWAIT_CUE(3),

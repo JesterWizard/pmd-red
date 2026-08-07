@@ -77,7 +77,7 @@ static const struct ScriptCommand s_gs166_g2_s0_station_sref_script[] = { /* 0x8
     SELECT_ENTITIES(-1, 0),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     AWAIT_CUE(3),
-    { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(1),
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     MSG_NPC(-1, _(" Look at them go!\nThey're running for Mt. Blaze!")),
     MSG_NPC(-1, _(" Are they insane?\nMt. Blaze is doomed desolation!")),
@@ -91,7 +91,7 @@ static const struct ScriptCommand s_gs166_g2_s0_station_sref_script[] = { /* 0x8
     TEXTBOX_CLEAR,
     BGM_FADEOUT(90),
     WAIT(120),
-    { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(0),
     RET,
 };
 

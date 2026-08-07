@@ -22,7 +22,7 @@ static const struct ScriptCommand s_gs200_g1_s0_station_sref_script[] = { /* 0x8
     BGM_SWITCH(MUS_IN_THE_DEPTHS_OF_THE_PIT),
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     AWAIT_CUE(3),
-    { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(1),
     { 0x23, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },
     BGM_FADEOUT(60),
     { 0x26, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -36,7 +36,7 @@ static const struct ScriptCommand s_gs200_g1_s0_station_sref_script[] = { /* 0x8
     WAIT(1),
     { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(120),
-    { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(0),
     RET,
 };
 
@@ -286,14 +286,14 @@ static const struct ScriptCommand s_gs200_g1_s0_lives0_dlg0[] = { /* 0x824fcb4 *
     MSG_INSTANT(_("{CENTER_ALIGN}{NAME_3} joined the team!")),
     WAIT_FANFARE1(204),
     TEXTBOX_CLEAR,
-    { 0x3b, 0x1a,  0x0000,  0x00000000,  0x00000000, NULL },
+    PREPARE_ABSOL_NAME,
     ASK1(FALSE, /*default*/ -1, /* speaker */ -1, _("Give a nickname to {NAME_3}?")),
     CHOICE(/* label */ 29, _("*Yes.")),
     CHOICE(/* label */ 30, _("No.")),
   LABEL(29), /* = 0x1d */
     RENAME_ALLY(-1),
   LABEL(30), /* = 0x1e */
-    { 0x3b, 0x1b,  0x0000,  0x00000000,  0x00000000, NULL },
+    RECRUIT_ABSOL,
     TEXTBOX_CLEAR,
     WAIT(30),
     ALERT_CUE(3),

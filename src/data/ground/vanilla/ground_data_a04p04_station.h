@@ -17,7 +17,7 @@ static const ScriptRef s_gs174_g0_s0_station_sref = { ENTER_CONTROL, SCRIPT_TYPE
 
 static const struct ScriptCommand s_gs174_g1_s0_station_sref_script[] = { /* 0x822a19c */
     DEBUGINFO_O(19),
-    { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(1),
     SELECT_MAP(174),
     SELECT_ENTITIES(-1, -1),
     BGM_STOP,
@@ -78,7 +78,7 @@ static const struct ScriptCommand s_gs174_g1_s0_lives0_dlg0[] = { /* 0x822a258 *
     ALERT_CUE(9),
     AWAIT_CUE(5),
     SELECT_ANIMATION(51),
-    { 0x3b, 0x36,  0x0004,  0x00000000,  0x00000000, NULL },
+    SET_CAMERA_OFFSET(4, 0),
     PORTRAIT(PLACEMENT_LEFT_BOTTOM_2, 0x0000, 0x00000005),
     MSG_QUIET(0, _("(............)")),
     MSG_QUIET(0, _("(Gengar is dragging me...)")),
@@ -91,7 +91,7 @@ static const struct ScriptCommand s_gs174_g1_s0_lives0_dlg0[] = { /* 0x822a258 *
     PORTRAIT(PLACEMENT_MIDRIGHT_TOP, 0x0004, 0x00000000),
     MSG_NPC(4, _(" ......")),
     MSG_NPC(4, _(" ............")),
-    { 0x3b, 0x36,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_CAMERA_OFFSET(0, 0),
     ALERT_CUE(9),
     AWAIT_CUE(5),
     SELECT_ANIMATION(52),

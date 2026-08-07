@@ -24,7 +24,7 @@ static const struct ScriptCommand s_gs206_g1_s0_station_sref_script[] = { /* 0x8
     AWAIT_CUE(3),
     FANFARE_FADEOUT2(60, 453),
     BGM_FADEOUT(60),
-    { 0x3b, 0x39,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(1),
     { 0x23, 0x01,  0x003c,  0x00000000,  0x00000000, NULL },
     { 0x97, 0x00,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(90),
@@ -38,7 +38,7 @@ static const struct ScriptCommand s_gs206_g1_s0_station_sref_script[] = { /* 0x8
     WAIT(1),
     { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(120),
-    { 0x3b, 0x39,  0x0000,  0x00000000,  0x00000000, NULL },
+    SET_PLACE_MODE(0),
     RET,
 };
 

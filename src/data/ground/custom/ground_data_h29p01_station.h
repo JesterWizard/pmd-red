@@ -20,9 +20,9 @@ static const struct ScriptCommand s_gs158_g0_s0_station_sref_script[] = { /* 0x8
     SELECT_ENTITIES(1, 0),
     JUMP_LABEL(4),
   LABEL(0), /* = 0x00 */
-    { 0x3b, 0x21,  0x0000,  0x00000000,  0x00000000, NULL },
+    CHECK_HAS_LEGENDARY_BIRDS,
     COND_EQUAL(0, /* to label */ 2),
-    { 0x3b, 0x22,  0x0000,  0x00000000,  0x00000000, NULL },
+    CHECK_LEADER_NOT_LEGENDARY_BIRD,
     COND_EQUAL(0, /* to label */ 2),
     JUMP_SCRIPT(EVENT_S02E02A_L002),
   LABEL(4), /* = 0x04 */

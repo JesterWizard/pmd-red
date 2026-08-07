@@ -40,7 +40,7 @@ static const struct ScriptCommand s_gs177_g1_s0_station_sref_script[] = { /* 0x8
     WAIT(1),
     { 0x25, 0x01,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(60),
-    { 0x3b, 0x09,  0x0000,  0x00000000,  0x00000000, NULL },
+    CHECK_CAN_CHANGE_LEADER,
     UPDATE_VARINT(CALC_SET, GROUND_PLACE, GROUND_PLACE_TEAM_BASE_INSIDE),
     ASK1(FALSE, /*default*/ -1, /* speaker */ -1, _("Would you like to save your adventure?")),
     CHOICE(/* label */  0, _("Yes.")),

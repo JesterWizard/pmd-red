@@ -392,7 +392,7 @@ static const struct ScriptCommand s_gs4_g1_s0_lives4_dlg2[] = { /* 0x818aecc */
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
     WAIT(1),
     JUMPIF_ARRAY(EVENT_T01P03, 2, /* to label */ 0),
-    { 0x3b, 0x35,  0x0000,  0x00000000,  0x00000000, NULL },
+    CHECK_CHANSEY_STATUS,
     COND_EQUAL(1, /* to label */ 1),
     COND_EQUAL(2, /* to label */ 2),
     MSG_NPC(1, _(" Oh, hello!\nDid you know?")),
@@ -430,7 +430,7 @@ static const struct ScriptCommand s_gs4_g1_s0_lives4_dlg3[] = { /* 0x818b4d4 */
     SELECT_ANIMATION(2),
     { 0x2d, 0x07,  0x0001,  0x00000000,  0x00000000, NULL },
     JUMPIF_ARRAY(EVENT_T01P03, 2, /* to label */ 1),
-    { 0x3b, 0x35,  0x0000,  0x00000000,  0x00000000, NULL },
+    CHECK_CHANSEY_STATUS,
     COND_EQUAL(1, /* to label */ 1),
     COND_EQUAL(2, /* to label */ 2),
   LABEL(1), /* = 0x01 */

@@ -65,7 +65,7 @@ static const struct ScriptCommand s_gs224_g3_s0_station_sref_script[] = { /* 0x8
     SELECT_ENTITIES(-1, 2),
     AWAIT_CUE(3),
     UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
-    { 0x3b, 0x40,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_GROUND_DEBUG_FLAG(1),
     WAIT(120),
     ALERT_CUE(4),
     { 0xe0, 0x00,  0x002b,  0x00000000,  0x00000000, NULL },

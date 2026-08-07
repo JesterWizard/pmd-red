@@ -144,7 +144,7 @@ static const struct ScriptCommand s_gs178_g1_s0_lives0_dlg0[] = { /* 0x822c5e4 -
     MSG_QUIET(0, _("(My name...?{WAIT_PRESS}\nThat's right, my name is...)")),
     TEXTBOX_CLEAR,
     WAIT(20),
-    { 0x3b, 0x16,  0x0000,  0x00000000,  0x00000000, NULL },
+    CLEAR_HERO_NAME,
     RENAME_ALLY(1),
     WAIT(20),
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },

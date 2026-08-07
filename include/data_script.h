@@ -182,17 +182,136 @@
 
 // TODO: CMD_BYTE_3A: yes/no choice (only used for saving)
 
-// Multi-purpose special process / conditional jump. kind selects the subroutine.
-// Return value can jump to a label (ResolveJump). Some kinds just run side effects.
-// k=0x30 checks if gardevoir has space to join by checking its friend area
-// k=0x31 names gardevoir?
-// k=0x32 tries to recruit Gardevoir
-// k=0x39 sets dual-screen place-name mode (see SET_PLACE_MODE)
-#define SPECIAL_PROCESS(kind, a)        { CMD_BYTE_3B, kind, a, 0, 0, NULL }
+// Multi-purpose special process / conditional jump. kind selects the subroutine in
+// sub_80A14E8(). Return value can jump to a label (ResolveJump). Some kinds only
+// run side effects (return 0). Prefer the named macros below over raw forms.
+#define SPECIAL_PROCESS_EX(kind, a, b)  { CMD_BYTE_3B, kind, a, b, 0, NULL }
+#define SPECIAL_PROCESS(kind, a)        SPECIAL_PROCESS_EX(kind, a, 0)
 
+/* --- SPECIAL_PROCESS kinds (CMD_BYTE_3B) --- */
+
+// Clear GROUND_LOCAL / EVENT_LOCAL / item script vars; rotate FLAG_KIND; tick EVENT_GONBE; refresh shops/jobs.
+#define CLEAR_LOCAL_SCRIPT_STATE        SPECIAL_PROCESS(0x01, 0)
+// Seed RNG if needed, init team from personality results, related setup (new-game path).
+#define INIT_TEAM_FROM_PERSONALITY      SPECIAL_PROCESS(0x02, 0)
+// Refresh Kecleon inventory, Pelipper jobs, related daily town services.
+#define REFRESH_TOWN_SERVICES           SPECIAL_PROCESS(0x03, 0)
+// Try to deliver a mailbox letter/job; returns 1 if something was delivered.
+#define CHECK_MAILBOX_DELIVERY          SPECIAL_PROCESS(0x04, 0)
+#define RESET_MAILBOX                   SPECIAL_PROCESS(0x05, 0)
+// Clear non-news mailbox slots and force the tutorial Pidgey rescue mail.
+#define SETUP_TUTORIAL_MAIL             SPECIAL_PROCESS(0x06, 0)
+// Advance/cleanup remaining mailbox slots (post-tutorial).
+#define ADVANCE_MAILBOX                 SPECIAL_PROCESS(0x07, 0)
+// Returns whether a specific mailbox condition/check succeeds.
+#define CHECK_MAILBOX_STATE             SPECIAL_PROCESS(0x08, 0)
+// Can the player change leader? (returns bool; refreshes party UI stub).
+#define CHECK_CAN_CHANGE_LEADER         SPECIAL_PROCESS(0x09, 0)
+// Show friend-area dungeon dialogue for the interacting friend; returns 1/2 on success.
+#define TRY_FRIEND_AREA_DIALOGUE        SPECIAL_PROCESS(0x0A, 0)
+// True if the current dungeon enter index has jobs.
+#define CHECK_DUNGEON_HAS_JOBS          SPECIAL_PROCESS(0x0B, 0)
+// True if the current SOS/rescue mail still allows rescues.
+#define CHECK_RESCUES_ALLOWED           SPECIAL_PROCESS(0x0C, 0)
+// True if a waiting Wonder Mail / related check passes.
+#define CHECK_WONDER_MAIL_PENDING       SPECIAL_PROCESS(0x0D, 0)
+// Mark next unclaimed maze present and return its index offset (or 0).
+#define CLAIM_NEXT_MAZE_PRESENT         SPECIAL_PROCESS(0x0E, 0)
+// Related mailbox/news readiness check.
+#define CHECK_MAILBOX_NEWS              SPECIAL_PROCESS(0x0F, 0)
+// True if the acting object can interact with the current friend live.
+#define CHECK_CAN_TALK_TO_FRIEND        SPECIAL_PROCESS(0x10, 0)
+// True if a partner mon exists for scripts.
+#define CHECK_HAS_PARTNER               SPECIAL_PROCESS(0x11, 0)
+// True while L or R is held.
+#define CHECK_LR_HELD                   SPECIAL_PROCESS(0x12, 0)
+// True if ally `id` is currently on the team.
+#define CHECK_ALLY_ON_TEAM(id)          SPECIAL_PROCESS(0x13, id)
+// True if the acting live can move.
+#define CHECK_ACTOR_CAN_MOVE            SPECIAL_PROCESS(0x14, 0)
+// True if actor is within `dist` tiles of ally index `ally`.
+#define CHECK_NEAR_ALLY(ally, dist)     SPECIAL_PROCESS_EX(0x15, ally, dist)
+// Zero the hero's nickname (ally id 1) so RENAME_ALLY starts blank.
+#define CLEAR_HERO_NAME                 SPECIAL_PROCESS(0x16, 0)
+// Unlock Wild Plains + Mist-Rise Forest (early friend areas).
+#define UNLOCK_STARTER_FRIEND_AREAS     SPECIAL_PROCESS(0x17, 0)
+// Copy Magnemite display/story name into the poke-name buffer.
+#define PREPARE_MAGNEMITE_NAME          SPECIAL_PROCESS(0x18, 0)
+// Recruit story Magnemite; `nameBuf` is gFormatBuffer_Names index. Returns 1 on failure.
+#define RECRUIT_MAGNEMITE(nameBuf)      SPECIAL_PROCESS(0x19, nameBuf)
+#define PREPARE_ABSOL_NAME              SPECIAL_PROCESS(0x1A, 0)
+#define RECRUIT_ABSOL                   SPECIAL_PROCESS(0x1B, 0)
+#define PUT_ABSOL_ON_TEAM               SPECIAL_PROCESS(0x1C, 0)
+// Returns 1 if Smeargle cannot join (friend area full / blocked).
+#define CHECK_SMEARGLE_JOIN_BLOCKED     SPECIAL_PROCESS(0x1D, 0)
+#define PREPARE_SMEARGLE_NAME           SPECIAL_PROCESS(0x1E, 0)
+#define RECRUIT_SMEARGLE(nameBuf)       SPECIAL_PROCESS(0x1F, nameBuf)
+// Unlock Legendary Island and add missing legendary birds if needed.
+#define UNLOCK_LEGENDARY_BIRDS          SPECIAL_PROCESS(0x20, 0)
+#define CHECK_HAS_LEGENDARY_BIRDS       SPECIAL_PROCESS(0x21, 0)
+// Returns 1 if the leader is not one of the legendary birds.
+#define CHECK_LEADER_NOT_LEGENDARY_BIRD SPECIAL_PROCESS(0x22, 0)
+// 2 if leader is Ho-Oh, 1 if Ho-Oh has been seen, else 0.
+#define CHECK_HO_OH_STATUS              SPECIAL_PROCESS(0x23, 0)
+#define PREPARE_LATIOS_NAME             SPECIAL_PROCESS(0x24, 0)
+#define RECRUIT_LATIOS                  SPECIAL_PROCESS(0x25, 0)
+#define PREPARE_LATIAS_NAME             SPECIAL_PROCESS(0x26, 0)
+#define RECRUIT_LATIAS                  SPECIAL_PROCESS(0x27, 0)
+#define GIVE_WISH_STONE                 SPECIAL_PROCESS(0x28, 0)
+// Pick a random recruitable species into NEW_FRIEND_KIND; returns area state.
+#define PICK_RANDOM_NEW_FRIEND          SPECIAL_PROCESS(0x29, 0)
+// Inspect NEW_FRIEND_KIND friend-area state (0/1/2).
+#define CHECK_NEW_FRIEND_AREA           SPECIAL_PROCESS(0x2A, 0)
+#define PREPARE_NEW_FRIEND_NAME         SPECIAL_PROCESS(0x2B, 0)
+// doRecruit!=0 recruits NEW_FRIEND_KIND; 0 clears NEW_FRIEND_KIND.
+#define RECRUIT_OR_CLEAR_NEW_FRIEND(doRecruit) SPECIAL_PROCESS(0x2C, doRecruit)
+#define CHECK_RANK_CAN_INCREASE         SPECIAL_PROCESS(0x2D, 0)
+// Spend points to raise rescue rank and show the rank-up message.
+#define PERFORM_RANK_UP                 SPECIAL_PROCESS(0x2E, 0)
+#define GIVE_TEAM_MONEY_10000           SPECIAL_PROCESS(0x2F, 0)
+// Returns 1 if Gardevoir cannot join (no friend-area space).
+#define CHECK_GARDEVOIR_JOIN_BLOCKED    SPECIAL_PROCESS(0x30, 0)
+#define PREPARE_GARDEVOIR_NAME          SPECIAL_PROCESS(0x31, 0)
+#define RECRUIT_GARDEVOIR               SPECIAL_PROCESS(0x32, 0)
+// Maybe start the Spinda “Gonbe” side event; returns 1 if it triggered.
+#define TRY_TRIGGER_GONBE_EVENT         SPECIAL_PROCESS(0x33, 0)
+#define GIVE_THREE_APPLES               SPECIAL_PROCESS(0x34, 0)
+// 2 if leader is Chansey, 1 if Chansey seen, else 0.
+#define CHECK_CHANSEY_STATUS            SPECIAL_PROCESS(0x35, 0)
+// Set map camera offset (pixel units stored as raw script ints).
+#define SET_CAMERA_OFFSET(x, y)         SPECIAL_PROCESS_EX(0x36, x, y)
+#define SET_CAMERA_TARGET_OFFSET(x, y)  SPECIAL_PROCESS_EX(0x37, x, y)
+// Nudge/refresh ground map camera layer params.
+#define REFRESH_MAP_CAMERA              SPECIAL_PROCESS(0x38, 0)
 // Dual-screen place-name display mode (stubbed / no visible effect on GBA).
 // Common values: 1 = suppress for cutscenes, 4 = normal/enabled.
 #define SET_PLACE_MODE(mode)            SPECIAL_PROCESS(0x39, mode)
+// Apply default place-mode from game options / dungeon context.
+#define APPLY_DEFAULT_PLACE_MODE        SPECIAL_PROCESS(0x3A, 0)
+#define CLEAR_PLACE_MODE                SPECIAL_PROCESS(0x3B, 0)
+// Cancel movement on all lives/objects/effects (freeze scene actors).
+#define FREEZE_ALL_ACTORS               SPECIAL_PROCESS(0x3C, 0)
+#define SET_DEBUG_CAMERA_POS(x, y)      SPECIAL_PROCESS_EX(0x3D, x, y)
+// Spawn the debug camera effect attached to the current actor.
+#define SPAWN_DEBUG_CAMERA              SPECIAL_PROCESS(0x3E, 0)
+// Debug free-cam control loop; returns -1 while active.
+#define RUN_DEBUG_CAMERA_CONTROL        SPECIAL_PROCESS(0x3F, 0)
+// Enable/disable a ground-main debug/presentation flag.
+#define SET_GROUND_DEBUG_FLAG(on)       SPECIAL_PROCESS(0x40, on)
+// Request returning to the title/menu with a music fade of `frames`.
+#define REQUEST_GAME_END(frames)        SPECIAL_PROCESS(0x41, frames)
+// Same as REQUEST_GAME_END but also forces script-var init via sub_8011C28.
+#define REQUEST_GAME_END_RESET(frames)  SPECIAL_PROCESS(0x42, frames)
+// Remember current BGM so it can be restored; returns 1 if song was playing.
+#define SAVE_CURRENT_BGM                SPECIAL_PROCESS(0x43, 0)
+#define RESTORE_SAVED_BGM               SPECIAL_PROCESS(0x44, 0)
+#define FADE_IN_SAVED_BGM(frames)       SPECIAL_PROCESS(0x45, frames)
+#define QUEUE_SAVED_BGM                 SPECIAL_PROCESS(0x46, 0)
+#define PLAY_CUTSCENE_EFFECT(a, b)      SPECIAL_PROCESS_EX(0x47, a, b)
+// Play cutscene effect variant with fixed first arg 30.
+#define PLAY_CUTSCENE_EFFECT_30(a)      SPECIAL_PROCESS(0x48, a)
+#define EXTEND_SPRITE_PALETTE(id)       SPECIAL_PROCESS(0x49, id)
+#define CLEAR_EXTENDED_SPRITE_PALETTE   SPECIAL_PROCESS(0x4A, 0)
 
 // k: See enum "SpecialTextKind"
 // i: ???

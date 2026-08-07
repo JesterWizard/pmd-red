@@ -25,7 +25,7 @@ static const struct ScriptCommand s_gs227_g1_s0_station_sref_script[] = { /* 0x8
     { 0x22, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     WAIT(180),
     ALERT_CUE(4),
-    { 0x3b, 0x40,  0x0001,  0x00000000,  0x00000000, NULL },
+    SET_GROUND_DEBUG_FLAG(1),
     WAIT(3600),
     { 0x23, 0x01,  0x001e,  0x00000000,  0x00000000, NULL },
     RET,

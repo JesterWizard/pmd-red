@@ -16,7 +16,7 @@ static const struct ScriptCommand s_gs202_g0_s0_station_sref_script[] = { /* 0x8
   LABEL(0), /* = 0x00 */
     UPDATE_VARINT(CALC_SET, PARTNER1_KIND, 2),
     UPDATE_VARINT(CALC_SET, PARTNER2_KIND, 0),
-    { 0x3b, 0x1c,  0x0000,  0x00000000,  0x00000000, NULL },
+    PUT_ABSOL_ON_TEAM,
     CALL_STATION(  2,  0),
     JUMP_LABEL(2),
   LABEL(1), /* = 0x01 */
@@ -156,7 +156,7 @@ static const struct ScriptCommand s_gs202_g1_s0_station_sref_script[] = { /* 0x8
     JUMPIF_EQUAL(SCENARIO_MAIN, 14, /* to label */ 0),
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
-    { 0x3b, 0x1c,  0x0000,  0x00000000,  0x00000000, NULL },
+    PUT_ABSOL_ON_TEAM,
   LABEL(1), /* = 0x01 */
     SELECT_MAP(MAP_MT_FREEZE_MID),
     CALL_STATION(  2,  0),
