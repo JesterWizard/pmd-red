@@ -25,6 +25,7 @@
 #include "dungeon_logic.h"
 #include "dungeon_range.h"
 #include "dungeon_util.h"
+#include "dungeon_hp_bars.h"
 #include "dungeon_pokemon_sprites.h"
 #include "custom_graphics.h"
 #include "menu_input.h"
@@ -410,6 +411,8 @@ void sub_803E874(bool8 r10, s32 r9)
         color++;
         index++;
     }
+
+    ApplyDungeonHpBarPalette();
 }
 
 void BgColorCallNullsub4(void)

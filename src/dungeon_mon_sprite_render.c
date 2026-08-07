@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "dungeon_hp_bars.h"
 #include "dungeon_mon_sprite_render.h"
 #include "constants/direction.h"
 #include "constants/status.h"
@@ -301,6 +302,9 @@ void UpdateMonsterSprite(Entity *entity)
             AddSprite(&spriteStructPtr->sprite, 0, NULL, NULL);
         }
     }
+
+    if (entInfo->unkFF != 2)
+        DrawDungeonHpBar(entity, x, y, y2 + 1, gDungeon->unk181e8.priority);
 }
 
 void sub_806CC10(void)

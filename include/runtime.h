@@ -91,6 +91,8 @@ typedef struct {
     u8 infinite_tms;
     /* Gen4+ move-based Physical/Special split (else vanilla type-based) */
     u8 physical_special_split;
+    /* Floating HP bars above Pokémon visible in the dungeon */
+    u8 dungeon_hp_bars;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

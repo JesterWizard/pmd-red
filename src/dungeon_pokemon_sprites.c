@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "dungeon_hp_bars.h"
 #include "dungeon_pokemon_sprites.h"
 #include "structs/sprite_oam.h"
 #include "graphics_memory.h"
@@ -379,6 +380,7 @@ void InitDungeonPokemonSprites(void)
     LoadStatusGraphics(STATUS_GFX_EYEDROPS,FALSE);
     LoadStatusGraphics(STATUS_GFX_MUZZLED,FALSE);
     LoadStatusGraphics(STATUS_GFX_SLEEP,FALSE);
+    LoadDungeonHpBarGraphics();
 }
 
 void FreeDungeonPokemonSprites(void)
