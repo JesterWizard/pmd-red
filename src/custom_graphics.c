@@ -19,8 +19,12 @@ static const RGB_Struct sItemPinkColor = {
     ITEM_PINK_R, ITEM_PINK_G, ITEM_PINK_B, 0x80
 }; /* must match palette_owners.h / check_palette_owners.py */
 
+/* Slot 0 = BG transparent. Slot 1 = menu window fill (copied from fontpal at load). */
+#define POKE_COIN_SLOT_WINDOW_FILL 1
+
 static const RGB_Struct sPokeCoinTownPal[16] = {
     [POKE_COIN_SLOT_TRANSPARENT] = {   0,   0,   0, 0x80 },
+    [POKE_COIN_SLOT_WINDOW_FILL] = {  39,  79, 111, 0x80 }, /* placeholder; replaced at load */
     [POKE_COIN_SLOT_WHITE] = { 255, 255, 255, 0x80 },
     [POKE_COIN_SLOT_PALE] = { 255, 255, 115, 0x80 },
     [POKE_COIN_SLOT_YELLOW] = { 247, 206,   0, 0x80 },
@@ -33,17 +37,8 @@ static const RGB_Struct sPokeCoinYellow = { 247, 206,   0, 0x80 };
 static const RGB_Struct sPokeCoinMid = { 222, 173,   0, 0x80 };
 static const RGB_Struct sPokeCoinDark = { 165, 115,   0, 0x80 };
 
-/* 16×16 from poke_coin.png — black (#000000) is index 0; full gold indices. */
-static const u32 sPokeCoinTiles[32] = {
-    0xA9977700, 0xAAA99770, 0xACCCCC77, 0xCBAABC97,
-    0xBBAABCA7, 0xABCCBCA9, 0xAAAABCAA, 0x9AAABCAB,
-    0x00000000, 0x0000000A, 0x000000AA, 0x0000009A,
-    0x0000009A, 0x0000009A, 0x00000079, 0x000000C7,
-    0x7999AAB0, 0xCCCCCC00, 0x00000000, 0x00000000,
-    0x00000000, 0x00000000, 0x00000000, 0x00000000,
-    0x0000000C, 0x00000000, 0x00000000, 0x00000000,
-    0x00000000, 0x00000000, 0x00000000, 0x00000000,
-};
+/* 16×16 from poke_coin.png — built by tools/convert_poke_coin.py (town slots). */
+static const u32 sPokeCoinTiles[32] = INCBIN_U32("graphics/custom/poke_coin.4bpp");
 
 static EWRAM_DATA u32 sPokeCoinBlitBuf[32] = {0};
 
@@ -65,7 +60,7 @@ static const u16 sPokeCoinGlyphDummy[] = {
 static const unkChar sPokeCoinLeft = {
     .unk0 = sPokeCoinGlyphDummy,
     .unk4 = POKE_COIN_CHR_LEFT,
-    .width = 16,
+    .width = POKE_COIN_ART_WIDTH,
     .unk8 = 0,
     .fill9 = 0,
     .unkA = 1,
@@ -266,6 +261,7 @@ static void LoadPokeCoinPalette(void)
 {
     s32 i;
     s32 base;
+    const RGB_Struct *fill;
 
     if (gUnknown_203B40C) {
         /* Full 4 golds into trappat bank slots 8–11 only (stairs use 1–7,15). */
@@ -278,6 +274,13 @@ static void LoadPokeCoinPalette(void)
     else {
         for (i = 0; i < 16; i++)
             SetBGPaletteBufferColorArray(POKE_COIN_PAL_BANK_TOWN * 16 + i, &sPokeCoinTownPal[i]);
+        /* Slot 1 mirrors font window fill so merged menu pixels stay blue. */
+        if (sub_80063B0() == 1)
+            fill = &gFontPalette[POKE_COIN_SLOT_WINDOW_FILL];
+        else
+            fill = &gFontPalette[16 + POKE_COIN_SLOT_WINDOW_FILL];
+        SetBGPaletteBufferColorArray(
+            POKE_COIN_PAL_BANK_TOWN * 16 + POKE_COIN_SLOT_WINDOW_FILL, fill);
     }
 }
 
@@ -344,14 +347,7 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
 
     if (!gRuntimeConfig.custom_graphics)
         return NULL;
-    if (ox < 0)
-        ox = 0;
-    if (oy < 0)
-        oy = 0;
-    if (ox > 6)
-        ox = 6;
-    if (oy > 6)
-        oy = 6;
+    /* ox/oy may be negative (shift art up/left within the 16×16). */
 
     if (baseTiles != NULL) {
         const u32 *p = baseTiles;
@@ -361,8 +357,14 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
             for (tx = 0; tx < 2; tx++) {
                 for (row = 0; row < 8; row++) {
                     u32 word = *p++;
-                    for (col = 0; col < 8; col++)
-                        dst[ty * 8 + row][tx * 8 + col] = (word >> (col * 4)) & 0xF;
+                    for (col = 0; col < 8; col++) {
+                        u8 pix = (word >> (col * 4)) & 0xF;
+                        /* Keep transparent + menu fill only; drop foreign glyph
+                         * indices that would read as garbage under bank 12. */
+                        if (pix != 0 && (gUnknown_203B40C || pix != POKE_COIN_SLOT_WINDOW_FILL))
+                            pix = 0;
+                        dst[ty * 8 + row][tx * 8 + col] = pix;
+                    }
                 }
             }
         }
@@ -378,8 +380,11 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
     for (y = 0; y < 16; y++) {
         for (x = 0; x < 16; x++) {
             u8 p = src[y][x];
-            if (p != 0 && (y + oy) < 16 && (x + ox) < 16)
-                dst[y + oy][x + ox] = RemapCoinPixelForBank(p);
+            s32 dx = x + ox;
+            s32 dy = y + oy;
+
+            if (p != 0 && dx >= 0 && dx < 16 && dy >= 0 && dy < 16)
+                dst[dy][dx] = RemapCoinPixelForBank(p);
         }
     }
     PackCoinBlit(dst);

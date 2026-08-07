@@ -5,6 +5,7 @@
 #include "text_1.h"
 #include "text_2.h"
 #include "custom_graphics.h"
+#include "dungeon_vram.h"
 #include "pmd2_font.h"
 
 static void AddUnderScoreHighlightInternal(Window *windows, u32 windowId, s32 x, s32 y, s32 width, u32 color);
@@ -59,33 +60,19 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
             return 0;
 
         {
-            s32 alignedX = (x + 7) & ~7;
-            s32 alignedY = y & ~7;
-            /* Nudge art 4px left / 1px up vs the tile-aligned block. */
-            s32 blitX = alignedX - 8;
-            s32 blitY = alignedY;
-            s32 ox = 4; /* 8 - 4 */
-            s32 oy = (y - alignedY) - 1;
+            /* Ceil X to the next tile — the 16×16 write must not cover digits
+             * (bank-12 palette would glitch them). Art is left-aligned in the
+             * .4bpp so the coin starts at blitX; use oy only for vertical.
+             * Offsets: include/custom_graphics.h */
+            s32 blitX = (x + 7) & ~7;
+            s32 blitY = y & ~7;
+            s32 ox = gUnknown_203B40C ? POKE_COIN_OX_DUNGEON : POKE_COIN_OX_TOWN;
+            s32 oy = gUnknown_203B40C ? POKE_COIN_OY_DUNGEON : POKE_COIN_OY_TOWN;
             u32 baseTiles[32];
             const u32 *coinTiles;
             Window *win = window;
             s32 tileX, tileY, ty, tx, row;
             bool8 haveBase = FALSE;
-
-            if (blitX < 0) {
-                blitX = 0;
-                ox = alignedX - 4;
-                if (ox < 0)
-                    ox = 0;
-            }
-            if (oy < 0) {
-                blitY -= 8;
-                oy += 8;
-                if (blitY < 0) {
-                    blitY = 0;
-                    oy = 0;
-                }
-            }
 
             tileX = blitX / 8;
             tileY = blitY / 8;
@@ -108,7 +95,8 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
                 WriteGFXToBG0Window(windowId, blitX, blitY, POKE_COIN_SIZE, POKE_COIN_SIZE,
                                     (u32 *)coinTiles, GetPokeCoinPalBank());
                 gUnknown_20274A5 = TRUE;
-                return (blitX + POKE_COIN_SIZE) - x + gCharacterSpacing;
+                /* Advance by visible art, not the full 16×16 pad on the right. */
+                return (blitX - x) + POKE_COIN_ART_WIDTH + gCharacterSpacing;
             }
         }
     }

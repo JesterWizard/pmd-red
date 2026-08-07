@@ -7,6 +7,17 @@
 #define POKE_COIN_CHR_LEFT 0x83BF
 #define POKE_COIN_CHR_RIGHT 0x83C4
 #define POKE_COIN_SIZE 16
+/* Opaque art width after convert_poke_coin.py left-align (10×10 in 16×16). */
+#define POKE_COIN_ART_WIDTH 12
+
+/* Horizontal: keep ox at 0 — blitX is ceiled so the 16×16 never overlaps
+ * digits; left-aligned art means the coin sits at the left of that block.
+ * Large ox clips the coin (art is ~10px; ox+10 must be ≤ 16).
+ * Vertical: tune town vs dungeon separately (money y: town 18, dungeon 12). */
+#define POKE_COIN_OX_TOWN 0
+#define POKE_COIN_OY_TOWN (-2)
+#define POKE_COIN_OX_DUNGEON 0
+#define POKE_COIN_OY_DUNGEON 0
 
 /* Half {STAR_BULLET} for move Power rows (full stars use vanilla STAR_BULLET). */
 #define POWER_STAR_HALF_CHR 0x8754
