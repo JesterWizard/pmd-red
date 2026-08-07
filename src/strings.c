@@ -337,6 +337,9 @@ const u8 *const gRangeNames[49] = {
 
 const u8 *const gUnknown_810CF00 = _("Range{MOVE_X_POSITION_BY_64}{POKEMON_0} ");
 const u8 *const gTextType = _("Type");
+const u8 *const gTextStat = _("Stat");
+const u8 *const gTextPhysical = _("Physical");
+const u8 *const gTextSpecial = _("Special");
 const u8 *const gTextPower = _("Power");
 const u8 *const gStatusNames[89] = {
     [0] = _("-"),

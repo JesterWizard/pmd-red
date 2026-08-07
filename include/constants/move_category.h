@@ -1,0 +1,9 @@
+#ifndef GUARD_CONSTANTS_MOVE_CATEGORY_H
+#define GUARD_CONSTANTS_MOVE_CATEGORY_H
+
+/* PMD2 / Gen4 move damage category (MoveDataEntry.category) */
+#define CATEGORY_PHYSICAL 0
+#define CATEGORY_SPECIAL 1
+#define CATEGORY_STATUS 2
+
+#endif /* GUARD_CONSTANTS_MOVE_CATEGORY_H */

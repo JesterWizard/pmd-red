@@ -7,10 +7,19 @@
 #include "memory.h"
 #include "menu_input.h"
 #include "moves.h"
+#include "runtime.h"
 #include "sprite.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
+
+static void AdjustMoveInfoWindowHeight(WindowTemplate *win)
+{
+    if (gRuntimeConfig.physical_special_split) {
+        win->height += 2;
+        win->totalHeight += 2;
+    }
+}
 
 // TODO: UNIFY WITH MenuWindow
 struct unkStruct_203B278
@@ -56,6 +65,7 @@ bool8 sub_801F808(u16 *moveIDs)
     gUnknown_203B278->unk5C = 0;
     gUnknown_203B278->unk60 = &gUnknown_203B278->windows.id[0];
     sub_80140B4(&gUnknown_203B278->windows);
+    AdjustMoveInfoWindowHeight(&gUnknown_203B278->windows.id[0]);
     ResetUnusedInputStruct();
     ShowWindows(&gUnknown_203B278->windows, TRUE, TRUE);
     gUnknown_203B278->moveIDs = moveIDs;
@@ -110,6 +120,7 @@ static void sub_801F918(s32 newState)
 static void sub_801F930(void)
 {
     sub_80140B4(&gUnknown_203B278->windows);
+    AdjustMoveInfoWindowHeight(&gUnknown_203B278->windows.id[0]);
     switch(gUnknown_203B278->state)
     {
         case 0:

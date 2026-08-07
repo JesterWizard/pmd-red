@@ -27,6 +27,7 @@
 #include "move_util.h"
 #include "music.h"
 #include "pokemon.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -593,6 +594,10 @@ static void ShowMovesInfoWindow(Move *moves, s32 firstMoveId, s32 movesCount)
 
     sub_80140B4(&windows);
     windows.id[0].header = &header;
+    if (gRuntimeConfig.physical_special_split) {
+        windows.id[0].height += 2;
+        windows.id[0].totalHeight += 2;
+    }
 
     count = 1;
     for (i = firstMoveId + 1; i < movesCount; i++) {

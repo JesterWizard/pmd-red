@@ -811,8 +811,7 @@ s32 GetAccuracyPercent(Entity *attacker, Entity *target, Move *move, s32 accurac
         statStageEvasion += 2;
     }
     if (AbilityIsActive(attacker, ABILITY_HUSTLE)) {
-        bool32 specialMove = (IsTypePhysical(GetMoveType(move)) == FALSE);
-        if (!specialMove) {
+        if (IsMovePhysical(move->id, GetMoveType(move))) {
             statStageEvasion += 2;
         }
     }

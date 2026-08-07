@@ -7,6 +7,7 @@
 #include "status_strings.h"
 #include "def_filearchives.h"
 #include "memory.h"
+#include "constants/move_category.h"
 #include "moves.h"
 #include "runtime.h"
 #include "string_format.h"
@@ -150,6 +151,20 @@ s16 GetMoveTargetAndRange(Move *move, bool32 isAI)
 u8 GetMoveType(Move *move)
 {
     return sMovesData[move->id].type;
+}
+
+u8 GetMoveCategory(u16 moveID)
+{
+    if (moveID >= NUM_REGULAR_MOVE_IDS)
+        return CATEGORY_STATUS;
+    return sMovesData[moveID].category;
+}
+
+bool8 IsMovePhysical(u16 moveID, u8 moveType)
+{
+    if (gRuntimeConfig.physical_special_split)
+        return GetMoveCategory(moveID) == CATEGORY_PHYSICAL;
+    return IsTypePhysical(moveType);
 }
 
 static const u8 gDummyMoves[] = {0};
@@ -1374,6 +1389,18 @@ static void unk_MovePrintData(Move *move, s32 y)
     type = GetMoveType(move);
     text = GetUnformattedTypeString(type);
     PrintFormattedStringOnWindow(64, 86, text, y, 0);
+    if (gRuntimeConfig.physical_special_split) {
+        u8 category = GetMoveCategory(move->id);
+
+        PrintFormattedStringOnWindow(4, 98, gTextStat, y, 0);
+        if (category == CATEGORY_PHYSICAL)
+            text = gTextPhysical;
+        else if (category == CATEGORY_SPECIAL)
+            text = gTextSpecial;
+        else
+            text = gUnknown_810DD58; /* "Status" */
+        PrintFormattedStringOnWindow(64, 98, text, y, 0);
+    }
     power = GetMoveBasePower(move);
     gFormatArgs[0] = power;
 }

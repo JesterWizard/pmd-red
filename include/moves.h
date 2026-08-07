@@ -59,6 +59,9 @@ u32 GetMoveNumberOfChainedHits(Move *move);
 s16 GetMoveTargetAndRange(Move *move, bool32 isAI);
 u8 *GetMoveUseText(u16 moveID);
 u8 GetMoveType(Move *move);
+u8 GetMoveCategory(u16 moveID);
+/* Physical check: move category when physical_special_split, else type-based */
+bool8 IsMovePhysical(u16 moveID, u8 moveType);
 void InitPokemonMove(Move *move, u16 moveID);
 void InitZeroedPPPokemonMove(Move *move, u16 moveID);
 bool8 IsAnyMoveLinked(s32 unused, Move *moves);

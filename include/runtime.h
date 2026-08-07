@@ -89,6 +89,8 @@ typedef struct {
     u8 perpetual_gummis;
     /* TMs stay usable after teaching (else convert to Used TM) */
     u8 infinite_tms;
+    /* Gen4+ move-based Physical/Special split (else vanilla type-based) */
+    u8 physical_special_split;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

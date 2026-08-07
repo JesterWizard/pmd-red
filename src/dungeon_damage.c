@@ -101,7 +101,7 @@ void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageSt
     if (r9
         && abs(attacker->pos.x - target->pos.x) <= 1 && abs(attacker->pos.y - target->pos.y) <= 1
         && attacker != target
-        && IsTypePhysical(dmgStruct->type)
+        && dmgStruct->isPhysical
         && GetEntInfo(target)->reflectClassStatus.status == STATUS_VITAL_THROW)
     {
         sub_8042730(target, attacker);
@@ -119,7 +119,7 @@ void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageSt
         && attacker != target
         && abs(attacker->pos.x - target->pos.x) <= 1 && abs(attacker->pos.y - target->pos.y) <= 1)
     {
-        bool32 isPhysical = IsTypePhysical(dmgStruct->type);
+        bool32 isPhysical = dmgStruct->isPhysical;
         if (GetEntInfo(target)->reflectClassStatus.status == STATUS_COUNTER && isPhysical) {
             sub_8041B18(target);
             returnDmg += 4;
@@ -154,6 +154,7 @@ void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageSt
             sp.isCrit = FALSE;
             sp.unkE = 0;
             sp.tookNoDamage = FALSE;
+            sp.isPhysical = dmgStruct->isPhysical;
             HandleDealingDamageInternal_Async(target, attacker, &sp, FALSE, giveExp, dungeonExitReason, argC);
         }
     }
@@ -165,7 +166,7 @@ void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageSt
         && attacker != target
         && abs(attacker->pos.x - target->pos.x) <= 1 && abs(attacker->pos.y - target->pos.y) <= 1)
     {
-        bool32 isPhysical = IsTypePhysical(dmgStruct->type);
+        bool32 isPhysical = dmgStruct->isPhysical;
         EntityInfo *attackerInfo = GetEntInfo(attacker);
 
         if (AbilityIsActive(target, ABILITY_ARENA_TRAP)
@@ -1077,14 +1078,13 @@ s32 WeightWeakTypePicker(Entity *user, Entity *target, u8 moveType)
     return weight + 2;
 }
 
-static void ApplyAtkDefStatBoosts(Entity *attacker, Entity *target, u8 moveType, s32 *atkStat, s32 *defStat, s32 rand)
+static void ApplyAtkDefStatBoosts(Entity *attacker, Entity *target, s32 splitIndex, s32 *atkStat, s32 *defStat, s32 rand)
 {
     bool32 isNotEnemy;
     s32 atkMultiplier = 1;
     s32 atkDivisor = 1;
     s32 defMultiplier = 1;
     s32 defDivisor = 1;
-    s32 splitIndex = (!IsTypePhysical(moveType)) ? 1 : 0;
 
     if (AbilityIsActive(attacker, ABILITY_GUTS)) {
         EntityInfo *entInfo = GetEntInfo(attacker);
@@ -1166,7 +1166,7 @@ static void ApplyAtkDefStatBoosts(Entity *attacker, Entity *target, u8 moveType,
     }
 }
 
-static inline void SetDamageOne(struct DamageStruct *dmgStruct, u8 moveType)
+static inline void SetDamageOne(struct DamageStruct *dmgStruct, u8 moveType, bool8 isPhysical)
 {
     dmgStruct->dmg = 1;
     dmgStruct->residualDmgType = RESIDUAL_DAMAGE_REGULAR;
@@ -1175,20 +1175,22 @@ static inline void SetDamageOne(struct DamageStruct *dmgStruct, u8 moveType)
     dmgStruct->isCrit = FALSE;
     dmgStruct->unkE = 0;
     dmgStruct->tookNoDamage = FALSE;
+    dmgStruct->isPhysical = isPhysical;
 }
 
 void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s32 critChance, struct DamageStruct *dmgStruct, s24_8 arg8, u16 moveId, bool8 arg_10)
 {
     EntityInfo *attackerInfo = GetEntInfo(attacker);
     EntityInfo *targetInfo = GetEntInfo(target);
-    s32 splitIndex = (!IsTypePhysical(moveType)) ? 1 : 0;
+    bool8 isPhysical = IsMovePhysical(moveId, moveType);
+    s32 splitIndex = isPhysical ? 0 : 1;
 
     sub_806F500();
     if (!attackerInfo->isTeamLeader && FixedPointToInt(attackerInfo->belly) == 0) {
-        SetDamageOne(dmgStruct, moveType);
+        SetDamageOne(dmgStruct, moveType, isPhysical);
     }
     else if (moveId == MOVE_REGULAR_ATTACK && AbilityIsActive(target, ABILITY_WONDER_GUARD)) {
-        SetDamageOne(dmgStruct, moveType);
+        SetDamageOne(dmgStruct, moveType, isPhysical);
     }
     else {
         s32 atkStatStage, defStatStage;
@@ -1210,6 +1212,7 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         bool8 r5;
 
         dmgStruct->type = moveType;
+        dmgStruct->isPhysical = isPhysical;
         gDungeon->unk134.unk134 = moveType;
         gDungeon->unk134.unk138 = splitIndex;
 
@@ -1321,7 +1324,7 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
 
         attackerInfo->previousVisualFlags &= ~(0x100);
         attackerInfo->visualFlags &= ~(0x100);
-        ApplyAtkDefStatBoosts(attacker, target, moveType, &atkStat, &defStat, rand);
+        ApplyAtkDefStatBoosts(attacker, target, splitIndex, &atkStat, &defStat, rand);
         FP48_16_FromS32(&unkSp1, atkStat - defStat);
         FP48_16_FromS32(&unkSp2, 8);
         F48_16_SDiv(&unkSp1, &unkSp1, &unkSp2);
@@ -1335,7 +1338,7 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         else {
             s32 unkAtkStat2 = attackerInfo->atk[splitIndex];
             s32 unkDefStat2 = 1;
-            ApplyAtkDefStatBoosts(attacker, target, moveType, &unkAtkStat2, &unkDefStat2, rand);
+            ApplyAtkDefStatBoosts(attacker, target, splitIndex, &unkAtkStat2, &unkDefStat2, rand);
             FP48_16_FromS32(&unkSp2, unkAtkStat2);
             FP48_16_FromS32(&unkSp3, 3);
             F48_16_SDiv(&unkSp2, &unkSp2, &unkSp3);
@@ -1494,6 +1497,7 @@ void sub_806F2BC(Entity *attacker, Entity *target, u8 moveType, s32 a2, struct D
     if (a2New > 999) a2New = 999;
 
     dmgStruct->type = moveType;
+    dmgStruct->isPhysical = IsTypePhysical(moveType);
     sub_806E100(&unkSp1, attacker, target, moveType, dmgStruct);
     FP48_16_FromS32(&unkSp2, a2New);
     F48_16_SMul(&unkSp2, &unkSp2, &unkSp1);
@@ -1540,6 +1544,7 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
     dmgStruct.isCrit = FALSE;
     dmgStruct.unkE = 0;
     dmgStruct.tookNoDamage = FALSE;
+    dmgStruct.isPhysical = TRUE;
     HandleDealingDamage_Async(&spEntity, entity, &dmgStruct, FALSE, FALSE, dungeonExitReason, FALSE, 0);
     if (statusKoEnemy) {
         NoteAchievementStatusKO();
@@ -1587,6 +1592,7 @@ void sub_806F370_Async(Entity *pokemon, Entity *target, s32 dmg, s32 giveExp, bo
     dmgStruct.type = moveType;
     dmgStruct.isCrit = FALSE;
     dmgStruct.unkE = 0;
+    dmgStruct.isPhysical = IsTypePhysical(moveType);
 
     if (moveType != TYPE_NONE) {
         s32 typeEffectiveness[2];

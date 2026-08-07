@@ -1,6 +1,8 @@
 #ifndef GUARD_CONSTANTS_MOVE_H
 #define GUARD_CONSTANTS_MOVE_H
 
+#include "constants/move_category.h"
+
 #define STRUGGLE_MOVE_INDEX 4
 
 enum MoveFlag

@@ -9,6 +9,7 @@ typedef struct MoveDataEntry
     /* 0x0 */ u8 *name;
     /* 0x4 */ s16 basePower;
     /* 0x6 */ u8 type;
+    /* 0x7 */ u8 category; // MoveCategory: physical / special / status (PMD2)
     // Determines the range of moves.
     /* 0x8 */ u16 targetingFlags[2]; // 0 for player and 1 for AI
     // The AI consider certain moves to have different range than they actually do.
