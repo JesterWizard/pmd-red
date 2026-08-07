@@ -380,7 +380,7 @@ static u8 sub_8095E78(void)
   counter = 0;
   for(friendAreaIndex = FRIEND_AREA_BOUNTIFUL_SEA; friendAreaIndex < FRIEND_AREA_COUNT; friendAreaIndex++)
   {
-    if ((!gFriendAreas[friendAreaIndex]) &&
+    if ((!GetFriendAreaStatus(friendAreaIndex)) &&
        (GetFriendAreaUnlockCondition(friendAreaIndex) == UNLOCK_WONDER_MAIL)) {
         flag = FALSE;
 

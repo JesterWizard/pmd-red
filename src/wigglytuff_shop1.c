@@ -151,7 +151,7 @@ void sub_8021494(void)
             }
         }
         else if (sWigglytuffShop1Work->mode == 0) {
-            if (gFriendAreas[friendAreaIndex] == TRUE)
+            if (GetFriendAreaStatus(friendAreaIndex))
                 PrintStringOnWindow(8, GetMenuEntryYCoord(&sWigglytuffShop1Work->s40.m.input, i), GetFriendAreaName(friendAreaIndex), sWigglytuffShop1Work->s40.m.menuWinId, 0);
             else {
                 sprintfStatic(buffer2, sFmtGreenString, GetFriendAreaName(friendAreaIndex));
@@ -181,7 +181,7 @@ static s32 sub_8021664(void)
             break;
         case 1:
             for (i = FRIEND_AREA_BOUNTIFUL_SEA; i < FRIEND_AREA_COUNT; i++) {
-                if (gFriendAreas[i]) {
+                if (GetFriendAreaStatus(i)) {
                     sWigglytuffShop1Work->friendAreas[counter] = i;
                     counter++;
                 }
@@ -189,7 +189,7 @@ static s32 sub_8021664(void)
             break;
         case 2:
             for (i = FRIEND_AREA_BOUNTIFUL_SEA; i < FRIEND_AREA_COUNT; i++) {
-                if (gFriendAreas[i])
+                if (GetFriendAreaStatus(i))
                     continue;
 
                 switch (GetFriendAreaUnlockCondition(i)) {
@@ -220,13 +220,13 @@ bool8 sub_8021700(u32 kind)
             return FALSE;
         case 1:
             for (i = FRIEND_AREA_BOUNTIFUL_SEA; i < FRIEND_AREA_COUNT; i++) {
-                if (gFriendAreas[i])
+                if (GetFriendAreaStatus(i))
                     return FALSE;
             }
             break;
         case 2:
             for (i = FRIEND_AREA_BOUNTIFUL_SEA; i < FRIEND_AREA_COUNT; i++) {
-                if (gFriendAreas[i])
+                if (GetFriendAreaStatus(i))
                     continue;
 
                 switch (GetFriendAreaUnlockCondition(i)) {

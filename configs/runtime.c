@@ -5,7 +5,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .infinite_belly = FALSE,
     .exp_multiplier = 1, /* 1 = vanilla */
     .recruit_rate_boost = FALSE,
-    .all_friend_areas = FALSE,
+    .all_friend_areas = TRUE, /* TRUE = own every Friend Area; FALSE = vanilla unlocks */
     .debug_menu = FALSE,
     .disable_something_approaches = TRUE,
     .l_to_use_move = TRUE, /* TRUE = L alone; FALSE = vanilla L+A */
@@ -44,4 +44,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .physical_special_split = TRUE, /* TRUE = Gen4+ move-based Phys/Spec; FALSE = vanilla type-based */
     .dungeon_hp_bars = TRUE, /* TRUE = floating HP bars on visible Pokémon; FALSE = off */
     .custom_story = TRUE, /* TRUE = Weird Autumn SSLP story (Treecko/Squirtle + custom dialogue); FALSE = vanilla */
+    .friend_area_intros = TRUE, /* TRUE = 2s (A-skippable) art splash on Friend Area visit */
 };

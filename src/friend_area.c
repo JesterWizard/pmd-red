@@ -79,7 +79,7 @@ void sub_809249C(u8 friendArea, bool8 clear)
 {
     s32 i;
 
-    if (!gFriendAreas[friendArea])
+    if (!GetFriendAreaStatus(friendArea))
         return;
 
     for (i = 0; i < NUM_MONSTERS; i++) {
@@ -174,7 +174,7 @@ void GetFriendAreaCapacity2(u8 friendArea, FriendAreaCapacity *dst, bool8 checkL
         iVar4 += gFriendAreaSettings[i].num_pokemon;
 
     dst->unk8 = iVar4;
-    dst->hasFriendArea = gFriendAreas[i];
+    dst->hasFriendArea = GetFriendAreaStatus(i);
 
     if (dst->hasFriendArea) {
         dst->currNoPokemon = 0;
@@ -209,7 +209,7 @@ void GetFriendAreaCapacity(u8 areaId, FriendAreaCapacity *dst, bool8 checkPartne
         r5 += gFriendAreaSettings[i].num_pokemon;
 
     dst->unk8 = r5;
-    dst->hasFriendArea = gFriendAreas[i];
+    dst->hasFriendArea = GetFriendAreaStatus(i);
 
     if (dst->hasFriendArea) {
         dst->currNoPokemon = 0;

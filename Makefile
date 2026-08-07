@@ -301,6 +301,18 @@ $(TITLE_BG_STAMP): FORCE
 
 $(C_BUILDDIR)/custom_title_backgrounds.o: | $(TITLE_BG_STAMP)
 
+# Friend-area intro backgrounds (PNG → AT4PN + pal + data.c).
+FRIEND_AREA_INTRO_STAMP := $(BUILD_DIR)/friend_area_intros.stamp
+
+friend-area-intro-convert: $(FRIEND_AREA_INTRO_STAMP)
+
+$(FRIEND_AREA_INTRO_STAMP): FORCE
+	@mkdir -p $(dir $@)
+	@python3 convert_friend_area_backgrounds.py --stamp $@ --quiet
+
+$(C_BUILDDIR)/friend_area_intros_data.o: | $(FRIEND_AREA_INTRO_STAMP)
+$(C_BUILDDIR)/friend_area_intros.o: | $(FRIEND_AREA_INTRO_STAMP)
+
 # Custom starter-evolution portraits (PNG → AT4PX + pal + data.c).
 CUSTOM_PORTRAIT_STAMP := $(BUILD_DIR)/custom_portraits.stamp
 

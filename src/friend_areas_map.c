@@ -336,9 +336,7 @@ bool8 IsFriendAreaShownOnMap(u8 friendAreaId)
 {
     if (friendAreaId >= FRIEND_AREA_COUNT) return FALSE;
     if (friendAreaId == 0) return TRUE;
-    if (gFriendAreas[friendAreaId]) return TRUE;
-
-    return FALSE;
+    return GetFriendAreaStatus(friendAreaId);
 }
 
 static u8 GetChosenDirection(void)

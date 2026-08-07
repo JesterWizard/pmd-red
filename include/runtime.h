@@ -101,6 +101,8 @@ typedef struct {
     u8 dungeon_hp_bars;
     /* Weird Autumn SSLP custom story (forced Treecko/Squirtle + rewritten early cutscenes) */
     u8 custom_story;
+    /* Full-screen art splash (2s / A skip) when entering a Friend Area */
+    u8 friend_area_intros;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

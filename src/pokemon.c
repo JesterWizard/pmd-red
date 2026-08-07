@@ -241,7 +241,7 @@ Pokemon *TryAddPokemonToRecruited(Pokemon *pokemon)
     s32 species = pokemon->speciesNum;
     u32 friendArea = sMonsterParameters[species].friendArea;
 
-    if (!gFriendAreas[friendArea])
+    if (!GetFriendAreaStatus(friendArea))
         return NULL;
     for (i = 0; i < NUM_MONSTERS; i++) {
         if (!PokemonExists(&gRecruitedPokemonRef->pokemon[i])) {
@@ -263,7 +263,7 @@ Pokemon *sub_808D278(s32 species)
     s16 species_s16 = (s16)species;
     u32 friendArea = sMonsterParameters[species_s16].friendArea;
 
-    if (!gFriendAreas[friendArea])
+    if (!GetFriendAreaStatus(friendArea))
         return NULL;
 
     for (i = 0; i < NUM_MONSTERS; i++) {

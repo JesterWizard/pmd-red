@@ -17,6 +17,7 @@
 #include "decompress_sir.h"
 #include "debug.h"
 #include "event_flag.h"
+#include "friend_area_intros.h"
 #include "graphics_memory.h"
 #include "ground_effect.h"
 #include "ground_event.h"
@@ -305,6 +306,12 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
         UpdateAdventureAchievements();
         FlushBossFightAchievementUnlocks(FALSE);
         EvaluateAchievements();
+        {
+            u8 introAreaId = MapIdToFriendAreaId(sUnknown_20398BC);
+
+            if (introAreaId != FRIEND_AREA_NONE)
+                ShowFriendAreaIntro_Async(introAreaId);
+        }
         if (scriptID != -1) {
             GroundMap_ExecuteEvent(scriptID, FALSE);
         }

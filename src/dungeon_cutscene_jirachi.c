@@ -511,7 +511,7 @@ static u8 JirachiFriendAreaSearch(void)
     unlockCondition = GetFriendAreaUnlockCondition(friendAreaCounter);
     if (!(unlockCondition == UNLOCK_LEGENDARY_REQUEST)){
         if (!(unlockCondition == UNLOCK_WONDER_MAIL)){
-            if(!gFriendAreas[friendAreaCounter]) {
+            if(!GetFriendAreaStatus(friendAreaCounter)) {
                 friendAreas[numUnlockableAreas] = friendAreaCounter;
                 numUnlockableAreas++;
             }

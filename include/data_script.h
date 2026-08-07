@@ -4,6 +4,7 @@
 #include "constants/bg_music.h"
 #include "constants/cutscenes.h"
 #include "constants/direction.h"
+#include "constants/emotions.h"
 #include "constants/event_flag.h"
 #include "constants/ground_map.h"
 #include "constants/item.h"
@@ -133,14 +134,14 @@
 
 // TODO: CMD_BYTE_2D
 
-// Sets up portrait data for the specified speaker
-// Note for the spriteId: first 4 bits(0xF) are the actual spriteId, but sometimes a 0x40 flag is attached to it, but it has no practical use.
-// Could be different in Blue?
-#define PORTRAIT(place, id, sprite)     { CMD_BYTE_2E, place, id, sprite, 0, NULL }
+// Sets up portrait data for the specified speaker.
+// place: PortraitPlacementID, or PLACEMENT_COUNT to keep the speaker's last placement.
+// id: speaker/lives script id
+// emotion: EMOTION_* (first 4 bits are the face; a 0x40 flag sometimes appears but is unused)
+#define PORTRAIT(place, id, emotion)    { CMD_BYTE_2E, place, id, emotion, 0, NULL }
 
-// Same as the above, but it assumes the last used placement for the speaker.
-// Useful in long scripts, where you don't need to remember all the placements.
-#define PORTRAIT_REP(id, sprite)        { CMD_BYTE_2E, PLACEMENT_COUNT, id, sprite, 0, NULL }
+// Deprecated alias: prefer PORTRAIT(PLACEMENT_COUNT, id, emotion).
+#define PORTRAIT_REP(id, emotion)       PORTRAIT(PLACEMENT_COUNT, id, emotion)
 
 // Sets portrait delta position, which modifies the portrait's position on the screen.
 #define PORTRAIT_POS(id, x, y)          { CMD_BYTE_2F, 0, id, x, y, NULL }
