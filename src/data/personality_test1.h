@@ -752,6 +752,75 @@ static const MenuItem gGenderMenu[] = {
     { NULL, -1 },
 };
 
+static const MenuItem gCustomStoryGenderMenu[] = {
+    { CUSTOM_STORY_GENDER_A0, 0 },
+    { NULL, -1 },
+};
+
+/* Dummy effects: custom_story forces SASSY / Treecko regardless of totals. */
+static const PersonalityEffects CustomStoryQuestPoints[] = {
+    { [SASSY] = 2, },
+};
+
+static const MenuItem CustomStoryQuest1Answers[] = {
+    { CUSTOM_STORY_Q1_A0, 0 },
+    { NULL, -1 },
+};
+static const PersonalityQuestion CustomStoryQuest1 = { CUSTOM_STORY_Q1, CustomStoryQuest1Answers, CustomStoryQuestPoints };
+
+static const MenuItem CustomStoryQuest2Answers[] = {
+    { CUSTOM_STORY_Q2_A0, 0 },
+    { NULL, -1 },
+};
+static const PersonalityQuestion CustomStoryQuest2 = { CUSTOM_STORY_Q2, CustomStoryQuest2Answers, CustomStoryQuestPoints };
+
+static const MenuItem CustomStoryQuest3Answers[] = {
+    { CUSTOM_STORY_Q3_A0, 0 },
+    { NULL, -1 },
+};
+static const PersonalityQuestion CustomStoryQuest3 = { CUSTOM_STORY_Q3, CustomStoryQuest3Answers, CustomStoryQuestPoints };
+
+static const MenuItem CustomStoryQuest4Answers[] = {
+    { CUSTOM_STORY_Q4_A0, 0 },
+    { NULL, -1 },
+};
+static const PersonalityQuestion CustomStoryQuest4 = { CUSTOM_STORY_Q4, CustomStoryQuest4Answers, CustomStoryQuestPoints };
+
+static const MenuItem CustomStoryQuest5Answers[] = {
+    { CUSTOM_STORY_Q5_A0, 0 },
+    { NULL, -1 },
+};
+static const PersonalityQuestion CustomStoryQuest5 = { CUSTOM_STORY_Q5, CustomStoryQuest5Answers, CustomStoryQuestPoints };
+
+static const MenuItem CustomStoryQuest6Answers[] = {
+    { CUSTOM_STORY_Q6_A0, 0 },
+    { NULL, -1 },
+};
+static const PersonalityQuestion CustomStoryQuest6 = { CUSTOM_STORY_Q6, CustomStoryQuest6Answers, CustomStoryQuestPoints };
+
+static const MenuItem CustomStoryQuest7Answers[] = {
+    { CUSTOM_STORY_Q7_A0, 0 },
+    { NULL, -1 },
+};
+static const PersonalityQuestion CustomStoryQuest7 = { CUSTOM_STORY_Q7, CustomStoryQuest7Answers, CustomStoryQuestPoints };
+
+static const MenuItem CustomStoryQuest8Answers[] = {
+    { CUSTOM_STORY_Q8_A0, 0 },
+    { NULL, -1 },
+};
+static const PersonalityQuestion CustomStoryQuest8 = { CUSTOM_STORY_Q8, CustomStoryQuest8Answers, CustomStoryQuestPoints };
+
+static const PersonalityQuestion *const gCustomStoryQuestionPointerTable[NUM_CUSTOM_STORY_QUESTIONS] = {
+    &CustomStoryQuest1,
+    &CustomStoryQuest2,
+    &CustomStoryQuest3,
+    &CustomStoryQuest4,
+    &CustomStoryQuest5,
+    &CustomStoryQuest6,
+    &CustomStoryQuest7,
+    &CustomStoryQuest8,
+};
+
 ALIGNED(4) static const u8 sStarterChoicePrompt[] = STARTER_CHOICE_Q;
 
 static const MenuItem gStarterChoiceMenu[] = {
@@ -807,6 +876,8 @@ UNUSED ALIGNED(4) static const u8* const gPartnerPromptPtr = gPartnerPrompt;
 
 ALIGNED(4) static const u8 gPartnerNickPrompt[] = PARTNER_NICK_PROMPT;
 UNUSED ALIGNED(4) static const u8* const gPartnerNickPromptPtr[] = { gPartnerNickPrompt };
+
+ALIGNED(4) static const u8 gCustomStoryPartnerNick[] = CUSTOM_STORY_PARTNER_NICK;
 
 ALIGNED(4) static const u8 gStarterConfirmPrompt[] = STARTER_CONFIRM_Q;
 ALIGNED(4) static const u8 gPartnerConfirmPrompt[] = PARTNER_CONFIRM_Q;

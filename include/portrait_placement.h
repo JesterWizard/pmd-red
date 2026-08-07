@@ -35,7 +35,11 @@ enum PortraitPlacementID
     PLACEMENT_MIDLEFT_TOP_FLIP,
     PLACEMENT_MIDRIGHT_TOP,
 
-    PLACEMENT_COUNT
+    // Not a screen position. Value equals the number of real placements above (array length),
+    // and is also the PORTRAIT() sentinel meaning "keep this speaker's last placement/flip".
+    PLACEMENT_COUNT,
 };
+// Prefer this name in scripts: keep the speaker's previous placement.
+#define PLACEMENT_KEEP PLACEMENT_COUNT
 
 #endif // GUARD_PORTRAIT_PLACEMENT_H

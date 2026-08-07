@@ -593,8 +593,8 @@ bool8 ScriptSetPortraitInfo(s32 portraitId_, s32 spriteId_, s32 placementId_)
     TRY_CLOSE_FILE_AND_SET_NULL(portraitPtr->faceFile);
 
     if (portraitPtr->speciesID >= 0 && spriteId != -1 && portraitPtr->speciesID != 0) {
-        // Keep previous placementId if PLACEMENT_COUNT is passed.
-        if (placementId != PLACEMENT_COUNT) {
+        // Keep previous placementId if PLACEMENT_KEEP (aka PLACEMENT_COUNT) is passed.
+        if (placementId != PLACEMENT_KEEP) {
             portraitPtr->placementId = placementId;
             portraitPtr->posDelta.x = 0;
             portraitPtr->posDelta.y = 0;

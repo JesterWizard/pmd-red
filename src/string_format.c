@@ -576,7 +576,7 @@ void DrawDialogueBoxString_Async(void)
 static void sub_8014A88(void)
 {
     s32 r2, r1;
-    u8 text[128];
+    u8 text[256];
     const MenuItem *menuItem = sDialogueMenuItems;
     s32 r5 = 0;
     s32 r7 = 0;
@@ -584,15 +584,29 @@ static void sub_8014A88(void)
 
     for (i = 0; i < 10; menuItem++, i++) {
         s32 val;
+        const u8 *linePtr;
 
         if (menuItem->text == NULL)
             break;
 
         r5 += 12;
         FormatString(menuItem->text, text, text + sizeof(text), 0);
+        /* Multi-line answers (custom_story quiz) need extra height per '\n'. */
+        for (linePtr = text; *linePtr != '\0'; linePtr++) {
+            if (*linePtr == '\n')
+                r5 += 12;
+        }
         val = GetStringLineWidth(text);
         if (r7 < val) {
             r7 = val;
+        }
+        /* Widest line may not be the first; scan remaining lines. */
+        for (linePtr = text; *linePtr != '\0'; linePtr++) {
+            if (*linePtr == '\n') {
+                val = GetStringLineWidth(linePtr + 1);
+                if (r7 < val)
+                    r7 = val;
+            }
         }
     }
 

@@ -750,6 +750,79 @@
 #define GENDER_A0 (_("Boy."))
 #define GENDER_A1 (_("Girl."))
 
+/* custom_story personality quiz (SSLP): fixed sequence, one answer each */
+#define CUSTOM_STORY_Q1 (_( \
+    "There's an alien invasion!\n" \
+    "What do you do?"))
+
+#define CUSTOM_STORY_Q1_A0 (_( \
+    "Hm, well, I'll invariably end up\n" \
+    "doing something about it, but I've\n" \
+    "got plenty of time to faff about\n" \
+    "doing sidequests, so um yeah."))
+
+#define CUSTOM_STORY_Q2 (_( \
+    "Do you like to noisily enjoy yourself\n" \
+    "with others?"))
+
+#define CUSTOM_STORY_Q2_A0 (_( \
+    "I'm fond of music, but that\n" \
+    "doesn't count."))
+
+#define CUSTOM_STORY_Q3 (_( \
+    "There is a bucket. If you put water\n" \
+    "in it, how high will you put it?"))
+
+#define CUSTOM_STORY_Q3_A0 (_( \
+    "There is a stupid question. If you\n" \
+    "ask it again, how many times will\n" \
+    "I step on the cartridge?"))
+
+#define CUSTOM_STORY_Q4 (_( \
+    "The road forks to the right and left.\n" \
+    "You're told that there's treasure on\n" \
+    "the right side. What do you do?"))
+
+#define CUSTOM_STORY_Q4_A0 (_( \
+    "Why even bother? If they're just\n" \
+    "telling people there's treasure,\n" \
+    "somebody will have beaten me to\n" \
+    "it by now."))
+
+#define CUSTOM_STORY_Q5 (_( \
+    "Can you sincerely thank someone when you\n" \
+    "feel grateful?"))
+
+#define CUSTOM_STORY_Q5_A0 (_("No, only when I feel ironic."))
+
+#define CUSTOM_STORY_Q6 (_( \
+    "Do you occasionally consider yourself\n" \
+    "dull and overly cautious?"))
+
+#define CUSTOM_STORY_Q6_A0 (_( \
+    "This is a boring question and there\n" \
+    "is nothing good to say about it."))
+
+#define CUSTOM_STORY_Q7 (_("Can you go into a haunted house?"))
+
+#define CUSTOM_STORY_Q7_A0 (_( \
+    "If there's one thing I've learned\n" \
+    "from horror movies, it's that this\n" \
+    "is the single best way to end\n" \
+    "up dead."))
+
+#define CUSTOM_STORY_Q8 (_( \
+    "Your friend fails to show up for a meeting\n" \
+    "at the promised time. What do you do?"))
+
+#define CUSTOM_STORY_Q8_A0 (_( \
+    "Burn his house down with extreme\n" \
+    "prejudice."))
+
+#define CUSTOM_STORY_GENDER_A0 (_("What does it matter?"))
+
+#define CUSTOM_STORY_PARTNER_NICK (_("Floyd"))
+
 #define STARTER_CHOICE_Q (_( \
     "Do you want to choose your Pokémon,\n" \
     "or take the Personality Test?"))

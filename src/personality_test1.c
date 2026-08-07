@@ -123,7 +123,7 @@ static void InitializeTestStats(void)
     if (gRuntimeConfig.custom_story) {
         sPersonalityTestTracker->TeamBasicInfo.StarterID = MONSTER_TREECKO;
         sPersonalityTestTracker->TeamBasicInfo.PartnerID = MONSTER_SQUIRTLE;
-        sPersonalityTestTracker->TestState = PERSONALITY_CUSTOM_FORCE_PAIR;
+        sPersonalityTestTracker->TestState = PERSONALITY_GENERATE_NEW_QUESTION;
     }
     else if (gRuntimeConfig.starter_choice_prompt)
         sPersonalityTestTracker->TestState = PERSONALITY_CHOICE_PROMPT;
@@ -252,8 +252,15 @@ static void GenerateNewQuestionOrGender(void)
     sPersonalityTestTracker->QuestionCounter++;
 
     if (sPersonalityTestTracker->QuestionCounter > MAX_ASKED_QUESTIONS) {
-        CreateMenuDialogueBoxAndPortrait(sGender0, 0, 0, gGenderMenu, 0, 3, 0, 0, 257);
+        if (gRuntimeConfig.custom_story)
+            CreateMenuDialogueBoxAndPortrait(sGender0, 0, 0, gCustomStoryGenderMenu, 0, 3, 0, 0, 257);
+        else
+            CreateMenuDialogueBoxAndPortrait(sGender0, 0, 0, gGenderMenu, 0, 3, 0, 0, 257);
         sPersonalityTestTracker->TestState = PERSONALITY_PLAYER_GENDER;
+    }
+    else if (gRuntimeConfig.custom_story) {
+        sPersonalityTestTracker->currQuestionIndex = sPersonalityTestTracker->QuestionCounter - 1;
+        sPersonalityTestTracker->TestState = PERSONALITY_ASK_QUESTION;
     }
     else {
         do {
@@ -285,18 +292,24 @@ static void UpdateNatureTotals(void)
     s32 answerIndex;
     s32 natureIndex;
     const PersonalityEffects *pointArray;
+    const PersonalityQuestion *question;
 
     if (sub_80144A4(&answerIndex))
         return;
 
     // This is for the second part of Brave 2 Question if you fight..
-    if (answerIndex == BRAVE_2B_TRIGGER) {
+    if (!gRuntimeConfig.custom_story && answerIndex == BRAVE_2B_TRIGGER) {
         // Set question to BRAVE_2B and ask the question..
         sPersonalityTestTracker->currQuestionIndex = NUM_QUIZ_QUESTIONS;
         sPersonalityTestTracker->TestState = PERSONALITY_ASK_QUESTION;
     }
     else {
-        pointArray = gPersonalityQuestionPointerTable[sPersonalityTestTracker->currQuestionIndex]->effects;
+        if (gRuntimeConfig.custom_story)
+            question = gCustomStoryQuestionPointerTable[sPersonalityTestTracker->currQuestionIndex];
+        else
+            question = gPersonalityQuestionPointerTable[sPersonalityTestTracker->currQuestionIndex];
+
+        pointArray = question->effects;
         pointArray += answerIndex;
         for (natureIndex = 0; natureIndex < NUM_PERSONALITIES; natureIndex++)
             sPersonalityTestTracker->NatureTotals[natureIndex] += (*pointArray)[natureIndex];
@@ -312,7 +325,8 @@ static void SetPlayerGender(void)
     if (sub_80144A4(&gender) != 0)
         return;
 
-    if (gender == MALE) {
+    /* custom_story only offers “What does it matter?” (menuAction 0 = male). */
+    if (gender == MALE || gRuntimeConfig.custom_story) {
         sPersonalityTestTracker->playerGender = MALE;
         gGameOptionsRef->playerGender = MALE;
     }
@@ -441,21 +455,29 @@ static void RevealPersonality(void)
     s32 currentNature;
     s32 i;
 
-    sPersonalityTestTracker->playerNature = RandInt(NUM_PERSONALITIES);
-    currentNature = sPersonalityTestTracker->playerNature;
+    if (gRuntimeConfig.custom_story) {
+        sPersonalityTestTracker->playerNature = SASSY;
+        sPersonalityTestTracker->TeamBasicInfo.StarterID = MONSTER_TREECKO;
+        sPersonalityTestTracker->TeamBasicInfo.PartnerID = MONSTER_SQUIRTLE;
+    }
+    else {
+        sPersonalityTestTracker->playerNature = RandInt(NUM_PERSONALITIES);
+        currentNature = sPersonalityTestTracker->playerNature;
 
-    for (i = 0; i < NUM_PERSONALITIES - 1; i++) {
-        currentNature++;
+        for (i = 0; i < NUM_PERSONALITIES - 1; i++) {
+            currentNature++;
 
-        // Wraparound check
-        if (currentNature > QUIRKY)
-            currentNature = HARDY;
+            // Wraparound check
+            if (currentNature > QUIRKY)
+                currentNature = HARDY;
 
-        if (sPersonalityTestTracker->NatureTotals[currentNature] > sPersonalityTestTracker->NatureTotals[sPersonalityTestTracker->playerNature])
-            sPersonalityTestTracker->playerNature = currentNature;
+            if (sPersonalityTestTracker->NatureTotals[currentNature] > sPersonalityTestTracker->NatureTotals[sPersonalityTestTracker->playerNature])
+                sPersonalityTestTracker->playerNature = currentNature;
+        }
+
+        sPersonalityTestTracker->TeamBasicInfo.StarterID = gStarters[sPersonalityTestTracker->playerNature][sPersonalityTestTracker->playerGender];
     }
 
-    sPersonalityTestTracker->TeamBasicInfo.StarterID = gStarters[sPersonalityTestTracker->playerNature][sPersonalityTestTracker->playerGender];
     PrintPersonalityTypeDescription();
     sPersonalityTestTracker->TestState = PERSONALITY_STARTER_REVEAL;
 }
@@ -475,8 +497,12 @@ static void AdvanceToPickPartnerPrompt(void)
 {
     s32 temp;
 
-    if (sub_80144A4(&temp) == 0)
-        sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_2;
+    if (sub_80144A4(&temp) == 0) {
+        if (gRuntimeConfig.custom_story)
+            sPersonalityTestTracker->TestState = PERSONALITY_CUSTOM_FORCE_PAIR;
+        else
+            sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_SELECTION_2;
+    }
 }
 
 static void PromptPickPartner(void)
@@ -564,8 +590,9 @@ static void HandlePartnerConfirmYesNo(void)
 
 static void StartCustomStoryPair(void)
 {
-    CreateDialogueBoxAndPortrait(gPartnerNickPrompt, 0, 0, 0x301);
-    sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_2;
+    CopyStringtoBuffer(sPersonalityTestTracker->TeamBasicInfo.PartnerNick, gCustomStoryPartnerNick);
+    CreateDialogueBoxAndPortrait(gEndIntroText, 0, 0, 0x301);
+    sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_TEST_END;
 }
 
 static void AdvanceToPartnerNicknameScreen(void)
@@ -602,10 +629,14 @@ static void AdvanceToTestEnd(void)
 
 static void PromptNewQuestion(void)
 {
-    CreateMenuDialogueBoxAndPortrait(gPersonalityQuestionPointerTable[sPersonalityTestTracker->currQuestionIndex]->question,
-        0, 0,
-        gPersonalityQuestionPointerTable[sPersonalityTestTracker->currQuestionIndex]->answers,
-        0, 3, 0, 0, 0x101);
+    const PersonalityQuestion *question;
+
+    if (gRuntimeConfig.custom_story)
+        question = gCustomStoryQuestionPointerTable[sPersonalityTestTracker->currQuestionIndex];
+    else
+        question = gPersonalityQuestionPointerTable[sPersonalityTestTracker->currQuestionIndex];
+
+    CreateMenuDialogueBoxAndPortrait(question->question, 0, 0, question->answers, 0, 3, 0, 0, 0x101);
 }
 
 static void PrintPersonalityTypeDescription(void)

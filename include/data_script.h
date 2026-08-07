@@ -100,15 +100,16 @@
 
 // TODO: CMD_BYTE_21: follow object/make object follow/get parented?
 
-// TODO: CMD_BYTE_22
+// Fade primary screen brightness in/out over f frames.
+// wait: if nonzero, script waits until the fade finishes.
+#define FADE_IN(wait, f)                { CMD_BYTE_22, wait, f, 0, 0, NULL }
+#define FADE_OUT(wait, f)               { CMD_BYTE_23, wait, f, 0, 0, NULL }
 
-// TODO: CMD_BYTE_23
+// TODO: CMD_BYTE_24: fade between two brightness levels
 
-// TODO: CMD_BYTE_24
-
-// TODO: CMD_BYTE_25
-
-// TODO: CMD_BYTE_26
+// Same as FADE_IN/OUT for the secondary palette fade channel.
+#define FADE2_IN(wait, f)               { CMD_BYTE_25, wait, f, 0, 0, NULL }
+#define FADE2_OUT(wait, f)              { CMD_BYTE_26, wait, f, 0, 0, NULL }
 
 // a0: Some bool
 // kind: See enum "PaletteUtilUnk0Kind"
@@ -135,13 +136,13 @@
 // TODO: CMD_BYTE_2D
 
 // Sets up portrait data for the specified speaker.
-// place: PortraitPlacementID, or PLACEMENT_COUNT to keep the speaker's last placement.
+// place: PortraitPlacementID, or PLACEMENT_KEEP to keep the speaker's last placement/flip.
 // id: speaker/lives script id
 // emotion: EMOTION_* (first 4 bits are the face; a 0x40 flag sometimes appears but is unused)
 #define PORTRAIT(place, id, emotion)    { CMD_BYTE_2E, place, id, emotion, 0, NULL }
 
-// Deprecated alias: prefer PORTRAIT(PLACEMENT_COUNT, id, emotion).
-#define PORTRAIT_REP(id, emotion)       PORTRAIT(PLACEMENT_COUNT, id, emotion)
+// Deprecated alias: prefer PORTRAIT(PLACEMENT_KEEP, id, emotion).
+#define PORTRAIT_REP(id, emotion)       PORTRAIT(PLACEMENT_KEEP, id, emotion)
 
 // Sets portrait delta position, which modifies the portrait's position on the screen.
 #define PORTRAIT_POS(id, x, y)          { CMD_BYTE_2F, 0, id, x, y, NULL }
@@ -181,10 +182,17 @@
 
 // TODO: CMD_BYTE_3A: yes/no choice (only used for saving)
 
-// TODO: CMD_BYTE_3B: uber command (conditional jump)
+// Multi-purpose special process / conditional jump. kind selects the subroutine.
+// Return value can jump to a label (ResolveJump). Some kinds just run side effects.
 // k=0x30 checks if gardevoir has space to join by checking its friend area
 // k=0x31 names gardevoir?
 // k=0x32 tries to recruit Gardevoir
+// k=0x39 sets dual-screen place-name mode (see SET_PLACE_MODE)
+#define SPECIAL_PROCESS(kind, a)        { CMD_BYTE_3B, kind, a, 0, 0, NULL }
+
+// Dual-screen place-name display mode (stubbed / no visible effect on GBA).
+// Common values: 1 = suppress for cutscenes, 4 = normal/enabled.
+#define SET_PLACE_MODE(mode)            SPECIAL_PROCESS(0x39, mode)
 
 // k: See enum "SpecialTextKind"
 // i: ???

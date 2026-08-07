@@ -4,4 +4,4 @@
 #define FAKE_FILENAME "../data/ground/ground_data_a04p03_station.c"
 
 #include "globaldata.h"
-#include "data/ground/ground_data_a04p03_station.h"
+#include "ground_data_a04p03_station.h"

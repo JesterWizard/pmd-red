@@ -58,8 +58,8 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 | Area | Paths |
 |------|--------|
 | Toggle | [`include/runtime.h`](../../include/runtime.h), [`configs/runtime.c`](../../configs/runtime.c) |
-| Pond stairs / warp | [`src/data/ground/ground_data_t01p02a_station.h`](../../src/data/ground/ground_data_t01p02a_station.h) (group 31) |
-| Indoor map / NPCs | [`src/data/ground/ground_data_cafe_station.h`](../../src/data/ground/ground_data_cafe_station.h) (`MAP_SPINDA_CAFE` / gs229) |
+| Pond stairs / warp | [`src/data/ground/vanilla/ground_data_t01p02a_station.h`](../../src/data/ground/vanilla/ground_data_t01p02a_station.h) / [`custom/`](../../src/data/ground/custom/) (group 31; keep both packs in sync) |
+| Indoor map / NPCs | [`src/data/ground/vanilla/ground_data_cafe_station.h`](../../src/data/ground/vanilla/ground_data_cafe_station.h) / [`custom/`](../../src/data/ground/custom/) (`MAP_SPINDA_CAFE` / gs229) |
 | Map conversion | [`src/ground_map_conversion_table.c`](../../src/ground_map_conversion_table.c) (`unk0 = 6` dual-layer) |
 | Map art source | [`graphics/custom/spinda_cafe.png`](../../graphics/custom/spinda_cafe.png) → `data/map_bg/T01P08*` via [`tools/convert_ground_map_png.py`](../../tools/convert_ground_map_png.py); VRAM streaming in [`src/ground_bg_tile_stream.c`](../../src/ground_bg_tile_stream.c) |
 | Stairs / sign ornaments | [`graphics/ornament/Stairs01/`](../../graphics/ornament/Stairs01/), [`graphics/ornament/Sign01/`](../../graphics/ornament/Sign01/), [`src/data/ornament/stairs01.h`](../../src/data/ornament/stairs01.h), [`src/data/ornament/sign01.h`](../../src/data/ornament/sign01.h) (from [`graphics/custom/spinda_cafe_stairs.png`](../../graphics/custom/spinda_cafe_stairs.png) / [`spinda_cafe_sign.png`](../../graphics/custom/spinda_cafe_sign.png)) |

@@ -5,4 +5,4 @@
 
 #include "globaldata.h"
 #include "constants/ground_map.h"
-#include "data/ground/ground_data_cafe_station.h"
+#include "ground_data_cafe_station.h"

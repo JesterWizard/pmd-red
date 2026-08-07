@@ -116,6 +116,18 @@ else
   CPPFLAGS := $(INCLUDE_CPP_ARGS) -Wno-trigraphs -DMODERN=$(MODERN)
 endif
 
+# Ground station scripts: compile only vanilla/ or custom/ pack matching configs/runtime.c
+RUNTIME_CONFIG := configs/runtime.c
+CUSTOM_STORY_FLAG := $(shell sed -n 's/.*\.custom_story *= *\(TRUE\|FALSE\).*/\1/p' $(RUNTIME_CONFIG) | head -1)
+ifeq ($(CUSTOM_STORY_FLAG),TRUE)
+  GROUND_STORY_DIR := custom
+else
+  GROUND_STORY_DIR := vanilla
+endif
+GROUND_STORY_PATH := src/data/ground/$(GROUND_STORY_DIR)
+CPPFLAGS += -iquote $(GROUND_STORY_PATH)
+INCLUDE_PATHS += -I $(GROUND_STORY_PATH)
+
 #### Files ####
 # Always emit pmd_red.gba. Matching (agbcc) and modern objects stay separated.
 BUILD_DIR_NORMAL := build/pmd_red_matching
@@ -194,6 +206,10 @@ GROUND_MAP_RAW_ASSETS := $(wildcard data/map_bg/*)
 GROUND_MAP_COMPRESSED_ASSETS := $(patsubst data/map_bg/%,data/map_bg_lz/%.lz,$(GROUND_MAP_RAW_ASSETS))
 GROUND_MAP_OBJECTS := $(filter $(C_BUILDDIR)/ground_map_files_%.o,$(C_OBJECTS))
 
+# Stamp path for pack flips (rule attached after `all:` so it is not the default goal)
+GROUND_STATION_OBJECTS := $(filter $(C_BUILDDIR)/ground_data_%_station.o,$(C_OBJECTS))
+GROUND_STORY_STAMP := $(BUILD_DIR)/.ground_story_$(GROUND_STORY_DIR)
+
 SUBDIRS := $(sort $(dir $(ALL_OBJECTS)))
 
 # Special configurations required for lib files
@@ -249,6 +265,14 @@ all: $(ROM)
 
 # Keep after `all:` so this prerequisite-only rule is not the default goal.
 $(GROUND_MAP_OBJECTS): $(GROUND_MAP_COMPRESSED_ASSETS)
+
+# Rebuild station scripts when custom_story pack selection flips
+$(GROUND_STATION_OBJECTS): $(GROUND_STORY_STAMP)
+$(GROUND_STORY_STAMP):
+	@mkdir -p $(BUILD_DIR)
+	@rm -f $(BUILD_DIR)/.ground_story_vanilla $(BUILD_DIR)/.ground_story_custom
+	@touch $@
+	@echo "Ground story pack: $(GROUND_STORY_DIR) (custom_story=$(CUSTOM_STORY_FLAG))"
 
 tools: $(TOOLDIRS)
 
