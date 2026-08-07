@@ -773,6 +773,7 @@ extern const u8 *const gUnknown_80FEDA8;
 extern const u8 *const gUnknown_80FEDC8;
 extern const u8 *const gUnknown_80FEDE8;
 extern const u8 *const gUnknown_80FEE04;
+extern const u8 *const gText_AnticipationShuddered;
 extern const u8 *const gUnknown_80FEE2C;
 extern const u8 *const gUnknown_80FEE54;
 extern const u8 *const gUnknown_80FEE80;

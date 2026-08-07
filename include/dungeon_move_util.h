@@ -19,7 +19,7 @@ s32 GetCombinedAccuracyPercent(Entity *attacker, Entity *target, Move *move);
 bool8 AccuracyCalc(Entity *attacker, Entity *target, Move *move, s32 accuracyType, bool8 selfAlwaysHits);
 void SetTargetsForMove(Entity **targetsArray, Entity *attacker, Move *move);
 s32 SetNewTarget(s32 targetArrId, Entity **targetsArray, s32 targetFlags_, Entity *attacker, Entity *target, Move *move, bool32 canHitAnyone_);
-s32 sub_8057070(Move *move);
+s32 sub_8057070(Entity *pokemon, Move *move);
 bool8 MoveCausesPaused(Move *move);
 bool8 MoveMatchesBideClassStatus(Entity *pokemon, Move *move);
 bool8 IsChargingAnyTwoTurnMove(Entity *pokemon, bool8 checkCharge);

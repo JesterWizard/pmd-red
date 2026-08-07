@@ -27,6 +27,9 @@ const s16 gKecleonSpawnIntervalFrames = 5;
 const s16 gCritOddsScopeLensPatsyBand = 40;
 const s16 gCritOddsIqAdvantageMaster = 40;
 const s16 gCritOddsSharpShooter = 15;
+const s16 gCritOddsSuperLuck = 15;
+const s16 gSolarPowerDmgValue = 5;
+const s16 gDrySkinSunDmgValue = 5;
 
 const s16 gAIConfusedAttackChance = 70;
 // Various moves' secondary effect percent chance

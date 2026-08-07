@@ -100,6 +100,8 @@ void DoEndOfTurnEffects_Async(Entity *entity)
             arrIndex++;
         if (HasHeldItem(entity, ITEM_MUNCH_BELT))
             arrIndex++;
+        if (AbilityIsActive(entity, ABILITY_GLUTTONY))
+            arrIndex++;
 
         if (arrIndex < 0)
             arrIndex = 0;
@@ -174,13 +176,21 @@ void DoEndOfTurnEffects_Async(Entity *entity)
         return;
     if (gDungeon->weather.weatherDamageCounter == 0) {
         if (GetApparentWeather(entity) == WEATHER_HAIL) {
-            if (!MonsterIsType(entity, TYPE_ICE)) {
+            if (AbilityIsActive(entity, ABILITY_ICE_BODY)) {
+                /* Ice Body: hail heals instead of damaging */
+            }
+            else if (!MonsterIsType(entity, TYPE_ICE)) {
                 DealDamageToEntity_Async(entity, gHailSandstormDmgValue, RESIDUAL_DAMAGE_BAD_WEATHER, DUNGEON_EXIT_FAINTED_DUE_TO_WEATHER);
             }
         }
         else if (GetApparentWeather(entity) == WEATHER_SANDSTORM) {
             if (!MonsterIsType(entity, TYPE_GROUND) && !MonsterIsType(entity, TYPE_ROCK) && !MonsterIsType(entity, TYPE_STEEL)) {
                 DealDamageToEntity_Async(entity, gHailSandstormDmgValue, RESIDUAL_DAMAGE_BAD_WEATHER, DUNGEON_EXIT_FAINTED_DUE_TO_WEATHER);
+            }
+        }
+        else if (GetApparentWeather(entity) == WEATHER_SUNNY) {
+            if (AbilityIsActive(entity, ABILITY_DRY_SKIN)) {
+                DealDamageToEntity_Async(entity, gDrySkinSunDmgValue, RESIDUAL_DAMAGE_BAD_WEATHER, DUNGEON_EXIT_FAINTED_DUE_TO_WEATHER);
             }
         }
         if (!EntityIsValid(entity) || IsFloorOver())
@@ -231,7 +241,10 @@ void DoEndOfTurnEffects_Async(Entity *entity)
                 return;
             entityInfo->burnClassStatus.damageCountdown = gPoisonDmgCountdown;
             TrySendImmobilizeSleepEndMsg(entity, entity);
-            DealDamageToEntity_Async(entity, gPoisonDmgValue, RESIDUAL_DAMAGE_POISON, DUNGEON_EXIT_FAINTED_FROM_POISON);
+            if (AbilityIsActive(entity, ABILITY_POISON_HEAL))
+                HealTargetHP(entity, entity, gPoisonDmgValue, 0, FALSE);
+            else
+                DealDamageToEntity_Async(entity, gPoisonDmgValue, RESIDUAL_DAMAGE_POISON, DUNGEON_EXIT_FAINTED_FROM_POISON);
         }
         if (!EntityIsValid(entity) || IsFloorOver())
             return;
@@ -250,7 +263,10 @@ void DoEndOfTurnEffects_Async(Entity *entity)
                 return;
 
             TrySendImmobilizeSleepEndMsg(entity, entity);
-            DealDamageToEntity_Async(entity, gBadPoisonDmgValuesByTurn[turns], RESIDUAL_DAMAGE_POISON, DUNGEON_EXIT_FAINTED_FROM_POISON);
+            if (AbilityIsActive(entity, ABILITY_POISON_HEAL))
+                HealTargetHP(entity, entity, gBadPoisonDmgValuesByTurn[turns], 0, FALSE);
+            else
+                DealDamageToEntity_Async(entity, gBadPoisonDmgValuesByTurn[turns], RESIDUAL_DAMAGE_POISON, DUNGEON_EXIT_FAINTED_FROM_POISON);
         }
         if (!EntityIsValid(entity) || IsFloorOver())
             return;
@@ -434,6 +450,10 @@ void TickStatusAndHealthRegen(Entity *entity)
             if (entityInfo->reflectClassStatus.status == STATUS_WISH)
                 regenSpeed += gWishRegenValue;
             if (AbilityIsActive(entity, ABILITY_RAIN_DISH) && GetApparentWeather(entity) == WEATHER_RAIN)
+                regenSpeed += gRainDishRegenValue;
+            if (AbilityIsActive(entity, ABILITY_ICE_BODY) && GetApparentWeather(entity) == WEATHER_HAIL)
+                regenSpeed += gRainDishRegenValue;
+            if (AbilityIsActive(entity, ABILITY_DRY_SKIN) && GetApparentWeather(entity) == WEATHER_RAIN)
                 regenSpeed += gRainDishRegenValue;
 
             if (regenSpeed > 500)

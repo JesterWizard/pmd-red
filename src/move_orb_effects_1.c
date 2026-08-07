@@ -121,6 +121,12 @@ bool8 CannotSleep(Entity * pokemon, Entity * target, u8 param_3, bool8 displayMe
         }
         return TRUE;
     }
+    else if (LeafGuardBlocksStatus(target)) {
+        if (displayMessage) {
+            TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FCD58);
+        }
+        return TRUE;
+    }
     else if (HasHeldItem(target, ITEM_INSOMNISCOPE)) {
         if (displayMessage) {
             TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FD548);
@@ -357,6 +363,10 @@ void BurnedStatusTarget(Entity * pokemon, Entity * target, u8 param_3, bool8 dis
       if (displayMessage)
         TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FCE5C);
     }
+    else if (LeafGuardBlocksStatus(target)) {
+      if (displayMessage)
+        TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FCE5C);
+    }
     else
     {
       if (MonsterIsType(target, TYPE_FIRE)) {
@@ -446,7 +456,7 @@ void PoisonedStatusTarget(Entity * pokemon, Entity * target, bool8 displayMessag
     }
     else
     {
-      if (AbilityIsActive(target, ABILITY_IMMUNITY)) {
+      if (AbilityIsActive(target, ABILITY_IMMUNITY) || LeafGuardBlocksStatus(target)) {
         if (displayMessage)
             TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FCEB0);
       }
@@ -535,7 +545,7 @@ void BadlyPoisonedStatusTarget(Entity * pokemon, Entity * target, bool8 displayM
     }
     else
     {
-      if (AbilityIsActive(target, ABILITY_IMMUNITY)) {
+      if (AbilityIsActive(target, ABILITY_IMMUNITY) || LeafGuardBlocksStatus(target)) {
         if (displayMessage)
             TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FCEB0);
       }
@@ -608,7 +618,7 @@ void FrozenStatusTarget(Entity * pokemon, Entity * target, bool8 displayMessage)
   entityInfo = GetEntInfo(target);
 
   if ((entityInfo->frozenClassStatus.status != STATUS_FROZEN) && !SafeguardIsActive(pokemon,target,displayMessage)) {
-    if (AbilityIsActive(target, ABILITY_MAGMA_ARMOR)) {
+    if (AbilityIsActive(target, ABILITY_MAGMA_ARMOR) || LeafGuardBlocksStatus(target)) {
       if (displayMessage)
         TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FCDE0);
     }
@@ -1297,7 +1307,7 @@ void TryInflictParalysisStatus(Entity *user, Entity *target, bool8 displayMessag
     if (SafeguardIsActive(user, target, displayMessage))
         return;
 
-    if (AbilityIsActive(target, ABILITY_LIMBER)) {
+    if (AbilityIsActive(target, ABILITY_LIMBER) || LeafGuardBlocksStatus(target)) {
         SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0],target,0);
         if (displayMessage) {
             TryDisplayDungeonLoggableMessage3_Async(user,target,gUnknown_80FCBF8);

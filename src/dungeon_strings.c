@@ -1025,6 +1025,7 @@ const u8 *const gUnknown_80FEDA8 = _("Torrent boosted its power!");
 const u8 *const gUnknown_80FEDC8 = _("Swarm boosted its power!");
 const u8 *const gUnknown_80FEDE8 = _("Blaze boosted its power!");
 const u8 *const gUnknown_80FEE04 = _("Guts boosted its power!");
+const u8 *const gText_AnticipationShuddered = _("{POKEMON_0} shuddered in anticipation!");
 const u8 *const gUnknown_80FEE2C = _("Its special ability boosted Attack!");
 const u8 *const gUnknown_80FEE54 = _("Marvel Scale boosted its Defense!");
 const u8 *const gUnknown_80FEE80 = _("Its special ability quickened attacks!");

@@ -237,7 +237,10 @@ bool8 sub_8058E5C(Entity *pokemon, Entity *target, Move *move, s32 itemId)
     }
     flag = TRUE;
     if ((!AbilityIsActive(pokemon, ABILITY_ROCK_HEAD)) && RollSecondaryEffect(pokemon, 0)) {
-      sub_806F370_Async(pokemon,pokemon,iVar3,0,0,0,DUNGEON_EXIT_FAINTED_FROM_RECOIL,RESIDUAL_DAMAGE_RECOIL,1,0);
+      if (AbilityIsActive(pokemon, ABILITY_RECKLESS))
+        iVar3 *= 2;
+      if (!AbilityIsActive(pokemon, ABILITY_MAGIC_GUARD))
+        sub_806F370_Async(pokemon,pokemon,iVar3,0,0,0,DUNGEON_EXIT_FAINTED_FROM_RECOIL,RESIDUAL_DAMAGE_RECOIL,1,0);
     }
   }
   return flag;
@@ -516,7 +519,10 @@ bool8 DoubleEdgeMoveAction(Entity * pokemon,Entity * target,Move * move,s32 item
       if (HP == 0) {
         HP = 1;
       }
-      sub_806F370_Async(pokemon,pokemon,HP,0,0,0,DUNGEON_EXIT_FAINTED_FROM_RECOIL,RESIDUAL_DAMAGE_RECOIL,1,0);
+      if (AbilityIsActive(pokemon, ABILITY_RECKLESS))
+        HP *= 2;
+      if (!AbilityIsActive(pokemon, ABILITY_MAGIC_GUARD))
+        sub_806F370_Async(pokemon,pokemon,HP,0,0,0,DUNGEON_EXIT_FAINTED_FROM_RECOIL,RESIDUAL_DAMAGE_RECOIL,1,0);
     }
   }
   return flag;

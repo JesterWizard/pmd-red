@@ -53,6 +53,7 @@
 #include "move_orb_effects_2.h"
 #include "move_orb_effects_5.h"
 #include "dungeon_tilemap.h"
+#include "explosion.h"
 #include "achievements.h"
 #include "effect_main.h"
 #include "moves.h"
@@ -78,6 +79,7 @@ static const s48_16 gUnknown_8106F44 = {0x0, 0xE666};
 static const s48_16 gUnknown_8106F4C = {0x0, 0x18000};
 static const s48_16 sTypeExpertBoost = {0x0, 0x14000}; /* 1.25× */
 static const s48_16 sTypeGuardReduce = {0x0, 0xC000};  /* 0.75× */
+static const s48_16 sRecklessBoost = {0x0, 0x30000};   /* 3.0× */
 
 void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageStruct *dmgStruct, bool32 isFalseSwipe, bool32 giveExp, s16 dungeonExitReason_, bool32 arg8, s32 argC)
 {
@@ -112,6 +114,20 @@ void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageSt
         BoostOffensiveStat(attacker, target, gStatIndexAtkDef, 1);
     }
 
+    if (gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
+        if (AbilityIsActive(attacker, ABILITY_DOWNLOAD)) {
+            EntityInfo *ti = GetEntInfo(target);
+            if (ti->def[0] < ti->def[1])
+                BoostOffensiveStat(attacker, attacker, gStatIndexAtkDef, 1);
+            else
+                BoostOffensiveStat(attacker, attacker, gStatIndexSpecial, 1);
+        }
+        if (AbilityIsActive(attacker, ABILITY_SOLAR_POWER)
+            && GetApparentWeather(attacker) == WEATHER_SUNNY) {
+            DealDamageToEntity_Async(attacker, gSolarPowerDmgValue, RESIDUAL_DAMAGE_BAD_WEATHER, DUNGEON_EXIT_FAINTED_DUE_TO_WEATHER);
+        }
+    }
+
     if (!EntityIsValid(attacker) || !EntityIsValid(target))
         return;
 
@@ -133,7 +149,8 @@ void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageSt
             returnDmg += 4;
         }
 
-        if (AbilityIsActive(target, ABILITY_ROUGH_SKIN))
+        if (AbilityIsActive(target, ABILITY_ROUGH_SKIN)
+            && !AbilityIsActive(attacker, ABILITY_MOLD_BREAKER))
             returnDmg += 2;
 
         if (returnDmg
@@ -164,7 +181,8 @@ void HandleDealingDamage_Async(Entity *attacker, Entity *target, struct DamageSt
     // Check trapping / contact abilities
     if (r9
         && attacker != target
-        && abs(attacker->pos.x - target->pos.x) <= 1 && abs(attacker->pos.y - target->pos.y) <= 1)
+        && abs(attacker->pos.x - target->pos.x) <= 1 && abs(attacker->pos.y - target->pos.y) <= 1
+        && !AbilityIsActive(attacker, ABILITY_MOLD_BREAKER))
     {
         bool32 isPhysical = dmgStruct->isPhysical;
         EntityInfo *attackerInfo = GetEntInfo(attacker);
@@ -311,12 +329,17 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
         WakeUpPokemon(target);
     }
 
-    if ((AbilityIsActive(target, ABILITY_VOLT_ABSORB) && dmgStruct->type == TYPE_ELECTRIC)) {
+    if ((AbilityIsActiveOnDefense(attacker, target, ABILITY_VOLT_ABSORB) && dmgStruct->type == TYPE_ELECTRIC)) {
         HealTargetHP(attacker, target, dmgStruct->dmg, 0, 0);
         dmgStruct->tookNoDamage = TRUE;
         return FALSE;
     }
-    else if (AbilityIsActive(target, ABILITY_WATER_ABSORB) && dmgStruct->type == TYPE_WATER) {
+    else if (AbilityIsActiveOnDefense(attacker, target, ABILITY_WATER_ABSORB) && dmgStruct->type == TYPE_WATER) {
+        HealTargetHP(attacker, target, dmgStruct->dmg, 0, 0);
+        dmgStruct->tookNoDamage = TRUE;
+        return FALSE;
+    }
+    else if (AbilityIsActiveOnDefense(attacker, target, ABILITY_DRY_SKIN) && dmgStruct->type == TYPE_WATER) {
         HealTargetHP(attacker, target, dmgStruct->dmg, 0, 0);
         dmgStruct->tookNoDamage = TRUE;
         return FALSE;
@@ -461,6 +484,13 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
         }
         if (HasHeldItem(target, ITEM_JOY_RIBBON) && hpChange > 0 && dmgStruct->dmg != 9999) {
             AddExpPoints(attacker, target, hpChange);
+        }
+
+        if (dmgStruct->isCrit
+            && AbilityIsActive(target, ABILITY_ANGER_POINT)
+            && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
+            BoostOffensiveStat(attacker, target, gStatIndexAtkDef, 99);
+            BoostOffensiveStat(attacker, target, gStatIndexSpecial, 99);
         }
 
         if (unkTile != NULL)
@@ -766,6 +796,8 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
         sub_8069D4C(&sp, target);
         if (TryRecruitMonster(attacker, target)) {
             if (!MonsterJoinSequence_Async(attacker, target, &sp)) {
+                if (AbilityIsActive(target, ABILITY_AFTERMATH))
+                    HandleExplosion(target, attacker, &target->pos, 1, TYPE_NONE, DUNGEON_EXIT_DISAPPEARED_IN_EXPLOSION);
                 HandleFaint_Async(target, DUNGEON_EXIT_LEFT_WITHOUT_BEING_BEFRIENDED, attacker);
             }
             else {
@@ -773,10 +805,14 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
             }
         }
         else {
+            if (AbilityIsActive(target, ABILITY_AFTERMATH))
+                HandleExplosion(target, attacker, &target->pos, 1, TYPE_NONE, DUNGEON_EXIT_DISAPPEARED_IN_EXPLOSION);
             HandleFaint_Async(target, dungeonExitReason, attacker);
         }
     }
     else {
+        if (AbilityIsActive(target, ABILITY_AFTERMATH))
+            HandleExplosion(target, attacker, &target->pos, 1, TYPE_NONE, DUNGEON_EXIT_DISAPPEARED_IN_EXPLOSION);
         HandleFaint_Async(target, dungeonExitReason, attacker);
     }
 
@@ -819,7 +855,7 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
     if ((type == TYPE_NORMAL) || (type == TYPE_FIGHTING)) {
       normalOrFightingType = TRUE;
     }
-    if ((AbilityIsActive(target, ABILITY_WONDER_GUARD)) && (type != TYPE_NONE)) {
+    if ((AbilityIsActiveOnDefense(pokemon, target, ABILITY_WONDER_GUARD)) && (type != TYPE_NONE)) {
       hasWonderGuard = TRUE;
     }
     dmgStruct->typeEffectiveness = EFFECTIVENESS_NEUTRAL;
@@ -855,13 +891,26 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
       if (IqSkillIsEnabled(target, IQ_TYPE_GUARD)) {
         F48_16_SMul(param_1, param_1, &sTypeGuardReduce);
       }
+      if (AbilityIsActiveOnDefense(pokemon, target, ABILITY_FILTER)
+          || AbilityIsActiveOnDefense(pokemon, target, ABILITY_SOLID_ROCK)) {
+        F48_16_SMul(param_1, param_1, &sTypeGuardReduce);
+      }
     }
 
-    if (((type == TYPE_FIRE) || (type == TYPE_ICE)) && (AbilityIsActive(target,ABILITY_THICK_FAT))) {
+    if (dmgStruct->typeEffectiveness == EFFECTIVENESS_RESIST
+        && AbilityIsActive(pokemon, ABILITY_TINTED_LENS)) {
+      F48_16_SMul(param_1, param_1, &gUnknown_8106F14);
+    }
+
+    if (((type == TYPE_FIRE) || (type == TYPE_ICE)) && (AbilityIsActiveOnDefense(pokemon, target, ABILITY_THICK_FAT))) {
       gDungeon->unk134.unk16D = TRUE;
       F48_16_SMul(param_1,param_1, &gUnknown_8106F1C);
     }
-    if ((type == TYPE_FIRE) && (GetFlashFireStatus(target) != FLASH_FIRE_STATUS_NONE)) {
+    if ((type == TYPE_FIRE) && AbilityIsActiveOnDefense(pokemon, target, ABILITY_DRY_SKIN)) {
+      F48_16_SMul(param_1, param_1, &gUnknown_8106F14);
+    }
+    if ((type == TYPE_FIRE) && !AbilityIsActive(pokemon, ABILITY_MOLD_BREAKER)
+        && (GetFlashFireStatus(target) != FLASH_FIRE_STATUS_NONE)) {
       gDungeon->unk134.fill16E[0] = TRUE;
       FP48_16_FromS32(param_1,0);
       dmgStruct->typeEffectiveness = EFFECTIVENESS_IMMUNE;
@@ -869,7 +918,7 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
       dmgStruct->unkE = 1;
       bVar4 = FALSE;
     }
-    if ((type == TYPE_GROUND) && (AbilityIsActive(target, ABILITY_LEVITATE))) {
+    if ((type == TYPE_GROUND) && (AbilityIsActiveOnDefense(pokemon, target, ABILITY_LEVITATE))) {
       gDungeon->unk134.fill16E[1] = TRUE;
       FP48_16_FromS32(param_1,0);
       dmgStruct->typeEffectiveness = EFFECTIVENESS_IMMUNE;
@@ -927,7 +976,10 @@ static bool8 sub_806E100(s48_16 *param_1, Entity *pokemon, Entity *target, u8 ty
     }
     if (!(F48_16_IsZero(param_1)) && (MonsterIsType(pokemon, type))) {
       gDungeon->unk134.fill16E[6] = TRUE;
-      F48_16_SMul(param_1,param_1, &gUnknown_8106F14);
+      if (AbilityIsActive(pokemon, ABILITY_ADAPTABILITY))
+        F48_16_SMul(param_1,param_1, &gUnknown_8106F0C);
+      else
+        F48_16_SMul(param_1,param_1, &gUnknown_8106F14);
     }
     weather = GetApparentWeather(pokemon);
     if (weather == WEATHER_SUNNY) {
@@ -991,13 +1043,15 @@ s32 WeightWeakTypePicker(Entity *user, Entity *target, u8 moveType)
     userData = GetEntInfo(user);
     targetData = GetEntInfo(target);
 
-    if (moveType == TYPE_FIRE && GetFlashFireStatus(target) != FLASH_FIRE_STATUS_NONE)
+    if (moveType == TYPE_FIRE && GetFlashFireStatus(target) != FLASH_FIRE_STATUS_NONE
+        && !AbilityIsActive(user, ABILITY_MOLD_BREAKER))
         return 0;
-    if (moveType == TYPE_ELECTRIC && AbilityIsActive(target, ABILITY_VOLT_ABSORB))
+    if (moveType == TYPE_ELECTRIC && AbilityIsActiveOnDefense(user, target, ABILITY_VOLT_ABSORB))
         return 0;
-    if (moveType == TYPE_WATER && AbilityIsActive(target, ABILITY_WATER_ABSORB))
+    if (moveType == TYPE_WATER && (AbilityIsActiveOnDefense(user, target, ABILITY_WATER_ABSORB)
+        || AbilityIsActiveOnDefense(user, target, ABILITY_DRY_SKIN)))
         return 0;
-    if (moveType == TYPE_GROUND && AbilityIsActive(target, ABILITY_LEVITATE))
+    if (moveType == TYPE_GROUND && AbilityIsActiveOnDefense(user, target, ABILITY_LEVITATE))
         return 1;
 
     for (i = 0; i < 2; i++) {
@@ -1100,6 +1154,12 @@ static void ApplyAtkDefStatBoosts(Entity *attacker, Entity *target, s32 splitInd
         }
     }
 
+    if (AbilityIsActive(attacker, ABILITY_TOXIC_BOOST)
+        && (GetEntInfo(attacker)->burnClassStatus.status == STATUS_POISONED
+            || GetEntInfo(attacker)->burnClassStatus.status == STATUS_BADLY_POISONED)) {
+        atkMultiplier *= 2;
+    }
+
     if ((AbilityIsActive(attacker, ABILITY_HUGE_POWER)) || (AbilityIsActive(attacker, ABILITY_PURE_POWER))) {
         EntityInfo *entInfo = GetEntInfo(attacker);
         bool32 hugePowerBoost = (rand < 33 && splitIndex == 0);
@@ -1136,12 +1196,12 @@ static void ApplyAtkDefStatBoosts(Entity *attacker, Entity *target, s32 splitInd
         atkDivisor *= 10;
     }
 
-    if (AbilityIsActive(target, ABILITY_INTIMIDATE) && (splitIndex == 0)) {
+    if (AbilityIsActiveOnDefense(attacker, target, ABILITY_INTIMIDATE) && (splitIndex == 0)) {
         atkMultiplier *= 4;
         atkDivisor *= 5;
     }
 
-    if ((AbilityIsActive(target, ABILITY_MARVEL_SCALE)) && (splitIndex == 0)) {
+    if ((AbilityIsActiveOnDefense(attacker, target, ABILITY_MARVEL_SCALE)) && (splitIndex == 0)) {
         EntityInfo *targetInfo = GetEntInfo(target);
         bool8 hasNegStatus_target = MonsterHasNegativeStatus(target);
         bool8 visFlags_target = SetVisualFlags(targetInfo, 8, hasNegStatus_target);
@@ -1189,7 +1249,7 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
     if (!attackerInfo->isTeamLeader && FixedPointToInt(attackerInfo->belly) == 0) {
         SetDamageOne(dmgStruct, moveType, isPhysical);
     }
-    else if (moveId == MOVE_REGULAR_ATTACK && AbilityIsActive(target, ABILITY_WONDER_GUARD)) {
+    else if (moveId == MOVE_REGULAR_ATTACK && AbilityIsActiveOnDefense(attacker, target, ABILITY_WONDER_GUARD)) {
         SetDamageOne(dmgStruct, moveType, isPhysical);
     }
     else {
@@ -1241,6 +1301,21 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         }
         if (HasAdjacentCheerleaderAlly(attacker)) {
             atkStatStage++;
+        }
+        if (AbilityIsActive(attacker, ABILITY_SOLAR_POWER)
+            && splitIndex == 1
+            && GetApparentWeather(attacker) == WEATHER_SUNNY) {
+            atkStatStage++;
+        }
+        if (AbilityIsActive(attacker, ABILITY_RIVALRY) && splitIndex == 0) {
+            s32 atkGender = GetRivalryGender(attackerInfo->id);
+            s32 defGender = GetRivalryGender(targetInfo->id);
+            if (atkGender != 0 && defGender != 0) {
+                if (atkGender == defGender)
+                    atkStatStage++;
+                else
+                    atkStatStage--;
+            }
         }
 
         if (atkStatStage < 0) atkStatStage = 0;
@@ -1398,7 +1473,8 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
         }
 
         // Check crit
-        if (!AbilityIsActive(target, ABILITY_BATTLE_ARMOR) && !AbilityIsActive(target, ABILITY_SHELL_ARMOR)) {
+        if (!AbilityIsActiveOnDefense(attacker, target, ABILITY_BATTLE_ARMOR)
+            && !AbilityIsActiveOnDefense(attacker, target, ABILITY_SHELL_ARMOR)) {
             s32 critOdds;
 
             if (attackerInfo->isNotTeamMember) {
@@ -1428,20 +1504,42 @@ void CalcDamage(Entity *attacker, Entity *target, u8 moveType, s32 movePower, s3
                 if (IqSkillIsEnabled(attacker, IQ_SHARP_SHOOTER)) {
                     critOdds += gCritOddsSharpShooter;
                 }
+                if (AbilityIsActive(attacker, ABILITY_SUPER_LUCK)) {
+                    critOdds += gCritOddsSuperLuck;
+                }
             }
             if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MIN) {
                 /* No crit for min preview */
             }
             else if (gCalcDamagePreviewMode == CALC_DAMAGE_PREVIEW_MAX) {
                 if (critOdds > 0) {
-                    F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F14);
+                    if (AbilityIsActive(attacker, ABILITY_SNIPER))
+                        F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F0C);
+                    else
+                        F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F14);
                     dmgStruct->isCrit = TRUE;
                 }
             }
             else if (DungeonRandInt(100) < critOdds) {
-                F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F14);
+                if (AbilityIsActive(attacker, ABILITY_SNIPER))
+                    F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F0C);
+                else
+                    F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F14);
                 dmgStruct->isCrit = TRUE;
             }
+        }
+
+        if (AbilityIsActive(attacker, ABILITY_IRON_FIST) && IsPunchingMove(moveId)) {
+            F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F14);
+        }
+        if (AbilityIsActive(attacker, ABILITY_TECHNICIAN)
+            && moveId != MOVE_REGULAR_ATTACK
+            && moveId != MOVE_PROJECTILE
+            && movePower <= 4) {
+            F48_16_SMul(&unkSp9, &unkSp9, &gUnknown_8106F14);
+        }
+        if (AbilityIsActive(attacker, ABILITY_RECKLESS) && IsRecoilMove(moveId)) {
+            F48_16_SMul(&unkSp9, &unkSp9, &sRecklessBoost);
         }
 
         gDungeon->unk134.unk154 = FP48_16_ToS32(&unkSp8);
@@ -1515,6 +1613,9 @@ void DealDamageToEntity_Async(Entity *entity, s32 dmg, s32 residualDmgType, s32 
     s16 statusKoId = 0;
     s32 statusKoLevel = 0;
     u8 statusKoExpMult = EXP_REGULAR;
+
+    if (AbilityIsActive(entity, ABILITY_MAGIC_GUARD))
+        return;
 
     if (info->isNotTeamMember
         && info->HP > 0

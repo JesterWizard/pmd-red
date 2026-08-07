@@ -390,7 +390,7 @@ bool8 TryUseChosenMove(struct Entity *attacker, u32 r6, s32 itemId, u32 var_30, 
         GetEntInfo(attacker)->usedLinkedMovesCounter++;
     }
 
-    var_2C = sub_8057070(move);
+    var_2C = sub_8057070(attacker, move);
     for (i = 0; i < var_2C; i++) {
         u8 r4;
         EntityInfo *entInfo;
@@ -757,6 +757,8 @@ s32 GetAccuracyPercent(Entity *attacker, Entity *target, Move *move, s32 accurac
 
     if (selfAlwaysHits && attacker == target)
         return ACCURACY_PERCENT_ALWAYS;
+    if (AbilityIsActive(attacker, ABILITY_NO_GUARD) || AbilityIsActive(target, ABILITY_NO_GUARD))
+        return ACCURACY_PERCENT_ALWAYS;
     if (move->id == MOVE_REGULAR_ATTACK && IqSkillIsEnabled(attacker, IQ_SURE_HIT_ATTACKER))
         return ACCURACY_PERCENT_ALWAYS;
     if (attackerInfo->sureShotClassStatus.status == STATUS_SURE_SHOT)
@@ -808,6 +810,15 @@ s32 GetAccuracyPercent(Entity *attacker, Entity *target, Move *move, s32 accurac
         statStageEvasion -= 1;
     }
     if (GetApparentWeather(target) == WEATHER_SANDSTORM && AbilityIsActive(target, ABILITY_SAND_VEIL)) {
+        statStageEvasion += 2;
+    }
+    if ((GetApparentWeather(target) == WEATHER_HAIL || GetApparentWeather(target) == WEATHER_SNOW)
+        && AbilityIsActive(target, ABILITY_SNOW_CLOAK)) {
+        statStageEvasion += 2;
+    }
+    if (AbilityIsActive(target, ABILITY_TANGLED_FEET)
+        && (targetInfo->cringeClassStatus.status == STATUS_CONFUSED
+            || targetInfo->blinkerClassStatus.status == STATUS_CROSS_EYED)) {
         statStageEvasion += 2;
     }
     if (AbilityIsActive(attacker, ABILITY_HUSTLE)) {
@@ -1076,11 +1087,14 @@ const u32 gMultiTurnBideClassStatuses[10] = {
     STATUS_NONE
 };
 
-s32 sub_8057070(Move *move)
+s32 sub_8057070(Entity *pokemon, Move *move)
 {
     s32 numberOfChainedHits = GetMoveNumberOfChainedHits(move);
-    if (numberOfChainedHits == 0)
+    if (numberOfChainedHits == 0) {
+        if (AbilityIsActive(pokemon, ABILITY_SKILL_LINK))
+            return 5;
         return DungeonRandRange(2, 6);
+    }
     else
         return numberOfChainedHits;
 }

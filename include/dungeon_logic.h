@@ -44,6 +44,13 @@ bool8 SafeguardIsActive(Entity * pokemon, Entity * target, bool8 displayMessage)
 bool8 IsProtectedFromStatDrops(Entity * pokemon, Entity * target, bool8 displayMessage);
 bool8 sub_80717A4(Entity *pokemon, u16 moveID);
 bool8 AbilityIsActive(Entity *pokemon, u8 ability);
+/* Defender ability check that returns FALSE if the attacker has Mold Breaker. */
+bool8 AbilityIsActiveOnDefense(Entity *attacker, Entity *defender, u8 ability);
+bool8 IsPunchingMove(u16 moveId);
+bool8 IsRecoilMove(u16 moveId);
+/* 0 = unknown/genderless, 1 = female, 2 = male (Nidoran lines only). */
+s32 GetRivalryGender(s16 species);
+bool8 LeafGuardBlocksStatus(Entity *pokemon);
 bool8 MonsterIsType(Entity *pokemon, u8 type);
 bool8 CanSeeInvisibleMonsters(Entity *pokemon);
 bool8 IsTacticSet(Entity *pokemon, u8 tactic);

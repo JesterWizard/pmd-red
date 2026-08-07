@@ -53,7 +53,7 @@ void ConfuseStatusTarget(Entity * pokemon, Entity * target, bool8 displayMessage
   }
   else
   {
-    if (AbilityIsActive(target, ABILITY_OWN_TEMPO)) {
+    if (AbilityIsActive(target, ABILITY_OWN_TEMPO) || LeafGuardBlocksStatus(target)) {
         if (displayMessage)
             TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FCDB4);
     }

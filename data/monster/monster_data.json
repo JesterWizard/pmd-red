@@ -793,7 +793,8 @@
         ],
         "friendArea": "FRIEND_AREA_FLYAWAY_FOREST",
         "abilities": [
-            "ABILITY_KEEN_EYE"
+            "ABILITY_KEEN_EYE",
+            "ABILITY_TANGLED_FEET"
         ],
         "shadowSize": 0,
         "regenSpeed": 100,
@@ -837,7 +838,8 @@
         ],
         "friendArea": "FRIEND_AREA_FLYAWAY_FOREST",
         "abilities": [
-            "ABILITY_KEEN_EYE"
+            "ABILITY_KEEN_EYE",
+            "ABILITY_TANGLED_FEET"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -888,7 +890,8 @@
         ],
         "friendArea": "FRIEND_AREA_FLYAWAY_FOREST",
         "abilities": [
-            "ABILITY_KEEN_EYE"
+            "ABILITY_KEEN_EYE",
+            "ABILITY_TANGLED_FEET"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -1418,7 +1421,8 @@
         ],
         "friendArea": "FRIEND_AREA_SAFARI",
         "abilities": [
-            "ABILITY_POISON_POINT"
+            "ABILITY_POISON_POINT",
+            "ABILITY_RIVALRY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -1461,7 +1465,8 @@
         ],
         "friendArea": "FRIEND_AREA_SAFARI",
         "abilities": [
-            "ABILITY_POISON_POINT"
+            "ABILITY_POISON_POINT",
+            "ABILITY_RIVALRY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -1512,7 +1517,8 @@
         ],
         "friendArea": "FRIEND_AREA_SAFARI",
         "abilities": [
-            "ABILITY_POISON_POINT"
+            "ABILITY_POISON_POINT",
+            "ABILITY_RIVALRY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -1562,7 +1568,8 @@
         ],
         "friendArea": "FRIEND_AREA_SAFARI",
         "abilities": [
-            "ABILITY_POISON_POINT"
+            "ABILITY_POISON_POINT",
+            "ABILITY_RIVALRY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -1605,7 +1612,8 @@
         ],
         "friendArea": "FRIEND_AREA_SAFARI",
         "abilities": [
-            "ABILITY_POISON_POINT"
+            "ABILITY_POISON_POINT",
+            "ABILITY_RIVALRY"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -1656,7 +1664,8 @@
         ],
         "friendArea": "FRIEND_AREA_SAFARI",
         "abilities": [
-            "ABILITY_POISON_POINT"
+            "ABILITY_POISON_POINT",
+            "ABILITY_RIVALRY"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -1706,7 +1715,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_MOONVIEW",
         "abilities": [
-            "ABILITY_CUTE_CHARM"
+            "ABILITY_CUTE_CHARM",
+            "ABILITY_MAGIC_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -1756,7 +1766,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_MOONVIEW",
         "abilities": [
-            "ABILITY_CUTE_CHARM"
+            "ABILITY_CUTE_CHARM",
+            "ABILITY_MAGIC_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -2247,7 +2258,8 @@
         ],
         "friendArea": "FRIEND_AREA_MUSHROOM_FOREST",
         "abilities": [
-            "ABILITY_EFFECT_SPORE"
+            "ABILITY_EFFECT_SPORE",
+            "ABILITY_DRY_SKIN"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -2291,7 +2303,8 @@
         ],
         "friendArea": "FRIEND_AREA_MUSHROOM_FOREST",
         "abilities": [
-            "ABILITY_EFFECT_SPORE"
+            "ABILITY_EFFECT_SPORE",
+            "ABILITY_DRY_SKIN"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -2342,7 +2355,8 @@
         ],
         "friendArea": "FRIEND_AREA_SECRETIVE_FOREST",
         "abilities": [
-            "ABILITY_COMPOUNDEYES"
+            "ABILITY_COMPOUNDEYES",
+            "ABILITY_TINTED_LENS"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -2387,7 +2401,8 @@
         "movementType": "MOVEMENT_TYPE_CHASM",
         "friendArea": "FRIEND_AREA_SECRETIVE_FOREST",
         "abilities": [
-            "ABILITY_SHIELD_DUST"
+            "ABILITY_SHIELD_DUST",
+            "ABILITY_TINTED_LENS"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -2535,7 +2550,8 @@
         ],
         "friendArea": "FRIEND_AREA_ENERGETIC_FOREST",
         "abilities": [
-            "ABILITY_PICKUP"
+            "ABILITY_PICKUP",
+            "ABILITY_TECHNICIAN"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -2579,7 +2595,8 @@
         ],
         "friendArea": "FRIEND_AREA_ENERGETIC_FOREST",
         "abilities": [
-            "ABILITY_LIMBER"
+            "ABILITY_LIMBER",
+            "ABILITY_TECHNICIAN"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -2771,7 +2788,8 @@
         ],
         "friendArea": "FRIEND_AREA_ENERGETIC_FOREST",
         "abilities": [
-            "ABILITY_VITAL_SPIRIT"
+            "ABILITY_VITAL_SPIRIT",
+            "ABILITY_ANGER_POINT"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -3218,7 +3236,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DISCIPLINE",
         "abilities": [
-            "ABILITY_GUTS"
+            "ABILITY_GUTS",
+            "ABILITY_NO_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -3261,7 +3280,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DISCIPLINE",
         "abilities": [
-            "ABILITY_GUTS"
+            "ABILITY_GUTS",
+            "ABILITY_NO_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -3311,7 +3331,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DISCIPLINE",
         "abilities": [
-            "ABILITY_GUTS"
+            "ABILITY_GUTS",
+            "ABILITY_NO_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -4389,7 +4410,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_BOUNTIFUL_SEA",
         "abilities": [
-            "ABILITY_SHELL_ARMOR"
+            "ABILITY_SHELL_ARMOR",
+            "ABILITY_SKILL_LINK"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -4434,7 +4456,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_BOUNTIFUL_SEA",
         "abilities": [
-            "ABILITY_SHELL_ARMOR"
+            "ABILITY_SHELL_ARMOR",
+            "ABILITY_SKILL_LINK"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -4871,7 +4894,7 @@
         "friendArea": "FRIEND_AREA_POWER_PLANT",
         "abilities": [
             "ABILITY_SOUNDPROOF",
-            "ABILITY_STATIC"
+            "ABILITY_AFTERMATH"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -4915,7 +4938,7 @@
         "friendArea": "FRIEND_AREA_POWER_PLANT",
         "abilities": [
             "ABILITY_SOUNDPROOF",
-            "ABILITY_STATIC"
+            "ABILITY_AFTERMATH"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -5156,7 +5179,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DISCIPLINE",
         "abilities": [
-            "ABILITY_LIMBER"
+            "ABILITY_LIMBER",
+            "ABILITY_RECKLESS"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -5207,7 +5231,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DISCIPLINE",
         "abilities": [
-            "ABILITY_KEEN_EYE"
+            "ABILITY_KEEN_EYE",
+            "ABILITY_IRON_FIST"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -5538,7 +5563,8 @@
         ],
         "friendArea": "FRIEND_AREA_JUNGLE",
         "abilities": [
-            "ABILITY_CHLOROPHYLL"
+            "ABILITY_CHLOROPHYLL",
+            "ABILITY_LEAF_GUARD"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -5626,7 +5652,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_TREASURE_SEA",
         "abilities": [
-            "ABILITY_SWIFT_SWIM"
+            "ABILITY_SWIFT_SWIM",
+            "ABILITY_SNIPER"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -5670,7 +5697,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_TREASURE_SEA",
         "abilities": [
-            "ABILITY_POISON_POINT"
+            "ABILITY_POISON_POINT",
+            "ABILITY_SNIPER"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -5915,7 +5943,8 @@
         ],
         "friendArea": "FRIEND_AREA_DECREPIT_LAB",
         "abilities": [
-            "ABILITY_SOUNDPROOF"
+            "ABILITY_SOUNDPROOF",
+            "ABILITY_FILTER"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -5959,7 +5988,8 @@
         ],
         "friendArea": "FRIEND_AREA_OVERGROWN_FOREST",
         "abilities": [
-            "ABILITY_SWARM"
+            "ABILITY_SWARM",
+            "ABILITY_TECHNICIAN"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -6154,7 +6184,8 @@
         ],
         "friendArea": "FRIEND_AREA_OVERGROWN_FOREST",
         "abilities": [
-            "ABILITY_HYPER_CUTTER"
+            "ABILITY_HYPER_CUTTER",
+            "ABILITY_MOLD_BREAKER"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -6197,7 +6228,8 @@
         ],
         "friendArea": "FRIEND_AREA_SAFARI",
         "abilities": [
-            "ABILITY_INTIMIDATE"
+            "ABILITY_INTIMIDATE",
+            "ABILITY_ANGER_POINT"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -6426,7 +6458,8 @@
         ],
         "friendArea": "FRIEND_AREA_TRANSFORM_FOREST",
         "abilities": [
-            "ABILITY_RUN_AWAY"
+            "ABILITY_RUN_AWAY",
+            "ABILITY_ADAPTABILITY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -8015,7 +8048,7 @@
         "friendArea": "FRIEND_AREA_MIST_RISE_FOREST",
         "abilities": [
             "ABILITY_SWARM",
-            "ABILITY_EARLY_BIRD"
+            "ABILITY_IRON_FIST"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -8356,7 +8389,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_MOONVIEW",
         "abilities": [
-            "ABILITY_CUTE_CHARM"
+            "ABILITY_CUTE_CHARM",
+            "ABILITY_MAGIC_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -9031,7 +9065,8 @@
         ],
         "friendArea": "FRIEND_AREA_BEAU_PLAINS",
         "abilities": [
-            "ABILITY_CHLOROPHYLL"
+            "ABILITY_CHLOROPHYLL",
+            "ABILITY_LEAF_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -9075,7 +9110,8 @@
         ],
         "friendArea": "FRIEND_AREA_BEAU_PLAINS",
         "abilities": [
-            "ABILITY_CHLOROPHYLL"
+            "ABILITY_CHLOROPHYLL",
+            "ABILITY_LEAF_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -9127,7 +9163,8 @@
         ],
         "friendArea": "FRIEND_AREA_BEAU_PLAINS",
         "abilities": [
-            "ABILITY_CHLOROPHYLL"
+            "ABILITY_CHLOROPHYLL",
+            "ABILITY_LEAF_GUARD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -9221,7 +9258,8 @@
         ],
         "friendArea": "FRIEND_AREA_JUNGLE",
         "abilities": [
-            "ABILITY_CHLOROPHYLL"
+            "ABILITY_CHLOROPHYLL",
+            "ABILITY_SOLAR_POWER"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -9264,7 +9302,8 @@
         ],
         "friendArea": "FRIEND_AREA_JUNGLE",
         "abilities": [
-            "ABILITY_CHLOROPHYLL"
+            "ABILITY_CHLOROPHYLL",
+            "ABILITY_SOLAR_POWER"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -9562,7 +9601,8 @@
         ],
         "friendArea": "FRIEND_AREA_FLYAWAY_FOREST",
         "abilities": [
-            "ABILITY_INSOMNIA"
+            "ABILITY_INSOMNIA",
+            "ABILITY_SUPER_LUCK"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -11226,7 +11266,8 @@
         ],
         "friendArea": "FRIEND_AREA_SKY_BLUE_PLAINS",
         "abilities": [
-            "ABILITY_INTIMIDATE"
+            "ABILITY_INTIMIDATE",
+            "ABILITY_QUICK_FEET"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -11323,7 +11364,8 @@
         ],
         "friendArea": "FRIEND_AREA_OVERGROWN_FOREST",
         "abilities": [
-            "ABILITY_SWARM"
+            "ABILITY_SWARM",
+            "ABILITY_TECHNICIAN"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -11375,7 +11417,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DEEPGREEN",
         "abilities": [
-            "ABILITY_STURDY"
+            "ABILITY_STURDY",
+            "ABILITY_GLUTTONY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -11508,7 +11551,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DEEPGREEN",
         "abilities": [
-            "ABILITY_PICKUP"
+            "ABILITY_PICKUP",
+            "ABILITY_QUICK_FEET"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -11551,7 +11595,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DEEPGREEN",
         "abilities": [
-            "ABILITY_GUTS"
+            "ABILITY_GUTS",
+            "ABILITY_QUICK_FEET"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -11700,7 +11745,8 @@
         ],
         "friendArea": "FRIEND_AREA_FRIGID_CAVERN",
         "abilities": [
-            "ABILITY_OBLIVIOUS"
+            "ABILITY_OBLIVIOUS",
+            "ABILITY_SNOW_CLOAK"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -11744,7 +11790,8 @@
         ],
         "friendArea": "FRIEND_AREA_FRIGID_CAVERN",
         "abilities": [
-            "ABILITY_OBLIVIOUS"
+            "ABILITY_OBLIVIOUS",
+            "ABILITY_SNOW_CLOAK"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -11841,7 +11888,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_TREASURE_SEA",
         "abilities": [
-            "ABILITY_HUSTLE"
+            "ABILITY_HUSTLE",
+            "ABILITY_SNIPER"
         ],
         "shadowSize": 0,
         "regenSpeed": 100,
@@ -11886,7 +11934,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_TREASURE_SEA",
         "abilities": [
-            "ABILITY_SUCTION_CUPS"
+            "ABILITY_SUCTION_CUPS",
+            "ABILITY_SNIPER"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -12174,7 +12223,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_TREASURE_SEA",
         "abilities": [
-            "ABILITY_SWIFT_SWIM"
+            "ABILITY_SWIFT_SWIM",
+            "ABILITY_SNIPER"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -12319,7 +12369,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_DECREPIT_LAB",
         "abilities": [
-            "ABILITY_TRACE"
+            "ABILITY_TRACE",
+            "ABILITY_DOWNLOAD"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -12414,7 +12465,8 @@
         ],
         "friendArea": "FRIEND_AREA_SKY_BLUE_PLAINS",
         "abilities": [
-            "ABILITY_OWN_TEMPO"
+            "ABILITY_OWN_TEMPO",
+            "ABILITY_TECHNICIAN"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -12500,7 +12552,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DISCIPLINE",
         "abilities": [
-            "ABILITY_INTIMIDATE"
+            "ABILITY_INTIMIDATE",
+            "ABILITY_TECHNICIAN"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -13638,7 +13691,8 @@
         ],
         "friendArea": "FRIEND_AREA_WILD_PLAINS",
         "abilities": [
-            "ABILITY_RUN_AWAY"
+            "ABILITY_RUN_AWAY",
+            "ABILITY_QUICK_FEET"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -13681,7 +13735,8 @@
         ],
         "friendArea": "FRIEND_AREA_WILD_PLAINS",
         "abilities": [
-            "ABILITY_INTIMIDATE"
+            "ABILITY_INTIMIDATE",
+            "ABILITY_QUICK_FEET"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -13731,7 +13786,8 @@
         ],
         "friendArea": "FRIEND_AREA_WILD_PLAINS",
         "abilities": [
-            "ABILITY_PICKUP"
+            "ABILITY_PICKUP",
+            "ABILITY_GLUTTONY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -13774,7 +13830,8 @@
         ],
         "friendArea": "FRIEND_AREA_WILD_PLAINS",
         "abilities": [
-            "ABILITY_PICKUP"
+            "ABILITY_PICKUP",
+            "ABILITY_GLUTTONY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -14812,7 +14869,8 @@
         ],
         "friendArea": "FRIEND_AREA_MUSHROOM_FOREST",
         "abilities": [
-            "ABILITY_EFFECT_SPORE"
+            "ABILITY_EFFECT_SPORE",
+            "ABILITY_POISON_HEAL"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -14856,7 +14914,8 @@
         ],
         "friendArea": "FRIEND_AREA_MUSHROOM_FOREST",
         "abilities": [
-            "ABILITY_EFFECT_SPORE"
+            "ABILITY_EFFECT_SPORE",
+            "ABILITY_POISON_HEAL"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -15622,7 +15681,8 @@
         ],
         "friendArea": "FRIEND_AREA_DARKNESS_RIDGE",
         "abilities": [
-            "ABILITY_KEEN_EYE"
+            "ABILITY_KEEN_EYE",
+            "ABILITY_STALL"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -16605,7 +16665,8 @@
         "movementType": "MOVEMENT_TYPE_LAVA",
         "friendArea": "FRIEND_AREA_CRATER",
         "abilities": [
-            "ABILITY_MAGMA_ARMOR"
+            "ABILITY_MAGMA_ARMOR",
+            "ABILITY_SOLID_ROCK"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -16795,7 +16856,8 @@
         ],
         "friendArea": "FRIEND_AREA_MT_DEEPGREEN",
         "abilities": [
-            "ABILITY_OWN_TEMPO"
+            "ABILITY_OWN_TEMPO",
+            "ABILITY_TANGLED_FEET"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -17176,7 +17238,8 @@
         ],
         "friendArea": "FRIEND_AREA_WILD_PLAINS",
         "abilities": [
-            "ABILITY_IMMUNITY"
+            "ABILITY_IMMUNITY",
+            "ABILITY_TOXIC_BOOST"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -17354,7 +17417,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_PEANUT_SWAMP",
         "abilities": [
-            "ABILITY_OBLIVIOUS"
+            "ABILITY_OBLIVIOUS",
+            "ABILITY_ANTICIPATION"
         ],
         "shadowSize": 0,
         "regenSpeed": 100,
@@ -17400,7 +17464,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_PEANUT_SWAMP",
         "abilities": [
-            "ABILITY_OBLIVIOUS"
+            "ABILITY_OBLIVIOUS",
+            "ABILITY_ANTICIPATION"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -17452,7 +17517,7 @@
         "friendArea": "FRIEND_AREA_TURTLESHELL_POND",
         "abilities": [
             "ABILITY_HYPER_CUTTER",
-            "ABILITY_SHELL_ARMOR"
+            "ABILITY_ADAPTABILITY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -17498,7 +17563,7 @@
         "friendArea": "FRIEND_AREA_TURTLESHELL_POND",
         "abilities": [
             "ABILITY_HYPER_CUTTER",
-            "ABILITY_SHELL_ARMOR"
+            "ABILITY_ADAPTABILITY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -18337,7 +18402,8 @@
         ],
         "friendArea": "FRIEND_AREA_JUNGLE",
         "abilities": [
-            "ABILITY_CHLOROPHYLL"
+            "ABILITY_CHLOROPHYLL",
+            "ABILITY_SOLAR_POWER"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -18426,7 +18492,8 @@
         ],
         "friendArea": "FRIEND_AREA_DARKNESS_RIDGE",
         "abilities": [
-            "ABILITY_PRESSURE"
+            "ABILITY_PRESSURE",
+            "ABILITY_SUPER_LUCK"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -18513,7 +18580,8 @@
         ],
         "friendArea": "FRIEND_AREA_FRIGID_CAVERN",
         "abilities": [
-            "ABILITY_INNER_FOCUS"
+            "ABILITY_INNER_FOCUS",
+            "ABILITY_ICE_BODY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -18556,7 +18624,8 @@
         ],
         "friendArea": "FRIEND_AREA_FRIGID_CAVERN",
         "abilities": [
-            "ABILITY_INNER_FOCUS"
+            "ABILITY_INNER_FOCUS",
+            "ABILITY_ICE_BODY"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,
@@ -18608,7 +18677,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_ICE_FLOE_BEACH",
         "abilities": [
-            "ABILITY_THICK_FAT"
+            "ABILITY_THICK_FAT",
+            "ABILITY_ICE_BODY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -18653,7 +18723,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_ICE_FLOE_BEACH",
         "abilities": [
-            "ABILITY_THICK_FAT"
+            "ABILITY_THICK_FAT",
+            "ABILITY_ICE_BODY"
         ],
         "shadowSize": 1,
         "regenSpeed": 100,
@@ -18705,7 +18776,8 @@
         "movementType": "MOVEMENT_TYPE_WATER",
         "friendArea": "FRIEND_AREA_ICE_FLOE_BEACH",
         "abilities": [
-            "ABILITY_THICK_FAT"
+            "ABILITY_THICK_FAT",
+            "ABILITY_ICE_BODY"
         ],
         "shadowSize": 2,
         "regenSpeed": 100,

@@ -4,9 +4,11 @@
 #include "dungeon_move_util.h"
 #include "dungeon_message.h"
 #include "dungeon_mon_sprite_render.h"
+#include "constants/ability.h"
 #include "constants/direction.h"
 #include "constants/dungeon_action.h"
 #include "constants/iq_skill.h"
+#include "constants/move.h"
 #include "constants/move_id.h"
 #include "constants/status.h"
 #include "constants/tactic.h"
@@ -378,6 +380,10 @@ s32 AIConsiderMove(struct AIPossibleMove *aiPossibleMove, Entity *pokemon, Move 
         (hasStatusChecker && !CanUseOnSelfWithStatusChecker(pokemon, move)))
     {
         return 1;
+    }
+    /* Stall: non-leaders may only target foes one tile away */
+    if (AbilityIsActive(pokemon, ABILITY_STALL) && !pokemonInfo->isTeamLeader) {
+        targetingFlags = (targetingFlags & ~0xF0) | TARGETING_FLAG_TARGET_OTHER;
     }
     rangeTargetingFlags = targetingFlags & 0xF0;
     if (rangeTargetingFlags == TARGETING_FLAG_TARGET_OTHER ||

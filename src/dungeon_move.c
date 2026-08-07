@@ -1423,6 +1423,42 @@ static s32 TryHitTarget_Async(Entity *attacker, Entity *target, Move *move, stru
         }
 
         HandleDealingDamage_Async(attacker, target, dmgStruct, isFalseSwipe, TRUE, dungeonExitReason, TRUE, 0);
+
+        if (move->id == MOVE_REGULAR_ATTACK
+            && AbilityIsActive(attacker, ABILITY_ANTICIPATION)
+            && EntityIsValid(attacker)
+            && EntityIsValid(target)
+            && !dmgStruct->tookNoDamage
+            && gCalcDamagePreviewMode == CALC_DAMAGE_NORMAL) {
+            EntityInfo *attackerInfo = GetEntInfo(attacker);
+            EntityInfo *targetInfo = GetEntInfo(target);
+            s32 i;
+            bool8 foundSe = FALSE;
+
+            for (i = 0; i < MAX_MON_MOVES; i++) {
+                Move *foeMove = &targetInfo->moves.moves[i];
+                u8 moveType;
+                s32 e0, e1;
+
+                if (!(foeMove->moveFlags & MOVE_FLAG_EXISTS))
+                    continue;
+                if (GetMoveBasePower(foeMove) == 0)
+                    continue;
+                moveType = GetMoveTypeForMonster(target, foeMove);
+                if (moveType == TYPE_NONE)
+                    continue;
+                e0 = gTypeEffectivenessChart[moveType][attackerInfo->types[0]];
+                e1 = gTypeEffectivenessChart[moveType][attackerInfo->types[1]];
+                if (gEffectivenessChart[e0][e1] == EFFECTIVENESS_SUPER) {
+                    foundSe = TRUE;
+                    break;
+                }
+            }
+            if (foundSe) {
+                SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], attacker, 0);
+                TryDisplayDungeonLoggableMessage3_Async(attacker, target, gText_AnticipationShuddered);
+            }
+        }
     }
     else {
         SetMessageArgument_2(gFormatBuffer_Monsters[1], GetEntInfo(target), 0);

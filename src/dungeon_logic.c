@@ -16,6 +16,7 @@
 #include "weather.h"
 #include "constants/ability.h"
 #include "constants/dungeon.h"
+#include "constants/monster.h"
 #include "constants/tactic.h"
 #include "constants/targeting.h"
 #include "dungeon_random.h"
@@ -383,6 +384,9 @@ s32 sub_8070828(Entity *pokemon, bool8 displayMessage)
             flag = TRUE;
         }
         if ((AbilityIsActive(pokemon, ABILITY_CHLOROPHYLL)) && (GetApparentWeather(pokemon) == WEATHER_SUNNY)) {
+            flag = TRUE;
+        }
+        if ((AbilityIsActive(pokemon, ABILITY_QUICK_FEET)) && MonsterHasNegativeStatus(pokemon)) {
             flag = TRUE;
         }
         if (displayMessage && SetVisualFlags(GetEntInfo(pokemon), 0x40, flag)) {
@@ -1290,6 +1294,73 @@ bool8 AbilityIsActive(Entity *pokemon, u8 ability)
         }
         return FALSE;
     }
+}
+
+bool8 AbilityIsActiveOnDefense(Entity *attacker, Entity *defender, u8 ability)
+{
+    if (attacker != NULL && EntityIsValid(attacker) && AbilityIsActive(attacker, ABILITY_MOLD_BREAKER))
+        return FALSE;
+    return AbilityIsActive(defender, ability);
+}
+
+bool8 IsPunchingMove(u16 moveId)
+{
+    switch (moveId) {
+    case MOVE_THUNDERPUNCH:
+    case MOVE_FOCUS_PUNCH:
+    case MOVE_FOCUS_PUNCH_2ND_TURN:
+    case MOVE_SHADOW_PUNCH:
+    case MOVE_DYNAMICPUNCH:
+    case MOVE_DIZZY_PUNCH:
+    case MOVE_FIRE_PUNCH:
+    case MOVE_MACH_PUNCH:
+    case MOVE_MEGA_PUNCH:
+    case MOVE_ICE_PUNCH:
+    case MOVE_COMET_PUNCH:
+    case MOVE_SKY_UPPERCUT:
+    case MOVE_METEOR_MASH:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+bool8 IsRecoilMove(u16 moveId)
+{
+    switch (moveId) {
+    case MOVE_DOUBLE_EDGE:
+    case MOVE_SUBMISSION:
+    case MOVE_TAKE_DOWN:
+    case MOVE_VOLT_TACKLE:
+    case MOVE_STRUGGLE:
+    case MOVE_JUMP_KICK:
+    case MOVE_HI_JUMP_KICK:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+s32 GetRivalryGender(s16 species)
+{
+    switch (species) {
+    case MONSTER_NIDORAN_F:
+    case MONSTER_NIDORINA:
+    case MONSTER_NIDOQUEEN:
+        return 1;
+    case MONSTER_NIDORAN_M:
+    case MONSTER_NIDORINO:
+    case MONSTER_NIDOKING:
+        return 2;
+    default:
+        return 0;
+    }
+}
+
+bool8 LeafGuardBlocksStatus(Entity *pokemon)
+{
+    return AbilityIsActive(pokemon, ABILITY_LEAF_GUARD)
+        && GetApparentWeather(pokemon) == WEATHER_SUNNY;
 }
 
 bool8 MonsterIsType(Entity *pokemon, u8 type)
