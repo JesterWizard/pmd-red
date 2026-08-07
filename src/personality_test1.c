@@ -51,6 +51,7 @@ enum
     PERSONALITY_END_INTRO,
     PERSONALITY_ADVANCE_TO_TEST_END,
     PERSONALITY_TEST_END,
+    PERSONALITY_CUSTOM_FORCE_PAIR,
 };
 
 static EWRAM_INIT PersonalityTestTracker *sPersonalityTestTracker = {NULL};
@@ -87,6 +88,7 @@ static void PromptStarterSelect(void);
 static void RevealPersonality(void);
 static void RevealStarter(void);
 static void SetPlayerGender(void);
+static void StartCustomStoryPair(void);
 static void UpdateNatureTotals(void);
 
 bool8 CreateTestTracker(void)
@@ -118,7 +120,12 @@ static void InitializeTestStats(void)
     sPersonalityTestTracker->playerNature = 0;
     sPersonalityTestTracker->playerGender = 0;
 
-    if (gRuntimeConfig.starter_choice_prompt)
+    if (gRuntimeConfig.custom_story) {
+        sPersonalityTestTracker->TeamBasicInfo.StarterID = MONSTER_TREECKO;
+        sPersonalityTestTracker->TeamBasicInfo.PartnerID = MONSTER_SQUIRTLE;
+        sPersonalityTestTracker->TestState = PERSONALITY_CUSTOM_FORCE_PAIR;
+    }
+    else if (gRuntimeConfig.starter_choice_prompt)
         sPersonalityTestTracker->TestState = PERSONALITY_CHOICE_PROMPT;
     else
         sPersonalityTestTracker->TestState = PERSONALITY_GENERATE_NEW_QUESTION;
@@ -206,6 +213,9 @@ u32 HandleTestTrackerState(void)
             break;
         case PERSONALITY_ADVANCE_TO_TEST_END:
             AdvanceToTestEnd();
+            break;
+        case PERSONALITY_CUSTOM_FORCE_PAIR:
+            StartCustomStoryPair();
             break;
         case PERSONALITY_TEST_END:
             iVar1 = Rand32Bit() * sPersonalityTestTracker->FrameCounter;
@@ -550,6 +560,12 @@ static void HandlePartnerConfirmYesNo(void)
         CreatePartnerSelectionMenu(sPersonalityTestTracker->TeamBasicInfo.StarterID);
         sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_1;
     }
+}
+
+static void StartCustomStoryPair(void)
+{
+    CreateDialogueBoxAndPortrait(gPartnerNickPrompt, 0, 0, 0x301);
+    sPersonalityTestTracker->TestState = PERSONALITY_ADVANCE_TO_PARTNER_NICKNAME_2;
 }
 
 static void AdvanceToPartnerNicknameScreen(void)

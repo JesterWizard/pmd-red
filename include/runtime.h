@@ -25,7 +25,9 @@ typedef struct {
      * leader = light blue, allies = yellow, enemies = cyan,
      * exp / level-up stat gain numbers = cyan,
      * obtained / dungeon item names = cream pink,
-     * obtained money amounts = cyan */
+     * obtained money amounts = cyan,
+     * Pokémon summary Stats: cyan Exp / To next level,
+     * separate Attack/Defense labels, Tactic on leaders */
     u8 pmd2_battle_info_colors;
     /* PMD2 Poké coin glyph + cyan money amount in dungeon HUD */
     u8 custom_graphics;
@@ -97,6 +99,8 @@ typedef struct {
     u8 physical_special_split;
     /* Floating HP bars above Pokémon visible in the dungeon */
     u8 dungeon_hp_bars;
+    /* Weird Autumn SSLP custom story (forced Treecko/Squirtle + rewritten early cutscenes) */
+    u8 custom_story;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

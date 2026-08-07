@@ -12,6 +12,7 @@
 #include "friend_area.h"
 #include "dungeon_info.h"
 #include "dungeon_data.h"
+#include "runtime.h"
 #include "constants/ability.h"
 #include "constants/type.h"
 #include "constants/colors.h"
@@ -35,6 +36,7 @@ void ShowPokemonSummaryWindow(s32 which, s32 currSubWindowId, MonSummaryInfo *mo
             const u8 *str;
             s32 iVar8;
             LevelData levelData;
+            bool8 pmd2Colors = gRuntimeConfig.pmd2_battle_info_colors;
 
             PrintFormattedStringOnWindow((currSubWindowId * 8) + 16, 0, _("Stats"), windowId, '\0');
 
@@ -43,13 +45,17 @@ void ShowPokemonSummaryWindow(s32 which, s32 currSubWindowId, MonSummaryInfo *mo
             PrintFormattedStringOnWindow(4, y, gText_LevelUnkMacro, windowId, '\0');
 
             y += 10;
-            PrintFormattedStringOnWindow(4, y,gText_ExpPtsUnkMacro, windowId, '\0');
+            PrintFormattedStringOnWindow(4, y,
+                pmd2Colors ? gText_ExpPtsUnkMacroCyan : gText_ExpPtsUnkMacro,
+                windowId, '\0');
 
             y += 10;
             if (monInfo->level < 100) {
                 GetLvlUpEntry(&levelData, monInfo->species, monInfo->level + 1);
                 gFormatArgs[0] = levelData.expRequired - monInfo->exp;
-                PrintFormattedStringOnWindow(4, y, gText_ToNextLevel, windowId, '\0');
+                PrintFormattedStringOnWindow(4, y,
+                    pmd2Colors ? gText_ToNextLevelCyan : gText_ToNextLevel,
+                    windowId, '\0');
             }
 
             y += 12;
@@ -58,43 +64,83 @@ void ShowPokemonSummaryWindow(s32 which, s32 currSubWindowId, MonSummaryInfo *mo
             PrintFormattedStringOnWindow(4, y, gUnknown_810DDD0, windowId, '\0');
 
             y += 10;
-            PrintFormattedStringOnWindow(4, y, gUnknown_810DDE4, windowId, '\0');
+            if (pmd2Colors) {
+                gFormatArgs[0] = monInfo->offense.att[0];
+                if (monInfo->atkBoost != 0) {
+                    gFormatArgs[0] += monInfo->atkBoost;
+                    PrintFormattedStringOnWindow(4, y, gText_SummaryAttackBoost, windowId, '\0');
+                }
+                else {
+                    PrintFormattedStringOnWindow(4, y, gText_SummaryAttack, windowId, '\0');
+                }
 
-            str = gUnknown_810DE0C;
-            gFormatArgs[0] = monInfo->offense.att[0];
-            if (monInfo->atkBoost != 0) {
-                gFormatArgs[0] += monInfo->atkBoost;
-                str = gUnknown_810DE20;
-            }
-            PrintFormattedStringOnWindow(4, y, str, windowId, '\0');
-
-            if (monInfo->defBoost != 0) {
-                gFormatArgs[0] = monInfo->offense.def[0] + monInfo->defBoost;
-                PrintFormattedStringOnWindow(4, y, gUnknown_810DE4C, windowId, '\0');
-            }
-            else {
                 gFormatArgs[0] = monInfo->offense.def[0];
-                PrintFormattedStringOnWindow(4, y, gUnknown_810DE38, windowId, '\0');
-            }
+                if (monInfo->defBoost != 0) {
+                    gFormatArgs[0] += monInfo->defBoost;
+                    PrintFormattedStringOnWindow(4, y, gText_SummaryDefenseBoost, windowId, '\0');
+                }
+                else {
+                    PrintFormattedStringOnWindow(4, y, gText_SummaryDefense, windowId, '\0');
+                }
 
-            y += 10;
-            PrintFormattedStringOnWindow(4, y, gUnknown_810DDFC, windowId, '\0');
+                y += 10;
+                gFormatArgs[0] = monInfo->offense.att[1];
+                if (monInfo->spAtkBoost != 0) {
+                    gFormatArgs[0] += monInfo->spAtkBoost;
+                    PrintFormattedStringOnWindow(4, y, gText_SummarySpAtkBoost, windowId, '\0');
+                }
+                else {
+                    PrintFormattedStringOnWindow(4, y, gText_SummarySpAtk, windowId, '\0');
+                }
 
-            str = gUnknown_810DE24;
-            gFormatArgs[0] = monInfo->offense.att[1];
-            if (monInfo->spAtkBoost != 0) {
-                gFormatArgs[0] += monInfo->spAtkBoost;
-                str = gUnknown_810DE28;
-            }
-            PrintFormattedStringOnWindow(4, y, str, windowId, '\0');
-
-            if (monInfo->spDefBoost != 0) {
-                gFormatArgs[0] = monInfo->offense.def[1] + monInfo->spDefBoost;
-                PrintFormattedStringOnWindow(4, y, gUnknown_810DE54, windowId, '\0');
+                gFormatArgs[0] = monInfo->offense.def[1];
+                if (monInfo->spDefBoost != 0) {
+                    gFormatArgs[0] += monInfo->spDefBoost;
+                    PrintFormattedStringOnWindow(4, y, gText_SummarySpDefBoost, windowId, '\0');
+                }
+                else {
+                    PrintFormattedStringOnWindow(4, y, gText_SummarySpDef, windowId, '\0');
+                }
             }
             else {
-                gFormatArgs[0] = monInfo->offense.def[1];
-                PrintFormattedStringOnWindow(4, y, gUnknown_810DE50, windowId, '\0');
+                PrintFormattedStringOnWindow(4, y, gUnknown_810DDE4, windowId, '\0');
+
+                str = gUnknown_810DE0C;
+                gFormatArgs[0] = monInfo->offense.att[0];
+                if (monInfo->atkBoost != 0) {
+                    gFormatArgs[0] += monInfo->atkBoost;
+                    str = gUnknown_810DE20;
+                }
+                PrintFormattedStringOnWindow(4, y, str, windowId, '\0');
+
+                if (monInfo->defBoost != 0) {
+                    gFormatArgs[0] = monInfo->offense.def[0] + monInfo->defBoost;
+                    PrintFormattedStringOnWindow(4, y, gUnknown_810DE4C, windowId, '\0');
+                }
+                else {
+                    gFormatArgs[0] = monInfo->offense.def[0];
+                    PrintFormattedStringOnWindow(4, y, gUnknown_810DE38, windowId, '\0');
+                }
+
+                y += 10;
+                PrintFormattedStringOnWindow(4, y, gUnknown_810DDFC, windowId, '\0');
+
+                str = gUnknown_810DE24;
+                gFormatArgs[0] = monInfo->offense.att[1];
+                if (monInfo->spAtkBoost != 0) {
+                    gFormatArgs[0] += monInfo->spAtkBoost;
+                    str = gUnknown_810DE28;
+                }
+                PrintFormattedStringOnWindow(4, y, str, windowId, '\0');
+
+                if (monInfo->spDefBoost != 0) {
+                    gFormatArgs[0] = monInfo->offense.def[1] + monInfo->spDefBoost;
+                    PrintFormattedStringOnWindow(4, y, gUnknown_810DE54, windowId, '\0');
+                }
+                else {
+                    gFormatArgs[0] = monInfo->offense.def[1];
+                    PrintFormattedStringOnWindow(4, y, gUnknown_810DE50, windowId, '\0');
+                }
             }
 
             y += 10;
@@ -116,9 +162,11 @@ void ShowPokemonSummaryWindow(s32 which, s32 currSubWindowId, MonSummaryInfo *mo
             PrintFormattedStringOnWindow(4, y, gUnknown_810DE80, windowId, '\0');
 
             y += 10;
-            if (!monInfo->isTeamLeader) {
+            if (pmd2Colors || !monInfo->isTeamLeader) {
                 CopyTacticsNameToBuffer(gFormatBuffer_Monsters[0], monInfo->tactic);
-                PrintFormattedStringOnWindow(4, y, gUnknown_810DE98, windowId, '\0');
+                PrintFormattedStringOnWindow(4, y,
+                    pmd2Colors ? gText_SummaryTactic : gUnknown_810DE98,
+                    windowId, '\0');
             }
 
             y += 10;

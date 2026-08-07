@@ -17,6 +17,7 @@
 #include "pokemon_3.h"
 #include "ground_place.h"
 #include "ground_main.h"
+#include "runtime.h"
 #include "script_vars_info.h"
 #include "training_maze.h"
 
@@ -190,6 +191,8 @@ s32 GetScriptVarValue(u8 *localVarBuf, s32 varId_)
                     return gTeamInventoryRef->teamMoney;
                 case BANK_GOLD:
                     return gTeamInventoryRef->teamSavings;
+                case CUSTOM_STORY:
+                    return gRuntimeConfig.custom_story != FALSE;
             }
         default:
             return 0;
@@ -236,6 +239,8 @@ s32 GetScriptVarArrayValue(u8 *localVarBuf, s32 varId_, s32 idx_)
                     return gTeamInventoryRef->teamMoney;
                 case BANK_GOLD:
                     return gTeamInventoryRef->teamSavings;
+                case CUSTOM_STORY:
+                    return gRuntimeConfig.custom_story != FALSE;
             }
         default:
             return 0;

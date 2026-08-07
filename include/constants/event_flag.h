@@ -418,7 +418,8 @@ enum ScriptVarId
     /* 0x4f */ EVENT_M01E10A_5N,
     /* 0x50 */ EVENT_M02E01A_2N,
     /* 0x51 */ SUM,
-    /* 0x52 */ SCRIPT_VARS_COUNT,
+    /* 0x52 */ CUSTOM_STORY, /* SPECIAL: mirrors gRuntimeConfig.custom_story (not saved) */
+    /* 0x53 */ SCRIPT_VARS_COUNT,
     /* 0x400 */ LOCAL0 = 0x400,
     /* 0x401 */ LOCAL1,
     /* 0x402 */ LOCAL2,
