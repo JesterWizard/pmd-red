@@ -72,6 +72,84 @@ void InitializeRecruitedPokemon(void)
     }
 }
 
+/* Cheat: raise leader, partner, and active teammates to Lv100 with max stats. */
+void ApplyMaxLevelStatsToTeam(void)
+{
+    s32 monId;
+
+    if (!gRuntimeConfig.max_level_stats)
+        return;
+
+    for (monId = 0; monId < NUM_MONSTERS; monId++) {
+        Pokemon *mon = &gRecruitedPokemonRef->pokemon[monId];
+        s32 level;
+        s32 startLevel;
+
+        if (!PokemonExists(mon))
+            continue;
+        if (!PokemonIsOnTeam(mon) && !IsMonTeamLeader(mon) && !IsMonPartner(mon))
+            continue;
+
+        startLevel = mon->level;
+        if (startLevel < 1)
+            startLevel = 1;
+
+        for (level = startLevel + 1; level <= 100; level++) {
+            LevelData levelData;
+            u16 learnedMoves[16];
+            s32 movesCount;
+            s32 i;
+            s32 atk, spAtk, def, spDef;
+
+            GetLvlUpEntry(&levelData, mon->speciesNum, level);
+            mon->level = level;
+            mon->currExp = levelData.expRequired;
+            mon->pokeHP += levelData.gainHP;
+            if (mon->pokeHP >= 999)
+                mon->pokeHP = 999;
+
+            atk = mon->offense.att[0] + levelData.gainAtt[0];
+            spAtk = mon->offense.att[1] + levelData.gainAtt[1];
+            def = mon->offense.def[0] + levelData.gainDef[0];
+            spDef = mon->offense.def[1] + levelData.gainDef[1];
+            if (atk >= 255) atk = 255;
+            if (spAtk >= 255) spAtk = 255;
+            if (def >= 255) def = 255;
+            if (spDef >= 255) spDef = 255;
+            mon->offense.att[0] = atk;
+            mon->offense.att[1] = spAtk;
+            mon->offense.def[0] = def;
+            mon->offense.def[1] = spDef;
+
+            movesCount = GetMovesLearnedAtLevel(learnedMoves, mon->speciesNum, mon->level, 999);
+            for (i = 0; i < movesCount; i++) {
+                s32 moveSlot;
+
+                for (moveSlot = 0; moveSlot < MAX_MON_MOVES; moveSlot++) {
+                    if (!MoveFlagExists(&mon->moves[moveSlot])) {
+                        InitZeroedPPPokemonMove(&mon->moves[moveSlot], learnedMoves[i]);
+                        break;
+                    }
+                }
+            }
+        }
+
+        {
+            LevelData levelData;
+
+            mon->level = 100;
+            GetLvlUpEntry(&levelData, mon->speciesNum, 100);
+            mon->currExp = levelData.expRequired;
+        }
+        mon->pokeHP = 999;
+        mon->offense.att[0] = 255;
+        mon->offense.att[1] = 255;
+        mon->offense.def[0] = 255;
+        mon->offense.def[1] = 255;
+        mon->IQ = 999;
+    }
+}
+
 void CreateLeaderPartnerData(s16 _species, bool32 _isLeader, u8* name)
 {
      Pokemon pokemon;

@@ -37,6 +37,7 @@ extern RecruitedMon *gRecruitedPokemonRef;
 void LoadMonsterParameters(void);
 RecruitedMon *GetRecruitedPokemon(void);
 void InitializeRecruitedPokemon(void);
+void ApplyMaxLevelStatsToTeam(void);
 void CreateLeaderPartnerData(s16 _species, bool32 _isLeader, u8* name);
 void CreateLevel1Pokemon(Pokemon *pokemon, s16 _species, u8* name, u32 _itemID, const DungeonLocation *location, u16 *moves);
 void sub_808D0D8(Pokemon *pokemon);

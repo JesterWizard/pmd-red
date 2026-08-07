@@ -902,3 +902,4 @@ DungeonPokemonFoundTable:
 .4byte PurityForest_97F_Pokemon
 .4byte PurityForest_98F_Pokemon
 .4byte PurityForest_99F_Pokemon
+.4byte DojoRegistration_64F_66F_Pokemon

@@ -1010,6 +1010,41 @@
                     "probability": 0
                 }
             ]
+        },
+        {
+            "name": "DojoRegistration_64F_66F_Pokemon",
+            "pokemon": [
+                {
+                    "species": "MONSTER_ABRA",
+                    "level": 16,
+                    "probability": 0
+                },
+                {
+                    "species": "MONSTER_CHARMELEON",
+                    "level": 22,
+                    "probability": 3333
+                },
+                {
+                    "species": "MONSTER_KADABRA",
+                    "level": 22,
+                    "probability": 3334
+                },
+                {
+                    "species": "MONSTER_PUPITAR",
+                    "level": 22,
+                    "probability": 3333
+                },
+                {
+                    "species": "MONSTER_KECLEON",
+                    "level": 90,
+                    "probability": 0
+                },
+                {
+                    "species": "MONSTER_DECOY",
+                    "level": 1,
+                    "probability": 0
+                }
+            ]
         }
     ]
 }

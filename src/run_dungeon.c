@@ -202,6 +202,8 @@ void RunDungeon_Async(DungeonSetupStruct *setupPtr)
         if (!sub_80980A4() && gDungeon->unk644.dungeonLocation.id == DUNGEON_TINY_WOODS) {
             sub_8043FD0();
         }
+        if (!IsLevelResetDungeon(gDungeon->unk644.dungeonLocation.id))
+            ApplyMaxLevelStatsToTeam();
         SetDungeonMonsFromTeam();
     }
 

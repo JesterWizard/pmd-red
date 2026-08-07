@@ -844,8 +844,12 @@ bool8 CheckQuest(s32 questID)
     case QUEST_CAN_DEPOSIT_PARTNER:
         return ScriptVarScenarioAfter(SCENARIO_MAIN, 18, -1);
     case QUEST_UNK10:
+        if (gRuntimeConfig.all_makuhita_dojo)
+            return TRUE;
         return ScriptVarScenarioAfter(SCENARIO_MAIN, 5, 4);
     case QUEST_UNK11: // Never checked? Same as above.
+        if (gRuntimeConfig.all_makuhita_dojo)
+            return TRUE;
         return ScriptVarScenarioAfter(SCENARIO_MAIN, 5, 4);
     case QUEST_UNK12:
         return (!ScriptVarScenarioEqual(SCENARIO_MAIN, 11, 2) && !ScriptVarScenarioEqual(SCENARIO_MAIN, 11, 3));

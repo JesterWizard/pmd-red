@@ -13,6 +13,7 @@
 #include "game_options.h"
 #include "memory.h"
 #include "music_util.h"
+#include "pokemon.h"
 #include "pokemon_3.h"
 #include "random.h"
 #include "rescue_scenario.h"
@@ -271,6 +272,7 @@ u32 ReadSaveFromPak(u32 *a)
         else if (playerSave->savedSpindaCafe == 0) {
             ResetSpindaCafeData();
         }
+        ApplyMaxLevelStatsToTeam();
     }
     MemoryFree(playerSave);
     return saveStatus;

@@ -102,7 +102,7 @@ enum DungeonID
     DUNGEON_TEAM_CONSTRICTOR = 93,
     DUNGEON_TEAM_HYDRO = 94,
     DUNGEON_TEAM_RUMBLEROCK = 95,
-    DUNGEON_RESCUE_TEAM_2 = 96,
+    DUNGEON_RESCUE_TEAM_2 = 96, /* Team ACT (Makuhita Dojo; gated by gRuntimeConfig.team_act) */
     DUNGEON_RESCUE_TEAM_MAZE = 97,
     NUM_DUNGEONS,
     DUNGEON_INVALID, // 99

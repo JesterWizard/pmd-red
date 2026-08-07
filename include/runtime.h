@@ -103,6 +103,12 @@ typedef struct {
     u8 custom_story;
     /* Full-screen art splash (2s / A skip) when entering a Friend Area */
     u8 friend_area_intros;
+    /* Makuhita Dojo: unlock Team ACT with the other postgame team courses */
+    u8 team_act;
+    /* Raise leader/partner/active team to Lv100 with max HP/stats/IQ */
+    u8 max_level_stats;
+    /* Unlock every Makuhita Dojo course + show Makuhita (QUEST_UNK10) */
+    u8 all_makuhita_dojo;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

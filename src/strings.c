@@ -846,7 +846,7 @@ const DungeonName gDungeonNames[NUM_DUNGEONS] = {
     [DUNGEON_TEAM_CONSTRICTOR] = { _("Team Constrictor"), _("Team Constrictor")},
     [DUNGEON_TEAM_HYDRO] = { _("Team Hydro"), _("Team Hydro")},
     [DUNGEON_TEAM_RUMBLEROCK] = { _("Team Rumblerock"), _("Team Rumblerock")},
-    [DUNGEON_RESCUE_TEAM_2] = { _("Rescue Team 2"), _("Rescue Team 2")},
+    [DUNGEON_RESCUE_TEAM_2] = { _("Team ACT"), _("Team ACT")},
     [DUNGEON_RESCUE_TEAM_MAZE] = { _("Rescue Team Maze"), _("Rescue Team Maze")},
 };
 

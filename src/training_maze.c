@@ -6,6 +6,7 @@
 #include "event_flag.h"
 #include "code_80A26CC.h"
 #include "rescue_scenario.h"
+#include "runtime.h"
 
 ALIGNED(4) static const char gMeetNinetalesText[] =  "Meet Ninetales.";
 ALIGNED(4) static const char gAvoidCaptureText[] = "Avoid capture.";
@@ -25,6 +26,14 @@ bool8 sub_8097504(s16 mazeIndex)
 {
     s32 questID;
     s32 mazeIndex_ = Self_s16(mazeIndex); // Needed to match
+
+    /* All type mazes + postgame team courses (incl. Team ACT); skip unused maze 22. */
+    if (gRuntimeConfig.all_makuhita_dojo) {
+        if (mazeIndex_ > 21)
+            return FALSE;
+        return TRUE;
+    }
+
     if (mazeIndex < 17) {
         switch (mazeIndex) {
             case 2:
@@ -56,7 +65,9 @@ bool8 sub_8097504(s16 mazeIndex)
     else {
         if (mazeIndex_ > 22)  return FALSE;
         if (mazeIndex_ == 22) return FALSE;
-        if (mazeIndex_ == 21) return FALSE;
+        /* Maze 21 = Team ACT (DUNGEON_RESCUE_TEAM_2); gated by runtime toggle. */
+        if (mazeIndex_ == 21 && !gRuntimeConfig.team_act)
+            return FALSE;
         questID = QUEST_REACHED_POSTGAME;
     }
 

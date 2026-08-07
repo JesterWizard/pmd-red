@@ -1068,6 +1068,8 @@ void sub_8001064(void)
         }
         SetScriptVarValue(NULL, PARTNER_TALK_KIND, psVar2->unk0);
     }
+
+    ApplyMaxLevelStatsToTeam();
 }
 
 // arm9.bin::0200CDD4
