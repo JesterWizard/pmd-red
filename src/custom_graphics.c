@@ -10,16 +10,16 @@
 /*
  * Poké coin — see include/palette_owners.h (enforced by tools/check_palette_owners.py).
  *
- * Town + dungeon: BG bank 12. Town owns the whole bank; dungeon only writes
- * slots 8–11 (full 4 golds) so normal stairs (indices 1–7,15) stay intact.
- * Font bank 15 (HUD / HP / pink) is never touched for coin colors.
+ * Dungeon: BG bank 12 slots 8–11 (full 4 golds); stairs indices 1–7,15 intact.
+ * Town: full gold on BG bank 14 (map flowers stay on 12; rank badge on 13).
+ * If a dialogue portrait owns bank 14, that draw remaps onto font bank 15.
  */
 
 static const RGB_Struct sItemPinkColor = {
     ITEM_PINK_R, ITEM_PINK_G, ITEM_PINK_B, 0x80
 }; /* must match palette_owners.h / check_palette_owners.py */
 
-/* Slot 0 = BG transparent. Slot 1 = menu window fill (copied from fontpal at load). */
+/* Slot 0 = BG transparent. Slot 1 = menu window fill (fontpal / town bank). */
 #define POKE_COIN_SLOT_WINDOW_FILL 1
 
 static const RGB_Struct sPokeCoinTownPal[16] = {
@@ -41,6 +41,7 @@ static const RGB_Struct sPokeCoinDark = { 165, 115,   0, 0x80 };
 static const u32 sPokeCoinTiles[32] = INCBIN_U32("graphics/custom/poke_coin.4bpp");
 
 static EWRAM_DATA u32 sPokeCoinBlitBuf[32] = {0};
+static EWRAM_DATA bool8 sTownPortraitOwnsBank14 = {FALSE};
 
 /* Dummy glyphs for width / GetCharacter; pixels come from sPokeCoinTiles. */
 static const u16 sPokeCoinGlyphDummy[] = {
@@ -250,18 +251,53 @@ static void RefreshActiveFontPalette(void)
         SetBGPaletteBufferColorArray(i + 240, ptr);
 }
 
+static bool8 TownCoinUsesFontFallback(void)
+{
+    return sTownPortraitOwnsBank14;
+}
+
+static void LoadTownPokeCoinPalette(void)
+{
+    s32 i;
+    s32 base;
+    const RGB_Struct *fill;
+
+    if (!gRuntimeConfig.custom_graphics || gUnknown_203B40C)
+        return;
+
+    base = POKE_COIN_PAL_BANK_TOWN * 16;
+    for (i = 0; i < 16; i++)
+        SetBGPaletteBufferColorArray(base + i, &sPokeCoinTownPal[i]);
+    /* Slot 1 mirrors font window fill so merged menu pixels stay blue. */
+    if (sub_80063B0() == 1)
+        fill = &gFontPalette[POKE_COIN_SLOT_WINDOW_FILL];
+    else
+        fill = &gFontPalette[16 + POKE_COIN_SLOT_WINDOW_FILL];
+    SetBGPaletteBufferColorArray(base + POKE_COIN_SLOT_WINDOW_FILL, fill);
+}
+
+void SetPokeCoinTownPortraitBankInUse(bool8 inUse)
+{
+    bool8 wasInUse = sTownPortraitOwnsBank14;
+
+    sTownPortraitOwnsBank14 = inUse;
+    /* Portrait dialogue finished — put full coin golds back on bank 14. */
+    if (wasInUse && !inUse)
+        LoadTownPokeCoinPalette();
+}
+
 u32 GetPokeCoinPalBank(void)
 {
     if (gUnknown_203B40C)
         return POKE_COIN_PAL_BANK_DUNGEON;
+    if (TownCoinUsesFontFallback())
+        return POKE_COIN_PAL_BANK_TOWN_FONT_FALLBACK;
     return POKE_COIN_PAL_BANK_TOWN;
 }
 
 static void LoadPokeCoinPalette(void)
 {
-    s32 i;
     s32 base;
-    const RGB_Struct *fill;
 
     if (gUnknown_203B40C) {
         /* Full 4 golds into trappat bank slots 8–11 only (stairs use 1–7,15). */
@@ -270,18 +306,13 @@ static void LoadPokeCoinPalette(void)
         SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT1, &sPokeCoinYellow);
         SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT2, &sPokeCoinMid);
         SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT3, &sPokeCoinDark);
+        return;
     }
-    else {
-        for (i = 0; i < 16; i++)
-            SetBGPaletteBufferColorArray(POKE_COIN_PAL_BANK_TOWN * 16 + i, &sPokeCoinTownPal[i]);
-        /* Slot 1 mirrors font window fill so merged menu pixels stay blue. */
-        if (sub_80063B0() == 1)
-            fill = &gFontPalette[POKE_COIN_SLOT_WINDOW_FILL];
-        else
-            fill = &gFontPalette[16 + POKE_COIN_SLOT_WINDOW_FILL];
-        SetBGPaletteBufferColorArray(
-            POKE_COIN_PAL_BANK_TOWN * 16 + POKE_COIN_SLOT_WINDOW_FILL, fill);
-    }
+
+    if (TownCoinUsesFontFallback())
+        return; /* Remap onto stock fontpal; leave bank 14 for the portrait. */
+
+    LoadTownPokeCoinPalette();
 }
 
 /* Unpack one 8×8 tile row-words into a 16×16 nibble grid. */
@@ -303,18 +334,32 @@ static void UnpackCoinSource(u8 out[16][16])
 
 static u8 RemapCoinPixelForBank(u8 p)
 {
-    if (!gUnknown_203B40C)
+    if (gUnknown_203B40C) {
+        /* Town indices → dungeon bank12 slots 8–11; white/transparent unchanged. */
+        if (p == POKE_COIN_SLOT_PALE)
+            return POKE_COIN_SLOT_PALE_DUNGEON;
+        if (p == POKE_COIN_SLOT_YELLOW)
+            return POKE_COIN_SLOT_YELLOW_DUNGEON;
+        if (p == POKE_COIN_SLOT_MID)
+            return POKE_COIN_SLOT_MID_DUNGEON;
+        if (p == POKE_COIN_SLOT_DARK_TOWN)
+            return POKE_COIN_SLOT_DARK_DUNGEON;
         return p;
-    /* Town indices → dungeon bank12 slots 8–11; white/transparent unchanged. */
+    }
+
+    if (!TownCoinUsesFontFallback())
+        return p; /* Town bank 14 — .4bpp indices match sPokeCoinTownPal. */
+
+    /* Portrait owns bank 14: stock fontpal yellow / HUD orange / shadow. */
     if (p == POKE_COIN_SLOT_PALE)
-        return POKE_COIN_SLOT_PALE_DUNGEON;
+        return POKE_COIN_SLOT_PALE_TOWN_FONT;
     if (p == POKE_COIN_SLOT_YELLOW)
-        return POKE_COIN_SLOT_YELLOW_DUNGEON;
+        return POKE_COIN_SLOT_YELLOW_TOWN_FONT;
     if (p == POKE_COIN_SLOT_MID)
-        return POKE_COIN_SLOT_MID_DUNGEON;
+        return POKE_COIN_SLOT_MID_TOWN_FONT;
     if (p == POKE_COIN_SLOT_DARK_TOWN)
-        return POKE_COIN_SLOT_DARK_DUNGEON;
-    return p;
+        return POKE_COIN_SLOT_DARK_TOWN_FONT;
+    return p; /* 0 transparent, 1 window fill, 7 white */
 }
 
 static void PackCoinBlit(u8 in[16][16])
@@ -359,8 +404,8 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
                     u32 word = *p++;
                     for (col = 0; col < 8; col++) {
                         u8 pix = (word >> (col * 4)) & 0xF;
-                        /* Keep transparent + menu fill only; drop foreign glyph
-                         * indices that would read as garbage under bank 12. */
+                        /* Keep transparent + menu fill (town); dungeon clears
+                         * fill too so HUD transparency stays clean. */
                         if (pix != 0 && (gUnknown_203B40C || pix != POKE_COIN_SLOT_WINDOW_FILL))
                             pix = 0;
                         dst[ty * 8 + row][tx * 8 + col] = pix;
@@ -395,15 +440,23 @@ void ApplyCustomPokeCoinPalette(void)
 {
     s32 bank;
 
-    if (gRuntimeConfig.custom_graphics)
+    /* Dungeon golds; town bank-14 load is deferred to glyph draw (and skipped
+     * while a portrait owns that bank). */
+    if (gRuntimeConfig.custom_graphics && gUnknown_203B40C)
         LoadPokeCoinPalette();
 
     if (gRuntimeConfig.pmd2_battle_info_colors) {
         for (bank = 0; bank < 8; bank++)
             gFontPalette[bank * 16 + ITEM_PINK_SLOT] = sItemPinkColor;
         RefreshActiveFontPalette();
-        /* Coin is on bank 12 — font refresh does not clear it. */
+        /* Dungeon coin is on bank 12 — font refresh does not clear it. */
     }
+}
+
+void ApplyPokeCoinPaletteForDraw(void)
+{
+    if (gRuntimeConfig.custom_graphics)
+        LoadPokeCoinPalette();
 }
 
 bool8 IsCustomPokeCoinChar(s32 chr)

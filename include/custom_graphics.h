@@ -32,15 +32,21 @@ const unkChar *GetPowerStarChar(s32 chr);
 /*
  * Build 16×16 coin blit. baseTiles (32 words) is existing window GFX to merge
  * into; NULL starts from transparent (index 0). Coin stamped at (ox, oy).
- * Dungeon remaps golds onto bank-12 slots 8–11 (stairs-safe).
+ * Town remaps onto font bank 15; dungeon onto bank-12 slots 8–11.
  */
 const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy);
 
 /* Remap button/icon glyphs off shared gray slots; NULL if not applicable. */
 const unkChar *GetRemappedIconChar(s32 chr, const unkChar *src);
 
-/* Coin gold (bank 12; dungeon slots 8–11) + optional item pink @ font 11. */
+/* Dungeon coin gold (bank 12 slots 8–11) + optional item pink @ font 11. */
 void ApplyCustomPokeCoinPalette(void);
+
+/* Ensure coin colors before a {POKE} glyph blit (town: bank 14 full gold). */
+void ApplyPokeCoinPaletteForDraw(void);
+
+/* Portrait owns BG bank 14 (coin font-fallbacks). Clearing restores coin golds. */
+void SetPokeCoinTownPortraitBankInUse(bool8 inUse);
 
 /* Active coin palette bank for WriteGFXToBG0Window. */
 u32 GetPokeCoinPalBank(void);

@@ -61,7 +61,7 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
 
         {
             /* Ceil X to the next tile — the 16×16 write must not cover digits
-             * (bank-12 palette would glitch them). Art is left-aligned in the
+             * (coin palette bank would glitch them). Art is left-aligned in the
              * .4bpp so the coin starts at blitX; use oy only for vertical.
              * Offsets: include/custom_graphics.h */
             s32 blitX = (x + 7) & ~7;
@@ -91,7 +91,7 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
 
             coinTiles = BuildPokeCoinBlit(haveBase ? baseTiles : NULL, ox, oy);
             if (coinTiles != NULL) {
-                ApplyCustomPokeCoinPalette();
+                ApplyPokeCoinPaletteForDraw();
                 WriteGFXToBG0Window(windowId, blitX, blitY, POKE_COIN_SIZE, POKE_COIN_SIZE,
                                     (u32 *)coinTiles, GetPokeCoinPalBank());
                 gUnknown_20274A5 = TRUE;

@@ -2,6 +2,7 @@
 #include "globaldata.h"
 #include "constants/emotions.h"
 #include "bg_palette_buffer.h"
+#include "custom_graphics.h"
 #include "confirm_name_menu.h"
 #include "random_mersenne_twister.h"
 #include "code_8099360.h"
@@ -669,6 +670,7 @@ static void PersonalityTest_DisplayStarterSprite(void)
         SetBGPaletteBufferColorArray(paletteIndex + 0xE0, &((PortraitGfx *)(faceFile->data))->sprites[emotionId].pal[paletteIndex]);
     }
     sub_800388C(0xE0, (const RGB_Union *)((PortraitGfx *)(faceFile->data))->sprites[emotionId].pal, 16);
+    SetPokeCoinTownPortraitBankInUse(TRUE);
 
     DisplayMonPortraitSpriteFlipped(1, gfx, 14);
     CloseFile(faceFile);

@@ -10,6 +10,7 @@
 #include "input.h"
 #include "memory.h"
 #include "palette_fade_util.h"
+#include "custom_graphics.h"
 #include "personality_test2.h"
 #include "pokemon.h"
 #include "runtime.h"
@@ -192,6 +193,7 @@ static void PersonalityTest_DisplayPartnerSprite(void)
     for (i = 0; i < 16; i++)
         SetBGPaletteBufferColorArray(i + 0xE0, &pal[i]);
     sub_800388C(0xE0, (const RGB_Union *)pal, 16);
+    SetPokeCoinTownPortraitBankInUse(TRUE);
 
     DisplayMonPortraitSpriteFlipped(1, gfx, 14);
 

@@ -12,6 +12,7 @@
 #include "rescue_team_info.h"
 #include "sprite.h"
 #include "string_format.h"
+#include "custom_graphics.h"
 #include "text_1.h"
 #include "text_2.h"
 #include "text_3.h"
@@ -154,6 +155,7 @@ enum
 
 void ResetDialogueBox(void)
 {
+    SetPokeCoinTownPortraitBankInUse(FALSE);
     sPrintStringState = STATE_FINISHED;
     sAutoPressNewTextboxFrames = 60;
     sAutoPressMidTextboxFrames = 60;
@@ -197,6 +199,7 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
 {
     bool8 portraitOn = FALSE;
 
+    SetPokeCoinTownPortraitBankInUse(FALSE);
     FormatString(text, sDialogueTextBuffer, sDialogueTextBuffer + DIALOGUE_TEXT_BUFFER_SIZE - 1, flags);
     sCurrStr = sDialogueTextBuffer;
     sTextPrintStruct.unk24 = a1;
@@ -229,6 +232,8 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
         for (i = 0; i < 16; i++) {
             SetBGPaletteBufferColorArray(224 + i, &monPortraitPtr->faceData->sprites[monPortraitPtr->spriteId].pal[i]);
         }
+        /* Bank 14 = portrait; town {POKE} coin must font-fallback while set. */
+        SetPokeCoinTownPortraitBankInUse(TRUE);
         portraitOn = TRUE;
         if (monPortraitPtr->unkE) {
             sDialogueBoxWinTemplates.id[1].type = WINDOW_TYPE_7;
@@ -283,6 +288,7 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
 
 void sub_8014490(void)
 {
+    SetPokeCoinTownPortraitBankInUse(FALSE);
     sPrintStringState = STATE_FINISHED;
     gUnknown_202EC1C = 0;
 }
@@ -540,6 +546,8 @@ void DrawDialogueBoxString_Async(void)
             }
             break;
             case 11: {
+                /* Dialogue closed — free bank 14 and restore town coin golds. */
+                SetPokeCoinTownPortraitBankInUse(FALSE);
                 if (sStringFormatFlags & 0x200) {
                     ResetUnusedInputStruct();
                     ShowWindows(NULL, TRUE, TRUE);

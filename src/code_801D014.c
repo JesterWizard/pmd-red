@@ -37,7 +37,8 @@
 #define RANK_ICON_W 16
 #define RANK_ICON_H 16
 #define RANK_ICON_4BPP_LEN (RANK_ICON_W * RANK_ICON_H / 8)
-/* Bank 13 — coin uses bank 12 in town / font 15 in dungeon; 14 = minimap. */
+/* Bank 13 — town coin uses bank 14 (font 15 if portrait owns 14); dungeon
+ * coin uses bank 12 slots 8–11. */
 #define RANK_ICON_PAL_BANK 13
 #define RANK_ICON_PAL_INDEX (RANK_ICON_PAL_BANK * 16)
 
