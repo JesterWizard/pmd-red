@@ -2596,7 +2596,7 @@ u32 BufferDungeonRequirementsText(u8 dungeonIndex, s32 speciesId_, u8 *buffer, b
     }
 
     maxPartyMembers = gDungeons[dungeonIndex].maxPartyMembers;
-    if (!requireHm && maxPartyMembers > 3) {
+    if (!requireHm && maxPartyMembers > 3 && !gRuntimeConfig.full_party_entry) {
         maxPartyMembers = 3;
     }
     if (counter > maxPartyMembers) {

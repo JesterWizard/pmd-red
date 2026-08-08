@@ -118,6 +118,9 @@ typedef struct {
     u8 skip_title_intro;
     /* Pokémon Square ambient life: wander routes, visitors, banter (else vanilla static NPCs) */
     u8 living_square;
+    /* Allow dungeon entry with 4 party members before postgame
+     * (else vanilla caps at 3 until QUEST_REACHED_POSTGAME / canChangeLeader) */
+    u8 full_party_entry;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;
