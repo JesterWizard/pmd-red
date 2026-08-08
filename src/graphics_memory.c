@@ -126,6 +126,11 @@ void ReloadFontSheet(void)
     CpuCopy((u32 *)(VRAM + 0x4f00), font->dataArray, font->size * 32);
     CloseFile(file);
     InitFontPalette();
+    /* Font ROM tile 0x27A is window-gap chrome on BG1. Town mode must keep it
+     * transparent (UpdateFadeInTile(0)); without this, Felicity/Gulpin money
+     * header ShowWindows clears portrait WINTEMPLATE_FLAG_x40, merges WIN0
+     * across the portrait–menu gap, and that chrome shows as a white box. */
+    UpdateFadeInTile(sub_80063B0());
 }
 
 // arm9.bin::0200A00C

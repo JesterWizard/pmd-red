@@ -45,7 +45,8 @@ void ApplyCustomPokeCoinPalette(void);
 /* Ensure coin colors before a {POKE} glyph blit (town: bank 14 full gold). */
 void ApplyPokeCoinPaletteForDraw(void);
 
-/* Portrait owns BG bank 14 (coin font-fallbacks). Clearing restores coin golds. */
+/* Portrait owns BG bank 14 (coin font-fallbacks). Clearing only drops the flag;
+ * coin golds reload lazily on the next {POKE} draw — do not stomp bank 14 here. */
 void SetPokeCoinTownPortraitBankInUse(bool8 inUse);
 
 /* Active coin palette bank for WriteGFXToBG0Window. */

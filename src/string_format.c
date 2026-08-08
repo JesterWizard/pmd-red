@@ -200,7 +200,6 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
 {
     bool8 portraitOn = FALSE;
 
-    SetPokeCoinTownPortraitBankInUse(FALSE);
     FormatString(text, sDialogueTextBuffer, sDialogueTextBuffer + DIALOGUE_TEXT_BUFFER_SIZE - 1, flags);
     sCurrStr = sDialogueTextBuffer;
     sTextPrintStruct.unk24 = a1;
@@ -248,6 +247,9 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
         else {
             sDialogueBoxWinTemplates.id[1].type = WINDOW_TYPE_FILL_TRANSPARENT;
         }
+    }
+    else {
+        SetPokeCoinTownPortraitBankInUse(FALSE);
     }
 
     sDialogueBoxWinTemplates.id[2] = sWinTemplateDummy;
@@ -553,16 +555,14 @@ void DrawDialogueBoxString_Async(void)
             }
             break;
             case 11: {
-                /* Dialogue closed — free bank 14 and restore town coin golds. */
-                SetPokeCoinTownPortraitBankInUse(FALSE);
+                /* Drop portrait windows before releasing bank 14 so coin-palette
+                 * restore cannot tint leftover portrait tiles for a frame. */
                 if (sStringFormatFlags & 0x200) {
                     ResetUnusedInputStruct();
                     ShowWindows(NULL, TRUE, TRUE);
-                    sPrintStringState = STATE_FINISHED;
                 }
-                else {
-                    sPrintStringState = STATE_FINISHED;
-                }
+                SetPokeCoinTownPortraitBankInUse(FALSE);
+                sPrintStringState = STATE_FINISHED;
                 keepLooping = FALSE;
             }
             break;

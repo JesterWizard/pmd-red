@@ -278,12 +278,11 @@ static void LoadTownPokeCoinPalette(void)
 
 void SetPokeCoinTownPortraitBankInUse(bool8 inUse)
 {
-    bool8 wasInUse = sTownPortraitOwnsBank14;
-
+    /* Only track ownership. Eagerly writing coin golds here races VBlank while
+     * portrait tiles (pal 14) are still on-screen — one-frame gold/glitch flash
+     * on open and close. Bank 14 is restored lazily by ApplyPokeCoinPaletteForDraw
+     * / LoadPokeCoinPalette once the flag is clear. */
     sTownPortraitOwnsBank14 = inUse;
-    /* Portrait dialogue finished — put full coin golds back on bank 14. */
-    if (wasInUse && !inUse)
-        LoadTownPokeCoinPalette();
 }
 
 u32 GetPokeCoinPalBank(void)
