@@ -124,4 +124,6 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Party of 4"), &gRuntimeConfig.full_party_entry, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+    { _("Thoughts"), &gRuntimeConfig.thought_bubbles, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
+      CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
 };

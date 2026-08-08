@@ -8,7 +8,9 @@
 #include "ground_map.h"
 #include "ground_script.h"
 #include "input.h"
+#include "music_util.h"
 #include "textbox.h"
+#include "thought_bubble.h"
 #include "unk_ds_only_feature.h"
 
 void nullsub_117(void)
@@ -93,6 +95,18 @@ u32 sub_809CDC8(struct GroundLives_Sub120 *strPtr, u32 *r6, s8 *direction, s32 *
         {
             u16 held = gRealInputs.held;
             u16 pressed = gRealInputs.pressed;
+
+            /* Thought bubble is modal: L hides it; all other free-roam input is blocked. */
+            if (gRuntimeConfig.thought_bubbles && ThoughtBubble_IsVisible()) {
+                if (pressed & L_BUTTON) {
+                    ThoughtBubble_Hide();
+                    PlayMenuSoundEffect(MENU_SFX_TOGGLE);
+                }
+                *r6 = 1;
+                *direction = -1;
+                return strPtr->unk0;
+            }
+
             if (held & DPAD_ANY) {
                 if ((held & B_BUTTON) || gRuntimeConfig.always_run) {
                     strPtr->unk10 = 0;
@@ -125,6 +139,16 @@ u32 sub_809CDC8(struct GroundLives_Sub120 *strPtr, u32 *r6, s8 *direction, s32 *
                     *direction = -1;
                     return 5;
                 }
+            }
+
+            if (gRuntimeConfig.thought_bubbles
+                && (pressed & L_BUTTON)
+                && !IsTextboxOpen_809A750()) {
+                ThoughtBubble_Show();
+                PlayMenuSoundEffect(MENU_SFX_TOGGLE);
+                *r6 = 1;
+                *direction = -1;
+                return strPtr->unk0;
             }
 
             if (pressed & A_BUTTON) {

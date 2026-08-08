@@ -123,9 +123,13 @@ typedef struct {
     /* Allow dungeon entry with 4 party members before postgame
      * (else vanilla caps at 3 until QUEST_REACHED_POSTGAME / canChangeLeader) */
     u8 full_party_entry;
+    /* Ground overworld: L toggles a thought-bubble sprite above the player
+     * (art selected from latest SCENARIO_MAIN; else DEFAULT) */
+    u8 thought_bubbles;
 } RuntimeConfig;
 
-#define RUNTIME_CONFIG_SAVE_SIZE 0x40
+/* magic(4) + version(4) + RuntimeConfig + checksum(4); grow when fields are added */
+#define RUNTIME_CONFIG_SAVE_SIZE 0x44
 
 extern const RuntimeConfig gRuntimeConfigRom;
 extern RuntimeConfig gRuntimeConfigData;

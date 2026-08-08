@@ -38,6 +38,7 @@
 #include "pokemon.h"
 #include "runtime.h"
 #include "script_item.h"
+#include "thought_bubble.h"
 #include "text_1.h"
 #include "text_util.h"
 #include "textbox.h"
@@ -383,6 +384,7 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
             sub_80A5E70();
             sub_809B638();
             nullsub_106();
+            ThoughtBubble_Draw();
             sub_80A73EC();
             sub_8099750();
             DoScheduledMemCopies();

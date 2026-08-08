@@ -461,6 +461,7 @@ SECTIONS {
         src/friend_area_intros.o(.text);
         src/pmd2_font.o(.text);
         src/starter_confirm_menu.o(.text);
+        src/thought_bubble.o(.text);
     }  > ROM =0
 
     .rodata :
@@ -1909,6 +1910,7 @@ SECTIONS {
         src/friend_area_intros_data.o(.rodata);
         src/pmd2_font.o(.rodata);
         src/starter_confirm_menu.o(.rodata);
+        src/thought_bubble.o(.rodata);
     } > ROM =0
 
     /* Actual save-pak byte footprint (see gSramSaveFootprint in src/save.c).

@@ -53,4 +53,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .skip_title_intro = TRUE, /* TRUE = button-skip boot intro with no save; FALSE = vanilla (need save) */
     .living_square = TRUE, /* TRUE = Square NPCs wander / visit / banter; FALSE = vanilla static */
     .full_party_entry = TRUE, /* TRUE = enter with 4 members pre-postgame; FALSE = vanilla (need postgame) */
+    .thought_bubbles = TRUE, /* TRUE = L toggles overworld thought bubble; FALSE = off */
 };
