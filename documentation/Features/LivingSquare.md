@@ -43,17 +43,18 @@ Primary map: `MAP_POKEMON_SQUARE` / [`ground_data_t01p01_station.h`](../../src/d
    - Wait randomly (90–240 frames)
    - Pick 3 exclusive entrances from `{N,S,W,E}` and pack into `EVENT_LOCAL` as `e0 + 4*e1 + 16*e2`
    - Spawn Kecleon visitor; `ALERT_CUE(66)` to wake the bank dispatcher
-   - `WAIT(900)` (~15s) for the trio to finish, then loop
+   - `AWAIT_CUE(65)` until that visitor finishes its full return + exit
 3. **Bank dispatcher**:
    - `AWAIT_CUE(66)` → `WAIT(60)` (1 second behind)
    - Spawn Felicity Bank visitor; `ALERT_CUE(67)` to wake Gulpin
-   - `WAIT(900)` then loop
+   - `AWAIT_CUE(64)` until that visitor finishes
 4. **Gulpin dispatcher**:
    - `AWAIT_CUE(67)` → `WAIT(60)` (1 second behind bank)
    - Spawn Gulpin Link Shop visitor
-   - `WAIT(900)` then loop
+   - `AWAIT_CUE(63)` until that visitor finishes
 5. Routes (cardinal `WALK_GRID` segments; each decodes its own entrance digit):
-   - Kecleon / Bank / Gulpin: gate → destination → reverse → gate → `WALK_RELATIVE` off-map → `END_DELETE`
+   - Gate → destination → reverse to **starting gate** → `WALK_RELATIVE` off-map → `ALERT_CUE` (65/64/63) → `END_DELETE`
+   - Dispatchers never cancel/respawn a visitor mid-route; each awaits its own completion cue.
 
 | Kind | Role |
 |------|------|

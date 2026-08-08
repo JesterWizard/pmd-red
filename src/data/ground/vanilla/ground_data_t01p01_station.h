@@ -15794,9 +15794,9 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     JUMP_LABEL(34),
   LABEL(33), /* = 0x21 Hoppip */
     SELECT_ENTITIES(53, 33),
-  LABEL(34), /* = 0x22 signal + allow routes to finish */
+  LABEL(34), /* = 0x22 signal bank + await kecleon finish */
     ALERT_CUE(66), /* wake bank dispatcher */
-    WAIT(900), /* ~15s for trio to finish; avoids cue soft-locks */
+    AWAIT_CUE(65), /* this kecleon visitor finished full route */
     JUMP_LABEL(0),
 };
 
@@ -15972,9 +15972,9 @@ static const struct ScriptCommand s_gs1_g53_bank_dispatcher_loop[] = {
     JUMP_LABEL(34),
   LABEL(33), /* = 0x21 Hoppip */
     SELECT_ENTITIES(53, 66),
-  LABEL(34), /* = 0x22 signal gulpin + allow routes to finish */
+  LABEL(34), /* = 0x22 signal gulpin + await bank finish */
     ALERT_CUE(67), /* wake gulpin dispatcher */
-    WAIT(900), /* ~15s for trio to finish; avoids cue soft-locks */
+    AWAIT_CUE(64), /* this bank visitor finished full route */
     JUMP_LABEL(0),
 };
 
@@ -16150,8 +16150,8 @@ static const struct ScriptCommand s_gs1_g53_gulpin_dispatcher_loop[] = {
     JUMP_LABEL(34),
   LABEL(33), /* = 0x21 Hoppip */
     SELECT_ENTITIES(53, 99),
-  LABEL(34), /* = 0x22 allow route to finish */
-    WAIT(900), /* ~15s for trio to finish; avoids cue soft-locks */
+  LABEL(34), /* = 0x22 await gulpin finish */
+    AWAIT_CUE(63), /* this gulpin visitor finished full route */
     JUMP_LABEL(0),
 };
 
@@ -16171,7 +16171,7 @@ static const struct ScriptCommand s_gs1_g53_visitor_setup[] = {
 };
 
 /* Kecleon shop route. Entrance = EVENT_LOCAL % 4 (0=N,1=S,2=W,3=E).
- * All exits walk off-map then END_DELETE (no cross-visitor cue waits). */
+ * Return to starting gate, walk off-map, signal dispatcher, then END_DELETE. */
 static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     DEBUGINFO_O(0),
     /* Decode kecleon entrance: EVENT_LOCAL % 4 */
@@ -16193,8 +16193,9 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     SELECT_ANIMATION(1),
     WALK_GRID(256, 152),
     WALK_GRID(256, 149),
-    WALK_GRID(256, 146),
+    WALK_GRID(256, 146), /* back to start */
     WALK_RELATIVE(256, 0, -24), /* off north map edge */
+    ALERT_CUE(65), /* kecleon route complete */
     END_DELETE,
   LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
@@ -16207,8 +16208,9 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     SELECT_ANIMATION(1),
     WALK_GRID(256, 152),
     WALK_GRID(256, 151),
-    WALK_GRID(256, 147),
+    WALK_GRID(256, 147), /* back to start */
     WALK_RELATIVE(256, 0, 24), /* off south map edge */
+    ALERT_CUE(65),
     END_DELETE,
   LABEL(3), /* = 0x03 - west */
     WARP_WAYPOINT(0, 155),
@@ -16218,8 +16220,10 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     SELECT_ANIMATION(2),
     WAIT(180),
     SELECT_ANIMATION(1),
-    WALK_GRID(256, 155),
+    WALK_GRID(256, 152),
+    WALK_GRID(256, 155), /* back to start */
     WALK_RELATIVE(256, -24, 0), /* off west map edge */
+    ALERT_CUE(65),
     END_DELETE,
   LABEL(4), /* = 0x04 - east */
     WARP_WAYPOINT(0, 156),
@@ -16230,8 +16234,9 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     WAIT(180),
     SELECT_ANIMATION(1),
     WALK_GRID(256, 152),
-    WALK_GRID(256, 156),
+    WALK_GRID(256, 156), /* back to start */
     WALK_RELATIVE(256, 24, 0), /* off east map edge */
+    ALERT_CUE(65),
     END_DELETE,
 };
 
@@ -16259,8 +16264,9 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     SELECT_ANIMATION(1),
     WALK_GRID(256, 153),
     WALK_GRID(256, 149),
-    WALK_GRID(256, 146),
+    WALK_GRID(256, 146), /* back to start */
     WALK_RELATIVE(256, 0, -24), /* off north map edge */
+    ALERT_CUE(64), /* bank route complete */
     END_DELETE,
   LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
@@ -16273,8 +16279,9 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     SELECT_ANIMATION(1),
     WALK_GRID(256, 153),
     WALK_GRID(256, 151),
-    WALK_GRID(256, 147),
+    WALK_GRID(256, 147), /* back to start */
     WALK_RELATIVE(256, 0, 24), /* off south map edge */
+    ALERT_CUE(64),
     END_DELETE,
   LABEL(3), /* = 0x03 - west */
     WARP_WAYPOINT(0, 155),
@@ -16284,8 +16291,10 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     SELECT_ANIMATION(2),
     WAIT(180),
     SELECT_ANIMATION(1),
-    WALK_GRID(256, 155),
+    WALK_GRID(256, 153),
+    WALK_GRID(256, 155), /* back to start */
     WALK_RELATIVE(256, -24, 0), /* off west map edge */
+    ALERT_CUE(64),
     END_DELETE,
   LABEL(4), /* = 0x04 - east */
     WARP_WAYPOINT(0, 156),
@@ -16296,8 +16305,9 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     WAIT(180),
     SELECT_ANIMATION(1),
     WALK_GRID(256, 153),
-    WALK_GRID(256, 156),
+    WALK_GRID(256, 156), /* back to start */
     WALK_RELATIVE(256, 24, 0), /* off east map edge */
+    ALERT_CUE(64),
     END_DELETE,
 };
 
@@ -16329,8 +16339,9 @@ static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
     WALK_GRID(256, 157),
     WALK_GRID(256, 151),
     WALK_GRID(256, 149),
-    WALK_GRID(256, 146),
+    WALK_GRID(256, 146), /* back to start */
     WALK_RELATIVE(256, 0, -24), /* off north map edge */
+    ALERT_CUE(63), /* gulpin route complete */
     END_DELETE,
   LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
@@ -16343,8 +16354,9 @@ static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
     SELECT_ANIMATION(1),
     WALK_GRID(256, 158),
     WALK_GRID(256, 157),
-    WALK_GRID(256, 147),
+    WALK_GRID(256, 147), /* back to start */
     WALK_RELATIVE(256, 0, 24), /* off south map edge */
+    ALERT_CUE(63),
     END_DELETE,
   LABEL(3), /* = 0x03 - west */
     WARP_WAYPOINT(0, 155),
@@ -16359,8 +16371,9 @@ static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
     WALK_GRID(256, 158),
     WALK_GRID(256, 157),
     WALK_GRID(256, 151),
-    WALK_GRID(256, 155),
+    WALK_GRID(256, 155), /* back to start */
     WALK_RELATIVE(256, -24, 0), /* off west map edge */
+    ALERT_CUE(63),
     END_DELETE,
   LABEL(4), /* = 0x04 - east */
     WARP_WAYPOINT(0, 156),
@@ -16375,8 +16388,9 @@ static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
     WALK_GRID(256, 158),
     WALK_GRID(256, 157),
     WALK_GRID(256, 151),
-    WALK_GRID(256, 156),
+    WALK_GRID(256, 156), /* back to start */
     WALK_RELATIVE(256, 24, 0), /* off east map edge */
+    ALERT_CUE(63),
     END_DELETE,
 };
 
