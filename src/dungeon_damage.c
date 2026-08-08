@@ -452,6 +452,12 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
 
     // HP goes down
     hpBefore = targetData->HP;
+    /* Aftermath (and similar) can re-damage a mon that is already at 0 HP but not yet
+     * HandleFaint'd. Bail out so faint/Aftermath does not re-enter in a loop. */
+    if (hpBefore == 0) {
+        dmgStruct->tookNoDamage = TRUE;
+        return FALSE;
+    }
     if (targetData->HP > dmgStruct->dmg)
         targetData->HP -= dmgStruct->dmg;
     else
@@ -796,7 +802,9 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
         sub_8069D4C(&sp, target);
         if (TryRecruitMonster(attacker, target)) {
             if (!MonsterJoinSequence_Async(attacker, target, &sp)) {
-                if (AbilityIsActive(target, ABILITY_AFTERMATH))
+                /* Skip Aftermath on self-KO (Selfdestruct/Explosion): that move already
+                 * exploded, and HandleExplosion would hit this mon again at 0 HP. */
+                if (attacker != target && AbilityIsActive(target, ABILITY_AFTERMATH))
                     HandleExplosion(target, attacker, &target->pos, 1, TYPE_NONE, DUNGEON_EXIT_DISAPPEARED_IN_EXPLOSION);
                 HandleFaint_Async(target, DUNGEON_EXIT_LEFT_WITHOUT_BEING_BEFRIENDED, attacker);
             }
@@ -805,13 +813,13 @@ static bool8 HandleDealingDamageInternal_Async(Entity *attacker, Entity *target,
             }
         }
         else {
-            if (AbilityIsActive(target, ABILITY_AFTERMATH))
+            if (attacker != target && AbilityIsActive(target, ABILITY_AFTERMATH))
                 HandleExplosion(target, attacker, &target->pos, 1, TYPE_NONE, DUNGEON_EXIT_DISAPPEARED_IN_EXPLOSION);
             HandleFaint_Async(target, dungeonExitReason, attacker);
         }
     }
     else {
-        if (AbilityIsActive(target, ABILITY_AFTERMATH))
+        if (attacker != target && AbilityIsActive(target, ABILITY_AFTERMATH))
             HandleExplosion(target, attacker, &target->pos, 1, TYPE_NONE, DUNGEON_EXIT_DISAPPEARED_IN_EXPLOSION);
         HandleFaint_Async(target, dungeonExitReason, attacker);
     }
