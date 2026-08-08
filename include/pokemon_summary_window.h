@@ -42,7 +42,7 @@ typedef struct MonSummaryInfo
     /* R=0x3E | B=???? */ s16 IQ;
     /* R=0x40 | B=???? */ s16 unk40;
     /* R=0x42 | B=???? */ s16 fill42;
-    /* R=0x44 | B=???? */ unkPokeSubStruct_C unk44[2];
+    /* R=0x44 | B=???? */ u8 unk44[2]; // evolution-stage levels
     /* R=0x4C | B=???? */ u8 evoStringId;
     /* R=0x4D | B=???? */ u8 fill4D[3];
     /* R=0x50 | B=???? */ IqSkillFlags IQSkills;

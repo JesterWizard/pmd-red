@@ -29,8 +29,9 @@
 @   0x03001054  mersenne twister     0x9C0
 @   0x03001A14  text_1 gWindowBg     0x142
 @
-@ Safe leftover for custom code: ONLY 0x03004108–0x03007F00 via _kernel_malloc
-@ (~15.7 KiB). Grow from Top upward so the first byte is NOT under user SP.
+@ Safe leftover for custom code: 0x03004108–0x03007F00 via _kernel_malloc
+@ (~15.7 KiB before custom allocs). gBgTilemaps takes the first 0x2000.
+@ Grow from Top upward so the first byte is NOT under user SP.
 @ Named vanilla inventory (doc only): ram_map_iwram_pool.inc
 @ =============================================================================
 
@@ -83,3 +84,10 @@ REF_DATA gUnknown_3004000, 0x03004108
 @
 @ Example:
 @ _kernel_malloc gExampleIwramScratch, 0x10
+
+@ BG tilemap shadows (was text_1.c EWRAM_DATA). 4 × 32 × 32 × u16 = 0x2000.
+@ Cleared/filled by LoadCharmaps / bg_control before use. Remaining free starts
+@ at UsedFreeRamSpaceTop (0x03006108 after this alloc).
+.set UsedFreeRamSpaceTop, (UsedFreeRamSpaceTop + 3) & ~3
+SET_ARRAY gBgTilemaps, UsedFreeRamSpaceTop, 0x2000
+.set UsedFreeRamSpaceTop, UsedFreeRamSpaceTop + 0x2000

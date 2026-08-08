@@ -102,9 +102,13 @@ void LoadDungeonPokemonSprites(void)
     {
         for(index = 0; index < MAX_TEAM_MEMBERS; index++)
         {
-            Pokemon *ptr = &gRecruitedPokemonRef->team[index];
-            if(PokemonExists(ptr))
-                LoadPokemonSprite(ptr->speciesNum, TRUE);
+            s16 memberId = gRecruitedPokemonRef->teamMemberIds[index];
+
+            if ((u16)memberId < NUM_MONSTERS) {
+                Pokemon *ptr = &gRecruitedPokemonRef->pokemon[memberId];
+                if (PokemonExists(ptr))
+                    LoadPokemonSprite(ptr->speciesNum, TRUE);
+            }
         }
     }
 }
@@ -357,8 +361,8 @@ void sub_8068BDC(bool8 a0)
                 monPointers[j] = &mon1Structs[id];
                 DungeonMonToPokemon(monPointers[j], monPtr);
                 monPointers[j]->flags |= POKEMON_FLAG_x4000;
-                monPointers[j]->unkC[0].level = 0;
-                monPointers[j]->unkC[1].level = 0;
+                monPointers[j]->unkC[0] = 0;
+                monPointers[j]->unkC[1] = 0;
                 j++;
             }
         }
@@ -864,8 +868,8 @@ void SetMonSummaryInfoFromEntity(MonSummaryInfo *param_1, Entity *target)
     param_1->item = info->heldItem;
     param_1->IQ = info->IQ;
     (param_1->dungeonLocation) = info->joinedAt;
-    param_1->unk44[0].level = 0;
-    param_1->unk44[1].level = 0;
+    param_1->unk44[0] = 0;
+    param_1->unk44[1] = 0;
     param_1->IQSkills = info->IQSkillMenuFlags;
     if (gDungeon->unk644.unlockedEvolutions) {
         param_1->evoStringId = sub_806A4DC(info);

@@ -63,6 +63,8 @@ static EWRAM_DATA HeapDescriptor sMainHeapDescriptor = {0};
 UNUSED static EWRAM_DATA u32 sUnused2 = 0;
 static EWRAM_DATA struct HeapFreeListElement sMainHeapFreeList[32] = {0};
 static EWRAM_DATA u8 sMainHeap[HEAP_SIZE] = {0};
+static EWRAM_DATA u32 sHeapUsedBytes = {0};
+static EWRAM_DATA u32 sHeapPeakUsedBytes = {0};
 
 static void DoFree(HeapDescriptor *, void *);
 static void DoInitHeap(HeapDescriptor *, struct HeapSettings *, struct HeapFreeListElement *, u32);
@@ -70,6 +72,8 @@ static void InitSubHeap(HeapDescriptor *, struct HeapMemoryBlock2 *, u32);
 static HeapDescriptor *DoCreateSubHeap(struct unkMemoryStruct *a, u32 b);
 static void *DoAlloc(HeapDescriptor *heap, s32 size, u32 group);
 static void InitHeapInternal(void);
+static u32 GetAlignedAllocSize(s32 size);
+static u32 ScanLargestFreeBlock(const HeapDescriptor *heap);
 
 void InitHeap(void)
 {
@@ -157,6 +161,54 @@ void MemoryCopy32(u32 *dest, const u32 *src, s32 size)
     }
 }
 
+static u32 GetAlignedAllocSize(s32 size)
+{
+    return (u32)((size + 3) & ~3);
+}
+
+static u32 ScanLargestFreeBlock(const HeapDescriptor *heap)
+{
+    s32 i;
+    u32 largest = 0;
+    const struct HeapFreeListElement *curr = &heap->freeList[0];
+
+    for (i = 0; i < heap->freeCount; i++, curr++) {
+        if (!(curr->atb & 1) && (u32)curr->block.size > largest)
+            largest = (u32)curr->block.size;
+    }
+    return largest;
+}
+
+u32 MemoryGetHeapCapacity(void)
+{
+    return HEAP_SIZE;
+}
+
+u32 MemoryGetHeapUsed(void)
+{
+    return sHeapUsedBytes;
+}
+
+u32 MemoryGetHeapPeakUsed(void)
+{
+    return sHeapPeakUsedBytes;
+}
+
+u32 MemoryGetLargestFreeBlock(void)
+{
+    return ScanLargestFreeBlock(&sMainHeapDescriptor);
+}
+
+s32 MemoryGetFreeListCount(void)
+{
+    return sMainHeapDescriptor.freeCount;
+}
+
+void MemoryResetHeapPeak(void)
+{
+    sHeapPeakUsedBytes = sHeapUsedBytes;
+}
+
 // arm9.bin::02011320
 static void InitHeapInternal(void)
 {
@@ -165,6 +217,8 @@ static void InitHeapInternal(void)
     settings.start = sMainHeap;
     settings.size = HEAP_SIZE;
     sHeapCount = 0;
+    sHeapUsedBytes = 0;
+    sHeapPeakUsedBytes = 0;
     DoInitHeap(&sMainHeapDescriptor, &settings, sMainHeapFreeList, sizeof(sMainHeapFreeList) / sizeof(struct HeapFreeListElement));
 }
 
@@ -514,7 +568,14 @@ UNUSED static void xxx_unused_memory_free(HeapDescriptor *a1)
 // group: See enum "MemAllocGroup"
 static void *DoAlloc(HeapDescriptor *heap, s32 size, u32 group)
 {
-    return _LocateSet(heap, size, group | 0x100);
+    void *ptr = _LocateSet(heap, size, group | 0x100);
+
+    if (heap == &sMainHeapDescriptor && ptr != NULL) {
+        sHeapUsedBytes += GetAlignedAllocSize(size);
+        if (sHeapUsedBytes > sHeapPeakUsedBytes)
+            sHeapPeakUsedBytes = sHeapUsedBytes;
+    }
+    return ptr;
 }
 
 static void DoFree(HeapDescriptor *heapDescriptior, void *ptrToFree)
@@ -534,6 +595,12 @@ static void DoFree(HeapDescriptor *heapDescriptior, void *ptrToFree)
     curr = &heapDescriptior->freeList[0];
     for (; i < heapDescriptior->freeCount; i++, curr++) {
         if (curr->block.start == (u8 *)ptrToFree) {
+            if (heapDescriptior == &sMainHeapDescriptor && curr->block.size > 0) {
+                if (sHeapUsedBytes >= (u32)curr->block.size)
+                    sHeapUsedBytes -= (u32)curr->block.size;
+                else
+                    sHeapUsedBytes = 0;
+            }
             curr->unk_atb = 0;
             curr->atb = 0;
             curr->block.allocatedSize = 0;

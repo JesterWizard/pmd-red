@@ -15,12 +15,14 @@ typedef struct Offense
 } Offense;
 
 // size: R=0x4 | B=0x1
+// NOTE: With ARM -mstructure-size-boundary=32 this alone pads to 4 bytes.
+// Prefer Pokemon::unkC[2] (bare u8 levels) for in-memory RecruitedMon density.
 typedef struct unkPokeSubStruct_C
 {
     /* 0x0 */ u8 level;
 } unkPokeSubStruct_C;
 
-// size: R=0x58 | B=0x40
+// size: R=0x54 | B=0x40  (modern: 0x54 — packed unkC[2] as bare u8 + 8-byte IQ flags)
 typedef struct Pokemon
 {
     /* R=0x0  | B=0x0  */ u16 flags;
@@ -28,12 +30,12 @@ typedef struct Pokemon
     /* R=0x3  | B=0x3  */ u8 level;
     /* R=0x4  | B=0x4  */ DungeonLocation dungeonLocation;
     /* R=0x8  | B=0x6  */ s16 speciesNum;
-    /* R=0xC  | B=0x8  */ unkPokeSubStruct_C unkC[2];
-    /* R=0x14 | B=0xA  */ s16 IQ;
-    /* R=0x16 | B=0xC  */ s16 pokeHP;
-    /* R=0x18 | B=0xE  */ Offense offense;
-    /* R=0x1C | B=0x14 */ u32 currExp;
-    /* R=0x20 | B=0x18 */ IqSkillFlags IQSkills;
+    /* R=0xC  | B=0x8  */ u8 unkC[2]; // evolution-stage levels (was padded unkPokeSubStruct_C[2])
+    /* R=0xE  | B=0xA  */ s16 IQ;
+    /* R=0x10 | B=0xC  */ s16 pokeHP;
+    /* R=0x12 | B=0xE  */ Offense offense;
+    /* R=0x18 | B=0x14 */ u32 currExp;
+    /* R=0x1C | B=0x18 */ IqSkillFlags IQSkills;
     /* R=0x24 | B=0x1B */ u8 tacticIndex;
     /* R=0x28 | B=0x1C */ BulkItem heldItem;
     /* R=0x2C | B=0x1E */ Move moves[MAX_MON_MOVES];
@@ -75,12 +77,14 @@ typedef struct DungeonMon
     /* R=0x58 | B=0x4A */ u8 name[POKEMON_NAME_LENGTH]; // name (other offset)
 } DungeonMon;
 
-// size: R=0x90E8 | B=0x6990
+// size: ~0x892C (pokemon[413] @ 0x54 + dungeonTeam[4] + teamMemberIds[4])
 typedef struct RecruitedMon
 {
     /* R=0x0    | B=0x0    */ Pokemon pokemon[NUM_MONSTERS];
     /* R=0x8DF8 | B=0x6740 */ DungeonMon dungeonTeam[MAX_TEAM_MEMBERS];
-    /* R=0x8F88 | B=0x6890 */ Pokemon team[MAX_TEAM_MEMBERS];
+    /* Team snapshot was Pokemon team[4] (~0x170). Store recruited indices instead
+     * and reconstruct for save/rescue-maze lookups (sub_808ED00). -1 = empty. */
+    /* R=0x8F88 | B=0x6890 */ s16 teamMemberIds[MAX_TEAM_MEMBERS];
 } RecruitedMon;
 
 // size: 0x4

@@ -17,22 +17,24 @@ python3 tools/scan_ram_literals.py        # optional baserom LDR-pool cross-chec
 python3 tools/check_save_layout.py        # bit-packed save chunks vs buffer caps
 ```
 
-## Free space (matching `pmd_red.map` / `make` `--print-memory-usage`)
+## Free space (from current `pmd_red.map` / `make` `--print-memory-usage`)
 
 | Region | Free range | Size | Allocator |
-| --- | --- | ---: | --- |
-| **EWRAM** | `0x0203B368`–`0x02040000` | ~19.4 KiB | `_kernel_malloc_ewram` (grows down) |
-| **IWRAM** | `0x03004108`–`0x03007F00` | ~15.7 KiB | `_kernel_malloc` (grows up) |
+| --- | ---: | ---: | --- |
+| **EWRAM** | `0x0203D0C8`–`0x02040000` | ~11.8 KiB | `_kernel_malloc_ewram` (grows down) |
+| **IWRAM** | `0x03006108`–`0x03007F00` | ~7.6 KiB remaining | `_kernel_malloc` (grows up; `gBgTilemaps` uses first 8 KiB @ `0x03004108`) |
 | **SRAM** (flash) | capacity `0x0E000000`–`+128 KiB` | used = save footprint | `FLASH1M` save pak; linker **Used Size** is primary+backup main pak + metadata (`sSramSaveFootprint`), not 100% of the chip |
 
 IWRAM above `0x03007F00` is stacks + `SOUND_INFO_PTR` / `INTR_*` — do not allocate there.
+
+`tools/gen_ram_map.py` reads `ewram_init_end`, `gUnknown_3004000`, and `UsedFreeRamSpaceTop` from the map so free-band markers stay in sync after layout changes.
 
 Save layout changes (IQ flag bits, storage size, achievements blob, etc.) must keep chunk `#define`s and `unk448[]` in sync — see `.cursor/skills/save-sram-layout/SKILL.md` and `tools/check_save_layout.py` (runs after link).
 
 ## Used highlights
 
-- **EWRAM:** ~235 KiB static. Dominated by `sMainHeap` (`0x24000` in `memory.c`) plus Pokémon / text / sprite BSS. Dynamic game objects go through `MemoryAlloc`, not the free band.
-- **IWRAM:** data through `0x03001B56`, init through `0x03002078`, then `0x2090` reserved for libc (`gUnknown_3004000` @ `0x03004108`).
+- **EWRAM:** ~95.4% static (`ewram_init_end` @ `0x0203D0C8`). Dominated by `sMainHeap` (`0x24000` in `memory.c`) plus Pokémon / text / sprite / ground-stream BSS. Dynamic game objects go through `MemoryAlloc`, not the free band.
+- **IWRAM:** data through `0x03001B56`, init through `0x03002078`, then `0x2090` reserved for libc (`gUnknown_3004000` @ `0x03004108`). Custom: `gBgTilemaps` @ `0x03004108` (8 KiB).
 - **Save bus `0x0E000000`:** flash sectors via `ReadFlashData` / `WriteFlashData` — not cart SRAM/EEPROM.
 
 Vanilla symbols already linked from C are documented with `REF_DATA` / pool comments only (not re-exported). Only `Free*` markers and `_kernel_malloc*` allocations are new globals for hacks.
@@ -49,4 +51,3 @@ EWRAM_INIT void *gMenuWork[4] = { NULL };
 Typical slot layout: 0 = root shop/storage, 1 = first nested list, 2 = second nested (e.g. item description). Cursor-restore scalars (`u16` last index) must stay file-local.
 
 **Caveat:** do not put `kecleon_bros4` (`sub_801A5D8`) on a shared slot without changing its init. It does `if (ptr == NULL) ptr = MemoryAlloc(...)` and **reuses** a non-NULL pointer — safe when the pointer is private, but on a shared slot it will reinterpret another menu’s live (or stale) allocation as its own struct and corrupt heap/VRAM. A first-pass pool that shared that slot was reverted after Continue → house graphics corruption.
-

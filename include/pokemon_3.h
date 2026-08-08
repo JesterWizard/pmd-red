@@ -39,7 +39,7 @@ void WritePoke1Bits(DataSerializer *, Pokemon *pokemon);
 void ReadPoke1Bits(DataSerializer *, Pokemon *);
 s32 SavePoke2s(u8* buffer, s32 size);
 s32 RestorePoke2s(u8* a1, s32 size);
-void ReadPoke1LevelBits(DataSerializer* a1, unkPokeSubStruct_C* unkC);
-void WritePoke1LevelBits(DataSerializer* a1, unkPokeSubStruct_C* unkC);
+void ReadPoke1LevelBits(DataSerializer* a1, u8* level);
+void WritePoke1LevelBits(DataSerializer* a1, u8* level);
 
 #endif // GUARD_POKEMON_3_H

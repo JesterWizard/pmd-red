@@ -30,8 +30,8 @@ EWRAM_DATA s32 gUnknown_202B024 = 0; // NDS=020EDCE8
 EWRAM_DATA s32 gCharHeight[2] = {0};
 EWRAM_DATA u32 gTextShadowMask = 0; // Some text color info is stored; retrieve via "& 0xF"
 EWRAM_DATA u8 gDrawTextShadow = 0;
-// 4 bgs, 32x32 tiles, y dimension goes before x [bgId][y][x]
-EWRAM_DATA ALIGNED(4) u16 gBgTilemaps[4][32][32] = {0};
+/* gBgTilemaps lives in the IWRAM free band (asm/ram_map_iwram.s) to free
+ * 8 KiB of EWRAM. Window GFX pool stays in EWRAM — peak tile use is 470/472. */
 
 EWRAM_INIT void (*ScrollDownWindowFunc)(s32 windowId) = ScrollDownWindow;
 EWRAM_INIT void (*ScrollUpWindowFunc)(s32 windowId) = ScrollUpWindow;

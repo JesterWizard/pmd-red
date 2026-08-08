@@ -254,11 +254,11 @@ Pokemon *sub_808F798(Pokemon *pokemon, s16 _species)
     pokeStruct.currExp = levelData.expRequired;
     pokemon->flags = 0;
     pokeStruct.speciesNum = species;
-    if (pokeStruct.unkC[0].level == 0) {
-        pokeStruct.unkC[0].level = pokeStruct.level;
+    if (pokeStruct.unkC[0] == 0) {
+        pokeStruct.unkC[0] = pokeStruct.level;
     }
-    else if (pokeStruct.unkC[1].level == 0) {
-        pokeStruct.unkC[1].level = pokeStruct.level;
+    else if (pokeStruct.unkC[1] == 0) {
+        pokeStruct.unkC[1] = pokeStruct.level;
     }
 
     CopyStringtoBuffer(buffer, GetMonSpecies(r6));

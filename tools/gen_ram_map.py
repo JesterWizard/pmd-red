@@ -21,10 +21,9 @@ EWRAM_END = 0x02040000
 IWRAM_START = 0x03000000
 IWRAM_END = 0x03008000
 
-# Proven free bands from matching pmd_red.map + crt0.s stack tops.
-FREE_EWRAM_TOP = 0x0203B368  # ewram_init_end
-FREE_EWRAM_BOTTOM = EWRAM_END
-FREE_IWRAM_TOP = 0x03004108  # gUnknown_3004000 / end of iwram_lib
+# Fallbacks if the map is missing expected markers (matching-era snapshot).
+FALLBACK_FREE_EWRAM_TOP = 0x0203D0C8  # ewram_init_end
+FALLBACK_FREE_IWRAM_TOP = 0x03004108  # gUnknown_3004000 / end of iwram_lib
 FREE_IWRAM_BOTTOM = 0x03007F00  # sp_sys
 
 SYM_RE = re.compile(r"^\s+(0x0[23][0-9a-fA-F]{6})\s+([A-Za-z_][A-Za-z0-9_]*)\s*$")
@@ -32,9 +31,43 @@ OBJ_RE = re.compile(
     r"\s+(ewram_data|ewram_lib|ewram_init|iwram_data|iwram_init)\s+"
     r"(0x0[23][0-9a-fA-F]+)\s+(0x[0-9a-fA-F]+)\s+(\S+)"
 )
+MARKER_RE = re.compile(
+    r"^\s+(0x0[23][0-9a-fA-F]+)\s+([A-Za-z_][A-Za-z0-9_]*)\s*(?:=\s*\.)?\s*$"
+)
 
 
-def parse_map(path: Path) -> tuple[list[tuple[int, str]], list[tuple[int, str]], list[tuple]]:
+def parse_marker(text: str, name: str) -> int | None:
+    for line in text.splitlines():
+        m = MARKER_RE.match(line)
+        if m and m.group(2) == name:
+            return int(m.group(1), 16)
+    return None
+
+
+def parse_nm_absolutes(elf: Path) -> dict[str, int]:
+    """Absolute .set symbols often omit from the map; nm still lists them."""
+    if not elf.is_file():
+        return {}
+    import subprocess
+
+    try:
+        out = subprocess.check_output(
+            ["arm-none-eabi-nm", str(elf)], text=True, stderr=subprocess.DEVNULL
+        )
+    except (OSError, subprocess.CalledProcessError):
+        return {}
+    found: dict[str, int] = {}
+    for line in out.splitlines():
+        parts = line.split()
+        if len(parts) >= 3 and parts[1] in ("A", "a"):
+            try:
+                found[parts[2]] = int(parts[0], 16)
+            except ValueError:
+                pass
+    return found
+
+
+def parse_map(path: Path) -> tuple[list[tuple[int, str]], list[tuple[int, str]], list[tuple], int, int, int]:
     text = path.read_text(errors="replace")
     ew: list[tuple[int, str]] = []
     iw: list[tuple[int, str]] = []
@@ -61,7 +94,24 @@ def parse_map(path: Path) -> tuple[list[tuple[int, str]], list[tuple[int, str]],
         if m:
             kind, addr_s, size_s, obj = m.groups()
             objs.append((kind, int(addr_s, 16), int(size_s, 16), obj))
-    return ew, iw, objs
+
+    abs_syms = parse_nm_absolutes(path.with_suffix(".elf"))
+    free_ewram_top = (
+        parse_marker(text, "ewram_init_end")
+        or abs_syms.get("FreeEwramSpaceTop")
+        or FALLBACK_FREE_EWRAM_TOP
+    )
+    free_iwram_top = (
+        parse_marker(text, "gUnknown_3004000")
+        or abs_syms.get("FreeRamSpaceTop")
+        or FALLBACK_FREE_IWRAM_TOP
+    )
+    used_iwram_top = (
+        abs_syms.get("UsedFreeRamSpaceTop")
+        or abs_syms.get("gBgTilemapsEnd")
+        or free_iwram_top
+    )
+    return ew, iw, objs, free_ewram_top, free_iwram_top, used_iwram_top
 
 
 def emit_pool(path: Path, region: str, syms: list[tuple[int, str]], free_top: int) -> None:
@@ -84,23 +134,31 @@ def emit_pool(path: Path, region: str, syms: list[tuple[int, str]], free_top: in
     print(f"Wrote {path} ({count} symbols)", file=sys.stderr)
 
 
-def print_report(ew, iw, objs) -> None:
+def print_report(
+    ew, iw, objs, free_ewram_top: int, free_iwram_top: int, used_iwram_top: int
+) -> None:
+    free_ewram_bytes = EWRAM_END - free_ewram_top
+    free_iwram_bytes = FREE_IWRAM_BOTTOM - used_iwram_top
     print("=== PMD Red RAM occupancy (from linker map) ===")
     print(
-        f"EWRAM used static+init: 0x{EWRAM_START:08X}–0x{FREE_EWRAM_TOP:08X} "
-        f"({FREE_EWRAM_TOP - EWRAM_START} bytes)"
+        f"EWRAM used static+init: 0x{EWRAM_START:08X}–0x{free_ewram_top:08X} "
+        f"({free_ewram_top - EWRAM_START} bytes)"
     )
     print(
-        f"EWRAM free pool:        0x{FREE_EWRAM_TOP:08X}–0x{FREE_EWRAM_BOTTOM:08X} "
-        f"({FREE_EWRAM_BOTTOM - FREE_EWRAM_TOP} bytes, ~{(FREE_EWRAM_BOTTOM - FREE_EWRAM_TOP)/1024:.1f} KiB)"
+        f"EWRAM free pool:        0x{free_ewram_top:08X}–0x{EWRAM_END:08X} "
+        f"({free_ewram_bytes} bytes, ~{free_ewram_bytes/1024:.1f} KiB)"
     )
     print(
-        f"IWRAM used+lib:         0x{IWRAM_START:08X}–0x{FREE_IWRAM_TOP:08X} "
-        f"({FREE_IWRAM_TOP - IWRAM_START} bytes)"
+        f"IWRAM used+lib:         0x{IWRAM_START:08X}–0x{free_iwram_top:08X} "
+        f"({free_iwram_top - IWRAM_START} bytes)"
     )
     print(
-        f"IWRAM free pool:        0x{FREE_IWRAM_TOP:08X}–0x{FREE_IWRAM_BOTTOM:08X} "
-        f"({FREE_IWRAM_BOTTOM - FREE_IWRAM_TOP} bytes, ~{(FREE_IWRAM_BOTTOM - FREE_IWRAM_TOP)/1024:.1f} KiB)"
+        f"IWRAM custom used thru: 0x{used_iwram_top:08X} "
+        f"(FreeRamSpaceTop was 0x{free_iwram_top:08X})"
+    )
+    print(
+        f"IWRAM free remaining:   0x{used_iwram_top:08X}–0x{FREE_IWRAM_BOTTOM:08X} "
+        f"({free_iwram_bytes} bytes, ~{free_iwram_bytes/1024:.1f} KiB)"
     )
     print("IWRAM stacks/fixed:     0x03007F00–0x03008000 (sys/IRQ stacks + INTR words)")
     print("Flash (save):           0x0E000000+ FLASH1M — fully used by save pak (not free)")
@@ -132,13 +190,13 @@ def main() -> int:
     if not args.map.is_file():
         print(f"missing map: {args.map} (build the ROM first)", file=sys.stderr)
         return 1
-    ew, iw, objs = parse_map(args.map)
-    print_report(ew, iw, objs)
+    ew, iw, objs, free_ewram_top, free_iwram_top, used_iwram_top = parse_map(args.map)
+    print_report(ew, iw, objs, free_ewram_top, free_iwram_top, used_iwram_top)
     if args.emit_asm:
         out = Path("asm")
         out.mkdir(parents=True, exist_ok=True)
-        emit_pool(out / "ram_map_ewram_pool.inc", "ewram", ew, FREE_EWRAM_TOP)
-        emit_pool(out / "ram_map_iwram_pool.inc", "iwram", iw, FREE_IWRAM_TOP)
+        emit_pool(out / "ram_map_ewram_pool.inc", "ewram", ew, free_ewram_top)
+        emit_pool(out / "ram_map_iwram_pool.inc", "iwram", iw, free_iwram_top)
     return 0
 
 

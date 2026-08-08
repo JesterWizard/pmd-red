@@ -13,6 +13,7 @@
 #include "moves.h"
 #include "pokemon.h"
 #include "pokemon_3.h"
+#include "memory.h"
 #include "random.h"
 #include "string_format.h"
 #include "strings.h"
@@ -473,11 +474,11 @@ void sub_808ED00(void)
         s32 length = sub_808D580(team);
 
         for (i = 0; i < length; i++) {
-            gRecruitedPokemonRef->team[i] = gRecruitedPokemonRef->pokemon[team[i]];
+            gRecruitedPokemonRef->teamMemberIds[i] = team[i];
         }
 
         for (; i < MAX_TEAM_MEMBERS; i++) {
-            gRecruitedPokemonRef->team[i].flags = POKEMON_FLAG_NONE;
+            gRecruitedPokemonRef->teamMemberIds[i] = -1;
         }
     }
 }
@@ -518,16 +519,23 @@ s32 SaveRecruitedPokemon(u8 *a1, s32 a2)
         WritePoke1Bits(&backup, pokemon);
     }
 
-    // Team members
+    // Team members (serialize reconstructed Pokemon; keep save wire format)
     for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
         u8 data_u8;
-        if (PokemonExists(&gRecruitedPokemonRef->team[i]))
+        Pokemon teamMon;
+        s16 memberId = gRecruitedPokemonRef->teamMemberIds[i];
+
+        MemoryFill8(&teamMon, 0, sizeof(teamMon));
+        if ((u16)memberId < NUM_MONSTERS && PokemonExists(&gRecruitedPokemonRef->pokemon[memberId])) {
+            teamMon = gRecruitedPokemonRef->pokemon[memberId];
             data_u8 = 0xFF;
-        else
+        }
+        else {
             data_u8 = 0;
+        }
 
         WriteBits(&backup, &data_u8, 1);
-        WritePoke1Bits(&backup, &gRecruitedPokemonRef->team[i]);
+        WritePoke1Bits(&backup, &teamMon);
     }
 
     // ???
@@ -555,14 +563,13 @@ s32 RestoreRecruitedPokemon(u8 *a1, s32 a2)
         ReadPoke1Bits(&backup, &gRecruitedPokemonRef->pokemon[i]);
     }
 
-    // Team members
+    // Team members (consume legacy full-Pokemon records; IDs rebuilt from ON_TEAM below)
     for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
+        Pokemon teamMon;
+
         ReadBits(&backup, &data_u8, 1);
-        ReadPoke1Bits(&backup, &gRecruitedPokemonRef->team[i]);
-        if (data_u8 & 1)
-            gRecruitedPokemonRef->team[i].flags = POKEMON_FLAG_ON_TEAM | POKEMON_FLAG_EXISTS;
-        else
-            gRecruitedPokemonRef->team[i].flags = POKEMON_FLAG_NONE;
+        ReadPoke1Bits(&backup, &teamMon);
+        (void)data_u8;
     }
 
     // ???
@@ -576,6 +583,17 @@ s32 RestoreRecruitedPokemon(u8 *a1, s32 a2)
     ReadBits(&backup, &data_s16, 16);
     if ((u16)data_s16 < NUM_MONSTERS)
         gRecruitedPokemonRef->pokemon[data_s16].isTeamLeader = TRUE;
+
+    // Rebuild compact team IDs from the restored ON_TEAM flags.
+    {
+        s32 team[MAX_TEAM_MEMBERS];
+        s32 length = sub_808D580(team);
+
+        for (i = 0; i < length; i++)
+            gRecruitedPokemonRef->teamMemberIds[i] = team[i];
+        for (; i < MAX_TEAM_MEMBERS; i++)
+            gRecruitedPokemonRef->teamMemberIds[i] = -1;
+    }
 
     FinishBitSerializer(&backup);
     return backup.count;
@@ -730,15 +748,15 @@ s32 RestorePoke2s(u8* a1, s32 size)
 }
 
 // arm9.bin::0205C454
-void ReadPoke1LevelBits(DataSerializer* a1, unkPokeSubStruct_C* unkC)
+void ReadPoke1LevelBits(DataSerializer* a1, u8* level)
 {
-    ReadBits(a1, &unkC->level, 7);
+    ReadBits(a1, level, 7);
 }
 
 // arm9.bin::0205C444
-void WritePoke1LevelBits(DataSerializer* a1, unkPokeSubStruct_C* unkC)
+void WritePoke1LevelBits(DataSerializer* a1, u8* level)
 {
-    WriteBits(a1, &unkC->level, 7);
+    WriteBits(a1, level, 7);
 }
 
 // arm9.bin::0205C414

@@ -66,10 +66,8 @@ void InitializeRecruitedPokemon(void)
     for (index = 0; index < 4; index++)
         gRecruitedPokemonRef->dungeonTeam[index].flags = 0;
 
-    for (index = 0; index < MAX_TEAM_MEMBERS; index++) {
-        gRecruitedPokemonRef->team[index].speciesNum = 0;
-        gRecruitedPokemonRef->team[index].flags = 0;
-    }
+    for (index = 0; index < MAX_TEAM_MEMBERS; index++)
+        gRecruitedPokemonRef->teamMemberIds[index] = -1;
 }
 
 /* Cheat: raise leader, partner, and active teammates to Lv100 with max stats. */
@@ -175,8 +173,8 @@ void CreateLeaderPartnerData(s16 _species, bool32 _isLeader, u8* name)
      pokemon.offense.def[0] = GetBaseDefensiveStat(species, 0);
      pokemon.offense.def[1] = GetBaseDefensiveStat(species, 1);
      pokemon.IQ = 1;
-     pokemon.unkC[0].level = 0;
-     pokemon.unkC[1].level = 0;
+     pokemon.unkC[0] = 0;
+     pokemon.unkC[1] = 0;
      SetDefaultIQSkills(&pokemon.IQSkills, FALSE);
      pokemon.speciesNum = species;
      pokemon.heldItem.id = ITEM_NOTHING;
@@ -232,8 +230,8 @@ void CreateLevel1Pokemon(Pokemon *pokemon, s16 _species, u8* name, u32 _itemID, 
     pokemon->tacticIndex = TACTIC_LETS_GO_TOGETHER;
     pokemon->IQ = 1;
     pokemon->dungeonLocation = *location;
-    pokemon->unkC[0].level = 0;
-    pokemon->unkC[1].level = 0;
+    pokemon->unkC[0] = 0;
+    pokemon->unkC[1] = 0;
     SetDefaultIQSkills(&pokemon->IQSkills, FALSE);
 
     if (moves != NULL) {
@@ -295,8 +293,8 @@ void ConvertStoryMonToPokemon(Pokemon *dst, const struct StoryMonData *src)
     dst->tacticIndex = TACTIC_LETS_GO_TOGETHER;
     dst->IQ = src->IQ;
     dst->dungeonLocation = src->dungeonLocation;
-    dst->unkC[0].level = 0;
-    dst->unkC[1].level = 0;
+    dst->unkC[0] = 0;
+    dst->unkC[1] = 0;
     SetDefaultIQSkills(&dst->IQSkills, FALSE);
 
     for (i = 0; i < MAX_MON_MOVES; i++) {
@@ -1339,7 +1337,7 @@ s32 GetEvolutionSequence(Pokemon* pokemon, EvolveStage* a2)
     species = pokemon->speciesNum;
 
     for (i = 0; i < 2; i++) {
-        if (!pokemon->unkC[i].level) {
+        if (!pokemon->unkC[i]) {
             break;
         }
         species = (s16) GetPokemonEvolveFrom(species);
@@ -1347,7 +1345,7 @@ s32 GetEvolutionSequence(Pokemon* pokemon, EvolveStage* a2)
             break;
         }
         a2[count].speciesNum = species;
-        a2[count].level = pokemon->unkC[i].level;
+        a2[count].level = pokemon->unkC[i];
         count++;
     }
     return count;

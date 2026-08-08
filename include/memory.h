@@ -32,6 +32,14 @@ void MemoryCopy32(u32 *dest, const u32 *src, s32 size);
 void *MemoryAlloc(s32 size, s32 group);
 void MemoryFree(void *a);
 
+/* Allocator telemetry (main heap). Bytes are aligned request sizes. */
+u32 MemoryGetHeapCapacity(void);
+u32 MemoryGetHeapUsed(void);
+u32 MemoryGetHeapPeakUsed(void);
+u32 MemoryGetLargestFreeBlock(void);
+s32 MemoryGetFreeListCount(void);
+void MemoryResetHeapPeak(void);
+
 #define FREE_AND_SET_NULL(ptr)          \
 {                                       \
     MemoryFree(ptr);                    \

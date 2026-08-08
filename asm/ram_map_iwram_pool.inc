@@ -1,7 +1,7 @@
 @ =============================================================================
 @ AUTO-GENERATED — do not edit by hand.
 @ python3 tools/gen_ram_map.py --emit-asm
-@ Named IWRAM linker globals below FreeIwramSpaceTop.
+@ Named IWRAM linker globals in the used band (see ram_map_iwram.s).
 @ Documentation only (comments) — symbols already exist in the decomp link.
 @ =============================================================================
 

@@ -38,6 +38,32 @@ static void RenderChunksToBgTilemaps_3x3(MapRender *mapRender);
 
 static const PixelPos sPositionZero = {0, 0};
 
+/* Collision scratch: (mapHeightTiles + 8) rows × 256 bytes, capped at unkE×256.
+ * Lazy-allocated at map load — GroundBg_Init no longer reserves the dual-layer max
+ * (~48 KiB) before dimensions are known. */
+static u32 GetCollisionScratchBytes(const GroundBg *groundBg, const BmaHeader *bmaHeader)
+{
+    s32 rows = bmaHeader->mapHeightTiles + 8;
+    u32 bytes = (u32)rows * 256;
+    u32 cap = (u32)groundBg->unk52C.unkE * 256;
+
+    if (bytes > cap)
+        bytes = cap;
+    return bytes;
+}
+
+static void AllocCollisionScratch(GroundBg *groundBg, const BmaHeader *bmaHeader)
+{
+    u32 bytes;
+
+    if (groundBg->unk52C.unk14 == NULL)
+        return;
+
+    bytes = GetCollisionScratchBytes(groundBg, bmaHeader);
+    TRY_FREE_AND_SET_NULL(groundBg->unk544);
+    groundBg->unk544 = MemoryAlloc(bytes, MEMALLOC_GROUP_6);
+}
+
 void GroundBg_Init(GroundBg *groundBg, const SubStruct_52C *a1)
 {
     SubStruct_0 *unk0Ptr;
@@ -55,12 +81,8 @@ void GroundBg_Init(GroundBg *groundBg, const SubStruct_52C *a1)
         groundBg->chunkMappings[id] = NULL;
     }
 
-    if (groundBg->unk52C.unk14 != NULL) {
-        groundBg->unk544 = MemoryAlloc(groundBg->unk52C.unkE * 256, MEMALLOC_GROUP_6);
-    }
-    else {
-        groundBg->unk544 = NULL;
-    }
+    /* Collision buffer is map-sized at load time (see AllocCollisionScratch). */
+    groundBg->unk544 = NULL;
 
     groundBg->bplFile = NULL;
     groundBg->bpcFile = NULL;
@@ -140,8 +162,11 @@ void sub_80A2D88(GroundBg *groundBg)
 {
     if (groundBg->unk52C.unk14 != NULL) {
         BmaHeader *bmaHeader = &groundBg->bmaHeader;
-        groundBg->unk544 = MemoryAlloc(groundBg->unk52C.unkE * 256, MEMALLOC_GROUP_6);
-        groundBg->unk52C.unk14(groundBg->unk544, groundBg->decompressedBMAData, bmaHeader, groundBg->unk52C.unkE);
+        u32 bytes;
+
+        AllocCollisionScratch(groundBg, bmaHeader);
+        bytes = GetCollisionScratchBytes(groundBg, bmaHeader);
+        groundBg->unk52C.unk14(groundBg->unk544, groundBg->decompressedBMAData, bmaHeader, (s32)(bytes / 256));
     }
 }
 
@@ -403,21 +428,13 @@ void sub_80A2FBC(GroundBg *groundBg, s32 mapFileId_)
     bmaData = BmaLayerNrlDecompressor(groundBg->chunkMappings, bmaData, &groundBg->unk52C, &groundBg->bmaHeader);
     groundBg->decompressedBMAData = bmaData;
     if (groundBg->unk52C.unk14 != NULL) {
-        /* Oversized-BPC streaming frees unk544 before decompress; restore a
-         * collision scratch sized for this map (not the full dual-layer cap). */
-        if (groundBg->unk544 == NULL) {
-            s32 rows = bmaHeader->mapHeightTiles + 8;
-            u32 bytes = (u32)rows * 256;
-            u32 cap = (u32)groundBg->unk52C.unkE * 256;
+        u32 bytes;
 
-            if (bytes > cap)
-                bytes = cap;
-            groundBg->unk544 = MemoryAlloc(bytes, MEMALLOC_GROUP_6);
-            groundBg->unk52C.unk14(groundBg->unk544, bmaData, bmaHeader, (s32)(bytes / 256));
-        }
-        else {
-            groundBg->unk52C.unk14(groundBg->unk544, bmaData, bmaHeader, groundBg->unk52C.unkE);
-        }
+        /* Always map-sized: Init no longer preallocates the unkE×256 cap, and
+         * oversized-BPC streaming may have freed a prior scratch. */
+        AllocCollisionScratch(groundBg, bmaHeader);
+        bytes = GetCollisionScratchBytes(groundBg, bmaHeader);
+        groundBg->unk52C.unk14(groundBg->unk544, bmaData, bmaHeader, (s32)(bytes / 256));
     }
 
     sub0Ptr = groundBg->unk0;
@@ -593,6 +610,17 @@ void sub_80A3440(GroundBg *groundBg, s32 mapFileId_, const DungeonLocation *dung
     bmaHeader->hasDataLayer = *(u8 *)(bmaData); bmaData += 2;
     bmaHeader->hasCollision = *(u8 *)(bmaData); bmaData += 2;
 
+    /* Dungeon load reuses unk544 as a temporary layer decompress target, then
+     * overwrites it with collision. Size for both: max(layer rows, collision). */
+    {
+        u32 layerBytes = (u32)groundBg->unk52C.unk10 * 128;
+        u32 collBytes = GetCollisionScratchBytes(groundBg, bmaHeader);
+        u32 bytes = layerBytes > collBytes ? layerBytes : collBytes;
+
+        TRY_FREE_AND_SET_NULL(groundBg->unk544);
+        groundBg->unk544 = MemoryAlloc(bytes, MEMALLOC_GROUP_6);
+    }
+
     unkPtrArray[0] = groundBg->unk544;
     unkPtrArray[1] = NULL;
     bmaData = BmaLayerNrlDecompressor(unkPtrArray, bmaData, &groundBg->unk52C, &groundBg->bmaHeader);
@@ -602,7 +630,10 @@ void sub_80A3440(GroundBg *groundBg, s32 mapFileId_, const DungeonLocation *dung
     GetFileDataPtr(groundBg->unk43C, 0);
     GetFileDataPtr(groundBg->unk440, 0);
 
-    groundBg->unk52C.unk14(groundBg->unk544, bmaData, bmaHeader, groundBg->unk52C.unkE);
+    {
+        u32 collBytes = GetCollisionScratchBytes(groundBg, bmaHeader);
+        groundBg->unk52C.unk14(groundBg->unk544, bmaData, bmaHeader, (s32)(collBytes / 256));
+    }
     layerSpecs->numTiles = 512;
     for (i = 0; i < MAX_BPA_SLOTS; i++) {
         layerSpecs->bpaSlotNumTiles[i] = 0;
