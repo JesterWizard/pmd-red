@@ -12,6 +12,7 @@
 #include "palette_fade_util.h"
 #include "personality_test2.h"
 #include "pokemon.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -206,15 +207,26 @@ static s32 GetValidPartners(void)
     u8 PlayerType[2];
     u8 currentPartnerTypes[2];
     s32 i;
+    s32 partnerCount;
     s32 ValidPartnerCounter;
     s32 CurrentPartnerID;
+    const s16 *partnerList;
 
     ValidPartnerCounter = 0;
     PlayerType[0] = GetPokemonType(gUnknown_203B404->StarterID, 0);
     PlayerType[1] = GetPokemonType(gUnknown_203B404->StarterID, 1);
 
-    for (i = 0; i < NUM_PARTNERS; i++) {
-        CurrentPartnerID = gPartners[i];
+    if (gRuntimeConfig.all_starters_as_partners) {
+        partnerList = gStarterSelectionList;
+        partnerCount = NUM_STARTERS;
+    }
+    else {
+        partnerList = gPartners;
+        partnerCount = NUM_PARTNERS;
+    }
+
+    for (i = 0; i < partnerCount; i++) {
+        CurrentPartnerID = partnerList[i];
         currentPartnerTypes[0] = GetPokemonType(CurrentPartnerID, 0);
         currentPartnerTypes[1] = GetPokemonType(CurrentPartnerID, 1);
 

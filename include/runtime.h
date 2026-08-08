@@ -59,6 +59,8 @@ typedef struct {
     u8 starter_choice_prompt;
     /* Before committing starter/partner pick: preview Lv1 stats + moves, then Yes/No */
     u8 starter_confirm_preview;
+    /* All player starters (incl. Meowth/Psyduck/etc.) can be partners; else vanilla 10 */
+    u8 all_starters_as_partners;
     /* Extra EXP for one-shotting full-HP foes based on overkill damage */
     u8 overkill_exp_bonus;
     /* SpriteCollab portraits: Normal for Gen1–3 + Munchlax; full packs for starter evos / Spinda */

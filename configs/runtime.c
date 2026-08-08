@@ -24,6 +24,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .dungeon_modifiers = FALSE, /* TRUE = 20% chance of a floor modifier; FALSE = off */
     .starter_choice_prompt = TRUE, /* TRUE = choose starter or take quiz; FALSE = quiz only */
     .starter_confirm_preview = TRUE, /* TRUE = stats/moves confirm before starter/partner commit; FALSE = vanilla instant pick */
+    .all_starters_as_partners = TRUE, /* TRUE = all player starters can be partners; FALSE = vanilla 10 */
     .overkill_exp_bonus = TRUE, /* TRUE = +25% EXP per 100% overkill on full-HP KO; FALSE = off */
     .custom_portraits = TRUE, /* TRUE = SpriteCollab portraits (Normal + evo packs); FALSE = vanilla kao */
     .outlaw_missions = TRUE, /* TRUE = WANTED hunt jobs on bulletin; FALSE = vanilla job types only */
