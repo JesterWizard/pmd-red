@@ -15550,26 +15550,172 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     CANCEL_LIVES(53, 2),
     CANCEL_LIVES(53, 3),
     CANCEL_LIVES(53, 4),
-    CJUMP_RANDOM(4),
+    CANCEL_LIVES(53, 5),
+    CANCEL_LIVES(53, 6),
+    CANCEL_LIVES(53, 7),
+    CANCEL_LIVES(53, 8),
+    CANCEL_LIVES(53, 9),
+    CANCEL_LIVES(53, 10),
+    CANCEL_LIVES(53, 11),
+    CANCEL_LIVES(53, 12),
+    CANCEL_LIVES(53, 13),
+    CANCEL_LIVES(53, 14),
+    CANCEL_LIVES(53, 15),
+    CANCEL_LIVES(53, 16),
+    CANCEL_LIVES(53, 17),
+    CANCEL_LIVES(53, 18),
+    CANCEL_LIVES(53, 19),
+    CANCEL_LIVES(53, 20),
+    CANCEL_LIVES(53, 21),
+    CANCEL_LIVES(53, 22),
+    CANCEL_LIVES(53, 23),
+    CANCEL_LIVES(53, 24),
+    CANCEL_LIVES(53, 25),
+    CANCEL_LIVES(53, 26),
+    CANCEL_LIVES(53, 27),
+    CANCEL_LIVES(53, 28),
+    CANCEL_LIVES(53, 29),
+    CANCEL_LIVES(53, 30),
+    CANCEL_LIVES(53, 31),
+    CANCEL_LIVES(53, 32),
+    CANCEL_LIVES(53, 33),
+    CJUMP_RANDOM(33),
     COND_EQUAL(0, /* to label */ 1),
     COND_EQUAL(1, /* to label */ 2),
     COND_EQUAL(2, /* to label */ 3),
     COND_EQUAL(3, /* to label */ 4),
-  LABEL(1), /* = 0x01 */
+    COND_EQUAL(4, /* to label */ 5),
+    COND_EQUAL(5, /* to label */ 6),
+    COND_EQUAL(6, /* to label */ 7),
+    COND_EQUAL(7, /* to label */ 8),
+    COND_EQUAL(8, /* to label */ 9),
+    COND_EQUAL(9, /* to label */ 10),
+    COND_EQUAL(10, /* to label */ 11),
+    COND_EQUAL(11, /* to label */ 12),
+    COND_EQUAL(12, /* to label */ 13),
+    COND_EQUAL(13, /* to label */ 14),
+    COND_EQUAL(14, /* to label */ 15),
+    COND_EQUAL(15, /* to label */ 16),
+    COND_EQUAL(16, /* to label */ 17),
+    COND_EQUAL(17, /* to label */ 18),
+    COND_EQUAL(18, /* to label */ 19),
+    COND_EQUAL(19, /* to label */ 20),
+    COND_EQUAL(20, /* to label */ 21),
+    COND_EQUAL(21, /* to label */ 22),
+    COND_EQUAL(22, /* to label */ 23),
+    COND_EQUAL(23, /* to label */ 24),
+    COND_EQUAL(24, /* to label */ 25),
+    COND_EQUAL(25, /* to label */ 26),
+    COND_EQUAL(26, /* to label */ 27),
+    COND_EQUAL(27, /* to label */ 28),
+    COND_EQUAL(28, /* to label */ 29),
+    COND_EQUAL(29, /* to label */ 30),
+    COND_EQUAL(30, /* to label */ 31),
+    COND_EQUAL(31, /* to label */ 32),
+    COND_EQUAL(32, /* to label */ 33),
+  LABEL(1), /* = 0x01 Marill */
     SELECT_ENTITIES(53, 1),
-    JUMP_LABEL(5),
-  LABEL(2), /* = 0x02 */
+    JUMP_LABEL(34),
+  LABEL(2), /* = 0x02 Azurill */
     SELECT_ENTITIES(53, 2),
-    JUMP_LABEL(5),
-  LABEL(3), /* = 0x03 */
+    JUMP_LABEL(34),
+  LABEL(3), /* = 0x03 Nincada */
     SELECT_ENTITIES(53, 3),
-    JUMP_LABEL(5),
-  LABEL(4), /* = 0x04 */
+    JUMP_LABEL(34),
+  LABEL(4), /* = 0x04 Tauros */
     SELECT_ENTITIES(53, 4),
-  LABEL(5), /* = 0x05 */
+    JUMP_LABEL(34),
+  LABEL(5), /* = 0x05 Torkoal */
+    SELECT_ENTITIES(53, 5),
+    JUMP_LABEL(34),
+  LABEL(6), /* = 0x06 Aron */
+    SELECT_ENTITIES(53, 6),
+    JUMP_LABEL(34),
+  LABEL(7), /* = 0x07 Pidgey */
+    SELECT_ENTITIES(53, 7),
+    JUMP_LABEL(34),
+  LABEL(8), /* = 0x08 Sunflora */
+    SELECT_ENTITIES(53, 8),
+    JUMP_LABEL(34),
+  LABEL(9), /* = 0x09 Bagon */
+    SELECT_ENTITIES(53, 9),
+    JUMP_LABEL(34),
+  LABEL(10), /* = 0x0a Dragonair */
+    SELECT_ENTITIES(53, 10),
+    JUMP_LABEL(34),
+  LABEL(11), /* = 0x0b Furret */
+    SELECT_ENTITIES(53, 11),
+    JUMP_LABEL(34),
+  LABEL(12), /* = 0x0c Gloom */
+    SELECT_ENTITIES(53, 12),
+    JUMP_LABEL(34),
+  LABEL(13), /* = 0x0d Scizor */
+    SELECT_ENTITIES(53, 13),
+    JUMP_LABEL(34),
+  LABEL(14), /* = 0x0e Breloom */
+    SELECT_ENTITIES(53, 14),
+    JUMP_LABEL(34),
+  LABEL(15), /* = 0x0f Taillow */
+    SELECT_ENTITIES(53, 15),
+    JUMP_LABEL(34),
+  LABEL(16), /* = 0x10 Seviper */
+    SELECT_ENTITIES(53, 16),
+    JUMP_LABEL(34),
+  LABEL(17), /* = 0x11 Spheal */
+    SELECT_ENTITIES(53, 17),
+    JUMP_LABEL(34),
+  LABEL(18), /* = 0x12 Snorunt */
+    SELECT_ENTITIES(53, 18),
+    JUMP_LABEL(34),
+  LABEL(19), /* = 0x13 Horsea */
+    SELECT_ENTITIES(53, 19),
+    JUMP_LABEL(34),
+  LABEL(20), /* = 0x14 Mightyena */
+    SELECT_ENTITIES(53, 20),
+    JUMP_LABEL(34),
+  LABEL(21), /* = 0x15 Shuppet */
+    SELECT_ENTITIES(53, 21),
+    JUMP_LABEL(34),
+  LABEL(22), /* = 0x16 Grimer */
+    SELECT_ENTITIES(53, 22),
+    JUMP_LABEL(34),
+  LABEL(23), /* = 0x17 Doduo */
+    SELECT_ENTITIES(53, 23),
+    JUMP_LABEL(34),
+  LABEL(24), /* = 0x18 Volbeat */
+    SELECT_ENTITIES(53, 24),
+    JUMP_LABEL(34),
+  LABEL(25), /* = 0x19 Spoink */
+    SELECT_ENTITIES(53, 25),
+    JUMP_LABEL(34),
+  LABEL(26), /* = 0x1a Magmar */
+    SELECT_ENTITIES(53, 26),
+    JUMP_LABEL(34),
+  LABEL(27), /* = 0x1b Electabuzz */
+    SELECT_ENTITIES(53, 27),
+    JUMP_LABEL(34),
+  LABEL(28), /* = 0x1c Chansey */
+    SELECT_ENTITIES(53, 28),
+    JUMP_LABEL(34),
+  LABEL(29), /* = 0x1d Tangela */
+    SELECT_ENTITIES(53, 29),
+    JUMP_LABEL(34),
+  LABEL(30), /* = 0x1e Electrike */
+    SELECT_ENTITIES(53, 30),
+    JUMP_LABEL(34),
+  LABEL(31), /* = 0x1f Hitmonchan */
+    SELECT_ENTITIES(53, 31),
+    JUMP_LABEL(34),
+  LABEL(32), /* = 0x20 Mawile */
+    SELECT_ENTITIES(53, 32),
+    JUMP_LABEL(34),
+  LABEL(33), /* = 0x21 Hoppip */
+    SELECT_ENTITIES(53, 33),
+  LABEL(34), /* = 0x22 await */
     AWAIT_CUE(64),
     JUMP_LABEL(0),
 };
+
 
 /* Kept so sStationScripts[] indices stay stable; sector 0 no longer runs it. */
 static const struct ScriptCommand s_gs1_g53_s0_station_sref_script[] = {
@@ -15627,7 +15773,8 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     END_DELETE,
 };
 
-static const struct ScriptCommand s_gs1_g53_s1_lives0_dlg2[] = { /* Marill */
+/* Shared browse line for all Living Square visitors. */
+static const struct ScriptCommand s_gs1_g53_visitor_talk[] = {
     DEBUGINFO_O(0),
     SELECT_ANIMATION(2),
     { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
@@ -15636,32 +15783,7 @@ static const struct ScriptCommand s_gs1_g53_s1_lives0_dlg2[] = { /* Marill */
     JUMP_SCRIPT(END_TALK),
 };
 
-static const struct ScriptCommand s_gs1_g53_s2_lives0_dlg2[] = { /* Azurill */
-    DEBUGINFO_O(0),
-    SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    WAIT(1),
-    MSG_NPC(1, _(" Shopping trip!{WAIT_PRESS}\nMarill said they have neat stuff.")),
-    JUMP_SCRIPT(END_TALK),
-};
 
-static const struct ScriptCommand s_gs1_g53_s3_lives0_dlg2[] = { /* Nincada */
-    DEBUGINFO_O(0),
-    SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    WAIT(1),
-    MSG_NPC(1, _(" Do they sell anything for\ndigging...?")),
-    JUMP_SCRIPT(END_TALK),
-};
-
-static const struct ScriptCommand s_gs1_g53_s4_lives0_dlg2[] = { /* Tauros */
-    DEBUGINFO_O(0),
-    SELECT_ANIMATION(2),
-    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
-    WAIT(1),
-    MSG_NPC(1, _(" Fuel for training!{WAIT_PRESS}\nThen I'm back at it.")),
-    JUMP_SCRIPT(END_TALK),
-};
 
 static const struct ScriptCommand s_gs1_g52_s0_lives0_dlg2[] = { /* 0x8178d0c */
     DEBUGINFO_O(15479),
@@ -17484,9 +17606,9 @@ static const struct GroundLivesData s_gs1_g52_s0_lives[] = { /* 0x817c01c */
 };
 
 
-/* Kind 150 only — must not match visitor kinds 146–149 (same-kind Add reuses slot). */
+/* Kind 179 only — must not match visitor kinds 146–178. */
 static const struct GroundLivesData s_gs1_g53_s0_lives[] = {
-    /* dispatcher */ { 150,   0,   0,   0, {   1,   1, 0, CPOS_HALFTILE }, {
+    /* dispatcher */ { 179,   0,   0,   0, {   1,   1, 0, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_dispatcher_setup,
         [1] = s_gs1_g53_dispatcher_loop,
     } },
@@ -17496,7 +17618,7 @@ static const struct GroundLivesData s_gs1_g53_s1_lives[] = {
     /* Marill */ { 146,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
-        [2] = s_gs1_g53_s1_lives0_dlg2,
+        [2] = s_gs1_g53_visitor_talk,
     } },
 };
 
@@ -17504,7 +17626,7 @@ static const struct GroundLivesData s_gs1_g53_s2_lives[] = {
     /* Azurill */ { 147,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
-        [2] = s_gs1_g53_s2_lives0_dlg2,
+        [2] = s_gs1_g53_visitor_talk,
     } },
 };
 
@@ -17512,7 +17634,7 @@ static const struct GroundLivesData s_gs1_g53_s3_lives[] = {
     /* Nincada */ { 148,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
-        [2] = s_gs1_g53_s3_lives0_dlg2,
+        [2] = s_gs1_g53_visitor_talk,
     } },
 };
 
@@ -17520,9 +17642,242 @@ static const struct GroundLivesData s_gs1_g53_s4_lives[] = {
     /* Tauros */ { 149,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
-        [2] = s_gs1_g53_s4_lives0_dlg2,
+        [2] = s_gs1_g53_visitor_talk,
     } },
 };
+
+static const struct GroundLivesData s_gs1_g53_s5_lives[] = {
+    /* Torkoal */ { 150,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s6_lives[] = {
+    /* Aron */ { 151,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s7_lives[] = {
+    /* Pidgey */ { 152,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s8_lives[] = {
+    /* Sunflora */ { 153,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s9_lives[] = {
+    /* Bagon */ { 154,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s10_lives[] = {
+    /* Dragonair */ { 155,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s11_lives[] = {
+    /* Furret */ { 156,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s12_lives[] = {
+    /* Gloom */ { 157,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s13_lives[] = {
+    /* Scizor */ { 158,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s14_lives[] = {
+    /* Breloom */ { 159,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s15_lives[] = {
+    /* Taillow */ { 160,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s16_lives[] = {
+    /* Seviper */ { 161,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s17_lives[] = {
+    /* Spheal */ { 162,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s18_lives[] = {
+    /* Snorunt */ { 163,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s19_lives[] = {
+    /* Horsea */ { 164,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s20_lives[] = {
+    /* Mightyena */ { 165,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s21_lives[] = {
+    /* Shuppet */ { 166,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s22_lives[] = {
+    /* Grimer */ { 167,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s23_lives[] = {
+    /* Doduo */ { 168,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s24_lives[] = {
+    /* Volbeat */ { 169,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s25_lives[] = {
+    /* Spoink */ { 170,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s26_lives[] = {
+    /* Magmar */ { 171,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s27_lives[] = {
+    /* Electabuzz */ { 172,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s28_lives[] = {
+    /* Chansey */ { 173,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s29_lives[] = {
+    /* Tangela */ { 174,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s30_lives[] = {
+    /* Electrike */ { 175,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s31_lives[] = {
+    /* Hitmonchan */ { 176,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s32_lives[] = {
+    /* Mawile */ { 177,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s33_lives[] = {
+    /* Hoppip */ { 178,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
 
 
 
@@ -17953,7 +18308,37 @@ static const struct GroundScriptSector s_gs1_g53_sectors[] = {
     { LPARRAY(s_gs1_g53_s2_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
     { LPARRAY(s_gs1_g53_s3_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
     { LPARRAY(s_gs1_g53_s4_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s5_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s6_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s7_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s8_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s9_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s10_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s11_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s12_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s13_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s14_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s15_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s16_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s17_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s18_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s19_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s20_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s21_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s22_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s23_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s24_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s25_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s26_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s27_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s28_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s29_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s30_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s31_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s32_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s33_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
 };
+
 
 
 

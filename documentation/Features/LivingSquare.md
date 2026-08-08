@@ -39,23 +39,22 @@ Primary map: `MAP_POKEMON_SQUARE` / [`ground_data_t01p01_station.h`](../../src/d
 1. Free-roam stations call `SELECT_ENTITIES(53, 0)` when `LIVING_SQUARE` is on.
 2. Sector 0 selects an off-screen **dispatcher life** (not a station — `SELECT_ENTITIES` never starts stations). Its dlg1 loop:
    - Wait randomly (90–240 frames)
-   - Pick species at random: Marill / Azurill / Nincada / Tauros
-   - `SELECT_ENTITIES(53, 1…4)` for that species
+   - Pick one of **33** visitor species at random
+   - `SELECT_ENTITIES(53, 1…33)` for that species
    - `AWAIT_CUE(64)` until the visit finishes
 3. The visitor (dlg1 route) follows cardinal road segments (`WALK_GRID` aborts on collision):
    - Warp to g0 enter pads: **north** (64,9) or **south** (66,83)
-   - Plaza on same column (149 / 151) → west turn (150 @ y=40) → Kecleon (148)
+   - Plaza on same column (149 / 151) → west turn (150 @ y=40) → under shop (152) → Kecleon (148)
    - Idle **3 seconds**, reverse out, `ALERT_CUE(64)` + `END_DELETE`
 
 Only one visitor exists at a time (dispatcher waits for the cue before the next spawn).
 
 | Kind | Species | Sector |
 |------|---------|--------|
-| 146 | Marill | 1 |
-| 147 | Azurill | 2 |
-| 148 | Nincada | 3 |
-| 149 | Tauros | 4 |
-| 150 | dispatcher (off-map) | 0 |
+| 146–178 | visitor cast (33) | 1–33 |
+| 179 | dispatcher (off-map) | 0 |
+
+Visitor cast: Marill, Azurill, Nincada, Tauros, Torkoal, Aron, Pidgey, Sunflora, Bagon, Dragonair, Furret, Gloom, Scizor, Breloom, Taillow, Seviper, Spheal, Snorunt, Horsea, Mightyena, Shuppet, Grimer, Doduo, Volbeat, Spoink, Magmar, Electabuzz, Chansey, Tangela, Electrike, Hitmonchan, Mawile, Hoppip.
 
 Kinds appended on `gGroundLivesTypeData_811E63C`. Dispatcher kind must stay unique — `GroundLives_Add` reuses an existing same-kind slot.
 
@@ -82,9 +81,9 @@ Talking to the visitor mid-trip shows a short shop-flavored line; the route may 
 |--------|----------|-------------|
 | Toggle | [`include/runtime.h`](../../include/runtime.h), [`configs/runtime.c`](../../configs/runtime.c) | `living_square` |
 | Script SPECIAL | [`include/constants/event_flag.h`](../../include/constants/event_flag.h), [`src/event_flag.c`](../../src/event_flag.c) | `LIVING_SQUARE` |
-| Lives kinds 146–150 | [`data/data_8115F5C_3_.s`](../../data/data_8115F5C_3_.s) | Visitors + unique dispatcher kind |
-| Dispatcher + route | `g53` in [`ground_data_t01p01_station.h`](../../src/data/ground/custom/ground_data_t01p01_station.h) (+ vanilla) | Off-screen dispatcher life + shared `s_gs1_g53_visitor_route` |
-| Waypoints | `s_gs1_links` 146–151 | North / south / Kecleon / plaza×2 / west turn |
+| Lives kinds 146–179 | [`data/data_8115F5C_3_.s`](../../data/data_8115F5C_3_.s) | 33 visitors + unique dispatcher kind |
+| Dispatcher + route | `g53` in [`ground_data_t01p01_station.h`](../../src/data/ground/custom/ground_data_t01p01_station.h) (+ vanilla) | Off-screen dispatcher life + shared route/talk |
+| Waypoints | `s_gs1_links` 146–152 | North / south / Kecleon / plaza×2 / west / under-shop |
 
 ---
 
