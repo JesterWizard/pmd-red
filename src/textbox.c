@@ -17,6 +17,7 @@
 #include "confirm_name_menu.h"
 #include "credits1.h"
 #include "credits2.h"
+#include "custom_debug_menu.h"
 #include "dungeon_list_menu.h"
 #include "event_flag.h"
 #include "felicity_bank.h"
@@ -1277,6 +1278,14 @@ static const unkStruct_3001B64_unk418 gRecycleShopHandlers =
     .unkC = RecycleShopCallback,
 };
 
+static const unkStruct_3001B64_unk418 gCustomDebugMenuHandlers =
+{
+    .unk0 = 1,
+    .unk4 = NULL,
+    .unk8 = DeleteCustomDebugMenu,
+    .unkC = UpdateCustomDebugMenu,
+};
+
 static bool8 sub_809B648(void)
 {
     switch (sTextbox->specialTextKind) {
@@ -1919,6 +1928,11 @@ static bool8 sub_809B648(void)
             sTextbox->unk430 = -1;
             return 0;
         }
+        case SPECIAL_TEXT_CUSTOM_DEBUG_MENU:
+            CreateCustomDebugMenu();
+            sTextbox->unk418 = &gCustomDebugMenuHandlers;
+            PlayMenuSoundEffect(MENU_SFX_INFO);
+            return 1;
     }
 
     return 0;

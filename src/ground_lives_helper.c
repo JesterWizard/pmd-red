@@ -116,6 +116,17 @@ u32 sub_809CDC8(struct GroundLives_Sub120 *strPtr, u32 *r6, s8 *direction, s32 *
                 strPtr->unk10 = -1;
             }
 
+            if (pressed & START_BUTTON) {
+                if (gRuntimeConfig.debug_menu
+                    && !IsTextboxOpen_809A750()
+                    && ScriptSpecialTextHandler2(SPECIAL_TEXT_CUSTOM_DEBUG_MENU, 0, NULL_MONORSTRPTR)) {
+                    strPtr->unk0 = 5;
+                    *r6 = 1;
+                    *direction = -1;
+                    return 5;
+                }
+            }
+
             if (pressed & A_BUTTON) {
                 *r6 = 10;
             }

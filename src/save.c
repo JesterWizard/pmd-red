@@ -3,6 +3,7 @@
 #include "achievements.h"
 #include "adventure_info.h"
 #include "adventure_save.h"
+#include "custom_debug_menu.h"
 #include "code_800D090_1.h"
 #include "code_8094F88.h"
 #include "code_80958E8.h"
@@ -476,6 +477,7 @@ void sub_80122F4(void)
 
 void InitializePlayerData(void)
 {
+    ResetCustomDebugMenuState();
     InitializeFriendAreas();
     InitializeRecruitedPokemon();
     InitializeMoneyItems();

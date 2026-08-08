@@ -14,7 +14,7 @@
 #include "text_1.h"
 
 static EWRAM_INIT MainMenu2Work *sUnknown_203B34C = {NULL};
-static EWRAM_INIT u32 sUnknown_203B350 = {MENU_DEBUG};
+static EWRAM_INIT u32 sUnknown_203B350 = {-1};
 static EWRAM_INIT u32 sUnknown_203B354 = {MENU_SEND_ITEMS};
 
 #include "data/main_menu2.h"
@@ -35,7 +35,7 @@ static const MenuItem *MaybeAppendExtraItems(const MenuItem *items, const Window
     bool8 addedAchievements = FALSE;
 
     *winOut = win;
-    if (!gRuntimeConfig.debug_menu && !gRuntimeConfig.achievements)
+    if (!gRuntimeConfig.achievements)
         return items;
 
     out = 0;
@@ -51,21 +51,11 @@ static const MenuItem *MaybeAppendExtraItems(const MenuItem *items, const Window
         }
     }
 
-    if (gRuntimeConfig.debug_menu) {
-        sMainMenuItemsExtra[out].text = _("Debug");
-        sMainMenuItemsExtra[out].menuAction = MENU_DEBUG;
-        out++;
-    }
-
     sMainMenuItemsExtra[out].text = NULL;
     sMainMenuItemsExtra[out].menuAction = 0xFFDD;
 
     sMainMenuWindowExtra = *win;
     if (addedAchievements) {
-        sMainMenuWindowExtra.height += 1;
-        sMainMenuWindowExtra.totalHeight += 1;
-    }
-    if (gRuntimeConfig.debug_menu) {
         sMainMenuWindowExtra.height += 1;
         sMainMenuWindowExtra.totalHeight += 1;
     }
@@ -150,7 +140,6 @@ u32 UpdateMainMenu(void)
                 case MENU_WONDER_MAIL:
                 case MENU_DUAL_SLOT:
                 case MENU_WIRELESS_COMMS:
-                case MENU_DEBUG:
                     sUnknown_203B350 = nextMenu;
                     break;
             }
@@ -248,11 +237,6 @@ static bool8 SetMainMenuText(void)
         case MENU_DUAL_SLOT:
             // Using Dual Slot function, you can receive teams from your friends
             SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 2, &sUnknown_80E5CB4, sUnknown_80E5FCC, FALSE, 0, FALSE);
-            break;
-        case MENU_DEBUG:
-            // This is the Debug Mode.
-            // It won't be in the release version
-            SetMenuItems(sUnknown_203B34C->unk4, &sUnknown_203B34C->unk144, 2, &sUnknown_80E5CB4, sUnknown_80E5D48, FALSE, 0, FALSE);
             break;
         default:
             break;

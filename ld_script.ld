@@ -203,6 +203,7 @@ SECTIONS {
         src/wonder_mail_main_menu.o(.text);
         src/ds_menus.o(.text);
         src/debug_menu1.o(.text);
+        src/custom_debug_menu.o(.text);
         src/debug_menu2.o(.text);
         src/debug_menu3.o(.text);
         src/debug_menu4.o(.text);
@@ -412,6 +413,7 @@ SECTIONS {
         *libc.a:strcpy.o(.text);
         *libc.a:strlen.o(.text);
         *libc.a:strncpy.o(.text);
+        *libc.a:strstr.o(.text);
         *libc.a:vfprintf.o(.text);
         *libc.a:vsprintf.o(.text);
         *libc.a:wsetup.o(.text);
@@ -593,6 +595,7 @@ SECTIONS {
         src/load_screen.o(.rodata);
         src/wonder_mail_main_menu.o(.rodata);
         src/debug_menu1.o(.rodata);
+        src/custom_debug_menu.o(.rodata);
         src/debug_unused1.o(.rodata);
         src/debug_unused2.o(.rodata);
         src/debug_unused3.o(.rodata);
@@ -969,6 +972,7 @@ SECTIONS {
         src/starter_confirm_menu.o(ewram_init);
         src/recycle_shop.o(ewram_init);
         src/spinda_cafe.o(ewram_init);
+        src/custom_debug_menu.o(ewram_init);
 
 		ewram_init_end = .;
 		/* Retail padded this section to 0x2724. The hack's EWRAM data no longer

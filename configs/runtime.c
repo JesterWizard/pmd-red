@@ -6,7 +6,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .exp_multiplier = 1, /* 1 = vanilla */
     .recruit_rate_boost = FALSE,
     .all_friend_areas = TRUE, /* TRUE = own every Friend Area; FALSE = vanilla unlocks */
-    .debug_menu = FALSE,
+    .debug_menu = TRUE, /* Enable the custom in-game menu */
     .disable_something_approaches = TRUE,
     .l_to_use_move = TRUE, /* TRUE = L alone; FALSE = vanilla L+A */
     .pmd2_battle_info_colors = TRUE, /* TRUE = PMD2 log colors; FALSE = vanilla */
