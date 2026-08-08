@@ -116,6 +116,8 @@ typedef struct {
     /* Allow button-skip of boot opening intro even with no save data
      * (vanilla: only skippable once SCENARIO_MAIN has progressed) */
     u8 skip_title_intro;
+    /* Pokémon Square ambient life: wander routes, visitors, banter (else vanilla static NPCs) */
+    u8 living_square;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

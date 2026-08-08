@@ -504,6 +504,9 @@ static const struct ScriptCommand s_gs1_g0_s8_lives1_dlg0[] = { /* 0x81394a4 */
 static const struct ScriptCommand s_gs1_g1_s0_station_sref_script[] = { /* 0x81394d4 */
     DEBUGINFO_O(505),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -1719,6 +1722,9 @@ static const struct ScriptCommand s_gs1_g6_s0_lives1_dlg0[] = { /* 0x813df88 */
 static const struct ScriptCommand s_gs1_g7_s0_station_sref_script[] = { /* 0x813e0f8 */
     DEBUGINFO_O(1720),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -1885,6 +1891,8 @@ static const struct ScriptCommand s_gs1_g8_s0_station_sref_script[] = { /* 0x813
     JUMP_LABEL(1),
   LABEL(0), /* = 0x00 */
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 1),
+    SELECT_ENTITIES(53, 0),
   LABEL(1), /* = 0x01 */
     RET_DIRECT,
 };
@@ -3108,6 +3116,9 @@ static const struct ScriptCommand s_gs1_g10_s2_lives0_dlg0[] = { /* 0x8143f74 */
 static const struct ScriptCommand s_gs1_g11_s0_station_sref_script[] = { /* 0x8144064 */
     DEBUGINFO_O(3109),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -3344,6 +3355,9 @@ static const struct ScriptCommand s_gs1_g12_s0_lives9_dlg0[] = { /* 0x8144f2c */
 static const struct ScriptCommand s_gs1_g13_s0_station_sref_script[] = { /* 0x8144f5c */
     DEBUGINFO_O(3345),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -3441,6 +3455,9 @@ static const struct ScriptCommand s_gs1_g13_s0_lives7_dlg2[] = { /* 0x8145320 */
 static const struct ScriptCommand s_gs1_g14_s0_station_sref_script[] = { /* 0x8145458 */
     DEBUGINFO_O(3442),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -3615,6 +3632,9 @@ static const struct ScriptCommand s_gs1_g14_s0_lives10_dlg2[] = { /* 0x8145c54 *
 static const struct ScriptCommand s_gs1_g15_s0_station_sref_script[] = { /* 0x8145d64 */
     DEBUGINFO_O(3616),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -3731,6 +3751,9 @@ static const struct ScriptCommand s_gs1_g15_s0_lives9_dlg2[] = { /* 0x8146288 */
 static const struct ScriptCommand s_gs1_g16_s0_station_sref_script[] = { /* 0x8146350 */
     DEBUGINFO_O(3732),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -4019,6 +4042,9 @@ static const struct ScriptCommand s_gs1_g17_s0_lives4_dlg0[] = { /* 0x8147590 */
 static const struct ScriptCommand s_gs1_g18_s0_station_sref_script[] = { /* 0x8147620 */
     DEBUGINFO_O(4020),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -5460,6 +5486,9 @@ static const struct ScriptCommand s_gs1_g21_s0_lives12_dlg0[] = { /* 0x814d270 *
 static const struct ScriptCommand s_gs1_g22_s0_station_sref_script[] = { /* 0x814d4f0 */
     DEBUGINFO_O(5461),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -6743,6 +6772,9 @@ static const struct ScriptCommand s_gs1_g23_s1_eff1_script[] = { /* 0x8152ba8 */
 static const struct ScriptCommand s_gs1_g24_s0_station_sref_script[] = { /* 0x8152c28 */
     DEBUGINFO_O(6744),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -7009,6 +7041,9 @@ static const struct ScriptCommand s_gs1_g24_s1_lives3_dlg2[] = { /* 0x8153e64 */
 static const struct ScriptCommand s_gs1_g25_s0_station_sref_script[] = { /* 0x8153f14 */
     DEBUGINFO_O(7010),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -8494,6 +8529,9 @@ static const struct ScriptCommand s_gs1_g26_s0_lives16_dlg0[] = { /* 0x8159e94 *
 static const struct ScriptCommand s_gs1_g27_s0_station_sref_script[] = { /* 0x815a254 */
     DEBUGINFO_O(8495),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -10074,6 +10112,9 @@ static const struct ScriptCommand s_gs1_g28_s0_lives15_dlg0[] = { /* 0x8160c78 *
 static const struct ScriptCommand s_gs1_g29_s0_station_sref_script[] = { /* 0x8161008 */
     DEBUGINFO_O(10075),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -10431,6 +10472,9 @@ static const struct ScriptCommand s_gs1_g29_s1_lives3_dlg2[] = { /* 0x8162710 */
 static const struct ScriptCommand s_gs1_g30_s0_station_sref_script[] = { /* 0x81627c0 */
     DEBUGINFO_O(10432),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -11796,6 +11840,9 @@ static const struct ScriptCommand s_gs1_g33_s0_lives0_dlg0[] = { /* 0x8167d40 */
 static const struct ScriptCommand s_gs1_g34_s0_station_sref_script[] = { /* 0x8167d80 */
     DEBUGINFO_O(11797),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     RET_DIRECT,
 };
 
@@ -12016,6 +12063,9 @@ static const struct ScriptCommand s_gs1_g34_s0_lives15_dlg2[] = { /* 0x8168d80 *
 static const struct ScriptCommand s_gs1_g35_s0_station_sref_script[] = { /* 0x8168e18 */
     DEBUGINFO_O(12017),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -12192,6 +12242,9 @@ static const struct ScriptCommand s_gs1_g35_s0_lives14_dlg2[] = { /* 0x8169830 *
 static const struct ScriptCommand s_gs1_g36_s0_station_sref_script[] = { /* 0x81698ac */
     DEBUGINFO_O(12193),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -12388,6 +12441,9 @@ static const struct ScriptCommand s_gs1_g37_s0_eff0_script[] = { /* 0x816a44c */
 static const struct ScriptCommand s_gs1_g38_s0_station_sref_script[] = { /* 0x816a48c */
     DEBUGINFO_O(12389),
     SELECT_ENTITIES(-1, -1),
+    JUMPIF_EQUAL(LIVING_SQUARE, 0, /* to label */ 0),
+    SELECT_ENTITIES(53, 0),
+  LABEL(0), /* = 0x00 */
     JUMP_STATION(  2,  0),
     RET,
 };
@@ -15475,6 +15531,138 @@ static const struct ScriptCommand s_gs1_g51_s0_lives1_dlg2[] = { /* 0x8178c10 */
 };
 
 
+
+
+/* Living Square: one randomized visitor walks entrance → Kecleon → exit.
+ * Dispatcher is a life (not a station): SELECT_ENTITIES only spawns lives/objects,
+ * so free-roam SELECT_ENTITIES(53, 0) must select a life that runs this loop. */
+static const struct ScriptCommand s_gs1_g53_dispatcher_setup[] = {
+    DEBUGINFO_O(0),
+    RET,
+};
+
+/* Off-screen dispatcher: wait → spawn one visitor → await finish → repeat. */
+static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
+    DEBUGINFO_O(0),
+  LABEL(0), /* = 0x00 */
+    WAIT_RANDOM(90, 240),
+    CANCEL_LIVES(53, 1),
+    CANCEL_LIVES(53, 2),
+    CANCEL_LIVES(53, 3),
+    CANCEL_LIVES(53, 4),
+    CJUMP_RANDOM(4),
+    COND_EQUAL(0, /* to label */ 1),
+    COND_EQUAL(1, /* to label */ 2),
+    COND_EQUAL(2, /* to label */ 3),
+    COND_EQUAL(3, /* to label */ 4),
+  LABEL(1), /* = 0x01 */
+    SELECT_ENTITIES(53, 1),
+    JUMP_LABEL(5),
+  LABEL(2), /* = 0x02 */
+    SELECT_ENTITIES(53, 2),
+    JUMP_LABEL(5),
+  LABEL(3), /* = 0x03 */
+    SELECT_ENTITIES(53, 3),
+    JUMP_LABEL(5),
+  LABEL(4), /* = 0x04 */
+    SELECT_ENTITIES(53, 4),
+  LABEL(5), /* = 0x05 */
+    AWAIT_CUE(64),
+    JUMP_LABEL(0),
+};
+
+/* Kept so sStationScripts[] indices stay stable; sector 0 no longer runs it. */
+static const struct ScriptCommand s_gs1_g53_s0_station_sref_script[] = {
+    DEBUGINFO_O(0),
+    RET_DIRECT,
+};
+
+static const ScriptRef s_gs1_g53_s0_station_sref = { STATION_CONTROL, SCRIPT_TYPE_08, NULL, s_gs1_g53_s0_station_sref_script };
+
+static const struct ScriptCommand s_gs1_g53_visitor_setup[] = {
+    DEBUGINFO_O(0),
+    RET,
+};
+
+/* Shared shop-visit route along the roads (links 146–151).
+ * Spawns use g0 player enter pads (walkable). Waypoints stay axis-aligned:
+ * WALK_GRID aborts on collision, so any diagonal into trees ends the visit. */
+static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
+    DEBUGINFO_O(0),
+    SELECT_ANIMATION(1),
+    CJUMP_RANDOM(2),
+    COND_EQUAL(0, /* to label */ 1),
+    COND_EQUAL(1, /* to label */ 2),
+  LABEL(1), /* = 0x01 - north / Whiscash Pond gate */
+    WARP_WAYPOINT(0, 146),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 149), /* south on x=64 to plaza */
+    WALK_GRID(256, 150), /* west on y=40 */
+    WALK_GRID(256, 152), /* align under Kecleon */
+    WALK_GRID(256, 148), /* north to Kecleon front */
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 152),
+    WALK_GRID(256, 150),
+    WALK_GRID(256, 149),
+    WALK_GRID(256, 146),
+    JUMP_LABEL(3),
+  LABEL(2), /* = 0x02 - south / Dojo gate */
+    WARP_WAYPOINT(0, 147),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 151), /* north on x=66 to plaza */
+    WALK_GRID(256, 150), /* west on y=40 */
+    WALK_GRID(256, 152), /* align under Kecleon */
+    WALK_GRID(256, 148), /* north to Kecleon front */
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 152),
+    WALK_GRID(256, 150),
+    WALK_GRID(256, 151),
+    WALK_GRID(256, 147),
+  LABEL(3), /* = 0x03 */
+    ALERT_CUE(64),
+    END_DELETE,
+};
+
+static const struct ScriptCommand s_gs1_g53_s1_lives0_dlg2[] = { /* Marill */
+    DEBUGINFO_O(0),
+    SELECT_ANIMATION(2),
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    WAIT(1),
+    MSG_NPC(1, _(" Just browsing the Kecleon\nShop!")),
+    JUMP_SCRIPT(END_TALK),
+};
+
+static const struct ScriptCommand s_gs1_g53_s2_lives0_dlg2[] = { /* Azurill */
+    DEBUGINFO_O(0),
+    SELECT_ANIMATION(2),
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    WAIT(1),
+    MSG_NPC(1, _(" Shopping trip!{WAIT_PRESS}\nMarill said they have neat stuff.")),
+    JUMP_SCRIPT(END_TALK),
+};
+
+static const struct ScriptCommand s_gs1_g53_s3_lives0_dlg2[] = { /* Nincada */
+    DEBUGINFO_O(0),
+    SELECT_ANIMATION(2),
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    WAIT(1),
+    MSG_NPC(1, _(" Do they sell anything for\ndigging...?")),
+    JUMP_SCRIPT(END_TALK),
+};
+
+static const struct ScriptCommand s_gs1_g53_s4_lives0_dlg2[] = { /* Tauros */
+    DEBUGINFO_O(0),
+    SELECT_ANIMATION(2),
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    WAIT(1),
+    MSG_NPC(1, _(" Fuel for training!{WAIT_PRESS}\nThen I'm back at it.")),
+    JUMP_SCRIPT(END_TALK),
+};
+
 static const struct ScriptCommand s_gs1_g52_s0_lives0_dlg2[] = { /* 0x8178d0c */
     DEBUGINFO_O(15479),
     SELECT_ANIMATION(2),
@@ -17295,6 +17483,50 @@ static const struct GroundLivesData s_gs1_g52_s0_lives[] = { /* 0x817c01c */
     } },
 };
 
+
+/* Kind 150 only — must not match visitor kinds 146–149 (same-kind Add reuses slot). */
+static const struct GroundLivesData s_gs1_g53_s0_lives[] = {
+    /* dispatcher */ { 150,   0,   0,   0, {   1,   1, 0, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_dispatcher_setup,
+        [1] = s_gs1_g53_dispatcher_loop,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s1_lives[] = {
+    /* Marill */ { 146,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_s1_lives0_dlg2,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s2_lives[] = {
+    /* Azurill */ { 147,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_s2_lives0_dlg2,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s3_lives[] = {
+    /* Nincada */ { 148,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_s3_lives0_dlg2,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s4_lives[] = {
+    /* Tauros */ { 149,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_visitor_route,
+        [2] = s_gs1_g53_s4_lives0_dlg2,
+    } },
+};
+
+
+
+
 static const struct GroundObjectData s_gs1_g0_s0_objs[] = { /* 0x817c034 */
     /*  0 */ {  15,   0,   3,   2, {  13,  37, CPOS_HALFTILE, 0 }, {
         [2] = s_gs1_g0_s0_obj0_dlg2,
@@ -17469,6 +17701,7 @@ static const ScriptRef * const (sStationScripts[]) = { /* 0x817c1fc */
     &s_gs1_g47_s0_station_sref,
     &s_gs1_g48_s0_station_sref,
     &s_gs1_g49_s0_station_sref,
+    &s_gs1_g53_s0_station_sref,
 };
 
 static const struct GroundScriptSector s_gs1_g0_sectors[] = { /* 0x817c2c8 */
@@ -17713,6 +17946,18 @@ static const struct GroundScriptSector s_gs1_g52_sectors[] = { /* 0x817cf98 */
     { LPARRAY(s_gs1_g52_s0_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
 };
 
+
+static const struct GroundScriptSector s_gs1_g53_sectors[] = {
+    { LPARRAY(s_gs1_g53_s0_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s1_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s2_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s3_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s4_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+};
+
+
+
+
 static const struct GroundScriptGroup s_gs1_groups[] = { /* 0x817cfc0 */
     { LPARRAY(s_gs1_g0_sectors) },
     { LPARRAY(s_gs1_g1_sectors) },
@@ -17767,6 +18012,7 @@ static const struct GroundScriptGroup s_gs1_groups[] = { /* 0x817cfc0 */
     { LPARRAY(s_gs1_g50_sectors) },
     { LPARRAY(s_gs1_g51_sectors) },
     { LPARRAY(s_gs1_g52_sectors) },
+    { LPARRAY(s_gs1_g53_sectors) },
 };
 
 static const struct GroundLink s_gs1_links[] = { /* 0x817d168 */
@@ -17916,6 +18162,15 @@ static const struct GroundLink s_gs1_links[] = { /* 0x817d168 */
     /* link 143 */ { { /*x*/  57, /*y*/  38, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 2, /*?*/ 1 },
     /* link 144 */ { { /*x*/  60, /*y*/  41, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 2, /*?*/ 1 },
     /* link 145 */ { { /*x*/  60, /*y*/  38, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 2, /*?*/ 1 },
+    /* Living Square route — coords match g0_s2 / g0_s4 player enter pads */
+    /* link 146 */ { { /*x*/  64, /*y*/   9, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* north gate */
+    /* link 147 */ { { /*x*/  66, /*y*/  83, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* south gate */
+    /* link 148 */ { { /*x*/  37, /*y*/  34, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* Kecleon front */
+    /* link 149 */ { { /*x*/  64, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* plaza @ x=64 */
+    /* link 150 */ { { /*x*/  39, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* west turn @ y=40 */
+    /* link 151 */ { { /*x*/  66, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* plaza @ x=66 */
+    /* link 152 */ { { /*x*/  37, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* under Kecleon @ y=40 */
 };
+
 
 const GroundScriptHeader gGroundScript_gs1 = { LPARRAY(s_gs1_groups), s_gs1_links }; /* 0x817d5f8 */

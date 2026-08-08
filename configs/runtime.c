@@ -51,4 +51,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .max_level_stats = FALSE, /* TRUE = leader/partner/team → Lv100 + max stats/IQ; FALSE = vanilla */
     .all_makuhita_dojo = FALSE, /* TRUE = all Dojo courses + Makuhita visible; FALSE = story unlocks */
     .skip_title_intro = TRUE, /* TRUE = button-skip boot intro with no save; FALSE = vanilla (need save) */
+    .living_square = TRUE, /* TRUE = Square NPCs wander / visit / banter; FALSE = vanilla static */
 };
