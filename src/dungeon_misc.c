@@ -192,34 +192,37 @@ void CloseAllSpriteFiles(void)
 void SetDungeonMonsFromTeam(void)
 {
     s32 index;
-    s32 recruitedId;
+    s32 team[MAX_TEAM_MEMBERS];
+    /* Pack leader → partner → others so dungeonTeam[0]/teamIndex 0 match the
+     * ordered party (sub_808D580 / teamMemberIds), not raw friend-area index. */
+    s32 length = sub_808D580(team);
 
-    index = 0;
-    for (recruitedId = 0; recruitedId < NUM_MONSTERS; recruitedId++) {
+    if (length > MAX_TEAM_MEMBERS)
+        length = MAX_TEAM_MEMBERS;
+
+    for (index = 0; index < length; index++) {
         Pokemon lvl1Mon;
+        s32 recruitedId = team[index];
         Pokemon *pokeStruct = &gRecruitedPokemonRef->pokemon[recruitedId];
-        if (PokemonExists(pokeStruct) && PokemonIsOnTeam(pokeStruct)) {
-            RecruitedPokemonToDungeonMon(&gRecruitedPokemonRef->dungeonTeam[index],recruitedId);
-            if (IsLevelResetDungeon(gDungeon->unk644.dungeonLocation.id)) {
-                DungeonLocation dungeonLoc = { .id = DUNGEON_TINY_WOODS, .floor = 1 };
-                CreateLevel1Pokemon(&lvl1Mon,pokeStruct->speciesNum,0,0,&dungeonLoc,0);
-                gRecruitedPokemonRef->dungeonTeam[index].level = lvl1Mon.level;
-                gRecruitedPokemonRef->dungeonTeam[index].IQ = lvl1Mon.IQ;
-                gRecruitedPokemonRef->dungeonTeam[index].unk10 = lvl1Mon.pokeHP;
-                gRecruitedPokemonRef->dungeonTeam[index].unk12 = lvl1Mon.pokeHP;
-                gRecruitedPokemonRef->dungeonTeam[index].offense.att[0] = lvl1Mon.offense.att[0];
-                gRecruitedPokemonRef->dungeonTeam[index].offense.att[1] = lvl1Mon.offense.att[1];
-                gRecruitedPokemonRef->dungeonTeam[index].offense.def[0] = lvl1Mon.offense.def[0];
-                gRecruitedPokemonRef->dungeonTeam[index].offense.def[1] = lvl1Mon.offense.def[1];
-                gRecruitedPokemonRef->dungeonTeam[index].currExp = lvl1Mon.currExp;
-                gRecruitedPokemonRef->dungeonTeam[index].IQSkills = lvl1Mon.IQSkills;
-                gRecruitedPokemonRef->dungeonTeam[index].tacticIndex = lvl1Mon.tacticIndex;
-                CopyAndResetMoves(&gRecruitedPokemonRef->dungeonTeam[index].moves, lvl1Mon.moves);
-            }
-            gRecruitedPokemonRef->dungeonTeam[index].unkC = index;
-            if (++index == MAX_TEAM_MEMBERS)
-                break;
+
+        RecruitedPokemonToDungeonMon(&gRecruitedPokemonRef->dungeonTeam[index], recruitedId);
+        if (IsLevelResetDungeon(gDungeon->unk644.dungeonLocation.id)) {
+            DungeonLocation dungeonLoc = { .id = DUNGEON_TINY_WOODS, .floor = 1 };
+            CreateLevel1Pokemon(&lvl1Mon, pokeStruct->speciesNum, 0, 0, &dungeonLoc, 0);
+            gRecruitedPokemonRef->dungeonTeam[index].level = lvl1Mon.level;
+            gRecruitedPokemonRef->dungeonTeam[index].IQ = lvl1Mon.IQ;
+            gRecruitedPokemonRef->dungeonTeam[index].unk10 = lvl1Mon.pokeHP;
+            gRecruitedPokemonRef->dungeonTeam[index].unk12 = lvl1Mon.pokeHP;
+            gRecruitedPokemonRef->dungeonTeam[index].offense.att[0] = lvl1Mon.offense.att[0];
+            gRecruitedPokemonRef->dungeonTeam[index].offense.att[1] = lvl1Mon.offense.att[1];
+            gRecruitedPokemonRef->dungeonTeam[index].offense.def[0] = lvl1Mon.offense.def[0];
+            gRecruitedPokemonRef->dungeonTeam[index].offense.def[1] = lvl1Mon.offense.def[1];
+            gRecruitedPokemonRef->dungeonTeam[index].currExp = lvl1Mon.currExp;
+            gRecruitedPokemonRef->dungeonTeam[index].IQSkills = lvl1Mon.IQSkills;
+            gRecruitedPokemonRef->dungeonTeam[index].tacticIndex = lvl1Mon.tacticIndex;
+            CopyAndResetMoves(&gRecruitedPokemonRef->dungeonTeam[index].moves, lvl1Mon.moves);
         }
+        gRecruitedPokemonRef->dungeonTeam[index].unkC = index;
     }
     for (; index < MAX_TEAM_MEMBERS; index++) {
         gRecruitedPokemonRef->dungeonTeam[index].flags = 0;
@@ -407,6 +410,16 @@ void sub_8068BDC(bool8 a0)
                 }
             }
         }
+    }
+
+    /* Temporary Make Leader keeps pokemon[].isTeamLeader on the story leader while
+     * dungeonTeam tracks the dungeon-only leader. Resync so save/Poke2s and the next
+     * entry do not keep a recruit flagged as leader after exit. */
+    for (id = 0; id < MAX_TEAM_MEMBERS; id++) {
+        DungeonMon *monPtr = &gRecruitedPokemonRef->dungeonTeam[id];
+
+        if (DungeonMonExists(monPtr) && sub_806A58C(monPtr->recruitedPokemonId))
+            monPtr->isTeamLeader = gRecruitedPokemonRef->pokemon[monPtr->recruitedPokemonId].isTeamLeader;
     }
 }
 
@@ -622,7 +635,11 @@ void HandleFaint_Async(Entity *entity, s32 dungeonExitReason_, Entity *param_3)
             if (entInfo->isTeamLeader) {
                 uVar10 = TRUE;
             }
-            if (!gDungeon->unk644.canChangeLeader && entInfo->joinedAt.id == DUNGEON_JOIN_LOCATION_PARTNER) {
+            /* Before the Make Leader quest, hero/partner stay on the team even if
+             * party_leader_switch made someone else the dungeon leader. */
+            if (!gDungeon->unk644.canChangeLeader
+                && (entInfo->joinedAt.id == DUNGEON_JOIN_LOCATION_PARTNER
+                    || entInfo->joinedAt.id == DUNGEON_JOIN_LOCATION_LEADER)) {
                 uVar10 = TRUE;
             }
 
