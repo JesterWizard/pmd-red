@@ -92,6 +92,8 @@ extern const u8 *const gUnknown_80F9114;
 extern const u8 *const gUnknown_80F913C;
 extern const u8 *const gMonWentBack;
 extern const u8 *const gMonDisappointedAndLeft;
+extern const u8 *const gText_DungeonTeamFull;
+extern const u8 *const gText_SendNewRecruitHomeQ;
 extern const u8 *const gUnknown_80F9158;
 extern const u8 *const gUnknown_80F9174;
 extern const u8 *const gUnknown_80F9190;

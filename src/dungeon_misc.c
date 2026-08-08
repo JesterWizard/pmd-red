@@ -1353,6 +1353,17 @@ void sub_806A3D4(u8 *dst, s32 _a1, s32 id, bool32 _a3)
     strPtr = ((struct UnkTalkFileStruct *)(file->data));
     strcpy(dst, strPtr[mod].strings[id]);
     CloseFile(file);
+
+    /* talkp* only has real lines for the vanilla 10 partners; extras (Cubone,
+     * Meowth, etc. via all_starters_as_partners) are
+     * "$m0: __partner_conversion_XXX_YY" stubs. Fall back to talk*. */
+    if (a3 && strstr(dst, "__partner_conversion_") != NULL) {
+        sprintf(fileName, "talk%d", (s16) (a1 / 10));
+        file = OpenFileAndGetFileDataPtr(fileName, &gDungeonFileArchive);
+        strPtr = ((struct UnkTalkFileStruct *)(file->data));
+        strcpy(dst, strPtr[mod].strings[id]);
+        CloseFile(file);
+    }
 }
 
 bool8 sub_806A458(Entity *pokemon)

@@ -13,12 +13,13 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .pmd2_font = TRUE, /* TRUE = PMD2 Latin font; FALSE = vanilla */
     .pmd2_training_grounds = TRUE, /* TRUE = 5 floors + exit, no boss, scaling levels; FALSE = vanilla 3F+boss */
     .pmd2_rescue_points = TRUE, /* TRUE = show rescue points beside job difficulty; FALSE = vanilla */
+    .pmd2_send_home = TRUE, /* TRUE = send new recruits home mid-dungeon; FALSE = vanilla */
     .custom_graphics = TRUE, /* TRUE = PMD2 Poké coin + cyan money; FALSE = vanilla */
     .party_leader_switch = TRUE, /* TRUE = dungeon Make Leader anytime (temp until postgame); FALSE = vanilla */
     .show_dungeon_portraits = TRUE, /* TRUE = portraits on ally talk + level-up; FALSE = vanilla */
     .bank_interest_percent = 5, /* Percent interest on savings per dungeon clear; 0 = disabled */
     .rank_rewards = TRUE, /* TRUE = bag pages + storage by rank; FALSE = vanilla bag 20/10 */
-    .achievements = TRUE, /* TRUE = parallel achievements menu + tracking; FALSE = off */
+    .achievements = FALSE, /* TRUE = parallel achievements menu + tracking; FALSE = off */
     .compact_kangaskhan_storage = TRUE, /* TRUE = max 99/item (u8); FALSE = max 255 */
     .custom_title_backgrounds = TRUE, /* TRUE = custom title BGs; FALSE = vanilla titlen0–2 */
     .dungeon_modifiers = FALSE, /* TRUE = 20% chance of a floor modifier; FALSE = off */
@@ -47,7 +48,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .custom_story = FALSE, /* TRUE = Weird Autumn SSLP story (Treecko/Squirtle + custom dialogue); FALSE = vanilla */
     .friend_area_intros = TRUE, /* TRUE = 2s (A-skippable) art splash on Friend Area visit */
     .team_act = TRUE, /* TRUE = Team ACT in postgame Makuhita Dojo team courses; FALSE = hidden */
-    .max_level_stats = TRUE, /* TRUE = leader/partner/team → Lv100 + max stats/IQ; FALSE = vanilla */
-    .all_makuhita_dojo = TRUE, /* TRUE = all Dojo courses + Makuhita visible; FALSE = story unlocks */
+    .max_level_stats = FALSE, /* TRUE = leader/partner/team → Lv100 + max stats/IQ; FALSE = vanilla */
+    .all_makuhita_dojo = FALSE, /* TRUE = all Dojo courses + Makuhita visible; FALSE = story unlocks */
     .skip_title_intro = TRUE, /* TRUE = button-skip boot intro with no save; FALSE = vanilla (need save) */
 };

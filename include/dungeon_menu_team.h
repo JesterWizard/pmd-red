@@ -11,7 +11,9 @@ void ShowStatusDescriptionMenuArrow(void);
 void ShowStatusesDescriptionMenu(s32 count, STATUSTEXTS(statuses));
 #define WHICH_MENU_MOVES 1
 #define WHICH_MENU_ITEMS 2
+#define WHICH_MENU_SEND_HOME 3
 Entity *ShowDungeonToWhichMonMenu(s32 *teamId, s32 caseId);
+Entity *ShowDungeonMemberToSendHome(s32 *teamId);
 
 extern s32 gTeamMenuChosenId;
 

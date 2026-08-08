@@ -73,6 +73,19 @@ static void PrintMoveNamesOnBottomWindow(Entity *entity);
 static void PrintItemNameOnBottomWindow(Entity *entity);
 static void ResetDungeonMenu(void);
 
+static bool8 CanSendDungeonMemberHome(EntityInfo *info)
+{
+    if (info->isTeamLeader)
+        return FALSE;
+    if (gDungeon->unk644.unk19)
+        return FALSE;
+    if (info->joinedAt.id == DUNGEON_JOIN_LOCATION_PARTNER && !gDungeon->unk644.canChangeLeader)
+        return FALSE;
+    if (IsExperienceLocked(info->joinedAt.id))
+        return FALSE;
+    return TRUE;
+}
+
 // Struct only used in Blue maybe?
 static const u8 sTouchScreenArrowPressData[] = {1, 0, 56, 0, 0, 0, 24, 0, 24, 0, 0, 0, 2, 0, 56, 0, 104, 0, 24, 0, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
@@ -1470,6 +1483,30 @@ Entity *ShowDungeonToWhichMonMenu(s32 *teamId, s32 caseId)
     }
 
     return NULL;
+}
+
+Entity *ShowDungeonMemberToSendHome(s32 *teamId)
+{
+    s32 i;
+    bool8 hasSendableMember = FALSE;
+
+    if (teamId != NULL)
+        *teamId = -1;
+
+    for (i = 0; i < MAX_TEAM_MEMBERS; i++) {
+        Entity *teamMon = gDungeon->teamPokemon[i];
+        if (EntityIsValid(teamMon)) {
+            EntityInfo *info = GetEntInfo(teamMon);
+            info->unk157 = CanSendDungeonMemberHome(info);
+            if (info->unk157)
+                hasSendableMember = TRUE;
+        }
+    }
+
+    if (!hasSendableMember)
+        return NULL;
+
+    return ShowDungeonToWhichMonMenu(teamId, WHICH_MENU_SEND_HOME);
 }
 
 static void PrintMoveNamesOnBottomWindow(Entity *entity)

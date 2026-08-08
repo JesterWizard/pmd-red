@@ -23,6 +23,7 @@
 #include "dungeon_logic.h"
 #include "dungeon_music.h"
 #include "dungeon_random.h"
+#include "dungeon_mon_recruit.h"
 #include "dungeon_strings.h"
 #include "dungeon_util.h"
 #include "friend_area.h"
@@ -713,6 +714,7 @@ static void sub_8067794(Entity *entity, Entity *targetEntity, s32 a2)
 {
     const u8 *stringPtr1;
     const u8 *stringPtr2;
+    bool8 sendNewRecruitHome = FALSE;
     s32 teamIndex;
     EntityInfo *info2 = GetEntInfo(targetEntity);
 
@@ -740,15 +742,27 @@ static void sub_8067794(Entity *entity, Entity *targetEntity, s32 a2)
             }
             stringPtr2 = gMonWentBack;
         }
+        else if (gRuntimeConfig.pmd2_send_home) {
+            stringPtr1 = gSendMonBackQ;
+            stringPtr2 = gMonWentBack;
+            sendNewRecruitHome = TRUE;
+        }
     }
 
     if (DisplayDungeonYesNoMessage_Async(NULL, stringPtr1, FALSE) == 1) {
         u8 tempText[64];
+        bool8 sentHome;
 
         strncpy(tempText, gFormatBuffer_Monsters[0], sizeof(tempText));
-        HandleFaint_Async(targetEntity, DUNGEON_EXIT_WENT_AWAY, 0);
+        if (sendNewRecruitHome)
+            sentHome = SendDungeonMemberHome_Async(targetEntity);
+        else {
+            HandleFaint_Async(targetEntity, DUNGEON_EXIT_WENT_AWAY, 0);
+            sentHome = TRUE;
+        }
         strncpy(gFormatBuffer_Monsters[0], tempText, sizeof(tempText));
-        DisplayDungeonMessage_Async(NULL, stringPtr2, TRUE);
+        if (sentHome)
+            DisplayDungeonMessage_Async(NULL, stringPtr2, TRUE);
     }
 }
 
