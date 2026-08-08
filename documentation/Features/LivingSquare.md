@@ -17,7 +17,7 @@
 
 Vanilla Pokémon Square NPCs stand on fixed tiles forever. Shops feel staffed, but the plaza itself reads as a museum of statues.
 
-**Living Square** spawns a single random visitor who walks in from a map entrance, browses the Kecleon Shop, then leaves the way they came — during main-story free-roam and postgame.
+**Living Square** runs two coordinated visitor loops on Pokémon Square: one to the Kecleon Shop, and one (1 second later, opposite entrance) to Felicity Bank.
 
 Toggle: `gRuntimeConfig.living_square` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). Scripts read it via SPECIAL `LIVING_SQUARE`.
 
@@ -31,32 +31,34 @@ Primary map: `MAP_POKEMON_SQUARE` / [`ground_data_t01p01_station.h`](../../src/d
 |------|------|--------|
 | **0 — Stub** | Toggle + SPECIAL `LIVING_SQUARE` | done |
 | **1 — Kecleon shop visitors** | One at a time; random species; entrance → shop → exit | done |
+| **1b — Felicity Bank pair** | Second visitor, +1s, opposite gate → bank | done |
 | **2 — More destinations** | Pond / other shops / banter | TODO |
 | **3 — Day variety / recruits** | Broader cast, recruit cameos | TODO |
 
-### Phase 1 behavior (group **g53**)
+### Behavior (group **g53**)
 
-1. Free-roam stations call `SELECT_ENTITIES(53, 0)` when `LIVING_SQUARE` is on.
-2. Sector 0 selects an off-screen **dispatcher life** (not a station — `SELECT_ENTITIES` never starts stations). Its dlg1 loop:
+1. Free-roam stations call `SELECT_ENTITIES(53, 0)` when `LIVING_SQUARE` is on (two off-screen dispatcher lives).
+2. **Kecleon dispatcher**:
    - Wait randomly (90–240 frames)
-   - Pick one of **33** visitor species at random
-   - `SELECT_ENTITIES(53, 1…33)` for that species
-   - `AWAIT_CUE(64)` until the visit finishes
-3. The visitor (dlg1 route) follows cardinal road segments (`WALK_GRID` aborts on collision):
-   - Warp to g0 enter pads: **north** (64,9) or **south** (66,83)
-   - Plaza on same column (149 / 151) → west turn (150 @ y=40) → under shop (152) → Kecleon (148)
-   - Idle **3 seconds**, reverse out, `ALERT_CUE(64)` + `END_DELETE`
+   - Pick entrance (`EVENT_LOCAL` 0=north / 1=south) + random species
+   - Spawn Kecleon visitor; `ALERT_CUE(66)` to wake the bank dispatcher
+   - `AWAIT_CUE(65)` until the pair finishes
+3. **Bank dispatcher** (independent loop):
+   - `AWAIT_CUE(66)` → `WAIT(60)` (1 second behind)
+   - Spawn Felicity Bank visitor (same cast, unique kinds)
+   - `AWAIT_CUE(65)`
+4. Routes (cardinal `WALK_GRID` segments):
+   - Kecleon: gate → plaza → west → shop → reverse; linger; `ALERT_CUE(64)`
+   - Bank: **opposite** gate → plaza → east → Felicity Bank → reverse; `AWAIT_CUE(64)` then `ALERT_CUE(65)`
 
-Only one visitor exists at a time (dispatcher waits for the cue before the next spawn).
+| Kind | Role |
+|------|------|
+| 146–178 | Kecleon visitors (sectors 1–33) |
+| 179 | Kecleon dispatcher |
+| 180–212 | Bank visitors (sectors 34–66) |
+| 213 | Bank dispatcher |
 
-| Kind | Species | Sector |
-|------|---------|--------|
-| 146–178 | visitor cast (33) | 1–33 |
-| 179 | dispatcher (off-map) | 0 |
-
-Visitor cast: Marill, Azurill, Nincada, Tauros, Torkoal, Aron, Pidgey, Sunflora, Bagon, Dragonair, Furret, Gloom, Scizor, Breloom, Taillow, Seviper, Spheal, Snorunt, Horsea, Mightyena, Shuppet, Grimer, Doduo, Volbeat, Spoink, Magmar, Electabuzz, Chansey, Tangela, Electrike, Hitmonchan, Mawile, Hoppip.
-
-Kinds appended on `gGroundLivesTypeData_811E63C`. Dispatcher kind must stay unique — `GroundLives_Add` reuses an existing same-kind slot.
+Visitor cast (×2 destinations): Marill, Azurill, Nincada, Tauros, Torkoal, Aron, Pidgey, Sunflora, Bagon, Dragonair, Furret, Gloom, Scizor, Breloom, Taillow, Seviper, Spheal, Snorunt, Horsea, Mightyena, Shuppet, Grimer, Doduo, Volbeat, Spoink, Magmar, Electabuzz, Chansey, Tangela, Electrike, Hitmonchan, Mawile, Hoppip.
 
 ### Free-roam stations that select g53
 
@@ -69,9 +71,7 @@ Kinds appended on `gGroundLivesTypeData_811E63C`. Dispatcher kind must stay uniq
 | Mode | Player-facing |
 |------|----------------|
 | `FALSE` | No visitors |
-| `TRUE` (default) | One random visitor loops entrance → Kecleon → exit |
-
-Talking to the visitor mid-trip shows a short shop-flavored line; the route may restart afterward.
+| `TRUE` (default) | Paired Kecleon + Felicity Bank visitors on opposite gates |
 
 ---
 
@@ -81,9 +81,9 @@ Talking to the visitor mid-trip shows a short shop-flavored line; the route may 
 |--------|----------|-------------|
 | Toggle | [`include/runtime.h`](../../include/runtime.h), [`configs/runtime.c`](../../configs/runtime.c) | `living_square` |
 | Script SPECIAL | [`include/constants/event_flag.h`](../../include/constants/event_flag.h), [`src/event_flag.c`](../../src/event_flag.c) | `LIVING_SQUARE` |
-| Lives kinds 146–179 | [`data/data_8115F5C_3_.s`](../../data/data_8115F5C_3_.s) | 33 visitors + unique dispatcher kind |
-| Dispatcher + route | `g53` in [`ground_data_t01p01_station.h`](../../src/data/ground/custom/ground_data_t01p01_station.h) (+ vanilla) | Off-screen dispatcher life + shared route/talk |
-| Waypoints | `s_gs1_links` 146–152 | North / south / Kecleon / plaza×2 / west / under-shop |
+| Lives kinds 146–213 | [`data/data_8115F5C_3_.s`](../../data/data_8115F5C_3_.s) | Visitors + two dispatcher kinds |
+| Dispatchers + routes | `g53` in [`ground_data_t01p01_station.h`](../../src/data/ground/custom/ground_data_t01p01_station.h) (+ vanilla) | Dual dispatchers + shop/bank routes |
+| Waypoints | `s_gs1_links` 146–154 | Gates, plazas, Kecleon, Felicity Bank |
 
 ---
 
@@ -91,10 +91,10 @@ Talking to the visitor mid-trip shows a short shop-flavored line; the route may 
 
 - [x] Runtime toggle + SPECIAL
 - [x] Lives kinds for visitor species
-- [x] One-at-a-time randomized Kecleon visit from north/south
+- [x] Kecleon visit from north/south
+- [x] Felicity Bank pair on opposite entrance (+1s)
 - [ ] More destinations (pond, Pelipper, etc.)
 - [ ] Banter / recruit cameos
-- [ ] Tune walk paths if visitors snag on collision
 
 ---
 
@@ -102,5 +102,6 @@ Talking to the visitor mid-trip shows a short shop-flavored line; the route may 
 
 - Instant `WARP_WAYPOINT` at the gate (no walk-on from off-screen).
 - `WALK_GRID` walks straight and **ends on collision**; spawns/waypoints must stay on walkable half-tiles.
+- Entrance choice uses temporary `EVENT_LOCAL` (0/1) for the pair.
 - Free-roam stations only; cutscene groups are not hooked.
 - Both ground packs must stay in sync when editing routes.

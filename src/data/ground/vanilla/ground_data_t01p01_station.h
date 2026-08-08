@@ -15541,7 +15541,7 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_setup[] = {
     RET,
 };
 
-/* Off-screen dispatcher: wait → spawn one visitor → await finish → repeat. */
+/* Kecleon-route dispatcher: pick entrance + species, signal bank dispatcher, await pair. */
 static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     DEBUGINFO_O(0),
   LABEL(0), /* = 0x00 */
@@ -15579,6 +15579,16 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     CANCEL_LIVES(53, 31),
     CANCEL_LIVES(53, 32),
     CANCEL_LIVES(53, 33),
+    /* 0 = north, 1 = south — bank visitor takes the opposite. */
+    CJUMP_RANDOM(2),
+    COND_EQUAL(0, /* to label */ 40),
+    COND_EQUAL(1, /* to label */ 41),
+  LABEL(40), /* = 0x28 north */
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 0),
+    JUMP_LABEL(42),
+  LABEL(41), /* = 0x29 south */
+    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
+  LABEL(42), /* = 0x2a pick species */
     CJUMP_RANDOM(33),
     COND_EQUAL(0, /* to label */ 1),
     COND_EQUAL(1, /* to label */ 2),
@@ -15711,10 +15721,188 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     JUMP_LABEL(34),
   LABEL(33), /* = 0x21 Hoppip */
     SELECT_ENTITIES(53, 33),
-  LABEL(34), /* = 0x22 await */
-    AWAIT_CUE(64),
+  LABEL(34), /* = 0x22 signal + await pair */
+    ALERT_CUE(66), /* wake bank dispatcher */
+    AWAIT_CUE(65), /* bank visitor signals pair complete */
     JUMP_LABEL(0),
 };
+
+/* Bank-route dispatcher: 1s after Kecleon spawn, opposite entrance → Felicity Bank. */
+static const struct ScriptCommand s_gs1_g53_bank_dispatcher_loop[] = {
+    DEBUGINFO_O(0),
+  LABEL(0), /* = 0x00 */
+    AWAIT_CUE(66),
+    WAIT(60), /* 1 second behind */
+    CANCEL_LIVES(53, 34),
+    CANCEL_LIVES(53, 35),
+    CANCEL_LIVES(53, 36),
+    CANCEL_LIVES(53, 37),
+    CANCEL_LIVES(53, 38),
+    CANCEL_LIVES(53, 39),
+    CANCEL_LIVES(53, 40),
+    CANCEL_LIVES(53, 41),
+    CANCEL_LIVES(53, 42),
+    CANCEL_LIVES(53, 43),
+    CANCEL_LIVES(53, 44),
+    CANCEL_LIVES(53, 45),
+    CANCEL_LIVES(53, 46),
+    CANCEL_LIVES(53, 47),
+    CANCEL_LIVES(53, 48),
+    CANCEL_LIVES(53, 49),
+    CANCEL_LIVES(53, 50),
+    CANCEL_LIVES(53, 51),
+    CANCEL_LIVES(53, 52),
+    CANCEL_LIVES(53, 53),
+    CANCEL_LIVES(53, 54),
+    CANCEL_LIVES(53, 55),
+    CANCEL_LIVES(53, 56),
+    CANCEL_LIVES(53, 57),
+    CANCEL_LIVES(53, 58),
+    CANCEL_LIVES(53, 59),
+    CANCEL_LIVES(53, 60),
+    CANCEL_LIVES(53, 61),
+    CANCEL_LIVES(53, 62),
+    CANCEL_LIVES(53, 63),
+    CANCEL_LIVES(53, 64),
+    CANCEL_LIVES(53, 65),
+    CANCEL_LIVES(53, 66),
+    CJUMP_RANDOM(33),
+    COND_EQUAL(0, /* to label */ 1),
+    COND_EQUAL(1, /* to label */ 2),
+    COND_EQUAL(2, /* to label */ 3),
+    COND_EQUAL(3, /* to label */ 4),
+    COND_EQUAL(4, /* to label */ 5),
+    COND_EQUAL(5, /* to label */ 6),
+    COND_EQUAL(6, /* to label */ 7),
+    COND_EQUAL(7, /* to label */ 8),
+    COND_EQUAL(8, /* to label */ 9),
+    COND_EQUAL(9, /* to label */ 10),
+    COND_EQUAL(10, /* to label */ 11),
+    COND_EQUAL(11, /* to label */ 12),
+    COND_EQUAL(12, /* to label */ 13),
+    COND_EQUAL(13, /* to label */ 14),
+    COND_EQUAL(14, /* to label */ 15),
+    COND_EQUAL(15, /* to label */ 16),
+    COND_EQUAL(16, /* to label */ 17),
+    COND_EQUAL(17, /* to label */ 18),
+    COND_EQUAL(18, /* to label */ 19),
+    COND_EQUAL(19, /* to label */ 20),
+    COND_EQUAL(20, /* to label */ 21),
+    COND_EQUAL(21, /* to label */ 22),
+    COND_EQUAL(22, /* to label */ 23),
+    COND_EQUAL(23, /* to label */ 24),
+    COND_EQUAL(24, /* to label */ 25),
+    COND_EQUAL(25, /* to label */ 26),
+    COND_EQUAL(26, /* to label */ 27),
+    COND_EQUAL(27, /* to label */ 28),
+    COND_EQUAL(28, /* to label */ 29),
+    COND_EQUAL(29, /* to label */ 30),
+    COND_EQUAL(30, /* to label */ 31),
+    COND_EQUAL(31, /* to label */ 32),
+    COND_EQUAL(32, /* to label */ 33),
+  LABEL(1), /* = 0x01 Marill bank */
+    SELECT_ENTITIES(53, 34),
+    JUMP_LABEL(34),
+  LABEL(2), /* = 0x02 Azurill bank */
+    SELECT_ENTITIES(53, 35),
+    JUMP_LABEL(34),
+  LABEL(3), /* = 0x03 Nincada bank */
+    SELECT_ENTITIES(53, 36),
+    JUMP_LABEL(34),
+  LABEL(4), /* = 0x04 Tauros bank */
+    SELECT_ENTITIES(53, 37),
+    JUMP_LABEL(34),
+  LABEL(5), /* = 0x05 Torkoal bank */
+    SELECT_ENTITIES(53, 38),
+    JUMP_LABEL(34),
+  LABEL(6), /* = 0x06 Aron bank */
+    SELECT_ENTITIES(53, 39),
+    JUMP_LABEL(34),
+  LABEL(7), /* = 0x07 Pidgey bank */
+    SELECT_ENTITIES(53, 40),
+    JUMP_LABEL(34),
+  LABEL(8), /* = 0x08 Sunflora bank */
+    SELECT_ENTITIES(53, 41),
+    JUMP_LABEL(34),
+  LABEL(9), /* = 0x09 Bagon bank */
+    SELECT_ENTITIES(53, 42),
+    JUMP_LABEL(34),
+  LABEL(10), /* = 0x0a Dragonair bank */
+    SELECT_ENTITIES(53, 43),
+    JUMP_LABEL(34),
+  LABEL(11), /* = 0x0b Furret bank */
+    SELECT_ENTITIES(53, 44),
+    JUMP_LABEL(34),
+  LABEL(12), /* = 0x0c Gloom bank */
+    SELECT_ENTITIES(53, 45),
+    JUMP_LABEL(34),
+  LABEL(13), /* = 0x0d Scizor bank */
+    SELECT_ENTITIES(53, 46),
+    JUMP_LABEL(34),
+  LABEL(14), /* = 0x0e Breloom bank */
+    SELECT_ENTITIES(53, 47),
+    JUMP_LABEL(34),
+  LABEL(15), /* = 0x0f Taillow bank */
+    SELECT_ENTITIES(53, 48),
+    JUMP_LABEL(34),
+  LABEL(16), /* = 0x10 Seviper bank */
+    SELECT_ENTITIES(53, 49),
+    JUMP_LABEL(34),
+  LABEL(17), /* = 0x11 Spheal bank */
+    SELECT_ENTITIES(53, 50),
+    JUMP_LABEL(34),
+  LABEL(18), /* = 0x12 Snorunt bank */
+    SELECT_ENTITIES(53, 51),
+    JUMP_LABEL(34),
+  LABEL(19), /* = 0x13 Horsea bank */
+    SELECT_ENTITIES(53, 52),
+    JUMP_LABEL(34),
+  LABEL(20), /* = 0x14 Mightyena bank */
+    SELECT_ENTITIES(53, 53),
+    JUMP_LABEL(34),
+  LABEL(21), /* = 0x15 Shuppet bank */
+    SELECT_ENTITIES(53, 54),
+    JUMP_LABEL(34),
+  LABEL(22), /* = 0x16 Grimer bank */
+    SELECT_ENTITIES(53, 55),
+    JUMP_LABEL(34),
+  LABEL(23), /* = 0x17 Doduo bank */
+    SELECT_ENTITIES(53, 56),
+    JUMP_LABEL(34),
+  LABEL(24), /* = 0x18 Volbeat bank */
+    SELECT_ENTITIES(53, 57),
+    JUMP_LABEL(34),
+  LABEL(25), /* = 0x19 Spoink bank */
+    SELECT_ENTITIES(53, 58),
+    JUMP_LABEL(34),
+  LABEL(26), /* = 0x1a Magmar bank */
+    SELECT_ENTITIES(53, 59),
+    JUMP_LABEL(34),
+  LABEL(27), /* = 0x1b Electabuzz bank */
+    SELECT_ENTITIES(53, 60),
+    JUMP_LABEL(34),
+  LABEL(28), /* = 0x1c Chansey bank */
+    SELECT_ENTITIES(53, 61),
+    JUMP_LABEL(34),
+  LABEL(29), /* = 0x1d Tangela bank */
+    SELECT_ENTITIES(53, 62),
+    JUMP_LABEL(34),
+  LABEL(30), /* = 0x1e Electrike bank */
+    SELECT_ENTITIES(53, 63),
+    JUMP_LABEL(34),
+  LABEL(31), /* = 0x1f Hitmonchan bank */
+    SELECT_ENTITIES(53, 64),
+    JUMP_LABEL(34),
+  LABEL(32), /* = 0x20 Mawile bank */
+    SELECT_ENTITIES(53, 65),
+    JUMP_LABEL(34),
+  LABEL(33), /* = 0x21 Hoppip bank */
+    SELECT_ENTITIES(53, 66),
+  LABEL(34), /* = 0x22 await */
+    AWAIT_CUE(65),
+    JUMP_LABEL(0),
+};
+
 
 
 /* Kept so sStationScripts[] indices stay stable; sector 0 no longer runs it. */
@@ -15730,22 +15918,20 @@ static const struct ScriptCommand s_gs1_g53_visitor_setup[] = {
     RET,
 };
 
-/* Shared shop-visit route along the roads (links 146–151).
- * Spawns use g0 player enter pads (walkable). Waypoints stay axis-aligned:
- * WALK_GRID aborts on collision, so any diagonal into trees ends the visit. */
+/* Kecleon shop route. Entrance from EVENT_LOCAL (0 north / 1 south). */
 static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     DEBUGINFO_O(0),
     SELECT_ANIMATION(1),
-    CJUMP_RANDOM(2),
+    CJUMP_VAR(EVENT_LOCAL),
     COND_EQUAL(0, /* to label */ 1),
     COND_EQUAL(1, /* to label */ 2),
-  LABEL(1), /* = 0x01 - north / Whiscash Pond gate */
+  LABEL(1), /* = 0x01 - north */
     WARP_WAYPOINT(0, 146),
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
-    WALK_GRID(256, 149), /* south on x=64 to plaza */
-    WALK_GRID(256, 150), /* west on y=40 */
-    WALK_GRID(256, 152), /* align under Kecleon */
-    WALK_GRID(256, 148), /* north to Kecleon front */
+    WALK_GRID(256, 149),
+    WALK_GRID(256, 150),
+    WALK_GRID(256, 152),
+    WALK_GRID(256, 148),
     SELECT_ANIMATION(2),
     WAIT(180),
     SELECT_ANIMATION(1),
@@ -15754,13 +15940,13 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     WALK_GRID(256, 149),
     WALK_GRID(256, 146),
     JUMP_LABEL(3),
-  LABEL(2), /* = 0x02 - south / Dojo gate */
+  LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
-    WALK_GRID(256, 151), /* north on x=66 to plaza */
-    WALK_GRID(256, 150), /* west on y=40 */
-    WALK_GRID(256, 152), /* align under Kecleon */
-    WALK_GRID(256, 148), /* north to Kecleon front */
+    WALK_GRID(256, 151),
+    WALK_GRID(256, 150),
+    WALK_GRID(256, 152),
+    WALK_GRID(256, 148),
     SELECT_ANIMATION(2),
     WAIT(180),
     SELECT_ANIMATION(1),
@@ -15769,11 +15955,52 @@ static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     WALK_GRID(256, 151),
     WALK_GRID(256, 147),
   LABEL(3), /* = 0x03 */
+    /* Linger so the bank visitor can reach AWAIT_CUE(64) first. */
+    WAIT(180),
     ALERT_CUE(64),
     END_DELETE,
 };
 
-/* Shared browse line for all Living Square visitors. */
+
+/* Felicity Bank route. Uses the opposite entrance of EVENT_LOCAL. */
+static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
+    DEBUGINFO_O(0),
+    SELECT_ANIMATION(1),
+    CJUMP_VAR(EVENT_LOCAL),
+    COND_EQUAL(0, /* to label */ 2), /* Kecleon north → bank south */
+    COND_EQUAL(1, /* to label */ 1), /* Kecleon south → bank north */
+  LABEL(1), /* = 0x01 - north */
+    WARP_WAYPOINT(0, 146),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 149),
+    WALK_GRID(256, 153), /* east to under Felicity Bank */
+    WALK_GRID(256, 154), /* north to bank front */
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 153),
+    WALK_GRID(256, 149),
+    WALK_GRID(256, 146),
+    JUMP_LABEL(3),
+  LABEL(2), /* = 0x02 - south */
+    WARP_WAYPOINT(0, 147),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 151),
+    WALK_GRID(256, 153),
+    WALK_GRID(256, 154),
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 153),
+    WALK_GRID(256, 151),
+    WALK_GRID(256, 147),
+  LABEL(3), /* = 0x03 */
+    AWAIT_CUE(64), /* after Kecleon finishes */
+    ALERT_CUE(65), /* pair complete */
+    END_DELETE,
+};
+
+/* Shared browse lines. */
 static const struct ScriptCommand s_gs1_g53_visitor_talk[] = {
     DEBUGINFO_O(0),
     SELECT_ANIMATION(2),
@@ -15782,6 +16009,16 @@ static const struct ScriptCommand s_gs1_g53_visitor_talk[] = {
     MSG_NPC(1, _(" Just browsing the Kecleon\nShop!")),
     JUMP_SCRIPT(END_TALK),
 };
+
+static const struct ScriptCommand s_gs1_g53_bank_visitor_talk[] = {
+    DEBUGINFO_O(0),
+    SELECT_ANIMATION(2),
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    WAIT(1),
+    MSG_NPC(1, _(" Just checking my savings\nat Felicity Bank!")),
+    JUMP_SCRIPT(END_TALK),
+};
+
 
 
 
@@ -17606,16 +17843,20 @@ static const struct GroundLivesData s_gs1_g52_s0_lives[] = { /* 0x817c01c */
 };
 
 
-/* Kind 179 only — must not match visitor kinds 146–178. */
+/* Dispatchers use unique kinds 179 / 213. Visitors 146–178 (Kecleon) and 180–212 (bank). */
 static const struct GroundLivesData s_gs1_g53_s0_lives[] = {
-    /* dispatcher */ { 179,   0,   0,   0, {   1,   1, 0, CPOS_HALFTILE }, {
+    /* kecleon dispatcher */ { 179,   0,   0,   0, {   1,   1, 0, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_dispatcher_setup,
         [1] = s_gs1_g53_dispatcher_loop,
+    } },
+    /* bank dispatcher */ { 213,   0,   0,   0, {   1,   2, 0, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_dispatcher_setup,
+        [1] = s_gs1_g53_bank_dispatcher_loop,
     } },
 };
 
 static const struct GroundLivesData s_gs1_g53_s1_lives[] = {
-    /* Marill */ { 146,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Marill Kecleon */ { 146,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17623,7 +17864,7 @@ static const struct GroundLivesData s_gs1_g53_s1_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s2_lives[] = {
-    /* Azurill */ { 147,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Azurill Kecleon */ { 147,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17631,7 +17872,7 @@ static const struct GroundLivesData s_gs1_g53_s2_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s3_lives[] = {
-    /* Nincada */ { 148,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Nincada Kecleon */ { 148,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17639,7 +17880,7 @@ static const struct GroundLivesData s_gs1_g53_s3_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s4_lives[] = {
-    /* Tauros */ { 149,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Tauros Kecleon */ { 149,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17647,7 +17888,7 @@ static const struct GroundLivesData s_gs1_g53_s4_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s5_lives[] = {
-    /* Torkoal */ { 150,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Torkoal Kecleon */ { 150,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17655,7 +17896,7 @@ static const struct GroundLivesData s_gs1_g53_s5_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s6_lives[] = {
-    /* Aron */ { 151,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Aron Kecleon */ { 151,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17663,7 +17904,7 @@ static const struct GroundLivesData s_gs1_g53_s6_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s7_lives[] = {
-    /* Pidgey */ { 152,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Pidgey Kecleon */ { 152,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17671,7 +17912,7 @@ static const struct GroundLivesData s_gs1_g53_s7_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s8_lives[] = {
-    /* Sunflora */ { 153,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Sunflora Kecleon */ { 153,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17679,7 +17920,7 @@ static const struct GroundLivesData s_gs1_g53_s8_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s9_lives[] = {
-    /* Bagon */ { 154,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Bagon Kecleon */ { 154,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17687,7 +17928,7 @@ static const struct GroundLivesData s_gs1_g53_s9_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s10_lives[] = {
-    /* Dragonair */ { 155,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Dragonair Kecleon */ { 155,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17695,7 +17936,7 @@ static const struct GroundLivesData s_gs1_g53_s10_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s11_lives[] = {
-    /* Furret */ { 156,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Furret Kecleon */ { 156,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17703,7 +17944,7 @@ static const struct GroundLivesData s_gs1_g53_s11_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s12_lives[] = {
-    /* Gloom */ { 157,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Gloom Kecleon */ { 157,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17711,7 +17952,7 @@ static const struct GroundLivesData s_gs1_g53_s12_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s13_lives[] = {
-    /* Scizor */ { 158,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Scizor Kecleon */ { 158,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17719,7 +17960,7 @@ static const struct GroundLivesData s_gs1_g53_s13_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s14_lives[] = {
-    /* Breloom */ { 159,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Breloom Kecleon */ { 159,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17727,7 +17968,7 @@ static const struct GroundLivesData s_gs1_g53_s14_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s15_lives[] = {
-    /* Taillow */ { 160,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Taillow Kecleon */ { 160,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17735,7 +17976,7 @@ static const struct GroundLivesData s_gs1_g53_s15_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s16_lives[] = {
-    /* Seviper */ { 161,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Seviper Kecleon */ { 161,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17743,7 +17984,7 @@ static const struct GroundLivesData s_gs1_g53_s16_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s17_lives[] = {
-    /* Spheal */ { 162,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Spheal Kecleon */ { 162,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17751,7 +17992,7 @@ static const struct GroundLivesData s_gs1_g53_s17_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s18_lives[] = {
-    /* Snorunt */ { 163,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Snorunt Kecleon */ { 163,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17759,7 +18000,7 @@ static const struct GroundLivesData s_gs1_g53_s18_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s19_lives[] = {
-    /* Horsea */ { 164,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Horsea Kecleon */ { 164,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17767,7 +18008,7 @@ static const struct GroundLivesData s_gs1_g53_s19_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s20_lives[] = {
-    /* Mightyena */ { 165,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Mightyena Kecleon */ { 165,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17775,7 +18016,7 @@ static const struct GroundLivesData s_gs1_g53_s20_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s21_lives[] = {
-    /* Shuppet */ { 166,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Shuppet Kecleon */ { 166,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17783,7 +18024,7 @@ static const struct GroundLivesData s_gs1_g53_s21_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s22_lives[] = {
-    /* Grimer */ { 167,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Grimer Kecleon */ { 167,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17791,7 +18032,7 @@ static const struct GroundLivesData s_gs1_g53_s22_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s23_lives[] = {
-    /* Doduo */ { 168,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Doduo Kecleon */ { 168,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17799,7 +18040,7 @@ static const struct GroundLivesData s_gs1_g53_s23_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s24_lives[] = {
-    /* Volbeat */ { 169,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Volbeat Kecleon */ { 169,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17807,7 +18048,7 @@ static const struct GroundLivesData s_gs1_g53_s24_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s25_lives[] = {
-    /* Spoink */ { 170,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Spoink Kecleon */ { 170,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17815,7 +18056,7 @@ static const struct GroundLivesData s_gs1_g53_s25_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s26_lives[] = {
-    /* Magmar */ { 171,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Magmar Kecleon */ { 171,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17823,7 +18064,7 @@ static const struct GroundLivesData s_gs1_g53_s26_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s27_lives[] = {
-    /* Electabuzz */ { 172,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Electabuzz Kecleon */ { 172,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17831,7 +18072,7 @@ static const struct GroundLivesData s_gs1_g53_s27_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s28_lives[] = {
-    /* Chansey */ { 173,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Chansey Kecleon */ { 173,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17839,7 +18080,7 @@ static const struct GroundLivesData s_gs1_g53_s28_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s29_lives[] = {
-    /* Tangela */ { 174,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Tangela Kecleon */ { 174,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17847,7 +18088,7 @@ static const struct GroundLivesData s_gs1_g53_s29_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s30_lives[] = {
-    /* Electrike */ { 175,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Electrike Kecleon */ { 175,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17855,7 +18096,7 @@ static const struct GroundLivesData s_gs1_g53_s30_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s31_lives[] = {
-    /* Hitmonchan */ { 176,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Hitmonchan Kecleon */ { 176,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17863,7 +18104,7 @@ static const struct GroundLivesData s_gs1_g53_s31_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s32_lives[] = {
-    /* Mawile */ { 177,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Mawile Kecleon */ { 177,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
@@ -17871,10 +18112,274 @@ static const struct GroundLivesData s_gs1_g53_s32_lives[] = {
 };
 
 static const struct GroundLivesData s_gs1_g53_s33_lives[] = {
-    /* Hoppip */ { 178,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+    /* Hoppip Kecleon */ { 178,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
         [0] = s_gs1_g53_visitor_setup,
         [1] = s_gs1_g53_visitor_route,
         [2] = s_gs1_g53_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s34_lives[] = {
+    /* Marill Bank */ { 180,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s35_lives[] = {
+    /* Azurill Bank */ { 181,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s36_lives[] = {
+    /* Nincada Bank */ { 182,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s37_lives[] = {
+    /* Tauros Bank */ { 183,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s38_lives[] = {
+    /* Torkoal Bank */ { 184,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s39_lives[] = {
+    /* Aron Bank */ { 185,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s40_lives[] = {
+    /* Pidgey Bank */ { 186,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s41_lives[] = {
+    /* Sunflora Bank */ { 187,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s42_lives[] = {
+    /* Bagon Bank */ { 188,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s43_lives[] = {
+    /* Dragonair Bank */ { 189,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s44_lives[] = {
+    /* Furret Bank */ { 190,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s45_lives[] = {
+    /* Gloom Bank */ { 191,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s46_lives[] = {
+    /* Scizor Bank */ { 192,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s47_lives[] = {
+    /* Breloom Bank */ { 193,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s48_lives[] = {
+    /* Taillow Bank */ { 194,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s49_lives[] = {
+    /* Seviper Bank */ { 195,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s50_lives[] = {
+    /* Spheal Bank */ { 196,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s51_lives[] = {
+    /* Snorunt Bank */ { 197,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s52_lives[] = {
+    /* Horsea Bank */ { 198,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s53_lives[] = {
+    /* Mightyena Bank */ { 199,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s54_lives[] = {
+    /* Shuppet Bank */ { 200,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s55_lives[] = {
+    /* Grimer Bank */ { 201,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s56_lives[] = {
+    /* Doduo Bank */ { 202,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s57_lives[] = {
+    /* Volbeat Bank */ { 203,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s58_lives[] = {
+    /* Spoink Bank */ { 204,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s59_lives[] = {
+    /* Magmar Bank */ { 205,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s60_lives[] = {
+    /* Electabuzz Bank */ { 206,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s61_lives[] = {
+    /* Chansey Bank */ { 207,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s62_lives[] = {
+    /* Tangela Bank */ { 208,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s63_lives[] = {
+    /* Electrike Bank */ { 209,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s64_lives[] = {
+    /* Hitmonchan Bank */ { 210,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s65_lives[] = {
+    /* Mawile Bank */ { 211,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s66_lives[] = {
+    /* Hoppip Bank */ { 212,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_bank_visitor_route,
+        [2] = s_gs1_g53_bank_visitor_talk,
     } },
 };
 
@@ -18337,6 +18842,39 @@ static const struct GroundScriptSector s_gs1_g53_sectors[] = {
     { LPARRAY(s_gs1_g53_s31_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
     { LPARRAY(s_gs1_g53_s32_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
     { LPARRAY(s_gs1_g53_s33_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s34_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s35_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s36_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s37_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s38_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s39_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s40_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s41_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s42_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s43_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s44_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s45_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s46_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s47_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s48_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s49_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s50_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s51_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s52_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s53_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s54_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s55_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s56_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s57_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s58_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s59_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s60_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s61_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s62_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s63_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s64_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s65_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s66_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
 };
 
 
@@ -18555,6 +19093,8 @@ static const struct GroundLink s_gs1_links[] = { /* 0x817d168 */
     /* link 150 */ { { /*x*/  39, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* west turn @ y=40 */
     /* link 151 */ { { /*x*/  66, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* plaza @ x=66 */
     /* link 152 */ { { /*x*/  37, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* under Kecleon @ y=40 */
+    /* link 153 */ { { /*x*/  82, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* under Felicity Bank @ y=40 */
+    /* link 154 */ { { /*x*/  82, /*y*/  37, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* Felicity Bank boundary (south of counter) */
 };
 
 
