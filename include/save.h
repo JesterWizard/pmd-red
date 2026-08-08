@@ -26,7 +26,7 @@ enum
     READ_SAVE_CHECKSUM_ERROR
 };
 
-// size: 0x5E4C (unk448 grown for 64-bit IQ save + STORAGE_SIZE 480 + achievements)
+// size: 0x5E4C (unk448 includes the runtime-config record in its tail)
 struct UnkStruct_sub_8011DAC
 {
     u8 fill000[0x4];

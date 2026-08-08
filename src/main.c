@@ -92,7 +92,6 @@ void AgbMain(void)
     InitBGPaletteBuffer();
     WindowBgBufferInit();
     InitFileSystem();
-    LoadCharmaps();
     ResetScheduledMemCopies();
     InitGraphics();
     SetInterruptCallback(1, VBlank_CB);

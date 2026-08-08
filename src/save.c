@@ -18,6 +18,7 @@
 #include "pokemon_3.h"
 #include "random.h"
 #include "rescue_scenario.h"
+#include "runtime.h"
 #include "save.h"
 #include "spinda_cafe.h"
 #include "string_format.h"
@@ -34,6 +35,21 @@ struct unk_struct
     u32 unk20;
     u32 padding[503];
 };
+
+static u8 *GetRuntimeConfigSaveBuffer(u8 *buffer)
+{
+    buffer += RECRUITED_POKEMON_SAVE_SIZE;
+    buffer += 150 * 4;
+    buffer += TEAM_INVENTORY_SAVE_SIZE;
+    buffer += 0x10;
+    buffer += 0x8;
+    buffer += 0x100;
+    buffer += 0x594;
+    buffer += 0x221;
+    buffer += ACHIEVEMENTS_SAVE_SIZE;
+    buffer += SPINDA_CAFE_SAVE_SIZE;
+    return buffer;
+}
 
 EWRAM_DATA s32 gUnknown_202DE28 = {0};
 
@@ -209,6 +225,8 @@ u32 ReadSaveFromPak(u32 *a)
     }
     if (!saveStatus)
     {
+        if (!RestoreRuntimeConfig(GetRuntimeConfigSaveBuffer(playerSave->unk448), RUNTIME_CONFIG_SAVE_SIZE))
+            ResetRuntimeConfigToRom();
         if (gUnknown_203B184 == NULL) {
             if (!RestoreGlobalScriptVars(playerSave->unk004)) {
                 saveStatus = 4;
@@ -375,6 +393,9 @@ u32 WriteSavetoPak(s32 *param_1, u32 param_2)
   playerSave->savedAchievements = SaveAchievementsData(array_ptr, ACHIEVEMENTS_SAVE_SIZE);
   array_ptr += ACHIEVEMENTS_SAVE_SIZE;
   playerSave->savedSpindaCafe = SaveSpindaCafeData(array_ptr, SPINDA_CAFE_SAVE_SIZE);
+  array_ptr += SPINDA_CAFE_SAVE_SIZE;
+  SaveRuntimeConfig(array_ptr, RUNTIME_CONFIG_SAVE_SIZE);
+  array_ptr += RUNTIME_CONFIG_SAVE_SIZE;
 
   saveStatus1 = WriteSaveSector(param_1, (u8 *)playerSave, sizeof(struct UnkStruct_sub_8011DAC));
   saveStatus2 = WriteSaveSector(param_1, (u8 *)playerSave, sizeof(struct UnkStruct_sub_8011DAC));
@@ -447,6 +468,7 @@ void sub_8012298(void)
 // Init new game?
 void sub_80122A8(void)
 {
+    ResetRuntimeConfigToRom();
     sub_80122D0();
     sub_80122F4();
     InitializePlayerData();

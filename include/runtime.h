@@ -9,8 +9,10 @@
 #endif
 
 /*
- * Build-time hack toggles (ROM const copy).
- * Edit configs/runtime.c, then rebuild.
+ * Runtime hack toggles.
+ * `gRuntimeConfigRom` supplies the build-time defaults from configs/runtime.c.
+ * The mutable copy is initialized from those defaults and may be overridden
+ * by the in-game debug menu.
  */
 typedef struct {
     u8 always_run;            /* Run without holding B (overworld + dungeon) */
@@ -123,7 +125,16 @@ typedef struct {
     u8 full_party_entry;
 } RuntimeConfig;
 
+#define RUNTIME_CONFIG_SAVE_SIZE 0x40
+
 extern const RuntimeConfig gRuntimeConfigRom;
-#define gRuntimeConfig gRuntimeConfigRom
+extern RuntimeConfig gRuntimeConfigData;
+
+#define gRuntimeConfig gRuntimeConfigData
+
+void InitializeRuntimeConfigFromRom(void);
+void ResetRuntimeConfigToRom(void);
+u32 SaveRuntimeConfig(u8 *buffer, u32 bufLen);
+bool8 RestoreRuntimeConfig(const u8 *buffer, u32 bufLen);
 
 #endif /* GUARD_RUNTIME_CONFIG_H */

@@ -2,6 +2,7 @@
 #include "globaldata.h"
 #include "constants/friend_area.h"
 #include "constants/item.h"
+#include "constants/input.h"
 #include "code_800D090.h"
 #include "custom_debug_menu.h"
 #include "dungeon_range.h"
@@ -10,26 +11,55 @@
 #include "main_menu1.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "music_util.h"
+#include "pokemon.h"
 #include "run_dungeon.h"
+#include "runtime.h"
 #include "string_format.h"
 #include "text_1.h"
+#include "text_2.h"
+#include "text_3.h"
 #include "items.h"
 
-enum CustomDebugMenuOptions
+enum CustomDebugMenuAction
 {
     CUSTOM_DEBUG_MENU_GIVE_MONEY,
     CUSTOM_DEBUG_MENU_FILL_BELLY,
     CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS,
-    CUSTOM_DEBUG_MENU_CANCEL,
-    CUSTOM_DEBUG_MENU_NO_ACTION = -1,
+    CUSTOM_DEBUG_MENU_ACTION_COUNT,
 };
 
-enum CustomDebugMenuState
+#define CUSTOM_DEBUG_MENU_STATE_MASK ((1 << CUSTOM_DEBUG_MENU_ACTION_COUNT) - 1)
+
+enum CustomDebugMenuOptionType
 {
-    CUSTOM_DEBUG_MENU_STATE_GIVE_MONEY = 1 << CUSTOM_DEBUG_MENU_GIVE_MONEY,
-    CUSTOM_DEBUG_MENU_STATE_FILL_BELLY = 1 << CUSTOM_DEBUG_MENU_FILL_BELLY,
-    CUSTOM_DEBUG_MENU_STATE_UNLOCK_FRIEND_AREAS = 1 << CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS,
-    CUSTOM_DEBUG_MENU_STATE_MASK = (1 << CUSTOM_DEBUG_MENU_CANCEL) - 1,
+    CUSTOM_DEBUG_MENU_OPTION_ACTION,
+    CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
+    CUSTOM_DEBUG_MENU_OPTION_EXP_MULTIPLIER,
+    CUSTOM_DEBUG_MENU_OPTION_BANK_INTEREST,
+    CUSTOM_DEBUG_MENU_OPTION_ONE_WAY,
+};
+
+enum CustomDebugMenuOptionFlags
+{
+    CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED = 1 << 0,
+};
+
+enum CustomDebugMenuOptionEffect
+{
+    CUSTOM_DEBUG_MENU_EFFECT_NONE,
+    CUSTOM_DEBUG_MENU_EFFECT_INITIALIZE_FRIEND_AREAS,
+    CUSTOM_DEBUG_MENU_EFFECT_APPLY_MAX_LEVEL_STATS,
+};
+
+struct CustomDebugMenuOption
+{
+    const u8 *label;
+    u8 *value;
+    u8 type;
+    u8 flags;
+    u8 effect;
+    s32 action;
 };
 
 static EWRAM_INIT struct CustomDebugMenu *sCustomDebugMenu = {NULL};
@@ -37,12 +67,13 @@ static EWRAM_INIT u8 sCustomDebugMenuState = {0};
 
 #include "data/custom_debug_menu.h"
 
-static void SetCustomDebugMenuItems(void);
+static void DisplayCustomDebugMenu(void);
+static void ExecuteCustomDebugMenuOption(s32 optionIndex);
+static bool8 IsCustomDebugMenuOptionEnabled(const struct CustomDebugMenuOption *option);
+static void BuildCustomDebugMenuLabel(u8 *buffer, s32 optionIndex);
 static void FillLeaderBelly(void);
 static void UnlockAllFriendAreas(void);
 static EntityInfo *GetDebugLeaderInfo(void);
-static bool8 IsCustomDebugMenuOptionSelected(s32 option);
-static void ToggleCustomDebugMenuOption(s32 option);
 
 void CreateCustomDebugMenu(void)
 {
@@ -53,12 +84,20 @@ void CreateCustomDebugMenu(void)
         MemoryFill8(sCustomDebugMenu, 0, sizeof(struct CustomDebugMenu));
     }
 
+    sCustomDebugMenu->menu.menuWinId = 0;
+    sCustomDebugMenu->menu.menuWindow = &sCustomDebugMenu->menu.windows.id[0];
     for (i = 0; i < MAX_WINDOWS; i++)
-        sCustomDebugMenu->windows.id[i] = sCustomDebugMenuDummyWindow;
+        sCustomDebugMenu->menu.windows.id[i] = sCustomDebugMenuDummyWindow;
+    sCustomDebugMenu->menu.windows.id[0] = sCustomDebugMenuWindow;
 
     ResetUnusedInputStruct();
-    ShowWindows(&sCustomDebugMenu->windows, TRUE, TRUE);
-    SetCustomDebugMenuItems();
+    ShowWindows(&sCustomDebugMenu->menu.windows, TRUE, TRUE);
+    CreateMenuOnWindow(&sCustomDebugMenu->menu.input,
+                       ARRAY_COUNT(sCustomDebugMenuOptions) + 1,
+                       CUSTOM_DEBUG_MENU_ENTRIES_PER_PAGE,
+                       sCustomDebugMenu->menu.menuWinId);
+    DisplayCustomDebugMenu();
+    AddMenuCursorSprite(&sCustomDebugMenu->menu.input);
 }
 
 void DeleteCustomDebugMenu(void)
@@ -73,70 +112,170 @@ void DeleteCustomDebugMenu(void)
 
 u32 UpdateCustomDebugMenu(void)
 {
-    s32 menuAction = CUSTOM_DEBUG_MENU_NO_ACTION;
+    s32 input = GetKeyPress(&sCustomDebugMenu->menu.input);
+    s32 optionIndex;
 
-    if (sub_8012FD8(&sCustomDebugMenu->menus[0]) == 0)
-        sub_8013114(&sCustomDebugMenu->menus[0], &menuAction);
-
-    switch (menuAction) {
-        case CUSTOM_DEBUG_MENU_GIVE_MONEY:
-            ToggleCustomDebugMenuOption(CUSTOM_DEBUG_MENU_GIVE_MONEY);
-            AddToTeamMoney(MAX_TEAM_MONEY);
-            break;
-        case CUSTOM_DEBUG_MENU_FILL_BELLY:
-            ToggleCustomDebugMenuOption(CUSTOM_DEBUG_MENU_FILL_BELLY);
-            FillLeaderBelly();
-            break;
-        case CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS:
-            ToggleCustomDebugMenuOption(CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS);
-            UnlockAllFriendAreas();
-            break;
-        case CUSTOM_DEBUG_MENU_CANCEL:
+    switch (input) {
+        case INPUT_B_BUTTON:
+            PlayMenuSoundEffect(MENU_SFX_BACK);
             return 3;
+        case INPUT_A_BUTTON:
+            optionIndex = GET_CURRENT_MENU_ENTRY(sCustomDebugMenu->menu.input);
+            if (optionIndex == ARRAY_COUNT(sCustomDebugMenuOptions)) {
+                PlayMenuSoundEffect(MENU_SFX_BACK);
+                return 3;
+            }
+            PlayMenuSoundEffect(MENU_SFX_ACCEPT);
+            ExecuteCustomDebugMenuOption(optionIndex);
+            DisplayCustomDebugMenu();
+            return 0;
         default:
+            if (MenuCursorUpdate(&sCustomDebugMenu->menu.input, TRUE))
+                DisplayCustomDebugMenu();
             return 0;
     }
-
-    SetCustomDebugMenuItems();
-    return 0;
 }
 
-static void SetCustomDebugMenuItems(void)
+static void DisplayCustomDebugMenu(void)
 {
-    s16 menuIndex = sCustomDebugMenu->menus[0].input.menuIndex;
+    s32 i;
+    s32 optionIndex;
+    s32 firstOption = sCustomDebugMenu->menu.input.currPage
+        * sCustomDebugMenu->menu.input.entriesPerPage;
 
-    if (menuIndex < 0 || menuIndex > CUSTOM_DEBUG_MENU_CANCEL)
-        menuIndex = 0;
+    UPDATE_MENU_WINDOW_HEIGHT(sCustomDebugMenu->menu);
+    sCustomDebugMenu->menu.input.firstEntryY = DEFAULT_MENU_ENTRY_HEIGHT;
+    sCustomDebugMenu->menu.input.leftRightArrowsPos.y =
+        (sCustomDebugMenu->menu.windows.id[sCustomDebugMenu->menu.menuWinId].pos.y + 1) * 8 - 2 + 8;
+    CallPrepareTextbox_8008C54(sCustomDebugMenu->menu.menuWinId);
+    sub_80073B8(sCustomDebugMenu->menu.menuWinId);
 
-    sprintfStatic(sCustomDebugMenu->labels[0],
-                  IsCustomDebugMenuOptionSelected(CUSTOM_DEBUG_MENU_GIVE_MONEY)
-                      ? _("{STAR_BULLET} Give money")
-                      : _("Give money"));
-    sprintfStatic(sCustomDebugMenu->labels[1],
-                  IsCustomDebugMenuOptionSelected(CUSTOM_DEBUG_MENU_FILL_BELLY)
-                      ? _("{STAR_BULLET} Fill belly")
-                      : _("Fill belly"));
-    sprintfStatic(sCustomDebugMenu->labels[2],
-                  IsCustomDebugMenuOptionSelected(CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS)
-                      ? _("{STAR_BULLET} Unlock friend areas")
-                      : _("Unlock friend areas"));
-    sprintfStatic(sCustomDebugMenu->labels[3], _("Cancel"));
+    for (i = 0; i < sCustomDebugMenu->menu.input.currPageEntries; i++) {
+        optionIndex = firstOption + i;
+        BuildCustomDebugMenuLabel(sCustomDebugMenu->labels[i], optionIndex);
+        PrintFormattedStringOnWindow(8,
+                                     GetMenuEntryYCoord(&sCustomDebugMenu->menu.input, i),
+                                     sCustomDebugMenu->labels[i],
+                                     sCustomDebugMenu->menu.menuWinId,
+                                     0);
+    }
 
-    sCustomDebugMenu->items[0].text = sCustomDebugMenu->labels[0];
-    sCustomDebugMenu->items[0].menuAction = CUSTOM_DEBUG_MENU_GIVE_MONEY;
-    sCustomDebugMenu->items[1].text = sCustomDebugMenu->labels[1];
-    sCustomDebugMenu->items[1].menuAction = CUSTOM_DEBUG_MENU_FILL_BELLY;
-    sCustomDebugMenu->items[2].text = sCustomDebugMenu->labels[2];
-    sCustomDebugMenu->items[2].menuAction = CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS;
-    sCustomDebugMenu->items[3].text = sCustomDebugMenu->labels[3];
-    sCustomDebugMenu->items[3].menuAction = CUSTOM_DEBUG_MENU_CANCEL;
-    sCustomDebugMenu->items[4].text = NULL;
-    sCustomDebugMenu->items[4].menuAction = CUSTOM_DEBUG_MENU_CANCEL;
+    sprintfStatic(sCustomDebugMenu->pageLabel, _("%d/%d"),
+                  sCustomDebugMenu->menu.input.currPage + 1,
+                  sCustomDebugMenu->menu.input.pagesCount);
+    PrintFormattedStringOnWindow(
+        sCustomDebugMenu->menu.windows.id[sCustomDebugMenu->menu.menuWinId].width * 8
+            - GetStringLineWidth(sCustomDebugMenu->pageLabel) - 4,
+        0,
+        sCustomDebugMenu->pageLabel,
+        sCustomDebugMenu->menu.menuWinId,
+        0);
+    sub_80073E0(sCustomDebugMenu->menu.menuWinId);
+}
 
-    SetMenuItems(sCustomDebugMenu->menus, &sCustomDebugMenu->windows, 0,
-                 &sCustomDebugMenuWindow, sCustomDebugMenu->items, TRUE, 13, FALSE);
-    sCustomDebugMenu->menus[0].input.menuIndex = menuIndex;
-    sub_8035CF4(sCustomDebugMenu->menus, 0, TRUE);
+static void BuildCustomDebugMenuLabel(u8 *buffer, s32 optionIndex)
+{
+    const struct CustomDebugMenuOption *option;
+    bool8 enabled;
+
+    if (optionIndex == ARRAY_COUNT(sCustomDebugMenuOptions)) {
+        sprintfStatic(buffer, _("Cancel"));
+        return;
+    }
+
+    option = &sCustomDebugMenuOptions[optionIndex];
+    enabled = IsCustomDebugMenuOptionEnabled(option);
+
+    switch (option->type) {
+        case CUSTOM_DEBUG_MENU_OPTION_EXP_MULTIPLIER:
+            sprintfStatic(buffer,
+                          enabled ? _("{STAR_BULLET}EXP x%d")
+                                  : _("EXP x%d"),
+                          gRuntimeConfig.exp_multiplier);
+            break;
+        case CUSTOM_DEBUG_MENU_OPTION_BANK_INTEREST:
+            sprintfStatic(buffer,
+                          enabled ? _("{STAR_BULLET}Bank %d%%")
+                                  : _("Bank %d%%"),
+                          gRuntimeConfig.bank_interest_percent);
+            break;
+        default:
+            if (enabled && (option->flags & CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED))
+                sprintfStatic(buffer, _("{STAR_BULLET}%s"), option->label);
+            else if (enabled)
+                sprintfStatic(buffer, _("{STAR_BULLET}%s"), option->label);
+            else if (option->flags & CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED)
+                sprintfStatic(buffer, _("%s"), option->label);
+            else
+                sprintfStatic(buffer, _("%s"), option->label);
+            break;
+    }
+}
+
+static bool8 IsCustomDebugMenuOptionEnabled(const struct CustomDebugMenuOption *option)
+{
+    switch (option->type) {
+        case CUSTOM_DEBUG_MENU_OPTION_ACTION:
+            return (sCustomDebugMenuState & (1 << option->action)) != 0;
+        case CUSTOM_DEBUG_MENU_OPTION_EXP_MULTIPLIER:
+            return gRuntimeConfig.exp_multiplier > 1;
+        case CUSTOM_DEBUG_MENU_OPTION_BANK_INTEREST:
+            return gRuntimeConfig.bank_interest_percent != 0;
+        default:
+            return *option->value != 0;
+    }
+}
+
+static void ExecuteCustomDebugMenuOption(s32 optionIndex)
+{
+    const struct CustomDebugMenuOption *option = &sCustomDebugMenuOptions[optionIndex];
+
+    switch (option->type) {
+        case CUSTOM_DEBUG_MENU_OPTION_ACTION:
+            switch (option->action) {
+                case CUSTOM_DEBUG_MENU_GIVE_MONEY:
+                    sCustomDebugMenuState ^= 1 << CUSTOM_DEBUG_MENU_GIVE_MONEY;
+                    AddToTeamMoney(MAX_TEAM_MONEY);
+                    break;
+                case CUSTOM_DEBUG_MENU_FILL_BELLY:
+                    sCustomDebugMenuState ^= 1 << CUSTOM_DEBUG_MENU_FILL_BELLY;
+                    FillLeaderBelly();
+                    break;
+                case CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS:
+                    sCustomDebugMenuState ^= 1 << CUSTOM_DEBUG_MENU_UNLOCK_FRIEND_AREAS;
+                    UnlockAllFriendAreas();
+                    break;
+            }
+            break;
+        case CUSTOM_DEBUG_MENU_OPTION_EXP_MULTIPLIER:
+            if (gRuntimeConfig.exp_multiplier <= 1)
+                gRuntimeConfig.exp_multiplier = 2;
+            else if (gRuntimeConfig.exp_multiplier == 2)
+                gRuntimeConfig.exp_multiplier = 4;
+            else
+                gRuntimeConfig.exp_multiplier = 1;
+            break;
+        case CUSTOM_DEBUG_MENU_OPTION_BANK_INTEREST:
+            if (gRuntimeConfig.bank_interest_percent == 0)
+                gRuntimeConfig.bank_interest_percent = 5;
+            else if (gRuntimeConfig.bank_interest_percent == 5)
+                gRuntimeConfig.bank_interest_percent = 10;
+            else
+                gRuntimeConfig.bank_interest_percent = 0;
+            break;
+        case CUSTOM_DEBUG_MENU_OPTION_ONE_WAY:
+            if (*option->value == 0) {
+                *option->value = TRUE;
+                if (option->effect == CUSTOM_DEBUG_MENU_EFFECT_INITIALIZE_FRIEND_AREAS)
+                    InitializeFriendAreas();
+                else if (option->effect == CUSTOM_DEBUG_MENU_EFFECT_APPLY_MAX_LEVEL_STATS)
+                    ApplyMaxLevelStatsToTeam();
+            }
+            break;
+        default:
+            *option->value = !*option->value;
+            break;
+    }
 }
 
 void ResetCustomDebugMenuState(void)
@@ -155,16 +294,6 @@ void ReadCustomDebugMenuBits(DataSerializer *serializer)
 
     ReadBits(serializer, &state, 8);
     sCustomDebugMenuState = state & CUSTOM_DEBUG_MENU_STATE_MASK;
-}
-
-static bool8 IsCustomDebugMenuOptionSelected(s32 option)
-{
-    return (sCustomDebugMenuState & (1 << option)) != 0;
-}
-
-static void ToggleCustomDebugMenuOption(s32 option)
-{
-    sCustomDebugMenuState ^= 1 << option;
 }
 
 static void FillLeaderBelly(void)

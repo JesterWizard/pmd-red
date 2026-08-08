@@ -126,6 +126,7 @@ void GameLoop_Async(void)
     u32 flag;
 
     InitHeap();
+    InitializeRuntimeConfigFromRom();
     NDS_DebugInit();
     ResetSoundEffectCounters();
     NDS_LoadOverlay_GroundMain();
@@ -154,6 +155,7 @@ void GameLoop_Async(void)
     tmp = 0;
     if (ReadSaveFromPak(&tmp))
         ThoroughlyResetScriptVars();
+    LoadCharmaps();
 
     xxx_script_related_8001334_Async(STARTMODE_14);
     xxx_script_related_8001334_Async(STARTMODE_15);

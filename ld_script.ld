@@ -43,6 +43,7 @@ SECTIONS {
         src/ground_assets.o(ewram_data);
         src/load_screen.o(ewram_data);
         src/main_menu2.o(ewram_data);
+        src/runtime_config.o(ewram_data);
         src/spinda_cafe.o(ewram_data);
 
 		ewram_end = .;
@@ -204,6 +205,7 @@ SECTIONS {
         src/ds_menus.o(.text);
         src/debug_menu1.o(.text);
         src/custom_debug_menu.o(.text);
+        src/runtime_config.o(.text);
         src/debug_menu2.o(.text);
         src/debug_menu3.o(.text);
         src/debug_menu4.o(.text);

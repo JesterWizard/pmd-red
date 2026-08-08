@@ -64,6 +64,8 @@ def main() -> int:
     ach_size = read_define(ach_h, "ACHIEVEMENTS_SAVE_SIZE")
     cafe_h = ROOT / "include/spinda_cafe.h"
     cafe_size = read_define(cafe_h, "SPINDA_CAFE_SAVE_SIZE")
+    runtime_h = ROOT / "include/runtime.h"
+    runtime_config_size = read_define(runtime_h, "RUNTIME_CONFIG_SAVE_SIZE")
     num_monsters = read_define(mon_h, "NUM_MONSTERS")
 
     # WritePoke1Bits fixed fields (excluding IQSkills): see src/pokemon_3.c
@@ -89,6 +91,7 @@ def main() -> int:
         ("mail", 0x221),
         ("ACHIEVEMENTS_SAVE_SIZE", ach_size),
         ("SPINDA_CAFE_SAVE_SIZE", cafe_size),
+        ("runtime config", runtime_config_size),
     ]
     blob = sum(c[1] for c in chunks)
     unk448 = unk448_size()
