@@ -15533,15 +15533,15 @@ static const struct ScriptCommand s_gs1_g51_s0_lives1_dlg2[] = { /* 0x8178c10 */
 
 
 
-/* Living Square: one randomized visitor walks entrance → Kecleon → exit.
+/* Living Square: randomized visitors walk entrance → shop → exit.
  * Dispatcher is a life (not a station): SELECT_ENTITIES only spawns lives/objects,
- * so free-roam SELECT_ENTITIES(53, 0) must select a life that runs this loop. */
+ * so free-roam SELECT_ENTITIES(53, 0) must select lives that run these loops. */
 static const struct ScriptCommand s_gs1_g53_dispatcher_setup[] = {
     DEBUGINFO_O(0),
     RET,
 };
 
-/* Kecleon-route dispatcher: pick entrance + species, signal bank dispatcher, await pair. */
+/* Kecleon-route dispatcher: pick 3 exclusive entrances + species, signal bank, await trio. */
 static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     DEBUGINFO_O(0),
   LABEL(0), /* = 0x00 */
@@ -15579,15 +15579,88 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     CANCEL_LIVES(53, 31),
     CANCEL_LIVES(53, 32),
     CANCEL_LIVES(53, 33),
-    /* 0 = north, 1 = south — bank visitor takes the opposite. */
-    CJUMP_RANDOM(2),
-    COND_EQUAL(0, /* to label */ 40),
-    COND_EQUAL(1, /* to label */ 41),
-  LABEL(40), /* = 0x28 north */
+    /* Pack 3 exclusive entrances into EVENT_LOCAL: e0 + 4*e1 + 16*e2
+     * (0=N, 1=S, 2=W, 3=E). CONDITION = used-bit mask while picking. */
+    UPDATE_VARINT(CALC_SET, CONDITION, 0),
     UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 0),
+  LABEL(50), /* = 0x32 pick kecleon entrance */
+    CJUMP_RANDOM(4),
+    COND_EQUAL(0, /* to label */ 51),
+    COND_EQUAL(1, /* to label */ 52),
+    COND_EQUAL(2, /* to label */ 53),
+    COND_EQUAL(3, /* to label */ 54),
+  LABEL(51), /* = 0x33 kecleon entrance 0 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 0, /* to label */ 50),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 0),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 0),
+    JUMP_LABEL(55),
+  LABEL(52), /* = 0x34 kecleon entrance 1 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 1, /* to label */ 50),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 1),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 1),
+    JUMP_LABEL(55),
+  LABEL(53), /* = 0x35 kecleon entrance 2 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 2, /* to label */ 50),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 2),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 2),
+    JUMP_LABEL(55),
+  LABEL(54), /* = 0x36 kecleon entrance 3 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 3, /* to label */ 50),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 3),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 3),
+    JUMP_LABEL(55),
+  LABEL(55), /* = 0x37 pick bank entrance */
+    CJUMP_RANDOM(4),
+    COND_EQUAL(0, /* to label */ 56),
+    COND_EQUAL(1, /* to label */ 57),
+    COND_EQUAL(2, /* to label */ 58),
+    COND_EQUAL(3, /* to label */ 59),
+  LABEL(56), /* = 0x38 bank entrance 0 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 0, /* to label */ 55),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 0),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 0),
+    JUMP_LABEL(60),
+  LABEL(57), /* = 0x39 bank entrance 1 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 1, /* to label */ 55),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 1),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 4),
+    JUMP_LABEL(60),
+  LABEL(58), /* = 0x3a bank entrance 2 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 2, /* to label */ 55),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 2),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 8),
+    JUMP_LABEL(60),
+  LABEL(59), /* = 0x3b bank entrance 3 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 3, /* to label */ 55),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 3),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 12),
+    JUMP_LABEL(60),
+  LABEL(60), /* = 0x3c pick gulpin entrance */
+    CJUMP_RANDOM(4),
+    COND_EQUAL(0, /* to label */ 61),
+    COND_EQUAL(1, /* to label */ 62),
+    COND_EQUAL(2, /* to label */ 63),
+    COND_EQUAL(3, /* to label */ 64),
+  LABEL(61), /* = 0x3d gulpin entrance 0 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 0, /* to label */ 60),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 0),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 0),
     JUMP_LABEL(42),
-  LABEL(41), /* = 0x29 south */
-    UPDATE_VARINT(CALC_SET, EVENT_LOCAL, 1),
+  LABEL(62), /* = 0x3e gulpin entrance 1 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 1, /* to label */ 60),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 1),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 16),
+    JUMP_LABEL(42),
+  LABEL(63), /* = 0x3f gulpin entrance 2 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 2, /* to label */ 60),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 2),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 32),
+    JUMP_LABEL(42),
+  LABEL(64), /* = 0x40 gulpin entrance 3 */
+    JUMPIF(JUDGE_BIT_SET, CONDITION, 3, /* to label */ 60),
+    UPDATE_VARINT(CALC_SETBIT, CONDITION, 3),
+    UPDATE_VARINT(CALC_ADD, EVENT_LOCAL, 48),
+    JUMP_LABEL(42),
   LABEL(42), /* = 0x2a pick species */
     CJUMP_RANDOM(33),
     COND_EQUAL(0, /* to label */ 1),
@@ -15721,18 +15794,19 @@ static const struct ScriptCommand s_gs1_g53_dispatcher_loop[] = {
     JUMP_LABEL(34),
   LABEL(33), /* = 0x21 Hoppip */
     SELECT_ENTITIES(53, 33),
-  LABEL(34), /* = 0x22 signal + await pair */
+  LABEL(34), /* = 0x22 signal + allow routes to finish */
     ALERT_CUE(66), /* wake bank dispatcher */
-    AWAIT_CUE(65), /* bank visitor signals pair complete */
+    WAIT(900), /* ~15s for trio to finish; avoids cue soft-locks */
     JUMP_LABEL(0),
 };
 
-/* Bank-route dispatcher: 1s after Kecleon spawn, opposite entrance → Felicity Bank. */
+
+/* Bank-route dispatcher: 1s after Kecleon spawn → Felicity Bank. */
 static const struct ScriptCommand s_gs1_g53_bank_dispatcher_loop[] = {
     DEBUGINFO_O(0),
   LABEL(0), /* = 0x00 */
     AWAIT_CUE(66),
-    WAIT(60), /* 1 second behind */
+    WAIT(60), /* 1 second behind kecleon */
     CANCEL_LIVES(53, 34),
     CANCEL_LIVES(53, 35),
     CANCEL_LIVES(53, 36),
@@ -15800,106 +15874,284 @@ static const struct ScriptCommand s_gs1_g53_bank_dispatcher_loop[] = {
     COND_EQUAL(30, /* to label */ 31),
     COND_EQUAL(31, /* to label */ 32),
     COND_EQUAL(32, /* to label */ 33),
-  LABEL(1), /* = 0x01 Marill bank */
+  LABEL(1), /* = 0x01 Marill */
     SELECT_ENTITIES(53, 34),
     JUMP_LABEL(34),
-  LABEL(2), /* = 0x02 Azurill bank */
+  LABEL(2), /* = 0x02 Azurill */
     SELECT_ENTITIES(53, 35),
     JUMP_LABEL(34),
-  LABEL(3), /* = 0x03 Nincada bank */
+  LABEL(3), /* = 0x03 Nincada */
     SELECT_ENTITIES(53, 36),
     JUMP_LABEL(34),
-  LABEL(4), /* = 0x04 Tauros bank */
+  LABEL(4), /* = 0x04 Tauros */
     SELECT_ENTITIES(53, 37),
     JUMP_LABEL(34),
-  LABEL(5), /* = 0x05 Torkoal bank */
+  LABEL(5), /* = 0x05 Torkoal */
     SELECT_ENTITIES(53, 38),
     JUMP_LABEL(34),
-  LABEL(6), /* = 0x06 Aron bank */
+  LABEL(6), /* = 0x06 Aron */
     SELECT_ENTITIES(53, 39),
     JUMP_LABEL(34),
-  LABEL(7), /* = 0x07 Pidgey bank */
+  LABEL(7), /* = 0x07 Pidgey */
     SELECT_ENTITIES(53, 40),
     JUMP_LABEL(34),
-  LABEL(8), /* = 0x08 Sunflora bank */
+  LABEL(8), /* = 0x08 Sunflora */
     SELECT_ENTITIES(53, 41),
     JUMP_LABEL(34),
-  LABEL(9), /* = 0x09 Bagon bank */
+  LABEL(9), /* = 0x09 Bagon */
     SELECT_ENTITIES(53, 42),
     JUMP_LABEL(34),
-  LABEL(10), /* = 0x0a Dragonair bank */
+  LABEL(10), /* = 0x0a Dragonair */
     SELECT_ENTITIES(53, 43),
     JUMP_LABEL(34),
-  LABEL(11), /* = 0x0b Furret bank */
+  LABEL(11), /* = 0x0b Furret */
     SELECT_ENTITIES(53, 44),
     JUMP_LABEL(34),
-  LABEL(12), /* = 0x0c Gloom bank */
+  LABEL(12), /* = 0x0c Gloom */
     SELECT_ENTITIES(53, 45),
     JUMP_LABEL(34),
-  LABEL(13), /* = 0x0d Scizor bank */
+  LABEL(13), /* = 0x0d Scizor */
     SELECT_ENTITIES(53, 46),
     JUMP_LABEL(34),
-  LABEL(14), /* = 0x0e Breloom bank */
+  LABEL(14), /* = 0x0e Breloom */
     SELECT_ENTITIES(53, 47),
     JUMP_LABEL(34),
-  LABEL(15), /* = 0x0f Taillow bank */
+  LABEL(15), /* = 0x0f Taillow */
     SELECT_ENTITIES(53, 48),
     JUMP_LABEL(34),
-  LABEL(16), /* = 0x10 Seviper bank */
+  LABEL(16), /* = 0x10 Seviper */
     SELECT_ENTITIES(53, 49),
     JUMP_LABEL(34),
-  LABEL(17), /* = 0x11 Spheal bank */
+  LABEL(17), /* = 0x11 Spheal */
     SELECT_ENTITIES(53, 50),
     JUMP_LABEL(34),
-  LABEL(18), /* = 0x12 Snorunt bank */
+  LABEL(18), /* = 0x12 Snorunt */
     SELECT_ENTITIES(53, 51),
     JUMP_LABEL(34),
-  LABEL(19), /* = 0x13 Horsea bank */
+  LABEL(19), /* = 0x13 Horsea */
     SELECT_ENTITIES(53, 52),
     JUMP_LABEL(34),
-  LABEL(20), /* = 0x14 Mightyena bank */
+  LABEL(20), /* = 0x14 Mightyena */
     SELECT_ENTITIES(53, 53),
     JUMP_LABEL(34),
-  LABEL(21), /* = 0x15 Shuppet bank */
+  LABEL(21), /* = 0x15 Shuppet */
     SELECT_ENTITIES(53, 54),
     JUMP_LABEL(34),
-  LABEL(22), /* = 0x16 Grimer bank */
+  LABEL(22), /* = 0x16 Grimer */
     SELECT_ENTITIES(53, 55),
     JUMP_LABEL(34),
-  LABEL(23), /* = 0x17 Doduo bank */
+  LABEL(23), /* = 0x17 Doduo */
     SELECT_ENTITIES(53, 56),
     JUMP_LABEL(34),
-  LABEL(24), /* = 0x18 Volbeat bank */
+  LABEL(24), /* = 0x18 Volbeat */
     SELECT_ENTITIES(53, 57),
     JUMP_LABEL(34),
-  LABEL(25), /* = 0x19 Spoink bank */
+  LABEL(25), /* = 0x19 Spoink */
     SELECT_ENTITIES(53, 58),
     JUMP_LABEL(34),
-  LABEL(26), /* = 0x1a Magmar bank */
+  LABEL(26), /* = 0x1a Magmar */
     SELECT_ENTITIES(53, 59),
     JUMP_LABEL(34),
-  LABEL(27), /* = 0x1b Electabuzz bank */
+  LABEL(27), /* = 0x1b Electabuzz */
     SELECT_ENTITIES(53, 60),
     JUMP_LABEL(34),
-  LABEL(28), /* = 0x1c Chansey bank */
+  LABEL(28), /* = 0x1c Chansey */
     SELECT_ENTITIES(53, 61),
     JUMP_LABEL(34),
-  LABEL(29), /* = 0x1d Tangela bank */
+  LABEL(29), /* = 0x1d Tangela */
     SELECT_ENTITIES(53, 62),
     JUMP_LABEL(34),
-  LABEL(30), /* = 0x1e Electrike bank */
+  LABEL(30), /* = 0x1e Electrike */
     SELECT_ENTITIES(53, 63),
     JUMP_LABEL(34),
-  LABEL(31), /* = 0x1f Hitmonchan bank */
+  LABEL(31), /* = 0x1f Hitmonchan */
     SELECT_ENTITIES(53, 64),
     JUMP_LABEL(34),
-  LABEL(32), /* = 0x20 Mawile bank */
+  LABEL(32), /* = 0x20 Mawile */
     SELECT_ENTITIES(53, 65),
     JUMP_LABEL(34),
-  LABEL(33), /* = 0x21 Hoppip bank */
+  LABEL(33), /* = 0x21 Hoppip */
     SELECT_ENTITIES(53, 66),
-  LABEL(34), /* = 0x22 await */
-    AWAIT_CUE(65),
+  LABEL(34), /* = 0x22 signal gulpin + allow routes to finish */
+    ALERT_CUE(67), /* wake gulpin dispatcher */
+    WAIT(900), /* ~15s for trio to finish; avoids cue soft-locks */
+    JUMP_LABEL(0),
+};
+
+
+/* Gulpin-route dispatcher: 1s after Felicity spawn → Gulpin Link Shop. */
+static const struct ScriptCommand s_gs1_g53_gulpin_dispatcher_loop[] = {
+    DEBUGINFO_O(0),
+  LABEL(0), /* = 0x00 */
+    AWAIT_CUE(67),
+    WAIT(60), /* 1 second behind felicity */
+    CANCEL_LIVES(53, 67),
+    CANCEL_LIVES(53, 68),
+    CANCEL_LIVES(53, 69),
+    CANCEL_LIVES(53, 70),
+    CANCEL_LIVES(53, 71),
+    CANCEL_LIVES(53, 72),
+    CANCEL_LIVES(53, 73),
+    CANCEL_LIVES(53, 74),
+    CANCEL_LIVES(53, 75),
+    CANCEL_LIVES(53, 76),
+    CANCEL_LIVES(53, 77),
+    CANCEL_LIVES(53, 78),
+    CANCEL_LIVES(53, 79),
+    CANCEL_LIVES(53, 80),
+    CANCEL_LIVES(53, 81),
+    CANCEL_LIVES(53, 82),
+    CANCEL_LIVES(53, 83),
+    CANCEL_LIVES(53, 84),
+    CANCEL_LIVES(53, 85),
+    CANCEL_LIVES(53, 86),
+    CANCEL_LIVES(53, 87),
+    CANCEL_LIVES(53, 88),
+    CANCEL_LIVES(53, 89),
+    CANCEL_LIVES(53, 90),
+    CANCEL_LIVES(53, 91),
+    CANCEL_LIVES(53, 92),
+    CANCEL_LIVES(53, 93),
+    CANCEL_LIVES(53, 94),
+    CANCEL_LIVES(53, 95),
+    CANCEL_LIVES(53, 96),
+    CANCEL_LIVES(53, 97),
+    CANCEL_LIVES(53, 98),
+    CANCEL_LIVES(53, 99),
+    CJUMP_RANDOM(33),
+    COND_EQUAL(0, /* to label */ 1),
+    COND_EQUAL(1, /* to label */ 2),
+    COND_EQUAL(2, /* to label */ 3),
+    COND_EQUAL(3, /* to label */ 4),
+    COND_EQUAL(4, /* to label */ 5),
+    COND_EQUAL(5, /* to label */ 6),
+    COND_EQUAL(6, /* to label */ 7),
+    COND_EQUAL(7, /* to label */ 8),
+    COND_EQUAL(8, /* to label */ 9),
+    COND_EQUAL(9, /* to label */ 10),
+    COND_EQUAL(10, /* to label */ 11),
+    COND_EQUAL(11, /* to label */ 12),
+    COND_EQUAL(12, /* to label */ 13),
+    COND_EQUAL(13, /* to label */ 14),
+    COND_EQUAL(14, /* to label */ 15),
+    COND_EQUAL(15, /* to label */ 16),
+    COND_EQUAL(16, /* to label */ 17),
+    COND_EQUAL(17, /* to label */ 18),
+    COND_EQUAL(18, /* to label */ 19),
+    COND_EQUAL(19, /* to label */ 20),
+    COND_EQUAL(20, /* to label */ 21),
+    COND_EQUAL(21, /* to label */ 22),
+    COND_EQUAL(22, /* to label */ 23),
+    COND_EQUAL(23, /* to label */ 24),
+    COND_EQUAL(24, /* to label */ 25),
+    COND_EQUAL(25, /* to label */ 26),
+    COND_EQUAL(26, /* to label */ 27),
+    COND_EQUAL(27, /* to label */ 28),
+    COND_EQUAL(28, /* to label */ 29),
+    COND_EQUAL(29, /* to label */ 30),
+    COND_EQUAL(30, /* to label */ 31),
+    COND_EQUAL(31, /* to label */ 32),
+    COND_EQUAL(32, /* to label */ 33),
+  LABEL(1), /* = 0x01 Marill */
+    SELECT_ENTITIES(53, 67),
+    JUMP_LABEL(34),
+  LABEL(2), /* = 0x02 Azurill */
+    SELECT_ENTITIES(53, 68),
+    JUMP_LABEL(34),
+  LABEL(3), /* = 0x03 Nincada */
+    SELECT_ENTITIES(53, 69),
+    JUMP_LABEL(34),
+  LABEL(4), /* = 0x04 Tauros */
+    SELECT_ENTITIES(53, 70),
+    JUMP_LABEL(34),
+  LABEL(5), /* = 0x05 Torkoal */
+    SELECT_ENTITIES(53, 71),
+    JUMP_LABEL(34),
+  LABEL(6), /* = 0x06 Aron */
+    SELECT_ENTITIES(53, 72),
+    JUMP_LABEL(34),
+  LABEL(7), /* = 0x07 Pidgey */
+    SELECT_ENTITIES(53, 73),
+    JUMP_LABEL(34),
+  LABEL(8), /* = 0x08 Sunflora */
+    SELECT_ENTITIES(53, 74),
+    JUMP_LABEL(34),
+  LABEL(9), /* = 0x09 Bagon */
+    SELECT_ENTITIES(53, 75),
+    JUMP_LABEL(34),
+  LABEL(10), /* = 0x0a Dragonair */
+    SELECT_ENTITIES(53, 76),
+    JUMP_LABEL(34),
+  LABEL(11), /* = 0x0b Furret */
+    SELECT_ENTITIES(53, 77),
+    JUMP_LABEL(34),
+  LABEL(12), /* = 0x0c Gloom */
+    SELECT_ENTITIES(53, 78),
+    JUMP_LABEL(34),
+  LABEL(13), /* = 0x0d Scizor */
+    SELECT_ENTITIES(53, 79),
+    JUMP_LABEL(34),
+  LABEL(14), /* = 0x0e Breloom */
+    SELECT_ENTITIES(53, 80),
+    JUMP_LABEL(34),
+  LABEL(15), /* = 0x0f Taillow */
+    SELECT_ENTITIES(53, 81),
+    JUMP_LABEL(34),
+  LABEL(16), /* = 0x10 Seviper */
+    SELECT_ENTITIES(53, 82),
+    JUMP_LABEL(34),
+  LABEL(17), /* = 0x11 Spheal */
+    SELECT_ENTITIES(53, 83),
+    JUMP_LABEL(34),
+  LABEL(18), /* = 0x12 Snorunt */
+    SELECT_ENTITIES(53, 84),
+    JUMP_LABEL(34),
+  LABEL(19), /* = 0x13 Horsea */
+    SELECT_ENTITIES(53, 85),
+    JUMP_LABEL(34),
+  LABEL(20), /* = 0x14 Mightyena */
+    SELECT_ENTITIES(53, 86),
+    JUMP_LABEL(34),
+  LABEL(21), /* = 0x15 Shuppet */
+    SELECT_ENTITIES(53, 87),
+    JUMP_LABEL(34),
+  LABEL(22), /* = 0x16 Grimer */
+    SELECT_ENTITIES(53, 88),
+    JUMP_LABEL(34),
+  LABEL(23), /* = 0x17 Doduo */
+    SELECT_ENTITIES(53, 89),
+    JUMP_LABEL(34),
+  LABEL(24), /* = 0x18 Volbeat */
+    SELECT_ENTITIES(53, 90),
+    JUMP_LABEL(34),
+  LABEL(25), /* = 0x19 Spoink */
+    SELECT_ENTITIES(53, 91),
+    JUMP_LABEL(34),
+  LABEL(26), /* = 0x1a Magmar */
+    SELECT_ENTITIES(53, 92),
+    JUMP_LABEL(34),
+  LABEL(27), /* = 0x1b Electabuzz */
+    SELECT_ENTITIES(53, 93),
+    JUMP_LABEL(34),
+  LABEL(28), /* = 0x1c Chansey */
+    SELECT_ENTITIES(53, 94),
+    JUMP_LABEL(34),
+  LABEL(29), /* = 0x1d Tangela */
+    SELECT_ENTITIES(53, 95),
+    JUMP_LABEL(34),
+  LABEL(30), /* = 0x1e Electrike */
+    SELECT_ENTITIES(53, 96),
+    JUMP_LABEL(34),
+  LABEL(31), /* = 0x1f Hitmonchan */
+    SELECT_ENTITIES(53, 97),
+    JUMP_LABEL(34),
+  LABEL(32), /* = 0x20 Mawile */
+    SELECT_ENTITIES(53, 98),
+    JUMP_LABEL(34),
+  LABEL(33), /* = 0x21 Hoppip */
+    SELECT_ENTITIES(53, 99),
+  LABEL(34), /* = 0x22 allow route to finish */
+    WAIT(900), /* ~15s for trio to finish; avoids cue soft-locks */
     JUMP_LABEL(0),
 };
 
@@ -15918,70 +16170,98 @@ static const struct ScriptCommand s_gs1_g53_visitor_setup[] = {
     RET,
 };
 
-/* Kecleon shop route. Entrance from EVENT_LOCAL (0 north / 1 south). */
+/* Kecleon shop route. Entrance = EVENT_LOCAL % 4 (0=N,1=S,2=W,3=E).
+ * All exits walk off-map then END_DELETE (no cross-visitor cue waits). */
 static const struct ScriptCommand s_gs1_g53_visitor_route[] = {
     DEBUGINFO_O(0),
-    SELECT_ANIMATION(1),
-    CJUMP_VAR(EVENT_LOCAL),
+    /* Decode kecleon entrance: EVENT_LOCAL % 4 */
+    UPDATE_VARVAR(CALC_SET, CONDITION, EVENT_LOCAL),
+    UPDATE_VARINT(CALC_MOD, CONDITION, 4),
+    CJUMP_VAR(CONDITION),
     COND_EQUAL(0, /* to label */ 1),
     COND_EQUAL(1, /* to label */ 2),
+    COND_EQUAL(2, /* to label */ 3),
+    COND_EQUAL(3, /* to label */ 4),
   LABEL(1), /* = 0x01 - north */
     WARP_WAYPOINT(0, 146),
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
     WALK_GRID(256, 149),
-    WALK_GRID(256, 150),
     WALK_GRID(256, 152),
     WALK_GRID(256, 148),
     SELECT_ANIMATION(2),
     WAIT(180),
     SELECT_ANIMATION(1),
     WALK_GRID(256, 152),
-    WALK_GRID(256, 150),
     WALK_GRID(256, 149),
     WALK_GRID(256, 146),
-    JUMP_LABEL(3),
+    WALK_RELATIVE(256, 0, -24), /* off north map edge */
+    END_DELETE,
   LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
     WALK_GRID(256, 151),
-    WALK_GRID(256, 150),
     WALK_GRID(256, 152),
     WALK_GRID(256, 148),
     SELECT_ANIMATION(2),
     WAIT(180),
     SELECT_ANIMATION(1),
     WALK_GRID(256, 152),
-    WALK_GRID(256, 150),
     WALK_GRID(256, 151),
     WALK_GRID(256, 147),
-  LABEL(3), /* = 0x03 */
-    /* Linger so the bank visitor can reach AWAIT_CUE(64) first. */
+    WALK_RELATIVE(256, 0, 24), /* off south map edge */
+    END_DELETE,
+  LABEL(3), /* = 0x03 - west */
+    WARP_WAYPOINT(0, 155),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 152),
+    WALK_GRID(256, 148),
+    SELECT_ANIMATION(2),
     WAIT(180),
-    ALERT_CUE(64),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 155),
+    WALK_RELATIVE(256, -24, 0), /* off west map edge */
+    END_DELETE,
+  LABEL(4), /* = 0x04 - east */
+    WARP_WAYPOINT(0, 156),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 152),
+    WALK_GRID(256, 148),
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 152),
+    WALK_GRID(256, 156),
+    WALK_RELATIVE(256, 24, 0), /* off east map edge */
     END_DELETE,
 };
 
 
-/* Felicity Bank route. Uses the opposite entrance of EVENT_LOCAL. */
+/* Felicity Bank route. Entrance = (EVENT_LOCAL / 4) % 4. */
 static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     DEBUGINFO_O(0),
-    SELECT_ANIMATION(1),
-    CJUMP_VAR(EVENT_LOCAL),
-    COND_EQUAL(0, /* to label */ 2), /* Kecleon north → bank south */
-    COND_EQUAL(1, /* to label */ 1), /* Kecleon south → bank north */
+    /* Decode bank entrance: (EVENT_LOCAL / 4) % 4 */
+    UPDATE_VARVAR(CALC_SET, CONDITION, EVENT_LOCAL),
+    UPDATE_VARINT(CALC_DIV, CONDITION, 4),
+    UPDATE_VARINT(CALC_MOD, CONDITION, 4),
+    CJUMP_VAR(CONDITION),
+    COND_EQUAL(0, /* to label */ 1),
+    COND_EQUAL(1, /* to label */ 2),
+    COND_EQUAL(2, /* to label */ 3),
+    COND_EQUAL(3, /* to label */ 4),
   LABEL(1), /* = 0x01 - north */
     WARP_WAYPOINT(0, 146),
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
     WALK_GRID(256, 149),
-    WALK_GRID(256, 153), /* east to under Felicity Bank */
-    WALK_GRID(256, 154), /* north to bank front */
+    WALK_GRID(256, 153),
+    WALK_GRID(256, 154),
     SELECT_ANIMATION(2),
     WAIT(180),
     SELECT_ANIMATION(1),
     WALK_GRID(256, 153),
     WALK_GRID(256, 149),
     WALK_GRID(256, 146),
-    JUMP_LABEL(3),
+    WALK_RELATIVE(256, 0, -24), /* off north map edge */
+    END_DELETE,
   LABEL(2), /* = 0x02 - south */
     WARP_WAYPOINT(0, 147),
     { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
@@ -15994,11 +16274,112 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_route[] = {
     WALK_GRID(256, 153),
     WALK_GRID(256, 151),
     WALK_GRID(256, 147),
-  LABEL(3), /* = 0x03 */
-    AWAIT_CUE(64), /* after Kecleon finishes */
-    ALERT_CUE(65), /* pair complete */
+    WALK_RELATIVE(256, 0, 24), /* off south map edge */
+    END_DELETE,
+  LABEL(3), /* = 0x03 - west */
+    WARP_WAYPOINT(0, 155),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 153),
+    WALK_GRID(256, 154),
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 155),
+    WALK_RELATIVE(256, -24, 0), /* off west map edge */
+    END_DELETE,
+  LABEL(4), /* = 0x04 - east */
+    WARP_WAYPOINT(0, 156),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 153),
+    WALK_GRID(256, 154),
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 153),
+    WALK_GRID(256, 156),
+    WALK_RELATIVE(256, 24, 0), /* off east map edge */
     END_DELETE,
 };
+
+
+/* Gulpin Link Shop route. Entrance = EVENT_LOCAL / 16.
+ * Legal path: E-W axis → center → south on N-S axis → east on Gulpin branch. */
+static const struct ScriptCommand s_gs1_g53_gulpin_visitor_route[] = {
+    DEBUGINFO_O(0),
+    /* Decode gulpin entrance: EVENT_LOCAL / 16 */
+    UPDATE_VARVAR(CALC_SET, CONDITION, EVENT_LOCAL),
+    UPDATE_VARINT(CALC_DIV, CONDITION, 16),
+    CJUMP_VAR(CONDITION),
+    COND_EQUAL(0, /* to label */ 1),
+    COND_EQUAL(1, /* to label */ 2),
+    COND_EQUAL(2, /* to label */ 3),
+    COND_EQUAL(3, /* to label */ 4),
+  LABEL(1), /* = 0x01 - north */
+    WARP_WAYPOINT(0, 146),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 149), /* plaza */
+    WALK_GRID(256, 151), /* align to x=66 N-S axis */
+    WALK_GRID(256, 157), /* south past bush row */
+    WALK_GRID(256, 158), /* east through bush gap */
+    WALK_GRID(256, 159), /* north to counter */
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 158),
+    WALK_GRID(256, 157),
+    WALK_GRID(256, 151),
+    WALK_GRID(256, 149),
+    WALK_GRID(256, 146),
+    WALK_RELATIVE(256, 0, -24), /* off north map edge */
+    END_DELETE,
+  LABEL(2), /* = 0x02 - south */
+    WARP_WAYPOINT(0, 147),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 157), /* already on x=66; to junction south of bushes */
+    WALK_GRID(256, 158),
+    WALK_GRID(256, 159),
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 158),
+    WALK_GRID(256, 157),
+    WALK_GRID(256, 147),
+    WALK_RELATIVE(256, 0, 24), /* off south map edge */
+    END_DELETE,
+  LABEL(3), /* = 0x03 - west */
+    WARP_WAYPOINT(0, 155),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 151), /* E-W axis to plaza @ x=66 */
+    WALK_GRID(256, 157),
+    WALK_GRID(256, 158),
+    WALK_GRID(256, 159),
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 158),
+    WALK_GRID(256, 157),
+    WALK_GRID(256, 151),
+    WALK_GRID(256, 155),
+    WALK_RELATIVE(256, -24, 0), /* off west map edge */
+    END_DELETE,
+  LABEL(4), /* = 0x04 - east */
+    WARP_WAYPOINT(0, 156),
+    { 0x53, 0x00,  0x0000,  0x0000001f,  0x00000000, NULL },
+    WALK_GRID(256, 151), /* E-W axis to plaza @ x=66 */
+    WALK_GRID(256, 157),
+    WALK_GRID(256, 158),
+    WALK_GRID(256, 159),
+    SELECT_ANIMATION(2),
+    WAIT(180),
+    SELECT_ANIMATION(1),
+    WALK_GRID(256, 158),
+    WALK_GRID(256, 157),
+    WALK_GRID(256, 151),
+    WALK_GRID(256, 156),
+    WALK_RELATIVE(256, 24, 0), /* off east map edge */
+    END_DELETE,
+};
+
 
 /* Shared browse lines. */
 static const struct ScriptCommand s_gs1_g53_visitor_talk[] = {
@@ -16019,6 +16400,14 @@ static const struct ScriptCommand s_gs1_g53_bank_visitor_talk[] = {
     JUMP_SCRIPT(END_TALK),
 };
 
+static const struct ScriptCommand s_gs1_g53_gulpin_visitor_talk[] = {
+    DEBUGINFO_O(0),
+    SELECT_ANIMATION(2),
+    { 0x2d, 0x07,  0x0000,  0x00000000,  0x00000000, NULL },
+    WAIT(1),
+    MSG_NPC(1, _(" Just getting a move link\nat Gulpin Link Shop!")),
+    JUMP_SCRIPT(END_TALK),
+};
 
 
 
@@ -17853,6 +18242,10 @@ static const struct GroundLivesData s_gs1_g53_s0_lives[] = {
         [0] = s_gs1_g53_dispatcher_setup,
         [1] = s_gs1_g53_bank_dispatcher_loop,
     } },
+    /* gulpin dispatcher */ { 247,   0,   0,   0, {   1,   3, 0, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_dispatcher_setup,
+        [1] = s_gs1_g53_gulpin_dispatcher_loop,
+    } },
 };
 
 static const struct GroundLivesData s_gs1_g53_s1_lives[] = {
@@ -18383,6 +18776,269 @@ static const struct GroundLivesData s_gs1_g53_s66_lives[] = {
     } },
 };
 
+static const struct GroundLivesData s_gs1_g53_s67_lives[] = {
+    /* Marill Gulpin */ { 214,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s68_lives[] = {
+    /* Azurill Gulpin */ { 215,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s69_lives[] = {
+    /* Nincada Gulpin */ { 216,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s70_lives[] = {
+    /* Tauros Gulpin */ { 217,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s71_lives[] = {
+    /* Torkoal Gulpin */ { 218,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s72_lives[] = {
+    /* Aron Gulpin */ { 219,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s73_lives[] = {
+    /* Pidgey Gulpin */ { 220,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s74_lives[] = {
+    /* Sunflora Gulpin */ { 221,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s75_lives[] = {
+    /* Bagon Gulpin */ { 222,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s76_lives[] = {
+    /* Dragonair Gulpin */ { 223,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s77_lives[] = {
+    /* Furret Gulpin */ { 224,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s78_lives[] = {
+    /* Gloom Gulpin */ { 225,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s79_lives[] = {
+    /* Scizor Gulpin */ { 226,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s80_lives[] = {
+    /* Breloom Gulpin */ { 227,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s81_lives[] = {
+    /* Taillow Gulpin */ { 228,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s82_lives[] = {
+    /* Seviper Gulpin */ { 229,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s83_lives[] = {
+    /* Spheal Gulpin */ { 230,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s84_lives[] = {
+    /* Snorunt Gulpin */ { 231,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s85_lives[] = {
+    /* Horsea Gulpin */ { 232,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s86_lives[] = {
+    /* Mightyena Gulpin */ { 233,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s87_lives[] = {
+    /* Shuppet Gulpin */ { 234,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s88_lives[] = {
+    /* Grimer Gulpin */ { 235,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s89_lives[] = {
+    /* Doduo Gulpin */ { 236,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s90_lives[] = {
+    /* Volbeat Gulpin */ { 237,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s91_lives[] = {
+    /* Spoink Gulpin */ { 238,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s92_lives[] = {
+    /* Magmar Gulpin */ { 239,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s93_lives[] = {
+    /* Electabuzz Gulpin */ { 240,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s94_lives[] = {
+    /* Chansey Gulpin */ { 241,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s95_lives[] = {
+    /* Tangela Gulpin */ { 242,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s96_lives[] = {
+    /* Electrike Gulpin */ { 243,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s97_lives[] = {
+    /* Hitmonchan Gulpin */ { 244,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s98_lives[] = {
+    /* Mawile Gulpin */ { 245,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
+
+static const struct GroundLivesData s_gs1_g53_s99_lives[] = {
+    /* Hoppip Gulpin */ { 246,   0,   0,   0, {  64,   9, CPOS_HALFTILE, CPOS_HALFTILE }, {
+        [0] = s_gs1_g53_visitor_setup,
+        [1] = s_gs1_g53_gulpin_visitor_route,
+        [2] = s_gs1_g53_gulpin_visitor_talk,
+    } },
+};
 
 
 
@@ -18875,6 +19531,39 @@ static const struct GroundScriptSector s_gs1_g53_sectors[] = {
     { LPARRAY(s_gs1_g53_s64_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
     { LPARRAY(s_gs1_g53_s65_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
     { LPARRAY(s_gs1_g53_s66_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s67_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s68_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s69_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s70_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s71_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s72_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s73_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s74_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s75_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s76_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s77_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s78_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s79_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s80_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s81_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s82_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s83_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s84_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s85_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s86_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s87_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s88_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s89_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s90_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s91_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s92_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s93_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s94_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s95_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s96_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s97_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s98_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
+    { LPARRAY(s_gs1_g53_s99_lives), 0,NULL, 0,NULL, 0,NULL, 0,NULL, },
 };
 
 
@@ -19085,7 +19774,7 @@ static const struct GroundLink s_gs1_links[] = { /* 0x817d168 */
     /* link 143 */ { { /*x*/  57, /*y*/  38, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 2, /*?*/ 1 },
     /* link 144 */ { { /*x*/  60, /*y*/  41, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 2, /*?*/ 1 },
     /* link 145 */ { { /*x*/  60, /*y*/  38, /*flags*/ 0, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 2, /*?*/ 1 },
-    /* Living Square route — coords match g0_s2 / g0_s4 player enter pads */
+    /* Living Square route — coords match g0 enter pads (N/S/W/E) */
     /* link 146 */ { { /*x*/  64, /*y*/   9, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* north gate */
     /* link 147 */ { { /*x*/  66, /*y*/  83, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* south gate */
     /* link 148 */ { { /*x*/  37, /*y*/  34, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* Kecleon front */
@@ -19093,8 +19782,13 @@ static const struct GroundLink s_gs1_links[] = { /* 0x817d168 */
     /* link 150 */ { { /*x*/  39, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* west turn @ y=40 */
     /* link 151 */ { { /*x*/  66, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* plaza @ x=66 */
     /* link 152 */ { { /*x*/  37, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* under Kecleon @ y=40 */
-    /* link 153 */ { { /*x*/  82, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* under Felicity Bank @ y=40 */
+    /* link 153 */ { { /*x*/  82, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* east shop column @ y=40 */
     /* link 154 */ { { /*x*/  82, /*y*/  37, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* Felicity Bank boundary (south of counter) */
+    /* link 155 */ { { /*x*/   8, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* west gate */
+    /* link 156 */ { { /*x*/ 112, /*y*/  40, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* east gate */
+    /* link 157 */ { { /*x*/  66, /*y*/  66, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* Gulpin junction (south of bush row on N-S axis) */
+    /* link 158 */ { { /*x*/  82, /*y*/  66, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* Gulpin approach (east, aligned with counter) */
+    /* link 159 */ { { /*x*/  82, /*y*/  64, /*flags*/ CPOS_HALFTILE, CPOS_HALFTILE }, /*w*/  1, /*h*/  1, /*ret*/ 1, /*?*/ 0 }, /* Gulpin counter front (south of boundary) */
 };
 
 
