@@ -13,6 +13,7 @@
 #include "memory.h"
 #include "menu_input.h"
 #include "string_format.h"
+#include "bg_control.h"
 #include "text_1.h"
 #include "text_2.h"
 #include "runtime.h"
@@ -46,6 +47,10 @@ bool8 sub_801A5D8(u32 param_1, s32 param_2, DungeonPos *param_3, u32 param_4)
         return FALSE;
 
     param_4 = GetBagItemsPerPage();
+    /* Café: window tiles only span 128..383. A 10-row toolbox is 272 tiles and
+     * overflows into UI maps at SB 6/7; 8 rows (16×14) fit with headroom. */
+    if (gGroundMap8bpp && param_4 > 8)
+        param_4 = 8;
 
     if (gUnknown_203B224 == NULL)
         gUnknown_203B224 = MemoryAlloc(sizeof(unkStruct_203B224), MEMALLOC_GROUP_8);

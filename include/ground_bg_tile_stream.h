@@ -9,8 +9,10 @@
  *
  * 4bpp: VRAM+0x8000, 32 B/tile, up to 1024 slots (CHARBASE2).
  * 8bpp café: CHARBASE1 indices 128..767 (VRAM+0x6000..0xFFFF, 640 tiles) so
- * font/chrome at 0x4F00–0x5FFF stays intact. Art maps at SB 0/1 (0x0000–0x0FFF,
- * below window tile VRAM ~0x2D00) — never SB 8 (aliases CHARBASE1 tile 0). */
+ * font/chrome at 0x4F00–0x5FFF stays intact. Art maps at SB 0/1 (0x0000–0x0FFF).
+ * Window tile gfx must start at tile 128+ (see ShowWindowsInternal) so dialogue
+ * cannot stomp those maps; UI maps at SB 6/7. Never SB 8 for art maps (aliases
+ * CHARBASE1 tile 0). */
 
 #define GROUND_STREAM_4BPP 0
 #define GROUND_STREAM_8BPP 1

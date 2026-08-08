@@ -12,6 +12,7 @@
 #include "rescue_team_info.h"
 #include "sprite.h"
 #include "string_format.h"
+#include "bg_control.h"
 #include "custom_graphics.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -214,6 +215,12 @@ void CreateMenuDialogueBoxAndPortrait(const u8 *text, void *a1, u32 r9, const Me
     else {
         sDialogueBoxWinTemplates.id[0] = sDialogueBoxWindowTemplate;
     }
+
+    /* Café window tiles are 128..383 (256 slots before UI maps). A 26-wide
+     * dialogue + 5×5 portrait + side menu is 257 tiles — one over. Shrink
+     * width by 1 so Spinda/Wynaut menus fit without stomping SB 6. */
+    if (gGroundMap8bpp && sDialogueBoxWinTemplates.id[0].width > 1)
+        sDialogueBoxWinTemplates.id[0].width--;
 
     sDialogueBoxWinTemplates.id[1].width = 0;
     sDialogueBoxWinTemplates.id[1].height = 0;

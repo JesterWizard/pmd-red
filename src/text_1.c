@@ -266,7 +266,11 @@ void ShowWindows(const WindowTemplates *winTemplates, bool8 a1, bool8 a2)
 static void ShowWindowsInternal(const WindowTemplates *winTemplates, bool8 a1, bool8 a2, DungeonPos *positionModifier)
 {
     s32 i;
-    s32 startTileNum = 2;
+    /* Café 8bpp: art tilemaps live at SB 0/1 (VRAM 0x0000–0x0FFF = 4bpp tiles
+     * 0–127). Vanilla windows start at tile 2 and would stomp those maps the
+     * moment a dialogue box opens. Start past the art maps; UI maps stay at
+     * SB 6/7 (tiles 384+), so keep café window stacks under 256 tiles. */
+    s32 startTileNum = gGroundMap8bpp ? 128 : 2;
 
     if (winTemplates == NULL)
         winTemplates = &sDummyWindows;
