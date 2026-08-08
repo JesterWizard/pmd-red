@@ -435,7 +435,8 @@ static void sub_804B534(s32 xStart, s32 yStart, s32 maxX, s32 maxY)
                     unkCount++;
                 if (x < DUNGEON_MAX_SIZE_X - 2 && (GetTerrainType(GetTile(x + 1, y)) == TERRAIN_TYPE_NORMAL))
                     unkCount++;
-                if (y < DUNGEON_MAX_SIZE_Y - 2 && (GetTerrainType(GetTile(x, y + 1)) == TERRAIN_TYPE_NORMAL))
+                // BUG: It should check for y and not x. Not sure if it has any effect, because this function is called only once with maxY equal to DUNGEON_MAX_SIZE_Y
+                if (x < DUNGEON_MAX_SIZE_Y - 2 && (GetTerrainType(GetTile(x, y + 1)) == TERRAIN_TYPE_NORMAL))
                     unkCount++;
 
                 if (unkCount > 2) {
@@ -1933,9 +1934,9 @@ static void AssignGridCellConnections(struct GridCell grid[GRID_CELL_LEN][GRID_C
                         if (!ok)
                             continue;
 
-                        // Check the same neighboring cell whose connection is
-                        // being created. Using x + 1 for every direction can
-                        // read outside the grid and create malformed layouts.
+                        // BUG: the wrong grid index is used for the validity check for CARDINAL_DIR_UP, CARDINAL_DIR_LEFT, and CARDINAL_DIR_DOWN
+                        // This can potentially read out-of-bounds grid data, which contains uninitialized garbage.
+                        // This makes the dungeon gen occasionally inconsistent even when using the same seed.
                         switch (cardinalDirection & CARDINAL_DIRECTION_MASK) {
                             case CARDINAL_DIR_RIGHT:
                                 if (!grid[x + 1][y].isInvalid) {
@@ -1946,7 +1947,7 @@ static void AssignGridCellConnections(struct GridCell grid[GRID_CELL_LEN][GRID_C
                                 }
                                 break;
                             case CARDINAL_DIR_UP:
-                                if (!grid[x][y - 1].isInvalid) {
+                                if (!grid[x + 1][y].isInvalid) {
                                     grid[x][y].connectedToTop = TRUE;
                                     grid[x][y - 1].connectedToBottom = TRUE;
 
@@ -1954,7 +1955,7 @@ static void AssignGridCellConnections(struct GridCell grid[GRID_CELL_LEN][GRID_C
                                 }
                                 break;
                             case CARDINAL_DIR_LEFT:
-                                if (!grid[x - 1][y].isInvalid) {
+                                if (!grid[x + 1][y].isInvalid) {
                                     grid[x][y].connectedToLeft = TRUE;
                                     grid[x - 1][y].connectedToRight = TRUE;
 
@@ -1962,7 +1963,7 @@ static void AssignGridCellConnections(struct GridCell grid[GRID_CELL_LEN][GRID_C
                                 }
                                 break;
                             case CARDINAL_DIR_DOWN:
-                                if (!grid[x][y + 1].isInvalid) {
+                                if (!grid[x + 1][y].isInvalid) {
                                     grid[x][y].connectedToBottom = TRUE;
                                     grid[x][y + 1].connectedToTop = TRUE;
 
@@ -2903,7 +2904,6 @@ static void EnsureConnectedGrid(struct GridCell grid[GRID_CELL_LEN][GRID_CELL_LE
             	// Just fill it in with wall tiles
                 Tile *tile = GetTileMut(grid[x][y].start.x, grid[x][y].start.y);
                 SetTerrainWall(tile);
-                tile->room = CORRIDOR_ROOM;
 
             	// Also remove any spawn flags
             	tile->spawnOrVisibilityFlags.spawn &= ~(SPAWN_FLAG_STAIRS);
@@ -2988,14 +2988,6 @@ static void FinalizeJunctions(void)
 
     for (x = 0; x < DUNGEON_MAX_SIZE_X; x++) {
         for (y = 0; y < DUNGEON_MAX_SIZE_Y; y++) {
-            /* Walling out an unconnected anchor must not leave ROOM_0xFE
-             * behind. Otherwise sub_804AAD4 treats it as roomData[254] and
-             * corrupts the room bounds used by the camera dimmer. */
-            if (GetTile(x, y)->room == ROOM_0xFE) {
-                GetTileMut(x, y)->room = CORRIDOR_ROOM;
-                continue;
-            }
-
             if (GetTerrainType(GetTile(x, y)) != TERRAIN_TYPE_NORMAL)
                 continue;
 
@@ -3047,6 +3039,10 @@ static void FinalizeJunctions(void)
                         }
                     }
                 }
+            }
+            // Hallway Anchor
+            else if (GetTile(x, y)->room == ROOM_0xFE) {
+                GetTileMut(x, y)->room = CORRIDOR_ROOM;
             }
         }
     }
