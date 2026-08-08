@@ -111,6 +111,9 @@ typedef struct {
     u8 max_level_stats;
     /* Unlock every Makuhita Dojo course + show Makuhita (QUEST_UNK10) */
     u8 all_makuhita_dojo;
+    /* Allow button-skip of boot opening intro even with no save data
+     * (vanilla: only skippable once SCENARIO_MAIN has progressed) */
+    u8 skip_title_intro;
 } RuntimeConfig;
 
 extern const RuntimeConfig gRuntimeConfigRom;

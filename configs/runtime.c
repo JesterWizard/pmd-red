@@ -49,4 +49,5 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .team_act = TRUE, /* TRUE = Team ACT in postgame Makuhita Dojo team courses; FALSE = hidden */
     .max_level_stats = TRUE, /* TRUE = leader/partner/team → Lv100 + max stats/IQ; FALSE = vanilla */
     .all_makuhita_dojo = TRUE, /* TRUE = all Dojo courses + Makuhita visible; FALSE = story unlocks */
+    .skip_title_intro = TRUE, /* TRUE = button-skip boot intro with no save; FALSE = vanilla (need save) */
 };

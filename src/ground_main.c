@@ -36,6 +36,7 @@
 #include "palette_util.h"
 #include "play_time.h"
 #include "pokemon.h"
+#include "runtime.h"
 #include "script_item.h"
 #include "text_1.h"
 #include "text_util.h"
@@ -151,7 +152,8 @@ u32 xxx_script_related_8098468_Async(s32 startMode)
             u32 sub;
 
             GetScriptVarScenario(SCENARIO_MAIN, &main, &sub);
-            sUnknown_20398B8 = main == 0; // Basically checking new game
+            /* Vanilla: intro is unskippable on a fresh/no-save boot (main == 0). */
+            sUnknown_20398B8 = main == 0 && !gRuntimeConfig.skip_title_intro;
             sUnknown_20398B9 = TRUE;
             break;
         }
