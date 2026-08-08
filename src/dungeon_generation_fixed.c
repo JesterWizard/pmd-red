@@ -844,6 +844,24 @@ static const struct FixedRoomEntitiesInfo sFixedRoomEntities[204] = {
         .trapId = NUM_TRAPS,
         .roomId = 0,
     },
+    [129] = {
+        .speciesId = MONSTER_CHARIZARD,
+        .monsterBehavior = BEHAVIOR_MAZE_BOSS,
+        .trapId = NUM_TRAPS,
+        .roomId = 0,
+    },
+    [130] = {
+        .speciesId = MONSTER_ALAKAZAM,
+        .monsterBehavior = BEHAVIOR_MAZE_BOSS,
+        .trapId = NUM_TRAPS,
+        .roomId = 0,
+    },
+    [131] = {
+        .speciesId = MONSTER_TYRANITAR,
+        .monsterBehavior = BEHAVIOR_MAZE_BOSS,
+        .trapId = NUM_TRAPS,
+        .roomId = 0,
+    },
 };
 
 // Used to spawn a single tile when generating a fixed room. The tile might contain an item or a monster.

@@ -109,6 +109,21 @@
                     "probability": 10000
                 },
                 {
+                    "species": "MONSTER_CHARIZARD",
+                    "level": 22,
+                    "probability": 0
+                },
+                {
+                    "species": "MONSTER_ALAKAZAM",
+                    "level": 22,
+                    "probability": 0
+                },
+                {
+                    "species": "MONSTER_TYRANITAR",
+                    "level": 22,
+                    "probability": 0
+                },
+                {
                     "species": "MONSTER_ABRA",
                     "level": 16,
                     "probability": 0
