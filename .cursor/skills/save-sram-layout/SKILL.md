@@ -13,7 +13,7 @@ description: >-
 
 Cart save is **FLASH1M** at `0x0E000000` (linker region name **SRAM** so
 `make` `--print-memory-usage` lists it). Capacity is 128 KiB; **Used Size** is
-the real streamed footprint from `sSramSaveFootprint` in `src/save.c`
+the real streamed footprint from `gSramSaveFootprint` in `src/save.c`
 (primary + backup `UnkStruct_sub_8011DAC` + sector-0x1F metadata) — not the
 whole chip. Do not treat unused flash as general-purpose scratch. See
 `asm/ram_map_sram.s` and `documentation/ram-map.md`.

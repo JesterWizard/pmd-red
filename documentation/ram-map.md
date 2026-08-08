@@ -23,7 +23,7 @@ python3 tools/check_save_layout.py        # bit-packed save chunks vs buffer cap
 | --- | ---: | ---: | --- |
 | **EWRAM** | `0x0203F0C8`–`0x02040000` | ~3.8 KiB | `_kernel_malloc_ewram` (grows down) |
 | **IWRAM** | `0x03004108`–`0x03005F00` | ~7.5 KiB usable | `_kernel_malloc` (grows up; must stop at `StackReserveTop`) |
-| **SRAM** (flash) | capacity `0x0E000000`–`+128 KiB` | used = save footprint | `FLASH1M` save pak; linker **Used Size** is primary+backup main pak + metadata (`sSramSaveFootprint`), not 100% of the chip |
+| **SRAM** (flash) | capacity `0x0E000000`–`+128 KiB` | used = save footprint | `FLASH1M` save pak; linker **Used Size** is primary+backup main pak + metadata (`gSramSaveFootprint`), not 100% of the chip |
 
 IWRAM above `0x03007F00` is stacks + `SOUND_INFO_PTR` / `INTR_*` — do not allocate there.
 

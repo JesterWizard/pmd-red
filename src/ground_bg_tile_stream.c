@@ -249,6 +249,30 @@ void GroundBgTileStream_FlushUploads(void)
     sOnScreenClock = sClock;
 }
 
+/* Index of the lowest set bit; `bits` must be non-zero.
+ * agbcc (matching builds) has no __builtin_ctz. */
+static u32 LowestSetBitIndex(u32 bits)
+{
+#ifdef MODERN
+    return __builtin_ctz(bits);
+#else
+    u32 index = 0;
+
+    bits &= (u32)-bits;
+    if (bits & 0xFFFF0000)
+        index += 16;
+    if (bits & 0xFF00FF00)
+        index += 8;
+    if (bits & 0xF0F0F0F0)
+        index += 4;
+    if (bits & 0xCCCCCCCC)
+        index += 2;
+    if (bits & 0xAAAAAAAA)
+        index += 1;
+    return index;
+#endif
+}
+
 static u16 PopFreeSlot(void)
 {
     u16 word;
@@ -267,7 +291,7 @@ static u16 PopFreeSlot(void)
             bits &= ~((1u << (first & 31)) - 1);
         if (bits == 0)
             continue;
-        slot = (word << 5) | (u16)__builtin_ctz(bits);
+        slot = (word << 5) | (u16)LowestSetBitIndex(bits);
         MarkUsed(slot);
         return slot;
     }

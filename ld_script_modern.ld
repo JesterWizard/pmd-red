@@ -107,7 +107,7 @@ SECTIONS {
         configs/runtime.o(.runtime_config);
     } > ROM =0
 
-    /* Actual save-pak byte footprint (see sSramSaveFootprint in src/save.c).
+    /* Actual save-pak byte footprint (see gSramSaveFootprint in src/save.c).
      * MEMORY LENGTH stays 128K (chip capacity); Used Size is real streamed data. */
     sram_save (NOLOAD) :
     {

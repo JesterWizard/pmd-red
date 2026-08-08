@@ -532,7 +532,11 @@ UNUSED static void sub_8012334(UnkStruct_203B184 *data)
 
 /* Link-map only (NOLOAD in SRAM @ 0x0E000000). Reports actual streamed save
  * bytes in `make` --print-memory-usage: primary + backup main pak + sector
- * 0x1F metadata. Chip capacity remains MEMORY LENGTH 128K. */
-USED static u8 sSramSaveFootprint[
+ * 0x1F metadata. Chip capacity remains MEMORY LENGTH 128K.
+ * External linkage and an explicit initializer on purpose: agbcc drops
+ * unreferenced statics, and treats an uninitialized definition as tentative
+ * (landing in .bss, ignoring the section attribute). Either one silently zeroes
+ * the reported SRAM footprint in matching builds. */
+USED u8 gSramSaveFootprint[
     sizeof(struct UnkStruct_sub_8011DAC) * 2 + sizeof(struct unk_struct)
-] __attribute__((section(".sram_save")));
+] __attribute__((section(".sram_save"))) = {0};

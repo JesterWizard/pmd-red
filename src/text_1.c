@@ -33,7 +33,9 @@ EWRAM_DATA u8 gDrawTextShadow = 0;
 /* Must stay in EWRAM. The IWRAM free band below the user SP is deep-stack
  * scratch for dungeon floor generation (~8 KiB of GridCell arrays), which
  * would overwrite these shadows. See asm/ram_map_iwram.s. */
-EWRAM_DATA u16 gBgTilemaps[4][32][32] = {0};
+/* ALIGNED(4): DoScheduledMemCopies uploads these with CpuCopy, i.e. the BIOS
+ * CpuSet in 32-bit mode, which requires a word-aligned source. */
+EWRAM_DATA ALIGNED(4) u16 gBgTilemaps[4][32][32] = {0};
 
 EWRAM_INIT void (*ScrollDownWindowFunc)(s32 windowId) = ScrollDownWindow;
 EWRAM_INIT void (*ScrollUpWindowFunc)(s32 windowId) = ScrollUpWindow;

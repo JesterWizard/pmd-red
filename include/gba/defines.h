@@ -12,7 +12,14 @@
 #define EWRAM_INIT __attribute__((section("ewram_init")))
 #define IWRAM_INIT __attribute__((section("iwram_init")))
 #define UNUSED __attribute__((unused))
+#ifdef MODERN
 #define USED __attribute__((used))
+#else
+/* agbcc ignores `used` and then warns the definition is unreferenced, which
+ * -Werror turns fatal. `unused` keeps it quiet; symbols that must survive into
+ * the link map need external linkage rather than relying on this. */
+#define USED __attribute__((unused))
+#endif
 #define NAKED __attribute__((naked))
 #define NORETURN __attribute__((noreturn))
 #define PACKED __attribute__((packed))

@@ -20,6 +20,7 @@
 #include "dungeon_cutscene.h"
 #include "dungeon_boss_dialogue.h"
 #include "dungeon_modifiers.h"
+#include "code_800D090.h"
 #include "string_format.h"
 #include "items.h"
 #include "structs/map.h"

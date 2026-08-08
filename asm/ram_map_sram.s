@@ -11,7 +11,7 @@
 @ sectors).
 @
 @ Linker MEMORY region "SRAM" (128 KiB capacity): Used Size comes from
-@ sSramSaveFootprint in src/save.c (primary + backup main pak + metadata) —
+@ gSramSaveFootprint in src/save.c (primary + backup main pak + metadata) —
 @ not the whole chip. Remaining flash is unused capacity, not free scratch
 @ for gameplay buffers.
 @

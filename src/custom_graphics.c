@@ -317,7 +317,7 @@ static u8 RemapCoinPixelForBank(u8 p)
     return p;
 }
 
-static void PackCoinBlit(const u8 in[16][16])
+static void PackCoinBlit(u8 in[16][16])
 {
     s32 ty, tx, row, col;
     u32 *dst = sPokeCoinBlitBuf;

@@ -43,7 +43,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .infinite_tms = TRUE, /* TRUE = TMs not consumed on use; FALSE = vanilla Used TM */
     .physical_special_split = TRUE, /* TRUE = Gen4+ move-based Phys/Spec; FALSE = vanilla type-based */
     .dungeon_hp_bars = TRUE, /* TRUE = floating HP bars on visible Pokémon; FALSE = off */
-    .custom_story = TRUE, /* TRUE = Weird Autumn SSLP story (Treecko/Squirtle + custom dialogue); FALSE = vanilla */
+    .custom_story = FALSE, /* TRUE = Weird Autumn SSLP story (Treecko/Squirtle + custom dialogue); FALSE = vanilla */
     .friend_area_intros = TRUE, /* TRUE = 2s (A-skippable) art splash on Friend Area visit */
     .team_act = TRUE, /* TRUE = Team ACT in postgame Makuhita Dojo team courses; FALSE = hidden */
     .max_level_stats = TRUE, /* TRUE = leader/partner/team → Lv100 + max stats/IQ; FALSE = vanilla */

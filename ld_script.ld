@@ -30,6 +30,21 @@ SECTIONS {
 		src/agb_flash.o(ewram_lib);
 		*libc.a:sbrkr.o(COMMON);
 
+        /* ROM-hack additions. agbcc puts plain statics in .bss, unlike the
+         * decomp sources which tag everything EWRAM_DATA. */
+        . = ALIGN(4);
+        src/achievements.o(ewram_data);
+        src/custom_graphics.o(ewram_data);
+        src/ground_bg_tile_stream.o(ewram_data);
+        src/ground_bg_tile_stream.o(.bss);
+        /* Retail files that gained EWRAM_DATA, so sym_ewram.txt has no slot. */
+        src/dungeon_damage.o(ewram_data);
+        src/felicity_bank.o(ewram_data);
+        src/ground_assets.o(ewram_data);
+        src/load_screen.o(ewram_data);
+        src/main_menu2.o(ewram_data);
+        src/spinda_cafe.o(ewram_data);
+
 		ewram_end = .;
     } > EWRAM
 
@@ -371,6 +386,9 @@ SECTIONS {
         *libagbsyscall.a:SoundBiasReset.*(.text);
         *libagbsyscall.a:SoundBiasSet.o(.text);
         *libagbsyscall.a:VBlankIntrWait.*(.text);
+        /* Hack code calls further BIOS wrappers (LZ77UnCompWram, CpuFastSet).
+         * The four above keep their retail order; the rest follow. */
+        *libagbsyscall.a:*.o(.text*);
         src/agb_flash.o(.text);
         src/agb_flash_1m.o(.text);
         src/agb_flash_mx.o(.text);
@@ -426,6 +444,19 @@ SECTIONS {
         *libc.a:lseekr.o(.text);
         *libc.a:readr.o(.text);
         *libgcc.a:_udivsi3.o(.text);
+
+        /* ROM-hack additions (ld_script_modern.ld matches these by wildcard). */
+        src/achievements.o(.text);
+        src/achievements_log.o(.text);
+        src/achievements_menu.o(.text);
+        src/custom_graphics.o(.text);
+        src/custom_portraits.o(.text);
+        src/dungeon_damage_preview.o(.text);
+        src/dungeon_hp_bars.o(.text);
+        src/dungeon_modifiers.o(.text);
+        src/friend_area_intros.o(.text);
+        src/pmd2_font.o(.text);
+        src/starter_confirm_menu.o(.text);
     }  > ROM =0
 
     .rodata :
@@ -914,6 +945,11 @@ SECTIONS {
         *libc.a:locale.o(.rodata);
         *libc.a:mprec.o(.rodata);
         *libc.a:syscalls.o(.rodata);
+
+        /* dungeon_util gained .rodata that retail did not have. Bulk hack data
+         * goes in hack_rodata instead — .rodata must stay below the sections
+         * pinned at fixed ROM addresses (unk_data @ 0x8300000 onward). */
+        src/dungeon_util.o(.rodata);
 		. = ALIGN(4);
     } > ROM =0
 
@@ -927,8 +963,16 @@ SECTIONS {
 		*libc.a:locale.o(.data);
 		*libc.a:mallocr.o(.data);
 
+        /* ROM-hack additions. */
+        . = ALIGN(4);
+        src/achievements_log.o(ewram_init);
+        src/starter_confirm_menu.o(ewram_init);
+        src/recycle_shop.o(ewram_init);
+        src/spinda_cafe.o(ewram_init);
+
 		ewram_init_end = .;
-		. = 0x2724; /* This doesn't really do anything other than setting following 0x2724 bytes to 0 in rom */
+		/* Retail padded this section to 0x2724. The hack's EWRAM data no longer
+		 * fits with ~7 KiB of dead padding, and the pad only zeroed ROM bytes. */
     } > EWRAM AT>ROM
 
 	EWRAM_INIT_ROM_START = LOADADDR(ewram_init);
@@ -1026,6 +1070,7 @@ SECTIONS {
         src/monster_gfx41.o(.rodata);
         src/monster_gfx42.o(.rodata);
         src/monster_gfx43.o(.rodata);
+        src/data/ax_shared_anims.o(.rodata);
         data/monster_sbin.o(.rodata);
         src/monster_sbin_palet.o(.rodata);
     } > ROM =0
@@ -1843,8 +1888,32 @@ SECTIONS {
 		data/unk_9fbd5d0.o(.rodata);
 	} > ROM =0
 
-    /* Actual save-pak byte footprint (see sSramSaveFootprint in src/save.c).
+    /* ROM-hack data (ld_script_modern.ld matches these by wildcard). Placed
+     * after every fixed-address retail section so it cannot collide with them. */
+    hack_rodata :
+    ALIGN(4)
+    {
+        src/achievements.o(.rodata);
+        src/achievements_log.o(.rodata);
+        src/custom_graphics.o(.rodata);
+        src/custom_portraits_data.o(.rodata);
+        src/custom_title_backgrounds.o(.rodata);
+        src/dungeon_damage_preview.o(.rodata);
+        src/dungeon_hp_bars.o(.rodata);
+        src/friend_area_intros_data.o(.rodata);
+        src/pmd2_font.o(.rodata);
+        src/starter_confirm_menu.o(.rodata);
+    } > ROM =0
+
+    /* Actual save-pak byte footprint (see gSramSaveFootprint in src/save.c).
      * MEMORY LENGTH stays 128K (chip capacity); Used Size is real streamed data. */
+    /* Build-time hack toggles (see configs/runtime.c, include/runtime.h). */
+    .runtime_config :
+    ALIGN(4)
+    {
+        configs/runtime.o(.runtime_config);
+    } > ROM =0
+
     sram_save (NOLOAD) :
     {
         sram_start = .;

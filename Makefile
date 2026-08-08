@@ -185,10 +185,9 @@ UNUSED_UNK_ASM := \
 	data/unk_9fbd5d0.s
 ifeq ($(MODERN),1)
   ASM_SOURCES := $(filter-out $(UNUSED_UNK_ASM),$(ASM_SOURCES))
-else
-  # Free-pool symbol object is for modern/hacks only (keeps matching clean).
-  ASM_SOURCES := $(filter-out asm/ram_map.s,$(ASM_SOURCES))
 endif
+# asm/ram_map.s defines the free-pool symbols (gAchievementsData and friends).
+# The hack sources reference them unconditionally, so both configs need it.
 
 C_OBJECTS := $(patsubst $(C_SUBDIR)/%.c,$(C_BUILDDIR)/%.o,$(C_SOURCES))
 CONFIG_OBJECTS := $(patsubst $(CONFIG_SUBDIR)/%.c,$(CONFIG_BUILDDIR)/%.o,$(CONFIG_SRCS))
@@ -196,10 +195,7 @@ ASM_OBJECTS  := $(addprefix $(BUILD_DIR)/, $(ASM_SOURCES:%.s=%.o))
 C_ASM_OBJECTS := $(addprefix $(BUILD_DIR)/, $(C_ASM_SOURCES:%.s=%.o))
 SONG_OBJS := $(addprefix $(BUILD_DIR)/, $(SONG_SRCS:%.s=%.o))
 
-ALL_OBJECTS := $(C_OBJECTS) $(ASM_OBJECTS) $(C_ASM_OBJECTS) $(SONG_OBJS)
-ifeq ($(MODERN),1)
-  ALL_OBJECTS += $(CONFIG_OBJECTS)
-endif
+ALL_OBJECTS := $(C_OBJECTS) $(ASM_OBJECTS) $(C_ASM_OBJECTS) $(SONG_OBJS) $(CONFIG_OBJECTS)
 OBJS_REL := $(patsubst $(BUILD_DIR)/%,%,$(ALL_OBJECTS))
 
 GROUND_MAP_RAW_ASSETS := $(wildcard data/map_bg/*)

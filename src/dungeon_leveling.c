@@ -52,13 +52,14 @@ void AddExpPoints(Entity *pokemon, Entity *target, s32 exp)
 {
   s32 newExp;
   s32 expDiff;
+  EntityInfo *info;
 
   if (gRuntimeConfig.exp_multiplier != 1)
     exp *= gRuntimeConfig.exp_multiplier;
   if (IqSkillIsEnabled(target, IQ_EXP_ELITE))
     exp = (exp * 6) / 5;
 
-  EntityInfo *info = GetEntInfo(target);
+  info = GetEntInfo(target);
   if (info->level != 100) {
     if (!IsExperienceLocked(info->joinedAt.id)) {
       newExp = info->exp + exp;
