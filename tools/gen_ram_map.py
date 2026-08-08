@@ -25,6 +25,9 @@ IWRAM_END = 0x03008000
 FALLBACK_FREE_EWRAM_TOP = 0x0203D0C8  # ewram_init_end
 FALLBACK_FREE_IWRAM_TOP = 0x03004108  # gUnknown_3004000 / end of iwram_lib
 FREE_IWRAM_BOTTOM = 0x03007F00  # sp_sys
+# The user stack grows down from sp_sys into the free band. Dungeon floor
+# generation peaks around 8 KiB of frames, so allocations must stop here.
+STACK_RESERVE_TOP = 0x03005F00
 
 SYM_RE = re.compile(r"^\s+(0x0[23][0-9a-fA-F]{6})\s+([A-Za-z_][A-Za-z0-9_]*)\s*$")
 OBJ_RE = re.compile(
@@ -106,11 +109,7 @@ def parse_map(path: Path) -> tuple[list[tuple[int, str]], list[tuple[int, str]],
         or abs_syms.get("FreeRamSpaceTop")
         or FALLBACK_FREE_IWRAM_TOP
     )
-    used_iwram_top = (
-        abs_syms.get("UsedFreeRamSpaceTop")
-        or abs_syms.get("gBgTilemapsEnd")
-        or free_iwram_top
-    )
+    used_iwram_top = abs_syms.get("UsedFreeRamSpaceTop") or free_iwram_top
     return ew, iw, objs, free_ewram_top, free_iwram_top, used_iwram_top
 
 
@@ -138,7 +137,7 @@ def print_report(
     ew, iw, objs, free_ewram_top: int, free_iwram_top: int, used_iwram_top: int
 ) -> None:
     free_ewram_bytes = EWRAM_END - free_ewram_top
-    free_iwram_bytes = FREE_IWRAM_BOTTOM - used_iwram_top
+    free_iwram_bytes = STACK_RESERVE_TOP - used_iwram_top
     print("=== PMD Red RAM occupancy (from linker map) ===")
     print(
         f"EWRAM used static+init: 0x{EWRAM_START:08X}–0x{free_ewram_top:08X} "
@@ -157,8 +156,12 @@ def print_report(
         f"(FreeRamSpaceTop was 0x{free_iwram_top:08X})"
     )
     print(
-        f"IWRAM free remaining:   0x{used_iwram_top:08X}–0x{FREE_IWRAM_BOTTOM:08X} "
+        f"IWRAM free remaining:   0x{used_iwram_top:08X}–0x{STACK_RESERVE_TOP:08X} "
         f"({free_iwram_bytes} bytes, ~{free_iwram_bytes/1024:.1f} KiB)"
+    )
+    print(
+        f"IWRAM stack scratch:    0x{STACK_RESERVE_TOP:08X}–0x{FREE_IWRAM_BOTTOM:08X} "
+        "(deep stack, e.g. dungeon floor generation — do not allocate)"
     )
     print("IWRAM stacks/fixed:     0x03007F00–0x03008000 (sys/IRQ stacks + INTR words)")
     print("Flash (save):           0x0E000000+ FLASH1M — fully used by save pak (not free)")

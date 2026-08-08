@@ -41,6 +41,7 @@ static void sub_803FB74(void);
 static void sub_803FE30(s32 a0, u16 *a1, bool8 a2, bool8 a3);
 static void sub_803FF18(s32 a0, u16 *a1, bool8 a2);
 static void sub_80400D4(void);
+static void ClearDungeonBgTilemapShadows(void);
 
 static EWRAM_DATA u32 gUnknown_202EDFC = 0;
 
@@ -85,6 +86,7 @@ void sub_803F27C(bool8 a0)
     strPtr->inFloorMapMode = 0;
     strPtr->unk18215 = TRUE;
     sub_803F38C();
+    ClearDungeonBgTilemapShadows();
 
     gUnknown_202EDFC = 0xFFFF;
     if (!a0) {
@@ -116,6 +118,25 @@ static void sub_803F38C(void)
     nullsub_5(0xFD, &gFontPalette[16 * palId + 13]);
     nullsub_5(0xFE, &gFontPalette[16 * palId + 14]);
     nullsub_5(0xFF, &gFontPalette[16 * palId + 15]);
+}
+
+/* gBgTilemaps is an absolute IWRAM pool allocation, not zero-initialized BSS.
+ * Clear the dungeon layers when entering a floor so title/ground data cannot
+ * survive in the unused rows around the first camera update. */
+static void ClearDungeonBgTilemapShadows(void)
+{
+    s32 i;
+    s32 j;
+
+    for (i = 0; i < 32; i++) {
+        for (j = 0; j < 32; j++) {
+            gBgTilemaps[2][i][j] = 0;
+            gBgTilemaps[3][i][j] = 0;
+        }
+    }
+
+    ScheduleBgTilemapCopy(2);
+    ScheduleBgTilemapCopy(3);
 }
 
 bool8 sub_803F428(DungeonPos *pos)
@@ -308,7 +329,10 @@ static void sub_803F7BC(void)
     if (strPtr->allTilesRevealed != 0 || strPtr->unk1820C != 0 || strPtr->unk18217 != 0) {
         CopyWindowBgBuffer(NULL, COPY_WINDOW_BG_BUFFER_WIN0);
     }
-    else if (roomId == CORRIDOR_ROOM) {
+    else if (roomId >= MAX_ROOM_COUNT) {
+        /* ROOM_0xFE is a temporary hallway-anchor marker. If one reaches
+         * the camera, treat it like a corridor instead of indexing
+         * roomData[0xFE] and copying an invalid dim rectangle. */
         u32 kind = (strPtr->visibilityRange == 2) ? COPY_WINDOW_BG_BUFFER_DIM2 : COPY_WINDOW_BG_BUFFER_DIM1;
         CopyWindowBgBuffer(NULL, kind);
     }

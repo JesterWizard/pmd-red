@@ -592,8 +592,8 @@ void TryResetDungeonMapTilesScheduledForCopy(void)
             }
         }
         #else
-        for (y = 0; y < DUNGEON_MAX_SIZE_Y; y++) {
-            for (x = 0; x < DUNGEON_MAX_SIZE_X; x++) {
+        for (y = 0; y < DUNGEON_MAP_MAX_Y; y++) {
+            for (x = 0; x < DUNGEON_MAP_MAX_X; x++) {
                 dungeon->dungeonMap.tileScheduledForCopy[y][x] = FALSE;
             }
         }

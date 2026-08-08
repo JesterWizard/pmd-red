@@ -766,7 +766,7 @@ void HandlePokemonTrap(Entity *param_1,DungeonPos *pos)
     }
 
     roomId = GetTile(pos->x,pos->y)->room;
-    if (roomId == CORRIDOR_ROOM) {
+    if (roomId >= MAX_ROOM_COUNT) {
         bottomX = pos->x - range;
         bottomY = pos->y - range;
         maxX = pos->x + range;

@@ -18,7 +18,7 @@ bool8 IsPositionActuallyInSight(DungeonPos *origin, DungeonPos *target)
     s32 visibility = GetVisibilityRange();
     const Tile *tile1 = GetTile(origin->x, origin->y);
     u8 originRoom = tile1->room;
-    if (originRoom == CORRIDOR_ROOM) {
+    if (originRoom >= MAX_ROOM_COUNT) {
         if (abs(origin->x - target->x) <= visibility && abs(origin->y - target->y) <= visibility)
             return TRUE;
     }
@@ -39,7 +39,7 @@ bool8 IsPositionInSight(DungeonPos *origin, DungeonPos *target)
     s32 diff;
     const Tile *tile = GetTile(origin->x,origin->y);
     u8 originRoom = tile->room;
-    if (originRoom != CORRIDOR_ROOM) {
+    if (originRoom < MAX_ROOM_COUNT) {
         struct RoomData *originRoomData = &gDungeon->roomData[originRoom];
         if (originRoomData->bottomRightCornerX - 1 <= target->x &&
             originRoomData->bottomRightCornerY - 1 <= target->y &&
@@ -82,7 +82,7 @@ void sub_80833E8(DungeonPos *param_1, s32 *param_2)
     visibility = 2;
   }
   room = tile->room;
-  if (room == CORRIDOR_ROOM) {
+  if (room >= MAX_ROOM_COUNT) {
     param_2[0] = param_1->x - visibility;
     param_2[2] = param_1->x + visibility + 1;
     param_2[1] = param_1->y - visibility;

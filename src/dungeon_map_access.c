@@ -978,7 +978,14 @@ void sub_804AAD4(void)
         {
             tile = GetTile(x,y);
             roomIndex = tile->room;
-            if (roomIndex != CORRIDOR_ROOM) {
+            if (roomIndex >= MAX_ROOM_COUNT) {
+                /* ROOM_0xFE can survive when an anchor is walled out.
+                 * Never use it as an index into the 32-entry room table. */
+                if (roomIndex != CORRIDOR_ROOM)
+                    GetTileMut(x, y)->room = CORRIDOR_ROOM;
+                continue;
+            }
+            else {
                 room1 = &gDungeon->roomData[roomIndex];
                 room1->unk0 = 1;
                 if (room1->bottomRightCornerX > x) {
@@ -1037,7 +1044,7 @@ void DiscoverMinimap(DungeonPos *pos)
         if (visibilityRange == 0) {
             visibilityRange = 2;
         }
-        if (roomIndex == CORRIDOR_ROOM) {
+        if (roomIndex >= MAX_ROOM_COUNT) {
             xMin = pos->x - visibilityRange;
             yMin = pos->y - visibilityRange;
             xMax = pos->x + visibilityRange;

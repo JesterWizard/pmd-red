@@ -11,7 +11,9 @@
 @   0x03002078 – 0x03004108  iwram_lib    (0x2090 reserved for libc _sbrk / heap end)
 @                            gUnknown_3004000 @ 0x03004108 (sub_80001E0)
 @   0x03004108 ── FreeRamSpaceTop ──────── SAFE custom pool (FREE)
-@                bump _kernel_malloc grows UP toward Bottom (away from stack)
+@                bump _kernel_malloc grows UP toward StackReserveTop
+@   0x03005F00 ── StackReserveTop ──────── DO NOT ALLOCATE PAST HERE
+@   0x03005F00 – 0x03007F00  deep-stack scratch (dungeon floor generation)
 @   0x03007F00 ── FreeRamSpaceBottom / user SP (sp_sys = IWRAM_END - 0x100)
 @   0x03007F00 – 0x03007FA0  user/sys stack (USED — grows down)
 @   0x03007FA0 ── IRQ SP (sp_irq = IWRAM_END - 0x60)
@@ -30,13 +32,22 @@
 @   0x03001A14  text_1 gWindowBg     0x142
 @
 @ Safe leftover for custom code: 0x03004108–0x03007F00 via _kernel_malloc
-@ (~15.7 KiB before custom allocs). gBgTilemaps takes the first 0x2000.
-@ Grow from Top upward so the first byte is NOT under user SP.
+@ (~15.7 KiB before custom allocs). Grow from Top upward.
+@
+@ !! STACK RESERVE !! The user stack at 0x03007F00 grows DOWN into this band.
+@ Dungeon floor generation (GenerateStandardFloor and friends) builds
+@ GridCell grid[15][15] on the stack: single frames of ~7.4 KiB, and with
+@ caller/callee frames the peak reaches roughly 8 KiB below 0x03007F00
+@ (~0x03005F00). Anything allocated above StackReserveTop WILL be silently
+@ smashed during floor generation. Keep total _kernel_malloc usage under
+@ StackReserveTop - FreeRamSpaceTop (0x1DF8, ~7.5 KiB); the assert at the
+@ bottom of this file enforces it at build time.
 @ Named vanilla inventory (doc only): ram_map_iwram_pool.inc
 @ =============================================================================
 
 SET_DATA FreeRamSpaceTop, 0x03004108
 SET_DATA FreeRamSpaceBottom, 0x03007F00
+SET_DATA StackReserveTop, 0x03005F00
 SET_DATA UsedFreeRamSpaceTop, FreeRamSpaceTop
 
 SET_DATA gUserStackTop, 0x03007F00
@@ -85,9 +96,13 @@ REF_DATA gUnknown_3004000, 0x03004108
 @ Example:
 @ _kernel_malloc gExampleIwramScratch, 0x10
 
-@ BG tilemap shadows (was text_1.c EWRAM_DATA). 4 × 32 × 32 × u16 = 0x2000.
-@ Cleared/filled by LoadCharmaps / bg_control before use. Remaining free starts
-@ at UsedFreeRamSpaceTop (0x03006108 after this alloc).
-.set UsedFreeRamSpaceTop, (UsedFreeRamSpaceTop + 3) & ~3
-SET_ARRAY gBgTilemaps, UsedFreeRamSpaceTop, 0x2000
-.set UsedFreeRamSpaceTop, UsedFreeRamSpaceTop + 0x2000
+@ gBgTilemaps (0x2000) used to live here. It was moved back to EWRAM
+@ (src/text_1.c): 0x2000 starting at FreeRamSpaceTop ends at 0x03006108,
+@ which is 0x1DF8 below the user SP — well inside the stack scratch region,
+@ so dungeon floor generation overwrote the BG3 tilemap shadow and produced
+@ bands of black/garbled dungeon tiles.
+
+@ Nothing may be allocated past StackReserveTop; see the STACK RESERVE note.
+.if UsedFreeRamSpaceTop > StackReserveTop
+.error "IWRAM free-pool allocations overflow into the deep-stack scratch region"
+.endif

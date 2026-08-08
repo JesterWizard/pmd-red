@@ -30,8 +30,10 @@ EWRAM_DATA s32 gUnknown_202B024 = 0; // NDS=020EDCE8
 EWRAM_DATA s32 gCharHeight[2] = {0};
 EWRAM_DATA u32 gTextShadowMask = 0; // Some text color info is stored; retrieve via "& 0xF"
 EWRAM_DATA u8 gDrawTextShadow = 0;
-/* gBgTilemaps lives in the IWRAM free band (asm/ram_map_iwram.s) to free
- * 8 KiB of EWRAM. Window GFX pool stays in EWRAM — peak tile use is 470/472. */
+/* Must stay in EWRAM. The IWRAM free band below the user SP is deep-stack
+ * scratch for dungeon floor generation (~8 KiB of GridCell arrays), which
+ * would overwrite these shadows. See asm/ram_map_iwram.s. */
+EWRAM_DATA u16 gBgTilemaps[4][32][32] = {0};
 
 EWRAM_INIT void (*ScrollDownWindowFunc)(s32 windowId) = ScrollDownWindow;
 EWRAM_INIT void (*ScrollUpWindowFunc)(s32 windowId) = ScrollUpWindow;

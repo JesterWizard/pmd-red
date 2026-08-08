@@ -93,7 +93,7 @@ void TriggerMonsterHouse_Async(Entity *entity, bool8 forcedMonsterHouse)
     gDungeon->unk644.monsterHouseTriggered = TRUE;
 
     monsterHouseRoomId = gDungeon->monsterHouseRoom;
-    if (monsterHouseRoomId == CORRIDOR_ROOM)
+    if (monsterHouseRoomId >= MAX_ROOM_COUNT)
         return;
 
     monsterHouseRoomData = &gDungeon->roomData[monsterHouseRoomId];

@@ -41,7 +41,7 @@ void sub_807D3CC(Entity *param_1)
     }
     room = GetEntityRoom(param_1);
 
-    if (room == CORRIDOR_ROOM) {
+    if (room >= MAX_ROOM_COUNT) {
         for (y = (param_1->pos).y - range; y <= ((param_1->pos).y + range); y++)
         {
             for (x = (param_1->pos).x - range; x <= ((param_1->pos).x + range); x++) {

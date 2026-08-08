@@ -69,7 +69,7 @@ void TrySpawnWildMonster(void)
     }
 
     if (!dungeon->unk644.stoleFromKecleon) {
-        if (gDungeon->monsterHouseRoom == CORRIDOR_ROOM) {
+        if (gDungeon->monsterHouseRoom >= MAX_ROOM_COUNT) {
             if (wildMonsCount >= gMaxWildMonsInMonsterHouse)
                 return;
         }

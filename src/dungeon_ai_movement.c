@@ -243,7 +243,7 @@ static bool8 ChooseTargetPosition(Entity *pokemon)
         UNUSED u8 visib = GetVisibilityRange(); // Unused return value
         u8 room = GetTile(pokemon->pos.x, pokemon->pos.y)->room;
 
-        if (room == CORRIDOR_ROOM) {
+        if (room >= MAX_ROOM_COUNT) {
             minX = pokemon->pos.x - CORRIDOR_VISIBILITY;
             minY = pokemon->pos.y - CORRIDOR_VISIBILITY;
             maxX = pokemon->pos.x + CORRIDOR_VISIBILITY;
@@ -497,7 +497,7 @@ static bool8 AvoidEnemies(Entity *pokemon)
     }
     if (closestTargetDistance != INFINITY_2)
     {
-        if (room == closestTargetRoom && room != CORRIDOR_ROOM)
+        if (room == closestTargetRoom && room < MAX_ROOM_COUNT)
         {
             const Tile *tile = GetTile(pokemon->pos.x, pokemon->pos.y);
             if (tile->terrainFlags & TERRAIN_TYPE_NATURAL_JUNCTION)
@@ -626,7 +626,7 @@ static bool8 Wander(Entity *pokemon)
     s32 room = GetEntityRoom(pokemon);
     s32 targetFacingDir;
     s32 randDir;
-    if (room == CORRIDOR_ROOM)
+    if (room >= MAX_ROOM_COUNT)
     {
         s32 i;
         bool8 isAtJunction = FALSE;

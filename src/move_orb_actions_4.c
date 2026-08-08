@@ -668,7 +668,7 @@ bool8 TrapbustOrbAction(Entity * pokemon,Entity * target, Move *move, s32 itemId
     }
     else
     {
-        if (tile->room == CORRIDOR_ROOM) {
+        if (tile->room >= MAX_ROOM_COUNT) {
             bottomRightCornerX    =   target->pos.x - gDungeon->unk181e8.visibilityRange;
             bottomRightCornerY    =   target->pos.y - gDungeon->unk181e8.visibilityRange;
             topLeftCornerX      =   bottomRightCornerX + gDungeon->unk181e8.visibilityRange;
