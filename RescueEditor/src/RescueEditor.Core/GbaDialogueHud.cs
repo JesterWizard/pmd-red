@@ -132,56 +132,75 @@ public static class GbaDialogueHud
         bool speechIcon,
         bool thoughtIcon)
     {
-        var textX = BoxX + 8;
+        var bodyLeft = BoxX + 8;
         var textY = BoxY + 6;
         var maxWidth = BoxW - 16;
 
         if (thoughtIcon)
         {
-            DrawThoughtIcon(camera, textX, textY + 2);
-            textX += 14;
+            DrawThoughtIcon(camera, bodyLeft, textY + 2);
+            bodyLeft += 14;
             maxWidth -= 14;
         }
         else if (speechIcon && speakerLabel is null)
         {
-            DrawSpeechIcon(camera, textX, textY + 2, yellow: true);
-            textX += 14;
+            DrawSpeechIcon(camera, bodyLeft, textY + 2, yellow: true);
+            bodyLeft += 14;
             maxWidth -= 14;
         }
-        else if (!string.IsNullOrEmpty(speakerLabel))
+
+        var firstLineX = bodyLeft;
+        if (!string.IsNullOrEmpty(speakerLabel) && !thoughtIcon)
         {
             var label = speakerLabel.EndsWith(':') ? speakerLabel : speakerLabel + ":";
-            font.Draw(camera, label, textX, textY, Yellow.R, Yellow.G, Yellow.B);
-            textX += font.Measure(label) + 4;
-            maxWidth -= font.Measure(label) + 4;
+            font.Draw(camera, label, bodyLeft, textY, Yellow.R, Yellow.G, Yellow.B);
+            firstLineX = bodyLeft + font.Measure(label) + 4;
         }
 
-        DrawWrapped(camera, font, pageText.TrimStart(), textX, textY, maxWidth, White.R, White.G, White.B);
+        DrawWrapped(
+            camera, font, pageText.TrimStart(),
+            firstLineX, bodyLeft, textY, maxWidth,
+            White.R, White.G, White.B);
     }
 
     private static void DrawWrapped(
         RgbaImage image,
         PixelFont font,
         string text,
-        int x,
+        int firstLineX,
+        int bodyLeft,
         int y,
         int maxWidth,
         byte r, byte g, byte b)
     {
+        // First line may sit after the speaker name; every NEW_LINE returns to bodyLeft.
         var lines = text.Replace("\r", "").Split('\n');
         var cy = y;
+        var lineIndex = 0;
         foreach (var raw in lines)
         {
-            var line = raw;
+            var line = raw.TrimStart();
+            var x = lineIndex == 0 ? firstLineX : bodyLeft;
+            var widthBudget = maxWidth - (x - bodyLeft);
+            if (widthBudget < 8)
+                widthBudget = maxWidth;
             while (line.Length > 0 && cy < BoxY + BoxH - 10)
             {
-                var fit = FitWidth(font, line, maxWidth);
+                var fit = FitWidth(font, line, widthBudget);
                 var chunk = line[..fit].TrimEnd();
                 font.Draw(image, chunk, x, cy, r, g, b);
                 line = line[fit..].TrimStart();
                 cy += 12;
+                lineIndex++;
+                x = bodyLeft;
+                widthBudget = maxWidth;
                 if (fit == 0)
                     break;
+            }
+            if (raw.Length == 0)
+            {
+                cy += 12;
+                lineIndex++;
             }
         }
     }

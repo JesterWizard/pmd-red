@@ -194,6 +194,8 @@ public sealed class ActorSpriteAtlas
             try
             {
                 var image = RgbaImage.FromPng(File.ReadAllBytes(path));
+                if (image is not null)
+                    GbaChroma.KeyOut(image);
                 var index = i - 1; // AX sprite index
                 _bySpeciesFrame[(speciesId, index)] = image;
                 if (index == 0)

@@ -259,7 +259,21 @@ public sealed class GroundScriptVm
             }
         }
 
-        Finished = _actors.All(a => a.Done);
+        Finished = IsSceneComplete();
+    }
+
+    /// <summary>
+    /// Station HALT/RET ends the playable cutscene even if ambient NPCs (Butterfree)
+    /// keep spinning on JUMP_LABEL idle loops.
+    /// </summary>
+    private bool IsSceneComplete()
+    {
+        if (_actors.Count == 0)
+            return true;
+        var station = _actors.FirstOrDefault(a => a.Name == "station");
+        if (station is not null)
+            return station.Done;
+        return _actors.All(a => a.Done || a.LoopingIdle);
     }
 
     private bool StepActor(ScriptActor actor)
@@ -534,10 +548,55 @@ public sealed class GroundScriptVm
             }
 
             case 0xF6: // DEBUGINFO
+            case 0xF4: // LABEL marker
+                actor.Index++;
+                return true;
+
+            case 0xE6: // CALL_LABEL
+            case 0xE7: // JUMP_LABEL
+            {
+                var labelId = cmd.ArgShort;
+                var target = FindLabelIndex(actor.Commands, labelId);
+                if (target < 0)
+                {
+                    actor.Index++;
+                    return true;
+                }
+
+                if (cmd.Op == 0xE6)
+                    actor.CallStack.Push((actor.Commands, actor.Index + 1));
+
+                // Butterfree idle spin: JUMP_LABEL(0) forever — mark looping so the
+                // station can still complete the scene.
+                if (cmd.Op == 0xE7 && target <= actor.Index)
+                {
+                    actor.LabelLoopCount++;
+                    if (actor.LabelLoopCount >= 2)
+                    {
+                        actor.LoopingIdle = true;
+                        actor.Index = target;
+                        return false; // yield a frame so the pose animates
+                    }
+                }
+
+                actor.Index = target;
+                return true;
+            }
+
             default:
                 actor.Index++;
                 return true;
         }
+    }
+
+    private static int FindLabelIndex(IReadOnlyList<ScriptCommandData> commands, int labelId)
+    {
+        for (var i = 0; i < commands.Count; i++)
+        {
+            if (commands[i].Op == 0xF4 && commands[i].ArgShort == labelId)
+                return i;
+        }
+        return -1;
     }
 
     private bool CallScript(ScriptActor actor, int scriptId)
@@ -1015,6 +1074,8 @@ public sealed class GroundScriptVm
         public int? AwaitCueId { get; set; }
         public bool Done { get; set; }
         public bool WalkActive { get; set; }
+        public bool LoopingIdle { get; set; }
+        public int LabelLoopCount { get; set; }
         public double? WalkTargetX { get; set; }
         public double? WalkTargetY { get; set; }
         public double WalkSpeedPerFrame { get; set; }

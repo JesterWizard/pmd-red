@@ -17,7 +17,9 @@ public sealed class ScenePlaySession
     private readonly SceneEntity? _playerLive;
     private readonly HashSet<GbaButton> _held = new();
     private readonly List<int> _pendingSfx = new();
-    private readonly GroundScriptVm? _script;
+    private GroundScriptVm? _script;
+    private readonly Charmap? _charmap;
+    private readonly RomProfile? _profile;
     private readonly PixelFont _font = PixelFont.Load();
     private int? _lastMusicId;
     private int _animTick;
@@ -79,6 +81,8 @@ public sealed class ScenePlaySession
         PlayerSpecies = Appearance.TryResolveLiveType(PlayerTypeId) ?? Appearance.PlayerSpecies;
         PartnerSpecies = Appearance.PartnerSpecies;
 
+        _charmap = charmap;
+        _profile = profile ?? RomProfile.Us10;
         var useScript = scripted ?? ScenePlayPresets.IsTinyWoodsIntro(scene, ActiveGroup, ActiveSector);
         _portraits = portraits ?? (useScript ? new PortraitAtlas(rom, repoRoot) : null);
         // Lazy-load emotion icons on first use — eager ROM decode in the ctor can hitch/crash.
@@ -88,7 +92,7 @@ public sealed class ScenePlaySession
             IsScripted = true;
             _script = new GroundScriptVm(
                 rom, scene, ActiveGroup, ActiveSector, charmap,
-                profile: profile ?? RomProfile.Us10,
+                profile: _profile,
                 appearance: Appearance);
             AllowFreeRoam = false;
         }
@@ -145,6 +149,40 @@ public sealed class ScenePlaySession
     }
 
     public void AdvanceDialogue() => _script?.AdvanceDialogue();
+
+    /// <summary>Rebuild the script VM and clear play state so the cutscene can run again.</summary>
+    public void Restart()
+    {
+        _held.Clear();
+        _pendingSfx.Clear();
+        _lastMusicId = null;
+        _animTick = 0;
+        _cachedBg = null;
+        _cachedBgGroup = int.MinValue;
+        _cachedBgSector = int.MinValue;
+
+        if (IsScripted)
+        {
+            _script = new GroundScriptVm(
+                _rom, _scene, ActiveGroup, ActiveSector, _charmap,
+                profile: _profile ?? RomProfile.Us10,
+                appearance: Appearance);
+            AllowFreeRoam = false;
+            SyncPlayerFromLive();
+            UpdateCamera();
+            return;
+        }
+
+        var sectorData = _scene.Groups.ElementAtOrDefault(ActiveGroup)?.Sectors.ElementAtOrDefault(ActiveSector);
+        if (_playerLive is not null)
+        {
+            PlayerX = _playerLive.PixelX;
+            PlayerY = _playerLive.PixelY;
+        }
+        BootstrapStation(sectorData);
+        AllowFreeRoam = true;
+        UpdateCamera();
+    }
 
     public void Tick(double dtSeconds)
     {
@@ -340,21 +378,28 @@ public sealed class ScenePlaySession
 
         var flip = drawn?.FlipH ?? GroundScriptVm.ShouldFlipHorizontal(dir);
 
+        // Live PixelX/Y is the foot/shadow anchor (not sprite top-left).
         var ix = (int)Math.Round(pixelX);
         var iy = (int)Math.Round(pixelY);
-        GbaDialogueHud.DrawDropShadow(image, ix + 4, iy + 2);
+        GbaDialogueHud.DrawDropShadow(image, ix, iy);
 
-        var x = ix - sprite.Width / 2 + 4;
-        var y = iy - sprite.Height + 8;
+        // AX PNG dumps pad below the feet with opaque teal chroma — plant the
+        // last opaque row on the ground, not the sheet's bottom edge.
+        var contentBottom = GbaChroma.ContentBottom(sprite);
+        if (contentBottom < 0)
+            contentBottom = sprite.Height - 1;
+        var x = ix - sprite.Width / 2;
+        var y = iy - (contentBottom + 1);
         if (anim == GroundScriptVm.AnimSleep)
-            y = iy - sprite.Height / 3;
+            y = iy - Math.Max(12, (contentBottom * 2) / 3);
         SceneCompositor.BlitSpritePublic(image, sprite, x, y, flip);
 
         // Sleep Z markers (AX sleep has no efob; draw light Zs like retail flavor).
         if (anim == GroundScriptVm.AnimSleep)
         {
-            SceneCompositor.FillRectPublic(image, ix + (flip ? -10 : 6), iy - 14, 3, 3, 0xE8, 0xE8, 0xFF, 220);
-            SceneCompositor.FillRectPublic(image, ix + (flip ? -14 : 10), iy - 18, 2, 2, 0xE8, 0xE8, 0xFF, 180);
+            var top = y + Math.Max(0, GbaChroma.ContentTop(sprite));
+            SceneCompositor.FillRectPublic(image, ix + (flip ? -10 : 6), top - 6, 3, 3, 0xE8, 0xE8, 0xFF, 220);
+            SceneCompositor.FillRectPublic(image, ix + (flip ? -14 : 10), top - 10, 2, 2, 0xE8, 0xE8, 0xFF, 180);
         }
 
         if (_script is not null &&
@@ -364,10 +409,11 @@ public sealed class ScenePlaySession
             var fx = _effects.TryGet(effectId);
             if (fx is not null)
             {
-                // Emotion icons are tiny tile strips — draw 2× for GBA-readable size.
-                var fxX = ix + 4 - fx.Width + (flip ? -4 : 4);
-                var fxY = y - fx.Height * 2 - 2;
-                SceneCompositor.BlitSpriteScaledPublic(image, fx, fxX, fxY, scale: 2);
+                const int scale = 2;
+                var head = y + Math.Max(0, GbaChroma.ContentTop(sprite));
+                var fxX = ix - (fx.Width * scale) / 2 + (flip ? -2 : 2);
+                var fxY = head - fx.Height * scale - 1;
+                SceneCompositor.BlitSpriteScaledPublic(image, fx, fxX, fxY, scale);
             }
         }
     }
@@ -463,11 +509,14 @@ public sealed class ScenePlaySession
             ?? _actorSprites?.TryGetForLive(_rom, null, PlayerTypeId);
         var drawX = (int)Math.Round(PlayerX);
         var drawY = (int)Math.Round(PlayerY);
-        GbaDialogueHud.DrawDropShadow(image, drawX + 4, drawY + 2);
+        GbaDialogueHud.DrawDropShadow(image, drawX, drawY);
         if (sprite is not null)
         {
+            var contentBottom = GbaChroma.ContentBottom(sprite);
+            if (contentBottom < 0)
+                contentBottom = sprite.Height - 1;
             SceneCompositor.BlitSpritePublic(
-                image, sprite, drawX - sprite.Width / 2 + 4, drawY - sprite.Height + 8);
+                image, sprite, drawX - sprite.Width / 2, drawY - (contentBottom + 1));
             return;
         }
 

@@ -58,15 +58,34 @@ public class ActorSpriteAtlasTests
         var effects = new EmotionEffectAtlas(root);
         var bang = effects.TryGet(EmotionEffectAtlas.NoticeId);
         Assert.NotNull(bang);
-        Assert.True(bang!.Width >= 2 && bang.Height >= 2);
-        // Should have some opaque white-ish ink (not empty).
-        var opaque = 0;
-        for (var i = 3; i < bang.Pixels.Length; i += 4)
+        Assert.Equal(8, bang!.Width);
+        Assert.Equal(8, bang.Height);
+        // Drawn NOTICE fallback is white ink.
+        var white = 0;
+        for (var i = 0; i < bang.Pixels.Length; i += 4)
         {
-            if (bang.Pixels[i] > 200)
-                opaque++;
+            if (bang.Pixels[i + 3] < 200)
+                continue;
+            if (bang.Pixels[i] > 200 && bang.Pixels[i + 1] > 200 && bang.Pixels[i + 2] > 200)
+                white++;
         }
-        Assert.True(opaque > 0);
+        Assert.True(white >= 4, $"Expected white NOTICE ink, got {white} white pixels");
+    }
+
+    [Fact]
+    public void GbaChromaKeysTealPaddingAndFindsContentBottom()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        var path = Path.Combine(root, "graphics", "ax", "mon", "charmander", "sprite_1.png");
+        if (!File.Exists(path)) return;
+
+        var image = RgbaImage.FromPng(File.ReadAllBytes(path));
+        Assert.NotNull(image);
+        GbaChroma.KeyOut(image!);
+        var bottom = GbaChroma.ContentBottom(image);
+        Assert.True(bottom >= 0 && bottom < image.Height - 4,
+            $"Expected feet above chroma pad, bottom={bottom} height={image.Height}");
     }
 
     private static string? FindRepoRoot()

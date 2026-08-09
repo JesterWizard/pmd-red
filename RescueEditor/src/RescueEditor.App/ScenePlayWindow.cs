@@ -9,6 +9,15 @@ using RescueEditor.Core;
 
 namespace RescueEditor.App;
 
+/// <summary>Optional Back/Next scene factory for the end-of-cutscene menu.</summary>
+public sealed class ScenePlayNavigator
+{
+    public Func<bool>? CanGoBack { get; init; }
+    public Func<bool>? CanGoNext { get; init; }
+    public Func<ScenePlaySession?>? CreatePrevious { get; init; }
+    public Func<ScenePlaySession?>? CreateNext { get; init; }
+}
+
 /// <summary>Modal Scene Play popup: integer-scaled GBA 240×160 view matching retail layout.</summary>
 public sealed class ScenePlayWindow : Window
 {
@@ -16,31 +25,39 @@ public sealed class ScenePlayWindow : Window
     private const double TargetFps = 60;
     private static readonly TimeSpan FrameDt = TimeSpan.FromSeconds(1.0 / TargetFps);
 
-    private readonly ScenePlaySession _session;
+    private ScenePlaySession _session;
     private readonly PlayControlsKeymap _keymap;
+    private readonly ScenePlayNavigator? _navigator;
     private readonly Image _view;
     private readonly TextBlock _status;
     private readonly Button _controlsButton;
+    private readonly Border _endOverlay;
+    private readonly Button _backButton;
+    private readonly Button _nextButton;
+    private readonly Slider _speedSlider;
+    private readonly TextBlock _speedLabel;
     private readonly DispatcherTimer _timer;
+    private readonly WavPlayer _bgmPlayer = new();
     private readonly WavPlayer _sfxPlayer = new();
     private readonly string? _romPath;
     private GbaButton? _captureTarget;
     private DateTime _lastTick = DateTime.UtcNow;
     private double _simAccum;
+    private bool _endMenuShown;
+    private double _speed = 1;
 
     public ScenePlayWindow(
         ScenePlaySession session,
         PlayControlsKeymap? keymap = null,
-        string? romPath = null)
+        string? romPath = null,
+        ScenePlayNavigator? navigator = null)
     {
         _session = session;
         _keymap = keymap ?? PlayControlsKeymap.CreateDefault();
         _romPath = romPath;
+        _navigator = navigator;
 
-        Title = _session.IsScripted
-            ? $"Scene Play — {_session.PlayerSpecies}/{_session.PartnerSpecies}"
-            : "Scene Play";
-
+        Title = TitleFor(_session);
         Width = ScenePlaySession.CameraWidth * ViewScale + 48;
         Height = ScenePlaySession.CameraHeight * ViewScale + 100;
         CanResize = true;
@@ -85,23 +102,116 @@ public sealed class ScenePlayWindow : Window
         var closeButton = EditorChrome.ToolButton("Close");
         closeButton.Click += (_, _) => Close();
 
+        _speedLabel = new TextBlock
+        {
+            Text = "1×",
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            VerticalAlignment = VerticalAlignment.Center,
+            MinWidth = 28,
+        };
+        _speedSlider = new Slider
+        {
+            Minimum = 1,
+            Maximum = 10,
+            TickFrequency = 1,
+            IsSnapToTickEnabled = true,
+            Width = 120,
+            Value = 1,
+            VerticalAlignment = VerticalAlignment.Center,
+        };
+        _speedSlider.PropertyChanged += (_, e) =>
+        {
+            if (e.Property != Slider.ValueProperty)
+                return;
+            _speed = Math.Clamp(_speedSlider.Value, 1, 10);
+            _speedLabel.Text = $"{(int)_speed}×";
+        };
+
         var toolbar = new StackPanel
         {
             Orientation = Orientation.Horizontal,
             Spacing = EditorTheme.Space2,
             Margin = new Thickness(EditorTheme.Space3),
-            Children = { _controlsButton, closeButton },
+            Children =
+            {
+                _controlsButton,
+                closeButton,
+                new TextBlock
+                {
+                    Text = "Speed",
+                    FontFamily = EditorTheme.UiFont,
+                    FontSize = EditorTheme.FontMeta,
+                    Foreground = EditorTheme.TextMutedBrush,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Margin = new Thickness(EditorTheme.Space3, 0, 0, 0),
+                },
+                _speedSlider,
+                _speedLabel,
+            },
         };
 
-        var stage = new Border
+        _backButton = MenuButton("Back");
+        var replayButton = MenuButton("Replay");
+        _nextButton = MenuButton("Next");
+        var exitButton = MenuButton("Exit");
+        _backButton.Click += (_, _) => Navigate(-1);
+        replayButton.Click += (_, _) => Replay();
+        _nextButton.Click += (_, _) => Navigate(+1);
+        exitButton.Click += (_, _) => Close();
+
+        var row = new StackPanel
         {
-            Background = Brushes.Black,
-            BorderBrush = EditorTheme.BorderBrush,
-            BorderThickness = new Thickness(1),
-            Margin = new Thickness(EditorTheme.Space3, 0),
+            Orientation = Orientation.Horizontal,
+            Spacing = EditorTheme.Space2,
+            HorizontalAlignment = HorizontalAlignment.Center,
+            Children = { _backButton, replayButton, _nextButton },
+        };
+        var menu = new StackPanel
+        {
+            Orientation = Orientation.Vertical,
+            Spacing = EditorTheme.Space2,
             HorizontalAlignment = HorizontalAlignment.Center,
             VerticalAlignment = VerticalAlignment.Center,
-            Child = _view,
+            Children =
+            {
+                new TextBlock
+                {
+                    Text = "Scene complete",
+                    FontFamily = EditorTheme.UiFont,
+                    FontSize = EditorTheme.FontPanel,
+                    Foreground = EditorTheme.TextPrimaryBrush,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Margin = new Thickness(0, 0, 0, EditorTheme.Space2),
+                },
+                row,
+                exitButton,
+            },
+        };
+
+        _endOverlay = new Border
+        {
+            Background = new SolidColorBrush(Color.FromArgb(0xC0, 0x10, 0x10, 0x14)),
+            IsVisible = false,
+            Child = menu,
+        };
+
+        var stageHost = new Grid
+        {
+            HorizontalAlignment = HorizontalAlignment.Center,
+            VerticalAlignment = VerticalAlignment.Center,
+            Children =
+            {
+                new Border
+                {
+                    Background = Brushes.Black,
+                    BorderBrush = EditorTheme.BorderBrush,
+                    BorderThickness = new Thickness(1),
+                    Child = _view,
+                },
+                _endOverlay,
+            },
         };
 
         var root = new DockPanel();
@@ -109,7 +219,11 @@ public sealed class ScenePlayWindow : Window
         DockPanel.SetDock(_status, Dock.Bottom);
         root.Children.Add(toolbar);
         root.Children.Add(_status);
-        root.Children.Add(stage);
+        root.Children.Add(new Border
+        {
+            Margin = new Thickness(EditorTheme.Space3, 0),
+            Child = stageHost,
+        });
         Content = root;
 
         _timer = new DispatcherTimer(FrameDt, DispatcherPriority.Render, OnTick);
@@ -119,24 +233,28 @@ public sealed class ScenePlayWindow : Window
         Closed += (_, _) =>
         {
             _timer.Stop();
+            _bgmPlayer.Dispose();
             _sfxPlayer.Dispose();
         };
 
         Opened += (_, _) =>
         {
             Focus();
-            // Apply FADE_OUT / reach first MSG_ON_BG before the first paint when possible.
-            if (_session.IsScripted)
-            {
-                for (var i = 0; i < 8 && _session.DialogueMode == PlayDialogueMode.None; i++)
-                    _session.Tick(1.0 / TargetFps);
-            }
+            PrimeScript();
             PlayQueuedSfx();
             RefreshFrame();
             _lastTick = DateTime.UtcNow;
             _simAccum = 0;
             _timer.Start();
         };
+    }
+
+    private void PrimeScript()
+    {
+        if (!_session.IsScripted)
+            return;
+        for (var i = 0; i < 8 && _session.DialogueMode == PlayDialogueMode.None; i++)
+            _session.Tick(1.0 / TargetFps);
     }
 
     private void RebuildControlsMenu()
@@ -162,6 +280,16 @@ public sealed class ScenePlayWindow : Window
 
     private void OnKeyDown(object? sender, KeyEventArgs e)
     {
+        if (_endMenuShown)
+        {
+            if (e.Key == Key.Escape)
+            {
+                Close();
+                e.Handled = true;
+            }
+            return;
+        }
+
         if (e.Key == Key.Escape)
         {
             if (_captureTarget is not null)
@@ -197,7 +325,7 @@ public sealed class ScenePlayWindow : Window
 
     private void OnKeyUp(object? sender, KeyEventArgs e)
     {
-        if (_captureTarget is not null)
+        if (_captureTarget is not null || _endMenuShown)
             return;
         var chord = ToChord(e);
         if (_keymap.TryResolve(chord, out var button))
@@ -215,29 +343,89 @@ public sealed class ScenePlayWindow : Window
         if (dt > 0.1) dt = 0.1;
         if (dt < 0) dt = 0;
 
-        // Fixed 60 Hz simulation; catch up a few frames if a hitch occurs.
-        _simAccum += dt;
-        var steps = 0;
-        while (_simAccum >= FrameDt.TotalSeconds && steps < 4)
+        if (!_endMenuShown)
         {
-            _session.Tick(FrameDt.TotalSeconds);
-            _simAccum -= FrameDt.TotalSeconds;
-            steps++;
-        }
-        if (_simAccum > FrameDt.TotalSeconds * 2)
-            _simAccum = 0;
+            _simAccum += dt * Math.Max(1.0, _speed);
+            var steps = 0;
+            var stepCap = Math.Max(4, (int)(4 * _speed));
+            while (_simAccum >= FrameDt.TotalSeconds && steps < stepCap)
+            {
+                _session.Tick(FrameDt.TotalSeconds);
+                _simAccum -= FrameDt.TotalSeconds;
+                steps++;
+            }
+            if (_simAccum > FrameDt.TotalSeconds * 2 * _speed)
+                _simAccum = 0;
 
-        RefreshFrame();
-        PlayQueuedSfx();
-        PlayMusicIfChanged();
+            RefreshFrame();
+            PlayQueuedSfx();
+            PlayMusicIfChanged();
+        }
 
         if (_captureTarget is not null)
             return;
 
-        if (_session.IsScripted && !_session.ScriptFinished)
+        if (_session.IsScripted && _session.ScriptFinished)
+        {
+            ShowEndMenu();
+            _status.Text = "Scene complete";
+        }
+        else if (_session.IsScripted)
             _status.Text = _session.WaitingForAdvance ? "A to continue…" : "Playing cutscene…";
         else if (_session.AllowFreeRoam)
             _status.Text = $"Free roam · 240×160 · sp.{_session.PlayerSpecies}/{_session.PartnerSpecies}";
+    }
+
+    private void ShowEndMenu()
+    {
+        if (_endMenuShown)
+            return;
+        _endMenuShown = true;
+        _backButton.IsEnabled = _navigator?.CanGoBack?.Invoke() == true;
+        _nextButton.IsEnabled = _navigator?.CanGoNext?.Invoke() == true;
+        _endOverlay.IsVisible = true;
+        try { _bgmPlayer.Stop(); } catch { /* ignore */ }
+        try { _sfxPlayer.Stop(); } catch { /* ignore */ }
+    }
+
+    private void HideEndMenu()
+    {
+        _endMenuShown = false;
+        _endOverlay.IsVisible = false;
+    }
+
+    private void Replay()
+    {
+        HideEndMenu();
+        _session.Restart();
+        Title = TitleFor(_session);
+        _simAccum = 0;
+        _lastTick = DateTime.UtcNow;
+        PrimeScript();
+        RefreshFrame();
+        Focus();
+    }
+
+    private void Navigate(int delta)
+    {
+        ScenePlaySession? next = null;
+        if (delta < 0)
+            next = _navigator?.CreatePrevious?.Invoke();
+        else if (delta > 0)
+            next = _navigator?.CreateNext?.Invoke();
+        if (next is null)
+            return;
+
+        HideEndMenu();
+        _session = next;
+        Title = TitleFor(_session);
+        _simAccum = 0;
+        _lastTick = DateTime.UtcNow;
+        try { _bgmPlayer.Stop(); } catch { /* ignore */ }
+        try { _sfxPlayer.Stop(); } catch { /* ignore */ }
+        PrimeScript();
+        RefreshFrame();
+        Focus();
     }
 
     private void RefreshFrame()
@@ -245,9 +433,6 @@ public sealed class ScenePlayWindow : Window
         try
         {
             var frame = _session.RenderFrameImage();
-            // Present via a fresh Bitmap each frame. In-place WriteableBitmap updates were
-            // not invalidating the Image control (stuck on the first black frame: no text,
-            // no fade-in). Encoding only the 240×160 camera is cheap vs recomposing the map.
             var png = frame.ToPng();
             using var stream = new MemoryStream(png);
             _view.Source = new Bitmap(stream);
@@ -267,7 +452,6 @@ public sealed class ScenePlayWindow : Window
 
         foreach (var id in _session.DrainPendingSfx())
         {
-            // Only play if already cached — sync agbplay render on the UI thread freezes/crashes.
             if (!AgbplayRenderer.TryGetCachedWav(_romPath, id, maxLoops: 0, out var wav, out _))
                 continue;
             try
@@ -290,19 +474,38 @@ public sealed class ScenePlayWindow : Window
             return;
         if (!_session.TryConsumeMusicChange(out var songId))
             return;
-        // Avoid blocking the 60fps loop on a full agbplay render.
         if (!AgbplayRenderer.TryGetCachedWav(_romPath, songId, maxLoops: 0, out var wav, out _))
             return;
         try
         {
-            _sfxPlayer.Load(wav);
-            _sfxPlayer.Play();
+            _bgmPlayer.Load(wav);
+            _bgmPlayer.Play();
         }
         catch
         {
             // Music is best-effort in play preview.
         }
     }
+
+    private static Button MenuButton(string label) =>
+        new()
+        {
+            Content = label,
+            MinWidth = 88,
+            Padding = new Thickness(14, 8),
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontLabel,
+            Background = EditorTheme.PanelBgRaisedBrush,
+            Foreground = EditorTheme.TextPrimaryBrush,
+            BorderBrush = EditorTheme.BorderBrush,
+            BorderThickness = new Thickness(1),
+            HorizontalAlignment = HorizontalAlignment.Center,
+        };
+
+    private static string TitleFor(ScenePlaySession session) =>
+        session.IsScripted
+            ? $"Scene Play — {session.PlayerSpecies}/{session.PartnerSpecies}"
+            : "Scene Play";
 
     private static KeyChord ToChord(KeyEventArgs e) =>
         new(e.Key.ToString(),

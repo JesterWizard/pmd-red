@@ -1321,18 +1321,57 @@ public sealed class SceneWorkspacePanel : UserControl
 
     public async Task OpenScenePlayAsync()
     {
-        if (_rom is null || _scene is null)
+        if (_rom is null || _scene is null || _database is null)
             return;
 
         var group = (int)(_groupBox.Value ?? 0);
         var sector = Math.Max(0, _sectorBox.SelectedIndex);
-        var (playGroup, playSector) = ScenePlayPresets.ResolvePlayTarget(_scene, group, sector);
+        var session = CreatePlaySession(_scene, group, sector);
+        var scenes = _database.Scenes.OrderBy(s => s.MapId).ThenBy(s => s.Name, StringComparer.Ordinal).ToList();
+        var currentMapId = _scene.MapId;
+        var navigator = new ScenePlayNavigator
+        {
+            CanGoBack = () => scenes.FindIndex(s => s.MapId == currentMapId) > 0,
+            CanGoNext = () =>
+            {
+                var i = scenes.FindIndex(s => s.MapId == currentMapId);
+                return i >= 0 && i + 1 < scenes.Count;
+            },
+            CreatePrevious = () =>
+            {
+                var i = scenes.FindIndex(s => s.MapId == currentMapId);
+                if (i <= 0) return null;
+                var prev = scenes[i - 1];
+                currentMapId = prev.MapId;
+                return CreatePlaySession(prev, 0, 0);
+            },
+            CreateNext = () =>
+            {
+                var i = scenes.FindIndex(s => s.MapId == currentMapId);
+                if (i < 0 || i + 1 >= scenes.Count) return null;
+                var next = scenes[i + 1];
+                currentMapId = next.MapId;
+                return CreatePlaySession(next, 0, 0);
+            },
+        };
+
+        var owner = TopLevel.GetTopLevel(this) as Window;
+        var play = new ScenePlayWindow(session, romPath: _rom.Path, navigator: navigator);
+        if (owner is not null)
+            await play.ShowDialog(owner);
+        else
+            play.Show();
+    }
+
+    private ScenePlaySession CreatePlaySession(Scene scene, int group, int sector)
+    {
+        var (playGroup, playSector) = ScenePlayPresets.ResolvePlayTarget(scene, group, sector);
         var appearance = PlayAppearance.CharmanderAndBulbasaur;
-        var assetsRoot = CatalogBuilder.FindRepositoryRoot(_rom.Path);
+        var assetsRoot = CatalogBuilder.FindRepositoryRoot(_rom!.Path);
         var portraits = new PortraitAtlas(_rom, assetsRoot);
-        var session = new ScenePlaySession(
+        return new ScenePlaySession(
             _rom,
-            _scene,
+            scene,
             playGroup,
             playSector,
             actorSprites: _actorSprites,
@@ -1341,13 +1380,6 @@ public sealed class SceneWorkspacePanel : UserControl
             appearance: appearance,
             profile: _database?.Profile,
             portraits: portraits);
-
-        var owner = TopLevel.GetTopLevel(this) as Window;
-        var play = new ScenePlayWindow(session, romPath: _rom.Path);
-        if (owner is not null)
-            await play.ShowDialog(owner);
-        else
-            play.Show();
     }
 
     private void UpdateUndoButtons()

@@ -103,7 +103,7 @@ public static class PngCodec
     private static RgbaImage? DecodeRgba8(int width, int height, byte[] scanlines)
     {
         var stride = width * 4;
-        var reconstructed = Unfilter(scanlines, height, stride);
+        var reconstructed = Unfilter(scanlines, height, stride, bytesPerPixel: 4);
         if (reconstructed is null)
             return null;
         return new RgbaImage(width, height, reconstructed);
@@ -114,7 +114,7 @@ public static class PngCodec
     {
         var samplesPerByte = 8 / bitDepth;
         var rowBytes = (width * bitDepth + 7) / 8;
-        var reconstructed = Unfilter(scanlines, height, rowBytes);
+        var reconstructed = Unfilter(scanlines, height, rowBytes, bytesPerPixel: 1);
         if (reconstructed is null)
             return null;
 
@@ -151,10 +151,10 @@ public static class PngCodec
         return new RgbaImage(width, height, pixels);
     }
 
-    private static byte[]? Unfilter(byte[] scanlines, int height, int stride)
+    private static byte[]? Unfilter(byte[] scanlines, int height, int stride, int bytesPerPixel)
     {
         var expected = (stride + 1) * height;
-        if (scanlines.Length < expected || stride <= 0)
+        if (scanlines.Length < expected || stride <= 0 || bytesPerPixel <= 0)
             return null;
 
         var output = new byte[stride * height];
@@ -170,10 +170,10 @@ public static class PngCodec
                 case 0: // None
                     row.CopyTo(dest);
                     break;
-                case 1: // Sub
+                case 1: // Sub — left sample is bytesPerPixel behind (not 1)
                     for (var i = 0; i < stride; i++)
                     {
-                        var left = i >= 1 ? dest[i - 1] : (byte)0;
+                        var left = i >= bytesPerPixel ? dest[i - bytesPerPixel] : (byte)0;
                         dest[i] = (byte)(row[i] + left);
                     }
                     break;
@@ -184,16 +184,16 @@ public static class PngCodec
                 case 3: // Average
                     for (var i = 0; i < stride; i++)
                     {
-                        var left = i >= 1 ? dest[i - 1] : (byte)0;
+                        var left = i >= bytesPerPixel ? dest[i - bytesPerPixel] : (byte)0;
                         dest[i] = (byte)(row[i] + ((left + prior[i]) >> 1));
                     }
                     break;
                 case 4: // Paeth
                     for (var i = 0; i < stride; i++)
                     {
-                        var left = i >= 1 ? dest[i - 1] : (byte)0;
+                        var left = i >= bytesPerPixel ? dest[i - bytesPerPixel] : (byte)0;
                         var up = prior[i];
-                        var upLeft = i >= 1 ? prior[i - 1] : (byte)0;
+                        var upLeft = i >= bytesPerPixel ? prior[i - bytesPerPixel] : (byte)0;
                         dest[i] = (byte)(row[i] + PaethPredictor(left, up, upLeft));
                     }
                     break;

@@ -64,8 +64,15 @@ public static class DialogueFormatter
         });
 
         text = Regex.Replace(text, @"[ \t]+\n", "\n");
+        text = Regex.Replace(text, @"\n[ \t]+", "\n"); // NEW_LINE body starts at column 0
         text = Regex.Replace(text, @"\n{3,}", "\n\n");
         text = Regex.Replace(text, @"[ \t]{2,}", " ");
+        // Drop unknown decode escapes and punctuation the pixel font lacks (showed as | bars).
+        text = Regex.Replace(text, @"\\x[0-9A-Fa-f]{2}", "");
+        text = text.Replace('\u2018', '\'').Replace('\u2019', '\'')
+            .Replace('\u201C', '"').Replace('\u201D', '"')
+            .Replace('\u2026', '.').Replace('\u2014', '-').Replace('\u2013', '-');
+        text = Regex.Replace(text, @"[^\n\r\x20-\x7E]", "");
         return text.Trim();
     }
 

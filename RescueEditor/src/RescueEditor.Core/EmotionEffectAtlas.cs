@@ -2,7 +2,7 @@ namespace RescueEditor.Core;
 
 /// <summary>
 /// Floating emotion overlays attached to ground lives (NOTICE/QUESTION/SHOCK/SWEAT).
-/// Loads <c>data/effects/efob088–094</c>, falls back to ROM SIRO tiles, then drawn icons.
+/// Loads a single 8×8 frame from <c>data/effects/efob088–094</c> or ROM tiles.
 /// </summary>
 public sealed class EmotionEffectAtlas
 {
@@ -37,7 +37,7 @@ public sealed class EmotionEffectAtlas
         if (_cache.TryGetValue(effectId, out var cached))
             return cached;
 
-        // Prefer ROM (correct palette), then PNG dumps, then procedural icons.
+        // Prefer ROM/PNG game tiles; drawn icons only if both fail.
         var image = TryLoadFromRom(effectId) ?? TryLoadFromPng(effectId) ?? TryDrawFallback(effectId);
         _cache[effectId] = image;
         return image;
@@ -82,7 +82,7 @@ public sealed class EmotionEffectAtlas
         try
         {
             var sheet = RgbaImage.FromPng(File.ReadAllBytes(path));
-            return sheet is null ? null : CompactTileStrip(sheet);
+            return sheet is null ? null : ExtractIconFrame(sheet, effectId);
         }
         catch
         {
@@ -123,7 +123,7 @@ public sealed class EmotionEffectAtlas
             if (preview.Png is null)
                 return null;
             var sheet = RgbaImage.FromPng(preview.Png);
-            return sheet is null ? null : CompactTileStrip(sheet, maxSize: 32);
+            return sheet is null ? null : ExtractIconFrame(sheet, effectId);
         }
         catch
         {
@@ -132,64 +132,119 @@ public sealed class EmotionEffectAtlas
     }
 
     /// <summary>
-    /// Effect dumps are 8×N tile strips with GBA chroma (often cyan RGB + alpha mask).
-    /// Pack the first opaque tiles into a small icon and normalize ink to white.
+    /// Effect dumps are vertical 8×N frame strips (or ROM 16-col sheets). Take one 8×8 tile
+    /// and normalize chroma-key cyan to the retail icon ink color.
     /// </summary>
-    private static RgbaImage CompactTileStrip(RgbaImage sheet, int maxSize = 24)
+    private static RgbaImage ExtractIconFrame(RgbaImage sheet, int effectId)
     {
-        var minX = sheet.Width;
-        var minY = sheet.Height;
-        var maxX = 0;
-        var maxY = 0;
-        var any = false;
-        for (var y = 0; y < sheet.Height; y++)
-        for (var x = 0; x < sheet.Width; x++)
+        RgbaImage tile;
+        if (sheet.Width <= 8 && sheet.Height >= 8)
         {
-            var a = sheet.Pixels[(y * sheet.Width + x) * 4 + 3];
-            if (a < 16) continue;
-            any = true;
-            if (x < minX) minX = x;
-            if (y < minY) minY = y;
-            if (x > maxX) maxX = x;
-            if (y > maxY) maxY = y;
-        }
-        if (!any)
-            return sheet;
-
-        var tileH = 8;
-        var preferBottom = Math.Min(maxY, minY + tileH * 3 - 1);
-        maxY = Math.Min(maxY, preferBottom);
-
-        var w = Math.Clamp(maxX - minX + 1, 1, maxSize);
-        var h = Math.Clamp(maxY - minY + 1, 1, maxSize);
-        var pixels = new byte[w * h * 4];
-        for (var row = 0; row < h; row++)
-        for (var col = 0; col < w; col++)
-        {
-            var sx = minX + col;
-            var sy = minY + row;
-            if (sx >= sheet.Width || sy >= sheet.Height)
-                continue;
-            var src = (sy * sheet.Width + sx) * 4;
-            var dst = (row * w + col) * 4;
-            var a = sheet.Pixels[src + 3];
-            if (a < 16)
-                continue;
-            var r = sheet.Pixels[src];
-            var g = sheet.Pixels[src + 1];
-            var b = sheet.Pixels[src + 2];
-            if (r < 8 && g > 240 && b > 240)
+            // PNG strip: first frame with enough ink (frame 0 is the resting ! / ?).
+            tile = CropTile(sheet, 0, 0) ?? sheet;
+            for (var frame = 0; frame < sheet.Height / 8; frame++)
             {
-                r = 0xF8;
-                g = 0xF8;
-                b = 0xF8;
+                var candidate = CropTile(sheet, 0, frame * 8);
+                if (candidate is not null && CountOpaque(candidate) >= 4)
+                {
+                    tile = candidate;
+                    break;
+                }
             }
-            pixels[dst] = r;
-            pixels[dst + 1] = g;
-            pixels[dst + 2] = b;
-            pixels[dst + 3] = 255;
         }
-        return new RgbaImage(w, h, pixels);
+        else
+        {
+            // ROM sheet: tile 0 at top-left.
+            tile = CropTile(sheet, 0, 0) ?? sheet;
+        }
+
+        return RecolorIcon(tile, effectId);
+    }
+
+    private static RgbaImage? CropTile(RgbaImage sheet, int x0, int y0)
+    {
+        if (x0 < 0 || y0 < 0 || x0 + 8 > sheet.Width || y0 + 8 > sheet.Height)
+            return null;
+        var pixels = new byte[8 * 8 * 4];
+        for (var row = 0; row < 8; row++)
+        for (var col = 0; col < 8; col++)
+        {
+            var src = ((y0 + row) * sheet.Width + (x0 + col)) * 4;
+            var dst = (row * 8 + col) * 4;
+            pixels[dst] = sheet.Pixels[src];
+            pixels[dst + 1] = sheet.Pixels[src + 1];
+            pixels[dst + 2] = sheet.Pixels[src + 2];
+            pixels[dst + 3] = sheet.Pixels[src + 3];
+        }
+        return new RgbaImage(8, 8, pixels);
+    }
+
+    private static int CountOpaque(RgbaImage img)
+    {
+        var n = 0;
+        for (var i = 3; i < img.Pixels.Length; i += 4)
+        {
+            if (img.Pixels[i] > 16)
+                n++;
+        }
+        return n;
+    }
+
+    private static RgbaImage RecolorIcon(RgbaImage tile, int effectId)
+    {
+        var (inkR, inkG, inkB) = effectId switch
+        {
+            NoticeId or QuestionId => ((byte)0xF8, (byte)0xF8, (byte)0xF8),
+            SweatId => ((byte)0x70, (byte)0xD0, (byte)0xF8),
+            ShockId or SmileId => ((byte)0xF8, (byte)0xF0, (byte)0x40),
+            AngryId => ((byte)0xF8, (byte)0x40, (byte)0x40),
+            _ => ((byte)0xF8, (byte)0xF8, (byte)0xF8),
+        };
+
+        // Keep multi-color ROM tiles as-is; only remap pure chroma silhouettes.
+        if (!IsMostlyChromaOrSingleInk(tile))
+        {
+            var copy = new byte[tile.Pixels.Length];
+            Buffer.BlockCopy(tile.Pixels, 0, copy, 0, tile.Pixels.Length);
+            for (var i = 0; i < copy.Length; i += 4)
+            {
+                if (copy[i + 3] < 16)
+                    continue;
+                if (GbaChroma.IsChromaKey(copy[i], copy[i + 1], copy[i + 2], copy[i + 3]))
+                    copy[i + 3] = 0;
+            }
+            return new RgbaImage(tile.Width, tile.Height, copy);
+        }
+
+        var pixels = new byte[tile.Pixels.Length];
+        for (var i = 0; i < tile.Pixels.Length; i += 4)
+        {
+            if (tile.Pixels[i + 3] < 16)
+                continue;
+            pixels[i] = inkR;
+            pixels[i + 1] = inkG;
+            pixels[i + 2] = inkB;
+            pixels[i + 3] = 255;
+        }
+        return new RgbaImage(tile.Width, tile.Height, pixels);
+    }
+
+    private static bool IsMostlyChromaOrSingleInk(RgbaImage tile)
+    {
+        var opaque = 0;
+        var chromaOrRed = 0;
+        for (var i = 0; i < tile.Pixels.Length; i += 4)
+        {
+            if (tile.Pixels[i + 3] < 16)
+                continue;
+            opaque++;
+            var r = tile.Pixels[i];
+            var g = tile.Pixels[i + 1];
+            var b = tile.Pixels[i + 2];
+            if ((r < 40 && g > 180 && b > 180) || (r > 200 && g < 80 && b < 80))
+                chromaOrRed++;
+        }
+        return opaque > 0 && chromaOrRed * 2 >= opaque;
     }
 
     private static RgbaImage? TryDrawFallback(int effectId) =>
@@ -206,26 +261,25 @@ public sealed class EmotionEffectAtlas
 
     private static RgbaImage DrawBang()
     {
-        var img = New(10, 14);
-        Fill(img, 4, 1, 2, 8, 0xF8, 0xF8, 0xF8);
-        Fill(img, 4, 11, 2, 2, 0xF8, 0xF8, 0xF8);
+        var img = New(8, 8);
+        Fill(img, 3, 0, 2, 5, 0xF8, 0xF8, 0xF8);
+        Fill(img, 3, 6, 2, 2, 0xF8, 0xF8, 0xF8);
         return img;
     }
 
     private static RgbaImage DrawQuestion()
     {
-        var img = New(10, 14);
-        Fill(img, 2, 1, 6, 2, 0xF8, 0xF8, 0xF8);
-        Fill(img, 7, 3, 2, 3, 0xF8, 0xF8, 0xF8);
-        Fill(img, 4, 6, 3, 2, 0xF8, 0xF8, 0xF8);
-        Fill(img, 4, 8, 2, 2, 0xF8, 0xF8, 0xF8);
-        Fill(img, 4, 11, 2, 2, 0xF8, 0xF8, 0xF8);
+        var img = New(8, 8);
+        Fill(img, 2, 0, 4, 2, 0xF8, 0xF8, 0xF8);
+        Fill(img, 5, 2, 2, 2, 0xF8, 0xF8, 0xF8);
+        Fill(img, 3, 4, 2, 1, 0xF8, 0xF8, 0xF8);
+        Fill(img, 3, 6, 2, 2, 0xF8, 0xF8, 0xF8);
         return img;
     }
 
     private static RgbaImage DrawSweat()
     {
-        var img = New(8, 12);
+        var img = New(8, 8);
         Fill(img, 3, 0, 2, 2, 0x70, 0xD0, 0xF8);
         Fill(img, 2, 2, 4, 3, 0x70, 0xD0, 0xF8);
         Fill(img, 3, 5, 2, 2, 0x70, 0xD0, 0xF8);
@@ -234,29 +288,29 @@ public sealed class EmotionEffectAtlas
 
     private static RgbaImage DrawShock()
     {
-        var img = New(14, 14);
-        Fill(img, 6, 0, 2, 4, 0xF8, 0xF0, 0x40);
-        Fill(img, 0, 6, 4, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 10, 6, 4, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 6, 10, 2, 4, 0xF8, 0xF0, 0x40);
+        var img = New(8, 8);
+        Fill(img, 3, 0, 2, 2, 0xF8, 0xF0, 0x40);
+        Fill(img, 0, 3, 2, 2, 0xF8, 0xF0, 0x40);
+        Fill(img, 6, 3, 2, 2, 0xF8, 0xF0, 0x40);
+        Fill(img, 3, 6, 2, 2, 0xF8, 0xF0, 0x40);
         return img;
     }
 
     private static RgbaImage DrawSmile()
     {
-        var img = New(12, 8);
-        Fill(img, 2, 2, 2, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 8, 2, 2, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 3, 5, 6, 2, 0xF8, 0xF0, 0x40);
+        var img = New(8, 8);
+        Fill(img, 1, 2, 2, 2, 0xF8, 0xF0, 0x40);
+        Fill(img, 5, 2, 2, 2, 0xF8, 0xF0, 0x40);
+        Fill(img, 2, 5, 4, 2, 0xF8, 0xF0, 0x40);
         return img;
     }
 
     private static RgbaImage DrawAngry()
     {
-        var img = New(12, 12);
-        Fill(img, 1, 2, 3, 2, 0xF8, 0x40, 0x40);
-        Fill(img, 8, 2, 3, 2, 0xF8, 0x40, 0x40);
-        Fill(img, 2, 7, 8, 2, 0xF8, 0x40, 0x40);
+        var img = New(8, 8);
+        Fill(img, 0, 1, 3, 2, 0xF8, 0x40, 0x40);
+        Fill(img, 5, 1, 3, 2, 0xF8, 0x40, 0x40);
+        Fill(img, 1, 5, 6, 2, 0xF8, 0x40, 0x40);
         return img;
     }
 
