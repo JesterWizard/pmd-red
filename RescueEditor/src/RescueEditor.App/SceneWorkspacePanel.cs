@@ -158,6 +158,8 @@ public sealed class SceneWorkspacePanel : UserControl
         _redoButton = EditorChrome.ToolButton("Redo");
         _undoButton.Click += (_, _) => { _changes?.Undo(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
         _redoButton.Click += (_, _) => { _changes?.Redo(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
+        var playButton = EditorChrome.ToolButton("Play");
+        playButton.Click += async (_, _) => await OpenScenePlayAsync();
 
         var toolbarInner = new StackPanel
         {
@@ -176,7 +178,7 @@ public sealed class SceneWorkspacePanel : UserControl
                 EditorChrome.ToolbarSeparator(),
                 _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle,
                 EditorChrome.ToolbarSeparator(),
-                _undoButton, _redoButton,
+                _undoButton, _redoButton, playButton,
             },
         };
         var toolbar = EditorChrome.ToolbarHost(toolbarInner);
@@ -1315,6 +1317,37 @@ public sealed class SceneWorkspacePanel : UserControl
         RefreshAll();
         DirtyChanged?.Invoke(this, EventArgs.Empty);
         e.Handled = true;
+    }
+
+    public async Task OpenScenePlayAsync()
+    {
+        if (_rom is null || _scene is null)
+            return;
+
+        var group = (int)(_groupBox.Value ?? 0);
+        var sector = Math.Max(0, _sectorBox.SelectedIndex);
+        var (playGroup, playSector) = ScenePlayPresets.ResolvePlayTarget(_scene, group, sector);
+        var appearance = PlayAppearance.CharmanderAndBulbasaur;
+        var assetsRoot = CatalogBuilder.FindRepositoryRoot(_rom.Path);
+        var portraits = new PortraitAtlas(_rom, assetsRoot);
+        var session = new ScenePlaySession(
+            _rom,
+            _scene,
+            playGroup,
+            playSector,
+            actorSprites: _actorSprites,
+            objectSprites: _objectSprites,
+            charmap: _charmap,
+            appearance: appearance,
+            profile: _database?.Profile,
+            portraits: portraits);
+
+        var owner = TopLevel.GetTopLevel(this) as Window;
+        var play = new ScenePlayWindow(session, romPath: _rom.Path);
+        if (owner is not null)
+            await play.ShowDialog(owner);
+        else
+            play.Show();
     }
 
     private void UpdateUndoButtons()

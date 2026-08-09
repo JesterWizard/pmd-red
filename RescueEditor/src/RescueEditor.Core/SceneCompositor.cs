@@ -42,7 +42,8 @@ public static class SceneCompositor
         string? hudDialogue = null,
         IReadOnlyCollection<int>? visibleSectors = null,
         ActorSpriteAtlas? actorSprites = null,
-        ObjectSpriteAtlas? objectSprites = null)
+        ObjectSpriteAtlas? objectSprites = null,
+        SceneEntity? excludeLive = null)
     {
         var background = RenderMapBackground(rom, scene);
         RgbaImage image;
@@ -61,7 +62,7 @@ public static class SceneCompositor
         foreach (var sectorData in EnumerateVisibleSectors(scene, group, sector, visibleSectors))
         {
             if (showLives)
-                DrawLives(image, rom, sectorData.Lives, selected, drawLabels, actorSprites);
+                DrawLives(image, rom, sectorData.Lives, selected, drawLabels, actorSprites, excludeLive);
             if (showObjects)
                 DrawObjects(image, sectorData.Objects, selected, drawLabels, objectSprites);
             if (showEffects)
@@ -281,16 +282,36 @@ public static class SceneCompositor
         IEnumerable<SceneEntity> entities,
         SceneEntity? selected,
         bool drawLabels,
-        ActorSpriteAtlas? actorSprites)
+        ActorSpriteAtlas? actorSprites,
+        SceneEntity? excludeLive = null)
     {
         foreach (var entity in entities)
         {
+            if (excludeLive is not null && ReferenceEquals(excludeLive, entity))
+                continue;
             var selectedMatch = IsSelected(selected, entity);
             var sprite = actorSprites?.TryGetForLive(rom, null, entity.TypeId);
             if (sprite is not null)
                 DrawSpriteEntity(image, entity, sprite, selectedMatch, drawLabels);
             else
                 DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0x40, 0xC0, 0xFF);
+        }
+    }
+
+    /// <summary>Public blit for Scene Play (player sprite redraw).</summary>
+    public static void BlitSpritePublic(RgbaImage destination, RgbaImage sprite, int x, int y, bool flipH = false) =>
+        BlitSprite(destination, sprite, x, y, flipH);
+
+    /// <summary>Public filled rect for Scene Play fallback player marker.</summary>
+    public static void FillRectPublic(
+        RgbaImage image, int x, int y, int w, int h, byte r, byte g, byte b, byte a)
+    {
+        for (var py = y; py < y + h; py++)
+        for (var px = x; px < x + w; px++)
+        {
+            if (px < 0 || py < 0 || px >= image.Width || py >= image.Height)
+                continue;
+            Blend(image.Pixels, (py * image.Width + px) * 4, r, g, b, a);
         }
     }
 

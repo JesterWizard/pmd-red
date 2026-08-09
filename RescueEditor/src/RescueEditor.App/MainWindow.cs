@@ -331,6 +331,18 @@ public sealed class MainWindow : Window
         edit.Items.Add(redo);
         menu.Items.Add(edit);
 
+        var sceneMenu = new MenuItem { Header = "_Scene" };
+        var playScene = new MenuItem { Header = "_Play Scene" };
+        playScene.Click += async (_, _) =>
+        {
+            if (_sceneWorkspace is not null && _workspaceHost.Child == _sceneWorkspace)
+                await _sceneWorkspace.OpenScenePlayAsync();
+            else
+                SetStatus("Open a scene first to use Scene Play.");
+        };
+        sceneMenu.Items.Add(playScene);
+        menu.Items.Add(sceneMenu);
+
         var view = new MenuItem { Header = "_View" };
         var list = new MenuItem { Header = "_List" };
         list.Click += (_, _) => _assetWorkspace.SetViewMode(false);

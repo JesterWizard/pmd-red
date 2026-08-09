@@ -1,0 +1,84 @@
+using System.Text.RegularExpressions;
+
+namespace RescueEditor.Core;
+
+/// <summary>Turns decoded script strings into player-facing textbox pages and styles.</summary>
+public static class DialogueFormatter
+{
+    private static readonly Regex Tag = new(@"\{([A-Za-z0-9_]+)(?:\s[^}]*)?\}", RegexOptions.Compiled);
+
+    public static IReadOnlyList<string> SplitPages(
+        string? raw,
+        short playerSpecies = 0,
+        short partnerSpecies = 0,
+        string? playerName = null,
+        string? partnerName = null)
+    {
+        if (string.IsNullOrEmpty(raw))
+            return Array.Empty<string>();
+
+        var parts = Regex.Split(raw, @"\{WAIT_PRESS\}", RegexOptions.IgnoreCase);
+        var pages = new List<string>();
+        foreach (var part in parts)
+        {
+            var cleaned = ForTextbox(part, playerSpecies, partnerSpecies, playerName, partnerName);
+            if (!string.IsNullOrWhiteSpace(cleaned))
+                pages.Add(cleaned);
+        }
+        return pages.Count > 0 ? pages : new[] { string.Empty };
+    }
+
+    public static string ForTextbox(
+        string? raw,
+        short playerSpecies = 0,
+        short partnerSpecies = 0,
+        string? playerName = null,
+        string? partnerName = null)
+    {
+        if (string.IsNullOrEmpty(raw))
+            return string.Empty;
+
+        var text = raw;
+        text = text.Replace("{NEW_LINE}", "\n", StringComparison.Ordinal);
+        text = text.Replace("{WAIT_PRESS}", "", StringComparison.Ordinal);
+        text = text.Replace("{CENTER_ALIGN}", "", StringComparison.Ordinal);
+        text = text.Replace("{LETTER_ALIGN}", "", StringComparison.Ordinal);
+
+        text = Tag.Replace(text, match =>
+        {
+            var name = match.Groups[1].Value;
+            return name switch
+            {
+                "POKEMON_0" or "POKEMON0" => SpeciesLabel(playerSpecies, "Pokémon"),
+                "POKEMON_1" or "POKEMON1" => SpeciesLabel(partnerSpecies, "Pokémon"),
+                "NAME_0" => playerName ?? SpeciesLabel(playerSpecies, "Hero"),
+                "NAME_1" => partnerName ?? SpeciesLabel(partnerSpecies, "Partner"),
+                "WAIT_PRESS" => "",
+                "CENTER_ALIGN" or "LETTER_ALIGN" or "NEW_LINE" => name == "NEW_LINE" ? "\n" : "",
+                "SPEECH_BUBBLE" => "", // drawn as icon by HUD
+                _ when name.StartsWith("COLOR", StringComparison.OrdinalIgnoreCase) => "",
+                _ when name.StartsWith("color", StringComparison.OrdinalIgnoreCase) => "",
+                _ when name.Equals("RESET", StringComparison.OrdinalIgnoreCase) => "",
+                _ => "",
+            };
+        });
+
+        text = Regex.Replace(text, @"[ \t]+\n", "\n");
+        text = Regex.Replace(text, @"\n{3,}", "\n\n");
+        text = Regex.Replace(text, @"[ \t]{2,}", " ");
+        return text.Trim();
+    }
+
+    public static string PrettySpeciesName(short species, string? repositoryRoot = null)
+    {
+        if (species <= 0)
+            return "Pokémon";
+        var folder = MonsterSpriteFolders.ForSpecies(species, null);
+        if (string.IsNullOrEmpty(folder))
+            return $"#{species}";
+        return char.ToUpperInvariant(folder[0]) + folder[1..];
+    }
+
+    private static string SpeciesLabel(short species, string fallback) =>
+        species > 0 ? PrettySpeciesName(species) : fallback;
+}

@@ -49,6 +49,10 @@ public static class GroundLivesTypes
             6 => SpeciesBulbasaur,
             7 => SpeciesCharmander,
             8 => SpeciesSquirtle,
+            // Story leader/partner aliases (Tiny Woods intro uses type 34 for partner).
+            33 => SpeciesBulbasaur,
+            34 => SpeciesCharmander,
+            35 => SpeciesSquirtle,
             _ => 0,
         };
     }

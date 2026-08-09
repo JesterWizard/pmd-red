@@ -54,9 +54,9 @@ if ((Test-Path $baseromSrc) -and -not (Test-Path $baseromDst)) {
 $axSrc = Join-Path $wslRoot "graphics\ax\mon"
 $axDst = Join-Path $winRoot "graphics\ax\mon"
 if (Test-Path $axSrc) {
-    Write-Host "Syncing actor sprite_1.png frames..."
+    Write-Host "Syncing actor sprite_*.png frames..."
     New-Item -ItemType Directory -Force -Path $axDst | Out-Null
-    & robocopy $axSrc $axDst sprite_1.png /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+    & robocopy $axSrc $axDst sprite_1.png sprite_2.png sprite_3.png sprite_4.png sprite_5.png sprite_6.png sprite_7.png sprite_8.png sprite_9.png sprite_10.png sprite_11.png sprite_12.png sprite_13.png sprite_14.png sprite_15.png sprite_16.png /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
     if ($LASTEXITCODE -ge 8) { throw "robocopy failed for actor sprites (exit $LASTEXITCODE)" }
 }
 
@@ -67,6 +67,25 @@ if (Test-Path $ornSrc) {
     New-Item -ItemType Directory -Force -Path $ornDst | Out-Null
     & robocopy $ornSrc $ornDst sprite_1.png /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
     if ($LASTEXITCODE -ge 8) { throw "robocopy failed for object sprites (exit $LASTEXITCODE)" }
+}
+
+$fontSrc = Join-Path $wslRoot "graphics\custom\pmd2_font_sheet.png"
+$fontDstDir = Join-Path $winRoot "graphics\custom"
+if (Test-Path $fontSrc) {
+    Write-Host "Syncing pmd2 font sheet..."
+    New-Item -ItemType Directory -Force -Path $fontDstDir | Out-Null
+    Copy-Item $fontSrc (Join-Path $fontDstDir "pmd2_font_sheet.png") -Force
+}
+
+$fxSrc = Join-Path $wslRoot "data\effects"
+$fxDst = Join-Path $winRoot "data\effects"
+if (Test-Path $fxSrc) {
+    Write-Host "Syncing emotion effect overlays..."
+    New-Item -ItemType Directory -Force -Path $fxDst | Out-Null
+    foreach ($id in @("088","089","091","092","093","094")) {
+        $src = Join-Path $fxSrc "efob$id.png"
+        if (Test-Path $src) { Copy-Item $src (Join-Path $fxDst "efob$id.png") -Force }
+    }
 }
 
 $project = Join-Path $winRoot "RescueEditor\src\RescueEditor.App\RescueEditor.App.csproj"

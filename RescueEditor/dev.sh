@@ -27,8 +27,14 @@ sync_repo_assets() {
   cp -f "$repo/src/sound_names.c" "$win_mirror/src/sound_names.c"
   cp -f "$repo/charmap.txt" "$win_mirror/charmap.txt"
   cp -f "$repo/data/monster/monster_data.json" "$win_mirror/data/monster/monster_data.json"
-  # Standing frames for scene actors (~1.7 MiB) and objects (~0.2 MiB).
-  rsync -a --include '*/' --include 'sprite_1.png' --exclude '*' \
+  mkdir -p "$win_mirror/graphics/custom" "$win_mirror/data/effects"
+  cp -f "$repo/graphics/custom/pmd2_font_sheet.png" "$win_mirror/graphics/custom/pmd2_font_sheet.png" 2>/dev/null || true
+  # Emotion overlays used by Scene Play (NOTICE/QUESTION/SHOCK/SWEAT/SMILE/ANGRY).
+  for id in 088 089 091 092 093 094; do
+    cp -f "$repo/data/effects/efob${id}.png" "$win_mirror/data/effects/efob${id}.png" 2>/dev/null || true
+  done
+  # Actor frames for Scene Play animation (sprite_1..16.png).
+  rsync -a --include '*/' --include 'sprite_[0-9].png' --include 'sprite_1[0-6].png' --exclude '*' \
     "$repo/graphics/ax/mon/" "$win_mirror/graphics/ax/mon/"
   rsync -a --include '*/' --include 'sprite_1.png' --exclude '*' \
     "$repo/graphics/ornament/" "$win_mirror/graphics/ornament/"

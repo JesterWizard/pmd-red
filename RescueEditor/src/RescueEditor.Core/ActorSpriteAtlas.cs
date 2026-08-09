@@ -8,7 +8,10 @@ public sealed class ActorSpriteAtlas
     private readonly string _repositoryRoot;
     private readonly IReadOnlyDictionary<int, string> _folders;
     private readonly Dictionary<int, RgbaImage?> _bySpecies = new();
+    private readonly Dictionary<(int Species, int Frame), RgbaImage?> _bySpeciesFrame = new();
+    private readonly Dictionary<int, int> _frameCount = new();
     private readonly Dictionary<int, RgbaImage?> _byLiveType = new();
+    private readonly Dictionary<byte, short> _liveTypeSpeciesOverrides = new();
     private RomProfile? _profile;
 
     public ActorSpriteAtlas(string repositoryRoot, RomProfile? profile = null)
@@ -41,6 +44,22 @@ public sealed class ActorSpriteAtlas
         return hint;
     }
 
+    public void ApplyAppearance(PlayAppearance appearance)
+    {
+        foreach (byte typeId in new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 33, 34, 35 })
+        {
+            var species = appearance.TryResolveLiveType(typeId);
+            if (species is short s && s > 0)
+                SetLiveTypeSpecies(typeId, s);
+        }
+    }
+
+    public void SetLiveTypeSpecies(byte typeId, short species)
+    {
+        _liveTypeSpeciesOverrides[typeId] = species;
+        _byLiveType.Remove(typeId);
+    }
+
     public RgbaImage? TryGetForLive(RomImage rom, RomProfile? profile, byte typeId)
     {
         if (_byLiveType.TryGetValue(typeId, out var cached))
@@ -50,44 +69,107 @@ public sealed class ActorSpriteAtlas
             _profile = profile;
         _profile ??= RomProfile.Us10;
 
-        var species = GroundLivesTypes.ResolvePreviewSpecies(rom, _profile, typeId);
+        short species;
+        if (_liveTypeSpeciesOverrides.TryGetValue(typeId, out var over))
+            species = over;
+        else
+            species = GroundLivesTypes.ResolvePreviewSpecies(rom, _profile, typeId);
+
         var sprite = species > 0 ? TryGetSpeciesSprite(species) : null;
         _byLiveType[typeId] = sprite;
         return sprite;
     }
 
-    public RgbaImage? TryGetSpeciesSprite(int speciesId)
+    public RgbaImage? TryGetSpeciesSprite(int speciesId) =>
+        TryGetSpeciesSprite(speciesId, frameIndex: 0);
+
+    /// <summary>
+    /// Frame-aware sprite lookup. Idle cycles frames 0..N; sleep prefers a later still.
+    /// </summary>
+    public RgbaImage? TryGetSpeciesSprite(int speciesId, int frameIndex)
     {
-        if (_bySpecies.TryGetValue(speciesId, out var cached))
+        if (speciesId <= 0)
+            return null;
+
+        EnsureFramesLoaded(speciesId);
+        var count = _frameCount.GetValueOrDefault(speciesId);
+        if (count <= 0)
+            return null;
+
+        var index = Math.Abs(frameIndex) % count;
+        if (_bySpeciesFrame.TryGetValue((speciesId, index), out var cached))
             return cached;
+        return _bySpecies.GetValueOrDefault(speciesId);
+    }
+
+    /// <summary>
+    /// Idle / standing: freeze on frame 0.
+    /// Sleep: dedicated still.
+    /// Walking or a non-idle SELECT_ANIMATION: cycle frames.
+    /// </summary>
+    public RgbaImage? TryGetAnimatedSprite(int speciesId, int animationId, int tickFrames, bool isMoving = false)
+    {
+        EnsureFramesLoaded(speciesId);
+        var count = _frameCount.GetValueOrDefault(speciesId);
+        if (count <= 0)
+            return null;
+
+        if (animationId == GroundScriptVm.AnimSleep)
+        {
+            var sleepIndex = count >= 7 ? 6 : count - 1;
+            return TryGetSpeciesSprite(speciesId, sleepIndex);
+        }
+
+        var shouldCycle = isMoving ||
+            (animationId != GroundScriptVm.AnimIdle && animationId > 0);
+        if (!shouldCycle)
+            return TryGetSpeciesSprite(speciesId, 0);
+
+        var cycle = Math.Min(4, count);
+        var frame = (tickFrames / 8) % cycle;
+        return TryGetSpeciesSprite(speciesId, frame);
+    }
+
+    private void EnsureFramesLoaded(int speciesId)
+    {
+        if (_frameCount.ContainsKey(speciesId))
+            return;
 
         var folder = _folders.TryGetValue(speciesId, out var mapped)
             ? mapped
             : MonsterSpriteFolders.ForSpecies(speciesId, _folders);
         if (folder is null)
         {
+            _frameCount[speciesId] = 0;
             _bySpecies[speciesId] = null;
-            return null;
+            return;
         }
 
-        var path = Path.Combine(_repositoryRoot, "graphics", "ax", "mon", folder, "sprite_1.png");
-        if (!File.Exists(path))
+        var dir = Path.Combine(_repositoryRoot, "graphics", "ax", "mon", folder);
+        var loaded = 0;
+        // Load sequential sprite_1.png … sprite_16.png (skip compound names like sprite_16_1).
+        for (var i = 1; i <= 16; i++)
         {
-            _bySpecies[speciesId] = null;
-            return null;
+            var path = Path.Combine(dir, $"sprite_{i}.png");
+            if (!File.Exists(path))
+                break;
+            try
+            {
+                var image = RgbaImage.FromPng(File.ReadAllBytes(path));
+                _bySpeciesFrame[(speciesId, loaded)] = image;
+                if (loaded == 0)
+                    _bySpecies[speciesId] = image;
+                loaded++;
+            }
+            catch
+            {
+                break;
+            }
         }
 
-        try
-        {
-            var image = RgbaImage.FromPng(File.ReadAllBytes(path));
-            _bySpecies[speciesId] = image;
-            return image;
-        }
-        catch
-        {
+        if (loaded == 0)
             _bySpecies[speciesId] = null;
-            return null;
-        }
+        _frameCount[speciesId] = loaded;
     }
 }
 
