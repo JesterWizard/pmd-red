@@ -71,6 +71,8 @@ run_windows_watch() {
   echo "Starting Windows hot reload…"
   echo "Project: $project_win"
   cd "$win_mirror/RescueEditor"
+  # Avoid interactive "rude edit" prompts that leave the app stuck/silent on old code.
+  export DOTNET_WATCH_RESTART_ON_RUDE_EDIT=1
   "$win_dotnet" watch run --project "$project_win"
 }
 

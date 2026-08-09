@@ -49,7 +49,10 @@ public sealed class MainWindow : Window
     private bool _useGridView;
     private AssetDescriptor? _selectedAsset;
     private SoundPreviewPanel? _soundPreview;
+    private readonly AgbplayStreamHost _soundStreamHost = new();
+    private readonly SoundCacheWarmer _soundCacheWarmer = new();
     private CancellationTokenSource? _thumbnailCts;
+    private CancellationTokenSource? _previewCts;
     private readonly System.Diagnostics.Stopwatch _loadStopwatch = new();
     private DispatcherTimer? _loadTimer;
     private Image? _previewImage;
@@ -446,6 +449,15 @@ public sealed class MainWindow : Window
             _catalog = result.Catalog;
             _charmap = result.Charmap;
 
+            // Warm the streamer (ROM load ~0.3–0.7s) so the first click stays under 1s.
+            var romPath = _rom.Path;
+            _ = Task.Run(() =>
+            {
+                try { _soundStreamHost.EnsureStarted(romPath); }
+                catch { /* playback will retry on demand */ }
+            });
+            _soundCacheWarmer.Start(_rom, _catalog);
+
             ShowLoadedCategory(Categories[0], selectFirstAsset: true);
 
             var counts = string.Join("  ", Categories.Select(category =>
@@ -697,19 +709,42 @@ public sealed class MainWindow : Window
         if (_rom is null || _charmap is null)
             return;
 
+        _previewCts?.Cancel();
+        var cts = new CancellationTokenSource();
+        _previewCts = cts;
+        var token = cts.Token;
+
         _selectedAsset = asset;
         _exportSelected.IsEnabled = true;
-        DisposeSoundPreview();
+
+        if (asset.Kind is AssetKind.SoundSong or AssetKind.SoundWave)
+        {
+            _soundPreview ??= new SoundPreviewPanel(_soundStreamHost, _soundCacheWarmer);
+            _previewHost.Child = _soundPreview; // always show player immediately
+            _soundPreview.StopAudio();
+        }
+        else
+        {
+            DisposeSoundPreview();
+        }
+
         try
         {
-            var preview = await Task.Run(() => AssetPreviewer.Create(_rom, asset, _charmap));
+            var rom = _rom;
+            var charmap = _charmap;
+            var preview = await Task.Run(() => AssetPreviewer.Create(rom, asset, charmap), token);
+            if (token.IsCancellationRequested || _rom is null)
+                return;
+
             if (asset.Kind is AssetKind.SoundSong or AssetKind.SoundWave)
             {
-                _soundPreview = new SoundPreviewPanel();
+                _soundPreview ??= new SoundPreviewPanel(_soundStreamHost, _soundCacheWarmer);
                 _previewHost.Child = _soundPreview;
-                await _soundPreview.LoadAsync(_rom, asset, preview.Text ?? string.Empty);
+                await _soundPreview.LoadAsync(_rom, asset, preview.Text ?? string.Empty, token);
                 return;
             }
+
+            DisposeSoundPreview();
 
             if (preview.IsImage)
             {
@@ -774,15 +809,22 @@ public sealed class MainWindow : Window
                 };
             }
         }
+        catch (OperationCanceledException)
+        {
+            // Newer selection replaced this preview.
+        }
         catch (Exception exception) when (exception is InvalidDataException or
                                            ArgumentOutOfRangeException or IOException or
                                            IndexOutOfRangeException)
         {
-            _previewHost.Child = new TextBlock
+            if (!token.IsCancellationRequested)
             {
-                Text = $"{asset.DisplayName}\n\nUnable to preview this asset:\n{exception.Message}",
-                TextWrapping = TextWrapping.Wrap,
-            };
+                _previewHost.Child = new TextBlock
+                {
+                    Text = $"{asset.DisplayName}\n\nUnable to preview this asset:\n{exception.Message}",
+                    TextWrapping = TextWrapping.Wrap,
+                };
+            }
         }
     }
 
@@ -837,6 +879,8 @@ public sealed class MainWindow : Window
     private void ClearRom()
     {
         DisposeSoundPreview();
+        _soundCacheWarmer.Stop();
+        _soundStreamHost.Reset();
         _rom = null;
         _catalog = null;
         _charmap = null;

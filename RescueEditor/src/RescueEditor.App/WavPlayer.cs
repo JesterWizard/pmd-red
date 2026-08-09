@@ -1,4 +1,5 @@
 using NAudio.Wave;
+using NAudio.Wave.SampleProviders;
 
 namespace RescueEditor.App;
 
@@ -6,7 +7,7 @@ internal sealed class WavPlayer : IDisposable
 {
     private readonly object _gate = new();
     private WaveOutEvent? _output;
-    private WaveFileReader? _reader;
+    private WaveStream? _reader;
     private byte[] _wav = Array.Empty<byte>();
     private bool _disposed;
 
@@ -16,6 +17,15 @@ internal sealed class WavPlayer : IDisposable
         {
             lock (_gate)
                 return _output?.PlaybackState == PlaybackState.Playing;
+        }
+    }
+
+    public bool IsPaused
+    {
+        get
+        {
+            lock (_gate)
+                return _output?.PlaybackState == PlaybackState.Paused;
         }
     }
 
@@ -37,24 +47,6 @@ internal sealed class WavPlayer : IDisposable
         }
     }
 
-    public int PositionBytes
-    {
-        get
-        {
-            lock (_gate)
-                return _reader is null ? 0 : (int)Math.Max(0, _reader.Position);
-        }
-    }
-
-    public byte[] WavBytes
-    {
-        get
-        {
-            lock (_gate)
-                return _wav;
-        }
-    }
-
     public void Load(byte[] wavBytes)
     {
         ArgumentNullException.ThrowIfNull(wavBytes);
@@ -65,9 +57,14 @@ internal sealed class WavPlayer : IDisposable
             if (_wav.Length < 44)
                 return;
 
-            _reader = new WaveFileReader(new MemoryStream(_wav, writable: false));
-            _output = new WaveOutEvent();
-            _output.Init(_reader);
+            var reader = new WaveFileReader(new MemoryStream(_wav, writable: false));
+            _reader = reader;
+            // -1 = WAVE_MAPPER (system default). Device 0 can be a silent/disabled endpoint.
+            _output = new WaveOutEvent { DesiredLatency = 200, DeviceNumber = -1 };
+            _output.Init(ToPcm16(reader));
+            // Clear a stuck WaveOut mute left by older builds that set Volume = 0
+            // (that writes the per-app Windows mixer entry for this process name).
+            try { _output.Volume = 1f; } catch { /* ignore */ }
         }
     }
 
@@ -79,6 +76,7 @@ internal sealed class WavPlayer : IDisposable
                 return;
             if (_reader.Position >= _reader.Length)
                 _reader.Position = 0;
+            try { _output.Volume = 1f; } catch { /* ignore */ }
             _output.Play();
         }
     }
@@ -93,7 +91,7 @@ internal sealed class WavPlayer : IDisposable
     {
         lock (_gate)
         {
-            _output?.Stop();
+            try { _output?.Stop(); } catch { /* ignore */ }
             if (_reader is not null)
                 _reader.Position = 0;
         }
@@ -122,12 +120,23 @@ internal sealed class WavPlayer : IDisposable
         }
     }
 
+    internal static WaveOutEvent CreateOutput() =>
+        new() { DesiredLatency = 200, DeviceNumber = -1 };
+
+    private static IWaveProvider ToPcm16(WaveStream reader)
+    {
+        if (reader.WaveFormat.Encoding == WaveFormatEncoding.Pcm &&
+            reader.WaveFormat.BitsPerSample == 16)
+            return reader;
+        return new SampleToWaveProvider16(reader.ToSampleProvider());
+    }
+
     private void DisposeOutputLocked()
     {
-        _output?.Stop();
-        _output?.Dispose();
+        try { _output?.Stop(); } catch { /* ignore */ }
+        try { _output?.Dispose(); } catch { /* ignore */ }
         _output = null;
-        _reader?.Dispose();
+        try { _reader?.Dispose(); } catch { /* ignore */ }
         _reader = null;
     }
 }

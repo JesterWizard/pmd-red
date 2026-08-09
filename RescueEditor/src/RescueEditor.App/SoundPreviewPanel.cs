@@ -16,25 +16,38 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
     private readonly TextBlock _title;
     private readonly TextBlock _meta;
     private readonly TextBlock _status;
+    private readonly TextBlock _timeStart;
+    private readonly TextBlock _timeEnd;
     private readonly Button _playButton;
     private readonly Button _stopButton;
     private readonly Slider _seek;
-    private readonly Canvas _pianoRoll;
     private readonly Canvas _waveform;
     private readonly TextBox _codeBox;
-    private readonly WavPlayer _player = new();
+    private readonly AgbplayStreamPlayer _streamPlayer;
+    private readonly SoundCacheWarmer? _cacheWarmer;
     private readonly DispatcherTimer _timer;
-    private SoundSequence? _sequence;
     private WaveformPeaks.Peak[] _peaks = Array.Empty<WaveformPeaks.Peak>();
     private byte[] _wav = Array.Empty<byte>();
-    private Line? _waveformPlayhead;
-    private Line? _pianoPlayhead;
-    private bool _seeking;
+    private RomImage? _rom;
+    private AssetDescriptor? _asset;
+    private int _songId = -1;
+    private int _maxLoops = 1;
     private bool _disposed;
     private bool _waveformDirty = true;
+    private bool _seekDragging;
+    private Line? _waveformPlayhead;
+    private DateTime _playRequestUtc;
+    private TimeSpan _knownDuration;
+    private TimeSpan _estimatedDuration;
+    private long _lastWaveformBytes;
+    private CancellationTokenSource? _loadCts;
+    private int _waveformUpdatePending; // 0 = idle, 1 = queued/running
+    private Polyline? _waveformShape;
 
-    public SoundPreviewPanel()
+    public SoundPreviewPanel(AgbplayStreamHost streamHost, SoundCacheWarmer? cacheWarmer = null)
     {
+        _cacheWarmer = cacheWarmer;
+        _streamPlayer = new AgbplayStreamPlayer(streamHost);
         _title = new TextBlock { FontSize = 18, FontWeight = FontWeight.SemiBold };
         _meta = new TextBlock
         {
@@ -48,83 +61,165 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
             FontSize = 12,
             VerticalAlignment = VerticalAlignment.Center,
         };
+        _timeStart = new TextBlock
+        {
+            Text = "0:00",
+            FontSize = 12,
+            Foreground = Brushes.Gray,
+            VerticalAlignment = VerticalAlignment.Center,
+            MinWidth = 40,
+        };
+        _timeEnd = new TextBlock
+        {
+            Text = "0:00",
+            FontSize = 12,
+            Foreground = Brushes.Gray,
+            VerticalAlignment = VerticalAlignment.Center,
+            MinWidth = 40,
+            TextAlignment = TextAlignment.Right,
+        };
         _playButton = new Button { Content = "Play", MinWidth = 72 };
         _stopButton = new Button { Content = "Stop", MinWidth = 72 };
-        _playButton.Click += (_, _) => TogglePlay();
-        _stopButton.Click += (_, _) =>
-        {
-            _player.Stop();
-            _playButton.Content = "Play";
-            UpdateVisuals();
-        };
 
         _seek = new Slider
         {
             Minimum = 0,
             Maximum = 1,
             Value = 0,
-            Margin = new Thickness(0, 8, 0, 0),
+            IsEnabled = false,
+            VerticalAlignment = VerticalAlignment.Center,
         };
-        _seek.AddHandler(PointerPressedEvent, (_, _) => _seeking = true, handledEventsToo: true);
-        _seek.AddHandler(PointerReleasedEvent, (_, _) =>
-        {
-            _player.Seek(_seek.Value);
-            _seeking = false;
-        }, handledEventsToo: true);
 
-        _pianoRoll = new Canvas
+        _playButton.Click += (_, _) =>
         {
-            Height = 140,
-            Background = new SolidColorBrush(Color.FromRgb(18, 18, 22)),
-            ClipToBounds = true,
+            if (_streamPlayer.IsPlaying)
+            {
+                _streamPlayer.Pause();
+                _playButton.Content = "Play";
+                return;
+            }
+
+            if (_streamPlayer.IsPaused ||
+                (Equals(_playButton.Content, "Play") && _streamPlayer.BufferedDuration > TimeSpan.Zero))
+            {
+                _streamPlayer.Resume();
+                _playButton.Content = "Pause";
+                return;
+            }
+
+            StartPlayback();
         };
+        _stopButton.Click += (_, _) =>
+        {
+            _loadCts?.Cancel();
+            _streamPlayer.Stop();
+            _cacheWarmer?.Resume();
+            _playButton.Content = "Play";
+            _seek.Value = 0;
+            _timeStart.Text = "0:00";
+            UpdateVisuals();
+        };
+
+        _seek.AddHandler(InputElement.PointerPressedEvent, (_, _) => _seekDragging = true,
+            handledEventsToo: true);
+        _seek.AddHandler(InputElement.PointerReleasedEvent, (_, _) =>
+        {
+            if (!_seekDragging)
+                return;
+            _seekDragging = false;
+            ApplySeek(_seek.Value);
+        }, handledEventsToo: true);
+        _seek.AddHandler(InputElement.PointerCaptureLostEvent, (_, _) =>
+        {
+            if (!_seekDragging)
+                return;
+            _seekDragging = false;
+            ApplySeek(_seek.Value);
+        }, handledEventsToo: true);
+        _seek.PropertyChanged += (_, args) =>
+        {
+            if (args.Property != RangeBase.ValueProperty || !_seekDragging)
+                return;
+            _timeStart.Text = FormatTime(TimeSpan.FromSeconds(_seek.Value));
+        };
+
         _waveform = new Canvas
         {
-            Height = 96,
             Background = new SolidColorBrush(Color.FromRgb(14, 14, 18)),
             ClipToBounds = true,
-            Margin = new Thickness(0, 8, 0, 0),
+            HorizontalAlignment = HorizontalAlignment.Stretch,
+            VerticalAlignment = VerticalAlignment.Stretch,
         };
-        _pianoRoll.SizeChanged += (_, _) => { _waveformDirty = true; DrawPianoRoll(); };
-        _waveform.SizeChanged += (_, _) => { _waveformDirty = true; DrawWaveform(); };
-
-        var playerContent = new ScrollViewer
+        _waveform.SizeChanged += (_, _) =>
         {
-            HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled,
-            VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-            Content = new StackPanel
+            _waveform.Children.Clear();
+            _waveformShape = null;
+            _waveformPlayhead = null;
+            _waveformDirty = true;
+            DrawWaveform();
+        };
+        _waveform.PointerPressed += OnWaveformPointerPressed;
+
+        var seekRow = new Grid
+        {
+            Margin = new Thickness(0, 8, 0, 0),
+            ColumnDefinitions = ColumnDefinitions.Parse("Auto,*,Auto"),
+            Children =
             {
-                Margin = new Thickness(12),
-                Spacing = 8,
-                Children =
-                {
-                    _title,
-                    _meta,
-                    new StackPanel
-                    {
-                        Orientation = Orientation.Horizontal,
-                        Spacing = 8,
-                        Children = { _playButton, _stopButton, _status },
-                    },
-                    _seek,
-                    new TextBlock
-                    {
-                        Text = "Waveform",
-                        FontSize = 12,
-                        Foreground = Brushes.Gray,
-                        Margin = new Thickness(0, 8, 0, 0),
-                    },
-                    _waveform,
-                    new TextBlock
-                    {
-                        Text = "Piano roll",
-                        FontSize = 12,
-                        Foreground = Brushes.Gray,
-                    },
-                    _pianoRoll,
-                },
+                _timeStart,
+                _seek,
+                _timeEnd,
             },
         };
+        Grid.SetColumn(_timeStart, 0);
+        Grid.SetColumn(_seek, 1);
+        Grid.SetColumn(_timeEnd, 2);
+        _seek.Margin = new Thickness(10, 0);
+
+        var playerGrid = new Grid
+        {
+            Margin = new Thickness(12),
+            RowDefinitions = RowDefinitions.Parse("Auto,Auto,Auto,Auto,*"),
+        };
+        playerGrid.Children.Add(_title);
+        Grid.SetRow(_title, 0);
+        playerGrid.Children.Add(_meta);
+        Grid.SetRow(_meta, 1);
+        _meta.Margin = new Thickness(0, 4, 0, 0);
+
+        var controls = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            Spacing = 8,
+            Margin = new Thickness(0, 8, 0, 0),
+            Children = { _playButton, _stopButton, _status },
+        };
+        playerGrid.Children.Add(controls);
+        Grid.SetRow(controls, 2);
+
+        playerGrid.Children.Add(seekRow);
+        Grid.SetRow(seekRow, 3);
+
+        var waveHost = new Grid
+        {
+            Margin = new Thickness(0, 10, 0, 0),
+            RowDefinitions = RowDefinitions.Parse("Auto,*"),
+            Children =
+            {
+                new TextBlock
+                {
+                    Text = "Waveform",
+                    FontSize = 12,
+                    Foreground = Brushes.Gray,
+                    Margin = new Thickness(0, 0, 0, 4),
+                },
+                _waveform,
+            },
+        };
+        Grid.SetRow(waveHost.Children[0], 0);
+        Grid.SetRow(_waveform, 1);
+        playerGrid.Children.Add(waveHost);
+        Grid.SetRow(waveHost, 4);
 
         _codeBox = new TextBox
         {
@@ -137,7 +232,7 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
         };
 
         _tabs = new TabControl();
-        _tabs.Items.Add(new TabItem { Header = "Player", Content = playerContent });
+        _tabs.Items.Add(new TabItem { Header = "Player", Content = playerGrid });
         _tabs.Items.Add(new TabItem
         {
             Header = "Code",
@@ -153,31 +248,136 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
         _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(33) };
         _timer.Tick += (_, _) => UpdateVisuals();
         _timer.Start();
+
+        _streamPlayer.PlaybackStarted += () => Dispatcher.UIThread.Post(() =>
+        {
+            var ms = (DateTime.UtcNow - _playRequestUtc).TotalMilliseconds;
+            _playButton.Content = "Pause";
+            _status.Text = ms > 0 && ms < 5000 ? $"Playing (started in {ms:0} ms)" : "Playing";
+            RefreshDurationUi();
+        });
+        _streamPlayer.Failed += message => Dispatcher.UIThread.Post(() =>
+        {
+            _cacheWarmer?.Resume();
+            _status.Text = message;
+            _playButton.Content = "Play";
+        });
+        _streamPlayer.CompletedWav += wav =>
+        {
+            var songId = _songId;
+            var maxLoops = _maxLoops;
+            var romPath = _rom?.Path;
+            var cts = _loadCts;
+            _ = Task.Run(() =>
+            {
+                var peaks = WaveformPeaks.Build(wav, bucketCount: 640);
+                var duration = TimeSpan.FromSeconds(GuessWavDurationSeconds(wav));
+                if (romPath is not null && songId >= 0)
+                {
+                    try { AgbplayRenderer.SaveCachedWav(romPath, songId, maxLoops, wav); }
+                    catch { /* ignore */ }
+                }
+
+                Dispatcher.UIThread.Post(() =>
+                {
+                    if (_disposed || cts?.IsCancellationRequested == true)
+                        return;
+                    _wav = wav;
+                    _peaks = peaks;
+                    _waveformDirty = true;
+                    _knownDuration = duration;
+                    _lastWaveformBytes = Math.Max(0, wav.Length - 44);
+                    DrawWaveform();
+                    RefreshDurationUi();
+                    _status.Text = _streamPlayer.IsPlaying ? "Playing" : "Ready";
+                    if (!_streamPlayer.IsPlaying)
+                        _cacheWarmer?.Resume();
+                });
+            });
+        };
+        _streamPlayer.BufferProgress += RequestStreamingWaveformUpdate;
     }
 
-    public async Task LoadAsync(RomImage rom, AssetDescriptor asset, string codeText)
+    public async Task LoadAsync(
+        RomImage rom,
+        AssetDescriptor asset,
+        string codeText,
+        CancellationToken token = default)
     {
-        _player.Stop();
+        _loadCts?.Cancel();
+        var cts = CancellationTokenSource.CreateLinkedTokenSource(token);
+        _loadCts = cts;
+        var loadToken = cts.Token;
+
+        _streamPlayer.Stop();
+        _cacheWarmer?.Resume();
+        _rom = rom;
+        _asset = asset;
         _playButton.Content = "Play";
         _title.Text = asset.Name;
         _codeBox.Text = codeText;
-        _status.Text = "Rendering with agbplay…";
+        _status.Text = "Preparing…";
         _seek.Value = 0;
+        _seek.IsEnabled = false;
+        _knownDuration = TimeSpan.Zero;
+        _estimatedDuration = TimeSpan.Zero;
+        _lastWaveformBytes = 0;
+        _waveformUpdatePending = 0;
+        _timeStart.Text = "0:00";
+        _timeEnd.Text = "--:--";
         _peaks = Array.Empty<WaveformPeaks.Peak>();
         _wav = Array.Empty<byte>();
         _waveformDirty = true;
+        _songId = -1;
 
-        var built = await Task.Run(() => BuildPreview(rom, asset));
-        _sequence = built.Sequence;
-        _wav = built.Wav;
-        _peaks = built.Peaks;
-        _meta.Text = built.Meta;
-        _status.Text = built.Status;
-        if (_wav.Length >= 44)
-            _player.Load(_wav);
-        _waveformDirty = true;
-        DrawPianoRoll();
-        DrawWaveform();
+        try
+        {
+            var prepared = await Task.Run(() => PreparePreview(rom, asset), loadToken);
+            if (loadToken.IsCancellationRequested || _disposed)
+                return;
+
+            _songId = prepared.SongId;
+            _maxLoops = prepared.MaxLoops;
+            _meta.Text = prepared.Meta;
+            _estimatedDuration = prepared.EstimatedDuration;
+            DrawWaveform();
+            RefreshDurationUi();
+
+            if (prepared.CachedWav.Length > 44)
+            {
+                _wav = prepared.CachedWav;
+                _peaks = WaveformPeaks.Build(_wav, bucketCount: DesiredBucketCount());
+                _knownDuration = TimeSpan.FromSeconds(GuessWavDurationSeconds(_wav));
+                _waveformDirty = true;
+                DrawWaveform();
+                RefreshDurationUi();
+                _status.Text = "Ready (cached)";
+            }
+            else
+            {
+                _status.Text = AgbplayRenderer.IsStreamAvailable()
+                    ? "Starting stream…"
+                    : "agbplay-stream missing — cannot play quickly";
+            }
+
+            if (loadToken.IsCancellationRequested || _disposed)
+                return;
+            StartPlayback();
+        }
+        catch (OperationCanceledException)
+        {
+            // switched tracks
+        }
+    }
+
+    /// <summary>Immediate silence without tearing down the panel.</summary>
+    public void StopAudio()
+    {
+        _loadCts?.Cancel();
+        _streamPlayer.Stop();
+        _cacheWarmer?.Resume();
+        _playButton.Content = "Play";
+        _status.Text = "Preparing…";
     }
 
     public void Dispose()
@@ -185,232 +385,430 @@ internal sealed class SoundPreviewPanel : UserControl, IDisposable
         if (_disposed)
             return;
         _disposed = true;
+        _loadCts?.Cancel();
         _timer.Stop();
-        _player.Dispose();
+        _streamPlayer.Dispose();
     }
 
-    private void TogglePlay()
+    private void StartPlayback()
     {
-        if (_wav.Length < 44)
+        if (_disposed || _rom is null || _asset is null)
             return;
-        if (_player.IsPlaying)
+
+        var rom = _rom;
+        var asset = _asset;
+        var songId = _songId;
+        var maxLoops = _maxLoops;
+        var wav = _wav;
+
+        _playRequestUtc = DateTime.UtcNow;
+
+        if (asset.Kind == AssetKind.SoundWave)
         {
-            _player.Pause();
-            _playButton.Content = "Play";
+            if (wav.Length < 44 && asset.HasRomRange)
+            {
+                try { wav = SoundWaveCodec.ToWave(rom, asset); }
+                catch (Exception exception) when (exception is InvalidDataException or ArgumentException)
+                {
+                    _status.Text = exception.Message;
+                    return;
+                }
+                _wav = wav;
+                _peaks = WaveformPeaks.Build(wav);
+                _knownDuration = TimeSpan.FromSeconds(GuessWavDurationSeconds(wav));
+                _waveformDirty = true;
+                DrawWaveform();
+                RefreshDurationUi();
+            }
+            if (wav.Length < 44)
+            {
+                _status.Text = "No playable sample data.";
+                return;
+            }
+            _streamPlayer.PlayCached(wav);
+            return;
+        }
+
+        if (songId < 0)
+        {
+            _status.Text = "Song ID unavailable.";
+            return;
+        }
+
+        if (AgbplayRenderer.TryGetCachedWav(rom.Path, songId, maxLoops, out var cached, out _))
+        {
+            _wav = cached;
+            _peaks = WaveformPeaks.Build(cached);
+            _knownDuration = TimeSpan.FromSeconds(GuessWavDurationSeconds(cached));
+            _waveformDirty = true;
+            DrawWaveform();
+            RefreshDurationUi();
+            _streamPlayer.PlayCached(cached);
+            return;
+        }
+
+        if (!AgbplayRenderer.IsStreamAvailable())
+        {
+            _status.Text = "agbplay-stream not found under tools/agbplay.";
+            return;
+        }
+
+        _status.Text = "Buffering…";
+        _cacheWarmer?.Pause();
+        _streamPlayer.StartStream(rom.Path, songId, maxLoops);
+    }
+
+    private void ApplySeek(double seconds)
+    {
+        var target = TimeSpan.FromSeconds(Math.Max(0, seconds));
+        if (_wav.Length > 44 && !_streamPlayer.CanSeek)
+        {
+            // Prefer full-file seek: restart from cache at the requested position.
+            var wasPlaying = _streamPlayer.IsPlaying || _streamPlayer.IsPaused;
+            _streamPlayer.PlayCached(_wav);
+            _streamPlayer.Seek(target);
+            if (!wasPlaying)
+                _streamPlayer.Pause();
+            _playButton.Content = wasPlaying ? "Pause" : "Play";
+            RefreshDurationUi();
+            return;
+        }
+
+        if (!_streamPlayer.Seek(target))
+            return;
+
+        _timeStart.Text = FormatTime(target);
+        UpdatePlayhead();
+    }
+
+    private void OnWaveformPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (!_seek.IsEnabled || _seek.Maximum <= 0)
+            return;
+        var x = e.GetPosition(_waveform).X;
+        var width = _waveform.Bounds.Width;
+        if (width <= 1)
+            return;
+        var seconds = Math.Clamp(x / width, 0, 1) * _seek.Maximum;
+        _seek.Value = seconds;
+        ApplySeek(seconds);
+    }
+
+    private void RefreshDurationUi()
+    {
+        // Prefer final rendered/cached length. While still streaming, use the sequence
+        // estimate — never the live capture length (agbplay fills far faster than realtime).
+        var duration = _streamPlayer.Duration;
+        if (duration <= TimeSpan.Zero)
+            duration = _knownDuration;
+        if (duration <= TimeSpan.Zero && _wav.Length > 44)
+            duration = TimeSpan.FromSeconds(GuessWavDurationSeconds(_wav));
+
+        var hasFinal = duration > TimeSpan.Zero;
+        if (hasFinal)
+            _knownDuration = duration;
+
+        var display = hasFinal
+            ? duration
+            : _estimatedDuration;
+
+        if (display > TimeSpan.Zero)
+        {
+            _timeEnd.Text = hasFinal ? FormatTime(display) : "~" + FormatTime(display);
+            var seekMax = display.TotalSeconds;
+            // Allow seeking through whatever has already been buffered even if estimate is short.
+            if (_streamPlayer.IsLiveStreaming)
+                seekMax = Math.Max(seekMax, _streamPlayer.CapturedDuration.TotalSeconds);
+            _seek.Maximum = Math.Max(0.001, seekMax);
+            _seek.IsEnabled = _streamPlayer.CanSeek || _wav.Length > 44 || _streamPlayer.IsLiveStreaming;
         }
         else
         {
-            _player.Play();
-            _playButton.Content = "Pause";
+            _timeEnd.Text = "--:--";
+            var captured = _streamPlayer.CapturedDuration.TotalSeconds;
+            _seek.Maximum = Math.Max(0.001, captured > 0 ? captured : 1);
+            _seek.IsEnabled = _streamPlayer.CanSeek || captured > 0.25;
         }
+    }
+
+    private void RequestStreamingWaveformUpdate()
+    {
+        if (_disposed || _wav.Length > 44 || _streamPlayer.IsStreamComplete)
+            return;
+        if (Interlocked.CompareExchange(ref _waveformUpdatePending, 1, 0) != 0)
+            return;
+
+        var cts = _loadCts;
+        var estimated = _estimatedDuration;
+        var bucketCount = DesiredBucketCount();
+        _ = Task.Run(() =>
+        {
+            try
+            {
+                if (_disposed || cts?.IsCancellationRequested == true)
+                    return;
+                if (!_streamPlayer.TryBuildCapturedPeaks(bucketCount, out var peaks, out var bytesUsed))
+                    return;
+                if (bytesUsed < 8192 || bytesUsed == _lastWaveformBytes)
+                    return;
+
+                // Left-align rendered audio within the estimated total length when known.
+                if (estimated > TimeSpan.Zero)
+                {
+                    var capturedSeconds = bytesUsed / 192000.0; // fallback; refined below if possible
+                    var captured = _streamPlayer.CapturedDuration;
+                    if (captured > TimeSpan.Zero)
+                        capturedSeconds = captured.TotalSeconds;
+                    var ratio = Math.Clamp(capturedSeconds / estimated.TotalSeconds, 0.02, 1.0);
+                    var filled = Math.Max(1, (int)(peaks.Length * ratio));
+                    if (filled < peaks.Length)
+                    {
+                        var padded = new WaveformPeaks.Peak[peaks.Length];
+                        for (var i = 0; i < filled; i++)
+                        {
+                            var src = i * peaks.Length / filled;
+                            padded[i] = peaks[Math.Min(src, peaks.Length - 1)];
+                        }
+                        peaks = padded;
+                    }
+                }
+
+                Dispatcher.UIThread.Post(() =>
+                {
+                    if (_disposed || cts?.IsCancellationRequested == true)
+                        return;
+                    _lastWaveformBytes = bytesUsed;
+                    _peaks = peaks;
+                    _waveformDirty = true;
+                    DrawWaveform();
+                    RefreshDurationUi();
+                });
+            }
+            finally
+            {
+                Interlocked.Exchange(ref _waveformUpdatePending, 0);
+            }
+        });
+    }
+
+    private int DesiredBucketCount()
+    {
+        var width = _waveform.Bounds.Width;
+        if (width <= 1)
+            return 480;
+        return Math.Clamp((int)width, 160, 720);
     }
 
     private void UpdateVisuals()
     {
         if (_disposed)
             return;
-        var total = _player.TotalTime.TotalSeconds;
-        if (!_seeking && total > 0)
-            _seek.Value = _player.CurrentTime.TotalSeconds / total;
-        if (total > 0)
-            _status.Text = $"{FormatTime(_player.CurrentTime)} / {FormatTime(_player.TotalTime)}";
-        if (!_player.IsPlaying && Equals(_playButton.Content, "Pause"))
+
+        if (_streamPlayer.IsPlaying)
+        {
+            _playButton.Content = "Pause";
+            var current = _streamPlayer.CurrentTime;
+            _status.Text = $"Playing  {FormatTime(current)}";
+        }
+        else if (_streamPlayer.IsPaused)
+        {
             _playButton.Content = "Play";
+        }
+        else if (Equals(_playButton.Content, "Pause"))
+        {
+            _playButton.Content = "Play";
+        }
+
+        RefreshDurationUi();
+
+        if (!_seekDragging && _seek.IsEnabled)
+        {
+            var current = _streamPlayer.CurrentTime.TotalSeconds;
+            if (current >= 0 && current <= _seek.Maximum)
+                _seek.Value = current;
+            _timeStart.Text = FormatTime(_streamPlayer.CurrentTime);
+        }
+        else if (_seekDragging)
+        {
+            _timeStart.Text = FormatTime(TimeSpan.FromSeconds(_seek.Value));
+        }
+
         if (_waveformDirty)
         {
             DrawWaveform();
-            DrawPianoRoll();
             _waveformDirty = false;
         }
         else
         {
-            UpdatePlayhead(_waveform, ref _waveformPlayhead);
-            UpdatePlayhead(_pianoRoll, ref _pianoPlayhead);
+            UpdatePlayhead();
         }
-    }
-
-    private void DrawPianoRoll()
-    {
-        _pianoRoll.Children.Clear();
-        var width = _pianoRoll.Bounds.Width;
-        var height = _pianoRoll.Bounds.Height;
-        if (width <= 1 || height <= 1 || _sequence is null || _sequence.DurationTicks <= 0)
-            return;
-
-        var notes = _sequence.Notes;
-        if (notes.Count == 0)
-            return;
-
-        var minKey = notes.Min(note => note.Key);
-        var maxKey = notes.Max(note => note.Key);
-        var keySpan = Math.Max(1, maxKey - minKey + 1);
-        var colors = new[]
-        {
-            Color.FromRgb(80, 160, 255),
-            Color.FromRgb(120, 220, 160),
-            Color.FromRgb(255, 180, 90),
-            Color.FromRgb(220, 120, 200),
-            Color.FromRgb(140, 200, 255),
-            Color.FromRgb(255, 140, 140),
-        };
-
-        foreach (var note in notes)
-        {
-            var x = note.StartTick / (double)_sequence.DurationTicks * width;
-            var w = Math.Max(2, note.DurationTicks / (double)_sequence.DurationTicks * width);
-            var y = (maxKey - note.Key) / (double)keySpan * (height - 4);
-            var h = Math.Max(3, height / keySpan);
-            var rect = new Rectangle
-            {
-                Width = w,
-                Height = h,
-                Fill = new SolidColorBrush(colors[Math.Abs(note.Track) % colors.Length]),
-                Opacity = 0.85,
-            };
-            Canvas.SetLeft(rect, x);
-            Canvas.SetTop(rect, y);
-            _pianoRoll.Children.Add(rect);
-        }
-
-        _pianoPlayhead = null;
-        UpdatePlayhead(_pianoRoll, ref _pianoPlayhead);
     }
 
     private void DrawWaveform()
     {
-        _waveform.Children.Clear();
-        _waveformPlayhead = null;
         var width = _waveform.Bounds.Width;
         var height = _waveform.Bounds.Height;
-        if (width <= 1 || height <= 1 || _peaks.Length == 0)
-            return;
-
-        var mid = height * 0.5;
-        var brush = new SolidColorBrush(Color.FromRgb(70, 170, 255));
-        var step = width / _peaks.Length;
-        for (var i = 0; i < _peaks.Length; i++)
-        {
-            var peak = _peaks[i];
-            var top = mid - Math.Abs(peak.Max) * (mid - 2);
-            var bottom = mid + Math.Abs(peak.Min) * (mid - 2);
-            if (bottom < top)
-                (top, bottom) = (bottom, top);
-            var barHeight = Math.Max(1.5, bottom - top);
-            var rect = new Rectangle
-            {
-                Width = Math.Max(1, step),
-                Height = barHeight,
-                Fill = brush,
-                Opacity = 0.95,
-            };
-            Canvas.SetLeft(rect, i * step);
-            Canvas.SetTop(rect, top);
-            _waveform.Children.Add(rect);
-        }
-
-        _waveform.Children.Add(new Line
-        {
-            StartPoint = new Point(0, mid),
-            EndPoint = new Point(width, mid),
-            Stroke = new SolidColorBrush(Color.FromArgb(60, 255, 255, 255)),
-            StrokeThickness = 1,
-        });
-
-        UpdatePlayhead(_waveform, ref _waveformPlayhead);
-    }
-
-    private void UpdatePlayhead(Canvas canvas, ref Line? playhead)
-    {
-        var width = canvas.Bounds.Width;
-        var height = canvas.Bounds.Height;
         if (width <= 1 || height <= 1)
             return;
-        var x = _seek.Value * width;
-        if (playhead is null)
+
+        if (_waveform.Children.Count == 0 || _waveformShape is null)
         {
-            playhead = new Line
+            _waveform.Children.Clear();
+            _waveformPlayhead = null;
+            _waveformShape = null;
+            var mid = height * 0.5;
+            _waveform.Children.Add(new Line
+            {
+                StartPoint = new Point(0, mid),
+                EndPoint = new Point(width, mid),
+                Stroke = new SolidColorBrush(Color.FromArgb(60, 255, 255, 255)),
+                StrokeThickness = 1,
+            });
+        }
+
+        if (_peaks.Length == 0)
+        {
+            if (_waveformShape is not null)
+            {
+                _waveform.Children.Remove(_waveformShape);
+                _waveformShape = null;
+            }
+            UpdatePlayhead();
+            return;
+        }
+
+        var midY = height * 0.5;
+        var points = new List<Point>(_peaks.Length * 2);
+        var step = width / Math.Max(1, _peaks.Length);
+        for (var i = 0; i < _peaks.Length; i++)
+        {
+            var x = i * step + step * 0.5;
+            var top = midY - Math.Abs(_peaks[i].Max) * (midY - 2);
+            points.Add(new Point(x, top));
+        }
+        for (var i = _peaks.Length - 1; i >= 0; i--)
+        {
+            var x = i * step + step * 0.5;
+            var bottom = midY + Math.Abs(_peaks[i].Min) * (midY - 2);
+            points.Add(new Point(x, bottom));
+        }
+
+        if (_waveformShape is null)
+        {
+            _waveformShape = new Polyline
+            {
+                Stroke = new SolidColorBrush(Color.FromRgb(70, 170, 255)),
+                StrokeThickness = 1.2,
+                Fill = new SolidColorBrush(Color.FromArgb(160, 70, 170, 255)),
+                Opacity = 0.95,
+            };
+            _waveform.Children.Insert(1, _waveformShape);
+        }
+
+        _waveformShape.Points = points;
+        UpdatePlayhead();
+    }
+
+    private void UpdatePlayhead()
+    {
+        var width = _waveform.Bounds.Width;
+        var height = _waveform.Bounds.Height;
+        if (width <= 1 || height <= 1)
+            return;
+
+        var total = _seek.Maximum > 0
+            ? _seek.Maximum
+            : _knownDuration.TotalSeconds;
+        if (total <= 0)
+            total = GuessWavDurationSeconds(_wav);
+        double ratio = 0;
+        if (total > 0)
+        {
+            var current = _seekDragging ? _seek.Value : _streamPlayer.CurrentTime.TotalSeconds;
+            ratio = Math.Clamp(current / total, 0, 1);
+        }
+
+        var x = ratio * width;
+        if (_waveformPlayhead is null)
+        {
+            _waveformPlayhead = new Line
             {
                 Stroke = Brushes.White,
                 StrokeThickness = 1.5,
                 Opacity = 0.9,
             };
-            canvas.Children.Add(playhead);
+            _waveform.Children.Add(_waveformPlayhead);
         }
-        playhead.StartPoint = new Point(x, 0);
-        playhead.EndPoint = new Point(x, height);
+
+        _waveformPlayhead.StartPoint = new Point(x, 0);
+        _waveformPlayhead.EndPoint = new Point(x, height);
     }
 
-    private static (SoundSequence Sequence, byte[] Wav, WaveformPeaks.Peak[] Peaks, string Meta, string Status)
-        BuildPreview(RomImage rom, AssetDescriptor asset)
+    private static (int SongId, int MaxLoops, byte[] CachedWav, string Meta, TimeSpan EstimatedDuration)
+        PreparePreview(RomImage rom, AssetDescriptor asset)
     {
         if (asset.Kind == AssetKind.SoundWave)
         {
+            byte[] wav = Array.Empty<byte>();
             try
             {
-                var waveBytes = asset.HasRomRange
-                    ? SoundWaveCodec.ToWave(rom, asset)
-                    : Array.Empty<byte>();
-                var peaks = WaveformPeaks.Build(waveBytes);
-                var waveSequence = new SoundSequence
-                {
-                    Name = asset.Name,
-                    Notes = Array.Empty<SoundNoteEvent>(),
-                    Diagnostic = waveBytes.Length == 0
-                        ? "Wave preview requires a ROM-matched DirectSound sample."
-                        : null,
-                };
-                return (waveSequence, waveBytes, peaks,
-                    asset.Description ?? asset.Format,
-                    waveBytes.Length == 0 ? waveSequence.Diagnostic! : "Ready (DirectSound sample)");
+                if (asset.HasRomRange)
+                    wav = SoundWaveCodec.ToWave(rom, asset);
             }
             catch (Exception exception) when (exception is InvalidDataException or ArgumentException)
             {
-                return (new SoundSequence { Name = asset.Name, Diagnostic = exception.Message },
-                    Array.Empty<byte>(), Array.Empty<WaveformPeaks.Peak>(),
-                    asset.Description ?? asset.Format, exception.Message);
+                return (-1, 0, Array.Empty<byte>(), exception.Message, TimeSpan.Zero);
             }
+
+            var waveDuration = TimeSpan.FromSeconds(GuessWavDurationSeconds(wav));
+            return (-1, 0, wav, asset.Description ?? asset.Format, waveDuration);
         }
 
         if (!asset.Metadata.TryGetValue("songId", out var songIdText) ||
             !int.TryParse(songIdText, out var songId))
             songId = -1;
 
+        var maxLoops = songId >= SoundIndexer.SoundEffectsStartIndex ? 0 : 1;
         var sequence = songId >= 0
             ? SoundSequenceParser.ParseFromRom(rom, songId, asset.Name, maxLoops: 1)
             : SoundSequenceParser.ParseFromSource(asset.SourcePath ?? string.Empty, asset.Name, songId);
         if (sequence.Notes.Count == 0 && asset.SourcePath is not null)
             sequence = SoundSequenceParser.ParseFromSource(asset.SourcePath, asset.Name, songId);
 
-        byte[] wav;
-        string engine;
-        try
-        {
-            if (songId < 0)
-                throw new InvalidOperationException("Song ID is unavailable.");
-            if (!AgbplayRenderer.IsAvailable())
-                throw new InvalidOperationException(
-                    "agbplay-cli not found under RescueEditor/tools/agbplay.");
-            var rendered = AgbplayRenderer.RenderSong(rom.Path, songId, maxLoops: 1);
-            wav = rendered.WavBytes;
-            engine = rendered.Engine;
-        }
-        catch (Exception exception) when (exception is InvalidOperationException or InvalidDataException or
-                                           TimeoutException or IOException)
-        {
-            // Keep piano-roll useful even when render fails.
-            return (sequence, Array.Empty<byte>(), Array.Empty<WaveformPeaks.Peak>(),
-                $"{asset.Description}\n\n{exception.Message}",
-                "Playback unavailable — " + exception.Message);
-        }
-
-        var peaksBuilt = WaveformPeaks.Build(wav);
+        AgbplayRenderer.TryGetCachedWav(rom.Path, songId, maxLoops, out var cached, out _);
+        var estimated = sequence.DurationSeconds > 0.5
+            ? TimeSpan.FromSeconds(sequence.DurationSeconds)
+            : TimeSpan.Zero;
         var meta =
             $"{asset.Description}\n" +
-            $"Engine: {engine} (mp2k/m4a)  ·  Tracks: {sequence.TrackCount}  ·  " +
-            $"Notes: {sequence.Notes.Count:N0}  ·  Audio: {wav.Length / 1024.0:0} KiB";
-        return (sequence, wav, peaksBuilt, meta, "Ready");
+            $"Tracks: {sequence.TrackCount}  ·  Notes: {sequence.Notes.Count:N0}  ·  " +
+            (cached.Length > 44 ? "Cache: hit" : "Cache: miss (streaming)");
+        return (songId, maxLoops, cached, meta, estimated);
     }
 
-    private static string FormatTime(TimeSpan value) =>
-        $"{(int)value.TotalMinutes}:{value.Seconds:00}";
+    private static double GuessWavDurationSeconds(byte[] wav)
+    {
+        if (wav.Length < 44)
+            return 0;
+        var channels = BitConverter.ToInt16(wav, 22);
+        var rate = BitConverter.ToInt32(wav, 24);
+        var bits = BitConverter.ToInt16(wav, 34);
+        if (channels <= 0 || rate <= 0 || bits <= 0)
+            return 0;
+        var dataOffset = WaveformPeaks.FindDataChunkOffset(wav);
+        if (dataOffset < 0)
+            dataOffset = 44;
+        var data = Math.Max(0, wav.Length - dataOffset);
+        var bytesPerSec = rate * channels * (bits / 8);
+        return bytesPerSec <= 0 ? 0 : data / (double)bytesPerSec;
+    }
+
+    private static string FormatTime(TimeSpan value)
+    {
+        if (value < TimeSpan.Zero)
+            value = TimeSpan.Zero;
+        return value.TotalHours >= 1
+            ? $"{(int)value.TotalHours}:{value.Minutes:00}:{value.Seconds:00}"
+            : $"{(int)value.TotalMinutes}:{value.Seconds:00}";
+    }
 }

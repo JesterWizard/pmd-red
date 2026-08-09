@@ -12,7 +12,59 @@ public static class AgbplayRenderer
 {
     public sealed record RenderResult(byte[] WavBytes, string SourcePath, string Engine);
 
-    public static bool IsAvailable() => !string.IsNullOrWhiteSpace(FindLauncher()?.Command);
+    public static bool IsAvailable() =>
+        CreateStreamLauncher() is not null || FindLauncher() is not null;
+
+    public static bool IsStreamAvailable() => CreateStreamLauncher() is not null;
+
+    public static bool TryGetCachedWav(string romPath, int songId, int maxLoops, out byte[] wav, out string path)
+    {
+        path = GetCachePath(romPath, songId, maxLoops);
+        if (File.Exists(path) && new FileInfo(path).Length > 44)
+        {
+            wav = File.ReadAllBytes(path);
+            return true;
+        }
+
+        wav = Array.Empty<byte>();
+        return false;
+    }
+
+    public static void SaveCachedWav(string romPath, int songId, int maxLoops, byte[] wav)
+    {
+        var path = GetCachePath(romPath, songId, maxLoops);
+        Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+        var temp = path + ".tmp";
+        File.WriteAllBytes(temp, wav);
+        File.Move(temp, path, overwrite: true);
+    }
+
+    public static AgbplayLauncher? CreateStreamLauncher()
+    {
+        var dir = FindToolDirectory();
+        if (dir is null)
+            return null;
+
+        var stream = Path.Combine(dir, "agbplay-stream");
+        var streamExe = Path.Combine(dir, "agbplay-stream.exe");
+        var streamSh = Path.Combine(dir, "agbplay-stream.sh");
+
+        if (OperatingSystem.IsWindows())
+        {
+            if (File.Exists(streamExe))
+                return new AgbplayLauncher(streamExe, useWsl: false, toolDir: dir, streamBinary: streamExe);
+            if (File.Exists(stream) || File.Exists(streamSh))
+                return new AgbplayLauncher("wsl.exe", useWsl: true, toolDir: dir,
+                    streamBinary: File.Exists(streamSh) ? streamSh : stream);
+            return null;
+        }
+
+        if (File.Exists(streamSh))
+            return new AgbplayLauncher(streamSh, useWsl: false, toolDir: dir, streamBinary: streamSh);
+        if (File.Exists(stream))
+            return new AgbplayLauncher(stream, useWsl: false, toolDir: dir, streamBinary: stream);
+        return null;
+    }
 
     public static RenderResult RenderSong(string romPath, int songId, int maxLoops = 1)
     {
@@ -20,13 +72,12 @@ public static class AgbplayRenderer
         if (!File.Exists(romPath))
             throw new FileNotFoundException("ROM not found for agbplay render.", romPath);
 
+        if (TryGetCachedWav(romPath, songId, maxLoops, out var cached, out var cachePath))
+            return new RenderResult(cached, cachePath, "agbplay-cache");
+
         var launcher = FindLauncher()
             ?? throw new InvalidOperationException(
                 "agbplay-cli was not found. Build/install it under RescueEditor/tools/agbplay.");
-
-        var cachePath = GetCachePath(romPath, songId, maxLoops);
-        if (File.Exists(cachePath) && new FileInfo(cachePath).Length > 44)
-            return new RenderResult(File.ReadAllBytes(cachePath), cachePath, "agbplay-cache");
 
         Directory.CreateDirectory(Path.GetDirectoryName(cachePath)!);
         var tempPath = cachePath + ".partial.wav";
@@ -140,7 +191,9 @@ public static class AgbplayRenderer
     {
         foreach (var candidate in CandidateToolDirectories())
         {
-            if (File.Exists(Path.Combine(candidate, "agbplay-cli")) ||
+            if (File.Exists(Path.Combine(candidate, "agbplay-stream")) ||
+                File.Exists(Path.Combine(candidate, "agbplay-stream.exe")) ||
+                File.Exists(Path.Combine(candidate, "agbplay-cli")) ||
                 File.Exists(Path.Combine(candidate, "agbplay-cli.exe")) ||
                 File.Exists(Path.Combine(candidate, "agbplay-cli.sh")))
                 return candidate;
@@ -149,7 +202,7 @@ public static class AgbplayRenderer
         return null;
     }
 
-    private static Launcher? FindLauncher()
+    private static AgbplayLauncher? FindLauncher()
     {
         var dir = FindToolDirectory();
         if (dir is null)
@@ -162,16 +215,17 @@ public static class AgbplayRenderer
         if (OperatingSystem.IsWindows())
         {
             if (File.Exists(win))
-                return new Launcher(win, useWsl: false, toolDir: dir);
+                return new AgbplayLauncher(win, useWsl: false, toolDir: dir, streamBinary: win);
             if (File.Exists(linux) || File.Exists(sh))
-                return new Launcher("wsl.exe", useWsl: true, toolDir: dir);
+                return new AgbplayLauncher("wsl.exe", useWsl: true, toolDir: dir,
+                    streamBinary: File.Exists(sh) ? sh : linux);
             return null;
         }
 
         if (File.Exists(sh))
-            return new Launcher(sh, useWsl: false, toolDir: dir);
+            return new AgbplayLauncher(sh, useWsl: false, toolDir: dir, streamBinary: sh);
         if (File.Exists(linux))
-            return new Launcher(linux, useWsl: false, toolDir: dir);
+            return new AgbplayLauncher(linux, useWsl: false, toolDir: dir, streamBinary: linux);
         return null;
     }
 
@@ -207,85 +261,100 @@ public static class AgbplayRenderer
         return Path.Combine(root, $"{songId:D4}_{key}.wav");
     }
 
-    private sealed class Launcher
+}
+
+public sealed class AgbplayLauncher
+{
+    public AgbplayLauncher(string command, bool useWsl, string toolDir, string streamBinary)
     {
-        public Launcher(string command, bool useWsl, string toolDir)
-        {
-            Command = command;
-            UseWsl = useWsl;
-            ToolDir = toolDir;
-        }
-
-        public string Command { get; }
-        public bool UseWsl { get; }
-        public string ToolDir { get; }
-
-        public Dictionary<string, string> Environment
-        {
-            get
-            {
-                var env = new Dictionary<string, string>();
-                if (!UseWsl)
-                {
-                    var lib = Path.Combine(ToolDir, "lib");
-                    if (Directory.Exists(lib))
-                    {
-                        var current = System.Environment.GetEnvironmentVariable("LD_LIBRARY_PATH");
-                        env["LD_LIBRARY_PATH"] = string.IsNullOrWhiteSpace(current)
-                            ? lib
-                            : lib + ":" + current;
-                    }
-                }
-                return env;
-            }
-        }
-
-        public string TranslatePath(string path)
-        {
-            if (!UseWsl)
-                return path;
-            var full = Path.GetFullPath(path).Replace('\\', '/');
-            // D:\foo -> /mnt/d/foo
-            if (full.Length >= 3 && full[1] == ':')
-            {
-                var drive = char.ToLowerInvariant(full[0]);
-                return $"/mnt/{drive}{full[2..]}";
-            }
-            return full;
-        }
-
-        public string BuildArgs(string romPath, int songId, string outputPath)
-        {
-            var song = songId.ToString(CultureInfo.InvariantCulture);
-            if (!UseWsl)
-            {
-                // agbplay-cli <rom> render <song-id> <output> master
-                return Quote(romPath) + " render " + song + " " + Quote(outputPath) + " master";
-            }
-
-            var script = Path.Combine(ToolDir, "agbplay-cli.sh");
-            if (!File.Exists(script))
-                script = Path.Combine(ToolDir, "agbplay-cli");
-            var wslScript = ToWslPath(script);
-            // wsl.exe -- bash <script> <rom> render <id> <out> master
-            return "-- bash " + Quote(wslScript) + " " + Quote(romPath) + " render " + song + " " +
-                   Quote(outputPath) + " master";
-        }
-
-        private static string ToWslPath(string windowsOrLinuxPath)
-        {
-            var full = Path.GetFullPath(windowsOrLinuxPath).Replace('\\', '/');
-            if (full.Length >= 3 && full[1] == ':')
-            {
-                var drive = char.ToLowerInvariant(full[0]);
-                return $"/mnt/{drive}{full[2..]}";
-            }
-            return full;
-        }
-
-        private static string Quote(string value) =>
-            "\"" + value.Replace("\"", "\\\"", StringComparison.Ordinal) + "\"";
+        Command = command;
+        UseWsl = useWsl;
+        ToolDir = toolDir;
+        StreamBinary = streamBinary;
     }
+
+    public string Command { get; }
+    public bool UseWsl { get; }
+    public string ToolDir { get; }
+    public string StreamBinary { get; }
+
+    public Dictionary<string, string> Environment
+    {
+        get
+        {
+            var env = new Dictionary<string, string>();
+            if (!UseWsl)
+            {
+                var lib = Path.Combine(ToolDir, "lib");
+                if (Directory.Exists(lib))
+                {
+                    var current = System.Environment.GetEnvironmentVariable("LD_LIBRARY_PATH");
+                    env["LD_LIBRARY_PATH"] = string.IsNullOrWhiteSpace(current)
+                        ? lib
+                        : lib + ":" + current;
+                }
+            }
+            return env;
+        }
+    }
+
+    public string TranslatePath(string path)
+    {
+        if (!UseWsl)
+            return path;
+        var full = Path.GetFullPath(path).Replace('\\', '/');
+        if (full.Length >= 3 && full[1] == ':')
+        {
+            var drive = char.ToLowerInvariant(full[0]);
+            return $"/mnt/{drive}{full[2..]}";
+        }
+        return full;
+    }
+
+    public string BuildArgs(string romPath, int songId, string outputPath)
+    {
+        var song = songId.ToString(CultureInfo.InvariantCulture);
+        if (!UseWsl)
+            return Quote(romPath) + " render " + song + " " + Quote(outputPath) + " master";
+
+        var script = Path.Combine(ToolDir, "agbplay-cli.sh");
+        if (!File.Exists(script))
+            script = Path.Combine(ToolDir, "agbplay-cli");
+        return "-- bash " + Quote(ToWslPath(script)) + " " + Quote(romPath) + " render " + song + " " +
+               Quote(outputPath) + " master";
+    }
+
+    public string BuildStreamArgs(string romPath, int songId, int maxLoops)
+    {
+        var song = songId.ToString(CultureInfo.InvariantCulture);
+        var loops = maxLoops.ToString(CultureInfo.InvariantCulture);
+        if (!UseWsl)
+            return Quote(romPath) + " " + song + " " + loops;
+
+        return "-- bash " + Quote(ToWslPath(StreamBinary)) + " " + Quote(romPath) + " " + song + " " + loops;
+    }
+
+    public string BuildServerArgs(string romPath)
+    {
+        if (!UseWsl)
+            return Quote(romPath) + " --server";
+
+        return "-- bash " + Quote(ToWslPath(StreamBinary)) + " " + Quote(romPath) + " --server";
+    }
+
+    private static string ToWslPath(string windowsOrLinuxPath)
+    {
+        var full = Path.GetFullPath(windowsOrLinuxPath).Replace('\\', '/');
+        if (full.Length >= 3 && full[1] == ':')
+        {
+            var drive = char.ToLowerInvariant(full[0]);
+            return $"/mnt/{drive}{full[2..]}";
+        }
+        return full;
+    }
+
+    private static string Quote(string value) =>
+        "\"" + value.Replace("\"", "\\\"", StringComparison.Ordinal) + "\"";
 }
 
 /// <summary>
@@ -298,44 +367,79 @@ public static class WaveformPeaks
     public static Peak[] Build(byte[] wav, int bucketCount = 1200)
     {
         bucketCount = Math.Clamp(bucketCount, 64, 8192);
-        var peaks = new Peak[bucketCount];
         if (wav.Length < 44)
-            return peaks;
+            return new Peak[bucketCount];
 
         var channels = BitConverter.ToInt16(wav, 22);
         var bits = BitConverter.ToInt16(wav, 34);
         var format = BitConverter.ToInt16(wav, 20);
         var dataOffset = FindDataChunk(wav);
         if (dataOffset < 0 || channels <= 0)
-            return peaks;
+            return new Peak[bucketCount];
 
         var bytesPerSample = bits / 8;
         if (bytesPerSample <= 0)
-            return peaks;
+            return new Peak[bucketCount];
+
+        return BuildSamples(
+            wav,
+            dataOffset,
+            wav.Length - dataOffset,
+            channels,
+            bytesPerSample,
+            format == 3 && bits == 32,
+            bucketCount);
+    }
+
+    /// <summary>Build peaks from interleaved PCM16LE (as produced by agbplay-stream).</summary>
+    public static Peak[] BuildPcm16(byte[] pcm, int channels, int bucketCount = 640)
+    {
+        bucketCount = Math.Clamp(bucketCount, 64, 4096);
+        if (pcm.Length < 4 || channels <= 0)
+            return new Peak[bucketCount];
+        return BuildSamples(pcm, 0, pcm.Length, channels, bytesPerSample: 2, ieeeFloat: false, bucketCount,
+            // Skip frames inside each bucket — plenty for a visual overview.
+            frameStride: 16);
+    }
+
+    private static Peak[] BuildSamples(
+        byte[] data,
+        int dataOffset,
+        int dataLength,
+        int channels,
+        int bytesPerSample,
+        bool ieeeFloat,
+        int bucketCount,
+        int frameStride = 1)
+    {
+        var peaks = new Peak[bucketCount];
         var frameSize = bytesPerSample * channels;
-        var totalFrames = (wav.Length - dataOffset) / frameSize;
+        if (frameSize <= 0)
+            return peaks;
+        var totalFrames = dataLength / frameSize;
         if (totalFrames <= 0)
             return peaks;
 
+        frameStride = Math.Max(1, frameStride);
         var framesPerBucket = Math.Max(1, totalFrames / bucketCount);
         for (var bucket = 0; bucket < bucketCount; bucket++)
         {
-            var start = dataOffset + bucket * framesPerBucket * frameSize;
-            var end = Math.Min(wav.Length, start + framesPerBucket * frameSize);
+            var startFrame = bucket * framesPerBucket;
+            var endFrame = Math.Min(totalFrames, startFrame + framesPerBucket);
             float min = 0, max = 0;
             var any = false;
-            for (var offset = start; offset + frameSize <= end; offset += frameSize)
+            for (var frame = startFrame; frame < endFrame; frame += frameStride)
             {
-                // Mixdown: average absolute contribution across channels for bounds.
+                var offset = dataOffset + frame * frameSize;
                 for (var ch = 0; ch < channels; ch++)
                 {
                     var sampleOffset = offset + ch * bytesPerSample;
-                    float sample = format == 3 && bits == 32
-                        ? BitConverter.ToSingle(wav, sampleOffset)
-                        : bits == 16
-                            ? BitConverter.ToInt16(wav, sampleOffset) / 32768f
-                            : bits == 8
-                                ? (wav[sampleOffset] - 128) / 128f
+                    float sample = ieeeFloat
+                        ? BitConverter.ToSingle(data, sampleOffset)
+                        : bytesPerSample == 2
+                            ? BitConverter.ToInt16(data, sampleOffset) / 32768f
+                            : bytesPerSample == 1
+                                ? (data[sampleOffset] - 128) / 128f
                                 : 0f;
                     if (!any)
                     {
@@ -355,7 +459,7 @@ public static class WaveformPeaks
         return peaks;
     }
 
-    internal static int FindDataChunkOffset(byte[] wav)
+    public static int FindDataChunkOffset(byte[] wav)
     {
         for (var i = 12; i < wav.Length - 8; i++)
         {

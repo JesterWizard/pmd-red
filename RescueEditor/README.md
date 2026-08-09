@@ -79,11 +79,10 @@ The published application is placed under
 - Music / Sound Effects: M4A sequences named from `src/sound_names.c` (and
   `MUS_*` from `include/constants/bg_music.h` for BGM). Preview has **Player**
   and **Code** tabs. Playback uses bundled
-  [agbplay](https://github.com/ipatix/agbplay) (`tools/agbplay`) for authentic
-  mp2k/m4a rendering, with a pre-rendered waveform overview and piano roll.
-  DirectSound waves export/play as PCM WAV when matched in the opened ROM.
-  On Windows, if only the Linux `agbplay-cli` is present, RescueTemple launches
-  it through WSL.
+  [agbplay](https://github.com/ipatix/agbplay) (`tools/agbplay`):
+  `agbplay-stream --server` keeps the ROM loaded so clicks stream audio within
+  about a second (often much faster after the first warm). A background warmer
+  fills the WAV cache for instant later plays. On Windows, Linux tools launch via WSL.
 - `pksdir0` archives: generic raw entry browsing and export.
 
 This MVP deliberately does not patch ROMs, edit decomp source, or allocate

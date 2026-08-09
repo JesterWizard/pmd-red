@@ -36,4 +36,26 @@ export LD_LIBRARY_PATH="$here/lib:${LD_LIBRARY_PATH:-}"
 exec "$here/agbplay-cli" "$@"
 EOF
 chmod +x "$dest/agbplay-cli.sh"
+
+stream_src="$root/agbplay-stream/agbplay-stream.cpp"
+if [[ -f "$stream_src" && -f "$src_lib" ]]; then
+  g++ -O2 -std=c++20 \
+    -I/tmp/agbplay/src/agbplay \
+    -I/tmp/agbplay/build/src/agbplay \
+    "$stream_src" \
+    -L"$dest/lib" -lagbplay -lfmt \
+    -Wl,-rpath,'$ORIGIN/lib' \
+    -o "$dest/agbplay-stream"
+  chmod +x "$dest/agbplay-stream"
+  cat > "$dest/agbplay-stream.sh" <<'EOF'
+#!/usr/bin/env bash
+set -euo pipefail
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export LD_LIBRARY_PATH="$here/lib:${LD_LIBRARY_PATH:-}"
+exec "$here/agbplay-stream" "$@"
+EOF
+  chmod +x "$dest/agbplay-stream.sh"
+  echo "Installed $dest/agbplay-stream"
+fi
+
 echo "Installed $dest/agbplay-cli"
