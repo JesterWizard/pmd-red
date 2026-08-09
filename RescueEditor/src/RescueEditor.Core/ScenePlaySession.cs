@@ -298,17 +298,17 @@ public sealed class ScenePlaySession
 
         var anim = _script?.GetAnimation(liveIndex) ?? GroundScriptVm.AnimIdle;
         var moving = _script?.IsLiveMoving(liveIndex) == true;
-        var sprite = _actorSprites.TryGetAnimatedSprite(species, anim, _animTick, moving)
-            ?? _actorSprites.TryGetSpeciesSprite(species);
+        var dir = _script?.GetDirection(liveIndex) ?? GroundScriptVm.DirSouth;
+        var drawn = _actorSprites.TryGetAnimatedSprite(species, anim, dir, _animTick, moving);
+        var sprite = drawn?.Image ?? _actorSprites.TryGetSpeciesSprite(species);
         if (sprite is null)
             return;
+
+        var flip = drawn?.FlipH ?? GroundScriptVm.ShouldFlipHorizontal(dir);
 
         var ix = (int)Math.Round(pixelX);
         var iy = (int)Math.Round(pixelY);
         GbaDialogueHud.DrawDropShadow(image, ix + 4, iy + 2);
-
-        var dir = _script?.GetDirection(liveIndex) ?? GroundScriptVm.DirSouth;
-        var flip = GroundScriptVm.ShouldFlipHorizontal(dir);
 
         var x = ix - sprite.Width / 2 + 4;
         var y = iy - sprite.Height + 8;

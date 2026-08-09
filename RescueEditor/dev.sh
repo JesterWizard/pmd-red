@@ -33,8 +33,11 @@ sync_repo_assets() {
   for id in 088 089 091 092 093 094; do
     cp -f "$repo/data/effects/efob${id}.png" "$win_mirror/data/effects/efob${id}.png" 2>/dev/null || true
   done
-  # Actor frames for Scene Play animation (sprite_1..16.png).
-  rsync -a --include '*/' --include 'sprite_[0-9].png' --include 'sprite_1[0-6].png' --exclude '*' \
+  # Actor frames: idle dirs (1–15) + common sleep sheets (47–55). Full dump is huge.
+  rsync -a --include '*/' \
+    --include 'sprite_[1-9].png' --include 'sprite_1[0-5].png' \
+    --include 'sprite_4[7-9].png' --include 'sprite_5[0-5].png' \
+    --exclude '*' \
     "$repo/graphics/ax/mon/" "$win_mirror/graphics/ax/mon/"
   rsync -a --include '*/' --include 'sprite_1.png' --exclude '*' \
     "$repo/graphics/ornament/" "$win_mirror/graphics/ornament/"

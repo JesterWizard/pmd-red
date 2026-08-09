@@ -84,7 +84,7 @@ public sealed class ActorSpriteAtlas
         TryGetSpeciesSprite(speciesId, frameIndex: 0);
 
     /// <summary>
-    /// Frame-aware sprite lookup. Idle cycles frames 0..N; sleep prefers a later still.
+    /// AX sprite index (0 → <c>sprite_1.png</c>) lookup.
     /// </summary>
     public RgbaImage? TryGetSpeciesSprite(int speciesId, int frameIndex)
     {
@@ -92,43 +92,80 @@ public sealed class ActorSpriteAtlas
             return null;
 
         EnsureFramesLoaded(speciesId);
-        var count = _frameCount.GetValueOrDefault(speciesId);
-        if (count <= 0)
+        if (_frameCount.GetValueOrDefault(speciesId) <= 0)
             return null;
 
-        var index = Math.Abs(frameIndex) % count;
-        if (_bySpeciesFrame.TryGetValue((speciesId, index), out var cached))
+        if (_bySpeciesFrame.TryGetValue((speciesId, frameIndex), out var cached) && cached is not null)
             return cached;
+        // Fall back to south idle if a high index is missing.
         return _bySpecies.GetValueOrDefault(speciesId);
     }
 
     /// <summary>
-    /// Idle / standing: freeze on frame 0.
-    /// Sleep: dedicated still.
-    /// Walking or a non-idle SELECT_ANIMATION: cycle frames.
+    /// Resolve a draw for <see cref="GroundScriptVm"/> SELECT_ANIMATION + facing.
+    /// Uses AX conventions: idle anim 2 has 8-dir sprite groups; sleep anim 6 uses pose sheets ~48+.
     /// </summary>
-    public RgbaImage? TryGetAnimatedSprite(int speciesId, int animationId, int tickFrames, bool isMoving = false)
+    public (RgbaImage Image, bool FlipH)? TryGetAnimatedSprite(
+        int speciesId,
+        int animationId,
+        int direction,
+        int tickFrames,
+        bool isMoving = false)
     {
         EnsureFramesLoaded(speciesId);
-        var count = _frameCount.GetValueOrDefault(speciesId);
-        if (count <= 0)
+        if (_frameCount.GetValueOrDefault(speciesId) <= 0)
             return null;
 
+        var dir = direction & 7;
         if (animationId == GroundScriptVm.AnimSleep)
         {
-            var sleepIndex = count >= 7 ? 6 : count - 1;
-            return TryGetSpeciesSprite(speciesId, sleepIndex);
+            // Charmander/Bulbasaur sleep: AX_POSE(47/48) → sprite_48/49.
+            var sleepA = TryGetSpeciesSprite(speciesId, SleepSpriteIndex);
+            var sleepB = TryGetSpeciesSprite(speciesId, SleepSpriteIndex + 1) ?? sleepA;
+            if (sleepA is null)
+                return null;
+            var img = ((tickFrames / 30) & 1) == 0 ? sleepA : sleepB!;
+            return (img, false);
         }
 
-        var shouldCycle = isMoving ||
-            (animationId != GroundScriptVm.AnimIdle && animationId > 0);
-        if (!shouldCycle)
-            return TryGetSpeciesSprite(speciesId, 0);
+        var (baseIndex, flip) = IdleSpriteForDirection(dir);
+        var cycle = isMoving || (animationId != GroundScriptVm.AnimIdle && animationId > 0 && animationId != GroundScriptVm.AnimSleep);
+        var frameOffset = 0;
+        if (cycle)
+        {
+            // Each facing has a 3-frame walk/idle group (base, base+1, base+2).
+            frameOffset = (tickFrames / 8) % 3;
+        }
 
-        var cycle = Math.Min(4, count);
-        var frame = (tickFrames / 8) % cycle;
-        return TryGetSpeciesSprite(speciesId, frame);
+        var sprite = TryGetSpeciesSprite(speciesId, baseIndex + frameOffset)
+            ?? TryGetSpeciesSprite(speciesId, baseIndex)
+            ?? TryGetSpeciesSprite(speciesId, 0);
+        return sprite is null ? null : (sprite, flip);
     }
+
+    /// <summary>Legacy helper — south idle only.</summary>
+    public RgbaImage? TryGetAnimatedSprite(int speciesId, int animationId, int tickFrames, bool isMoving = false) =>
+        TryGetAnimatedSprite(speciesId, animationId, GroundScriptVm.DirSouth, tickFrames, isMoving)?.Image;
+
+    /// <summary>
+    /// Idle/walk sheet layout shared by most monster AX dumps (see <c>src/data/ax/*.h</c> poses 1–24).
+    /// East-ish facings reuse west-ish sheets with OAM flip.
+    /// </summary>
+    public static (int SpriteIndex, bool FlipH) IdleSpriteForDirection(int direction) =>
+        (direction & 7) switch
+        {
+            0 => (0, false),  // S  — sprite_1
+            1 => (3, true),   // SE — sprite_4 flipped
+            2 => (6, true),   // E  — sprite_7 flipped
+            3 => (9, true),   // NE — sprite_10 flipped
+            4 => (12, false), // N  — sprite_13
+            5 => (9, false),  // NW — sprite_10
+            6 => (6, false),  // W  — sprite_7
+            _ => (3, false),  // SW — sprite_4
+        };
+
+    /// <summary>AX_POSE(47) → sprite_48.png for typical sleep anim 6.</summary>
+    public const int SleepSpriteIndex = 47;
 
     private void EnsureFramesLoaded(int speciesId)
     {
@@ -147,29 +184,33 @@ public sealed class ActorSpriteAtlas
 
         var dir = Path.Combine(_repositoryRoot, "graphics", "ax", "mon", folder);
         var loaded = 0;
-        // Load sequential sprite_1.png … sprite_16.png (skip compound names like sprite_16_1).
-        for (var i = 1; i <= 16; i++)
+        var maxIndex = -1;
+        // Load sprite_1.png … sprite_N.png (skip compound names like sprite_16_1).
+        for (var i = 1; i <= 96; i++)
         {
             var path = Path.Combine(dir, $"sprite_{i}.png");
             if (!File.Exists(path))
-                break;
+                continue;
             try
             {
                 var image = RgbaImage.FromPng(File.ReadAllBytes(path));
-                _bySpeciesFrame[(speciesId, loaded)] = image;
-                if (loaded == 0)
+                var index = i - 1; // AX sprite index
+                _bySpeciesFrame[(speciesId, index)] = image;
+                if (index == 0)
                     _bySpecies[speciesId] = image;
                 loaded++;
+                if (index > maxIndex)
+                    maxIndex = index;
             }
             catch
             {
-                break;
+                // skip bad frame
             }
         }
 
         if (loaded == 0)
             _bySpecies[speciesId] = null;
-        _frameCount[speciesId] = loaded;
+        _frameCount[speciesId] = maxIndex + 1;
     }
 }
 

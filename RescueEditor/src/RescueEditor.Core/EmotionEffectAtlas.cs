@@ -97,7 +97,8 @@ public sealed class EmotionEffectAtlas
     }
 
     /// <summary>
-    /// Effect dumps are often an 8×N tile strip. Pack the first opaque tiles into a small icon.
+    /// Effect dumps are 8×N tile strips with GBA chroma (often cyan RGB + alpha mask).
+    /// Pack the first opaque tiles into a small icon and normalize ink to white.
     /// </summary>
     private static RgbaImage CompactTileStrip(RgbaImage sheet, int maxSize = 24)
     {
@@ -138,10 +139,23 @@ public sealed class EmotionEffectAtlas
                 continue;
             var src = (sy * sheet.Width + sx) * 4;
             var dst = (row * w + col) * 4;
-            pixels[dst] = sheet.Pixels[src];
-            pixels[dst + 1] = sheet.Pixels[src + 1];
-            pixels[dst + 2] = sheet.Pixels[src + 2];
-            pixels[dst + 3] = sheet.Pixels[src + 3];
+            var a = sheet.Pixels[src + 3];
+            if (a < 16)
+                continue;
+            var r = sheet.Pixels[src];
+            var g = sheet.Pixels[src + 1];
+            var b = sheet.Pixels[src + 2];
+            // Magenta/cyan chroma-key dumps store ink as (0,255,255); show as white.
+            if (r < 8 && g > 240 && b > 240)
+            {
+                r = 0xF8;
+                g = 0xF8;
+                b = 0xF8;
+            }
+            pixels[dst] = r;
+            pixels[dst + 1] = g;
+            pixels[dst + 2] = b;
+            pixels[dst + 3] = 255;
         }
         return new RgbaImage(w, h, pixels);
     }

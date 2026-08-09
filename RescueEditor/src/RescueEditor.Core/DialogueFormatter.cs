@@ -73,9 +73,19 @@ public static class DialogueFormatter
     {
         if (species <= 0)
             return "Pokémon";
-        var folder = MonsterSpriteFolders.ForSpecies(species, null);
+        IReadOnlyDictionary<int, string>? folders = null;
+        try
+        {
+            folders = MonsterSpriteFolders.Load(repositoryRoot ?? ".");
+        }
+        catch
+        {
+            // Fall through to ForSpecies overrides only.
+        }
+
+        var folder = MonsterSpriteFolders.ForSpecies(species, folders);
         if (string.IsNullOrEmpty(folder))
-            return $"#{species}";
+            return "Pokémon";
         return char.ToUpperInvariant(folder[0]) + folder[1..];
     }
 

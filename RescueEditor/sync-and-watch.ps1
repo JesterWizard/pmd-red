@@ -54,9 +54,12 @@ if ((Test-Path $baseromSrc) -and -not (Test-Path $baseromDst)) {
 $axSrc = Join-Path $wslRoot "graphics\ax\mon"
 $axDst = Join-Path $winRoot "graphics\ax\mon"
 if (Test-Path $axSrc) {
-    Write-Host "Syncing actor sprite_*.png frames..."
+    Write-Host "Syncing actor sprite sheets (idle 1-15 + sleep 47-55)..."
     New-Item -ItemType Directory -Force -Path $axDst | Out-Null
-    & robocopy $axSrc $axDst sprite_1.png sprite_2.png sprite_3.png sprite_4.png sprite_5.png sprite_6.png sprite_7.png sprite_8.png sprite_9.png sprite_10.png sprite_11.png sprite_12.png sprite_13.png sprite_14.png sprite_15.png sprite_16.png /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+    $names = @()
+    1..15 | ForEach-Object { $names += "sprite_$_.png" }
+    47..55 | ForEach-Object { $names += "sprite_$_.png" }
+    & robocopy $axSrc $axDst @names /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
     if ($LASTEXITCODE -ge 8) { throw "robocopy failed for actor sprites (exit $LASTEXITCODE)" }
 }
 
