@@ -1,4 +1,4 @@
-# Sync RescueEditor from WSL onto the Windows filesystem, then hot-reload there.
+# Sync RescueTemple (RescueEditor) from WSL onto the Windows filesystem, then hot-reload there.
 # Windows `dotnet watch` cannot use \\wsl$\ paths (CS0006 + broken file watchers).
 #
 # Usage (PowerShell):
@@ -22,7 +22,10 @@ New-Item -ItemType Directory -Force -Path $winRoot | Out-Null
 Write-Host "Syncing WSL -> $winRoot ..."
 $dirs = @(
     @{ Src = Join-Path $wslRoot "RescueEditor"; Dst = Join-Path $winRoot "RescueEditor" },
-    @{ Src = Join-Path $wslRoot "charmap.txt"; Dst = Join-Path $winRoot "charmap.txt" }
+    @{ Src = Join-Path $wslRoot "charmap.txt"; Dst = Join-Path $winRoot "charmap.txt" },
+    @{ Src = Join-Path $wslRoot "sound"; Dst = Join-Path $winRoot "sound" },
+    @{ Src = Join-Path $wslRoot "include\constants\bg_music.h"; Dst = Join-Path $winRoot "include\constants\bg_music.h" },
+    @{ Src = Join-Path $wslRoot "src\sound_names.c"; Dst = Join-Path $winRoot "src\sound_names.c" }
 )
 
 foreach ($item in $dirs) {
@@ -32,6 +35,8 @@ foreach ($item in $dirs) {
         if ($LASTEXITCODE -ge 8) { throw "robocopy failed for $($item.Src) (exit $LASTEXITCODE)" }
     }
     elseif (Test-Path $item.Src -PathType Leaf) {
+        $dstDir = Split-Path -Parent $item.Dst
+        if ($dstDir) { New-Item -ItemType Directory -Force -Path $dstDir | Out-Null }
         Copy-Item -Force $item.Src $item.Dst
     }
 }

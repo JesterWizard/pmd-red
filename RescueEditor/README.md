@@ -1,9 +1,10 @@
-# RescueEditor
+# RescueTemple
 
-RescueEditor is a cross-platform Avalonia/.NET 8 browser and exporter for the
-Pokémon Mystery Dungeon: Red Rescue Team decompilation. It opens a ROM without
-modifying it, builds an in-memory asset catalog, previews supported formats,
-and exports selected entries or whole categories.
+RescueTemple (project folder: `RescueEditor`) is a cross-platform Avalonia/.NET 8
+browser and exporter for the Pokémon Mystery Dungeon: Red Rescue Team
+decompilation. It opens a ROM without modifying it, builds an in-memory asset
+catalog, previews supported formats, and exports selected entries or whole
+categories.
 
 ## Requirements
 
@@ -75,8 +76,14 @@ The published application is placed under
 - Dialogue and scripts: ROM scanning for `MSG_*` command pointers, PMD
   charmap decoding (including text macros), and read-only `ScriptCommand`
   disassembly.
-- Sound: wave table matching, raw sample export, and PCM WAV export when a
-  source wave is found in the opened ROM.
+- Music / Sound Effects: M4A sequences named from `src/sound_names.c` (and
+  `MUS_*` from `include/constants/bg_music.h` for BGM). Preview has **Player**
+  and **Code** tabs. Playback uses bundled
+  [agbplay](https://github.com/ipatix/agbplay) (`tools/agbplay`) for authentic
+  mp2k/m4a rendering, with a pre-rendered waveform overview and piano roll.
+  DirectSound waves export/play as PCM WAV when matched in the opened ROM.
+  On Windows, if only the Linux `agbplay-cli` is present, RescueTemple launches
+  it through WSL.
 - `pksdir0` archives: generic raw entry browsing and export.
 
 This MVP deliberately does not patch ROMs, edit decomp source, or allocate

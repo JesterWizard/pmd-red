@@ -1,10 +1,15 @@
 using System.Buffers.Binary;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace RescueEditor.Core;
 
 public static class SoundIndexer
 {
+    // Matches include/music.h — BGM/fanfare below this index, SE at and above.
+    public const int SoundEffectsStartIndex = 300;
+    public const int FanfareStartIndex = 200;
+
     private static readonly Regex NumericDirective = new(
         @"^\s*\.(?<kind>byte|hword|word)\s+(?<values>[^@]+)",
         RegexOptions.Compiled);
@@ -13,60 +18,268 @@ public static class SoundIndexer
         @"^(?:0x(?<hex>[0-9A-Fa-f]+)|(?<decimal>\d+))$",
         RegexOptions.Compiled);
 
+    private static readonly Regex SongTableEntry = new(
+        @"^\s*song\s+(?<name>seq_(?<id>\d+)|empty_song)\s*,\s*(?<player>\d+)\s*,\s*(?<player2>\d+)",
+        RegexOptions.Compiled);
+
+    private static readonly Regex MusicEnumEntry = new(
+        @"^\s*(?<name>MUS_[A-Z0-9_]+)\s*(?:=\s*(?<value>\d+))?\s*,?",
+        RegexOptions.Compiled);
+
+    private static readonly Regex SfxNameEntry = new(
+        @"^\s*\{\s*(?:NULL|""(?<name>[^""]+)"")\s*,",
+        RegexOptions.Compiled);
+
     public static IEnumerable<AssetDescriptor> Index(string? repositoryRoot, RomImage rom)
     {
         if (string.IsNullOrWhiteSpace(repositoryRoot))
             yield break;
-        var waveDirectory = Path.Combine(repositoryRoot, "sound", "wave");
-        if (Directory.Exists(waveDirectory))
-        {
-            foreach (var path in Directory.EnumerateFiles(waveDirectory, "wave_*.s").OrderBy(path => path))
-            {
-                var bytes = ParseWaveBytes(path);
-                var offset = FindWaveInRom(rom, bytes);
-                var name = Path.GetFileNameWithoutExtension(path);
-                var sampleRate = bytes.Length >= 8
-                    ? Math.Max(1, (int)(BinaryPrimitives.ReadUInt32LittleEndian(bytes.AsSpan(4)) >> 10))
-                    : 0;
-                yield return new AssetDescriptor
-                {
-                    Id = $"sound-wave:{name}",
-                    Name = name,
-                    Category = AssetCategory.Sound,
-                    Kind = AssetKind.SoundWave,
-                    Offset = offset,
-                    Size = offset >= 0 ? bytes.Length : 0,
-                    Format = offset >= 0 ? "GBA DirectSound / PCM8" : "source wave",
-                    SourcePath = path,
-                    Description = offset >= 0
-                        ? $"{sampleRate} Hz, {Math.Max(0, bytes.Length - 16)} samples"
-                        : "Wave source is not present as a contiguous range in this ROM",
-                    Metadata = new Dictionary<string, string>
-                    {
-                        ["sampleRate"] = sampleRate.ToString(),
-                        ["sourceBytes"] = bytes.Length.ToString(),
-                    },
-                };
-            }
-        }
 
+        var musicNames = LoadMusicNames(repositoryRoot);
+        var sfxNames = LoadSfxNames(repositoryRoot);
+        var songPlayers = LoadSongPlayers(repositoryRoot);
+
+        foreach (var asset in IndexSongs(repositoryRoot, rom, musicNames, sfxNames, songPlayers))
+            yield return asset;
+
+        foreach (var asset in IndexWaves(repositoryRoot, rom))
+            yield return asset;
+    }
+
+    private static IEnumerable<AssetDescriptor> IndexSongs(
+        string repositoryRoot,
+        RomImage rom,
+        IReadOnlyDictionary<int, string> musicNames,
+        IReadOnlyList<string?> sfxNames,
+        IReadOnlyDictionary<int, int> songPlayers)
+    {
         var songDirectory = Path.Combine(repositoryRoot, "sound", "songs");
         if (!Directory.Exists(songDirectory))
             yield break;
+
         foreach (var path in Directory.EnumerateFiles(songDirectory, "seq_*.s").OrderBy(path => path))
         {
-            var name = Path.GetFileNameWithoutExtension(path);
+            var fileName = Path.GetFileNameWithoutExtension(path);
+            if (!TryParseSeqId(fileName, out var songId))
+                continue;
+
+            var isSoundEffect = songId >= SoundEffectsStartIndex;
+            var category = isSoundEffect ? AssetCategory.SoundEffects : AssetCategory.Music;
+            var player = songPlayers.GetValueOrDefault(songId, isSoundEffect ? 2 : 0);
+            var role = DescribePlayer(player, songId);
+            var internalName = songId >= 0 && songId < sfxNames.Count ? sfxNames[songId] : null;
+            var musName = musicNames.GetValueOrDefault(songId);
+            var displayName = ResolveSongDisplayName(fileName, musName, internalName);
+            var hasHeader = SoundSequenceParser.TryGetSongHeaderOffset(rom, songId, out var headerOffset);
+
             yield return new AssetDescriptor
             {
-                Id = $"sound-song:{name}",
-                Name = name,
-                Category = AssetCategory.Sound,
+                Id = $"sound-song:{fileName}",
+                Name = displayName,
+                Category = category,
                 Kind = AssetKind.SoundSong,
-                Format = "M4A song source",
+                Offset = hasHeader ? headerOffset : -1,
+                Size = hasHeader ? 8 : 0,
+                Format = isSoundEffect ? "M4A sound effect" : "M4A song",
                 SourcePath = path,
-                Description = "Song module source; ROM-side sequence extraction is not available for this entry.",
+                Description = BuildSongDescription(fileName, role, player, musName, internalName),
+                Metadata = new Dictionary<string, string>
+                {
+                    ["songId"] = songId.ToString(CultureInfo.InvariantCulture),
+                    ["player"] = player.ToString(CultureInfo.InvariantCulture),
+                    ["role"] = role,
+                    ["seq"] = fileName,
+                    ["internalName"] = internalName ?? string.Empty,
+                    ["musName"] = musName ?? string.Empty,
+                },
             };
         }
+    }
+
+    private static string ResolveSongDisplayName(string fileName, string? musName, string? internalName)
+    {
+        if (!string.IsNullOrWhiteSpace(musName))
+            return PrettyIdentifier(musName, stripPrefix: "MUS_");
+        if (!string.IsNullOrWhiteSpace(internalName))
+            return PrettyIdentifier(internalName);
+        return fileName;
+    }
+
+    private static string BuildSongDescription(
+        string fileName,
+        string role,
+        int player,
+        string? musName,
+        string? internalName)
+    {
+        var parts = new List<string> { fileName, role + "; player " + player };
+        if (!string.IsNullOrWhiteSpace(internalName))
+            parts.Insert(1, internalName);
+        if (!string.IsNullOrWhiteSpace(musName) &&
+            !string.Equals(musName, internalName, StringComparison.Ordinal))
+            parts.Insert(1, musName);
+        return string.Join(" · ", parts);
+    }
+
+    private static IEnumerable<AssetDescriptor> IndexWaves(string repositoryRoot, RomImage rom)
+    {
+        var waveDirectory = Path.Combine(repositoryRoot, "sound", "wave");
+        if (!Directory.Exists(waveDirectory))
+            yield break;
+
+        foreach (var path in Directory.EnumerateFiles(waveDirectory, "*.s")
+                     .Where(path =>
+                     {
+                         var name = Path.GetFileName(path);
+                         return name.StartsWith("wave_", StringComparison.Ordinal) ||
+                                name.StartsWith("gbwave_", StringComparison.Ordinal);
+                     })
+                     .OrderBy(path => path))
+        {
+            var bytes = ParseWaveBytes(path);
+            var offset = FindWaveInRom(rom, bytes);
+            var name = Path.GetFileNameWithoutExtension(path);
+            var isGbWave = name.StartsWith("gbwave_", StringComparison.Ordinal);
+            var sampleRate = !isGbWave && bytes.Length >= 8
+                ? Math.Max(1, (int)(BinaryPrimitives.ReadUInt32LittleEndian(bytes.AsSpan(4)) >> 10))
+                : 0;
+
+            yield return new AssetDescriptor
+            {
+                Id = $"sound-wave:{name}",
+                Name = name,
+                Category = AssetCategory.SoundEffects,
+                Kind = AssetKind.SoundWave,
+                Offset = offset,
+                Size = offset >= 0 ? bytes.Length : 0,
+                Format = isGbWave
+                    ? "GB wave pattern"
+                    : offset >= 0 ? "GBA DirectSound / PCM8" : "source wave",
+                SourcePath = path,
+                Description = isGbWave
+                    ? (offset >= 0
+                        ? "GB wave table entry present in ROM"
+                        : "GB wave source is not present as a contiguous range in this ROM")
+                    : offset >= 0
+                        ? $"{sampleRate} Hz, {Math.Max(0, bytes.Length - 16)} samples"
+                        : "Wave source is not present as a contiguous range in this ROM",
+                Metadata = new Dictionary<string, string>
+                {
+                    ["sampleRate"] = sampleRate.ToString(CultureInfo.InvariantCulture),
+                    ["sourceBytes"] = bytes.Length.ToString(CultureInfo.InvariantCulture),
+                    ["waveKind"] = isGbWave ? "gb" : "directsound",
+                },
+            };
+        }
+    }
+
+    private static IReadOnlyDictionary<int, string> LoadMusicNames(string repositoryRoot)
+    {
+        var path = Path.Combine(repositoryRoot, "include", "constants", "bg_music.h");
+        if (!File.Exists(path))
+            return new Dictionary<int, string>();
+
+        var names = new Dictionary<int, string>();
+        int? current = null;
+        foreach (var rawLine in File.ReadLines(path))
+        {
+            var match = MusicEnumEntry.Match(rawLine);
+            if (!match.Success)
+                continue;
+
+            if (match.Groups["value"].Success)
+                current = int.Parse(match.Groups["value"].Value, CultureInfo.InvariantCulture);
+            else if (current is null)
+                continue;
+            else
+                current++;
+
+            names[current.Value] = match.Groups["name"].Value;
+        }
+
+        return names;
+    }
+
+    private static IReadOnlyList<string?> LoadSfxNames(string repositoryRoot)
+    {
+        var path = Path.Combine(repositoryRoot, "src", "sound_names.c");
+        if (!File.Exists(path))
+            return Array.Empty<string?>();
+
+        var names = new List<string?>();
+        var inArray = false;
+        foreach (var rawLine in File.ReadLines(path))
+        {
+            if (!inArray)
+            {
+                if (rawLine.Contains("gSfxNames[]", StringComparison.Ordinal))
+                    inArray = true;
+                continue;
+            }
+
+            var match = SfxNameEntry.Match(rawLine);
+            if (match.Success)
+                names.Add(match.Groups["name"].Success ? match.Groups["name"].Value : null);
+            if (rawLine.Contains("};", StringComparison.Ordinal) && names.Count > 0)
+                break;
+        }
+
+        return names;
+    }
+
+    private static IReadOnlyDictionary<int, int> LoadSongPlayers(string repositoryRoot)
+    {
+        var path = Path.Combine(repositoryRoot, "sound", "song_table.inc");
+        if (!File.Exists(path))
+            return new Dictionary<int, int>();
+
+        var players = new Dictionary<int, int>();
+        foreach (var rawLine in File.ReadLines(path))
+        {
+            var match = SongTableEntry.Match(rawLine);
+            if (!match.Success || !match.Groups["id"].Success)
+                continue;
+
+            var songId = int.Parse(match.Groups["id"].Value, CultureInfo.InvariantCulture);
+            var player = int.Parse(match.Groups["player"].Value, CultureInfo.InvariantCulture);
+            players[songId] = player;
+        }
+
+        return players;
+    }
+
+    private static string DescribePlayer(int player, int songId) => player switch
+    {
+        0 => "BGM",
+        1 => "Fanfare",
+        _ when songId >= SoundEffectsStartIndex => "Sound effect",
+        _ => $"Player {player}",
+    };
+
+    private static string PrettyIdentifier(string identifier, string? stripPrefix = null)
+    {
+        var stem = stripPrefix is not null &&
+                   identifier.StartsWith(stripPrefix, StringComparison.Ordinal)
+            ? identifier[stripPrefix.Length..]
+            : identifier;
+        var parts = stem.Split('_', StringSplitOptions.RemoveEmptyEntries);
+        for (var i = 0; i < parts.Length; i++)
+        {
+            var part = parts[i].ToLowerInvariant();
+            parts[i] = part.Length == 0
+                ? part
+                : char.ToUpperInvariant(part[0]) + part[1..];
+        }
+        return string.Join(' ', parts);
+    }
+
+    private static bool TryParseSeqId(string fileName, out int songId)
+    {
+        songId = 0;
+        if (!fileName.StartsWith("seq_", StringComparison.Ordinal))
+            return false;
+        return int.TryParse(fileName.AsSpan(4), NumberStyles.Integer, CultureInfo.InvariantCulture,
+            out songId);
     }
 
     private static byte[] ParseWaveBytes(string path)
@@ -110,8 +323,7 @@ public static class SoundIndexer
         if (bytes.Length < 16)
             return -1;
         var prefixLength = Math.Min(32, bytes.Length);
-        var found = rom.Find(bytes.AsSpan(0, prefixLength));
-        return found;
+        return rom.Find(bytes.AsSpan(0, prefixLength));
     }
 
     private static void AddLittleEndian(List<byte> output, uint value, int size)

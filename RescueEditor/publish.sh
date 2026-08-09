@@ -40,6 +40,6 @@ rm -rf "$output"
 # Drop leftover debug sidecars if any older publish left them behind.
 rm -f "$output"/*.pdb "$output"/*.dbg
 
-printf 'Published RescueEditor to %s\n' "$output"
-printf 'Run: %s/RescueEditor.App.exe\n' "$output"
-ls -lh "$output"/RescueEditor.App* 2>/dev/null || true
+printf 'Published RescueTemple to %s\n' "$output"
+printf 'Run: %s/RescueTemple.exe\n' "$output"
+ls -lh "$output"/RescueTemple* 2>/dev/null || true

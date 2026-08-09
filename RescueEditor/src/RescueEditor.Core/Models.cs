@@ -10,7 +10,8 @@ public enum AssetCategory
     Backgrounds,
     Effects,
     GroundMaps,
-    Sound,
+    Music,
+    SoundEffects,
     RawArchives,
 }
 
@@ -104,6 +105,15 @@ public sealed class AssetCatalog
                 items.OrderBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase)
                     .ThenBy(asset => asset.Metadata.GetValueOrDefault("romName", asset.Name),
                         StringComparer.OrdinalIgnoreCase)
+                    .ToArray(),
+            AssetCategory.Music or AssetCategory.SoundEffects =>
+                items.OrderBy(asset =>
+                    {
+                        if (int.TryParse(asset.Metadata.GetValueOrDefault("songId"), out var songId))
+                            return songId;
+                        return asset.Kind == AssetKind.SoundWave ? 10_000 : 20_000;
+                    })
+                    .ThenBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase)
                     .ToArray(),
             _ => items.OrderBy(asset => asset.Name, StringComparer.OrdinalIgnoreCase).ToArray(),
         };

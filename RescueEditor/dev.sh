@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Dev launcher for RescueEditor.
+# Dev launcher for RescueTemple.
 # Mirrors onto the Windows filesystem and runs Windows `dotnet watch` there
 # (\\wsl$ paths break Windows file watchers / ref assemblies).
 set -euo pipefail
@@ -17,12 +17,22 @@ cleanup() {
 }
 trap cleanup EXIT INT TERM
 
+sync_repo_assets() {
+  mkdir -p "$win_mirror/include/constants" "$win_mirror/src"
+  rsync -a --delete \
+    --exclude bin --exclude obj --exclude publish --exclude .git \
+    "$repo/sound/" "$win_mirror/sound/"
+  cp -f "$repo/include/constants/bg_music.h" "$win_mirror/include/constants/bg_music.h"
+  cp -f "$repo/src/sound_names.c" "$win_mirror/src/sound_names.c"
+  cp -f "$repo/charmap.txt" "$win_mirror/charmap.txt"
+}
+
 sync_to_windows() {
   mkdir -p "$win_mirror/RescueEditor"
   rsync -a --delete \
     --exclude bin --exclude obj --exclude publish --exclude .git \
     "$root/" "$win_mirror/RescueEditor/"
-  cp -f "$repo/charmap.txt" "$win_mirror/charmap.txt"
+  sync_repo_assets
   if [[ -f "$repo/baserom.gba" && ! -f "$win_mirror/baserom.gba" ]]; then
     echo "Copying baserom.gba once…"
     cp -f "$repo/baserom.gba" "$win_mirror/baserom.gba"
@@ -36,11 +46,12 @@ start_live_sync() {
   fi
   (
     while inotifywait -r -qq -e modify,create,delete,move \
-      "$root/src" "$root/tests" "$repo/charmap.txt" 2>/dev/null; do
+      "$root/src" "$root/tests" "$repo/charmap.txt" "$repo/sound" \
+      "$repo/include/constants/bg_music.h" "$repo/src/sound_names.c" 2>/dev/null; do
       rsync -a --delete \
         --exclude bin --exclude obj --exclude publish --exclude .git \
         "$root/" "$win_mirror/RescueEditor/" >/dev/null
-      cp -f "$repo/charmap.txt" "$win_mirror/charmap.txt"
+      sync_repo_assets >/dev/null
     done
   ) &
   sync_pid=$!

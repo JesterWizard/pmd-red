@@ -91,7 +91,33 @@ public sealed class CoreTests
         Assert.Contains(catalog.Assets, asset => asset.Category == AssetCategory.Effects);
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.GroundMaps));
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.Dialogue));
-        Assert.NotEmpty(catalog.ForCategory(AssetCategory.Sound));
+        Assert.NotEmpty(catalog.ForCategory(AssetCategory.Music));
+        Assert.NotEmpty(catalog.ForCategory(AssetCategory.SoundEffects));
+        Assert.Contains(catalog.ForCategory(AssetCategory.Music),
+            asset => asset.Kind == AssetKind.SoundSong);
+        Assert.Contains(catalog.ForCategory(AssetCategory.SoundEffects),
+            asset => asset.Kind is AssetKind.SoundSong or AssetKind.SoundWave);
+        Assert.Contains(catalog.ForCategory(AssetCategory.Music),
+            asset => asset.Name.Contains("Boss", StringComparison.OrdinalIgnoreCase) ||
+                     asset.Metadata.GetValueOrDefault("internalName") == "BOSS01");
+        Assert.Contains(catalog.ForCategory(AssetCategory.SoundEffects),
+            asset => asset.Metadata.GetValueOrDefault("internalName") == "SYS_08");
+
+        var rom = RomImage.Open(baserom);
+        var boss = catalog.ForCategory(AssetCategory.Music)
+            .First(asset => asset.Metadata.GetValueOrDefault("songId") == "11");
+        var sequence = SoundSequenceParser.ParseFromRom(rom, 11, boss.Name);
+        Assert.True(sequence.Notes.Count > 0);
+        Assert.True(sequence.TrackCount >= 1);
+
+        if (AgbplayRenderer.IsAvailable())
+        {
+            var rendered = AgbplayRenderer.RenderSong(baserom, 301, maxLoops: 0);
+            Assert.True(rendered.WavBytes.Length > 44);
+            var peaks = WaveformPeaks.Build(rendered.WavBytes, 256);
+            Assert.Equal(256, peaks.Length);
+            Assert.Contains(peaks, peak => peak.Max != 0 || peak.Min != 0);
+        }
     }
 
     [Fact]

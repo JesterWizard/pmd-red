@@ -22,7 +22,8 @@ public sealed class MainWindow : Window
         new("Backgrounds", AssetCategory.Backgrounds),
         new("Effects", AssetCategory.Effects),
         new("Ground Maps", AssetCategory.GroundMaps),
-        new("Sound", AssetCategory.Sound),
+        new("Music", AssetCategory.Music),
+        new("Sound Effects", AssetCategory.SoundEffects),
         new("Raw Archives", AssetCategory.RawArchives),
     ];
 
@@ -47,6 +48,7 @@ public sealed class MainWindow : Window
     private bool _isLoading;
     private bool _useGridView;
     private AssetDescriptor? _selectedAsset;
+    private SoundPreviewPanel? _soundPreview;
     private CancellationTokenSource? _thumbnailCts;
     private readonly System.Diagnostics.Stopwatch _loadStopwatch = new();
     private DispatcherTimer? _loadTimer;
@@ -60,7 +62,7 @@ public sealed class MainWindow : Window
 
     public MainWindow()
     {
-        Title = "RescueEditor";
+        Title = "RescueTemple";
         Width = 1280;
         Height = 720;
         MinWidth = 800;
@@ -672,7 +674,8 @@ public sealed class MainWindow : Window
     {
         AssetKind.Dialogue => "Aa",
         AssetKind.Script => "{}",
-        AssetKind.SoundWave or AssetKind.SoundSong => "♪",
+        AssetKind.SoundSong => "♪",
+        AssetKind.SoundWave => "♫",
         _ => "▣",
     };
 
@@ -696,9 +699,18 @@ public sealed class MainWindow : Window
 
         _selectedAsset = asset;
         _exportSelected.IsEnabled = true;
+        DisposeSoundPreview();
         try
         {
             var preview = await Task.Run(() => AssetPreviewer.Create(_rom, asset, _charmap));
+            if (asset.Kind is AssetKind.SoundSong or AssetKind.SoundWave)
+            {
+                _soundPreview = new SoundPreviewPanel();
+                _previewHost.Child = _soundPreview;
+                await _soundPreview.LoadAsync(_rom, asset, preview.Text ?? string.Empty);
+                return;
+            }
+
             if (preview.IsImage)
             {
                 using var stream = new MemoryStream(preview.Png!);
@@ -816,7 +828,7 @@ public sealed class MainWindow : Window
     {
         var folders = await StorageProvider.OpenFolderPickerAsync(new FolderPickerOpenOptions
         {
-            Title = "Choose RescueEditor export folder",
+            Title = "Choose RescueTemple export folder",
             AllowMultiple = false,
         });
         return folders.FirstOrDefault()?.Path.LocalPath;
@@ -824,6 +836,7 @@ public sealed class MainWindow : Window
 
     private void ClearRom()
     {
+        DisposeSoundPreview();
         _rom = null;
         _catalog = null;
         _charmap = null;
@@ -837,6 +850,12 @@ public sealed class MainWindow : Window
         _exportSelected.IsEnabled = false;
         _exportCategory.IsEnabled = false;
         SetStatus("Open a baserom.gba to begin.");
+    }
+
+    private void DisposeSoundPreview()
+    {
+        _soundPreview?.Dispose();
+        _soundPreview = null;
     }
 
     private static string? FindDefaultRom()
@@ -882,7 +901,7 @@ public sealed class MainWindow : Window
             {
                 new TextBlock
                 {
-                    Text = "RescueEditor",
+                    Text = "RescueTemple",
                     FontSize = 30,
                     FontWeight = FontWeight.Bold,
                     HorizontalAlignment = HorizontalAlignment.Center,

@@ -16,8 +16,7 @@ public static class AssetPreviewer
             AssetKind.Script => new PreviewContent(asset.Name,
                 Text: ScriptDisassembler.Disassemble(rom, asset.Offset, charmap)),
             AssetKind.SoundWave => new PreviewContent(asset.Name, Text: SoundWaveCodec.Describe(rom, asset)),
-            AssetKind.SoundSong => new PreviewContent(asset.Name,
-                Text: ReadSource(asset.SourcePath, asset.Description)),
+            AssetKind.SoundSong => new PreviewContent(asset.Name, Text: DescribeSong(asset)),
             _ => new PreviewContent(asset.Name, Text: CreateHexPreview(rom, asset)),
         };
     }
@@ -78,6 +77,27 @@ public static class AssetPreviewer
         return path is not null && File.Exists(path)
             ? File.ReadAllText(path)
             : fallback ?? "Source file is unavailable.";
+    }
+
+    private static string DescribeSong(AssetDescriptor asset)
+    {
+        var header = new StringBuilder();
+        header.AppendLine(asset.Name);
+        header.AppendLine();
+        header.AppendLine($"Format: {asset.Format}");
+        if (asset.Metadata.TryGetValue("songId", out var songId))
+            header.AppendLine($"Song ID: {songId}");
+        if (asset.Metadata.TryGetValue("role", out var role))
+            header.AppendLine($"Role: {role}");
+        if (asset.Metadata.TryGetValue("player", out var player))
+            header.AppendLine($"Music player: {player}");
+        if (!string.IsNullOrWhiteSpace(asset.SourcePath))
+            header.AppendLine($"Source: {asset.SourcePath}");
+        header.AppendLine();
+        header.AppendLine("——");
+        header.AppendLine();
+        header.Append(ReadSource(asset.SourcePath, asset.Description));
+        return header.ToString();
     }
 }
 
@@ -140,9 +160,12 @@ public static class AssetExportService
                 }
                 break;
             case AssetKind.SoundSong:
-                WriteText(categoryDirectory, stem + ".s",
+            {
+                var songStem = asset.Metadata.GetValueOrDefault("seq", stem);
+                WriteText(categoryDirectory, songStem + ".s",
                     AssetPreviewer.ReadSource(asset.SourcePath, asset.Description), paths);
                 break;
+            }
             case AssetKind.GroundFile:
             case AssetKind.Raw:
             default:
@@ -237,6 +260,7 @@ public static class AssetExportService
     {
         AssetCategory.RawArchives => "raw-archives",
         AssetCategory.GroundMaps => "ground-maps",
+        AssetCategory.SoundEffects => "sound-effects",
         _ => category.ToString().ToLowerInvariant(),
     };
 

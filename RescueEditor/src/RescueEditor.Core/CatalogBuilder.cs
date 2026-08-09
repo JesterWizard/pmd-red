@@ -90,7 +90,7 @@ public static class CatalogBuilder
         catalog.AddRange(dialogue);
         catalog.AddRange(scripts);
 
-        Report("Indexing sound…");
+        Report("Indexing music and sound effects…");
         catalog.AddRange(SoundIndexer.Index(repositoryRoot, rom));
 
         if (portraits.Length == 0)
@@ -121,6 +121,7 @@ public static class CatalogBuilder
             while (current is not null)
             {
                 if (File.Exists(Path.Combine(current.FullName, "charmap.txt")) ||
+                    Directory.Exists(Path.Combine(current.FullName, "sound", "songs")) ||
                     Directory.Exists(Path.Combine(current.FullName, "data", "kao")) ||
                     Directory.Exists(Path.Combine(current.FullName, "src")))
                     return current.FullName;

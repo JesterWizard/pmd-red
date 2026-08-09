@@ -8,6 +8,8 @@
     <NoWarn>$(NoWarn);CS9057</NoWarn>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <InvariantGlobalization>true</InvariantGlobalization>
+    <AssemblyName>RescueTemple</AssemblyName>
+    <Product>RescueTemple</Product>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,10 +20,13 @@
     <PackageReference Include="Avalonia" Version="12.1.1" />
     <PackageReference Include="Avalonia.Desktop" Version="12.1.1" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.1" />
+    <PackageReference Include="NAudio" Version="2.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="../../../charmap.txt" Link="charmap.txt"
+          CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../tools/agbplay/**/*" Link="tools/agbplay/%(RecursiveDir)%(Filename)%(Extension)"
           CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
