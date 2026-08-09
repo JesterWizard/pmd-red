@@ -37,6 +37,7 @@ public sealed class GroundScriptVm
     private readonly List<ScriptActor> _actors = new();
     private readonly Dictionary<int, List<ScriptCommandData>> _functionCache = new();
     private readonly HashSet<int> _cues = new();
+    private readonly HashSet<int> _cuesConsumedThisFrame = new();
     private readonly List<int> _pendingSfx = new();
     private readonly Dictionary<int, int> _animations = new(); // actor slot / npc -> anim
     private readonly Dictionary<int, PlayPortraitSlot> _portraits = new(); // npc id
@@ -53,6 +54,8 @@ public sealed class GroundScriptVm
     private int _fadeMainCurrent;
     private int _fade2Target; // secondary channel (FADE2_*); must not clear main black
     private int _fade2Current;
+    /// <summary>Actor that opened the current textbox; only this actor pauses for A.</summary>
+    private ScriptActor? _dialogueOwner;
 
     public GroundScriptVm(
         RomImage rom,
@@ -94,6 +97,18 @@ public sealed class GroundScriptVm
         return vm;
     }
 
+    /// <summary>Test helper: multiple named actors (cue handshake scenarios).</summary>
+    public static GroundScriptVm FromActors(
+        IReadOnlyList<(string Name, IReadOnlyList<ScriptCommandData> Commands, int NpcId)> actors,
+        RomImage? rom = null,
+        RomProfile? profile = null)
+    {
+        var vm = new GroundScriptVm(rom, profile);
+        foreach (var (name, commands, npcId) in actors)
+            vm._actors.Add(new ScriptActor(name, commands, npcId));
+        return vm;
+    }
+
     private GroundScriptVm(RomImage? rom, RomProfile? profile)
     {
         _rom = rom;
@@ -112,6 +127,23 @@ public sealed class GroundScriptVm
     public int? MusicId { get; private set; }
     public bool Finished { get; private set; }
     public bool HasActors => _actors.Count > 0;
+
+    /// <summary>Debug: per-actor PC / wait / cue state for stall diagnosis.</summary>
+    public IReadOnlyList<string> DescribeActors()
+    {
+        var lines = new List<string>(_actors.Count);
+        foreach (var a in _actors)
+        {
+            var op = a.Index >= 0 && a.Index < a.Commands.Count
+                ? $"op=0x{a.Commands[a.Index].Op:X2}"
+                : "op=EOF";
+            lines.Add(
+                $"{a.Name} npc={a.NpcId} idx={a.Index} {op} wait={a.WaitFrames} " +
+                $"await={a.AwaitCueId?.ToString() ?? "-"} e5={a.E5WaitingCue?.ToString() ?? "-"} " +
+                $"walk={a.WalkActive} done={a.Done} idle={a.LoopingIdle} cues=[{string.Join(',', _cues)}]");
+        }
+        return lines;
+    }
     public IReadOnlyCollection<PlayPortraitSlot> Portraits => _portraits.Values;
 
     /// <summary>
@@ -197,6 +229,7 @@ public sealed class GroundScriptVm
         }
 
         WaitingForAdvance = false;
+        _dialogueOwner = null;
         Dialogue = null;
         DialoguePage = null;
         DialogueMode = PlayDialogueMode.None;
@@ -233,23 +266,21 @@ public sealed class GroundScriptVm
 
         TickEffects();
 
-        if (WaitingForAdvance)
+        // MSG_ON_BG_AUTO may auto-close; normal textboxes wait for A on the speaker only.
+        // Other actors keep running (retail cue/walk timing depends on this).
+        if (WaitingForAdvance && _dialogueHoldFrames > 0)
         {
-            // MSG_ON_BG_AUTO may auto-close; normal textboxes wait for A.
-            if (_dialogueHoldFrames > 0)
-            {
-                _dialogueHoldFrames--;
-                if (_dialogueHoldFrames <= 0 && DialogueMode == PlayDialogueMode.OnBackground)
-                    AdvanceDialogue();
-            }
-            return;
+            _dialogueHoldFrames--;
+            if (_dialogueHoldFrames <= 0 && DialogueMode == PlayDialogueMode.OnBackground)
+                AdvanceDialogue();
         }
 
         var progressed = true;
         var guard = 0;
-        while (progressed && guard++ < 64 && !WaitingForAdvance)
+        while (progressed && guard++ < 64)
         {
             progressed = false;
+            _cuesConsumedThisFrame.Clear();
             foreach (var actor in _actors.ToArray())
             {
                 if (actor.Done)
@@ -257,6 +288,10 @@ public sealed class GroundScriptVm
                 if (StepActor(actor))
                     progressed = true;
             }
+
+            // Retail ALERT wakes every waiter on that cue in one unlock pass.
+            foreach (var cue in _cuesConsumedThisFrame)
+                _cues.Remove(cue);
         }
 
         Finished = IsSceneComplete();
@@ -278,6 +313,10 @@ public sealed class GroundScriptVm
 
     private bool StepActor(ScriptActor actor)
     {
+        // Only the speaker is frozen while a textbox waits for A (other lives still cue/walk).
+        if (WaitingForAdvance && ReferenceEquals(actor, _dialogueOwner))
+            return false;
+
         if (actor.WalkActive)
             return TickWalk(actor);
 
@@ -293,12 +332,28 @@ public sealed class GroundScriptVm
         {
             if (_cues.Contains(cue))
             {
-                _cues.Remove(cue);
+                // Defer remove so every waiter on this cue can wake this pass.
+                _cuesConsumedThisFrame.Add(cue);
                 actor.AwaitCueId = null;
                 actor.Index++;
                 return true;
             }
             return false;
+        }
+
+        // CMD_UNK_E5: signal cue then wait until a waiter consumes it (GroundScriptLockCond).
+        if (actor.E5WaitingCue is int e5Cue)
+        {
+            if (WakeCueWaiters(e5Cue))
+            {
+                _cues.Remove(e5Cue);
+                actor.E5WaitingCue = null;
+                return true;
+            }
+            if (_cues.Contains(e5Cue))
+                return false; // still outstanding
+            actor.E5WaitingCue = null;
+            // Fall through and run the next opcode.
         }
 
         if (actor.Index < 0 || actor.Index >= actor.Commands.Count)
@@ -335,12 +390,16 @@ public sealed class GroundScriptVm
             case 0x34:
             case 0x35:
             case 0x36:
-                ShowText(cmd);
+                if (WaitingForAdvance && _dialogueOwner is not null && !ReferenceEquals(_dialogueOwner, actor))
+                    return false;
+                ShowText(cmd, actor);
                 actor.Index++;
                 return false;
 
             case 0xCF: // MSG_VAR(textType, var, speaker)
             {
+                if (WaitingForAdvance && _dialogueOwner is not null && !ReferenceEquals(_dialogueOwner, actor))
+                    return false;
                 var textType = cmd.ArgByte;
                 var speaker = cmd.Arg1;
                 actor.Index++;
@@ -358,6 +417,7 @@ public sealed class GroundScriptVm
                 DialoguePage = null;
                 DialogueMode = PlayDialogueMode.None;
                 WaitingForAdvance = false;
+                _dialogueOwner = null;
                 _dialoguePages = Array.Empty<string>();
                 actor.Index++;
                 return true;
@@ -421,13 +481,43 @@ public sealed class GroundScriptVm
                 return false;
 
             case 0xE3: // AWAIT_CUE
-                actor.AwaitCueId = cmd.ArgShort;
+            {
+                var cueId = cmd.ArgShort;
+                if (_cues.Contains(cueId))
+                {
+                    _cuesConsumedThisFrame.Add(cueId);
+                    actor.Index++;
+                    return true;
+                }
+                actor.AwaitCueId = cueId;
                 return false;
+            }
 
             case 0xE4: // ALERT_CUE
-                _cues.Add(cmd.ArgShort);
+            {
+                var cueId = cmd.ArgShort;
+                if (WakeCueWaiters(cueId))
+                    _cues.Remove(cueId);
+                else
+                    _cues.Add(cueId);
                 actor.Index++;
                 return true;
+            }
+
+            case 0xE5: // CMD_UNK_E5 — GroundScriptLockCond: alert cue + wait for a waiter
+            {
+                // Butterfree uses this after arriving to unblock the player's AWAIT_CUE(5).
+                var cueId = cmd.ArgShort;
+                actor.Index++;
+                _cues.Add(cueId);
+                if (WakeCueWaiters(cueId))
+                {
+                    _cues.Remove(cueId);
+                    return true; // waiter was already present — LockCond satisfied
+                }
+                actor.E5WaitingCue = cueId;
+                return false;
+            }
 
             case 0xE8: // CALL_SCRIPT
                 return CallScript(actor, cmd.ArgShort);
@@ -771,6 +861,20 @@ public sealed class GroundScriptVm
     private static bool IsFlipPlacement(int placement) => placement is
         3 or 5 or 6 or 7 or 9 or 13 or 15 or 16 or 17 or 19;
 
+    private bool WakeCueWaiters(int cueId)
+    {
+        var woke = false;
+        foreach (var other in _actors)
+        {
+            if (other.AwaitCueId != cueId)
+                continue;
+            other.AwaitCueId = null;
+            other.Index++;
+            woke = true;
+        }
+        return woke;
+    }
+
     private void ConsumeVariantDefault(ScriptActor actor, int speakerId, int textType)
     {
         // Skip non-matching VARIANT arms; take the first VARIANT_DEFAULT (retail default path).
@@ -784,7 +888,7 @@ public sealed class GroundScriptVm
             }
             if (cmd.Op == 0xD1)
             {
-                ShowText(cmd, speakerOverride: speakerId, textTypeOverride: textType);
+                ShowText(cmd, actor, speakerOverride: speakerId, textTypeOverride: textType);
                 actor.Index++;
                 // Leave subsequent VARIANT_DEFAULT lines queued as raw D1 — convert them into
                 // follow-up pages by absorbing consecutive D1s into WAIT_PRESS pages.
@@ -812,7 +916,11 @@ public sealed class GroundScriptVm
         }
     }
 
-    private void ShowText(ScriptCommandData cmd, int? speakerOverride = null, int? textTypeOverride = null)
+    private void ShowText(
+        ScriptCommandData cmd,
+        ScriptActor owner,
+        int? speakerOverride = null,
+        int? textTypeOverride = null)
     {
         string? raw;
         if (_charmap is not null && _rom is not null &&
@@ -865,6 +973,7 @@ public sealed class GroundScriptVm
         DialoguePage = _dialoguePages.Count > 0 ? _dialoguePages[0] : string.Empty;
 
         WaitingForAdvance = true;
+        _dialogueOwner = owner;
         // MSG_ON_BG_AUTO(u, …): u is a duration hint (retail ~frames); keep readable pace.
         if (DialogueMode == PlayDialogueMode.OnBackground)
         {
@@ -1072,6 +1181,8 @@ public sealed class GroundScriptVm
         public int Index { get; set; }
         public int WaitFrames { get; set; }
         public int? AwaitCueId { get; set; }
+        /// <summary>Cue id signaled by CMD_UNK_E5; cleared once a waiter consumes it.</summary>
+        public int? E5WaitingCue { get; set; }
         public bool Done { get; set; }
         public bool WalkActive { get; set; }
         public bool LoopingIdle { get; set; }

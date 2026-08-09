@@ -73,6 +73,15 @@ public sealed class ScenePlayWindow : Window
             VerticalAlignment = VerticalAlignment.Center,
         };
         RenderOptions.SetBitmapInterpolationMode(_view, BitmapInterpolationMode.None);
+        _view.PointerPressed += (_, e) =>
+        {
+            Focus();
+            if (_session.WaitingForAdvance)
+            {
+                _session.AdvanceDialogue();
+                e.Handled = true;
+            }
+        };
 
         _status = new TextBlock
         {
