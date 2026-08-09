@@ -50,6 +50,13 @@ public sealed class MainWindow : Window
     private CancellationTokenSource? _thumbnailCts;
     private readonly System.Diagnostics.Stopwatch _loadStopwatch = new();
     private DispatcherTimer? _loadTimer;
+    private Image? _previewImage;
+    private TextBlock? _zoomLabel;
+    private double _previewZoom = 1.0;
+    private double _pinchBaseZoom = 1.0;
+    private bool _pinchActive;
+    private int _previewPixelWidth;
+    private int _previewPixelHeight;
 
     public MainWindow()
     {
@@ -696,39 +703,7 @@ public sealed class MainWindow : Window
             {
                 using var stream = new MemoryStream(preview.Png!);
                 var bitmap = new Bitmap(stream);
-                var scale = asset.Kind == AssetKind.GroundMap ? 2.0 : 1.0;
-                _previewHost.Child = new ScrollViewer
-                {
-                    HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
-                    VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-                    Content = new StackPanel
-                    {
-                        Spacing = 10,
-                        Children =
-                        {
-                            new TextBlock
-                            {
-                                Text = $"{preview.Title}  ({bitmap.PixelSize.Width}×{bitmap.PixelSize.Height})",
-                                FontWeight = FontWeight.SemiBold,
-                            },
-                            new Border
-                            {
-                                Background = new SolidColorBrush(Color.FromRgb(0x2A, 0x2A, 0x2A)),
-                                Padding = new Thickness(8),
-                                HorizontalAlignment = HorizontalAlignment.Left,
-                                Child = new Image
-                                {
-                                    Source = bitmap,
-                                    Width = bitmap.PixelSize.Width * scale,
-                                    Height = bitmap.PixelSize.Height * scale,
-                                    Stretch = Stretch.Fill,
-                                    HorizontalAlignment = HorizontalAlignment.Left,
-                                    VerticalAlignment = VerticalAlignment.Top,
-                                },
-                            },
-                        },
-                    },
-                };
+                _previewHost.Child = CreateZoomableImagePreview(preview.Title, bitmap);
             }
             else if (asset.Kind == AssetKind.Dialogue)
             {
@@ -919,6 +894,129 @@ public sealed class MainWindow : Window
                 },
             },
         };
+    }
+
+    private Control CreateZoomableImagePreview(string title, Bitmap bitmap)
+    {
+        _previewZoom = 1.0;
+        _previewPixelWidth = bitmap.PixelSize.Width;
+        _previewPixelHeight = bitmap.PixelSize.Height;
+        _previewImage = new Image
+        {
+            Source = bitmap,
+            Stretch = Stretch.Fill,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            VerticalAlignment = VerticalAlignment.Top,
+        };
+        ApplyPreviewZoom();
+
+        _zoomLabel = new TextBlock
+        {
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(8, 0),
+            MinWidth = 56,
+            Text = "100%",
+        };
+
+        var zoomOut = new Button { Content = "−", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
+        var zoomIn = new Button { Content = "+", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
+        var zoom100 = new Button { Content = "100%", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
+        zoomOut.Click += (_, _) => AdjustPreviewZoom(1 / 1.25);
+        zoomIn.Click += (_, _) => AdjustPreviewZoom(1.25);
+        zoom100.Click += (_, _) => SetPreviewZoom(1.0);
+
+        var toolbar = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            Spacing = 2,
+            Children =
+            {
+                new TextBlock
+                {
+                    Text = $"{title}  ({_previewPixelWidth}×{_previewPixelHeight})",
+                    FontWeight = FontWeight.SemiBold,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Margin = new Thickness(0, 0, 12, 0),
+                },
+                zoomOut,
+                zoomIn,
+                zoom100,
+                _zoomLabel,
+            },
+        };
+
+        var imageHost = new Border
+        {
+            Background = new SolidColorBrush(Color.FromRgb(0x2A, 0x2A, 0x2A)),
+            Padding = new Thickness(8),
+            HorizontalAlignment = HorizontalAlignment.Left,
+            Child = _previewImage,
+        };
+
+        // Mouse/trackpad wheel zoom and touch pinch (scale is cumulative per gesture).
+        imageHost.GestureRecognizers.Add(new PinchGestureRecognizer());
+        imageHost.PointerWheelChanged += (_, e) =>
+        {
+            var factor = e.Delta.Y > 0 ? 1.1 : 1 / 1.1;
+            AdjustPreviewZoom(factor);
+            e.Handled = true;
+        };
+        imageHost.AddHandler(InputElement.PinchEvent, (_, e) =>
+        {
+            if (!_pinchActive)
+            {
+                _pinchActive = true;
+                _pinchBaseZoom = _previewZoom;
+            }
+
+            SetPreviewZoom(_pinchBaseZoom * e.Scale);
+            e.Handled = true;
+        }, RoutingStrategies.Bubble);
+        imageHost.AddHandler(InputElement.PinchEndedEvent, (_, _) =>
+        {
+            _pinchActive = false;
+        }, RoutingStrategies.Bubble);
+
+        var scroller = new ScrollViewer
+        {
+            HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
+            VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
+            Content = imageHost,
+        };
+
+        return new DockPanel
+        {
+            LastChildFill = true,
+            Children =
+            {
+                new Border
+                {
+                    [DockPanel.DockProperty] = Dock.Top,
+                    Margin = new Thickness(0, 0, 0, 8),
+                    Child = toolbar,
+                },
+                scroller,
+            },
+        };
+    }
+
+    private void AdjustPreviewZoom(double factor) =>
+        SetPreviewZoom(_previewZoom * factor);
+
+    private void SetPreviewZoom(double zoom)
+    {
+        _previewZoom = Math.Clamp(zoom, 0.1, 8.0);
+        ApplyPreviewZoom();
+    }
+
+    private void ApplyPreviewZoom()
+    {
+        if (_previewImage is null)
+            return;
+        _previewImage.Width = _previewPixelWidth * _previewZoom;
+        _previewImage.Height = _previewPixelHeight * _previewZoom;
+        if (_zoomLabel is not null)
+            _zoomLabel.Text = $"{_previewZoom * 100:0}%";
     }
 
     private void SetStatus(string text) => _status.Text = text;

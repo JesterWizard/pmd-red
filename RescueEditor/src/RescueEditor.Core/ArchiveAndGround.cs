@@ -101,11 +101,13 @@ public static class GroundMapIndexer
     {
         foreach (var archive in archives)
         {
+            // Case-sensitive: Team Base variants use both "B12P02c" (shared BPC)
+            // and "B12P02C" (palette), which must not collapse together.
             var entries = archive.Entries
                 .Where(entry => IsGroundName(entry.Name))
-                .GroupBy(entry => entry.Name, StringComparer.OrdinalIgnoreCase)
+                .GroupBy(entry => entry.Name, StringComparer.Ordinal)
                 .ToDictionary(group => group.Key, group => group.First(),
-                    StringComparer.OrdinalIgnoreCase);
+                    StringComparer.Ordinal);
             foreach (var bma in entries.Values.Where(entry => entry.Name.EndsWith('m')))
             {
                 var mapBase = bma.Name[..^1];
@@ -201,9 +203,10 @@ public static class GroundMapIndexer
         IReadOnlyDictionary<string, RomArchiveEntry> entries,
         string mapBase)
     {
-        if (entries.TryGetValue(mapBase, out var exact))
+        if (entries.TryGetValue(mapBase, out var exact) && !LooksLikeBpc(exact))
             return exact;
-        return entries.TryGetValue(mapBase.TrimEnd('A', 'B', 'C') + "A", out var alternate)
+        return entries.TryGetValue(mapBase.TrimEnd('A', 'B', 'C') + "A", out var alternate) &&
+               !LooksLikeBpc(alternate)
             ? alternate
             : null;
     }
@@ -213,9 +216,24 @@ public static class GroundMapIndexer
         string mapBase)
     {
         var root = mapBase.TrimEnd('A', 'B', 'C');
-        var candidates = new[] { mapBase + "c", root + "c" };
-        return candidates.Select(candidate => entries.TryGetValue(candidate, out var entry) ? entry : null)
-            .FirstOrDefault(entry => entry is not null);
+        // Prefer exact "…c" (shared tileset) over palette names like "…C".
+        var candidates = new[] { mapBase + "c", root + "c", mapBase + "C", root + "C" };
+        foreach (var candidate in candidates)
+        {
+            if (entries.TryGetValue(candidate, out var entry) && LooksLikeBpc(entry))
+                return entry;
+        }
+
+        return null;
+    }
+
+    private static bool LooksLikeBpc(RomArchiveEntry entry)
+    {
+        // BPC headers start with chunk width/height of 2 or 3.
+        if (entry.Size < 16)
+            return false;
+        // Name heuristic: tile sheets end with lowercase 'c'.
+        return entry.Name.EndsWith('c');
     }
 
     private static byte[] ReadPart(
