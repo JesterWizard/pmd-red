@@ -25,6 +25,7 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly TextBlock _commandTitle;
     private readonly Border _scriptHeaderRow;
     private readonly CheckBox _snapToggle;
+    private readonly EditorKeymap _keymap = EditorKeymap.CreateDefault();
     private readonly TextBlock _status;
     private readonly TextBlock _mapInfo;
     private readonly CompactSpinBox _groupBox;
@@ -1167,32 +1168,63 @@ public sealed class SceneWorkspacePanel : UserControl
         }
     }
 
+    public bool TryHandleCommand(EditorCommandId command)
+    {
+        switch (command)
+        {
+            case EditorCommandId.Undo:
+                if (_changes is null) return false;
+                _changes.Undo();
+                RefreshAll();
+                DirtyChanged?.Invoke(this, EventArgs.Empty);
+                return true;
+            case EditorCommandId.Redo:
+                if (_changes is null) return false;
+                _changes.Redo();
+                RefreshAll();
+                DirtyChanged?.Invoke(this, EventArgs.Empty);
+                return true;
+            case EditorCommandId.DeleteSelection:
+                if (_selectedEntity is null) return false;
+                RemoveSelectedEntity();
+                return true;
+            case EditorCommandId.SelectTool:
+                _selectTool.IsChecked = true;
+                _panTool.IsChecked = false;
+                _map.Tool = SceneMapTool.Select;
+                return true;
+            case EditorCommandId.PanTool:
+                _panTool.IsChecked = true;
+                _selectTool.IsChecked = false;
+                _map.Tool = SceneMapTool.Pan;
+                return true;
+            case EditorCommandId.ToggleGrid:
+                _gridToggle.IsChecked = _gridToggle.IsChecked != true;
+                return true;
+            default:
+                return false;
+        }
+    }
+
     private void OnKeyDown(object? sender, KeyEventArgs e)
     {
         if (_changes is null)
             return;
-        if (e.KeyModifiers.HasFlag(KeyModifiers.Control) && e.Key == Key.Z)
+
+        var chord = new KeyChord(
+            e.Key.ToString(),
+            e.KeyModifiers.HasFlag(KeyModifiers.Control),
+            e.KeyModifiers.HasFlag(KeyModifiers.Shift),
+            e.KeyModifiers.HasFlag(KeyModifiers.Alt));
+        if (_keymap.TryResolve(chord, out var command) &&
+            TryHandleCommand(command))
         {
-            _changes.Undo();
-            RefreshAll();
             e.Handled = true;
             return;
         }
-        if (e.KeyModifiers.HasFlag(KeyModifiers.Control) && e.Key == Key.Y)
-        {
-            _changes.Redo();
-            RefreshAll();
-            e.Handled = true;
-            return;
-        }
+
         if (_selectedEntity is null)
             return;
-        if (e.Key == Key.Delete)
-        {
-            RemoveSelectedEntity();
-            e.Handled = true;
-            return;
-        }
         var dx = e.Key switch { Key.Left => -1, Key.Right => 1, _ => 0 };
         var dy = e.Key switch { Key.Up => -1, Key.Down => 1, _ => 0 };
         if (dx == 0 && dy == 0)

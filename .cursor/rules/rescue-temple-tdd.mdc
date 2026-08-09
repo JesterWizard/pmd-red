@@ -1,0 +1,41 @@
+---
+description: RescueTemple red–green–refactor TDD for RescueEditor development
+globs: RescueEditor/**
+alwaysApply: false
+---
+
+# RescueTemple TDD (red → green → refactor)
+
+All further RescueTemple / `RescueEditor/` work follows red–green–refactor. Do not ship behavior without a failing test first.
+
+## Cycle
+
+1. **Red** — Add or extend a focused unit test that fails for the intended behavior.
+2. **Green** — Implement the smallest change that makes the test pass.
+3. **Refactor** — Clean up with tests still green. Prefer extracting Core logic over Avalonia UI glue.
+
+Then start the next red (the user may say “red green red” to mean continuous cycles).
+
+## Where tests live
+
+- Domain / schemas / editing / commands: `RescueEditor/tests/RescueEditor.Core.Tests/`
+- Prefer pure types in `RescueEditor.Core` so App UI can stay thin
+
+## Rules of engagement
+
+- One behavioral concern per test (or Theory row).
+- No “implement then maybe test later.”
+- UI wiring is allowed only after Core behavior is green, or when the test targets a pure command/router/layout model.
+- Do not change unrelated functionality to make a test pass.
+- Run `dotnet test RescueEditor/RescueEditor.sln` (or the Core.Tests project) before claiming done.
+
+## Near-term features (same discipline)
+
+1. More `ScriptCommandSchema` opcode bindings
+2. Keyboard shortcuts (testable command routing first)
+3. Real docking (testable layout model first, then shell wiring)
+
+## Established defaults (keep covered by tests)
+
+- Shortcuts: Ctrl+Z/Y/S, Delete, V/H/G, Ctrl+[ / Ctrl+]
+- Dock: `EditorDockLayout` widths/visibility + shell `ApplyDockLayout`

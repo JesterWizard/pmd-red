@@ -30,7 +30,11 @@ public sealed class MainWindow : Window
     private readonly BreadcrumbBar _breadcrumb;
     private readonly Border _workspaceHost;
     private readonly Border _propertiesHost;
+    private readonly GridSplitter _leftSplitter;
     private readonly GridSplitter _rightSplitter;
+    private readonly Grid _contentGrid;
+    private readonly EditorKeymap _keymap = EditorKeymap.CreateDefault();
+    private readonly EditorDockLayout _dock = new();
     private readonly TextBlock _status;
     private readonly TextBlock _propertiesBody;
     private readonly Button _exportSelected;
@@ -181,7 +185,7 @@ public sealed class MainWindow : Window
         };
         var toolbar = EditorChrome.ToolbarHost(toolbarInner);
 
-        var leftSplitter = new GridSplitter
+        _leftSplitter = new GridSplitter
         {
             Width = 4,
             Background = EditorTheme.BorderSubtleBrush,
@@ -194,16 +198,17 @@ public sealed class MainWindow : Window
             ResizeDirection = GridResizeDirection.Columns,
         };
 
-        var content = new Grid
+        _contentGrid = new Grid
         {
             ColumnDefinitions = new ColumnDefinitions($"{EditorTheme.ExplorerWidth},4,*,4,{EditorTheme.InspectorWidth}"),
-            Children = { _explorer, leftSplitter, _workspaceHost, _rightSplitter, _propertiesHost },
+            Children = { _explorer, _leftSplitter, _workspaceHost, _rightSplitter, _propertiesHost },
         };
         Grid.SetColumn(_explorer, 0);
-        Grid.SetColumn(leftSplitter, 1);
+        Grid.SetColumn(_leftSplitter, 1);
         Grid.SetColumn(_workspaceHost, 2);
         Grid.SetColumn(_rightSplitter, 3);
         Grid.SetColumn(_propertiesHost, 4);
+        var content = _contentGrid;
 
         var menu = CreateMenu();
         var statusBar = EditorChrome.StatusHost(statusInner);
@@ -446,8 +451,7 @@ public sealed class MainWindow : Window
             _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes);
             _explorer.Build(_catalog, _scenes, Categories);
             _workspaceHost.Child = _assetWorkspace;
-            _propertiesHost.IsVisible = true;
-            _rightSplitter.IsVisible = true;
+            ApplyDockLayout(sceneOwnsInspector: false);
             _selectedCategory = AssetCategory.Scenes;
             _assetWorkspace.ShowCategory(AssetCategory.Scenes, selectFirst: false);
             _exportCategory.IsEnabled = true;
@@ -486,18 +490,14 @@ public sealed class MainWindow : Window
                 _exportCategory.IsEnabled = true;
                 if (category.Category == AssetCategory.Scenes)
                 {
-                    _propertiesHost.IsVisible = true;
-                    _rightSplitter.IsVisible = true;
-                    Grid.SetColumnSpan(_workspaceHost, 1);
                     _workspaceHost.Child = _assetWorkspace;
+                    ApplyDockLayout(sceneOwnsInspector: false);
                     _assetWorkspace.ShowCategory(category.Category, selectFirst: false);
                 }
                 else
                 {
-                    _propertiesHost.IsVisible = true;
-                    _rightSplitter.IsVisible = true;
-                    Grid.SetColumnSpan(_workspaceHost, 1);
                     _workspaceHost.Child = _assetWorkspace;
+                    ApplyDockLayout(sceneOwnsInspector: false);
                     _assetWorkspace.ShowCategory(category.Category, selectFirst: true);
                 }
                 UpdateBreadcrumb();
@@ -513,10 +513,8 @@ public sealed class MainWindow : Window
                 }
                 else
                 {
-                    _propertiesHost.IsVisible = true;
-                    _rightSplitter.IsVisible = true;
-                    Grid.SetColumnSpan(_workspaceHost, 1);
                     _workspaceHost.Child = _assetWorkspace;
+                    ApplyDockLayout(sceneOwnsInspector: false);
                     _ = _assetWorkspace.ShowAssetAsync(assetNode.Asset);
                 }
                 UpdateBreadcrumb();
@@ -551,10 +549,8 @@ public sealed class MainWindow : Window
         _sceneWorkspace.Load(_rom, _charmap, _scenes, _changes, scene,
             asset.Metadata.TryGetValue("mapId", out var mapText) && int.TryParse(mapText, out var id) ? id : null);
         // Scene editor owns center+right (SkyTemple style); hide generic properties.
-        _propertiesHost.IsVisible = false;
-        _rightSplitter.IsVisible = false;
         _workspaceHost.Child = _sceneWorkspace;
-        Grid.SetColumnSpan(_workspaceHost, 3);
+        ApplyDockLayout(sceneOwnsInspector: true);
         UpdateBreadcrumb();
         UpdateDirtyTitle();
     }
@@ -849,9 +845,8 @@ public sealed class MainWindow : Window
         _explorer.Clear();
         _assetWorkspace.Clear();
         _workspaceHost.Child = CreateWelcomePanel();
-        _propertiesHost.IsVisible = true;
-        _rightSplitter.IsVisible = true;
-        Grid.SetColumnSpan(_workspaceHost, 1);
+        ApplyDockLayout(sceneOwnsInspector: false);
+        _exportSelected.IsEnabled = false;
         _exportCategory.IsEnabled = false;
         _breadcrumb.SetPath("RescueTemple");
         Title = "RescueTemple";
@@ -860,27 +855,67 @@ public sealed class MainWindow : Window
 
     private void MainWindowOnKeyDown(object? sender, KeyEventArgs e)
     {
-        if (!e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        var chord = new KeyChord(
+            e.Key.ToString(),
+            e.KeyModifiers.HasFlag(KeyModifiers.Control),
+            e.KeyModifiers.HasFlag(KeyModifiers.Shift),
+            e.KeyModifiers.HasFlag(KeyModifiers.Alt));
+        if (!_keymap.TryResolve(chord, out var command))
             return;
-        if (e.Key == Key.Z)
+
+        if (_sceneWorkspace is not null &&
+            _workspaceHost.Child == _sceneWorkspace &&
+            _sceneWorkspace.TryHandleCommand(command))
         {
-            _changes.Undo();
-            _sceneWorkspace?.RefreshFromExternal();
-            UpdateDirtyTitle();
             e.Handled = true;
+            return;
         }
-        else if (e.Key == Key.Y)
+
+        if (ExecuteShellCommand(command))
+            e.Handled = true;
+    }
+
+    private bool ExecuteShellCommand(EditorCommandId command)
+    {
+        switch (command)
         {
-            _changes.Redo();
-            _sceneWorkspace?.RefreshFromExternal();
-            UpdateDirtyTitle();
-            e.Handled = true;
+            case EditorCommandId.Undo:
+                _changes.Undo();
+                _sceneWorkspace?.RefreshFromExternal();
+                UpdateDirtyTitle();
+                return true;
+            case EditorCommandId.Redo:
+                _changes.Redo();
+                _sceneWorkspace?.RefreshFromExternal();
+                UpdateDirtyTitle();
+                return true;
+            case EditorCommandId.Save:
+                SaveProjectOnClick(this, new RoutedEventArgs());
+                return true;
+            case EditorCommandId.ToggleExplorer:
+                _dock.Toggle(DockPanelId.Explorer);
+                ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
+                return true;
+            case EditorCommandId.ToggleInspector:
+                _dock.Toggle(DockPanelId.Inspector);
+                ApplyDockLayout(sceneOwnsInspector: _workspaceHost.Child == _sceneWorkspace);
+                return true;
+            default:
+                return false;
         }
-        else if (e.Key == Key.S)
-        {
-            SaveProjectOnClick(sender, e);
-            e.Handled = true;
-        }
+    }
+
+    private void ApplyDockLayout(bool sceneOwnsInspector)
+    {
+        var explorerW = _dock.EffectiveWidth(DockPanelId.Explorer);
+        var inspectorW = sceneOwnsInspector ? 0 : _dock.EffectiveWidth(DockPanelId.Inspector);
+        _contentGrid.ColumnDefinitions[0].Width = new GridLength(explorerW);
+        _contentGrid.ColumnDefinitions[4].Width = new GridLength(inspectorW);
+        _explorer.IsVisible = explorerW > 0;
+        _leftSplitter.IsVisible = explorerW > 0;
+        _propertiesHost.IsVisible = inspectorW > 0;
+        _rightSplitter.IsVisible = inspectorW > 0;
+        Grid.SetColumnSpan(_workspaceHost, sceneOwnsInspector || inspectorW <= 0 ? 3 : 1);
     }
 
     private static string? FindDefaultRom()
