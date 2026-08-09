@@ -18,8 +18,14 @@ public sealed class ScenePlaySession
     private readonly HashSet<GbaButton> _held = new();
     private readonly List<int> _pendingSfx = new();
     private readonly GroundScriptVm? _script;
+    private readonly PixelFont _font = PixelFont.Load();
     private int? _lastMusicId;
     private int _animTick;
+    private RgbaImage? _cachedBg;
+    private int _cachedBgGroup = int.MinValue;
+    private int _cachedBgSector = int.MinValue;
+    private RgbaImage? _workFull;
+    private RgbaImage? _cameraBuf;
 
     public ScenePlaySession(
         RomImage rom,
@@ -75,7 +81,8 @@ public sealed class ScenePlaySession
 
         var useScript = scripted ?? ScenePlayPresets.IsTinyWoodsIntro(scene, ActiveGroup, ActiveSector);
         _portraits = portraits ?? (useScript ? new PortraitAtlas(rom, repoRoot) : null);
-        _effects = useScript ? new EmotionEffectAtlas(repoRoot, rom) : null;
+        // Lazy-load emotion icons on first use — eager ROM decode in the ctor can hitch/crash.
+        _effects = new EmotionEffectAtlas(repoRoot, rom);
         if (useScript)
         {
             IsScripted = true;
@@ -205,12 +212,52 @@ public sealed class ScenePlaySession
         return false;
     }
 
-    public byte[] RenderFrame()
-    {
-        var repoRoot = CatalogBuilder.FindRepositoryRoot(_rom.Path);
-        var font = PixelFont.Load(repoRoot);
+    public byte[] RenderFrame() => RenderFrameImage().ToPng();
 
-        // Full map background + objects; lives drawn animated below.
+    /// <summary>Render one 240×160 frame without PNG encode (for the play window hot path).</summary>
+    public RgbaImage RenderFrameImage()
+    {
+        EnsureBackground();
+        var bg = _cachedBg ?? throw new InvalidOperationException("Scene background failed to compose.");
+        EnsureWorkBuffers(bg.Width, bg.Height);
+        var work = _workFull ?? throw new InvalidOperationException("Work buffer missing.");
+        var camera = _cameraBuf ?? throw new InvalidOperationException("Camera buffer missing.");
+        if (work.Pixels.Length != bg.Pixels.Length)
+            EnsureWorkBuffers(bg.Width, bg.Height);
+        Buffer.BlockCopy(bg.Pixels, 0, work.Pixels, 0, bg.Pixels.Length);
+
+        DrawAnimatedLives(work);
+
+        if (AllowFreeRoam)
+            DrawPlayer(work);
+
+        CropCameraInto(work, CameraX, CameraY, camera);
+
+        // When faded to black with no dialogue yet, skip sprite work visually via fade.
+        GbaDialogueHud.Draw(
+            camera,
+            _font,
+            DialogueMode,
+            string.IsNullOrWhiteSpace(DisplayDialogue) ? null : DisplayDialogue,
+            DialogueSpeakerLabel,
+            DialogueUsesSpeechIcon,
+            quietIcon: DialogueMode == PlayDialogueMode.Quiet,
+            WaitingForAdvance,
+            _animTick,
+            _script?.VisiblePortraits,
+            _portraits,
+            FadeAlpha);
+
+        return camera;
+    }
+
+    private void EnsureBackground()
+    {
+        if (_cachedBg is not null &&
+            _cachedBgGroup == ActiveGroup &&
+            _cachedBgSector == ActiveSector)
+            return;
+
         var fullPng = SceneCompositor.ComposeScenePng(
             _rom,
             _scene,
@@ -226,34 +273,21 @@ public sealed class ScenePlaySession
             actorSprites: _actorSprites,
             objectSprites: _objectSprites);
 
-        var full = RgbaImage.FromPng(fullPng) ?? new RgbaImage(
+        _cachedBg = RgbaImage.FromPng(fullPng) ?? new RgbaImage(
             Math.Max(CameraWidth, MapWidthPixels),
             Math.Max(CameraHeight, MapHeightPixels),
             new byte[Math.Max(CameraWidth, MapWidthPixels) * Math.Max(CameraHeight, MapHeightPixels) * 4]);
+        _cachedBgGroup = ActiveGroup;
+        _cachedBgSector = ActiveSector;
+        _workFull = null;
+    }
 
-        DrawAnimatedLives(full);
-
-        if (AllowFreeRoam)
-            DrawPlayer(full);
-
-        // Game view is the GBA camera window, not the full map.
-        var camera = CropCamera(full, CameraX, CameraY, CameraWidth, CameraHeight);
-
-        GbaDialogueHud.Draw(
-            camera,
-            font,
-            DialogueMode,
-            string.IsNullOrWhiteSpace(DisplayDialogue) ? null : DisplayDialogue,
-            DialogueSpeakerLabel,
-            DialogueUsesSpeechIcon,
-            quietIcon: DialogueMode == PlayDialogueMode.Quiet,
-            WaitingForAdvance,
-            _animTick,
-            _script?.VisiblePortraits,
-            _portraits,
-            FadeAlpha);
-
-        return camera.ToPng();
+    private void EnsureWorkBuffers(int mapW, int mapH)
+    {
+        if (_workFull is null || _workFull.Width != mapW || _workFull.Height != mapH)
+            _workFull = new RgbaImage(mapW, mapH, new byte[checked(mapW * mapH * 4)]);
+        if (_cameraBuf is null || _cameraBuf.Width != CameraWidth || _cameraBuf.Height != CameraHeight)
+            _cameraBuf = new RgbaImage(CameraWidth, CameraHeight, new byte[CameraWidth * CameraHeight * 4]);
     }
 
     private void DrawAnimatedLives(RgbaImage image)
@@ -330,9 +364,10 @@ public sealed class ScenePlaySession
             var fx = _effects.TryGet(effectId);
             if (fx is not null)
             {
-                var fxX = ix + 4 - fx.Width / 2 + (flip ? -6 : 6);
-                var fxY = y - fx.Height - 2;
-                SceneCompositor.BlitSpritePublic(image, fx, fxX, fxY);
+                // Emotion icons are tiny tile strips — draw 2× for GBA-readable size.
+                var fxX = ix + 4 - fx.Width + (flip ? -4 : 4);
+                var fxY = y - fx.Height * 2 - 2;
+                SceneCompositor.BlitSpriteScaledPublic(image, fx, fxX, fxY, scale: 2);
             }
         }
     }
@@ -507,7 +542,16 @@ public sealed class ScenePlaySession
 
     public static RgbaImage CropCamera(RgbaImage source, int x, int y, int width, int height)
     {
-        var pixels = new byte[width * height * 4];
+        var dest = new RgbaImage(width, height, new byte[width * height * 4]);
+        CropCameraInto(source, x, y, dest);
+        return dest;
+    }
+
+    public static void CropCameraInto(RgbaImage source, int x, int y, RgbaImage dest)
+    {
+        var width = dest.Width;
+        var height = dest.Height;
+        var pixels = dest.Pixels;
         for (var row = 0; row < height; row++)
         {
             var srcY = y + row;
@@ -531,6 +575,5 @@ public sealed class ScenePlaySession
                 pixels[dst + 3] = source.Pixels[src + 3];
             }
         }
-        return new RgbaImage(width, height, pixels);
     }
 }

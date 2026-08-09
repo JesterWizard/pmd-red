@@ -76,6 +76,11 @@ public sealed class GroundScriptVm
             .Stations.FirstOrDefault();
         if (station?.Commands is { Count: > 0 })
             _actors.Add(new ScriptActor("station", station.Commands, npcId: -1));
+
+        // Tiny Woods (and most event scripts) begin with FADE_OUT — keep the first
+        // paint black so we never flash the map before the script runs.
+        _fadeMainCurrent = 255;
+        _fadeMainTarget = 255;
     }
 
     /// <summary>Test helper: run a bare command list as a single actor.</summary>
@@ -187,7 +192,7 @@ public sealed class GroundScriptVm
         {
             _dialoguePageIndex++;
             DialoguePage = _dialoguePages[_dialoguePageIndex];
-            _dialogueHoldFrames = DialogueMode == PlayDialogueMode.OnBackground ? 96 : 0;
+            _dialogueHoldFrames = DialogueMode == PlayDialogueMode.OnBackground ? 120 : 0;
             return;
         }
 
@@ -577,19 +582,86 @@ public sealed class GroundScriptVm
 
     private List<ScriptCommandData>? LoadFunctionCommands(int scriptId)
     {
-        if (_rom is null || _profile is null)
-            return null;
         if (_functionCache.TryGetValue(scriptId, out var cached))
             return cached;
-        if (scriptId < 0 || scriptId >= _profile.FunctionScriptCount)
-            return null;
-        if (!_profile.Anchors.TryGetValue("gFunctionScriptTable", out var table))
-            return null;
 
-        var data = ScriptRefData.Read(_rom, table + scriptId * ScriptRefData.Size, loadCommands: true);
-        _functionCache[scriptId] = data.Commands;
-        return data.Commands;
+        List<ScriptCommandData>? body = null;
+        if (_rom is not null && _profile is not null &&
+            scriptId >= 0 && scriptId < _profile.FunctionScriptCount &&
+            _profile.Anchors.TryGetValue("gFunctionScriptTable", out var table))
+        {
+            try
+            {
+                var data = ScriptRefData.Read(_rom, table + scriptId * ScriptRefData.Size, loadCommands: true);
+                body = data.Commands;
+            }
+            catch
+            {
+                body = null;
+            }
+        }
+
+        if (body is null || body.Count == 0)
+            body = BuiltinEmotionScript(scriptId);
+
+        if (body is not null)
+            _functionCache[scriptId] = body;
+        return body;
     }
+
+    /// <summary>
+    /// NOTICE/QUESTION/SWEAT/SHOCK/SMILE/ANGRY when ROM function-table lookup fails.
+    /// IDs match <c>include/asm/constants/script_func_constants.inc</c>.
+    /// </summary>
+    private static List<ScriptCommandData>? BuiltinEmotionScript(int scriptId) =>
+        scriptId switch
+        {
+            0x28 => // NOTICE_FUNC
+            [
+                new() { Op = 0x56, Arg1 = EmotionEffectAtlas.NoticeId },
+                new() { Op = 0xDE },
+                new() { Op = 0xEE },
+            ],
+            0x29 => // QUESTION_FUNC
+            [
+                new() { Op = 0x56, Arg1 = EmotionEffectAtlas.QuestionId },
+                new() { Op = 0xDE },
+                new() { Op = 0xEE },
+            ],
+            0x2A => // SWEAT_FUNC
+            [
+                new() { Op = 0x56, Arg1 = EmotionEffectAtlas.SweatId },
+                new() { Op = 0xDE },
+                new() { Op = 0xEE },
+            ],
+            0x2B => // SHOCK_FUNC
+            [
+                new() { Op = 0x56, Arg1 = EmotionEffectAtlas.ShockId },
+                new() { Op = 0xDE },
+                new() { Op = 0xEE },
+            ],
+            0x2E => // SMILE_START_FUNC
+            [
+                new() { Op = 0x56, Arg1 = EmotionEffectAtlas.SmileId },
+                new() { Op = 0xEE },
+            ],
+            0x2F => // SMILE_END_FUNC
+            [
+                new() { Op = 0x56, Arg1 = 0 },
+                new() { Op = 0xEE },
+            ],
+            0x30 => // ANGRY_START_FUNC
+            [
+                new() { Op = 0x56, Arg1 = EmotionEffectAtlas.AngryId },
+                new() { Op = 0xEE },
+            ],
+            0x31 => // ANGRY_END_FUNC
+            [
+                new() { Op = 0x56, Arg1 = 0 },
+                new() { Op = 0xEE },
+            ],
+            _ => null,
+        };
 
     private void ApplyPortrait(int placement, int npcId, int emotion)
     {
@@ -734,7 +806,16 @@ public sealed class GroundScriptVm
         DialoguePage = _dialoguePages.Count > 0 ? _dialoguePages[0] : string.Empty;
 
         WaitingForAdvance = true;
-        _dialogueHoldFrames = DialogueMode == PlayDialogueMode.OnBackground ? 96 : 0;
+        // MSG_ON_BG_AUTO(u, …): u is a duration hint (retail ~frames); keep readable pace.
+        if (DialogueMode == PlayDialogueMode.OnBackground)
+        {
+            var hint = cmd.Op == 0x39 ? Math.Max(0, (int)cmd.ArgShort) : 0;
+            _dialogueHoldFrames = hint > 0 ? Math.Clamp(hint * 3, 90, 180) : 120;
+        }
+        else
+        {
+            _dialogueHoldFrames = 0;
+        }
     }
 
     private string ResolveSpeakerLabel(int speakerId)

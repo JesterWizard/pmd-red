@@ -302,6 +302,40 @@ public static class SceneCompositor
     public static void BlitSpritePublic(RgbaImage destination, RgbaImage sprite, int x, int y, bool flipH = false) =>
         BlitSprite(destination, sprite, x, y, flipH);
 
+    /// <summary>Nearest-neighbor scaled blit (emotion overlays).</summary>
+    public static void BlitSpriteScaledPublic(
+        RgbaImage destination, RgbaImage sprite, int x, int y, int scale, bool flipH = false)
+    {
+        if (scale <= 1)
+        {
+            BlitSprite(destination, sprite, x, y, flipH);
+            return;
+        }
+
+        for (var row = 0; row < sprite.Height; row++)
+        for (var col = 0; col < sprite.Width; col++)
+        {
+            var srcCol = flipH ? sprite.Width - 1 - col : col;
+            var src = (row * sprite.Width + srcCol) * 4;
+            var a = sprite.Pixels[src + 3];
+            if (a < 8) continue;
+            var r = sprite.Pixels[src];
+            var g = sprite.Pixels[src + 1];
+            var b = sprite.Pixels[src + 2];
+            var dx0 = x + col * scale;
+            var dy0 = y + row * scale;
+            for (var sy = 0; sy < scale; sy++)
+            for (var sx = 0; sx < scale; sx++)
+            {
+                var px = dx0 + sx;
+                var py = dy0 + sy;
+                if (px < 0 || py < 0 || px >= destination.Width || py >= destination.Height)
+                    continue;
+                Blend(destination.Pixels, (py * destination.Width + px) * 4, r, g, b, a);
+            }
+        }
+    }
+
     /// <summary>Public filled rect for Scene Play fallback player marker.</summary>
     public static void FillRectPublic(
         RgbaImage image, int x, int y, int w, int h, byte r, byte g, byte b, byte a)

@@ -2,7 +2,7 @@ namespace RescueEditor.Core;
 
 /// <summary>
 /// Floating emotion overlays attached to ground lives (NOTICE/QUESTION/SHOCK/SWEAT).
-/// Assets are <c>data/effects/efob088–093</c> (retail effect ids 88–93).
+/// Loads <c>data/effects/efob088–094</c>, falls back to ROM SIRO tiles, then drawn icons.
 /// </summary>
 public sealed class EmotionEffectAtlas
 {
@@ -11,7 +11,7 @@ public sealed class EmotionEffectAtlas
     public const int QuestionId = 89; // ?
     public const int ShockId = 91;
     public const int SweatId = 92;
-    public const int SmileId = 93;   // "shop"/smile face
+    public const int SmileId = 93;
     public const int AngryId = 94;
 
     private readonly string? _repositoryRoot;
@@ -20,8 +20,14 @@ public sealed class EmotionEffectAtlas
 
     public EmotionEffectAtlas(string? repositoryRoot, RomImage? rom = null)
     {
-        _repositoryRoot = repositoryRoot;
+        _repositoryRoot = ResolveEffectsRoot(repositoryRoot);
         _rom = rom;
+    }
+
+    public void PrefetchCommon()
+    {
+        foreach (var id in new[] { NoticeId, QuestionId, ShockId, SweatId, SmileId, AngryId })
+            _ = TryGet(id);
     }
 
     public RgbaImage? TryGet(int effectId)
@@ -31,9 +37,38 @@ public sealed class EmotionEffectAtlas
         if (_cache.TryGetValue(effectId, out var cached))
             return cached;
 
-        var image = TryLoadFromPng(effectId) ?? TryLoadFromRom(effectId) ?? TryDrawFallback(effectId);
+        // Prefer ROM (correct palette), then PNG dumps, then procedural icons.
+        var image = TryLoadFromRom(effectId) ?? TryLoadFromPng(effectId) ?? TryDrawFallback(effectId);
         _cache[effectId] = image;
         return image;
+    }
+
+    private static string? ResolveEffectsRoot(string? hint)
+    {
+        foreach (var start in new[] { hint, Environment.CurrentDirectory, AppContext.BaseDirectory })
+        {
+            if (string.IsNullOrWhiteSpace(start))
+                continue;
+            try
+            {
+                var current = new DirectoryInfo(Path.GetFullPath(start));
+                while (current is not null)
+                {
+                    var effects = Path.Combine(current.FullName, "data", "effects");
+                    if (Directory.Exists(effects) &&
+                        File.Exists(Path.Combine(effects, "efob088.png")))
+                        return current.FullName;
+                    if (Directory.Exists(Path.Combine(current.FullName, "graphics", "ax", "mon")))
+                        return current.FullName;
+                    current = current.Parent;
+                }
+            }
+            catch
+            {
+                // try next
+            }
+        }
+        return hint;
     }
 
     private RgbaImage? TryLoadFromPng(int effectId)
@@ -102,7 +137,6 @@ public sealed class EmotionEffectAtlas
     /// </summary>
     private static RgbaImage CompactTileStrip(RgbaImage sheet, int maxSize = 24)
     {
-        // Find opaque bounding box.
         var minX = sheet.Width;
         var minY = sheet.Height;
         var maxX = 0;
@@ -122,7 +156,6 @@ public sealed class EmotionEffectAtlas
         if (!any)
             return sheet;
 
-        // Prefer first ~3 tile rows for animated strips (icon-sized).
         var tileH = 8;
         var preferBottom = Math.Min(maxY, minY + tileH * 3 - 1);
         maxY = Math.Min(maxY, preferBottom);
@@ -145,7 +178,6 @@ public sealed class EmotionEffectAtlas
             var r = sheet.Pixels[src];
             var g = sheet.Pixels[src + 1];
             var b = sheet.Pixels[src + 2];
-            // Magenta/cyan chroma-key dumps store ink as (0,255,255); show as white.
             if (r < 8 && g > 240 && b > 240)
             {
                 r = 0xF8;
@@ -160,10 +192,8 @@ public sealed class EmotionEffectAtlas
         return new RgbaImage(w, h, pixels);
     }
 
-    private static RgbaImage? TryDrawFallback(int effectId)
-    {
-        // Tiny procedural icons when assets are missing.
-        return effectId switch
+    private static RgbaImage? TryDrawFallback(int effectId) =>
+        effectId switch
         {
             NoticeId => DrawBang(),
             QuestionId => DrawQuestion(),
@@ -173,7 +203,6 @@ public sealed class EmotionEffectAtlas
             AngryId => DrawAngry(),
             _ => null,
         };
-    }
 
     private static RgbaImage DrawBang()
     {

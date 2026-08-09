@@ -13,6 +13,8 @@ namespace RescueEditor.App;
 public sealed class ScenePlayWindow : Window
 {
     private const int ViewScale = 3;
+    private const double TargetFps = 60;
+    private static readonly TimeSpan FrameDt = TimeSpan.FromSeconds(1.0 / TargetFps);
 
     private readonly ScenePlaySession _session;
     private readonly PlayControlsKeymap _keymap;
@@ -24,6 +26,7 @@ public sealed class ScenePlayWindow : Window
     private readonly string? _romPath;
     private GbaButton? _captureTarget;
     private DateTime _lastTick = DateTime.UtcNow;
+    private double _simAccum;
 
     public ScenePlayWindow(
         ScenePlaySession session,
@@ -109,8 +112,7 @@ public sealed class ScenePlayWindow : Window
         root.Children.Add(stage);
         Content = root;
 
-        _timer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
-        _timer.Tick += OnTick;
+        _timer = new DispatcherTimer(FrameDt, DispatcherPriority.Render, OnTick);
 
         KeyDown += OnKeyDown;
         KeyUp += OnKeyUp;
@@ -123,9 +125,16 @@ public sealed class ScenePlayWindow : Window
         Opened += (_, _) =>
         {
             Focus();
+            // Apply FADE_OUT / reach first MSG_ON_BG before the first paint when possible.
+            if (_session.IsScripted)
+            {
+                for (var i = 0; i < 8 && _session.DialogueMode == PlayDialogueMode.None; i++)
+                    _session.Tick(1.0 / TargetFps);
+            }
             PlayQueuedSfx();
             RefreshFrame();
             _lastTick = DateTime.UtcNow;
+            _simAccum = 0;
             _timer.Start();
         };
     }
@@ -204,7 +213,20 @@ public sealed class ScenePlayWindow : Window
         var dt = (now - _lastTick).TotalSeconds;
         _lastTick = now;
         if (dt > 0.1) dt = 0.1;
-        _session.Tick(dt);
+        if (dt < 0) dt = 0;
+
+        // Fixed 60 Hz simulation; catch up a few frames if a hitch occurs.
+        _simAccum += dt;
+        var steps = 0;
+        while (_simAccum >= FrameDt.TotalSeconds && steps < 4)
+        {
+            _session.Tick(FrameDt.TotalSeconds);
+            _simAccum -= FrameDt.TotalSeconds;
+            steps++;
+        }
+        if (_simAccum > FrameDt.TotalSeconds * 2)
+            _simAccum = 0;
+
         RefreshFrame();
         PlayQueuedSfx();
         PlayMusicIfChanged();
@@ -220,9 +242,20 @@ public sealed class ScenePlayWindow : Window
 
     private void RefreshFrame()
     {
-        var png = _session.RenderFrame();
-        using var stream = new MemoryStream(png);
-        _view.Source = new Bitmap(stream);
+        try
+        {
+            var frame = _session.RenderFrameImage();
+            // Present via a fresh Bitmap each frame. In-place WriteableBitmap updates were
+            // not invalidating the Image control (stuck on the first black frame: no text,
+            // no fade-in). Encoding only the 240×160 camera is cheap vs recomposing the map.
+            var png = frame.ToPng();
+            using var stream = new MemoryStream(png);
+            _view.Source = new Bitmap(stream);
+        }
+        catch (Exception ex)
+        {
+            _status.Text = $"Render error: {ex.GetType().Name}";
+        }
     }
 
     private void PlayQueuedSfx()
@@ -234,10 +267,12 @@ public sealed class ScenePlayWindow : Window
 
         foreach (var id in _session.DrainPendingSfx())
         {
+            // Only play if already cached — sync agbplay render on the UI thread freezes/crashes.
+            if (!AgbplayRenderer.TryGetCachedWav(_romPath, id, maxLoops: 0, out var wav, out _))
+                continue;
             try
             {
-                var result = AgbplayRenderer.RenderSong(_romPath, id, maxLoops: 0);
-                _sfxPlayer.Load(result.WavBytes);
+                _sfxPlayer.Load(wav);
                 _sfxPlayer.Play();
             }
             catch
@@ -255,10 +290,12 @@ public sealed class ScenePlayWindow : Window
             return;
         if (!_session.TryConsumeMusicChange(out var songId))
             return;
+        // Avoid blocking the 60fps loop on a full agbplay render.
+        if (!AgbplayRenderer.TryGetCachedWav(_romPath, songId, maxLoops: 0, out var wav, out _))
+            return;
         try
         {
-            var result = AgbplayRenderer.RenderSong(_romPath, songId, maxLoops: 0);
-            _sfxPlayer.Load(result.WavBytes);
+            _sfxPlayer.Load(wav);
             _sfxPlayer.Play();
         }
         catch
