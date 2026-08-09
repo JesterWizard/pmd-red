@@ -2,7 +2,7 @@ namespace RescueEditor.Core;
 
 public static class CatalogBuilder
 {
-    public static (AssetCatalog Catalog, Charmap Charmap) Build(
+    public static (AssetCatalog Catalog, Charmap Charmap, SceneDatabase Scenes) Build(
         RomImage rom,
         string? repositoryRootOverride = null,
         string? charmapPathOverride = null,
@@ -85,6 +85,33 @@ public static class CatalogBuilder
         Report("Composing ground map sets…");
         catalog.AddRange(GroundMapIndexer.Index(rom, archives));
 
+        Report("Building authoritative scene graph…");
+        var profile = RomProfile.TryMatch(rom);
+        var scenes = SceneGraphParser.Parse(rom, profile, catalog, charmap, progress);
+        foreach (var scene in scenes.Scenes)
+        {
+            var entityCount = scene.AllEntities.Count();
+            catalog.Add(new AssetDescriptor
+            {
+                Id = $"scene:{scene.MapId}",
+                Name = $"{scene.MapId:D3}: {scene.Name}",
+                Category = AssetCategory.Scenes,
+                Kind = AssetKind.Scene,
+                Offset = scene.HeaderOffset,
+                Size = 12,
+                Format = "GroundScriptHeader",
+                Description = $"{scene.Groups.Count} groups, {entityCount} entities, {scene.Links.Count} links",
+                Metadata = new Dictionary<string, string>
+                {
+                    ["mapId"] = scene.MapId.ToString(),
+                    ["bma"] = scene.Map?.BmaName ?? string.Empty,
+                    ["groups"] = scene.Groups.Count.ToString(),
+                    ["entities"] = entityCount.ToString(),
+                },
+            });
+        }
+        diagnostics.AddRange(scenes.Diagnostics);
+
         Report("Scanning dialogue and scripts…");
         var (dialogue, scripts) = ScriptIndexer.Index(rom, charmap);
         catalog.AddRange(dialogue);
@@ -104,7 +131,7 @@ public static class CatalogBuilder
 
         Report($"Done — {catalog.Assets.Count:N0} assets indexed.");
         catalog.SetDiagnostics(diagnostics);
-        return (catalog, charmap);
+        return (catalog, charmap, scenes);
     }
 
     private static bool IsGroundFileName(string name)

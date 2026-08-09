@@ -12,6 +12,7 @@ public static class AssetPreviewer
             AssetKind.TitleBackground => GraphicsRenderers.RenderTitleBackground(rom, asset),
             AssetKind.Effect => EffectRenderer.Render(rom, asset),
             AssetKind.GroundMap => GroundMapIndexer.Render(rom, asset),
+            AssetKind.Scene => CreateScenePreview(rom, asset),
             AssetKind.Dialogue => CreateDialoguePreview(rom, asset, charmap),
             AssetKind.Script => new PreviewContent(asset.Name,
                 Text: ScriptDisassembler.Disassemble(rom, asset.Offset, charmap)),
@@ -19,6 +20,20 @@ public static class AssetPreviewer
             AssetKind.SoundSong => new PreviewContent(asset.Name, Text: DescribeSong(asset)),
             _ => new PreviewContent(asset.Name, Text: CreateHexPreview(rom, asset)),
         };
+    }
+
+    private static PreviewContent CreateScenePreview(RomImage rom, AssetDescriptor asset)
+    {
+        var text = new System.Text.StringBuilder();
+        text.AppendLine(asset.Name);
+        text.AppendLine(asset.Description ?? string.Empty);
+        text.AppendLine();
+        text.AppendLine($"Map ID: {asset.Metadata.GetValueOrDefault("mapId")}");
+        text.AppendLine($"BMA: {asset.Metadata.GetValueOrDefault("bma")}");
+        text.AppendLine($"Header: 0x{asset.Offset:X}");
+        text.AppendLine();
+        text.AppendLine("Open the Scenes workspace to inspect groups, sectors, actors, and scripts.");
+        return new PreviewContent(asset.Name, Text: text.ToString());
     }
 
     private static PreviewContent CreateDialoguePreview(

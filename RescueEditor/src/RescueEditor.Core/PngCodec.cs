@@ -22,6 +22,8 @@ public sealed class RgbaImage
     public byte[] Pixels { get; }
 
     public byte[] ToPng() => PngCodec.Encode(this);
+
+    public static RgbaImage? FromPng(byte[] png) => PngCodec.TryDecode(png);
 }
 
 public static class PngCodec
@@ -30,6 +32,69 @@ public static class PngCodec
     [
         0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A,
     ];
+
+    public static RgbaImage? TryDecode(byte[] png)
+    {
+        if (png.Length < 8 || !png.AsSpan(0, 8).SequenceEqual(Signature))
+            return null;
+
+        var offset = 8;
+        int width = 0, height = 0;
+        byte[]? idat = null;
+        while (offset + 8 <= png.Length)
+        {
+            var length = BinaryPrimitives.ReadInt32BigEndian(png.AsSpan(offset));
+            var type = System.Text.Encoding.ASCII.GetString(png, offset + 4, 4);
+            offset += 8;
+            if (length < 0 || offset + length + 4 > png.Length)
+                return null;
+            var data = png.AsSpan(offset, length);
+            if (type == "IHDR" && length >= 13)
+            {
+                width = BinaryPrimitives.ReadInt32BigEndian(data);
+                height = BinaryPrimitives.ReadInt32BigEndian(data[4..]);
+                if (data[8] != 8 || data[9] != 6)
+                    return null;
+            }
+            else if (type == "IDAT")
+            {
+                if (idat is null)
+                    idat = data.ToArray();
+                else
+                {
+                    var merged = new byte[idat.Length + data.Length];
+                    idat.CopyTo(merged, 0);
+                    data.CopyTo(merged.AsSpan(idat.Length));
+                    idat = merged;
+                }
+            }
+            else if (type == "IEND")
+                break;
+            offset += length + 4;
+        }
+
+        if (width <= 0 || height <= 0 || idat is null)
+            return null;
+
+        using var input = new MemoryStream(idat);
+        using var zlib = new ZLibStream(input, CompressionMode.Decompress);
+        using var raw = new MemoryStream();
+        zlib.CopyTo(raw);
+        var scanlines = raw.ToArray();
+        var stride = width * 4;
+        var expected = (stride + 1) * height;
+        if (scanlines.Length < expected)
+            return null;
+        var pixels = new byte[stride * height];
+        for (var y = 0; y < height; y++)
+        {
+            var src = y * (stride + 1);
+            if (scanlines[src] != 0)
+                return null; // only filter-none written by Encode
+            scanlines.AsSpan(src + 1, stride).CopyTo(pixels.AsSpan(y * stride, stride));
+        }
+        return new RgbaImage(width, height, pixels);
+    }
 
     public static byte[] Encode(RgbaImage image)
     {

@@ -4,6 +4,7 @@ namespace RescueEditor.Core;
 
 public enum AssetCategory
 {
+    Scenes,
     Dialogue,
     Scripts,
     Portraits,
@@ -27,6 +28,7 @@ public enum AssetKind
     Script,
     SoundWave,
     SoundSong,
+    Scene,
 }
 
 public sealed class AssetDescriptor

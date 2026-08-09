@@ -2,9 +2,10 @@
 
 RescueTemple (project folder: `RescueEditor`) is a cross-platform Avalonia/.NET 8
 browser and exporter for the Pokémon Mystery Dungeon: Red Rescue Team
-decompilation. It opens a ROM without modifying it, builds an in-memory asset
-catalog, previews supported formats, and exports selected entries or whole
-categories.
+decompilation. This editor opens a ROM without modifying it, builds an in-memory asset
+catalog and scene graph, previews supported formats, exports selected entries,
+and can save a project / build an edited ROM **copy**. The source baserom is
+never overwritten.
 
 ## Requirements
 
@@ -76,6 +77,11 @@ The published application is placed under
 - Dialogue and scripts: ROM scanning for `MSG_*` command pointers, PMD
   charmap decoding (including text macros), and read-only `ScriptCommand`
   disassembly.
+- Scenes: authoritative `gMapScriptTable` → `GroundScriptHeader` graph with
+  groups/sectors, lives/objects/effects/events, stations, and links. The
+  Scenes category opens a workspace that composites the ground map with actor
+  overlays, script timeline preview, undoable position edits, project save,
+  and Build ROM (writes a copy; never mutates the source baserom).
 - Music / Sound Effects: M4A sequences named from `src/sound_names.c` (and
   `MUS_*` from `include/constants/bg_music.h` for BGM). Preview has **Player**
   and **Code** tabs. Playback uses bundled
@@ -85,6 +91,5 @@ The published application is placed under
   fills the WAV cache for instant later plays. On Windows, Linux tools launch via WSL.
 - `pksdir0` archives: generic raw entry browsing and export.
 
-This MVP deliberately does not patch ROMs, edit decomp source, or allocate
-new ROM space. Exported files are the safe hand-off point for the later editor
-and reassembly workflow.
+This MVP keeps the source ROM read-only. Exported files and Build ROM copies
+are the safe hand-off points for later reassembly workflows.

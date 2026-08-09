@@ -85,14 +85,18 @@ public sealed class CoreTests
         if (baserom is null)
             return;
 
-        var (catalog, _) = CatalogBuilder.Build(RomImage.Open(baserom));
+        var (catalog, _, scenes) = CatalogBuilder.Build(RomImage.Open(baserom));
         Assert.NotEmpty(catalog.Assets);
         Assert.Contains(catalog.Assets, asset => asset.Category == AssetCategory.Portraits);
         Assert.Contains(catalog.Assets, asset => asset.Category == AssetCategory.Effects);
+        Assert.Contains(catalog.Assets, asset => asset.Category == AssetCategory.Scenes);
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.GroundMaps));
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.Dialogue));
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.Music));
         Assert.NotEmpty(catalog.ForCategory(AssetCategory.SoundEffects));
+        Assert.NotEmpty(catalog.ForCategory(AssetCategory.Scenes));
+        Assert.True(scenes.Scenes.Count > 100);
+        Assert.Equal(RomProfile.Us10.MapCount, scenes.Maps.Count);
         Assert.Contains(catalog.ForCategory(AssetCategory.Music),
             asset => asset.Kind == AssetKind.SoundSong);
         Assert.Contains(catalog.ForCategory(AssetCategory.SoundEffects),
@@ -128,7 +132,7 @@ public sealed class CoreTests
             return;
 
         var rom = RomImage.Open(baserom);
-        var (catalog, charmap) = CatalogBuilder.Build(rom);
+        var (catalog, charmap, _) = CatalogBuilder.Build(rom);
         var portrait = catalog.Assets.First(asset => asset.Kind == AssetKind.KaoPortrait);
         var title = catalog.Assets.First(asset => asset.Kind == AssetKind.TitleBackground);
         var effect = catalog.Assets.First(asset => asset.Kind == AssetKind.Effect);

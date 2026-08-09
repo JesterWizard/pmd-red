@@ -1,11 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Media;
-using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using RescueEditor.Core;
@@ -14,109 +12,98 @@ namespace RescueEditor.App;
 
 public sealed class MainWindow : Window
 {
-    private static readonly CategoryItem[] Categories =
+    private static readonly (string Name, AssetCategory Category)[] Categories =
     [
-        new("Dialogue", AssetCategory.Dialogue),
-        new("Scripts & Animations", AssetCategory.Scripts),
-        new("Portraits", AssetCategory.Portraits),
-        new("Backgrounds", AssetCategory.Backgrounds),
-        new("Effects", AssetCategory.Effects),
-        new("Ground Maps", AssetCategory.GroundMaps),
-        new("Music", AssetCategory.Music),
-        new("Sound Effects", AssetCategory.SoundEffects),
-        new("Raw Archives", AssetCategory.RawArchives),
+        ("Scenes", AssetCategory.Scenes),
+        ("Dialogue", AssetCategory.Dialogue),
+        ("Scripts & Animations", AssetCategory.Scripts),
+        ("Portraits", AssetCategory.Portraits),
+        ("Backgrounds", AssetCategory.Backgrounds),
+        ("Effects", AssetCategory.Effects),
+        ("Ground Maps", AssetCategory.GroundMaps),
+        ("Music", AssetCategory.Music),
+        ("Sound Effects", AssetCategory.SoundEffects),
+        ("Raw Archives", AssetCategory.RawArchives),
     ];
 
-    private readonly TreeView _categoryTree;
-    private readonly ListBox _assetList;
-    private readonly ScrollViewer _assetGridScroller;
-    private readonly WrapPanel _assetGrid;
-    private readonly Panel _browserHost;
-    private readonly Border _previewHost;
+    private readonly ProjectExplorerPanel _explorer;
+    private readonly BreadcrumbBar _breadcrumb;
+    private readonly Border _workspaceHost;
+    private readonly Border _propertiesHost;
     private readonly TextBlock _status;
+    private readonly TextBlock _propertiesBody;
     private readonly Button _exportSelected;
     private readonly Button _exportCategory;
-    private readonly ToggleButton _listViewButton;
-    private readonly ToggleButton _gridViewButton;
+    private readonly Button _saveButton;
     private readonly Border _loadingOverlay;
     private readonly TextBlock _loadingStage;
     private readonly TextBlock _loadingElapsed;
     private readonly Grid _root;
+
+    private readonly AgbplayStreamHost _soundStreamHost = new();
+    private readonly SoundCacheWarmer _soundCacheWarmer = new();
+    private readonly ChangeService _changes = new();
+    private readonly AssetWorkspacePanel _assetWorkspace;
+    private SceneWorkspacePanel? _sceneWorkspace;
+
     private RomImage? _rom;
     private AssetCatalog? _catalog;
     private Charmap? _charmap;
+    private SceneDatabase? _scenes;
+    private ProjectDocument? _project;
     private bool _isLoading;
-    private bool _useGridView;
     private AssetDescriptor? _selectedAsset;
-    private SoundPreviewPanel? _soundPreview;
-    private readonly AgbplayStreamHost _soundStreamHost = new();
-    private readonly SoundCacheWarmer _soundCacheWarmer = new();
-    private CancellationTokenSource? _thumbnailCts;
-    private CancellationTokenSource? _previewCts;
+    private AssetCategory? _selectedCategory;
     private readonly System.Diagnostics.Stopwatch _loadStopwatch = new();
     private DispatcherTimer? _loadTimer;
-    private Image? _previewImage;
-    private TextBlock? _zoomLabel;
-    private double _previewZoom = 1.0;
-    private double _pinchBaseZoom = 1.0;
-    private bool _pinchActive;
-    private int _previewPixelWidth;
-    private int _previewPixelHeight;
 
     public MainWindow()
     {
         Title = "RescueTemple";
-        Width = 1280;
-        Height = 720;
-        MinWidth = 800;
-        MinHeight = 500;
+        Width = 1400;
+        Height = 820;
+        MinWidth = 900;
+        MinHeight = 560;
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        WindowState = WindowState.Normal;
-        CanResize = true;
-        WindowDecorations = WindowDecorations.Full;
-        ExtendClientAreaToDecorationsHint = false;
+        Background = EditorTheme.WindowBgBrush;
 
-        _categoryTree = new TreeView
-        {
-            ItemsSource = Categories,
-            Margin = new Thickness(8, 8, 4, 8),
-            SelectionMode = SelectionMode.Single,
-        };
-        _categoryTree.SelectionChanged += CategoryTreeOnSelectionChanged;
+        _explorer = new ProjectExplorerPanel();
+        _explorer.SelectionChanged += ExplorerOnSelectionChanged;
 
-        _assetList = new ListBox
+        _breadcrumb = new BreadcrumbBar();
+        _workspaceHost = new Border
         {
-            Margin = new Thickness(0),
-        };
-        _assetList.SelectionChanged += AssetListOnSelectionChanged;
-        _assetList.DoubleTapped += AssetListOnDoubleTapped;
-
-        _assetGrid = new WrapPanel
-        {
-            Orientation = Orientation.Horizontal,
-        };
-        _assetGridScroller = new ScrollViewer
-        {
-            HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled,
-            VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-            Content = _assetGrid,
-            IsVisible = false,
-        };
-
-        _browserHost = new Panel
-        {
-            Margin = new Thickness(4, 8),
-            Children = { _assetList, _assetGridScroller },
-        };
-
-        _previewHost = new Border
-        {
-            Margin = new Thickness(4, 8, 8, 8),
-            Padding = new Thickness(16),
-            Background = Brushes.Transparent,
-            BorderBrush = new SolidColorBrush(Color.FromArgb(60, 128, 128, 128)),
-            BorderThickness = new Thickness(1),
+            Background = EditorTheme.PanelBgBrush,
             Child = CreateWelcomePanel(),
+        };
+        _propertiesBody = new TextBlock
+        {
+            Text = "Properties",
+            Margin = new Thickness(12),
+            TextWrapping = TextWrapping.Wrap,
+            Foreground = EditorTheme.TextMutedBrush,
+        };
+        _propertiesHost = new Border
+        {
+            Width = 280,
+            Background = EditorTheme.PanelBgBrush,
+            BorderBrush = EditorTheme.BorderBrush,
+            BorderThickness = new Thickness(1, 0, 0, 0),
+            Child = new DockPanel
+            {
+                Children =
+                {
+                    new TextBlock
+                    {
+                        Text = "Properties",
+                        FontWeight = FontWeight.SemiBold,
+                        Margin = new Thickness(12, 8, 12, 4),
+                        Foreground = EditorTheme.TextMutedBrush,
+                        [DockPanel.DockProperty] = Dock.Top,
+                    },
+                    new ScrollViewer { Content = _propertiesBody },
+                },
+            },
         };
 
         _status = new TextBlock
@@ -126,123 +113,83 @@ public sealed class MainWindow : Window
             TextTrimming = TextTrimming.CharacterEllipsis,
         };
 
-        _exportSelected = new Button
-        {
-            Content = "Export Selected",
-            IsEnabled = false,
-            Margin = new Thickness(4, 0),
-        };
+        _exportSelected = new Button { Content = "Export Selected", IsEnabled = false, Margin = new Thickness(4, 0) };
         _exportSelected.Click += ExportSelectedOnClick;
-
-        _exportCategory = new Button
-        {
-            Content = "Export Category",
-            IsEnabled = false,
-            Margin = new Thickness(4, 0),
-        };
+        _exportCategory = new Button { Content = "Export Category", IsEnabled = false, Margin = new Thickness(4, 0) };
         _exportCategory.Click += ExportCategoryOnClick;
+        _saveButton = new Button { Content = "Save", Margin = new Thickness(4, 0), Padding = new Thickness(14, 4) };
+        _saveButton.Click += SaveProjectOnClick;
 
-        var openButton = new Button
-        {
-            Content = "Open ROM",
-            Margin = new Thickness(4, 0),
-        };
+        var openButton = new Button { Content = "Open ROM", Margin = new Thickness(4, 0) };
         openButton.Click += OpenButtonOnClick;
 
-        _listViewButton = new ToggleButton
+        _assetWorkspace = new AssetWorkspacePanel();
+        _assetWorkspace.AttachSound(_soundStreamHost, _soundCacheWarmer);
+        _assetWorkspace.AssetSelected += (_, asset) =>
         {
-            Content = "List",
-            IsChecked = true,
-            Margin = new Thickness(0, 0, 4, 0),
-            Padding = new Thickness(12, 4),
+            _selectedAsset = asset;
+            _exportSelected.IsEnabled = asset is not null;
+            UpdateBreadcrumb();
+            UpdateProperties();
+            UpdateDirtyTitle();
         };
-        _gridViewButton = new ToggleButton
-        {
-            Content = "Grid",
-            IsChecked = false,
-            Margin = new Thickness(0),
-            Padding = new Thickness(12, 4),
-        };
-        _listViewButton.IsCheckedChanged += (_, _) =>
-        {
-            if (_listViewButton.IsChecked == true)
-                SetViewMode(grid: false);
-        };
-        _gridViewButton.IsCheckedChanged += (_, _) =>
-        {
-            if (_gridViewButton.IsChecked == true)
-                SetViewMode(grid: true);
-        };
+        _assetWorkspace.RequestSceneWorkspace += (_, _) => OpenSelectedScene();
 
-        var toolbarLeft = new StackPanel
-        {
-            Orientation = Orientation.Horizontal,
-            VerticalAlignment = VerticalAlignment.Center,
-            HorizontalAlignment = HorizontalAlignment.Left,
-            Children =
-            {
-                openButton,
-                _exportSelected,
-                _exportCategory,
-            },
-        };
-        var toolbarRight = new StackPanel
-        {
-            Orientation = Orientation.Horizontal,
-            VerticalAlignment = VerticalAlignment.Center,
-            HorizontalAlignment = HorizontalAlignment.Right,
-            Children =
-            {
-                _listViewButton,
-                _gridViewButton,
-            },
-        };
         var toolbar = new Grid
         {
             Margin = new Thickness(8, 3),
             ColumnDefinitions = new ColumnDefinitions("*,Auto"),
-            Children = { toolbarLeft, toolbarRight },
+            Background = EditorTheme.ToolbarBgBrush,
+            Children =
+            {
+                new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Children = { openButton, _exportSelected, _exportCategory },
+                },
+                new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    HorizontalAlignment = HorizontalAlignment.Right,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Children = { _saveButton },
+                    [Grid.ColumnProperty] = 1,
+                },
+            },
         };
-        Grid.SetColumn(toolbarLeft, 0);
-        Grid.SetColumn(toolbarRight, 1);
 
         var content = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions("220,360,*"),
-            Children =
-            {
-                _categoryTree,
-                _browserHost,
-                _previewHost,
-            },
+            ColumnDefinitions = new ColumnDefinitions("260,*,Auto"),
+            Children = { _explorer, _workspaceHost, _propertiesHost },
         };
-        Grid.SetColumn(_categoryTree, 0);
-        Grid.SetColumn(_browserHost, 1);
-        Grid.SetColumn(_previewHost, 2);
+        Grid.SetColumn(_explorer, 0);
+        Grid.SetColumn(_workspaceHost, 1);
+        Grid.SetColumn(_propertiesHost, 2);
 
         var menu = CreateMenu();
         var statusBar = new Border
         {
-            BorderBrush = new SolidColorBrush(Color.FromArgb(50, 128, 128, 128)),
+            BorderBrush = EditorTheme.BorderBrush,
             BorderThickness = new Thickness(0, 1, 0, 0),
+            Background = EditorTheme.ToolbarBgBrush,
             Child = _status,
         };
+
         _root = new Grid
         {
-            RowDefinitions = new RowDefinitions("Auto,Auto,*,Auto"),
-            Children = { menu, toolbar, content, statusBar },
+            RowDefinitions = new RowDefinitions("Auto,Auto,Auto,*,Auto"),
+            Children = { menu, toolbar, _breadcrumb, content, statusBar },
         };
         Grid.SetRow(menu, 0);
         Grid.SetRow(toolbar, 1);
-        Grid.SetRow(content, 2);
-        Grid.SetRow(statusBar, 3);
+        Grid.SetRow(_breadcrumb, 2);
+        Grid.SetRow(content, 3);
+        Grid.SetRow(statusBar, 4);
 
         _loadingStage = new TextBlock { FontSize = 14, TextWrapping = TextWrapping.Wrap };
-        _loadingElapsed = new TextBlock
-        {
-            Foreground = Brushes.Gray,
-            Margin = new Thickness(0, 8, 0, 0),
-        };
+        _loadingElapsed = new TextBlock { Foreground = EditorTheme.TextMutedBrush, Margin = new Thickness(0, 8, 0, 0) };
         _loadingOverlay = new Border
         {
             IsVisible = false,
@@ -253,8 +200,8 @@ public sealed class MainWindow : Window
                 Padding = new Thickness(24),
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
-                Background = new SolidColorBrush(Color.FromArgb(255, 36, 36, 36)),
-                BorderBrush = new SolidColorBrush(Color.FromArgb(80, 180, 180, 180)),
+                Background = EditorTheme.PanelBgAltBrush,
+                BorderBrush = EditorTheme.BorderBrush,
                 BorderThickness = new Thickness(1),
                 CornerRadius = new CornerRadius(6),
                 Child = new StackPanel
@@ -262,29 +209,17 @@ public sealed class MainWindow : Window
                     Spacing = 4,
                     Children =
                     {
-                        new TextBlock
-                        {
-                            Text = "Indexing ROM assets",
-                            FontSize = 18,
-                            FontWeight = FontWeight.SemiBold,
-                        },
+                        new TextBlock { Text = "Indexing ROM assets", FontSize = 18, FontWeight = FontWeight.SemiBold },
                         _loadingStage,
                         _loadingElapsed,
-                        new ProgressBar
-                        {
-                            IsIndeterminate = true,
-                            Height = 8,
-                            Margin = new Thickness(0, 18, 0, 0),
-                        },
+                        new ProgressBar { IsIndeterminate = true, Height = 8, Margin = new Thickness(0, 18, 0, 0) },
                     },
                 },
             },
         };
 
-        Content = new Panel
-        {
-            Children = { _root, _loadingOverlay },
-        };
+        Content = new Panel { Children = { _root, _loadingOverlay } };
+        KeyDown += MainWindowOnKeyDown;
         Opened += OnOpened;
     }
 
@@ -294,6 +229,12 @@ public sealed class MainWindow : Window
         var file = new MenuItem { Header = "_File" };
         var open = new MenuItem { Header = "_Open ROM…" };
         open.Click += OpenButtonOnClick;
+        var saveProject = new MenuItem { Header = "Save _Project…" };
+        saveProject.Click += SaveProjectOnClick;
+        var openProject = new MenuItem { Header = "Open Pro_ject…" };
+        openProject.Click += OpenProjectOnClick;
+        var buildRom = new MenuItem { Header = "_Build ROM…" };
+        buildRom.Click += BuildRomOnClick;
         var exportSelected = new MenuItem { Header = "Export _Selected…" };
         exportSelected.Click += ExportSelectedOnClick;
         var exportCategory = new MenuItem { Header = "Export _Category…" };
@@ -304,6 +245,10 @@ public sealed class MainWindow : Window
         exit.Click += (_, _) => Close();
         file.Items.Add(open);
         file.Items.Add(new Separator());
+        file.Items.Add(saveProject);
+        file.Items.Add(openProject);
+        file.Items.Add(buildRom);
+        file.Items.Add(new Separator());
         file.Items.Add(exportSelected);
         file.Items.Add(exportCategory);
         file.Items.Add(new Separator());
@@ -311,34 +256,30 @@ public sealed class MainWindow : Window
         file.Items.Add(exit);
         menu.Items.Add(file);
 
+        var edit = new MenuItem { Header = "_Edit" };
+        var undo = new MenuItem { Header = "_Undo" };
+        undo.Click += (_, _) => { _changes.Undo(); _sceneWorkspace?.RefreshFromExternal(); UpdateDirtyTitle(); };
+        var redo = new MenuItem { Header = "_Redo" };
+        redo.Click += (_, _) => { _changes.Redo(); _sceneWorkspace?.RefreshFromExternal(); UpdateDirtyTitle(); };
+        edit.Items.Add(undo);
+        edit.Items.Add(redo);
+        menu.Items.Add(edit);
+
         var view = new MenuItem { Header = "_View" };
         var list = new MenuItem { Header = "_List" };
-        list.Click += (_, _) => SetViewMode(grid: false);
+        list.Click += (_, _) => _assetWorkspace.SetViewMode(false);
         var grid = new MenuItem { Header = "_Grid" };
-        grid.Click += (_, _) => SetViewMode(grid: true);
+        grid.Click += (_, _) => _assetWorkspace.SetViewMode(true);
         view.Items.Add(list);
         view.Items.Add(grid);
         menu.Items.Add(view);
         return menu;
     }
 
-    private void SetViewMode(bool grid)
-    {
-        _useGridView = grid;
-        _listViewButton.IsChecked = !grid;
-        _gridViewButton.IsChecked = grid;
-        _assetList.IsVisible = !grid;
-        _assetGridScroller.IsVisible = grid;
-
-        if (_categoryTree.SelectedItem is CategoryItem category && _catalog is not null)
-            PopulateAssetBrowser(category, selectFirstAsset: _selectedAsset is null);
-    }
-
     private async void OnOpened(object? sender, EventArgs e)
     {
         Opened -= OnOpened;
         FitToWorkingArea();
-        // Give WSLg a frame to map the window before heavy work / overlays.
         await Dispatcher.UIThread.InvokeAsync(() => { }, DispatcherPriority.Background);
         FitToWorkingArea();
         Activate();
@@ -347,37 +288,26 @@ public sealed class MainWindow : Window
             await OpenRomAsync(defaultRom);
     }
 
-    /// <summary>
-    /// Keep the window inside the monitor working area (excludes the Windows taskbar).
-    /// </summary>
     private void FitToWorkingArea()
     {
         var screen = Screens.ScreenFromWindow(this) ?? Screens.Primary;
         if (screen is null)
             return;
-
         const double margin = 12;
         var scaling = Math.Max(0.5, screen.Scaling);
         var work = screen.WorkingArea;
         var maxWidth = Math.Max(640, work.Width / scaling - margin * 2);
         var maxHeight = Math.Max(480, work.Height / scaling - margin * 2);
-
         MaxWidth = maxWidth;
         MaxHeight = maxHeight;
-        MinWidth = Math.Min(MinWidth, maxWidth);
-        MinHeight = Math.Min(MinHeight, maxHeight);
-
         if (WindowState == WindowState.Maximized)
             return;
-
-        Width = Math.Clamp(Width > 1 ? Width : 1280, MinWidth, maxWidth);
-        Height = Math.Clamp(Height > 1 ? Height : 800, MinHeight, maxHeight);
-
+        Width = Math.Clamp(Width > 1 ? Width : 1400, MinWidth, maxWidth);
+        Height = Math.Clamp(Height > 1 ? Height : 820, MinHeight, maxHeight);
         var pixelWidth = (int)Math.Round(Width * scaling);
         var pixelHeight = (int)Math.Round(Height * scaling);
         var x = work.X + Math.Max(0, (work.Width - pixelWidth) / 2);
         var y = work.Y + Math.Max(0, (work.Height - pixelHeight) / 2);
-        // Clamp so the window cannot sit under the taskbar or off-screen.
         x = Math.Clamp(x, work.X, Math.Max(work.X, work.X + work.Width - pixelWidth));
         y = Math.Clamp(y, work.Y, Math.Max(work.Y, work.Y + work.Height - pixelHeight));
         Position = new PixelPoint(x, y);
@@ -385,19 +315,14 @@ public sealed class MainWindow : Window
 
     private async void OpenButtonOnClick(object? sender, RoutedEventArgs e)
     {
-        if (_isLoading)
-            return;
-
+        if (_isLoading) return;
         var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
             Title = "Open Pokémon Mystery Dungeon ROM",
             AllowMultiple = false,
             FileTypeFilter =
             [
-                new FilePickerFileType("Game Boy Advance ROM")
-                {
-                    Patterns = ["*.gba", "*.bin"],
-                },
+                new FilePickerFileType("Game Boy Advance ROM") { Patterns = ["*.gba", "*.bin"] },
                 FilePickerFileTypes.All,
             ],
         });
@@ -408,9 +333,7 @@ public sealed class MainWindow : Window
 
     private async Task OpenRomAsync(string path)
     {
-        if (_isLoading)
-            return;
-
+        if (_isLoading) return;
         _isLoading = true;
         var romName = Path.GetFileName(path);
         SetStatus($"Indexing {romName}…");
@@ -423,7 +346,6 @@ public sealed class MainWindow : Window
                 Dispatcher.UIThread.Post(() => _loadingStage.Text = stage);
                 return;
             }
-
             _loadingStage.Text = stage;
         });
 
@@ -436,7 +358,7 @@ public sealed class MainWindow : Window
                 rom,
                 charmapPathOverride: Path.Combine(AppContext.BaseDirectory, "charmap.txt"),
                 progress: progressSink);
-            return (rom, built.Catalog, built.Charmap);
+            return (rom, built.Catalog, built.Charmap, built.Scenes);
         });
 
         try
@@ -448,32 +370,37 @@ public sealed class MainWindow : Window
             _rom = result.rom;
             _catalog = result.Catalog;
             _charmap = result.Charmap;
+            _scenes = result.Scenes;
+            _project = ProjectDocument.Create(_rom, _scenes.Profile);
+            _changes.Attach(_project, _scenes);
 
-            // Warm the streamer (ROM load ~0.3–0.7s) so the first click stays under 1s.
             var romPath = _rom.Path;
             _ = Task.Run(() =>
             {
                 try { _soundStreamHost.EnsureStarted(romPath); }
-                catch { /* playback will retry on demand */ }
+                catch { }
             });
             _soundCacheWarmer.Start(_rom, _catalog);
 
-            ShowLoadedCategory(Categories[0], selectFirstAsset: true);
+            _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes);
+            _explorer.Build(_catalog, _scenes, Categories);
+            _workspaceHost.Child = _assetWorkspace;
+            _propertiesHost.IsVisible = true;
+            _selectedCategory = AssetCategory.Scenes;
+            _assetWorkspace.ShowCategory(AssetCategory.Scenes, selectFirst: false);
+            _exportCategory.IsEnabled = true;
+            UpdateBreadcrumb();
+            UpdateDirtyTitle();
 
-            var counts = string.Join("  ", Categories.Select(category =>
-            {
-                var count = _catalog.ForCategory(category.Category).Count;
-                return $"{category.Name}:{count}";
-            }));
+            var counts = string.Join("  ", Categories.Select(c =>
+                $"{c.Name}:{_catalog.ForCategory(c.Category).Count}"));
             var warning = _catalog.Diagnostics.Count == 0
                 ? string.Empty
                 : $"  Warnings: {_catalog.Diagnostics.Count}.";
             SetStatus($"{romName}  |  {_rom.Length / 1024 / 1024.0:F2} MiB  |  " +
-                      $"{_catalog.Assets.Count:N0} assets in {elapsed.TotalSeconds:0.0}s  |  " +
-                      $"{counts}{warning}");
+                      $"{_catalog.Assets.Count:N0} assets in {elapsed.TotalSeconds:0.0}s  |  {counts}{warning}");
         }
-        catch (Exception exception) when (exception is IOException or InvalidDataException or
-                                           ArgumentException)
+        catch (Exception exception) when (exception is IOException or InvalidDataException or ArgumentException)
         {
             EndLoadingOverlay();
             SetStatus($"Could not open ROM: {exception.Message}");
@@ -483,6 +410,119 @@ public sealed class MainWindow : Window
         {
             _isLoading = false;
         }
+    }
+
+    private void ExplorerOnSelectionChanged(object? sender, ExplorerNode? node)
+    {
+        if (_catalog is null || _rom is null || _charmap is null)
+            return;
+
+        switch (node)
+        {
+            case CategoryExplorerNode category:
+                _selectedCategory = category.Category;
+                _exportCategory.IsEnabled = true;
+                if (category.Category == AssetCategory.Scenes)
+                {
+                    _propertiesHost.IsVisible = true;
+                    Grid.SetColumnSpan(_workspaceHost, 1);
+                    _workspaceHost.Child = _assetWorkspace;
+                    _assetWorkspace.ShowCategory(category.Category, selectFirst: false);
+                }
+                else
+                {
+                    _propertiesHost.IsVisible = true;
+                    Grid.SetColumnSpan(_workspaceHost, 1);
+                    _workspaceHost.Child = _assetWorkspace;
+                    _assetWorkspace.ShowCategory(category.Category, selectFirst: true);
+                }
+                UpdateBreadcrumb();
+                break;
+
+            case AssetExplorerNode assetNode:
+                _selectedAsset = assetNode.Asset;
+                _selectedCategory = assetNode.Asset.Category;
+                _exportSelected.IsEnabled = true;
+                if (assetNode.Asset.Kind == AssetKind.Scene || assetNode.Scene is not null)
+                {
+                    OpenScene(assetNode.Scene, assetNode.Asset);
+                }
+                else
+                {
+                    _propertiesHost.IsVisible = true;
+                    Grid.SetColumnSpan(_workspaceHost, 1);
+                    _workspaceHost.Child = _assetWorkspace;
+                    _ = _assetWorkspace.ShowAssetAsync(assetNode.Asset);
+                }
+                UpdateBreadcrumb();
+                UpdateProperties();
+                break;
+
+            case SceneGroupExplorerNode:
+                UpdateBreadcrumb();
+                break;
+        }
+    }
+
+    private void OpenSelectedScene()
+    {
+        if (_selectedAsset is null)
+            return;
+        Scene? scene = null;
+        if (_selectedAsset.Metadata.TryGetValue("mapId", out var mapText) &&
+            int.TryParse(mapText, out var mapId))
+            scene = _scenes?.FindScene(mapId);
+        OpenScene(scene, _selectedAsset);
+    }
+
+    private void OpenScene(Scene? scene, AssetDescriptor asset)
+    {
+        if (_rom is null || _charmap is null || _scenes is null)
+            return;
+        _selectedAsset = asset;
+        _sceneWorkspace ??= new SceneWorkspacePanel();
+        _sceneWorkspace.DirtyChanged -= OnSceneDirty;
+        _sceneWorkspace.DirtyChanged += OnSceneDirty;
+        _sceneWorkspace.Load(_rom, _charmap, _scenes, _changes, scene,
+            asset.Metadata.TryGetValue("mapId", out var mapText) && int.TryParse(mapText, out var id) ? id : null);
+        // Scene editor owns center+right (SkyTemple style); hide generic properties.
+        _propertiesHost.IsVisible = false;
+        _workspaceHost.Child = _sceneWorkspace;
+        Grid.SetColumnSpan(_workspaceHost, 2);
+        UpdateBreadcrumb();
+        UpdateDirtyTitle();
+    }
+
+    private void OnSceneDirty(object? sender, EventArgs e) => UpdateDirtyTitle();
+
+    private void UpdateBreadcrumb()
+    {
+        var romName = _rom is null ? "RescueTemple" : Path.GetFileName(_rom.Path);
+        var category = Categories.FirstOrDefault(c => c.Category == _selectedCategory).Name
+                       ?? _selectedCategory?.ToString()
+                       ?? "";
+        var asset = _selectedAsset?.DisplayName ?? "";
+        _breadcrumb.SetPath(romName, category, asset);
+    }
+
+    private void UpdateProperties()
+    {
+        if (_selectedAsset is null)
+        {
+            _propertiesBody.Text = "Select an asset to inspect its properties.";
+            return;
+        }
+        var a = _selectedAsset;
+        _propertiesBody.Text =
+            $"{a.DisplayName}\n\nKind: {a.Kind}\nCategory: {a.Category}\nFormat: {a.Format}\n" +
+            $"Offset: 0x{a.Offset:X}\nSize: 0x{a.Size:X}\n\n{a.Description}";
+    }
+
+    private void UpdateDirtyTitle()
+    {
+        var dirty = _project?.IsDirty == true || _changes.IsDirty;
+        var name = _rom is null ? "RescueTemple" : Path.GetFileName(_rom.Path);
+        Title = dirty ? $"RescueTemple — {name} *" : $"RescueTemple — {name}";
     }
 
     private void BeginLoadingOverlay(string stage)
@@ -508,323 +548,173 @@ public sealed class MainWindow : Window
         _root.IsEnabled = true;
     }
 
-    private void ShowLoadedCategory(CategoryItem category, bool selectFirstAsset)
+    private async void SaveProjectOnClick(object? sender, RoutedEventArgs e)
     {
-        _categoryTree.SelectedItem = null;
-        _categoryTree.SelectedItem = category;
-        PopulateAssetBrowser(category, selectFirstAsset);
-    }
-
-    private void CategoryTreeOnSelectionChanged(object? sender, SelectionChangedEventArgs e)
-    {
-        if (_categoryTree.SelectedItem is not CategoryItem category || _catalog is null)
+        if (_project is null)
         {
-            _assetList.ItemsSource = null;
-            _assetGrid.Children.Clear();
+            await ShowErrorAsync("Save Project", "Open a ROM before saving a project.");
             return;
         }
-
-        PopulateAssetBrowser(category, selectFirstAsset: true);
-    }
-
-    private void PopulateAssetBrowser(CategoryItem category, bool selectFirstAsset)
-    {
-        if (_catalog is null)
-            return;
-
-        var assets = _catalog.ForCategory(category.Category);
-        _exportCategory.IsEnabled = assets.Count > 0;
-        _exportSelected.IsEnabled = false;
-        _selectedAsset = null;
-        _thumbnailCts?.Cancel();
-        _thumbnailCts = new CancellationTokenSource();
-
-        if (assets.Count == 0)
+        var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
-            _assetList.ItemsSource = null;
-            _assetGrid.Children.Clear();
-            _previewHost.Child = new TextBlock
-            {
-                Text = $"{category.Name}\n\nNo entries found in this ROM.",
-                TextWrapping = TextWrapping.Wrap,
-                FontSize = 16,
-                Foreground = Brushes.Gray,
-            };
-            return;
-        }
-
-        if (_useGridView)
-        {
-            _assetList.ItemsSource = null;
-            BuildAssetGrid(assets, _thumbnailCts.Token);
-        }
-        else
-        {
-            _assetGrid.Children.Clear();
-            _assetList.ItemsSource = assets.Select(asset => new AssetListItem(asset)).ToArray();
-        }
-
-        _previewHost.Child = CreateCategoryPanel(category, assets.Count);
-        if (selectFirstAsset)
-        {
-            if (_useGridView)
-            {
-                if (_assetGrid.Children.Count > 0 &&
-                    _assetGrid.Children[0] is Border { Tag: AssetDescriptor first })
-                    _ = ShowPreviewAsync(first);
-            }
-            else
-            {
-                _assetList.SelectedIndex = 0;
-            }
-        }
-        else
-        {
-            _assetList.SelectedIndex = -1;
-        }
-    }
-
-    private void BuildAssetGrid(IReadOnlyList<AssetDescriptor> assets, CancellationToken token)
-    {
-        _assetGrid.Children.Clear();
-        foreach (var asset in assets)
-        {
-            var title = new TextBlock
-            {
-                Text = asset.DisplayName,
-                FontSize = 11,
-                TextWrapping = TextWrapping.Wrap,
-                TextAlignment = TextAlignment.Center,
-                MaxHeight = 34,
-            };
-            var imageHost = new Border
-            {
-                Width = 72,
-                Height = 72,
-                Background = new SolidColorBrush(Color.FromArgb(40, 128, 128, 128)),
-                Child = new TextBlock
-                {
-                    Text = ThumbnailGlyph(asset),
-                    FontSize = 18,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Foreground = Brushes.Gray,
-                },
-            };
-            var card = new Border
-            {
-                Width = 104,
-                Margin = new Thickness(4),
-                Padding = new Thickness(6),
-                BorderBrush = new SolidColorBrush(Color.FromArgb(70, 160, 160, 160)),
-                BorderThickness = new Thickness(1),
-                CornerRadius = new CornerRadius(4),
-                Tag = asset,
-                Child = new StackPanel
-                {
-                    Spacing = 4,
-                    Children = { imageHost, title },
-                },
-            };
-            card.PointerPressed += async (_, _) =>
-            {
-                HighlightGridCard(card);
-                await ShowPreviewAsync(asset);
-            };
-            _assetGrid.Children.Add(card);
-
-            if (asset.Kind is AssetKind.KaoPortrait or AssetKind.TitleBackground or
-                AssetKind.Effect or AssetKind.GroundMap)
-            {
-                _ = LoadThumbnailAsync(asset, imageHost, token);
-            }
-        }
-    }
-
-    private async Task LoadThumbnailAsync(AssetDescriptor asset, Border imageHost,
-        CancellationToken token)
-    {
-        if (_rom is null || _charmap is null)
-            return;
+            Title = "Save RescueTemple Project",
+            SuggestedFileName = _project.Name + ".rtproj",
+            FileTypeChoices =
+            [
+                new FilePickerFileType("RescueTemple Project") { Patterns = ["*.rtproj", "*.json"] },
+            ],
+        });
+        if (file is null) return;
         try
         {
-            var preview = await Task.Run(() => AssetPreviewer.Create(_rom, asset, _charmap), token);
-            if (token.IsCancellationRequested || preview.Png is null)
-                return;
-            await Dispatcher.UIThread.InvokeAsync(() =>
-            {
-                if (token.IsCancellationRequested)
-                    return;
-                using var stream = new MemoryStream(preview.Png);
-                imageHost.Child = new Image
-                {
-                    Source = new Bitmap(stream),
-                    Stretch = Stretch.Uniform,
-                    Width = 72,
-                    Height = 72,
-                };
-            });
+            _project.Save(file.Path.LocalPath);
+            UpdateDirtyTitle();
+            SetStatus($"Saved project {_project.Path}");
         }
-        catch
+        catch (Exception exception)
         {
-            // Keep the placeholder glyph when a thumbnail cannot be built.
+            await ShowErrorAsync("Save Project failed", exception.Message);
         }
     }
 
-    private void HighlightGridCard(Border selected)
+    private async void OpenProjectOnClick(object? sender, RoutedEventArgs e)
     {
-        foreach (var child in _assetGrid.Children.OfType<Border>())
+        var files = await StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
-            child.BorderBrush = ReferenceEquals(child, selected)
-                ? Brushes.DodgerBlue
-                : new SolidColorBrush(Color.FromArgb(70, 160, 160, 160));
-            child.BorderThickness = new Thickness(ReferenceEquals(child, selected) ? 2 : 1);
-        }
-    }
-
-    private static string ThumbnailGlyph(AssetDescriptor asset) => asset.Kind switch
-    {
-        AssetKind.Dialogue => "Aa",
-        AssetKind.Script => "{}",
-        AssetKind.SoundSong => "♪",
-        AssetKind.SoundWave => "♫",
-        _ => "▣",
-    };
-
-    private async void AssetListOnSelectionChanged(object? sender, SelectionChangedEventArgs e)
-    {
-        if (_assetList.SelectedItem is not AssetListItem item)
-            return;
-        await ShowPreviewAsync(item.Asset);
-    }
-
-    private async void AssetListOnDoubleTapped(object? sender, TappedEventArgs e)
-    {
-        if (_assetList.SelectedItem is AssetListItem item)
-            await ShowPreviewAsync(item.Asset);
-    }
-
-    private async Task ShowPreviewAsync(AssetDescriptor asset)
-    {
-        if (_rom is null || _charmap is null)
-            return;
-
-        _previewCts?.Cancel();
-        var cts = new CancellationTokenSource();
-        _previewCts = cts;
-        var token = cts.Token;
-
-        _selectedAsset = asset;
-        _exportSelected.IsEnabled = true;
-
-        if (asset.Kind is AssetKind.SoundSong or AssetKind.SoundWave)
-        {
-            _soundPreview ??= new SoundPreviewPanel(_soundStreamHost, _soundCacheWarmer);
-            _previewHost.Child = _soundPreview; // always show player immediately
-            _soundPreview.StopAudio();
-        }
-        else
-        {
-            DisposeSoundPreview();
-        }
-
+            Title = "Open RescueTemple Project",
+            AllowMultiple = false,
+            FileTypeFilter =
+            [
+                new FilePickerFileType("RescueTemple Project") { Patterns = ["*.rtproj", "*.json"] },
+                FilePickerFileTypes.All,
+            ],
+        });
+        var file = files.FirstOrDefault();
+        if (file is null) return;
         try
         {
-            var rom = _rom;
-            var charmap = _charmap;
-            var preview = await Task.Run(() => AssetPreviewer.Create(rom, asset, charmap), token);
-            if (token.IsCancellationRequested || _rom is null)
-                return;
-
-            if (asset.Kind is AssetKind.SoundSong or AssetKind.SoundWave)
+            var project = ProjectDocument.Load(file.Path.LocalPath);
+            if (!string.IsNullOrWhiteSpace(project.BaseRomPath) && File.Exists(project.BaseRomPath))
+                await OpenRomAsync(project.BaseRomPath);
+            if (_rom is null || _scenes is null)
             {
-                _soundPreview ??= new SoundPreviewPanel(_soundStreamHost, _soundCacheWarmer);
-                _previewHost.Child = _soundPreview;
-                await _soundPreview.LoadAsync(_rom, asset, preview.Text ?? string.Empty, token);
+                await ShowErrorAsync("Open Project", "Could not open the project's base ROM.");
                 return;
             }
+            _project = project;
+            _changes.Attach(_project, _scenes);
+            ApplyProjectEdits(_project);
+            SetStatus($"Loaded project {project.Path}");
+            _sceneWorkspace?.RefreshFromExternal();
+            UpdateDirtyTitle();
+        }
+        catch (Exception exception)
+        {
+            await ShowErrorAsync("Open Project failed", exception.Message);
+        }
+    }
 
-            DisposeSoundPreview();
-
-            if (preview.IsImage)
+    private void ApplyProjectEdits(ProjectDocument project)
+    {
+        if (_scenes is null) return;
+        foreach (var edit in project.Edits)
+        {
+            if (edit.Kind == "entity.position" &&
+                edit.Target.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
+                int.TryParse(edit.Target[2..], System.Globalization.NumberStyles.HexNumber, null, out var offset) &&
+                edit.Values.TryGetValue("x", out var xText) &&
+                edit.Values.TryGetValue("y", out var yText) &&
+                byte.TryParse(xText, out var x) &&
+                byte.TryParse(yText, out var y))
             {
-                using var stream = new MemoryStream(preview.Png!);
-                var bitmap = new Bitmap(stream);
-                _previewHost.Child = CreateZoomableImagePreview(preview.Title, bitmap);
-            }
-            else if (asset.Kind == AssetKind.Dialogue)
-            {
-                var body = preview.Text ?? string.Empty;
-                var split = body.Split(["\n\n——\n"], 2, StringSplitOptions.None);
-                var dialogueText = split[0];
-                var meta = split.Length > 1 ? split[1] : string.Empty;
-                _previewHost.Child = new ScrollViewer
+                var entity = _scenes.Scenes.SelectMany(scene => scene.AllEntities)
+                    .FirstOrDefault(item => item.RomOffset == offset);
+                if (entity is not null)
                 {
-                    HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled,
-                    VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-                    Content = new StackPanel
-                    {
-                        Spacing = 12,
-                        Children =
-                        {
-                            new TextBlock
-                            {
-                                Text = asset.Name,
-                                FontSize = 18,
-                                FontWeight = FontWeight.SemiBold,
-                            },
-                            new TextBlock
-                            {
-                                Text = dialogueText,
-                                TextWrapping = TextWrapping.Wrap,
-                                FontSize = 16,
-                                LineHeight = 24,
-                            },
-                            new TextBlock
-                            {
-                                Text = meta,
-                                FontSize = 12,
-                                Foreground = Brushes.Gray,
-                                TextWrapping = TextWrapping.Wrap,
-                            },
-                        },
-                    },
-                };
+                    byte.TryParse(edit.Values.GetValueOrDefault("xFlags"), out var xf);
+                    byte.TryParse(edit.Values.GetValueOrDefault("yFlags"), out var yf);
+                    entity.Position = new CompactPos(x, y, xf, yf);
+                }
             }
-            else
+            else if (edit.Kind == "entity.type" &&
+                     edit.Target.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
+                     int.TryParse(edit.Target[2..], System.Globalization.NumberStyles.HexNumber, null, out var typeOffset) &&
+                     edit.Values.TryGetValue("typeId", out var typeText) &&
+                     byte.TryParse(typeText, out var typeId))
             {
-                _previewHost.Child = new ScrollViewer
+                var entity = _scenes.Scenes.SelectMany(s => s.AllEntities)
+                    .FirstOrDefault(item => item.RomOffset == typeOffset);
+                if (entity is not null)
                 {
-                    HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
-                    VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-                    Content = new TextBox
+                    entity.TypeId = typeId;
+                    entity.DisplayName = $"{entity.Kind} {typeId}";
+                }
+            }
+            else if (edit.Kind == "dialogue.text" &&
+                     edit.Target.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
+                     int.TryParse(edit.Target[2..], System.Globalization.NumberStyles.HexNumber, null, out var textOffset) &&
+                     edit.Values.TryGetValue("text", out var text) &&
+                     _scenes.DialogueByOffset.TryGetValue(textOffset, out var dialogue))
+            {
+                dialogue.Text = text;
+            }
+            else if (edit.Kind == "script.arg" &&
+                     edit.Target.StartsWith("0x", StringComparison.OrdinalIgnoreCase) &&
+                     int.TryParse(edit.Target[2..], System.Globalization.NumberStyles.HexNumber, null, out var cmdOffset) &&
+                     edit.Values.TryGetValue("field", out var field) &&
+                     edit.Values.TryGetValue("value", out var valueText) &&
+                     int.TryParse(valueText, out var value))
+            {
+                foreach (var station in _scenes.Scenes.SelectMany(s => s.Groups)
+                             .SelectMany(g => g.Sectors).SelectMany(sec => sec.Stations))
+                {
+                    var cmd = station.Commands.FirstOrDefault(c => c.RomOffset == cmdOffset);
+                    if (cmd is null) continue;
+                    switch (field)
                     {
-                        Text = preview.Text ?? string.Empty,
-                        IsReadOnly = true,
-                        AcceptsReturn = true,
-                        TextWrapping = TextWrapping.NoWrap,
-                        FontFamily = new FontFamily("Cascadia Mono, Consolas, monospace"),
-                        FontSize = 13,
-                    },
-                };
+                        case "op": cmd.Op = (byte)value; break;
+                        case "argByte": cmd.ArgByte = (byte)value; break;
+                        case "argShort": cmd.ArgShort = (short)value; break;
+                        case "arg1": cmd.Arg1 = value; break;
+                        case "arg2": cmd.Arg2 = value; break;
+                        case "argPtr": cmd.ArgPtr = unchecked((uint)value); break;
+                    }
+                    break;
+                }
             }
         }
-        catch (OperationCanceledException)
+    }
+
+    private async void BuildRomOnClick(object? sender, RoutedEventArgs e)
+    {
+        if (_rom is null || _scenes is null || _project is null)
         {
-            // Newer selection replaced this preview.
+            await ShowErrorAsync("Build ROM", "Open a US 1.0 ROM and project first.");
+            return;
         }
-        catch (Exception exception) when (exception is InvalidDataException or
-                                           ArgumentOutOfRangeException or IOException or
-                                           IndexOutOfRangeException)
+        var file = await StorageProvider.SaveFilePickerAsync(new FilePickerSaveOptions
         {
-            if (!token.IsCancellationRequested)
+            Title = "Build ROM As",
+            SuggestedFileName = Path.GetFileNameWithoutExtension(_rom.Path) + ".edited.gba",
+            FileTypeChoices = [new FilePickerFileType("GBA ROM") { Patterns = ["*.gba"] }],
+        });
+        if (file is null) return;
+        try
+        {
+            var report = RomBuilder.Build(_rom, _scenes, _project, file.Path.LocalPath);
+            var summary = report.Success
+                ? $"Built {file.Path.LocalPath} ({report.Changes.Count} changes)."
+                : $"Build failed with {report.Errors.Count} error(s).";
+            SetStatus(summary);
+            if (!report.Success || report.Warnings.Count > 0)
             {
-                _previewHost.Child = new TextBlock
-                {
-                    Text = $"{asset.DisplayName}\n\nUnable to preview this asset:\n{exception.Message}",
-                    TextWrapping = TextWrapping.Wrap,
-                };
+                var details = string.Join("\n", report.Errors.Concat(report.Warnings).Take(20));
+                await ShowErrorAsync(report.Success ? "Build warnings" : "Build ROM failed", details);
             }
+        }
+        catch (Exception exception)
+        {
+            await ShowErrorAsync("Build ROM failed", exception.Message);
         }
     }
 
@@ -833,9 +723,7 @@ public sealed class MainWindow : Window
         if (_rom is null || _charmap is null || _selectedAsset is null)
             return;
         var directory = await ChooseExportDirectoryAsync();
-        if (directory is null)
-            return;
-
+        if (directory is null) return;
         try
         {
             var asset = _selectedAsset;
@@ -850,18 +738,13 @@ public sealed class MainWindow : Window
 
     private async void ExportCategoryOnClick(object? sender, RoutedEventArgs e)
     {
-        if (_rom is null || _charmap is null ||
-            _categoryTree.SelectedItem is not CategoryItem category || _catalog is null)
+        if (_rom is null || _charmap is null || _selectedCategory is null || _catalog is null)
             return;
         var directory = await ChooseExportDirectoryAsync();
-        if (directory is null)
-            return;
-
-        var assets = _catalog.ForCategory(category.Category);
-        var result = await Task.Run(() =>
-            AssetExportService.ExportMany(_rom, assets, _charmap, directory));
-        SetStatus($"Exported {result.Paths.Count} file(s) from {category.Name}. " +
-                  $"{result.Errors.Count} skipped.");
+        if (directory is null) return;
+        var assets = _catalog.ForCategory(_selectedCategory.Value);
+        var result = await Task.Run(() => AssetExportService.ExportMany(_rom, assets, _charmap, directory));
+        SetStatus($"Exported {result.Paths.Count} file(s). {result.Errors.Count} skipped.");
         if (result.Errors.Count > 0)
             await ShowErrorAsync("Some assets were skipped", string.Join("\n", result.Errors.Take(12)));
     }
@@ -878,37 +761,57 @@ public sealed class MainWindow : Window
 
     private void ClearRom()
     {
-        DisposeSoundPreview();
+        _assetWorkspace.DisposeSoundPreview();
         _soundCacheWarmer.Stop();
         _soundStreamHost.Reset();
         _rom = null;
         _catalog = null;
         _charmap = null;
+        _scenes = null;
+        _project = null;
+        _sceneWorkspace = null;
         _selectedAsset = null;
-        _thumbnailCts?.Cancel();
-        _assetList.ItemsSource = null;
-        _assetList.SelectedIndex = -1;
-        _assetGrid.Children.Clear();
-        _categoryTree.SelectedItem = null;
-        _previewHost.Child = CreateWelcomePanel();
+        _selectedCategory = null;
+        _explorer.Clear();
+        _assetWorkspace.Clear();
+        _workspaceHost.Child = CreateWelcomePanel();
+        _propertiesHost.IsVisible = true;
+        Grid.SetColumnSpan(_workspaceHost, 1);
         _exportSelected.IsEnabled = false;
         _exportCategory.IsEnabled = false;
+        _breadcrumb.SetPath("RescueTemple");
+        Title = "RescueTemple";
         SetStatus("Open a baserom.gba to begin.");
     }
 
-    private void DisposeSoundPreview()
+    private void MainWindowOnKeyDown(object? sender, KeyEventArgs e)
     {
-        _soundPreview?.Dispose();
-        _soundPreview = null;
+        if (!e.KeyModifiers.HasFlag(KeyModifiers.Control))
+            return;
+        if (e.Key == Key.Z)
+        {
+            _changes.Undo();
+            _sceneWorkspace?.RefreshFromExternal();
+            UpdateDirtyTitle();
+            e.Handled = true;
+        }
+        else if (e.Key == Key.Y)
+        {
+            _changes.Redo();
+            _sceneWorkspace?.RefreshFromExternal();
+            UpdateDirtyTitle();
+            e.Handled = true;
+        }
+        else if (e.Key == Key.S)
+        {
+            SaveProjectOnClick(sender, e);
+            e.Handled = true;
+        }
     }
 
     private static string? FindDefaultRom()
     {
-        foreach (var start in new[]
-                 {
-                     Environment.CurrentDirectory,
-                     AppContext.BaseDirectory,
-                 })
+        foreach (var start in new[] { Environment.CurrentDirectory, AppContext.BaseDirectory })
         {
             var current = new DirectoryInfo(start);
             while (current is not null)
@@ -919,168 +822,30 @@ public sealed class MainWindow : Window
                 current = current.Parent;
             }
         }
-
         return null;
     }
 
-    private Control CreateCategoryPanel(CategoryItem category, int count)
+    private static Control CreateWelcomePanel() => new StackPanel
     {
-        return new TextBlock
+        Spacing = 10,
+        VerticalAlignment = VerticalAlignment.Center,
+        HorizontalAlignment = HorizontalAlignment.Center,
+        Children =
         {
-            Text = $"{category.Name}\n\n{count:N0} entries. Select one to preview.",
-            TextWrapping = TextWrapping.Wrap,
-            FontSize = 16,
-            Foreground = Brushes.Gray,
-        };
-    }
-
-    private static Control CreateWelcomePanel()
-    {
-        return new StackPanel
-        {
-            Spacing = 10,
-            VerticalAlignment = VerticalAlignment.Center,
-            HorizontalAlignment = HorizontalAlignment.Center,
-            Children =
+            new TextBlock
             {
-                new TextBlock
-                {
-                    Text = "RescueTemple",
-                    FontSize = 30,
-                    FontWeight = FontWeight.Bold,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                },
-                new TextBlock
-                {
-                    Text = "Open a baserom.gba to browse its assets.",
-                    Foreground = Brushes.Gray,
-                },
+                Text = "RescueTemple",
+                FontSize = 30,
+                FontWeight = FontWeight.Bold,
+                HorizontalAlignment = HorizontalAlignment.Center,
             },
-        };
-    }
-
-    private Control CreateZoomableImagePreview(string title, Bitmap bitmap)
-    {
-        _previewZoom = 1.0;
-        _previewPixelWidth = bitmap.PixelSize.Width;
-        _previewPixelHeight = bitmap.PixelSize.Height;
-        _previewImage = new Image
-        {
-            Source = bitmap,
-            Stretch = Stretch.Fill,
-            HorizontalAlignment = HorizontalAlignment.Left,
-            VerticalAlignment = VerticalAlignment.Top,
-        };
-        ApplyPreviewZoom();
-
-        _zoomLabel = new TextBlock
-        {
-            VerticalAlignment = VerticalAlignment.Center,
-            Margin = new Thickness(8, 0),
-            MinWidth = 56,
-            Text = "100%",
-        };
-
-        var zoomOut = new Button { Content = "−", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
-        var zoomIn = new Button { Content = "+", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
-        var zoom100 = new Button { Content = "100%", Padding = new Thickness(10, 4), Margin = new Thickness(2, 0) };
-        zoomOut.Click += (_, _) => AdjustPreviewZoom(1 / 1.25);
-        zoomIn.Click += (_, _) => AdjustPreviewZoom(1.25);
-        zoom100.Click += (_, _) => SetPreviewZoom(1.0);
-
-        var toolbar = new StackPanel
-        {
-            Orientation = Orientation.Horizontal,
-            Spacing = 2,
-            Children =
+            new TextBlock
             {
-                new TextBlock
-                {
-                    Text = $"{title}  ({_previewPixelWidth}×{_previewPixelHeight})",
-                    FontWeight = FontWeight.SemiBold,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Margin = new Thickness(0, 0, 12, 0),
-                },
-                zoomOut,
-                zoomIn,
-                zoom100,
-                _zoomLabel,
+                Text = "Open a baserom.gba to browse and edit its assets.",
+                Foreground = EditorTheme.TextMutedBrush,
             },
-        };
-
-        var imageHost = new Border
-        {
-            Background = new SolidColorBrush(Color.FromRgb(0x2A, 0x2A, 0x2A)),
-            Padding = new Thickness(8),
-            HorizontalAlignment = HorizontalAlignment.Left,
-            Child = _previewImage,
-        };
-
-        // Mouse/trackpad wheel zoom and touch pinch (scale is cumulative per gesture).
-        imageHost.GestureRecognizers.Add(new PinchGestureRecognizer());
-        imageHost.PointerWheelChanged += (_, e) =>
-        {
-            var factor = e.Delta.Y > 0 ? 1.1 : 1 / 1.1;
-            AdjustPreviewZoom(factor);
-            e.Handled = true;
-        };
-        imageHost.AddHandler(InputElement.PinchEvent, (_, e) =>
-        {
-            if (!_pinchActive)
-            {
-                _pinchActive = true;
-                _pinchBaseZoom = _previewZoom;
-            }
-
-            SetPreviewZoom(_pinchBaseZoom * e.Scale);
-            e.Handled = true;
-        }, RoutingStrategies.Bubble);
-        imageHost.AddHandler(InputElement.PinchEndedEvent, (_, _) =>
-        {
-            _pinchActive = false;
-        }, RoutingStrategies.Bubble);
-
-        var scroller = new ScrollViewer
-        {
-            HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
-            VerticalScrollBarVisibility = ScrollBarVisibility.Auto,
-            Content = imageHost,
-        };
-
-        return new DockPanel
-        {
-            LastChildFill = true,
-            Children =
-            {
-                new Border
-                {
-                    [DockPanel.DockProperty] = Dock.Top,
-                    Margin = new Thickness(0, 0, 0, 8),
-                    Child = toolbar,
-                },
-                scroller,
-            },
-        };
-    }
-
-    private void AdjustPreviewZoom(double factor) =>
-        SetPreviewZoom(_previewZoom * factor);
-
-    private void SetPreviewZoom(double zoom)
-    {
-        _previewZoom = Math.Clamp(zoom, 0.1, 8.0);
-        ApplyPreviewZoom();
-    }
-
-    private void ApplyPreviewZoom()
-    {
-        if (_previewImage is null)
-            return;
-        _previewImage.Width = _previewPixelWidth * _previewZoom;
-        _previewImage.Height = _previewPixelHeight * _previewZoom;
-        if (_zoomLabel is not null)
-            _zoomLabel.Text = $"{_previewZoom * 100:0}%";
-    }
+        },
+    };
 
     private void SetStatus(string text) => _status.Text = text;
 
@@ -1089,46 +854,30 @@ public sealed class MainWindow : Window
         var dialog = new Window
         {
             Title = title,
-            Width = 560,
+            Width = 480,
             Height = 260,
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
-            WindowDecorations = WindowDecorations.Full,
-            Content = new StackPanel
+        };
+        var ok = new Button
+        {
+            Content = "OK",
+            HorizontalAlignment = HorizontalAlignment.Right,
+            Margin = new Thickness(0, 12, 0, 0),
+        };
+        ok.Click += (_, _) => dialog.Close();
+        dialog.Content = new DockPanel
+        {
+            Margin = new Thickness(16),
+            Children =
             {
-                Margin = new Thickness(20),
-                Spacing = 16,
-                Children =
+                ok,
+                new ScrollViewer
                 {
-                    new TextBlock { Text = message, TextWrapping = TextWrapping.Wrap },
-                    new Button
-                    {
-                        Content = "Close",
-                        HorizontalAlignment = HorizontalAlignment.Right,
-                        Padding = new Thickness(18, 7),
-                    },
+                    Content = new TextBlock { Text = message, TextWrapping = TextWrapping.Wrap },
                 },
             },
         };
-        if (dialog.Content is Panel panel && panel.Children[^1] is Button close)
-            close.Click += (_, _) => dialog.Close();
+        DockPanel.SetDock(ok, Dock.Bottom);
         await dialog.ShowDialog(this);
-    }
-
-    private sealed record CategoryItem(string Name, AssetCategory Category)
-    {
-        public override string ToString() => Name;
-    }
-
-    private sealed class AssetListItem
-    {
-        public AssetListItem(AssetDescriptor asset)
-        {
-            Asset = asset;
-            Text = asset.Kind == AssetKind.Dialogue ? asset.Name : asset.DisplayName;
-        }
-
-        public AssetDescriptor Asset { get; }
-        public string Text { get; }
-        public override string ToString() => Text;
     }
 }

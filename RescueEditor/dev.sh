@@ -67,6 +67,8 @@ run_windows_watch() {
     exit 1
   fi
   echo "Synced to $win_mirror"
+  # Release DLL locks from a previous RescueTemple instance (MSB3027).
+  /mnt/c/Windows/System32/taskkill.exe /F /IM RescueTemple.exe >/dev/null 2>&1 || true
   start_live_sync
   echo "Starting Windows hot reload…"
   echo "Project: $project_win"

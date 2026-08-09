@@ -2,7 +2,7 @@
 #nullable enable
 namespace RescueEditor.Core;
 
-internal static class GroundMapNames
+public static class GroundMapNames
 {
     public static string? GetDisplayName(string romMapName)
     {

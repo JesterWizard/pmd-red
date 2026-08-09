@@ -50,7 +50,11 @@ if ((Test-Path $baseromSrc) -and -not (Test-Path $baseromDst)) {
 }
 
 $project = Join-Path $winRoot "RescueEditor\src\RescueEditor.App\RescueEditor.App.csproj"
+# Release DLL locks from a previous RescueTemple instance (MSB3027).
+Get-Process -Name "RescueTemple" -ErrorAction SilentlyContinue | Stop-Process -Force
+Start-Sleep -Milliseconds 400
 Write-Host "Starting dotnet watch on Windows path..."
 Write-Host "Project: $project"
 Set-Location (Join-Path $winRoot "RescueEditor")
+$env:DOTNET_WATCH_RESTART_ON_RUDE_EDIT = "1"
 dotnet watch run --project $project
