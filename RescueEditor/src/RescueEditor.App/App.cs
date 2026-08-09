@@ -11,6 +11,7 @@ public sealed class App : Application
     {
         Styles.Add(new FluentTheme());
         RequestedThemeVariant = ThemeVariant.Dark;
+        EditorPopupStyles.Apply(this);
     }
 
     public override void OnFrameworkInitializationCompleted()

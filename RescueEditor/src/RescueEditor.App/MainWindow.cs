@@ -30,6 +30,7 @@ public sealed class MainWindow : Window
     private readonly BreadcrumbBar _breadcrumb;
     private readonly Border _workspaceHost;
     private readonly Border _propertiesHost;
+    private readonly GridSplitter _rightSplitter;
     private readonly TextBlock _status;
     private readonly TextBlock _propertiesBody;
     private readonly Button _exportSelected;
@@ -60,12 +61,14 @@ public sealed class MainWindow : Window
     public MainWindow()
     {
         Title = "RescueTemple";
-        Width = 1400;
-        Height = 820;
-        MinWidth = 900;
-        MinHeight = 560;
+        Width = 1440;
+        Height = 860;
+        MinWidth = 1024;
+        MinHeight = 640;
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
         Background = EditorTheme.WindowBgBrush;
+        FontFamily = EditorTheme.UiFont;
+        FontSize = EditorTheme.FontBody;
 
         _explorer = new ProjectExplorerPanel();
         _explorer.SelectionChanged += ExplorerOnSelectionChanged;
@@ -73,55 +76,75 @@ public sealed class MainWindow : Window
         _breadcrumb = new BreadcrumbBar();
         _workspaceHost = new Border
         {
-            Background = EditorTheme.PanelBgBrush,
+            Background = EditorTheme.CanvasBgBrush,
             Child = CreateWelcomePanel(),
         };
         _propertiesBody = new TextBlock
         {
-            Text = "Properties",
-            Margin = new Thickness(12),
+            Text = "Select an asset to inspect its properties.",
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space3),
             TextWrapping = TextWrapping.Wrap,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontBody,
             Foreground = EditorTheme.TextMutedBrush,
+            LineHeight = 18,
         };
+        var propsHeader = EditorChrome.PanelHeader("Inspector");
+        var propsBody = new DockPanel { LastChildFill = true };
+        DockPanel.SetDock(propsHeader, Dock.Top);
+        propsBody.Children.Add(propsHeader);
+        propsBody.Children.Add(new ScrollViewer
+        {
+            Padding = new Thickness(0),
+            Content = _propertiesBody,
+        });
         _propertiesHost = new Border
         {
-            Width = 280,
-            Background = EditorTheme.PanelBgBrush,
-            BorderBrush = EditorTheme.BorderBrush,
-            BorderThickness = new Thickness(1, 0, 0, 0),
-            Child = new DockPanel
-            {
-                Children =
-                {
-                    new TextBlock
-                    {
-                        Text = "Properties",
-                        FontWeight = FontWeight.SemiBold,
-                        Margin = new Thickness(12, 8, 12, 4),
-                        Foreground = EditorTheme.TextMutedBrush,
-                        [DockPanel.DockProperty] = Dock.Top,
-                    },
-                    new ScrollViewer { Content = _propertiesBody },
-                },
-            },
+            MinWidth = 220,
+            MaxWidth = 480,
+            Child = EditorChrome.VerticalPane(propsBody, leftEdge: true),
         };
 
         _status = new TextBlock
         {
             Text = "Open a baserom.gba to begin.",
-            Margin = new Thickness(10, 5),
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            VerticalAlignment = VerticalAlignment.Center,
             TextTrimming = TextTrimming.CharacterEllipsis,
         };
+        var statusInner = new Grid
+        {
+            ColumnDefinitions = new ColumnDefinitions("*,Auto"),
+            Children =
+            {
+                _status,
+                new TextBlock
+                {
+                    Text = "RescueTemple",
+                    FontFamily = EditorTheme.UiFont,
+                    FontSize = EditorTheme.FontMeta,
+                    Foreground = EditorTheme.TextDimBrush,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    Margin = new Thickness(EditorTheme.Space4, 0, 0, 0),
+                    [Grid.ColumnProperty] = 1,
+                },
+            },
+        };
 
-        _exportSelected = new Button { Content = "Export Selected", IsEnabled = false, Margin = new Thickness(4, 0) };
+        _exportSelected = EditorChrome.ToolButton("Export");
+        _exportSelected.IsEnabled = false;
         _exportSelected.Click += ExportSelectedOnClick;
-        _exportCategory = new Button { Content = "Export Category", IsEnabled = false, Margin = new Thickness(4, 0) };
+        _exportCategory = EditorChrome.ToolButton("Export All");
+        _exportCategory.IsEnabled = false;
         _exportCategory.Click += ExportCategoryOnClick;
-        _saveButton = new Button { Content = "Save", Margin = new Thickness(4, 0), Padding = new Thickness(14, 4) };
+        _saveButton = EditorChrome.ToolButton("Save", primary: true);
         _saveButton.Click += SaveProjectOnClick;
-
-        var openButton = new Button { Content = "Open ROM", Margin = new Thickness(4, 0) };
+        var openButton = EditorChrome.ToolButton("Open ROM");
         openButton.Click += OpenButtonOnClick;
+        var buildButton = EditorChrome.ToolButton("Build ROM");
+        buildButton.Click += BuildRomOnClick;
 
         _assetWorkspace = new AssetWorkspacePanel();
         _assetWorkspace.AttachSound(_soundStreamHost, _soundCacheWarmer);
@@ -135,47 +158,55 @@ public sealed class MainWindow : Window
         };
         _assetWorkspace.RequestSceneWorkspace += (_, _) => OpenSelectedScene();
 
-        var toolbar = new Grid
+        var toolbarLeft = new StackPanel
         {
-            Margin = new Thickness(8, 3),
-            ColumnDefinitions = new ColumnDefinitions("*,Auto"),
-            Background = EditorTheme.ToolbarBgBrush,
+            Orientation = Orientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center,
+            Spacing = 0,
             Children =
             {
-                new StackPanel
-                {
-                    Orientation = Orientation.Horizontal,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Children = { openButton, _exportSelected, _exportCategory },
-                },
-                new StackPanel
-                {
-                    Orientation = Orientation.Horizontal,
-                    HorizontalAlignment = HorizontalAlignment.Right,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Children = { _saveButton },
-                    [Grid.ColumnProperty] = 1,
-                },
+                openButton,
+                _saveButton,
+                EditorChrome.ToolbarSeparator(),
+                buildButton,
+                EditorChrome.ToolbarSeparator(),
+                _exportSelected,
+                _exportCategory,
             },
+        };
+        var toolbarInner = new Grid
+        {
+            ColumnDefinitions = new ColumnDefinitions("*"),
+            Children = { toolbarLeft },
+        };
+        var toolbar = EditorChrome.ToolbarHost(toolbarInner);
+
+        var leftSplitter = new GridSplitter
+        {
+            Width = 4,
+            Background = EditorTheme.BorderSubtleBrush,
+            ResizeDirection = GridResizeDirection.Columns,
+        };
+        _rightSplitter = new GridSplitter
+        {
+            Width = 4,
+            Background = EditorTheme.BorderSubtleBrush,
+            ResizeDirection = GridResizeDirection.Columns,
         };
 
         var content = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions("260,*,Auto"),
-            Children = { _explorer, _workspaceHost, _propertiesHost },
+            ColumnDefinitions = new ColumnDefinitions($"{EditorTheme.ExplorerWidth},4,*,4,{EditorTheme.InspectorWidth}"),
+            Children = { _explorer, leftSplitter, _workspaceHost, _rightSplitter, _propertiesHost },
         };
         Grid.SetColumn(_explorer, 0);
-        Grid.SetColumn(_workspaceHost, 1);
-        Grid.SetColumn(_propertiesHost, 2);
+        Grid.SetColumn(leftSplitter, 1);
+        Grid.SetColumn(_workspaceHost, 2);
+        Grid.SetColumn(_rightSplitter, 3);
+        Grid.SetColumn(_propertiesHost, 4);
 
         var menu = CreateMenu();
-        var statusBar = new Border
-        {
-            BorderBrush = EditorTheme.BorderBrush,
-            BorderThickness = new Thickness(0, 1, 0, 0),
-            Background = EditorTheme.ToolbarBgBrush,
-            Child = _status,
-        };
+        var statusBar = EditorChrome.StatusHost(statusInner);
 
         _root = new Grid
         {
@@ -188,31 +219,54 @@ public sealed class MainWindow : Window
         Grid.SetRow(content, 3);
         Grid.SetRow(statusBar, 4);
 
-        _loadingStage = new TextBlock { FontSize = 14, TextWrapping = TextWrapping.Wrap };
-        _loadingElapsed = new TextBlock { Foreground = EditorTheme.TextMutedBrush, Margin = new Thickness(0, 8, 0, 0) };
+        _loadingStage = new TextBlock
+        {
+            FontSize = EditorTheme.FontBody,
+            FontFamily = EditorTheme.UiFont,
+            TextWrapping = TextWrapping.Wrap,
+            Foreground = EditorTheme.TextSecondaryBrush,
+        };
+        _loadingElapsed = new TextBlock
+        {
+            Foreground = EditorTheme.TextMutedBrush,
+            FontSize = EditorTheme.FontMeta,
+            FontFamily = EditorTheme.UiFont,
+            Margin = new Thickness(0, EditorTheme.Space2, 0, 0),
+        };
         _loadingOverlay = new Border
         {
             IsVisible = false,
-            Background = new SolidColorBrush(Color.FromArgb(200, 20, 20, 20)),
+            Background = new SolidColorBrush(Color.FromArgb(210, 12, 12, 12)),
             Child = new Border
             {
-                Width = 420,
-                Padding = new Thickness(24),
+                Width = 360,
+                Padding = new Thickness(EditorTheme.Space6),
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center,
-                Background = EditorTheme.PanelBgAltBrush,
+                Background = EditorTheme.PanelBgRaisedBrush,
                 BorderBrush = EditorTheme.BorderBrush,
                 BorderThickness = new Thickness(1),
-                CornerRadius = new CornerRadius(6),
+                CornerRadius = new CornerRadius(2),
                 Child = new StackPanel
                 {
-                    Spacing = 4,
+                    Spacing = EditorTheme.Space2,
                     Children =
                     {
-                        new TextBlock { Text = "Indexing ROM assets", FontSize = 18, FontWeight = FontWeight.SemiBold },
+                        new TextBlock
+                        {
+                            Text = "Indexing ROM assets",
+                            FontSize = EditorTheme.FontTitle,
+                            FontWeight = FontWeight.SemiBold,
+                            FontFamily = EditorTheme.UiFont,
+                        },
                         _loadingStage,
                         _loadingElapsed,
-                        new ProgressBar { IsIndeterminate = true, Height = 8, Margin = new Thickness(0, 18, 0, 0) },
+                        new ProgressBar
+                        {
+                            IsIndeterminate = true,
+                            Height = 3,
+                            Margin = new Thickness(0, EditorTheme.Space4, 0, 0),
+                        },
                     },
                 },
             },
@@ -223,9 +277,16 @@ public sealed class MainWindow : Window
         Opened += OnOpened;
     }
 
-    private Control CreateMenu()
+    private Menu CreateMenu()
     {
-        var menu = new Menu();
+        var menu = new Menu
+        {
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontBody,
+            Background = EditorTheme.MenuBgBrush,
+            Height = 24,
+            Padding = new Thickness(EditorTheme.Space2, 0),
+        };
         var file = new MenuItem { Header = "_File" };
         var open = new MenuItem { Header = "_Open ROM…" };
         open.Click += OpenButtonOnClick;
@@ -386,6 +447,7 @@ public sealed class MainWindow : Window
             _explorer.Build(_catalog, _scenes, Categories);
             _workspaceHost.Child = _assetWorkspace;
             _propertiesHost.IsVisible = true;
+            _rightSplitter.IsVisible = true;
             _selectedCategory = AssetCategory.Scenes;
             _assetWorkspace.ShowCategory(AssetCategory.Scenes, selectFirst: false);
             _exportCategory.IsEnabled = true;
@@ -425,6 +487,7 @@ public sealed class MainWindow : Window
                 if (category.Category == AssetCategory.Scenes)
                 {
                     _propertiesHost.IsVisible = true;
+                    _rightSplitter.IsVisible = true;
                     Grid.SetColumnSpan(_workspaceHost, 1);
                     _workspaceHost.Child = _assetWorkspace;
                     _assetWorkspace.ShowCategory(category.Category, selectFirst: false);
@@ -432,6 +495,7 @@ public sealed class MainWindow : Window
                 else
                 {
                     _propertiesHost.IsVisible = true;
+                    _rightSplitter.IsVisible = true;
                     Grid.SetColumnSpan(_workspaceHost, 1);
                     _workspaceHost.Child = _assetWorkspace;
                     _assetWorkspace.ShowCategory(category.Category, selectFirst: true);
@@ -450,6 +514,7 @@ public sealed class MainWindow : Window
                 else
                 {
                     _propertiesHost.IsVisible = true;
+                    _rightSplitter.IsVisible = true;
                     Grid.SetColumnSpan(_workspaceHost, 1);
                     _workspaceHost.Child = _assetWorkspace;
                     _ = _assetWorkspace.ShowAssetAsync(assetNode.Asset);
@@ -487,8 +552,9 @@ public sealed class MainWindow : Window
             asset.Metadata.TryGetValue("mapId", out var mapText) && int.TryParse(mapText, out var id) ? id : null);
         // Scene editor owns center+right (SkyTemple style); hide generic properties.
         _propertiesHost.IsVisible = false;
+        _rightSplitter.IsVisible = false;
         _workspaceHost.Child = _sceneWorkspace;
-        Grid.SetColumnSpan(_workspaceHost, 2);
+        Grid.SetColumnSpan(_workspaceHost, 3);
         UpdateBreadcrumb();
         UpdateDirtyTitle();
     }
@@ -514,8 +580,16 @@ public sealed class MainWindow : Window
         }
         var a = _selectedAsset;
         _propertiesBody.Text =
-            $"{a.DisplayName}\n\nKind: {a.Kind}\nCategory: {a.Category}\nFormat: {a.Format}\n" +
-            $"Offset: 0x{a.Offset:X}\nSize: 0x{a.Size:X}\n\n{a.Description}";
+            $"{a.DisplayName}\n\n" +
+            $"Kind\t{a.Kind}\n" +
+            $"Category\t{a.Category}\n" +
+            $"Format\t{a.Format}\n" +
+            $"Offset\t0x{a.Offset:X}\n" +
+            $"Size\t0x{a.Size:X}\n\n" +
+            $"{a.Description}";
+        _propertiesBody.FontFamily = EditorTheme.MonoFont;
+        _propertiesBody.FontSize = EditorTheme.FontLabel;
+        _propertiesBody.Foreground = EditorTheme.TextSecondaryBrush;
     }
 
     private void UpdateDirtyTitle()
@@ -776,8 +850,8 @@ public sealed class MainWindow : Window
         _assetWorkspace.Clear();
         _workspaceHost.Child = CreateWelcomePanel();
         _propertiesHost.IsVisible = true;
+        _rightSplitter.IsVisible = true;
         Grid.SetColumnSpan(_workspaceHost, 1);
-        _exportSelected.IsEnabled = false;
         _exportCategory.IsEnabled = false;
         _breadcrumb.SetPath("RescueTemple");
         Title = "RescueTemple";
@@ -827,7 +901,7 @@ public sealed class MainWindow : Window
 
     private static Control CreateWelcomePanel() => new StackPanel
     {
-        Spacing = 10,
+        Spacing = EditorTheme.Space3,
         VerticalAlignment = VerticalAlignment.Center,
         HorizontalAlignment = HorizontalAlignment.Center,
         Children =
@@ -835,13 +909,17 @@ public sealed class MainWindow : Window
             new TextBlock
             {
                 Text = "RescueTemple",
-                FontSize = 30,
-                FontWeight = FontWeight.Bold,
+                FontSize = 22,
+                FontWeight = FontWeight.SemiBold,
+                FontFamily = EditorTheme.UiFont,
+                Foreground = EditorTheme.TextPrimaryBrush,
                 HorizontalAlignment = HorizontalAlignment.Center,
             },
             new TextBlock
             {
-                Text = "Open a baserom.gba to browse and edit its assets.",
+                Text = "Open a baserom.gba to browse and edit assets.",
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontBody,
                 Foreground = EditorTheme.TextMutedBrush,
             },
         },

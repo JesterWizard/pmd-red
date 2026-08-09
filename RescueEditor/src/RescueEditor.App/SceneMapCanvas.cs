@@ -1,6 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Shapes;
 using Avalonia.Input;
+using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using RescueEditor.Core;
@@ -13,14 +15,18 @@ public enum SceneMapTool
     Pan,
 }
 
-/// <summary>Interactive scene map with hit-testing, drag-move, pan, and grid overlay.</summary>
+/// <summary>Interactive scene map with rulers, hit-testing, drag-move, pan, and grid.</summary>
 public sealed class SceneMapCanvas : UserControl
 {
     private readonly Image _image;
     private readonly Canvas _overlay;
     private readonly Border _host;
     private readonly ScrollViewer _scroller;
+    private readonly Canvas _hRuler;
+    private readonly Canvas _vRuler;
     private readonly TextBlock _coordLabel;
+    private readonly TextBlock _zoomLabel;
+    private readonly TextBlock _sceneLabel;
 
     private RomImage? _rom;
     private Scene? _scene;
@@ -47,59 +53,134 @@ public sealed class SceneMapCanvas : UserControl
     private Vector _panOffsetStart;
 
     public SceneMapTool Tool { get; set; } = SceneMapTool.Select;
+    public bool SnapToGrid { get; set; } = true;
     public event EventHandler<SceneEntity?>? EntitySelected;
     public event EventHandler<SceneEntity>? EntityMoved;
     public event EventHandler<(double X, double Y)>? CursorMoved;
+    public CompactPos? MovedPending { get; set; }
 
     public SceneMapCanvas()
     {
         _image = new Image
         {
             Stretch = Stretch.None,
-            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left,
-            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            VerticalAlignment = VerticalAlignment.Top,
         };
-        _overlay = new Canvas
-        {
-            IsHitTestVisible = false,
-        };
+        _overlay = new Canvas { IsHitTestVisible = false };
         var layer = new Panel { Children = { _image, _overlay } };
         _host = new Border
         {
-            Background = EditorTheme.CanvasBgBrush,
+            Background = EditorTheme.ViewportWellBrush,
             Child = layer,
             Cursor = new Cursor(StandardCursorType.Arrow),
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(1),
         };
         _host.PointerPressed += OnPointerPressed;
         _host.PointerMoved += OnPointerMoved;
         _host.PointerReleased += OnPointerReleased;
         _host.PointerCaptureLost += (_, _) => { _dragging = false; _panning = false; };
+        _host.PointerWheelChanged += OnWheel;
 
         _scroller = new ScrollViewer
         {
             HorizontalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto,
             VerticalScrollBarVisibility = Avalonia.Controls.Primitives.ScrollBarVisibility.Auto,
             Content = _host,
+            Background = EditorTheme.ViewportWellBrush,
         };
+        _scroller.ScrollChanged += (_, _) => DrawRulers();
+
+        _hRuler = new Canvas
+        {
+            Height = EditorTheme.RulerSize,
+            Background = EditorTheme.PanelBgRaisedBrush,
+            ClipToBounds = true,
+        };
+        _vRuler = new Canvas
+        {
+            Width = EditorTheme.RulerSize,
+            Background = EditorTheme.PanelBgRaisedBrush,
+            ClipToBounds = true,
+        };
+        var corner = new Border
+        {
+            Width = EditorTheme.RulerSize,
+            Height = EditorTheme.RulerSize,
+            Background = EditorTheme.PanelBgRaisedBrush,
+        };
+
+        var rulerRow = new Grid
+        {
+            ColumnDefinitions = new ColumnDefinitions($"{EditorTheme.RulerSize},*"),
+            Children = { corner, _hRuler },
+        };
+        Grid.SetColumn(_hRuler, 1);
+
+        var mapRow = new Grid
+        {
+            ColumnDefinitions = new ColumnDefinitions($"{EditorTheme.RulerSize},*"),
+            Children = { _vRuler, _scroller },
+        };
+        Grid.SetColumn(_scroller, 1);
 
         _coordLabel = new TextBlock
         {
-            Text = "X: —, Y: —",
+            Text = "X: —   Y: —",
+            FontFamily = EditorTheme.MonoFont,
             Foreground = EditorTheme.TextMutedBrush,
-            FontSize = 12,
-            Margin = new Thickness(8, 4),
-            HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left,
-            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Bottom,
+            FontSize = EditorTheme.FontMeta,
+            VerticalAlignment = VerticalAlignment.Center,
+        };
+        _sceneLabel = new TextBlock
+        {
+            FontFamily = EditorTheme.UiFont,
+            Foreground = EditorTheme.TextDimBrush,
+            FontSize = EditorTheme.FontMeta,
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(EditorTheme.Space4, 0, 0, 0),
+        };
+        _zoomLabel = new TextBlock
+        {
+            Text = "Zoom: 100%",
+            FontFamily = EditorTheme.MonoFont,
+            Foreground = EditorTheme.TextMutedBrush,
+            FontSize = EditorTheme.FontMeta,
+            VerticalAlignment = VerticalAlignment.Center,
+            HorizontalAlignment = HorizontalAlignment.Right,
         };
 
-        Content = new Panel
+        var status = new Border
         {
-            Children =
+            Height = EditorTheme.StatusHeight,
+            Background = EditorTheme.PanelBgRaisedBrush,
+            Padding = new Thickness(EditorTheme.Space3, 0),
+            Child = new Grid
             {
-                _scroller,
-                _coordLabel,
+                ColumnDefinitions = new ColumnDefinitions("Auto,*,Auto"),
+                Children =
+                {
+                    new StackPanel
+                    {
+                        Orientation = Orientation.Horizontal,
+                        VerticalAlignment = VerticalAlignment.Center,
+                        Children = { _coordLabel, _sceneLabel },
+                    },
+                    _zoomLabel,
+                },
             },
         };
+        Grid.SetColumn(_zoomLabel, 2);
+
+        Content = new Grid
+        {
+            RowDefinitions = new RowDefinitions("Auto,*,Auto"),
+            Background = EditorTheme.ViewportWellBrush,
+            Children = { rulerRow, mapRow, status },
+        };
+        Grid.SetRow(mapRow, 1);
+        Grid.SetRow(status, 2);
     }
 
     public void Configure(
@@ -128,6 +209,7 @@ public sealed class SceneMapCanvas : UserControl
         _showLinks = showLinks;
         _showGrid = showGrid;
         _hudDialogue = hudDialogue;
+        _sceneLabel.Text = $"{scene.Name}   g{group} s{sector}";
         Refresh();
     }
 
@@ -155,17 +237,101 @@ public sealed class SceneMapCanvas : UserControl
             _image.Source = _bitmap;
             _imageWidth = _bitmap.PixelSize.Width;
             _imageHeight = _bitmap.PixelSize.Height;
-            _image.Width = _imageWidth;
-            _image.Height = _imageHeight;
-            _overlay.Width = _imageWidth;
-            _overlay.Height = _imageHeight;
-            _host.Width = _imageWidth;
-            _host.Height = _imageHeight;
-            _imageScale = 1.0;
+            ApplyZoom();
+            DrawRulers();
         }
         catch
         {
             // Keep prior frame on compose failure.
+        }
+    }
+
+    private void ApplyZoom()
+    {
+        _image.Width = _imageWidth * _imageScale;
+        _image.Height = _imageHeight * _imageScale;
+        _overlay.Width = _image.Width;
+        _overlay.Height = _image.Height;
+        _host.Width = _image.Width;
+        _host.Height = _image.Height;
+        _zoomLabel.Text = $"Zoom: {_imageScale * 100:0}%";
+    }
+
+    private void OnWheel(object? sender, PointerWheelEventArgs e)
+    {
+        if (!e.KeyModifiers.HasFlag(KeyModifiers.Control))
+            return;
+        var factor = e.Delta.Y > 0 ? 1.25 : 1 / 1.25;
+        _imageScale = Math.Clamp(_imageScale * factor, 0.25, 8.0);
+        ApplyZoom();
+        DrawRulers();
+        e.Handled = true;
+    }
+
+    private void DrawRulers()
+    {
+        _hRuler.Children.Clear();
+        _vRuler.Children.Clear();
+        if (_imageWidth <= 0 || _imageHeight <= 0)
+            return;
+
+        var offsetX = _scroller.Offset.X;
+        var offsetY = _scroller.Offset.Y;
+        var step = _imageScale >= 2 ? 8 : _imageScale >= 1 ? 16 : 32;
+        var major = step * 4;
+
+        for (var world = 0; world <= _imageWidth; world += step)
+        {
+            var x = world * _imageScale - offsetX;
+            if (x < -2 || x > _hRuler.Bounds.Width + 2)
+                continue;
+            var isMajor = world % major == 0;
+            _hRuler.Children.Add(new Line
+            {
+                StartPoint = new Point(x, isMajor ? 4 : 10),
+                EndPoint = new Point(x, EditorTheme.RulerSize),
+                Stroke = EditorTheme.TextDimBrush,
+                StrokeThickness = 1,
+            });
+            if (isMajor)
+            {
+                _hRuler.Children.Add(new TextBlock
+                {
+                    Text = world.ToString(),
+                    FontSize = 8,
+                    FontFamily = EditorTheme.MonoFont,
+                    Foreground = EditorTheme.TextDimBrush,
+                    [Canvas.LeftProperty] = x + 2,
+                    [Canvas.TopProperty] = 1,
+                });
+            }
+        }
+
+        for (var world = 0; world <= _imageHeight; world += step)
+        {
+            var y = world * _imageScale - offsetY;
+            if (y < -2 || y > _vRuler.Bounds.Height + 2)
+                continue;
+            var isMajor = world % major == 0;
+            _vRuler.Children.Add(new Line
+            {
+                StartPoint = new Point(isMajor ? 4 : 10, y),
+                EndPoint = new Point(EditorTheme.RulerSize, y),
+                Stroke = EditorTheme.TextDimBrush,
+                StrokeThickness = 1,
+            });
+            if (isMajor)
+            {
+                _vRuler.Children.Add(new TextBlock
+                {
+                    Text = world.ToString(),
+                    FontSize = 8,
+                    FontFamily = EditorTheme.MonoFont,
+                    Foreground = EditorTheme.TextDimBrush,
+                    [Canvas.LeftProperty] = 1,
+                    [Canvas.TopProperty] = y + 1,
+                });
+            }
         }
     }
 
@@ -205,7 +371,7 @@ public sealed class SceneMapCanvas : UserControl
         var point = e.GetCurrentPoint(_host);
         var map = ToMap(point.Position);
         CursorMoved?.Invoke(this, (map.X, map.Y));
-        _coordLabel.Text = $"X: {map.X:0.0}, Y: {map.Y:0.0}";
+        _coordLabel.Text = $"X: {map.X:0.0}   Y: {map.Y:0.0}";
 
         if (_panning)
         {
@@ -214,6 +380,7 @@ public sealed class SceneMapCanvas : UserControl
             _scroller.Offset = new Vector(
                 Math.Max(0, _panOffsetStart.X - dx),
                 Math.Max(0, _panOffsetStart.Y - dy));
+            DrawRulers();
             return;
         }
 
@@ -221,8 +388,10 @@ public sealed class SceneMapCanvas : UserControl
             return;
 
         var startMap = ToMap(_dragStart);
-        var dxTiles = (int)Math.Round((map.X - startMap.X) / 8.0);
-        var dyTiles = (int)Math.Round((map.Y - startMap.Y) / 8.0);
+        var rawDx = (map.X - startMap.X) / 8.0;
+        var rawDy = (map.Y - startMap.Y) / 8.0;
+        var dxTiles = SnapToGrid ? (int)Math.Round(rawDx) : (int)Math.Truncate(rawDx);
+        var dyTiles = SnapToGrid ? (int)Math.Round(rawDy) : (int)Math.Truncate(rawDy);
         var next = new CompactPos(
             (byte)Math.Clamp(_dragOrigin.XTiles + dxTiles, 0, 255),
             (byte)Math.Clamp(_dragOrigin.YTiles + dyTiles, 0, 255),
@@ -244,7 +413,6 @@ public sealed class SceneMapCanvas : UserControl
             var final = _selected.Position;
             if (final.XTiles != _dragOrigin.XTiles || final.YTiles != _dragOrigin.YTiles)
             {
-                // Restore origin so ChangeService/MoveEntity records a proper undo step.
                 _selected.Position = _dragOrigin;
                 MovedPending = final;
                 EntityMoved?.Invoke(this, _selected);
@@ -260,11 +428,8 @@ public sealed class SceneMapCanvas : UserControl
         e.Pointer.Capture(null);
     }
 
-    /// <summary>Final position after a drag; consumed by SceneWorkspacePanel.</summary>
-    public CompactPos? MovedPending { get; set; }
-
     private Point ToMap(Point hostPoint) =>
-        new(hostPoint.X / _imageScale, hostPoint.Y / _imageScale);
+        new(hostPoint.X / Math.Max(0.001, _imageScale), hostPoint.Y / Math.Max(0.001, _imageScale));
 
     private SceneEntity? HitTest(int pixelX, int pixelY)
     {
@@ -280,7 +445,6 @@ public sealed class SceneMapCanvas : UserControl
         if (_showObjects) candidates = candidates.Concat(sector.Objects);
         if (_showLives) candidates = candidates.Concat(sector.Lives);
 
-        // Prefer top-most (later kinds first was reverse); check smallest area first among hits.
         SceneEntity? best = null;
         var bestArea = int.MaxValue;
         foreach (var entity in candidates)

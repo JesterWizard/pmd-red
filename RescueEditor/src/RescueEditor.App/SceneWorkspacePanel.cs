@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Controls.Templates;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
@@ -18,10 +19,16 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly ListBox _eventsScriptList;
     private readonly StackPanel _propertyForm;
     private readonly StackPanel _scriptPropertyForm;
+    private readonly StackPanel _semanticPropertyHost;
+    private readonly StackPanel _rawPropertyHost;
+    private readonly CheckBox _rawFieldsToggle;
+    private readonly TextBlock _commandTitle;
+    private readonly Border _scriptHeaderRow;
+    private readonly CheckBox _snapToggle;
     private readonly TextBlock _status;
     private readonly TextBlock _mapInfo;
-    private readonly NumericUpDown _groupBox;
-    private readonly ComboBox _sectorBox;
+    private readonly CompactSpinBox _groupBox;
+    private readonly InstantComboBox _sectorBox;
     private readonly CheckBox _livesToggle;
     private readonly CheckBox _objectsToggle;
     private readonly CheckBox _effectsToggle;
@@ -32,22 +39,32 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly ToggleButton _panTool;
     private readonly Button _undoButton;
     private readonly Button _redoButton;
-    private readonly TabControl _rightTabs;
-    private readonly Slider _commandSlider;
+    private readonly Panel _inspectorContentHost;
+    private readonly StackPanel _inspectorTabBar;
     private readonly TextBlock _eventsHud;
+    private readonly Slider _commandSlider;
 
-    private readonly NumericUpDown _typeBox;
-    private readonly NumericUpDown _dirBox;
-    private readonly NumericUpDown _xBox;
-    private readonly NumericUpDown _yBox;
-    private readonly NumericUpDown _wBox;
-    private readonly NumericUpDown _hBox;
-    private readonly NumericUpDown _opBox;
-    private readonly NumericUpDown _argByteBox;
-    private readonly NumericUpDown _argShortBox;
-    private readonly NumericUpDown _arg1Box;
-    private readonly NumericUpDown _arg2Box;
-    private readonly NumericUpDown _argPtrBox;
+    private readonly CompactSpinBox _typeBox;
+    private readonly CompactSpinBox _dirBox;
+    private readonly CompactSpinBox _xBox;
+    private readonly CompactSpinBox _yBox;
+    private readonly CompactSpinBox _wBox;
+    private readonly CompactSpinBox _hBox;
+    private readonly CompactSpinBox _opBox;
+    private readonly CompactSpinBox _argByteBox;
+    private readonly CompactSpinBox _argShortBox;
+    private readonly CompactSpinBox _arg1Box;
+    private readonly CompactSpinBox _arg2Box;
+    private readonly CompactSpinBox _argPtrBox;
+
+    private Control? _sceneRight;
+    private Control? _mapRight;
+    private Control? _livesRight;
+    private Control? _objectsRight;
+    private Control? _effectsRight;
+    private Control? _eventsRight;
+    private Control? _linksRight;
+    private string _inspectorMode = "Scene";
 
     private RomImage? _rom;
     private Charmap? _charmap;
@@ -65,6 +82,9 @@ public sealed class SceneWorkspacePanel : UserControl
 
     public SceneWorkspacePanel()
     {
+        FontFamily = EditorTheme.UiFont;
+        FontSize = EditorTheme.FontBody;
+
         _map = new SceneMapCanvas();
         _map.EntitySelected += (_, entity) =>
         {
@@ -81,22 +101,32 @@ public sealed class SceneWorkspacePanel : UserControl
             RefreshAll();
             DirtyChanged?.Invoke(this, EventArgs.Empty);
         };
-        _map.CursorMoved += (_, xy) => { /* coord label lives on canvas */ };
 
-        _groupBox = new NumericUpDown { Minimum = 0, Maximum = 255, Width = 64, Value = 0 };
+        _groupBox = EditorChrome.CompactNumeric(0, 255, 52);
+        _groupBox.Value = 0;
         _groupBox.ValueChanged += (_, _) => { RebuildSectorCombo(); RefreshAll(); };
-        _sectorBox = new ComboBox { MinWidth = 120 };
-        _sectorBox.SelectionChanged += (_, _) => RefreshAll();
+        _sectorBox = new InstantComboBox { Width = 110 };
+        _sectorBox.SelectionChanged += (_, _) =>
+        {
+            if (_suppressPropertyEvents)
+                return;
+            RefreshAll();
+        };
 
-        _livesToggle = MakeToggle("Lives", true);
-        _objectsToggle = MakeToggle("Objects", true);
-        _effectsToggle = MakeToggle("Effects", true);
-        _eventsToggle = MakeToggle("Events", true);
-        _linksToggle = MakeToggle("Links", true);
-        _gridToggle = MakeToggle("Grid", false);
+        _livesToggle = EditorChrome.ToolCheck("Lives");
+        _objectsToggle = EditorChrome.ToolCheck("Objects");
+        _effectsToggle = EditorChrome.ToolCheck("Effects");
+        _eventsToggle = EditorChrome.ToolCheck("Events");
+        _linksToggle = EditorChrome.ToolCheck("Links");
+        _gridToggle = EditorChrome.ToolCheck("Grid", isChecked: false);
+        _snapToggle = EditorChrome.ToolCheck("Snap", isChecked: true);
+        foreach (var toggle in new[] { _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle, _gridToggle })
+            toggle.IsCheckedChanged += (_, _) => RefreshMap();
+        _snapToggle.IsCheckedChanged += (_, _) => _map.SnapToGrid = _snapToggle.IsChecked == true;
+        _map.SnapToGrid = true;
 
-        _selectTool = new ToggleButton { Content = "Select", IsChecked = true, Margin = new Thickness(2, 0), Padding = new Thickness(8, 4) };
-        _panTool = new ToggleButton { Content = "Pan", Margin = new Thickness(2, 0), Padding = new Thickness(8, 4) };
+        _selectTool = EditorChrome.ToolToggle("Select", isChecked: true);
+        _panTool = EditorChrome.ToolToggle("Pan");
         _selectTool.IsCheckedChanged += (_, _) =>
         {
             if (_selectTool.IsChecked == true)
@@ -114,47 +144,55 @@ public sealed class SceneWorkspacePanel : UserControl
             }
         };
 
-        _undoButton = new Button { Content = "Undo", Margin = new Thickness(4, 0) };
-        _redoButton = new Button { Content = "Redo", Margin = new Thickness(4, 0) };
+        _undoButton = EditorChrome.ToolButton("Undo");
+        _redoButton = EditorChrome.ToolButton("Redo");
         _undoButton.Click += (_, _) => { _changes?.Undo(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
         _redoButton.Click += (_, _) => { _changes?.Redo(); RefreshAll(); DirtyChanged?.Invoke(this, EventArgs.Empty); };
 
-        var toolbar = new WrapPanel
+        var toolbarInner = new StackPanel
         {
-            Margin = new Thickness(4),
-            Background = EditorTheme.ToolbarBgBrush,
+            Orientation = Orientation.Horizontal,
+            VerticalAlignment = VerticalAlignment.Center,
             Children =
             {
-                _selectTool, _panTool, _gridToggle,
-                new TextBlock { Text = "Group", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(8, 0, 4, 0) },
+                _selectTool, _panTool,
+                EditorChrome.ToolbarSeparator(),
+                _gridToggle, _snapToggle,
+                EditorChrome.ToolbarSeparator(),
+                EditorChrome.ToolbarLabel("Group"),
                 _groupBox,
-                new TextBlock { Text = "Sector", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(8, 0, 4, 0) },
+                EditorChrome.ToolbarLabel("Sector"),
                 _sectorBox,
+                EditorChrome.ToolbarSeparator(),
                 _livesToggle, _objectsToggle, _effectsToggle, _eventsToggle, _linksToggle,
+                EditorChrome.ToolbarSeparator(),
                 _undoButton, _redoButton,
             },
         };
+        var toolbar = EditorChrome.ToolbarHost(toolbarInner);
 
-        _status = new TextBlock
-        {
-            Text = "Select a scene.",
-            Margin = new Thickness(8, 4),
-            TextWrapping = TextWrapping.Wrap,
-            Foreground = EditorTheme.TextMutedBrush,
-        };
+        _status = new TextBlock(); // retained for RefreshMap notes; shown via map/events HUD
 
         var sceneTabContent = new Grid
         {
-            RowDefinitions = new RowDefinitions("Auto,*,Auto"),
-            Children = { toolbar, _map, _status },
+            RowDefinitions = new RowDefinitions("Auto,*"),
+            Children = { toolbar, _map },
         };
         Grid.SetRow(toolbar, 0);
         Grid.SetRow(_map, 1);
-        Grid.SetRow(_status, 2);
 
-        _eventsScriptList = new ListBox { Margin = new Thickness(4) };
+        _eventsScriptList = new ListBox();
+        EditorChrome.StyleList(_eventsScriptList);
+        _eventsScriptList.FontFamily = EditorTheme.MonoFont;
+        _eventsScriptList.FontSize = EditorTheme.FontLabel;
         _eventsScriptList.SelectionChanged += (_, _) => OnEventsScriptSelected();
-        _commandSlider = new Slider { Minimum = 0, Maximum = 0, Margin = new Thickness(8) };
+        _commandSlider = new Slider
+        {
+            Minimum = 0,
+            Maximum = 0,
+            Height = 18,
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
+        };
         _commandSlider.PropertyChanged += (_, e) =>
         {
             if (e.Property == RangeBase.ValueProperty)
@@ -162,9 +200,11 @@ public sealed class SceneWorkspacePanel : UserControl
         };
         _eventsHud = new TextBlock
         {
-            Margin = new Thickness(8),
+            Margin = new Thickness(EditorTheme.Space4, 0, EditorTheme.Space4, EditorTheme.Space3),
             TextWrapping = TextWrapping.Wrap,
-            Foreground = EditorTheme.TextPrimaryBrush,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextSecondaryBrush,
         };
         var eventsTabContent = new Grid
         {
@@ -177,6 +217,9 @@ public sealed class SceneWorkspacePanel : UserControl
 
         _centerTabs = new TabControl
         {
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontBody,
+            Padding = new Thickness(0),
             Items =
             {
                 new TabItem { Header = "Scene", Content = sceneTabContent },
@@ -185,7 +228,8 @@ public sealed class SceneWorkspacePanel : UserControl
         };
         _centerTabs.SelectionChanged += (_, _) => RefreshAll();
 
-        _sectorList = new ListBox { Margin = new Thickness(4) };
+        _sectorList = new ListBox();
+        EditorChrome.StyleList(_sectorList);
         _sectorList.SelectionChanged += (_, _) =>
         {
             if (_sectorList.SelectedItem is SectorListItem item)
@@ -197,21 +241,77 @@ public sealed class SceneWorkspacePanel : UserControl
 
         _scriptList = new ListBox
         {
-            Margin = new Thickness(4),
-            FontFamily = new FontFamily("Cascadia Mono, Consolas, monospace"),
-            FontSize = 12,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontLabel,
         };
+        EditorChrome.StyleList(_scriptList);
         _scriptList.SelectionChanged += (_, _) => OnScriptSelected();
+        _scriptList.ItemTemplate = new FuncDataTemplate<ScriptLineItem>((item, _) =>
+        {
+            if (item.IsHeader)
+            {
+                return new TextBlock
+                {
+                    Text = item.Title,
+                    FontFamily = EditorTheme.UiFont,
+                    FontSize = EditorTheme.FontMeta,
+                    FontWeight = FontWeight.SemiBold,
+                    Foreground = EditorTheme.TextDimBrush,
+                    Margin = new Thickness(EditorTheme.Space2, 2),
+                    TextTrimming = TextTrimming.CharacterEllipsis,
+                };
+            }
 
-        _entityList = new ListBox { Margin = new Thickness(4) };
+            return BuildScriptColumns(
+                new TextBlock
+                {
+                    Text = item.IndexText,
+                    FontFamily = EditorTheme.MonoFont,
+                    FontSize = EditorTheme.FontLabel,
+                    Foreground = EditorTheme.TextMutedBrush,
+                    VerticalAlignment = VerticalAlignment.Center,
+                },
+                new TextBlock
+                {
+                    Text = item.CommandName,
+                    FontFamily = EditorTheme.UiFont,
+                    FontSize = EditorTheme.FontLabel,
+                    Foreground = EditorTheme.TextPrimaryBrush,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    TextTrimming = TextTrimming.CharacterEllipsis,
+                },
+                new TextBlock
+                {
+                    Text = item.ArgsSummary,
+                    FontFamily = EditorTheme.MonoFont,
+                    FontSize = EditorTheme.FontMeta,
+                    Foreground = EditorTheme.TextMutedBrush,
+                    VerticalAlignment = VerticalAlignment.Center,
+                    TextTrimming = TextTrimming.CharacterEllipsis,
+                });
+        }, true);
+        _scriptHeaderRow = new Border
+        {
+            Background = EditorTheme.PanelBgRaisedBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 0, 0, 1),
+            Padding = new Thickness(EditorTheme.Space2, 2),
+            Child = BuildScriptColumns(
+                new TextBlock { Text = "#", FontSize = EditorTheme.FontMeta, Foreground = EditorTheme.TextDimBrush, FontWeight = FontWeight.SemiBold },
+                new TextBlock { Text = "Command", FontSize = EditorTheme.FontMeta, Foreground = EditorTheme.TextDimBrush, FontWeight = FontWeight.SemiBold },
+                new TextBlock { Text = "Args", FontSize = EditorTheme.FontMeta, Foreground = EditorTheme.TextDimBrush, FontWeight = FontWeight.SemiBold }),
+        };
+
+        _entityList = new ListBox();
+        EditorChrome.StyleList(_entityList);
         _entityList.SelectionChanged += (_, _) => OnEntityListSelected();
 
-        _typeBox = MakePropBox(0, 255);
-        _dirBox = MakePropBox(0, 255);
-        _xBox = MakePropBox(0, 255);
-        _yBox = MakePropBox(0, 255);
-        _wBox = MakePropBox(0, 64);
-        _hBox = MakePropBox(0, 64);
+        _typeBox = EditorChrome.CompactNumeric(0, 255);
+        _dirBox = EditorChrome.CompactNumeric(0, 255);
+        _xBox = EditorChrome.CompactNumeric(0, 255);
+        _yBox = EditorChrome.CompactNumeric(0, 255);
+        _wBox = EditorChrome.CompactNumeric(0, 64);
+        _hBox = EditorChrome.CompactNumeric(0, 64);
         _typeBox.ValueChanged += (_, _) => ApplyEntityProps();
         _dirBox.ValueChanged += (_, _) => ApplyEntityProps();
         _xBox.ValueChanged += (_, _) => ApplyEntityProps();
@@ -221,25 +321,25 @@ public sealed class SceneWorkspacePanel : UserControl
 
         _propertyForm = new StackPanel
         {
-            Margin = new Thickness(8),
-            Spacing = 6,
+            Spacing = 0,
             Children =
             {
-                Labeled("Type", _typeBox),
-                Labeled("Dir/Flags", _dirBox),
-                Labeled("X tiles", _xBox),
-                Labeled("Y tiles", _yBox),
-                Labeled("Width", _wBox),
-                Labeled("Height", _hBox),
+                EditorChrome.InspectorSection("Transform",
+                    EditorChrome.PropertyRow("Type", _typeBox),
+                    EditorChrome.PropertyRow("Dir/Flags", _dirBox),
+                    EditorChrome.PropertyRow("X", _xBox),
+                    EditorChrome.PropertyRow("Y", _yBox),
+                    EditorChrome.PropertyRow("Width", _wBox),
+                    EditorChrome.PropertyRow("Height", _hBox)),
             },
         };
 
-        _opBox = MakePropBox(0, 255);
-        _argByteBox = MakePropBox(0, 255);
-        _argShortBox = MakePropBox(short.MinValue, short.MaxValue);
-        _arg1Box = MakePropBox(int.MinValue, int.MaxValue);
-        _arg2Box = MakePropBox(int.MinValue, int.MaxValue);
-        _argPtrBox = MakePropBox(int.MinValue, int.MaxValue);
+        _opBox = EditorChrome.CompactNumeric(0, 255);
+        _argByteBox = EditorChrome.CompactNumeric(0, 255);
+        _argShortBox = EditorChrome.CompactNumeric(short.MinValue, short.MaxValue);
+        _arg1Box = EditorChrome.CompactNumeric(int.MinValue, int.MaxValue);
+        _arg2Box = EditorChrome.CompactNumeric(int.MinValue, int.MaxValue);
+        _argPtrBox = EditorChrome.CompactNumeric(int.MinValue, int.MaxValue);
         _opBox.ValueChanged += (_, _) => ApplyScriptProps();
         _argByteBox.ValueChanged += (_, _) => ApplyScriptProps();
         _argShortBox.ValueChanged += (_, _) => ApplyScriptProps();
@@ -247,58 +347,168 @@ public sealed class SceneWorkspacePanel : UserControl
         _arg2Box.ValueChanged += (_, _) => ApplyScriptProps();
         _argPtrBox.ValueChanged += (_, _) => ApplyScriptProps();
 
-        _scriptPropertyForm = new StackPanel
+        _commandTitle = new TextBlock
         {
-            Margin = new Thickness(8),
-            Spacing = 6,
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontBody,
+            FontWeight = FontWeight.SemiBold,
+            Foreground = EditorTheme.TextSecondaryBrush,
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, 0),
+            Text = "No command selected",
+        };
+        _semanticPropertyHost = new StackPanel { Spacing = 0 };
+        _rawPropertyHost = new StackPanel
+        {
+            Spacing = 0,
+            IsVisible = false,
             Children =
             {
-                Labeled("Opcode", _opBox),
-                Labeled("ArgByte", _argByteBox),
-                Labeled("ArgShort", _argShortBox),
-                Labeled("Arg1", _arg1Box),
-                Labeled("Arg2", _arg2Box),
-                Labeled("ArgPtr", _argPtrBox),
+                EditorChrome.PropertyRow("Opcode", _opBox),
+                EditorChrome.PropertyRow("ArgByte", _argByteBox),
+                EditorChrome.PropertyRow("ArgShort", _argShortBox),
+                EditorChrome.PropertyRow("Arg1", _arg1Box),
+                EditorChrome.PropertyRow("Arg2", _arg2Box),
+                EditorChrome.PropertyRow("ArgPtr", _argPtrBox),
             },
         };
-
-        _mapInfo = new TextBlock { Margin = new Thickness(8), TextWrapping = TextWrapping.Wrap };
-
-        var sceneRight = BuildSceneRightPanel();
-        var mapRight = new ScrollViewer { Content = _mapInfo };
-        var livesRight = BuildEntityKindPanel(SceneEntityKind.Live);
-        var objectsRight = BuildEntityKindPanel(SceneEntityKind.Object);
-        var effectsRight = BuildEntityKindPanel(SceneEntityKind.Effect);
-        var eventsRight = BuildEntityKindPanel(SceneEntityKind.Event);
-        var linksRight = new TextBlock { Text = "Links are shown on the map.", Margin = new Thickness(8), TextWrapping = TextWrapping.Wrap };
-
-        _rightTabs = new TabControl
+        _rawFieldsToggle = new CheckBox
         {
-            TabStripPlacement = Dock.Right,
-            Items =
+            Content = "Raw fields",
+            FontSize = EditorTheme.FontMeta,
+            FontFamily = EditorTheme.UiFont,
+            Foreground = EditorTheme.TextMutedBrush,
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2, EditorTheme.Space4, 0),
+        };
+        _rawFieldsToggle.IsCheckedChanged += (_, _) =>
+        {
+            _rawPropertyHost.IsVisible = _rawFieldsToggle.IsChecked == true;
+            RebuildSemanticProperties();
+        };
+
+        _scriptPropertyForm = new StackPanel
+        {
+            Spacing = 0,
+            Children =
             {
-                new TabItem { Header = "Scene", Content = sceneRight },
-                new TabItem { Header = "Map", Content = mapRight },
-                new TabItem { Header = "Lives", Content = livesRight },
-                new TabItem { Header = "Objects", Content = objectsRight },
-                new TabItem { Header = "Effects", Content = effectsRight },
-                new TabItem { Header = "Events", Content = eventsRight },
-                new TabItem { Header = "Links", Content = linksRight },
+                EditorChrome.SectionHeader("Command"),
+                _commandTitle,
+                _semanticPropertyHost,
+                _rawFieldsToggle,
+                _rawPropertyHost,
             },
         };
-        _rightTabs.SelectionChanged += (_, _) => RefreshEntityListForActiveTab();
+
+        _mapInfo = new TextBlock
+        {
+            Margin = new Thickness(EditorTheme.Space4),
+            TextWrapping = TextWrapping.Wrap,
+            FontFamily = EditorTheme.MonoFont,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextSecondaryBrush,
+            LineHeight = 16,
+        };
+
+        _sceneRight = BuildSceneRightPanel();
+        _mapRight = new ScrollViewer { Content = _mapInfo };
+        _livesRight = BuildEntityKindPanel(SceneEntityKind.Live);
+        _objectsRight = BuildEntityKindPanel(SceneEntityKind.Object);
+        _effectsRight = BuildEntityKindPanel(SceneEntityKind.Effect);
+        _eventsRight = BuildEntityKindPanel(SceneEntityKind.Event);
+        _linksRight = new TextBlock
+        {
+            Text = "Links are drawn on the map viewport.",
+            Margin = new Thickness(EditorTheme.Space4),
+            TextWrapping = TextWrapping.Wrap,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextMutedBrush,
+        };
+
+        _inspectorTabBar = new StackPanel
+        {
+            Orientation = Orientation.Horizontal,
+            Margin = new Thickness(EditorTheme.Space2, EditorTheme.Space1),
+        };
+        foreach (var mode in new[] { "Scene", "Map", "Lives", "Objects", "Effects", "Events", "Links" })
+        {
+            var tab = EditorChrome.InspectorTab(mode, isChecked: mode == "Scene");
+            var captured = mode;
+            tab.IsCheckedChanged += (_, _) =>
+            {
+                if (tab.IsChecked == true)
+                    SetInspectorMode(captured);
+            };
+            _inspectorTabBar.Children.Add(tab);
+        }
+
+        _inspectorContentHost = new Panel { Children = { _sceneRight } };
+
+        var inspectorBody = new DockPanel { LastChildFill = true };
+        var inspectorHeader = EditorChrome.PanelHeader("Inspector");
+        var tabHost = new Border
+        {
+            Background = EditorTheme.PanelBgRaisedBrush,
+            Child = new ScrollViewer
+            {
+                HorizontalScrollBarVisibility = ScrollBarVisibility.Auto,
+                VerticalScrollBarVisibility = ScrollBarVisibility.Disabled,
+                Content = _inspectorTabBar,
+            },
+        };
+        DockPanel.SetDock(inspectorHeader, Dock.Top);
+        DockPanel.SetDock(tabHost, Dock.Top);
+        inspectorBody.Children.Add(inspectorHeader);
+        inspectorBody.Children.Add(tabHost);
+        inspectorBody.Children.Add(_inspectorContentHost);
+
+        var inspector = new Border
+        {
+            Background = EditorTheme.PanelBgBrush,
+            MinWidth = EditorTheme.SceneInspectorMinWidth,
+            Child = inspectorBody,
+        };
+
+        var splitter = new GridSplitter
+        {
+            Width = 4,
+            Background = EditorTheme.BorderSubtleBrush,
+            ResizeDirection = GridResizeDirection.Columns,
+        };
 
         var root = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions("*,320"),
-            Children = { _centerTabs, _rightTabs },
+            ColumnDefinitions = new ColumnDefinitions($"*,4,{EditorTheme.SceneInspectorWidth}"),
+            Background = EditorTheme.CanvasBgBrush,
+            Children = { _centerTabs, splitter, inspector },
         };
         Grid.SetColumn(_centerTabs, 0);
-        Grid.SetColumn(_rightTabs, 1);
+        Grid.SetColumn(splitter, 1);
+        Grid.SetColumn(inspector, 2);
         Content = root;
 
         KeyDown += OnKeyDown;
         Focusable = true;
+    }
+
+    private void SetInspectorMode(string mode)
+    {
+        _inspectorMode = mode;
+        foreach (var child in _inspectorTabBar.Children.OfType<ToggleButton>())
+            child.IsChecked = Equals(child.Content?.ToString(), mode);
+
+        var content = mode switch
+        {
+            "Map" => _mapRight,
+            "Lives" => _livesRight,
+            "Objects" => _objectsRight,
+            "Effects" => _effectsRight,
+            "Events" => _eventsRight,
+            "Links" => _linksRight,
+            _ => _sceneRight,
+        };
+        _inspectorContentHost.Children.Clear();
+        if (content is not null)
+            _inspectorContentHost.Children.Add(content);
+        RefreshEntityListForActiveTab();
     }
 
     public void Load(
@@ -328,48 +538,54 @@ public sealed class SceneWorkspacePanel : UserControl
 
     private Control BuildSceneRightPanel()
     {
-        var addSector = new Button { Content = "+", Width = 28 };
-        var removeSector = new Button { Content = "−", Width = 28 };
+        var addSector = EditorChrome.IconButton("+");
+        var removeSector = EditorChrome.IconButton("−");
+        var hideSector = EditorChrome.IconButton("V");
+        var soloSectorBtn = EditorChrome.IconButton("S");
         addSector.Click += (_, _) => AddSector();
         removeSector.Click += (_, _) => RemoveSector();
-        var hideSector = new Button { Content = "V", Width = 28 };
-        var soloSectorBtn = new Button { Content = "S", Width = 28 };
         hideSector.Click += (_, _) => ToggleSectorVisibility();
         soloSectorBtn.Click += (_, _) => ToggleSectorSolo();
         ToolTip.SetTip(hideSector, "Toggle sector visibility");
         ToolTip.SetTip(soloSectorBtn, "Solo sector");
 
-        var addScriptHint = new TextBlock
-        {
-            Text = "Station scripts",
-            Margin = new Thickness(8, 8, 8, 0),
-            Foreground = EditorTheme.TextMutedBrush,
-        };
-
-        var sectorHeader = new TextBlock
-        {
-            Text = "Sectors",
-            Margin = new Thickness(8, 8, 8, 0),
-            Foreground = EditorTheme.TextMutedBrush,
-        };
+        var sectorHeader = EditorChrome.PanelHeader("Sectors");
         var sectorPanel = new DockPanel();
-        sectorPanel.Children.Add(sectorHeader);
         DockPanel.SetDock(sectorHeader, Dock.Top);
+        sectorPanel.Children.Add(sectorHeader);
         sectorPanel.Children.Add(_sectorList);
 
-        var sectorButtons = new StackPanel
+        var sectorButtons = new Border
         {
-            Orientation = Orientation.Horizontal,
-            Margin = new Thickness(4),
-            Children = { addSector, removeSector, hideSector, soloSectorBtn },
+            Background = EditorTheme.PanelBgRaisedBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 1, 0, 1),
+            Padding = new Thickness(EditorTheme.Space2, EditorTheme.Space1),
+            Child = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                Children = { addSector, removeSector, hideSector, soloSectorBtn },
+            },
         };
 
+        var scriptHeader = EditorChrome.PanelHeader("Scripts");
         var scriptPanel = new DockPanel();
-        scriptPanel.Children.Add(addScriptHint);
-        DockPanel.SetDock(addScriptHint, Dock.Top);
-        scriptPanel.Children.Add(_scriptPropertyForm);
-        DockPanel.SetDock(_scriptPropertyForm, Dock.Bottom);
+        DockPanel.SetDock(scriptHeader, Dock.Top);
+        DockPanel.SetDock(_scriptHeaderRow, Dock.Top);
+        scriptPanel.Children.Add(scriptHeader);
+        scriptPanel.Children.Add(_scriptHeaderRow);
         scriptPanel.Children.Add(_scriptList);
+
+        var propsHost = new Border
+        {
+            Child = new ScrollViewer
+            {
+                Content = new StackPanel
+                {
+                    Children = { _scriptPropertyForm, _propertyForm },
+                },
+            },
+        };
 
         var root = new Grid { RowDefinitions = new RowDefinitions("*,Auto,*,Auto") };
         root.Children.Add(sectorPanel);
@@ -377,8 +593,8 @@ public sealed class SceneWorkspacePanel : UserControl
         Grid.SetRow(sectorButtons, 1);
         root.Children.Add(scriptPanel);
         Grid.SetRow(scriptPanel, 2);
-        root.Children.Add(_propertyForm);
-        Grid.SetRow(_propertyForm, 3);
+        root.Children.Add(propsHost);
+        Grid.SetRow(propsHost, 3);
         return root;
     }
 
@@ -403,7 +619,8 @@ public sealed class SceneWorkspacePanel : UserControl
 
     private Control BuildEntityKindPanel(SceneEntityKind kind)
     {
-        var list = new ListBox { Margin = new Thickness(4), Tag = kind };
+        var list = new ListBox { Tag = kind };
+        EditorChrome.StyleList(list);
         list.SelectionChanged += (_, _) =>
         {
             if (list.SelectedItem is SceneEntity entity)
@@ -414,60 +631,74 @@ public sealed class SceneWorkspacePanel : UserControl
             }
         };
 
-        var add = new Button { Content = "+", Width = 28 };
-        var remove = new Button { Content = "−", Width = 28 };
-        var dup = new Button { Content = "Dup", Margin = new Thickness(4, 0) };
+        var add = EditorChrome.IconButton("+");
+        var remove = EditorChrome.IconButton("−");
+        var dup = EditorChrome.ToolButton("Dup");
         add.Click += (_, _) => AddEntity(kind);
         remove.Click += (_, _) => RemoveSelectedEntity();
         dup.Click += (_, _) => DuplicateSelectedEntity();
 
-        // Store list reference via Tag on panel for refresh
+        var actions = new Border
+        {
+            Background = EditorTheme.PanelBgRaisedBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 1, 0, 0),
+            Padding = new Thickness(EditorTheme.Space2, EditorTheme.Space1),
+            Child = new StackPanel
+            {
+                Orientation = Orientation.Horizontal,
+                Children = { add, remove, dup },
+            },
+        };
+
+        var hint = new TextBlock
+        {
+            Text = $"Select a {kind} on the map or list. Properties are on the Scene tab.",
+            Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space3),
+            TextWrapping = TextWrapping.Wrap,
+            FontSize = EditorTheme.FontLabel,
+            Foreground = EditorTheme.TextMutedBrush,
+        };
+
         var panel = new Grid
         {
             RowDefinitions = new RowDefinitions("*,Auto,Auto"),
             Tag = list,
-            Children =
-            {
-                list,
-                new StackPanel
-                {
-                    Orientation = Orientation.Horizontal,
-                    Margin = new Thickness(4),
-                    Children = { add, remove, dup },
-                    [Grid.RowProperty] = 1,
-                },
-                new ScrollViewer
-                {
-                    Content = ClonePropertyFormForKind(kind),
-                    [Grid.RowProperty] = 2,
-                    MaxHeight = 220,
-                },
-            },
         };
+        panel.Children.Add(list);
+        panel.Children.Add(actions);
+        Grid.SetRow(actions, 1);
+        panel.Children.Add(hint);
+        Grid.SetRow(hint, 2);
         return panel;
-    }
-
-    private Control ClonePropertyFormForKind(SceneEntityKind kind)
-    {
-        // Shared property form is fine — all tabs edit the same selected entity.
-        return new TextBlock
-        {
-            Text = $"Select a {kind} on the map or in the list. Properties appear on the Scene tab.",
-            Margin = new Thickness(8),
-            TextWrapping = TextWrapping.Wrap,
-            Foreground = EditorTheme.TextMutedBrush,
-        };
     }
 
     private void RefreshEntityListForActiveTab()
     {
-        if (_rightTabs.SelectedItem is not TabItem { Content: Grid panel } ||
-            panel.Tag is not ListBox list ||
-            list.Tag is not SceneEntityKind kind)
+        var kind = _inspectorMode switch
+        {
+            "Lives" => SceneEntityKind.Live,
+            "Objects" => SceneEntityKind.Object,
+            "Effects" => SceneEntityKind.Effect,
+            "Events" => SceneEntityKind.Event,
+            _ => (SceneEntityKind?)null,
+        };
+        if (kind is null)
+            return;
+
+        var panel = kind switch
+        {
+            SceneEntityKind.Live => _livesRight,
+            SceneEntityKind.Object => _objectsRight,
+            SceneEntityKind.Effect => _effectsRight,
+            SceneEntityKind.Event => _eventsRight,
+            _ => null,
+        };
+        if (panel is not Grid { Tag: ListBox list })
             return;
 
         var sector = CurrentSector();
-        list.ItemsSource = sector?.ListFor(kind).ToArray() ?? Array.Empty<SceneEntity>();
+        list.ItemsSource = sector?.ListFor(kind.Value).ToArray() ?? Array.Empty<SceneEntity>();
     }
 
     private void RefreshAll()
@@ -515,16 +746,38 @@ public sealed class SceneWorkspacePanel : UserControl
     private void RebuildSectorCombo()
     {
         var group = _scene?.Groups.ElementAtOrDefault((int)(_groupBox.Value ?? 0));
-        _sectorBox.ItemsSource = group?.Sectors.Select(s => $"Sector {s.Sector}").ToArray()
+        var items = group?.Sectors.Select(s => $"Sector {s.Sector}").ToArray()
             ?? Array.Empty<string>();
-        if (_sectorBox.ItemCount > 0)
-            _sectorBox.SelectedIndex = 0;
+        var previous = _sectorBox.SelectedIndex;
+        _suppressPropertyEvents = true;
+        try
+        {
+            _sectorBox.ItemsSource = items;
+            if (_sectorBox.ItemCount > 0)
+                _sectorBox.SelectedIndex = Math.Clamp(previous, 0, _sectorBox.ItemCount - 1);
+        }
+        finally
+        {
+            _suppressPropertyEvents = false;
+        }
     }
 
     private void SelectSectorIndex(int sector)
     {
-        if (_sectorBox.ItemCount > sector)
+        if (_sectorBox.ItemCount <= sector)
+            return;
+        if (_sectorBox.SelectedIndex == sector)
+            return;
+        _suppressPropertyEvents = true;
+        try
+        {
             _sectorBox.SelectedIndex = sector;
+        }
+        finally
+        {
+            _suppressPropertyEvents = false;
+        }
+        RefreshAll();
     }
 
     private SceneSector? CurrentSector()
@@ -548,27 +801,22 @@ public sealed class SceneWorkspacePanel : UserControl
         var lines = new List<ScriptLineItem>();
         foreach (var station in sector.Stations)
         {
-            lines.Add(new ScriptLineItem(station, null, $"— {station.Name} ({station.Commands.Count}) —"));
+            lines.Add(ScriptLineItem.Header(station, $"— {station.Name} ({station.Commands.Count}) —"));
             for (var i = 0; i < station.Commands.Count; i++)
             {
                 var cmd = station.Commands[i];
-                var text = _rom is null
-                    ? $"{i:D3}: {ScriptOpcodeNames.GetName(cmd.Op)}"
-                    : $"{i:D3}: {ScriptCodec.Format(cmd, _rom, _charmap)}";
-                lines.Add(new ScriptLineItem(station, cmd, text));
+                lines.Add(ScriptLineItem.FromCommand(station, cmd, i));
             }
         }
 
         if (_database is not null)
         {
             foreach (var fn in _database.FunctionScripts.Take(32))
-            {
-                lines.Add(new ScriptLineItem(fn, null, $"— fn {fn.Name} —"));
-            }
+                lines.Add(ScriptLineItem.Header(fn, $"— fn {fn.Name} —"));
         }
 
         if (lines.Count == 0)
-            lines.Add(new ScriptLineItem(null, null, "(no station scripts)"));
+            lines.Add(ScriptLineItem.Header(null, "(no station scripts)"));
         _scriptList.ItemsSource = lines;
     }
 
@@ -577,7 +825,7 @@ public sealed class SceneWorkspacePanel : UserControl
         var sector = CurrentSector();
         _eventsScriptList.ItemsSource = sector?.Stations
             .SelectMany((station, si) => station.Commands.Select((cmd, ci) =>
-                new ScriptLineItem(station, cmd, $"{station.Name}:{ci:D3} {(_rom is null ? ScriptOpcodeNames.GetName(cmd.Op) : ScriptCodec.Format(cmd, _rom, _charmap))}")))
+                ScriptLineItem.FromCommand(station, cmd, ci)))
             .ToArray() ?? Array.Empty<ScriptLineItem>();
 
         var station = _selectedStation ?? sector?.Stations.FirstOrDefault();
@@ -608,31 +856,112 @@ public sealed class SceneWorkspacePanel : UserControl
             if (_selectedEntity is null)
             {
                 _typeBox.Value = 0;
-                return;
+                _dirBox.Value = 0;
+                _xBox.Value = 0;
+                _yBox.Value = 0;
+                _wBox.Value = 1;
+                _hBox.Value = 1;
             }
-            _typeBox.Value = _selectedEntity.TypeId;
-            _dirBox.Value = _selectedEntity.DirectionOrFlags;
-            _xBox.Value = _selectedEntity.Position.XTiles;
-            _yBox.Value = _selectedEntity.Position.YTiles;
-            _wBox.Value = _selectedEntity.Width;
-            _hBox.Value = _selectedEntity.Height;
+            else
+            {
+                _typeBox.Value = _selectedEntity.TypeId;
+                _dirBox.Value = _selectedEntity.DirectionOrFlags;
+                _xBox.Value = _selectedEntity.Position.XTiles;
+                _yBox.Value = _selectedEntity.Position.YTiles;
+                _wBox.Value = _selectedEntity.Width;
+                _hBox.Value = _selectedEntity.Height;
+            }
+
+            if (_selectedCommand is null)
+            {
+                _commandTitle.Text = "No command selected";
+                _opBox.Value = 0;
+                _argByteBox.Value = 0;
+                _argShortBox.Value = 0;
+                _arg1Box.Value = 0;
+                _arg2Box.Value = 0;
+                _argPtrBox.Value = 0;
+            }
+            else
+            {
+                _commandTitle.Text = ScriptCommandSchema.CommandName(_selectedCommand);
+                _opBox.Value = _selectedCommand.Op;
+                _argByteBox.Value = _selectedCommand.ArgByte;
+                _argShortBox.Value = _selectedCommand.ArgShort;
+                _arg1Box.Value = _selectedCommand.Arg1;
+                _arg2Box.Value = _selectedCommand.Arg2;
+                _argPtrBox.Value = unchecked((int)_selectedCommand.ArgPtr);
+            }
         }
         finally
         {
             _suppressPropertyEvents = false;
         }
 
+        RebuildSemanticProperties();
+    }
+
+    private void RebuildSemanticProperties()
+    {
+        _semanticPropertyHost.Children.Clear();
+        if (_selectedCommand is null)
+            return;
+
+        var fields = ScriptCommandSchema.GetSemanticFields(_selectedCommand.Op);
+        if (fields is null || fields.Count == 0)
+        {
+            if (_rawFieldsToggle.IsChecked != true)
+            {
+                _semanticPropertyHost.Children.Add(new TextBlock
+                {
+                    Text = "No semantic fields — enable Raw fields.",
+                    FontSize = EditorTheme.FontMeta,
+                    Foreground = EditorTheme.TextDimBrush,
+                    Margin = new Thickness(EditorTheme.Space4, EditorTheme.Space2),
+                    TextWrapping = TextWrapping.Wrap,
+                });
+            }
+            return;
+        }
+
         _suppressPropertyEvents = true;
         try
         {
-            if (_selectedCommand is null)
-                return;
-            _opBox.Value = _selectedCommand.Op;
-            _argByteBox.Value = _selectedCommand.ArgByte;
-            _argShortBox.Value = _selectedCommand.ArgShort;
-            _arg1Box.Value = _selectedCommand.Arg1;
-            _arg2Box.Value = _selectedCommand.Arg2;
-            _argPtrBox.Value = unchecked((int)_selectedCommand.ArgPtr);
+            foreach (var binding in fields)
+            {
+                var spin = binding.Field switch
+                {
+                    ScriptArgField.ArgByte => EditorChrome.CompactNumeric(0, 255),
+                    ScriptArgField.ArgShort => EditorChrome.CompactNumeric(short.MinValue, short.MaxValue),
+                    ScriptArgField.Op => EditorChrome.CompactNumeric(0, 255),
+                    _ => EditorChrome.CompactNumeric(int.MinValue, int.MaxValue),
+                };
+                spin.Value = ScriptCommandSchema.Read(_selectedCommand, binding.Field);
+                var captured = binding;
+                spin.ValueChanged += (_, _) =>
+                {
+                    if (_suppressPropertyEvents || _changes is null || _selectedCommand is null)
+                        return;
+                    var value = (int)(spin.Value ?? 0);
+                    var current = ScriptCommandSchema.Read(_selectedCommand, captured.Field);
+                    if (value == current)
+                        return;
+                    var fieldName = captured.Field switch
+                    {
+                        ScriptArgField.Op => "op",
+                        ScriptArgField.ArgByte => "argByte",
+                        ScriptArgField.ArgShort => "argShort",
+                        ScriptArgField.Arg1 => "arg1",
+                        ScriptArgField.Arg2 => "arg2",
+                        ScriptArgField.ArgPtr => "argPtr",
+                        _ => "arg1",
+                    };
+                    SceneEditing.SetCommandArgument(_changes, _selectedCommand, fieldName, value);
+                    RefreshScripts();
+                    DirtyChanged?.Invoke(this, EventArgs.Empty);
+                };
+                _semanticPropertyHost.Children.Add(EditorChrome.PropertyRow(binding.Label, spin));
+            }
         }
         finally
         {
@@ -722,6 +1051,7 @@ public sealed class SceneWorkspacePanel : UserControl
         Set("arg2", (int)(_arg2Box.Value ?? 0), _selectedCommand.Arg2);
         Set("argPtr", (int)(_argPtrBox.Value ?? 0), unchecked((int)_selectedCommand.ArgPtr));
         RefreshScripts();
+        RebuildSemanticProperties();
         DirtyChanged?.Invoke(this, EventArgs.Empty);
     }
 
@@ -883,40 +1213,20 @@ public sealed class SceneWorkspacePanel : UserControl
         _redoButton.IsEnabled = _changes?.CanRedo == true;
     }
 
-    private CheckBox MakeToggle(string label, bool isChecked)
+    private static Grid BuildScriptColumns(Control index, Control command, Control args)
     {
-        var box = new CheckBox
+        var grid = new Grid
         {
-            Content = label,
-            IsChecked = isChecked,
-            Margin = new Thickness(6, 0, 0, 0),
-            VerticalAlignment = VerticalAlignment.Center,
+            ColumnDefinitions = new ColumnDefinitions("44,*,110"),
+            Margin = new Thickness(0, 1),
         };
-        box.IsCheckedChanged += (_, _) => RefreshMap();
-        return box;
+        grid.Children.Add(index);
+        grid.Children.Add(command);
+        Grid.SetColumn(command, 1);
+        grid.Children.Add(args);
+        Grid.SetColumn(args, 2);
+        return grid;
     }
-
-    private static NumericUpDown MakePropBox(decimal min, decimal max) => new()
-    {
-        Minimum = min,
-        Maximum = max,
-        Width = 120,
-    };
-
-    private static Control Labeled(string label, Control control) => new DockPanel
-    {
-        Children =
-        {
-            new TextBlock
-            {
-                Text = label,
-                Width = 80,
-                VerticalAlignment = VerticalAlignment.Center,
-                [DockPanel.DockProperty] = Dock.Left,
-            },
-            control,
-        },
-    };
 
     private static string Truncate(string text, int max) =>
         text.Length <= max ? text : text[..(max - 1)] + "…";
@@ -926,8 +1236,28 @@ public sealed class SceneWorkspacePanel : UserControl
         public override string ToString() => Title;
     }
 
-    private sealed record ScriptLineItem(ScriptRefData? Station, ScriptCommandData? Command, string Title)
+    private sealed record ScriptLineItem(
+        ScriptRefData? Station,
+        ScriptCommandData? Command,
+        string Title,
+        string IndexText,
+        string CommandName,
+        string ArgsSummary,
+        bool IsHeader)
     {
         public override string ToString() => Title;
+
+        public static ScriptLineItem Header(ScriptRefData? station, string title) =>
+            new(station, null, title, "", "", "", true);
+
+        public static ScriptLineItem FromCommand(ScriptRefData station, ScriptCommandData command, int index) =>
+            new(
+                station,
+                command,
+                $"{index:D3} {ScriptCommandSchema.CommandName(command)}",
+                $"{index:D3}",
+                ScriptCommandSchema.CommandName(command),
+                ScriptCommandSchema.ArgumentSummary(command),
+                false);
     }
 }

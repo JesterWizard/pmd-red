@@ -16,7 +16,7 @@ public sealed class AssetWorkspacePanel : UserControl
     private readonly ListBox _assetList;
     private readonly ScrollViewer _assetGridScroller;
     private readonly WrapPanel _assetGrid;
-    private readonly Panel _browserHost;
+    private readonly Border _browserHost;
     private readonly Border _previewHost;
     private readonly ToggleButton _listViewButton;
     private readonly ToggleButton _gridViewButton;
@@ -48,6 +48,7 @@ public sealed class AssetWorkspacePanel : UserControl
     public AssetWorkspacePanel()
     {
         _assetList = new ListBox();
+        EditorChrome.StyleList(_assetList);
         _assetList.SelectionChanged += async (_, _) =>
         {
             if (_assetList.SelectedItem is AssetListItem item)
@@ -62,24 +63,30 @@ public sealed class AssetWorkspacePanel : UserControl
             Content = _assetGrid,
             IsVisible = false,
         };
-        _browserHost = new Panel { Children = { _assetList, _assetGridScroller } };
+        _browserHost = new Border
+        {
+            Background = EditorTheme.PanelBgBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
+            BorderThickness = new Thickness(0, 0, 1, 0),
+            Child = new Panel { Children = { _assetList, _assetGridScroller } },
+        };
         _previewHost = new Border
         {
-            Padding = new Thickness(12),
-            Background = EditorTheme.PanelBgAltBrush,
-            BorderBrush = EditorTheme.BorderBrush,
-            BorderThickness = new Thickness(1, 0, 0, 0),
+            Padding = new Thickness(EditorTheme.Space4),
+            Background = EditorTheme.CanvasBgBrush,
             Child = new TextBlock
             {
                 Text = "Select an asset.",
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontBody,
                 Foreground = EditorTheme.TextMutedBrush,
                 VerticalAlignment = VerticalAlignment.Center,
                 HorizontalAlignment = HorizontalAlignment.Center,
             },
         };
 
-        _listViewButton = new ToggleButton { Content = "List", IsChecked = true, Margin = new Thickness(0, 0, 4, 0), Padding = new Thickness(10, 4) };
-        _gridViewButton = new ToggleButton { Content = "Grid", Margin = new Thickness(0), Padding = new Thickness(10, 4) };
+        _listViewButton = EditorChrome.ToolToggle("List", isChecked: true);
+        _gridViewButton = EditorChrome.ToolToggle("Grid");
         _listViewButton.IsCheckedChanged += (_, _) =>
         {
             if (_listViewButton.IsChecked == true)
@@ -91,16 +98,17 @@ public sealed class AssetWorkspacePanel : UserControl
                 SetViewMode(true);
         };
 
-        var toolbar = new StackPanel
+        var toolbarInner = new StackPanel
         {
             Orientation = Orientation.Horizontal,
-            Margin = new Thickness(8, 4),
+            VerticalAlignment = VerticalAlignment.Center,
             Children = { _listViewButton, _gridViewButton },
         };
+        var toolbar = EditorChrome.ToolbarHost(toolbarInner);
 
         _split = new Grid
         {
-            ColumnDefinitions = new ColumnDefinitions("320,*"),
+            ColumnDefinitions = new ColumnDefinitions($"{EditorTheme.AssetBrowserWidth},*"),
             Children = { _browserHost, _previewHost },
         };
         Grid.SetColumn(_browserHost, 0);
@@ -213,35 +221,37 @@ public sealed class AssetWorkspacePanel : UserControl
             var title = new TextBlock
             {
                 Text = asset.DisplayName,
-                FontSize = 11,
+                FontSize = EditorTheme.FontMeta,
+                FontFamily = EditorTheme.UiFont,
                 TextWrapping = TextWrapping.Wrap,
                 TextAlignment = TextAlignment.Center,
-                MaxHeight = 34,
+                Foreground = EditorTheme.TextSecondaryBrush,
+                MaxHeight = 28,
             };
             var imageHost = new Border
             {
-                Width = 72,
-                Height = 72,
-                Background = new SolidColorBrush(Color.FromArgb(40, 128, 128, 128)),
+                Width = 56,
+                Height = 56,
+                Background = EditorTheme.InputBgBrush,
                 Child = new TextBlock
                 {
                     Text = "▣",
-                    FontSize = 18,
+                    FontSize = 14,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center,
-                    Foreground = EditorTheme.TextMutedBrush,
+                    Foreground = EditorTheme.TextDimBrush,
                 },
             };
             var card = new Border
             {
-                Width = 104,
-                Margin = new Thickness(4),
-                Padding = new Thickness(6),
-                BorderBrush = EditorTheme.BorderBrush,
+                Width = 84,
+                Margin = new Thickness(EditorTheme.Space1),
+                Padding = new Thickness(EditorTheme.Space2),
+                BorderBrush = EditorTheme.BorderSubtleBrush,
                 BorderThickness = new Thickness(1),
-                CornerRadius = new CornerRadius(4),
+                CornerRadius = new CornerRadius(2),
                 Tag = asset,
-                Child = new StackPanel { Spacing = 4, Children = { imageHost, title } },
+                Child = new StackPanel { Spacing = 2, Children = { imageHost, title } },
             };
             card.PointerPressed += async (_, _) =>
             {
@@ -272,8 +282,8 @@ public sealed class AssetWorkspacePanel : UserControl
                 {
                     Source = new Bitmap(stream),
                     Stretch = Stretch.Uniform,
-                    Width = 72,
-                    Height = 72,
+                    Width = 56,
+                    Height = 56,
                 };
             });
         }

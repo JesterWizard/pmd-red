@@ -14,17 +14,19 @@ public sealed class BreadcrumbBar : UserControl
         _path = new TextBlock
         {
             Text = "RescueTemple",
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontLabel,
             VerticalAlignment = VerticalAlignment.Center,
             TextTrimming = TextTrimming.CharacterEllipsis,
-            Foreground = EditorTheme.TextPrimaryBrush,
-            FontSize = 13,
+            Foreground = EditorTheme.TextMutedBrush,
         };
         Content = new Border
         {
-            Background = EditorTheme.ToolbarBgBrush,
-            BorderBrush = EditorTheme.BorderBrush,
+            Background = EditorTheme.PanelBgBrush,
+            BorderBrush = EditorTheme.BorderSubtleBrush,
             BorderThickness = new Thickness(0, 0, 0, 1),
-            Padding = new Thickness(12, 6),
+            Height = 22,
+            Padding = new Thickness(EditorTheme.Space4, 0),
             Child = _path,
         };
     }
@@ -32,6 +34,9 @@ public sealed class BreadcrumbBar : UserControl
     public void SetPath(params string[] segments)
     {
         var parts = segments.Where(s => !string.IsNullOrWhiteSpace(s)).ToArray();
-        _path.Text = parts.Length == 0 ? "RescueTemple" : string.Join("  >  ", parts);
+        _path.Text = parts.Length == 0 ? "RescueTemple" : string.Join(" › ", parts);
+        _path.Foreground = parts.Length <= 1
+            ? EditorTheme.TextMutedBrush
+            : EditorTheme.TextSecondaryBrush;
     }
 }
