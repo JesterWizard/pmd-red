@@ -72,12 +72,15 @@ public sealed class SceneWorkspacePanel : UserControl
     private SceneDatabase? _database;
     private ChangeService? _changes;
     private Scene? _scene;
+    private ActorSpriteAtlas? _actorSprites;
+    private ObjectSpriteAtlas? _objectSprites;
     private SceneEntity? _selectedEntity;
     private ScriptCommandData? _selectedCommand;
     private ScriptRefData? _selectedStation;
     private bool _suppressPropertyEvents;
     private readonly HashSet<int> _hiddenSectors = new();
     private int? _soloSector;
+    private readonly ReentrancyGate _refreshGate = new();
 
     public event EventHandler? DirtyChanged;
 
@@ -105,7 +108,13 @@ public sealed class SceneWorkspacePanel : UserControl
 
         _groupBox = EditorChrome.CompactNumeric(0, 255, 52);
         _groupBox.Value = 0;
-        _groupBox.ValueChanged += (_, _) => { RebuildSectorCombo(); RefreshAll(); };
+        _groupBox.ValueChanged += (_, _) =>
+        {
+            if (_suppressPropertyEvents)
+                return;
+            RebuildSectorCombo();
+            RefreshAll();
+        };
         _sectorBox = new InstantComboBox { Width = 110 };
         _sectorBox.SelectionChanged += (_, _) =>
         {
@@ -227,16 +236,33 @@ public sealed class SceneWorkspacePanel : UserControl
                 new TabItem { Header = "Events", Content = eventsTabContent },
             },
         };
-        _centerTabs.SelectionChanged += (_, _) => RefreshAll();
+        _centerTabs.SelectionChanged += (_, _) =>
+        {
+            if (_suppressPropertyEvents || _refreshGate.IsEntered)
+                return;
+            RefreshAll();
+        };
 
         _sectorList = new ListBox();
         EditorChrome.StyleList(_sectorList);
         _sectorList.SelectionChanged += (_, _) =>
         {
+            if (_suppressPropertyEvents || _refreshGate.IsEntered)
+                return;
             if (_sectorList.SelectedItem is SectorListItem item)
             {
-                _groupBox.Value = item.Group;
-                SelectSectorIndex(item.Sector);
+                _suppressPropertyEvents = true;
+                try
+                {
+                    _groupBox.Value = item.Group;
+                    RebuildSectorCombo();
+                    SelectSectorById(item.Sector, refresh: false);
+                }
+                finally
+                {
+                    _suppressPropertyEvents = false;
+                }
+                RefreshAll();
             }
         };
 
@@ -527,6 +553,9 @@ public sealed class SceneWorkspacePanel : UserControl
         _scene = scene ?? (selectMapId is int id
             ? database.Scenes.FirstOrDefault(s => s.MapId == id)
             : database.Scenes.FirstOrDefault());
+        var assetsRoot = CatalogBuilder.FindRepositoryRoot(rom.Path);
+        _actorSprites = new ActorSpriteAtlas(assetsRoot, database.Profile);
+        _objectSprites = new ObjectSpriteAtlas(assetsRoot);
         _selectedEntity = null;
         _selectedCommand = null;
         _selectedStation = null;
@@ -704,21 +733,26 @@ public sealed class SceneWorkspacePanel : UserControl
 
     private void RefreshAll()
     {
-        RefreshSectors();
-        RefreshScripts();
-        RefreshEntityListForActiveTab();
-        RefreshProperties();
-        RefreshMap();
-        RefreshMapInfo();
-        RefreshEventsTab();
-        UpdateUndoButtons();
+        _refreshGate.Run(() =>
+        {
+            RefreshSectors();
+            RefreshScripts();
+            RefreshEntityListForActiveTab();
+            RefreshProperties();
+            RefreshMap();
+            RefreshMapInfo();
+            RefreshEventsTab();
+            UpdateUndoButtons();
+        });
     }
 
     private void RefreshSectors()
     {
         if (_scene is null)
         {
-            _sectorList.ItemsSource = null;
+            _suppressPropertyEvents = true;
+            try { _sectorList.ItemsSource = null; }
+            finally { _suppressPropertyEvents = false; }
             return;
         }
 
@@ -727,13 +761,8 @@ public sealed class SceneWorkspacePanel : UserControl
         {
             foreach (var sector in group.Sectors)
             {
-                if (_soloSector is int solo && solo != sector.Sector && group.Index == (int)(_groupBox.Value ?? 0))
-                {
-                    // still list them
-                }
                 var visible = !_hiddenSectors.Contains(sector.Sector);
                 var soloMark = _soloSector == sector.Sector ? "S" : "";
-                var count = sector.Lives.Count + sector.Objects.Count + sector.Effects.Count + sector.Events.Count;
                 items.Add(new SectorListItem(
                     group.Index,
                     sector.Sector,
@@ -741,7 +770,16 @@ public sealed class SceneWorkspacePanel : UserControl
                     sector));
             }
         }
-        _sectorList.ItemsSource = items;
+
+        _suppressPropertyEvents = true;
+        try
+        {
+            _sectorList.ItemsSource = items;
+        }
+        finally
+        {
+            _suppressPropertyEvents = false;
+        }
     }
 
     private void RebuildSectorCombo()
@@ -763,22 +801,47 @@ public sealed class SceneWorkspacePanel : UserControl
         }
     }
 
-    private void SelectSectorIndex(int sector)
+    private void SelectSectorIndex(int sectorComboIndex)
     {
-        if (_sectorBox.ItemCount <= sector)
+        var ids = CurrentSectorIds();
+        if ((uint)sectorComboIndex >= (uint)ids.Count)
             return;
-        if (_sectorBox.SelectedIndex == sector)
+        SelectSectorById(ids[sectorComboIndex], refresh: true);
+    }
+
+    private void SelectSectorById(int sectorId, bool refresh)
+    {
+        var ids = CurrentSectorIds();
+        var index = SceneVisibility.IndexOfSectorId(ids, sectorId);
+        if (index < 0 || _sectorBox.ItemCount <= index)
             return;
+        if (_sectorBox.SelectedIndex == index)
+        {
+            if (refresh)
+                RefreshAll();
+            return;
+        }
+
         _suppressPropertyEvents = true;
         try
         {
-            _sectorBox.SelectedIndex = sector;
+            _sectorBox.SelectedIndex = index;
         }
         finally
         {
             _suppressPropertyEvents = false;
         }
-        RefreshAll();
+
+        if (refresh)
+            RefreshAll();
+    }
+
+    private IReadOnlyList<int> CurrentSectorIds()
+    {
+        var group = _scene?.Groups.ElementAtOrDefault((int)(_groupBox.Value ?? 0));
+        if (group is null)
+            return Array.Empty<int>();
+        return group.Sectors.Select(sector => sector.Sector).ToArray();
     }
 
     private SceneSector? CurrentSector()
@@ -1008,7 +1071,22 @@ public sealed class SceneWorkspacePanel : UserControl
             _eventsToggle.IsChecked == true,
             _linksToggle.IsChecked == true,
             _gridToggle.IsChecked == true,
-            hud);
+            hud,
+            visibleSectors: ResolveVisibleSectors(g),
+            actorSprites: _actorSprites,
+            objectSprites: _objectSprites);
+    }
+
+    private HashSet<int> ResolveVisibleSectors(int group)
+    {
+        var sectors = _scene?.Groups.ElementAtOrDefault(group)?.Sectors ?? [];
+        var current = CurrentSector();
+        var selectedId = current?.Sector ?? 0;
+        return SceneVisibility.ResolveVisibleSectorIds(
+            sectors.Select(sector => sector.Sector),
+            selectedId,
+            _hiddenSectors,
+            _soloSector);
     }
 
     private void ApplyEntityProps()

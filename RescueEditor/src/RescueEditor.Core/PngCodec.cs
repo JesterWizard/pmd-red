@@ -40,7 +40,10 @@ public static class PngCodec
 
         var offset = 8;
         int width = 0, height = 0;
+        byte bitDepth = 0, colorType = 0;
         byte[]? idat = null;
+        byte[]? palette = null; // RGB triples
+        byte[]? transparency = null; // per-index alpha for indexed
         while (offset + 8 <= png.Length)
         {
             var length = BinaryPrimitives.ReadInt32BigEndian(png.AsSpan(offset));
@@ -53,8 +56,16 @@ public static class PngCodec
             {
                 width = BinaryPrimitives.ReadInt32BigEndian(data);
                 height = BinaryPrimitives.ReadInt32BigEndian(data[4..]);
-                if (data[8] != 8 || data[9] != 6)
-                    return null;
+                bitDepth = data[8];
+                colorType = data[9];
+            }
+            else if (type == "PLTE")
+            {
+                palette = data.ToArray();
+            }
+            else if (type == "tRNS")
+            {
+                transparency = data.ToArray();
             }
             else if (type == "IDAT")
             {
@@ -81,19 +92,130 @@ public static class PngCodec
         using var raw = new MemoryStream();
         zlib.CopyTo(raw);
         var scanlines = raw.ToArray();
+
+        if (colorType == 6 && bitDepth == 8)
+            return DecodeRgba8(width, height, scanlines);
+        if (colorType == 3 && bitDepth is 4 or 8 && palette is not null)
+            return DecodeIndexed(width, height, bitDepth, scanlines, palette, transparency);
+        return null;
+    }
+
+    private static RgbaImage? DecodeRgba8(int width, int height, byte[] scanlines)
+    {
         var stride = width * 4;
-        var expected = (stride + 1) * height;
-        if (scanlines.Length < expected)
+        var reconstructed = Unfilter(scanlines, height, stride);
+        if (reconstructed is null)
             return null;
-        var pixels = new byte[stride * height];
+        return new RgbaImage(width, height, reconstructed);
+    }
+
+    private static RgbaImage? DecodeIndexed(
+        int width, int height, byte bitDepth, byte[] scanlines, byte[] palette, byte[]? transparency)
+    {
+        var samplesPerByte = 8 / bitDepth;
+        var rowBytes = (width * bitDepth + 7) / 8;
+        var reconstructed = Unfilter(scanlines, height, rowBytes);
+        if (reconstructed is null)
+            return null;
+
+        var pixels = new byte[width * height * 4];
+        var mask = (1 << bitDepth) - 1;
+        for (var y = 0; y < height; y++)
+        {
+            for (var x = 0; x < width; x++)
+            {
+                int index;
+                if (bitDepth == 8)
+                {
+                    index = reconstructed[y * rowBytes + x];
+                }
+                else
+                {
+                    var byteIndex = y * rowBytes + x / samplesPerByte;
+                    var shift = (samplesPerByte - 1 - x % samplesPerByte) * bitDepth;
+                    index = (reconstructed[byteIndex] >> shift) & mask;
+                }
+
+                var palOffset = index * 3;
+                if (palOffset + 2 >= palette.Length)
+                    return null;
+                var dst = (y * width + x) * 4;
+                pixels[dst] = palette[palOffset];
+                pixels[dst + 1] = palette[palOffset + 1];
+                pixels[dst + 2] = palette[palOffset + 2];
+                pixels[dst + 3] = transparency is not null && index < transparency.Length
+                    ? transparency[index]
+                    : index == 0 ? (byte)0 : (byte)255;
+            }
+        }
+        return new RgbaImage(width, height, pixels);
+    }
+
+    private static byte[]? Unfilter(byte[] scanlines, int height, int stride)
+    {
+        var expected = (stride + 1) * height;
+        if (scanlines.Length < expected || stride <= 0)
+            return null;
+
+        var output = new byte[stride * height];
+        var prior = new byte[stride];
         for (var y = 0; y < height; y++)
         {
             var src = y * (stride + 1);
-            if (scanlines[src] != 0)
-                return null; // only filter-none written by Encode
-            scanlines.AsSpan(src + 1, stride).CopyTo(pixels.AsSpan(y * stride, stride));
+            var filter = scanlines[src];
+            var row = scanlines.AsSpan(src + 1, stride);
+            var dest = output.AsSpan(y * stride, stride);
+            switch (filter)
+            {
+                case 0: // None
+                    row.CopyTo(dest);
+                    break;
+                case 1: // Sub
+                    for (var i = 0; i < stride; i++)
+                    {
+                        var left = i >= 1 ? dest[i - 1] : (byte)0;
+                        dest[i] = (byte)(row[i] + left);
+                    }
+                    break;
+                case 2: // Up
+                    for (var i = 0; i < stride; i++)
+                        dest[i] = (byte)(row[i] + prior[i]);
+                    break;
+                case 3: // Average
+                    for (var i = 0; i < stride; i++)
+                    {
+                        var left = i >= 1 ? dest[i - 1] : (byte)0;
+                        dest[i] = (byte)(row[i] + ((left + prior[i]) >> 1));
+                    }
+                    break;
+                case 4: // Paeth
+                    for (var i = 0; i < stride; i++)
+                    {
+                        var left = i >= 1 ? dest[i - 1] : (byte)0;
+                        var up = prior[i];
+                        var upLeft = i >= 1 ? prior[i - 1] : (byte)0;
+                        dest[i] = (byte)(row[i] + PaethPredictor(left, up, upLeft));
+                    }
+                    break;
+                default:
+                    return null;
+            }
+            dest.CopyTo(prior);
         }
-        return new RgbaImage(width, height, pixels);
+        return output;
+    }
+
+    private static byte PaethPredictor(byte a, byte b, byte c)
+    {
+        var p = a + b - c;
+        var pa = Math.Abs(p - a);
+        var pb = Math.Abs(p - b);
+        var pc = Math.Abs(p - c);
+        if (pa <= pb && pa <= pc)
+            return a;
+        if (pb <= pc)
+            return b;
+        return c;
     }
 
     public static byte[] Encode(RgbaImage image)

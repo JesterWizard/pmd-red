@@ -18,13 +18,20 @@ cleanup() {
 trap cleanup EXIT INT TERM
 
 sync_repo_assets() {
-  mkdir -p "$win_mirror/include/constants" "$win_mirror/src"
+  mkdir -p "$win_mirror/include/constants" "$win_mirror/src" \
+    "$win_mirror/data/monster" "$win_mirror/graphics/ax/mon" "$win_mirror/graphics/ornament"
   rsync -a --delete \
     --exclude bin --exclude obj --exclude publish --exclude .git \
     "$repo/sound/" "$win_mirror/sound/"
   cp -f "$repo/include/constants/bg_music.h" "$win_mirror/include/constants/bg_music.h"
   cp -f "$repo/src/sound_names.c" "$win_mirror/src/sound_names.c"
   cp -f "$repo/charmap.txt" "$win_mirror/charmap.txt"
+  cp -f "$repo/data/monster/monster_data.json" "$win_mirror/data/monster/monster_data.json"
+  # Standing frames for scene actors (~1.7 MiB) and objects (~0.2 MiB).
+  rsync -a --include '*/' --include 'sprite_1.png' --exclude '*' \
+    "$repo/graphics/ax/mon/" "$win_mirror/graphics/ax/mon/"
+  rsync -a --include '*/' --include 'sprite_1.png' --exclude '*' \
+    "$repo/graphics/ornament/" "$win_mirror/graphics/ornament/"
 }
 
 sync_to_windows() {

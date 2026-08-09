@@ -33,6 +33,9 @@ public sealed class SceneMapCanvas : UserControl
     private SceneEntity? _selected;
     private int _group;
     private int _sector;
+    private IReadOnlyCollection<int>? _visibleSectors;
+    private ActorSpriteAtlas? _actorSprites;
+    private ObjectSpriteAtlas? _objectSprites;
     private bool _showLives = true;
     private bool _showObjects = true;
     private bool _showEffects = true;
@@ -195,7 +198,10 @@ public sealed class SceneMapCanvas : UserControl
         bool showEvents,
         bool showLinks,
         bool showGrid,
-        string? hudDialogue = null)
+        string? hudDialogue = null,
+        IReadOnlyCollection<int>? visibleSectors = null,
+        ActorSpriteAtlas? actorSprites = null,
+        ObjectSpriteAtlas? objectSprites = null)
     {
         _rom = rom;
         _scene = scene;
@@ -209,6 +215,9 @@ public sealed class SceneMapCanvas : UserControl
         _showLinks = showLinks;
         _showGrid = showGrid;
         _hudDialogue = hudDialogue;
+        _visibleSectors = visibleSectors;
+        _actorSprites = actorSprites;
+        _objectSprites = objectSprites;
         _sceneLabel.Text = $"{scene.Name}   g{group} s{sector}";
         Refresh();
     }
@@ -230,7 +239,10 @@ public sealed class SceneMapCanvas : UserControl
                 _showLives, _showObjects, _showEffects, _showEvents, _showLinks,
                 drawLabels: true,
                 showGrid: _showGrid,
-                hudDialogue: _hudDialogue);
+                hudDialogue: _hudDialogue,
+                visibleSectors: _visibleSectors,
+                actorSprites: _actorSprites,
+                objectSprites: _objectSprites);
             using var stream = new MemoryStream(png);
             _bitmap?.Dispose();
             _bitmap = new Bitmap(stream);
@@ -435,24 +447,41 @@ public sealed class SceneMapCanvas : UserControl
     {
         if (_scene is null)
             return null;
-        var sector = _scene.Groups.ElementAtOrDefault(_group)?.Sectors.ElementAtOrDefault(_sector);
-        if (sector is null)
-            return null;
-
-        IEnumerable<SceneEntity> candidates = Array.Empty<SceneEntity>();
-        if (_showEvents) candidates = candidates.Concat(sector.Events);
-        if (_showEffects) candidates = candidates.Concat(sector.Effects);
-        if (_showObjects) candidates = candidates.Concat(sector.Objects);
-        if (_showLives) candidates = candidates.Concat(sector.Lives);
 
         SceneEntity? best = null;
         var bestArea = int.MaxValue;
-        foreach (var entity in candidates)
+        foreach (var entity in SceneCompositor.EnumerateVisibleEntities(
+                     _scene, _group, _sector, _visibleSectors,
+                     _showLives, _showObjects, _showEffects, _showEvents))
         {
-            var w = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
-            var h = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
-            if (pixelX >= entity.PixelX && pixelX < entity.PixelX + w &&
-                pixelY >= entity.PixelY && pixelY < entity.PixelY + h)
+            int left, top, w, h;
+            RgbaImage? sprite = null;
+            if (entity.Kind == SceneEntityKind.Live && _rom is not null)
+                sprite = _actorSprites?.TryGetForLive(_rom, null, entity.TypeId);
+            else if (entity.Kind == SceneEntityKind.Object)
+                sprite = _objectSprites?.TryGetForObject(entity.TypeId);
+
+            if (sprite is not null)
+            {
+                var hitW = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
+                var hitH = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
+                var cx = entity.PixelX + hitW / 2;
+                var cy = entity.PixelY + hitH / 2;
+                left = cx - sprite.Width / 2;
+                top = cy - sprite.Height / 2;
+                w = sprite.Width;
+                h = sprite.Height;
+            }
+            else
+            {
+                left = entity.PixelX;
+                top = entity.PixelY;
+                w = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
+                h = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
+            }
+
+            if (pixelX >= left && pixelX < left + w &&
+                pixelY >= top && pixelY < top + h)
             {
                 var area = w * h;
                 if (area <= bestArea)

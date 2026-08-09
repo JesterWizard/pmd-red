@@ -39,7 +39,10 @@ public static class SceneCompositor
         bool showLinks = true,
         bool drawLabels = false,
         bool showGrid = false,
-        string? hudDialogue = null)
+        string? hudDialogue = null,
+        IReadOnlyCollection<int>? visibleSectors = null,
+        ActorSpriteAtlas? actorSprites = null,
+        ObjectSpriteAtlas? objectSprites = null)
     {
         var background = RenderMapBackground(rom, scene);
         RgbaImage image;
@@ -55,13 +58,12 @@ public static class SceneCompositor
         if (showGrid)
             DrawGrid(image);
 
-        var sectorData = scene.Groups.ElementAtOrDefault(group)?.Sectors.ElementAtOrDefault(sector);
-        if (sectorData is not null)
+        foreach (var sectorData in EnumerateVisibleSectors(scene, group, sector, visibleSectors))
         {
             if (showLives)
-                DrawEntities(image, sectorData.Lives, selected, 0x40, 0xC0, 0xFF, drawLabels);
+                DrawLives(image, rom, sectorData.Lives, selected, drawLabels, actorSprites);
             if (showObjects)
-                DrawEntities(image, sectorData.Objects, selected, 0xF0, 0xC0, 0x40, drawLabels);
+                DrawObjects(image, sectorData.Objects, selected, drawLabels, objectSprites);
             if (showEffects)
                 DrawEntities(image, sectorData.Effects, selected, 0xC0, 0x60, 0xFF, drawLabels);
             if (showEvents)
@@ -173,6 +175,54 @@ public static class SceneCompositor
         return state;
     }
 
+    /// <summary>
+    /// Sectors whose actors should appear on the map. When <paramref name="visibleSectors"/>
+    /// is null, only <paramref name="sector"/> is returned (legacy single-sector preview).
+    /// </summary>
+    public static IEnumerable<SceneSector> EnumerateVisibleSectors(
+        Scene scene,
+        int group,
+        int sector,
+        IReadOnlyCollection<int>? visibleSectors)
+    {
+        var groupData = scene.Groups.ElementAtOrDefault(group);
+        if (groupData is null)
+            yield break;
+
+        if (visibleSectors is null)
+        {
+            var single = groupData.Sectors.ElementAtOrDefault(sector);
+            if (single is not null)
+                yield return single;
+            yield break;
+        }
+
+        foreach (var candidate in groupData.Sectors)
+        {
+            if (visibleSectors.Contains(candidate.Sector))
+                yield return candidate;
+        }
+    }
+
+    public static IEnumerable<SceneEntity> EnumerateVisibleEntities(
+        Scene scene,
+        int group,
+        int sector,
+        IReadOnlyCollection<int>? visibleSectors,
+        bool showLives = true,
+        bool showObjects = true,
+        bool showEffects = true,
+        bool showEvents = true)
+    {
+        foreach (var sectorData in EnumerateVisibleSectors(scene, group, sector, visibleSectors))
+        {
+            if (showEvents) foreach (var e in sectorData.Events) yield return e;
+            if (showEffects) foreach (var e in sectorData.Effects) yield return e;
+            if (showObjects) foreach (var e in sectorData.Objects) yield return e;
+            if (showLives) foreach (var e in sectorData.Lives) yield return e;
+        }
+    }
+
     private static RgbaImage CreateFallbackCanvas(Scene scene)
     {
         var width = 240;
@@ -223,6 +273,117 @@ public static class SceneCompositor
         pixels[offset + 1] = (byte)((pixels[offset + 1] * inv + g * a) / 255);
         pixels[offset + 2] = (byte)((pixels[offset + 2] * inv + b * a) / 255);
         pixels[offset + 3] = 255;
+    }
+
+    private static void DrawLives(
+        RgbaImage image,
+        RomImage rom,
+        IEnumerable<SceneEntity> entities,
+        SceneEntity? selected,
+        bool drawLabels,
+        ActorSpriteAtlas? actorSprites)
+    {
+        foreach (var entity in entities)
+        {
+            var selectedMatch = IsSelected(selected, entity);
+            var sprite = actorSprites?.TryGetForLive(rom, null, entity.TypeId);
+            if (sprite is not null)
+                DrawSpriteEntity(image, entity, sprite, selectedMatch, drawLabels);
+            else
+                DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0x40, 0xC0, 0xFF);
+        }
+    }
+
+    private static void DrawObjects(
+        RgbaImage image,
+        IEnumerable<SceneEntity> entities,
+        SceneEntity? selected,
+        bool drawLabels,
+        ObjectSpriteAtlas? objectSprites)
+    {
+        foreach (var entity in entities)
+        {
+            var selectedMatch = IsSelected(selected, entity);
+            var sprite = objectSprites?.TryGetForObject(entity.TypeId);
+            if (sprite is not null)
+                DrawSpriteEntity(image, entity, sprite, selectedMatch, drawLabels);
+            else
+                DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0xF0, 0xC0, 0x40);
+        }
+    }
+
+    private static bool IsSelected(SceneEntity? selected, SceneEntity entity) =>
+        selected is not null &&
+        selected.RomOffset == entity.RomOffset &&
+        selected.Index == entity.Index &&
+        selected.Kind == entity.Kind;
+
+    private static void DrawSpriteEntity(
+        RgbaImage image,
+        SceneEntity entity,
+        RgbaImage sprite,
+        bool selectedMatch,
+        bool drawLabels)
+    {
+        var hitW = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
+        var hitH = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
+        var cx = entity.PixelX + hitW / 2;
+        var cy = entity.PixelY + hitH / 2;
+        var drawX = cx - sprite.Width / 2;
+        var drawY = cy - sprite.Height / 2;
+        BlitSprite(image, sprite, drawX, drawY, flipH: false);
+        if (selectedMatch)
+            DrawRect(image, drawX - 1, drawY - 1, sprite.Width + 2, sprite.Height + 2,
+                0xFF, 0xFF, 0xFF, selected: true, filled: false);
+        if (drawLabels)
+            DrawIndexLabel(image, drawX + 1, drawY + 1, entity.Index, selectedMatch);
+    }
+
+    private static void DrawPlaceholder(
+        RgbaImage image,
+        SceneEntity entity,
+        bool selectedMatch,
+        bool drawLabels,
+        byte r, byte g, byte b)
+    {
+        var size = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
+        var height = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
+        DrawRect(image, entity.PixelX, entity.PixelY, size, height, r, g, b,
+            selectedMatch, filled: true);
+        if (drawLabels)
+            DrawIndexLabel(image, entity.PixelX + 1, entity.PixelY + 1, entity.Index, selectedMatch);
+    }
+
+    private static void BlitSprite(RgbaImage destination, RgbaImage sprite, int x, int y, bool flipH)
+    {
+        for (var row = 0; row < sprite.Height; row++)
+        {
+            for (var col = 0; col < sprite.Width; col++)
+            {
+                var srcCol = flipH ? sprite.Width - 1 - col : col;
+                var src = (row * sprite.Width + srcCol) * 4;
+                var a = sprite.Pixels[src + 3];
+                if (a == 0)
+                    continue;
+                var px = x + col;
+                var py = y + row;
+                if (px < 0 || py < 0 || px >= destination.Width || py >= destination.Height)
+                    continue;
+                var dst = (py * destination.Width + px) * 4;
+                if (a == 255)
+                {
+                    destination.Pixels[dst] = sprite.Pixels[src];
+                    destination.Pixels[dst + 1] = sprite.Pixels[src + 1];
+                    destination.Pixels[dst + 2] = sprite.Pixels[src + 2];
+                    destination.Pixels[dst + 3] = 255;
+                }
+                else
+                {
+                    Blend(destination.Pixels, dst,
+                        sprite.Pixels[src], sprite.Pixels[src + 1], sprite.Pixels[src + 2], a);
+                }
+            }
+        }
     }
 
     private static void DrawEntities(

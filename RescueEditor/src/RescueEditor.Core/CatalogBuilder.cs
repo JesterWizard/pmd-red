@@ -142,21 +142,32 @@ public static class CatalogBuilder
 
     public static string FindRepositoryRoot(string romPath)
     {
+        string? fallback = null;
         foreach (var start in CandidateRoots(romPath))
         {
             var current = new DirectoryInfo(start);
             while (current is not null)
             {
-                if (File.Exists(Path.Combine(current.FullName, "charmap.txt")) ||
+                var hasActorSprites = Directory.Exists(Path.Combine(current.FullName, "graphics", "ax", "mon")) ||
+                                      Directory.Exists(Path.Combine(current.FullName, "graphics", "ornament"));
+                var looksLikeRepo =
+                    File.Exists(Path.Combine(current.FullName, "charmap.txt")) ||
                     Directory.Exists(Path.Combine(current.FullName, "sound", "songs")) ||
                     Directory.Exists(Path.Combine(current.FullName, "data", "kao")) ||
-                    Directory.Exists(Path.Combine(current.FullName, "src")))
+                    Directory.Exists(Path.Combine(current.FullName, "src"));
+
+                if (hasActorSprites)
                     return current.FullName;
+                if (looksLikeRepo)
+                    fallback ??= current.FullName;
+
                 current = current.Parent;
             }
         }
 
-        return Path.GetDirectoryName(Path.GetFullPath(romPath)) ?? Environment.CurrentDirectory;
+        return fallback
+            ?? Path.GetDirectoryName(Path.GetFullPath(romPath))
+            ?? Environment.CurrentDirectory;
     }
 
     private static IEnumerable<string> CandidateRoots(string romPath)

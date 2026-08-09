@@ -542,17 +542,24 @@ public sealed class MainWindow : Window
     {
         if (_rom is null || _charmap is null || _scenes is null)
             return;
-        _selectedAsset = asset;
-        _sceneWorkspace ??= new SceneWorkspacePanel();
-        _sceneWorkspace.DirtyChanged -= OnSceneDirty;
-        _sceneWorkspace.DirtyChanged += OnSceneDirty;
-        _sceneWorkspace.Load(_rom, _charmap, _scenes, _changes, scene,
-            asset.Metadata.TryGetValue("mapId", out var mapText) && int.TryParse(mapText, out var id) ? id : null);
-        // Scene editor owns center+right (SkyTemple style); hide generic properties.
-        _workspaceHost.Child = _sceneWorkspace;
-        ApplyDockLayout(sceneOwnsInspector: true);
-        UpdateBreadcrumb();
-        UpdateDirtyTitle();
+        try
+        {
+            _selectedAsset = asset;
+            _sceneWorkspace ??= new SceneWorkspacePanel();
+            _sceneWorkspace.DirtyChanged -= OnSceneDirty;
+            _sceneWorkspace.DirtyChanged += OnSceneDirty;
+            _sceneWorkspace.Load(_rom, _charmap, _scenes, _changes, scene,
+                asset.Metadata.TryGetValue("mapId", out var mapText) && int.TryParse(mapText, out var id) ? id : null);
+            // Scene editor owns center+right (SkyTemple style); hide generic properties.
+            _workspaceHost.Child = _sceneWorkspace;
+            ApplyDockLayout(sceneOwnsInspector: true);
+            UpdateBreadcrumb();
+            UpdateDirtyTitle();
+        }
+        catch (Exception exception)
+        {
+            SetStatus($"Failed to open scene: {exception.Message}");
+        }
     }
 
     private void OnSceneDirty(object? sender, EventArgs e) => UpdateDirtyTitle();

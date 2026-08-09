@@ -25,7 +25,8 @@ $dirs = @(
     @{ Src = Join-Path $wslRoot "charmap.txt"; Dst = Join-Path $winRoot "charmap.txt" },
     @{ Src = Join-Path $wslRoot "sound"; Dst = Join-Path $winRoot "sound" },
     @{ Src = Join-Path $wslRoot "include\constants\bg_music.h"; Dst = Join-Path $winRoot "include\constants\bg_music.h" },
-    @{ Src = Join-Path $wslRoot "src\sound_names.c"; Dst = Join-Path $winRoot "src\sound_names.c" }
+    @{ Src = Join-Path $wslRoot "src\sound_names.c"; Dst = Join-Path $winRoot "src\sound_names.c" },
+    @{ Src = Join-Path $wslRoot "data\monster\monster_data.json"; Dst = Join-Path $winRoot "data\monster\monster_data.json" }
 )
 
 foreach ($item in $dirs) {
@@ -47,6 +48,25 @@ $baseromDst = Join-Path $winRoot "baserom.gba"
 if ((Test-Path $baseromSrc) -and -not (Test-Path $baseromDst)) {
     Write-Host "Copying baserom.gba once..."
     Copy-Item $baseromSrc $baseromDst
+}
+
+# Standing actor/object frames for the scene editor.
+$axSrc = Join-Path $wslRoot "graphics\ax\mon"
+$axDst = Join-Path $winRoot "graphics\ax\mon"
+if (Test-Path $axSrc) {
+    Write-Host "Syncing actor sprite_1.png frames..."
+    New-Item -ItemType Directory -Force -Path $axDst | Out-Null
+    & robocopy $axSrc $axDst sprite_1.png /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+    if ($LASTEXITCODE -ge 8) { throw "robocopy failed for actor sprites (exit $LASTEXITCODE)" }
+}
+
+$ornSrc = Join-Path $wslRoot "graphics\ornament"
+$ornDst = Join-Path $winRoot "graphics\ornament"
+if (Test-Path $ornSrc) {
+    Write-Host "Syncing object sprite_1.png frames..."
+    New-Item -ItemType Directory -Force -Path $ornDst | Out-Null
+    & robocopy $ornSrc $ornDst sprite_1.png /S /NFL /NDL /NJH /NJS /nc /ns /np | Out-Null
+    if ($LASTEXITCODE -ge 8) { throw "robocopy failed for object sprites (exit $LASTEXITCODE)" }
 }
 
 $project = Join-Path $winRoot "RescueEditor\src\RescueEditor.App\RescueEditor.App.csproj"
