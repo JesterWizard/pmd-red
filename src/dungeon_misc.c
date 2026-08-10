@@ -363,6 +363,8 @@ void sub_8068BDC(bool8 a0)
             if (DungeonMonExists(monPtr) && sub_806A5A4(monPtr->recruitedPokemonId) && GetFriendArea(monPtr->speciesNum) == friendAreaId && a0) {
                 monPointers[j] = &mon1Structs[id];
                 DungeonMonToPokemon(monPointers[j], monPtr);
+                /* Mid-dungeon recruits are never the story leader. */
+                monPointers[j]->isTeamLeader = FALSE;
                 monPointers[j]->flags |= POKEMON_FLAG_x4000;
                 monPointers[j]->unkC[0] = 0;
                 monPointers[j]->unkC[1] = 0;

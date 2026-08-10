@@ -1098,7 +1098,14 @@ void PokemonToDungeonMon(DungeonMon *dst, Pokemon *src, s32 recruitedPokemonId)
 
 void DungeonMonToRecruitedPokemon(s32 id, DungeonMon* src)
 {
-    DungeonMonToPokemon(&gRecruitedPokemonRef->pokemon[id], src);
+    Pokemon *dst = &gRecruitedPokemonRef->pokemon[id];
+    /* Temporary Make Leader only updates dungeonTeam; keep the saved story leader
+     * on writeback until the postgame Make Leader quest. */
+    bool8 savedIsTeamLeader = dst->isTeamLeader;
+
+    DungeonMonToPokemon(dst, src);
+    if (gRuntimeConfig.party_leader_switch && !CheckQuest(QUEST_CAN_CHANGE_LEADER))
+        dst->isTeamLeader = savedIsTeamLeader;
 }
 
 void DungeonMonToPokemon(Pokemon* dst, DungeonMon* src)
@@ -1110,9 +1117,7 @@ void DungeonMonToPokemon(Pokemon* dst, DungeonMon* src)
     dst->IQ = src->IQ;
     dst->IQSkills = src->IQSkills;
     dst->dungeonLocation = src->dungeonLocation;
-    /* Keep the saved leader when party_leader_switch is temporary (pre-postgame). */
-    if (!gRuntimeConfig.party_leader_switch || CheckQuest(QUEST_CAN_CHANGE_LEADER))
-        dst->isTeamLeader = src->isTeamLeader;
+    dst->isTeamLeader = src->isTeamLeader;
     dst->speciesNum = src->speciesNum;
     dst->tacticIndex = src->tacticIndex;
     dst->pokeHP = src->unk12;
