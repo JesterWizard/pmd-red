@@ -330,6 +330,74 @@ public sealed class ScenePlayTests
     }
 
     [Fact]
+    public void EventControlStationScriptsEvenWithoutMsgOpcodes()
+    {
+        // Tiny Woods end (179 g1) is EVENT_CONTROL with BGM/cues but no MSG_* in the station body.
+        var scene = new Scene { MapId = 179, Name = "Tiny Woods End" };
+        var group = new SceneGroup { Index = 1 };
+        var sector = new SceneSector { Group = 1, Sector = 0 };
+        sector.Stations.Add(new ScriptRefData
+        {
+            Id = ScenePlayPresets.EventControlScriptId,
+            Type = ScenePlayPresets.EventScriptType,
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x0C, ArgShort = -1, ArgByte = 0 },
+                new ScriptCommandData { Op = 0x44, Arg1 = 101 },
+                new ScriptCommandData { Op = 0xE3, ArgShort = 3 },
+                new ScriptCommandData { Op = 0xEF },
+            ],
+        });
+        group.Sectors.Add(sector);
+        // pad group 0 so ElementAtOrDefault(1) works
+        scene.Groups.Add(new SceneGroup { Index = 0 });
+        scene.Groups.Add(group);
+
+        Assert.True(ScenePlayPresets.ShouldScriptPlay(scene, 1, 0));
+    }
+
+    [Fact]
+    public void EnterControlStationStaysFreeRoam()
+    {
+        var scene = new Scene { MapId = 178, Name = "Tiny Woods" };
+        var group = new SceneGroup { Index = 0 };
+        var sector = new SceneSector { Group = 0, Sector = 0 };
+        sector.Stations.Add(new ScriptRefData
+        {
+            Id = ScenePlayPresets.EnterControlScriptId,
+            Type = 1,
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x08, Arg1 = 178 },
+                new ScriptCommandData { Op = 0x47 },
+                new ScriptCommandData { Op = 0xE9, ArgShort = 1 },
+            ],
+        });
+        group.Sectors.Add(sector);
+        scene.Groups.Add(group);
+
+        Assert.False(ScenePlayPresets.ShouldScriptPlay(scene, 0, 0));
+    }
+
+    [Fact]
+    public void TinyWoodsEndRomStationIsScripted()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var database = SceneGraphParser.Parse(rom, RomProfile.Us10);
+        var scene = database.FindScene(179);
+        Assert.NotNull(scene);
+        Assert.True(ScenePlayPresets.ShouldScriptPlay(scene!, 1, 0));
+
+        var session = new ScenePlaySession(rom, scene!, group: 1, sector: 0);
+        Assert.True(session.IsScripted);
+        Assert.False(session.AllowFreeRoam);
+    }
+
+    [Fact]
     public void TinyWoodsIntroSessionIsScriptedWithCharmanderBulbasaur()
     {
         var baserom = FindUpwards("baserom.gba");

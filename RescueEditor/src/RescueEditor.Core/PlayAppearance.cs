@@ -91,14 +91,25 @@ public static class ScenePlayPresets
     public const int TinyWoodsIntroGroup = 1;
     public const int TinyWoodsIntroSector = 0;
 
+    /// <summary><c>EVENT_CONTROL</c> in <c>script_id.h</c>.</summary>
+    public const short EventControlScriptId = 400;
+    /// <summary><c>EVENT_WAKEUP</c>.</summary>
+    public const short EventWakeupScriptId = 401;
+    /// <summary><c>EVENT_STATION</c>.</summary>
+    public const short EventStationScriptId = 402;
+    /// <summary><c>ENTER_CONTROL</c> — overworld enter / free roam.</summary>
+    public const short EnterControlScriptId = 404;
+    /// <summary><c>SCRIPT_TYPE_07</c> used by event cutscene stations.</summary>
+    public const short EventScriptType = 7;
+
     public static bool IsTinyWoodsIntro(Scene scene, int group, int sector) =>
         scene.MapId == TinyWoodsEntryMapId &&
         group == TinyWoodsIntroGroup &&
         sector == TinyWoodsIntroSector;
 
     /// <summary>
-    /// Prefer scripted playback for dialogue-driven cutscenes (and the Tiny Woods intro).
-    /// Free-roam stations that only set BGM/SELECT stay on bootstrap so walking still works.
+    /// Prefer scripted playback for event cutscene stations (and dialogue-driven scripts).
+    /// Free-roam <c>ENTER_CONTROL</c> stations stay on bootstrap so walking still works.
     /// </summary>
     public static bool ShouldScriptPlay(Scene scene, int group, int sector)
     {
@@ -111,6 +122,9 @@ public static class ScenePlayPresets
         if (station?.Commands is null || station.Commands.Count == 0)
             return false;
 
+        if (IsEventCutsceneStation(station))
+            return true;
+
         foreach (var cmd in station.Commands)
         {
             if (cmd.Op is
@@ -119,6 +133,10 @@ public static class ScenePlayPresets
         }
         return false;
     }
+
+    public static bool IsEventCutsceneStation(ScriptRefData station) =>
+        station.Type == EventScriptType ||
+        station.Id is EventControlScriptId or EventWakeupScriptId or EventStationScriptId;
 
     /// <summary>
     /// Tiny Woods map header group 0 is a bootstrap station; default Play to the intro cutscene.
