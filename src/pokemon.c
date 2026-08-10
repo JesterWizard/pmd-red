@@ -468,9 +468,9 @@ bool8 sub_808D4B0(void)
     Pokemon *pokeStruct;
     bool8 flag;
 
-    /* keep_allies: skip routine end-of-day / return dismissals. Still run when
-     * PARTNER1_KIND is 0 (story alone / no-follower segments). */
-    if (gRuntimeConfig.keep_allies && GetScriptVarValue(NULL, PARTNER1_KIND) != 0)
+    /* keep_allies: skip auto Stand By. Returning FALSE also skips the
+     * DISMISSAL_SALLY_MEMBER* “dispersed to the Friend Area(s)” popup. */
+    if (gRuntimeConfig.keep_allies)
         return FALSE;
 
     pokeStruct = gRecruitedPokemonRef->pokemon;
@@ -491,7 +491,7 @@ bool8 sub_808D500(void)
     Pokemon *pokeStruct;
     bool8 flag;
 
-    if (gRuntimeConfig.keep_allies && GetScriptVarValue(NULL, PARTNER1_KIND) != 0)
+    if (gRuntimeConfig.keep_allies)
         return FALSE;
 
     pokeStruct = gRecruitedPokemonRef->pokemon;

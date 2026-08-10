@@ -33,7 +33,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .unrestricted_bulletin_jobs = TRUE, /* TRUE = new jobs may reuse accepted Job List floors; FALSE = vanilla unique floors */
     .expanded_job_slots = TRUE, /* TRUE = accept up to 16 jobs; FALSE = vanilla 8 */
     .damage_preview = TRUE, /* TRUE = estimated dmg/acc/effect while facing foe; FALSE = off */
-    .keep_allies = TRUE, /* TRUE = allies stay overnight; FALSE = vanilla end-of-day Stand By */
+    .keep_allies = TRUE, /* TRUE = allies stay overnight (no disperse popup); FALSE = vanilla Stand By */
     .multi_select_selling = TRUE, /* TRUE = L/R multi-select sell (Kangaskhan-style); FALSE = one at a time */
     .gummis_in_town = TRUE, /* TRUE = Give Gummi from town Team menu; FALSE = Friend Area only */
     .pmd2_gummi_stats = TRUE, /* TRUE = dungeon gummi random/all-4 basic stats; FALSE = IQ/Belly only */

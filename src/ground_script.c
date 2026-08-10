@@ -3351,6 +3351,9 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                     var =  sub_808D500();
                 }
                 nullsub_104();
+                /* keep_allies: never show DISMISSAL disperse popup */
+                if (gRuntimeConfig.keep_allies)
+                    return 0;
                 return var != 0;
             }
             break;

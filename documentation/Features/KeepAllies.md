@@ -25,15 +25,14 @@ Toggle: `gRuntimeConfig.keep_allies` in [`configs/runtime.c`](../../configs/runt
 
 | Mode | Behavior |
 |------|----------|
-| `TRUE` (default) | Skip auto Stand By while a partner follower is active (`PARTNER1_KIND != 0`) |
+| `TRUE` (default) | Skip auto Stand By on dungeon return / end of day; skip the disperse popup |
 | `FALSE` | Vanilla: clear `POKEMON_FLAG_ON_TEAM` for sally members on dismiss |
 
 Still dismissed when:
 
 1. **Explicit Stand By / Farewell** — Friend Area talk, Team menu, or dungeon Farewell (unchanged menu paths).
-2. **Story alone segments** — scripts that set `PARTNER1_KIND` to `0` before calling dismiss (e.g. imprisoned chapter, some mid-dungeon story hubs) still clear the party so cutscenes and forced-alone stretches stay correct.
 
-If nobody is removed, the “dispersed to the Friend Area(s)” text is skipped (same as vanilla when the party was already empty).
+`DISMISSAL_SALLY_MEMBER*` only shows “dispersed to the Friend Area(s)” when the dismiss routine reports that someone was removed. With `keep_allies`, that routine returns false immediately, so the popup is skipped.
 
 ---
 
@@ -50,5 +49,5 @@ If nobody is removed, the “dispersed to the Friend Area(s)” text is skipped 
 
 ## Limitations
 
-- Story scripts that dismiss **without** setting `PARTNER1_KIND` to `0` will keep allies on the team; most such cutscenes use fixed `SELECT_ENTITIES` lists and do not spawn sally followers.
+- Story alone cutscenes that call dismiss will also keep allies on the team; most such scenes use fixed `SELECT_ENTITIES` lists and do not spawn sally followers.
 - Partner / leader are never removed by these routines (same as vanilla `sub_808D4B0`).

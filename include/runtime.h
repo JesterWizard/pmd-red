@@ -83,9 +83,8 @@ typedef struct {
     u8 expanded_job_slots;
     /* Show estimated damage / accuracy / effect while facing an enemy */
     u8 damage_preview;
-    /* Keep recruited allies on the team overnight (skip auto Stand By).
-     * Stand By / Farewell still work. Story alone segments (PARTNER1_KIND==0)
-     * still dismiss so cutscenes stay correct. */
+    /* Keep recruited allies on the team overnight (skip auto Stand By and the
+     * “dispersed to the Friend Area(s)” popup). Stand By / Farewell still work. */
     u8 keep_allies;
     /* Kecleon sell: L/R multi-select like Kangaskhan store (else single-item only) */
     u8 multi_select_selling;
