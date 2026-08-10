@@ -9,15 +9,16 @@ save chunk. This record fits inside the existing `unk448` save buffer, so the
 save structure and SRAM footprint do not grow. Saves made before runtime
 overrides were added have no valid record and continue using the ROM defaults.
 
+Press **R** on a highlighted option to open its detail page (same pattern as
+move / item / IQ skill info). **A** or **B** closes the page and returns to the
+list. **Start** only opens the menu from the overworld.
+
 Some options take effect only after entering a new dungeon, visiting an area,
-starting a new game, or rebooting. `custom_story` remains build-time-only
-because the Makefile selects its ground-script asset pack while building.
+starting a new game, or rebooting. Detail pages note when a delayed apply is
+needed. `custom_story` remains build-time-only because the Makefile selects its
+ground-script asset pack while building, so it is not listed in the menu.
 
 ## Restart and re-entry markers
-
-The compact `R` suffix marks an option whose effect is deferred until the
-relevant game boundary. It does not always mean that a full hardware reset is
-required.
 
 Options requiring a title restart or reboot are:
 

@@ -15,6 +15,7 @@
 #include "pokemon.h"
 #include "run_dungeon.h"
 #include "runtime.h"
+#include "sprite.h"
 #include "string_format.h"
 #include "text_1.h"
 #include "text_2.h"
@@ -55,6 +56,8 @@ enum CustomDebugMenuOptionEffect
 struct CustomDebugMenuOption
 {
     const u8 *label;
+    const u8 *title;
+    const u8 *description;
     u8 *value;
     u8 type;
     u8 flags;
@@ -68,9 +71,13 @@ static EWRAM_INIT u8 sCustomDebugMenuState = {0};
 #include "data/custom_debug_menu.h"
 
 static void DisplayCustomDebugMenu(void);
+static void DisplayCustomDebugMenuInfo(void);
+static void RecreateCustomDebugMenuList(void);
+static u32 UpdateCustomDebugMenuInfo(void);
 static void ExecuteCustomDebugMenuOption(s32 optionIndex);
 static bool8 IsCustomDebugMenuOptionEnabled(const struct CustomDebugMenuOption *option);
 static void BuildCustomDebugMenuLabel(u8 *buffer, s32 optionIndex);
+static const u8 *GetCustomDebugMenuOptionTitle(const struct CustomDebugMenuOption *option);
 static void FillLeaderBelly(void);
 static void UnlockAllFriendAreas(void);
 static EntityInfo *GetDebugLeaderInfo(void);
@@ -84,6 +91,7 @@ void CreateCustomDebugMenu(void)
         MemoryFill8(sCustomDebugMenu, 0, sizeof(struct CustomDebugMenu));
     }
 
+    sCustomDebugMenu->state = CUSTOM_DEBUG_MENU_UI_LIST;
     sCustomDebugMenu->menu.menuWinId = 0;
     sCustomDebugMenu->menu.menuWindow = &sCustomDebugMenu->menu.windows.id[0];
     for (i = 0; i < MAX_WINDOWS; i++)
@@ -112,9 +120,13 @@ void DeleteCustomDebugMenu(void)
 
 u32 UpdateCustomDebugMenu(void)
 {
-    s32 input = GetKeyPress(&sCustomDebugMenu->menu.input);
+    s32 input;
     s32 optionIndex;
 
+    if (sCustomDebugMenu->state == CUSTOM_DEBUG_MENU_UI_INFO)
+        return UpdateCustomDebugMenuInfo();
+
+    input = GetKeyPress(&sCustomDebugMenu->menu.input);
     switch (input) {
         case INPUT_B_BUTTON:
             PlayMenuSoundEffect(MENU_SFX_BACK);
@@ -129,11 +141,86 @@ u32 UpdateCustomDebugMenu(void)
             ExecuteCustomDebugMenuOption(optionIndex);
             DisplayCustomDebugMenu();
             return 0;
+        case INPUT_R_BUTTON:
+            optionIndex = GET_CURRENT_MENU_ENTRY(sCustomDebugMenu->menu.input);
+            if (optionIndex == ARRAY_COUNT(sCustomDebugMenuOptions)) {
+                PlayMenuSoundEffect(MENU_SFX_FAIL);
+                return 0;
+            }
+            PlayMenuSoundEffect(MENU_SFX_INFO);
+            sCustomDebugMenu->infoOptionIndex = optionIndex;
+            sCustomDebugMenu->state = CUSTOM_DEBUG_MENU_UI_INFO;
+            DisplayCustomDebugMenuInfo();
+            return 0;
         default:
             if (MenuCursorUpdate(&sCustomDebugMenu->menu.input, TRUE))
                 DisplayCustomDebugMenu();
             return 0;
     }
+}
+
+static u32 UpdateCustomDebugMenuInfo(void)
+{
+    switch (sub_8012A64(&sCustomDebugMenu->touchScreen, 0)) {
+        case 1:
+            PlayMenuSoundEffect(MENU_SFX_ACCEPT);
+            RecreateCustomDebugMenuList();
+            return 0;
+        case 2:
+            PlayMenuSoundEffect(MENU_SFX_BACK);
+            RecreateCustomDebugMenuList();
+            return 0;
+        default:
+            return 0;
+    }
+}
+
+static void RecreateCustomDebugMenuList(void)
+{
+    s32 i;
+    s32 restoreEntry = sCustomDebugMenu->infoOptionIndex;
+
+    sCustomDebugMenu->state = CUSTOM_DEBUG_MENU_UI_LIST;
+    sCustomDebugMenu->menu.menuWinId = 0;
+    sCustomDebugMenu->menu.menuWindow = &sCustomDebugMenu->menu.windows.id[0];
+    for (i = 0; i < MAX_WINDOWS; i++)
+        sCustomDebugMenu->menu.windows.id[i] = sCustomDebugMenuDummyWindow;
+    sCustomDebugMenu->menu.windows.id[0] = sCustomDebugMenuWindow;
+
+    ResetUnusedInputStruct();
+    ShowWindows(&sCustomDebugMenu->menu.windows, TRUE, TRUE);
+    CreateMenuOnWindow(&sCustomDebugMenu->menu.input,
+                       ARRAY_COUNT(sCustomDebugMenuOptions) + 1,
+                       CUSTOM_DEBUG_MENU_ENTRIES_PER_PAGE,
+                       sCustomDebugMenu->menu.menuWinId);
+    MoveMenuToEntryId(&sCustomDebugMenu->menu.input, restoreEntry);
+    DisplayCustomDebugMenu();
+    AddMenuCursorSprite(&sCustomDebugMenu->menu.input);
+}
+
+static void DisplayCustomDebugMenuInfo(void)
+{
+    const struct CustomDebugMenuOption *option =
+        &sCustomDebugMenuOptions[sCustomDebugMenu->infoOptionIndex];
+    const u8 *title = GetCustomDebugMenuOptionTitle(option);
+
+    ResetSprites(TRUE);
+    ResetTouchScreenMenuInput(&sCustomDebugMenu->touchScreen);
+    sub_80140B4(&sCustomDebugMenu->infoWindows);
+    sCustomDebugMenu->infoHeader.count = 1;
+    sCustomDebugMenu->infoHeader.currId = 0;
+    sCustomDebugMenu->infoHeader.width = 16;
+    sCustomDebugMenu->infoHeader.f3 = 0;
+    sCustomDebugMenu->infoWindows.id[0].header = &sCustomDebugMenu->infoHeader;
+
+    ResetUnusedInputStruct();
+    ShowWindows(&sCustomDebugMenu->infoWindows, TRUE, TRUE);
+
+    CallPrepareTextbox_8008C54(0);
+    sub_80073B8(0);
+    PrintStringOnWindow(16, 0, title, 0, 0);
+    PrintStringOnWindow(8, 16, option->description, 0, 0);
+    sub_80073E0(0);
 }
 
 static void DisplayCustomDebugMenu(void)
@@ -173,6 +260,13 @@ static void DisplayCustomDebugMenu(void)
     sub_80073E0(sCustomDebugMenu->menu.menuWinId);
 }
 
+static const u8 *GetCustomDebugMenuOptionTitle(const struct CustomDebugMenuOption *option)
+{
+    if (option->title != NULL)
+        return option->title;
+    return option->label;
+}
+
 static void BuildCustomDebugMenuLabel(u8 *buffer, s32 optionIndex)
 {
     const struct CustomDebugMenuOption *option;
@@ -200,12 +294,8 @@ static void BuildCustomDebugMenuLabel(u8 *buffer, s32 optionIndex)
                           gRuntimeConfig.bank_interest_percent);
             break;
         default:
-            if (enabled && (option->flags & CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED))
+            if (enabled)
                 sprintfStatic(buffer, _("{STAR_BULLET}%s"), option->label);
-            else if (enabled)
-                sprintfStatic(buffer, _("{STAR_BULLET}%s"), option->label);
-            else if (option->flags & CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED)
-                sprintfStatic(buffer, _("%s"), option->label);
             else
                 sprintfStatic(buffer, _("%s"), option->label);
             break;
