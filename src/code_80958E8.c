@@ -61,7 +61,7 @@ void InitializeMailJobsNews(void)
     {
         ResetMailboxSlot(index);
     }
-    for(index = 0; index < MAX_ACCEPTED_JOBS; index++)
+    for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++)
     {
         ResetPelipperBoardSlot(index);
     }
@@ -318,10 +318,9 @@ static bool8 GenerateMailJobDungeonInfo(WonderMail *mail)
         }
       }
 
-      for(index = 0; index < MAX_ACCEPTED_JOBS; index++)
+      for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++)
       {
-        if (sub_8095E38(&gUnknown_203B490->pelipperBoardJobs[index],dungeon,floor,1)) {
-          flag = FALSE;
+        if (sub_8095E38(&gUnknown_203B490->pelipperBoardJobs[index],dungeon,floor,1)) {          flag = FALSE;
         }
       }
 
@@ -753,7 +752,7 @@ s32 CountFilledPelipperBoardSlots(void)
     s32 slots;
 
     slots = 0;
-    for(index = 0; index < MAX_ACCEPTED_JOBS; index++) {
+    for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++) {
         if (!IsPelipperBoardSlotEmpty(index)) {
             slots++;
         }
@@ -764,7 +763,7 @@ s32 CountFilledPelipperBoardSlots(void)
 UNUSED bool8 sub_8096538(WonderMail *mail)
 {
     s32 index;
-    for(index = 0; index < MAX_ACCEPTED_JOBS; index++)
+    for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++)
     {
         if(gUnknown_203B490->pelipperBoardJobs[index].mailType == 0)
         {
@@ -807,13 +806,13 @@ void ShiftPelipperJobsDown(void)
   counter2 = 0;
 
   do {
-    for( ; counter1 < MAX_ACCEPTED_JOBS; counter1++)
+    for( ; counter1 < MAX_PELIPPER_BOARD_JOBS; counter1++)
     {
         if (gUnknown_203B490->pelipperBoardJobs[counter1].mailType != 0)
             break;
     }
 
-    if (counter1 == MAX_ACCEPTED_JOBS) {
+    if (counter1 == MAX_PELIPPER_BOARD_JOBS) {
         break;
     }
 
@@ -824,7 +823,7 @@ void ShiftPelipperJobsDown(void)
     counter2++;
   } while( 1 );
 
-  for(; counter2 < MAX_ACCEPTED_JOBS; counter2++)
+  for(; counter2 < MAX_PELIPPER_BOARD_JOBS; counter2++)
   {
     gUnknown_203B490->pelipperBoardJobs[counter2].mailType = 0;
   }
@@ -838,9 +837,9 @@ void SortPelipperJobs(void)
 
     WonderMail mail;
 
-    for(index1 = 0; index1 < MAX_ACCEPTED_JOBS - 1; index1++)
+    for(index1 = 0; index1 < MAX_PELIPPER_BOARD_JOBS - 1; index1++)
     {
-        for(index2 = index1 + 1; index2 < MAX_ACCEPTED_JOBS; index2++)
+        for(index2 = index1 + 1; index2 < MAX_PELIPPER_BOARD_JOBS; index2++)
         {
             if(gUnknown_203B490->pelipperBoardJobs[index2].mailType != MAIL_TYPE_NONE)
             {
@@ -863,7 +862,7 @@ void GeneratePelipperJobs(void)
   s32 index;
 
   range = RandRange(4,8);
-  for(index = 0; index < MAX_ACCEPTED_JOBS; index++)
+  for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++)
   {
     gUnknown_203B490->pelipperBoardJobs[index].mailType = MAIL_TYPE_NONE;
   }
@@ -979,6 +978,13 @@ bool8 sub_809693C(WonderMail *mail)
     }
   }
   return FALSE;
+}
+
+s32 GetMaxAcceptedJobs(void)
+{
+    if (gRuntimeConfig.expanded_job_slots)
+        return MAX_ACCEPTED_JOBS;
+    return MAX_ACCEPTED_JOBS_VANILLA;
 }
 
 s32 GetNumAcceptedJobs(void)
@@ -1359,7 +1365,7 @@ u32 RestoreMailInfo(u8 *r0, u32 size)
     {
         ReadWonderMailBits(&backup, &gUnknown_203B490->mailboxSlots[index]);
     }
-    for(index = 0; index < MAX_ACCEPTED_JOBS; index++)
+    for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++)
     {
         ReadWonderMailBits(&backup, &gUnknown_203B490->pelipperBoardJobs[index]);
     }
@@ -1404,7 +1410,7 @@ u32 SaveMailInfo(u8 *r0, u32 size)
     {
         WriteWonderMailBits(&backup, &gUnknown_203B490->mailboxSlots[index]);
     }
-    for(index = 0; index < MAX_ACCEPTED_JOBS; index++)
+    for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++)
     {
         WriteWonderMailBits(&backup, &gUnknown_203B490->pelipperBoardJobs[index]);
     }

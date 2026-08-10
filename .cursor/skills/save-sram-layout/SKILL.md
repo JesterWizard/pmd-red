@@ -26,7 +26,7 @@ Any change that alters what gets **written into or sized for** the save pak:
   achievements, mail, adventure data
 - `NUM_PICKED_IQ_SKILLS` / `IQ_SKILL_FLAGS_BIT_COUNT` / `IqSkillFlags`
 - `STORAGE_SIZE`, `TEAM_INVENTORY_SAVE_SIZE`, `ACHIEVEMENTS_SAVE_SIZE`,
-  `RECRUITED_POKEMON_SAVE_SIZE`
+  `RECRUITED_POKEMON_SAVE_SIZE`, `MAIL_INFO_SAVE_SIZE` / accepted job slots
 - `UnkStruct_sub_8011DAC` / `unk448[]` in `include/save.h`
 - New fields appended to the save blob in `src/save.c`
 
@@ -61,7 +61,7 @@ Any change that alters what gets **written into or sized for** the save pak:
 | Friend areas | `0x8` | |
 | Adventure | `0x100` | |
 | Exclusive / unk | `0x594` | |
-| Mail | `0x221` | |
+| Mail | `MAIL_INFO_SAVE_SIZE` | Scales with accepted job slots (`MAX_ACCEPTED_JOBS`) |
 | Achievements | `ACHIEVEMENTS_SAVE_SIZE` | |
 
 ## Anti-patterns

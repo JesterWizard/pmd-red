@@ -157,7 +157,7 @@ static s32 CountPelipperBoardSlots(void)
     s32 i;
     s32 counter = 0;
 
-    for (i = 0; i < MAX_ACCEPTED_JOBS; i++) {
+    for (i = 0; i < MAX_PELIPPER_BOARD_JOBS; i++) {
         if (!IsPelipperBoardSlotEmpty(i)) {
             gUnknown_203B2E0->pelipperBoardSlots[counter] = i;
             counter++;
@@ -171,7 +171,7 @@ bool8 HasNoPelipperBoardJobs(void)
 {
     s32 i;
 
-    for (i = 0; i < MAX_ACCEPTED_JOBS; i++) {
+    for (i = 0; i < MAX_PELIPPER_BOARD_JOBS; i++) {
         if (!IsPelipperBoardSlotEmpty(i))
             return FALSE;
     }

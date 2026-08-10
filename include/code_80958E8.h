@@ -22,16 +22,16 @@ struct unkStruct_8096AF8
     /* 0x4 */ s16 targetSpecies;
 };
 
-// size: 0x32C?
+// size: 0x3CC
 typedef struct unkStruct_203B490
 {
     /* 0x0 */ WonderMail mailboxSlots[NUM_MAILBOX_SLOTS];
-    /* 0x50 */ WonderMail pelipperBoardJobs[MAX_ACCEPTED_JOBS];
+    /* 0x50 */ WonderMail pelipperBoardJobs[MAX_PELIPPER_BOARD_JOBS];
     /* 0xF0 */ WonderMail jobSlots[MAX_ACCEPTED_JOBS];
     u8 unk190[40];
     u8 unk1B8[120];
     subStruct_203B490 unk230[16];
-    /* 0x2F0 */ bool8 PKMNNewsReceived[NUM_POKEMON_NEWS];
+    /* 0x390 */ bool8 PKMNNewsReceived[NUM_POKEMON_NEWS];
     bool8 unk328;
 } unkStruct_203B490;
 
@@ -45,6 +45,7 @@ void GeneratePelipperJobs(void);
 WonderMail *GetJobSlotInfo(u8 index);
 WonderMail *GetMailboxSlotInfo(u8 index);
 unkStruct_203B490 *GetMailInfo(void);
+s32 GetMaxAcceptedJobs(void);
 s32 GetNumAcceptedJobs(void);
 WonderMail *GetPelipperBoardSlotInfo(u8);
 void InitializeMailJobsNews(void);

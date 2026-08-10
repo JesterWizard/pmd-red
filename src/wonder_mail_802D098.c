@@ -181,7 +181,7 @@ static void sub_802D2A8(void)
                 else
                     sub_802D1A0(5);
             }
-            else if (GetNumAcceptedJobs() >= MAX_ACCEPTED_JOBS) {
+            else if (GetNumAcceptedJobs() >= GetMaxAcceptedJobs()) {
                 if (sub_802DADC())
                     sub_802D1A0(JOB_LIST_FULL);
                 else

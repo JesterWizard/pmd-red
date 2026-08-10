@@ -73,6 +73,8 @@ typedef struct {
     u8 outlaw_missions;
     /* Regenerate Pelipper bulletin jobs whenever the board UI closes */
     u8 refresh_bulletin_on_exit;
+    /* Accept up to 16 Job List slots (else vanilla 8); storage always 16 */
+    u8 expanded_job_slots;
     /* Show estimated damage / accuracy / effect while facing an enemy */
     u8 damage_preview;
     /* Keep recruited allies on the team overnight (skip auto Stand By).

@@ -1,8 +1,14 @@
 #ifndef GUARD_CONSTANTS_MAILBOX_H
 #define GUARD_CONSTANTS_MAILBOX_H
 
-#define MAX_ACCEPTED_JOBS 8
+/* Pelipper bulletin board listing slots (unchanged from vanilla) */
+#define MAX_PELIPPER_BOARD_JOBS 8
+/* Job List capacity: array/save always 16; accept limit is GetMaxAcceptedJobs() */
+#define MAX_ACCEPTED_JOBS_VANILLA 8
+#define MAX_ACCEPTED_JOBS 16
 #define NUM_MAILBOX_SLOTS 4
+/* Bit-packed mail chunk: was 0x221 @ 8 job slots; 4 mailbox + 8 board + 16 jobs */
+#define MAIL_INFO_SAVE_SIZE 0x280
 
 enum JOB_LIST_MAIL_TYPES
 {

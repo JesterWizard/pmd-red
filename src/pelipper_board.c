@@ -262,7 +262,7 @@ void sub_802EC10(void) {
     gPelipperBoard->menuItems[loopMax].text = gCommonAccept[0];
     gPelipperBoard->menuItems[loopMax].menuAction = PELIPPER_BOARD_ACCEPT;
 
-    if((IsMailinJobSlot(GetPelipperBoardSlotInfo(gPelipperBoard->jobIndex))) || (GetNumAcceptedJobs() >= MAX_ACCEPTED_JOBS))
+    if((IsMailinJobSlot(GetPelipperBoardSlotInfo(gPelipperBoard->jobIndex))) || (GetNumAcceptedJobs() >= GetMaxAcceptedJobs()))
     {
         gPelipperBoard->menuItems[loopMax].menuAction = -1;
     }
@@ -441,6 +441,6 @@ void CreatePelipperAcceptedStatusBox(u32 r0)
     PrintStringOnWindow(3, 0, gPelipperBoard_Accepted, r0, 0);
     PrintNumOnWindow(0x12, 0xD, GetNumAcceptedJobs(), 2, 7, r0);
     PrintStringOnWindow(0x16, 0xD, gPelipperStatusSlash, r0, 0); // "/"
-    PrintNumOnWindow(0x23, 0xD, MAX_ACCEPTED_JOBS, 2, 7, r0);
+    PrintNumOnWindow(0x2B, 0xD, GetMaxAcceptedJobs(), 2, 7, r0);
     sub_80073E0(r0);
 }

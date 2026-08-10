@@ -30,6 +30,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .custom_portraits = TRUE, /* TRUE = SpriteCollab portraits (Normal + evo packs); FALSE = vanilla kao */
     .outlaw_missions = TRUE, /* TRUE = WANTED hunt jobs on bulletin; FALSE = vanilla job types only */
     .refresh_bulletin_on_exit = TRUE, /* TRUE = reroll board jobs on board exit; FALSE = vanilla (dungeon/day only) */
+    .expanded_job_slots = TRUE, /* TRUE = accept up to 16 jobs; FALSE = vanilla 8 */
     .damage_preview = TRUE, /* TRUE = estimated dmg/acc/effect while facing foe; FALSE = off */
     .keep_allies = TRUE, /* TRUE = allies stay overnight; FALSE = vanilla end-of-day Stand By */
     .multi_select_selling = TRUE, /* TRUE = L/R multi-select sell (Kangaskhan-style); FALSE = one at a time */

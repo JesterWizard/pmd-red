@@ -292,7 +292,7 @@ void CreateMailActionMenu(void) {
         gUnknown_203B304->menuItems[loopMax].text = gCommonAccept[0];
         gUnknown_203B304->menuItems[loopMax].menuAction = 5;
 
-        if(IsMailinJobSlot(mail) || GetNumAcceptedJobs() >= MAX_ACCEPTED_JOBS)
+        if(IsMailinJobSlot(mail) || GetNumAcceptedJobs() >= GetMaxAcceptedJobs())
         {
             gUnknown_203B304->menuItems[loopMax].menuAction = -1;
         }
@@ -535,7 +535,7 @@ void CreateMailAcceptedStatusBox(u32 r0)
     PrintStringOnWindow(3, 0, gMailAccepted, r0, 0);
     PrintNumOnWindow(0x12, 0xD, GetNumAcceptedJobs(), 2, 7, r0);
     PrintStringOnWindow(0x16, 0xD, gUnknown_80E0324, r0, 0); // "/"
-    PrintNumOnWindow(0x23, 0xD, MAX_ACCEPTED_JOBS, 2, 7, r0);
+    PrintNumOnWindow(0x2B, 0xD, GetMaxAcceptedJobs(), 2, 7, r0);
     sub_80073E0(r0);
 }
 

@@ -45,7 +45,7 @@ static u8 *GetRuntimeConfigSaveBuffer(u8 *buffer)
     buffer += 0x8;
     buffer += 0x100;
     buffer += 0x594;
-    buffer += 0x221;
+    buffer += MAIL_INFO_SAVE_SIZE;
     buffer += ACHIEVEMENTS_SAVE_SIZE;
     buffer += SPINDA_CAFE_SAVE_SIZE;
     return buffer;
@@ -273,11 +273,11 @@ u32 ReadSaveFromPak(u32 *a)
             saveStatus = 3;
         }
         r4 += 0x594;
-        r1 = RestoreMailInfo(r4, 0x221);
+        r1 = RestoreMailInfo(r4, MAIL_INFO_SAVE_SIZE);
         if (r1 != playerSave->savedMailInfo) {
             saveStatus = 3;
         }
-        r4 += 0x221;
+        r4 += MAIL_INFO_SAVE_SIZE;
         r1 = RestoreAchievementsData(r4, ACHIEVEMENTS_SAVE_SIZE);
         if (r1 != playerSave->savedAchievements) {
             saveStatus = 3;
@@ -388,8 +388,8 @@ u32 WriteSavetoPak(s32 *param_1, u32 param_2)
   array_ptr += 0x100;
   playerSave->unk440 = sub_8095624(array_ptr,0x594);
   array_ptr += 0x594;
-  playerSave->savedMailInfo = SaveMailInfo(array_ptr,0x221);
-  array_ptr += 0x221;
+  playerSave->savedMailInfo = SaveMailInfo(array_ptr, MAIL_INFO_SAVE_SIZE);
+  array_ptr += MAIL_INFO_SAVE_SIZE;
   playerSave->savedAchievements = SaveAchievementsData(array_ptr, ACHIEVEMENTS_SAVE_SIZE);
   array_ptr += ACHIEVEMENTS_SAVE_SIZE;
   playerSave->savedSpindaCafe = SaveSpindaCafeData(array_ptr, SPINDA_CAFE_SAVE_SIZE);
