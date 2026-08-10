@@ -24,6 +24,7 @@ public sealed class LoadingWindow : Window
         ShowInTaskbar = false;
         WindowStartupLocation = WindowStartupLocation.CenterOwner;
         WindowDecorations = WindowDecorations.Full;
+        AppIcon.Apply(this);
 
         _stage = new TextBlock
         {

@@ -70,6 +70,7 @@ public sealed class MainWindow : Window
         Background = EditorTheme.WindowBgBrush;
         FontFamily = EditorTheme.UiFont;
         FontSize = EditorTheme.FontBody;
+        AppIcon.Apply(this);
 
         _explorer = new ProjectExplorerPanel();
         _explorer.SelectionChanged += ExplorerOnSelectionChanged;
@@ -949,6 +950,7 @@ public sealed class MainWindow : Window
             Width = 480,
             Height = 260,
             WindowStartupLocation = WindowStartupLocation.CenterOwner,
+            Icon = AppIcon.Get(),
         };
         var ok = new Button
         {

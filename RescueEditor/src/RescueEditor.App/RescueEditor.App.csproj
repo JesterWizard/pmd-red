@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
     <NoWarn>$(NoWarn);CS9057</NoWarn>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\rescuetemple_logo.ico</ApplicationIcon>
     <InvariantGlobalization>true</InvariantGlobalization>
     <AssemblyName>RescueTemple</AssemblyName>
     <Product>RescueTemple</Product>
@@ -21,6 +22,10 @@
     <PackageReference Include="Avalonia.Desktop" Version="12.1.1" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="12.1.1" />
     <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\rescuetemple_logo.png" />
   </ItemGroup>
 
   <ItemGroup>

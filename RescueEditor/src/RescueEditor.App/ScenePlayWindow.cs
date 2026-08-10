@@ -68,6 +68,7 @@ public sealed class ScenePlayWindow : Window
         CanResize = true;
         WindowStartupLocation = WindowStartupLocation.CenterOwner;
         Background = EditorTheme.WindowBgBrush;
+        AppIcon.Apply(this);
 
         _view = new Image
         {
