@@ -70,6 +70,8 @@ public sealed class ScenePlayWindow : Window
     private readonly AgbplayStreamHost _bgmHost = new();
     private readonly AgbplayStreamPlayer _bgmStream;
     private readonly string? _romPath;
+    private readonly ScenePlayAutoProgress _autoProgress = new();
+    private readonly CheckBox _autoProgressCheck;
     private GbaButton? _captureTarget;
     private DateTime _lastTick = DateTime.UtcNow;
     private double _simAccum;
@@ -97,6 +99,7 @@ public sealed class ScenePlayWindow : Window
         Height = ScenePlaySession.CameraHeight * ViewScale + 100;
         CanResize = true;
         WindowStartupLocation = WindowStartupLocation.CenterOwner;
+        Focusable = true;
         Background = EditorTheme.WindowBgBrush;
         AppIcon.Apply(this);
 
@@ -111,13 +114,11 @@ public sealed class ScenePlayWindow : Window
         RenderOptions.SetBitmapInterpolationMode(_view, BitmapInterpolationMode.None);
         _view.PointerPressed += (_, e) =>
         {
-            Focus();
-            if (_session.WaitingForAdvance)
-            {
-                _session.AdvanceDialogue();
-                e.Handled = true;
-            }
+            // Click focuses the play surface for keyboard input; never advances dialogue.
+            _view.Focus();
+            e.Handled = true;
         };
+        _view.Focusable = true;
 
         _status = new TextBlock
         {
@@ -126,8 +127,8 @@ public sealed class ScenePlayWindow : Window
             FontSize = EditorTheme.FontMeta,
             Foreground = EditorTheme.TextMutedBrush,
             Text = _session.IsScripted
-                ? "Cutscene · A advances text · Esc closes"
-                : "Arrows move · Esc closes · Controls to rebind",
+                ? "Cutscene · A advances text · Esc closes · click view for focus"
+                : "Arrows move · Esc closes · click view for focus · Controls to rebind",
         };
 
         _controlsButton = new Button
@@ -226,6 +227,15 @@ public sealed class ScenePlayWindow : Window
         });
         toolbarChildren.Add(_speedSlider);
         toolbarChildren.Add(_speedLabel);
+
+        _autoProgressCheck = EditorChrome.ToolCheck("Auto progress", isChecked: false);
+        _autoProgressCheck.IsCheckedChanged += (_, _) =>
+        {
+            _autoProgress.Enabled = _autoProgressCheck.IsChecked == true;
+            _autoProgress.ResetHold();
+            UpdateStatusText();
+        };
+        toolbarChildren.Add(_autoProgressCheck);
 
         var toolbar = new StackPanel
         {
@@ -329,7 +339,7 @@ public sealed class ScenePlayWindow : Window
 
         Opened += (_, _) =>
         {
-            Focus();
+            _view.Focus();
             // Paint a black frame immediately so the window appears before map compose.
             RefreshFrame(composeBackground: false);
             Dispatcher.UIThread.Post(() =>
@@ -383,6 +393,9 @@ public sealed class ScenePlayWindow : Window
 
     private void OnKeyDown(object? sender, KeyEventArgs e)
     {
+        if (!AcceptsPlayInput())
+            return;
+
         if (_endMenuShown)
         {
             if (e.Key == Key.Escape)
@@ -428,7 +441,7 @@ public sealed class ScenePlayWindow : Window
 
     private void OnKeyUp(object? sender, KeyEventArgs e)
     {
-        if (_captureTarget is not null || _endMenuShown)
+        if (!AcceptsPlayInput() || _captureTarget is not null || _endMenuShown)
             return;
         var chord = ToChord(e);
         if (_keymap.TryResolve(chord, out var button))
@@ -436,6 +449,15 @@ public sealed class ScenePlayWindow : Window
             _session.SetButton(button, false);
             e.Handled = true;
         }
+    }
+
+    private bool AcceptsPlayInput()
+    {
+        if (!IsActive)
+            return false;
+        // Ignore GBA/play keys while typing or navigating toolbar chrome.
+        var focused = TopLevel.GetTopLevel(this)?.FocusManager?.GetFocusedElement();
+        return focused is null or Image or ScenePlayWindow or Border;
     }
 
     private void OnTick(object? sender, EventArgs e)
@@ -460,6 +482,8 @@ public sealed class ScenePlayWindow : Window
             if (_simAccum > FrameDt.TotalSeconds * 2 * _speed)
                 _simAccum = 0;
 
+            ApplyAutoProgress(dt * Math.Max(1.0, _speed));
+
             RefreshFrame();
             PlayQueuedSfx();
             PlayMusicIfChanged();
@@ -468,15 +492,58 @@ public sealed class ScenePlayWindow : Window
         if (_captureTarget is not null)
             return;
 
-        if (_session.IsScripted && _session.ScriptFinished)
+        UpdateStatusText();
+    }
+
+    private void ApplyAutoProgress(double scaledDt)
+    {
+        if (!_session.IsScripted)
+            return;
+
+        var action = _autoProgress.Update(
+            scaledDt,
+            waitingForAdvance: _session.WaitingForAdvance,
+            scriptFinished: _session.ScriptFinished,
+            canGoNext: _navigator?.CanGoNext == true);
+
+        switch (action)
+        {
+            case ScenePlayAutoProgress.Action.AdvanceDialogue:
+                _session.AdvanceDialogue();
+                break;
+            case ScenePlayAutoProgress.Action.NextScene:
+                Navigate(+1);
+                break;
+        }
+    }
+
+    private void UpdateStatusText()
+    {
+        if (_session.IsScripted && _session.ScriptFinished && !_autoProgress.Enabled)
         {
             ShowEndMenu();
             _status.Text = "Scene complete";
         }
+        else if (_session.IsScripted && _session.ScriptFinished && _autoProgress.Enabled)
+        {
+            _status.Text = _navigator?.CanGoNext == true
+                ? "Auto progress · next scene…"
+                : "Scene complete";
+            if (_navigator?.CanGoNext != true)
+                ShowEndMenu();
+        }
         else if (_session.IsScripted)
-            _status.Text = _session.WaitingForAdvance ? "A to continue…" : "Playing cutscene…";
+        {
+            _status.Text = _autoProgress.Enabled
+                ? (_session.WaitingForAdvance ? "Auto progress · advancing…" : "Auto progress · playing…")
+                : (_session.WaitingForChoice
+                    ? "↑↓ select · A to choose…"
+                    : (_session.WaitingForAdvance ? "A to continue…" : "Playing cutscene…"));
+        }
         else if (_session.AllowFreeRoam)
+        {
             _status.Text = $"Free roam · 240×160 · sp.{_session.PlayerSpecies}/{_session.PartnerSpecies}";
+        }
     }
 
     private void ShowEndMenu()
@@ -502,6 +569,7 @@ public sealed class ScenePlayWindow : Window
         HideEndMenu();
         _session.Restart();
         _playingSongId = null;
+        _autoProgress.ResetHold();
         Title = TitleFor(_session);
         _simAccum = 0;
         _lastTick = DateTime.UtcNow;
@@ -538,6 +606,7 @@ public sealed class ScenePlayWindow : Window
         _session = next;
         _frameBitmap = null;
         _playingSongId = null;
+        _autoProgress.ResetHold();
         Title = TitleFor(_session);
         _simAccum = 0;
         _lastTick = DateTime.UtcNow;

@@ -41,19 +41,38 @@ public static class GroundLivesTypes
             1 => SpeciesBulbasaur,
             2 => SpeciesCharmander,
             3 => SpeciesSquirtle,
-            // Type 0 remaps to player kind 1/2/3 at runtime — default hero preview.
             0 => SpeciesBulbasaur,
-            // Partner slots 4/5 remap to kinds 6/7/8 — use remaining starters as stand-ins.
             4 => SpeciesCharmander,
             5 => SpeciesSquirtle,
             6 => SpeciesBulbasaur,
             7 => SpeciesCharmander,
             8 => SpeciesSquirtle,
-            // Story leader/partner aliases (Tiny Woods intro uses type 34 for partner).
             33 => SpeciesBulbasaur,
             34 => SpeciesCharmander,
             35 => SpeciesSquirtle,
             _ => 0,
         };
+    }
+
+    /// <summary>
+    /// Scene Play species: trust fixed ROM table entries; only apply team appearance
+    /// overrides for dynamic (species 0) live kinds.
+    /// </summary>
+    public static short ResolvePlaySpecies(
+        RomImage rom,
+        RomProfile profile,
+        int typeId,
+        PlayAppearance? appearance)
+    {
+        var fromRom = ResolveSpecies(rom, profile, typeId);
+        if (fromRom > 0)
+            return fromRom;
+
+        if (appearance is not null &&
+            typeId is >= 0 and <= 255 &&
+            appearance.TryResolveLiveType((byte)typeId) is short over)
+            return over;
+
+        return ResolvePreviewSpecies(rom, profile, typeId);
     }
 }

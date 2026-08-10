@@ -843,17 +843,29 @@ public sealed class MainWindow : Window
         if (!_keymap.TryResolve(chord, out var command))
             return;
 
-        if (_sceneWorkspace is not null &&
+        var sceneFocused = _sceneWorkspace is not null &&
             _workspaceHost.Child == _sceneWorkspace &&
-            _sceneWorkspace.TryHandleCommand(command))
+            _sceneWorkspace.IsKeyboardFocusWithin;
+
+        if (sceneFocused && _sceneWorkspace!.TryHandleCommand(command))
         {
             e.Handled = true;
             return;
         }
 
+        // Scene-only commands (entity nudge, etc.) stay gated to the focused workspace.
+        if (!sceneFocused && IsSceneOnlyCommand(command))
+            return;
+
         if (ExecuteShellCommand(command))
             e.Handled = true;
     }
+
+    private static bool IsSceneOnlyCommand(EditorCommandId command) => command is
+        EditorCommandId.DeleteSelection or
+        EditorCommandId.ToggleGrid or
+        EditorCommandId.SelectTool or
+        EditorCommandId.PanTool;
 
     private bool ExecuteShellCommand(EditorCommandId command)
     {

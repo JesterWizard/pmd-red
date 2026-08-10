@@ -15,10 +15,14 @@ public enum PlayDialogueMode
 public static class GbaDialogueHud
 {
     // Window template: pos (2,15) size 26×5 tiles → pixels.
+    // Retail textboxes fit 3 lines of dialogue inside this 40px-tall window.
     public const int BoxX = 16;
     public const int BoxY = 120;
     public const int BoxW = 208;
     public const int BoxH = 40;
+    public const int MaxTextLines = 3;
+    public const int LineHeight = 11;
+    public const int TextTopPad = 4;
 
     // Cyan border / navy fill matched to emulator screenshots.
     private static readonly (byte R, byte G, byte B) Border = (0x88, 0xA8, 0xE0);
@@ -64,12 +68,17 @@ public static class GbaDialogueHud
         int animTick,
         IEnumerable<PlayPortraitSlot>? portraits,
         PortraitAtlas? atlas,
-        byte fadeAlpha)
+        byte fadeAlpha,
+        IReadOnlyList<GroundScriptVm.DialogueChoice>? choices = null,
+        int choiceIndex = 0,
+        bool showChoiceMenu = false)
     {
         if (mode == PlayDialogueMode.OnBackground)
         {
             FillRect(camera, 0, 0, camera.Width, camera.Height, 0, 0, 0, 255);
-            DrawOnBackgroundText(camera, font, pageText, waitingForAdvance, animTick);
+            DrawOnBackgroundText(camera, font, pageText, waitingForAdvance && !showChoiceMenu, animTick);
+            if (showChoiceMenu && choices is { Count: > 0 })
+                DrawChoiceMenu(camera, font, choices, choiceIndex);
             return;
         }
 
@@ -85,8 +94,61 @@ public static class GbaDialogueHud
         {
             DrawWindow(camera, BoxX, BoxY, BoxW, BoxH);
             DrawBoxContents(camera, font, pageText, speakerLabel, showSpeakerIcon, quietIcon || mode == PlayDialogueMode.Quiet);
-            if (waitingForAdvance)
+            if (waitingForAdvance && !showChoiceMenu)
                 DrawContinueArrow(camera, BoxX + BoxW / 2, BoxY + BoxH - 2, animTick);
+        }
+
+        if (showChoiceMenu && choices is { Count: > 0 })
+            DrawChoiceMenu(camera, font, choices, choiceIndex);
+    }
+
+    /// <summary>
+    /// Retail-style choice list above the textbox (ASK + CHOICE). Cursor marks the selection.
+    /// </summary>
+    public static void DrawChoiceMenu(
+        RgbaImage camera,
+        PixelFont font,
+        IReadOnlyList<GroundScriptVm.DialogueChoice> choices,
+        int selectedIndex)
+    {
+        if (choices.Count == 0)
+            return;
+
+        const int padX = 6;
+        const int padY = 4;
+        const int lineH = 11;
+        var maxTextW = 0;
+        foreach (var c in choices)
+            maxTextW = Math.Max(maxTextW, font.Measure(c.Text));
+
+        var innerW = Math.Clamp(maxTextW + 14, 48, 120);
+        var innerH = choices.Count * lineH + 2;
+        var w = innerW + padX * 2;
+        var h = innerH + padY * 2;
+        var x = BoxX + BoxW - w;
+        var y = BoxY - h - 4;
+        if (y < 4)
+            y = 4;
+
+        DrawWindow(camera, x, y, w, h);
+
+        for (var i = 0; i < choices.Count; i++)
+        {
+            var cy = y + padY + i * lineH;
+            var selected = i == selectedIndex;
+            if (selected)
+            {
+                // Cursor triangle
+                for (var row = 0; row < 5; row++)
+                {
+                    var half = 2 - Math.Abs(row - 2);
+                    for (var dx = 0; dx <= half; dx++)
+                        Put(camera, x + padX + dx, cy + 2 + row, Yellow.R, Yellow.G, Yellow.B, 255);
+                }
+            }
+
+            var (r, g, b) = selected ? Yellow : White;
+            font.Draw(camera, DialogueRuns.PlainText(choices[i].Text), x + padX + 8, cy, r, g, b);
         }
     }
 
@@ -108,16 +170,16 @@ public static class GbaDialogueHud
         if (string.IsNullOrEmpty(pageText))
             return;
 
-        var lines = pageText.Replace("\r", "").Split('\n');
+        var richLines = SplitRichLines(pageText);
         var lineH = 14;
-        var totalH = lines.Length * lineH;
+        var totalH = richLines.Count * lineH;
         var y0 = Math.Max(8, (camera.Height - totalH) / 2 - 8);
-        for (var i = 0; i < lines.Length; i++)
+        for (var i = 0; i < richLines.Count; i++)
         {
-            var line = lines[i].Trim();
-            if (line.Length == 0)
+            var line = richLines[i].Trim();
+            if (DialogueRuns.PlainText(line).Length == 0)
                 continue;
-            font.DrawCentered(camera, line, camera.Width / 2, y0 + i * lineH, White.R, White.G, White.B);
+            DrawCenteredRuns(camera, font, line, camera.Width / 2, y0 + i * lineH, onBackground: true);
         }
 
         if (waiting)
@@ -133,7 +195,7 @@ public static class GbaDialogueHud
         bool thoughtIcon)
     {
         var bodyLeft = BoxX + 8;
-        var textY = BoxY + 6;
+        var textY = BoxY + TextTopPad;
         var maxWidth = BoxW - 16;
 
         if (thoughtIcon)
@@ -157,71 +219,103 @@ public static class GbaDialogueHud
             firstLineX = bodyLeft + font.Measure(label) + 4;
         }
 
-        DrawWrapped(
+        DrawWrappedRich(
             camera, font, pageText.TrimStart(),
-            firstLineX, bodyLeft, textY, maxWidth,
-            White.R, White.G, White.B);
+            firstLineX, bodyLeft, textY, maxWidth);
     }
 
-    private static void DrawWrapped(
+    private static void DrawWrappedRich(
         RgbaImage image,
         PixelFont font,
         string text,
         int firstLineX,
         int bodyLeft,
         int y,
-        int maxWidth,
-        byte r, byte g, byte b)
+        int maxWidth)
     {
-        // First line may sit after the speaker name; every NEW_LINE returns to bodyLeft.
-        var lines = text.Replace("\r", "").Split('\n');
+        var lines = SplitRichLines(text);
         var cy = y;
         var lineIndex = 0;
         foreach (var raw in lines)
         {
-            var line = raw.TrimStart();
+            var remaining = raw.TrimStart();
             var x = lineIndex == 0 ? firstLineX : bodyLeft;
             var widthBudget = maxWidth - (x - bodyLeft);
             if (widthBudget < 8)
                 widthBudget = maxWidth;
-            while (line.Length > 0 && cy < BoxY + BoxH - 10)
+
+            while (DialogueRuns.PlainText(remaining).Length > 0 && lineIndex < MaxTextLines)
             {
-                var fit = FitWidth(font, line, widthBudget);
-                var chunk = line[..fit].TrimEnd();
-                font.Draw(image, chunk, x, cy, r, g, b);
-                line = line[fit..].TrimStart();
-                cy += 12;
+                var (chunk, remainder) = DialogueRuns.TakeWidth(font, remaining, widthBudget);
+                DrawRuns(image, font, chunk, x, cy, onBackground: false);
+                remaining = remainder.TrimStart();
+                cy += LineHeight;
                 lineIndex++;
                 x = bodyLeft;
                 widthBudget = maxWidth;
-                if (fit == 0)
+                if (DialogueRuns.PlainText(chunk).Length == 0)
                     break;
             }
-            if (raw.Length == 0)
+
+            if (DialogueRuns.PlainText(raw).Length == 0)
             {
-                cy += 12;
+                cy += LineHeight;
                 lineIndex++;
             }
+
+            if (lineIndex >= MaxTextLines)
+                break;
         }
     }
 
-    private static int FitWidth(PixelFont font, string text, int maxWidth)
+    private static void DrawCenteredRuns(
+        RgbaImage image,
+        PixelFont font,
+        string rich,
+        int centerX,
+        int y,
+        bool onBackground)
     {
-        if (font.Measure(text) <= maxWidth)
-            return text.Length;
+        var w = DialogueRuns.Measure(font, rich);
+        DrawRuns(image, font, rich, centerX - w / 2, y, onBackground);
+    }
 
-        var best = 0;
-        var w = 0;
+    private static void DrawRuns(
+        RgbaImage image,
+        PixelFont font,
+        string rich,
+        int x,
+        int y,
+        bool onBackground)
+    {
+        var cursor = x;
+        foreach (var run in DialogueRuns.Parse(rich))
+        {
+            var (r, g, b) = DialogueRuns.Rgb(run.Color, onBackground);
+            font.Draw(image, run.Text, cursor, y, r, g, b);
+            cursor += font.Measure(run.Text);
+        }
+    }
+
+    private static List<string> SplitRichLines(string text)
+    {
+        var result = new List<string>();
+        var sb = new System.Text.StringBuilder();
         for (var i = 0; i < text.Length; i++)
         {
-            w += font.Advance(text[i]);
-            if (w > maxWidth)
-                break;
-            best = i + 1;
-            if (text[i] == ' ')
-                best = i + 1;
+            var ch = text[i];
+            if (ch == '\r')
+                continue;
+            if (ch == '\n')
+            {
+                result.Add(sb.ToString());
+                sb.Clear();
+                continue;
+            }
+            sb.Append(ch);
         }
-        return Math.Max(1, best);
+        result.Add(sb.ToString());
+        return result;
     }
 
     private static void DrawPortraits(

@@ -24,11 +24,11 @@ public sealed class PixelFont
 
     public int Advance(char ch)
     {
+        ch = NormalizeGlyph(ch);
         if (Pmd2FontData.Glyphs.TryGetValue(ch, out var g))
             return Math.Max(1, g.Advance);
         if (ch == ' ')
             return 4;
-        // Unknown: still advance so characters never stack.
         return 6;
     }
 
@@ -75,9 +75,10 @@ public sealed class PixelFont
         byte b,
         bool shadow)
     {
+        var drawAccent = ch is 'é' or 'É';
+        ch = NormalizeGlyph(ch);
         if (!Pmd2FontData.Glyphs.TryGetValue(ch, out var glyph))
         {
-            // Missing glyph placeholder (still advances via Advance()).
             SceneCompositor.FillRectPublic(image, x + 1, y + 2, 3, 8, r, g, b, 220);
             return;
         }
@@ -95,7 +96,37 @@ public sealed class PixelFont
                 Put(image, x + col, y + row, r, g, b, 255);
             }
         }
+
+        if (drawAccent)
+        {
+            // Acute accent above the vowel.
+            Put(image, x + 3, y + 0, r, g, b, 255);
+            Put(image, x + 4, y + 0, r, g, b, 255);
+            Put(image, x + 2, y + 1, r, g, b, 255);
+            if (shadow)
+            {
+                Put(image, x + 4, y + 1, 0, 0, 0, 160);
+                Put(image, x + 5, y + 1, 0, 0, 0, 160);
+            }
+        }
     }
+
+    private static char NormalizeGlyph(char ch) => ch switch
+    {
+        'é' => 'e',
+        'É' => 'E',
+        'á' => 'a',
+        'Á' => 'A',
+        'í' => 'i',
+        'Í' => 'I',
+        'ó' => 'o',
+        'Ó' => 'O',
+        'ú' => 'u',
+        'Ú' => 'U',
+        'ñ' => 'n',
+        'Ñ' => 'N',
+        _ => ch,
+    };
 
     private static void Put(RgbaImage image, int x, int y, byte r, byte g, byte b, byte a)
     {

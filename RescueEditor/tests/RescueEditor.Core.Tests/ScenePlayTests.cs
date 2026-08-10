@@ -105,6 +105,54 @@ public sealed class ScenePlayTests
     }
 
     [Fact]
+    public void DialogueFormatterSubstitutesPokemonAndNameSlotsWithTeamColors()
+    {
+        var ctx = new DialogueFormatContext(
+            playerSpecies: 4,
+            partnerSpecies: 1,
+            names: ["Trielo", "Floyd", "Butterfree", "Caterpie"]);
+
+        var text = DialogueFormatter.ForTextbox(
+            "A {POKEMON_1}? I'm {NAME_0}. Help my {NAME_3}!",
+            ctx);
+
+        Assert.Contains("Bulbasaur", text, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("Trielo", text, StringComparison.Ordinal);
+        Assert.Contains("Caterpie", text, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("{NAME_0}", text, StringComparison.Ordinal);
+        Assert.DoesNotContain("{POKEMON_1}", text, StringComparison.Ordinal);
+        Assert.DoesNotContain("{NAME_3}", text, StringComparison.Ordinal);
+
+        var runs = DialogueRuns.Parse(text);
+        Assert.Contains(runs, r => r.Text.Contains("Trielo", StringComparison.Ordinal) && r.Color == DialogueColor.Cyan);
+        Assert.Contains(runs, r => r.Text.Contains("Bulbasaur", StringComparison.OrdinalIgnoreCase) && r.Color == DialogueColor.Yellow);
+        Assert.Contains(runs, r => r.Text.Contains("Caterpie", StringComparison.OrdinalIgnoreCase) && r.Color == DialogueColor.Yellow);
+    }
+
+    [Fact]
+    public void DialogueFormatterPreservesExplicitColorTags()
+    {
+        var text = DialogueFormatter.ForTextbox(
+            "Hit {COLOR RED}Fire{RESET} with {color CYAN}Water{reset}!");
+        Assert.Contains("{COLOR RED}", text, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("{RESET}", text, StringComparison.OrdinalIgnoreCase);
+
+        var runs = DialogueRuns.Parse(text);
+        Assert.Contains(runs, r => r.Text == "Fire" && r.Color == DialogueColor.Red);
+        Assert.Contains(runs, r => r.Text == "Water" && r.Color == DialogueColor.Cyan);
+        Assert.Equal("Hit Fire with Water!", DialogueRuns.PlainText(text));
+    }
+
+    [Fact]
+    public void DialogueRunsMeasureIgnoresControlTags()
+    {
+        var font = PixelFont.Load(null);
+        var plain = font.Measure("Charmander");
+        var tagged = DialogueRuns.Measure(font, "{COLOR CYAN}Charmander{RESET}");
+        Assert.Equal(plain, tagged);
+    }
+
+    [Fact]
     public void PixelFontAdvancesSoGlyphsDoNotStack()
     {
         var font = PixelFont.Load(null);
@@ -445,13 +493,127 @@ public sealed class ScenePlayTests
     }
 
     [Fact]
-    public void DialogueFormatterSplitsWaitPressPages()
+    public void PokemonSquareG32UsesXatuTelepathyAndRayquazaName()
     {
-        var pages = DialogueFormatter.SplitPages(
-            "Huh?{WAIT_PRESS} You're a human?{NEW_LINE}Really?");
-        Assert.Equal(2, pages.Count);
-        Assert.Equal("Huh?", pages[0]);
-        Assert.Contains("You're a human?", pages[1]);
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var built = CatalogBuilder.Build(rom);
+        var scene = built.Scenes.FindScene(1);
+        Assert.NotNull(scene);
+
+        var session = new ScenePlaySession(
+            rom, scene!, group: 32, sector: 0,
+            appearance: PlayAppearance.CharmanderAndBulbasaur,
+            profile: built.Scenes.Profile,
+            charmap: built.Charmap);
+        Assert.True(session.IsScripted);
+
+        // g32 does not FADE_OUT first — map should be visible under dialogue.
+        Assert.Equal(0, session.ScriptVm!.FadeAlpha);
+
+        for (var i = 0; i < 4000 && session.ScriptVm.DialogueSpeakerId != 9; i++)
+        {
+            if (session.ScriptVm.WaitingForAdvance)
+                session.AdvanceDialogue();
+            session.Tick(1.0 / 60);
+        }
+
+        Assert.Equal(9, session.ScriptVm.DialogueSpeakerId);
+        Assert.Equal("Xatu", session.DialogueSpeakerLabel);
+        Assert.DoesNotContain(
+            session.ScriptVm.VisiblePortraits,
+            p => p.NpcId == 9); // telepathy: emotion -2 hides face
+
+        // Advance until the "You must ask {NAME_7}" line.
+        for (var guard = 0; guard < 20; guard++)
+        {
+            if (session.DisplayDialogue?.Contains("ask", StringComparison.OrdinalIgnoreCase) == true)
+                break;
+            if (session.ScriptVm.WaitingForAdvance)
+                session.AdvanceDialogue();
+            for (var i = 0; i < 30; i++)
+                session.Tick(1.0 / 60);
+        }
+
+        Assert.Contains("Rayquaza", session.DisplayDialogue ?? "", StringComparison.Ordinal);
+        Assert.DoesNotContain("Charmander", session.DisplayDialogue ?? "", StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void DialogueFormatterKeepsAccentedEInPokemon()
+    {
+        var text = DialogueFormatter.ForTextbox("wild Pokémon attacked!");
+        Assert.Contains("Pokémon", text, StringComparison.Ordinal);
+        Assert.Contains('é', text);
+    }
+
+    [Fact]
+    public void DialogueRunsWrapsLongWordsInsteadOfOverflowing()
+    {
+        var font = PixelFont.Load(null);
+        // Narrow budget forces a break inside Supercalifragilistic.
+        var rich = "Supercalifragilistic";
+        var (chunk, remainder) = DialogueRuns.TakeWidth(font, rich, maxWidth: 40);
+        Assert.True(DialogueRuns.Measure(font, chunk) <= 40);
+        Assert.False(string.IsNullOrEmpty(remainder));
+        Assert.Equal(rich, DialogueRuns.PlainText(chunk) + DialogueRuns.PlainText(remainder));
+    }
+
+    [Fact]
+    public void DialogueRunsPrefersBreakingAtSpaces()
+    {
+        var font = PixelFont.Load(null);
+        var rich = "Hello there friend";
+        var (chunk, remainder) = DialogueRuns.TakeWidth(font, rich, maxWidth: font.Measure("Hello there"));
+        Assert.Equal("Hello there", DialogueRuns.PlainText(chunk).TrimEnd());
+        Assert.StartsWith("friend", DialogueRuns.PlainText(remainder), StringComparison.Ordinal);
+    }
+
+    [Fact]
+    public void AppearanceOnlyOverridesDynamicZeroSpeciesTypes()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var appearance = PlayAppearance.CharmanderAndBulbasaur;
+        // Butterfree is a fixed species in the lives table — must not become Bulbasaur/Charmander.
+        short butterfreeType = -1;
+        for (var typeId = 0; typeId <= 255; typeId++)
+        {
+            var species = GroundLivesTypes.ResolveSpecies(rom, RomProfile.Us10, typeId);
+            if (species == 12) // Butterfree
+            {
+                butterfreeType = (short)typeId;
+                break;
+            }
+        }
+        Assert.True(butterfreeType >= 0, "expected a Butterfree lives type in ROM");
+        var resolved = GroundLivesTypes.ResolvePlaySpecies(
+            rom, RomProfile.Us10, butterfreeType, appearance);
+        Assert.Equal(12, resolved);
+    }
+
+    [Fact]
+    public void PokemonSquareSceneComposesNonEmptyBackground()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var built = CatalogBuilder.Build(rom);
+        var scene = built.Scenes.FindScene(1); // MAP_POKEMON_SQUARE
+        Assert.NotNull(scene);
+        Assert.NotNull(scene!.Map?.GroundMapAsset);
+        var image = SceneCompositor.ComposeSceneImage(rom, scene, group: 31, sector: 0, showLives: false);
+        Assert.True(image.Width > 240);
+        Assert.True(image.Height > 160);
+        Assert.Contains(image.Pixels, b => b != 0x30 && b != 0x38 && b != 255);
     }
 
     [Fact]
@@ -461,6 +623,72 @@ public sealed class ScenePlayTests
         Assert.Equal(23 * 8, x);
         Assert.Equal(8 * 8, y);
         Assert.True(flip);
+    }
+
+    [Fact]
+    public void AskChoiceJumpsToSelectedLabel()
+    {
+        // ASK3 + CHOICE(label) + LABEL — matches decomp ground_script.c menuAction → FindLabel.
+        var cmds = new List<ScriptCommandData>
+        {
+            new() { Op = 0xD5, ArgByte = 0, ArgShort = -1, Arg1 = -1 }, // ASK3
+            new() { Op = 0xD9, ArgShort = 1 }, // CHOICE → LABEL 1
+            new() { Op = 0xD9, ArgShort = 2 }, // CHOICE → LABEL 2
+            new() { Op = 0xF4, ArgShort = 1 },
+            new() { Op = 0x34, ArgShort = -1 }, // MSG_NPC (Yes branch)
+            new() { Op = 0xEF },
+            new() { Op = 0xF4, ArgShort = 2 },
+            new() { Op = 0x33, ArgShort = -1 }, // MSG_QUIET (No branch)
+            new() { Op = 0xEF },
+        };
+
+        var vm = GroundScriptVm.FromActors([("talk", cmds, 0)]);
+        for (var i = 0; i < 30 && !vm.WaitingForAdvance; i++)
+            vm.TickFrames(1);
+
+        Assert.True(vm.WaitingForAdvance);
+        Assert.True(vm.WaitingForChoice);
+        Assert.Equal(2, vm.Choices.Count);
+        Assert.Equal(0, vm.ChoiceIndex);
+
+        vm.MoveChoice(+1);
+        Assert.Equal(1, vm.ChoiceIndex);
+        vm.AdvanceDialogue(); // confirm second choice → LABEL 2
+
+        for (var i = 0; i < 30 && !vm.WaitingForAdvance; i++)
+            vm.TickFrames(1);
+
+        Assert.True(vm.WaitingForAdvance);
+        Assert.False(vm.WaitingForChoice);
+        Assert.Equal(PlayDialogueMode.Quiet, vm.DialogueMode);
+    }
+
+    [Fact]
+    public void AskChoiceDefaultSelectsFirstBranch()
+    {
+        var cmds = new List<ScriptCommandData>
+        {
+            new() { Op = 0xD5, ArgByte = 0, ArgShort = 0, Arg1 = -1 }, // default highlight = 0
+            new() { Op = 0xD9, ArgShort = 10 },
+            new() { Op = 0xD9, ArgShort = 20 },
+            new() { Op = 0xF4, ArgShort = 10 },
+            new() { Op = 0x34, ArgShort = -1 },
+            new() { Op = 0xEF },
+            new() { Op = 0xF4, ArgShort = 20 },
+            new() { Op = 0x33, ArgShort = -1 },
+            new() { Op = 0xEF },
+        };
+
+        var vm = GroundScriptVm.FromActors([("talk", cmds, 0)]);
+        for (var i = 0; i < 30 && !vm.WaitingForAdvance; i++)
+            vm.TickFrames(1);
+
+        Assert.Equal(0, vm.ChoiceIndex);
+        vm.AdvanceDialogue();
+        for (var i = 0; i < 30 && !vm.WaitingForAdvance; i++)
+            vm.TickFrames(1);
+
+        Assert.Equal(PlayDialogueMode.Box, vm.DialogueMode); // MSG_NPC
     }
 
     private static Scene MakeEmptyScene(int mapW, int mapH)
@@ -515,6 +743,34 @@ public sealed class ScenePlayTests
         var path = Path.GetTempFileName();
         File.WriteAllBytes(path, new byte[0x100]);
         return RomImage.Open(path);
+    }
+
+    [Fact]
+    public void AutoProgressAdvancesDialogueAfterHold()
+    {
+        var auto = new ScenePlayAutoProgress { Enabled = true, DialogueHoldSeconds = 0.5 };
+        Assert.Equal(ScenePlayAutoProgress.Action.None,
+            auto.Update(0.4, waitingForAdvance: true, scriptFinished: false, canGoNext: true));
+        Assert.Equal(ScenePlayAutoProgress.Action.AdvanceDialogue,
+            auto.Update(0.2, waitingForAdvance: true, scriptFinished: false, canGoNext: true));
+    }
+
+    [Fact]
+    public void AutoProgressGoesNextWhenScriptFinished()
+    {
+        var auto = new ScenePlayAutoProgress { Enabled = true };
+        Assert.Equal(ScenePlayAutoProgress.Action.NextScene,
+            auto.Update(0.1, waitingForAdvance: false, scriptFinished: true, canGoNext: true));
+        Assert.Equal(ScenePlayAutoProgress.Action.None,
+            auto.Update(0.1, waitingForAdvance: false, scriptFinished: true, canGoNext: false));
+    }
+
+    [Fact]
+    public void AutoProgressDisabledDoesNothing()
+    {
+        var auto = new ScenePlayAutoProgress { Enabled = false, DialogueHoldSeconds = 0.01 };
+        Assert.Equal(ScenePlayAutoProgress.Action.None,
+            auto.Update(1, waitingForAdvance: true, scriptFinished: true, canGoNext: true));
     }
 
     private static string? FindUpwards(string fileName)

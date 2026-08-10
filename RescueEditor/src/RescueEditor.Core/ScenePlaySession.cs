@@ -56,7 +56,7 @@ public sealed class ScenePlaySession
         ActiveSector = playSector;
 
         Appearance = appearance ?? PlayAppearance.CharmanderAndBulbasaur;
-        _actorSprites?.ApplyAppearance(Appearance);
+        _actorSprites?.ApplyAppearance(Appearance, rom);
 
         MapWidthPixels = ResolveMapWidth(rom, scene, mapWidthPixels, mapHeightPixels, out var height);
         MapHeightPixels = height;
@@ -130,7 +130,9 @@ public sealed class ScenePlaySession
     /// <summary>Dialogue cleaned for on-screen textbox (tags stripped, current WAIT_PRESS page).</summary>
     public string DisplayDialogue =>
         _script?.DialoguePage
-        ?? DialogueFormatter.ForTextbox(Dialogue, PlayerSpecies, PartnerSpecies);
+        ?? DialogueFormatter.ForTextbox(
+            Dialogue,
+            DialogueFormatContext.FromTeam(PlayerSpecies, PartnerSpecies));
 
     public PlayDialogueMode DialogueMode => _script?.DialogueMode ?? PlayDialogueMode.None;
     public string? DialogueSpeakerLabel => _script?.DialogueSpeakerLabel;
@@ -138,6 +140,7 @@ public sealed class ScenePlaySession
     public byte FadeAlpha => _script?.FadeAlpha ?? 0;
 
     public bool WaitingForAdvance => _script?.WaitingForAdvance == true;
+    public bool WaitingForChoice => _script?.WaitingForChoice == true;
     public bool ScriptFinished => _script?.Finished == true;
     public SceneLink? ActiveLink { get; private set; }
     public GroundCollisionMap? Collision => _collision;
@@ -147,11 +150,31 @@ public sealed class ScenePlaySession
         if (down) _held.Add(button);
         else _held.Remove(button);
 
-        if (down && button == GbaButton.A && WaitingForAdvance)
+        if (!down)
+            return;
+
+        if (WaitingForChoice)
+        {
+            switch (button)
+            {
+                case GbaButton.Up:
+                    _script?.MoveChoice(-1);
+                    return;
+                case GbaButton.Down:
+                    _script?.MoveChoice(+1);
+                    return;
+                case GbaButton.A:
+                    _script?.AdvanceDialogue();
+                    return;
+            }
+        }
+
+        if (button == GbaButton.A && WaitingForAdvance)
             _script?.AdvanceDialogue();
     }
 
     public void AdvanceDialogue() => _script?.AdvanceDialogue();
+    public void MoveChoice(int delta) => _script?.MoveChoice(delta);
 
     /// <summary>Rebuild the script VM and clear play state so the cutscene can run again.</summary>
     public void Restart()
@@ -308,7 +331,10 @@ public sealed class ScenePlaySession
             _animTick,
             _script?.VisiblePortraits,
             _portraits,
-            FadeAlpha);
+            FadeAlpha,
+            choices: _script?.Choices,
+            choiceIndex: _script?.ChoiceIndex ?? 0,
+            showChoiceMenu: _script?.WaitingForChoice == true);
 
         return camera;
     }
@@ -382,8 +408,8 @@ public sealed class ScenePlaySession
         for (var i = 0; i < sector.Lives.Count; i++)
         {
             var live = sector.Lives[i];
-            var species = Appearance.TryResolveLiveType(live.TypeId)
-                ?? GroundLivesTypes.ResolvePreviewSpecies(_rom, RomProfile.Us10, live.TypeId);
+            var species = GroundLivesTypes.ResolvePlaySpecies(
+                _rom, _profile ?? RomProfile.Us10, live.TypeId, Appearance);
             if (species <= 0)
                 continue;
             DrawLiveSprite(image, i, species, live.PixelX, live.PixelY);

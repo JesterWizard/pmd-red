@@ -175,6 +175,105 @@ public static class GroundMapIndexer
         return GroundMapRenderer.Render(asset.Name, bpl, bpc, bma, bpaFrames);
     }
 
+    /// <summary>
+    /// Dungeon mid/end shells (<c>DxxP02m</c>/<c>DxxP03m</c>) → entry assets (<c>DxxP01*</c>).
+    /// </summary>
+    public static GroundMapDefinition? TryDungeonEntryFallback(GroundMapDefinition? map)
+    {
+        if (map?.BmaName is null)
+            return null;
+
+        var m = System.Text.RegularExpressions.Regex.Match(
+            map.BmaName, @"^(D\d{2})P0([2-9])m$", System.Text.RegularExpressions.RegexOptions.CultureInvariant);
+        if (!m.Success)
+            return null;
+
+        var prefix = m.Groups[1].Value; // D09
+        var entryBase = prefix + "P01";
+        return new GroundMapDefinition
+        {
+            MapId = map.MapId,
+            Name = map.Name,
+            RenderMode = map.RenderMode,
+            GroundPlaceId = map.GroundPlaceId,
+            MapFileTableId = map.MapFileTableId,
+            Unk6 = map.Unk6,
+            Label = map.Label,
+            BplName = entryBase,
+            BpcName = entryBase + "c",
+            BmaName = entryBase + "m",
+            BpaNames = map.BpaNames,
+            GroundMapAsset = null,
+        };
+    }
+
+    /// <summary>
+    /// Render a ground map from conversion-table names when the catalog asset link is missing.
+    /// </summary>
+    public static PreviewContent? TryRenderFromMap(RomImage rom, GroundMapDefinition? map)
+    {
+        if (map?.BmaName is null || map.BplName is null || map.BpcName is null)
+            return null;
+
+        foreach (var archive in RomArchiveParser.FindArchives(rom))
+        {
+            var entries = archive.Entries
+                .GroupBy(entry => entry.Name, StringComparer.Ordinal)
+                .ToDictionary(group => group.Key, group => group.First(), StringComparer.Ordinal);
+            if (!entries.TryGetValue(map.BmaName, out var bma))
+                continue;
+            if (!entries.TryGetValue(map.BplName, out var bpl))
+                continue;
+            if (!entries.TryGetValue(map.BpcName, out var bpc) || !LooksLikeBpc(bpc))
+            {
+                var found = FindBpc(entries, map.BmaName[..^1]);
+                if (found is null)
+                    continue;
+                bpc = found;
+            }
+
+            var metadata = new Dictionary<string, string>
+            {
+                ["romName"] = bma.Name,
+                ["bplOffset"] = bpl.Offset.ToString(),
+                ["bplSize"] = bpl.Size.ToString(),
+                ["bpcOffset"] = bpc.Offset.ToString(),
+                ["bpcSize"] = bpc.Size.ToString(),
+            };
+            for (var slot = 1; slot <= 4; slot++)
+            {
+                var bpaName = bpl.Name + slot;
+                if (!entries.TryGetValue(bpaName, out var bpa))
+                    continue;
+                metadata[$"bpa{slot}Offset"] = bpa.Offset.ToString();
+                metadata[$"bpa{slot}Size"] = bpa.Size.ToString();
+            }
+
+            var asset = new AssetDescriptor
+            {
+                Id = $"ground-map-fallback:{bma.Name}",
+                Name = GroundMapNames.FormatListName(bma.Name),
+                Category = AssetCategory.GroundMaps,
+                Kind = AssetKind.GroundMap,
+                Offset = bma.Offset,
+                Size = bma.Size,
+                Format = "BPL/BPC/BMA",
+                Description = bma.Name,
+                Metadata = metadata,
+            };
+            try
+            {
+                return Render(rom, asset);
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        return null;
+    }
+
     private static byte[] BpaFrame0Tiles(ReadOnlySpan<byte> bpa)
     {
         if (bpa.Length < 4)

@@ -5,7 +5,8 @@ public readonly record struct PlayPortraitSlot(
     int Placement,
     int Emotion,
     bool Flip,
-    short Species);
+    short Species,
+    bool Hidden = false);
 
 /// <summary>
 /// Multi-actor ground script runner for Scene Play cutscenes.
@@ -42,6 +43,10 @@ public sealed class GroundScriptVm
     private readonly Dictionary<int, int> _animations = new(); // actor slot / npc -> anim
     private readonly Dictionary<int, PlayPortraitSlot> _portraits = new(); // npc id
     private readonly Dictionary<int, (int Placement, bool Flip)> _portraitPlacementMemory = new();
+    /// <summary>CMD_BYTE_2D name/portrait slot → live actor index.</summary>
+    private readonly Dictionary<int, int> _nameSlotToLive = new();
+    /// <summary>CMD_BYTE_2D mode 9/6/3 binds by live <em>type id</em> when no spawned live matches.</summary>
+    private readonly Dictionary<int, short> _nameSlotSpecies = new();
     private readonly Dictionary<int, (double X, double Y)> _livePositions = new();
     private readonly Dictionary<int, short> _liveSpecies = new();
     private readonly Dictionary<int, int> _directions = new(); // DIRECTION_* 0..7
@@ -58,6 +63,11 @@ public sealed class GroundScriptVm
     private int _fade2Current;
     /// <summary>Actor that opened the current textbox; only this actor pauses for A.</summary>
     private ScriptActor? _dialogueOwner;
+    private readonly List<DialogueChoice> _pendingChoices = new();
+    private int _choiceIndex;
+    private ScriptActor? _choiceOwner;
+
+    public readonly record struct DialogueChoice(int LabelId, string Text);
 
     public GroundScriptVm(
         RomImage rom,
@@ -82,10 +92,35 @@ public sealed class GroundScriptVm
         if (station?.Commands is { Count: > 0 })
             _actors.Add(new ScriptActor("station", station.Commands, npcId: -1));
 
-        // Tiny Woods (and most event scripts) begin with FADE_OUT — keep the first
-        // paint black so we never flash the map before the script runs.
-        _fadeMainCurrent = 255;
-        _fadeMainTarget = 255;
+        // Seed type-id name binds from this map's scripts up through the current group
+        // (e.g. g31 binds Xatu to slot 9; g32 reuses that telepathy slot).
+        SeedTypeIdBindsFromMap();
+
+        // Only start black when the station opens with FADE_OUT; cutscenes that
+        // continue an already-visible map (g32 calamity) never call FADE_IN.
+        if (StationOpensWithFadeOut(station?.Commands))
+        {
+            _fadeMainCurrent = 255;
+            _fadeMainTarget = 255;
+        }
+        else
+        {
+            _fadeMainCurrent = 0;
+            _fadeMainTarget = 0;
+        }
+    }
+
+    private static bool StationOpensWithFadeOut(IReadOnlyList<ScriptCommandData>? commands)
+    {
+        if (commands is null)
+            return false;
+        foreach (var cmd in commands)
+        {
+            if (cmd.Op == 0xF6) // DEBUGINFO
+                continue;
+            return cmd.Op == 0x23; // FADE_OUT
+        }
+        return false;
     }
 
     /// <summary>Test helper: run a bare command list as a single actor.</summary>
@@ -126,6 +161,11 @@ public sealed class GroundScriptVm
     public string? DialogueSpeakerLabel { get; private set; }
     public bool DialogueUsesSpeechIcon { get; private set; }
     public bool WaitingForAdvance { get; private set; }
+    /// <summary>True while an ASK menu is open (↑↓ select, A confirms).</summary>
+    public bool WaitingForChoice => _pendingChoices.Count > 0 && WaitingForAdvance &&
+        _dialoguePageIndex + 1 >= _dialoguePages.Count;
+    public IReadOnlyList<DialogueChoice> Choices => _pendingChoices;
+    public int ChoiceIndex => _choiceIndex;
     public int? MusicId { get; private set; }
     public bool Finished { get; private set; }
     public bool HasActors => _actors.Count > 0;
@@ -160,7 +200,7 @@ public sealed class GroundScriptVm
                 yield break;
             if (DialogueSpeakerId < 0)
                 yield break;
-            if (_portraits.TryGetValue(DialogueSpeakerId, out var slot))
+            if (_portraits.TryGetValue(DialogueSpeakerId, out var slot) && !slot.Hidden)
                 yield return slot;
         }
     }
@@ -239,8 +279,49 @@ public sealed class GroundScriptVm
             return;
         }
 
+        // Last page of an ASK: A confirms the highlighted choice (retail menu+textbox).
+        if (_pendingChoices.Count > 0)
+        {
+            ConfirmChoice(_choiceIndex);
+            return;
+        }
+
+        ClearDialogueState();
+    }
+
+    /// <summary>Move the ASK menu highlight (wraps).</summary>
+    public void MoveChoice(int delta)
+    {
+        if (_pendingChoices.Count == 0 || !WaitingForChoice)
+            return;
+        var n = _pendingChoices.Count;
+        _choiceIndex = ((_choiceIndex + delta) % n + n) % n;
+    }
+
+    /// <summary>Jump to the LABEL id stored on the selected CHOICE (decomp <c>FindLabel</c>).</summary>
+    public void ConfirmChoice(int index)
+    {
+        if (_pendingChoices.Count == 0)
+            return;
+        if (index < 0 || index >= _pendingChoices.Count)
+            index = _choiceIndex;
+        var labelId = _pendingChoices[index].LabelId;
+        var owner = _choiceOwner;
+        ClearDialogueState();
+        if (owner is null || owner.Done)
+            return;
+        var target = FindLabelIndex(owner.Commands, labelId);
+        if (target >= 0)
+            owner.Index = target;
+    }
+
+    private void ClearDialogueState()
+    {
         WaitingForAdvance = false;
         _dialogueOwner = null;
+        _choiceOwner = null;
+        _pendingChoices.Clear();
+        _choiceIndex = 0;
         Dialogue = null;
         DialoguePage = null;
         DialogueMode = PlayDialogueMode.None;
@@ -439,15 +520,25 @@ public sealed class GroundScriptVm
                 return true;
 
             case 0x30: // TEXTBOX_CLEAR
-                Dialogue = null;
-                DialoguePage = null;
-                DialogueMode = PlayDialogueMode.None;
-                WaitingForAdvance = false;
-                _dialogueOwner = null;
-                _dialoguePages = Array.Empty<string>();
-                _dialogueHoldFrames = 0;
-                _autoDismissDialogue = false;
-                _autoDismissHoldFrames = 0;
+                ClearDialogueState();
+                actor.Index++;
+                return true;
+
+            case 0xD2: // ASK_DEBUG / ASK1 / ASK2 / ASK3 (+ VAR forms)
+            case 0xD3:
+            case 0xD4:
+            case 0xD5:
+            case 0xD6:
+            case 0xD7:
+            case 0xD8:
+            {
+                if (WaitingForAdvance && _dialogueOwner is not null && !ReferenceEquals(_dialogueOwner, actor))
+                    return false;
+                BeginAsk(cmd, actor);
+                return false;
+            }
+
+            case 0xD9: // CHOICE — consumed by ASK; orphans are skipped
                 actor.Index++;
                 return true;
 
@@ -596,9 +687,25 @@ public sealed class GroundScriptVm
                 actor.Index++;
                 return true;
 
-            case 0x2D: // format-buffer / lives id setup — skip for preview
+            case 0x2D: // Portrait/name slot bind (textbox.c / ground_script case 7…)
+            {
+                // argByte selects bind mode; argShort is the portrait/name slot.
+                var mode = cmd.ArgByte;
+                var slot = cmd.ArgShort;
+                if (mode is 7 or 8 or 1 or 2 or 4 or 5)
+                {
+                    // Bind slot to the current live actor's identity.
+                    var liveId = actor.NpcId >= 0 ? actor.NpcId : 0;
+                    BindNamePortraitSlot(slot, liveId, emotion: 0);
+                }
+                else if (mode is 3 or 6 or 9)
+                {
+                    // arg1 is a live *type id* (sub_80A7AE8 / sub_80A2598 fallback).
+                    BindNamePortraitSlotByType(slot, (int)cmd.Arg1, emotion: 0);
+                }
                 actor.Index++;
                 return true;
+            }
 
             case 0x56: // Attach emotion effect (NOTICE/QUESTION/SHOCK/SWEAT/SMILE/ANGRY)
             {
@@ -867,28 +974,186 @@ public sealed class GroundScriptVm
             _portraitPlacementMemory[npcId] = (place, flip);
         }
 
+        // Emotion -2: telepathy / no face file (ScriptSetPortraitInfo spriteId == -2).
+        var hidden = emotion == -2;
         var species = ResolveNpcSpecies(npcId);
-        _portraits[npcId] = new PlayPortraitSlot(npcId, place, emotion, flip, species);
+        _portraits[npcId] = new PlayPortraitSlot(npcId, place, hidden ? 0 : emotion, flip, species, hidden);
+    }
+
+    /// <summary>
+    /// CMD_BYTE_2D bind: retail <c>sub_80A2558</c> wires a textbox name/portrait slot to a live.
+    /// </summary>
+    private void BindNamePortraitSlot(int slot, int liveId, int emotion)
+    {
+        if (slot < 0)
+            return;
+
+        _nameSlotToLive[slot] = liveId;
+        _nameSlotSpecies.Remove(slot);
+        var species = ResolveLiveIndexSpecies(liveId);
+        UpsertPortraitSpecies(slot, species, emotion, hidden: false);
+    }
+
+    /// <summary>
+    /// Mode 9/6/3: bind by live type id. Prefer a spawned live of that type; else ROM species.
+    /// </summary>
+    private void BindNamePortraitSlotByType(int slot, int typeId, int emotion)
+    {
+        if (slot < 0)
+            return;
+
+        // Find spawned live whose TypeId matches.
+        if (_scene is not null)
+        {
+            var sector = _scene.Groups.ElementAtOrDefault(ActiveGroup)?
+                .Sectors.ElementAtOrDefault(ActiveSector);
+            if (sector is not null)
+            {
+                for (var i = 0; i < sector.Lives.Count; i++)
+                {
+                    if (sector.Lives[i].TypeId != typeId)
+                        continue;
+                    BindNamePortraitSlot(slot, i, emotion);
+                    if (_rom is not null && _profile is not null)
+                    {
+                        var sp = GroundLivesTypes.ResolvePlaySpecies(
+                            _rom, _profile, typeId, _appearance);
+                        if (sp > 0)
+                            _nameSlotSpecies[slot] = sp;
+                    }
+                    return;
+                }
+            }
+        }
+
+        if (_rom is null || _profile is null)
+            return;
+        var species = GroundLivesTypes.ResolvePlaySpecies(_rom, _profile, typeId, _appearance);
+        if (species <= 0)
+            return;
+        _nameSlotToLive.Remove(slot);
+        _nameSlotSpecies[slot] = species;
+        UpsertPortraitSpecies(slot, species, emotion, hidden: false);
+    }
+
+    private void UpsertPortraitSpecies(int slot, short species, int emotion, bool hidden)
+    {
+        var place = 0;
+        var flip = false;
+        if (_portraitPlacementMemory.TryGetValue(slot, out var mem))
+        {
+            place = mem.Placement;
+            flip = mem.Flip;
+        }
+
+        if (_portraits.TryGetValue(slot, out var existing))
+        {
+            place = existing.Placement;
+            flip = existing.Flip;
+            if (existing.Hidden)
+                hidden = true;
+            if (existing.Emotion != 0 && emotion == 0)
+                emotion = existing.Emotion;
+        }
+
+        _portraits[slot] = new PlayPortraitSlot(slot, place, emotion, flip, species, hidden);
+    }
+
+    private void EnsureSpeakerPortrait(int speakerId)
+    {
+        if (speakerId < 0)
+            return;
+        if (_portraits.TryGetValue(speakerId, out var existing))
+        {
+            // Telepathy / already configured — keep species from type binds.
+            if (existing.Hidden || existing.Species > 0)
+                return;
+        }
+
+        if (_nameSlotSpecies.TryGetValue(speakerId, out var fromType) && fromType > 0)
+        {
+            UpsertPortraitSpecies(speakerId, fromType, emotion: 0, hidden: false);
+            return;
+        }
+
+        var liveId = _nameSlotToLive.TryGetValue(speakerId, out var bound) ? bound : speakerId;
+        BindNamePortraitSlot(speakerId, liveId, emotion: 0);
     }
 
     private short ResolveNpcSpecies(int npcId)
     {
-        if (_liveSpecies.TryGetValue(npcId, out var known) && known > 0)
+        if (_nameSlotSpecies.TryGetValue(npcId, out var fromType) && fromType > 0)
+            return fromType;
+        if (_nameSlotToLive.TryGetValue(npcId, out var boundLive))
+            return ResolveLiveIndexSpecies(boundLive);
+        return ResolveLiveIndexSpecies(npcId);
+    }
+
+    private short ResolveLiveIndexSpecies(int liveId)
+    {
+        if (_liveSpecies.TryGetValue(liveId, out var known) && known > 0)
             return known;
         if (_appearance is not null)
         {
-            if (npcId == 0) return _appearance.PlayerSpecies;
-            if (npcId == 1) return _appearance.PartnerSpecies;
+            if (liveId == 0) return _appearance.PlayerSpecies;
+            if (liveId == 1) return _appearance.PartnerSpecies;
         }
 
         var sector = _scene?.Groups.ElementAtOrDefault(ActiveGroup)?
             .Sectors.ElementAtOrDefault(ActiveSector);
-        var live = sector?.Lives.ElementAtOrDefault(npcId);
+        var live = sector?.Lives.ElementAtOrDefault(liveId);
         if (live is null || _rom is null || _profile is null)
             return _appearance?.PlayerSpecies ?? 1;
-        if (_appearance?.TryResolveLiveType(live.TypeId) is short over)
-            return over;
-        return GroundLivesTypes.ResolvePreviewSpecies(_rom, _profile, live.TypeId);
+        return GroundLivesTypes.ResolvePlaySpecies(_rom, _profile, live.TypeId, _appearance);
+    }
+
+    /// <summary>
+    /// Apply mode-9/6/3 type-id name binds from earlier (and current) groups on this map
+    /// so telepathy slots like Xatu persist when Scene Play opens mid-story.
+    /// </summary>
+    private void SeedTypeIdBindsFromMap()
+    {
+        if (_scene is null || _rom is null)
+            return;
+
+        foreach (var group in _scene.Groups.OrderBy(g => g.Index))
+        {
+            if (group.Index > ActiveGroup)
+                break;
+            foreach (var sector in group.Sectors)
+            {
+                foreach (var station in sector.Stations)
+                    SeedTypeIdBindsFromCommands(station.Commands);
+                foreach (var live in sector.Lives)
+                {
+                    foreach (var offset in live.ScriptOffsets.Where(o => o > 0))
+                    {
+                        try
+                        {
+                            SeedTypeIdBindsFromCommands(ScriptCodec.ReadScript(_rom, offset));
+                        }
+                        catch
+                        {
+                            // Ignore unreadable script slots.
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void SeedTypeIdBindsFromCommands(IReadOnlyList<ScriptCommandData>? commands)
+    {
+        if (commands is null)
+            return;
+        foreach (var cmd in commands)
+        {
+            if (cmd.Op != 0x2D)
+                continue;
+            if (cmd.ArgByte is not (3 or 6 or 9))
+                continue;
+            BindNamePortraitSlotByType(cmd.ArgShort, (int)cmd.Arg1, emotion: 0);
+        }
     }
 
     private static bool IsFlipPlacement(int placement) => placement is
@@ -906,6 +1171,73 @@ public sealed class GroundScriptVm
             woke = true;
         }
         return woke;
+    }
+
+    private void BeginAsk(ScriptCommandData ask, ScriptActor actor)
+    {
+        // Text type matches ground_script.c → SCRIPT_TEXT_TYPE_*.
+        var textType = ask.Op switch
+        {
+            0xD2 or 0xD3 or 0xD6 => 0, // INSTANT
+            0xD4 or 0xD7 => 1,         // QUIET
+            _ => 2,                    // NPC (ASK3 / ASK3_VAR)
+        };
+        // ASK(b, default, speaker, text): speaker is Arg1, default highlight is ArgShort.
+        ShowText(ask, actor, speakerOverride: (int)ask.Arg1, textTypeOverride: textType);
+
+        _pendingChoices.Clear();
+        _choiceOwner = actor;
+        _choiceIndex = 0;
+        actor.Index++; // past ASK
+
+        // Optional VARIANT / VARIANT_DEFAULT arms (ASK*_VAR) — skip; keep ASK text.
+        while (actor.Index < actor.Commands.Count)
+        {
+            var op = actor.Commands[actor.Index].Op;
+            if (op is 0xD0 or 0xD1)
+            {
+                actor.Index++;
+                continue;
+            }
+            break;
+        }
+
+        var starredIndex = -1;
+        while (actor.Index < actor.Commands.Count && actor.Commands[actor.Index].Op == 0xD9)
+        {
+            var choice = actor.Commands[actor.Index];
+            actor.Index++;
+            var raw = DecodeCommandText(choice) ?? string.Empty;
+            var text = DialogueFormatter.ForTextbox(raw, BuildFormatContext()).Trim();
+            var starred = text.StartsWith('*');
+            if (starred)
+                text = text[1..].TrimStart();
+            if (string.IsNullOrWhiteSpace(text))
+                text = $"Choice {_pendingChoices.Count + 1}";
+            _pendingChoices.Add(new DialogueChoice(choice.ArgShort, text));
+            if (starred && starredIndex < 0)
+                starredIndex = _pendingChoices.Count - 1;
+        }
+
+        if (_pendingChoices.Count == 0)
+            return;
+
+        // Default highlight: ASK.argShort when in range, else first '*'-marked, else 0.
+        var def = ask.ArgShort;
+        if (def >= 0 && def < _pendingChoices.Count)
+            _choiceIndex = def;
+        else if (starredIndex >= 0)
+            _choiceIndex = starredIndex;
+        else
+            _choiceIndex = 0;
+    }
+
+    private string? DecodeCommandText(ScriptCommandData cmd)
+    {
+        if (_charmap is not null && _rom is not null &&
+            _rom.TryPointerToOffset(cmd.ArgPtr, out var textOffset))
+            return _charmap.DecodeRomString(_rom, textOffset, 768);
+        return null;
     }
 
     private void ConsumeVariantDefault(ScriptActor actor, int speakerId, int textType)
@@ -937,10 +1269,7 @@ public sealed class GroundScriptVm
                     }
                 }
                 // Rebuild pages now that extras were appended.
-                _dialoguePages = DialogueFormatter.SplitPages(
-                    Dialogue,
-                    _appearance?.PlayerSpecies ?? 0,
-                    _appearance?.PartnerSpecies ?? 0);
+                _dialoguePages = DialogueFormatter.SplitPages(Dialogue, BuildFormatContext());
                 _dialoguePageIndex = 0;
                 DialoguePage = _dialoguePages.Count > 0 ? _dialoguePages[0] : string.Empty;
                 return;
@@ -969,6 +1298,14 @@ public sealed class GroundScriptVm
         Dialogue = raw;
         DialogueSpeakerId = speakerOverride ?? cmd.ArgShort;
 
+        // A normal MSG replaces any prior ASK menu.
+        if (cmd.Op is not (0xD2 or 0xD3 or 0xD4 or 0xD5 or 0xD6 or 0xD7 or 0xD8))
+        {
+            _pendingChoices.Clear();
+            _choiceOwner = null;
+            _choiceIndex = 0;
+        }
+
         var type = textTypeOverride ?? cmd.Op switch
         {
             0x32 => 0, // INSTANT
@@ -991,17 +1328,17 @@ public sealed class GroundScriptVm
         DialogueUsesSpeechIcon = DialogueMode == PlayDialogueMode.Box && DialogueSpeakerId < 0;
         DialogueSpeakerLabel = null;
         if (DialogueMode == PlayDialogueMode.Box && DialogueSpeakerId >= 0)
+        {
+            EnsureSpeakerPortrait(DialogueSpeakerId);
             DialogueSpeakerLabel = ResolveSpeakerLabel(DialogueSpeakerId);
+        }
         if (DialogueMode == PlayDialogueMode.Quiet)
         {
             DialogueUsesSpeechIcon = false;
             DialogueSpeakerLabel = null;
         }
 
-        _dialoguePages = DialogueFormatter.SplitPages(
-            raw,
-            _appearance?.PlayerSpecies ?? 0,
-            _appearance?.PartnerSpecies ?? 0);
+        _dialoguePages = DialogueFormatter.SplitPages(raw, BuildFormatContext());
         _dialoguePageIndex = 0;
         DialoguePage = _dialoguePages.Count > 0 ? _dialoguePages[0] : string.Empty;
 
@@ -1014,12 +1351,101 @@ public sealed class GroundScriptVm
         _dialogueHoldFrames = 0;
     }
 
+    private DialogueFormatContext BuildFormatContext()
+    {
+        var names = new string?[10];
+        var speciesNames = new string?[10];
+
+        var player = _appearance?.PlayerSpecies ?? 0;
+        var partner = _appearance?.PartnerSpecies ?? 0;
+        if (player > 0)
+        {
+            names[0] = DialogueFormatter.PrettySpeciesName(player);
+            speciesNames[0] = names[0];
+        }
+        if (partner > 0)
+        {
+            names[1] = DialogueFormatter.PrettySpeciesName(partner);
+            speciesNames[1] = names[1];
+        }
+
+        // Prefer CMD_BYTE_2D bindings, then runtime live species, else sector lives.
+        foreach (var (slot, species) in _nameSlotSpecies)
+        {
+            if (slot is < 0 or > 9 || species <= 0)
+                continue;
+            var label = DialogueFormatter.PrettySpeciesName(species);
+            names[slot] = label;
+            speciesNames[slot] = label;
+        }
+
+        foreach (var (slot, liveId) in _nameSlotToLive)
+        {
+            if (slot is < 0 or > 9 || _nameSlotSpecies.ContainsKey(slot))
+                continue;
+            var species = ResolveLiveIndexSpecies(liveId);
+            if (species <= 0)
+                continue;
+            var label = DialogueFormatter.PrettySpeciesName(species);
+            names[slot] = label;
+            speciesNames[slot] = label;
+        }
+
+        if (_liveSpecies.Count > 0)
+        {
+            foreach (var (id, species) in _liveSpecies)
+            {
+                if (id < 0 || id > 9 || species <= 0)
+                    continue;
+                if (_nameSlotToLive.ContainsKey(id) || _nameSlotSpecies.ContainsKey(id))
+                    continue;
+                var label = DialogueFormatter.PrettySpeciesName(species);
+                names[id] ??= label;
+                speciesNames[id] ??= label;
+            }
+        }
+        else if (_scene is not null)
+        {
+            var sector = _scene.Groups.ElementAtOrDefault(ActiveGroup)?
+                .Sectors.ElementAtOrDefault(ActiveSector);
+            if (sector is not null)
+            {
+                for (var i = 0; i < sector.Lives.Count && i <= 9; i++)
+                {
+                    if (_nameSlotToLive.ContainsKey(i) || _nameSlotSpecies.ContainsKey(i))
+                        continue;
+                    var live = sector.Lives[i];
+                    var species = (_rom is not null && _profile is not null)
+                        ? GroundLivesTypes.ResolvePlaySpecies(
+                            _rom, _profile, live.TypeId, _appearance)
+                        : (short)0;
+                    if (species <= 0)
+                        continue;
+                    var label = DialogueFormatter.PrettySpeciesName(species);
+                    names[i] ??= label;
+                    speciesNames[i] ??= label;
+                }
+            }
+        }
+
+        return new DialogueFormatContext(player, partner, names, speciesNames);
+    }
+
     private string ResolveSpeakerLabel(int speakerId)
     {
+        if (_nameSlotSpecies.TryGetValue(speakerId, out var typed) && typed > 0)
+            return DialogueFormatter.PrettySpeciesName(typed);
+
+        if (_nameSlotToLive.TryGetValue(speakerId, out var liveBound))
+            return DialogueFormatter.PrettySpeciesName(ResolveLiveIndexSpecies(liveBound));
+
         if (speakerId == 0 && _appearance is not null)
             return DialogueFormatter.PrettySpeciesName(_appearance.PlayerSpecies);
         if (speakerId == 1 && _appearance is not null)
             return DialogueFormatter.PrettySpeciesName(_appearance.PartnerSpecies);
+
+        if (_liveSpecies.TryGetValue(speakerId, out var liveSpecies) && liveSpecies > 0)
+            return DialogueFormatter.PrettySpeciesName(liveSpecies);
 
         if (_rom is not null && _scene is not null && _profile is not null)
         {
@@ -1028,8 +1454,8 @@ public sealed class GroundScriptVm
                 .Lives.ElementAtOrDefault(speakerId);
             if (live is not null)
             {
-                var species = _appearance?.TryResolveLiveType(live.TypeId)
-                    ?? GroundLivesTypes.ResolvePreviewSpecies(_rom, _profile, live.TypeId);
+                var species = GroundLivesTypes.ResolvePlaySpecies(
+                    _rom, _profile, live.TypeId, _appearance);
                 if (species > 0)
                     return DialogueFormatter.PrettySpeciesName(species);
             }
@@ -1064,8 +1490,8 @@ public sealed class GroundScriptVm
             _livePositions[id] = (live.PixelX, live.PixelY);
             _directions[id] = live.DirectionOrFlags & 7;
 
-            var species = _appearance?.TryResolveLiveType(live.TypeId)
-                ?? GroundLivesTypes.ResolvePreviewSpecies(_rom, _profile!, live.TypeId);
+            var species = GroundLivesTypes.ResolvePlaySpecies(
+                _rom, _profile!, live.TypeId, _appearance);
             _liveSpecies[id] = species;
 
             if (_actors.Any(a => a.NpcId == id && a.Name.StartsWith("live", StringComparison.Ordinal)))

@@ -20,10 +20,77 @@ public static class SceneCompositor
 {
     public static PreviewContent? RenderMapBackground(RomImage rom, Scene scene)
     {
+        var primary = TryRenderMapPrimary(rom, scene);
+        if (primary is not null && !IsVisuallyFlat(primary))
+            return primary;
+
+        // Dungeon shell maps (DxxP02/P03, render modes 10/11) store a near-empty BMA;
+        // retail fills tiles via dungeon generation. Fall back to the entry BMA (DxxP01).
+        var entry = GroundMapIndexer.TryDungeonEntryFallback(scene.Map);
+        if (entry is not null)
+        {
+            try
+            {
+                var fallback = GroundMapIndexer.TryRenderFromMap(rom, entry);
+                if (fallback is not null && !IsVisuallyFlat(fallback))
+                    return fallback;
+            }
+            catch
+            {
+                // Keep primary / null.
+            }
+        }
+
+        return primary;
+    }
+
+    private static PreviewContent? TryRenderMapPrimary(RomImage rom, Scene scene)
+    {
         var asset = scene.Map?.GroundMapAsset;
-        if (asset is null)
+        if (asset is not null)
+        {
+            try
+            {
+                return GroundMapIndexer.Render(rom, asset);
+            }
+            catch
+            {
+                // Fall through to name-based archive lookup.
+            }
+        }
+
+        try
+        {
+            return GroundMapIndexer.TryRenderFromMap(rom, scene.Map);
+        }
+        catch
+        {
             return null;
-        return GroundMapIndexer.Render(rom, asset);
+        }
+    }
+
+    /// <summary>True when a ground render has almost no palette variety (empty dungeon shell).</summary>
+    public static bool IsVisuallyFlat(PreviewContent content)
+    {
+        if (content.Png is null)
+            return true;
+        var image = RgbaImage.FromPng(content.Png);
+        if (image is null || image.Width < 8 || image.Height < 8)
+            return true;
+
+        var colors = new HashSet<int>();
+        var stepX = Math.Max(1, image.Width / 48);
+        var stepY = Math.Max(1, image.Height / 32);
+        for (var y = 0; y < image.Height; y += stepY)
+        for (var x = 0; x < image.Width; x += stepX)
+        {
+            var o = (y * image.Width + x) * 4;
+            colors.Add(image.Pixels[o] | (image.Pixels[o + 1] << 8) | (image.Pixels[o + 2] << 16));
+            if (colors.Count >= 12)
+                return false;
+        }
+
+        return colors.Count < 8;
     }
 
     public static byte[] ComposeScenePng(
@@ -257,6 +324,23 @@ public static class SceneCompositor
     {
         var width = 240;
         var height = 160;
+        foreach (var note in scene.Diagnostics)
+        {
+            const string prefix = "playMapTiles:";
+            if (!note.StartsWith(prefix, StringComparison.Ordinal))
+                continue;
+            var parts = note[prefix.Length..].Split('x');
+            if (parts.Length == 2 &&
+                int.TryParse(parts[0], out var tw) &&
+                int.TryParse(parts[1], out var th) &&
+                tw > 0 && th > 0)
+            {
+                width = Math.Max(240, tw * 8);
+                height = Math.Max(160, th * 8);
+                break;
+            }
+        }
+
         var pixels = new byte[width * height * 4];
         for (var i = 0; i < pixels.Length; i += 4)
         {

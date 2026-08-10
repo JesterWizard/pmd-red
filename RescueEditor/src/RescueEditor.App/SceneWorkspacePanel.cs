@@ -1290,7 +1290,7 @@ public sealed class SceneWorkspacePanel : UserControl
 
     private void OnKeyDown(object? sender, KeyEventArgs e)
     {
-        if (_changes is null)
+        if (!IsKeyboardFocusWithin || _changes is null)
             return;
 
         var chord = new KeyChord(

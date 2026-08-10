@@ -12,6 +12,8 @@ public sealed class ActorSpriteAtlas
     private readonly Dictionary<int, int> _frameCount = new();
     private readonly Dictionary<int, RgbaImage?> _byLiveType = new();
     private readonly Dictionary<byte, short> _liveTypeSpeciesOverrides = new();
+    private readonly Dictionary<(int Species, int Pose), RgbaImage?> _assembledPoses = new();
+    private readonly Dictionary<int, bool?> _multiPiece = new();
     private RomProfile? _profile;
 
     public ActorSpriteAtlas(string repositoryRoot, RomProfile? profile = null)
@@ -44,10 +46,18 @@ public sealed class ActorSpriteAtlas
         return hint;
     }
 
-    public void ApplyAppearance(PlayAppearance appearance)
+    public void ApplyAppearance(PlayAppearance appearance, RomImage? rom = null)
     {
         foreach (byte typeId in new byte[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 33, 34, 35 })
         {
+            // Never remapping fixed ROM species — only dynamic (species 0) hero/partner kinds.
+            if (rom is not null && _profile is not null)
+            {
+                var fromRom = GroundLivesTypes.ResolveSpecies(rom, _profile, typeId);
+                if (fromRom > 0)
+                    continue;
+            }
+
             var species = appearance.TryResolveLiveType(typeId);
             if (species is short s && s > 0)
                 SetLiveTypeSpecies(typeId, s);
@@ -70,7 +80,10 @@ public sealed class ActorSpriteAtlas
         _profile ??= RomProfile.Us10;
 
         short species;
-        if (_liveTypeSpeciesOverrides.TryGetValue(typeId, out var over))
+        var fromRom = GroundLivesTypes.ResolveSpecies(rom, _profile, typeId);
+        if (fromRom > 0)
+            species = fromRom;
+        else if (_liveTypeSpeciesOverrides.TryGetValue(typeId, out var over))
             species = over;
         else
             species = GroundLivesTypes.ResolvePreviewSpecies(rom, _profile, typeId);
@@ -80,8 +93,19 @@ public sealed class ActorSpriteAtlas
         return sprite;
     }
 
-    public RgbaImage? TryGetSpeciesSprite(int speciesId) =>
-        TryGetSpeciesSprite(speciesId, frameIndex: 0);
+    public RgbaImage? TryGetSpeciesSprite(int speciesId)
+    {
+        if (speciesId <= 0)
+            return null;
+        if (IsMultiPiece(speciesId))
+        {
+            var assembled = TryGetAssembledPose(speciesId, poseNumber: 1);
+            if (assembled is not null)
+                return assembled;
+        }
+
+        return TryGetSpeciesSprite(speciesId, frameIndex: 0);
+    }
 
     /// <summary>
     /// AX sprite index (0 → <c>sprite_1.png</c>) lookup.
@@ -128,10 +152,19 @@ public sealed class ActorSpriteAtlas
             return (img, false);
         }
 
+        // Multi-OAM monsters (Moltres, etc.): composite full poses — raw sheet pieces jitter/clip.
+        if (IsMultiPiece(speciesId))
+        {
+            var pose = AxPoseAssembler.IdlePoseForDirection(dir);
+            var assembled = TryGetAssembledPose(speciesId, pose);
+            if (assembled is not null)
+                return (assembled, false);
+        }
+
         var (baseIndex, flip) = IdleSpriteForDirection(dir);
         var cycle = isMoving || (animationId != GroundScriptVm.AnimIdle && animationId > 0 && animationId != GroundScriptVm.AnimSleep);
         var frameOffset = 0;
-        if (cycle)
+        if (cycle && FramesHaveUniformSize(speciesId, baseIndex))
         {
             // Each facing has a 3-frame walk/idle group (base, base+1, base+2).
             frameOffset = (tickFrames / 8) % 3;
@@ -167,14 +200,64 @@ public sealed class ActorSpriteAtlas
     /// <summary>AX_POSE(47) → sprite_48.png for typical sleep anim 6.</summary>
     public const int SleepSpriteIndex = 47;
 
+    private bool IsMultiPiece(int speciesId)
+    {
+        if (_multiPiece.TryGetValue(speciesId, out var cached) && cached is not null)
+            return cached.Value;
+
+        var folder = ResolveFolder(speciesId);
+        var multi = folder is not null && AxPoseAssembler.IsMultiPieceMonster(_repositoryRoot, folder);
+        _multiPiece[speciesId] = multi;
+        return multi;
+    }
+
+    private RgbaImage? TryGetAssembledPose(int speciesId, int poseNumber)
+    {
+        if (_assembledPoses.TryGetValue((speciesId, poseNumber), out var cached))
+            return cached;
+
+        var folder = ResolveFolder(speciesId);
+        RgbaImage? image = null;
+        if (folder is not null)
+            image = AxPoseAssembler.TryAssemble(_repositoryRoot, folder, poseNumber);
+        _assembledPoses[(speciesId, poseNumber)] = image;
+        return image;
+    }
+
+    private string? ResolveFolder(int speciesId)
+    {
+        if (_folders.TryGetValue(speciesId, out var mapped))
+            return mapped;
+        return MonsterSpriteFolders.ForSpecies(speciesId, _folders);
+    }
+
+    private bool FramesHaveUniformSize(int speciesId, int baseIndex)
+    {
+        RgbaImage? first = null;
+        for (var i = 0; i < 3; i++)
+        {
+            var frame = TryGetSpeciesSprite(speciesId, baseIndex + i);
+            if (frame is null)
+                continue;
+            if (first is null)
+            {
+                first = frame;
+                continue;
+            }
+
+            if (frame.Width != first.Width || frame.Height != first.Height)
+                return false;
+        }
+
+        return true;
+    }
+
     private void EnsureFramesLoaded(int speciesId)
     {
         if (_frameCount.ContainsKey(speciesId))
             return;
 
-        var folder = _folders.TryGetValue(speciesId, out var mapped)
-            ? mapped
-            : MonsterSpriteFolders.ForSpecies(speciesId, _folders);
+        var folder = ResolveFolder(speciesId);
         if (folder is null)
         {
             _frameCount[speciesId] = 0;

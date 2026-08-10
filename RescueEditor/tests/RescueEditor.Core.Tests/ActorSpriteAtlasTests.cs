@@ -273,6 +273,83 @@ public class ActorSpriteAtlasTests
         Assert.Equal(image.Width - 1, westX + eastX);
     }
 
+    [Fact]
+    public void MoltresAssemblesMultiPiecePoseLargerThanSingleOam()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "moltres.h")))
+            return;
+
+        Assert.True(AxPoseAssembler.IsMultiPieceMonster(root, "moltres"));
+        var pieces = AxPoseAssembler.ParsePose(root, "moltres", poseNumber: 1);
+        Assert.NotNull(pieces);
+        Assert.True(pieces!.Count >= 5, $"Expected multi-OAM pose, got {pieces.Count}");
+
+        var assembled = AxPoseAssembler.TryAssemble(root, "moltres", poseNumber: 1);
+        Assert.NotNull(assembled);
+        // Single piece sprite_1 is 32×24; full bird must be substantially wider.
+        Assert.True(assembled!.Width >= 64, $"Assembled width {assembled.Width}");
+        Assert.True(assembled.Height >= 28, $"Assembled height {assembled.Height}");
+        Assert.True(CountOpaque(assembled) >= 400, $"Assembled too empty ({CountOpaque(assembled)})");
+
+        var atlas = new ActorSpriteAtlas(root);
+        var south = atlas.TryGetAnimatedSprite(
+            speciesId: 146,
+            animationId: GroundScriptVm.AnimIdle,
+            direction: GroundScriptVm.DirSouth,
+            tickFrames: 0);
+        Assert.NotNull(south);
+        Assert.True(south!.Value.Image.Width >= 64);
+
+        // Multi-piece idle must not cycle mismatched OAM scraps (jitter).
+        var north0 = atlas.TryGetAnimatedSprite(
+            speciesId: 146,
+            animationId: GroundScriptVm.AnimIdle,
+            direction: GroundScriptVm.DirNorth,
+            tickFrames: 0,
+            isMoving: true);
+        var north24 = atlas.TryGetAnimatedSprite(
+            speciesId: 146,
+            animationId: GroundScriptVm.AnimIdle,
+            direction: GroundScriptVm.DirNorth,
+            tickFrames: 24,
+            isMoving: true);
+        Assert.NotNull(north0);
+        Assert.NotNull(north24);
+        Assert.Equal(north0!.Value.Image.Width, north24!.Value.Image.Width);
+        Assert.Equal(north0.Value.Image.Height, north24.Value.Image.Height);
+        Assert.True(north0.Value.Image.Width >= 40, $"North pose too narrow: {north0.Value.Image.Width}");
+        // Must not be a raw OAM scrap (e.g. 8×32).
+        Assert.True(north0.Value.Image.Width * north0.Value.Image.Height >= 40 * 40);
+    }
+
+    [Fact]
+    public void DungeonEntryFallbackMapsMtBlazeEndToEntry()
+    {
+        var map = new GroundMapDefinition
+        {
+            MapId = 197,
+            BmaName = "D09P03m",
+            BplName = "D09P03",
+            BpcName = "D09P03c",
+            RenderMode = 11,
+        };
+        var entry = GroundMapIndexer.TryDungeonEntryFallback(map);
+        Assert.NotNull(entry);
+        Assert.Equal("D09P01m", entry!.BmaName);
+        Assert.Equal("D09P01", entry.BplName);
+        Assert.Equal("D09P01c", entry.BpcName);
+    }
+
+    [Fact]
+    public void DialogueHudFitsThreeTextLines()
+    {
+        Assert.Equal(3, GbaDialogueHud.MaxTextLines);
+        Assert.True(GbaDialogueHud.TextTopPad + GbaDialogueHud.MaxTextLines * GbaDialogueHud.LineHeight
+            <= GbaDialogueHud.BoxH);
+    }
+
     private static int CountOpaque(RgbaImage img)
     {
         var n = 0;
