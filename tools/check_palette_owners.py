@@ -118,10 +118,17 @@ def main() -> None:
         fail("town coin must not use BG bank 12 (T01P03 map flowers)")
 
     if d["POKE_COIN_PAL_BANK_TOWN"] == d["FONT_BANK"]:
-        fail("town coin primary bank must be 14 (font 15 is portrait fallback only)")
+        fail("town coin primary bank must be 14")
 
-    if d.get("POKE_COIN_PAL_BANK_TOWN_FONT_FALLBACK", d["FONT_BANK"]) != d["FONT_BANK"]:
-        fail("town coin portrait fallback must be font bank 15")
+    portrait = d.get("POKE_COIN_PAL_BANK_TOWN_PORTRAIT", d.get("POKE_COIN_PAL_BANK_TOWN_FONT_FALLBACK"))
+    if portrait is None:
+        fail("missing POKE_COIN_PAL_BANK_TOWN_PORTRAIT")
+    if portrait == d["POKE_COIN_PAL_BANK_TOWN"]:
+        fail("town coin portrait bank must differ from primary 14")
+    if portrait == 12:
+        fail("town coin portrait bank must not be 12 (map flowers)")
+    if portrait == d["FONT_BANK"]:
+        fail("town coin portrait bank must not be font 15 (use full golds on 13)")
 
     gold_slots = [
         d["POKE_COIN_DUNGEON_GOLD_SLOT0"],

@@ -62,17 +62,40 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
         {
             /* Ceil X to the next tile — the 16×16 write must not cover digits
              * (coin palette bank would glitch them). Art is left-aligned in the
-             * .4bpp so the coin starts at blitX; use oy only for vertical.
-             * Offsets: include/custom_graphics.h */
+             * .4bpp so the coin starts at blitX. Vertical: per-UI oy align. */
             s32 blitX = (x + 7) & ~7;
             s32 blitY = y & ~7;
             s32 ox = gUnknown_203B40C ? POKE_COIN_OX_DUNGEON : POKE_COIN_OX_TOWN;
-            s32 oy = gUnknown_203B40C ? POKE_COIN_OY_DUNGEON : POKE_COIN_OY_TOWN;
+            s32 oyAlign;
+            s32 oy;
             u32 baseTiles[32];
             const u32 *coinTiles;
             Window *win = window;
             s32 tileX, tileY, ty, tx, row;
             bool8 haveBase = FALSE;
+            bool8 preserveBevel;
+            bool8 keepBaseText;
+
+            if (gUnknown_203B40C)
+                oyAlign = POKE_COIN_OY_DUNGEON_ALIGN;
+            else if (win->isWinType0)
+                oyAlign = POKE_COIN_OY_DIALOGUE;
+            else
+                oyAlign = POKE_COIN_OY_MENU;
+            oy = (y & 7) + oyAlign;
+
+            /* Dialogue line-2+ : floor-snapped blitY sits in the line above
+             * (11px glyphs from y=4 reach into tile row 1). Shift the 16×16
+             * down one tile and compensate oy so we never wipe "Persian". */
+            if (win->isWinType0 && blitY > 0 && (y & 7) != 0) {
+                blitY += 8;
+                oy -= 8;
+            }
+
+            /* Bevel only on the dialogue's first tile row. keepBaseText only when
+             * the blit can still share tiles with speaker-name glyphs (line 1). */
+            preserveBevel = (win->isWinType0 && blitY == 0);
+            keepBaseText = (win->isWinType0 && blitY == 0);
 
             tileX = blitX / 8;
             tileY = blitY / 8;
@@ -89,11 +112,19 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
                 haveBase = TRUE;
             }
 
-            coinTiles = BuildPokeCoinBlit(haveBase ? baseTiles : NULL, ox, oy);
+            coinTiles = BuildPokeCoinBlit(haveBase ? baseTiles : NULL, ox, oy,
+                                          preserveBevel, keepBaseText);
             if (coinTiles != NULL) {
+                u32 palBank = GetPokeCoinPalBank();
+
+                /* Line-1 dialogue coin may share bevel tiles with yellow text —
+                 * stay on font bank so those indices stay valid. */
+                if (keepBaseText)
+                    palBank = FONT_BANK;
+
                 ApplyPokeCoinPaletteForDraw();
                 WriteGFXToBG0Window(windowId, blitX, blitY, POKE_COIN_SIZE, POKE_COIN_SIZE,
-                                    (u32 *)coinTiles, GetPokeCoinPalBank());
+                                    (u32 *)coinTiles, palBank);
                 gUnknown_20274A5 = TRUE;
                 /* Advance by visible art, not the full 16×16 pad on the right. */
                 return (blitX - x) + POKE_COIN_ART_WIDTH + gCharacterSpacing;

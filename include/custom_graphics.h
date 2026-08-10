@@ -13,11 +13,14 @@
 /* Horizontal: keep ox at 0 — blitX is ceiled so the 16×16 never overlaps
  * digits; left-aligned art means the coin sits at the left of that block.
  * Large ox clips the coin (art is ~10px; ox+10 must be ≤ 16).
- * Vertical: tune town vs dungeon separately (money y: town 18, dungeon 12). */
+ *
+ * Vertical: blitY is tile-snapped (y & ~7); oy = (y & 7) + context align.
+ * Each UI needs its own align (dialogue bevel vs menu money row vs dungeon). */
 #define POKE_COIN_OX_TOWN 0
-#define POKE_COIN_OY_TOWN (-2)
 #define POKE_COIN_OX_DUNGEON 0
-#define POKE_COIN_OY_DUNGEON 0
+#define POKE_COIN_OY_DIALOGUE (-3) /* WINDOW_TYPE_0 speaker boxes */
+#define POKE_COIN_OY_MENU (-3)     /* rank / shop money rows */
+#define POKE_COIN_OY_DUNGEON_ALIGN (-4) /* field-menu money y=12 */
 
 /* Half {STAR_BULLET} for move Power rows (full stars use vanilla STAR_BULLET). */
 #define POWER_STAR_HALF_CHR 0x8754
@@ -30,11 +33,14 @@ const unkChar *GetCustomPokeCoinChar(s32 chr);
 const unkChar *GetPowerStarChar(s32 chr);
 
 /*
- * Build 16×16 coin blit. baseTiles (32 words) is existing window GFX to merge
- * into; NULL starts from transparent (index 0). Coin stamped at (ox, oy).
- * Town remaps onto font bank 15; dungeon onto bank-12 slots 8–11.
+ * Build a 16×16 blit. baseTiles: existing window GFX to merge into; NULL = empty.
+ * ox/oy: coin stamp offset (may be negative).
+ * preserveTopBevel: keep WINDOW_TYPE_0 outline rows 0–2 (dialogue blitY 0 only).
+ * keepBaseText: town dialogue — retain non-zero base pixels so an 11px line-1
+ * glyph that straddles into the coin's tile row is not wiped (e.g. "Persian").
  */
-const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy);
+const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy,
+                             bool8 preserveTopBevel, bool8 keepBaseText);
 
 /* Remap button/icon glyphs off shared gray slots; NULL if not applicable. */
 const unkChar *GetRemappedIconChar(s32 chr, const unkChar *src);
@@ -42,11 +48,10 @@ const unkChar *GetRemappedIconChar(s32 chr, const unkChar *src);
 /* Dungeon coin gold (bank 12 slots 8–11) + optional item pink @ font 11. */
 void ApplyCustomPokeCoinPalette(void);
 
-/* Ensure coin colors before a {POKE} glyph blit (town: bank 14 full gold). */
+/* Ensure coin colors before a {POKE} glyph blit (town: bank 14, or 13 with portrait). */
 void ApplyPokeCoinPaletteForDraw(void);
 
-/* Portrait owns BG bank 14 (coin font-fallbacks). Clearing only drops the flag;
- * coin golds reload lazily on the next {POKE} draw — do not stomp bank 14 here. */
+/* Portrait owns BG bank 14; coin draws on bank 13 with full golds while set. */
 void SetPokeCoinTownPortraitBankInUse(bool8 inUse);
 
 /* Active coin palette bank for WriteGFXToBG0Window. */

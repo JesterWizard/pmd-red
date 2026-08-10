@@ -12,7 +12,7 @@
  *
  * Dungeon: BG bank 12 slots 8–11 (full 4 golds); stairs indices 1–7,15 intact.
  * Town: full gold on BG bank 14 (map flowers stay on 12; rank badge on 13).
- * If a dialogue portrait owns bank 14, that draw remaps onto font bank 15.
+ * If a dialogue portrait owns bank 14, coin uses bank 13 with the same golds.
  */
 
 static const RGB_Struct sItemPinkColor = {
@@ -251,37 +251,43 @@ static void RefreshActiveFontPalette(void)
         SetBGPaletteBufferColorArray(i + 240, ptr);
 }
 
-static bool8 TownCoinUsesFontFallback(void)
+static u32 GetTownPokeCoinPalBank(void)
 {
-    return sTownPortraitOwnsBank14;
+    if (sTownPortraitOwnsBank14)
+        return POKE_COIN_PAL_BANK_TOWN_PORTRAIT;
+    return POKE_COIN_PAL_BANK_TOWN;
 }
 
 static void LoadTownPokeCoinPalette(void)
 {
     s32 i;
     s32 base;
+    const RGB_Struct *fontPal;
     const RGB_Struct *fill;
 
     if (!gRuntimeConfig.custom_graphics || gUnknown_203B40C)
         return;
 
-    base = POKE_COIN_PAL_BANK_TOWN * 16;
+    base = GetTownPokeCoinPalBank() * 16;
     for (i = 0; i < 16; i++)
         SetBGPaletteBufferColorArray(base + i, &sPokeCoinTownPal[i]);
-    /* Slot 1 mirrors font window fill so merged menu pixels stay blue. */
+
+    /* Slot 1 + WINDOW_TYPE_0 top bevel (0xD–0xF) mirror active fontpal so a
+     * coin 16×16 on the first text row does not notch the light-blue outline. */
     if (sub_80063B0() == 1)
-        fill = &gFontPalette[POKE_COIN_SLOT_WINDOW_FILL];
+        fontPal = &gFontPalette[0];
     else
-        fill = &gFontPalette[16 + POKE_COIN_SLOT_WINDOW_FILL];
+        fontPal = &gFontPalette[16];
+    fill = &fontPal[POKE_COIN_SLOT_WINDOW_FILL];
     SetBGPaletteBufferColorArray(base + POKE_COIN_SLOT_WINDOW_FILL, fill);
+    for (i = 13; i < 16; i++)
+        SetBGPaletteBufferColorArray(base + i, &fontPal[i]);
 }
 
 void SetPokeCoinTownPortraitBankInUse(bool8 inUse)
 {
-    /* Only track ownership. Eagerly writing coin golds here races VBlank while
-     * portrait tiles (pal 14) are still on-screen — one-frame gold/glitch flash
-     * on open and close. Bank 14 is restored lazily by ApplyPokeCoinPaletteForDraw
-     * / LoadPokeCoinPalette once the flag is clear. */
+    /* Only track ownership. Coin golds load onto bank 13 while set (bank 14
+     * stays with the portrait). Restored lazily on the next {POKE} draw. */
     sTownPortraitOwnsBank14 = inUse;
 }
 
@@ -289,9 +295,7 @@ u32 GetPokeCoinPalBank(void)
 {
     if (gUnknown_203B40C)
         return POKE_COIN_PAL_BANK_DUNGEON;
-    if (TownCoinUsesFontFallback())
-        return POKE_COIN_PAL_BANK_TOWN_FONT_FALLBACK;
-    return POKE_COIN_PAL_BANK_TOWN;
+    return GetTownPokeCoinPalBank();
 }
 
 static void LoadPokeCoinPalette(void)
@@ -307,9 +311,6 @@ static void LoadPokeCoinPalette(void)
         SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT3, &sPokeCoinDark);
         return;
     }
-
-    if (TownCoinUsesFontFallback())
-        return; /* Remap onto stock fontpal; leave bank 14 for the portrait. */
 
     LoadTownPokeCoinPalette();
 }
@@ -331,7 +332,7 @@ static void UnpackCoinSource(u8 out[16][16])
     }
 }
 
-static u8 RemapCoinPixelForBank(u8 p)
+static u8 RemapCoinPixelForBank(u8 p, bool8 fontRemap)
 {
     if (gUnknown_203B40C) {
         /* Town indices → dungeon bank12 slots 8–11; white/transparent unchanged. */
@@ -346,10 +347,11 @@ static u8 RemapCoinPixelForBank(u8 p)
         return p;
     }
 
-    if (!TownCoinUsesFontFallback())
-        return p; /* Town bank 14 — .4bpp indices match sPokeCoinTownPal. */
+    if (!fontRemap)
+        return p; /* Town banks 13/14 — .4bpp indices match sPokeCoinTownPal. */
 
-    /* Portrait owns bank 14: stock fontpal yellow / HUD orange / shadow. */
+    /* Dialogue keeps font bank 15 so name text stays correct; map golds onto
+     * stock yellow / HUD / shadow. */
     if (p == POKE_COIN_SLOT_PALE)
         return POKE_COIN_SLOT_PALE_TOWN_FONT;
     if (p == POKE_COIN_SLOT_YELLOW)
@@ -358,7 +360,7 @@ static u8 RemapCoinPixelForBank(u8 p)
         return POKE_COIN_SLOT_MID_TOWN_FONT;
     if (p == POKE_COIN_SLOT_DARK_TOWN)
         return POKE_COIN_SLOT_DARK_TOWN_FONT;
-    return p; /* 0 transparent, 1 window fill, 7 white */
+    return p;
 }
 
 static void PackCoinBlit(u8 in[16][16])
@@ -379,19 +381,21 @@ static void PackCoinBlit(u8 in[16][16])
 }
 
 /*
- * Build a 16×16 blit: start from baseTiles (or transparent), then stamp the
- * coin at (ox, oy). Empty source pixels leave the base alone (true BG
- * transparency on HUD; window fill preserved on menus).
+ * Build a 16×16 blit. See custom_graphics.h.
  */
-const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
+const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy,
+                             bool8 preserveTopBevel, bool8 keepBaseText)
 {
     u8 src[16][16];
     u8 dst[16][16];
+    u8 bevel[3][16];
     s32 y, x;
+    u8 emptyPix = gUnknown_203B40C ? POKE_COIN_SLOT_TRANSPARENT : POKE_COIN_SLOT_WINDOW_FILL;
+    bool8 keepBevel = FALSE;
+    bool8 fontRemap = keepBaseText;
 
     if (!gRuntimeConfig.custom_graphics)
         return NULL;
-    /* ox/oy may be negative (shift art up/left within the 16×16). */
 
     if (baseTiles != NULL) {
         const u32 *p = baseTiles;
@@ -403,11 +407,27 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
                     u32 word = *p++;
                     for (col = 0; col < 8; col++) {
                         u8 pix = (word >> (col * 4)) & 0xF;
-                        /* Keep transparent + menu fill (town); dungeon clears
-                         * fill too so HUD transparency stays clean. */
-                        if (pix != 0 && (gUnknown_203B40C || pix != POKE_COIN_SLOT_WINDOW_FILL))
-                            pix = 0;
-                        dst[ty * 8 + row][tx * 8 + col] = pix;
+                        s32 py = ty * 8 + row;
+                        s32 px = tx * 8 + col;
+
+                        if (preserveTopBevel && py < 3) {
+                            bevel[py][px] = pix;
+                            keepBevel = TRUE;
+                        }
+
+                        if (gUnknown_203B40C) {
+                            if (pix != 0)
+                                pix = 0;
+                        }
+                        else if (keepBaseText) {
+                            /* Keep text/shadow/bevel; only fill true empties. */
+                            if (pix == 0)
+                                pix = emptyPix;
+                        }
+                        else if (pix != POKE_COIN_SLOT_WINDOW_FILL) {
+                            pix = emptyPix;
+                        }
+                        dst[py][px] = pix;
                     }
                 }
             }
@@ -416,7 +436,7 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
     else {
         for (y = 0; y < 16; y++) {
             for (x = 0; x < 16; x++)
-                dst[y][x] = 0;
+                dst[y][x] = emptyPix;
         }
     }
 
@@ -427,10 +447,19 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy)
             s32 dx = x + ox;
             s32 dy = y + oy;
 
-            if (p != 0 && dx >= 0 && dx < 16 && dy >= 0 && dy < 16)
-                dst[dy][dx] = RemapCoinPixelForBank(p);
+            if (p != 0 && dx >= 0 && dx < 16 && dy >= 0 && dy < 16
+                && !(keepBevel && dy < 3))
+                dst[dy][dx] = RemapCoinPixelForBank(p, fontRemap);
         }
     }
+
+    if (keepBevel) {
+        for (y = 0; y < 3; y++) {
+            for (x = 0; x < 16; x++)
+                dst[y][x] = bevel[y][x];
+        }
+    }
+
     PackCoinBlit(dst);
     return sPokeCoinBlitBuf;
 }

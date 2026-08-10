@@ -20,8 +20,8 @@
  *   Shared white rim uses stock trappat slot 7 (near-white).
  *
  * Town coin: full palette on BG bank 14 (map tiles stop at bank 12 on
- * T01P03; rank badge is 13). While a dialogue portrait owns bank 14, coin
- * font-fallbacks; finishing that dialogue restores bank-14 coin golds.
+ * T01P03; rank badge is 13 when shown). While a dialogue portrait owns
+ * bank 14, coin uses bank 13 with the same full golds (not font-fallback).
  */
 
 /* Font / HUD / pink — coin must never SetBGPalette these for golds. */
@@ -41,7 +41,9 @@
 /* ---- banks ---- */
 #define POKE_COIN_PAL_BANK_TOWN 14
 #define POKE_COIN_PAL_BANK_DUNGEON 12
-#define POKE_COIN_PAL_BANK_TOWN_FONT_FALLBACK FONT_BANK
+/* Portrait owns town bank 14 — full golds on 13 (rank badge not on-screen). */
+#define POKE_COIN_PAL_BANK_TOWN_PORTRAIT 13
+#define POKE_COIN_PAL_BANK_TOWN_FONT_FALLBACK POKE_COIN_PAL_BANK_TOWN_PORTRAIT
 
 #define POKE_COIN_DUNGEON_TRAPPAT_BANK 12
 #define POKE_COIN_DUNGEON_GOLD_SLOT0 8 /* pale */
@@ -101,11 +103,19 @@
 #endif
 
 #if POKE_COIN_PAL_BANK_TOWN == FONT_BANK
-#error "Town coin primary bank must not be font 15 (use 14 + font fallback)"
+#error "Town coin primary bank must not be font 15 (use 14; portrait → 13)"
 #endif
 
-#if POKE_COIN_PAL_BANK_TOWN_FONT_FALLBACK != FONT_BANK
-#error "Town coin portrait fallback must be font bank 15"
+#if POKE_COIN_PAL_BANK_TOWN_PORTRAIT == POKE_COIN_PAL_BANK_TOWN
+#error "Town coin portrait alternate must differ from primary bank 14"
+#endif
+
+#if POKE_COIN_PAL_BANK_TOWN_PORTRAIT == 12
+#error "Town coin portrait alternate must not use BG bank 12 (map flowers)"
+#endif
+
+#if POKE_COIN_PAL_BANK_TOWN_PORTRAIT == FONT_BANK
+#error "Town coin portrait alternate must not be font bank 15"
 #endif
 
 #endif /* GUARD_PALETTE_OWNERS_H */
