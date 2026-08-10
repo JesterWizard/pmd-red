@@ -10,9 +10,9 @@
     " Bring me food-berries,\n" \
     "seeds, apples, or gummis-and I'll blend a\n" \
     "drink for one of your teammates!{EXTRA_MSG}" \
-    " Gummis make the tastiest\n" \
-    "IQ drinks. Sometimes I get a really good\n" \
-    "feeling about the mix〜♪"))
+    " Gummis always raise IQ and a\n" \
+    "stat. Sometimes I get a really good feeling-\n" \
+    "or even mix a miracle drink〜♪"))
 
 #define SPINDA_BYE (_(" Come again〜♪"))
 
@@ -45,6 +45,11 @@
     " Ooh, I had a good feeling\n" \
     "about that one!"))
 
+#define SPINDA_REACT_MIRACLE (_( \
+    " WHOAAAAAAA! This is...\n" \
+    "THIS IS...!!{WAIT_PRESS}\n" \
+    "A miracle drink〜♪"))
+
 #define SPINDA_REACT_OK (_(" How is it?"))
 
 #define SPINDA_REACT_NOTHING (_( \
@@ -58,27 +63,35 @@
 
 #define SPINDA_PLUS_ATK (_( \
     "Yes!\n" \
-    "{NAME_0}'s Attack rose by 1!"))
+    "{NAME_0}'s Attack rose by {VALUE_0}!"))
 
 #define SPINDA_PLUS_SPATK (_( \
     "Yes!\n" \
-    "{NAME_0}'s Special Attack rose by 1!"))
+    "{NAME_0}'s Special Attack rose by {VALUE_0}!"))
 
 #define SPINDA_PLUS_DEF (_( \
     "Yes!\n" \
-    "{NAME_0}'s Defense rose by 1!"))
+    "{NAME_0}'s Defense rose by {VALUE_0}!"))
 
 #define SPINDA_PLUS_SPDEF (_( \
     "Yes!\n" \
-    "{NAME_0}'s Special Defense rose by 1!"))
+    "{NAME_0}'s Special Defense rose by {VALUE_0}!"))
 
 #define SPINDA_PLUS_ALL (_( \
     "Yes! {NAME_0} grew explosively!\n" \
-    "Attack, Defense, and so on rose by 1!"))
+    "Attack, Defense, and so on rose by {VALUE_0}!"))
 
 #define SPINDA_PLUS_HP (_( \
     "Yes!\n" \
-    "{NAME_0}'s max HP rose!"))
+    "{NAME_0}'s max HP rose by {VALUE_0}!"))
+
+#define SPINDA_LEVEL_UP (_( \
+    "Yes!\n" \
+    "{NAME_0} leveled up!"))
+
+#define SPINDA_GINSENG (_( \
+    "Yes!\n" \
+    "{NAME_0}'s move power went up!"))
 
 #define RECYCLE_WELCOME (_( \
     " Recycle Shop!\n" \

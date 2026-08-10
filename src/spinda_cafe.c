@@ -10,9 +10,11 @@
 #include "data_serializer.h"
 #include "input.h"
 #include "items.h"
+#include "dungeon_config.h"
 #include "kecleon_bros4.h"
 #include "memory.h"
 #include "menu_input.h"
+#include "moves.h"
 #include "music_util.h"
 #include "other_random.h"
 #include "pokemon.h"
@@ -68,10 +70,9 @@ typedef struct SpindaJuiceBarWork
     MonPortraitMsg *monPortraitPtr;
     WindowTemplates windows;
     bool8 goodFeeling;
+    bool8 miracleFeeling;
     bool8 wasGummi;
-    bool8 hpBoosted;
     s32 iqGain;
-    u16 gummiFlags;
     u8 reactEmotion;
     Pokemon *drinkMon;
     u8 iqSkillPre[NUM_IQ_SKILLS];
@@ -79,11 +80,27 @@ typedef struct SpindaJuiceBarWork
     s32 availIQSkillPre;
     s32 availIQSkillPost;
     s32 nextIqSkillCheck;
+    u8 msgKinds[8];
+    u8 msgAmounts[8];
+    s32 msgCount;
+    s32 msgIndex;
 } SpindaJuiceBarWork;
+
+enum JuiceMsgKind {
+    JUICE_MSG_ATK,
+    JUICE_MSG_SPATK,
+    JUICE_MSG_DEF,
+    JUICE_MSG_SPDEF,
+    JUICE_MSG_ALL,
+    JUICE_MSG_HP,
+    JUICE_MSG_LEVEL,
+    JUICE_MSG_GINSENG,
+};
 
 static EWRAM_INIT SpindaJuiceBarWork *sJuiceWork = {NULL};
 
 #include "data/spinda_cafe.h"
+#include "data/spinda_juice_effects.h"
 
 static void UpdateJuiceState(u32 newState);
 static void SetupJuiceWindows(void);
@@ -95,7 +112,15 @@ static void HandleJuiceMonMenu(void);
 static void HandleJuiceItemPick(void);
 static void ApplyJuiceDrink(Pokemon *mon);
 static void SetSpindaEmotion(u8 emotion);
-static bool8 BoostRandomOffense(Pokemon *mon);
+static void QueueJuiceMsg(u8 kind, u8 amount);
+static void AddJuiceHP(Pokemon *mon, s32 amount);
+static void AddJuiceIQ(Pokemon *mon, s32 amount);
+static bool8 AddJuiceOffense(Pokemon *mon, s32 which, s32 amount);
+static bool8 BoostRandomOffense(Pokemon *mon, s32 amount);
+static bool8 ApplyJoySeedLevelUp(Pokemon *mon);
+static bool8 ApplyGinsengBoost(Pokemon *mon);
+static void ApplyPermanentJuiceEffect(Pokemon *mon, u8 itemId);
+static void ApplyMiracleBonus(Pokemon *mon);
 static void ShowNextStatSystemMessage(void);
 static void ShowNextIqSkillMessage(void);
 static bool8 IsJuiceFoodItem(u8 itemId);
@@ -331,7 +356,81 @@ static void SetSpindaEmotion(u8 emotion)
         sJuiceWork->monPortrait.spriteId = EMOTION_NORMAL;
 }
 
-static bool8 BoostRandomOffense(Pokemon *mon)
+static void QueueJuiceMsg(u8 kind, u8 amount)
+{
+    if (sJuiceWork->msgCount >= (s32)ARRAY_COUNT(sJuiceWork->msgKinds))
+        return;
+    sJuiceWork->msgKinds[sJuiceWork->msgCount] = kind;
+    sJuiceWork->msgAmounts[sJuiceWork->msgCount] = amount;
+    sJuiceWork->msgCount++;
+}
+
+static void AddJuiceHP(Pokemon *mon, s32 amount)
+{
+    s32 before = mon->pokeHP;
+
+    if (amount <= 0)
+        return;
+    mon->pokeHP += amount;
+    if (mon->pokeHP > 999)
+        mon->pokeHP = 999;
+    if (mon->pokeHP > before)
+        QueueJuiceMsg(JUICE_MSG_HP, mon->pokeHP - before);
+}
+
+static void AddJuiceIQ(Pokemon *mon, s32 amount)
+{
+    if (amount <= 0)
+        return;
+    if (mon->IQ >= 999)
+        return;
+    mon->IQ += amount;
+    if (mon->IQ > 999)
+        mon->IQ = 999;
+}
+
+static bool8 AddJuiceOffense(Pokemon *mon, s32 which, s32 amount)
+{
+    s32 before;
+    s32 after;
+    u8 *stat;
+    u8 msgKind;
+
+    if (amount <= 0)
+        return FALSE;
+
+    switch (which) {
+        case 0:
+            stat = &mon->offense.att[OFFENSE_NRM];
+            msgKind = JUICE_MSG_ATK;
+            break;
+        case 1:
+            stat = &mon->offense.att[OFFENSE_SP];
+            msgKind = JUICE_MSG_SPATK;
+            break;
+        case 2:
+            stat = &mon->offense.def[OFFENSE_NRM];
+            msgKind = JUICE_MSG_DEF;
+            break;
+        default:
+            stat = &mon->offense.def[OFFENSE_SP];
+            msgKind = JUICE_MSG_SPDEF;
+            break;
+    }
+
+    before = *stat;
+    after = before + amount;
+    if (after > 255)
+        after = 255;
+    *stat = after;
+    if (after > before) {
+        QueueJuiceMsg(msgKind, after - before);
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 BoostRandomOffense(Pokemon *mon, s32 amount)
 {
     s32 order[4];
     s32 i, j, t;
@@ -346,54 +445,188 @@ static bool8 BoostRandomOffense(Pokemon *mon)
     }
 
     for (i = 0; i < 4; i++) {
-        switch (order[i]) {
-            case 0:
-                if (mon->offense.att[OFFENSE_NRM] < 255) {
-                    mon->offense.att[OFFENSE_NRM]++;
-                    sJuiceWork->gummiFlags |= 1;
-                    return TRUE;
-                }
-                break;
-            case 1:
-                if (mon->offense.att[OFFENSE_SP] < 255) {
-                    mon->offense.att[OFFENSE_SP]++;
-                    sJuiceWork->gummiFlags |= 2;
-                    return TRUE;
-                }
-                break;
-            case 2:
-                if (mon->offense.def[OFFENSE_NRM] < 255) {
-                    mon->offense.def[OFFENSE_NRM]++;
-                    sJuiceWork->gummiFlags |= 4;
-                    return TRUE;
-                }
-                break;
-            case 3:
-                if (mon->offense.def[OFFENSE_SP] < 255) {
-                    mon->offense.def[OFFENSE_SP]++;
-                    sJuiceWork->gummiFlags |= 8;
-                    return TRUE;
-                }
-                break;
-        }
+        if (AddJuiceOffense(mon, order[i], amount))
+            return TRUE;
     }
     return FALSE;
 }
 
-static void ApplyJuiceDrink(Pokemon *mon)
+static bool8 ApplyJoySeedLevelUp(Pokemon *mon)
+{
+    LevelData levelData;
+    u16 learnedMoves[16];
+    s32 movesCount;
+    s32 i;
+    s32 atk, spAtk, def, spDef;
+    s32 newLevel;
+
+    if (mon->level >= 100)
+        return FALSE;
+
+    newLevel = mon->level + 1;
+    GetLvlUpEntry(&levelData, mon->speciesNum, newLevel);
+    mon->level = newLevel;
+    mon->currExp = levelData.expRequired;
+    mon->pokeHP += levelData.gainHP;
+    if (mon->pokeHP > 999)
+        mon->pokeHP = 999;
+
+    atk = mon->offense.att[0] + levelData.gainAtt[0];
+    spAtk = mon->offense.att[1] + levelData.gainAtt[1];
+    def = mon->offense.def[0] + levelData.gainDef[0];
+    spDef = mon->offense.def[1] + levelData.gainDef[1];
+    if (atk > 255) atk = 255;
+    if (spAtk > 255) spAtk = 255;
+    if (def > 255) def = 255;
+    if (spDef > 255) spDef = 255;
+    mon->offense.att[0] = atk;
+    mon->offense.att[1] = spAtk;
+    mon->offense.def[0] = def;
+    mon->offense.def[1] = spDef;
+
+    movesCount = GetMovesLearnedAtLevel(learnedMoves, mon->speciesNum, mon->level, 999);
+    for (i = 0; i < movesCount; i++) {
+        s32 moveSlot;
+
+        for (moveSlot = 0; moveSlot < MAX_MON_MOVES; moveSlot++) {
+            if (!MoveFlagExists(&mon->moves[moveSlot])) {
+                InitZeroedPPPokemonMove(&mon->moves[moveSlot], learnedMoves[i]);
+                break;
+            }
+        }
+    }
+
+    QueueJuiceMsg(JUICE_MSG_LEVEL, 1);
+    return TRUE;
+}
+
+static bool8 ApplyGinsengBoost(Pokemon *mon)
+{
+    s32 i;
+    s32 moveBoost = 1;
+    bool8 boosted = FALSE;
+
+    if (RandInt(100) < gGinsengPlus3BoostChance)
+        moveBoost = 3;
+
+    for (i = 0; i < MAX_MON_MOVES; i++) {
+        Move *move = &mon->moves[i];
+
+        if (MoveFlagExists(move) && (move->moveFlags & MOVE_FLAG_SET)) {
+            if (GetMoveBasePower(move) != 0) {
+                s32 before = move->ginseng;
+                s32 maxBoost = GetMoveMaxUpgradeLevel(move);
+
+                move->ginseng += moveBoost;
+                if (move->ginseng >= maxBoost)
+                    move->ginseng = maxBoost;
+                if (move->ginseng != before)
+                    boosted = TRUE;
+            }
+        }
+    }
+
+    if (boosted)
+        QueueJuiceMsg(JUICE_MSG_GINSENG, moveBoost);
+    return boosted;
+}
+
+static void ApplyPermanentJuiceEffect(Pokemon *mon, u8 itemId)
 {
     Gummi gummi;
+
+    if (IsGummiItem(itemId)) {
+        sJuiceWork->wasGummi = TRUE;
+        GetGummiItemStatBoost(mon, itemId, FALSE, &gummi);
+        if (gummi.flags == 0) {
+            BoostRandomOffense(mon, 1);
+        }
+        else if (gummi.flags == 0xF) {
+            QueueJuiceMsg(JUICE_MSG_ALL, 1);
+        }
+        else {
+            if (gummi.flags & 1)
+                QueueJuiceMsg(JUICE_MSG_ATK, 1);
+            if (gummi.flags & 2)
+                QueueJuiceMsg(JUICE_MSG_SPATK, 1);
+            if (gummi.flags & 4)
+                QueueJuiceMsg(JUICE_MSG_DEF, 1);
+            if (gummi.flags & 8)
+                QueueJuiceMsg(JUICE_MSG_SPDEF, 1);
+        }
+        return;
+    }
+
+    switch (itemId) {
+        case ITEM_PROTEIN:
+            AddJuiceOffense(mon, 0, 3);
+            break;
+        case ITEM_CALCIUM:
+            AddJuiceOffense(mon, 1, 3);
+            break;
+        case ITEM_IRON:
+            AddJuiceOffense(mon, 2, 3);
+            break;
+        case ITEM_ZINC:
+            AddJuiceOffense(mon, 3, 3);
+            break;
+        case ITEM_LIFE_SEED:
+            AddJuiceHP(mon, 3);
+            break;
+        case ITEM_SITRUS_BERRY:
+            AddJuiceHP(mon, 2);
+            break;
+        case ITEM_JOY_SEED:
+            ApplyJoySeedLevelUp(mon);
+            break;
+        case ITEM_GINSENG:
+            ApplyGinsengBoost(mon);
+            break;
+        default:
+            break;
+    }
+}
+
+static void ApplyMiracleBonus(Pokemon *mon)
+{
+    s32 amount = 2 + RandInt(4);
+    s32 which = RandInt(6);
+
+    switch (which) {
+        case 0:
+            AddJuiceHP(mon, amount);
+            break;
+        case 1:
+            AddJuiceOffense(mon, 0, amount);
+            break;
+        case 2:
+            AddJuiceOffense(mon, 1, amount);
+            break;
+        case 3:
+            AddJuiceOffense(mon, 2, amount);
+            break;
+        case 4:
+            AddJuiceOffense(mon, 3, amount);
+            break;
+        default:
+            AddJuiceIQ(mon, amount);
+            break;
+    }
+}
+
+static void ApplyJuiceDrink(Pokemon *mon)
+{
     s32 iqBefore;
-    bool8 good;
+    u8 itemId;
+    const JuiceGoodFeelingEntry *goodEntry = NULL;
 
     sJuiceWork->goodFeeling = FALSE;
+    sJuiceWork->miracleFeeling = FALSE;
     sJuiceWork->wasGummi = FALSE;
-    sJuiceWork->hpBoosted = FALSE;
     sJuiceWork->iqGain = 0;
-    sJuiceWork->gummiFlags = 0;
+    sJuiceWork->msgCount = 0;
+    sJuiceWork->msgIndex = 0;
     sJuiceWork->reactEmotion = EMOTION_NORMAL;
-    good = (RandInt(100) < 25);
-    sJuiceWork->goodFeeling = good;
 
     PrintColoredPokeNameToBuffer(gFormatBuffer_Names[0], mon, COLOR_CYAN);
     sJuiceWork->drinkMon = mon;
@@ -401,105 +634,106 @@ static void ApplyJuiceDrink(Pokemon *mon)
     sJuiceWork->availIQSkillPre = GetNumAvailableIQSkills(sJuiceWork->iqSkillPre, mon->IQ);
     sJuiceWork->nextIqSkillCheck = 1;
 
-    if (IsGummiItem(sJuiceWork->item.id)) {
-        /* PMD2: gummi drinks always raise IQ (type matchup) and at least one stat. */
-        sJuiceWork->wasGummi = TRUE;
-        GetGummiItemStatBoost(mon, sJuiceWork->item.id, FALSE, &gummi);
-        sJuiceWork->gummiFlags = gummi.flags;
-        if (sJuiceWork->gummiFlags == 0)
-            BoostRandomOffense(mon);
-        if (good && mon->IQ < 999) {
-            mon->IQ += 2;
-            if (mon->IQ > 999)
-                mon->IQ = 999;
-        }
-        sJuiceWork->iqGain = mon->IQ - iqBefore;
-        sJuiceWork->availIQSkillPost = GetNumAvailableIQSkills(sJuiceWork->iqSkillPost, mon->IQ);
-        sJuiceWork->reactEmotion = good ? EMOTION_JOYOUS : EMOTION_HAPPY;
-        ShiftItemsDownFrom(sJuiceWork->itemIndex);
-        return;
-    }
+    itemId = sJuiceWork->item.id;
+    ApplyPermanentJuiceEffect(mon, itemId);
 
-    if (good) {
-        /* Good mix: IQ bump + guaranteed offense (or HP) raise. */
-        mon->IQ += 2 + RandInt(2);
-        if (!BoostRandomOffense(mon)) {
-            if (mon->pokeHP < 999) {
-                mon->pokeHP += 2;
-                sJuiceWork->hpBoosted = TRUE;
-            }
-        }
+    /* Quality roll: miracle (~1%) beats good feeling. */
+    if (JuiceItemAllowsMiracle(itemId) && RandInt(100) < 1) {
+        sJuiceWork->miracleFeeling = TRUE;
+        ApplyMiracleBonus(mon);
         sJuiceWork->reactEmotion = EMOTION_JOYOUS;
     }
-    else if (RandInt(100) < 40) {
-        mon->IQ += 1;
-        sJuiceWork->reactEmotion = EMOTION_HAPPY;
+    else if (!JuiceItemSkipsGoodFeeling(itemId)) {
+        s32 goodChance = 0;
+
+        if (IsGummiItem(itemId))
+            goodChance = 25;
+        else {
+            goodEntry = FindJuiceGoodFeeling(itemId);
+            if (goodEntry != NULL)
+                goodChance = goodEntry->chance;
+        }
+
+        if (goodChance > 0 && RandInt(100) < goodChance) {
+            sJuiceWork->goodFeeling = TRUE;
+            if (IsGummiItem(itemId))
+                AddJuiceIQ(mon, 2);
+            else if (goodEntry != NULL) {
+                AddJuiceIQ(mon, goodEntry->iqBonus);
+                AddJuiceHP(mon, goodEntry->hpBonus);
+            }
+            sJuiceWork->reactEmotion = EMOTION_JOYOUS;
+        }
+        else if (sJuiceWork->wasGummi) {
+            sJuiceWork->reactEmotion = EMOTION_HAPPY;
+        }
+        else if (sJuiceWork->msgCount > 0 || mon->IQ != iqBefore) {
+            sJuiceWork->reactEmotion = EMOTION_HAPPY;
+        }
+        else {
+            sJuiceWork->reactEmotion = EMOTION_SAD;
+        }
     }
-    else if (RandInt(100) < 30) {
-        BoostRandomOffense(mon);
+    else if (sJuiceWork->msgCount > 0 || mon->IQ != iqBefore) {
         sJuiceWork->reactEmotion = EMOTION_HAPPY;
     }
     else {
         sJuiceWork->reactEmotion = EMOTION_SAD;
     }
 
-    if (mon->IQ > 999)
-        mon->IQ = 999;
     if (mon->IQ < 1)
         mon->IQ = 1;
+    if (mon->IQ > 999)
+        mon->IQ = 999;
     sJuiceWork->iqGain = mon->IQ - iqBefore;
+    if (sJuiceWork->iqGain < 0)
+        sJuiceWork->iqGain = 0;
     sJuiceWork->availIQSkillPost = GetNumAvailableIQSkills(sJuiceWork->iqSkillPost, mon->IQ);
     ShiftItemsDownFrom(sJuiceWork->itemIndex);
 }
 
 static void ShowNextStatSystemMessage(void)
 {
-    u16 flags = sJuiceWork->gummiFlags;
-
     sJuiceWork->fallbackState = JUICE_MAIN_PROMPT;
 
-    if (flags == 0xF) {
-        sJuiceWork->gummiFlags = 0;
-        if (sJuiceWork->hpBoosted || sJuiceWork->iqGain > 0)
+    while (sJuiceWork->msgIndex < sJuiceWork->msgCount) {
+        u8 kind = sJuiceWork->msgKinds[sJuiceWork->msgIndex];
+        u8 amount = sJuiceWork->msgAmounts[sJuiceWork->msgIndex];
+
+        sJuiceWork->msgIndex++;
+        gFormatArgs[0] = amount;
+
+        if (sJuiceWork->msgIndex < sJuiceWork->msgCount || sJuiceWork->iqGain > 0)
             sJuiceWork->fallbackState = JUICE_STAT_SYS;
-        CreateDialogueBoxAndPortrait(SPINDA_PLUS_ALL, 0, NULL, 0x301);
-        return;
+
+        switch (kind) {
+            case JUICE_MSG_ALL:
+                CreateDialogueBoxAndPortrait(SPINDA_PLUS_ALL, 0, NULL, 0x301);
+                return;
+            case JUICE_MSG_ATK:
+                CreateDialogueBoxAndPortrait(SPINDA_PLUS_ATK, 0, NULL, 0x301);
+                return;
+            case JUICE_MSG_SPATK:
+                CreateDialogueBoxAndPortrait(SPINDA_PLUS_SPATK, 0, NULL, 0x301);
+                return;
+            case JUICE_MSG_DEF:
+                CreateDialogueBoxAndPortrait(SPINDA_PLUS_DEF, 0, NULL, 0x301);
+                return;
+            case JUICE_MSG_SPDEF:
+                CreateDialogueBoxAndPortrait(SPINDA_PLUS_SPDEF, 0, NULL, 0x301);
+                return;
+            case JUICE_MSG_HP:
+                CreateDialogueBoxAndPortrait(SPINDA_PLUS_HP, 0, NULL, 0x301);
+                return;
+            case JUICE_MSG_LEVEL:
+                CreateDialogueBoxAndPortrait(SPINDA_LEVEL_UP, 0, NULL, 0x301);
+                return;
+            case JUICE_MSG_GINSENG:
+                CreateDialogueBoxAndPortrait(SPINDA_GINSENG, 0, NULL, 0x301);
+                return;
+        }
     }
-    if (flags & 1) {
-        sJuiceWork->gummiFlags &= ~1;
-        if (sJuiceWork->gummiFlags != 0 || sJuiceWork->hpBoosted || sJuiceWork->iqGain > 0)
-            sJuiceWork->fallbackState = JUICE_STAT_SYS;
-        CreateDialogueBoxAndPortrait(SPINDA_PLUS_ATK, 0, NULL, 0x301);
-        return;
-    }
-    if (flags & 2) {
-        sJuiceWork->gummiFlags &= ~2;
-        if (sJuiceWork->gummiFlags != 0 || sJuiceWork->hpBoosted || sJuiceWork->iqGain > 0)
-            sJuiceWork->fallbackState = JUICE_STAT_SYS;
-        CreateDialogueBoxAndPortrait(SPINDA_PLUS_SPATK, 0, NULL, 0x301);
-        return;
-    }
-    if (flags & 4) {
-        sJuiceWork->gummiFlags &= ~4;
-        if (sJuiceWork->gummiFlags != 0 || sJuiceWork->hpBoosted || sJuiceWork->iqGain > 0)
-            sJuiceWork->fallbackState = JUICE_STAT_SYS;
-        CreateDialogueBoxAndPortrait(SPINDA_PLUS_DEF, 0, NULL, 0x301);
-        return;
-    }
-    if (flags & 8) {
-        sJuiceWork->gummiFlags &= ~8;
-        if (sJuiceWork->gummiFlags != 0 || sJuiceWork->hpBoosted || sJuiceWork->iqGain > 0)
-            sJuiceWork->fallbackState = JUICE_STAT_SYS;
-        CreateDialogueBoxAndPortrait(SPINDA_PLUS_SPDEF, 0, NULL, 0x301);
-        return;
-    }
-    if (sJuiceWork->hpBoosted) {
-        sJuiceWork->hpBoosted = FALSE;
-        if (sJuiceWork->iqGain > 0)
-            sJuiceWork->fallbackState = JUICE_STAT_SYS;
-        CreateDialogueBoxAndPortrait(SPINDA_PLUS_HP, 0, NULL, 0x301);
-        return;
-    }
+
     if (sJuiceWork->iqGain > 0) {
         sJuiceWork->iqGain = 0;
         sJuiceWork->nextIqSkillCheck = 1;
@@ -608,16 +842,18 @@ static void UpdateJuiceDialogue(void)
             break;
         case JUICE_SPINDA_REACT:
             SetSpindaEmotion(sJuiceWork->reactEmotion);
-            if (sJuiceWork->gummiFlags != 0 || sJuiceWork->hpBoosted || sJuiceWork->iqGain > 0)
+            if (sJuiceWork->msgCount > 0 || sJuiceWork->iqGain > 0)
                 sJuiceWork->fallbackState = JUICE_STAT_SYS;
             else
                 sJuiceWork->fallbackState = JUICE_MAIN_PROMPT;
 
-            if (sJuiceWork->goodFeeling)
+            if (sJuiceWork->miracleFeeling)
+                CreateDialogueBoxAndPortrait(SPINDA_REACT_MIRACLE, 0, sJuiceWork->monPortraitPtr, 0x10D);
+            else if (sJuiceWork->goodFeeling)
                 CreateDialogueBoxAndPortrait(SPINDA_REACT_GOOD, 0, sJuiceWork->monPortraitPtr, 0x10D);
             else if (sJuiceWork->wasGummi)
                 CreateDialogueBoxAndPortrait(SPINDA_REACT_GUMMI, 0, sJuiceWork->monPortraitPtr, 0x10D);
-            else if (sJuiceWork->iqGain > 0 || sJuiceWork->gummiFlags != 0 || sJuiceWork->hpBoosted)
+            else if (sJuiceWork->msgCount > 0 || sJuiceWork->iqGain > 0)
                 CreateDialogueBoxAndPortrait(SPINDA_REACT_OK, 0, sJuiceWork->monPortraitPtr, 0x10D);
             else
                 CreateDialogueBoxAndPortrait(SPINDA_REACT_NOTHING, 0, sJuiceWork->monPortraitPtr, 0x10D);

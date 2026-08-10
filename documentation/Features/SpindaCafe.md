@@ -36,12 +36,19 @@ Unlock: stairs + indoor staff after `QUEST_CAN_ACCESS_JOBS`.
 3. Item is consumed. Message flow:
    - Spinda mixes the drink (Happy portrait).
    - **System:** `{NAME} drank the juice!`
-   - Spinda reacts (Happy / Joyous / Sad portraits from SpriteCollab).
-   - **System:** IQ / Attack / Defense / etc. rises (same style as town gummi feeding).
+   - Spinda reacts (Happy / Joyous / Sad portraits; miracle has its own line).
+   - **System:** IQ / Attack / Defense / HP / level / Ginseng rises (amounts via `{VALUE_0}`).
    - **System:** If IQ rose past a skill threshold, each newly available IQ skill is announced (same as gummi feeding).
 4. Effects:
-   - **Gummi:** existing IQ path via `GetGummiItemStatBoost`, and **always at least one offense stat** (PMD2-accurate). Good feeling adds +2 IQ and Joyous face.
-   - **Other food:** chance of IQ / offense; good feeling guarantees a boost.
+   - **Permanent base (always):**
+     - **Gummi:** type IQ via `GetGummiItemStatBoost` + at least one offense stat.
+     - **Protein / Calcium / Iron / Zinc:** +3 to the matching offense stat.
+     - **Life Seed:** +3 max HP; **Sitrus Berry:** +2 max HP.
+     - **Joy Seed:** +1 level (stats/moves like a normal level-up).
+     - **Ginseng:** +1 (12% +3) power on the set move, same as dungeon Ginseng.
+     - **Doom Seed:** no positive effect (no level loss).
+   - **Good feeling** (per-item chance; skipped for vitamins / Joy / Life / Sitrus / Doom / Hunger): ingredient-specific +IQ and/or +HP from [`src/data/spinda_juice_effects.h`](../../src/data/spinda_juice_effects.h). Gummis use 25% for +2 IQ.
+   - **Miracle** (~1%; Hunger Seed allowed, other permanent boosters not): +2–5 to one of HP / Atk / Sp.Atk / Def / Sp.Def / IQ, on top of the base effect.
 
 ### Recycle Shop (Wynaut / Wobbuffet)
 
@@ -66,6 +73,7 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 | Stairs / sign ornaments | [`graphics/ornament/Stairs01/`](../../graphics/ornament/Stairs01/), [`graphics/ornament/Sign01/`](../../graphics/ornament/Sign01/), [`src/data/ornament/stairs01.h`](../../src/data/ornament/stairs01.h), [`src/data/ornament/sign01.h`](../../src/data/ornament/sign01.h) (from [`graphics/custom/spinda_cafe_stairs.png`](../../graphics/custom/spinda_cafe_stairs.png) / [`spinda_cafe_sign.png`](../../graphics/custom/spinda_cafe_sign.png)) |
 | Special text | [`include/constants/script_cmd.h`](../../include/constants/script_cmd.h), [`src/textbox.c`](../../src/textbox.c) |
 | Juice Bar | [`src/spinda_cafe.c`](../../src/spinda_cafe.c), [`include/spinda_cafe.h`](../../include/spinda_cafe.h) |
+| Good-feeling table | [`src/data/spinda_juice_effects.h`](../../src/data/spinda_juice_effects.h) |
 | Recycle Shop | [`src/recycle_shop.c`](../../src/recycle_shop.c) |
 | Strings | [`src/data/locale/spinda_cafe_usa.h`](../../src/data/locale/spinda_cafe_usa.h) |
 | Save | [`src/save.c`](../../src/save.c), `savedSpindaCafe` (reuses former `fill42C`) |
@@ -79,5 +87,7 @@ Progress (`itemsRecycled`, ticket type) is saved in a `SPINDA_CAFE_SAVE_SIZE` (0
 - Collision: cave walls/void from luminance; **bars** (counter through approach row `y=22`) and **round tables** from fixed tile regions. Player stands on `y=24`; invisible kind-4 talk objects on `y=22` bridge A-range. Staff stay on solid fascia tiles.
 - **Bar occlusion:** bottom **4px** of the fascia row on **BMA layer0 (BG2)** in front of Pokémon (left bar FG ends at `x=24`, dropping Spinda’s rightmost two jar tiles). Rest of the room on **layer1 (BG3)**.
 - No cup-dungeon unlocks, door recruits, or Project P dungeon unlocks.
+- No bad drinks (Hunger / Grimy lookalike stat drops).
+- Good-feeling chances are approximate (community-tested rates), not decomp-verified.
 - Recycle catalog / lottery tables are Red-adapted, not a full Sky dump.
 - Stairs / NPC positions may need in-game tuning.
