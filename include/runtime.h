@@ -19,7 +19,7 @@ typedef struct {
     u8 infinite_belly;        /* Skip hunger / wall / Pass Scarf belly drain */
     u8 exp_multiplier;        /* Scale AddExpPoints (1 = vanilla) */
     u8 recruit_rate_boost;    /* +Friend Bow bonus to recruit rate */
-    u8 all_friend_areas;      /* Own every Friend Area on load / new save */
+    u8 all_friend_areas;      /* Visit/recruit any Friend Area; unlock flags stay empty */
     u8 debug_menu;            /* Start opens the custom in-game menu */
     u8 disable_something_approaches; /* Skip dungeon wind timer / blow-out */
     u8 l_to_use_move;         /* Use set move with L alone (vs vanilla L+A) */

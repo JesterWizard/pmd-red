@@ -25,6 +25,7 @@ const u8 *GetFriendAreaDescription(u8 index);
 const u8 *GetFriendAreaName(u8 index);
 s32 GetFriendAreaPrice(u8 index);
 bool8 GetFriendAreaStatus(u8 index);
+bool8 GetFriendAreaUnlocked(u8 index); /* saved unlock bits only */
 u8 GetFriendAreaUnlockCondition(u8 index);
 bool8 HasAllFriendAreas(void);
 void InitializeFriendAreas(void);

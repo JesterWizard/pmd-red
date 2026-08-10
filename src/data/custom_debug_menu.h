@@ -33,7 +33,7 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
     { _("Recruit +"), &gRuntimeConfig.recruit_rate_boost, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("All areas"), &gRuntimeConfig.all_friend_areas, CUSTOM_DEBUG_MENU_OPTION_ONE_WAY, 0,
-      CUSTOM_DEBUG_MENU_EFFECT_INITIALIZE_FRIEND_AREAS, 0 },
+      CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Wind off"), &gRuntimeConfig.disable_something_approaches, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("L move"), &gRuntimeConfig.l_to_use_move, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,

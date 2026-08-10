@@ -5,7 +5,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .infinite_belly = FALSE,
     .exp_multiplier = 1, /* 1 = vanilla */
     .recruit_rate_boost = FALSE,
-    .all_friend_areas = TRUE, /* TRUE = own every Friend Area; FALSE = vanilla unlocks */
+    .all_friend_areas = TRUE, /* TRUE = visit/recruit any Friend Area (unlock flags stay vanilla) */
     .debug_menu = TRUE, /* Enable the custom in-game menu */
     .disable_something_approaches = TRUE,
     .l_to_use_move = TRUE, /* TRUE = L alone; FALSE = vanilla L+A */

@@ -18,12 +18,8 @@ EWRAM_INIT bool8 *gFriendAreas = {NULL};
 void LoadFriendAreas(void)
 {
     gFriendAreas = sBoughtFriendAreas;
-    if (gRuntimeConfig.all_friend_areas) {
-        s32 i;
-
-        for (i = 0; i < FRIEND_AREA_COUNT; i++)
-            gFriendAreas[i] = TRUE;
-    }
+    /* all_friend_areas grants access via GetFriendAreaStatus only — do not
+     * overwrite saved unlock bits (keeps areas empty and story gates vanilla). */
 }
 
 bool8 *GetBoughtFriendAreas(void)
@@ -35,8 +31,10 @@ void InitializeFriendAreas(void)
 {
     s32 i;
 
+    /* Always start with no Friend Areas owned. all_friend_areas is an access
+     * override, not a fill of gFriendAreas. */
     for (i = 0; i < FRIEND_AREA_COUNT; i++)
-        gFriendAreas[i] = gRuntimeConfig.all_friend_areas ? TRUE : FALSE;
+        gFriendAreas[i] = FALSE;
 }
 
 u8 sub_80923D4(s32 target)
@@ -142,8 +140,18 @@ void UnlockFriendArea(u8 index)
 
 bool8 GetFriendAreaStatus(u8 index)
 {
+    if (index == FRIEND_AREA_NONE || index >= FRIEND_AREA_COUNT)
+        return FALSE;
     if (gRuntimeConfig.all_friend_areas)
         return TRUE;
+    return gFriendAreas[index];
+}
+
+/* Story / dungeon gates: real purchase/unlock bits only (ignores all_friend_areas). */
+bool8 GetFriendAreaUnlocked(u8 index)
+{
+    if (index == FRIEND_AREA_NONE || index >= FRIEND_AREA_COUNT)
+        return FALSE;
     return gFriendAreas[index];
 }
 
