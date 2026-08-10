@@ -18,7 +18,7 @@ Vanilla Rescue Team stores Kangaskhan Storage as `u16 teamStorage[itemId]` with 
 
 This feature switches counts to **`u8`** and caps stacks at **99** when enabled. The storage array is sized for **480 item ids** (`STORAGE_SIZE`), matching the compact-u8 RAM budget of vanilla’s `u16[240]`.
 
-Total how many items you may store at once is controlled separately by [`RankRewards.md`](RankRewards.md) (`rank_rewards`: 64 → 480 by rescue rank). Thrown stacks count as one toward that total; other items count by quantity.
+Total how many items you may store at once is controlled separately by [`RankRewards.md`](RankRewards.md) (`rank_rewards`: 64 → 480 by rescue rank). With compact on, only **Stick** and **Gravelerock** count as one stack toward that total; every other id (including other thrown projectiles) counts by quantity. With compact off, all thrown stacks count as one.
 
 Toggle: `gRuntimeConfig.compact_kangaskhan_storage` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`).
 
@@ -56,6 +56,7 @@ Live item catalog is still `NUMBER_OF_ITEM_IDS` (240). Extra storage slots are h
 ### Player-facing impact
 
 - Kangaskhan will refuse deposits once an id is at the per-id cap, or once total used items hit the ranked capacity (see Rank Rewards).
+- Take list follows **toolbox rules**: non-stack ids expand to one row per unit (no quantity column). Only Stick / Gravelerock stay as one stacked row with a count.
 - Withdraw UI that special-cases stacks above 99 still works when the per-id cap is 255; with the default 99 cap that path is unused for full stacks.
 
 ---
@@ -68,6 +69,8 @@ Live item catalog is still `NUMBER_OF_ITEM_IDS` (240). Extra storage slots are h
 | Caps / bit width | `include/constants/item.h` | `MAX_STORAGE_QUANTITY_*`, `STORAGE_QUANTITY_BITS` |
 | Storage array | `TeamInventory` in `include/structs/str_items.h` | `u8 teamStorage[STORAGE_SIZE]` |
 | Max helper | `GetMaxStorageQuantity` in `src/items.c` | 99 vs 255 from config |
+| Stack grouping | `IsStorageStackItem` in `src/items.c` | Compact: Stick/Gravelerock only; else all thrown |
+| Take list rows | `sub_801CE58` / `sub_801CCD8` in `src/code_801C8C4.c` | Compact expands non-stack stock; header width 14 |
 | Deposit clamp | `MoveToStorage` in `src/items.c` | Add + clamp to max |
 | Save / load | `SaveTeamInventory` / `RestoreTeamInventory` in `src/items.c` | 8-bit pack; clamp on read |
 | Full-storage checks | `sub_801CF50` in `src/code_801C8C4.c` | Total capacity full, or every id at per-id max |

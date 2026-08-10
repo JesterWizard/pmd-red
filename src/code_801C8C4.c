@@ -61,7 +61,7 @@ bool8 sub_801C8C4(s32 a0, s32 a1, DungeonPos *a2, u32 a3)
 
 u32 sub_801CA08(bool8 a0)
 {
-    u32 index;
+    s32 entry;
     u32 temp;
     u32 flag;
 
@@ -82,12 +82,12 @@ u32 sub_801CA08(bool8 a0)
             if (sUnknown_203B244->unk0 != 1)
                 goto _0801CAF2;
 
-            index = sub_801CB24();
-            temp = sub_801CFE0(index);
+            entry = GET_CURRENT_MENU_ENTRY(sUnknown_203B244->unk4B4.m.input);
+            temp = sub_801CFE0(entry);
             flag = FALSE;
             if (temp != 0 || (flag = (INVENTORY_SIZE > GetNumberOfFilledInventorySlots() + sub_801CFB8())) || flag) {
                 PlayMenuSoundEffect(MENU_SFX_TOGGLE);
-                sUnknown_203B244->unkF4[index] = sUnknown_203B244->unkF4[index] ^ 1;
+                sUnknown_203B244->selected[entry] ^= 1;
                 MenuCursorUpdate(&sUnknown_203B244->unk4B4.m.input,0);
                 sub_801CCD8();
                 return 1;
@@ -145,7 +145,8 @@ static void sub_801CC38(void)
 {
     sUnknown_203B244->unk4B4.header.count = 1;
     sUnknown_203B244->unk4B4.header.currId = 0;
-    sUnknown_203B244->unk4B4.header.width = gRuntimeConfig.rank_rewards ? 16 : 12;
+    /* Match toolbox (14): width 16 overflows the 16-tile window and breaks the border. */
+    sUnknown_203B244->unk4B4.header.width = 14;
     sUnknown_203B244->unk4B4.header.f3 = 0;
 
     UPDATE_MENU_WINDOW_HEIGHT(sUnknown_203B244->unk4B4.m);
@@ -157,7 +158,9 @@ void sub_801CCD8(void)
     u32 y2;
     u32 itemID;
     s32 index;
+    s32 entry;
     u8 buffer[80];
+    bool8 showQuantity;
 
     CallPrepareTextbox_8008C54(sUnknown_203B244->unk4B4.m.menuWinId);
     sub_80073B8(sUnknown_203B244->unk4B4.m.menuWinId);
@@ -174,16 +177,27 @@ void sub_801CCD8(void)
                          sUnknown_203B244->unk4B4.m.menuWinId);
     }
 
-    for(index = 0; index < sUnknown_203B244->unk4B4.m.input.currPageEntries; index++) {
-        itemID = sUnknown_203B244->itemIDs[(sUnknown_203B244->unk4B4.m.input.currPage * sUnknown_203B244->unk4B4.m.input.entriesPerPage) + index];
+    for (index = 0; index < sUnknown_203B244->unk4B4.m.input.currPageEntries; index++) {
+        entry = (sUnknown_203B244->unk4B4.m.input.currPage * sUnknown_203B244->unk4B4.m.input.entriesPerPage) + index;
+        itemID = sUnknown_203B244->itemIDs[entry];
         BufferItemName(buffer, itemID, NULL);
         y = GetMenuEntryYCoord(&sUnknown_203B244->unk4B4.m.input, index);
         PrintStringOnWindow(8, y, buffer, sUnknown_203B244->unk4B4.m.menuWinId, 0);
-        y2 = GetMenuEntryYCoord(&sUnknown_203B244->unk4B4.m.input, index);
-        PrintNumOnWindow((sUnknown_203B244->unk4B4.m.menuWindow->width * 8) - 2, y2, gTeamInventoryRef->teamStorage[itemID], 3, 5, sUnknown_203B244->unk4B4.m.menuWinId);
 
-        if (sub_801CFE0(itemID) & 1)
-            sub_8007B7C(sUnknown_203B244->unk4B4.m.menuWinId, 8, GetMenuEntryYCoord(&sUnknown_203B244->unk4B4.m.input, index), (sUnknown_203B244->unk4B4.m.menuWindow->width - 1) * 8, 10);
+        /* Compact: only Stick/Gravelerock show a stack count (toolbox rules). */
+        showQuantity = !gRuntimeConfig.compact_kangaskhan_storage
+            || IsStorageStackItem(itemID);
+        if (showQuantity) {
+            y2 = GetMenuEntryYCoord(&sUnknown_203B244->unk4B4.m.input, index);
+            PrintNumOnWindow((sUnknown_203B244->unk4B4.m.menuWindow->width * 8) - 2, y2,
+                             gTeamInventoryRef->teamStorage[itemID], 3, 5,
+                             sUnknown_203B244->unk4B4.m.menuWinId);
+        }
+
+        if (sub_801CFE0(entry) & 1)
+            sub_8007B7C(sUnknown_203B244->unk4B4.m.menuWinId, 8,
+                        GetMenuEntryYCoord(&sUnknown_203B244->unk4B4.m.input, index),
+                        (sUnknown_203B244->unk4B4.m.menuWindow->width - 1) * 8, 10);
     }
 
     sub_80073E0(sUnknown_203B244->unk4B4.m.menuWinId);
@@ -196,13 +210,29 @@ static u32 sub_801CE58(void)
     s32 orderR;
     s32 itemCount;
     s32 itemR;
-    s32 itemIndex; // re-used variable to match
+    s32 itemIndex;
+    s32 qty;
+    s32 n;
 
     EnsurePerpetualGummisInStorage();
 
     itemCount = 0;
     for (itemIndex = 1; itemIndex < NUMBER_OF_ITEM_IDS; itemIndex++) {
-        if (sUnknown_203B244->unk0 == 2 || (gTeamInventoryRef->teamStorage[itemIndex] != 0 && IsNotMoneyOrUsedTMItem(itemIndex))) {
+        qty = gTeamInventoryRef->teamStorage[itemIndex];
+        if (sUnknown_203B244->unk0 != 2
+            && (qty == 0 || !IsNotMoneyOrUsedTMItem(itemIndex)))
+            continue;
+
+        /* Compact: expand non-stack stock into one toolbox-style row per unit. */
+        if (gRuntimeConfig.compact_kangaskhan_storage
+            && qty > 0
+            && !IsStorageStackItem(itemIndex)) {
+            for (n = 0; n < qty && itemCount < STORAGE_MENU_MAX_ENTRIES; n++) {
+                sUnknown_203B244->itemIDs[itemCount] = itemIndex;
+                itemCount++;
+            }
+        }
+        else if (itemCount < STORAGE_MENU_MAX_ENTRIES) {
             sUnknown_203B244->itemIDs[itemCount] = itemIndex;
             itemCount++;
         }
@@ -215,7 +245,7 @@ static u32 sub_801CE58(void)
 
             if (orderL > orderR) {
                 uVar1 = sUnknown_203B244->itemIDs[itemIndex];
-                sUnknown_203B244->itemIDs[itemIndex] =  sUnknown_203B244->itemIDs[itemR];
+                sUnknown_203B244->itemIDs[itemIndex] = sUnknown_203B244->itemIDs[itemR];
                 sUnknown_203B244->itemIDs[itemR] = uVar1;
             }
         }
@@ -261,34 +291,36 @@ bool8 sub_801CF50(s32 a0)
 
 void sub_801CF94(void)
 {
-    s32 itemID;
+    s32 entry;
 
-    for (itemID = ITEM_NOTHING; itemID < NUMBER_OF_ITEM_IDS; itemID++)
-        sUnknown_203B244->unkF4[itemID] = 0;
+    for (entry = 0; entry < STORAGE_MENU_MAX_ENTRIES; entry++)
+        sUnknown_203B244->selected[entry] = 0;
 }
 
 s32 sub_801CFB8(void)
 {
-    s32 itemID;
+    s32 entry;
     s32 counter;
+    s32 entryCount;
 
     counter = 0;
-    for (itemID = ITEM_NOTHING; itemID < NUMBER_OF_ITEM_IDS; itemID++) {
-        if (sUnknown_203B244->unkF4[itemID] != 0)
+    entryCount = sUnknown_203B244->unk4B4.m.input.totalEntriesCount;
+    if (entryCount > STORAGE_MENU_MAX_ENTRIES)
+        entryCount = STORAGE_MENU_MAX_ENTRIES;
+
+    for (entry = 0; entry < entryCount; entry++) {
+        if (sUnknown_203B244->selected[entry] != 0)
             counter++;
     }
 
     return counter;
 }
 
-u32 sub_801CFE0(u8 index)
+u32 sub_801CFE0(s32 index)
 {
-    return sUnknown_203B244->unkF4[index];
-}
-
-UNUSED static void sub_801CFF4(u8 index, u32 value)
-{
-    sUnknown_203B244->unkF4[index] = value;
+    if (index < 0 || index >= STORAGE_MENU_MAX_ENTRIES)
+        return 0;
+    return sUnknown_203B244->selected[index];
 }
 
 struct unkStruct_203B244 *sub_801D008(void)

@@ -207,12 +207,12 @@ s32 GetStorageUsedCount(void)
     s32 i;
     s32 total = 0;
 
-    /* Thrown stacks (Gravelerock, etc.) count as 1 toward ranked capacity;
-     * other items still count by quantity. */
+    /* Storage stack items (Stick/Gravelerock when compact; else all thrown)
+     * count as 1 toward ranked capacity; other items count by quantity. */
     for (i = 0; i < STORAGE_SIZE; i++) {
         if (gTeamInventoryRef->teamStorage[i] == 0)
             continue;
-        if (IsThrownItem(i))
+        if (IsStorageStackItem(i))
             total++;
         else
             total += gTeamInventoryRef->teamStorage[i];
@@ -252,12 +252,12 @@ s32 GetStorageDepositQuantity(const Item *slot)
 }
 
 /* Ranked-capacity cost of depositing `quantity` of itemId.
- * Thrown items cost 1 only when opening a new stack (id was empty). */
+ * Storage stack items cost 1 only when opening a new stack (id was empty). */
 s32 GetStorageDepositCapacityCost(u8 itemId, s32 quantity)
 {
     if (quantity <= 0 || itemId >= STORAGE_SIZE)
         return 0;
-    if (IsThrownItem(itemId))
+    if (IsStorageStackItem(itemId))
         return (gTeamInventoryRef->teamStorage[itemId] == 0) ? 1 : 0;
     return quantity;
 }
@@ -316,6 +316,15 @@ bool8 IsThrownItem(u8 id)
     return FALSE;
   else
     return TRUE;
+}
+
+/* Items that occupy one ranked-capacity slot regardless of quantity.
+ * Compact mode: only Stick and Gravelerock. Otherwise: all thrown items. */
+bool8 IsStorageStackItem(u8 id)
+{
+    if (gRuntimeConfig.compact_kangaskhan_storage)
+        return (id == ITEM_STICK || id == ITEM_GRAVELEROCK);
+    return IsThrownItem(id);
 }
 
 // arm9.bin::02060F04
@@ -1179,8 +1188,8 @@ void MoveToStorage(Item* slot)
     cost = GetStorageDepositCapacityCost(slot->id, add);
     space = GetStorageCapacity() - GetStorageUsedCount();
     if (cost > space) {
-        /* Thrown new-stack needs 1 free slot; non-thrown clamp to remaining. */
-        if (IsThrownItem(slot->id))
+        /* Stack items need 1 free slot; others clamp to remaining capacity. */
+        if (IsStorageStackItem(slot->id))
             return;
         add = space;
         if (add <= 0)

@@ -59,6 +59,8 @@ s32 GetStorageDepositCapacityCost(u8 itemId, s32 quantity);
 bool8 CanAddQuantityToStorage(u8 itemId, s32 quantity);
 bool8 IsBagFull(void);
 bool8 IsThrownItem(u8 id);
+/* Compact storage: only Stick/Gravelerock stack as one capacity slot; else all thrown. */
+bool8 IsStorageStackItem(u8 id);
 void ItemIdToItem(Item *item, u8 id, bool8 makeSticky);
 void InitBulkItem(BulkItem *dst, u8 id);
 void BulkItemToItem(Item *dst, BulkItem *src);

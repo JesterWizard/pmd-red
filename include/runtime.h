@@ -53,7 +53,8 @@ typedef struct {
     u8 rank_rewards;
     /* Parallel achievements system (title menu + tracking + rewards) */
     u8 achievements;
-    /* Compact Kangaskhan storage: u8 counts, max 99/item (else max 255) */
+    /* Compact Kangaskhan storage: u8 counts, max 99/item; only Stick/Gravelerock
+     * stack as one capacity slot (else max 255 and all thrown stack as one) */
     u8 compact_kangaskhan_storage;
     /* Random custom title BG from graphics/title_screen_backgrounds/ (else vanilla titlen*) */
     u8 custom_title_backgrounds;

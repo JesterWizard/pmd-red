@@ -412,7 +412,7 @@ bool8 sub_801ADA0(s32 param_1)
     if (gTeamInventoryRef->teamStorage[item.id] + selectedSameId + pending > GetMaxStorageQuantity())
         return FALSE;
 
-    /* Capacity: thrown stacks cost 1 only when opening a new id (dedupe selection). */
+    /* Capacity: stack items cost 1 only when opening a new id (dedupe selection). */
     selectedTotal = 0;
     for (invIndex = 0; invIndex < GetNumberOfFilledInventorySlots(); invIndex++) {
         if (gUnknown_203B224->unk4[invIndex] == 0)
@@ -420,7 +420,7 @@ bool8 sub_801ADA0(s32 param_1)
         other = gTeamInventoryRef->teamItems[invIndex];
         if (!IsNotMoneyOrUsedTMItem(other.id))
             continue;
-        if (IsThrownItem(other.id)) {
+        if (IsStorageStackItem(other.id)) {
             if (gTeamInventoryRef->teamStorage[other.id] != 0)
                 continue;
             alreadyCounted = FALSE;
@@ -439,7 +439,7 @@ bool8 sub_801ADA0(s32 param_1)
         }
     }
 
-    if (IsThrownItem(item.id))
+    if (IsStorageStackItem(item.id))
         pendingCost = (gTeamInventoryRef->teamStorage[item.id] == 0 && selectedSameId == 0) ? 1 : 0;
     else
         pendingCost = pending;

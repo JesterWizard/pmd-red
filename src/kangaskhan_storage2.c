@@ -421,16 +421,20 @@ static void sub_8018620(void)
 static void sub_80186F8(void)
 {
     BulkItem item;
-    s32 itemID;
+    s32 entry;
+    s32 entryCount;
+    struct unkStruct_203B244 *menu;
 
     switch (sub_801CA08(TRUE)) {
         case 3:
             if (sub_801CFB8() != 0) {
-                for (itemID = 0; itemID < NUMBER_OF_ITEM_IDS; itemID++) {
-                    if (sub_801CFE0(itemID) != 0) {
-                        item.id = itemID;
+                menu = sub_801D008();
+                entryCount = menu->unk4B4.m.input.totalEntriesCount;
+                for (entry = 0; entry < entryCount; entry++) {
+                    if (sub_801CFE0(entry) != 0) {
+                        item.id = menu->itemIDs[entry];
 
-                        if (IsThrownItem(item.id)) {
+                        if (IsStorageStackItem(item.id)) {
                             if (gTeamInventoryRef->teamStorage[item.id] > 99)
                                 item.quantity = 99;
                             else
@@ -579,7 +583,7 @@ static void HandleKangaskhanStorage2TakeMenu(void)
         case TAKE_ACTION:
             if (IsBagFull())
                 sub_8012EA4(&sUnknown_203B20C->unk70, 1);
-            else if (IsThrownItem(sUnknown_203B20C->item.id))
+            else if (IsStorageStackItem(sUnknown_203B20C->item.id))
                 UpdateKangaskhanStorage2State(12);
             else {
                 gTeamInventoryRef->teamStorage[sUnknown_203B20C->item.id] -= sUnknown_203B20C->item.quantity;

@@ -208,7 +208,7 @@ static void sub_80371B8(void)
                 if (qty + add > max)
                     add = max - qty;
                 if (add > 0) {
-                    if (IsThrownItem(item->itemIndex)) {
+                    if (IsStorageStackItem(item->itemIndex)) {
                         if (qty == 0 && GetStorageUsedCount() >= GetStorageCapacity())
                             add = 0;
                     }
