@@ -383,7 +383,10 @@ const u8 *const gUnknown_80FA124[] = {
     [4] = _("{POKEMON_0}'s at quadruple speed!"),
 };
 
-const u8 *const gUnknown_80FA260 = _("The Rescue Team Badge\nshone on {POKEMON_1}!\n{POKEMON_1} gained a magical power!\n{POKEMON_1}: Thank you!\nPlease come see me at the Pelipper\nPost Office later.\n{POKEMON_1} escaped from the dungeon!");
+/* Job completion: narration / thank-you speech / leave — portrait only on thank-you. */
+const u8 *const gUnknown_80FA260 = _("The Rescue Team Badge\nshone on {POKEMON_1}!\n{POKEMON_1} gained a magical power!");
+const u8 *const gJobRescueThankYouMsg = _("{POKEMON_1}: Thank you!\nPlease come see me at the Pelipper\nPost Office later.");
+const u8 *const gJobRescueEscapedMsg = _("{POKEMON_1} escaped from the dungeon!");
 const u8 *const gOutlawDefeatedMsg = _("The outlaw {POKEMON_1} was defeated!");
 const u8 *const gOutlawEncounterDialogue[5] = {
     _("Gwahaha! You'll never take me alive!"),
@@ -392,7 +395,9 @@ const u8 *const gOutlawEncounterDialogue[5] = {
     _("I've been waiting for a fight! Bring it on!"),
     _("You think you can stop me? Dream on!"),
 };
-const u8 *const gUnknown_80FA2B0 = _("{POKEMON_1} happily accepted the item!\n\n\n{POKEMON_1}: Thank you!\n\n\n{POKEMON_1} left the dungeon!\n\n");
+const u8 *const gUnknown_80FA2B0 = _("{POKEMON_1} happily accepted the item!");
+const u8 *const gJobDeliverThankYouMsg = _("{POKEMON_1}: Thank you!");
+const u8 *const gJobDeliverLeftMsg = _("{POKEMON_1} left the dungeon!");
 const u8 *const gUnknown_80FA2F0 = _("Yes! {POKEMON_1} was found!\nUse the Rescue Team Badge to save\n{POKEMON_1}?");
 const u8 *const gUnknown_80FA32C = _("Yes! {POKEMON_1} was found!\nDeliver the requested item to\n{POKEMON_1}?");
 const u8 *const gUnknown_80FA36C = _("A mission has been completed!\nWould you like to leave now?");
@@ -402,7 +407,9 @@ const u8 *const gUnknown_80FA3B8 = _("Continue with your adventure?");
 const u8 *const gUnknown_80FA408 = _("You're holding a delivery item.\nReturn to the base without continuing?");
 const u8 *const gUnknown_80FA448 = _("The {MOVE_ITEM_0} isn't in the Toolbox.\nIt couldn't be delivered.");
 const u8 *const gUnknown_80FA464 = _("{POKEMON_1} can't talk now.");
-const u8 *const gUnknown_80FA4D4 = _("Yes! {POKEMON_2} was successfully\nescorted!\n{POKEMON_2} is delighted!\n{POKEMON_2}: Thank you!\n\n\n{POKEMON_2}'s twosome left the dungeon!\n\n");
+const u8 *const gUnknown_80FA4D4 = _("Yes! {POKEMON_2} was successfully\nescorted!\n{POKEMON_2} is delighted!");
+const u8 *const gJobEscortThankYouMsg = _("{POKEMON_2}: Thank you!");
+const u8 *const gJobEscortLeftMsg = _("{POKEMON_2}'s twosome left the dungeon!");
 const u8 *const gUnknown_80FA4D8 = _("A mission has been completed!\nWould you like to leave now?");
 const u8 *const gUnknown_80FA500 = _("{POKEMON_2} doesn't seem to be around.");
 const u8 *const gUnknown_80FA52C = _("The mission can no longer be completed!");

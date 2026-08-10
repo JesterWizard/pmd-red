@@ -30,6 +30,15 @@ static struct MonDialogueSpriteInfo *JobThankYouPortrait(struct MonDialogueSprit
     return out;
 }
 
+/* Narration and leave lines have no portrait; thank-you speech may show one. */
+static void DisplayJobCompletionDialogue_Async(struct MonDialogueSpriteInfo *portrait,
+                                               const u8 *narration, const u8 *thankYou, const u8 *left)
+{
+    DisplayDungeonMessage_Async(NULL, narration, 1);
+    DisplayDungeonMessage_Async(portrait, thankYou, 1);
+    DisplayDungeonMessage_Async(NULL, left, 1);
+}
+
 void sub_80842F0(void)
 {
     s32 i;
@@ -168,13 +177,15 @@ void sub_8084448(Entity *pokemon)
         }
         ZeroOutItem(&gTeamInventoryRef->teamItems[i]);
         FillInventoryGaps();
-        DisplayDungeonMessage_Async(portrait, gUnknown_80FA2B0, 1);
+        DisplayJobCompletionDialogue_Async(portrait, gUnknown_80FA2B0,
+                                           gJobDeliverThankYouMsg, gJobDeliverLeftMsg);
         str = gUnknown_80FA370;
     }
     else {
         if (DisplayDungeonYesNoMessage_Async(0, gUnknown_80FA2F0, 1) != 1)
             return;
-        DisplayDungeonMessage_Async(portrait, gUnknown_80FA260, 1);
+        DisplayJobCompletionDialogue_Async(portrait, gUnknown_80FA260,
+                                           gJobRescueThankYouMsg, gJobRescueEscapedMsg);
         str = gUnknown_80FA36C;
     }
 
@@ -237,8 +248,8 @@ void sub_80845E0(Entity *pokemon)
     {
         struct MonDialogueSpriteInfo dialogueInfo;
         /* Escort thank-you is from the client (POKEMON_2 / entity). */
-        DisplayDungeonMessage_Async(JobThankYouPortrait(&dialogueInfo, info2->apparentID),
-                                    gUnknown_80FA4D4, 1);
+        DisplayJobCompletionDialogue_Async(JobThankYouPortrait(&dialogueInfo, info2->apparentID),
+                                           gUnknown_80FA4D4, gJobEscortThankYouMsg, gJobEscortLeftMsg);
     }
     sub_80843BC(info1->id);
     info2->joinedAt.id = gDungeon->unk644.dungeonLocation.id;
