@@ -40,6 +40,7 @@
 #include "move_orb_actions_1.h"
 #include "move_orb_effects_2.h"
 #include "move_orb_effects_5.h"
+#include "runtime.h"
 
 static void StunSeedItemAction(Entity *, Entity *);
 static void MaxElixirAction(Entity *, Entity *);
@@ -723,14 +724,18 @@ static void HandleGummiItemAction(Entity *pokemon, Entity *target, u8 gummiIndex
   s32 iVar3;
   EntityInfo *targetInfo;
   s32 gummiBoost;
+  s32 typeBoost0;
+  s32 typeBoost1;
+  s32 bestTypeBoost;
   s32 baseIQ;
   s32 iVar4;
   s32 iVar5;
   s32 currIQ;
 
   targetInfo = GetEntInfo(target);
-  gummiBoost = gTypeGummiIQBoost[targetInfo->types[0]][gummiIndex];
-  gummiBoost += gTypeGummiIQBoost[targetInfo->types[1]][gummiIndex];
+  typeBoost0 = gTypeGummiIQBoost[targetInfo->types[0]][gummiIndex];
+  typeBoost1 = gTypeGummiIQBoost[targetInfo->types[1]][gummiIndex];
+  gummiBoost = typeBoost0 + typeBoost1;
   sub_8078B5C(pokemon,target,
              gUnknown_810A808[targetInfo->types[0]][gummiIndex] +
              gUnknown_810A808[targetInfo->types[1]][gummiIndex],0,1);
@@ -763,6 +768,38 @@ static void HandleGummiItemAction(Entity *pokemon, Entity *target, u8 gummiIndex
         TryDisplayDungeonLoggableMessage3_Async(pokemon,target,gUnknown_80FD6E8[iVar3]);
         LoadIQSkills(target);
         DisplayMsgIfNewIqSkillLearned(targetInfo,baseIQ);
+      }
+
+      /* PMD2: ~1% all four basic stats, ~24% one random; only if type matchup
+       * is neutral+ (best type IQ ≥ 3) or IQ was already maxed. */
+      if (gRuntimeConfig.pmd2_gummi_stats) {
+        bestTypeBoost = typeBoost0 > typeBoost1 ? typeBoost0 : typeBoost1;
+        if (bestTypeBoost >= 3 || baseIQ >= 999) {
+          s32 roll = DungeonRandInt(100);
+
+          if (roll < 1) {
+            RaiseAtkStatTarget(pokemon, target, 1);
+            RaiseSpAtkStatTarget(pokemon, target, 1);
+            RaiseDefStatTarget(pokemon, target, 1);
+            RaiseSpDefStatTarget(pokemon, target, 1);
+          }
+          else if (roll < 25) {
+            switch (DungeonRandInt(4)) {
+              case 0:
+                RaiseAtkStatTarget(pokemon, target, 1);
+                break;
+              case 1:
+                RaiseSpAtkStatTarget(pokemon, target, 1);
+                break;
+              case 2:
+                RaiseDefStatTarget(pokemon, target, 1);
+                break;
+              default:
+                RaiseSpDefStatTarget(pokemon, target, 1);
+                break;
+            }
+          }
+        }
       }
     }
   }

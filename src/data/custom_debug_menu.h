@@ -92,6 +92,8 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Town gummis"), &gRuntimeConfig.gummis_in_town, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+    { _("Gummi stats"), &gRuntimeConfig.pmd2_gummi_stats, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
+      CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Status EXP"), &gRuntimeConfig.status_condition_exp, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Link 0 PP"), &gRuntimeConfig.keep_linked_moves_at_0_pp, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,

@@ -46,4 +46,4 @@ Effects match Friend Area feeding (`GetGummiItemStatBoost`): type-based IQ gain 
 ## Limitations
 
 - Only the town Team list (`CreateFriendListMenu(0)`). Friend-area Visit list is unchanged.
-- Does not change dungeon gummi eating.
+- Does not change dungeon gummi eating (see [`Pmd2GummiStats.md`](Pmd2GummiStats.md) for dungeon stat rolls).

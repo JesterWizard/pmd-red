@@ -36,6 +36,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .keep_allies = TRUE, /* TRUE = allies stay overnight; FALSE = vanilla end-of-day Stand By */
     .multi_select_selling = TRUE, /* TRUE = L/R multi-select sell (Kangaskhan-style); FALSE = one at a time */
     .gummis_in_town = TRUE, /* TRUE = Give Gummi from town Team menu; FALSE = Friend Area only */
+    .pmd2_gummi_stats = TRUE, /* TRUE = dungeon gummi random/all-4 basic stats; FALSE = IQ/Belly only */
     .status_condition_exp = TRUE, /* TRUE = EXP on status KOs; FALSE = vanilla (no EXP) */
     .keep_linked_moves_at_0_pp = TRUE, /* TRUE = links survive 0 PP; FALSE = vanilla delink */
     .evolution_stat_boost = TRUE, /* TRUE = +10% current stats per evolution; FALSE = vanilla */
