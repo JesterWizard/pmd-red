@@ -380,7 +380,17 @@ static void AddTeamSubMenuOptions(struct UnkFieldTeamMenuStruct *a0)
     AddActionToDungeonSubMenu(ACTION_CHECK_MOVES, 0);
     if (!monInfo->isTeamLeader) {
         if (!gDungeon->unk644.unk19 && (monInfo->joinedAt.id != DUNGEON_JOIN_LOCATION_PARTNER || gDungeon->unk644.canChangeLeader)) {
-            AddActionToDungeonSubMenu(0x34, 0);
+            /* unk2=1 → menu label "Send Home" when Farewell commits to Friend Area. */
+            u8 sendHomeLabel = 0;
+
+            if (monInfo->teamIndex >= 0 && monInfo->teamIndex < MAX_TEAM_MEMBERS) {
+                DungeonMon *mon = &gRecruitedPokemonRef->dungeonTeam[monInfo->teamIndex];
+
+                if (sub_806A58C(mon->recruitedPokemonId)
+                    || (gRuntimeConfig.pmd2_send_home && !sub_806A564(mon->recruitedPokemonId)))
+                    sendHomeLabel = 1;
+            }
+            AddActionToDungeonSubMenu(ACTION_UNK34, sendHomeLabel);
         }
         AddActionToDungeonSubMenu(ACTION_TALK_MENU, 0);
     }
@@ -418,7 +428,7 @@ static void AddTeamSubMenuOptions(struct UnkFieldTeamMenuStruct *a0)
         SetActionUnusableInDungeonSubMenu(0x3B);
         SetActionUnusableInDungeonSubMenu(ACTION_CHANGE_TACTICS);
         SetActionUnusableInDungeonSubMenu(ACTION_VIEW_IQ);
-        SetActionUnusableInDungeonSubMenu(0x34);
+        SetActionUnusableInDungeonSubMenu(ACTION_UNK34);
     }
 
     sub_8045064();

@@ -743,7 +743,7 @@ static void sub_8067794(Entity *entity, Entity *targetEntity, s32 a2)
             stringPtr2 = gMonWentBack;
         }
         else if (gRuntimeConfig.pmd2_send_home) {
-            stringPtr1 = gSendMonBackQ;
+            stringPtr1 = gText_SendNewRecruitHomeQ;
             stringPtr2 = gMonWentBack;
             sendNewRecruitHome = TRUE;
         }

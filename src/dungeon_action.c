@@ -240,6 +240,9 @@ const u8 *GetDungeonSubMenuItemString(s32 param_1)
     if (actionId == ACTION_STAIRS && GetFloorType() == FLOOR_TYPE_RESCUE) {
         return gUnknown_80F91EC;
     }
+    else if (actionId == ACTION_UNK34 && gDungeonSubMenu[param_1].unk2 != 0) {
+        return gText_SendHome;
+    }
     else {
         if (!AreStringsDifferent(gUnknown_80F7C50[actionId].str, "X")) {
             return gActions[GetItemActionType(gDungeonSubMenu[param_1].unk2)].useText;

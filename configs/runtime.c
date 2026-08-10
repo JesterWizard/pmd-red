@@ -13,7 +13,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .pmd2_font = TRUE, /* TRUE = PMD2 Latin font; FALSE = vanilla */
     .pmd2_training_grounds = TRUE, /* TRUE = 5 floors + exit, no boss, scaling levels; FALSE = vanilla 3F+boss */
     .pmd2_rescue_points = TRUE, /* TRUE = show rescue points beside job difficulty; FALSE = vanilla */
-    .pmd2_send_home = TRUE, /* TRUE = send new recruits home mid-dungeon; FALSE = vanilla */
+    .pmd2_send_home = TRUE, /* TRUE = Team "Send Home" for new recruits; FALSE = vanilla Farewell */
     .custom_graphics = TRUE, /* TRUE = PMD2 Poké coin + cyan money; FALSE = vanilla */
     .party_leader_switch = TRUE, /* TRUE = dungeon Make Leader anytime (temp until postgame); FALSE = vanilla */
     .show_dungeon_portraits = TRUE, /* TRUE = portraits on ally talk + level-up; FALSE = vanilla */

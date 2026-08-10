@@ -40,6 +40,7 @@
 static void nullsub_96(Entity *pokemon,Entity *target);
 static void sub_806F910(void);
 static void InitializeDungeonMonFromRecruit(DungeonMon *dungeonMon, struct unkStruct_8069D4C *param_3, s32 teamIndex);
+static bool8 SendNewRecruitHome_Async(Entity *entity1, Entity *entity2, struct unkStruct_8069D4C *param_3);
 static bool8 MakeRoomForRecruit(Entity *entity1, Entity *entity2, struct unkStruct_8069D4C *param_3, bool8 *sentHome);
 
 bool8 TryRecruitMonster(Entity *attacker, Entity *target)
@@ -316,12 +317,51 @@ static void InitializeDungeonMonFromRecruit(DungeonMon *dungeonMon, struct unkSt
     BoundedCopyStringtoBuffer(dungeonMon->name, GetMonSpecies(param_3->id), POKEMON_NAME_LENGTH);
 }
 
-static bool8 MakeRoomForRecruit(Entity *entity1, Entity *entity2, struct unkStruct_8069D4C *param_3, bool8 *sentHome)
+/* Nickname, Friend Area commit, and dismiss — same path as party-full send-home. */
+static bool8 SendNewRecruitHome_Async(Entity *entity1, Entity *entity2, struct unkStruct_8069D4C *param_3)
 {
     DungeonMon newMon;
-    Entity *target;
     bool8 unlockedFriendArea = FALSE;
     u8 friendArea = GetFriendArea(param_3->id);
+
+    if (GetFriendAreaStatus(friendArea) == 0) {
+        UnlockFriendArea(friendArea);
+        unlockedFriendArea = TRUE;
+    }
+
+    InitializeDungeonMonFromRecruit(&newMon, param_3, 0);
+    if (DisplayDungeonYesNoMessage_Async(0, gText_NewMemberJoinedGiveItNickname, TRUE) == 1) {
+        while (DungeonGiveNameToRecruitedMon(newMon.name) == 0) {
+            DisplayDungeonMessage_Async(0, gText_PleaseGiveNicknameNewMember, TRUE);
+        }
+    }
+
+    if (!TryCommitNewRecruitToFriendArea(&newMon))
+        return FALSE;
+
+    IncrementAdventureNumJoined();
+    HandleFaint_Async(entity2, DUNGEON_EXIT_TRANSFORMED_INTO_FRIEND, entity1);
+    sub_808D9DC(gFormatBuffer_Monsters[0], &newMon, 0);
+    LogMessageByIdWithPopupCheckUser_Async(entity1, gText_Pokemon0JoinedToGoOnAdventures);
+    if (unlockedFriendArea) {
+        Entity *leader = CutsceneGetLeader();
+        SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], leader, 0);
+        sub_8092558(gFormatBuffer_FriendArea, friendArea);
+        PlaySound(0xce);
+        DisplayDungeonMessage_Async(0, gText_Pokemon0GainedAccessToFriendArea, 1);
+        sub_808D9DC(gFormatBuffer_Monsters[0], &newMon, 0);
+    }
+    DisplayDungeonMessage_Async(0, gMonWentBack, TRUE);
+    if (param_3->id == MONSTER_MEW) {
+        gDungeon->unk4 = 1;
+        gDungeon->unk11 = 3;
+    }
+    return TRUE;
+}
+
+static bool8 MakeRoomForRecruit(Entity *entity1, Entity *entity2, struct unkStruct_8069D4C *param_3, bool8 *sentHome)
+{
+    Entity *target;
 
     *sentHome = FALSE;
     if (!gRuntimeConfig.pmd2_send_home)
@@ -330,38 +370,8 @@ static bool8 MakeRoomForRecruit(Entity *entity1, Entity *entity2, struct unkStru
     DisplayDungeonMessage_Async(NULL, gText_DungeonTeamFull, TRUE);
     CopyCyanMonsterNametoBuffer(gFormatBuffer_Monsters[0], param_3->id);
     if (DisplayDungeonYesNoMessage_Async(NULL, gText_SendNewRecruitHomeQ, FALSE) == 1) {
-        if (GetFriendAreaStatus(friendArea) == 0) {
-            UnlockFriendArea(friendArea);
-            unlockedFriendArea = TRUE;
-        }
-
-        InitializeDungeonMonFromRecruit(&newMon, param_3, 0);
-        if (DisplayDungeonYesNoMessage_Async(0, gText_NewMemberJoinedGiveItNickname, TRUE) == 1) {
-            while (DungeonGiveNameToRecruitedMon(newMon.name) == 0) {
-                DisplayDungeonMessage_Async(0, gText_PleaseGiveNicknameNewMember, TRUE);
-            }
-        }
-
-        if (!TryCommitNewRecruitToFriendArea(&newMon))
+        if (!SendNewRecruitHome_Async(entity1, entity2, param_3))
             return FALSE;
-
-        IncrementAdventureNumJoined();
-        HandleFaint_Async(entity2, DUNGEON_EXIT_TRANSFORMED_INTO_FRIEND, entity1);
-        sub_808D9DC(gFormatBuffer_Monsters[0], &newMon, 0);
-        LogMessageByIdWithPopupCheckUser_Async(entity1, gText_Pokemon0JoinedToGoOnAdventures);
-        if (unlockedFriendArea) {
-            Entity *leader = CutsceneGetLeader();
-            SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0], leader, 0);
-            sub_8092558(gFormatBuffer_FriendArea, friendArea);
-            PlaySound(0xce);
-            DisplayDungeonMessage_Async(0, gText_Pokemon0GainedAccessToFriendArea, 1);
-            sub_808D9DC(gFormatBuffer_Monsters[0], &newMon, 0);
-        }
-        DisplayDungeonMessage_Async(0, gMonWentBack, TRUE);
-        if (param_3->id == MONSTER_MEW) {
-            gDungeon->unk4 = 1;
-            gDungeon->unk11 = 3;
-        }
         *sentHome = TRUE;
         return TRUE;
     }

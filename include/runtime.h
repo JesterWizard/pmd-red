@@ -44,7 +44,7 @@ typedef struct {
     u8 pmd2_training_grounds;
     /* Show each job's rescue-point reward beside its difficulty */
     u8 pmd2_rescue_points;
-    /* PMD2-style send-home for new recruits during a dungeon */
+    /* PMD2-style Send Home on Team menu for new recruits (+ full-party recruit) */
     u8 pmd2_send_home;
     /* Felicity Bank interest on successful dungeon clear (percent; 0 = off) */
     u8 bank_interest_percent;

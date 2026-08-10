@@ -13,13 +13,14 @@ Toggle: `gRuntimeConfig.pmd2_send_home` in
 
 ## Behavior
 
-- Team-menu Farewell sends new recruits to their Friend Area instead of
-  deleting them.
+- On the dungeon Team options menu (Summary / Moves / Check IQ / …), new
+  recruits show **Send Home** instead of Farewell; choosing it commits them
+  to their Friend Area and removes them from the active party.
+- Team-menu Farewell / Send Home for members already in the Friend Area still
+  sends them back (vanilla “Send back” confirm).
 - If a successful recruit cannot fit because of the four-member or six-body-
   size limit, the player can send a current team member home and continue
-  recruiting.
-- The new recruit can be sent home immediately instead of joining the active
-  dungeon party.
+  recruiting, or send the new recruit home immediately.
 - Friend Area capacity is checked immediately; the existing release menu is
   shown when that area is full.
 
@@ -30,7 +31,7 @@ Toggle: `gRuntimeConfig.pmd2_send_home` in
 | Toggle | [`include/runtime.h`](../../include/runtime.h), [`configs/runtime.c`](../../configs/runtime.c) |
 | Recruitment | [`src/dungeon_mon_recruit.c`](../../src/dungeon_mon_recruit.c) |
 | Team Farewell | [`src/dungeon_action_handler.c`](../../src/dungeon_action_handler.c) |
-| Sendable-member picker | [`src/dungeon_menu_team.c`](../../src/dungeon_menu_team.c) |
+| Team options label | [`src/dungeon_menu_team.c`](../../src/dungeon_menu_team.c), [`src/dungeon_action.c`](../../src/dungeon_action.c) |
 
 ## Save Compatibility
 
