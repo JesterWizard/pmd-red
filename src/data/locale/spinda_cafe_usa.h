@@ -53,6 +53,9 @@
 
 #define SPINDA_IQ_UP (_("{NAME_0}'s IQ went up!"))
 
+#define SPINDA_IQ_LEARNED (_( \
+    "\n{CENTER_ALIGN}{NAME_0} learned {COLOR CYAN}{MOVE_ITEM_1}{RESET}"))
+
 #define SPINDA_PLUS_ATK (_( \
     "Yes!\n" \
     "{NAME_0}'s Attack rose by 1!"))

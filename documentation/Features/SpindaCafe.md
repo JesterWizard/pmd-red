@@ -38,6 +38,7 @@ Unlock: stairs + indoor staff after `QUEST_CAN_ACCESS_JOBS`.
    - **System:** `{NAME} drank the juice!`
    - Spinda reacts (Happy / Joyous / Sad portraits from SpriteCollab).
    - **System:** IQ / Attack / Defense / etc. rises (same style as town gummi feeding).
+   - **System:** If IQ rose past a skill threshold, each newly available IQ skill is announced (same as gummi feeding).
 4. Effects:
    - **Gummi:** existing IQ path via `GetGummiItemStatBoost`, and **always at least one offense stat** (PMD2-accurate). Good feeling adds +2 IQ and Joyous face.
    - **Other food:** chance of IQ / offense; good feeling guarantees a boost.

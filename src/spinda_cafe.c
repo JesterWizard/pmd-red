@@ -2,6 +2,7 @@
 #include "globaldata.h"
 #include "constants/emotions.h"
 #include "constants/colors.h"
+#include "constants/iq_skill.h"
 #include "constants/item.h"
 #include "constants/monster.h"
 #include "achievements.h"
@@ -47,6 +48,7 @@ enum JuiceStates {
     JUICE_DRANK_SYS,
     JUICE_SPINDA_REACT,
     JUICE_STAT_SYS,
+    JUICE_IQ_SKILL,
     JUICE_BYE,
     JUICE_EXIT,
 };
@@ -71,6 +73,12 @@ typedef struct SpindaJuiceBarWork
     s32 iqGain;
     u16 gummiFlags;
     u8 reactEmotion;
+    Pokemon *drinkMon;
+    u8 iqSkillPre[NUM_IQ_SKILLS];
+    u8 iqSkillPost[NUM_IQ_SKILLS];
+    s32 availIQSkillPre;
+    s32 availIQSkillPost;
+    s32 nextIqSkillCheck;
 } SpindaJuiceBarWork;
 
 static EWRAM_INIT SpindaJuiceBarWork *sJuiceWork = {NULL};
@@ -89,6 +97,7 @@ static void ApplyJuiceDrink(Pokemon *mon);
 static void SetSpindaEmotion(u8 emotion);
 static bool8 BoostRandomOffense(Pokemon *mon);
 static void ShowNextStatSystemMessage(void);
+static void ShowNextIqSkillMessage(void);
 static bool8 IsJuiceFoodItem(u8 itemId);
 static bool8 TeamHasJuiceFood(void);
 static void CollectTeamMons(void);
@@ -387,7 +396,10 @@ static void ApplyJuiceDrink(Pokemon *mon)
     sJuiceWork->goodFeeling = good;
 
     PrintColoredPokeNameToBuffer(gFormatBuffer_Names[0], mon, COLOR_CYAN);
+    sJuiceWork->drinkMon = mon;
     iqBefore = mon->IQ;
+    sJuiceWork->availIQSkillPre = GetNumAvailableIQSkills(sJuiceWork->iqSkillPre, mon->IQ);
+    sJuiceWork->nextIqSkillCheck = 1;
 
     if (IsGummiItem(sJuiceWork->item.id)) {
         /* PMD2: gummi drinks always raise IQ (type matchup) and at least one stat. */
@@ -402,6 +414,7 @@ static void ApplyJuiceDrink(Pokemon *mon)
                 mon->IQ = 999;
         }
         sJuiceWork->iqGain = mon->IQ - iqBefore;
+        sJuiceWork->availIQSkillPost = GetNumAvailableIQSkills(sJuiceWork->iqSkillPost, mon->IQ);
         sJuiceWork->reactEmotion = good ? EMOTION_JOYOUS : EMOTION_HAPPY;
         ShiftItemsDownFrom(sJuiceWork->itemIndex);
         return;
@@ -435,6 +448,7 @@ static void ApplyJuiceDrink(Pokemon *mon)
     if (mon->IQ < 1)
         mon->IQ = 1;
     sJuiceWork->iqGain = mon->IQ - iqBefore;
+    sJuiceWork->availIQSkillPost = GetNumAvailableIQSkills(sJuiceWork->iqSkillPost, mon->IQ);
     ShiftItemsDownFrom(sJuiceWork->itemIndex);
 }
 
@@ -488,8 +502,51 @@ static void ShowNextStatSystemMessage(void)
     }
     if (sJuiceWork->iqGain > 0) {
         sJuiceWork->iqGain = 0;
+        sJuiceWork->nextIqSkillCheck = 1;
+        sJuiceWork->fallbackState = JUICE_IQ_SKILL;
         CreateDialogueBoxAndPortrait(SPINDA_IQ_UP, 0, NULL, 0x101);
         return;
+    }
+
+    UpdateJuiceState(JUICE_MAIN_PROMPT);
+}
+
+/* Same pattern as town gummi feeding (code_80227B8): announce each newly available skill. */
+static void ShowNextIqSkillMessage(void)
+{
+    s32 i;
+
+    sJuiceWork->fallbackState = JUICE_MAIN_PROMPT;
+
+    while (sJuiceWork->nextIqSkillCheck < NUM_IQ_SKILLS) {
+        u8 skill = sJuiceWork->nextIqSkillCheck;
+        bool8 hadBefore = FALSE;
+        bool8 hasNow = FALSE;
+
+        for (i = 0; i < sJuiceWork->availIQSkillPre; i++) {
+            if (sJuiceWork->iqSkillPre[i] == skill) {
+                hadBefore = TRUE;
+                break;
+            }
+        }
+        for (i = 0; i < sJuiceWork->availIQSkillPost; i++) {
+            if (sJuiceWork->iqSkillPost[i] == skill) {
+                hasNow = TRUE;
+                break;
+            }
+        }
+
+        sJuiceWork->nextIqSkillCheck++;
+        if (hadBefore != hasNow) {
+            sJuiceWork->fallbackState = JUICE_IQ_SKILL;
+            /* Plain name so only the skill is cyan-highlighted. */
+            if (sJuiceWork->drinkMon != NULL)
+                PrintPokeNameToBuffer(gFormatBuffer_Names[0], sJuiceWork->drinkMon);
+            strcpy(gFormatBuffer_Items[1], GetIQSkillName(skill));
+            PlaySound(203);
+            CreateDialogueBoxAndPortrait(SPINDA_IQ_LEARNED, 0, NULL, 0x101);
+            return;
+        }
     }
 
     UpdateJuiceState(JUICE_MAIN_PROMPT);
@@ -567,6 +624,9 @@ static void UpdateJuiceDialogue(void)
             break;
         case JUICE_STAT_SYS:
             ShowNextStatSystemMessage();
+            break;
+        case JUICE_IQ_SKILL:
+            ShowNextIqSkillMessage();
             break;
         case JUICE_BYE:
             SetSpindaEmotion(EMOTION_HAPPY);
