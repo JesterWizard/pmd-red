@@ -331,13 +331,15 @@ void DisplayDungeonMessage_Async(struct MonDialogueSpriteInfo *monSpriteInfo, co
         && IsPokemonDialogueSpriteAvail(monSpriteInfo->species, monSpriteInfo->spriteId))
     {
         monPortrait.faceFile = GetDialogueSpriteDataPtrForEmotion(monSpriteInfo->species, monSpriteInfo->spriteId);
-        monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
-        monPortrait.pos.x = 2;
-        monPortrait.pos.y = 9;
-        monPortrait.spriteId = monSpriteInfo->spriteId;
-        monPortrait.flip = FALSE;
-        monPortrait.unkE = 0;
-        monPortraitPtr = &monPortrait;
+        if (monPortrait.faceFile != NULL) {
+            monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
+            monPortrait.pos.x = 2;
+            monPortrait.pos.y = 9;
+            monPortrait.spriteId = monSpriteInfo->spriteId;
+            monPortrait.flip = FALSE;
+            monPortrait.unkE = 0;
+            monPortraitPtr = &monPortrait;
+        }
     }
 
     CreateMenuDialogueBoxAndPortrait(str, 0, 0, NULL, NULL, 3, 0, monPortraitPtr, a2 ? 0x701 : 0x400);
@@ -498,13 +500,15 @@ bool32 DisplayDungeonYesNoMessage_Async(struct MonDialogueSpriteInfo *monSpriteI
         && IsPokemonDialogueSpriteAvail(monSpriteInfo->species, monSpriteInfo->spriteId))
     {
         monPortrait.faceFile = GetDialogueSpriteDataPtrForEmotion(monSpriteInfo->species, monSpriteInfo->spriteId);
-        monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
-        monPortrait.pos.x = 2;
-        monPortrait.pos.y = 9;
-        monPortrait.spriteId = monSpriteInfo->spriteId;
-        monPortrait.flip = FALSE;
-        monPortrait.unkE = 0;
-        monPortraitPtr = &monPortrait;
+        if (monPortrait.faceFile != NULL) {
+            monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
+            monPortrait.pos.x = 2;
+            monPortrait.pos.y = 9;
+            monPortrait.spriteId = monSpriteInfo->spriteId;
+            monPortrait.flip = FALSE;
+            monPortrait.unkE = 0;
+            monPortraitPtr = &monPortrait;
+        }
     }
 
     if (defaultYes == TRUE) {
@@ -545,13 +549,15 @@ s32 DisplayDungeonMenuMessage(struct MonDialogueSpriteInfo *monSpriteInfo, const
         && IsPokemonDialogueSpriteAvail(monSpriteInfo->species, monSpriteInfo->spriteId))
     {
         monPortrait.faceFile = GetDialogueSpriteDataPtrForEmotion(monSpriteInfo->species, monSpriteInfo->spriteId);
-        monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
-        monPortrait.pos.x = 2;
-        monPortrait.pos.y = 9;
-        monPortrait.spriteId = monSpriteInfo->spriteId;
-        monPortrait.flip = FALSE;
-        monPortrait.unkE = 0;
-        monPortraitPtr = &monPortrait;
+        if (monPortrait.faceFile != NULL) {
+            monPortrait.faceData = (PortraitGfx *) monPortrait.faceFile->data;
+            monPortrait.pos.x = 2;
+            monPortrait.pos.y = 9;
+            monPortrait.spriteId = monSpriteInfo->spriteId;
+            monPortrait.flip = FALSE;
+            monPortrait.unkE = 0;
+            monPortraitPtr = &monPortrait;
+        }
     }
 
     CreateMenuDialogueBoxAndPortrait(str, 0, -1, menuItems, NULL, 3, 0, monPortraitPtr, unkArg);

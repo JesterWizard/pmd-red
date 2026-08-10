@@ -18,6 +18,17 @@
 #include "constants/dungeon_exit.h"
 #include "constants/mailbox.h"
 #include "constants/wonder_mail.h"
+#include "runtime.h"
+
+/* Portrait for dungeon job thank-you lines when show_dungeon_portraits is on. */
+static struct MonDialogueSpriteInfo *JobThankYouPortrait(struct MonDialogueSpriteInfo *out, s16 species)
+{
+    if (!gRuntimeConfig.show_dungeon_portraits)
+        return NULL;
+    out->species = species;
+    out->spriteId = 0;
+    return out;
+}
 
 void sub_80842F0(void)
 {
@@ -124,6 +135,8 @@ void sub_8084448(Entity *pokemon)
     s32 i;
     const u8 *str;
     EntityInfo *entInfo = GetEntInfo(pokemon);
+    struct MonDialogueSpriteInfo dialogueInfo;
+    struct MonDialogueSpriteInfo *portrait;
 
     SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[0],GetLeader(),0);
     SubstitutePlaceholderStringTags(gFormatBuffer_Monsters[1],pokemon,0);
@@ -131,6 +144,8 @@ void sub_8084448(Entity *pokemon)
         DisplayDungeonMessage_Async(0,gUnknown_80FA464,1);
         return;
     }
+
+    portrait = JobThankYouPortrait(&dialogueInfo, entInfo->apparentID);
 
     if (gDungeon->unk644.unk46 != 0) {
         if (DisplayDungeonYesNoMessage_Async(0, gUnknown_80FA32C, 1) != 1)
@@ -153,13 +168,13 @@ void sub_8084448(Entity *pokemon)
         }
         ZeroOutItem(&gTeamInventoryRef->teamItems[i]);
         FillInventoryGaps();
-        DisplayDungeonMessage_Async(0, gUnknown_80FA2B0, 1);
+        DisplayDungeonMessage_Async(portrait, gUnknown_80FA2B0, 1);
         str = gUnknown_80FA370;
     }
     else {
         if (DisplayDungeonYesNoMessage_Async(0, gUnknown_80FA2F0, 1) != 1)
             return;
-        DisplayDungeonMessage_Async(0, gUnknown_80FA260, 1);
+        DisplayDungeonMessage_Async(portrait, gUnknown_80FA260, 1);
         str = gUnknown_80FA36C;
     }
 
@@ -219,7 +234,12 @@ void sub_80845E0(Entity *pokemon)
         return;
     }
 
-    DisplayDungeonMessage_Async(0,gUnknown_80FA4D4,1);
+    {
+        struct MonDialogueSpriteInfo dialogueInfo;
+        /* Escort thank-you is from the client (POKEMON_2 / entity). */
+        DisplayDungeonMessage_Async(JobThankYouPortrait(&dialogueInfo, info2->apparentID),
+                                    gUnknown_80FA4D4, 1);
+    }
     sub_80843BC(info1->id);
     info2->joinedAt.id = gDungeon->unk644.dungeonLocation.id;
     sub_8042A34(&pokemon->pos);

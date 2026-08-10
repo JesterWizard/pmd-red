@@ -22,6 +22,7 @@
 #include "runtime.h"
 #include "event_flag.h"
 #include "custom_portraits.h"
+#include "structs/str_mon_portrait.h"
 
 static EWRAM_DATA MonsterDataEntry *sMonsterParameters = {NULL}; // B=02135090
 static EWRAM_DATA OpenedFile *sMonsterParametersFile = {NULL};
@@ -989,14 +990,40 @@ static bool8 CustomPortraitHasEmotion(s16 id, s32 spriteId)
     return (GetCustomPortraitMask(id) >> (spriteId & 0xF)) & 1;
 }
 
+/* TRUE if opened custom/vanilla kao has a non-NULL gfx pointer for emotion. */
+static bool8 PortraitFileHasEmotionGfx(OpenedFile *file, s32 spriteId)
+{
+    PortraitGfx *gfx;
+
+    if (file == NULL || file->data == NULL)
+        return FALSE;
+    gfx = (PortraitGfx *)file->data;
+    return gfx->sprites[spriteId & 0xF].gfx != NULL;
+}
+
+static OpenedFile *OpenVanillaKao(s16 id)
+{
+    char buffer[0xC];
+
+    if (sMonsterParameters[id].dialogueSprites == 0)
+        return NULL;
+    sprintf(buffer, "kao%03d", id);
+    return OpenFileAndGetFileDataPtr(buffer, &gMonsterFileArchive);
+}
+
 /* Prefer custom when it has the emotion; else vanilla kao. */
 OpenedFile *OpenPokemonDialogueSpriteFile(s16 index, s32 spriteId)
 {
     char buffer[0xC];
+    s32 emotion = spriteId & 0xF;
+    OpenedFile *file;
 
-    if (CustomPortraitHasEmotion(index, spriteId)) {
+    if (CustomPortraitHasEmotion(index, emotion)) {
         sprintf(buffer, "ckao%03d", index);
-        return OpenFile(buffer, &gCustomPortraitArchive);
+        file = OpenFile(buffer, &gCustomPortraitArchive);
+        if (file != NULL)
+            return file;
+        /* Fall through to vanilla if ckao open fails (e.g. file cache full). */
     }
     if (sMonsterParameters[index].dialogueSprites == 0)
         return NULL;
@@ -1013,13 +1040,16 @@ OpenedFile *GetDialogueSpriteDataPtr(s32 index)
     char buffer[0xC];
     s16 id = SpeciesId(index);
     u16 vanillaMask = sMonsterParameters[id].dialogueSprites;
+    OpenedFile *file;
 
     if (gRuntimeConfig.custom_portraits && HasCustomPortrait(id)) {
         u16 customMask = GetCustomPortraitMask(id);
 
         if (vanillaMask == 0 || (customMask & vanillaMask) == vanillaMask) {
             sprintf(buffer, "ckao%03d", id);
-            return OpenFileAndGetFileDataPtr(buffer, &gCustomPortraitArchive);
+            file = OpenFileAndGetFileDataPtr(buffer, &gCustomPortraitArchive);
+            if (file != NULL)
+                return file;
         }
     }
     if (vanillaMask == 0)
@@ -1028,20 +1058,28 @@ OpenedFile *GetDialogueSpriteDataPtr(s32 index)
     return OpenFileAndGetFileDataPtr(buffer, &gMonsterFileArchive);
 }
 
-/* Single-emotion open (dungeon talk, level-up, etc.). */
+/*
+ * Single-emotion open (dungeon talk, level-up, rescue thank-you, etc.).
+ * Prefer custom for that emotion; always fall back to vanilla kao if custom is
+ * missing, fails to open, or has a NULL gfx slot — otherwise rescue thank-you
+ * goes blank while shops (GetDialogueSpriteDataPtr) still show vanilla.
+ */
 OpenedFile *GetDialogueSpriteDataPtrForEmotion(s32 index, s32 spriteId)
 {
     char buffer[0xC];
     s16 id = SpeciesId(index);
+    s32 emotion = spriteId & 0xF;
+    OpenedFile *file;
 
-    if (CustomPortraitHasEmotion(id, spriteId)) {
+    if (CustomPortraitHasEmotion(id, emotion)) {
         sprintf(buffer, "ckao%03d", id);
-        return OpenFileAndGetFileDataPtr(buffer, &gCustomPortraitArchive);
+        file = OpenFileAndGetFileDataPtr(buffer, &gCustomPortraitArchive);
+        if (PortraitFileHasEmotionGfx(file, emotion))
+            return file;
+        if (file != NULL)
+            CloseFile(file);
     }
-    if (sMonsterParameters[id].dialogueSprites == 0)
-        return NULL;
-    sprintf(buffer, "kao%03d", id);
-    return OpenFileAndGetFileDataPtr(buffer, &gMonsterFileArchive);
+    return OpenVanillaKao(id);
 }
 
 bool8 IsPokemonDialogueSpriteAvail(s16 index, s32 spriteId)

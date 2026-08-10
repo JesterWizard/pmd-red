@@ -37,7 +37,7 @@ typedef struct {
     u8 pmd2_font;
     /* Dungeon Make Leader anytime; temporary until exit unless postgame */
     u8 party_leader_switch;
-    /* Show neutral portraits in dungeon (ally talk + level-up) if available */
+    /* Show neutral portraits in dungeon (ally talk, level-up, job thank-you) if available */
     u8 show_dungeon_portraits;
     /* PMD2-style Makuhita Dojo: 5 playable floors + auto-exit (no boss),
      * with enemy levels/EXP scaling per floor (1/10/20/25/35) */

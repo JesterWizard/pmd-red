@@ -19,7 +19,7 @@ Toggle: `gRuntimeConfig.custom_portraits` in [`configs/runtime.c`](../../configs
 
 | Mode | Behavior |
 |------|----------|
-| `TRUE` (default) | Prefer `ckaoNNN` from `gCustomPortraitArchive` when that pack has the emotion; otherwise vanilla `kaoNNN` |
+| `TRUE` (default) | Prefer `ckaoNNN` from `gCustomPortraitArchive` when that pack has the emotion; otherwise vanilla `kaoNNN`. Single-emotion loaders (`GetDialogueSpriteDataPtrForEmotion`, etc.) fall back to vanilla if the custom file fails to open or lacks that emotion’s gfx. |
 | `FALSE` | Vanilla `kaoNNN` / `dialogueSprites` only |
 
 Portraits credit the SpriteCollab contributors listed in each folder’s `credits.txt`.
@@ -91,5 +91,5 @@ python3 convert_custom_portraits.py --convert --generate
 | Converter | `convert_custom_portraits.py` |
 | Archive helpers | `src/custom_portraits.c`, `include/custom_portraits.h` |
 | Generated data | `src/custom_portraits_data.c` |
-| Load hooks | `src/pokemon.c` (`GetDialogueSpriteDataPtr`, `GetDialogueSpriteDataPtrForEmotion`, etc.) |
+| Load hooks | `src/pokemon.c` (`GetDialogueSpriteDataPtr`, `GetDialogueSpriteDataPtrForEmotion`, etc.) — emotion loaders fall back to vanilla `kao` if custom open/gfx fails (rescue thank-you, dungeon talk, …) |
 | Overworld gate | `src/textbox.c` (allow custom faces for hero/partner) |
