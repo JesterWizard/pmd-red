@@ -1,8 +1,16 @@
 namespace RescueEditor.Core;
 
+public enum EmotionEffectSource
+{
+    Missing,
+    Rom,
+    PngStrip,
+}
+
 /// <summary>
 /// Floating emotion overlays (NOTICE/QUESTION/SHOCK/SWEAT/SMILE/ANGRY).
 /// Loads retail <c>efob</c> SIRO object effects and plays <c>ax_anim</c> with OAM pose compose.
+/// Never substitutes hand-drawn placeholders — missing assets stay missing.
 /// </summary>
 public sealed class EmotionEffectAtlas
 {
@@ -16,6 +24,7 @@ public sealed class EmotionEffectAtlas
     private readonly string? _repositoryRoot;
     private readonly RomImage? _rom;
     private readonly Dictionary<int, EfoClip?> _clips = new();
+    private readonly Dictionary<int, EmotionEffectSource> _sources = new();
 
     public EmotionEffectAtlas(string? repositoryRoot, RomImage? rom = null)
     {
@@ -27,6 +36,12 @@ public sealed class EmotionEffectAtlas
     {
         foreach (var id in new[] { NoticeId, QuestionId, ShockId, SweatId, SmileId, AngryId })
             _ = TryGetClip(id);
+    }
+
+    public EmotionEffectSource TryGetSource(int effectId)
+    {
+        _ = TryGetClip(effectId);
+        return _sources.TryGetValue(effectId, out var src) ? src : EmotionEffectSource.Missing;
     }
 
     /// <summary>Static first frame (compat).</summary>
@@ -63,16 +78,22 @@ public sealed class EmotionEffectAtlas
             return cached;
 
         EfoClip? clip = null;
+        var source = EmotionEffectSource.Missing;
         try
         {
-            clip = TryLoadFromRom(effectId) ?? TryLoadStripFallback(effectId) ?? TryDrawFallbackClip(effectId);
+            // Only ROM SIRO compose — data/effects PNG strips are raw 8px tiles and look wrong in-game.
+            clip = TryLoadFromRom(effectId);
+            if (clip is not null)
+                source = EmotionEffectSource.Rom;
         }
         catch
         {
-            clip = TryDrawFallbackClip(effectId);
+            clip = null;
+            source = EmotionEffectSource.Missing;
         }
 
         _clips[effectId] = clip;
+        _sources[effectId] = source;
         return clip;
     }
 
@@ -109,20 +130,9 @@ public sealed class EmotionEffectAtlas
         if (_rom is null)
             return null;
 
-        RetailTables.EffectEntry? entry = null;
-        foreach (var e in RetailTables.Effects)
-        {
-            if (e.Name.Equals($"efob{effectId:D3}", StringComparison.OrdinalIgnoreCase))
-            {
-                entry = e;
-                break;
-            }
-        }
-        if (entry is null)
-            return null;
-
-        var archiveOffset = _rom.PointerToOffset(entry.Value.VirtualAddress);
-        if (archiveOffset < 0 || !_rom.IsRangeValid(archiveOffset, 8))
+        var name = $"efob{effectId:D3}";
+        var archiveOffset = ResolveEffectSiroOffset(_rom, name);
+        if (archiveOffset < 0)
             return null;
 
         var magic = System.Text.Encoding.ASCII.GetString(_rom.Slice(archiveOffset, 4));
@@ -207,6 +217,45 @@ public sealed class EmotionEffectAtlas
         // Oneshots (NOTICE/SHOCK/SWEAT) play once; sticky smile/angry loop.
         var loop = effectId is SmileId or AngryId or QuestionId;
         return new EfoClip(framesOut, loopLen, loop);
+    }
+
+    /// <summary>
+    /// Locate <c>efobNNN</c> SIRO in the opened ROM via its File{name,data} entry.
+    /// Built ROMs relocate effects — never rely on baserom RetailTables addresses alone.
+    /// </summary>
+    public static int ResolveEffectSiroOffset(RomImage rom, string name)
+    {
+        foreach (var nameOff in rom.FindAscii(name, includeTerminator: true, limit: 16))
+        {
+            var namePtr = RomImage.RomVirtualAddress + (uint)nameOff;
+            var needle = BitConverter.GetBytes(namePtr);
+            foreach (var hit in rom.FindAll(needle, limit: 32))
+            {
+                if (!rom.IsRangeValid(hit + 4, 4))
+                    continue;
+                var dataOff = rom.ReadPointerOffset(hit + 4);
+                if (dataOff < 0 || !rom.IsRangeValid(dataOff, 8))
+                    continue;
+                var magic = System.Text.Encoding.ASCII.GetString(rom.Slice(dataOff, 4));
+                if (magic is "SIRO" or "SIR0")
+                    return dataOff;
+            }
+        }
+
+        // Matching baserom / unmoved builds: retail VA table.
+        foreach (var e in RetailTables.Effects)
+        {
+            if (!e.Name.Equals(name, StringComparison.OrdinalIgnoreCase))
+                continue;
+            var archiveOffset = rom.PointerToOffset(e.VirtualAddress);
+            if (archiveOffset < 0 || !rom.IsRangeValid(archiveOffset, 8))
+                continue;
+            var magic = System.Text.Encoding.ASCII.GetString(rom.Slice(archiveOffset, 4));
+            if (magic is "SIRO" or "SIR0")
+                return archiveOffset;
+        }
+
+        return -1;
     }
 
     /// <summary>
@@ -383,172 +432,6 @@ public sealed class EmotionEffectAtlas
         (2, 3) => (32, 64),
         _ => (8, 8),
     };
-
-    /// <summary>PNG vertical tile strip without anim metadata — 2 ticks per tile.</summary>
-    private EfoClip? TryLoadStripFallback(int effectId)
-    {
-        if (string.IsNullOrWhiteSpace(_repositoryRoot))
-            return null;
-        var path = Path.Combine(_repositoryRoot, "data", "effects", $"efob{effectId:D3}.png");
-        if (!File.Exists(path))
-            return null;
-        try
-        {
-            var sheet = RgbaImage.FromPng(File.ReadAllBytes(path));
-            if (sheet is null || sheet.Width < 8 || sheet.Height < 8)
-                return null;
-
-            var frames = new List<EfoAnimFrame>();
-            var frameCount = Math.Max(1, sheet.Height / 8);
-            // Prefer denser tiles (skip empty padding).
-            for (var f = 0; f < frameCount; f++)
-            {
-                var tile = CropTile(sheet, 0, f * 8);
-                if (tile is null || CountOpaque(tile) < 4)
-                    continue;
-                KeyChroma(tile);
-                frames.Add(new EfoAnimFrame(2, new EmotionFrame(tile, tile.Width / 2, tile.Height)));
-            }
-            if (frames.Count == 0)
-                return null;
-            var len = frames.Sum(f => f.Duration);
-            return new EfoClip(frames, len, loop: effectId is SmileId or AngryId or QuestionId);
-        }
-        catch
-        {
-            return null;
-        }
-    }
-
-    private static RgbaImage? CropTile(RgbaImage sheet, int x0, int y0)
-    {
-        if (x0 < 0 || y0 < 0 || x0 + 8 > sheet.Width || y0 + 8 > sheet.Height)
-            return null;
-        var pixels = new byte[8 * 8 * 4];
-        for (var row = 0; row < 8; row++)
-        for (var col = 0; col < 8; col++)
-        {
-            var src = ((y0 + row) * sheet.Width + (x0 + col)) * 4;
-            var dst = (row * 8 + col) * 4;
-            pixels[dst] = sheet.Pixels[src];
-            pixels[dst + 1] = sheet.Pixels[src + 1];
-            pixels[dst + 2] = sheet.Pixels[src + 2];
-            pixels[dst + 3] = sheet.Pixels[src + 3];
-        }
-        return new RgbaImage(8, 8, pixels);
-    }
-
-    private static void KeyChroma(RgbaImage tile)
-    {
-        for (var i = 0; i < tile.Pixels.Length; i += 4)
-        {
-            if (GbaChroma.IsChromaKey(tile.Pixels[i], tile.Pixels[i + 1], tile.Pixels[i + 2], tile.Pixels[i + 3]))
-                tile.Pixels[i + 3] = 0;
-        }
-    }
-
-    private static int CountOpaque(RgbaImage img)
-    {
-        var n = 0;
-        for (var i = 3; i < img.Pixels.Length; i += 4)
-        {
-            if (img.Pixels[i] > 16)
-                n++;
-        }
-        return n;
-    }
-
-    private static EfoClip? TryDrawFallbackClip(int effectId)
-    {
-        var img = effectId switch
-        {
-            NoticeId => DrawBang(),
-            QuestionId => DrawQuestion(),
-            SweatId => DrawSweat(),
-            ShockId => DrawShock(),
-            SmileId => DrawSmile(),
-            AngryId => DrawAngry(),
-            _ => null,
-        };
-        if (img is null)
-            return null;
-        var frame = new EmotionFrame(img, img.Width / 2, img.Height);
-        return new EfoClip([new EfoAnimFrame(8, frame)], 8, loop: effectId is SmileId or AngryId);
-    }
-
-    private static RgbaImage DrawBang()
-    {
-        var img = New(8, 8);
-        Fill(img, 3, 0, 2, 5, 0xF8, 0xF8, 0xF8);
-        Fill(img, 3, 6, 2, 2, 0xF8, 0xF8, 0xF8);
-        return img;
-    }
-
-    private static RgbaImage DrawQuestion()
-    {
-        var img = New(8, 8);
-        Fill(img, 2, 0, 4, 2, 0xF8, 0xF8, 0xF8);
-        Fill(img, 5, 2, 2, 2, 0xF8, 0xF8, 0xF8);
-        Fill(img, 3, 4, 2, 1, 0xF8, 0xF8, 0xF8);
-        Fill(img, 3, 6, 2, 2, 0xF8, 0xF8, 0xF8);
-        return img;
-    }
-
-    private static RgbaImage DrawSweat()
-    {
-        var img = New(8, 8);
-        Fill(img, 3, 0, 2, 2, 0x70, 0xD0, 0xF8);
-        Fill(img, 2, 2, 4, 3, 0x70, 0xD0, 0xF8);
-        Fill(img, 3, 5, 2, 2, 0x70, 0xD0, 0xF8);
-        return img;
-    }
-
-    private static RgbaImage DrawShock()
-    {
-        var img = New(8, 8);
-        Fill(img, 3, 0, 2, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 0, 3, 2, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 6, 3, 2, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 3, 6, 2, 2, 0xF8, 0xF0, 0x40);
-        return img;
-    }
-
-    private static RgbaImage DrawSmile()
-    {
-        var img = New(8, 8);
-        Fill(img, 1, 2, 2, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 5, 2, 2, 2, 0xF8, 0xF0, 0x40);
-        Fill(img, 2, 5, 4, 2, 0xF8, 0xF0, 0x40);
-        return img;
-    }
-
-    private static RgbaImage DrawAngry()
-    {
-        var img = New(8, 8);
-        Fill(img, 0, 1, 3, 2, 0xF8, 0x40, 0x40);
-        Fill(img, 5, 1, 3, 2, 0xF8, 0x40, 0x40);
-        Fill(img, 1, 5, 6, 2, 0xF8, 0x40, 0x40);
-        return img;
-    }
-
-    private static RgbaImage New(int w, int h) => new(w, h, new byte[w * h * 4]);
-
-    private static void Fill(RgbaImage img, int x, int y, int w, int h, byte r, byte g, byte b)
-    {
-        for (var row = 0; row < h; row++)
-        for (var col = 0; col < w; col++)
-        {
-            var px = x + col;
-            var py = y + row;
-            if (px < 0 || py < 0 || px >= img.Width || py >= img.Height)
-                continue;
-            var o = (py * img.Width + px) * 4;
-            img.Pixels[o] = r;
-            img.Pixels[o + 1] = g;
-            img.Pixels[o + 2] = b;
-            img.Pixels[o + 3] = 255;
-        }
-    }
 
     private sealed class EfoClip(IReadOnlyList<EfoAnimFrame> frames, int loopLength, bool loop)
     {

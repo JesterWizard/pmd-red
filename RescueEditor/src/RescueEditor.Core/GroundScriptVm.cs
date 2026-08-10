@@ -48,6 +48,8 @@ public sealed class GroundScriptVm
     private readonly Dictionary<int, (int EffectId, int FramesLeft, int Age)> _effects = new();
     private bool _livesSpawned;
     private int _dialogueHoldFrames;
+    private int _autoDismissHoldFrames;
+    private bool _autoDismissDialogue;
     private IReadOnlyList<string> _dialoguePages = Array.Empty<string>();
     private int _dialoguePageIndex;
     private int _fadeMainTarget; // 0 clear, 255 black (FADE_IN/OUT)
@@ -230,7 +232,10 @@ public sealed class GroundScriptVm
         {
             _dialoguePageIndex++;
             DialoguePage = _dialoguePages[_dialoguePageIndex];
-            _dialogueHoldFrames = DialogueMode == PlayDialogueMode.OnBackground ? 120 : 0;
+            // Only the final page of MSG_ON_BG_AUTO may auto-dismiss; WAIT_PRESS pages need A.
+            _dialogueHoldFrames = _autoDismissDialogue && _dialoguePageIndex == _dialoguePages.Count - 1
+                ? _autoDismissHoldFrames
+                : 0;
             return;
         }
 
@@ -244,6 +249,21 @@ public sealed class GroundScriptVm
         _dialoguePages = Array.Empty<string>();
         _dialoguePageIndex = 0;
         _dialogueHoldFrames = 0;
+        _autoDismissDialogue = false;
+        _autoDismissHoldFrames = 0;
+    }
+
+    /// <summary>Test helper: replace the current dialogue pages (WAIT_PRESS / AUTO coverage).</summary>
+    public void SetDialoguePagesForTests(IReadOnlyList<string> pages, bool autoDismiss)
+    {
+        _dialoguePages = pages;
+        _dialoguePageIndex = 0;
+        DialoguePage = pages.Count > 0 ? pages[0] : string.Empty;
+        DialogueMode = PlayDialogueMode.OnBackground;
+        WaitingForAdvance = true;
+        _autoDismissDialogue = autoDismiss;
+        _autoDismissHoldFrames = 120;
+        _dialogueHoldFrames = autoDismiss && pages.Count <= 1 ? _autoDismissHoldFrames : 0;
     }
 
     public void Tick(double dtSeconds)
@@ -272,12 +292,12 @@ public sealed class GroundScriptVm
 
         TickEffects();
 
-        // MSG_ON_BG_AUTO may auto-close; normal textboxes wait for A on the speaker only.
+        // MSG_ON_BG_AUTO may auto-close its (final) page; MSG_ON_BG / WAIT_PRESS wait for A.
         // Other actors keep running (retail cue/walk timing depends on this).
-        if (WaitingForAdvance && _dialogueHoldFrames > 0)
+        if (WaitingForAdvance && _autoDismissDialogue && _dialogueHoldFrames > 0)
         {
             _dialogueHoldFrames--;
-            if (_dialogueHoldFrames <= 0 && DialogueMode == PlayDialogueMode.OnBackground)
+            if (_dialogueHoldFrames <= 0)
                 AdvanceDialogue();
         }
 
@@ -425,6 +445,9 @@ public sealed class GroundScriptVm
                 WaitingForAdvance = false;
                 _dialogueOwner = null;
                 _dialoguePages = Array.Empty<string>();
+                _dialogueHoldFrames = 0;
+                _autoDismissDialogue = false;
+                _autoDismissHoldFrames = 0;
                 actor.Index++;
                 return true;
 
@@ -466,12 +489,16 @@ public sealed class GroundScriptVm
             case 0x46: // BGM_QUEUE
                 MusicId = cmd.Arg1;
                 actor.Index++;
-                return true;
+                // One music change per frame so the play window can consume switches.
+                return false;
 
-            case 0x47:
+            case 0x47: // BGM_STOP
+            case 0x48: // BGM_FADEOUT
+            case 0x42: // MUSIC_STOP_ALL
+            case 0x43: // MUSIC_FADEOUT_ALL
                 MusicId = null;
                 actor.Index++;
-                return true;
+                return false;
 
             case 0x49:
             case 0x4C:
@@ -980,16 +1007,11 @@ public sealed class GroundScriptVm
 
         WaitingForAdvance = true;
         _dialogueOwner = owner;
-        // MSG_ON_BG_AUTO(u, …): u is a duration hint (retail ~frames); keep readable pace.
-        if (DialogueMode == PlayDialogueMode.OnBackground)
-        {
-            var hint = cmd.Op == 0x39 ? Math.Max(0, (int)cmd.ArgShort) : 0;
-            _dialogueHoldFrames = hint > 0 ? Math.Clamp(hint * 3, 90, 180) : 120;
-        }
-        else
-        {
-            _dialogueHoldFrames = 0;
-        }
+        // Scene Play always waits for A on black-screen narration (including MSG_ON_BG_AUTO),
+        // so WAIT_PRESS and every narration beat stay viewer-controlled.
+        _autoDismissDialogue = false;
+        _autoDismissHoldFrames = 0;
+        _dialogueHoldFrames = 0;
     }
 
     private string ResolveSpeakerLabel(int speakerId)

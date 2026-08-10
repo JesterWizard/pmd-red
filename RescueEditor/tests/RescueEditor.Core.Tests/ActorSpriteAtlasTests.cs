@@ -105,6 +105,59 @@ public class ActorSpriteAtlasTests
     }
 
     [Fact]
+    public void EmotionEffectAtlasUsesRomNotDrawnPlaceholder()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        // Prefer built ROM — retail VAs are wrong there; name lookup must still work.
+        var romPath = Path.Combine(root, "pmd_red.gba");
+        if (!File.Exists(romPath))
+            romPath = Path.Combine(root, "baserom.gba");
+        if (!File.Exists(romPath)) return;
+
+        var rom = RomImage.Open(romPath);
+        Assert.True(EmotionEffectAtlas.ResolveEffectSiroOffset(rom, "efob088") >= 0);
+
+        var effects = new EmotionEffectAtlas(repositoryRoot: null, rom: rom);
+        Assert.Equal(EmotionEffectSource.Rom, effects.TryGetSource(EmotionEffectAtlas.NoticeId));
+        var frame = effects.TryGetFrame(EmotionEffectAtlas.NoticeId, 4);
+        Assert.NotNull(frame);
+        Assert.True(frame!.Value.Image.Width * frame.Value.Image.Height > 64);
+
+        var img = frame.Value.Image;
+        var white = 0;
+        var cyan = 0;
+        for (var i = 0; i < img.Pixels.Length; i += 4)
+        {
+            if (img.Pixels[i + 3] < 200) continue;
+            if (img.Pixels[i] < 40 && img.Pixels[i + 1] > 200 && img.Pixels[i + 2] > 200) cyan++;
+            if (img.Pixels[i] > 200 && img.Pixels[i + 1] > 200 && img.Pixels[i + 2] > 200) white++;
+        }
+        Assert.True(white >= 8, $"Expected white NOTICE ink, got white={white} cyan={cyan}");
+        Assert.True(cyan == 0, $"NOTICE must not blit raw cyan chroma, got {cyan}");
+    }
+
+    [Fact]
+    public void EmotionEffectAtlasLoadsNoticeFromBuiltRomByName()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        var built = Path.Combine(root, "pmd_red.gba");
+        if (!File.Exists(built)) return;
+
+        var rom = RomImage.Open(built);
+        // Hardcoded retail VA must NOT be valid on this smaller custom ROM.
+        var retailOff = rom.PointerToOffset(0x98170B4u);
+        Assert.True(retailOff < 0 || retailOff >= rom.Length ||
+                    System.Text.Encoding.ASCII.GetString(rom.Slice(Math.Max(0, retailOff), 4)) is not ("SIRO" or "SIR0"));
+
+        var effects = new EmotionEffectAtlas(null, rom);
+        Assert.Equal(EmotionEffectSource.Rom, effects.TryGetSource(EmotionEffectAtlas.NoticeId));
+        Assert.Equal(EmotionEffectSource.Rom, effects.TryGetSource(EmotionEffectAtlas.SmileId));
+        Assert.NotNull(effects.TryGetFrame(EmotionEffectAtlas.SweatId, 0));
+    }
+
+    [Fact]
     public void GbaChromaKeysTealPaddingAndFindsContentBottom()
     {
         var root = FindRepoRoot();

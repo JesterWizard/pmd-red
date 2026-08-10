@@ -39,12 +39,15 @@ public sealed class ScenePlayWindow : Window
     private readonly DispatcherTimer _timer;
     private readonly WavPlayer _bgmPlayer = new();
     private readonly WavPlayer _sfxPlayer = new();
+    private readonly AgbplayStreamHost _bgmHost = new();
+    private readonly AgbplayStreamPlayer _bgmStream;
     private readonly string? _romPath;
     private GbaButton? _captureTarget;
     private DateTime _lastTick = DateTime.UtcNow;
     private double _simAccum;
     private bool _endMenuShown;
     private double _speed = 1;
+    private int? _playingSongId;
 
     public ScenePlayWindow(
         ScenePlaySession session,
@@ -56,6 +59,7 @@ public sealed class ScenePlayWindow : Window
         _keymap = keymap ?? PlayControlsKeymap.CreateDefault();
         _romPath = romPath;
         _navigator = navigator;
+        _bgmStream = new AgbplayStreamPlayer(_bgmHost);
 
         Title = TitleFor(_session);
         Width = ScenePlaySession.CameraWidth * ViewScale + 48;
@@ -242,6 +246,9 @@ public sealed class ScenePlayWindow : Window
         Closed += (_, _) =>
         {
             _timer.Stop();
+            try { _bgmStream.Stop(); } catch { /* ignore */ }
+            try { _bgmHost.Dispose(); } catch { /* ignore */ }
+            _bgmStream.Dispose();
             _bgmPlayer.Dispose();
             _sfxPlayer.Dispose();
         };
@@ -393,7 +400,7 @@ public sealed class ScenePlayWindow : Window
         _backButton.IsEnabled = _navigator?.CanGoBack?.Invoke() == true;
         _nextButton.IsEnabled = _navigator?.CanGoNext?.Invoke() == true;
         _endOverlay.IsVisible = true;
-        try { _bgmPlayer.Stop(); } catch { /* ignore */ }
+        try { StopBgm(); } catch { /* ignore */ }
         try { _sfxPlayer.Stop(); } catch { /* ignore */ }
     }
 
@@ -407,6 +414,7 @@ public sealed class ScenePlayWindow : Window
     {
         HideEndMenu();
         _session.Restart();
+        _playingSongId = null;
         Title = TitleFor(_session);
         _simAccum = 0;
         _lastTick = DateTime.UtcNow;
@@ -479,21 +487,73 @@ public sealed class ScenePlayWindow : Window
     {
         if (string.IsNullOrWhiteSpace(_romPath) || !File.Exists(_romPath))
             return;
-        if (!AgbplayRenderer.IsAvailable())
-            return;
         if (!_session.TryConsumeMusicChange(out var songId))
             return;
-        if (!AgbplayRenderer.TryGetCachedWav(_romPath, songId, maxLoops: 0, out var wav, out _))
+
+        if (songId is null)
+        {
+            StopBgm();
             return;
+        }
+
+        if (_playingSongId == songId && (_bgmStream.IsPlaying || _bgmPlayer.IsPlaying))
+            return;
+
+        // Prefer live stream (same path as Sound Preview) so BGM_SWITCH after FADEOUT
+        // does not depend on a blocking WAV render that can fail silently.
+        if (AgbplayRenderer.IsStreamAvailable())
+        {
+            try
+            {
+                _bgmPlayer.Stop();
+                _bgmHost.EnsureStarted(_romPath);
+                // 0 = keep looping while the cutscene needs the track.
+                _bgmStream.StartStream(_romPath, songId.Value, maxLoops: 0);
+                _playingSongId = songId;
+                return;
+            }
+            catch
+            {
+                // Fall through to cached/rendered WAV.
+            }
+        }
+
+        if (!AgbplayRenderer.IsAvailable())
+            return;
+
+        const int bgmLoops = 1;
+        byte[] wav;
         try
         {
+            if (!AgbplayRenderer.TryGetCachedWav(_romPath, songId.Value, bgmLoops, out wav, out _) &&
+                !AgbplayRenderer.TryGetCachedWav(_romPath, songId.Value, maxLoops: 0, out wav, out _))
+            {
+                wav = AgbplayRenderer.RenderSong(_romPath, songId.Value, bgmLoops).WavBytes;
+            }
+        }
+        catch
+        {
+            return;
+        }
+
+        try
+        {
+            try { _bgmStream.Stop(); } catch { /* ignore */ }
             _bgmPlayer.Load(wav);
-            _bgmPlayer.Play();
+            _bgmPlayer.PlayLooping();
+            _playingSongId = songId;
         }
         catch
         {
             // Music is best-effort in play preview.
         }
+    }
+
+    private void StopBgm()
+    {
+        _playingSongId = null;
+        try { _bgmStream.Stop(); } catch { /* ignore */ }
+        try { _bgmPlayer.Stop(); } catch { /* ignore */ }
     }
 
     private static Button MenuButton(string label) =>

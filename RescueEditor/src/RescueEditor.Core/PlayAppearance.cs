@@ -96,6 +96,30 @@ public static class ScenePlayPresets
         group == TinyWoodsIntroGroup &&
         sector == TinyWoodsIntroSector;
 
+    /// <summary>
+    /// Prefer scripted playback for dialogue-driven cutscenes (and the Tiny Woods intro).
+    /// Free-roam stations that only set BGM/SELECT stay on bootstrap so walking still works.
+    /// </summary>
+    public static bool ShouldScriptPlay(Scene scene, int group, int sector)
+    {
+        if (IsTinyWoodsIntro(scene, group, sector))
+            return true;
+
+        var station = scene.Groups.ElementAtOrDefault(group)?
+            .Sectors.ElementAtOrDefault(sector)?
+            .Stations.FirstOrDefault();
+        if (station?.Commands is null || station.Commands.Count == 0)
+            return false;
+
+        foreach (var cmd in station.Commands)
+        {
+            if (cmd.Op is
+                0x32 or 0x33 or 0x34 or 0x35 or 0x36 or 0x37 or 0x38 or 0x39 or 0xCF)
+                return true;
+        }
+        return false;
+    }
+
     public static (int Group, int Sector) ResolvePlayTarget(Scene scene, int group, int sector)
     {
         if (scene.MapId == TinyWoodsEntryMapId)

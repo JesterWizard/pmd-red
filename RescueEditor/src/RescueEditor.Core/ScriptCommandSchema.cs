@@ -78,14 +78,14 @@ public static class ScriptCommandSchema
         [
             new("Text", ScriptArgField.ArgPtr, "hex"),
         ],
-        0x46 => // BGM_QUEUE
+        0x44 or 0x45 or 0x46 => // BGM_SWITCH / FADEIN / QUEUE
         [
             new("Music", ScriptArgField.Arg1),
-            new("Fade", ScriptArgField.ArgByte),
+            new("Fade", ScriptArgField.ArgShort),
         ],
-        0x47 => // BGM_STOP
+        0x47 or 0x48 => // BGM_STOP / FADEOUT
         [
-            new("Fade", ScriptArgField.ArgByte),
+            new("Fade", ScriptArgField.ArgShort),
         ],
         0x49 => // FANFARE_PLAY
         [

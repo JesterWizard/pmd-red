@@ -166,6 +166,77 @@ public sealed class GroundScriptVmDeepeningTests
     }
 
     [Fact]
+    public void MsgOnBgNarrationWaitsForAWithoutAutoClearing()
+    {
+        var vm = GroundScriptVm.FromCommands(
+        [
+            new ScriptCommandData { Op = 0x37, ArgShort = -1 }, // MSG_ON_BG (black-screen narration)
+        ]);
+        vm.TickFrames(1);
+        Assert.Equal(PlayDialogueMode.OnBackground, vm.DialogueMode);
+        Assert.True(vm.WaitingForAdvance);
+        vm.TickFrames(300);
+        Assert.True(vm.WaitingForAdvance);
+        vm.AdvanceDialogue();
+        Assert.False(vm.WaitingForAdvance);
+    }
+
+    [Fact]
+    public void MsgOnBgAutoAlsoWaitsForAButton()
+    {
+        var vm = GroundScriptVm.FromCommands(
+        [
+            new ScriptCommandData { Op = 0x39, ArgShort = 30 }, // MSG_ON_BG_AUTO — viewer still waits
+        ]);
+        vm.TickFrames(1);
+        Assert.Equal(PlayDialogueMode.OnBackground, vm.DialogueMode);
+        Assert.True(vm.WaitingForAdvance);
+        vm.TickFrames(300);
+        Assert.True(vm.WaitingForAdvance);
+        vm.AdvanceDialogue();
+        Assert.False(vm.WaitingForAdvance);
+    }
+
+    [Fact]
+    public void MsgOnBgAutoWaitPressPagesRequireABetweenPages()
+    {
+        var vm = GroundScriptVm.FromCommands(
+        [
+            new ScriptCommandData { Op = 0x39, ArgShort = 30 }, // MSG_ON_BG_AUTO
+        ]);
+        vm.TickFrames(1);
+        Assert.True(vm.WaitingForAdvance);
+        vm.SetDialoguePagesForTests(["page one", "page two"], autoDismiss: false);
+        vm.TickFrames(200);
+        Assert.True(vm.WaitingForAdvance, "WAIT_PRESS mid-pages must not auto-advance");
+        vm.AdvanceDialogue();
+        Assert.True(vm.WaitingForAdvance);
+        Assert.Equal("page two", vm.DialoguePage);
+        vm.TickFrames(200);
+        Assert.True(vm.WaitingForAdvance);
+        vm.AdvanceDialogue();
+        Assert.False(vm.WaitingForAdvance);
+    }
+
+    [Fact]
+    public void BgmSwitchAndFadeoutUpdateMusicId()
+    {
+        var vm = GroundScriptVm.FromCommands(
+        [
+            new ScriptCommandData { Op = 0x45, ArgShort = 60, Arg1 = 101 }, // BGM_FADEIN
+            new ScriptCommandData { Op = 0x44, Arg1 = 10 }, // BGM_SWITCH
+            new ScriptCommandData { Op = 0x48, ArgShort = 30 }, // BGM_FADEOUT
+            new ScriptCommandData { Op = 0xEF }, // RET
+        ]);
+        vm.TickFrames(1);
+        Assert.Equal(101, vm.MusicId);
+        vm.TickFrames(1);
+        Assert.Equal(10, vm.MusicId);
+        vm.TickFrames(1);
+        Assert.Null(vm.MusicId);
+    }
+
+    [Fact]
     public void VisiblePortraitsOnlyIncludeCurrentSpeaker()
     {
         var vm = GroundScriptVm.FromCommands(

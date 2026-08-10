@@ -10,6 +10,7 @@ internal sealed class WavPlayer : IDisposable
     private WaveStream? _reader;
     private byte[] _wav = Array.Empty<byte>();
     private bool _disposed;
+    private bool _looping;
 
     public bool IsPlaying
     {
@@ -72,11 +73,29 @@ internal sealed class WavPlayer : IDisposable
     {
         lock (_gate)
         {
+            DetachLoopHandlerLocked();
             if (_output is null || _reader is null)
                 return;
             if (_reader.Position >= _reader.Length)
                 _reader.Position = 0;
             try { _output.Volume = 1f; } catch { /* ignore */ }
+            _output.Play();
+        }
+    }
+
+    /// <summary>Play and restart from the beginning when the buffer ends (BGM).</summary>
+    public void PlayLooping()
+    {
+        lock (_gate)
+        {
+            DetachLoopHandlerLocked();
+            if (_output is null || _reader is null)
+                return;
+            if (_reader.Position >= _reader.Length)
+                _reader.Position = 0;
+            try { _output.Volume = 1f; } catch { /* ignore */ }
+            _output.PlaybackStopped += OnLoopPlaybackStopped;
+            _looping = true;
             _output.Play();
         }
     }
@@ -91,6 +110,7 @@ internal sealed class WavPlayer : IDisposable
     {
         lock (_gate)
         {
+            DetachLoopHandlerLocked();
             try { _output?.Stop(); } catch { /* ignore */ }
             if (_reader is not null)
                 _reader.Position = 0;
@@ -133,10 +153,38 @@ internal sealed class WavPlayer : IDisposable
 
     private void DisposeOutputLocked()
     {
+        DetachLoopHandlerLocked();
         try { _output?.Stop(); } catch { /* ignore */ }
         try { _output?.Dispose(); } catch { /* ignore */ }
         _output = null;
         try { _reader?.Dispose(); } catch { /* ignore */ }
         _reader = null;
+    }
+
+    private void DetachLoopHandlerLocked()
+    {
+        if (_output is not null && _looping)
+        {
+            try { _output.PlaybackStopped -= OnLoopPlaybackStopped; } catch { /* ignore */ }
+        }
+        _looping = false;
+    }
+
+    private void OnLoopPlaybackStopped(object? sender, StoppedEventArgs e)
+    {
+        lock (_gate)
+        {
+            if (!_looping || _output is null || _reader is null || _disposed)
+                return;
+            try
+            {
+                _reader.Position = 0;
+                _output.Play();
+            }
+            catch
+            {
+                _looping = false;
+            }
+        }
     }
 }

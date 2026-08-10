@@ -83,7 +83,7 @@ public sealed class ScenePlaySession
 
         _charmap = charmap;
         _profile = profile ?? RomProfile.Us10;
-        var useScript = scripted ?? ScenePlayPresets.IsTinyWoodsIntro(scene, ActiveGroup, ActiveSector);
+        var useScript = scripted ?? ScenePlayPresets.ShouldScriptPlay(scene, ActiveGroup, ActiveSector);
         _portraits = portraits ?? (useScript ? new PortraitAtlas(rom, repoRoot) : null);
         // Lazy-load emotion icons on first use — eager ROM decode in the ctor can hitch/crash.
         _effects = new EmotionEffectAtlas(repoRoot, rom);
@@ -95,6 +95,7 @@ public sealed class ScenePlaySession
                 profile: _profile,
                 appearance: Appearance);
             AllowFreeRoam = false;
+            try { _effects.PrefetchCommon(); } catch { /* best-effort */ }
         }
         else
         {
@@ -156,6 +157,7 @@ public sealed class ScenePlaySession
         _held.Clear();
         _pendingSfx.Clear();
         _lastMusicId = null;
+        MusicId = null;
         _animTick = 0;
         _cachedBg = null;
         _cachedBgGroup = int.MinValue;
@@ -197,6 +199,8 @@ public sealed class ScenePlaySession
             ActiveSector = _script.ActiveSector;
             if (_script.MusicId is int song)
                 MusicId = song;
+            else
+                MusicId = null;
             foreach (var id in _script.DrainPendingSfx())
                 _pendingSfx.Add(id);
 
@@ -238,15 +242,19 @@ public sealed class ScenePlaySession
         return copy;
     }
 
-    public bool TryConsumeMusicChange(out int songId)
+    /// <summary>
+    /// Consume a pending BGM change. Returns true when playback should update.
+    /// <paramref name="songId"/> is null when music should stop (BGM_STOP / FADEOUT).
+    /// </summary>
+    public bool TryConsumeMusicChange(out int? songId)
     {
-        if (MusicId is int id && id != _lastMusicId)
+        if (MusicId != _lastMusicId)
         {
-            _lastMusicId = id;
-            songId = id;
+            _lastMusicId = MusicId;
+            songId = MusicId;
             return true;
         }
-        songId = 0;
+        songId = null;
         return false;
     }
 
@@ -497,9 +505,14 @@ public sealed class ScenePlaySession
                     ActiveGroup = command.ArgShort < 0 ? ActiveGroup : command.ArgShort;
                     ActiveSector = command.ArgByte;
                     break;
-                case 0x45:
-                case 0x46:
+                case 0x44: // BGM_SWITCH
+                case 0x45: // BGM_FADEIN
+                case 0x46: // BGM_QUEUE
                     MusicId = command.Arg1;
+                    break;
+                case 0x47: // BGM_STOP
+                case 0x48: // BGM_FADEOUT
+                    MusicId = null;
                     break;
                 case 0x49:
                 case 0x4C:

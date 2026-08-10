@@ -147,8 +147,14 @@ public static class SceneCompositor
                     if (rom.TryPointerToOffset(command.ArgPtr, out var textOffset) && charmap is not null)
                         state.Dialogue = charmap.DecodeRomString(rom, textOffset, 768);
                     break;
+                case 0x44:
+                case 0x45:
                 case 0x46:
                     state.MusicId = command.Arg1;
+                    break;
+                case 0x47:
+                case 0x48:
+                    state.MusicId = null;
                     break;
                 case 0x86:
                 case 0x98:

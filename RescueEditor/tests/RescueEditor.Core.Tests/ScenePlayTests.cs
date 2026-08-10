@@ -152,6 +152,103 @@ public sealed class ScenePlayTests
     }
 
     [Fact]
+    public void BootstrapStationAppliesBgmSwitchOpcode()
+    {
+        var scene = MakeEmptyScene(40, 30);
+        scene.Groups[0].Sectors[0].Stations.Add(new ScriptRefData
+        {
+            Id = 1,
+            Name = "station",
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x44, Arg1 = 7 }, // BGM_SWITCH
+            ],
+        });
+        scene.Groups[0].Sectors[0].HasStation = true;
+        var session = new ScenePlaySession(EmptyRom(), scene, 0, 0, scripted: false);
+        Assert.Equal(7, session.MusicId);
+        Assert.True(session.TryConsumeMusicChange(out var song));
+        Assert.Equal(7, song);
+    }
+
+    [Fact]
+    public void ScriptedSessionPropagatesBgmSwitchAndStop()
+    {
+        var commands = new List<ScriptCommandData>
+        {
+            new() { Op = 0x46, Arg1 = 101 }, // BGM_QUEUE
+            new() { Op = 0x44, Arg1 = 10 }, // BGM_SWITCH
+            new() { Op = 0x48, ArgShort = 30 }, // BGM_FADEOUT
+            new() { Op = 0xEF },
+        };
+        var scene = MakeEmptyScene(40, 30);
+        scene.Groups[0].Sectors[0].Stations.Add(new ScriptRefData
+        {
+            Id = 1,
+            Name = "station",
+            Commands = commands,
+        });
+        scene.Groups[0].Sectors[0].HasStation = true;
+        var session = new ScenePlaySession(EmptyRom(), scene, 0, 0, scripted: true);
+        session.Tick(1.0 / 60.0);
+        Assert.True(session.TryConsumeMusicChange(out var first));
+        Assert.Equal(101, first);
+        session.Tick(1.0 / 60.0);
+        Assert.True(session.TryConsumeMusicChange(out var second));
+        Assert.Equal(10, second);
+        session.Tick(1.0 / 60.0);
+        Assert.True(session.TryConsumeMusicChange(out var stopped));
+        Assert.Null(stopped);
+    }
+
+    [Fact]
+    public void TinyWoodsBgmGoesHeartwarmingThenTheresTrouble()
+    {
+        // Scene graph anchors match retail layout; use baserom for scripting (vanilla has the same BGM beat).
+        var romPath = FindUpwards("baserom.gba");
+        if (romPath is null) return;
+
+        var rom = RomImage.Open(romPath);
+        var charmapPath = FindUpwards("charmap.txt");
+        var charmap = charmapPath is null ? null : Charmap.FromFile(charmapPath);
+        var database = SceneGraphParser.Parse(rom, RomProfile.Us10, charmap: charmap);
+        var scene = database.FindScene(ScenePlayPresets.TinyWoodsEntryMapId);
+        Assert.NotNull(scene);
+
+        var session = new ScenePlaySession(
+            rom, scene!, 1, 0,
+            charmap: charmap,
+            appearance: new PlayAppearance(1, 4),
+            profile: database.Profile,
+            scripted: true);
+
+        var music = new List<int?>();
+        void Drain()
+        {
+            while (session.TryConsumeMusicChange(out var id))
+                music.Add(id);
+        }
+
+        for (var i = 0; i < 30000 && !session.ScriptFinished; i++)
+        {
+            if (session.WaitingForAdvance)
+                session.AdvanceDialogue();
+            session.Tick(1.0 / 60.0);
+            Drain();
+            if (music.Contains(10))
+                break;
+        }
+
+        Assert.True(music.Any(id => id == 101), $"Expected heartwarming (101). Got: [{string.Join(",", music)}]");
+        Assert.True(music.Any(id => id is null), $"Expected fadeout. Got: [{string.Join(",", music)}]");
+        Assert.True(music.Any(id => id == 10), $"Expected Theres Trouble (10). Got: [{string.Join(",", music)}]");
+        var troubleAt = music.FindIndex(id => id == 10);
+        var fadeBefore = music.FindLastIndex(troubleAt, id => id is null);
+        Assert.True(fadeBefore >= 0 && fadeBefore < troubleAt,
+            $"Theres Trouble must follow a fadeout. Sequence: [{string.Join(",", music)}]");
+    }
+
+    [Fact]
     public void TickDetectsLinkWhenPlayerEntersRect()
     {
         var scene = MakeEmptyScene(mapW: 40, mapH: 30);
