@@ -11,6 +11,7 @@ public sealed class ScenePlaySession
     private readonly Scene _scene;
     private readonly ActorSpriteAtlas? _actorSprites;
     private readonly ObjectSpriteAtlas? _objectSprites;
+    private readonly GroundEffectAtlas? _groundEffects;
     private readonly PortraitAtlas? _portraits;
     private readonly EmotionEffectAtlas? _effects;
     private readonly GroundCollisionMap? _collision;
@@ -36,6 +37,7 @@ public sealed class ScenePlaySession
         int sector,
         ActorSpriteAtlas? actorSprites = null,
         ObjectSpriteAtlas? objectSprites = null,
+        GroundEffectAtlas? groundEffects = null,
         GroundCollisionMap? collision = null,
         int? mapWidthPixels = null,
         int? mapHeightPixels = null,
@@ -49,6 +51,7 @@ public sealed class ScenePlaySession
         _scene = scene;
         _actorSprites = actorSprites;
         _objectSprites = objectSprites;
+        _groundEffects = groundEffects ?? new GroundEffectAtlas(rom);
         var repoRoot = CatalogBuilder.FindRepositoryRoot(rom.Path);
 
         var (playGroup, playSector) = ScenePlayPresets.ResolvePlayTarget(scene, group, sector);
@@ -138,6 +141,7 @@ public sealed class ScenePlaySession
     public string? DialogueSpeakerLabel => _script?.DialogueSpeakerLabel;
     public bool DialogueUsesSpeechIcon => _script?.DialogueUsesSpeechIcon == true;
     public byte FadeAlpha => _script?.FadeAlpha ?? 0;
+    public int WeatherId => _script?.WeatherId ?? 0;
 
     public bool WaitingForAdvance => _script?.WaitingForAdvance == true;
     public bool WaitingForChoice => _script?.WaitingForChoice == true;
@@ -311,6 +315,7 @@ public sealed class ScenePlaySession
             EnsureWorkBuffers(bg.Width, bg.Height);
         Buffer.BlockCopy(bg.Pixels, 0, work.Pixels, 0, bg.Pixels.Length);
 
+        DrawMapEffects(work);
         DrawAnimatedLives(work);
 
         if (AllowFreeRoam)
@@ -334,9 +339,69 @@ public sealed class ScenePlaySession
             FadeAlpha,
             choices: _script?.Choices,
             choiceIndex: _script?.ChoiceIndex ?? 0,
-            showChoiceMenu: _script?.WaitingForChoice == true);
+            showChoiceMenu: _script?.WaitingForChoice == true,
+            flashR: _script?.FlashR ?? 255,
+            flashG: _script?.FlashG ?? 255,
+            flashB: _script?.FlashB ?? 255,
+            flashAlpha: _script?.FlashAlpha ?? 0);
 
+        DrawWeatherOverlay(camera);
         return camera;
+    }
+
+    private void DrawWeatherOverlay(RgbaImage camera)
+    {
+        var weather = WeatherId;
+        if (weather <= 0)
+            return;
+
+        // Lightweight previews — not full BPA weather.
+        switch (weather)
+        {
+            case 1: // SUNNY — warm tint
+                GbaDialogueHud.ApplyScreenOverlay(camera, 0, 255, 220, 120, 40);
+                break;
+            case 2: // SANDSTORM — dusty yellow particles
+                GbaDialogueHud.ApplyScreenOverlay(camera, 0, 200, 180, 80, 50);
+                DrawWeatherStreaks(camera, 0xE0, 0xC8, 0x60, slant: 1);
+                break;
+            case 3: // CLOUDY — slight darken
+                GbaDialogueHud.ApplyScreenOverlay(camera, 35, 0, 0, 0, 0);
+                break;
+            case 4: // RAIN
+                GbaDialogueHud.ApplyScreenOverlay(camera, 25, 40, 60, 120, 35);
+                DrawWeatherStreaks(camera, 0xA0, 0xC0, 0xFF, slant: 1);
+                break;
+            case 5: // HAIL
+                GbaDialogueHud.ApplyScreenOverlay(camera, 20, 200, 220, 255, 30);
+                DrawWeatherStreaks(camera, 0xF0, 0xF8, 0xFF, slant: 0);
+                break;
+            case 6: // FOG
+                GbaDialogueHud.ApplyScreenOverlay(camera, 0, 200, 200, 210, 90);
+                break;
+            case 7: // SNOW
+                GbaDialogueHud.ApplyScreenOverlay(camera, 15, 240, 240, 255, 40);
+                DrawWeatherStreaks(camera, 0xFF, 0xFF, 0xFF, slant: 0);
+                break;
+        }
+    }
+
+    private void DrawWeatherStreaks(RgbaImage camera, byte r, byte g, byte b, int slant)
+    {
+        var seed = _animTick * 1103515245 + 12345;
+        for (var i = 0; i < 28; i++)
+        {
+            seed = seed * 1103515245 + 12345;
+            var x = (seed >> 16) % Math.Max(1, camera.Width);
+            seed = seed * 1103515245 + 12345;
+            var y = (seed >> 16) % Math.Max(1, camera.Height);
+            for (var t = 0; t < 4; t++)
+            {
+                var px = x + t * slant;
+                var py = y + t;
+                SceneCompositor.FillRectPublic(camera, px, py, 1, 1, r, g, b, 180);
+            }
+        }
     }
 
     private static RgbaImage BlackCamera()
@@ -413,6 +478,35 @@ public sealed class ScenePlaySession
             if (species <= 0)
                 continue;
             DrawLiveSprite(image, i, species, live.PixelX, live.PixelY);
+        }
+    }
+
+    private void DrawMapEffects(RgbaImage image)
+    {
+        if (_groundEffects is null)
+            return;
+
+        IEnumerable<SpawnedMapEffect> effects;
+        if (_script is not null)
+            effects = _script.MapEffects;
+        else
+        {
+            var sector = _scene.Groups.ElementAtOrDefault(ActiveGroup)?
+                .Sectors.ElementAtOrDefault(ActiveSector);
+            if (sector is null)
+                return;
+            effects = sector.Effects.Select(e =>
+                new SpawnedMapEffect(e.TypeId, e.PixelX, e.PixelY, e.DirectionOrFlags & 7));
+        }
+
+        foreach (var fx in effects)
+        {
+            var sprite = _groundEffects.TryGetForEffect(fx.Kind);
+            if (sprite is null)
+                continue;
+            var x = (int)Math.Round(fx.X) - sprite.Width / 2;
+            var y = (int)Math.Round(fx.Y) - sprite.Height / 2;
+            SceneCompositor.BlitSpritePublic(image, sprite, x, y, flipH: false);
         }
     }
 
@@ -512,8 +606,16 @@ public sealed class ScenePlaySession
 
     private void UpdateCamera()
     {
-        var targetX = (int)Math.Round(PlayerX + 4 - CameraWidth / 2.0);
-        var targetY = (int)Math.Round(PlayerY + 4 - CameraHeight / 2.0);
+        double focusX = PlayerX + 4;
+        double focusY = PlayerY + 4;
+        if (_script is not null && _script.TryGetCameraFocus(out var cx, out var cy))
+        {
+            focusX = cx + 4;
+            focusY = cy + 4;
+        }
+
+        var targetX = (int)Math.Round(focusX - CameraWidth / 2.0);
+        var targetY = (int)Math.Round(focusY - CameraHeight / 2.0);
         CameraX = (int)Clamp(targetX, 0, Math.Max(0, MapWidthPixels - CameraWidth));
         CameraY = (int)Clamp(targetY, 0, Math.Max(0, MapHeightPixels - CameraHeight));
     }

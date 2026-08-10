@@ -95,6 +95,118 @@ public sealed class GroundScriptVmDeepeningTests
     }
 
     [Fact]
+    public void FlashToRaisesOverlayThenFlashFromClearsAndBlocksWaitFade()
+    {
+        // FLASH_TO(wait, kind, duration, RGB_U32(0xFF,0xFF,0xFF))
+        var flashRgb = (0xFF << 16) | (0xFF << 8) | 0xFF;
+        var vm = GroundScriptVm.FromCommands(
+        [
+            new ScriptCommandData
+            {
+                Op = 0x28, // FLASH_TO
+                ArgByte = 1, // wait until done
+                ArgShort = 5, // kind
+                Arg1 = 4, // duration frames (preview)
+                Arg2 = flashRgb,
+            },
+            new ScriptCommandData
+            {
+                Op = 0x27, // FLASH_FROM
+                ArgByte = 1,
+                ArgShort = 5,
+                Arg1 = 4,
+                Arg2 = flashRgb,
+            },
+            new ScriptCommandData { Op = 0xDF }, // wait fade/flash idle
+            new ScriptCommandData { Op = 0xF0 }, // HALT
+        ]);
+
+        Assert.Equal(0, vm.FlashAlpha);
+        vm.TickFrames(1);
+        Assert.True(vm.FadeBusy, "FLASH_TO should keep fade/flash busy while interpolating");
+        Assert.True(vm.FlashAlpha > 0, "FLASH_TO should raise flash overlay");
+        Assert.Equal(0xFF, vm.FlashR);
+        Assert.Equal(0xFF, vm.FlashG);
+        Assert.Equal(0xFF, vm.FlashB);
+
+        // Drive until FLASH_TO completes and FLASH_FROM begins clearing.
+        var sawFull = false;
+        var sawClearing = false;
+        for (var i = 0; i < 120 && !vm.Finished; i++)
+        {
+            vm.TickFrames(1);
+            if (vm.FlashAlpha >= 250)
+                sawFull = true;
+            if (sawFull && vm.FlashAlpha is > 0 and < 200)
+                sawClearing = true;
+            if (sawClearing && !vm.FadeBusy && vm.FlashAlpha == 0)
+                break;
+        }
+
+        Assert.True(sawFull, "Expected flash to reach full white overlay");
+        Assert.True(sawClearing, "Expected FLASH_FROM to clear the overlay");
+        Assert.Equal(0, vm.FlashAlpha);
+        Assert.False(vm.FadeBusy);
+    }
+
+    [Fact]
+    public void SpawnEffectAddsMapEffectAtActorPosition()
+    {
+        var scene = new Scene { MapId = 99, Name = "SpawnEffect" };
+        scene.Groups.Add(new SceneGroup { Index = 0 });
+        scene.Groups[0].Sectors.Add(new SceneSector { Group = 0, Sector = 0 });
+        scene.Groups[0].Sectors[0].Lives.Add(new SceneEntity
+        {
+            Kind = SceneEntityKind.Live,
+            TypeId = 1,
+            Position = new CompactPos(12, 8, 0, 0),
+            Index = 0,
+            DisplayName = "Hero",
+        });
+        scene.Groups[0].Sectors[0].Stations.Add(new ScriptRefData
+        {
+            Id = 1,
+            Name = "station",
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x1A, Arg2 = 3 }, // SPAWN_EFFECT kind 3
+                new ScriptCommandData { Op = 0xF0 },
+            ],
+        });
+        scene.Groups[0].Sectors[0].HasStation = true;
+
+        var session = new ScenePlaySession(EmptyRom(), scene, 0, 0, scripted: true);
+        session.Tick(1.0 / 60.0);
+        Assert.Contains(session.ScriptVm!.MapEffects, e => e.Kind == 3 && e.X == 12 * 8 && e.Y == 8 * 8);
+    }
+
+    [Fact]
+    public void ApplyScreenOverlayCompositesBlackFadeAndRgbFlash()
+    {
+        var pixels = new byte[4]; // 1×1 RGBA
+        pixels[0] = 0x80;
+        pixels[1] = 0x80;
+        pixels[2] = 0x80;
+        pixels[3] = 255;
+        var image = new RgbaImage(1, 1, pixels);
+
+        // Full black fade → black
+        GbaDialogueHud.ApplyScreenOverlay(image, fadeAlpha: 255, flashR: 0, flashG: 0, flashB: 0, flashAlpha: 0);
+        Assert.Equal(0, image.Pixels[0]);
+        Assert.Equal(0, image.Pixels[1]);
+        Assert.Equal(0, image.Pixels[2]);
+
+        image.Pixels[0] = 0x80;
+        image.Pixels[1] = 0x80;
+        image.Pixels[2] = 0x80;
+        // Full white flash on mid gray → near white
+        GbaDialogueHud.ApplyScreenOverlay(image, fadeAlpha: 0, flashR: 255, flashG: 255, flashB: 255, flashAlpha: 255);
+        Assert.True(image.Pixels[0] > 200);
+        Assert.True(image.Pixels[1] > 200);
+        Assert.True(image.Pixels[2] > 200);
+    }
+
+    [Fact]
     public void TinyWoodsIntroKeepsBlackUntilFadeInThenSleepsFacingPartner()
     {
         var baserom = FindUpwards("baserom.gba");
@@ -315,5 +427,12 @@ public sealed class GroundScriptVmDeepeningTests
             directory = directory.Parent;
         }
         return null;
+    }
+
+    private static RomImage EmptyRom()
+    {
+        var path = Path.GetTempFileName();
+        File.WriteAllBytes(path, new byte[0x100]);
+        return RomImage.Open(path);
     }
 }

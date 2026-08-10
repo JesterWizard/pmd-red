@@ -69,6 +69,46 @@ public static class SceneEditing
             });
     }
 
+    /// <summary>
+    /// Toggle CompactPos half-tile offsets (CPOS_HALFTILE = 0x2) on X and/or Y.
+    /// Preserves other flag bits (e.g. CPOS_CURRENT).
+    /// </summary>
+    public static void SetEntityHalfTileFlags(
+        ChangeService changes,
+        SceneEntity entity,
+        bool halfX,
+        bool halfY)
+    {
+        var old = entity.Position;
+        var xFlags = halfX
+            ? (byte)(old.XFlags | CompactPos.FlagHalfTile)
+            : (byte)(old.XFlags & ~CompactPos.FlagHalfTile);
+        var yFlags = halfY
+            ? (byte)(old.YFlags | CompactPos.FlagHalfTile)
+            : (byte)(old.YFlags & ~CompactPos.FlagHalfTile);
+        if (xFlags == old.XFlags && yFlags == old.YFlags)
+            return;
+
+        var next = new CompactPos(old.XTiles, old.YTiles, xFlags, yFlags);
+        changes.Execute(
+            $"Set {entity.DisplayName} half-tile",
+            apply: () => entity.Position = next,
+            revert: () => entity.Position = old,
+            edit: new ProjectEdit
+            {
+                Id = Guid.NewGuid().ToString("N"),
+                Kind = "entity.halftile",
+                Target = $"0x{entity.RomOffset:X}",
+                Values =
+                {
+                    ["halfX"] = halfX ? "1" : "0",
+                    ["halfY"] = halfY ? "1" : "0",
+                    ["xFlags"] = xFlags.ToString(),
+                    ["yFlags"] = yFlags.ToString(),
+                },
+            });
+    }
+
     public static void SetEntitySize(ChangeService changes, SceneEntity entity, byte width, byte height)
     {
         var oldW = entity.Width;

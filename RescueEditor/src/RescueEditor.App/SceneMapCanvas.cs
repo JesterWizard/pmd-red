@@ -36,6 +36,7 @@ public sealed class SceneMapCanvas : UserControl
     private IReadOnlyCollection<int>? _visibleSectors;
     private ActorSpriteAtlas? _actorSprites;
     private ObjectSpriteAtlas? _objectSprites;
+    private GroundEffectAtlas? _groundEffects;
     private bool _showLives = true;
     private bool _showObjects = true;
     private bool _showEffects = true;
@@ -201,7 +202,8 @@ public sealed class SceneMapCanvas : UserControl
         string? hudDialogue = null,
         IReadOnlyCollection<int>? visibleSectors = null,
         ActorSpriteAtlas? actorSprites = null,
-        ObjectSpriteAtlas? objectSprites = null)
+        ObjectSpriteAtlas? objectSprites = null,
+        GroundEffectAtlas? groundEffects = null)
     {
         _rom = rom;
         _scene = scene;
@@ -218,6 +220,7 @@ public sealed class SceneMapCanvas : UserControl
         _visibleSectors = visibleSectors;
         _actorSprites = actorSprites;
         _objectSprites = objectSprites;
+        _groundEffects = groundEffects;
         _sceneLabel.Text = $"{scene.Name}   g{group} s{sector}";
         Refresh();
     }
@@ -242,7 +245,8 @@ public sealed class SceneMapCanvas : UserControl
                 hudDialogue: _hudDialogue,
                 visibleSectors: _visibleSectors,
                 actorSprites: _actorSprites,
-                objectSprites: _objectSprites);
+                objectSprites: _objectSprites,
+                groundEffects: _groundEffects);
             using var stream = new MemoryStream(png);
             _bitmap?.Dispose();
             _bitmap = new Bitmap(stream);

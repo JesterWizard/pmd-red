@@ -44,6 +44,101 @@ public sealed class ScenePlayTests
     }
 
     [Fact]
+    public void SelectWeatherStoresIdAndTintsCamera()
+    {
+        var scene = MakeEmptyScene(40, 30);
+        scene.Groups[0].Sectors[0].Stations.Add(new ScriptRefData
+        {
+            Id = 1,
+            Name = "station",
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x0B, Arg1 = 4 }, // SELECT_WEATHER RAIN
+                new ScriptCommandData { Op = 0xF0 },
+            ],
+        });
+        scene.Groups[0].Sectors[0].HasStation = true;
+        var session = new ScenePlaySession(EmptyRom(), scene, 0, 0, scripted: true);
+        session.Tick(1.0 / 60.0);
+        Assert.Equal(4, session.WeatherId);
+        session.EnsureBackground();
+        var frame = session.RenderFrameImage();
+        // Rain tint should push blue channel above red somewhere in the camera.
+        var blueBias = false;
+        for (var i = 0; i < frame.Pixels.Length; i += 4)
+        {
+            if (frame.Pixels[i + 2] > frame.Pixels[i] + 10)
+            {
+                blueBias = true;
+                break;
+            }
+        }
+        Assert.True(blueBias, "Expected rain weather blue tint on camera");
+    }
+
+    [Fact]
+    public void RotateToStepsThroughDirectionsTowardTarget()
+    {
+        var vm = GroundScriptVm.FromCommands(
+        [
+            new ScriptCommandData { Op = 0x8B, ArgByte = 0, ArgShort = GroundScriptVm.DirSouth },
+            // ROTATE_TO: ArgByte=frames, ArgShort=SPINRIGHT1(1), Arg1=West
+            new ScriptCommandData
+            {
+                Op = 0x91,
+                ArgByte = 8,
+                ArgShort = 1, // DIR_TRANS_SPINRIGHT1
+                Arg1 = GroundScriptVm.DirWest,
+            },
+            new ScriptCommandData { Op = 0xF0 },
+        ]);
+        vm.TickFrames(1);
+        Assert.Equal(GroundScriptVm.DirSouth, vm.GetDirection(0));
+
+        var sawEastish = false;
+        for (var i = 0; i < 40 && !vm.Finished; i++)
+        {
+            vm.TickFrames(1);
+            var dir = vm.GetDirection(0);
+            if (dir is GroundScriptVm.DirEast or 1 or 7) // E / SE / SW during spin
+                sawEastish = true;
+            if (dir == GroundScriptVm.DirWest && i > 2)
+                break;
+        }
+
+        Assert.True(sawEastish, "Expected intermediate facing while rotating");
+        Assert.Equal(GroundScriptVm.DirWest, vm.GetDirection(0));
+    }
+
+    [Fact]
+    public void WarpWaypointTeleportsLiveToLink()
+    {
+        var scene = MakeSceneWithLive(1, 5, 5, 40, 30);
+        scene.Links.Add(new SceneLink
+        {
+            Position = new CompactPos(30, 20, 0, 0),
+            Width = 1,
+            Height = 1,
+        });
+        scene.Groups[0].Sectors[0].Stations.Add(new ScriptRefData
+        {
+            Id = 1,
+            Name = "station",
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x5B, Arg1 = 0 }, // WARP_WAYPOINT link 0
+                new ScriptCommandData { Op = 0xF0 },
+            ],
+        });
+        scene.Groups[0].Sectors[0].HasStation = true;
+        var session = new ScenePlaySession(EmptyRom(), scene, 0, 0, scripted: true);
+        session.Tick(1.0 / 60.0);
+        Assert.True(session.ScriptVm!.TryGetLivePixelPos(0, out var x, out var y));
+        Assert.Equal(30 * 8, x);
+        Assert.Equal(20 * 8, y);
+    }
+
+    [Fact]
     public void TickMovesPlayerWithDpadAndUpdatesCamera()
     {
         var scene = MakeEmptyScene(mapW: 80, mapH: 60);
@@ -57,6 +152,54 @@ public sealed class ScenePlayTests
         Assert.True(session.CameraX >= startCamX);
         Assert.Equal(240, ScenePlaySession.CameraWidth);
         Assert.Equal(160, ScenePlaySession.CameraHeight);
+    }
+
+    [Fact]
+    public void CameraPanFollowsLinkInsteadOfPlayer()
+    {
+        var scene = MakeSceneWithLive(typeId: 1, tileX: 20, tileY: 30, mapW: 80, mapH: 60);
+        scene.Links.Add(new SceneLink
+        {
+            Position = new CompactPos(70, 10, 0, 0),
+            Width = 1,
+            Height = 1,
+        });
+        scene.Groups[0].Sectors[0].Stations.Add(new ScriptRefData
+        {
+            Id = 1,
+            Name = "station",
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x98 }, // CAMERA_INIT_PAN
+                new ScriptCommandData { Op = 0x86, ArgShort = 1, Arg1 = 0 }, // CAMERA_PAN link 0
+                new ScriptCommandData { Op = 0xDB, ArgShort = 120 }, // WAIT
+                new ScriptCommandData { Op = 0x99 }, // CAMERA_END_PAN
+                new ScriptCommandData { Op = 0xF0 }, // HALT
+            ],
+        });
+        scene.Groups[0].Sectors[0].HasStation = true;
+
+        var session = new ScenePlaySession(EmptyRom(), scene, 0, 0, scripted: true);
+        var playerCamX = session.CameraX;
+        session.Tick(1.0 / 60.0);
+        Assert.True(session.ScriptVm!.CameraPanActive);
+
+        // Drive until camera has moved toward the eastern link.
+        var movedTowardLink = false;
+        for (var i = 0; i < 180 && !session.ScriptFinished; i++)
+        {
+            session.Tick(1.0 / 60.0);
+            if (session.CameraX > playerCamX + 40)
+            {
+                movedTowardLink = true;
+                break;
+            }
+        }
+
+        Assert.True(movedTowardLink,
+            $"Expected camera to pan toward link (x={70 * 8}), playerCam={playerCamX}, got CameraX={session.CameraX}");
+        Assert.True(session.ScriptVm!.TryGetCameraFocus(out var fx, out _));
+        Assert.True(fx > session.PlayerX + 40);
     }
 
     [Fact]

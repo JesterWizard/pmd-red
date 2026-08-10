@@ -110,11 +110,12 @@ public static class SceneCompositor
         IReadOnlyCollection<int>? visibleSectors = null,
         ActorSpriteAtlas? actorSprites = null,
         ObjectSpriteAtlas? objectSprites = null,
-        SceneEntity? excludeLive = null) =>
+        SceneEntity? excludeLive = null,
+        GroundEffectAtlas? groundEffects = null) =>
         ComposeSceneImage(
             rom, scene, group, sector, selected, showLives, showObjects, showEffects, showEvents,
             showLinks, drawLabels, showGrid, hudDialogue, visibleSectors, actorSprites, objectSprites,
-            excludeLive).ToPng();
+            excludeLive, groundEffects).ToPng();
 
     public static RgbaImage ComposeSceneImage(
         RomImage rom,
@@ -133,7 +134,8 @@ public static class SceneCompositor
         IReadOnlyCollection<int>? visibleSectors = null,
         ActorSpriteAtlas? actorSprites = null,
         ObjectSpriteAtlas? objectSprites = null,
-        SceneEntity? excludeLive = null)
+        SceneEntity? excludeLive = null,
+        GroundEffectAtlas? groundEffects = null)
     {
         var background = RenderMapBackground(rom, scene);
         RgbaImage image;
@@ -156,7 +158,7 @@ public static class SceneCompositor
             if (showObjects)
                 DrawObjects(image, sectorData.Objects, selected, drawLabels, objectSprites);
             if (showEffects)
-                DrawEntities(image, sectorData.Effects, selected, 0xC0, 0x60, 0xFF, drawLabels);
+                DrawEffects(image, sectorData.Effects, selected, drawLabels, groundEffects);
             if (showEvents)
                 DrawEntities(image, sectorData.Events, selected, 0x40, 0xE0, 0x80, drawLabels);
         }
@@ -403,12 +405,50 @@ public static class SceneCompositor
             if (excludeLive is not null && ReferenceEquals(excludeLive, entity))
                 continue;
             var selectedMatch = IsSelected(selected, entity);
-            var sprite = actorSprites?.TryGetForLive(rom, null, entity.TypeId);
-            if (sprite is not null)
-                DrawSpriteEntity(image, entity, sprite, selectedMatch, drawLabels);
+            if (TryResolveLiveSprite(rom, actorSprites, entity, out var sprite, out var flipH))
+                DrawSpriteEntity(image, entity, sprite, selectedMatch, drawLabels, flipH);
             else
                 DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0x40, 0xC0, 0xFF);
         }
+    }
+
+    private static bool TryResolveLiveSprite(
+        RomImage rom,
+        ActorSpriteAtlas? actorSprites,
+        SceneEntity entity,
+        out RgbaImage sprite,
+        out bool flipH)
+    {
+        sprite = null!;
+        flipH = false;
+        if (actorSprites is null)
+            return false;
+
+        var species = GroundLivesTypes.ResolvePreviewSpecies(rom, RomProfile.Us10, entity.TypeId);
+        if (species <= 0)
+        {
+            // Fall back to type→species cache used by TryGetForLive.
+            var fallback = actorSprites.TryGetForLive(rom, null, entity.TypeId);
+            if (fallback is null)
+                return false;
+            sprite = fallback;
+            return true;
+        }
+
+        var dir = entity.DirectionOrFlags & 7;
+        var drawn = actorSprites.TryGetAnimatedSprite(species, GroundScriptVm.AnimIdle, dir, tickFrames: 0);
+        if (drawn is null)
+        {
+            var south = actorSprites.TryGetSpeciesSprite(species);
+            if (south is null)
+                return false;
+            sprite = south;
+            return true;
+        }
+
+        sprite = drawn.Value.Image;
+        flipH = drawn.Value.FlipH;
+        return true;
     }
 
     /// <summary>Public blit for Scene Play (player sprite redraw).</summary>
@@ -480,6 +520,24 @@ public static class SceneCompositor
         }
     }
 
+    private static void DrawEffects(
+        RgbaImage image,
+        IEnumerable<SceneEntity> entities,
+        SceneEntity? selected,
+        bool drawLabels,
+        GroundEffectAtlas? groundEffects)
+    {
+        foreach (var entity in entities)
+        {
+            var selectedMatch = IsSelected(selected, entity);
+            var sprite = groundEffects?.TryGetForEffect(entity.TypeId);
+            if (sprite is not null)
+                DrawSpriteEntity(image, entity, sprite, selectedMatch, drawLabels);
+            else
+                DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0xC0, 0x60, 0xFF);
+        }
+    }
+
     private static bool IsSelected(SceneEntity? selected, SceneEntity entity) =>
         selected is not null &&
         selected.RomOffset == entity.RomOffset &&
@@ -491,7 +549,8 @@ public static class SceneCompositor
         SceneEntity entity,
         RgbaImage sprite,
         bool selectedMatch,
-        bool drawLabels)
+        bool drawLabels,
+        bool flipH = false)
     {
         var hitW = Math.Max(8, Math.Max(entity.Width, (byte)1) * 8);
         var hitH = Math.Max(8, Math.Max(entity.Height, (byte)1) * 8);
@@ -499,7 +558,7 @@ public static class SceneCompositor
         var cy = entity.PixelY + hitH / 2;
         var drawX = cx - sprite.Width / 2;
         var drawY = cy - sprite.Height / 2;
-        BlitSprite(image, sprite, drawX, drawY, flipH: false);
+        BlitSprite(image, sprite, drawX, drawY, flipH);
         if (selectedMatch)
             DrawRect(image, drawX - 1, drawY - 1, sprite.Width + 2, sprite.Height + 2,
                 0xFF, 0xFF, 0xFF, selected: true, filled: false);

@@ -51,6 +51,8 @@ public sealed class SceneWorkspacePanel : UserControl
     private readonly CompactSpinBox _yBox;
     private readonly CompactSpinBox _wBox;
     private readonly CompactSpinBox _hBox;
+    private readonly CheckBox _halfXToggle;
+    private readonly CheckBox _halfYToggle;
     private readonly CompactSpinBox _opBox;
     private readonly CompactSpinBox _argByteBox;
     private readonly CompactSpinBox _argShortBox;
@@ -74,6 +76,7 @@ public sealed class SceneWorkspacePanel : UserControl
     private Scene? _scene;
     private ActorSpriteAtlas? _actorSprites;
     private ObjectSpriteAtlas? _objectSprites;
+    private GroundEffectAtlas? _groundEffects;
     private PortraitAtlas? _portraitAtlas;
     private SceneEntity? _selectedEntity;
     private ScriptCommandData? _selectedCommand;
@@ -342,12 +345,28 @@ public sealed class SceneWorkspacePanel : UserControl
         _yBox = EditorChrome.CompactNumeric(0, 255);
         _wBox = EditorChrome.CompactNumeric(0, 64);
         _hBox = EditorChrome.CompactNumeric(0, 64);
+        _halfXToggle = new CheckBox
+        {
+            Content = "Half X",
+            FontSize = EditorTheme.FontMeta,
+            FontFamily = EditorTheme.UiFont,
+            Foreground = EditorTheme.TextMutedBrush,
+        };
+        _halfYToggle = new CheckBox
+        {
+            Content = "Half Y",
+            FontSize = EditorTheme.FontMeta,
+            FontFamily = EditorTheme.UiFont,
+            Foreground = EditorTheme.TextMutedBrush,
+        };
         _typeBox.ValueChanged += (_, _) => ApplyEntityProps();
         _dirBox.ValueChanged += (_, _) => ApplyEntityProps();
         _xBox.ValueChanged += (_, _) => ApplyEntityProps();
         _yBox.ValueChanged += (_, _) => ApplyEntityProps();
         _wBox.ValueChanged += (_, _) => ApplyEntityProps();
         _hBox.ValueChanged += (_, _) => ApplyEntityProps();
+        _halfXToggle.IsCheckedChanged += (_, _) => ApplyEntityProps();
+        _halfYToggle.IsCheckedChanged += (_, _) => ApplyEntityProps();
 
         _propertyForm = new StackPanel
         {
@@ -359,6 +378,12 @@ public sealed class SceneWorkspacePanel : UserControl
                     EditorChrome.PropertyRow("Dir/Flags", _dirBox),
                     EditorChrome.PropertyRow("X", _xBox),
                     EditorChrome.PropertyRow("Y", _yBox),
+                    EditorChrome.PropertyRow("Half", new StackPanel
+                    {
+                        Orientation = Orientation.Horizontal,
+                        Spacing = EditorTheme.Space2,
+                        Children = { _halfXToggle, _halfYToggle },
+                    }),
                     EditorChrome.PropertyRow("Width", _wBox),
                     EditorChrome.PropertyRow("Height", _hBox)),
             },
@@ -559,6 +584,7 @@ public sealed class SceneWorkspacePanel : UserControl
         var assetsRoot = CatalogBuilder.FindRepositoryRoot(rom.Path);
         _actorSprites = new ActorSpriteAtlas(assetsRoot, database.Profile);
         _objectSprites = new ObjectSpriteAtlas(assetsRoot);
+        _groundEffects = new GroundEffectAtlas(rom);
         _portraitAtlas = new PortraitAtlas(rom, assetsRoot);
         _selectedEntity = null;
         _selectedCommand = null;
@@ -929,6 +955,8 @@ public sealed class SceneWorkspacePanel : UserControl
                 _yBox.Value = 0;
                 _wBox.Value = 1;
                 _hBox.Value = 1;
+                _halfXToggle.IsChecked = false;
+                _halfYToggle.IsChecked = false;
             }
             else
             {
@@ -938,6 +966,10 @@ public sealed class SceneWorkspacePanel : UserControl
                 _yBox.Value = _selectedEntity.Position.YTiles;
                 _wBox.Value = _selectedEntity.Width;
                 _hBox.Value = _selectedEntity.Height;
+                _halfXToggle.IsChecked =
+                    (_selectedEntity.Position.XFlags & CompactPos.FlagHalfTile) != 0;
+                _halfYToggle.IsChecked =
+                    (_selectedEntity.Position.YFlags & CompactPos.FlagHalfTile) != 0;
             }
 
             if (_selectedCommand is null)
@@ -1078,7 +1110,8 @@ public sealed class SceneWorkspacePanel : UserControl
             hud,
             visibleSectors: ResolveVisibleSectors(g),
             actorSprites: _actorSprites,
-            objectSprites: _objectSprites);
+            objectSprites: _objectSprites,
+            groundEffects: _groundEffects);
     }
 
     private HashSet<int> ResolveVisibleSectors(int group)
@@ -1113,6 +1146,16 @@ public sealed class SceneWorkspacePanel : UserControl
         var pos = new CompactPos(x, y, _selectedEntity.Position.XFlags, _selectedEntity.Position.YFlags);
         if (pos.XTiles != _selectedEntity.Position.XTiles || pos.YTiles != _selectedEntity.Position.YTiles)
             SceneEditing.MoveEntity(_changes, _selectedEntity, pos);
+        var halfX = _halfXToggle.IsChecked == true;
+        var halfY = _halfYToggle.IsChecked == true;
+        var wantX = halfX
+            ? (byte)(_selectedEntity.Position.XFlags | CompactPos.FlagHalfTile)
+            : (byte)(_selectedEntity.Position.XFlags & ~CompactPos.FlagHalfTile);
+        var wantY = halfY
+            ? (byte)(_selectedEntity.Position.YFlags | CompactPos.FlagHalfTile)
+            : (byte)(_selectedEntity.Position.YFlags & ~CompactPos.FlagHalfTile);
+        if (wantX != _selectedEntity.Position.XFlags || wantY != _selectedEntity.Position.YFlags)
+            SceneEditing.SetEntityHalfTileFlags(_changes, _selectedEntity, halfX, halfY);
 
         RefreshMap();
         DirtyChanged?.Invoke(this, EventArgs.Empty);
@@ -1386,6 +1429,7 @@ public sealed class SceneWorkspacePanel : UserControl
             playSector,
             actorSprites: _actorSprites,
             objectSprites: _objectSprites,
+            groundEffects: _groundEffects,
             charmap: _charmap,
             appearance: appearance,
             profile: _database?.Profile,

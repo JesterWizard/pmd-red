@@ -8,6 +8,8 @@ public readonly record struct PlayPortraitSlot(
     short Species,
     bool Hidden = false);
 
+public readonly record struct SpawnedMapEffect(byte Kind, double X, double Y, int Direction);
+
 /// <summary>
 /// Multi-actor ground script runner for Scene Play cutscenes.
 /// Supports CALL_SCRIPT call-stacks, portraits, animations, and frame-accurate waits.
@@ -51,6 +53,7 @@ public sealed class GroundScriptVm
     private readonly Dictionary<int, short> _liveSpecies = new();
     private readonly Dictionary<int, int> _directions = new(); // DIRECTION_* 0..7
     private readonly Dictionary<int, (int EffectId, int FramesLeft, int Age)> _effects = new();
+    private readonly List<SpawnedMapEffect> _spawnedMapEffects = new();
     private bool _livesSpawned;
     private int _dialogueHoldFrames;
     private int _autoDismissHoldFrames;
@@ -61,6 +64,19 @@ public sealed class GroundScriptVm
     private int _fadeMainCurrent;
     private int _fade2Target; // secondary channel (FADE2_*); must not clear main black
     private int _fade2Current;
+    private int _flashTarget; // 0 clear, 255 full RGB flash
+    private int _flashCurrent;
+    private int _flashStep = 8;
+    private byte _flashR = 255;
+    private byte _flashG = 255;
+    private byte _flashB = 255;
+    private bool _cameraPanActive;
+    private double _cameraFocusX;
+    private double _cameraFocusY;
+    private double _cameraPanTargetX;
+    private double _cameraPanTargetY;
+    private double _cameraPanSpeed = 2.0; // pixels/frame
+    private int _weatherId; // WEATHER_* from SELECT_WEATHER
     /// <summary>Actor that opened the current textbox; only this actor pauses for A.</summary>
     private ScriptActor? _dialogueOwner;
     private readonly List<DialogueChoice> _pendingChoices = new();
@@ -207,8 +223,36 @@ public sealed class GroundScriptVm
     /// <summary>0 = fully visible, 255 = fully black.</summary>
     public byte FadeAlpha => (byte)Math.Clamp(Math.Max(_fadeMainCurrent, _fade2Current), 0, 255);
 
-    /// <summary>True while either fade channel is still interpolating.</summary>
-    public bool FadeBusy => _fadeMainCurrent != _fadeMainTarget || _fade2Current != _fade2Target;
+    /// <summary>RGB flash overlay strength (FLASH_TO/FROM), 0 = none, 255 = solid.</summary>
+    public byte FlashAlpha => (byte)Math.Clamp(_flashCurrent, 0, 255);
+    public byte FlashR => _flashR;
+    public byte FlashG => _flashG;
+    public byte FlashB => _flashB;
+
+    /// <summary>True after CAMERA_INIT_PAN until CAMERA_END_PAN.</summary>
+    public bool CameraPanActive => _cameraPanActive;
+
+    /// <summary>Current ground weather id (WEATHER_CLEAR=0 … WEATHER_SNOW=7).</summary>
+    public int WeatherId => _weatherId;
+
+    public bool TryGetCameraFocus(out double x, out double y)
+    {
+        if (!_cameraPanActive)
+        {
+            x = 0;
+            y = 0;
+            return false;
+        }
+        x = _cameraFocusX;
+        y = _cameraFocusY;
+        return true;
+    }
+
+    /// <summary>True while either fade channel or flash is still interpolating.</summary>
+    public bool FadeBusy =>
+        _fadeMainCurrent != _fadeMainTarget ||
+        _fade2Current != _fade2Target ||
+        _flashCurrent != _flashTarget;
 
     public int GetAnimation(int npcId) =>
         _animations.TryGetValue(npcId, out var anim) ? anim : AnimIdle;
@@ -236,6 +280,29 @@ public sealed class GroundScriptVm
     /// <summary>Compat: effect id only.</summary>
     public bool TryGetActiveEffect(int npcId, out int effectId) =>
         TryGetActiveEffect(npcId, out effectId, out _);
+
+    /// <summary>Map-placed sector effects plus SPAWN_EFFECT instances.</summary>
+    public IReadOnlyList<SpawnedMapEffect> MapEffects
+    {
+        get
+        {
+            var list = new List<SpawnedMapEffect>(_spawnedMapEffects);
+            if (_scene is not null)
+            {
+                var sector = _scene.Groups.ElementAtOrDefault(ActiveGroup)?
+                    .Sectors.ElementAtOrDefault(ActiveSector);
+                if (sector is not null)
+                {
+                    foreach (var e in sector.Effects)
+                    {
+                        list.Add(new SpawnedMapEffect(
+                            e.TypeId, e.PixelX, e.PixelY, e.DirectionOrFlags & 7));
+                    }
+                }
+            }
+            return list;
+        }
+    }
 
     public bool IsLiveMoving(int liveIndex) =>
         _actors.Any(a => a.NpcId == liveIndex && a.WalkActive);
@@ -370,6 +437,8 @@ public sealed class GroundScriptVm
         // Interpolate fade channels toward targets (~palette fade).
         StepFade(ref _fadeMainCurrent, _fadeMainTarget);
         StepFade(ref _fade2Current, _fade2Target);
+        StepFlash();
+        StepCameraPan();
 
         TickEffects();
 
@@ -566,11 +635,26 @@ public sealed class GroundScriptVm
                 return true;
             }
 
+            case 0x0B: // SELECT_WEATHER
+                _weatherId = Math.Max(0, (int)cmd.Arg1);
+                actor.Index++;
+                return true;
+
             case 0x0D: // SELECT_LIVES
             {
                 ActiveGroup = cmd.ArgShort < 0 ? ActiveGroup : cmd.ArgShort;
                 ActiveSector = cmd.ArgByte;
                 SpawnLivesIfNeeded(force: true);
+                actor.Index++;
+                return true;
+            }
+
+            case 0x1A: // SPAWN_EFFECT(kind=Arg2, scriptId=Arg1, group=ArgShort, sector=ArgByte)
+            {
+                var kind = (byte)Math.Clamp(cmd.Arg2, 0, 255);
+                var x = GetLiveX(actor);
+                var y = GetLiveY(actor);
+                _spawnedMapEffects.Add(new SpawnedMapEffect(kind, x, y, GetDirection(LiveKey(actor))));
                 actor.Index++;
                 return true;
             }
@@ -681,6 +765,38 @@ public sealed class GroundScriptVm
                 actor.Index++;
                 return actor.WaitFrames == 0;
 
+            case 0x24: // brightness blend — approximate as gray flash toward Arg2 level
+            {
+                if (!actor.FlashArmed)
+                {
+                    var level = (int)Math.Clamp(cmd.Arg2, 0, 255);
+                    BeginFlash(level, packedRgb: 0x808080, durationFrames: (int)cmd.Arg1);
+                    actor.FlashArmed = true;
+                }
+                if (cmd.ArgByte != 0 && FadeBusy)
+                    return false;
+                actor.FlashArmed = false;
+                actor.Index++;
+                // Yield so a wait-style flash peak is observable before the next op.
+                return cmd.ArgByte == 0;
+            }
+
+            case 0x27: // FLASH_FROM — blend RGB out
+            case 0x28: // FLASH_TO — blend RGB in
+            {
+                if (!actor.FlashArmed)
+                {
+                    var target = cmd.Op == 0x28 ? 255 : 0;
+                    BeginFlash(target, packedRgb: cmd.Arg2, durationFrames: (int)cmd.Arg1);
+                    actor.FlashArmed = true;
+                }
+                if (cmd.ArgByte != 0 && FadeBusy)
+                    return false;
+                actor.FlashArmed = false;
+                actor.Index++;
+                return cmd.ArgByte == 0;
+            }
+
             case 0xDF: // wait until palette fade finishes (sub_8099B94)
                 if (FadeBusy)
                     return false;
@@ -761,6 +877,30 @@ public sealed class GroundScriptVm
                 return false;
             }
 
+            case 0x86: // CAMERA_PAN — move focus toward GroundLink(Arg1)
+            {
+                if (!_cameraPanActive)
+                    EnsureCameraPanSeeded(actor);
+                var (tx, ty) = ResolveLinkPixel((int)cmd.Arg1);
+                _cameraPanTargetX = tx;
+                _cameraPanTargetY = ty;
+                // Retail uses hypot for duration; keep a steady preview pan rate.
+                _cameraPanSpeed = 4.0;
+                actor.Index++;
+                return true;
+            }
+
+            case 0x98: // CAMERA_INIT_PAN
+                EnsureCameraPanSeeded(actor);
+                _cameraPanActive = true;
+                actor.Index++;
+                return true;
+
+            case 0x99: // CAMERA_END_PAN
+                _cameraPanActive = false;
+                actor.Index++;
+                return true;
+
             case 0x7A: // WALK_DIRECT — treat like relative/absolute pixel target
                 StartWalk(actor, cmd.Arg1, cmd.Arg2, Math.Max(1, (int)cmd.ArgShort));
                 return false;
@@ -769,12 +909,59 @@ public sealed class GroundScriptVm
             case 0x92:
             {
                 var key = LiveKey(actor);
-                // Preview: snap to target direction (Arg1). Full DIR_TRANS stepping can come later.
-                if (cmd.Arg1 >= 0)
-                    _directions[key] = cmd.Arg1 & 7;
-                actor.WaitFrames = Math.Max(1, (int)cmd.ArgByte);
+                var target = (int)cmd.Arg1 & 7;
+                var transform = (int)cmd.ArgShort;
+                var frames = Math.Max(1, (int)cmd.ArgByte);
+                if (!actor.RotateArmed)
+                {
+                    var current = GetDirection(key);
+                    // FLIP / random / none: snap. Spin styles: step shortest way.
+                    if (transform is 0 or 5 or >= 6) // NONE, FLIP, RAND*
+                    {
+                        _directions[key] = transform == 5 ? (current + 4) & 7 : target;
+                        actor.WaitFrames = frames;
+                        actor.Index++;
+                        return actor.WaitFrames == 0;
+                    }
+
+                    actor.RotateArmed = true;
+                    actor.RotateTarget = target;
+                    actor.RotateStepsLeft = ShortestTurnSteps(current, target);
+                    actor.RotateWaitPerStep = Math.Max(1, frames / Math.Max(1, actor.RotateStepsLeft));
+                    actor.WaitFrames = actor.RotateWaitPerStep;
+                    return false;
+                }
+
+                if (actor.WaitFrames > 0)
+                    return false;
+
+                if (actor.RotateStepsLeft > 0)
+                {
+                    var cur = GetDirection(key);
+                    var delta = SignedTurnDelta(cur, actor.RotateTarget);
+                    var step = delta == 0 ? 0 : (delta > 0 ? 1 : -1);
+                    _directions[key] = (cur + step + 8) & 7;
+                    actor.RotateStepsLeft--;
+                    if (actor.RotateStepsLeft > 0)
+                    {
+                        actor.WaitFrames = actor.RotateWaitPerStep;
+                        return false;
+                    }
+                }
+
+                _directions[key] = actor.RotateTarget;
+                actor.RotateArmed = false;
                 actor.Index++;
-                return false;
+                return true;
+            }
+
+            case 0x5B: // WARP_WAYPOINT — teleport live to GroundLink(Arg1)
+            {
+                var (tx, ty) = ResolveLinkPixel((int)cmd.Arg1);
+                _livePositions[LiveKey(actor)] = (tx, ty);
+                actor.WalkActive = false;
+                actor.Index++;
+                return true;
             }
 
             case 0xF6: // DEBUGINFO
@@ -1567,6 +1754,71 @@ public sealed class GroundScriptVm
             current = Math.Max(target, current - 8);
     }
 
+    private void StepFlash()
+    {
+        if (_flashCurrent < _flashTarget)
+            _flashCurrent = Math.Min(_flashTarget, _flashCurrent + _flashStep);
+        else if (_flashCurrent > _flashTarget)
+            _flashCurrent = Math.Max(_flashTarget, _flashCurrent - _flashStep);
+    }
+
+    private void StepCameraPan()
+    {
+        if (!_cameraPanActive)
+            return;
+        var dx = _cameraPanTargetX - _cameraFocusX;
+        var dy = _cameraPanTargetY - _cameraFocusY;
+        var dist = Math.Sqrt(dx * dx + dy * dy);
+        if (dist <= _cameraPanSpeed || dist < 0.5)
+        {
+            _cameraFocusX = _cameraPanTargetX;
+            _cameraFocusY = _cameraPanTargetY;
+            return;
+        }
+        _cameraFocusX += dx / dist * _cameraPanSpeed;
+        _cameraFocusY += dy / dist * _cameraPanSpeed;
+    }
+
+    private void EnsureCameraPanSeeded(ScriptActor actor)
+    {
+        if (_cameraPanActive)
+            return;
+        // Prefer this actor's live, else live 0, else keep prior focus (0,0).
+        if (_livePositions.TryGetValue(LiveKey(actor), out var pos))
+        {
+            _cameraFocusX = pos.X;
+            _cameraFocusY = pos.Y;
+        }
+        else if (_livePositions.TryGetValue(0, out var p0))
+        {
+            _cameraFocusX = p0.X;
+            _cameraFocusY = p0.Y;
+        }
+        _cameraPanTargetX = _cameraFocusX;
+        _cameraPanTargetY = _cameraFocusY;
+        _cameraPanActive = true;
+    }
+
+    private void BeginFlash(int targetAlpha, int packedRgb, int durationFrames)
+    {
+        _flashR = (byte)((packedRgb >> 16) & 0xFF);
+        _flashG = (byte)((packedRgb >> 8) & 0xFF);
+        _flashB = (byte)(packedRgb & 0xFF);
+        _flashTarget = Math.Clamp(targetAlpha, 0, 255);
+        if (durationFrames <= 0)
+        {
+            _flashCurrent = _flashTarget;
+            _flashStep = 8;
+            return;
+        }
+
+        var delta = Math.Abs(_flashTarget - _flashCurrent);
+        _flashStep = Math.Max(1, (delta + durationFrames - 1) / durationFrames);
+        // Apply one step immediately so the overlay is visible the arming frame
+        // (TickOneFrame steps flash before actors).
+        StepFlash();
+    }
+
     private void TickEffects()
     {
         if (_effects.Count == 0)
@@ -1611,6 +1863,20 @@ public sealed class GroundScriptVm
         _livePositions[key] = live is null ? (0, 0) : (live.PixelX, live.PixelY);
     }
 
+    private static int SignedTurnDelta(int from, int to)
+    {
+        var delta = ((to - from) + 8) % 8;
+        if (delta > 4)
+            delta -= 8;
+        return delta;
+    }
+
+    private static int ShortestTurnSteps(int from, int to)
+    {
+        var delta = Math.Abs(SignedTurnDelta(from, to));
+        return Math.Max(1, delta);
+    }
+
     private static int LiveKey(ScriptActor actor) => actor.NpcId >= 0 ? actor.NpcId : 0;
 
     private (double X, double Y) ResolveLinkPixel(int linkIndex)
@@ -1641,6 +1907,12 @@ public sealed class GroundScriptVm
         public int? AwaitCueId { get; set; }
         /// <summary>Cue id signaled by CMD_UNK_E5; cleared once a waiter consumes it.</summary>
         public int? E5WaitingCue { get; set; }
+        /// <summary>FLASH_*/brightness op armed until wait completes.</summary>
+        public bool FlashArmed { get; set; }
+        public bool RotateArmed { get; set; }
+        public int RotateTarget { get; set; }
+        public int RotateStepsLeft { get; set; }
+        public int RotateWaitPerStep { get; set; }
         public bool Done { get; set; }
         public bool WalkActive { get; set; }
         public bool LoopingIdle { get; set; }

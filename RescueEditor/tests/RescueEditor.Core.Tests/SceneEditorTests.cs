@@ -83,6 +83,36 @@ public sealed class SceneEditorTests
     }
 
     [Fact]
+    public void SetEntityHalfTileFlagsUpdatesPixelAnchorAndUndoes()
+    {
+        var entity = new SceneEntity
+        {
+            Kind = SceneEntityKind.Live,
+            TypeId = 1,
+            Width = 1,
+            Height = 1,
+            Position = new CompactPos(5, 7, 0, 0),
+            DisplayName = "Live 1",
+            RomOffset = 0x100,
+            RawBytes = new byte[24],
+        };
+        Assert.Equal(5 * 8, entity.PixelX);
+        Assert.Equal(7 * 8, entity.PixelY);
+
+        var changes = new ChangeService();
+        SceneEditing.SetEntityHalfTileFlags(changes, entity, halfX: true, halfY: true);
+        Assert.Equal(CompactPos.FlagHalfTile, entity.Position.XFlags);
+        Assert.Equal(CompactPos.FlagHalfTile, entity.Position.YFlags);
+        Assert.Equal(5 * 8 + 4, entity.PixelX);
+        Assert.Equal(7 * 8 + 4, entity.PixelY);
+
+        changes.Undo();
+        Assert.Equal(0, entity.Position.XFlags);
+        Assert.Equal(0, entity.Position.YFlags);
+        Assert.Equal(5 * 8, entity.PixelX);
+    }
+
+    [Fact]
     public void ProjectDocumentSerializesAndReloads()
     {
         var path = Path.Combine(Path.GetTempPath(), "rescue-temple-test.rtproj");
@@ -594,6 +624,54 @@ public sealed class SceneEditorTests
     }
 
     [Fact]
+    public void ComposeSceneImageAppliesLiveDirectionFacing()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        var repo = FindRepositoryRoot();
+        if (baserom is null || repo is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var atlas = new ActorSpriteAtlas(repo);
+        var south = ComposeLiveFacing(rom, atlas, GroundScriptVm.DirSouth);
+        var east = ComposeLiveFacing(rom, atlas, GroundScriptVm.DirEast);
+        Assert.False(ImagesEqual(south, east),
+            "East-facing live must differ from South-facing (direction sheet/flip)");
+
+        var west = ComposeLiveFacing(rom, atlas, GroundScriptVm.DirWest);
+        Assert.False(ImagesEqual(east, west),
+            "East flip must differ from West (same sheet, opposite flip)");
+    }
+
+    private static RgbaImage ComposeLiveFacing(RomImage rom, ActorSpriteAtlas atlas, int direction)
+    {
+        var scene = new Scene { MapId = 99, Name = "FacingTest" };
+        var group = new SceneGroup { Index = 0 };
+        var sector = new SceneSector { Group = 0, Sector = 0 };
+        sector.Lives.Add(new SceneEntity
+        {
+            Kind = SceneEntityKind.Live,
+            TypeId = 72, // Persian — single-piece AX, clear E/W flip
+            Width = 1,
+            Height = 1,
+            Position = new CompactPos(10, 10, 0, 0),
+            DirectionOrFlags = (byte)direction,
+            DisplayName = "Persian",
+            Index = 0,
+        });
+        group.Sectors.Add(sector);
+        scene.Groups.Add(group);
+        return SceneCompositor.ComposeSceneImage(rom, scene, actorSprites: atlas);
+    }
+
+    private static bool ImagesEqual(RgbaImage a, RgbaImage b)
+    {
+        if (a.Width != b.Width || a.Height != b.Height)
+            return false;
+        return a.Pixels.AsSpan().SequenceEqual(b.Pixels);
+    }
+
+    [Fact]
     public void ObjectSpriteAtlasLoadsOrnamentStandingFrame()
     {
         var repo = FindRepositoryRoot();
@@ -643,6 +721,50 @@ public sealed class SceneEditorTests
         var cy = 8 * 8;
         Assert.False(IsObjectMarker(image!, cx, cy), "expected ornament sprite, not amber marker");
         Assert.True(HasNonBackgroundColorNear(image!, cx, cy, radius: 12));
+    }
+
+    [Fact]
+    public void ComposeSceneImageDrawsGroundEffectSpriteInsteadOfPurpleRect()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var effects = new GroundEffectAtlas(rom);
+        Assert.NotNull(effects.TryGetForEffect(3));
+
+        var scene = new Scene { MapId = 99, Name = "EffectSpriteTest" };
+        var group = new SceneGroup { Index = 0 };
+        var sector = new SceneSector { Group = 0, Sector = 0 };
+        sector.Effects.Add(new SceneEntity
+        {
+            Kind = SceneEntityKind.Effect,
+            TypeId = 3,
+            Width = 1,
+            Height = 1,
+            Position = new CompactPos(10, 10, 0, 0),
+            DisplayName = "Effect 3",
+            Index = 0,
+        });
+        group.Sectors.Add(sector);
+        scene.Groups.Add(group);
+
+        var image = SceneCompositor.ComposeSceneImage(rom, scene, groundEffects: effects);
+        var cx = 10 * 8;
+        var cy = 10 * 8;
+        Assert.False(IsEffectMarker(image, cx, cy), "expected efob sprite, not purple marker");
+        Assert.True(HasNonBackgroundColorNear(image, cx, cy, radius: 16));
+    }
+
+    private static bool IsEffectMarker(RgbaImage image, int x, int y)
+    {
+        if (x < 0 || y < 0 || x >= image.Width || y >= image.Height)
+            return false;
+        var offset = (y * image.Width + x) * 4;
+        return image.Pixels[offset] == 0xC0 &&
+               image.Pixels[offset + 1] == 0x60 &&
+               image.Pixels[offset + 2] == 0xFF;
     }
 
     private static bool IsObjectMarker(RgbaImage image, int x, int y)

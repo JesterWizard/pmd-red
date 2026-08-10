@@ -71,7 +71,11 @@ public static class GbaDialogueHud
         byte fadeAlpha,
         IReadOnlyList<GroundScriptVm.DialogueChoice>? choices = null,
         int choiceIndex = 0,
-        bool showChoiceMenu = false)
+        bool showChoiceMenu = false,
+        byte flashR = 255,
+        byte flashG = 255,
+        byte flashB = 255,
+        byte flashAlpha = 0)
     {
         if (mode == PlayDialogueMode.OnBackground)
         {
@@ -82,9 +86,9 @@ public static class GbaDialogueHud
             return;
         }
 
-        // Fade the world under the UI (textbox/portraits stay crisp).
-        if (fadeAlpha > 0)
-            ApplyFade(camera, fadeAlpha);
+        // Fade/flash the world under the UI (textbox/portraits stay crisp).
+        if (fadeAlpha > 0 || flashAlpha > 0)
+            ApplyScreenOverlay(camera, fadeAlpha, flashR, flashG, flashB, flashAlpha);
 
         if (portraits is not null && atlas is not null)
             DrawPortraits(camera, portraits, atlas);
@@ -398,16 +402,49 @@ public static class GbaDialogueHud
         }
     }
 
-    private static void ApplyFade(RgbaImage image, byte alpha)
+    /// <summary>
+    /// Composite black fade and optional RGB flash onto the camera buffer (world under UI).
+    /// </summary>
+    public static void ApplyScreenOverlay(
+        RgbaImage image,
+        byte fadeAlpha,
+        byte flashR,
+        byte flashG,
+        byte flashB,
+        byte flashAlpha)
     {
+        if (fadeAlpha == 0 && flashAlpha == 0)
+            return;
+
         for (var i = 0; i < image.Pixels.Length; i += 4)
         {
-            var inv = 255 - alpha;
-            image.Pixels[i] = (byte)((image.Pixels[i] * inv) / 255);
-            image.Pixels[i + 1] = (byte)((image.Pixels[i + 1] * inv) / 255);
-            image.Pixels[i + 2] = (byte)((image.Pixels[i + 2] * inv) / 255);
+            var r = image.Pixels[i];
+            var g = image.Pixels[i + 1];
+            var b = image.Pixels[i + 2];
+
+            if (fadeAlpha > 0)
+            {
+                var inv = 255 - fadeAlpha;
+                r = (byte)((r * inv) / 255);
+                g = (byte)((g * inv) / 255);
+                b = (byte)((b * inv) / 255);
+            }
+
+            if (flashAlpha > 0)
+            {
+                r = (byte)((r * (255 - flashAlpha) + flashR * flashAlpha) / 255);
+                g = (byte)((g * (255 - flashAlpha) + flashG * flashAlpha) / 255);
+                b = (byte)((b * (255 - flashAlpha) + flashB * flashAlpha) / 255);
+            }
+
+            image.Pixels[i] = r;
+            image.Pixels[i + 1] = g;
+            image.Pixels[i + 2] = b;
         }
     }
+
+    private static void ApplyFade(RgbaImage image, byte alpha) =>
+        ApplyScreenOverlay(image, alpha, 0, 0, 0, 0);
 
     private static void FillRect(RgbaImage image, int x, int y, int w, int h, byte r, byte g, byte b, byte a)
     {
