@@ -390,7 +390,7 @@ static void MR_InitStateDialogue(void)
 
 static u32 MR_NextRankRewardState(u8 oldRank, u8 newRank, bool8 afterBagMsg)
 {
-    if (!gRuntimeConfig.rank_rewards)
+    if (!gRuntimeConfig.pmd2_rank_rewards)
         return MR_STATE_REWARD_EXIT;
 
     if (!afterBagMsg

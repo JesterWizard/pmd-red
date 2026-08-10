@@ -50,7 +50,7 @@ typedef struct {
     u8 bank_interest_percent;
     /* Rank rewards: bag pages + Kangaskhan storage capacity by rescue rank
      * (else vanilla bag 20/10 and unlimited storage totals) */
-    u8 rank_rewards;
+    u8 pmd2_rank_rewards;
     /* Parallel achievements system (title menu + tracking + rewards) */
     u8 achievements;
     /* Compact Kangaskhan storage: u8 counts, max 99/item; only Stick/Gravelerock

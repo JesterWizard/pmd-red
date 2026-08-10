@@ -235,7 +235,7 @@ static void UnlockAchievement(u8 id)
 
 static void QueueRankRewardPopups(u8 rankBefore, u8 rankAfter)
 {
-    if (!gRuntimeConfig.rank_rewards || rankAfter <= rankBefore)
+    if (!gRuntimeConfig.pmd2_rank_rewards || rankAfter <= rankBefore)
         return;
 
     if (GetBagCapacityForRank(rankAfter) > GetBagCapacityForRank(rankBefore)) {

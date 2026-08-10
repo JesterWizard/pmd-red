@@ -157,7 +157,7 @@ void SanitizeTeamMoney(void)
 
 s32 GetBagItemsPerPage(void)
 {
-    if (gRuntimeConfig.rank_rewards)
+    if (gRuntimeConfig.pmd2_rank_rewards)
         return BAG_ITEMS_PER_PAGE_RANK;
     return BAG_ITEMS_PER_PAGE_VANILLA;
 }
@@ -166,7 +166,7 @@ s32 GetBagPageCount(void)
 {
     s32 pages;
 
-    if (!gRuntimeConfig.rank_rewards)
+    if (!gRuntimeConfig.pmd2_rank_rewards)
         return BAG_PAGES_MIN;
 
     pages = BAG_PAGES_MIN + GetRescueTeamRank();
@@ -179,7 +179,7 @@ s32 GetBagCapacityForRank(u8 rank)
 {
     s32 pages;
 
-    if (!gRuntimeConfig.rank_rewards)
+    if (!gRuntimeConfig.pmd2_rank_rewards)
         return INVENTORY_SIZE_VANILLA;
 
     pages = BAG_PAGES_MIN + rank;
@@ -190,7 +190,7 @@ s32 GetBagCapacityForRank(u8 rank)
 
 s32 GetBagCapacity(void)
 {
-    if (!gRuntimeConfig.rank_rewards)
+    if (!gRuntimeConfig.pmd2_rank_rewards)
         return INVENTORY_SIZE_VANILLA;
     return GetBagPageCount() * BAG_ITEMS_PER_PAGE_RANK;
 }
@@ -232,7 +232,7 @@ s32 GetStorageCapacityForRank(u8 rank)
         [LUCARIO_RANK] = STORAGE_CAPACITY_PLATINUM,
     };
 
-    if (!gRuntimeConfig.rank_rewards)
+    if (!gRuntimeConfig.pmd2_rank_rewards)
         return STORAGE_CAPACITY_UNLIMITED;
     if (rank >= MAX_TEAM_RANKS)
         rank = LUCARIO_RANK;

@@ -56,7 +56,7 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Bank interest"), &gRuntimeConfig.bank_interest_percent, CUSTOM_DEBUG_MENU_OPTION_BANK_INTEREST, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
-    { _("Rank rewards"), &gRuntimeConfig.rank_rewards, CUSTOM_DEBUG_MENU_OPTION_ONE_WAY, 0,
+    { _("Rank rewards"), &gRuntimeConfig.pmd2_rank_rewards, CUSTOM_DEBUG_MENU_OPTION_ONE_WAY, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Achieve."), &gRuntimeConfig.achievements, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },

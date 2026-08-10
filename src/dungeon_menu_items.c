@@ -426,7 +426,8 @@ static void PrintOnDungeonItemsMenu(s32 a0, Entity *a1, bool8 showWhichWindow, b
     txtStrPtr = &gWindows[0];
     gDungeonMenu.leftRightArrowsPos.x = (txtStrPtr->x + 0x10) * 8;
     gDungeonMenu.leftRightArrowsPos.y = ((txtStrPtr->y + 1) * 8) - 2;
-    sub_80137B0(&gDungeonMenu, 0x70);
+    /* Derive row height from the shown window (0x70 was vanilla 10-row content). */
+    sub_80137B0(&gDungeonMenu, 0);
     sub_80073B8(0);
     x = ((a0 - r10) * 8) + 0xC;
     switch (sUnknown_202F248[a0])

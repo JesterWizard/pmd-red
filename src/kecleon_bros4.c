@@ -220,7 +220,7 @@ void sub_801A928(void)
 static void sub_801A998(void)
 {
     /* Rank rewards already puts "n/m" in the title; one tab avoids the broken multi-tab chrome. */
-    if (gRuntimeConfig.rank_rewards) {
+    if (gRuntimeConfig.pmd2_rank_rewards) {
         gUnknown_203B224->unk54.header.count = 1;
         gUnknown_203B224->unk54.header.currId = 0;
     }
@@ -245,7 +245,7 @@ void sub_801A9E0(void)
 
     CallPrepareTextbox_8008C54(gUnknown_203B224->unk54.m.menuWinId);
     sub_80073B8(gUnknown_203B224->unk54.m.menuWinId);
-    x = gRuntimeConfig.rank_rewards ? 10 : (gUnknown_203B224->unk54.m.input.currPage * 8 + 10);
+    x = gRuntimeConfig.pmd2_rank_rewards ? 10 : (gUnknown_203B224->unk54.m.input.currPage * 8 + 10);
 
     sprintfStatic(buf1, sTeamToolboxFmt,
                   gUnknown_203B224->unk54.m.input.currPage + 1,
@@ -378,7 +378,7 @@ void sub_801AD34(u32 param_1)
 
 void DrawStorageCapacityWindow(u32 winId)
 {
-    if (!gRuntimeConfig.rank_rewards)
+    if (!gRuntimeConfig.pmd2_rank_rewards)
         return;
 
     CallPrepareTextbox_8008C54(winId);

@@ -3860,9 +3860,9 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                     InlineStrcpy(gFormatBuffer_Items[0], GetTeamRankString(rankBefore));
                     InlineStrcpy(gFormatBuffer_Items[1], GetTeamRankString(rankAfter));
 
-                    bagUp = gRuntimeConfig.rank_rewards
+                    bagUp = gRuntimeConfig.pmd2_rank_rewards
                         && GetBagCapacityForRank(rankAfter) > GetBagCapacityForRank(rankBefore);
-                    storageUp = gRuntimeConfig.rank_rewards
+                    storageUp = gRuntimeConfig.pmd2_rank_rewards
                         && GetStorageCapacityForRank(rankAfter) > GetStorageCapacityForRank(rankBefore);
 
                     gFormatArgs[0] = GetBagCapacityForRank(rankBefore);

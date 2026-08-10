@@ -18,7 +18,7 @@ Vanilla Rescue Team stores Kangaskhan Storage as `u16 teamStorage[itemId]` with 
 
 This feature switches counts to **`u8`** and caps stacks at **99** when enabled. The storage array is sized for **480 item ids** (`STORAGE_SIZE`), matching the compact-u8 RAM budget of vanilla’s `u16[240]`.
 
-Total how many items you may store at once is controlled separately by [`RankRewards.md`](RankRewards.md) (`rank_rewards`: 64 → 480 by rescue rank). With compact on, only **Stick** and **Gravelerock** count as one stack toward that total; every other id (including other thrown projectiles) counts by quantity. With compact off, all thrown stacks count as one.
+Total how many items you may store at once is controlled separately by [`RankRewards.md`](RankRewards.md) (`pmd2_rank_rewards`: 64 → 480 by rescue rank). With compact on, only **Stick** and **Gravelerock** count as one stack toward that total; every other id (including other thrown projectiles) counts by quantity. With compact off, all thrown stacks count as one.
 
 Toggle: `gRuntimeConfig.compact_kangaskhan_storage` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`).
 
@@ -49,7 +49,7 @@ Live item catalog is still `NUMBER_OF_ITEM_IDS` (240). Extra storage slots are h
 ### Runtime behavior
 
 - `GetMaxStorageQuantity()` returns `MAX_STORAGE_QUANTITY_COMPACT` (99) or `MAX_STORAGE_QUANTITY_U8` (255).
-- Deposit / take / held-item-to-storage / script gifts / link rewards all clamp through that max **and** (when `rank_rewards` is on) the ranked total capacity via `CanAddQuantityToStorage` / `MoveToStorage`.
+- Deposit / take / held-item-to-storage / script gifts / link rewards all clamp through that max **and** (when `pmd2_rank_rewards` is on) the ranked total capacity via `CanAddQuantityToStorage` / `MoveToStorage`.
 - `MoveToStorage` adds in a wider temp, then writes the clamped `u8` (avoids wrap before clamp).
 - Save/load uses 8-bit fields; load clamps any value above the active per-id max.
 

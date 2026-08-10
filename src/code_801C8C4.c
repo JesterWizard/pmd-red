@@ -165,7 +165,7 @@ void sub_801CCD8(void)
     CallPrepareTextbox_8008C54(sUnknown_203B244->unk4B4.m.menuWinId);
     sub_80073B8(sUnknown_203B244->unk4B4.m.menuWinId);
 
-    if (gRuntimeConfig.rank_rewards) {
+    if (gRuntimeConfig.pmd2_rank_rewards) {
         sprintfStatic(buffer, sStorageUsedMaxFmt,
                       GetStorageUsedCount(), GetStorageCapacity());
         PrintStringOnWindow(10, 0, buffer, sUnknown_203B244->unk4B4.m.menuWinId, 0);

@@ -18,7 +18,7 @@ Vanilla Rescue Team grows the Toolbox only via story beats (fixed 20 slots mid/l
 
 This feature ports the Explorers-style **rank unlock loop**: higher rescue ranks unlock a bigger bag and more Kangaskhan Storage space, and the game **tells you** when those unlocks happen.
 
-Toggle: `gRuntimeConfig.rank_rewards` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). Renamed from `rank_bag_pages`.
+Toggle: `gRuntimeConfig.pmd2_rank_rewards` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). Renamed from `rank_rewards` (earlier `rank_bag_pages`).
 
 When `FALSE`: vanilla bag (20 slots / 10 per page) and no total storage cap (per-id caps from compact storage still apply).
 
@@ -54,7 +54,7 @@ Deposit paths refuse adds that would exceed either the per-id max or the total c
 
 ### Kangaskhan UI (used / max)
 
-When `rank_rewards` is on:
+When `pmd2_rank_rewards` is on:
 
 - **Take** list header shows `Storage 12/64` (`sub_801CCD8`).
 - **Store** shows a side window with used/max (`DrawStorageCapacityWindow`), same idea as the bag `Items n/m` panel.
@@ -78,7 +78,7 @@ Wired for:
 
 | Feature | Location | Description |
 |--------|----------|-------------|
-| Toggle | `configs/runtime.c` / `include/runtime.h` | `rank_rewards` |
+| Toggle | `configs/runtime.c` / `include/runtime.h` | `pmd2_rank_rewards` |
 | Caps | `include/constants/item.h` | `STORAGE_CAPACITY_*` (Gold = 320), bag page defines |
 | Bag helpers | `GetBagCapacity` / `GetBagCapacityForRank` in `src/items.c` | Rank → toolbox size |
 | Storage helpers | `GetStorageCapacity` / `GetStorageUsedCount` / `GetStorageDepositCapacityCost` / `CanAddQuantityToStorage` / `IsStorageStackItem` in `src/items.c` | Rank → total storage; Stick/Gravelerock (compact) or all thrown = 1 stack |
@@ -101,5 +101,5 @@ Wired for:
 
 - Rank **total** cap tops out at 480; storage-stack item ids count as **1** each toward that total (not stack size). With compact on that is Stick/Gravelerock only. That is separate from `STORAGE_SIZE` (**480 item-id slots** in `teamStorage[]`).
 - Live catalog is still `NUMBER_OF_ITEM_IDS` (240). `Item.id` is `u8`, so ids ≥ 256 need a type widen before use.
-- Disabling `rank_rewards` removes the total cap but does not restore vanilla `u16`/999 stacks (see Compact Kangaskhan Storage).
+- Disabling `pmd2_rank_rewards` removes the total cap but does not restore vanilla `u16`/999 stacks (see Compact Kangaskhan Storage).
 - Please file issues if any deposit path still ignores `CanAddQuantityToStorage`.
