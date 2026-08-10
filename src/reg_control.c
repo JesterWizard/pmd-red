@@ -417,9 +417,8 @@ static void UpdateBGControlRegisters(void)
         /* Spinda Café: dual-layer 8bpp art on BG2+BG3.
          * Art tiles CHARBASE1 indices 128..767 @ 0x6000–0xFFFF (font/chrome at
          * 0x4F00–0x5FFF preserved). Art maps SB 0/1 (0x0000–0x0FFF).
-         * Window tile gfx starts at tile 128 (0x1000) so dialogue cannot stomp
-         * those maps. UI maps SB 6/7 (0x3000+). Do not use SB 8 for art maps
-         * (aliases CHARBASE1 tile 0). */
+         * Explore: window gfx tile 128+, UI SB 6/7. Wide-UI menus: art hidden,
+         * window gfx from tile 2 in low VRAM; UI stays SB 6/7. */
         REG_BG0CNT = BGCNT_Priority[BG0] | BGCNT_SCREENBASE(6) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
         REG_BG1CNT = BGCNT_Priority[BG1] | BGCNT_SCREENBASE(7) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
         REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(0) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;

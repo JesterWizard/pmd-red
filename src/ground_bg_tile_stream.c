@@ -1,5 +1,6 @@
 #include "global.h"
 #include "globaldata.h"
+#include "bg_control.h"
 #include "ground_bg_tile_stream.h"
 #include "cpu.h"
 #include "memory.h"
@@ -236,6 +237,11 @@ void GroundBgTileStream_FlushUploads(void)
 
     if (!sActive || sUploadCount == 0)
         return;
+    /* Wide-UI has reclaimed low VRAM for window tiles and hidden art; skip. */
+    if (gGroundMap8bppWideUi) {
+        sUploadCount = 0;
+        return;
+    }
 
     for (i = 0; i < sUploadCount; i++) {
         u16 sourceId = sUploadSource[i];

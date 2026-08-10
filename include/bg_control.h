@@ -32,6 +32,9 @@ extern bool8 gTitleBg8bpp;
 /* Spinda Café (and any ground map with 8bpp BPL marker): BG2+BG3 256-color,
  * CHARBASE1 @ 0x4000, screenbases 0/1. Mutually exclusive with gTitleBg8bpp. */
 extern bool8 gGroundMap8bpp;
+/* Café menu overflow: hide art and load window tiles from low VRAM (tile 2+)
+ * like vanilla; UI maps stay at SB 6/7. Set by ShowWindows when stack > 256. */
+extern bool8 gGroundMap8bppWideUi;
 
 void SetBG2RegOffsets(s32, s32);
 void SetBG3RegOffsets(s32, s32);
@@ -40,6 +43,7 @@ void SetBldAlphaReg(s32, s32);
 void sub_800CD64(s32, bool8);
 void SetTitleBg8bpp(bool8 enabled);
 void SetGroundMap8bpp(bool8 enabled);
+void SetGroundMap8bppWideUi(bool8 enabled);
 bool8 GroundMap8bppHideBg0(void);
 void ClearTitleBgMapsForGround(void);
 void ClearGroundMap8bppMaps(void);
