@@ -71,8 +71,13 @@ typedef struct {
     u8 custom_portraits;
     /* Mix outlaw hunt jobs onto the Pelipper bulletin board */
     u8 outlaw_missions;
-    /* Regenerate Pelipper bulletin jobs whenever the board UI closes */
+    /* Regenerate Pelipper bulletin jobs whenever the board UI opens
+     * (named _on_exit for save-field continuity; work runs on open to avoid
+     * exit-frame hitch / stuck menu cursor) */
     u8 refresh_bulletin_on_exit;
+    /* Allow new bulletin/mailbox jobs on dungeon floors already used by
+     * accepted Job List entries (else vanilla: those floors are skipped) */
+    u8 unrestricted_bulletin_jobs;
     /* Accept up to 16 Job List slots (else vanilla 8); storage always 16 */
     u8 expanded_job_slots;
     /* Show estimated damage / accuracy / effect while facing an enemy */

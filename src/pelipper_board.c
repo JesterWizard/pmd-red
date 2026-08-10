@@ -86,6 +86,9 @@ bool8 sub_802E864(void)
     gPelipperBoard->menuAction1 = 0;
     gPelipperBoard->menuAction2 = 0;
     gPelipperBoard->unk4 = 0;
+    /* Regen on open — exit-time GeneratePelipperJobs stalls and leaves the menu cursor in OAM. */
+    if (gRuntimeConfig.refresh_bulletin_on_exit)
+        GeneratePelipperJobs();
     SetPelipperBoardState(INITIALIZE_PELIPPER_BOARD);
     return TRUE;
 }
@@ -135,8 +138,6 @@ void sub_802E918(void)
         MemoryFree(gPelipperBoard);
         gPelipperBoard = NULL;
     }
-    if (gRuntimeConfig.refresh_bulletin_on_exit)
-        GeneratePelipperJobs();
 }
 
 void SetPelipperBoardState(u32 newState)

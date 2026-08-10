@@ -324,10 +324,12 @@ static bool8 GenerateMailJobDungeonInfo(WonderMail *mail)
         }
       }
 
-      for(index = 0; index < MAX_ACCEPTED_JOBS; index++)
-      {
-        if (sub_8095E38(&gUnknown_203B490->jobSlots[index],dungeon,floor,1)) {
-          flag = FALSE;
+      if (!gRuntimeConfig.unrestricted_bulletin_jobs) {
+        for(index = 0; index < MAX_ACCEPTED_JOBS; index++)
+        {
+          if (sub_8095E38(&gUnknown_203B490->jobSlots[index],dungeon,floor,1)) {
+            flag = FALSE;
+          }
         }
       }
 

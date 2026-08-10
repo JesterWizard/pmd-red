@@ -80,6 +80,8 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Refresh board"), &gRuntimeConfig.refresh_bulletin_on_exit, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
+    { _("Free board"), &gRuntimeConfig.unrestricted_bulletin_jobs, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
+      CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Job slots"), &gRuntimeConfig.expanded_job_slots, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Damage view"), &gRuntimeConfig.damage_preview, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
