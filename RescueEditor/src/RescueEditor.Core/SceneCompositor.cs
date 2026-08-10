@@ -43,6 +43,29 @@ public static class SceneCompositor
         IReadOnlyCollection<int>? visibleSectors = null,
         ActorSpriteAtlas? actorSprites = null,
         ObjectSpriteAtlas? objectSprites = null,
+        SceneEntity? excludeLive = null) =>
+        ComposeSceneImage(
+            rom, scene, group, sector, selected, showLives, showObjects, showEffects, showEvents,
+            showLinks, drawLabels, showGrid, hudDialogue, visibleSectors, actorSprites, objectSprites,
+            excludeLive).ToPng();
+
+    public static RgbaImage ComposeSceneImage(
+        RomImage rom,
+        Scene scene,
+        int group = 0,
+        int sector = 0,
+        SceneEntity? selected = null,
+        bool showLives = true,
+        bool showObjects = true,
+        bool showEffects = true,
+        bool showEvents = true,
+        bool showLinks = true,
+        bool drawLabels = false,
+        bool showGrid = false,
+        string? hudDialogue = null,
+        IReadOnlyCollection<int>? visibleSectors = null,
+        ActorSpriteAtlas? actorSprites = null,
+        ObjectSpriteAtlas? objectSprites = null,
         SceneEntity? excludeLive = null)
     {
         var background = RenderMapBackground(rom, scene);
@@ -82,7 +105,7 @@ public static class SceneCompositor
         if (!string.IsNullOrWhiteSpace(hudDialogue))
             DrawHudBanner(image, Truncate(hudDialogue, 48));
 
-        return image.ToPng();
+        return image;
     }
 
     public static ScenePreviewState BuildPreviewState(

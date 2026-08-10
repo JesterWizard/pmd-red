@@ -6,6 +6,24 @@ namespace RescueEditor.Core.Tests;
 public sealed class ScenePlayTests
 {
     [Fact]
+    public void RenderFrameCanSkipBackgroundComposeForInstantOpen()
+    {
+        var scene = MakeEmptyScene(mapW: 40, mapH: 30);
+        var rom = EmptyRom();
+        var session = new ScenePlaySession(rom, scene, group: 0, sector: 0, scripted: false);
+        Assert.False(session.HasBackground);
+        var instant = session.RenderFrameImage(composeBackground: false);
+        Assert.Equal(ScenePlaySession.CameraWidth, instant.Width);
+        Assert.Equal(ScenePlaySession.CameraHeight, instant.Height);
+        Assert.False(session.HasBackground);
+
+        session.EnsureBackground();
+        Assert.True(session.HasBackground);
+        var full = session.RenderFrameImage(composeBackground: true);
+        Assert.Equal(ScenePlaySession.CameraWidth, full.Width);
+    }
+
+    [Fact]
     public void SessionSpawnsAtFirstPlayerLive()
     {
         var scene = MakeSceneWithLive(typeId: 1, tileX: 5, tileY: 7, mapW: 40, mapH: 30);

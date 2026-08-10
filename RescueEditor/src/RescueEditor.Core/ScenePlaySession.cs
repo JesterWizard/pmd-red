@@ -95,7 +95,7 @@ public sealed class ScenePlaySession
                 profile: _profile,
                 appearance: Appearance);
             AllowFreeRoam = false;
-            try { _effects.PrefetchCommon(); } catch { /* best-effort */ }
+            // Emotion SIRO decode is lazy on first NOTICE/etc. — don't PrefetchCommon here.
         }
         else
         {
@@ -260,10 +260,24 @@ public sealed class ScenePlaySession
 
     public byte[] RenderFrame() => RenderFrameImage().ToPng();
 
-    /// <summary>Render one 240×160 frame without PNG encode (for the play window hot path).</summary>
-    public RgbaImage RenderFrameImage()
+    public bool HasBackground => _cachedBg is not null;
+
+    /// <summary>Compose and cache the map background (expensive). Safe to call after the window is shown.</summary>
+    public void EnsureBackground() => EnsureBackgroundCore();
+
+    /// <summary>
+    /// Render one 240×160 frame. When <paramref name="composeBackground"/> is false and the
+    /// map BG is not cached yet, returns a black camera frame immediately (instant Scene Play open).
+    /// </summary>
+    public RgbaImage RenderFrameImage(bool composeBackground = true)
     {
-        EnsureBackground();
+        if (_cachedBg is null)
+        {
+            if (!composeBackground)
+                return BlackCamera();
+            EnsureBackgroundCore();
+        }
+
         var bg = _cachedBg ?? throw new InvalidOperationException("Scene background failed to compose.");
         EnsureWorkBuffers(bg.Width, bg.Height);
         var work = _workFull ?? throw new InvalidOperationException("Work buffer missing.");
@@ -297,14 +311,20 @@ public sealed class ScenePlaySession
         return camera;
     }
 
-    private void EnsureBackground()
+    private static RgbaImage BlackCamera()
+    {
+        var pixels = new byte[CameraWidth * CameraHeight * 4];
+        return new RgbaImage(CameraWidth, CameraHeight, pixels);
+    }
+
+    private void EnsureBackgroundCore()
     {
         if (_cachedBg is not null &&
             _cachedBgGroup == ActiveGroup &&
             _cachedBgSector == ActiveSector)
             return;
 
-        var fullPng = SceneCompositor.ComposeScenePng(
+        var full = SceneCompositor.ComposeSceneImage(
             _rom,
             _scene,
             group: ActiveGroup,
@@ -319,10 +339,7 @@ public sealed class ScenePlaySession
             actorSprites: _actorSprites,
             objectSprites: _objectSprites);
 
-        _cachedBg = RgbaImage.FromPng(fullPng) ?? new RgbaImage(
-            Math.Max(CameraWidth, MapWidthPixels),
-            Math.Max(CameraHeight, MapHeightPixels),
-            new byte[Math.Max(CameraWidth, MapWidthPixels) * Math.Max(CameraHeight, MapHeightPixels) * 4]);
+        _cachedBg = full;
         _cachedBgGroup = ActiveGroup;
         _cachedBgSector = ActiveSector;
         _workFull = null;

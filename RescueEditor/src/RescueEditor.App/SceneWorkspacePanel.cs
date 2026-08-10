@@ -74,6 +74,7 @@ public sealed class SceneWorkspacePanel : UserControl
     private Scene? _scene;
     private ActorSpriteAtlas? _actorSprites;
     private ObjectSpriteAtlas? _objectSprites;
+    private PortraitAtlas? _portraitAtlas;
     private SceneEntity? _selectedEntity;
     private ScriptCommandData? _selectedCommand;
     private ScriptRefData? _selectedStation;
@@ -558,6 +559,7 @@ public sealed class SceneWorkspacePanel : UserControl
         var assetsRoot = CatalogBuilder.FindRepositoryRoot(rom.Path);
         _actorSprites = new ActorSpriteAtlas(assetsRoot, database.Profile);
         _objectSprites = new ObjectSpriteAtlas(assetsRoot);
+        _portraitAtlas = new PortraitAtlas(rom, assetsRoot);
         _selectedEntity = null;
         _selectedCommand = null;
         _selectedStation = null;
@@ -1367,10 +1369,9 @@ public sealed class SceneWorkspacePanel : UserControl
     {
         var (playGroup, playSector) = ScenePlayPresets.ResolvePlayTarget(scene, group, sector);
         var appearance = PlayAppearance.CharmanderAndBulbasaur;
-        var assetsRoot = CatalogBuilder.FindRepositoryRoot(_rom!.Path);
-        var portraits = new PortraitAtlas(_rom, assetsRoot);
+        _portraitAtlas ??= new PortraitAtlas(_rom!, CatalogBuilder.FindRepositoryRoot(_rom!.Path));
         return new ScenePlaySession(
-            _rom,
+            _rom!,
             scene,
             playGroup,
             playSector,
@@ -1379,7 +1380,7 @@ public sealed class SceneWorkspacePanel : UserControl
             charmap: _charmap,
             appearance: appearance,
             profile: _database?.Profile,
-            portraits: portraits);
+            portraits: _portraitAtlas);
     }
 
     private void UpdateUndoButtons()

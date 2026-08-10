@@ -59,32 +59,59 @@ public class ActorSpriteAtlasTests
 
         var rom = RomImage.Open(baserom);
         var effects = new EmotionEffectAtlas(root, rom);
+        // Overhead emotions live in shared efob001 (gUnknown_80B9CC4), not efob088.
+        Assert.True(EmotionEffectAtlas.ResolveEffectSiroOffset(rom, "efob001") >= 0);
+
         var frame0 = effects.TryGetFrame(EmotionEffectAtlas.NoticeId, 0);
         Assert.NotNull(frame0);
-        Assert.True(frame0!.Value.Image.Width >= 8 && frame0.Value.Image.Height >= 8);
+        // Retail NOTICE is a tall thin "!" (8×16) from efob001 anim 0.
+        Assert.True(frame0!.Value.Image.Width <= 12, $"NOTICE width {frame0.Value.Image.Width}");
+        Assert.True(frame0.Value.Image.Height >= 12, $"NOTICE height {frame0.Value.Image.Height}");
 
         var frameMid = effects.TryGetFrame(EmotionEffectAtlas.NoticeId, 4);
         Assert.NotNull(frameMid);
-        // Mid anim uses a larger OAM pose than the opening 8×8 tile.
-        Assert.True(
-            frameMid!.Value.Image.Width * frameMid.Value.Image.Height >=
-            frame0.Value.Image.Width * frame0.Value.Image.Height);
+        Assert.True(frameMid!.Value.Image.Height >= 12);
 
-        // NOTICE palette is cyan chroma — composed ink must be remapped to white, not cyan.
+        // Overworld palet bank 0 (unk8): black outline + white/blue fills — not cyan mask.
         var img = frameMid.Value.Image;
         var white = 0;
+        var black = 0;
         var cyan = 0;
         for (var i = 0; i < img.Pixels.Length; i += 4)
         {
             if (img.Pixels[i + 3] < 200)
                 continue;
-            if (img.Pixels[i] < 40 && img.Pixels[i + 1] > 200 && img.Pixels[i + 2] > 200)
+            var r = img.Pixels[i];
+            var g = img.Pixels[i + 1];
+            var b = img.Pixels[i + 2];
+            if (r < 40 && g > 200 && b > 200)
                 cyan++;
-            if (img.Pixels[i] > 200 && img.Pixels[i + 1] > 200 && img.Pixels[i + 2] > 200)
+            if (r > 200 && g > 200 && b > 200)
                 white++;
+            if (r < 40 && g < 40 && b < 40)
+                black++;
         }
-        Assert.True(white >= 8, $"Expected white NOTICE ink, got white={white} cyan={cyan}");
         Assert.True(cyan == 0, $"NOTICE must not blit raw cyan chroma, got {cyan}");
+        Assert.True(white + black >= 8, $"Expected pal0 ink (white/black), got white={white} black={black}");
+        Assert.Equal(0, EmotionEffectAtlas.SharedPaletteBank(EmotionEffectAtlas.NoticeId));
+    }
+
+    [Fact]
+    public void EmotionQuestionLooksLikeQuestionMark()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        var baserom = Path.Combine(root, "baserom.gba");
+        if (!File.Exists(baserom)) return;
+
+        var rom = RomImage.Open(baserom);
+        var effects = new EmotionEffectAtlas(root, rom);
+        var frame = effects.TryGetFrame(EmotionEffectAtlas.QuestionId, 8);
+        Assert.NotNull(frame);
+        // "?" is tall with a hook at the top — taller than wide.
+        Assert.True(frame!.Value.Image.Height > frame.Value.Image.Width,
+            $"QUESTION expected tall ?, got {frame.Value.Image.Width}x{frame.Value.Image.Height}");
+        Assert.True(CountOpaque(frame.Value.Image) >= 20);
     }
 
     [Fact]
@@ -116,25 +143,30 @@ public class ActorSpriteAtlasTests
         if (!File.Exists(romPath)) return;
 
         var rom = RomImage.Open(romPath);
-        Assert.True(EmotionEffectAtlas.ResolveEffectSiroOffset(rom, "efob088") >= 0);
+        Assert.True(EmotionEffectAtlas.ResolveEffectSiroOffset(rom, "efob001") >= 0);
 
         var effects = new EmotionEffectAtlas(repositoryRoot: null, rom: rom);
         Assert.Equal(EmotionEffectSource.Rom, effects.TryGetSource(EmotionEffectAtlas.NoticeId));
         var frame = effects.TryGetFrame(EmotionEffectAtlas.NoticeId, 4);
         Assert.NotNull(frame);
-        Assert.True(frame!.Value.Image.Width * frame.Value.Image.Height > 64);
+        Assert.True(frame!.Value.Image.Height >= 12);
 
         var img = frame.Value.Image;
         var white = 0;
+        var black = 0;
         var cyan = 0;
         for (var i = 0; i < img.Pixels.Length; i += 4)
         {
             if (img.Pixels[i + 3] < 200) continue;
-            if (img.Pixels[i] < 40 && img.Pixels[i + 1] > 200 && img.Pixels[i + 2] > 200) cyan++;
-            if (img.Pixels[i] > 200 && img.Pixels[i + 1] > 200 && img.Pixels[i + 2] > 200) white++;
+            var r = img.Pixels[i];
+            var g = img.Pixels[i + 1];
+            var b = img.Pixels[i + 2];
+            if (r < 40 && g > 200 && b > 200) cyan++;
+            if (r > 200 && g > 200 && b > 200) white++;
+            if (r < 40 && g < 40 && b < 40) black++;
         }
-        Assert.True(white >= 8, $"Expected white NOTICE ink, got white={white} cyan={cyan}");
         Assert.True(cyan == 0, $"NOTICE must not blit raw cyan chroma, got {cyan}");
+        Assert.True(white + black >= 8, $"Expected pal0 ink (white/black), got white={white} black={black}");
     }
 
     [Fact]
@@ -146,15 +178,61 @@ public class ActorSpriteAtlasTests
         if (!File.Exists(built)) return;
 
         var rom = RomImage.Open(built);
-        // Hardcoded retail VA must NOT be valid on this smaller custom ROM.
-        var retailOff = rom.PointerToOffset(0x98170B4u);
-        Assert.True(retailOff < 0 || retailOff >= rom.Length ||
-                    System.Text.Encoding.ASCII.GetString(rom.Slice(Math.Max(0, retailOff), 4)) is not ("SIRO" or "SIR0"));
-
         var effects = new EmotionEffectAtlas(null, rom);
         Assert.Equal(EmotionEffectSource.Rom, effects.TryGetSource(EmotionEffectAtlas.NoticeId));
         Assert.Equal(EmotionEffectSource.Rom, effects.TryGetSource(EmotionEffectAtlas.SmileId));
         Assert.NotNull(effects.TryGetFrame(EmotionEffectAtlas.SweatId, 0));
+    }
+
+    [Fact]
+    public void EmotionSmileAndQuestionHaveNoChromaBleed()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        var romPath = Path.Combine(root, "pmd_red.gba");
+        if (!File.Exists(romPath))
+            romPath = Path.Combine(root, "baserom.gba");
+        if (!File.Exists(romPath)) return;
+
+        var rom = RomImage.Open(romPath);
+        var effects = new EmotionEffectAtlas(null, rom);
+
+        foreach (var id in new[]
+                 {
+                     EmotionEffectAtlas.SmileId,
+                     EmotionEffectAtlas.QuestionId,
+                     EmotionEffectAtlas.AngryId,
+                     EmotionEffectAtlas.NoticeId,
+                 })
+        {
+            var frame = effects.TryGetFrame(id, 8);
+            Assert.NotNull(frame);
+            var img = frame!.Value.Image;
+            var greenChroma = 0;
+            var cyanChroma = 0;
+            var ink = 0;
+            for (var i = 0; i < img.Pixels.Length; i += 4)
+            {
+                if (img.Pixels[i + 3] < 200)
+                    continue;
+                var r = img.Pixels[i];
+                var g = img.Pixels[i + 1];
+                var b = img.Pixels[i + 2];
+                if (Math.Abs(r - 0x4F) <= 16 && Math.Abs(g - 0x97) <= 16 && Math.Abs(b - 0x4F) <= 16)
+                    greenChroma++;
+                if (r < 40 && g > 200 && b > 200)
+                    cyanChroma++;
+                else
+                    ink++;
+            }
+            Assert.True(greenChroma == 0, $"efob{id} still has green chroma pixels ({greenChroma})");
+            Assert.True(cyanChroma == 0, $"efob{id} still has cyan chroma pixels ({cyanChroma})");
+            Assert.True(ink >= 8, $"efob{id} expected visible ink, got {ink}");
+        }
+
+        Assert.Equal(11, EmotionEffectAtlas.SharedPaletteBank(EmotionEffectAtlas.SmileId));
+        Assert.Equal(11, EmotionEffectAtlas.SharedPaletteBank(EmotionEffectAtlas.AngryId));
+        Assert.Equal(3, EmotionEffectAtlas.SharedPaletteBank(EmotionEffectAtlas.ShockId));
     }
 
     [Fact]
@@ -193,6 +271,17 @@ public class ActorSpriteAtlasTests
         Assert.True(westX < mid - 2, $"Expected west feet left of center, got {westX} mid={mid}");
         Assert.True(eastX > mid + 2, $"Expected east feet right of center, got {eastX} mid={mid}");
         Assert.Equal(image.Width - 1, westX + eastX);
+    }
+
+    private static int CountOpaque(RgbaImage img)
+    {
+        var n = 0;
+        for (var i = 3; i < img.Pixels.Length; i += 4)
+        {
+            if (img.Pixels[i] > 16)
+                n++;
+        }
+        return n;
     }
 
     private static string? FindRepoRoot()

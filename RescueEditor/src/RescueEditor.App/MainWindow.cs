@@ -37,9 +37,6 @@ public sealed class MainWindow : Window
     private readonly EditorDockLayout _dock = new();
     private readonly TextBlock _status;
     private readonly TextBlock _propertiesBody;
-    private readonly Button _exportSelected;
-    private readonly Button _exportCategory;
-    private readonly Button _saveButton;
     private readonly Border _loadingOverlay;
     private readonly TextBlock _loadingStage;
     private readonly TextBlock _loadingElapsed;
@@ -137,53 +134,16 @@ public sealed class MainWindow : Window
             },
         };
 
-        _exportSelected = EditorChrome.ToolButton("Export");
-        _exportSelected.IsEnabled = false;
-        _exportSelected.Click += ExportSelectedOnClick;
-        _exportCategory = EditorChrome.ToolButton("Export All");
-        _exportCategory.IsEnabled = false;
-        _exportCategory.Click += ExportCategoryOnClick;
-        _saveButton = EditorChrome.ToolButton("Save", primary: true);
-        _saveButton.Click += SaveProjectOnClick;
-        var openButton = EditorChrome.ToolButton("Open ROM");
-        openButton.Click += OpenButtonOnClick;
-        var buildButton = EditorChrome.ToolButton("Build ROM");
-        buildButton.Click += BuildRomOnClick;
-
         _assetWorkspace = new AssetWorkspacePanel();
         _assetWorkspace.AttachSound(_soundStreamHost, _soundCacheWarmer);
         _assetWorkspace.AssetSelected += (_, asset) =>
         {
             _selectedAsset = asset;
-            _exportSelected.IsEnabled = asset is not null;
             UpdateBreadcrumb();
             UpdateProperties();
             UpdateDirtyTitle();
         };
         _assetWorkspace.RequestSceneWorkspace += (_, _) => OpenSelectedScene();
-
-        var toolbarLeft = new StackPanel
-        {
-            Orientation = Orientation.Horizontal,
-            VerticalAlignment = VerticalAlignment.Center,
-            Spacing = 0,
-            Children =
-            {
-                openButton,
-                _saveButton,
-                EditorChrome.ToolbarSeparator(),
-                buildButton,
-                EditorChrome.ToolbarSeparator(),
-                _exportSelected,
-                _exportCategory,
-            },
-        };
-        var toolbarInner = new Grid
-        {
-            ColumnDefinitions = new ColumnDefinitions("*"),
-            Children = { toolbarLeft },
-        };
-        var toolbar = EditorChrome.ToolbarHost(toolbarInner);
 
         _leftSplitter = new GridSplitter
         {
@@ -215,14 +175,13 @@ public sealed class MainWindow : Window
 
         _root = new Grid
         {
-            RowDefinitions = new RowDefinitions("Auto,Auto,Auto,*,Auto"),
-            Children = { menu, toolbar, _breadcrumb, content, statusBar },
+            RowDefinitions = new RowDefinitions("Auto,Auto,*,Auto"),
+            Children = { menu, _breadcrumb, content, statusBar },
         };
         Grid.SetRow(menu, 0);
-        Grid.SetRow(toolbar, 1);
-        Grid.SetRow(_breadcrumb, 2);
-        Grid.SetRow(content, 3);
-        Grid.SetRow(statusBar, 4);
+        Grid.SetRow(_breadcrumb, 1);
+        Grid.SetRow(content, 2);
+        Grid.SetRow(statusBar, 3);
 
         _loadingStage = new TextBlock
         {
@@ -458,7 +417,13 @@ public sealed class MainWindow : Window
                 try { _soundStreamHost.EnsureStarted(romPath); }
                 catch { }
             });
-            _soundCacheWarmer.Start(_rom, _catalog);
+            // Don't contend with Scene Play / first paint — warm agbplay cache after idle.
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(4000).ConfigureAwait(false);
+                try { _soundCacheWarmer.Start(_rom, _catalog); }
+                catch { }
+            });
 
             _assetWorkspace.Bind(_rom, _charmap, _catalog, _scenes, _changes);
             _explorer.Build(_catalog, _scenes, Categories);
@@ -466,7 +431,6 @@ public sealed class MainWindow : Window
             ApplyDockLayout(sceneOwnsInspector: false);
             _selectedCategory = AssetCategory.Scenes;
             _assetWorkspace.ShowCategory(AssetCategory.Scenes, selectFirst: false);
-            _exportCategory.IsEnabled = true;
             UpdateBreadcrumb();
             UpdateDirtyTitle();
 
@@ -499,7 +463,6 @@ public sealed class MainWindow : Window
         {
             case CategoryExplorerNode category:
                 _selectedCategory = category.Category;
-                _exportCategory.IsEnabled = true;
                 if (category.Category == AssetCategory.Scenes)
                 {
                     _workspaceHost.Child = _assetWorkspace;
@@ -518,7 +481,6 @@ public sealed class MainWindow : Window
             case AssetExplorerNode assetNode:
                 _selectedAsset = assetNode.Asset;
                 _selectedCategory = assetNode.Asset.Category;
-                _exportSelected.IsEnabled = true;
                 if (assetNode.Asset.Kind == AssetKind.Scene || assetNode.Scene is not null)
                 {
                     OpenScene(assetNode.Scene, assetNode.Asset);
@@ -865,8 +827,6 @@ public sealed class MainWindow : Window
         _assetWorkspace.Clear();
         _workspaceHost.Child = CreateWelcomePanel();
         ApplyDockLayout(sceneOwnsInspector: false);
-        _exportSelected.IsEnabled = false;
-        _exportCategory.IsEnabled = false;
         _breadcrumb.SetPath("RescueTemple");
         Title = "RescueTemple";
         SetStatus("Open a baserom.gba to begin.");

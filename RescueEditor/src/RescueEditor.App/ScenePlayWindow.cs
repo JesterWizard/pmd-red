@@ -4,6 +4,7 @@ using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 using Avalonia.Threading;
 using RescueEditor.Core;
 
@@ -256,12 +257,25 @@ public sealed class ScenePlayWindow : Window
         Opened += (_, _) =>
         {
             Focus();
-            PrimeScript();
-            PlayQueuedSfx();
-            RefreshFrame();
-            _lastTick = DateTime.UtcNow;
-            _simAccum = 0;
-            _timer.Start();
+            // Paint a black frame immediately so the window appears before map compose.
+            RefreshFrame(composeBackground: false);
+            Dispatcher.UIThread.Post(() =>
+            {
+                try
+                {
+                    _session.EnsureBackground();
+                    PrimeScript();
+                    PlayQueuedSfx();
+                    RefreshFrame(composeBackground: true);
+                }
+                catch
+                {
+                    // Keep black frame if compose fails; timer still runs.
+                }
+                _lastTick = DateTime.UtcNow;
+                _simAccum = 0;
+                _timer.Start();
+            }, DispatcherPriority.Background);
         };
     }
 
@@ -435,24 +449,68 @@ public sealed class ScenePlayWindow : Window
 
         HideEndMenu();
         _session = next;
+        _frameBitmap = null;
+        _playingSongId = null;
         Title = TitleFor(_session);
         _simAccum = 0;
         _lastTick = DateTime.UtcNow;
         try { _bgmPlayer.Stop(); } catch { /* ignore */ }
         try { _sfxPlayer.Stop(); } catch { /* ignore */ }
-        PrimeScript();
-        RefreshFrame();
-        Focus();
+        RefreshFrame(composeBackground: false);
+        Dispatcher.UIThread.Post(() =>
+        {
+            try
+            {
+                _session.EnsureBackground();
+                PrimeScript();
+                RefreshFrame(composeBackground: true);
+            }
+            catch { /* keep black */ }
+            Focus();
+        }, DispatcherPriority.Background);
     }
 
-    private void RefreshFrame()
+    private WriteableBitmap? _frameBitmap;
+
+    private void RefreshFrame(bool composeBackground = true)
     {
         try
         {
-            var frame = _session.RenderFrameImage();
-            var png = frame.ToPng();
-            using var stream = new MemoryStream(png);
-            _view.Source = new Bitmap(stream);
+            var frame = _session.RenderFrameImage(composeBackground);
+            if (_frameBitmap is null ||
+                _frameBitmap.PixelSize.Width != frame.Width ||
+                _frameBitmap.PixelSize.Height != frame.Height)
+            {
+                _frameBitmap = new WriteableBitmap(
+                    new PixelSize(frame.Width, frame.Height),
+                    new Vector(96, 96),
+                    PixelFormat.Rgba8888,
+                    AlphaFormat.Unpremul);
+            }
+
+            using (var fb = _frameBitmap.Lock())
+            {
+                var src = frame.Pixels;
+                var dstStride = fb.RowBytes;
+                var srcStride = frame.Width * 4;
+                if (dstStride == srcStride)
+                {
+                    System.Runtime.InteropServices.Marshal.Copy(src, 0, fb.Address, src.Length);
+                }
+                else
+                {
+                    for (var y = 0; y < frame.Height; y++)
+                    {
+                        System.Runtime.InteropServices.Marshal.Copy(
+                            src, y * srcStride,
+                            fb.Address + y * dstStride,
+                            srcStride);
+                    }
+                }
+            }
+
+            _view.Source = _frameBitmap;
+            _view.InvalidateVisual();
         }
         catch (Exception ex)
         {

@@ -9,8 +9,9 @@ public enum EmotionEffectSource
 
 /// <summary>
 /// Floating emotion overlays (NOTICE/QUESTION/SHOCK/SWEAT/SMILE/ANGRY).
-/// Loads retail <c>efob</c> SIRO object effects and plays <c>ax_anim</c> with OAM pose compose.
-/// Never substitutes hand-drawn placeholders — missing assets stay missing.
+/// Retail scripts pass effect-table indices (88/89/…) into <c>gUnknown_80B9CC4</c>,
+/// which all resolve to shared bank <c>efob001</c> with different <c>animId</c> slots —
+/// not <c>efob088</c> etc. Never substitutes hand-drawn placeholders.
 /// </summary>
 public sealed class EmotionEffectAtlas
 {
@@ -20,6 +21,9 @@ public sealed class EmotionEffectAtlas
     public const int SweatId = 92;
     public const int SmileId = 93;
     public const int AngryId = 94;
+
+    /// <summary>Shared overhead-emotion SIRO (<c>gUnknown_80B9CC4[].effectId</c> for type-2).</summary>
+    public const string SharedEmotionBank = "efob001";
 
     private readonly string? _repositoryRoot;
     private readonly RomImage? _rom;
@@ -72,6 +76,40 @@ public sealed class EmotionEffectAtlas
         return clip.Frames[^1].Visual;
     }
 
+    /// <summary>
+    /// Map script effect id → anim slot in <see cref="SharedEmotionBank"/>
+    /// (from <c>gUnknown_80B9CC4[id].animId</c> / <c>.loop</c>).
+    /// </summary>
+    public static bool TryGetSharedAnim(int scriptEffectId, out int animId, out bool loop)
+    {
+        switch (scriptEffectId)
+        {
+            case NoticeId: animId = 0; loop = false; return true;
+            case QuestionId: animId = 1; loop = false; return true;
+            case ShockId: animId = 3; loop = false; return true;
+            case SweatId: animId = 4; loop = false; return true;
+            case SmileId: animId = 5; loop = true; return true;
+            case AngryId: animId = 6; loop = true; return true;
+            default:
+                animId = 0;
+                loop = false;
+                return false;
+        }
+    }
+
+    /// <summary>
+    /// OBJ palette bank from <c>gUnknown_80B9CC4[id].unk8</c> — indexes into the
+    /// shared overworld <c>palet</c> / <c>graphics/ax/pal/N.pmdpal</c> table loaded by
+    /// <c>sub_80A6460</c> (not the cyan chroma stored in efob001 itself).
+    /// </summary>
+    public static int SharedPaletteBank(int scriptEffectId) => scriptEffectId switch
+    {
+        NoticeId or QuestionId or SweatId => 0,
+        ShockId => 3,
+        SmileId or AngryId => 11,
+        _ => 0,
+    };
+
     private EfoClip? TryGetClip(int effectId)
     {
         if (_clips.TryGetValue(effectId, out var cached))
@@ -81,7 +119,6 @@ public sealed class EmotionEffectAtlas
         var source = EmotionEffectSource.Missing;
         try
         {
-            // Only ROM SIRO compose — data/effects PNG strips are raw 8px tiles and look wrong in-game.
             clip = TryLoadFromRom(effectId);
             if (clip is not null)
                 source = EmotionEffectSource.Rom;
@@ -110,7 +147,7 @@ public sealed class EmotionEffectAtlas
                 {
                     var effects = Path.Combine(current.FullName, "data", "effects");
                     if (Directory.Exists(effects) &&
-                        File.Exists(Path.Combine(effects, "efob088.png")))
+                        File.Exists(Path.Combine(effects, "efob001.png")))
                         return current.FullName;
                     if (Directory.Exists(Path.Combine(current.FullName, "graphics", "ax", "mon")))
                         return current.FullName;
@@ -129,9 +166,10 @@ public sealed class EmotionEffectAtlas
     {
         if (_rom is null)
             return null;
+        if (!TryGetSharedAnim(effectId, out var animId, out var loop))
+            return null;
 
-        var name = $"efob{effectId:D3}";
-        var archiveOffset = ResolveEffectSiroOffset(_rom, name);
+        var archiveOffset = ResolveEffectSiroOffset(_rom, SharedEmotionBank);
         if (archiveOffset < 0)
             return null;
 
@@ -151,6 +189,8 @@ public sealed class EmotionEffectAtlas
         var charCount = _rom.ReadInt32(dataOffset + 0x1C);
         if (posesPtr == 0 || animsPtr == 0 || charPtr == 0 || palPtr == 0 || charCount <= 0 || animCount <= 0)
             return null;
+        if (animId < 0 || animId >= animCount)
+            return null;
 
         var charOff = _rom.PointerToOffset(charPtr);
         var palOff = _rom.PointerToOffset(palPtr);
@@ -164,13 +204,16 @@ public sealed class EmotionEffectAtlas
             return null;
 
         var tiles = _rom.Slice(charOff, tileBytes);
-        var palette = ReadEffectPalette(_rom, palOff, effectId);
+        // efob001.pmdpal is a cyan mask; ground mode paints these with overworld palet banks.
+        var palette = ResolveEmotionPalette(effectId, palOff);
 
-        // animations[0] → 8 dirs → use dir 0 sequence
-        var anim0Table = _rom.ReadPointerOffset(animsOff);
-        if (anim0Table < 0)
+        // animations[animId] → 8 dirs → use dir 0 sequence
+        if (!_rom.IsRangeValid(animsOff + animId * 4, 4))
             return null;
-        var seqOff = _rom.ReadPointerOffset(anim0Table);
+        var animTable = _rom.ReadPointerOffset(animsOff + animId * 4);
+        if (animTable < 0)
+            return null;
+        var seqOff = _rom.ReadPointerOffset(animTable);
         if (seqOff < 0)
             return null;
 
@@ -214,8 +257,6 @@ public sealed class EmotionEffectAtlas
         if (framesOut.Count == 0 || loopLen <= 0)
             return null;
 
-        // Oneshots (NOTICE/SHOCK/SWEAT) play once; sticky smile/angry loop.
-        var loop = effectId is SmileId or AngryId or QuestionId;
         return new EfoClip(framesOut, loopLen, loop);
     }
 
@@ -259,44 +300,77 @@ public sealed class EmotionEffectAtlas
     }
 
     /// <summary>
-    /// Effect palettes use RGB_Struct (4 bytes). Index 0 is transparent.
-    /// NOTICE (efob088) stores a pure cyan chroma ramp — remap nonzero indices to ink.
+    /// Prefer <c>graphics/ax/pal/{unk8}.pmdpal</c> (same table as ground <c>palet</c>).
+    /// Fall back to ROM <c>palet</c> blob, then to the cyan efob mask if nothing else is available.
+    /// Index 0 is always transparent (GBA OBJ rule).
     /// </summary>
-    private static RgbaColor[] ReadEffectPalette(RomImage rom, int palOff, int effectId)
+    private RgbaColor[] ResolveEmotionPalette(int effectId, int efobPalOff)
     {
-        var raw = GraphicsRenderers.ReadRgbPalette(rom, palOff, 64, transparentFirst: true);
-        var allCyan = true;
-        for (var i = 1; i < raw.Length; i++)
+        var bank = SharedPaletteBank(effectId);
+        if (_repositoryRoot is not null)
         {
-            if (raw[i].R > 8 || raw[i].G < 250 || raw[i].B < 250)
+            var path = Path.Combine(_repositoryRoot, "graphics", "ax", "pal", $"{bank}.pmdpal");
+            if (File.Exists(path))
+                return ReadPmdPalFile(path);
+        }
+
+        if (_rom is not null)
+        {
+            var paletOff = ResolvePaletOffset(_rom);
+            if (paletOff >= 0)
             {
-                allCyan = false;
-                break;
+                var off = paletOff + bank * 64;
+                if (_rom.IsRangeValid(off, 64))
+                    return GraphicsRenderers.ReadRgbPalette(_rom, off, 64, transparentFirst: true);
             }
         }
 
-        if (!allCyan)
+        return GraphicsRenderers.ReadRgbPalette(_rom!, efobPalOff, 64, transparentFirst: true);
+    }
+
+    private static RgbaColor[] ReadPmdPalFile(string path)
+    {
+        var bytes = File.ReadAllBytes(path);
+        var count = Math.Min(16, bytes.Length / 4);
+        var colors = new RgbaColor[16];
+        for (var i = 0; i < 16; i++)
         {
-            // Force opaque for non-transparent entries (ROM often stores A=0x80).
-            for (var i = 1; i < raw.Length; i++)
+            if (i >= count || i == 0)
             {
-                if (raw[i].A > 0)
-                    raw[i] = new RgbaColor(raw[i].R, raw[i].G, raw[i].B, 255);
+                colors[i] = new RgbaColor(0, 0, 0, 0);
+                continue;
             }
-            return raw;
+
+            var o = i * 4;
+            colors[i] = new RgbaColor(bytes[o], bytes[o + 1], bytes[o + 2], 255);
         }
 
-        var (inkR, inkG, inkB) = effectId switch
+        return colors;
+    }
+
+    /// <summary>Locate the raw <c>palet</c> RGB blob in the monster file table.</summary>
+    public static int ResolvePaletOffset(RomImage rom)
+    {
+        foreach (var nameOff in rom.FindAscii("palet", includeTerminator: true, limit: 16))
         {
-            NoticeId or QuestionId => ((byte)0xF8, (byte)0xF8, (byte)0xF8),
-            SweatId => ((byte)0x70, (byte)0xD0, (byte)0xF8),
-            ShockId or SmileId => ((byte)0xF8, (byte)0xF0, (byte)0x40),
-            AngryId => ((byte)0xF8, (byte)0x40, (byte)0x40),
-            _ => ((byte)0xF8, (byte)0xF8, (byte)0xF8),
-        };
-        for (var i = 1; i < raw.Length; i++)
-            raw[i] = new RgbaColor(inkR, inkG, inkB, 255);
-        return raw;
+            var namePtr = RomImage.RomVirtualAddress + (uint)nameOff;
+            var needle = BitConverter.GetBytes(namePtr);
+            foreach (var hit in rom.FindAll(needle, limit: 32))
+            {
+                if (!rom.IsRangeValid(hit + 4, 4))
+                    continue;
+                var dataOff = rom.ReadPointerOffset(hit + 4);
+                // 14 banks × 64 bytes; first color of bank 0 is teal #007F97.
+                if (dataOff < 0 || !rom.IsRangeValid(dataOff, 14 * 64))
+                    continue;
+                if (rom.ReadByte(dataOff) == 0x00 &&
+                    rom.ReadByte(dataOff + 1) == 0x7F &&
+                    rom.ReadByte(dataOff + 2) == 0x97)
+                    return dataOff;
+            }
+        }
+
+        return -1;
     }
 
     private static EmotionFrame? ComposePose(
@@ -312,10 +386,12 @@ public sealed class EmotionEffectAtlas
             if (!rom.IsRangeValid(off, 10))
                 break;
             var sprite = rom.ReadInt16(off);
+            var unk2 = rom.ReadUInt16(off + 2);
             var flags1 = rom.ReadUInt16(off + 4);
             var flags2 = rom.ReadUInt16(off + 6);
             var flags3 = rom.ReadUInt16(off + 8);
-            if (sprite == -1 && flags1 == 0xFFFF && flags2 == 0xFFFF && flags3 == 0xFFFF)
+            // Retail terminator: sprite == -1 && unk2 == 0xFFFF (see sub_800533C).
+            if ((ushort)sprite == 0xFFFF && unk2 == 0xFFFF)
                 break;
 
             var y = unchecked((sbyte)(flags1 & 0xFF));
@@ -350,7 +426,9 @@ public sealed class EmotionEffectAtlas
             BlitOamSprite(tiles, palette, pixels, width, destX, destY, part.W, part.H, part.Tile, part.FlipH, part.FlipV);
         }
 
-        return new EmotionFrame(new RgbaImage(width, height, pixels), -minX, -minY);
+        var image = new RgbaImage(width, height, pixels);
+        GbaChroma.KeyOut(image);
+        return new EmotionFrame(image, -minX, -minY);
     }
 
     private static void BlitOamSprite(

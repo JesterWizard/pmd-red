@@ -17,6 +17,9 @@ public static class GbaChroma
         // Magenta key used by some portrait/effect dumps.
         if (r >= 248 && g <= 8 && b >= 248)
             return true;
+        // efob effect-file green key (~0x4F974F).
+        if (Math.Abs(r - 0x4F) <= 18 && Math.Abs(g - 0x97) <= 24 && Math.Abs(b - 0x4F) <= 18)
+            return true;
         return false;
     }
 
