@@ -45,19 +45,28 @@ const u32 *BuildPokeCoinBlit(const u32 *baseTiles, s32 ox, s32 oy,
 /* Remap button/icon glyphs off shared gray slots; NULL if not applicable. */
 const unkChar *GetRemappedIconChar(s32 chr, const unkChar *src);
 
-/* Dungeon coin gold (bank 12 slots 8–11) + optional item pink @ font 11. */
+/* Dungeon: item-pink @ font 11. Town coin golds load on draw. */
 void ApplyCustomPokeCoinPalette(void);
 
-/* Ensure coin colors before a {POKE} glyph blit (town: bank 14, or 13 with portrait). */
+/* Ensure coin colors before a town {POKE} glyph blit (bank 14, or 13 with portrait). */
 void ApplyPokeCoinPaletteForDraw(void);
 
 /* Portrait owns BG bank 14; coin draws on bank 13 with full golds while set. */
 void SetPokeCoinTownPortraitBankInUse(bool8 inUse);
 
-/* Active coin palette bank for WriteGFXToBG0Window. */
+/* Active coin palette bank for town WriteGFXToBG0Window. */
 u32 GetPokeCoinPalBank(void);
 
 /* True when chr is one half of the custom Poké icon. */
 bool8 IsCustomPokeCoinChar(s32 chr);
+
+/*
+ * Dungeon {POKE}: custom poke_coin.4bpp OBJ overlay, colored with the floor
+ * ITEM_POKE palette (no BG bank stomping). Register while printing; Emit each
+ * frame; Clear on textbox prep.
+ */
+void ClearPokeCoinObjSprites(void);
+void RegisterPokeCoinObjSprite(s32 screenX, s32 screenY);
+void EmitPokeCoinObjSprites(void);
 
 #endif /* GUARD_CUSTOM_GRAPHICS_H */

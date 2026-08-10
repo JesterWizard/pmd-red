@@ -2,18 +2,33 @@
 #include "custom_graphics.h"
 #include "runtime.h"
 #include "bg_palette_buffer.h"
+#include "constants/item.h"
+#include "cpu.h"
 #include "graphics_memory.h"
+#include "items.h"
+#include "sprite.h"
 #include "structs/rgb.h"
+#include "structs/sprite_oam.h"
+#include "structs/str_position.h"
 #include "text_1.h"
 #include "dungeon_vram.h"
 
 /*
  * Poké coin — see include/palette_owners.h (enforced by tools/check_palette_owners.py).
  *
- * Dungeon: BG bank 12 slots 8–11 (full 4 golds); stairs indices 1–7,15 intact.
- * Town: full gold on BG bank 14 (map flowers stay on 12; rank badge on 13).
- * If a dialogue portrait owns bank 14, coin uses bank 13 with the same golds.
+ * Dungeon: custom poke_coin.4bpp as OBJ (floor ITEM_POKE palette for golds —
+ * not itempat art). Town: full gold on BG bank 14 (map flowers stay on 12;
+ * rank badge on 13). Portrait on bank 14 → coin uses bank 13 with same golds.
  */
+
+#define POKE_COIN_OBJ_MAX 8
+/* Spare OBJ tiles before UI arrow cluster at 0x3F0 (see dungeon_hp_bars gap notes). */
+#define POKE_COIN_OBJ_VRAM_INDEX 0x3E8
+#define POKE_COIN_OBJ_TILE_COUNT 4
+#define POKE_COIN_OBJ_UPLOAD_BYTES (POKE_COIN_OBJ_TILE_COUNT * 32)
+
+static EWRAM_DATA DungeonPos sPokeCoinObjPos[POKE_COIN_OBJ_MAX] = {0};
+static EWRAM_DATA s32 sPokeCoinObjCount = {0};
 
 static const RGB_Struct sItemPinkColor = {
     ITEM_PINK_R, ITEM_PINK_G, ITEM_PINK_B, 0x80
@@ -31,11 +46,6 @@ static const RGB_Struct sPokeCoinTownPal[16] = {
     [POKE_COIN_SLOT_MID] = { 222, 173,   0, 0x80 },
     [POKE_COIN_SLOT_DARK_TOWN] = { 165, 115,   0, 0x80 },
 };
-
-static const RGB_Struct sPokeCoinPale = { 255, 255, 115, 0x80 };
-static const RGB_Struct sPokeCoinYellow = { 247, 206,   0, 0x80 };
-static const RGB_Struct sPokeCoinMid = { 222, 173,   0, 0x80 };
-static const RGB_Struct sPokeCoinDark = { 165, 115,   0, 0x80 };
 
 /* 16×16 from poke_coin.png — built by tools/convert_poke_coin.py (town slots). */
 static const u32 sPokeCoinTiles[32] = INCBIN_U32("graphics/custom/poke_coin.4bpp");
@@ -300,19 +310,87 @@ u32 GetPokeCoinPalBank(void)
 
 static void LoadPokeCoinPalette(void)
 {
-    s32 base;
-
-    if (gUnknown_203B40C) {
-        /* Full 4 golds into trappat bank slots 8–11 only (stairs use 1–7,15). */
-        base = POKE_COIN_PAL_BANK_DUNGEON * 16;
-        SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT0, &sPokeCoinPale);
-        SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT1, &sPokeCoinYellow);
-        SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT2, &sPokeCoinMid);
-        SetBGPaletteBufferColorArray(base + POKE_COIN_DUNGEON_GOLD_SLOT3, &sPokeCoinDark);
+    /* Dungeon coins are custom OBJ tiles + floor pal; do not touch BG bank 12. */
+    if (gUnknown_203B40C)
         return;
-    }
 
     LoadTownPokeCoinPalette();
+}
+
+void ClearPokeCoinObjSprites(void)
+{
+    sPokeCoinObjCount = 0;
+}
+
+void RegisterPokeCoinObjSprite(s32 screenX, s32 screenY)
+{
+    if (sPokeCoinObjCount >= POKE_COIN_OBJ_MAX)
+        return;
+    sPokeCoinObjPos[sPokeCoinObjCount].x = screenX;
+    sPokeCoinObjPos[sPokeCoinObjCount].y = screenY;
+    sPokeCoinObjCount++;
+}
+
+static void UnpackCoinSource(u8 out[16][16]);
+static void PackCoinBlit(u8 in[16][16]);
+
+static u8 RemapCoinPixelForFloorObj(u8 p)
+{
+    if (p == POKE_COIN_SLOT_WHITE)
+        return POKE_COIN_SLOT_WHITE_OBJ_FLOOR;
+    if (p == POKE_COIN_SLOT_PALE)
+        return POKE_COIN_SLOT_PALE_OBJ_FLOOR;
+    if (p == POKE_COIN_SLOT_YELLOW)
+        return POKE_COIN_SLOT_YELLOW_OBJ_FLOOR;
+    if (p == POKE_COIN_SLOT_MID)
+        return POKE_COIN_SLOT_MID_OBJ_FLOOR;
+    if (p == POKE_COIN_SLOT_DARK_TOWN)
+        return POKE_COIN_SLOT_DARK_OBJ_FLOOR;
+    return p;
+}
+
+/* Town .4bpp → floor ITEM_POKE indices, then OBJ VRAM upload. */
+static void UploadPokeCoinObjTiles(void)
+{
+    u8 grid[16][16];
+    s32 y, x;
+
+    UnpackCoinSource(grid);
+    for (y = 0; y < 16; y++) {
+        for (x = 0; x < 16; x++)
+            grid[y][x] = RemapCoinPixelForFloorObj(grid[y][x]);
+    }
+    PackCoinBlit(grid);
+    CpuCopy((void *)(OBJ_VRAM0 + POKE_COIN_OBJ_VRAM_INDEX * 32),
+            sPokeCoinBlitBuf, POKE_COIN_OBJ_UPLOAD_BYTES);
+}
+
+void EmitPokeCoinObjSprites(void)
+{
+    s32 i;
+    s32 palNum;
+    SpriteOAM sprite;
+
+    if (!gRuntimeConfig.custom_graphics || !gUnknown_203B40C || sPokeCoinObjCount <= 0)
+        return;
+
+    UploadPokeCoinObjTiles();
+    palNum = GetItemPalette(ITEM_POKE);
+
+    for (i = 0; i < sPokeCoinObjCount; i++) {
+        sprite.attrib1 = 0;
+        sprite.attrib2 = 0;
+        sprite.attrib3 = 0;
+        sprite.unk6 = 0;
+        SpriteSetShape(&sprite, 0); /* square */
+        SpriteSetSize(&sprite, 1);  /* 16×16 */
+        SpriteSetY(&sprite, sPokeCoinObjPos[i].y);
+        SpriteSetX(&sprite, sPokeCoinObjPos[i].x);
+        SpriteSetTileNum(&sprite, POKE_COIN_OBJ_VRAM_INDEX);
+        SpriteSetPriority(&sprite, 0); /* above dialogue BG */
+        SpriteSetPalNum(&sprite, palNum);
+        AddSprite(&sprite, 0x100, NULL, NULL);
+    }
 }
 
 /* Unpack one 8×8 tile row-words into a 16×16 nibble grid. */
@@ -468,16 +546,11 @@ void ApplyCustomPokeCoinPalette(void)
 {
     s32 bank;
 
-    /* Dungeon golds; town bank-14 load is deferred to glyph draw (and skipped
-     * while a portrait owns that bank). */
-    if (gRuntimeConfig.custom_graphics && gUnknown_203B40C)
-        LoadPokeCoinPalette();
-
+    /* Town bank-14 load is deferred to glyph draw. Dungeon coin is OBJ. */
     if (gRuntimeConfig.pmd2_battle_info_colors) {
         for (bank = 0; bank < 8; bank++)
             gFontPalette[bank * 16 + ITEM_PINK_SLOT] = sItemPinkColor;
         RefreshActiveFontPalette();
-        /* Dungeon coin is on bank 12 — font refresh does not clear it. */
     }
 }
 

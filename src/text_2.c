@@ -59,13 +59,33 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
         if (chr == POKE_COIN_CHR_RIGHT)
             return 0;
 
-        {
+            /* Dungeon: custom poke_coin.4bpp OBJ (floor ITEM_POKE palette).
+             * Town: BG window blit as before. */
+            if (gUnknown_203B40C) {
+                s32 screenX;
+                s32 screenY;
+                s32 oyAlign;
+                s32 blitX;
+
+                if (window->isWinType0)
+                    oyAlign = POKE_COIN_OY_DIALOGUE;
+                else
+                    oyAlign = POKE_COIN_OY_DUNGEON_ALIGN;
+
+                screenX = window->x * 8 + x;
+                screenY = window->y * 8 + y + oyAlign;
+                RegisterPokeCoinObjSprite(screenX, screenY);
+                blitX = (x + 7) & ~7;
+                return (blitX - x) + POKE_COIN_ART_WIDTH + gCharacterSpacing;
+            }
+
+            {
             /* Ceil X to the next tile — the 16×16 write must not cover digits
              * (coin palette bank would glitch them). Art is left-aligned in the
              * .4bpp so the coin starts at blitX. Vertical: per-UI oy align. */
             s32 blitX = (x + 7) & ~7;
             s32 blitY = y & ~7;
-            s32 ox = gUnknown_203B40C ? POKE_COIN_OX_DUNGEON : POKE_COIN_OX_TOWN;
+            s32 ox = POKE_COIN_OX_TOWN;
             s32 oyAlign;
             s32 oy;
             u32 baseTiles[32];
@@ -76,20 +96,29 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
             bool8 preserveBevel;
             bool8 keepBaseText;
 
-            if (gUnknown_203B40C)
-                oyAlign = POKE_COIN_OY_DUNGEON_ALIGN;
-            else if (win->isWinType0)
+            if (win->isWinType0)
                 oyAlign = POKE_COIN_OY_DIALOGUE;
             else
                 oyAlign = POKE_COIN_OY_MENU;
             oy = (y & 7) + oyAlign;
 
-            /* Dialogue line-2+ : floor-snapped blitY sits in the line above
+            /* Dialogue line-2+: floor-snapped blitY sits in the line above
              * (11px glyphs from y=4 reach into tile row 1). Shift the 16×16
-             * down one tile and compensate oy so we never wipe "Persian". */
+             * down one tile and compensate oy so we never wipe "Persian".
+             * Skip the shift when oy-8 would clip most of the coin art. */
             if (win->isWinType0 && blitY > 0 && (y & 7) != 0) {
-                blitY += 8;
-                oy -= 8;
+                s32 newOy = oy - 8;
+                s32 visTop = 3 + newOy;
+                s32 visBot = 12 + newOy;
+
+                if (visTop < 0)
+                    visTop = 0;
+                if (visBot > 15)
+                    visBot = 15;
+                if (visBot - visTop >= 5) {
+                    blitY += 8;
+                    oy = newOy;
+                }
             }
 
             /* Bevel only on the dialogue's first tile row. keepBaseText only when
@@ -117,8 +146,8 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
             if (coinTiles != NULL) {
                 u32 palBank = GetPokeCoinPalBank();
 
-                /* Line-1 dialogue coin may share bevel tiles with yellow text —
-                 * stay on font bank so those indices stay valid. */
+                /* Line-1 may share bevel tiles with yellow text — stay on font
+                 * bank so those indices stay valid. */
                 if (keepBaseText)
                     palBank = FONT_BANK;
 
@@ -129,7 +158,7 @@ u32 DrawCharOnWindowInternal(Window *windows, s32 x, s32 y, u32 chr, u32 color, 
                 /* Advance by visible art, not the full 16×16 pad on the right. */
                 return (blitX - x) + POKE_COIN_ART_WIDTH + gCharacterSpacing;
             }
-        }
+            }
     }
 
     if (gCurrentCharmap == 1) {
@@ -1404,6 +1433,8 @@ void PrepareTextbox_8008C6C(Window *windows, u32 windowId)
 {
     s32 i;
     Window *window = &windows[windowId];
+
+    ClearPokeCoinObjSprites();
 
     if (!window->isWinType0) {
         s32 count = (window->width * window->totalHeight) * 32;

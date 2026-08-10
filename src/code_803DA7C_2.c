@@ -134,7 +134,7 @@ void sub_803E13C(void)
         SetBGPaletteBufferColorArray(240 + i, pal);
         pal++;
     }
-    /* Re-apply coin palette (dungeon: font 9–10) + item-pink after font upload. */
+    /* Re-apply coin palette (dungeon: bank12 from floor Poké) + item-pink after font upload. */
     ApplyCustomPokeCoinPalette();
 }
 

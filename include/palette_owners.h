@@ -15,9 +15,9 @@
  * Font bank 15 — never overwrite for coin golds:
  *   levfont: 4,5,6,12,15 | hp5font: 8,10,15 | chrome: 12–15 | pink: 11
  *
- * Dungeon coin: full 4 golds in bank 12 slots 8–11 only.
- *   Normal stairs (objs 22/23) use indices 1–7,15 — left untouched.
- *   Shared white rim uses stock trappat slot 7 (near-white).
+ * Dungeon coin: custom poke_coin.4bpp as OBJ (not floor itempat art).
+ *   Tiles upload to a spare OBJ VRAM slot; palette is GetItemPalette(ITEM_POKE)
+ *   (floor golds 10/9/8 + white 15). No BG bank 12 writes.
  *
  * Town coin: full palette on BG bank 14 (map tiles stop at bank 12 on
  * T01P03; rank badge is 13 when shown). While a dialogue portrait owns
@@ -46,11 +46,24 @@
 #define POKE_COIN_PAL_BANK_TOWN_FONT_FALLBACK POKE_COIN_PAL_BANK_TOWN_PORTRAIT
 
 #define POKE_COIN_DUNGEON_TRAPPAT_BANK 12
-#define POKE_COIN_DUNGEON_GOLD_SLOT0 8 /* pale */
-#define POKE_COIN_DUNGEON_GOLD_SLOT1 9 /* yellow */
-#define POKE_COIN_DUNGEON_GOLD_SLOT2 10 /* mid */
-#define POKE_COIN_DUNGEON_GOLD_SLOT3 11 /* dark */
+#define POKE_COIN_DUNGEON_GOLD_SLOT0 8 /* ← floor bright */
+#define POKE_COIN_DUNGEON_GOLD_SLOT1 9 /* ← floor mid */
+#define POKE_COIN_DUNGEON_GOLD_SLOT2 10 /* ← floor mid (art mid tone) */
+#define POKE_COIN_DUNGEON_GOLD_SLOT3 11 /* ← floor dark */
 #define POKE_COIN_NUM_GOLD_TONES 4
+
+/* Floor ITEM_POKE sprite indices inside GetItemPalette(ITEM_POKE) bank. */
+#define POKE_COIN_FLOOR_SLOT_DARK 8
+#define POKE_COIN_FLOOR_SLOT_MID 9
+#define POKE_COIN_FLOOR_SLOT_BRIGHT 10
+#define POKE_COIN_FLOOR_SLOT_WHITE 15
+
+/* Town .4bpp → floor OBJ pal (3 golds + white). */
+#define POKE_COIN_SLOT_WHITE_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_WHITE
+#define POKE_COIN_SLOT_PALE_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_BRIGHT
+#define POKE_COIN_SLOT_YELLOW_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_MID
+#define POKE_COIN_SLOT_MID_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_MID
+#define POKE_COIN_SLOT_DARK_OBJ_FLOOR POKE_COIN_FLOOR_SLOT_DARK
 
 /* Town .4bpp tile indices (from convert_poke_coin.py / poke_coin.png). */
 #define POKE_COIN_SLOT_TRANSPARENT 0

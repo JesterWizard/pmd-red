@@ -6,6 +6,7 @@
 #include "window_buffer.h"
 #include "graphics_memory.h"
 #include "cpu.h"
+#include "custom_graphics.h"
 #include "decompress_at.h"
 #include "def_filearchives.h"
 #include "file_system.h"
@@ -896,6 +897,7 @@ void sub_80073B8(s32 windowId)
 {
     Window *window = &gWindows[windowId];
 
+    ClearPokeCoinObjSprites();
     window->unk3C = &window->unk1C[(u32)window->unk2C / 4];
     window->unk40 = window->unk1C;
     window->unk46 = TRUE;

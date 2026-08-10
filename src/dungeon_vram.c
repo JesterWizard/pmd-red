@@ -206,6 +206,9 @@ static void sub_803E490(u32 unused)
         UpdateAnimatedColors(gUnknown_203B40D, gDungeonAnimatedColors, 0xA0, 0x20, gDungeonBrightness, gDungeon->colorRamp);
 
     nullsub_8(gGameOptionsRef->touchScreen);
+    /* Must AddSprite before sub_8005180 — that call flattens the y-sort
+     * buckets into the CopySpritesToOam walk chain. */
+    EmitPokeCoinObjSprites();
     sub_8005180();
     nullsub_12();
     ToggleWindowBgBuffer();
@@ -239,6 +242,7 @@ void sub_803E668(u32 unused)
 {
     sUnknown_202EDD4++;
     nullsub_8(gGameOptionsRef->touchScreen);
+    EmitPokeCoinObjSprites();
     sub_8005180();
     nullsub_12();
     CopyWindowBgBuffer(NULL, COPY_WINDOW_BG_BUFFER_WIN0);
@@ -399,7 +403,7 @@ void sub_803E874(bool8 r10, s32 r9)
     }
 
     SetBGPaletteBufferColorRGB(248, &gFontPalette[8], gDungeonBrightness, NULL);
-    /* Coin uses font slots 9–10 here; banks 12–13 stay stairs/traps. */
+    /* Dungeon {POKE} is custom OBJ (poke_coin.4bpp); pink may refresh on font. */
     ApplyCustomPokeCoinPalette();
 
     color = ((struct DungeonPalFile*) gDungeon->paletFile)->unk4;
@@ -562,12 +566,14 @@ void sub_803EAF0(u32 kind, u8 *name)
             if (gUnknown_203B40C != 0)
                 sub_8052210(0);
 
+            ClearPokeCoinObjSprites();
             ResetUnusedInputStruct();
             sub_803EC94();
             ShowWindows(NULL, TRUE, TRUE);
             break;
         }
         case 0: {
+            ClearPokeCoinObjSprites();
             sub_803EC94();
             ShowWindows(NULL, TRUE, TRUE);
             if (gUnknown_203B40C != 0) {

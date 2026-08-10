@@ -166,13 +166,28 @@ def main() -> None:
             fail(f"{CUSTOM_C.name}: writes font slot {slot} (HUD/HP protected)")
 
     for name in (
-        "POKE_COIN_DUNGEON_GOLD_SLOT0",
-        "POKE_COIN_DUNGEON_GOLD_SLOT1",
-        "POKE_COIN_DUNGEON_GOLD_SLOT2",
-        "POKE_COIN_DUNGEON_GOLD_SLOT3",
+        "ClearPokeCoinObjSprites",
+        "RegisterPokeCoinObjSprite",
+        "EmitPokeCoinObjSprites",
     ):
         if name not in custom_c:
-            fail(f"{CUSTOM_C.name}: must load {name} for dungeon coin gold")
+            fail(f"{CUSTOM_C.name}: dungeon coin OBJ path missing {name}")
+
+    # Legacy BG dungeon gold slot names may remain in palette_owners.h; OBJ path
+    # must not SetBGPalette them (stairs/traps share bank 12).
+    if re.search(r"SetBGPaletteBufferColorArray\s*\(\s*base\s*\+\s*POKE_COIN_DUNGEON_GOLD", custom_c):
+        fail(f"{CUSTOM_C.name}: must not write dungeon BG gold slots (use floor OBJ pal)")
+
+    if "POKE_COIN_ITEMPAT_BASE_TILE" in custom_c or re.search(
+        r"0x1A0\s*\+\s*gItemParametersData\[ITEM_POKE\]", custom_c
+    ):
+        fail(f"{CUSTOM_C.name}: dungeon coin must use custom poke_coin tiles, not floor itempat")
+
+    if "POKE_COIN_OBJ_VRAM_INDEX" not in custom_c:
+        fail(f"{CUSTOM_C.name}: dungeon coin OBJ VRAM upload missing POKE_COIN_OBJ_VRAM_INDEX")
+
+    if "sPokeCoinTiles" not in custom_c:
+        fail(f"{CUSTOM_C.name}: custom poke_coin.4bpp (sPokeCoinTiles) required")
 
     # Pink RGB
     pink_macros = re.search(
@@ -214,8 +229,8 @@ def main() -> None:
     print(
         "check_palette_owners: OK — "
         f"HUD {expect_label}, HP green {expect_green}, pink ({pr},{pg},{pb})@11, "
-        f"dungeon coin bank {d['POKE_COIN_PAL_BANK_DUNGEON']} slots {gold_slots} "
-        f"({d['POKE_COIN_NUM_GOLD_TONES']} golds, stairs-safe)"
+        f"dungeon coin OBJ (custom poke_coin.4bpp + floor pal, bank {d['POKE_COIN_PAL_BANK_DUNGEON']} slots "
+        f"{gold_slots} reserved stairs-safe)"
     )
 
 
