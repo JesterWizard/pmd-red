@@ -10,13 +10,36 @@ using RescueEditor.Core;
 
 namespace RescueEditor.App;
 
-/// <summary>Optional Back/Next scene factory for the end-of-cutscene menu.</summary>
+/// <summary>Chronological story playlist navigation for Scene Play.</summary>
 public sealed class ScenePlayNavigator
 {
-    public Func<bool>? CanGoBack { get; init; }
-    public Func<bool>? CanGoNext { get; init; }
-    public Func<ScenePlaySession?>? CreatePrevious { get; init; }
-    public Func<ScenePlaySession?>? CreateNext { get; init; }
+    public required ScenePlayCursor Cursor { get; init; }
+    public required Func<ScenePlayBeat, ScenePlaySession?> CreateForBeat { get; init; }
+
+    public IReadOnlyList<ScenePlayBeat> Beats => Cursor.Playlist.Beats;
+    public bool CanGoBack => Cursor.CanGoBack;
+    public bool CanGoNext => Cursor.CanGoNext;
+
+    public ScenePlaySession? CreatePrevious()
+    {
+        if (!Cursor.TryMove(-1))
+            return null;
+        return CreateForBeat(Cursor.Current);
+    }
+
+    public ScenePlaySession? CreateNext()
+    {
+        if (!Cursor.TryMove(+1))
+            return null;
+        return CreateForBeat(Cursor.Current);
+    }
+
+    public ScenePlaySession? CreateAt(int index)
+    {
+        if (!Cursor.TrySelect(index))
+            return null;
+        return CreateForBeat(Cursor.Current);
+    }
 }
 
 /// <summary>Modal Scene Play popup: integer-scaled GBA 240×160 view matching retail layout.</summary>
@@ -29,9 +52,13 @@ public sealed class ScenePlayWindow : Window
     private ScenePlaySession _session;
     private readonly PlayControlsKeymap _keymap;
     private readonly ScenePlayNavigator? _navigator;
+    private readonly Func<ScenePlayBeat, string>? _beatLabel;
     private readonly Image _view;
     private readonly TextBlock _status;
     private readonly Button _controlsButton;
+    private readonly ComboBox? _sceneCombo;
+    private readonly Button? _navBackButton;
+    private readonly Button? _navNextButton;
     private readonly Border _endOverlay;
     private readonly Button _backButton;
     private readonly Button _nextButton;
@@ -47,6 +74,7 @@ public sealed class ScenePlayWindow : Window
     private DateTime _lastTick = DateTime.UtcNow;
     private double _simAccum;
     private bool _endMenuShown;
+    private bool _suppressComboChange;
     private double _speed = 1;
     private int? _playingSongId;
 
@@ -54,12 +82,14 @@ public sealed class ScenePlayWindow : Window
         ScenePlaySession session,
         PlayControlsKeymap? keymap = null,
         string? romPath = null,
-        ScenePlayNavigator? navigator = null)
+        ScenePlayNavigator? navigator = null,
+        Func<ScenePlayBeat, string>? beatLabel = null)
     {
         _session = session;
         _keymap = keymap ?? PlayControlsKeymap.CreateDefault();
         _romPath = romPath;
         _navigator = navigator;
+        _beatLabel = beatLabel;
         _bgmStream = new AgbplayStreamPlayer(_bgmHost);
 
         Title = TitleFor(_session);
@@ -144,28 +174,70 @@ public sealed class ScenePlayWindow : Window
             _speedLabel.Text = $"{(int)_speed}×";
         };
 
+        var toolbarChildren = new List<Control> { _controlsButton, closeButton };
+        if (_navigator is { Beats.Count: > 0 })
+        {
+            _navBackButton = EditorChrome.ToolButton("◀");
+            _navNextButton = EditorChrome.ToolButton("▶");
+            _navBackButton.Click += (_, _) => Navigate(-1);
+            _navNextButton.Click += (_, _) => Navigate(+1);
+
+            _sceneCombo = new ComboBox
+            {
+                MinWidth = 280,
+                MaxWidth = 420,
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontMeta,
+                VerticalAlignment = VerticalAlignment.Center,
+            };
+            for (var i = 0; i < _navigator.Beats.Count; i++)
+            {
+                var beat = _navigator.Beats[i];
+                _sceneCombo.Items.Add(new ComboBoxItem
+                {
+                    Content = LabelFor(beat),
+                    Tag = i,
+                });
+            }
+            _sceneCombo.SelectionChanged += OnSceneComboChanged;
+
+            toolbarChildren.Add(new TextBlock
+            {
+                Text = "Scene",
+                FontFamily = EditorTheme.UiFont,
+                FontSize = EditorTheme.FontMeta,
+                Foreground = EditorTheme.TextMutedBrush,
+                VerticalAlignment = VerticalAlignment.Center,
+                Margin = new Thickness(EditorTheme.Space3, 0, 0, 0),
+            });
+            toolbarChildren.Add(_navBackButton);
+            toolbarChildren.Add(_sceneCombo);
+            toolbarChildren.Add(_navNextButton);
+        }
+
+        toolbarChildren.Add(new TextBlock
+        {
+            Text = "Speed",
+            FontFamily = EditorTheme.UiFont,
+            FontSize = EditorTheme.FontMeta,
+            Foreground = EditorTheme.TextMutedBrush,
+            VerticalAlignment = VerticalAlignment.Center,
+            Margin = new Thickness(EditorTheme.Space3, 0, 0, 0),
+        });
+        toolbarChildren.Add(_speedSlider);
+        toolbarChildren.Add(_speedLabel);
+
         var toolbar = new StackPanel
         {
             Orientation = Orientation.Horizontal,
             Spacing = EditorTheme.Space2,
             Margin = new Thickness(EditorTheme.Space3),
-            Children =
-            {
-                _controlsButton,
-                closeButton,
-                new TextBlock
-                {
-                    Text = "Speed",
-                    FontFamily = EditorTheme.UiFont,
-                    FontSize = EditorTheme.FontMeta,
-                    Foreground = EditorTheme.TextMutedBrush,
-                    VerticalAlignment = VerticalAlignment.Center,
-                    Margin = new Thickness(EditorTheme.Space3, 0, 0, 0),
-                },
-                _speedSlider,
-                _speedLabel,
-            },
+            Children = { },
         };
+        foreach (var child in toolbarChildren)
+            toolbar.Children.Add(child);
+
+        SyncNavigatorChrome();
 
         _backButton = MenuButton("Back");
         var replayButton = MenuButton("Replay");
@@ -412,8 +484,8 @@ public sealed class ScenePlayWindow : Window
         if (_endMenuShown)
             return;
         _endMenuShown = true;
-        _backButton.IsEnabled = _navigator?.CanGoBack?.Invoke() == true;
-        _nextButton.IsEnabled = _navigator?.CanGoNext?.Invoke() == true;
+        _backButton.IsEnabled = _navigator?.CanGoBack == true;
+        _nextButton.IsEnabled = _navigator?.CanGoNext == true;
         _endOverlay.IsVisible = true;
         try { StopBgm(); } catch { /* ignore */ }
         try { _sfxPlayer.Stop(); } catch { /* ignore */ }
@@ -438,13 +510,27 @@ public sealed class ScenePlayWindow : Window
         Focus();
     }
 
+    private void OnSceneComboChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        if (_suppressComboChange || _navigator is null || _sceneCombo?.SelectedItem is not ComboBoxItem item)
+            return;
+        if (item.Tag is not int index)
+            return;
+        if (index == _navigator.Cursor.Index)
+            return;
+        ApplySession(_navigator.CreateAt(index));
+    }
+
     private void Navigate(int delta)
     {
-        ScenePlaySession? next = null;
-        if (delta < 0)
-            next = _navigator?.CreatePrevious?.Invoke();
-        else if (delta > 0)
-            next = _navigator?.CreateNext?.Invoke();
+        if (_navigator is null)
+            return;
+        ScenePlaySession? next = delta < 0 ? _navigator.CreatePrevious() : _navigator.CreateNext();
+        ApplySession(next);
+    }
+
+    private void ApplySession(ScenePlaySession? next)
+    {
         if (next is null)
             return;
 
@@ -457,6 +543,7 @@ public sealed class ScenePlayWindow : Window
         _lastTick = DateTime.UtcNow;
         try { _bgmPlayer.Stop(); } catch { /* ignore */ }
         try { _sfxPlayer.Stop(); } catch { /* ignore */ }
+        SyncNavigatorChrome();
         RefreshFrame(composeBackground: false);
         Dispatcher.UIThread.Post(() =>
         {
@@ -470,6 +557,33 @@ public sealed class ScenePlayWindow : Window
             Focus();
         }, DispatcherPriority.Background);
     }
+
+    private void SyncNavigatorChrome()
+    {
+        if (_navigator is null)
+            return;
+
+        if (_navBackButton is not null)
+            _navBackButton.IsEnabled = _navigator.CanGoBack;
+        if (_navNextButton is not null)
+            _navNextButton.IsEnabled = _navigator.CanGoNext;
+
+        if (_sceneCombo is not null)
+        {
+            _suppressComboChange = true;
+            try
+            {
+                _sceneCombo.SelectedIndex = _navigator.Cursor.Index;
+            }
+            finally
+            {
+                _suppressComboChange = false;
+            }
+        }
+    }
+
+    private string LabelFor(ScenePlayBeat beat) =>
+        _beatLabel?.Invoke(beat) ?? beat.FormatLabel();
 
     private WriteableBitmap? _frameBitmap;
 
@@ -630,10 +744,16 @@ public sealed class ScenePlayWindow : Window
             HorizontalAlignment = HorizontalAlignment.Center,
         };
 
-    private static string TitleFor(ScenePlaySession session) =>
-        session.IsScripted
-            ? $"Scene Play — {session.PlayerSpecies}/{session.PartnerSpecies}"
-            : "Scene Play";
+    private static string TitleFor(ScenePlaySession session)
+    {
+        var place = string.IsNullOrWhiteSpace(session.Scene.Name)
+            ? $"Map {session.MapId}"
+            : session.Scene.Name;
+        var station = $"g{session.ActiveGroup}/s{session.ActiveSector}";
+        return session.IsScripted
+            ? $"Scene Play — {place} · {station}"
+            : $"Scene Play — {place} · {station} (free roam)";
+    }
 
     private static KeyChord ToChord(KeyEventArgs e) =>
         new(e.Key.ToString(),

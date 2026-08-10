@@ -1328,41 +1328,50 @@ public sealed class SceneWorkspacePanel : UserControl
 
         var group = (int)(_groupBox.Value ?? 0);
         var sector = Math.Max(0, _sectorBox.SelectedIndex);
-        var session = CreatePlaySession(_scene, group, sector);
-        var scenes = _database.Scenes.OrderBy(s => s.MapId).ThenBy(s => s.Name, StringComparer.Ordinal).ToList();
-        var currentMapId = _scene.MapId;
-        var navigator = new ScenePlayNavigator
+        var (playGroup, playSector) = ScenePlayPresets.ResolvePlayTarget(_scene, group, sector);
+        var session = CreatePlaySession(_scene, playGroup, playSector);
+
+        var playlist = SceneStoryPlaylist.Build(_rom, _database);
+        var startIndex = playlist.FindIndex(_scene.MapId, playGroup, playSector, fallbackToMapOnly: true);
+        var cursor = new ScenePlayCursor(playlist, startIndex >= 0 ? startIndex : 0);
+
+        var navigator = playlist.Beats.Count == 0
+            ? null
+            : new ScenePlayNavigator
+            {
+                Cursor = cursor,
+                CreateForBeat = CreatePlaySessionForBeat,
+            };
+
+        string BeatLabel(ScenePlayBeat beat)
         {
-            CanGoBack = () => scenes.FindIndex(s => s.MapId == currentMapId) > 0,
-            CanGoNext = () =>
-            {
-                var i = scenes.FindIndex(s => s.MapId == currentMapId);
-                return i >= 0 && i + 1 < scenes.Count;
-            },
-            CreatePrevious = () =>
-            {
-                var i = scenes.FindIndex(s => s.MapId == currentMapId);
-                if (i <= 0) return null;
-                var prev = scenes[i - 1];
-                currentMapId = prev.MapId;
-                return CreatePlaySession(prev, 0, 0);
-            },
-            CreateNext = () =>
-            {
-                var i = scenes.FindIndex(s => s.MapId == currentMapId);
-                if (i < 0 || i + 1 >= scenes.Count) return null;
-                var next = scenes[i + 1];
-                currentMapId = next.MapId;
-                return CreatePlaySession(next, 0, 0);
-            },
-        };
+            var scene = _database.FindScene(beat.MapId);
+            var name = scene?.Name;
+            if (string.IsNullOrWhiteSpace(name) && scene?.Map is not null)
+                name = GroundMapNames.GetDisplayName(scene.Map.Name) ?? scene.Map.Name;
+            return beat.FormatLabel(name);
+        }
 
         var owner = TopLevel.GetTopLevel(this) as Window;
-        var play = new ScenePlayWindow(session, romPath: _rom.Path, navigator: navigator);
+        var play = new ScenePlayWindow(
+            session,
+            romPath: _rom.Path,
+            navigator: navigator,
+            beatLabel: BeatLabel);
         if (owner is not null)
             await play.ShowDialog(owner);
         else
             play.Show();
+    }
+
+    private ScenePlaySession? CreatePlaySessionForBeat(ScenePlayBeat beat)
+    {
+        if (_rom is null || _database is null)
+            return null;
+        var scene = _database.FindScene(beat.MapId);
+        if (scene is null)
+            return null;
+        return CreatePlaySession(scene, beat.Group, beat.Sector);
     }
 
     private ScenePlaySession CreatePlaySession(Scene scene, int group, int sector)

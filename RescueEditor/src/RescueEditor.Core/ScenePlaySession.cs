@@ -1,6 +1,6 @@
 namespace RescueEditor.Core;
 
-/// <summary>Software ground play session: free roam and/or scripted cutscene (Tiny Woods intro).</summary>
+/// <summary>Software ground play session: free roam and/or scripted cutscene playback.</summary>
 public sealed class ScenePlaySession
 {
     public const int CameraWidth = 240;
@@ -108,6 +108,8 @@ public sealed class ScenePlaySession
     }
 
     public PlayAppearance Appearance { get; }
+    public Scene Scene => _scene;
+    public int MapId => _scene.MapId;
     public short PlayerSpecies { get; }
     public short PartnerSpecies { get; }
     public bool IsScripted { get; }

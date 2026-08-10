@@ -120,9 +120,13 @@ public static class ScenePlayPresets
         return false;
     }
 
+    /// <summary>
+    /// Tiny Woods map header group 0 is a bootstrap station; default Play to the intro cutscene.
+    /// Explicit group/sector (playlist navigator, editor pickers) are preserved.
+    /// </summary>
     public static (int Group, int Sector) ResolvePlayTarget(Scene scene, int group, int sector)
     {
-        if (scene.MapId == TinyWoodsEntryMapId)
+        if (scene.MapId == TinyWoodsEntryMapId && group == 0 && sector == 0)
             return (TinyWoodsIntroGroup, TinyWoodsIntroSector);
         return (group, sector);
     }
