@@ -54,6 +54,6 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .all_makuhita_dojo = FALSE, /* TRUE = all Dojo courses + Makuhita visible; FALSE = story unlocks */
     .skip_title_intro = TRUE, /* TRUE = button-skip boot intro with no save; FALSE = vanilla (need save) */
     .living_square = TRUE, /* TRUE = Square NPCs wander / visit / banter; FALSE = vanilla static */
-    .full_party_entry = TRUE, /* TRUE = enter with 4 members pre-postgame; FALSE = vanilla (need postgame) */
+    .full_party_entry = TRUE, /* TRUE = enter with 4 (raises dungeon max 3→4); FALSE = vanilla (most dungeons max 3) */
     .thought_bubbles = TRUE, /* TRUE = L toggles overworld thought bubble; FALSE = off */
 };

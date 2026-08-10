@@ -2596,7 +2596,13 @@ u32 BufferDungeonRequirementsText(u8 dungeonIndex, s32 speciesId_, u8 *buffer, b
     }
 
     maxPartyMembers = gDungeons[dungeonIndex].maxPartyMembers;
-    if (!requireHm && maxPartyMembers > 3 && !gRuntimeConfig.full_party_entry) {
+    /* Most dungeons are data-max 3; a few boss floors are 4 (clamped pre-postgame).
+     * full_party_entry raises any 3+ cap to 4. Solo (1) is unchanged. */
+    if (gRuntimeConfig.full_party_entry) {
+        if (maxPartyMembers >= 3)
+            maxPartyMembers = MAX_TEAM_MEMBERS;
+    }
+    else if (!requireHm && maxPartyMembers > 3) {
         maxPartyMembers = 3;
     }
     if (counter > maxPartyMembers) {
