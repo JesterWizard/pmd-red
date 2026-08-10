@@ -45,7 +45,7 @@ public sealed class GroundScriptVm
     private readonly Dictionary<int, (double X, double Y)> _livePositions = new();
     private readonly Dictionary<int, short> _liveSpecies = new();
     private readonly Dictionary<int, int> _directions = new(); // DIRECTION_* 0..7
-    private readonly Dictionary<int, (int EffectId, int FramesLeft)> _effects = new();
+    private readonly Dictionary<int, (int EffectId, int FramesLeft, int Age)> _effects = new();
     private bool _livesSpawned;
     private int _dialogueHoldFrames;
     private IReadOnlyList<string> _dialoguePages = Array.Empty<string>();
@@ -178,16 +178,22 @@ public sealed class GroundScriptVm
     public static bool ShouldFlipHorizontal(int direction) =>
         (direction & 7) is 5 or 6 or 7; // NW, W, SW
 
-    public bool TryGetActiveEffect(int npcId, out int effectId)
+    public bool TryGetActiveEffect(int npcId, out int effectId, out int age)
     {
         if (_effects.TryGetValue(npcId, out var fx) && fx.EffectId > 0 && fx.FramesLeft != 0)
         {
             effectId = fx.EffectId;
+            age = fx.Age;
             return true;
         }
         effectId = 0;
+        age = 0;
         return false;
     }
+
+    /// <summary>Compat: effect id only.</summary>
+    public bool TryGetActiveEffect(int npcId, out int effectId) =>
+        TryGetActiveEffect(npcId, out effectId, out _);
 
     public bool IsLiveMoving(int liveIndex) =>
         _actors.Any(a => a.NpcId == liveIndex && a.WalkActive);
@@ -576,7 +582,7 @@ public sealed class GroundScriptVm
                 else
                     // Sticky until cleared, or until 0xDE starts a oneshot countdown
                     // (NOTICE/QUESTION/SWEAT/SHOCK). SMILE/ANGRY stay until *_END.
-                    _effects[key] = (effectId, -1);
+                    _effects[key] = (effectId, -1, 0);
                 actor.Index++;
                 return true;
             }
@@ -587,7 +593,7 @@ public sealed class GroundScriptVm
                 if (_effects.TryGetValue(key, out var fx) && fx.EffectId > 0)
                 {
                     if (fx.FramesLeft < 0)
-                        _effects[key] = (fx.EffectId, 48); // ~0.8s oneshot wait
+                        _effects[key] = (fx.EffectId, 48, fx.Age); // ~0.8s oneshot wait
                     return false;
                 }
                 actor.Index++;
@@ -1120,13 +1126,17 @@ public sealed class GroundScriptVm
         foreach (var key in _effects.Keys.ToArray())
         {
             var fx = _effects[key];
+            var age = fx.Age + 1;
             if (fx.FramesLeft < 0)
-                continue; // sticky (SMILE/ANGRY until cleared)
+            {
+                _effects[key] = (fx.EffectId, -1, age); // sticky
+                continue;
+            }
             var left = fx.FramesLeft - 1;
             if (left <= 0)
                 _effects.Remove(key);
             else
-                _effects[key] = (fx.EffectId, left);
+                _effects[key] = (fx.EffectId, left, age);
         }
     }
 

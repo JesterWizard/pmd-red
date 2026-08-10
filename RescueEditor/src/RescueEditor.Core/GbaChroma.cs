@@ -11,6 +11,9 @@ public static class GbaChroma
         // Teal key used by graphics/ax dumps.
         if (r <= 8 && g is >= 120 and <= 135 && b is >= 145 and <= 160)
             return true;
+        // Bright cyan used by some effect dumps / chroma fills.
+        if (r <= 8 && g >= 248 && b >= 248)
+            return true;
         // Magenta key used by some portrait/effect dumps.
         if (r >= 248 && g <= 8 && b >= 248)
             return true;
@@ -56,5 +59,42 @@ public static class GbaChroma
             }
         }
         return -1;
+    }
+
+    /// <summary>
+    /// Ground contact point inside the sheet: average opaque X on the bottom content
+    /// rows, plus the bottom row index. Accounts for horizontal flip (east facings).
+    /// </summary>
+    public static bool TryGetFootAnchor(RgbaImage image, bool flipH, out int footX, out int footY)
+    {
+        footX = image.Width / 2;
+        footY = image.Height - 1;
+        var bottom = ContentBottom(image);
+        if (bottom < 0)
+            return false;
+
+        footY = bottom;
+        // Average opaque pixels on the lowest few solid rows (toes / heels).
+        var y0 = Math.Max(0, bottom - 2);
+        long sumX = 0;
+        var count = 0;
+        for (var y = y0; y <= bottom; y++)
+        {
+            var row = y * image.Width * 4;
+            for (var x = 0; x < image.Width; x++)
+            {
+                if (image.Pixels[row + x * 4 + 3] <= 16)
+                    continue;
+                sumX += x;
+                count++;
+            }
+        }
+
+        if (count == 0)
+            return false;
+
+        var cx = (int)Math.Round(sumX / (double)count);
+        footX = flipH ? image.Width - 1 - cx : cx;
+        return true;
     }
 }

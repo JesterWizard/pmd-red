@@ -383,15 +383,18 @@ public sealed class ScenePlaySession
         var iy = (int)Math.Round(pixelY);
         GbaDialogueHud.DrawDropShadow(image, ix, iy);
 
-        // AX PNG dumps pad below the feet with opaque teal chroma — plant the
-        // last opaque row on the ground, not the sheet's bottom edge.
-        var contentBottom = GbaChroma.ContentBottom(sprite);
-        if (contentBottom < 0)
-            contentBottom = sprite.Height - 1;
-        var x = ix - sprite.Width / 2;
-        var y = iy - (contentBottom + 1);
+        // Plant the sprite so its visual feet (not the sheet center) sit on the
+        // shadow — AX frames are often off-center, and east facings flip them.
+        if (!GbaChroma.TryGetFootAnchor(sprite, flip, out var footX, out var footY))
+        {
+            footX = sprite.Width / 2;
+            footY = sprite.Height - 1;
+        }
+        var x = ix - footX;
+        var y = iy - footY;
+        // Sleep poses sit lower in the sheet; keep the body from clipping into the ground.
         if (anim == GroundScriptVm.AnimSleep)
-            y = iy - Math.Max(12, (contentBottom * 2) / 3);
+            y = iy - Math.Max(10, (footY * 2) / 3);
         SceneCompositor.BlitSpritePublic(image, sprite, x, y, flip);
 
         // Sleep Z markers (AX sleep has no efob; draw light Zs like retail flavor).
@@ -404,16 +407,20 @@ public sealed class ScenePlaySession
 
         if (_script is not null &&
             _effects is not null &&
-            _script.TryGetActiveEffect(liveIndex, out var effectId))
+            _script.TryGetActiveEffect(liveIndex, out var effectId, out var effectAge))
         {
-            var fx = _effects.TryGet(effectId);
-            if (fx is not null)
+            var frame = _effects.TryGetFrame(effectId, effectAge);
+            if (frame is { } fx)
             {
-                const int scale = 2;
-                var head = y + Math.Max(0, GbaChroma.ContentTop(sprite));
-                var fxX = ix - (fx.Width * scale) / 2 + (flip ? -2 : 2);
-                var fxY = head - fx.Height * scale - 1;
-                SceneCompositor.BlitSpriteScaledPublic(image, fx, fxX, fxY, scale);
+                var contentTop = GbaChroma.ContentTop(sprite);
+                if (contentTop < 0)
+                    contentTop = 0;
+                // Effect origin sits just above the sprite's content top (head).
+                var headX = ix;
+                var headY = y + contentTop + 2;
+                var fxX = headX - fx.AnchorX;
+                var fxY = headY - fx.AnchorY;
+                SceneCompositor.BlitSpritePublic(image, fx.Image, fxX, fxY, flipH: false);
             }
         }
     }
@@ -512,11 +519,13 @@ public sealed class ScenePlaySession
         GbaDialogueHud.DrawDropShadow(image, drawX, drawY);
         if (sprite is not null)
         {
-            var contentBottom = GbaChroma.ContentBottom(sprite);
-            if (contentBottom < 0)
-                contentBottom = sprite.Height - 1;
+            if (!GbaChroma.TryGetFootAnchor(sprite, flipH: false, out var footX, out var footY))
+            {
+                footX = sprite.Width / 2;
+                footY = sprite.Height - 1;
+            }
             SceneCompositor.BlitSpritePublic(
-                image, sprite, drawX - sprite.Width / 2, drawY - (contentBottom + 1));
+                image, sprite, drawX - footX, drawY - footY);
             return;
         }
 
