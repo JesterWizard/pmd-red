@@ -2,7 +2,9 @@
 #include "bg_control.h"
 #include "cpu.h"
 #include "graphics_memory.h"
+#include "ground_bg.h"
 #include "ground_bg_tile_stream.h"
+#include "structs/str_ground_bg.h"
 #include "text_1.h"
 
 EWRAM_DATA BGControlStruct gBG0Control = {0};
@@ -147,10 +149,9 @@ void SetGroundMap8bpp(bool8 enabled)
 }
 
 /* Café explore: UI maps at SB 6/7 → window tiles only 128..383 (256).
- * Large menus: hide art BGs and load window tiles from tile 2 into low VRAM
- * (0x06000000+, formerly art maps at SB 0/1) — same placement as vanilla UI —
- * so stacks through SB 6 (tile 384) have ~382 tiles. Font/chrome at 0x4F00+
- * and art tile VRAM at 0x6000+ stay untouched. */
+ * Large menus: park art tilemaps at SB 30/31 (streamer pool capped at 704),
+ * reclaim SB 0/1 as window tile gfx from tile 2, keep BG2/BG3 visible. Blank
+ * only the menu rectangles on the art layers (opaque UI covers them). */
 void SetGroundMap8bppWideUi(bool8 enabled)
 {
     if (!gGroundMap8bpp) {
@@ -160,29 +161,42 @@ void SetGroundMap8bppWideUi(bool8 enabled)
     if (gGroundMap8bppWideUi == enabled)
         return;
 
-    gGroundMap8bppWideUi = enabled;
+    if (enabled) {
+        GroundBgTileStream_SetCafeWideUiSlots(TRUE);
+        if (gGroundMapDungeon_3001B70 != NULL) {
+            sub_80A4764(gGroundMapDungeon_3001B70);
+            GroundBgTileStream_FlushUploads();
+        }
+        /* Publish remapped art at SB 30/31, then free SB 0/1 for windows. */
+        CpuCopy(BG_SCREEN_ADDR(30), gBgTilemaps[2], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
+        REG_BG2CNT = (REG_BG2CNT & ~0x1F00) | BGCNT_SCREENBASE(30);
+        REG_BG3CNT = (REG_BG3CNT & ~0x1F00) | BGCNT_SCREENBASE(31);
+        CpuFill16(0, (void *)BG_SCREEN_ADDR(0), BG_SCREEN_SIZE);
+        CpuFill16(0, (void *)BG_SCREEN_ADDR(1), BG_SCREEN_SIZE);
+        gGroundMap8bppWideUi = TRUE;
+    }
+    else {
+        gGroundMap8bppWideUi = FALSE;
+        REG_BG2CNT = (REG_BG2CNT & ~0x1F00) | BGCNT_SCREENBASE(0);
+        REG_BG3CNT = (REG_BG3CNT & ~0x1F00) | BGCNT_SCREENBASE(1);
+        GroundBgTileStream_SetCafeWideUiSlots(FALSE);
+        if (gGroundMapDungeon_3001B70 != NULL) {
+            sub_80A4764(gGroundMapDungeon_3001B70);
+            GroundBgTileStream_FlushUploads();
+        }
+        CpuCopy(BG_SCREEN_ADDR(0), gBgTilemaps[2], BG_SCREEN_SIZE);
+        CpuCopy(BG_SCREEN_ADDR(1), gBgTilemaps[3], BG_SCREEN_SIZE);
+        CpuFill16(0, (void *)BG_SCREEN_ADDR(30), BG_SCREEN_SIZE);
+        CpuFill16(0, (void *)BG_SCREEN_ADDR(31), BG_SCREEN_SIZE);
+    }
+
     CpuClear(gBgTilemaps[0], BG_SCREEN_SIZE);
     CpuClear(gBgTilemaps[1], BG_SCREEN_SIZE);
-    /* UI maps stay at SB 6/7 in both modes. */
     CpuCopy(BG_SCREEN_ADDR(6), gBgTilemaps[0], BG_SCREEN_SIZE);
     CpuCopy(BG_SCREEN_ADDR(7), gBgTilemaps[1], BG_SCREEN_SIZE);
     REG_BG0CNT = (REG_BG0CNT & ~0x1F00) | BGCNT_SCREENBASE(6);
     REG_BG1CNT = (REG_BG1CNT & ~0x1F00) | BGCNT_SCREENBASE(7);
-
-    if (enabled) {
-        /* Reclaim SB 0/1 bytes as window tile gfx; hide art layers. */
-        CpuClear(gBgTilemaps[2], BG_SCREEN_SIZE);
-        CpuClear(gBgTilemaps[3], BG_SCREEN_SIZE);
-        CpuCopy(BG_SCREEN_ADDR(0), gBgTilemaps[2], BG_SCREEN_SIZE);
-        CpuCopy(BG_SCREEN_ADDR(1), gBgTilemaps[3], BG_SCREEN_SIZE);
-        SetBGOBJEnableFlags(0xC);
-    }
-    else {
-        /* Low VRAM held window tiles — rebuild art maps + streamer cache. */
-        GroundBgTileStream_Invalidate();
-        ReloadFontSheet();
-        SetBGOBJEnableFlags(0);
-    }
 }
 
 /* Café keeps BG0 off while exploring; text windows may turn it back on. */

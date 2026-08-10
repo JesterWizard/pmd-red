@@ -268,8 +268,8 @@ static void ShowWindowsInternal(const WindowTemplates *winTemplates, bool8 a1, b
     s32 i;
     s32 neededTiles = 0;
     /* Café explore: window gfx at tile 128 (past art maps SB 0/1), UI at SB 6/7
-     * → 256 tiles. Large menus hide art and start at tile 2 into low VRAM
-     * (0x06000000.., same as vanilla) up to SB 6 (~382 tiles). */
+     * → 256 tiles. Large menus park art at SB 30/31 and start windows at tile 2
+     * in low VRAM (0x06000000+); art stays visible around the menus. */
     s32 startTileNum;
 
     if (winTemplates == NULL)
@@ -282,6 +282,34 @@ static void ShowWindowsInternal(const WindowTemplates *winTemplates, bool8 a1, b
         }
         SetGroundMap8bppWideUi(neededTiles > 256);
         startTileNum = gGroundMap8bppWideUi ? 2 : 128;
+        /* Transparent art under menu rects — frees those streamer tiles; UI covers the hole. */
+        if (gGroundMap8bppWideUi) {
+            for (i = 0; i < MAX_WINDOWS; i++) {
+                const WindowTemplate *w = &winTemplates->id[i];
+                s32 x, y, x2, y2;
+
+                if (w->width == 0)
+                    continue;
+                x2 = w->pos.x + w->width;
+                y2 = w->pos.y + w->height;
+                if (x2 > 32)
+                    x2 = 32;
+                if (y2 > 32)
+                    y2 = 32;
+                for (y = w->pos.y; y < y2; y++) {
+                    if (y < 0)
+                        continue;
+                    for (x = w->pos.x; x < x2; x++) {
+                        if (x < 0)
+                            continue;
+                        gBgTilemaps[2][y][x] = 0;
+                        gBgTilemaps[3][y][x] = 0;
+                    }
+                }
+            }
+            CpuCopy(BG_SCREEN_ADDR(30), gBgTilemaps[2], BG_SCREEN_SIZE);
+            CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
+        }
     }
     else {
         startTileNum = 2;

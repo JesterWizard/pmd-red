@@ -19,6 +19,8 @@
 
 #define GROUND_STREAM_8BPP_FIRST_SLOT 128
 #define GROUND_STREAM_8BPP_VRAM_SLOTS 768 /* absolute end; free pool = 128..767 */
+/* Wide-UI: art maps park at SB 30/31 (CHARBASE1 slots 704–767). */
+#define GROUND_STREAM_8BPP_MENU_MAP_SLOTS 704
 #define GROUND_STREAM_8BPP_VRAM_BASE (VRAM + 0x4000)
 #define GROUND_STREAM_8BPP_TILE_VRAM_BASE \
     (GROUND_STREAM_8BPP_VRAM_BASE + GROUND_STREAM_8BPP_FIRST_SLOT * 64) /* 0x6000 */
@@ -41,6 +43,9 @@ bool8 GroundBgTileStream_NeedsRebuild(GroundBg *groundBg);
 /* Force the next ground update to clear/render/remap. Also resets the slot
  * cache so a discarded provisional Remap cannot poison the first real one. */
 void GroundBgTileStream_Invalidate(void);
+
+/* Café wide-UI: shrink/restore the 8bpp slot pool around SB 30/31 map parking. */
+void GroundBgTileStream_SetCafeWideUiSlots(bool8 menuMode);
 
 void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg);
 

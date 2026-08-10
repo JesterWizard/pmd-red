@@ -415,14 +415,18 @@ static void UpdateBGControlRegisters(void)
     }
     else if (gGroundMap8bpp) {
         /* Spinda Café: dual-layer 8bpp art on BG2+BG3.
-         * Art tiles CHARBASE1 indices 128..767 @ 0x6000–0xFFFF (font/chrome at
-         * 0x4F00–0x5FFF preserved). Art maps SB 0/1 (0x0000–0x0FFF).
-         * Explore: window gfx tile 128+, UI SB 6/7. Wide-UI menus: art hidden,
-         * window gfx from tile 2 in low VRAM; UI stays SB 6/7. */
+         * Explore: art maps SB 0/1, window gfx tile 128+, UI SB 6/7.
+         * Wide-UI: art maps SB 30/31, window gfx from tile 2 in low VRAM. */
         REG_BG0CNT = BGCNT_Priority[BG0] | BGCNT_SCREENBASE(6) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
         REG_BG1CNT = BGCNT_Priority[BG1] | BGCNT_SCREENBASE(7) | BGCNT_CHARBASE(0) | BGCNT_WRAP;
-        REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(0) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
-        REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(1) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
+        if (gGroundMap8bppWideUi) {
+            REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(30) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
+            REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(31) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
+        }
+        else {
+            REG_BG2CNT = BGCNT_Priority[BG2] | BGCNT_SCREENBASE(0) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
+            REG_BG3CNT = BGCNT_Priority[BG3] | BGCNT_SCREENBASE(1) | BGCNT_CHARBASE(1) | BGCNT_256COLOR | BGCNT_WRAP;
+        }
     }
     else {
         REG_BG0CNT = BGCNT_Priority[BG0] | BGCNT_SCREENBASE(12) | BGCNT_CHARBASE(0) | BGCNT_WRAP; // 0x2C00

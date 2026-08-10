@@ -228,7 +228,8 @@ void DoScheduledMemCopies(void)
         if (gTitleBg8bpp)
             CpuCopy(BG_SCREEN_ADDR(8), gBgTilemaps[2], BG_SCREEN_SIZE);
         else if (gGroundMap8bpp)
-            CpuCopy(BG_SCREEN_ADDR(0), gBgTilemaps[2], BG_SCREEN_SIZE);
+            CpuCopy(gGroundMap8bppWideUi ? BG_SCREEN_ADDR(30) : BG_SCREEN_ADDR(0),
+                    gBgTilemaps[2], BG_SCREEN_SIZE);
         else
             CpuCopy(BG_SCREEN_ADDR(14), gBgTilemaps[2], BG_SCREEN_SIZE);
     }
@@ -237,7 +238,8 @@ void DoScheduledMemCopies(void)
         if (gTitleBg8bpp)
             CpuCopy(BG_SCREEN_ADDR(31), gBgTilemaps[3], BG_SCREEN_SIZE);
         else if (gGroundMap8bpp)
-            CpuCopy(BG_SCREEN_ADDR(1), gBgTilemaps[3], BG_SCREEN_SIZE);
+            CpuCopy(gGroundMap8bppWideUi ? BG_SCREEN_ADDR(31) : BG_SCREEN_ADDR(1),
+                    gBgTilemaps[3], BG_SCREEN_SIZE);
         else
             CpuCopy(BG_SCREEN_ADDR(15), gBgTilemaps[3], BG_SCREEN_SIZE);
     }

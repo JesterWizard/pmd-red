@@ -1,6 +1,5 @@
 #include "global.h"
 #include "globaldata.h"
-#include "bg_control.h"
 #include "ground_bg_tile_stream.h"
 #include "cpu.h"
 #include "memory.h"
@@ -40,6 +39,7 @@ static EWRAM_DATA s16 sCachedTileY = -1;
 static EWRAM_DATA u16 sUploadSlot[STREAM_MAX_UPLOADS];
 static EWRAM_DATA u16 sUploadSource[STREAM_MAX_UPLOADS];
 static EWRAM_DATA u16 sUploadCount = 0;
+static EWRAM_DATA s16 sSavedVramSlots = 0;
 
 void GroundBgTileStream_Reset(void)
 {
@@ -56,6 +56,7 @@ void GroundBgTileStream_Reset(void)
     sFirstSlot = 1;
     sNumTiles = 0;
     sVramSlots = 0;
+    sSavedVramSlots = 0;
     sFreeCount = 0;
     sClock = 1;
     sOnScreenClock = 0;
@@ -237,11 +238,6 @@ void GroundBgTileStream_FlushUploads(void)
 
     if (!sActive || sUploadCount == 0)
         return;
-    /* Wide-UI has reclaimed low VRAM for window tiles and hidden art; skip. */
-    if (gGroundMap8bppWideUi) {
-        sUploadCount = 0;
-        return;
-    }
 
     for (i = 0; i < sUploadCount; i++) {
         u16 sourceId = sUploadSource[i];
@@ -443,6 +439,24 @@ void GroundBgTileStream_Invalidate(void)
         sClock = 1;
         sClockHand = sFirstSlot;
     }
+}
+
+void GroundBgTileStream_SetCafeWideUiSlots(bool8 menuMode)
+{
+    if (!sActive || sBppMode != GROUND_STREAM_8BPP)
+        return;
+
+    if (menuMode) {
+        if (sSavedVramSlots == 0)
+            sSavedVramSlots = sVramSlots;
+        if (sVramSlots > GROUND_STREAM_8BPP_MENU_MAP_SLOTS)
+            sVramSlots = GROUND_STREAM_8BPP_MENU_MAP_SLOTS;
+    }
+    else if (sSavedVramSlots != 0) {
+        sVramSlots = sSavedVramSlots;
+        sSavedVramSlots = 0;
+    }
+    GroundBgTileStream_Invalidate();
 }
 
 void GroundBgTileStream_RemapVisibleTilemaps(GroundBg *groundBg)
