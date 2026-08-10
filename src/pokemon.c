@@ -1137,13 +1137,8 @@ void PokemonToDungeonMon(DungeonMon *dst, Pokemon *src, s32 recruitedPokemonId)
 void DungeonMonToRecruitedPokemon(s32 id, DungeonMon* src)
 {
     Pokemon *dst = &gRecruitedPokemonRef->pokemon[id];
-    /* Temporary Make Leader only updates dungeonTeam; keep the saved story leader
-     * on writeback until the postgame Make Leader quest. */
-    bool8 savedIsTeamLeader = dst->isTeamLeader;
 
     DungeonMonToPokemon(dst, src);
-    if (gRuntimeConfig.party_leader_switch && !CheckQuest(QUEST_CAN_CHANGE_LEADER))
-        dst->isTeamLeader = savedIsTeamLeader;
 }
 
 void DungeonMonToPokemon(Pokemon* dst, DungeonMon* src)

@@ -80,7 +80,7 @@ static bool8 CanSendDungeonMemberHome(EntityInfo *info)
     if (gDungeon->unk644.unk19)
         return FALSE;
     /* Hero/partner cannot be sent home before the Make Leader quest, including when
-     * party_leader_switch temporarily moved dungeon leadership to a recruit. */
+     * party_leader_switch moved dungeon leadership to a recruit. */
     if (!gDungeon->unk644.canChangeLeader
         && (info->joinedAt.id == DUNGEON_JOIN_LOCATION_PARTNER
             || info->joinedAt.id == DUNGEON_JOIN_LOCATION_LEADER))

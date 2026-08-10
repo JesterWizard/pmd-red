@@ -1069,9 +1069,10 @@ void sub_805F02C(void)
         DisplayDungeonLoggableMessageTrue_Async(r7, gUnknown_80F9C2C);
     }
     else {
-        /* Persist to save only after the postgame Make Leader quest;
-         * party_leader_switch alone is dungeon-temporary until then. */
-        bool8 persistLeader = CheckQuest(QUEST_CAN_CHANGE_LEADER);
+        /* Persist to save when party_leader_switch is on, or after the
+         * postgame Make Leader quest (vanilla unlock). */
+        bool8 persistLeader = gRuntimeConfig.party_leader_switch
+            || CheckQuest(QUEST_CAN_CHANGE_LEADER);
 
         gDungeon->unk644.emptyBellyAlert = 0;
         r8->isTeamLeader = TRUE;

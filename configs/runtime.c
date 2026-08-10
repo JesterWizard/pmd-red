@@ -15,7 +15,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .pmd2_rescue_points = TRUE, /* TRUE = show rescue points beside job difficulty; FALSE = vanilla */
     .pmd2_send_home = TRUE, /* TRUE = Team "Send Home" for new recruits; FALSE = vanilla Farewell */
     .custom_graphics = TRUE, /* TRUE = PMD2 Poké coin + cyan money; FALSE = vanilla */
-    .party_leader_switch = TRUE, /* TRUE = dungeon Make Leader anytime (temp until postgame); FALSE = vanilla */
+    .party_leader_switch = TRUE, /* TRUE = dungeon Make Leader anytime (persists); FALSE = vanilla */
     .show_dungeon_portraits = TRUE, /* TRUE = portraits on ally talk, level-up, job thank-you; FALSE = vanilla */
     .bank_interest_percent = 5, /* Percent interest on savings per dungeon clear; 0 = disabled */
     .pmd2_rank_rewards = TRUE, /* TRUE = bag pages + storage by rank; FALSE = vanilla bag 20/10 */

@@ -35,7 +35,7 @@ typedef struct {
     u8 custom_graphics;
     /* PMD2 Latin dialogue/UI font (Explorers glyph set); else vanilla */
     u8 pmd2_font;
-    /* Dungeon Make Leader anytime; temporary until exit unless postgame */
+    /* Dungeon Make Leader anytime; persists to save */
     u8 party_leader_switch;
     /* Show neutral portraits in dungeon (ally talk, level-up, job thank-you) if available */
     u8 show_dungeon_portraits;

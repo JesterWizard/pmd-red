@@ -71,7 +71,7 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       &gRuntimeConfig.pmd2_font, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Leader swap"), _("Party Leader Switch"),
-      _("Allows Make Leader anytime in a\ndungeon. Temporary until exit\nunless postgame."),
+      _("Allows Make Leader anytime in a\ndungeon. The new leader is saved."),
       &gRuntimeConfig.party_leader_switch, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Portraits"), _("Dungeon Portraits"),

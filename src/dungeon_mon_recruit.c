@@ -217,8 +217,7 @@ bool8 TryCommitNewRecruitToFriendArea(DungeonMon *mon)
         return FALSE;
 
     DungeonMonToPokemon(&pokemon, mon);
-    /* New friend-area commits are never the story leader (temp Make Leader is
-     * dungeon-only until the postgame quest). */
+    /* New friend-area commits are never the team leader. */
     pokemon.isTeamLeader = FALSE;
     pokemon.flags &= ~(POKEMON_FLAG_ON_TEAM | POKEMON_FLAG_x4000 | POKEMON_FLAG_x8000);
     pokemon.flags |= POKEMON_FLAG_EXISTS;

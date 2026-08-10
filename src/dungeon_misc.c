@@ -413,16 +413,6 @@ void sub_8068BDC(bool8 a0)
             }
         }
     }
-
-    /* Temporary Make Leader keeps pokemon[].isTeamLeader on the story leader while
-     * dungeonTeam tracks the dungeon-only leader. Resync so save/Poke2s and the next
-     * entry do not keep a recruit flagged as leader after exit. */
-    for (id = 0; id < MAX_TEAM_MEMBERS; id++) {
-        DungeonMon *monPtr = &gRecruitedPokemonRef->dungeonTeam[id];
-
-        if (DungeonMonExists(monPtr) && sub_806A58C(monPtr->recruitedPokemonId))
-            monPtr->isTeamLeader = gRecruitedPokemonRef->pokemon[monPtr->recruitedPokemonId].isTeamLeader;
-    }
 }
 
 void sub_8068F28(void)
@@ -638,7 +628,7 @@ void HandleFaint_Async(Entity *entity, s32 dungeonExitReason_, Entity *param_3)
                 uVar10 = TRUE;
             }
             /* Before the Make Leader quest, hero/partner stay on the team even if
-             * party_leader_switch made someone else the dungeon leader. */
+             * party_leader_switch made someone else the leader. */
             if (!gDungeon->unk644.canChangeLeader
                 && (entInfo->joinedAt.id == DUNGEON_JOIN_LOCATION_PARTNER
                     || entInfo->joinedAt.id == DUNGEON_JOIN_LOCATION_LEADER)) {
