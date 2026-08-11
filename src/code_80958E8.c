@@ -33,6 +33,17 @@ static const u8 sPossibleMissionTypes[8] = {
 
 static EWRAM_DATA unkStruct_203B490 sUnknown_2039448 = { 0 };
 
+/* Built once per GeneratePelipperJobs / mailbox fill — avoids re-scanning
+ * MONSTER_MAX / dungeon unlocks / item LUTs on every slot. */
+static EWRAM_DATA s16 sMailJobSpecies[MONSTER_MAX] = { 0 };
+static EWRAM_DATA s32 sMailJobSpeciesCount = { 0 };
+static EWRAM_DATA u8 sMailJobDungeons[64] = { 0 };
+static EWRAM_DATA s32 sMailJobDungeonCount = { 0 };
+static EWRAM_DATA u8 sMailJobItemStack[NUMBER_OF_ITEM_IDS] = { 0 };
+static EWRAM_DATA s32 sMailJobItemCount = { 0 };
+static EWRAM_DATA u8 sMailJobItemDungeon = { 0xFF };
+static EWRAM_DATA bool8 sMailJobGenActive = { 0 };
+
 EWRAM_INIT unkStruct_203B490 *gUnknown_203B490 = { NULL };
 
 static bool8 sub_8095E38(WonderMail *mail, u8 dungeon, u32 floor, u8 param_4);
@@ -43,6 +54,8 @@ static bool8 sub_8096E80(u8);
 static u8 sub_8095E78(void);
 static bool8 sub_80963B4(void);
 static s32 CalculateMailChecksum(WonderMail *mail);
+static void BeginMailJobGeneration(void);
+static void EndMailJobGeneration(void);
 
 void LoadMailInfo(void)
 {
@@ -176,11 +189,11 @@ bool8 ValidateWonderMail(WonderMail *data)
 static bool8 GenerateMailJobInfo(WonderMail *mail)
 {
     s32 missionType;
-    s32 i;
     s32 rand;
-    s32 numPokemon;
-    s16 speciesStack[MONSTER_MAX];
     s32 itemCount;
+
+    if (!sMailJobGenActive)
+        BeginMailJobGeneration();
 
     if (!GenerateMailJobDungeonInfo(mail)) {
         return FALSE;
@@ -197,18 +210,10 @@ static bool8 GenerateMailJobInfo(WonderMail *mail)
     }
     mail->unk2 = 0;
     mail->dungeonSeed.seed = Rand32Bit() & 0xffffff;
-    numPokemon = 0;
 
-    for (i = 1; i < MONSTER_MAX; i++) {
-        if (sub_803C110(i) != 0) {
-            speciesStack[numPokemon] = i;
-            numPokemon++;
-        }
-    }
-
-    if (numPokemon != 0) {
-        mail->clientSpecies = speciesStack[RandInt(numPokemon)];
-        mail->targetSpecies = speciesStack[RandInt(numPokemon)];
+    if (sMailJobSpeciesCount != 0) {
+        mail->clientSpecies = sMailJobSpecies[RandInt(sMailJobSpeciesCount)];
+        mail->targetSpecies = sMailJobSpecies[RandInt(sMailJobSpeciesCount)];
     }
     else {
         mail->clientSpecies = 0x10;
@@ -280,7 +285,6 @@ static bool8 GenerateMailJobDungeonInfo(WonderMail *mail)
   s32 index;
   u8 dungeon;
   bool8 flag;
-  u8 dungeonStack [64];
   s32 counter_1;
   s32 cap;
   s32 floor_1;
@@ -288,17 +292,14 @@ static bool8 GenerateMailJobDungeonInfo(WonderMail *mail)
   s32 floorCount;
   DungeonLocation dungeonLoc;
 
-
-  cap = sub_80A29B0(dungeonStack);
+  cap = sMailJobDungeonCount;
   if (cap == 0) {
-    dungeonStack[0] = DUNGEON_TINY_WOODS;
-    dungeonStack[1] = DUNGEON_THUNDERWAVE_CAVE;
-    cap = 2;
+    return FALSE;
   }
   counter = RandInt(cap);
   counter_1 = counter;
   do {
-    dungeon = dungeonStack[counter];
+    dungeon = sMailJobDungeons[counter];
     floorCount = GetDungeonFloorCount(dungeon);
     halfFloorCount = floorCount / 2;
     floor = RandRange(halfFloorCount, floorCount);
@@ -320,7 +321,8 @@ static bool8 GenerateMailJobDungeonInfo(WonderMail *mail)
 
       for(index = 0; index < MAX_PELIPPER_BOARD_JOBS; index++)
       {
-        if (sub_8095E38(&gUnknown_203B490->pelipperBoardJobs[index],dungeon,floor,1)) {          flag = FALSE;
+        if (sub_8095E38(&gUnknown_203B490->pelipperBoardJobs[index],dungeon,floor,1)) {
+          flag = FALSE;
         }
       }
 
@@ -417,7 +419,10 @@ static u8 sub_8095F28(u8 param_1)
 {
   s32 itemID;
   s32 counter;
-  u8 itemStack [NUMBER_OF_ITEM_IDS];
+
+  if (param_1 == sMailJobItemDungeon && sMailJobItemCount > 0) {
+    return sMailJobItemStack[RandInt(sMailJobItemCount)];
+  }
 
   counter = 0;
   for(itemID = ITEM_STICK; itemID < NUMBER_OF_ITEM_IDS; itemID++)
@@ -425,17 +430,53 @@ static u8 sub_8095F28(u8 param_1)
     if ((param_1 == 0x63) ||
        (xxx_bit_lut_lookup_8091E50(param_1, itemID) != 0)) {
       if ((!IsThrownItem(itemID)) && (IsNotMoneyOrUsedTMItem(itemID))) {
-        itemStack[counter] = itemID;
+        sMailJobItemStack[counter] = itemID;
         counter++;
       }
     }
   }
+  sMailJobItemDungeon = param_1;
+  sMailJobItemCount = counter;
   if (counter == 0) {
     return ITEM_NOTHING;
   }
   else {
-    return itemStack[RandInt(counter)];
+    return sMailJobItemStack[RandInt(counter)];
   }
+}
+
+static void BeginMailJobGeneration(void)
+{
+  s32 i;
+
+  if (sMailJobGenActive)
+    return;
+
+  sMailJobSpeciesCount = 0;
+  for (i = 1; i < MONSTER_MAX; i++) {
+    if (sub_803C110(i) != 0) {
+      sMailJobSpecies[sMailJobSpeciesCount] = i;
+      sMailJobSpeciesCount++;
+    }
+  }
+
+  sMailJobDungeonCount = sub_80A29B0(sMailJobDungeons);
+  if (sMailJobDungeonCount == 0) {
+    sMailJobDungeons[0] = DUNGEON_TINY_WOODS;
+    sMailJobDungeons[1] = DUNGEON_THUNDERWAVE_CAVE;
+    sMailJobDungeonCount = 2;
+  }
+
+  sMailJobItemDungeon = 0xFF;
+  sMailJobItemCount = 0;
+  sMailJobGenActive = TRUE;
+}
+
+static void EndMailJobGeneration(void)
+{
+  sMailJobItemDungeon = 0xFF;
+  sMailJobItemCount = 0;
+  sMailJobGenActive = FALSE;
 }
 
 s32 CountFilledMailboxSlots(void)
@@ -619,6 +660,7 @@ _slot:
     slot->dungeonSeed.location.floor = floor;
     goto _flag;
 _0809638E:
+    BeginMailJobGeneration();
     for(; num <= index; num++)
     {
         slot = GetMailboxSlotInfo(num);
@@ -648,6 +690,7 @@ _flag:
             }
         } else break;
     }
+    EndMailJobGeneration();
 _08096392:
     if(sub_80963B4())
         flag = TRUE;
@@ -921,10 +964,12 @@ void GeneratePelipperJobs(void)
     mail->friendAreaReward = 0;
     index++;
   }
+  BeginMailJobGeneration();
   for (; index <= range; index++) {
     if (!GenerateMailJobInfo(&gUnknown_203B490->pelipperBoardJobs[index])) break;
     gUnknown_203B490->pelipperBoardJobs[index].rewardType = RandRange(MONEY, BLANK_4);
   }
+  EndMailJobGeneration();
   ShiftPelipperJobsDown();
   SortPelipperJobs();
 }
