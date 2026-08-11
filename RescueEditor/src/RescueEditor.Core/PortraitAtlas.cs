@@ -49,7 +49,10 @@ public sealed class PortraitAtlas
             image = TryRenderRom(byId, emotionName);
 
         if (image is not null)
+        {
             GbaChroma.KeyOut(image);
+            PortraitCleanup.Despeckle(image);
+        }
 
         _cache[key] = image;
         return image;

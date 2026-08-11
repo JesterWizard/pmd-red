@@ -716,6 +716,47 @@ public sealed class ScenePlayTests
     }
 
     [Fact]
+    public void QuietDialogueTextBudgetMatchesVanillaScriptLines()
+    {
+        // Retail MSG_QUIET uses the full 26-tile box (~200px text) with no thought icon.
+        // This Squirtle Rock line is one scripted row; soft-wrap must not orphan "time".
+        var font = PixelFont.Load(null);
+        var line = "...That was so sudden, there was no time";
+        var budget = GbaDialogueHud.TextWidthBudget(thoughtIcon: false, speechIcon: false);
+        Assert.True(budget >= font.Measure(line), $"budget {budget} < line {font.Measure(line)}");
+        var (chunk, remainder) = DialogueRuns.TakeWidth(font, line, budget);
+        Assert.Equal(line, DialogueRuns.PlainText(chunk));
+        Assert.Equal("", DialogueRuns.PlainText(remainder));
+    }
+
+    [Fact]
+    public void DialogueBoxIsNearlyFullCameraWidth()
+    {
+        // Scene Play uses a wider box than retail 26 tiles so PMD2 glyphs + speaker
+        // names wrap closer to how the line reads in-game.
+        Assert.Equal(4, GbaDialogueHud.BoxX);
+        Assert.Equal(232, GbaDialogueHud.BoxW);
+        Assert.Equal(40, GbaDialogueHud.BoxH);
+        Assert.True(GbaDialogueHud.BoxX * 2 + GbaDialogueHud.BoxW <= 240);
+    }
+
+    [Fact]
+    public void NpcDialogueWithLongSpeakerKeepsScriptedLineIntact()
+    {
+        // MSG_NPC prepends "Butterfree: "; PMD2 glyphs make name+line wider than the
+        // GBA screen, so the speaker must not steal wrap budget from the script line.
+        var font = PixelFont.Load(null);
+        var speaker = "Butterfree:";
+        var line = "I'm sorry, I don't know how I could ever";
+        var layout = GbaDialogueHud.PlanBoxTextLayout(font, speaker, line, thoughtIcon: false, speechIcon: false);
+        Assert.True(layout.SpeakerOnOwnLine);
+        Assert.True(layout.BodyWidthBudget >= font.Measure(line));
+        var (chunk, remainder) = DialogueRuns.TakeWidth(font, line, layout.BodyWidthBudget);
+        Assert.Equal(line, DialogueRuns.PlainText(chunk));
+        Assert.Equal("", DialogueRuns.PlainText(remainder));
+    }
+
+    [Fact]
     public void AppearanceOnlyOverridesDynamicZeroSpeciesTypes()
     {
         var baserom = FindUpwards("baserom.gba");

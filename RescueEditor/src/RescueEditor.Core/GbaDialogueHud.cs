@@ -14,15 +14,89 @@ public enum PlayDialogueMode
 /// <summary>Retail-style dialogue + portrait chrome for the 240×160 Scene Play view.</summary>
 public static class GbaDialogueHud
 {
-    // Window template: pos (2,15) size 26×5 tiles → pixels.
-    // Retail textboxes fit 3 lines of dialogue inside this 40px-tall window.
-    public const int BoxX = 16;
+    // Wider than retail 26-tile (208px) box so PMD2 Latin glyphs + speaker labels
+    // wrap without orphaning scripted lines. 4px gutters keep a thin frame edge.
+    public const int BoxX = 4;
     public const int BoxY = 120;
-    public const int BoxW = 208;
+    public const int BoxW = 232;
     public const int BoxH = 40;
     public const int MaxTextLines = 3;
     public const int LineHeight = 11;
     public const int TextTopPad = 4;
+    /// <summary>Retail dialogue text inset (string_format.c starts at x=4).</summary>
+    public const int TextLeftPad = 4;
+    public const int TextRightPad = 4;
+    private const int IconAdvance = 14;
+
+    public readonly record struct BoxTextLayout(
+        int BodyLeft,
+        int FirstLineX,
+        int BodyWidthBudget,
+        int TextY,
+        bool SpeakerOnOwnLine,
+        string? SpeakerLabel);
+
+    /// <summary>
+    /// Usable soft-wrap budget for box text. Quiet mode matches retail MSG_QUIET
+    /// (no thought icon), so scripted lines that fit in-game are not orphaned.
+    /// </summary>
+    public static int TextWidthBudget(bool thoughtIcon, bool speechIcon)
+    {
+        var budget = BoxW - TextLeftPad - TextRightPad;
+        if (thoughtIcon || speechIcon)
+            budget -= IconAdvance;
+        return budget;
+    }
+
+    /// <summary>
+    /// Decide speaker placement. If name + first script line exceed the box, put the
+    /// speaker on its own line so the body keeps a full-width budget.
+    /// </summary>
+    public static BoxTextLayout PlanBoxTextLayout(
+        PixelFont font,
+        string? speakerLabel,
+        string pageText,
+        bool thoughtIcon,
+        bool speechIcon)
+    {
+        var bodyLeft = BoxX + TextLeftPad;
+        var textY = BoxY + TextTopPad;
+        var useThought = thoughtIcon;
+        var useSpeech = speechIcon && speakerLabel is null && !useThought;
+        var maxWidth = TextWidthBudget(useThought, useSpeech);
+
+        if (useThought || useSpeech)
+            bodyLeft += IconAdvance;
+
+        string? label = null;
+        var speakerOwnLine = false;
+        var firstLineX = bodyLeft;
+        if (!string.IsNullOrEmpty(speakerLabel) && !useThought)
+        {
+            label = speakerLabel.EndsWith(':') ? speakerLabel : speakerLabel + ":";
+            var labelW = font.Measure(label) + 4;
+            var firstScriptLine = FirstScriptLine(pageText);
+            var firstW = DialogueRuns.Measure(font, firstScriptLine);
+            if (labelW + firstW > maxWidth && firstW <= maxWidth)
+            {
+                speakerOwnLine = true;
+                firstLineX = bodyLeft;
+            }
+            else
+            {
+                firstLineX = bodyLeft + labelW;
+            }
+        }
+
+        return new BoxTextLayout(bodyLeft, firstLineX, maxWidth, textY, speakerOwnLine, label);
+    }
+
+    private static string FirstScriptLine(string pageText)
+    {
+        var trim = pageText.TrimStart();
+        var nl = trim.IndexOf('\n');
+        return nl < 0 ? trim : trim[..nl].TrimEnd('\r');
+    }
 
     // Cyan border / navy fill matched to emulator screenshots.
     private static readonly (byte R, byte G, byte B) Border = (0x88, 0xA8, 0xE0);
@@ -97,7 +171,7 @@ public static class GbaDialogueHud
             !string.IsNullOrEmpty(pageText))
         {
             DrawWindow(camera, BoxX, BoxY, BoxW, BoxH);
-            DrawBoxContents(camera, font, pageText, speakerLabel, showSpeakerIcon, quietIcon || mode == PlayDialogueMode.Quiet);
+            DrawBoxContents(camera, font, pageText, speakerLabel, showSpeakerIcon, quietIcon: false);
             if (waitingForAdvance && !showChoiceMenu)
                 DrawContinueArrow(camera, BoxX + BoxW / 2, BoxY + BoxH - 2, animTick);
         }
@@ -196,36 +270,32 @@ public static class GbaDialogueHud
         string pageText,
         string? speakerLabel,
         bool speechIcon,
-        bool thoughtIcon)
+        bool quietIcon)
     {
-        var bodyLeft = BoxX + 8;
-        var textY = BoxY + TextTopPad;
-        var maxWidth = BoxW - 16;
+        var useThought = quietIcon;
+        var useSpeech = speechIcon && speakerLabel is null && !useThought;
+        var layout = PlanBoxTextLayout(font, speakerLabel, pageText, useThought, useSpeech);
+        var bodyLeft = layout.BodyLeft;
+        var textY = layout.TextY;
 
-        if (thoughtIcon)
-        {
-            DrawThoughtIcon(camera, bodyLeft, textY + 2);
-            bodyLeft += 14;
-            maxWidth -= 14;
-        }
-        else if (speechIcon && speakerLabel is null)
-        {
-            DrawSpeechIcon(camera, bodyLeft, textY + 2, yellow: true);
-            bodyLeft += 14;
-            maxWidth -= 14;
-        }
+        if (useThought)
+            DrawThoughtIcon(camera, BoxX + TextLeftPad, textY + 2);
+        else if (useSpeech)
+            DrawSpeechIcon(camera, BoxX + TextLeftPad, textY + 2, yellow: true);
 
-        var firstLineX = bodyLeft;
-        if (!string.IsNullOrEmpty(speakerLabel) && !thoughtIcon)
+        var bodyY = textY;
+        if (!string.IsNullOrEmpty(layout.SpeakerLabel))
         {
-            var label = speakerLabel.EndsWith(':') ? speakerLabel : speakerLabel + ":";
-            font.Draw(camera, label, bodyLeft, textY, Yellow.R, Yellow.G, Yellow.B);
-            firstLineX = bodyLeft + font.Measure(label) + 4;
+            font.Draw(camera, layout.SpeakerLabel, bodyLeft, textY, Yellow.R, Yellow.G, Yellow.B);
+            if (layout.SpeakerOnOwnLine)
+                bodyY = textY + LineHeight;
         }
 
+        var firstLineX = layout.SpeakerOnOwnLine ? bodyLeft : layout.FirstLineX;
+        var maxLines = layout.SpeakerOnOwnLine ? MaxTextLines - 1 : MaxTextLines;
         DrawWrappedRich(
             camera, font, pageText.TrimStart(),
-            firstLineX, bodyLeft, textY, maxWidth);
+            firstLineX, bodyLeft, bodyY, layout.BodyWidthBudget, maxLines);
     }
 
     private static void DrawWrappedRich(
@@ -235,7 +305,8 @@ public static class GbaDialogueHud
         int firstLineX,
         int bodyLeft,
         int y,
-        int maxWidth)
+        int maxWidth,
+        int maxLines = MaxTextLines)
     {
         var lines = SplitRichLines(text);
         var cy = y;
@@ -248,7 +319,7 @@ public static class GbaDialogueHud
             if (widthBudget < 8)
                 widthBudget = maxWidth;
 
-            while (DialogueRuns.PlainText(remaining).Length > 0 && lineIndex < MaxTextLines)
+            while (DialogueRuns.PlainText(remaining).Length > 0 && lineIndex < maxLines)
             {
                 var (chunk, remainder) = DialogueRuns.TakeWidth(font, remaining, widthBudget);
                 DrawRuns(image, font, chunk, x, cy, onBackground: false);
@@ -267,7 +338,7 @@ public static class GbaDialogueHud
                 lineIndex++;
             }
 
-            if (lineIndex >= MaxTextLines)
+            if (lineIndex >= maxLines)
                 break;
         }
     }
