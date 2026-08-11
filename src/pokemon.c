@@ -468,9 +468,9 @@ bool8 sub_808D4B0(void)
     Pokemon *pokeStruct;
     bool8 flag;
 
-    /* keep_allies: skip auto Stand By. Returning FALSE also skips the
-     * DISMISSAL_SALLY_MEMBER* “dispersed to the Friend Area(s)” popup. */
-    if (gRuntimeConfig.keep_allies)
+    /* keep_allies: skip auto Stand By (except fugitive / QUEST_SQUARE_ASLEEP).
+     * Returning FALSE also skips the DISMISSAL disperse popup. */
+    if (gRuntimeConfig.keep_allies && !CheckQuest(QUEST_SQUARE_ASLEEP))
         return FALSE;
 
     pokeStruct = gRecruitedPokemonRef->pokemon;
@@ -491,7 +491,7 @@ bool8 sub_808D500(void)
     Pokemon *pokeStruct;
     bool8 flag;
 
-    if (gRuntimeConfig.keep_allies)
+    if (gRuntimeConfig.keep_allies && !CheckQuest(QUEST_SQUARE_ASLEEP))
         return FALSE;
 
     pokeStruct = gRecruitedPokemonRef->pokemon;

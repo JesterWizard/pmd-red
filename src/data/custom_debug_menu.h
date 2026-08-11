@@ -155,7 +155,7 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       &gRuntimeConfig.damage_preview, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Keep allies"), _("Keep Allies Overnight"),
-      _("Recruited allies stay on the team\novernight instead of auto Stand By.\nAlso skips the Friend Area disperse\npopup. Takes effect next end of day."),
+      _("Recruited allies stay on the team\novernight instead of auto Stand By.\nSkips the Friend Area disperse popup.\nFugitive arc still dismisses as vanilla."),
       &gRuntimeConfig.keep_allies, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Multi-sell"), _("Multi-Select Selling"),

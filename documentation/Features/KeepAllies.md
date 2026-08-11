@@ -31,8 +31,9 @@ Toggle: `gRuntimeConfig.keep_allies` in [`configs/runtime.c`](../../configs/runt
 Still dismissed when:
 
 1. **Explicit Stand By / Farewell** — Friend Area talk, Team menu, or dungeon Farewell (unchanged menu paths).
+2. **Fugitive arc** — while `QUEST_SQUARE_ASLEEP` (main scenario after 11,0 and before 13,0), auto Stand By and the disperse popup run as vanilla so allies are returned to Friend Areas.
 
-`DISMISSAL_SALLY_MEMBER*` only shows “dispersed to the Friend Area(s)” when the dismiss routine reports that someone was removed. With `keep_allies`, that routine returns false immediately, so the popup is skipped.
+`DISMISSAL_SALLY_MEMBER*` only shows “dispersed to the Friend Area(s)” when the dismiss routine reports that someone was removed. With `keep_allies` (outside the fugitive arc), that routine returns false immediately, so the popup is skipped.
 
 ---
 
@@ -49,5 +50,5 @@ Still dismissed when:
 
 ## Limitations
 
-- Story alone cutscenes that call dismiss will also keep allies on the team; most such scenes use fixed `SELECT_ENTITIES` lists and do not spawn sally followers.
+- Story alone cutscenes that call dismiss outside the fugitive arc will also keep allies on the team; most such scenes use fixed `SELECT_ENTITIES` lists and do not spawn sally followers.
 - Partner / leader are never removed by these routines (same as vanilla `sub_808D4B0`).

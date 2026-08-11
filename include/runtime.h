@@ -84,7 +84,8 @@ typedef struct {
     /* Show estimated damage / accuracy / effect while facing an enemy */
     u8 damage_preview;
     /* Keep recruited allies on the team overnight (skip auto Stand By and the
-     * “dispersed to the Friend Area(s)” popup). Stand By / Farewell still work. */
+     * “dispersed to the Friend Area(s)” popup). Fugitive arc (QUEST_SQUARE_ASLEEP)
+     * still dismisses as vanilla. Stand By / Farewell still work. */
     u8 keep_allies;
     /* Kecleon sell: L/R multi-select like Kangaskhan store (else single-item only) */
     u8 multi_select_selling;
