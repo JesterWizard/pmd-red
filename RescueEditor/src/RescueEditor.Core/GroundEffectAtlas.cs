@@ -14,9 +14,15 @@ public sealed class GroundEffectAtlas
         _rom = rom;
     }
 
+    /// <summary>
+    /// Sector effect kinds that are script hosts / camera anchors, not standing props.
+    /// Drawing their efob sheets (especially kind 4 on boss tiles) covers actors in garbage.
+    /// </summary>
+    public static bool ShouldPreviewSectorEffect(byte typeId) => typeId is not 0 and not 4;
+
     public RgbaImage? TryGetForEffect(byte typeId)
     {
-        if (typeId == 0)
+        if (!ShouldPreviewSectorEffect(typeId))
             return null;
 
         if (_byKind.TryGetValue(typeId, out var cached))

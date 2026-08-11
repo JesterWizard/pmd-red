@@ -83,7 +83,7 @@ public static class GroundMapNames
         ["D05P02m"] = "Dungeon",
         ["D06P01m"] = "Mt. Thunder",
         ["D06P02m"] = "Mt. Thunder Mid",
-        ["D06P03m"] = "Dungeon",
+        ["D06P03m"] = "Mt. Thunder Peak",
         ["D07P01m"] = "Great Canyon",
         ["D08P01m"] = "Lapis Cave",
         ["D08P02m"] = "Lapis Cave Exit",

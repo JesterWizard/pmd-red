@@ -295,6 +295,8 @@ public sealed class GroundScriptVm
                 {
                     foreach (var e in sector.Effects)
                     {
+                        if (!GroundEffectAtlas.ShouldPreviewSectorEffect(e.TypeId))
+                            continue;
                         list.Add(new SpawnedMapEffect(
                             e.TypeId, e.PixelX, e.PixelY, e.DirectionOrFlags & 7));
                     }

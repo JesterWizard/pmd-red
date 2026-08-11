@@ -176,35 +176,48 @@ public static class GroundMapIndexer
     }
 
     /// <summary>
-    /// Dungeon mid/end shells (<c>DxxP02m</c>/<c>DxxP03m</c>) → entry assets (<c>DxxP01*</c>).
+    /// First dungeon-shell fallback for empty mid/end maps (<c>DxxP03m</c> → mid, else entry).
     /// </summary>
-    public static GroundMapDefinition? TryDungeonEntryFallback(GroundMapDefinition? map)
+    public static GroundMapDefinition? TryDungeonEntryFallback(GroundMapDefinition? map) =>
+        EnumerateDungeonShellFallbacks(map).FirstOrDefault();
+
+    /// <summary>
+    /// Dungeon mid/end shells (<c>DxxP02m</c>/<c>DxxP03m</c>) → nearer shells first
+    /// (boss ends prefer mid/peak staging maps that share dimensions, then entry).
+    /// </summary>
+    public static IEnumerable<GroundMapDefinition> EnumerateDungeonShellFallbacks(GroundMapDefinition? map)
     {
         if (map?.BmaName is null)
-            return null;
+            yield break;
 
         var m = System.Text.RegularExpressions.Regex.Match(
             map.BmaName, @"^(D\d{2})P0([2-9])m$", System.Text.RegularExpressions.RegexOptions.CultureInvariant);
         if (!m.Success)
-            return null;
+            yield break;
 
         var prefix = m.Groups[1].Value; // D09
-        var entryBase = prefix + "P01";
-        return new GroundMapDefinition
+        if (!int.TryParse(m.Groups[2].Value, out var part) || part < 2)
+            yield break;
+
+        for (var p = part - 1; p >= 1; p--)
         {
-            MapId = map.MapId,
-            Name = map.Name,
-            RenderMode = map.RenderMode,
-            GroundPlaceId = map.GroundPlaceId,
-            MapFileTableId = map.MapFileTableId,
-            Unk6 = map.Unk6,
-            Label = map.Label,
-            BplName = entryBase,
-            BpcName = entryBase + "c",
-            BmaName = entryBase + "m",
-            BpaNames = map.BpaNames,
-            GroundMapAsset = null,
-        };
+            var shellBase = prefix + "P0" + p;
+            yield return new GroundMapDefinition
+            {
+                MapId = map.MapId,
+                Name = map.Name,
+                RenderMode = map.RenderMode,
+                GroundPlaceId = map.GroundPlaceId,
+                MapFileTableId = map.MapFileTableId,
+                Unk6 = map.Unk6,
+                Label = map.Label,
+                BplName = shellBase,
+                BpcName = shellBase + "c",
+                BmaName = shellBase + "m",
+                BpaNames = map.BpaNames,
+                GroundMapAsset = null,
+            };
+        }
     }
 
     /// <summary>
@@ -432,8 +445,11 @@ public static class GroundMapRenderer
             pixels[i + 3] = 255;
         }
 
+        // Draw back → front. Upper layers (e.g. Silent Chasm clouds) store filler as
+        // RGB(0,0,0) in non-zero palette indices; retail blends that to show the cliff.
         for (var layer = layers - 1; layer >= 0; layer--)
         {
+            var knockoutBlack = layer < layers - 1;
             var layerMap = layerMaps[layer];
             for (var chunkY = 0; chunkY < heightChunks; chunkY++)
             {
@@ -459,7 +475,7 @@ public static class GroundMapRenderer
                                 continue;
                             var entry = chunkMappings[entryIndex];
                             RenderTile(tileData, palettes, entry, tileStride, pixels, imageWidth,
-                                mapX * 8, mapY * 8);
+                                mapX * 8, mapY * 8, knockoutBlack);
                         }
                     }
                 }
@@ -624,7 +640,8 @@ public static class GroundMapRenderer
         byte[] pixels,
         int width,
         int destinationX,
-        int destinationY)
+        int destinationY,
+        bool knockoutBlack = false)
     {
         var tileIndex = entry & 0x3FF;
         // Tile 0 is the implied empty tile and is not stored in the BPC blob.
@@ -653,6 +670,10 @@ public static class GroundMapRenderer
                 if (index >= palette.Length || index == 0)
                     continue;
                 var color = palette[index];
+                // Dual-layer maps: non-zero palette blacks on the front layer are
+                // transparent under retail BLDCNT blending (see Silent Chasm clouds).
+                if (knockoutBlack && color.R == 0 && color.G == 0 && color.B == 0)
+                    continue;
                 var pixelOffset = ((destinationY + row) * width + destinationX + column) * 4;
                 pixels[pixelOffset] = color.R;
                 pixels[pixelOffset + 1] = color.G;

@@ -325,7 +325,7 @@ public class ActorSpriteAtlasTests
     }
 
     [Fact]
-    public void DungeonEntryFallbackMapsMtBlazeEndToEntry()
+    public void DungeonShellFallbackPrefersMidOverEntryForBossEnd()
     {
         var map = new GroundMapDefinition
         {
@@ -335,11 +335,84 @@ public class ActorSpriteAtlasTests
             BpcName = "D09P03c",
             RenderMode = 11,
         };
-        var entry = GroundMapIndexer.TryDungeonEntryFallback(map);
-        Assert.NotNull(entry);
-        Assert.Equal("D09P01m", entry!.BmaName);
-        Assert.Equal("D09P01", entry.BplName);
-        Assert.Equal("D09P01c", entry.BpcName);
+        var mid = GroundMapIndexer.TryDungeonEntryFallback(map);
+        Assert.NotNull(mid);
+        Assert.Equal("D09P02m", mid!.BmaName);
+        Assert.Equal("D09P02", mid.BplName);
+        Assert.Equal("D09P02c", mid.BpcName);
+
+        var all = GroundMapIndexer.EnumerateDungeonShellFallbacks(map).Select(m => m.BmaName).ToArray();
+        Assert.Equal(new[] { "D09P02m", "D09P01m" }, all);
+    }
+
+    [Fact]
+    public void SilentChasmDualLayerCompositeShowsCliffUnderClouds()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        var bplPath = Path.Combine(root, "data", "map_bg", "D05P01.bpl");
+        var bpcPath = Path.Combine(root, "data", "map_bg", "D05P01c.bpc");
+        var bmaPath = Path.Combine(root, "data", "map_bg", "D05P01m.bma");
+        if (!File.Exists(bplPath) || !File.Exists(bpcPath) || !File.Exists(bmaPath))
+            return;
+
+        var preview = GroundMapRenderer.Render(
+            "Silent Chasm",
+            File.ReadAllBytes(bplPath),
+            File.ReadAllBytes(bpcPath),
+            File.ReadAllBytes(bmaPath));
+        Assert.NotNull(preview.Png);
+        var image = RgbaImage.FromPng(preview.Png!);
+        Assert.NotNull(image);
+
+        // Cliff art lives in the lower half; opaque black from the cloud layer must not wipe it.
+        var colorful = 0;
+        for (var y = image!.Height / 2; y < image.Height; y += 4)
+        for (var x = 0; x < Math.Min(image.Width, 400); x += 4)
+        {
+            var o = (y * image.Width + x) * 4;
+            var r = image.Pixels[o];
+            var g = image.Pixels[o + 1];
+            var b = image.Pixels[o + 2];
+            if (r > 40 || g > 40 || b > 40)
+                colorful++;
+        }
+
+        Assert.True(colorful >= 80,
+            $"Expected cliff colors under clouds in lower half, colorful={colorful}");
+    }
+
+    [Fact]
+    public void ZapdosAssemblesMultiPiecePoseWithoutBlueGarbage()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "zapdos.h")))
+            return;
+
+        Assert.True(AxPoseAssembler.IsMultiPieceMonster(root, "zapdos"));
+        var assembled = AxPoseAssembler.TryAssemble(root, "zapdos", poseNumber: 1);
+        Assert.NotNull(assembled);
+        Assert.True(assembled!.Width >= 48, $"Assembled width {assembled.Width}");
+        Assert.True(assembled.Height >= 40, $"Assembled height {assembled.Height}");
+
+        var opaque = 0;
+        var blueish = 0;
+        for (var i = 0; i + 3 < assembled.Pixels.Length; i += 4)
+        {
+            if (assembled.Pixels[i + 3] < 16)
+                continue;
+            opaque++;
+            var r = assembled.Pixels[i];
+            var g = assembled.Pixels[i + 1];
+            var b = assembled.Pixels[i + 2];
+            if (b > 180 && b > r + 40 && b > g + 40)
+                blueish++;
+        }
+
+        Assert.True(opaque >= 400, $"Assembled too empty ({opaque})");
+        Assert.True(blueish * 4 < opaque,
+            $"Zapdos pose looks like blue OAM garbage ({blueish}/{opaque})");
     }
 
     [Fact]

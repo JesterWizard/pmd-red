@@ -25,19 +25,19 @@ public static class SceneCompositor
             return primary;
 
         // Dungeon shell maps (DxxP02/P03, render modes 10/11) store a near-empty BMA;
-        // retail fills tiles via dungeon generation. Fall back to the entry BMA (DxxP01).
-        var entry = GroundMapIndexer.TryDungeonEntryFallback(scene.Map);
-        if (entry is not null)
+        // retail fills tiles via dungeon generation. Prefer mid/peak staging maps
+        // (same dimensions as boss ends) before falling back to the entry BMA.
+        foreach (var shell in GroundMapIndexer.EnumerateDungeonShellFallbacks(scene.Map))
         {
             try
             {
-                var fallback = GroundMapIndexer.TryRenderFromMap(rom, entry);
+                var fallback = GroundMapIndexer.TryRenderFromMap(rom, shell);
                 if (fallback is not null && !IsVisuallyFlat(fallback))
                     return fallback;
             }
             catch
             {
-                // Keep primary / null.
+                // Try the next nearer shell.
             }
         }
 
@@ -530,6 +530,14 @@ public static class SceneCompositor
         foreach (var entity in entities)
         {
             var selectedMatch = IsSelected(selected, entity);
+            if (!GroundEffectAtlas.ShouldPreviewSectorEffect(entity.TypeId))
+            {
+                // Script hosts / camera anchors — only an outline when selected.
+                if (selectedMatch)
+                    DrawPlaceholder(image, entity, selectedMatch, drawLabels, 0xC0, 0x60, 0xFF);
+                continue;
+            }
+
             var sprite = groundEffects?.TryGetForEffect(entity.TypeId);
             if (sprite is not null)
                 DrawSpriteEntity(image, entity, sprite, selectedMatch, drawLabels);

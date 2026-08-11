@@ -495,8 +495,10 @@ public sealed class ScenePlaySession
                 .Sectors.ElementAtOrDefault(ActiveSector);
             if (sector is null)
                 return;
-            effects = sector.Effects.Select(e =>
-                new SpawnedMapEffect(e.TypeId, e.PixelX, e.PixelY, e.DirectionOrFlags & 7));
+            effects = sector.Effects
+                .Where(e => GroundEffectAtlas.ShouldPreviewSectorEffect(e.TypeId))
+                .Select(e =>
+                    new SpawnedMapEffect(e.TypeId, e.PixelX, e.PixelY, e.DirectionOrFlags & 7));
         }
 
         foreach (var fx in effects)
@@ -613,11 +615,57 @@ public sealed class ScenePlaySession
             focusX = cx + 4;
             focusY = cy + 4;
         }
+        else if (IsScripted && TryGetActorGroupFocus(out var gx, out var gy))
+        {
+            // Boss / cutscene opens: frame the cast, not a lone spawn at the map edge.
+            focusX = gx;
+            focusY = gy;
+        }
 
         var targetX = (int)Math.Round(focusX - CameraWidth / 2.0);
         var targetY = (int)Math.Round(focusY - CameraHeight / 2.0);
         CameraX = (int)Clamp(targetX, 0, Math.Max(0, MapWidthPixels - CameraWidth));
         CameraY = (int)Clamp(targetY, 0, Math.Max(0, MapHeightPixels - CameraHeight));
+    }
+
+    private bool TryGetActorGroupFocus(out double focusX, out double focusY)
+    {
+        focusX = focusY = 0;
+        var sector = _scene.Groups.ElementAtOrDefault(ActiveGroup)?
+            .Sectors.ElementAtOrDefault(ActiveSector);
+        if (sector is null || sector.Lives.Count == 0)
+            return false;
+
+        double sumX = 0, sumY = 0;
+        var n = 0;
+        if (_script is not null)
+        {
+            foreach (var i in _script.LiveIndices)
+            {
+                if (!_script.TryGetLivePixelPos(i, out var px, out var py))
+                    continue;
+                sumX += px;
+                sumY += py;
+                n++;
+            }
+        }
+
+        if (n == 0)
+        {
+            foreach (var live in sector.Lives)
+            {
+                sumX += live.PixelX;
+                sumY += live.PixelY;
+                n++;
+            }
+        }
+
+        if (n == 0)
+            return false;
+
+        focusX = sumX / n + 4;
+        focusY = sumY / n + 4;
+        return true;
     }
 
     private void UpdateActiveLink()

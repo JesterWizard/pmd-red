@@ -34,6 +34,61 @@ public sealed class ScenePlayTests
     }
 
     [Fact]
+    public void MapEffectsSkipDormantSectorEffectSheets()
+    {
+        // Boss rooms host script-only effect entities (e.g. kind 4 on Zapdos).
+        // Previewing them as efob sheets covers actors in cyan garbage.
+        Assert.False(GroundEffectAtlas.ShouldPreviewSectorEffect(0));
+        Assert.False(GroundEffectAtlas.ShouldPreviewSectorEffect(4));
+        Assert.True(GroundEffectAtlas.ShouldPreviewSectorEffect(1));
+
+        var scene = MakeEmptyScene(40, 30);
+        scene.Groups[0].Sectors[0].Effects.Add(new SceneEntity
+        {
+            Kind = SceneEntityKind.Effect,
+            TypeId = 4,
+            Index = 1,
+            Position = new CompactPos(28, 20, 0, 4),
+            Width = 1,
+            Height = 1,
+        });
+        var vm = new GroundScriptVm(EmptyRom(), scene, group: 0, sector: 0);
+        Assert.DoesNotContain(vm.MapEffects, e => e.Kind == 4);
+    }
+
+    [Fact]
+    public void ScriptedPlayCentersCameraOnActorGroup()
+    {
+        var scene = MakeEmptyScene(mapW: 57, mapH: 57);
+        scene.Groups[0].Sectors[0].Lives.Add(new SceneEntity
+        {
+            Kind = SceneEntityKind.Live,
+            TypeId = 1,
+            Position = new CompactPos(24, 21, 0, 4),
+            Index = 0,
+        });
+        scene.Groups[0].Sectors[0].Lives.Add(new SceneEntity
+        {
+            Kind = SceneEntityKind.Live,
+            TypeId = 96,
+            Position = new CompactPos(28, 18, 0, 4),
+            Index = 4,
+        });
+        scene.Groups[0].Sectors[0].Stations.Add(new ScriptRefData
+        {
+            Id = 1,
+            Name = "station",
+            Commands = [new ScriptCommandData { Op = 0xF0 }],
+        });
+        scene.Groups[0].Sectors[0].HasStation = true;
+
+        var session = new ScenePlaySession(EmptyRom(), scene, 0, 0, scripted: true);
+        // Camera should favor the actor cluster, not hang on the map origin.
+        Assert.InRange(session.CameraX, 80, 200);
+        Assert.InRange(session.CameraY, 40, 160);
+    }
+
+    [Fact]
     public void SessionSpawnsAtMapCenterWithoutPlayerLive()
     {
         var scene = MakeEmptyScene(mapW: 40, mapH: 30);
