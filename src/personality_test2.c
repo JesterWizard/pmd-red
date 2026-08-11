@@ -24,6 +24,7 @@ EWRAM_INIT struct PersonalityStruct_203B404 *gUnknown_203B404 = {NULL};
 
 static s32 GetValidPartners(void);
 static s32 GetAllStarters(void);
+static s32 BuildStarterSelectionList(s16 *out);
 static void nullsub_135(void);
 static void PersonalityTest_DisplayPartnerSprite(void);
 static void RedrawPartnerSelectionMenu(void);
@@ -31,6 +32,35 @@ static void SetupSelectionMenuWindows(void);
 
 static void sub_803CEAC(void);
 static void sub_803CECC(void);
+
+/* Vanilla starters, plus Vulpix/Meowth/Phanpy when pmd2_casting_starters is on. */
+static s32 BuildStarterSelectionList(s16 *out)
+{
+    s32 count = 0;
+    s32 i;
+    s32 j;
+
+    for (i = 0; i < NUM_STARTERS; i++)
+        out[count++] = gStarterSelectionList[i];
+
+    if (gRuntimeConfig.pmd2_casting_starters) {
+        for (i = 0; i < NUM_PMD2_CASTING_STARTERS; i++) {
+            s16 species = gPmd2CastingStarters[i];
+            bool8 duplicate = FALSE;
+
+            for (j = 0; j < count; j++) {
+                if (out[j] == species) {
+                    duplicate = TRUE;
+                    break;
+                }
+            }
+            if (!duplicate)
+                out[count++] = species;
+        }
+    }
+
+    return count;
+}
 
 static void SetupSelectionMenuWindows(void)
 {
@@ -213,14 +243,15 @@ static s32 GetValidPartners(void)
     s32 ValidPartnerCounter;
     s32 CurrentPartnerID;
     const s16 *partnerList;
+    s16 starterCandidates[NUM_STARTERS_MAX];
 
     ValidPartnerCounter = 0;
     PlayerType[0] = GetPokemonType(gUnknown_203B404->StarterID, 0);
     PlayerType[1] = GetPokemonType(gUnknown_203B404->StarterID, 1);
 
     if (gRuntimeConfig.all_starters_as_partners) {
-        partnerList = gStarterSelectionList;
-        partnerCount = NUM_STARTERS;
+        partnerCount = BuildStarterSelectionList(starterCandidates);
+        partnerList = starterCandidates;
     }
     else {
         partnerList = gPartners;
@@ -244,10 +275,5 @@ static s32 GetValidPartners(void)
 
 static s32 GetAllStarters(void)
 {
-    s32 i;
-
-    for (i = 0; i < NUM_STARTERS; i++)
-        gUnknown_203B404->PartnerArray[i] = gStarterSelectionList[i];
-
-    return NUM_STARTERS;
+    return BuildStarterSelectionList(gUnknown_203B404->PartnerArray);
 }

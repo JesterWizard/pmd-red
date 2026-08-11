@@ -26,6 +26,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .starter_choice_prompt = TRUE, /* TRUE = choose starter or take quiz; FALSE = quiz only */
     .starter_confirm_preview = TRUE, /* TRUE = stats/moves confirm before starter/partner commit; FALSE = vanilla instant pick */
     .all_starters_as_partners = TRUE, /* TRUE = all player starters can be partners; FALSE = vanilla 10 */
+    .pmd2_casting_starters = TRUE, /* TRUE = Vulpix/Meowth/Phanpy on starter list; FALSE = vanilla 16 */
     .overkill_exp_bonus = TRUE, /* TRUE = +25% EXP per 100% overkill on full-HP KO; FALSE = off */
     .custom_portraits = TRUE, /* TRUE = SpriteCollab portraits (Normal + evo packs); FALSE = vanilla kao */
     .outlaw_missions = TRUE, /* TRUE = Wanted Board menu + outlaw jobs; FALSE = vanilla */
@@ -52,7 +53,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .friend_area_intros = TRUE, /* TRUE = 2s (A-skippable) art splash on Friend Area visit */
     .team_act = TRUE, /* TRUE = Team ACT in postgame Makuhita Dojo team courses; FALSE = hidden */
     .max_level_stats = FALSE, /* TRUE = leader/partner/team → Lv100 + max stats/IQ; FALSE = vanilla */
-    .all_makuhita_dojo = FALSE, /* TRUE = all Dojo courses + Makuhita visible; FALSE = story unlocks */
+    .all_makuhita_dojo = TRUE, /* TRUE = all Dojo courses + Makuhita visible; FALSE = story unlocks */
     .skip_title_intro = TRUE, /* TRUE = button-skip boot intro with no save; FALSE = vanilla (need save) */
     .living_square = TRUE, /* TRUE = Square NPCs wander / visit / banter; FALSE = vanilla static */
     .full_party_entry = TRUE, /* TRUE = enter with 4 (raises dungeon max 3→4); FALSE = vanilla (most dungeons max 3) */

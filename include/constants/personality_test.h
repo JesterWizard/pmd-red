@@ -21,6 +21,9 @@ enum NaturePersonalities
 
 #define NUM_PARTNERS 10
 #define NUM_STARTERS 16
+/* Explorers casting extras (Vulpix, Meowth, Phanpy); Meowth overlaps vanilla */
+#define NUM_PMD2_CASTING_STARTERS 3
+#define NUM_STARTERS_MAX (NUM_STARTERS + NUM_PMD2_CASTING_STARTERS)
 #define NUM_QUIZ_QUESTIONS 55
 #define MAX_ASKED_QUESTIONS 8
 #define NUM_CUSTOM_STORY_QUESTIONS 8

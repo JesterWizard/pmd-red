@@ -31,6 +31,7 @@ Options read when starting a new game are:
 - `Start pick`
 - `Start view`
 - `Partners`
+- `PMD2 cast`
 
 Options applied on the next relevant re-entry or transition are:
 

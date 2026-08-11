@@ -6,14 +6,16 @@
 #include "structs/str_text.h"
 #include "text_3.h"
 
-// Size: 0xC4 (PartnerArray sized for NUM_STARTERS)
+// PartnerArray sized for NUM_STARTERS_MAX (vanilla + optional PMD2 casting)
 struct PersonalityStruct_203B404
 {
     /* 0x0 */ s16 StarterID;
-    /* 0x2 */ s16 PartnerArray[NUM_STARTERS];
+    /* 0x2 */ s16 PartnerArray[NUM_STARTERS_MAX];
     u8 unk16;
     /* 0x18 */ MenuHeaderWindow s18;
 };
+
+extern const s16 gPmd2CastingStarters[NUM_PMD2_CASTING_STARTERS];
 
 void CreatePartnerSelectionMenu(s16 starterID);
 void CreateStarterSelectionMenu(void);

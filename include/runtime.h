@@ -66,6 +66,9 @@ typedef struct {
     u8 starter_confirm_preview;
     /* All player starters (incl. Meowth/Psyduck/etc.) can be partners; else vanilla 10 */
     u8 all_starters_as_partners;
+    /* Explorers casting extras on the starter pick list: Vulpix, Meowth, Phanpy
+     * (Meowth is already vanilla; adds Vulpix + Phanpy). New game. */
+    u8 pmd2_casting_starters;
     /* Extra EXP for one-shotting full-HP foes based on overkill damage */
     u8 overkill_exp_bonus;
     /* SpriteCollab portraits: Normal for Gen1–3 + Munchlax; full packs for starter evos / Spinda */
@@ -140,7 +143,7 @@ typedef struct {
 } RuntimeConfig;
 
 /* magic(4) + version(4) + RuntimeConfig + checksum(4); grow when fields are added */
-#define RUNTIME_CONFIG_SAVE_SIZE 0x44
+#define RUNTIME_CONFIG_SAVE_SIZE 0x48
 
 extern const RuntimeConfig gRuntimeConfigRom;
 extern RuntimeConfig gRuntimeConfigData;

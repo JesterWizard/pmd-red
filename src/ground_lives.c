@@ -23,6 +23,8 @@
 #include "textbox.h"
 #include "code_809D148.h"
 #include "ground_script_file.h"
+#include "runtime.h"
+#include "constants/monster.h"
 
 struct GroundLivesMeta_Sub1
 {
@@ -1232,6 +1234,12 @@ bool8 GroundLives_IsStarterMon(s32 id_)
                 return TRUE;
             }
         }
+        if (gRuntimeConfig.pmd2_casting_starters
+            && (livesPtr->speciesId == MONSTER_VULPIX
+                || livesPtr->speciesId == MONSTER_MEOWTH
+                || livesPtr->speciesId == MONSTER_PHANPY)) {
+            return TRUE;
+        }
     }
 
     return FALSE;
@@ -1246,6 +1254,13 @@ bool8 IsStarterMonster(s32 monsterId_)
         if (*arr == (s16) monsterId) {
             return TRUE;
         }
+    }
+
+    if (gRuntimeConfig.pmd2_casting_starters
+        && (monsterId == MONSTER_VULPIX
+            || monsterId == MONSTER_MEOWTH
+            || monsterId == MONSTER_PHANPY)) {
+        return TRUE;
     }
 
     return FALSE;

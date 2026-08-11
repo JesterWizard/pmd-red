@@ -33,6 +33,14 @@ const s16 gStarterSelectionList[NUM_STARTERS] =
     MONSTER_SKITTY,
 };
 
+/* Explorers casting extras for pmd2_casting_starters (Meowth already in vanilla list). */
+const s16 gPmd2CastingStarters[NUM_PMD2_CASTING_STARTERS] =
+{
+    MONSTER_VULPIX,
+    MONSTER_MEOWTH,
+    MONSTER_PHANPY,
+};
+
 const WindowTemplate gUnknown_80F4278 =
 {
     0,
