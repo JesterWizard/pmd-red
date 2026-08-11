@@ -195,6 +195,38 @@ s32 GetBagCapacity(void)
     return GetBagPageCount() * BAG_ITEMS_PER_PAGE_RANK;
 }
 
+/* PMD2 explorer-rank item prizes, mapped onto Rescue Team ranks. */
+u8 GetRankRewardItemId(u8 rank)
+{
+    static const u8 sRankRewardItems[MAX_TEAM_RANKS] = {
+        [NORMAL_RANK] = ITEM_NOTHING,
+        [BRONZE_RANK] = ITEM_SITRUS_BERRY,
+        [SILVER_RANK] = ITEM_ZINC,
+        [GOLD_RANK] = ITEM_GINSENG,
+        [PLATINUM_RANK] = ITEM_PROTEIN,   /* PMD2 Diamond */
+        [DIAMOND_RANK] = ITEM_CALCIUM,    /* PMD2 Super */
+        [LUCARIO_RANK] = ITEM_JOY_SEED,   /* PMD2 Hyper / Master */
+    };
+
+    if (!gRuntimeConfig.pmd2_rank_rewards)
+        return ITEM_NOTHING;
+    if (rank >= MAX_TEAM_RANKS)
+        return ITEM_NOTHING;
+    return sRankRewardItems[rank];
+}
+
+void GrantRankRewardItem(u8 itemId)
+{
+    Item item;
+
+    if (itemId == ITEM_NOTHING)
+        return;
+
+    ItemIdToItem(&item, itemId, FALSE);
+    if (AddItemToInventory(&item))
+        MoveToStorage(&item);
+}
+
 s32 GetMaxStorageQuantity(void)
 {
     if (gRuntimeConfig.compact_kangaskhan_storage)

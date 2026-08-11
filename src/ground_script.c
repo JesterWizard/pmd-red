@@ -3854,9 +3854,11 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                 s32 points = GetPtsToNextRank();
                 if (points > 0) {
                     s32 rankAfter;
+                    s32 rank;
                     const u8 *msg;
                     bool8 bagUp;
                     bool8 storageUp;
+                    u8 itemId = ITEM_NOTHING;
 
                     AddToTeamRankPts(points);
                     rankAfter = GetRescueTeamRank();
@@ -3868,16 +3870,52 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                     storageUp = gRuntimeConfig.pmd2_rank_rewards
                         && GetStorageCapacityForRank(rankAfter) > GetStorageCapacityForRank(rankBefore);
 
+                    if (gRuntimeConfig.pmd2_rank_rewards) {
+                        for (rank = rankBefore + 1; rank <= rankAfter; rank++) {
+                            u8 reward = GetRankRewardItemId(rank);
+
+                            if (reward != ITEM_NOTHING) {
+                                GrantRankRewardItem(reward);
+                                itemId = reward;
+                            }
+                        }
+                        if (itemId != ITEM_NOTHING)
+                            BufferItemName(gFormatBuffer_Items[2], itemId, NULL);
+                    }
+
                     gFormatArgs[0] = GetBagCapacityForRank(rankBefore);
                     gFormatArgs[1] = GetBagCapacityForRank(rankAfter);
                     gFormatArgs[2] = GetStorageCapacityForRank(rankBefore);
                     gFormatArgs[3] = GetStorageCapacityForRank(rankAfter);
 
-                    if (bagUp && storageUp) {
+                    if (bagUp && storageUp && itemId != ITEM_NOTHING) {
+                        msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
+                                "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Received the {COLOR GREEN}{MOVE_ITEM_2}{RESET}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Toolbox storage increased from\n"
+                                "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Kangaskhan storage increased from\n"
+                                "{CENTER_ALIGN}{COLOR CYAN}{VALUE_2}{RESET} -> {COLOR CYAN}{VALUE_3}{RESET}");
+                    }
+                    else if (bagUp && storageUp) {
                         msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
                                 "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
                                 "{CENTER_ALIGN}Toolbox storage increased from\n"
                                 "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Kangaskhan storage increased from\n"
+                                "{CENTER_ALIGN}{COLOR CYAN}{VALUE_2}{RESET} -> {COLOR CYAN}{VALUE_3}{RESET}");
+                    }
+                    else if (bagUp && itemId != ITEM_NOTHING) {
+                        msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
+                                "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Received the {COLOR GREEN}{MOVE_ITEM_2}{RESET}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Toolbox storage increased from\n"
+                                "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}");
+                    }
+                    else if (storageUp && itemId != ITEM_NOTHING) {
+                        msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
+                                "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Received the {COLOR GREEN}{MOVE_ITEM_2}{RESET}!{EXTRA_MSG}"
                                 "{CENTER_ALIGN}Kangaskhan storage increased from\n"
                                 "{CENTER_ALIGN}{COLOR CYAN}{VALUE_2}{RESET} -> {COLOR CYAN}{VALUE_3}{RESET}");
                     }
@@ -3892,6 +3930,11 @@ static s32 sub_80A14E8(Action *action, u8 idx, u32 r2, s32 r3)
                                 "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
                                 "{CENTER_ALIGN}Kangaskhan storage increased from\n"
                                 "{CENTER_ALIGN}{COLOR CYAN}{VALUE_2}{RESET} -> {COLOR CYAN}{VALUE_3}{RESET}");
+                    }
+                    else if (itemId != ITEM_NOTHING) {
+                        msg = _("{CENTER_ALIGN}The rescue rank went up from\n"
+                                "{CENTER_ALIGN}{MOVE_ITEM_0} to {MOVE_ITEM_1}!{EXTRA_MSG}"
+                                "{CENTER_ALIGN}Received the {COLOR GREEN}{MOVE_ITEM_2}{RESET}!");
                     }
                     else {
                         msg = _("{CENTER_ALIGN}The rescue rank went up from\n"

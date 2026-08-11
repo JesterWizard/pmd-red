@@ -50,6 +50,8 @@ s32 GetBagItemsPerPage(void);
 s32 GetBagPageCount(void);
 s32 GetBagCapacity(void);
 s32 GetBagCapacityForRank(u8 rank);
+u8 GetRankRewardItemId(u8 rank);
+void GrantRankRewardItem(u8 itemId);
 s32 GetMaxStorageQuantity(void);
 s32 GetStorageUsedCount(void);
 s32 GetStorageCapacity(void);

@@ -6,7 +6,8 @@
 
 #define ACHIEVEMENTS_SAVE_SIZE 0x80
 #define ACHIEVEMENTS_DATA_SIZE 0x70
-#define ACH_POPUP_QUEUE_SIZE 6
+#define ACH_POPUP_QUEUE_SIZE 12
+#define ACH_POPUP_RANK_ITEM 0xFC
 #define ACH_POPUP_RANK_BAG 0xFD
 #define ACH_POPUP_RANK_STORAGE 0xFE
 
@@ -47,9 +48,9 @@ struct AchievementsData
     /* 0x28 */ u8 itemsEverGot[30];
     /* 0x46 */ u8 runFlags;
     /* 0x47 */ u8 popupQueue[ACH_POPUP_QUEUE_SIZE];
-    /* 0x4D */ u8 popupCount;
-    /* 0x4E */ u16 pendingUnlocks; /* bit per ACH_* deferred during boss fight */
-    /* 0x50 */ u8 fill50[0x20];
+    /* 0x53 */ u8 popupCount;
+    /* 0x54 */ u16 pendingUnlocks; /* bit per ACH_* deferred during boss fight */
+    /* 0x56 */ u8 fill56[0x1A];
 };
 
 extern struct AchievementsData gAchievementsData;

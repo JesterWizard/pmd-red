@@ -90,6 +90,9 @@ static const u8 *const sAchievementRewardTexts[ACH_MAX] = {
 static const u8 sAchievementUnlockedMsg[] = _(
     "{CENTER_ALIGN}Achievement unlocked!\n{CENTER_ALIGN}{MOVE_ITEM_0}\n{CENTER_ALIGN}Reward: {MOVE_ITEM_1}");
 
+static const u8 sRankItemRewardMsg[] = _(
+    "{CENTER_ALIGN}Received the {COLOR GREEN}{MOVE_ITEM_0}{RESET}!");
+
 static const u8 sRankBagUpgradeMsg[] = _(
     "{CENTER_ALIGN}Toolbox storage increased from\n"
     "{CENTER_ALIGN}{COLOR CYAN}{VALUE_0}{RESET} -> {COLOR CYAN}{VALUE_1}{RESET}");
@@ -100,6 +103,9 @@ static const u8 sRankStorageUpgradeMsg[] = _(
 
 static EWRAM_DATA s32 sRankBagCapBefore = 0;
 static EWRAM_DATA s32 sRankStorageCapBefore = 0;
+static EWRAM_DATA u8 sRankRewardItemQueue[MAX_TEAM_RANKS];
+static EWRAM_DATA u8 sRankRewardItemCount = 0;
+static EWRAM_DATA u8 sRankRewardItemRead = 0;
 
 static bool8 IsTrackableDungeon(u8 dungeonId);
 static bool8 HasVisitedAllDungeons(void);
@@ -235,8 +241,24 @@ static void UnlockAchievement(u8 id)
 
 static void QueueRankRewardPopups(u8 rankBefore, u8 rankAfter)
 {
+    u8 rank;
+
     if (!gRuntimeConfig.pmd2_rank_rewards || rankAfter <= rankBefore)
         return;
+
+    sRankRewardItemCount = 0;
+    sRankRewardItemRead = 0;
+    for (rank = rankBefore + 1; rank <= rankAfter; rank++) {
+        u8 itemId = GetRankRewardItemId(rank);
+
+        if (itemId == ITEM_NOTHING)
+            continue;
+        GrantRankRewardItem(itemId);
+        if (sRankRewardItemCount < MAX_TEAM_RANKS) {
+            sRankRewardItemQueue[sRankRewardItemCount++] = itemId;
+            QueueAchievementPopup(ACH_POPUP_RANK_ITEM);
+        }
+    }
 
     if (GetBagCapacityForRank(rankAfter) > GetBagCapacityForRank(rankBefore)) {
         sRankBagCapBefore = GetBagCapacityForRank(rankBefore);
@@ -391,6 +413,15 @@ void ProcessAchievementUnlockQueue(void)
                         gAchievementsData.popupCount);
         }
 
+        if (id == ACH_POPUP_RANK_ITEM) {
+            if (sRankRewardItemRead < sRankRewardItemCount) {
+                BufferItemName(gFormatBuffer_Items[0],
+                               sRankRewardItemQueue[sRankRewardItemRead++],
+                               NULL);
+                ScriptPrintText(SCRIPT_TEXT_TYPE_INSTANT, -1, sRankItemRewardMsg);
+            }
+            break;
+        }
         if (id == ACH_POPUP_RANK_BAG) {
             gFormatArgs[0] = sRankBagCapBefore;
             gFormatArgs[1] = GetBagCapacity();
@@ -500,6 +531,15 @@ void PresentQueuedAchievementUnlocksInDungeon(void)
                         gAchievementsData.popupCount);
         }
 
+        if (id == ACH_POPUP_RANK_ITEM) {
+            if (sRankRewardItemRead < sRankRewardItemCount) {
+                BufferItemName(gFormatBuffer_Items[0],
+                               sRankRewardItemQueue[sRankRewardItemRead++],
+                               NULL);
+                DisplayDungeonMessage_Async(NULL, sRankItemRewardMsg, TRUE);
+            }
+            continue;
+        }
         if (id == ACH_POPUP_RANK_BAG) {
             gFormatArgs[0] = sRankBagCapBefore;
             gFormatArgs[1] = GetBagCapacity();

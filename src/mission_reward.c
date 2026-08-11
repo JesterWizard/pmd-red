@@ -24,6 +24,7 @@ enum MR_State
     MR_STATE_NEXT_ITEM,
     MR_STATE_TEAM_PNTS_REWARD,
     MR_STATE_NEW_TEAM_RANK,
+    MR_STATE_RANK_ITEM_REWARD,
     MR_STATE_RANK_BAG_UPGRADE,
     MR_STATE_RANK_STORAGE_UPGRADE,
     MR_STATE_REWARD_EXIT,
@@ -36,6 +37,7 @@ typedef struct MR_Work
     /* 0x4 */ u32 nextState; // See enum "MR_State"
     /* 0x8 */ bool8 displayClientDialogueSprite;
     /* 0x9 */ u8 currTeamRank;
+    /* 0xA */ u8 rankItemNext; /* next rank to check for PMD2 item prize */
     /* 0xC */ s32 itemRewardIndex;
     /* 0x10 */ MissionRewards *rewards;
     /* 0x14 */ MonPortraitMsg monPortrait;
@@ -95,6 +97,9 @@ ALIGNED(4) static const u8 gUnknown_80E06A8[] = _(
         "{CENTER_ALIGN}{COLOR CYAN_G}$t{RESET} went up in rank\n"
         "{CENTER_ALIGN}from the {POKEMON_2}\n"
         "{CENTER_ALIGN}to the {POKEMON_3}!");
+
+ALIGNED(4) static const u8 sRankItemRewardMsg[] = _(
+        "{CENTER_ALIGN}Received the {COLOR GREEN}{MOVE_ITEM_0}{RESET}!");
 
 ALIGNED(4) static const u8 sRankBagUpgradeMsg[] = _(
         "{CENTER_ALIGN}Toolbox storage increased from\n"
@@ -353,6 +358,7 @@ static void MR_InitStateDialogue(void)
             u8 newRank = GetRescueTeamRank();
 
             PlaySound(201);
+            sMRWork->rankItemNext = sMRWork->currTeamRank + 1;
             sMRWork->nextState = MR_NextRankRewardState(sMRWork->currTeamRank, newRank, FALSE);
 
             rankString = GetTeamRankString(sMRWork->currTeamRank);
@@ -362,6 +368,16 @@ static void MR_InitStateDialogue(void)
             strcpy(gFormatBuffer_Monsters[3], rankString);
 
             CreateDialogueBoxAndPortrait(gUnknown_80E06A8, 0, 0, 0x101);
+            break;
+        }
+        case MR_STATE_RANK_ITEM_REWARD: {
+            u8 newRank = GetRescueTeamRank();
+            u8 itemId = GetRankRewardItemId(sMRWork->rankItemNext - 1);
+
+            GrantRankRewardItem(itemId);
+            BufferItemName(gFormatBuffer_Items[0], itemId, NULL);
+            sMRWork->nextState = MR_NextRankRewardState(sMRWork->currTeamRank, newRank, FALSE);
+            CreateDialogueBoxAndPortrait(sRankItemRewardMsg, 0, 0, 0x101);
             break;
         }
         case MR_STATE_RANK_BAG_UPGRADE: {
@@ -393,9 +409,18 @@ static u32 MR_NextRankRewardState(u8 oldRank, u8 newRank, bool8 afterBagMsg)
     if (!gRuntimeConfig.pmd2_rank_rewards)
         return MR_STATE_REWARD_EXIT;
 
-    if (!afterBagMsg
-        && GetBagCapacityForRank(newRank) > GetBagCapacityForRank(oldRank))
-        return MR_STATE_RANK_BAG_UPGRADE;
+    /* Item prizes for each newly reached rank (PMD2 explorer-rank awards). */
+    if (!afterBagMsg) {
+        while (sMRWork->rankItemNext <= newRank) {
+            u8 rank = sMRWork->rankItemNext++;
+
+            if (GetRankRewardItemId(rank) != ITEM_NOTHING)
+                return MR_STATE_RANK_ITEM_REWARD;
+        }
+
+        if (GetBagCapacityForRank(newRank) > GetBagCapacityForRank(oldRank))
+            return MR_STATE_RANK_BAG_UPGRADE;
+    }
 
     if (GetStorageCapacityForRank(newRank) > GetStorageCapacityForRank(oldRank))
         return MR_STATE_RANK_STORAGE_UPGRADE;

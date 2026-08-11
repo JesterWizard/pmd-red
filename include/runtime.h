@@ -48,7 +48,7 @@ typedef struct {
     u8 pmd2_send_home;
     /* Felicity Bank interest on successful dungeon clear (percent; 0 = off) */
     u8 bank_interest_percent;
-    /* Rank rewards: bag pages + Kangaskhan storage capacity by rescue rank
+    /* Rank rewards: bag pages + Kangaskhan storage + PMD2 rank item prizes
      * (else vanilla bag 20/10 and unlimited storage totals) */
     u8 pmd2_rank_rewards;
     /* Parallel achievements system (title menu + tracking + rewards) */
