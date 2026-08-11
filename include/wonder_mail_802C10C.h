@@ -3,6 +3,7 @@
 
 #include "constants/mailbox.h"
 #include "structs/menu.h"
+#include "structs/str_wonder_mail.h"
 #include "text_3.h"
 
 // size: 0xA8
@@ -14,6 +15,8 @@ struct unkStruct_203B2E0
 
 void DrawPelipperBoardJobMenu(void);
 bool8 HasNoPelipperBoardJobs(void);
+bool8 HasNoPelipperBoardJobsOfMode(u8 mode);
+bool8 PelipperBoardJobMatchesMode(WonderMail *mail, u8 mode);
 
 bool8 sub_802C10C(s32, DungeonPos *, s32);
 u32 sub_802C1E4(bool8);

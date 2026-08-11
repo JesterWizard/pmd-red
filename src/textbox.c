@@ -1663,6 +1663,15 @@ static bool8 sub_809B648(void)
             return 1;
           case SPECIAL_TEXT_BULLETIN_BOARD_JOBS:
             PlayMenuSoundEffect(MENU_SFX_INFO);
+            SetPelipperBoardMode(PELIPPER_BOARD_MODE_ALL);
+            SetPelipperBoardDirectToJobs(FALSE);
+            sTextbox->unk418 = &gUnknown_8116268;
+            return 1;
+          case SPECIAL_TEXT_OUTLAW_BOARD:
+            /* Unused outdoors; kept for scripts that want Wanted-only. */
+            PlayMenuSoundEffect(MENU_SFX_INFO);
+            SetPelipperBoardMode(PELIPPER_BOARD_MODE_OUTLAW);
+            SetPelipperBoardDirectToJobs(TRUE);
             sTextbox->unk418 = &gUnknown_8116268;
             return 1;
           case SPECIAL_TEXT_BULLETIN_BOARD:

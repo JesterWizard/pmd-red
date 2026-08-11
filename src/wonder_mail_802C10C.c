@@ -10,6 +10,8 @@
 #include "pokemon_mail.h"
 #include "text_1.h"
 #include "text_2.h"
+#include "pelipper_board.h"
+#include "constants/wonder_mail.h"
 #include "wonder_mail_802C10C.h"
 
 static EWRAM_INIT struct unkStruct_203B2E0 *gUnknown_203B2E0 = {NULL};
@@ -19,6 +21,25 @@ static EWRAM_INIT u16 gUnknown_203B2E4 = {0};
 
 static s32 CountPelipperBoardSlots(void);
 static void sub_802C328(void);
+
+bool8 PelipperBoardJobMatchesMode(WonderMail *mail, u8 mode)
+{
+    bool8 isOutlaw;
+
+    if (mail == NULL || mail->mailType == MAIL_TYPE_NONE)
+        return FALSE;
+
+    isOutlaw = (mail->missionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT);
+    switch (mode) {
+        case PELIPPER_BOARD_MODE_OUTLAW:
+            return isOutlaw;
+        case PELIPPER_BOARD_MODE_USUAL:
+            return !isOutlaw;
+        case PELIPPER_BOARD_MODE_ALL:
+        default:
+            return TRUE;
+    }
+}
 
 bool8 sub_802C10C(s32 a0, DungeonPos *a1, s32 a2)
 {
@@ -130,7 +151,9 @@ void DrawPelipperBoardJobMenu(void)
     iVar4 = gUnknown_203B2E0->unk8.m.input.currPage * 8;
     x = iVar4;
     x += 10;
-    PrintStringOnWindow(x, 0, sBulletinBoard, gUnknown_203B2E0->unk8.m.menuWinId, 0);
+    PrintStringOnWindow(x, 0,
+        GetPelipperBoardMode() == PELIPPER_BOARD_MODE_OUTLAW ? sWantedBoard : sBulletinBoard,
+        gUnknown_203B2E0->unk8.m.menuWinId, 0);
 
     iVar4 += 4;
     x = iVar4 + (gUnknown_203B2E0->unk8.header.width * 8);
@@ -156,9 +179,11 @@ static s32 CountPelipperBoardSlots(void)
 {
     s32 i;
     s32 counter = 0;
+    u8 mode = GetPelipperBoardMode();
 
     for (i = 0; i < MAX_PELIPPER_BOARD_JOBS; i++) {
-        if (!IsPelipperBoardSlotEmpty(i)) {
+        if (!IsPelipperBoardSlotEmpty(i)
+            && PelipperBoardJobMatchesMode(GetPelipperBoardSlotInfo(i), mode)) {
             gUnknown_203B2E0->pelipperBoardSlots[counter] = i;
             counter++;
         }
@@ -167,14 +192,20 @@ static s32 CountPelipperBoardSlots(void)
     return counter;
 }
 
-bool8 HasNoPelipperBoardJobs(void)
+bool8 HasNoPelipperBoardJobsOfMode(u8 mode)
 {
     s32 i;
 
     for (i = 0; i < MAX_PELIPPER_BOARD_JOBS; i++) {
-        if (!IsPelipperBoardSlotEmpty(i))
+        if (!IsPelipperBoardSlotEmpty(i)
+            && PelipperBoardJobMatchesMode(GetPelipperBoardSlotInfo(i), mode))
             return FALSE;
     }
 
     return TRUE;
+}
+
+bool8 HasNoPelipperBoardJobs(void)
+{
+    return HasNoPelipperBoardJobsOfMode(GetPelipperBoardMode());
 }

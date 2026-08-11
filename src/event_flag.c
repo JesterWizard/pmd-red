@@ -198,6 +198,8 @@ s32 GetScriptVarValue(u8 *localVarBuf, s32 varId_)
                     return gRuntimeConfig.custom_story != FALSE;
                 case LIVING_SQUARE:
                     return gRuntimeConfig.living_square != FALSE;
+                case OUTLAW_MISSIONS:
+                    return gRuntimeConfig.outlaw_missions != FALSE;
             }
         default:
             return 0;
@@ -248,6 +250,8 @@ s32 GetScriptVarArrayValue(u8 *localVarBuf, s32 varId_, s32 idx_)
                     return gRuntimeConfig.custom_story != FALSE;
                 case LIVING_SQUARE:
                     return gRuntimeConfig.living_square != FALSE;
+                case OUTLAW_MISSIONS:
+                    return gRuntimeConfig.outlaw_missions != FALSE;
             }
         default:
             return 0;

@@ -17,3 +17,4 @@ static const WindowTemplate sUnknown_80DFCB4 = {
 };
 
 ALIGNED(4) static const u8 sBulletinBoard[] = _("Bulletin Board");
+ALIGNED(4) static const u8 sWantedBoard[] = _("Wanted Board");

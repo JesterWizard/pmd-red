@@ -420,7 +420,8 @@ enum ScriptVarId
     /* 0x51 */ SUM,
     /* 0x52 */ CUSTOM_STORY, /* SPECIAL: mirrors gRuntimeConfig.custom_story (not saved) */
     /* 0x53 */ LIVING_SQUARE, /* SPECIAL: mirrors gRuntimeConfig.living_square (not saved) */
-    /* 0x54 */ SCRIPT_VARS_COUNT,
+    /* 0x54 */ OUTLAW_MISSIONS, /* SPECIAL: mirrors gRuntimeConfig.outlaw_missions (not saved) */
+    /* 0x55 */ SCRIPT_VARS_COUNT,
     /* 0x400 */ LOCAL0 = 0x400,
     /* 0x401 */ LOCAL1,
     /* 0x402 */ LOCAL2,

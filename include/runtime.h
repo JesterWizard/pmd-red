@@ -70,7 +70,7 @@ typedef struct {
     u8 overkill_exp_bonus;
     /* SpriteCollab portraits: Normal for Gen1–3 + Munchlax; full packs for starter evos / Spinda */
     u8 custom_portraits;
-    /* Mix outlaw hunt jobs onto the Pelipper bulletin board */
+    /* Wanted Board menu entry + outlaw hunt jobs on the bulletin */
     u8 outlaw_missions;
     /* Regenerate Pelipper bulletin jobs whenever the board UI opens
      * (named _on_exit for save-field continuity; work runs on open to avoid

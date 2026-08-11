@@ -135,7 +135,7 @@ static const struct CustomDebugMenuOption sCustomDebugMenuOptions[] = {
       &gRuntimeConfig.custom_portraits, CUSTOM_DEBUG_MENU_OPTION_TOGGLE, 0,
       CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Outlaw jobs"), _("Outlaw Missions"),
-      _("Mixes WANTED outlaw hunt jobs onto\nthe Pelipper bulletin board.\nTakes effect after the board refreshes."),
+      _("Adds Wanted Board to the Pelipper\nboard menu (usual + outlaw jobs).\nTakes effect after the board refreshes."),
       &gRuntimeConfig.outlaw_missions, CUSTOM_DEBUG_MENU_OPTION_TOGGLE,
       CUSTOM_DEBUG_MENU_OPTION_RESTART_REQUIRED, CUSTOM_DEBUG_MENU_EFFECT_NONE, 0 },
     { _("Refresh board"), _("Refresh Bulletin on Open"),

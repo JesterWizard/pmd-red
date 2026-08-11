@@ -28,7 +28,7 @@ const RuntimeConfig gRuntimeConfigRom __attribute__((section(".runtime_config"))
     .all_starters_as_partners = TRUE, /* TRUE = all player starters can be partners; FALSE = vanilla 10 */
     .overkill_exp_bonus = TRUE, /* TRUE = +25% EXP per 100% overkill on full-HP KO; FALSE = off */
     .custom_portraits = TRUE, /* TRUE = SpriteCollab portraits (Normal + evo packs); FALSE = vanilla kao */
-    .outlaw_missions = TRUE, /* TRUE = WANTED hunt jobs on bulletin; FALSE = vanilla job types only */
+    .outlaw_missions = TRUE, /* TRUE = Wanted Board menu + outlaw jobs; FALSE = vanilla */
     .refresh_bulletin_on_exit = TRUE, /* TRUE = reroll board jobs on board open; FALSE = vanilla (dungeon/day only) */
     .unrestricted_bulletin_jobs = TRUE, /* TRUE = new jobs may reuse accepted Job List floors; FALSE = vanilla unique floors */
     .expanded_job_slots = TRUE, /* TRUE = accept up to 16 jobs; FALSE = vanilla 8 */

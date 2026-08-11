@@ -19,8 +19,11 @@
 #include "wonder_mail_802C10C.h"
 #include "wonder_mail_802C4C8.h"
 #include "wonder_mail_802C860.h"
+#include "constants/wonder_mail.h"
 
 EWRAM_INIT struct unkStruct_203B308 *gPelipperBoard = {NULL};
+static EWRAM_INIT u8 sPelipperBoardMode = {PELIPPER_BOARD_MODE_ALL};
+static EWRAM_INIT bool8 sPelipperBoardDirectToJobs = {FALSE};
 
 const WindowTemplate gUnknown_80E0330 =
 {
@@ -37,7 +40,7 @@ const WindowTemplate gUnknown_80E0348 =
     0,
     0x03,
     0x03, 0x03,
-    0x07, 0x03,
+    0x07, 0x05,
     0x03, 0x00,
     NULL
 };
@@ -63,6 +66,7 @@ const WindowTemplate gUnknown_80E0378 =
 };
 
 const u8 gPelipperBoard_BulletinBoard[] = "Bulletin Board";
+const u8 gPelipperBoard_WantedBoard[] = "Wanted Board";
 const u8 gPelipperBoard_JobList[] = "Job List";
 const u8 gPelipperBoard_Accepted[] = "Accepted";
 const u8 gPelipperStatusSlash[] = "/";
@@ -80,6 +84,21 @@ static void sub_802EC10(void);
 static void CreatePelipperAcceptedStatusBox(u32);
 static void SetPelipperBoardState(u32);
 
+void SetPelipperBoardMode(u8 mode)
+{
+    sPelipperBoardMode = mode;
+}
+
+u8 GetPelipperBoardMode(void)
+{
+    return sPelipperBoardMode;
+}
+
+void SetPelipperBoardDirectToJobs(bool8 direct)
+{
+    sPelipperBoardDirectToJobs = direct;
+}
+
 bool8 sub_802E864(void)
 {
     gPelipperBoard = MemoryAlloc(sizeof(struct unkStruct_203B308), MEMALLOC_GROUP_8);
@@ -89,7 +108,13 @@ bool8 sub_802E864(void)
     /* Regen on open — exit-time GeneratePelipperJobs stalls and leaves the menu cursor in OAM. */
     if (gRuntimeConfig.refresh_bulletin_on_exit)
         GeneratePelipperJobs();
-    SetPelipperBoardState(INITIALIZE_PELIPPER_BOARD);
+    if (sPelipperBoardDirectToJobs) {
+        sPelipperBoardDirectToJobs = FALSE;
+        SetPelipperBoardState(4);
+    }
+    else {
+        SetPelipperBoardState(INITIALIZE_PELIPPER_BOARD);
+    }
     return TRUE;
 }
 
@@ -223,10 +248,21 @@ void CreatePelipperBoardMenu(void)
   MemoryFill16(gPelipperBoard->unkFC,0,sizeof(gPelipperBoard->unkFC));
   gPelipperBoard->menuItems[0].text = gPelipperBoard_BulletinBoard;
   gPelipperBoard->menuItems[0].menuAction = PELIPPER_BOARD_BULLETIN_BOARD;
-  if ((HasNoPelipperBoardJobs())) {
+  if (HasNoPelipperBoardJobsOfMode(
+          gRuntimeConfig.outlaw_missions ? PELIPPER_BOARD_MODE_USUAL : PELIPPER_BOARD_MODE_ALL)) {
     gPelipperBoard->unkFC[0] = 1;
   }
   loopMax += 1;
+
+  if (gRuntimeConfig.outlaw_missions) {
+    gPelipperBoard->menuItems[loopMax].text = gPelipperBoard_WantedBoard;
+    gPelipperBoard->menuItems[loopMax].menuAction = PELIPPER_BOARD_WANTED_BOARD;
+    if (HasNoPelipperBoardJobsOfMode(PELIPPER_BOARD_MODE_OUTLAW)) {
+      gPelipperBoard->unkFC[loopMax] = 1;
+    }
+    loopMax += 1;
+  }
+
   gPelipperBoard->menuItems[loopMax].text = gPelipperBoard_JobList;
   gPelipperBoard->menuItems[loopMax].menuAction = PELIPPER_BOARD_JOB_LIST;
 
@@ -298,6 +334,15 @@ void sub_802ECB4(void)
     switch(menuAction)
     {
         case PELIPPER_BOARD_BULLETIN_BOARD:
+            SetPelipperBoardMode(gRuntimeConfig.outlaw_missions
+                ? PELIPPER_BOARD_MODE_USUAL : PELIPPER_BOARD_MODE_ALL);
+            if(!HasNoPelipperBoardJobs())
+                SetPelipperBoardState(4);
+            else
+                sub_8012EA4(&gPelipperBoard->unk6C, 1);
+            break;
+        case PELIPPER_BOARD_WANTED_BOARD:
+            SetPelipperBoardMode(PELIPPER_BOARD_MODE_OUTLAW);
             if(!HasNoPelipperBoardJobs())
                 SetPelipperBoardState(4);
             else

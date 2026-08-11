@@ -3,6 +3,7 @@
 #include "ornament_files_table.h"
 #include "ornament_gfx.h"
 
+/* Names must stay sorted — OpenFile binary-searches this table. */
 const File gOrnamentFiles[ORNAMENT_FILES_COUNT] = {
     [0] = { "flag00c", &gFlag00Pal, },
     [1] = { "flag00p", &gAxFlag00, },

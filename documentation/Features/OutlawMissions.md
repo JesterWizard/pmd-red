@@ -13,26 +13,27 @@
 
 ## Introduction
 
-Vanilla Red Rescue Team bulletin jobs are rescue / escort / find / deliver. This feature adds **Explorers-style outlaw hunt** jobs mixed into the same Pelipper bulletin board: defeat a single hostile outlaw on the destination floor.
+Vanilla Red Rescue Team bulletin jobs are rescue / escort / find / deliver. This feature adds **Explorers-style outlaw hunt** jobs and, when enabled, a **Wanted Board** entry on the Pelipper board menu alongside usual Bulletin Board jobs.
 
-Toggle: `gRuntimeConfig.outlaw_missions` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). Set to `FALSE` to restore vanilla job-type weights only.
+Toggle: `gRuntimeConfig.outlaw_missions` in [`configs/runtime.c`](../../configs/runtime.c) (default `TRUE`). Set to `FALSE` to restore a single vanilla board menu (usual job types only).
 
 | Mode | Behavior |
 |------|----------|
-| `TRUE` (default) | ~1/8 of generated bulletin jobs can be outlaw hunts |
-| `FALSE` | Outlaw rolls fall back to rescue-client jobs |
+| `TRUE` (default) | Board menu: Bulletin Board + Wanted Board + Job List; generation fills ~half usual / ~half outlaw into the shared 8 slots |
+| `FALSE` | Bulletin Board + Job List only; outlaw rolls fall back to rescue-client jobs |
 
 ---
 
 ## Flow
 
-1. `GeneratePelipperJobs` / `GenerateMailJobInfo` may assign `WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT` (5).
-2. Board UI shows **Wanted:** titles and defeat objectives (same Accept / Take Job path as other jobs).
-3. On the destination floor, `sub_80842F0` sets `unk44` (species) and `outlawHunt`.
-4. `SpawnWildMonsOnFloor` spawns that species as `BEHAVIOR_OUTLAW` at a level from `sOutlawLevelTable[GetDungeonLocMissionDifficulty]` (EoS `OUTLAW_LEVEL_TABLE` values). Spawn priority: tile adjacent to the leader, else adjacent to the partner, else the leader's room, else any monster spawn tile.
-5. After the destination-floor banner, the outlaw speaks **one of five** random taunt lines (with portrait).
-6. Defeating the outlaw (not recruitable) marks the job complete. EXP gain is shown first, then the defeated dialogue, then the offer to leave the dungeon.
-7. On successful exit, `MAIL_TYPE_UNK8` → `UNK9`. At Pelipper Post, `sub_8096AF8` / `TYM_Create` run the thank-you scene, then `MR_Create` pays the usual mission reward.
+1. `GeneratePelipperJobs` fills story jobs, then usual vs outlaw quotas when the toggle is on (`GenerateMailJobInfoForced`).
+2. Talking to the outdoor board (or opening the board UI) shows **Bulletin Board**, **Wanted Board**, and **Job List** when outlaw missions are on.
+3. Board UI shows **Wanted:** titles and defeat objectives (same Accept / Take Job path as other jobs).
+4. On the destination floor, `sub_80842F0` sets `unk44` (species) and `outlawHunt`.
+5. `SpawnWildMonsOnFloor` spawns that species as `BEHAVIOR_OUTLAW` at a level from `sOutlawLevelTable[GetDungeonLocMissionDifficulty]` (EoS `OUTLAW_LEVEL_TABLE` values). Spawn priority: tile adjacent to the leader, else adjacent to the partner, else the leader's room, else any monster spawn tile.
+6. After the destination-floor banner, the outlaw speaks **one of five** random taunt lines (with portrait).
+7. Defeating the outlaw (not recruitable) marks the job complete. EXP gain is shown first, then the defeated dialogue, then the offer to leave the dungeon.
+8. On successful exit, `MAIL_TYPE_UNK8` → `UNK9`. At Pelipper Post, `sub_8096AF8` / `TYM_Create` run the thank-you scene, then `MR_Create` pays the usual mission reward.
 
 Difficulty uses the same +2 bump as escort missions for board/rewards (`sub_803C1B4`). Combat level uses base difficulty only.
 
@@ -46,6 +47,7 @@ Difficulty uses the same +2 bump as escort missions for board/rewards (`sub_803C
 | Mission type | [`include/constants/wonder_mail.h`](../../include/constants/wonder_mail.h) |
 | Behavior / floor flag | [`include/structs/dungeon_entity.h`](../../include/structs/dungeon_entity.h), [`include/structs/str_dungeon.h`](../../include/structs/str_dungeon.h) (`outlawHunt`) |
 | Generation | [`src/code_80958E8.c`](../../src/code_80958E8.c) |
+| Board menu / UI filter | [`src/pelipper_board.c`](../../src/pelipper_board.c), [`src/wonder_mail_802C10C.c`](../../src/wonder_mail_802C10C.c), [`src/textbox.c`](../../src/textbox.c) |
 | Difficulty | [`src/code_803C1B4.c`](../../src/code_803C1B4.c) |
 | Board text | [`src/code_803B344.c`](../../src/code_803B344.c), [`src/pokemon_mail.c`](../../src/pokemon_mail.c), [`src/data/pokemon_mail_pre.h`](../../src/data/pokemon_mail_pre.h) |
 | Objectives HUD | [`src/post_office_guide2.c`](../../src/post_office_guide2.c) |
@@ -63,5 +65,5 @@ Difficulty uses the same +2 bump as escort missions for board/rewards (`sub_803C
 - Outlaws are not recruitable.
 - Combat level comes from `sOutlawLevelTable` (EoS NA `OUTLAW_LEVEL_TABLE`) by base dungeon difficulty; no separate stat multiplier.
 - External Wonder Mail passwords cannot encode type 5 (`ValidateWonderMail` still rejects `missionType > DELIVER`).
-- Mixed into the existing bulletin slots; there is no separate Wanted Poster board.
+- Shared 8 bulletin slots (filtered by menu choice); no extra save size.
 - Spawn prefers a tile next to the leader, then the partner, then the leader's room; if none work, any floor spawn tile is used.

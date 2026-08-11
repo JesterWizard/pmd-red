@@ -87,4 +87,5 @@ const struct ScriptVarInfo gScriptVarInfo[SCRIPT_VARS_COUNT] = {
     [SUM] = {.type = SCRIPT_VAR_TYPE_0, 0, 229, 0, 0, 0, "SUM"},
     [CUSTOM_STORY] = {.type = SCRIPT_VAR_TYPE_SPECIAL, 2, 0, 0, 1, 0, "CUSTOM_STORY"},
     [LIVING_SQUARE] = {.type = SCRIPT_VAR_TYPE_SPECIAL, 2, 0, 0, 1, 0, "LIVING_SQUARE"},
+    [OUTLAW_MISSIONS] = {.type = SCRIPT_VAR_TYPE_SPECIAL, 2, 0, 0, 1, 0, "OUTLAW_MISSIONS"},
 };

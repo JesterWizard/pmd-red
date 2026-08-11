@@ -43,6 +43,7 @@ static EWRAM_DATA u8 sMailJobItemStack[NUMBER_OF_ITEM_IDS] = { 0 };
 static EWRAM_DATA s32 sMailJobItemCount = { 0 };
 static EWRAM_DATA u8 sMailJobItemDungeon = { 0xFF };
 static EWRAM_DATA bool8 sMailJobGenActive = { 0 };
+static EWRAM_DATA s32 sForceMissionType = { -1 };
 
 EWRAM_INIT unkStruct_203B490 *gUnknown_203B490 = { NULL };
 
@@ -50,6 +51,7 @@ static bool8 sub_8095E38(WonderMail *mail, u8 dungeon, u32 floor, u8 param_4);
 static u8 sub_8095F28(u8 param_1);
 static bool8 GenerateMailJobDungeonInfo(WonderMail *mail);
 static bool8 GenerateMailJobInfo(WonderMail *);
+static bool8 GenerateMailJobInfoForced(WonderMail *mail, s32 forceMissionType);
 static bool8 sub_8096E80(u8);
 static u8 sub_8095E78(void);
 static bool8 sub_80963B4(void);
@@ -199,8 +201,18 @@ static bool8 GenerateMailJobInfo(WonderMail *mail)
         return FALSE;
     }
     mail->mailType = MAIL_TYPE_SUSPENDED_JOB;
-    rand = RandInt(8);
-    missionType = sPossibleMissionTypes[rand];
+    if (sForceMissionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT) {
+        missionType = WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT;
+    }
+    else if (sForceMissionType >= 0) {
+        do {
+            missionType = sPossibleMissionTypes[RandInt(8)];
+        } while (missionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT);
+    }
+    else {
+        rand = RandInt(8);
+        missionType = sPossibleMissionTypes[rand];
+    }
     mail->missionType = missionType;
     if (missionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT && !gRuntimeConfig.outlaw_missions) {
         mail->missionType = WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT;
@@ -275,6 +287,25 @@ static bool8 GenerateMailJobInfo(WonderMail *mail)
             }
             break;
     }
+    return TRUE;
+}
+
+static bool8 GenerateMailJobInfoForced(WonderMail *mail, s32 forceMissionType)
+{
+    bool8 ok;
+
+    sForceMissionType = forceMissionType;
+    ok = GenerateMailJobInfo(mail);
+    sForceMissionType = -1;
+    if (!ok)
+        return FALSE;
+    if (forceMissionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT
+        && mail->missionType != WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT)
+        return FALSE;
+    if (forceMissionType >= 0
+        && forceMissionType != WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT
+        && mail->missionType == WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT)
+        return FALSE;
     return TRUE;
 }
 
@@ -965,9 +996,37 @@ void GeneratePelipperJobs(void)
     index++;
   }
   BeginMailJobGeneration();
-  for (; index <= range; index++) {
-    if (!GenerateMailJobInfo(&gUnknown_203B490->pelipperBoardJobs[index])) break;
-    gUnknown_203B490->pelipperBoardJobs[index].rewardType = RandRange(MONEY, BLANK_4);
+  if (gRuntimeConfig.outlaw_missions) {
+    s32 remaining = range - index + 1;
+    s32 outlawQuota;
+    s32 usualQuota;
+    s32 filled;
+
+    if (remaining < 0)
+      remaining = 0;
+    outlawQuota = remaining / 2;
+    if (outlawQuota < 1 && remaining >= 2)
+      outlawQuota = 1;
+    usualQuota = remaining - outlawQuota;
+
+    for (filled = 0; filled < usualQuota && index <= range; filled++, index++) {
+      if (!GenerateMailJobInfoForced(&gUnknown_203B490->pelipperBoardJobs[index],
+                                    WONDER_MAIL_MISSION_TYPE_RESCUE_CLIENT))
+        break;
+      gUnknown_203B490->pelipperBoardJobs[index].rewardType = RandRange(MONEY, BLANK_4);
+    }
+    for (filled = 0; filled < outlawQuota && index <= range; filled++, index++) {
+      if (!GenerateMailJobInfoForced(&gUnknown_203B490->pelipperBoardJobs[index],
+                                    WONDER_MAIL_MISSION_TYPE_OUTLAW_HUNT))
+        break;
+      gUnknown_203B490->pelipperBoardJobs[index].rewardType = RandRange(MONEY, BLANK_4);
+    }
+  }
+  else {
+    for (; index <= range; index++) {
+      if (!GenerateMailJobInfo(&gUnknown_203B490->pelipperBoardJobs[index])) break;
+      gUnknown_203B490->pelipperBoardJobs[index].rewardType = RandRange(MONEY, BLANK_4);
+    }
   }
   EndMailJobGeneration();
   ShiftPelipperJobsDown();
