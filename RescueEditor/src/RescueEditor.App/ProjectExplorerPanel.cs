@@ -94,26 +94,35 @@ public sealed class ProjectExplorerPanel : UserControl
                     .GroupBy(x => x.MapId)
                     .ToDictionary(g => g.Key, g => g.First().Asset);
 
-                foreach (var item in SceneExplorerLayout.Build(scenes.Scenes))
+                foreach (var group in SceneExplorerLayout.Build(scenes.Scenes))
                 {
-                    sceneAssets.TryGetValue(item.MapId, out var asset);
-                    categoryNode.Children.Add(new AssetExplorerNode
+                    var groupNode = new SceneGroupExplorerNode
                     {
-                        Title = item.Title,
-                        Asset = asset ?? new AssetDescriptor
+                        Title = $"{group.Title} ({group.Items.Count})",
+                        GroupKey = group.Key,
+                    };
+                    foreach (var item in group.Items)
+                    {
+                        sceneAssets.TryGetValue(item.MapId, out var asset);
+                        groupNode.Children.Add(new AssetExplorerNode
                         {
-                            Id = $"scene-{item.MapId}",
-                            Name = item.Title,
-                            Category = AssetCategory.Scenes,
-                            Kind = AssetKind.Scene,
-                            Offset = item.Scene.HeaderOffset,
-                            Metadata = new Dictionary<string, string>
+                            Title = item.Title,
+                            Asset = asset ?? new AssetDescriptor
                             {
-                                ["mapId"] = item.MapId.ToString(),
+                                Id = $"scene-{item.MapId}",
+                                Name = item.Title,
+                                Category = AssetCategory.Scenes,
+                                Kind = AssetKind.Scene,
+                                Offset = item.Scene.HeaderOffset,
+                                Metadata = new Dictionary<string, string>
+                                {
+                                    ["mapId"] = item.MapId.ToString(),
+                                },
                             },
-                        },
-                        Scene = item.Scene,
-                    });
+                            Scene = item.Scene,
+                        });
+                    }
+                    categoryNode.Children.Add(groupNode);
                 }
             }
             else
