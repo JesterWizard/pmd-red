@@ -35,6 +35,7 @@ public static class RomArchiveParser
         }
 
         // Entry layout is { namePtr, dataPtr }; sizes come from the next data pointer.
+        // Build a sorted unique pointer table once, then binary-search per entry.
         var dataPointers = candidates.SelectMany(candidate =>
                 Enumerable.Range(0, candidate.Count)
                     .Select(index => SafeReadPointer(rom, candidate.Entries + index * 8 + 4)))
@@ -62,7 +63,7 @@ public static class RomArchiveParser
                 if (string.IsNullOrWhiteSpace(name) || name.Any(char.IsControl))
                     continue;
 
-                var next = dataPointers.FirstOrDefault(offset => offset > dataOffset, rom.Length);
+                var next = NextDataOffset(dataPointers, dataOffset, rom.Length);
                 var size = next > dataOffset ? next - dataOffset : rom.Length - dataOffset;
                 entries.Add(new RomArchiveEntry
                 {
@@ -85,6 +86,17 @@ public static class RomArchiveParser
         }
 
         return result;
+    }
+
+    /// <summary>First sorted data pointer strictly greater than <paramref name="dataOffset"/>.</summary>
+    private static int NextDataOffset(int[] sortedPointers, int dataOffset, int romLength)
+    {
+        var idx = Array.BinarySearch(sortedPointers, dataOffset);
+        if (idx >= 0)
+            idx++;
+        else
+            idx = ~idx;
+        return idx < sortedPointers.Length ? sortedPointers[idx] : romLength;
     }
 
     private static int SafeReadPointer(RomImage rom, int offset)

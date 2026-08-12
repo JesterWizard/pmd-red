@@ -22,9 +22,13 @@ never overwritten.
 
 | Setup | Command |
 | --- | --- |
-| Edit in WSL, UI on Windows | PowerShell: `RescueEditor\sync-and-watch.ps1` (mirrors to `%USERPROFILE%\Github\pmd-red-win`) |
-| Everything in WSL | `./RescueEditor/dev.sh` (Linux Avalonia, software renderer) |
+| Edit in WSL, UI on Windows | `./RescueEditor/dev.sh` (mirrors to `%USERPROFILE%\Github\pmd-red-win`, Windows hot reload) |
+| Same from PowerShell | `RescueEditor\sync-and-watch.ps1` |
+| Everything in WSL | `./RescueEditor/dev.sh --linux` (Avalonia software renderer) |
 | Repo already on `C:\...` | PowerShell: `.\RescueEditor\dev.ps1` |
+
+Heavy assets (actor sprites / sound) sync once, then skip on later launches. Pass
+`--force-assets` / `-ForceAssets` after pulling large graphics or sound changes.
 
 One-shot without watch:
 

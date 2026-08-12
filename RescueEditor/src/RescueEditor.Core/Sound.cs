@@ -136,13 +136,9 @@ public static class SoundIndexer
                      })
                      .OrderBy(path => path))
         {
-            var bytes = ParseWaveBytes(path);
-            var offset = FindWaveInRom(rom, bytes);
+            // Defer ParseWaveBytes + ROM search until preview/export — that path was ~3.5s of load.
             var name = Path.GetFileNameWithoutExtension(path);
             var isGbWave = name.StartsWith("gbwave_", StringComparison.Ordinal);
-            var sampleRate = !isGbWave && bytes.Length >= 8
-                ? Math.Max(1, (int)(BinaryPrimitives.ReadUInt32LittleEndian(bytes.AsSpan(4)) >> 10))
-                : 0;
 
             yield return new AssetDescriptor
             {
@@ -150,23 +146,17 @@ public static class SoundIndexer
                 Name = name,
                 Category = AssetCategory.SoundEffects,
                 Kind = AssetKind.SoundWave,
-                Offset = offset,
-                Size = offset >= 0 ? bytes.Length : 0,
-                Format = isGbWave
-                    ? "GB wave pattern"
-                    : offset >= 0 ? "GBA DirectSound / PCM8" : "source wave",
+                Offset = -1,
+                Size = 0,
+                Format = isGbWave ? "GB wave pattern" : "GBA DirectSound / PCM8",
                 SourcePath = path,
                 Description = isGbWave
-                    ? (offset >= 0
-                        ? "GB wave table entry present in ROM"
-                        : "GB wave source is not present as a contiguous range in this ROM")
-                    : offset >= 0
-                        ? $"{sampleRate} Hz, {Math.Max(0, bytes.Length - 16)} samples"
-                        : "Wave source is not present as a contiguous range in this ROM",
+                    ? "GB wave table (ROM range resolved on demand)"
+                    : "DirectSound wave (ROM range resolved on demand)",
                 Metadata = new Dictionary<string, string>
                 {
-                    ["sampleRate"] = sampleRate.ToString(CultureInfo.InvariantCulture),
-                    ["sourceBytes"] = bytes.Length.ToString(CultureInfo.InvariantCulture),
+                    ["sampleRate"] = "0",
+                    ["sourceBytes"] = "0",
                     ["waveKind"] = isGbWave ? "gb" : "directsound",
                 },
             };
@@ -318,6 +308,8 @@ public static class SoundIndexer
         return output.ToArray();
     }
 
+    internal static byte[] ParseWaveBytesPublic(string path) => ParseWaveBytes(path);
+
     private static int FindWaveInRom(RomImage rom, byte[] bytes)
     {
         if (bytes.Length < 16)
@@ -325,6 +317,8 @@ public static class SoundIndexer
         var prefixLength = Math.Min(32, bytes.Length);
         return rom.Find(bytes.AsSpan(0, prefixLength));
     }
+
+    internal static int FindWaveInRomPublic(RomImage rom, byte[] bytes) => FindWaveInRom(rom, bytes);
 
     private static void AddLittleEndian(List<byte> output, uint value, int size)
     {
@@ -335,8 +329,62 @@ public static class SoundIndexer
 
 public static class SoundWaveCodec
 {
+    private static readonly System.Collections.Concurrent.ConcurrentDictionary<string, (int Offset, int Size, int SampleRate)> ResolveCache =
+        new(StringComparer.Ordinal);
+
+    /// <summary>
+    /// Resolve a catalog wave (often unresolved at index time) to a descriptor with ROM range.
+    /// </summary>
+    public static AssetDescriptor Resolve(RomImage rom, AssetDescriptor asset)
+    {
+        if (asset.Kind != AssetKind.SoundWave)
+            return asset;
+        if (asset.HasRomRange)
+            return asset;
+        if (string.IsNullOrWhiteSpace(asset.SourcePath) || !File.Exists(asset.SourcePath))
+            return asset;
+
+        var (offset, size, sampleRate) = ResolveCache.GetOrAdd(
+            rom.Path + "\0" + asset.SourcePath,
+            _ =>
+            {
+                var bytes = SoundIndexer.ParseWaveBytesPublic(asset.SourcePath);
+                var found = SoundIndexer.FindWaveInRomPublic(rom, bytes);
+                var rate = bytes.Length >= 8
+                    ? Math.Max(1, (int)(BinaryPrimitives.ReadUInt32LittleEndian(bytes.AsSpan(4)) >> 10))
+                    : 0;
+                return (found, found >= 0 ? bytes.Length : 0, rate);
+            });
+
+        if (offset < 0 || size <= 0)
+            return asset;
+
+        var meta = new Dictionary<string, string>(asset.Metadata)
+        {
+            ["sampleRate"] = sampleRate.ToString(CultureInfo.InvariantCulture),
+            ["sourceBytes"] = size.ToString(CultureInfo.InvariantCulture),
+        };
+
+        return new AssetDescriptor
+        {
+            Id = asset.Id,
+            Name = asset.Name,
+            Category = asset.Category,
+            Kind = asset.Kind,
+            Offset = offset,
+            Size = size,
+            Format = asset.Format,
+            SourcePath = asset.SourcePath,
+            Description = sampleRate > 0
+                ? $"{sampleRate} Hz, {Math.Max(0, size - 16)} samples"
+                : asset.Description,
+            Metadata = meta,
+        };
+    }
+
     public static string Describe(RomImage rom, AssetDescriptor asset)
     {
+        asset = Resolve(rom, asset);
         if (!asset.HasRomRange || asset.Size < 16)
             return $"{asset.Name}\n\n{asset.Description}\n\nSource: {asset.SourcePath}";
 
@@ -354,6 +402,7 @@ public static class SoundWaveCodec
 
     public static byte[] ToWave(RomImage rom, AssetDescriptor asset)
     {
+        asset = Resolve(rom, asset);
         if (!asset.HasRomRange || asset.Size < 16)
             throw new InvalidDataException("This sound entry has no ROM sample range.");
         var source = rom.Copy(asset.Offset, asset.Size);

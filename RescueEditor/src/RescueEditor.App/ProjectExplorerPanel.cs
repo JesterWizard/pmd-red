@@ -85,43 +85,34 @@ public sealed class ProjectExplorerPanel : UserControl
 
             if (category == AssetCategory.Scenes && scenes is not null)
             {
-                var byPrefix = scenes.Scenes
-                    .OrderBy(s => s.Name, StringComparer.OrdinalIgnoreCase)
-                    .GroupBy(s => ScenePrefix(s.Name));
-                foreach (var group in byPrefix)
+                var sceneAssets = catalog.ForCategory(AssetCategory.Scenes)
+                    .Select(a => a.Metadata.TryGetValue("mapId", out var id) && int.TryParse(id, out var mapId)
+                        ? (MapId: mapId, Asset: a)
+                        : (MapId: -1, Asset: a))
+                    .Where(x => x.MapId >= 0)
+                    .GroupBy(x => x.MapId)
+                    .ToDictionary(g => g.Key, g => g.First().Asset);
+
+                foreach (var item in SceneExplorerLayout.Build(scenes.Scenes))
                 {
-                    var groupNode = new SceneGroupExplorerNode
+                    sceneAssets.TryGetValue(item.MapId, out var asset);
+                    categoryNode.Children.Add(new AssetExplorerNode
                     {
-                        Title = GroupTitle(group.Key),
-                        GroupKey = group.Key,
-                    };
-                    foreach (var scene in group)
-                    {
-                        var asset = catalog.ForCategory(AssetCategory.Scenes)
-                            .FirstOrDefault(a =>
-                                a.Metadata.TryGetValue("mapId", out var id) &&
-                                int.TryParse(id, out var mapId) &&
-                                mapId == scene.MapId);
-                        var display = GroundMapNames.GetDisplayName(scene.Name);
-                        groupNode.Children.Add(new AssetExplorerNode
+                        Title = item.Title,
+                        Asset = asset ?? new AssetDescriptor
                         {
-                            Title = display is null ? scene.Name : $"{scene.Name}  {display}",
-                            Asset = asset ?? new AssetDescriptor
+                            Id = $"scene-{item.MapId}",
+                            Name = item.Title,
+                            Category = AssetCategory.Scenes,
+                            Kind = AssetKind.Scene,
+                            Offset = item.Scene.HeaderOffset,
+                            Metadata = new Dictionary<string, string>
                             {
-                                Id = $"scene-{scene.MapId}",
-                                Name = scene.Name,
-                                Category = AssetCategory.Scenes,
-                                Kind = AssetKind.Scene,
-                                Offset = scene.HeaderOffset,
-                                Metadata = new Dictionary<string, string>
-                                {
-                                    ["mapId"] = scene.MapId.ToString(),
-                                },
+                                ["mapId"] = item.MapId.ToString(),
                             },
-                            Scene = scene,
-                        });
-                    }
-                    categoryNode.Children.Add(groupNode);
+                        },
+                        Scene = item.Scene,
+                    });
                 }
             }
             else
@@ -315,28 +306,5 @@ public sealed class ProjectExplorerPanel : UserControl
         SceneGroupExplorerNode => "▾ ",
         AssetExplorerNode => "◇ ",
         _ => "",
-    };
-
-    private static string ScenePrefix(string name)
-    {
-        if (string.IsNullOrEmpty(name))
-            return "?";
-        var letter = char.ToUpperInvariant(name[0]);
-        return char.IsLetter(letter) ? letter.ToString() : "?";
-    }
-
-    private static string GroupTitle(string key) => key switch
-    {
-        "A" => "A — Adventure",
-        "B" => "B — Base",
-        "D" => "D — Dungeon",
-        "G" => "G — Guild / Town",
-        "H" => "H — House",
-        "M" => "M — Misc",
-        "P" => "P — Place",
-        "S" => "S — System",
-        "T" => "T — Town",
-        "V" => "V — Village",
-        _ => $"{key} — Maps",
     };
 }

@@ -24,6 +24,19 @@ public static class SceneCompositor
         if (primary is not null && !IsVisuallyFlat(primary))
             return primary;
 
+        // Boss-end shells (tileset ≥ 64): retail fills via dungeon emap (bXXemap0),
+        // not the empty BMA — prefer that over Mid/entry BMA substitution.
+        try
+        {
+            var dungeon = DungeonShellPreview.TryRender(rom, scene.Map);
+            if (dungeon is not null && !IsVisuallyFlat(dungeon))
+                return dungeon;
+        }
+        catch
+        {
+            // Fall through to Mid/entry shells.
+        }
+
         // Dungeon shell maps (DxxP02/P03, render modes 10/11) store a near-empty BMA;
         // retail fills tiles via dungeon generation. Prefer mid/peak staging maps
         // (same dimensions as boss ends) before falling back to the entry BMA.
