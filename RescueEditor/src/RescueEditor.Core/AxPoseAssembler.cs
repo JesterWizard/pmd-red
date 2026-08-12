@@ -197,8 +197,9 @@ public static partial class AxPoseAssembler
             if (piece.SpriteId < 0)
                 continue;
             var image = RenderOamFromVram(vram, palette, piece.TileNum, piece.OamW, piece.OamH);
+            // Fail closed: skipping a missing OAM yields the one-wing "clipped boss" bug.
             if (image is null)
-                continue;
+                return null;
             GbaChroma.KeyOut(image);
             blits.Add((image, piece.X, piece.Y, piece.FlipH, piece.FlipV));
         }
@@ -365,9 +366,9 @@ public static partial class AxPoseAssembler
         if (oamW < 8 || oamH < 8 || tileNum < 0)
             return null;
         var tileOff = tileNum * 32;
-        if (tileOff >= vram.Length)
+        var needBytes = (oamW / 8) * (oamH / 8) * 32;
+        if (tileOff < 0 || tileOff + needBytes > vram.Length)
             return null;
-        // Enough remaining bytes for the OAM footprint (missing tail tiles stay blank).
         return RenderOamSprite(vram.AsSpan(tileOff), palette, oamW, oamH);
     }
 

@@ -101,13 +101,10 @@ public sealed class ActorSpriteAtlas
             return null;
 
         // Boss / padded-OAM idle: prefer assembled frame over sheet scraps
-        // (Ho-Oh sprite_1.png is 56×8; Articuno sheet is 8×8).
+        // (Ho-Oh sprite_1.png is 56×8; Articuno sheet is 8×8). Never return a
+        // scrap when multi-piece assembly fails — that draws clipped bosses.
         if (IsMultiPiece(speciesId))
-        {
-            var assembled = TryGetAssembledPose(speciesId, poseNumber: 1);
-            if (assembled is not null)
-                return assembled;
-        }
+            return TryGetAssembledPose(speciesId, poseNumber: 1);
 
         return TryGetSpeciesSprite(speciesId, frameIndex: 0);
     }
@@ -130,11 +127,15 @@ public sealed class ActorSpriteAtlas
         return _bySpecies.GetValueOrDefault(speciesId);
     }
 
+    /// <summary>Drawn AX/sheet frame plus retail anim offsets (<c>DoAxFrame</c>).</summary>
+    public readonly record struct AnimatedSprite(
+        RgbaImage Image, bool FlipH, short OffsetX = 0, short OffsetY = 0);
+
     /// <summary>
     /// Resolve a draw for <see cref="GroundScriptVm"/> SELECT_ANIMATION + facing.
     /// Uses AX conventions: idle anim 2 has 8-dir sprite groups; sleep anim 6 uses pose sheets ~48+.
     /// </summary>
-    public (RgbaImage Image, bool FlipH)? TryGetAnimatedSprite(
+    public AnimatedSprite? TryGetAnimatedSprite(
         int speciesId,
         int animationId,
         int direction,
@@ -142,7 +143,12 @@ public sealed class ActorSpriteAtlas
         bool isMoving = false)
     {
         EnsureFramesLoaded(speciesId);
-        if (_frameCount.GetValueOrDefault(speciesId) <= 0)
+        var multi = IsMultiPiece(speciesId);
+        // Multi-piece bosses need AX headers + tiles; sheet PNGs are OAM scraps.
+        if (!multi && _frameCount.GetValueOrDefault(speciesId) <= 0)
+            return null;
+        if (multi && _frameCount.GetValueOrDefault(speciesId) <= 0 &&
+            ResolveFolder(speciesId) is null)
             return null;
 
         var dir = direction & 7;
@@ -154,7 +160,7 @@ public sealed class ActorSpriteAtlas
             if (sleepA is null)
                 return null;
             var img = ((tickFrames / 30) & 1) == 0 ? sleepA : sleepB!;
-            return (img, false);
+            return new AnimatedSprite(img, false);
         }
 
         var cycle = isMoving || (animationId != GroundScriptVm.AnimIdle && animationId > 0 && animationId != GroundScriptVm.AnimSleep);
@@ -165,17 +171,20 @@ public sealed class ActorSpriteAtlas
         {
             var axFrame = TryGetAxAnimFrame(speciesId, animationId, dir, tickFrames);
             if (axFrame is not null)
-                return (axFrame, false);
+                return axFrame;
         }
 
         // Prefer AX pose assembly: correct OAM size/tile pads (bosses) and avoids
         // sheet-index scraps (e.g. Charmander north sprite_13 is 16×32, not idle).
-        if (!cycle || IsMultiPiece(speciesId))
+        if (!cycle || multi)
         {
             var pose = AxPoseAssembler.IdlePoseForDirection(dir);
             var assembled = TryGetAssembledPose(speciesId, pose);
             if (assembled is not null)
-                return (assembled, false);
+                return new AnimatedSprite(assembled, false);
+            // Bosses: never substitute a clipped sheet scrap for a failed assemble.
+            if (multi)
+                return null;
         }
 
         var (baseIndex, flip) = IdleSpriteForDirection(dir);
@@ -189,7 +198,7 @@ public sealed class ActorSpriteAtlas
         var sprite = TryGetSpeciesSprite(speciesId, baseIndex + frameOffset)
             ?? TryGetSpeciesSprite(speciesId, baseIndex)
             ?? TryGetSpeciesSprite(speciesId, 0);
-        return sprite is null ? null : (sprite, flip);
+        return sprite is null ? null : new AnimatedSprite(sprite, flip);
     }
 
     /// <summary>Legacy helper — south idle only.</summary>
@@ -240,7 +249,7 @@ public sealed class ActorSpriteAtlas
         return image;
     }
 
-    private RgbaImage? TryGetAxAnimFrame(int speciesId, int scriptAnimId, int direction, int tickFrames)
+    private AnimatedSprite? TryGetAxAnimFrame(int speciesId, int scriptAnimId, int direction, int tickFrames)
     {
         var folder = ResolveFolder(speciesId);
         if (folder is null)
@@ -257,13 +266,18 @@ public sealed class ActorSpriteAtlas
         if (seq is null || seq.Frames.Count == 0)
             return null;
 
-        var poseId = seq.PoseIdAtTick(tickFrames);
-        if (_assembledPoseIds.TryGetValue((speciesId, poseId), out var cached))
-            return cached;
+        var tick = GroundAnimMapping.EffectiveTick(scriptAnimId, tickFrames, seq.TotalDurationFrames);
+        var frame = seq.FrameAtTick(tick);
+        if (_assembledPoseIds.TryGetValue((speciesId, frame.PoseId), out var cached))
+        {
+            if (cached is null)
+                return null;
+            return new AnimatedSprite(cached, false, frame.OffsetX, frame.OffsetY);
+        }
 
-        var image = AxPoseAssembler.TryAssemblePoseId(_repositoryRoot, folder, poseId);
-        _assembledPoseIds[(speciesId, poseId)] = image;
-        return image;
+        var image = AxPoseAssembler.TryAssemblePoseId(_repositoryRoot, folder, frame.PoseId);
+        _assembledPoseIds[(speciesId, frame.PoseId)] = image;
+        return image is null ? null : new AnimatedSprite(image, false, frame.OffsetX, frame.OffsetY);
     }
 
     private string? ResolveFolder(int speciesId)

@@ -1146,6 +1146,110 @@ public sealed class ScenePlayTests
             auto.Update(1, waitingForAdvance: true, scriptFinished: true, canGoNext: true));
     }
 
+    [Fact]
+    public void MtBlazePeak_ScenePlay_MoltresHasBothWingTips()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        var root = FindRepoRoot();
+        if (baserom is null || root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "moltres.h")))
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var database = SceneGraphParser.Parse(rom, RomProfile.Us10);
+        var scene = database.FindScene(197);
+        Assert.NotNull(scene);
+
+        var actors = new ActorSpriteAtlas(root, database.Profile);
+        var session = new ScenePlaySession(
+            rom, scene!, group: 1, sector: 0,
+            actorSprites: actors,
+            scripted: true,
+            profile: database.Profile);
+
+        for (var i = 0; i < 900 && !session.WaitingForAdvance; i++)
+            session.Tick(1.0 / 60.0);
+
+        var scriptField = typeof(ScenePlaySession).GetField(
+            "_script", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+        var vm = (GroundScriptVm?)scriptField?.GetValue(session);
+        Assert.NotNull(vm);
+        Assert.Equal(22, vm!.GetAnimation(2)); // Moltres wing flap while dialogue waits
+
+        var drawn = actors.TryGetAnimatedSprite(146, 22, vm.GetDirection(2), tickFrames: 30);
+        Assert.NotNull(drawn);
+        Assert.True(drawn!.Value.Image.Width >= 72, $"Moltres too narrow: {drawn.Value.Image.Width}");
+        var (tipL, tipR) = WingTipOpaque(drawn.Value.Image, tipCols: 8);
+        Assert.True(tipL >= 20 && tipR >= 20, $"Wing tips L={tipL} R={tipR} — boss clipped");
+
+        // 0x100D hold-first: must not flicker open↔slumped across Scene Play ticks.
+        var drawnLater = actors.TryGetAnimatedSprite(146, 22, vm.GetDirection(2), tickFrames: 90);
+        Assert.NotNull(drawnLater);
+        Assert.True(
+            drawn.Value.Image.Pixels.SequenceEqual(drawnLater!.Value.Image.Pixels),
+            "Moltres anim 22 must stay on the first wing frame");
+
+        var frame = session.RenderFrameImage(composeBackground: true);
+        Assert.Equal(240, frame.Width);
+        // Full map blit path must keep the assembled frame (not a sheet scrap).
+        Assert.True(CountWarmBossPixels(frame) >= 200, "Moltres missing from Mt. Blaze camera");
+    }
+
+    private static (int Left, int Right) WingTipOpaque(RgbaImage image, int tipCols)
+    {
+        var left = 0;
+        var right = 0;
+        for (var y = 0; y < image.Height; y++)
+        {
+            for (var x = 0; x < tipCols && x < image.Width; x++)
+            {
+                if (image.Pixels[(y * image.Width + x) * 4 + 3] >= 8)
+                    left++;
+            }
+
+            for (var x = Math.Max(0, image.Width - tipCols); x < image.Width; x++)
+            {
+                if (image.Pixels[(y * image.Width + x) * 4 + 3] >= 8)
+                    right++;
+            }
+        }
+
+        return (left, right);
+    }
+
+    private static int CountWarmBossPixels(RgbaImage frame)
+    {
+        var n = 0;
+        for (var y = 0; y < 90; y++)
+        {
+            for (var x = 80; x < 180; x++)
+            {
+                var i = (y * frame.Width + x) * 4;
+                var r = frame.Pixels[i];
+                var g = frame.Pixels[i + 1];
+                var b = frame.Pixels[i + 2];
+                if (r > 150 && g > 90 && g < 200 && b < 100 && r > g + 10 && g > b + 25)
+                    n++;
+            }
+        }
+
+        return n;
+    }
+
+    private static string? FindRepoRoot()
+    {
+        var dir = new DirectoryInfo(AppContext.BaseDirectory);
+        while (dir is not null)
+        {
+            if (Directory.Exists(Path.Combine(dir.FullName, "graphics", "ax", "mon")))
+                return dir.FullName;
+            dir = dir.Parent;
+        }
+
+        const string local = "/home/username/Github/pmd-red";
+        return Directory.Exists(Path.Combine(local, "graphics", "ax", "mon")) ? local : null;
+    }
+
     private static string? FindUpwards(string fileName)
     {
         var directory = new DirectoryInfo(AppContext.BaseDirectory);

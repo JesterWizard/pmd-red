@@ -553,10 +553,12 @@ public sealed class ScenePlaySession
             return;
 
         var flip = drawn?.FlipH ?? GroundScriptVm.ShouldFlipHorizontal(dir);
+        var ox = drawn?.OffsetX ?? 0;
+        var oy = drawn?.OffsetY ?? 0;
 
         // Live PixelX/Y is the foot/shadow anchor (not sprite top-left).
-        var ix = (int)Math.Round(pixelX);
-        var iy = (int)Math.Round(pixelY);
+        var ix = (int)Math.Round(pixelX) + ox;
+        var iy = (int)Math.Round(pixelY) + oy;
         GbaDialogueHud.DrawDropShadow(image, ix, iy);
 
         // Plant the sprite so its visual feet (not the sheet center) sit on the

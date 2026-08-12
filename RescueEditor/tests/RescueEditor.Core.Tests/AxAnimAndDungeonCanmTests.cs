@@ -16,6 +16,18 @@ public sealed class AxAnimAndDungeonCanmTests
         Assert.Equal(expectedAx, GroundAnimMapping.ToAxAnimIndex(scriptAnim));
     }
 
+    [Theory]
+    [InlineData(22, true, false)]  // 0x100D — hold first (Moltres wings)
+    [InlineData(23, true, false)]  // 0x100E
+    [InlineData(5, false, true)]   // 0x800 — loop
+    [InlineData(2, false, false)]  // 0x300 — play once, hold last
+    [InlineData(11, true, false)]  // 0x1006 JUMP_SURPRISE hold first
+    public void ScriptAnimationFlagsMatchRetail(int scriptAnim, bool holdFirst, bool loops)
+    {
+        Assert.Equal(holdFirst, GroundAnimMapping.HoldFirstFrame(scriptAnim));
+        Assert.Equal(loops, GroundAnimMapping.Loops(scriptAnim));
+    }
+
     [Fact]
     public void MoltresWingAnimSequence_CyclesPoseIds229And230()
     {
@@ -35,6 +47,43 @@ public sealed class AxAnimAndDungeonCanmTests
         var poseB = seq.PoseIdAtTick(seq.Frames[0].DurationFrames);
         Assert.Equal(229, poseA);
         Assert.Equal(230, poseB);
+    }
+
+    [Fact]
+    public void MoltresScriptAnim22_HoldsFirstWingFrameStatic()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "moltres.h")))
+            return;
+
+        // Retail gUnknown_8117F64[22]=0x100D → re-init every frame → freeze on first AX frame.
+        // Looping 229↔230 is the open-wing / "slumped" flicker in Scene Play.
+        Assert.True(GroundAnimMapping.HoldFirstFrame(22));
+        Assert.False(GroundAnimMapping.Loops(22));
+
+        var atlas = new ActorSpriteAtlas(root);
+        var a = atlas.TryGetAnimatedSprite(146, animationId: 22, direction: 0, tickFrames: 0);
+        var b = atlas.TryGetAnimatedSprite(146, animationId: 22, direction: 0, tickFrames: 30);
+        var c = atlas.TryGetAnimatedSprite(146, animationId: 22, direction: 0, tickFrames: 90);
+        Assert.NotNull(a);
+        Assert.NotNull(b);
+        Assert.NotNull(c);
+        Assert.True(
+            a!.Value.Image.Pixels.SequenceEqual(b!.Value.Image.Pixels),
+            "Anim 22 must stay on first wing frame across ticks");
+        Assert.True(a.Value.Image.Pixels.SequenceEqual(c!.Value.Image.Pixels));
+
+        var idle = atlas.TryGetAnimatedSprite(146, GroundScriptVm.AnimIdle, 0, 0);
+        Assert.NotNull(idle);
+        Assert.False(
+            a.Value.Image.Pixels.SequenceEqual(idle!.Value.Image.Pixels),
+            "Anim 22 must not draw idle pose1");
+
+        Assert.True(a.Value.Image.Width >= 72, $"Wing span too narrow: {a.Value.Image.Width}");
+        Assert.True(CountOpaque(a.Value.Image) >= 600, $"Wing pose too empty: {CountOpaque(a.Value.Image)}");
+        var (tipL, tipR) = WingTipOpaque(a.Value.Image, tipCols: 8);
+        Assert.True(tipL >= 20 && tipR >= 20, $"Wing tips L={tipL} R={tipR}");
     }
 
     [Fact]
@@ -60,8 +109,7 @@ public sealed class AxAnimAndDungeonCanmTests
         if (!File.Exists(Path.Combine(root, "src", "data", "ax", "moltres.h")))
             return;
 
-        // Pose230 piece0 is OAM 32×16 at tileNum 0, but sprite_206 is only 1 tile —
-        // tiles 1–7 come from sprite_207 in the shared VRAM upload order.
+        // Pose230 piece0 is OAM 32×16 at tileNum 0 — shared VRAM fills the strip.
         var pieces = AxPoseAssembler.ParsePose(root, "moltres", poseNumber: 230);
         Assert.NotNull(pieces);
         Assert.True(pieces!.Count >= 2);
@@ -70,39 +118,8 @@ public sealed class AxAnimAndDungeonCanmTests
 
         var assembled = AxPoseAssembler.TryAssemble(root, "moltres", poseNumber: 230);
         Assert.NotNull(assembled);
-        // Shared VRAM must fill the left wing strip (independent assemble left it nearly empty).
         Assert.True(CountOpaque(assembled!) >= 700, $"Wing pose too empty: {CountOpaque(assembled)}");
         Assert.True(assembled.Width >= 72, $"Wing span too narrow: {assembled.Width}");
-    }
-
-    [Fact]
-    public void MoltresScriptAnim22_AdvancesWingPoseAcrossTicks()
-    {
-        var root = FindRepoRoot();
-        if (root is null) return;
-        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "moltres.h")))
-            return;
-
-        var atlas = new ActorSpriteAtlas(root);
-        var a = atlas.TryGetAnimatedSprite(146, animationId: 22, direction: 0, tickFrames: 0);
-        var b = atlas.TryGetAnimatedSprite(146, animationId: 22, direction: 0, tickFrames: 30);
-        Assert.NotNull(a);
-        Assert.NotNull(b);
-        Assert.True(a!.Value.Image.Width >= 64);
-        Assert.False(
-            a.Value.Image.Pixels.SequenceEqual(b!.Value.Image.Pixels),
-            "Moltres wing anim 22 should change pose across ticks");
-
-        // Must not be frozen south idle (pose1) while script asks for wing flap.
-        var idle = atlas.TryGetAnimatedSprite(146, GroundScriptVm.AnimIdle, 0, 0);
-        Assert.NotNull(idle);
-        Assert.False(
-            a.Value.Image.Pixels.SequenceEqual(idle!.Value.Image.Pixels),
-            "Anim 22 must not draw idle pose1");
-
-        // Wing span must stay boss-sized (not a 32×24 sheet scrap).
-        Assert.True(a.Value.Image.Width >= 72, $"Wing span too narrow: {a.Value.Image.Width}");
-        Assert.True(CountOpaque(a.Value.Image) >= 600, $"Wing pose too empty: {CountOpaque(a.Value.Image)}");
     }
 
     [Fact]
@@ -171,6 +188,150 @@ public sealed class AxAnimAndDungeonCanmTests
         {
             try { Directory.Delete(tmp, recursive: true); } catch { /* best-effort */ }
         }
+    }
+
+    [Fact]
+    public void HeadersWithoutTiles_MultiPieceBossDoesNotDrawSheetScrap()
+    {
+        // Headers present ⇒ IsMultiPiece, but missing 4bpp must not fall back to a
+        // one-wing / 32×24 scrap — that is the Scene Play "Moltres cut off" bug.
+        var root = FindRepoRoot();
+        if (root is null) return;
+        var header = Path.Combine(root, "src", "data", "ax", "moltres.h");
+        var png = Path.Combine(root, "graphics", "ax", "mon", "moltres", "sprite_1.png");
+        if (!File.Exists(header) || !File.Exists(png))
+            return;
+
+        var tmp = Path.Combine(Path.GetTempPath(), "rescue-temple-ax-hdr-only-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            Directory.CreateDirectory(Path.Combine(tmp, "src", "data", "ax"));
+            File.Copy(header, Path.Combine(tmp, "src", "data", "ax", "moltres.h"));
+            var monDir = Path.Combine(tmp, "graphics", "ax", "mon", "moltres");
+            Directory.CreateDirectory(monDir);
+            File.Copy(png, Path.Combine(monDir, "sprite_1.png"));
+            var jsonDir = Path.Combine(tmp, "data", "monster");
+            Directory.CreateDirectory(jsonDir);
+            File.Copy(
+                Path.Combine(root, "data", "monster", "monster_data.json"),
+                Path.Combine(jsonDir, "monster_data.json"));
+
+            Assert.True(AxPoseAssembler.IsMultiPieceMonster(tmp, "moltres"));
+            Assert.Null(AxPoseAssembler.TryAssemble(tmp, "moltres", poseNumber: 1));
+
+            var atlas = new ActorSpriteAtlas(tmp);
+            Assert.Null(atlas.TryGetSpeciesSprite(146));
+            Assert.Null(atlas.TryGetAnimatedSprite(146, animationId: 22, direction: 0, tickFrames: 0));
+        }
+        finally
+        {
+            try { Directory.Delete(tmp, recursive: true); } catch { /* best-effort */ }
+        }
+    }
+
+    [Fact]
+    public void MoltresAssembledPose_HasBalancedWingTips()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "moltres.h")))
+            return;
+
+        // User repro: viewer's-right wing ends on a hard vertical cut (missing +X OAMs).
+        foreach (var pose in new[] { 1, 230 })
+        {
+            var img = AxPoseAssembler.TryAssemble(root, "moltres", pose);
+            Assert.NotNull(img);
+            Assert.True(img!.Width >= 72, $"Pose{pose} width {img.Width}");
+            var (tipL, tipR) = WingTipOpaque(img, tipCols: 8);
+            Assert.True(tipL >= 20, $"Pose{pose} left wing tip empty ({tipL})");
+            Assert.True(tipR >= 20, $"Pose{pose} right wing tip empty ({tipR}) — clipped boss");
+            Assert.True(
+                tipR >= tipL / 3 && tipL >= tipR / 3,
+                $"Pose{pose} wing tips unbalanced L={tipL} R={tipR}");
+        }
+    }
+
+    [Fact]
+    public void TryAssemble_FailsClosedWhenSharedVramCannotCoverAllOamTiles()
+    {
+        // If later OAM tileNums are past VRAM, do not return a half-assembled bird.
+        var root = FindRepoRoot();
+        if (root is null) return;
+        var header = Path.Combine(root, "src", "data", "ax", "moltres.h");
+        if (!File.Exists(header)) return;
+
+        var tmp = Path.Combine(Path.GetTempPath(), "rescue-temple-short-vram-" + Guid.NewGuid().ToString("N"));
+        try
+        {
+            Directory.CreateDirectory(Path.Combine(tmp, "src", "data", "ax"));
+            File.Copy(header, Path.Combine(tmp, "src", "data", "ax", "moltres.h"));
+            var srcDir = Path.Combine(root, "graphics", "ax", "mon", "moltres");
+            var dstDir = Path.Combine(tmp, "graphics", "ax", "mon", "moltres");
+            Directory.CreateDirectory(dstDir);
+            // Only enough tiles for the first couple of OAMs — later tileNums miss.
+            foreach (var name in new[] { "sprite_1.png", "sprite_1.4bpp", "sprite_1.4bpp.lz",
+                         "sprite_1_1.4bpp", "sprite_1_1.4bpp.lz", "sprite_2.4bpp", "sprite_2.4bpp.lz" })
+            {
+                var src = Path.Combine(srcDir, name);
+                if (File.Exists(src))
+                    File.Copy(src, Path.Combine(dstDir, name));
+            }
+
+            Assert.Null(AxPoseAssembler.TryAssemble(tmp, "moltres", poseNumber: 1));
+        }
+        finally
+        {
+            try { Directory.Delete(tmp, recursive: true); } catch { /* best-effort */ }
+        }
+    }
+
+    [Fact]
+    public void CharmanderJumpAnim_ExposesAxFrameOffsets()
+    {
+        var root = FindRepoRoot();
+        if (root is null) return;
+        if (!File.Exists(Path.Combine(root, "src", "data", "ax", "charmander.h")))
+            return;
+
+        // Script anim 11 is 0x1006 → HoldFirstFrame; offsets come from frame 0.
+        Assert.True(GroundAnimMapping.HoldFirstFrame(11));
+        var seq = AxAnimSequence.TryLoad(
+            root, "charmander", GroundAnimMapping.ToAxAnimIndex(11), direction: 4);
+        Assert.NotNull(seq);
+        Assert.Contains(seq!.Frames, f => f.OffsetY != 0);
+
+        var frame = seq.FrameAtTick(0);
+        Assert.True(frame.OffsetY != 0, "JUMP_SURPRISE first frame should lift via OffsetY");
+
+        var atlas = new ActorSpriteAtlas(root);
+        var drawn = atlas.TryGetAnimatedSprite(
+            speciesId: 4, animationId: 11, direction: 4, tickFrames: 20);
+        Assert.NotNull(drawn);
+        Assert.Equal(frame.OffsetX, drawn!.Value.OffsetX);
+        Assert.Equal(frame.OffsetY, drawn.Value.OffsetY);
+    }
+
+    private static (int Left, int Right) WingTipOpaque(RgbaImage image, int tipCols)
+    {
+        var left = 0;
+        var right = 0;
+        for (var y = 0; y < image.Height; y++)
+        {
+            for (var x = 0; x < tipCols && x < image.Width; x++)
+            {
+                if (image.Pixels[(y * image.Width + x) * 4 + 3] >= 8)
+                    left++;
+            }
+
+            for (var x = Math.Max(0, image.Width - tipCols); x < image.Width; x++)
+            {
+                if (image.Pixels[(y * image.Width + x) * 4 + 3] >= 8)
+                    right++;
+            }
+        }
+
+        return (left, right);
     }
 
     [Fact]

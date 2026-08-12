@@ -25,20 +25,23 @@ public sealed partial class AxAnimSequence
         }
     }
 
-    public int PoseIdAtTick(int tickFrames)
+    public int PoseIdAtTick(int tickFrames) => FrameAtTick(tickFrames).PoseId;
+
+    /// <summary>Active AX frame at <paramref name="tickFrames"/> (pose + retail anim offsets).</summary>
+    public Frame FrameAtTick(int tickFrames)
     {
         if (Frames.Count == 0)
-            return 0;
+            return new Frame(1, 0, 0, 0);
         var t = Math.Max(0, tickFrames) % TotalDurationFrames;
         foreach (var frame in Frames)
         {
             var dur = Math.Max(1, frame.DurationFrames);
             if (t < dur)
-                return frame.PoseId;
+                return frame;
             t -= dur;
         }
 
-        return Frames[^1].PoseId;
+        return Frames[^1];
     }
 
     public static AxAnimSequence? TryLoad(
