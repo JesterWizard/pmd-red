@@ -40,6 +40,27 @@ public sealed class DungeonShellPreviewTests
     }
 
     [Fact]
+    public void FrostForestPeakPreview_PrefersDungeonEmapOverGlitchedShell()
+    {
+        var baserom = FindUpwards("baserom.gba");
+        if (baserom is null)
+            return;
+
+        var rom = RomImage.Open(baserom);
+        var (_, _, database) = CatalogBuilder.Build(rom);
+        var scene = database.FindScene(200);
+        Assert.NotNull(scene);
+        Assert.Equal("D10P03m", scene!.Map?.BmaName);
+
+        var emap = DungeonShellPreview.TryRender(rom, scene.Map);
+        Assert.NotNull(emap?.Png);
+
+        var composed = SceneCompositor.RenderMapBackground(rom, scene);
+        Assert.NotNull(composed?.Png);
+        Assert.Equal(emap!.Png!, composed!.Png!);
+    }
+
+    [Fact]
     public void ResolveTileset_MtThunderPeakFloor100_Is66()
     {
         var baserom = FindUpwards("baserom.gba");

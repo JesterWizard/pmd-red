@@ -6,6 +6,20 @@ namespace RescueEditor.Core.Tests;
 public sealed class GroundScriptVmDeepeningTests
 {
     [Fact]
+    public void SelectEntitiesMinusOneKeepsActiveSector()
+    {
+        var commands = new List<ScriptCommandData>
+        {
+            new() { Op = 0x0C, ArgShort = -1, ArgByte = 0xFF }, // SELECT_ENTITIES(-1, -1)
+            new() { Op = 0xEF },
+        };
+        var vm = GroundScriptVm.FromCommands(commands, group: 1, sector: 0);
+        vm.TickFrames(2);
+        Assert.Equal(1, vm.ActiveGroup);
+        Assert.Equal(0, vm.ActiveSector);
+    }
+
+    [Fact]
     public void WaitIsFrameAccurate()
     {
         var commands = new List<ScriptCommandData>

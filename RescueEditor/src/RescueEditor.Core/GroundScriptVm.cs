@@ -143,9 +143,13 @@ public sealed class GroundScriptVm
     public static GroundScriptVm FromCommands(
         IReadOnlyList<ScriptCommandData> commands,
         RomImage? rom = null,
-        RomProfile? profile = null)
+        RomProfile? profile = null,
+        int group = 0,
+        int sector = 0)
     {
         var vm = new GroundScriptVm(rom, profile);
+        vm.ActiveGroup = group;
+        vm.ActiveSector = sector;
         vm._actors.Add(new ScriptActor("test", commands, npcId: 0));
         return vm;
     }
@@ -631,7 +635,8 @@ public sealed class GroundScriptVm
             {
                 var group = cmd.ArgShort < 0 ? ActiveGroup : cmd.ArgShort;
                 ActiveGroup = group;
-                ActiveSector = cmd.ArgByte;
+                // Retail SectorValueOrDefault: argByte as s8; negative keeps current sector.
+                ActiveSector = unchecked((sbyte)cmd.ArgByte) < 0 ? ActiveSector : cmd.ArgByte;
                 SpawnLivesIfNeeded(force: true);
                 actor.Index++;
                 return true;
@@ -645,7 +650,7 @@ public sealed class GroundScriptVm
             case 0x0D: // SELECT_LIVES
             {
                 ActiveGroup = cmd.ArgShort < 0 ? ActiveGroup : cmd.ArgShort;
-                ActiveSector = cmd.ArgByte;
+                ActiveSector = unchecked((sbyte)cmd.ArgByte) < 0 ? ActiveSector : cmd.ArgByte;
                 SpawnLivesIfNeeded(force: true);
                 actor.Index++;
                 return true;

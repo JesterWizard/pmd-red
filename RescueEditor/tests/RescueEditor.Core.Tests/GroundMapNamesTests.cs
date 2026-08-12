@@ -38,6 +38,16 @@ public sealed class GroundMapNamesTests
     [InlineData("A05P01m", "Night Sky 1")]
     [InlineData("A05P02m", "Night Sky 2")]
     [InlineData("A05P03m", "The End")]
+    [InlineData("T00P01m", "Debug Map")]
+    [InlineData("D09P03m", "Mt. Blaze Peak")]
+    [InlineData("D10P03m", "Frost Forest Peak")]
+    [InlineData("D12P04m", "Magma Cavern Bottom")]
+    [InlineData("D13P03m", "Sky Tower Peak")]
+    [InlineData("D24P01m", "Murky Cave Bottom")]
+    [InlineData("D24P02m", "Murky Cave Entrance")]
+    [InlineData("S03m", "Title Screen Intro")]
+    [InlineData("S04m", "Company Logos")]
+    [InlineData("S05m", "Health and Safety Warning")]
     public void GetDisplayName_UsesCanonicalPlaceNames(string romMapName, string expected)
     {
         Assert.Equal(expected, GroundMapNames.GetDisplayName(romMapName));

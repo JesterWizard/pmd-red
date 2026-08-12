@@ -574,6 +574,7 @@ public sealed class ScenePlayWindow : Window
         _simAccum = 0;
         _lastTick = DateTime.UtcNow;
         PrimeScript();
+        UpdateStatusText();
         RefreshFrame();
         Focus();
     }

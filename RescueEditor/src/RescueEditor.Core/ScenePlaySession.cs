@@ -18,6 +18,8 @@ public sealed class ScenePlaySession
     private readonly SceneEntity? _playerLive;
     private readonly HashSet<GbaButton> _held = new();
     private readonly List<int> _pendingSfx = new();
+    private readonly int _startGroup;
+    private readonly int _startSector;
     private GroundScriptVm? _script;
     private readonly Charmap? _charmap;
     private readonly RomProfile? _profile;
@@ -27,6 +29,8 @@ public sealed class ScenePlaySession
     private RgbaImage? _cachedBg;
     private int _cachedBgGroup = int.MinValue;
     private int _cachedBgSector = int.MinValue;
+    private int _cachedBgAnimKey = int.MinValue;
+    private readonly BplPaletteAnimation? _mapPalAnim;
     private RgbaImage? _workFull;
     private RgbaImage? _cameraBuf;
 
@@ -57,12 +61,16 @@ public sealed class ScenePlaySession
         var (playGroup, playSector) = ScenePlayPresets.ResolvePlayTarget(scene, group, sector);
         ActiveGroup = playGroup;
         ActiveSector = playSector;
+        _startGroup = playGroup;
+        _startSector = playSector;
 
         Appearance = appearance ?? PlayAppearance.CharmanderAndBulbasaur;
         _actorSprites?.ApplyAppearance(Appearance, rom);
 
         MapWidthPixels = ResolveMapWidth(rom, scene, mapWidthPixels, mapHeightPixels, out var height);
         MapHeightPixels = height;
+
+        _mapPalAnim = TryLoadMapPaletteAnimation(rom, scene);
 
         _collision = collision ?? TryLoadCollision(rom, scene);
 
@@ -117,6 +125,8 @@ public sealed class ScenePlaySession
     public short PartnerSpecies { get; }
     public bool IsScripted { get; }
     public bool AllowFreeRoam { get; private set; }
+    /// <summary>Free-roam avatar is hidden while a scripted cutscene is finished (end overlay).</summary>
+    public bool ShowFreeRoamPlayer => AllowFreeRoam && !(IsScripted && ScriptFinished);
     public GroundScriptVm? ScriptVm => _script;
     public int MapWidthPixels { get; }
     public int MapHeightPixels { get; }
@@ -127,6 +137,8 @@ public sealed class ScenePlaySession
     public int CameraY { get; private set; }
     public int ActiveGroup { get; private set; }
     public int ActiveSector { get; private set; }
+    public int AnimTick => _animTick;
+    public bool HasMapPaletteAnimation => _mapPalAnim is { HasAnimations: true };
     public int? MusicId { get; private set; }
     public string? Dialogue => _script?.Dialogue;
 
@@ -191,9 +203,12 @@ public sealed class ScenePlaySession
         _cachedBg = null;
         _cachedBgGroup = int.MinValue;
         _cachedBgSector = int.MinValue;
+        _cachedBgAnimKey = int.MinValue;
 
         if (IsScripted)
         {
+            ActiveGroup = _startGroup;
+            ActiveSector = _startSector;
             _script = new GroundScriptVm(
                 _rom, _scene, ActiveGroup, ActiveSector, _charmap,
                 profile: _profile ?? RomProfile.Us10,
@@ -300,12 +315,13 @@ public sealed class ScenePlaySession
     /// </summary>
     public RgbaImage RenderFrameImage(bool composeBackground = true)
     {
-        if (_cachedBg is null)
-        {
-            if (!composeBackground)
-                return BlackCamera();
+        if (!composeBackground && _cachedBg is null)
+            return BlackCamera();
+
+        if (composeBackground)
             EnsureBackgroundCore();
-        }
+        else if (_cachedBg is null)
+            return BlackCamera();
 
         var bg = _cachedBg ?? throw new InvalidOperationException("Scene background failed to compose.");
         EnsureWorkBuffers(bg.Width, bg.Height);
@@ -318,7 +334,7 @@ public sealed class ScenePlaySession
         DrawMapEffects(work);
         DrawAnimatedLives(work);
 
-        if (AllowFreeRoam)
+        if (ShowFreeRoamPlayer)
             DrawPlayer(work);
 
         CropCameraInto(work, CameraX, CameraY, camera);
@@ -412,9 +428,13 @@ public sealed class ScenePlaySession
 
     private void EnsureBackgroundCore()
     {
+        var animKey = _mapPalAnim is { HasAnimations: true }
+            ? _mapPalAnim.CacheKey(_animTick)
+            : 0;
         if (_cachedBg is not null &&
             _cachedBgGroup == ActiveGroup &&
-            _cachedBgSector == ActiveSector)
+            _cachedBgSector == ActiveSector &&
+            _cachedBgAnimKey == animKey)
             return;
 
         var full = SceneCompositor.ComposeSceneImage(
@@ -430,11 +450,13 @@ public sealed class ScenePlaySession
             excludeLive: null,
             hudDialogue: null,
             actorSprites: _actorSprites,
-            objectSprites: _objectSprites);
+            objectSprites: _objectSprites,
+            animTick: _animTick);
 
         _cachedBg = full;
         _cachedBgGroup = ActiveGroup;
         _cachedBgSector = ActiveSector;
+        _cachedBgAnimKey = animKey;
         _workFull = null;
     }
 
@@ -798,6 +820,42 @@ public sealed class ScenePlaySession
         {
             return null;
         }
+    }
+
+    private static BplPaletteAnimation? TryLoadMapPaletteAnimation(RomImage rom, Scene scene)
+    {
+        try
+        {
+            var asset = scene.Map?.GroundMapAsset;
+            if (asset?.Metadata is not null &&
+                asset.Metadata.TryGetValue("bplOffset", out var offText) &&
+                asset.Metadata.TryGetValue("bplSize", out var sizeText) &&
+                int.TryParse(offText, out var offset) &&
+                int.TryParse(sizeText, out var size) &&
+                offset >= 0 && size > 0)
+            {
+                var anim = BplPaletteAnimation.TryParse(rom.Copy(offset, size));
+                return anim is { HasAnimations: true } ? anim : null;
+            }
+
+            var bplName = scene.Map?.BplName;
+            if (string.IsNullOrEmpty(bplName))
+                return null;
+            foreach (var archive in RomArchiveParser.FindArchives(rom))
+            {
+                var entry = archive.Entries.FirstOrDefault(e => e.Name == bplName);
+                if (entry is null)
+                    continue;
+                var anim = BplPaletteAnimation.TryParse(rom.Copy(entry.Offset, entry.Size));
+                return anim is { HasAnimations: true } ? anim : null;
+            }
+        }
+        catch
+        {
+            // Preview without palette animation.
+        }
+
+        return null;
     }
 
     private static bool IsPlayerKind(SceneEntity live) =>

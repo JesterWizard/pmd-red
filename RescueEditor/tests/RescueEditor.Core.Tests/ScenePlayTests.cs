@@ -977,6 +977,75 @@ public sealed class ScenePlayTests
         return scene;
     }
 
+    [Fact]
+    public void ScriptedSessionHidesFreeRoamPlayerWhenFinished()
+    {
+        var scene = new Scene { MapId = 173, Name = "Comet" };
+        var group = new SceneGroup { Index = 1 };
+        var sector = new SceneSector { Group = 1, Sector = 0 };
+        sector.Stations.Add(new ScriptRefData
+        {
+            Id = ScenePlayPresets.EventControlScriptId,
+            Type = ScenePlayPresets.EventScriptType,
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x0C, ArgShort = -1, ArgByte = 0xFF },
+                new ScriptCommandData { Op = 0xDB, ArgShort = 1 },
+                new ScriptCommandData { Op = 0xEF },
+            ],
+        });
+        group.Sectors.Add(sector);
+        scene.Groups.Add(new SceneGroup { Index = 0 });
+        scene.Groups.Add(group);
+
+        var rom = EmptyRom();
+        var session = new ScenePlaySession(rom, scene, group: 1, sector: 0, scripted: true);
+        Assert.False(session.ShowFreeRoamPlayer);
+
+        for (var i = 0; i < 10 && !session.ScriptFinished; i++)
+            session.Tick(1.0 / 60.0);
+
+        Assert.True(session.ScriptFinished);
+        Assert.False(session.ShowFreeRoamPlayer);
+        Assert.Equal(0, session.ActiveSector);
+    }
+
+    [Fact]
+    public void RestartResetsScriptAndStartStation()
+    {
+        var scene = new Scene { MapId = 173, Name = "Comet" };
+        var group = new SceneGroup { Index = 1 };
+        var sector = new SceneSector { Group = 1, Sector = 0 };
+        sector.Stations.Add(new ScriptRefData
+        {
+            Id = ScenePlayPresets.EventControlScriptId,
+            Type = ScenePlayPresets.EventScriptType,
+            Commands =
+            [
+                new ScriptCommandData { Op = 0x0C, ArgShort = -1, ArgByte = 0xFF },
+                new ScriptCommandData { Op = 0xDB, ArgShort = 2 },
+                new ScriptCommandData { Op = 0xEF },
+            ],
+        });
+        group.Sectors.Add(sector);
+        scene.Groups.Add(new SceneGroup { Index = 0 });
+        scene.Groups.Add(group);
+
+        var rom = EmptyRom();
+        var session = new ScenePlaySession(rom, scene, group: 1, sector: 0, scripted: true);
+        for (var i = 0; i < 20 && !session.ScriptFinished; i++)
+            session.Tick(1.0 / 60.0);
+        Assert.True(session.ScriptFinished);
+
+        session.Restart();
+        Assert.False(session.ScriptFinished);
+        Assert.True(session.IsScripted);
+        Assert.False(session.AllowFreeRoam);
+        Assert.Equal(1, session.ActiveGroup);
+        Assert.Equal(0, session.ActiveSector);
+        Assert.False(session.ShowFreeRoamPlayer);
+    }
+
     private static RomImage EmptyRom()
     {
         var path = Path.GetTempFileName();

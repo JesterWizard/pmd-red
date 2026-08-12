@@ -18,14 +18,11 @@ public sealed class ScenePreviewState
 
 public static class SceneCompositor
 {
-    public static PreviewContent? RenderMapBackground(RomImage rom, Scene scene)
+    public static PreviewContent? RenderMapBackground(RomImage rom, Scene scene, int animTick = 0)
     {
-        var primary = TryRenderMapPrimary(rom, scene);
-        if (primary is not null && !IsVisuallyFlat(primary))
-            return primary;
-
-        // Boss-end shells (tileset ≥ 64): retail fills via dungeon emap (bXXemap0),
-        // not the empty BMA — prefer that over Mid/entry BMA substitution.
+        // Boss-end shells (tileset ≥ 64): retail fills via dungeon emap (bXXemap0).
+        // Prefer that before the shell BMA — some ends (e.g. Frost Forest Peak) render a
+        // non-flat but wrong tile soup from BPC alone, which would otherwise win.
         try
         {
             var dungeon = DungeonShellPreview.TryRender(rom, scene.Map);
@@ -34,8 +31,12 @@ public static class SceneCompositor
         }
         catch
         {
-            // Fall through to Mid/entry shells.
+            // Fall through to ground BMA / Mid shells.
         }
+
+        var primary = TryRenderMapPrimary(rom, scene, animTick);
+        if (primary is not null && !IsVisuallyFlat(primary))
+            return primary;
 
         // Dungeon shell maps (DxxP02/P03, render modes 10/11) store a near-empty BMA;
         // retail fills tiles via dungeon generation. Prefer mid/peak staging maps
@@ -44,7 +45,7 @@ public static class SceneCompositor
         {
             try
             {
-                var fallback = GroundMapIndexer.TryRenderFromMap(rom, shell);
+                var fallback = GroundMapIndexer.TryRenderFromMap(rom, shell, animTick);
                 if (fallback is not null && !IsVisuallyFlat(fallback))
                     return fallback;
             }
@@ -57,14 +58,14 @@ public static class SceneCompositor
         return primary;
     }
 
-    private static PreviewContent? TryRenderMapPrimary(RomImage rom, Scene scene)
+    private static PreviewContent? TryRenderMapPrimary(RomImage rom, Scene scene, int animTick = 0)
     {
         var asset = scene.Map?.GroundMapAsset;
         if (asset is not null)
         {
             try
             {
-                return GroundMapIndexer.Render(rom, asset);
+                return GroundMapIndexer.Render(rom, asset, animTick);
             }
             catch
             {
@@ -74,7 +75,7 @@ public static class SceneCompositor
 
         try
         {
-            return GroundMapIndexer.TryRenderFromMap(rom, scene.Map);
+            return GroundMapIndexer.TryRenderFromMap(rom, scene.Map, animTick);
         }
         catch
         {
@@ -124,11 +125,12 @@ public static class SceneCompositor
         ActorSpriteAtlas? actorSprites = null,
         ObjectSpriteAtlas? objectSprites = null,
         SceneEntity? excludeLive = null,
-        GroundEffectAtlas? groundEffects = null) =>
+        GroundEffectAtlas? groundEffects = null,
+        int animTick = 0) =>
         ComposeSceneImage(
             rom, scene, group, sector, selected, showLives, showObjects, showEffects, showEvents,
             showLinks, drawLabels, showGrid, hudDialogue, visibleSectors, actorSprites, objectSprites,
-            excludeLive, groundEffects).ToPng();
+            excludeLive, groundEffects, animTick).ToPng();
 
     public static RgbaImage ComposeSceneImage(
         RomImage rom,
@@ -148,9 +150,10 @@ public static class SceneCompositor
         ActorSpriteAtlas? actorSprites = null,
         ObjectSpriteAtlas? objectSprites = null,
         SceneEntity? excludeLive = null,
-        GroundEffectAtlas? groundEffects = null)
+        GroundEffectAtlas? groundEffects = null,
+        int animTick = 0)
     {
-        var background = RenderMapBackground(rom, scene);
+        var background = RenderMapBackground(rom, scene, animTick);
         RgbaImage image;
         if (background?.Png is not null)
         {

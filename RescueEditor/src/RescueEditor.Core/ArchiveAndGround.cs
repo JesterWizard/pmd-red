@@ -168,7 +168,7 @@ public static class GroundMapIndexer
         }
     }
 
-    public static PreviewContent Render(RomImage rom, AssetDescriptor asset)
+    public static PreviewContent Render(RomImage rom, AssetDescriptor asset, int animTick = 0)
     {
         var bpl = ReadPart(rom, asset.Metadata, "bplOffset", "bplSize");
         var bpc = Compression.DecompressGmlz(
@@ -184,7 +184,7 @@ public static class GroundMapIndexer
             bpaFrames.Add(BpaFrame0Tiles(bpa));
         }
 
-        return GroundMapRenderer.Render(asset.Name, bpl, bpc, bma, bpaFrames);
+        return GroundMapRenderer.Render(asset.Name, bpl, bpc, bma, bpaFrames, animTick);
     }
 
     /// <summary>
@@ -235,7 +235,7 @@ public static class GroundMapIndexer
     /// <summary>
     /// Render a ground map from conversion-table names when the catalog asset link is missing.
     /// </summary>
-    public static PreviewContent? TryRenderFromMap(RomImage rom, GroundMapDefinition? map)
+    public static PreviewContent? TryRenderFromMap(RomImage rom, GroundMapDefinition? map, int animTick = 0)
     {
         if (map?.BmaName is null || map.BplName is null || map.BpcName is null)
             return null;
@@ -288,7 +288,7 @@ public static class GroundMapIndexer
             };
             try
             {
-                return Render(rom, asset);
+                return Render(rom, asset, animTick);
             }
             catch
             {
@@ -378,12 +378,12 @@ public static class GroundMapIndexer
 public static class GroundMapRenderer
 {
     public static PreviewContent Render(string name, ReadOnlySpan<byte> bpl, ReadOnlySpan<byte> bpc,
-        ReadOnlySpan<byte> bma, IReadOnlyList<byte[]>? bpaFrame0Tiles = null)
+        ReadOnlySpan<byte> bma, IReadOnlyList<byte[]>? bpaFrame0Tiles = null, int animTick = 0)
     {
         if (bpl.Length < 4 || bma.Length < 12 || bpc.Length < 14)
             throw new InvalidDataException("Ground map component is too short.");
 
-        var palettes = ReadPalettes(bpl);
+        var palettes = ResolvePalettes(bpl, animTick);
         var width = bma[0];
         var height = bma[1];
         var chunkWidth = Math.Clamp((int)bma[2], 1, 8);
@@ -510,7 +510,16 @@ public static class GroundMapRenderer
             BinaryPrimitives.ReadInt16LittleEndian(bpc[14..]));
     }
 
-    private static List<RgbaColor[]> ReadPalettes(ReadOnlySpan<byte> bpl)
+    private static IReadOnlyList<RgbaColor[]> ResolvePalettes(ReadOnlySpan<byte> bpl, int animTick)
+    {
+        var anim = BplPaletteAnimation.TryParse(bpl);
+        if (anim is not null && anim.HasAnimations)
+            return anim.ResolvePalettes(Math.Max(0, animTick));
+
+        return ReadStaticPalettes(bpl);
+    }
+
+    private static List<RgbaColor[]> ReadStaticPalettes(ReadOnlySpan<byte> bpl)
     {
         var count = BinaryPrimitives.ReadUInt16LittleEndian(bpl);
         var eightBpp = BinaryPrimitives.ReadUInt16LittleEndian(bpl[2..]) == 0x8B;
